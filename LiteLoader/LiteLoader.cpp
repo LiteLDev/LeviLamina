@@ -8,28 +8,31 @@ static void PrintErrorMessage() {
 		std::wcerr << "Error\n";
 		return;
 	}
-	std::cerr << errorMessageID << std::endl;
+	std::cerr << "[Error] ErrorMessageID: " << errorMessageID << std::endl;
 	LPWSTR messageBuffer = nullptr;
 	FormatMessage(
 		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, NULL, errorMessageID,
 		MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
-	std::wcerr << messageBuffer << std::endl;
+	std::wcerr << "[Error] " << messageBuffer;
 	LocalFree(messageBuffer);
 }
 
-static void loadall() {
+static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
+	std::cout << "[LiteLoader] Loading plugins\n";
+	short plugins = 0;
 	for (auto& i : ent) {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
-				std::cout << "Plugin " << canonical(i.path()) << " loaded\n";
+				plugins++;
+				std::cout << "[LiteLoader] Plugin " << canonical(i.path()) << " loaded\n";
 				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
 			}
 			else {
-				std::cout << "Error when loading " << i.path() << "\n";
+				std::cout << "[LiteLoader] Error when loading " << i.path() << "\n";
 				PrintErrorMessage();
 			}
 		}
@@ -50,15 +53,16 @@ static void loadall() {
 		}
 	}
 	libs.clear();
+	std::cout << "[LiteLoader] " << plugins << " plugin(s) loaded\n";
 }
 
 static void entry(bool fixcwd) {
 	const char *info =
 		"LiteLoader Loaded, Version: %s\n"
 		"Based on BedrockX\n"
-		"Github: https://github.com/LiteLDev/LiteLoader\n\n";
+		"Github: https://github.com/LiteLDev/LiteLoader\n";
 	printf(info, getVersion);
-	loadall();
+	loadPlugins();
 }
 
 THook(int, "main", int a, void* b) {

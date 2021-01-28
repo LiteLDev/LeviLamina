@@ -161,6 +161,19 @@
     <ClInclude Include="..\headers\loader\hash.h" />
     <ClInclude Include="..\headers\loader\hook.h" />
     <ClInclude Include="..\headers\loader\Loader.h" />
+    <ClInclude Include="..\headers\mc\Actor.h" />
+    <ClInclude Include="..\headers\mc\Block.h" />
+    <ClInclude Include="..\headers\mc\BlockSource.h" />
+    <ClInclude Include="..\headers\mc\Certificate.h" />
+    <ClInclude Include="..\headers\mc\CommandUtils.h" />
+    <ClInclude Include="..\headers\mc\Core.h" />
+    <ClInclude Include="..\headers\mc\Dimension.h" />
+    <ClInclude Include="..\headers\mc\Item.h" />
+    <ClInclude Include="..\headers\mc\Level.h" />
+    <ClInclude Include="..\headers\mc\LevelChunk.h" />
+    <ClInclude Include="..\headers\mc\mass.h" />
+    <ClInclude Include="..\headers\mc\Player.h" />
+    <ClInclude Include="..\headers\mc\VanillaBlocks.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
