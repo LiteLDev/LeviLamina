@@ -130,7 +130,7 @@ string ptr2name(void* ptr) {
 void* dlsym_real(const char* x) {
 	if (pdb == nullptr) {
 		if (!std::filesystem::exists("bedrock_server.symdb")) {
-			printf("SymDB not found\ntry rerun gensymdb.exe\n");
+			printf("SymDB not found\ntry to run RoDB.exe\n");
 			exit(1);
 		}
 		pdb = new RoDB_R("bedrock_server.symdb");
