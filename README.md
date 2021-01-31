@@ -1,7 +1,8 @@
 # LiteLoader
 [简体中文](README_zhcn.md)  
 A lightweight Bedorck Dedicated Server Plugin Loader  
-Based on [BedrockX](https://github.com/Sysca11/BedrockX)
+Based on [BedrockX](https://github.com/Sysca11/BedrockX)  
+Telegram Group: https://t.me/liteloader
 
 ## Install
 1. Download LiteLoader from [Releases](https://github.com/LiteLDev/LiteLoader/releases), unzip it to BDS directory

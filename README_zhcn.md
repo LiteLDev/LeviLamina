@@ -1,6 +1,7 @@
 # LiteLoader
 轻量化的Bedrock Dedicated Server插件加载器  
 基于[BedrockX](https://github.com/Sysca11/BedrockX)
+QQ群: 656669024
 
 ## Install
 1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)下载LiteLoader，将压缩文件解压到BDS目录下
