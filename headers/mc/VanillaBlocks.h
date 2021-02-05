@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include<api\Loader.h>
+#include<Loader\Loader.h>
 class Block;
 #ifndef GetServerSymbol
 #define GetServerSymbol(x) dlsym(x)
