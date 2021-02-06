@@ -17,6 +17,10 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
+const char* info =
+"[LiteLoader] %d plugin(s) loaded, LiteLoader Version: %s, Based on BedrockX\n"
+"Github: https://github.com/LiteLDev/LiteLoader\n";
+
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	std::filesystem::create_directory("plugins");
@@ -53,15 +57,10 @@ static void loadPlugins() {
 		}
 	}
 	libs.clear();
-	std::cout << "[LiteLoader] " << plugins << " plugin(s) loaded\n";
+	printf(info, plugins, getVersion);
 }
 
 static void entry(bool fixcwd) {
-	const char *info =
-		"LiteLoader Loaded, Version: %s\n"
-		"Based on BedrockX\n"
-		"Github: https://github.com/LiteLDev/LiteLoader\n";
-	printf(info, getVersion);
 	loadPlugins();
 }
 
