@@ -1,4 +1,5 @@
 ﻿#pragma once
+//#include<api\serviceLocate.h>
 #include<loader\Loader.h>
 struct MCRESULT {
 	unsigned char filler[4];
