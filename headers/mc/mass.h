@@ -1,6 +1,5 @@
 ﻿#pragma once
-//#include<api\serviceLocate.h>
-//#include<api\Loader.h>
+#include<loader\Loader.h>
 struct MCRESULT {
 	unsigned char filler[4];
 	operator bool() {
