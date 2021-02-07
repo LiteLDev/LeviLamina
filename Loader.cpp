@@ -1,4 +1,170 @@
-﻿#include "pch.h"
+#include "pch.h"
+typedef unsigned long long hash_t;
+hash_t BKDR(const char* _ch, size_t sz) {
+	unsigned char* ch = (unsigned char*)_ch;
+	hash_t rv = 0;
+	for (int i = 0; i < sz; ++i) {
+		rv = rv * 127 - 36 + ch[i];
+	}
+	return rv;
+}
+struct hashval {
+	string key;
+	hash_t hash;
+	string data;
+	hashval() { hash = 0; }
+	hashval(string&& a, hash_t b, string&& c) : key(forward<string>(a)), hash(b), data(forward<string>(c)) {}
+};
+struct RoDB_R {
+	ifstream fp;
+	unsigned int cnt_bucket;
+	unsigned int bucket[4096]; //offset
+	unsigned int data_off;
+	RoDB_R(const char* path) {
+		fp.open(path, ios::binary);
+#define ppch(x) ((char*)&x)
+		fp.read(ppch(cnt_bucket), 4);
+		fp.read(ppch(data_off), 4);
+		fp.read(ppch(bucket[0]), 4 * (size_t)cnt_bucket);
+	}
+	void read(void* buf, unsigned int off, size_t sz) {
+		fp.seekg(streampos(off));
+		fp.read((char*)buf, sz);
+	}
+	void getstr(string& buf, unsigned int off) {
+		if (off != 0) {
+			fp.seekg(streampos(off));
+		}
+		char ch;
+		while ((ch = fp.get()) != 0)
+			buf.append(1, ch);
+	}
+	string val2key(unsigned int rva) {
+		fp.seekg(streampos(data_off));
+		string name;
+		name.reserve(8192);
+		while (!fp.eof()) {
+			int ch = fp.get();
+			if (ch == 0) {
+				unsigned int dst;
+				fp.read((char*)&dst, 4);
+				if (dst == rva) {
+					return name;
+				}
+				else {
+					name.clear();
+				}
+			}
+			else {
+				name.push_back(ch);
+			}
+		}
+		return "(nil)";
+	}
+	bool _cmp(string_view key) {
+		for (uint32_t i = 0; i < key.size(); ++i) {
+			int ch = fp.get();
+			if (ch != key[i]) {
+				return false;
+			}
+		}
+		return fp.get() == 0;
+	}
+	unsigned int get(string_view key) { //return file offset
+		auto hash = BKDR(key.data(), key.size());
+		auto bkoff = bucket[hash % cnt_bucket];
+		fp.seekg(streampos(bkoff));
+		vector<unsigned int> tolookup;
+		tolookup.reserve(512);
+		while (1) {
+			hash_t hs;
+			unsigned int off;
+			fp.read(ppch(hs), 8);
+			fp.read(ppch(off), 4);
+			if (off == 0xffffffff)
+				break;
+			if (hs == hash)
+				tolookup.push_back(off + data_off);
+			/*
+			if (hs == hash) {
+				off += data_off;
+				auto pos = fp.tellg();
+				string key_now;
+				getstr(key_now, off);
+				if (key == key_now) {
+					return off + (unsigned int)key.size() + 1;
+				}
+				fp.seekg(pos);
+			}*/
+		}
+		for (auto off : tolookup) {
+			fp.seekg({ off });
+			if (_cmp(key)) {
+				return off + (uint32_t)key.size() + 1;
+			}
+		}
+		return 0;
+	}
+};
+static RoDB_R* pdb = new RoDB_R("bedrock_server.symdb");
+static uintptr_t BaseAdr = (uintptr_t)GetModuleHandle(0);
+string ptr2name(void* ptr) {
+	unsigned int va = uint32_t(((uintptr_t)ptr - BaseAdr));
+	return pdb->val2key(va);
+}
+void* GetServerSymbol(const char* x) {
+	auto rv = pdb->get(x);
+	if (!rv)
+		return nullptr;
+	unsigned int rva;
+	pdb->read(&rva, rv, 4);
+	return (void*)(BaseAdr + rva);
+}
+int HookFunction(void* oldfunc, void** poutold, void* newfunc) {
+	static unordered_map<void*, void**> pool;
+	auto& it = pool[oldfunc];
+	if (it) {
+		*poutold = *it;
+		*it = newfunc;
+	}
+	else {
+		void* target = oldfunc;
+		DetourTransactionBegin();
+		DetourUpdateThread(GetCurrentThread());
+		int rv = DetourAttach(&target, newfunc);
+		DetourTransactionCommit();
+		*poutold = target;
+		if (rv != 0)
+			return rv;
+		it = poutold;
+	}
+	return 0;
+}
+int WINAPI DllMain(HMODULE hModule, DWORD res, LPVOID lpReserved) {
+	if (res == 1) {
+		if (!filesystem::exists("bedrock_server.symdb")) {
+			puts("SymDB not found\ntry to run RoDB.exe");
+			exit(1);
+		}
+		ios::sync_with_stdio(false);
+		system("chcp 65001");
+		filesystem::create_directory("plugins");
+		filesystem::directory_iterator ent("plugins");
+		for (auto& i : ent) {
+			auto path = i.path();
+			if (i.is_regular_file() && path.extension() == ".dll") {
+				auto lib = LoadLibrary(path.c_str());
+				if (lib) {
+					cout << "Loading " << path << endl;
+				}
+				else {
+					cout << "Error when loading " << path << endl;
+				}
+			}
+		}
+	}
+	return TRUE;
+}
 // clang-format off
 #pragma comment(linker, "/export:JsAddRef=ChakraCore.JsAddRef")
 #pragma comment(linker, "/export:JsBooleanToBool=ChakraCore.JsBooleanToBool")

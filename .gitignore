@@ -1,4 +1,2 @@
-﻿x64/
-.vs/
-LiteLoader/x64/
-Chakra/x64/
+﻿.vs
+out
