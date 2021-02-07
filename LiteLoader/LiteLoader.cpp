@@ -66,7 +66,7 @@ static void entry(bool fixcwd) {
 
 THook(int, "main", int a, void* b) {
 	std::ios::sync_with_stdio(false);
-	system("chcp 65001");
+	//system("chcp 65001");
 	entry(a > 1);
 	return original(a, b);
 }
