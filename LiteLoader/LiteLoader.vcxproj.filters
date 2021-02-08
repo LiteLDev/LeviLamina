@@ -19,6 +19,21 @@
     <Filter Include="头文件\hook">
       <UniqueIdentifier>{3c0c31fc-103a-4ddd-a965-38c187b76e2b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\api">
+      <UniqueIdentifier>{e1d8e83e-6ab4-42e0-af90-41fb9bc39cdd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\mc">
+      <UniqueIdentifier>{15096ac9-6a05-4023-83a2-9154ad8daab8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\api">
+      <UniqueIdentifier>{0b5d01cc-e61c-454b-84dd-bfc37cc6cf33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\stl">
+      <UniqueIdentifier>{8d73116f-fdab-488d-9dcb-d27cac3c79e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\api\types">
+      <UniqueIdentifier>{2911c288-227a-404e-ae09-17b63cb54f34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -78,6 +93,57 @@
     <ClInclude Include="..\headers\loader\Loader.h">
       <Filter>头文件\hook</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\serviceLocate.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\api\types\helper.h">
+      <Filter>头文件\api\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\api\types\types.h">
+      <Filter>头文件\api\types</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\Bstream.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\CBStorage.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\format.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\KVDB.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\langPack.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\Logger.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\LRUMap.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\optional.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\static_queue.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\useful.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\varint.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\viewhelper.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\views.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\stl\WorkerPool.h">
+      <Filter>头文件\stl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -91,6 +157,12 @@
     </ClCompile>
     <ClCompile Include="dlsym.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="mc\ServiceLocator.cpp">
+      <Filter>源文件\mc</Filter>
+    </ClCompile>
+    <ClCompile Include="api\helper.cpp">
+      <Filter>源文件\api</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
