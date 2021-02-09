@@ -18,8 +18,9 @@ static void PrintErrorMessage() {
 }
 
 const char* info =
-"[LiteLoader] %d plugin(s) loaded, LiteLoader Version: %s, Based on BedrockX\n"
-"Github: https://github.com/LiteLDev/LiteLoader\n";
+"[LiteLoader] %d plugin(s) loaded\n"
+"[LiteLoader] Version: %s Based on BedrockX Project\n"
+"[LiteLoader] Github: https://git.io/JtwPb\n";
 
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;

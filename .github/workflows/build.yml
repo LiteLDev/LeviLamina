@@ -22,9 +22,10 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        git log -1 --format='#define LiteLoaderVersionGithub "%h %at"'
+        git log -1 --format='#define LiteLoaderVersionGithub LiteLoaderVersion"-Ci-%h_%at"' >> headers/liteloader.h
+        cat headers/liteloader.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
-      shell: cmd
+      shell: bash
     
     - name: MkDirs
       working-directory: ${{env.GITHUB_WORKSPACE}}
