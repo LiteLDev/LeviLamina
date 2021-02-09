@@ -57,7 +57,11 @@ static void loadPlugins() {
 		}
 	}
 	libs.clear();
-	printf(info, plugins, getVersion);
+#ifdef GithubAction
+	printf(info, plugins, LiteLoaderVersionGithub);
+#else
+	printf(info, plugins, LiteLoaderVersion);
+#endif
 }
 
 static void entry(bool fixcwd) {
