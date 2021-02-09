@@ -22,8 +22,7 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        >>headers/liteloader.h set /p="#define LiteLoaderVersionGithub " <nul
-        git describe --tags >> headers/liteloader.h
+        git log -1 --format='#define LiteLoaderVersionGithub "%h %at"'
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: cmd
     

@@ -57,7 +57,7 @@ static void loadPlugins() {
 		}
 	}
 	libs.clear();
-#ifdef GithubAction
+#ifdef LiteLoaderVersionGithub
 	printf(info, plugins, LiteLoaderVersionGithub);
 #else
 	printf(info, plugins, LiteLoaderVersion);
