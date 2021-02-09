@@ -25,6 +25,7 @@ jobs:
         >>headers/liteloader.h set /p="#define LiteLoaderVersionGithub " <nul
         git describe --tags >> headers/liteloader.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
+      shell: cmd
     
     - name: MkDirs
       working-directory: ${{env.GITHUB_WORKSPACE}}
