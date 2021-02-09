@@ -7,6 +7,7 @@ env:
   SOLUTION_FILE_PATH: .
   BUILD_CONFIGURATION: Release
   Platform: X64
+  ChakraCore_version: cc_windows_all_1_11_24
 
 jobs:
   build:
@@ -21,16 +22,38 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        >>headers/liteloader.h set /p="#define LiteLoaderVersionGithub " <nul
+        git describe --tags >> headers/liteloader.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
-    - name: Copy Out Files
+    
+    - name: MkDirs
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir D:/out
         mkdir D:/out/lib
         mkdir D:/out/pdb
+    
+    - name: Download ChakraCore
+      run: |
+        curl -L -o D:/cc.zip https://aka.ms/chakracore/${{ env.ChakraCore_version }}
+        mkdir D:/cc
+        cd D:/cc
+        unzip D:/cc.zip
+      shell: bash
+      
+    - name: Download RoDB.exe
+      run: |
+        curl -L -o D:/out/RoDB.exe https://github.com/Sysca11/BDXCore/raw/master/RoDB.exe
+      shell: bash
+    
+    - name: Copy Out Files
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
         copy x64\Release\*.dll D:/out
         copy x64\Release\*.lib D:/out/lib
         copy x64\Release\*.pdb D:/out/pdb
+        dir D:/cc
+        copy D:/cc/x64_release/ChakraCore.dll D:/out/
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
