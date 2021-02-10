@@ -157,6 +157,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\headers\api\Basic_Event.h" />
     <ClInclude Include="..\headers\api\serviceLocate.h" />
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="..\headers\mc\Level.h" />
     <ClInclude Include="..\headers\mc\LevelChunk.h" />
     <ClInclude Include="..\headers\mc\mass.h" />
+    <ClInclude Include="..\headers\mc\OffsetHelper.h" />
     <ClInclude Include="..\headers\mc\Player.h" />
     <ClInclude Include="..\headers\mc\VanillaBlocks.h" />
     <ClInclude Include="..\headers\stl\Bstream.h" />
@@ -195,6 +197,9 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="api\Basic_Event.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="api\helper.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

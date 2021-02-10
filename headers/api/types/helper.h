@@ -1,8 +1,8 @@
 ﻿#pragma once
 struct WPlayer;
-#include<string>
+#include <string>
 #include <liteloader.h>
-#include<stl\useful.h>
+#include <stl\useful.h>
 class NetworkIdentifier;
 namespace liteloader {
 	using std::string;

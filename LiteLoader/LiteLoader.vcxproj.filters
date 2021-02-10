@@ -144,6 +144,12 @@
     <ClInclude Include="..\headers\stl\WorkerPool.h">
       <Filter>头文件\stl</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\Basic_Event.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\OffsetHelper.h">
+      <Filter>头文件\mc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -162,6 +168,9 @@
       <Filter>源文件\mc</Filter>
     </ClCompile>
     <ClCompile Include="api\helper.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\Basic_Event.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
   </ItemGroup>
