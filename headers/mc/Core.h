@@ -39,6 +39,9 @@ public:
 	inline bool operator!=(BlockPos const& rv)const {
 		return x != rv.x || y != rv.y || z != rv.z;
 	}
+	inline std::string toString() {
+		return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
+	}
 	//template<typename _TP>
 	/*void pack(WBStreamImpl<_TP>& ws) const {
 		ws.apply(x, y, z);
@@ -47,6 +50,7 @@ public:
 		rs.apply(x, y, z);
 	}*/
 };
+
 struct IVec2 {
 	int x, z;
 	IVec2(Vec3 l) {
