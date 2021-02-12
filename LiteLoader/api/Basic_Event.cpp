@@ -7,7 +7,7 @@
 #include <loader/Loader.h>
 #include <api/types/helper.h>
 #include <mc/OffsetHelper.h>
-
+#include <mc/Player.h>
 class ServerPlayer;
 class NetworkIdentifier;
 vector<function<void(JoinEV)>> JoinCallBacks;
@@ -51,4 +51,21 @@ THook(void, "?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEBV?$b
         ChatCallBacks[count](ChatEV);
     }
     original(snh, sp, msg);
+}
+
+class ChangeDimensionRequest;
+class Level;
+
+vector<function<void(ChangeDimEV)>> ChangeDimCallBacks;
+LIAPI void Event::addEventListener(function<void(ChangeDimEV)> callback) {
+    ChangeDimCallBacks.push_back(callback);
+}
+THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z", Level* _this, Player* _this_sp, ChangeDimensionRequest* cdimreq) {
+    ChangeDimEV CDimEV;
+    CDimEV.Player = _this_sp;
+    bool ret = original(_this, _this_sp, cdimreq);
+    for (size_t count = 0; count < ChangeDimCallBacks.size(); count++) {
+        ChangeDimCallBacks[count](CDimEV);
+    }
+    return ret;
 }
