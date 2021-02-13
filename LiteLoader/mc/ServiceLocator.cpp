@@ -2,10 +2,10 @@
 //#include "api/MC.h"
 #include<api/types/types.h>
 //#include<api/event/genericEvent.h>
-#include<api/serviceLocate.h>
+#include <api/serviceLocate.h>
 #include <liteloader.h>
 #include <loader/Loader.h>
-
+#include <api/Basic_Event.h>
 template <class T>
 LIAPI T* LocateS<T>::_srv;
 
@@ -15,6 +15,11 @@ THook(void, "?init@Minecraft@@QEAAXXZ", Minecraft* mc) {
 	original(mc);
 }
 static WLevel wl;
+
+vector<function<void(ServerStartedEV)>> ServerStartedEVCallBacks;
+LIAPI void Event::addEventListener(function<void(ServerStartedEV)> callback) {
+	ServerStartedEVCallBacks.push_back(callback);
+}
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
 	original(a);
 	LocateS<Level>::assign(*LocateS<Minecraft>()->getLevel());
@@ -24,6 +29,10 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
 	LocateS<ServerNetworkHandler>::assign(*LocateS<Minecraft>()->getServerNetworkHandler());
 	//ServerStartedEvent::_call();
 	//ServerStartedEvent::_removeall();
+	ServerStartedEV ServerStartedEV;
+	for (size_t count = 0; count < ServerStartedEVCallBacks.size(); count++) {
+		ServerStartedEVCallBacks[count](ServerStartedEV);
+	}
 }
 
 //?initCoreEnums@MinecraftCommands@@QEAAX_NAEBVBaseGameVersion@@@Z
