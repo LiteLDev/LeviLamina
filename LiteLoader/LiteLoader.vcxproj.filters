@@ -150,6 +150,9 @@
     <ClInclude Include="..\headers\mc\OffsetHelper.h">
       <Filter>头文件\mc</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\mc\Command.h">
+      <Filter>头文件\mc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

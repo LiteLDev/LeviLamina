@@ -8,6 +8,8 @@
 #include <api/types/helper.h>
 #include <mc/OffsetHelper.h>
 #include <mc/Player.h>
+#include <mc/Command.h>
+#include <mc/mass.h>
 class ServerPlayer;
 class NetworkIdentifier;
 vector<function<void(JoinEV)>> JoinCallBacks;
@@ -68,4 +70,32 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
         ChangeDimCallBacks[count](CDimEV);
     }
     return ret;
+}
+
+Player* MakeSP(CommandOrigin& ori) {
+    if (ori.getOriginType() == OriginType::Player) {
+        return (Player*)ori.getEntity();
+    }
+    return 0;
+}
+
+vector<function<void(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerUseCmdEV)> callback) {
+    PlayerUseCmdCallBacks.push_back(callback);
+}
+THook(MCRESULT,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
+	MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
+	Player* sp = MakeSP(x->getOrigin());
+    MCRESULT result = original(_this, a2, x, a4);
+	if (sp) {
+        string cmd = x->getCmd();
+        if (cmd.at(0) == '/') {
+            cmd = cmd.substr(1, cmd.size() - 1);
+        }
+        PlayerUseCmdEV PlayerUseCmdEV = { sp,cmd,result};
+        for (size_t count = 0; count < PlayerUseCmdCallBacks.size(); count++) {
+            PlayerUseCmdCallBacks[count](PlayerUseCmdEV);
+        }
+	}
+    return result;
 }
