@@ -18,4 +18,7 @@ namespace offPlayer {
 	inline xuid_t getXUIDbyCert(Player* pl) {
 		return atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl)).c_str());
 	}
+	inline string getRealName(Player* pl) {
+		return SymCall("?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
+	}
 };

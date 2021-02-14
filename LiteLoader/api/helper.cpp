@@ -7,7 +7,6 @@
 #include <mc/mass.h>
 #include <iostream>
 #include <api/serviceLocate.h>
-
 using std::unordered_map;
 class ServerLevel;
 
