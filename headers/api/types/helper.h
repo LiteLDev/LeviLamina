@@ -1,6 +1,5 @@
 ﻿#pragma once
 struct WPlayer;
-struct Player;
 #include <string>
 #include <liteloader.h>
 #include <stl\useful.h>
@@ -11,7 +10,6 @@ namespace liteloader {
 	LIAPI bool runcmdAs(WPlayer, const string& cmd);
 	LIAPI std::pair<bool, string> runcmdEx(const string& cmd);
 	LIAPI string getIP(NetworkIdentifier&);
-	LIAPI string getRealName(Player*);
 	template<typename T>
 	static inline void APPEND(string& r,T&& x) {
 		r.append(S(std::forward<T>(x)));
