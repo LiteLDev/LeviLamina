@@ -16,7 +16,22 @@ Put .dll plugins(with builtin HookLib) into `plugin_preload\` directory
 
 ## More
 See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
-  
+
+ ## Contributors
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/WangYneos"><img src="https://avatars.githubusercontent.com/u/42824603?s=460&u=ec4b437a259ceb64571efca3e8a96fc27ed01f35&v=4" width="100px;" alt=""/><br /><sub><b>AgNO3</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=WangYneos" title="Code">🖊</a></td>
+    <td align="center"><a href="https://github.com/ShrBox"><img src="https://avatars.githubusercontent.com/u/53301243?s=460&u=dca7ec98af72e274d7f4e2f317b086aa7994c68a&v=4" width="100px;" alt=""/><br /><sub><b>OEOTYAN</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=ShrBox" title="Code">🖊</a></td>
+    <td align="center"><a href="https://github.com/dreamguxiang"><img src="https://avatars.githubusercontent.com/u/62042544?s=460&u=13f1f71f848d93f7800b39ae95482b586574c71b&v=4" width="100px;" alt=""/><br /><sub><b>xiaohengying</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=dreamguxiang" title="Code">🖊</a></td>
+  </tr>
+</table>
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## LICENSE  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPL v3  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPL v3  
