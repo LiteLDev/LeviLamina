@@ -35,7 +35,7 @@ See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
   <tr>
     <td align="center"><a href="https://github.com/dreamguxiang"><img src="https://avatars.githubusercontent.com/u/62042544?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dreamguxiang</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=dreamguxiang" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/WangYneos"><img src="https://avatars.githubusercontent.com/u/42824603?v=4?s=100" width="100px;" alt=""/><br /><sub><b>WangYneos</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=WangYneos" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.sakuralo.top"><img src="https://avatars.githubusercontent.com/u/53301243?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ShrBox</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=ShrBox" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.sakuralo.top"><img src="https://avatars.githubusercontent.com/u/53301243?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ShrBox</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=ShrBox" title="Code">💻</a> <a href="#blog-ShrBox" title="Blogposts">📝</a></td>
   </tr>
 </table>
 
