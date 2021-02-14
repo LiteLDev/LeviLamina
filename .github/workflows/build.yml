@@ -34,6 +34,7 @@ jobs:
         mkdir D:/out
         mkdir D:/out/lib
         mkdir D:/out/pdb
+        mkdir D:/out/headers
     
     - name: Download ChakraCore
       run: |
