@@ -51,11 +51,12 @@ jobs:
     - name: Copy Out Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        copy x64\Release\*.dll D:/out
-        copy x64\Release\*.lib D:/out/lib
-        copy x64\Release\*.pdb D:/out/pdb
-        dir D:/cc
-        copy D:/cc/x64_release/ChakraCore.dll D:/out/
+        cp -a x64/Release/*.dll D:/out
+        cp -a x64/Release/*.lib D:/out/lib
+        cp -a x64/Release/*.pdb D:/out/pdb
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/
+        cp -a headers/* D:/out/headers
+      shell: bash
         
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0

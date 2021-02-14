@@ -196,6 +196,7 @@
     <ClInclude Include="..\headers\stl\WorkerPool.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="api\Basic_Event.cpp">
@@ -219,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LiteLoader.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

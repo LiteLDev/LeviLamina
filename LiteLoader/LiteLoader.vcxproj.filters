@@ -153,6 +153,9 @@
     <ClInclude Include="..\headers\mc\Command.h">
       <Filter>头文件\mc</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -179,5 +182,10 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LiteLoader.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
