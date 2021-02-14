@@ -1,4 +1,7 @@
 # LiteLoader
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 [简体中文](README_zhcn.md)   
 <a href="https://github.com/LiteLDev/LiteLoader/actions">![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)</a>
 <a href="https://t.me/liteloader">![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)</a><br>
@@ -22,3 +25,23 @@ See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPL v3  
 [ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT  
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/dreamguxiang"><img src="https://avatars.githubusercontent.com/u/62042544?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dreamguxiang</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=dreamguxiang" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
