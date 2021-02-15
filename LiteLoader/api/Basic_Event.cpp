@@ -99,3 +99,17 @@ THook(MCRESULT,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_pt
 	}
     return result;
 }
+
+vector<function<void(PlayerDeathEV)>> PlayerDeathCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerDeathEV)> callback) {
+    PlayerDeathCallBacks.push_back(callback);
+}
+
+THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, void* src) {
+    PlayerDeathEV playerDeathEv;
+    playerDeathEv.Player = &thi;
+    for (size_t count = 0; count < PlayerDeathCallBacks.size(); count++) {
+        PlayerDeathCallBacks[count](playerDeathEv);
+    }
+    return original(thi, src);
+}

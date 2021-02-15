@@ -43,6 +43,11 @@ class ServerStartedEV {
 
 };
 
+class PlayerDeathEV {
+public:
+	ServerPlayer* Player;
+};
+
 namespace Event {
 	LIAPI void addEventListener(function<void(JoinEV)> callback);
 	LIAPI void addEventListener(function<void(LeftEV)> callback);
@@ -50,4 +55,5 @@ namespace Event {
 	LIAPI void addEventListener(function<void(ChangeDimEV)> callback);
 	LIAPI void addEventListener(function<void(ServerStartedEV)> callback);
 	LIAPI void addEventListener(function<void(PlayerUseCmdEV)> callback);
+	LIAPI void addEventListener(function<void(PlayerDeathEV)> callback);
 };
