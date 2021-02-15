@@ -11,8 +11,8 @@
 2. 运行`RoDB.exe`以生成符号文件(`.symdb`和`.symdef`)，运行`RoDB.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
 
 ## Usage
-把.dll（使用LiteLoaderAPI）插件放到`plugins\`目录
-把.dll（自带Hook库）插件放到`plugin_preload\`目录
+把.dll插件放到`plugins\`目录  
+把如BDSNetRunner需要预先加载的插件放到`plugin_preload\`目录
 
 ## More
 请参见[Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
