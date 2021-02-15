@@ -4,6 +4,7 @@
 class Player;
 class Level;
 class Certificate;
+class BaseCommandBlock;
 typedef unsigned long long xuid_t;
 namespace offPlayer {
 	inline Certificate* getCert(Player* pl) {
@@ -20,5 +21,13 @@ namespace offPlayer {
 	}
 	inline string getRealName(Player* pl) {
 		return SymCall("?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
+	}
+};
+namespace offBaseCommandBlock {
+	inline string getCMD(BaseCommandBlock* bcmdblock) {
+		return dAccess<string, 56>(bcmdblock);
+	}
+	inline BlockPos getPos(BaseCommandBlock* bcmdblock) {
+		return dAccess<BlockPos, -164>(bcmdblock);
 	}
 };

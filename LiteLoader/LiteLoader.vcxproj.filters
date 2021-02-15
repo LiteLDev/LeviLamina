@@ -34,6 +34,9 @@
     <Filter Include="头文件\api\types">
       <UniqueIdentifier>{2911c288-227a-404e-ae09-17b63cb54f34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\mc\CommandReg">
+      <UniqueIdentifier>{c56a4f7b-2ab1-43d8-8bec-c2499ff2849a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -155,6 +158,15 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\Command\Command.h">
+      <Filter>头文件\mc\CommandReg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\Command\CommandReg.h">
+      <Filter>头文件\mc\CommandReg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\api\commands.h">
+      <Filter>头文件\api</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

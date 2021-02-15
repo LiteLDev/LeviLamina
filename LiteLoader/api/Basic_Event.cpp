@@ -79,14 +79,15 @@ Player* MakeSP(CommandOrigin& ori) {
     return 0;
 }
 
-vector<function<void(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;
-LIAPI void Event::addEventListener(function<void(PlayerUseCmdEV)> callback) {
+vector<function<bool(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;
+LIAPI void Event::addEventListener(function<bool(PlayerUseCmdEV)> callback) {
     PlayerUseCmdCallBacks.push_back(callback);
 }
-THook(MCRESULT,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
+THook(bool,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
 	MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
+    
 	Player* sp = MakeSP(x->getOrigin());
-    MCRESULT result = original(_this, a2, x, a4);
+    bool result = original(_this, a2, x, a4);
 	if (sp) {
         string cmd = x->getCmd();
         if (cmd.at(0) == '/') {
@@ -94,11 +95,31 @@ THook(MCRESULT,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_pt
         }
         PlayerUseCmdEV PlayerUseCmdEV = { sp,cmd,result};
         for (size_t count = 0; count < PlayerUseCmdCallBacks.size(); count++) {
-            PlayerUseCmdCallBacks[count](PlayerUseCmdEV);
+            bool ret = PlayerUseCmdCallBacks[count](PlayerUseCmdEV);
+            if (ret)
+                return true;
         }
 	}
     return result;
 }
+class BaseCommandBlock;
+class BlockSource;
+
+vector<function<bool(CmdBlockExeEV)>> CmdBlockExeEVCallBacks;
+LIAPI void Event::addEventListener(function<bool(CmdBlockExeEV)> callback) {
+    CmdBlockExeEVCallBacks.push_back(callback);
+}
+THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
+    BaseCommandBlock* _this, BlockSource* a2, CommandOrigin* a3, bool* a4) {
+    CmdBlockExeEV ev = { offBaseCommandBlock::getCMD(_this),offBaseCommandBlock::getPos(_this) };
+    for (size_t count = 0; count < CmdBlockExeEVCallBacks.size(); count++) {
+        bool ret = CmdBlockExeEVCallBacks[count](ev);
+        if (ret)
+            return true;
+    }
+    return original(_this, a2, a3, a4);
+}
+
 
 vector<function<void(PlayerDeathEV)>> PlayerDeathCallBacks;
 LIAPI void Event::addEventListener(function<void(PlayerDeathEV)> callback) {

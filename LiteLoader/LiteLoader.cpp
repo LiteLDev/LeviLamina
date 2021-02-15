@@ -64,7 +64,6 @@ static void loadPlugins() {
 	printf(info, plugins, LiteLoaderVersion);
 #endif
 }
-
 static void entry(bool fixcwd) {
 	loadPlugins();
 }

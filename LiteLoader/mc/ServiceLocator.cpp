@@ -35,6 +35,22 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
 	}
 }
 
+class CommandRegistry;
+vector<function<void(RegCmdEV)>> RegCmdEVCallBacks;
+LIAPI void Event::addEventListener(function<void(RegCmdEV)> callback) {
+	RegCmdEVCallBacks.push_back(callback);
+}
+THook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z", CommandRegistry* rg, void* a1) {
+	LocateS<CommandRegistry>::assign(*rg);
+	original(rg, a1);
+	cout << "[LiteLoader] Registering cmds" << endl;
+	RegCmdEV cmdregev = {rg};
+	for (size_t count = 0; count < RegCmdEVCallBacks.size(); count++) {
+		RegCmdEVCallBacks[count](cmdregev);
+	}
+}
+
+
 //?initCoreEnums@MinecraftCommands@@QEAAX_NAEBVBaseGameVersion@@@Z
 THook(void, "?initCoreEnums@MinecraftCommands@@QEAAXAEBVIWorldRegistriesProvider@@AEBVActorFactory@@AEBVExperiments@@AEBVBaseGameVersion@@@Z", MinecraftCommands* a0, void* a1, void* a2, void*a3, void*a4) {
 	original(a0, a1, a2, a3, a4);

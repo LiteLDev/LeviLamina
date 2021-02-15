@@ -1,13 +1,26 @@
 ﻿#pragma once
-#include<lbpch.h>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <string_view>
+#include <memory>
+#include <loader/Loader.h>
+#include <mc/Core.h>
+#include <api/types/types.h>
 //MC_COMMAND_EXTRA
 class CommandRegistry;
 class CommandOrigin;
 class CommandOutput;
 class Actor;
 class Player;
-enum CommandPermissionLevel : char;
-
+//enum CommandPermissionLevel : char;
+enum CommandPermissionLevel :char {
+	Normal = 0,
+	Privileged = 1,
+	AutomationPlayer = 2,
+	OperatorOnly = 3,
+	ConsoleOnly = 4
+};
 template <typename T>
 class CommandSelectorResults;
 
@@ -39,7 +52,7 @@ public:
 	__declspec(dllimport) CommandOutputParameter(std::vector<Player const*> const&);
 	__declspec(dllimport) CommandOutputParameter(std::vector<std::string> const&);
     */
-	inline CommandOutputParameter(std::string str, int type) : str(str), type(type) {}
+	MCINLINE CommandOutputParameter(std::string str, int type) : str(str), type(type) {}
 };
 class CommandOutput {
 public:
@@ -57,7 +70,7 @@ public:
 
 	void addMessage(
 		std::string const& str) {
-		SymCall("?addMessage@CommandOutput@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@W4CommandOutputMessageType@@@Z", void, void*, string const&, std::vector<CommandOutputParameter> const&, int)(this, str, {}, 0);
+		SymCall("?addMessage@CommandOutput@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@VCommandOutputParameter@@V?$allocator@VCommandOutputParameter@@@std@@@3@W4CommandOutputMessageType@@@Z", void, void*, std::string const&, std::vector<CommandOutputParameter> const&, int)(this, str, {}, 0);
 	}
 };
 
@@ -129,7 +142,7 @@ public:
 		*((void**)&rv) = dlsym("??9HashedString@@QEBA_NAEBV0@@Z");
 		return (this->*rv)(a0);
 	}
-	inline HashedString(const char* ch) {
+	MCINLINE HashedString(const char* ch) {
 		str = ch;
 		hash = computeHash(ch);
 	}
@@ -143,16 +156,16 @@ public:
 	HashedString canonicalHash; // 128
 
 
-	inline HashedString const& getCanonicalHash() const { return canonicalHash; }
-	inline std::string const& getCanonicalName() const { return canonicalHash.getString(); }
-	inline std::string const& getFullName() const { return fullname; }
-	inline std::string const& getIdentifier() const { return identifier; }
-	inline std::string const& getInitEvent() const { return event; }
-	inline std::string const& getNamespace() const { return ns; }
-	inline bool isEmpty() const { return ns.empty() && identifier.empty(); }
-	inline bool isVanilla() const { return ns == "minecraft"; }
-	inline void setIdentifier(std::string const& id) { identifier = id; }
-	inline void setInitEvent(std::string const& e) { event = e; }
+	MCINLINE HashedString const& getCanonicalHash() const { return canonicalHash; }
+	MCINLINE std::string const& getCanonicalName() const { return canonicalHash.getString(); }
+	MCINLINE std::string const& getFullName() const { return fullname; }
+	MCINLINE std::string const& getIdentifier() const { return identifier; }
+	MCINLINE std::string const& getInitEvent() const { return event; }
+	MCINLINE std::string const& getNamespace() const { return ns; }
+	MCINLINE bool isEmpty() const { return ns.empty() && identifier.empty(); }
+	MCINLINE bool isVanilla() const { return ns == "minecraft"; }
+	MCINLINE void setIdentifier(std::string const& id) { identifier = id; }
+	MCINLINE void setInitEvent(std::string const& e) { event = e; }
 
 MCINLINE void initialize(class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const& a0, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const& a1, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const& a2) {
 		void (ActorDefinitionIdentifier::*rv)(class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&, class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> const&);
@@ -176,33 +189,15 @@ struct InvertableFilter {
 };
 class CommandSelectorBase {
 public:
-	uint32_t version;																	// 0
-	uint32_t type;																		// 4
-	uint32_t order;																		// 8
-	std::vector<InvertableFilter<std::string>> namefilters;								// 16
-	std::vector<InvertableFilter<ActorDefinitionIdentifier>> typefilter2;				// 40
-	std::vector<InvertableFilter<std::string>> tagfilters;								// 64
-	std::vector<std::function<bool(CommandOrigin const&, Actor const&)>> customfilters; // 88
-	char position[16];																	// 112
-	BlockPos box;																		// 128
-	float radiusMin;																	// 140
-	float radiusMax;																	// 144 = 0x7f7fffff (float max)
-	uint64_t resultCount;																// 152 = 0xFFFFFFFF
-	bool includeDeadPlayers;															// 160
-	bool flag161;																		// 161
-	bool flag162;																		// 162
-	bool flag163;																		// 163
-	bool playerOnly;																	// 164
-	bool explicitIdSelector;															// 165
-
+	void* filler[192 / 8];
 	#ifdef MC_COMMAND_EXTRA
-	inline bool isExplicitIdSelector() const { return explicitIdSelector; }
-	inline void addNameFilter(InvertableFilter<std::string> const& filter) { namefilters.emplace_back(filter); }
-	inline void addTagFilter(InvertableFilter<std::string> const& filter) {
+	MCINLINE bool isExplicitIdSelector() const { return explicitIdSelector; }
+	MCINLINE void addNameFilter(InvertableFilter<std::string> const& filter) { namefilters.emplace_back(filter); }
+	MCINLINE void addTagFilter(InvertableFilter<std::string> const& filter) {
 		if (isExplicitIdSelector())
 			explicitIdSelector = false;
 		tagfilters.emplace_back(filter);
-		inline void setResultCount(uint64_t value) { resultCount = value; }
+		MCINLINE void setResultCount(uint64_t value) { resultCount = value; }
 		MCINLINE void addTypeFilter(struct InvertableFilter<class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>> const& a0) {
 			void (CommandSelectorBase::*rv)(struct InvertableFilter<class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>>> const&);
 			*((void**)&rv) = dlsym("?addTypeFilter@CommandSelectorBase@@QEAAXAEBU?$InvertableFilter@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@@Z");
@@ -245,19 +240,20 @@ public:
 		}
 	}
 	#endif
-	inline void setIncludeDeadPlayers(bool value) { includeDeadPlayers = value; }
-	
+	MCINLINE ~CommandSelectorBase() {
+		SymCall("??1CommandSelectorBase@@QEAA@XZ", void, void*)(this);
+	}
 	//CommandSelectorBase() {}
 	protected:
 	CommandSelectorBase(bool isPlayer) {
 			SymCall("??0CommandSelectorBase@@IEAA@_N@Z", void, void*, bool)(this, isPlayer);
 	}
 };
-static_assert(offsetof(CommandSelectorBase, explicitIdSelector) == 165);
+//static_assert(offsetof(CommandSelectorBase, explicitIdSelector) == 165);
 template <typename T>
 class CommandSelector : public CommandSelectorBase {
 public:
-	inline CommandSelector() : CommandSelectorBase(std::is_same_v<T, Player>) {}
+	MCINLINE CommandSelector() : CommandSelectorBase(std::is_same_v<T, Player>) {}
 	CommandSelectorResults<T> results(CommandOrigin const& a0) {
 		CommandSelectorResults<T> (CommandSelector<T>::*rv)(CommandOrigin const& a0);
 		if constexpr (std::is_same_v<class Actor, T>) {

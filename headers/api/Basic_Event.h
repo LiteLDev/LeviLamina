@@ -39,6 +39,12 @@ public:
 	MCRESULT mc_result;
 };
 
+class CmdBlockExeEV {
+public:
+	string cmd;
+	BlockPos bpos;
+};
+
 class ServerStartedEV {
 
 };
@@ -48,12 +54,20 @@ public:
 	ServerPlayer* Player;
 };
 
+class CommandRegistry;
+class RegCmdEV {
+public:
+	CommandRegistry* CMDRg;
+};
+
 namespace Event {
 	LIAPI void addEventListener(function<void(JoinEV)> callback);
 	LIAPI void addEventListener(function<void(LeftEV)> callback);
 	LIAPI void addEventListener(function<void(ChatEV)> callback);
 	LIAPI void addEventListener(function<void(ChangeDimEV)> callback);
 	LIAPI void addEventListener(function<void(ServerStartedEV)> callback);
-	LIAPI void addEventListener(function<void(PlayerUseCmdEV)> callback);
+	LIAPI void addEventListener(function<bool(PlayerUseCmdEV)> callback);
+	LIAPI void addEventListener(function<bool(CmdBlockExeEV)> callback);
+	LIAPI void addEventListener(function<void(RegCmdEV)> callback);
 	LIAPI void addEventListener(function<void(PlayerDeathEV)> callback);
 };

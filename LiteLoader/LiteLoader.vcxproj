@@ -158,6 +158,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\headers\api\Basic_Event.h" />
+    <ClInclude Include="..\headers\api\commands.h" />
     <ClInclude Include="..\headers\api\serviceLocate.h" />
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
@@ -171,6 +172,8 @@
     <ClInclude Include="..\headers\mc\Certificate.h" />
     <ClInclude Include="..\headers\mc\Command.h" />
     <ClInclude Include="..\headers\mc\CommandUtils.h" />
+    <ClInclude Include="..\headers\mc\Command\Command.h" />
+    <ClInclude Include="..\headers\mc\Command\CommandReg.h" />
     <ClInclude Include="..\headers\mc\Core.h" />
     <ClInclude Include="..\headers\mc\Dimension.h" />
     <ClInclude Include="..\headers\mc\Item.h" />
