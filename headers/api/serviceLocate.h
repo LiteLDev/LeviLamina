@@ -13,8 +13,8 @@ struct LocateS {
 		return *_srv;
 	}
 	static void assign(const T& srv) {
-		#ifdef LIGHTBASE_EXPORTS
-		LOG("[LocateService] located",typeid(decltype(_srv)).name(),"->",(void*)&srv);
+		#ifdef LITELOADER_EXPORTS
+		//LOG("[LocateService] located",typeid(decltype(_srv)).name(),"->",(void*)&srv);
 		#endif
 		_srv = (T*)&srv;
 	}

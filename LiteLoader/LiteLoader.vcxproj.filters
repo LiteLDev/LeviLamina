@@ -37,6 +37,18 @@
     <Filter Include="头文件\mc\CommandReg">
       <UniqueIdentifier>{c56a4f7b-2ab1-43d8-8bec-c2499ff2849a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\regxuid">
+      <UniqueIdentifier>{baae125c-c66a-4a35-8904-a6f265b0c009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\api\regxuid">
+      <UniqueIdentifier>{b7601fcb-67fc-4825-b832-6f7abefd9269}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\leveldb">
+      <UniqueIdentifier>{d47f43c3-4f3c-4844-85cc-40127e88fdb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\stl">
+      <UniqueIdentifier>{10e46cc5-3d6e-4a46-b0c2-decce08adbfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -168,6 +180,57 @@
     <ClInclude Include="..\headers\api\commands.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\xuidreg\xuidreg.h">
+      <Filter>头文件\api\regxuid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\c.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\cache.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\comparator.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\db.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\dumpfile.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\env.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\export.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\filter_policy.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\iterator.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\options.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\slice.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\status.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\table.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\table_builder.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\leveldb\write_batch.h">
+      <Filter>头文件\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\lbpch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -191,9 +254,16 @@
     <ClCompile Include="api\Basic_Event.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
+    <ClCompile Include="xuidreg\xuidreg.cpp">
+      <Filter>源文件\regxuid</Filter>
+    </ClCompile>
+    <ClCompile Include="stl\DBImpl.cpp">
+      <Filter>源文件\stl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
+    <Library Include="..\lib\leveldb.lib" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc">

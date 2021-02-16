@@ -9,3 +9,5 @@ extern "C" {
 	LIAPI void* dlsym_real(char const* name);
 	LIAPI void WaitForDebugger();
 }
+LIAPI std::string ptr2name(void* ptr);
+LIAPI std::string GetDataPath(const std::string& myname);

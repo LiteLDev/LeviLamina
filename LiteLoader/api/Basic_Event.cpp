@@ -4,7 +4,7 @@
 #include <string>
 #include <liteloader.h>
 #include <api/Basic_Event.h>
-#include <loader/Loader.h>
+#include <lbpch.h>
 #include <api/types/helper.h>
 #include <mc/OffsetHelper.h>
 #include <mc/Player.h>

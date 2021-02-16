@@ -143,7 +143,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -162,6 +162,23 @@
     <ClInclude Include="..\headers\api\serviceLocate.h" />
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
+    <ClInclude Include="..\headers\api\xuidreg\xuidreg.h" />
+    <ClInclude Include="..\headers\lbpch.h" />
+    <ClInclude Include="..\headers\leveldb\c.h" />
+    <ClInclude Include="..\headers\leveldb\cache.h" />
+    <ClInclude Include="..\headers\leveldb\comparator.h" />
+    <ClInclude Include="..\headers\leveldb\db.h" />
+    <ClInclude Include="..\headers\leveldb\dumpfile.h" />
+    <ClInclude Include="..\headers\leveldb\env.h" />
+    <ClInclude Include="..\headers\leveldb\export.h" />
+    <ClInclude Include="..\headers\leveldb\filter_policy.h" />
+    <ClInclude Include="..\headers\leveldb\iterator.h" />
+    <ClInclude Include="..\headers\leveldb\options.h" />
+    <ClInclude Include="..\headers\leveldb\slice.h" />
+    <ClInclude Include="..\headers\leveldb\status.h" />
+    <ClInclude Include="..\headers\leveldb\table.h" />
+    <ClInclude Include="..\headers\leveldb\table_builder.h" />
+    <ClInclude Include="..\headers\leveldb\write_batch.h" />
     <ClInclude Include="..\headers\liteloader.h" />
     <ClInclude Include="..\headers\loader\hash.h" />
     <ClInclude Include="..\headers\loader\hook.h" />
@@ -220,9 +237,16 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="stl\DBImpl.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="xuidreg\xuidreg.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
+    <Library Include="..\lib\leveldb.lib" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc" />

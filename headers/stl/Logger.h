@@ -19,9 +19,9 @@ struct stdio_commit {
 #include<filesystem>
 #include<string>
 #include<atomic>
-#include<api\lightbase.h>
-LBAPI void registerASYNC2(struct asyncFStream*);
-LBAPI void unregisterASYNC2(struct asyncFStream*,struct asyncFStream*);
+#include<liteloader.h>
+LIAPI void registerASYNC2(struct asyncFStream*);
+LIAPI void unregisterASYNC2(struct asyncFStream*,struct asyncFStream*);
 using std::string;
 struct asyncFStream {
 	std::ofstream ofs;

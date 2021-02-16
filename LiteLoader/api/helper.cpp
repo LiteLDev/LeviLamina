@@ -1,5 +1,5 @@
-﻿//#include <lbpch.h>
-//#include<api\types\types.h>
+﻿#include <lbpch.h>
+#include<api\types\types.h>
 #include <loader/Loader.h>
 #include <sstream>
 #include <liteloader.h>
@@ -54,18 +54,17 @@ namespace liteloader {
 		bool rv = MinecraftCommands::_runcmd(&origin, cmd, 4, 1);
 		return { rv, std::move(val) };
 	}
-	//static void* FAKE_PORGVTBL[26];
-	/*
-	LIAPI bool runcmdAs(WPlayer wp, const string& cmd) {
+	static void* FAKE_PORGVTBL[26];
+	LIAPI bool runcmdAs(Player* pl, string& cmd) {
 		void** filler[5];
-		SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(filler, wp);
+		SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(filler, (ServerPlayer*)pl);
 		if (FAKE_PORGVTBL[1] == NULL) {
 			memcpy(FAKE_PORGVTBL, ((void**)filler[0])-1, sizeof(FAKE_PORGVTBL));
 			FAKE_PORGVTBL[1] = (void*)dummy;
 		}
 		filler[0] = FAKE_PORGVTBL+1;
 		return MinecraftCommands::_runcmd(filler, cmd, 4, 1);
-	}*/
+	}
 	LIAPI string getIP(class ::NetworkIdentifier& ni) {
 		string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
 		return rv.substr(0,rv.find('|'));

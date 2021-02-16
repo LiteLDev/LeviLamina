@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <filesystem>
 #include "framework.h"
+#include <api\xuidreg\xuidreg.h>
 
 static void PrintErrorMessage() {
 	DWORD errorMessageID = ::GetLastError();
@@ -66,6 +67,7 @@ static void loadPlugins() {
 }
 static void entry(bool fixcwd) {
 	loadPlugins();
+	XIDREG::initAll();
 }
 
 THook(int, "main", int a, void* b) {

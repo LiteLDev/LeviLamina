@@ -61,13 +61,13 @@ public:
 };
 
 namespace Event {
-	LIAPI void addEventListener(function<void(JoinEV)> callback);
-	LIAPI void addEventListener(function<void(LeftEV)> callback);
-	LIAPI void addEventListener(function<void(ChatEV)> callback);
-	LIAPI void addEventListener(function<void(ChangeDimEV)> callback);
-	LIAPI void addEventListener(function<void(ServerStartedEV)> callback);
-	LIAPI void addEventListener(function<bool(PlayerUseCmdEV)> callback);
-	LIAPI void addEventListener(function<bool(CmdBlockExeEV)> callback);
-	LIAPI void addEventListener(function<void(RegCmdEV)> callback);
-	LIAPI void addEventListener(function<void(PlayerDeathEV)> callback);
+	LIAPI inline void addEventListener(function<void(JoinEV)> callback);
+	LIAPI inline void addEventListener(function<void(LeftEV)> callback);
+	LIAPI inline void addEventListener(function<void(ChatEV)> callback);
+	LIAPI inline void addEventListener(function<void(ChangeDimEV)> callback);
+	LIAPI inline void addEventListener(function<void(ServerStartedEV)> callback);
+	LIAPI inline void addEventListener(function<bool(PlayerUseCmdEV)> callback);
+	LIAPI inline void addEventListener(function<bool(CmdBlockExeEV)> callback);
+	LIAPI inline void addEventListener(function<void(RegCmdEV)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerDeathEV)> callback);
 };
