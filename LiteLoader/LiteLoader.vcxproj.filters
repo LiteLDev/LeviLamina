@@ -49,6 +49,9 @@
     <Filter Include="源文件\stl">
       <UniqueIdentifier>{10e46cc5-3d6e-4a46-b0c2-decce08adbfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\api\refl">
+      <UniqueIdentifier>{0d3e198f-cfcb-4900-a8f6-94ff471deb66}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -231,6 +234,15 @@
     <ClInclude Include="..\headers\lbpch.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\myPacket.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="packet_api.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\api\refl\playerMap.h">
+      <Filter>头文件\api\refl</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -260,6 +272,9 @@
     <ClCompile Include="stl\DBImpl.cpp">
       <Filter>源文件\stl</Filter>
     </ClCompile>
+    <ClCompile Include="mc\RuntimeRefl.cpp">
+      <Filter>源文件\mc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
@@ -269,5 +284,8 @@
     <ResourceCompile Include="LiteLoader.rc">
       <Filter>资源文件</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

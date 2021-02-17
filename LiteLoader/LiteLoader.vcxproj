@@ -159,6 +159,8 @@
   <ItemGroup>
     <ClInclude Include="..\headers\api\Basic_Event.h" />
     <ClInclude Include="..\headers\api\commands.h" />
+    <ClInclude Include="..\headers\api\myPacket.h" />
+    <ClInclude Include="..\headers\api\refl\playerMap.h" />
     <ClInclude Include="..\headers\api\serviceLocate.h" />
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
@@ -215,6 +217,7 @@
     <ClInclude Include="..\headers\stl\views.h" />
     <ClInclude Include="..\headers\stl\WorkerPool.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="packet_api.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
@@ -228,6 +231,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="dlsym.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
+    <ClCompile Include="mc\RuntimeRefl.cpp" />
     <ClCompile Include="mc\ServiceLocator.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -250,6 +254,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

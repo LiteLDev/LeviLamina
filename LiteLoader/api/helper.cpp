@@ -55,7 +55,7 @@ namespace liteloader {
 		return { rv, std::move(val) };
 	}
 	static void* FAKE_PORGVTBL[26];
-	LIAPI bool runcmdAs(Player* pl, string& cmd) {
+	LIAPI bool runcmdAs(Player* pl, const string& cmd) {
 		void** filler[5];
 		SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(filler, (ServerPlayer*)pl);
 		if (FAKE_PORGVTBL[1] == NULL) {

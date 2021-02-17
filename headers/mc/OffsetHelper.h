@@ -1,6 +1,8 @@
 #include <loader/Loader.h>
 #include <string>
 #include <api/types/helper.h>
+#include <mc\Actor.h>
+#include <mc\Player.h>
 class Player;
 class Level;
 class Certificate;
@@ -22,6 +24,9 @@ namespace offPlayer {
 	inline string getRealName(Player* pl) {
 		return SymCall("?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
 	}
+	inline permlvl_t getPermLvl(Player* pl) {
+		return pl->getCommandPermissionLevel()&0xff;
+		}
 };
 namespace offBaseCommandBlock {
 	inline string getCMD(BaseCommandBlock* bcmdblock) {

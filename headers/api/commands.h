@@ -222,3 +222,10 @@ inline static ServerPlayer* MakeSP(CommandOrigin const& ori) {
 	}
 	return nullptr;
 }
+inline static ServerPlayer* MakeSP(void* x) {
+	if (!x) return nullptr;
+	if (dAccess<void*, 0>(x) == SYM("??_7ServerPlayer@@6B@")) {
+		return (ServerPlayer*)x;
+	}
+	return nullptr;
+}
