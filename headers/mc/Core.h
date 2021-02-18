@@ -5,7 +5,7 @@
 #define MCCLS
 #include"mass.h"
 #include <string>
-//#include<stl/Bstream.h>
+#include<stl/Bstream.h>
 enum ActorType : int;
 enum class AbilitiesIndex : int;
 static inline int iround(float x) {
@@ -21,13 +21,13 @@ public:
 	std::string toString() {
 		return "(" + std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z) + ")";
 	}
-	//template<typename _TP>
-/*	void pack(WBStreamImpl<_TP>& ws) const {
+	template<typename _TP>
+	void pack(WBStreamImpl<_TP>& ws) const {
 		ws.apply(x, y, z);
 	}
 	void unpack(RBStream& rs) {
 		rs.apply(x, y, z);
-	}*/
+	}
 };
 
 class BlockPos {
@@ -42,13 +42,13 @@ public:
 	inline std::string toString() {
 		return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
 	}
-	//template<typename _TP>
-	/*void pack(WBStreamImpl<_TP>& ws) const {
+	template<typename _TP>
+	void pack(WBStreamImpl<_TP>& ws) const {
 		ws.apply(x, y, z);
 	}
 	void unpack(RBStream& rs) {
 		rs.apply(x, y, z);
-	}*/
+	}
 };
 
 struct IVec2 {

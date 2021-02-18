@@ -3,18 +3,19 @@
 #include<api\myPacket.h>
 #include<stl\varint.h>
 #include<api\refl\playerMap.h>
-#include<mcapi/Player.h>
-#include<mcapi/Certificate.h>
+#include<mc/Player.h>
+#include<mc/Certificate.h>
 #include<debug\MemSearcher.h>
-LBAPI void WPlayer::sendText(string_view text, TextType tp) {
+LIAPI void WPlayer::sendText(string_view text, TextType tp) {
 	WBStream txtpkws;
-	txtpkws.data.reserve(8 + text.size());
+	txtpkws.data.reserve(40 + text.size());
 	txtpkws.apply((char)tp, (char)0, MCString(text));
 	MyPkt<9> pk{ txtpkws.data };
 	v->sendNetworkPacket(pk);
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*> MS_PC;
+/*
 THook(void*, "??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@EV?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H@Z", class Player* a1, __int64 a2, __int64 a3, __int64 a4, __int64 a5, int a6, void* a7, __int64 a8, __int64 a9, void* a10_uuid, __int64 a11, void** a12, __int64 a13) {
 	void* pCert = *a12;
 	auto rv = original(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10_uuid, a11, a12, a13);
@@ -54,16 +55,17 @@ THook(void*, "??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHand
 	#endif
 	return rv;
 }
-LBAPI NetworkIdentifier* WPlayer::_getNI() {
+*/
+LIAPI NetworkIdentifier* WPlayer::_getNI() {
 	return MS_NI.get(v);
 }
-LBAPI Certificate* WPlayer::_getCert() {
+LIAPI Certificate* WPlayer::_getCert() {
 	return *MS_PC.get(v);
 }
-LBAPI void WPlayer::kick(const string& reason) {
+LIAPI void WPlayer::kick(const string& reason) {
 	LocateS<ServerNetworkHandler>()->disconnectClient(*_getNI(), reason, false);
 }
-LBAPI void WPlayer::forceKick() {
+LIAPI void WPlayer::forceKick() {
 	LocateS<ServerNetworkHandler>()->onDisconnect(*_getNI());
 }
 static string getName_real(WPlayer wp) {
@@ -88,20 +90,20 @@ struct xuidStorage {
 	}
 };
 static playerMap<xuidStorage> xuid_cache;
-LBAPI xuid_t WPlayer::getXuid() {
+LIAPI xuid_t WPlayer::getXuid() {
 	return xuid_cache[v];
 }
-LBAPI const string& WPlayer::getName() {
+LIAPI const string& WPlayer::getName() {
 	return xuid_cache[v];
 }
-LBAPI string WPlayer::getRealName() {
+LIAPI string WPlayer::getRealName() {
 	return ExtendedCertificate::getIdentityName(*_getCert());
 }
-LBAPI permlvl_t WPlayer::getPermLvl() {
+LIAPI permlvl_t WPlayer::getPermLvl() {
 	return v->getCommandPermissionLevel()&0xff;
 }
 static MSearcherEx<BlockSource*> pPly_BS;
-LBAPI class BlockSource& WPlayer::getBlockSource_() {
+LIAPI class BlockSource& WPlayer::getBlockSource_() {
 	if (!pPly_BS.myOff) {
 		pPly_BS.init(
 			v, [](void* x) {

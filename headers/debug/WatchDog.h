@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include<string>
-#include<api\lightbase.h>
+#include<liteloader.h>
 using std::string;
 //#define TRACING_ENABLED
 #ifdef TRACING_ENABLED

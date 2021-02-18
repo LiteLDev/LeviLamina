@@ -8,7 +8,6 @@
 #include <mc/Core.h>
 #include <mc/mass.h>
 #include <api/types/helper.h>
-
 typedef unsigned long long xuid_t;
 typedef unsigned char permlvl_t;
 enum TextType : char {
@@ -59,28 +58,28 @@ struct WDim : Wrapped<Dimension> {
 	LIAPI class BlockSource& getBlockSource_();
 	LIAPI void setBlock(int x, int y, int z, Block const& blk);
 	LIAPI struct WBlock getBlock(int x, int y, int z);
-	//LIAPI int getID();
+	LIAPI int getID();
 };
 struct WLevel : Wrapped<ServerLevel> {
 	WLevel() : Wrapped<ServerLevel>() {}
 	WLevel(ServerLevel& x) : Wrapped<ServerLevel>(x) {}
 	LIAPI array_view<WPlayer> getUsers();
 	LIAPI optional<WPlayer> getPlayer(string_view name);
-	//LIAPI void broadcastText(string_view text, TextType type = RAW);
+	LIAPI void broadcastText(string_view text, TextType type = RAW);
 };
 struct WActor : Wrapped<Actor> {
 	WActor(Actor& x) : Wrapped<Actor>(x) {}
-	//LIAPI void teleport(Vec3 to, int dimid);
-	//LIAPI int getDimID();
-	//LIAPI WDim getDim();
-	//LIAPI unsigned long long getRuntimeID();
+	LIAPI void teleport(Vec3 to, int dimid);
+	LIAPI int getDimID();
+	LIAPI WDim getDim();
+	LIAPI unsigned long long getRuntimeID();
 };
 struct WMob : Wrapped<Mob> {
 	WMob(Mob& x) : Wrapped<Mob>(x) {}
 	WActor* actor() {
 		return (WActor*)this;
 	}
-	//LIAPI void kill();
+	LIAPI void kill();
 };
 struct WPlayer : Wrapped<ServerPlayer> {
 	WPlayer() : Wrapped<ServerPlayer>() {}
@@ -92,26 +91,26 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline WMob* mob() {
 		return (WMob*)this;
 	}
-	//LIAPI string const& getName();
-	//LIAPI xuid_t getXuid();
-	//LIAPI string getRealName();
-	//LIAPI permlvl_t getPermLvl();
-	//LIAPI class BlockSource& getBlockSource_();
-	//inline void teleport(Vec3 to, int dimid) {
-	//	actor()->teleport(to, dimid);
-	//}
-	//inline auto getDimID() {
-	//	return actor()->getDimID();
-	//}
-	//inline auto getDim() {
-	//	return actor()->getDim();
-	//}
-	//LIAPI void sendText(string_view text, TextType type = RAW);
-	//LIAPI void kick(std::string const& reason);
-	//LIAPI void forceKick();
-	//LIAPI void kill() {
-	//	mob()->kill();
-	//}
+	LIAPI string const& getName();
+	LIAPI xuid_t getXuid();
+	LIAPI string getRealName();
+	LIAPI permlvl_t getPermLvl();
+	LIAPI class BlockSource& getBlockSource_();
+	inline void teleport(Vec3 to, int dimid) {
+		actor()->teleport(to, dimid);
+	}
+	inline auto getDimID() {
+	return actor()->getDimID();
+	}
+	inline auto getDim() {
+		return actor()->getDim();
+	}
+	LIAPI void sendText(string_view text, TextType type = RAW);
+	LIAPI void kick(std::string const& reason);
+	LIAPI void forceKick();
+	LIAPI void kill() {
+		mob()->kill();
+	}
 	template<typename T>
 	inline bool runcmd(T&& str) {
 		return liteloader::runcmdAs(*this, std::forward<T>(str));
@@ -120,16 +119,16 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline bool runcmdA(T&&... a) {
 		return liteloader::runcmdAsA(*this, std::forward<T>(a)...);
 	}
-	//LIAPI class NetworkIdentifier* _getNI();
-	//LIAPI class Certificate* _getCert();
-	/*inline string getIP() {
+	LIAPI class NetworkIdentifier* _getNI();
+	LIAPI class Certificate* _getCert();
+	inline string getIP() {
 		return liteloader::getIP(*_getNI());
-	}*/
+	}
 };
 struct WItem : Wrapped<ItemStack> {
 	WItem(ItemStack& is) : Wrapped<ItemStack>(is) {}
-	//LIAPI unsigned char getCount() const;
-	//static void procoff();
+	LIAPI unsigned char getCount() const;
+	static void procoff();
 };
 struct WBlock : Wrapped<Block> {
 	WBlock(Block const& i) : Wrapped<Block>(i) {}
@@ -139,7 +138,7 @@ struct WBlockActor : Wrapped<BlockActor> {
 };
 struct WBlockSource:Wrapped<BlockSource> {
 	WBlockSource(BlockSource& x) : Wrapped<BlockSource>(x) {}
-	//LIAPI WDim getDim();
+	LIAPI WDim getDim();
 };
 struct WExplosion {
 	WBlockSource bs;

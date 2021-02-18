@@ -134,3 +134,57 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
     }
     return original(thi, src);
 }
+
+vector<function<void(PlayerDestroyEv)>> PlayerDestroyCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerDestroyEv)> callback) {
+    PlayerDestroyCallBacks.push_back(callback);
+}
+class BlockLegacy;
+THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
+    BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
+    PlayerDestroyEv PlayerDestroyEv;
+    PlayerDestroyEv.Player = &pl;
+    PlayerDestroyEv.blkpos = blkpos;
+    PlayerDestroyEv.bl = &bl;
+    for (size_t count = 0; count < PlayerDestroyCallBacks.size(); count++) {
+        PlayerDestroyCallBacks[count](PlayerDestroyEv);
+    }
+    return original(_this,pl,blkpos,bl);
+}
+
+
+vector<function<void(PlayerUseItemOnEv)>> PlayerUseItemOnCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEv)> callback) {
+    PlayerUseItemOnCallBacks.push_back(callback);
+}
+
+THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", 
+    void* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
+    auto sp = *dAccess<ServerPlayer**, 8>(thi);
+    PlayerUseItemOnEv PlayerUseItemOnEv = { sp,  &a2 , a3_pos, side };
+    PlayerUseItemOnEv.Player = sp;
+    PlayerUseItemOnEv.blkpos = a3_pos;
+    PlayerUseItemOnEv.ItemStack = &a2;
+    PlayerUseItemOnEv.side = side;
+    for (size_t count = 0; count < PlayerUseItemOnCallBacks.size(); count++) {
+        PlayerUseItemOnCallBacks[count](PlayerUseItemOnEv);
+    }
+     return original(thi, a2, a3_pos, side, a5, a6_block);
+}
+
+
+vector<function<void(MobHurtedEv)>> MobHurtedCallBacks;
+LIAPI void Event::addEventListener(function<void(MobHurtedEv)> callback) {
+    MobHurtedCallBacks.push_back(callback);
+}
+
+THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z", Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) {
+    MobHurtedEv MobHurtedEv;
+    MobHurtedEv.ActorDamageSource = &src;
+    MobHurtedEv.Damage = damage;
+    MobHurtedEv.Mob = ac;
+    for (size_t count = 0; count < MobHurtedCallBacks.size(); count++) {
+        MobHurtedCallBacks[count](MobHurtedEv);
+    }
+    return original(ac, src, damage, unk1_1, unk2_0);
+}

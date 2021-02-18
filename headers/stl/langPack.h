@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include<unordered_map>
-#include<api/hash.h>
+#include<loader/hash.h>
 #include<JsonLoader.h>
 #include<iostream>
 using std::string;

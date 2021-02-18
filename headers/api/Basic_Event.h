@@ -7,7 +7,9 @@ using namespace std;
 typedef unsigned long long xuid_t;
 class ServerPlayer;
 class Player;
-
+class Block;
+class Mob;
+class ItemStack;
 class JoinEV {
 public:
 	ServerPlayer* Player;
@@ -60,6 +62,27 @@ public:
 	CommandRegistry* CMDRg;
 };
 
+class PlayerDestroyEv {
+public:
+	Player* Player;
+	BlockPos blkpos;
+	Block* bl;
+};
+
+class PlayerUseItemOnEv {
+public:
+	ServerPlayer* Player;
+	ItemStack* ItemStack;
+	BlockPos blkpos;
+	char side;
+};
+
+class MobHurtedEv {
+public:
+	Mob* Mob;
+	ActorDamageSource* ActorDamageSource;
+	int Damage;
+};
 namespace Event {
 	LIAPI inline void addEventListener(function<void(JoinEV)> callback);
 	LIAPI inline void addEventListener(function<void(LeftEV)> callback);
@@ -70,4 +93,7 @@ namespace Event {
 	LIAPI inline void addEventListener(function<bool(CmdBlockExeEV)> callback);
 	LIAPI inline void addEventListener(function<void(RegCmdEV)> callback);
 	LIAPI inline void addEventListener(function<void(PlayerDeathEV)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerDestroyEv)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerUseItemOnEv)> callback);
+	LIAPI inline void addEventListener(function<void(MobHurtedEv)> callback);
 };

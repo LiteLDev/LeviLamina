@@ -1,8 +1,8 @@
 ﻿#include <lbpch.h>
 #include<api\types\types.h>
-#include<mcapi/Actor.h>
+#include<mc/Actor.h>
 #include<debug/MemSearcher.h>
-#include<mcapi/Level.h>
+#include<mc/Level.h>
 static MSearcherEx<unsigned long long> wa_getrtid;
 unsigned long long WActor::getRuntimeID() {
 	if (!wa_getrtid.myOff) {
@@ -18,7 +18,7 @@ unsigned long long WActor::getRuntimeID() {
 	return *wa_getrtid.get(v);
 }
 static uintptr_t poff_dim;
-LBAPI WDim WActor::getDim() {
+LIAPI WDim WActor::getDim() {
 	if (!poff_dim) {
 		char filler[256];
 		SymCall("??0ActorCommandOrigin@@QEAA@AEAVActor@@@Z", void, char*, Actor*)(filler, v);
@@ -37,10 +37,10 @@ LBAPI WDim WActor::getDim() {
 	ptr += poff_dim;
 	return WDim(**(Dimension**)ptr);
 }
-LBAPI int WActor::getDimID() {
+LIAPI int WActor::getDimID() {
 	return v->getDimensionId();
 }
-LBAPI void WActor::teleport(Vec3 to, int dimid) {
+LIAPI void WActor::teleport(Vec3 to, int dimid) {
 	if (getDimID()!=dimid)
 		SymCall("?teleport@TeleportCommand@@AEBAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@@Z", void, void*, Actor*, Vec3, Vec3*, int)(NULL, v, to, &to, dimid);
 	SymCall("?teleport@TeleportCommand@@AEBAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@@Z", void, void*, Actor*, Vec3, Vec3*, int)(NULL, v, to, &to, dimid);

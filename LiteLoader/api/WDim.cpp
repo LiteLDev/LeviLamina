@@ -1,15 +1,15 @@
 ﻿#include <lbpch.h>
 #include<api\types\types.h>
-#include<mcapi/Dimension.h>
-#include<mcapi/Level.h>
-#include<mcapi/BlockSource.h>
+#include<mc/Dimension.h>
+#include<mc/Level.h>
+#include<mc/BlockSource.h>
 
 static std::unordered_map<void*, int> dim_id;
 static uintptr_t bs_dim;
-LBAPI WDim WBlockSource::getDim() {
+LIAPI WDim WBlockSource::getDim() {
 	return *(WDim*)((uintptr_t)v + bs_dim);
 }
-LBAPI int WDim::getID() {
+LIAPI int WDim::getID() {
 	return dim_id[v];
 }
 THook(void*, "??0BlockSource@@QEAA@AEAVLevel@@AEAVDimension@@AEAVChunkSource@@_N3@Z", void* a0, void* a1, void* a2_dim, void* a3, bool a4, bool a5) {
@@ -27,14 +27,14 @@ THook(void*, "??0BlockSource@@QEAA@AEAVLevel@@AEAVDimension@@AEAVChunkSource@@_N
 	}
 	return rv;
 }
-THook(void*, "??0Dimension@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@FAEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", void* a0_dim, void* a1, int a2_id, void* a3, void* a4, void* a5) {
-	auto rv = original(a0_dim, a1, a2_id, a3, a4, a5);
-	dim_id[a0_dim] = a2_id;
-	return rv;
-}
+//THook(void*, "??0Dimension@@QEAA@AEAVLevel@@V?$AutomaticID@VDimension@@H@@FAEAVScheduler@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", void* a0_dim, void* a1, int a2_id, void* a3, void* a4, void* a5) {
+//	auto rv = original(a0_dim, a1, a2_id, a3, a4, a5);
+//	dim_id[a0_dim] = a2_id;
+//	return rv;
+//}
 #include<debug/MemSearcher.h>
 static MSearcherEx<BlockSource*> pDim_BS;
-LBAPI BlockSource& WDim::getBlockSource_() {
+LIAPI BlockSource& WDim::getBlockSource_() {
 	if (!pDim_BS.myOff) {
 		pDim_BS.init(
 			v, [](void* x) {
@@ -47,10 +47,10 @@ LBAPI BlockSource& WDim::getBlockSource_() {
 		return *dAccess<BlockSource*, 72>(v); //TODO auto search
 	#endif
 }
-LBAPI void WDim::setBlock(int x, int y, int z, Block const& blk) {
+LIAPI void WDim::setBlock(int x, int y, int z, Block const& blk) {
 	getBlockSource_().setBlock({ x, y, z }, blk, 3, nullptr);
 	//stub
 }
-LBAPI struct WBlock WDim::getBlock(int x, int y, int z) {
+LIAPI struct WBlock WDim::getBlock(int x, int y, int z) {
 	return WBlock(getBlockSource_().getBlock(x, y, z));
 }

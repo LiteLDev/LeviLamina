@@ -58,6 +58,15 @@
     <Filter Include="源文件\gui">
       <UniqueIdentifier>{65e3ce7c-439f-4181-8aaa-97365714688a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\DEBUG">
+      <UniqueIdentifier>{2028fac7-4dc0-4e7b-beb8-d0e16b86f557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\scheduler">
+      <UniqueIdentifier>{a94a3611-0e05-4e6b-b737-60d12b14a0c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\api\scheduler">
+      <UniqueIdentifier>{abfed4ae-cb19-4a94-9aae-b2f9f9d1cb37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -252,6 +261,9 @@
     <ClInclude Include="..\headers\api\gui\gui.h">
       <Filter>头文件\api\gui</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\scheduler\scheduler.h">
+      <Filter>头文件\api\scheduler</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -286,6 +298,36 @@
     </ClCompile>
     <ClCompile Include="gui\gui.cpp">
       <Filter>源文件\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\MSearch.cpp">
+      <Filter>源文件\DEBUG</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\watchdog.cpp">
+      <Filter>源文件\DEBUG</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WActor.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WDim.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WItem.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WLevel.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WMob.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\WPlayer.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="stl\LogFlush.cpp">
+      <Filter>源文件\stl</Filter>
+    </ClCompile>
+    <ClCompile Include="scheduler\sch.cpp">
+      <Filter>源文件\scheduler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

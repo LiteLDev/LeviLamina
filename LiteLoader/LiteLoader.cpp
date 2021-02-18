@@ -2,6 +2,9 @@
 #include <filesystem>
 #include "framework.h"
 #include <api\xuidreg\xuidreg.h>
+#include <lbpch.h>
+
+Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
 
 static void PrintErrorMessage() {
 	DWORD errorMessageID = ::GetLastError();
