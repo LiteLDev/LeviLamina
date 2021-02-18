@@ -4,6 +4,7 @@ struct WPlayer;
 #include <liteloader.h>
 #include <stl\useful.h>
 #include <mc/Player.h>
+#include <vector>
 class NetworkIdentifier;
 namespace liteloader {
 	using std::string;
@@ -11,6 +12,7 @@ namespace liteloader {
 	LIAPI bool runcmdAs(Player*, const string& cmd);
 	LIAPI std::pair<bool, string> runcmdEx(const string& cmd);
 	LIAPI string getIP(NetworkIdentifier&);
+	LIAPI std::vector<Player*> getAllPlayers();
 	template<typename T>
 	static inline void APPEND(string& r,T&& x) {
 		r.append(S(std::forward<T>(x)));
@@ -28,4 +30,5 @@ namespace liteloader {
 		(APPEND(s, std::forward<T>(a)), ...);
 		return runcmdAs(p, s);
 	}
+
 };

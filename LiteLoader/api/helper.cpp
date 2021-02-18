@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <mc/mass.h>
 #include <iostream>
+#include <vector>
 #include <api/serviceLocate.h>
 using std::unordered_map;
 class ServerLevel;
@@ -68,6 +69,15 @@ namespace liteloader {
 	LIAPI string getIP(class ::NetworkIdentifier& ni) {
 		string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
 		return rv.substr(0,rv.find('|'));
+	}
+	LIAPI std::vector<Player*> getAllPlayers() {
+		std::vector<Player*> PlayerList;
+		SymCall("?forEachPlayer@Level@@QEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z", void, Level*, function<bool(Player&)>)(LocateS<Level>::_srv, [&](Player& sp)->bool{
+			Player* player = &sp;
+			PlayerList.push_back(player);
+			return 1;
+			});
+		return PlayerList;
 	}
 };
 THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z", void* thi, void* ori, void* out) {
