@@ -2,7 +2,7 @@
 #include <tuple>
 #include <mc/Command/CommandReg.h>
 #include <stl/optional.h>
-CommandRegistry* CmdRegGlobal = nullptr;
+inline CommandRegistry* CmdRegGlobal = nullptr;
 namespace CMDREG {
 	inline void SetCommandRegistry(CommandRegistry* reg) {
 		CmdRegGlobal = reg;

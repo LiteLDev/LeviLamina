@@ -52,6 +52,12 @@
     <Filter Include="头文件\api\refl">
       <UniqueIdentifier>{0d3e198f-cfcb-4900-a8f6-94ff471deb66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\api\gui">
+      <UniqueIdentifier>{06ab7eab-1ce6-4532-9a7e-b8ac3cfd6e45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\gui">
+      <UniqueIdentifier>{65e3ce7c-439f-4181-8aaa-97365714688a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -243,6 +249,9 @@
     <ClInclude Include="..\headers\api\refl\playerMap.h">
       <Filter>头文件\api\refl</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\gui\gui.h">
+      <Filter>头文件\api\gui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -274,6 +283,9 @@
     </ClCompile>
     <ClCompile Include="mc\RuntimeRefl.cpp">
       <Filter>源文件\mc</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\gui.cpp">
+      <Filter>源文件\gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

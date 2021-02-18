@@ -159,6 +159,7 @@
   <ItemGroup>
     <ClInclude Include="..\headers\api\Basic_Event.h" />
     <ClInclude Include="..\headers\api\commands.h" />
+    <ClInclude Include="..\headers\api\gui\gui.h" />
     <ClInclude Include="..\headers\api\myPacket.h" />
     <ClInclude Include="..\headers\api\refl\playerMap.h" />
     <ClInclude Include="..\headers\api\serviceLocate.h" />
@@ -230,6 +231,9 @@
     </ClCompile>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="dlsym.cpp" />
+    <ClCompile Include="gui\gui.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="mc\RuntimeRefl.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
