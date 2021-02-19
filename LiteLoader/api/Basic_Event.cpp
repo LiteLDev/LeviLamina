@@ -14,7 +14,7 @@ class ServerPlayer;
 class NetworkIdentifier;
 vector<function<void(JoinEV)>> JoinCallBacks;
 LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
-	JoinCallBacks.push_back(callback);
+    JoinCallBacks.push_back(callback);
 }
 THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@@Z",
     void* ServerNetworkHandler_this, NetworkIdentifier* Ni, void* ConnectionRequest, ServerPlayer* sp) {
@@ -40,7 +40,7 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
     for (size_t count = 0; count < LeftCallBacks.size(); count++) {
         LeftCallBacks[count](LeftEV);
     }
-    return original(_this, sp,a3);
+    return original(_this, sp, a3);
 }
 
 vector<function<void(ChatEV)>> ChatCallBacks;
@@ -83,23 +83,23 @@ vector<function<bool(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;
 LIAPI void Event::addEventListener(function<bool(PlayerUseCmdEV)> callback) {
     PlayerUseCmdCallBacks.push_back(callback);
 }
-THook(bool,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
-	MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
-    
-	Player* sp = MakeSP(x->getOrigin());
+THook(bool, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
+    MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
+
+    Player* sp = MakeSP(x->getOrigin());
     bool result = original(_this, a2, x, a4);
-	if (sp) {
+    if (sp) {
         string cmd = x->getCmd();
         if (cmd.at(0) == '/') {
             cmd = cmd.substr(1, cmd.size() - 1);
         }
-        PlayerUseCmdEV PlayerUseCmdEV = { sp,cmd,result};
+        PlayerUseCmdEV PlayerUseCmdEV = { sp,cmd,result };
         for (size_t count = 0; count < PlayerUseCmdCallBacks.size(); count++) {
             bool ret = PlayerUseCmdCallBacks[count](PlayerUseCmdEV);
             if (ret)
                 return true;
         }
-	}
+    }
     return result;
 }
 class BaseCommandBlock;
@@ -135,8 +135,8 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
     return original(thi, src);
 }
 
-vector<function<void(PlayerDestroyEv)>> PlayerDestroyCallBacks;
-LIAPI void Event::addEventListener(function<void(PlayerDestroyEv)> callback) {
+vector<function<void(PlayerDestroyEV)>> PlayerDestroyCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
     PlayerDestroyCallBacks.push_back(callback);
 }
 class BlockLegacy;
@@ -149,7 +149,7 @@ THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEB
     for (size_t count = 0; count < PlayerDestroyCallBacks.size(); count++) {
         PlayerDestroyCallBacks[count](PlayerDestroyEv);
     }
-    return original(_this,pl,blkpos,bl);
+    return original(_this, pl, blkpos, bl);
 }
 
 
@@ -158,7 +158,7 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     PlayerUseItemOnCallBacks.push_back(callback);
 }
 
-THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", 
+THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
     void* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     auto sp = *dAccess<ServerPlayer**, 8>(thi);
     PlayerUseItemOnEV PlayerUseItemOnEv = { sp,  &a2 , a3_pos, side };
@@ -169,7 +169,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
     for (size_t count = 0; count < PlayerUseItemOnCallBacks.size(); count++) {
         PlayerUseItemOnCallBacks[count](PlayerUseItemOnEv);
     }
-     return original(thi, a2, a3_pos, side, a5, a6_block);
+    return original(thi, a2, a3_pos, side, a5, a6_block);
 }
 
 
@@ -188,4 +188,3 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z", Mob* ac, ActorDam
     }
     return original(ac, src, damage, unk1_1, unk2_0);
 }
-*/
