@@ -252,9 +252,6 @@
     <ClInclude Include="..\headers\api\myPacket.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
-    <ClInclude Include="packet_api.h">
-      <Filter>头文件\api</Filter>
-    </ClInclude>
     <ClInclude Include="..\headers\api\refl\playerMap.h">
       <Filter>头文件\api\refl</Filter>
     </ClInclude>

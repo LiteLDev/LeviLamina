@@ -105,7 +105,7 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline auto getDim() {
 		return actor()->getDim();
 	}
-	LIAPI void sendText(string_view text, TextType type = RAW);
+	//LIAPI void sendText(string_view text, TextType type = RAW);
 	LIAPI void kick(std::string const& reason);
 	LIAPI void forceKick();
 	LIAPI void kill() {

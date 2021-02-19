@@ -6,13 +6,15 @@
 #include<mc/Player.h>
 #include<mc/Certificate.h>
 #include<debug\MemSearcher.h>
+
+/* 不可用
 LIAPI void WPlayer::sendText(string_view text, TextType tp) {
 	WBStream txtpkws;
 	txtpkws.data.reserve(8 + text.size());
 	txtpkws.apply((char)tp, (char)0, MCString(text));
 	MyPkt<9> pk{ txtpkws.data };
 	v->sendNetworkPacket(pk);
-}
+}*/
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*> MS_PC;
 /*

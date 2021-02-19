@@ -83,6 +83,13 @@ public:
 	ActorDamageSource* ActorDamageSource;
 	int Damage;
 };
+
+class PlayerUseItemEV {
+public:
+	ServerPlayer* Player;
+	ItemStack* ItemStack;
+};
+
 namespace Event {
 	LIAPI inline void addEventListener(function<void(JoinEV)> callback);
 	LIAPI inline void addEventListener(function<void(LeftEV)> callback);
@@ -96,4 +103,5 @@ namespace Event {
 	LIAPI inline void addEventListener(function<void(PlayerDestroyEV)> callback);
 	LIAPI inline void addEventListener(function<void(PlayerUseItemOnEV)> callback);
 	LIAPI inline void addEventListener(function<void(MobHurtedEV)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerUseItemEV)> callback);
 };
