@@ -135,7 +135,6 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
     return original(thi, src);
 }
 
-/*
 vector<function<void(PlayerDestroyEv)>> PlayerDestroyCallBacks;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEv)> callback) {
     PlayerDestroyCallBacks.push_back(callback);
@@ -143,7 +142,7 @@ LIAPI void Event::addEventListener(function<void(PlayerDestroyEv)> callback) {
 class BlockLegacy;
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
     BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
-    PlayerDestroyEv PlayerDestroyEv;
+    PlayerDestroyEV PlayerDestroyEv;
     PlayerDestroyEv.Player = &pl;
     PlayerDestroyEv.blkpos = blkpos;
     PlayerDestroyEv.bl = &bl;
@@ -154,15 +153,15 @@ THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEB
 }
 
 
-vector<function<void(PlayerUseItemOnEv)>> PlayerUseItemOnCallBacks;
-LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEv)> callback) {
+vector<function<void(PlayerUseItemOnEV)>> PlayerUseItemOnCallBacks;
+LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     PlayerUseItemOnCallBacks.push_back(callback);
 }
 
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z", 
     void* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     auto sp = *dAccess<ServerPlayer**, 8>(thi);
-    PlayerUseItemOnEv PlayerUseItemOnEv = { sp,  &a2 , a3_pos, side };
+    PlayerUseItemOnEV PlayerUseItemOnEv = { sp,  &a2 , a3_pos, side };
     PlayerUseItemOnEv.Player = sp;
     PlayerUseItemOnEv.blkpos = a3_pos;
     PlayerUseItemOnEv.ItemStack = &a2;
@@ -174,13 +173,13 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
 }
 
 
-vector<function<void(MobHurtedEv)>> MobHurtedCallBacks;
-LIAPI void Event::addEventListener(function<void(MobHurtedEv)> callback) {
+vector<function<void(MobHurtedEV)>> MobHurtedCallBacks;
+LIAPI void Event::addEventListener(function<void(MobHurtedEV)> callback) {
     MobHurtedCallBacks.push_back(callback);
 }
 
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z", Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) {
-    MobHurtedEv MobHurtedEv;
+    MobHurtedEV MobHurtedEv;
     MobHurtedEv.ActorDamageSource = &src;
     MobHurtedEv.Damage = damage;
     MobHurtedEv.Mob = ac;

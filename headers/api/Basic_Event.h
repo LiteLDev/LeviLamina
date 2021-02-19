@@ -61,7 +61,7 @@ class RegCmdEV {
 public:
 	CommandRegistry* CMDRg;
 };
-/*
+
 class PlayerDestroyEv {
 public:
 	Player* Player;
@@ -69,7 +69,7 @@ public:
 	Block* bl;
 };
 
-class PlayerUseItemOnEv {
+class PlayerUseItemOnEV {
 public:
 	ServerPlayer* Player;
 	ItemStack* ItemStack;
@@ -77,7 +77,7 @@ public:
 	char side;
 };
 
-class MobHurtedEv {
+class MobHurtedEV {
 public:
 	Mob* Mob;
 	ActorDamageSource* ActorDamageSource;
@@ -94,7 +94,7 @@ namespace Event {
 	LIAPI inline void addEventListener(function<bool(CmdBlockExeEV)> callback);
 	LIAPI inline void addEventListener(function<void(RegCmdEV)> callback);
 	LIAPI inline void addEventListener(function<void(PlayerDeathEV)> callback);
-	//LIAPI inline void addEventListener(function<void(PlayerDestroyEv)> callback);
-	//LIAPI inline void addEventListener(function<void(PlayerUseItemOnEv)> callback);
-	//LIAPI inline void addEventListener(function<void(MobHurtedEv)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerDestroyEv)> callback);
+	LIAPI inline void addEventListener(function<void(PlayerUseItemOnEv)> callback);
+	LIAPI inline void addEventListener(function<void(MobHurtedEv)> callback);
 };
