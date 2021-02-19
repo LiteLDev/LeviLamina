@@ -68,9 +68,15 @@ static void loadPlugins() {
 	printf(info, plugins, LiteLoaderVersion);
 #endif
 }
+
+void startWBThread();
+
 static void entry(bool fixcwd) {
 	loadPlugins();
 	XIDREG::initAll();
+	Event::addEventListener([](ServerStartedEV) {
+		startWBThread();
+		});
 }
 
 THook(int, "main", int a, void* b) {

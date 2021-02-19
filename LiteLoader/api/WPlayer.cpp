@@ -8,7 +8,7 @@
 #include<debug\MemSearcher.h>
 LIAPI void WPlayer::sendText(string_view text, TextType tp) {
 	WBStream txtpkws;
-	txtpkws.data.reserve(40 + text.size());
+	txtpkws.data.reserve(8 + text.size());
 	txtpkws.apply((char)tp, (char)0, MCString(text));
 	MyPkt<9> pk{ txtpkws.data };
 	v->sendNetworkPacket(pk);

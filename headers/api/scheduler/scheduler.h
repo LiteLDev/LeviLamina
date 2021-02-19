@@ -5,8 +5,8 @@
 typedef unsigned long long tick_t;
 typedef unsigned int taskid_t;
 namespace Handler {
-	extern LIAPI tick_t ticknow;
-	extern LIAPI taskid_t gtaskid;
+	tick_t ticknow;
+	taskid_t gtaskid;
 	//#ifdef LITELOADER_EXPORTS
 	extern LIAPI tick_t _tick;
 	//#endif

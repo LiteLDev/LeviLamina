@@ -42,6 +42,6 @@ LIAPI int WActor::getDimID() {
 }
 LIAPI void WActor::teleport(Vec3 to, int dimid) {
 	if (getDimID()!=dimid)
-		SymCall("?teleport@TeleportCommand@@AEBAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@@Z", void, void*, Actor*, Vec3, Vec3*, int)(NULL, v, to, &to, dimid);
-	SymCall("?teleport@TeleportCommand@@AEBAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@@Z", void, void*, Actor*, Vec3, Vec3*, int)(NULL, v, to, &to, dimid);
+		SymCall("?teleport@TeleportCommand@@SAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4HAEBUActorUniqueID@@@Z", void, Actor*, Vec3, Vec3*, int)( v, to, &to, dimid);
+	SymCall("?teleport@TeleportCommand@@SAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4HAEBUActorUniqueID@@@Z", void , Actor*, Vec3, Vec3*, int)( v, to, &to, dimid);
 }

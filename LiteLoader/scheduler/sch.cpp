@@ -7,9 +7,7 @@
 #include<api\scheduler\scheduler.h>
 using std::function;
 namespace Handler {
-	LIAPI tick_t ticknow;
-	LIAPI taskid_t gtaskid;
-	tick_t _tick;
+	LIAPI tick_t _tick;
 	static std::multimap<tick_t, ITaskBase> tasks;
 	static std::deque<function<void()>> next_run;
 	static std::atomic_flag cas_main = {};
