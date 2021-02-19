@@ -135,6 +135,7 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
     return original(thi, src);
 }
 
+/*
 vector<function<void(PlayerDestroyEv)>> PlayerDestroyCallBacks;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEv)> callback) {
     PlayerDestroyCallBacks.push_back(callback);
@@ -188,3 +189,4 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z", Mob* ac, ActorDam
     }
     return original(ac, src, damage, unk1_1, unk2_0);
 }
+*/

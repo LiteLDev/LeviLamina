@@ -14,7 +14,7 @@ struct LocateS {
 	}
 	static void assign(const T& srv) {
 		#ifdef LITELOADER_EXPORTS
-		//LOG("[LocateService] located",typeid(decltype(_srv)).name(),"->",(void*)&srv);
+		//printf("[LiteLoader][LocateService] located",typeid(decltype(_srv)).name(),"->",(void*)&srv);
 		#endif
 		_srv = (T*)&srv;
 	}

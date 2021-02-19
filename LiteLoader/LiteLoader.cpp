@@ -25,10 +25,19 @@ const char* info =
 "[LiteLoader] %d plugin(s) loaded\n"
 "[LiteLoader] Version: %s Based on BedrockX Project\n"
 "[LiteLoader] Github: https://git.io/JtwPb\n";
-
+static void fixupLIBDIR() {
+	WCHAR* buffer = new WCHAR[8192];
+	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
+	std::wstring PATH{ buffer, sz };
+	sz = GetCurrentDirectoryW(8192, buffer);
+	std::wstring CWD{ buffer, sz };
+	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
+	delete[] buffer;
+}
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	std::filesystem::create_directory("plugins");
+	fixupLIBDIR();
 	std::filesystem::directory_iterator ent("plugins");
 	std::cout << "[LiteLoader] Loading plugins\n";
 	short plugins = 0;
