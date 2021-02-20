@@ -59,8 +59,13 @@ jobs:
         cp -a headers/* D:/out/headers
       shell: bash
         
+    - name: Action 7z
+      uses: edgarrc/action-7z@v1
+      with:
+        args: 7z a D:/LiteLoader.7z D:/out/
+
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
-        path: D:/out
+        path: D:/LiteLoader.7z
