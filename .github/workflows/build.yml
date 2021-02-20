@@ -59,10 +59,11 @@ jobs:
         cp -a headers/* D:/out/headers
       shell: bash
         
-    - name: Action 7z
-      uses: edgarrc/action-7z@v1
+    - name: create-7z-action
+      uses: DuckSoft/create-7z-action@v1.0
       with:
-        args: 7z a D:/LiteLoader.7z D:/out/
+        pathSource: D:/out/
+        pathTarget: D:/LiteLoader.7z
 
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
