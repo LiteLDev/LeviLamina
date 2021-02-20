@@ -9,6 +9,12 @@ class Certificate;
 class BaseCommandBlock;
 typedef unsigned long long xuid_t;
 namespace offPlayer {
+	inline NetworkIdentifier* getNetworkIdentifier(Player* pl) {
+		return (NetworkIdentifier*)((uintptr_t)pl + 2536); //ServerPlayer::isHostingPlayer
+	}
+	inline Level* getLevel(Player* pl) {
+		return (Level*)*((uintptr_t*)((uintptr_t)pl + 856));
+	}
 	inline Certificate* getCert(Player* pl) {
 		return dAccess<Certificate*, 2840>(pl);
 	}
