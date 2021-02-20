@@ -59,8 +59,14 @@ jobs:
         cp -a headers/* D:/out/headers
       shell: bash
         
+    - name: create-7z-action
+      uses: DuckSoft/create-7z-action@v1.0
+      with:
+        pathSource: D:/out/
+        pathTarget: D:/LiteLoader.7z
+
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
-        path: D:/out
+        path: D:/LiteLoader.7z
