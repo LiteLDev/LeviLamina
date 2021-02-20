@@ -91,9 +91,9 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline WMob* mob() {
 		return (WMob*)this;
 	}
-	LIAPI string const& getName();
-	LIAPI xuid_t getXuid();
-	LIAPI string getRealName();
+	//LIAPI string const& getName(); --请看mc/offplayer
+	//LIAPI xuid_t getXuid();--请看mc/offplayer
+	//LIAPI string getRealName();--请看mc/offplayer
 	LIAPI permlvl_t getPermLvl();
 	LIAPI class BlockSource& getBlockSource_();
 	inline void teleport(Vec3 to, int dimid) {

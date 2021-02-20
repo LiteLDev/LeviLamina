@@ -78,6 +78,11 @@ static void loadPlugins() {
 #endif
 }
 
+
+vector<function<void(PostInitEV)>> PostInitCallBacks;
+LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
+	PostInitCallBacks.push_back(callback);
+}
 void startWBThread();
 
 static void entry(bool fixcwd) {
@@ -86,6 +91,10 @@ static void entry(bool fixcwd) {
 	Event::addEventListener([](ServerStartedEV) {
 		startWBThread();
 		});
+	PostInitEV PostInitEV;
+	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
+		PostInitCallBacks[count](PostInitEV);
+	}
 }
 
 THook(int, "main", int a, void* b) {

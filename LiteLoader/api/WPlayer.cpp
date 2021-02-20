@@ -87,20 +87,20 @@ struct xuidStorage {
 	operator xuid_t() {
 		return val;
 	}
-	operator const string&() {
+	operator const string& () {
 		return name;
 	}
 };
 static playerMap<xuidStorage> xuid_cache;
-LIAPI xuid_t WPlayer::getXuid() {
-	return xuid_cache[v];
-}
-LIAPI const string& WPlayer::getName() {
-	return xuid_cache[v];
-}
-LIAPI string WPlayer::getRealName() {
-	return ExtendedCertificate::getIdentityName(*_getCert());
-}
+//LIAPI xuid_t WPlayer::getXuid() {  ---请用offPlayer::getXUIDbyCert
+//	return xuid_cache[v];
+//}
+//LIAPI const string& WPlayer::getName() { ---请用getnametag
+//	return xuid_cache[v];
+//}
+//LIAPI string WPlayer::getRealName() {  ---请用offPlayer::getRealName
+//	return ExtendedCertificate::getIdentityName(*_getCert());
+//}
 LIAPI permlvl_t WPlayer::getPermLvl() {
 	return v->getCommandPermissionLevel()&0xff;
 }

@@ -51,6 +51,10 @@ class ServerStartedEV {
 
 };
 
+class  PostInitEV {
+
+};
+
 class PlayerDeathEV {
 public:
 	ServerPlayer* Player;
@@ -104,4 +108,5 @@ namespace Event {
 	LIAPI inline void addEventListener(function<void(PlayerUseItemOnEV)> callback);
 	LIAPI inline void addEventListener(function<void(MobHurtedEV)> callback);
 	LIAPI inline void addEventListener(function<void(PlayerUseItemEV)> callback);
+	LIAPI inline void addEventListener(function<void(PostInitEV)> callback);
 };
