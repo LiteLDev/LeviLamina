@@ -59,7 +59,13 @@ jobs:
         cp -a headers/* D:/out/headers
       shell: bash
         
-    - name: create-7z-action
+      - name: UPX GitHub Action
+        uses: crazy-max/ghaction-upx@v1.3.3
+        with:
+          version: latest
+          file: D:/out/LiteLoader.dll
+
+    - name: Create 7z
       uses: DuckSoft/create-7z-action@v1.0
       with:
         pathSource: D:/out/
