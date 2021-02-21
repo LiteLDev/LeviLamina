@@ -58,12 +58,12 @@ jobs:
         cp -a D:/cc/x64_release/ChakraCore.dll D:/out/
         cp -a headers/* D:/out/headers
       shell: bash
-        
-      - name: UPX GitHub Action
-        uses: crazy-max/ghaction-upx@v1.3.3
-        with:
-          version: latest
-          file: D:/out/LiteLoader.dll
+
+    - name: UPX GitHub Action
+      uses: crazy-max/ghaction-upx@v1.3.3
+      with:
+        version: latest
+        file: D:/out/LiteLoader.dll
 
     - name: Create 7z
       uses: DuckSoft/create-7z-action@v1.0
