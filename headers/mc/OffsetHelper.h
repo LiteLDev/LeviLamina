@@ -12,7 +12,7 @@ namespace offPlayer {
 	inline NetworkIdentifier* getNetworkIdentifier(Player* pl) {
 		return (NetworkIdentifier*)((uintptr_t)pl + 2536); //ServerPlayer::isHostingPlayer
 	}
-	inline Level* getLevel(Player* pl) {
+	inline Level* getLevel(void* pl) {
 		return (Level*)*((uintptr_t*)((uintptr_t)pl + 856));
 	}
 	inline Certificate* getCert(Player* pl) {
