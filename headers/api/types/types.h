@@ -10,11 +10,17 @@
 #include <api/types/helper.h>
 typedef unsigned long long xuid_t;
 typedef unsigned char permlvl_t;
-enum TextType : char {
+enum TextType : char { 
 	RAW = 0,
+	CHAT = 1,
+	TRANSLATION = 2,
 	POPUP = 3,
 	JUKEBOX_POPUP = 4,
-	TIP = 5
+	TIP = 5,
+	SYSTEM = 6,
+	WHISPER = 7,
+	ANNOUNCEMENT = 8,
+	JSON = 9
 };
 template <typename T>
 struct Wrapped {
@@ -24,10 +30,10 @@ struct Wrapped {
 	Wrapped() {
 		v = nullptr;
 	}
-	operator T&() {
+	operator T& () {
 		return *v;
 	}
-	operator T*() {
+	operator T* () {
 		return v;
 	}
 	T& get() {
@@ -100,12 +106,12 @@ struct WPlayer : Wrapped<ServerPlayer> {
 		actor()->teleport(to, dimid);
 	}
 	inline auto getDimID() {
-	return actor()->getDimID();
+		return actor()->getDimID();
 	}
 	inline auto getDim() {
 		return actor()->getDim();
 	}
-	//LIAPI void sendText(string_view text, TextType type = RAW);
+	LIAPI void sendText(string_view text, TextType type = RAW);
 	LIAPI void kick(std::string const& reason);
 	LIAPI void forceKick();
 	LIAPI void kill() {
@@ -136,7 +142,7 @@ struct WBlock : Wrapped<Block> {
 struct WBlockActor : Wrapped<BlockActor> {
 	WBlockActor(BlockActor& i) : Wrapped<BlockActor>(i) {}
 };
-struct WBlockSource:Wrapped<BlockSource> {
+struct WBlockSource :Wrapped<BlockSource> {
 	WBlockSource(BlockSource& x) : Wrapped<BlockSource>(x) {}
 	LIAPI WDim getDim();
 };

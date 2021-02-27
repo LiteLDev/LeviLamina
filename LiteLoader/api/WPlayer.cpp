@@ -7,14 +7,23 @@
 #include<mc/Certificate.h>
 #include<debug\MemSearcher.h>
 
-/* 不可用
+
 LIAPI void WPlayer::sendText(string_view text, TextType tp) {
-	WBStream txtpkws;
-	txtpkws.data.reserve(8 + text.size());
-	txtpkws.apply((char)tp, (char)0, MCString(text));
-	MyPkt<9> pk{ txtpkws.data };
-	v->sendNetworkPacket(pk);
-}*/
+	//WBStream txtpkws;
+	//txtpkws.data.reserve(8 + text.size());
+	//txtpkws.apply((char)tp, (char)0, MCString(text));
+	//MyPkt<9> pk{ txtpkws.data };
+	//v->sendNetworkPacket(pk);
+	//上面是用不了的旧代码
+	Packet* pkt;
+	SymCall("?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
+		void*, Packet**, int)(&pkt, 9);//创建包
+	dAccess<char, 40>(pkt) = (char)tp;
+	dAccess<string, 48>(pkt) = u8"Server";
+	//dAccess<string, 48>(pkt) = this->getName();
+	dAccess<string, 80>(pkt) = text;
+	((ServerPlayer*)this)->sendNetworkPacket(*pkt);
+}
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*> MS_PC;
 /*
@@ -98,24 +107,24 @@ static playerMap<xuidStorage> xuid_cache;
 LIAPI const string& WPlayer::getName() {
 	return xuid_cache[v];
 }
-/*LIAPI string WPlayer::getRealName() {  
+/*LIAPI string WPlayer::getRealName() {
 	return ExtendedCertificate::getIdentityName(*_getCert());
 }*/
 LIAPI permlvl_t WPlayer::getPermLvl() {
-	return v->getCommandPermissionLevel()&0xff;
+	return v->getCommandPermissionLevel() & 0xff;
 }
 static MSearcherEx<BlockSource*> pPly_BS;
 LIAPI class BlockSource& WPlayer::getBlockSource_() {
 	if (!pPly_BS.myOff) {
 		pPly_BS.init(
 			v, [](void* x) {
-				return (MreadPtr_Compare((const void***)x, SYM("??_7BlockSource@@6B@")));
-			},
-			0x348);
+			return (MreadPtr_Compare((const void***)x, SYM("??_7BlockSource@@6B@")));
+},
+0x348);
 	}
 	return **pPly_BS.get(v);
 	//_ZNK5Actor9getRegionEv
-	#if 0
-		return *dAccess<BlockSource*, 0x348>(v);
-	#endif
+#if 0
+	return *dAccess<BlockSource*, 0x348>(v);
+#endif
 }
