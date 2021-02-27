@@ -43,16 +43,20 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
 	return original(_this, sp, a3);
 }
 
-vector<function<void(ChatEV)>> ChatCallBacks;
-LIAPI void Event::addEventListener(function<void(ChatEV)> callback) {
+vector<function<bool(ChatEV)>> ChatCallBacks;
+LIAPI void Event::addEventListener(function<bool(ChatEV)> callback) {
 	ChatCallBacks.push_back(callback);
 }
 THook(void, "?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", void* snh, ServerPlayer* sp, string* msg) {
 	ChatEV ChatEV = { sp,  *msg };
+	bool isCancelled = false;
 	for (size_t count = 0; count < ChatCallBacks.size(); count++) {
-		ChatCallBacks[count](ChatEV);
+		if (!ChatCallBacks[count](ChatEV))
+			isCancelled = true;
 	}
-	original(snh, sp, msg);
+	if (!isCancelled) {
+		original(snh, sp, msg);
+	}
 }
 
 class ChangeDimensionRequest;
@@ -197,4 +201,25 @@ THook(bool, "?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z", void* thi, ItemStack& 
 		PlayerUseItemCallBacks[count](playerUseItemEV);
 	}
 	return original(thi, a2);
+}
+
+vector <function<void(MobDieEV)>> MobDieCallBacks;
+LIAPI void Event::addEventListener(function<void(MobDieEV)> callback) {
+	MobDieCallBacks.push_back(callback);
+}
+template<typename T,typename T1>
+void CallEvent(vector<T>& vec,T1& ev) {
+	for (size_t count = 0; count < vec.size(); count++) {
+		vec[count](ev);
+	}
+}
+THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
+	Mob* mob, void* ads) {
+	char v83;
+	auto v6 = *(void**)(*(__int64(__fastcall**)(void*, char*))(*(uintptr_t*)ads + 64i64))(ads, &v83);
+	auto level = offPlayer::getLevel(mob);
+	auto ac = SymCall("?fetchEntity@Level@@QEBAPEAVActor@@UActorUniqueID@@_N@Z"
+		, Actor*, Level*, void*, bool)(level, v6, 0);
+	MobDieEV md = { mob,ac };
+	CallEvent(MobDieCallBacks, md);
 }
