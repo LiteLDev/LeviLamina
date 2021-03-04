@@ -222,4 +222,5 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
 		, Actor*, Level*, void*, bool)(level, v6, 0);
 	MobDieEV md = { mob,ac };
 	CallEvent(MobDieCallBacks, md);
+	return original(mob, ads);
 }
