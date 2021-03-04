@@ -97,6 +97,7 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline WMob* mob() {
 		return (WMob*)this;
 	}
+	LIAPI void sendText(string text, TextType type = RAW);
 	LIAPI string const& getName();
 	//LIAPI xuid_t getXuid();
 	//LIAPI string getRealName();
@@ -111,7 +112,6 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	inline auto getDim() {
 		return actor()->getDim();
 	}
-	LIAPI void sendText(string_view text, TextType type = RAW);
 	LIAPI void kick(std::string const& reason);
 	LIAPI void forceKick();
 	LIAPI void kill() {
