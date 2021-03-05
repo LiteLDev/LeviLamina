@@ -37,6 +37,7 @@ See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
     <td align="center"><a href="https://github.com/WangYneos"><img src="https://avatars.githubusercontent.com/u/42824603?v=4?s=100" width="100px;" alt=""/><br /><sub><b>WangYneos</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=WangYneos" title="Code">💻</a></td>
     <td align="center"><a href="https://www.sakuralo.top"><img src="https://avatars.githubusercontent.com/u/53301243?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ShrBox</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=ShrBox" title="Code">💻</a> <a href="#blog-ShrBox" title="Blogposts">📝</a></td>
     <td align="center"><a href="https://github.com/wzyyyyyyy"><img src="https://avatars.githubusercontent.com/u/59381521?v=4?s=100" width="100px;" alt=""/><br /><sub><b>wzy</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=wzyyyyyyy" title="Code">💻</a></td>
+        <td align="center"><a href="https://github.com/littlegao233"><img src="https://avatars.githubusercontent.com/u/46601807?s=400&u=8000418d205eb0f910d4a5023df44ba7b3464be9&v=4" width="100px;" alt=""/><br /><sub><b>wzy</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=littlegao233" title="Code">💻</a></td>
   </tr>
 </table>
 
