@@ -32,6 +32,15 @@
         "code",
         "blog"
       ]
+    },
+    {
+      "login": "littlegao233",
+      "name": "gxh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46601807?v=4",
+      "profile": "https://github.com/littlegao233",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
