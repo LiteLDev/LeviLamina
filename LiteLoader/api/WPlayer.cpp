@@ -8,7 +8,7 @@
 #include<debug\MemSearcher.h>
 
 
-LIAPI void WPlayer::sendText(string_view text, TextType tp) {
+LIAPI void WPlayer::sendText(string text, TextType tp) {
 	//WBStream txtpkws;
 	//txtpkws.data.reserve(8 + text.size());
 	//txtpkws.apply((char)tp, (char)0, MCString(text));
@@ -22,7 +22,7 @@ LIAPI void WPlayer::sendText(string_view text, TextType tp) {
 	dAccess<string, 48>(pkt) = u8"Server";
 	//dAccess<string, 48>(pkt) = this->getName();
 	dAccess<string, 80>(pkt) = text;
-	((ServerPlayer*)this)->sendNetworkPacket(*pkt);
+	v->sendNetworkPacket(*pkt);
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*> MS_PC;

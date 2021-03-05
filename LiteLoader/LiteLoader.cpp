@@ -46,11 +46,11 @@ static void loadPlugins() {
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
-				std::cout << "[LiteLoader] Plugin " << canonical(i.path()) << " loaded\n";
+				std::cout << "[LiteLoader] Plugin " << canonical(i.path()).u8string() << " loaded\n";
 				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
 			}
 			else {
-				std::cout << "[LiteLoader] Error when loading " << i.path() << "\n";
+				std::cout << "[LiteLoader] Error when loading " << i.path().u8string() << "\n";
 				PrintErrorMessage();
 			}
 		}
