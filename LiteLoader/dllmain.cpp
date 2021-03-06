@@ -7,8 +7,8 @@
 
 LIAPI string GetDataPath(const string& myname) {
     using namespace std::filesystem;
-    create_directory("data");
-    return "data/" + myname;
+    create_directory("plugins\\LiteLoader");
+    return "plugins\\LiteLoader\\" + myname;
 }
 
 BOOL APIENTRY DllMain( HMODULE hModule,
