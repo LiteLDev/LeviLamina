@@ -36,7 +36,6 @@ static void fixupLIBDIR() {
 }
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins");
 	fixupLIBDIR();
 	std::filesystem::directory_iterator ent("plugins");
 	std::cout << "[LiteLoader] Loading plugins\n";
@@ -65,7 +64,7 @@ static void loadPlugins() {
 				((void (*)()) FN)();
 			}
 			catch (...) {
-				std::wcerr << "[Error] mod" << name << " throws an exception when onPostInit\n";
+				std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
 				exit(1);
 			}
 		}
