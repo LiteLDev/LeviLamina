@@ -3,6 +3,7 @@
 #include "framework.h"
 #include <api\xuidreg\xuidreg.h>
 #include <lbpch.h>
+#include <api/commands.h>
 
 Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
 
@@ -82,13 +83,30 @@ vector<function<void(PostInitEV)>> PostInitCallBacks;
 LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
 	PostInitCallBacks.push_back(callback);
 }
+
+void FixUpCWD() {
+	string buf;
+	buf.assign(8192, '\0');
+	GetModuleFileNameA(nullptr, buf.data(), 8192);
+	buf = buf.substr(0, buf.find_last_of('\\'));
+	SetCurrentDirectoryA(buf.c_str());
+}
+
 void startWBThread();
+bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
 
 static void entry(bool fixcwd) {
+	if (fixcwd)
+		FixUpCWD();
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {
 		startWBThread();
+		});
+	Event::addEventListener([](RegCmdEV ev) {
+		CMDREG::SetCommandRegistry(ev.CMDRg);
+		MakeCommand("version", "Gets the version of this server", 0);
+		CmdOverload(version, versionCommand);
 		});
 	PostInitEV PostInitEV;
 	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
