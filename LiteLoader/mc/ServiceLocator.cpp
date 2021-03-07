@@ -6,8 +6,12 @@
 #include <liteloader.h>
 #include <loader/Loader.h>
 #include <api/Basic_Event.h>
+
 template <class T>
 LIAPI T* LocateS<T>::_srv;
+using std::cout;
+using std::endl;
+using std::vector;
 
 //?initAsDedicatedServer@Minecraft@@QEAAXXZ
 THook(void, "?init@Minecraft@@QEAAXXZ", Minecraft* mc) {

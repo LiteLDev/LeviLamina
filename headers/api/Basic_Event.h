@@ -3,7 +3,9 @@
 #include <liteloader.h>
 #include <functional>
 #include <mc\mass.h>
-using namespace std;
+#include <mc/Certificate.h>
+
+using std::function;
 typedef unsigned long long xuid_t;
 class Actor;
 class ServerPlayer;
@@ -11,6 +13,7 @@ class Player;
 class Block;
 class Mob;
 class ItemStack;
+
 class JoinEV {
 public:
 	ServerPlayer* Player;
@@ -100,6 +103,12 @@ public:
 	Mob* mob;
 	Actor* DamageSource;
 };
+
+class PreJoinEV {
+public:
+	Certificate* cert;
+};
+
 namespace Event {
 	LIAPI inline void addEventListener(function<void(JoinEV)> callback);
 	LIAPI inline void addEventListener(function<void(LeftEV)> callback);
@@ -116,4 +125,5 @@ namespace Event {
 	LIAPI inline void addEventListener(function<void(PlayerUseItemEV)> callback);
 	LIAPI inline void addEventListener(function<void(PostInitEV)> callback);
 	LIAPI inline void addEventListener(function<void(MobDieEV)> callback);
+	LIAPI inline void addEventListener(function<void(PreJoinEV)> callback);
 };

@@ -5,6 +5,8 @@
 #include <lbpch.h>
 #include <api/commands.h>
 
+using std::vector;
+
 Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
 
 static void PrintErrorMessage() {

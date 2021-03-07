@@ -12,6 +12,8 @@
 #include <mc/mass.h>
 class ServerPlayer;
 class NetworkIdentifier;
+using std::vector;
+
 vector<function<void(JoinEV)>> JoinCallBacks;
 LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
 	JoinCallBacks.push_back(callback);
@@ -131,8 +133,7 @@ LIAPI void Event::addEventListener(function<void(PlayerDeathEV)> callback) {
 }
 
 THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, void* src) {
-	PlayerDeathEV playerDeathEv;
-	playerDeathEv.Player = &thi;
+	PlayerDeathEV playerDeathEv = { &thi };
 	for (size_t count = 0; count < PlayerDeathCallBacks.size(); count++) {
 		PlayerDeathCallBacks[count](playerDeathEv);
 	}
@@ -146,10 +147,7 @@ LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
 class BlockLegacy;
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
 	BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
-	PlayerDestroyEV PlayerDestroyEv;
-	PlayerDestroyEv.Player = &pl;
-	PlayerDestroyEv.blkpos = blkpos;
-	PlayerDestroyEv.bl = &bl;
+	PlayerDestroyEV PlayerDestroyEv = { &pl, blkpos, &bl };
 	for (size_t count = 0; count < PlayerDestroyCallBacks.size(); count++) {
 		PlayerDestroyCallBacks[count](PlayerDestroyEv);
 	}
@@ -179,10 +177,7 @@ LIAPI void Event::addEventListener(function<void(MobHurtedEV)> callback) {
 }
 
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z", Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) {
-	MobHurtedEV MobHurtedEv;
-	MobHurtedEv.ActorDamageSource = &src;
-	MobHurtedEv.Damage = damage;
-	MobHurtedEv.Mob = ac;
+	MobHurtedEV MobHurtedEv = { ac, &src, damage };
 	for (size_t count = 0; count < MobHurtedCallBacks.size(); count++) {
 		MobHurtedCallBacks[count](MobHurtedEv);
 	}
@@ -196,7 +191,7 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemEV)> callback) {
 
 THook(bool, "?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z", void* thi, ItemStack& a2) {
 	auto sp = dAccess<ServerPlayer*, 8>(thi);
-	PlayerUseItemEV playerUseItemEV = {sp, &a2};
+	PlayerUseItemEV playerUseItemEV = { sp, &a2 };
 	for (size_t count = 0; count < PlayerUseItemCallBacks.size(); count++) {
 		PlayerUseItemCallBacks[count](playerUseItemEV);
 	}
