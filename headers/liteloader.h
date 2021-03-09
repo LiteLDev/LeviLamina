@@ -6,3 +6,4 @@
 #endif
 typedef unsigned char uchar;
 #define LiteLoaderVersion "0.2.0"
+#define LiteLoaderVersionNum (unsigned short) 2

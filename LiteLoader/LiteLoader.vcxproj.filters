@@ -326,6 +326,12 @@
     <ClCompile Include="ServerCommands.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CheckUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashReporter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />

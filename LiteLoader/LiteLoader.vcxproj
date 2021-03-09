@@ -242,6 +242,8 @@
     <ClCompile Include="api\WPlayer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="CheckUpdate.cpp" />
+    <ClCompile Include="CrashReporter.cpp" />
     <ClCompile Include="debug\MSearch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

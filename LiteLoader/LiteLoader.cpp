@@ -1,13 +1,5 @@
 ﻿#include "pch.h"
-#include <filesystem>
-#include "framework.h"
-#include <api\xuidreg\xuidreg.h>
-#include <lbpch.h>
-#include <httplib.h>
-#include <rapidjson\rapidjson.h>
-#include <rapidjson/document.h>
-#include "logger.h"
-#include <api/commands.h>
+
 using std::vector;
 
 Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
@@ -31,7 +23,7 @@ const char* info =
 "[LiteLoader] %d plugin(s) loaded\n"
 "[LiteLoader] Version: %s Based on BedrockX Project\n"
 "[LiteLoader] Github: https://git.io/JtwPb\n";
-static void fixupLIBDIR() {
+static void fixupLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -40,7 +32,8 @@ static void fixupLIBDIR() {
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
 	delete[] buffer;
 }
-static void plginsLIBD() {
+
+static void pluginsLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -49,10 +42,11 @@ static void plginsLIBD() {
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
 	delete[] buffer;
 }
+
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	fixupLIBDIR();
-	plginsLIBD();
+	fixupLibDir();
+	pluginsLibDir();
 	std::filesystem::directory_iterator ent("plugins");
 	std::cout << "[LiteLoader] Loading plugins\n";
 	short plugins = 0;
@@ -109,42 +103,12 @@ void FixUpCWD() {
 
 void startWBThread();
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
-
-void updateCheck() {
-	std::thread t([] {
-	httplib::Client cli("http://u.sakuralo.top:43199");
-	auto res = cli.Get("/version");
-	cli.set_connection_timeout(0, 300000);
-	rapidjson::Document json;
-	if (res) {
-		json.Parse(res->body.c_str());
-		if (json.HasParseError()) {
-			std::cout << u8"[BDSLiteloader]远程json出现错误，请联系开发团队。" <<endl;
-			return;
-		}
-		auto arr = json.GetArray();
-		string Latest_release = arr[arr.Size() - 1]["name"].GetString();
-		auto Latest_message = arr[arr.Size() - 1]["message"].GetString();
-		if (Latest_release != LiteLoaderVersion) {
-			std::cout<< u8"[BDSLiteloader]当前为旧版 "<< LiteLoaderVersion <<u8"，新版 "<< Latest_release<<u8"已发布"
-					<< u8"\n[BDSLiteloader]更新日志：" << Latest_message<<u8"下载地址：https://github.com/LiteLDev/LiteLoader"<< endl;
-		}
-		if (Latest_release == LiteLoaderVersion) {
-			std::cout << u8"[BDSLiteloader]当前为最新版：" << LiteLoaderVersion  << endl;
-		}
-	}
-	else
-	{
-		std::cout << u8"[BDSLiteloader]获取更新失败，请检测网络或者远程服务器异常。"
-		   << u8"\n[BDSLiteloader]Failed to get update " << endl;
-	}
-		});
-	t.detach();
-}
+void updateCheck();
 
 static void entry(bool fixcwd) {
 	if (fixcwd)
 		FixUpCWD();
+	std::filesystem::create_directory("logs");
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {
@@ -167,18 +131,4 @@ THook(int, "main", int a, void* b) {
 	//system("chcp 65001");
 	entry(a > 1);
 	return original(a, b);
-}
-
-Logger2 LOG2("./ServerCrash.log");
-THook(void, "?initialize@CrashHandler@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z",
-	std::string const& a, std::string const& b, std::string const& c) {
-	original(a, "https://rink.hockeyapp.net/api/2/apps/64afd4a74b1e437c92eb88e43b131769/crashes/upload", c);
-}
-THook(void, "?dumpCrashHandlerAppCrashLog@CrashHelper@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00_J0V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-	std::string const& a1, std::string const& a2, std::string const& a3, __time64_t a4, __int64 a5, unsigned int* a6) {
-	LOG2 << "崩溃时间：" << gettime()
-		<< "\n运行平台：" << a2
-		<< "\n崩溃日志：\n" << a3
-		<< "\n--------------------------------------------------------------------------------------";
-	return original(a1, a2, a3, a4, a5, a6);
 }
