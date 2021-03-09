@@ -7,6 +7,7 @@
 #include <rapidjson\rapidjson.h>
 #include <rapidjson/document.h>
 #include "logger.h"
+#include <api/commands.h>
 using std::vector;
 
 Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
@@ -118,23 +119,23 @@ void updateCheck() {
 	if (res) {
 		json.Parse(res->body.c_str());
 		if (json.HasParseError()) {
-			cout << u8"[BDSLiteloader]Զ��json��ʽ���������ϵ����" <<endl;
+			std::cout << u8"[BDSLiteloader]远程json出现错误，请联系开发团队。" <<endl;
 			return;
 		}
 		auto arr = json.GetArray();
 		string Latest_release = arr[arr.Size() - 1]["name"].GetString();
 		auto Latest_message = arr[arr.Size() - 1]["message"].GetString();
 		if (Latest_release != LiteLoaderVersion) {
-				cout<< u8"[BDSLiteloader]������ʹ�þɰ�"<< LiteLoaderVersion <<u8"���°�"<< Latest_release<<u8"�ѷ���"
-					<< u8"\n[BDSLiteloader]������־��" << Latest_message<<u8"���������ӣ�https://github.com/LiteLDev/LiteLoader"<< endl;
+			std::cout<< u8"[BDSLiteloader]当前为旧版 "<< LiteLoaderVersion <<u8"，新版 "<< Latest_release<<u8"已发布"
+					<< u8"\n[BDSLiteloader]更新日志：" << Latest_message<<u8"下载地址：https://github.com/LiteLDev/LiteLoader"<< endl;
 		}
 		if (Latest_release == LiteLoaderVersion) {
-			cout << u8"[BDSLiteloader]������ʹ�����°�" << LiteLoaderVersion  << endl;
+			std::cout << u8"[BDSLiteloader]当前为最新版：" << LiteLoaderVersion  << endl;
 		}
 	}
 	else
 	{
-		cout << u8"[BDSLiteloader]��ȡ����ʧ�ܣ�������������Զ�̷��������ַ����ϰ�"
+		std::cout << u8"[BDSLiteloader]获取更新失败，请检测网络或者远程服务器异常。"
 		   << u8"\n[BDSLiteloader]Failed to get update " << endl;
 	}
 		});
@@ -175,9 +176,9 @@ THook(void, "?initialize@CrashHandler@@SAXAEBV?$basic_string@DU?$char_traits@D@s
 }
 THook(void, "?dumpCrashHandlerAppCrashLog@CrashHelper@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00_J0V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
 	std::string const& a1, std::string const& a2, std::string const& a3, __time64_t a4, __int64 a5, unsigned int* a6) {
-	LOG2 << "����ʱ�䣺" << gettime()
-		<< "\n����ƽ̨��" << a2
-		<< "\n������־��\n" << a3
+	LOG2 << "崩溃时间：" << gettime()
+		<< "\n运行平台：" << a2
+		<< "\n崩溃日志：\n" << a3
 		<< "\n--------------------------------------------------------------------------------------";
 	return original(a1, a2, a3, a4, a5, a6);
 }
