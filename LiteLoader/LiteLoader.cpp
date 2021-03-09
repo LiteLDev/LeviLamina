@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include <filesystem>
 #include "framework.h"
 #include <api\xuidreg\xuidreg.h>
@@ -7,6 +7,8 @@
 #include <rapidjson\rapidjson.h>
 #include <rapidjson/document.h>
 #include "logger.h"
+using std::vector;
+
 Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
 
 static void PrintErrorMessage() {
@@ -48,7 +50,6 @@ static void plginsLIBD() {
 }
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins");
 	fixupLIBDIR();
 	plginsLIBD();
 	std::filesystem::directory_iterator ent("plugins");
@@ -78,7 +79,7 @@ static void loadPlugins() {
 				((void (*)()) FN)();
 			}
 			catch (...) {
-				std::wcerr << "[Error] mod" << name << " throws an exception when onPostInit\n";
+				std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
 				exit(1);
 			}
 		}
@@ -96,7 +97,17 @@ vector<function<void(PostInitEV)>> PostInitCallBacks;
 LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
 	PostInitCallBacks.push_back(callback);
 }
+
+void FixUpCWD() {
+	string buf;
+	buf.assign(8192, '\0');
+	GetModuleFileNameA(nullptr, buf.data(), 8192);
+	buf = buf.substr(0, buf.find_last_of('\\'));
+	SetCurrentDirectoryA(buf.c_str());
+}
+
 void startWBThread();
+bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
 
 void updateCheck() {
 	std::thread t([] {
@@ -107,23 +118,23 @@ void updateCheck() {
 	if (res) {
 		json.Parse(res->body.c_str());
 		if (json.HasParseError()) {
-			cout << u8"[BDSLiteloader]Ô¶³Ìjson¸ñÊ½³ö´í£¬ÇëÁªÏµ×÷Õß" <<endl;
+			cout << u8"[BDSLiteloader]Ô¶ï¿½ï¿½jsonï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½ï¿½" <<endl;
 			return;
 		}
 		auto arr = json.GetArray();
 		string Latest_release = arr[arr.Size() - 1]["name"].GetString();
 		auto Latest_message = arr[arr.Size() - 1]["message"].GetString();
 		if (Latest_release != LiteLoaderVersion) {
-				cout<< u8"[BDSLiteloader]ÄúÕýÔÚÊ¹ÓÃ¾É°æ"<< LiteLoaderVersion <<u8"£¬ÐÂ°æ"<< Latest_release<<u8"ÒÑ·¢²¼"
-					<< u8"\n[BDSLiteloader]¸üÐÂÈÕÖ¾£º" << Latest_message<<u8"£¬ÏÂÔØÁ´½Ó£ºhttps://github.com/LiteLDev/LiteLoader"<< endl;
+				cout<< u8"[BDSLiteloader]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½Ã¾É°ï¿½"<< LiteLoaderVersion <<u8"ï¿½ï¿½ï¿½Â°ï¿½"<< Latest_release<<u8"ï¿½Ñ·ï¿½ï¿½ï¿½"
+					<< u8"\n[BDSLiteloader]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½" << Latest_message<<u8"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó£ï¿½https://github.com/LiteLDev/LiteLoader"<< endl;
 		}
 		if (Latest_release == LiteLoaderVersion) {
-			cout << u8"[BDSLiteloader]ÄúÕýÔÚÊ¹ÓÃ×îÐÂ°æ" << LiteLoaderVersion  << endl;
+			cout << u8"[BDSLiteloader]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½" << LiteLoaderVersion  << endl;
 		}
 	}
 	else
 	{
-		cout << u8"[BDSLiteloader]»ñÈ¡¸üÐÂÊ§°Ü£¬Çë¼ì²âÄãµÄÍøÂç»òÔ¶³Ì·þÎñÆ÷³öÏÖ·ÃÎÊÕÏ°­"
+		cout << u8"[BDSLiteloader]ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½Ì·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½Ï°ï¿½"
 		   << u8"\n[BDSLiteloader]Failed to get update " << endl;
 	}
 		});
@@ -131,11 +142,18 @@ void updateCheck() {
 }
 
 static void entry(bool fixcwd) {
+	if (fixcwd)
+		FixUpCWD();
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {
 		startWBThread();
 		updateCheck();
+		});
+	Event::addEventListener([](RegCmdEV ev) {
+		CMDREG::SetCommandRegistry(ev.CMDRg);
+		MakeCommand("version", "Gets the version of this server", 0);
+		CmdOverload(version, versionCommand);
 		});
 	PostInitEV PostInitEV;
 	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
@@ -157,9 +175,9 @@ THook(void, "?initialize@CrashHandler@@SAXAEBV?$basic_string@DU?$char_traits@D@s
 }
 THook(void, "?dumpCrashHandlerAppCrashLog@CrashHelper@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00_J0V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
 	std::string const& a1, std::string const& a2, std::string const& a3, __time64_t a4, __int64 a5, unsigned int* a6) {
-	LOG2 << "±ÀÀ£Ê±¼ä£º" << gettime()
-		<< "\nÔËÐÐÆ½Ì¨£º" << a2
-		<< "\n±ÀÀ£ÈÕÖ¾£º\n" << a3
+	LOG2 << "ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ä£º" << gettime()
+		<< "\nï¿½ï¿½ï¿½ï¿½Æ½Ì¨ï¿½ï¿½" << a2
+		<< "\nï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½\n" << a3
 		<< "\n--------------------------------------------------------------------------------------";
 	return original(a1, a2, a3, a4, a5, a6);
 }

@@ -323,6 +323,9 @@
     <ClCompile Include="scheduler\sch.cpp">
       <Filter>源文件\scheduler</Filter>
     </ClCompile>
+    <ClCompile Include="ServerCommands.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />

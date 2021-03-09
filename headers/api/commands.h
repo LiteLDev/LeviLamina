@@ -2,6 +2,9 @@
 #include <tuple>
 #include <mc/Command/CommandReg.h>
 #include <stl/optional.h>
+
+using std::endl;
+
 inline CommandRegistry* CmdRegGlobal = nullptr;
 namespace CMDREG {
 	inline void SetCommandRegistry(CommandRegistry* reg) {

@@ -15,7 +15,7 @@ Based on [BedrockX](https://github.com/Sysca11/BedrockX)
 
 ## Usage
 Put .dll plugins(build for LiteLoader) into `plugins\` directory  
-Put .dll plugins(with builtin HookLib) into `plugin_preload\` directory  
+Put .dll plugins(need preload, for example: BDSNetRunner) into `plugin\preload\` directory  
 
 ## More
 See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
