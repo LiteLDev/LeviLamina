@@ -19,10 +19,6 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-const char* info =
-"[LiteLoader] %d plugin(s) loaded\n"
-"[LiteLoader] Version: %s Based on BedrockX Project\n"
-"[LiteLoader] Github: https://git.io/JtwPb\n";
 static void fixupLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
@@ -48,18 +44,18 @@ static void loadPlugins() {
 	fixupLibDir();
 	pluginsLibDir();
 	std::filesystem::directory_iterator ent("plugins");
-	std::cout << "[LiteLoader] Loading plugins\n";
 	short plugins = 0;
+	LOG("Loading plugins");
 	for (auto& i : ent) {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
-				std::cout << "[LiteLoader] Plugin " << canonical(i.path()).u8string() << " loaded\n";
+				LOG("Plugin " + canonical(i.path()).filename().u8string() + " loaded");
 				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
 			}
 			else {
-				std::cout << "[LiteLoader] Error when loading " << i.path().u8string() << "\n";
+				LOG("Error when loading " + i.path().filename().u8string() + "");
 				PrintErrorMessage();
 			}
 		}
@@ -80,11 +76,7 @@ static void loadPlugins() {
 		}
 	}
 	libs.clear();
-#ifdef LiteLoaderVersionGithub
-	printf(info, plugins, LiteLoaderVersionGithub);
-#else
-	printf(info, plugins, LiteLoaderVersion);
-#endif
+	LOG(std::to_string(plugins) + " plugin(s) loaded");
 }
 
 
@@ -109,16 +101,23 @@ static void entry(bool fixcwd) {
 	if (fixcwd)
 		FixUpCWD();
 	std::filesystem::create_directory("logs");
-	loadPlugins();
-	XIDREG::initAll();
-	Event::addEventListener([](ServerStartedEV) {
-		startWBThread();
-		updateCheck();
-		});
 	Event::addEventListener([](RegCmdEV ev) {
 		CMDREG::SetCommandRegistry(ev.CMDRg);
 		MakeCommand("version", "Gets the version of this server", 0);
 		CmdOverload(version, versionCommand);
+		});
+	loadPlugins();
+	XIDREG::initAll();
+	Event::addEventListener([](ServerStartedEV) {
+		startWBThread();
+		LOG("LiteLoader is distributed under the GPLv3 License");
+		#ifdef LiteLoaderVersionGithub
+		LOG("Version: " + (std::string)LiteLoaderVersionGithub + " Based on BedrockX Project");
+		#else
+		LOG("Version: " + (std::string)LiteLoaderVersion + " Based on BedrockX Project");
+		#endif
+		LOG("Github: https://git.io/JtwPb");
+		updateCheck();
 		});
 	PostInitEV PostInitEV;
 	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
