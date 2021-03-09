@@ -261,6 +261,9 @@
     <ClInclude Include="..\headers\api\scheduler\scheduler.h">
       <Filter>头文件\api\scheduler</Filter>
     </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -305,13 +308,7 @@
     <ClCompile Include="api\WActor.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
-    <ClCompile Include="api\WDim.cpp">
-      <Filter>源文件\api</Filter>
-    </ClCompile>
     <ClCompile Include="api\WItem.cpp">
-      <Filter>源文件\api</Filter>
-    </ClCompile>
-    <ClCompile Include="api\WLevel.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
     <ClCompile Include="api\WMob.cpp">

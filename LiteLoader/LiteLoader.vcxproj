@@ -219,6 +219,7 @@
     <ClInclude Include="..\headers\stl\views.h" />
     <ClInclude Include="..\headers\stl\WorkerPool.h" />
     <ClInclude Include="framework.h" />
+    <ClInclude Include="logger.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
