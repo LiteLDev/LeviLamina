@@ -10,19 +10,15 @@ class BaseCommandBlock;
 typedef unsigned long long xuid_t;
 namespace offPlayer {
 	inline NetworkIdentifier* getNetworkIdentifier(Player* pl) {
-		return (NetworkIdentifier*)((uintptr_t)pl + 2536); //ServerPlayer::isHostingPlayer
+		//return SymCall("?getClientId@Player@@QEBAAEBVNetworkIdentifier@@XZ", NetworkIdentifier*, Player*)(pl);
+		return (NetworkIdentifier*)((uintptr_t)pl + 2544); //ServerPlayer::isHostingPlayer
 	}
-	inline Level* getLevel(void* pl) {
-		return (Level*)*((uintptr_t*)((uintptr_t)pl + 856));
+	inline Level* getLevel(Actor* pl) {
+		//return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
+		return (Level*)*((uintptr_t*)((uintptr_t)pl + 107));
 	}
 	inline Certificate* getCert(Player* pl) {
-		return dAccess<Certificate*, 2840>(pl);
-	}
-	inline string getXUID(Player* pl) {
-		Level* level = (Level*)*((uintptr_t*)((uintptr_t)pl + 856));
-		void* mce_uuid = (void*)((uintptr_t)pl + 2824); //witherboss::_hurt
-		return SymCall("?getPlayerXUID@Level@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUUID@mce@@@Z",
-			string&, Level*, void*)(level, mce_uuid);
+		return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 	}
 	inline xuid_t getXUIDbyCert(Certificate* cert) {
 		return stoull(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(cert));

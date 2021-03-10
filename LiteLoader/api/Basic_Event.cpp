@@ -213,7 +213,7 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
 	char v83;
 	auto v6 = *(void**)(*(__int64(__fastcall**)(void*, char*))(*(uintptr_t*)ads + 64i64))(ads, &v83);
 	auto level = offPlayer::getLevel(mob);
-	auto ac = SymCall("?fetchEntity@Level@@QEBAPEAVActor@@UActorUniqueID@@_N@Z"
+	auto ac = SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z"
 		, Actor*, Level*, void*, bool)(level, v6, 0);
 	MobDieEV md = { mob,ac };
 	CallEvent(MobDieCallBacks, md);

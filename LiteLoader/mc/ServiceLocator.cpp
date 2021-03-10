@@ -13,8 +13,8 @@ using std::cout;
 using std::endl;
 using std::vector;
 
-//?initAsDedicatedServer@Minecraft@@QEAAXXZ
-THook(void, "?init@Minecraft@@QEAAXXZ", Minecraft* mc) {
+
+THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
 	LocateS<Minecraft>::assign(*mc);
 	original(mc);
 }

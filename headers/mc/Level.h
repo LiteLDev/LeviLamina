@@ -574,15 +574,20 @@ public:
 		*((void**)&rv) = dlsym("?tick@Level@@UEAAXXZ");
 		return (this->*rv)();
 	}
+	MCINLINE void clearTagCache() {
+		void (Level:: * rv)();
+		*((void**)&rv) = dlsym("?clearTagCache@Level@@UEAAXXZ");
+		return (this->*rv)();
+	}
 #endif
 	MCINLINE class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0) {
 		class MapItemSavedData* (Level:: * rv)(struct ActorUniqueID);
-		*((void**)&rv) = dlsym("?getMapSavedData@Level@@QEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
+		*((void**)&rv) = dlsym("?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
 		return (this->*rv)(a0);
 	}
 	MCINLINE class Actor* fetchEntity(struct ActorUniqueID a0, bool a1) const {
 		class Actor* (Level::*rv)(struct ActorUniqueID, bool)const;
-		*((void**)&rv) = dlsym("?fetchEntity@Level@@QEBAPEAVActor@@UActorUniqueID@@_N@Z");
+		*((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z ");
 		return (this->*rv)(a0, a1);
 	}
 	MCINLINE void _saveSomeChunks() {
@@ -590,29 +595,24 @@ public:
 		*((void**)&rv) = dlsym("?_saveSomeChunks@Level@@AEAAXXZ");
 		return (this->*rv)();
 	}
-	MCINLINE void clearTagCache() {
-		void (Level::*rv)();
-		*((void**)&rv) = dlsym("?clearTagCache@Level@@UEAAXXZ");
-		return (this->*rv)();
-	}
 	MCINLINE void saveDirtyChunks() {
 		void (Level::*rv)();
-		*((void**)&rv) = dlsym("?saveDirtyChunks@Level@@QEAAXXZ");
+		*((void**)&rv) = dlsym("?saveDirtyChunks@Level@@UEAAXXZ");
 		return (this->*rv)();
 	}
 	MCINLINE void explode(class BlockSource& a0, class Actor* a1, class Vec3 const& a2, float a3, bool a4, bool a5, float a6, bool a7) {
 		void (Level::*rv)(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
-		*((void**)&rv) = dlsym("?explode@Level@@QEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z");
+		*((void**)&rv) = dlsym("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z");
 		return (this->*rv)(a0, a1, a2, a3, a4, a5, a6, a7);
 	}
 	MCINLINE void updateWeather(float a0, int a1, float a2, int a3) {
 		void (Level::*rv)(float, int, float, int);
-		*((void**)&rv) = dlsym("?updateWeather@Level@@QEAAXMHMH@Z");
+		*((void**)&rv) = dlsym("?updateWeather@Level@@UEAAXMHMH@Z");
 		return (this->*rv)(a0, a1, a2, a3);
 	}
 	MCINLINE class Actor* getRuntimeEntity(class ActorRuntimeID a0, bool a1) const {
 		class Actor* (Level::*rv)(class ActorRuntimeID, bool)const;
-		*((void**)&rv) = dlsym("?getRuntimeEntity@Level@@QEBAPEAVActor@@VActorRuntimeID@@_N@Z");
+		*((void**)&rv) = dlsym("?getRuntimeEntity@Level@@UEBAPEAVActor@@VActorRuntimeID@@_N@Z");
 		return (this->*rv)(a0, a1);
 	}
 #if 0

@@ -53,14 +53,17 @@ class NetworkIdentifier {
 namespace Util {
 	class HashString;
 };
+
 namespace Json {
 	class Value;
 }
+
+
 struct RakAddr_t {
 	char filler[0x90];
 	std::string toString() {
 		char buf[256];
-		SymCall("?ToString_New@SystemAddress@RakNet@@AEBAX_NPEADD@Z", void, void*, bool, char*, char)(this, true, buf, ':');
+		SymCall("?ToString@SystemAddress@RakNet@@QEBAX_NPEADD@Z", void, void*, bool, char*, char)(this, true, buf, ':');
 		return buf;
 	}
 };
