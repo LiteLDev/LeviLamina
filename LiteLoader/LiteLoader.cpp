@@ -1,8 +1,7 @@
 ﻿#include "pch.h"
 
 using std::vector;
-
-Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
+Logger<stdio_commit> LOG(stdio_commit{ "[LL] " });
 
 static void PrintErrorMessage() {
 	DWORD errorMessageID = ::GetLastError();

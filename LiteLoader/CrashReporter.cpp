@@ -1,6 +1,6 @@
 #include "pch.h"
 
-Logger2 LOG2("logs\\crashes.log");
+//Logger2 LOG2("logs\\crashes.log");
 
 /*THook(void, "?initialize@CrashHandler@@SAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z",
 	std::string const& a, std::string const& b, std::string const& c) {
