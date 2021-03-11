@@ -17,14 +17,13 @@ namespace offPlayer {
 		//return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
 		return (Level*)*((uintptr_t*)((uintptr_t)pl + 107));
 	}
-	
 	inline Certificate* getCert(Player* pl) {
-		return (Certificate*)((uintptr_t)pl + 356);
+		return dAccess<Certificate*, 356>(pl);
 
 		//return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 	}
-	inline xuid_t getXUIDbyCert(Certificate* cert) {
-		return stoull(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(cert));
+	inline xuid_t getXUIDbyCert(Player* pl) {
+		return atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl)).c_str());
 	}
 	inline string getXUIDbyCertString(Player* pl) {
 		return SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
