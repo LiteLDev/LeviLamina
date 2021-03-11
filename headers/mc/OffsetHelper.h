@@ -22,18 +22,30 @@ namespace offPlayer {
 
 		//return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 	}
-	inline xuid_t getXUIDbyCert(Player* pl) {
-		return atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl)).c_str());
+
+	inline std::string getXUIDStringByCert(Certificate* cert) {
+		return SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(cert);
 	}
-	inline string getXUIDbyCertString(Player* pl) {
-		return SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
+
+	inline xuid_t getXUID(Player* pl) {
+		return std::stoull(getXUIDStringByCert(offPlayer::getCert((Player*)pl)).c_str());
 	}
+
+	inline std::string getXUIDString(Player* pl) {
+		return getXUIDStringByCert(offPlayer::getCert((Player*)pl)).c_str();
+	}
+
+	inline xuid_t getXUIDByCert(Certificate* cert) {
+		return std::stoull(getXUIDStringByCert(cert));
+	}
+
 	inline string getRealName(Player* pl) {
 		return SymCall("?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z", string, void*)(offPlayer::getCert((Player*)pl));
 	}
+
 	inline permlvl_t getPermLvl(Player* pl) {
 		return pl->getCommandPermissionLevel()&0xff;
-		}
+	}
 };
 namespace offBaseCommandBlock {
 	inline string getCMD(BaseCommandBlock* bcmdblock) {
