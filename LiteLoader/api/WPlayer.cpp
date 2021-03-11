@@ -18,10 +18,10 @@ LIAPI void WPlayer::sendText(string text, TextType tp) {
 	Packet* pkt;
 	SymCall("?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
 		void*, Packet**, int)(&pkt, 9);//创建包
-	dAccess<char, 40>(pkt) = (char)tp;
-	dAccess<string, 48>(pkt) = u8"Server";
+	dAccess<char, 48>(pkt) = (char)tp;
+	dAccess<string, 56>(pkt) = u8"Server";
 	//dAccess<string, 48>(pkt) = this->getName();
-	dAccess<string, 80>(pkt) = text;
+	dAccess<string, 88>(pkt) = text;
 	v->sendNetworkPacket(*pkt);
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;

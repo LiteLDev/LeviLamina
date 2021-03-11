@@ -190,8 +190,8 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
 		auto it = formMap._map.find(sp);
 		//LOG("gui from", sp->getNameTag(), it != formMap._map.end());
 		if (it != formMap._map.end()) {
-			auto& fid = *(unsigned int*)(pkt + 40);
-			auto& str = *(string*)(pkt + 48);
+			auto& fid = *(unsigned int*)(pkt + 48);
+			auto& str = *(string*)(pkt + 56);
 			//LOG("gui proc", sp->getNameTag(), fid, "need", it->second->formid);
 			if (it->second->formid != fid)
 				return;
