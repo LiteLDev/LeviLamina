@@ -18,9 +18,7 @@ namespace offPlayer {
 		return (Level*)*((uintptr_t*)((uintptr_t)pl + 107));
 	}
 	inline Certificate* getCert(Player* pl) {
-		return dAccess<Certificate*, 356>(pl);
-
-		//return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
+		return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 	}
 
 	inline std::string getXUIDStringByCert(Certificate* cert) {
