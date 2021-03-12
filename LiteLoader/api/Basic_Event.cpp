@@ -219,3 +219,13 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
 	CallEvent(MobDieCallBacks, md);
 	return original(mob, ads);
 }
+
+vector <function<void(PreJoinEV)>> PreJoinCallBacks;
+LIAPI void Event::addEventListener(function<void(PreJoinEV)> callback) {
+	PreJoinCallBacks.push_back(callback);
+}
+THook(void, "?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVCertificate@@@Z", void* snh, NetworkIdentifier& neti, Certificate& cert) {
+	original(snh, neti, cert);
+	PreJoinEV preJoinEV = { &cert };
+	CallEvent(PreJoinCallBacks, preJoinEV);
+}
