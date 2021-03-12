@@ -8,7 +8,7 @@ void updateCheck()
             INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
         DWORD rec_timeout = 300 * 1000;
         InternetSetOption(hInternet, INTERNET_OPTION_RECEIVE_TIMEOUT, &rec_timeout, sizeof(rec_timeout));
-        LPCTSTR lpszServerName = L"u.sakuralo.top:43199";
+        LPCTSTR lpszServerName = L"gitee.com";
         INTERNET_PORT nServerPort = INTERNET_DEFAULT_HTTPS_PORT;
         LPCTSTR lpszUserName = NULL;
         LPCTSTR lpszPassword = NULL;
@@ -20,7 +20,7 @@ void updateCheck()
             INTERNET_SERVICE_HTTP,
             dwConnectFlags, dwConnectContext);
         LPCTSTR lpszVerb = L"GET";
-        LPCTSTR lpszObjectName = L"/version";
+        LPCTSTR lpszObjectName = L"/dreamguxiang/llupdate_pages/raw/master/update.json";
         LPCTSTR lpszVersion = NULL;
         LPCTSTR lpszReferrer = NULL;
         LPCTSTR* lplpszAcceptTypes = NULL;
@@ -65,13 +65,14 @@ void updateCheck()
             }
             auto arr = json.GetArray();
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
-            //std::string LatestMessage = arr[arr.Size() - 1]["message"].GetString();
             int latestVersionNum = arr[arr.Size() - 1]["versionNum"].GetInt();
             if (latestVersionNum < LiteLoaderVersionNum) {
                 std::cout << "[BDSLiteloader] Found a new version: " << LatestRelease << "\n";
+                return;
             }
             if (latestVersionNum > LiteLoaderVersionNum) {
                 std::cout << "[BDSLiteloader] Using preview version: " << LatestRelease << "\n";
+                return;
             }
         }
         });
