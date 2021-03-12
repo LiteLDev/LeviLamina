@@ -1,12 +1,13 @@
 #include "pch.h"
 
-void updateCheck()
+
+int updateCheck()
 {
     std::thread t([] {
         LPCTSTR lpszAgent = L"WinInetGet/0.1";
         HINTERNET hInternet = InternetOpen(lpszAgent,
             INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
-        DWORD rec_timeout = 300 * 1000;
+        DWORD rec_timeout = 500 * 1000;
         InternetSetOption(hInternet, INTERNET_OPTION_RECEIVE_TIMEOUT, &rec_timeout, sizeof(rec_timeout));
         LPCTSTR lpszServerName = L"gitee.com";
         INTERNET_PORT nServerPort = INTERNET_DEFAULT_HTTPS_PORT;
@@ -20,7 +21,7 @@ void updateCheck()
             INTERNET_SERVICE_HTTP,
             dwConnectFlags, dwConnectContext);
         LPCTSTR lpszVerb = L"GET";
-        LPCTSTR lpszObjectName = L"/dreamguxiang/llupdate_pages/raw/master/update.json";
+        LPCTSTR lpszObjectName = L"/dreamguxiang/LLessentials/raw/master/llupdate.json";
         LPCTSTR lpszVersion = NULL;
         LPCTSTR lpszReferrer = NULL;
         LPCTSTR* lplpszAcceptTypes = NULL;
@@ -57,24 +58,27 @@ void updateCheck()
             }
             pMessageBody[dwBytesRead];
             std::string res = (char*)pMessageBody;
-            rapidjson::Document json;
-            json.Parse(res.c_str());;
-            if (json.HasParseError()) {
-                std::cout << "[BDSLiteloader] Failed to get updates(1)\n";
-                return;
+            rapidjson::Document json;                
+            json.Parse(res.c_str());
+                if (json.HasParseError()) {
+                    std::cout << "[BDSLiteloader] Failed to get updates(1)\n";
+                    break;
+                }
+                auto arr = json.GetArray();
+                std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
+                int latestVersionNum = arr[arr.Size() - 1]["versionNum"].GetInt();
+                if (latestVersionNum < LiteLoaderVersionNum) {
+                    std::cout << "[BDSLiteloader] Found a new version: " << LatestRelease << "\n";
+                    break;
+                }
+                if (latestVersionNum == LiteLoaderVersionNum) {
+                    break;
+                }
+                if (latestVersionNum > LiteLoaderVersionNum) {
+                    std::cout << "[BDSLiteloader] Using preview version: " << LatestRelease << "\n";
+                    break;
+                }
             }
-            auto arr = json.GetArray();
-            std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
-            int latestVersionNum = arr[arr.Size() - 1]["versionNum"].GetInt();
-            if (latestVersionNum < LiteLoaderVersionNum) {
-                std::cout << "[BDSLiteloader] Found a new version: " << LatestRelease << "\n";
-                return;
-            }
-            if (latestVersionNum > LiteLoaderVersionNum) {
-                std::cout << "[BDSLiteloader] Using preview version: " << LatestRelease << "\n";
-                return;
-            }
-        }
         });
     t.detach();
 }
