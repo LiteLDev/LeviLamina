@@ -944,9 +944,7 @@ public:
 	}
 	MCINLINE bool initServer(class Json::Value& a0) {
 		bool (Item:: * rv)(class Json::Value&);
-		*((void**)&rv) = dlsym("?initServer@Item@@QEAA_NAEAVValue@
-
-			@@@Z");
+		*((void**)&rv) = dlsym("?initServer@Item@@QEAA_NAEAVValue@@@@Z");
 			return (this->*rv)(a0);
 	}
 
