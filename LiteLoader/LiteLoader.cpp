@@ -94,7 +94,7 @@ void FixUpCWD() {
 
 void startWBThread();
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
-void updateCheck();
+int updateCheck();
 
 static void entry(bool fixcwd) {
 	if (fixcwd)
