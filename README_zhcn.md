@@ -21,21 +21,4 @@
 [BedrockX](https://github.com/Sysca11/BedrockX) GPL v3  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPL v3  
 [ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
-[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT  
-
-## Contributors ✨
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/dreamguxiang"><img src="https://avatars.githubusercontent.com/u/62042544?v=4?s=100" width="100px;" alt=""/><br /><sub><b>dreamguxiang</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=dreamguxiang" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/WangYneos"><img src="https://avatars.githubusercontent.com/u/42824603?v=4?s=100" width="100px;" alt=""/><br /><sub><b>WangYneos</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=WangYneos" title="Code">💻</a></td>
-    <td align="center"><a href="https://www.sakuralo.top"><img src="https://avatars.githubusercontent.com/u/53301243?v=4?s=100" width="100px;" alt=""/><br /><sub><b>ShrBox</b></sub></a><br /><a href="https://github.com/LiteLDev/BDSLiteLoader/commits?author=ShrBox" title="Code">💻</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT
