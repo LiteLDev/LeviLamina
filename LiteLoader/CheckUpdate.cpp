@@ -60,7 +60,6 @@ int updateCheck()
             std::string res = (char*)pMessageBody;
             rapidjson::Document json;                
             json.Parse(res.c_str());
-            for (int i = 0; i < 3; i++)
                 if (json.HasParseError()) {
                     std::cout << "[BDSLiteloader] Failed to get updates(1)\n";
                     break;
