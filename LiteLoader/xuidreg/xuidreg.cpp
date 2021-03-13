@@ -78,7 +78,7 @@ namespace XIDREG {
 		Event::addEventListener([](JoinEV var) {
 			auto sp = var.Player;
 			auto name = offPlayer::getRealName((Player*)sp);
-			auto _xuid = offPlayer::getXUID((Player*)sp);
+			auto _xuid = offPlayer::getXUIDString(sp);
 			xuid_t xuid;
 			if (_xuid.size() <= 1)
 				xuid = do_hash(name);

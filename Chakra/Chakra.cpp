@@ -8,9 +8,9 @@
 
 void preload() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins_preload");
-	std::filesystem::directory_iterator ent("plugins_preload");
-	std::cout << "[Chakra] Loading preload plugins\n";
+	std::filesystem::create_directory("plugins");
+	std::filesystem::create_directory("plugins\\preload");
+	std::filesystem::directory_iterator ent("plugins\\preload");
 	for (auto& i : ent) {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
 			auto lib = LoadLibrary(i.path().c_str());

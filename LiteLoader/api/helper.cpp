@@ -72,7 +72,7 @@ namespace liteloader {
 	}
 	LIAPI std::vector<Player*> getAllPlayers() {
 		std::vector<Player*> PlayerList;
-		SymCall("?forEachPlayer@Level@@QEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z", void, Level*, function<bool(Player&)>)(LocateS<Level>::_srv, [&](Player& sp)->bool{
+		SymCall("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z", void, Level*, function<bool(Player&)>)(LocateS<Level>::_srv, [&](Player& sp)->bool{
 			Player* player = &sp;
 			PlayerList.push_back(player);
 			return 1;

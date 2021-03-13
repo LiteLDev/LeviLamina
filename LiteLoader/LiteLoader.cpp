@@ -1,10 +1,7 @@
-#include "pch.h"
-#include <filesystem>
-#include "framework.h"
-#include <api\xuidreg\xuidreg.h>
-#include <lbpch.h>
+﻿#include "pch.h"
 
-Logger<stdio_commit> LOG(stdio_commit{ "[LiteLoader] " });
+using std::vector;
+Logger<stdio_commit> LOG(stdio_commit{ "[LL] " });
 
 static void PrintErrorMessage() {
 	DWORD errorMessageID = ::GetLastError();
@@ -21,11 +18,7 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-const char* info =
-"[LiteLoader] %d plugin(s) loaded\n"
-"[LiteLoader] Version: %s Based on BedrockX Project\n"
-"[LiteLoader] Github: https://git.io/JtwPb\n";
-static void fixupLIBDIR() {
+static void fixupLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -34,23 +27,34 @@ static void fixupLIBDIR() {
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
 	delete[] buffer;
 }
+
+static void pluginsLibDir() {
+	WCHAR* buffer = new WCHAR[8192];
+	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
+	std::wstring PATH{ buffer, sz };
+	sz = GetCurrentDirectoryW(8192, buffer);
+	std::wstring CWD{ buffer, sz };
+	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
+	delete[] buffer;
+}
+
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins");
-	fixupLIBDIR();
+	fixupLibDir();
+	pluginsLibDir();
 	std::filesystem::directory_iterator ent("plugins");
-	std::cout << "[LiteLoader] Loading plugins\n";
 	short plugins = 0;
+	LOG("Loading plugins");
 	for (auto& i : ent) {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
-				std::cout << "[LiteLoader] Plugin " << canonical(i.path()).u8string() << " loaded\n";
+				LOG("Plugin " + canonical(i.path()).filename().u8string() + " loaded");
 				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
 			}
 			else {
-				std::cout << "[LiteLoader] Error when loading " << i.path().u8string() << "\n";
+				LOG("Error when loading " + i.path().filename().u8string() + "");
 				PrintErrorMessage();
 			}
 		}
@@ -65,17 +69,13 @@ static void loadPlugins() {
 				((void (*)()) FN)();
 			}
 			catch (...) {
-				std::wcerr << "[Error] mod" << name << " throws an exception when onPostInit\n";
+				std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
 				exit(1);
 			}
 		}
 	}
 	libs.clear();
-#ifdef LiteLoaderVersionGithub
-	printf(info, plugins, LiteLoaderVersionGithub);
-#else
-	printf(info, plugins, LiteLoaderVersion);
-#endif
+	LOG(std::to_string(plugins) + " plugin(s) loaded");
 }
 
 
@@ -83,13 +83,40 @@ vector<function<void(PostInitEV)>> PostInitCallBacks;
 LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
 	PostInitCallBacks.push_back(callback);
 }
+
+void FixUpCWD() {
+	string buf;
+	buf.assign(8192, '\0');
+	GetModuleFileNameA(nullptr, buf.data(), 8192);
+	buf = buf.substr(0, buf.find_last_of('\\'));
+	SetCurrentDirectoryA(buf.c_str());
+}
+
 void startWBThread();
+bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
+int updateCheck();
 
 static void entry(bool fixcwd) {
+	if (fixcwd)
+		FixUpCWD();
+	std::filesystem::create_directory("logs");
+	Event::addEventListener([](RegCmdEV ev) {
+		CMDREG::SetCommandRegistry(ev.CMDRg);
+		MakeCommand("version", "Gets the version of this server", 0);
+		CmdOverload(version, versionCommand);
+		});
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {
 		startWBThread();
+		LOG("LiteLoader is distributed under the GPLv3 License");
+		#ifdef LiteLoaderVersionGithub
+		LOG("Version: " + (std::string)LiteLoaderVersionGithub + " Based on BedrockX Project");
+		#else
+		LOG("Version: " + (std::string)LiteLoaderVersion + " Based on BedrockX Project");
+		#endif
+		LOG("Github: https://git.io/JtwPb");
+		updateCheck();
 		});
 	PostInitEV PostInitEV;
 	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {

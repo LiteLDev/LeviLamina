@@ -447,7 +447,9 @@ public:
 	}
 	MCINLINE bool initServer(class Json::Value& a0) {
 		bool (Item::*rv)(class Json::Value&);
-		*((void**)&rv) = dlsym("?initServer@Item@@QEAA_NAEAVValue@Json@@@Z");
+		*((void**)&rv) = dlsym("?initServer@Item@@QEAA_NAEAVValue@
+			
+			@@@Z");
 		return (this->*rv)(a0);
 	}
 	MCINLINE bool canBeDepleted() const {
@@ -939,6 +941,11 @@ public:
 		int (Item::*rv)() const;
 		*((void**)&rv) = dlsym("?getEnchantValue@Item@@UEBAHXZ");
 		return (this->*rv)();
+	}
+	MCINLINE bool initServer(class Json::Value& a0) {
+		bool (Item:: * rv)(class Json::Value&);
+		*((void**)&rv) = dlsym("?initServer@Item@@QEAA_NAEAVValue@@@@Z");
+			return (this->*rv)(a0);
 	}
 
 #if 0

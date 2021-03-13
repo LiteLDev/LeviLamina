@@ -11,5 +11,21 @@
 #include "framework.h"
 #include <iostream>
 #include <loader/Loader.h>
-
+#include <liteloader.h>
+//LiteLoader.cpp
+#include <filesystem>
+#include "framework.h"
+#include <api\xuidreg\xuidreg.h>
+#include <lbpch.h>
+#include <api\commands.h>
+//CheckUpdate.cpp
+//#include <httplib.h>
+#include <rapidjson\rapidjson.h>
+#include <rapidjson\document.h>
+#include "logger.h"
+#include<string>
+#include<windows.h>
+#include<iostream>
+#include <WinInet.h>
+#pragma comment(lib,"wininet.lib")
 #endif //PCH_H
