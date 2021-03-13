@@ -18,29 +18,18 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-static void fixupLibDir() {
-	WCHAR* buffer = new WCHAR[8192];
-	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-	std::wstring PATH{ buffer, sz };
-	sz = GetCurrentDirectoryW(8192, buffer);
-	std::wstring CWD{ buffer, sz };
-	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
-	delete[] buffer;
-}
-
 static void pluginsLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
 	sz = GetCurrentDirectoryW(8192, buffer);
 	std::wstring CWD{ buffer, sz };
-	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
+	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins" + PATH).c_str());
 	delete[] buffer;
 }
 
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	fixupLibDir();
 	pluginsLibDir();
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
