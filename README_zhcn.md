@@ -21,7 +21,8 @@
 请参见[Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
 
 ## LICENSE  
-[BedrockX](https://github.com/Sysca11/BedrockX) GPL v3  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPL v3  
+[BedrockX](https://github.com/Sysca11/BedrockX) GPL v3  
 [ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
-[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT
+[ChakraCore](https://github.com/chakra-core/ChakraCore) MIT  
+[OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License
