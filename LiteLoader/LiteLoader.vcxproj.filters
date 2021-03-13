@@ -336,6 +336,12 @@
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
     <Library Include="..\lib\leveldb.lib" />
+    <Library Include="..\lib\libssl.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\libcrypto.lib">
+      <Filter>资源文件</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc">

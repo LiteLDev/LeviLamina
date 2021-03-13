@@ -285,6 +285,8 @@
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
     <Library Include="..\lib\leveldb.lib" />
+    <Library Include="..\lib\libcrypto.lib" />
+    <Library Include="..\lib\libssl.lib" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc" />
