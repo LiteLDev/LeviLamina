@@ -18,7 +18,6 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-
 static void pluginsLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
@@ -28,7 +27,6 @@ static void pluginsLibDir() {
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
 	delete[] buffer;
 }
-
 
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
