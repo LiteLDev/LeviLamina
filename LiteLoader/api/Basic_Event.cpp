@@ -214,7 +214,7 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
 	char v83;
 	auto v6 = *(void**)(*(__int64(__fastcall**)(void*, char*))(*(uintptr_t*)ads + 64))(ads, &v83);
 	auto src = SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z"
-		, Actor*, Level*, void*, bool)(level, v6, false);
+		, Actor*, Level*, void*, bool)(level, v6, 0);
 	MobDieEV md = { mob,src };
 	CallEvent(MobDieCallBacks, md);
 	return original(mob, ads);

@@ -15,10 +15,10 @@ namespace offPlayer {
 	}
 	inline Level* getLevel(Actor* pl) {
 		//return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
-		return (Level*)*((uintptr_t*)pl + 856);
+		return (Level*)*((uintptr_t*)((uintptr_t)pl + 856));
 	}
 	inline Certificate* getCert(Player* pl) {
-		return (Certificate*)*((uintptr_t*)pl + 2848);
+		return (Certificate*)*((uintptr_t*)pl + 356);
 		//return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 	}
 
