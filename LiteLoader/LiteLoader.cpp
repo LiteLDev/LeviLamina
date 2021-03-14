@@ -17,7 +17,9 @@ static void PrintErrorMessage() {
 	std::wcerr << "[Error] " << messageBuffer;
 	LocalFree(messageBuffer);
 }
-void fixupLibDir() {
+
+
+static void pluginsLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -26,19 +28,9 @@ void fixupLibDir() {
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
 	delete[] buffer;
 }
-static void pluginsLibDir() {
-	WCHAR* buffer = new WCHAR[8192];
-	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-	std::wstring PATH{ buffer, sz };
-	sz = GetCurrentDirectoryW(8192, buffer);
-	std::wstring CWD{ buffer, sz };
-	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins" + PATH).c_str());
-	delete[] buffer;
-}
 
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	fixupLibDir();
 	pluginsLibDir();
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
@@ -103,6 +95,7 @@ static void entry(bool fixcwd) {
 		MakeCommand("version", "Gets the version of this server", 0);
 		CmdOverload(version, versionCommand);
 		});
+
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {

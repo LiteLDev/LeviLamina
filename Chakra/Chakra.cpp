@@ -12,7 +12,7 @@ void fixupLibDir() {
 	std::wstring PATH{ buffer, sz };
 	sz = GetCurrentDirectoryW(8192, buffer);
 	std::wstring CWD{ buffer, sz };
-	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
+	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins;" + PATH).c_str());
 	delete[] buffer;
 }
 
