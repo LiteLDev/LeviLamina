@@ -17,12 +17,12 @@ void updateCheck() {
             auto arr = json.GetArray();
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
             int latestVersionNum = arr[arr.Size() - 1]["versionNum"].GetInt();
-            if (latestVersionNum < LiteLoaderVersionNum) {
+            if (latestVersionNum > LiteLoaderVersionNum) {
                 std::cout << "[BDSLiteloader] Found a new version: " << LatestRelease << "\n";
             }
             if (latestVersionNum == LiteLoaderVersionNum) {
             }
-            if (latestVersionNum > LiteLoaderVersionNum) {
+            if (latestVersionNum < LiteLoaderVersionNum) {
                 std::cout << "[BDSLiteloader] Using preview version: " << LatestRelease << "\n";
             }
         }
