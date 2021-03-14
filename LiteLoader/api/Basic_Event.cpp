@@ -210,12 +210,8 @@ void CallEvent(vector<T>& vec,T1& ev) {
 }
 THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z",
 	Mob* mob, ActorDamageSource* ads) {
-	char v95;
-	auto level = offPlayer::getLevel(mob);
-	auto v18 = (uintptr_t*)(*(__int64(__fastcall**)(const struct ActorDamageSource*, char*))(*(uintptr_t*)ads + 64i64))(ads,&v95);
-	auto ac = SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z"
-		, Actor*, Level*, void*, bool)(level, v18, 0);
-	MobDieEV md = { mob,ac };
+	Actor* src = SymCall("?getLastHurtByMob@Mob@@UEAAPEAV1@XZ", Mob*, Mob*)(mob);
+	MobDieEV md = { mob,mob };
 	CallEvent(MobDieCallBacks, md);
 	return original(mob, ads);
 }
