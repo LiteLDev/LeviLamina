@@ -326,10 +326,7 @@
     <ClCompile Include="ServerCommands.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CheckUpdate.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CrashReporter.cpp">
+    <ClCompile Include="UpdateChecker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

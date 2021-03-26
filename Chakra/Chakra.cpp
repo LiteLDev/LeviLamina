@@ -25,11 +25,11 @@ void preload() {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
-				std::cout << "[Chakra] Plugin " << canonical(i.path()) << " loaded\n";
+				std::cout << "[LiteLoaderChakra] Plugin " << canonical(i.path().filename()) << " loaded\n";
 				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
 			}
 			else {
-				std::cout << "[Chakra] Error when loading " << i.path() << "\n";
+				std::cout << "[LiteLoaderChakra] Error when loading " << i.path().filename() << "\n";
 			}
 		}
 	}
