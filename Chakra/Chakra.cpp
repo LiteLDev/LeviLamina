@@ -3,15 +3,20 @@
 
 #include "pch.h"
 #include "framework.h"
-#include <filesystem>
 #include "Chakra.h"
 
+#define MAX_PATH_LENGTH 8192
+
 void fixupLibDir() {
-	WCHAR* buffer = new WCHAR[8192];
-	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-	std::wstring PATH{ buffer, sz };
-	sz = GetCurrentDirectoryW(8192, buffer);
-	std::wstring CWD{ buffer, sz };
+	WCHAR* buffer = new (std::nothrow) WCHAR[MAX_PATH_LENGTH];
+	if (!buffer)
+		return;
+
+	DWORD length = GetEnvironmentVariableW(TEXT("PATH"), buffer, MAX_PATH_LENGTH);
+	std::wstring PATH(buffer, length);
+	length = GetCurrentDirectoryW(MAX_PATH_LENGTH, buffer);
+	std::wstring CWD(buffer, length);
+
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
 	delete[] buffer;
 }
@@ -31,6 +36,43 @@ void preload() {
 			else {
 				std::cout << "[LiteLoaderChakra] Error when loading " << i.path().filename() << "\n";
 			}
+		}
+	}
+}
+
+bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
+{
+	if (LoadLibrary(libName))
+	{
+		std::wcout << "[Chakra] " << libName << " Injected." << std::endl;
+		return true;
+	}
+	else
+	{
+		if (showFailInfo)
+		{
+			std::wcout << "[Chakra][Error] Can't load " << libName << "!" << std::endl;
+			std::wcout << "[Chakra][Error] Error Code:" << GetLastError() << std::endl;
+		}
+		return false;
+	}
+}
+
+void loadDlls()
+{
+	std::wifstream dllList(TEXT("plugins\\DllsToLoad.conf"));
+	if (!dllList)
+	{
+		if (!LoadLib(TEXT("LiteLoader.dll")))
+			exit(GetLastError());
+	}
+	else
+	{
+		std::wstring dllName;
+		while (getline(dllList,dllName))
+		{
+			if (!LoadLib(dllName.c_str()))
+				exit(GetLastError());
 		}
 	}
 }

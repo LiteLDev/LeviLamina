@@ -3,6 +3,7 @@
 
 void preload();
 void fixupLibDir();
+void loadDlls();
 
 BOOL APIENTRY DllMain( HMODULE hModule,
                        DWORD  ul_reason_for_call,
@@ -11,17 +12,14 @@ BOOL APIENTRY DllMain( HMODULE hModule,
 {
     switch (ul_reason_for_call)
     {
-    case DLL_PROCESS_ATTACH: {
+    case DLL_PROCESS_ATTACH:
         system("chcp 65001");
+
         fixupLibDir();
         preload();
-        if (LoadLibrary(TEXT("LiteLoader.dll"))) {
-            std::wcout << "LiteLoader Injected" << std::endl;
-        } else {
-            std::wcout << "[Error] Can't load LiteLoader  " << GetLastError() << std::endl;
-            exit(1);
-        }
-    }
+        loadDlls();
+        break;
+
     case DLL_THREAD_ATTACH:
     case DLL_THREAD_DETACH:
     case DLL_PROCESS_DETACH:
