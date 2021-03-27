@@ -14,7 +14,7 @@ void fixupLibDir() {
 
 	DWORD length = GetEnvironmentVariableW(TEXT("PATH"), buffer, MAX_PATH_LENGTH);
 	std::wstring PATH(buffer, length);
-	length = GetCurrentDirectoryW(8192, buffer);
+	length = GetCurrentDirectoryW(MAX_PATH_LENGTH, buffer);
 	std::wstring CWD(buffer, length);
 
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
