@@ -1,7 +1,6 @@
 ﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
 #include "pch.h"
 
-void preload();
 void fixupLibDir();
 void loadDlls();
 
@@ -16,7 +15,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
         system("chcp 65001");
 
         fixupLibDir();
-        preload();
         loadDlls();
         break;
 

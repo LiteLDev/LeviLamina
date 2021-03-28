@@ -21,25 +21,6 @@ void fixupLibDir() {
 	delete[] buffer;
 }
 
-void preload() {
-	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins");
-	std::filesystem::create_directory("plugins\\preload");
-	std::filesystem::directory_iterator ent("plugins\\preload");
-	for (auto& i : ent) {
-		if (i.is_regular_file() && i.path().extension() == ".dll") {
-			auto lib = LoadLibrary(i.path().c_str());
-			if (lib) {
-				std::cout << "[LiteLoaderChakra] Plugin " << canonical(i.path().filename()) << " loaded\n";
-				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
-			}
-			else {
-				std::cout << "[LiteLoaderChakra] Error when loading " << i.path().filename() << "\n";
-			}
-		}
-	}
-}
-
 bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
 {
 	if (LoadLibrary(libName))
@@ -60,21 +41,32 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
 
 void loadDlls()
 {
+	bool llLoaded = false;
+
 	std::wifstream dllList(TEXT("plugins\\DllsToLoad.conf"));
-	if (!dllList)
-	{
-		if (!LoadLib(TEXT("LiteLoader.dll")))
-			exit(GetLastError());
-	}
-	else
+	if(dllList)
 	{
 		std::wstring dllName;
 		while (getline(dllList,dllName))
 		{
-			if (!LoadLib(dllName.c_str()))
+			if (dllName.back() == TEXT('\n'))
+				dllName.pop_back();
+			if (dllName.back() == TEXT('\r'))
+				dllName.pop_back();
+
+			if (LoadLib(dllName.c_str()))
+			{
+				if (dllName == TEXT("LiteLoader.dll"))
+					llLoaded = true;
+			}
+			else
 				exit(GetLastError());
 		}
+		dllList.close();
 	}
+
+	if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
+		exit(GetLastError());
 }
 
 #pragma comment(linker, "/export:HookFunction=LiteLoader.HookFunction")
