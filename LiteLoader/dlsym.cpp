@@ -7,7 +7,7 @@
 #include <cstdio>
 #include <fstream>
 #include"framework.h"
-#include <detours\detours.h>
+#include <detours/detours.h>
 #include<unordered_map>
 #include<vector>
 using std::unordered_map,std::vector;
