@@ -3,36 +3,70 @@
 
 #include "pch.h"
 #include "framework.h"
-#include <filesystem>
 #include "Chakra.h"
 
+#define MAX_PATH_LENGTH 8192
+
 void fixupLibDir() {
-	WCHAR* buffer = new WCHAR[8192];
-	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-	std::wstring PATH{ buffer, sz };
-	sz = GetCurrentDirectoryW(8192, buffer);
-	std::wstring CWD{ buffer, sz };
+	WCHAR* buffer = new (std::nothrow) WCHAR[MAX_PATH_LENGTH];
+	if (!buffer)
+		return;
+
+	DWORD length = GetEnvironmentVariableW(TEXT("PATH"), buffer, MAX_PATH_LENGTH);
+	std::wstring PATH(buffer, length);
+	length = GetCurrentDirectoryW(MAX_PATH_LENGTH, buffer);
+	std::wstring CWD(buffer, length);
+
 	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
 	delete[] buffer;
 }
 
-void preload() {
-	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	std::filesystem::create_directory("plugins");
-	std::filesystem::create_directory("plugins\\preload");
-	std::filesystem::directory_iterator ent("plugins\\preload");
-	for (auto& i : ent) {
-		if (i.is_regular_file() && i.path().extension() == ".dll") {
-			auto lib = LoadLibrary(i.path().c_str());
-			if (lib) {
-				std::cout << "[Chakra] Plugin " << canonical(i.path()) << " loaded\n";
-				libs.push_back({ std::wstring{ i.path().c_str() }, lib });
-			}
-			else {
-				std::cout << "[Chakra] Error when loading " << i.path() << "\n";
-			}
-		}
+bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
+{
+	if (LoadLibrary(libName))
+	{
+		std::wcout << "[Chakra] " << libName << " Injected." << std::endl;
+		return true;
 	}
+	else
+	{
+		if (showFailInfo)
+		{
+			std::wcout << "[Chakra][Error] Can't load " << libName << "!" << std::endl;
+			std::wcout << "[Chakra][Error] Error Code:" << GetLastError() << std::endl;
+		}
+		return false;
+	}
+}
+
+void loadDlls()
+{
+    bool llLoaded = false;
+
+	std::wifstream dllList(TEXT("plugins\\preload.conf"));
+	if(dllList)
+	{
+		std::wstring dllName;
+		while (getline(dllList,dllName))
+		{
+			if (dllName.back() == TEXT('\n'))
+				dllName.pop_back();
+			if (dllName.back() == TEXT('\r'))
+				dllName.pop_back();
+
+			if (LoadLib(dllName.c_str()))
+			{
+				if (dllName == TEXT("LiteLoader.dll"))
+					llLoaded = true;
+			}
+			else
+				exit(GetLastError());
+		}
+		dllList.close();
+	}
+
+	if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
+		exit(GetLastError());
 }
 
 #pragma comment(linker, "/export:HookFunction=LiteLoader.HookFunction")

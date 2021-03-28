@@ -31,6 +31,7 @@ static void pluginsLibDir() {
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	pluginsLibDir();
+	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
 	LOG("Loading plugins");
