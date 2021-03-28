@@ -41,21 +41,32 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
 
 void loadDlls()
 {
-	std::wifstream dllList(TEXT("plugins\\preload.conf"));
-	if (!dllList)
-	{
-		if (!LoadLib(TEXT("LiteLoader.dll")))
-			exit(GetLastError());
-	}
-	else
+  bool llLoaded = false;
+
+	std::wifstream dllList(TEXT("plugins\\DllsToLoad.conf"));
+	if(dllList)
 	{
 		std::wstring dllName;
 		while (getline(dllList,dllName))
 		{
-			if (!LoadLib(dllName.c_str()))
+			if (dllName.back() == TEXT('\n'))
+				dllName.pop_back();
+			if (dllName.back() == TEXT('\r'))
+				dllName.pop_back();
+
+			if (LoadLib(dllName.c_str()))
+			{
+				if (dllName == TEXT("LiteLoader.dll"))
+					llLoaded = true;
+			}
+			else
 				exit(GetLastError());
 		}
+		dllList.close();
 	}
+
+	if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
+		exit(GetLastError());
 }
 
 #pragma comment(linker, "/export:HookFunction=LiteLoader.HookFunction")
