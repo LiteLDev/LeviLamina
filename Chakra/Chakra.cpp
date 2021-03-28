@@ -41,7 +41,7 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true)
 
 void loadDlls()
 {
-	bool llLoaded = false;
+  bool llLoaded = false;
 
 	std::wifstream dllList(TEXT("plugins\\DllsToLoad.conf"));
 	if(dllList)

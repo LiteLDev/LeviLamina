@@ -13,7 +13,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     {
     case DLL_PROCESS_ATTACH:
         system("chcp 65001");
-
         fixupLibDir();
         loadDlls();
         break;

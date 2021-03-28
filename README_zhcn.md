@@ -15,7 +15,6 @@
 
 ## Usage
 把.dll插件放到`plugins\`目录  
-把如BDSNetRunner需要预先加载的插件放到`plugin\preload\`目录
 
 ## More
 请参见[Wiki](https://github.com/LiteLDev/LiteLoader/wiki)

@@ -13,8 +13,7 @@ Based on [BedrockX](https://github.com/Sysca11/BedrockX)
 2. Run `RoDB.exe` to generate symbol files(`.symdb` and `.symdef`), before you run `RoDB.exe` you need to check if the `bedrock_server.pdb` exists
 
 ## Usage
-Put .dll plugins(build for LiteLoader) into `plugins\` directory  
-Put .dll plugins(need preload, for example: BDSNetRunner) into `plugin\preload\` directory  
+Put .dll plugins into `plugins\` directory  
 
 ## More
 See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
