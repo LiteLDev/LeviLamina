@@ -25,3 +25,6 @@
 [ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License
+
+## Restrictions&Exceptions
+请参见[ENG](README.md)
