@@ -1,5 +1,5 @@
 # LiteLoader
-[简体中文](README_zhcn.md)   
+[简体中文](README_zhcn.md) | English  
 [Donate us(afdian)](https://afdian.net/@liteldev)  
 [Forum](https://l.sakuralo.top/)  
 <a href="https://github.com/LiteLDev/LiteLoader/actions">![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)</a>

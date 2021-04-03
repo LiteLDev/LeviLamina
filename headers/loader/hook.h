@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../liteloader.h"
+#include "..\\liteloader.h"
 #include<string>
 extern "C" {
 	// The core api of the hook function
@@ -7,7 +7,6 @@ extern "C" {
 	// Used to get a server-defined specific function by name
 	LIAPI int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 	LIAPI void* dlsym_real(char const* name);
-	LIAPI void WaitForDebugger();
 }
 LIAPI std::string ptr2name(void* ptr);
 LIAPI std::string GetDataPath(const std::string& myname);
