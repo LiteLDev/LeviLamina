@@ -32,8 +32,8 @@ class MinecraftCommands {
 public:
 	static MCRESULT _runcmd(void* origin, const std::string& cmd, int unk1, bool unk2) {
 		MCRESULT rv;
-		/*SymCall("?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z", void, MinecraftCommands*, MCRESULT*, shared_ptr<CommandContext>, bool)(LocateS<MinecraftCommands>::_srv,&rv,std::make_shared<CommandContext>(std::forward<TP>(cmd),(CommandOrigin*)origin),false);*/
-		SymCall("?requestCommandExecution@MinecraftCommands@@QEBA?AUMCRESULT@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H_N@Z", void, MinecraftCommands*, MCRESULT*, void**, std::string const&, int, bool)(LocateS<MinecraftCommands>::_srv, &rv, &origin, cmd, unk1, unk2);
+		SymCall("?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z", void, MinecraftCommands*, MCRESULT*, std::shared_ptr<CommandContext>, bool)(LocateS<MinecraftCommands>::_srv, &rv, std::make_shared<CommandContext>(cmd, (CommandOrigin*)origin), false);
+		//SymCall("?requestCommandExecution@MinecraftCommands@@QEBA?AUMCRESULT@@V?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@4@H_N@Z", void, MinecraftCommands*, MCRESULT*, void**, std::string const&, int, bool)(LocateS<MinecraftCommands>::_srv, &rv, &origin, cmd, unk1, unk2);
 		return rv;
 	}
 };
