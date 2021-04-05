@@ -63,8 +63,6 @@ void loadDlls()
 					if (dllName == TEXT("LiteLoader.dll"))
 						llLoaded = true;
 				}
-				else
-					exit(GetLastError());
 			}
 			dllList.close();
 		}
