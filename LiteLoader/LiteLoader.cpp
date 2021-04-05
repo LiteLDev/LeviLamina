@@ -62,7 +62,7 @@ static void loadPlugins() {
 	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
-	vector<std::wstring> preloadList;
+	vector<std::wstring> preloadList = getPreloadList();
 
 	LOG("Loading plugins");
 	for (auto& i : ent) {
