@@ -10,7 +10,7 @@
 基于[BedrockX](https://github.com/Sysca11/BedrockX)
 
 ## 安装
-1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载LiteLoader，将压缩文件解压到BDS目录下
+1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.7z`和`lib.7z`，将两个压缩文件解压到BDS目录下
 2. 运行`RoDB.exe`以生成符号文件(`.symdb`和`.symdef`)，运行`RoDB.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
 
 ## 使用方法
