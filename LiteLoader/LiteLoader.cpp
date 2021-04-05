@@ -28,15 +28,48 @@ static void pluginsLibDir() {
 	delete[] buffer;
 }
 
+static vector<std::wstring> getPreloadList()
+{
+	//若在preload.conf中，则不加载
+	vector<std::wstring> preloadList{};
+
+	if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
+	{
+		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
+		if (dllList)
+		{
+			std::wstring dllName;
+			while (getline(dllList, dllName))
+			{
+				if (dllName.back() == TEXT('\n'))
+					dllName.pop_back();
+				if (dllName.back() == TEXT('\r'))
+					dllName.pop_back();
+
+				if (dllName.empty() || dllName.front() == TEXT('#'))
+					continue;
+				preloadList.push_back(dllName);
+			}
+			dllList.close();
+		}
+	}
+	return preloadList;
+}
+
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	pluginsLibDir();
 	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
+	vector<std::wstring> preloadList;
+
 	LOG("Loading plugins");
 	for (auto& i : ent) {
-		if (i.is_regular_file() && i.path().extension() == ".dll") {
+		if (i.is_regular_file() && i.path().extension() == ".dll"
+			&& std::find(preloadList.begin(),preloadList.end(),std::wstring(i.path()))
+				== preloadList.end())
+		{
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
