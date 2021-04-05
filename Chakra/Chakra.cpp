@@ -43,30 +43,53 @@ void loadDlls()
 {
     bool llLoaded = false;
 
-	std::wifstream dllList(TEXT("plugins\\preload.conf"));
-	if(dllList)
+	if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
 	{
-		std::wstring dllName;
-		while (getline(dllList,dllName))
+		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
+		if (dllList)
 		{
-			if (dllName.back() == TEXT('\n'))
-				dllName.pop_back();
-			if (dllName.back() == TEXT('\r'))
-				dllName.pop_back();
-
-			if (LoadLib(dllName.c_str()))
+			std::wstring dllName;
+			while (getline(dllList, dllName))
 			{
-				if (dllName == TEXT("LiteLoader.dll"))
-					llLoaded = true;
-			}
-			else
-				exit(GetLastError());
-		}
-		dllList.close();
-	}
+				if (dllName.back() == TEXT('\n'))
+					dllName.pop_back();
+				if (dllName.back() == TEXT('\r'))
+					dllName.pop_back();
 
-	if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
-		exit(GetLastError());
+				if (dllName.empty() || dllName.front() == TEXT('#'))
+					continue;
+				if (LoadLib(dllName.c_str()))
+				{
+					if (dllName == TEXT("LiteLoader.dll"))
+						llLoaded = true;
+				}
+				else
+					exit(GetLastError());
+			}
+			dllList.close();
+		}
+		if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
+			exit(GetLastError());
+	}
+	else
+	{
+		bool CSRexist = std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\BDSNetRunner.dll")));
+		
+		//无preload.conf，自动生成
+		std::wofstream dllList(TEXT(".\\plugins\\preload.conf"));
+		if (dllList)
+		{
+			dllList << TEXT("LiteLoader.dll");
+			if (CSRexist)
+				dllList << TEXT("\r\nBDSNetRunner.dll");
+			dllList.flush();
+			dllList.close();
+		}
+		if(CSRexist)
+			LoadLib(TEXT("BDSNetRunner.dll"));
+		if (!LoadLib(TEXT("LiteLoader.dll")))
+			exit(GetLastError());
+	}
 }
 
 #pragma comment(linker, "/export:HookFunction=LiteLoader.HookFunction")
