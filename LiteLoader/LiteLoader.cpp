@@ -66,10 +66,11 @@ static void loadPlugins() {
 
 	LOG("Loading plugins");
 	for (auto& i : ent) {
-		if (i.is_regular_file() && i.path().extension() == ".dll"
-			&& std::find(preloadList.begin(),preloadList.end(),std::wstring(i.path()))
-				== preloadList.end())
-		{
+		if (i.is_regular_file() && i.path().extension() == ".dll") {
+			for (auto& p : preloadList) {
+				if (std::wstring(i.path()).find(p) != std::wstring::npos)
+					continue;
+			}
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
