@@ -63,8 +63,6 @@ void loadDlls()
 					if (dllName == TEXT("LiteLoader.dll"))
 						llLoaded = true;
 				}
-				else
-					exit(GetLastError());
 			}
 			dllList.close();
 		}
@@ -81,12 +79,12 @@ void loadDlls()
 		{
 			dllList << TEXT("LiteLoader.dll");
 			if (CSRexist)
-				dllList << TEXT("\r\nBDSNetRunner.dll");
+				dllList << std::endl << TEXT(".\\plugins\\BDSNetRunner.dll");
 			dllList.flush();
 			dllList.close();
 		}
 		if(CSRexist)
-			LoadLib(TEXT("BDSNetRunner.dll"));
+			LoadLib(TEXT(".\\plugins\\BDSNetRunner.dll"));
 		if (!LoadLib(TEXT("LiteLoader.dll")))
 			exit(GetLastError());
 	}
