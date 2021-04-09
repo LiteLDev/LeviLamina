@@ -9,12 +9,12 @@ static void PrintErrorMessage() {
         std::wcerr << "Error\n";
         return;
     }
-    std::cerr << "[Error] ErrorMessageID: " << errorMessageID << std::endl;
+    std::cerr << "[LL] [Error] ErrorMessageID: " << errorMessageID << std::endl;
     LPWSTR messageBuffer = nullptr;
     FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, NULL, errorMessageID,
         MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
-    std::wcerr << "[Error] " << messageBuffer;
+    std::wcerr << "[LL] [Error] " << messageBuffer;
     LocalFree(messageBuffer);
 }
 
@@ -66,7 +66,7 @@ static void loadPlugins() {
 
     LOG("Loading plugins");
     for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension() == ".dll") {
+        if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             bool loaded = false;
             for (auto& p : preloadList)
                 if (p.find(std::wstring(i.path())) != std::wstring::npos)
@@ -83,7 +83,7 @@ static void loadPlugins() {
                 libs.push_back({ std::wstring{ i.path().c_str() }, lib });
             }
             else {
-                LOG("Error when loading " + i.path().filename().u8string() + "");
+                LOG("Error when loading " + i.path().filename().u8string());
                 PrintErrorMessage();
             }
         }
