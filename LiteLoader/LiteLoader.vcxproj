@@ -147,6 +147,7 @@
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -242,8 +243,7 @@
     <ClCompile Include="api\WPlayer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="CheckUpdate.cpp" />
-    <ClCompile Include="CrashReporter.cpp" />
+    <ClCompile Include="UpdateChecker.cpp" />
     <ClCompile Include="debug\MSearch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -285,6 +285,8 @@
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
     <Library Include="..\lib\leveldb.lib" />
+    <Library Include="..\lib\libcrypto.lib" />
+    <Library Include="..\lib\libssl.lib" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc" />

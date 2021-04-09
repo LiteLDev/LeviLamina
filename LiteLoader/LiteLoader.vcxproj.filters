@@ -326,16 +326,19 @@
     <ClCompile Include="ServerCommands.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="CheckUpdate.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="CrashReporter.cpp">
+    <ClCompile Include="UpdateChecker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\detours.lib" />
     <Library Include="..\lib\leveldb.lib" />
+    <Library Include="..\lib\libssl.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\libcrypto.lib">
+      <Filter>资源文件</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="LiteLoader.rc">

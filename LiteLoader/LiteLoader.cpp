@@ -18,7 +18,7 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-static void fixupLibDir() {
+static void pluginsLibDir() {
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -28,25 +28,54 @@ static void fixupLibDir() {
 	delete[] buffer;
 }
 
-static void pluginsLibDir() {
-	WCHAR* buffer = new WCHAR[8192];
-	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
-	std::wstring PATH{ buffer, sz };
-	sz = GetCurrentDirectoryW(8192, buffer);
-	std::wstring CWD{ buffer, sz };
-	SetEnvironmentVariableW(TEXT("PATH"), (CWD + L"\\plugins\\lib;" + PATH).c_str());
-	delete[] buffer;
+static vector<std::wstring> getPreloadList()
+{
+	//若在preload.conf中，则不加载
+	vector<std::wstring> preloadList{};
+
+	if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
+	{
+		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
+		if (dllList)
+		{
+			std::wstring dllName;
+			while (getline(dllList, dllName))
+			{
+				if (dllName.back() == TEXT('\n'))
+					dllName.pop_back();
+				if (dllName.back() == TEXT('\r'))
+					dllName.pop_back();
+
+				if (dllName.empty() || dllName.front() == TEXT('#'))
+					continue;
+				preloadList.push_back(dllName);
+			}
+			dllList.close();
+		}
+	}
+	return preloadList;
 }
 
 static void loadPlugins() {
 	static std::vector<std::pair<std::wstring, HMODULE>> libs;
-	fixupLibDir();
 	pluginsLibDir();
+	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
 	short plugins = 0;
+	vector<std::wstring> preloadList = getPreloadList();
+
 	LOG("Loading plugins");
 	for (auto& i : ent) {
 		if (i.is_regular_file() && i.path().extension() == ".dll") {
+			bool loaded = false;
+			for (auto& p : preloadList)
+				if (p.find(std::wstring(i.path())) != std::wstring::npos)
+				{
+					loaded = true;
+					break;
+				}
+			if (loaded)
+				continue;
 			auto lib = LoadLibrary(i.path().c_str());
 			if (lib) {
 				plugins++;
@@ -94,7 +123,7 @@ void FixUpCWD() {
 
 void startWBThread();
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp);
-int updateCheck();
+void updateCheck();
 
 static void entry(bool fixcwd) {
 	if (fixcwd)
@@ -105,6 +134,7 @@ static void entry(bool fixcwd) {
 		MakeCommand("version", "Gets the version of this server", 0);
 		CmdOverload(version, versionCommand);
 		});
+
 	loadPlugins();
 	XIDREG::initAll();
 	Event::addEventListener([](ServerStartedEV) {
