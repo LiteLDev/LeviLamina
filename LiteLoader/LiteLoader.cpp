@@ -9,12 +9,12 @@ static void PrintErrorMessage() {
         std::wcerr << "Error\n";
         return;
     }
-    std::cerr << "[LL] [Error] ErrorMessageID: " << errorMessageID << std::endl;
+    std::cerr << "[Error] ErrorMessageID: " << errorMessageID << std::endl;
     LPWSTR messageBuffer = nullptr;
     FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM, NULL, errorMessageID,
         MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
-    std::wcerr << "[LL] [Error] " << messageBuffer;
+    std::wcerr << "[Error] " << messageBuffer;
     LocalFree(messageBuffer);
 }
 
