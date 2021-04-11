@@ -16,7 +16,7 @@ Based on [BedrockX](https://github.com/Sysca11/BedrockX)
 Put .dll plugins into `plugins\` directory  
 
 ## More
-See [Wiki](https://github.com/LiteLDev/LiteLoader/wiki)
+See https://docs.litetitle.com/
 
 ## LICENSE  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
