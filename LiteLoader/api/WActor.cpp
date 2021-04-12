@@ -6,14 +6,14 @@
 static MSearcherEx<unsigned long long> wa_getrtid;
 unsigned long long WActor::getRuntimeID() {
 	if (!wa_getrtid.myOff) {
-		auto plvl=LocateS<ServerLevel>::_srv;
+		auto plvl = LocateS<ServerLevel>::_srv;
 		wa_getrtid.init(
-			v, [plvl,base=this->v](void* x) -> bool {
-				uintptr_t xx = (uintptr_t)x;
-				if ((xx & 7))
-					return false;
-				return plvl->getRuntimeEntity({ *(u64*)x }, false) == base;
-			}, 159 * 8);
+			v, [plvl, base = this->v](void* x) -> bool {
+			uintptr_t xx = (uintptr_t)x;
+			if ((xx & 7))
+				return false;
+			return plvl->getRuntimeEntity({ *(u64*)x }, false) == base;
+		}, 159 * 8);
 	}
 	return *wa_getrtid.get(v);
 }
@@ -40,8 +40,23 @@ LIAPI WDim WActor::getDim() {
 LIAPI int WActor::getDimID() {
 	return v->getDimensionId();
 }
+
 LIAPI void WActor::teleport(Vec3 to, int dimid) {
-	if (getDimID()!=dimid)
-		SymCall("?teleport@TeleportCommand@@SAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4H@Z", void, Actor*, Vec3, Vec3*, int)( v, to, &to, dimid);
-	SymCall("?teleport@TeleportCommand@@SAXAEAVActor@@VVec3@@PEAV3@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4H@Z", void , Actor*, Vec3, Vec3*, int)( v, to, &to, dimid);
+	char mem[128];
+	SymCall("?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4H@Z", void*, void*, Actor*, Vec3, int, int, float, float, int) (
+		&mem, v, to, 0, dimid, 0, 0, 15
+		);
+	SymCall("?applyTarget@TeleportCommand@@SAXAEAVActor@@VTeleportTarget@@@Z", void, Actor*, void*) (
+		v, &mem
+		);
 }
+/*
+THook(void, "?computeTarget@TeleportCommand@@SA?AVTeleportTarget@@AEAVActor@@VVec3@@PEAV4@V?$AutomaticID@VDimension@@H@@VRelativeFloat@@4H@Z", void* target, Actor* actor, Vec3 to, int to2, int dimid, float f1, float f2, int i1, long long i2) {
+	std::cout << target << " " << actor->getNameTag() << " " << to.toString()  << " " << to2 << " " << dimid << " " << f1 << " " << f2 << " " << i1 << " " << i2 << "\n";
+	return original(target, actor, to, to2, dimid, f1, f2, i1, i2);
+}
+
+THook(void, "?applyTarget@TeleportCommand@@SAXAEAVActor@@VTeleportTarget@@@Z", Actor* actor, void* target) {
+	std::cout << actor->getNameTag() << " " << target << "\n";
+	return original(actor, target);
+}*/
