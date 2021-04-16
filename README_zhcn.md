@@ -1,7 +1,7 @@
 # LiteLoader
 简体中文 | [English](README.md)   
 [捐赠(爱发电)](https://afdian.net/@liteldev)  
-[社区论坛](https://l.sakuralo.top/)  
+[社区论坛](https://forum.sakuralo.top/)  
 <a href="https://github.com/LiteLDev/LiteLoader/actions">![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)</a>
 <a href="https://t.me/liteloader">![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)</a><br>
 <a href="https://jq.qq.com/?_wv=1027&k=78uA5xfp">![QQ](https://img.shields.io/badge/QQ-LiteLoader-%2F05028?style=for-the-badge)</a><br>
