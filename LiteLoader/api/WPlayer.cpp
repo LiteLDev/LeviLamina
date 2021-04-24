@@ -69,10 +69,12 @@ THook(void*, "??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHand
 }
 */
 LIAPI NetworkIdentifier* WPlayer::_getNI() {
-	return MS_NI.get(v);
+	return offPlayer::getNetworkIdentifier(v);
+	//return MS_NI.get(v);
 }
 LIAPI Certificate* WPlayer::_getCert() {
-	return *MS_PC.get(v);
+	return offPlayer::getCert(v);
+	//return *MS_PC.get(v);
 }
 LIAPI void WPlayer::kick(const string& reason) {
 	LocateS<ServerNetworkHandler>()->disconnectClient(*_getNI(), reason, false);
