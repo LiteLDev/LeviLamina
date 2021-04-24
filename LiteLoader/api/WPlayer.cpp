@@ -6,6 +6,7 @@
 #include<mc/Player.h>
 #include<mc/Certificate.h>
 #include<debug\MemSearcher.h>
+#include <mc\OffsetHelper.h>
 
 
 LIAPI void WPlayer::sendText(string text, TextType tp) {
@@ -79,13 +80,14 @@ LIAPI void WPlayer::kick(const string& reason) {
 LIAPI void WPlayer::forceKick() {
 	LocateS<ServerNetworkHandler>()->onDisconnect(*_getNI());
 }
-static string getName_real(WPlayer wp) {
+/*static string getName_real(WPlayer wp) {
 	return ExtendedCertificate::getIdentityName(*wp._getCert());
 }
 static xuid_t getXuid_real(WPlayer wp) {
 	auto xuid = ExtendedCertificate::getXuid(*wp._getCert());
 	return xuid.size() > 1 ? std::stoull(xuid) : do_hash(getName_real(wp));
 }
+
 struct xuidStorage {
 	xuid_t val;
 	string name;
@@ -100,16 +102,20 @@ struct xuidStorage {
 		return name;
 	}
 };
-static playerMap<xuidStorage> xuid_cache;
-/*LIAPI xuid_t WPlayer::getXuid() {
-	return xuid_cache[v];
-}*/
-LIAPI const string& WPlayer::getName() {
-	return xuid_cache[v];
+*/
+//static playerMap<xuidStorage> xuid_cache;
+LIAPI xuid_t WPlayer::getXuid() {
+	return offPlayer::getXUID(v);
+	//return xuid_cache[v];
 }
-/*LIAPI string WPlayer::getRealName() {
-	return ExtendedCertificate::getIdentityName(*_getCert());
-}*/
+LIAPI const string& WPlayer::getName() {
+	return offPlayer::getRealName(v);
+	//return xuid_cache[v];
+}
+LIAPI string WPlayer::getRealName() {
+	return offPlayer::getRealName(v);
+	//return ExtendedCertificate::getIdentityName(*_getCert());
+}
 LIAPI permlvl_t WPlayer::getPermLvl() {
 	return v->getCommandPermissionLevel() & 0xff;
 }

@@ -99,8 +99,8 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	}
 	LIAPI void sendText(string text, TextType type = RAW);
 	LIAPI string const& getName();
-	//LIAPI xuid_t getXuid();
-	//LIAPI string getRealName();
+	LIAPI xuid_t getXuid();
+	LIAPI string getRealName();
 	LIAPI permlvl_t getPermLvl();
 	LIAPI class BlockSource& getBlockSource_();
 	inline void teleport(Vec3 to, int dimid) {
