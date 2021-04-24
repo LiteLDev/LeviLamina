@@ -141,11 +141,11 @@ static void entry(bool fixcwd) {
 		startWBThread();
 		LOG("LiteLoader is distributed under the GPLv3 License");
 		#ifdef LiteLoaderVersionGithub
-		LOG("Version: " + (std::string)LiteLoaderVersionGithub + " Based on BedrockX Project");
+		LOG("Github: https://git.io/JOyw4 | Version: " + (std::string)LiteLoaderVersionGithub + " | Based on BedrockX Project");
 		#else
-		LOG("Version: " + (std::string)LiteLoaderVersion + " Based on BedrockX Project");
+		LOG("Github: https://git.io/JOyw4 | Version: " + (std::string)LiteLoaderVersion + " | Based on BedrockX Project");
 		#endif
-		LOG("Github: https://git.io/JtwPb");
+		LOG(u8"感谢旋律云(rhymc.com)对本项目的支持 | Thanks to [rhymc.com] for supporting this project");
 		updateCheck();
 		});
 	PostInitEV PostInitEV;
