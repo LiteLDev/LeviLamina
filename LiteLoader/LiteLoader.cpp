@@ -18,7 +18,7 @@ static void PrintErrorMessage() {
 	LocalFree(messageBuffer);
 }
 
-static void pluginsLibDir() {
+static void pluginsLibDir() {//add plugins folder to path to fix dependent problem
 	WCHAR* buffer = new WCHAR[8192];
 	auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
 	std::wstring PATH{ buffer, sz };
@@ -129,15 +129,17 @@ static void entry(bool fixcwd) {
 	if (fixcwd)
 		FixUpCWD();
 	std::filesystem::create_directory("logs");
-	Event::addEventListener([](RegCmdEV ev) {
+
+	Event::addEventListener([](RegCmdEV ev) { //Register commands
 		CMDREG::SetCommandRegistry(ev.CMDRg);
 		MakeCommand("version", "Gets the version of this server", 0);
 		CmdOverload(version, versionCommand);
 		});
 
 	loadPlugins();
-	XIDREG::initAll();
-	Event::addEventListener([](ServerStartedEV) {
+	XIDREG::initAll();//Initialize the xuid database
+
+	Event::addEventListener([](ServerStartedEV) {//Server started event
 		startWBThread();
 		LOG("LiteLoader is distributed under the GPLv3 License");
 		#ifdef LiteLoaderVersionGithub
@@ -148,7 +150,8 @@ static void entry(bool fixcwd) {
 		LOG(u8"感谢旋律云(rhymc.com)对本项目的支持 | Thanks to [rhymc.com] for supporting this project");
 		updateCheck();
 		});
-	PostInitEV PostInitEV;
+
+	PostInitEV PostInitEV;//Register plugin loading event
 	for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
 		PostInitCallBacks[count](PostInitEV);
 	}
