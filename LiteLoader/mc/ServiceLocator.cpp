@@ -8,7 +8,7 @@
 #include <api/Basic_Event.h>
 
 template <class T>
-LIAPI T* LocateS<T>::_srv;
+T* LocateS<T>::_srv;
 using std::cout;
 using std::endl;
 using std::vector;
@@ -89,4 +89,32 @@ THook(void*, "??0RakPeer@RakNet@@QEAA@XZ", RakPeer_t* p) {
 		LocateS<RakPeer_t>::assign(*p);
 	}
 	return original(p);
+}
+
+template <> LIAPI RakPeer_t* LocateService<RakPeer_t>() {
+	return LocateS<RakPeer_t>::_srv;
+}
+template <> LIAPI WLevel* LocateService<WLevel>() {
+	return LocateS<WLevel>::_srv;
+}
+template <> LIAPI CommandRegistry* LocateService<CommandRegistry>() {
+	return LocateS<CommandRegistry>::_srv;
+}
+template <> LIAPI Level* LocateService<Level>() {
+	return LocateS<Level>::_srv;
+}
+template <> LIAPI Minecraft* LocateService<Minecraft>() {
+	return LocateS<Minecraft>::_srv;
+}
+template <> LIAPI MinecraftCommands* LocateService<MinecraftCommands>() {
+	return LocateS<MinecraftCommands>::_srv;
+}
+template <> LIAPI RakNetServerLocator* LocateService<RakNetServerLocator>() {
+	return LocateS<RakNetServerLocator>::_srv;
+}
+template <> LIAPI ServerLevel* LocateService<ServerLevel>() {
+	return LocateS<ServerLevel>::_srv;
+}
+template <> LIAPI ServerNetworkHandler* LocateService<ServerNetworkHandler>() {
+	return LocateS<ServerNetworkHandler>::_srv;
 }
