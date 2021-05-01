@@ -1,6 +1,6 @@
 name: Build LiteLoader
 
-on: [push]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   SOLUTION_FILE_PATH: .
