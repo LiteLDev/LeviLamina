@@ -1,11 +1,11 @@
 ﻿#pragma once
-struct WPlayer;
 #include <string>
 #include <liteloader.h>
 #include <stl\useful.h>
 #include <mc/Player.h>
 #include <vector>
 #include <windows.h>
+struct WPlayer;
 class NetworkIdentifier;
 namespace liteloader {
 	using std::string;
@@ -16,18 +16,18 @@ namespace liteloader {
 	LIAPI std::vector<Player*>getAllPlayers();
 	LIAPI std::vector<std::pair<std::wstring, HMODULE>> getAllLibs();
 	template<typename T>
-	static inline void APPEND(string& r,T&& x) {
+	static inline void APPEND(string& r, T&& x) {
 		r.append(S(std::forward<T>(x)));
 		r.push_back(' ');
 	}
 	template<typename... T>
 	static inline bool runcmdA(T&&... a) {
 		string s;
-		(APPEND(s,std::forward<T>(a)), ...);
+		(APPEND(s, std::forward<T>(a)), ...);
 		return runcmd(s);
 	}
-	template<typename N,typename... T>
-	static inline bool runcmdAsA(N p,T&&... a) {
+	template<typename N, typename... T>
+	static inline bool runcmdAsA(N p, T&&... a) {
 		string s;
 		(APPEND(s, std::forward<T>(a)), ...);
 		return runcmdAs(p, s);
