@@ -82,7 +82,7 @@ public:
 	ServerPlayer* Player;
 	ItemStack* ItemStack;
 	BlockPos blkpos;
-	char side;
+	unsigned char side;
 };
 
 class MobHurtedEV {
