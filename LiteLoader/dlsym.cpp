@@ -2,15 +2,16 @@
 #include "pch.h"
 #include <list>
 #include <string>
-#include<filesystem>
+#include <filesystem>
 #include <string_view>
 #include <cstdio>
 #include <fstream>
-#include"framework.h"
+#include "framework.h"
 #include <detours/detours.h>
-#include<unordered_map>
-#include<vector>
-using std::unordered_map,std::vector;
+#include <unordered_map>
+#include <vector>
+#include <thread>
+using std::unordered_map, std::vector;
 using std::list;
 using std::string, std::string_view;
 
@@ -59,7 +60,7 @@ struct RoDB_R {
 		string name;
 		name.reserve(8192);
 		while (!fp.eof()) {
-			int ch=fp.get();
+			int ch = fp.get();
 			if (ch == 0) {
 				unsigned int dst;
 				fp.read((char*)&dst, 4);
@@ -67,7 +68,7 @@ struct RoDB_R {
 					return name;
 				}
 				else {
-					name.clear();	
+					name.clear();
 				}
 			}
 			else {
@@ -79,11 +80,11 @@ struct RoDB_R {
 	bool _cmp(string_view key) {
 		for (uint32_t i = 0; i < key.size(); ++i) {
 			int ch = fp.get();
-			if (ch !=key[i]) {
+			if (ch != key[i]) {
 				return false;
 			}
 		}
-		return fp.get()==0;
+		return fp.get() == 0;
 	}
 	unsigned int get(string_view key) { //return file offset
 		auto hash = BKDR(key.data(), key.size());
@@ -131,10 +132,11 @@ void* dlsym_real(const char* x) {
 	if (pdb == nullptr) {
 		if (!std::filesystem::exists("bedrock_server.symdb")) {
 			printf("SymDB not found\ntry to run RoDB.exe\n");
+			std::this_thread::sleep_for(std::chrono::seconds(10));
 			exit(1);
 		}
 		pdb = new RoDB_R("bedrock_server.symdb");
-		BaseAdr = (uintptr_t)GetModuleHandle(NULL);	
+		BaseAdr = (uintptr_t)GetModuleHandle(NULL);
 		static_assert(sizeof(GetModuleHandle(NULL)) == 8);
 	}
 	auto rv = pdb->get(x);
@@ -145,8 +147,8 @@ void* dlsym_real(const char* x) {
 	return (void*)(BaseAdr + rva);
 }
 inline static void HookFunction__begin() {
-		DetourTransactionBegin();
-		DetourUpdateThread(GetCurrentThread());
+	DetourTransactionBegin();
+	DetourUpdateThread(GetCurrentThread());
 }
 inline static long HookFunction__finalize() {
 	return DetourTransactionCommit();

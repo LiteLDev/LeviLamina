@@ -55,9 +55,11 @@ static vector<std::wstring> getPreloadList()
 	}
 	return preloadList;
 }
-
+static std::vector<std::pair<std::wstring, HMODULE>> libs;
+LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs(){
+	return libs;
+}
 static void loadPlugins() {
-	static std::vector<std::pair<std::wstring, HMODULE>> libs;
 	pluginsLibDir();
 	std::filesystem::create_directory("plugins");
 	std::filesystem::directory_iterator ent("plugins");
@@ -99,11 +101,12 @@ static void loadPlugins() {
 			}
 			catch (...) {
 				std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
+				std::this_thread::sleep_for(std::chrono::seconds(10));
 				exit(1);
 			}
 		}
 	}
-	libs.clear();
+	//libs.clear();
 	LOG(std::to_string(plugins) + " plugin(s) loaded");
 }
 

@@ -64,6 +64,7 @@ namespace CMDREG {
 				myid = ALLOCID();
 				if (CmdRegGlobal == nullptr) {
 					std::cout << "CmdRegGlobal Not Set" << endl;
+					std::this_thread::sleep_for(std::chrono::seconds(10));
 					exit(1);
 				}
 				CmdRegGlobal->addEnumValues(name, myid, values);

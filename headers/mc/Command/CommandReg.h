@@ -161,6 +161,7 @@ public:
 		*(void**)&ptr = parse_ptr[typeid(T).name()];
 		if (!ptr) {
 			printf("Cant parse cmd data %s\n", typeid(T).name());
+			std::this_thread::sleep_for(std::chrono::seconds(10));
 			exit(1);
 		}
 		return ptr;
