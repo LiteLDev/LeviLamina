@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include "hash.h"
 #include "hook.h"
-
+#include <thread>
 template <typename T, int off>
 inline T& dAccess(void* ptr) {
 	return *(T*)(((uintptr_t)ptr) + off);
