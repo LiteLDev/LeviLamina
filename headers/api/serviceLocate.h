@@ -32,6 +32,7 @@ class MinecraftCommands;
 class RakNetServerLocator;
 class ServerLevel;
 class ServerNetworkHandler;
+class LevelStorage;
 
 template <> LIAPI RakPeer_t* LocateService<RakPeer_t>();
 template <> LIAPI WLevel* LocateService<WLevel>();
@@ -42,3 +43,4 @@ template <> LIAPI MinecraftCommands* LocateService<MinecraftCommands>();
 template <> LIAPI RakNetServerLocator* LocateService<RakNetServerLocator>();
 template <> LIAPI ServerLevel* LocateService<ServerLevel>();
 template <> LIAPI ServerNetworkHandler* LocateService<ServerNetworkHandler>();
+template <> LIAPI LevelStorage* LocateService<LevelStorage>();

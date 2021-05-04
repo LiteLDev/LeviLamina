@@ -13,7 +13,7 @@ LIAPI void WPlayer::sendText(string text, TextType tp) {
 	//WBStream txtpkws;
 	//txtpkws.data.reserve(8 + text.size());
 	//txtpkws.apply((char)tp, (char)0, MCString(text));
-	//MyPkt<9> pk{ txtpkws.data };
+	//MyPkt<9> pk{ txtpkws };
 	//v->sendNetworkPacket(pk);
 	//上面是用不了的旧代码
 	Packet* pkt;

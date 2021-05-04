@@ -6,6 +6,7 @@
 #include <liteloader.h>
 #include <loader/Loader.h>
 #include <api/Basic_Event.h>
+#include <mc\Level.h>
 
 template <class T>
 T* LocateS<T>::_srv;
@@ -60,13 +61,13 @@ THook(void, "?initCoreEnums@MinecraftCommands@@QEAAXAEBVIWorldRegistriesProvider
 	original(a0, a1, a2, a3, a4);
 	LocateS<MinecraftCommands>::assign(*a0);
 }
-/*
+
 THook(void*, "?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z", LevelStorage* a, void* b,void* c,void* d) {
 	static bool inited = false;
 	if (!inited)
 		LocateS<LevelStorage>::assign(*a), inited = true;
 	return original(a, b,c,d);
-}*/
+}
 #if 0
 THook(void*, "??0ChunkSource@@QEAA@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@@Z", ChunkSource* a1, void** a2) {
 	LocateS<ChunkSource>::assign(*a1);
@@ -117,4 +118,7 @@ template <> LIAPI ServerLevel* LocateService<ServerLevel>() {
 }
 template <> LIAPI ServerNetworkHandler* LocateService<ServerNetworkHandler>() {
 	return LocateS<ServerNetworkHandler>::_srv;
+}
+template <> LIAPI LevelStorage* LocateService<LevelStorage>() {
+	return LocateS<LevelStorage>::_srv;
 }
