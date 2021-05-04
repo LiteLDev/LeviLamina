@@ -3,8 +3,6 @@
 #include <mc/Command/CommandReg.h>
 #include <stl/optional.h>
 
-using std::endl;
-
 inline CommandRegistry* CmdRegGlobal = nullptr;
 namespace CMDREG {
 	inline void SetCommandRegistry(CommandRegistry* reg) {
@@ -63,7 +61,7 @@ namespace CMDREG {
 			if (myid.value == 65535) {
 				myid = ALLOCID();
 				if (CmdRegGlobal == nullptr) {
-					std::cout << "CmdRegGlobal Not Set" << endl;
+					std::cout << "CmdRegGlobal Not Set" << std::endl;
 					std::this_thread::sleep_for(std::chrono::seconds(10));
 					exit(1);
 				}
@@ -88,9 +86,9 @@ namespace CMDREG {
 	};
 
 	static inline void MakeCommand(string const& name, const char* desc, int lvl) {
-		std::cout << "RegisteringCommand > " << name << endl;
+		std::cout << "RegisteringCommand > " << name << std::endl;
 		if (CmdRegGlobal == nullptr) {
-			std::cout << "CmdRegGlobal Not Set" << endl;
+			std::cout << "CmdRegGlobal Not Set" << std::endl;
 			exit(1);
 		}
 		SymCall("?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
