@@ -171,7 +171,7 @@ namespace CMDREG {
 		}
 		inline void regMe(string const& cname, std::vector<CommandParameterData>&& vc) {
 			if (CmdRegGlobal == nullptr) {
-				std::cout << "CmdRegGlobal Not Set" << endl;
+				std::cout << "CmdRegGlobal Not Set" << std::endl;
 				exit(1);
 			}
 			CmdRegGlobal->registerOverload(cname, &factory, std::forward< std::vector<CommandParameterData>>(vc));

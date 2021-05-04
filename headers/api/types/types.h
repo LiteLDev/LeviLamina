@@ -134,7 +134,7 @@ struct WPlayer : Wrapped<ServerPlayer> {
 struct WItem : Wrapped<ItemStack> {
 	WItem(ItemStack& is) : Wrapped<ItemStack>(is) {}
 	LIAPI unsigned char getCount() const;
-	static void procoff();
+	//static void procoff();
 };
 struct WBlock : Wrapped<Block> {
 	WBlock(Block const& i) : Wrapped<Block>(i) {}
