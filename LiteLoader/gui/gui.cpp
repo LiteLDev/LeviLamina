@@ -6,11 +6,17 @@
 #include<api\myPacket.h>
 #include<mc/Player.h>
 #include<api/Basic_Event.h>
+#include<mc/OffsetHelper.h>
 namespace GUI {
 	static vector<string> onlineLIST;
 	static string onlineLISTV;
 	LIAPI std::vector<string> getPlayerList() {
-		return onlineLIST;
+		auto plist = liteloader::getAllPlayers();
+		std::vector<string> pl;
+		for (auto p : plist) {
+			pl.push_back(offPlayer::getRealName(p));
+		}
+		return pl;
 	}
 	LIAPI const string& getPlayerListView() {
 		return onlineLISTV;
@@ -18,7 +24,8 @@ namespace GUI {
 	static void regenLISTV() {
 		onlineLISTV.clear();
 		onlineLISTV = '[';
-		for (auto& i : onlineLIST) {
+		auto allpl = getPlayerList();
+		for (auto& i : allpl) {
 			onlineLISTV.push_back('"');
 			onlineLISTV.append(i);
 			onlineLISTV.append("\",");
@@ -29,17 +36,9 @@ namespace GUI {
 	}
 	void INIT() {
 		Event::addEventListener([](JoinEV var) {
-			onlineLIST.push_back(var.Player->getNameTag());
 			regenLISTV();
 		});
 		Event::addEventListener([](LeftEV var) {
-			auto& name = var.Player->getNameTag();
-			for (auto it = onlineLIST.begin(); it != onlineLIST.end(); ++it) {
-				if (*it == name) {
-					onlineLIST.erase(it);
-					break;
-				}
-			}
 			regenLISTV();
 		});
 	}
