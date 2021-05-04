@@ -913,11 +913,6 @@ public:
 		return (this->*rv)(a0);
 	}
 #endif
-MCINLINE class BlockLegacy const& getLegacyBlock() const {
-		class BlockLegacy const& (Block::*rv)() const;
-		*((void**)&rv) = dlsym("?getLegacyBlock@Block@@QEBAAEBVBlockLegacy@@XZ");
-		return (this->*rv)();
-	}
 		MCINLINE class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> toDebugString() const {
 		class std::basic_string<char, struct std::char_traits<char>, class std::allocator<char>> (Block::*rv)() const;
 		*((void**)&rv) = dlsym("?toDebugString@Block@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
