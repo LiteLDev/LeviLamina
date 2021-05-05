@@ -1,4 +1,4 @@
-﻿// ISO C9x  compliant inttypes.h for Microsoft Visual Studio
+// ISO C9x  compliant inttypes.h for Microsoft Visual Studio
 // Based on ISO/IEC 9899:TC2 Committee draft (May 6, 2005) WG14/N1124 
 // 
 //  Copyright (c) 2006-2013 Alexander Chemeris
