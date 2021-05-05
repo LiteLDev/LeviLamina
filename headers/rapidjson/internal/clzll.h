@@ -18,12 +18,12 @@
 #include "../rapidjson.h"
 
 #if defined(_MSC_VER) && !defined(UNDER_CE)
-#include <intrin.h>
-#if defined(_WIN64)
-#pragma intrinsic(_BitScanReverse64)
-#else
-#pragma intrinsic(_BitScanReverse)
-#endif
+#    include <intrin.h>
+#    if defined(_WIN64)
+#        pragma intrinsic(_BitScanReverse64)
+#    else
+#        pragma intrinsic(_BitScanReverse)
+#    endif
 #endif
 
 RAPIDJSON_NAMESPACE_BEGIN
@@ -36,16 +36,16 @@ inline uint32_t clzll(uint64_t x) {
 
 #if defined(_MSC_VER) && !defined(UNDER_CE)
     unsigned long r = 0;
-#if defined(_WIN64)
+#    if defined(_WIN64)
     _BitScanReverse64(&r, x);
-#else
+#    else
     // Scan the high 32 bits.
     if (_BitScanReverse(&r, static_cast<uint32_t>(x >> 32)))
         return 63 - (r + 32);
 
     // Scan the low 32 bits.
     _BitScanReverse(&r, static_cast<uint32_t>(x & 0xFFFFFFFF));
-#endif // _WIN64
+#    endif  // _WIN64
 
     return 63 - r;
 #elif (defined(__GNUC__) && __GNUC__ >= 4) || RAPIDJSON_HAS_BUILTIN(__builtin_clzll)
@@ -60,12 +60,12 @@ inline uint32_t clzll(uint64_t x) {
     }
 
     return r;
-#endif // _MSC_VER
+#endif  // _MSC_VER
 }
 
 #define RAPIDJSON_CLZLL RAPIDJSON_NAMESPACE::internal::clzll
 
-} // namespace internal
+}  // namespace internal
 RAPIDJSON_NAMESPACE_END
 
-#endif // RAPIDJSON_CLZLL_H_
+#endif  // RAPIDJSON_CLZLL_H_

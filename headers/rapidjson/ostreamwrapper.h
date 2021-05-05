@@ -1,5 +1,5 @@
 // Tencent is pleased to support the open source community by making RapidJSON available.
-// 
+//
 // Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip.
 //
 // Licensed under the MIT License (the "License"); you may not use this file except
@@ -7,16 +7,16 @@
 //
 // http://opensource.org/licenses/MIT
 //
-// Unless required by applicable law or agreed to in writing, software distributed 
-// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR 
-// CONDITIONS OF ANY KIND, either express or implied. See the License for the 
+// Unless required by applicable law or agreed to in writing, software distributed
+// under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+// CONDITIONS OF ANY KIND, either express or implied. See the License for the
 // specific language governing permissions and limitations under the License.
 
 #ifndef RAPIDJSON_OSTREAMWRAPPER_H_
 #define RAPIDJSON_OSTREAMWRAPPER_H_
 
-#include "stream.h"
 #include <iosfwd>
+#include "stream.h"
 
 #ifdef __clang__
 RAPIDJSON_DIAG_PUSH
@@ -40,33 +40,44 @@ RAPIDJSON_NAMESPACE_BEGIN
 
     \tparam StreamType Class derived from \c std::basic_ostream.
 */
-   
+
 template <typename StreamType>
 class BasicOStreamWrapper {
-public:
+  public:
     typedef typename StreamType::char_type Ch;
-    BasicOStreamWrapper(StreamType& stream) : stream_(stream) {}
+    BasicOStreamWrapper(StreamType &stream) : stream_(stream) {}
 
-    void Put(Ch c) {
-        stream_.put(c);
-    }
+    void Put(Ch c) { stream_.put(c); }
 
-    void Flush() {
-        stream_.flush();
-    }
+    void Flush() { stream_.flush(); }
 
     // Not implemented
-    char Peek() const { RAPIDJSON_ASSERT(false); return 0; }
-    char Take() { RAPIDJSON_ASSERT(false); return 0; }
-    size_t Tell() const { RAPIDJSON_ASSERT(false); return 0; }
-    char* PutBegin() { RAPIDJSON_ASSERT(false); return 0; }
-    size_t PutEnd(char*) { RAPIDJSON_ASSERT(false); return 0; }
+    char Peek() const {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
+    char Take() {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
+    size_t Tell() const {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
+    char *PutBegin() {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
+    size_t PutEnd(char *) {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
 
-private:
-    BasicOStreamWrapper(const BasicOStreamWrapper&);
-    BasicOStreamWrapper& operator=(const BasicOStreamWrapper&);
+  private:
+    BasicOStreamWrapper(const BasicOStreamWrapper &);
+    BasicOStreamWrapper &operator=(const BasicOStreamWrapper &);
 
-    StreamType& stream_;
+    StreamType &stream_;
 };
 
 typedef BasicOStreamWrapper<std::ostream> OStreamWrapper;
@@ -78,4 +89,4 @@ RAPIDJSON_DIAG_POP
 
 RAPIDJSON_NAMESPACE_END
 
-#endif // RAPIDJSON_OSTREAMWRAPPER_H_
+#endif  // RAPIDJSON_OSTREAMWRAPPER_H_

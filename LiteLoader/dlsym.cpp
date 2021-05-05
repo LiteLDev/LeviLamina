@@ -1,5 +1,5 @@
 ﻿//#include<lbpch.h>
-#include <detours/detours.h>
+
 #include <cstdio>
 #include <filesystem>
 #include <fstream>
@@ -11,6 +11,7 @@
 #include <vector>
 #include "framework.h"
 #include "pch.h"
+#include <detours/detours.h>
 using std::list;
 using std::string, std::string_view;
 using std::unordered_map, std::vector;
