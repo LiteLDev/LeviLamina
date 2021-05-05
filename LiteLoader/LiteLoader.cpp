@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-
 using std::vector;
 Logger<stdio_commit> LOG(stdio_commit{ "[LL] " });
 
@@ -56,9 +55,9 @@ static vector<std::wstring> getPreloadList()
 	return preloadList;
 }
 static std::vector<std::pair<std::wstring, HMODULE>> libs;
-//LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs(){
-//	return libs;
-//}
+LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs(){
+	return libs;
+}
 static void loadPlugins() {
 	pluginsLibDir();
 	std::filesystem::create_directory("plugins");
