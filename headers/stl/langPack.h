@@ -51,5 +51,8 @@ static void load(const string& path) {
 		return *cache;
 	}
 };
-#define _TRS(x) (LP.trans<do_hash((x))>(x))
-#define _TR(x) (LP.trans<do_hash((x))>(x).c_str())
+#ifdef LP
+#pragma message("Warn: Please Consider Using LangPack Instead of LP Cause windows.h has already define it")
+#endif
+#define _TRS(x) (LangP.trans<do_hash((x))>(x))
+#define _TR(x) (LangP.trans<do_hash((x))>(x).c_str())
