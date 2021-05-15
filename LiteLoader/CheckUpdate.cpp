@@ -21,7 +21,7 @@ void updateCheck() {
                 std::cout << "[Liteloader] Found a new version: " << LatestRelease << "\n";
             }
             if (latestVersionNum < LiteLoaderVersionNum) {
-                std::cout << "[Liteloader] Using preview version: " << LatestRelease << "\n";
+                std::cout << "[Liteloader] Using preview version: " << LiteLoaderVersion << "\n";
             }
         } else {
             std::cout << "[Liteloader] Failed to get updates(0)\n";

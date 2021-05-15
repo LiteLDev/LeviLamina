@@ -7,10 +7,11 @@
 <a href="https://jq.qq.com/?_wv=1027&k=78uA5xfp">![QQ](https://img.shields.io/badge/QQ-LiteLoader-%2F05028?style=for-the-badge)</a><br>
 <a href="https://github.com/LiteLDev/LiteLoader/releases/latest">![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=for-the-badge)![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)</a><br>
 轻量化的Bedrock Dedicated Server插件加载器  
-基于[BedrockX](https://github.com/Sysca11/BedrockX)
+基于[BedrockX](https://github.com/Sysca11/BedrockX)  
+感谢[旋律云](https://www.rhymc.com/)对本项目的支持
 
 ## 安装
-1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.7z`和`lib.7z`，将两个压缩文件解压到BDS目录下
+1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下
 2. 运行`RoDB.exe`以生成符号文件(`.symdb`和`.symdef`)，运行`RoDB.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
 
 ## 使用方法

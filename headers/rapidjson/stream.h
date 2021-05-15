@@ -1,6 +1,6 @@
-﻿// Tencent is pleased to support the open source community by making RapidJSON available.
+// Tencent is pleased to support the open source community by making RapidJSON available.
 //
-// Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip. All rights reserved.
+// Copyright (C) 2015 THL A29 Limited, a Tencent company, and Milo Yip.
 //
 // Licensed under the MIT License (the "License"); you may not use this file except
 // in compliance with the License. You may obtain a copy of the License at
@@ -15,9 +15,9 @@
 #include "rapidjson.h"
 
 #ifndef RAPIDJSON_STREAM_H_
-#define RAPIDJSON_STREAM_H_
+#    define RAPIDJSON_STREAM_H_
 
-#include "encodings.h"
+#    include "encodings.h"
 
 RAPIDJSON_NAMESPACE_BEGIN
 
@@ -69,7 +69,7 @@ concept Stream {
     For custom stream, this type can be specialized for other configuration.
     See TEST(Reader, CustomStringStream) in readertest.cpp for example.
 */
-template<typename Stream>
+template <typename Stream>
 struct StreamTraits {
     //! Whether to make local copy of stream for optimization during parsing.
     /*!
@@ -80,21 +80,21 @@ struct StreamTraits {
 };
 
 //! Reserve n characters for writing to a stream.
-template<typename Stream>
-inline void PutReserve(Stream& stream, size_t count) {
+template <typename Stream>
+inline void PutReserve(Stream &stream, size_t count) {
     (void)stream;
     (void)count;
 }
 
 //! Write character to a stream, presuming buffer is reserved.
-template<typename Stream>
-inline void PutUnsafe(Stream& stream, typename Stream::Ch c) {
+template <typename Stream>
+inline void PutUnsafe(Stream &stream, typename Stream::Ch c) {
     stream.Put(c);
 }
 
 //! Put N copies of a character to a stream.
-template<typename Stream, typename Ch>
-inline void PutN(Stream& stream, Ch c, size_t n) {
+template <typename Stream, typename Ch>
+inline void PutN(Stream &stream, Ch c, size_t n) {
     PutReserve(stream, n);
     for (size_t i = 0; i < n; i++)
         PutUnsafe(stream, c);
@@ -109,47 +109,47 @@ inline void PutN(Stream& stream, Ch c, size_t n) {
     \note implements Stream concept
 */
 
-#if defined(_MSC_VER) && _MSC_VER <= 1800
+#    if defined(_MSC_VER) && _MSC_VER <= 1800
 RAPIDJSON_DIAG_PUSH
 RAPIDJSON_DIAG_OFF(4702)  // unreachable code
 RAPIDJSON_DIAG_OFF(4512)  // assignment operator could not be generated
-#endif
+#    endif
 
-template <typename InputStream, typename Encoding = UTF8<> >
+template <typename InputStream, typename Encoding = UTF8<>>
 class GenericStreamWrapper {
-public:
+  public:
     typedef typename Encoding::Ch Ch;
-    GenericStreamWrapper(InputStream& is): is_(is) {}
+    GenericStreamWrapper(InputStream &is) : is_(is) {}
 
     Ch Peek() const { return is_.Peek(); }
     Ch Take() { return is_.Take(); }
     size_t Tell() { return is_.Tell(); }
-    Ch* PutBegin() { return is_.PutBegin(); }
+    Ch *PutBegin() { return is_.PutBegin(); }
     void Put(Ch ch) { is_.Put(ch); }
     void Flush() { is_.Flush(); }
-    size_t PutEnd(Ch* ch) { return is_.PutEnd(ch); }
+    size_t PutEnd(Ch *ch) { return is_.PutEnd(ch); }
 
     // wrapper for MemoryStream
-    const Ch* Peek4() const { return is_.Peek4(); }
+    const Ch *Peek4() const { return is_.Peek4(); }
 
     // wrapper for AutoUTFInputStream
     UTFType GetType() const { return is_.GetType(); }
     bool HasBOM() const { return is_.HasBOM(); }
 
-protected:
-    InputStream& is_;
+  protected:
+    InputStream &is_;
 };
 
-#if defined(_MSC_VER) && _MSC_VER <= 1800
+#    if defined(_MSC_VER) && _MSC_VER <= 1800
 RAPIDJSON_DIAG_POP
-#endif
+#    endif
 
 ///////////////////////////////////////////////////////////////////////////////
 // StringStream
 
 //! Read-only string stream.
 /*! \note implements Stream concept
-*/
+ */
 template <typename Encoding>
 struct GenericStringStream {
     typedef typename Encoding::Ch Ch;
@@ -160,22 +160,28 @@ struct GenericStringStream {
     Ch Take() { return *src_++; }
     size_t Tell() const { return static_cast<size_t>(src_ - head_); }
 
-    Ch* PutBegin() { RAPIDJSON_ASSERT(false); return 0; }
+    Ch *PutBegin() {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
     void Put(Ch) { RAPIDJSON_ASSERT(false); }
     void Flush() { RAPIDJSON_ASSERT(false); }
-    size_t PutEnd(Ch*) { RAPIDJSON_ASSERT(false); return 0; }
+    size_t PutEnd(Ch *) {
+        RAPIDJSON_ASSERT(false);
+        return 0;
+    }
 
-    const Ch* src_;     //!< Current read position.
-    const Ch* head_;    //!< Original head of the string.
+    const Ch *src_;   //!< Current read position.
+    const Ch *head_;  //!< Original head of the string.
 };
 
 template <typename Encoding>
-struct StreamTraits<GenericStringStream<Encoding> > {
+struct StreamTraits<GenericStringStream<Encoding>> {
     enum { copyOptimization = 1 };
 };
 
 //! String stream with UTF8 encoding.
-typedef GenericStringStream<UTF8<> > StringStream;
+typedef GenericStringStream<UTF8<>> StringStream;
 
 ///////////////////////////////////////////////////////////////////////////////
 // InsituStringStream
@@ -196,28 +202,35 @@ struct GenericInsituStringStream {
     size_t Tell() { return static_cast<size_t>(src_ - head_); }
 
     // Write
-    void Put(Ch c) { RAPIDJSON_ASSERT(dst_ != 0); *dst_++ = c; }
+    void Put(Ch c) {
+        RAPIDJSON_ASSERT(dst_ != 0);
+        *dst_++ = c;
+    }
 
-    Ch* PutBegin() { return dst_ = src_; }
-    size_t PutEnd(Ch* begin) { return static_cast<size_t>(dst_ - begin); }
+    Ch *PutBegin() { return dst_ = src_; }
+    size_t PutEnd(Ch *begin) { return static_cast<size_t>(dst_ - begin); }
     void Flush() {}
 
-    Ch* Push(size_t count) { Ch* begin = dst_; dst_ += count; return begin; }
+    Ch *Push(size_t count) {
+        Ch *begin = dst_;
+        dst_ += count;
+        return begin;
+    }
     void Pop(size_t count) { dst_ -= count; }
 
-    Ch* src_;
-    Ch* dst_;
-    Ch* head_;
+    Ch *src_;
+    Ch *dst_;
+    Ch *head_;
 };
 
 template <typename Encoding>
-struct StreamTraits<GenericInsituStringStream<Encoding> > {
+struct StreamTraits<GenericInsituStringStream<Encoding>> {
     enum { copyOptimization = 1 };
 };
 
 //! Insitu string stream with UTF8 encoding.
-typedef GenericInsituStringStream<UTF8<> > InsituStringStream;
+typedef GenericInsituStringStream<UTF8<>> InsituStringStream;
 
 RAPIDJSON_NAMESPACE_END
 
-#endif // RAPIDJSON_STREAM_H_
+#endif  // RAPIDJSON_STREAM_H_
