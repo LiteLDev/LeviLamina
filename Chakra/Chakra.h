@@ -5,8 +5,7 @@
 // CHAKRA_API 函数视为是从 DLL 导入的，而此 DLL 则将用此宏定义的
 // 符号视为是被导出的。
 #ifdef CHAKRA_EXPORTS
-#define CHAKRA_API __declspec(dllexport)
+#    define CHAKRA_API __declspec(dllexport)
 #else
-#define CHAKRA_API __declspec(dllimport)
+#    define CHAKRA_API __declspec(dllimport)
 #endif
-

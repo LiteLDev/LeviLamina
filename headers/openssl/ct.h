@@ -8,36 +8,32 @@
  */
 
 #ifndef HEADER_CT_H
-# define HEADER_CT_H
+#define HEADER_CT_H
 
-# include <openssl/opensslconf.h>
+#include <openssl/opensslconf.h>
 
-# ifndef OPENSSL_NO_CT
-# include <openssl/ossl_typ.h>
-# include <openssl/safestack.h>
-# include <openssl/x509.h>
-# include <openssl/cterr.h>
-# ifdef  __cplusplus
+#ifndef OPENSSL_NO_CT
+#    include <openssl/cterr.h>
+#    include <openssl/ossl_typ.h>
+#    include <openssl/safestack.h>
+#    include <openssl/x509.h>
+#    ifdef __cplusplus
 extern "C" {
-# endif
-
+#    endif
 
 /* Minimum RSA key size, from RFC6962 */
-# define SCT_MIN_RSA_BITS 2048
+#    define SCT_MIN_RSA_BITS 2048
 
 /* All hashes are SHA256 in v1 of Certificate Transparency */
-# define CT_V1_HASHLEN SHA256_DIGEST_LENGTH
+#    define CT_V1_HASHLEN SHA256_DIGEST_LENGTH
 
 typedef enum {
     CT_LOG_ENTRY_TYPE_NOT_SET = -1,
-    CT_LOG_ENTRY_TYPE_X509 = 0,
+    CT_LOG_ENTRY_TYPE_X509    = 0,
     CT_LOG_ENTRY_TYPE_PRECERT = 1
 } ct_log_entry_type_t;
 
-typedef enum {
-    SCT_VERSION_NOT_SET = -1,
-    SCT_VERSION_V1 = 0
-} sct_version_t;
+typedef enum { SCT_VERSION_NOT_SET = -1, SCT_VERSION_V1 = 0 } sct_version_t;
 
 typedef enum {
     SCT_SOURCE_UNKNOWN,
@@ -73,7 +69,7 @@ CT_POLICY_EVAL_CTX *CT_POLICY_EVAL_CTX_new(void);
 void CT_POLICY_EVAL_CTX_free(CT_POLICY_EVAL_CTX *ctx);
 
 /* Gets the peer certificate that the SCTs are for */
-X509* CT_POLICY_EVAL_CTX_get0_cert(const CT_POLICY_EVAL_CTX *ctx);
+X509 *CT_POLICY_EVAL_CTX_get0_cert(const CT_POLICY_EVAL_CTX *ctx);
 
 /*
  * Sets the certificate associated with the received SCTs.
@@ -83,7 +79,7 @@ X509* CT_POLICY_EVAL_CTX_get0_cert(const CT_POLICY_EVAL_CTX *ctx);
 int CT_POLICY_EVAL_CTX_set1_cert(CT_POLICY_EVAL_CTX *ctx, X509 *cert);
 
 /* Gets the issuer of the aforementioned certificate */
-X509* CT_POLICY_EVAL_CTX_get0_issuer(const CT_POLICY_EVAL_CTX *ctx);
+X509 *CT_POLICY_EVAL_CTX_get0_issuer(const CT_POLICY_EVAL_CTX *ctx);
 
 /*
  * Sets the issuer of the certificate associated with the received SCTs.
@@ -96,8 +92,7 @@ int CT_POLICY_EVAL_CTX_set1_issuer(CT_POLICY_EVAL_CTX *ctx, X509 *issuer);
 const CTLOG_STORE *CT_POLICY_EVAL_CTX_get0_log_store(const CT_POLICY_EVAL_CTX *ctx);
 
 /* Sets the log store that is in use. It must outlive the CT_POLICY_EVAL_CTX. */
-void CT_POLICY_EVAL_CTX_set_shared_CTLOG_STORE(CT_POLICY_EVAL_CTX *ctx,
-                                               CTLOG_STORE *log_store);
+void CT_POLICY_EVAL_CTX_set_shared_CTLOG_STORE(CT_POLICY_EVAL_CTX *ctx, CTLOG_STORE *log_store);
 
 /*
  * Gets the time, in milliseconds since the Unix epoch, that will be used as the
@@ -144,7 +139,7 @@ void SCT_free(SCT *sct);
  * Free a stack of SCTs, and the underlying SCTs themselves.
  * Intended to be compatible with X509V3_EXT_FREE.
  */
-void SCT_LIST_free(STACK_OF(SCT) *a);
+void SCT_LIST_free(STACK_OF(SCT) * a);
 
 /*
  * Returns the version of the SCT.
@@ -187,8 +182,7 @@ __owur int SCT_set0_log_id(SCT *sct, unsigned char *log_id, size_t log_id_len);
  * This makes a copy of the log_id.
  * Returns 1 on success, 0 otherwise.
  */
-__owur int SCT_set1_log_id(SCT *sct, const unsigned char *log_id,
-                           size_t log_id_len);
+__owur int SCT_set1_log_id(SCT *sct, const unsigned char *log_id, size_t log_id_len);
 
 /*
  * Returns the timestamp for the SCT (epoch time in milliseconds).
@@ -233,8 +227,7 @@ void SCT_set0_extensions(SCT *sct, unsigned char *ext, size_t ext_len);
  * This takes a copy of the ext.
  * Returns 1 on success, 0 otherwise.
  */
-__owur int SCT_set1_extensions(SCT *sct, const unsigned char *ext,
-                               size_t ext_len);
+__owur int SCT_set1_extensions(SCT *sct, const unsigned char *ext, size_t ext_len);
 
 /*
  * Set *sig to point to the signature for the SCT. sig must not be NULL.
@@ -253,8 +246,7 @@ void SCT_set0_signature(SCT *sct, unsigned char *sig, size_t sig_len);
  * Set the signature of an SCT to be a copy of the *sig specified.
  * Returns 1 on success, 0 otherwise.
  */
-__owur int SCT_set1_signature(SCT *sct, const unsigned char *sig,
-                              size_t sig_len);
+__owur int SCT_set1_signature(SCT *sct, const unsigned char *sig, size_t sig_len);
 
 /*
  * The origin of this SCT, e.g. TLS extension, OCSP response, etc.
@@ -287,8 +279,11 @@ void SCT_print(const SCT *sct, BIO *out, int indent, const CTLOG_STORE *logs);
  * If |logs| is not NULL, it will be used to lookup the CT log that each SCT
  * came from, so that the log names can be printed.
  */
-void SCT_LIST_print(const STACK_OF(SCT) *sct_list, BIO *out, int indent,
-                    const char *separator, const CTLOG_STORE *logs);
+void SCT_LIST_print(const STACK_OF(SCT) * sct_list,
+                    BIO *out,
+                    int indent,
+                    const char *separator,
+                    const CTLOG_STORE *logs);
 
 /*
  * Gets the last result of validating this SCT.
@@ -312,9 +307,7 @@ __owur int SCT_validate(SCT *sct, const CT_POLICY_EVAL_CTX *ctx);
  * Returns 0 if at least one SCT is invalid or could not be verified.
  * Returns a negative integer if an error occurs.
  */
-__owur int SCT_LIST_validate(const STACK_OF(SCT) *scts,
-                             CT_POLICY_EVAL_CTX *ctx);
-
+__owur int SCT_LIST_validate(const STACK_OF(SCT) * scts, CT_POLICY_EVAL_CTX *ctx);
 
 /*********************************
  * SCT parsing and serialisation *
@@ -332,7 +325,7 @@ __owur int SCT_LIST_validate(const STACK_OF(SCT) *scts,
  * Returns < 0 on error, >= 0 indicating bytes written (or would have been)
  * on success.
  */
-__owur int i2o_SCT_LIST(const STACK_OF(SCT) *a, unsigned char **pp);
+__owur int i2o_SCT_LIST(const STACK_OF(SCT) * a, unsigned char **pp);
 
 /*
  * Convert TLS format SCT list to a stack of SCTs.
@@ -344,8 +337,7 @@ __owur int i2o_SCT_LIST(const STACK_OF(SCT) *a, unsigned char **pp);
  * Upon failure, a NULL pointer will be returned, and the position of "*pp" is
  * not defined.
  */
-STACK_OF(SCT) *o2i_SCT_LIST(STACK_OF(SCT) **a, const unsigned char **pp,
-                            size_t len);
+STACK_OF(SCT) * o2i_SCT_LIST(STACK_OF(SCT) * *a, const unsigned char **pp, size_t len);
 
 /*
  * Serialize (to DER format) a stack of SCTs and return the length.
@@ -359,7 +351,7 @@ STACK_OF(SCT) *o2i_SCT_LIST(STACK_OF(SCT) **a, const unsigned char **pp,
  * Returns < 0 on error, >= 0 indicating bytes written (or would have been)
  * on success.
  */
-__owur int i2d_SCT_LIST(const STACK_OF(SCT) *a, unsigned char **pp);
+__owur int i2d_SCT_LIST(const STACK_OF(SCT) * a, unsigned char **pp);
 
 /*
  * Parses an SCT list in DER format and returns it.
@@ -371,8 +363,7 @@ __owur int i2d_SCT_LIST(const STACK_OF(SCT) *a, unsigned char **pp);
  * Upon failure, a NULL pointer will be returned, and the position of "*pp" is
  * not defined.
  */
-STACK_OF(SCT) *d2i_SCT_LIST(STACK_OF(SCT) **a, const unsigned char **pp,
-                            long len);
+STACK_OF(SCT) * d2i_SCT_LIST(STACK_OF(SCT) * *a, const unsigned char **pp, long len);
 
 /*
  * Serialize (to TLS format) an |sct| and write it to |out|.
@@ -416,8 +407,7 @@ CTLOG *CTLOG_new(EVP_PKEY *public_key, const char *name);
  * Returns 1 on success, 0 on failure.
  * Should be deleted by the caller using CTLOG_free when no longer needed.
  */
-int CTLOG_new_from_base64(CTLOG ** ct_log,
-                          const char *pkey_base64, const char *name);
+int CTLOG_new_from_base64(CTLOG **ct_log, const char *pkey_base64, const char *name);
 
 /*
  * Deletes a CT log instance and its fields.
@@ -427,8 +417,7 @@ void CTLOG_free(CTLOG *log);
 /* Gets the name of the CT log */
 const char *CTLOG_get0_name(const CTLOG *log);
 /* Gets the ID of the CT log */
-void CTLOG_get0_log_id(const CTLOG *log, const uint8_t **log_id,
-                       size_t *log_id_len);
+void CTLOG_get0_log_id(const CTLOG *log, const uint8_t **log_id, size_t *log_id_len);
 /* Gets the public key of the CT log */
 EVP_PKEY *CTLOG_get0_public_key(const CTLOG *log);
 
@@ -467,8 +456,8 @@ __owur int CTLOG_STORE_load_file(CTLOG_STORE *store, const char *file);
  */
 __owur int CTLOG_STORE_load_default_file(CTLOG_STORE *store);
 
-#  ifdef  __cplusplus
+#    ifdef __cplusplus
 }
-#  endif
-# endif
+#    endif
+#endif
 #endif
