@@ -28,7 +28,7 @@ void KVDBImpl::__init(const char *path, bool read_cache, int cache_sz, int Bfilt
     if (!status.ok()) {
         printf("cannot load %s reason: %s", path, status.ToString().c_str());
         std::this_thread::sleep_for(std::chrono::seconds(10));
-        exit(1);
+        throw "Cannot open kvdb!";
     }
 }
 KVDBImpl::~KVDBImpl() {
