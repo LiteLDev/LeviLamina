@@ -119,6 +119,9 @@ bool versionCommand(CommandOrigin const &ori, CommandOutput &outp);
 void updateCheck();
 
 static void entry(bool fixcwd) {
+    //禁止弹窗，便于自动重启
+    SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
+
     if (fixcwd)
         FixUpCWD();
     std::filesystem::create_directory("logs");
