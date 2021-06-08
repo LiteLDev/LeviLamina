@@ -26,6 +26,10 @@ inline Certificate *getCert(Player *pl) {
     // return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 }
 
+inline BlockSource *getBlockSource(Actor *ac) {
+    return dAccess<BlockSource *, 872>(ac);
+}
+
 inline std::string getXUIDStringByCert(Certificate *cert) {
     return SymCall(
         "?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@"
