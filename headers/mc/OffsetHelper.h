@@ -22,7 +22,7 @@ inline Level *getLevel(Actor *pl) {
     return (Level *)*((uintptr_t *)((uintptr_t)pl + 856));
 }
 inline Certificate *getCert(Player *pl) {
-    return (Certificate *)*((uintptr_t *)pl + 356);
+    return (Certificate *)*((uintptr_t *)pl + 377);
     // return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 }
 
