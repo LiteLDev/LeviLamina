@@ -15,7 +15,7 @@ namespace offPlayer {
 inline NetworkIdentifier *getNetworkIdentifier(Player *pl) {
     // return SymCall("?getClientId@Player@@QEBAAEBVNetworkIdentifier@@XZ", NetworkIdentifier*,
     // Player*)(pl);
-    return (NetworkIdentifier *)((uintptr_t)pl + 2544);  // ServerPlayer::isHostingPlayer
+    return (NetworkIdentifier *)((uintptr_t)pl + 2712);  // ServerPlayer::isHostingPlayer
 }
 inline Level *getLevel(Actor *pl) {
     // return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
