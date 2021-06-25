@@ -234,7 +234,7 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemEV)> callback) {
     PlayerUseItemCallBacks.push_back(callback);
 }
 
-THook(bool, "?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z", void *thi, ItemStack &a2) {
+THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", void *thi, ItemStack &a2) {
     auto sp                         = dAccess<ServerPlayer *, 8>(thi);
     PlayerUseItemEV playerUseItemEV = {sp, &a2};
     for (size_t count = 0; count < PlayerUseItemCallBacks.size(); count++) {
