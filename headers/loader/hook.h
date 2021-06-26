@@ -8,5 +8,4 @@ extern "C" {
 LIAPI int HookFunction(void *oldfunc, void **poutold, void *newfunc);
 LIAPI void *dlsym_real(char const *name);
 }
-LIAPI std::string ptr2name(void *ptr);
 LIAPI std::string GetDataPath(const std::string &myname);
