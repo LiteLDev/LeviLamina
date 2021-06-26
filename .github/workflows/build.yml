@@ -45,17 +45,17 @@ jobs:
         unzip D:/cc.zip
       shell: bash
       
-    - name: Download RoDB.exe
+    - name: Copy SymDB2 Gen
+      working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        curl -L -o D:/out/release/RoDB.exe https://github.com/Sysca11/BDXCore/raw/master/RoDB.exe
+        cp -a Tool/SymDB2.exe D:/out/release
       shell: bash
     
     - name: Copy Output Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cp -a x64/Release/*.dll D:/out/release
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
-        
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release   
       shell: bash
       
     - name: Copy DevOutput Files

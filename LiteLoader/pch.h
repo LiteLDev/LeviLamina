@@ -17,6 +17,7 @@
 #include <api\xuidreg\xuidreg.h>
 #include <lbpch.h>
 #include <filesystem>
+#include <map>
 #include "framework.h"
 // CheckUpdate.cpp
 #include <rapidjson\document.h>

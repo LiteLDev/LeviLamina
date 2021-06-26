@@ -36,13 +36,11 @@ inline static void *dlsym_cache(const char *fn) {
 }
 #define VA_EXPAND(...) __VA_ARGS__
 //#define Call(fn, ret, ...) __CALL_IMP<do_hash(fn), ret, __VA_ARGS__>(fn)
-template <CHash hash, CHash hash2, typename ret, typename... p>
-static inline auto __imp_Call(const char *fn) {
-    return ((ret(*)(p...))(dlsym_cache<hash, hash2>(fn)));
-}
-#define SymCall(fn, ret, ...) (__imp_Call<do_hash(fn), do_hash2(fn), ret, __VA_ARGS__>(fn))
-#define SYM(fn) (dlsym_cache<do_hash(fn), do_hash2(fn)>(fn))
+//#define SymCall(fn, ret, ...) (__imp_Call<ret, __VA_ARGS__>(fn))
+#define SymCall(fn, ret, ...) ((ret(*)(__VA_ARGS__))(dlsym_real(fn)))
+#define SYM(fn) (dlsym_real(fn))
 #define dlsym(xx) SYM(xx)
+
 class THookRegister {
   public:
     THookRegister(void *address, void *hook, void **org) {
@@ -151,3 +149,66 @@ extern THookRegister THookRegisterTemplate;
     _TInstanceDefHook(iname, sym, ret, type, VA_EXPAND(__VA_ARGS__))
 #define TInstanceHook(ret, sym, type, ...) \
     TInstanceHook2(sym, ret, sym, type, VA_EXPAND(__VA_ARGS__))
+
+
+template<int len> struct PatchHelper {
+    unsigned char data[len];
+    using ref_t = char (&)[len];
+    constexpr bool operator==(ref_t ref) const noexcept {
+        return memcmp(data, ref, sizeof data) == 0;
+    }
+    constexpr bool operator!=(ref_t ref) const noexcept {
+        return memcmp(data, ref, sizeof data) != 0;
+    }
+    constexpr bool operator==(PatchHelper ref) const noexcept {
+        return memcmp(data, ref.data, sizeof data) == 0;
+    }
+    constexpr bool operator!=(PatchHelper ref) const noexcept {
+        return memcmp(data, ref.data, sizeof data) != 0;
+    }
+    void operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
+    void DoPatch(PatchHelper expected, PatchHelper patched);
+    void EasyPatch(PatchHelper expected, PatchHelper patched);
+
+    std::string Dump() const noexcept {
+        char buffer[2 * len + 1] = {};
+        char *ptr                   = buffer;
+        for (auto ch : data)
+            ptr += sprintf(ptr, "%02X", (unsigned)ch);
+        return {buffer};
+    }
+};
+
+struct NopFiller {
+    template <int len>
+    operator PatchHelper<len>() {
+        PatchHelper<len> ret;
+        memset(ret.data, 0x90, len);
+        return ret;
+    }
+};
+
+struct FailedToPatch : std::exception {
+    std::string info;
+    template <int len>
+    FailedToPatch(PatchHelper<len> const &current, PatchHelper<len> const &expected) {
+        info = "Failed to patch: expected " + expected.Dump() + ", but actual " + current.Dump();
+    }
+    const char* what() const noexcept { return info.c_str(); }
+};
+
+template <int len>
+void PatchHelper<len>::DoPatch(PatchHelper<len> expected, PatchHelper<len> patched) {
+    if (*this == expected)
+        *this = patched;
+    else
+        throw FailedToPatch(*this, expected);
+}
+
+template <int len>
+void PatchHelper<len>::EasyPatch(PatchHelper<len> expected, PatchHelper<len> patched) {
+    DWORD old;
+    VirtualProtect((LPVOID)this, (SIZE_T)len, PAGE_EXECUTE_READWRITE, &old);
+    DoPatch(expected, patched);
+    VirtualProtect((LPVOID)this, (SIZE_T)len, old, NULL);
+}
