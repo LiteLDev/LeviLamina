@@ -79,7 +79,7 @@ void initAll() {
         auto _xuid = offPlayer::getXUIDString(sp);
         xuid_t xuid;
         if (_xuid.size() <= 1)
-            xuid = do_hash(name);
+            xuid = do_hash(name.c_str());
         else
             xuid = std::stoull(_xuid);
         insert(xuid, name);
