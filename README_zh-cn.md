@@ -12,7 +12,7 @@
 
 ## 安装
 1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下
-2. 运行`RoDB.exe`以生成符号文件(`.symdb`和`.symdef`)，运行`RoDB.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
+2. 运行`SymDB2.exe`以生成符号文件(`.symdb2`)，运行`SymDB2.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
 
 ## 使用方法
 把.dll插件放到`plugins\`目录  

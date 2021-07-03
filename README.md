@@ -11,7 +11,7 @@ Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 
 ## Install
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
-2. Run `RoDB.exe` to generate symbol files(`.symdb` and `.symdef`), before you run `RoDB.exe` you need to check if the `bedrock_server.pdb` exists
+2. Run `SymDB2.exe` to generate symbol files(`.symdb2`), before you run `SymDB2.exe` you need to check if the `bedrock_server.pdb` exists
 
 ## Usage
 Put .dll plugins into `plugins\` directory  
