@@ -334,12 +334,16 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\lib\detours.lib" />
-    <Library Include="..\lib\leveldb.lib" />
     <Library Include="..\lib\libssl.lib">
       <Filter>资源文件</Filter>
     </Library>
     <Library Include="..\lib\libcrypto.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\leveldb.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\detours.lib">
       <Filter>资源文件</Filter>
     </Library>
   </ItemGroup>
@@ -349,6 +353,8 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
+    <None Include="cpp.hint">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

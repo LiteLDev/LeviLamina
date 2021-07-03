@@ -5,5 +5,5 @@
 #    define LIAPI __declspec(dllexport)
 #endif
 typedef unsigned char uchar;
-#define LiteLoaderVersion "1.0.2"
-#define LiteLoaderVersionNum (unsigned short)8
+#define LiteLoaderVersion "1.0.3"
+#define LiteLoaderVersionNum (unsigned short)9
