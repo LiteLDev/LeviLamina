@@ -6,6 +6,7 @@
 #include <stl/Bstream.h>
 #include <string>
 #include "mass.h"
+
 enum ActorType : int;
 enum class AbilitiesIndex : int;
 static inline int iround(float x) {
@@ -14,6 +15,8 @@ static inline int iround(float x) {
         r--;
     return r;
 }
+
+
 class BlockPos {
   public:
     int x, y, z;
@@ -29,9 +32,6 @@ class BlockPos {
     void unpack(RBStream &rs) { rs.apply(x, y, z); }
     inline BlockPos add(int dx, int dy, int dz) { return {x + dx, y + dy, z + dz}; }
 
-    inline class Vec3 toVec3() const { 
-        return {(float)x, (float)y, (float)z}; 
-    }
 };
 
 class Vec3 {
@@ -63,15 +63,10 @@ class Vec3 {
 
     Vec3 Vec3::operator*(float num) { return {x * num, y * num, z * num}; }
 
-    Vec3 Vec3::operator+( Vec3 &v2)  {
-        return {
-            this->x + v2.x, this->y + v2.y, this->z + v2.z};
-    }
-    Vec3 Vec3::operator-( Vec3 &v2)  {
-        return {this->x - v2.x, this->y - v2.y, this->z - v2.z
-        };
-    }
+    Vec3 Vec3::operator+(Vec3 &v2) { return {this->x + v2.x, this->y + v2.y, this->z + v2.z}; }
+    Vec3 Vec3::operator-(Vec3 &v2) { return {this->x - v2.x, this->y - v2.y, this->z - v2.z}; }
 };
+
 class AABB {
   public:
     Vec3 p1{};
@@ -98,7 +93,9 @@ class BoundingBox {
 
     inline AABB toAABB() 
     { 
-        return {bpos1.toVec3(), bpos2.toVec3() + Vec3{1, 1, 1}}; 
+       Vec3 vec1 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
+       Vec3 vec2 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
+        return {vec1, vec2 + Vec3{1, 1, 1}}; 
     }
 
 
