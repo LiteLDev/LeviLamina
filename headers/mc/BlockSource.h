@@ -480,8 +480,8 @@ class BlockSource {
         *((void **)&rv) = dlsym("?getChunk@BlockSource@@QEBAPEAVLevelChunk@@AEBVChunkPos@@@Z");
         return (this->*rv)(a0);
     }
-    MCINLINE class Block const &getBlock(class BlockPos const &a0) const {
-        class Block const &(BlockSource::*rv)(class BlockPos const &) const;
+    MCINLINE class Block &getBlock(class BlockPos &a0) {
+        class Block  &(BlockSource::*rv)(class BlockPos &) ;
         *((void **)&rv) = dlsym("?getBlock@BlockSource@@QEBAAEBVBlock@@AEBVBlockPos@@@Z");
         return (this->*rv)(a0);
     }
@@ -500,8 +500,8 @@ class BlockSource {
             "?setBlock@BlockSource@@QEAA_NAEBVBlockPos@@AEBVBlock@@HPEBUActorBlockSyncMessage@@@Z");
         return (this->*rv)(a0, a1, a2, a3);
     }
-    MCINLINE class Block const &getBlock(int a0, int a1, int a2) const {
-        class Block const &(BlockSource::*rv)(int, int, int) const;
+    MCINLINE class Block &getBlock(int a0, int a1, int a2) {
+        class Block  &(BlockSource::*rv)(int, int, int) ;
         *((void **)&rv) = dlsym("?getBlock@BlockSource@@QEBAAEBVBlock@@HHH@Z");
         return (this->*rv)(a0, a1, a2);
     }

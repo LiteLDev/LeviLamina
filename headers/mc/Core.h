@@ -14,7 +14,6 @@ static inline int iround(float x) {
         r--;
     return r;
 }
-
 class BlockPos {
   public:
     int x, y, z;
@@ -29,12 +28,17 @@ class BlockPos {
     }
     void unpack(RBStream &rs) { rs.apply(x, y, z); }
     inline BlockPos add(int dx, int dy, int dz) { return {x + dx, y + dy, z + dz}; }
+
+    inline class Vec3 toVec3() const { 
+        return {(float)x, (float)y, (float)z}; 
+    }
 };
 
 class Vec3 {
   public:
     float x, y, z;
-    std::string toString() {
+
+    inline std::string toString() {
         return "(" + std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z) + ")";
     }
     inline BlockPos toBlockPos() {
@@ -54,9 +58,57 @@ class Vec3 {
         ws.apply(x, y, z);
     }
     void unpack(RBStream &rs) { rs.apply(x, y, z); }
+
     inline Vec3 add(float dx, float dy, float dz) { return {x + dx, y + dy, z + dz}; }
+
+    Vec3 Vec3::operator*(float num) { return {x * num, y * num, z * num}; }
+
+    Vec3 Vec3::operator+( Vec3 &v2)  {
+        return {
+            this->x + v2.x, this->y + v2.y, this->z + v2.z};
+    }
+    Vec3 Vec3::operator-( Vec3 &v2)  {
+        return {this->x - v2.x, this->y - v2.y, this->z - v2.z
+        };
+    }
+};
+class AABB {
+  public:
+    Vec3 p1{};
+    Vec3 p2{};
+
+    AABB(Vec3 _p1, Vec3 _p2) {
+        p1 = _p1;
+        p2 = _p2;
+    }
+
+   inline  Vec3 getCenter() { 
+        return ( p1 + p2 ) * 0.5; 
+    }
 };
 
+class BoundingBox {
+  public:
+    BlockPos bpos1;
+    BlockPos bpos2;
+
+    inline BlockPos getCenter() const {
+        return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
+    }
+
+    inline AABB toAABB() 
+    { 
+        return {bpos1.toVec3(), bpos2.toVec3() + Vec3{1, 1, 1}}; 
+    }
+
+
+};
+
+class ChunkPos {
+  public:
+    int x, z;
+
+};
 
 struct IVec2 {
     int x, z;
@@ -121,9 +173,5 @@ class ActorDamageSource {
     virtual int getEntityCategories() const = 0;
 };
 
-class ChunkPos {
-  public:
-    int x, z;
-};
 
 constexpr const int SAFE_PADDING = 0;
