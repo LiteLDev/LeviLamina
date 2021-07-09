@@ -207,8 +207,8 @@ void PatchHelper<len>::DoPatch(PatchHelper<len> expected, PatchHelper<len> patch
 
 template <int len>
 void PatchHelper<len>::EasyPatch(PatchHelper<len> expected, PatchHelper<len> patched) {
-    DWORD old;
+    DWORD old,tmp;
     VirtualProtect((LPVOID)this, (SIZE_T)len, PAGE_EXECUTE_READWRITE, &old);
     DoPatch(expected, patched);
-    VirtualProtect((LPVOID)this, (SIZE_T)len, old, NULL);
+    VirtualProtect((LPVOID)this, (SIZE_T)len, old, &tmp);
 }
