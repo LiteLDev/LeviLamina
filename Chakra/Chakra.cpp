@@ -34,8 +34,27 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true) {
     }
 }
 
+void LoadCSR() {
+    if(std::filesystem::exists(std::filesystem::path(TEXT("./plugins/BDSNetRunner.dll"))))
+    {
+        LoadLib(TEXT("./plugins/BDSNetRunner.dll"));
+    }
+}
+
+bool LoadLiteLoader() {
+    if (!std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll"))))
+        return false;
+    if (!LoadLib(TEXT("LiteLoader.dll")))
+        return false;
+    return true;
+}
+
 void loadDlls() {
-    bool llLoaded = false;
+    if (!LoadLiteLoader()) {
+        Sleep(3000);
+        exit(GetLastError());
+    }
+    LoadCSR();
 
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
         std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
@@ -49,32 +68,16 @@ void loadDlls() {
 
                 if (dllName.empty() || dllName.front() == TEXT('#'))
                     continue;
-                if (LoadLib(dllName.c_str())) {
-                    if (dllName == TEXT("LiteLoader.dll"))
-                        llLoaded = true;
-                }
+                if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
+                    dllName.find(L"BDSNetRunner.dll") != std::wstring::npos)
+                    continue;
+                LoadLib(dllName.c_str());
             }
             dllList.close();
         }
-        if (!llLoaded && !LoadLib(TEXT("LiteLoader.dll")))
-            exit(GetLastError());
     } else {
-        bool CSRexist =
-            std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\BDSNetRunner.dll")));
-
-        //无preload.conf，自动生成
         std::wofstream dllList(TEXT(".\\plugins\\preload.conf"));
-        if (dllList) {
-            dllList << TEXT("LiteLoader.dll");
-            if (CSRexist)
-                dllList << std::endl << TEXT(".\\plugins\\BDSNetRunner.dll");
-            dllList.flush();
-            dllList.close();
-        }
-        if (CSRexist)
-            LoadLib(TEXT(".\\plugins\\BDSNetRunner.dll"));
-        if (!LoadLib(TEXT("LiteLoader.dll")))
-            exit(GetLastError());
+        dllList.close();
     }
 }
 
