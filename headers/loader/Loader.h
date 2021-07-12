@@ -167,8 +167,18 @@ template<int len> struct PatchHelper {
         return memcmp(data, ref.data, sizeof data) != 0;
     }
     void operator=(ref_t ref) { memcpy(data, ref, sizeof data); }
-    void DoPatch(PatchHelper expected, PatchHelper patched);
-    void EasyPatch(PatchHelper expected, PatchHelper patched);
+    void DoPatch(PatchHelper expected, PatchHelper patched) {
+        if (*this == expected)
+            *this = patched;
+        else
+            throw FailedToPatch(*this, expected);
+    }
+    void EasyPatch(PatchHelper expected, PatchHelper patched) {
+        DWORD old, tmp;
+        VirtualProtect((LPVOID)this, (SIZE_T)len, PAGE_EXECUTE_READWRITE, &old);
+        DoPatch(expected, patched);
+        VirtualProtect((LPVOID)this, (SIZE_T)len, old, &tmp);
+    }
 
     std::string Dump() const noexcept {
         char buffer[2 * len + 1] = {};
@@ -198,17 +208,7 @@ struct FailedToPatch : std::exception {
 };
 
 template <int len>
-void PatchHelper<len>::DoPatch(PatchHelper<len> expected, PatchHelper<len> patched) {
-    if (*this == expected)
-        *this = patched;
-    else
-        throw FailedToPatch(*this, expected);
-}
+void PatchHelper<len>::DoPatch(PatchHelper<len> expected, PatchHelper<len> patched);
 
 template <int len>
-void PatchHelper<len>::EasyPatch(PatchHelper<len> expected, PatchHelper<len> patched) {
-    DWORD old,tmp;
-    VirtualProtect((LPVOID)this, (SIZE_T)len, PAGE_EXECUTE_READWRITE, &old);
-    DoPatch(expected, patched);
-    VirtualProtect((LPVOID)this, (SIZE_T)len, old, &tmp);
-}
+void PatchHelper<len>::EasyPatch(PatchHelper<len> expected, PatchHelper<len> patched);

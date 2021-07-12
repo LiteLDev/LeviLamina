@@ -2,7 +2,7 @@
 #define LIPCH_H
 #include <stl/Logger.h>
 
-extern Logger<stdio_commit> LOG;
+//extern Logger<stdio_commit> LOG;
 
 #include<cstdio>
 #include<cstring>

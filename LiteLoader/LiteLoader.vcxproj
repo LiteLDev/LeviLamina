@@ -277,7 +277,6 @@
     <ClCompile Include="stl\DBImpl.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="stl\LangPack.cpp" />
     <ClCompile Include="stl\LogFlush.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

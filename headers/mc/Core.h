@@ -61,10 +61,10 @@ class Vec3 {
 
     inline Vec3 add(float dx, float dy, float dz) { return {x + dx, y + dy, z + dz}; }
 
-    Vec3 Vec3::operator*(float num) { return {x * num, y * num, z * num}; }
+    Vec3 operator*(float num) { return {x * num, y * num, z * num}; }
 
-    Vec3 Vec3::operator+(Vec3 &v2) { return {this->x + v2.x, this->y + v2.y, this->z + v2.z}; }
-    Vec3 Vec3::operator-(Vec3 &v2) { return {this->x - v2.x, this->y - v2.y, this->z - v2.z}; }
+    Vec3 operator+(const Vec3 &v2) { return {this->x + v2.x, this->y + v2.y, this->z + v2.z}; }
+    Vec3 operator-(const Vec3 &v2) { return {this->x - v2.x, this->y - v2.y, this->z - v2.z}; }
 };
 
 class AABB {
@@ -95,7 +95,7 @@ class BoundingBox {
     { 
        Vec3 vec1 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
        Vec3 vec2 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
-        return {vec1, vec2 + Vec3{1, 1, 1}}; 
+       return {vec1, vec2 + Vec3{1, 1, 1}}; 
     }
 
 
