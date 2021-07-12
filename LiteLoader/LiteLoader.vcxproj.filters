@@ -144,7 +144,7 @@
     <ClInclude Include="..\headers\stl\KVDB.h">
       <Filter>头文件\stl</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\stl\langPack.h">
+    <ClInclude Include="..\headers\stl\LangPack.h">
       <Filter>头文件\stl</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\stl\Logger.h">
@@ -267,6 +267,9 @@
     <ClInclude Include="framework.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\Compatibility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -331,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="CheckUpdate.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stl\LangPack.cpp">
+      <Filter>源文件\stl</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

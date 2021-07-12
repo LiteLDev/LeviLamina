@@ -138,7 +138,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -168,6 +168,7 @@
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
     <ClInclude Include="..\headers\api\xuidreg\xuidreg.h" />
+    <ClInclude Include="..\headers\Compatibility.h" />
     <ClInclude Include="..\headers\lbpch.h" />
     <ClInclude Include="..\headers\leveldb\c.h" />
     <ClInclude Include="..\headers\leveldb\cache.h" />
@@ -209,7 +210,7 @@
     <ClInclude Include="..\headers\stl\CBStorage.h" />
     <ClInclude Include="..\headers\stl\format.h" />
     <ClInclude Include="..\headers\stl\KVDB.h" />
-    <ClInclude Include="..\headers\stl\langPack.h" />
+    <ClInclude Include="..\headers\stl\LangPack.h" />
     <ClInclude Include="..\headers\stl\Logger.h" />
     <ClInclude Include="..\headers\stl\LRUMap.h" />
     <ClInclude Include="..\headers\stl\optional.h" />
@@ -276,6 +277,7 @@
     <ClCompile Include="stl\DBImpl.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="stl\LangPack.cpp" />
     <ClCompile Include="stl\LogFlush.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

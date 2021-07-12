@@ -24,6 +24,8 @@ using std::make_shared, std::make_unique;
 #include<api/types/types.h>
 #include<api/Basic_Event.h>
 
-#include<stl\useful.h>
+#include<stl/useful.h>
+
+#include <Compatibility.h>
 
 #endif
