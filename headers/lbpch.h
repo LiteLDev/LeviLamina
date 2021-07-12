@@ -1,9 +1,9 @@
-﻿#ifndef  LIPCH_H
+﻿#ifndef LIPCH_H
 #define LIPCH_H
 #include <stl/Logger.h>
-#ifdef LITELOADER_EXPORTS
+
 extern Logger<stdio_commit> LOG;
-#endif
+
 #include<cstdio>
 #include<cstring>
 #include<string>
