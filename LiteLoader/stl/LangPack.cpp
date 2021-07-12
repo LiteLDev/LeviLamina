@@ -3,32 +3,35 @@
 #include <JsonLoader.h>
 #include <loader/hash.h>
 
-LangPack::LangPack(const char* fn)
-{
+LangPack::LangPack(const string &fn) {
+    load(fn);
+}
+
+LangPack::LangPack(std::unordered_map<string, string> &mp) {
+    load(mp);
+}
+
+void LangPack::load(const string &fn) {
     try {
-        ConfigJReader jr(fn);
+        path = fn;
+        ConfigJReader jr(path.c_str());
         std::unordered_map<string, string> m;
         jr.bind(m);
         load(m);
-    }
-    catch (string e) {
+    } catch (string e) {
         std::cerr << "[ERROR] Json Error " << fn << " " << e << std::endl;
     }
 }
 
 void LangPack::load(std::unordered_map<string, string>& mp)
 {
+    TMAP.clear();
     for (auto& i : mp) {
         if (TMAP.count(do_hash(i.first.c_str()))) {
             std::cerr << "[LANGPACK/ERROR] !!! hash coll detected for " << i.first << std::endl;
         }
         TMAP.emplace(do_hash(i.first.c_str()), i.second);
     }
-}
-
-LangPack::LangPack(std::unordered_map<string, string>& mp)
-{
-    load(mp);
 }
 
 template <CHash HASH>
