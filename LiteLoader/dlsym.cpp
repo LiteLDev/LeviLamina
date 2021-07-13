@@ -241,6 +241,10 @@ void *dlsym_real(const char *x) {
                 //std::cout<<x<<" : "<<iter->second<<" == "<<rv<<std::endl;
                 return (void *)(BaseAdr + iter->second);
             }
+            else
+            {
+                
+            }
         }
         auto rv = SymDB->getsym(x);
         if (!rv)

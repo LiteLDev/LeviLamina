@@ -63,9 +63,9 @@ vector<function<bool(ChatEV)>> ChatCallBacks;
 LIAPI void Event::addEventListener(function<bool(ChatEV)> callback) {
     ChatCallBacks.push_back(callback);
 }
+/*
 THook(void,
-      "?_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEBV?$basic_string@DU?$char_"
-      "traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "_displayGameMessage@ServerNetworkHandler@@AEAAXAEBVPlayer@@AEAUChatEvent@@@Z",
       void *snh,
       ServerPlayer *sp,
       string *msg) {
@@ -78,8 +78,26 @@ THook(void,
     if (!isCancelled) {
         original(snh, sp, msg);
     }
+}*/
+THook(void,
+      "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
+      void *self,
+      NetworkIdentifier *id,
+      void *text) {
+    auto sp = SymCall(
+        "?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@E@Z",
+        Player *, void *, void *, char)(self, id, *(char *)((uintptr_t)text + 16));
+    auto msg = std::string(*(std::string *)((uintptr_t)text + 88));
+    ChatEV ChatEV    = {sp, msg};
+    bool isCancelled = false;
+    for (size_t count = 0; count < ChatCallBacks.size(); count++) {
+        if (!ChatCallBacks[count](ChatEV))
+            isCancelled = true;
+    }
+    if (!isCancelled) {
+        original(self, id, text);
+    }
 }
-
 class ChangeDimensionRequest;
 class Level;
 
