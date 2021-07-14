@@ -194,12 +194,13 @@ struct SymDBReader : SymDBBase {
             int soff       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4);
             int slen       = _pfread<int>(SEGOFF[SEGMENT_STRINGS_IDX] + internalId * 4 + 4) - soff;
             ifs.seekg({int(SEGOFF[SEGMENT_STRINGS] + soff)});
-            char *rv = new char[slen];
-            ifs.read((char *)rv, slen);
+            std::string rv;
+            rv.resize(slen, 0);
+            ifs.read((char *)rv.data(), slen);
             hashMap->insert({rv, *rva});
             //hashMap[rv] = *rva;
             // printf("[%08d] %s\n", *rva, rv.c_str());
-            delete[] rv;
+            rv.shrink_to_fit();
         }
 
         delete[] buf;
@@ -232,24 +233,23 @@ void *dlsym_real(const char *x) {
     }
     if (fnstat == 0)
         InitFastDlsym();
-    for (;fnstat == 0;) {
+    for (; fnstat == 0;) {
         std::this_thread::sleep_for(std::chrono::seconds(1));
-    } 
-        if (fnstat == 1) {
-            auto iter = FuncMap->find(x);
-            if (iter != FuncMap->end()) {
-                //std::cout<<x<<" : "<<iter->second<<" == "<<rv<<std::endl;
-                return (void *)(BaseAdr + iter->second);
-            }
-            else
-            {
-                
-            }
+    }
+    if (fnstat == 1) {
+        auto iter = FuncMap->find(string(x));
+        if (iter != FuncMap->end()) {
+            return (void *)(BaseAdr + iter->second);
+        } else {
+            printf("Failed to look up Function in Memory %s\n", x);
         }
-        auto rv = SymDB->getsym(x);
-        if (!rv)
-            return nullptr;
-        return (void *)(BaseAdr + rv);
+    }
+    auto rv = SymDB->getsym(x);
+    if (rv == -1) {
+        printf("Failed to look up Function in SymDB2 %s\n", x);
+        return nullptr;
+    }
+    return (void *)(BaseAdr + rv);
 }
 inline static void HookFunction__begin() {
     DetourTransactionBegin();
