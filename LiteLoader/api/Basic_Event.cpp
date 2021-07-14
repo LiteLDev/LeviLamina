@@ -120,10 +120,14 @@ THook(bool,
 }
 
 Player *MakeSP(CommandOrigin &ori) {
+    Player *pl = (Player *)ori.getEntity();
+    if (pl) {
+        return pl;
+    }
     // if (ori.getOriginType() == OriginType::Player) {
-    return (Player *)ori.getEntity();
+    
     // }
-    // return 0;
+    return 0;
 }
 
 vector<function<bool(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;

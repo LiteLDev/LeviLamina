@@ -249,15 +249,22 @@ static_assert(sizeof(MakeOverload<void, int>) == 1);
     { MakeOverload __ov2((struct name2 *)0, cb2, #name2, cb, __VA_ARGS__); }
 #include <api/types/types.h>
 inline static optional<WPlayer> MakeWP(CommandOrigin const &ori) {
-    if (ori.getOriginType() == OriginType::Player) {
+    if ((ServerPlayer *)ori.getEntity()) {
         return {{*(ServerPlayer *)ori.getEntity()}};
     }
+    // if (ori.getOriginType() == OriginType::Player) {
+    //return {{*(ServerPlayer *)ori.getEntity()}};
+    //}
     return {};
 }
 inline static ServerPlayer *MakeSP(CommandOrigin const &ori) {
-    if (ori.getOriginType() == OriginType::Player) {
-        return {(ServerPlayer *)ori.getEntity()};
+    ServerPlayer *sp = (ServerPlayer *)ori.getEntity();
+    if (sp) {
+        return {sp};
     }
+    // if (ori.getOriginType() == OriginType::Player) {
+    //return {(ServerPlayer *)ori.getEntity()};
+    //}
     return nullptr;
 }
 inline static ServerPlayer *MakeSP(void *x) {
