@@ -67,11 +67,11 @@
     <Filter Include="头文件\api\scheduler">
       <UniqueIdentifier>{abfed4ae-cb19-4a94-9aae-b2f9f9d1cb37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\loader">
+      <UniqueIdentifier>{ec697c86-848d-4b7a-a339-6ba3cd6e119f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -147,7 +147,7 @@
     <ClInclude Include="..\headers\stl\KVDB.h">
       <Filter>头文件\stl</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\stl\langPack.h">
+    <ClInclude Include="..\headers\stl\LangPack.h">
       <Filter>头文件\stl</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\stl\Logger.h">
@@ -264,6 +264,18 @@
     <ClInclude Include="logger.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="RelativeFloat.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\Compatibility.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PatchHelper.h">
+      <Filter>头文件\hook</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -326,17 +338,21 @@
     <ClCompile Include="ServerCommands.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="UpdateChecker.cpp">
+    <ClCompile Include="CheckUpdate.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\lib\detours.lib" />
-    <Library Include="..\lib\leveldb.lib" />
     <Library Include="..\lib\libssl.lib">
       <Filter>资源文件</Filter>
     </Library>
     <Library Include="..\lib\libcrypto.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\leveldb.lib">
+      <Filter>资源文件</Filter>
+    </Library>
+    <Library Include="..\lib\detours.lib">
       <Filter>资源文件</Filter>
     </Library>
   </ItemGroup>
@@ -346,6 +362,8 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint" />
+    <None Include="cpp.hint">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -168,6 +168,7 @@
     <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
     <ClInclude Include="..\headers\api\xuidreg\xuidreg.h" />
+    <ClInclude Include="..\headers\Compatibility.h" />
     <ClInclude Include="..\headers\lbpch.h" />
     <ClInclude Include="..\headers\leveldb\c.h" />
     <ClInclude Include="..\headers\leveldb\cache.h" />
@@ -209,7 +210,7 @@
     <ClInclude Include="..\headers\stl\CBStorage.h" />
     <ClInclude Include="..\headers\stl\format.h" />
     <ClInclude Include="..\headers\stl\KVDB.h" />
-    <ClInclude Include="..\headers\stl\langPack.h" />
+    <ClInclude Include="..\headers\stl\LangPack.h" />
     <ClInclude Include="..\headers\stl\Logger.h" />
     <ClInclude Include="..\headers\stl\LRUMap.h" />
     <ClInclude Include="..\headers\stl\optional.h" />
@@ -221,7 +222,9 @@
     <ClInclude Include="..\headers\stl\WorkerPool.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="logger.h" />
+    <ClInclude Include="PatchHelper.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="RelativeFloat.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -243,7 +246,7 @@
     <ClCompile Include="api\WPlayer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UpdateChecker.cpp" />
+    <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="debug\MSearch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

@@ -8,20 +8,21 @@
 #define PCH_H
 
 // 添加要在此处预编译的标头
-#include "framework.h"
-#include <iostream>
-#include <loader/Loader.h>
 #include <liteloader.h>
-//LiteLoader.cpp
-#include <filesystem>
+#include <loader/Loader.h>
+#include <iostream>
 #include "framework.h"
-#include <api\xuidreg\xuidreg.h>
+// LiteLoader.cpp
+#include <api/commands.h>
+#include <api/xuidreg/xuidreg.h>
 #include <lbpch.h>
-#include <api\commands.h>
-//CheckUpdate.cpp
-#include <rapidjson\rapidjson.h>
-#include <rapidjson\document.h>
-#include "logger.h"
-#include<string>
-#include<iostream>
-#endif //PCH_H
+#include <filesystem>
+#include <map>
+#include "framework.h"
+// CheckUpdate.cpp
+#include <rapidjson/document.h>
+#include <rapidjson/rapidjson.h>
+#include <iostream>
+#include <string>
+#include <stl/logger.h>
+#endif  // PCH_H

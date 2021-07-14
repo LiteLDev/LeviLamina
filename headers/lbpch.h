@@ -1,9 +1,9 @@
-﻿#ifndef  LIPCH_H
+﻿#ifndef LIPCH_H
 #define LIPCH_H
 #include <stl/Logger.h>
-#ifdef LITELOADER_EXPORTS
-extern Logger<stdio_commit> LOG;
-#endif
+
+//extern Logger<stdio_commit> LOG;
+
 #include<cstdio>
 #include<cstring>
 #include<string>
@@ -24,6 +24,8 @@ using std::make_shared, std::make_unique;
 #include<api/types/types.h>
 #include<api/Basic_Event.h>
 
-#include<stl\useful.h>
+#include<stl/useful.h>
+
+#include <Compatibility.h>
 
 #endif

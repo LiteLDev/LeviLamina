@@ -8,35 +8,35 @@
  */
 
 #ifndef HEADER_OPENSSL_TYPES_H
-# define HEADER_OPENSSL_TYPES_H
+#define HEADER_OPENSSL_TYPES_H
 
 #include <limits.h>
 
-#ifdef  __cplusplus
+#ifdef __cplusplus
 extern "C" {
 #endif
 
-# include <openssl/e_os2.h>
+#include <openssl/e_os2.h>
 
-# ifdef NO_ASN1_TYPEDEFS
-#  define ASN1_INTEGER            ASN1_STRING
-#  define ASN1_ENUMERATED         ASN1_STRING
-#  define ASN1_BIT_STRING         ASN1_STRING
-#  define ASN1_OCTET_STRING       ASN1_STRING
-#  define ASN1_PRINTABLESTRING    ASN1_STRING
-#  define ASN1_T61STRING          ASN1_STRING
-#  define ASN1_IA5STRING          ASN1_STRING
-#  define ASN1_UTCTIME            ASN1_STRING
-#  define ASN1_GENERALIZEDTIME    ASN1_STRING
-#  define ASN1_TIME               ASN1_STRING
-#  define ASN1_GENERALSTRING      ASN1_STRING
-#  define ASN1_UNIVERSALSTRING    ASN1_STRING
-#  define ASN1_BMPSTRING          ASN1_STRING
-#  define ASN1_VISIBLESTRING      ASN1_STRING
-#  define ASN1_UTF8STRING         ASN1_STRING
-#  define ASN1_BOOLEAN            int
-#  define ASN1_NULL               int
-# else
+#ifdef NO_ASN1_TYPEDEFS
+#    define ASN1_INTEGER ASN1_STRING
+#    define ASN1_ENUMERATED ASN1_STRING
+#    define ASN1_BIT_STRING ASN1_STRING
+#    define ASN1_OCTET_STRING ASN1_STRING
+#    define ASN1_PRINTABLESTRING ASN1_STRING
+#    define ASN1_T61STRING ASN1_STRING
+#    define ASN1_IA5STRING ASN1_STRING
+#    define ASN1_UTCTIME ASN1_STRING
+#    define ASN1_GENERALIZEDTIME ASN1_STRING
+#    define ASN1_TIME ASN1_STRING
+#    define ASN1_GENERALSTRING ASN1_STRING
+#    define ASN1_UNIVERSALSTRING ASN1_STRING
+#    define ASN1_BMPSTRING ASN1_STRING
+#    define ASN1_VISIBLESTRING ASN1_STRING
+#    define ASN1_UTF8STRING ASN1_STRING
+#    define ASN1_BOOLEAN int
+#    define ASN1_NULL int
+#else
 typedef struct asn1_string_st ASN1_INTEGER;
 typedef struct asn1_string_st ASN1_ENUMERATED;
 typedef struct asn1_string_st ASN1_BIT_STRING;
@@ -55,7 +55,7 @@ typedef struct asn1_string_st ASN1_UTF8STRING;
 typedef struct asn1_string_st ASN1_STRING;
 typedef int ASN1_BOOLEAN;
 typedef int ASN1_NULL;
-# endif
+#endif
 
 typedef struct asn1_object_st ASN1_OBJECT;
 
@@ -63,18 +63,18 @@ typedef struct ASN1_ITEM_st ASN1_ITEM;
 typedef struct asn1_pctx_st ASN1_PCTX;
 typedef struct asn1_sctx_st ASN1_SCTX;
 
-# ifdef _WIN32
-#  undef X509_NAME
-#  undef X509_EXTENSIONS
-#  undef PKCS7_ISSUER_AND_SERIAL
-#  undef PKCS7_SIGNER_INFO
-#  undef OCSP_REQUEST
-#  undef OCSP_RESPONSE
-# endif
+#ifdef _WIN32
+#    undef X509_NAME
+#    undef X509_EXTENSIONS
+#    undef PKCS7_ISSUER_AND_SERIAL
+#    undef PKCS7_SIGNER_INFO
+#    undef OCSP_REQUEST
+#    undef OCSP_RESPONSE
+#endif
 
-# ifdef BIGNUM
-#  undef BIGNUM
-# endif
+#ifdef BIGNUM
+#    undef BIGNUM
+#endif
 struct dane_st;
 typedef struct bio_st BIO;
 typedef struct bignum_st BIGNUM;
@@ -176,8 +176,8 @@ typedef struct ct_policy_eval_ctx_st CT_POLICY_EVAL_CTX;
 typedef struct ossl_store_info_st OSSL_STORE_INFO;
 typedef struct ossl_store_search_st OSSL_STORE_SEARCH;
 
-#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L && \
-    defined(INTMAX_MAX) && defined(UINTMAX_MAX)
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 199901L && defined(INTMAX_MAX) && \
+    defined(UINTMAX_MAX)
 typedef intmax_t ossl_intmax_t;
 typedef uintmax_t ossl_uintmax_t;
 #else
@@ -191,7 +191,7 @@ typedef long ossl_intmax_t;
 typedef unsigned long ossl_uintmax_t;
 #endif
 
-#ifdef  __cplusplus
+#ifdef __cplusplus
 }
 #endif
-#endif                          /* def HEADER_OPENSSL_TYPES_H */
+#endif /* def HEADER_OPENSSL_TYPES_H */

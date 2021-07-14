@@ -61,17 +61,17 @@ class ItemStack;
 
 struct WDim : Wrapped<Dimension> {
 	WDim(Dimension& x) : Wrapped<Dimension>(x) {}
-	LIAPI class BlockSource& getBlockSource_();
-	LIAPI void setBlock(int x, int y, int z, Block const& blk);
-	LIAPI struct WBlock getBlock(int x, int y, int z);
-	LIAPI int getID();
+	//LIAPI class BlockSource& getBlockSource_();
+	//LIAPI void setBlock(int x, int y, int z, Block const& blk);
+	//LIAPI struct WBlock getBlock(int x, int y, int z);
+	//LIAPI int getID();
 };
 struct WLevel : Wrapped<ServerLevel> {
 	WLevel() : Wrapped<ServerLevel>() {}
 	WLevel(ServerLevel& x) : Wrapped<ServerLevel>(x) {}
-	LIAPI array_view<WPlayer> getUsers();
-	LIAPI optional<WPlayer> getPlayer(string_view name);
-	LIAPI void broadcastText(string_view text, TextType type = RAW);
+	//LIAPI array_view<WPlayer> getUsers();
+	//LIAPI optional<WPlayer> getPlayer(string_view name);
+	//LIAPI void broadcastText(string_view text, TextType type = RAW);
 };
 struct WActor : Wrapped<Actor> {
 	WActor(Actor& x) : Wrapped<Actor>(x) {}
@@ -99,8 +99,8 @@ struct WPlayer : Wrapped<ServerPlayer> {
 	}
 	LIAPI void sendText(string text, TextType type = RAW);
 	LIAPI string const& getName();
-	//LIAPI xuid_t getXuid();
-	//LIAPI string getRealName();
+	LIAPI xuid_t getXuid();
+	LIAPI string getRealName();
 	LIAPI permlvl_t getPermLvl();
 	LIAPI class BlockSource& getBlockSource_();
 	inline void teleport(Vec3 to, int dimid) {
@@ -134,7 +134,7 @@ struct WPlayer : Wrapped<ServerPlayer> {
 struct WItem : Wrapped<ItemStack> {
 	WItem(ItemStack& is) : Wrapped<ItemStack>(is) {}
 	LIAPI unsigned char getCount() const;
-	static void procoff();
+	//static void procoff();
 };
 struct WBlock : Wrapped<Block> {
 	WBlock(Block const& i) : Wrapped<Block>(i) {}
@@ -144,7 +144,7 @@ struct WBlockActor : Wrapped<BlockActor> {
 };
 struct WBlockSource :Wrapped<BlockSource> {
 	WBlockSource(BlockSource& x) : Wrapped<BlockSource>(x) {}
-	LIAPI WDim getDim();
+	//LIAPI WDim getDim();
 };
 struct WExplosion {
 	WBlockSource bs;

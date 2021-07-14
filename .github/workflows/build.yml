@@ -1,9 +1,8 @@
 name: Build LiteLoader
 
-on: [push]
+on: [push, pull_request, workflow_dispatch]
 
 env:
-  # Path to the solution file relative to the root of the project.
   SOLUTION_FILE_PATH: .
   BUILD_CONFIGURATION: Release
   Platform: X64
@@ -32,9 +31,11 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir D:/out
-        mkdir D:/out/lib
-        mkdir D:/out/pdb
-        mkdir D:/out/headers
+        mkdir D:/out/release
+        mkdir D:/out/dev
+        mkdir D:/out/dev/lib
+        mkdir D:/out/dev/pdb
+        mkdir D:/out/dev/headers
     
     - name: Download ChakraCore
       run: |
@@ -44,29 +45,36 @@ jobs:
         unzip D:/cc.zip
       shell: bash
       
-    - name: Download RoDB.exe
-      run: |
-        curl -L -o D:/out/RoDB.exe https://github.com/Sysca11/BDXCore/raw/master/RoDB.exe
-      shell: bash
-    
-    - name: Copy Out Files
+    - name: Copy SymDB2 Gen
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a x64/Release/*.dll D:/out
-        cp -a x64/Release/*.lib D:/out/lib
-        cp -a x64/Release/*.pdb D:/out/pdb
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/
-        cp -a headers/* D:/out/headers
+        cp -a Tool/SymDB2.exe D:/out/release
+      shell: bash
+    
+    - name: Copy Output Files
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        cp -a x64/Release/*.dll D:/out/release
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release   
+      shell: bash
+      
+    - name: Copy DevOutput Files
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        cp -a D:/out/release/* D:/out/dev/
+        cp -a x64/Release/*.lib D:/out/dev/lib
+        cp -a x64/Release/*.pdb D:/out/dev/pdb
+        cp -a headers/* D:/out/dev/headers
       shell: bash
 
-    - name: UPX GitHub Action
-      uses: crazy-max/ghaction-upx@v1.3.3
-      with:
-        version: latest
-        file: D:/out/LiteLoader.dll
-
-    - name: Upload artifact
+    - name: Upload Release
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
-        path: D:/out
+        path: D:/out/release
+
+    - name: Upload DevPack
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: LiteLoader
+        path: D:/out/dev

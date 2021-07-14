@@ -9,45 +9,45 @@
  */
 
 #ifndef HEADER_ENGINE_H
-# define HEADER_ENGINE_H
+#define HEADER_ENGINE_H
 
-# include <openssl/opensslconf.h>
+#include <openssl/opensslconf.h>
 
-# ifndef OPENSSL_NO_ENGINE
-# if OPENSSL_API_COMPAT < 0x10100000L
-#  include <openssl/bn.h>
-#  include <openssl/rsa.h>
-#  include <openssl/dsa.h>
-#  include <openssl/dh.h>
-#  include <openssl/ec.h>
-#  include <openssl/rand.h>
-#  include <openssl/ui.h>
-#  include <openssl/err.h>
-# endif
-# include <openssl/ossl_typ.h>
-# include <openssl/symhacks.h>
-# include <openssl/x509.h>
-# include <openssl/engineerr.h>
-# ifdef  __cplusplus
+#ifndef OPENSSL_NO_ENGINE
+#    if OPENSSL_API_COMPAT < 0x10100000L
+#        include <openssl/bn.h>
+#        include <openssl/dh.h>
+#        include <openssl/dsa.h>
+#        include <openssl/ec.h>
+#        include <openssl/err.h>
+#        include <openssl/rand.h>
+#        include <openssl/rsa.h>
+#        include <openssl/ui.h>
+#    endif
+#    include <openssl/engineerr.h>
+#    include <openssl/ossl_typ.h>
+#    include <openssl/symhacks.h>
+#    include <openssl/x509.h>
+#    ifdef __cplusplus
 extern "C" {
-# endif
+#    endif
 
 /*
  * These flags are used to control combinations of algorithm (methods) by
  * bitwise "OR"ing.
  */
-# define ENGINE_METHOD_RSA               (unsigned int)0x0001
-# define ENGINE_METHOD_DSA               (unsigned int)0x0002
-# define ENGINE_METHOD_DH                (unsigned int)0x0004
-# define ENGINE_METHOD_RAND              (unsigned int)0x0008
-# define ENGINE_METHOD_CIPHERS           (unsigned int)0x0040
-# define ENGINE_METHOD_DIGESTS           (unsigned int)0x0080
-# define ENGINE_METHOD_PKEY_METHS        (unsigned int)0x0200
-# define ENGINE_METHOD_PKEY_ASN1_METHS   (unsigned int)0x0400
-# define ENGINE_METHOD_EC                (unsigned int)0x0800
+#    define ENGINE_METHOD_RSA (unsigned int)0x0001
+#    define ENGINE_METHOD_DSA (unsigned int)0x0002
+#    define ENGINE_METHOD_DH (unsigned int)0x0004
+#    define ENGINE_METHOD_RAND (unsigned int)0x0008
+#    define ENGINE_METHOD_CIPHERS (unsigned int)0x0040
+#    define ENGINE_METHOD_DIGESTS (unsigned int)0x0080
+#    define ENGINE_METHOD_PKEY_METHS (unsigned int)0x0200
+#    define ENGINE_METHOD_PKEY_ASN1_METHS (unsigned int)0x0400
+#    define ENGINE_METHOD_EC (unsigned int)0x0800
 /* Obvious all-or-nothing cases. */
-# define ENGINE_METHOD_ALL               (unsigned int)0xFFFF
-# define ENGINE_METHOD_NONE              (unsigned int)0x0000
+#    define ENGINE_METHOD_ALL (unsigned int)0xFFFF
+#    define ENGINE_METHOD_NONE (unsigned int)0x0000
 
 /*
  * This(ese) flag(s) controls behaviour of the ENGINE_TABLE mechanism used
@@ -55,7 +55,7 @@ extern "C" {
  * set by ENGINE_set_table_flags(). The "NOINIT" flag prevents attempts to
  * initialise registered ENGINEs if they are not already initialised.
  */
-# define ENGINE_TABLE_FLAG_NOINIT        (unsigned int)0x0001
+#    define ENGINE_TABLE_FLAG_NOINIT (unsigned int)0x0001
 
 /* ENGINE flags that can be set by ENGINE_set_flags(). */
 /* Not used */
@@ -67,7 +67,7 @@ extern "C" {
  * these control commands on behalf of the ENGINE using their "cmd_defns"
  * data.
  */
-# define ENGINE_FLAGS_MANUAL_CMD_CTRL    (int)0x0002
+#    define ENGINE_FLAGS_MANUAL_CMD_CTRL (int)0x0002
 
 /*
  * This flag is for ENGINEs who return new duplicate structures when found
@@ -79,7 +79,7 @@ extern "C" {
  * ENGINE_by_id() just increments the existing ENGINE's structural reference
  * count.
  */
-# define ENGINE_FLAGS_BY_ID_COPY         (int)0x0004
+#    define ENGINE_FLAGS_BY_ID_COPY (int)0x0004
 
 /*
  * This flag if for an ENGINE that does not want its methods registered as
@@ -87,7 +87,7 @@ extern "C" {
  * usable as default methods.
  */
 
-# define ENGINE_FLAGS_NO_REGISTER_ALL    (int)0x0008
+#    define ENGINE_FLAGS_NO_REGISTER_ALL (int)0x0008
 
 /*
  * ENGINEs can support their own command types, and these flags are used in
@@ -102,23 +102,23 @@ extern "C" {
  */
 
 /* accepts a 'long' input value (3rd parameter to ENGINE_ctrl) */
-# define ENGINE_CMD_FLAG_NUMERIC         (unsigned int)0x0001
+#    define ENGINE_CMD_FLAG_NUMERIC (unsigned int)0x0001
 /*
  * accepts string input (cast from 'void*' to 'const char *', 4th parameter
  * to ENGINE_ctrl)
  */
-# define ENGINE_CMD_FLAG_STRING          (unsigned int)0x0002
+#    define ENGINE_CMD_FLAG_STRING (unsigned int)0x0002
 /*
  * Indicates that the control command takes *no* input. Ie. the control
  * command is unparameterised.
  */
-# define ENGINE_CMD_FLAG_NO_INPUT        (unsigned int)0x0004
+#    define ENGINE_CMD_FLAG_NO_INPUT (unsigned int)0x0004
 /*
  * Indicates that the control command is internal. This control command won't
  * be shown in any output, and is only usable through the ENGINE_ctrl_cmd()
  * function.
  */
-# define ENGINE_CMD_FLAG_INTERNAL        (unsigned int)0x0008
+#    define ENGINE_CMD_FLAG_INTERNAL (unsigned int)0x0008
 
 /*
  * NB: These 3 control commands are deprecated and should not be used.
@@ -137,23 +137,27 @@ extern "C" {
  * sense to some engines.  In such a case, they do nothing but return the
  * error ENGINE_R_CTRL_COMMAND_NOT_IMPLEMENTED.
  */
-# define ENGINE_CTRL_SET_LOGSTREAM               1
-# define ENGINE_CTRL_SET_PASSWORD_CALLBACK       2
-# define ENGINE_CTRL_HUP                         3/* Close and reinitialise
-                                                   * any handles/connections
-                                                   * etc. */
-# define ENGINE_CTRL_SET_USER_INTERFACE          4/* Alternative to callback */
-# define ENGINE_CTRL_SET_CALLBACK_DATA           5/* User-specific data, used
-                                                   * when calling the password
-                                                   * callback and the user
-                                                   * interface */
-# define ENGINE_CTRL_LOAD_CONFIGURATION          6/* Load a configuration,
-                                                   * given a string that
-                                                   * represents a file name
-                                                   * or so */
-# define ENGINE_CTRL_LOAD_SECTION                7/* Load data from a given
-                                                   * section in the already
-                                                   * loaded configuration */
+#    define ENGINE_CTRL_SET_LOGSTREAM 1
+#    define ENGINE_CTRL_SET_PASSWORD_CALLBACK 2
+#    define ENGINE_CTRL_HUP                                             \
+        3                                    /* Close and reinitialise  \
+                                              * any handles/connections \
+                                              * etc. */
+#    define ENGINE_CTRL_SET_USER_INTERFACE 4 /* Alternative to callback */
+#    define ENGINE_CTRL_SET_CALLBACK_DATA \
+        5 /* User-specific data, used     \
+           * when calling the password    \
+           * callback and the user        \
+           * interface */
+#    define ENGINE_CTRL_LOAD_CONFIGURATION \
+        6 /* Load a configuration,         \
+           * given a string that           \
+           * represents a file name        \
+           * or so */
+#    define ENGINE_CTRL_LOAD_SECTION \
+        7 /* Load data from a given  \
+           * section in the already  \
+           * loaded configuration */
 
 /*
  * These control commands allow an application to deal with an arbitrary
@@ -175,22 +179,22 @@ extern "C" {
  * worth checking this first if the caller is trying to "discover" the
  * engine's capabilities and doesn't want errors generated unnecessarily.
  */
-# define ENGINE_CTRL_HAS_CTRL_FUNCTION           10
+#    define ENGINE_CTRL_HAS_CTRL_FUNCTION 10
 /*
  * Returns a positive command number for the first command supported by the
  * engine. Returns zero if no ctrl commands are supported.
  */
-# define ENGINE_CTRL_GET_FIRST_CMD_TYPE          11
+#    define ENGINE_CTRL_GET_FIRST_CMD_TYPE 11
 /*
  * The 'long' argument specifies a command implemented by the engine, and the
  * return value is the next command supported, or zero if there are no more.
  */
-# define ENGINE_CTRL_GET_NEXT_CMD_TYPE           12
+#    define ENGINE_CTRL_GET_NEXT_CMD_TYPE 12
 /*
  * The 'void*' argument is a command name (cast from 'const char *'), and the
  * return value is the command that corresponds to it.
  */
-# define ENGINE_CTRL_GET_CMD_FROM_NAME           13
+#    define ENGINE_CTRL_GET_CMD_FROM_NAME 13
 /*
  * The next two allow a command to be converted into its corresponding string
  * form. In each case, the 'long' argument supplies the command. In the
@@ -199,23 +203,23 @@ extern "C" {
  * string buffer large enough, and it will be populated with the name of the
  * command (WITH a trailing EOL).
  */
-# define ENGINE_CTRL_GET_NAME_LEN_FROM_CMD       14
-# define ENGINE_CTRL_GET_NAME_FROM_CMD           15
+#    define ENGINE_CTRL_GET_NAME_LEN_FROM_CMD 14
+#    define ENGINE_CTRL_GET_NAME_FROM_CMD 15
 /* The next two are similar but give a "short description" of a command. */
-# define ENGINE_CTRL_GET_DESC_LEN_FROM_CMD       16
-# define ENGINE_CTRL_GET_DESC_FROM_CMD           17
+#    define ENGINE_CTRL_GET_DESC_LEN_FROM_CMD 16
+#    define ENGINE_CTRL_GET_DESC_FROM_CMD 17
 /*
  * With this command, the return value is the OR'd combination of
  * ENGINE_CMD_FLAG_*** values that indicate what kind of input a given
  * engine-specific ctrl command expects.
  */
-# define ENGINE_CTRL_GET_CMD_FLAGS               18
+#    define ENGINE_CTRL_GET_CMD_FLAGS 18
 
 /*
  * ENGINE implementations should start the numbering of their own control
  * commands from this value. (ie. ENGINE_CMD_BASE, ENGINE_CMD_BASE + 1, etc).
  */
-# define ENGINE_CMD_BASE                         200
+#    define ENGINE_CMD_BASE 200
 
 /*
  * NB: These 2 nCipher "chil" control commands are deprecated, and their
@@ -226,17 +230,17 @@ extern "C" {
  */
 
 /* Flags specific to the nCipher "chil" engine */
-# define ENGINE_CTRL_CHIL_SET_FORKCHECK          100
-        /*
-         * Depending on the value of the (long)i argument, this sets or
-         * unsets the SimpleForkCheck flag in the CHIL API to enable or
-         * disable checking and workarounds for applications that fork().
-         */
-# define ENGINE_CTRL_CHIL_NO_LOCKING             101
-        /*
-         * This prevents the initialisation function from providing mutex
-         * callbacks to the nCipher library.
-         */
+#    define ENGINE_CTRL_CHIL_SET_FORKCHECK 100
+/*
+ * Depending on the value of the (long)i argument, this sets or
+ * unsets the SimpleForkCheck flag in the CHIL API to enable or
+ * disable checking and workarounds for applications that fork().
+ */
+#    define ENGINE_CTRL_CHIL_NO_LOCKING 101
+/*
+ * This prevents the initialisation function from providing mutex
+ * callbacks to the nCipher library.
+ */
 
 /*
  * If an ENGINE supports its own specific control commands and wishes the
@@ -249,29 +253,31 @@ extern "C" {
  * has cmd_num set to zero and/or cmd_name set to NULL.
  */
 typedef struct ENGINE_CMD_DEFN_st {
-    unsigned int cmd_num;       /* The command number */
-    const char *cmd_name;       /* The command name itself */
-    const char *cmd_desc;       /* A short description of the command */
-    unsigned int cmd_flags;     /* The input the command expects */
+    unsigned int cmd_num;   /* The command number */
+    const char *cmd_name;   /* The command name itself */
+    const char *cmd_desc;   /* A short description of the command */
+    unsigned int cmd_flags; /* The input the command expects */
 } ENGINE_CMD_DEFN;
 
 /* Generic function pointer */
-typedef int (*ENGINE_GEN_FUNC_PTR) (void);
+typedef int (*ENGINE_GEN_FUNC_PTR)(void);
 /* Generic function pointer taking no arguments */
-typedef int (*ENGINE_GEN_INT_FUNC_PTR) (ENGINE *);
+typedef int (*ENGINE_GEN_INT_FUNC_PTR)(ENGINE *);
 /* Specific control function pointer */
-typedef int (*ENGINE_CTRL_FUNC_PTR) (ENGINE *, int, long, void *,
-                                     void (*f) (void));
+typedef int (*ENGINE_CTRL_FUNC_PTR)(ENGINE *, int, long, void *, void (*f)(void));
 /* Generic load_key function pointer */
-typedef EVP_PKEY *(*ENGINE_LOAD_KEY_PTR)(ENGINE *, const char *,
+typedef EVP_PKEY *(*ENGINE_LOAD_KEY_PTR)(ENGINE *,
+                                         const char *,
                                          UI_METHOD *ui_method,
                                          void *callback_data);
-typedef int (*ENGINE_SSL_CLIENT_CERT_PTR) (ENGINE *, SSL *ssl,
-                                           STACK_OF(X509_NAME) *ca_dn,
-                                           X509 **pcert, EVP_PKEY **pkey,
-                                           STACK_OF(X509) **pother,
-                                           UI_METHOD *ui_method,
-                                           void *callback_data);
+typedef int (*ENGINE_SSL_CLIENT_CERT_PTR)(ENGINE *,
+                                          SSL *ssl,
+                                          STACK_OF(X509_NAME) * ca_dn,
+                                          X509 **pcert,
+                                          EVP_PKEY **pkey,
+                                          STACK_OF(X509) * *pother,
+                                          UI_METHOD *ui_method,
+                                          void *callback_data);
 /*-
  * These callback types are for an ENGINE's handler for cipher and digest logic.
  * These handlers have these prototypes;
@@ -287,14 +293,10 @@ typedef int (*ENGINE_SSL_CLIENT_CERT_PTR) (ENGINE *, SSL *ssl,
  * Returns to a pointer to the array of supported cipher 'nid's. If the
  * second parameter is non-NULL it is set to the size of the returned array.
  */
-typedef int (*ENGINE_CIPHERS_PTR) (ENGINE *, const EVP_CIPHER **,
-                                   const int **, int);
-typedef int (*ENGINE_DIGESTS_PTR) (ENGINE *, const EVP_MD **, const int **,
-                                   int);
-typedef int (*ENGINE_PKEY_METHS_PTR) (ENGINE *, EVP_PKEY_METHOD **,
-                                      const int **, int);
-typedef int (*ENGINE_PKEY_ASN1_METHS_PTR) (ENGINE *, EVP_PKEY_ASN1_METHOD **,
-                                           const int **, int);
+typedef int (*ENGINE_CIPHERS_PTR)(ENGINE *, const EVP_CIPHER **, const int **, int);
+typedef int (*ENGINE_DIGESTS_PTR)(ENGINE *, const EVP_MD **, const int **, int);
+typedef int (*ENGINE_PKEY_METHS_PTR)(ENGINE *, EVP_PKEY_METHOD **, const int **, int);
+typedef int (*ENGINE_PKEY_ASN1_METHS_PTR)(ENGINE *, EVP_PKEY_ASN1_METHOD **, const int **, int);
 /*
  * STRUCTURE functions ... all of these functions deal with pointers to
  * ENGINE structures where the pointers have a "structural reference". This
@@ -320,24 +322,17 @@ int ENGINE_remove(ENGINE *e);
 /* Retrieve an engine from the list by its unique "id" value. */
 ENGINE *ENGINE_by_id(const char *id);
 
-#if OPENSSL_API_COMPAT < 0x10100000L
-# define ENGINE_load_openssl() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_OPENSSL, NULL)
-# define ENGINE_load_dynamic() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_DYNAMIC, NULL)
-# ifndef OPENSSL_NO_STATIC_ENGINE
-#  define ENGINE_load_padlock() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_PADLOCK, NULL)
-#  define ENGINE_load_capi() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_CAPI, NULL)
-#  define ENGINE_load_afalg() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_AFALG, NULL)
-# endif
-# define ENGINE_load_cryptodev() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_CRYPTODEV, NULL)
-# define ENGINE_load_rdrand() \
-    OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_RDRAND, NULL)
-#endif
+#    if OPENSSL_API_COMPAT < 0x10100000L
+#        define ENGINE_load_openssl() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_OPENSSL, NULL)
+#        define ENGINE_load_dynamic() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_DYNAMIC, NULL)
+#        ifndef OPENSSL_NO_STATIC_ENGINE
+#            define ENGINE_load_padlock() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_PADLOCK, NULL)
+#            define ENGINE_load_capi() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_CAPI, NULL)
+#            define ENGINE_load_afalg() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_AFALG, NULL)
+#        endif
+#        define ENGINE_load_cryptodev() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_CRYPTODEV, NULL)
+#        define ENGINE_load_rdrand() OPENSSL_init_crypto(OPENSSL_INIT_ENGINE_RDRAND, NULL)
+#    endif
 void ENGINE_load_builtin_engines(void);
 
 /*
@@ -410,7 +405,7 @@ int ENGINE_register_all_complete(void);
  * commands that require an operational ENGINE, and only use functional
  * references in such situations.
  */
-int ENGINE_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f) (void));
+int ENGINE_ctrl(ENGINE *e, int cmd, long i, void *p, void (*f)(void));
 
 /*
  * This function tests if an ENGINE-specific command is usable as a
@@ -426,8 +421,12 @@ int ENGINE_cmd_is_executable(ENGINE *e, int cmd);
  * commands. See the comment on ENGINE_ctrl_cmd_string() for an explanation
  * on how to use the cmd_name and cmd_optional.
  */
-int ENGINE_ctrl_cmd(ENGINE *e, const char *cmd_name,
-                    long i, void *p, void (*f) (void), int cmd_optional);
+int ENGINE_ctrl_cmd(ENGINE *e,
+                    const char *cmd_name,
+                    long i,
+                    void *p,
+                    void (*f)(void),
+                    int cmd_optional);
 
 /*
  * This function passes a command-name and argument to an ENGINE. The
@@ -451,8 +450,7 @@ int ENGINE_ctrl_cmd(ENGINE *e, const char *cmd_name,
  * applications can work consistently with the same configuration for the
  * same ENGINE-enabled devices, across applications.
  */
-int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg,
-                           int cmd_optional);
+int ENGINE_ctrl_cmd_string(ENGINE *e, const char *cmd_name, const char *arg, int cmd_optional);
 
 /*
  * These functions are useful for manufacturing new ENGINE structures. They
@@ -476,12 +474,9 @@ int ENGINE_set_destroy_function(ENGINE *e, ENGINE_GEN_INT_FUNC_PTR destroy_f);
 int ENGINE_set_init_function(ENGINE *e, ENGINE_GEN_INT_FUNC_PTR init_f);
 int ENGINE_set_finish_function(ENGINE *e, ENGINE_GEN_INT_FUNC_PTR finish_f);
 int ENGINE_set_ctrl_function(ENGINE *e, ENGINE_CTRL_FUNC_PTR ctrl_f);
-int ENGINE_set_load_privkey_function(ENGINE *e,
-                                     ENGINE_LOAD_KEY_PTR loadpriv_f);
+int ENGINE_set_load_privkey_function(ENGINE *e, ENGINE_LOAD_KEY_PTR loadpriv_f);
 int ENGINE_set_load_pubkey_function(ENGINE *e, ENGINE_LOAD_KEY_PTR loadpub_f);
-int ENGINE_set_load_ssl_client_cert_function(ENGINE *e,
-                                             ENGINE_SSL_CLIENT_CERT_PTR
-                                             loadssl_f);
+int ENGINE_set_load_ssl_client_cert_function(ENGINE *e, ENGINE_SSL_CLIENT_CERT_PTR loadssl_f);
 int ENGINE_set_ciphers(ENGINE *e, ENGINE_CIPHERS_PTR f);
 int ENGINE_set_digests(ENGINE *e, ENGINE_DIGESTS_PTR f);
 int ENGINE_set_pkey_meths(ENGINE *e, ENGINE_PKEY_METHS_PTR f);
@@ -489,18 +484,20 @@ int ENGINE_set_pkey_asn1_meths(ENGINE *e, ENGINE_PKEY_ASN1_METHS_PTR f);
 int ENGINE_set_flags(ENGINE *e, int flags);
 int ENGINE_set_cmd_defns(ENGINE *e, const ENGINE_CMD_DEFN *defns);
 /* These functions allow control over any per-structure ENGINE data. */
-#define ENGINE_get_ex_new_index(l, p, newf, dupf, freef) \
-    CRYPTO_get_ex_new_index(CRYPTO_EX_INDEX_ENGINE, l, p, newf, dupf, freef)
+#    define ENGINE_get_ex_new_index(l, p, newf, dupf, freef) \
+        CRYPTO_get_ex_new_index(CRYPTO_EX_INDEX_ENGINE, l, p, newf, dupf, freef)
 int ENGINE_set_ex_data(ENGINE *e, int idx, void *arg);
 void *ENGINE_get_ex_data(const ENGINE *e, int idx);
 
-#if OPENSSL_API_COMPAT < 0x10100000L
+#    if OPENSSL_API_COMPAT < 0x10100000L
 /*
  * This function previously cleaned up anything that needs it. Auto-deinit will
  * now take care of it so it is no longer required to call this function.
  */
-# define ENGINE_cleanup() while(0) continue
-#endif
+#        define ENGINE_cleanup() \
+            while (0)            \
+            continue
+#    endif
 
 /*
  * These return values from within the ENGINE structure. These can be useful
@@ -521,8 +518,7 @@ ENGINE_GEN_INT_FUNC_PTR ENGINE_get_finish_function(const ENGINE *e);
 ENGINE_CTRL_FUNC_PTR ENGINE_get_ctrl_function(const ENGINE *e);
 ENGINE_LOAD_KEY_PTR ENGINE_get_load_privkey_function(const ENGINE *e);
 ENGINE_LOAD_KEY_PTR ENGINE_get_load_pubkey_function(const ENGINE *e);
-ENGINE_SSL_CLIENT_CERT_PTR ENGINE_get_ssl_client_cert_function(const ENGINE
-                                                               *e);
+ENGINE_SSL_CLIENT_CERT_PTR ENGINE_get_ssl_client_cert_function(const ENGINE *e);
 ENGINE_CIPHERS_PTR ENGINE_get_ciphers(const ENGINE *e);
 ENGINE_DIGESTS_PTR ENGINE_get_digests(const ENGINE *e);
 ENGINE_PKEY_METHS_PTR ENGINE_get_pkey_meths(const ENGINE *e);
@@ -531,12 +527,8 @@ const EVP_CIPHER *ENGINE_get_cipher(ENGINE *e, int nid);
 const EVP_MD *ENGINE_get_digest(ENGINE *e, int nid);
 const EVP_PKEY_METHOD *ENGINE_get_pkey_meth(ENGINE *e, int nid);
 const EVP_PKEY_ASN1_METHOD *ENGINE_get_pkey_asn1_meth(ENGINE *e, int nid);
-const EVP_PKEY_ASN1_METHOD *ENGINE_get_pkey_asn1_meth_str(ENGINE *e,
-                                                          const char *str,
-                                                          int len);
-const EVP_PKEY_ASN1_METHOD *ENGINE_pkey_asn1_find_str(ENGINE **pe,
-                                                      const char *str,
-                                                      int len);
+const EVP_PKEY_ASN1_METHOD *ENGINE_get_pkey_asn1_meth_str(ENGINE *e, const char *str, int len);
+const EVP_PKEY_ASN1_METHOD *ENGINE_pkey_asn1_find_str(ENGINE **pe, const char *str, int len);
 const ENGINE_CMD_DEFN *ENGINE_get_cmd_defns(const ENGINE *e);
 int ENGINE_get_flags(const ENGINE *e);
 
@@ -571,14 +563,22 @@ int ENGINE_finish(ENGINE *e);
  * location, handled by the engine.  The storage may be on a card or
  * whatever.
  */
-EVP_PKEY *ENGINE_load_private_key(ENGINE *e, const char *key_id,
-                                  UI_METHOD *ui_method, void *callback_data);
-EVP_PKEY *ENGINE_load_public_key(ENGINE *e, const char *key_id,
-                                 UI_METHOD *ui_method, void *callback_data);
-int ENGINE_load_ssl_client_cert(ENGINE *e, SSL *s,
-                                STACK_OF(X509_NAME) *ca_dn, X509 **pcert,
-                                EVP_PKEY **ppkey, STACK_OF(X509) **pother,
-                                UI_METHOD *ui_method, void *callback_data);
+EVP_PKEY *ENGINE_load_private_key(ENGINE *e,
+                                  const char *key_id,
+                                  UI_METHOD *ui_method,
+                                  void *callback_data);
+EVP_PKEY *ENGINE_load_public_key(ENGINE *e,
+                                 const char *key_id,
+                                 UI_METHOD *ui_method,
+                                 void *callback_data);
+int ENGINE_load_ssl_client_cert(ENGINE *e,
+                                SSL *s,
+                                STACK_OF(X509_NAME) * ca_dn,
+                                X509 **pcert,
+                                EVP_PKEY **ppkey,
+                                STACK_OF(X509) * *pother,
+                                UI_METHOD *ui_method,
+                                void *callback_data);
 
 /*
  * This returns a pointer for the current ENGINE structure that is (by
@@ -638,12 +638,12 @@ void ENGINE_add_conf_module(void);
 /**************************/
 
 /* Binary/behaviour compatibility levels */
-# define OSSL_DYNAMIC_VERSION            (unsigned long)0x00030000
+#    define OSSL_DYNAMIC_VERSION (unsigned long)0x00030000
 /*
  * Binary versions older than this are too old for us (whether we're a loader
  * or a loadee)
  */
-# define OSSL_DYNAMIC_OLDEST             (unsigned long)0x00030000
+#    define OSSL_DYNAMIC_OLDEST (unsigned long)0x00030000
 
 /*
  * When compiling an ENGINE entirely as an external shared library, loadable
@@ -656,9 +656,9 @@ void ENGINE_add_conf_module(void);
  * same static data as the calling application (or library), and thus whether
  * these callbacks need to be set or not.
  */
-typedef void *(*dyn_MEM_malloc_fn) (size_t, const char *, int);
-typedef void *(*dyn_MEM_realloc_fn) (void *, size_t, const char *, int);
-typedef void (*dyn_MEM_free_fn) (void *, const char *, int);
+typedef void *(*dyn_MEM_malloc_fn)(size_t, const char *, int);
+typedef void *(*dyn_MEM_realloc_fn)(void *, size_t, const char *, int);
+typedef void (*dyn_MEM_free_fn)(void *, const char *, int);
 typedef struct st_dynamic_MEM_fns {
     dyn_MEM_malloc_fn malloc_fn;
     dyn_MEM_realloc_fn realloc_fn;
@@ -686,12 +686,14 @@ typedef struct st_dynamic_fns {
  * implementation can be fully instantiated with
  * IMPLEMENT_DYNAMIC_CHECK_FN().
  */
-typedef unsigned long (*dynamic_v_check_fn) (unsigned long ossl_version);
-# define IMPLEMENT_DYNAMIC_CHECK_FN() \
-        OPENSSL_EXPORT unsigned long v_check(unsigned long v); \
+typedef unsigned long (*dynamic_v_check_fn)(unsigned long ossl_version);
+#    define IMPLEMENT_DYNAMIC_CHECK_FN()                        \
+        OPENSSL_EXPORT unsigned long v_check(unsigned long v);  \
         OPENSSL_EXPORT unsigned long v_check(unsigned long v) { \
-                if (v >= OSSL_DYNAMIC_OLDEST) return OSSL_DYNAMIC_VERSION; \
-                return 0; }
+            if (v >= OSSL_DYNAMIC_OLDEST)                       \
+                return OSSL_DYNAMIC_VERSION;                    \
+            return 0;                                           \
+        }
 
 /*
  * This function is passed the ENGINE structure to initialise with its own
@@ -711,20 +713,21 @@ typedef unsigned long (*dynamic_v_check_fn) (unsigned long ossl_version);
  * returns an int value (zero for failure). 'fn' should have prototype;
  * [static] int fn(ENGINE *e, const char *id);
  */
-typedef int (*dynamic_bind_engine) (ENGINE *e, const char *id,
-                                    const dynamic_fns *fns);
-# define IMPLEMENT_DYNAMIC_BIND_FN(fn) \
-        OPENSSL_EXPORT \
-        int bind_engine(ENGINE *e, const char *id, const dynamic_fns *fns); \
-        OPENSSL_EXPORT \
-        int bind_engine(ENGINE *e, const char *id, const dynamic_fns *fns) { \
-            if (ENGINE_get_static_state() == fns->static_state) goto skip_cbs; \
-            CRYPTO_set_mem_functions(fns->mem_fns.malloc_fn, \
-                                     fns->mem_fns.realloc_fn, \
-                                     fns->mem_fns.free_fn); \
-        skip_cbs: \
-            if (!fn(e, id)) return 0; \
-            return 1; }
+typedef int (*dynamic_bind_engine)(ENGINE *e, const char *id, const dynamic_fns *fns);
+#    define IMPLEMENT_DYNAMIC_BIND_FN(fn)                                             \
+        OPENSSL_EXPORT                                                                \
+        int bind_engine(ENGINE *e, const char *id, const dynamic_fns *fns);           \
+        OPENSSL_EXPORT                                                                \
+        int bind_engine(ENGINE *e, const char *id, const dynamic_fns *fns) {          \
+            if (ENGINE_get_static_state() == fns->static_state)                       \
+                goto skip_cbs;                                                        \
+            CRYPTO_set_mem_functions(fns->mem_fns.malloc_fn, fns->mem_fns.realloc_fn, \
+                                     fns->mem_fns.free_fn);                           \
+        skip_cbs:                                                                     \
+            if (!fn(e, id))                                                           \
+                return 0;                                                             \
+            return 1;                                                                 \
+        }
 
 /*
  * If the loading application (or library) and the loaded ENGINE library
@@ -739,13 +742,12 @@ typedef int (*dynamic_bind_engine) (ENGINE *e, const char *id,
  */
 void *ENGINE_get_static_state(void);
 
-# if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
+#    if defined(__OpenBSD__) || defined(__FreeBSD__) || defined(__DragonFly__)
 DEPRECATEDIN_1_1_0(void ENGINE_setup_bsd_cryptodev(void))
-# endif
+#    endif
 
-
-#  ifdef  __cplusplus
+#    ifdef __cplusplus
 }
-#  endif
-# endif
+#    endif
+#endif
 #endif
