@@ -21,6 +21,7 @@ struct CommandContext {
     CommandContext(TP &&x, CommandOrigin *o) : CMD(std::forward<TP>(x)), Ori(o) {}
 };
 static_assert(offsetof(CommandContext, Ori) == 32);
+
 class MinecraftCommands;
 class MinecraftCommands {
   public:
