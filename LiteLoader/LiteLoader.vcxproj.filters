@@ -183,9 +183,6 @@
     <ClInclude Include="..\headers\mc\OffsetHelper.h">
       <Filter>头文件\mc</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\mc\Command.h">
-      <Filter>头文件\mc</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -275,6 +272,9 @@
     </ClInclude>
     <ClInclude Include="PatchHelper.h">
       <Filter>头文件\hook</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\Command.h">
+      <Filter>头文件\mc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

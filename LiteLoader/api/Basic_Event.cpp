@@ -87,7 +87,7 @@ THook(void,
     auto sp = SymCall(
         "?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@E@Z",
         Player *, void *, void *, char)(self, id, *(char *)((uintptr_t)text + 16));
-    auto msg = std::string(*(std::string *)((uintptr_t)text + 88));
+    auto msg         = std::string(*(std::string *)((uintptr_t)text + 88));
     ChatEV ChatEV    = {sp, msg};
     bool isCancelled = false;
     for (size_t count = 0; count < ChatCallBacks.size(); count++) {
@@ -120,10 +120,10 @@ THook(bool,
 }
 
 Player *MakeSP(CommandOrigin &ori) {
-    if (ori.getOriginType() == OriginType::Player) {
-        return (Player *)ori.getEntity();
-    }
-    return 0;
+    // if (ori.getOriginType() == OriginType::Player) {
+    return (Player *)ori.getEntity();
+    // }
+    // return 0;
 }
 
 vector<function<bool(PlayerUseCmdEV)>> PlayerUseCmdCallBacks;
