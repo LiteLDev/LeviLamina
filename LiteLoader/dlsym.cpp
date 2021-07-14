@@ -197,7 +197,7 @@ struct SymDBReader : SymDBBase {
             std::string rv;
             rv.resize(slen, 0);
             ifs.read((char *)rv.data(), slen);
-            hashMap->insert({rv, *rva});
+            hashMap->insert({rv.data(), *rva});
             //hashMap[rv] = *rva;
             // printf("[%08d] %s\n", *rva, rv.c_str());
             rv.shrink_to_fit();
