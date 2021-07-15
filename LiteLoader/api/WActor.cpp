@@ -1,6 +1,6 @@
-﻿#include <lbpch.h>
-#include <api\types\types.h>
+﻿#include <api\types\types.h>
 #include <debug/MemSearcher.h>
+#include <lbpch.h>
 #include <mc/Actor.h>
 #include <mc/Level.h>
 static MSearcherEx<unsigned long long> wa_getrtid;

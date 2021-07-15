@@ -1,6 +1,6 @@
-﻿#include <lbpch.h>
-#include <api\types\types.h>
+﻿#include <api\types\types.h>
 #include <debug/MemSearcher.h>
+#include <lbpch.h>
 static bool inMagic;
 static MSearcherEx<unsigned char> MS_WCNT;
 unsigned char WItem::getCount() const {

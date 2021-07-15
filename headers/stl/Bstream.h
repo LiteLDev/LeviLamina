@@ -90,7 +90,7 @@ class RBStream {
 
   public:
     template <typename... T>
-    void apply(T &... args) {
+    void apply(T &...args) {
         (__get(args), ...);
     }
     void read(void *dst, size_t n) {
@@ -151,7 +151,7 @@ class WBStreamImpl {
     WBStreamImpl() {}
     WBStreamImpl(container &&x) : data(x) {}
     template <typename... T>
-    void apply(T const &... args) {
+    void apply(T const &...args) {
         (__put(args), ...);
     }
     void write(const void *src, size_t n) { data.append((const char *)src, n); }
@@ -189,12 +189,10 @@ struct BinVariant {
     void unpack(RBStream &rs) {
         rs.apply(type);
         switch (type) {
-            case 1:
-            {
+            case 1: {
                 rs.apply(v.x);
             } break;
-            case 2:
-            {
+            case 2: {
                 new (&v.y) std::string();
                 rs.apply(v.y);
             }
@@ -203,12 +201,10 @@ struct BinVariant {
     void pack(WBStream &ws) const {
         ws.apply(type);
         switch (type) {
-            case 1:
-            {
+            case 1: {
                 ws.apply(v.x);
             } break;
-            case 2:
-            {
+            case 2: {
                 ws.apply(v.y);
             }
         }

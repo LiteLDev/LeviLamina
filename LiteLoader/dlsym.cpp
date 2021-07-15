@@ -1,5 +1,6 @@
 ﻿//#include<lbpch.h>
 
+#include <detours/detours.h>
 #include <cstdio>
 #include <filesystem>
 #include <fstream>
@@ -11,7 +12,6 @@
 #include <vector>
 #include "framework.h"
 #include "pch.h"
-#include <detours/detours.h>
 using std::list;
 using std::string, std::string_view;
 using std::unordered_map, std::vector;
@@ -181,7 +181,7 @@ struct SymDBReader : SymDBBase {
         delete[] buf;
         return rv;
     }
-    void dumpall(unordered_map<string, int, aphash>* hashMap) {
+    void dumpall(unordered_map<string, int, aphash> *hashMap) {
         int siz_rva = SIZSEG[SEGMENT_RVA_INT];
         char *buf   = new char[siz_rva];
         ifs.seekg({SEGOFF[SEGMENT_RVA_INT]});
@@ -198,7 +198,7 @@ struct SymDBReader : SymDBBase {
             rv.resize(slen, 0);
             ifs.read((char *)rv.data(), slen);
             hashMap->insert({rv.data(), *rva});
-            //hashMap[rv] = *rva;
+            // hashMap[rv] = *rva;
             // printf("[%08d] %s\n", *rva, rv.c_str());
             rv.shrink_to_fit();
         }
@@ -214,10 +214,10 @@ void InitFastDlsym() {
     std::cout << "[Info] Loading Symbols" << std::endl;
     unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(realFuncMap);
-    fnstat = 1;
-    SymDB    = nullptr;
-    SymDB    = new SymDBReader("bedrock_server.symdb2");
-    FuncMap                        = realFuncMap;
+    fnstat  = 1;
+    SymDB   = nullptr;
+    SymDB   = new SymDBReader("bedrock_server.symdb2");
+    FuncMap = realFuncMap;
     std::cout << "[Info] FastDlsymInited " << realFuncMap->size() << std::endl;
 }
 void *dlsym_real(const char *x) {
@@ -227,7 +227,7 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        SymDB     = new SymDBReader("bedrock_server.symdb2");
+        SymDB   = new SymDBReader("bedrock_server.symdb2");
         BaseAdr = (uintptr_t)GetModuleHandle(NULL);
         static_assert(sizeof(GetModuleHandle(NULL)) == 8);
     }

@@ -1,9 +1,9 @@
 ﻿#pragma once
 #pragma warning(disable : 4251)
-#include <iostream>
-#include <unordered_map>
 #include <JsonLoader.h>
 #include <loader/hash.h>
+#include <iostream>
+#include <unordered_map>
 using std::string;
 
 #define DEFINE_LANG_PACK LangPack LangP;
@@ -16,10 +16,10 @@ struct LangPack {
     string path;
 
     LangPack() = default;
-    LangPack(const string& fn) { load(fn); }
+    LangPack(const string &fn) { load(fn); }
     LangPack(std::unordered_map<string, string> &mp) { load(mp); }
 
-    void load(std::unordered_map<string, string>& mp) {
+    void load(std::unordered_map<string, string> &mp) {
         TMAP.clear();
         for (auto &i : mp) {
             if (TMAP.count(do_hash(i.first.c_str()))) {
@@ -40,7 +40,7 @@ struct LangPack {
             std::cerr << "[ERROR] Json Error " << fn << " " << e << std::endl;
         }
     }
-    
+
     template <CHash HASH>
     const string &trans(string_view x) {
         static string *cache = NULL;
@@ -54,9 +54,7 @@ struct LangPack {
         }
         return *cache;
     }
-    };
-
-
+};
 
 #ifdef LP
 #    pragma message( \

@@ -86,12 +86,14 @@ static void loadPlugins() {
     for (auto &[name, h] : libs) {
         auto FN = GetProcAddress(h, "onPostInit");
         if (!FN) {
-            // std::wcerr << "Warning!!! plugin " << name << " doesnt have a onPostInit" << std::endl;
+            // std::wcerr << "Warning!!! plugin " << name << " doesnt have a onPostInit" <<
+            // std::endl;
         } else {
             try {
                 ((void (*)())FN)();
             } catch (...) {
-                std::wcerr << "[Error] Plugin " << name << " threw an exception on onPostInit." << std::endl;
+                std::wcerr << "[Error] Plugin " << name << " threw an exception on onPostInit."
+                           << std::endl;
                 std::this_thread::sleep_for(std::chrono::seconds(10));
                 exit(1);
             }
@@ -150,7 +152,8 @@ static void entry(bool fixcwd) {
         LOG("Github: https://git.io/JOyw4 | Version: " + (std::string)LiteLoaderVersion +
             " | Based on BedrockX Project");
 #endif
-        LOG(u8"感谢旋律云（rhymc.com）对本项目的支持 | Thanks to rhymc.com for supporting this project");
+        LOG(u8"感谢旋律云（rhymc.com）对本项目的支持 | Thanks to rhymc.com for supporting this "
+            u8"project");
         updateCheck();
     });
 

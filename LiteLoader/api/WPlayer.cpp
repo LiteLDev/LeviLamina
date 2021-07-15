@@ -1,8 +1,8 @@
-﻿#include <lbpch.h>
-#include <api\myPacket.h>
+﻿#include <api\myPacket.h>
 #include <api\refl\playerMap.h>
 #include <api\types\types.h>
 #include <debug\MemSearcher.h>
+#include <lbpch.h>
 #include <mc/Certificate.h>
 #include <mc/Player.h>
 #include <mc\OffsetHelper.h>

@@ -1,5 +1,5 @@
-﻿#include <lbpch.h>
-#include <api\refl\playerMap.h>
+﻿#include <api\refl\playerMap.h>
+#include <lbpch.h>
 // PlayerMap.h
 // BUG:DONT USE GLOBAL VAR WITH A CUSTOM CONSTRUCTION!!!!
 // static std::vector<DePlayerCB> depcbs;

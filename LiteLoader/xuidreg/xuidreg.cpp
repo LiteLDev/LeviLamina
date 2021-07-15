@@ -1,5 +1,4 @@
-﻿#include <stl\KVDB.h>
-#include <api/Basic_Event.h>
+﻿#include <api/Basic_Event.h>
 #include <api/serviceLocate.h>
 #include <api/types/types.h>
 #include <api\xuidreg\xuidreg.h>
@@ -7,6 +6,7 @@
 #include <mc/Core.h>
 #include <mc/OffsetHelper.h>
 #include <stl/views.h>
+#include <stl\KVDB.h>
 #include <stl\useful.h>
 #include <stl\viewhelper.h>
 namespace XIDREG {

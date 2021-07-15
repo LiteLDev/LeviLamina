@@ -153,7 +153,7 @@ struct U64LRUmap {
         return nullptr;
     }
     template <typename... P>
-    TP *insert(key_t key, P &&... val) {
+    TP *insert(key_t key, P &&...val) {
         auto &bk    = bucket[key % buksz];
         auto &nd    = alloc.buy();
         nd.val.hash = key;

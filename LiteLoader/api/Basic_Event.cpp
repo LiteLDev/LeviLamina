@@ -125,7 +125,7 @@ Player *MakeSP(CommandOrigin &ori) {
         return pl;
     }
     // if (ori.getOriginType() == OriginType::Player) {
-    
+
     // }
     return 0;
 }

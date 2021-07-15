@@ -255,9 +255,6 @@
     <ClInclude Include="..\headers\api\scheduler\scheduler.h">
       <Filter>头文件\api\scheduler</Filter>
     </ClInclude>
-    <ClInclude Include="logger.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="RelativeFloat.h">
       <Filter>头文件\api</Filter>
     </ClInclude>

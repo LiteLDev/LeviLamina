@@ -253,7 +253,7 @@ inline static optional<WPlayer> MakeWP(CommandOrigin const &ori) {
         return {{*(ServerPlayer *)ori.getEntity()}};
     }
     // if (ori.getOriginType() == OriginType::Player) {
-    //return {{*(ServerPlayer *)ori.getEntity()}};
+    // return {{*(ServerPlayer *)ori.getEntity()}};
     //}
     return {};
 }
@@ -263,7 +263,7 @@ inline static ServerPlayer *MakeSP(CommandOrigin const &ori) {
         return {sp};
     }
     // if (ori.getOriginType() == OriginType::Player) {
-    //return {(ServerPlayer *)ori.getEntity()};
+    // return {(ServerPlayer *)ori.getEntity()};
     //}
     return nullptr;
 }

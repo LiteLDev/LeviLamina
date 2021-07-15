@@ -23,7 +23,7 @@ class static_queue {
             pop_back();
     }
     template <typename... P>
-    T &emplace_back(P &&... arg) {
+    T &emplace_back(P &&...arg) {
         T *dst = (T *)(data + count * sizeof(T));
         new (dst) T(std::forward<P>(arg)...);
         count++;

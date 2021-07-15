@@ -16,7 +16,6 @@ static inline int iround(float x) {
     return r;
 }
 
-
 class BlockPos {
   public:
     int x, y, z;
@@ -31,7 +30,6 @@ class BlockPos {
     }
     void unpack(RBStream &rs) { rs.apply(x, y, z); }
     inline BlockPos add(int dx, int dy, int dz) { return {x + dx, y + dy, z + dz}; }
-
 };
 
 class Vec3 {
@@ -77,9 +75,7 @@ class AABB {
         p2 = _p2;
     }
 
-   inline  Vec3 getCenter() { 
-        return ( p1 + p2 ) * 0.5; 
-    }
+    inline Vec3 getCenter() { return (p1 + p2) * 0.5; }
 };
 
 class BoundingBox {
@@ -91,20 +87,16 @@ class BoundingBox {
         return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
     }
 
-    inline AABB toAABB() 
-    { 
-       Vec3 vec1 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
-       Vec3 vec2 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
-       return {vec1, vec2 + Vec3{1, 1, 1}}; 
+    inline AABB toAABB() {
+        Vec3 vec1 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
+        Vec3 vec2 = {(float)bpos1.x, (float)bpos1.y, (float)bpos1.z};
+        return {vec1, vec2 + Vec3{1, 1, 1}};
     }
-
-
 };
 
 class ChunkPos {
   public:
     int x, z;
-
 };
 
 struct IVec2 {
@@ -169,6 +161,5 @@ class ActorDamageSource {
   private:
     virtual int getEntityCategories() const = 0;
 };
-
 
 constexpr const int SAFE_PADDING = 0;

@@ -37,4 +37,4 @@ constexpr uint64_t do_hash2(string_view x) {
         }
     }
     return rval;
-} 
+}

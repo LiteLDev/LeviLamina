@@ -22,7 +22,7 @@
 // CheckUpdate.cpp
 #include <rapidjson/document.h>
 #include <rapidjson/rapidjson.h>
+#include <stl/logger.h>
 #include <iostream>
 #include <string>
-#include <stl/logger.h>
 #endif  // PCH_H

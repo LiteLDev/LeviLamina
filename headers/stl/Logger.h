@@ -69,13 +69,13 @@ struct asyncFStream {
         }
     }
     template <typename... T>
-    inline void write(T &&... x) {
+    inline void write(T &&...x) {
         lock();
         (buf1->append(std::forward<T>(x)), ...);
         unlock();
     }
     template <typename... T>
-    inline void writeLine(T &&... x) {
+    inline void writeLine(T &&...x) {
         lock();
         (buf1->append(std::forward<T>(x)), ...);
         buf1->push_back('\n');
@@ -150,16 +150,16 @@ struct file_commit {
 template <typename... TP>
 struct stacked {
     std::tuple<TP...> data;
-    stacked(TP &&... args) noexcept : data(std::forward<TP>(args)...) {}
+    stacked(TP &&...args) noexcept : data(std::forward<TP>(args)...) {}
     template <size_t idx, typename... TC>
-    void _call(TC &&... args) noexcept {
+    void _call(TC &&...args) noexcept {
         std::get<idx>(data)(std::forward<TC>(args)...);
         if constexpr (idx != std::tuple_size_v<decltype(data)> - 1) {
             _call<idx + 1, TC...>(std::forward<TC>(args)...);
         }
     }
     template <typename... TC>
-    void operator()(TC &&... args) noexcept {
+    void operator()(TC &&...args) noexcept {
         _call<0, TC...>(std::forward<TC>(args)...);
     }
 };
@@ -180,7 +180,7 @@ struct Logger {
         x << std::forward<B>(y) << z;
     }
     template <LOGLVL lvl, char delim = 0, typename... TP>
-    void _logimpl(TP &&... args) {
+    void _logimpl(TP &&...args) {
         char datebuf[256];
         struct tm _tim;
         {
@@ -198,17 +198,17 @@ struct Logger {
         cmt(string_view{datebuf, timsz + LVLNAME[int(lvl)].size()}, ss.str());  // level time ss
     }
     template <LOGLVL lvl = LOGLVL::Info, typename... TP>
-    void l(TP &&... args) {
+    void l(TP &&...args) {
         if (lvl >= lvlmin) {
             _logimpl<lvl>(std::forward<TP>(args)...);
         }
     }
     template <typename... TP>
-    void operator()(TP &&... args) {
+    void operator()(TP &&...args) {
         p(std::forward<TP>(args)...);
     }
     template <LOGLVL lvl = LOGLVL::Info, char join = ' ', typename... TP>
-    void p(TP &&... args) {
+    void p(TP &&...args) {
         if (lvl >= lvlmin) {
             _logimpl<lvl, join>(std::forward<TP>(args)...);
         }

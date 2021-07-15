@@ -95,7 +95,7 @@ extern THookRegister THookRegisterTemplate;
             return storage;                                                                   \
         }                                                                                     \
         template <typename... Params>                                                         \
-        static ret original(pclass *_this, Params &&... params) {                             \
+        static ret original(pclass *_this, Params &&...params) {                              \
             return (((THookTemplate *)_this)->*_original())(std::forward<Params>(params)...); \
         }                                                                                     \
         ret _hook(__VA_ARGS__);                                                               \
@@ -120,7 +120,7 @@ extern THookRegister THookRegisterTemplate;
             return storage;                                                      \
         }                                                                        \
         template <typename... Params>                                            \
-        static ret original(Params &&... params) {                               \
+        static ret original(Params &&...params) {                                \
             return _original()(std::forward<Params>(params)...);                 \
         }                                                                        \
         static ret _hook(__VA_ARGS__);                                           \

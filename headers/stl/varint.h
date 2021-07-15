@@ -38,8 +38,8 @@ struct VarInts {
         }
     }
 };
-using VarUInt  = VarInts<unsigned int>;
-using VarULong = VarInts<unsigned long long>;
+using VarUInt   = VarInts<unsigned int>;
+using VarULong  = VarInts<unsigned long long>;
 using VarUShort = VarInts<unsigned short>;
 
 struct MCString {
