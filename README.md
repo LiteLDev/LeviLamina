@@ -10,8 +10,20 @@ Based on [BedrockX](https://github.com/Sysca11/BedrockX)
 Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 
 ## Install
+### Windows
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
 2. Run `SymDB2.exe` to generate symbol files(`.symdb2`), before you run `SymDB2.exe` you need to check if the `bedrock_server.pdb` exists
+
+### Docker(Linux)
+```bash
+docker pull hellobox/liteloaderbds:latest
+docker create --name liteloader -p 19132:19132 -i -t hellobox/liteloaderbds:latest
+```
+Start server: `docker container start liteloader`  
+Stop server(uncommended): `docker container stop liteloader`  
+Show console: `docker attach liteloader`  
+Exit console: press `Ctrl + P + Q`, if you press `Ctrl + C` server process will exit  
+If you want to manage server file, use `docker volume --help` for more details
 
 ## Usage
 Put .dll plugins into `plugins\` directory  

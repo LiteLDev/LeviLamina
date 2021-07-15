@@ -11,8 +11,20 @@
 感谢[旋律云](https://www.rhymc.com/)对本项目的支持
 
 ## 安装
+### Windows
 1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下
 2. 运行`SymDB2.exe`以生成符号文件(`.symdb2`)，运行`SymDB2.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
+
+### Docker(Linux)
+```bash
+docker pull hellobox/liteloaderbds:latest
+docker create --name liteloader -p 19132:19132 -i -t hellobox/liteloaderbds:latest
+```
+启动服务器: `docker container start liteloader`  
+强制停止服务器(不推荐): `docker container stop liteloader`  
+进入控制台: `docker attach liteloader`  
+退出控制台请按`Ctrl + P + Q`，如果直接按`Ctrl + C`会导致服务器进程退出  
+如果你想要管理服务器文件，请输入`docker volume --help`获得更多细节
 
 ## 使用方法
 把.dll插件放到`plugins\`目录  
