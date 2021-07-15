@@ -37,7 +37,8 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true) {
 void loadDlls() {
     if (!std::filesystem::exists(std::filesystem::path(TEXT("plugins\\preload.conf")))) {
         std::wofstream dllList("plugins\\preload.conf", std::ios::app);
-        if (!std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll")))) {
+        if (std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll"))) ||
+            std::filesystem::exists(std::filesystem::path(TEXT("plugins\\lib\\LiteLoader.dll")))) {
             dllList << "LiteLoader.dll" << std::endl;
         }
         if (std::filesystem::exists(std::filesystem::path(TEXT("plugins\\BDSNetRunner.dll")))) {

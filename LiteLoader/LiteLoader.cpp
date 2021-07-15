@@ -98,12 +98,12 @@ static void loadPlugins() {
         }
     }
     // libs.clear();
-    if (plugins > 1) {
-        LOG(std::to_string(plugins) + " plugins have been loaded.");
+    if (plugins == 0) {
+        LOG("No plugins are loaded.");
     } else if (plugins == 1) {
         LOG("A plugin have been loaded.");
-    } else if (plugins == 0) {
-        LOG("No plugins are loaded.");
+    } else {
+        LOG(std::to_string(plugins) + " plugins have been loaded.");
     }
 }
 
