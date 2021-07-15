@@ -31,8 +31,8 @@ static vector<std::wstring> getPreloadList() {
     //若在preload.conf中，则不加载
     vector<std::wstring> preloadList{};
 
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
-        std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
+    if (std::filesystem::exists(std::filesystem::path(TEXT("plugins\\preload.conf")))) {
+        std::wifstream dllList(TEXT("plugins\\preload.conf"));
         if (dllList) {
             std::wstring dllName;
             while (getline(dllList, dllName)) {
@@ -75,10 +75,10 @@ static void loadPlugins() {
             auto lib = LoadLibrary(i.path().c_str());
             if (lib) {
                 plugins++;
-                LOG("Plugin " + canonical(i.path()).filename().u8string() + " loaded");
+                LOG("Plugin " + canonical(i.path()).filename().u8string() + " have been loaded.");
                 libs.push_back({std::wstring{i.path().c_str()}, lib});
             } else {
-                LOG("Error when loading " + i.path().filename().u8string() + "");
+                LOG("Error loading plugin " + i.path().filename().u8string());
                 PrintErrorMessage();
             }
         }
@@ -86,19 +86,25 @@ static void loadPlugins() {
     for (auto &[name, h] : libs) {
         auto FN = GetProcAddress(h, "onPostInit");
         if (!FN) {
-            // std::wcerr << "Warning!!! mod" << name << " doesnt have a onPostInit\n";
+            // std::wcerr << "Warning!!! plugin " << name << " doesnt have a onPostInit" << std::endl;
         } else {
             try {
                 ((void (*)())FN)();
             } catch (...) {
-                std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
+                std::wcerr << "[Error] Plugin " << name << " threw an exception on onPostInit." << std::endl;
                 std::this_thread::sleep_for(std::chrono::seconds(10));
                 exit(1);
             }
         }
     }
     // libs.clear();
-    LOG(std::to_string(plugins) + " plugin(s) loaded");
+    if (plugins > 1) {
+        LOG(std::to_string(plugins) + " plugins have been loaded.");
+    } else if (plugins == 1) {
+        LOG("A plugin have been loaded.");
+    } else if (plugins == 0) {
+        LOG("No plugins are loaded.");
+    }
 }
 
 vector<function<void(PostInitEV)>> PostInitCallBacks;
@@ -127,7 +133,7 @@ static void entry(bool fixcwd) {
 
     Event::addEventListener([](RegCmdEV ev) {  // Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
-        MakeCommand("version", "Gets the version of this server", 0);
+        MakeCommand("version", "Get the version of this server", 0);
         CmdOverload(version, versionCommand);
     });
 
@@ -144,8 +150,7 @@ static void entry(bool fixcwd) {
         LOG("Github: https://git.io/JOyw4 | Version: " + (std::string)LiteLoaderVersion +
             " | Based on BedrockX Project");
 #endif
-        LOG(u8"感谢旋律云(rhymc.com)对本项目的支持 | Thanks to [rhymc.com] for supporting this "
-            u8"project");
+        LOG(u8"感谢旋律云（rhymc.com）对本项目的支持 | Thanks to [rhymc.com] for supporting this project");
         updateCheck();
     });
 
@@ -157,7 +162,7 @@ static void entry(bool fixcwd) {
 
 THook(int, "main", int a, void *b) {
     std::ios::sync_with_stdio(false);
-    // system("chcp 65001");
+    // system("chcp 65001 >nul");
     entry(a > 1);
     return original(a, b);
 }

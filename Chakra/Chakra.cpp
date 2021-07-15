@@ -34,49 +34,30 @@ bool LoadLib(LPCTSTR libName, bool showFailInfo = true) {
     }
 }
 
-void LoadCSR() {
-    if(std::filesystem::exists(std::filesystem::path(TEXT("./plugins/BDSNetRunner.dll"))))
-    {
-        LoadLib(TEXT("./plugins/BDSNetRunner.dll"));
-    }
-}
-
-bool LoadLiteLoader() {
-    if (!std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll"))))
-        return false;
-    if (!LoadLib(TEXT("LiteLoader.dll")))
-        return false;
-    return true;
-}
-
 void loadDlls() {
-    if (!LoadLiteLoader()) {
-        Sleep(3000);
-        exit(GetLastError());
-    }
-    LoadCSR();
-
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
-        std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
-        if (dllList) {
-            std::wstring dllName;
-            while (getline(dllList, dllName)) {
-                if (dllName.back() == TEXT('\n'))
-                    dllName.pop_back();
-                if (dllName.back() == TEXT('\r'))
-                    dllName.pop_back();
-
-                if (dllName.empty() || dllName.front() == TEXT('#'))
-                    continue;
-                if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
-                    dllName.find(L"BDSNetRunner.dll") != std::wstring::npos)
-                    continue;
-                LoadLib(dllName.c_str());
-            }
-            dllList.close();
+    if (!std::filesystem::exists(std::filesystem::path(TEXT("plugins\\preload.conf")))) {
+        std::wofstream dllList("plugins\\preload.conf", std::ios::app);
+        if (!std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll")))) {
+            dllList << "LiteLoader.dll" << std::endl;
         }
-    } else {
-        std::wofstream dllList(TEXT(".\\plugins\\preload.conf"));
+        if (std::filesystem::exists(std::filesystem::path(TEXT("plugins\\BDSNetRunner.dll")))) {
+            dllList << "plugins\\BDSNetRunner.dll" << std::endl;
+        }
+        dllList.close();
+    }
+    std::wifstream dllList(TEXT("plugins\\preload.conf"));
+    if (dllList) {
+        std::wstring dllName;
+        while (getline(dllList, dllName)) {
+            if (dllName.back() == TEXT('\n'))
+                dllName.pop_back();
+            if (dllName.back() == TEXT('\r'))
+                dllName.pop_back();
+
+            if (dllName.empty() || dllName.front() == TEXT('#'))
+                continue;
+            LoadLib(dllName.c_str());
+        }
         dllList.close();
     }
 }

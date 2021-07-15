@@ -11,20 +11,20 @@ void updateCheck() {
         if (res) {
             json.Parse(res->body.c_str());
             if (json.HasParseError()) {
-                std::cout << "[Liteloader] Failed to get updates(1)\n";
+                std::cout << "[Liteloader] Failed to get updates(1)" << std::endl;
                 return;
             }
             auto arr                  = json.GetArray();
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
             int latestVersionNum      = arr[arr.Size() - 1]["versionNum"].GetInt();
             if (latestVersionNum > LiteLoaderVersionNum) {
-                std::cout << "[Liteloader] Found a new version: " << LatestRelease << "\n";
+                std::cout << "[Liteloader] Found a new version: " << LatestRelease << std::endl;
             }
             if (latestVersionNum < LiteLoaderVersionNum) {
-                std::cout << "[Liteloader] Using preview version: " << LiteLoaderVersion << "\n";
+                std::cout << "[Liteloader] Using preview version: " << LiteLoaderVersion << std::endl;
             }
         } else {
-            std::cout << "[Liteloader] Failed to get updates(0)\n";
+            std::cout << "[Liteloader] Failed to get updates(0)" << std::endl;
         }
     });
     t.detach();

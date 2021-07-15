@@ -78,7 +78,7 @@ struct SymDBReader : SymDBBase {
             siz = _pfread<int>();
         }
         if (SEGOFF[0] != 8 * SEGMENT_COUNT) {
-            printf("SymDB format error detected!!\n");
+            std::cerr << "SymDB format error detected!!" << std::endl;
         }
         int seg_begin = SEGOFF[SEGMENT_HASH_ORDERED];
         int seg_siz   = SIZSEG[SEGMENT_HASH_ORDERED];
@@ -147,7 +147,7 @@ struct SymDBReader : SymDBBase {
                 };
                 if (HASHSTR(ifs, length) == hash2) {
                     if (retval != -1) {
-                        printf("hash coll detected!\n");
+                        std::cerr << "hash coll detected!" << std::endl;
                         exit(1);
                     }
                     retval = _pfread<int>(SEGOFF[SEGMENT_RVA_INT] + nowidx * 4);
@@ -211,19 +211,19 @@ static SymDBReader *SymDB;
 static uintptr_t BaseAdr;
 unordered_map<string, int, aphash> *FuncMap;
 void InitFastDlsym() {
-    printf("[Info] Loading Symbols\n");
+    std::cout << "[Info] Loading Symbols" << std::endl;
     unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(realFuncMap);
     fnstat = 1;
     SymDB    = nullptr;
     SymDB    = new SymDBReader("bedrock_server.symdb2");
     FuncMap                        = realFuncMap;
-    printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
+    std::cout << ("[Info] FastDlsymInited <%zd>", realFuncMap->size()) << std::endl;
 }
 void *dlsym_real(const char *x) {
     if (SymDB == nullptr) {
         if (!std::filesystem::exists("bedrock_server.symdb2")) {
-            printf("SymDB not found\ntry to run SymDB2.exe\n");
+            std::cerr << "SymDB not found" << std::endl << "Try to run SymDB2.exe" << std::endl;
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
@@ -241,12 +241,12 @@ void *dlsym_real(const char *x) {
         if (iter != FuncMap->end()) {
             return (void *)(BaseAdr + iter->second);
         } else {
-            printf("Failed to look up Function in Memory %s\n", x);
+            std::cerr << ("Failed to look up Function in Memory %s", x) << std::endl;
         }
     }
     auto rv = SymDB->getsym(x);
     if (rv == -1) {
-        printf("Failed to look up Function in SymDB2 %s\n", x);
+        std::cerr << ("Failed to look up Function in SymDB2 %s", x) << std::endl;
         return nullptr;
     }
     return (void *)(BaseAdr + rv);
