@@ -218,7 +218,7 @@ void InitFastDlsym() {
     SymDB    = nullptr;
     SymDB    = new SymDBReader("bedrock_server.symdb2");
     FuncMap                        = realFuncMap;
-    std::cout << ("[Info] FastDlsymInited <%zd>", realFuncMap->size()) << std::endl;
+    std::cout << "[Info] FastDlsymInited " << realFuncMap->size() << std::endl;
 }
 void *dlsym_real(const char *x) {
     if (SymDB == nullptr) {

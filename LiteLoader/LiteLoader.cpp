@@ -150,7 +150,7 @@ static void entry(bool fixcwd) {
         LOG("Github: https://git.io/JOyw4 | Version: " + (std::string)LiteLoaderVersion +
             " | Based on BedrockX Project");
 #endif
-        LOG(u8"感谢旋律云（rhymc.com）对本项目的支持 | Thanks to [rhymc.com] for supporting this project");
+        LOG(u8"感谢旋律云（rhymc.com）对本项目的支持 | Thanks to rhymc.com for supporting this project");
         updateCheck();
     });
 
