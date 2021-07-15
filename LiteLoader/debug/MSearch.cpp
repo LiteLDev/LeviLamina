@@ -1,5 +1,5 @@
-﻿#include <debug/MemSearcher.h>
-#include <lbpch.h>
+﻿#include <lbpch.h>
+#include <debug/MemSearcher.h>
 #define WIN32_LEAN_AND_MEAN
 #include <windows.h>
 
