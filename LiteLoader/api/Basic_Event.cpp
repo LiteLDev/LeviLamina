@@ -23,7 +23,7 @@ void CallEvent(vector<T> &vec, T1 &ev) {
 }
 
 // Call Event 
-// Return true to cancel event
+// Return false to cancel event
 template <typename T, typename T1>
 bool CallEventEx(vector<T> &vec, T1 &ev) {
     bool passToBDS = true;
