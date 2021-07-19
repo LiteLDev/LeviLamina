@@ -31,6 +31,9 @@ Put .dll plugins into `plugins\` directory
 ## More
 See [Docs](https://docs.litetitle.com/)
 
+## Discord
+https://discord.gg/YbgEhCF22t
+
 ## LICENSE  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
