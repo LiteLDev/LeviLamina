@@ -12,8 +12,9 @@
 
 ## 安装
 ### Windows
-1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下
-2. 运行`SymDB2.exe`以生成符号文件(`.symdb2`)，运行`SymDB2.exe`之前你需要检查`bedrock_server.pdb`文件是否存在
+1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下  
+2. 运行`SymDB2.exe`以生成符号文件(`.symdb2`) 还有修改了导出表的BDS(`bedrock_server_mod.exe`,未来的插件可能会要求该版本的bds)，运行`SymDB2.exe`之前你需要检查`bedrock_server.pdb`文件是否存在  
+3. 对于开发者而言，打开vs studio命令行工具，使用`lib /def:bedrock_server_mod.def /machine:x64`来创建一个可链接的lib文件，可以通过函数签名直接调用，不需要dlsym
 
 ### Docker(Linux)
 ```bash
