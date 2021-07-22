@@ -129,9 +129,6 @@
     <ClInclude Include="..\headers\api\serviceLocate.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\api\types\helper.h">
-      <Filter>头文件\api\types</Filter>
-    </ClInclude>
     <ClInclude Include="..\headers\api\types\types.h">
       <Filter>头文件\api\types</Filter>
     </ClInclude>
@@ -191,9 +188,6 @@
     </ClInclude>
     <ClInclude Include="..\headers\mc\Command\CommandReg.h">
       <Filter>头文件\mc\CommandReg</Filter>
-    </ClInclude>
-    <ClInclude Include="..\headers\api\commands.h">
-      <Filter>头文件\api</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\api\xuidreg\xuidreg.h">
       <Filter>头文件\api\regxuid</Filter>
@@ -276,6 +270,12 @@
     <ClInclude Include="..\headers\mc\Command.h">
       <Filter>头文件\mc</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\LiteLoaderApi.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\api\basicEvent.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -293,10 +293,7 @@
     <ClCompile Include="mc\ServiceLocator.cpp">
       <Filter>源文件\mc</Filter>
     </ClCompile>
-    <ClCompile Include="api\helper.cpp">
-      <Filter>源文件\api</Filter>
-    </ClCompile>
-    <ClCompile Include="api\Basic_Event.cpp">
+    <ClCompile Include="api\basicEvent.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
     <ClCompile Include="xuidreg\xuidreg.cpp">
@@ -340,6 +337,9 @@
     </ClCompile>
     <ClCompile Include="CheckUpdate.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="api\LiteApi.cpp">
+      <Filter>源文件\api</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

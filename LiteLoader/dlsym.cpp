@@ -210,17 +210,23 @@ int fnstat = 0;
 static SymDBReader *SymDB;
 static uintptr_t BaseAdr;
 unordered_map<string, int, aphash> *FuncMap;
+
+CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
     printf("[Info] Loading Symbols\n");
+    InitializeCriticalSection(&dlsymLock);
     unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(realFuncMap);
     fnstat = 1;
     SymDB    = nullptr;
     SymDB    = new SymDBReader("bedrock_server.symdb2");
+    EnterCriticalSection(&dlsymLock);
     FuncMap                        = realFuncMap;
+    LeaveCriticalSection(&dlsymLock);
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
 void *dlsym_real(const char *x) {
+    
     if (SymDB == nullptr) {
         if (!std::filesystem::exists("bedrock_server.symdb2")) {
             printf("SymDB not found\ntry to run SymDB2.exe\n");
@@ -231,18 +237,21 @@ void *dlsym_real(const char *x) {
         BaseAdr = (uintptr_t)GetModuleHandle(NULL);
         static_assert(sizeof(GetModuleHandle(NULL)) == 8);
     }
-    if (fnstat == 0)
+    if (fnstat == 0) {
         InitFastDlsym();
+    }
     for (; fnstat == 0;) {
         std::this_thread::sleep_for(std::chrono::seconds(1));
     }
     if (fnstat == 1) {
+        EnterCriticalSection(&dlsymLock);
         auto iter = FuncMap->find(string(x));
-        if (iter != FuncMap->end()) {
+        if (iter != FuncMap->end()) {        
             return (void *)(BaseAdr + iter->second);
         } else {
             printf("Failed to look up Function in Memory %s\n", x);
         }
+        LeaveCriticalSection(&dlsymLock);
     }
     auto rv = SymDB->getsym(x);
     if (rv == -1) {

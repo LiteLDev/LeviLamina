@@ -13,7 +13,7 @@
 #include <iostream>
 #include "framework.h"
 // LiteLoader.cpp
-#include <api/commands.h>
+#include <api/regCommandHelper.h>
 #include <api/xuidreg/xuidreg.h>
 #include <lbpch.h>
 #include <filesystem>

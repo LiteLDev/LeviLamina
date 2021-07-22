@@ -158,14 +158,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\headers\api\basicEvent.h" />
     <ClInclude Include="..\headers\api\Basic_Event.h" />
-    <ClInclude Include="..\headers\api\commands.h" />
     <ClInclude Include="..\headers\api\gui\gui.h" />
+    <ClInclude Include="..\headers\api\LiteLoaderApi.h" />
     <ClInclude Include="..\headers\api\myPacket.h" />
     <ClInclude Include="..\headers\api\refl\playerMap.h" />
     <ClInclude Include="..\headers\api\scheduler\scheduler.h" />
     <ClInclude Include="..\headers\api\serviceLocate.h" />
-    <ClInclude Include="..\headers\api\types\helper.h" />
     <ClInclude Include="..\headers\api\types\types.h" />
     <ClInclude Include="..\headers\api\xuidreg\xuidreg.h" />
     <ClInclude Include="..\headers\Compatibility.h" />
@@ -228,10 +228,10 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="api\Basic_Event.cpp">
+    <ClCompile Include="api\basicEvent.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="api\helper.cpp">
+    <ClCompile Include="api\LiteApi.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="api\WActor.cpp">

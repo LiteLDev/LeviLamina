@@ -1,4 +1,4 @@
-#include <api/types/helper.h>
+#include <api/LiteloaderApi.h>
 #include <loader/Loader.h>
 #include <mc/Block.h>
 #include <mc/BlockSource.h>

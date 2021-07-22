@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <mc/Command/CommandReg.h>
+#include <mc/CommandReg.h>
 #include <stl/optional.h>
 #include <tuple>
 

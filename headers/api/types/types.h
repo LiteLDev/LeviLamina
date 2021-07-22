@@ -1,13 +1,12 @@
 ﻿#pragma once
 //#include<lbpch.h>
 //#include <api/MC.h>
+#include <api/LiteLoaderApi.h>
 #include <stl/views.h>
-#include<api/types/helper.h>
 #include <stl/optional.h>
 #include <liteloader.h>
 #include <mc/Core.h>
 #include <mc/mass.h>
-#include <api/types/helper.h>
 typedef unsigned long long xuid_t;
 typedef unsigned char permlvl_t;
 enum TextType : char { 
@@ -88,48 +87,34 @@ struct WMob : Wrapped<Mob> {
 	LIAPI void kill();
 };
 struct WPlayer : Wrapped<ServerPlayer> {
-	WPlayer() : Wrapped<ServerPlayer>() {}
-	WPlayer(Player& x) : Wrapped<ServerPlayer>(*(ServerPlayer*)&x) {}
-	WPlayer(ServerPlayer& x) : Wrapped<ServerPlayer>(x) {}
-	inline WActor* actor() {
-		return (WActor*)this;
-	}
-	inline WMob* mob() {
-		return (WMob*)this;
-	}
-	LIAPI void sendText(string text, TextType type = RAW);
-	LIAPI string const& getName();
-	LIAPI xuid_t getXuid();
-	LIAPI string getRealName();
-	LIAPI permlvl_t getPermLvl();
-	LIAPI class BlockSource& getBlockSource_();
-	inline void teleport(Vec3 to, int dimid) {
-		actor()->teleport(to, dimid);
-	}
-	inline auto getDimID() {
-		return actor()->getDimID();
-	}
-	inline auto getDim() {
-		return actor()->getDim();
-	}
-	LIAPI void kick(std::string const& reason);
-	LIAPI void forceKick();
-	LIAPI void kill() {
-		mob()->kill();
-	}
-	template<typename T>
-	inline bool runcmd(T&& str) {
-		return liteloader::runcmdAs(*this, std::forward<T>(str));
-	}
-	template<typename... T>
-	inline bool runcmdA(T&&... a) {
-		return liteloader::runcmdAsA(*this, std::forward<T>(a)...);
-	}
-	LIAPI class NetworkIdentifier* _getNI();
-	LIAPI class Certificate* _getCert();
-	inline string getIP() {
-		return liteloader::getIP(*_getNI());
-	}
+    WPlayer() : Wrapped<ServerPlayer>() {}
+    WPlayer(Player &x) : Wrapped<ServerPlayer>(*(ServerPlayer *)&x) {}
+    WPlayer(ServerPlayer &x) : Wrapped<ServerPlayer>(x) {}
+    inline WActor *actor() { return (WActor *)this; }
+    inline WMob *mob() { return (WMob *)this; }
+    LIAPI void sendText(string text, TextType type = RAW);
+    LIAPI string const &getName();
+    LIAPI xuid_t getXuid();
+    LIAPI string getRealName();
+    LIAPI permlvl_t getPermLvl();
+    LIAPI class BlockSource &getBlockSource_();
+    LIAPI class NetworkIdentifier *_getNI();
+    LIAPI class Certificate *_getCert();
+    std::string getIp() { return liteloader::getIP(*_getNI()); }
+    inline void teleport(Vec3 to, int dimid) { actor()->teleport(to, dimid); }
+    inline auto getDimID() { return actor()->getDimID(); }
+    inline auto getDim() { return actor()->getDim(); }
+    LIAPI void kick(std::string const &reason);
+    LIAPI void forceKick();
+    LIAPI void kill() { mob()->kill(); }
+    template <typename T>
+    inline bool runcmd(T &&str) {
+        return liteloader::runcmdAs(*this, std::forward<T>(str));
+    }
+    template <typename... T>
+    inline bool runcmdA(T &&...a) {
+        return liteloader::runcmdAsA(*this, std::forward<T>(a)...);
+    }
 };
 struct WItem : Wrapped<ItemStack> {
 	WItem(ItemStack& is) : Wrapped<ItemStack>(is) {}

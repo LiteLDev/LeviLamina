@@ -104,7 +104,6 @@ class PreJoinEV {
   public:
     Certificate *cert;
 };
-
 namespace Event {
 LIAPI inline void addEventListener(function<void(JoinEV)> callback);
 LIAPI inline void addEventListener(function<void(LeftEV)> callback);

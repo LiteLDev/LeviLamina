@@ -1,5 +1,5 @@
-#include <api/Basic_Event.h>
-#include <api/types/helper.h>
+#include <api/basicEvent.h>
+#include <api/LiteloaderApi.h>
 #include <lbpch.h>
 #include <liteloader.h>
 #include <mc/Command.h>
