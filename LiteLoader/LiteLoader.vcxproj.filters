@@ -290,9 +290,6 @@
     <ClCompile Include="mc\ServiceLocator.cpp">
       <Filter>源文件\mc</Filter>
     </ClCompile>
-    <ClCompile Include="api\basicEvent.cpp">
-      <Filter>源文件\api</Filter>
-    </ClCompile>
     <ClCompile Include="stl\DBImpl.cpp">
       <Filter>源文件\stl</Filter>
     </ClCompile>
@@ -337,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="scheduler\Sch.cpp">
       <Filter>源文件\scheduler</Filter>
+    </ClCompile>
+    <ClCompile Include="api\BasicEvent.cpp">
+      <Filter>源文件\api</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
