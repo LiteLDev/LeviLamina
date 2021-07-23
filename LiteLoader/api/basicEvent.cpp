@@ -37,9 +37,9 @@ bool CallEventEx(vector<T> &vec, T1 &ev) {
 
 /////////////////// PlayerJoin ///////////////////
 
-vector<function<void(JoinEV)>> JoinCallBacks;
+vector<function<void(JoinEV)>> Join_call_backs;
 LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
-    JoinCallBacks.push_back(callback);
+    Join_call_backs.push_back(callback);
 }
 THook(void,"?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
       "AEBVConnectionRequest@@AEAVServerPlayer@@@Z",
@@ -52,7 +52,7 @@ THook(void,"?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentif
                             .c_str());
     JoinEV join_event = {sp, ip, xuid};
     
-    CallEvent(JoinCallBacks, join_event);
+    CallEvent(Join_call_backs, join_event);
     return original(ServerNetworkHandler_this, Ni, ConnectionRequest, sp);
 }
 

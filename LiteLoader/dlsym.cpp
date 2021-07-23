@@ -246,7 +246,8 @@ void *dlsym_real(const char *x) {
     if (fnstat == 1) {
         EnterCriticalSection(&dlsymLock);
         auto iter = FuncMap->find(string(x));
-        if (iter != FuncMap->end()) {        
+        if (iter != FuncMap->end()) {
+            LeaveCriticalSection(&dlsymLock);
             return (void *)(BaseAdr + iter->second);
         } else {
             printf("Failed to look up Function in Memory %s\n", x);

@@ -72,14 +72,14 @@ LIAPI string getIP(class NetworkIdentifier &ni) {
     return rv.substr(0, rv.find('|'));
 }
 LIAPI std::vector<Player *> getAllPlayers() {
-    std::vector<Player *> PlayerList;
+    std::vector<Player *> player_list;
     SymCall("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z", void, Level *,
             function<bool(Player &)>)(LocateS<Level>::_srv, [&](Player &sp) -> bool {
         Player *player = &sp;
-        PlayerList.push_back(player);
+        player_list.push_back(player);
         return 1;
     });
-    return PlayerList;
+    return player_list;
 }
 };  // namespace liteloader
 THook(void *,
