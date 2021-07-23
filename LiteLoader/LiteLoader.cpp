@@ -3,18 +3,18 @@ using std::vector;
 Logger<stdio_commit> LOG(stdio_commit{"[LL] "});
 
 static void PrintErrorMessage() {
-    DWORD errorMessageID = ::GetLastError();
-    if (errorMessageID == 0) {
+    DWORD error_message_id = ::GetLastError();
+    if (error_message_id == 0) {
         std::wcerr << "Error\n";
         return;
     }
-    std::cerr << "[Error] ErrorMessageID: " << errorMessageID << std::endl;
-    LPWSTR messageBuffer = nullptr;
+    std::cerr << "[Error] error_message_id: " << error_message_id << std::endl;
+    LPWSTR message_buffer = nullptr;
     FormatMessage(
         FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_SYSTEM,
-        NULL, errorMessageID, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&messageBuffer, 0, NULL);
-    std::wcerr << "[Error] " << messageBuffer;
-    LocalFree(messageBuffer);
+        NULL, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT), (LPWSTR)&message_buffer, 0, NULL);
+    std::wcerr << "[Error] " << message_buffer;
+    LocalFree(message_buffer);
 }
 
 static void pluginsLibDir() {  // add plugins folder to path to fix dependent problem
@@ -29,7 +29,7 @@ static void pluginsLibDir() {  // add plugins folder to path to fix dependent pr
 
 static vector<std::wstring> getPreloadList() {
     //若在preload.conf中，则不加载
-    vector<std::wstring> preloadList{};
+    vector<std::wstring> preload_list{};
 
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
         std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
@@ -43,12 +43,12 @@ static vector<std::wstring> getPreloadList() {
 
                 if (dllName.empty() || dllName.front() == TEXT('#'))
                     continue;
-                preloadList.push_back(dllName);
+                preload_list.push_back(dllName);
             }
             dllList.close();
         }
     }
-    return preloadList;
+    return preload_list;
 }
 static std::vector<std::pair<std::wstring, HMODULE>> libs;
 LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs() {
@@ -59,13 +59,13 @@ static void loadPlugins() {
     std::filesystem::create_directory("plugins");
     std::filesystem::directory_iterator ent("plugins");
     short plugins                    = 0;
-    vector<std::wstring> preloadList = getPreloadList();
+    vector<std::wstring> preload_list = getPreloadList();
 
     LOG("Loading plugins");
     for (auto &i : ent) {
         if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             bool loaded = false;
-            for (auto &p : preloadList)
+            for (auto &p : preload_list)
                 if (p.find(std::wstring(i.path())) != std::wstring::npos) {
                     loaded = true;
                     break;
@@ -84,12 +84,12 @@ static void loadPlugins() {
         }
     }
     for (auto &[name, h] : libs) {
-        auto FN = GetProcAddress(h, "onPostInit");
-        if (!FN) {
+        auto fn = GetProcAddress(h, "onPostInit");
+        if (!fn) {
             // std::wcerr << "Warning!!! mod" << name << " doesnt have a onPostInit\n";
         } else {
             try {
-                ((void (*)())FN)();
+                ((void (*)())fn)();
             } catch (...) {
                 std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
                 std::this_thread::sleep_for(std::chrono::seconds(10));

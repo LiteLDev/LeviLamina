@@ -159,7 +159,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\headers\api\basicEvent.h" />
-    <ClInclude Include="..\headers\api\Basic_Event.h" />
     <ClInclude Include="..\headers\api\gui\gui.h" />
     <ClInclude Include="..\headers\api\LiteLoaderApi.h" />
     <ClInclude Include="..\headers\api\myPacket.h" />
@@ -185,7 +184,7 @@
     <ClInclude Include="..\headers\leveldb\table.h" />
     <ClInclude Include="..\headers\leveldb\table_builder.h" />
     <ClInclude Include="..\headers\leveldb\write_batch.h" />
-    <ClInclude Include="..\headers\liteloader.h" />
+    <ClInclude Include="..\headers\LiteLoader.h" />
     <ClInclude Include="..\headers\loader\hash.h" />
     <ClInclude Include="..\headers\loader\hook.h" />
     <ClInclude Include="..\headers\loader\Loader.h" />
@@ -250,12 +249,12 @@
     <ClCompile Include="debug\MSearch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="debug\watchdog.cpp">
+    <ClCompile Include="debug\WatchDog.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="dlsym.cpp" />
-    <ClCompile Include="gui\gui.cpp">
+    <ClCompile Include="gui\Gui.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="LiteLoader.cpp" />
@@ -271,7 +270,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="scheduler\sch.cpp">
+    <ClCompile Include="scheduler\Sch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ServerCommands.cpp" />
@@ -281,7 +280,7 @@
     <ClCompile Include="stl\LogFlush.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="xuidreg\xuidreg.cpp">
+    <ClCompile Include="xuidreg\XuidReg.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>

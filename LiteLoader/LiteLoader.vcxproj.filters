@@ -75,9 +75,6 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\liteloader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="..\headers\mc\Actor.h">
       <Filter>头文件\mc</Filter>
     </ClInclude>
@@ -173,9 +170,6 @@
     </ClInclude>
     <ClInclude Include="..\headers\stl\WorkerPool.h">
       <Filter>头文件\stl</Filter>
-    </ClInclude>
-    <ClInclude Include="..\headers\api\Basic_Event.h">
-      <Filter>头文件\api</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\mc\OffsetHelper.h">
       <Filter>头文件\mc</Filter>
@@ -276,6 +270,9 @@
     <ClInclude Include="..\headers\api\basicEvent.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\LiteLoader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -296,22 +293,13 @@
     <ClCompile Include="api\basicEvent.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
-    <ClCompile Include="xuidreg\xuidreg.cpp">
-      <Filter>源文件\regxuid</Filter>
-    </ClCompile>
     <ClCompile Include="stl\DBImpl.cpp">
       <Filter>源文件\stl</Filter>
     </ClCompile>
     <ClCompile Include="mc\RuntimeRefl.cpp">
       <Filter>源文件\mc</Filter>
     </ClCompile>
-    <ClCompile Include="gui\gui.cpp">
-      <Filter>源文件\gui</Filter>
-    </ClCompile>
     <ClCompile Include="debug\MSearch.cpp">
-      <Filter>源文件\DEBUG</Filter>
-    </ClCompile>
-    <ClCompile Include="debug\watchdog.cpp">
       <Filter>源文件\DEBUG</Filter>
     </ClCompile>
     <ClCompile Include="api\WActor.cpp">
@@ -329,9 +317,6 @@
     <ClCompile Include="stl\LogFlush.cpp">
       <Filter>源文件\stl</Filter>
     </ClCompile>
-    <ClCompile Include="scheduler\sch.cpp">
-      <Filter>源文件\scheduler</Filter>
-    </ClCompile>
     <ClCompile Include="ServerCommands.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -340,6 +325,18 @@
     </ClCompile>
     <ClCompile Include="api\LiteApi.cpp">
       <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="debug\WatchDog.cpp">
+      <Filter>源文件\DEBUG</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\Gui.cpp">
+      <Filter>源文件\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="xuidreg\XuidReg.cpp">
+      <Filter>源文件\regxuid</Filter>
+    </ClCompile>
+    <ClCompile Include="scheduler\Sch.cpp">
+      <Filter>源文件\scheduler</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
