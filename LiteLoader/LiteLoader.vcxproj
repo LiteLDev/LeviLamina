@@ -193,9 +193,8 @@
     <ClInclude Include="..\headers\mc\BlockSource.h" />
     <ClInclude Include="..\headers\mc\Certificate.h" />
     <ClInclude Include="..\headers\mc\Command.h" />
+    <ClInclude Include="..\headers\mc\CommandReg.h" />
     <ClInclude Include="..\headers\mc\CommandUtils.h" />
-    <ClInclude Include="..\headers\mc\Command\Command.h" />
-    <ClInclude Include="..\headers\mc\Command\CommandReg.h" />
     <ClInclude Include="..\headers\mc\Core.h" />
     <ClInclude Include="..\headers\mc\Dimension.h" />
     <ClInclude Include="..\headers\mc\Item.h" />
@@ -280,6 +279,7 @@
     <ClCompile Include="stl\LogFlush.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Version.cpp" />
     <ClCompile Include="xuidreg\XuidReg.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

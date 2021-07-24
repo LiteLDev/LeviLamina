@@ -7,7 +7,7 @@
 
 #define MAX_PATH_LENGTH 8192
 
-void fixupLibDir() {
+void fixUpLibDir() {
     WCHAR *buffer = new (std::nothrow) WCHAR[MAX_PATH_LENGTH];
     if (!buffer)
         return;
@@ -21,40 +21,48 @@ void fixupLibDir() {
     delete[] buffer;
 }
 
-bool LoadLib(LPCTSTR libName, bool showFailInfo = true) {
+bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
     if (LoadLibrary(libName)) {
         std::wcout << "[Chakra] " << libName << " Injected." << std::endl;
         return true;
     } else {
         if (showFailInfo) {
-            std::wcout << "[Chakra][Error] Can't load " << libName << "!" << std::endl;
-            std::wcout << "[Chakra][Error] Error Code:" << GetLastError() << std::endl;
+            DWORD error_message_id = GetLastError();
+            std::wcout << "[Chakra Error] Can't load " << libName << "!" << std::endl;
+            std::wcout << "[Chakra Error] Error Code:" << error_message_id  << std::endl;
+            LPWSTR message_buffer = nullptr;
+            FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS |
+                              FORMAT_MESSAGE_FROM_SYSTEM,
+                          NULL, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT),
+                          (LPWSTR)&message_buffer, 0, NULL);
+            std::wcerr << "[Chakra Error] " << message_buffer;
+            LocalFree(message_buffer);
         }
         return false;
     }
 }
 
-void LoadCSR() {
+void loadCsr() {
     if(std::filesystem::exists(std::filesystem::path(TEXT("./plugins/BDSNetRunner.dll"))))
     {
-        LoadLib(TEXT("./plugins/BDSNetRunner.dll"));
+        loadLib(TEXT("./plugins/BDSNetRunner.dll"));
     }
 }
 
-bool LoadLiteLoader() {
+bool loadLiteLoader() {
     if (!std::filesystem::exists(std::filesystem::path(TEXT("LiteLoader.dll"))))
         return false;
-    if (!LoadLib(TEXT("LiteLoader.dll")))
+    if (!loadLib(TEXT("LiteLoader.dll")))
         return false;
     return true;
 }
 
 void loadDlls() {
-    if (!LoadLiteLoader()) {
+    if (!loadLiteLoader()) {
         Sleep(3000);
         exit(GetLastError());
     }
-    LoadCSR();
+    loadCsr();
 
     if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
         std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
@@ -71,7 +79,7 @@ void loadDlls() {
                 if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
                     dllName.find(L"BDSNetRunner.dll") != std::wstring::npos)
                     continue;
-                LoadLib(dllName.c_str());
+                loadLib(dllName.c_str());
             }
             dllList.close();
         }

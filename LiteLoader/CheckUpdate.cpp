@@ -2,7 +2,9 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
 #include <httplib.h>
 
-void updateCheck() {
+extern Logger<stdio_commit> LOG;
+
+void checkUpdate() {
     std::thread t([] {
         httplib::Client cli("https://update.sakuralo.top");
         auto res = cli.Get("/version.json");
@@ -18,10 +20,9 @@ void updateCheck() {
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
             int latestVersionNum      = arr[arr.Size() - 1]["versionNum"].GetInt();
             if (latestVersionNum > LiteLoaderVersionNum) {
-                std::cout << "[Liteloader] Found a new version: " << LatestRelease << "\n";
-            }
-            if (latestVersionNum < LiteLoaderVersionNum) {
-                std::cout << "[Liteloader] Using preview version: " << LiteLoaderVersion << "\n";
+                LOG("[Liteloader] Found a new version: ", LatestRelease);
+            } else if (latestVersionNum < LiteLoaderVersionNum) {
+                LOG("[Liteloader] Using preview version: ", LiteLoaderVersion);
             }
         } else {
             std::cout << "[Liteloader] Failed to get updates(0)\n";

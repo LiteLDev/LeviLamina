@@ -177,12 +177,6 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\mc\Command\Command.h">
-      <Filter>头文件\mc\CommandReg</Filter>
-    </ClInclude>
-    <ClInclude Include="..\headers\mc\Command\CommandReg.h">
-      <Filter>头文件\mc\CommandReg</Filter>
-    </ClInclude>
     <ClInclude Include="..\headers\api\xuidreg\xuidreg.h">
       <Filter>头文件\api\regxuid</Filter>
     </ClInclude>
@@ -261,9 +255,6 @@
     <ClInclude Include="PatchHelper.h">
       <Filter>头文件\hook</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\mc\Command.h">
-      <Filter>头文件\mc</Filter>
-    </ClInclude>
     <ClInclude Include="..\headers\api\LiteLoaderApi.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
@@ -272,6 +263,12 @@
     </ClInclude>
     <ClInclude Include="..\headers\LiteLoader.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\CommandReg.h">
+      <Filter>头文件\mc\CommandReg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\Command.h">
+      <Filter>头文件\mc\CommandReg</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -337,6 +334,9 @@
     </ClCompile>
     <ClCompile Include="api\BasicEvent.cpp">
       <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="Version.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -2,7 +2,7 @@
 using std::vector;
 Logger<stdio_commit> LOG(stdio_commit{"[LL] "});
 
-static void PrintErrorMessage() {
+static void printErrorMessage() {
     DWORD error_message_id = ::GetLastError();
     if (error_message_id == 0) {
         std::wcerr << "Error\n";
@@ -17,7 +17,7 @@ static void PrintErrorMessage() {
     LocalFree(message_buffer);
 }
 
-static void pluginsLibDir() {  // add plugins folder to path to fix dependent problem
+static void fixPluginsLibDir() {  // add plugins folder to path to fix dependent problem
     WCHAR *buffer = new WCHAR[8192];
     auto sz       = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
@@ -55,7 +55,7 @@ LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs() {
     return libs;
 }
 static void loadPlugins() {
-    pluginsLibDir();
+    fixPluginsLibDir();
     std::filesystem::create_directory("plugins");
     std::filesystem::directory_iterator ent("plugins");
     short plugins                    = 0;
@@ -79,7 +79,7 @@ static void loadPlugins() {
                 libs.push_back({std::wstring{i.path().c_str()}, lib});
             } else {
                 LOG("Error when loading " + i.path().filename().u8string() + "");
-                PrintErrorMessage();
+                printErrorMessage();
             }
         }
     }
@@ -101,9 +101,9 @@ static void loadPlugins() {
     LOG(std::to_string(plugins) + " plugin(s) loaded");
 }
 
-vector<function<void(PostInitEV)>> PostInitCallBacks;
+vector<function<void(PostInitEV)>> Post_init_call_backs;
 LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
-    PostInitCallBacks.push_back(callback);
+    Post_init_call_backs.push_back(callback);
 }
 
 void FixUpCWD() {
@@ -115,25 +115,18 @@ void FixUpCWD() {
 }
 
 void startWBThread();
-bool versionCommand(CommandOrigin const &ori, CommandOutput &outp);
-void updateCheck();
-static void entry(bool fixcwd) {
-    //禁止弹窗，便于自动重启
+void checkUpdate();
+void registerCommands();
+
+static void entry(bool fix_cwd) {
+    //Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
-
-    if (fixcwd)
+    if (fix_cwd) {
         FixUpCWD();
-    std::filesystem::create_directory("logs");
-
-    Event::addEventListener([](RegCmdEV ev) {  // Register commands
-        CMDREG::SetCommandRegistry(ev.CMDRg);
-        MakeCommand("version", "Gets the version of this server", 0);
-        CmdOverload(version, versionCommand);
-    });
-
+    }
     loadPlugins();
     XIDREG::initAll();  // Initialize the xuid database
-
+    registerCommands(); // Register built-in commands
     Event::addEventListener([](ServerStartedEV) {  // Server started event
         startWBThread();
         LOG("LiteLoader is distributed under the GPLv3 License");
@@ -146,12 +139,12 @@ static void entry(bool fixcwd) {
 #endif
         LOG(u8"感谢旋律云(rhymc.com)对本项目的支持 | Thanks to [rhymc.com] for supporting this "
             u8"project");
-        updateCheck();
+        checkUpdate();
     });
 
-    PostInitEV PostInitEV;  // Register plugin loading event
-    for (size_t count = 0; count < PostInitCallBacks.size(); count++) {
-        PostInitCallBacks[count](PostInitEV);
+    PostInitEV post_init_ev;  // Register PostInit event
+    for (size_t count = 0; count < Post_init_call_backs.size(); count++) {
+        Post_init_call_backs[count](post_init_ev);
     }
 }
 
