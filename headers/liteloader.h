@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 #ifdef LITELOADER_EXPORTS
 #    define LIAPI __declspec(dllexport)
 #else
