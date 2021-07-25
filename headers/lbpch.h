@@ -26,6 +26,4 @@ using std::make_shared, std::make_unique;
 
 #include<stl/useful.h>
 
-#include <Compatibility.h>
-
 #endif

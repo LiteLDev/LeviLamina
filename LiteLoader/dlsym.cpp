@@ -222,6 +222,17 @@ void InitFastDlsym() {
     SymDB    = new SymDBReader("bedrock_server.symdb2");
     EnterCriticalSection(&dlsymLock);
     FuncMap                        = realFuncMap;
+    void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
+    void* symdbFn = 0;
+    auto iter     = FuncMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
+    if (iter != FuncMap->end()) {
+        symdbFn = (void *)(BaseAdr + iter->second);
+    }
+    if (exportTableFn == symdbFn && exportTableFn != nullptr) {
+        printf("[Info] HealthCheckPassed <%p>\n", exportTableFn);
+    } else {
+        printf("[Error] HealthCheck Failed <%p!=%p>\n", exportTableFn, symdbFn);
+    }
     LeaveCriticalSection(&dlsymLock);
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
