@@ -8,8 +8,10 @@
 #include <sstream>
 #include <unordered_map>
 #include <vector>
+#include <mc/OffsetHelper.h>
 using std::unordered_map;
 class ServerLevel;
+class NetworkHandler;
 
 namespace liteloader {
 using std::string;
@@ -71,6 +73,21 @@ LIAPI string getIP(class NetworkIdentifier &ni) {
     string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
     return rv.substr(0, rv.find('|'));
 }
+LIAPI int getAvgPing(Player* sp) {
+    auto netid  = offPlayer::getNetworkIdentifier(sp);
+    auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
+        , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
+    auto nwstatus = nwpeer->getNetworkStatus();
+    return nwstatus.avgping;
+}
+
+LIAPI float getAvgPacketloss(Player* sp) {
+    auto netid    = offPlayer::getNetworkIdentifier(sp);
+    auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z", NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
+    auto nwstatus = nwpeer->getNetworkStatus();
+    return nwstatus.avgpacketloss;
+}
+
 LIAPI std::vector<Player *> getAllPlayers() {
     std::vector<Player *> player_list;
     SymCall("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z", void, Level *,

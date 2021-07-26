@@ -23,12 +23,15 @@ struct WPlayer;
 class NetworkIdentifier;
 namespace liteloader {
 using std::string;
-LIAPI bool runcmd(const string &cmd);
-LIAPI bool runcmdAs(Player *, const string &cmd);
-LIAPI std::pair<bool, string> runcmdEx(const string &cmd);
-LIAPI std::string getIP(class NetworkIdentifier &ni);
-LIAPI std::vector<Player *> getAllPlayers();
+LIAPI bool runcmd(const string& cmd);
+LIAPI bool runcmdAs(Player*, const string& cmd);
+LIAPI std::pair<bool, string> runcmdEx(const string& cmd);
+LIAPI std::string getIP(class NetworkIdentifier& ni);
+LIAPI float getAvgPacketloss(Player*);
+LIAPI int getAvgPing(Player*);
+LIAPI std::vector<Player*> getAllPlayers();
 LIAPI std::vector<std::pair<std::wstring, HMODULE>> getAllLibs();
+
 template <typename T>
 static inline void APPEND(string &r, T &&x) {
     r.append(S(std::forward<T>(x)));
