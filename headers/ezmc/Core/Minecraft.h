@@ -2,8 +2,7 @@
 
 #include "../dll.h"
 
-#include <Net/NetworkHandler.h>
-#include <modutils.h>
+#include "../Net/NetworkHandler.h"
 
 class Level;
 class ServerNetworkHandler;

@@ -11,8 +11,7 @@
 #include "../dll.h"
 #include "ItemStackNetIdVariant.h"
 
-#include <hook.h>
-#include <modutils.h>
+#include <loader/Loader.h>
 
 class Item;
 class Block;
@@ -119,14 +118,14 @@ public:
     inline unsigned char getStackSize() const {
         return count;
     }
-    AS_FIELD(short, Id, getId);
-    AS_FIELD(short, Aux, getAuxValue);
-    AS_FIELD(int, IdAux, getIdAux);
-    AS_FIELD(std::string, Name, getName);
-    AS_FIELD(std::string, HoverName, getHoverName);
-    AS_FIELD(std::string, RawNameId, getRawNameId);
-    AS_FIELD(std::string, DescriptionId, getDescriptionId);
-    DEF_FIELD_RW(std::string, CustomName);
+    //AS_FIELD(short, Id, getId);
+    //AS_FIELD(short, Aux, getAuxValue);
+    //AS_FIELD(int, IdAux, getIdAux);
+    //AS_FIELD(std::string, Name, getName);
+    //AS_FIELD(std::string, HoverName, getHoverName);
+    //AS_FIELD(std::string, RawNameId, getRawNameId);
+    //AS_FIELD(std::string, DescriptionId, getDescriptionId);
+    //DEF_FIELD_RW(std::string, CustomName);
 
     inline std::vector<std::string> getCustomLore() const {
         std::vector<std::string> ret;
@@ -141,7 +140,7 @@ public:
         return ret;
     }
 
-    DEF_FIELD_RW(std::vector<std::string>, CustomLore);
+    //DEF_FIELD_RW(std::vector<std::string>, CustomLore);
 
     MCAPI bool operator!=(ItemStackBase const& rhs) const;
     MCAPI      operator bool() const;

@@ -1,12 +1,12 @@
 #pragma once
 
-#include <Actor/SynchedActorData.h>
 #include <cstdint>
 #include <memory>
 #include <vector>
 
 #include "../Actor/ActorRuntimeID.h"
 #include "../Actor/ActorUniqueID.h"
+#include "../Actor/SynchedActorData.h"
 #include "../Core/DataItem.h"
 #include "../Core/Packet.h"
 #include "../Item/NetworkItemStackDescriptor.h"

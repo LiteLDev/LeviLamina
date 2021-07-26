@@ -6,7 +6,7 @@
 #include "../FakeGSL/span.h"
 #include "../dll.h"
 
-#include <hook.h>
+#include <loader/Loader.h>
 
 enum class MaterialType;
 enum class TickingQueueType;

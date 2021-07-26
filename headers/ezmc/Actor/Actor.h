@@ -16,9 +16,8 @@
 #include "ActorUniqueID.h"
 #include "SynchedActorData.h"
 
-#include <Command/CommandUtils.h>
-#include <hook.h>
-#include <modutils.h>
+#include "../Command/CommandUtils.h"
+#include <loader/Loader.h>
 
 class Dimension;
 enum class ActorType;
@@ -525,8 +524,8 @@ public:
         TeleportCommand::applyTarget(*this, tpTarget);
     }
 
-    AS_FIELD(ActorRuntimeID, RuntimeID, getRuntimeID);
-    BUILD_ACCESS_COMPAT(SimpleContainer&, EquipmentContainer);
-    BUILD_ACCESS_COMPAT(SimpleContainer&, HandContainer);
-    BUILD_ACCESS_COMPAT(SynchedActorData&, EntityData);
+    //AS_FIELD(ActorRuntimeID, RuntimeID, getRuntimeID);
+    //BUILD_ACCESS_COMPAT(SimpleContainer&, EquipmentContainer);
+    //BUILD_ACCESS_COMPAT(SimpleContainer&, HandContainer);
+    //BUILD_ACCESS_COMPAT(SynchedActorData&, EntityData);
 };

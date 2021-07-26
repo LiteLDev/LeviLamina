@@ -1,7 +1,7 @@
 #pragma once
 
 #include <functional>
-#include <hook.h>
+#include <loader/Loader.h>
 
 class AppPlatform {
 public:

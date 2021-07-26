@@ -1,6 +1,6 @@
 #pragma once
 
-#include <hook.h>
+#include <loader/Loader.h>
 
 #include "../dll.h"
 #include "RakNetTypes.h"

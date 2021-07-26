@@ -3,8 +3,6 @@
 #include <memory>
 #include <string>
 
-#include <modutils.h>
-
 #include "../Core/AutomaticID.h"
 #include "LevelListener.h"
 #include "SavedData.h"
@@ -16,7 +14,7 @@ public:
     short                              unk64;
     std::unique_ptr<class BlockSource> source;
 
-    BUILD_ACCESS(Id, DimensionId, 216);
+    //BUILD_ACCESS(Id, DimensionId, 216);
 
     virtual ~Dimension();
     virtual void                                                                        init(void);

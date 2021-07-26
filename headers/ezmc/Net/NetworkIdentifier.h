@@ -1,8 +1,7 @@
 #pragma once
-#include <boost/functional/hash.hpp>
+//#include <boost/functional/hash.hpp>
 
-#include <hook.h>
-#include <modutils.h>
+#include <loader/Loader.h>
 
 #include "../Core/mce.h"
 #include "../RakNet/RakNetTypes.h"
@@ -27,8 +26,8 @@ public:
     MCAPI std::string getAddress() const;
     MCAPI std::string toString() const;
 
-    BASEAPI RakNet::SystemAddress getRealAddress() const;
-    BASEAPI void                  kick(std::string const& reason) const;
+    //BASEAPI RakNet::SystemAddress getRealAddress() const;
+    //BASEAPI void                  kick(std::string const& reason) const;
 };
 
 static_assert(offsetof(NetworkIdentifier, unk136) == 136);

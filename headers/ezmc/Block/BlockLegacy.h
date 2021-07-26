@@ -6,8 +6,6 @@
 
 #include "../dll.h"
 
-#include <modutils.h>
-
 class BlockLegacy {
 public:
     virtual ~BlockLegacy();
@@ -191,8 +189,8 @@ public:
     virtual class Block const* tryLegacyUpgrade(unsigned short) const;
     virtual bool               dealsContactDamage(class Actor const&, class Block const&, bool) const;
 
-    BUILD_ACCESS(unsigned short, BlockID, 328);
-    BUILD_ACCESS(class Block**, Block, 514);
+    //BUILD_ACCESS(unsigned short, BlockID, 328);
+    //BUILD_ACCESS(class Block**, Block, 514);
     template <typename T>
     MCAPI T            getState(class ItemState const&, unsigned short) const;
     class Block const& getDefaultState(void) const;

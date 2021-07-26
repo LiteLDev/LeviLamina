@@ -2,7 +2,7 @@
 
 #include <vector>
 
-#include <hook.h>
+#include <loader/Loader.h>
 
 #include "../Command/CommandPermissionLevel.h"
 #include "../Container/EnderChestContainer.h"
@@ -28,10 +28,6 @@ enum class CooldownType;
 enum class ClientPlayMode;
 enum class MovementEventType;
 enum class PlayerUISlot;
-
-#ifndef BASEAPI
-#define BASEAPI __declspec(dllimport)
-#endif
 
 class Player : public Mob {
 public:
@@ -202,13 +198,13 @@ public:
 
     MCAPI NetworkIdentifier const& getClientId(void) const;
 
-    BUILD_ACCESS_COMPAT(PlayerInventory&, Inventory);
-    BUILD_ACCESS_COMPAT(class EnderChestContainer*, EnderChestContainer);
-    BUILD_ACCESS_COMPAT(class Certificate&, Certificate);
-    BUILD_ACCESS_COMPAT(class NetworkIdentifier const&, NetworkIdentifier);
-    BUILD_ACCESS_COMPAT(std::string&, DeviceId);
-    BUILD_ACCESS_COMPAT(std::string&, ClientPlatformId);
-    BUILD_ACCESS_COMPAT(std::string&, PlatformOfflineId);
-    BUILD_ACCESS_COMPAT(std::string&, ClientPlatformOnlineId);
-    BASEAPI void kick();
+    //BUILD_ACCESS_COMPAT(PlayerInventory&, Inventory);
+    //BUILD_ACCESS_COMPAT(class EnderChestContainer*, EnderChestContainer);
+    //BUILD_ACCESS_COMPAT(class Certificate&, Certificate);
+    //BUILD_ACCESS_COMPAT(class NetworkIdentifier const&, NetworkIdentifier);
+    //BUILD_ACCESS_COMPAT(std::string&, DeviceId);
+    //BUILD_ACCESS_COMPAT(std::string&, ClientPlatformId);
+    //BUILD_ACCESS_COMPAT(std::string&, PlatformOfflineId);
+    //BUILD_ACCESS_COMPAT(std::string&, ClientPlatformOnlineId);
+    //BASEAPI void kick();
 };

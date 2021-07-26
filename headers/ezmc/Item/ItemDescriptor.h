@@ -3,8 +3,8 @@
 class Item;
 class Block;
 
+#include "../Block/BlockLegacy.h"
 #include "../Core/WeakPtr.h"
-#include <Block/BlockLegacy.h>
 
 class ItemDescriptor {
 public:

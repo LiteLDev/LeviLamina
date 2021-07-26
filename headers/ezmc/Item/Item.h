@@ -7,8 +7,7 @@
 #include "../Core/json.h"
 #include "../dll.h"
 
-#include <hook.h>
-#include <modutils.h>
+#include <loader/Loader.h>
 
 enum class BlockShape;
 enum class CooldownType;
@@ -139,12 +138,12 @@ public:
     MCAPI std::string getSerializedName() const;
     MCAPI std::string buildDescriptionName(class ItemStackBase const&) const;
 
-    BASEAPI bool getAllowOffhand() const;
-    DEF_FIELD_RW(bool, AllowOffhand);
-    BUILD_ACCESS(class HashedString, RawNameId, 160);
-    BUILD_ACCESS(class BlockLegacy*, LegacyBlock, 408);
-    BUILD_ACCESS(enum CreativeItemCategory, CreativeCategory, 416);
-    BUILD_ACCESS(class SeedItemComponentLegacy*, Seed, 60);
-    //BUILD_ACCESS(class FoodItemComponent *, Food, 400);
-    //BUILD_ACCESS(class CameraItemComponent *, Camera, 416);
+    //BASEAPI bool getAllowOffhand() const;
+    //DEF_FIELD_RW(bool, AllowOffhand);
+    //BUILD_ACCESS(class HashedString, RawNameId, 160);
+    //BUILD_ACCESS(class BlockLegacy*, LegacyBlock, 408);
+    //BUILD_ACCESS(enum CreativeItemCategory, CreativeCategory, 416);
+    //BUILD_ACCESS(class SeedItemComponentLegacy*, Seed, 60);
+    ////BUILD_ACCESS(class FoodItemComponent *, Food, 400);
+    ////BUILD_ACCESS(class CameraItemComponent *, Camera, 416);
 };

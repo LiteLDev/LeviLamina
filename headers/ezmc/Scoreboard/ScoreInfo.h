@@ -1,7 +1,7 @@
 #pragma once
-#include <Scoreboard/Objective.h>
-#include <Scoreboard/ScoreboardId.h>
-#include <hook.h>
+#include "../Scoreboard/Objective.h"
+#include "../Scoreboard/ScoreboardId.h"
+#include <loader/Loader.h>
 struct ScoreInfo {
     Objective* mObjective;
     bool       mValid;

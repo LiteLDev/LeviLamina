@@ -8,8 +8,6 @@
 #include "../dll.h"
 #include "BlockActorType.h"
 
-#include <modutils.h>
-
 class BlockActor {
     char unknown[200];
 
@@ -17,13 +15,13 @@ private:
     MCAPI static std::map<std::string, BlockActorType, std::less<std::string>> const mIdClassMap;
 
 public:
-    BUILD_ACCESS_MUT(class Block, Block, 16);
-    BUILD_ACCESS_MUT(unsigned int, RepairCost_, 40);
-    BUILD_ACCESS_MUT(Vec3, BlockPos, 21);
-    BUILD_ACCESS_MUT(class AABB, AABB, 56);
-    BUILD_ACCESS_MUT(enum class BlockActorType, Type, 84);
-    BUILD_ACCESS_MUT(std::string, CustomName_, 96);
-    BUILD_ACCESS_MUT(bool, Movable, 165);
+    //BUILD_ACCESS_MUT(class Block, Block, 16);
+    //BUILD_ACCESS_MUT(unsigned int, RepairCost_, 40);
+    //BUILD_ACCESS_MUT(Vec3, BlockPos, 21);
+    //BUILD_ACCESS_MUT(class AABB, AABB, 56);
+    //BUILD_ACCESS_MUT(enum class BlockActorType, Type, 84);
+    //BUILD_ACCESS_MUT(std::string, CustomName_, 96);
+    //BUILD_ACCESS_MUT(bool, Movable, 165);
 
     MCAPI BlockActor(enum BlockActorType, class BlockPos const&, std::string const&);
 

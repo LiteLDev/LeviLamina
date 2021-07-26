@@ -1,6 +1,6 @@
 #pragma once
 
-#include <hook.h>
+#include <loader/Loader.h>
 
 #include "../Actor/ServerPlayer.h"
 #include "../dll.h"
@@ -21,7 +21,7 @@ public:
         CallServerClassMethod<void>("?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z", this, player, hide);
     }
 
-    BASEAPI std::string& GetMotd();
+    //BASEAPI std::string& GetMotd();
 
 private:
     MCAPI ServerPlayer* _getServerPlayer(NetworkIdentifier const&, unsigned char);

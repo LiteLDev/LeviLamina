@@ -1,7 +1,7 @@
-#include <Scoreboard/ScoreInfo.h>
-#include <Scoreboard/ScoreboardId.h>
+#include "../Scoreboard/ScoreInfo.h"
+#include "../Scoreboard/ScoreboardId.h"
 #include <cstring>
-#include <hook.h>
+#include <loader/Loader.h>
 
 class Scoreboard {
 public:

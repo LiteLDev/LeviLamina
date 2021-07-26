@@ -1,7 +1,7 @@
 #include "ActorType.h"
 #include "ActorUniqueID.h"
 #include <cstring>
-#include <hook.h>
+#include <loader/Loader.h>
 class ActorUniqueID;
 enum class ActorType;
 enum class ActorCategory;

@@ -1,7 +1,6 @@
 #pragma once
 
-#include <json/value.h>
-
+#include "../Core/json.h"
 #include "../Core/mce.h"
 #include "../dll.h"
 #include "CommandOrigin.h"

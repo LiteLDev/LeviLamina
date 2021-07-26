@@ -3,8 +3,6 @@
 #include <functional>
 #include <string>
 
-#include <modutils.h>
-
 #include "../Core/AutomaticID.h"
 #include "../dll.h"
 #include "LevelDataWrapper.h"
@@ -45,9 +43,9 @@ public:
     MCAPI std::string const& getPlayerXUID(class mce::UUID const&) const;
     MCAPI std::string const&    getPlayerPlatformOnlineId(class mce::UUID const&) const;
     MCAPI virtual ActorUniqueID getNewUniqueID();
-    BASEAPI PacketSender& getPacketSender() const;
-    BASEAPI uint64_t      GetServerTick();
-    BASEAPI LevelDataWrapper& GetLevelDataWrapper();
+    //BASEAPI PacketSender& getPacketSender() const;
+    //BASEAPI uint64_t      GetServerTick();
+    //BASEAPI LevelDataWrapper& GetLevelDataWrapper();
 
     MCAPI void setDefaultGameType(enum GameType);
 
@@ -108,5 +106,5 @@ public:
              class StructureManager&, class ResourcePackManager&, class IEntityRegistryOwner&,
              std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>);
 
-    BUILD_ACCESS(class BlockPalette*, GlobalBlockPalette, 1856);
+    //BUILD_ACCESS(class BlockPalette*, GlobalBlockPalette, 1856);
 };

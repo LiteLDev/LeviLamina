@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-#include <hook.h>
+#include <loader/Loader.h>
 
 #include "../Core/Packet.h"
 #include "../TextObject/TextObjectLocalizedTextWithParams.h"

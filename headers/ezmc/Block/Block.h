@@ -5,8 +5,7 @@
 #include "../dll.h"
 #include "BlockLegacy.h"
 
-#include <Core/HashedString.h>
-#include <modutils.h>
+#include "../Core/HashedString.h"
 
 class Block {
 
@@ -37,6 +36,6 @@ public:
     MCAPI void               spawnResources(class BlockSource&, class BlockPos const&, float, int) const;
     MCAPI std::string  toDebugString(void) const;
     MCAPI unsigned int getStateMask(class ItemState const&) const;
-    AS_FIELD(class BlockLegacy const&, LegacyBlock, getLegacyBlock);
-    BUILD_ACCESS(unsigned short, DataID, 8);
+    //AS_FIELD(class BlockLegacy const&, LegacyBlock, getLegacyBlock);
+    //BUILD_ACCESS(unsigned short, DataID, 8);
 };

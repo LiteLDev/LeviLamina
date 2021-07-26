@@ -20,8 +20,6 @@
 #include "Tick.h"
 #include "WorldTemplateLevelData.h"
 
-#include <modutils.h>
-
 #include "../dll.h"
 #include "Experiments.h"
 
@@ -194,13 +192,13 @@ public:
         mSpawnSettings.dim = v;
     }
 
-    DEF_FIELD_RW(unsigned, Seed);
-    DEF_FIELD_RW(GeneratorType, WorldGenerator);
-    DEF_FIELD_RW(int, LimitedWorldWidth);
-    DEF_FIELD_RW(int, LimitedWorldDepth);
-    DEF_FIELD_RW(BlockPos, SpawnPos);
-    DEF_FIELD_RW(GameType, GameType);
-    DEF_FIELD_RW(int, SpawnDimension);
+    //DEF_FIELD_RW(unsigned, Seed);
+    //DEF_FIELD_RW(GeneratorType, WorldGenerator);
+    //DEF_FIELD_RW(int, LimitedWorldWidth);
+    //DEF_FIELD_RW(int, LimitedWorldDepth);
+    //DEF_FIELD_RW(BlockPos, SpawnPos);
+    //DEF_FIELD_RW(GameType, GameType);
+    //DEF_FIELD_RW(int, SpawnDimension);
 };
 
 static_assert(offsetof(LevelData, mGameRules) == 296);
