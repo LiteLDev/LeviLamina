@@ -12,12 +12,12 @@ public:
     MCAPI RakPeer();
 
     inline SystemAddress GetSystemAddressFromGuid(RakNetGUID guid) const {
-        return CallServerClassMethod<SystemAddress>(
-            "?GetSystemAddressFromGuid@RakPeer@RakNet@@UEBA?AUSystemAddress@2@URakNetGUID@2@@Z", this, guid);
+        return SymCall(
+            "?GetSystemAddressFromGuid@RakPeer@RakNet@@UEBA?AUSystemAddress@2@URakNetGUID@2@@Z", SystemAddress, const RakPeer*, RakNetGUID)(this, guid);
     }
 
     inline void SetOfflinePingResponse(const char* data, const unsigned int length) {
-        CallServerClassMethod<void>("?SetOfflinePingResponse@RakPeer@RakNet@@UEAAXPEBDI@Z", this, data, length);
+        SymCall("?SetOfflinePingResponse@RakPeer@RakNet@@UEAAXPEBDI@Z", void, const RakPeer*, const char*, const unsigned int)(this, data, length);
     }
 };
 

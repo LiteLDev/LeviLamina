@@ -6,6 +6,6 @@
 class AppPlatform {
 public:
     inline void queueForMainThread(std::function<void()> fn) {
-        CallServerClassMethod<void>("?queueForMainThread@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z", this, fn);
+        SymCall("?queueForMainThread@AppPlatformWindows@@UEAAXV?$function@$$A6AXXZ@std@@@Z", void, const AppPlatform*, std::function<void()>)(this, fn);
     }
 };

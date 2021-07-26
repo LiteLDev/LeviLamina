@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Actor.h"
-
+#include <loader/Loader.h>
 #include <bitset>
 
 enum class LevelSoundEvent;
@@ -10,7 +10,7 @@ enum class TravelType;
 class Mob : public Actor {
 public:
     inline void sendInventory(bool a0) const {
-        return CallServerClassMethod<void>("?sendInventory@Mob@@UEAAX_N@Z", this, a0);
+        return SymCall("?sendInventory@Mob@@UEAAX_N@Z", void, const Mob*, bool)(this, a0);
     }
 
     virtual void                                 knockback(class Actor*, int, float, float, float, float, float);

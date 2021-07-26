@@ -18,7 +18,7 @@ public:
     }
 
     void forceDisconnectClient(Player* player, bool hide) {
-        CallServerClassMethod<void>("?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z", this, player, hide);
+        SymCall("?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z", void, const ServerNetworkHandler*, Player*, bool)(this, player, hide);
     }
 
     //BASEAPI std::string& GetMotd();
