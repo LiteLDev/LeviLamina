@@ -244,6 +244,18 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
+        if (std::filesystem::exists("LiteLoaderDevMode")) {       
+            printf("=================LiteLoader================\n");
+            printf(" ____             __  __           _      \n");
+            printf("|  _ \\  _____   _|  \\/  | ___   __| | ___ \n");
+            printf("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\\n");
+            printf("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/\n");
+            printf("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
+            printf("[Debug] You Are In DevelopMode, FastDlsym Won't Be Load\n\n");
+            fnstat = 2;
+            FuncMap = new unordered_map<string, int, aphash>;
+        }
+
         SymDB     = new SymDBReader("bedrock_server.symdb2");
         BaseAdr = (uintptr_t)GetModuleHandle(NULL);
         static_assert(sizeof(GetModuleHandle(NULL)) == 8);
