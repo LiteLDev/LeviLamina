@@ -140,4 +140,9 @@ class Minecraft {
             dlsym("?getServerNetworkHandler@Minecraft@@QEAAPEAVServerNetworkHandler@@XZ");
         return (this->*rv)();
     }
+    MCINLINE class NetworkHandler* getNetworkHandler() {
+        class NetworkHandler* (Minecraft::*fnp)() const;
+        *((void**)&fnp) = dlsym("?getNetworkHandler@Minecraft@@QEAAAEAVNetworkHandler@@XZ");
+        return (this->*fnp)();
+    }
 };
