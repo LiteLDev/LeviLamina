@@ -1,55 +1,35 @@
-# Defines the ANGLE style for automatic reformatting.
-# See Clang docs: http://clang.llvm.org/docs/ClangFormatStyleOptions.html
-BasedOnStyle: Chromium
-
-# Allow double brackets such as std::vector<std::vector<int>>.
-Standard: Cpp11
-
-# Indent 4 spaces at a time.
-IndentWidth: 4
-
-# Keep lines under 100 columns long.
-ColumnLimit: 100
-
-# Always break before braces
-BreakBeforeBraces: Custom
-BraceWrapping:
-  AfterCaseLabel: false
-  AfterClass: false
-  AfterControlStatement: false
-  AfterEnum: false
-  AfterFunction: false
-  AfterNamespace: false
-  AfterStruct: false
-  AfterUnion: true
-  BeforeCatch: false
-  BeforeElse: false
-  IndentBraces: false
-  SplitEmptyFunction: false
-  SplitEmptyRecord: false
-  SplitEmptyNamespace: false
-
-  # Keeps extern "C" blocks unindented.
-  AfterExternBlock: false
-
-# Indent case labels.
-IndentCaseLabels: true
-
-# Right-align pointers and references
-PointerAlignment: Right
-
-# ANGLE likes to align things as much as possible.
-AlignOperands: true
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
 AlignConsecutiveAssignments: true
-
-# Use 2 space negative offset for access modifiers
-AccessModifierOffset: -2
-
-# Useful for spacing out functions in classes
+AlignConsecutiveDeclarations: true
+AlignEscapedNewlinesLeft: true
+AlignOperands: true
+AlignTrailingComments: true
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowShortBlocksOnASingleLine : false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false 
+AlwaysBreakAfterDefinitionReturnType: None
+ColumnLimit: 0
+CommentPragmas: '^ IWYU pragma:'
+Language: Cpp 
+PointerAlignment: Left
+IndentWidth: 4
+MaxEmptyLinesToKeep: 1
+ObjCSpaceAfterProperty: true
+ObjCBlockIndentWidth: 4
+AllowShortFunctionsOnASingleLine: false
+SpacesInSquareBrackets: false
+SpacesInParentheses : false
+SpaceBeforeAssignmentOperators: true
+SpacesInContainerLiterals: true
+IndentWrappedFunctionNames: true
 KeepEmptyLinesAtTheStartOfBlocks: true
-
-# Indent nested PP directives.
-IndentPPDirectives: AfterHash
-
-# Include blocks style
-IncludeBlocks: Preserve
+BreakConstructorInitializersBeforeComma: true
+SpaceAfterCStyleCast: false
+IndentCaseLabels: true 
+TabWidth: 4
+UseTab: Never
