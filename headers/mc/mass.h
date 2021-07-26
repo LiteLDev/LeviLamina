@@ -2,6 +2,7 @@
 #include <api/serviceLocate.h>
 #include <loader\Loader.h>
 #include <mc/Core.h>
+#include <functional>
 
 struct MCRESULT {
     unsigned char filler[4];
