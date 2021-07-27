@@ -13,17 +13,17 @@ class BaseCommandBlock;
 typedef unsigned long long xuid_t;
 namespace offPlayer {
 inline NetworkIdentifier *getNetworkIdentifier(Player *pl) {
-    // return SymCall("?getClientId@Player@@QEBAAEBVNetworkIdentifier@@XZ", NetworkIdentifier*,
-    // Player*)(pl);
-    return (NetworkIdentifier *)((uintptr_t)pl + 2712);  // ServerPlayer::isHostingPlayer
+    return SymCall("?getClientId@Player@@QEBAAEBVNetworkIdentifier@@XZ", NetworkIdentifier*,
+     Player*)(pl);
+    //return (NetworkIdentifier *)((uintptr_t)pl + 2712);  // ServerPlayer::isHostingPlayer
 }
 inline Level *getLevel(Actor *pl) {
-    // return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
-    return (Level *)*((uintptr_t *)((uintptr_t)pl + 888));
+    return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
+    //return (Level *)*((uintptr_t *)((uintptr_t)pl + 888));
 }
 inline Certificate *getCert(Player *pl) {
-    return (Certificate *)*((uintptr_t *)pl + 377);
-    // return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
+    //return (Certificate *)*((uintptr_t *)pl + 377);
+    return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 }
 
 inline BlockSource *getBlockSource(Actor *ac) {
@@ -54,10 +54,6 @@ inline string getRealName(Player *pl) {
         "?getIdentityName@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$"
         "allocator@D@2@@std@@AEBVCertificate@@@Z",
         string, void *)(offPlayer::getCert((Player *)pl));
-}
-
-inline permlvl_t getPermLvl(Player *pl) {
-    return pl->getCommandPermissionLevel() & 0xff;
 }
 }  // namespace offPlayer
 
