@@ -46,7 +46,7 @@ class MyPkt : public Packet {
 public:
     string_view view;
     MyPkt() {
-        compressible = compress;
+        incompressible = compress;
     }
     MyPkt(string_view sv)
         : view(sv) {
