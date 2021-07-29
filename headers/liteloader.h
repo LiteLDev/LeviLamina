@@ -12,4 +12,5 @@ typedef unsigned char uchar;
 namespace loaderapi {
 LIAPI std::string getLoaderVersion();
 LIAPI unsigned short getLoaderVersionNum();
+LIAPI bool           isDebugMode();
 };  // namespace loaderapi

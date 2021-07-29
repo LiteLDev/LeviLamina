@@ -236,6 +236,9 @@ void InitFastDlsym() {
     LeaveCriticalSection(&dlsymLock);
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
+
+void  loadConfig();
+
 void *dlsym_real(const char *x) {
     
     if (SymDB == nullptr) {
@@ -244,7 +247,8 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        if (std::filesystem::exists("LiteLoaderDevMode")) {       
+        loadConfig();
+        if (loaderapi::isDebugMode()) {       
             printf("=================LiteLoader================\n");
             printf(" ____             __  __           _      \n");
             printf("|  _ \\  _____   _|  \\/  | ___   __| | ___ \n");
