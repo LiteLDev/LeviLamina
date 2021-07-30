@@ -20,7 +20,8 @@ void checkUpdate() {
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
             int latestVersionNum      = arr[arr.Size() - 1]["versionNum"].GetInt();
             if (latestVersionNum > LiteLoaderVersionNum) {
-                LOG("[Liteloader] Found a new version: ", LatestRelease);
+                std::string content = arr[arr.Size() - 1]["content"].GetString();
+                LOG("[Liteloader] Found a new version: ", LatestRelease, " ", content);
             } else if (latestVersionNum < LiteLoaderVersionNum) {
                 LOG("[Liteloader] Using preview version: ", LiteLoaderVersion);
             }
