@@ -34,6 +34,9 @@
     <Filter Include="头文件\api\types">
       <UniqueIdentifier>{2911c288-227a-404e-ae09-17b63cb54f34}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\mc\CommandReg">
+      <UniqueIdentifier>{c56a4f7b-2ab1-43d8-8bec-c2499ff2849a}</UniqueIdentifier>
+    </Filter>
     <Filter Include="源文件\regxuid">
       <UniqueIdentifier>{baae125c-c66a-4a35-8904-a6f265b0c009}</UniqueIdentifier>
     </Filter>
@@ -308,6 +311,12 @@
     </ClInclude>
     <ClInclude Include="..\headers\LiteLoader.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\CommandReg.h">
+      <Filter>头文件\mc\CommandReg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\headers\mc\Command.h">
+      <Filter>头文件\mc\CommandReg</Filter>
     </ClInclude>
     <ClInclude Include="..\headers\ezmc\dll.h">
       <Filter>头文件\ezmc</Filter>
@@ -1020,12 +1029,6 @@
     <ClInclude Include="..\headers\ezmc\TextObject\TextObjectText.h">
       <Filter>头文件\ezmc\TextObject</Filter>
     </ClInclude>
-    <ClInclude Include="..\headers\mc\Command.h">
-      <Filter>头文件\mc</Filter>
-    </ClInclude>
-    <ClInclude Include="..\headers\mc\CommandReg.h">
-      <Filter>头文件\mc</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -1094,8 +1097,8 @@
     <ClCompile Include="Version.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="MinecraftPacketIds.cpp">
+      <Filter>头文件\ezmc\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

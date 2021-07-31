@@ -7,8 +7,8 @@ extern Logger<stdio_commit> LOG;
 void checkUpdate() {
     std::thread t([] {
         httplib::Client cli("https://update.sakuralo.top");
-        auto res = cli.Get("/version.json");
         cli.set_connection_timeout(0, 300000);
+        auto res = cli.Get("/version.json");     
         rapidjson::Document json;
         if (res) {
             json.Parse(res->body.c_str());
