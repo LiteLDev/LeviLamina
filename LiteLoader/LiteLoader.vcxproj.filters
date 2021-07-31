@@ -1097,7 +1097,7 @@
     <ClCompile Include="Version.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="MinecraftPacketIds.cpp">
+    <ClCompile Include="MinecraftPacketIds.h">
       <Filter>头文件\ezmc\Core</Filter>
     </ClCompile>
   </ItemGroup>
