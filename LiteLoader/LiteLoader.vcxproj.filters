@@ -1100,6 +1100,9 @@
     <ClCompile Include="MinecraftPacketIds.cpp">
       <Filter>头文件\ezmc\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\libssl.lib">
