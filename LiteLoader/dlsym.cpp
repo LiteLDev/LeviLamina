@@ -237,7 +237,7 @@ void InitFastDlsym() {
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
 
-void  loadConfig();
+//void  loadConfig();
 
 void *dlsym_real(const char *x) {
     
@@ -247,7 +247,7 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        loadConfig();
+        /*loadConfig();
         if (loaderapi::isDebugMode()) {       
             printf("=================LiteLoader================\n");
             printf(" ____             __  __           _      \n");
@@ -258,7 +258,7 @@ void *dlsym_real(const char *x) {
             printf("[Debug] You Are In DevelopMode, FastDlsym Won't Be Load\n\n");
             fnstat = 2;
             FuncMap = new unordered_map<string, int, aphash>;
-        }
+        }*/
 
         SymDB     = new SymDBReader("bedrock_server.symdb2");
         BaseAdr = (uintptr_t)GetModuleHandle(NULL);

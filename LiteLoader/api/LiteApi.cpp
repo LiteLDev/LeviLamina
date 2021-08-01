@@ -98,6 +98,26 @@ LIAPI std::vector<Player *> getAllPlayers() {
     });
     return player_list;
 }
+
+LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos) {
+    WBStream ws;
+    ws.apply(
+        VarULong(runtimeid), //RuntimeId
+        VarULong(runtimeid), //EntityId
+        VarInts(itemid),                   //ItemId
+        VarUShort(stacksize),                   //StackSize
+        VarInts(aux),                     //Aux
+        (char)1,
+        VarUInt(0),
+        VarInts(110),
+        MCString("minecraft:apple"), //瞎填
+        pos,
+        pos,
+        VarUInt(0),
+        (char)1);
+    auto pkt = MyPkt<0x0F>(ws);
+    ((ServerPlayer*)pl)->sendNetworkPacket(pkt);
+}
 };  // namespace liteloader
 THook(void *,
       "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
