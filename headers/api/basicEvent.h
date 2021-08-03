@@ -1,10 +1,17 @@
 #pragma once
 #include <liteloader.h>
+#ifdef EZMC
+#include <ezmc/Core/Certificate.h>
+#include <ezmc/Math/BlockPos.h>
+#else
 #include <mc/Certificate.h>
-#include <mc\mass.h>
+#include <mc/mass.h>
+#endif
+
 #include <functional>
 #include <string>
 
+using std::string;
 using std::function;
 typedef unsigned long long xuid_t;
 class Actor;

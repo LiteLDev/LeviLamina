@@ -2,10 +2,18 @@
 #include <api/LiteloaderApi.h>
 #include <lbpch.h>
 #include <liteloader.h>
-#include <mc/Command.h>
 #include <mc/OffsetHelper.h>
+#ifdef EZMC
+#include <ezmc/Command/Command.h>
+#include <ezmc/Command/CommandOrigin.h>
+#include <ezmc/Actor/Player.h>
+#include <ezmc/Actor/Mob.h>
+#include <ezmc/Math/BlockPos.h>
+#else
+#include <mc/Command.h>
 #include <mc/Player.h>
 #include <mc/mass.h>
+#endif
 #include <functional>
 #include <iostream>
 #include <string>

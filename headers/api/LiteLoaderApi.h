@@ -7,8 +7,13 @@
 #include <stl/useful.h>
 #include <stl/varint.h>
 
+#ifdef EZMC
+#include <ezmc/Actor/Actor.h>
+#include <ezmc/Actor/Player.h>
+#else
 #include <mc/Actor.h>
-#include <mc/Player.h>
+#include <mc/Block.h>
+#endif
 
 #include <api/LiteloaderApi.h>
 #include <api/myPacket.h>
