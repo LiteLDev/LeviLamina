@@ -1,4 +1,5 @@
 #pragma once
+#include "pch.h"
 enum MinecraftPacketIds {
     Login = 1,
     PlayStatus,
@@ -65,7 +66,7 @@ enum MinecraftPacketIds {
     SetPlayerGameType,
     PlayerList,
     SimpleEvent,
-    Event,
+    Event_,
     SpawnExperienceOrb,
     ClientBoundMapItemData,
     MapInfoRequest,

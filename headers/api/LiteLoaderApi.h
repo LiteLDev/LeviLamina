@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <liteloader.h>
 #include <string>
 #include <vector>
@@ -36,6 +36,7 @@ LIAPI float getAvgPacketloss(Player*);
 LIAPI int getAvgPing(Player*);
 LIAPI std::vector<Player*> getAllPlayers();
 LIAPI std::vector<std::pair<std::wstring, HMODULE>> getAllLibs();
+LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos);
 
 template <typename T>
 static inline void APPEND(string &r, T &&x) {
