@@ -48,7 +48,7 @@ LIAPI void _sendForm2(ServerPlayer &sp, std::unique_ptr<IFormBinder> &&form) {
     auto payload = form->seralize();
     WBStream ws;
     ws.apply(VarUInt(form->formid), MCString(payload));
-    MyPkt<100, false> guipk{ws.data};
+    MyPkt<MinecraftPacketIds(0x0F), false> guipk{ws.data};
     sp.sendNetworkPacket(guipk);
     formMap._map.erase(&sp);
     formMap._map.emplace(&sp, std::forward<std::unique_ptr<IFormBinder>>(form));

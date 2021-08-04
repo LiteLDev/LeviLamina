@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <mc/Core.h>
 #include <stl/optional.h>
 #include <functional>
 #include <string>

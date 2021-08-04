@@ -3,16 +3,19 @@
 #include <stl/useful.h>
 #include <string>
 #include <string_view>
+#include <ezmc/Packet/MinecraftPacketIds.h>
 using std::string_view;
+#ifdef EZMC
+#include <ezmc/core/BinaryStream.h>
+#else
 class StreamReadResult;
 class ReadOnlyBinaryStream;
 class BinaryStream {
 public:
-    std::string& getRaw() { // BinaryStream::getAndReleaseData
-        return *dAccess<std::string*, 96>(this);
-    }
+	std::string& getRaw() { // BinaryStream::getAndReleaseData
+		return *dAccess<std::string*, 96>(this);
+	}
 };
-
 enum class PacketReliability {
     Relible,
     RelibleOrdered
@@ -33,15 +36,16 @@ public:
     }
     inline virtual ~Packet() {
     }
-    virtual int         getId() const              = 0;
-    virtual std::string getName() const            = 0;
-    virtual void        write(BinaryStream&) const = 0;
-    virtual void        dummyread()                = 0;
-    virtual bool        disallowBatching() const   = 0;
+    virtual MinecraftPacketIds getId() const              = 0;
+    virtual std::string getName() const                   = 0;
+    virtual void        write(BinaryStream&) const        = 0;
+    virtual void        dummyread()                       = 0;
+    virtual bool        disallowBatching() const          = 0;
 };
 static_assert(sizeof(Packet) == 48);
+#endif
 
-template <int pid, bool batching = true, bool compress = true>
+template <MinecraftPacketIds pid, bool batching = true, bool compress = true>
 class MyPkt : public Packet {
 public:
     string_view view;
@@ -54,7 +58,7 @@ public:
     }
     inline virtual ~MyPkt() {
     }
-    virtual int getId() const {
+    virtual MinecraftPacketIds getId() const {
         return pid;
     }
     virtual std::string getName() const {
@@ -69,4 +73,4 @@ public:
         return !batching;
     }
 };
-static_assert(offsetof(MyPkt<0>, view) == 48);
+static_assert(offsetof(MyPkt<MinecraftPacketIds(0)>, view) == 48);

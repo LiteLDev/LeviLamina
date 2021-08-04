@@ -91,6 +91,9 @@ public:
     }
     MCAPI void getString(std::string&);
     MCAPI std::string getString();
+	std::string& getRaw() { // BinaryStream::getAndReleaseData
+		return *dAccess<std::string*, 96>(this);
+	}
 
 private:
     MCAPI virtual bool read(void*, std::uint64_t);

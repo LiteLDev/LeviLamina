@@ -1,6 +1,5 @@
 #pragma once
-
-#include "Block//BlockPalette.h"
+#include "../Block/BlockPalette.h"
 #include "ItemDescriptor.h"
 #include "ItemStack.h"
 #include "ItemStackDescriptor.h"

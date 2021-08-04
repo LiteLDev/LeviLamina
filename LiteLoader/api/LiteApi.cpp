@@ -115,7 +115,7 @@ LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int
         pos,
         VarUInt(0),
         (char)1);
-    auto pkt = MyPkt<0x0F>(ws);
+    auto pkt = MyPkt<MinecraftPacketIds(0x0F)>(ws);
     ((ServerPlayer*)pl)->sendNetworkPacket(pkt);
 }
 };  // namespace liteloader

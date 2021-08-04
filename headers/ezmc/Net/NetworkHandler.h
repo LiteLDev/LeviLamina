@@ -4,6 +4,7 @@
 #include <chrono>
 #include <memory>
 #include <queue>
+#include <array>
 #include <vector>
 
 #include "NetworkIdentifier.h"

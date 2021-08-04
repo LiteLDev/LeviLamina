@@ -51,14 +51,3 @@ struct hash<NetworkIdentifier> {
 };
 
 } // namespace std
-
-namespace boost {
-
-template <>
-struct hash<NetworkIdentifier> {
-    size_t operator()(const NetworkIdentifier& val) const {
-        return val.getHash();
-    }
-};
-
-} // namespace boost
