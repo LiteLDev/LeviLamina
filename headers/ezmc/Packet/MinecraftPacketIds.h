@@ -1,5 +1,6 @@
+#pragma once
 enum class MinecraftPacketIds {
-    Login                             = 0x1,
+	Login = 0x1,
     PlayStatus                        = 0x2,
     ServerToClientHandshake           = 0x3,
     ClientToServerHandshake           = 0x4,
@@ -149,4 +150,4 @@ enum class MinecraftPacketIds {
     SyncActorProperty                 = 0xa5,
     AddVolumeEntity                   = 0xa6,
     RemoveVolumeEntity                = 0xa7
-}
+};
