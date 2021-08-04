@@ -15,7 +15,6 @@
 #include <mc/Block.h>
 #endif
 
-#include <api/LiteloaderApi.h>
 #include <api/myPacket.h>
 #include <loader/Loader.h>
 

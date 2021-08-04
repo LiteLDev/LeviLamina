@@ -3,6 +3,7 @@
 #ifdef EZMC
 #include <ezmc/Core/Certificate.h>
 #include <ezmc/Math/BlockPos.h>
+#include <ezmc/Core/MCRESULT.h>
 #else
 #include <mc/Certificate.h>
 #include <mc/mass.h>

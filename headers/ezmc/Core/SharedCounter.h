@@ -16,6 +16,7 @@ public:
         shared++;
     }
     inline bool releaseSharedRef() {
+        T* temp;
         shared--;
         if (shared > 0)
             return false;
