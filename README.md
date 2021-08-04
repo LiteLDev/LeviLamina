@@ -17,8 +17,8 @@ Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 
 ### Docker(Linux)
 ```bash
-docker pull ghcr.io/liteldev/docker:main
-docker create --name liteloader -p 19132:19132/udp -i -t ghcr.io/liteldev/docker:main
+docker pull shrbox/docker:main
+docker create --name liteloader -p 19132:19132/udp -i -t shrbox/docker:main
 ```
 Start server: `docker container start liteloader`  
 Stop server(uncommended): `docker container stop liteloader`  
