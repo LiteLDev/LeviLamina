@@ -14,6 +14,7 @@ Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
 2. Run `SymDB2.exe` to generate symbol files(`bedrock_server.symdb2`) and BDS with export symbols `bedrock_server_mod.exe`(plugins in future may require this version of bds), before you run `SymDB2.exe` you need to check if the `bedrock_server.pdb` exists
 3. For Developers: use vs studio command `lib /def:bedrock_server_mod.def /machine:x64` to generate a lib file to call BDS function directly
+4. Notice!!! the first line of bedrock_server_mod.def is WRONG!!!  you should edit it(`LIBRARY bedrock_server_mod.def`->`LIBRARY bedrock_server_mod.exe`) before you generate .lib file(fixed version of SymDB2 is waiting for sign)
 
 ### Docker(Linux)
 ```bash
