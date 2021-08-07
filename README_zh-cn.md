@@ -19,8 +19,8 @@
 
 ### Docker(Linux)
 ```bash
-docker pull shrbox/docker:main
-docker create --name liteloader -p 19132:19132/udp -i -t shrbox/docker:main
+docker pull shrbox/liteloaderbds
+docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
 启动服务器: `docker container start liteloader`  
 强制停止服务器(不推荐): `docker container stop liteloader`  
