@@ -22,7 +22,7 @@ LIAPI optional<xuid_t> str2id(string_view _name) {
         return {0};
     char buf[512];
     for (int i = 0; i < _name.size(); ++i) {
-        buf[i] = std::tolower(_name[i]);
+        buf[i] = _name[i];
     }
     string_view name(buf, _name.size());
     string rv;
@@ -53,7 +53,7 @@ static void insert(xuid_t id, string_view _name) {
         return;
     char buf[512];
     for (int i = 0; i < _name.size(); ++i) {
-        buf[i] = std::tolower(_name[i]);
+        buf[i] = _name[i];
     }
     string_view name(buf, _name.size());
     string val;
