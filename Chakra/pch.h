@@ -7,12 +7,18 @@
 #ifndef PCH_H
 #define PCH_H
 
-// 添加要在此处预编译的标头
+//定义导出
+#ifdef CHAKRA_EXPORTS
+#define CHAKRA_API __declspec(dllexport)
+#else
+#define CHAKRA_API __declspec(dllimport)
+#endif
+#define WIN32_LEAN_AND_MEAN // 从 Windows 头文件中排除极少使用的内容
+#include <windows.h>
 #include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <new>
 #include <string>
 #include <vector>
-#include "framework.h"
 #endif  // PCH_H
