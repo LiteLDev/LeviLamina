@@ -5,7 +5,7 @@
 <a href="https://discord.gg/27KTrxHc9t">![Discord](https://img.shields.io/discord/849252980430864384?style=flat-square)</a>
 <a href="https://t.me/liteloader">![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=flat-square&logo=Telegram)</a><br>
 <a href="https://github.com/LiteLDev/LiteLoader/releases/latest">![Latest Tag](https://img.shields.io/github/v/tag/LiteLDev/LiteLoader?label=LATEST%20TAG&style=flat-square)![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=flat-square)</a><br>
-A lightweight Bedorck Dedicated Server Plugin Loader  
+A lightweight Bedrock Dedicated Server Plugin Loader  
 Based on [BedrockX](https://github.com/Sysca11/BedrockX)  
 Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 
