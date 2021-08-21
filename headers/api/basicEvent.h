@@ -21,6 +21,7 @@ class Player;
 class Block;
 class Mob;
 class ItemStack;
+class ActorDamageSource;
 
 class JoinEV {
   public:

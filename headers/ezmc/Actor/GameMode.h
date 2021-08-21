@@ -7,5 +7,5 @@ class GameMode {
 public:
     Player* player;
 
-    MCAPI virtual ~GameMode();
+    virtual ~GameMode() = delete;
 };
