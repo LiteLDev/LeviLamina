@@ -2,11 +2,11 @@
 
 namespace loaderapi {
 LIAPI std::string getLoaderVersion() {
-    return LiteLoaderVersion;
+    return LITELOADER_VERSION;
 }
 
 LIAPI unsigned short getLoaderVersionNum() {
-    return LiteLoaderVersionNum;
+    return LITELOADER_VERSION_NUMBER;
 }
 }  // namespace loaderapi
 
@@ -16,6 +16,6 @@ THook(std::string,
 #ifdef LiteLoaderVersionGithub
     return original() + " with LiteLoaderBDS " + LiteLoaderVersionGithub;
 #else
-    return original() + " with LiteLoaderBDS " + LiteLoaderVersion;
+    return original() + " with LiteLoaderBDS " + LITELOADER_VERSION;
 #endif
 }

@@ -35,8 +35,8 @@ static void regenLISTV() {
     onlineLISTV.push_back(']');
 }
 void INIT() {
-    Event::addEventListener([](JoinEV var) { regenLISTV(); });
-    Event::addEventListener([](LeftEV var) { regenLISTV(); });
+    Event::addEventListener([](JoinEV) { regenLISTV(); });
+    Event::addEventListener([](LeftEV) { regenLISTV(); });
 }
 using rapidjson::Value;
 LIAPI unsigned int newFormID() {

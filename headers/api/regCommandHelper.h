@@ -100,7 +100,7 @@ static inline void MakeCommand(string const &name, const char *desc, int lvl) {
         "?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$"
         "allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
         void, void *, std::string const &, char const *, char, short,
-        short)(CmdRegGlobal, name, desc, lvl, 0, 0x80);
+        short)(CmdRegGlobal, name, desc, static_cast<char>(lvl), 0, 0x80);
 }
 
 template <typename T>

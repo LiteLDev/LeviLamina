@@ -5,9 +5,9 @@
 #else
 #    define LIAPI __declspec(dllexport)
 #endif
+#define LITELOADER_VERSION "1.1.2"
+#define LITELOADER_VERSION_NUMBER 12ui8
 typedef unsigned char uchar;
-#define LiteLoaderVersion "1.1.2"
-#define LiteLoaderVersionNum (unsigned short)12
 
 namespace loaderapi {
 LIAPI std::string getLoaderVersion();
