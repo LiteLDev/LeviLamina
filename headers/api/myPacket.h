@@ -73,4 +73,4 @@ public:
         return !batching;
     }
 };
-static_assert(offsetof(MyPkt<MinecraftPacketIds(0)>, view) == 48);
+//static_assert(offsetof(MyPkt<MinecraftPacketIds(0)>, view) == 48);

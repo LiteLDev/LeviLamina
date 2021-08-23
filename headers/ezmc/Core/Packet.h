@@ -32,7 +32,7 @@ public:
     virtual MinecraftPacketIds getId() const              = 0;
     virtual std::string        getName() const            = 0;
     virtual void               write(BinaryStream&) const = 0;
-
+    //Packet::_read() Wrapper
     inline virtual StreamReadResult read(ReadOnlyBinaryStream& stream) {
         return _read(stream);
     }

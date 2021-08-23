@@ -39,7 +39,7 @@ protected:
 
 public:
     Item*                                 item{};
-    std::unique_ptr<CompoundTag>          tag;
+    CompoundTag*                          tag;
     uint64_t                              block_state{};
     uint16_t                              aux_value{};
     unsigned char                         count{};
@@ -191,6 +191,6 @@ public:
     MCAPI void             reinit(Item const&, int, int);
     MCAPI void             reinit(BlockLegacy const&, int);
 };
-
+static_assert(offsetof(ItemStackBase, tag) == 16);
 static_assert(sizeof(ItemStackBase) == 136);
 static_assert(sizeof(ItemStack) == 144);

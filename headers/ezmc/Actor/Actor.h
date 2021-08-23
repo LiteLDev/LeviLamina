@@ -486,7 +486,7 @@ public:
     MCAPI void forEachLeashedActor(class A6AXPEAVfunction);
 
     MCAPI bool               shouldOrphan(class BlockSource&);
-    MCAPI class BlockSource& getRegion(void) const;
+    MCAPI class BlockSource const& getRegionConst(void)const;
 
     MCAPI bool       onLadder(bool) const;
     MCAPI void       reload(void);

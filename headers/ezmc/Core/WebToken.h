@@ -1,5 +1,5 @@
+#pragma once
 #include "json.h"
-
 class WebToken {
 public:
     std::string header;
@@ -10,5 +10,4 @@ public:
 };
 
 static_assert(offsetof(WebToken, dataInfo) == 80);
-
 static_assert(sizeof(WebToken) == 128);

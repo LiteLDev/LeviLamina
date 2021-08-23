@@ -1,4 +1,5 @@
 #pragma once
+#include "WebToken.h"
 #include "Certificate.h"
 
 class UnverifiedCertificate {
