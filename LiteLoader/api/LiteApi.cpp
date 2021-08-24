@@ -47,14 +47,14 @@ void *SCO::fake_vtbl[26];
 static_assert(offsetof(SCO, Perm) == 64);
 LIAPI bool runcmd(const string &cmd) {
     static SCO origin;
-    return MinecraftCommands::_runcmd(&origin, cmd);
+    return MinecraftCommands::_runcmd(&origin, cmd, 4, 1);
 }
 static unordered_map<void *, string *> origin_res;
 LIAPI std::pair<bool, string> runcmdEx(const string &cmd) {
     SCO origin;
     string val;
     origin_res[&origin] = &val;
-    bool rv             = MinecraftCommands::_runcmd(&origin, cmd);
+    bool rv             = MinecraftCommands::_runcmd(&origin, cmd, 4, 1);
     return {rv, std::move(val)};
 }
 static void *FAKE_PORGVTBL[26];
@@ -67,7 +67,7 @@ LIAPI bool runcmdAs(Player *pl, const string &cmd) {
         FAKE_PORGVTBL[1] = (void *)dummy;
     }
     filler[0] = FAKE_PORGVTBL + 1;
-    return MinecraftCommands::_runcmd(filler, cmd);
+    return MinecraftCommands::_runcmd(filler, cmd, 4, 1);
 }
 LIAPI string getIP(class NetworkIdentifier &ni) {
     string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();

@@ -108,7 +108,7 @@ LIAPI xuid_t WPlayer::getXuid() {
     return offPlayer::getXUID(v);
     // return xuid_cache[v];
 }
-LIAPI string WPlayer::getName() {
+LIAPI const string& WPlayer::getName() {
     return offPlayer::getRealName(v);
     // return xuid_cache[v];
 }

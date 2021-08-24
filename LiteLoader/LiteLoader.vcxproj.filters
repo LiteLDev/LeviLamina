@@ -1026,6 +1026,9 @@
     <ClInclude Include="..\headers\ezmc\TextObject\TextObjectText.h">
       <Filter>头文件\ezmc\TextObject</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\regCommandHelper.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">

@@ -26,7 +26,7 @@ static_assert(offsetof(CommandContext, Ori) == 32);
 class MinecraftCommands;
 class MinecraftCommands {
   public:
-    static MCRESULT _runcmd(void *origin, const std::string &cmd) {
+    static MCRESULT _runcmd(void* origin, const std::string& cmd, int unk1, bool unk2) {
         MCRESULT rv;
         SymCall(
             "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@"
