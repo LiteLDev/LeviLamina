@@ -93,7 +93,7 @@ struct WPlayer : Wrapped<ServerPlayer> {
     inline WActor *actor() { return (WActor *)this; }
     inline WMob *mob() { return (WMob *)this; }
     LIAPI void sendText(string text, TextType type = RAW);
-    LIAPI string const &getName();
+    LIAPI string getName();
     LIAPI xuid_t getXuid();
     LIAPI string getRealName();
     LIAPI permlvl_t getPermLvl();

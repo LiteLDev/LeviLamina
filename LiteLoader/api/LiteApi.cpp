@@ -47,14 +47,14 @@ void *SCO::fake_vtbl[26];
 static_assert(offsetof(SCO, Perm) == 64);
 LIAPI bool runcmd(const string &cmd) {
     static SCO origin;
-    return MinecraftCommands::_runcmd(&origin, cmd, 4, 1);
+    return MinecraftCommands::_runcmd(&origin, cmd);
 }
 static unordered_map<void *, string *> origin_res;
 LIAPI std::pair<bool, string> runcmdEx(const string &cmd) {
     SCO origin;
     string val;
     origin_res[&origin] = &val;
-    bool rv             = MinecraftCommands::_runcmd(&origin, cmd, 4, 1);
+    bool rv             = MinecraftCommands::_runcmd(&origin, cmd);
     return {rv, std::move(val)};
 }
 static void *FAKE_PORGVTBL[26];
@@ -67,7 +67,7 @@ LIAPI bool runcmdAs(Player *pl, const string &cmd) {
         FAKE_PORGVTBL[1] = (void *)dummy;
     }
     filler[0] = FAKE_PORGVTBL + 1;
-    return MinecraftCommands::_runcmd(filler, cmd, 4, 1);
+    return MinecraftCommands::_runcmd(filler, cmd);
 }
 LIAPI string getIP(class NetworkIdentifier &ni) {
     string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
@@ -85,7 +85,7 @@ LIAPI float getAvgPacketloss(Player* sp) {
     auto netid    = offPlayer::getNetworkIdentifier(sp);
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z", NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    return nwstatus.avgpacketloss;
+    return static_cast<float>(nwstatus.avgpacketloss);
 }
 
 LIAPI std::vector<Player *> getAllPlayers() {
@@ -105,7 +105,7 @@ LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int
         VarULong(runtimeid), //RuntimeId
         VarULong(runtimeid), //EntityId
         VarInts(itemid),                   //ItemId
-        VarUShort(stacksize),                   //StackSize
+        VarUShort(static_cast<unsigned short>(stacksize)),                   //StackSize
         VarInts(aux),                     //Aux
         (char)1,
         VarUInt(0),

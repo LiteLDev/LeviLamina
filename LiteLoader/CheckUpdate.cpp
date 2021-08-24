@@ -19,11 +19,11 @@ void checkUpdate() {
             auto arr                  = json.GetArray();
             std::string LatestRelease = arr[arr.Size() - 1]["name"].GetString();
             int latestVersionNum      = arr[arr.Size() - 1]["versionNum"].GetInt();
-            if (latestVersionNum > LiteLoaderVersionNum) {
+            if (latestVersionNum > LITELOADER_VERSION_NUMBER) {
                 std::string content = arr[arr.Size() - 1]["content"].GetString();
                 LOG("[Liteloader] Found a new version: ", LatestRelease, " ", content);
-            } else if (latestVersionNum < LiteLoaderVersionNum) {
-                LOG("[Liteloader] Using preview version: ", LiteLoaderVersion);
+            } else if (latestVersionNum < LITELOADER_VERSION_NUMBER) {
+                LOG("[Liteloader] Using preview version: ", LITELOADER_VERSION);
             }
         } else {
             std::cout << "[Liteloader] Failed to get updates(0)\n";

@@ -22,7 +22,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         echo  >> headers/liteloader.h
-        git log -1 --format='#define LiteLoaderVersionGithub LiteLoaderVersion"-Ci-%h_%at"' >> headers/liteloader.h
+        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> headers/liteloader.h
         cat headers/liteloader.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash

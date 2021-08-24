@@ -67,9 +67,6 @@
     <Filter Include="头文件\api\scheduler">
       <UniqueIdentifier>{abfed4ae-cb19-4a94-9aae-b2f9f9d1cb37}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\loader">
-      <UniqueIdentifier>{ec697c86-848d-4b7a-a339-6ba3cd6e119f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\ezmc">
       <UniqueIdentifier>{9f1d7c5a-639c-4eb7-90f7-f9ae96e0ff0b}</UniqueIdentifier>
     </Filter>
@@ -1032,9 +1029,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="LiteLoader.cpp">

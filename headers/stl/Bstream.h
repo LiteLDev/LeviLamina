@@ -26,6 +26,7 @@ class RBStream {
     BUF_CHK_VAR;
     RBStream(void *dat, size_t len) {
         data = (uintptr_t)dat;
+        (void)len;
 #ifdef BUF_CHK
         datamax = data;
         datamax += len;
