@@ -1,6 +1,7 @@
 # LiteLoader
 [简体中文](README_zh-cn.md) | English  
 [Donate us(afdian)](https://afdian.net/@liteldev)  
+[Official Forum](https://forum.litebds.com/)  
 <a href="https://github.com/LiteLDev/LiteLoader/actions">![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)</a>
 <a href="https://discord.gg/27KTrxHc9t">![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge)</a>
 <a href="https://t.me/liteloader">![Telegram](https://img.shields.io/badge/telegram-LiteLoader-%232CA5E0?style=for-the-badge&logo=Telegram)</a><br>
@@ -13,8 +14,7 @@ Thanks to [rhymc.com](https://www.rhymc.com/) for supporting this project
 ### Windows
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
 2. Run `SymDB2.exe` to generate symbol files(`bedrock_server.symdb2`) and BDS with export symbols `bedrock_server_mod.exe`(plugins in future may require this version of bds), before you run `SymDB2.exe` you need to check if the `bedrock_server.pdb` exists
-3. For Developers: use vs studio command `lib /def:bedrock_server_mod.def /machine:x64` to generate a lib file to call BDS function directly
-4. Notice!!! the first line of bedrock_server_mod.def is WRONG!!!  you should edit it(`LIBRARY bedrock_server_mod.def`->`LIBRARY bedrock_server_mod.exe`) before you generate .lib file(fixed version of SymDB2 is waiting for sign)
+3. For Developers: run `SymDB2.exe -def` then use vs studio command `lib /def:bedrock_server_mod.def /machine:x64` to generate a lib file to call BDS function directly
 
 ### Docker(Linux)
 ```bash
@@ -28,7 +28,7 @@ Exit console: press `Ctrl + P + Q`, if you press `Ctrl + C` server process will 
 If you want to manage server file, use `docker volume --help` for more details
 
 ## Usage
-Put .dll plugins into `plugins\` directory  
+Put .dll plugins into `plugins\` directory and run `bedrock_server_mod.exe`  
 
 ## More
 See [Docs](https://docs.litetitle.com/)
