@@ -105,6 +105,16 @@ vector<function<void(PostInitEV)>> Post_init_call_backs;
 LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
     Post_init_call_backs.push_back(callback);
 }
+std::wstring s2ws(string str) {
+    std::wstring result;
+    int    len    = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);
+    TCHAR* buffer = new TCHAR[len + 1];
+    MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), buffer, len);
+    buffer[len] = '\0';
+    result.append(buffer);
+    delete[] buffer;
+    return result;
+}
 
 void FixUpCWD() {
     string buf;
@@ -141,8 +151,12 @@ static void entry(bool fix_cwd) {
     }
 }
 
+
 THook(int, "main", int a, void *b) {
     std::ios::sync_with_stdio(false);
+    HWND  hwnd  = GetConsoleWindow();
+    std::wstring s    = L"LiteLoaderBDS " + s2ws(LITELOADER_VERSION) + L" for BDS";
+    SetWindowText(hwnd, s.c_str());
     // system("chcp 65001");
     entry(a > 1);
     return original(a, b);

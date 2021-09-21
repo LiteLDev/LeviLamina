@@ -34,7 +34,7 @@ inline Certificate *getCert(Player *pl) {
 }
 
 inline BlockSource *getBlockSource(Actor *ac) {
-    return dAccess<BlockSource *, 872>(ac);
+    return dAccess<BlockSource*, 864>(ac);
 }
 
 inline std::string getXUIDStringByCert(Certificate *cert) {
