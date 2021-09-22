@@ -119,6 +119,9 @@ class CommandRegistry {
         FactoryFn factory;                         // 8
         std::vector<CommandParameterData> params;  // 16
         unsigned char unk;                         // 40
+        double                            a = 0;       // 48
+        double                            b = 0;                       // 56
+        double                            c = 0;       // 64
         inline Overload(CommandVersion version,
                         FactoryFn factory,
                         std::vector<CommandParameterData> &&args)
