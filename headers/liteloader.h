@@ -6,7 +6,7 @@
 #    define LIAPI __declspec(dllexport)
 #endif
 #define LITELOADER_VERSION "1.2.0"
-#define LITELOADER_VERSION_NUMBER 13ui8
+#define LITELOADER_VERSION_NUMBER 14
 typedef unsigned char uchar;
 
 namespace loaderapi {

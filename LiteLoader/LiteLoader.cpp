@@ -140,8 +140,7 @@ static void entry(bool fix_cwd) {
     Event::addEventListener([](ServerStartedEV) {  // Server started event
         startWBThread();
         LOG("LiteLoader is distributed under the GPLv3 License");
-        LOG(u8"感谢旋律云(rhymc.com)对本项目的支持 | Thanks to [rhymc.com] for supporting this "
-            u8"project");
+        LOG("Thanks to rhymc.com for supporting this project");
         checkUpdate();
     });
 
@@ -155,9 +154,8 @@ static void entry(bool fix_cwd) {
 THook(int, "main", int a, void *b) {
     std::ios::sync_with_stdio(false);
     HWND  hwnd  = GetConsoleWindow();
-    std::wstring s    = L"LiteLoaderBDS " + s2ws(LITELOADER_VERSION) + L" for BDS";
+    std::wstring s    = L"LiteLoaderBDS " + s2ws(LITELOADER_VERSION);
     SetWindowText(hwnd, s.c_str());
-    // system("chcp 65001");
     entry(a > 1);
     return original(a, b);
 }
