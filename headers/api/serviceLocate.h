@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <liteloader.h>
+#include <LoaderApi.h>
 template <typename T>
 struct LocateS {
     static T *_srv;

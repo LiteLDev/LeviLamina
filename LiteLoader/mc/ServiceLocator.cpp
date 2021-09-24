@@ -4,7 +4,7 @@
 //#include<api/event/genericEvent.h>
 #include <api/basicEvent.h>
 #include <api/serviceLocate.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <loader/Loader.h>
 #include <mc\Level.h>
 

@@ -1,5 +1,5 @@
 #pragma once
-#include <liteloader.h>
+#include <LoaderApi.h>
 #ifdef EZMC
 #include <ezmc/Core/Certificate.h>
 #include <ezmc/Math/BlockPos.h>

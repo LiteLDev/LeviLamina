@@ -1,7 +1,7 @@
 ﻿#include <lbpch.h>
 #include <api/serviceLocate.h>
 #include <api\types\types.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <loader/Loader.h>
 #include <mc/mass.h>
 #include <iostream>

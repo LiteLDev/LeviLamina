@@ -14,7 +14,7 @@ struct stdio_commit {
     }
     stdio_commit(string_view prefix_) : prefix(prefix_) {}
 };
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <atomic>
 #include <filesystem>
 #include <string>

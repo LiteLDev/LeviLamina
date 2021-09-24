@@ -1,7 +1,7 @@
 #include <api/basicEvent.h>
 #include <api/LiteloaderApi.h>
 #include <lbpch.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <mc/OffsetHelper.h>
 #ifdef EZMC
 #include <ezmc/Command/Command.h>

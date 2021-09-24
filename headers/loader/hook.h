@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <string>
-#include "..\\liteloader.h"
+#include "..\\LoaderApi.h"
 extern "C" {
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);

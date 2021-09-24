@@ -19,7 +19,7 @@ using std::make_shared, std::make_unique;
 #include <api/types/types.h>
 #include <mc/Core.h>
 #include <stl/views.h>
-#include "liteloader.h"
+#include "LoaderApi.h"
 #include "loader/Loader.h"
 #include "loader/hash.h"
 #include "loader/hook.h"
