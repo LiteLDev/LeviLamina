@@ -73,21 +73,23 @@ LIAPI string getIP(class NetworkIdentifier &ni) {
     string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
     return rv.substr(0, rv.find('|'));
 }
-LIAPI string getAvgPing(Player* sp) {
+
+LIAPI int getAvgPing(Player* sp) {
     auto netid  = offPlayer::getNetworkIdentifier(sp);
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
         , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    return std::to_string(nwstatus.avgping);
+    string str      = std::to_string(nwstatus.avgping);
+    return stoi(str);
 }
 
-LIAPI string getAvgPacketloss(Player* sp) {
+LIAPI float getAvgPacketloss(Player* sp) {
     auto netid    = offPlayer::getNetworkIdentifier(sp);
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
         , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    auto out      = nwstatus.avgpacketloss;
-    return std::to_string(static_cast<float>(out));
+    string str      = std::to_string(nwstatus.avgpacketloss);
+    return atof(str.c_str());
 }
 
 LIAPI std::vector<Player *> getAllPlayers() {
