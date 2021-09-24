@@ -150,6 +150,26 @@ static void entry(bool fix_cwd) {
     }
 }
 
+#include <windows.h>
+
+#include <Urlmon.h>
+#pragma comment(lib, "Urlmon")
+
+std::string TCHAR2STRING(TCHAR* str) {
+    std::string strstr;
+    try {
+        int iLen = WideCharToMultiByte(CP_ACP, 0, str, -1, NULL, 0, NULL, NULL);
+
+        char* chRtn = new char[iLen * sizeof(char)];
+
+        WideCharToMultiByte(CP_ACP, 0, str, -1, chRtn, iLen, NULL, NULL);
+
+        strstr = chRtn;
+    } catch (std::exception e) {
+    }
+
+    return strstr;
+}
 
 THook(int, "main", int a, void *b) {
     std::ios::sync_with_stdio(false);

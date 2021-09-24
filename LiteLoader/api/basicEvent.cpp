@@ -44,14 +44,15 @@ bool CallEventEx(vector<T> &vec, T1 &ev) {
 
 
 /////////////////// PlayerJoin ///////////////////
-
+std::unordered_map<string, string> langs;
+#include <ezmc/Core/ConnectionRequest.h>
 vector<function<void(JoinEV)>> Join_call_backs;
 LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
     Join_call_backs.push_back(callback);
 }
 THook(void,"?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
       "AEBVConnectionRequest@@AEAVServerPlayer@@@Z",
-      void *ServerNetworkHandler_this, NetworkIdentifier *Ni, void *ConnectionRequest, ServerPlayer *sp)
+      void *ServerNetworkHandler_this, NetworkIdentifier *Ni, ConnectionRequest * a3, ServerPlayer *sp)
 {
     string ip = liteloader::getIP(*Ni);
     xuid_t xuid = atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@"
@@ -59,11 +60,17 @@ THook(void,"?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentif
                                 string, void *)(offPlayer::getCert((Player *)sp))
                             .c_str());
     JoinEV join_event = {sp, ip, xuid};
-    
+    auto   map1       = a3->rawToken->dataInfo.value_.map_;
+    for (auto iter = map1->begin(); iter != map1->end(); ++iter) {
+        string s(iter->first.c_str());
+        if (s.find("LanguageCode") != s.npos) {
+            auto langcode = iter->second.value_.string_;
+            langs[offPlayer::getRealName(sp)] = langcode;
+        }
+    }
     CallEvent(Join_call_backs, join_event);
-    return original(ServerNetworkHandler_this, Ni, ConnectionRequest, sp);
+    return original(ServerNetworkHandler_this, Ni, a3, sp);
 }
-
 
 /////////////////// PlayerLeft ///////////////////
 
@@ -81,7 +88,8 @@ THook(void,"?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
                                 string, void *)(offPlayer::getCert((Player *)sp))
                             .c_str());
     LeftEV left_event = {sp, xuid};
-    
+    auto   iterss     = langs.find(offPlayer::getRealName(sp));
+    if (iterss != langs.end()) iterss = langs.erase(iterss);
     CallEvent(Left_call_backs, left_event);
     return original(_this, sp, a3);
 }
@@ -312,3 +320,4 @@ THook(void,"?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdenti
 
     CallEvent(Pre_join_call_backs, pre_join_event);
 }
+

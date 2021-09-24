@@ -73,19 +73,21 @@ LIAPI string getIP(class NetworkIdentifier &ni) {
     string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
     return rv.substr(0, rv.find('|'));
 }
-LIAPI int getAvgPing(Player* sp) {
+LIAPI string getAvgPing(Player* sp) {
     auto netid  = offPlayer::getNetworkIdentifier(sp);
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
         , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    return nwstatus.avgping;
+    return std::to_string(nwstatus.avgping);
 }
 
-LIAPI float getAvgPacketloss(Player* sp) {
+LIAPI string getAvgPacketloss(Player* sp) {
     auto netid    = offPlayer::getNetworkIdentifier(sp);
-    auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z", NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
+    auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
+        , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    return static_cast<float>(nwstatus.avgpacketloss);
+    auto out      = nwstatus.avgpacketloss;
+    return std::to_string(static_cast<float>(out));
 }
 
 LIAPI std::vector<Player *> getAllPlayers() {
@@ -98,8 +100,13 @@ LIAPI std::vector<Player *> getAllPlayers() {
     });
     return player_list;
 }
-
-LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos) {
+#include<api/types/types.h>
+LIAPI string getPlayerLang(Player* sp) {
+    for (auto a : langs)
+        if (offPlayer::getRealName(sp) == a.first)
+            return a.second;
+}
+    LIAPI void sendAddItemEntityPacket(Player* pl, unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos) {
     WBStream ws;
     ws.apply(
         VarULong(runtimeid), //RuntimeId
