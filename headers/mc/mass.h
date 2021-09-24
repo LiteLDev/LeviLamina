@@ -159,12 +159,10 @@ public:
         int    level;
         int    ping, avgping;
         double packetloss, avgpacketloss;
+        char   pkt[64];
     };
 
-    virtual ~NetworkPeer();
     virtual void          sendPacket(std::string, NetworkPeer::Reliability, int) = 0;
     virtual DataStatus    receivePacket(std::string&)                            = 0;
     virtual NetworkStatus getNetworkStatus()                                     = 0;
-    virtual void    update();
-    virtual void    flush(std::function<void(void)>&&);
 };

@@ -32,7 +32,7 @@ LIAPI bool runcmd(const string& cmd);
 LIAPI bool runcmdAs(Player*, const string& cmd);
 LIAPI std::pair<bool, string> runcmdEx(const string& cmd);
 LIAPI std::string getIP(class NetworkIdentifier& ni);
-LIAPI float getAvgPacketloss(Player*);
+LIAPI int getPing(Player*);
 LIAPI int getAvgPing(Player*);
 LIAPI std::vector<Player*> getAllPlayers();
 LIAPI std::vector<std::pair<std::wstring, HMODULE>> getAllLibs();

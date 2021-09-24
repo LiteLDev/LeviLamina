@@ -79,17 +79,15 @@ LIAPI int getAvgPing(Player* sp) {
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
         , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    string str      = std::to_string(nwstatus.avgping);
-    return stoi(str);
+    return nwstatus.avgping;
 }
 
-LIAPI float getAvgPacketloss(Player* sp) {
+LIAPI int getPing(Player* sp) {
     auto netid    = offPlayer::getNetworkIdentifier(sp);
     auto nwpeer   = SymCall("?getPeerForUser@NetworkHandler@@QEAAPEAVNetworkPeer@@AEBVNetworkIdentifier@@@Z"
         , NetworkPeer*, NetworkHandler*, NetworkIdentifier*)(LocateService<Minecraft>()->getNetworkHandler(), netid);
     auto nwstatus = nwpeer->getNetworkStatus();
-    string str      = std::to_string(nwstatus.avgpacketloss);
-    return atof(str.c_str());
+    return nwstatus.ping;
 }
 
 LIAPI std::vector<Player *> getAllPlayers() {
