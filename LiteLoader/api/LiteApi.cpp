@@ -70,7 +70,8 @@ LIAPI bool runcmdAs(Player *pl, const string &cmd) {
     return MinecraftCommands::_runcmd(filler, cmd, 4, 1);
 }
 LIAPI string getIP(class NetworkIdentifier &ni) {
-    string rv = LocateS<RakPeer_t>()->getAdr(ni).toString();
+    auto rv = LocateS<RakNet::RakPeer>()->getAdr(ni).toString();
+
     return rv.substr(0, rv.find('|'));
 }
 

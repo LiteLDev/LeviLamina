@@ -97,18 +97,18 @@ THook(void *, "?_activate@RakNetServerLocator@@AEAAXXZ", RakNetServerLocator *th
     return original(thi);
 }
 
-THook(void *, "??0RakPeer@RakNet@@QEAA@XZ", RakPeer_t *p) {
+THook(void*, "??0RakPeer@RakNet@@QEAA@XZ", RakNet::RakPeer* p) {
     static bool inited = false;
     if (!inited) {
         inited = 1;
-        LocateS<RakPeer_t>::assign(*p);
+        LocateS<RakNet::RakPeer>::assign(*p);
     }
     return original(p);
 }
 
 template <>
-LIAPI RakPeer_t *LocateService<RakPeer_t>() {
-    return LocateS<RakPeer_t>::_srv;
+LIAPI RakNet::RakPeer* LocateService<RakNet::RakPeer>() {
+    return LocateS<RakNet::RakPeer>::_srv;
 }
 template <>
 LIAPI WLevel *LocateService<WLevel>() {

@@ -18,8 +18,9 @@ template <typename T>
 T *LocateService() {
     return LocateS<T>::_srv;
 }
-
-struct RakPeer_t;
+namespace RakNet {
+struct RakPeer;
+}
 struct WLevel;
 class CommandRegistry;
 class Level;
@@ -31,7 +32,7 @@ class ServerNetworkHandler;
 class LevelStorage;
 
 template <>
-LIAPI RakPeer_t *LocateService<RakPeer_t>();
+LIAPI RakNet::RakPeer* LocateService<RakNet::RakPeer>();
 template <>
 LIAPI WLevel *LocateService<WLevel>();
 template <>
