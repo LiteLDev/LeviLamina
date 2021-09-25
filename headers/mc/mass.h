@@ -86,7 +86,6 @@ struct SystemAddress {
         char buf[128];
         SymCall("?ToString@SystemAddress@RakNet@@QEBAX_NPEADD@Z", void, void*, bool, char*, char)(
             this, true, buf, ':');
-        printf("%s", buf);
         return buf;
     }
 };
