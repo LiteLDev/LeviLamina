@@ -1,6 +1,6 @@
 ﻿#ifndef PCH_H
 #define PCH_H
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <loader/Loader.h>
 #include <iostream>
 #include "framework.h"

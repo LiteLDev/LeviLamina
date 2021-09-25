@@ -1,15 +1,13 @@
 #include <rapidjson/document.h>
-#include <LiteLoader.h>
+#include <LoaderApi.h>
 #include <fstream>
 #include "pch.h"
 
 extern Logger<stdio_commit> LOG;
 bool LoaderDebugMode = false;
 
-namespace loaderapi {
-LIAPI bool isDebugMode() {
+LIAPI bool loaderapi::isDebugMode() {
     return LoaderDebugMode;
-}
 }
 
 void loadConfig() {

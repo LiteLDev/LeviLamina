@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <string>
 using std::string;
 //#define TRACING_ENABLED

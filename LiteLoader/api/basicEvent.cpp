@@ -1,7 +1,7 @@
 #include <api/basicEvent.h>
 #include <api/LiteloaderApi.h>
 #include <lbpch.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <mc/OffsetHelper.h>
 #ifdef EZMC
 #include <ezmc/Command/Command.h>
@@ -55,10 +55,7 @@ THook(void,"?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentif
       void *ServerNetworkHandler_this, NetworkIdentifier *Ni, ConnectionRequest * a3, ServerPlayer *sp)
 {
     string ip = liteloader::getIP(*Ni);
-    xuid_t xuid = atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@"
-                                "D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z",
-                                string, void *)(offPlayer::getCert((Player *)sp))
-                            .c_str());
+    xuid_t xuid       = offPlayer::getXUID(sp);
     JoinEV join_event = {sp, ip, xuid};
     auto   map1       = a3->rawToken->dataInfo.value_.map_;
     for (auto iter = map1->begin(); iter != map1->end(); ++iter) {
@@ -83,10 +80,7 @@ LIAPI void Event::addEventListener(function<void(LeftEV)> callback) {
 THook(void,"?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
       ServerNetworkHandler *_this, ServerPlayer *sp, bool a3)
 {
-    xuid_t xuid = atoll(SymCall("?getXuid@ExtendedCertificate@@SA?AV?$basic_string@DU?$char_traits@"
-                                "D@std@@V?$allocator@D@2@@std@@AEBVCertificate@@@Z",
-                                string, void *)(offPlayer::getCert((Player *)sp))
-                            .c_str());
+    xuid_t xuid       = offPlayer::getXUID(sp);
     LeftEV left_event = {sp, xuid};
     auto   iterss     = langs.find(offPlayer::getRealName(sp));
     if (iterss != langs.end()) iterss = langs.erase(iterss);

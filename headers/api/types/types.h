@@ -4,7 +4,7 @@
 #include <api/LiteLoaderApi.h>
 #include <stl/views.h>
 #include <stl/optional.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <mc/Core.h>
 #include <mc/mass.h>
 typedef unsigned long long xuid_t;

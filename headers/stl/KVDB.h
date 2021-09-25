@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include <functional>
 #include <string_view>
 #include <unordered_map>

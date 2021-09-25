@@ -421,7 +421,7 @@
     <ClInclude Include="..\headers\leveldb\table.h" />
     <ClInclude Include="..\headers\leveldb\table_builder.h" />
     <ClInclude Include="..\headers\leveldb\write_batch.h" />
-    <ClInclude Include="..\headers\LiteLoader.h" />
+    <ClInclude Include="..\headers\LoaderApi.h" />
     <ClInclude Include="..\headers\loader\hash.h" />
     <ClInclude Include="..\headers\loader\hook.h" />
     <ClInclude Include="..\headers\loader\Loader.h" />

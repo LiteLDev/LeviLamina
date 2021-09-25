@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <lbpch.h>
-#include <liteloader.h>
+#include <LoaderApi.h>
 #include "../serviceLocate.h"
 typedef unsigned long long tick_t;
 typedef unsigned int taskid_t;

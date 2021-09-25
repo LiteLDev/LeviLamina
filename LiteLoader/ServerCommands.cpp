@@ -2,11 +2,7 @@
 
 void checkUpdate();
 bool versionCommand(CommandOrigin const &, CommandOutput &outp) {
-    std::string server_version = SymCall(
-        "?getGameVersionStringNet@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$"
-        "allocator@D@2@@std@@XZ",
-        std::string)();
-    outp.success("The server is running Bedrock Dedicated Server " + server_version + " with LiteLoaderBDS " +
+    outp.success("The server is running Bedrock Dedicated Server " + loaderapi::getServerVersion() + " with LiteLoaderBDS " +
                  LITELOADER_VERSION + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS");
     return true;
 }
