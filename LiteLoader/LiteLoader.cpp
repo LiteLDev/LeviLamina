@@ -108,7 +108,7 @@ LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
 std::wstring s2ws(string str) {
     std::wstring result;
     int    len    = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);
-    TCHAR* buffer = new TCHAR[len + 1];
+    TCHAR* buffer = new TCHAR[(long)len + 1];
     MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), buffer, len);
     buffer[len] = '\0';
     result.append(buffer);
@@ -140,7 +140,6 @@ static void entry(bool fix_cwd) {
     Event::addEventListener([](ServerStartedEV) {  // Server started event
         startWBThread();
         LOG("LiteLoader is distributed under the GPLv3 License");
-        LOG("Thanks to rhymc.com for supporting this project");
         checkUpdate();
     });
 
