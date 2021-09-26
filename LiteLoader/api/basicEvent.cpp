@@ -185,7 +185,7 @@ LIAPI void Event::addEventListener(function<bool(CmdBlockExeEV)> callback) {
 THook(bool,"?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
       BaseCommandBlock *_this, BlockSource *a2, CommandOrigin *a3, bool *a4)
 {
-    CmdBlockExeEV cmd_block_execute_event = {offBaseCommandBlock::getCMD(_this), offBaseCommandBlock::getPos(_this)};
+    CmdBlockExeEV cmd_block_execute_event = {offBaseCommandBlock::getCMD(_this), a3->getBlockPosition()};
 
     if (!CallEventEx(Cmd_block_exe_ev_call_backs, cmd_block_execute_event))
         return true;
