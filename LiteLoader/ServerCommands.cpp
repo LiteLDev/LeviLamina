@@ -10,7 +10,7 @@ bool versionCommand(CommandOrigin const &, CommandOutput &outp) {
 }
 
 void registerCommands() {
-    Event::addEventListener([](RegCmdEV ev) {  // Register commands
+    Event::addEventListener([](RegCmdEV ev) {  //Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
         std::string server_version = loaderapi::getServerVersion();
         if (server_version.find("1.17.1") != std::string::npos) {
