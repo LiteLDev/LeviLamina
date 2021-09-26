@@ -10,7 +10,6 @@
 
 轻量化的Bedrock Dedicated Server插件加载器  
 基于[BedrockX](https://github.com/Sysca11/BedrockX)  
-感谢[旋律云](https://www.rhymc.com/)对本项目的支持
 
 ## 安装
 ### Windows
