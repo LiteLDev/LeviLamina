@@ -1,4 +1,4 @@
 ﻿x64/
 .vs/
-LiteLoader/x64/
-Chakra/x64/
+LiteLoader/Release/
+Chakra/Release/
