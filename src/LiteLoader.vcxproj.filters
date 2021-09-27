@@ -10,6 +10,9 @@
     <Filter Include="Lib">
       <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\Utils">
+      <UniqueIdentifier>{f859b142-7ffa-4640-9db5-9651be70e1f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CheckUpdate.cpp" />
@@ -19,6 +22,9 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="dlsym.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
+    <ClCompile Include="Kernel\KVDBAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -39,7 +45,16 @@
     <ClInclude Include="Header\Loader.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Utils\KVDB.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="Header\LoaderApi.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Logger.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\lbpch.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,5 +68,6 @@
     <Library Include="..\third-party\openssl\lib\libssl.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
   </ItemGroup>
 </Project>

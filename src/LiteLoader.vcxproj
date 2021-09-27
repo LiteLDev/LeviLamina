@@ -139,7 +139,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -163,6 +163,7 @@
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="dlsym.cpp" />
+    <ClCompile Include="Kernel\KVDBAPI.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="ServerCommands.cpp" />
     <ClCompile Include="Version.cpp" />
@@ -176,12 +177,16 @@
   <ItemGroup>
     <ClInclude Include="Header\hash.h" />
     <ClInclude Include="Header\hook.h" />
+    <ClInclude Include="Header\lbpch.h" />
     <ClInclude Include="Header\Loader.h" />
     <ClInclude Include="Header\LoaderApi.h" />
+    <ClInclude Include="Header\Utils\KVDB.h" />
+    <ClInclude Include="Header\Utils\Logger.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib" />
+    <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
     <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
     <Library Include="..\third-party\openssl\lib\libssl.lib" />
   </ItemGroup>

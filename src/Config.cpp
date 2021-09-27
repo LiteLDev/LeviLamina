@@ -1,4 +1,4 @@
-#include <rapidjson/include/document.h>
+#include <rapidjson/document.h>
 #include <LoaderApi.h>
 #include <fstream>
 #include "pch.h"
