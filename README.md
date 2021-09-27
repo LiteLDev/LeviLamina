@@ -1,4 +1,6 @@
-# LiteLoader
+# LiteLoader 2.0
+# 重构中，敬请期待。
+# Refactoring,coming soon.
 [简体中文](README_zh-cn.md) | English  
 [Donate us(afdian)](https://afdian.net/@liteldev)  
 [Official Forum](https://forum.litebds.com/)  
