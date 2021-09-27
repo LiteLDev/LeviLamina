@@ -54,7 +54,7 @@ jobs:
     - name: Copy Output Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Release/*.dll D:/out/release
+        cp -a x64/Release/*.dll D:/out/release
         cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release   
       shell: bash
       
@@ -62,8 +62,8 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cp -a D:/out/release/* D:/out/dev/
-        cp -a Release/*.lib D:/out/dev/lib
-        cp -a Release/*.pdb D:/out/dev/pdb
+        cp -a x64/Release/*.lib D:/out/dev/lib
+        cp -a x64/Release/*.pdb D:/out/dev/pdb
         cp -a headers/* D:/out/dev/headers
       shell: bash
 
