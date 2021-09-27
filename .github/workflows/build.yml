@@ -21,9 +21,9 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        echo  >> Header/LoaderApi.h
-        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> headers/liteloader.h
-        cat Header/LoaderApi.h
+        echo  >> src/Header/LoaderApi.h
+        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> src/Header/LoaderApi.h
+        cat src/Header/LoaderApi.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
