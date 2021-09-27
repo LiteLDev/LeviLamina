@@ -21,9 +21,9 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        echo  >> headers/liteloader.h
-        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> headers/liteloader.h
-        cat headers/liteloader.h
+        echo  >> src/Header/LoaderApi.h
+        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> src/Header/LoaderApi.h
+        cat src/Header/LoaderApi.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
@@ -54,7 +54,7 @@ jobs:
     - name: Copy Output Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a x64/Release/*.dll D:/out/release
+        cp -a Release/*.dll D:/out/release
         cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release   
       shell: bash
       
@@ -62,9 +62,9 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cp -a D:/out/release/* D:/out/dev/
-        cp -a x64/Release/*.lib D:/out/dev/lib
-        cp -a x64/Release/*.pdb D:/out/dev/pdb
-        cp -a headers/* D:/out/dev/headers
+        cp -a Release/*.lib D:/out/dev/lib
+        cp -a Release/*.pdb D:/out/dev/pdb
+        cp -a src/Header/* D:/out/dev/headers
       shell: bash
 
     - name: Upload Release
