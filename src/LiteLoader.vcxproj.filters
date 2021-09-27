@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header">
+      <UniqueIdentifier>{d410e212-6fb1-4b5e-ad71-ca8719382134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel">
+      <UniqueIdentifier>{00986ecf-875a-4a73-8bf4-c0d13fa28a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CheckUpdate.cpp" />
+    <ClCompile Include="ServerCommands.cpp" />
+    <ClCompile Include="Version.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="dlsym.cpp" />
+    <ClCompile Include="LiteLoader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LiteLoader.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\hash.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\hook.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Loader.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LoaderApi.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\third-party\detours\lib\detours.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\third-party\openssl\lib\libcrypto.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="..\third-party\openssl\lib\libssl.lib">
+      <Filter>Lib</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
