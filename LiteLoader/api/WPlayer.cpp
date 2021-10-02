@@ -10,7 +10,7 @@
 #include <api/packetApi.h>
 
 LIAPI void WPlayer::sendText(string text, TextType tp) {
-    packetapi::sendMessage(v, tp, text);
+    v->sendNetworkPacket(packetapi::CreateTextPacket(tp, text));
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*>      MS_PC;
