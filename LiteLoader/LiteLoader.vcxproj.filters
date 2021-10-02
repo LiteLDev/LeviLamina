@@ -1097,6 +1097,9 @@
     <ClCompile Include="Config.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="api\OffsetHelper.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\libssl.lib">
