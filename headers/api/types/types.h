@@ -19,7 +19,8 @@ enum TextType : char {
 	SYSTEM = 6,
 	WHISPER = 7,
 	ANNOUNCEMENT = 8,
-	JSON = 9
+	JSON = 9,
+	JSON_WHISPER = 10
 };
 template <typename T>
 struct Wrapped {
