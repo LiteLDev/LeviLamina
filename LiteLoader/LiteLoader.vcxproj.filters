@@ -1029,6 +1029,9 @@
     <ClInclude Include="..\headers\LoaderApi.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\api\packetApi.h">
+      <Filter>头文件\api</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -1096,6 +1099,12 @@
     </ClCompile>
     <ClCompile Include="Config.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="api\OffsetHelper.cpp">
+      <Filter>源文件\api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\Packet.cpp">
+      <Filter>源文件\api</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

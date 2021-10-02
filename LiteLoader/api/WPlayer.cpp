@@ -1,32 +1,19 @@
-﻿#include <lbpch.h>
-#include <api\myPacket.h>
-#include <api\refl\playerMap.h>
-#include <api\types\types.h>
-#include <debug\MemSearcher.h>
+﻿#include <api/myPacket.h>
+#include <api/refl/playerMap.h>
+#include <api/types/types.h>
+#include <debug/MemSearcher.h>
+#include <lbpch.h>
 #include <mc/Certificate.h>
 #include <mc/Player.h>
-#include <mc\OffsetHelper.h>
-#include <stl\varint.h>
+#include <mc/OffsetHelper.h>
+#include <stl/varint.h>
+#include <api/packetApi.h>
 
 LIAPI void WPlayer::sendText(string text, TextType tp) {
-    // WBStream txtpkws;
-    // txtpkws.data.reserve(8 + text.size());
-    // txtpkws.apply((char)tp, (char)0, MCString(text));
-    // MyPkt<9> pk{ txtpkws };
-    // v->sendNetworkPacket(pk);
-    //上面是用不了的旧代码
-    Packet *pkt;
-    SymCall(
-        "?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
-        void *, Packet **, int)(&pkt, 9);  //创建包
-    dAccess<char, 48>(pkt)   = (char)tp;
-    dAccess<string, 56>(pkt) = u8"Server";
-    // dAccess<string, 48>(pkt) = this->getName();
-    dAccess<string, 88>(pkt) = text;
-    v->sendNetworkPacket(*pkt);
+    packetapi::sendMessage(v, tp, text);
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;
-static MSearcherEx<Certificate *> MS_PC;
+static MSearcherEx<Certificate*>      MS_PC;
 /*
 THook(void*,
 "??0ServerPlayer@@QEAA@AEAVLevel@@AEAVPacketSender@@AEAVNetworkHandler@@AEAVActiveTransfersManager@Server@ClientBlobCache@@W4GameType@@AEBVNetworkIdentifier@@EV?$function@$$A6AXAEAVServerPlayer@@@Z@std@@VUUID@mce@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$unique_ptr@VCertificate@@U?$default_delete@VCertificate@@@std@@@std@@H@Z",
@@ -66,15 +53,15 @@ false; return SymCall("??8NetworkIdentifier@@QEBA_NAEBV0@@Z", bool, void*, void*
         return rv;
 }
 */
-LIAPI NetworkIdentifier *WPlayer::_getNI() {
+LIAPI NetworkIdentifier* WPlayer::_getNI() {
     return offPlayer::getNetworkIdentifier(v);
     // return MS_NI.get(v);
 }
-LIAPI Certificate *WPlayer::_getCert() {
+LIAPI Certificate* WPlayer::_getCert() {
     return offPlayer::getCert(v);
     // return *MS_PC.get(v);
 }
-LIAPI void WPlayer::kick(const string &reason) {
+LIAPI void WPlayer::kick(const string& reason) {
     LocateS<ServerNetworkHandler>()->disconnectClient(*_getNI(), reason, false);
 }
 LIAPI void WPlayer::forceKick() {
@@ -119,13 +106,13 @@ LIAPI string WPlayer::getRealName() {
 LIAPI permlvl_t WPlayer::getPermLvl() {
     return v->getCommandPermissionLevel() & 0xff;
 }
-static MSearcherEx<BlockSource *> pPly_BS;
-LIAPI class BlockSource &WPlayer::getBlockSource_() {
+static MSearcherEx<BlockSource*> pPly_BS;
+LIAPI class BlockSource&         WPlayer::getBlockSource_() {
     if (!pPly_BS.myOff) {
         pPly_BS.init(
             v,
-            [](void *x) {
-                return (MreadPtr_Compare((const void ***)x, SYM("??_7BlockSource@@6B@")));
+            [](void* x) {
+                return (MreadPtr_Compare((const void***)x, SYM("??_7BlockSource@@6B@")));
             },
             0x348);
     }
