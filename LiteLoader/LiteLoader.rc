@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,1,2,0
- PRODUCTVERSION 1,1,2,0
+ FILEVERSION 1,2,2,0
+ PRODUCTVERSION 1,2,2,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -67,14 +67,14 @@ BEGIN
     BEGIN
         BLOCK "080004b0"
         BEGIN
-            VALUE "CompanyName", "LiteLoaderDev"
+            VALUE "CompanyName", "LiteLDev"
             VALUE "FileDescription", "A lightweight Bedorck Dedicated Server Plugin Loader "
-            VALUE "FileVersion", "1.1.2.0"
-            VALUE "InternalName", "LiteLoad.dll"
-            VALUE "LegalCopyright", "LiteLoader Developer"
-            VALUE "OriginalFilename", "LiteLoad.dll"
+            VALUE "FileVersion", "1.2.2.0"
+            VALUE "InternalName", "LiteLoader.dll"
+            VALUE "LegalCopyright", "LiteLoaderBDS Developers"
+            VALUE "OriginalFilename", "LiteLoader.dll"
             VALUE "ProductName", "LiteLoader For BDS"
-            VALUE "ProductVersion", "1.1.2.0"
+            VALUE "ProductVersion", "1.2.2.0"
         END
     END
     BLOCK "VarFileInfo"
