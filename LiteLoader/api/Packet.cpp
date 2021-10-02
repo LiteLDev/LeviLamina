@@ -5,7 +5,7 @@
 #include <mc/Player.h>
 
 namespace packetapi {
-LIAPI void sendMessage(ServerPlayer* sp, TextType tp, std::string text) {
+LIAPI MyPkt<MinecraftPacketIds(0x09)> CreateTextPacket(TextType tp, std::string text) {
     WBStream txtpkws;
     txtpkws.data.reserve(8 + text.size());
     txtpkws.apply((char)tp, (char)0);
@@ -28,6 +28,13 @@ LIAPI void sendMessage(ServerPlayer* sp, TextType tp, std::string text) {
     }
     txtpkws.apply("", "");
     MyPkt<MinecraftPacketIds(0x09)> pk{txtpkws};
-    sp->sendNetworkPacket(pk);
+    return pk;
+}
+
+LIAPI MyPkt<MinecraftPacketIds(0x55), false> CreateTransferPacket(std::string address, int port) {
+    WBStream ws;
+    ws.apply(MCString(address), (unsigned short)port);
+    MyPkt<MinecraftPacketIds(0x55), false> pk(ws);
+    return pk;
 }
 } // namespace packetapi
