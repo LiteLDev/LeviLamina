@@ -6,7 +6,10 @@ bool isFixListenPort();
 //Fix disconnect packet crash bug
 THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z", ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet) {
     if (isFixDisconnectBug()) {
-        return;
+        ServerPlayer* sp = thi->_getServerPlayer(*ni, (unsigned char)(uintptr_t)packet + 16);
+        if (!sp) {
+            return;
+        }
     }
     return original(thi, ni, packet);
 }
