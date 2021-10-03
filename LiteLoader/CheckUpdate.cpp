@@ -13,7 +13,7 @@ void checkUpdate() {
         if (res) {
             json.Parse(res->body.c_str());
             if (json.HasParseError()) {
-                std::cout << "[Liteloader] Failed to get updates(1)\n";
+                LOG("Failed to get updates(1)");
                 return;
             }
             auto arr                  = json.GetArray();
@@ -21,12 +21,12 @@ void checkUpdate() {
             int latestVersionNum      = arr[arr.Size() - 1]["versionNum"].GetInt();
             if (latestVersionNum > LITELOADER_VERSION_NUMBER) {
                 std::string content = arr[arr.Size() - 1]["content"].GetString();
-                LOG("[Liteloader] Found a new version: ", LatestRelease, " ", content);
+                LOG("Found a new version: ", LatestRelease, " ", content);
             } else if (latestVersionNum < LITELOADER_VERSION_NUMBER) {
-                LOG("[Liteloader] Using preview version: ", LITELOADER_VERSION);
+                LOG("Using preview version: ", LITELOADER_VERSION);
             }
         } else {
-            std::cout << "[Liteloader] Failed to get updates(0)\n";
+            LOG("Failed to get updates(0)");
         }
     });
     t.detach();

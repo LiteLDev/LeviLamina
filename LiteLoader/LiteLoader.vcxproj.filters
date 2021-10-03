@@ -1106,6 +1106,9 @@
     <ClCompile Include="api\Packet.cpp">
       <Filter>源文件\api</Filter>
     </ClCompile>
+    <ClCompile Include="BugFix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\lib\libssl.lib">

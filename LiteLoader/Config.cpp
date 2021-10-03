@@ -5,9 +5,14 @@
 
 extern Logger<stdio_commit> LOG;
 bool LoaderDebugMode = false;
+bool FixDisconnectBug = true;
 
 LIAPI bool loaderapi::isDebugMode() {
     return LoaderDebugMode;
+}
+
+bool isFixDisconnectBug() {
+    return FixDisconnectBug;
 }
 
 void loadConfig() {
@@ -18,7 +23,7 @@ void loadConfig() {
         LOG(config_file, " not found, creating configuration file");
         std::ofstream of(config_file);
         if (of) {
-            of << "{\n  \"DebugMode\": false\n}";
+            of << "{\n  \"DebugMode\": false,\n   \"FixDisconnectBug\": true\n}";
         } else {
             LOG("Configuration file creation failed");
         }
@@ -30,6 +35,15 @@ void loadConfig() {
         }
         rapidjson::Document document;
         document.Parse(json.c_str());
-        LoaderDebugMode = document["DebugMode"].GetBool();
+        if (!document["DebugMode"].IsNull()) {
+            LoaderDebugMode = document["DebugMode"].GetBool();
+        } else {
+            LOG("Could not found DebugMoade in config");
+        }     
+        if (!document["FixDisconnectBug"].IsNull()) {
+            FixDisconnectBug = document["FixDisconnectBug"].GetBool();
+        } else {
+            LOG("Could not found FixDisconnectBug in config");
+        }
     }
 }
