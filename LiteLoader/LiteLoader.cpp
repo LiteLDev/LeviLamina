@@ -1,6 +1,6 @@
 ﻿#include "pch.h"
 using std::vector;
-Logger<stdio_commit> LOG(stdio_commit{"[LL] "});
+Logger<stdio_commit>        LOG(stdio_commit{"[LL] "});
 
 static void printErrorMessage() {
     DWORD error_message_id = ::GetLastError();
