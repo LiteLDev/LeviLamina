@@ -6,6 +6,7 @@
 extern Logger<stdio_commit> LOG;
 bool LoaderDebugMode = false;
 bool FixDisconnectBug = true;
+bool FixListenPort    = true;
 
 LIAPI bool loaderapi::isDebugMode() {
     return LoaderDebugMode;
@@ -15,17 +16,21 @@ bool isFixDisconnectBug() {
     return FixDisconnectBug;
 }
 
+bool isFixListenPort() {
+    return FixListenPort;
+}
+
 void loadConfig() {
     std::string   config_file = "liteloader.json";
     std::ifstream fs;
     fs.open(config_file, std::ios::in);
     if (!fs) {
-        LOG(config_file, " not found, creating configuration file");
+        LOG("", config_file, "not found, creating configuration file");
         std::ofstream of(config_file);
         if (of) {
-            of << "{\n  \"DebugMode\": false,\n   \"FixDisconnectBug\": true\n}";
+            of << "{\n  \"DebugMode\": false,\n  \"FixDisconnectBug\": true,\n  \"FixListenPort\": true\n}";
         } else {
-            LOG("Configuration file creation failed");
+            LOG(" Configuration file creation failed");
         }
     } else {
         std::string json;
@@ -38,12 +43,17 @@ void loadConfig() {
         if (!document["DebugMode"].IsNull()) {
             LoaderDebugMode = document["DebugMode"].GetBool();
         } else {
-            LOG("Could not found DebugMoade in config");
+            LOG(" Could not found DebugMoade in config");
         }     
         if (!document["FixDisconnectBug"].IsNull()) {
             FixDisconnectBug = document["FixDisconnectBug"].GetBool();
         } else {
-            LOG("Could not found FixDisconnectBug in config");
+            LOG(" Could not found FixDisconnectBug in config");
+        }
+        if (!document["FixListenPort"].IsNull()) {
+            FixListenPort = document["FixListenPort"].GetBool();
+        } else {
+            LOG(" Could not found FixListenPort in config");
         }
     }
 }
