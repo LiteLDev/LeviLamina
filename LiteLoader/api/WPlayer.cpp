@@ -10,7 +10,15 @@
 #include <api/packetApi.h>
 
 LIAPI void WPlayer::sendText(string text, TextType tp) {
-    v->sendNetworkPacket(packetapi::CreateTextPacket(tp, text));
+    //v->sendNetworkPacket(packetapi::CreateTextPacket(tp, text));
+    Packet* pkt;
+    SymCall(
+        "?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
+        void*, Packet**, int)(&pkt, 9);
+    dAccess<char, 48>(pkt)   = (char)tp;
+    dAccess<string, 56>(pkt) = u8"Server";
+    dAccess<string, 88>(pkt) = text;
+    v->sendNetworkPacket(*pkt);
 }
 static MSearcherEx<NetworkIdentifier> MS_NI;
 static MSearcherEx<Certificate*>      MS_PC;

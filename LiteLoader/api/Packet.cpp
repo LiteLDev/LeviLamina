@@ -13,7 +13,7 @@ LIAPI MyPkt<MinecraftPacketIds(0x09)> CreateTextPacket(TextType tp, std::string 
         case CHAT:
         case WHISPER:
         case ANNOUNCEMENT:
-            txtpkws.apply("Server");
+            txtpkws.apply(MCString("Server"));
         case RAW:
         case TIP:
         case SYSTEM:
@@ -26,7 +26,7 @@ LIAPI MyPkt<MinecraftPacketIds(0x09)> CreateTextPacket(TextType tp, std::string 
             txtpkws.apply(MCString(text));
             txtpkws.apply((VarInts<int>)0);
     }
-    txtpkws.apply("", "");
+    txtpkws.apply(MCString(""), MCString(""));
     MyPkt<MinecraftPacketIds(0x09)> pk{txtpkws};
     return pk;
 }
