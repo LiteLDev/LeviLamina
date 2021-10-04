@@ -81,7 +81,7 @@ class Value;
 
 namespace RakNet {
 struct SystemAddress {
-    char           filler[264];
+    char           filler[17*8]; // uncertain?
     std::string toString() {
         char buf[128];
         SymCall("?ToString@SystemAddress@RakNet@@QEBAX_NPEADD@Z", void, void*, bool, char*, char)(
@@ -89,13 +89,18 @@ struct SystemAddress {
         return buf;
     }
 };
+struct RakNetGUID {
+    uint64_t unk;
+    short    unk8;
+};
 struct RakPeer {
     RakPeer(RakPeer const&) = delete;
     RakPeer(RakPeer&&)      = delete;
     SystemAddress getAdr(NetworkIdentifier const& ni) {
         SystemAddress rv;
+        RakNetGUID    guid = dAccess<RakNetGUID>(&ni, 8);
         SymCall("?GetSystemAddressFromGuid@RakPeer@RakNet@@UEBA?AUSystemAddress@2@URakNetGUID@2@@Z",
-                void, void*, SystemAddress*, NetworkIdentifier const*)(this, &rv, &ni);
+                void, void*, SystemAddress*, RakNetGUID const*)(this, &rv, &guid);
         return rv;
     }
 };
