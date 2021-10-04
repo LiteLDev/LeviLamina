@@ -148,6 +148,7 @@ class Actor;
 class HashedString {
     uint64_t hash;
     std::string str;
+    int64_t unk;
 
   public:
     std::string const &getString() const { return str; }
@@ -169,6 +170,7 @@ class HashedString {
     MCINLINE HashedString(const char *ch) {
         str  = ch;
         hash = computeHash(ch);
+        unk  = 0;
     }
 };
 struct ActorDefinitionIdentifier {
