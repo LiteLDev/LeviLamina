@@ -24,7 +24,7 @@ LIAPI MyPkt<MinecraftPacketIds(0x09)> CreateTextPacket(TextType tp, std::string 
         case POPUP:
         case JUKEBOX_POPUP:
             txtpkws.apply(MCString(text));
-            txtpkws.apply(0);
+            txtpkws.apply((VarInts<int>)0);
     }
     txtpkws.apply("", "");
     MyPkt<MinecraftPacketIds(0x09)> pk{txtpkws};
