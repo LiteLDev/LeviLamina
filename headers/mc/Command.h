@@ -152,10 +152,9 @@ class HashedString {
 
   public:
     std::string const &getString() const { return str; }
-    MCINLINE unsigned __int64 computeHash(char const *a0) {
-        unsigned __int64 (HashedString::*rv)(char const *);
-        *((void **)&rv) = dlsym("?computeHash@HashedString@@SA_KPEBD@Z");
-        return (this->*rv)(a0);
+    MCINLINE static unsigned __int64 computeHash(char const *a0) {
+        return ((unsigned __int64 (*)(char const *))dlsym(
+            "?computeHash@HashedString@@SA_KPEBD@Z"))(a0);
     }
     MCINLINE bool operator==(class HashedString const &a0) {
         bool (HashedString::*rv)(class HashedString const &);
