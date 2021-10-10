@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <api/types/types.h>
 #include <loader/Loader.h>
 #include <mc/Core.h>
