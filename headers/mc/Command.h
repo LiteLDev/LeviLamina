@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <api/types/types.h>
 #include <loader/Loader.h>
 #include <mc/Core.h>
@@ -227,7 +227,7 @@ struct InvertableFilter {
 };
 class CommandSelectorBase {
   public:
-    void *filler[192 / 8];
+    void *filler[200 / 8];
 #ifdef MC_COMMAND_EXTRA
     MCINLINE bool isExplicitIdSelector() const { return explicitIdSelector; }
     MCINLINE void addNameFilter(InvertableFilter<std::string> const &filter) {
