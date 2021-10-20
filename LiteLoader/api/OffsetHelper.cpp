@@ -11,12 +11,15 @@
 #include <mc/Block.h>
 #include <mc/BlockSource.h>
 #include <mc/Player.h>
+#include <mc/mass.h>
 #endif
 
 class Player;
 class Level;
 class Certificate;
 class BaseCommandBlock;
+class UserEntityIdentifierComponent;
+class UUID;
 typedef unsigned long long xuid_t;
 class ItemStack;
 namespace offPlayer {
@@ -30,8 +33,12 @@ LIAPI inline Level* getLevel(Actor* pl) {
     //return (Level *)*((uintptr_t *)((uintptr_t)pl + 888));
 }
 LIAPI inline Certificate* getCert(Player* pl) {
-    //return (Certificate *)*((uintptr_t *)pl + 377);
-    return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
+    auto ueic = SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ"
+        , UserEntityIdentifierComponent*, Actor*)(pl);
+    if (ueic)
+        return dAccess<Certificate*, 184>(ueic);
+    return nullptr;
+    //return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
 }
 
 LIAPI inline BlockSource* getBlockSource(Actor* ac) {
@@ -57,6 +64,7 @@ LIAPI inline xuid_t getXUID(Player* pl) {
 LIAPI inline std::string getXUIDString(Player* pl) {
     return getXUIDStringByCert(offPlayer::getCert((Player*)pl)).c_str();
 }
+
 
 LIAPI inline xuid_t getXUIDByCert(Certificate* cert) {
     std::string xuidstr = getXUIDStringByCert(cert);
