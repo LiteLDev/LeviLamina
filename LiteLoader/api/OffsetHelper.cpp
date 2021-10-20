@@ -18,27 +18,35 @@ class Player;
 class Level;
 class Certificate;
 class BaseCommandBlock;
-class UserEntityIdentifierComponent;
+class UserEntityIdentifierComponent {
+    NetworkIdentifier nid;
+    char              unk;
+    void*             uuid[2];
+    Certificate*      cert;
+};
 class UUID;
 typedef unsigned long long xuid_t;
 class ItemStack;
 namespace offPlayer {
-LIAPI inline NetworkIdentifier* getNetworkIdentifier(Player* pl) {
-    return SymCall("?getClientId@Player@@QEBAAEBVNetworkIdentifier@@XZ", NetworkIdentifier*,
-                   Player*)(pl);
-    //return (NetworkIdentifier *)((uintptr_t)pl + 2712);  // ServerPlayer::isHostingPlayer
+
+LIAPI inline UserEntityIdentifierComponent* getUserEntityIdentifierComponentbyActor(Actor* ac) {
+    auto ueic = SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(ac);
+    if (ueic) {
+        return ueic;
+    }
+    return nullptr;
 }
+
+LIAPI inline NetworkIdentifier* getNetworkIdentifier(Player* pl) {
+    return (NetworkIdentifier*)offPlayer::getUserEntityIdentifierComponentbyActor(pl);
+}
+
 LIAPI inline Level* getLevel(Actor* pl) {
     return SymCall("?getLevel@Actor@@QEBAAEBVLevel@@XZ", Level*, Actor*)(pl);
     //return (Level *)*((uintptr_t *)((uintptr_t)pl + 888));
 }
 LIAPI inline Certificate* getCert(Player* pl) {
-    auto ueic = SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ"
-        , UserEntityIdentifierComponent*, Actor*)(pl);
-    if (ueic)
-        return dAccess<Certificate*, 184>(ueic);
-    return nullptr;
-    //return SymCall("?getCertificate@Player@@QEBAPEBVCertificate@@XZ", Certificate*, Player*)(pl);
+    return dAccess<Certificate*, 184>(offPlayer::getUserEntityIdentifierComponentbyActor(pl));
 }
 
 LIAPI inline BlockSource* getBlockSource(Actor* ac) {
