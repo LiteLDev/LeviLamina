@@ -118,7 +118,6 @@ THook(void,"?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPa
         Player *, void *, void *, char)(self, id, *(char *)((uintptr_t)text + 16));
     auto msg = std::string(*(std::string *)((uintptr_t)text + 88));
     ChatEV chat_event = {sp, msg};
-    
     if (!CallEventEx(Chat_call_backs, chat_event))
         return;
     return original(self, id, text);
@@ -157,7 +156,6 @@ LIAPI void Event::addEventListener(function<bool(PlayerUseCmdEV)> callback) {
 }
 THook(bool,"?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
     MinecraftCommands *_this, unsigned int *a2, std::shared_ptr<CommandContext> x, char a4) {
-
     Player *sp  = MakeSP(x->getOrigin());
     bool result = original(_this, a2, x, a4);
     if (sp) {

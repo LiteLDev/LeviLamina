@@ -17,8 +17,15 @@ class Player;
 class Level;
 class Certificate;
 class BaseCommandBlock;
+class UserEntityIdentifierComponent {
+    NetworkIdentifier nid;
+    char              unk;
+    void*             uuid[2];
+    Certificate*      cert;
+};
 typedef unsigned long long xuid_t;
 namespace offPlayer {
+LIAPI inline UserEntityIdentifierComponent* getUserEntityIdentifierComponentbyActor(Actor* ac);
 LIAPI inline NetworkIdentifier* getNetworkIdentifier(Player* pl);
 LIAPI inline Level*       getLevel(Actor* pl);
 LIAPI inline Certificate* getCert(Player* pl);

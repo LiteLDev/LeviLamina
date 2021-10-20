@@ -122,7 +122,7 @@ LIAPI class BlockSource&         WPlayer::getBlockSource_() {
             [](void* x) {
                 return (MreadPtr_Compare((const void***)x, SYM("??_7BlockSource@@6B@")));
             },
-            0x348);
+            864);
     }
     return **pPly_BS.get(v);
     //_ZNK5Actor9getRegionEv
