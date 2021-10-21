@@ -45,11 +45,11 @@ class Vec3 {
         auto px = (int)x;
         auto py = (int)y;
         auto pz = (int)z;
-        if (px < 0)
+        if (px < 0 && px != x)
             px = px - 1;
-        if (px < 0)
+        if (py < 0 && py != y)
             py = py - 1;
-        if (pz < 0)
+        if (pz < 0 && pz != z)
             pz = pz - 1;
         return {px, py, pz};
     }
