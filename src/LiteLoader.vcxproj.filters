@@ -25,6 +25,7 @@
     <ClCompile Include="Kernel\KVDBAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Plugins.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -49,6 +50,9 @@
       <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Header\lbpch.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Plugins.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
