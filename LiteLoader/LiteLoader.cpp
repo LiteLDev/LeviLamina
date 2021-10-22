@@ -140,6 +140,7 @@ static void entry(bool fix_cwd) {
     Event::addEventListener([](ServerStartedEV) {  // Server started event
         startWBThread();
         LOG("LiteLoader is distributed under the GPLv3 License");
+        LOG(u8"感谢旋律云 rhymc.com 对本项目的支持");
         checkUpdate();
     });
 

@@ -44,12 +44,6 @@ bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 	}
 }
 
-void loadCsr() {
-	if (exists(path(TEXT("./plugins/BDSNetRunner.dll")))) {
-		loadLib(TEXT("./plugins/BDSNetRunner.dll"));
-	}
-}
-
 bool loadLiteLoader() {
 	if (!exists(path(TEXT("LiteLoader.dll"))))
 		return false;
@@ -63,7 +57,6 @@ void loadDlls() {
 		Sleep(3000);
 		exit(GetLastError());
 	}
-	loadCsr();
 
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
@@ -77,8 +70,7 @@ void loadDlls() {
 
 				if (dllName.empty() || dllName.front() == TEXT('#'))
 					continue;
-				if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
-					dllName.find(L"BDSNetRunner.dll") != std::wstring::npos)
+				if (dllName.find(L"LiteLoader.dll") != std::wstring::npos)
 					continue;
 				loadLib(dllName.c_str());
 			}
