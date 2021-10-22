@@ -1,4 +1,4 @@
-﻿#ifndef PCH_H
+#ifndef PCH_H
 #define PCH_H
 #include <LoaderApi.h>
 #include <Loader.h>
@@ -7,9 +7,11 @@
 // LiteLoader.cpp
 //#include <api/regCommandHelper.h>
 //#include <api/xuidreg/xuidreg.h>
+#include <Plugins.h>
 #include <lbpch.h>
 #include <filesystem>
 #include <map>
+#include <unordered_map>
 #include "framework.h"
 // CheckUpdate.cpp
 #include <rapidjson/document.h>

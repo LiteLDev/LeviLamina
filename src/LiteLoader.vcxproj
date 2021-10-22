@@ -111,6 +111,7 @@
       <PreprocessorDefinitions>_DEBUG;LITELOADER_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -165,6 +166,7 @@
     <ClCompile Include="dlsym.cpp" />
     <ClCompile Include="Kernel\KVDBAPI.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
+    <ClCompile Include="Plugins.cpp" />
     <ClCompile Include="ServerCommands.cpp" />
     <ClCompile Include="Version.cpp" />
   </ItemGroup>
@@ -180,6 +182,7 @@
     <ClInclude Include="Header\lbpch.h" />
     <ClInclude Include="Header\Loader.h" />
     <ClInclude Include="Header\LoaderApi.h" />
+    <ClInclude Include="Header\Plugins.h" />
     <ClInclude Include="Header\Utils\KVDB.h" />
     <ClInclude Include="Header\Utils\Logger.h" />
     <ClInclude Include="pch.h" />

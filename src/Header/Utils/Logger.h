@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <ctime>
 #include <fstream>
 #include <iostream>
@@ -163,13 +163,13 @@ struct stacked {
         _call<0, TC...>(std::forward<TC>(args)...);
     }
 };
-enum class LOGLVL : char { Debug = 0, Info = 1, Error = 2, Fatal = 3 };
+enum class LOGLVL : char { Debug = 0, Info = 1, Warn = 2, Error = 3, Fatal = 4 };
 
 template <typename COMMITER>
 struct Logger {
     COMMITER cmt;
     LOGLVL lvlmin;
-    static constexpr string_view LVLNAME[4] = {"DEBUG]", "INFO]", "ERROR]", "FATAL]"};
+    static constexpr string_view LVLNAME[5] = {"DEBUG]", "INFO]", "WARN]", "ERROR]", "FATAL]"};
     Logger(COMMITER &&cm) : cmt(std::forward<COMMITER>(cm)) { lvlmin = LOGLVL::Info; }
     template <typename A, typename B>
     static inline void __helper(A &x, B &&y) {
