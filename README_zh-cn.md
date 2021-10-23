@@ -32,7 +32,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 把.dll插件放到`plugins\`目录然后运行`bedrock_server_mod.exe`  
 
 ## 更多
-请参见[Docs](https://docs.litetitle.com/)
+请参见[Docs](https://docs.litebds.com/)
 
 ## 使用的开源项目及其许可证
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPL v3  
