@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <unordered_map>
 #ifdef LITELOADER_EXPORTS
 #    define LIAPI __declspec(dllexport)
 #else
@@ -36,5 +37,7 @@ LIAPI Plugin* tryGetPluginByName(std::string name);
 // @param name 插件名
 // @return 是否存在插件
 LIAPI bool hasPlugin(std::string name);
+// @return 所有插件信息
+LIAPI std::unordered_map<std::string, Plugin> getAllPlugins();
 
 };  // namespace loaderapi

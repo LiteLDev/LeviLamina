@@ -52,3 +52,7 @@ Plugin* loaderapi::tryGetPluginByName(std::string name) {
 bool loaderapi::hasPlugin(std::string name) {
     return ::hasPlugin(name);
 }
+
+std::unordered_map<std::string, Plugin> loaderapi::getAllPlugins() {
+    return plugins;
+}
