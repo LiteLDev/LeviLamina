@@ -1,6 +1,6 @@
 #include "pch.h"
 using std::vector;
-Logger<stdio_commit>        LOG(stdio_commit{"[LL] "});
+Logger<stdio_commit> LOG(stdio_commit{"[LL] "});
 
 static void printErrorMessage() {
     DWORD error_message_id = ::GetLastError();
@@ -17,9 +17,9 @@ static void printErrorMessage() {
     LocalFree(message_buffer);
 }
 
-static void fixPluginsLibDir() {  // add plugins folder to path to fix dependent problem
-    WCHAR *buffer = new WCHAR[8192];
-    auto sz       = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
+static void fixPluginsLibDir() { // add plugins folder to path to fix dependent problem
+    WCHAR*       buffer = new WCHAR[8192];
+    auto         sz     = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
     std::wstring CWD{buffer, sz};
@@ -53,7 +53,7 @@ static vector<std::wstring> getPreloadList() {
 
 extern std::string                             loadingPluginName;
 extern std::unordered_map<std::string, Plugin> plugins;
-static void loadPlugins() {
+static void                                    loadPlugins() {
     fixPluginsLibDir();
     std::filesystem::create_directory("plugins");
     std::filesystem::directory_iterator ent("plugins");
@@ -77,9 +77,13 @@ static void loadPlugins() {
                 auto pluginFileName = canonical(i.path()).filename().u8string();
                 LOG("Plugin " + pluginFileName + " loaded");
                 if (loadingPluginName.empty()) {
-                    LOG.p<LOGLVL::Error>(pluginFileName, " is not registered!");
-                    loadingPluginName = pluginFileName;
-                    registerPlugin(pluginFileName, "unknown plugin", "unknown");
+                    LOG.p<LOGLVL::Error>(pluginFileName, "is not registered!");
+                    loadingPluginName      = pluginFileName;
+                    auto pos          = loadingPluginName.find(".dll");
+                    if (pos != std::string::npos) {
+                        loadingPluginName.replace(pos, 5, "");
+                    }
+                    registerPlugin(loadingPluginName, "unknown plugin", "unknown");
                 }
                 completePluginInfo(loadingPluginName, canonical(i.path()).wstring(), lib);
                 loadingPluginName.clear();
@@ -107,13 +111,13 @@ static void loadPlugins() {
 }
 
 vector<function<void(PostInitEV)>> Post_init_call_backs;
-LIAPI void Event::addEventListener(function<void(PostInitEV)> callback) {
+LIAPI void                         Event::addEventListener(function<void(PostInitEV)> callback) {
     Post_init_call_backs.push_back(callback);
 }
 std::wstring s2ws(string str) {
     std::wstring result;
-    int    len    = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);
-    TCHAR* buffer = new TCHAR[(long)len + 1];
+    int          len    = MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), NULL, 0);
+    TCHAR*       buffer = new TCHAR[(long)len + 1];
     MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.size(), buffer, len);
     buffer[len] = '\0';
     result.append(buffer);
@@ -140,9 +144,9 @@ static void entry(bool fix_cwd) {
         FixUpCWD();
     }
     loadPlugins();
-    XIDREG::initAll();  // Initialize the xuid database
-    registerCommands(); // Register built-in commands
-    Event::addEventListener([](ServerStartedEV) {  // Server started event
+    XIDREG::initAll();                            // Initialize the xuid database
+    registerCommands();                           // Register built-in commands
+    Event::addEventListener([](ServerStartedEV) { // Server started event
         startWBThread();
         LOG("LiteLoader is distributed under the GPLv3 License");
         LCID           localeID = GetUserDefaultLCID();
@@ -153,7 +157,7 @@ static void entry(bool fix_cwd) {
         checkUpdate();
     });
 
-    PostInitEV post_init_ev;  // Register PostInit event
+    PostInitEV post_init_ev; // Register PostInit event
     for (size_t count = 0; count < Post_init_call_backs.size(); count++) {
         Post_init_call_backs[count](post_init_ev);
     }
@@ -180,9 +184,9 @@ std::string TCHAR2STRING(TCHAR* str) {
     return strstr;
 }
 
-THook(int, "main", int a, void *b) {
+THook(int, "main", int a, void* b) {
     std::ios::sync_with_stdio(false);
-    HWND  hwnd  = GetConsoleWindow();
+    HWND         hwnd = GetConsoleWindow();
     std::wstring s    = L"LiteLoaderBDS " + s2ws(LITELOADER_VERSION);
     SetWindowText(hwnd, s.c_str());
     entry(a > 1);

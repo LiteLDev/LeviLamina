@@ -3,16 +3,21 @@
 Logger<stdio_commit> LOG1(stdio_commit{"[LL] "});
 
 void checkUpdate();
-bool versionCommand(CommandOrigin const &, CommandOutput &outp) {
+unsigned short getBuiltinCommandLevel();
+bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     outp.success("The server is running Bedrock Dedicated Server " + loaderapi::getServerVersion() + " with LiteLoaderBDS " +
                  LITELOADER_VERSION + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS");
     return true;
 }
 
-bool pluginsCommand(CommandOrigin const&, CommandOutput& outp, optional<std::string> pl) {
+bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<std::string> pl) {
+    if (ori.getPermissionsLevel() < getBuiltinCommandLevel()) {
+        outp.error("You have no permission to use this command");
+        return false;
+    }
     if (pl.set) {
         std::string name   = pl.val();
-        auto plugin = loaderapi::tryGetPluginByName(name);
+        auto        plugin = loaderapi::tryGetPluginByName(name);
         if (plugin) {
             std::ostringstream oss;
             auto               fn = std::filesystem::path(plugin->filePath).filename().u8string();
@@ -35,14 +40,14 @@ bool pluginsCommand(CommandOrigin const&, CommandOutput& outp, optional<std::str
         }
         return true;
     }
-    auto plugins = loaderapi::getAllPlugins();
+    auto               plugins = loaderapi::getAllPlugins();
     std::ostringstream oss;
     oss << "Plugin Lists\n";
     for (auto& [name, plugin] : plugins) {
         // Plugin List
         // - LiteLoader(LiteLoader.dll)[v1.0.0-Beta]: plugin introduction
         auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
-        oss << "- " << name << "(" << fn << ")[" << plugin.version << "]: " 
+        oss << "- " << name << "(" << fn << ")[" << plugin.version << "]: "
             << plugin.introduction << std::endl;
     }
     oss << "\n* Send command \"plugins <Plugin Name>\" to get more information";
@@ -51,7 +56,7 @@ bool pluginsCommand(CommandOrigin const&, CommandOutput& outp, optional<std::str
 }
 
 void registerCommands() {
-    Event::addEventListener([](RegCmdEV ev) {  // Register commands
+    Event::addEventListener([](RegCmdEV ev) { // Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
 
         std::string server_version = loaderapi::getServerVersion();

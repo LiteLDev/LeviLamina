@@ -7,6 +7,7 @@ extern Logger<stdio_commit> LOG;
 bool LoaderDebugMode = false;
 bool FixDisconnectBug = true;
 bool FixListenPort    = true;
+unsigned short BuiltinCommandLevel = 0;
 
 LIAPI bool loaderapi::isDebugMode() {
     return LoaderDebugMode;
@@ -20,6 +21,10 @@ bool isFixListenPort() {
     return FixListenPort;
 }
 
+unsigned short getBuiltinCommandLevel() {
+    return BuiltinCommandLevel;
+}
+
 void loadConfig() {
     std::string   config_file = "liteloader.json";
     std::ifstream fs;
@@ -28,7 +33,7 @@ void loadConfig() {
         LOG("", config_file, "not found, creating configuration file");
         std::ofstream of(config_file);
         if (of) {
-            of << "{\n  \"DebugMode\": false,\n  \"FixDisconnectBug\": true,\n  \"FixListenPort\": true\n}";
+            of << "{\n  \"DebugMode\": false,\n  \"FixDisconnectBug\": true,\n  \"FixListenPort\": true,\n  \"BuiltinCommandLevel\": 0\n}";
         } else {
             LOG(" Configuration file creation failed");
         }
@@ -54,6 +59,11 @@ void loadConfig() {
             FixListenPort = document["FixListenPort"].GetBool();
         } else {
             LOG(" Could not found FixListenPort in config");
+        }
+        if (!document["BuiltinCommandLevel"].IsNull()) {
+            BuiltinCommandLevel = document["BuiltinCommandLevel"].GetUint();
+        } else {
+            LOG(" Could not found BuiltinCommandLevel in config");
         }
     }
 }
