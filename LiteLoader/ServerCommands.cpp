@@ -9,7 +9,32 @@ bool versionCommand(CommandOrigin const &, CommandOutput &outp) {
     return true;
 }
 
-bool pluginsCommand1(CommandOrigin const&, CommandOutput& outp) {
+bool pluginsCommand(CommandOrigin const&, CommandOutput& outp, optional<std::string> pl) {
+    if (pl.set) {
+        std::string name   = pl.val();
+        auto plugin = loaderapi::tryGetPluginByName(name);
+        if (plugin) {
+            std::ostringstream oss;
+            auto               fn = std::filesystem::path(plugin->filePath).filename().u8string();
+
+            oss << "Plugin [" << name << ']' << std::endl;
+            oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
+            oss << "- Version: " << plugin->version << std::endl;
+            oss << "- Introduction: " << plugin->introduction << std::endl;
+            if (!plugin->git.empty())
+                oss << "Git: " << plugin->git << std::endl;
+            if (!plugin->license.empty())
+                oss << "License: " << plugin->license << std::endl;
+            if (!plugin->website.empty())
+                oss << "Website: " << plugin->website << std::endl;
+            auto text = oss.str();
+            text.pop_back();
+            outp.success(text);
+        } else {
+            outp.error("Plugin [" + name + "] is not found!");
+        }
+        return true;
+    }
     auto plugins = loaderapi::getAllPlugins();
     std::ostringstream oss;
     oss << "Plugin Lists\n";
@@ -22,30 +47,6 @@ bool pluginsCommand1(CommandOrigin const&, CommandOutput& outp) {
     }
     oss << "\n* Send command \"plugins <Plugin Name>\" to get more information";
     outp.success(oss.str());
-    return true;
-}
-bool pluginsCommand2(CommandOrigin const&, CommandOutput& outp, std::string name) {
-    auto plugin = loaderapi::tryGetPluginByName(name);
-    if (plugin) {
-        std::ostringstream oss;
-        auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
-
-        oss << "Plugin [" << name << ']' << std::endl;
-        oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
-        oss << "- Version: " << plugin->version << std::endl;
-        oss << "- Introduction: " << plugin->introduction << std::endl;
-        if (!plugin->git.empty())
-            oss << "Git: " << plugin->git << std::endl;
-        if (!plugin->license.empty())
-            oss << "License: " << plugin->license << std::endl;
-        if (!plugin->website.empty())
-            oss << "Website: " << plugin->website << std::endl;
-        auto text = oss.str();
-        text.pop_back();
-        outp.success(text);
-    } else {
-        outp.error("Plugin [" + name + "] is not found!");
-    }
     return true;
 }
 
@@ -63,7 +64,6 @@ void registerCommands() {
         CmdOverload(version, versionCommand);
 
         MakeCommand("plugins", "Get plugin information", 0);
-        CmdOverload(plugins, pluginsCommand1);
-        CmdOverload(plugins, pluginsCommand2, "plugin name");
+        CmdOverload(plugins, pluginsCommand, "plugin name");
     });
 }
