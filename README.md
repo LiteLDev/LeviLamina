@@ -30,7 +30,7 @@ If you want to manage server file, use `docker volume --help` for more details
 Put .dll plugins into `plugins\` directory and run `bedrock_server_mod.exe`  
 
 ## More
-See [Docs](https://docs.litetitle.com/)
+See [Docs](https://docs.litebds.com/)
 
 ## LICENSE  
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
