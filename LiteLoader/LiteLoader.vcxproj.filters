@@ -1032,6 +1032,9 @@
     <ClInclude Include="..\headers\api\packetApi.h">
       <Filter>头文件\api</Filter>
     </ClInclude>
+    <ClInclude Include="..\headers\Plugins.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -1107,6 +1110,9 @@
       <Filter>源文件\api</Filter>
     </ClCompile>
     <ClCompile Include="BugFix.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -148,6 +148,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Users\Administrator\Desktop\LiteLoaderMain\headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -442,6 +443,7 @@
     <ClInclude Include="..\headers\mc\OffsetHelper.h" />
     <ClInclude Include="..\headers\mc\Player.h" />
     <ClInclude Include="..\headers\mc\VanillaBlocks.h" />
+    <ClInclude Include="..\headers\Plugins.h" />
     <ClInclude Include="..\headers\stl\Bstream.h" />
     <ClInclude Include="..\headers\stl\CBStorage.h" />
     <ClInclude Include="..\headers\stl\format.h" />
@@ -510,6 +512,7 @@
     <ClCompile Include="mc\ServiceLocator.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Plugins.cpp" />
     <ClCompile Include="scheduler\Sch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>

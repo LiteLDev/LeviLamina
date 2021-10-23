@@ -1,4 +1,4 @@
-﻿#include "pch.h"
+#include "pch.h"
 using std::vector;
 Logger<stdio_commit>        LOG(stdio_commit{"[LL] "});
 
@@ -50,22 +50,21 @@ static vector<std::wstring> getPreloadList() {
     }
     return preload_list;
 }
-static std::vector<std::pair<std::wstring, HMODULE>> libs;
-LIAPI std::vector<std::pair<std::wstring, HMODULE>> liteloader::getAllLibs() {
-    return libs;
-}
+
+extern std::string                             loadingPluginName;
+extern std::unordered_map<std::string, Plugin> plugins;
 static void loadPlugins() {
     fixPluginsLibDir();
     std::filesystem::create_directory("plugins");
     std::filesystem::directory_iterator ent("plugins");
-    short plugins                    = 0;
-    vector<std::wstring> preload_list = getPreloadList();
+    short                               pluginCount  = 0;
+    vector<std::wstring>                preload_list = getPreloadList();
 
     LOG("Loading plugins");
-    for (auto &i : ent) {
+    for (auto& i : ent) {
         if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             bool loaded = false;
-            for (auto &p : preload_list)
+            for (auto& p : preload_list)
                 if (p.find(std::wstring(i.path())) != std::wstring::npos) {
                     loaded = true;
                     break;
@@ -74,31 +73,37 @@ static void loadPlugins() {
                 continue;
             auto lib = LoadLibrary(i.path().c_str());
             if (lib) {
-                plugins++;
-                LOG("Plugin " + canonical(i.path()).filename().u8string() + " loaded");
-                libs.push_back({std::wstring{i.path().c_str()}, lib});
+                pluginCount++;
+                auto pluginFileName = canonical(i.path()).filename().u8string();
+                LOG("Plugin " + pluginFileName + " loaded");
+                if (loadingPluginName.empty()) {
+                    LOG.p<LOGLVL::Error>(pluginFileName, " is not registered!");
+                    loadingPluginName = pluginFileName;
+                    registerPlugin(pluginFileName, "unknown plugin", "unknown");
+                }
+                completePluginInfo(loadingPluginName, canonical(i.path()).wstring(), lib);
+                loadingPluginName.clear();
             } else {
                 LOG("Error when loading " + i.path().filename().u8string() + "");
                 printErrorMessage();
             }
         }
     }
-    for (auto &[name, h] : libs) {
-        auto fn = GetProcAddress(h, "onPostInit");
+    for (auto& [name, plugin] : plugins) {
+        auto fn = GetProcAddress(plugin.handler, "onPostInit");
         if (!fn) {
             // std::wcerr << "Warning!!! mod" << name << " doesnt have a onPostInit\n";
         } else {
             try {
                 ((void (*)())fn)();
             } catch (...) {
-                std::wcerr << "[Error] plugin " << name << " throws an exception when onPostInit\n";
+                std::wcerr << "[Error] plugin " << name.c_str() << " throws an exception when onPostInit\n";
                 std::this_thread::sleep_for(std::chrono::seconds(10));
                 exit(1);
             }
         }
     }
-    // libs.clear();
-    LOG(std::to_string(plugins) + " plugin(s) loaded");
+    LOG(std::to_string(pluginCount) + " plugin(s) loaded");
 }
 
 vector<function<void(PostInitEV)>> Post_init_call_backs;
@@ -143,7 +148,7 @@ static void entry(bool fix_cwd) {
         LCID           localeID = GetUserDefaultLCID();
         unsigned short lang     = localeID & 0xFF;
         if (lang == LANG_CHINESE) {
-            LOG(u8"感谢旋律云 rhymc.com 对本项目的支持");
+            LOG(u8"\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         }
         checkUpdate();
     });
