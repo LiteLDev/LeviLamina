@@ -48,7 +48,7 @@ jobs:
     - name: Copy SymDB2 Gen
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Tool/SymDB2.exe D:/out/release
+        cp -a Tools/SymDB2.exe D:/out/release
       shell: bash
     
     - name: Copy Output Files
