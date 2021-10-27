@@ -21,9 +21,9 @@ jobs:
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        echo  >> src/Header/LoaderApi.h
-        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> src/Header/LoaderApi.h
-        cat src/Header/LoaderApi.h
+        echo  >> LiteLoader/Header/LoaderApi.h
+        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Header/LoaderApi.h
+        cat LiteLoader/Header/LoaderApi.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
@@ -64,7 +64,7 @@ jobs:
         cp -a D:/out/release/* D:/out/dev/
         cp -a Release/*.lib D:/out/dev/lib
         cp -a Release/*.pdb D:/out/dev/pdb
-        cp -a src/Header/* D:/out/dev/headers
+        cp -a LiteLoader/Header/* D:/out/dev/headers
       shell: bash
 
     - name: Upload Release
