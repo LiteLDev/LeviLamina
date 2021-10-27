@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29926.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chakra", "Chakra\Chakra.vcxproj", "{0136A4C1-10AF-480B-B845-006821CE5054}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiteLoader", "src\LiteLoader.vcxproj", "{A52A258C-73B1-4F64-B4F6-2859CE6262C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiteLoader", "LiteLoader\LiteLoader.vcxproj", "{A52A258C-73B1-4F64-B4F6-2859CE6262C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
