@@ -1,30 +1,28 @@
 #include <rapidjson/document.h>
-#include <LoaderApi.h>
+#include "Config.h"
+#include <Utils/Logger.h>
 #include <fstream>
-#include "pch.h"
 
-extern Logger<stdio_commit> LOG;
 bool LoaderDebugMode = false;
 
-LIAPI bool loaderapi::isDebugMode() {
-    return LoaderDebugMode;
-}
-
-void loadConfig() {
-    std::string   config_file = "liteloader.json";
+void LoadLLConfig() {
+    std::string config_file = "liteloader.json";
     std::ifstream fs;
     fs.open(config_file, std::ios::in);
-    if (!fs) {
-        LOG(config_file, " not found, creating configuration file");
+    if (!fs)
+    {
+        Logger::warn(config_file, " not found, creating configuration file");
         std::ofstream of(config_file);
         if (of) {
             of << "{\n  \"DebugMode\": false\n}";
-        } else {
-            LOG("Configuration file creation failed");
         }
-    } else {
+        else {
+            Logger::error("Configuration file creation failed");
+        }
+    }
+    else {
         std::string json;
-        char        buf[1024];
+        char buf[1024];
         while (fs.getline(buf, 1024)) {
             json.append(buf);
         }

@@ -13,47 +13,85 @@
     <Filter Include="Header\Utils">
       <UniqueIdentifier>{f859b142-7ffa-4640-9db5-9651be70e1f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource">
+      <UniqueIdentifier>{a29273cf-1024-42da-bbca-c7b68d0bd7d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Utils">
+      <UniqueIdentifier>{db8c7097-58e9-4305-a23c-ca484d7f7849}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CheckUpdate.cpp" />
-    <ClCompile Include="ServerCommands.cpp" />
-    <ClCompile Include="Version.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="dlsym.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
-    <ClCompile Include="Kernel\KVDBAPI.cpp">
+    <ClCompile Include="PluginManager.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="Kernel\Utils\CsLock.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LLAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Plugins.cpp" />
+    <ClCompile Include="Kernel\Utils\Logger.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\StringHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\WinHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ServerAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\KVDB.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\SymDB.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="pch.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\hash.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\hook.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Loader.h">
+    <ClInclude Include="Header\HookAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\KVDB.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LoaderApi.h">
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Header\Utils\CsLock.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Global.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LLAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\Logger.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\lbpch.h">
+    <ClInclude Include="Header\Utils\PatchHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource\resource.h">
+      <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ServerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Plugins.h">
-      <Filter>Header</Filter>
+    <ClInclude Include="PluginManager.h" />
+    <ClInclude Include="Header\Utils\StringHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\WinHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Hash.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -74,9 +112,12 @@
     <None Include="cpp.hint">
       <Filter>Lib</Filter>
     </None>
+    <None Include="Resource\LiteLoader.aps">
+      <Filter>Resource</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="LiteLoader.rc">
+    <ResourceCompile Include="Resource\LiteLoader.rc">
       <Filter>Lib</Filter>
     </ResourceCompile>
   </ItemGroup>

@@ -1,0 +1,4 @@
+#pragma once
+
+#define LITELOADER_VERSION "2.0.0"
+#define LITELOADER_VERSION_NUMBER 20

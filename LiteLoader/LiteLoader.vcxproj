@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)LiteLoader/Header;$(SolutionDir)third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader/Header;$(SolutionDir)third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -46,12 +46,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>Async</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -65,29 +66,42 @@
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="dlsym.cpp" />
-    <ClCompile Include="Kernel\KVDBAPI.cpp" />
+    <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="Kernel\ServerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\CsLock.cpp" />
+    <ClCompile Include="Kernel\Utils\Logger.cpp" />
+    <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\SymDB.cpp" />
+    <ClCompile Include="Kernel\Utils\KVDB.cpp" />
+    <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
-    <ClCompile Include="Plugins.cpp" />
-    <ClCompile Include="ServerCommands.cpp" />
-    <ClCompile Include="Version.cpp" />
+    <ClCompile Include="PluginManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
+    <None Include="Resource\LiteLoader.aps" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="LiteLoader.rc" />
+    <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\hash.h" />
-    <ClInclude Include="Header\hook.h" />
-    <ClInclude Include="Header\lbpch.h" />
-    <ClInclude Include="Header\Loader.h" />
-    <ClInclude Include="Header\LoaderApi.h" />
-    <ClInclude Include="Header\Plugins.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="Header\Global.h" />
+    <ClInclude Include="Header\LLAPI.h" />
+    <ClInclude Include="Header\ServerAPI.h" />
+    <ClInclude Include="Header\Utils\CsLock.h" />
+    <ClInclude Include="Header\Utils\Hash.h" />
+    <ClInclude Include="Header\HookAPI.h" />
+    <ClInclude Include="Header\Utils\PatchHelper.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\Utils\KVDB.h" />
     <ClInclude Include="Header\Utils\Logger.h" />
-    <ClInclude Include="pch.h" />
+    <ClInclude Include="Header\Utils\StringHelper.h" />
+    <ClInclude Include="Header\Utils\WinHelper.h" />
+    <ClInclude Include="Resource\resource.h" />
+    <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib" />

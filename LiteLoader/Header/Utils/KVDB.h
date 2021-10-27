@@ -1,9 +1,9 @@
 ﻿#pragma once
-#include <LoaderApi.h>
+#include <Global.h>
 #include <functional>
 #include <string_view>
 #include <unordered_map>
-#include <leveldb\c.h>
+#include <leveldb/c.h>
 #include <leveldb/cache.h>
 #include <leveldb/db.h>
 #include <leveldb/filter_policy.h>

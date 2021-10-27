@@ -1,6 +1,4 @@
-﻿//#include<lbpch.h>
-
-#include <cstdio>
+﻿#include <cstdio>
 #include <filesystem>
 #include <fstream>
 #include <list>
@@ -9,9 +7,10 @@
 #include <thread>
 #include <unordered_map>
 #include <vector>
-#include "framework.h"
-#include "pch.h"
+#include <Windows.h>
+#include <Utils/Hash.h>
 #include <detours/include/detours.h>
+#include <LLAPI.h>
 using std::list;
 using std::string, std::string_view;
 using std::unordered_map, std::vector;
@@ -238,7 +237,7 @@ void InitFastDlsym() {
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
 
-void  loadConfig();
+void  LoadLLConfig();
 
 void *dlsym_real(const char *x) {
     
@@ -248,8 +247,8 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        loadConfig();
-        if (loaderapi::isDebugMode()) {       
+        LoadLLConfig();
+        if (LL::isDebugMode()) {       
             printf("=================LiteLoader================\n");
             printf(" ____             __  __           _      \n");
             printf("|  _ \\  _____   _|  \\/  | ___   __| | ___ \n");
