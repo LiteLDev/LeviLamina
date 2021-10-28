@@ -26,7 +26,6 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="PluginManager.cpp" />
-    <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -48,7 +47,10 @@
     <ClCompile Include="Kernel\Utils\SymDB.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\Logger.cpp" />
+    <ClCompile Include="Kernel\Utils\Logger.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -88,7 +90,9 @@
     <ClInclude Include="Header\Utils\Hash.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils\Logger.h" />
+    <ClInclude Include="Header\Utils\Logger.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">

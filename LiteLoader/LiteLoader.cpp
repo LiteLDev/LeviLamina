@@ -2,10 +2,10 @@
 #include <vector>
 #include <string>
 #include <iostream>
-
 #include <Utils/Logger.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
+#include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
 #include <Version.h>
@@ -35,14 +35,20 @@ void startWBThread();
 void checkUpdate();
 void registerCommands();
 
-void entry() {
+void entry()
+{
+    //Set global SEH-Exception handler
+    _set_se_translator(seh_exception::TranslateSEHtoCE);
+
     //Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
     FixUpCWD();
     FixPluginsLibDir();
 
+    //Load plugins
     LoadMain();
+
     //XIDREG::initAll();  // Initialize the xuid database
    // registerCommands(); // Register built-in commands
    // Event::addEventListener([](ServerStartedEV) {  // Server started event
