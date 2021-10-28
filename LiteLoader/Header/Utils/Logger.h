@@ -1,165 +1,272 @@
 #pragma once
-#include <Global.h>
 #include <string>
-#include <ctime>
-#include <fmt/color.h>
-#include <fmt/core.h>
-#include <fmt/os.h>
-#include <Utils/CsLock.h>
-#include <fstream>
+#include <cstdarg>
+#include <iostream>
 
-LIAPI extern CsLock Lock;
+/////////////////////////////////////////
+// Usage:
+// 
+//   using namespace Logger;
+// 
+//   Info() << "hello" << 77 << endl;
+//   Info("hello,", string("alex"), 3) << endl;
+//   Info().printf("%s, %d\n","alex", 3);
+// 
+// [Log, Info, Warn, Error, Fatal]
+// 
+/////////////////////////////////////////
 
-namespace Logger 
+std::string GetCurrentDateTimeStr();
+
+namespace Logger
 {
-    template <typename... Args>
-    LIAPI void log(const std::string& format_str, const Args&... args);
+    class Log
+    {
+    public:
+        Log() = default;
 
-    template <typename... Args>
-    LIAPI void log(const char* format_str, const Args&... args);
+        Log(const Log&) = delete;
 
+        template <class T>
+        Log(T value) {
+            std::cout << value;
+        }
 
-    template <typename... Args>
-    LIAPI void info(const std::string& format_str, const Args&... args);
+        template <class T, class... Args>
+        Log(T value, Args... args) {
+            std::cout << value;
+            Log(args...);
+        }
 
-    template <typename... Args>
-    LIAPI void info(const char* format_str, const Args&... args);
+        Log& printf(const char* format, ...) {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
 
+        Log& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
 
-    template <typename... Args>
-    LIAPI void warn(const std::string& format_str, const Args&... args);
+        template <typename T>
+        Log& operator<<(T value) {
+            std::cout << value;
+            return *this;
+        }
 
-    template <typename... Args>
-    LIAPI void warn(const char* format_str, const Args&... args);
+        Log& operator<<(void (*obj)(Log&)) {
+            obj(*this);
+            return *this;
+        }
+    };
 
+    inline void endl(Log& logger) {
+        logger << '\n';
+        logger.flush();
+    }
 
-    template <typename... Args>
-    LIAPI void error(const std::string& format_str, const Args&... args);
+	class Info
+	{
+	public:
+		Info()
+		{
+            std::cout << "[" << GetCurrentDateTimeStr() << " Info] ";
+		}
 
-    template <typename... Args>
-    LIAPI void error(const char* format_str, const Args&... args);
-}
+        Info(const Info&) = delete;
 
+        template <class T>
+        Info(T value)
+        {
+            std::cout << value;
+        }
 
+        template <class T, class... Args>
+        Info(T value, Args... args)
+        {
+            std::cout << value;
+            Info(args...);
+        }
 
+		Info& printf(const char* format, ...)
+        {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
 
+        Info& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
 
+		template <typename T>
+        Info& operator<<(T value)
+		{
+            std::cout << value;
+            return *this;
+        }
 
+        Info& operator<<(void (*obj)(Info&)) {
+            obj(*this);
+            return *this;
+        }
+    };
 
+    inline void endl(Info& logger) {
+        logger << '\n';
+        logger.flush();
+    }
 
+    class Warn {
+    public:
+        Warn() {
+            std::cout << "[" << GetCurrentDateTimeStr() << " Warning] ";
+        }
 
+        Warn(const Warn&) = delete;
 
+        template <class T>
+        Warn(T value) {
+            std::cout << value;
+        }
 
+        template <class T, class... Args>
+        Warn(T value, Args... args) {
+            std::cout << value;
+            Warn(args...);
+        }
 
+        Warn& printf(const char* format, ...) {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
 
+        Warn& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
 
+        template <typename T>
+        Warn& operator<<(T value) {
+            std::cout << value;
+            return *this;
+        }
 
+        Warn& operator<<(void (*obj)(Warn&)) {
+            obj(*this);
+            return *this;
+        }
+    };
 
+    inline void endl(Warn& logger) {
+        logger << '\n';
+        logger.flush();
+    }
 
+    class Error {
+    public:
+        Error() {
+            std::cout << "[" << GetCurrentDateTimeStr() << " Error] ";
+        }
 
+        Error(const Error&) = delete;
 
+        template <class T>
+        Error(T value) {
+            std::cout << value;
+        }
 
+        template <class T, class... Args>
+        Error(T value, Args... args) {
+            std::cout << value;
+            Error(args...);
+        }
 
+        Error& printf(const char* format, ...) {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
 
+        Error& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
 
-template <typename... Args>
-void Logger::log(const std::string& format_str, const Args&... args) {
-    std::string tmp = fmt::format("{}\n", fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        template <typename T>
+        Error& operator<<(T value) {
+            std::cout << value;
+            return *this;
+        }
 
-template <typename... Args>
-void Logger::log(const char* format_str, const Args&... args) {
-    std::string tmp = fmt::format("{}\n", fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        Error& operator<<(void (*obj)(Error&)) {
+            obj(*this);
+            return *this;
+        }
+    };
 
-template <typename... Args>
-void Logger::info(const std::string& format_str, const Args&... args) {
-    auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+    inline void endl(Error& logger) {
+        logger << '\n';
+        logger.flush();
+    }
 
-template <typename... Args>
-void Logger::info(const char* format_str, const Args&... args) {
-    auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+    class Fatal {
+    public:
+        Fatal() {
+            std::cout << "[" << GetCurrentDateTimeStr() << " FATAL] ";
+        }
 
-template <typename... Args>
-void Logger::error(const std::string& format_str, const Args&... args) {
-    auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        Fatal(const Fatal&) = delete;
 
-template <typename... Args>
-void Logger::error(const char* format_str, const Args&... args) {
-    auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        template <class T>
+        Fatal(T value) {
+            std::cout << value;
+        }
 
-template <typename... Args>
-void Logger::warn(const std::string& format_str, const Args&... args) {
-    auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        template <class T, class... Args>
+        Fatal(T value, Args... args) {
+            std::cout << value;
+            Fatal(args...);
+        }
 
-template <typename... Args>
-void Logger::warn(const char* format_str, const Args&... args) {
-    auto ti = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
-    Lock.lock();
-    fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, tmp);
-    /* if (LogFile) {
-        *LogFile << tmp;
-        LogFile->flush();
-    }*/
-    Lock.unlock();
-}
+        Fatal& printf(const char* format, ...) {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
+
+        Fatal& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
+
+        template <typename T>
+        Fatal& operator<<(T value) {
+            std::cout << value;
+            return *this;
+        }
+
+        Fatal& operator<<(void (*obj)(Fatal&)) {
+            obj(*this);
+            return *this;
+        }
+    };
+
+    inline void endl(Fatal& logger) {
+        logger << '\n';
+        logger.flush();
+    }
+} // namespace Logger

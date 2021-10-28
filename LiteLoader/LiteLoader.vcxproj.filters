@@ -33,9 +33,6 @@
     <ClCompile Include="Kernel\LLAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\Logger.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\StringHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -51,6 +48,7 @@
     <ClCompile Include="Kernel\Utils\SymDB.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Utils\Logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -71,9 +69,6 @@
     <ClInclude Include="Header\LLAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils\Logger.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Utils\PatchHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
@@ -93,6 +88,7 @@
     <ClInclude Include="Header\Utils\Hash.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Utils\Logger.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">

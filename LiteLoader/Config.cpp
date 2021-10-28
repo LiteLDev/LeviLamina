@@ -11,13 +11,13 @@ void LoadLLConfig() {
     fs.open(config_file, std::ios::in);
     if (!fs)
     {
-        Logger::warn(config_file, " not found, creating configuration file");
+        Logger::Warn(config_file, " not found, creating configuration file");
         std::ofstream of(config_file);
         if (of) {
             of << "{\n  \"DebugMode\": false\n}";
         }
         else {
-            Logger::error("Configuration file creation failed");
+            Logger::Error("Configuration file creation failed");
         }
     }
     else {

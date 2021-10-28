@@ -48,7 +48,7 @@ void LoadMain()
     int pluginCount  = 0;
     vector<std::wstring> preloadList = GetPreloadList();
 
-    Logger::info("Loading plugins");
+    Logger::Info("Loading plugins");
     for (auto& i : ent) {
         if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             bool loaded = false;
@@ -64,14 +64,14 @@ void LoadMain()
             if (lib) {
                 pluginCount++;
                 auto pluginFileName = canonical(i.path()).filename().u8string();
-                Logger::info("Plugin " + pluginFileName + " loaded");
+                Logger::Info("Plugin " + pluginFileName + " loaded");
 
                 if (GetPlugin(lib) == nullptr) {
                     RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
                 }
             } else {
-                Logger::error("Error when loading " + i.path().filename().u8string());
-                Logger::error(GetLastErrorMessage());
+                Logger::Error("Error when loading " + i.path().filename().u8string());
+                Logger::Error() << GetLastErrorMessage() << Logger::endl;
             }
         }
     }
@@ -92,5 +92,5 @@ void LoadMain()
             }
         }
     }
-    Logger::info(std::to_string(pluginCount) + " plugin(s) loaded");
+    Logger::Info(std::to_string(pluginCount) + " plugin(s) loaded");
 }

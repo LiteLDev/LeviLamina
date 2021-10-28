@@ -67,10 +67,10 @@
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\Logger.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
-    <ClCompile Include="Kernel\Utils\Logger.cpp" />
     <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
     <ClCompile Include="Kernel\Utils\SymDB.cpp" />
     <ClCompile Include="Kernel\Utils\KVDB.cpp" />
@@ -93,11 +93,11 @@
     <ClInclude Include="Header\Utils\CsLock.h" />
     <ClInclude Include="Header\Utils\Hash.h" />
     <ClInclude Include="Header\HookAPI.h" />
+    <ClInclude Include="Header\Utils\Logger.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\Utils\KVDB.h" />
-    <ClInclude Include="Header\Utils\Logger.h" />
     <ClInclude Include="Header\Utils\StringHelper.h" />
     <ClInclude Include="Header\Utils\WinHelper.h" />
     <ClInclude Include="Resource\resource.h" />
