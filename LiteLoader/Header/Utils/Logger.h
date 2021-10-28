@@ -12,7 +12,7 @@
 //   Info("hello,", string("alex"), 3) << endl;
 //   Info().printf("%s, %d\n","alex", 3);
 // 
-// [Log, Info, Warn, Error, Fatal]
+// [Debug, Log, Info, Warn, Error, Fatal]
 // 
 /////////////////////////////////////////
 
@@ -64,6 +64,55 @@ namespace Logger
     };
 
     inline void endl(Log& logger) {
+        logger << '\n';
+        logger.flush();
+    }
+
+    class Debug {
+    public:
+        Debug() {
+            std::cout << "[" << GetCurrentDateTimeStr() << " Debug] ";
+        }
+
+        Debug(const Debug&) = delete;
+
+        template <class T>
+        Debug(T value) {
+            std::cout << value;
+        }
+
+        template <class T, class... Args>
+        Debug(T value, Args... args) {
+            std::cout << value;
+            Debug(args...);
+        }
+
+        Debug& printf(const char* format, ...) {
+            va_list args;
+            va_start(args, format);
+            vprintf(format, args);
+            va_end(args);
+            return *this;
+        }
+
+        Debug& flush() {
+            std::cout << std::flush;
+            return *this;
+        }
+
+        template <typename T>
+        Debug& operator<<(T value) {
+            std::cout << value;
+            return *this;
+        }
+
+        Debug& operator<<(void (*obj)(Debug&)) {
+            obj(*this);
+            return *this;
+        }
+    };
+
+    inline void endl(Debug& logger) {
         logger << '\n';
         logger.flush();
     }
