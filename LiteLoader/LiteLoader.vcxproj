@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib" />
+    <Library Include="..\third-party\FMT\lib\fmt.lib" />
     <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
     <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
     <Library Include="..\third-party\openssl\lib\libssl.lib" />

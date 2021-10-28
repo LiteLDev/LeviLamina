@@ -5,6 +5,7 @@
 #include <fmt/color.h>
 #include <fmt/core.h>
 #include <fmt/os.h>
+#include <fmt/chrono.h>
 #include <Utils/CsLock.h>
 #include <fstream>
 
@@ -89,7 +90,7 @@ void Logger::log(const char* format_str, const Args&... args) {
 template <typename... Args>
 void Logger::info(const std::string& format_str, const Args&... args) {
     auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(tmp);
     /* if (LogFile) {
@@ -102,7 +103,7 @@ void Logger::info(const std::string& format_str, const Args&... args) {
 template <typename... Args>
 void Logger::info(const char* format_str, const Args&... args) {
     auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} INFO] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(tmp);
     /* if (LogFile) {
@@ -115,7 +116,7 @@ void Logger::info(const char* format_str, const Args&... args) {
 template <typename... Args>
 void Logger::error(const std::string& format_str, const Args&... args) {
     auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, tmp);
     /* if (LogFile) {
@@ -128,7 +129,7 @@ void Logger::error(const std::string& format_str, const Args&... args) {
 template <typename... Args>
 void Logger::error(const char* format_str, const Args&... args) {
     auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} ERROR] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, tmp);
     /* if (LogFile) {
@@ -141,7 +142,7 @@ void Logger::error(const char* format_str, const Args&... args) {
 template <typename... Args>
 void Logger::warn(const std::string& format_str, const Args&... args) {
     auto        ti  = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, tmp);
     /* if (LogFile) {
@@ -154,7 +155,7 @@ void Logger::warn(const std::string& format_str, const Args&... args) {
 template <typename... Args>
 void Logger::warn(const char* format_str, const Args&... args) {
     auto ti = _time64(0);
-    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", _localtime64(&ti), fmt::format(format_str, args...));
+    std::string tmp = fmt::format("[{:%Y-%m-%d %H:%M:%S:%MS} WARN] {}\n", *_localtime64(&ti), fmt::format(format_str, args...));
     Lock.lock();
     fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, tmp);
     /* if (LogFile) {

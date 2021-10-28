@@ -107,6 +107,9 @@
     <Library Include="..\third-party\leveldb\lib\leveldb.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="..\third-party\FMT\lib\fmt.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint">
