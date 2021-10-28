@@ -3,16 +3,17 @@
 #include <Utils/Logger.h>
 #include <fstream>
 
+#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/liteloader.json"
+
 bool LoaderDebugMode = false;
 
 void LoadLLConfig() {
-    std::string config_file = "liteloader.json";
     std::ifstream fs;
-    fs.open(config_file, std::ios::in);
+    fs.open(LITELOADER_CONFIG_FILE, std::ios::in);
     if (!fs)
     {
-        Logger::Warn(config_file, " not found, creating configuration file");
-        std::ofstream of(config_file);
+        Logger::Warn(LITELOADER_CONFIG_FILE, " not found, creating configuration file");
+        std::ofstream of(LITELOADER_CONFIG_FILE);
         if (of) {
             of << "{\n  \"DebugMode\": false\n}";
         }
