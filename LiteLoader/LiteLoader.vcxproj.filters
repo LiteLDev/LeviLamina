@@ -93,6 +93,9 @@
     <ClInclude Include="Header\Utils\Logger.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="SimpleLogger.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">
@@ -107,7 +110,7 @@
     <Library Include="..\third-party\leveldb\lib\leveldb.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\FMT\lib\fmt.lib">
+    <Library Include="SymDBHelper.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

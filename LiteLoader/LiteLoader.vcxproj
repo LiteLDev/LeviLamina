@@ -60,6 +60,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
+      <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -101,14 +102,15 @@
     <ClInclude Include="Header\Utils\StringHelper.h" />
     <ClInclude Include="Header\Utils\WinHelper.h" />
     <ClInclude Include="Resource\resource.h" />
+    <ClInclude Include="SimpleLogger.h" />
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib" />
-    <Library Include="..\third-party\FMT\lib\fmt.lib" />
     <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
     <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
     <Library Include="..\third-party\openssl\lib\libssl.lib" />
+    <Library Include="SymDBHelper.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

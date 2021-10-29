@@ -1,5 +1,6 @@
-﻿// dllmain.cpp : 定义 DLL 应用程序的入口点。
-#include <Windows.h>
+﻿#include <Windows.h>
+
+#pragma comment(lib, "SymDBHelper.lib")
 
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
 {
