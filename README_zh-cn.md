@@ -15,7 +15,20 @@
 ### Windows
 1. 从[Releases](https://github.com/LiteLDev/LiteLoader/releases)或者[Actions](https://github.com/LiteLDev/LiteLoader/actions)下载`LiteLoader.zip`，将压缩文件解压到BDS目录下  
 2. 运行`SymDB2.exe`以生成符号文件(`.symdb2`) 还有修改了导出表的BDS(`bedrock_server_mod.exe`,未来的插件可能会要求该版本的bds)，运行`SymDB2.exe`之前你需要检查`bedrock_server.pdb`文件是否存在  
-3. 对于开发者而言，首先运行`SymDB2.exe -def`，打开vs studio命令行工具，使用`lib /def:bedrock_server_mod.def /machine:x64`来创建一个可链接的lib文件，可以通过函数签名直接调用，不需要dlsym
+
+## 开发者提示
+1. 运行 `SymDB2.exe -def`  
+2. 把 `bedrock_server.dll` 加入 `[Properties（项目属性） -> Linker（连接器） -> Input（输入） -> Delay Load DLL（延迟加载dll）]`  
+3. 运行以下llvm-dlltool来生成可链接lib (推荐使用 Tools/llvm-dlltool-msys2 文件夹那一份)
+
+```bash
+llvm-dlltool -m i386:x86-64 -d bedrock_server_api.def -l bedrock_server_api.lib
+llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
+```
+
+4. 使用 `#pragma comment(lib, "刚生成的俩lib路径")` 或者任何你喜欢的方法将lib加入项目
+5. 将`SymDBHelper.lib`加入你的项目
+1. i导入EZMC头文件，享受起飞般开发效率
 
 ### Docker(Linux)
 ```bash

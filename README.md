@@ -1,6 +1,9 @@
 # LiteLoader 2.0
-# 重构中，敬请期待。
-# Refactoring,coming soon.
+
+# 重构中，敬请期待
+
+# Refactoring,coming soon
+
 [简体中文](README_zh-cn.md) | English  
 [Donate us(afdian)](https://afdian.net/@liteldev)  
 [Official Forum](https://forum.litebds.com/)  
@@ -12,16 +15,34 @@ A lightweight Bedrock Dedicated Server Plugin Loader
 Based on [BedrockX](https://github.com/Sysca11/BedrockX)  
 
 ## Install
+
 ### Windows
+
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
 2. Run `SymDB2.exe` to generate symbol files(`bedrock_server.symdb2`) and BDS with export symbols `bedrock_server_mod.exe`(plugins in future may require this version of bds), before you run `SymDB2.exe` you need to check if the `bedrock_server.pdb` exists
-3. For Developers: run `SymDB2.exe -def` then use vs studio command `lib /def:bedrock_server_mod.def /machine:x64` to generate a lib file to call BDS function directly
+
+## Develop  
+
+1. run `SymDB2.exe -def`  
+2. add `bedrock_server.dll` to `[Properties -> Linker -> Input -> Delay Load DLL]`  
+3. run llvm-dlltool to generate import library using the following command (Tools/llvm-dlltool-msys2 is recommand)
+
+```bash
+llvm-dlltool -m i386:x86-64 -d bedrock_server_api.def -l bedrock_server_api.lib
+llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
+```
+
+4. use `#pragma comment(lib, "path to lib")` or any method you like to add those library  
+5. add `SymDBHelper.lib` to your project
+6. include EZMC headers and here we go
 
 ### Docker(Linux)
+
 ```bash
 docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+
 Start server: `docker container start liteloader`  
 Stop server(uncommended): `docker container stop liteloader`  
 Show console: `docker attach liteloader`  
@@ -29,12 +50,15 @@ Exit console: press `Ctrl + P + Q`, if you press `Ctrl + C` server process will 
 If you want to manage server file, use `docker volume --help` for more details
 
 ## Usage
+
 Put .dll plugins into `plugins\` directory and run `bedrock_server_mod.exe`  
 
 ## More
+
 See [Docs](https://docs.litetitle.com/)
 
 ## LICENSE  
+
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
 [ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
@@ -42,6 +66,7 @@ See [Docs](https://docs.litetitle.com/)
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License
 
 ## Restrictions&Exceptions
+
 - First of all, you must accept the Minecraft EULA.  
 - It means **DO NOT MAKE COMMERICIAL USE OF ANYTHING which breaks the EULA.**  
 - Accepting this LICENSE means you ACCEPTED [Minecraft EULA](https://account.mojang.com/terms) too.  
