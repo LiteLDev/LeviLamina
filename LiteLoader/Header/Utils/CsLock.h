@@ -7,10 +7,17 @@
 class CsLock
 {
     CRITICAL_SECTION cslock;
-
 public:
     CsLock();
     ~CsLock();
     bool lock();
     bool unlock();
+};
+
+class CsLockHolder
+{
+    CsLock lock;
+public:
+    CsLockHolder() { lock.lock(); }
+    ~CsLockHolder() { lock.unlock(); }
 };

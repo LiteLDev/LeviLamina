@@ -55,7 +55,7 @@ namespace Logger
         }
 
     public:
-        LoggerImpl()
+        explicit LoggerImpl()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} {}]{}", fmt::localtime(_time64(0)), MESSAGE,
                 logHead.empty() ? " " : "[" + logHead + "] ");
@@ -97,7 +97,7 @@ namespace Logger
         template <typename T>
         LoggerImpl& operator<<(T value)
         {
-            ostringstream sout;
+            std::ostringstream sout;
             sout << value;
             RealPrint(sout.str());
             return *this;

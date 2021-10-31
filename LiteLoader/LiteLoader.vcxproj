@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
+    <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\Utils\Logger.cpp" />
@@ -88,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Config.h" />
+    <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />

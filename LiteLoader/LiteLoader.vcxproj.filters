@@ -51,6 +51,7 @@
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="CrashLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -93,6 +94,7 @@
     <ClInclude Include="Header\Utils\Logger.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="CrashLogger.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">
