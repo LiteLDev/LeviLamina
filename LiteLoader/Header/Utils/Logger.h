@@ -11,6 +11,7 @@
 #include <Utils/CsLock.h>
 #include <Utils/WinHelper.h>
 #include <string>
+#include <sstream>
 #include <iostream>
 
 /////////////////////////////////////////////////
@@ -44,7 +45,7 @@ namespace Logger
         template <bool B, class T = void>
         using enable_if_t = typename std::enable_if<B, T>::type;
 
-        void RealPrint(const std::string& str)
+        virtual void RealPrint(const std::string& str)
         {
             lock.lock();
             fmt::print(str);
@@ -96,9 +97,9 @@ namespace Logger
         template <typename T>
         LoggerImpl& operator<<(T value)
         {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
+            ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
             return *this;
         }
 
@@ -151,6 +152,16 @@ namespace Logger
     const char WarnMsg[] = "Warning";
     class Warn : public LoggerImpl<WarnMsg>
     {
+    protected:
+        virtual void RealPrint(const std::string& str) override
+        {
+            lock.lock();
+            fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, str);
+            if (logFile)
+                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            lock.unlock();
+        }
+
     public:
         using LoggerImpl::LoggerImpl;
     };
@@ -159,6 +170,16 @@ namespace Logger
     const char ErrorMsg[] = "Error";
     class Error : public LoggerImpl<ErrorMsg>
     {
+    protected:
+        virtual void RealPrint(const std::string& str) override
+        {
+            lock.lock();
+            fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
+            if (logFile)
+                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            lock.unlock();
+        }
+
     public:
         using LoggerImpl::LoggerImpl;
     };
@@ -167,6 +188,16 @@ namespace Logger
     const char FatalMsg[] = "FATAL";
     class Fatal : public LoggerImpl<FatalMsg>
     {
+    protected:
+        virtual void RealPrint(const std::string& str) override
+        {
+            lock.lock();
+            fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
+            if (logFile)
+                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            lock.unlock();
+        }
+
     public:
         using LoggerImpl::LoggerImpl;
     };
