@@ -23,7 +23,7 @@ void checkUpdate() {
                 std::string content = arr[arr.Size() - 1]["content"].GetString();
                 Logger::Log("[LiteLoader] Found a new version: {} {}", LatestRelease, content);
             } else if (latestVersionNum < LITELOADER_VERSION_NUMBER) {
-                Logger::Log("[LiteLoader] Using preview version: ", LITELOADER_VERSION);
+                Logger::Log("[LiteLoader] Using preview version: {}", LITELOADER_VERSION);
             }
         } else {
             std::cout << "[Liteloader] Failed to get updates(0)\n";

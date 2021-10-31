@@ -12,7 +12,7 @@ void LoadLLConfig() {
     fs.open(LITELOADER_CONFIG_FILE, std::ios::in);
     if (!fs)
     {
-        Logger::Warn(LITELOADER_CONFIG_FILE, " not found, creating configuration file");
+        Logger::Warn("{} not found, creating configuration file", LITELOADER_CONFIG_FILE);
         std::ofstream of(LITELOADER_CONFIG_FILE);
         if (of) {
             of << "{\n  \"DebugMode\": false\n}";
