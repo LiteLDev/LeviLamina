@@ -28,45 +28,64 @@
 // 
 /////////////////////////////////////////////////
 
-std::string GetCurrentDateTimeStr();
 
 namespace Logger
 {
-    template <bool B, class T = void>
-    using enable_if_t = typename std::enable_if<B, T>::type;
+    extern CsLock lock;
+    extern std::ofstream* logFile;
+    extern std::string logHead;
 
-    CsLock lock;
-    std::ofstream* logFile;
-    std::string logHead = "";
+    ////////////////////////////////// Impl //////////////////////////////////
 
-    void RealPrint(const string &str) {
-        lock.lock();
-        fmt::print(str);
-        if (logFile)
-            fmt::print(GetFILEfromFstream(*(fstream*)logFile), str);
-        lock.unlock();
-    }
+    template <const char* MESSAGE>
+    class LoggerImpl
+    {
+    protected:
+        template <bool B, class T = void>
+        using enable_if_t = typename std::enable_if<B, T>::type;
 
-    class Log {
+        void RealPrint(const std::string& str)
+        {
+            lock.lock();
+            fmt::print(str);
+            if (logFile)
+                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            lock.unlock();
+        }
+
     public:
-        // Header
-        Log() = default;
+        LoggerImpl()
+        {
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} {}]{}", fmt::localtime(_time64(0)), MESSAGE,
+                logHead.empty() ? " " : "[" + logHead + "] ");
+            RealPrint(str);
+        }
 
-        Log(const Log&) = delete;
+        LoggerImpl(const LoggerImpl&) = delete;
 
-        // Log("There are {} days before {} to come back", 3, "alex");
+        // Log(string("There are {} days before {} to come back"), 3, "alex");
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Log(const S& formatStr, const Args&... args)
-            : Log()
+        LoggerImpl(const S& formatStr, const Args&... args)
+            : LoggerImpl()
         {
             std::string str = fmt::format(formatStr, args...);
             str.append(1, '\n');
             RealPrint(str);
         }
 
+        // Log("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        LoggerImpl(const char* formatStr, const Args&... args)
+            : LoggerImpl()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
         // Log().printf("%s, %d\n","Alex", 3);
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Log& printf(const S& formatStr, const Args&... args)
+        LoggerImpl& printf(const S& formatStr, const Args&... args)
         {
             std::string str = fmt::sprintf(formatStr, args...);
             RealPrint(str);
@@ -75,7 +94,7 @@ namespace Logger
 
         // Log() << "test" << endl;
         template <typename T>
-        Log& operator<<(T value)
+        LoggerImpl& operator<<(T value)
         {
             lock.lock();
             std::cout << value;
@@ -83,14 +102,14 @@ namespace Logger
             return *this;
         }
 
-        Log& operator<<(void (*obj)(Log&))
+        LoggerImpl& operator<<(void (*obj)(LoggerImpl&))
         {
             obj(*this);
             return *this;
         }
 
         // flush
-        Log& flush()
+        LoggerImpl& flush()
         {
             lock.lock();
             fflush(stdout);
@@ -100,7 +119,9 @@ namespace Logger
         }
     };
 
-    inline void endl(Log& logger)
+    //endl
+    template <const char* TYPE>
+    inline void endl(LoggerImpl<TYPE>& logger)
     {
         lock.lock();
         logger << '\n';
@@ -108,318 +129,76 @@ namespace Logger
         logger.flush();
     }
 
-    class Debug {
+    ////////////////////////////////// Specific //////////////////////////////////
+
+    //Debug
+    const char DebugMsg[] = "Debug";
+    class Debug : public LoggerImpl<DebugMsg>
+    {
+    public:
+        using LoggerImpl::LoggerImpl;
+    };
+
+    //Info
+    const char InfoMsg[] = "Info";
+    class Info : public LoggerImpl<InfoMsg>
+    {
+    public:
+        using LoggerImpl::LoggerImpl;
+    };
+
+    //Warn
+    const char WarnMsg[] = "Warning";
+    class Warn : public LoggerImpl<WarnMsg>
+    {
+    public:
+        using LoggerImpl::LoggerImpl;
+    };
+
+    //Error
+    const char ErrorMsg[] = "Error";
+    class Error : public LoggerImpl<ErrorMsg>
+    {
+    public:
+        using LoggerImpl::LoggerImpl;
+    };
+
+    //Fatal
+    const char FatalMsg[] = "FATAL";
+    class Fatal : public LoggerImpl<FatalMsg>
+    {
+    public:
+        using LoggerImpl::LoggerImpl;
+    };
+
+    //Log
+    const char LogType[] = "Log";
+    class Log : public LoggerImpl<LogType>
+    {
     public:
 
-        // Header
-        Debug()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Debug]{}", fmt::localtime(_time64(0)), 
-                logHead.empty() ? " " : "[" + logHead + "] ");
-            RealPrint(str);
-        }
+        // No Header
+        // Override
+        Log() {}
 
-        Debug(const Debug&) = delete;
-
-        // Debug("There are {} days before {} to come back", 3, "alex");
+        // Log(string("There are {} days before {} to come back"), 3, "alex");
+        // Override
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Debug(const S& formatStr, const Args&... args)
-            : Debug()
+        Log(const S& formatStr, const Args&... args)
         {
             std::string str = fmt::format(formatStr, args...);
             str.append(1, '\n');
             RealPrint(str);
         }
 
-        // Debug().printf("%s, %d\n","Alex", 3);
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Debug& printf(const S& formatStr, const Args&... args)
+        // Log("There are {} days before {} to come back", 3, "alex");
+        // Override
+        template <typename... Args>
+        Log(const char* formatStr, const Args&... args)
         {
-            std::string str = fmt::sprintf(formatStr, args...);
-            RealPrint(str);
-            return *this;
-        }
-
-        // Debug() << "test" << endl;
-        template <typename T>
-        Debug& operator<<(T value) {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
-            return *this;
-        }
-
-        Debug& operator<<(void (*obj)(Debug&)) {
-            obj(*this);
-            return *this;
-        }
-
-        // flush
-        Debug& flush() {
-            lock.lock();
-            fflush(stdout);
-            std::cout.flush();
-            lock.unlock();
-            return *this;
-        }
-    };
-
-    inline void endl(Debug& logger) {
-        lock.lock();
-        logger << '\n';
-        lock.unlock();
-        logger.flush();
-    }
-
-    class Info {
-    public:
-
-        // Header
-        Info()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Info]{}", fmt::localtime(_time64(0)),
-                logHead.empty() ? " " : "[" + logHead + "] ");
-            RealPrint(str);
-        }
-
-        Info(const Info&) = delete;
-
-        // Info("There are {} days before {} to come back", 3, "alex");
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Info(const S& formatStr, const Args&... args)
-            : Info()
-        {
-            std::string str = fmt::format(formatStr, args...);
+            std::string str = fmt::format(std::string(formatStr), args...);
             str.append(1, '\n');
             RealPrint(str);
         }
-
-        // Info().printf("%s, %d\n","Alex", 3);
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Info& printf(const S& formatStr, const Args&... args)
-        {
-            std::string str = fmt::sprintf(formatStr, args...);
-            RealPrint(str);
-            return *this;
-        }
-
-        // Info() << "test" << endl;
-        template <typename T>
-        Info& operator<<(T value) {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
-            return *this;
-        }
-
-        Info& operator<<(void (*obj)(Info&)) {
-            obj(*this);
-            return *this;
-        }
-
-        // flush
-        Info& flush() {
-            lock.lock();
-            fflush(stdout);
-            std::cout.flush();
-            lock.unlock();
-            return *this;
-        }
     };
-
-    inline void endl(Info& logger) {
-        lock.lock();
-        logger << '\n';
-        lock.unlock();
-        logger.flush();
-    }
-
-    class Warn {
-    public:
-
-        // Header
-        Warn()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Warning]{}", fmt::localtime(_time64(0)),
-                logHead.empty() ? " " : "[" + logHead + "] ");
-            RealPrint(str);
-        }
-
-        Warn(const Warn&) = delete;
-
-        // Warn("There are {} days before {} to come back", 3, "alex");
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Warn(const S& formatStr, const Args&... args)
-            : Warn()
-        {
-            std::string str = fmt::format(formatStr, args...);
-            str.append(1, '\n');
-            RealPrint(str);
-        }
-
-        // Warn().printf("%s, %d\n","Alex", 3);
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Warn& printf(const S& formatStr, const Args&... args)
-        {
-            std::string str = fmt::sprintf(formatStr, args...);
-            RealPrint(str);
-            return *this;
-        }
-
-        // Warn() << "test" << endl;
-        template <typename T>
-        Warn& operator<<(T value) {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
-            return *this;
-        }
-
-        Warn& operator<<(void (*obj)(Warn&)) {
-            obj(*this);
-            return *this;
-        }
-
-        // flush
-        Warn& flush() {
-            lock.lock();
-            fflush(stdout);
-            std::cout.flush();
-            lock.unlock();
-            return *this;
-        }
-    };
-
-    inline void endl(Warn& logger) {
-        lock.lock();
-        logger << '\n';
-        lock.unlock();
-        logger.flush();
-    }
-
-    class Error {
-    public:
-
-        // Header
-        Error()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Error]{}", fmt::localtime(_time64(0)),
-                logHead.empty() ? " " : "[" + logHead + "] ");
-            RealPrint(str);
-        }
-
-        Error(const Error&) = delete;
-
-        // Error("There are {} days before {} to come back", 3, "alex");
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Error(const S& formatStr, const Args&... args)
-            : Error()
-        {
-            std::string str = fmt::format(formatStr, args...);
-            str.append(1, '\n');
-            RealPrint(str);
-        }
-
-        // Error().printf("%s, %d\n","Alex", 3);
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Error& printf(const S& formatStr, const Args&... args)
-        {
-            std::string str = fmt::sprintf(formatStr, args...);
-            RealPrint(str);
-            return *this;
-        }
-
-        // Error() << "test" << endl;
-        template <typename T>
-        Error& operator<<(T value) {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
-            return *this;
-        }
-
-        Error& operator<<(void (*obj)(Error&)) {
-            obj(*this);
-            return *this;
-        }
-
-        // flush
-        Error& flush() {
-            lock.lock();
-            fflush(stdout);
-            std::cout.flush();
-            lock.unlock();
-            return *this;
-        }
-    };
-
-    inline void endl(Error& logger) {
-        lock.lock();
-        logger << '\n';
-        lock.unlock();
-        logger.flush();
-    }
-
-    class Fatal {
-    public:
-
-        // Header
-        Fatal()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)),
-                logHead.empty() ? " " : "[" + logHead + "] ");
-            RealPrint(str);
-        }
-
-        Fatal(const Fatal&) = delete;
-
-        // Fatal("There are {} days before {} to come back", 3, "alex");
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Fatal(const S& formatStr, const Args&... args)
-            : Fatal()
-        {
-            std::string str = fmt::format(formatStr, args...);
-            str.append(1, '\n');
-            RealPrint(str);
-        }
-
-        // Fatal().printf("%s, %d\n","Alex", 3);
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Fatal& printf(const S& formatStr, const Args&... args)
-        {
-            std::string str = fmt::sprintf(formatStr, args...);
-            RealPrint(str);
-            return *this;
-        }
-
-        // Fatal() << "test" << endl;
-        template <typename T>
-        Fatal& operator<<(T value) {
-            lock.lock();
-            std::cout << value;
-            lock.unlock();
-            return *this;
-        }
-
-        Fatal& operator<<(void (*obj)(Fatal&)) {
-            obj(*this);
-            return *this;
-        }
-
-        // flush
-        Fatal& flush() {
-            lock.lock();
-            fflush(stdout);
-            std::cout.flush();
-            lock.unlock();
-            return *this;
-        }
-    };
-
-    inline void endl(Fatal& logger) {
-        lock.lock();
-        logger << '\n';
-        lock.unlock();
-        logger.flush();
-    }
 } // namespace Logger

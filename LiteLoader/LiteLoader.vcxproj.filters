@@ -93,9 +93,6 @@
     <ClInclude Include="Header\Utils\Logger.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleLogger.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">

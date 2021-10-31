@@ -102,7 +102,6 @@
     <ClInclude Include="Header\Utils\StringHelper.h" />
     <ClInclude Include="Header\Utils\WinHelper.h" />
     <ClInclude Include="Resource\resource.h" />
-    <ClInclude Include="SimpleLogger.h" />
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>

@@ -10,8 +10,10 @@ CsLock::~CsLock() {
 
 bool CsLock::lock() {
     EnterCriticalSection(&cslock);
+    return true;
 }
 
 bool CsLock::unlock() {
     LeaveCriticalSection(&cslock);
+    return true;
 }
