@@ -1,7 +1,7 @@
 #include "CrashLogger.h"
 #include "Config.h"
 #include <Windows.h>
-#include <Utils/Logger.h>
+#include <LoggerAPI.h>
 #include <Utils/WinHelper.h>
 
 bool StartCrashLogger()

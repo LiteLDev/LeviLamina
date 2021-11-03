@@ -47,11 +47,20 @@
     <ClCompile Include="Kernel\Utils\SymDB.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\Logger.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
+    <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\FileHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LoggerAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\TranslationAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -91,10 +100,19 @@
     <ClInclude Include="Header\Utils\Hash.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils\Logger.h">
+    <ClInclude Include="CrashLogger.h" />
+    <ClInclude Include="Header\Utils\PluginOwnData.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="CrashLogger.h" />
+    <ClInclude Include="Header\Utils\FileHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LoggerAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\TranslationAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">

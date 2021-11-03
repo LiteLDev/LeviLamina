@@ -46,7 +46,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;_AMD64_;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>false</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -69,7 +69,10 @@
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
-    <ClCompile Include="Kernel\Utils\Logger.cpp" />
+    <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
+    <ClCompile Include="Kernel\TranslationAPI.cpp" />
+    <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
@@ -94,10 +97,13 @@
     <ClInclude Include="Header\LLAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
     <ClInclude Include="Header\Utils\CsLock.h" />
+    <ClInclude Include="Header\Utils\FileHelper.h" />
     <ClInclude Include="Header\Utils\Hash.h" />
     <ClInclude Include="Header\HookAPI.h" />
-    <ClInclude Include="Header\Utils\Logger.h" />
+    <ClInclude Include="Header\TranslationAPI.h" />
+    <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
+    <ClInclude Include="Header\Utils\PluginOwnData.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\Utils\KVDB.h" />

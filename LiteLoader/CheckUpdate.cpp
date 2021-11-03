@@ -1,5 +1,5 @@
 #define CPPHTTPLIB_OPENSSL_SUPPORT
-#include <Utils/Logger.h>
+#include <LoggerAPI.h>
 #include <httplib/httplib.h>
 #include <rapidjson/document.h>
 #include <Version.h>

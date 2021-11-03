@@ -3,10 +3,12 @@
 #include <string>
 #include <unordered_map>
 #include <Windows.h>
-#include <PluginManager.h>
+#include <Utils/WinHelper.h>
+#include <LoggerAPI.h>
 
 //helper
-HMODULE GetCurrentModule();
+LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, std::string version,
+    std::string git, std::string license, std::string website);
 
 namespace LL {
     struct Plugin {
@@ -40,6 +42,7 @@ namespace LL {
     LIAPI inline bool registerPlugin(std::string name, std::string introduction, std::string version,
                               std::string git = "", std::string license = "", std::string website = "") {
         //此函数的实现必须放在头文件中
+        Logger::setTitle(name);
         return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, git, license, website);
     }
 
@@ -72,16 +75,6 @@ namespace LL {
 
 
 
-
-HMODULE inline GetCurrentModule()
-{
-    HMODULE hModule = NULL;
-    if (GetModuleHandleEx(GET_MODULE_HANDLE_EX_FLAG_FROM_ADDRESS | GET_MODULE_HANDLE_EX_FLAG_UNCHANGED_REFCOUNT,
-            (LPCWSTR)GetCurrentModule, &hModule)) {
-        return hModule;
-    }
-    return NULL;
-}
 
 
 //For compatibility

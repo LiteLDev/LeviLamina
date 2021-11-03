@@ -10,6 +10,8 @@
 #include <fmt/printf.h>
 #include <Utils/CsLock.h>
 #include <Utils/WinHelper.h>
+#include <Utils/FileHelper.h>
+#include <Utils/PluginOwnData.h>
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -17,13 +19,14 @@
 /////////////////////////////////////////////////
 // Usage:
 // 
+//   Logger::setTitle("xxxx");              // Set the title before this plugin's log
 //   using namespace Logger;
 // 
-//   Info("There are {} days before {} to come back", 3, "alex");   //FMT-style IO
-//                                                                  //with Auto Line-Wrap
+//   Info("There are {} days before {} to come back", 3, "alex");   // FMT-style IO
+//                                                                  // with Auto Line-Wrap
 //
-//   Info().printf("%s, %d\n","Alex", 3);   //C-style IO
-//   Info() << "test" << endl;              //STL-style IO
+//   Info().printf("%s, %d\n","Alex", 3);   // C-style IO
+//   Info() << "test" << endl;              // STL-style IO
 // 
 // [Debug, Log, Info, Warn, Error, Fatal]
 // 
@@ -34,9 +37,14 @@ namespace Logger
 {
     extern CsLock lock;
     extern std::ofstream* logFile;
-    extern std::string logHead;
 
-    ////////////////////////////////// Impl //////////////////////////////////
+    //title
+    void inline setTitle(const std::string& title)
+    {
+        PluginOwnData::set<std::string>("ll_plugin_logger_title", title);
+    }
+
+    ////////////////////////////////// Logger Impl //////////////////////////////////
 
     template <const char* MESSAGE>
     class LoggerImpl
@@ -58,7 +66,8 @@ namespace Logger
         explicit LoggerImpl()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} {}]{}", fmt::localtime(_time64(0)), MESSAGE,
-                logHead.empty() ? " " : "[" + logHead + "] ");
+                PluginOwnData::has("ll_plugin_logger_title") ?
+                " " : "[" + PluginOwnData::get<std::string>("ll_plugin_logger_title") + "] ");
             RealPrint(str);
         }
 

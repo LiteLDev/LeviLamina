@@ -3,6 +3,7 @@
 #include <Version.h>
 #include <HookAPI.h>
 #include <Config.h>
+#include <PluginManager.h>
 using namespace std;
 
 std::string GetDataPath(const std::string& myname) {

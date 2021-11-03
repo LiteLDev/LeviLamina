@@ -7,7 +7,7 @@
 #include <thread>
 #include <filesystem>
 
-#include <Utils/Logger.h>
+#include <LoggerAPI.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <HookAPI.h>

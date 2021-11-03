@@ -1,6 +1,6 @@
 #include <rapidjson/document.h>
 #include "Config.h"
-#include <Utils/Logger.h>
+#include <LoggerAPI.h>
 #include <fstream>
 
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/liteloader.json"

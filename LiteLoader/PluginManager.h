@@ -8,7 +8,7 @@ namespace LL {
     struct Plugin;
 }
 
-bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, std::string version,
+LIAPI bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, std::string version,
                     std::string git = "", std::string license = "", std::string website = "");
 
 LL::Plugin* GetPlugin(std::string name);
