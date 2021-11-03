@@ -1,5 +1,7 @@
 #include <TranslationAPI.h>
 
+#define TRANSLATION_DATA_NAME "_ll_plugin_translation_content"
+
 namespace Translation
 {
 	LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath)
@@ -10,7 +12,7 @@ namespace Translation
 			if (!content)
 				throw "Fail to open translation file!";
 
-			PluginOwnData::setImpl<nlohmann::json>(hPlugin, "ll_plugin_translation_system",nlohmann::json::parse(*content));
+			PluginOwnData::setImpl<nlohmann::json>(hPlugin, TRANSLATION_DATA_NAME, nlohmann::json::parse(*content));
 		}
 		catch (const nlohmann::json::exception &e)
 		{

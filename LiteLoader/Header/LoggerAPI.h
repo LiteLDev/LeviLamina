@@ -32,6 +32,7 @@
 // 
 /////////////////////////////////////////////////
 
+#define LOGGER_DATA_NAME "ll_plugin_logger_title"
 
 namespace Logger
 {
@@ -41,7 +42,7 @@ namespace Logger
     //title
     void inline setTitle(const std::string& title)
     {
-        PluginOwnData::set<std::string>("ll_plugin_logger_title", title);
+        PluginOwnData::set<std::string>(LOGGER_DATA_NAME, title);
     }
 
     ////////////////////////////////// Logger Impl //////////////////////////////////
@@ -66,8 +67,8 @@ namespace Logger
         explicit LoggerImpl()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} {}]{}", fmt::localtime(_time64(0)), MESSAGE,
-                PluginOwnData::has("ll_plugin_logger_title") ?
-                " " : "[" + PluginOwnData::get<std::string>("ll_plugin_logger_title") + "] ");
+                PluginOwnData::has(LOGGER_DATA_NAME) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_DATA_NAME) + "] ");
             RealPrint(str);
         }
 
@@ -242,3 +243,5 @@ namespace Logger
         }
     };
 } // namespace Logger
+
+#undef LOGGER_DATA_NAME
