@@ -1,6 +1,5 @@
 #include <TranslationAPI.h>
-
-#define TRANSLATION_DATA_NAME "_ll_plugin_translation_content"
+#include <map>
 
 namespace Translation
 {
@@ -13,6 +12,7 @@ namespace Translation
 				throw "Fail to open translation file!";
 
 			PluginOwnData::setImpl<nlohmann::json>(hPlugin, TRANSLATION_DATA_NAME, nlohmann::json::parse(*content));
+			PluginOwnData::setImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE, filePath);
 		}
 		catch (const nlohmann::json::exception &e)
 		{
