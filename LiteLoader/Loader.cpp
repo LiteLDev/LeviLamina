@@ -12,9 +12,10 @@
 #include <Utils/StringHelper.h>
 #include <HookAPI.h>
 #include <ServerAPI.h>
-#include <Version.h>
 #include <PluginManager.h>
 #include <LLAPI.h>
+#include <CrashLogger.h>
+#include <Config.h>
 using namespace std;
 
 vector<std::wstring> GetPreloadList() {
@@ -43,36 +44,76 @@ vector<std::wstring> GetPreloadList() {
 
 void LoadMain()
 {
-    std::filesystem::create_directory("plugins");
-    std::filesystem::directory_iterator ent("plugins");
+    Logger::Info("Loading plugins...");
+    bool enableCrashLogger = true;
+    string noCrashLoggerReason = "";
+
+    // Get file list
+    filesystem::create_directory("plugins");
+    filesystem::directory_iterator ent("plugins");
+    vector<string> paths;
+
+    for (auto& i : ent) {
+        if (i.is_regular_file() && i.path().extension().u8string() == ".dll")
+        {
+            auto path = i.path().u8string();
+
+            //Check crashlogger
+            if(enableCrashLogger)
+                for (auto name : NoCrashLogger)
+                {
+                    if (path.find(name) != string::npos)
+                    {
+                        enableCrashLogger = false;
+                        noCrashLoggerReason = name;
+                        break;
+                    }
+                }
+            paths.emplace_back(path);
+        }
+    }
+
+    //Start CrashLogger
+    if (enableCrashLogger)
+    {
+        StartCrashLogger();
+        Logger::Info("[CrashLogger] CrashLogger Deamon Process attached.");
+    }
+    else
+    {
+        Logger::Warn("[CrashLogger] Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
+        Logger::Warn("[CrashLogger] There will be no crash log when unhandled exception occurs,");
+        Logger::Warn("[CrashLogger] which makes it almost impossible to find out the reason for crash and the source of crash.");
+        Logger::Warn("[CrashLogger] ");
+        Logger::Warn("[CrashLogger] We strongly recommend you to uninstall this plugin, thus to ensure server security");
+    }
+
+    // Load plugins
     int pluginCount  = 0;
     vector<std::wstring> preloadList = GetPreloadList();
-
-    Logger::Info("Loading plugins");
-    for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
-            bool loaded = false;
-            for (auto& p : preloadList)
-                if (p.find(std::wstring(i.path())) != std::wstring::npos) {
-                    loaded = true;
-                    break;
-                }
-            if (loaded)
-                continue;
-
-            auto lib = LoadLibrary(i.path().c_str());
-            if (lib) {
-                pluginCount++;
-                auto pluginFileName = canonical(i.path()).filename().u8string();
-                Logger::Info("Plugin " + pluginFileName + " loaded");
-
-                if (GetPlugin(lib) == nullptr) {
-                    RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
-                }
-            } else {
-                Logger::Error("Error when loading " + i.path().filename().u8string());
-                Logger::Error() << GetLastErrorMessage() << Logger::endl;
+    for (auto& i : paths) {
+        bool loaded = false;
+        for (auto& p : preloadList)
+            if (p.find(str2wstr(i)) != std::wstring::npos) {
+                loaded = true;
+                break;
             }
+        if (loaded)
+            continue;
+
+        auto lib = LoadLibrary(str2wstr(i).c_str());
+        if (lib)
+        {
+            pluginCount++;
+            auto pluginFileName = filesystem::path(i).filename().u8string();
+            Logger::Info("Plugin <{}> loaded", pluginFileName);
+
+            if (GetPlugin(lib) == nullptr) {
+                RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
+            }
+        } else {
+            Logger::Error("Error when loading plugin <{}>", i);
+            Logger::Error() << GetLastErrorMessage() << Logger::endl;
         }
     }
 
@@ -80,15 +121,13 @@ void LoadMain()
     auto plugins = GetAllPlugins();
     for (auto& [name, plugin] : plugins) {
         auto fn = GetProcAddress(plugin.handler, "onPostInit");
-        if (!fn) {
-            // std::wcerr << "Warning!!! mod" << name << " doesnt have a onPostInit\n";
-        } else {
+        if (fn)
+        {
             try {
                 ((void (*)())fn)();
             } catch (...) {
-                std::wcerr << "[Error] plugin " << name.c_str() << " throws an exception when onPostInit\n";
-                std::this_thread::sleep_for(std::chrono::seconds(10));
-                exit(1);
+                Logger::Error("Plugin <{}> throws an exception in onPostInit", name);
+                Logger::Error("Fail to init this plugin!");
             }
         }
     }
