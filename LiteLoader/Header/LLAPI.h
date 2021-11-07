@@ -10,6 +10,7 @@
 LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, std::string version,
     std::string git, std::string license, std::string website);
 
+// LL types
 namespace LL {
     struct Plugin {
         //std::string id;
@@ -25,29 +26,29 @@ namespace LL {
         HMODULE handler;
     };
 
-    struct Version {
-        enum Status
-        { Dev, Beta, Release };
+    struct Version
+    {
+        enum Status { Dev, Beta, Release };
 
         int major;
         int minor;
         int revision;
         Status status;
 
-        bool operator<(const Version& b)
-        {
-            return major < b.major
-                || (major == b.major && minor < b.minor)
-                || (major == b.major && minor == b.minor && revision < b.revision)
-                || (major == b.major && minor == b.minor && revision == b.revision && status < b.status);
-        }
+        LIAPI Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-        bool operator==(const Version& b)
-        {
-            return major == b.major && minor == b.minor && revision == b.revision && status == b.status;
-        }
+        LIAPI bool operator<(const Version& b);
+        LIAPI bool operator==(const Version& b);
+        LIAPI bool operator<=(const Version& b);
+
+        LIAPI std::string toString(bool needStatus = false);
+        LIAPI static Version parse(const std::string& str);
     };
+}
 
+// Loader APIs
+namespace LL
+{
     // @return 加载器版本
     LIAPI std::string getLoaderVersionString();
     // @return 加载器版本数字

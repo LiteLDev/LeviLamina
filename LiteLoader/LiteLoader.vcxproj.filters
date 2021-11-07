@@ -61,6 +61,7 @@
     <ClCompile Include="Kernel\KVDBAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="ModifyName.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
