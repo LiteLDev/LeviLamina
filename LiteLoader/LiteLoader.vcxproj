@@ -78,7 +78,7 @@
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
     <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
     <ClCompile Include="Kernel\Utils\SymDB.cpp" />
-    <ClCompile Include="Kernel\Utils\KVDB.cpp" />
+    <ClCompile Include="Kernel\KVDBAPI.cpp" />
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="PluginManager.cpp" />
@@ -106,7 +106,7 @@
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
-    <ClInclude Include="Header\Utils\KVDB.h" />
+    <ClInclude Include="Header\KVDBAPI.h" />
     <ClInclude Include="Header\Utils\StringHelper.h" />
     <ClInclude Include="Header\Utils\WinHelper.h" />
     <ClInclude Include="Resource\resource.h" />

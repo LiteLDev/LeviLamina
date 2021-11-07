@@ -43,6 +43,9 @@ void entry()
     //Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
+    //Init LL Logger
+    Logger::setTitle("LiteLoader");
+
     FixUpCWD();
     FixPluginsLibDir();
 

@@ -16,8 +16,10 @@
 #include <sstream>
 #include <iostream>
 
-/////////////////////////////////////////////////
-// Usage:
+///////////////////////////////////////////////////////
+// Easy to log things into both console and log file
+// 
+// [Usage]
 // 
 //   Logger::setTitle("xxxx");              // Set the title before this plugin's log
 //   using namespace Logger;
@@ -30,7 +32,7 @@
 // 
 // [Debug, Log, Info, Warn, Error, Fatal]
 // 
-/////////////////////////////////////////////////
+/////////////////////////////////////////////////////
 
 #define LOGGER_DATA_NAME "ll_plugin_logger_title"
 
