@@ -41,9 +41,6 @@
     <ClCompile Include="Kernel\ServerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\KVDBAPI.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\SymDB.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -61,13 +58,13 @@
     <ClCompile Include="Kernel\TranslationAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\KVDBAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
       <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\KVDBAPI.h">
-      <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Version.h" />
     <ClInclude Include="Loader.h" />
@@ -111,6 +108,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\TranslationAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\KVDBAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

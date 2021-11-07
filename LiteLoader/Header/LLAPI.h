@@ -25,10 +25,33 @@ namespace LL {
         HMODULE handler;
     };
 
+    struct Version {
+        enum Status
+        { Dev, Beta, Release };
+
+        int major;
+        int minor;
+        int revision;
+        Status status;
+
+        bool operator<(const Version& b)
+        {
+            return major < b.major
+                || (major == b.major && minor < b.minor)
+                || (major == b.major && minor == b.minor && revision < b.revision)
+                || (major == b.major && minor == b.minor && revision == b.revision && status < b.status);
+        }
+
+        bool operator==(const Version& b)
+        {
+            return major == b.major && minor == b.minor && revision == b.revision && status == b.status;
+        }
+    };
+
     // @return 加载器版本
-    LIAPI std::string getLoaderVersion();
+    LIAPI std::string getLoaderVersionString();
     // @return 加载器版本数字
-    LIAPI unsigned short getLoaderVersionNum();
+    LIAPI Version getLoaderVersion();
     // @return 是否为调试模式
     LIAPI bool isDebugMode();
 

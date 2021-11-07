@@ -4,19 +4,23 @@
 #include <HookAPI.h>
 #include <Config.h>
 #include <PluginManager.h>
+#include <string>
 using namespace std;
 
-std::string GetDataPath(const std::string& myname) {
+std::string GetDataPath(const std::string& myname)
+{
     filesystem::create_directory("plugins\\LiteLoader");
     return "plugins\\LiteLoader\\" + myname;
 }
 
-std::string LL::getLoaderVersion() {
-    return LITELOADER_VERSION;
+std::string LL::getLoaderVersionString()
+{
+    return to_string(LITELOADER_VERSION_MAJOR) + "." + to_string(LITELOADER_VERSION_MINOR) + "." + to_string(LITELOADER_VERSION_REVISION);
 }
 
-unsigned short LL::getLoaderVersionNum() {
-    return LITELOADER_VERSION_NUMBER;
+LL::Version LL::getLoaderVersion()
+{
+    return LL::Version{ LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, LL::Version::LITELOADER_VERSION_STATUS };
 }
 
 bool LL::isDebugMode() {
