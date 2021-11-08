@@ -2,11 +2,14 @@
 #include <MCApi/ServerPlayer.hpp>
 #include <MCApi/ServerNetworkHandler.hpp>
 #include <MCApi/NetworkIdentifier.hpp>
-
+#include <MCApi/InventoryTransactionPacket.hpp>
+#include <unordered_map>
+#include <LoggerAPI.h>
+#include <PlayerAPI.h>
 //bool isFixDisconnectBug();
 //bool isFixListenPort();
-
-//Fix disconnect packet crash bug
+class InventoryTransaction;
+    //Fix disconnect packet crash bug
 THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z", ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet) {
     //if (isFixDisconnectBug()) {
         ServerPlayer* sp = thi->getServerPlayer(*ni);
@@ -31,4 +34,23 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
     //} else {
         return original(_this);
     //}
+}
+
+THook(
+    void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+    ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
+    InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk+10)+16);
+    auto                  a    = dAccess<std::unordered_map<int, void*>, 0>(data);
+    bool                  abnormal = 0;
+    for (auto i :a)
+        if (i.first == 99999) {
+            abnormal = 1;
+        }
+    if (abnormal) {
+        ServerPlayer* sp = snh.getServerPlayer(netid);
+        PlayerObj     wp = PlayerObj{*sp};
+        Logger::Warn() << "Player("<< wp.getRealName()<<") item data error!" << Logger::endl;
+        return nullptr;
+    }
+    return original(snh, netid, pk);
 }

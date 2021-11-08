@@ -19,7 +19,8 @@
 #include <bitset>
 #include <utility>
 #include <Templates.h>
-
+#include <Utils/Json.h>
+typedef unsigned long long xuid_t;
 namespace mce {
 class UUID;
 };
