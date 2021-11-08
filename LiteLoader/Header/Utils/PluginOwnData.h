@@ -3,12 +3,15 @@
 // To store those data which is specific for every plugins itself
 // Must be used header-only!
 
-// Usage:
+// [Usage]
 // 
-// PluginOwnData::set<string>("name","hello!");
+// PluginOwnData::set<std::string>("name","hello!");
 // ......
 // ......
-// cout << PluginOwnData::get<string>("name") << endl;		// "hello!"
+// cout << PluginOwnData::get<std::string>("name") << endl;		// "hello!"
+// ......
+// if(PluginOwnData::has("name"))
+//     PluginOwnData::remove<std::string>("name");
 
 
 #include <unordered_map>

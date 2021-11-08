@@ -22,12 +22,11 @@
 // [Usage]
 // 
 //   Logger::setTitle("xxxx");                  // Set the title before this plugin's log
-//   Logger::setFile("logs/xxxx/aaa.log");      // Set the log file (nullptr to clear) 
+//   Logger::setFile("logs/xxxx/aaa.log");      // Set the log file (nullptr to disable) 
 //   using namespace Logger;
 // 
 //   Info("There are {} days before {} to come back", 3, "alex");   // FMT-style IO
 //                                                                  // with Auto Line-Wrap
-//
 //   Info().printf("%s, %d\n","Alex", 3);   // C-style IO
 //   Info() << "test" << endl;              // STL-style IO
 // 
@@ -149,12 +148,18 @@ namespace Logger
         }
     };
 
-    //endl
+    // << endl
     inline void endl(Log& logger)
     {
         lock.lock();
         logger << '\n';
         lock.unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Log& logger)
+    {
         logger.flush();
     }
 

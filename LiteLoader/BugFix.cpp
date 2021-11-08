@@ -7,7 +7,9 @@
 //bool isFixListenPort();
 
 //Fix disconnect packet crash bug
-THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z", ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet) {
+THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
+    ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet)
+{
     //if (isFixDisconnectBug()) {
         ServerPlayer* sp = thi->getServerPlayer(*ni);
         if (!sp) {
@@ -19,6 +21,7 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisco
 
 //Fix the listening port twice
 //From https://github.com/Redbeanw44602/FixIPLogger
+
 bool a_call = true;
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void* _this) {
