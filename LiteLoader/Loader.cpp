@@ -76,8 +76,13 @@ void LoadMain()
     //Start CrashLogger
     if (enableCrashLogger)
     {
-        StartCrashLogger();
-        Logger::Info("[CrashLogger] CrashLogger Deamon Process attached.");
+        if(StartCrashLogger())
+            Logger::Info("[CrashLogger] CrashLogger Deamon Process attached.");
+        else
+        {
+            Logger::Warn("[CrashLogger] Builtin CrashLogger failed to start!");
+            Logger::Warn("[CrashLogger] There will be no crash log when unhandled exception occurs.");
+        }
     }
     else
     {
@@ -85,7 +90,7 @@ void LoadMain()
         Logger::Warn("[CrashLogger] There will be no crash log when unhandled exception occurs,");
         Logger::Warn("[CrashLogger] which makes it almost impossible to find out the reason for crash and the source of crash.");
         Logger::Warn("[CrashLogger] ");
-        Logger::Warn("[CrashLogger] We strongly recommend you to uninstall this plugin, thus to ensure server security");
+        Logger::Warn("[CrashLogger] We strongly recommend you to uninstall plugin <{}> to ensure server security", noCrashLoggerReason);
     }
 
     // Load plugins

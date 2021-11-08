@@ -62,6 +62,11 @@
       <EnableUAC>false</EnableUAC>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
+    <PostBuildEvent>
+      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
+copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\
+)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CheckUpdate.cpp" />
