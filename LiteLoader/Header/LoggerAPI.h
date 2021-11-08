@@ -34,7 +34,7 @@
 // 
 /////////////////////////////////////////////////////
 
-#define LOGGER_DATA_NAME "ll_plugin_logger_title"
+#define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 
 namespace Logger
 {
@@ -44,13 +44,14 @@ namespace Logger
     //title
     void inline setTitle(const std::string& title)
     {
-        PluginOwnData::set<std::string>(LOGGER_DATA_NAME, title);
+        PluginOwnData::set<std::string>(LOGGER_CURRENT_TITLE, title);
     }
 
-    ////////////////////////////////// Logger Impl //////////////////////////////////
 
-    template <const char* MESSAGE>
-    class LoggerImpl
+    ////////////////////////////////// Basic //////////////////////////////////
+
+    //Log
+    class Log
     {
     protected:
         template <bool B, class T = void>
@@ -66,20 +67,15 @@ namespace Logger
         }
 
     public:
-        explicit LoggerImpl()
-        {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} {}]{}", fmt::localtime(_time64(0)), MESSAGE,
-                PluginOwnData::has(LOGGER_DATA_NAME) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_DATA_NAME) + "] ");
-            RealPrint(str);
-        }
+        explicit Log() = default;
 
-        LoggerImpl(const LoggerImpl&) = delete;
+        Log(const Log&) = delete;
+        Log& operator=(const Log&) = delete;
 
         // Log(string("There are {} days before {} to come back"), 3, "alex");
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        LoggerImpl(const S& formatStr, const Args&... args)
-            : LoggerImpl()
+        Log(const S& formatStr, const Args&... args)
+            : Log()
         {
             std::string str = fmt::format(formatStr, args...);
             str.append(1, '\n');
@@ -88,8 +84,8 @@ namespace Logger
 
         // Log("There are {} days before {} to come back", 3, "alex");
         template <typename... Args>
-        LoggerImpl(const char* formatStr, const Args&... args)
-            : LoggerImpl()
+        Log(const char* formatStr, const Args&... args)
+            : Log()
         {
             std::string str = fmt::format(std::string(formatStr), args...);
             str.append(1, '\n');
@@ -98,7 +94,7 @@ namespace Logger
 
         // Log().printf("%s, %d\n","Alex", 3);
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        LoggerImpl& printf(const S& formatStr, const Args&... args)
+        Log& printf(const S& formatStr, const Args&... args)
         {
             std::string str = fmt::sprintf(formatStr, args...);
             RealPrint(str);
@@ -107,7 +103,7 @@ namespace Logger
 
         // Log() << "test" << endl;
         template <typename T>
-        LoggerImpl& operator<<(T value)
+        Log& operator<<(T value)
         {
             std::ostringstream sout;
             sout << value;
@@ -115,14 +111,14 @@ namespace Logger
             return *this;
         }
 
-        LoggerImpl& operator<<(void (*obj)(LoggerImpl&))
+        Log& operator<<(void (*obj)(Log&))
         {
             obj(*this);
             return *this;
         }
 
         // flush
-        LoggerImpl& flush()
+        Log& flush()
         {
             lock.lock();
             fflush(stdout);
@@ -133,8 +129,7 @@ namespace Logger
     };
 
     //endl
-    template <const char* TYPE>
-    inline void endl(LoggerImpl<TYPE>& logger)
+    inline void endl(Log& logger)
     {
         lock.lock();
         logger << '\n';
@@ -142,27 +137,38 @@ namespace Logger
         logger.flush();
     }
 
-    ////////////////////////////////// Specific //////////////////////////////////
+    ////////////////////////////////// Specific Types //////////////////////////////////
 
     //Debug
-    const char DebugMsg[] = "Debug";
-    class Debug : public LoggerImpl<DebugMsg>
+    class Debug : public Log
     {
     public:
-        using LoggerImpl::LoggerImpl;
+        explicit Debug()
+        {
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Debug]{}", fmt::localtime(_time64(0)),
+                PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+            RealPrint(str);
+        }
+        using Log::Log;
     };
 
     //Info
-    const char InfoMsg[] = "Info";
-    class Info : public LoggerImpl<InfoMsg>
+    class Info : public Log
     {
     public:
-        using LoggerImpl::LoggerImpl;
+        explicit Info()
+        {
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Info]{}", fmt::localtime(_time64(0)),
+                PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+            RealPrint(str);
+        }
+        using Log::Log;
     };
 
     //Warn
-    const char WarnMsg[] = "Warning";
-    class Warn : public LoggerImpl<WarnMsg>
+    class Warn : public Log
     {
     protected:
         virtual void RealPrint(const std::string& str) override
@@ -175,12 +181,18 @@ namespace Logger
         }
 
     public:
-        using LoggerImpl::LoggerImpl;
+        explicit Warn()
+        {
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Warning]{}", fmt::localtime(_time64(0)),
+                PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+            RealPrint(str);
+        }
+        using Log::Log;
     };
 
     //Error
-    const char ErrorMsg[] = "Error";
-    class Error : public LoggerImpl<ErrorMsg>
+    class Error : public Log
     {
     protected:
         virtual void RealPrint(const std::string& str) override
@@ -193,12 +205,18 @@ namespace Logger
         }
 
     public:
-        using LoggerImpl::LoggerImpl;
+        explicit Error()
+        {
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Error]{}", fmt::localtime(_time64(0)),
+                PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+            RealPrint(str);
+        }
+        using Log::Log;
     };
 
     //Fatal
-    const char FatalMsg[] = "FATAL";
-    class Fatal : public LoggerImpl<FatalMsg>
+    class Fatal : public Log
     {
     protected:
         virtual void RealPrint(const std::string& str) override
@@ -211,39 +229,15 @@ namespace Logger
         }
 
     public:
-        using LoggerImpl::LoggerImpl;
-    };
-
-    //Log
-    const char LogType[] = "Log";
-    class Log : public LoggerImpl<LogType>
-    {
-    public:
-
-        // No Header
-        // Override
-        Log() {}
-
-        // Log(string("There are {} days before {} to come back"), 3, "alex");
-        // Override
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-        Log(const S& formatStr, const Args&... args)
+        explicit Fatal()
         {
-            std::string str = fmt::format(formatStr, args...);
-            str.append(1, '\n');
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)),
+                PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
+                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-
-        // Log("There are {} days before {} to come back", 3, "alex");
-        // Override
-        template <typename... Args>
-        Log(const char* formatStr, const Args&... args)
-        {
-            std::string str = fmt::format(std::string(formatStr), args...);
-            str.append(1, '\n');
-            RealPrint(str);
-        }
+        using Log::Log;
     };
 } // namespace Logger
 
-#undef LOGGER_DATA_NAME
+#undef LOGGER_CURRENT_TITLE
