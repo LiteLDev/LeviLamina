@@ -7,8 +7,10 @@
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
 // Used to get a server-defined specific function by name
+extern "C" {
 LIAPI int   HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
+}
 
 
 template <typename T, int off>

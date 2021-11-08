@@ -1,7 +1,5 @@
 ﻿#include <Windows.h>
 
-#pragma comment(lib, "SymDBHelper.lib")
-
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
 {
     switch (ul_reason_for_call) {
@@ -13,3 +11,5 @@ BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
     }
     return TRUE;
 }
+#pragma comment(lib, "bedrock_server_api.lib")
+#pragma comment(lib, "SymDBHelper.lib")

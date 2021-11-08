@@ -2,3 +2,6 @@
 x64/
 .vs/
 **/x64/
+/LiteLoader/bedrock_server_api.lib
+/LiteLoader/bedrock_server_var.lib
+/LiteLoader/SymDB_DelayLoadHelper.lib

@@ -62,6 +62,7 @@
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="ModifyName.cpp" />
+    <ClCompile Include="BugFix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -114,6 +115,12 @@
     <ClInclude Include="Header\KVDBAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Templates.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Warpper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\third-party\detours\lib\detours.lib">
@@ -128,7 +135,7 @@
     <Library Include="..\third-party\leveldb\lib\leveldb.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="SymDBHelper.lib">
+    <Library Include="bedrock_server_var.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

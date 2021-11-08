@@ -1,16 +1,13 @@
 #include <ServerAPI.h>
-#include <HookAPI.h>
 #include <string>
-using namespace std;
-
-
+#include <MCApi/Common.hpp>
+#include <MCApi/SharedConstants.hpp>
 namespace LL {
 
     std::string getBdsVersion() {
-        string ver;
-        SymCall("?getGameVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-                string&, string&)(ver);
-        return ver;
+    return Common::getGameVersionString();
     }
-
-} // namespace LL
+    int getServerProtocolVersion() {
+        return SharedConstants::NetworkProtocolVersion;
+    }
+    } // namespace LL

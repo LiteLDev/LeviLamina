@@ -3,4 +3,5 @@
 
 namespace LL {
 	std::string getBdsVersion();
+    int getServerProtocolVersion();
 }
