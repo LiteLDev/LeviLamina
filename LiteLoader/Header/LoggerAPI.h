@@ -21,7 +21,8 @@
 // 
 // [Usage]
 // 
-//   Logger::setTitle("xxxx");              // Set the title before this plugin's log
+//   Logger::setTitle("xxxx");                  // Set the title before this plugin's log
+//   Logger::setFile("logs/xxxx/aaa.log");      // Set the log file (nullptr to clear) 
 //   using namespace Logger;
 // 
 //   Info("There are {} days before {} to come back", 3, "alex");   // FMT-style IO
@@ -35,11 +36,11 @@
 /////////////////////////////////////////////////////
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
+#define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 
 namespace Logger
 {
     extern CsLock lock;
-    extern std::ofstream* logFile;
 
     //title
     void inline setTitle(const std::string& title)
@@ -47,6 +48,26 @@ namespace Logger
         PluginOwnData::set<std::string>(LOGGER_CURRENT_TITLE, title);
     }
 
+    //file
+    bool inline setFile(const std::string& logFile)
+    {
+        if (logFile.empty())
+        {
+            PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
+            return true;
+        }
+        else
+        {
+            auto& res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile, std::ios::app);
+            return res.is_open();
+        }
+    }
+
+    bool inline setFile(nullptr_t)
+    {
+        PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
+        return true;
+    }
 
     ////////////////////////////////// Basic //////////////////////////////////
 
@@ -61,8 +82,8 @@ namespace Logger
         {
             lock.lock();
             fmt::print(str);
-            if (logFile)
-                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            if (PluginOwnData::has(LOGGER_CURRENT_FILE))
+                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             lock.unlock();
         }
 
@@ -175,8 +196,8 @@ namespace Logger
         {
             lock.lock();
             fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, str);
-            if (logFile)
-                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            if (PluginOwnData::has(LOGGER_CURRENT_FILE))
+                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             lock.unlock();
         }
 
@@ -199,8 +220,8 @@ namespace Logger
         {
             lock.lock();
             fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
-            if (logFile)
-                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            if (PluginOwnData::has(LOGGER_CURRENT_FILE))
+                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             lock.unlock();
         }
 
@@ -223,8 +244,8 @@ namespace Logger
         {
             lock.lock();
             fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
-            if (logFile)
-                fmt::print(GetFILEfromFstream(*(std::fstream*)logFile), str);
+            if (PluginOwnData::has(LOGGER_CURRENT_FILE))
+                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             lock.unlock();
         }
 
