@@ -14,12 +14,6 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisco
     ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet)
 {
     if (EnableFixDisconnectBug) {
-//bool isFixDisconnectBug();
-//bool isFixListenPort();
-class InventoryTransaction;
-    //Fix disconnect packet crash bug
-THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z", ServerNetworkHandler* thi, NetworkIdentifier* ni, void* packet) {
-    //if (isFixDisconnectBug()) {
         ServerPlayer* sp = thi->getServerPlayer(*ni);
         if (!sp)
             return;
@@ -44,11 +38,9 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
         return original(_this);
     }
 }
-    //}
-}
 
-THook(
-    void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+class InventoryTransaction;
+THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
     ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
     InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk+10)+16);
     auto                  a    = dAccess<std::unordered_map<int, void*>, 0>(data);
