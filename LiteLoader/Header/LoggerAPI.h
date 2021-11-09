@@ -166,7 +166,7 @@ namespace Logger
     public:
         explicit Debug()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Debug]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -180,7 +180,7 @@ namespace Logger
     public:
         explicit Info()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Info]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -204,7 +204,7 @@ namespace Logger
     public:
         explicit Warn()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Warning]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} WARNING]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -228,7 +228,7 @@ namespace Logger
     public:
         explicit Error()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Error]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
