@@ -9,6 +9,7 @@
 #include <vector>
 #include <Windows.h>
 #include <Utils/Hash.h>
+#include <Config.h>
 #include <detours/include/detours.h>
 #include <LLAPI.h>
 using std::list;
@@ -236,8 +237,6 @@ void InitFastDlsym() {
     LeaveCriticalSection(&dlsymLock);
     printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
 }
-
-void  LoadLLConfig();
 
 void *dlsym_real(const char *x) {
     

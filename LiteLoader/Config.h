@@ -10,6 +10,8 @@ extern std::string CrashLoggerProcessPath;
 extern bool EnableFixDisconnectBug;
 extern bool EnableFixListenPort;
 
+bool LoadLLConfig();
+
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
 constexpr const char* NoCrashLogger[] = { "BDSNetRunner", "AntiCheats" };
 
