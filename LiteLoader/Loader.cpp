@@ -136,5 +136,5 @@ void LoadMain()
             }
         }
     }
-    Logger::Info(std::to_string(pluginCount) + " plugin(s) loaded");
+    Logger::Info()<<std::to_string(pluginCount) + " plugin(s) loaded"<<Logger::endl;
 }

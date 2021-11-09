@@ -12,6 +12,12 @@
 #include <Config.h>
 #include <detours/include/detours.h>
 #include <LLAPI.h>
+#include <fmt/chrono.h>
+#include <fmt/color.h>
+#include <fmt/core.h>
+#include <fmt/os.h>
+#include <fmt/printf.h>
+
 using std::list;
 using std::string, std::string_view;
 using std::unordered_map, std::vector;
@@ -213,7 +219,7 @@ unordered_map<string, int, aphash> *FuncMap;
 
 CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
-    printf("[Info] Loading Symbols\n");
+    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] Loading Symbols\n", fmt::localtime(_time64(0))));
     InitializeCriticalSection(&dlsymLock);
     unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(realFuncMap);
@@ -229,13 +235,14 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     if (exportTableFn == symdbFn && exportTableFn != nullptr) {
-        printf("[Info] HealthCheckPassed <%p>\n", exportTableFn);
+        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] HealthCheckPassed <{}>\n", fmt::localtime(_time64(0)), exportTableFn));
     } else {
-        printf("[Error] HealthCheck Failed <%p!=%p>\n", exportTableFn, symdbFn);
-        printf("[Info] Are you running bedrock_serve_mod.exe?\n");
+        fmt::print(fmt::format(fmt::fg(fmt::color::red) | fmt::emphasis::bold, "[{:%Y-%m-%d %H:%M:%S} ERROR] HealthCheck Failed <{}!={}>\n", fmt::localtime(_time64(0)), exportTableFn, symdbFn));
+        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] Are you running bedrock_serve_mod.exe?\n", fmt::localtime(_time64(0))));
     }
     LeaveCriticalSection(&dlsymLock);
-    printf("[Info] FastDlsymInited <%zd>\n", realFuncMap->size());
+    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), realFuncMap->size()));
+    fflush(stdout);
 }
 
 void *dlsym_real(const char *x) {

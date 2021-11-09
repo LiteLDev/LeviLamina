@@ -3,7 +3,7 @@
 #include <httplib/httplib.h>
 #include <rapidjson/document.h>
 #include <Version.h>
-
+#include <LoggerAPI.h>
 void checkUpdate() {
     std::thread t([] {
         httplib::Client cli("https://liteldev.github.io");
@@ -13,7 +13,7 @@ void checkUpdate() {
         if (res) {
             json.Parse(res->body.c_str());
             if (json.HasParseError()) {
-                std::cout << "[Liteloader] Failed to get updates(1)\n";
+                Logger::Error() << "[Liteloader] Failed to get updates(1)" << Logger::endl;
                 return;
             }
             auto arr                  = json.GetArray();
@@ -26,7 +26,7 @@ void checkUpdate() {
                 Logger::Log("[LiteLoader] Using preview version: {}", LITELOADER_VERSION);
             }*/
         } else {
-            std::cout << "[Liteloader] Failed to get updates(0)\n";
+            Logger::Error() << "[Liteloader] Failed to get updates(0)" << Logger::endl;
         }
     });
     t.detach();

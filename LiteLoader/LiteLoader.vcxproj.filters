@@ -63,6 +63,12 @@
     </ClCompile>
     <ClCompile Include="ModifyName.cpp" />
     <ClCompile Include="BugFix.cpp" />
+    <ClCompile Include="Kernel\PlayerAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EntityAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -119,6 +125,15 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\Warpper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\PlayerAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\EntityAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Json.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
