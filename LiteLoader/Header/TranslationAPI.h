@@ -16,8 +16,17 @@
 // 
 // Translation::load("plugins/xxx/lang/zh_CN.json");
 // ...
-// tr(There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
-// trc(There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
+// tr("There are {0} days before {1} to come back", 3, "alex");          // return translated string [std::string]
+// trc("There are {0} days before {1} to come back", 3, "alex");         // return translated string [const char*]
+// 
+// 
+// [Translation File]  -  plugins/xxx/lang/zh_CN.json
+// 
+// {
+//      "There are {0} days before {1} to come back": "在{1}回来前还剩{0}天",
+//      "...": "...",
+//      "...": "..."
+// }
 // 
 //////////////////////////////////////////////////////
 

@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <LoggerAPI.h>
 #include <Utils/WinHelper.h>
+#include <Utils/StringHelper.h>
 
 bool StartCrashLogger()
 {
@@ -18,7 +19,7 @@ bool StartCrashLogger()
 
     wchar_t daemonPath[MAX_PATH];
 
-    wsprintf(daemonPath, L"%ls %u", DAEMON_PROCESS_PATH, GetCurrentProcessId());
+    wsprintf(daemonPath, L"%ls %u", str2wstr(CrashLoggerProcessPath).c_str(), GetCurrentProcessId());
     if (!CreateProcess(NULL, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi))
     {
         Logger::Error("Could not Create CrashLogger Daemon Process!");

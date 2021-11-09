@@ -1,14 +1,19 @@
 #pragma once
-
-// To store those data which is specific for every plugins itself
-// Must be used header-only!
-
-// Usage:
+////////////////////////////////////////////////////////////////////////
+//  To store those data which is specific for every plugins itself
+//  Must be used header-only!
+//
+//  [Usage]
 // 
-// PluginOwnData::set<string>("name","hello!");
-// ......
-// ......
-// cout << PluginOwnData::get<string>("name") << endl;		// "hello!"
+//  PluginOwnData::set<std::string>("name","hello!");
+//  ......
+//  ......
+//  cout << PluginOwnData::get<std::string>("name") << endl;		// "hello!"
+//  ......
+//  if(PluginOwnData::has("name"))
+//      PluginOwnData::remove<std::string>("name");
+// 
+////////////////////////////////////////////////////////////////////////
 
 
 #include <unordered_map>

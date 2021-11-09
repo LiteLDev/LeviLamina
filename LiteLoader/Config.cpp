@@ -1,34 +1,56 @@
-#include <rapidjson/document.h>
 #include "Config.h"
+#include <Utils/FileHelper.h>
+#include <Nlohmann/json.hpp>
 #include <LoggerAPI.h>
 #include <fstream>
 
-#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/liteloader.json"
+//Settings
+bool DebugMode;
+int LogLevel;
+bool EnableCrashLogger;
+std::string CrashLoggerProcessPath;
+bool EnableFixDisconnectBug;
+bool EnableFixListenPort;
 
-bool LoaderDebugMode = false;
 
-void LoadLLConfig() {
-    std::ifstream fs;
-    fs.open(LITELOADER_CONFIG_FILE, std::ios::in);
-    if (!fs)
+bool LoadLLConfig() {
+    try {
+        auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
+        if (!content)
+        {
+            Logger::Warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
+            std::ofstream of(LITELOADER_CONFIG_FILE);
+            if (of)
+            {
+                of << LITELOADER_CONFIG_DEFAULT;
+            }
+            else
+            {
+                Logger::Error("Configuration File Creation failed!");
+            }
+            *content = LITELOADER_CONFIG_DEFAULT;
+        }
+
+        nlohmann::json conf = nlohmann::json::parse(*content, nullptr, true, true);
+
+        //Read Conf
+        DebugMode = conf["DebugMode"].get<bool>();
+        LogLevel = conf["LogLevel"].get<int>();
+        EnableCrashLogger = conf["Modules"]["CrashLogger"]["enabled"].get<bool>();
+        CrashLoggerProcessPath = conf["Modules"]["CrashLogger"]["path"].get<std::string>();
+        EnableFixDisconnectBug = conf["Modules"]["FixDisconnectBug"]["enabled"].get<bool>();
+        EnableFixListenPort = conf["Modules"]["FixListenPort"]["enabled"].get<bool>();
+    }
+    catch (const nlohmann::json::exception& e)
     {
-        Logger::Warn("{} not found, creating configuration file", LITELOADER_CONFIG_FILE);
-        std::ofstream of(LITELOADER_CONFIG_FILE);
-        if (of) {
-            of << "{\n  \"DebugMode\": false\n}";
-        }
-        else {
-            Logger::Error("Configuration file creation failed");
-        }
+        Logger::Error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        Logger::Error("{}", e.what());
+        return false;
     }
-    else {
-        std::string json;
-        char buf[1024];
-        while (fs.getline(buf, 1024)) {
-            json.append(buf);
-        }
-        rapidjson::Document document;
-        document.Parse(json.c_str());
-        LoaderDebugMode = document["DebugMode"].GetBool();
+    catch (...)
+    {
+        Logger::Error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+        return false;
     }
+    return true;
 }
