@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chakra", "Chakra\Chakra.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiteLoader", "LiteLoader\LiteLoader.vcxproj", "{A52A258C-73B1-4F64-B4F6-2859CE6262C5}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SymDBHelper", "SymDBHelper\SymDBHelper.vcxproj", "{17BA7B67-A5C7-4FC3-9D6C-2917C9200255}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SymDBHelper", "Tools\SymDBHelper\SymDBHelper.vcxproj", "{17BA7B67-A5C7-4FC3-9D6C-2917C9200255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
