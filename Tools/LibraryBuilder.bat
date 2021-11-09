@@ -25,52 +25,73 @@ for /f "delims=" %%i in ('powershell -noprofile -NoLogo "iex (${%~f0} | out-stri
 if [%BDS_PATH%]==[] (
     echo.
     echo **** [Error]
-    echo **** You must choose a folder for process!!
+    echo **** You must choose a folder for process !
     goto ExitProcess
 )
 
 if not exist "%BDS_PATH%\bedrock_server.exe" (
-    mshta vbscript:CreateObject("Wscript.Shell").popup("bedrock_server.exe no found!",0,"Error",16)(window.close)
+    mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Wrong target directory! bedrock_server.exe no found",0,"Error",16^)^(window.close^)
     echo.
     echo **** [Error]
-    echo **** You must choose a folder contains *bedrock_server.exe*!!
+    echo **** You must choose a folder contains *bedrock_server.exe* !
     goto ExitProcess
 )
 
 if not exist "%BDS_PATH%\bedrock_server.pdb" (
-    mshta vbscript:CreateObject("Wscript.Shell").popup("bedrock_server.pdb no found!",0,"Error",16)(window.close)
+    mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Wrong target directory! bedrock_server.pdb no found",0,"Error",16^)^(window.close^)
     echo.
     echo **** [Error]
-    echo **** You must choose a folder contains *bedrock_server.pdb*!!
+    echo **** You must choose a folder contains *bedrock_server.pdb* !
     goto ExitProcess
 )
 
 : ================== Run SymDB ================== 
-echo ---- Running SymDB2...
+rd /s /q temp 2>nul
 mkdir temp
 copy /Y SymDB2.exe temp
 copy /Y "%BDS_PATH%\bedrock_server.exe" temp
 copy /Y "%BDS_PATH%\bedrock_server.pdb" temp
 
 cd temp
-start "SymDB2" %SYMDB_PROCESS_PATH% -def
-timeout /T %SYMDB_TIMEOUT%
-taskkill -f -im %SYMDB_PROCESS_PATH% >nul
+echo.
+echo ---- Running SymDB2...
+%SYMDB_PROCESS_PATH% -noMod -noSymdb -def -noPause
 cd ..
 
 : ================== Run llvm-dlltool ================== 
+echo.
 echo ---- Running LLVM-DLLTool...
-%LLVM_DLLTOOL_PATH% -m i386:x86-64 -d "temp\bedrock_server_api.def" -l "..\LiteLoader\bedrock_server_api.lib"
-%LLVM_DLLTOOL_PATH% -m i386:x86-64 -d "temp\bedrock_server_var.def" -l "..\LiteLoader\bedrock_server_var.lib"
+%LLVM_DLLTOOL_PATH% -m i386:x86-64 -d "temp\bedrock_server_api.def" -l "temp\bedrock_server_api.lib"
+%LLVM_DLLTOOL_PATH% -m i386:x86-64 -d "temp\bedrock_server_var.def" -l "temp\bedrock_server_var.lib"
 
-: ================== Clean ==================
+: ================== Check Valid ================== 
+if not exist "..\LiteLoader\bedrock_server_api.lib" (
+    mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Fail to generate API static library!",0,"Error",16^)^(window.close^)
+    echo.
+    echo **** [Error]
+    echo **** Fail to generate API static library !
+    goto ExitProcess
+)
+
+if not exist "..\LiteLoader\bedrock_server_var.lib" (
+    mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Fail to generate VAR static library!",0,"Error",16^)^(window.close^)
+    echo.
+    echo **** [Error]
+    echo **** Fail to generate VAR static library !
+    goto ExitProcess
+)
+
+: ================== Finish ==================
+copy /Y "temp\bedrock_server_api.lib" "..\LiteLoader\bedrock_server_api.lib"
+copy /Y "temp\bedrock_server_var.lib" "..\LiteLoader\bedrock_server_var.lib"
+rd /s /q temp >nul
 echo.
 echo ---- [Success]
-echo ---- Everything is OK!!!
+echo ---- Everything is OK.
+set %errorlevel%=0
 
 : ================== Exit ================== 
 :ExitProcess
-rd /s /q temp >nul
 timeout /T 5 >nul
 exit /b %errorlevel%
 
@@ -89,7 +110,7 @@ If($POWERSHELL_BAT_ARGS -ne $null)
 
 #: ================== User to choose ================== 
 $ws = New-Object -ComObject WScript.Shell  
-$wsr = $ws.popup("You need to choose a folder contains `n*bedrock_server.exe* and *bedrock_server.pdb* `n`nTo make SymDB2 able to work",0,"Tips",64)
+$wsr = $ws.popup("Extra static library, which is generated from an existing BDS server's symbol file, is needed to finish this compile.`n`nYou need to choose a folder contains `n*bedrock_server.exe* and *bedrock_server.pdb* next",0,"Tips",64)
 
 Add-Type -AssemblyName System.Windows.Forms
 $form = New-Object System.Windows.Forms.FolderBrowserDialog
