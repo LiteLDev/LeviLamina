@@ -28,7 +28,7 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
 
 4. 使用 `#pragma comment(lib, "刚生成的俩lib路径")` 或者任何你喜欢的方法将lib加入项目
 5. 将`SymDBHelper.lib`加入你的项目
-1. i导入EZMC头文件，享受起飞般开发效率
+1. 导入EZMC头文件，享受起飞般开发效率
 
 ### Docker(Linux)
 ```bash
