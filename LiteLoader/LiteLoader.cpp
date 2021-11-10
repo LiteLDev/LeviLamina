@@ -10,6 +10,7 @@
 #include <HookAPI.h>
 #include <LLAPI.h>
 #include <Version.h>
+#include <Config.h>
 #include "Loader.h"
 using namespace std;
 
@@ -46,6 +47,9 @@ void LLMain()
 
     //Disable Output-Sync
     std::ios::sync_with_stdio(false);
+
+    //Load Config
+    LoadLLConfig();
 
     //Rename Window
     HWND hwnd = GetConsoleWindow();

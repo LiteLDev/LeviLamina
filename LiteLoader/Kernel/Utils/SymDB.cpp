@@ -253,7 +253,6 @@ void *dlsym_real(const char *x) {
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        LoadLLConfig();
         if (LL::isDebugMode()) {       
             printf("=================LiteLoader================\n");
             printf(" ____             __  __           _      \n");

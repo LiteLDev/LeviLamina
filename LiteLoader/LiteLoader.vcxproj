@@ -64,7 +64,7 @@
     </Link>
     <PostBuildEvent>
       <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\
+copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
 )</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
