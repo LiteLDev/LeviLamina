@@ -26,7 +26,7 @@ if [%BDS_PATH%]==[] (
     echo.
     echo **** [Error]
     echo **** You must choose a folder for process !
-    goto ExitProcess
+    goto ErrorExit
 )
 
 if not exist "%BDS_PATH%\bedrock_server.exe" (
@@ -34,7 +34,7 @@ if not exist "%BDS_PATH%\bedrock_server.exe" (
     echo.
     echo **** [Error]
     echo **** You must choose a folder contains *bedrock_server.exe* !
-    goto ExitProcess
+    goto ErrorExit
 )
 
 if not exist "%BDS_PATH%\bedrock_server.pdb" (
@@ -42,7 +42,7 @@ if not exist "%BDS_PATH%\bedrock_server.pdb" (
     echo.
     echo **** [Error]
     echo **** You must choose a folder contains *bedrock_server.pdb* !
-    goto ExitProcess
+    goto ErrorExit
 )
 
 : ================== Run SymDB ================== 
@@ -65,20 +65,20 @@ echo ---- Running LLVM-DLLTool...
 %LLVM_DLLTOOL_PATH% -m i386:x86-64 -d "temp\bedrock_server_var.def" -l "temp\bedrock_server_var.lib"
 
 : ================== Check Valid ================== 
-if not exist "..\LiteLoader\bedrock_server_api.lib" (
+if not exist "temp\bedrock_server_api.lib" (
     mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Fail to generate API static library!",0,"Error",16^)^(window.close^)
     echo.
     echo **** [Error]
     echo **** Fail to generate API static library !
-    goto ExitProcess
+    goto ErrorExit
 )
 
-if not exist "..\LiteLoader\bedrock_server_var.lib" (
+if not exist "temp\bedrock_server_var.lib" (
     mshta vbscript:CreateObject^("Wscript.Shell"^).popup^("Fail to generate VAR static library!",0,"Error",16^)^(window.close^)
     echo.
     echo **** [Error]
     echo **** Fail to generate VAR static library !
-    goto ExitProcess
+    goto ErrorExit
 )
 
 : ================== Finish ==================
@@ -89,10 +89,12 @@ echo.
 echo ---- [Success]
 echo ---- Everything is OK.
 set %errorlevel%=0
+ping -n 3 127.0.0.1 > nul
+exit /b 0
 
 : ================== Exit ================== 
-:ExitProcess
-timeout /T 5 >nul
+:ErrorExit
+pause
 exit /b %errorlevel%
 
 

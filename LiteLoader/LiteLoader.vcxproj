@@ -67,6 +67,17 @@
 copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
 )</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>if not exist $(ProjectDir)bedrock_server_api.lib (
+cd /d $(SolutionDir)Tools
+LibraryBuilder.bat
+)
+
+if not exist $(ProjectDir)bedrock_server_var.lib (
+cd /d $(SolutionDir)Tools
+LibraryBuilder.bat
+)</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CheckUpdate.cpp" />
