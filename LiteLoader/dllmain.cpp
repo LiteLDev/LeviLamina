@@ -1,4 +1,7 @@
-﻿#include <Windows.h>
+﻿#pragma comment(lib, "Lib/bedrock_server_api.lib")
+#pragma comment(lib, "Lib/bedrock_server_var.lib")
+#pragma comment(lib, "Lib/SymDBHelper.lib")
+#include <Windows.h>
 
 BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
 {
@@ -11,6 +14,3 @@ BOOL WINAPI DllMain(HMODULE, DWORD ul_reason_for_call, LPVOID)
     }
     return TRUE;
 }
-#pragma comment(lib, "bedrock_server_api.lib")
-#pragma comment(lib, "bedrock_server_var.lib")
-#pragma comment(lib, "SymDBHelper.lib")

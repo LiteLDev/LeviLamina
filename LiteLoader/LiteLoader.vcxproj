@@ -68,15 +68,15 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if not exist $(ProjectDir)bedrock_server_api.lib (
-cd /d $(SolutionDir)Tools
-LibraryBuilder.bat
-)
+      <Command>if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
+if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
+goto end
 
-if not exist $(ProjectDir)bedrock_server_var.lib (
+:process
 cd /d $(SolutionDir)Tools
-LibraryBuilder.bat
-)</Command>
+LibraryBuilder.exe
+
+:end</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -142,7 +142,9 @@ LibraryBuilder.bat
     <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
     <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
     <Library Include="..\third-party\openssl\lib\libssl.lib" />
-    <Library Include="bedrock_server_var.lib" />
+    <Library Include="Lib\bedrock_server_api.lib" />
+    <Library Include="Lib\bedrock_server_var.lib" />
+    <Library Include="Lib\SymDBHelper.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
