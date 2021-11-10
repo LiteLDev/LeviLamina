@@ -28,15 +28,15 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisco
 bool a_call = true;
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void* _this) {
-    if (EnableFixListenPort) {
+    //if (EnableFixListenPort) {
         if (a_call) {
             a_call = false;
             return original(_this);
         }
         return 0;
-    } else {
-        return original(_this);
-    }
+   // } else {
+   //     return original(_this);
+   // }
 }
 
 class InventoryTransaction;

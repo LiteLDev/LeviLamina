@@ -161,7 +161,10 @@ enum class color : uint32_t {
   white = 0xFFFFFF,                    // rgb(255,255,255)
   white_smoke = 0xF5F5F5,              // rgb(245,245,245)
   yellow = 0xFFFF00,                   // rgb(255,255,0)
-  yellow_green = 0x9ACD32              // rgb(154,205,50)
+  yellow_green = 0x9ACD32,              // rgb(154,205,50)
+    yellow2                 = 0xEBE94E, // rgb(235, 233, 78)
+    red2                    = 0xEF2E2E  // rgb(239, 46, 46)
+
 };                                     // enum class color
 
 enum class terminal_color : uint8_t {

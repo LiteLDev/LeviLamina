@@ -38,7 +38,7 @@ string wstr2str(wstring wstr) {
 
 bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 	if (LoadLibrary(libName)) {
-		Info("{} Injected.", std::filesystem::path(wstr2str(libName)).filename().u8string());
+        Info("{} Injected.", std::filesystem::path(wstr2str(libName)).filename().u8string());
 		return true;
 	} else {
 		if (showFailInfo) {

@@ -187,7 +187,7 @@ namespace Logger
     public:
         Debug()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Debug]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S}][DEBUG]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -263,7 +263,7 @@ namespace Logger
     public:
         Info()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Info]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S}][INFO]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -340,7 +340,7 @@ namespace Logger
         void RealPrint(const std::string& str)
         {
             lock();
-            fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, str);
+            fmt::print(fmt::fg(fmt::color::yellow2) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             unlock();
@@ -349,7 +349,7 @@ namespace Logger
     public:
         Warn()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Warning]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S}][WARN]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -426,7 +426,7 @@ namespace Logger
         void RealPrint(const std::string& str)
         {
             lock();
-            fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
+            fmt::print(fmt::fg(fmt::color::red2) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
             unlock();
@@ -435,7 +435,7 @@ namespace Logger
     public:
         Error()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} Error]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S}][ERROR]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
@@ -521,7 +521,7 @@ namespace Logger
     public:
         Fatal()
         {
-            std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S}][FATAL]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
