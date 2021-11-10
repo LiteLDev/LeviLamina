@@ -1,13 +1,15 @@
 ﻿// Chakra.cpp : 定义 DLL 的导出函数。
 //
 #include "pch.h"
+#include "Logger.h"
+#include <string>
+
+using std::string;
+using std::wstring;
+using namespace std::filesystem;
+
 
 #define MAX_PATH_LENGTH 8192
-
-using std::endl;
-using std::wcerr;
-using std::wcout;
-using namespace std::filesystem;
 
 void fixUpLibDir() {
 	WCHAR* buffer = new (std::nothrow) WCHAR[MAX_PATH_LENGTH];
@@ -23,21 +25,32 @@ void fixUpLibDir() {
 	delete[] buffer;
 }
 
+string wstr2str(wstring wstr) {
+	auto  len = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, NULL, 0, NULL, NULL);
+	char* buffer = new char[len + 1];
+	WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, buffer, len + 1, NULL, NULL);
+	buffer[len] = '\0';
+
+	string result = string(buffer);
+	delete[] buffer;
+	return result;
+}
+
 bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 	if (LoadLibrary(libName)) {
-		wcout << "[Chakra] " << libName << " Injected." << endl;
+		Info("{} Injected.", std::filesystem::path(wstr2str(libName)).filename().u8string());
 		return true;
 	} else {
 		if (showFailInfo) {
 			DWORD error_message_id = GetLastError();
-			wcerr << "[Chakra Error] Can't load " << libName << "!" << endl;
-			wcerr << "[Chakra Error] Error Code:" << error_message_id << endl;
+			Error("Can't load {} !", wstr2str(libName));
+			Error("Error code: {} !", error_message_id);
 			LPWSTR message_buffer = nullptr;
 			FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_IGNORE_INSERTS |
 							  FORMAT_MESSAGE_FROM_SYSTEM,
 						  NULL, error_message_id, MAKELANGID(0x09, SUBLANG_DEFAULT),
 						  (LPWSTR)&message_buffer, 0, NULL);
-			wcerr << "[Chakra Error] " << message_buffer;
+			Error("{}", wstr2str(message_buffer));
 			LocalFree(message_buffer);
 		}
 		return false;
