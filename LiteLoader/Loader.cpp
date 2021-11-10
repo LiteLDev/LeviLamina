@@ -85,7 +85,7 @@ void LoadMain()
             Logger::Warn("There will be no crash log when unhandled exception occurs.");
         }
     }
-    else
+    else if (noCrashLoggerReason != "")
     {
         Logger::Log() << Logger::endl;
         Logger::Warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
