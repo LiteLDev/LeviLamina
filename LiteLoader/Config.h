@@ -16,7 +16,7 @@ bool LoadLLConfig();
 constexpr const char* NoCrashLogger[] = { "BDSNetRunner", "AntiCheats" };
 
 // LL Config File Path
-#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/liteloader.json"
+#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
 // LL Config File Default Content
 #define LITELOADER_CONFIG_DEFAULT R"({

@@ -1,0 +1,17 @@
+{
+    "DebugMode": false,
+    "LogLevel": 4,
+    
+    "Modules": {
+        "CrashLogger": {
+            "enabled": true,
+            "path": "plugins\\LiteLoader\\CrashLogger_Daemon.exe"
+        },
+        "FixDisconnectBug": {
+            "enabled": true
+        },
+        "FixListenPort": {
+            "enabled": true
+        }
+    }
+}

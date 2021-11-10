@@ -254,12 +254,12 @@ void *dlsym_real(const char *x) {
             exit(1);
         }
         if (LL::isDebugMode()) {       
-            printf("=================LiteLoader================\n");
-            printf(" ____             __  __           _      \n");
-            printf("|  _ \\  _____   _|  \\/  | ___   __| | ___ \n");
-            printf("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\\n");
-            printf("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/\n");
-            printf("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
+            printf(R"(================ LiteLoader ===============\n)");
+            printf(R"( ____             __  __           _      \n)");
+            printf(R"(|  _ \  _____   _|  \/  | ___   __| | ___ \n)");
+            printf(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \\n)");
+            printf(R"(| |_| |  __/\ V /| |  | | (_) | (_| |  __/\n)");
+            printf(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|\n)");
             printf("[Debug] You Are In DevelopMode, FastDlsym Won't Be Load\n\n");
             fnstat = 2;
             FuncMap = new unordered_map<string, int, aphash>;
