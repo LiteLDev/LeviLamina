@@ -1,8 +1,10 @@
 ﻿Release/
 x64/
-.vs/
+**/.vs/
 **/x64/
 **/*.user
+**/.vscode/
+
 **/bedrock_server_api.lib
 **/bedrock_server_var.lib
 **/SymDB_DelayLoadHelper.lib
