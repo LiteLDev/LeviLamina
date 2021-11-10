@@ -246,9 +246,9 @@ void InitFastDlsym() {
 }
 
 void *dlsym_real(const char *x) {
-    
+    std::error_code ec;
     if (SymDB == nullptr) {
-        if (!std::filesystem::exists("bedrock_server.symdb2")) {
+        if (!std::filesystem::exists("bedrock_server.symdb2",ec)) {
             printf("SymDB not found\ntry to run SymDB2.exe\n");
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
