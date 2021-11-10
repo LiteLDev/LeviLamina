@@ -7,6 +7,12 @@
 
 bool StartCrashLogger()
 {
+    if (IsDebuggerPresent())
+    {
+        Logger::Info("Existing debugger detected. Builtin CrashLogger will not work.");
+        return true;
+    }
+
     STARTUPINFO si;
     ZeroMemory(&si, sizeof(si));
     si.cb = sizeof(si);

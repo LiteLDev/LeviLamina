@@ -219,7 +219,7 @@ unordered_map<string, int, aphash> *FuncMap;
 
 CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
-    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] Loading Symbols\n", fmt::localtime(_time64(0))));
+    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] Loading Symbols\n", fmt::localtime(_time64(0))));
     InitializeCriticalSection(&dlsymLock);
     unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(realFuncMap);
@@ -235,13 +235,13 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     if (exportTableFn == symdbFn && exportTableFn != nullptr) {
-        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] HealthCheckPassed <{}>\n", fmt::localtime(_time64(0)), exportTableFn));
+        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] HealthCheckPassed <{}>\n", fmt::localtime(_time64(0)), exportTableFn));
     } else {
         fmt::print(fmt::format(fmt::fg(fmt::color::red) | fmt::emphasis::bold, "[{:%Y-%m-%d %H:%M:%S} ERROR] HealthCheck Failed <{}!={}>\n", fmt::localtime(_time64(0)), exportTableFn, symdbFn));
-        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] Are you running bedrock_serve_mod.exe?\n", fmt::localtime(_time64(0))));
+        fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] Are you running bedrock_serve_mod.exe?\n", fmt::localtime(_time64(0))));
     }
     LeaveCriticalSection(&dlsymLock);
-    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), realFuncMap->size()));
+    fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), realFuncMap->size()));
     fflush(stdout);
 }
 

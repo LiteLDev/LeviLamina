@@ -74,24 +74,27 @@ void LoadMain()
     }
 
     //Start CrashLogger
+    Logger::setTitle("CrashLogger");
     if (enableCrashLogger)
     {
         if(StartCrashLogger())
-            Logger::Info("[CrashLogger] CrashLogger Deamon Process attached.");
+            Logger::Info("CrashLogger Deamon Process attached.");
         else
         {
-            Logger::Warn("[CrashLogger] Builtin CrashLogger failed to start!");
-            Logger::Warn("[CrashLogger] There will be no crash log when unhandled exception occurs.");
+            Logger::Warn("Builtin CrashLogger failed to start!");
+            Logger::Warn("There will be no crash log when unhandled exception occurs.");
         }
     }
     else
     {
-        Logger::Warn("[CrashLogger] Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
-        Logger::Warn("[CrashLogger] There will be no crash log when unhandled exception occurs,");
-        Logger::Warn("[CrashLogger] which makes it almost impossible to find out the reason for crash and the source of crash.");
-        Logger::Warn("[CrashLogger] ");
-        Logger::Warn("[CrashLogger] We strongly recommend you to uninstall plugin <{}> to ensure server security", noCrashLoggerReason);
+        Logger::Log() << Logger::endl;
+        Logger::Warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
+        Logger::Warn("There will be no crash log when unhandled exception occurs,");
+        Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
+        Logger::Warn("");
+        Logger::Warn("We strongly recommend you to uninstall plugin <{}> to ensure server security\n", noCrashLoggerReason);
     }
+    Logger::setTitle("LiteLoader");
 
     // Load plugins
     int pluginCount  = 0;

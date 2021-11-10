@@ -48,6 +48,10 @@ void LLMain()
     //Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
+    //Fix problems
+    FixUpCWD();
+    FixPluginsLibDir();
+
     //Load Config
     LoadLLConfig();
 
@@ -58,10 +62,6 @@ void LLMain()
 
     //Init LL Logger
     Logger::setTitle("LiteLoader");
-
-    //Fix problems
-    FixUpCWD();
-    FixPluginsLibDir();
 
     //Load plugins
     LoadMain();
