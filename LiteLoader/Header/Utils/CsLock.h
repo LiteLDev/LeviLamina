@@ -6,6 +6,7 @@
 
 class CsLock
 {
+    bool inited = false;
     CRITICAL_SECTION cslock;
 public:
     CsLock();

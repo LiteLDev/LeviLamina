@@ -1,14 +1,24 @@
 #include <Utils/CsLock.h>
 
 CsLock::CsLock() {
-    InitializeCriticalSection(&cslock);
+    if (!inited)
+    {
+        inited = true;
+        InitializeCriticalSection(&cslock);
+    }
 }
 
 CsLock::~CsLock() {
-    DeleteCriticalSection(&cslock);
+    if(inited)
+        DeleteCriticalSection(&cslock);
 }
 
 bool CsLock::lock() {
+    if (!inited)
+    {
+        inited = true;
+        InitializeCriticalSection(&cslock);
+    }
     EnterCriticalSection(&cslock);
     return true;
 }

@@ -36,10 +36,26 @@
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
+#define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 namespace Logger
 {
-    extern CsLock lock;
+    void inline initLock()
+    {
+        if (!PluginOwnData::has(LOGGER_CURRENT_LOCK))
+            PluginOwnData::set<CsLock>(LOGGER_CURRENT_LOCK);
+    }
+
+    void inline lock()
+    {
+        initLock();
+        PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).lock();
+    }
+
+    void inline unlock()
+    {
+        PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).unlock();
+    }
 
     //title
     void inline setTitle(const std::string& title)
@@ -77,17 +93,17 @@ namespace Logger
         template <bool B, class T = void>
         using enable_if_t = typename std::enable_if<B, T>::type;
 
-        virtual void RealPrint(const std::string& str)
+        void RealPrint(const std::string& str)
         {
-            lock.lock();
+            lock();
             fmt::print(str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
-            lock.unlock();
+            unlock();
         }
 
     public:
-        explicit Log() = default;
+        Log() = default;
 
         Log(const Log&) = delete;
         Log& operator=(const Log&) = delete;
@@ -140,10 +156,10 @@ namespace Logger
         // flush
         Log& flush()
         {
-            lock.lock();
+            lock();
             fflush(stdout);
             std::cout.flush();
-            lock.unlock();
+            unlock();
             return *this;
         }
     };
@@ -151,9 +167,9 @@ namespace Logger
     // << endl
     inline void endl(Log& logger)
     {
-        lock.lock();
+        lock();
         logger << '\n';
-        lock.unlock();
+        unlock();
         logger.flush();
     }
 
@@ -169,101 +185,411 @@ namespace Logger
     class Debug : public Log
     {
     public:
-        explicit Debug()
+        Debug()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-        using Log::Log;
+
+        Debug(const Debug&) = delete;
+        Debug& operator=(const Debug&) = delete;
+
+        // Debug(string("There are {} days before {} to come back"), 3, "alex");
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Debug(const S& formatStr, const Args&... args)
+            : Debug()
+        {
+            std::string str = fmt::format(formatStr, args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Debug("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        Debug(const char* formatStr, const Args&... args)
+            : Debug()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Debug().printf("%s, %d\n","Alex", 3);
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Debug& printf(const S& formatStr, const Args&... args)
+        {
+            std::string str = fmt::sprintf(formatStr, args...);
+            RealPrint(str);
+            return *this;
+        }
+
+        // Debug() << "test" << endl;
+        template <typename T>
+        Debug& operator<<(T value)
+        {
+            std::ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
+            return *this;
+        }
+
+        Debug& operator<<(void (*obj)(Debug&))
+        {
+            obj(*this);
+            return *this;
+        }
     };
+
+    // << endl
+    inline void endl(Debug& logger)
+    {
+        lock();
+        logger << '\n';
+        unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Debug& logger)
+    {
+        logger.flush();
+    }
 
     //Info
     class Info : public Log
     {
     public:
-        explicit Info()
+        Info()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-        using Log::Log;
+
+        Info(const Info&) = delete;
+        Info& operator=(const Info&) = delete;
+
+        // Info(string("There are {} days before {} to come back"), 3, "alex");
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Info(const S& formatStr, const Args&... args)
+            : Info()
+        {
+            std::string str = fmt::format(formatStr, args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Info("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        Info(const char* formatStr, const Args&... args)
+            : Info()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Info().printf("%s, %d\n","Alex", 3);
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Info& printf(const S& formatStr, const Args&... args)
+        {
+            std::string str = fmt::sprintf(formatStr, args...);
+            RealPrint(str);
+            return *this;
+        }
+
+        // Info() << "test" << endl;
+        template <typename T>
+        Info& operator<<(T value)
+        {
+            std::ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
+            return *this;
+        }
+
+        Info& operator<<(void (*obj)(Info&))
+        {
+            obj(*this);
+            return *this;
+        }
     };
+
+    // << endl
+    inline void endl(Info& logger)
+    {
+        lock();
+        logger << '\n';
+        unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Info& logger)
+    {
+        logger.flush();
+    }
 
     //Warn
     class Warn : public Log
     {
     protected:
-        virtual void RealPrint(const std::string& str) override
+        void RealPrint(const std::string& str)
         {
-            lock.lock();
+            lock();
             fmt::print(fmt::fg(fmt::color::yellow) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
-            lock.unlock();
+            unlock();
         }
 
     public:
-        explicit Warn()
+        Warn()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} WARNING]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-        using Log::Log;
+
+        Warn(const Warn&) = delete;
+        Warn& operator=(const Warn&) = delete;
+
+        // Warn(string("There are {} days before {} to come back"), 3, "alex");
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Warn(const S& formatStr, const Args&... args)
+            : Warn()
+        {
+            std::string str = fmt::format(formatStr, args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Warn("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        Warn(const char* formatStr, const Args&... args)
+            : Warn()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Warn().printf("%s, %d\n","Alex", 3);
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Warn& printf(const S& formatStr, const Args&... args)
+        {
+            std::string str = fmt::sprintf(formatStr, args...);
+            RealPrint(str);
+            return *this;
+        }
+
+        // Warn() << "test" << endl;
+        template <typename T>
+        Warn& operator<<(T value)
+        {
+            std::ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
+            return *this;
+        }
+
+        Warn& operator<<(void (*obj)(Warn&))
+        {
+            obj(*this);
+            return *this;
+        }
     };
+
+    // << endl
+    inline void endl(Warn& logger)
+    {
+        lock();
+        logger << '\n';
+        unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Warn& logger)
+    {
+        logger.flush();
+    }
 
     //Error
     class Error : public Log
     {
     protected:
-        virtual void RealPrint(const std::string& str) override
+        void RealPrint(const std::string& str)
         {
-            lock.lock();
+            lock();
             fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
-            lock.unlock();
+            unlock();
         }
 
     public:
-        explicit Error()
+        Error()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-        using Log::Log;
+
+        Error(const Error&) = delete;
+        Error& operator=(const Error&) = delete;
+
+        // Error(string("There are {} days before {} to come back"), 3, "alex");
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Error(const S& formatStr, const Args&... args)
+            : Error()
+        {
+            std::string str = fmt::format(formatStr, args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Error("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        Error(const char* formatStr, const Args&... args)
+            : Error()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Error().printf("%s, %d\n","Alex", 3);
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Error& printf(const S& formatStr, const Args&... args)
+        {
+            std::string str = fmt::sprintf(formatStr, args...);
+            RealPrint(str);
+            return *this;
+        }
+
+        // Error() << "test" << endl;
+        template <typename T>
+        Error& operator<<(T value)
+        {
+            std::ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
+            return *this;
+        }
+
+        Error& operator<<(void (*obj)(Error&))
+        {
+            obj(*this);
+            return *this;
+        }
     };
+
+    // << endl
+    inline void endl(Error& logger)
+    {
+        lock();
+        logger << '\n';
+        unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Error& logger)
+    {
+        logger.flush();
+    }
 
     //Fatal
     class Fatal : public Log
     {
     protected:
-        virtual void RealPrint(const std::string& str) override
+        void RealPrint(const std::string& str)
         {
-            lock.lock();
+            lock();
             fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
                 fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
-            lock.unlock();
+            unlock();
         }
 
     public:
-        explicit Fatal()
+        Fatal()
         {
             std::string str = fmt::format("[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
                 " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
             RealPrint(str);
         }
-        using Log::Log;
+
+        Fatal(const Fatal&) = delete;
+        Fatal& operator=(const Fatal&) = delete;
+
+        // Fatal(string("There are {} days before {} to come back"), 3, "alex");
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Fatal(const S& formatStr, const Args&... args)
+            : Fatal()
+        {
+            std::string str = fmt::format(formatStr, args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Fatal("There are {} days before {} to come back", 3, "alex");
+        template <typename... Args>
+        Fatal(const char* formatStr, const Args&... args)
+            : Fatal()
+        {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            str.append(1, '\n');
+            RealPrint(str);
+        }
+
+        // Fatal().printf("%s, %d\n","Alex", 3);
+        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        Fatal& printf(const S& formatStr, const Args&... args)
+        {
+            std::string str = fmt::sprintf(formatStr, args...);
+            RealPrint(str);
+            return *this;
+        }
+
+        // Fatal() << "test" << endl;
+        template <typename T>
+        Fatal& operator<<(T value)
+        {
+            std::ostringstream sout;
+            sout << value;
+            RealPrint(sout.str());
+            return *this;
+        }
+
+        Fatal& operator<<(void (*obj)(Fatal&))
+        {
+            obj(*this);
+            return *this;
+        }
     };
+
+    // << endl
+    inline void endl(Fatal& logger)
+    {
+        lock();
+        logger << '\n';
+        unlock();
+        logger.flush();
+    }
+
+    // << flush
+    inline void flush(Fatal& logger)
+    {
+        logger.flush();
+    }
 } // namespace Logger
 
 #undef LOGGER_CURRENT_TITLE
