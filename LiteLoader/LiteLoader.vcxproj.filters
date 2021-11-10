@@ -41,9 +41,6 @@
     <ClCompile Include="Kernel\ServerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\SymDB.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
@@ -138,9 +135,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\detours\lib\detours.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="..\third-party\openssl\lib\libcrypto.lib">
       <Filter>Lib</Filter>
     </Library>

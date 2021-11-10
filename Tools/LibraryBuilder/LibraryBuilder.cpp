@@ -99,7 +99,7 @@ int main()
     cout << "\n----Running SymDB2..." << endl;
     auto parentDir = filesystem::current_path();
     filesystem::current_path(parentDir.u8string() + "/temp");
-    system("SymDB2.exe -def -noMod -noSymdb -noPause");
+    system("SymDB2.exe -def -noMod -noSymdb -noPause -keepOri");
     filesystem::current_path(parentDir);
 
     cout << "\n---- Running LLVM-DLLTool..." << endl;

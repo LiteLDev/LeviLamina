@@ -96,7 +96,6 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
     <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
-    <ClCompile Include="Kernel\Utils\SymDB.cpp" />
     <ClCompile Include="Kernel\KVDBAPI.cpp" />
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
@@ -138,7 +137,6 @@ LibraryBuilder.exe
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\detours\lib\detours.lib" />
     <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
     <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
     <Library Include="..\third-party\openssl\lib\libssl.lib" />
