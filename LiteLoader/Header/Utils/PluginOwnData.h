@@ -17,11 +17,12 @@
 
 
 #include <unordered_map>
-#include <Utils/WinHelper.h>
+#include "WinHelper.h"
 #include <minwindef.h>
 #include <string_view>
+#include "../Global.h"
 
-extern std::unordered_map<HMODULE, std::unordered_map<std::string_view, void*>> ll_PluginOwnData;
+LIAPI std::unordered_map<HMODULE, std::unordered_map<std::string_view, void*>> ll_PluginOwnData;
 
 namespace PluginOwnData
 {

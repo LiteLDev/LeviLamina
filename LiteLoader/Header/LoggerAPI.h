@@ -8,10 +8,10 @@
 #include <fmt/core.h>
 #include <fmt/os.h>
 #include <fmt/printf.h>
-#include <Utils/CsLock.h>
-#include <Utils/WinHelper.h>
-#include <Utils/FileHelper.h>
-#include <Utils/PluginOwnData.h>
+#include "Utils/CsLock.h"
+#include "Utils/WinHelper.h"
+#include "Utils/FileHelper.h"
+#include "Utils/PluginOwnData.h"
 #include <string>
 #include <sstream>
 #include <iostream>

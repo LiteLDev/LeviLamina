@@ -80,6 +80,8 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AutoUpdate.cpp" />
+    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
@@ -89,9 +91,11 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
@@ -111,6 +115,8 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AutoUpdate.h" />
+    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\ActorAPI.h" />
@@ -120,6 +126,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\PlayerAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
     <ClInclude Include="Header\Templates.h" />
+    <ClInclude Include="Header\Utils\CryptHelper.h" />
     <ClInclude Include="Header\Utils\CsLock.h" />
     <ClInclude Include="Header\Utils\FileHelper.h" />
     <ClInclude Include="Header\Utils\Hash.h" />
@@ -127,6 +134,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
+    <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
     <ClInclude Include="Loader.h" />

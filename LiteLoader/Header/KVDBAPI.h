@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include <Global.h>
+#include "Global.h"
 #include <functional>
 #include <string_view>
 #include <unordered_map>

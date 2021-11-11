@@ -1,7 +1,7 @@
 #pragma once
-#include <Global.h>
-#include <MobAPI.h>
-#include <MCApi/ServerPlayer.hpp>
+#include "Global.h"
+#include "MobAPI.h"
+#include "MCApi/ServerPlayer.hpp"
 class ServerPlayer;
 class Player;
 class NetworkIdentifier;

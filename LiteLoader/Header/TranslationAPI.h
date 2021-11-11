@@ -1,13 +1,13 @@
 #pragma once
-#include <Utils/PluginOwnData.h>
-#include <Utils/FileHelper.h>
-#include <LoggerAPI.h>
-#include <LLAPI.h>
+#include "Utils/PluginOwnData.h"
+#include "Utils/FileHelper.h"
+#include "LoggerAPI.h"
+#include "LLAPI.h"
 #include <Nlohmann/json.hpp>
 #include <fmt/core.h>
 #include <fmt/os.h>
 #include <string>
-#include <Global.h>
+#include "Global.h"
 
 //////////////////////////////////////////////////////
 // For Internationalization

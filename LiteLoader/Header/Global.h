@@ -12,7 +12,7 @@
 #define MCCLS
 
 #include <minwindef.h>
-#include <HookAPI.h>
+#include "HookAPI.h"
 #include <string>
 #include <vector>
 #include <iostream>
@@ -21,8 +21,8 @@
 #include <gsl/gsl>
 #include <bitset>
 #include <utility>
-#include <Templates.h>
-#include <Utils/Json.h>
+#include "Templates.h"
+#include "Utils/Json.h"
 
 // Types
 typedef std::string xuid_t;

@@ -1,7 +1,7 @@
 #pragma once
-#include <Global.h>
-#include <MCApi/Mob.hpp>
-#include <ActorAPI.h>
+#include "Global.h"
+#include "MCApi/Mob.hpp"
+#include "ActorAPI.h"
 
 struct MobObj : public Mob
 {

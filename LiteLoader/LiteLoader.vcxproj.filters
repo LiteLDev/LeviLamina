@@ -69,6 +69,14 @@
     <ClCompile Include="Kernel\MobAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="AutoUpdate.cpp" />
+    <ClCompile Include="CheckNotice.cpp" />
+    <ClCompile Include="Kernel\Utils\NetworkHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -135,6 +143,14 @@
     </ClInclude>
     <ClInclude Include="Header\MobAPI.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoUpdate.h" />
+    <ClInclude Include="CheckNotice.h" />
+    <ClInclude Include="Header\Utils\NetworkHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\CryptHelper.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

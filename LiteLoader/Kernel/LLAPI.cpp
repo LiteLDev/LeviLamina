@@ -45,21 +45,31 @@ LL::Version::Version(int major, int minor, int revision, Status status)
     :major(major), minor(minor), revision(revision), status(status)
 { }
 
-bool LL::Version::operator<(const LL::Version& b)
+bool LL::Version::operator<(LL::Version b)
 {
     return major < b.major
         || (major == b.major && minor < b.minor)
         || (major == b.major && minor == b.minor && revision < b.revision);
 }
 
-bool LL::Version::operator==(const LL::Version& b)
+bool LL::Version::operator==(LL::Version b)
 {
     return major == b.major && minor == b.minor && revision == b.revision;
 }
 
-bool LL::Version::operator<=(const LL::Version& b)
+bool LL::Version::operator<=(LL::Version b)
 {
     return *this < b || *this == b;
+}
+
+bool LL::Version::operator>(LL::Version b)
+{
+    return b < *this;
+}
+
+bool LL::Version::operator>=(LL::Version b)
+{
+    return *this > b || *this == b;
 }
 
 std::string LL::Version::toString(bool needStatus)

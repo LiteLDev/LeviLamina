@@ -8,7 +8,7 @@
 #include <stack>
 #include <string>
 #include <vector>
-#include <Global.h>
+#include "../Global.h"
 
 namespace Json {
 

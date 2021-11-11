@@ -1,11 +1,13 @@
 #pragma once
+#include "../Global.h"
 #include <string>
 #include <Windows.h>
 
-std::string GetLastErrorMessage();
+// GetLastError() -> string
+LIAPI std::string GetLastErrorMessage();
 
-// Must be header-only!
 // Get Current DLL's module handle
+// (Must be header-only!)
 HMODULE inline GetCurrentModule()
 {
     HMODULE hModule = NULL;

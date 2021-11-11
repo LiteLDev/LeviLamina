@@ -48,3 +48,31 @@ std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::
 
     return resVec;
 }
+
+bool StartsWith(const std::string& str, const std::string& start)
+{
+    int srclen = str.size();
+    int startlen = start.size();
+    if (srclen >= startlen)
+    {
+        string temp = str.substr(0, startlen);
+        if (temp == start)
+            return true;
+    }
+
+    return false;
+}
+
+bool EndsWith(const std::string& str, const std::string& end)
+{
+    int srclen = str.size();
+    int endlen = end.size();
+    if (srclen >= endlen)
+    {
+        string temp = str.substr(srclen - endlen, endlen);
+        if (temp == end)
+            return true;
+    }
+
+    return false;
+}

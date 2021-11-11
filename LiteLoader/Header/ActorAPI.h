@@ -1,6 +1,6 @@
 #pragma once
-#include <Global.h>
-#include <MCApi/Actor.hpp>
+#include "Global.h"
+#include "MCApi/Actor.hpp"
 class Actor;
 class Player;
 class NetworkIdentifier;
