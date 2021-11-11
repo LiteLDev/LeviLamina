@@ -1,15 +1,17 @@
 #pragma once
 #pragma warning(disable:4250)
-#include <minwindef.h>
+
 #ifdef LITELOADER_EXPORTS
 #define LIAPI __declspec(dllexport)
 #else
 #define LIAPI __declspec(dllimport)
 #endif
+
 #define MCAPI __declspec(dllimport)
 #define MCINLINE inline
 #define MCCLS
-#include <Utils/Warpper.h>
+
+#include <minwindef.h>
 #include <HookAPI.h>
 #include <string>
 #include <vector>
@@ -21,7 +23,9 @@
 #include <utility>
 #include <Templates.h>
 #include <Utils/Json.h>
-typedef unsigned long long xuid_t;
+
+// Types
+typedef std::string xuid_t;
 namespace mce {
-class UUID;
+	class UUID;
 };

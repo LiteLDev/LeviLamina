@@ -20,16 +20,7 @@ LIAPI Certificate* PlayerObj::getCert() {
     return nullptr;
 }
 
-LIAPI xuid_t PlayerObj::getXUID() {
-    std::string xuidstr = ExtendedCertificate::getXuid(*this->getCert());
-    if (xuidstr != "") {
-        return std::stoull(xuidstr);
-    } else {
-        return 0;
-    }
-}
-
-LIAPI std::string PlayerObj::getStringXUID() {
+LIAPI xuid_t PlayerObj::getXuid() {
     return ExtendedCertificate::getXuid(*this->getCert());
 }
 

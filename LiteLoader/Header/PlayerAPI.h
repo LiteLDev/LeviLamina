@@ -13,7 +13,6 @@ struct PlayerObj : public ServerPlayer
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();
-    LIAPI xuid_t       getXUID();
+    LIAPI xuid_t       getXuid();
     LIAPI std::string getRealName();
-    LIAPI std::string getStringXUID();
 };
