@@ -3,12 +3,17 @@
 #include <MCApi/ServerPlayer.hpp>
 #include <MCApi/Certificate.hpp>
 #include <MCApi/ExtendedCertificate.hpp>
+
+LIAPI UserEntityIdentifierComponent* PlayerObj::getUserEntityIdentifierComponent() {
+    return ((MobObj*)(Mob*)this)->getUserEntityIdentifierComponent();
+}
+
 LIAPI NetworkIdentifier* PlayerObj::getNetworkIdentifier(){
-    return (NetworkIdentifier*)this->getUserEntityIdentifierComponent();
+    return (NetworkIdentifier*)(this->getUserEntityIdentifierComponent());
 }
 
 LIAPI Certificate* PlayerObj::getCert() {
-    UserEntityIdentifierComponent* ueic = this->getUserEntityIdentifierComponent();
+    UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
     }

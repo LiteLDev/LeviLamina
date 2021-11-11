@@ -85,8 +85,9 @@ LibraryBuilder.exe
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BugFix.cpp" />
-    <ClCompile Include="Kernel\EntityAPI.cpp" />
+    <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -112,9 +113,10 @@ LibraryBuilder.exe
   <ItemGroup>
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
-    <ClInclude Include="Header\EntityAPI.h" />
+    <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
+    <ClInclude Include="Header\MobAPI.h" />
     <ClInclude Include="Header\PlayerAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
     <ClInclude Include="Header\Templates.h" />

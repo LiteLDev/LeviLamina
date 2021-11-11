@@ -1,12 +1,12 @@
 #pragma once
 #include <Global.h>
+#include <MCApi/Actor.hpp>
 class Actor;
 class Player;
 class NetworkIdentifier;
 class UserEntityIdentifierComponent;
-struct ActorObj : Wrapped<Actor> {
-    ActorObj(Actor& x)
-        : Wrapped<Actor>(x) {
-    }
+
+struct ActorObj : public Actor
+{
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 };

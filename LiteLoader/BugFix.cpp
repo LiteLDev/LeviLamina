@@ -50,9 +50,8 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
             abnormal = 1;
         }
     if (abnormal) {
-        ServerPlayer* sp = snh.getServerPlayer(netid);
-        PlayerObj     wp = PlayerObj{*sp};
-        Logger::Warn() << "Player("<< wp.getRealName()<<") item data error!" << Logger::endl;
+        PlayerObj* sp = (PlayerObj*)snh.getServerPlayer(netid);
+        Logger::Warn() << "Player("<< sp->getRealName()<<") item data error!" << Logger::endl;
         return nullptr;
     }
     return original(snh, netid, pk);

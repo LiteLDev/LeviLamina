@@ -63,7 +63,10 @@
     <ClCompile Include="Kernel\PlayerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\EntityAPI.cpp">
+    <ClCompile Include="Kernel\ActorAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MobAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
@@ -127,11 +130,14 @@
     <ClInclude Include="Header\PlayerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\EntityAPI.h">
+    <ClInclude Include="Header\ActorAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\Json.h">
       <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MobAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

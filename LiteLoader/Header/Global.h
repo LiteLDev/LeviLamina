@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable:4250)
 #include <minwindef.h>
 #ifdef LITELOADER_EXPORTS
 #define LIAPI __declspec(dllexport)

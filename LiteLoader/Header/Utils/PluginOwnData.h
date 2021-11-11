@@ -57,7 +57,7 @@ namespace PluginOwnData
 	template <typename T, typename... Args>
 	inline T& set(const std::string_view& key, const Args&... args)
 	{
-		return setImpl<T>(GetCurrentModule(), key, args...);
+		return setImpl<T,Args...>(GetCurrentModule(), key, args...);
 	}
 
 	template <typename T>
