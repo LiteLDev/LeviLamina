@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader/Header;$(SolutionDir)third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -68,35 +68,39 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if not exist $(ProjectDir)bedrock_server_api.lib (
-cd /d $(SolutionDir)Tools
-LibraryBuilder.bat
-)
+      <Command>if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
+if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
+goto end
 
-if not exist $(ProjectDir)bedrock_server_var.lib (
+:process
 cd /d $(SolutionDir)Tools
-LibraryBuilder.bat
-)</Command>
+LibraryBuilder.exe
+
+:end</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AutoUpgrade.cpp" />
+    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BugFix.cpp" />
-    <ClCompile Include="Kernel\EntityAPI.cpp" />
+    <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
     <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
-    <ClCompile Include="Kernel\Utils\SymDB.cpp" />
     <ClCompile Include="Kernel\KVDBAPI.cpp" />
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
@@ -111,14 +115,18 @@ LibraryBuilder.bat
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AutoUpgrade.h" />
+    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
-    <ClInclude Include="Header\EntityAPI.h" />
+    <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
+    <ClInclude Include="Header\MobAPI.h" />
     <ClInclude Include="Header\PlayerAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
     <ClInclude Include="Header\Templates.h" />
+    <ClInclude Include="Header\Utils\CryptHelper.h" />
     <ClInclude Include="Header\Utils\CsLock.h" />
     <ClInclude Include="Header\Utils\FileHelper.h" />
     <ClInclude Include="Header\Utils\Hash.h" />
@@ -126,9 +134,9 @@ LibraryBuilder.bat
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
+    <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
-    <ClInclude Include="Header\Utils\Warpper.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\KVDBAPI.h" />
@@ -138,11 +146,12 @@ LibraryBuilder.bat
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\detours\lib\detours.lib" />
-    <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
-    <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
-    <Library Include="..\third-party\openssl\lib\libssl.lib" />
-    <Library Include="bedrock_server_var.lib" />
+    <Library Include="Lib\bedrock_server_api.lib" />
+    <Library Include="Lib\bedrock_server_var.lib" />
+    <Library Include="Lib\SymDBHelper.lib" />
+    <Library Include="Lib\third-party\leveldb\leveldb.lib" />
+    <Library Include="Lib\third-party\openssl\libcrypto.lib" />
+    <Library Include="Lib\third-party\openssl\libssl.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

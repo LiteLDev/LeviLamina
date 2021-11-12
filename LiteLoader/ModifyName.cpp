@@ -11,6 +11,7 @@ THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char
     return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with LiteLoaderBDS " + LL::getLoaderVersionString();
 }
 
+
 string& replace_all_distinct(string& str, const string& old_value, const string& new_value) {
     for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
         if ((pos = str.find(old_value, pos)) != string::npos)
@@ -29,5 +30,7 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
                  output.end());
     output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
     output = replace_all_distinct(output, "NO LOG FILE! -  ", "");
+    Logger::setTitle("Server");
     Logger::Info() << output << Logger::endl;
+    Logger::setTitle("LiteLoader");
 }

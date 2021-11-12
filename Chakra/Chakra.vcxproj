@@ -68,6 +68,10 @@ copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
   <ItemGroup>
     <ClCompile Include="Chakra.cpp" />
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="SymDB.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\LiteLoader\Lib\third-party\detours\detours.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

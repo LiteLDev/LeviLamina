@@ -3,21 +3,21 @@
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
 #endif
-#include <fmt/chrono.h>
-#include <fmt/color.h>
-#include <fmt/core.h>
-#include <fmt/os.h>
-#include <fmt/printf.h>
-#include <Utils/CsLock.h>
-#include <Utils/WinHelper.h>
-#include <Utils/FileHelper.h>
-#include <Utils/PluginOwnData.h>
+#include "third-party/fmt/chrono.h"
+#include "third-party/fmt/color.h"
+#include "third-party/fmt/core.h"
+#include "third-party/fmt/os.h"
+#include "third-party/fmt/printf.h"
+#include "Utils/CsLock.h"
+#include "Utils/WinHelper.h"
+#include "Utils/FileHelper.h"
+#include "Utils/PluginOwnData.h"
 #include <string>
 #include <sstream>
 #include <iostream>
 
 ///////////////////////////////////////////////////////
-// Easy to log things into both console and log file
+// Easy to log texts to both console and log file
 // 
 // [Usage]
 // 
@@ -27,8 +27,8 @@
 // 
 //   Info("There are {} days before {} to come back", 3, "alex");   // FMT-style IO
 //                                                                  // with Auto Line-Wrap
-//   Info().printf("%s, %d\n","Alex", 3);   // C-style IO
-//   Info() << "test" << endl;              // STL-style IO
+//   Info().printf("%s, %d\n","Alex", 3);       // C-style IO
+//   Info() << "test" << endl;                  // STL-style IO
 // 
 // [Debug, Log, Info, Warn, Error, Fatal]
 // 
@@ -187,9 +187,9 @@ namespace Logger
     public:
         Debug()
         {
-            std::string str = fmt::format("[{:%H:%M:%S}][DEBUG]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+                "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] " : " ");
             RealPrint(str);
         }
 
@@ -263,9 +263,9 @@ namespace Logger
     public:
         Info()
         {
-            std::string str = fmt::format("[{:%H:%M:%S}][INFO]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S} INFO]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+                "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] " : " ");
             RealPrint(str);
         }
 
@@ -349,9 +349,9 @@ namespace Logger
     public:
         Warn()
         {
-            std::string str = fmt::format("[{:%H:%M:%S}][WARN]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S} WARN]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+                "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] " : " ");
             RealPrint(str);
         }
 
@@ -435,9 +435,9 @@ namespace Logger
     public:
         Error()
         {
-            std::string str = fmt::format("[{:%H:%M:%S}][ERROR]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+                "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] " : " ");
             RealPrint(str);
         }
 
@@ -521,9 +521,9 @@ namespace Logger
     public:
         Fatal()
         {
-            std::string str = fmt::format("[{:%H:%M:%S}][FATAL]{}", fmt::localtime(_time64(0)),
+            std::string str = fmt::format("[{:%H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)),
                 PluginOwnData::has(LOGGER_CURRENT_TITLE) ?
-                " " : "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] ");
+                "[" + PluginOwnData::get<std::string>(LOGGER_CURRENT_TITLE) + "] " : " ");
             RealPrint(str);
         }
 

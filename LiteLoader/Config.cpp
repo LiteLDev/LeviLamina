@@ -4,13 +4,10 @@
 #include <LoggerAPI.h>
 #include <fstream>
 
-//Settings
-bool DebugMode;
-int LogLevel;
-bool EnableCrashLogger;
-std::string CrashLoggerProcessPath;
-bool EnableFixDisconnectBug;
-bool EnableFixListenPort;
+namespace LL
+{
+    LLConfig globalConfig;
+}
 
 
 bool LoadLLConfig() {
@@ -22,24 +19,15 @@ bool LoadLLConfig() {
             std::ofstream of(LITELOADER_CONFIG_FILE);
             if (of)
             {
-                of << LITELOADER_CONFIG_DEFAULT;
+                of << nlohmann::json(LL::globalConfig).dump(4);
             }
             else
             {
                 Logger::Error("Configuration File Creation failed!");
             }
-            *content = LITELOADER_CONFIG_DEFAULT;
         }
-
-        nlohmann::json conf = nlohmann::json::parse(*content, nullptr, true, true);
-
-        //Read Conf
-        DebugMode = conf["DebugMode"].get<bool>();
-        LogLevel = conf["LogLevel"].get<int>();
-        EnableCrashLogger = conf["Modules"]["CrashLogger"]["enabled"].get<bool>();
-        CrashLoggerProcessPath = conf["Modules"]["CrashLogger"]["path"].get<std::string>();
-        EnableFixDisconnectBug = conf["Modules"]["FixDisconnectBug"]["enabled"].get<bool>();
-        EnableFixListenPort = conf["Modules"]["FixListenPort"]["enabled"].get<bool>();
+        else
+            LL::globalConfig = nlohmann::json::parse(*content, nullptr, true, true);
     }
     catch (const nlohmann::json::exception& e)
     {

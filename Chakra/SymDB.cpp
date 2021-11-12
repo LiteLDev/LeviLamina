@@ -1,4 +1,5 @@
-﻿#include <cstdio>
+﻿#include "pch.h"
+#include <cstdio>
 #include <filesystem>
 #include <fstream>
 #include <list>
@@ -8,15 +9,13 @@
 #include <unordered_map>
 #include <vector>
 #include <Windows.h>
-#include <Utils/Hash.h>
-#include <Config.h>
-#include <detours/include/detours.h>
-#include <LLAPI.h>
-#include <fmt/chrono.h>
-#include <fmt/color.h>
-#include <fmt/core.h>
-#include <fmt/os.h>
-#include <fmt/printf.h>
+#include "../LiteLoader/Header/Utils/Hash.h"
+#include "../LiteLoader/Header/third-party/detours/detours.h"
+#include "../LiteLoader/Header/third-party/fmt/chrono.h"
+#include "../LiteLoader/Header/third-party/fmt/color.h"
+#include "../LiteLoader/Header/third-party/fmt/core.h"
+#include "../LiteLoader/Header/third-party/fmt/os.h"
+#include "../LiteLoader/Header/third-party/fmt/printf.h"
 
 using std::list;
 using std::string, std::string_view;
@@ -42,7 +41,7 @@ struct SymDBBase {
     constexpr static int SEGMENT_STRINGS      = 3;
     constexpr static int SEGMENT_COUNT        = 4;
 };
-#include <vector>
+
 typedef int s32;
 typedef int64_t s64;
 typedef uint64_t u64;
@@ -59,8 +58,6 @@ constexpr u64 BKDRHash(const char *x, int len) {
     }
     return rval;
 }
-#include <algorithm>
-#include <fstream>
 
 struct SymDBReader : SymDBBase {
     int SEGOFF[SEGMENT_COUNT], SIZSEG[SEGMENT_COUNT];
@@ -245,15 +242,15 @@ void InitFastDlsym() {
     fflush(stdout);
 }
 
-void *dlsym_real(const char *x) {
-    
+extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
+    std::error_code ec;
     if (SymDB == nullptr) {
-        if (!std::filesystem::exists("bedrock_server.symdb2")) {
+        if (!std::filesystem::exists("bedrock_server.symdb2",ec)) {
             printf("SymDB not found\ntry to run SymDB2.exe\n");
             std::this_thread::sleep_for(std::chrono::seconds(10));
             exit(1);
         }
-        if (LL::isDebugMode()) {       
+        /* if (LL::isDebugMode()) {       
             printf(R"(================ LiteLoader ===============\n)");
             printf(R"( ____             __  __           _      \n)");
             printf(R"(|  _ \  _____   _|  \/  | ___   __| | ___ \n)");
@@ -264,7 +261,7 @@ void *dlsym_real(const char *x) {
             fnstat = 2;
             FuncMap = new unordered_map<string, int, aphash>;
         }
-
+        */
         SymDB     = new SymDBReader("bedrock_server.symdb2");
         BaseAdr = (uintptr_t)GetModuleHandle(NULL);
         static_assert(sizeof(GetModuleHandle(NULL)) == 8);
@@ -308,7 +305,7 @@ static inline int realHook(void *oldfunc, void **poutold, void *newfunc) {
     *poutold = target;
     return rv;
 }
-int HookFunction(void *oldfunc, void **poutold, void *newfunc) {
+extern "C" _declspec(dllexport) int HookFunction(void* oldfunc, void** poutold, void* newfunc) {
     static unordered_map<void *, void **> ptr_pori;
     auto it = ptr_pori.find(oldfunc);
     if (it == ptr_pori.end()) {

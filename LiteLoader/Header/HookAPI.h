@@ -1,7 +1,7 @@
 ﻿#pragma once
-#include <Global.h>
+#include "Global.h"
 #include <thread>
-#include <Utils/Hash.h>
+#include "Utils/Hash.h"
 
 
 // The core api of the hook function

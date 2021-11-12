@@ -1,13 +1,13 @@
 ﻿#pragma once
-#include <Global.h>
+#include "Global.h"
 #include <functional>
 #include <string_view>
 #include <unordered_map>
-#include <leveldb/c.h>
-#include <leveldb/cache.h>
-#include <leveldb/db.h>
-#include <leveldb/filter_policy.h>
-#include <leveldb/iterator.h>
+#include "third-party/leveldb/c.h"
+#include "third-party/leveldb/cache.h"
+#include "third-party/leveldb/db.h"
+#include "third-party/leveldb/filter_policy.h"
+#include "third-party/leveldb/iterator.h"
 
 class KVDB
 {

@@ -1,10 +1,10 @@
 #pragma once
-#include <Global.h>
+#include "Global.h"
 #include <string>
 #include <unordered_map>
 #include <Windows.h>
-#include <Utils/WinHelper.h>
-#include <LoggerAPI.h>
+#include "Utils/WinHelper.h"
+#include "LoggerAPI.h"
 
 //helper
 LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, std::string version,
@@ -37,9 +37,11 @@ namespace LL {
 
         LIAPI Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-        LIAPI bool operator<(const Version& b);
-        LIAPI bool operator==(const Version& b);
-        LIAPI bool operator<=(const Version& b);
+        LIAPI bool operator<(Version b);
+        LIAPI bool operator==(Version b);
+        LIAPI bool operator<=(Version b);
+        LIAPI bool operator>(Version b);
+        LIAPI bool operator>=(Version b);
 
         LIAPI std::string toString(bool needStatus = false);
         LIAPI static Version parse(const std::string& str);
