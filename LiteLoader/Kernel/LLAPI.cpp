@@ -25,7 +25,7 @@ LL::Version LL::getLoaderVersion()
 }
 
 bool LL::isDebugMode() {
-    return DebugMode;
+    return LL::globalConfig.debugMode;
 }
 
 LL::Plugin* LL::getPlugin(std::string name) {

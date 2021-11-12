@@ -45,7 +45,7 @@ vector<std::wstring> GetPreloadList() {
 void LoadMain()
 {
     Logger::Info("Loading plugins...");
-    bool enableCrashLogger = EnableCrashLogger;
+    bool enableCrashLogger = LL::globalConfig.enableCrashLogger;
     string noCrashLoggerReason = "";
 
     // Get file list
