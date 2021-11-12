@@ -1,5 +1,7 @@
 #pragma once
 #include <windows.h>
+#include <exception>
+#include <string>
 
 template <int len>
 struct PatchHelper {

@@ -1,4 +1,5 @@
 #pragma once
+#include "../Global.h"
 #include <windows.h>
 
 // ===== Critical Section Locker =====
@@ -9,16 +10,16 @@ class CsLock
     bool inited = false;
     CRITICAL_SECTION cslock;
 public:
-    CsLock();
-    ~CsLock();
-    bool lock();
-    bool unlock();
+    LIAPI CsLock();
+    LIAPI ~CsLock();
+    LIAPI bool lock();
+    LIAPI bool unlock();
 };
 
 class CsLockHolder
 {
     CsLock lock;
 public:
-    CsLockHolder() { lock.lock(); }
-    ~CsLockHolder() { lock.unlock(); }
+    LIAPI CsLockHolder() { lock.lock(); }
+    LIAPI ~CsLockHolder() { lock.unlock(); }
 };
