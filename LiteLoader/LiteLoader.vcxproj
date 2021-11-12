@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader/Header;$(SolutionDir)third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -80,7 +80,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AutoUpdate.cpp" />
+    <ClCompile Include="AutoUpgrade.cpp" />
     <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
@@ -115,7 +115,7 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AutoUpdate.h" />
+    <ClInclude Include="AutoUpgrade.h" />
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
@@ -146,12 +146,12 @@ LibraryBuilder.exe
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\leveldb\lib\leveldb.lib" />
-    <Library Include="..\third-party\openssl\lib\libcrypto.lib" />
-    <Library Include="..\third-party\openssl\lib\libssl.lib" />
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
+    <Library Include="Lib\third-party\leveldb\leveldb.lib" />
+    <Library Include="Lib\third-party\openssl\libcrypto.lib" />
+    <Library Include="Lib\third-party\openssl\libssl.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,12 +10,12 @@
 #include <vector>
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
-#include "../third-party/detours/include/detours.h"
-#include "../third-party/fmt/chrono.h"
-#include "../third-party/fmt/color.h"
-#include "../third-party/fmt/core.h"
-#include "../third-party/fmt/os.h"
-#include "../third-party/fmt/printf.h"
+#include "../LiteLoader/Header/third-party/detours/detours.h"
+#include "../LiteLoader/Header/third-party/fmt/chrono.h"
+#include "../LiteLoader/Header/third-party/fmt/color.h"
+#include "../LiteLoader/Header/third-party/fmt/core.h"
+#include "../LiteLoader/Header/third-party/fmt/os.h"
+#include "../LiteLoader/Header/third-party/fmt/printf.h"
 
 using std::list;
 using std::string, std::string_view;

@@ -3,9 +3,9 @@
 #include "Utils/FileHelper.h"
 #include "LoggerAPI.h"
 #include "LLAPI.h"
-#include <Nlohmann/json.hpp>
-#include <fmt/core.h>
-#include <fmt/os.h>
+#include "third-party/Nlohmann/json.hpp"
+#include "third-party/fmt/core.h"
+#include "third-party/fmt/os.h"
 #include <string>
 #include "Global.h"
 

@@ -3,11 +3,11 @@
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
 #endif
-#include <fmt/chrono.h>
-#include <fmt/color.h>
-#include <fmt/core.h>
-#include <fmt/os.h>
-#include <fmt/printf.h>
+#include "third-party/fmt/chrono.h"
+#include "third-party/fmt/color.h"
+#include "third-party/fmt/core.h"
+#include "third-party/fmt/os.h"
+#include "third-party/fmt/printf.h"
 #include "Utils/CsLock.h"
 #include "Utils/WinHelper.h"
 #include "Utils/FileHelper.h"

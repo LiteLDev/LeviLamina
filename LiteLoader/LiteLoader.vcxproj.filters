@@ -19,13 +19,11 @@
     <Filter Include="Kernel\Utils">
       <UniqueIdentifier>{db8c7097-58e9-4305-a23c-ca484d7f7849}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{d6bc6c3c-081e-4a49-b3a2-502827f757d3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CheckUpdate.cpp" />
-    <ClCompile Include="Config.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="LiteLoader.cpp" />
-    <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -41,8 +39,6 @@
     <ClCompile Include="Kernel\ServerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Loader.cpp" />
-    <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -58,8 +54,6 @@
     <ClCompile Include="Kernel\KVDBAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="ModifyName.cpp" />
-    <ClCompile Include="BugFix.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -69,22 +63,50 @@
     <ClCompile Include="Kernel\MobAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="AutoUpdate.cpp" />
-    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="AutoUpgrade.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="BugFix.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckNotice.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckUpdate.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CrashLogger.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="LiteLoader.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="ModifyName.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginManager.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Version.h" />
-    <ClInclude Include="Loader.h" />
-    <ClInclude Include="Config.h" />
     <ClInclude Include="Header\Utils\CsLock.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
@@ -103,7 +125,6 @@
     <ClInclude Include="Header\ServerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\Utils\StringHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
@@ -113,7 +134,6 @@
     <ClInclude Include="Header\Utils\Hash.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
@@ -144,25 +164,35 @@
     <ClInclude Include="Header\MobAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="AutoUpdate.h" />
-    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\CryptHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="AutoUpgrade.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckNotice.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CrashLogger.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginManager.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\openssl\lib\libcrypto.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="..\third-party\openssl\lib\libssl.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="..\third-party\leveldb\lib\leveldb.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="Lib\bedrock_server_api.lib">
       <Filter>Lib</Filter>
     </Library>
@@ -170,6 +200,15 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\leveldb\leveldb.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\openssl\libcrypto.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\openssl\libssl.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
