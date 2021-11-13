@@ -1,31 +1,9 @@
 #pragma once
 #include <Global.h>
-template <typename T>
-struct LocateS {
-    static T* _srv;
-    T&        operator*() {
-        return *_srv;
-    }
-    T* operator->() {
-        return _srv;
-    }
-    operator T&() {
-        return *_srv;
-    }
-    static void assign(const T& srv) {
-#ifdef LITELOADER_EXPORTS
-        // printf("[LiteLoader][LocateService]
-        // located",typeid(decltype(_srv)).name(),"->",(void*)&srv);
-#endif
-        _srv = (T*)&srv;
-    }
-};
-template <typename T>
-T* LocateService() {
-    return LocateS<T>::_srv;
-}
+
+//Types
 namespace RakNet {
-struct RakPeer;
+    struct RakPeer;
 }
 struct WLevel;
 class CommandRegistry;
@@ -37,6 +15,30 @@ class ServerLevel;
 class ServerNetworkHandler;
 class LevelStorage;
 
+//Impl
+template <typename T>
+struct LocateServiceImpl {
+    static T* _srv;
+    T&        operator*() {
+        return *_srv;
+    }
+    T* operator->() {
+        return _srv;
+    }
+    operator T&() {
+        return *_srv;
+    }
+    static void assign(const T& srv) {
+        _srv = (T*)&srv;
+    }
+};
+
+template <typename T>
+T* LocateService() {
+    return LocateServiceImpl<T>::_srv;
+}
+
+// Template specialization
 template <>
 LIAPI RakNet::RakPeer* LocateService<RakNet::RakPeer>();
 template <>

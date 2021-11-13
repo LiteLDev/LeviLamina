@@ -1,11 +1,11 @@
 #include "Global.h"
 #include "ItemAPI.h"
-#include "mcapi/item.hpp"
-#include "mcapi/spawner.hpp"
-#include "mcapi/level.hpp"
+#include "MCApi/item.hpp"
+#include "MCApi/spawner.hpp"
+#include "MCApi/level.hpp"
 #include <string>
 #include <vector>
-#include <Header/SymbolHelper.h>
+#include "SymbolHelper.h"
 using namespace std;
 
 ItemStack* ItemStackObj::newItem() {
