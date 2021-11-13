@@ -90,11 +90,11 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\ItemAPI.cpp" />
+    <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
-    <ClCompile Include="Kernel\Utils\LocateService.cpp" />
-    <ClCompile Include="Kernel\SymbolHelper.cpp" />
+    <ClCompile Include="Kernel\serviceLocate.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -126,8 +126,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
-    <ClInclude Include="Header\Utils\LocateService.h" />
-    <ClInclude Include="Header\SymbolHelper.h" />
+    <ClInclude Include="Header\LevelAPI.h" />
+    <ClInclude Include="Header\serviceLocate.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />

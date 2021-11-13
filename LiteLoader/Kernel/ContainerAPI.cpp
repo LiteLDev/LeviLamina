@@ -1,7 +1,7 @@
 #include "ContainerAPI.h"
 #include "global.h"
 #include "itemapi.h"
-#include <Header/SymbolHelper.h>
+#include <Header/LevelAPI.h>
 std::string ContainerObj::getTypeName() {
     //ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
     ContainerType type = this->getContainerType();
@@ -54,7 +54,7 @@ Container* ContainerObj::getContainer(FloatVec4 pos) {
     // This function didn't use 'this' pointer
     
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, LL::getBlockSourceByDim(pos.dim), &vec);
+                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, LevelObj::getBlockSource(pos.dim), &vec);
 
     return container;
 }

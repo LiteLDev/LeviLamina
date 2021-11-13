@@ -25,13 +25,13 @@ public:
     MCAPI void saveLevelData(void);
     MCAPI void saveDirtyChunks(void);
 
-    MCAPI int                       getNewPlayerId(void) const;
-    MCAPI class GameRules&          getGameRules(void);
-    MCAPI class Player*             getRandomPlayer(void);
-    MCAPI enum Difficulty           getDifficulty(void) const;
-    MCAPI class Player*             getPrimaryLocalPlayer(void) const;
+    MCAPI int                       getNewPlayerId() const;
+    MCAPI class GameRules&          getGameRules();
+    MCAPI class Player*             getRandomPlayer();
+    MCAPI enum Difficulty           getDifficulty() const;
+    MCAPI class Player*             getPrimaryLocalPlayer() const;
     MCAPI class Color               getPlayerColor(class Player const&) const;
-    MCAPI struct AdventureSettings& getAdventureSettings(void);
+    MCAPI struct AdventureSettings& getAdventureSettings();
     MCAPI class Actor*              getRuntimeEntity(class ActorRuntimeID, bool) const;
     MCAPI class ITickingArea*       getTickingArea(class mce::UUID const&) const;
     MCAPI float                     getSpecialMultiplier(AutomaticID<class Dimension, int>);
@@ -43,7 +43,7 @@ public:
 
     MCAPI void setDefaultGameType(enum GameType);
 
-    MCAPI bool         hasCommandsEnabled(void) const;
+    MCAPI bool         hasCommandsEnabled() const;
     MCAPI virtual void forEachPlayer(std::function<bool(Player&)>);
     MCAPI virtual void forEachPlayer(std::function<bool(Player const&)>) const;
     MCAPI void         forEachDimension(std::function<bool(Dimension const&)>);
@@ -65,8 +65,8 @@ public:
     MCAPI void playSynchronizedSound(
         class BlockSource&, enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&,
         bool, bool);
-
-    MCAPI void                 tickEntities(void);
+    MCAPI virtual class Spawner* getSpawn();
+    MCAPI void                 tickEntities();
     MCAPI void                 updateWeather(float, int, float, int);
     MCAPI void                 denyEffect(class Vec3 const&);
     MCAPI void                 forceRemoveEntity(class Actor&);

@@ -102,7 +102,7 @@
     <ClCompile Include="Kernel\ItemAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\SymbolHelper.cpp">
+    <ClCompile Include="Kernel\serviceLocate.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="AutoUpgrade.cpp">
@@ -111,8 +111,8 @@
     <ClCompile Include="CheckNotice.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\LocateService.cpp">
-      <Filter>Kernel\Utils</Filter>
+    <ClCompile Include="Kernel\LevelAPI.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -203,7 +203,7 @@
     <ClInclude Include="Header\ItemAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\SymbolHelper.h">
+    <ClInclude Include="Header\serviceLocate.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="AutoUpgrade.h">
@@ -212,8 +212,8 @@
     <ClInclude Include="CheckNotice.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils\LocateService.h">
-      <Filter>Header\Utils</Filter>
+    <ClInclude Include="Header\LevelAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -6,7 +6,7 @@
 #include "MCApi/level.hpp"
 #include <string>
 #include <vector>
-#include "SymbolHelper.h"
+#include <Header/LevelAPI.h>
 using namespace std;
 
 ItemStack* ItemStackObj::create() {
@@ -38,10 +38,10 @@ ItemStack* ItemStackObj::newItem(Tag* tag) {
     return item;
 }
 */
-ItemStack* ItemStackObj::clone() {
-    ItemStack* a = (ItemStack*)new char[272];
-    *a = ((ItemStack*)this)->clone();
-    return a;
+ItemStack* ItemStackObj::cloneItem() {
+    if (!this)
+        return 0;
+    return &this->clone();
 }
 
 class Spawner;
@@ -49,7 +49,7 @@ ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
     try {
         Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(LocateService<Level>());
         Vec3   vec{pos.x, pos.y, pos.z};
-        ItemActor* ac = sp->spawnItem(*LL::getBlockSourceByDim(pos.dim), *this, nullptr, vec, 0);
+        ItemActor* ac = sp->spawnItem(*LevelObj::getBlockSource(pos.dim), *this, nullptr, vec, 0);
         return ac;
     } catch (...) {
         return nullptr;
