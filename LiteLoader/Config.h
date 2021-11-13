@@ -46,7 +46,8 @@ namespace LL
         };
     }
 
-    void inline from_json(const nlohmann::json& j, LLConfig& conf) {
+    void inline from_json(const nlohmann::json& j, LLConfig& conf)
+    {
         j.at("DebugMode").get_to(conf.debugMode);
         j.at("LogLevel").get_to(conf.logLevel);
         j.at("Language").get_to(conf.language);
@@ -66,10 +67,10 @@ bool LoadLLConfig();
 
 #define LL_RELAY_INDEX "https://upgrade.litebds.com/id.json"
 #define LL_UPDATE_URL_PREFIX "https://cdn.jsdelivr.net/gh/LiteLDev/Upgrade"
-#define LL_UPDATE_INFO_PATH "/LL/LL.json"
+#define LL_UPDATE_URL_PATH "/LL/LL.json"
 
 #define LL_UPDATE_CHECK_INTERVAL 10*60
-#define LL_UPDATE_CHECK_TIMEOUT 60
+#define LL_UPDATE_CONNECTION_TIMEOUT 60
 
 #define LL_UPDATE_PROGRAM "plugins/LiteLoader/LLAutoUpdate.dll"
 #define LL_UPDATE_CHECK_PRELOAD "plugins/preload.conf"
