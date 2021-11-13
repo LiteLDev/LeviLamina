@@ -94,11 +94,11 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
-    <ClCompile Include="Kernel\serviceLocate.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\LocateService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Loader.cpp" />
@@ -142,6 +142,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
+    <ClInclude Include="Header\Utils\LocateService.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h" />

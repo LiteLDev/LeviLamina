@@ -3,9 +3,9 @@
 
 //Types
 namespace RakNet {
-    struct RakPeer;
-}
-struct WLevel;
+struct RakPeer;
+};
+struct LevelObj;
 class CommandRegistry;
 class Level;
 class Minecraft;
@@ -42,7 +42,7 @@ T* LocateService() {
 template <>
 LIAPI RakNet::RakPeer* LocateService<RakNet::RakPeer>();
 template <>
-LIAPI WLevel* LocateService<WLevel>();
+LIAPI LevelObj* LocateService<LevelObj>();
 template <>
 LIAPI CommandRegistry* LocateService<CommandRegistry>();
 template <>

@@ -1,6 +1,7 @@
 #include <Global.h>
 #include <Utils/LocateService.h>
 #include <MCApi/Minecraft.hpp>
+#include "LevelAPI.h"
 using std::cout;
 using std::endl;
 using std::vector;
@@ -19,6 +20,7 @@ THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
     original(a);
     LocateServiceImpl<Level>::assign(*LocateServiceImpl<Minecraft>()->getLevel());
+    LocateServiceImpl<LevelObj>::assign(*(LevelObj*)LocateServiceImpl<Minecraft>()->getLevel());
     LocateServiceImpl<ServerLevel>::assign(*(ServerLevel*)LocateServiceImpl<Minecraft>()->getLevel());
     LocateServiceImpl<ServerNetworkHandler>::assign(*LocateServiceImpl<Minecraft>()->getServerNetworkHandler());
     // ServerStartedEvent::_call();
@@ -88,8 +90,8 @@ LIAPI RakNet::RakPeer* LocateService<RakNet::RakPeer>() {
     return LocateServiceImpl<RakNet::RakPeer>::_srv;
 }
 template <>
-LIAPI WLevel* LocateService<WLevel>() {
-    return LocateServiceImpl<WLevel>::_srv;
+LIAPI LevelObj* LocateService<LevelObj>() {
+    return LocateServiceImpl<LevelObj>::_srv;
 }
 template <>
 LIAPI CommandRegistry* LocateService<CommandRegistry>() {

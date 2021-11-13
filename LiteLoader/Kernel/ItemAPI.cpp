@@ -38,12 +38,11 @@ ItemStack* ItemStackObj::newItem(Tag* tag) {
     return item;
 }
 */
-ItemStack* ItemStackObj::cloneItem() {
-    if (!this)
-        return 0;
-    return &this->clone();
+ItemStack* ItemStackObj::clone() {
+    ItemStack* a = (ItemStack*)new char[272];
+    *a = ((ItemStack*)this)->clone();
+    return a;
 }
-
 class Spawner;
 ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
     try {

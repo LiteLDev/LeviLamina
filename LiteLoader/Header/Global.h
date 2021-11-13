@@ -27,7 +27,7 @@
 #include "HookAPI.h"
 #include "Types.h"
 #include <gsl/gsl>
-
+#include <unordered_set>
 
 // Types
 typedef std::string xuid_t;
