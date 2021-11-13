@@ -21,7 +21,7 @@ jobs:
     - name: Download Lib from server
       run: |
         curl -L -o LiteLoader/Lib/lib.zip https://dl.litebds.com/build/lib.zip
-        cd LiteLoader/Lib/lib.zip
+        cd LiteLoader/Lib/
         unzip lib.zip
         rm lib.zip
       shell: bash
