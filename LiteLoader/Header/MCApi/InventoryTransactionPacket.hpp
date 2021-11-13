@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#include <mcapi/Packet.hpp>
 class InventoryTransactionPacket : public Packet {
 public:
     virtual ~InventoryTransactionPacket();

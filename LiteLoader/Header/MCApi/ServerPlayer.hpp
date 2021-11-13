@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Player.hpp"
-#include <MCApi/Player.hpp>
 class ServerPlayer : public Player {
 public:
     virtual void initializeComponents(int /*enum Actor::InitializationMethod*/, class VariantParameterList const&);

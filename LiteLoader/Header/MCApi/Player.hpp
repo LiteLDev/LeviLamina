@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#include <MCApi/Mob.hpp>
 class Player : public Mob {
 public:
     virtual void reloadHardcoded(int /*enum Actor::InitializationMethod*/, class VariantParameterList const&);

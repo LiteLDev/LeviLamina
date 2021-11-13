@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#include <MCApi/Actor.hpp>
 class Mob : public Actor {
 public:
     virtual bool hasComponent(class HashedString const&);
