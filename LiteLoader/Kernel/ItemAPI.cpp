@@ -1,14 +1,16 @@
 #include "Global.h"
 #include "ItemAPI.h"
-#include "mcapi/item.hpp"
-#include "mcapi/spawner.hpp"
-#include "mcapi/level.hpp"
+#include "MCAPI/Item.hpp"
+#include "MCApi/itemstack.hpp"
+#include "MCApi/spawner.hpp"
+#include "MCApi/level.hpp"
 #include <string>
 #include <vector>
-#include <Header/SymbolHelper.h>
+#include <Header/LevelAPI.h>
+#include "NBTAPI.h"
 using namespace std;
 
-ItemStack* ItemStackObj::newItem() {
+ItemStack* ItemStackObj::create() {
     try {
         ItemStack* a    = (ItemStack*)new char[272];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
@@ -17,46 +19,43 @@ ItemStack* ItemStackObj::newItem() {
         return nullptr;
     }
 }
-/*
-ItemStack* Raw_NewItem(std::string type, int count) {
-    Tag* nbt = Tag::createTag(TagType::Compound);
+
+ItemStack* ItemStackObj::create(Tag* tag) {
+    ItemStack* item = create();
+    if (!item)
+        return nullptr;
+    tag->setItem(item);
+    return item;
+}
+
+ItemStack* ItemStackObj::create(std::string type, int count) {
+    Tag* nbt = Tag::createTag(Tag::Type::Compound);
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
     nbt->putString("Name", type);
     nbt->putByte("Count", count);
-
-    return Raw_NewItem(nbt);
+    return create(nbt);
 }
 
-ItemStack* ItemStackObj::newItem(Tag* tag) {
-    ItemStack* item = newItem();
-    if (!item)
-        return nullptr;
-    tag->setItem(item);
 
-    return item;
+ItemStack* ItemStackObj::clone() {
+    ItemStack* a = (ItemStack*)new char[272];
+    *a = ((ItemStack*)this)->clone();
+    return a;
 }
-*/
-ItemStack* ItemStackObj::cloneItem() {
-    ItemStack* it = newItem();
-    if (!this)
-        return nullptr;
-    return (&this->clone());
-}
-
 class Spawner;
 ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
     try {
         Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(LocateService<Level>());
         Vec3   vec{pos.x, pos.y, pos.z};
-        ItemActor* ac = sp->spawnItem(*LL::getBlockSourceByDim(pos.dim), *this, nullptr, vec, 0);
+        ItemActor* ac = sp->spawnItem(*LevelObj::getBlockSource(pos.dim), *this, nullptr, vec, 0);
         return ac;
     } catch (...) {
         return nullptr;
     }
 }
 
-string ItemStackObj::getItemName() {
+string ItemStackObj::getName() {
     if (this->isNull())
         return "";
     return this->getName();
@@ -68,13 +67,13 @@ string ItemStackObj::getCustomName() {
     return ((ItemStack*)this)->getCustomName();
 }
 
-std::string ItemStackObj::getItemTypeName() {
+std::string ItemStackObj::getTypeName() {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getItem()->getSerializedName();
 }
 
-int ItemStackObj::getItemAux() {
+int ItemStackObj::getAux() {
     if (this->isNull())
         return 0;
     return ((ItemStack*)this)->getAuxValue();

@@ -105,9 +105,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(LL_RELAY_INDEX, &status, &id, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("LL自动更新连接失败！");
+				Log("LL自动更新连接失败！错误码：{}", status);
 			else
-				Debug("LL自动更新连接失败！");
+				Debug("LL自动更新连接失败！错误码：{}", status);
 			return false;
 		}
 		if (EndsWith(id, "\n"))
@@ -121,9 +121,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(infoUrl, &status, &info, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("LL自动更新信息拉取失败！");
+				Log("LL自动更新信息拉取失败！错误码：{}", status);
 			else
-				Debug("LL自动更新信息拉取失败！");
+				Debug("LL自动更新信息拉取失败！错误码：{}", status);
 			return false;
 		}
 
@@ -165,11 +165,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 					else
 						Debug("正在更新附属文件：{}", fileName);
 
-					string url = file["URL"].get<string>();
-
-					string remotePath = url + fileName;
+					string path = file["Path"].get<string>();
+					string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
 					string localPath = file["Install"].get<string>() + "/" + fileName;
-
 					bool isBinary = file["IsBinary"].get<bool>();
 
 					//Download File
@@ -215,7 +213,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 					}
 				}
 			}
-			iniVersions->SaveFile(LL_UPDATE_OTHER_FILES_RECORD, true);
+			iniVersions->SaveFile(LL_UPDATE_OTHER_FILES_RECORD);
 			delete iniVersions;
 		}
 
@@ -284,9 +282,8 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 				else
 					Debug("正在下载更新：{}", fileName);
 
-				string url = file["URL"].get<string>();
-
-				string remotePath = url + fileName;
+				string path = file["Path"].get<string>();
+				string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
 				string localPath = LL_UPDATE_CACHE_PATH + fileName;
 				bool isBinary = file["IsBinary"].get<bool>();
 

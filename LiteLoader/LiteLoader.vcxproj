@@ -90,15 +90,16 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\ItemAPI.cpp" />
+    <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\NBTAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
-    <ClCompile Include="Kernel\serviceLocate.cpp" />
-    <ClCompile Include="Kernel\SymbolHelper.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\LocateService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Loader.cpp" />
@@ -126,8 +127,9 @@ LibraryBuilder.exe
     <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
+    <ClInclude Include="Header\LevelAPI.h" />
+    <ClInclude Include="Header\NBTAPI.h" />
     <ClInclude Include="Header\serviceLocate.h" />
-    <ClInclude Include="Header\SymbolHelper.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
@@ -142,6 +144,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
+    <ClInclude Include="Header\Utils\LocateService.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
@@ -154,6 +157,8 @@ LibraryBuilder.exe
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib" />
+    <Library Include="Header\third-party\nbt-cpp\lib\nbt-cpp.lib" />
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
