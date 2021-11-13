@@ -1,6 +1,6 @@
 name: Build LiteLoader
 
-on: [push, pull_request, workflow_dispatch]
+on: [push]
 
 env:
   SOLUTION_FILE_PATH: .
@@ -17,6 +17,14 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
+     
+    - name: Download Lib from server
+      run: |
+        curl -L -o LiteLoader/Lib/lib.zip https://dl.litebds.com/build/lib.zip
+        cd LiteLoader/Lib/
+        unzip lib.zip
+        rm lib.zip
+      shell: bash
      
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -55,7 +63,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cp -a Release/*.dll D:/out/release
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release   
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
       shell: bash
       
     - name: Copy DevOutput Files
