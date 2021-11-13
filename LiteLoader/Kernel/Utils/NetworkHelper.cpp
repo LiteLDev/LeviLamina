@@ -21,7 +21,7 @@ void SplitHttpUrl(const std::string& url, string& host, string& path)
     }
 }
 
-bool HttpGet(const string& url, function<void(int, string)> callback)
+bool HttpGet(const string& url, function<void(int, string)> callback, int timeout)
 {
     string host, path;
     SplitHttpUrl(url, host, path);
@@ -32,6 +32,8 @@ bool HttpGet(const string& url, function<void(int, string)> callback)
         delete cli;
         return false;
     }
+    if(timeout > 0)
+        cli->set_connection_timeout(timeout, 0);
 
     std::thread([cli, callback{ std::move(callback) }, path{ std::move(path) }]()
     {
@@ -44,5 +46,32 @@ bool HttpGet(const string& url, function<void(int, string)> callback)
             callback(response->status, response->body);
     }).detach();
 
+    return true;
+}
+
+bool HttpGetSync(const std::string& url, int* statusRtn, std::string* dataRtn, int timeout)
+{
+    string host, path;
+    SplitHttpUrl(url, host, path);
+
+    httplib::Client cli(host.c_str());
+    if (!cli.is_valid())
+    {
+        return false;
+    }
+    if (timeout > 0)
+        cli.set_connection_timeout(timeout, 0);
+
+    auto response = cli.Get(path.c_str());
+
+    if (!response)
+        return false;
+    else
+    {
+        if (statusRtn)
+            *statusRtn = response->status;
+        if (dataRtn)
+            *dataRtn = response->body;
+    }
     return true;
 }
