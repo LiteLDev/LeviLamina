@@ -20,8 +20,8 @@ jobs:
      
     - name: Download lib from server
       run: |
-        curl -L -o LiteLoader/Lib/ https://dl.litebds.com/build/bedrock_server_api.lib
-        curl -L -o LiteLoader/Lib/ https://dl.litebds.com/build/bedrock_server_var.lib
+        curl -L -o LiteLoader/Lib/bedrock_server_api.lib https://dl.litebds.com/build/bedrock_server_api.lib
+        curl -L -o LiteLoader/Lib/bedrock_server_var.lib https://dl.litebds.com/build/bedrock_server_var.lib
       shell: bash
      
     - name: Build
