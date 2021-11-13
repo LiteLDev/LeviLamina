@@ -18,10 +18,12 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
      
-    - name: Download lib from server
+    - name: Download Lib from server
       run: |
-        curl -L -o LiteLoader/Lib/bedrock_server_api.lib https://dl.litebds.com/build/bedrock_server_api.lib
-        curl -L -o LiteLoader/Lib/bedrock_server_var.lib https://dl.litebds.com/build/bedrock_server_var.lib
+        curl -L -o LiteLoader/Lib/lib.zip https://dl.litebds.com/build/lib.zip
+        cd LiteLoader/Lib/lib.zip
+        unzip lib.zip
+        rm lib.zip
       shell: bash
      
     - name: Build
