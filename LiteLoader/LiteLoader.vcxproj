@@ -80,6 +80,8 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AutoUpgrade.cpp" />
+    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
@@ -117,6 +119,8 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AutoUpgrade.h" />
+    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\ActorAPI.h" />

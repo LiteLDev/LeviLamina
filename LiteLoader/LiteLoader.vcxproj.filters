@@ -108,6 +108,12 @@
     <ClCompile Include="Kernel\SymbolHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="AutoUpgrade.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="CheckNotice.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -202,6 +208,12 @@
     </ClInclude>
     <ClInclude Include="Header\SymbolHelper.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoUpgrade.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckNotice.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
