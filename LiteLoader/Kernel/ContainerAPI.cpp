@@ -12,24 +12,24 @@ std::string ContainerObj::getTypeName() {
 bool ContainerObj::addItem(ItemStack* item) {
     if (!this->hasRoomForItem(*item))
         return false;
-    ((Container*)this)->addItem(*((ItemStackObj*)item)->cloneItem());
+    ((Container*)this)->addItem(*((ItemStackObj*)item)->clone());
     return true;
 }
 
 bool ContainerObj::addItemToFirstEmptySlot(ItemStack* item) {
-    return ((Container*)this)->addItemToFirstEmptySlot(*((ItemStackObj*)item)->cloneItem());
+    return ((Container*)this)->addItemToFirstEmptySlot(*((ItemStackObj*)item)->clone());
 
 }
 //Safely remove items to the container
 bool ContainerObj::removeItem(int slot, unsigned int number) {
-    if (slot > this->getContainerSize())
+    if (slot > this->getSize())
         return false;
     ((Container*)this)->removeItem(slot, number);
     return true;
 }
 
 ItemStack* ContainerObj::getSlot(int slot) {
-    if (slot > this->getContainerSize())
+    if (slot > this->getSize())
         return nullptr;
     auto list = this->getAllSlots();
     return const_cast<ItemStack*>(list[slot]);
@@ -39,7 +39,7 @@ std::vector<const ItemStack*> ContainerObj::getAllSlots() {
     return this->getSlots();
 }
 
-int ContainerObj::getContainerSize() {
+int ContainerObj::getSize() {
     using _QWORD = unsigned long long;
     return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
 }

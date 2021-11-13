@@ -1,6 +1,7 @@
 #include "Global.h"
 #include "ItemAPI.h"
-#include "MCApi/item.hpp"
+#include "MCAPI/Item.hpp"
+#include "MCApi/itemstack.hpp"
 #include "MCApi/spawner.hpp"
 #include "MCApi/level.hpp"
 #include <string>
@@ -8,7 +9,7 @@
 #include "SymbolHelper.h"
 using namespace std;
 
-ItemStack* ItemStackObj::newItem() {
+ItemStack* ItemStackObj::create() {
     try {
         ItemStack* a    = (ItemStack*)new char[272];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
@@ -37,11 +38,10 @@ ItemStack* ItemStackObj::newItem(Tag* tag) {
     return item;
 }
 */
-ItemStack* ItemStackObj::cloneItem() {
-    ItemStack* it = newItem();
-    if (!this)
-        return nullptr;
-    return (&this->clone());
+ItemStack* ItemStackObj::clone() {
+    ItemStack* a = (ItemStack*)new char[272];
+    *a = ((ItemStack*)this)->clone();
+    return a;
 }
 
 class Spawner;
@@ -56,7 +56,7 @@ ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
     }
 }
 
-string ItemStackObj::getItemName() {
+string ItemStackObj::getName() {
     if (this->isNull())
         return "";
     return this->getName();
@@ -68,13 +68,13 @@ string ItemStackObj::getCustomName() {
     return ((ItemStack*)this)->getCustomName();
 }
 
-std::string ItemStackObj::getItemTypeName() {
+std::string ItemStackObj::getTypeName() {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getItem()->getSerializedName();
 }
 
-int ItemStackObj::getItemAux() {
+int ItemStackObj::getAux() {
     if (this->isNull())
         return 0;
     return ((ItemStack*)this)->getAuxValue();

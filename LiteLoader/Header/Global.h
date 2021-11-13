@@ -11,21 +11,23 @@
 #define MCINLINE inline
 #define MCCLS
 
-#include <minwindef.h>
-#include "HookAPI.h"
 #include <string>
 #include <vector>
 #include <iostream>
 #include <optional>
 #include <functional>
-#include <gsl/gsl>
 #include <bitset>
 #include <utility>
 #include <set>
-#include <unordered_set>
+#include <unordered_map>
+#include <minwindef.h>
+
 #include "Utils/LocateService.h"
-#include "Types.h"
 #include "Utils/Json.h"
+#include "HookAPI.h"
+#include "Types.h"
+#include <gsl/gsl>
+
 
 // Types
 typedef std::string xuid_t;

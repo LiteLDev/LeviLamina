@@ -5,20 +5,20 @@ class Tag;
 class ItemActor;
 
 struct ItemStackObj : public ItemStack {
-    ItemStack* newItem();
-    //ItemStack* newItem(std::string type, int count);
-    //ItemStack* newItem(Tag* tag);
-    ItemStack* cloneItem();
-    ItemActor* spawnItemByItemStack(const FloatVec4& pos);
+    LIAPI ItemStack* create();
+    //LIAPI ItemStack* newItem(std::string type, int count);
+    //LIAPI ItemStack* newItem(Tag* tag);
+    LIAPI ItemStack* clone();
+    LIAPI ItemActor* spawnItemByItemStack(const FloatVec4& pos);
 
-    std::string getItemName();
-    std::string getCustomName();
-    std::string getItemTypeName();
-    int         getItemAux();
-    int         getCount();
+    LIAPI std::string getName();
+    LIAPI std::string getCustomName();
+    LIAPI std::string getTypeName();
+    LIAPI int         getAux();
+    LIAPI int         getCount();
 
-    bool setItem(ItemStack* oldItem, ItemStack* newItem);
-    bool setLore(std::vector<std::string> lores);
+    LIAPI bool setItem(ItemStack* oldItem, ItemStack* newItem);
+    LIAPI bool setLore(std::vector<std::string> lores);
 };
 
 
