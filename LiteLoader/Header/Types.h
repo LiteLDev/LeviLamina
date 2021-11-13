@@ -157,20 +157,43 @@ private:
     virtual int getEntityCategories() const = 0;
 };
 
+class IntVec4 {
+public:
+    int x, y, z;
+    int dim;
+};
+
+class FloatVec4 {
+public:
+    float          x, y, z;
+    int            dim;
+    inline IntVec4 toIntVec4() {
+        auto px = (int)x;
+        auto py = (int)y;
+        auto pz = (int)z;
+        if (px < 0 && px != x)
+            px = px - 1;
+        if (py < 0 && py != y)
+            py = py - 1;
+        if (pz < 0 && pz != z)
+            pz = pz - 1;
+        return {px, py, pz, dim};
+    }
+};
 
 //Templates
 template <typename T, typename T2, int unk>
-struct TypedServerNetId {
+class TypedServerNetId {
     T2 netId;
 };
 
 template <typename T, typename T2, int unk>
-struct TypedClientNetId {
+class TypedClientNetId {
     T2 netId;
 };
 
 template <typename T, typename T2, int unk>
-struct TypedRuntimeId {
+class TypedRuntimeId {
     T2 netId;
 };
 
@@ -178,13 +201,13 @@ template <typename T, typename T2>
 class AutomaticID;
 
 template <typename T, typename T2>
-struct BidirectionalUnorderedMap;
+class BidirectionalUnorderedMap;
 
 template <typename T>
-struct BlockDataFetchResult;
+class BlockDataFetchResult;
 
 template <typename T>
-struct CommandSelectorResults;
+class CommandSelectorResults;
 
 template <typename T>
 class Factory;
@@ -196,10 +219,10 @@ template <typename T, typename T2, int unk>
 class ItemStackRequestActionCraft;
 
 template <typename T>
-struct ItemStateVariant;
+class ItemStateVariant;
 
 template <typename T>
-struct LevelChunkGridAreaElement;
+class LevelChunkGridAreaElement;
 
 template <typename T>
 class OwnerPtrT;
@@ -220,7 +243,7 @@ template <typename T>
 class WeakRefT;
 
 template <typename T>
-class SharePtrRefTraits;
+struct SharePtrRefTraits;
 
 template <typename T>
 class SubChunkStorage;

@@ -69,13 +69,7 @@
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="AutoUpgrade.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="BugFix.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="CheckNotice.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="CheckUpdate.cpp">
@@ -101,6 +95,18 @@
     </ClCompile>
     <ClCompile Include="PluginManager.cpp">
       <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ContainerAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ItemAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\serviceLocate.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\SymbolHelper.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,12 +173,6 @@
     <ClInclude Include="Header\Utils\CryptHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="AutoUpgrade.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CheckNotice.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="Config.h">
       <Filter>Main</Filter>
     </ClInclude>
@@ -189,6 +189,18 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Header\Types.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ContainerAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ItemAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\serviceLocate.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\SymbolHelper.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
