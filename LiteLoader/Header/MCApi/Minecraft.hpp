@@ -23,7 +23,7 @@ public:
     MCAPI class NetworkHandler& getNetworkHandler();
     MCAPI class ResourcePackManager& getResourceLoader();
     MCAPI class ServerNetworkHandler* getServerNetworkHandler();
-    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
+    //MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>> getStructureManager();
     MCAPI void init();
     MCAPI void initAsDedicatedServer();
     MCAPI bool isLeaveGameDone() const;

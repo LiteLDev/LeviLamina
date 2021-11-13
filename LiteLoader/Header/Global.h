@@ -21,6 +21,9 @@
 #include <gsl/gsl>
 #include <bitset>
 #include <utility>
+#include <set>
+#include <unordered_set>
+#include "serviceLocate.h"
 #include "Types.h"
 #include "Utils/Json.h"
 
@@ -28,4 +31,7 @@
 typedef std::string xuid_t;
 namespace mce {
 	class UUID;
-};
+class Color;
+}; // namespace mce
+typedef unsigned long long QWORD;
+
