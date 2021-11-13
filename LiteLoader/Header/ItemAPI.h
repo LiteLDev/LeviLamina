@@ -6,8 +6,8 @@ class ItemActor;
 
 struct ItemStackObj : public ItemStack {
     LIAPI ItemStack* create();
-    //LIAPI ItemStack* newItem(std::string type, int count);
-    //LIAPI ItemStack* newItem(Tag* tag);
+    LIAPI ItemStack* create(std::string type, int count);
+    LIAPI ItemStack* create(Tag* tag);
     LIAPI ItemStack* clone();
     LIAPI ItemActor* spawnItemByItemStack(const FloatVec4& pos);
 

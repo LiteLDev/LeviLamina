@@ -93,6 +93,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\NBTAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
@@ -127,6 +128,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
     <ClInclude Include="Header\LevelAPI.h" />
+    <ClInclude Include="Header\NBTAPI.h" />
     <ClInclude Include="Header\serviceLocate.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
@@ -155,6 +157,8 @@ LibraryBuilder.exe
     <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
+    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib" />
+    <Library Include="Header\third-party\nbt-cpp\lib\nbt-cpp.lib" />
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />

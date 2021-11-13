@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <Header/LevelAPI.h>
+#include "NBTAPI.h"
 using namespace std;
 
 ItemStack* ItemStackObj::create() {
@@ -18,26 +19,25 @@ ItemStack* ItemStackObj::create() {
         return nullptr;
     }
 }
-/*
-ItemStack* Raw_NewItem(std::string type, int count) {
-    Tag* nbt = Tag::createTag(TagType::Compound);
+
+ItemStack* ItemStackObj::create(Tag* tag) {
+    ItemStack* item = create();
+    if (!item)
+        return nullptr;
+    tag->setItem(item);
+    return item;
+}
+
+ItemStack* ItemStackObj::create(std::string type, int count) {
+    Tag* nbt = Tag::createTag(Tag::Type::Compound);
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
     nbt->putString("Name", type);
     nbt->putByte("Count", count);
-
-    return Raw_NewItem(nbt);
+    return create(nbt);
 }
 
-ItemStack* ItemStackObj::newItem(Tag* tag) {
-    ItemStack* item = newItem();
-    if (!item)
-        return nullptr;
-    tag->setItem(item);
 
-    return item;
-}
-*/
 ItemStack* ItemStackObj::clone() {
     ItemStack* a = (ItemStack*)new char[272];
     *a = ((ItemStack*)this)->clone();

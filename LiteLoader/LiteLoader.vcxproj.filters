@@ -114,6 +114,9 @@
     <ClCompile Include="Kernel\Utils\LocateService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\NBTAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -218,6 +221,9 @@
     <ClInclude Include="Header\Utils\LocateService.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Header\NBTAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">
@@ -236,6 +242,12 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\third-party\openssl\libssl.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Header\third-party\nbt-cpp\lib\nbt-cpp.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

@@ -28,6 +28,7 @@
 #include "Types.h"
 #include <gsl/gsl>
 #include <unordered_set>
+#include <cpp-base64/base64.h>
 
 // Types
 typedef std::string xuid_t;
@@ -37,3 +38,7 @@ class Color;
 }; // namespace mce
 typedef unsigned long long QWORD;
 
+template <typename RTN = void, typename... Args>
+RTN inline VirtualCall(void* _this, uintptr_t off, Args... args) {
+    return (*(RTN(**)(void*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
+}

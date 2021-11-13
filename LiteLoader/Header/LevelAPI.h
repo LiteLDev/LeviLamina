@@ -2,6 +2,7 @@
 #include "Global.h"
 #include "MCApi/Level.hpp"
 class Actor;
+class ActorDamageSource;
 struct LevelObj : public Level {
 public:
     static BlockSource* getBlockSource(int dimid);
