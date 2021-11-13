@@ -19,7 +19,7 @@ public:
     MCAPI bool canDestroy(class Block const*) const;
     MCAPI enum ArmorSlot getArmorSlot() const;
     MCAPI class Block const* getBlock() const;
-    MCAPI bool operator bool();
+   // MCAPI bool operator bool();
     MCAPI void addCustomUserData(class ContainerComponent&);
     MCAPI void addCustomUserData(class BlockActor&, class BlockSource&);
     MCAPI bool canBeCharged() const;
