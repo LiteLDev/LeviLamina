@@ -7,9 +7,9 @@ void SplitHttpUrl(const std::string& url, string& host, string& path)
 {
     host = url;
 
-    bool foundProcotol = host.find('//') != string::npos;
+    bool foundProcotol = host.find('/') != string::npos;
 
-    auto splitPos = host.find('/', foundProcotol ? host.find('//') + 2 : 0);    //²éÕÒĞ­ÒéºóµÄµÚÒ»¸ö/·Ö¸îhostÓëÂ·¾¶
+    auto splitPos = host.find('/', foundProcotol ? host.find('/') + 2 : 0);    //æŸ¥æ‰¾åè®®åçš„ç¬¬ä¸€ä¸ª/åˆ†å‰²hostä¸è·¯å¾„
     if (splitPos == string::npos)
     {
         path = "/";

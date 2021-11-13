@@ -149,9 +149,6 @@
     <ClInclude Include="Header\KVDBAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Templates.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\PlayerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -190,6 +187,9 @@
     </ClInclude>
     <ClInclude Include="Version.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Types.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

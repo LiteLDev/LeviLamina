@@ -21,7 +21,7 @@
 #include <gsl/gsl>
 #include <bitset>
 #include <utility>
-#include "Templates.h"
+#include "Types.h"
 #include "Utils/Json.h"
 
 // Types
