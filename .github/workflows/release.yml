@@ -75,11 +75,11 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: LiteLoader-${{steps.builds.outputs.tag}}
+        name: LiteLoader-${{steps.build.outputs.tag}}
         path: D:/out/release
 
     - name: Compress to zip
-      run: 7z a D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip D:/out/release
+      run: 7z a D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip D:/out/release
       shell: bash
 
     - name: Release
@@ -87,6 +87,6 @@ jobs:
       with:
         body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        files: D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip
+        files: D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
