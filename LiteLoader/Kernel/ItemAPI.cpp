@@ -73,13 +73,13 @@ int ItemStackObj::getCount() {
         return 0;
     return *((char*)this + 34); // LevelContainerModel::_getContainer
 }
-/*
-bool ItemStackObj::setItem(ItemStack* oldItem, ItemStack* newItem) {
+
+bool ItemStackObj::setItem(ItemStack* newItem) {
     Tag* nbt = Tag::fromItem(newItem);
-    nbt->setItem(oldItem);
+    nbt->setItem(this);
     return true;
 }
-*/
+
 
 
 bool ItemStackObj::setLore(vector<string> lores) {
