@@ -215,9 +215,6 @@
     <ClInclude Include="Header\LevelAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\serviceLocate.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Utils\LocateService.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>

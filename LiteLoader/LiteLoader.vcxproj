@@ -129,7 +129,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\ItemAPI.h" />
     <ClInclude Include="Header\LevelAPI.h" />
     <ClInclude Include="Header\NBTAPI.h" />
-    <ClInclude Include="Header\serviceLocate.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
