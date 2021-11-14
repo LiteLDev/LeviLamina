@@ -123,6 +123,9 @@
     <ClCompile Include="Kernel\BlockActor.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\CommandAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -231,6 +234,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Scoreboard.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\CommandAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

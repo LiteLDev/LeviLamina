@@ -90,6 +90,7 @@ LibraryBuilder.exe
     <ClCompile Include="BugFix.cpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockActor.cpp" />
+    <ClCompile Include="Kernel\CommandAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\ItemAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
@@ -129,6 +130,7 @@ LibraryBuilder.exe
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\BlockActor.h" />
+    <ClInclude Include="Header\CommandAPI.h" />
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
     <ClInclude Include="Header\LevelAPI.h" />
