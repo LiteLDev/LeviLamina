@@ -1,6 +1,8 @@
-name: Build LiteLoader
+name: Release
 
-on: [push]
+on: 
+  push:
+    tags: [ '*.*.*' ]
 
 env:
   SOLUTION_FILE_PATH: .
@@ -21,14 +23,18 @@ jobs:
     - name: Download Lib from server
       run: |
         curl -L -o LiteLoader/Lib/lib.zip https://dl.litebds.com/build/lib.zip
+        curl -L -o LiteLoader/Lib/plugin-lib.zip https://dl.litebds.com/build/plugin-lib.zip
         cd LiteLoader/Lib/
         unzip lib.zip
+        unzip plugin-lib.zip
         rm lib.zip
+        rm plugin-lib.zip
       shell: bash
      
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
         echo  >> LiteLoader/Header/LoaderApi.h
         git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Header/LoaderApi.h
         cat LiteLoader/Header/LoaderApi.h
@@ -39,10 +45,9 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir D:/out
-        mkdir D:/out/dev
-        mkdir D:/out/dev/lib
-        mkdir D:/out/dev/pdb
-        mkdir D:/out/dev/headers
+        mkdir D:/out/release
+        mkdir D:/out/release/plugins
+        mkdir D:/out/release/plugins/lib
     
     - name: Download ChakraCore
       run: |
@@ -55,21 +60,32 @@ jobs:
     - name: Copy SymDB2 Gen
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Tools/SymDB2.exe D:/out/dev
+        cp -a Tools/SymDB2.exe D:/out/release
       shell: bash
-      
+    
     - name: Copy Output Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Release/*.dll D:/out/dev
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/dev
-        cp -a Release/*.lib D:/out/dev/lib
-        cp -a Release/*.pdb D:/out/dev/pdb
-        cp -a LiteLoader/Header/* D:/out/dev/headers
+        cp -a Release/*.dll D:/out/release
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
+        cp -a LiteLoader/Lib/*.dll D:/out/release/plugins/lib
       shell: bash
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: LiteLoader
-        path: D:/out/dev
+        name: LiteLoader-${{env.RELEASE_VERSION}}
+        path: D:/out/release
+
+    - name: Compress to zip
+      run: zip -r D:/out/LiteLoader-${{env.RELEASE_VERSION}}.zip D:/out/release
+      shell: bash
+
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: ${{ github.workspace }}CHANGELOG.txt
+        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        files: D:/out/LiteLoader-${{env.RELEASE_VERSION}}.zip
+      env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
