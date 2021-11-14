@@ -33,8 +33,9 @@ jobs:
      
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
+      id: build
       run: |
-        echo ::set-env name=RELEASE_VERSION::${GITHUB_REF:10}
+        echo ::set-output name=tag::${GITHUB_REF:10}
         echo  >> LiteLoader/Header/LoaderApi.h
         git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Header/LoaderApi.h
         cat LiteLoader/Header/LoaderApi.h
@@ -74,11 +75,11 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@v1.0.0
       with:
-        name: LiteLoader-${{env.RELEASE_VERSION}}
+        name: LiteLoader-${{steps.builds.outputs.tag}}
         path: D:/out/release
 
     - name: Compress to zip
-      run: zip -r D:/out/LiteLoader-${{env.RELEASE_VERSION}}.zip D:/out/release
+      run: zip -r D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip D:/out/release
       shell: bash
 
     - name: Release
@@ -86,6 +87,6 @@ jobs:
       with:
         body_path: ${{ github.workspace }}CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        files: D:/out/LiteLoader-${{env.RELEASE_VERSION}}.zip
+        files: D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
