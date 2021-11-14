@@ -79,7 +79,7 @@ jobs:
         path: D:/out/release
 
     - name: Compress to zip
-      run: zip -r D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip D:/out/release
+      run: 7z a D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip D:/out/release
       shell: bash
 
     - name: Release
