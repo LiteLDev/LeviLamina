@@ -227,10 +227,10 @@
     <ClInclude Include="Header\NBTAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Scoreboard.h">
+    <ClInclude Include="Header\BlockActor.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BlockActor.h">
+    <ClInclude Include="Header\Scoreboard.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
