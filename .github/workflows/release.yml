@@ -85,7 +85,7 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        body_path: ${{ github.workspace }}CHANGELOG.txt
+        body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: D:/out/LiteLoader-${{steps.builds.outputs.tag}}.zip
       env:
