@@ -9,7 +9,6 @@ struct ItemStackObj : public ItemStack {
     LIAPI ItemStack* create(std::string type, int count);
     LIAPI ItemStack* create(Tag* tag);
     LIAPI ItemStack* clone();
-    LIAPI ItemActor* spawnItemByItemStack(const FloatVec4& pos);
 
     LIAPI std::string getName();
     LIAPI std::string getCustomName();

@@ -10,7 +10,7 @@
 #include "NBTAPI.h"
 using namespace std;
 
-LIAPI ItemStack* ItemStackObj::create() {
+ItemStack* ItemStackObj::create() {
     try {
         ItemStack* a    = (ItemStack*)new char[272];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
@@ -20,7 +20,7 @@ LIAPI ItemStack* ItemStackObj::create() {
     }
 }
 
-LIAPI ItemStack* ItemStackObj::create(Tag* tag) {
+ItemStack* ItemStackObj::create(Tag* tag) {
     ItemStack* item = create();
     if (!item)
         return nullptr;
@@ -28,7 +28,7 @@ LIAPI ItemStack* ItemStackObj::create(Tag* tag) {
     return item;
 }
 
-LIAPI ItemStack* ItemStackObj::create(std::string type, int count) {
+ItemStack* ItemStackObj::create(std::string type, int count) {
     Tag* nbt = Tag::createTag(Tag::Type::Compound);
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
@@ -38,48 +38,37 @@ LIAPI ItemStack* ItemStackObj::create(std::string type, int count) {
 }
 
 
-LIAPI ItemStack* ItemStackObj::clone() {
+ItemStack* ItemStackObj::clone() {
     ItemStack* a = (ItemStack*)new char[272];
     *a = ((ItemStack*)this)->clone();
     return a;
 }
-class Spawner;
-LIAPI ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
-    try {
-        Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(LocateService<Level>());
-        Vec3   vec{pos.x, pos.y, pos.z};
-        ItemActor* ac = sp->spawnItem(*LevelObj::getBlockSource(pos.dim), *this, nullptr, vec, 0);
-        return ac;
-    } catch (...) {
-        return nullptr;
-    }
-}
 
-LIAPI string ItemStackObj::getName() {
+string ItemStackObj::getName() {
     if (this->isNull())
         return "";
     return this->getName();
 }
 
-LIAPI string ItemStackObj::getCustomName() {
+string ItemStackObj::getCustomName() {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getCustomName();
 }
 
-LIAPI std::string ItemStackObj::getTypeName() {
+std::string ItemStackObj::getTypeName() {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getItem()->getSerializedName();
 }
 
-LIAPI int ItemStackObj::getAux() {
+int ItemStackObj::getAux() {
     if (this->isNull())
         return 0;
     return ((ItemStack*)this)->getAuxValue();
 }
 
-LIAPI int ItemStackObj::getCount() {
+int ItemStackObj::getCount() {
     if (this->isNull())
         return 0;
     return *((char*)this + 34); // LevelContainerModel::_getContainer
@@ -93,7 +82,7 @@ bool ItemStackObj::setItem(ItemStack* oldItem, ItemStack* newItem) {
 */
 
 
-LIAPI bool ItemStackObj::setLore(vector<string> lores) {
+bool ItemStackObj::setLore(vector<string> lores) {
     if (this->isNull())
         return false;
     this->setCustomLore(lores);
