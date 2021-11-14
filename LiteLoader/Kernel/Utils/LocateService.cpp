@@ -16,7 +16,6 @@ THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
     original(mc);
 }
 
-
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
     original(a);
     LocateServiceImpl<Level>::assign(*LocateServiceImpl<Minecraft>()->getLevel());

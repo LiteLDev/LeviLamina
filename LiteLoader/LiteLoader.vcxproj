@@ -88,6 +88,7 @@ LibraryBuilder.exe
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BugFix.cpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\BlockActor.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\ItemAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
@@ -95,6 +96,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\NBTAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
+    <ClCompile Include="Kernel\Scoreboard.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -125,10 +127,12 @@ LibraryBuilder.exe
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\ActorAPI.h" />
+    <ClInclude Include="Header\BlockActor.h" />
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
     <ClInclude Include="Header\LevelAPI.h" />
     <ClInclude Include="Header\NBTAPI.h" />
+    <ClInclude Include="Header\Scoreboard.h" />
     <ClInclude Include="Header\serviceLocate.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />

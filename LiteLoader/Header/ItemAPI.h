@@ -18,7 +18,7 @@ struct ItemStackObj : public ItemStack {
     LIAPI int         getCount();
 
     //bool setItem(ItemStack* oldItem, ItemStack* newItem);
-    bool setLore(std::vector<std::string> lores);
+    LIAPI bool setLore(std::vector<std::string> lores);
 };
 
 

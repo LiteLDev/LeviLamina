@@ -37,6 +37,7 @@ public:
     virtual void unk_vfn_31();
     virtual bool isEmpty();
 
+
 public:
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;

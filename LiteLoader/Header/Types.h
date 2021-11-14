@@ -248,3 +248,151 @@ class buffer_span_mut;
 
 template <typename T>
 class optional_ref;
+
+//enum
+
+enum class ContainerType {
+    INVENTORY = 0xff,
+    CONTAINER = 0x00,
+    WORKBENCH = 0x01,
+    FURNACE = 0x02,
+    ENCHANTMENT = 0x03,
+    BREWING_STAND = 0x04,
+    ANVIL = 0x05,
+    DISPENSER = 0x06,
+    DROPPER = 0x07,
+    HOPPER = 0x08,
+    CAULDRON = 0x09,
+    MINECART_CHEST = 0x0a,
+    MINECART_HOPPER = 0x0b,
+    HORSE = 0x0c,
+    JUKEBOX = 0x11,
+    LAB_TABLE = 0x17,
+    BLAST_FURNACE = 0x1b,
+    SMOKER = 0x1c,
+    STONECUTTER = 0x1d,
+    HUD = 0x1f,
+    SMITHING_TABLE = 0x21,
+    NONE = 0xf7
+};
+
+enum class ParticleType {
+    dragondestroyblock = 0x40,
+    none = 0x00,
+    bubble = 0x01,
+    bubblemanual = 0x02,
+    crit = 0x03,
+    blockforcefield = 0x04,
+    smoke = 0x05,
+    explode = 0x06,
+    evaporation = 0x07,
+    flame = 0x08,
+    candleflame = 0x09,
+    lava = 0x0a,
+    largesmoke = 0x0b,
+    reddust = 0x0c,
+    risingborderdust = 0x0d,
+    iconcrack = 0x0e,
+    snowballpoof = 0x0f,
+    largeexplode = 0x10,
+    hugeexplosion = 0x11,
+    mobflame = 0x12,
+    heart = 0x13,
+    terrain = 0x14,
+    townaura = 0x15,
+    portal = 0x16,
+    watersplash = 0x18,
+    watersplashmanual = 0x19,
+    waterwake = 0x1a,
+    dripwater = 0x1b,
+    driplava = 0x1c,
+    driphoney = 0x1d,
+    stalactitedripwater = 0x1e,
+    stalactitedriplava = 0x1f,
+    fallingdust = 0x20,
+    mobspell = 0x21,
+    mobspellambient = 0x22,
+    mobspellinstantaneous = 0x23,
+    ink = 0x24,
+    slime = 0x25,
+    rainsplash = 0x26,
+    villagerangry = 0x27,
+    villagerhappy = 0x28,
+    enchantingtable = 0x29,
+    trackingemitter = 0x2a,
+    note = 0x2b,
+    witchspell = 0x2c,
+    carrotboost = 0x2d,
+    mobappearance = 0x2e,
+    endrod = 0x2f,
+    dragonbreath = 0x30,
+    spit = 0x31,
+    totem = 0x32,
+    food = 0x33,
+    fireworksstarter = 0x34,
+    fireworks = 0x35,
+    fireworksoverlay = 0x36,
+    balloongas = 0x37,
+    coloredflame = 0x38,
+    sparkler = 0x39,
+    conduit = 0x3a,
+    bubblecolumnup = 0x3b,
+    bubblecolumndown = 0x3c,
+    sneeze = 0x3d,
+    shulkerbullet = 0x3e,
+    bleach = 0x3f,
+    myceliumdust = 0x41,
+    fallingborderdust = 0x42,
+    campfiresmoke = 0x43,
+    campfiresmoketall = 0x44,
+    dragonbreathfire = 0x45,
+    dragonbreathtrail = 0x46,
+    soul = 0x48,
+    obsidiantear = 0x49,
+    portalreverse = 0x4a,
+    snowflake = 0x4b,
+    wax = 0x50,
+    electricspark = 0x51,
+    shriek = 0x52,
+    sculksoul = 0x53
+};
+
+enum class transactionType {
+    NormalTransaction = 0x00,
+    InventoryMismatch = 0x01,
+    ItemUseTransaction = 0x02,
+    ItemUseOnEntityTransaction = 0x03,
+    ItemReleaseTransaction = 0x04
+};
+
+enum class ItemStackRequestActionType {
+    Take = 0x00,
+    Place = 0x01,
+    Swap = 0x02,
+    Drop = 0x03,
+    Destroy = 0x04,
+    Consume = 0x05,
+    Create = 0x06,
+    ScreenLabTableCombine = 0x07,
+    ScreenBeaconPayment = 0x08,
+    ScreenHUDMineBlock = 0x09,
+    CraftRecipe = 0x0a,
+    CraftRecipeAuto = 0x0b,
+    CraftCreative = 0x0c,
+    CraftRecipeOptional = 0x0d,
+    CraftRepairAndDisenchant = 0x0e,
+    CraftLoom = 0x0f,
+    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x10,
+    CraftResults_DEPRECATEDASKTYLAING = 0x11
+};
+
+enum class ObjectiveSortOrder : char {
+    ASCENDING = 0,
+    DESCENDING = 1
+};
+
+enum class PlayerScoreSetFunction : char {
+    SET = 0,
+    ADD = 1,
+    REMOVE = 2
+};

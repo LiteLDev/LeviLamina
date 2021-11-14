@@ -1,16 +1,14 @@
 #pragma once
 #include "Global.h"
-
+#include <MCApi/Actor.hpp>
 class Actor;
-class Player;
-class NetworkIdentifier;
 class UserEntityIdentifierComponent;
 
 struct ActorObj : public Actor {
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
-    bool isSimulatedPlayer();
-    bool isPlayer();
-    std::string getEntityTypeName();
-    bool ActorObj::hurtEntity(int damage);
-    Vec2* getDirction();
+    LIAPI bool isSimulatedPlayer();
+    LIAPI  bool isPlayer();
+    LIAPI std::string getEntityTypeName();
+    LIAPI bool ActorObj::hurtEntity(int damage);
+    LIAPI Vec2* getDirction();
 };

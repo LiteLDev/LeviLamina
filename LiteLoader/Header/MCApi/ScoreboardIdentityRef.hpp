@@ -5,7 +5,7 @@ class ScoreboardIdentityRef {
 
 public:
     MCAPI struct ActorUniqueID const& getEntityId() const;
-    MCAPI enum IdentityDefinition::Type getIdentityType() const;
+    MCAPI int/* enum IdentityDefinition::Type*/ getIdentityType() const;
     MCAPI struct PlayerScoreboardId const& getPlayerId() const;
     MCAPI bool hasScoreInObjective(class Objective const&) const;
     MCAPI bool modifyScoreInObjective(int&, class Objective&, int, enum PlayerScoreSetFunction);

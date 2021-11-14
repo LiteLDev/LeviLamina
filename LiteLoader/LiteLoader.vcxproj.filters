@@ -117,6 +117,12 @@
     <ClCompile Include="Kernel\NBTAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Scoreboard.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BlockActor.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -222,6 +228,12 @@
       <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Header\NBTAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Scoreboard.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\BlockActor.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

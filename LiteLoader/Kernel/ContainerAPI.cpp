@@ -2,54 +2,54 @@
 #include "global.h"
 #include "itemapi.h"
 #include <Header/LevelAPI.h>
-std::string ContainerObj::getTypeName() {
+LIAPI std::string ContainerObj::getTypeName() {
     //ContainerType type = dAccess<ContainerType>(this, 8); //IDA Container::Container
     ContainerType type = this->getContainerType();
     return this->getContainerTypeName(type);
 }
 
 //Safely add items to the container
-bool ContainerObj::addItem(ItemStack* item) {
+LIAPI bool ContainerObj::addItem(ItemStack* item) {
     if (!this->hasRoomForItem(*item))
         return false;
     ((Container*)this)->addItem(*((ItemStackObj*)item)->clone());
     return true;
 }
 
-bool ContainerObj::addItemToFirstEmptySlot(ItemStack* item) {
+LIAPI bool ContainerObj::addItemToFirstEmptySlot(ItemStack* item) {
     return ((Container*)this)->addItemToFirstEmptySlot(*((ItemStackObj*)item)->clone());
 
 }
 //Safely remove items to the container
-bool ContainerObj::removeItem(int slot, unsigned int number) {
+LIAPI bool ContainerObj::removeItem(int slot, unsigned int number) {
     if (slot > this->getSize())
         return false;
     ((Container*)this)->removeItem(slot, number);
     return true;
 }
 
-ItemStack* ContainerObj::getSlot(int slot) {
+LIAPI ItemStack* ContainerObj::getSlot(int slot) {
     if (slot > this->getSize())
         return nullptr;
     auto list = this->getAllSlots();
     return const_cast<ItemStack*>(list[slot]);
 }
 
-std::vector<const ItemStack*> ContainerObj::getAllSlots() {
+LIAPI std::vector<const ItemStack*> ContainerObj::getAllSlots() {
     return this->getSlots();
 }
 
-int ContainerObj::getSize() {
+LIAPI int ContainerObj::getSize() {
     using _QWORD = unsigned long long;
     return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
 }
 
-bool ContainerObj::hasContainer(FloatVec4 pos) {
+LIAPI bool ContainerObj::hasContainer(FloatVec4 pos) {
     return getContainer(pos) != nullptr;
 }
 
 class DropperBlockActor;
-Container* ContainerObj::getContainer(FloatVec4 pos) {
+LIAPI Container* ContainerObj::getContainer(FloatVec4 pos) {
     Vec3 vec{pos.x, pos.y, pos.z};
     // This function didn't use 'this' pointer
     
