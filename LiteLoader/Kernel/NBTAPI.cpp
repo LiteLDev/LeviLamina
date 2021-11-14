@@ -9,6 +9,7 @@
 #include <MCApi/CompoundTag.hpp>
 #include <MCApi/BlockActor.hpp>
 #include <nbt-cpp/nbt.hpp>
+#include <cpp-base64/base64.h>
 using namespace std;
 
 //////////////////// NBT Class ////////////////////

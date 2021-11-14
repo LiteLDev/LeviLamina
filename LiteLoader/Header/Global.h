@@ -16,19 +16,18 @@
 #include <iostream>
 #include <optional>
 #include <functional>
-#include <bitset>
 #include <utility>
 #include <set>
+#include <bitset>
 #include <unordered_map>
+#include <unordered_set>
 #include <minwindef.h>
+#include <gsl/gsl>
 
 #include "Utils/LocateService.h"
 #include "Utils/Json.h"
 #include "HookAPI.h"
 #include "Types.h"
-#include <gsl/gsl>
-#include <unordered_set>
-#include <cpp-base64/base64.h>
 
 // Types
 typedef std::string xuid_t;

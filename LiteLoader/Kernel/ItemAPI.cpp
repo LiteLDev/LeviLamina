@@ -43,17 +43,6 @@ ItemStack* ItemStackObj::clone() {
     *a = ((ItemStack*)this)->clone();
     return a;
 }
-class Spawner;
-ItemActor* ItemStackObj::spawnItemByItemStack(const FloatVec4& pos) {
-    try {
-        Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(LocateService<Level>());
-        Vec3   vec{pos.x, pos.y, pos.z};
-        ItemActor* ac = sp->spawnItem(*LevelObj::getBlockSource(pos.dim), *this, nullptr, vec, 0);
-        return ac;
-    } catch (...) {
-        return nullptr;
-    }
-}
 
 string ItemStackObj::getName() {
     if (this->isNull())
