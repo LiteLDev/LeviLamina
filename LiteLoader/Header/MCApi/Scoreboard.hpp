@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "ServerScoreboard.hpp"
-#include <Scoreboard.h>
 class Scoreboard : public ServerScoreboard {
 public:
     virtual ~Scoreboard();

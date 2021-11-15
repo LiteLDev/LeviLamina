@@ -22,7 +22,9 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <minwindef.h>
+
 #include <gsl/gsl>
+#include <seh_exception/seh_exception.hpp>
 
 #include "Utils/LocateService.h"
 #include "Utils/Json.h"

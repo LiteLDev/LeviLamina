@@ -1,4 +1,4 @@
-#include "Scoreboard.h"
+#include <ScoreboardAPI.h>
 #include "MCApi/Objective.hpp"
 #include "MCApi/ObjectiveCriteria.hpp"
 #include "MCApi/DisplayObjective.hpp"

@@ -1,4 +1,4 @@
-#include "BlockActor.h"
+#include "BlockActorAPI.h"
 #include "MCApi/Block.hpp"
 
 LIAPI int BlockActorObj::getBlockEntityType(Block* bl) {

@@ -117,13 +117,16 @@
     <ClCompile Include="Kernel\NBTAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Scoreboard.cpp">
+    <ClCompile Include="Kernel\ScheduleAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockActor.cpp">
+    <ClCompile Include="Kernel\BlockActorAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\CommandAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ScoreboardAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
@@ -230,13 +233,16 @@
     <ClInclude Include="Header\NBTAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BlockActor.h">
+    <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Scoreboard.h">
+    <ClInclude Include="Header\BlockActorAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\CommandAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\ScoreboardAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

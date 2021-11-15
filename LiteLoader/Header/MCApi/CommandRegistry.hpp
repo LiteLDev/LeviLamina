@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "CommandVersion.hpp"
+#include "CommandParameterData.hpp"
 
 enum class CommandFlagValue : char {
     None = 0,
