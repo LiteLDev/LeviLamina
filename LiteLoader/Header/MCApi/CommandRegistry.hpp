@@ -16,6 +16,15 @@ enum class CommandFlagValue : char {
     Cheat = 64,
 };
 
+enum class CommandPermissionLevel : char {
+    Any = 0,
+    GameMasters = 1,
+    Admin = 2,
+    Host = 3,
+    Owner = 4,
+    Internal = 5,
+};
+
 struct CommandFlag {
     CommandFlagValue value;
 
