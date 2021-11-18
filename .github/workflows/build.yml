@@ -20,15 +20,20 @@ jobs:
      
     - name: Download Lib from server
       run: |
-        curl -L -o LiteLoader/Lib/lib.zip https://dl.litebds.com/build/lib.zip
-        cd LiteLoader/Lib/
-        unzip lib.zip
-        rm lib.zip
+        curl -L -o D:/lib.zip https://dl.litebds.com/build/lib.zip
+        curl -L -o D:/plugin-lib.zip https://dl.litebds.com/build/plugin-lib.zip
+        unzip D:/lib.zip -d LiteLoader/Lib/
+        mkdir D:/lib
+        unzip D:/plugin-lib.zip -d D:/lib
+        rm D:/lib.zip
+        rm D:/plugin-lib.zip
       shell: bash
      
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
+      id: build
       run: |
+        echo ::set-output name=tag::${GITHUB_REF:10}
         echo  >> LiteLoader/Header/LoaderApi.h
         git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Header/LoaderApi.h
         cat LiteLoader/Header/LoaderApi.h
@@ -39,6 +44,9 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir D:/out
+        mkdir D:/out/release
+        mkdir D:/out/release/plugins
+        mkdir D:/out/release/plugins/lib
         mkdir D:/out/dev
         mkdir D:/out/dev/lib
         mkdir D:/out/dev/pdb
@@ -55,14 +63,15 @@ jobs:
     - name: Copy SymDB2 Gen
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Tools/SymDB2.exe D:/out/dev
+        cp -a Tools/SymDB2.exe D:/out/release
       shell: bash
-      
+    
     - name: Copy Output Files
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        cp -a Release/*.dll D:/out/dev
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/dev
+        cp -a Release/*.dll D:/out/release
+        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
+        cp -a LiteLoader/Lib/*.dll D:/out/release/plugins/lib
         cp -a Release/*.lib D:/out/dev/lib
         cp -a Release/*.pdb D:/out/dev/pdb
         cp -a LiteLoader/Header/* D:/out/dev/headers
@@ -72,4 +81,29 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
+        path: D:/out/release
+
+    - name: Upload SDK
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: LiteLoader-SDK
         path: D:/out/dev
+
+    - name: Compress to zip
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        7z a D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip D:/out/release
+        7z a D:/out/LiteLoader-SDK.zip D:/out/dev
+      shell: bash
+
+    - name: Create New Release
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        body_path: ${{ github.workspace }}\CHANGELOG.txt
+        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+        files: |
+          D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip
+          D:/out/LiteLoader-SDK.zip
+      env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
