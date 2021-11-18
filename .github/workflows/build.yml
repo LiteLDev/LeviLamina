@@ -71,7 +71,7 @@ jobs:
       run: |
         cp -a Release/*.dll D:/out/release
         cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
-        cp -a LiteLoader/Lib/*.dll D:/out/release/plugins/lib
+        cp -a D:/lib/*.dll D:/out/release/plugins/lib
         cp -a Release/*.lib D:/out/dev/lib
         cp -a Release/*.pdb D:/out/dev/pdb
         cp -a LiteLoader/Header/* D:/out/dev/headers
