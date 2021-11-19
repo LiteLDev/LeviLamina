@@ -4,10 +4,12 @@
 #include <MCApi/HashedString.hpp>
 #include <MCApi/Mob.hpp>
 #include <MCApi/ActorDamageSource.hpp>
+#include <MCApi/UserEntityIdentifierComponent.hpp>
 class UserEntityIdentifierComponent;
 
 LIAPI UserEntityIdentifierComponent* ActorObj::getUserEntityIdentifierComponent() {
-    return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
+    return UserEntityIdentifierComponent::tryGetFromEntity(*(EntityContext*)this);
+    //return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
 }
 
 LIAPI bool ActorObj::isSimulatedPlayer() {

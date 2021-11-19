@@ -1,15 +1,15 @@
 #include "BlockActorAPI.h"
 #include "MCApi/Block.hpp"
 
-LIAPI int BlockActorObj::getBlockEntityType(Block* bl) {
+LIAPI int BlockActorObj::getType(Block* bl) {
     return dAccess<unsigned int>(bl, 188); //IDA Block::getBlockEntityType
 }
 
-LIAPI unsigned int BlockActorObj::getBlockEntityType() {
-    return this->getType();
+LIAPI int BlockActorObj::getType() {
+    return BlockActor::getType();
 }
 
-LIAPI BlockPos BlockActorObj::getBlockEntityPos() {
+LIAPI BlockPos BlockActorObj::getPos() {
     return dAccess<BlockPos>(this, 44); //(Linux)BlockActor::getPosition
 }
 

@@ -31,6 +31,10 @@
 #include "HookAPI.h"
 #include "Types.h"
 
+using std::string;
+using std::vector;
+using std::map;
+
 // Types
 typedef std::string xuid_t;
 namespace mce {

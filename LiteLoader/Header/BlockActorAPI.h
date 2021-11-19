@@ -4,7 +4,7 @@
 
 
 struct BlockActorObj : public BlockActor {
-    LIAPI int getBlockEntityType(Block* bl);
-    LIAPI unsigned int getBlockEntityType();
-    LIAPI BlockPos getBlockEntityPos();
+    LIAPI static int getType(Block* bl);
+    LIAPI int getType();
+    LIAPI BlockPos getPos();
 };

@@ -90,6 +90,9 @@ LibraryBuilder.exe
     <ClCompile Include="BugFix.cpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
+    <ClCompile Include="Kernel\BlockAPI.cpp" />
+    <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
+    <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\CommandAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\ItemAPI.cpp" />
@@ -100,6 +103,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
     <ClCompile Include="Kernel\ScheduleAPI.cpp" />
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
+    <ClCompile Include="Kernel\SpawnerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -131,6 +135,9 @@ LibraryBuilder.exe
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\ActorAPI.h" />
     <ClInclude Include="Header\BlockActorAPI.h" />
+    <ClInclude Include="Header\BlockAPI.h" />
+    <ClInclude Include="Header\BlockInstanceAPI.h" />
+    <ClInclude Include="Header\BlockLegacyAPI.h" />
     <ClInclude Include="Header\CommandAPI.h" />
     <ClInclude Include="Header\ContainerAPI.h" />
     <ClInclude Include="Header\ItemAPI.h" />
@@ -138,6 +145,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\NBTAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\ScoreboardAPI.h" />
+    <ClInclude Include="Header\SpawnerAPI.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
