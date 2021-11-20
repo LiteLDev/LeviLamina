@@ -4,12 +4,12 @@
 #include "Mob.hpp"
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Player.hpp"
+#include "Extra/PlayerAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Player : public Mob {
 public:
-    #include "Extra/Player.hpp"
+    #include "Extra/PlayerAPI.hpp"
     
     virtual void reloadHardcoded(int /*enum Actor::InitializationMethod*/, class VariantParameterList const&);
     virtual void initializeComponents(int /*enum Actor::InitializationMethod*/, class VariantParameterList const&);

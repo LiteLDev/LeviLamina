@@ -4,11 +4,13 @@
 #include "ItemStackBase.hpp"
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/ItemStack.hpp"
+#include "Extra/ItemStackAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class ItemStack : public ItemStackBase {
 public:
+    #include "Extra/ItemStackAPI.hpp"
+
     virtual ~ItemStack();
     virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
     virtual void reinit(class BlockLegacy const&, int);
@@ -18,8 +20,6 @@ public:
     virtual std::string toDebugString();
 
 public:
-    #include "Extra/ItemStack.hpp"
-    
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;
     MCAPI class ItemStack& operator=(class ItemStack const&);
     MCAPI void __autoclassinit2(unsigned __int64);

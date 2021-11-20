@@ -236,37 +236,37 @@
     <ClInclude Include="Header\BlockInstanceAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Actor.hpp">
+    <ClInclude Include="Header\MC\Extra\ActorAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Block.hpp">
+    <ClInclude Include="Header\MC\Extra\BlockAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\BlockActor.hpp">
+    <ClInclude Include="Header\MC\Extra\BlockActorAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\BlockLegacy.hpp">
+    <ClInclude Include="Header\MC\Extra\BlockLegacyAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Container.hpp">
+    <ClInclude Include="Header\MC\Extra\ContainerAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\ItemStack.hpp">
+    <ClInclude Include="Header\MC\Extra\ItemStackAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Level.hpp">
+    <ClInclude Include="Header\MC\Extra\LevelAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Mob.hpp">
+    <ClInclude Include="Header\MC\Extra\MobAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Player.hpp">
+    <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Scoreboard.hpp">
+    <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\Spawner.hpp">
+    <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

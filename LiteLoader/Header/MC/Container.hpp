@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Container.hpp"
+#include "Extra/ContainerAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Container {
 public:
-    #include "Extra/Container.hpp"
+    #include "Extra/ContainerAPI.hpp"
     
     virtual ~Container();
     virtual void init();

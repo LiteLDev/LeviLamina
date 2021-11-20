@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Spawner.hpp"
+#include "Extra/SpawnerAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Spawner {
 public:
-    #include "Extra/Spawner.hpp"
+    #include "Extra/SpawnerAPI.hpp"
     MCAPI void postProcessSpawnMobs(class BlockSource&, int, int, class Random&);
     MCAPI class ItemActor* spawnItem(class BlockSource&, class ItemStack const&, class Actor*, class Vec3 const&, int);
     MCAPI class Mob* spawnMob(class BlockSource&, struct ActorDefinitionIdentifier const&, class Actor*, class Vec3 const&, bool, bool, bool);

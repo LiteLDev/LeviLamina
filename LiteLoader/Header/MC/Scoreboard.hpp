@@ -5,12 +5,12 @@
 #include "Objective.hpp"
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Scoreboard.hpp"
+#include "Extra/ScoreboardAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Scoreboard : public ServerScoreboard {
 public:
-    #include "Extra/Scoreboard.hpp"
+    #include "Extra/ScoreboardAPI.hpp"
     
     virtual ~Scoreboard();
     virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, enum ObjectiveSortOrder);

@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Actor.hpp"
+#include "Extra/ActorAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Actor {
 public:
-    #include "Extra/Actor.hpp"
+    #include "Extra/ActorAPI.hpp"
     
     virtual bool hasComponent(class HashedString const&);
     virtual class Mob* getLastHurtByMob();

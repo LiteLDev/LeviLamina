@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/BlockActor.hpp"
+#include "Extra/BlockActorAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class BlockActor {
 public:
-    #include "Extra/BlockActor.hpp"
+    #include "Extra/BlockActorAPI.hpp"
     
     virtual ~BlockActor();
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
