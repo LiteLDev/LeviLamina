@@ -1,8 +1,12 @@
 #include <HookAPI.h>
-#include <MC/ServerPlayer.hpp>
+#include <MC/Actor.hpp>
+#include <MC/Mob.hpp>
 #include <MC/Player.hpp>
+#include <MC/ServerPlayer.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/NetworkIdentifier.hpp>
+
+#include <MC/Packet.hpp>
 #include <MC/InventoryTransactionPacket.hpp>
 #include <Config.h>
 #include <unordered_map>
@@ -10,14 +14,14 @@
 using namespace LL;
 
 //Fix disconnect packet crash bug
-THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
-    ServerNetworkHandler* _this, NetworkIdentifier* ni, void* packet)
+TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
+    ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
 {
     if (globalConfig.enableFixDisconnectBug) {
-        if (!_this->getServerPlayer(*ni))
+        if (!_getServerPlayer(*ni, 0))
             return;
     }
-    return original(_this, ni, packet);
+    return original(this, ni, packet);
 }
 
 

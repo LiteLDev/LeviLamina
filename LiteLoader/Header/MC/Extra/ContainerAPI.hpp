@@ -3,6 +3,7 @@
     class ItemStack;
 #else
 // Add new members to class
+public:
     LIAPI std::string getTypeName();
 
     LIAPI bool addItem(ItemStack* item);

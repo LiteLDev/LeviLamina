@@ -7,6 +7,7 @@
     class Vec2;
 #else
 // Add new members to class
+public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI bool isSimulatedPlayer();
     LIAPI bool isPlayer();

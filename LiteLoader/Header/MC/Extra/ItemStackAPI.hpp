@@ -1,9 +1,11 @@
 #ifdef EXTRA_INCLUDE_PART
 // Add include headers & pre-declares
+#include "../ItemStackBase.hpp"
     class Tag;
     class ItemActor;
 #else
 // Add new members to class
+public:
     LIAPI ItemStack* create();
     LIAPI ItemStack* create(std::string type, int count);
     LIAPI ItemStack* create(Tag* tag);

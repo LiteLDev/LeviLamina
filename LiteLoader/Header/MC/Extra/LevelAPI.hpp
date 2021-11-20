@@ -9,6 +9,7 @@
     class BlockSource;
 #else
 // Add new members to class
+public:
     LIAPI static BlockSource* getBlockSource(int dimid);
     LIAPI static BlockSource* getBlockSource(Actor* actor);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);

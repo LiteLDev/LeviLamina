@@ -7,6 +7,7 @@
     class Certificate;
 #else
 // Add new members to class
+public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();

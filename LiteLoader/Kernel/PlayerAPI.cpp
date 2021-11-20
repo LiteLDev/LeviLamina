@@ -1,4 +1,7 @@
 #include <MC/Actor.hpp>
+#include <MC/Mob.hpp>
+#include <MC/Player.hpp>
+
 #include <MC/ServerPlayer.hpp>
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
