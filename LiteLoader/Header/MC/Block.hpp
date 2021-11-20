@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Block.hpp"
+#include "Extra/BlockAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Block {
 public:
-    #include "Extra/Block.hpp"
+    #include "Extra/BlockAPI.hpp"
 
     virtual ~Block();
     virtual int /*enum BlockRenderLayer*/ getRenderLayer();

@@ -4,12 +4,12 @@
 #include "Actor.hpp"
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Mob.hpp"
+#include "Extra/MobAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Mob : public Actor {
 public:
-    #include "Extra/Mob.hpp"
+    #include "Extra/MobAPI.hpp"
 
     virtual bool hasComponent(class HashedString const&);
     virtual void outOfWorld();

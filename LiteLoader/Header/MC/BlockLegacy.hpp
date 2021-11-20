@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/BlockLegacy.hpp"
+#include "Extra/BlockLegacyAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class BlockLegacy {
 public:
-    #include "Extra/BlockLegacy.hpp"
+    #include "Extra/BlockLegacyAPI.hpp"
     
     virtual ~BlockLegacy();
     virtual class Block const& getStateFromLegacyData(unsigned short);

@@ -3,12 +3,12 @@
 #include <Global.h>
 
 #define EXTRA_INCLUDE_PART
-#include "Extra/Level.hpp"
+#include "Extra/LevelAPI.hpp"
 #undef EXTRA_INCLUDE_PART
 
 class Level {
 public:
-    #include "Extra/Level.hpp"
+    #include "Extra/LevelAPI.hpp"
     MCAPI struct AdventureSettings const& getAdventureSettings() const;
     MCAPI struct ISharedController const& getCapabilities() const;
     MCAPI class NpcDialogueStorage* getNpcDialogueStorage();
