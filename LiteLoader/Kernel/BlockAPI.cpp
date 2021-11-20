@@ -6,6 +6,7 @@
 #include <MCApi/HashedString.hpp>
 #include <MCApi/BlockLegacy.hpp>
 #include <MCApi/BlockPalette.hpp>
+#include <MCApi/BlockSerializationUtils.hpp>
 #include <NBTAPI.h>
 
 BlockObj* BlockObj::create(string name, unsigned short tileData)
@@ -37,7 +38,7 @@ int BlockObj::getId()
 
 unsigned short BlockObj::getTileData()
 {
-    // 等待大佬改进
+    // 绛夊緟澶т浆鏀硅繘
     auto tileData = dAccess<unsigned short, 8>(this);
     auto blk = &getLegacyBlock();
 
