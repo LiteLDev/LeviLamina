@@ -111,6 +111,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\GlobalService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
+    <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />
@@ -174,7 +175,6 @@ LibraryBuilder.exe
   </ItemGroup>
   <ItemGroup>
     <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib" />
-    <Library Include="Header\third-party\nbt-cpp\lib\nbt-cpp.lib" />
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
