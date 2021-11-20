@@ -62,3 +62,35 @@ bool Level::spawnParticle(FloatVec4 pos, const string& type)
 
     return true;
 }
+#include <MC/MinecraftCommands.hpp>
+#include <MC/CommandContext.hpp>
+#include <MC/command/CommandReg.h>
+void* Level::ServerCommandOrigin::fake_vtbl[26];
+
+static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
+bool Level::runcmd(const string& cmd) {
+    ServerCommandOrigin origin;
+    return MinecraftCommands::_runcmd(&origin, cmd);
+}
+static std::unordered_map<void*, string*> origin_res;
+std::pair<bool, string> Level::runcmdEx(const string& cmd) {
+    ServerCommandOrigin origin;
+    string val;
+    origin_res[&origin] = &val;
+    bool rv = MinecraftCommands::_runcmd(&origin, cmd);
+    return {rv, std::move(val)};
+}
+#include <MC/ServerPlayer.hpp>
+static void* FAKE_PORGVTBL[26];
+bool Level::runcmdAs(Player* pl, const string& cmd) {
+    void** filler[5];
+    ServerCommandOrigin origin;
+    SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
+        filler, (ServerPlayer*)pl);
+    if (FAKE_PORGVTBL[1] == NULL) {
+        memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
+        FAKE_PORGVTBL[1] = (void*)dummy;
+    }
+    filler[0] = FAKE_PORGVTBL + 1;
+    return MinecraftCommands::_runcmd(filler, cmd);
+}

@@ -22,6 +22,7 @@
 #include <unordered_map>
 #include <unordered_set>
 #include <minwindef.h>
+#include <uchar.h>
 
 #include <gsl/gsl>
 #include <seh_exception/seh_exception.hpp>

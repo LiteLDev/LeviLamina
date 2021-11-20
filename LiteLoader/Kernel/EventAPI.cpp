@@ -238,7 +238,8 @@ LIAPI void Event::addEventListener(function<void(MobHurtedEV)> callback) {
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
       Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) {
     MobHurtedEV Mob_hurted_event = {ac, &src, damage};
-
+    Level::runcmd("say @a aaaa");
+    Level::runcmdEx("say @a aaaa");
     CallEvent(Mob_hurted_call_backs, Mob_hurted_event);
     return original(ac, src, damage, unk1_1, unk2_0);
 }

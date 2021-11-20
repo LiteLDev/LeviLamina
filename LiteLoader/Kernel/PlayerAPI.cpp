@@ -29,7 +29,11 @@ std::string Player::getRealName() {
 
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/NetworkPeer.hpp>
-#include <MC/RakNet.hpp>
+#include <MC/NetworkHandler.hpp>
+#include <MC/Minecraft.hpp>
 int Player::getAvgPing() {
-    Global<RakNet::RakPeer>()->getAdr(*this->getNetworkIdentifier());
+    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().avgping;
+}
+int Player::getLastPing() {
+    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().ping;
 }

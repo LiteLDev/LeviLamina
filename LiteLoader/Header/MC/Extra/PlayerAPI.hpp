@@ -12,5 +12,6 @@ public:
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();
     LIAPI std::string getRealName();
-    LIAPI int Player::getAvgPing();
+    LIAPI int getAvgPing();
+    LIAPI int getLastPing();
 #endif
