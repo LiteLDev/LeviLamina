@@ -6,6 +6,7 @@
 #undef EXTRA_INCLUDE_PART
 class ExtendedCertificate {
 #include "Extra/ExtendedCertificateAPI.hpp"
+public:
     MCAPI static class mce::UUID getIdentity(class Certificate const&);
     MCAPI static std::string getIdentityName(class Certificate const&);
     MCAPI static std::string getXuid(class Certificate const&);

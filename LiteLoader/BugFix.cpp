@@ -18,7 +18,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
 {
     if (globalConfig.enableFixDisconnectBug) {
-        if (!_getServerPlayer(*ni, 0))
+        if (!getServerPlayer(*ni))
             return;
     }
     return original(this, ni, packet);

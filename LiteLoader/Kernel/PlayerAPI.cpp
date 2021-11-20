@@ -22,9 +22,6 @@ LIAPI Certificate* Player::getCert() {
     return nullptr;
 }
 
-/*LIAPI xuid_t Player::getXuid() {
-    return ExtendedCertificate::getXuid(*this->getCert());
-}*/
 
 LIAPI std::string Player::getRealName() {
     return ExtendedCertificate::getIdentityName(*this->getCert());

@@ -29,7 +29,7 @@ LIAPI bool Scoreboard::setDisplayObjective(const std::string& objname, const std
         if (!obj)
             return false;
 
-         Global<Scoreboard>()->setDisplayObjective(slot, *obj, (ObjectiveSortOrder)sort);
+        Global<Scoreboard>()->setDisplayObjective(slot, *obj, sort);
         return true;
     }
     return false;
