@@ -94,3 +94,13 @@ bool Level::runcmdAs(Player* pl, const string& cmd) {
     filler[0] = FAKE_PORGVTBL + 1;
     return MinecraftCommands::_runcmd(filler, cmd);
 }
+
+LIAPI std::vector<Player*> Level::getAllPlayers() {
+    std::vector<Player*> player_list;
+    Global<Level>()->forEachPlayer([&](Player& sp) -> bool {
+        Player* player = &sp;
+        player_list.push_back(player);
+        return 1;
+    });
+    return player_list;
+}
