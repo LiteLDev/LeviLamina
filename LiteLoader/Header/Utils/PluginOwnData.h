@@ -26,6 +26,18 @@ LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string_view, vo
 
 namespace PluginOwnData
 {
+	inline bool hasImpl(HMODULE hPlugin, const std::string_view& key)
+	{
+		return ll_PluginOwnData[hPlugin].find(key) != ll_PluginOwnData[hPlugin].end();
+	}
+
+	template <typename T>
+	inline void removeImpl(HMODULE hPlugin, const std::string_view& key)
+	{
+		if (hasImpl(hPlugin, key))
+			delete (T*)ll_PluginOwnData[hPlugin][key];
+	}
+
 	template <typename T, typename... Args>
 	inline T &setImpl(HMODULE hPlugin, const std::string_view& key,const Args&... args)
 	{
@@ -41,18 +53,6 @@ namespace PluginOwnData
 		if (!hasImpl(hPlugin, key))
 			ll_PluginOwnData[hPlugin][key] = new T;
 		return *(T*)ll_PluginOwnData[hPlugin][key];
-	}
-
-	inline bool hasImpl(HMODULE hPlugin, const std::string_view& key)
-	{
-		return ll_PluginOwnData[hPlugin].find(key) != ll_PluginOwnData[hPlugin].end();
-	}
-
-	template <typename T>
-	inline void removeImpl(HMODULE hPlugin, const std::string_view& key)
-	{
-		if (hasImpl(hPlugin, key))
-			delete (T*)ll_PluginOwnData[hPlugin][key];
 	}
 
 	template <typename T, typename... Args>

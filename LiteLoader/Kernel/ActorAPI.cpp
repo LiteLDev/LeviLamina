@@ -8,8 +8,7 @@
 class UserEntityIdentifierComponent;
 
 LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
-    return UserEntityIdentifierComponent::tryGetFromEntity(*(EntityContext*)this);
-    //return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
+    return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
 }
 
 LIAPI bool Actor::isSimulatedPlayer() {
