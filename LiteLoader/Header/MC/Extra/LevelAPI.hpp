@@ -46,4 +46,18 @@ public:
     LIAPI static bool runcmdAs(Player* pl, const string& cmd);
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
+
+    template <typename... T>
+    static inline bool runcmdA(T&&... a) {
+        string s;
+        (APPEND(s, std::forward<T>(a)), ...);
+        return runcmd(s);
+    }
+    template <typename N, typename... T>
+    static inline bool runcmdAsA(N p, T&&... a) {
+        string s;
+        (APPEND(s, std::forward<T>(a)), ...);
+        return runcmdAs(p, s);
+    }
+
 #endif

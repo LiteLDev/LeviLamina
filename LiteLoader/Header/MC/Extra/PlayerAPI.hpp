@@ -14,4 +14,13 @@ public:
     LIAPI std::string getRealName();
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
+
+    template <typename T>
+    inline  bool runcmd(T&& str) {
+        return Level::runcmdAs(this, std::forward<T>(str));
+    }
+    template <typename... T>
+    inline bool runcmdA(T&&... a) {
+        return Level::runcmdAsA(*this, std::forward<T>(a)...);
+    }
 #endif
