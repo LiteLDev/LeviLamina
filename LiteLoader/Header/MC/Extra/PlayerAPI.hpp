@@ -11,6 +11,6 @@ public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();
-    //LIAPI xuid_t       getXuid();
     LIAPI std::string getRealName();
+    LIAPI int Player::getAvgPing();
 #endif

@@ -6,5 +6,14 @@
 #else
 // Add Member There
 
+enum class Reliability : int {};
+enum class DataStatus : int { OK,
+                              BUSY };
+struct NetworkStatus {
+    int level;
+    int ping, avgping;
+    double packetloss, avgpacketloss;
+    char pkt[64];
+};
 
 #endif

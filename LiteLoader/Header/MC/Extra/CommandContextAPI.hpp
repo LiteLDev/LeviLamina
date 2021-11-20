@@ -6,5 +6,17 @@
 #else
 // Add Member There
 
+public:
+
+std::string CMD;
+CommandOrigin* Ori;
+int Version = 10;
+std::string& getCmd() {
+    return CMD;
+}
+class CommandOrigin& getOrigin() {
+    return *Ori;
+}
+
 
 #endif

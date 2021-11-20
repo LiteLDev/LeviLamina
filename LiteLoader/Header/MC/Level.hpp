@@ -70,7 +70,7 @@ public:
     MCAPI void playSynchronizedSound(
         class BlockSource&, enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&,
         bool, bool);
-    MCAPI virtual class Spawner* getSpawn();
+    MCAPI class Spawner* getSpawn();
     MCAPI void tickEntities();
     MCAPI void updateWeather(float, int, float, int);
     MCAPI void denyEffect(class Vec3 const&);

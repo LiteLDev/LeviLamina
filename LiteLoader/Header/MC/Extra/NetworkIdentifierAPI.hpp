@@ -6,5 +6,6 @@
 #else
 // Add Member There
 
-
+public:
+        LIAPI std::string getIP();
 #endif

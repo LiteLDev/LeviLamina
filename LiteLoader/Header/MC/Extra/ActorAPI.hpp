@@ -8,6 +8,7 @@
 #else
 // Add new members to class
 public:
+enum InitializationMethod;
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI bool isSimulatedPlayer();
     LIAPI bool isPlayer();

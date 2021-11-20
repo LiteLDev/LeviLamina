@@ -126,9 +126,6 @@
     <ClCompile Include="Kernel\BlockActorAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CommandAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ScoreboardAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -146,6 +143,12 @@
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp">
       <Filter>Kernel\Utils\nbtcpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EventAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -236,9 +239,6 @@
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\CommandAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\BlockInstanceAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -273,6 +273,12 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\EventAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\NetworkIdentifierAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,6 +4,7 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/NetworkIdentifierAPI.hpp"
 #undef EXTRA_INCLUDE_PART
+
 class NetworkIdentifier {
 #include "Extra/NetworkIdentifierAPI.hpp"
 
