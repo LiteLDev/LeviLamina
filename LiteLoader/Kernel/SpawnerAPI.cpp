@@ -1,9 +1,11 @@
-#include <SpawnerAPI.h>
-#include <MCApi/Mob.hpp>
-#include <MCApi/ItemStack.hpp>
-#include <LevelAPI.h>
+#include <Global.h>
+#include <MC/Spawner.hpp>
+#include <MC/Mob.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
+#include <MC/Level.hpp>
 
-Mob* SpawnerObj::spawnMob(const FloatVec4& pos, std::string name) {
+Mob* Spawner::spawnMob(const FloatVec4& pos, std::string name) {
     try {
         if (name.find("minecraft:") == 0)
             name = name.substr(10);
@@ -11,17 +13,17 @@ Mob* SpawnerObj::spawnMob(const FloatVec4& pos, std::string name) {
         Vec3 vec{ pos.x, pos.y, pos.z };
         ActorDefinitionIdentifier* ad = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
             ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, std::string&)((ActorDefinitionIdentifier*)a, name);
-        return Spawner::spawnMob(*LevelObj::getBlockSource(pos.dim), *ad, nullptr, vec, 0, 1, 0);
+        return spawnMob(*Level::getBlockSource(pos.dim), *ad, nullptr, vec, 0, 1, 0);
     }
     catch (...) {
         return nullptr;
     }
 }
 
-ItemActor* SpawnerObj::spawnItem(const FloatVec4& pos, ItemStack* item) {
+ItemActor* Spawner::spawnItem(const FloatVec4& pos, ItemStack* item) {
     try {
         Vec3 vec{ pos.x, pos.y, pos.z };
-        ItemActor* ac = Spawner::spawnItem(*LevelObj::getBlockSource(pos.dim), *item, nullptr, vec, 0);
+        ItemActor* ac = spawnItem(*Level::getBlockSource(pos.dim), *item, nullptr, vec, 0);
         return ac;
     }
     catch (...) {

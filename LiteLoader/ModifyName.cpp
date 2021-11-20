@@ -3,7 +3,7 @@
 #include <LLAPI.h>
 #include <ServerAPI.h>
 #include <regex>
-//#include <MCApi/BedrockLog.hpp>
+//#include <MC/BedrockLog.hpp>
 using namespace std;
 
 THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")

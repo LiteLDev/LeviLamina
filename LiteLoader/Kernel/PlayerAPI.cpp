@@ -1,18 +1,17 @@
-#include <PlayerAPI.h>
-#include <MCApi/Actor.hpp>
-#include <MCApi/ServerPlayer.hpp>
-#include <MCApi/Certificate.hpp>
-#include <MCApi/ExtendedCertificate.hpp>
+#include <MC/Actor.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/Certificate.hpp>
+#include <MC/ExtendedCertificate.hpp>
 
-LIAPI UserEntityIdentifierComponent* PlayerObj::getUserEntityIdentifierComponent() {
-    return ((MobObj*)(Mob*)this)->getUserEntityIdentifierComponent();
+LIAPI UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
+    return ((Mob*)(Mob*)this)->getUserEntityIdentifierComponent();
 }
 
-LIAPI NetworkIdentifier* PlayerObj::getNetworkIdentifier(){
+LIAPI NetworkIdentifier* Player::getNetworkIdentifier(){
     return (NetworkIdentifier*)(this->getUserEntityIdentifierComponent());
 }
 
-LIAPI Certificate* PlayerObj::getCert() {
+LIAPI Certificate* Player::getCert() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
@@ -20,10 +19,10 @@ LIAPI Certificate* PlayerObj::getCert() {
     return nullptr;
 }
 
-LIAPI xuid_t PlayerObj::getXuid() {
+/*LIAPI xuid_t Player::getXuid() {
     return ExtendedCertificate::getXuid(*this->getCert());
-}
+}*/
 
-LIAPI std::string PlayerObj::getRealName() {
+LIAPI std::string Player::getRealName() {
     return ExtendedCertificate::getIdentityName(*this->getCert());
 }

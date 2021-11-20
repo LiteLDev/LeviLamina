@@ -3,11 +3,11 @@
 #include <map>
 #include <sstream>
 #include <vector>
-#include <MCApi/Actor.hpp>
-#include <MCApi/Player.hpp>
-#include <MCApi/ServerPlayer.hpp>
-#include <MCApi/CompoundTag.hpp>
-#include <MCApi/BlockActor.hpp>
+#include <MC/Actor.hpp>
+#include <MC/Player.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/BlockActor.hpp>
 #include <nbt-cpp/nbt.hpp>
 #include <cpp-base64/base64.h>
 using namespace std;
@@ -253,7 +253,7 @@ bool Tag::setPlayer(Player* player) {
 
 bool Tag::setBlockEntity(BlockActor* ble) {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    VirtualCall(ble, 0x8, LocateService<Level>(), this, &vtbl); //IDA Virtual Table from BlockActor::load
+    VirtualCall(ble, 0x8, Global<Level>(), this, &vtbl); //IDA Virtual Table from BlockActor::load
     ble->setChanged();
     return true;
 }

@@ -99,7 +99,7 @@
     <ClCompile Include="Kernel\ContainerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ItemAPI.cpp">
+    <ClCompile Include="Kernel\ItemStackAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="AutoUpgrade.cpp">
@@ -111,7 +111,7 @@
     <ClCompile Include="Kernel\LevelAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\LocateService.cpp">
+    <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\NBTAPI.cpp">
@@ -188,17 +188,8 @@
     <ClInclude Include="Header\KVDBAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\PlayerAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\ActorAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\Utils\Json.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MobAPI.h">
-      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\NetworkHelper.h">
       <Filter>Header\Utils</Filter>
@@ -224,22 +215,13 @@
     <ClInclude Include="Header\Types.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\ContainerAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\ItemAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="AutoUpgrade.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="CheckNotice.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LevelAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\LocateService.h">
+    <ClInclude Include="Header\Utils\GlobalService.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Header\NBTAPI.h">
@@ -248,25 +230,43 @@
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BlockActorAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\CommandAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\ScoreboardAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\BlockAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\BlockInstanceAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\SpawnerAPI.h">
+    <ClInclude Include="Header\MC\Extra\Actor.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BlockLegacyAPI.h">
+    <ClInclude Include="Header\MC\Extra\Block.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\BlockActor.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\BlockLegacy.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Container.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ItemStack.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Level.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Mob.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Player.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Scoreboard.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Spawner.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,11 +1,10 @@
-#include "MobAPI.h"
-#include <MCApi/Mob.hpp>
+//#include "MobAPI.h"
 #include <Global.h>
-#include <ActorAPI.h>
-#include <MCApi/ActorDefinitionIdentifier.hpp>
-class UserEntityIdentifierComponent;
+#include <MC/Mob.hpp>
+#include <MC/Actor.hpp>
+#include <MC/ActorDefinitionIdentifier.hpp>
 
-LIAPI UserEntityIdentifierComponent* MobObj::getUserEntityIdentifierComponent() {
-    return ((ActorObj*)(Actor*)this)->getUserEntityIdentifierComponent();
+UserEntityIdentifierComponent* Mob::getUserEntityIdentifierComponent() {
+    return ((Actor*)this)->getUserEntityIdentifierComponent();
 }
 

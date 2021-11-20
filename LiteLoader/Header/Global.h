@@ -26,7 +26,7 @@
 #include <gsl/gsl>
 #include <seh_exception/seh_exception.hpp>
 
-#include "Utils/LocateService.h"
+#include "Utils/GlobalService.h"
 #include "Utils/Json.h"
 #include "HookAPI.h"
 #include "Types.h"

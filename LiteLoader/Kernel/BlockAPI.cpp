@@ -1,54 +1,52 @@
-#include <BlockAPI.h>
 #include <LoggerAPI.h>
-#include <BlockLegacyAPI.h>
-#include <MCApi/Block.hpp>
-#include <MCApi/Level.hpp>
-#include <MCApi/HashedString.hpp>
-#include <MCApi/BlockLegacy.hpp>
-#include <MCApi/BlockPalette.hpp>
-#include <MCApi/BlockSerializationUtils.hpp>
+#include <MC/Block.hpp>
+#include <MC/Level.hpp>
+#include <MC/HashedString.hpp>
+#include <MC/BlockLegacy.hpp>
+#include <MC/BlockPalette.hpp>
+#include <MC/BlockSerializationUtils.hpp>
 #include <NBTAPI.h>
 
-BlockObj* BlockObj::create(string name, unsigned short tileData)
+Block* Block::create(string name, unsigned short tileData)
 {
-    BlockPalette* generator = SymCall("?getBlockPalette@Level@@UEBAAEBVBlockPalette@@XZ", BlockPalette*, Level*)(LocateService<Level>());
+    BlockPalette* generator = SymCall("?getBlockPalette@Level@@UEBAAEBVBlockPalette@@XZ", BlockPalette*, Level*)(Global<Level>());
     auto blk = generator->getBlockLegacy(name);
     if (!blk)
         return nullptr;
-    return (BlockObj*)((BlockLegacyObj*)blk)->toBlock(tileData);
+    return (Block*)((BlockLegacy*)blk)->toBlock(tileData);
 }
 
-BlockObj* BlockObj::create(Tag* nbt)
+Block* Block::create(Tag* nbt)
 {
     std::pair<int, Block*> result;      // pair<enum BlockSerializationUtils::NBTState, Block*>
     SymCall("?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z",
         void*, void*, Tag*, int64_t)(&result, nbt, 0);
-    return (BlockObj*)result.second;
+    return (Block*)result.second;
 }
 
-string BlockObj::getName()
+string Block::getNameString()
 {
 	return Block::getName().getString();
 }
 
-int BlockObj::getId()
+int Block::getId()
 {
 	return getLegacyBlock().getBlockItemId();
 }
 
-unsigned short BlockObj::getTileData()
+unsigned short Block::getTileData()
 {
     // 等待大佬改进
     auto tileData = dAccess<unsigned short, 8>(this);
     auto blk = &getLegacyBlock();
 
-    if (((BlockLegacyObj*)blk)->toBlock(tileData) == (Block*)this)
+    if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
         return tileData;
 
     for (unsigned short i = 0; i < 16; ++i) {
         if (i == tileData)
             continue;
-        if (((BlockLegacyObj*)blk)->toBlock(tileData) == (Block*)this)
+        if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
             return i;
     }
     Logger::Error("Error in Raw_GetTileData");

@@ -1,13 +1,12 @@
 #include <HookAPI.h>
-#include <MCApi/ServerPlayer.hpp>
-#include <MCApi/ServerNetworkHandler.hpp>
-#include <MCApi/NetworkIdentifier.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/Player.hpp>
+#include <MC/ServerNetworkHandler.hpp>
+#include <MC/NetworkIdentifier.hpp>
+#include <MC/InventoryTransactionPacket.hpp>
 #include <Config.h>
-
-#include <MCApi/InventoryTransactionPacket.hpp>
 #include <unordered_map>
 #include <LoggerAPI.h>
-#include <PlayerAPI.h>
 using namespace LL;
 
 //Fix disconnect packet crash bug
@@ -52,7 +51,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
             abnormal = 1;
         }
     if (abnormal) {
-        PlayerObj* sp = (PlayerObj*)snh.getServerPlayer(netid);
+        Player* sp = (Player*)snh.getServerPlayer(netid);
         Logger::Warn() << "Player("<< sp->getRealName()<<") item data error!" << Logger::endl;
         return nullptr;
     }

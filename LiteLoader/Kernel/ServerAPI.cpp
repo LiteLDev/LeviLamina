@@ -1,7 +1,7 @@
 #include <ServerAPI.h>
 #include <string>
-#include <MCApi/Common.hpp>
-#include <MCApi/SharedConstants.hpp>
+#include <MC/Common.hpp>
+#include <MC/SharedConstants.hpp>
 class UserEntityIdentifierComponent;
 
 namespace LL {

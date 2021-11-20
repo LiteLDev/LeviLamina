@@ -1,25 +1,25 @@
-#include <MCApi/Actor.hpp>
+#include <MC/Actor.hpp>
 #include <Global.h>
-#include <ActorAPI.h>
-#include <MCApi/HashedString.hpp>
-#include <MCApi/Mob.hpp>
-#include <MCApi/ActorDamageSource.hpp>
-#include <MCApi/UserEntityIdentifierComponent.hpp>
+#include <MC/Actor.hpp>
+#include <MC/HashedString.hpp>
+#include <MC/Mob.hpp>
+#include <MC/ActorDamageSource.hpp>
+#include <MC/UserEntityIdentifierComponent.hpp>
 class UserEntityIdentifierComponent;
 
-LIAPI UserEntityIdentifierComponent* ActorObj::getUserEntityIdentifierComponent() {
+LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
     return UserEntityIdentifierComponent::tryGetFromEntity(*(EntityContext*)this);
     //return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
 }
 
-LIAPI bool ActorObj::isSimulatedPlayer() {
+LIAPI bool Actor::isSimulatedPlayer() {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7SimulatedPlayer@@6B@");
     return *(void**)this == vtbl;
 }
 
-LIAPI bool ActorObj::isPlayer() {
+LIAPI bool Actor::isPlayer() {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7ServerPlayer@@6B@");
@@ -27,7 +27,7 @@ LIAPI bool ActorObj::isPlayer() {
 }
 
 
-LIAPI std::string ActorObj::getEntityTypeName() {
+LIAPI std::string Actor::getEntityTypeName() {
     /*string res = SymCall("?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
         string, int, int) (Raw_GetEntityTypeId(actor), 1);*/
     if (isPlayer())
@@ -38,14 +38,14 @@ LIAPI std::string ActorObj::getEntityTypeName() {
     }
 }
 
-LIAPI bool ActorObj::hurtEntity(int damage) {
+LIAPI bool Actor::hurtEntity(int damage) {
     char a[16];
     ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
                                            ActorDamageSource&, ActorDamageSource*, int)((ActorDamageSource*)a, 12); //ActorDamageCause::Void
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-LIAPI Vec2* ActorObj::getDirction() {
+LIAPI Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 

@@ -82,12 +82,12 @@ namespace Schedule
                 next_run.pop_front();
             }
         }
-        catch (const std::exception &e) {
-            Logger::Error("Exception occurred at nextTask!");
-            Logger::Error("{}", e.what());
-        }
         catch (const seh_exception &e) {
             Logger::Error("SEH exception occurred at nextTask!");
+            Logger::Error("{}", e.what());
+        }
+        catch (const std::exception& e) {
+            Logger::Error("Exception occurred at nextTask!");
             Logger::Error("{}", e.what());
         }
         catch (...) {
@@ -121,12 +121,12 @@ namespace Schedule
                 }
             }
         }
-        catch (const std::exception &e) {
-            Logger::Error("Exception occurred in task!");
-            Logger::Error("{}", e.what());
-        }
         catch (const seh_exception &e) {
             Logger::Error("SEH exception occurred in task!");
+            Logger::Error("{}", e.what());
+        }
+        catch (const std::exception& e) {
+            Logger::Error("Exception occurred in task!");
             Logger::Error("{}", e.what());
         }
         catch (...) {
