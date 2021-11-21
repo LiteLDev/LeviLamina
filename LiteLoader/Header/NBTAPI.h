@@ -54,7 +54,7 @@ public:
         String,
         List,
         Compound,
-};
+    };
     MCAPI static std::string getTagName(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
@@ -113,8 +113,6 @@ public:
     static Tag* fromActor(Actor* actor);
     static Tag* fromPlayer(Player* player);
     static Tag* fromBlockEntity(BlockActor* ble);
-
-
 };
 
 std::string TagToJson(Tag* nbt, int formatIndent);

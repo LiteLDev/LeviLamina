@@ -2,3 +2,4 @@
 // 如函数和宏的名称。
 // 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
 #define LIAPI __declspec(dllexport)
+#define MCAPI __declspec(dllimport)

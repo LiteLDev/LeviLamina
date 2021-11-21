@@ -1,5 +1,5 @@
 #pragma once
-#pragma warning(disable:4250)
+#pragma warning(disable : 4250)
 
 #ifdef LITELOADER_EXPORTS
 #define LIAPI __declspec(dllexport)
@@ -11,35 +11,35 @@
 #define MCINLINE inline
 #define MCCLS
 
-#include <string>
-#include <vector>
-#include <iostream>
-#include <optional>
-#include <functional>
-#include <utility>
-#include <set>
 #include <bitset>
+#include <functional>
+#include <iostream>
+#include <minwindef.h>
+#include <optional>
+#include <set>
+#include <string>
+#include <uchar.h>
 #include <unordered_map>
 #include <unordered_set>
-#include <minwindef.h>
-#include <uchar.h>
+#include <utility>
+#include <vector>
 
 #include <gsl/gsl>
 #include <seh_exception/seh_exception.hpp>
 
-#include "Utils/GlobalService.h"
-#include "Utils/Json.h"
 #include "HookAPI.h"
 #include "Types.h"
+#include "Utils/GlobalService.h"
+#include "Utils/Json.h"
 
+using std::map;
 using std::string;
 using std::vector;
-using std::map;
 
 // Types
 typedef std::string xuid_t;
 namespace mce {
-	class UUID;
+class UUID;
 class Color;
 }; // namespace mce
 typedef unsigned long long QWORD;

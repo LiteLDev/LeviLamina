@@ -253,7 +253,7 @@ bool Tag::setPlayer(Player* player) {
 
 bool Tag::setBlockEntity(BlockActor* ble) {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    VirtualCall(ble, 0x8, Global<Level>(), this, &vtbl); //IDA Virtual Table from BlockActor::load
+    VirtualCall(ble, 0x8, Global<Level>, this, &vtbl); //IDA Virtual Table from BlockActor::load
     ble->setChanged();
     return true;
 }

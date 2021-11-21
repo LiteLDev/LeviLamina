@@ -54,8 +54,8 @@ static void* __memcpy(void* pvDst, const void* pvSrc, size_t cb) {
     void* pvRet = pvDst;
     while (cb--) {
         *(char*)pvDst = *(char*)pvSrc;
-        pvDst         = ((char*)pvDst) + 1;
-        pvSrc         = ((char*)pvSrc) + 1;
+        pvDst = ((char*)pvDst) + 1;
+        pvSrc = ((char*)pvSrc) + 1;
     }
     return pvRet;
 }
@@ -70,12 +70,12 @@ extern "C" IMAGE_DOS_HEADER __ImageBase;
 
 typedef struct UnloadInfo* PUnloadInfo;
 typedef struct UnloadInfo {
-    PUnloadInfo     puiNext;
+    PUnloadInfo puiNext;
     PCImgDelayDescr pidd;
 } UnloadInfo;
 
 static unsigned CountOfImports(PCImgThunkData pitdBase) {
-    unsigned       cRet = 0;
+    unsigned cRet = 0;
     PCImgThunkData pitd = pitdBase;
     while (pitd->u1.Function) {
         pitd++;
@@ -88,9 +88,9 @@ PUnloadInfo __puiHead = 0;
 
 static UnloadInfo* add_ULI(PCImgDelayDescr pidd_) {
     UnloadInfo* ret = (UnloadInfo*)LocalAlloc(LPTR, sizeof(UnloadInfo));
-    ret->pidd       = pidd_;
-    ret->puiNext    = __puiHead;
-    __puiHead       = ret;
+    ret->pidd = pidd_;
+    ret->puiNext = __puiHead;
+    __puiHead = ret;
     return ret;
 }
 
@@ -107,17 +107,17 @@ static void del_ULI(UnloadInfo* p) {
 }
 
 typedef struct InternalImgDelayDescr {
-    DWORD          grAttrs;
-    LPCSTR         szName;
-    HMODULE*       phmod;
-    PImgThunkData  pIAT;
+    DWORD grAttrs;
+    LPCSTR szName;
+    HMODULE* phmod;
+    PImgThunkData pIAT;
     PCImgThunkData pINT;
     PCImgThunkData pBoundIAT;
     PCImgThunkData pUnloadIAT;
-    DWORD          dwTimeStamp;
+    DWORD dwTimeStamp;
 } InternalImgDelayDescr;
 
-typedef InternalImgDelayDescr*       PIIDD;
+typedef InternalImgDelayDescr* PIIDD;
 typedef const InternalImgDelayDescr* PCIIDD;
 
 static PIMAGE_NT_HEADERS WINAPI PinhFromImageBase(HMODULE hmod) {
@@ -154,10 +154,10 @@ extern "C" FARPROC WINAPI
         pidd->dwTimeStamp};
     DelayLoadInfo dli = {
         sizeof(DelayLoadInfo), pidd, ppfnIATEntry, idd.szName, {0, {NULL}}, 0, 0, 0};
-    HMODULE        hmod;
-    unsigned       iIAT, iINT;
+    HMODULE hmod;
+    unsigned iIAT, iINT;
     PCImgThunkData pitd;
-    FARPROC        pfnRet;
+    FARPROC pfnRet;
 
     if (!(idd.grAttrs & dlattrRva)) {
         PDelayLoadInfo rgpdli[1] = {&dli};
@@ -242,8 +242,8 @@ SetEntryHookBypass:
 HookBypass:
     if (__pfnDliNotifyHook2) {
         dli.dwLastError = 0;
-        dli.hmodCur     = hmod;
-        dli.pfnCur      = pfnRet;
+        dli.hmodCur = hmod;
+        dli.pfnCur = pfnRet;
         (*__pfnDliNotifyHook2)(dliNoteEndProcessing, &dli);
     }
     return pfnRet;
@@ -251,8 +251,8 @@ HookBypass:
 
 BOOL WINAPI __FUnloadDelayLoadedDLL2(LPCSTR szDll) {
 
-    BOOL        fRet = FALSE;
-    PUnloadInfo pui  = __puiHead;
+    BOOL fRet = FALSE;
+    PUnloadInfo pui = __puiHead;
 
     for (pui = __puiHead; pui; pui = pui->puiNext) {
         LPCSTR szName = (LPCSTR)PtrFromRVA(pui->pidd->rvaDLLName);
@@ -261,9 +261,9 @@ BOOL WINAPI __FUnloadDelayLoadedDLL2(LPCSTR szDll) {
             break;
     }
     if (pui && pui->pidd->rvaUnloadIAT) {
-        PCImgDelayDescr pidd  = pui->pidd;
-        HMODULE*        phmod = (HMODULE*)PtrFromRVA(pidd->rvaHmod);
-        HMODULE         hmod  = *phmod;
+        PCImgDelayDescr pidd = pui->pidd;
+        HMODULE* phmod = (HMODULE*)PtrFromRVA(pidd->rvaHmod);
+        HMODULE hmod = *phmod;
         OverlayIAT((PImgThunkData)PtrFromRVA(pidd->rvaIAT), (PCImgThunkData)PtrFromRVA(pidd->rvaUnloadIAT));
         FreeLibrary(hmod);
         *phmod = NULL;
@@ -275,21 +275,21 @@ BOOL WINAPI __FUnloadDelayLoadedDLL2(LPCSTR szDll) {
 
 HRESULT WINAPI __HrLoadAllImportsForDll(LPCSTR szDll) {
 
-    HRESULT           hrRet = HRESULT_FROM_WIN32(ERROR_MOD_NOT_FOUND);
-    PIMAGE_NT_HEADERS pinh  = PinhFromImageBase((HMODULE)(&__ImageBase));
+    HRESULT hrRet = HRESULT_FROM_WIN32(ERROR_MOD_NOT_FOUND);
+    PIMAGE_NT_HEADERS pinh = PinhFromImageBase((HMODULE)(&__ImageBase));
     if (pinh->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT].Size) {
         PCImgDelayDescr pidd;
         pidd = (PCImgDelayDescr)PtrFromRVA(pinh->OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT].VirtualAddress);
         while (pidd->rvaDLLName) {
-            LPCSTR szDllCur  = (LPCSTR)PtrFromRVA(pidd->rvaDLLName);
+            LPCSTR szDllCur = (LPCSTR)PtrFromRVA(pidd->rvaDLLName);
             size_t cchDllCur = __strlen(szDllCur);
             if (cchDllCur == __strlen(szDll) && __memcmp(szDll, szDllCur, cchDllCur) == 0)
                 break;
             pidd++;
         }
         if (pidd->rvaDLLName) {
-            FARPROC* ppfnIATEntry    = (FARPROC*)PtrFromRVA(pidd->rvaIAT);
-            size_t   cpfnIATEntries  = CountOfImports((PCImgThunkData)(ppfnIATEntry));
+            FARPROC* ppfnIATEntry = (FARPROC*)PtrFromRVA(pidd->rvaIAT);
+            size_t cpfnIATEntries = CountOfImports((PCImgThunkData)(ppfnIATEntry));
             FARPROC* ppfnIATEntryMax = ppfnIATEntry + cpfnIATEntries;
             for (; ppfnIATEntry < ppfnIATEntryMax; ppfnIATEntry++) {
                 __delayLoadHelper2(pidd, ppfnIATEntry);

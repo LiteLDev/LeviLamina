@@ -37,6 +37,7 @@ inline void forEachPlayer(class std::function<bool(class Player const&)> a0) con
 
 static void dummy() {
 }
+public:
 struct ServerCommandOrigin {
     void* myVTBL;
     void* UUID[2];
@@ -53,11 +54,10 @@ struct ServerCommandOrigin {
         myVTBL = fake_vtbl + 1;
         Name = "Server";
         Perm = 5;
-        lvl = GlobalImpl<ServerLevel>::_srv;
+        lvl = Global<ServerLevel>;
     }
 };
 
-public:
 LIAPI static BlockSource* getBlockSource(int dimid);
 LIAPI static BlockSource* getBlockSource(Actor* actor);
 LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
