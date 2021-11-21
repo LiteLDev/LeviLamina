@@ -6,7 +6,9 @@ struct DePlayerCB {
     void (*cb)(void *, ServerPlayer *);
     void operator()(ServerPlayer *sp) { cb(userdata, sp); }
 };
+
 LIAPI void _regDePlayerCB(DePlayerCB);
+
 template <typename T>
 class playerMap {
   public:

@@ -112,6 +112,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\GlobalService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
     <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp" />
     <ClCompile Include="Loader.cpp" />
