@@ -31,11 +31,11 @@ std::string Player::getRealName() {
 #include <MC/NetworkHandler.hpp>
 #include <MC/Minecraft.hpp>
 int Player::getAvgPing() {
-    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().avgping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().avgping;
 }
 
 int Player::getLastPing() {
-    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().ping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
 #include<EventAPI.h>

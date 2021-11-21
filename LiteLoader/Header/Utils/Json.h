@@ -1,5 +1,6 @@
 #pragma once
 
+#include "../Global.h"
 #include <algorithm>
 #include <cmath>
 #include <cstdlib>
@@ -8,7 +9,6 @@
 #include <stack>
 #include <string>
 #include <vector>
-#include "../Global.h"
 
 namespace Json {
 
@@ -41,13 +41,13 @@ enum ValueType : char {
     objectValue    ///< object value (collection of name/value pairs).
 };
 
-using UInt        = unsigned;
-using UInt64      = unsigned long long;
-using Int         = int;
-using Int64       = long long;
-using LargestInt  = Int64;
+using UInt = unsigned;
+using UInt64 = unsigned long long;
+using Int = int;
+using Int64 = long long;
+using LargestInt = Int64;
 using LargestUInt = UInt64;
-using ArrayIndex  = unsigned;
+using ArrayIndex = unsigned;
 
 enum CommentPlacement {
     commentBefore = 0,      ///< a comment placed on the line before a value
@@ -78,17 +78,17 @@ public:
         MCAPI CZString(CZString const& other);
         MCAPI ~CZString();
         CZString& operator=(const CZString& other) {
-            cstr_  = other.cstr_;
+            cstr_ = other.cstr_;
             index_ = other.index_;
             return *this;
         }
         bool operator<(CZString const& other) const {
             if (!cstr_)
                 return index_ < other.index_;
-            unsigned this_len  = this->storage_.length_;
+            unsigned this_len = this->storage_.length_;
             unsigned other_len = other.storage_.length_;
-            unsigned min_len   = std::min<unsigned>(this_len, other_len);
-            int      comp      = memcmp(this->cstr_, other.cstr_, min_len);
+            unsigned min_len = std::min<unsigned>(this_len, other_len);
+            int comp = memcmp(this->cstr_, other.cstr_, min_len);
             if (comp < 0)
                 return true;
             if (comp > 0)
@@ -98,7 +98,7 @@ public:
         bool operator==(CZString const& other) const {
             if (!cstr_)
                 return index_ == other.index_;
-            unsigned this_len  = this->storage_.length_;
+            unsigned this_len = this->storage_.length_;
             unsigned other_len = other.storage_.length_;
             if (this_len != other_len)
                 return false;
@@ -122,14 +122,14 @@ public:
         };
         char const* cstr_;
         union {
-            ArrayIndex    index_;
+            ArrayIndex index_;
             StringStorage storage_;
         };
     };
 
-    using iterator       = ValueIterator;
+    using iterator = ValueIterator;
     using const_iterator = ValueConstIterator;
-    using ObjectValues   = std::map<CZString, Value>;
+    using ObjectValues = std::map<CZString, Value>;
 
 public:
     Value(ValueType type = nullValue) {
@@ -145,20 +145,20 @@ public:
     }
     Value(Int value) {
         bits_.value_type_ = intValue;
-        value_.int_       = value;
+        value_.int_ = value;
     }
     Value(UInt value) {
         bits_.value_type_ = uintValue;
-        value_.uint_      = value;
+        value_.uint_ = value;
     }
     Value(double value) {
         bits_.value_type_ = realValue;
-        value_.real_      = value;
+        value_.real_ = value;
     }
     MCAPI Value(const char* value);
     Value(bool value) {
         bits_.value_type_ = booleanValue;
-        value_.bool_      = value;
+        value_.bool_ = value;
     }
     MCAPI Value(const Value& other);
     MCAPI ~Value();
@@ -166,7 +166,7 @@ public:
     MCAPI static Value const null;
 
     MCAPI void swap(Value& other);
-    ValueType  type() const {
+    ValueType type() const {
         return bits_.value_type_;
     }
 
@@ -176,14 +176,14 @@ public:
     MCAPI bool operator==(const Value& other) const;
 
     MCAPI std::string asString(std::string const&) const;
-    MCAPI Int         asInt(Int) const;
-    MCAPI UInt        asUInt(UInt) const;
-    MCAPI float       asFloat(float) const;
-    MCAPI double      asDouble(double) const;
-    MCAPI bool        asBool(bool) const;
+    MCAPI Int asInt(Int) const;
+    MCAPI UInt asUInt(UInt) const;
+    MCAPI float asFloat(float) const;
+    MCAPI double asDouble(double) const;
+    MCAPI bool asBool(bool) const;
 
     MCAPI bool isNull() const;
-    bool       isBool() const {
+    bool isBool() const {
         return type() == booleanValue;
     }
     bool isInt() const {
@@ -200,7 +200,7 @@ public:
     }
     MCAPI bool isNumeric() const;
     MCAPI bool isString() const;
-    bool       isArray() const {
+    bool isArray() const {
         return type() == arrayValue;
     }
     bool isObject() const {
@@ -209,8 +209,8 @@ public:
     MCAPI bool isConvertibleTo(ValueType other) const;
 
     MCAPI ArrayIndex size() const;
-    MCAPI bool       empty() const;
-    void             clear() {
+    MCAPI bool empty() const;
+    void clear() {
         if (type() == arrayValue || type() == objectValue) {
             value_.map_->clear();
         }
@@ -226,12 +226,12 @@ public:
     MCAPI const Value& operator[](const char* key) const;
     MCAPI Value& operator[](const std::string& key);
     MCAPI const Value& operator[](const std::string& key) const;
-    MCAPI Value        removeMember(const char* key);
-    void               removeMember(const std::string& key) {
+    MCAPI Value removeMember(const char* key);
+    void removeMember(const std::string& key) {
         removeMember(key.c_str());
     }
     MCAPI bool isMember(const char* key) const;
-    bool       isMember(const std::string& key) const {
+    bool isMember(const std::string& key) const {
         return isMember(key.c_str());
     }
 
@@ -244,17 +244,17 @@ public:
     MCAPI std::string toStyledString() const;
 
     union ValueHolder {
-        LargestInt  int_;
+        LargestInt int_;
         LargestUInt uint_;
-        double      real_;
-        bool        bool_;
-        char*       string_; // actually ptr to unsigned, followed by str, unless
-                             // !allocated_
+        double real_;
+        bool bool_;
+        char* string_; // actually ptr to unsigned, followed by str, unless
+                       // !allocated_
         ObjectValues* map_;
     } value_;
     struct {
         ValueType value_type_ : 8;
-        bool      allocated_ : 1;
+        bool allocated_ : 1;
     } bits_;
 
 private:
@@ -264,9 +264,9 @@ private:
 class ValueIteratorBase {
 public:
     typedef std::bidirectional_iterator_tag iterator_category;
-    typedef unsigned int                    size_t;
-    typedef int                             difference_type;
-    typedef ValueIteratorBase               SelfType;
+    typedef unsigned int size_t;
+    typedef int difference_type;
+    typedef ValueIteratorBase SelfType;
 
     bool operator==(const SelfType& other) const {
         return isEqual(other);
@@ -278,7 +278,7 @@ public:
     MCAPI Value key() const;
 
 protected:
-    MCAPI void               increment(void);
+    MCAPI void increment(void);
     MCAPI class Json::Value& deref(void) const;
 
     bool isEqual(const SelfType& other) const {
@@ -289,7 +289,7 @@ protected:
 
 private:
     Value::ObjectValues::iterator current_;
-    bool                          isNull_;
+    bool isNull_;
 
 public:
     ValueIteratorBase();
@@ -302,8 +302,8 @@ public:
     typedef const Value value_type;
     // typedef unsigned int size_t;
     // typedef int difference_type;
-    typedef const Value&       reference;
-    typedef const Value*       pointer;
+    typedef const Value& reference;
+    typedef const Value* pointer;
     typedef ValueConstIterator SelfType;
 
     ValueConstIterator();
@@ -321,11 +321,11 @@ class ValueIterator : public ValueIteratorBase {
     friend class Value;
 
 public:
-    typedef Value         value_type;
-    typedef unsigned int  size_t;
-    typedef int           difference_type;
-    typedef Value&        reference;
-    typedef Value*        pointer;
+    typedef Value value_type;
+    typedef unsigned int size_t;
+    typedef int difference_type;
+    typedef Value& reference;
+    typedef Value* pointer;
     typedef ValueIterator SelfType;
 
     ValueIterator();
@@ -358,11 +358,11 @@ public:
 
 class Reader {
 public:
-    typedef char        Char;
+    typedef char Char;
     typedef const Char* Location;
     struct StructuredError {
-        ptrdiff_t   offset_start;
-        ptrdiff_t   offset_limit;
+        ptrdiff_t offset_start;
+        ptrdiff_t offset_limit;
         std::string message;
     };
     MCAPI Reader();
@@ -395,30 +395,30 @@ private:
     class Token {
     public:
         TokenType type_;
-        Location  start_;
-        Location  end_;
+        Location start_;
+        Location end_;
     };
 
     class ErrorInfo {
     public:
-        Token       token_;
+        Token token_;
         std::string message_;
-        Location    extra_;
+        Location extra_;
     };
     typedef std::deque<ErrorInfo> Errors;
 
     typedef std::stack<Value*> Nodes;
-    Nodes                      nodes_;
-    Errors                     errors_;
-    std::string                document_;
-    Location                   begin_;
-    Location                   end_;
-    Location                   current_;
-    Location                   lastValueEnd_;
-    Value*                     lastValue_;
-    std::string                commentsBefore_;
-    Features                   features_;
-    bool                       collectComments_;
+    Nodes nodes_;
+    Errors errors_;
+    std::string document_;
+    Location begin_;
+    Location end_;
+    Location current_;
+    Location lastValueEnd_;
+    Value* lastValue_;
+    std::string commentsBefore_;
+    Features features_;
+    bool collectComments_;
 };
 
 class Writer {
@@ -440,9 +440,9 @@ public:
 
 private:
     std::string document_;
-    bool        yamlCompatibilityEnabled_;
-    bool        dropNullPlaceholders_;
-    bool        omitEndingLineFeed_;
+    bool yamlCompatibilityEnabled_;
+    bool dropNullPlaceholders_;
+    bool omitEndingLineFeed_;
 };
 
 class StyledWriter : public Writer {
@@ -458,12 +458,12 @@ public:
 private:
     typedef std::vector<std::string> ChildValues;
 
-    ChildValues  childValues_;
-    std::string  document_;
-    std::string  indentString_;
+    ChildValues childValues_;
+    std::string document_;
+    std::string indentString_;
     unsigned int rightMargin_;
     unsigned int indentSize_;
-    bool         addChildValues_;
+    bool addChildValues_;
 };
 
 } // namespace Json
