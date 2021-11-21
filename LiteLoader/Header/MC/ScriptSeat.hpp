@@ -10,4 +10,5 @@ namespace ScriptSeat {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<struct SeatDescription> bind(struct Scripting::Version);
 
+
 } // namespace ScriptSeat

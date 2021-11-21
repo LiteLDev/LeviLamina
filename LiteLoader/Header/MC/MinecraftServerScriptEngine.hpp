@@ -34,6 +34,10 @@ public:
     virtual void unk_vfn_24();
     virtual void unk_vfn_25();
 
+public:
+    MCAPI MinecraftServerScriptEngine(class ServerInstance&);
+
+
 private:
     MCAPI void _queueResourcePackScripts(class ResourcePackManager&);
     MCAPI void _registerEventListeners(class Level&, class NetworkHandler&);

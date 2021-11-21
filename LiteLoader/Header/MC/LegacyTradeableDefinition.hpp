@@ -8,6 +8,7 @@ class LegacyTradeableDefinition {
 #include "Extra/LegacyTradeableDefinitionAPI.hpp"
 
 public:
+    MCAPI LegacyTradeableDefinition();
     MCAPI void initialize(class EntityContext&, class LegacyTradeableComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LegacyTradeableDefinition>>&);

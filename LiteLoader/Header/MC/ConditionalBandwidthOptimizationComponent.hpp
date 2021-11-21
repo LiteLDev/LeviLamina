@@ -9,6 +9,8 @@ class ConditionalBandwidthOptimizationComponent {
 
 public:
     MCAPI class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent&&);
+    MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent&&);
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&);
     MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&);
+    MCAPI ~ConditionalBandwidthOptimizationComponent();
 };

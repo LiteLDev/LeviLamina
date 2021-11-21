@@ -10,4 +10,7 @@ public:
     virtual ~EncryptedZipTransforms();
     virtual bool readTransform(std::vector<unsigned char>&);
     virtual void unk_vfn_2();
+
+public:
+    MCAPI EncryptedZipTransforms(class IContentKeyProvider const&);
 };

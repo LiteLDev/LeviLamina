@@ -7,6 +7,7 @@
 class EndCityPieces {
 #include "Extra/EndCityPiecesAPI.hpp"
 
+
 private:
     MCAPI static class LegacyStructureSettings mInsertSettings;
     MCAPI static class LegacyStructureSettings mOverwriteSettings;

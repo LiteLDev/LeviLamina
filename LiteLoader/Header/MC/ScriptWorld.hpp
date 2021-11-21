@@ -8,8 +8,10 @@ class ScriptWorld {
 #include "Extra/ScriptWorldAPI.hpp"
 
 public:
+    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const&, class Level*);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension>> getDimension(std::string const&);
     MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> getPlayers();
+    MCAPI ~ScriptWorld();
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
 };

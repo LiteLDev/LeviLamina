@@ -13,6 +13,8 @@ public:
     virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&);
 
 public:
+    MCAPI CommandResponse();
+
     MCAPI static std::string const NameID;
 
 private:

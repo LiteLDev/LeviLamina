@@ -8,5 +8,7 @@ class MobEffectComponent {
 #include "Extra/MobEffectComponentAPI.hpp"
 
 public:
+    MCAPI MobEffectComponent();
     MCAPI class MobEffectComponent& operator=(class MobEffectComponent&&);
+    MCAPI ~MobEffectComponent();
 };

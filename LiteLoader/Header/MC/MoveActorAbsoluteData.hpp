@@ -8,6 +8,8 @@ class MoveActorAbsoluteData {
 #include "Extra/MoveActorAbsoluteDataAPI.hpp"
 
 public:
+    MCAPI MoveActorAbsoluteData();
+    MCAPI MoveActorAbsoluteData(class Actor const&);
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const&) const;
     MCAPI class Vec2 getRot() const;
     MCAPI float getYHeadRot() const;

@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI SkeletonHorseTrapGoal(class Horse&, int, float);
+
+
 private:
     MCAPI class Skeleton* _createSkeleton(enum Difficulty const&, class Horse const&);
 };

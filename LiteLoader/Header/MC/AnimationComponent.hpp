@@ -8,6 +8,7 @@ class AnimationComponent {
 #include "Extra/AnimationComponentAPI.hpp"
 
 public:
+    MCAPI AnimationComponent(enum AnimationComponentGroup, class AnimationComponentID const&);
     MCAPI void applyAnimations(bool);
     MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const&, class ExpressionNode const&);
     MCAPI std::vector<class BoneOrientation>* getBoneOrientations(enum SkeletalHierarchyIndex, bool);
@@ -24,6 +25,7 @@ public:
     MCAPI void setupDeltaTimeAndLifeTimeParams(bool);
     MCAPI bool shouldReloadBasedOnLastReloadInitTimeStamp() const;
     MCAPI bool usesLastReloadInitTimeStampClient() const;
+    MCAPI ~AnimationComponent();
 
     MCAPI static class std::shared_ptr<class AnimationComponent> getAnimationComponent(enum AnimationComponentGroup, class AnimationComponentID);
     MCAPI static unsigned __int64 getReloadTimeStampClient();

@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI MoveIndoorsGoal(class Mob&, float, float);
+
+
 private:
     MCAPI bool _isInside(class BlockPos const&);
     MCAPI void _startPathfinding();

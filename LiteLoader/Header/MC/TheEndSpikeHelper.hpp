@@ -9,4 +9,5 @@ namespace TheEndSpikeHelper {
 
 MCAPI std::vector<class SpikeFeature::EndSpike> getSpikesForLevel(class Level&);
 
+
 } // namespace TheEndSpikeHelper

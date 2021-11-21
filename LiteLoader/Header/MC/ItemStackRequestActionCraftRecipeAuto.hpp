@@ -13,4 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual void _write(class BinaryStream&);
     virtual bool _read(class ReadOnlyBinaryStream&);
+
+public:
+    MCAPI ItemStackRequestActionCraftRecipeAuto();
 };

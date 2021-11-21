@@ -12,5 +12,6 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI GuardianAttackDefinition();
     MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&);
 };

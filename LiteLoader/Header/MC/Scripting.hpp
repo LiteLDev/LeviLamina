@@ -30,4 +30,5 @@ MCAPI struct JSValue NativeAnyToJSValue(struct JSContext*, class entt::meta_any&
 MCAPI struct JSValue NativeObjectHandleToJSValue(struct JSContext*, struct Scripting::ObjectHandle, bool, enum Scripting::HandleReference);
 MCAPI void SetNativeObjectHandleToJSValue(struct Scripting::ObjectHandle, struct JSValue);
 
+
 } // namespace Scripting

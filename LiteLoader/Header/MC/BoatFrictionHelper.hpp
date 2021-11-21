@@ -9,4 +9,5 @@ namespace BoatFrictionHelper {
 
 MCAPI float getFrictionBasedOnCollision(class BlockSource&, class BlockPos const&);
 
+
 } // namespace BoatFrictionHelper

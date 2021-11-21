@@ -13,4 +13,5 @@ MCAPI static std::string const RAW_TEXT_TEXT_KEY;
 MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
 MCAPI static std::string const RAW_TEXT_WITH_KEY;
 
+
 } // namespace ITextObject

@@ -10,4 +10,5 @@ namespace BlockUnitCubeComponent {
 public:
 MCAPI static class std::shared_ptr<struct ClientBlockPipeline::BlockSchematic> mBlockSchematic;
 
+
 } // namespace BlockUnitCubeComponent

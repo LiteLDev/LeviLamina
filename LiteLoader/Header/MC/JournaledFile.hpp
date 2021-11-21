@@ -8,8 +8,10 @@ class JournaledFile {
 #include "Extra/JournaledFileAPI.hpp"
 
 public:
+    MCAPI JournaledFile(class std::function<class Core::Result(class Core::Path)>&&);
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
     MCAPI class Core::Result write(void const*, unsigned __int64);
+    MCAPI ~JournaledFile();
 
     MCAPI static class Core::PathBuffer<std::string> findBackupPath(class Core::Path);
     MCAPI static class Core::PathBuffer<std::string> findReadPath(class Core::Path);

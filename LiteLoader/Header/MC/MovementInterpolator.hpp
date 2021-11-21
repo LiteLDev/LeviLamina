@@ -8,6 +8,7 @@ class MovementInterpolator {
 #include "Extra/MovementInterpolatorAPI.hpp"
 
 public:
+    MCAPI MovementInterpolator();
     MCAPI int getRotationSteps() const;
     MCAPI bool isActive() const;
     MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);

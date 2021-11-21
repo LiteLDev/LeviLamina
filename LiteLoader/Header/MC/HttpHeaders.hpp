@@ -11,4 +11,5 @@ public:
     MCAPI void clear();
     MCAPI bool getHeader(std::string const&, std::string&) const;
     MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream&);
+    MCAPI ~HttpHeaders();
 };

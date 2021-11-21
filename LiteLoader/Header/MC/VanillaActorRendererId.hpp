@@ -21,4 +21,5 @@ MCAPI class HashedString const shield;
 MCAPI class HashedString const thrownPotion;
 MCAPI class HashedString const trident;
 
+
 } // namespace VanillaActorRendererId

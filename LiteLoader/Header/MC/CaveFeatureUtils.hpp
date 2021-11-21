@@ -16,4 +16,5 @@ MCAPI bool isDiggable_1_16(class Block const&, class Block const&);
 MCAPI bool isDiggable_1_18(class Block const&, class Block const&);
 MCAPI float sampleFloatRange(struct FloatRange const&, class Random&);
 
+
 } // namespace CaveFeatureUtils

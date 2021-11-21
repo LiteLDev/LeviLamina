@@ -10,6 +10,8 @@ class TickWorldComponent {
 public:
     MCAPI class std::shared_ptr<class ITickingArea> getTickingArea();
     MCAPI class TickWorldComponent& operator=(class TickWorldComponent&&);
+    MCAPI TickWorldComponent();
+    MCAPI TickWorldComponent(class TickWorldComponent&&);
     MCAPI unsigned int getChunkRadius() const;
     MCAPI float getMaxDistToPlayers() const;
     MCAPI bool hasTickingArea() const;
@@ -18,4 +20,5 @@ public:
     MCAPI void removeArea();
     MCAPI void setTickingArea(class Actor&, class std::shared_ptr<class ITickingArea>);
     MCAPI void updateArea(class Actor&);
+    MCAPI ~TickWorldComponent();
 };

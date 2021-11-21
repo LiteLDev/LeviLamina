@@ -8,10 +8,12 @@ class BreedableDefinition {
 #include "Extra/BreedableDefinitionAPI.hpp"
 
 public:
+    MCAPI BreedableDefinition();
     MCAPI void addBreedItem(class ItemDescriptor const&);
     MCAPI void addBreedableType(struct BreedableType const&);
     MCAPI void addEnvironmentRequirement(struct EnvironmentRequirement const&);
     MCAPI void initialize(class EntityContext&, class BreedableComponent&);
+    MCAPI ~BreedableDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BreedableDefinition>>&);
 };

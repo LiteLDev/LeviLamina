@@ -19,4 +19,7 @@ public:
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
+
+public:
+    MCAPI FileSystemFileAccess(enum FileSystemMode);
 };

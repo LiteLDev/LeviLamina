@@ -10,4 +10,5 @@ namespace ScriptFacing {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<class ScriptFacing> bind(struct Scripting::Version);
 
+
 } // namespace ScriptFacing

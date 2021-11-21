@@ -27,4 +27,5 @@ MCAPI static class mce::Color const YELLOW;
 MCAPI static enum PaletteColor fromByte(unsigned char);
 MCAPI static class mce::Color const& getColor(enum PaletteColor);
 
+
 } // namespace Palette

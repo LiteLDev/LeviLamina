@@ -26,7 +26,9 @@ public:
     virtual class ContainerScreenContext _postInit();
 
 public:
+    MCAPI ContainerManagerModel(enum ContainerID, class Player&);
     MCAPI void postInit();
+
 
 protected:
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);

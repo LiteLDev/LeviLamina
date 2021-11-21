@@ -11,4 +11,7 @@ public:
     virtual std::string asString();
     virtual class Json::Value asJsonValue();
     virtual void unk_vfn_3();
+
+public:
+    MCAPI TextObjectLocalizedText(std::string);
 };

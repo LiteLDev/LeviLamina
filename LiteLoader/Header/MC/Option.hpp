@@ -14,6 +14,7 @@ public:
     virtual void load(std::string const&);
 
 public:
+    MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const&, std::string const&, enum OptionType);
     MCAPI bool getBool() const;
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void(bool&)>);
     MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void(class Option const&)>);

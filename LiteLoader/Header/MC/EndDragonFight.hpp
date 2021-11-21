@@ -8,6 +8,7 @@ class EndDragonFight {
 #include "Extra/EndDragonFightAPI.hpp"
 
 public:
+    MCAPI EndDragonFight(class BlockSource&);
     MCAPI void loadData(class CompoundTag const&);
     MCAPI void onCrystalDestroyed(class EnderCrystal const&, class ActorDamageSource const&);
     MCAPI void resetSpikeCrystals();
@@ -15,6 +16,8 @@ public:
     MCAPI void spawnNewGatewayChunks(class BlockPos const&, bool, bool);
     MCAPI void tick();
     MCAPI void tryRespawn();
+    MCAPI ~EndDragonFight();
+
 
 private:
     MCAPI bool _canSpawnNewGateway(class ChunkViewSource*, class BlockPos const&) const;

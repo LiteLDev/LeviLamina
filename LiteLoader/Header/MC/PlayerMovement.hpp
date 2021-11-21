@@ -12,4 +12,5 @@ MCAPI void updatePlayerOnInput(struct IPlayerMovementProxy&, class MoveInputHand
 MCAPI void updatePlayerRiding(struct IPlayerMovementProxy&, class MoveInputHandler&);
 MCAPI void updateSwimTravel(struct IPlayerMovementProxy&, class MoveInputHandler&, class Vec3&);
 
+
 } // namespace PlayerMovement

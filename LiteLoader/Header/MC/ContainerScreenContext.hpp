@@ -9,6 +9,9 @@ class ContainerScreenContext {
 
 public:
     MCAPI bool operator==(enum ContainerType);
+    MCAPI ContainerScreenContext();
+    MCAPI ContainerScreenContext(class Player&, enum ContainerType, class BlockPos const&);
+    MCAPI ContainerScreenContext(class Player&, enum ContainerType, struct ActorUniqueID const&);
     MCAPI class Player& getPlayer() const;
     MCAPI enum ContainerType getScreenContainerType() const;
     MCAPI class Actor* tryGetActor() const;

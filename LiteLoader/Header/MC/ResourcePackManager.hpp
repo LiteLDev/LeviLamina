@@ -22,6 +22,7 @@ public:
     virtual bool hasCapability(class gsl::basic_string_span<char const, -1>);
 
 public:
+    MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string>(void)>, class IContentTierManager const&, bool);
     MCAPI int composeFullStack(class ResourcePackStack&, class ResourcePackStack const&, class ResourcePackStack const&, class ResourcePackStack const&) const;
     MCAPI class SemVersion getFullStackMinEngineVersion() const;
     MCAPI class PackSourceReport const* getPackSourceReport() const;
@@ -33,6 +34,7 @@ public:
     MCAPI void setPackSourceReport(class PackSourceReport&&);
     MCAPI bool setStack(std::unique_ptr<class ResourcePackStack>, enum ResourcePackStackType, bool);
     MCAPI void unRegisterResourcePackListener(class ResourcePackListener&);
+
 
 private:
     MCAPI void _calculateMinEngineVersionFromFullStack();

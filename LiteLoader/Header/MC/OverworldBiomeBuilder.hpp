@@ -8,7 +8,9 @@ class OverworldBiomeBuilder {
 #include "Extra/OverworldBiomeBuilderAPI.hpp"
 
 public:
+    MCAPI OverworldBiomeBuilder();
     MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>&, class BiomeRegistry const&) const;
+
 
 private:
     MCAPI void _addHighSlice(std::vector<struct BiomeNoiseTarget>&, struct Parameter const&) const;

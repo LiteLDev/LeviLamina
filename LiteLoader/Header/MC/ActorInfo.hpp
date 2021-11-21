@@ -10,5 +10,7 @@ class ActorInfo {
 public:
     MCAPI void load(class CompoundTag const*);
     MCAPI struct ActorInfo& operator=(struct ActorInfo const&);
+    MCAPI ActorInfo(struct ActorInfo const&);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
+    MCAPI ~ActorInfo();
 };

@@ -21,6 +21,11 @@ public:
     virtual void unk_vfn_11();
     virtual ~StructurePoolElement();
 
+public:
+    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const&, enum Projection, enum PostProcessSettings);
+    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const&, struct StructurePoolElementSettings);
+
+
 private:
     MCAPI class StructurePoolElement::LazyTemplate const& _getTemplate() const;
 };

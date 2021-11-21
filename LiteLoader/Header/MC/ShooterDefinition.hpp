@@ -8,10 +8,12 @@ class ShooterDefinition {
 #include "Extra/ShooterDefinitionAPI.hpp"
 
 public:
+    MCAPI ShooterDefinition();
     MCAPI void deserializeData(class Json::Value const&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class ShooterComponent&) const;
     MCAPI void serializeData(class Json::Value&) const;
     MCAPI void setActorDefByName(std::string const&);
+    MCAPI ~ShooterDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ShooterDefinition>>&);
 };

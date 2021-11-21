@@ -9,6 +9,9 @@ class Abilities {
 
 public:
     MCAPI void addSaveData(class CompoundTag&) const;
+    MCAPI class Abilities& operator=(class Abilities const&);
+    MCAPI Abilities();
+    MCAPI Abilities(class Abilities const&);
     MCAPI void forEachAbility(class std::function<void(class Ability&, char const*)> const&, enum Ability::Options);
     MCAPI class Ability& getAbility(enum AbilitiesIndex);
     MCAPI class Ability const& getAbility(enum AbilitiesIndex) const;
@@ -19,11 +22,11 @@ public:
     MCAPI enum PlayerPermissionLevel getPlayerPermissions() const;
     MCAPI bool isFlying() const;
     MCAPI bool loadSaveData(class CompoundTag const&);
-    MCAPI class Abilities& operator=(class Abilities const&);
     MCAPI void setAbility(enum AbilitiesIndex, bool);
     MCAPI void setAbilityDiff(enum AbilitiesIndex, bool, bool&);
     MCAPI void setCommandPermissions(enum CommandPermissionLevel);
     MCAPI void setPlayerPermissions(enum PlayerPermissionLevel);
+    MCAPI ~Abilities();
 
     MCAPI static char const* getAbilityName(enum AbilitiesIndex);
     MCAPI static enum AbilitiesIndex nameToAbilityIndex(std::string const&);

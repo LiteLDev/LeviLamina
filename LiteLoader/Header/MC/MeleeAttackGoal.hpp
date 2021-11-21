@@ -20,6 +20,10 @@ public:
     virtual void _attemptMoveToTarget(class Actor&);
     virtual void _attemptAttackTarget(class Actor&, float, float, float, float);
 
+public:
+    MCAPI MeleeAttackGoal(class Mob&);
+
+
 protected:
     MCAPI void _attemptMoveToTargetPosition(class Actor&, float);
     MCAPI float _getAttackReachSqr(class Actor const&) const;

@@ -12,6 +12,7 @@ public:
     MCAPI void tick();
     MCAPI void writeSaveData() const;
 
+
 private:
     MCAPI bool _doesWanderingTraderExist() const;
     MCAPI class std::optional<class BlockPos> _findClosestSpawnablePositionInColumn(class BlockPos const&, class BlockSource&);

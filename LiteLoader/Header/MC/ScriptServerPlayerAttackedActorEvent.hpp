@@ -11,8 +11,10 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerPlayerAttackedActorEvent();
     MCAPI void setAttackedActorId(struct ActorUniqueID const&);
     MCAPI void setPlayerId(struct ActorUniqueID const&);
+
 
 private:
     MCAPI static class HashedString const mHash;

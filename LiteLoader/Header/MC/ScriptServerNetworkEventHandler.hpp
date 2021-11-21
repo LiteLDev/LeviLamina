@@ -10,6 +10,7 @@ public:
     virtual ~ScriptServerNetworkEventHandler();
     virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleChat(struct ChatEvent&);
 
+
 private:
     MCAPI bool _handleChat(struct ChatEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
 };

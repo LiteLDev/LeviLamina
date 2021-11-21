@@ -10,4 +10,7 @@ public:
     virtual ~LookControl();
     virtual void unk_vfn_1();
     virtual void tick(class Mob&);
+
+public:
+    MCAPI LookControl();
 };

@@ -8,5 +8,6 @@ class RopeParams {
 #include "Extra/RopeParamsAPI.hpp"
 
 public:
+    MCAPI RopeParams(class Vec3 const&, class Vec3 const&, float);
     MCAPI void leadInit();
 };

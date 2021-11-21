@@ -8,6 +8,7 @@ class PortalShape {
 #include "Extra/PortalShapeAPI.hpp"
 
 public:
+    MCAPI PortalShape(class BlockSource const&, class BlockPos const&, enum PortalAxis);
     MCAPI void createPortalBlocks(class WorldChangeTransaction&) const;
     MCAPI class PortalRecord createRecord() const;
     MCAPI void evaluate(class BlockPos const&, class BlockSource const&);
@@ -17,6 +18,7 @@ public:
     MCAPI void removePortalBlocks(class WorldChangeTransaction&, class BlockPos const&) const;
     MCAPI void setAxis(enum PortalAxis);
     MCAPI void updateNeighboringBlocks(class BlockSource&, class Vec3 const&) const;
+
 
 private:
     MCAPI int _calculatePortalHeight(class BlockSource const&);

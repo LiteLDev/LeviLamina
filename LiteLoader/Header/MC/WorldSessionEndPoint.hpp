@@ -4,7 +4,9 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/WorldSessionEndPointAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace WorldSessionEndPoint {
+class WorldSessionEndPoint {
 #include "Extra/WorldSessionEndPointAPI.hpp"
 
-}
+public:
+    MCAPI WorldSessionEndPoint(class IMinecraftEventing&);
+};

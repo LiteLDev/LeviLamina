@@ -8,6 +8,7 @@ class CircuitSceneGraph {
 #include "Extra/CircuitSceneGraphAPI.hpp"
 
 public:
+    MCAPI CircuitSceneGraph();
     MCAPI void add(class BlockPos const&, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI class BaseCircuitComponent* addIfPoweredBlockAt(class BlockSource&, class BlockPos const&);
     MCAPI class BaseCircuitComponent* getBaseComponent(class BlockPos const&);
@@ -17,6 +18,8 @@ public:
     MCAPI void invalidatePos(class BlockPos const&);
     MCAPI void preSetupPoweredBlocks(class ChunkPos const&);
     MCAPI void update(class BlockSource*);
+    MCAPI ~CircuitSceneGraph();
+
 
 private:
     MCAPI void findRelationships(class BlockPos const&, class BaseCircuitComponent*, class BlockSource*);

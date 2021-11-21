@@ -9,4 +9,7 @@ class PlayerTickComponent {
 
 public:
     MCAPI struct PlayerTickComponent& operator=(struct PlayerTickComponent&&);
+    MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
+    MCAPI PlayerTickComponent(struct PlayerTickComponent&&);
+    MCAPI ~PlayerTickComponent();
 };

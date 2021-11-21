@@ -14,6 +14,10 @@ public:
     virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     virtual void _postCraftRequest(bool);
 
+public:
+    MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler&);
+
+
 protected:
     MCAPI class SparseContainer* _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);

@@ -8,8 +8,10 @@ class OverworldGenerator {
 #include "Extra/OverworldGeneratorAPI.hpp"
 
 public:
+    MCAPI OverworldGenerator(class Dimension&, unsigned int, bool);
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData&, class BlockVolume&, class LevelChunk&, class ChunkPos const&, class SurfaceLevelCache const&);
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> generateDensityCellsForChunk(class ChunkPos const&, class WorldGenCache const&, class NoodleCavifier*, class OreVeinifier*) const;
+
 
 private:
     MCAPI void _prepareStructureBlueprints(class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);

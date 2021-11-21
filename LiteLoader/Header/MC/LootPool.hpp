@@ -10,6 +10,7 @@ class LootPool {
 public:
     MCAPI void deserialize(class Json::Value const&);
 
+
 protected:
     MCAPI void addRandomItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
 };

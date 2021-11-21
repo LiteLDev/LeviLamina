@@ -13,4 +13,5 @@ MCAPI static class Vec4 const MIN;
 MCAPI static class Vec4 const ONE;
 MCAPI static class Vec4 const ZERO;
 
+
 } // namespace Vec4

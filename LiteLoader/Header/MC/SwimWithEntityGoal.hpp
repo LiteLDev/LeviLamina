@@ -18,6 +18,7 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+
 private:
     MCAPI bool _setWantedMob();
 };

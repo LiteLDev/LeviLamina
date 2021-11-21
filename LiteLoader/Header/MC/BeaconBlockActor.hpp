@@ -8,6 +8,7 @@ class BeaconBlockActor {
 #include "Extra/BeaconBlockActorAPI.hpp"
 
 public:
+    MCAPI BeaconBlockActor(class BlockPos const&);
     MCAPI void checkShapeAndAchievement(class BlockSource&);
     MCAPI class CompoundTag getBeaconData();
     MCAPI bool isEffectAvailable(int) const;

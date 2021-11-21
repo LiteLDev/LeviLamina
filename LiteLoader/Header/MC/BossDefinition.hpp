@@ -8,6 +8,7 @@ class BossDefinition {
 #include "Extra/BossDefinitionAPI.hpp"
 
 public:
+    MCAPI BossDefinition();
     MCAPI void initialize(class EntityContext&, class BossComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BossDefinition>>&);

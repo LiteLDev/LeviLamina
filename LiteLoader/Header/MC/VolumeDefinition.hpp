@@ -4,11 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/VolumeDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace VolumeDefinition {
+class VolumeDefinition {
 #include "Extra/VolumeDefinitionAPI.hpp"
 
 public:
-MCAPI static std::string const NAME;
-MCAPI static void bindType();
+    MCAPI ~VolumeDefinition();
 
-} // namespace VolumeDefinition
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
+};

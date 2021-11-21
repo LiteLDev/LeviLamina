@@ -16,6 +16,7 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
+    MCAPI WeaponItemComponent(class ComponentItem*);
     MCAPI void appendFormattedHovertext(class ItemStackBase const&, std::string&, bool) const;
     MCAPI void hitActor(class ItemStack&, class Actor&, class Mob&) const;
     MCAPI void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;

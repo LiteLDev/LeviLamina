@@ -8,5 +8,6 @@ class PositionalRandomFactory {
 #include "Extra/PositionalRandomFactoryAPI.hpp"
 
 public:
+    MCAPI PositionalRandomFactory(__int64);
     MCAPI class SimpleRandom forBlockPos(class BlockPos const&) const;
 };

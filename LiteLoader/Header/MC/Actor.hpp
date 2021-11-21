@@ -286,14 +286,16 @@ public:
 
 public:
     MCAPI class Vec3 _randomHeartPos();
+    MCAPI void buildDebugGroupInfo(std::string&) const;
+    MCAPI bool operator==(class Actor&);
+    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
+    MCAPI Actor(class ILevel&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void _sendDirtyActorData();
     MCAPI void _setActorTypeId(enum ActorType);
     MCAPI void _setLevelPtr(class Level*);
     MCAPI void addDefinitionGroup(std::string const&);
-    MCAPI bool addTag(std::string const&);
-    MCAPI bool operator==(class Actor&);
     MCAPI void addEffect(class MobEffectInstance const&);
-    MCAPI void buildDebugGroupInfo(std::string&) const;
+    MCAPI bool addTag(std::string const&);
     MCAPI class Vec3 buildForward() const;
     MCAPI void burn(int, bool);
     MCAPI void cacheComponentData();

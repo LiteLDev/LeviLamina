@@ -24,6 +24,7 @@ public:
     MCAPI class RenderParams& renderParams();
     MCAPI class RenderParams const& renderParams() const;
     MCAPI void restoreAndPopStackState();
+    MCAPI ~MolangEvalParams();
 
     MCAPI static struct MolangEvalParams& getLocalThreadEvalParams();
 

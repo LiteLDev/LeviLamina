@@ -8,6 +8,7 @@ class RailMovementComponent {
 #include "Extra/RailMovementComponentAPI.hpp"
 
 public:
+    MCAPI RailMovementComponent();
     MCAPI bool canSnapOnRail(class Actor const&, class BlockPos&);
     MCAPI void comeOffTrack(class Actor&);
     MCAPI void moveAlongTrack(class Actor&, class Block const&, class BlockPos const&);

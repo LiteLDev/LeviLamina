@@ -10,4 +10,6 @@ class BlockMaterialInstancesComponent {
 public:
     MCAPI enum BlockRenderLayer getRenderLayer() const;
     MCAPI struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent&&);
+    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&);
+    MCAPI ~BlockMaterialInstancesComponent();
 };

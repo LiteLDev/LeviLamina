@@ -30,4 +30,7 @@ public:
     virtual class Core::PathBuffer<std::string> const getPathToLevel(std::string const&);
     virtual class Core::PathBuffer<std::string> const getPathToLevelInfo(std::string const&, bool);
     virtual void unk_vfn_22();
+
+public:
+    MCAPI ExternalFileLevelStorageSource(class Core::FilePathManager*, class std::shared_ptr<class SaveTransactionManager>);
 };

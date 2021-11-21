@@ -11,4 +11,8 @@ public:
     virtual void execute(class ServerLevel&, class Dimension&);
     virtual void serialize(class CompoundTag&);
     virtual void unk_vfn_3();
+
+public:
+    MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
+    MCAPI StructureAnimationAction(class StructureSettings const&, class AutomaticID<class Dimension, int>, class BlockPos const&, std::string const&);
 };

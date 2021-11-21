@@ -38,4 +38,7 @@ public:
     virtual void unk_vfn_28();
     virtual void unk_vfn_29();
     virtual void unk_vfn_30();
+
+public:
+    MCAPI PlayDeadGoal(class Mob&);
 };

@@ -12,6 +12,8 @@ public:
 public:
     MCAPI class Scripting::Result<bool> getState() const;
     MCAPI class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty&&);
+    MCAPI ScriptBoolBlockProperty(std::string const&, class ItemState const&, std::vector<bool>, class ScriptBlockPermutation&);
+    MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty&&);
     MCAPI std::vector<bool> const& getAllValues() const;
     MCAPI std::string const& getName() const;
     MCAPI class Scripting::Result<void> setState(bool);

@@ -31,5 +31,6 @@ public:
     virtual void unk_vfn_21();
 
 public:
+    MCAPI CustomScriptEventData(std::string const&);
     MCAPI bool setData(class Json::Value const&);
 };

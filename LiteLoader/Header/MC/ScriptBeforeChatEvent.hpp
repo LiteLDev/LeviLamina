@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptBeforeChatEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptBeforeChatEvent {
+class ScriptBeforeChatEvent {
 #include "Extra/ScriptBeforeChatEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBeforeChatEvent> bind(struct Scripting::Version);
+    MCAPI ~ScriptBeforeChatEvent();
 
-} // namespace ScriptBeforeChatEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBeforeChatEvent> bind(struct Scripting::Version);
+};

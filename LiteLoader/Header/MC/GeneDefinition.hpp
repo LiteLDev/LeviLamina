@@ -9,4 +9,5 @@ class GeneDefinition {
 
 public:
     MCAPI void addGeneticVariant(struct GeneticVariant const&);
+    MCAPI ~GeneDefinition();
 };

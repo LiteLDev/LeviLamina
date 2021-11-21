@@ -4,10 +4,13 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/EduSharedUriResourceAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace EduSharedUriResource {
+class EduSharedUriResource {
 #include "Extra/EduSharedUriResourceAPI.hpp"
 
 public:
-MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const&);
+    MCAPI EduSharedUriResource();
+    MCAPI EduSharedUriResource(class CompoundTag const&);
+    MCAPI ~EduSharedUriResource();
 
-} // namespace EduSharedUriResource
+    MCAPI static std::unique_ptr<class CompoundTag> toTag(struct EduSharedUriResource const&);
+};

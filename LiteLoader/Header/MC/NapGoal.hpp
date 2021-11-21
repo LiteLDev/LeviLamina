@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI NapGoal(class Mob&, float, float, float, float, class ActorFilterGroup const&, class ActorFilterGroup const&);
+
+
 private:
     MCAPI bool _canSleep(struct Tick const&) const;
     MCAPI bool _detectsMobs() const;

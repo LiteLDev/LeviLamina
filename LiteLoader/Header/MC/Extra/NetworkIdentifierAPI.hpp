@@ -7,5 +7,5 @@
 // Add Member There
 
 public:
-        LIAPI std::string getIP();
+LIAPI std::string getIP();
 #endif

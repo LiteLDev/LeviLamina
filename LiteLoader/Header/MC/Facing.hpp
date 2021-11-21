@@ -42,4 +42,5 @@ MCAPI static unsigned char rotateFace(unsigned char, enum Facing::Rotation);
 MCAPI static unsigned char rotateFaceAroundGivenFace(unsigned char, unsigned char, enum Facing::Rotation);
 MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
 
+
 } // namespace Facing

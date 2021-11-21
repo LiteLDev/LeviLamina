@@ -8,6 +8,7 @@ class Path {
 #include "Extra/PathAPI.hpp"
 
 public:
+    MCAPI Path();
     MCAPI class Vec3 currentPos(class Actor const*) const;
     MCAPI class BlockPos const& currentPos() const;
     MCAPI bool endsInXZ(class Vec3 const&);
@@ -26,6 +27,8 @@ public:
     MCAPI bool sameAs(class Path*) const;
     MCAPI void setIndex(unsigned __int64);
     MCAPI void setSize(unsigned __int64);
+    MCAPI ~Path();
+
 
 private:
     MCAPI void buildFromNodes(std::vector<class Path::Node>&&, enum PathCompletionType);

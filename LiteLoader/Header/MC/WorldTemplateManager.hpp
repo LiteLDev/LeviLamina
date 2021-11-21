@@ -11,7 +11,9 @@ public:
     virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&);
 
 public:
+    MCAPI WorldTemplateManager(class PackManifestFactory&, class IContentKeyProvider const&, class PackSourceFactory&, class Core::FilePathManager const&, bool);
     MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const;
+
 
 private:
     MCAPI void _initialize();

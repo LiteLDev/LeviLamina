@@ -11,7 +11,11 @@ public:
     MCAPI class GameVersion& operator=(class GameVersion&&);
     MCAPI std::string const& asString() const;
     MCAPI bool operator<(class GameVersion const&);
+    MCAPI GameVersion();
+    MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+    MCAPI GameVersion(class ListTag const&);
     MCAPI std::unique_ptr<class ListTag> serialize() const;
+    MCAPI ~GameVersion();
 
     MCAPI static class GameVersion current();
 };

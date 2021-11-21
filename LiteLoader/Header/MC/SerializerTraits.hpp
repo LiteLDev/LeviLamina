@@ -8,6 +8,9 @@ class SerializerTraits {
 #include "Extra/SerializerTraitsAPI.hpp"
 
 public:
+    MCAPI SerializerTraits();
+    MCAPI SerializerTraits(struct SerializerTraits const&);
+    MCAPI SerializerTraits(struct SerializerTraits&&);
     MCAPI struct SerializerTraits& arrayLengthConstraint(unsigned __int64, unsigned __int64);
     MCAPI struct SerializerTraits& enumMapper(class SerializerEnumMapping const*);
     MCAPI struct SerializerTraits& factory(class entt::meta_any (*)(std::string const&), class entt::meta_any (*)(std::string const&, void*));
@@ -17,6 +20,7 @@ public:
     MCAPI struct SerializerTraits& primary();
     MCAPI struct SerializerTraits& required();
     MCAPI struct SerializerTraits& validate(class std::function<bool(class entt::meta_any&, class SerializerContext&)>);
+    MCAPI ~SerializerTraits();
 
     MCAPI static char const* const const kAttributesTraits;
 

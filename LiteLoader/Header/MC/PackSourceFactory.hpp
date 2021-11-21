@@ -22,4 +22,7 @@ public:
     virtual class InPackagePackSource* getDynamicPackagePackSource(int /*enum PackType*/);
     virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const&);
     virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string>);
+
+public:
+    MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const&);
 };

@@ -21,4 +21,5 @@ MCAPI bool parseVec3(class Vec3&, class Json::Value const&);
 MCAPI void printJsonSchema_childNode(std::string&, std::string const&, class HashedString const&, std::string const&, bool, unsigned __int64, unsigned __int64, std::string const&, std::string const&);
 MCAPI void setDefaultPrettyName(std::string&, class HashedString const&);
 
+
 } // namespace JsonUtil

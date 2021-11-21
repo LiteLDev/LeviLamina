@@ -6,4 +6,7 @@
 #undef EXTRA_INCLUDE_PART
 class RandomizableBlockActorContainer {
 #include "Extra/RandomizableBlockActorContainerAPI.hpp"
+
+public:
+    MCAPI RandomizableBlockActorContainer(enum BlockActorType, std::string const&, class BlockPos const&, enum ContainerType);
 };

@@ -15,6 +15,8 @@ public:
     MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const&);
     MCAPI void setMolangVariable(unsigned __int64, char const*, struct MolangScriptArg const&);
     MCAPI void setMolangVariableSettings(struct MolangVariableSettings const&);
+    MCAPI ~MolangVariableMap();
+
 
 private:
     MCAPI class MolangVariable const* _getMolangVariable(enum MolangVariableIndex) const;

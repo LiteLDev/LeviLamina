@@ -9,8 +9,9 @@ class BlockPosIterator {
 
 public:
     MCAPI class BlockPosIterator begin() const;
-    MCAPI class BlockPosIterator end() const;
     MCAPI class BlockPosIterator& operator++();
     MCAPI bool operator!=(class BlockPosIterator const&);
+    MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&);
+    MCAPI class BlockPosIterator end() const;
     MCAPI class BlockPos const& operator*();
 };

@@ -8,10 +8,14 @@ class Localization {
 #include "Extra/LocalizationAPI.hpp"
 
 public:
+    MCAPI Localization(std::string const&, class Localization*);
+    MCAPI Localization(std::string const&);
     MCAPI void appendTranslations(class Localization const&);
     MCAPI std::string getFullLanguageCode() const;
+    MCAPI ~Localization();
 
     MCAPI static std::string getLanguageCode(std::string const&);
+
 
 protected:
     MCAPI class Core::PathBuffer<std::string> _getLangFilePath(std::string const&);

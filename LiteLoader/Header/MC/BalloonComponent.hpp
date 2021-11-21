@@ -8,6 +8,7 @@ class BalloonComponent {
 #include "Extra/BalloonComponentAPI.hpp"
 
 public:
+    MCAPI BalloonComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void computeMaxHeight(class Actor&);
     MCAPI void detach(class Actor&);

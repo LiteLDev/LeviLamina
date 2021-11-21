@@ -10,4 +10,5 @@ namespace ScriptFeedItemEffect {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem::Effect> bind(struct Scripting::Version);
 
+
 } // namespace ScriptFeedItemEffect

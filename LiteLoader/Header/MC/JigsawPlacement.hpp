@@ -9,6 +9,8 @@ class JigsawPlacement {
 
 public:
     MCAPI void addPieces(class StructurePoolElement const&, class BlockPos const&, enum Rotation const&);
+    MCAPI ~JigsawPlacement();
+
 
 private:
     MCAPI void _addPiece(class PoolElementStructurePiece const&, class BlockPos const&, enum Rotation const&, class BlockPos const&, unsigned __int64);

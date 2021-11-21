@@ -13,5 +13,7 @@ public:
     virtual bool operator==(class IRequestAction&);
 
 public:
+    MCAPI IRequestAction(enum IRequestAction::RequestActionType const&);
+
     MCAPI static bool isValidTag(class CompoundTag const&);
 };

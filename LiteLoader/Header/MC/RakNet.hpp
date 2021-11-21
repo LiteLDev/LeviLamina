@@ -12,8 +12,8 @@ MCAPI unsigned __int64 GetTime();
 MCAPI unsigned int GetTimeMS();
 MCAPI unsigned __int64 GetTimeUS();
 MCAPI bool NonNumericHostString(char const*);
-MCAPI void ProcessNetworkPacket(struct RakNet::SystemAddress, char const*, int, struct RakNet::RakPeer*, class RakNet::RakNetSocket2*, unsigned __int64, class RakNet::BitStream&);
-MCAPI bool ProcessOfflineNetworkPacket(struct RakNet::SystemAddress, char const*, int, struct RakNet::RakPeer*, class RakNet::RakNetSocket2*, bool*, unsigned __int64);
+MCAPI void ProcessNetworkPacket(struct RakNet::SystemAddress, char const*, int, class RakNet::RakPeer*, class RakNet::RakNetSocket2*, unsigned __int64, class RakNet::BitStream&);
+MCAPI bool ProcessOfflineNetworkPacket(struct RakNet::SystemAddress, char const*, int, class RakNet::RakPeer*, class RakNet::RakNetSocket2*, bool*, unsigned __int64);
 MCAPI int SplitPacketChannelComp(unsigned short const&, struct RakNet::SplitPacketChannel* const&);
 MCAPI struct RakNet::RakNetGUID const UNASSIGNED_RAKNET_GUID;
 MCAPI struct RakNet::SystemAddress const UNASSIGNED_SYSTEM_ADDRESS;
@@ -28,5 +28,6 @@ MCAPI void* _RakMalloc(unsigned __int64);
 MCAPI void* _RakMalloc_Ex(unsigned __int64, char const*, unsigned int);
 MCAPI void* _RakRealloc(void*, unsigned __int64);
 MCAPI void* _RakRealloc_Ex(void*, unsigned __int64, char const*, unsigned int);
+
 
 } // namespace RakNet

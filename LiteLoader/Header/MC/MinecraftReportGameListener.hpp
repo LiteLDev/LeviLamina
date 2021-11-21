@@ -15,6 +15,7 @@ public:
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
 
+
 private:
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const&) const;
     MCAPI void _reportFailure(struct gametest::GameTestError const&, class BlockSource&);

@@ -10,6 +10,7 @@ public:
     virtual ~NetworkChunkPublisher();
 
 public:
+    MCAPI NetworkChunkPublisher(class Level&, class NetworkHandler&, class ClientBlobCache::Server::ActiveTransfersManager&, class NetworkIdentifier const&, unsigned char);
     MCAPI void clearRegion();
     MCAPI void destroyRegion();
     MCAPI int getChunksSentSinceStart() const;
@@ -17,6 +18,7 @@ public:
     MCAPI void moveRegion(class BlockPos const&, unsigned int, class Vec3 const&, float);
     MCAPI void prepareRegion(class ChunkSource&, class ChunkPos&);
     MCAPI void sendQueuedChunks();
+
 
 private:
     MCAPI bool _sendQueuedChunk(class ChunkPos const&, class ClientBlobCache::Server::TransferBuilder*);

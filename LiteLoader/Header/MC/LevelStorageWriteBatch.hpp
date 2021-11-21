@@ -16,6 +16,7 @@ public:
     virtual void flush(class LevelStorage&);
 
 public:
+    MCAPI LevelStorageWriteBatch();
     MCAPI void addFlushCallback(class std::function<void(void)>);
     MCAPI void clear();
 };

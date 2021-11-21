@@ -209,4 +209,7 @@ public:
     virtual void unk_vfn_199();
     virtual void unk_vfn_200();
     virtual void unk_vfn_201();
+
+public:
+    MCAPI VanillaServerNetworkHandler(class ServerNetworkHandler&, class ServerInstance&);
 };

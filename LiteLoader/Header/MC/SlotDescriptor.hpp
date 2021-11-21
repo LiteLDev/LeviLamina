@@ -8,5 +8,8 @@ class SlotDescriptor {
 #include "Extra/SlotDescriptorAPI.hpp"
 
 public:
+    MCAPI SlotDescriptor();
+    MCAPI SlotDescriptor(struct SlotDescriptor const&);
     MCAPI void addAcceptedItem(class ItemDescriptor const&);
+    MCAPI ~SlotDescriptor();
 };

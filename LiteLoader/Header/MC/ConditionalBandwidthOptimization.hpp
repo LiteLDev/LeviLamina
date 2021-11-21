@@ -10,4 +10,5 @@ class ConditionalBandwidthOptimization {
 public:
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
+    MCAPI ~ConditionalBandwidthOptimization();
 };

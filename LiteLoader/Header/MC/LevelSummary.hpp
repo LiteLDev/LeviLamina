@@ -15,4 +15,5 @@ MCAPI static class Core::PathBuffer<std::string> const WORLD_ICON_FILENAME;
 MCAPI static class Core::PathBuffer<std::string> buildCustomIconPath(class Core::Path const&);
 MCAPI static class Core::PathBuffer<std::string> buildWorldIconPath(class Core::Path const&);
 
+
 } // namespace LevelSummary

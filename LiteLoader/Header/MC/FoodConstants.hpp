@@ -31,4 +31,5 @@ MCAPI float const MAX_SATURATION;
 MCAPI float const START_SATURATION;
 MCAPI int const STARVE_LEVEL;
 
+
 } // namespace FoodConstants

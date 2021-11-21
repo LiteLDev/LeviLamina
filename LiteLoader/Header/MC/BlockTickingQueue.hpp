@@ -23,9 +23,12 @@ public:
     MCAPI void tickAllPendingTicks(class BlockSource&, unsigned __int64);
     MCAPI bool tickPendingTicks(class BlockSource&, struct Tick const&, int, bool);
     MCAPI int ticksFromNow(int) const;
+    MCAPI ~BlockTickingQueue();
+
 
 private:
     MCAPI void _addToNextTickQueue(class BlockPos const&, class Block const&, int, int);
+
 
 protected:
     MCAPI void _saveQueue(class ListTag&, class BlockTickingQueue::TickDataSet const&) const;

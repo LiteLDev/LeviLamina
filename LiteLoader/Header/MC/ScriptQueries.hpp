@@ -8,7 +8,9 @@ class ScriptQueries {
 #include "Extra/ScriptQueriesAPI.hpp"
 
 public:
+    MCAPI ScriptQueries();
     MCAPI bool addFilter(class ScriptApi::ScriptVersionInfo const&, enum entt::entity, std::string const&);
     MCAPI enum entt::entity registerQuery(class ScriptApi::ScriptVersionInfo const&);
     MCAPI enum entt::entity registerQuery(class ScriptApi::ScriptVersionInfo const&, std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI ~ScriptQueries();
 };

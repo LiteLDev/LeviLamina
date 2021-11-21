@@ -8,6 +8,7 @@ class RideableDefinition {
 #include "Extra/RideableDefinitionAPI.hpp"
 
 public:
+    MCAPI RideableDefinition();
     MCAPI void addFamilyTypeByName(std::string const&);
     MCAPI void initialize(class EntityContext&, class RideableComponent&);
 

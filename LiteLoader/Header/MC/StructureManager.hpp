@@ -10,6 +10,7 @@ public:
     virtual ~StructureManager();
 
 public:
+    MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
     MCAPI enum StructureDeleteResult deleteStructure(std::string const&, class LevelStorage&);
     MCAPI class StructureTemplate& getOrCreate(std::string const&);

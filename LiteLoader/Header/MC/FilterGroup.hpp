@@ -13,6 +13,7 @@ public:
     virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
 
 public:
+    MCAPI FilterGroup(class FilterGroup const&);
     MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);
     MCAPI bool addFilterTest(std::string const&, struct FilterInputs const&);
     MCAPI bool empty() const;
@@ -21,6 +22,7 @@ public:
     MCAPI std::vector<class std::shared_ptr<class FilterTest>> const& getMembers() const;
     MCAPI bool parse(class Json::Value const&);
     MCAPI void serialize(class Json::Value&) const;
+
 
 protected:
     MCAPI bool _parseFilterInputs(class Json::Value const&, struct FilterTest::Definition const&, struct FilterInputs&);

@@ -8,7 +8,9 @@ class BeardAndShaverDescription {
 #include "Extra/BeardAndShaverDescriptionAPI.hpp"
 
 public:
+    MCAPI BeardAndShaverDescription(class BoundingBox const&, int, float, float);
     MCAPI float calculateContribution(class BlockPos const&) const;
+
 
 private:
     MCAPI static struct BeardKernel mBeardKernel;

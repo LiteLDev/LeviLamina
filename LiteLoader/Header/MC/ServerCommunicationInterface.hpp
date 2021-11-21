@@ -12,6 +12,7 @@ public:
     MCAPI void sendChunkLoadTelemtryData(struct ChunkLoadTelemetryData const&);
     MCAPI void sendServerStarted();
     MCAPI void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+    MCAPI ~ServerCommunicationInterface();
 
     MCAPI static std::unique_ptr<class ServerCommunicationInterface> create(struct NetworkAddress const&);
 

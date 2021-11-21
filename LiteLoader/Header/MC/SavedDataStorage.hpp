@@ -10,9 +10,11 @@ public:
     virtual ~SavedDataStorage();
 
 public:
+    MCAPI SavedDataStorage(class LevelStorage*);
     MCAPI bool loadAndSet(class SavedData&, std::string const&);
     MCAPI void save();
     MCAPI void set(std::string const&, class SavedData&);
+
 
 private:
     MCAPI void _save(class SavedData const&);

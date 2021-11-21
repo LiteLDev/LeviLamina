@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptPlayerHeadRotationAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptPlayerHeadRotation {
+class ScriptPlayerHeadRotation {
 #include "Extra/ScriptPlayerHeadRotationAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptPlayerHeadRotation> bind(struct Scripting::Version);
+    MCAPI ScriptPlayerHeadRotation(float, float);
 
-} // namespace ScriptPlayerHeadRotation
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptPlayerHeadRotation> bind(struct Scripting::Version);
+};

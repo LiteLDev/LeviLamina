@@ -8,6 +8,7 @@ class Recipes {
 #include "Extra/RecipesAPI.hpp"
 
 public:
+    MCAPI Recipes(class Level*);
     MCAPI void clearRecipes();
     MCAPI struct std::pair<std::string, class Json::Value> extractRecipeObjInfo(class Json::Value const&);
     MCAPI class ItemInstance getFurnaceRecipeResult(class ItemStackBase const&, class HashedString const&) const;
@@ -15,6 +16,7 @@ public:
     MCAPI class Recipe* getRecipeFor(class ItemInstance const&, class HashedString const&) const;
     MCAPI void init(class ResourcePackManager&, class ExternalRecipeStore&);
     MCAPI bool loadRecipe(struct std::pair<std::string, class Json::Value> const&, class SemVersion const&);
+    MCAPI ~Recipes();
 
     MCAPI static int const RECIPE_MAXIMUM_HEIGHT;
     MCAPI static int const RECIPE_MAXIMUM_WIDTH;
@@ -27,6 +29,7 @@ private:
     MCAPI bool _loadBrewingMix(class Json::Value const&, class SemVersion const&);
     MCAPI void _loadHardcodedRecipes();
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const&, class SemVersion const&) const;
+
 
 protected:
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance>);

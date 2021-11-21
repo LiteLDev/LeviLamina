@@ -14,6 +14,10 @@ public:
     virtual void update();
     virtual void flush(class std::function<void(void)>&&);
 
+public:
+    MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler&);
+
+
 private:
     MCAPI void _startSendTask();
 };

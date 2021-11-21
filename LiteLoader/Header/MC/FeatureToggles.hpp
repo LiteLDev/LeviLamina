@@ -10,8 +10,10 @@ public:
     virtual ~FeatureToggles();
 
 public:
+    MCAPI FeatureToggles(class AppPlatform&);
     MCAPI class Option* get(enum FeatureOptionID);
     MCAPI bool isEnabled(enum FeatureOptionID) const;
+
 
 private:
     MCAPI void _initialize(class AppPlatform&);

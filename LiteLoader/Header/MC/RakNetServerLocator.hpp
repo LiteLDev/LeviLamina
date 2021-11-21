@@ -25,6 +25,7 @@ public:
     virtual float getPingTimeForGUID(std::string const&);
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void(bool)>);
 
+
 private:
     MCAPI void _activate();
     MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const&, int);

@@ -4,12 +4,13 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/TaskResultAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace TaskResult {
+class TaskResult {
 #include "Extra/TaskResultAPI.hpp"
 
 public:
-MCAPI static class TaskResult const Done;
-MCAPI static class TaskResult const Requeue;
-MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+    MCAPI ~TaskResult();
 
-} // namespace TaskResult
+    MCAPI static class TaskResult const Done;
+    MCAPI static class TaskResult const Requeue;
+    MCAPI static class TaskResult requeueAfter(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);
+};

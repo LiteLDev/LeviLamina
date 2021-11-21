@@ -10,4 +10,5 @@ namespace ChemistryRecipes {
 public:
 MCAPI static void addRecipes(class Recipes&);
 
+
 } // namespace ChemistryRecipes

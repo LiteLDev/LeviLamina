@@ -10,6 +10,7 @@ class PageContent {
 public:
     MCAPI struct PageContent& operator=(struct PageContent const&);
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
+    MCAPI ~PageContent();
 
     MCAPI static struct PageContent const BLANK_PAGE;
     MCAPI static struct PageContent read(class CompoundTag const&);

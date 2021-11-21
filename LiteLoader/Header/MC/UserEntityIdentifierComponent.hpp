@@ -9,6 +9,7 @@ class UserEntityIdentifierComponent {
 
 public:
     MCAPI class UserEntityIdentifierComponent& operator=(class UserEntityIdentifierComponent&&);
+    MCAPI UserEntityIdentifierComponent(class NetworkIdentifier const&, unsigned char, class mce::UUID, std::unique_ptr<class Certificate>);
 
     MCAPI static class UserEntityIdentifierComponent* tryGetFromEntity(class EntityContext&);
 };

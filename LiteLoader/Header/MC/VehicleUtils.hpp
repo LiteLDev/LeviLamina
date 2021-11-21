@@ -15,4 +15,5 @@ MCAPI static class std::optional<class Vec3> testPosFollowingEjectPattern(struct
 MCAPI static class std::optional<class Vec3> testPosFollowingLegacyActivatorRailPattern(struct VehicleUtils::VehicleDirections const&, class std::function<bool(class Vec3 const&, class Vec3 const&)>);
 MCAPI static class std::optional<class Vec3> testPosFollowingLegacyActorPattern(struct VehicleUtils::VehicleDirections const&, class std::function<bool(class Vec3 const&, class Vec3 const&)>);
 
+
 } // namespace VehicleUtils

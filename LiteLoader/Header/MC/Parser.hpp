@@ -61,4 +61,5 @@ MCAPI static void serialize(enum ActorType const&, class Json::Value&, char cons
 MCAPI static void serialize(enum Difficulty const&, class Json::Value&, char const*);
 MCAPI static void serialize(enum ParticleType const&, class Json::Value&, char const*);
 
+
 } // namespace Parser

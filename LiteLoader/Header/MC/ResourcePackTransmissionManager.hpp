@@ -8,6 +8,8 @@ class ResourcePackTransmissionManager {
 #include "Extra/ResourcePackTransmissionManagerAPI.hpp"
 
 public:
+    MCAPI ResourcePackTransmissionManager(class Scheduler&);
     MCAPI void cleanupResourcePackManager(class NetworkIdentifier const&);
     MCAPI void update();
+    MCAPI ~ResourcePackTransmissionManager();
 };

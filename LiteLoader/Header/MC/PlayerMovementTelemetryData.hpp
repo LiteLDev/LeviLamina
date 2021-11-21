@@ -8,6 +8,7 @@ class PlayerMovementTelemetryData {
 #include "Extra/PlayerMovementTelemetryDataAPI.hpp"
 
 public:
+    MCAPI PlayerMovementTelemetryData();
     MCAPI float getAverage() const;
     MCAPI void reset();
 };

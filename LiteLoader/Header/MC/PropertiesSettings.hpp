@@ -8,6 +8,7 @@ class PropertiesSettings {
 #include "Extra/PropertiesSettingsAPI.hpp"
 
 public:
+    MCAPI PropertiesSettings(std::string const&);
     MCAPI bool allowCheats() const;
     MCAPI bool enableItemStackNetManager() const;
     MCAPI bool forceGamemode() const;
@@ -42,6 +43,7 @@ public:
     MCAPI bool useWebsocketEncryption() const;
     MCAPI bool useWhitelist() const;
     MCAPI float websocketRetryTime() const;
+    MCAPI ~PropertiesSettings();
 
     MCAPI static bool parseBoolValue(std::string const&);
 };

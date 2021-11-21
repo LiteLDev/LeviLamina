@@ -8,8 +8,10 @@ class InMemoryFileStorage {
 #include "Extra/InMemoryFileStorageAPI.hpp"
 
 public:
+    MCAPI InMemoryFileStorage(class leveldb::Env*);
     MCAPI class std::shared_ptr<class InMemoryFile> createFile(class Core::Path const&);
     MCAPI bool deleteFile(class Core::Path const&);
     MCAPI bool findFile(class Core::Path const&, class std::shared_ptr<class InMemoryFile>&);
     MCAPI void flushToDisk();
+    MCAPI ~InMemoryFileStorage();
 };

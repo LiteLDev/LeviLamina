@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ParameterAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace Parameter {
+class Parameter {
 #include "Extra/ParameterAPI.hpp"
 
 public:
-MCAPI static struct Parameter fromParameters(struct Parameter const&, struct Parameter const&);
+    MCAPI Parameter(float, float);
 
-} // namespace Parameter
+    MCAPI static struct Parameter fromParameters(struct Parameter const&, struct Parameter const&);
+};

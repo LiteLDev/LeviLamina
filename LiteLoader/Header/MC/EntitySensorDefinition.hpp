@@ -8,6 +8,7 @@ class EntitySensorDefinition {
 #include "Extra/EntitySensorDefinitionAPI.hpp"
 
 public:
+    MCAPI EntitySensorDefinition();
     MCAPI void initialize(class EntityContext&, class EntitySensorComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EntitySensorDefinition>>&);

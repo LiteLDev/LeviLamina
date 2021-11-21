@@ -12,4 +12,5 @@ MCAPI static std::string const TAG_PHOTO_NAME;
 MCAPI static std::string const TAG_PHOTO_OWNER;
 MCAPI static std::string const TAG_PHOTO_UUID;
 
+
 } // namespace PhotoItem

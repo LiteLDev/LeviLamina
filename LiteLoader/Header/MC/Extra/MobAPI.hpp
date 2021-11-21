@@ -1,9 +1,9 @@
 #ifdef EXTRA_INCLUDE_PART
 // Add include headers & pre-declares
-	class UserEntityIdentifierComponent;
-	class Actor;
+#include "../Actor.hpp"
+class UserEntityIdentifierComponent;
 #else
 // Add new members to class
 public:
-	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
+LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 #endif

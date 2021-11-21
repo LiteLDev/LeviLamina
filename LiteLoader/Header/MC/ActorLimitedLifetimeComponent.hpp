@@ -8,6 +8,7 @@ class ActorLimitedLifetimeComponent {
 #include "Extra/ActorLimitedLifetimeComponentAPI.hpp"
 
 public:
+    MCAPI ActorLimitedLifetimeComponent();
     MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
 

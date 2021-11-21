@@ -8,6 +8,7 @@ class HardcodedSpawnAreaRegistry {
 #include "Extra/HardcodedSpawnAreaRegistryAPI.hpp"
 
 public:
+    MCAPI HardcodedSpawnAreaRegistry();
     MCAPI std::vector<class MobSpawnerData> const& getMobSpawnsForType(enum HardcodedSpawnAreaType) const;
     MCAPI void initMobSpawnsForType(enum HardcodedSpawnAreaType, std::vector<class MobSpawnerData>&&);
 };

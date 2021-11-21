@@ -11,6 +11,7 @@ public:
     MCAPI class Json::Value const& getAllSettings() const;
     MCAPI void loadPackSettings(struct PackIdVersion const&, class Json::Value const&);
 
+
 private:
     MCAPI void _initPackSetting(std::string const&, class Json::Value const&);
 };

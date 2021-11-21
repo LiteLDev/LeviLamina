@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptActorEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptActorEvent {
+class ScriptActorEvent {
 #include "Extra/ScriptActorEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptActorEvent> bind(struct Scripting::Version);
+    MCAPI ScriptActorEvent(class Scripting::WeakTypedObjectHandle<class ScriptActor>);
 
-} // namespace ScriptActorEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptActorEvent> bind(struct Scripting::Version);
+};

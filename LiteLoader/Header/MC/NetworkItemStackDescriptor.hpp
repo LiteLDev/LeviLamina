@@ -8,8 +8,12 @@ class NetworkItemStackDescriptor {
 #include "Extra/NetworkItemStackDescriptorAPI.hpp"
 
 public:
+    MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const&);
+    MCAPI NetworkItemStackDescriptor(class ItemStack const&);
+    MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
     MCAPI void read(class ReadOnlyBinaryStream&);
     MCAPI void setIncludeNetIds(bool) const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
     MCAPI void write(class BinaryStream&) const;
+    MCAPI ~NetworkItemStackDescriptor();
 };

@@ -9,4 +9,5 @@ namespace Social {
 
 MCAPI class Social::GameConnectionInfo const INVALID_CONNECTION;
 
+
 } // namespace Social

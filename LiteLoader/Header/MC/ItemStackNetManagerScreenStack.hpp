@@ -15,4 +15,5 @@ public:
     MCAPI unsigned __int64 size() const;
     MCAPI class ItemStackNetManagerScreen const* top() const;
     MCAPI class ItemStackNetManagerScreen* top();
+    MCAPI ~ItemStackNetManagerScreenStack();
 };

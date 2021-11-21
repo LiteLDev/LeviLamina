@@ -18,6 +18,7 @@ public:
 public:
     MCAPI class Json::Value serialize() const;
 
+
 protected:
     MCAPI bool _testValuesWithOperator(int, int) const;
     MCAPI bool _testValuesWithOperator(float, float) const;

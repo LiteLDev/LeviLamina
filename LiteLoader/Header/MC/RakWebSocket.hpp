@@ -18,6 +18,10 @@ public:
     virtual void _updateState();
     virtual unsigned int _genMaskingKey();
 
+public:
+    MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
+
+
 protected:
     MCAPI void _close(enum CloseStatusCode);
     MCAPI void _createWebSocketKey();

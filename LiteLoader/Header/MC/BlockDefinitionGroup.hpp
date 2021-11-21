@@ -8,6 +8,7 @@ class BlockDefinitionGroup {
 #include "Extra/BlockDefinitionGroupAPI.hpp"
 
 public:
+    MCAPI BlockDefinitionGroup();
     MCAPI void buildBlockSchema(class BlockComponentFactory const&);
     MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const&, class Experiments const&);
     MCAPI std::vector<struct BlockDefinition const*> getBlockDefinitions() const;
@@ -17,6 +18,8 @@ public:
     MCAPI void registerBlockDefinition(std::unique_ptr<struct BlockDefinition>);
     MCAPI void registerBlockFromDefinition(struct BlockDefinition const&, bool);
     MCAPI void registerBlocks();
+    MCAPI ~BlockDefinitionGroup();
+
 
 private:
     MCAPI void _buildBlockComponentsSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&);

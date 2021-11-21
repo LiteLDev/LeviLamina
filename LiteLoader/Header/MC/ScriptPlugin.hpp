@@ -11,8 +11,10 @@ public:
     virtual class std::optional<std::string> onLoadScript(std::string const&);
 
 public:
+    MCAPI ScriptPlugin(class ScriptPlugin&&);
     MCAPI bool hasErrors() const;
     MCAPI std::vector<std::string> reportErrors() const;
+
 
 private:
     MCAPI class std::optional<std::string> _loadScript(std::string const&);

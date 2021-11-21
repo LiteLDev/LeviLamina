@@ -12,7 +12,9 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI CommandOutputSender(class Automation::AutomationClient&);
     MCAPI void sendToAdmins(class CommandOrigin const&, class CommandOutput const&, enum CommandPermissionLevel);
+
 
 protected:
     MCAPI class Json::Value _toJson(class CommandOutput const&) const;

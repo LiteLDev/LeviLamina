@@ -10,6 +10,7 @@ public:
     virtual ~CommandPropertyBag();
 
 public:
+    MCAPI CommandPropertyBag(class Json::Value const&);
     MCAPI void addToResultList(std::string const&, std::string const&);
     MCAPI void set(std::string const&, class BlockPos const&);
     MCAPI void set(std::string const&, class Vec3);

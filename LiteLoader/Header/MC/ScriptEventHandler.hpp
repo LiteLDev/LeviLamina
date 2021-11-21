@@ -8,6 +8,7 @@ class ScriptEventHandler {
 #include "Extra/ScriptEventHandlerAPI.hpp"
 
 public:
+    MCAPI ScriptEventHandler();
     MCAPI void registerSubHandler(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
     MCAPI void unregisterSubHandler(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 };

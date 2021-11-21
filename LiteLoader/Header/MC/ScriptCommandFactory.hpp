@@ -7,6 +7,7 @@
 class ScriptCommandFactory {
 #include "Extra/ScriptCommandFactoryAPI.hpp"
 
+
 private:
     MCAPI static unsigned int mCurrentId;
     MCAPI static class std::mutex mIdMutex;

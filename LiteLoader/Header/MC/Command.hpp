@@ -11,6 +11,7 @@ public:
     virtual void unk_vfn_1();
 
 public:
+    MCAPI Command();
     MCAPI std::string getCommandName() const;
     MCAPI bool hasFlag(struct CommandFlag) const;
     MCAPI void run(class CommandOrigin const&, class CommandOutput&) const;
@@ -18,6 +19,7 @@ public:
     MCAPI static std::string const WILDCARD_TOKEN;
     MCAPI static bool validRange(int, int, int, class CommandOutput&);
     MCAPI static bool validRange(float, float, float, class CommandOutput&);
+
 
 protected:
     MCAPI class CommandRegistry const& getRegistry() const;

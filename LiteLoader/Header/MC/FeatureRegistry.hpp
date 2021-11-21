@@ -8,6 +8,7 @@ class FeatureRegistry {
 #include "Extra/FeatureRegistryAPI.hpp"
 
 public:
+    MCAPI FeatureRegistry();
     MCAPI void forEachFeature(class std::function<void(class HashedString const&, class WeakRefT<struct FeatureRefTraits>)>) const;
     MCAPI bool isFeaturePassDefined(std::string const&) const;
     MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, class Experiments const&);

@@ -10,4 +10,7 @@ public:
     virtual ~MoveTowardsDwellingRestrictionDefinition();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
+
+public:
+    MCAPI MoveTowardsDwellingRestrictionDefinition();
 };

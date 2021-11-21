@@ -8,6 +8,9 @@ class StructureEditorData {
 #include "Extra/StructureEditorDataAPI.hpp"
 
 public:
+    MCAPI StructureEditorData();
+    MCAPI StructureEditorData(class StructureEditorData const&);
+    MCAPI StructureEditorData(class StructureEditorData&&);
     MCAPI std::string getAnimationModeAsString() const;
     MCAPI float getAnimationSeconds() const;
     MCAPI bool getIgnoreBlocks() const;
@@ -42,6 +45,7 @@ public:
     MCAPI void setStructureName(class gsl::basic_string_span<char const, -1>);
     MCAPI void setStructureOffset(class BlockPos const&);
     MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI ~StructureEditorData();
 
     MCAPI static std::string const DEFAULT_EXPORT_NAME;
     MCAPI static std::string const DEFAULT_STRUCTURE_NAMESPACE;

@@ -9,4 +9,5 @@ namespace AutomaticFeatureRules {
 
 MCAPI void attachAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&, class Experiments const&);
 
+
 } // namespace AutomaticFeatureRules

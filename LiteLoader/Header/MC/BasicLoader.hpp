@@ -23,6 +23,7 @@ public:
     MCAPI bool serializeS32(int&);
     MCAPI bool serializeString(std::string&);
 
+
 private:
     MCAPI bool beginArrayItem(unsigned __int64);
     MCAPI bool serialize(class entt::meta_any, struct SerializerTraits const&, class entt::meta_any);

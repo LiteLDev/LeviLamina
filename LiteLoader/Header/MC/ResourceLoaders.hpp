@@ -15,4 +15,5 @@ MCAPI std::string const IMGEXT_TARGA;
 MCAPI std::string const IMGEXT_TEXTURESET;
 MCAPI class BackwardsCompatTextureGroup backCompatGroup;
 
+
 } // namespace ResourceLoaders

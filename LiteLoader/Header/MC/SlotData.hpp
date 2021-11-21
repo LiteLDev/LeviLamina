@@ -4,10 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/SlotDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace SlotData {
+class SlotData {
 #include "Extra/SlotDataAPI.hpp"
 
 public:
-MCAPI static struct SlotData UNKNOWN_LOCATION;
+    MCAPI SlotData();
+    MCAPI ~SlotData();
 
-} // namespace SlotData
+    MCAPI static struct SlotData UNKNOWN_LOCATION;
+};

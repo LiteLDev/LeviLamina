@@ -11,4 +11,5 @@ public:
     MCAPI void addRule(class GameRule const&);
     MCAPI std::vector<class GameRule> const& getRules() const;
     MCAPI void setRules(std::vector<class GameRule>);
+    MCAPI ~GameRulesChangedPacketData();
 };

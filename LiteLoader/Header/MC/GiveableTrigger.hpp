@@ -8,5 +8,7 @@ class GiveableTrigger {
 #include "Extra/GiveableTriggerAPI.hpp"
 
 public:
+    MCAPI GiveableTrigger(struct GiveableTrigger const&);
     MCAPI void addItem(class ItemDescriptor const&);
+    MCAPI ~GiveableTrigger();
 };

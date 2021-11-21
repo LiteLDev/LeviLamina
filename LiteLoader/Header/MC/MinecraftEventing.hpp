@@ -8,6 +8,7 @@ class MinecraftEventing {
 #include "Extra/MinecraftEventingAPI.hpp"
 
 public:
+    MCAPI MinecraftEventing(class Core::Path const&);
     MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
     MCAPI static void fireEventAwardAchievement(class Player*, enum MinecraftEventing::AchievementIds);

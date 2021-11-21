@@ -8,10 +8,12 @@ class ActorDefinition {
 #include "Extra/ActorDefinitionAPI.hpp"
 
 public:
+    MCAPI ActorDefinition(std::string const&);
     MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor&, class ActorFactory&, enum LogArea);
     MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor&);
     MCAPI void parseEntityDescription(struct DeserializeDataParams);
     MCAPI void parseEvents(class Json::Value const&, class SemVersion const&, class EventResponseFactory*);
     MCAPI void parsePermutations(class Json::Value&, class SemVersion const&, class SemVersion const&, class ActorFactory&);
     MCAPI bool validatePermutationJson(class Json::Value&);
+    MCAPI ~ActorDefinition();
 };

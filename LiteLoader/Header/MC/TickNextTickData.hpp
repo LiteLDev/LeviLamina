@@ -10,4 +10,5 @@ class TickNextTickData {
 public:
     MCAPI bool operator>(class TickNextTickData const&);
     MCAPI bool operator==(class TickNextTickData const&);
+    MCAPI TickNextTickData(class BlockPos const&, class Block const&, struct Tick const&, int);
 };

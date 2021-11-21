@@ -8,6 +8,9 @@ class GameRule {
 #include "Extra/GameRuleAPI.hpp"
 
 public:
+    MCAPI GameRule(std::string const&, bool);
+    MCAPI GameRule(class GameRule&&);
+    MCAPI GameRule(class GameRule const&);
     MCAPI bool allowUseInCommand() const;
     MCAPI bool canBeModifiedByPlayer() const;
     MCAPI bool getBool() const;
@@ -22,4 +25,5 @@ public:
     MCAPI bool setInt(int, bool*, class GameRule::ValidationError*);
     MCAPI class GameRule& setTagDataNotFoundCallback(class std::function<void(class GameRule&)>);
     MCAPI class GameRule& setValidateValueCallback(class std::function<bool(union GameRule::Value const&, class GameRule::ValidationError*)>);
+    MCAPI ~GameRule();
 };

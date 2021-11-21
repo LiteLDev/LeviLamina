@@ -8,6 +8,7 @@ class BuoyancyComponent {
 #include "Extra/BuoyancyComponentAPI.hpp"
 
 public:
+    MCAPI BuoyancyComponent();
     MCAPI bool canFloat(class Actor const&) const;
     MCAPI class BuoyancyComponent& operator=(class BuoyancyComponent&&);
     MCAPI float getBaseBuoyancy() const;

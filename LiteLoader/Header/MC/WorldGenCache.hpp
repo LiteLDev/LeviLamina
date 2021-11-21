@@ -8,6 +8,8 @@ class WorldGenCache {
 #include "Extra/WorldGenCacheAPI.hpp"
 
 public:
+    MCAPI WorldGenCache(class ChunkLocalNoiseCache, class SurfaceLevelCache);
     MCAPI class ChunkLocalNoiseCache const& getChunkLocalNoiseCache() const;
     MCAPI class SurfaceLevelCache const& getSurfaceLevelCache() const;
+    MCAPI ~WorldGenCache();
 };

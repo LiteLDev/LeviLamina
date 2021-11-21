@@ -74,6 +74,10 @@ public:
     virtual void unk_vfn_64();
     virtual void unk_vfn_65();
 
+public:
+    MCAPI AvoidBlockGoal(class Mob&);
+
+
 private:
     MCAPI bool _isValidTarget(class Block const&) const;
 };

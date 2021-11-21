@@ -17,4 +17,5 @@ MCAPI static bool isMobLegacy(enum ActorType);
 MCAPI static bool isOfType(enum ActorType, enum ActorType);
 MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
 
+
 } // namespace ActorClassTree

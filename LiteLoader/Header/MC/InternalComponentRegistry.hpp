@@ -16,6 +16,7 @@ public:
 
     MCAPI static std::string const INTERNAL_COMPONENTS;
 
+
 protected:
     MCAPI void _initializeComponents(class Actor&, class CompoundTag const&) const;
 

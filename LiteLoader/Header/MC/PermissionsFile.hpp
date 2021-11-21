@@ -8,11 +8,13 @@ class PermissionsFile {
 #include "Extra/PermissionsFileAPI.hpp"
 
 public:
+    MCAPI PermissionsFile(class Core::Path const&);
     MCAPI void applyPlayerPermissionsFromDisk(class Player&, class UserEntityIdentifierComponent const&, enum CommandPermissionLevel);
     MCAPI bool isPermissionsSet(std::string const&, enum PlayerPermissionLevel) const;
     MCAPI void persistPlayerPermissionsToDisk(std::string const&, enum PlayerPermissionLevel);
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, enum PlayerPermissionLevel);
     MCAPI enum FileReadResult reload();
+
 
 private:
     MCAPI class std::tuple<enum FileReadResult, class Json::Value> readPermissionFile();

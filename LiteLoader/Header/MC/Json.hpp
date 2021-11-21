@@ -12,4 +12,5 @@ MCAPI std::string valueToString(double);
 MCAPI std::string valueToString(__int64);
 MCAPI std::string valueToString(unsigned __int64);
 
+
 } // namespace Json

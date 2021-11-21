@@ -8,6 +8,7 @@ class LecternBlockActor {
 #include "Extra/LecternBlockActorAPI.hpp"
 
 public:
+    MCAPI LecternBlockActor(class BlockPos const&);
     MCAPI void dropBook(class BlockSource&);
     MCAPI int getPage() const;
     MCAPI int getTotalPages() const;

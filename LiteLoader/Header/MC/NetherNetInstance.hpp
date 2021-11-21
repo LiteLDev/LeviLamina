@@ -6,4 +6,7 @@
 #undef EXTRA_INCLUDE_PART
 class NetherNetInstance {
 #include "Extra/NetherNetInstanceAPI.hpp"
+
+public:
+    MCAPI NetherNetInstance();
 };

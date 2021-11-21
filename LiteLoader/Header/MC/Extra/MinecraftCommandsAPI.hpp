@@ -6,7 +6,7 @@
 #else
 // Add Member There
 public:
- static MCRESULT _runcmd(void* origin, const std::string& cmd) {
+static MCRESULT _runcmd(void* origin, const std::string& cmd) {
     MCRESULT rv;
     SymCall(
         "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@"

@@ -9,4 +9,7 @@ class LegacyBodyControl {
 public:
     virtual ~LegacyBodyControl();
     virtual void clientTick(class Mob&);
+
+public:
+    MCAPI LegacyBodyControl();
 };

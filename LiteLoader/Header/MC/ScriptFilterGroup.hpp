@@ -10,4 +10,5 @@ namespace ScriptFilterGroup {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<class ActorFilterGroup> bind(struct Scripting::Version);
 
+
 } // namespace ScriptFilterGroup

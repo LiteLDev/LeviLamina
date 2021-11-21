@@ -11,6 +11,10 @@ public:
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
     virtual void initializeFromDefinition(class Actor&);
 
+public:
+    MCAPI GetInteractionPositionForBlockNode();
+
+
 private:
     MCAPI enum Facing::Name parseFacingNameFromString(std::string);
 };

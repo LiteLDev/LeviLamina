@@ -11,6 +11,8 @@ public:
     virtual std::unique_ptr<class PackManifest> clone();
 
 public:
+    MCAPI PackManifest(enum ManifestType);
+    MCAPI PackManifest(class PackManifest const&);
     MCAPI void addModule(class ResourceInformation const&);
     MCAPI void addPackCapability(class gsl::basic_string_span<char const, -1>);
     MCAPI class ContentIdentity const& getContentIdentity() const;

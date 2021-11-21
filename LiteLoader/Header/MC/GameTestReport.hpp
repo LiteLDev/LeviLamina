@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/GameTestReportAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace GameTestReport {
+class GameTestReport {
 #include "Extra/GameTestReportAPI.hpp"
 
 public:
-MCAPI static void bindType();
+    MCAPI ~GameTestReport();
 
-} // namespace GameTestReport
+    MCAPI static void bindType();
+};

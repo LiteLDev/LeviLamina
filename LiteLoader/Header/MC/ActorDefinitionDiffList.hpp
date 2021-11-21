@@ -19,6 +19,7 @@ public:
     MCAPI void removeDefinition(std::string const&);
     MCAPI unsigned __int64 size() const;
 
+
 private:
     MCAPI void _updateStack();
 };

@@ -8,6 +8,7 @@ class BuoyancyDefinition {
 #include "Extra/BuoyancyDefinitionAPI.hpp"
 
 public:
+    MCAPI BuoyancyDefinition();
     MCAPI void initialize(class EntityContext&, class BuoyancyComponent&) const;
     MCAPI void uninitialize(class EntityContext&, class BuoyancyComponent&) const;
 

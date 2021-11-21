@@ -8,6 +8,7 @@ class TaskStatus {
 #include "Extra/TaskStatusAPI.hpp"
 
 public:
+    MCAPI TaskStatus();
     MCAPI bool isComplete() const;
     MCAPI enum Bedrock::Threading::AsyncStatus toAsyncStatus() const;
     MCAPI class std::error_code toErrorCode() const;

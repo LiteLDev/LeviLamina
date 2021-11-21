@@ -29,6 +29,7 @@ public:
     virtual void unk_vfn_19();
     virtual void flushToPermanentStorage();
 
+
 private:
     MCAPI void _flushWithTransaction();
 };

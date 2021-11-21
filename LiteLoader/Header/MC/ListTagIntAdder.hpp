@@ -9,4 +9,5 @@ class ListTagIntAdder {
 
 public:
     MCAPI class ListTagIntAdder& operator()(int);
+    MCAPI ~ListTagIntAdder();
 };

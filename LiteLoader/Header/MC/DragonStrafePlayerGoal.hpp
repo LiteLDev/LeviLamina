@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI DragonStrafePlayerGoal(class Mob&);
+
+
 private:
     MCAPI void navigateToNextPathNode();
     MCAPI void setTarget(class Actor*);

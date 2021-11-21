@@ -13,4 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
+
+public:
+    MCAPI CompositePackSource(std::vector<class PackSource*>&&);
 };

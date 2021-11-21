@@ -32,9 +32,11 @@ public:
     virtual void unk_vfn_22();
 
 public:
+    MCAPI PackAccessStrategy();
     MCAPI bool hasGeneratedAssetSet() const;
 
     MCAPI static class Core::PathBuffer<std::string> const PACK_IMPORT_LOCK_FILE;
+
 
 protected:
     MCAPI void _addToAssetSet(class Core::Path const&);

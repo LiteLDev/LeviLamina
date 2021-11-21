@@ -21,6 +21,7 @@ public:
     virtual bool canUpdatePath(class Mob const&);
     virtual void updatePath(class NavigationComponent&, class Mob&);
 
+
 protected:
     MCAPI float _getHighestBlockHeight(class BlockSource&, class Mob&, class Vec3 const&, class Vec2 const&) const;
     MCAPI bool _isPositionOnlyInAir(class BlockSource const&, class Vec3 const&, class Vec2 const&) const;

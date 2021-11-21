@@ -24,4 +24,7 @@ public:
     virtual void unk_vfn_14();
     virtual void unk_vfn_15();
     virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void(bool)>);
+
+public:
+    MCAPI StubServerLocator();
 };

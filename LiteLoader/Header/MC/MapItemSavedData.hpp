@@ -8,6 +8,7 @@ class MapItemSavedData {
 #include "Extra/MapItemSavedDataAPI.hpp"
 
 public:
+    MCAPI MapItemSavedData(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor&, enum MapDecoration::Type);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class BlockPos const&, class BlockSource&, enum MapDecoration::Type);
     MCAPI void copyMapData(class MapItemSavedData const&);
@@ -40,6 +41,7 @@ public:
     MCAPI void tickByBlock(class BlockPos const&, class BlockSource&);
     MCAPI void tickCarriedBy(class Actor&, class CompoundTag const*);
     MCAPI void trySave(class LevelStorage&);
+    MCAPI ~MapItemSavedData();
 
     MCAPI static std::string getSerializationKey(struct ActorUniqueID);
 

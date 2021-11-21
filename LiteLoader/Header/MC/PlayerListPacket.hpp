@@ -16,5 +16,7 @@ public:
     virtual void unk_vfn_6();
 
 public:
+    MCAPI PlayerListPacket();
+    MCAPI PlayerListPacket(class mce::UUID const&);
     MCAPI void emplace(class PlayerListEntry&&);
 };

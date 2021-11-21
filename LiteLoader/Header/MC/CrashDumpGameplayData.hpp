@@ -10,4 +10,5 @@ namespace CrashDumpGameplayData {
 public:
 MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
 
+
 } // namespace CrashDumpGameplayData

@@ -8,6 +8,7 @@ class ProjectileFactory {
 #include "Extra/ProjectileFactoryAPI.hpp"
 
 public:
+    MCAPI ProjectileFactory(class Level&);
     MCAPI bool shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3);
 
     MCAPI static void initFactory();

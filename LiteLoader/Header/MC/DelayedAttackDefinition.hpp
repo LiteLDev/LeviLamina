@@ -12,5 +12,6 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI DelayedAttackDefinition();
     MCAPI void initialize(class EntityContext&, class DelayedAttackGoal&);
 };

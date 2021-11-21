@@ -11,4 +11,5 @@ public:
     MCAPI class NpcAction* getActionAt(unsigned __int64);
     MCAPI unsigned __int64 getActionCount() const;
     MCAPI int getUrlCount() const;
+    MCAPI ~NpcActionsContainer();
 };

@@ -11,4 +11,5 @@ public:
 MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
 MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
 
+
 } // namespace VanillaFeatures

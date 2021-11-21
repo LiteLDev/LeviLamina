@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptBeforePistonActionEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptBeforePistonActionEvent {
+class ScriptBeforePistonActionEvent {
 #include "Extra/ScriptBeforePistonActionEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBeforePistonActionEvent> bind(struct Scripting::Version);
+    MCAPI ~ScriptBeforePistonActionEvent();
 
-} // namespace ScriptBeforePistonActionEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBeforePistonActionEvent> bind(struct Scripting::Version);
+};

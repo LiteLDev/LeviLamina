@@ -9,4 +9,5 @@ namespace MineshaftUtil {
 
 MCAPI bool isCavesAndCliffs(class Level const&);
 
+
 } // namespace MineshaftUtil

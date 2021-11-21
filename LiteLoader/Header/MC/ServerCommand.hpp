@@ -7,6 +7,7 @@
 namespace ServerCommand {
 #include "Extra/ServerCommandAPI.hpp"
 
+
 protected:
 MCAPI static class Minecraft* mGame;
 

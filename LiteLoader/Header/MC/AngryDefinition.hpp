@@ -8,6 +8,7 @@ class AngryDefinition {
 #include "Extra/AngryDefinitionAPI.hpp"
 
 public:
+    MCAPI AngryDefinition();
     MCAPI void addBroadcastTargetByName(std::string const&);
     MCAPI void initialize(class EntityContext&, class AngryComponent&) const;
     MCAPI void uninitialize(class EntityContext&, class AngryComponent&) const;

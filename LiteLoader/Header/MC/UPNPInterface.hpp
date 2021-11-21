@@ -13,6 +13,7 @@ public:
     virtual();
 
 public:
+    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     MCAPI void reset();
     MCAPI void tick();
 };

@@ -10,6 +10,7 @@ class PlayerRespawnTelemetryData {
 public:
     MCAPI void WriteEventData(class Social::Events::Event&) const;
 
+
 private:
     MCAPI static std::string const mEventName;
 };

@@ -23,6 +23,7 @@ public:
     virtual void unk_vfn_13();
     virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/);
 
+
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;
 };

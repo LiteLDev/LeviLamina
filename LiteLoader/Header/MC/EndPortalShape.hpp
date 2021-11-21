@@ -8,5 +8,7 @@ class EndPortalShape {
 #include "Extra/EndPortalShapeAPI.hpp"
 
 public:
+    MCAPI EndPortalShape(class BlockSource&, class BlockPos);
     MCAPI bool isValid(class BlockSource&);
+    MCAPI ~EndPortalShape();
 };

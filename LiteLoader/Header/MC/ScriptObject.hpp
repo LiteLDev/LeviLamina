@@ -11,4 +11,7 @@ public:
     virtual struct Scripting::Error _functionError(std::string const&);
     virtual struct Scripting::Error _getPropertyError(std::string const&);
     virtual struct Scripting::Error _setPropertyError(std::string const&);
+
+public:
+    MCAPI ScriptObject(class Scripting::WeakLifetimeScope const&);
 };

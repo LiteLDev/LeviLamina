@@ -8,6 +8,7 @@ class ScaleByAgeDefinition {
 #include "Extra/ScaleByAgeDefinitionAPI.hpp"
 
 public:
+    MCAPI ScaleByAgeDefinition();
     MCAPI void initialize(class EntityContext&, class ScaleByAgeComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ScaleByAgeDefinition>>&);

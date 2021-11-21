@@ -29,14 +29,16 @@ public:
     virtual ~BlockSource();
 
 public:
+    MCAPI BlockSource(class Level&, class Dimension&, class ChunkSource&, bool, bool);
+    MCAPI BlockSource(class ChunkSource&, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
     MCAPI void addToRandomTickingQueue(class BlockPos const&, class Block const&, int, int);
     MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const&, class Block const&, float, int);
     MCAPI void addToTickingQueue(class BlockPos const&, class Block const&, int, int);
     MCAPI bool allowsRunes(class BlockPos const&);
     MCAPI bool areAllChunksLoaded(class BlockPos const&, class BlockVolume&) const;
-    MCAPI bool areChunksFullyLoaded(class BlockPos const&, class BlockPos const&);
     MCAPI bool areChunksFullyLoaded(class BlockPos const&, int);
+    MCAPI bool areChunksFullyLoaded(class BlockPos const&, class BlockPos const&);
     MCAPI void blockEvent(class BlockPos const&, int, int);
     MCAPI bool canProvideSupport(class BlockPos const&, unsigned char, enum BlockSupportType) const;
     MCAPI bool canSeeSky(class BlockPos const&) const;
@@ -157,11 +159,13 @@ public:
     MCAPI void updateNeighborsAt(class BlockPos const&);
     MCAPI void updateNeighborsAtExceptFromFacing(class BlockPos const&, class BlockPos const&, int);
 
+
 private:
     MCAPI bool _getBlockPermissions(class BlockPos const&, bool);
     MCAPI float _getLiquidHeight(class BlockPos const&, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const&, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const&, class Block const&, enum TickingQueueType);
+
 
 protected:
     MCAPI void _blockChanged(class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*);

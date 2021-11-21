@@ -11,10 +11,12 @@ public:
 
 public:
     MCAPI void addAdditionalSaveData(class Actor&, class CompoundTag&) const;
+    MCAPI class NpcComponent& operator=(class NpcComponent&&);
+    MCAPI NpcComponent();
+    MCAPI NpcComponent(class NpcComponent&&);
     MCAPI void cleanUpBeforeLeavingScreen();
     MCAPI void clearSceneStateForAllPlayers();
     MCAPI void executeCommandAction(class Actor&, class Player const&, int, std::string const&);
-    MCAPI class NpcComponent& operator=(class NpcComponent&&);
     MCAPI struct NpcActionsContainer& getActionsContainer();
     MCAPI std::vector<int> getButtonCounts() const;
     MCAPI enum CommandPermissionLevel getCommandPermissionLevel() const;

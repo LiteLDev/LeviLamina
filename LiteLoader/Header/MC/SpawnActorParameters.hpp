@@ -8,6 +8,9 @@ class SpawnActorParameters {
 #include "Extra/SpawnActorParametersAPI.hpp"
 
 public:
+    MCAPI SpawnActorParameters();
+    MCAPI SpawnActorParameters(struct SpawnActorParameters&&);
+    MCAPI SpawnActorParameters(struct SpawnActorParameters const&);
     MCAPI void setItem(class ItemDescriptor const&);
     MCAPI void setSpawnEntity(std::string const&);
     MCAPI void setSpawnEvent(std::string const&);
@@ -15,4 +18,5 @@ public:
     MCAPI void setSpawnTimeMax(int const&);
     MCAPI void setSpawnTimeMin(int const&);
     MCAPI bool spawnsItemStack() const;
+    MCAPI ~SpawnActorParameters();
 };

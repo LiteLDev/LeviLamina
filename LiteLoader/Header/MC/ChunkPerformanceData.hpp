@@ -10,6 +10,7 @@ public:
     virtual ~ChunkPerformanceData();
 
 public:
+    MCAPI ChunkPerformanceData();
     MCAPI void recordLoadedChunk(class LevelChunk const&);
     MCAPI void resetAll();
 };

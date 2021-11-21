@@ -8,8 +8,10 @@ class ActorAnimationGroup {
 #include "Extra/ActorAnimationGroupAPI.hpp"
 
 public:
+    MCAPI ActorAnimationGroup();
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
     MCAPI void loadActorAnimation(std::string const&, class Core::Path const&, class PackStats&, class SemVersion const&, enum CurrentCmdVersion, bool);
     MCAPI void loadActorAnimationsSync(class ResourcePackManager&);
+    MCAPI ~ActorAnimationGroup();
 };

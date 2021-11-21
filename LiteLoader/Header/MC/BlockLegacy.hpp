@@ -199,6 +199,7 @@ public:
     virtual void _forceExecuteTrigger(class DefinitionTrigger const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&);
 
 public:
+    MCAPI BlockLegacy(std::string const&, int, class Material const&);
     MCAPI bool addAABB(class AABB const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI class BlockLegacy& addBlockProperties(enum BlockProperty);
     MCAPI class BlockLegacy& addTag(class HashedString const&);
@@ -255,6 +256,7 @@ public:
 
 private:
     MCAPI void initParams(class RenderParams&, class BlockSource&, class BlockPos const&, class Actor*) const;
+
 
 protected:
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&) const;

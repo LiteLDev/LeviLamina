@@ -10,4 +10,5 @@ namespace ToolRecipes {
 public:
 MCAPI static void addRecipes(class Recipes&);
 
+
 } // namespace ToolRecipes

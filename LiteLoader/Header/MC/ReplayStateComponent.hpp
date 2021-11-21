@@ -9,7 +9,10 @@ class ReplayStateComponent {
 
 public:
     MCAPI class ReplayStateComponent& operator=(class ReplayStateComponent&&);
+    MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
+    MCAPI ReplayStateComponent(class ReplayStateComponent&&);
     MCAPI unsigned __int64 getCurrentTick() const;
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy&, class PlayerAuthInputPacket const&) const;
     MCAPI void tick(struct IActorMovementProxy&, unsigned __int64);
+    MCAPI ~ReplayStateComponent();
 };

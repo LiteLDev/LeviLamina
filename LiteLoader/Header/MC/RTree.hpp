@@ -8,6 +8,8 @@ class RTree {
 #include "Extra/RTreeAPI.hpp"
 
 public:
+    MCAPI ~RTree();
+
     MCAPI static class std::optional<class RTree> create(std::vector<struct BiomeNoiseTarget> const&);
 
 private:

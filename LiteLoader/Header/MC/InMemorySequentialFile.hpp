@@ -10,4 +10,7 @@ public:
     virtual ~InMemorySequentialFile();
     virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
     virtual class leveldb::Status Skip(unsigned __int64);
+
+public:
+    MCAPI InMemorySequentialFile(class std::shared_ptr<class InMemoryFile>);
 };

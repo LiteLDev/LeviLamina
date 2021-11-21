@@ -16,4 +16,5 @@ MCAPI static std::string toString(__int64 const&, enum DateManager::TimeZoneType
 MCAPI static std::string toString_DateTime(struct tm const&, enum DateManager::TimeZoneType);
 MCAPI static std::string toString_DateTime(__int64 const&, enum DateManager::TimeZoneType);
 
+
 } // namespace DateManager

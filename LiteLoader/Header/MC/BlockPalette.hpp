@@ -8,6 +8,8 @@ class BlockPalette {
 #include "Extra/BlockPaletteAPI.hpp"
 
 public:
+    MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
+    MCAPI BlockPalette(class Level&);
     MCAPI void cacheBlockComponentData();
     MCAPI class Block const& convertLegacyBlock(struct BlockID, unsigned short) const;
     MCAPI bool convertLegacyBlocks(class buffer_span_mut<class Block const*>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, unsigned __int64) const;
@@ -17,6 +19,8 @@ public:
     MCAPI class BlockLegacy const* getBlockLegacy(std::string const&) const;
     MCAPI void initFromBlockDefinitions();
     MCAPI class Block const& switchBlock(class Block const&, class BlockLegacy const&) const;
+    MCAPI ~BlockPalette();
+
 
 private:
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;

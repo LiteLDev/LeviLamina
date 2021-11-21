@@ -19,10 +19,13 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI GoHomeGoal(class Mob&, float, int, float, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>);
+
     MCAPI static int const GIVE_UP_TICKS;
 
 private:
     MCAPI bool _hasRequiredComponents() const;
+
 
 protected:
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;

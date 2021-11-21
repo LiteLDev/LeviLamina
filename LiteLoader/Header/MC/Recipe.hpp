@@ -36,4 +36,8 @@ public:
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
 
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
+
+
+protected:
+    MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const&);
 };

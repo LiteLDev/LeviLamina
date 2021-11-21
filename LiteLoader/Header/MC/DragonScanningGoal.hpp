@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI DragonScanningGoal(class EnderDragon&);
+
+
 private:
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;

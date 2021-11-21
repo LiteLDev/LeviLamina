@@ -8,6 +8,8 @@ class LegacyBlockPlacementProcessor {
 #include "Extra/LegacyBlockPlacementProcessorAPI.hpp"
 
 public:
+    MCAPI LegacyBlockPlacementProcessor(class LegacyStructureSettings const&);
     MCAPI class Block const* applyBlockRules(class BlockSource&, class BlockPos&, class Block const*, class BlockPos const&);
     MCAPI class BlockPos& applyGravity(class BlockSource&, int, class BlockPos&) const;
+    MCAPI ~LegacyBlockPlacementProcessor();
 };

@@ -11,4 +11,5 @@ public:
 MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const&, class BlockSource const&);
 MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&);
 
+
 } // namespace SpawnFinder

@@ -8,6 +8,7 @@ class Objective {
 #include "Extra/ObjectiveAPI.hpp"
 
 public:
+    MCAPI Objective(std::string const&, class ObjectiveCriteria const&);
     MCAPI class ObjectiveCriteria const& getCriteria() const;
     MCAPI std::string const& getDisplayName() const;
     MCAPI std::string const& getName() const;

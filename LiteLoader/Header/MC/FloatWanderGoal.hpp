@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI FloatWanderGoal(class Mob&, float, float, float, bool, bool, struct FloatRange);
+
+
 private:
     MCAPI bool _canReach(class Vec3 const&, float);
 };

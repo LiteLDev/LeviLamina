@@ -11,6 +11,7 @@ public:
 MCAPI static void AddRef();
 MCAPI static void Deref();
 
+
 protected:
 MCAPI static int refCount;
 

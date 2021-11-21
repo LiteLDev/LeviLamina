@@ -8,6 +8,7 @@ class BlockComponentFactory {
 #include "Extra/BlockComponentFactoryAPI.hpp"
 
 public:
+    MCAPI BlockComponentFactory(class Experiments const&);
     MCAPI void initializeFactory(class Experiments const&);
 
     MCAPI static class entt::meta_any constructComponent(std::string const&);

@@ -712,4 +712,5 @@ MCAPI class Block const* mYellowCandleCake;
 MCAPI class Block const* mYellowFlower;
 MCAPI void unassignBlocks();
 
+
 } // namespace VanillaBlocks

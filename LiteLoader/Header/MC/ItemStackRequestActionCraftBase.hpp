@@ -7,4 +7,5 @@
 namespace ItemStackRequestActionCraftBase {
 #include "Extra/ItemStackRequestActionCraftBaseAPI.hpp"
 
+
 }

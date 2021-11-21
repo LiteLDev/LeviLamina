@@ -11,6 +11,10 @@ public:
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
     virtual void initializeFromDefinition(class Actor&);
 
+public:
+    MCAPI MoveNode();
+
+
 private:
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);
 };

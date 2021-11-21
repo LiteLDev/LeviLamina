@@ -8,6 +8,7 @@ class ScriptEngine {
 #include "Extra/ScriptEngineAPI.hpp"
 
 public:
+    MCAPI ScriptEngine(enum ScriptApi::ApiScriptType);
     MCAPI bool deserializeScriptObjectHandleToJson(class ScriptApi::ScriptObjectHandle const&, class Json::Value&);
     MCAPI bool fireEventToScript(class EventInfo const&, class ScriptApi::ScriptObjectHandle&&);
     MCAPI class ScriptLoggerConfig& getLoggerConfig();
@@ -35,6 +36,7 @@ private:
     MCAPI bool _processSystemInitialize();
     MCAPI bool _processSystemShutdown();
     MCAPI bool _processSystemUpdate();
+
 
 protected:
     MCAPI struct IdentifierResult _validateObjectIdentifier(std::string const&) const;

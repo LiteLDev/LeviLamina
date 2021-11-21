@@ -8,6 +8,7 @@ class BiomeComponentFactory {
 #include "Extra/BiomeComponentFactoryAPI.hpp"
 
 public:
+    MCAPI BiomeComponentFactory(enum BiomeComponentFactory::FactoryScope);
     MCAPI void processDataComponents(class Biome&, class IWorldRegistriesProvider&, class CompoundTag&) const;
     MCAPI void registrationFinished();
 };

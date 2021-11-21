@@ -11,7 +11,9 @@ public:
     virtual void unk_vfn_1();
 
 public:
+    MCAPI ScriptServerActorCreatedEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
+
 
 private:
     MCAPI static class HashedString const mHash;

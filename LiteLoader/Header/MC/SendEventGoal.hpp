@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI SendEventGoal(class Mob&, std::vector<struct SendEventData> const&);
+
+
 private:
     MCAPI int _selectBestSpell();
 };

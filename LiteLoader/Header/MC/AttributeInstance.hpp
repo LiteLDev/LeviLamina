@@ -11,6 +11,8 @@ public:
     virtual void tick();
 
 public:
+    MCAPI AttributeInstance();
+    MCAPI AttributeInstance(class AttributeInstance const&);
     MCAPI void addBuff(class AttributeBuff const&);
     MCAPI void addModifier(class AttributeModifier const&);
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);
@@ -49,7 +51,9 @@ public:
     MCAPI void setMaxValue(float);
     MCAPI void setRange(float, float, float);
 
+
 private:
+    MCAPI AttributeInstance(class BaseAttributeMap*, class Attribute const*);
     MCAPI float _calculateValue(class AttributeBuff const&);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);

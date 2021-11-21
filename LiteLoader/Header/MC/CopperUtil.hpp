@@ -11,4 +11,5 @@ MCAPI class mce::Color const WAX_OFF_COLOR;
 MCAPI class mce::Color const WAX_ON_COLOR;
 MCAPI void trySendWaxingTelemetryEventToClient(class Player&, class BlockLegacy const&);
 
+
 } // namespace CopperUtil

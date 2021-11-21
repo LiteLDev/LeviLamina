@@ -8,15 +8,15 @@ class LevelChunk {
 #include "Extra/LevelChunkAPI.hpp"
 
 public:
-    MCAPI enum ChunkTerrainDataState _getTerrainDataState() const;
-    MCAPI void addHardcodedSpawningArea(class BoundingBox const&, enum HardcodedSpawnAreaType);
-    MCAPI class LevelChunk& operator=(class LevelChunk&&);
+    MCAPI LevelChunk(class Dimension&, class ChunkPos const&, bool, enum SubChunkInitMode);
     MCAPI void _changeTerrainDataState(enum ChunkTerrainDataState, enum ChunkTerrainDataState);
+    MCAPI enum ChunkTerrainDataState _getTerrainDataState() const;
     MCAPI void _onRandomTickingQueueChanged();
     MCAPI void _onTickingQueueChanged();
     MCAPI void _setGenerator(class ChunkSource*);
     MCAPI bool _setOnChunkLoadedCalled();
     MCAPI void addEntity(class WeakEntityRef);
+    MCAPI void addHardcodedSpawningArea(class BoundingBox const&, enum HardcodedSpawnAreaType);
     MCAPI bool applySeasonsPostProcess(class BlockSource&);
     MCAPI void changeState(enum ChunkState, enum ChunkState);
     MCAPI bool checkSeasonsPostProcessDirty();
@@ -40,6 +40,7 @@ public:
     MCAPI void getActors(struct ActorDefinitionIdentifier const&, class AABB const&, std::vector<class Actor*>&) const;
     MCAPI class Biome& getBiome(class ChunkBlockPos const&) const;
     MCAPI class Block const& getBlock(class ChunkBlockPos const&) const;
+    MCAPI class LevelChunk& operator=(class LevelChunk&&);
     MCAPI class BlockActor* getBlockEntity(class ChunkBlockPos const&);
     MCAPI bool getBorder(class ChunkBlockPos const&) const;
     MCAPI struct BrightnessPair getBrightness(class ChunkBlockPos const&) const;
@@ -71,8 +72,8 @@ public:
     MCAPI struct Brightness getRawBrightness(class ChunkBlockPos const&, struct Brightness) const;
     MCAPI std::vector<struct LevelChunk::HardcodedSpawningArea> const& getSpawningAreas() const;
     MCAPI struct std::atomic<enum ChunkState> const& getState() const;
-    MCAPI struct SubChunk* getSubChunk(short);
     MCAPI struct SubChunk const* getSubChunk(short) const;
+    MCAPI struct SubChunk* getSubChunk(short);
     MCAPI class Biome const& getSurfaceBiome(class ChunkBlockPos) const;
     MCAPI class BlockTickingQueue& getTickQueue();
     MCAPI class BlockTickingQueue const& getTickQueue() const;
@@ -140,6 +141,7 @@ public:
     MCAPI void trySpawnSkeletonTrap(class BlockSource&, class BlockPos const&);
     MCAPI void validateAndFixBiomeStates();
     MCAPI bool wasTickedThisTick(struct Tick const&) const;
+    MCAPI ~LevelChunk();
 
     MCAPI static bool borderBlocksAreEnabled();
     MCAPI static class std::unique_ptr<class LevelChunk, struct LevelChunkPhase1Deleter> createNew(class Dimension&, class ChunkPos, bool, enum SubChunkInitMode);
@@ -155,6 +157,7 @@ private:
     MCAPI void _replaceBiomeStorage(unsigned short, std::unique_ptr<class SubChunkStorage<class Biome>>, class std::lock_guard<class std::mutex>&);
     MCAPI void _setBiome(class Biome const&, class ChunkBlockPos const&, bool);
     MCAPI void _setBiome(class Biome const&, unsigned short, unsigned short, class std::lock_guard<class std::mutex>&);
+
 
 protected:
     MCAPI void _deserializeEntity(class BlockSource&, class IDataInput&, std::vector<struct ActorLink>&);

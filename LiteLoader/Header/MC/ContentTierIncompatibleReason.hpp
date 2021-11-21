@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ContentTierIncompatibleReasonAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ContentTierIncompatibleReason {
+class ContentTierIncompatibleReason {
 #include "Extra/ContentTierIncompatibleReasonAPI.hpp"
 
 public:
-MCAPI static class ContentTierIncompatibleReason NoError;
+    MCAPI ContentTierIncompatibleReason(unsigned int);
 
-} // namespace ContentTierIncompatibleReason
+    MCAPI static class ContentTierIncompatibleReason NoError;
+};

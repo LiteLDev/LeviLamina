@@ -12,7 +12,9 @@ public:
     virtual void addFeature(class BlockVolume&, class BiomeSource const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
 
 public:
+    MCAPI CanyonFeature(short);
     MCAPI void apply(class BlockVolume&, class ChunkPos const&, class BiomeSource const&, class Random&, unsigned int, struct WorldGenContext const&);
+
 
 protected:
     MCAPI void addTunnel(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, float, float, float, int, int, float, struct WorldGenContext const&) const;

@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI FollowCaravanGoal(class Mob&, float, int, std::vector<struct MobDescriptor> const&);
+
+
 private:
     MCAPI bool checkCaravanType(class Mob*);
     MCAPI bool firstIsLeashed(class Mob*, int);

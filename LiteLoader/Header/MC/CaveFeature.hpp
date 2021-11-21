@@ -16,7 +16,9 @@ public:
     virtual void addFeature(class IBlockWorldGenAPI&, class ChunkPos, class Random&, class ChunkPos, class RenderParams&);
 
 public:
+    MCAPI CaveFeature();
     MCAPI float getWidthModifier(class RenderParams&) const;
+
 
 protected:
     MCAPI bool carveBlock(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class BlockPos, bool*, bool, class Vec3 const&, int, class BlockPos) const;

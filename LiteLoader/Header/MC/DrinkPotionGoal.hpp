@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI DrinkPotionGoal(class Mob&, float, std::vector<struct DrinkPotionData> const&);
+
+
 private:
     MCAPI void _updateEquipment(class ItemStack const&);
 

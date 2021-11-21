@@ -11,4 +11,5 @@ public:
     MCAPI void fillFromMultiRecipe(class MultiRecipe const&);
     MCAPI void fillFromRecipe(class Recipe const&);
     MCAPI void write(class BinaryStream&) const;
+    MCAPI ~CraftingDataEntry();
 };

@@ -9,4 +9,5 @@ namespace TargetBlock_Internal {
 
 MCAPI void createPoweredBlockComponentAtPos(class BlockSource&, class BlockPos const&);
 
+
 } // namespace TargetBlock_Internal

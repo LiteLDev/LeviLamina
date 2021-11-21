@@ -12,6 +12,9 @@ public:
     virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
+    MCAPI ScriptIdentifierBinderComponent(class ItemInstance const&);
+    MCAPI ScriptIdentifierBinderComponent(class ItemActor const&);
+    MCAPI ScriptIdentifierBinderComponent(std::string const&);
     MCAPI std::string const& getIdentifier() const;
 
     MCAPI static std::string const TAG;

@@ -12,6 +12,7 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI EatBlockDefinition();
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const&);
     MCAPI void initialize(class EntityContext&, class EatBlockGoal&);
 };

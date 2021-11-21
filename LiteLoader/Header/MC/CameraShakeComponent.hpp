@@ -10,4 +10,5 @@ namespace CameraShakeComponent {
 public:
 MCAPI static float getMaxIntensity();
 
+
 } // namespace CameraShakeComponent

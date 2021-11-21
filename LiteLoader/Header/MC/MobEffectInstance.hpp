@@ -11,8 +11,14 @@ public:
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
     MCAPI void applyEffects(class Actor*);
     MCAPI bool operator!=(class MobEffectInstance const&);
+    MCAPI MobEffectInstance(unsigned int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(unsigned int, int, int, int, int, int, bool, bool, bool);
+    MCAPI MobEffectInstance(unsigned int, int, int);
+    MCAPI MobEffectInstance(unsigned int, int);
+    MCAPI MobEffectInstance(unsigned int);
     MCAPI bool operator==(class MobEffectInstance const&);
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
+    MCAPI MobEffectInstance(class MobEffectInstance const&);
     MCAPI bool displaysOnScreenTextureAnimation() const;
     MCAPI int getAmplifier() const;
     MCAPI class HashedString const& getComponentName() const;
@@ -32,6 +38,7 @@ public:
     MCAPI bool tick(class Actor*);
     MCAPI void tryInitializeMobEffectData();
     MCAPI void update(class MobEffectInstance const&);
+    MCAPI ~MobEffectInstance();
 
     MCAPI static int const MAX_AMPLIFIER_COUNT;
     MCAPI static class MobEffectInstance const NO_EFFECT;

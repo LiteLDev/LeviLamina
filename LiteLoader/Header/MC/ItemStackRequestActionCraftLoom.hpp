@@ -15,5 +15,6 @@ public:
     virtual bool _read(class ReadOnlyBinaryStream&);
 
 public:
+    MCAPI ItemStackRequestActionCraftLoom();
     MCAPI std::string const& getPatternNameId() const;
 };

@@ -10,4 +10,5 @@ namespace FogVolumetricCoefficientSetting {
 public:
 MCAPI static struct FogVolumetricCoefficientSetting const ZERO_SETTING;
 
+
 } // namespace FogVolumetricCoefficientSetting

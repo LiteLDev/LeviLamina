@@ -8,6 +8,7 @@ class EnchantmentInstance {
 #include "Extra/EnchantmentInstanceAPI.hpp"
 
 public:
+    MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI int getEnchantLevel() const;
     MCAPI enum Enchant::Type getEnchantType() const;
 };

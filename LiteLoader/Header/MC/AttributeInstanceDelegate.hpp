@@ -13,6 +13,10 @@ public:
     virtual void unk_vfn_3();
     virtual float getBuffValue(class AttributeBuff const&);
 
+public:
+    MCAPI AttributeInstanceDelegate(class AttributeInstance const&);
+
+
 protected:
     MCAPI class AttributeInstance const& _getInstance() const;
     MCAPI class AttributeInstance* _getMutableInstance() const;

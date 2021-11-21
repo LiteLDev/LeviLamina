@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI RollGoal(class Mob&, float);
+
+
 private:
     MCAPI void _handleRoll(int, class Vec3&, float&, float&) const;
 };

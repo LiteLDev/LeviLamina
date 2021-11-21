@@ -8,9 +8,12 @@ class PathFinder {
 #include "Extra/PathFinderAPI.hpp"
 
 public:
+    MCAPI PathFinder(class BlockSource*, class NavigationComponent const&);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, float);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
     MCAPI enum NodeType isFree(class Actor&, class BlockPos const&, class BlockPos const&, class BlockPos const&, enum CanJumpIntoNode, enum CanClimbIntoNode);
+    MCAPI ~PathFinder();
+
 
 private:
     MCAPI void _addNeighbor(class PathfinderNode*, class PathfinderNode const&, unsigned int, unsigned __int64&);

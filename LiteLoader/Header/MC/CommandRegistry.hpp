@@ -8,6 +8,7 @@ class CommandRegistry {
 #include "Extra/CommandRegistryAPI.hpp"
 
 public:
+    MCAPI CommandRegistry();
     MCAPI std::string getCommandName(std::string const&) const;
     MCAPI struct CommandSyntaxInformation getCommandOverloadSyntaxInformation(class CommandOrigin const&, std::string const&) const;
     MCAPI enum CommandStatus getCommandStatus(std::string const&) const;
@@ -19,6 +20,7 @@ public:
     MCAPI class AvailableCommandsPacket serializeAvailableCommands() const;
     MCAPI void setNetworkUpdateCallback(class std::function<void(class Packet const&)>);
     MCAPI void setScoreCallback(class std::function<int(bool&, std::string const&, class Actor const&)>);
+    MCAPI ~CommandRegistry();
 
     MCAPI static char const* COMMAND_NAME_ENUM_NAME;
     MCAPI static char const* FUNCTION_NAME_SOFTENUM_NAME;
@@ -51,7 +53,7 @@ private:
     MCAPI std::vector<class CommandRegistry::Symbol> first(struct CommandRegistry::ParseTable&, std::vector<class CommandRegistry::Symbol> const&) const;
     MCAPI void forEachNonTerminal(class std::function<void(class CommandRegistry::Symbol)>) const;
     MCAPI unsigned __int64 getEnumData(struct CommandRegistry::ParseToken const&) const;
-    //MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const&) const;
+    MCAPI struct InvertableFilter<std::string> getInvertableFilter(struct CommandRegistry::ParseToken const&) const;
     MCAPI bool isValid(class CommandRegistry::Symbol) const;
     MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Overload const&) const;
     MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Signature const&) const;

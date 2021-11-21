@@ -18,4 +18,5 @@ MCAPI static class Vec2 const UNIT_X;
 MCAPI static class Vec2 const UNIT_Y;
 MCAPI static class Vec2 const ZERO;
 
+
 } // namespace Vec2

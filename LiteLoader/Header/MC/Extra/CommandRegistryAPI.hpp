@@ -9,6 +9,6 @@ struct ParseTable {};
 class Symbol {};
 class Overload {};
 class Signature {};
-class ParseToken {};
+struct ParseToken {};
 
 #endif

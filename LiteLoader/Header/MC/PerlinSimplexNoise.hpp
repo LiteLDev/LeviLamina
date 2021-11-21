@@ -8,11 +8,15 @@ class PerlinSimplexNoise {
 #include "Extra/PerlinSimplexNoiseAPI.hpp"
 
 public:
+    MCAPI PerlinSimplexNoise(unsigned int, int);
+    MCAPI PerlinSimplexNoise(class Random&, int);
     MCAPI float* getRegion(float*, class Vec2 const&, int, int, class Vec2 const&, float, float) const;
     MCAPI float getValue(class Vec3 const&) const;
     MCAPI float getValue(float, float) const;
     MCAPI float getValueNormalized(class Vec3 const&) const;
     MCAPI float getValueNormalized(float, float) const;
+    MCAPI ~PerlinSimplexNoise();
+
 
 private:
     MCAPI void _init(class Random&);

@@ -9,4 +9,5 @@ class BoostItem {
 
 public:
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
+    MCAPI ~BoostItem();
 };

@@ -22,7 +22,9 @@ public:
     virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
 
 public:
+    MCAPI CameraItemComponentLegacy(class Item&);
     MCAPI bool init(class Json::Value&, class SemVersion const&);
+
 
 private:
     MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char, class Vec3&) const;

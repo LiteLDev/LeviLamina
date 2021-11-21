@@ -8,6 +8,7 @@ class BaseCommandBlock {
 #include "Extra/BaseCommandBlockAPI.hpp"
 
 public:
+    MCAPI BaseCommandBlock();
     MCAPI std::string const& getCommand() const;
     MCAPI std::string getLastOutput() const;
     MCAPI std::string const& getName() const;
@@ -23,6 +24,8 @@ public:
     MCAPI void setTickDelay(int);
     MCAPI void setTrackOutput(bool);
     MCAPI bool shouldExecuteOnFirstTick() const;
+    MCAPI ~BaseCommandBlock();
+
 
 private:
     MCAPI bool _performCommand(class BlockSource&, class CommandOrigin const&, bool&);

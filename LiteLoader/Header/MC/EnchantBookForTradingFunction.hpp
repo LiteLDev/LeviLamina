@@ -13,6 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
 
+
 private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase&, class Random&, int&) const;
 };

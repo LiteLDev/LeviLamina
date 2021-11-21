@@ -8,6 +8,7 @@ class EconomyTradeableComponent {
 #include "Extra/EconomyTradeableComponentAPI.hpp"
 
 public:
+    MCAPI EconomyTradeableComponent(class Actor&);
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI class UpdateTradePacket createDataPacket(enum ContainerID);
     MCAPI void fixVillagerTierToMatchTradeList(class MerchantRecipeList*);
@@ -39,6 +40,7 @@ public:
     MCAPI void tryIncrementCuredDiscount();
     MCAPI void tryIncrementNearbyCuredDiscount();
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList*);
+
 
 private:
     MCAPI bool _generateTrades();

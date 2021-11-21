@@ -11,5 +11,6 @@ public:
     virtual bool isValid();
 
 public:
+    MCAPI KeyManager(std::string const&, enum Crypto::Asymmetric::System);
     MCAPI std::string getPublicKey() const;
 };

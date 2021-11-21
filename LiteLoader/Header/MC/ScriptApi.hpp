@@ -35,4 +35,5 @@ MCAPI void* RegisterQueryChakraCallback(void*, bool, void**, unsigned short, voi
 MCAPI void* RegisterSystemChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* WarningChakraCallback(void*, bool, void**, unsigned short, void*);
 
+
 } // namespace ScriptApi

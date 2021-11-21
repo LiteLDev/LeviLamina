@@ -4,10 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptPistonActionEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptPistonActionEvent {
+class ScriptPistonActionEvent {
 #include "Extra/ScriptPistonActionEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptPistonActionEvent> bind(struct Scripting::Version);
+    MCAPI ScriptPistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ~ScriptPistonActionEvent();
 
-} // namespace ScriptPistonActionEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptPistonActionEvent> bind(struct Scripting::Version);
+};

@@ -9,6 +9,11 @@ class PackInstance {
 
 public:
     MCAPI void forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, bool) const;
+    MCAPI bool operator==(class PackInstance const&);
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, int, bool, class PackSettings*);
+    MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack>>, std::string const&, bool, class PackSettings*);
+    MCAPI PackInstance(class PackInstance const&);
+    MCAPI PackInstance(class PackInstance&&);
     MCAPI std::string const& getFolderName() const;
     MCAPI double getLoadTime() const;
     MCAPI class PackManifest& getManifest();
@@ -26,7 +31,8 @@ public:
     MCAPI bool hasResource(class Core::Path const&) const;
     MCAPI bool isBaseGamePack() const;
     MCAPI bool isZipped() const;
-    MCAPI bool operator==(class PackInstance const&);
+    MCAPI ~PackInstance();
+
 
 private:
     MCAPI bool _isPackPointerValid() const;

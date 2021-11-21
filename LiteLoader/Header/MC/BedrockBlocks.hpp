@@ -13,4 +13,5 @@ MCAPI class Block const* mClientRequestPlaceholderBlock;
 MCAPI class Block const* mUnknown;
 MCAPI void unassignBlocks();
 
+
 } // namespace BedrockBlocks

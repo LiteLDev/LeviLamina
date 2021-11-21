@@ -8,6 +8,8 @@ class IntRange {
 #include "Extra/IntRangeAPI.hpp"
 
 public:
+    MCAPI IntRange(int);
+    MCAPI IntRange(int, int);
     MCAPI int getValue(class Random&) const;
     MCAPI int getValueInclusive(class Random&) const;
     MCAPI bool isInRangeInclusive(int) const;

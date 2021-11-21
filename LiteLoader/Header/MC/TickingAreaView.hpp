@@ -22,7 +22,9 @@ public:
     virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
 
 public:
+    MCAPI TickingAreaView(class ChunkSource&);
     MCAPI void unregisterChunkBuildOrderPolicies(class ChunkBuildOrderPolicyBase&);
+
 
 private:
     MCAPI void _tickChunk(struct Tick const&, class BlockSource&, class Level&, class ChunkPos const&);

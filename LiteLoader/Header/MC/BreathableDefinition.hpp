@@ -8,6 +8,7 @@ class BreathableDefinition {
 #include "Extra/BreathableDefinitionAPI.hpp"
 
 public:
+    MCAPI BreathableDefinition();
     MCAPI void addBreathableBlockDescriptor(class BlockDescriptor const&);
     MCAPI void addNonBreathableBlockDescriptor(class BlockDescriptor const&);
     MCAPI void initialize(class EntityContext&, class BreathableComponent&);

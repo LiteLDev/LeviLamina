@@ -9,5 +9,8 @@ class ActorOwnerComponent {
 
 public:
     MCAPI class ActorOwnerComponent& operator=(class ActorOwnerComponent&&);
+    MCAPI ActorOwnerComponent(std::unique_ptr<class Actor>);
+    MCAPI ActorOwnerComponent(class ActorOwnerComponent&&);
     MCAPI class Actor& getActor();
+    MCAPI ~ActorOwnerComponent();
 };

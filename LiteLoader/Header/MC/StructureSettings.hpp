@@ -9,14 +9,17 @@ class StructureSettings {
 
 public:
     MCAPI enum AnimationMode getAnimationMode() const;
-    MCAPI float getAnimationSeconds() const;
-    MCAPI unsigned int getAnimationTicks() const;
+    MCAPI unsigned int getIntegritySeed() const;
     MCAPI class StructureSettings& operator=(class StructureSettings const&);
     MCAPI bool getIgnoreBlocks() const;
     MCAPI enum Rotation getRotation() const;
     MCAPI class StructureSettings& operator=(class StructureSettings&&);
+    MCAPI StructureSettings(class StructureSettings const&);
+    MCAPI StructureSettings(class StructureSettings&&);
+    MCAPI StructureSettings();
+    MCAPI float getAnimationSeconds() const;
+    MCAPI unsigned int getAnimationTicks() const;
     MCAPI bool getIgnoreEntities() const;
-    MCAPI unsigned int getIntegritySeed() const;
     MCAPI float getIntegrityValue() const;
     MCAPI struct ActorUniqueID getLastTouchedByPlayerID() const;
     MCAPI enum Mirror getMirror() const;
@@ -40,6 +43,7 @@ public:
     MCAPI void setRotation(enum Rotation);
     MCAPI void setStructureOffset(class BlockPos const&);
     MCAPI void setStructureSize(class BlockPos const&);
+    MCAPI ~StructureSettings();
 
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_OFFSET;
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;

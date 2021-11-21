@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ServerScoreboardAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-class ServerScoreboard {
+class ServerScoreboard : Scoreboard {
 #include "Extra/ServerScoreboardAPI.hpp"
 public:
     virtual ~ServerScoreboard();
@@ -25,6 +25,7 @@ public:
     virtual void unk_vfn_15();
 
 public:
+    MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage*);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
     MCAPI void setClearDisplayObjectiveCallback(class std::function<void(std::string const&, class DisplayObjective const&)>);
@@ -32,6 +33,7 @@ public:
     MCAPI void setScoreChangedCallback(class std::function<void(struct ScoreboardId const&)>);
     MCAPI void setScoreRemovedCallback(class std::function<void(struct ScoreboardId const&)>);
     MCAPI void setSetDisplayObjectiveCallback(class std::function<void(std::string const&, class DisplayObjective const&)>);
+
 
 private:
     MCAPI void _stopTrackingObjective(class Objective const&);

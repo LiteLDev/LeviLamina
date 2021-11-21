@@ -21,6 +21,7 @@ public:
     MCAPI void onAttributeModified(class AttributeInstance const&);
     MCAPI class AttributeInstance& registerAttribute(class Attribute const&);
 
+
 private:
     MCAPI static class AttributeInstance mInvalidInstance;
 };

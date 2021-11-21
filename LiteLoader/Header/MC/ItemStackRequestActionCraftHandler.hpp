@@ -10,6 +10,7 @@ public:
     virtual ~ItemStackRequestActionCraftHandler();
 
 public:
+    MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler&, class Player&);
     MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, unsigned char);
     MCAPI class ItemInstance* _initSingleCraftResult(class ItemInstance const&);
     MCAPI enum ItemStackNetResult endRequest(enum ItemStackNetResult);
@@ -24,6 +25,7 @@ public:
     MCAPI void onContainerScreenOpen(class ContainerScreenContext const&);
     MCAPI void postRequest(bool);
     MCAPI enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
+
 
 private:
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);

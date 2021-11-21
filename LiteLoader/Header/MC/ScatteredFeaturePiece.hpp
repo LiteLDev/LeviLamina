@@ -7,6 +7,7 @@
 class ScatteredFeaturePiece {
 #include "Extra/ScatteredFeaturePieceAPI.hpp"
 
+
 protected:
     MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
 };

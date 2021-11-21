@@ -9,4 +9,5 @@ namespace ScriptResultUtil {
 
 MCAPI class std::optional<struct gametest::GameTestError> ScriptingResultToGameTestResult(class Scripting::ResultAny const&);
 
+
 } // namespace ScriptResultUtil

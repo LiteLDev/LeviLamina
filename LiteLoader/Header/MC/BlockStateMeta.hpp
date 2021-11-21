@@ -8,6 +8,7 @@ class BlockStateMeta {
 #include "Extra/BlockStateMetaAPI.hpp"
 
 public:
+    MCAPI BlockStateMeta(class ItemState const&, struct BlockStateDefinition const&);
     MCAPI bool const getBool(int) const;
     MCAPI unsigned __int64 getID() const;
     MCAPI int const getInt(int) const;

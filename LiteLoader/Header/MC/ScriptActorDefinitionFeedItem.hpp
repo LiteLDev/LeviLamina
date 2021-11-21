@@ -10,4 +10,5 @@ namespace ScriptActorDefinitionFeedItem {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<struct ActorDefinitionFeedItem> bind(struct Scripting::Version);
 
+
 } // namespace ScriptActorDefinitionFeedItem

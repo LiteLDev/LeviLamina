@@ -9,4 +9,5 @@ namespace MissingTextureAtlasItem {
 
 MCAPI class TextureAtlasItem const missingTextureItem;
 
+
 } // namespace MissingTextureAtlasItem

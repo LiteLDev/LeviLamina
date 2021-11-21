@@ -14,4 +14,5 @@ MCAPI void addUint32Field(class Json::Value&, std::string const&, unsigned int c
 MCAPI bool parseJson(std::string const&, class Json::Value&);
 MCAPI std::string serialize(class Json::Value const&);
 
+
 } // namespace JsonHelpers

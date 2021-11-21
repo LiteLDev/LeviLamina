@@ -12,6 +12,8 @@ public:
     virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
+    MCAPI ScriptLevelBinderComponent();
+    MCAPI ScriptLevelBinderComponent(enum entt::entity);
     MCAPI enum entt::entity getIdentifier() const;
 
     MCAPI static std::string const TAG;

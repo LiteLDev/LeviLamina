@@ -8,6 +8,7 @@ class AgentCommandComponent {
 #include "Extra/AgentCommandComponentAPI.hpp"
 
 public:
+    MCAPI AgentCommandComponent();
     MCAPI bool addCommand(std::unique_ptr<class AgentCommands::Command>);
     MCAPI std::unique_ptr<class AgentCommands::Command> const& getCurrentCommand() const;
     MCAPI int& getWaitForNextCommandTicks();

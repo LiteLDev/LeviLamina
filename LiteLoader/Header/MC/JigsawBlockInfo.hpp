@@ -9,4 +9,5 @@ class JigsawBlockInfo {
 
 public:
     MCAPI class JigsawBlockInfo& operator=(class JigsawBlockInfo&&);
+    MCAPI JigsawBlockInfo(class BlockPos const&, class Block const*, class Block const*, class JigsawEditorData);
 };

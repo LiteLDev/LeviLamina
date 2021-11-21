@@ -8,9 +8,12 @@ class BossComponent {
 #include "Extra/BossComponentAPI.hpp"
 
 public:
+    MCAPI BossComponent();
+    MCAPI enum BossBarColor getColor() const;
+    MCAPI class BossComponent& operator=(class BossComponent&&);
+    MCAPI BossComponent(class BossComponent&&);
     MCAPI void addPlayerToParty(class mce::UUID, int);
     MCAPI void broadcastBossEvent(class Actor&, enum BossEventUpdateType);
-    MCAPI enum BossBarColor getColor() const;
     MCAPI bool getCreateWorldFog() const;
     MCAPI float getHealthPercent() const;
     MCAPI int getLastHealth() const;
@@ -20,7 +23,6 @@ public:
     MCAPI class std::unordered_map<class mce::UUID, int, struct std::hash<class mce::UUID>, struct std::equal_to<class mce::UUID>, class std::allocator<struct std::pair<class mce::UUID const, int>>> const& getPlayerParty() const;
     MCAPI bool getShouldDarkenSky() const;
     MCAPI void handleRegisterPlayers(class Actor&);
-    MCAPI class BossComponent& operator=(class BossComponent&&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI void registerPlayer(class Actor&, class Player*);
     MCAPI void sendDeathTelemetry(class Actor&);
@@ -31,6 +33,8 @@ public:
     MCAPI void setName(class Actor&, std::string const&);
     MCAPI bool tryRemoveBoss(class Actor&, class Player&);
     MCAPI void unRegisterPlayer(class Actor&, class Player*);
+    MCAPI ~BossComponent();
+
 
 private:
     MCAPI void _sendBossEvent(class Actor&, enum BossEventUpdateType, class Player*);

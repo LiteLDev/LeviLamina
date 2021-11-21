@@ -10,6 +10,8 @@ class TradeTables {
 public:
     MCAPI struct TradeTable* fetchTable(std::string const&);
     MCAPI void reload(class Level&);
+    MCAPI ~TradeTables();
+
 
 private:
     MCAPI void _parseAndStoreTradeTable(class ResourcePackManager*, class Core::Path const&);

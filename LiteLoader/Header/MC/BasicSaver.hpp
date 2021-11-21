@@ -15,6 +15,7 @@ public:
     MCAPI bool serializeS32(int);
     MCAPI bool serializeString(std::string const&);
 
+
 private:
     MCAPI bool serialize(class entt::meta_any);
     MCAPI bool serialize(class entt::meta_any, struct SerializerTraits const&);

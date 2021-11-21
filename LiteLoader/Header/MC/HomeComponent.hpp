@@ -8,6 +8,7 @@ class HomeComponent {
 #include "Extra/HomeComponentAPI.hpp"
 
 public:
+    MCAPI HomeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;
     MCAPI class BlockPos getHomePos() const;

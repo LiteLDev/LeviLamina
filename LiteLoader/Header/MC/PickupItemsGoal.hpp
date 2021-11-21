@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
+
+
 private:
     MCAPI struct Shareable const* _getShareableItem(class ItemStack const&) const;
     MCAPI void _pickItemUp(class ItemActor*);

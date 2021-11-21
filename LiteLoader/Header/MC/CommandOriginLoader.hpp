@@ -11,5 +11,7 @@ public:
     virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const&);
 
 public:
+    MCAPI CommandOriginLoader(class ServerLevel&);
+
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const&, class ServerLevel&);
 };

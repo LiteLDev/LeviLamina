@@ -20,6 +20,7 @@ public:
     virtual void _initScreen(class ItemStackNetManagerScreen&);
 
 public:
+    MCAPI ItemStackNetManagerBase(class Player&, bool, bool);
     MCAPI bool isClientSide() const;
     MCAPI bool isScreenOpen() const;
 

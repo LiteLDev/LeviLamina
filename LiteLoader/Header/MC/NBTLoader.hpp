@@ -38,4 +38,7 @@ public:
     virtual bool isShort();
     virtual void unk_vfn_29();
     virtual bool isFloat();
+
+public:
+    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const*>);
 };

@@ -10,4 +10,5 @@ namespace VanillaBastionJigsawStructureElements {
 public:
 MCAPI static void initialize(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, class FeatureRegistry&, class JigsawStructureRegistry&);
 
+
 } // namespace VanillaBastionJigsawStructureElements

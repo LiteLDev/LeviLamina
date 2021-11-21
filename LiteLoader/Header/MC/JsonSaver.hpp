@@ -32,6 +32,7 @@ public:
     virtual bool doEndObject();
 
 public:
+    MCAPI JsonSaver();
     MCAPI void configurePrettyOutput(bool, char, unsigned int);
     MCAPI std::string toString() const;
 };

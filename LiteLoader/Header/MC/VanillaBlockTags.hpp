@@ -16,4 +16,5 @@ MCAPI static char const* const const Log;
 MCAPI static char const* const const Oak;
 MCAPI static char const* const const Spruce;
 
+
 } // namespace VanillaBlockTags

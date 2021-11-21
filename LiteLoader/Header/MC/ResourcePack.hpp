@@ -10,6 +10,7 @@ public:
     virtual ~ResourcePack();
 
 public:
+    MCAPI ResourcePack(class Pack&);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, int, bool) const;
     MCAPI void generateAssetSet();

@@ -20,4 +20,5 @@ MCAPI std::string const STRUCTURE_WORLD_ORIGIN;
 MCAPI std::string const TICK_DELAY;
 MCAPI std::string const TICK_QUEUE_DATA;
 
+
 } // namespace StructureTag

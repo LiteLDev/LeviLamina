@@ -25,4 +25,7 @@ public:
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
     virtual struct ActorUniqueID _generateNewID();
+
+public:
+    MCAPI StructureDataLoadHelper(class BlockPos const&, class BlockPos const&, class Vec3 const&, struct ActorUniqueID, enum Rotation, enum Mirror, class Level&);
 };

@@ -18,4 +18,7 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool _setWantedPosition();
+
+public:
+    MCAPI RandomStrollGoal(class Mob&, float, int, int, int);
 };

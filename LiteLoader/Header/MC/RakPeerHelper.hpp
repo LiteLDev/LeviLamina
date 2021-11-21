@@ -10,6 +10,7 @@ class RakPeerHelper {
 public:
     MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface*, struct ConnectionDefinition const&);
 
+
 private:
     MCAPI void LogIPSupport();
     MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int&);

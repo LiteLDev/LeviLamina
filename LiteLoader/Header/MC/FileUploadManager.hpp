@@ -12,12 +12,14 @@ public:
     virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
 
 public:
+    MCAPI FileUploadManager(class TaskGroup&, class std::shared_ptr<class IFileChunkUploader>);
     MCAPI void addCallbackQueue(class std::function<void(void)>);
     MCAPI void setFailed(enum UploadError);
     MCAPI void setUseStream(bool);
     MCAPI void update();
     MCAPI void uploadChunk(int);
     MCAPI void uploadFile(std::string const&, class Core::Path const&, bool, class Json::Value const&);
+
 
 private:
     MCAPI static std::string const BOUNDARY;

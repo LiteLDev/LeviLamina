@@ -19,5 +19,6 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI PetSleepWithOwnerGoal(class Mob&, float, int, int, float);
     MCAPI void setState(std::unique_ptr<class PetSleepWithOwnerState>);
 };

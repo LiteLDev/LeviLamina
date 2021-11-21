@@ -12,4 +12,5 @@ MCAPI static void loadJSON(class Json::Value, class SemVersion const&, std::vect
 MCAPI static void loadJSON(class Json::Value, class SemVersion const&, class BlockDescriptor&);
 MCAPI static void saveJSON(std::vector<class BlockDescriptor> const&, class Json::Value&);
 
+
 } // namespace BlockListSerializer

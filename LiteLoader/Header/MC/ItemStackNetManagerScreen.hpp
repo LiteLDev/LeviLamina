@@ -442,6 +442,7 @@ public:
     virtual void unk_vfn_432();
 
 public:
+    MCAPI ItemStackNetManagerScreen(class EntityRegistryOwned&);
     MCAPI class EntityContext& getEntity();
     MCAPI class EntityContext const& getEntity() const;
 };

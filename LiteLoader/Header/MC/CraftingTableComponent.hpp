@@ -9,4 +9,5 @@ class CraftingTableComponent {
 
 public:
     MCAPI struct CraftingTableComponent& operator=(struct CraftingTableComponent&&);
+    MCAPI ~CraftingTableComponent();
 };

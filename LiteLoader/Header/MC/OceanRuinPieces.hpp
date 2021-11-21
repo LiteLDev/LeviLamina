@@ -7,6 +7,7 @@
 class OceanRuinPieces {
 #include "Extra/OceanRuinPiecesAPI.hpp"
 
+
 private:
     MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
     MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;

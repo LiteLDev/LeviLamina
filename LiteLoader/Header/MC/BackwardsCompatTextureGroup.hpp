@@ -7,6 +7,7 @@
 class BackwardsCompatTextureGroup {
 #include "Extra/BackwardsCompatTextureGroupAPI.hpp"
 
+
 private:
     MCAPI static class BackwardsCompatTextureInfo const invalidInfo;
 };

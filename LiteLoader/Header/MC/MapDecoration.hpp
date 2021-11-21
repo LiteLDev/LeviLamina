@@ -8,10 +8,12 @@ class MapDecoration {
 #include "Extra/MapDecorationAPI.hpp"
 
 public:
+    MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&);
     MCAPI class mce::Color const& getColor() const;
     MCAPI enum MapDecoration::Type getImg() const;
     MCAPI std::string const& getLabel() const;
     MCAPI signed char getRot() const;
     MCAPI signed char getX() const;
     MCAPI signed char getY() const;
+    MCAPI ~MapDecoration();
 };

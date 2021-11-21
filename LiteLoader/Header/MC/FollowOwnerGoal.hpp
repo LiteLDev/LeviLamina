@@ -17,4 +17,7 @@ public:
     virtual void appendDebugInfo(std::string&);
     virtual void unk_vfn_8();
     virtual void onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>);
+
+public:
+    MCAPI FollowOwnerGoal(class Mob&, float, float, float);
 };

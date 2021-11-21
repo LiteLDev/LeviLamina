@@ -11,4 +11,5 @@ public:
 MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput&);
 MCAPI static void write(class CompoundTag const*, class IDataOutput&);
 
+
 } // namespace NbtIo

@@ -23,8 +23,11 @@ public:
     virtual void unk_vfn_13();
 
 public:
+    MCAPI WorldGenerator();
+
     MCAPI static enum StructureFeatureType getFeatureId(std::string const&);
     MCAPI static class gsl::basic_string_span<char const, -1> getFeatureName(enum StructureFeatureType);
+
 
 protected:
     MCAPI static unsigned __int64 const TICKING_QUEUE_EXTRA_LIMIT;

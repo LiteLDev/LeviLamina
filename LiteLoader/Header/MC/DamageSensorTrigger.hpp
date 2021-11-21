@@ -8,5 +8,8 @@ class DamageSensorTrigger {
 #include "Extra/DamageSensorTriggerAPI.hpp"
 
 public:
+    MCAPI DamageSensorTrigger();
+    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const&);
     MCAPI void setCause(std::string const&);
+    MCAPI ~DamageSensorTrigger();
 };

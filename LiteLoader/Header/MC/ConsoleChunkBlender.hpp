@@ -7,6 +7,10 @@
 class ConsoleChunkBlender {
 #include "Extra/ConsoleChunkBlenderAPI.hpp"
 
+public:
+    MCAPI ~ConsoleChunkBlender();
+
+
 protected:
     MCAPI void _blendChunkEnd4J(class LevelChunk&, class LevelChunk&);
     MCAPI void _blendChunkNether4J(class LevelChunk&, class LevelChunk&);

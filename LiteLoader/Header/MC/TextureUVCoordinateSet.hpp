@@ -8,5 +8,8 @@ class TextureUVCoordinateSet {
 #include "Extra/TextureUVCoordinateSetAPI.hpp"
 
 public:
+    MCAPI TextureUVCoordinateSet();
+    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const&);
     MCAPI struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const&);
+    MCAPI ~TextureUVCoordinateSet();
 };

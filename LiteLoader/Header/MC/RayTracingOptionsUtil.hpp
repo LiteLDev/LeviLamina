@@ -9,4 +9,5 @@ namespace RayTracingOptionsUtil {
 
 MCAPI struct PackManifest::CapabilityRegisterer rayTracingCapabilityRegister;
 
+
 } // namespace RayTracingOptionsUtil

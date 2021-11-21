@@ -9,4 +9,7 @@ class InMemoryRandomAccessFile {
 public:
     virtual ~InMemoryRandomAccessFile();
     virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*);
+
+public:
+    MCAPI InMemoryRandomAccessFile(class std::shared_ptr<class InMemoryFile>);
 };

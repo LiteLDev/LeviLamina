@@ -11,9 +11,11 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerBlockDestructionStoppedEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setBlockPos(class BlockPos const&);
     MCAPI void setProgress(float);
+
 
 private:
     MCAPI static class HashedString const mHash;

@@ -9,6 +9,7 @@ class ValidatorRegistry {
 public:
     virtual ~ValidatorRegistry();
 
+
 private:
     MCAPI static class ServiceReference<class ValidatorRegistry> _get();
 };

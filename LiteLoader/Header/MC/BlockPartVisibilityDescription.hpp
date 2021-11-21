@@ -16,6 +16,8 @@ public:
     virtual void unk_vfn_6();
 
 public:
+    MCAPI BlockPartVisibilityDescription();
+
     MCAPI static std::string const NameID;
     MCAPI static void bindType();
 };

@@ -13,5 +13,7 @@ public:
     virtual void unk_vfn_3();
 
 public:
+    MCAPI TextObjectText(std::string);
+
     MCAPI static class Json::Value asJsonValue(std::string const&);
 };

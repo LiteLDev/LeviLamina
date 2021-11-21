@@ -13,6 +13,7 @@ public:
     MCAPI void initialize(class EntityContext&, class DamageSensorComponent&) const;
     MCAPI void serializeData(class Json::Value&) const;
     MCAPI void uninitialize(class EntityContext&, class DamageSensorComponent&) const;
+    MCAPI ~DamageSensorDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DamageSensorDefinition>>&);
 

@@ -9,4 +9,5 @@ namespace SlabBlockItemUtil {
 
 MCAPI void convertToDoubleBlock(class ItemStack&, class Actor&, class BlockPos const&, class Block const&);
 
+
 } // namespace SlabBlockItemUtil

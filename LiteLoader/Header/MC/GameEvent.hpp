@@ -8,6 +8,7 @@ class GameEvent {
 #include "Extra/GameEventAPI.hpp"
 
 public:
+    MCAPI GameEvent(enum GameEventConfig::GameEvents, unsigned char);
     MCAPI enum GameEventConfig::GameEvents const getEventType() const;
     MCAPI float getRadius() const;
     MCAPI unsigned __int64 getRadiusSqrd() const;

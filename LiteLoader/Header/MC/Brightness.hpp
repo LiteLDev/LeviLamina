@@ -9,7 +9,9 @@ class Brightness {
 
 public:
     MCAPI struct Brightness& operator=(struct Brightness&&);
+    MCAPI Brightness(unsigned char const&);
     MCAPI struct Brightness& operator=(struct Brightness const&);
+    MCAPI Brightness(struct Brightness const&);
 
     MCAPI static struct Brightness const INVALID;
     MCAPI static struct Brightness const MAX;

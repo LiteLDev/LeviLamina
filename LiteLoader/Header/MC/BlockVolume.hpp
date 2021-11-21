@@ -8,6 +8,7 @@ class BlockVolume {
 #include "Extra/BlockVolumeAPI.hpp"
 
 public:
+    MCAPI BlockVolume(class buffer_span_mut<class Block const*>, int, int, int, class Block const&, int);
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
     MCAPI std::unique_ptr<std::vector<short>> computeHeightMap() const;
     MCAPI struct BlockVolume::BlockVolumeIter end() const;

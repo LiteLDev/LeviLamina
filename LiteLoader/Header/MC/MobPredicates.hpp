@@ -11,4 +11,5 @@ MCAPI bool _mobHasFamilies(struct ActorTargetFilter const&, class Actor&);
 MCAPI bool _mobHoldingItem(struct ActorTargetFilter const&, class Actor&);
 MCAPI bool _mobWearingArmor(struct ActorTargetFilter const&, class Actor&);
 
+
 } // namespace MobPredicates

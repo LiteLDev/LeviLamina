@@ -11,4 +11,5 @@ MCAPI class WeakPtr<class BlockLegacy> getBlockTypeFromLegacyId(unsigned int);
 MCAPI int getBlockTypeLegacyIdFromName(std::string const&);
 MCAPI class Block const* tryGetLegacyState(unsigned int, unsigned int);
 
+
 } // namespace VanillaBlockConversion

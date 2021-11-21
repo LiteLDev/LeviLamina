@@ -18,6 +18,7 @@ public:
 public:
     MCAPI void clear(class AutomaticID<class Dimension, int>);
 
+
 private:
     MCAPI static std::string const GAME_TEST_INSTANCE_PREFIX;
 };

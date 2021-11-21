@@ -8,6 +8,8 @@ class PathfinderNode {
 #include "Extra/PathfinderNodeAPI.hpp"
 
 public:
+    MCAPI PathfinderNode(class BlockPos const&, enum NodeType);
+    MCAPI PathfinderNode(class PathfinderNode const&);
     MCAPI float distanceTo(class PathfinderNode*) const;
     MCAPI float distanceToSqr(class PathfinderNode*) const;
     MCAPI bool equals(class PathfinderNode*);

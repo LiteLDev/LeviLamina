@@ -34,6 +34,7 @@ public:
     virtual void unk_vfn_24();
 
 public:
+    MCAPI AppPlatformListener();
     MCAPI void initListener(float);
     MCAPI void terminate();
 };

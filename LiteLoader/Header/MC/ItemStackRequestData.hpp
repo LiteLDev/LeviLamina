@@ -10,6 +10,7 @@ class ItemStackRequestData {
 public:
     MCAPI class ItemStackRequestAction const* tryFindAction(enum ItemStackRequestActionType) const;
     MCAPI void write(class BinaryStream&) const;
+    MCAPI ~ItemStackRequestData();
 
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream&);
 };

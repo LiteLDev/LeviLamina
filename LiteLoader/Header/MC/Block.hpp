@@ -11,18 +11,19 @@ public:
     virtual int /*enum BlockRenderLayer*/ getRenderLayer();
 
 public:
+    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy*>, class CompoundTag, unsigned int const&);
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI bool addCollisionShapes(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
     MCAPI class Block& addTag(class HashedString const&);
     MCAPI void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool breaksFallingBlocks(class BaseGameVersion) const;
+    MCAPI bool causesFreezeEffect() const;
+    MCAPI bool operator!=(class Block const&);
+    MCAPI bool canHurtAndBreakItem() const;
+    MCAPI bool operator==(class Block const&);
     MCAPI bool attack(class Player*, class BlockPos const&) const;
     MCAPI std::string buildDescriptionId() const;
-    MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
-    MCAPI bool operator!=(class Block const&);
-    MCAPI bool canInstatick() const;
-    MCAPI bool operator==(class Block const&);
-    MCAPI bool breaksFallingBlocks(class BaseGameVersion) const;
     MCAPI std::string buildDescriptionName() const;
     MCAPI void cacheComponentData();
     MCAPI float calcGroundFriction(struct IMobMovementProxy const&, class BlockPos const&) const;
@@ -31,11 +32,11 @@ public:
     MCAPI bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI bool canBeOriginalSurface() const;
     MCAPI bool canConnect(class Block const&, unsigned char, class Block const&) const;
-    MCAPI bool canHurtAndBreakItem() const;
+    MCAPI bool canInstatick() const;
     MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
     MCAPI bool canSlide(class BlockSource&, class BlockPos const&) const;
     MCAPI bool canSurvive(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool causesFreezeEffect() const;
+    MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&) const;
     MCAPI class Block const& copyState(class Block const&, class ItemState const&) const;
@@ -175,6 +176,7 @@ public:
 
 private:
     MCAPI bool _isSolid() const;
+
 
 protected:
     MCAPI void buildSerializationId(unsigned int);

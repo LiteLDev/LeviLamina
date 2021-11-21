@@ -9,4 +9,5 @@ namespace LightningBoltUtil {
 
 MCAPI void _clearCopperOnLightningStrike(class BlockSource&, class BlockPos const&);
 
+
 } // namespace LightningBoltUtil

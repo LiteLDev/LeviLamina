@@ -31,4 +31,5 @@ MCAPI class Actor* spawnEntityAt(class BlockSource&, class Vec3 const&, struct A
 MCAPI std::string toJsonResult(std::string const&, class Json::Value const&);
 MCAPI std::string const validatePath(class CommandOutput&, class CommandFilePath const&);
 
+
 } // namespace CommandUtils

@@ -8,5 +8,7 @@ class NameAction {
 #include "Extra/NameActionAPI.hpp"
 
 public:
+    MCAPI NameAction(struct NameAction const&);
     MCAPI void addNameFilterByName(std::string const&);
+    MCAPI ~NameAction();
 };

@@ -11,4 +11,5 @@ MCAPI std::string const BedrockVanillaTag;
 MCAPI enum TitleInfo::TitleId const CurrentTitleId;
 MCAPI std::string const EarthTag;
 
+
 } // namespace TitleInfo

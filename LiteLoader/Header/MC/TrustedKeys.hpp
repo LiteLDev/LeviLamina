@@ -9,4 +9,5 @@ namespace TrustedKeys {
 
 MCAPI std::string const AuthServicePublicKey;
 
+
 } // namespace TrustedKeys

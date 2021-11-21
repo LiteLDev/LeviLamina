@@ -9,4 +9,5 @@ namespace ScriptSignals {
 
 MCAPI void bind(class Scripting::ModuleBindingBuilder&, struct Scripting::Version);
 
+
 } // namespace ScriptSignals

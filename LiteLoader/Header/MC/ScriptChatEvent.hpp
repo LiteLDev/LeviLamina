@@ -8,7 +8,10 @@ class ScriptChatEvent {
 #include "Extra/ScriptChatEventAPI.hpp"
 
 public:
+    MCAPI ScriptChatEvent(struct ScriptChatEvent const&);
+    MCAPI ScriptChatEvent(struct ChatEvent const&, class Scripting::WeakLifetimeScope const&);
     MCAPI void copyTo(struct ChatEvent&, class Scripting::WeakLifetimeScope const&) const;
+    MCAPI ~ScriptChatEvent();
 
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptChatEvent> bind(struct Scripting::Version);
 };

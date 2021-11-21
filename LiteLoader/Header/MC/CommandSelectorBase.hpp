@@ -15,6 +15,8 @@ public:
     MCAPI bool isExplicitIdSelector() const;
     MCAPI void setIncludeDeadPlayers(bool);
     MCAPI void setType(enum CommandSelectionType);
+    MCAPI ~CommandSelectorBase();
+
 
 private:
     MCAPI bool filter(class CommandOrigin const&, class Actor&, float) const;
@@ -24,6 +26,8 @@ private:
     MCAPI bool matchTag(class Actor const&) const;
     MCAPI bool matchType(class Actor const&) const;
 
+
 protected:
+    MCAPI CommandSelectorBase(bool);
     MCAPI class std::shared_ptr<std::vector<class Actor*>> newResults(class CommandOrigin const&) const;
 };

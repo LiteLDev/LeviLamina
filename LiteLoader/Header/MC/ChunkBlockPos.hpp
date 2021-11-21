@@ -8,6 +8,8 @@ class ChunkBlockPos {
 #include "Extra/ChunkBlockPosAPI.hpp"
 
 public:
+    MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
+    MCAPI ChunkBlockPos(class BlockPos const&, short);
     MCAPI class Pos toPos() const;
 
     MCAPI static class ChunkBlockPos from2D(unsigned char, unsigned char);

@@ -9,4 +9,7 @@ class CommandOriginData {
 
 public:
     MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&);
+    MCAPI CommandOriginData();
+    MCAPI CommandOriginData(struct CommandOriginData const&);
+    MCAPI ~CommandOriginData();
 };

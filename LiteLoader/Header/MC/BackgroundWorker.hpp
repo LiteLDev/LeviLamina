@@ -16,6 +16,7 @@ public:
     virtual void unk_vfn_6();
 
 public:
+    MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, class WorkerPool&, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;
     MCAPI bool isIdle() const;

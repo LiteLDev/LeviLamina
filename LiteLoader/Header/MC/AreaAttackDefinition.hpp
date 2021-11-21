@@ -8,6 +8,7 @@ class AreaAttackDefinition {
 #include "Extra/AreaAttackDefinitionAPI.hpp"
 
 public:
+    MCAPI AreaAttackDefinition();
     MCAPI void initialize(class EntityContext&, class AreaAttackComponent&);
     MCAPI void setDamageCause(std::string const&);
 

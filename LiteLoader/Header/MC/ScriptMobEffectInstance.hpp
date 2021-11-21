@@ -12,4 +12,5 @@ MCAPI static class Scripting::ClassBindingBuilder<class ScriptMobEffectInstance>
 MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> getHandle(class MobEffectInstance const*, class Scripting::WeakLifetimeScope const&);
 MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> track(class MobEffectInstance const*, class Scripting::WeakLifetimeScope const&);
 
+
 } // namespace ScriptMobEffectInstance

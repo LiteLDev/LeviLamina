@@ -9,4 +9,6 @@ class PackedItemUseLegacyInventoryTransaction {
 
 public:
     MCAPI struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
+    MCAPI ~PackedItemUseLegacyInventoryTransaction();
 };

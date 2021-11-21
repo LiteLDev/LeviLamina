@@ -8,6 +8,7 @@ class PhysicsDefinition {
 #include "Extra/PhysicsDefinitionAPI.hpp"
 
 public:
+    MCAPI PhysicsDefinition();
     MCAPI void initialize(class EntityContext&, class PhysicsComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class PhysicsDefinition>>&);

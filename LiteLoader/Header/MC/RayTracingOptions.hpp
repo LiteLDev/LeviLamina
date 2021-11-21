@@ -10,4 +10,5 @@ namespace RayTracingOptions {
 public:
 MCAPI static class gsl::basic_string_span<char const, -1> const RAY_TRACING_TAG;
 
+
 } // namespace RayTracingOptions

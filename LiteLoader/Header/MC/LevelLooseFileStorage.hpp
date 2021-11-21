@@ -8,5 +8,6 @@ class LevelLooseFileStorage {
 #include "Extra/LevelLooseFileStorageAPI.hpp"
 
 public:
+    MCAPI LevelLooseFileStorage(class Core::Path const&, class ContentIdentity const&, class IContentKeyProvider const&);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy() const;
 };

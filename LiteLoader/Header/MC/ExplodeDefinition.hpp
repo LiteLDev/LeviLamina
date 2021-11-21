@@ -8,6 +8,7 @@ class ExplodeDefinition {
 #include "Extra/ExplodeDefinitionAPI.hpp"
 
 public:
+    MCAPI ExplodeDefinition();
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class ExplodeComponent&) const;
     MCAPI void serializeData(class Json::Value&) const;

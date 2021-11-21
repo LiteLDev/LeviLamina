@@ -13,4 +13,5 @@ MCAPI static class gsl::basic_string_span<char const, -1> const GLB_BUFFER_URI;
 MCAPI static class gsl::basic_string_span<char const, -1> const GLB_EXTENSION;
 MCAPI static class gsl::basic_string_span<char const, -1> const GLTF_EXTENSION;
 
+
 } // namespace glTFExporter

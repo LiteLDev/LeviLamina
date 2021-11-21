@@ -10,6 +10,8 @@ public:
     virtual ~MessagingCommand();
     virtual void unk_vfn_1();
 
+
 protected:
+    MCAPI MessagingCommand(bool, bool);
     MCAPI bool checkChatPermissions(class CommandOrigin const&, class CommandOutput&) const;
 };

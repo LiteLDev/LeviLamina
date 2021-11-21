@@ -197,6 +197,10 @@ public:
     virtual void unk_vfn_187();
     virtual();
 
+public:
+    MCAPI ClassroomModeNetworkHandler(bool);
+
+
 private:
     MCAPI void _connect(std::string const&);
 };

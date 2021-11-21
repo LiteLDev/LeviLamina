@@ -14,6 +14,7 @@ public:
     virtual void unk_vfn_4();
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
 
+
 private:
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const&);
     MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const&);

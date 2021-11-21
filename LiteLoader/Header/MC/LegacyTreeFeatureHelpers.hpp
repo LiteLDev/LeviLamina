@@ -9,4 +9,5 @@ namespace LegacyTreeFeatureHelpers {
 
 MCAPI void _setupForestCount(float, int&, class Random&);
 
+
 } // namespace LegacyTreeFeatureHelpers

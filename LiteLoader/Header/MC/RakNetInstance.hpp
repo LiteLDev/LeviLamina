@@ -7,6 +7,10 @@
 class RakNetInstance {
 #include "Extra/RakNetInstanceAPI.hpp"
 
+public:
+    MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks&, class RakPeerHelper::IPSupportInterface&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
+
+
 private:
     MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const&);
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const&);

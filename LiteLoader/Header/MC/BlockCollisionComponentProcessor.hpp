@@ -11,4 +11,5 @@ public:
 MCAPI static void _tryBake(struct BlockRotationComponent const*, struct BlockCollisionComponent*);
 MCAPI static std::unique_ptr<class Util::EntityComponentProcessor> getProcessor();
 
+
 } // namespace BlockCollisionComponentProcessor

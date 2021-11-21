@@ -19,6 +19,7 @@ MCAPI static class AutomaticID<class Dimension, int> fromString(std::string cons
 MCAPI static int toSerializedInt(class AutomaticID<class Dimension, int> const&);
 MCAPI static std::string const toString(class AutomaticID<class Dimension, int> const&);
 
+
 protected:
 MCAPI static class BidirectionalUnorderedMap<std::string, class AutomaticID<class Dimension, int>> const DimensionMap;
 

@@ -14,4 +14,5 @@ MCAPI void log(class ItemStack const&, std::string);
 MCAPI void log(class ItemStackResponsePacket const&, std::string);
 MCAPI void log(std::string);
 
+
 } // namespace ItemTransactionLogger

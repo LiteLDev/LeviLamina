@@ -10,4 +10,7 @@ public:
     virtual ~MoveTowardsHomeRestrictionDefinition();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
+
+public:
+    MCAPI MoveTowardsHomeRestrictionDefinition();
 };

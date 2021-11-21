@@ -8,8 +8,10 @@ class CommandAreaFactory {
 #include "Extra/CommandAreaFactoryAPI.hpp"
 
 public:
+    MCAPI CommandAreaFactory(class Dimension&);
     MCAPI std::unique_ptr<class CommandArea> findArea(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> findAreaWithBuffer(class BlockPos const&, class BlockPos const&, bool) const;
+
 
 private:
     MCAPI std::unique_ptr<class CommandArea> _getArea(struct Bounds const&, bool) const;

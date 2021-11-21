@@ -18,4 +18,7 @@ public:
     virtual bool peek();
     virtual bool receive(char*, unsigned __int64);
     virtual void send(char const*, unsigned __int64);
+
+public:
+    MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog&);
 };

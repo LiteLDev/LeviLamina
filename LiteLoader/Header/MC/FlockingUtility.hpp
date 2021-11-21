@@ -11,4 +11,5 @@ MCAPI bool checkForSteeringCollision(class Actor&, class Vec3 const&, float, cla
 MCAPI void chooseRandomDirection(class Actor&, class Vec3&);
 MCAPI void getWaterHeights(class Actor const&, float&, float&);
 
+
 } // namespace FlockingUtility

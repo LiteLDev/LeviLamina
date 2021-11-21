@@ -7,7 +7,10 @@
 class WeakStorageFeature {
 #include "Extra/WeakStorageFeatureAPI.hpp"
 
+
 protected:
     MCAPI class WeakStorageFeature& operator=(class WeakStorageFeature&&);
+    MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
+    MCAPI WeakStorageFeature(class WeakStorageFeature&&);
     MCAPI bool _isSet() const;
 };

@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/LeashableDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace LeashableDefinition {
+class LeashableDefinition {
 #include "Extra/LeashableDefinitionAPI.hpp"
 
 public:
-MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>>&);
+    MCAPI LeashableDefinition();
 
-} // namespace LeashableDefinition
+    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class LeashableDefinition>>&);
+};

@@ -12,4 +12,5 @@ public:
     MCAPI void addErrors(std::vector<std::string> const&);
     MCAPI void addWarning(std::string const&);
     MCAPI void writeToContentLog() const;
+    MCAPI ~ScriptPluginResult();
 };

@@ -14,4 +14,5 @@ public:
     MCAPI void addExpectedAction(class InventoryAction const&);
     MCAPI void forceBalanceTransaction();
     MCAPI void resetExpectedActions();
+    MCAPI ~InventoryTransactionManager();
 };

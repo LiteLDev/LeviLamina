@@ -12,6 +12,7 @@ public:
     MCAPI void deleteDataWithID(std::string const&, class LevelStorage&);
     MCAPI void saveDataWithID(std::string const&, class CompoundTag const&, class LevelStorage&);
 
+
 protected:
     MCAPI std::string _createLevelStorageID(std::string const&, std::string const&, std::string const&);
 };

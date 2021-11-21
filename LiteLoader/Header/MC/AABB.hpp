@@ -9,12 +9,15 @@ class AABB {
 
 public:
     MCAPI class Vec3 axisInside(class AABB const&, class Vec3) const;
+    MCAPI bool operator==(class AABB const&);
+    MCAPI AABB(float, float, float, float, float, float);
+    MCAPI AABB(class Vec3 const&, float);
+    MCAPI AABB(class Vec3 const&, class Vec3 const&);
     MCAPI class HitResult clip(class Vec3 const&, class Vec3 const&) const;
     MCAPI class Vec3 clipCollide(class AABB const&, class Vec3 const&, bool, float*) const;
     MCAPI class AABB cloneAndExpandAlongDirection(class Vec3 const&) const;
     MCAPI class AABB cloneAndFloor(float, float) const;
     MCAPI class AABB cloneAndFloorMinAndCeilingMax() const;
-    MCAPI bool operator==(class AABB const&);
     MCAPI class AABB cloneAndGrow(class Vec3 const&) const;
     MCAPI class AABB cloneAndShrink(class Vec3 const&) const;
     MCAPI class AABB cloneAndTransformByMatrix(class Matrix const&) const;

@@ -10,4 +10,5 @@ class SurfaceMaterialAdjustmentEvaluated {
 public:
     MCAPI bool empty() const;
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
+    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 };

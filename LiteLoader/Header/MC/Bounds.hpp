@@ -8,5 +8,7 @@ class Bounds {
 #include "Extra/BoundsAPI.hpp"
 
 public:
+    MCAPI Bounds(class ChunkPos const&, class ChunkPos const&);
+    MCAPI Bounds(class BlockPos const&, class BlockPos const&, int, enum Bounds::Option);
     MCAPI bool contains(struct Bounds const&) const;
 };

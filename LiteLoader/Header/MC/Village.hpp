@@ -8,6 +8,7 @@ class Village {
 #include "Extra/VillageAPI.hpp"
 
 public:
+    MCAPI Village(class Dimension&, class mce::UUID, class BlockPos const&);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const&);
     MCAPI void addAggressor(class Mob const&);
     MCAPI bool addPOI(class std::weak_ptr<class POIInstance>);

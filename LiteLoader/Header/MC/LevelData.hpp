@@ -8,10 +8,13 @@ class LevelData {
 #include "Extra/LevelDataAPI.hpp"
 
 public:
+    MCAPI void disableAchievements();
+    MCAPI class Experiments const& getExperiments() const;
+    MCAPI class LevelData& operator=(class LevelData&&);
+    MCAPI LevelData(bool);
+    MCAPI LevelData(class LevelSettings const&, std::string const&, enum GeneratorType, class BlockPos const&, bool, enum EducationEditionOffer, float, float);
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
-    MCAPI void disableAchievements();
-    MCAPI class LevelData& operator=(class LevelData&&);
     MCAPI bool educationFeaturesEnabled() const;
     MCAPI struct AdventureSettings& getAdventureSettings();
     MCAPI struct AdventureSettings const& getAdventureSettings() const;
@@ -26,7 +29,6 @@ public:
     MCAPI std::string const& getEducationOid() const;
     MCAPI std::string const& getEducationProductId() const;
     MCAPI class Experiments& getExperiments();
-    MCAPI class Experiments const& getExperiments() const;
     MCAPI class Json::Value const& getFlatWorldGeneratorOptions() const;
     MCAPI bool getForceGameType() const;
     MCAPI enum Difficulty getGameDifficulty() const;
@@ -126,6 +128,8 @@ public:
     MCAPI void touchLastLoadedWithVersion();
     MCAPI void updateLastTimePlayed() const;
     MCAPI void v1_read(class RakNet::BitStream&, enum StorageVersion);
+    MCAPI ~LevelData();
+
 
 private:
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();

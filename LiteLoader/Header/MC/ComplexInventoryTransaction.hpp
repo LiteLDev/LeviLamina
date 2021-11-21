@@ -15,6 +15,8 @@ public:
     virtual void unk_vfn_5();
 
 public:
+    MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
+
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const&);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);

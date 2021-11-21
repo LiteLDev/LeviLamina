@@ -10,4 +10,5 @@ namespace EntityNetId {
 public:
 MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
 
+
 } // namespace EntityNetId

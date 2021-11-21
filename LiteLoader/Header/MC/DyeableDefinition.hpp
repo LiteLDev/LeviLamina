@@ -10,4 +10,5 @@ namespace DyeableDefinition {
 public:
 MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct DyeableDefinition>>&);
 
+
 } // namespace DyeableDefinition

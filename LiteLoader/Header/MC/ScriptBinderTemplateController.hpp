@@ -8,7 +8,10 @@ class ScriptBinderTemplateController {
 #include "Extra/ScriptBinderTemplateControllerAPI.hpp"
 
 public:
+    MCAPI ScriptBinderTemplateController();
     MCAPI std::unique_ptr<class ScriptObjectBinder> deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    MCAPI ~ScriptBinderTemplateController();
+
 
 private:
     MCAPI void _initialize();

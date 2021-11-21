@@ -17,4 +17,7 @@ public:
     virtual double nextGaussianDouble();
     virtual void consumeCount(unsigned int);
     virtual std::unique_ptr<class IRandom> fork();
+
+public:
+    MCAPI SimpleRandom(__int64);
 };

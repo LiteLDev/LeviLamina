@@ -8,7 +8,10 @@ class ScriptExplosionStartedEvent {
 #include "Extra/ScriptExplosionStartedEventAPI.hpp"
 
 public:
+    MCAPI ScriptExplosionStartedEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI ScriptExplosionStartedEvent(struct ScriptExplosionStartedEvent const&);
     MCAPI void copyTo(struct ExplosionStartedEvent&) const;
+    MCAPI ~ScriptExplosionStartedEvent();
 
     MCAPI static class Scripting::ClassBindingBuilder<struct ScriptExplosionStartedEvent> bind(struct Scripting::Version);
 };

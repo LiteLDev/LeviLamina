@@ -9,12 +9,15 @@ class PositionTrackingId {
 
 public:
     MCAPI void fromTag(class Tag const*);
-    MCAPI std::unique_ptr<class Tag> getTag() const;
     MCAPI class PositionTrackingId& operator=(class PositionTrackingId const&);
+    MCAPI PositionTrackingId(class PositionTrackingId const&);
+    MCAPI PositionTrackingId(class PositionTrackingId&&);
+    MCAPI std::unique_ptr<class Tag> getTag() const;
     MCAPI class PositionTrackingId& operator=(class PositionTrackingId&&);
     MCAPI std::string const toString() const;
 
     MCAPI static class PositionTrackingId const INVALID_ID;
+
 
 protected:
     MCAPI static unsigned int sNextId;

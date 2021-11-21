@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI MakeLoveGoal(class VillagerBase&);
+
+
 private:
     MCAPI class VillagerBase* _findMate() const;
 };

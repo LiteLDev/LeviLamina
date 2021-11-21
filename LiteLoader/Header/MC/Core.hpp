@@ -14,4 +14,5 @@ MCAPI class std::shared_ptr<class Core::FileStorageArea> sRootStorageArea;
 MCAPI bool starts_with(class Core::StringSpan, class Core::StringSpan);
 MCAPI class Core::Result transferDirectory(class Core::FileSystemImpl*, class Core::Path const&, class Core::FileSystemImpl*, class Core::Path const&, class std::function<class Core::Result(class Core::Path const&, class Core::Path const&)> const&);
 
+
 } // namespace Core

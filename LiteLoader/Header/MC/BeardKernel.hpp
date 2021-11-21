@@ -7,6 +7,10 @@
 class BeardKernel {
 #include "Extra/BeardKernelAPI.hpp"
 
+public:
+    MCAPI BeardKernel();
+
+
 private:
     MCAPI class std::array<float, 13824> const createBeardKernel();
 };

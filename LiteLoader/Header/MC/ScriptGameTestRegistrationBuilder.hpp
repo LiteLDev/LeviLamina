@@ -19,4 +19,5 @@ public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> setupTicks(int);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> structureName(std::string);
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptGameTestRegistrationBuilder> tag(std::string);
+    MCAPI ~ScriptGameTestRegistrationBuilder();
 };

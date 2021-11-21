@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI LookAtActorGoal(class Mob&, float, float, int, int, int, int);
+
+
 private:
     MCAPI bool _withinFieldOfView(class Actor&);
 };

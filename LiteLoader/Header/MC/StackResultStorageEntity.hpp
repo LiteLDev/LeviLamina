@@ -7,7 +7,9 @@
 class StackResultStorageEntity {
 #include "Extra/StackResultStorageEntityAPI.hpp"
 
+
 protected:
+    MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
     MCAPI class EntityContext& _getStackRef() const;
     MCAPI bool _hasValue() const;
 };

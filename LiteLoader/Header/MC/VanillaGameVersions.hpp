@@ -15,4 +15,5 @@ MCAPI class BaseGameVersion const LatestReleasedVersion;
 MCAPI class BaseGameVersion const NetherUpdate;
 MCAPI class BaseGameVersion const NetherUpdate_U3;
 
+
 } // namespace VanillaGameVersions

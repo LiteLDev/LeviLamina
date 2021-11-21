@@ -11,4 +11,7 @@ public:
     virtual ~NavigationDescription();
     virtual void deserializeData(struct DeserializeDataParams);
     virtual void serializeData(class Json::Value&);
+
+public:
+    MCAPI NavigationDescription();
 };

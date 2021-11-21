@@ -10,4 +10,5 @@ namespace TaskStartInfoBase {
 public:
 MCAPI static class std::thread::id const NoAffinity;
 
+
 } // namespace TaskStartInfoBase

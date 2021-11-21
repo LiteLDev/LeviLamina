@@ -8,6 +8,7 @@ class ActorInfoRegistry {
 #include "Extra/ActorInfoRegistryAPI.hpp"
 
 public:
+    MCAPI ActorInfoRegistry();
     MCAPI struct ActorInfo const& getActorInfo(unsigned int) const;
     MCAPI unsigned int getActorInfoId(std::string const&) const;
     MCAPI unsigned int getActorInfoId(unsigned __int64 const&) const;

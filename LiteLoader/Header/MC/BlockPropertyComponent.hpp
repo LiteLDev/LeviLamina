@@ -9,6 +9,7 @@ class BlockPropertyComponent {
 
 public:
     MCAPI bool getProperty(enum BlockProperty) const;
-    MCAPI bool hasProperty(enum BlockProperty) const;
     MCAPI struct BlockPropertyComponent& operator=(struct BlockPropertyComponent&&);
+    MCAPI BlockPropertyComponent(struct BlockPropertyComponent&&);
+    MCAPI bool hasProperty(enum BlockProperty) const;
 };

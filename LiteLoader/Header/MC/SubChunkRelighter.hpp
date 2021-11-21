@@ -23,6 +23,7 @@ public:
     MCAPI void _setSkyLight(struct SubChunkLightIndex, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     MCAPI void setBlockLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
     MCAPI void setSkyLight(class Pos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness);
+    MCAPI ~SubChunkRelighter();
 
     MCAPI static class std::bitset<196608> computeAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits();
     MCAPI static class std::bitset<196608> computeOuterEdgeOfComputationBits();

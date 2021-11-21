@@ -8,6 +8,7 @@ class TrustingDefinition {
 #include "Extra/TrustingDefinitionAPI.hpp"
 
 public:
+    MCAPI TrustingDefinition();
     MCAPI void addTrustItemByName(std::string const&);
     MCAPI void initialize(class EntityContext&, class TrustingComponent&) const;
 

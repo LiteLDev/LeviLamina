@@ -8,6 +8,7 @@ class GeneticsDefinition {
 #include "Extra/GeneticsDefinitionAPI.hpp"
 
 public:
+    MCAPI GeneticsDefinition();
     MCAPI void addGeneDefinition(struct GeneDefinition const&);
     MCAPI void initialize(class EntityContext&, class GeneticsComponent&);
 

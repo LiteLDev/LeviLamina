@@ -9,4 +9,5 @@ namespace WorldGenMolangQueries {
 
 MCAPI void registerWorldGenMolangQueries();
 
+
 } // namespace WorldGenMolangQueries

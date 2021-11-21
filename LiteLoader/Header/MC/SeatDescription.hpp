@@ -8,5 +8,7 @@ class SeatDescription {
 #include "Extra/SeatDescriptionAPI.hpp"
 
 public:
+    MCAPI SeatDescription(struct SeatDescription const&);
     MCAPI void addRotationExpressionNode(class ExpressionNode const&);
+    MCAPI ~SeatDescription();
 };

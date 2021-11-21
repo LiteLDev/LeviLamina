@@ -712,4 +712,5 @@ MCAPI class WeakPtr<class BlockLegacy> mYellowFlower;
 MCAPI void registerBlocks(class BaseGameVersion const&, class Experiments const&);
 MCAPI void unregisterBlocks();
 
+
 } // namespace VanillaBlockTypes

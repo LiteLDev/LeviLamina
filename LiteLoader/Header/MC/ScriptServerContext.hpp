@@ -10,4 +10,5 @@ class ScriptServerContext {
 public:
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getMinecraft();
     MCAPI void reset();
+    MCAPI ~ScriptServerContext();
 };

@@ -8,6 +8,8 @@ class PropertyBag {
 #include "Extra/PropertyBagAPI.hpp"
 
 public:
+    MCAPI PropertyBag();
+    MCAPI PropertyBag(class Json::Value const&);
     MCAPI class Json::Value const& toJsonValue() const;
     MCAPI std::string toString() const;
 
