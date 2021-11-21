@@ -39,7 +39,7 @@ LIAPI std::string Actor::getEntityTypeName() {
 LIAPI bool Actor::hurtEntity(int damage) {
     char a[16];
     ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
-                                           ActorDamageSource&, ActorDamageSource*, int)((ActorDamageSource*)a, 12); //ActorDamageCause::Void
+                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::Void); //ActorDamageCause::Void
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
@@ -47,6 +47,7 @@ LIAPI Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 #include <MC/TeleportCommand.hpp>
+#include <MC/TeleportTarget.hpp>
 LIAPI void Actor::teleport(FloatVec4 vec4) {
     TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec4.x, vec4.y, vec4.z}, 0, vec4.dim, 0, 0, 15));
 }

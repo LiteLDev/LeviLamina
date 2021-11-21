@@ -66,7 +66,7 @@ int ItemStack::getAux() {
     return ((ItemStack*)this)->getAuxValue();
 }
 
-int ItemStack::getCount() {
+int ItemStack::getCount() {  //IDA ContainerModel::networkUpdateItem
     if (this->isNull())
         return 0;
     return *((char*)this + 34); // LevelContainerModel::_getContainer

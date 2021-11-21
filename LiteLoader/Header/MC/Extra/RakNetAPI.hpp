@@ -19,7 +19,7 @@ struct AddressOrGUID {
     SystemAddress adr;
 };
 
-struct RakPeer {
+class RakPeer {
 public:
     RakPeer(RakPeer const&) = delete;
     RakPeer(RakPeer&&) = delete;
@@ -34,6 +34,7 @@ public:
     MCAPI virtual int GetLastPing(struct RakNet::AddressOrGUID) const;
     MCAPI virtual int GetLowestPing(struct RakNet::AddressOrGUID) const;
 };
+
 class RakNetSocket2;
 struct SplitPacketChannel;
 class BitStream;
