@@ -64,7 +64,7 @@ bool Level::spawnParticle(FloatVec4 pos, const string& type)
 }
 #include <MC/MinecraftCommands.hpp>
 #include <MC/CommandContext.hpp>
-#include <MC/command/CommandReg.h>
+#include <command/CommandReg.h>
 void* Level::ServerCommandOrigin::fake_vtbl[26];
 
 static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);

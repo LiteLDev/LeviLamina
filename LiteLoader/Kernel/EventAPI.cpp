@@ -9,7 +9,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/Level.hpp>
-#include <MC/Command/CommandReg.h>
+#include <Command/CommandReg.h>
 #include <MC/NetworkIdentifier.hpp>
 class ServerPlayer;
 class NetworkIdentifier;
