@@ -5,6 +5,7 @@
 
 #else
 // Add Member There
-
+enum class FacingResult;
+enum class TeleportAnalysis;
 
 #endif

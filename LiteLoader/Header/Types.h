@@ -150,6 +150,25 @@ public:
     int dim;
 };
 
+
+class RelativeFloat {
+public:
+    float value;
+    bool is_relative;
+
+    RelativeFloat(float value)
+        : value(value)
+        , is_relative(true) {
+    }
+
+    inline float getFloat(float center) const {
+        if (is_relative)
+            return center + value;
+        return value;
+    }
+};
+
+
 class FloatVec4 {
 public:
     float          x, y, z;
@@ -167,6 +186,8 @@ public:
         return {px, py, pz, dim};
     }
 };
+
+
 
 //Templates
 template <typename T, typename T2, int unk>

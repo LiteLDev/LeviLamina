@@ -86,3 +86,15 @@ string Player::getDeviceName() {
     }
 }
 
+#include <MC/ServerNetworkHandler.hpp>
+void Player::forceKick(string msg) {
+     NetworkIdentifier* netid = this->getNetworkIdentifier();
+     Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
+}
+
+#include <MC/ItemStack.hpp>
+void Player::setItemLore(vector<string>& lore) {
+    ItemStack* item = const_cast<ItemStack*>(&this->getSelectedItem());
+    item->setLore(lore);
+    this->sendInventory(true);
+}

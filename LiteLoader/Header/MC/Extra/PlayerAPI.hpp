@@ -16,6 +16,8 @@ public:
     LIAPI int getLastPing();
     LIAPI string getLanguageCode();
     LIAPI string getDeviceName();
+    LIAPI void forceKick(string);
+    LIAPI void setItemLore(vector<string>&);
     template <typename T>
     inline  bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

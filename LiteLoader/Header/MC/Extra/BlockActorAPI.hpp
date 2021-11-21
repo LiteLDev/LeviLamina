@@ -5,5 +5,4 @@ class Block;
 // Add new members to class
 public:
 LIAPI static int getType(Block* bl);
-LIAPI BlockPos getPos();
 #endif

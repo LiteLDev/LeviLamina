@@ -46,6 +46,7 @@ LIAPI bool Actor::hurtEntity(int damage) {
 LIAPI Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
-
-
-
+#include <MC/TeleportCommand.hpp>
+LIAPI void Actor::teleport(FloatVec4 vec4) {
+    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec4.x, vec4.y, vec4.z}, 0, vec4.dim, 0, 0, 15));
+}
