@@ -66,6 +66,7 @@ public:
     virtual void removeSimulatedPlayer(class SimulatedPlayer&);
     virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource*&);
 
+
 private:
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const&, class AABB const&, class BlockPos const&, bool) const;
     MCAPI class Container const* _getContainer(class BlockPos const&);

@@ -20,6 +20,8 @@ public:
     virtual();
 
 public:
+    MCAPI Random();
+    MCAPI Random(unsigned int);
     MCAPI float nextFloat(float, float);
     MCAPI float nextGaussianFloat();
     MCAPI int nextGaussianInt(int);

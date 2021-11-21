@@ -16,4 +16,5 @@ MCAPI class Core::PathBuffer<std::string> getPremiumWorldTemplatePath();
 MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumBehaviorPacksPath();
 MCAPI class Core::PathBuffer<std::string> getTemporaryPremiumResourcePacksPath();
 
+
 } // namespace ResourcePackPaths

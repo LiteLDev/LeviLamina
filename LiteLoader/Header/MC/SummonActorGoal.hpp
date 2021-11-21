@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI SummonActorGoal(class Mob&, std::vector<struct SummonSpellData> const&);
+
+
 private:
     MCAPI void _createSpellEntity(float, float, float, float, float, int, struct ActorDefinitionIdentifier) const;
     MCAPI int _selectBestSpell(class Actor&) const;

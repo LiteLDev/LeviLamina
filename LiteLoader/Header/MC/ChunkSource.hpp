@@ -33,6 +33,8 @@ public:
     virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
 
 public:
+    MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
+    MCAPI ChunkSource(class Dimension*, int);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
@@ -41,6 +43,7 @@ public:
     MCAPI class Dimension& getDimension() const;
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const&);
     MCAPI class Level& getLevel() const;
+
 
 protected:
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const&, bool);

@@ -8,6 +8,7 @@ class HideComponent {
 #include "Extra/HideComponentAPI.hpp"
 
 public:
+    MCAPI HideComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void initFromDefinition(class Actor&);
     MCAPI bool isInRaid();

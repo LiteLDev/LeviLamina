@@ -8,6 +8,8 @@ class SculkCatalystBlockActor {
 #include "Extra/SculkCatalystBlockActorAPI.hpp"
 
 public:
+    MCAPI SculkCatalystBlockActor(class BlockPos const&);
+
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 };

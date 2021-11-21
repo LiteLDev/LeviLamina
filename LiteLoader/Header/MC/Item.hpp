@@ -135,6 +135,7 @@ public:
     virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float);
 
 public:
+    MCAPI Item(std::string const&, short);
     MCAPI void addOnResetBAIcallback(class std::function<void(void)> const&);
     MCAPI class Item& addTag(class HashedString const&);
     MCAPI bool allowOffhand() const;

@@ -18,4 +18,5 @@ public:
     MCAPI void pushLoopScope(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     MCAPI void pushReturnValue();
     MCAPI void setReturnValue(float);
+    MCAPI ~MolangProgramBuildState();
 };

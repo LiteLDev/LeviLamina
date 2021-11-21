@@ -9,4 +9,5 @@ class TickingAreaDescription {
 
 public:
     MCAPI std::string asString() const;
+    MCAPI ~TickingAreaDescription();
 };

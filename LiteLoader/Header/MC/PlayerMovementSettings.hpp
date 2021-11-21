@@ -11,4 +11,5 @@ public:
 MCAPI static struct PlayerMovementSettings const INVALID;
 MCAPI static struct PlayerMovementSettings getDefault();
 
+
 } // namespace PlayerMovementSettings

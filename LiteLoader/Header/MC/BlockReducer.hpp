@@ -11,5 +11,6 @@ public:
     virtual void registerBlock(class ItemStack const&, std::vector<class ItemStack>&&);
 
 public:
+    MCAPI BlockReducer();
     MCAPI std::vector<class ItemStack> const* getReduction(class ItemStackBase const&) const;
 };

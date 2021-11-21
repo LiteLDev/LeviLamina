@@ -9,4 +9,7 @@ class StructurePoolActorPredicateActorMatch {
 public:
     virtual ~StructurePoolActorPredicateActorMatch();
     virtual void unk_vfn_1();
+
+public:
+    MCAPI StructurePoolActorPredicateActorMatch(std::string);
 };

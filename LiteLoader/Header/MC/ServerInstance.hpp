@@ -8,6 +8,7 @@ class ServerInstance {
 #include "Extra/ServerInstanceAPI.hpp"
 
 public:
+    MCAPI ServerInstance(class IMinecraftApp&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerInstanceEventCoordinator>> const&);
     MCAPI void disconnectAllClientsWithMessage(std::string);
     MCAPI bool enableItemStackNetManager() const;
     MCAPI void leaveGameSync();

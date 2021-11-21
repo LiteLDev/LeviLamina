@@ -9,4 +9,5 @@ class EnvironmentRequirement {
 
 public:
     MCAPI void addBlockDescriptor(class BlockDescriptor const&);
+    MCAPI ~EnvironmentRequirement();
 };

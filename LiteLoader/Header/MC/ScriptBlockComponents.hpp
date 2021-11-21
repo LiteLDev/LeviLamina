@@ -10,4 +10,5 @@ namespace ScriptBlockComponents {
 public:
 MCAPI static void bind(class Scripting::ModuleBindingBuilder&, struct Scripting::Version);
 
+
 } // namespace ScriptBlockComponents

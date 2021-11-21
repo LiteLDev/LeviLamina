@@ -14,4 +14,5 @@ public:
     MCAPI bool isAdmiring() const;
     MCAPI void onAdmireItemPickedUp(class Actor const&, class ItemStack const&, class Actor*);
     MCAPI void stopAdmiring();
+    MCAPI ~AdmireItemComponent();
 };

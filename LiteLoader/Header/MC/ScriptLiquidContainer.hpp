@@ -10,4 +10,5 @@ namespace ScriptLiquidContainer {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<class ScriptLiquidContainer> bind(struct Scripting::Version);
 
+
 } // namespace ScriptLiquidContainer

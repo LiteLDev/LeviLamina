@@ -15,6 +15,7 @@ public:
     virtual void unk_vfn_5();
 
 public:
+    MCAPI EducationOptions(class ResourcePackManager*);
     MCAPI void init(class LevelData const&);
 
     MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;

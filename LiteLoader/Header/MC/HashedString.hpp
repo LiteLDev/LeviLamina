@@ -14,6 +14,12 @@ public:
     MCAPI bool operator==(class HashedString const&);
     MCAPI class HashedString& operator=(class HashedString const&);
     MCAPI class HashedString& operator=(class HashedString&&);
+    MCAPI HashedString(unsigned __int64, char const*);
+    MCAPI HashedString(char const*);
+    MCAPI HashedString(std::string const&);
+    MCAPI HashedString(class HashedString const&);
+    MCAPI HashedString(std::nullptr_t);
+    MCAPI HashedString(class HashedString&&);
     MCAPI bool Deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI bool Serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI char const* c_str() const;
@@ -21,6 +27,7 @@ public:
     MCAPI unsigned __int64 getHash() const;
     MCAPI std::string const& getString() const;
     MCAPI bool isEmpty() const;
+    MCAPI ~HashedString();
 
     MCAPI static unsigned __int64 computeHash(std::string const&);
     MCAPI static unsigned __int64 computeHash(char const*);

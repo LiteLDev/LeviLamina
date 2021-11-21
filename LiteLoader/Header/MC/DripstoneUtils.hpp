@@ -20,4 +20,5 @@ MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&);
 MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&);
 MCAPI bool replaceableByDripstone(class BlockLegacy const&);
 
+
 } // namespace DripstoneUtils

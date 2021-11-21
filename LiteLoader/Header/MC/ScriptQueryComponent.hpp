@@ -9,4 +9,6 @@ class ScriptQueryComponent {
 
 public:
     MCAPI struct ScriptQueryComponent& operator=(struct ScriptQueryComponent&&);
+    MCAPI ScriptQueryComponent(struct ScriptQueryComponent&&);
+    MCAPI ~ScriptQueryComponent();
 };

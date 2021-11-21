@@ -19,6 +19,11 @@ public:
     virtual void unk_vfn_9();
     virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
 
+public:
+    MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);
+    MCAPI TargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool, int, bool, float, bool, int);
+
+
 protected:
     MCAPI bool _canAttack(class Actor*, bool, struct MobDescriptor const**);
     MCAPI bool _canReachAfterDelay(class Actor&);

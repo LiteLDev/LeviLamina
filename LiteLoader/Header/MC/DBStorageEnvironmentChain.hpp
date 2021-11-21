@@ -8,7 +8,10 @@ class DBStorageEnvironmentChain {
 #include "Extra/DBStorageEnvironmentChainAPI.hpp"
 
 public:
+    MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&);
     MCAPI class Core::Result isChainValid(bool) const;
+    MCAPI ~DBStorageEnvironmentChain();
+
 
 private:
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env*, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const&);

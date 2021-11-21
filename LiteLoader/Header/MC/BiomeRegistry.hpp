@@ -11,6 +11,7 @@ public:
     virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
 
 public:
+    MCAPI BiomeRegistry();
     MCAPI void forEachBiome(class std::function<void(class Biome&)>) const;
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>> const& getTagRegistry() const;
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>& getTagRegistry();
@@ -20,6 +21,7 @@ public:
     MCAPI class Biome* lookupByName(std::string const&) const;
     MCAPI class Biome& registerBiome(std::string const&);
     MCAPI void registrationFinished();
+
 
 private:
     MCAPI bool _addToInheritanceTree(class InheritanceTree<struct BiomeRegistry::BiomeParent>&, std::string const&, class Json::Value&&, class SemVersion const&);

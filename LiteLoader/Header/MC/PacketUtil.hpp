@@ -10,4 +10,5 @@ namespace PacketUtil {
 MCAPI float byteToDegrees(signed char);
 MCAPI signed char degreesToByte(float);
 
+
 } // namespace PacketUtil

@@ -10,4 +10,5 @@ namespace EduAppConfigs {
 public:
 MCAPI static struct PackIdVersion const EDUResourcePack;
 
+
 } // namespace EduAppConfigs

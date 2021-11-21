@@ -32,13 +32,16 @@ public:
     virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
 public:
+    MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
     MCAPI bool isContainerSlotInRange(int) const;
     MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
     MCAPI void registerOnContainerChangedCallback(class std::function<void(int, class ItemStack const&, class ItemStack const&)>);
     MCAPI void registerPlayerNotificationCallback(class std::function<void(int, class ItemStack const&, class ItemStack const&)>);
 
+
 private:
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);
+
 
 protected:
     MCAPI void _init();

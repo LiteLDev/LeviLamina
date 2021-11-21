@@ -8,11 +8,15 @@ class UnverifiedCertificate {
 #include "Extra/UnverifiedCertificateAPI.hpp"
 
 public:
+    MCAPI UnverifiedCertificate(class UnverifiedCertificate const&);
+    MCAPI UnverifiedCertificate(class UnverifiedCertificate&&);
     MCAPI std::string getIdentityPublicKey() const;
     MCAPI std::string toString() const;
+    MCAPI ~UnverifiedCertificate();
 
     MCAPI static class UnverifiedCertificate fromString(std::string const&);
 
 private:
+    MCAPI UnverifiedCertificate(class WebToken const&, std::unique_ptr<class UnverifiedCertificate>);
     MCAPI void addToChain(class Json::Value&) const;
 };

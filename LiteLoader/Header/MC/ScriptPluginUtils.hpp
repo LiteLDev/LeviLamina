@@ -13,4 +13,5 @@ MCAPI bool IsValidRuntimeName(std::string const&);
 MCAPI std::string const JAVA_SCRIPT_RUNTIME_NAME;
 MCAPI struct PluginDefStack PluginDefsFromPackStack(std::vector<class PackInstance> const&, std::vector<class PackInstance> const&);
 
+
 } // namespace ScriptPluginUtils

@@ -10,4 +10,5 @@ namespace RakWebSocketDataFrame {
 public:
 MCAPI static void writeFrameToStream(class RakNet::BitStream&, unsigned char const*, unsigned int, enum OpCode, bool, unsigned int);
 
+
 } // namespace RakWebSocketDataFrame

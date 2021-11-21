@@ -9,4 +9,5 @@ namespace ScriptHandleTrackerUtils {
 
 MCAPI void removeAllTrackedHandles(class Scripting::WeakLifetimeScope const&);
 
+
 } // namespace ScriptHandleTrackerUtils

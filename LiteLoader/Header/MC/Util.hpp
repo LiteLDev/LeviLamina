@@ -80,4 +80,5 @@ MCAPI std::string vFormat(char const*, char*);
 MCAPI bool validateIdentifier(std::string const&, enum LogArea, bool, struct std::pair<std::string, std::string>*);
 MCAPI bool validateIdentifierChunk(std::string const&, enum LogArea);
 
+
 } // namespace Util

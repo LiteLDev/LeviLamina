@@ -8,5 +8,6 @@ class FeatureTypeFactory {
 #include "Extra/FeatureTypeFactoryAPI.hpp"
 
 public:
+    MCAPI FeatureTypeFactory();
     MCAPI void processFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, class Json::Value&, class SemVersion const&) const;
 };

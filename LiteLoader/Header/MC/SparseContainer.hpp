@@ -27,9 +27,11 @@ public:
     MCAPI void pushAllToBackingContainer();
     MCAPI void removeItemNetworkChangedCallback(enum ContainerEnumName);
 
+
 private:
     MCAPI int _getAvailableAddCount(enum ContainerEnumName, class ItemStack const&) const;
     MCAPI bool _isItemAllowedInSlot(enum ContainerEnumName, int, class ItemStackBase const&, int) const;
+
 
 protected:
     MCAPI void _onItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);

@@ -13,6 +13,8 @@ public:
     virtual class Json::Value resolve(struct ResolveData const&);
 
 public:
+    MCAPI TextObjectScore(std::string, std::string);
+
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;

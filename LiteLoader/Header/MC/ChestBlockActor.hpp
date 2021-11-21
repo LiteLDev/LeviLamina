@@ -8,6 +8,7 @@ class ChestBlockActor {
 #include "Extra/ChestBlockActorAPI.hpp"
 
 public:
+    MCAPI ChestBlockActor(enum BlockActorType, std::string const&, enum BlockActorRendererId, class BlockPos const&, bool);
     MCAPI bool canOpen(class BlockSource&) const;
     MCAPI bool canPairWith(class BlockActor*, class BlockSource&);
     MCAPI void forceCloseChest(class BlockSource&);
@@ -22,11 +23,13 @@ public:
     MCAPI void setFindable(bool);
     MCAPI void unpair(class BlockSource&);
 
+
 private:
     MCAPI void _closeChest(class BlockSource&, class Player*);
     MCAPI bool _saveClientSideState(class CompoundTag&) const;
     MCAPI void _tryToPairWith(class BlockSource&, class BlockPos const&);
     MCAPI void _unpair();
+
 
 protected:
     MCAPI void _getCenter(float&, float&, float&);

@@ -9,6 +9,8 @@ class BlockStateDefinition {
 
 public:
     MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&);
+    MCAPI ~BlockStateDefinition();
+
 
 private:
     MCAPI void _copy(struct BlockStateDefinition const&);

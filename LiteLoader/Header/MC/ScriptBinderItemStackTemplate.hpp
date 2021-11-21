@@ -10,4 +10,5 @@ namespace ScriptBinderItemStackTemplate {
 public:
 MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, class ItemInstance const&);
 
+
 } // namespace ScriptBinderItemStackTemplate

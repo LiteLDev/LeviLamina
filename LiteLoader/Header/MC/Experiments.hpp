@@ -11,6 +11,7 @@ public:
     MCAPI bool CavesAndCliffs() const;
     MCAPI bool DataDrivenBiomes() const;
     MCAPI bool DataDrivenItems() const;
+    MCAPI Experiments();
     MCAPI bool Gametest() const;
     MCAPI bool Scripting() const;
     MCAPI bool UpcomingCreatorFeatures() const;
@@ -18,6 +19,7 @@ public:
     MCAPI void getTagData(class CompoundTag const&);
     MCAPI bool isExperimentEnabled(enum AllExperiments) const;
     MCAPI void setTagData(class CompoundTag&) const;
+    MCAPI ~Experiments();
 
     MCAPI static std::string const& getExperimentTextID(enum AllExperiments);
     MCAPI static std::vector<std::string> const& getToggleNames();

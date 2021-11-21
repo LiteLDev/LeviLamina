@@ -8,6 +8,7 @@ class VillageManager {
 #include "Extra/VillageManagerAPI.hpp"
 
 public:
+    MCAPI VillageManager(class Dimension&);
     MCAPI class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const&);
@@ -24,6 +25,7 @@ public:
     MCAPI void tick(struct Tick const&);
     MCAPI void tickVillages(struct Tick const&, class Vec3 const&, class BlockSource&);
     MCAPI class std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const&, class Block const&);
+    MCAPI ~VillageManager();
 
     MCAPI static int const MAX_POI_TOLERANCE_DIST;
 

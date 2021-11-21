@@ -9,4 +9,7 @@ class UnburiedConstraint {
 public:
     virtual ~UnburiedConstraint();
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&);
+
+public:
+    MCAPI UnburiedConstraint(class StructureTemplate&);
 };

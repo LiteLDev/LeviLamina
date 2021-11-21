@@ -25,4 +25,5 @@ MCAPI static void destroySingletons();
 MCAPI static void initializeDefaults();
 MCAPI static void loadWorkerConfigurations(unsigned int, unsigned int);
 
+
 } // namespace MinecraftWorkerPool

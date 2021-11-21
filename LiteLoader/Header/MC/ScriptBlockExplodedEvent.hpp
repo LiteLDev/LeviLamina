@@ -4,10 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptBlockExplodedEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptBlockExplodedEvent {
+class ScriptBlockExplodedEvent {
 #include "Extra/ScriptBlockExplodedEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBlockExplodedEvent> bind(struct Scripting::Version);
+    MCAPI ScriptBlockExplodedEvent(class BlockPos const&, class Block const&, class Actor*, class Scripting::WeakLifetimeScope const&);
+    MCAPI ~ScriptBlockExplodedEvent();
 
-} // namespace ScriptBlockExplodedEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptBlockExplodedEvent> bind(struct Scripting::Version);
+};

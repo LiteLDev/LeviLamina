@@ -13,4 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
+
+public:
+    MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
 };

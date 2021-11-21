@@ -12,5 +12,6 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI ControlledByPlayerDefinition();
     MCAPI void initialize(class EntityContext&, class ControlledByPlayerGoal&);
 };

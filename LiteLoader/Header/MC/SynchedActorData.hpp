@@ -9,6 +9,8 @@ class SynchedActorData {
 
 public:
     MCAPI class SynchedActorData _clone() const;
+    MCAPI class SynchedActorData& operator=(class SynchedActorData&&);
+    MCAPI SynchedActorData();
     MCAPI class CompoundTag const& getCompoundTag(unsigned short) const;
     MCAPI float getFloat(unsigned short) const;
     MCAPI int getInt(unsigned short) const;
@@ -19,9 +21,10 @@ public:
     MCAPI std::string const& getString(unsigned short) const;
     MCAPI class Vec3 getVec3(unsigned short) const;
     MCAPI bool hasData(unsigned short) const;
-    MCAPI class SynchedActorData& operator=(class SynchedActorData&&);
     MCAPI void markDirty(unsigned short);
     MCAPI std::vector<std::unique_ptr<class DataItem>> packAll() const;
+    MCAPI ~SynchedActorData();
+
 
 private:
     MCAPI class DataItem* _find(unsigned short) const;

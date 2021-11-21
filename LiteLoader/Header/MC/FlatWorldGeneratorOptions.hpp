@@ -8,7 +8,10 @@ class FlatWorldGeneratorOptions {
 #include "Extra/FlatWorldGeneratorOptionsAPI.hpp"
 
 public:
+    MCAPI ~FlatWorldGeneratorOptions();
+
     MCAPI static class Json::Value getLayers(enum WorldVersion, class LevelData const&);
+
 
 protected:
     MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&);

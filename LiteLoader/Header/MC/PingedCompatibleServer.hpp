@@ -8,5 +8,8 @@ class PingedCompatibleServer {
 #include "Extra/PingedCompatibleServerAPI.hpp"
 
 public:
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer&&);
     MCAPI struct PingedCompatibleServer& operator=(struct PingedCompatibleServer&&);
+    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const&);
+    MCAPI ~PingedCompatibleServer();
 };

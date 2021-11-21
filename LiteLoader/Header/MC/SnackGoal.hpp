@@ -19,6 +19,10 @@ public:
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
 
+public:
+    MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float);
+
+
 private:
     MCAPI bool _hasSnackableItems();
     MCAPI bool _isSnackableItem(class ItemStack const&) const;

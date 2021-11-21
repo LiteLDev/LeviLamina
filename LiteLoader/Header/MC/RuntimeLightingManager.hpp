@@ -8,8 +8,11 @@ class RuntimeLightingManager {
 #include "Extra/RuntimeLightingManagerAPI.hpp"
 
 public:
+    MCAPI RuntimeLightingManager(class Dimension&);
     MCAPI void flushRunTimeLighting();
     MCAPI void updateBlockLight(class BlockPos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
+    MCAPI ~RuntimeLightingManager();
+
 
 private:
     MCAPI void _checkForRelightingTask(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);

@@ -10,4 +10,5 @@ namespace LootTableDefinition {
 public:
 MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct LootTableDefinition>>&);
 
+
 } // namespace LootTableDefinition

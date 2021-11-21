@@ -13,4 +13,5 @@ MCAPI class WeakPtr<class BlockLegacy> mUnknown;
 MCAPI void registerBlocks();
 MCAPI void unregisterBlocks();
 
+
 } // namespace BedrockBlockTypes

@@ -14,4 +14,5 @@ MCAPI static class BurnOdds const INSTANT;
 MCAPI static class BurnOdds const MEDIUM;
 MCAPI static class BurnOdds const NEVER;
 
+
 } // namespace BurnOdds

@@ -14,4 +14,8 @@ public:
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
+
+public:
+    MCAPI SyncActorPropertyPacket();
+    MCAPI SyncActorPropertyPacket(class Actor const&);
 };

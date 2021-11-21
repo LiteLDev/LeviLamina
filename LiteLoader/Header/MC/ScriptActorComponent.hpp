@@ -13,8 +13,11 @@ public:
     virtual struct Scripting::Error _setPropertyError(std::string const&);
 
 public:
+    MCAPI ScriptActorComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     MCAPI class ScriptActorComponent& operator=(class ScriptActorComponent const&);
+    MCAPI ScriptActorComponent(class ScriptActorComponent const&);
     MCAPI std::string const& getId() const;
+
 
 protected:
     MCAPI class Actor* _tryGetOwner() const;

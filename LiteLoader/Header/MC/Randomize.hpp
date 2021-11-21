@@ -8,6 +8,7 @@ class Randomize {
 #include "Extra/RandomizeAPI.hpp"
 
 public:
+    MCAPI Randomize(class Random&);
     MCAPI bool chance(int, int) const;
     MCAPI bool chanceAllButOneIn(int) const;
     MCAPI bool chanceFloatGreaterThan(float) const;
@@ -15,6 +16,7 @@ public:
     MCAPI bool chanceOneIn(int) const;
     MCAPI float nextFloat() const;
     MCAPI int nextIntInclusive(int, int) const;
+    MCAPI ~Randomize();
 
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 };

@@ -9,4 +9,7 @@ class BlockIntersectionConstraint {
 public:
     virtual ~BlockIntersectionConstraint();
     virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&);
+
+public:
+    MCAPI BlockIntersectionConstraint(class StructureTemplate&);
 };

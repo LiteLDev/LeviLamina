@@ -12,6 +12,7 @@ public:
     virtual bool fromJson(class Json::Value const&);
 
 public:
+    MCAPI NpcCommandAction();
     MCAPI std::vector<struct NpcCommandAction::SavedCommand>& getCommands();
     MCAPI void setCommands(std::vector<struct NpcCommandAction::SavedCommand>&&);
 

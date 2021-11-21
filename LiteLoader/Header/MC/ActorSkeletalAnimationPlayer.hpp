@@ -17,4 +17,7 @@ public:
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
     virtual class HashedString const& getRawName();
+
+public:
+    MCAPI ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&);
 };

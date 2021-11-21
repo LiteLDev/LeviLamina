@@ -17,4 +17,5 @@ MCAPI static class JsonValidator::Property getStepSliderProperty(bool);
 MCAPI static class JsonValidator::Property getTextInputProperty(bool);
 MCAPI static class JsonValidator::Property getToggleProperty(bool);
 
+
 } // namespace FormJsonValidator

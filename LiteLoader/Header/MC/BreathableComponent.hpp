@@ -8,6 +8,7 @@ class BreathableComponent {
 #include "Extra/BreathableComponentAPI.hpp"
 
 public:
+    MCAPI BreathableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool canBreathe(class Actor const&) const;
     MCAPI bool generatesBubbles() const;

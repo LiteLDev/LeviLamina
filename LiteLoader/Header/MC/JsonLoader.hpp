@@ -36,6 +36,10 @@ public:
     virtual void unk_vfn_26();
     virtual void unk_vfn_27();
 
+public:
+    MCAPI JsonLoader();
+
+
 private:
     MCAPI void _loadJson(std::string const&);
     MCAPI void _useJson(class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>>&);

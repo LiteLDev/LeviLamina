@@ -9,4 +9,5 @@ namespace VanillaActors {
 
 MCAPI void registerVanillaActorData();
 
+
 } // namespace VanillaActors

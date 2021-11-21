@@ -8,6 +8,7 @@ class SchedulerDefinition {
 #include "Extra/SchedulerDefinitionAPI.hpp"
 
 public:
+    MCAPI SchedulerDefinition();
     MCAPI void initialize(class EntityContext&, class SchedulerComponent&);
     MCAPI void setMaxDelayTicks(float const&);
     MCAPI void setMinDelayTicks(float const&);

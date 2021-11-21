@@ -6,4 +6,7 @@
 #undef EXTRA_INCLUDE_PART
 class InventoryMenu {
 #include "Extra/InventoryMenuAPI.hpp"
+
+public:
+    MCAPI InventoryMenu(class Player&, class Container*);
 };

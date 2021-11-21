@@ -18,4 +18,7 @@ public:
     virtual int /*enum EventResult*/ onScriptRan(std::string const&, std::string const&, bool);
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
+
+public:
+    MCAPI ScriptTelemetryEventListener(class IMinecraftEventing&, bool);
 };

@@ -10,4 +10,5 @@ namespace ColumnUtils {
 MCAPI class std::optional<struct ColumnUtils::ColumnRange> scanColumn(class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>);
 MCAPI class std::optional<struct ColumnUtils::ColumnRange> scanColumnWithinPosBiome(class IBlockWorldGenAPI&, class BlockPos const&, int, class std::function<bool(class BlockPos const&)>, class std::function<bool(class BlockPos const&)>);
 
+
 } // namespace ColumnUtils

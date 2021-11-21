@@ -13,6 +13,8 @@ public:
     virtual class Json::Value resolve(struct ResolveData const&);
 
 public:
+    MCAPI TextObjectSelector(std::string);
+
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
 };

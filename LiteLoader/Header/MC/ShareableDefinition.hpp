@@ -8,6 +8,7 @@ class ShareableDefinition {
 #include "Extra/ShareableDefinitionAPI.hpp"
 
 public:
+    MCAPI ShareableDefinition();
     MCAPI void addShareable(struct Shareable const&);
     MCAPI void addShareableByName(std::string const&);
 

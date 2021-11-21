@@ -8,5 +8,6 @@ class BlockPosTrackerComponent {
 #include "Extra/BlockPosTrackerComponentAPI.hpp"
 
 public:
+    MCAPI BlockPosTrackerComponent(bool, class BlockPos const&);
     MCAPI void onRemove(class Actor&);
 };

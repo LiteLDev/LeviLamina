@@ -10,6 +10,7 @@ class EquipmentTableDefinition {
 public:
     MCAPI void deserializeData(struct DeserializeDataParams);
     MCAPI void serializeData(class Json::Value&) const;
+    MCAPI ~EquipmentTableDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EquipmentTableDefinition>>&);
 };

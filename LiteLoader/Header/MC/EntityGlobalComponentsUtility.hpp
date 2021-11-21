@@ -10,4 +10,5 @@ namespace EntityGlobalComponentsUtility {
 MCAPI void initializeGlobalComponents(class EntityRegistry&);
 MCAPI void removeGlobalComponents(class EntityRegistry&);
 
+
 } // namespace EntityGlobalComponentsUtility

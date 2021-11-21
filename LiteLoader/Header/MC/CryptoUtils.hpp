@@ -10,4 +10,5 @@ namespace CryptoUtils {
 MCAPI std::string getDirectroyChecksum(class Core::Path const&);
 MCAPI std::string getFileChecksum(class Core::Path const&);
 
+
 } // namespace CryptoUtils

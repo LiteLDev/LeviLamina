@@ -19,4 +19,7 @@ public:
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
     virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int);
+
+public:
+    MCAPI IFileChunkUploader();
 };

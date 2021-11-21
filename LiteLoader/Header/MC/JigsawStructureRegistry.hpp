@@ -8,10 +8,12 @@ class JigsawStructureRegistry {
 #include "Extra/JigsawStructureRegistryAPI.hpp"
 
 public:
+    MCAPI JigsawStructureRegistry();
     MCAPI class JigsawStructureActorRulesRegistry& getJigsawStructureActorRulesRegistry();
     MCAPI class JigsawStructureBlockRulesRegistry& getJigsawStructureBlockRulesRegistry();
     MCAPI class JigsawStructureBlockTagRulesRegistry& getJigsawStructureBlockTagRulesRegistry();
     MCAPI class JigsawStructureElementRegistry& getJigsawStructureElementRegistry();
     MCAPI class StructureTemplatePool const* lookupByName(std::string) const;
     MCAPI void registerPool(std::unique_ptr<class StructureTemplatePool>&&);
+    MCAPI ~JigsawStructureRegistry();
 };

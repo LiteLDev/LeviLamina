@@ -19,4 +19,7 @@ public:
     virtual class HashedString const& getRawName();
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
+
+public:
+    MCAPI ActorAnimationControllerPlayer(class HashedString const&, class ActorAnimationControllerPtr const&, class AnimationComponent&, class ExpressionNode const&);
 };

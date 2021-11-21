@@ -19,5 +19,6 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI RangedAttackGoal(class Mob&);
     MCAPI void handleAttackBehavior(class Actor*, class Vec3 const&, float, bool);
 };

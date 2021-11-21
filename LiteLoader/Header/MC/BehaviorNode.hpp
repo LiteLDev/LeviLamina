@@ -12,5 +12,6 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI BehaviorNode();
     MCAPI class BehaviorData& getBehaviorData();
 };

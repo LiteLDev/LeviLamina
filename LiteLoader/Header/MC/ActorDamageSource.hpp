@@ -26,6 +26,7 @@ public:
     virtual std::unique_ptr<class ActorDamageSource> clone();
 
 public:
+    MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
 

@@ -8,10 +8,12 @@ class HealableDefinition {
 #include "Extra/HealableDefinitionAPI.hpp"
 
 public:
+    MCAPI HealableDefinition();
     MCAPI void addFeedItem(struct FeedItem const&);
     MCAPI void addFeedItemByName(std::string const&);
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void serializeData(class Json::Value&) const;
+    MCAPI ~HealableDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HealableDefinition>>&);
 

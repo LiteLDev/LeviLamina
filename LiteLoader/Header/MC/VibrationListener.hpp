@@ -13,6 +13,7 @@ public:
     virtual bool isEventInRange(class GameEvent const&, class BlockPos const&);
 
 public:
+    MCAPI VibrationListener(class std::function<void(struct Tick, class BlockPos)>, class std::function<class BlockPos(void)>, int, enum VibrationListener::OwnerType);
     MCAPI class GameEvent const& getGameEvent() const;
     MCAPI unsigned __int64 getRange() const;
     MCAPI bool isWaiting() const;

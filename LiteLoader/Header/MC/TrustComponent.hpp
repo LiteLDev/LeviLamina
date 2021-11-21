@@ -8,6 +8,8 @@ class TrustComponent {
 #include "Extra/TrustComponentAPI.hpp"
 
 public:
+    MCAPI TrustComponent(class TrustComponent&&);
+    MCAPI TrustComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void assignTrustedPlayer(struct ActorUniqueID);
     MCAPI class TrustComponent& operator=(class TrustComponent&&);

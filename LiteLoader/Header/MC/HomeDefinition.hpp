@@ -8,6 +8,7 @@ class HomeDefinition {
 #include "Extra/HomeDefinitionAPI.hpp"
 
 public:
+    MCAPI HomeDefinition();
     MCAPI void initialize(class EntityContext&, class HomeComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class HomeDefinition>>&);

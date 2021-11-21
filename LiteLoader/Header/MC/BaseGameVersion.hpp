@@ -14,6 +14,10 @@ public:
     MCAPI bool operator<=(class BaseGameVersion const&);
     MCAPI bool operator<(class BaseGameVersion const&);
     MCAPI bool operator==(class BaseGameVersion const&);
+    MCAPI BaseGameVersion();
+    MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
+    MCAPI BaseGameVersion(class SemVersion const&);
+    MCAPI BaseGameVersion(class BaseGameVersion const&);
     MCAPI class BaseGameVersion& operator=(class BaseGameVersion const&);
     MCAPI class SemVersion const& asSemVersion() const;
     MCAPI unsigned short getMajor() const;
@@ -22,6 +26,7 @@ public:
     MCAPI bool isAnyVersion() const;
     MCAPI bool isCompatibleWith(class BaseGameVersion const&) const;
     MCAPI bool isValid() const;
+    MCAPI ~BaseGameVersion();
 
     MCAPI static class BaseGameVersion const ANY;
     MCAPI static class BaseGameVersion const EMPTY;

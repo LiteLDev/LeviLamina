@@ -12,6 +12,7 @@ public:
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
 
+
 protected:
     MCAPI void calculateBoundingBox();
     MCAPI void moveInsideHeights(class Random&, short, short);

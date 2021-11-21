@@ -15,6 +15,7 @@ public:
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
 
+
 private:
     MCAPI void _say(std::string const&, std::string const&) const;
     MCAPI void _showTestSummaryIfAllDone() const;

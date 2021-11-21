@@ -29,4 +29,5 @@ MCAPI class HashedString const Water;
 MCAPI class HashedString const Wood;
 MCAPI class HashedString const WoodDiggable;
 
+
 } // namespace VanillaTags

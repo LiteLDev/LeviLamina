@@ -9,4 +9,5 @@ namespace ResourceDefinition {
 
 MCAPI std::string const VANILLA_NAMESPACE;
 
+
 } // namespace ResourceDefinition

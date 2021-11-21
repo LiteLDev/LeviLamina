@@ -39,4 +39,7 @@ public:
     virtual void unk_vfn_29();
     virtual void unk_vfn_30();
     virtual void unk_vfn_31();
+
+public:
+    MCAPI GameTestLevelListener(class gametest::GameTestTicker&);
 };

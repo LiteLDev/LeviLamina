@@ -10,4 +10,5 @@ class TagMemoryChunk {
 public:
     MCAPI bool operator!=(struct TagMemoryChunk const&);
     MCAPI struct TagMemoryChunk copy() const;
+    MCAPI ~TagMemoryChunk();
 };

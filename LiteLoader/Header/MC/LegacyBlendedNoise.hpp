@@ -10,4 +10,5 @@ namespace LegacyBlendedNoise {
 public:
 MCAPI static std::unique_ptr<class LegacyBlendedNoise> make(std::unique_ptr<class IRandom>);
 
+
 } // namespace LegacyBlendedNoise

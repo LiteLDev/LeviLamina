@@ -16,4 +16,5 @@ MCAPI std::string gPublishAssertFullMessage;
 MCAPI bool gShouldDebugBreak;
 MCAPI bool gShouldPresentDialog;
 
+
 } // namespace DebugUtils

@@ -42,6 +42,7 @@ public:
     virtual bool isEmpty();
 
 public:
+    MCAPI Container(enum ContainerType);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;
     MCAPI int getItemCount(class std::function<bool(class ItemStack const&)>);
@@ -54,6 +55,7 @@ public:
 
     MCAPI static enum ContainerType getContainerTypeId(std::string const&);
     MCAPI static std::string const& getContainerTypeName(enum ContainerType);
+
 
 protected:
     MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);

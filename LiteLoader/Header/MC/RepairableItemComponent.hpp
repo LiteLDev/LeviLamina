@@ -16,6 +16,8 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
+    MCAPI RepairableItemComponent(class ComponentItem*);
+    MCAPI RepairableItemComponent(class RepairableItemComponent const&);
     MCAPI int handleItemRepair(class ItemStackBase&, class ItemStackBase&);
     MCAPI bool isValidRepairItem(class ItemStackBase const&) const;
 

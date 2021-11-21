@@ -9,17 +9,20 @@ class SubChunk {
 
 public:
     MCAPI void deserialize(class IDataInput&, class BlockPalette const&);
+    MCAPI struct SubChunk& operator=(struct SubChunk&&);
+    MCAPI SubChunk();
     MCAPI void fetchBlocks(class BlockPos const&, class BlockPos const&, short, class BlockVolume&) const;
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
     MCAPI void initialize(class Block const*, bool, bool, class SpinLock&, signed char);
     MCAPI bool isUniform(class Block const&) const;
-    MCAPI struct SubChunk& operator=(struct SubChunk&&);
     MCAPI void prune(enum SubChunkStorageUnit::PruneType);
     MCAPI void reset(class Block const*, bool, bool);
     MCAPI void serialize(class IDataOutput&, bool) const;
     MCAPI void setBlockLight(unsigned short, unsigned char);
     MCAPI void setFromBlockVolume(class BlockVolume const&, short);
     MCAPI void setSkyLight(unsigned short, unsigned char);
+    MCAPI ~SubChunk();
+
 
 protected:
     MCAPI void _createBlockLightStorage();

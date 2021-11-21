@@ -13,11 +13,15 @@ public:
 public:
     MCAPI bool operator==(class AttributeModifier const&);
     MCAPI class AttributeModifier& operator=(class AttributeModifier const&);
+    MCAPI AttributeModifier();
+    MCAPI AttributeModifier(class mce::UUID, std::string const&, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
+    MCAPI AttributeModifier(class mce::UUID, std::string const&, float, int, int, bool);
     MCAPI float getAmount() const;
     MCAPI class mce::UUID const& getId() const;
     MCAPI std::string const& getName() const;
     MCAPI int getOperand() const;
     MCAPI int getOperation() const;
+
 
 private:
     MCAPI static class mce::UUID const mInvalidUUID;

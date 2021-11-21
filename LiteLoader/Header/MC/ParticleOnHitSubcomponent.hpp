@@ -13,6 +13,10 @@ public:
     virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     virtual char const* getName();
 
+public:
+    MCAPI ParticleOnHitSubcomponent();
+
+
 private:
     MCAPI bool isParticleTypeIconBreak() const;
 };

@@ -15,6 +15,7 @@ public:
     virtual void unk_vfn_5();
 
 public:
+    MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
 
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);

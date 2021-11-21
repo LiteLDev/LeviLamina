@@ -8,6 +8,7 @@ class TameableDefinition {
 #include "Extra/TameableDefinitionAPI.hpp"
 
 public:
+    MCAPI TameableDefinition();
     MCAPI void addTamingItemByName(std::string const&);
     MCAPI void initialize(class EntityContext&, class TameableComponent&) const;
 

@@ -10,4 +10,7 @@ public:
     virtual ~AllowListEntry();
     virtual void serialize(class Json::Value&);
     virtual void deserialize(class Json::Value&);
+
+public:
+    MCAPI AllowListEntry(std::string);
 };

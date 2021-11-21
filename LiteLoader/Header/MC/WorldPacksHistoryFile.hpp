@@ -8,6 +8,8 @@ class WorldPacksHistoryFile {
 #include "Extra/WorldPacksHistoryFileAPI.hpp"
 
 public:
+    MCAPI WorldPacksHistoryFile();
     MCAPI std::vector<class WorldPackHistory> const& getPacks() const;
     MCAPI enum WorldPacksHistoryFile::ParseResult initializeFromJson(class Json::Value const&);
+    MCAPI ~WorldPacksHistoryFile();
 };

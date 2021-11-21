@@ -10,4 +10,5 @@ namespace FilterList {
 MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&);
 MCAPI void initialize();
 
+
 } // namespace FilterList

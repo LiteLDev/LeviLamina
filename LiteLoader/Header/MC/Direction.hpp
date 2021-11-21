@@ -18,4 +18,5 @@ MCAPI static int const* const const STEP_Z;
 MCAPI static enum Direction::Type convertFacingDirectionToDirection(unsigned char);
 MCAPI static enum Direction::Type getDirection(float, float);
 
+
 } // namespace Direction

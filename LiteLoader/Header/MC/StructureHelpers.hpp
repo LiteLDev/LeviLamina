@@ -14,4 +14,5 @@ MCAPI static bool createMinecartChest(class StructurePiece&, class BlockSource&,
 MCAPI static void fillColumnDown(class StructurePiece&, class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
 MCAPI static int getTorchRotation(int, unsigned short);
 
+
 } // namespace StructureHelpers

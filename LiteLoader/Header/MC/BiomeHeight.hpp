@@ -10,4 +10,5 @@ namespace BiomeHeight {
 public:
 MCAPI static float const MIN_DEPTH;
 
+
 } // namespace BiomeHeight

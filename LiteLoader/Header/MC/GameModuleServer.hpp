@@ -16,4 +16,7 @@ public:
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
+
+public:
+    MCAPI GameModuleServer();
 };

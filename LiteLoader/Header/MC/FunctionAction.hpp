@@ -13,6 +13,8 @@ public:
     virtual bool operator==(class IRequestAction&);
 
 public:
+    MCAPI FunctionAction(std::string const&, std::unique_ptr<class CommandOrigin>);
+
     MCAPI static bool isValidTag(class CompoundTag const&);
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const&, class ICommandOriginLoader&);
 

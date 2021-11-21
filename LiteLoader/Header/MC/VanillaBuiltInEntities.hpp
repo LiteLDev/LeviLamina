@@ -9,4 +9,5 @@ namespace VanillaBuiltInEntities {
 
 MCAPI void registerMappings();
 
+
 } // namespace VanillaBuiltInEntities

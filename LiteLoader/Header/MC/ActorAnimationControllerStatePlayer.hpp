@@ -19,6 +19,7 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&);
     MCAPI bool allAnimationsFinished() const;
     MCAPI bool anyAnimationsFinished() const;
 };

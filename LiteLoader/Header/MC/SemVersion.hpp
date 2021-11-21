@@ -14,13 +14,18 @@ public:
     MCAPI bool operator<=(class SemVersion const&);
     MCAPI bool operator<(class SemVersion const&);
     MCAPI bool operator==(class SemVersion const&);
+    MCAPI SemVersion();
+    MCAPI SemVersion(struct SemVersion::any_version_constructor);
+    MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&);
     MCAPI std::string const& asString() const;
+    MCAPI class SemVersion& operator=(class SemVersion const&);
+    MCAPI SemVersion(class SemVersion const&);
     MCAPI unsigned short getMajor() const;
     MCAPI unsigned short getMinor() const;
     MCAPI bool isAnyVersion() const;
     MCAPI bool isValid() const;
-    MCAPI class SemVersion& operator=(class SemVersion const&);
     MCAPI bool satisfies(class SemVersion const&) const;
+    MCAPI ~SemVersion();
 
     MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;
     MCAPI static enum SemVersion::MatchType fromJson(class Json::Value const&, class SemVersion&, enum SemVersion::ParseOption);

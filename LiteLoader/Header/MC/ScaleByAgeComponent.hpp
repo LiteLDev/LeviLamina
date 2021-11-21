@@ -8,5 +8,6 @@ class ScaleByAgeComponent {
 #include "Extra/ScaleByAgeComponentAPI.hpp"
 
 public:
+    MCAPI ScaleByAgeComponent();
     MCAPI void _initializeScale(class EntityContext&);
 };

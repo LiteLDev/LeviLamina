@@ -9,4 +9,5 @@ class BlockPlacementCondition {
 
 public:
     MCAPI void _addBlockDescriptor(class BlockDescriptor const&);
+    MCAPI ~BlockPlacementCondition();
 };

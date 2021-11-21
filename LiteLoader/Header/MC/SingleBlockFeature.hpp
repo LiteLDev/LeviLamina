@@ -11,6 +11,7 @@ public:
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
     virtual void unk_vfn_2();
 
+
 private:
     MCAPI class Block const* _mayAttach(class IBlockWorldGenAPI&, class BlockPos const&) const;
 };

@@ -9,6 +9,7 @@ class DamageSensorComponent {
 
 public:
     MCAPI class DamageSensorComponent& operator=(class DamageSensorComponent&&);
+    MCAPI DamageSensorComponent();
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI float getDamageModifier();
     MCAPI float getDamageMultipler();
@@ -16,6 +17,7 @@ public:
     MCAPI bool isFatal() const;
     MCAPI bool recordDamage(class Actor&, class ActorDamageSource const&, int, bool, class VariantParameterList);
     MCAPI bool recordDamage(class Actor&, class Actor*, enum ActorDamageCause, int, bool, class VariantParameterList);
+
 
 private:
     MCAPI bool _recordDamage(class Actor&, class Actor*, enum ActorDamageCause const&, class Actor*, int, bool, class VariantParameterList);

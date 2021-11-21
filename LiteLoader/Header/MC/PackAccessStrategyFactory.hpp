@@ -13,4 +13,5 @@ MCAPI static std::unique_ptr<class PackAccessStrategy> createForDirectory(class 
 MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const&, class IContentKeyProvider const&);
 MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const&, bool);
 
+
 } // namespace PackAccessStrategyFactory

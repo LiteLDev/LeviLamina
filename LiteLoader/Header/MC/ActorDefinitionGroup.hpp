@@ -10,6 +10,7 @@ public:
     virtual ~ActorDefinitionGroup();
 
 public:
+    MCAPI ActorDefinitionGroup(class Level&, class ResourcePackManager&, class IMinecraftEventing&, class Experiments const&);
     MCAPI void setComponentFactory(class ActorComponentFactory*);
     MCAPI class ActorDefinitionPtr tryGetDefinition(std::string const&);
     MCAPI class ActorDefinitionPtr tryGetDefinitionGroup(std::string const&, std::string const&);
@@ -24,6 +25,7 @@ private:
     MCAPI void _loadTemplates(class Level&, std::string const&, struct DeserializeDataParams);
     MCAPI void _setupCommonResourceDefinitionMap(class ActorDefinition&, class Level&);
     MCAPI void _setupPropertyGroups(class Level&, class ActorDefinition const&);
+
 
 protected:
     MCAPI void _addRef(class ActorDefinitionPtr&);

@@ -21,4 +21,7 @@ public:
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
+
+public:
+    MCAPI ScriptLevelWeatherEventListener(class MinecraftServerScriptEngine&);
 };

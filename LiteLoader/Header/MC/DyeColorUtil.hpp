@@ -16,4 +16,5 @@ MCAPI static enum ItemColor getItemColor(int);
 MCAPI static enum ItemColor getRandomItemColor(class Random&);
 MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
 
+
 } // namespace DyeColorUtil

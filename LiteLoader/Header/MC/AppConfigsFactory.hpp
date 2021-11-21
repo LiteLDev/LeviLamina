@@ -10,4 +10,5 @@ namespace AppConfigsFactory {
 public:
 MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
 
+
 } // namespace AppConfigsFactory

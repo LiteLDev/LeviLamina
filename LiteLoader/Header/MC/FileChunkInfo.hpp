@@ -8,6 +8,7 @@ class FileChunkInfo {
 #include "Extra/FileChunkInfoAPI.hpp"
 
 public:
+    MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     MCAPI bool isValid() const;
     MCAPI int size() const;
 };

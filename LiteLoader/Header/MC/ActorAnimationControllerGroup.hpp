@@ -8,9 +8,11 @@ class ActorAnimationControllerGroup {
 #include "Extra/ActorAnimationControllerGroupAPI.hpp"
 
 public:
+    MCAPI ActorAnimationControllerGroup();
     MCAPI class ActorAnimationControllerPtr getActorAnimationController(class HashedString const&);
     MCAPI class std::shared_ptr<class ActorAnimationControllerInfo> getActorAnimationControllerInfo(class HashedString const&);
     MCAPI void loadActorAnimationControllersSync(class ResourcePackManager&);
+    MCAPI ~ActorAnimationControllerGroup();
 
     MCAPI static bool loadFormatVersion(class Json::Value const&, class SemVersion&);
 

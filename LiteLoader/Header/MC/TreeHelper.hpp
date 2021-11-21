@@ -12,4 +12,5 @@ MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos co
 MCAPI class std::optional<class BlockPos> placeBaseBlock(class IBlockWorldGenAPI&, class BlockPos const&, std::vector<class BlockDescriptor> const&);
 MCAPI bool prepareSpawn(class IBlockWorldGenAPI&, class BlockPos const&, int, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
 
+
 } // namespace TreeHelper

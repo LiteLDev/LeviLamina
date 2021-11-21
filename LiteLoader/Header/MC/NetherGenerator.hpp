@@ -7,6 +7,10 @@
 class NetherGenerator {
 #include "Extra/NetherGeneratorAPI.hpp"
 
+public:
+    MCAPI NetherGenerator(class Dimension&, unsigned int, class Biome const*);
+
+
 private:
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class LevelData const&, class BiomeRegistry const&) const;
     MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);

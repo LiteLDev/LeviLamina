@@ -10,4 +10,5 @@ namespace RequestActionLoader {
 public:
 MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const&);
 
+
 } // namespace RequestActionLoader

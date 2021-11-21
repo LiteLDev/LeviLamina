@@ -8,9 +8,11 @@ class PropertyGroup {
 #include "Extra/PropertyGroupAPI.hpp"
 
 public:
+    MCAPI PropertyGroup();
     MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
     MCAPI void initPropertiesOnComponent(class PropertyComponent&) const;
     MCAPI void registerProperty(class std::shared_ptr<struct CustomPropertyDescription>);
+    MCAPI ~PropertyGroup();
 
     MCAPI static int const MAX_ENUM_SIZE;
     MCAPI static bool loadPropertiesFromJson(std::vector<class std::shared_ptr<struct CustomPropertyDescription>>&, class Json::Value const&);

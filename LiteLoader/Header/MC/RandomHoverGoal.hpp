@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI RandomHoverGoal(class Mob&, float, int, float, float, float, struct IntRange);
+
+
 protected:
     MCAPI bool _computeNewTarget();
     MCAPI void _moveToTarget();

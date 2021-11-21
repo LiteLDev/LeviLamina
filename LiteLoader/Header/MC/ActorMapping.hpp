@@ -8,5 +8,8 @@ class ActorMapping {
 #include "Extra/ActorMappingAPI.hpp"
 
 public:
+    MCAPI ActorMapping(std::string const&, std::string const&);
+    MCAPI ActorMapping(std::string const&, std::string const&, std::string const&);
     MCAPI std::string getMappingName(enum ActorTypeNamespaceRules) const;
+    MCAPI ~ActorMapping();
 };

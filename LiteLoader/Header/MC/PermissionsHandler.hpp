@@ -11,4 +11,5 @@ public:
 MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const&);
 MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const&);
 
+
 } // namespace PermissionsHandler

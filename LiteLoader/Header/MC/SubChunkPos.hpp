@@ -8,7 +8,8 @@ class SubChunkPos {
 #include "Extra/SubChunkPosAPI.hpp"
 
 public:
-    MCAPI class BlockPos operator class BlockPos();
+    MCAPI operator class BlockPos();
+    MCAPI SubChunkPos(class BlockPos const&);
 
     MCAPI static class SubChunkPos const MAX;
     MCAPI static class SubChunkPos const MIN;

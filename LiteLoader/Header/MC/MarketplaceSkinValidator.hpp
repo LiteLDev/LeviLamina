@@ -10,4 +10,5 @@ namespace MarketplaceSkinValidator {
 public:
 MCAPI static bool checkIfValid(std::string const&);
 
+
 } // namespace MarketplaceSkinValidator

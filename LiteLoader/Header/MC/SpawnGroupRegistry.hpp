@@ -14,5 +14,6 @@ public:
     virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
 
 public:
+    MCAPI SpawnGroupRegistry(class ResourcePackManager&);
     MCAPI class SpawnGroupData const* getSpawnGroup(std::string const&) const;
 };

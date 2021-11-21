@@ -9,4 +9,5 @@ class Trade {
 
 public:
     MCAPI struct Trade& operator=(struct Trade&&);
+    MCAPI ~Trade();
 };

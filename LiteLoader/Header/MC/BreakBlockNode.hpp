@@ -10,4 +10,7 @@ public:
     virtual ~BreakBlockNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
     virtual void initializeFromDefinition(class Actor&);
+
+public:
+    MCAPI BreakBlockNode();
 };

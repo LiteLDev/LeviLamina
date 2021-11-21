@@ -10,6 +10,7 @@ public:
     virtual ~MobEvents();
 
 public:
+    MCAPI MobEvents(class LevelStorage&);
     MCAPI bool areEventsEnabled() const;
     MCAPI void deserialize(class CompoundTag const&);
     MCAPI class MobEvent const& getEvent(enum MobEventsIndex) const;

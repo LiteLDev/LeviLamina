@@ -7,6 +7,10 @@
 class OverworldGenerator2d {
 #include "Extra/OverworldGenerator2dAPI.hpp"
 
+public:
+    MCAPI OverworldGenerator2d(class Dimension&, unsigned int, bool, class Biome const*);
+
+
 private:
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class LevelData const&, class BiomeRegistry const&) const;
 };

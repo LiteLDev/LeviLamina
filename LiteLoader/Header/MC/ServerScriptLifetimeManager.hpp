@@ -22,7 +22,9 @@ public:
     virtual void unk_vfn_12();
 
 public:
+    MCAPI ServerScriptLifetimeManager(class std::optional<struct ScriptSettings>&&);
     MCAPI void onMainThreadStartLeaveGame();
+
 
 private:
     MCAPI void _registerEventHandlers(class Level&) const;

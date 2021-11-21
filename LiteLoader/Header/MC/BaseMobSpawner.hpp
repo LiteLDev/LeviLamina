@@ -14,8 +14,10 @@ public:
     virtual class BlockPos const& getPos();
 
 public:
+    MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     MCAPI class Mob* getDisplayEntity(class BlockSource&);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
+
 
 protected:
     MCAPI void _delay(class BlockSource&);

@@ -15,6 +15,7 @@ public:
     MCAPI unsigned int getIndex() const;
     MCAPI class ItemInstance const& getItemInstance() const;
 
+
 private:
     MCAPI void _setGroup(class CreativeGroupInfo*);
 };

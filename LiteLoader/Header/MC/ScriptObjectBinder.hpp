@@ -8,7 +8,9 @@ class ScriptObjectBinder {
 #include "Extra/ScriptObjectBinderAPI.hpp"
 
 public:
+    MCAPI ScriptObjectBinder(std::string const&);
     MCAPI bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    MCAPI ~ScriptObjectBinder();
 
     MCAPI static std::string const TYPE_TAG;
     MCAPI static std::unique_ptr<class ScriptObjectBinder> extract(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);

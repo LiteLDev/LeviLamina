@@ -12,6 +12,7 @@ public:
 public:
     MCAPI class Scripting::Result<std::string> getState() const;
     MCAPI class ScriptStringBlockProperty& operator=(class ScriptStringBlockProperty&&);
+    MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty&&);
     MCAPI std::string const& getName() const;
     MCAPI class Scripting::Result<void> setState(std::string);
 };

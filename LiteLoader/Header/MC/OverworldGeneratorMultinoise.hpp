@@ -7,6 +7,10 @@
 class OverworldGeneratorMultinoise {
 #include "Extra/OverworldGeneratorMultinoiseAPI.hpp"
 
+public:
+    MCAPI OverworldGeneratorMultinoise(class Dimension&, unsigned int, class Biome const*);
+
+
 private:
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(unsigned int, class BiomeRegistry const&, class Biome const*);
 };

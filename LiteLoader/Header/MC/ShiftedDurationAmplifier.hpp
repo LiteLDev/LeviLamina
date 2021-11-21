@@ -11,4 +11,7 @@ public:
     virtual void unk_vfn_1();
     virtual bool shouldBuff(int, int);
     virtual int getTickInterval(int);
+
+public:
+    MCAPI ShiftedDurationAmplifier(int);
 };

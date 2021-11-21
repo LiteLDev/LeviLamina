@@ -9,4 +9,5 @@ namespace WardenSpawnTrackerSystemInternal {
 
 MCAPI void tickWardenSpawnTrackerComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class WardenSpawnTrackerComponent>&);
 
+
 } // namespace WardenSpawnTrackerSystemInternal

@@ -10,4 +10,5 @@ namespace AgentServerCommands {
 public:
 MCAPI static void setupStandardServer(class Minecraft&, std::string const&);
 
+
 } // namespace AgentServerCommands

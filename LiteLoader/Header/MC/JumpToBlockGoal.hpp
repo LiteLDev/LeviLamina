@@ -19,7 +19,9 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI JumpToBlockGoal(class Mob&);
     MCAPI void resetCooldown();
+
 
 private:
     MCAPI bool _calculateJumpCurve(class BlockPos const&);

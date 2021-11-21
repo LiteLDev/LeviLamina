@@ -10,5 +10,7 @@ public:
     virtual ~SpawnData();
 
 public:
+    MCAPI SpawnData(class CompoundTag const&);
+    MCAPI SpawnData(class SpawnData const&);
     MCAPI std::unique_ptr<class CompoundTag> save();
 };

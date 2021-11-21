@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/CrashDumpFrameDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace CrashDumpFrameData {
+class CrashDumpFrameData {
 #include "Extra/CrashDumpFrameDataAPI.hpp"
 
 public:
-MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
+    MCAPI CrashDumpFrameData(int, int, unsigned __int64, float, float, float, float);
 
-} // namespace CrashDumpFrameData
+    MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
+};

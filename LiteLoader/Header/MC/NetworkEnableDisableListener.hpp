@@ -12,6 +12,7 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI NetworkEnableDisableListener(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     MCAPI void disable();
     MCAPI bool isDisabled() const;
     MCAPI bool isEnabled() const;

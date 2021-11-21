@@ -8,6 +8,9 @@ class MolangVariable {
 #include "Extra/MolangVariableAPI.hpp"
 
 public:
+    MCAPI MolangVariable(enum MolangVariableIndex, class HashedString, struct MolangScriptArg);
+    MCAPI ~MolangVariable();
+
     MCAPI static enum MolangVariableIndex getVariableIndex(class HashedString const&);
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64);
     MCAPI static enum MolangVariableIndex getVariableIndex(unsigned __int64, char const*, bool);

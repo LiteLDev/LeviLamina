@@ -12,5 +12,7 @@ public:
     virtual void applyTemplate(class ScriptObjectBinder&);
 
 public:
+    MCAPI ScriptBinderLevelTickingAreaTemplate();
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class ITickingArea const&);
 };

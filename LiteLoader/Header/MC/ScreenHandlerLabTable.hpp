@@ -13,4 +13,7 @@ public:
     virtual int /*enum ItemStackNetResult*/ endRequest();
     virtual void unk_vfn_4();
     virtual void postRequest(bool);
+
+public:
+    MCAPI ScreenHandlerLabTable(class ContainerScreenContext const&, class ItemStackRequestActionHandler&);
 };

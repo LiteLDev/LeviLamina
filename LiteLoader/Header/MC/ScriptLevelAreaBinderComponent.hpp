@@ -12,6 +12,8 @@ public:
     virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
+    MCAPI ScriptLevelAreaBinderComponent();
+    MCAPI ScriptLevelAreaBinderComponent(class ITickingArea const&);
     MCAPI class mce::UUID const& getIdentifier() const;
 
     MCAPI static std::string const TAG;

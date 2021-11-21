@@ -11,6 +11,10 @@ public:
     MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();
     MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg const&);
     MCAPI struct MolangScriptArg& operator=(struct MolangScriptArg&&);
+    MCAPI MolangScriptArg(struct MolangScriptArg&&);
+    MCAPI MolangScriptArg(float);
+    MCAPI MolangScriptArg(struct MolangScriptArg const&);
+    MCAPI ~MolangScriptArg();
 
     MCAPI static struct MolangScriptArg const mDefaultReturnValue_break;
     MCAPI static struct MolangScriptArg const mDefaultReturnValue_emptyStringHash;

@@ -9,4 +9,5 @@ class ListTagFloatAdder {
 
 public:
     MCAPI class ListTagFloatAdder& operator()(float);
+    MCAPI ~ListTagFloatAdder();
 };

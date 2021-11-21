@@ -10,4 +10,7 @@ public:
     virtual ~LegacyTreeFeature();
     virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
     virtual void unk_vfn_2();
+
+public:
+    MCAPI LegacyTreeFeature(enum LegacyTreeFeature::Type, class FeatureRegistry&);
 };

@@ -9,6 +9,8 @@ class GameTestResult {
 
 public:
     MCAPI bool operator==(struct GameTestResult const&);
+    MCAPI GameTestResult(struct GameTestResult const&);
+    MCAPI ~GameTestResult();
 
     MCAPI static void bindType();
 };

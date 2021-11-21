@@ -8,6 +8,7 @@ class OverworldNoises3d {
 #include "Extra/OverworldNoises3dAPI.hpp"
 
 public:
+    MCAPI OverworldNoises3d(std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>);
     MCAPI float computeDimensionDensity(int) const;
     MCAPI float computeInitialDensity(int, float, float, float) const;
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const&) const;

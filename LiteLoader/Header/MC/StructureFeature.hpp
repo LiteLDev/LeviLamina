@@ -16,6 +16,7 @@ public:
     virtual class StructureStart* getStructureAt(int, int, int);
 
 public:
+    MCAPI StructureFeature(unsigned int);
     MCAPI void createBlueprints(class Dimension&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
     MCAPI void debugRender();
     MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, unsigned int);

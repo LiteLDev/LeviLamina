@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptWeatherChangedEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptWeatherChangedEvent {
+class ScriptWeatherChangedEvent {
 #include "Extra/ScriptWeatherChangedEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptWeatherChangedEvent> bind(struct Scripting::Version);
+    MCAPI ~ScriptWeatherChangedEvent();
 
-} // namespace ScriptWeatherChangedEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptWeatherChangedEvent> bind(struct Scripting::Version);
+};

@@ -16,6 +16,7 @@ public:
     virtual std::unique_ptr<class CompoundTag> createTag(bool);
 
 public:
+    MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
 };

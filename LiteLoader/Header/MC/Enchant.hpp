@@ -24,6 +24,7 @@ public:
     virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/);
 
 public:
+    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI std::string getDescriptionId() const;
     MCAPI class HashedString const& getStringId() const;
     MCAPI bool isAvailable() const;

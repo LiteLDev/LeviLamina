@@ -11,4 +11,5 @@ public:
 MCAPI static std::string const NAME;
 MCAPI static void bindType();
 
+
 } // namespace VolumeBoundsDefinition

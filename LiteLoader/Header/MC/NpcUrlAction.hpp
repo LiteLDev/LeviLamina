@@ -10,4 +10,7 @@ public:
     virtual ~NpcUrlAction();
     virtual class Json::Value toJson();
     virtual void unk_vfn_2();
+
+public:
+    MCAPI NpcUrlAction();
 };

@@ -17,6 +17,10 @@ public:
     virtual void setupCommands(class CommandRegistry&);
     virtual void configureServerNetworkHandler(class ServerInstance&, class ServerNetworkHandler&);
 
+public:
+    MCAPI VanillaGameModuleServer();
+
+
 private:
     MCAPI void _configureEntitySystems(class Level&, class ResourcePackManager&, class Experiments const&);
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider&, struct SpawnSettings const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);

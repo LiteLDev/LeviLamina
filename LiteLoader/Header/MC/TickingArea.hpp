@@ -35,6 +35,13 @@ public:
     virtual void unk_vfn_25();
     virtual void unk_vfn_26();
 
+public:
+    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct Bounds const&, bool);
+    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID, float);
+    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID);
+
+
 private:
+    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct ActorUniqueID, struct Bounds const&, bool, float, bool);
     MCAPI void _save();
 };

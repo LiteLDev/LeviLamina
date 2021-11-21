@@ -10,6 +10,7 @@ class DirtyTicksCounter {
 public:
     MCAPI int getTicksSinceLastChange() const;
     MCAPI struct DirtyTicksCounter& operator++();
+    MCAPI DirtyTicksCounter();
     MCAPI int getTotalDirtyTicks() const;
     MCAPI void reset();
     MCAPI void touch();

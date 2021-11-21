@@ -11,4 +11,7 @@ public:
     virtual ~PreferredPathDescription();
     virtual void deserializeData(struct DeserializeDataParams);
     virtual void serializeData(class Json::Value&);
+
+public:
+    MCAPI PreferredPathDescription();
 };

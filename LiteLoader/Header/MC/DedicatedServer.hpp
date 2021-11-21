@@ -24,7 +24,9 @@ public:
     virtual void unk_vfn_14();
 
 public:
+    MCAPI DedicatedServer();
     MCAPI enum DedicatedServer::StartResult start(std::string const&);
+
 
 private:
     MCAPI void initalizeAppConfigs();

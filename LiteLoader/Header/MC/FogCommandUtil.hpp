@@ -11,4 +11,5 @@ MCAPI bool pop(std::string const&, std::string const&, class CommandOutput&, cla
 MCAPI bool push(std::string const&, std::string const&, class CommandOutput&, class Player&, class FogCommandComponent&);
 MCAPI bool remove(std::string const&, std::string const&, class CommandOutput&, class Player&, class FogCommandComponent&);
 
+
 } // namespace FogCommandUtil

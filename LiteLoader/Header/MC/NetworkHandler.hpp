@@ -6,11 +6,6 @@
 #undef EXTRA_INCLUDE_PART
 class NetworkHandler {
 #include "Extra/NetworkHandlerAPI.hpp"
-public:
-    //virtual();
-    virtual void _onDisable();
-    virtual void _onEnable();
-    //virtual();
 
 public:
     MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const&);

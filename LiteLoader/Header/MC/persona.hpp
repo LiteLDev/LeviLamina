@@ -27,4 +27,5 @@ MCAPI class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
 MCAPI enum persona::PieceType pieceTypeFromString(std::string const&);
 MCAPI std::string const& stringFromPieceType(enum persona::PieceType, bool);
 
+
 } // namespace persona

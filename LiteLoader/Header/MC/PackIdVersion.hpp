@@ -12,5 +12,8 @@ public:
     MCAPI bool operator<(struct PackIdVersion const&);
     MCAPI bool operator!=(struct PackIdVersion const&);
     MCAPI bool operator==(struct PackIdVersion const&);
+    MCAPI PackIdVersion();
+    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum PackType);
     MCAPI bool satisfies(struct PackIdVersion const&) const;
+    MCAPI ~PackIdVersion();
 };

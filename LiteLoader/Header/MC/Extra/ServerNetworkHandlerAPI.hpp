@@ -7,7 +7,7 @@
 // Add Member There
 public:
 inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0) {
-        return _getServerPlayer(a0, 0);
-    }
+    return _getServerPlayer(a0, 0);
+}
 
 #endif

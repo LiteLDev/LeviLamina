@@ -8,6 +8,9 @@ class JigsawEditorData {
 #include "Extra/JigsawEditorDataAPI.hpp"
 
 public:
+    MCAPI JigsawEditorData();
+    MCAPI JigsawEditorData(std::string const&, std::string const&, std::string const&, std::string const&, enum JigsawJointType);
+    MCAPI JigsawEditorData(class JigsawEditorData&&);
     MCAPI std::string const& getFinalBlock() const;
     MCAPI enum JigsawJointType const& getJointType() const;
     MCAPI std::string const& getName() const;
@@ -19,4 +22,5 @@ public:
     MCAPI void setName(std::string const&);
     MCAPI void setTarget(std::string const&);
     MCAPI void setTargetPool(std::string const&);
+    MCAPI ~JigsawEditorData();
 };

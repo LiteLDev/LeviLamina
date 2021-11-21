@@ -9,4 +9,6 @@ class SurfaceMaterialAttributes {
 
 public:
     MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
+    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
+    MCAPI ~SurfaceMaterialAttributes();
 };

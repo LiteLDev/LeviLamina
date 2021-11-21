@@ -26,11 +26,16 @@ public:
     virtual void unk_vfn_16();
     virtual void unk_vfn_17();
 
+public:
+    MCAPI RamAttackGoal(class Mob&);
+
+
 private:
     MCAPI bool _hasChargePath();
     MCAPI bool _pathablePos(class BlockSource const&, class BlockPos);
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
+
 
 protected:
     MCAPI bool _initiateRamAttack();

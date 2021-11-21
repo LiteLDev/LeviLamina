@@ -16,4 +16,5 @@ MCAPI std::string const& getNameMixedCase(enum BlockColor);
 MCAPI std::string const& getNameSnakeCase(enum BlockColor);
 MCAPI int getRGBColor(enum BlockColor);
 
+
 } // namespace BlockColorUtil

@@ -8,7 +8,9 @@ class SpinLock {
 #include "Extra/SpinLockAPI.hpp"
 
 public:
+    MCAPI SpinLock();
     MCAPI void lock();
     MCAPI bool try_lock();
     MCAPI void unlock();
+    MCAPI ~SpinLock();
 };

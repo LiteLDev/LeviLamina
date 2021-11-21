@@ -11,6 +11,7 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerActorHurtEvent();
     MCAPI void setAbsorbedDamage(int);
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setAttackerId(struct ActorUniqueID const&);
@@ -18,6 +19,7 @@ public:
     MCAPI void setCause(std::string const&);
     MCAPI void setDamage(int);
     MCAPI void setProjectile(enum ActorType const&);
+
 
 private:
     MCAPI static class HashedString const mHash;

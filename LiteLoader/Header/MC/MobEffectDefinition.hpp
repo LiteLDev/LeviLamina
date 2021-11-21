@@ -8,6 +8,7 @@ class MobEffectDefinition {
 #include "Extra/MobEffectDefinitionAPI.hpp"
 
 public:
+    MCAPI MobEffectDefinition();
     MCAPI void initialize(class EntityContext&, class MobEffectComponent&);
     MCAPI void setEffectTimeInTicks(int const&);
     MCAPI void setMobEffectByName(std::string const&);

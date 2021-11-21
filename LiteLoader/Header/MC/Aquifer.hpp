@@ -8,6 +8,7 @@ class Aquifer {
 #include "Extra/AquiferAPI.hpp"
 
 public:
+    MCAPI Aquifer(class ChunkPos const&, class AquiferNoises const&, class SurfaceLevelCache const&, int, int, int);
     MCAPI void computeAt(class BlockPos const&);
     MCAPI float getLastBarrier() const;
     MCAPI class Block const* getLastFluidBlockType(bool) const;
@@ -15,6 +16,7 @@ public:
     MCAPI bool isInLavaZone(int);
     MCAPI bool isInOperatingZone(int);
     MCAPI bool shouldScheduleFluidUpdate() const;
+
 
 private:
     MCAPI struct Aquifer::FluidSample _getOrComputeNewFluidSample(class BlockPos const&);

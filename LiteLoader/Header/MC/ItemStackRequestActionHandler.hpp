@@ -8,6 +8,7 @@ class ItemStackRequestActionHandler {
 #include "Extra/ItemStackRequestActionHandlerAPI.hpp"
 
 public:
+    MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer&, class Player&);
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const&, class ItemStack const&);
     MCAPI void _cacheLegacySlotIdAssignment(enum ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
     MCAPI void _cacheSlotIdAssigment(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&, unsigned char, unsigned char, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
@@ -19,6 +20,7 @@ public:
     MCAPI class ContainerScreenContext const& getScreenContext() const;
     MCAPI enum ItemStackNetResult handleRequestAction(class ItemStackRequestAction const&);
     MCAPI bool isAllowedContainer(enum ContainerEnumName) const;
+
 
 private:
     MCAPI enum ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const&, bool, bool, bool);

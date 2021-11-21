@@ -8,9 +8,12 @@ class Token {
 #include "Extra/TokenAPI.hpp"
 
 public:
+    MCAPI Token(std::string const&);
     MCAPI std::string const& getText(std::string const&) const;
+    MCAPI ~Token();
 
     MCAPI static std::vector<struct Token> tokenize(std::string const&);
+
 
 protected:
     MCAPI bool _parseRandom();

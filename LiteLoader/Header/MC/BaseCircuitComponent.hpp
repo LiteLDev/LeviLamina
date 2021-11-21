@@ -32,6 +32,10 @@ public:
     virtual int /*enum CircuitComponentType*/ getCircuitComponentType();
     virtual int /*enum CircuitComponentType*/ getCircuitComponentGroupType();
 
+public:
+    MCAPI BaseCircuitComponent();
+
+
 protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int, bool, int);
 };

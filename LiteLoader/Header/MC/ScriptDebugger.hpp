@@ -13,7 +13,9 @@ public:
     virtual ~ScriptDebugger();
 
 public:
+    MCAPI ScriptDebugger(class Scripting::ScriptEngine&, class IScriptDebuggerWatchdog&);
     MCAPI void checkConnections();
+
 
 private:
     MCAPI class Scripting::IDebuggerController* _createController();

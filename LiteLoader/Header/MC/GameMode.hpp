@@ -28,6 +28,7 @@ public:
     virtual void registerUpsellScreenCallback(class std::function<void(bool)>);
 
 public:
+    MCAPI GameMode(class Player&, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&, class std::function<void(void)> const&);
     MCAPI bool baseUseItem(class ItemStack&);

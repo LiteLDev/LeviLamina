@@ -15,6 +15,7 @@ public:
     virtual bool _read(class ReadOnlyBinaryStream&);
 
 public:
+    MCAPI ItemStackRequestActionCraftGrindstone();
     MCAPI struct ItemStackNetIdVariant const& getRecipeNetId() const;
     MCAPI int getRepairCost() const;
 };

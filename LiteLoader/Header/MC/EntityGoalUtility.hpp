@@ -9,4 +9,5 @@ namespace EntityGoalUtility {
 
 MCAPI std::string getNumericNodeSpecifier(unsigned short);
 
+
 } // namespace EntityGoalUtility

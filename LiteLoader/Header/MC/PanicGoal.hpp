@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI PanicGoal(class Mob&, float, bool, enum LevelSoundEvent, struct FloatRange, bool, bool, std::vector<enum ActorDamageCause>);
+
+
 private:
     MCAPI bool _tryGeneratePathEnd();
 };

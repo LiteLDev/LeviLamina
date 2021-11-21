@@ -7,6 +7,10 @@
 class BehaviorFactory {
 #include "Extra/BehaviorFactoryAPI.hpp"
 
+public:
+    MCAPI BehaviorFactory();
+
+
 private:
     MCAPI void _initNodes();
 };

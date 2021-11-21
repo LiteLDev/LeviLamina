@@ -8,6 +8,9 @@ class ScriptWorldEvents {
 #include "Extra/ScriptWorldEventsAPI.hpp"
 
 public:
+    MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class Level*>);
+    MCAPI class ScriptWorldEvents& operator=(class ScriptWorldEvents&&);
+    MCAPI ScriptWorldEvents(class ScriptWorldEvents&&);
     MCAPI class Level& getLevel() const;
     MCAPI void onActivatePiston(struct ScriptPistonActionEvent&);
     MCAPI void onActorAddEffect(struct ScriptActorAddEffectEvent&);
@@ -20,8 +23,8 @@ public:
     MCAPI void onExplosion(struct ScriptExplosionStartedEvent&);
     MCAPI void onLevelTick(struct ScriptTickEvent&);
     MCAPI void onWeatherChanged(struct ScriptWeatherChangedEvent&);
-    MCAPI class ScriptWorldEvents& operator=(class ScriptWorldEvents&&);
     MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
+    MCAPI ~ScriptWorldEvents();
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorldEvents> bind(struct Scripting::Version);
 };

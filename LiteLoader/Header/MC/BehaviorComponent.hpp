@@ -8,5 +8,8 @@ class BehaviorComponent {
 #include "Extra/BehaviorComponentAPI.hpp"
 
 public:
+    MCAPI BehaviorComponent();
     MCAPI class BehaviorComponent& operator=(class BehaviorComponent&&);
+    MCAPI BehaviorComponent(class BehaviorComponent&&);
+    MCAPI ~BehaviorComponent();
 };

@@ -8,8 +8,11 @@ class DefinitionInstanceGroup {
 #include "Extra/DefinitionInstanceGroupAPI.hpp"
 
 public:
+    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup const&);
     MCAPI class DefinitionInstanceGroup& operator=(class DefinitionInstanceGroup const&);
     MCAPI class DefinitionInstanceGroup& operator=(class DefinitionInstanceGroup&&);
+    MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup&&);
+    MCAPI DefinitionInstanceGroup();
     MCAPI void add(class std::shared_ptr<class IDefinitionInstance> const&);
     MCAPI void clear();
     MCAPI void combine(class DefinitionInstanceGroup const&);
@@ -17,6 +20,8 @@ public:
     MCAPI bool overlaps(class DefinitionInstanceGroup const&) const;
     MCAPI void remove(class std::shared_ptr<class IDefinitionInstance> const&);
     MCAPI void subtract(class DefinitionInstanceGroup const&);
+    MCAPI ~DefinitionInstanceGroup();
+
 
 private:
     MCAPI std::string const& _getDefinitionNameFromTypeId(unsigned short const&) const;

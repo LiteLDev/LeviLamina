@@ -15,7 +15,9 @@ public:
     virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
 
 public:
+    MCAPI FoodItemComponentLegacy(class Item&);
     MCAPI bool init(class Json::Value&, class SemVersion const&);
+
 
 private:
     MCAPI void _applyEatEffects(class ItemStack const&, class Actor&, class Level&);

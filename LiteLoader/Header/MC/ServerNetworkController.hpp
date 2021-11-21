@@ -23,4 +23,7 @@ public:
     virtual void unk_vfn_13();
     virtual void unk_vfn_14();
     virtual void unk_vfn_15();
+
+public:
+    MCAPI ServerNetworkController(bool, class mce::UUID const&, class std::function<bool(class ServerPlayer const&, enum AbilitiesIndex)>);
 };

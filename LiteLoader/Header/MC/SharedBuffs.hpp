@@ -19,4 +19,5 @@ MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
 MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
 MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
 
+
 } // namespace SharedBuffs

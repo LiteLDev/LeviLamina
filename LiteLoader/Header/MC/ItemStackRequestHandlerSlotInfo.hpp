@@ -8,5 +8,6 @@ class ItemStackRequestHandlerSlotInfo {
 #include "Extra/ItemStackRequestHandlerSlotInfoAPI.hpp"
 
 public:
-    MCAPI bool operator bool();
+    MCAPI operator bool();
+    MCAPI ~ItemStackRequestHandlerSlotInfo();
 };

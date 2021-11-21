@@ -10,4 +10,5 @@ namespace ScriptDimensionBinderComponent {
 public:
 MCAPI static std::string const TAG;
 
+
 } // namespace ScriptDimensionBinderComponent

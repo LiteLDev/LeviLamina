@@ -38,10 +38,12 @@ public:
     virtual void _setUUID(class mce::UUID const&);
 
 public:
+    MCAPI CommandOrigin();
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&) const;
+
 
 protected:
     MCAPI static class NetworkIdentifier sUnknownSource;

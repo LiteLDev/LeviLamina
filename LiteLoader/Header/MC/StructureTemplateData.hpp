@@ -19,6 +19,7 @@ public:
 private:
     MCAPI void _contentErrorMissingField(std::string const&) const;
 
+
 protected:
     MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const&);
     MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const&);

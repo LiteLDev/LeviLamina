@@ -11,8 +11,10 @@ public:
     virtual void unk_vfn_1();
 
 public:
+    MCAPI ScriptServerBlockInteractedWithEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setBlockPos(class BlockPos const&);
+
 
 private:
     MCAPI static class HashedString const mHash;

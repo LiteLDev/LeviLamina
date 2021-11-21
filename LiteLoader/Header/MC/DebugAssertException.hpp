@@ -18,6 +18,9 @@ public:
     virtual void unk_vfn_8();
 
 public:
+    MCAPI DebugAssertException(char const*, char const*, char const*, int, char const*, char const*);
+    MCAPI DebugAssertException(class DebugAssertException const&);
+
     MCAPI static bool isEnabled();
 
 private:

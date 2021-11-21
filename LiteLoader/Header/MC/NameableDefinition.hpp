@@ -8,10 +8,12 @@ class NameableDefinition {
 #include "Extra/NameableDefinitionAPI.hpp"
 
 public:
+    MCAPI NameableDefinition();
     MCAPI void addNameAction(struct NameAction const&);
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class NameableComponent&) const;
     MCAPI void serializeData(class Json::Value&) const;
+    MCAPI ~NameableDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NameableDefinition>>&);
 

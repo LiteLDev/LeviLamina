@@ -18,6 +18,7 @@ public:
     virtual void flush(class NetworkIdentifier const&, class std::function<void(void)>&&);
 
 public:
+    MCAPI LoopbackPacketSender(unsigned char, class NetworkHandler&);
     MCAPI void addLoopbackCallback(class NetEventCallback&);
     MCAPI void removeLoopbackCallback(class NetEventCallback&);
     MCAPI void setUserList(std::vector<class OwnerPtrT<struct EntityRefTraits>> const*);

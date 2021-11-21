@@ -7,6 +7,7 @@
 class HumanoidMonster {
 #include "Extra/HumanoidMonsterAPI.hpp"
 
+
 private:
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;

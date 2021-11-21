@@ -24,6 +24,7 @@ public:
     virtual void unk_vfn_14();
     virtual void unk_vfn_15();
 
+
 private:
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;

@@ -13,4 +13,5 @@ MCAPI std::vector<class BaseGameVersion> const& getAvailableBehaviorPackBaseGame
 MCAPI std::vector<class BaseGameVersion> const& getAvailableResourcePackBaseGameVersions();
 MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class WorldTemplateManager const&, class LevelData&);
 
+
 } // namespace BaseGameVersioning

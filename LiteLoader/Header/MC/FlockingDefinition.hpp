@@ -8,6 +8,7 @@ class FlockingDefinition {
 #include "Extra/FlockingDefinitionAPI.hpp"
 
 public:
+    MCAPI FlockingDefinition();
     MCAPI void initialize(class EntityContext&, class FlockingComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class FlockingDefinition>>&);

@@ -46,6 +46,7 @@ public:
     virtual bool _playerCanUpdate(class Player const&);
 
 public:
+    MCAPI BlockActor(enum BlockActorType, class BlockPos const&, std::string const&);
     MCAPI void assignBlockIfNotAssigned(class BlockSource&);
     MCAPI class AABB const& getAABB() const;
     MCAPI class Block const* getBlock() const;
@@ -63,6 +64,7 @@ public:
 
     MCAPI static bool isType(class BlockActor&, enum BlockActorType);
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
+
 
 protected:
     MCAPI void _resetAABB();

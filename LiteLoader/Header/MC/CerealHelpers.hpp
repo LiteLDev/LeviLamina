@@ -11,4 +11,5 @@ MCAPI void bindVec3();
 MCAPI bool deserializeToVec3(class Vec3&, class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
 MCAPI bool serializeFromVec3(class Vec3 const&, class BasicSaver&, struct SerializerTraits const&);
 
+
 } // namespace CerealHelpers

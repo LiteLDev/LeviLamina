@@ -17,4 +17,5 @@ MCAPI char const* StatusCode;
 MCAPI char const* StatusMsg;
 MCAPI char const* VersionData;
 
+
 } // namespace Automation

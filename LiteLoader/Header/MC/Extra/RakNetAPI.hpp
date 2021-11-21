@@ -24,16 +24,15 @@ public:
     RakPeer(RakPeer const&) = delete;
     RakPeer(RakPeer&&) = delete;
     SystemAddress getAdr(NetworkIdentifier const& ni) {
-            SystemAddress rv;
-            RakNetGUID guid = dAccess<RakNetGUID>(&ni, 8);
-            SymCall("?GetSystemAddressFromGuid@RakPeer@RakNet@@UEBA?AUSystemAddress@2@URakNetGUID@2@@Z",
-                    void, void*, SystemAddress*, RakNetGUID const*)(this, &rv, &guid);
-            return rv;
+        SystemAddress rv;
+        RakNetGUID guid = dAccess<RakNetGUID>(&ni, 8);
+        SymCall("?GetSystemAddressFromGuid@RakPeer@RakNet@@UEBA?AUSystemAddress@2@URakNetGUID@2@@Z",
+                void, void*, SystemAddress*, RakNetGUID const*)(this, &rv, &guid);
+        return rv;
     }
     MCAPI virtual int GetAveragePing(struct RakNet::AddressOrGUID);
     MCAPI virtual int GetLastPing(struct RakNet::AddressOrGUID) const;
     MCAPI virtual int GetLowestPing(struct RakNet::AddressOrGUID) const;
-
 };
 class RakNetSocket2;
 struct SplitPacketChannel;

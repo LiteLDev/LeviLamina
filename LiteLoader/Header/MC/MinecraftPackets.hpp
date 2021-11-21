@@ -10,4 +10,5 @@ namespace MinecraftPackets {
 public:
 MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
 
+
 } // namespace MinecraftPackets

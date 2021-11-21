@@ -10,6 +10,7 @@ public:
     virtual ~CreativeItemRegistry();
 
 public:
+    MCAPI CreativeItemRegistry();
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
     MCAPI class CreativeItemGroupCategory* getCreativeCategory(enum CreativeItemCategory);

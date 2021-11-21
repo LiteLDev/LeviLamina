@@ -17,5 +17,7 @@ public:
     virtual void unload();
 
 public:
+    MCAPI MemoryMappedFileAccess(class IFileAccess&, std::unique_ptr<class FileAccessTransforms>);
+
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 };

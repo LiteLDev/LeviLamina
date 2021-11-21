@@ -9,6 +9,7 @@ class GeneticsComponent {
 
 public:
     MCAPI class GeneticsComponent& operator=(class GeneticsComponent&&);
+    MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     MCAPI void buildDebugInfo(std::string&) const;
     MCAPI struct GeneticsComponent::Gene* findGene(std::string const&);

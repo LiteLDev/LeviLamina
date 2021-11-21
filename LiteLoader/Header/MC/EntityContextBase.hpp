@@ -10,6 +10,8 @@ class EntityContextBase {
 public:
     MCAPI bool isValid() const;
     MCAPI bool operator==(class EntityContextBase const&);
+    MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
+
 
 protected:
     MCAPI void _assertValid() const;

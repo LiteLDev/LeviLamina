@@ -12,4 +12,5 @@ MCAPI std::string getGameVersionString();
 MCAPI std::string getGameVersionStringNet();
 MCAPI std::string getServerVersionString();
 
+
 } // namespace Common

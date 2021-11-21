@@ -9,4 +9,5 @@ namespace PlayerCapabilities {
 
 MCAPI std::unique_ptr<struct PlayerCapabilities::ISharedController> createController(class Level const&);
 
+
 } // namespace PlayerCapabilities

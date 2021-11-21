@@ -11,10 +11,13 @@ public:
     virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, int /*enum LabTableReactionType*/, int /*enum CompoundContainerType*/);
 
 public:
+    MCAPI CraftableCompounds();
+    MCAPI CraftableCompounds(class CraftableCompounds const&);
     MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const;
     MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const&);
     MCAPI enum LabTableReactionType getReaction(std::vector<class ItemStack> const&);
     MCAPI void registerCompounds();
+
 
 protected:
     MCAPI std::string _getCompoundId(std::vector<class ItemStack> const&);

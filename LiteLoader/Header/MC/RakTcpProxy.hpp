@@ -18,4 +18,7 @@ public:
     virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
     virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
     virtual struct RakNet::SystemAddress nextLostConnection();
+
+public:
+    MCAPI RakTcpProxy();
 };

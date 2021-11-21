@@ -8,6 +8,7 @@ class ScriptItems {
 #include "Extra/ScriptItemsAPI.hpp"
 
 public:
+    MCAPI ScriptItems();
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptItemType> get(class Scripting::WeakLifetimeScope&, std::string const&);
 
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptItems> bind(struct Scripting::Version);

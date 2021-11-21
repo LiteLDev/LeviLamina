@@ -8,6 +8,7 @@ class JumpInfo {
 #include "Extra/JumpInfoAPI.hpp"
 
 public:
+    MCAPI JumpInfo(float, float, int, int);
     MCAPI int getAnimDuration() const;
     MCAPI float getDistanceScale() const;
     MCAPI float getHeight() const;

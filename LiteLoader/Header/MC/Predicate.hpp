@@ -9,4 +9,5 @@ namespace Predicate {
 
 MCAPI bool _calulatePositionalChance(float, float, int, int, int, float);
 
+
 } // namespace Predicate

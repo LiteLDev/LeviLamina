@@ -15,6 +15,7 @@ public:
     virtual float getAttributeModifierValue(int, class AttributeModifier const&);
 
 public:
+    MCAPI MobEffect(int, std::string const&, std::string const&, bool, int, int, std::string const&, bool, struct MobEffect::FactorCalculationData const&);
     MCAPI void addAttributeBuff(class Attribute const&, class std::shared_ptr<class AttributeBuff>);
     MCAPI void addAttributeModifier(class Attribute const&, class std::shared_ptr<class AttributeModifier>);
     MCAPI class HashedString const& getComponentName() const;
@@ -64,6 +65,7 @@ public:
     MCAPI static void initEffects(class ResourcePackManager*, class Experiments const&);
     MCAPI static std::unique_ptr<class MobEffect>* mMobEffects;
     MCAPI static void shutdownEffects();
+
 
 protected:
     MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const&, int, float) const;

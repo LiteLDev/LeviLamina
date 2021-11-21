@@ -12,6 +12,10 @@ public:
     virtual void unk_vfn_2();
     virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
 
+public:
+    MCAPI Feature(class Actor*);
+
+
 protected:
     MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI void _setManuallyPlaced(class Actor*);

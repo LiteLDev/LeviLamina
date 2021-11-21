@@ -8,6 +8,7 @@ class ClockSpriteCalculator {
 #include "Extra/ClockSpriteCalculatorAPI.hpp"
 
 public:
+    MCAPI ClockSpriteCalculator();
     MCAPI int update(class Actor&, bool);
     MCAPI int update(class BlockSource const&, class Vec3 const&, bool);
 };

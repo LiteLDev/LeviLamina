@@ -8,5 +8,8 @@ class PackSourceReport {
 #include "Extra/PackSourceReportAPI.hpp"
 
 public:
+    MCAPI PackSourceReport();
+    MCAPI PackSourceReport(class PackSourceReport const&);
     MCAPI bool hasErrors() const;
+    MCAPI ~PackSourceReport();
 };

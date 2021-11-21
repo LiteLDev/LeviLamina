@@ -16,6 +16,7 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
+    MCAPI WearableItemComponent(class ComponentItem*);
     MCAPI enum EquipmentSlot getSlot() const;
     MCAPI bool use(class ItemStack&, class Player&) const;
 

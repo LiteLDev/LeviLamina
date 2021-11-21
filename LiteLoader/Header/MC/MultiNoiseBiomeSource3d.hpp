@@ -13,6 +13,10 @@ public:
     virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>);
     virtual class Biome const* getBiome(int, int, int);
 
+public:
+    MCAPI MultiNoiseBiomeSource3d(struct OverworldNoises3d const&, std::unique_ptr<class ParameterList>, class DimensionHeightRange);
+
+
 private:
     MCAPI struct TargetPoint _getTargetPoint(int, int, int) const;
 };

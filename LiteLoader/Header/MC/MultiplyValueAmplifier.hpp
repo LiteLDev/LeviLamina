@@ -11,4 +11,7 @@ public:
     virtual float getAmount(int, float);
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
+
+public:
+    MCAPI MultiplyValueAmplifier(float);
 };

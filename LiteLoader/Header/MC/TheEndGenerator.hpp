@@ -8,7 +8,9 @@ class TheEndGenerator {
 #include "Extra/TheEndGeneratorAPI.hpp"
 
 public:
+    MCAPI TheEndGenerator(class Dimension&, unsigned int, class Biome const*);
     MCAPI bool isIslandChunk(int, int);
+
 
 private:
     MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);

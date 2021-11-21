@@ -8,6 +8,7 @@ class ShulkerBoxBlockActor {
 #include "Extra/ShulkerBoxBlockActorAPI.hpp"
 
 public:
+    MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const&, enum BlockActorRendererId, class BlockPos const&);
     MCAPI void setFacingDir(unsigned char);
 
     MCAPI static bool itemAllowed(class ItemStackBase const&);

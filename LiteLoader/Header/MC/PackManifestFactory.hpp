@@ -11,6 +11,8 @@ public:
     virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
 
 public:
+    MCAPI PackManifestFactory(class IPackTelemetry&);
+
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_PATH;

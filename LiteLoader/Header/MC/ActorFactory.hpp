@@ -8,6 +8,7 @@ class ActorFactory {
 #include "Extra/ActorFactoryAPI.hpp"
 
 public:
+    MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level>>);
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const&, class EntityContext&) const;
     MCAPI void clearDefinitionGroup();
     MCAPI class OwnerPtrT<struct EntityRefTraits> createBornEntity(struct ActorDefinitionIdentifier const&, class BlockPos const&);
@@ -20,6 +21,7 @@ public:
     MCAPI class OwnerPtrT<struct EntityRefTraits> loadEntity(class CompoundTag*, class DataLoadHelper&, class DimensionHeightRange const&, class LevelChunk const*);
     MCAPI void setDefinitionGroup(class ActorDefinitionGroup*);
     MCAPI void setEntityInitializer(class std::shared_ptr<class IEntityInitializer>);
+    MCAPI ~ActorFactory();
 
     MCAPI static class Actor* fixLegacyEntity(class BlockSource&, class CompoundTag const*);
 

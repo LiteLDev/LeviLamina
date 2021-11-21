@@ -11,9 +11,11 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerWeatherEventData();
     MCAPI void setDimension(std::string const&);
     MCAPI void setLightning(bool);
     MCAPI void setRaining(bool);
+
 
 private:
     MCAPI static class HashedString const mHash;

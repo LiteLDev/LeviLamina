@@ -26,7 +26,9 @@ public:
     virtual void unk_vfn_16();
 
 public:
+    MCAPI BaseMoveToGoal(class Mob&, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const&);
+
 
 protected:
     MCAPI class BlockPos _blockAboveTarget() const;

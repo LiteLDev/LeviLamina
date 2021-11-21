@@ -7,6 +7,11 @@
 class WorldTemplateLevelData {
 #include "Extra/WorldTemplateLevelDataAPI.hpp"
 
+public:
+    MCAPI WorldTemplateLevelData();
+    MCAPI ~WorldTemplateLevelData();
+
+
 protected:
     MCAPI void _getTagData(class CompoundTag const&);
     MCAPI void _setTagData(class CompoundTag&) const;

@@ -15,4 +15,7 @@ public:
     virtual int /*enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&);
     virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum JumpType*/);
     virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
+
+public:
+    MCAPI DynamicJumpControl();
 };

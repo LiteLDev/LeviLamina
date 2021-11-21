@@ -11,9 +11,11 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerBlockMovedByPistonEvent();
     MCAPI void setBlockPos(class BlockPos const&);
     MCAPI void setPistonAction(std::string);
     MCAPI void setPistonPos(class BlockPos const&);
+
 
 private:
     MCAPI static class HashedString const mHash;

@@ -9,4 +9,5 @@ namespace VanillaWorldSystems {
 
 MCAPI class std::shared_ptr<class VanillaWorldSystems::Impl> init(class Level*, class Experiments const&, class BaseGameVersion const&, class ResourcePackManager*);
 
+
 } // namespace VanillaWorldSystems

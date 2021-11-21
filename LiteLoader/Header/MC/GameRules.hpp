@@ -8,6 +8,8 @@ class GameRules {
 #include "Extra/GameRulesAPI.hpp"
 
 public:
+    MCAPI GameRules();
+    MCAPI GameRules(class GameRules const&);
     MCAPI std::unique_ptr<class GameRulesChangedPacket> createAllGameRulesPacket() const;
     MCAPI void deserializeRules(class GameRulesChangedPacketData const&);
     MCAPI bool getBool(struct GameRuleId, bool) const;
@@ -22,6 +24,7 @@ public:
     MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, float, bool, bool*, bool*, class GameRule::ValidationError*);
     MCAPI std::unique_ptr<class GameRulesChangedPacket> setRule(struct GameRuleId, bool, bool, bool*, bool*, class GameRule::ValidationError*);
     MCAPI void setTagData(class CompoundTag&) const;
+    MCAPI ~GameRules();
 
     MCAPI static unsigned int const DEFAULT_PLAYER_SPAWN_RADIUS;
     MCAPI static int const DEFAULT_RANDOMTICKSPEED;

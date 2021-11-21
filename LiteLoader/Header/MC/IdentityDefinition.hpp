@@ -15,6 +15,7 @@ public:
     MCAPI bool isEntityType() const;
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;
+    MCAPI ~IdentityDefinition();
 
     MCAPI static class IdentityDefinition const Invalid;
 };

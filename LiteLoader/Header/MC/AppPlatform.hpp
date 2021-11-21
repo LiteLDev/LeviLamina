@@ -8,6 +8,7 @@ class AppPlatform {
 #include "Extra/AppPlatformAPI.hpp"
 
 public:
+    MCAPI AppPlatform(bool);
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
     MCAPI void addListener(class AppPlatformListener*, float);
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo> const& getPlatformRuntimeInformation() const;

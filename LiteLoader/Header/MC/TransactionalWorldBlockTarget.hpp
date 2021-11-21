@@ -224,4 +224,7 @@ public:
     virtual void unk_vfn_214();
     virtual void unk_vfn_215();
     virtual void unk_vfn_216();
+
+public:
+    MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);
 };

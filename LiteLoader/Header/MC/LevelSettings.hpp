@@ -8,10 +8,14 @@ class LevelSettings {
 #include "Extra/LevelSettingsAPI.hpp"
 
 public:
+    MCAPI LevelSettings(class LevelData const&, class AutomaticID<class Dimension, int>);
+    MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
+    MCAPI class LevelSettings& operator=(class LevelSettings&&);
+    MCAPI LevelSettings(class LevelSettings const&);
+    MCAPI LevelSettings(class LevelSettings&&);
+    MCAPI LevelSettings();
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
     MCAPI bool educationFeaturesEnabled() const;
-    MCAPI struct SpawnSettings getSpawnSettings() const;
-    MCAPI class LevelSettings& operator=(class LevelSettings&&);
     MCAPI std::string const& educationProductID() const;
     MCAPI bool forceGameType() const;
     MCAPI class BaseGameVersion const& getBaseGameVersion() const;
@@ -30,9 +34,9 @@ public:
     MCAPI bool getMultiplayerGameIntent() const;
     MCAPI enum NetherWorldType getNetherType() const;
     MCAPI bool getOnlySpawnV1Villagers() const;
-    MCAPI enum Social::GamePublishSetting getPlatformBroadcastIntent() const;
     MCAPI unsigned int getSeed() const;
     MCAPI unsigned int getServerChunkTickRange() const;
+    MCAPI struct SpawnSettings getSpawnSettings() const;
     MCAPI int getTime() const;
     MCAPI enum WorldVersion getWorldVersion() const;
     MCAPI enum Social::GamePublishSetting getXBLBroadcastIntent() const;
@@ -67,6 +71,7 @@ public:
     MCAPI class LevelSettings& setUseMsaGamertagsOnly(bool);
     MCAPI class LevelSettings& setXblBroadcastIntent(enum Social::GamePublishSetting);
     MCAPI bool useMsaGamertagsOnly() const;
+    MCAPI ~LevelSettings();
 
     MCAPI static unsigned int parseSeedString(std::string const&, unsigned int);
 };

@@ -9,4 +9,5 @@ namespace NetherStructureFeatureHelper {
 
 MCAPI enum StructureFeatureType getStructureFeatureTypeForChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, std::vector<int> const&);
 
+
 } // namespace NetherStructureFeatureHelper

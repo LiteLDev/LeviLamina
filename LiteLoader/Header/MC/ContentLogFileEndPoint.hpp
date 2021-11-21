@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ContentLogFileEndPointAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ContentLogFileEndPoint {
+class ContentLogFileEndPoint {
 #include "Extra/ContentLogFileEndPointAPI.hpp"
 
 public:
-MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
+    MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
 
-} // namespace ContentLogFileEndPoint
+    MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
+};

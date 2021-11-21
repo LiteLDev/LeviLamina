@@ -25,4 +25,8 @@ public:
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
     MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
+
+
+protected:
+    MCAPI Tag();
 };

@@ -10,4 +10,5 @@ namespace BalloonDefinition {
 public:
 MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class BalloonDefinition>>&);
 
+
 } // namespace BalloonDefinition

@@ -25,4 +25,7 @@ public:
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
     virtual void unk_vfn_17();
+
+public:
+    MCAPI ScriptServerBlockEventListener(class MinecraftServerScriptEngine&);
 };

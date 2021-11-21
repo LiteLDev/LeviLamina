@@ -10,6 +10,7 @@ public:
     virtual ~UnknownBlockTypeRegistry();
     virtual class Block const& getUnknownBlock(class CompoundTag const&);
 
+
 private:
     MCAPI void _registerBlock(std::string const&, unsigned __int64);
 };

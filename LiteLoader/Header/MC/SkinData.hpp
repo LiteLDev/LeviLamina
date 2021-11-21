@@ -8,6 +8,8 @@ class SkinData {
 #include "Extra/SkinDataAPI.hpp"
 
 public:
+    MCAPI SkinData(class Json::Value const&);
+    MCAPI SkinData(class Actor const&);
     MCAPI void applyToActor(class Actor&) const;
     MCAPI bool softMatch(struct SkinData const&, bool&) const;
 };

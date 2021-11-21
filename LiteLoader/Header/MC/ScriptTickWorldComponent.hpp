@@ -21,6 +21,7 @@ public:
     virtual void unk_vfn_11();
     virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&);
 
+
 private:
     MCAPI static class HashedString const mHash;
 };

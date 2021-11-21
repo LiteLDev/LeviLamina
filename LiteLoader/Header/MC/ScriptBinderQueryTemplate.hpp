@@ -38,5 +38,7 @@ public:
     virtual void unk_vfn_28();
 
 public:
+    MCAPI ScriptBinderQueryTemplate();
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(enum entt::entity);
 };

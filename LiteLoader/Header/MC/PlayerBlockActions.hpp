@@ -10,6 +10,7 @@ class PlayerBlockActions {
 public:
     MCAPI struct PlayerBlockActionData const* findFirstOfType(enum PlayerActionType) const;
     MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
+    MCAPI ~PlayerBlockActions();
 
     MCAPI static class PlayerBlockActions read(class ReadOnlyBinaryStream&);
     MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);

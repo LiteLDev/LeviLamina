@@ -9,4 +9,5 @@ namespace CopperSlabInternal {
 
 MCAPI class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;
 
+
 } // namespace CopperSlabInternal

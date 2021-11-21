@@ -17,6 +17,7 @@ public:
     virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handlePistonActionEvent(struct PistonActionEvent const&);
     virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleExplosionStartedEvent(struct ExplosionStartedEvent&);
 
+
 private:
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;

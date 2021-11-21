@@ -12,5 +12,7 @@ public:
     virtual void applyTemplate(class ScriptObjectBinder&);
 
 public:
+    MCAPI ScriptBinderLevelTemplate();
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, enum entt::entity);
 };

@@ -9,4 +9,5 @@ namespace ReplayStatePolicy {
 
 MCAPI std::unique_ptr<struct IReplayStatePolicy> createServerContext(struct ReplayStateConfig const&);
 
+
 } // namespace ReplayStatePolicy

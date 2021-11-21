@@ -8,6 +8,7 @@ class TimerDefinition {
 #include "Extra/TimerDefinitionAPI.hpp"
 
 public:
+    MCAPI TimerDefinition();
     MCAPI void addWeightedChoiceEntry(struct WeightChoiceEntry const&);
     MCAPI void initialize(class EntityContext&, class TimerComponent&) const;
 

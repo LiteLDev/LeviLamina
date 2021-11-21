@@ -10,4 +10,5 @@ namespace WeaponRecipes {
 public:
 MCAPI static void addRecipes(class Recipes&);
 
+
 } // namespace WeaponRecipes

@@ -8,6 +8,7 @@ class KeyFrameTransformData {
 #include "Extra/KeyFrameTransformDataAPI.hpp"
 
 public:
+    MCAPI KeyFrameTransformData(class KeyFrameTransformData const&);
     MCAPI void addChannelTransform(class ExpressionNode const&, int);
     MCAPI bool operator==(class KeyFrameTransformData const&);
 };

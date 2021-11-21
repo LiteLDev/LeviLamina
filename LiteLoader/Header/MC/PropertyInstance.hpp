@@ -18,4 +18,5 @@ public:
     MCAPI bool setCurrentState(int);
     MCAPI bool setFloatValue(float);
     MCAPI bool setIntValue(int);
+    MCAPI ~PropertyInstance();
 };

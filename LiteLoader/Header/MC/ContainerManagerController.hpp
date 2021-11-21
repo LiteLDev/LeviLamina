@@ -11,4 +11,5 @@ public:
 MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_DESTINATION;
 MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_ORIGIN;
 
+
 } // namespace ContainerManagerController

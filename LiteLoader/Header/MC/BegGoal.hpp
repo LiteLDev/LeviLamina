@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI BegGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, int, int);
+
+
 private:
     MCAPI bool _playerHoldingInteresting(class Player*);
 };

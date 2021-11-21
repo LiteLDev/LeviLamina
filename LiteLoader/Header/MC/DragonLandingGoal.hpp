@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI DragonLandingGoal(class EnderDragon&);
+
+
 private:
     MCAPI void findNewTarget();
 };

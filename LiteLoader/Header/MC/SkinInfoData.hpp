@@ -10,4 +10,5 @@ namespace SkinInfoData {
 public:
 MCAPI static bool isValidSize(unsigned __int64);
 
+
 } // namespace SkinInfoData

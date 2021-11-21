@@ -62,6 +62,7 @@ public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class BlockPos>> worldBlockPosition(class BlockPos const&) const;
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class Vec3>> worldPosition(class Vec3 const&) const;
 
+
 private:
     MCAPI static class std::optional<struct gametest::GameTestError> _callClosure(class Scripting::TypedScriptClosure<void(void)> const&);
 };

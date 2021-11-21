@@ -16,4 +16,5 @@ MCAPI static class Item::Tier const STONE;
 MCAPI static class Item::Tier const WOOD;
 MCAPI static std::vector<class ItemStack> const getTierItems(class Item::Tier const&, class BaseGameVersion const&);
 
+
 } // namespace VanillaItemTiers

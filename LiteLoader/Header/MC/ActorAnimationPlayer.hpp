@@ -17,4 +17,7 @@ public:
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
+
+public:
+    MCAPI ActorAnimationPlayer(class HashedString const&, class ExpressionNode const&);
 };

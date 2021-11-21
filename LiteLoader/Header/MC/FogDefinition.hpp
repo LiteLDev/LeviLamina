@@ -21,4 +21,5 @@ MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFIC
 MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
 MCAPI static bool isValidIdentifier(std::string const&);
 
+
 } // namespace FogDefinition

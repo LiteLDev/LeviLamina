@@ -10,6 +10,7 @@ public:
     virtual ~VolumeEntityManagerServer();
 
 public:
+    MCAPI VolumeEntityManagerServer(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>>);
     MCAPI void loadVolumeFiles(class Core::PathBuffer<std::string> const&, bool);
     MCAPI void sendAllVolumesToClient(class UserEntityIdentifierComponent const&, class NetworkIdentifier const&, class PacketSender&) const;
 

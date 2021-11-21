@@ -8,10 +8,12 @@ class HopperBlockActor {
 #include "Extra/HopperBlockActorAPI.hpp"
 
 public:
+    MCAPI HopperBlockActor(class BlockPos const&);
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);
     MCAPI class FurnaceBlockActor* getAttachedFurnace(class BlockSource&);
     MCAPI bool isAttachedToChestAndFurnace(class BlockSource&);
     MCAPI void updateCooldownAfterMove(struct Tick const&, int);
+
 
 private:
     MCAPI void _ensureTickingOrder(class BlockSource&, int);

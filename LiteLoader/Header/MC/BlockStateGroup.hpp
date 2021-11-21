@@ -8,6 +8,7 @@ class BlockStateGroup {
 #include "Extra/BlockStateGroupAPI.hpp"
 
 public:
+    MCAPI BlockStateGroup();
     MCAPI class BlockStateMeta const* getBlockStateFromHash(unsigned __int64 const&) const;
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&);
 

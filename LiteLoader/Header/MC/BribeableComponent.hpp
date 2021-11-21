@@ -8,6 +8,7 @@ class BribeableComponent {
 #include "Extra/BribeableComponentAPI.hpp"
 
 public:
+    MCAPI BribeableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool clientBribeCheck(class Actor&);
     MCAPI int& getBribeCooldown();

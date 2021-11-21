@@ -11,10 +11,12 @@ public:
     virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&);
 
 public:
+    MCAPI ScriptServerActorStopRidingEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setEntityIsBeingDestroyed(bool);
     MCAPI void setExitFromPassenger(bool);
     MCAPI void setSwitchingVehicles(bool);
+
 
 private:
     MCAPI static class HashedString const mHash;

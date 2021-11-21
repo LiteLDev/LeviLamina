@@ -9,10 +9,11 @@ class PropertyComponent {
 
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
+    MCAPI PropertyComponent(class PropertyComponent&&);
     MCAPI class PropertyInstance* getProperty(class HashedString const&);
     MCAPI class PropertyInstance const* getProperty(unsigned __int64 const&) const;
     MCAPI class PropertyInstance* getProperty(unsigned __int64 const&);
     MCAPI bool hasProperty(unsigned __int64 const&) const;
-    MCAPI class PropertyComponent& operator=(class PropertyComponent&&);
     MCAPI class CompoundTag updateDirtyProperties();
 };

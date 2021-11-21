@@ -8,10 +8,12 @@ class Explosion {
 #include "Extra/ExplosionAPI.hpp"
 
 public:
+    MCAPI Explosion(class BlockSource&, class Actor*, class Vec3 const&, float);
     MCAPI void explode();
     MCAPI void overrideInWater(bool);
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setBreaking(bool);
     MCAPI void setFire(bool);
     MCAPI void setMaxResistance(float);
+    MCAPI ~Explosion();
 };

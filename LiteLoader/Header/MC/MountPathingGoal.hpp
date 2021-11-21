@@ -18,4 +18,7 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual float _getAttackReachSqr();
+
+public:
+    MCAPI MountPathingGoal(class Mob&, float, float, bool);
 };

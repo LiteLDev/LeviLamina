@@ -10,6 +10,7 @@ public:
     virtual ~MinecraftCommands();
 
 public:
+    //MCAPI MinecraftCommands(class Minecraft&, class Automation::AutomationClient&);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     MCAPI class CommandRegistry& getRegistry();
     MCAPI void handleOutput(class CommandOrigin const&, class CommandOutput const&) const;

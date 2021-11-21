@@ -10,7 +10,10 @@ class WeakStorageEntity {
 public:
     MCAPI bool operator==(class WeakStorageEntity const&);
 
+
 protected:
+    MCAPI WeakStorageEntity(enum WeakStorageEntity::EmptyInit);
+    MCAPI WeakStorageEntity(class OwnerStorageEntity const&);
     MCAPI bool _isSet() const;
     MCAPI void _reset();
 };

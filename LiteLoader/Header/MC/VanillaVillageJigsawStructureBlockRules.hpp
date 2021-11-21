@@ -10,4 +10,5 @@ namespace VanillaVillageJigsawStructureBlockRules {
 public:
 MCAPI static void initialize(class JigsawStructureRegistry&);
 
+
 } // namespace VanillaVillageJigsawStructureBlockRules

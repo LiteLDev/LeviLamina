@@ -8,6 +8,7 @@ class RailMovementDefinition {
 #include "Extra/RailMovementDefinitionAPI.hpp"
 
 public:
+    MCAPI RailMovementDefinition();
     MCAPI void initialize(class EntityContext&, class RailMovementComponent&);
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RailMovementDefinition>>&);

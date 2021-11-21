@@ -12,4 +12,5 @@ MCAPI static void registerItems(class BaseGameVersion const&, class Experiments 
 MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
 MCAPI static void unregisterItems();
 
+
 } // namespace VanillaItems

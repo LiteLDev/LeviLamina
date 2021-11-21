@@ -10,4 +10,5 @@ namespace ServerCommands {
 MCAPI void setupCommonEnums(class CommandRegistry&);
 MCAPI void setupStandardServer(class Minecraft&, std::string const&, std::string const&, class PermissionsFile*);
 
+
 } // namespace ServerCommands

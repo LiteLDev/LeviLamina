@@ -10,4 +10,5 @@ namespace ColorChannel {
 public:
 MCAPI static class ColorChannel const INVALID;
 
+
 } // namespace ColorChannel

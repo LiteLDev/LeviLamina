@@ -11,5 +11,6 @@ public:
     virtual bool isValid();
 
 public:
+    MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
     MCAPI std::string computeSecret(class KeyManager const&) const;
 };

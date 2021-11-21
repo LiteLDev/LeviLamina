@@ -6,4 +6,7 @@
 #undef EXTRA_INCLUDE_PART
 class DispenserBlockActor {
 #include "Extra/DispenserBlockActorAPI.hpp"
+
+public:
+    MCAPI DispenserBlockActor(class BlockPos, enum BlockActorType);
 };

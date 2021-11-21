@@ -10,4 +10,5 @@ namespace MolangVersionMapping {
 public:
 MCAPI static enum MolangVersion const getVersion(class SemVersion const&);
 
+
 } // namespace MolangVersionMapping

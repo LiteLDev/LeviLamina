@@ -10,4 +10,5 @@ namespace CrashDumpGlobalData {
 public:
 MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
 
+
 } // namespace CrashDumpGlobalData

@@ -28,4 +28,7 @@ public:
     virtual short getLocalWaterLevel(class BlockPos const&);
     virtual class LevelData const& getLevelData();
     virtual void unk_vfn_20();
+
+public:
+    MCAPI WorldBlockTarget(class BlockSource&);
 };

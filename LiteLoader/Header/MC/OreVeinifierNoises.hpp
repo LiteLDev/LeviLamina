@@ -8,6 +8,7 @@ class OreVeinifierNoises {
 #include "Extra/OreVeinifierNoisesAPI.hpp"
 
 public:
+    MCAPI OreVeinifierNoises(class std::function<class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>(int, std::vector<float> const&)>, class IRandom&);
     MCAPI class PositionalRandomFactory const& getPositionalRandomFactory() const;
     MCAPI float sampleGapNoise(float, float, float) const;
     MCAPI float sampleVeinNoiseA(float, float, float) const;

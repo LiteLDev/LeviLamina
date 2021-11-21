@@ -8,4 +8,7 @@ class ScriptGameTestFunctionContext {
 #include "Extra/ScriptGameTestFunctionContextAPI.hpp"
 public:
     virtual ~ScriptGameTestFunctionContext();
+
+public:
+    MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
 };

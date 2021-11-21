@@ -9,6 +9,8 @@ class RakWebSocketDataFrameParser {
 
 public:
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> readFrame(class RakNet::BitStream&);
+    MCAPI ~RakWebSocketDataFrameParser();
+
 
 private:
     MCAPI class std::shared_ptr<class RakWebSocketDataFrame> _failReadFrame(std::string const&, enum CloseStatusCode);

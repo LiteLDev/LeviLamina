@@ -10,6 +10,8 @@ class CerealIdentifier {
 public:
     MCAPI char const* c_str() const;
     MCAPI bool operator==(std::string const&);
+    MCAPI CerealIdentifier(bool);
+    MCAPI ~CerealIdentifier();
 
     MCAPI static void bindType();
 

@@ -11,8 +11,12 @@ public:
     MCAPI std::string asString() const;
     MCAPI bool operator!=(class ContentIdentity const&);
     MCAPI bool operator==(class ContentIdentity const&);
+    MCAPI ContentIdentity(class mce::UUID const&);
+    MCAPI ContentIdentity(class ContentIdentity const&);
     MCAPI class ContentIdentity& operator=(class ContentIdentity&&);
+    MCAPI ContentIdentity(class ContentIdentity&&);
     MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
+    MCAPI ContentIdentity();
     MCAPI class mce::UUID const& getAsUUID() const;
     MCAPI bool isValid() const;
 

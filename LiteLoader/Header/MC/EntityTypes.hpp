@@ -9,4 +9,5 @@ class EntityTypes {
 
 public:
     MCAPI bool parseJson(class Json::Value const&);
+    MCAPI ~EntityTypes();
 };

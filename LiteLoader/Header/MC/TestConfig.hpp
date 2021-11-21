@@ -10,4 +10,5 @@ namespace TestConfig {
 public:
 MCAPI static void bindType();
 
+
 } // namespace TestConfig

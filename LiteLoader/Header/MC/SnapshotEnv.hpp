@@ -29,8 +29,10 @@ public:
     virtual void unk_vfn_19();
 
 public:
+    MCAPI SnapshotEnv(class leveldb::Env*);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const&);
     MCAPI void releaseSnapshot();
+
 
 private:
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string> const&);

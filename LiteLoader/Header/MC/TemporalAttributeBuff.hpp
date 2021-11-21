@@ -15,6 +15,8 @@ public:
     virtual bool isComplete();
 
 public:
+    MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const&);
+    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
     MCAPI float getBaseAmount() const;
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;

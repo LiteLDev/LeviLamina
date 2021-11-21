@@ -4,10 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/PlayerScoreboardIdAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace PlayerScoreboardId {
+class PlayerScoreboardId {
 #include "Extra/PlayerScoreboardIdAPI.hpp"
 
 public:
-MCAPI static struct PlayerScoreboardId const INVALID;
+    MCAPI PlayerScoreboardId();
+    MCAPI PlayerScoreboardId(__int64);
 
-} // namespace PlayerScoreboardId
+    MCAPI static struct PlayerScoreboardId const INVALID;
+};

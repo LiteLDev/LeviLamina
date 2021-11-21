@@ -8,8 +8,12 @@ class EntitySensorComponent {
 #include "Extra/EntitySensorComponentAPI.hpp"
 
 public:
-    MCAPI void evaluateActor(class Actor&);
+    MCAPI EntitySensorComponent();
     MCAPI class EntitySensorComponent& operator=(class EntitySensorComponent&&);
+    MCAPI EntitySensorComponent(class EntitySensorComponent&&);
+    MCAPI void evaluateActor(class Actor&);
+    MCAPI ~EntitySensorComponent();
+
 
 private:
     MCAPI static int const NO_MAX_COUNT;

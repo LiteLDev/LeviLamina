@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI DoorInteractGoal(class Mob&);
+
+
 private:
     MCAPI static class DoorBlock const* _findBlockingDoorAtPos(class BlockPos const&, class Mob const&, class Path*, enum Direction::Type&, enum Direction::Type&);
 };

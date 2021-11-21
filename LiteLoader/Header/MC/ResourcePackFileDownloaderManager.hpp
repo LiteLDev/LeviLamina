@@ -7,6 +7,7 @@
 class ResourcePackFileDownloaderManager {
 #include "Extra/ResourcePackFileDownloaderManagerAPI.hpp"
 
+
 private:
     MCAPI static int const MAX_CHUNK_ATTEMPTS;
 };

@@ -14,4 +14,7 @@ public:
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
+
+public:
+    MCAPI ItemComponent(class ComponentItem*);
 };

@@ -9,8 +9,10 @@ class DryingOutTimerComponent {
 
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&);
-    MCAPI bool canBeAffectedByWaterBottle() const;
     MCAPI class DryingOutTimerComponent& operator=(class DryingOutTimerComponent&&);
+    MCAPI DryingOutTimerComponent(class DryingOutTimerComponent&&);
+    MCAPI bool canBeAffectedByWaterBottle() const;
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI void refillTimeWithWaterBottle(struct Tick);
+    MCAPI ~DryingOutTimerComponent();
 };

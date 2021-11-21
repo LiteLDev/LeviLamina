@@ -11,6 +11,7 @@ public:
     MCAPI void setBeardAndShaver(class BoundingBox const&, int, float, float);
     MCAPI void setBury(class BoundingBox const&);
     MCAPI struct FeatureTerrainAdjustments::Descriptions take(class ChunkPos const&);
+    MCAPI ~FeatureTerrainAdjustments();
 
     MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, float);
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const&);

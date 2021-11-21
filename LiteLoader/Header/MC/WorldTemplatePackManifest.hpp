@@ -11,5 +11,6 @@ public:
     virtual std::unique_ptr<class PackManifest> clone();
 
 public:
+    MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
 };

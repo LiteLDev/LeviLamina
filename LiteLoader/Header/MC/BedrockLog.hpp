@@ -26,4 +26,5 @@ MCAPI int rakDebugLog(char const*, ...);
 MCAPI void update();
 MCAPI void updateLogSetting(std::string const&, bool);
 
+
 } // namespace BedrockLog

@@ -42,4 +42,7 @@ public:
     virtual void unk_vfn_32();
     virtual std::string getFeedbackURL();
     virtual void unk_vfn_34();
+
+public:
+    MCAPI AppConfigs();
 };

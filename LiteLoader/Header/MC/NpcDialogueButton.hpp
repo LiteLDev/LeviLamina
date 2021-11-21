@@ -4,10 +4,12 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/NpcDialogueButtonAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace NpcDialogueButton {
+class NpcDialogueButton {
 #include "Extra/NpcDialogueButtonAPI.hpp"
 
 public:
-MCAPI static struct NpcDialogueButton parse(class Json::Value const&, std::string const&, int);
+    MCAPI NpcDialogueButton();
+    MCAPI ~NpcDialogueButton();
 
-} // namespace NpcDialogueButton
+    MCAPI static struct NpcDialogueButton parse(class Json::Value const&, std::string const&, int);
+};

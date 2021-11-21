@@ -8,6 +8,7 @@ class DanceComponent {
 #include "Extra/DanceComponentAPI.hpp"
 
 public:
+    MCAPI DanceComponent();
     MCAPI bool inListenDistance(class Vec3 const&) const;
     MCAPI void initFromDefinition(class Actor&);
 };

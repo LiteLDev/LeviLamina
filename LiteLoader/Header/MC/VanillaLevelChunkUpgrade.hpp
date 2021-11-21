@@ -26,4 +26,5 @@ MCAPI void upgradeLevelChunk(class LevelChunk&, class BlockSource&);
 MCAPI void upgradeOldLimboEntity(class CompoundTag&, enum LimboEntitiesVersion, bool);
 MCAPI void upgradeWorldHeight(class LevelChunk&, class LevelChunk&, class BlockSource&);
 
+
 } // namespace VanillaLevelChunkUpgrade

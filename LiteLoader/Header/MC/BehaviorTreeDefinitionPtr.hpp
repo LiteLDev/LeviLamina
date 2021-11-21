@@ -8,9 +8,13 @@ class BehaviorTreeDefinitionPtr {
 #include "Extra/BehaviorTreeDefinitionPtrAPI.hpp"
 
 public:
+    MCAPI BehaviorTreeDefinitionPtr(class BehaviorTreeDefinitionPtr&&);
     MCAPI class BehaviorTreeDefinitionPtr& operator=(class BehaviorTreeDefinitionPtr&&);
+    MCAPI BehaviorTreeDefinitionPtr();
+    MCAPI ~BehaviorTreeDefinitionPtr();
 
     MCAPI static class BehaviorTreeDefinitionPtr const NONE;
+
 
 protected:
     MCAPI void _deref();

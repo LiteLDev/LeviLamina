@@ -10,4 +10,5 @@ namespace PackSettingsJsonValidator {
 public:
 MCAPI static class JsonValidator::Property getValidator();
 
+
 } // namespace PackSettingsJsonValidator

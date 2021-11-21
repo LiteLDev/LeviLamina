@@ -8,6 +8,7 @@ class ActorSkeletalAnimation {
 #include "Extra/ActorSkeletalAnimationAPI.hpp"
 
 public:
+    MCAPI ActorSkeletalAnimation(std::string const&, std::string const&);
     MCAPI class ActorAnimationEvent& addActorEvent(float, std::string const&, enum CurrentCmdVersion, enum MolangVersion);
     MCAPI class BoneAnimation& addBoneAnimation(std::string const&);
     MCAPI class ActorParticleEffectEvent& addParticleEffectEvent(float);
@@ -26,4 +27,5 @@ public:
     MCAPI void sortEvents();
     MCAPI void sortParticleEffectEvents();
     MCAPI void sortSoundEffectEvents();
+    MCAPI ~ActorSkeletalAnimation();
 };

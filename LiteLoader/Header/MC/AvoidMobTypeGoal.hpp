@@ -26,6 +26,7 @@ public:
     virtual void unk_vfn_16();
 
 public:
+    MCAPI AvoidMobTypeGoal(class Mob&);
     MCAPI bool canFindAvoidPath(class Actor*);
     MCAPI class Actor* findNearestEntityToAvoid(float);
 };

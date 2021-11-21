@@ -32,7 +32,9 @@ public:
     virtual void unk_vfn_22();
 
 public:
+    MCAPI NBTSaver();
     MCAPI class CompoundTag getSavedCompoundTag();
+
 
 private:
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);

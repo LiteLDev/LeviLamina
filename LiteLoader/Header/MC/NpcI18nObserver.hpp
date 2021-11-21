@@ -13,6 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
 
+
 private:
     MCAPI void _loadNpcData();
 };

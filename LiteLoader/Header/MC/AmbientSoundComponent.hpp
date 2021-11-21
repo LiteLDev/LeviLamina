@@ -10,4 +10,5 @@ namespace AmbientSoundComponent {
 public:
 MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
 
+
 } // namespace AmbientSoundComponent

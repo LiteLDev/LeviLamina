@@ -16,6 +16,8 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
+    MCAPI ShooterItemComponent(class ComponentItem*);
+    MCAPI ShooterItemComponent(class ShooterItemComponent const&);
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
     MCAPI bool use(class ItemStack&, class Player&) const;
 

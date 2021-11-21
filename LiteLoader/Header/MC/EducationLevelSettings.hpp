@@ -8,8 +8,11 @@ class EducationLevelSettings {
 #include "Extra/EducationLevelSettingsAPI.hpp"
 
 public:
+    MCAPI EducationLevelSettings();
     MCAPI struct EducationLevelSettings& operator=(struct EducationLevelSettings const&);
+    MCAPI EducationLevelSettings(struct EducationLevelSettings const&);
     MCAPI void save(class LevelLooseFileStorage const&);
+    MCAPI ~EducationLevelSettings();
 
     MCAPI static std::string const DEFAULT_BORDER_PATH;
 };

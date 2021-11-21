@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptActorAddEffectEventAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptActorAddEffectEvent {
+class ScriptActorAddEffectEvent {
 #include "Extra/ScriptActorAddEffectEventAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptActorAddEffectEvent> bind(struct Scripting::Version);
+    MCAPI ScriptActorAddEffectEvent(struct ActorAddEffectEvent const&, class Scripting::WeakTypedObjectHandle<class ScriptMobEffectInstance>, class Scripting::WeakLifetimeScope const&);
 
-} // namespace ScriptActorAddEffectEvent
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptActorAddEffectEvent> bind(struct Scripting::Version);
+};

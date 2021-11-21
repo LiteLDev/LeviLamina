@@ -8,6 +8,7 @@ class BreedableComponent {
 #include "Extra/BreedableComponentAPI.hpp"
 
 public:
+    MCAPI BreedableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool canMate(class Actor const&, class Actor const&) const;
     MCAPI void decrementBreedCooldown();
@@ -20,6 +21,7 @@ public:
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI void resetLove(class Actor&);
     MCAPI void setLoveTimer(int);
+
 
 private:
     MCAPI void _handleMate(class Actor&, class Actor&);

@@ -10,4 +10,7 @@ public:
     virtual ~StructurePoolBlockPredicateBlockMatchRandom();
     virtual void unk_vfn_1();
     virtual bool test(class Block const&, class Randomize&);
+
+public:
+    MCAPI StructurePoolBlockPredicateBlockMatchRandom(class Block const&, float);
 };

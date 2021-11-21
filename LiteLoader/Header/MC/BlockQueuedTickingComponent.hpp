@@ -9,4 +9,5 @@ class BlockQueuedTickingComponent {
 
 public:
     MCAPI struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent&&);
+    MCAPI ~BlockQueuedTickingComponent();
 };

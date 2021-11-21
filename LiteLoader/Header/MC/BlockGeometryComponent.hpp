@@ -9,4 +9,5 @@ class BlockGeometryComponent {
 
 public:
     MCAPI struct BlockGeometryComponent& operator=(struct BlockGeometryComponent&&);
+    MCAPI ~BlockGeometryComponent();
 };

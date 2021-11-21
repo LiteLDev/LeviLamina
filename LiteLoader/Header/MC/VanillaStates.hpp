@@ -137,4 +137,5 @@ MCAPI class ItemState const* getState(class HashedString const&);
 MCAPI void registerStates();
 MCAPI void unregisterStates();
 
+
 } // namespace VanillaStates

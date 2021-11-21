@@ -11,4 +11,7 @@ public:
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
+
+public:
+    MCAPI FakeThermalMonitorInterface();
 };

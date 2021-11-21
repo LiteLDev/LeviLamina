@@ -11,4 +11,5 @@ public:
     MCAPI class Tag& emplace(class Tag&&);
     MCAPI class Tag* get();
     MCAPI class Tag const* get() const;
+    MCAPI ~CompoundTagVariant();
 };

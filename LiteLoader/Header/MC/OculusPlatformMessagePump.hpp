@@ -10,4 +10,5 @@ namespace OculusPlatformMessagePump {
 public:
 MCAPI static std::string const mOculusAppId;
 
+
 } // namespace OculusPlatformMessagePump

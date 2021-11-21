@@ -12,4 +12,7 @@ public:
     virtual void writetoJSON(class Json::Value&);
     virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     virtual char const* getName();
+
+public:
+    MCAPI HurtOwnerSubcomponent();
 };

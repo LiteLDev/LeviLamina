@@ -14,6 +14,10 @@ public:
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
 
+public:
+    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler&);
+
+
 protected:
     MCAPI class SparseContainer* _tryGetSparseContainer(enum ContainerEnumName);
 };

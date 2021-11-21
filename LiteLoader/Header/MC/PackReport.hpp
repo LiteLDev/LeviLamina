@@ -9,9 +9,12 @@ class PackReport {
 
 public:
     MCAPI class PackReport& operator=(class PackReport&&);
+    MCAPI PackReport();
+    MCAPI PackReport(class PackReport const&);
     MCAPI std::string const& getOriginalName() const;
     MCAPI std::string const& getOriginalVersion() const;
     MCAPI void serialize(class Json::Value&);
     MCAPI void setLocation(class ResourceLocation const&);
     MCAPI bool wasUpgraded() const;
+    MCAPI ~PackReport();
 };

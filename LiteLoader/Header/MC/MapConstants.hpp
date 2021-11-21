@@ -57,4 +57,5 @@ MCAPI class Vec3 const VERT_MINI_MAP_OFFHAND_POS;
 MCAPI class Vec3 const VERT_OFFHAND_MAP_POS;
 MCAPI class Vec3 const VERT_SPLIT_SCREEN_OFFSET;
 
+
 } // namespace MapConstants

@@ -9,4 +9,7 @@ class FilterStringMap {
 
 public:
     MCAPI struct FilterStringMap& operator=(struct FilterStringMap&&);
+    MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
+    MCAPI FilterStringMap(struct FilterStringMap const&);
+    MCAPI ~FilterStringMap();
 };

@@ -18,6 +18,10 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
 
+public:
+    MCAPI FollowMobGoal(class Mob&, float, float, int);
+
+
 private:
     MCAPI bool _setWantedMob();
 };

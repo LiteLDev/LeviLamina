@@ -10,4 +10,5 @@ namespace ScriptFeedItem {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<struct FeedItem> bind(struct Scripting::Version);
 
+
 } // namespace ScriptFeedItem

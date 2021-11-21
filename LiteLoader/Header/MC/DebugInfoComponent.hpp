@@ -42,7 +42,8 @@ public:
 
 public:
     MCAPI void addListener(class HashedString const&, class NetworkIdentifier, unsigned char);
-    MCAPI bool listenersEmpty() const;
     MCAPI class DebugInfoComponent& operator=(class DebugInfoComponent&&);
+    MCAPI DebugInfoComponent(class DebugInfoComponent&&);
+    MCAPI bool listenersEmpty() const;
     MCAPI void removeListener(class HashedString const&, class NetworkIdentifier, unsigned char);
 };

@@ -9,6 +9,18 @@ class ExpressionNode {
 
 public:
     MCAPI void clear();
+    MCAPI bool operator==(class ExpressionNode const&);
+    MCAPI class ExpressionNode& operator=(float);
+    MCAPI class ExpressionNode& operator=(class ExpressionNode const&);
+    MCAPI ExpressionNode();
+    MCAPI ExpressionNode(char const*, enum MolangVersion, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(float);
+    MCAPI ExpressionNode(class Json::Value const&, enum MolangVersion, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(class Json::Value const&, class SemVersion const&, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(std::string const&, enum MolangVersion, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(std::string const&, class SemVersion const&, class gsl::span<class HashedString const, -1>);
+    MCAPI ExpressionNode(class ExpressionNode const&);
+    MCAPI ExpressionNode(class ExpressionNode&&);
     MCAPI bool deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI float evalAsFloat(class RenderParams&) const;
     MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams&) const;
@@ -18,15 +30,13 @@ public:
     MCAPI unsigned __int64 getTreeHash(bool) const;
     MCAPI bool getTreeString(std::string&, bool) const;
     MCAPI bool hasMadd() const;
-    MCAPI bool operator==(class ExpressionNode const&);
-    MCAPI class ExpressionNode& operator=(float);
-    MCAPI class ExpressionNode& operator=(class ExpressionNode const&);
     MCAPI bool isInitialized() const;
     MCAPI bool isValid() const;
     MCAPI enum MolangCompileResult link() const;
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
     MCAPI bool parse(std::string const&, enum MolangVersion, class gsl::span<class HashedString const, -1>);
     MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
+    MCAPI ~ExpressionNode();
 
     MCAPI static void bindType();
     MCAPI static void buildExpressionOpTable();

@@ -31,6 +31,7 @@ public:
     MCAPI bool trytLoadPlayer(class ServerPlayer&, class ConnectionRequest const&);
     MCAPI void updateServerAnnouncement();
 
+
 private:
     MCAPI class ServerPlayer& _createNewPlayer(class NetworkIdentifier const&, class SubClientConnectionRequest const&, unsigned char);
     MCAPI void _displayGameMessage(class Player const&, struct ChatEvent&);

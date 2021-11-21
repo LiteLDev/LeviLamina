@@ -10,4 +10,5 @@ namespace mce {
 MCAPI struct mce::Degree operator-(struct mce::Degree, float);
 MCAPI struct mce::Radian operator*(struct mce::Radian, float);
 
+
 } // namespace mce

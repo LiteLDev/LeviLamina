@@ -9,4 +9,5 @@ class PackSetting {
 
 public:
     MCAPI void set(class Json::Value const&);
+    MCAPI ~PackSetting();
 };

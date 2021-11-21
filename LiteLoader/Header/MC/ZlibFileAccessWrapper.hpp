@@ -8,5 +8,7 @@ class ZlibFileAccessWrapper {
 #include "Extra/ZlibFileAccessWrapperAPI.hpp"
 
 public:
+    MCAPI ZlibFileAccessWrapper(class IFileAccess*);
     MCAPI struct zlib_filefunc64_32_def_s* getZipFunctions() const;
+    MCAPI ~ZlibFileAccessWrapper();
 };

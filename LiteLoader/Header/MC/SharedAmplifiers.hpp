@@ -19,4 +19,5 @@ MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
 MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
 MCAPI static class std::shared_ptr<class Amplifier> WITHER;
 
+
 } // namespace SharedAmplifiers

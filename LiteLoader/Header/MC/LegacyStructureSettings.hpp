@@ -8,6 +8,9 @@ class LegacyStructureSettings {
 #include "Extra/LegacyStructureSettingsAPI.hpp"
 
 public:
+    MCAPI LegacyStructureSettings();
+    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const*, class BoundingBox const&);
+    MCAPI LegacyStructureSettings(class LegacyStructureSettings const&);
     MCAPI void addSwapAuxValue(int, int);
     MCAPI class BoundingBox const& getBoundingBox();
     MCAPI enum Mirror const& getMirror() const;
@@ -24,6 +27,7 @@ public:
     MCAPI void setRotation(enum Rotation);
     MCAPI void setSeed(unsigned int);
     MCAPI void updateBoundingBoxFromChunkPos();
+    MCAPI ~LegacyStructureSettings();
 
     MCAPI static float const INTEGRITY_MAX;
     MCAPI static float const INTEGRITY_MIN;

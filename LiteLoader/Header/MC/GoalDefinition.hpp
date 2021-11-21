@@ -11,7 +11,11 @@ public:
     MCAPI enum POIType _getPOITypeFromString(std::string);
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition&&);
+    MCAPI GoalDefinition();
+    MCAPI GoalDefinition(struct GoalDefinition const&);
+    MCAPI GoalDefinition(struct GoalDefinition&&);
     MCAPI bool parse(struct ConstDeserializeDataParams const&, int);
+    MCAPI ~GoalDefinition();
 
     MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob&, struct GoalDefinition const&);
     MCAPI static bool GoalExists(std::string const&);

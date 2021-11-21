@@ -19,6 +19,7 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI BackgroundTaskBase(class gsl::not_null<class ITaskGroup*>, struct TaskStartInfoBase const&, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;
     MCAPI class ITaskGroup* getGroup();

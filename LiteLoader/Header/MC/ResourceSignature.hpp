@@ -8,6 +8,8 @@ class ResourceSignature {
 #include "Extra/ResourceSignatureAPI.hpp"
 
 public:
+    MCAPI ~ResourceSignature();
+
     MCAPI static class Core::PathBuffer<std::string> const SIGNATURE_FILENAME;
 
 private:

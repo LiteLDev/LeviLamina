@@ -10,5 +10,8 @@ class CallbackToken {
 public:
     MCAPI void cancelCallback();
     MCAPI class CallbackToken& operator=(class CallbackToken&&);
+    MCAPI CallbackToken(class std::weak_ptr<class CallbackTokenCancelState>);
+    MCAPI CallbackToken();
     MCAPI void release();
+    MCAPI ~CallbackToken();
 };

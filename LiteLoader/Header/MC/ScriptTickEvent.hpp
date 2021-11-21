@@ -10,4 +10,5 @@ namespace ScriptTickEvent {
 public:
 MCAPI static class Scripting::ClassBindingBuilder<struct ScriptTickEvent> bind(struct Scripting::Version);
 
+
 } // namespace ScriptTickEvent

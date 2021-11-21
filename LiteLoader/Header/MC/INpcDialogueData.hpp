@@ -7,4 +7,5 @@
 namespace INpcDialogueData {
 #include "Extra/INpcDialogueDataAPI.hpp"
 
+
 }

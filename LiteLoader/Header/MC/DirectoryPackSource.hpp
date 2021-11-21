@@ -15,6 +15,7 @@ public:
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
 
 public:
+    MCAPI DirectoryPackSource(class Core::Path const&, enum PackType, enum PackOrigin, bool);
     MCAPI bool removePack(class Core::Path const&);
 
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);

@@ -9,6 +9,10 @@ class MolangMemberArray {
 
 public:
     MCAPI struct MolangScriptArg const* get(class HashedString const&) const;
-    MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
     MCAPI bool operator==(struct MolangMemberArray const&);
+    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
+    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
+    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
+    MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
+    MCAPI ~MolangMemberArray();
 };

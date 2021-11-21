@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptDefinitionTriggerAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptDefinitionTrigger {
+class ScriptDefinitionTrigger {
 #include "Extra/ScriptDefinitionTriggerAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<class ScriptDefinitionTrigger> bind(struct Scripting::Version);
+    MCAPI ScriptDefinitionTrigger(class DefinitionTrigger const&);
 
-} // namespace ScriptDefinitionTrigger
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptDefinitionTrigger> bind(struct Scripting::Version);
+};

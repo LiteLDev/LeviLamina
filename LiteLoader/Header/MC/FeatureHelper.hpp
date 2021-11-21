@@ -13,4 +13,5 @@ MCAPI bool passesAllowList(class Block const&, std::vector<class BlockDescriptor
 MCAPI bool passesAllowList(class IBlockWorldGenAPI const&, class BlockPos const&, std::vector<class BlockDescriptor> const&);
 MCAPI class std::optional<class BlockPos> placeBlock(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&);
 
+
 } // namespace FeatureHelper

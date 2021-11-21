@@ -8,7 +8,9 @@ class EntityRegistryBase {
 #include "Extra/EntityRegistryBaseAPI.hpp"
 
 public:
+    MCAPI EntityRegistryBase(class entt::basic_registry<class EntityId>&);
     MCAPI bool isValidEntity(class EntityContextBase const&) const;
+
 
 protected:
     MCAPI void _assertValidRegistry(class EntityContextBase const&) const;

@@ -8,5 +8,6 @@ class ParameterList {
 #include "Extra/ParameterListAPI.hpp"
 
 public:
+    MCAPI ParameterList(std::vector<struct BiomeNoiseTarget> const&);
     MCAPI class Biome* findTarget(struct TargetPoint const&, struct RTree::Hint*) const;
 };

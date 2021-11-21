@@ -10,4 +10,5 @@ namespace FogDistanceSetting {
 public:
 MCAPI static struct FogDistanceSetting const ZERO_SETTING;
 
+
 } // namespace FogDistanceSetting

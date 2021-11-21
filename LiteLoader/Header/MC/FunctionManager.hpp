@@ -10,14 +10,17 @@ public:
     virtual ~FunctionManager();
 
 public:
+    MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const*);
     MCAPI int execute(class FunctionEntry&, class CommandOrigin const&);
     MCAPI class FunctionEntry* getFunction(std::string const&);
     MCAPI void load(class ResourcePackManager&, class CommandRegistry&);
     MCAPI void tick();
 
+
 private:
     MCAPI class CommandOrigin const& _addOriginReference(class CommandOrigin const&, unsigned int);
     MCAPI void _removeOriginReference(class CommandOrigin const&, unsigned int);
+
 
 protected:
     MCAPI void _addTickFunctionsFromJson(class Json::Value const&);

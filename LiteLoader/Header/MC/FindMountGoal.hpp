@@ -19,5 +19,6 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI FindMountGoal(class Mob&, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
 };

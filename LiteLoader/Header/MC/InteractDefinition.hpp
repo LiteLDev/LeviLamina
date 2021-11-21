@@ -12,6 +12,7 @@ public:
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class InteractComponent&) const;
     MCAPI void serializeData(class Json::Value&) const;
+    MCAPI ~InteractDefinition();
 
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class InteractDefinition>>&);
 

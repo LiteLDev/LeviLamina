@@ -12,4 +12,7 @@ public:
     virtual void unk_vfn_2();
     virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     virtual char const* getName();
+
+public:
+    MCAPI TeleportToSubcomponent();
 };

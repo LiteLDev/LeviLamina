@@ -26,5 +26,6 @@ public:
     virtual void unk_vfn_16();
 
 public:
+    MCAPI EatBlockGoal(class Mob&);
     MCAPI float getEatSuccessChance(class Actor&) const;
 };

@@ -31,4 +31,5 @@ MCAPI extern int const PatchVersion;
 MCAPI extern int const RevisionVersion;
 MCAPI extern int const StoreVersion;
 
+
 } // namespace SharedConstants

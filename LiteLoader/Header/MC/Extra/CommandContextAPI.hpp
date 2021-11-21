@@ -18,6 +18,9 @@ class CommandOrigin& getOrigin() {
 }
 
 template <typename TP>
-CommandContext(TP&& x, CommandOrigin* o) : CMD(std::forward<TP>(x)), Ori(o) {}
+CommandContext(TP&& x, CommandOrigin* o)
+    : CMD(std::forward<TP>(x))
+    , Ori(o) {
+}
 
 #endif

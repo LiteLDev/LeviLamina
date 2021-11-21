@@ -18,4 +18,7 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&);
+
+public:
+    MCAPI EndermanTakeBlockGoal(class EnderMan&);
 };

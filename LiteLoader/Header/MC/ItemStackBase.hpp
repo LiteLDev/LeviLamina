@@ -152,11 +152,21 @@ private:
 
 protected:
     MCAPI std::string _getHoverFormattingPrefix() const;
+    MCAPI class ItemStackBase& operator=(class ItemStackBase const&);
+    MCAPI ItemStackBase();
+    MCAPI ItemStackBase(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const*);
+    MCAPI ItemStackBase(class RecipeIngredient const&);
+    MCAPI ItemStackBase(class Item const&, int, int, class CompoundTag const*);
+    MCAPI ItemStackBase(class Item const&, int, int);
+    MCAPI ItemStackBase(class Item const&, int);
+    MCAPI ItemStackBase(class Item const&);
+    MCAPI ItemStackBase(class BlockLegacy const&, int);
+    MCAPI ItemStackBase(class Block const&, int, class CompoundTag const*);
+    MCAPI ItemStackBase(class ItemStackBase const&);
     MCAPI bool _setItem(int, bool);
     MCAPI void init(class BlockLegacy const&, int);
     MCAPI void init(class Item const&, int, int, class CompoundTag const*, bool);
     MCAPI void init(int, int, int, bool);
-    MCAPI class ItemStackBase& operator=(class ItemStackBase const&);
 
     MCAPI static std::string const TAG_CHARGED_ITEM;
     MCAPI static std::string const TAG_STORE_CAN_DESTROY;

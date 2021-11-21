@@ -13,6 +13,7 @@ public:
     MCAPI class ActorSkeletalAnimation* operator->();
     MCAPI class ActorSkeletalAnimation const* operator->();
     MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);
+    MCAPI ~ActorSkeletalAnimationPtr();
 
     MCAPI static class ActorSkeletalAnimationPtr const NONE;
 };

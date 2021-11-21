@@ -12,5 +12,6 @@ public:
     virtual void unk_vfn_2();
 
 public:
+    MCAPI ChargeAttackDefinition();
     MCAPI void initialize(class EntityContext&, class ChargeAttackGoal&);
 };

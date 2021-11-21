@@ -59,6 +59,8 @@ public:
     virtual bool isInitialized();
 
 public:
+    MCAPI ResourcePackRepository(class IMinecraftEventing&, class PackManifestFactory&, class IContentAccessibilityProvider&, class Core::FilePathManager*, class PackSourceFactory&, bool);
+
     MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
     MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
 

@@ -4,10 +4,11 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ScriptNavigationResultAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-namespace ScriptNavigationResult {
+class ScriptNavigationResult {
 #include "Extra/ScriptNavigationResultAPI.hpp"
 
 public:
-MCAPI static class Scripting::ClassBindingBuilder<struct ScriptNavigationResult> bind(struct Scripting::Version);
+    MCAPI ~ScriptNavigationResult();
 
-} // namespace ScriptNavigationResult
+    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptNavigationResult> bind(struct Scripting::Version);
+};

@@ -8,5 +8,6 @@ class TrustingComponent {
 #include "Extra/TrustingComponentAPI.hpp"
 
 public:
+    MCAPI TrustingComponent();
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
 };

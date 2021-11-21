@@ -40,4 +40,5 @@ MCAPI static char const* const const Sword;
 MCAPI static char const* const const Tool;
 MCAPI static char const* const const WoodenTier;
 
+
 } // namespace VanillaItemTags

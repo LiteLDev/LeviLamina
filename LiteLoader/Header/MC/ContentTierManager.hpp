@@ -9,4 +9,7 @@ class ContentTierManager {
 public:
     virtual ~ContentTierManager();
     virtual class ContentTierInfo getContentTierInfo();
+
+public:
+    MCAPI ContentTierManager();
 };

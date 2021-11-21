@@ -16,6 +16,8 @@ public:
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
+    MCAPI DisplayNameItemComponent(class ComponentItem*);
+
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 };

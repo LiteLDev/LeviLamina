@@ -15,4 +15,7 @@ public:
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
+
+public:
+    MCAPI JumpControl();
 };

@@ -10,4 +10,5 @@ namespace Color2Definition {
 public:
 MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct Color2Definition>>&);
 
+
 } // namespace Color2Definition

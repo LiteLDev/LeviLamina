@@ -21,6 +21,7 @@ public:
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
 
+
 private:
     MCAPI static class HashedString const mHash;
 };

@@ -10,6 +10,7 @@ class ImprovedNoise {
 public:
     MCAPI void _readArea(float*, class Vec3 const&, int, int, int, class Vec3 const&, float) const;
 
+
 private:
     MCAPI void _blendCubeCorners(class Vec3 const&, int, int, int, float, float&, float&, float&, float&) const;
     MCAPI void _init(class Vec3 const&, class IRandom&, struct YBlendingBugSettings);

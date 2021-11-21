@@ -8,11 +8,15 @@ class ResourceLocation {
 #include "Extra/ResourceLocationAPI.hpp"
 
 public:
+    MCAPI ResourceLocation();
+    MCAPI ResourceLocation(class Core::Path const&, enum ResourceFileSystem);
+    MCAPI ResourceLocation(class Core::Path const&);
     MCAPI class Core::PathBuffer<std::string> getFullPath() const;
     MCAPI bool operator==(class ResourceLocation const&);
     MCAPI class Core::PathBuffer<std::string> const& getRelativePath() const;
     MCAPI void serialize(class Json::Value&) const;
     MCAPI void setRelativePath(class Core::PathBuffer<std::string> const&);
+    MCAPI ~ResourceLocation();
 
     MCAPI static class ResourceLocation const& getEmptyLocation();
 };

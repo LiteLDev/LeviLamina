@@ -19,6 +19,7 @@ public:
     virtual void unk_vfn_9();
 
 public:
+    MCAPI Goal();
     MCAPI int getRequiredControlFlags() const;
     MCAPI unsigned short getTypeId() const;
     MCAPI void setRequiredControlFlags(int);

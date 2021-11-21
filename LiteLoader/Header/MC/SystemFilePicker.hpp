@@ -12,6 +12,10 @@ public:
     virtual unsigned __int64 readBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char>&);
     virtual bool writeBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char> const&);
 
+public:
+    MCAPI SystemFilePicker();
+
+
 protected:
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const&);
 };

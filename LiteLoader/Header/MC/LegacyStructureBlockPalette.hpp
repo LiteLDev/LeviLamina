@@ -8,5 +8,7 @@ class LegacyStructureBlockPalette {
 #include "Extra/LegacyStructureBlockPaletteAPI.hpp"
 
 public:
+    MCAPI LegacyStructureBlockPalette();
     MCAPI class Block const& getBlock(int);
+    MCAPI ~LegacyStructureBlockPalette();
 };

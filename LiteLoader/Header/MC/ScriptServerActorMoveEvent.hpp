@@ -7,6 +7,7 @@
 class ScriptServerActorMoveEvent {
 #include "Extra/ScriptServerActorMoveEventAPI.hpp"
 
+
 private:
     MCAPI static class HashedString const mHash;
 };

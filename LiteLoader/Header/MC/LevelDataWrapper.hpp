@@ -12,5 +12,7 @@ public:
     MCAPI class LevelData& operator*();
     MCAPI class LevelData* operator->();
     MCAPI class LevelData const& operator*();
+    MCAPI LevelDataWrapper();
     MCAPI void setLevelData(class LevelData&);
+    MCAPI ~LevelDataWrapper();
 };

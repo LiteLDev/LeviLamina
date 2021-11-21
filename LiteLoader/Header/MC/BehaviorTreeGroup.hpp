@@ -8,5 +8,7 @@ class BehaviorTreeGroup {
 #include "Extra/BehaviorTreeGroupAPI.hpp"
 
 public:
+    MCAPI BehaviorTreeGroup(class ResourcePackManager&, class BehaviorFactory&);
     MCAPI class BehaviorTreeDefinitionPtr tryGetDefinition(std::string const&);
+    MCAPI ~BehaviorTreeGroup();
 };

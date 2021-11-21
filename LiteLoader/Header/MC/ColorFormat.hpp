@@ -33,4 +33,5 @@ MCAPI std::string const RESET;
 MCAPI std::string const WHITE;
 MCAPI std::string const YELLOW;
 
+
 } // namespace ColorFormat

@@ -8,5 +8,6 @@ class ScreenCapabilitiesRepo {
 #include "Extra/ScreenCapabilitiesRepoAPI.hpp"
 
 public:
+    MCAPI ScreenCapabilitiesRepo();
     MCAPI std::unique_ptr<class IScreenCapabilities> get(std::string const&) const;
 };

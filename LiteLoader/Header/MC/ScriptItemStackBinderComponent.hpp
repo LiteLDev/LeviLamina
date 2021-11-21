@@ -12,6 +12,8 @@ public:
     virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
+    MCAPI ScriptItemStackBinderComponent(class entt::basic_registry<enum entt::entity>&, class ItemInstance const&);
+
     MCAPI static std::string const COUNT;
     MCAPI static std::string const ITEM;
     MCAPI static std::string const TAG;

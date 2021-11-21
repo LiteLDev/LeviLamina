@@ -11,4 +11,5 @@ public:
 MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const&, class BlockLegacy const&);
 MCAPI static void flushCustomBlockEntityCreationCallbacks();
 
+
 } // namespace BlockActorFactory
