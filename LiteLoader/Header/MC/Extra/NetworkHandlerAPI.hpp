@@ -5,6 +5,6 @@
 
 #else
 // Add Member There
-
+class Connection;
 
 #endif

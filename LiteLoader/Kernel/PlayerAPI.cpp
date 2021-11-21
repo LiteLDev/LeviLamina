@@ -6,15 +6,15 @@
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
 
-LIAPI UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
+UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return ((Mob*)(Mob*)this)->getUserEntityIdentifierComponent();
 }
 
-LIAPI NetworkIdentifier* Player::getNetworkIdentifier(){
+NetworkIdentifier* Player::getNetworkIdentifier(){
     return (NetworkIdentifier*)(this->getUserEntityIdentifierComponent());
 }
 
-LIAPI Certificate* Player::getCert() {
+Certificate* Player::getCert() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
@@ -23,6 +23,17 @@ LIAPI Certificate* Player::getCert() {
 }
 
 
-LIAPI std::string Player::getRealName() {
+std::string Player::getRealName() {
     return ExtendedCertificate::getIdentityName(*this->getCert());
+}
+
+#include <MC/NetworkIdentifier.hpp>
+#include <MC/NetworkPeer.hpp>
+#include <MC/NetworkHandler.hpp>
+#include <MC/Minecraft.hpp>
+int Player::getAvgPing() {
+    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().avgping;
+}
+int Player::getLastPing() {
+    return Global<Minecraft>()->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().ping;
 }

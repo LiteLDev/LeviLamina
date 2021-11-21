@@ -93,13 +93,14 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockAPI.cpp" />
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
-    <ClCompile Include="Kernel\CommandAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
+    <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\NBTAPI.cpp" />
+    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
     <ClCompile Include="Kernel\ScheduleAPI.cpp" />
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
@@ -135,7 +136,7 @@ LibraryBuilder.exe
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\BlockInstanceAPI.h" />
-    <ClInclude Include="Header\CommandAPI.h" />
+    <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockActorAPI.hpp" />
@@ -144,6 +145,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\ItemStackAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\LevelAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\MobAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\NetworkIdentifierAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />

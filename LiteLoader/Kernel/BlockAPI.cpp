@@ -49,6 +49,6 @@ unsigned short Block::getTileData()
         if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
             return i;
     }
-    Logger::Error("Error in Raw_GetTileData");
+    Logger::Error("Error in GetTileData");
     return 0;
 }

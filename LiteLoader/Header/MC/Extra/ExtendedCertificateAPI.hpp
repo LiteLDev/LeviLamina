@@ -5,6 +5,6 @@
 
 #else
 // Add Member There
-
+public:
 
 #endif

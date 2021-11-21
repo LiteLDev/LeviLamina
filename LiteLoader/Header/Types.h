@@ -13,6 +13,16 @@ public:
     }
 };
 
+struct MCRESULT {
+    unsigned char filler[4];
+    operator bool() {
+        return filler[0];
+    }
+    bool isSuccess() {
+        return operator bool();
+    }
+};
+
 class Vec3 {
 public:
     float x, y, z;
@@ -250,7 +260,6 @@ template <typename T>
 class optional_ref;
 
 //enum
-
 enum class ContainerType {
     INVENTORY = 0xff,
     CONTAINER = 0x00,

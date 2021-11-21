@@ -7,10 +7,10 @@
 class NetworkHandler {
 #include "Extra/NetworkHandlerAPI.hpp"
 public:
-    virtual();
+    //virtual();
     virtual void _onDisable();
     virtual void _onEnable();
-    virtual();
+    //virtual();
 
 public:
     MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const&);
