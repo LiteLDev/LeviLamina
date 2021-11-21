@@ -150,6 +150,9 @@
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\GuiAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -280,6 +283,27 @@
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\NetworkIdentifierAPI.hpp">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\OldGui.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\ViewHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Optional.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GuiAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\VarInt.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Bstream.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\PlayerMap.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

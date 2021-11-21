@@ -71,7 +71,7 @@ LIAPI static bool spawnParticle(FloatVec4 pos, const string& type);
 LIAPI static bool runcmdAs(Player* pl, const string& cmd);
 LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
 LIAPI static bool runcmd(const string& cmd);
-LIAPI std::vector<Player*> getAllPlayers();
+LIAPI static std::vector<Player*> getAllPlayers();
 template <typename... T>
 static inline bool runcmdA(T&&... a) {
     string s;

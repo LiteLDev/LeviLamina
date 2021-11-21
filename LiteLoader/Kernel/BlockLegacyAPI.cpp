@@ -9,3 +9,7 @@ Block* BlockLegacy::toBlock(unsigned short tileData)
         return bl;
     return (Block*)&getRenderBlock();
 }
+
+string BlockLegacy::getTypeName() {
+    return dAccess<string, 128>(this);
+}

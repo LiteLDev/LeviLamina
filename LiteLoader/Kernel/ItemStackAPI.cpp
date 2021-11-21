@@ -78,8 +78,6 @@ bool ItemStack::setItem(ItemStack* newItem) {
     return true;
 }
 
-
-
 bool ItemStack::setLore(vector<string> lores) {
     if (this->isNull())
         return false;

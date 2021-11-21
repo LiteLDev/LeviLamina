@@ -95,6 +95,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
+    <ClCompile Include="Kernel\GuiAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
@@ -137,6 +138,7 @@ LibraryBuilder.exe
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\BlockInstanceAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
+    <ClInclude Include="Header\GuiAPI.h" />
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockActorAPI.hpp" />
@@ -150,11 +152,13 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
     <ClInclude Include="Header\NBTAPI.h" />
+    <ClInclude Include="Header\OldGui.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
+    <ClInclude Include="Header\Utils\Bstream.h" />
     <ClInclude Include="Header\Utils\CryptHelper.h" />
     <ClInclude Include="Header\Utils\CsLock.h" />
     <ClInclude Include="Header\Utils\FileHelper.h" />
@@ -165,8 +169,12 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\Json.h" />
     <ClInclude Include="Header\Utils\GlobalService.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
+    <ClInclude Include="Header\Utils\Optional.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />
+    <ClInclude Include="Header\Utils\PlayerMap.h" />
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
+    <ClInclude Include="Header\Utils\VarInt.h" />
+    <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\KVDBAPI.h" />
