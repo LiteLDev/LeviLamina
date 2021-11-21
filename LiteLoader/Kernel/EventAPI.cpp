@@ -36,8 +36,9 @@ bool CallEventEx(vector<T>& vec, T1& ev) {
 }
 
 /////////////////// PlayerJoin ///////////////////
-std::unordered_map<string, string> langs;
+std::unordered_map<string, std::pair<string,string>> PlayerJoinData;
 #include <MC/ConnectionRequest.hpp>
+#include <MC/WebToken.hpp>
 vector<function<void(JoinEV)>> Join_call_backs;
 LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
     Join_call_backs.push_back(callback);
@@ -49,15 +50,14 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
         string ip = Ni->getIP();
         string xuid = sp->getXuid();
         JoinEV join_event = {sp, ip, xuid};
-        /*
         auto map1 = a3->rawToken->dataInfo.value_.map_;
         for (auto iter = map1->begin(); iter != map1->end(); ++iter) {
             string s(iter->first.c_str());
             if (s.find("LanguageCode") != s.npos) {
                 auto langcode = iter->second.value_.string_;
-                langs[offPlayer::getRealName(sp)] = langcode;
+                PlayerJoinData[sp->getRealName()] = std::make_pair("LanguageCode", langcode);
             }
-        }*/
+        }
         CallEvent(Join_call_backs, join_event);
     } catch (seh_exception) {
         Logger::Error("Exception at JoinEV");
@@ -78,9 +78,9 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
     try {
         string xuid = sp->getXuid();
         LeftEV left_event = {sp, xuid};
-        auto iterss = langs.find(sp->getRealName());
-        if (iterss != langs.end())
-            iterss = langs.erase(iterss);
+        auto iterss = PlayerJoinData.find(sp->getRealName());
+        if (iterss != PlayerJoinData.end())
+            iterss = PlayerJoinData.erase(iterss);
         CallEvent(Left_call_backs, left_event);
     } catch (seh_exception) {
         Logger::Error("Exception at LeftEV");

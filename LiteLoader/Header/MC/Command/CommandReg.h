@@ -27,12 +27,6 @@ static std::unordered_map<string, void *> parse_ptr = {
                 "string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
                 "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$"
                 "char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
-    /*
-    {typeid(bool).name(),
-     dlsym_real("??$parse@_N@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?"
-     "$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@DU?$"
-     "char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@"
-     "@V?$allocator@D@2@@std@@@2@@4@@Z")},*/
     {typeid(float).name(),
      dlsym_real("??$parse@M@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@HAEAV?$"
                 "basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_"
@@ -77,7 +71,7 @@ class Command {
     void *unk16;        // 16
     int unk24;          // 24
     unsigned char b28;  // 28
-    CommandFlag flag;   // 29
+    CommandFlag flag;   // 30
     Command() {
         unk24 = -1;
         b28   = 5;

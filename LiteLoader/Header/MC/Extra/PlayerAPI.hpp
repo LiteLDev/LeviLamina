@@ -14,7 +14,8 @@ public:
     LIAPI std::string getRealName();
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
-
+    LIAPI string getLanguageCode();
+    LIAPI string getDeviceName();
     template <typename T>
     inline  bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

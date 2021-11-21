@@ -14,7 +14,7 @@ struct RakNetGUID {
     uint64_t unk;
     short unk8;
 };
-class AddressOrGUID {
+struct AddressOrGUID {
     RakNetGUID guid;
     SystemAddress adr;
 };
