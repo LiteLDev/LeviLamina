@@ -308,6 +308,12 @@
     <ClInclude Include="Header\Utils\PlayerMap.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">
