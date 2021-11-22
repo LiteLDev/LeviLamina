@@ -2,6 +2,29 @@
 #include <Global.h>
 #include <Utils/PluginOwnData.h>
 
+///////////////////////////////////////////////////////
+// Schedule future callback plans
+// 
+// [Usage]
+// 
+//   Schedule::delay([](){
+//      Logger::Error("hello");
+//   }, 20);                        // Delay this callback for 20 ticks (20 ticks = 1 second)
+// 
+//   Schedule::repeat([](){
+//      Logger::Error("hello");
+//   }, 40);                        // Schedule this callback once per 40 ticks (20 ticks = 1 second)
+// 
+//   auto sche = Schedule::delayRepeat([](){
+//      Logger::Error("hello");
+//   }, 20, 60);                    // Delay first call to callback for 20 ticks
+//                                  // then schedule this callback once per 60 ticks (20 ticks = 1 second)
+// 
+//   //......
+//   sche.cancel();                 // Cancel the schedule
+// 
+/////////////////////////////////////////////////////
+
 typedef unsigned long long tick_t;
 typedef unsigned int taskid_t;
 
