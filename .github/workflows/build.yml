@@ -87,13 +87,15 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader-SDK
-        path: D:/out/dev
+        path: D:/out/LiteLoader-SDK.zip
 
+    - name: Compress SDK to zip
+      run: 7z a D:/out/LiteLoader-SDK.zip D:/out/dev
+      shell: bash
+      
     - name: Compress to zip
       if: startsWith(github.ref, 'refs/tags/')
-      run: |
-        7z a D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip D:/out/release
-        7z a D:/out/LiteLoader-SDK.zip D:/out/dev
+      run: 7z a D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip D:/out/release
       shell: bash
 
     - name: Create New Release
