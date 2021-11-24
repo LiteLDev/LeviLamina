@@ -95,7 +95,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
-    <ClCompile Include="Kernel\GuiAPI.cpp" />
+    <ClCompile Include="Kernel\FormAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
@@ -139,12 +139,13 @@ LibraryBuilder.exe
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\BlockInstanceAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
-    <ClInclude Include="Header\GuiAPI.h" />
+    <ClInclude Include="Header\FormAPI.h" />
+    <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockActorAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockLegacyAPI.hpp" />
-    <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ContainerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ItemStackAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\LevelAPI.hpp" />
@@ -153,9 +154,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
-    <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp" />
     <ClInclude Include="Header\NBTAPI.h" />
-    <ClInclude Include="Header\OldGui.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\Types.h" />
     <ClInclude Include="Header\Global.h" />

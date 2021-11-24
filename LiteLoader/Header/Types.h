@@ -2,6 +2,14 @@
 #include "Global.h"
 #include <string>
 
+typedef std::string xuid_t;
+typedef unsigned long long QWORD;
+
+namespace mce {
+    class UUID;
+    class Color;
+}; // namespace mce
+
 class BlockPos {
 public:
     int x, y, z;

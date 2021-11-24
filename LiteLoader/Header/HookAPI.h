@@ -12,6 +12,10 @@ LIAPI int   HookFunction(void* oldfunc, void** poutold, void* newfunc);
 LIAPI void* dlsym_real(char const* name);
 }
 
+template <typename RTN = void, typename... Args>
+RTN inline VirtualCall(void* _this, uintptr_t off, Args... args) {
+    return (*(RTN(**)(void*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
+}
 
 template <typename T, int off>
 inline T &dAccess(void *ptr) {
@@ -29,6 +33,7 @@ template <typename T>
 inline const T &dAccess(void const *ptr, uintptr_t off) {
     return *(T *)(((uintptr_t)ptr) + off);
 }
+
 #define __WEAK __declspec(selectany)
 //#define GetServerSymbol(x) dlsym_real(x)
 template <CHash, CHash>

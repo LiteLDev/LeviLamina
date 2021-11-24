@@ -35,16 +35,3 @@
 using std::map;
 using std::string;
 using std::vector;
-
-// Types
-typedef std::string xuid_t;
-namespace mce {
-class UUID;
-class Color;
-}; // namespace mce
-typedef unsigned long long QWORD;
-
-template <typename RTN = void, typename... Args>
-RTN inline VirtualCall(void* _this, uintptr_t off, Args... args) {
-    return (*(RTN(**)(void*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
-}

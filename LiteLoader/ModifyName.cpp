@@ -22,6 +22,7 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     return str;
 }
 
+//Standardize BDS's output
 THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
       int, const char* ts) {
     string      input  = ts;
