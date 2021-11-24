@@ -1,8 +1,9 @@
 #ifdef EXTRA_INCLUDE_PART
 // Add include headers & pre-declares
-#include "../Player.hpp"
+class Player;
 class Objective;
 struct PlayerScore;
+
 struct ScoreInfo {
     char filler[20];
     Objective* getObjective() {

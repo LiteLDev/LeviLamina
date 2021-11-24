@@ -3,7 +3,7 @@
 
 //Types
 namespace RakNet {
-struct RakPeer;
+class RakPeer;
 };
 class Level;
 class CommandRegistry;

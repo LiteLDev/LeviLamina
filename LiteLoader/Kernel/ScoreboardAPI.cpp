@@ -5,6 +5,7 @@
 #include <MC/ServerScoreboard.hpp>
 #include <MC/ScoreboardIdentityRef.hpp>
 #include <MC/Scoreboard.hpp>
+#include <MC/Player.hpp>
 
 #define H do_hash
 LIAPI bool checkSlotName(const std::string& slot) {
