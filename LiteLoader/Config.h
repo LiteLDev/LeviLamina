@@ -28,36 +28,8 @@ namespace LL
     };
     extern LLConfig globalConfig;
 
-    void inline to_json(nlohmann::json& j, const LLConfig& conf)
-    {
-        j = nlohmann::json{
-            {"DebugMode", conf.debugMode},
-            {"LogLevel", conf.logLevel},
-            {"Language", conf.language},
-            {"Modules",{
-                "AutoUpgrade", { "enabled", conf.enableAutoUpdate },
-                "CrashLogger", {
-                    "enabled", conf.enableCrashLogger,
-                    "path", conf.crashLoggerPath
-                },
-                "FixDisconnectBug", { "enabled", conf.enableFixDisconnectBug },
-                "FixListenPort", { "enabled", conf.enableFixListenPort }
-            }}
-        };
-    }
-
-    void inline from_json(const nlohmann::json& j, LLConfig& conf)
-    {
-        j.at("DebugMode").get_to(conf.debugMode);
-        j.at("LogLevel").get_to(conf.logLevel);
-        j.at("Language").get_to(conf.language);
-
-        j.at("Modules").at("AutoUpgrade").at("enabled").get_to(conf.enableAutoUpdate);
-        j.at("Modules").at("CrashLogger").at("enabled").get_to(conf.enableCrashLogger);
-        j.at("Modules").at("CrashLogger").at("path").get_to(conf.crashLoggerPath);
-        j.at("Modules").at("FixDisconnectBug").at("enabled").get_to(conf.enableFixDisconnectBug);
-        j.at("Modules").at("FixListenPort").at("enabled").get_to(conf.enableFixListenPort);
-    }
+    void inline to_json(nlohmann::json& j, const LLConfig& conf);
+    void inline from_json(const nlohmann::json& j, LLConfig& conf);
 }
 
 bool LoadLLConfig();
