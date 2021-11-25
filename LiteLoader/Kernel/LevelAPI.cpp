@@ -4,6 +4,7 @@
 #include <MC/ItemStack.hpp>
 #include <MC/Spawner.hpp>
 #include <MC/Level.hpp>
+#include <MC/Dimension.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/BlockSource.hpp>
 #include <MC/MinecraftCommands.hpp>
@@ -38,9 +39,9 @@ void Level::forEachPlayer(class std::function<bool(class Player const&)> a0) {
 }
 
 BlockSource* Level::getBlockSource(int dimid) {
-	Global<Level>->getDimension(dimid);
 	auto dim = Global<Level>->getDimension(dimid);
-	return dAccess<BlockSource*>(dim, 96);
+    return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+	//return dAccess<BlockSource*>(dim, 96);
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {

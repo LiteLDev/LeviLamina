@@ -11,7 +11,7 @@
 #include <MC/ExtendedCertificate.hpp>
 #include <MC/ItemStack.hpp>
 #include <EventAPI.h>
-
+#include <MC/ScriptItemStack.hpp>
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
 }

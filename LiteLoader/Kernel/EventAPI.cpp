@@ -208,7 +208,6 @@ THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEB
 }
 
 /////////////////// PlayerUseItemOn ///////////////////
-
 vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     Player_use_item_on_call_backs.push_back(callback);
@@ -219,7 +218,8 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
     try {
         auto sp = *dAccess<ServerPlayer**, 8>(thi);
         PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
-
+        std::cout << Level::getBlockSource(sp) << std::endl;
+        std::cout << Level::getBlockSource(0) << std::endl;
         CallEvent(Player_use_item_on_call_backs, Player_use_item_on_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemOnEV");

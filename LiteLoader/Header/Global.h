@@ -23,8 +23,10 @@
 #include <unordered_set>
 #include <utility>
 #include <vector>
+#include <variant>
 
 #include <gsl/gsl>
+#include <entt/entt.hpp>
 #include <seh_exception/seh_exception.hpp>
 
 #include "HookAPI.h"

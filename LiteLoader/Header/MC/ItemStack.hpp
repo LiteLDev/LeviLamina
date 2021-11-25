@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART
 #include "Extra/ItemStackAPI.hpp"
 #undef EXTRA_INCLUDE_PART
-class ItemStack : ItemStackBase {
+class ItemStack : public ItemStackBase {
 #include "Extra/ItemStackAPI.hpp"
 public:
     virtual ~ItemStack();
