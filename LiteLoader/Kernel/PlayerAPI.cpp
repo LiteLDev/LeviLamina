@@ -1,17 +1,23 @@
 ﻿#include <MC/Actor.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
-
+#include <MC/NetworkIdentifier.hpp>
+#include <MC/NetworkPeer.hpp>
+#include <MC/NetworkHandler.hpp>
+#include <MC/ServerNetworkHandler.hpp>
+#include <MC/Minecraft.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
+#include <MC/ItemStack.hpp>
+#include <EventAPI.h>
 
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
-    return ((Mob*)(Mob*)this)->getUserEntityIdentifierComponent();
+    return Mob::getUserEntityIdentifierComponent();
 }
 
 NetworkIdentifier* Player::getNetworkIdentifier(){
-    return (NetworkIdentifier*)(this->getUserEntityIdentifierComponent());
+    return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
 Certificate* Player::getCert() {
@@ -23,22 +29,17 @@ Certificate* Player::getCert() {
 }
 
 std::string Player::getRealName() {
-    return ExtendedCertificate::getIdentityName(*this->getCert());
+    return ExtendedCertificate::getIdentityName(*getCert());
 }
 
-#include <MC/NetworkIdentifier.hpp>
-#include <MC/NetworkPeer.hpp>
-#include <MC/NetworkHandler.hpp>
-#include <MC/Minecraft.hpp>
 int Player::getAvgPing() {
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().avgping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgping;
 }
 
 int Player::getLastPing() {
-    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*this->getNetworkIdentifier())->getNetworkStatus().ping;
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
-#include<EventAPI.h>
 string Player::getLanguageCode() {
     for (auto& [i, j] : PlayerJoinData) {
         if (i == this->getRealName())
@@ -50,7 +51,7 @@ string Player::getLanguageCode() {
 }
 
 string Player::getDeviceName() {
-    switch ((int)this->getPlatform()) {
+    switch ((int)getPlatform()) {
         case -1:
             return u8"§2unkown";
         case 1:
@@ -86,15 +87,13 @@ string Player::getDeviceName() {
     }
 }
 
-#include <MC/ServerNetworkHandler.hpp>
-void Player::forceKick(string msg) {
-     NetworkIdentifier* netid = this->getNetworkIdentifier();
+void Player::kick(string msg) {
+     NetworkIdentifier* netid = getNetworkIdentifier();
      Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
-#include <MC/ItemStack.hpp>
-void Player::setItemLore(vector<string>& lore) {
+/*void Player::setItemLore(vector<string>& lore) {
     ItemStack* item = const_cast<ItemStack*>(&this->getSelectedItem());
     item->setLore(lore);
     this->sendInventory(true);
-}
+}*/

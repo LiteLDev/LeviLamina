@@ -6,11 +6,38 @@
 #include <MC/Level.hpp>
 #include <MC/ItemActor.hpp>
 #include <MC/BlockSource.hpp>
+#include <MC/MinecraftCommands.hpp>
+#include <MC/CommandContext.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <command/CommandReg.h>
 #include <string>
 #include <vector>
 
+Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
+	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
+	*((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
+	return (this->*rv)(std::forward<struct ActorUniqueID>(a0), std::forward<bool>(a1));
+}
 
-LIAPI BlockSource* Level::getBlockSource(int dimid) {
+Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
+	class Dimension* (Level:: * rv)(class AutomaticID<class Dimension, int>) const;
+	*((void**)&rv) = dlsym("?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
+	return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
+}
+
+void Level::forEachPlayer(class std::function<bool(class Player&)> a0) {
+	void (Level:: * rv)(class std::function<bool(class Player&)>);
+	*((void**)&rv) = dlsym("?forEachPlayer@Level@@UEAAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z");
+	return (this->*rv)(std::forward<class std::function<bool(class Player&)>>(a0));
+}
+
+void Level::forEachPlayer(class std::function<bool(class Player const&)> a0) {
+	void (Level:: * rv)(class std::function<bool(class Player const&)>) const;
+	*((void**)&rv) = dlsym("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z");
+	return (this->*rv)(std::forward<class std::function<bool(class Player const&)>>(a0));
+}
+
+BlockSource* Level::getBlockSource(int dimid) {
 	Global<Level>->getDimension(dimid);
 	auto dim = Global<Level>->getDimension(dimid);
 	return dAccess<BlockSource*>(dim, 96);
@@ -58,16 +85,15 @@ bool Level::spawnParticle(FloatVec4 pos, const string& type) {
 
 	return true;
 }
-#include <MC/MinecraftCommands.hpp>
-#include <MC/CommandContext.hpp>
-#include <command/CommandReg.h>
-void* Level::ServerCommandOrigin::fake_vtbl[26];
 
+void* Level::ServerCommandOrigin::fake_vtbl[26];
 static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
+
 bool Level::runcmd(const string& cmd) {
 	ServerCommandOrigin origin;
 	return MinecraftCommands::_runcmd(&origin, cmd);
 }
+
 static std::unordered_map<void*, string*> origin_res;
 std::pair<bool, string> Level::runcmdEx(const string& cmd) {
 	ServerCommandOrigin origin;
@@ -76,7 +102,7 @@ std::pair<bool, string> Level::runcmdEx(const string& cmd) {
 	bool rv = MinecraftCommands::_runcmd(&origin, cmd);
 	return { rv, std::move(val) };
 }
-#include <MC/ServerPlayer.hpp>
+
 static void* FAKE_PORGVTBL[26];
 bool Level::runcmdAs(Player* pl, const string& cmd) {
 	void** filler[5];
@@ -91,12 +117,12 @@ bool Level::runcmdAs(Player* pl, const string& cmd) {
 	return MinecraftCommands::_runcmd(filler, cmd);
 }
 
-LIAPI std::vector<Player*> Level::getAllPlayers() {
+std::vector<Player*> Level::getAllPlayers(){
 	std::vector<Player*> player_list;
 	Global<Level>->forEachPlayer([&](Player& sp) -> bool {
 		Player* player = &sp;
 		player_list.push_back(player);
 		return 1;
-		});
+	});
 	return player_list;
 }

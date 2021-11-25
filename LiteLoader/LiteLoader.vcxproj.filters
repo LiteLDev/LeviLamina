@@ -311,6 +311,9 @@
     <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">

@@ -7,20 +7,20 @@
 // Add Member There
 
 public:
-std::string CMD;
-CommandOrigin* Ori;
-int Version = 10;
-std::string& getCmd() {
-    return CMD;
-}
-class CommandOrigin& getOrigin() {
-    return *Ori;
-}
+    std::string Cmd;
+    CommandOrigin* Ori;
+    int Version = 10;
 
-template <typename TP>
-CommandContext(TP&& x, CommandOrigin* o)
-    : CMD(std::forward<TP>(x))
-    , Ori(o) {
-}
+    std::string& getCmd() {
+        return Cmd;
+    }
+    class CommandOrigin& getOrigin() {
+        return *Ori;
+    }
+
+    template <typename T>
+    CommandContext(T&& x, CommandOrigin* o)
+        : Cmd(std::forward<T>(x)), Ori(o)
+    { }
 
 #endif

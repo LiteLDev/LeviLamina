@@ -140,6 +140,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BlockInstanceAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\FormAPI.h" />
+    <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp" />
