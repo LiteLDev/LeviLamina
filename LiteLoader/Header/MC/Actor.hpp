@@ -22,6 +22,7 @@ public:
     virtual void _serverInitItemStackIds();
     virtual void _doInitialMove();
     virtual ~Actor();
+    
     virtual void reset();
     virtual int getOnDeathExperience();
     virtual int /*enum ActorType*/ getOwnerEntityType();

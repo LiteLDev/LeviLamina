@@ -203,7 +203,6 @@ class BlockLegacy;
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
       BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
     PlayerDestroyEV player_destroy_event = {&pl, blkpos, &bl};
-    pl.runcmd("kill");
     CallEvent(Player_destroy_call_backs, player_destroy_event);
     return original(_this, pl, blkpos, bl);
 }
