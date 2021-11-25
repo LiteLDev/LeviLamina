@@ -20,18 +20,18 @@ namespace Form
 		virtual string serialize() override;
 
 	public:
-		using Callback = std::function<void(void)>;
+		using ButtonCallback = std::function<void(void)>;
 
 		string text, image;
-		Callback callback;
+		ButtonCallback callback;
 
 	public:
-		inline Button(const string& text, const string& image = "", Callback callback = Callback())
+		inline Button(const string& text, const string& image = "", ButtonCallback callback = ButtonCallback())
 			:text(text), image(image), callback(callback)
 		{}
 		inline void setText(const string& text) { this->text = text; }
 		inline void setImage(const string& image) { this->image = image; }
-		inline void setCallback(Callback callback) { this->callback = callback; }
+		inline void setCallback(ButtonCallback callback) { this->callback = callback; }
 	};
 
 	//////////////////////////////// Custom Form Elements ////////////////////////////////
@@ -177,7 +177,7 @@ namespace Form
 	public:
 		using Callback = std::function<void(int)>;
 		string title, content;
-		vector<std::unique_ptr<SimpleFormElement>> elements;
+		vector<std::shared_ptr<SimpleFormElement>> elements;
 		Callback callback;
 
 	public:
@@ -202,9 +202,9 @@ namespace Form
 		virtual string serialize() override;
 
 	public:
-		using Callback = std::function<void(std::map<string, CustomFormElement>)>;
+		using Callback = std::function<void(const std::map<string, std::shared_ptr<CustomFormElement>>&)>;
 		string title;
-		vector<std::unique_ptr<CustomFormElement>> elements;
+		std::map<string, std::shared_ptr<CustomFormElement>> elements;
 		Callback callback;
 
 	public:
