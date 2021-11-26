@@ -5,6 +5,8 @@
 #include <MC/Mob.hpp>
 #include <MC/ActorDamageSource.hpp>
 #include <MC/UserEntityIdentifierComponent.hpp>
+#include <MC/TeleportCommand.hpp>
+#include <MC/TeleportTarget.hpp>
 class UserEntityIdentifierComponent;
 
 LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {

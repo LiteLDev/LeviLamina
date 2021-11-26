@@ -93,6 +93,31 @@ void Player::kick(string msg) {
      Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
+string Player::getName()
+{
+    return getNameTag();
+}
+
+/*string Player::getXuid()
+{
+    auto cert = getCert();
+    if (!cert)
+        return "";
+    return ((ExtendedCertificate*)cert)->getXuid(cert);
+}*/
+
+string Player::getUuid()
+{
+    auto ueic = getUserEntityIdentifierComponent();
+    if (!ueic)
+        return "";
+    auto uuid = (void*)((uintptr_t)ueic + 168);
+    string uuidStr;
+    SymCall("?asString@UUID@mce@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
+        string*, void*, string*)(uuid, &uuidStr);
+    return uuidStr;
+}
+
 /*void Player::setItemLore(vector<string>& lore) {
     ItemStack* item = const_cast<ItemStack*>(&this->getSelectedItem());
     item->setLore(lore);
