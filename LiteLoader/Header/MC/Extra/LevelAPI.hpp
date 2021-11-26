@@ -57,8 +57,8 @@ public:
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
     LIAPI static std::vector<Player*> getAllPlayers();
-    LIAPI static bool breakNaturally(BlockSource* a1, BlockPos& a2);
-    LIAPI static bool breakNaturally(BlockSource* a1, BlockPos& a2, ItemStack* a3);
+    LIAPI static bool breakNaturally(BlockSource*,BlockPos&);
+    LIAPI static bool breakNaturally(BlockSource*,BlockPos&, ItemStack* a3);
     LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
     /*
 * Wrappers for Muti-Vftable Class

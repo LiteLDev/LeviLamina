@@ -216,9 +216,9 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
       void* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     try {
-        auto sp = *dAccess<ServerPlayer**, 8>(thi);
-        PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
+        auto sp = dAccess<ServerPlayer*, 8>(thi);
         Level::breakNaturally(Level::getBlockSource(sp), a3_pos);
+        PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
         CallEvent(Player_use_item_on_call_backs, Player_use_item_on_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemOnEV");
