@@ -17,7 +17,7 @@ public:
     virtual double nextGaussianDouble();
     virtual void consumeCount(unsigned int);
     virtual std::unique_ptr<class IRandom> fork();
-    virtual();
+    //virtual();
 
 public:
     MCAPI Random();
@@ -31,5 +31,5 @@ public:
     MCAPI static class Random& getThreadLocal();
 
 private:
-    MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
+    //MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random>> mThreadLocalRandom;
 };

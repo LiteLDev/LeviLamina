@@ -5,6 +5,10 @@
 
 #else
 // Add Member There
+public:
 
+inline class EntityContext& getStackRef() {
+    return _getStackRef();
+}
 
 #endif

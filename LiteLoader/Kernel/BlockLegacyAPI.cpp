@@ -26,5 +26,3 @@ bool BlockLegacy::applyBoneMeal(BlockSource* a1, BlockPos* a2) {
 
 
 
-
-

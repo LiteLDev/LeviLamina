@@ -7,6 +7,6 @@ class LevelChunk;
 #else
 // Add new members to class
 public:
-LIAPI Mob* spawnMob(const FloatVec4& pos, std::string name);
-LIAPI ItemActor* spawnItem(const FloatVec4& pos, ItemStack* item);
+    LIAPI Mob* spawnMob(Vec3& ,int, std::string );
+    LIAPI ItemActor* spawnItem(Vec3&, int, ItemStack*);
 #endif

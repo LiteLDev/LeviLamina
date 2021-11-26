@@ -152,11 +152,6 @@ public:
 };
 static_assert(std::is_pod_v<ActorRuntimeID>);
 
-class IntVec4 {
-public:
-    int x, y, z;
-    int dim;
-};
 class MinecraftEventing {
 public:
     enum POIBlockInteractionType;
@@ -179,26 +174,29 @@ public:
     }
 };
 
+namespace Core {
 
-class FloatVec4 {
+class PathPart {
 public:
-    float          x, y, z;
-    int            dim;
-    inline IntVec4 toIntVec4() {
-        auto px = (int)x;
-        auto py = (int)y;
-        auto pz = (int)z;
-        if (px < 0 && px != x)
-            px = px - 1;
-        if (py < 0 && py != y)
-            py = py - 1;
-        if (pz < 0 && pz != z)
-            pz = pz - 1;
-        return {px, py, pz, dim};
+    std::string data;
+};
+
+class Path : public PathPart {
+public:
+};
+
+template <typename T>
+class PathBuffer {
+    T value;
+    operator T&() noexcept {
+        return value;
+    }
+    operator T const &() const noexcept {
+        return value;
     }
 };
 
-
+} // namespace Core
 
 //Templates
 template <typename T, typename T2, int unk>

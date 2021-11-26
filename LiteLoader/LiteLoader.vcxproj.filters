@@ -159,6 +159,9 @@
     <ClCompile Include="Kernel\ItemActorAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\BlockSourceAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -330,6 +333,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\ItemActorAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

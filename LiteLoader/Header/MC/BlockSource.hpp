@@ -13,8 +13,8 @@ public:
     virtual bool hasChunksAt(class AABB const&);
     virtual bool hasChunksAt(class BlockPos const&, int);
     virtual bool hasChunksAt(struct Bounds const&);
-    virtual class Block const& getBlock(class BlockPos const&);
     virtual class Block const& getBlock(int, int, int);
+    virtual class Block const& getBlock(class BlockPos const&);
     virtual class Material const& getMaterial(int, int, int);
     virtual class Material const& getMaterial(class BlockPos const&);
     virtual bool containsAnyLiquid(class AABB const&);

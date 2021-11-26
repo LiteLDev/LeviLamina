@@ -45,17 +45,17 @@ LIAPI int Container::getSize() {
     return (*(signed int(__fastcall**)(__int64))(*(_QWORD*)this + 112i64))((unsigned long long)this); //IDA Container::getSlotCopies
 }
 
-LIAPI bool Container::hasContainer(FloatVec4 pos) {
-    return getContainer(pos) != nullptr;
+LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
+    return getContainer(pos,dim) != nullptr;
 }
 
 class DropperBlockActor;
-LIAPI Container* Container::getContainer(FloatVec4 pos) {
+LIAPI Container* Container::getContainer(Vec3& pos, int dim) {
     Vec3 vec{pos.x, pos.y, pos.z};
     // This function didn't use 'this' pointer
     
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(pos.dim), &vec);
+                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
 
     return container;
 }

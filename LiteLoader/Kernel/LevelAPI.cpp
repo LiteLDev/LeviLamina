@@ -60,27 +60,27 @@ BlockSource* Level::getBlockSource(int dimid) {
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {
-    return (BlockSource*)*((__int64*)ac + 108);
+    return const_cast<BlockSource*>(&ac->getRegionConst());
 }
 
-bool Level::setBlock(IntVec4 pos, Block* block) {
-	BlockSource* bs = getBlockSource(pos.dim);
+bool Level::setBlock(Vec3& pos, int dim, Block* block) {
+	BlockSource* bs = getBlockSource(dim);
 	BlockPos bp{ pos.x, pos.y, pos.z };
 	return bs->setBlock(bp, *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
-bool Level::setBlock(IntVec4 pos, const string& name, unsigned short tileData) {
+bool Level::setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData) {
 	Block* newBlock = Block::create(name, tileData);
 	if (!newBlock)
 		return false;
-	return setBlock(pos, newBlock);
+	return setBlock(pos,dim, newBlock);
 }
 
-bool Level::setBlock(IntVec4 pos, Tag* nbt) {
+bool Level::setBlock(Vec3& pos, int dim, Tag* nbt) {
 	Block* newBlock = Block::create(nbt);
 	if (!newBlock)
 		return false;
-	return setBlock(pos, newBlock);
+	return setBlock(pos, dim,newBlock);
 }
 #include <MC/ActorDamageSource.hpp>
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
@@ -89,10 +89,10 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 	return Global<Level>->fetchEntity(v6, 0);
 }
 
-bool Level::spawnParticle(FloatVec4 pos, const string& type) {
+bool Level::spawnParticle(Vec3& pos, int dim, const string& type) {
 	string name = type;
-    Dimension* dim = Global<Level>->getDimension(pos.dim);
-    Global<Level>->spawnParticleEffect(name, {pos.x, pos.y, pos.z}, dim);
+    Dimension* dims = Global<Level>->getDimension(dim);
+    Global<Level>->spawnParticleEffect(name, {pos.x, pos.y, pos.z}, dims);
 	return true;
 }
 
@@ -137,21 +137,6 @@ std::vector<Player*> Level::getAllPlayers(){
 	return player_list;
 }
 
-bool Level::breakNaturally(BlockSource* a1, BlockPos& a2) {
-    Block* block = const_cast<Block*>(&a1->getBlock(a2));
-    auto out = Global<Level>->destroyBlock(*a1, a2, 1);
-    return out;
-}
-
-bool Level::breakNaturally(BlockSource* a1, BlockPos& a2, ItemStack* tool) {
-    Block* block = const_cast<Block*>(&a1->getBlock(a2));
-    bool canDestroy =  tool->canDestroy(block);
-	if (canDestroy) {
-        auto out = Global<Level>->destroyBlock(*a1, a2, 1);
-	}
-    auto out = Global<Level>->destroyBlock(*a1, a2, 0);
-    return out;
-}
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
     Item* itemcreate = (Item*)new char[552];

@@ -94,6 +94,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockAPI.cpp" />
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
+    <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
@@ -142,6 +143,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BlockInstanceAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\FormAPI.h" />
+    <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp" />

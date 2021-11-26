@@ -48,6 +48,6 @@ LIAPI Vec2* Actor::getDirction() {
 }
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
-LIAPI void Actor::teleport(FloatVec4 vec4) {
-    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec4.x, vec4.y, vec4.z}, 0, vec4.dim, 0, 0, 15));
+LIAPI void Actor::teleport(Vec3 vec3,int a1) {
+    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec3.x, vec3.y, vec3.z}, 0, a1, 0, 0, 15));
 }

@@ -7,4 +7,5 @@ public:
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
     LIAPI bool applyBoneMeal(BlockSource*, BlockPos*);
+    LIAPI ItemStack* getBlockDrops();
 #endif
