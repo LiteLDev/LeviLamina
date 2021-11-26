@@ -13,13 +13,32 @@ class Dimension;
 #else
 // Add new members to class
 public:
-    Actor* fetchEntity(struct ActorUniqueID a0, bool a1);
-    Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
-    void forEachPlayer(class std::function<bool(class Player&)> a0);
-    void forEachPlayer(class std::function<bool(class Player const&)> a0);
-    bool destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2);
-    void spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2);
-    void spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2);
+    //Entity & Player
+    LIAPI static Actor* fetchEntity(struct ActorUniqueID a0, bool a1);
+    LIAPI static void forEachPlayer(class std::function<bool(class Player&)> a0);
+    LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> a0);
+    LIAPI static std::vector<Player*> getAllPlayers();
+    LIAPI static Player* getPlayer(const string& info);     //name or xuid
+
+    //Block
+    LIAPI static bool setBlock(IntVec4 pos, Block* block);
+    LIAPI static bool setBlock(IntVec4 pos, const string& name, unsigned short tileData);
+    LIAPI static bool setBlock(IntVec4 pos, Tag* nbt);
+    LIAPI static bool breakNaturally(BlockSource*, BlockPos&);
+    LIAPI static bool breakNaturally(BlockSource*, BlockPos&, ItemStack* a3);
+    LIAPI static bool destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2);
+    LIAPI static void spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2);
+    LIAPI static void spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2);
+
+    //Item
+    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
+
+    //Helper
+    LIAPI static BlockSource* getBlockSource(int dimid);
+    LIAPI static BlockSource* getBlockSource(Actor* actor);
+    LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
+    LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
+    
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {
@@ -43,23 +62,10 @@ public:
         }
     };
 
-    LIAPI static BlockSource* getBlockSource(int dimid);
-    LIAPI static BlockSource* getBlockSource(Actor* actor);
-    LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-
-    LIAPI static bool setBlock(IntVec4 pos, Block* block);
-    LIAPI static bool setBlock(IntVec4 pos, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(IntVec4 pos, Tag* nbt);
-
-    LIAPI static bool spawnParticle(FloatVec4 pos, const string& type);
-
     LIAPI static bool runcmdAs(Player* pl, const string& cmd);
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
-    LIAPI static std::vector<Player*> getAllPlayers();
-    LIAPI static bool breakNaturally(BlockSource*,BlockPos&);
-    LIAPI static bool breakNaturally(BlockSource*,BlockPos&, ItemStack* a3);
-    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
+
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
