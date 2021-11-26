@@ -14,6 +14,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <MC/ActorDamageSource.hpp>
 #include <command/CommandReg.h>
+#include <command/Command.h>
 
 Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
 	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
@@ -90,13 +91,6 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 	return Global<Level>->fetchEntity(v6, 0);
 }
 
-bool Level::spawnParticle(Vec3& pos, int dim, const string& type) {
-	string name = type;
-    Dimension* dims = Global<Level>->getDimension(dim);
-    Global<Level>->spawnParticleEffect(name, {pos.x, pos.y, pos.z}, dims);
-	return true;
-}
-
 void* Level::ServerCommandOrigin::fake_vtbl[26];
 static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
 
@@ -138,6 +132,40 @@ std::vector<Player*> Level::getAllPlayers(){
 	return player_list;
 }
 
+Player* Level::getPlayer(const string& info) {
+    string target{info};
+    std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
+    int delta = 2147483647;                                                     //c++ int max
+    Player* found = nullptr;
+
+    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+        Player* p = &sp;
+        if (p->getXuid() == target) {
+            found = p;
+            return false;
+        }
+
+        string pName = p->getRealName();
+        std::transform(pName.begin(), pName.end(), pName.begin(), ::tolower);
+
+        //Ä£ºýÆ¥Åä
+        if (pName.find(target) == 0) {
+            //0 ¨ªs the index where the "target" appear in "pName"
+            int curDelta = pName.length() - target.length();
+            if (curDelta == 0) {
+                found = p;
+                return false;
+            }
+
+            if (curDelta < delta) {
+                found = p;
+                delta = curDelta;
+            }
+        }
+        return true;
+    });
+    return found;
+}
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
     Item* itemcreate = (Item*)new char[552];

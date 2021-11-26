@@ -21,9 +21,9 @@ public:
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
 
     //Block
-    LIAPI static bool setBlock(IntVec4 pos, Block* block);
-    LIAPI static bool setBlock(IntVec4 pos, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(IntVec4 pos, Tag* nbt);
+    LIAPI static bool setBlock(Vec3& ,int, Block* block);
+    LIAPI static bool setBlock(Vec3&, int, const string& name, unsigned short tileData);
+    LIAPI static bool setBlock(Vec3&, int, Tag* nbt);
     LIAPI static bool breakNaturally(BlockSource*, BlockPos&);
     LIAPI static bool breakNaturally(BlockSource*, BlockPos&, ItemStack* a3);
     LIAPI static bool destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2);
@@ -62,23 +62,9 @@ public:
         }
     };
 
-    LIAPI static BlockSource* getBlockSource(int dimid);
-    LIAPI static BlockSource* getBlockSource(Actor* actor);
-    LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-
-    LIAPI static bool setBlock(Vec3&, int, Block* block);
-    LIAPI static bool setBlock(Vec3&, int, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(Vec3&, int, Tag* nbt);
-
-    LIAPI static bool spawnParticle(Vec3&, int, const string& type);
-
     LIAPI static bool runcmdAs(Player* pl, const string& cmd);
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
-    LIAPI static std::vector<Player*> getAllPlayers();
-    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
-    LIAPI static bool breakNaturally(BlockSource*,BlockPos&, ItemStack* a3);
-    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
