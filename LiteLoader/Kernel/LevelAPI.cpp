@@ -67,10 +67,10 @@ bool Level::setBlock(IntVec4 pos, Tag* nbt) {
 		return false;
 	return setBlock(pos, newBlock);
 }
-
+#include <MC/ActorDamageSource.hpp>
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 	char v83;
-	ActorUniqueID v6 = *(ActorUniqueID*)(*(__int64(__fastcall**)(void*, char*))(*(uintptr_t*)ads + 64))(ads, &v83);
+    ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
 	return Global<Level>->fetchEntity(v6, 0);
 }
 

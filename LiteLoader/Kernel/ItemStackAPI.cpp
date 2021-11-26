@@ -67,10 +67,10 @@ int ItemStack::getAux() {
 }
 
 #include <MC/ScriptItemStack.hpp>
-int ItemStack::getCount() {  //IDA ContainerModel::networkUpdateItem
+int ItemStack::getCount() {
     if (this->isNull())
         return 0;
-    return ((ScriptItemStack*)this)->getAmount(); // LevelContainerModel::_getContainer
+    return ((ScriptItemStack*)this)->getAmount();
 }
 
 bool ItemStack::setItem(ItemStack* newItem) {
