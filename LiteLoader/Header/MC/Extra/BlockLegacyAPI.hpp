@@ -6,4 +6,5 @@ class Block;
 public:
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
+    LIAPI bool applyBoneMeal(BlockSource*, BlockPos*);
 #endif

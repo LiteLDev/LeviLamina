@@ -96,6 +96,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
@@ -140,8 +141,13 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BlockInstanceAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\FormAPI.h" />
+    <ClInclude Include="Header\MC\Extra\CommandAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\ItemActorAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\MinecraftCommandsAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\RakNetAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\ScriptingAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockAPI.hpp" />

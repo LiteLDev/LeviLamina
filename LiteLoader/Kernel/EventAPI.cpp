@@ -218,6 +218,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
     try {
         auto sp = *dAccess<ServerPlayer**, 8>(thi);
         PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
+        Level::breakNaturally(Level::getBlockSource(sp), a3_pos);
         CallEvent(Player_use_item_on_call_backs, Player_use_item_on_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemOnEV");

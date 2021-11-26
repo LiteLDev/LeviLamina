@@ -156,6 +156,9 @@
     <ClCompile Include="Kernel\FormAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\ItemActorAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -312,6 +315,21 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ScriptingAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\RakNetAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\MinecraftCommandsAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ItemActorAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

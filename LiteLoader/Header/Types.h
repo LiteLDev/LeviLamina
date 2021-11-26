@@ -157,7 +157,10 @@ public:
     int x, y, z;
     int dim;
 };
-
+class MinecraftEventing {
+public:
+    enum POIBlockInteractionType;
+};
 
 class RelativeFloat {
 public:

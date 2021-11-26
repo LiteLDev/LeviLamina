@@ -37,7 +37,22 @@ void Level::forEachPlayer(class std::function<bool(class Player const&)> a0) {
 	*((void**)&rv) = dlsym("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z");
 	return (this->*rv)(std::forward<class std::function<bool(class Player const&)>>(a0));
 }
+bool Level::destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2) {
+    bool (Level::*rv)(class BlockSource&, class BlockPos const&, bool);
+    *((void**)&rv) = dlsym("?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z");
+    return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<bool>(a2));
+}
+void Level::spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2) {
+    void (Level::*rv)(std::string const&, class Actor const&, class Vec3 const&);
+    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@AEBVVec3@@@Z");
+    return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Actor const&>(a1), std::forward<class Vec3 const&>(a2));
+}
 
+void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2) {
+    void (Level::*rv)(std::string const&, class Vec3 const&, class Dimension*);
+    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
+    return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
+}
 BlockSource* Level::getBlockSource(int dimid) {
 	auto dim = Global<Level>->getDimension(dimid);
     return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
@@ -45,7 +60,7 @@ BlockSource* Level::getBlockSource(int dimid) {
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {
-	return const_cast<BlockSource*>(&ac->getRegionConst());
+    return (BlockSource*)*((__int64*)ac + 108);
 }
 
 bool Level::setBlock(IntVec4 pos, Block* block) {
@@ -76,14 +91,8 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 
 bool Level::spawnParticle(FloatVec4 pos, const string& type) {
 	string name = type;
-	Level* level = Global<Level>;
-	Dimension* dim = SymCall("?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z",
-		Dimension*, void*, AutomaticID<Dimension, int>)(level, AutomaticID<Dimension, int>(pos.dim));
-
-	SymCall("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z",
-		void, Level*, string&, const Vec3&, void*)
-		(level, name, { pos.x,pos.y,pos.z }, dim);
-
+    Dimension* dim = Global<Level>->getDimension(pos.dim);
+    Global<Level>->spawnParticleEffect(name, {pos.x, pos.y, pos.z}, dim);
 	return true;
 }
 
@@ -126,4 +135,29 @@ std::vector<Player*> Level::getAllPlayers(){
 		return 1;
 	});
 	return player_list;
+}
+
+bool Level::breakNaturally(BlockSource* a1, BlockPos& a2) {
+    Block* block = const_cast<Block*>(&a1->getBlock(a2));
+    auto out = Global<Level>->destroyBlock(*a1, a2, 1);
+    return out;
+}
+
+bool Level::breakNaturally(BlockSource* a1, BlockPos& a2, ItemStack* tool) {
+    Block* block = const_cast<Block*>(&a1->getBlock(a2));
+    bool canDestroy =  tool->canDestroy(block);
+	if (canDestroy) {
+        auto out = Global<Level>->destroyBlock(*a1, a2, 1);
+	}
+    auto out = Global<Level>->destroyBlock(*a1, a2, 0);
+    return out;
+}
+
+ItemStack* Level::getItemStackFromId(short a2, int a3) {
+    Item* itemcreate = (Item*)new char[552];
+    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemcreate, "", a2);
+    ItemStack* a = (ItemStack*)new char[272];
+    ItemStack* itemstackcreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
+    ItemStack* itemstack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item&,int,int)(itemstackcreate, *item,1,a3);
+    return itemstack;
 }

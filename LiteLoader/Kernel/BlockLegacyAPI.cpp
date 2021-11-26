@@ -1,6 +1,7 @@
 #include <MC/Block.hpp>
 #include <MC/BlockLegacy.hpp>
-
+#include <MC/ComposterBlock.hpp>
+#include <MC/BlockSource.hpp>
 Block* BlockLegacy::toBlock(unsigned short tileData)
 {
     Block *bl = (Block*)&getStateFromLegacyData(tileData);
@@ -13,3 +14,17 @@ Block* BlockLegacy::toBlock(unsigned short tileData)
 string BlockLegacy::getTypeName() {
     return dAccess<string, 128>(this);
 }
+
+bool BlockLegacy::applyBoneMeal(BlockSource* a1, BlockPos* a2) {
+    auto vtbl = dlsym("??_7ComposterBlock@@6B@");
+    if (*(void**)this == vtbl) {
+        ((ComposterBlock*)this)->emitBoneMeal(*Global<Level>, *a1, *a2);
+        return true;
+    }
+    return false;
+}
+
+
+
+
+

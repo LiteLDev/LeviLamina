@@ -17,8 +17,10 @@ public:
     Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     void forEachPlayer(class std::function<bool(class Player&)> a0);
     void forEachPlayer(class std::function<bool(class Player const&)> a0);
-
-public:
+    bool destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2);
+    void spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2);
+    void spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2);
+ public:
     static void dummy() { ; }
     struct ServerCommandOrigin {
         void* myVTBL;
@@ -55,8 +57,10 @@ public:
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
     LIAPI static std::vector<Player*> getAllPlayers();
-
-/*
+    LIAPI static bool breakNaturally(BlockSource* a1, BlockPos& a2);
+    LIAPI static bool breakNaturally(BlockSource* a1, BlockPos& a2, ItemStack* a3);
+    LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
+    /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
         void (Level::*rv)();
