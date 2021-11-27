@@ -16,10 +16,11 @@ bool BlockInstance::breakNaturally() {
 
 bool BlockInstance::breakNaturally(ItemStack* tool) {
     bool canDestroy = tool->canDestroy(block);
+    bool out;
     if (canDestroy) {
-        auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 1);
+        out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 1);
     }
-    auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 0);
+    out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 0);
     return out;
 }
 

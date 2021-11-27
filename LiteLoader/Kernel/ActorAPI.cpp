@@ -21,7 +21,7 @@ LIAPI bool Actor::isSimulatedPlayer() {
 }
 
 LIAPI bool Actor::isPlayer() {
-    if (!this)
+    if (this!=nullptr)
         return false;
     auto vtbl = dlsym("??_7ServerPlayer@@6B@");
     return *(void**)this == vtbl || isSimulatedPlayer();

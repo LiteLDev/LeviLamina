@@ -6,5 +6,5 @@
 #else
 // Add Member There
 public:
-LIAPI BlockInstance& getBlockInstance(BlockPos);
+LIAPI BlockInstance getBlockInstance(BlockPos);
 #endif

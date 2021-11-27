@@ -8,7 +8,7 @@ class BlockPalette {
 #include "Extra/BlockPaletteAPI.hpp"
 
 public:
-    MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
+    //MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
     MCAPI BlockPalette(class Level&);
     MCAPI void cacheBlockComponentData();
     MCAPI class Block const& convertLegacyBlock(struct BlockID, unsigned short) const;

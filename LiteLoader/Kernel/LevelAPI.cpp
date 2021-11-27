@@ -1,6 +1,7 @@
 #include "Global.h"
 #include <string>
 #include <vector>
+#include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Actor.hpp>
 #include <MC/ItemStack.hpp>
@@ -8,7 +9,6 @@
 #include <MC/Level.hpp>
 #include <MC/Dimension.hpp>
 #include <MC/ItemActor.hpp>
-#include <MC/BlockSource.hpp>
 #include <MC/MinecraftCommands.hpp>
 #include <MC/CommandContext.hpp>
 #include <MC/ServerPlayer.hpp>
@@ -40,34 +40,34 @@ void Level::forEachPlayer(class std::function<bool(class Player const&)> a0) {
 	return (Global<Level>->*rv)(std::forward<class std::function<bool(class Player const&)>>(a0));
 }
 bool Level::destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2) {
-    bool (Level::*rv)(class BlockSource&, class BlockPos const&, bool);
-    *((void**)&rv) = dlsym("?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z");
-    return (Global<Level>->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<bool>(a2));
+	bool (Level::*rv)(class BlockSource&, class BlockPos const&, bool);
+	*((void**)&rv) = dlsym("?destroyBlock@Level@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@_N@Z");
+	return (Global<Level>->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<bool>(a2));
 }
 void Level::spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2) {
-    void (Level::*rv)(std::string const&, class Actor const&, class Vec3 const&);
-    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@AEBVVec3@@@Z");
-    return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Actor const&>(a1), std::forward<class Vec3 const&>(a2));
+	void (Level::*rv)(std::string const&, class Actor const&, class Vec3 const&);
+	*((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVActor@@AEBVVec3@@@Z");
+	return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Actor const&>(a1), std::forward<class Vec3 const&>(a2));
 }
 
 void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2) {
-    void (Level::*rv)(std::string const&, class Vec3 const&, class Dimension*);
-    *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
-    return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
+	void (Level::*rv)(std::string const&, class Vec3 const&, class Dimension*);
+	*((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
+	return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
 BlockSource* Level::getBlockSource(int dimid) {
 	auto dim = Global<Level>->getDimension(dimid);
-    return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+	return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
 	//return dAccess<BlockSource*>(dim, 96);
 }
 
 BlockSource* Level::getBlockSource(Actor* ac) {
-    return const_cast<BlockSource*>(&ac->getRegionConst());
+	return const_cast<BlockSource*>(&ac->getRegionConst());
 }
 
 bool Level::setBlock(Vec3& pos, int dim, Block* block) {
 	BlockSource* bs = getBlockSource(dim);
-	BlockPos bp{ pos.x, pos.y, pos.z };
+    BlockPos bp{(int)pos.x, (int)pos.y, (int)pos.z};
 	return bs->setBlock(bp, *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
@@ -87,7 +87,7 @@ bool Level::setBlock(Vec3& pos, int dim, Tag* nbt) {
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 	char v83;
-    ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
+	ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
 	return Global<Level>->fetchEntity(v6, 0);
 }
 
@@ -133,45 +133,45 @@ std::vector<Player*> Level::getAllPlayers(){
 }
 
 Player* Level::getPlayer(const string& info) {
-    string target{info};
-    std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
-    int delta = 2147483647;                                                     //c++ int max
-    Player* found = nullptr;
+	string target{info};
+	std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
+	int delta = 2147483647;                                                     //c++ int max
+	Player* found = nullptr;
 
-    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
-        Player* p = &sp;
-        if (p->getXuid() == target) {
-            found = p;
-            return false;
-        }
+	Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+		Player* p = &sp;
+		if (p->getXuid() == target) {
+			found = p;
+			return false;
+		}
 
-        string pName = p->getRealName();
-        std::transform(pName.begin(), pName.end(), pName.begin(), ::tolower);
+		string pName = p->getRealName();
+		std::transform(pName.begin(), pName.end(), pName.begin(), ::tolower);
 
-        //Ä£ºýÆ¥Åä
-        if (pName.find(target) == 0) {
-            //0 ¨ªs the index where the "target" appear in "pName"
-            int curDelta = pName.length() - target.length();
-            if (curDelta == 0) {
-                found = p;
-                return false;
-            }
+		//Ä£ºýÆ¥Åä
+		if (pName.find(target) == 0) {
+			//0 ¨ªs the index where the "target" appear in "pName"
+			int curDelta = pName.length() - target.length();
+			if (curDelta == 0) {
+				found = p;
+				return false;
+			}
 
-            if (curDelta < delta) {
-                found = p;
-                delta = curDelta;
-            }
-        }
-        return true;
-    });
-    return found;
+			if (curDelta < delta) {
+				found = p;
+				delta = curDelta;
+			}
+		}
+		return true;
+	});
+	return found;
 }
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
-    Item* itemcreate = (Item*)new char[552];
-    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemcreate, "", a2);
-    ItemStack* a = (ItemStack*)new char[272];
-    ItemStack* itemstackcreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
-    ItemStack* itemstack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item&,int,int)(itemstackcreate, *item,1,a3);
-    return itemstack;
+	Item* itemcreate = (Item*)new char[552];
+	Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemcreate, "", a2);
+	ItemStack* a = (ItemStack*)new char[272];
+	ItemStack* itemstackcreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
+	ItemStack* itemstack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item&,int,int)(itemstackcreate, *item,1,a3);
+	return itemstack;
 }
