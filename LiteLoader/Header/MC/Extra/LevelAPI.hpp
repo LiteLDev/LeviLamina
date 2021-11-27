@@ -21,14 +21,14 @@ public:
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
 
     //Block
-    LIAPI static bool setBlock(Vec3& ,int, Block* block);
-    LIAPI static bool setBlock(Vec3&, int, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(Vec3&, int, Tag* nbt);
-    LIAPI static bool breakNaturally(BlockSource*, BlockPos&);
-    LIAPI static bool breakNaturally(BlockSource*, BlockPos&, ItemStack* a3);
-    LIAPI static bool destroyBlock(class BlockSource& a0, class BlockPos const& a1, bool a2);
-    LIAPI static void spawnParticleEffect(std::string const& a0, class Vec3 const& a1, class Dimension* a2);
-    LIAPI static void spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2);
+    LIAPI static bool setBlock(Vec3& pos, int dim, Block* block);
+    LIAPI static bool setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData);
+    LIAPI static bool setBlock(Vec3& pos, int dim, Tag* nbt);
+    LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos);
+    LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos, ItemStack* item);
+    LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
+    LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
+    LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
 
     //Item
     LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);

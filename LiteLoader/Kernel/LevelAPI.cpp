@@ -67,8 +67,7 @@ BlockSource* Level::getBlockSource(Actor* ac) {
 
 bool Level::setBlock(Vec3& pos, int dim, Block* block) {
 	BlockSource* bs = getBlockSource(dim);
-	BlockPos bp{ pos.x, pos.y, pos.z };
-	return bs->setBlock(bp, *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
+	return bs->setBlock(pos.toBlockPos(), *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
 bool Level::setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData) {
@@ -148,9 +147,9 @@ Player* Level::getPlayer(const string& info) {
         string pName = p->getRealName();
         std::transform(pName.begin(), pName.end(), pName.begin(), ::tolower);
 
-        //Ä£ºıÆ¥Åä
+        //æ¨¡ç³ŠåŒ¹é…
         if (pName.find(target) == 0) {
-            //0 ¨ªs the index where the "target" appear in "pName"
+            //0 Ã­s the index where the "target" appear in "pName"
             int curDelta = pName.length() - target.length();
             if (curDelta == 0) {
                 found = p;
