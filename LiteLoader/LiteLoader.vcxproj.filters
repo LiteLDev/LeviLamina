@@ -233,7 +233,7 @@
     <ClInclude Include="Version.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Types.h">
+    <ClInclude Include="Header\MC\Types.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="AutoUpgrade.h">
@@ -245,13 +245,13 @@
     <ClInclude Include="Header\Utils\GlobalService.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\NBTAPI.h">
+    <ClInclude Include="Header\MC\NBT.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BlockInstanceAPI.h">
+    <ClInclude Include="Header\MC\BlockInstance.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\ActorAPI.hpp">
@@ -308,7 +308,7 @@
     <ClInclude Include="Header\Utils\PlayerMap.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Header\FormAPI.h">
+    <ClInclude Include="Header\MC\FormUI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\ConnectionRequestAPI.hpp">

@@ -30,7 +30,7 @@
 #include <seh_exception/seh_exception.hpp>
 
 #include "HookAPI.h"
-#include "Types.h"
+#include "MC/Types.hpp"
 #include "Utils/GlobalService.h"
 #include "Utils/Json.h"
 

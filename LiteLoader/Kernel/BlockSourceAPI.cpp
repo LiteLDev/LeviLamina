@@ -1,6 +1,6 @@
 #include "Global.h"
 #include <MC/BlockSource.hpp>
-#include <BlockInstanceAPI.h>
+#include <MC/BlockInstance.hpp>
 
 BlockInstance BlockSource::getBlockInstance(BlockPos a1) {
     //std::cout << a1.toString() << std::endl;
