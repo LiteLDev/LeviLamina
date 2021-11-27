@@ -16,14 +16,11 @@ namespace LL
             {"DebugMode", conf.debugMode},
             {"LogLevel", conf.logLevel},
             {"Language", conf.language},
-            {"Modules",{
-                "AutoUpgrade", { "enabled", conf.enableAutoUpdate },
-                "CrashLogger", {
-                    "enabled", conf.enableCrashLogger,
-                    "path", conf.crashLoggerPath
-                },
-                "FixDisconnectBug", { "enabled", conf.enableFixDisconnectBug },
-                "FixListenPort", { "enabled", conf.enableFixListenPort }
+            {"Modules", {
+                {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}}},
+                {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
+                {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
+                {"FixListenPort", {{"enabled", conf.enableFixListenPort}}}
             }}
         };
     }
@@ -39,16 +36,16 @@ namespace LL
 
         if (j.find("Modules") != j.end())
         {
-            if (j.find("AutoUpgrade") != j.end())
+            if (j.at("Modules").find("AutoUpgrade") != j.at("Modules").end())
                 j.at("Modules").at("AutoUpgrade").at("enabled").get_to(conf.enableAutoUpdate);
-            if (j.find("CrashLogger") != j.end())
+            if (j.at("Modules").find("CrashLogger") != j.at("Modules").end())
             {
                 j.at("Modules").at("CrashLogger").at("enabled").get_to(conf.enableCrashLogger);
                 j.at("Modules").at("CrashLogger").at("path").get_to(conf.crashLoggerPath);
             }
-            if (j.find("FixDisconnectBug") != j.end())
+            if (j.at("Modules").find("FixDisconnectBug") != j.at("Modules").end())
                 j.at("Modules").at("FixDisconnectBug").at("enabled").get_to(conf.enableFixDisconnectBug);
-            if (j.find("FixListenPort") != j.end())
+            if (j.at("Modules").find("FixListenPort") != j.at("Modules").end())
                 j.at("Modules").at("FixListenPort").at("enabled").get_to(conf.enableFixListenPort);
         }
     }
