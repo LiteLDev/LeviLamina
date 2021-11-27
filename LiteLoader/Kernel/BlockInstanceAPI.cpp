@@ -8,6 +8,15 @@
 #include <MC/LootComponent.hpp>
 #include <MC/BlockLegacy.hpp>
 #include <MC/ItemInstance.hpp>
+
+bool BlockInstance::operator==(BlockInstance const& bli) {
+    return block == bli.block && pos == bli.pos && dim == bli.dim;
+};
+
+Block* BlockInstance::getBlock() {
+    return isNull() ? nullptr : block;
+};
+
 //bad
 bool BlockInstance::breakNaturally() {
     auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim),pos, 1);
@@ -31,3 +40,9 @@ ItemStack& BlockInstance::getBlockDrops() {
     std::cout << &out << std::endl;
     return out;
 }
+
+bool BlockInstance::isNull() {
+    return *this == BlockInstance::Null;
+}
+
+const BlockInstance BlockInstance::Null = BlockInstance(nullptr, {INT_MIN, INT_MIN, INT_MIN}, -1);

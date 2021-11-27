@@ -162,6 +162,9 @@
     <ClCompile Include="Kernel\BlockSourceAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\HitResultAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -336,6 +339,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\HitResult.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
