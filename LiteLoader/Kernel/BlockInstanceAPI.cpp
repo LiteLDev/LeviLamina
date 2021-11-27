@@ -1,5 +1,5 @@
 #include <Global.h>
-#include <BlockInstanceAPI.h>
+#include <MC/BlockInstance.hpp>
 #include <MC/Level.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/BlockSource.hpp>

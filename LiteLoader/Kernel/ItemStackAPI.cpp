@@ -5,7 +5,7 @@
 #include "MC/level.hpp"
 #include <string>
 #include <vector>
-#include "NBTAPI.h"
+#include "MC/NBT.hpp"
 using namespace std;
 
 ItemStack* ItemStack::create() {

@@ -5,7 +5,7 @@
 #include <MC/BlockLegacy.hpp>
 #include <MC/BlockPalette.hpp>
 #include <MC/BlockSerializationUtils.hpp>
-#include <NBTAPI.h>
+#include <MC/NBT.hpp>
 
 Block* Block::create(string name, unsigned short tileData) {
 	BlockPalette* generator = SymCall("?getBlockPalette@Level@@UEBAAEBVBlockPalette@@XZ", BlockPalette*, Level*)(Global<Level>);

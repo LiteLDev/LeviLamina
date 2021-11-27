@@ -140,9 +140,9 @@ LibraryBuilder.exe
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
-    <ClInclude Include="Header\BlockInstanceAPI.h" />
+    <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
-    <ClInclude Include="Header\FormAPI.h" />
+    <ClInclude Include="Header\MC\FormUI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp" />
@@ -164,9 +164,9 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
-    <ClInclude Include="Header\NBTAPI.h" />
+    <ClInclude Include="Header\MC\NBT.hpp" />
     <ClInclude Include="Header\ScheduleAPI.h" />
-    <ClInclude Include="Header\Types.h" />
+    <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />

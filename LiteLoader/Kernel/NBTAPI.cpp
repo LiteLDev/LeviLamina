@@ -1,5 +1,5 @@
 #include "Global.h"
-#include "NBTAPI.h"
+#include "MC/NBT.hpp"
 #include <map>
 #include <sstream>
 #include <vector>
