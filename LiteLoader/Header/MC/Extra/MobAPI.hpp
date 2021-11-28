@@ -5,5 +5,6 @@ class UserEntityIdentifierComponent;
 #else
 // Add new members to class
 public:
+struct JumpPreventionResult;
 LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 #endif

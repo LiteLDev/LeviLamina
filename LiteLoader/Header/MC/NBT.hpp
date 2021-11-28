@@ -1,12 +1,12 @@
 #pragma once
-#include "Global.h"
+#include "../Global.h"
 #include <map>
 #include <string>
 #include <vector>
 
 //////////////// Json ////////////////
-#include <Nlohmann/fifo_map.hpp>
-#include <Nlohmann/json.hpp>
+#include "../third-party/Nlohmann/fifo_map.hpp"
+#include "../third-party/Nlohmann/json.hpp"
 #include <string>
 using namespace nlohmann;
 

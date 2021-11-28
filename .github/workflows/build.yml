@@ -46,6 +46,7 @@ jobs:
         mkdir D:/out
         mkdir D:/out/release
         mkdir D:/out/release/plugins
+        mkdir D:/out/release/plugins/LiteLoader
         mkdir D:/out/release/plugins/lib
         mkdir D:/out/dev
         mkdir D:/out/dev/lib
@@ -60,10 +61,11 @@ jobs:
         unzip D:/cc.zip
       shell: bash
       
-    - name: Copy SymDB2 Gen
+    - name: Copy Tools
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cp -a Tools/SymDB2.exe D:/out/release
+        cp -a Tools/CrashLogger_Daemon.exe D:/out/release/plugins/LiteLoader
       shell: bash
     
     - name: Copy Output Files

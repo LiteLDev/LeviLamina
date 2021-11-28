@@ -1,6 +1,6 @@
 #pragma once
-#include <Global.h>
-#include <Utils/PluginOwnData.h>
+#include "Global.h"
+#include "Utils/PluginOwnData.h"
 
 ///////////////////////////////////////////////////////
 // Schedule future callback plans
