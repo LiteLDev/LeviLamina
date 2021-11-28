@@ -2,11 +2,11 @@
 #include <regCommandAPI.h>
 
 void CMDREG::MakeCommand(string const& name, const char* desc, int lvl) {
-    Logger::setTitle("RegisteringCommand");
+    Logger::setTitle("RegCmd");
     Logger::Info() << name << Logger::endl;
     Logger::setTitle("LiteLoader");
     if (CmdRegGlobal == nullptr) {
-        Logger::setTitle("RegisteringCommand");
+        Logger::setTitle("RegCmd");
         Logger::Error() << "CmdRegGlobal Not Set" << Logger::endl;
         Logger::setTitle("LiteLoader");
         std::this_thread::sleep_for(std::chrono::seconds(5));

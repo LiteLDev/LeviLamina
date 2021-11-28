@@ -83,7 +83,7 @@ class CEnum {
         if (myid.value == 65535) {
             myid = ALLOCID();
             if (CmdRegGlobal == nullptr) {
-                Logger::setTitle("RegisteringCommand");
+                Logger::setTitle("RegCmd");
                 Logger::Info() << "CmdRegGlobal Not Set" << Logger::endl;
                 Logger::setTitle("LiteLoader");
                 std::this_thread::sleep_for(std::chrono::seconds(5));
@@ -183,7 +183,7 @@ struct MakeOverload {
 
     inline void regMe(string const &cname, std::vector<CommandParameterData> &&vc) {
         if (CmdRegGlobal == nullptr) {
-            Logger::setTitle("RegisteringCommand");
+            Logger::setTitle("RegCmd");
             Logger::Info() <<"CmdRegGlobal Not Set" << Logger::endl;
             Logger::setTitle("LiteLoader");
             std::this_thread::sleep_for(std::chrono::seconds(5));

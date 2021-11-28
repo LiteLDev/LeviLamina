@@ -31,7 +31,13 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
                  output.end());
     output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
     output = replace_all_distinct(output, "NO LOG FILE! -  ", "");
-    Logger::setTitle("Server");
-    Logger::Info() << output << Logger::endl;
-    Logger::setTitle("LiteLoader");
+    if (input.find("INFO") != input.npos) {
+        Logger::setTitle("Server");
+        Logger::Info() << output << Logger::endl;
+        Logger::setTitle("LiteLoader");
+    } else {
+        Logger::setTitle("Server");
+        Logger::Warn() << output << Logger::endl;
+        Logger::setTitle("LiteLoader");
+    }
 }
