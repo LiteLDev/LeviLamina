@@ -7,6 +7,16 @@
 #include <MC/UserEntityIdentifierComponent.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
+#include <MC/TeleportCommand.hpp>
+#include <MC/TeleportTarget.hpp>
+#include <MC/HitResult.hpp>
+#include <MC/BlockSource.hpp>
+#include <MC/Block.hpp>
+#include <MC/Level.hpp>
+#include <MC/Material.hpp>
+#include <MC/BlockInstance.hpp>
+#include <MC/TeleportCommand.hpp>
+#include <MC/TeleportTarget.hpp>
 class UserEntityIdentifierComponent;
 
 LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
@@ -27,7 +37,7 @@ LIAPI bool Actor::isPlayer() {
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
-LIAPI std::string Actor::getEntityTypeName() {
+LIAPI std::string Actor::getTypeName() {
     /*string res = SymCall("?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
         string, int, int) (Raw_GetEntityTypeId(actor), 1);*/
     if (isPlayer())
@@ -49,8 +59,6 @@ LIAPI Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 
-#include <MC/TeleportCommand.hpp>
-#include <MC/TeleportTarget.hpp>
 LIAPI void Actor::teleport(Vec3 vec3,int a1) {
     TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec3.x, vec3.y, vec3.z}, 0, a1, 0, 0, 15));
 }
@@ -65,13 +73,6 @@ LIAPI Vec3 Actor::getCameraPos() {
     return pos;
 }
 
-
-#include <MC/HitResult.hpp>
-#include <MC/BlockSource.hpp>
-#include <MC/Block.hpp>
-#include <MC/Level.hpp>
-#include <MC/Material.hpp>
-#include <MC/BlockInstance.hpp>
 LIAPI BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
     auto& bs = getRegion();
     auto& pos = getCameraPos();

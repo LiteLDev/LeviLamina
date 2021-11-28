@@ -14,10 +14,10 @@ public:
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 	LIAPI bool isSimulatedPlayer();
 	LIAPI bool isPlayer();
-	LIAPI std::string getEntityTypeName();
+	LIAPI std::string getTypeName();
 	LIAPI bool hurtEntity(int damage);
 	LIAPI Vec2* getDirction();
-	LIAPI void teleport(Vec3,int);
+	LIAPI void teleport(Vec3 pos,int dimid);
     LIAPI Vec3 getCameraPos();
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face ,bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);

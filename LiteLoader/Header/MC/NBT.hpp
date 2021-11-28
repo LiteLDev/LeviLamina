@@ -1,5 +1,5 @@
 #pragma once
-#include "Global.h"
+#include "../Global.h"
 #include <map>
 #include <string>
 #include <vector>

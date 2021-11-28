@@ -341,7 +341,7 @@
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\HitResult.hpp">
+    <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

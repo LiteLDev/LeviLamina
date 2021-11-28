@@ -1,5 +1,5 @@
 #pragma once
-#include "Global.h"
+#include "../Global.h"
 class BlockSource;
 class Block;
 class ItemStack;
