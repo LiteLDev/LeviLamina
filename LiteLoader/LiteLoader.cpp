@@ -67,7 +67,7 @@ void LLMain()
     LoadMain();
 
     //XIDREG::initAll();  // Initialize the xuid database
-   // registerCommands(); // Register built-in commands
+    registerCommands(); // Register built-in commands
    // Event::addEventListener([](ServerStartedEV) {  // Server started event
    //     startWBThread();
     //    LOG("LiteLoader is distributed under the GPLv3 License");

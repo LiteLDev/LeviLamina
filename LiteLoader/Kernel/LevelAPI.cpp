@@ -13,8 +13,7 @@
 #include <MC/CommandContext.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ActorDamageSource.hpp>
-#include <command/CommandReg.h>
-#include <command/Command.h>
+
 
 Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
 	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;

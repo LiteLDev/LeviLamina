@@ -5,10 +5,17 @@
 
 #else
 // Add Member There
-struct ParseTable {};
-class Symbol {};
-class Overload {};
-class Signature {};
-struct ParseToken {};
+struct ParseToken;
+class Symbol {
+};
+struct Overload {
 
+};
+struct Signature {
+};
+
+struct SoftEnum {
+};
+
+struct ParseTable {};
 #endif

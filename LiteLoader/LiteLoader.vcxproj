@@ -95,6 +95,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
+    <ClCompile Include="Kernel\CommandAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
@@ -127,6 +128,7 @@ LibraryBuilder.exe
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="ModifyName.cpp" />
     <ClCompile Include="PluginManager.cpp" />
+    <ClCompile Include="ServerCommand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -165,6 +167,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
     <ClInclude Include="Header\MC\NBT.hpp" />
+    <ClInclude Include="Header\regCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\Global.h" />

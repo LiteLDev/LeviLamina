@@ -269,6 +269,9 @@ template <typename T, typename T2>
 class TagRegistry;
 
 template <typename T>
+struct IDType;
+
+template <typename T>
 class ToFloatFunction;
 
 template <typename T, typename T2, typename T3, typename T4 = class UNK>

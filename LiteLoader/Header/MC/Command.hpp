@@ -8,7 +8,7 @@ class Command {
 #include "Extra/CommandAPI.hpp"
 public:
     virtual ~Command();
-    virtual void unk_vfn_1();
+    virtual void execute(CommandOrigin const&, CommandOutput&);
 
 public:
     MCAPI Command();

@@ -2,6 +2,14 @@
 #ifdef EXTRA_INCLUDE_PART
 // Include Headers or Declare Types Here
 
+enum CommandPermissionLevel : char {
+    Normal = 0,
+    Privileged = 1,
+    AutomationPlayer = 2,
+    OperatorOnly = 3,
+    ConsoleOnly = 4
+};
+
 enum class CommandFlagValue : char {
     None = 0,
     Usage = 1,
@@ -14,6 +22,20 @@ enum class CommandFlagValue : char {
     Cheat = 64,
 };
 
+enum class OriginType : char {
+    Player = 0,
+    Block = 1,
+    MinecartBlock = 2,
+    DevConsole = 3,
+    Test = 4,
+    AutomationPlayer = 5,
+    ClientAutomation = 6,
+    DedicatedServer = 7,
+    Actor = 8,
+    Virtual = 9,
+    GameArgument = 10,
+    ActorServer = 11
+};
 struct CommandFlag {
     CommandFlagValue value;
 
@@ -28,8 +50,35 @@ struct CommandFlag {
         return *this;
     }
 };
+
+enum class CommandParameterDataType { NORMAL,
+                                      ENUM,
+                                      SOFT_ENUM };
+class CommandOutput;
 #else
 // Add Member There
+protected:
+int unk8;          // 8
+void* unk16;       // 16
+int unk24;         // 24
+unsigned char b28; // 28
+CommandFlag flag;  // 30
 
 
+public:
+
+template <typename T>
+static bool checkHasTargets(CommandSelectorResults<T> const& a, CommandOutput& b) {
+    bool (*sym)(CommandSelectorResults<T> const& a, CommandOutput& b);
+    if constexpr (std::is_same<T, class Actor>()) {
+        sym = (decltype(sym))dlsym(
+            "??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@"
+            "AEAVCommandOutput@@@Z");
+    } else {
+        sym = (decltype(sym))dlsym(
+            "??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@"
+            "AEAVCommandOutput@@@Z");
+    }
+    return sym(a, b);
+}
 #endif

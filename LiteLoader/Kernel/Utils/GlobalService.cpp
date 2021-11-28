@@ -20,11 +20,23 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
 	// ServerStartedEvent::_call();
 	// ServerStartedEvent::_removeall();
 }
-
-THook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
-	CommandRegistry* rg, void* a1) {
-	Global<CommandRegistry> = rg;
-	original(rg, a1);
+#include <EventAPI.h>
+class CommandRegistry;
+vector<function<void(RegCmdEV)>> RegCmdEVCallBacks;
+LIAPI void Event::addEventListener(function<void(RegCmdEV)> callback) {
+    RegCmdEVCallBacks.push_back(callback);
+}
+#include <LoggerAPI.h>
+THook(void,
+      "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
+      CommandRegistry* rg,
+      void* a1) {
+    Global<CommandRegistry> = rg;
+    original(rg, a1);
+    RegCmdEV cmdregev = {rg};
+    for (size_t count = 0; count < RegCmdEVCallBacks.size(); count++) {
+        RegCmdEVCallBacks[count](cmdregev);
+    }
 }
 
 //?initCoreEnums@MinecraftCommands@@QEAAX_NAEBVBaseGameVersion@@@Z

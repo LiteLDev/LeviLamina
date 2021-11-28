@@ -1,18 +1,7 @@
 ﻿#pragma once
 #include <unordered_map>
 #include "Command.h"
-class CommandMessage {
-    char filler[32];
-
-  public:
-    string get(CommandOrigin const &x) {
-        string (CommandMessage::*rv)(CommandOrigin const &);
-        *(void **)&rv =
-            SYM("?getMessage@CommandMessage@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$"
-                "allocator@D@2@@std@@AEBVCommandOrigin@@@Z");
-        return (this->*rv)(x);
-    }
-};
+#include <MC/CommandMessage.hpp>
 
 static std::unordered_map<string, void *> parse_ptr = {
     {typeid(CommandMessage).name(),
@@ -53,7 +42,6 @@ template <typename T>
 class typeid_t {
   public:
     unsigned short value;
-
     typeid_t(typeid_t const &id) : value(id.value) {}
     typeid_t(unsigned short value) : value(value) {}
 };
@@ -61,41 +49,8 @@ class typeid_t {
 class CommandVersion {
   public:
     int Min = 1, Max = 0x7FFFFFFF;
-    // inline CommandVersion() : min(1), max(0x7FFFFFFF) {}
-    // inline CommandVersion(int min, int max) : min(min), max(max) {}
 };
 
-class Command {
-  protected:
-    int unk8;           // 8
-    void *unk16;        // 16
-    int unk24;          // 24
-    unsigned char b28;  // 28
-    CommandFlag flag;   // 30
-    Command() {
-        unk24 = -1;
-        b28   = 5;
-    }
-
-  public:
-    virtual ~Command() { SymCall("??1Command@@UEAA@XZ", void, void *)(this); }
-    virtual void execute(CommandOrigin const &, CommandOutput &) = 0;
-    template <typename T>
-    static bool checkHasTargets(CommandSelectorResults<T> const &a, CommandOutput &b) {
-        bool (*sym)(CommandSelectorResults<T> const &a, CommandOutput &b);
-        if constexpr (std::is_same<T, class Actor>()) {
-            sym = (decltype(sym))dlsym(
-                "??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@"
-                "AEAVCommandOutput@@@Z");
-        } else {
-            sym = (decltype(sym))dlsym(
-                "??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@"
-                "AEAVCommandOutput@@@Z");
-        }
-        return sym(a, b);
-    }
-};
-enum class CommandParameterDataType { NORMAL, ENUM, SOFT_ENUM };
 class CommandRegistry;
 struct CommandParameterData;
 class CommandRegistry {
@@ -112,9 +67,9 @@ class CommandRegistry {
         FactoryFn factory;                         // 8
         std::vector<CommandParameterData> params;  // 16
         unsigned char unk;                         // 40
-        double                            a = 0;       // 48
-        double                            b = 0;                       // 56
-        double                            c = 0;       // 64
+        double  a = 0;                             // 48
+        double  b = 0;                             // 56
+        double  c = 0;                             // 64
         inline Overload(CommandVersion version,
                         FactoryFn factory,
                         std::vector<CommandParameterData> &&args)
@@ -149,16 +104,6 @@ class CommandRegistry {
         std::vector<std::string> list;  // 32
     };
 #pragma endregion struct definition
-    /*
-    MCINLINE void registerCommand(
-            std::string const& a, char const* b, CommandPermissionLevel c, CommandFlag d,
-    CommandFlag e) {
-            SymCall("?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
-                    void, void*, std::string const&, char const*, char, char, char)
-                    (this, string("test"), "testcmd", 0, 0, 0x40);
-            //SymCall("?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z",
-    void, void*, std::string const&, char const*, char, char, char)(this, a, b, 0, 0, 0);
-    }*/
     MCINLINE void registerAlias(std::string const &a, std::string const &b) {
         SymCall(
             "?registerAlias@CommandRegistry@@QEAAXV?$basic_string@DU?$char_traits@D@std@@V?$"
@@ -209,7 +154,11 @@ class CommandRegistry {
         *((void **)&rv) = dlsym("?getEnumData@CommandRegistry@@AEBA_KAEBUParseToken@1@@Z");
         return (this->*rv)(a0);
     }
-
+    MCINLINE void registerCommand(std::string const& a0, char const* a1, enum CommandPermissionLevel a2, int a3, int a4) {
+        void (CommandRegistry::*rv)(std::string const&, char const*, enum CommandPermissionLevel, int, int);
+        *((void**)&rv) = dlsym("?registerCommand@CommandRegistry@@QEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEBDW4CommandPermissionLevel@@UCommandFlag@@3@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<char const*>(a1), std::forward<enum CommandPermissionLevel>(a2), std::forward<int>(a3), std::forward<int>(a4));
+    }
   public:
     template <typename T>
     inline static auto getParseFn() {
