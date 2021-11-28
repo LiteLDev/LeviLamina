@@ -2,6 +2,7 @@
 #include <MC/Level.hpp>
 #include <MC/Minecraft.hpp>
 #include <Utils/GlobalService.h>
+#include <EventAPI.h>
 using std::cout;
 using std::endl;
 using std::vector;
@@ -11,14 +12,20 @@ THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
 	original(mc);
 }
 
+vector<function<void(ServerStartedEV)>> ServerStartedEVCallBacks;
+LIAPI void Event::addEventListener(function<void(ServerStartedEV)> callback) {
+    ServerStartedEVCallBacks.push_back(callback);
+}
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
-	original(a);
-	Global<Level> = Global<Minecraft>->getLevel();
-	Global<Level> = (Level*)Global<Minecraft>->getLevel();
-	Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
-	Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-	// ServerStartedEvent::_call();
-	// ServerStartedEvent::_removeall();
+    original(a);
+    Global<Level> = Global<Minecraft>->getLevel();
+    Global<Level> = (Level*)Global<Minecraft>->getLevel();
+    Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
+    Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
+    ServerStartedEV ServerStartedEV;
+    for (size_t count = 0; count < ServerStartedEVCallBacks.size(); count++) {
+        ServerStartedEVCallBacks[count](ServerStartedEV);
+    }
 }
 #include <EventAPI.h>
 class CommandRegistry;

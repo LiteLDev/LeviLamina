@@ -14,7 +14,6 @@
 #include <MC/ServerPlayer.hpp>
 #include <MC/ActorDamageSource.hpp>
 
-
 Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
 	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
 	*((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
@@ -106,6 +105,7 @@ std::pair<bool, string> Level::runcmdEx(const string& cmd) {
 	return { rv, std::move(val) };
 }
 
+
 static void* FAKE_PORGVTBL[26];
 bool Level::runcmdAs(Player* pl, const string& cmd) {
 	void** filler[5];
@@ -120,6 +120,7 @@ bool Level::runcmdAs(Player* pl, const string& cmd) {
 	return MinecraftCommands::_runcmd(filler, cmd);
 }
 
+
 std::vector<Player*> Level::getAllPlayers(){
 	std::vector<Player*> player_list;
 	Global<Level>->forEachPlayer([&](Player& sp) -> bool {
@@ -133,9 +134,8 @@ std::vector<Player*> Level::getAllPlayers(){
 Player* Level::getPlayer(const string& info) {
     string target{info};
     std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
-    int delta = 2147483647;                                                     //c++ int max
+    int delta = INT_MAX;                                                  //c++ int max
     Player* found = nullptr;
-
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
         Player* p = &sp;
         if (p->getXuid() == target) {
@@ -172,4 +172,40 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
     ItemStack* itemstackcreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
     ItemStack* itemstack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item&,int,int)(itemstackcreate, *item,1,a3);
     return itemstack;
+}
+
+
+//HOOK
+#include <LoggerAPI.h>
+#include <sstream>
+THook(void*,
+      "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
+      void* thi,
+      void* ori,
+      void* out) {
+    auto it = origin_res.find(ori);
+    if (it == origin_res.end()) {
+        std::stringbuf sbuf;
+        auto oBuf = std::cout.rdbuf();
+        std::cout.rdbuf(&sbuf);
+        auto rv = original(thi, ori, out);
+        std::cout.rdbuf(oBuf);
+        Logger::setTitle("CmdOut");
+        auto str = sbuf.str();
+        str.erase(std::remove(str.begin(), str.end(), '\n'),str.end());
+        str.erase(std::remove(str.begin(), str.end(), '\r'),str.end());
+        Logger::Info() << str << Logger::endl;
+        Logger::setTitle("Liteloader");
+        return rv;
+    }
+    std::stringbuf sbuf;
+    auto oBuf = std::cout.rdbuf();
+    std::cout.rdbuf(&sbuf);
+    auto rv = original(thi, ori, out);
+    std::cout.rdbuf(oBuf);
+    it->second->assign(sbuf.str());
+    while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
+        it->second->pop_back();
+    origin_res.erase(it);
+    return rv;
 }

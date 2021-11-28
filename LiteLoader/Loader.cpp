@@ -77,8 +77,9 @@ void LoadMain()
     Logger::setTitle("CrashLogger");
     if (enableCrashLogger)
     {
-        if(StartCrashLogger())
-            Logger::Info("CrashLogger Deamon Process attached.");
+        if (StartCrashLogger()) {
+            //Logger::Info("CrashLogger Deamon Process attached.");
+        }
         else
         {
             Logger::Warn("Builtin CrashLogger failed to start!");
@@ -92,7 +93,7 @@ void LoadMain()
         Logger::Warn("There will be no crash log when unhandled exception occurs,");
         Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
         Logger::Warn("");
-        Logger::Warn("We strongly recommend you to uninstall plugin <{}> to ensure server stability\n", noCrashLoggerReason);
+        Logger::Warn("We strongly recommend you to uninstall plugin <{}> to ensure server stability", noCrashLoggerReason);
     }
     Logger::setTitle("LiteLoader");
 

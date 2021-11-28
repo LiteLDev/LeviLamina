@@ -50,6 +50,7 @@ void LLMain()
 
     //Fix problems
     FixUpCWD();
+
     FixPluginsLibDir();
 
     //Load Config
