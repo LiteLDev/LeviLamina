@@ -31,6 +31,7 @@
 
 #include "HookAPI.h"
 #include "MC/Types.hpp"
+#include "utils/optional.h"
 #include "Utils/GlobalService.h"
 #include "Utils/Json.h"
 

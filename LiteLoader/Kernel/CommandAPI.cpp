@@ -1,6 +1,5 @@
 #include <Global.h>
 #include <regCommandAPI.h>
-#include <utils/optional.h>
 
 void CMDREG::MakeCommand(string const& name, const char* desc, int lvl) {
     Logger::setTitle("RegisteringCommand");
@@ -59,4 +58,5 @@ void CommandOutput::addMessage(std::string const& str) {
         void, void*, std::string const&, std::vector<CommandOutputParameter> const&,
         int)(this, str, {}, 0);
 }
+
 

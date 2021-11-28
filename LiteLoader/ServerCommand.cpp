@@ -4,6 +4,7 @@
 #include <ServerAPI.h>
 #include <Header/EventAPI.h>
 #include <filesystem>
+
 void checkUpdate();
 //unsigned short getBuiltinCommandLevel();
 
@@ -13,8 +14,7 @@ bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     return true;
 }
 
-bool pluginsCommand(CommandOrigin & ori, CommandOutput& outp, optional<std::string> pl) {
-
+bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<string> pl) {
     if (pl.set) {
         std::string name = pl.val();
         auto plugin = LL::getPlugin(name);
@@ -59,9 +59,9 @@ void registerCommands() {
     Event::addEventListener([](RegCmdEV ev) { // Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
         MakeCommand("version", "Get the version of this server", 0);
-        CmdOverload(version, versionCommand);
-
         MakeCommand("plugins", "View plugin information", 0);
+
+        CmdOverload(version, versionCommand);
         CmdOverload(plugins, pluginsCommand, "plugin name");
     });
 }
