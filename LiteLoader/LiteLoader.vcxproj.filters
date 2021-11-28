@@ -168,7 +168,9 @@
     <ClCompile Include="Kernel\CommandAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\HitResultAPI.cpp" />
+    <ClCompile Include="Kernel\HitResultAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -348,7 +350,12 @@
     <ClInclude Include="Header\regCommandAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">
