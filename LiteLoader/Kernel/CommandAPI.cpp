@@ -1,6 +1,6 @@
 #include <Global.h>
 #include <regCommandAPI.h>
-
+#include <utils/optional.h>
 namespace CMDREG {
 typeid_t<CommandRegistry>& GETID(const char* name) {
     return *(typeid_t<CommandRegistry>*)(dlsym_real(name));

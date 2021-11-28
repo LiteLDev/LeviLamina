@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include "Command.h"
 #include <MC/CommandMessage.hpp>
+#include <utils/optional.h>
 
 static std::unordered_map<string, void *> parse_ptr = {
     {typeid(CommandMessage).name(),

@@ -12,12 +12,9 @@ bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
                  LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS");
     return true;
 }
-/*
+
 bool pluginsCommand(CommandOrigin & ori, CommandOutput& outp, optional<std::string> pl) {
-    if (ori.getPermissionsLevel() < getBuiltinCommandLevel()) {
-        outp.error("You have no permission to use this command");
-        return false;
-    }
+
     if (pl.set) {
         std::string name = pl.val();
         auto plugin = LL::getPlugin(name);
@@ -57,11 +54,14 @@ bool pluginsCommand(CommandOrigin & ori, CommandOutput& outp, optional<std::stri
     outp.success(oss.str());
     return true;
 }
-*/
+
 void registerCommands() {
     Event::addEventListener([](RegCmdEV ev) { // Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
         MakeCommand("version", "Get the version of this server", 0);
         CmdOverload(version, versionCommand);
+
+        MakeCommand("plugins", "View plugin information", 0);
+        CmdOverload(plugins, pluginsCommand, "plugin name");
     });
 }

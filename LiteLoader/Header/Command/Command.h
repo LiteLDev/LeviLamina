@@ -2,6 +2,7 @@
 #include <cstdio>
 #include <cstring>
 #include <memory>
+#include <utils/optional.h>
 #include <string>
 #include <string_view>
 #include <MC/CommandOrigin.hpp>

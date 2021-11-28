@@ -10,24 +10,32 @@ inline void SetCommandRegistry(CommandRegistry *reg) {
     CmdRegGlobal = reg;
 }
 template <typename T>
-inline typeid_t<CommandRegistry> getTPID();
+typeid_t<CommandRegistry> getTPID();
 
-inline typeid_t<CommandRegistry>& GETID(const char* name);
-inline typeid_t<CommandRegistry> ALLOCID();
+typeid_t<CommandRegistry>& GETID(const char* name);
+
+typeid_t<CommandRegistry> ALLOCID();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandMessage>();
+typeid_t<CommandRegistry> getTPID<CommandMessage>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<bool>();
+typeid_t<CommandRegistry> getTPID<bool>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<int>();
+typeid_t<CommandRegistry> getTPID<int>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<float>();
+typeid_t<CommandRegistry> getTPID<float>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<std::string>();
+typeid_t<CommandRegistry> getTPID<std::string>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandSelector<Actor>>();
+typeid_t<CommandRegistry> getTPID<CommandSelector<Actor>>();
+
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandSelector<Player>>();
+typeid_t<CommandRegistry> getTPID<CommandSelector<Player>>();
 
 template <typename T>
 class CEnum {
