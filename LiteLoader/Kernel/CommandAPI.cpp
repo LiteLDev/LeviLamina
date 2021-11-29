@@ -1,10 +1,12 @@
 #include <Global.h>
 #include <regCommandAPI.h>
-
+#include <Config.h>
 void CMDREG::MakeCommand(string const& name, const char* desc, int lvl) {
-    Logger::setTitle("RegCmd");
-    Logger::Info() << name << Logger::endl;
-    Logger::setTitle("LiteLoader");
+    if (LL::globalConfig.debugMode) {
+        Logger::setTitle("RegCmd");
+        Logger::Debug() << "Registering -> " << name << Logger::endl;
+        Logger::setTitle("LiteLoader");
+    }
     if (CmdRegGlobal == nullptr) {
         Logger::setTitle("RegCmd");
         Logger::Error() << "CmdRegGlobal Not Set" << Logger::endl;

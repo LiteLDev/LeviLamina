@@ -36,9 +36,18 @@ void FixUpCWD() {
 void startWBThread();
 void checkUpdate();
 void registerCommands();
-
-void LLMain()
-{
+void isDebug() {
+    if (LL::globalConfig.debugMode) {
+        Logger::Log("=================LiteLoader================");
+        Logger::Log(" ____             __  __           _      ");
+        Logger::Log("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        Logger::Log("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
+        Logger::Log("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|");
+        Logger::Warn("You Are In DevelopMode!\n");
+    }
+}
+void LLMain() {
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
@@ -64,6 +73,9 @@ void LLMain()
     //Init LL Logger
     Logger::setTitle("LiteLoader");
 
+    //isDebug
+    isDebug();
+
     //Load plugins
     LoadMain();
 
@@ -81,6 +93,7 @@ void LLMain()
    // }
 }
 // Call LLMain
+
 THook(int, "main", int a, void* b) {
     LLMain();
     return original(a, b);

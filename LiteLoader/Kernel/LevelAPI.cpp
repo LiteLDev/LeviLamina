@@ -190,12 +190,15 @@ THook(void*,
         std::cout.rdbuf(&sbuf);
         auto rv = original(thi, ori, out);
         std::cout.rdbuf(oBuf);
-        Logger::setTitle("CmdOut");
         auto str = sbuf.str();
-        str.erase(std::remove(str.begin(), str.end(), '\n'),str.end());
-        str.erase(std::remove(str.begin(), str.end(), '\r'),str.end());
-        Logger::Info() << str << Logger::endl;
-        Logger::setTitle("Liteloader");
+        std::istringstream iss(str);
+        string line;
+        while (getline(iss, line)){
+            Logger::setTitle("CmdOut");
+            str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
+            Logger::Info() << line << Logger::endl;
+            Logger::setTitle("Liteloader");
+        }
         return rv;
     }
     std::stringbuf sbuf;

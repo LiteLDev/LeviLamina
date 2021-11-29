@@ -16,7 +16,7 @@ bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
 
 bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<string> pl) {
     if (pl.set) {
-        std::string name = pl.val();
+        std::string name = pl.val() + ".dll";
         auto plugin = LL::getPlugin(name);
         if (plugin) {
             std::ostringstream oss;
