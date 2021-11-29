@@ -220,7 +220,7 @@ public:
     MCAPI int getGlidingTicks() const;
     MCAPI class ItemStack const& getItemSlot(enum EquipmentSlot) const;
     MCAPI float getJumpMultiplier();
-    //MCAPI struct Mob::JumpPreventionResult getJumpPrevention();
+    MCAPI struct Mob::JumpPreventionResult getJumpPrevention();
     MCAPI float getMovementComponentCurrentSpeed() const;
     MCAPI int getNoActionTime() const;
     MCAPI int getRollCounter() const;
@@ -290,7 +290,7 @@ public:
     MCAPI static void _travel(struct IMobMovementProxy&, float, float, float);
     MCAPI static void _updateMobTravel(struct IMobMovementProxy&);
     MCAPI static float calculateJumpImpulse(struct IMobMovementProxy const&);
-    //MCAPI static struct Mob::JumpPreventionResult getJumpPrevention(struct IMobMovementProxy const&);
+    MCAPI static struct Mob::JumpPreventionResult getJumpPrevention(struct IMobMovementProxy const&);
     MCAPI static enum TravelType getTravelType(struct IMobMovementProxy&);
     MCAPI static bool isImmobile(struct IActorMovementProxy const&);
     MCAPI static class Mob* tryGetFromEntity(class EntityContext&, bool);
