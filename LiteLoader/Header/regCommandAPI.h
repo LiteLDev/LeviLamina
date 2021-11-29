@@ -73,6 +73,12 @@ inline typeid_t<CommandRegistry> getTPID<CommandSelector<Player>>() {
         "A");
 }
 
+template <>
+inline typeid_t<CommandRegistry> _cdecl getTPID<CommandPosition>() {
+    return GETID(
+        "?id@?1???$type_id@VCommandRegistry@@VCommandPosition@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+}
+
 template <typename T>
 class CEnum {
   public:

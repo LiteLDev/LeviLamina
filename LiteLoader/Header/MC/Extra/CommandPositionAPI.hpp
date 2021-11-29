@@ -5,6 +5,12 @@
 
 #else
 // Add Member There
-
+float offsetX;
+float offsetY;
+float offsetZ;
+bool relativeX;
+bool relativeY;
+bool relativeZ;
+bool local;
 
 #endif

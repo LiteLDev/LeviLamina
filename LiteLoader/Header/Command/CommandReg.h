@@ -2,6 +2,7 @@
 #include <unordered_map>
 #include "Command.h"
 #include <MC/CommandMessage.hpp>
+#include <MC/CommandPosition.hpp>
 #include <utils/optional.h>
 
 static std::unordered_map<string, void *> parse_ptr = {
@@ -38,7 +39,13 @@ static std::unordered_map<string, void *> parse_ptr = {
          "??$parse@V?$CommandSelector@VPlayer@@@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@"
          "AEBVCommandOrigin@@HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@"
          "AEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
-         "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")}
+         "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+    {typeid(CommandPosition).name(),
+     dlsym_real(
+         "??$parse@VCommandPosition@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+         "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+         "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@"
+         "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
 };
 
 template <typename T>

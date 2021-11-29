@@ -55,13 +55,45 @@ bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<stri
     return true;
 }
 
+// Test CommandPosition
+bool tpdimCommand(CommandOrigin const& ori, CommandOutput& outp, int dimid, optional<CommandPosition> cmdpos) {
+    auto actor = const_cast<CommandOrigin&>(ori).getEntity();
+    std::unordered_map<int, string> dimensionNameMap = {
+        {0, "Overworld"},
+        {1, "Nether"},
+        {2, "The End"},
+    };
+    if (!actor) {
+        outp.error("");
+        return false;
+    }
+    if (dimid < 0 || dimid > 3) {
+        outp.error("Invaild dimid: "+std::to_string(dimid));
+        return false;
+    }
+    if (cmdpos.set) {
+        auto pos = cmdpos.val().getPosition(ori, {0, 0, 0});
+        actor->teleport(pos, dimid);
+        outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+    } else {
+        auto pos = *(Vec3*)&actor->getStateVectorComponent();
+        actor->teleport(pos, dimid);
+        outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+    }
+    return true;
+}
+
 void registerCommands() {
     Event::addEventListener([](RegCmdEV ev) { // Register commands
         CMDREG::SetCommandRegistry(ev.CMDRg);
         MakeCommand("version", "Get the version of this server", 0);
         MakeCommand("plugins", "View plugin information", 0);
+        MakeCommand("tpdim", "View plugin information", 0);
 
         CmdOverload(version, versionCommand);
         CmdOverload(plugins, pluginsCommand, "plugin name");
+        CmdOverload(tpdim, tpdimCommand, "dimid", "position");
     });
 }

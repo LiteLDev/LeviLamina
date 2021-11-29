@@ -145,6 +145,7 @@ LibraryBuilder.exe
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
+    <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\TeleportTargetAPI.hpp" />
