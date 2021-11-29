@@ -17,6 +17,8 @@
 #include <MC/BlockInstance.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
+#include <MC/Player.hpp>
+#include <MC/HitDetection.hpp>
 class UserEntityIdentifierComponent;
 
 LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
@@ -60,9 +62,9 @@ LIAPI Vec2* Actor::getDirction() {
 }
 
 LIAPI void Actor::teleport(Vec3 vec3,int a1) {
-    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, Vec3{vec3.x, vec3.y, vec3.z}, 0, a1, 0, 0, 15));
+    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, vec3, 0, a1, 0, 0, 15));
 }
-#include <MC/Player.hpp>
+
 LIAPI Vec3 Actor::getCameraPos() {
     Vec3 pos = *(Vec3*)&getStateVectorComponent();
     if (isSneaking()) {
@@ -95,11 +97,12 @@ LIAPI BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiqu
     }
     return BlockInstance::Null;
 }
+
 LIAPI BlockInstance Actor::getBlockFromViewVector(bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
     FaceID face = FaceID::Unknown;
     return getBlockFromViewVector(face, includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
 }
-#include <MC/HitDetection.hpp>
+
 LIAPI Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto& bs = getRegion();
     auto pos = getCameraPos();

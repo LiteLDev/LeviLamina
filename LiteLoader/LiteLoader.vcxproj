@@ -147,6 +147,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\TeleportTargetAPI.hpp" />
     <ClInclude Include="Header\MC\FormUI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandAPI.hpp" />
