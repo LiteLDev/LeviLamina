@@ -61,8 +61,11 @@ LIAPI Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 
-LIAPI void Actor::teleport(Vec3 vec3,int a1) {
-    TeleportCommand::applyTarget(*this, TeleportCommand::computeTarget(*this, vec3, 0, a1, 0, 0, 15));
+LIAPI void Actor::teleport(Vec3 to, int dimid) {
+    char mem[48];
+    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
+    auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
+    TeleportCommand::applyTarget(*this, *target);
 }
 
 LIAPI Vec3 Actor::getCameraPos() {
