@@ -14,8 +14,18 @@ class BlockPos {
 public:
     int x, y, z;
 
-    inline bool operator==(BlockPos const& b) const { return x == b.x && y == b.y && z == b.z; }
-    inline bool operator!=(BlockPos const& b) const { return x != b.x || y != b.y || z != b.z; }
+    inline bool operator==(BlockPos const& b) const {
+        return x == b.x && y == b.y && z == b.z;
+    }
+    inline bool operator!=(BlockPos const& b) const {
+        return x != b.x || y != b.y || z != b.z;
+    }
+    inline BlockPos operator+(BlockPos const& b) const {
+        return {x + b.x, y + b.y, z + b.z};
+    }
+    inline BlockPos operator-(BlockPos const& b) const {
+        return {x - b.x, y - b.y, z - b.z};
+    }
     inline std::string toString() {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }

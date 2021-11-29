@@ -6,7 +6,6 @@
 #include <MC/Actor.hpp>
 #include <MC/Player.hpp>
 #include <MC/ServerPlayer.hpp>
-#include <MC/CompoundTag.hpp>
 #include <MC/BlockActor.hpp>
 #include <nbt-cpp/nbt.hpp>
 #include <cpp-base64/base64.h>

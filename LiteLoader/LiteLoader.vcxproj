@@ -111,6 +111,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ScheduleAPI.cpp" />
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
+    <ClCompile Include="Kernel\StructureTemplate.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -148,6 +149,8 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\TeleportTargetAPI.hpp" />
     <ClInclude Include="Header\MC\FormUI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp" />

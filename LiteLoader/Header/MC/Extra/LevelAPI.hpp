@@ -8,6 +8,7 @@ class Block;
 class Tag;
 class Player;
 class BlockSource;
+class BlockPalette;
 class Dimension;
 
 #else
@@ -36,6 +37,7 @@ public:
     //Helper
     LIAPI static BlockSource* getBlockSource(int dimid);
     LIAPI static BlockSource* getBlockSource(Actor* actor);
+    LIAPI static BlockPalette* getBlockPalette();
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     
