@@ -2,9 +2,9 @@
 // Add include headers & pre-declares
 #include "../Actor.hpp"
 class UserEntityIdentifierComponent;
+struct JumpPreventionResult;
 #else
 // Add new members to class
 public:
-struct JumpPreventionResult;
-LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
+	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 #endif

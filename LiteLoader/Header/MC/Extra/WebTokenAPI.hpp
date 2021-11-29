@@ -7,11 +7,11 @@
 // Add Member There
 
 public:
-std::string header;
-Json::Value headerInfo;
-std::string data;
-Json::Value dataInfo;
-std::string signature;
+	std::string header;
+	Json::Value headerInfo;
+	std::string data;
+	Json::Value dataInfo;
+	std::string signature;
 
 
 #endif

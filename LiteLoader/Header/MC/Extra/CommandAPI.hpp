@@ -36,6 +36,7 @@ enum class OriginType : char {
     GameArgument = 10,
     ActorServer = 11
 };
+
 struct CommandFlag {
     CommandFlagValue value;
 
@@ -51,34 +52,32 @@ struct CommandFlag {
     }
 };
 
-enum class CommandParameterDataType { NORMAL,
-                                      ENUM,
-                                      SOFT_ENUM };
+enum class CommandParameterDataType { NORMAL, ENUM, SOFT_ENUM };
 class CommandOutput;
+
 #else
 // Add Member There
-protected:
-int unk8;          // 8
-void* unk16;       // 16
-int unk24;         // 24
-unsigned char b28; // 28
-CommandFlag flag;  // 30
 
+protected:
+    int unk8;          // 8
+    void* unk16;       // 16
+    int unk24;         // 24
+    unsigned char b28; // 28
+    CommandFlag flag;  // 30
 
 public:
-
-template <typename T>
-static bool checkHasTargets(CommandSelectorResults<T> const& a, CommandOutput& b) {
-    bool (*sym)(CommandSelectorResults<T> const& a, CommandOutput& b);
-    if constexpr (std::is_same<T, class Actor>()) {
-        sym = (decltype(sym))dlsym(
-            "??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@"
-            "AEAVCommandOutput@@@Z");
-    } else {
-        sym = (decltype(sym))dlsym(
-            "??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@"
-            "AEAVCommandOutput@@@Z");
+    template <typename T>
+    static bool checkHasTargets(CommandSelectorResults<T> const& a, CommandOutput& b) {
+        bool (*sym)(CommandSelectorResults<T> const& a, CommandOutput& b);
+        if constexpr (std::is_same<T, class Actor>()) {
+            sym = (decltype(sym))dlsym(
+                "??$checkHasTargets@VActor@@@Command@@KA_NAEBV?$CommandSelectorResults@VActor@@@@"
+                "AEAVCommandOutput@@@Z");
+        } else {
+            sym = (decltype(sym))dlsym(
+                "??$checkHasTargets@VPlayer@@@Command@@KA_NAEBV?$CommandSelectorResults@VPlayer@@@@"
+                "AEAVCommandOutput@@@Z");
+        }
+        return sym(a, b);
     }
-    return sym(a, b);
-}
 #endif

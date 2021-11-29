@@ -1,12 +1,12 @@
 #ifdef EXTRA_INCLUDE_PART
 // Add include headers & pre-declares
-	class Actor;
-	class Player;
-	class NetworkIdentifier;
-	class UserEntityIdentifierComponent;
-	class Vec2;
-    class BlockInstance;
-    enum class FaceID : char;
+class Actor;
+class Player;
+class NetworkIdentifier;
+class UserEntityIdentifierComponent;
+class Vec2;
+class BlockInstance;
+enum class FaceID : char;
 #else
 // Add new members to class
 public:

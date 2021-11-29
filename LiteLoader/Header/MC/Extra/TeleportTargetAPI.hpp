@@ -3,7 +3,7 @@
 
 #else
 // Add new members to class
-char filler[0x30 * 8]; // IDA TeleportCommand::computeTarget
+	char filler[0x30 * 8]; // IDA TeleportCommand::computeTarget
 
 public:
 

@@ -5,20 +5,20 @@
 
 #else
 // Add Member There
-class ContextUserData {};
-class Reflection {
-public:
-    class IFunction {};
-    class IPropertyGetter {};
-};
-struct ObjectHandle {};
-struct PropertyGetSet {};
-class RuntimeUserData {};
-template <typename T>
-class StrongTypedObjectHandle;
+    class ContextUserData {};
+    class Reflection {
+    public:
+        class IFunction {};
+        class IPropertyGetter {};
+    };
+    struct ObjectHandle {};
+    struct PropertyGetSet {};
+    class RuntimeUserData {};
+    template <typename T>
+    class StrongTypedObjectHandle;
 
-class WeakLifetimeScope {
-};
-enum class HandleReference;
+    class WeakLifetimeScope {
+    };
+    enum class HandleReference;
 
 #endif
