@@ -208,7 +208,6 @@ namespace Logger
 
         Debug(const Debug&) = delete;
         Debug& operator=(const Debug&) = delete;
-
         // Debug(string("There are {} days before {} to come back"), 3, "alex");
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
         Debug(const S& formatStr, const Args&... args)

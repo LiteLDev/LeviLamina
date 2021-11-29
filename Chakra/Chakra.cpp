@@ -69,7 +69,14 @@ bool loadLiteLoader() {
 	return true;
 }
 
+void loadCsrs() {
+    if (exists(path(TEXT("./plugins/CustomConsoleOutput.dll")))) {
+        loadLib(TEXT("./plugins/CustomConsoleOutput.dll"));
+    }
+}
+
 void loadDlls() {
+    loadCsrs();
 	if (!loadLiteLoader()) {
 		Sleep(3000);
 		exit(GetLastError());
