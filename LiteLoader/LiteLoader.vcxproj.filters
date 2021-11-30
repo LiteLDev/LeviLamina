@@ -7,9 +7,6 @@
     <Filter Include="Kernel">
       <UniqueIdentifier>{00986ecf-875a-4a73-8bf4-c0d13fa28a8c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Lib">
-      <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header\Utils">
       <UniqueIdentifier>{f859b142-7ffa-4640-9db5-9651be70e1f5}</UniqueIdentifier>
     </Filter>
@@ -30,6 +27,9 @@
     </Filter>
     <Filter Include="Kernel\Command">
       <UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Lib">
+      <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -377,11 +377,6 @@
     <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\BinaryStreamAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\SendPacketAPI.h">
-      <Filter>Header</Filter>
     <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
@@ -411,6 +406,12 @@
     </ClInclude>
     <ClInclude Include="Header\MC\CommandSelector.hpp">
       <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\BinaryStreamAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\SendPacketAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
