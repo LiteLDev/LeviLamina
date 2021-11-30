@@ -371,6 +371,12 @@
     <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\BinaryStreamAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\SendPacketAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">

@@ -12,7 +12,7 @@
 #include <MC/ItemStack.hpp>
 #include <EventAPI.h>
 #include <MC/ScriptItemStack.hpp>
-
+#include <SendPacketAPI.h>
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
 }
@@ -118,8 +118,31 @@ string Player::getUuid()
     return uuidStr;
 }
 
-/*void Player::setItemLore(vector<string>& lore) {
-    ItemStack* item = const_cast<ItemStack*>(&this->getSelectedItem());
-    item->setLore(lore);
-    this->sendInventory(true);
-}*/
+
+void Player::sendText(string text, TextType tp) {
+    BinaryStream wp;
+    wp.reserve(8 + text.size());
+    wp.writeUnsignedChar((char)tp);
+    wp.writeBool(false);
+    switch (tp) {
+        case CHAT:
+        case WHISPER:
+        case ANNOUNCEMENT:
+            wp.writeString("Server");
+        case RAW:
+        case TIP:
+        case SYSTEM:
+        case JSON:
+            wp.writeString(text);
+            break;
+        case TRANSLATION:
+        case POPUP:
+        case JUKEBOX_POPUP:
+            wp.writeString(text);
+            wp.writeVarInt(0);
+    }
+    wp.writeString("");
+    wp.writeString("");
+    MyPkt<0x09> pkt{wp.getAndReleaseData()};
+    sendNetworkPacket(pkt);
+}

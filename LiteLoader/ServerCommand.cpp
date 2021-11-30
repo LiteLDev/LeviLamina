@@ -4,11 +4,12 @@
 #include <ServerAPI.h>
 #include <Header/EventAPI.h>
 #include <filesystem>
+#include <MC/Packet.hpp>
+#include <LoggerAPI.h>
 
 void checkUpdate();
-//unsigned short getBuiltinCommandLevel();
-
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
+    MakeSP(ori)->sendText("aaaaaaaa",JUKEBOX_POPUP);
     outp.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() + " with LiteLoaderBDS " +
                  LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS");
     return true;

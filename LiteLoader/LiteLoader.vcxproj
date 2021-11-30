@@ -144,6 +144,7 @@ LibraryBuilder.exe
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
+    <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
@@ -180,6 +181,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\Global.h" />
     <ClInclude Include="Header\LLAPI.h" />
+    <ClInclude Include="Header\SendPacketAPI.h" />
     <ClInclude Include="Header\ServerAPI.h" />
     <ClInclude Include="Header\Utils\Bstream.h" />
     <ClInclude Include="Header\Utils\CryptHelper.h" />
