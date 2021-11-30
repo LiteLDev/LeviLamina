@@ -5,6 +5,7 @@
 #include "MC/CommandMessage.hpp"
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
+#include "MC/CommandParameterData.hpp"
 #include "MC/Command.hpp"
 #include "MC/Actor.hpp"
 #include "MC/Player.hpp"

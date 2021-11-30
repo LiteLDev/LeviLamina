@@ -1,11 +1,11 @@
 //Extra Part For CommandRegistry.hpp
 #ifdef EXTRA_INCLUDE_PART
 // Include Headers or Declare Types Here
-#include "Command.hpp"
-#include "CommandOrigin.hpp"
-#include "CommandParameterData.hpp"
-#include "CommandRegHelper.hpp"
 #include <memory>
+#include "../Command.hpp"
+class CommandOrigin;
+class CommandParameterData;
+class CommandParameterData;
 
 #else
 // Add Member There
@@ -67,20 +67,14 @@ public:
     };
 
     template <typename T>
-    inline static std::unique_ptr<Command> allocateCommand() {
-        return std::make_unique<T>();
-    }
+    LIAPI static std::unique_ptr<Command> allocateCommand();
 
-    inline void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args)
-    {
-        Signature* signature = const_cast<Signature*>(findCommand(name));
-        auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
-        registerOverloadInternal(*signature, overload);
-    }
+    LIAPI void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args);
 
     template <typename T, typename... Params>
-    inline void registerOverload(std::string const& name, Params... params) {
-        registerOverload(name, &allocateCommand<T>, { params... });
-    }
+    LIAPI void registerOverload(std::string const& name, Params... params);
     struct ParseTable {};
+    template <typename T>
+    LIAPI static ParseFn getParseFn();
+
 #endif

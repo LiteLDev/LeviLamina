@@ -1,5 +1,5 @@
 //Extra Part For Command.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMAND
 // Include Headers or Declare Types Here
 
 enum CommandPermissionLevel : char {

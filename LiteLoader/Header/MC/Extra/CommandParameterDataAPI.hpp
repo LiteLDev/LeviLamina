@@ -22,9 +22,13 @@ public:
 
 #else
 // Add Member There
+using ParseFn = bool (CommandRegistry::*)(
+    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+    std::vector<std::string>&) const;
+
 public:
 	typeid_CommandRegistry tid;  // 0
-	void* parser; // 8
+    ParseFn parser;                 // 8
 	std::string name;               // 16
 	char const* desc;               // 48
 	int unk56;                      // 56
@@ -39,7 +43,7 @@ public:
 	{}
 
 	CommandParameterData::CommandParameterData(
-		typeid_CommandRegistry tid, void* parser, std::string_view describe,
+		typeid_CommandRegistry tid, ParseFn parser, std::string_view describe,
 		CommandParameterDataType type, char const* enumName, int offset, bool optional, int flag_offset)
 
 		: tid(tid), parser(parser), name(describe), desc(enumName), unk56(-1), type(type),
