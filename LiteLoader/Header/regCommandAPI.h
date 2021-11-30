@@ -4,6 +4,7 @@
 #include "MC/CommandRegistry.hpp"
 #include "MC/CommandMessage.hpp"
 #include "MC/CommandSelector.hpp"
+#include "MC/CommandPosition.hpp"
 #include "MC/Command.hpp"
 #include "MC/Actor.hpp"
 #include "MC/Player.hpp"
@@ -59,7 +60,7 @@ inline typeid_CommandRegistry getTPID<CommandSelector<Player>>() {
 }
 
 template <>
-inline typeid_t<CommandRegistry> _cdecl getTPID<CommandPosition>() {
+inline typeid_CommandRegistry _cdecl getTPID<CommandPosition>() {
     return GETID(
         "?id@?1???$type_id@VCommandRegistry@@VCommandPosition@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }

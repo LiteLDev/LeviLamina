@@ -5,6 +5,7 @@
 #include <MC/CommandRegistry.hpp>
 #include <MC/CommandOutput.hpp>
 #include <MC/CommandOrigin.hpp>
+#include <MC/CommandPosition.hpp>
 #include <regCommandAPI.h>
 #include <filesystem>
 
@@ -67,23 +68,23 @@ bool tpdimCommand(CommandOrigin const& ori, CommandOutput& outp, int dimid, opti
         {2, "The End"},
     };
     if (!actor) {
-        outp.error("");
+        outp.error("", {});
         return false;
     }
     if (dimid < 0 || dimid > 3) {
-        outp.error("Invaild dimid: "+std::to_string(dimid));
+        outp.error("Invaild dimid: " + std::to_string(dimid), {});
         return false;
     }
     if (cmdpos.set) {
         auto pos = cmdpos.val().getPosition(ori, {0, 0, 0});
         actor->teleport(pos, dimid);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z), {});
     } else {
         auto pos = *(Vec3*)&actor->getStateVectorComponent();
         actor->teleport(pos, dimid);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z), {});
     }
     return true;
 }
