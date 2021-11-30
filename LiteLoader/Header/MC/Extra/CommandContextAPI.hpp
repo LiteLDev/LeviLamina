@@ -1,26 +1,26 @@
 //Extra Part For CommandContext.hpp
 #ifdef EXTRA_INCLUDE_PART
 // Include Headers or Declare Types Here
-
+#include <string>
 
 #else
 // Add Member There
 
 public:
-    std::string Cmd;
-    CommandOrigin* Ori;
+    std::string command;
+    CommandOrigin* origin;
     int Version = 10;
 
     std::string& getCmd() {
-        return Cmd;
+        return command;
     }
     class CommandOrigin& getOrigin() {
-        return *Ori;
+        return *origin;
     }
 
     template <typename T>
     CommandContext(T&& x, CommandOrigin* o)
-        : Cmd(std::forward<T>(x)), Ori(o)
+        : command(std::forward<T>(x)), origin(o)
     { }
 
 #endif

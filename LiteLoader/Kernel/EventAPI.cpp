@@ -11,6 +11,8 @@
 #include <MC/Level.hpp>
 #include <regCommandAPI.h>
 #include <MC/NetworkIdentifier.hpp>
+#include <MC/CommandContext.hpp>
+#include <MC/CommandOrigin.hpp>
 class ServerPlayer;
 class NetworkIdentifier;
 using std::vector;
@@ -126,11 +128,6 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
     return ret;
 }
 
-Player* MakeSP(CommandOrigin& ori) {
-    Player* pl = (Player*)ori.getEntity();
-    return pl ? pl : nullptr;
-}
-
 /////////////////// PlayerUseCmd ///////////////////
 #include <MC/CommandContext.hpp>
 vector<function<bool(PlayerUseCmdEV)>> Player_use_cmd_call_backs;
@@ -139,7 +136,7 @@ LIAPI void Event::addEventListener(function<bool(PlayerUseCmdEV)> callback) {
 }
 THook(bool, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
       MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
-    Player* sp = MakeSP(x->getOrigin());
+    Player* sp = x->getOrigin().getPlayer();
     bool result = original(_this, a2, x, a4);
     if (sp) {
         try {

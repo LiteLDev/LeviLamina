@@ -1,9 +1,10 @@
 #ifdef EXTRA_INCLUDE_PART
 // Add include headers & pre-declares
-    class Mob;
-    class ItemActor;
-    class ItemStack;
-    class LevelChunk;
+class Mob;
+class ItemActor;
+class ItemStack;
+class LevelChunk;
+
 #else
 // Add new members to class
 public:
