@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #pragma warning(disable : 4250)
 
 #ifdef LITELOADER_EXPORTS
@@ -11,7 +11,7 @@
 #define MCINLINE inline
 #define MCCLS
 
-// ÔÝÊ±ÎªÁË¼æÈÝ
+// æš‚æ—¶ä¸ºäº†å…¼å®¹
 #define Tag CompoundTag
 
 #include <bitset>
