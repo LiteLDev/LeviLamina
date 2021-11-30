@@ -82,4 +82,5 @@ public:
     inline void registerOverload(std::string const& name, Params... params) {
         registerOverload(name, &allocateCommand<T>, { params... });
     }
+    class ParseTable {};
 #endif
