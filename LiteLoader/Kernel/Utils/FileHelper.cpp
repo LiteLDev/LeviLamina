@@ -39,3 +39,20 @@ std::optional<std::string> ReadAllFile(const std::string& filePath, bool isBinar
     fRead.close();
     return data;
 }
+
+
+bool WriteAllFile(const std::string& filePath, const std::string& content, bool isBinary) {
+    std::ofstream fWrite;
+
+    std::ios_base::openmode mode = std::ios_base::out;
+    if (isBinary)
+        mode |= std::ios_base::binary;
+
+    fWrite.open(filePath, mode);
+    if (!fWrite.is_open()) {
+        return false;
+    }
+    fWrite << content;
+    fWrite.close();
+    return true;
+}

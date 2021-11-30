@@ -100,6 +100,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
     <ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />
     <ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
+    <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
@@ -107,15 +108,16 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
+    <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
-    <ClCompile Include="Kernel\NBTAPI.cpp" />
+    <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
     <ClCompile Include="Kernel\ScheduleAPI.cpp" />
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
-    <ClCompile Include="Kernel\StructureTemplate.cpp" />
+    <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -161,6 +163,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\TagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\TeleportTargetAPI.hpp" />
     <ClInclude Include="Header\MC\FormUI.hpp" />
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp" />
@@ -185,7 +188,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp" />
-    <ClInclude Include="Header\MC\NBT.hpp" />
     <ClInclude Include="Header\regCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\MC\Types.hpp" />

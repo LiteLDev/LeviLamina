@@ -100,7 +100,7 @@ struct MyEnum : IMyEnum {
     operator E() { return val; }
 };
 
-void MakeCommand(string const& name, const char* desc, int lvl);
+LIAPI void MakeCommand(string const& name, const char* desc, int lvl);
 
 template <typename T>
 typeid_CommandRegistry typeid_getter() {

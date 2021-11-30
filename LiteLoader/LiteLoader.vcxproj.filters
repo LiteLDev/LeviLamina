@@ -123,7 +123,7 @@
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\NBTAPI.cpp">
+    <ClCompile Include="Kernel\TagAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\ScheduleAPI.cpp">
@@ -174,7 +174,13 @@
     <ClCompile Include="Kernel\HitResultAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\StructureTemplate.cpp">
+    <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ListTagAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CompoundTagAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\CommandAPI.cpp">
@@ -274,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\GlobalService.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\NBT.hpp">
-      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
@@ -411,6 +414,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\SendPacketAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\TagAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>

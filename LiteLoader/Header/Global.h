@@ -11,9 +11,6 @@
 #define MCINLINE inline
 #define MCCLS
 
-// 暂时为了兼容
-#define Tag CompoundTag
-
 #include <bitset>
 #include <functional>
 #include <iostream>

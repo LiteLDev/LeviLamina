@@ -5,7 +5,7 @@
 #include "MC/level.hpp"
 #include <string>
 #include <vector>
-#include "MC/NBT.hpp"
+#include <MC/CompoundTag.hpp>
 using namespace std;
 
 ItemStack* ItemStack::create() {
@@ -27,7 +27,7 @@ ItemStack* ItemStack::create(Tag* tag) {
 }
 
 ItemStack* ItemStack::create(std::string type, int count) {
-    Tag* nbt = Tag::createTag(Tag::Type::Compound);
+    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
     nbt->putString("Name", type);

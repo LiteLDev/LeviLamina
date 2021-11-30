@@ -16,4 +16,4 @@ class LevelStorage;
 class Scoreboard;
 
 template <typename T>
-inline T* Global = nullptr;
+LIAPI inline T* Global = nullptr;
