@@ -504,3 +504,34 @@ enum class FaceID : char {
     West = 4,
     East = 5,
 };
+
+class CommandVersion {
+public:
+    int Min = 1, Max = 0x7FFFFFFF;
+};
+
+template <typename T>
+struct InvertableFilter {
+    T value;
+    bool inverted;
+};
+
+class CommandOutputParameter
+{
+    std::string str;
+    int type;
+public:
+    MCINLINE CommandOutputParameter(std::string str, int type) : str(str), type(type) {}
+};
+
+template <typename T>
+class CommandSelectorResults
+{
+public:
+    std::shared_ptr<std::vector<T*>> data;
+
+    auto begin() { return data->begin(); }
+    auto end() { return data->end(); }
+    auto count() const { return data->size(); }
+    auto empty() const { return data->empty(); }
+};

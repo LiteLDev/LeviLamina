@@ -96,6 +96,10 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
     <ClCompile Include="Kernel\CommandAPI.cpp" />
+    <ClCompile Include="Kernel\CommandOriginAPI.cpp" />
+    <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
+    <ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />
+    <ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
@@ -130,7 +134,7 @@ LibraryBuilder.exe
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="ModifyName.cpp" />
     <ClCompile Include="PluginManager.cpp" />
-    <ClCompile Include="ServerCommand.cpp" />
+    <ClCompile Include="BuiltinCommands.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -148,6 +152,11 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
+    <ClInclude Include="Header\MC\CommandSelector.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandOriginAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandOutputAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandParameterDataAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandRegistryAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />
@@ -175,6 +184,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp" />
     <ClInclude Include="Header\MC\NBT.hpp" />
     <ClInclude Include="Header\regCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />

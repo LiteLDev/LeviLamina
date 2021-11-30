@@ -25,6 +25,12 @@
     <Filter Include="Kernel\Utils\nbtcpp">
       <UniqueIdentifier>{6c670ca4-b7e9-4e4d-a345-6ee43e30fe91}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\Command">
+      <UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Command">
+      <UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -162,17 +168,29 @@
     <ClCompile Include="Kernel\BlockSourceAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="ServerCommand.cpp">
+    <ClCompile Include="BuiltinCommands.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CommandAPI.cpp">
-      <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\HitResultAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\StructureTemplate.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CommandAPI.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CommandOriginAPI.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CommandOutputAPI.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CommandRegistryAPI.cpp">
+      <Filter>Kernel\Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CommandParameterDataAPI.cpp">
+      <Filter>Kernel\Command</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -329,28 +347,16 @@
     <ClInclude Include="Header\MC\Extra\WebTokenAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Extra\ScriptingAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\CommandAPI.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Extra\RakNetAPI.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Extra\MinecraftCommandsAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\ItemActorAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\BlockSourceAPI.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\regCommandAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp">
@@ -376,6 +382,35 @@
     </ClInclude>
     <ClInclude Include="Header\SendPacketAPI.h">
       <Filter>Header</Filter>
+    <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandOriginAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandOutputAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandRegistryAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\regCommandAPI.h">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CommandParameterDataAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\MinecraftCommandsAPI.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CommandSelector.hpp">
+      <Filter>Header\Command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,12 @@
 #include <Global.h>
-#include <regCommandAPI.h>
 #include <LLAPI.h>
 #include <ServerAPI.h>
-#include <Header/EventAPI.h>
+#include <EventAPI.h>
+#include <MC/CommandRegistry.hpp>
+#include <MC/CommandOutput.hpp>
+#include <MC/CommandOrigin.hpp>
+#include <MC/CommandPosition.hpp>
+#include <regCommandAPI.h>
 #include <filesystem>
 #include <MC/Packet.hpp>
 #include <LoggerAPI.h>
@@ -11,7 +15,7 @@ void checkUpdate();
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     MakeSP(ori)->sendText("aaaaaaaa",JUKEBOX_POPUP);
     outp.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() + " with LiteLoaderBDS " +
-                 LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS");
+        LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS", {});
     return true;
 }
 
@@ -35,9 +39,9 @@ bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<stri
                 oss << "Website: " << plugin->website << std::endl;
             auto text = oss.str();
             text.pop_back();
-            outp.success(text);
+            outp.success(text, {});
         } else {
-            outp.error("Plugin [" + name + "] is not found!");
+            outp.error("Plugin [" + name + "] is not found!", {});
         }
         return true;
     }
@@ -52,7 +56,7 @@ bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<stri
             << plugin.introduction << std::endl;
     }
     oss << "\n* Send command \"plugins <Plugin Name>\" for more information";
-    outp.success(oss.str());
+    outp.success(oss.str(), {});
     return true;
 }
 
@@ -65,30 +69,29 @@ bool tpdimCommand(CommandOrigin const& ori, CommandOutput& outp, int dimid, opti
         {2, "The End"},
     };
     if (!actor) {
-        outp.error("");
+        outp.error("", {});
         return false;
     }
     if (dimid < 0 || dimid > 3) {
-        outp.error("Invaild dimid: "+std::to_string(dimid));
+        outp.error("Invaild dimid: " + std::to_string(dimid), {});
         return false;
     }
     if (cmdpos.set) {
         auto pos = cmdpos.val().getPosition(ori, {0, 0, 0});
         actor->teleport(pos, dimid);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z), {});
     } else {
         auto pos = *(Vec3*)&actor->getStateVectorComponent();
         actor->teleport(pos, dimid);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z));
+            actor->getNameTag(), dimensionNameMap[dimid], pos.x, pos.y, pos.z), {});
     }
     return true;
 }
 
 void registerCommands() {
     Event::addEventListener([](RegCmdEV ev) { // Register commands
-        CMDREG::SetCommandRegistry(ev.CMDRg);
         MakeCommand("version", "Get the version of this server", 0);
         MakeCommand("plugins", "View plugin information", 0);
         MakeCommand("tpdim", "View plugin information", 0);

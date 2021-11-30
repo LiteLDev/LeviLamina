@@ -5,6 +5,7 @@
 
 #else
 // Add Member There
-
+public:
+	void addMessage(std::string str);
 
 #endif

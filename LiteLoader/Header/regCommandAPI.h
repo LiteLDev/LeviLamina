@@ -1,80 +1,66 @@
 ﻿#pragma once
 #include "Global.h"
 #include <tuple>
-#include "./Command/CommandReg.h"
+#include "MC/CommandRegistry.hpp"
+#include "MC/CommandMessage.hpp"
+#include "MC/CommandSelector.hpp"
+#include "MC/CommandPosition.hpp"
+#include "MC/Command.hpp"
+#include "MC/Actor.hpp"
+#include "MC/Player.hpp"
 #include <LoggerAPI.h>
-
-inline CommandRegistry *CmdRegGlobal = nullptr;
 
 namespace CMDREG {
 
-inline void SetCommandRegistry(CommandRegistry* reg) {
-    CmdRegGlobal = reg;
-}
-
 template <typename T>
-inline typeid_t<CommandRegistry> getTPID();
+inline typeid_CommandRegistry getTPID();
 
-inline typeid_t<CommandRegistry>& GETID(const char* name) {
-    return *(typeid_t<CommandRegistry>*)(dlsym_real(name));
+inline typeid_CommandRegistry& GETID(const char* name) {
+    return *(typeid_CommandRegistry*)(dlsym_real(name));
 }
 
-inline typeid_t<CommandRegistry> ALLOCID() {
+inline typeid_CommandRegistry ALLOCID() {
     auto& id = *((unsigned short*)SYM("?count@?$typeid_t@VCommandRegistry@@@@2GA"));
     return {id++};
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandMessage>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@VCommandMessage@@@@YA?AV?$typeid_t@VCommandRegistry@@@"
-        "@XZ@4V1@A");
+inline typeid_CommandRegistry getTPID<CommandMessage>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@VCommandMessage@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<bool>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+inline typeid_CommandRegistry getTPID<bool>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<int>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@H@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+inline typeid_CommandRegistry getTPID<int>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@H@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<float>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@M@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+inline typeid_CommandRegistry getTPID<float>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@M@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<string>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@"
-        "2@@std@@@@YA?AV?$"
-        "typeid_t@VCommandRegistry@@@@XZ@4V1@A");
+inline typeid_CommandRegistry getTPID<string>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandSelector<Actor>>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VActor@@@@@@YA?AV?$typeid_t@"
-        "VCommandRegistry@@@@XZ@4V1@"
-        "A");
+inline typeid_CommandRegistry getTPID<CommandSelector<Actor>>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VActor@@@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> getTPID<CommandSelector<Player>>() {
-    return GETID(
-        "?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VPlayer@@@@@@YA?AV?$typeid_t@"
-        "VCommandRegistry@@@@XZ@4V1@"
-        "A");
+inline typeid_CommandRegistry getTPID<CommandSelector<Player>>() {
+    return GETID("?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VPlayer@@@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_t<CommandRegistry> _cdecl getTPID<CommandPosition>() {
+inline typeid_CommandRegistry _cdecl getTPID<CommandPosition>() {
     return GETID(
         "?id@?1???$type_id@VCommandRegistry@@VCommandPosition@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
@@ -82,26 +68,26 @@ inline typeid_t<CommandRegistry> _cdecl getTPID<CommandPosition>() {
 template <typename T>
 class CEnum {
   public:
-    static typeid_t<CommandRegistry> myid;
+    static typeid_CommandRegistry myid;
     static string name;
     CEnum(string const &nam, std::initializer_list<std::string> const &values) {
         name = nam;
         if (myid.value == 65535) {
             myid = ALLOCID();
-            if (CmdRegGlobal == nullptr) {
+            if (Global<CommandRegistry> == nullptr) {
                 Logger::setTitle("RegCmd");
-                Logger::Info() << "CmdRegGlobal Not Set" << Logger::endl;
+                Logger::Info() << "Global<CommandRegistry> Not Set" << Logger::endl;
                 Logger::setTitle("LiteLoader");
                 std::this_thread::sleep_for(std::chrono::seconds(5));
                 exit(1);
             }
-            CmdRegGlobal->addEnumValues(name, myid, values);
+            Global<CommandRegistry>->addEnumValues(name, myid, values);
         }
     }
 };
 
 template <typename T>
-typeid_t<CommandRegistry> CEnum<T>::myid(65535);
+typeid_CommandRegistry CEnum<T>::myid(65535);
 
 template <typename T>
 string CEnum<T>::name;
@@ -117,7 +103,7 @@ struct MyEnum : IMyEnum {
 void MakeCommand(string const& name, const char* desc, int lvl);
 
 template <typename T>
-typeid_t<CommandRegistry> typeid_getter() {
+typeid_CommandRegistry typeid_getter() {
     if constexpr (std::is_base_of_v<IMyEnum, T>) {
         return CEnum<decltype(T::val)>::myid;
     } else {
@@ -188,14 +174,14 @@ struct MakeOverload {
     }
 
     inline void regMe(string const &cname, std::vector<CommandParameterData> &&vc) {
-        if (CmdRegGlobal == nullptr) {
+        if (Global<CommandRegistry> == nullptr) {
             Logger::setTitle("RegCmd");
-            Logger::Info() <<"CmdRegGlobal Not Set" << Logger::endl;
+            Logger::Info() <<"Global<CommandRegistry> Not Set" << Logger::endl;
             Logger::setTitle("LiteLoader");
             std::this_thread::sleep_for(std::chrono::seconds(5));
             exit(1);
         }
-        CmdRegGlobal->registerOverload(cname, &factory,std::forward<std::vector<CommandParameterData>>(vc));
+        Global<CommandRegistry>->registerOverload(cname, &factory,std::forward<std::vector<CommandParameterData>>(vc));
     }
 
     template <typename... TP2>
@@ -247,22 +233,3 @@ static_assert(sizeof(MakeOverload<void, int>) == 1);
 
 #define CmdOverload2(name2, cb, cb2, ...) \
     { MakeOverload __ov2((struct name2 *)0, cb2, #name2, cb, __VA_ARGS__); }
-
-
-#include <MC/ServerPlayer.hpp>
-inline static ServerPlayer *MakeSP( const CommandOrigin &ori) {
-    ServerPlayer* sp = (ServerPlayer*)(const_cast<CommandOrigin*>(&ori)->getEntity());
-    if (sp) {
-        return {sp};
-    }
-    return nullptr;
-}
-
-inline static ServerPlayer *MakeSP(void *x) {
-    if (!x)
-        return nullptr;
-    if (dAccess<void *, 0>(x) == SYM("??_7ServerPlayer@@6B@")) {
-        return (ServerPlayer *)x;
-    }
-    return nullptr;
-}
