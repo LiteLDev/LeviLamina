@@ -153,7 +153,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
-    <ClInclude Include="Header\MC\CommandMessage.hpp" />
+    <ClInclude Include="Header\MC\Extra\CommandMessageAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
     <ClInclude Include="Header\MC\CommandSelector.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandOriginAPI.hpp" />
