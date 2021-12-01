@@ -20,8 +20,8 @@ jobs:
      
     - name: Download Lib from server
       run: |
-        curl -L -o D:/lib.zip https://dl.litebds.com/build/lib.zip
-        curl -L -o D:/plugin-lib.zip https://dl.litebds.com/build/plugin-lib.zip
+        curl -L -o D:/lib.zip https://github.com/LiteLDev/Resources/raw/main/lib.zip
+        curl -L -o D:/plugin-lib.zip https://github.com/LiteLDev/Resources/raw/main/plugin-lib.zip
         unzip D:/lib.zip -d LiteLoader/Lib/
         mkdir D:/lib
         unzip D:/plugin-lib.zip -d D:/lib
