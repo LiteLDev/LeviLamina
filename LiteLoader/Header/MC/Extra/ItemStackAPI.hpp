@@ -6,10 +6,10 @@ class ItemActor;
 #else
 // Add new members to class
 public:
-	LIAPI ItemStack* create();
-	LIAPI ItemStack* create(std::string type, int count);
-	LIAPI ItemStack* create(Tag* tag);
-	LIAPI ItemStack* clone_s();
+	LIAPI static ItemStack* create();
+    LIAPI static ItemStack* create(std::string type, int count);
+    LIAPI static ItemStack* create(Tag* tag);
+    LIAPI ItemStack* clone_s();
 
 	LIAPI std::string getName();
 	LIAPI std::string getCustomName();
