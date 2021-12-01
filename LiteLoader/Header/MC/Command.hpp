@@ -8,7 +8,7 @@ class Command {
 #include "Extra/CommandAPI.hpp"
 public:
     virtual ~Command();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) = 0;
 
 public:
     MCAPI std::string getCommandName() const;

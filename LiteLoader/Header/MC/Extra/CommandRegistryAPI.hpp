@@ -149,4 +149,14 @@ public:
         }
         return ptr;
     }
+    bool parseEnumInt(void* target,
+                      CommandRegistry::ParseToken const& token,
+                      CommandOrigin const&,
+                      int,
+                      std::string&,
+                      std::vector<std::string>&) const {
+        auto data = getEnumData(token);
+        *(int*)target = (int)data;
+        return true;
+    }
 #endif

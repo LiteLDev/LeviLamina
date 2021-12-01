@@ -8,4 +8,11 @@
 	std::string str;
 	int64_t unk;
 
+public:
+    HashedString(HashedString const& hstr)
+        : str(hstr.getString())
+        , unk(0)
+        , hash(computeHash(str)) {
+    }
+
 #endif

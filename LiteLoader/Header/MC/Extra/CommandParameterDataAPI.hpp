@@ -30,11 +30,11 @@ public:
 	bool mand;                      // 72
 	bool pad73;                     // 73
 
-	CommandParameterData::CommandParameterData()
+	CommandParameterData()
 		: tid(0)
 	{}
 
-	CommandParameterData::CommandParameterData(
+	CommandParameterData(
 		typeid_t<CommandRegistry> tid, ParseFn parser, std::string_view describe,
 		CommandParameterDataType type, char const* enumName, int offset, bool optional, int flag_offset)
 

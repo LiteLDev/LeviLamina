@@ -6,6 +6,7 @@
 #include "MC/CommandSelector.hpp"
 #include "MC/CommandPosition.hpp"
 #include "MC/CommandParameterData.hpp"
+#include "MC/CommandOutput.hpp"
 #include "MC/Command.hpp"
 #include "MC/Actor.hpp"
 #include "MC/Player.hpp"
@@ -126,10 +127,10 @@ struct MakeOverload {
         static uintptr_t cb;
 
         template <std::size_t... Index>
-        inline bool invoke_impl(CommandOrigin const &a,CommandOutput &b,std::index_sequence<Index...>) const {
+        inline bool invoke_impl(CommandOrigin const &a,CommandOutput &b,std::index_sequence<Index...>) {
             return ((bool (*)(CommandOrigin const &, CommandOutput &, TP...))cb)(a, b, std::get<Index>(data)...);
         }
-        void execute(CommandOrigin const &a, CommandOutput &b) const {
+        void execute(CommandOrigin const &a, CommandOutput &b) {
             constexpr auto size = std::tuple_size<container>::value;
             try {
                 if (invoke_impl(a, b, std::make_index_sequence<size>{})) {
