@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BOOKSHELFBLOCK
 #include "Extra/BookshelfBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BOOKSHELFBLOCK
 class BookshelfBlock : public BlockLegacy {
 #include "Extra/BookshelfBlockAPI.hpp"
 public:

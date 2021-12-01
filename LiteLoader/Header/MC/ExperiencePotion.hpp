@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Throwable.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXPERIENCEPOTION
 #include "Extra/ExperiencePotionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXPERIENCEPOTION
 class ExperiencePotion : public Throwable {
 #include "Extra/ExperiencePotionAPI.hpp"
 public:

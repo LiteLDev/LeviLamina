@@ -1,5 +1,5 @@
 //Extra Part For ActorInVillageTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORINVILLAGETEST
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For LootItemKilledByActorCondition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOTITEMKILLEDBYACTORCONDITION
 // Include Headers or Declare Types Here
 
 

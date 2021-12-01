@@ -1,5 +1,5 @@
 //Extra Part For SpawnActorDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPAWNACTORDEFINITION
 // Include Headers or Declare Types Here
 
 

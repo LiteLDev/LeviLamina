@@ -1,5 +1,5 @@
 //Extra Part For StemBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STEMBLOCK
 // Include Headers or Declare Types Here
 
 

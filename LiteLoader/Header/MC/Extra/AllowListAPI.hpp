@@ -1,5 +1,5 @@
 //Extra Part For AllowList.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ALLOWLIST
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TorchBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_UNDERWATERTORCHBLOCK
 #include "Extra/UnderwaterTorchBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_UNDERWATERTORCHBLOCK
 class UnderwaterTorchBlock : public TorchBlock {
 #include "Extra/UnderwaterTorchBlockAPI.hpp"
 public:

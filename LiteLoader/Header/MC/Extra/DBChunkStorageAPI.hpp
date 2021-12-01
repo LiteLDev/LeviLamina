@@ -1,5 +1,5 @@
 //Extra Part For DBChunkStorage.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DBCHUNKSTORAGE
 // Include Headers or Declare Types Here
 
 

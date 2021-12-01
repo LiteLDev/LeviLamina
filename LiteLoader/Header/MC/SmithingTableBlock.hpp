@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SMITHINGTABLEBLOCK
 #include "Extra/SmithingTableBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SMITHINGTABLEBLOCK
 class SmithingTableBlock : public BlockLegacy {
 #include "Extra/SmithingTableBlockAPI.hpp"
 public:

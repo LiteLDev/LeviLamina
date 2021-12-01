@@ -1,5 +1,5 @@
 //Extra Part For LevelDbEnv.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELDBENV
 // Include Headers or Declare Types Here
 
 

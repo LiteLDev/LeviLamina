@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AppConfigs.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_VANILLAAPPCONFIGS
 #include "Extra/VanillaAppConfigsAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_VANILLAAPPCONFIGS
 class VanillaAppConfigs : public AppConfigs {
 #include "Extra/VanillaAppConfigsAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASTIONFEATURE
 #include "Extra/BastionFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASTIONFEATURE
 class BastionFeature : public StructureFeature {
 #include "Extra/BastionFeatureAPI.hpp"
 public:

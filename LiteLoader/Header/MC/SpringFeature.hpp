@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPRINGFEATURE
 #include "Extra/SpringFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPRINGFEATURE
 class SpringFeature : public Feature {
 #include "Extra/SpringFeatureAPI.hpp"
 public:

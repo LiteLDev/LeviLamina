@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLAYERARMORDAMAGEPACKET
 #include "Extra/PlayerArmorDamagePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLAYERARMORDAMAGEPACKET
 class PlayerArmorDamagePacket : public Packet {
 #include "Extra/PlayerArmorDamagePacketAPI.hpp"
 public:

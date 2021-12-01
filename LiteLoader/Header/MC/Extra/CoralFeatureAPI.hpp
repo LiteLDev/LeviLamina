@@ -1,5 +1,5 @@
 //Extra Part For CoralFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CORALFEATURE
 // Include Headers or Declare Types Here
 
 

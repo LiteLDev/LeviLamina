@@ -1,5 +1,5 @@
 //Extra Part For LootItemFunction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOTITEMFUNCTION
 // Include Headers or Declare Types Here
 
 

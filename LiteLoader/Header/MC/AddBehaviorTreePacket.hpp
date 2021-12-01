@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ADDBEHAVIORTREEPACKET
 #include "Extra/AddBehaviorTreePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ADDBEHAVIORTREEPACKET
 class AddBehaviorTreePacket : public Packet {
 #include "Extra/AddBehaviorTreePacketAPI.hpp"
 public:

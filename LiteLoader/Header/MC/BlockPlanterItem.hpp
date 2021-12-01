@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKPLANTERITEM
 #include "Extra/BlockPlanterItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKPLANTERITEM
 class BlockPlanterItem : public Item {
 #include "Extra/BlockPlanterItemAPI.hpp"
 public:

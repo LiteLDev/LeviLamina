@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FertilizerItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAPIDFERTILIZERITEM
 #include "Extra/RapidFertilizerItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAPIDFERTILIZERITEM
 class RapidFertilizerItem : public FertilizerItem {
 #include "Extra/RapidFertilizerItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For MemoryMappedFileAccess.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MEMORYMAPPEDFILEACCESS
 // Include Headers or Declare Types Here
 
 

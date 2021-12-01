@@ -1,5 +1,5 @@
 //Extra Part For PlayerRespawnTelemetryData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERRESPAWNTELEMETRYDATA
 // Include Headers or Declare Types Here
 
 

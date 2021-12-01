@@ -1,5 +1,5 @@
 //Extra Part For FilterStringMap.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERSTRINGMAP
 // Include Headers or Declare Types Here
 
 

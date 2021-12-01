@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CommandOrigin.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTINGCOMMANDORIGIN
 #include "Extra/ScriptingCommandOriginAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTINGCOMMANDORIGIN
 class ScriptingCommandOrigin : public CommandOrigin {
 #include "Extra/ScriptingCommandOriginAPI.hpp"
 public:

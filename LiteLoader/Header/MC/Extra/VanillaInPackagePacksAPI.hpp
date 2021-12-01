@@ -1,5 +1,5 @@
 //Extra Part For VanillaInPackagePacks.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAINPACKAGEPACKS
 // Include Headers or Declare Types Here
 
 

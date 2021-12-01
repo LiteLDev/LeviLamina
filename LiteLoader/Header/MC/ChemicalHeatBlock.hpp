@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHEMICALHEATBLOCK
 #include "Extra/ChemicalHeatBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHEMICALHEATBLOCK
 class ChemicalHeatBlock : public BlockLegacy {
 #include "Extra/ChemicalHeatBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SeaPickleBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SEAPICKLEBLOCKITEM
 // Include Headers or Declare Types Here
 
 

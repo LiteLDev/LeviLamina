@@ -1,5 +1,5 @@
 //Extra Part For BuoyancyDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BUOYANCYDEFINITION
 // Include Headers or Declare Types Here
 
 

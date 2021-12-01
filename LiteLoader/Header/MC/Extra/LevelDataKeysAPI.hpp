@@ -1,5 +1,5 @@
 //Extra Part For LevelDataKeys.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELDATAKEYS
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For NetworkDebugManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETWORKDEBUGMANAGER
 // Include Headers or Declare Types Here
 
 

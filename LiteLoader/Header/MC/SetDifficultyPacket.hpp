@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETDIFFICULTYPACKET
 #include "Extra/SetDifficultyPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETDIFFICULTYPACKET
 class SetDifficultyPacket : public Packet {
 #include "Extra/SetDifficultyPacketAPI.hpp"
 public:

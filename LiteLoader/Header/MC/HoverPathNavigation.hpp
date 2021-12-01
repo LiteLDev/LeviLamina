@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PathNavigation.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HOVERPATHNAVIGATION
 #include "Extra/HoverPathNavigationAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HOVERPATHNAVIGATION
 class HoverPathNavigation : public PathNavigation {
 #include "Extra/HoverPathNavigationAPI.hpp"
 public:

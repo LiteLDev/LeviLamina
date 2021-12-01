@@ -1,5 +1,5 @@
 //Extra Part For BeetrootBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEETROOTBLOCK
 // Include Headers or Declare Types Here
 
 

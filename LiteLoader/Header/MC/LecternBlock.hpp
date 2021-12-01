@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LECTERNBLOCK
 #include "Extra/LecternBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LECTERNBLOCK
 class LecternBlock : public ActorBlock {
 #include "Extra/LecternBlockAPI.hpp"
 public:

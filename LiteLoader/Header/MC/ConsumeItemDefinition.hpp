@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CONSUMEITEMDEFINITION
 #include "Extra/ConsumeItemDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CONSUMEITEMDEFINITION
 class ConsumeItemDefinition : public BehaviorDefinition {
 #include "Extra/ConsumeItemDefinitionAPI.hpp"
 public:

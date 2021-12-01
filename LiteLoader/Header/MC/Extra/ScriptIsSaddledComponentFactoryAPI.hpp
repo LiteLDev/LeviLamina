@@ -1,5 +1,5 @@
 //Extra Part For ScriptIsSaddledComponentFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTISSADDLEDCOMPONENTFACTORY
 // Include Headers or Declare Types Here
 
 

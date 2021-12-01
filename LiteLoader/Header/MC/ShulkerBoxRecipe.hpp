@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ShapelessRecipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHULKERBOXRECIPE
 #include "Extra/ShulkerBoxRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHULKERBOXRECIPE
 class ShulkerBoxRecipe : public ShapelessRecipe {
 #include "Extra/ShulkerBoxRecipeAPI.hpp"
 public:

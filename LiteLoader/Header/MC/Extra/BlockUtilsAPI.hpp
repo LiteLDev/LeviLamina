@@ -1,5 +1,5 @@
 //Extra Part For BlockUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKUTILS
 // Include Headers or Declare Types Here
 
 

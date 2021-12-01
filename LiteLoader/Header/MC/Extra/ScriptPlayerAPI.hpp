@@ -1,5 +1,5 @@
 //Extra Part For ScriptPlayer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTPLAYER
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORISCOLORTEST
 #include "Extra/ActorIsColorTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORISCOLORTEST
 class ActorIsColorTest : public FilterTest {
 #include "Extra/ActorIsColorTestAPI.hpp"
 public:

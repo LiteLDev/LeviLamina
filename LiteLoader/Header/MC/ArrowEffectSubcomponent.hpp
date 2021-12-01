@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MobEffectSubcomponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ARROWEFFECTSUBCOMPONENT
 #include "Extra/ArrowEffectSubcomponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ARROWEFFECTSUBCOMPONENT
 class ArrowEffectSubcomponent : public MobEffectSubcomponent {
 #include "Extra/ArrowEffectSubcomponentAPI.hpp"
 public:

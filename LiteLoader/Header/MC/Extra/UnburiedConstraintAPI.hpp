@@ -1,5 +1,5 @@
 //Extra Part For UnburiedConstraint.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_UNBURIEDCONSTRAINT
 // Include Headers or Declare Types Here
 
 

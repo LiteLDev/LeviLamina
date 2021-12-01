@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SWEETBERRYBUSHBLOCK
 #include "Extra/SweetBerryBushBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SWEETBERRYBUSHBLOCK
 class SweetBerryBushBlock : public BushBlock {
 #include "Extra/SweetBerryBushBlockAPI.hpp"
 public:

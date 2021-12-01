@@ -1,5 +1,5 @@
 //Extra Part For IsStackableDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ISSTACKABLEDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "IFileChunkUploader.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SERVERFILECHUNKUPLOADER
 #include "Extra/ServerFileChunkUploaderAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SERVERFILECHUNKUPLOADER
 class ServerFileChunkUploader : public IFileChunkUploader {
 #include "Extra/ServerFileChunkUploaderAPI.hpp"
 public:

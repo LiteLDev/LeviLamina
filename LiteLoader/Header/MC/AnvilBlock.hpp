@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ANVILBLOCK
 #include "Extra/AnvilBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ANVILBLOCK
 class AnvilBlock : public HeavyBlock {
 #include "Extra/AnvilBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestActionCraftBase.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTBASE
 // Include Headers or Declare Types Here
 
 

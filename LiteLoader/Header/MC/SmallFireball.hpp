@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Fireball.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SMALLFIREBALL
 #include "Extra/SmallFireballAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SMALLFIREBALL
 class SmallFireball : public Fireball {
 #include "Extra/SmallFireballAPI.hpp"
 public:

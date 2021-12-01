@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveControlDescription.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOVECONTROLBASICDESCRIPTION
 #include "Extra/MoveControlBasicDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOVECONTROLBASICDESCRIPTION
 class MoveControlBasicDescription : public MoveControlDescription {
 #include "Extra/MoveControlBasicDescriptionAPI.hpp"
 public:

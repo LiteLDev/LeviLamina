@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ADDPAINTINGPACKET
 #include "Extra/AddPaintingPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ADDPAINTINGPACKET
 class AddPaintingPacket : public Packet {
 #include "Extra/AddPaintingPacketAPI.hpp"
 public:

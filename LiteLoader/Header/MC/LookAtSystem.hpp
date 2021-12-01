@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LOOKATSYSTEM
 #include "Extra/LookAtSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LOOKATSYSTEM
 class LookAtSystem : public ITickingSystem {
 #include "Extra/LookAtSystemAPI.hpp"
 public:

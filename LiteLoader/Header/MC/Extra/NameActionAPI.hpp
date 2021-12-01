@@ -1,5 +1,5 @@
 //Extra Part For NameAction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAMEACTION
 // Include Headers or Declare Types Here
 
 

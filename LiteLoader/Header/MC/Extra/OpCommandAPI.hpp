@@ -1,5 +1,5 @@
 //Extra Part For OpCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OPCOMMAND
 // Include Headers or Declare Types Here
 
 

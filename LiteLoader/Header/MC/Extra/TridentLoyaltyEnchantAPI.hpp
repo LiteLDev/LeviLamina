@@ -1,5 +1,5 @@
 //Extra Part For TridentLoyaltyEnchant.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRIDENTLOYALTYENCHANT
 // Include Headers or Declare Types Here
 
 

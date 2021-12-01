@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OBSERVERBLOCK
 #include "Extra/ObserverBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OBSERVERBLOCK
 class ObserverBlock : public BlockLegacy {
 #include "Extra/ObserverBlockAPI.hpp"
 public:

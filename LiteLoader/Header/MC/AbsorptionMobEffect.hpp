@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MobEffect.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ABSORPTIONMOBEFFECT
 #include "Extra/AbsorptionMobEffectAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ABSORPTIONMOBEFFECT
 class AbsorptionMobEffect : public MobEffect {
 #include "Extra/AbsorptionMobEffectAPI.hpp"
 public:

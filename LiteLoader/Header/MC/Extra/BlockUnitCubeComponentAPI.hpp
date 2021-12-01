@@ -1,5 +1,5 @@
 //Extra Part For BlockUnitCubeComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKUNITCUBECOMPONENT
 // Include Headers or Declare Types Here
 
 

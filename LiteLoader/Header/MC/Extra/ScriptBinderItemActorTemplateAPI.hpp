@@ -1,5 +1,5 @@
 //Extra Part For ScriptBinderItemActorTemplate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBINDERITEMACTORTEMPLATE
 // Include Headers or Declare Types Here
 
 

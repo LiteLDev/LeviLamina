@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RedStoneOreBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEEPSLATEREDSTONEOREBLOCK
 #include "Extra/DeepslateRedStoneOreBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEEPSLATEREDSTONEOREBLOCK
 class DeepslateRedStoneOreBlock : public RedStoneOreBlock {
 #include "Extra/DeepslateRedStoneOreBlockAPI.hpp"
 public:

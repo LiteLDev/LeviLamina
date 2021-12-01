@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ItemStackNetManagerBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMSTACKNETMANAGERSERVER
 #include "Extra/ItemStackNetManagerServerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMSTACKNETMANAGERSERVER
 class ItemStackNetManagerServer : public ItemStackNetManagerBase {
 #include "Extra/ItemStackNetManagerServerAPI.hpp"
 public:

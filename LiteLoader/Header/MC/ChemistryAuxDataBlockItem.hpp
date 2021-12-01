@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AuxDataBlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHEMISTRYAUXDATABLOCKITEM
 #include "Extra/ChemistryAuxDataBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHEMISTRYAUXDATABLOCKITEM
 class ChemistryAuxDataBlockItem : public AuxDataBlockItem {
 #include "Extra/ChemistryAuxDataBlockItemAPI.hpp"
 public:

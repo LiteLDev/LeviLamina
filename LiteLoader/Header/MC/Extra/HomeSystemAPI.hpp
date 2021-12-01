@@ -1,5 +1,5 @@
 //Extra Part For HomeSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HOMESYSTEM
 // Include Headers or Declare Types Here
 
 

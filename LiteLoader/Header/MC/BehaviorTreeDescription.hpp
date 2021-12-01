@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEHAVIORTREEDESCRIPTION
 #include "Extra/BehaviorTreeDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEHAVIORTREEDESCRIPTION
 class BehaviorTreeDescription : public Description {
 #include "Extra/BehaviorTreeDescriptionAPI.hpp"
 public:

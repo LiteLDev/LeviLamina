@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerPlaySoundEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERPLAYSOUNDEVENT
 // Include Headers or Declare Types Here
 
 

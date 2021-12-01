@@ -1,5 +1,5 @@
 //Extra Part For ActorOwnerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTOROWNERCOMPONENT
 // Include Headers or Declare Types Here
 
 

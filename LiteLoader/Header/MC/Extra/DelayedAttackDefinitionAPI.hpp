@@ -1,5 +1,5 @@
 //Extra Part For DelayedAttackDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DELAYEDATTACKDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRINGTAG
 #include "Extra/StringTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRINGTAG
 class StringTag : public Tag {
 #include "Extra/StringTagAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SilverfishMergeWithStoneGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SILVERFISHMERGEWITHSTONEGOAL
 // Include Headers or Declare Types Here
 
 

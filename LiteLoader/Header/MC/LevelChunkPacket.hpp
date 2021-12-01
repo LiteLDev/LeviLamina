@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEVELCHUNKPACKET
 #include "Extra/LevelChunkPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEVELCHUNKPACKET
 class LevelChunkPacket : public Packet {
 #include "Extra/LevelChunkPacketAPI.hpp"
 public:

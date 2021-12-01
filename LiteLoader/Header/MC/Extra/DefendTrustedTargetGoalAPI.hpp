@@ -1,5 +1,5 @@
 //Extra Part For DefendTrustedTargetGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEFENDTRUSTEDTARGETGOAL
 // Include Headers or Declare Types Here
 
 

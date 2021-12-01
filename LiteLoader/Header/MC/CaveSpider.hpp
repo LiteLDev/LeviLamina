@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Spider.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAVESPIDER
 #include "Extra/CaveSpiderAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAVESPIDER
 class CaveSpider : public Spider {
 #include "Extra/CaveSpiderAPI.hpp"
 public:

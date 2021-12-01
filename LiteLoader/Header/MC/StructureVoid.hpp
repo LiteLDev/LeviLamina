@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRUCTUREVOID
 #include "Extra/StructureVoidAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRUCTUREVOID
 class StructureVoid : public BlockLegacy {
 #include "Extra/StructureVoidAPI.hpp"
 public:

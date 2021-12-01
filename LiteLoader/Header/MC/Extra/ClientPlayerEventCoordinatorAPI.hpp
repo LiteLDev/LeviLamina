@@ -1,5 +1,5 @@
 //Extra Part For ClientPlayerEventCoordinator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLIENTPLAYEREVENTCOORDINATOR
 // Include Headers or Declare Types Here
 
 

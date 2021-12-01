@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ShulkerBoxBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_UNDYEDSHULKERBOXBLOCK
 #include "Extra/UndyedShulkerBoxBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_UNDYEDSHULKERBOXBLOCK
 class UndyedShulkerBoxBlock : public ShulkerBoxBlock {
 #include "Extra/UndyedShulkerBoxBlockAPI.hpp"
 public:

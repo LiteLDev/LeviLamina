@@ -1,5 +1,5 @@
 //Extra Part For StringByteInput.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRINGBYTEINPUT
 // Include Headers or Declare Types Here
 
 

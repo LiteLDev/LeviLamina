@@ -1,5 +1,5 @@
 //Extra Part For AttributeInstanceDelegate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ATTRIBUTEINSTANCEDELEGATE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BlockBreakSensorSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKBREAKSENSORSYSTEM
 // Include Headers or Declare Types Here
 
 

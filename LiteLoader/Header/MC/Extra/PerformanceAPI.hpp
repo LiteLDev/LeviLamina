@@ -1,5 +1,5 @@
 //Extra Part For Performance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PERFORMANCE
 // Include Headers or Declare Types Here
 
 

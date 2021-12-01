@@ -1,5 +1,5 @@
 //Extra Part For ActorUnderwaterTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORUNDERWATERTEST
 // Include Headers or Declare Types Here
 
 

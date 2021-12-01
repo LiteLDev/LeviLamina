@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Sapling.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BAMBOOSAPLING
 #include "Extra/BambooSaplingAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BAMBOOSAPLING
 class BambooSapling : public Sapling {
 #include "Extra/BambooSaplingAPI.hpp"
 public:

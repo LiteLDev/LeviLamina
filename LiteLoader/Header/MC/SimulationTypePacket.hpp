@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SIMULATIONTYPEPACKET
 #include "Extra/SimulationTypePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SIMULATIONTYPEPACKET
 class SimulationTypePacket : public Packet {
 #include "Extra/SimulationTypePacketAPI.hpp"
 public:

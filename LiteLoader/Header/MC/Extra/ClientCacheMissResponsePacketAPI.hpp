@@ -1,5 +1,5 @@
 //Extra Part For ClientCacheMissResponsePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLIENTCACHEMISSRESPONSEPACKET
 // Include Headers or Declare Types Here
 
 

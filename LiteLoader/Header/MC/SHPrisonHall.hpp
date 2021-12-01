@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHPRISONHALL
 #include "Extra/SHPrisonHallAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHPRISONHALL
 class SHPrisonHall : public StructurePiece {
 #include "Extra/SHPrisonHallAPI.hpp"
 public:

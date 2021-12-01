@@ -1,5 +1,5 @@
 //Extra Part For GiveableTrigger.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GIVEABLETRIGGER
 // Include Headers or Declare Types Here
 
 

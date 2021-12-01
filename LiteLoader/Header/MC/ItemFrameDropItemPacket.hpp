@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMFRAMEDROPITEMPACKET
 #include "Extra/ItemFrameDropItemPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMFRAMEDROPITEMPACKET
 class ItemFrameDropItemPacket : public Packet {
 #include "Extra/ItemFrameDropItemPacketAPI.hpp"
 public:

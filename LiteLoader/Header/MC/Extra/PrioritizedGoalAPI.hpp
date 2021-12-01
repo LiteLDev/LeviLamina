@@ -1,5 +1,5 @@
 //Extra Part For PrioritizedGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PRIORITIZEDGOAL
 // Include Headers or Declare Types Here
 
 

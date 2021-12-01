@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "OceanMonumentPiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MONUMENTBUILDING
 #include "Extra/MonumentBuildingAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MONUMENTBUILDING
 class MonumentBuilding : public OceanMonumentPiece {
 #include "Extra/MonumentBuildingAPI.hpp"
 public:

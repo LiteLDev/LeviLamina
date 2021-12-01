@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OPENDOORANNOTATIONSYSTEM
 #include "Extra/OpenDoorAnnotationSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OPENDOORANNOTATIONSYSTEM
 class OpenDoorAnnotationSystem : public ITickingSystem {
 #include "Extra/OpenDoorAnnotationSystemAPI.hpp"
 public:

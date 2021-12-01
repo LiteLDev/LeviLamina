@@ -1,5 +1,5 @@
 //Extra Part For IdleState.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IDLESTATE
 // Include Headers or Declare Types Here
 
 

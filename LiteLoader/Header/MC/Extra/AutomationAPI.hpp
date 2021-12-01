@@ -1,5 +1,5 @@
 //Extra Part For Automation.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AUTOMATION
 // Include Headers or Declare Types Here
 
 

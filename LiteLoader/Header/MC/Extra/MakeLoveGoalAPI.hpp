@@ -1,5 +1,5 @@
 //Extra Part For MakeLoveGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MAKELOVEGOAL
 // Include Headers or Declare Types Here
 
 

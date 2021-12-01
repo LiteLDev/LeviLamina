@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AbstractArrow.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ARROW
 #include "Extra/ArrowAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ARROW
 class Arrow : public AbstractArrow {
 #include "Extra/ArrowAPI.hpp"
 public:

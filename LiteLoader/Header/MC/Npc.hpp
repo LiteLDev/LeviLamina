@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NPC
 #include "Extra/NpcAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NPC
 class Npc : public Mob {
 #include "Extra/NpcAPI.hpp"
 public:

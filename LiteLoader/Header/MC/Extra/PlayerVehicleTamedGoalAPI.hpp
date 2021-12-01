@@ -1,5 +1,5 @@
 //Extra Part For PlayerVehicleTamedGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERVEHICLETAMEDGOAL
 // Include Headers or Declare Types Here
 
 

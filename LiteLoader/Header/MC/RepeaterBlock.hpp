@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DiodeBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REPEATERBLOCK
 #include "Extra/RepeaterBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REPEATERBLOCK
 class RepeaterBlock : public DiodeBlock {
 #include "Extra/RepeaterBlockAPI.hpp"
 public:

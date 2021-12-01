@@ -1,5 +1,5 @@
 //Extra Part For ScriptNavigationWalkComponentFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONWALKCOMPONENTFACTORY
 // Include Headers or Declare Types Here
 
 

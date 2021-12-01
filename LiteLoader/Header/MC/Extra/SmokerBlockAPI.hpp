@@ -1,5 +1,5 @@
 //Extra Part For SmokerBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SMOKERBLOCK
 // Include Headers or Declare Types Here
 
 

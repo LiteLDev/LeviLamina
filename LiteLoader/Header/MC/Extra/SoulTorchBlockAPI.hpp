@@ -1,5 +1,5 @@
 //Extra Part For SoulTorchBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SOULTORCHBLOCK
 // Include Headers or Declare Types Here
 
 

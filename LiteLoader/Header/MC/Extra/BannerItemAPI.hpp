@@ -1,5 +1,5 @@
 //Extra Part For BannerItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BANNERITEM
 // Include Headers or Declare Types Here
 
 

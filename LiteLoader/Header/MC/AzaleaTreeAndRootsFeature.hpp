@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_AZALEATREEANDROOTSFEATURE
 #include "Extra/AzaleaTreeAndRootsFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_AZALEATREEANDROOTSFEATURE
 class AzaleaTreeAndRootsFeature : public Feature {
 #include "Extra/AzaleaTreeAndRootsFeatureAPI.hpp"
 public:

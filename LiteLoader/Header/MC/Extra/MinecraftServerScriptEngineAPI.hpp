@@ -1,5 +1,5 @@
 //Extra Part For MinecraftServerScriptEngine.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINECRAFTSERVERSCRIPTENGINE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ActivatorRailBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTIVATORRAILBLOCK
 // Include Headers or Declare Types Here
 
 

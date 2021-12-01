@@ -1,5 +1,5 @@
 //Extra Part For SubChunkPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUBCHUNKPACKET
 // Include Headers or Declare Types Here
 
 

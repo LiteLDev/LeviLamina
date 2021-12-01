@@ -1,5 +1,5 @@
 //Extra Part For StructureBlockUpdatePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTUREBLOCKUPDATEPACKET
 // Include Headers or Declare Types Here
 
 

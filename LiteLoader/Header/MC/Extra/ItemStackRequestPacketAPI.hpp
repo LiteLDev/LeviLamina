@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTPACKET
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BackgroundWorker.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BACKGROUNDWORKER
 // Include Headers or Declare Types Here
 
 

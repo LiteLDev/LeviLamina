@@ -1,5 +1,5 @@
 //Extra Part For NavigationFloatDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAVIGATIONFLOATDESCRIPTION
 // Include Headers or Declare Types Here
 
 

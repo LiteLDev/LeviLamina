@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MineshaftPiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINESHAFTSTAIRS
 #include "Extra/MineshaftStairsAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINESHAFTSTAIRS
 class MineshaftStairs : public MineshaftPiece {
 #include "Extra/MineshaftStairsAPI.hpp"
 public:

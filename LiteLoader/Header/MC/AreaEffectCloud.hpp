@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_AREAEFFECTCLOUD
 #include "Extra/AreaEffectCloudAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_AREAEFFECTCLOUD
 class AreaEffectCloud : public Actor {
 #include "Extra/AreaEffectCloudAPI.hpp"
 public:

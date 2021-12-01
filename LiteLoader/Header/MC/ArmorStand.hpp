@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ARMORSTAND
 #include "Extra/ArmorStandAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ARMORSTAND
 class ArmorStand : public Mob {
 #include "Extra/ArmorStandAPI.hpp"
 public:

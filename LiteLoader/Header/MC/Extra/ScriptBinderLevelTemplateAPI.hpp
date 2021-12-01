@@ -1,5 +1,5 @@
 //Extra Part For ScriptBinderLevelTemplate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBINDERLEVELTEMPLATE
 // Include Headers or Declare Types Here
 
 

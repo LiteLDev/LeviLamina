@@ -1,5 +1,5 @@
 //Extra Part For VanillaSystemsRegistration.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLASYSTEMSREGISTRATION
 // Include Headers or Declare Types Here
 
 

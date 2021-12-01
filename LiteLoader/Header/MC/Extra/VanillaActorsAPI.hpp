@@ -1,5 +1,5 @@
 //Extra Part For VanillaActors.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAACTORS
 // Include Headers or Declare Types Here
 
 

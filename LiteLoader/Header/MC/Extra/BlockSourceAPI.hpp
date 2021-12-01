@@ -1,5 +1,5 @@
 //Extra Part For BlockSource.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKSOURCE
 // Include Headers or Declare Types Here
 	#include "BlockInstance.hpp"
 

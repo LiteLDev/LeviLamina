@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "IRequestAction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TESTACTION
 #include "Extra/TestActionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TESTACTION
 class TestAction : public IRequestAction {
 #include "Extra/TestActionAPI.hpp"
 public:

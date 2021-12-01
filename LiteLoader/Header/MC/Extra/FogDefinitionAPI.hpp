@@ -1,5 +1,5 @@
 //Extra Part For FogDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOGDEFINITION
 // Include Headers or Declare Types Here
 
 

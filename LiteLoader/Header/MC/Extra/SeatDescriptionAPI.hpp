@@ -1,5 +1,5 @@
 //Extra Part For SeatDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SEATDESCRIPTION
 // Include Headers or Declare Types Here
 
 

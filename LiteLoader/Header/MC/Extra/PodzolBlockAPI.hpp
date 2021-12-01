@@ -1,5 +1,5 @@
 //Extra Part For PodzolBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PODZOLBLOCK
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CARPETBLOCK
 #include "Extra/CarpetBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CARPETBLOCK
 class CarpetBlock : public BlockLegacy {
 #include "Extra/CarpetBlockAPI.hpp"
 public:

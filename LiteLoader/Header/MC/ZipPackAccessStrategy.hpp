@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PackAccessStrategy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ZIPPACKACCESSSTRATEGY
 #include "Extra/ZipPackAccessStrategyAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ZIPPACKACCESSSTRATEGY
 class ZipPackAccessStrategy : public PackAccessStrategy {
 #include "Extra/ZipPackAccessStrategyAPI.hpp"
 public:

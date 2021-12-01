@@ -1,5 +1,5 @@
 //Extra Part For TridentImpalerEnchant.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRIDENTIMPALERENCHANT
 // Include Headers or Declare Types Here
 
 

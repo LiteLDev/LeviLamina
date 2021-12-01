@@ -1,5 +1,5 @@
 //Extra Part For MerchantRecipeList.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MERCHANTRECIPELIST
 // Include Headers or Declare Types Here
 
 

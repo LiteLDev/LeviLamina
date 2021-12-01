@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PackError.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EDUCATIONMETADATAERROR
 #include "Extra/EducationMetadataErrorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EDUCATIONMETADATAERROR
 class EducationMetadataError : public PackError {
 #include "Extra/EducationMetadataErrorAPI.hpp"
 public:

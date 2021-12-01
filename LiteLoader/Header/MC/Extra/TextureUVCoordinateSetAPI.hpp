@@ -1,5 +1,5 @@
 //Extra Part For TextureUVCoordinateSet.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEXTUREUVCOORDINATESET
 // Include Headers or Declare Types Here
 
 

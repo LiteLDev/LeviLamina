@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FISHINGHOOK
 #include "Extra/FishingHookAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FISHINGHOOK
 class FishingHook : public Actor {
 #include "Extra/FishingHookAPI.hpp"
 public:

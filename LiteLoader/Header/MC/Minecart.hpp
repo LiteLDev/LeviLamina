@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINECART
 #include "Extra/MinecartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINECART
 class Minecart : public Actor {
 #include "Extra/MinecartAPI.hpp"
 public:

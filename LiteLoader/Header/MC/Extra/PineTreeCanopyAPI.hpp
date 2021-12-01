@@ -1,5 +1,5 @@
 //Extra Part For PineTreeCanopy.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PINETREECANOPY
 // Include Headers or Declare Types Here
 
 

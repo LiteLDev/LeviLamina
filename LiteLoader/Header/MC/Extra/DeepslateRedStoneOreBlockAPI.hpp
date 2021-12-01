@@ -1,5 +1,5 @@
 //Extra Part For DeepslateRedStoneOreBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEEPSLATEREDSTONEOREBLOCK
 // Include Headers or Declare Types Here
 
 

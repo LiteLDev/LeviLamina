@@ -1,5 +1,5 @@
 //Extra Part For AddPaintingPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ADDPAINTINGPACKET
 // Include Headers or Declare Types Here
 
 

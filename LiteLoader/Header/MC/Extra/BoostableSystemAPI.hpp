@@ -1,5 +1,5 @@
 //Extra Part For BoostableSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOOSTABLESYSTEM
 // Include Headers or Declare Types Here
 
 

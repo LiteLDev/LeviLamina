@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEBUGINFOPACKET
 #include "Extra/DebugInfoPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEBUGINFOPACKET
 class DebugInfoPacket : public Packet {
 #include "Extra/DebugInfoPacketAPI.hpp"
 public:

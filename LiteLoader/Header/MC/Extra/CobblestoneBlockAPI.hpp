@@ -1,5 +1,5 @@
 //Extra Part For CobblestoneBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COBBLESTONEBLOCK
 // Include Headers or Declare Types Here
 
 

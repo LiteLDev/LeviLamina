@@ -1,5 +1,5 @@
 //Extra Part For HudScreenCapabilities.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HUDSCREENCAPABILITIES
 // Include Headers or Declare Types Here
 
 

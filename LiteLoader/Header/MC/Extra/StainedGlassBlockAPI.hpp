@@ -1,5 +1,5 @@
 //Extra Part For StainedGlassBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STAINEDGLASSBLOCK
 // Include Headers or Declare Types Here
 
 

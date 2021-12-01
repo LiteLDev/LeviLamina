@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BUSHBLOCK
 #include "Extra/BushBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BUSHBLOCK
 class BushBlock : public BlockLegacy {
 #include "Extra/BushBlockAPI.hpp"
 public:

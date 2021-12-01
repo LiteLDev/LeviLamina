@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ItemStackRequestActionTransferBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONSWAP
 #include "Extra/ItemStackRequestActionSwapAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONSWAP
 class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionSwapAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLUEFIREBLOCK
 #include "Extra/BlueFireBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLUEFIREBLOCK
 class BlueFireBlock : public BlockLegacy {
 #include "Extra/BlueFireBlockAPI.hpp"
 public:

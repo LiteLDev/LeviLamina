@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseRailBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_POWEREDRAILBLOCK
 #include "Extra/PoweredRailBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_POWEREDRAILBLOCK
 class PoweredRailBlock : public BaseRailBlock {
 #include "Extra/PoweredRailBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_KELPBLOCK
 #include "Extra/KelpBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_KELPBLOCK
 class KelpBlock : public BlockLegacy {
 #include "Extra/KelpBlockAPI.hpp"
 public:

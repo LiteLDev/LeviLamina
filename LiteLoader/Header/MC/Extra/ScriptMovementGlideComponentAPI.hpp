@@ -1,5 +1,5 @@
 //Extra Part For ScriptMovementGlideComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTMOVEMENTGLIDECOMPONENT
 // Include Headers or Declare Types Here
 
 

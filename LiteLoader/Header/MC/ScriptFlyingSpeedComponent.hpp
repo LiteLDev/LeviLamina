@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTFLYINGSPEEDCOMPONENT
 #include "Extra/ScriptFlyingSpeedComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTFLYINGSPEEDCOMPONENT
 class ScriptFlyingSpeedComponent : public ScriptActorComponent {
 #include "Extra/ScriptFlyingSpeedComponentAPI.hpp"
 public:

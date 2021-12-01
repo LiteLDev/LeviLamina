@@ -1,5 +1,5 @@
 //Extra Part For ServerCommunicationInterface.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERCOMMUNICATIONINTERFACE
 // Include Headers or Declare Types Here
 
 

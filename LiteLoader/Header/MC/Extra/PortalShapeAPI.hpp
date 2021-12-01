@@ -1,5 +1,5 @@
 //Extra Part For PortalShape.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PORTALSHAPE
 // Include Headers or Declare Types Here
 
 

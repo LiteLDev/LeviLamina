@@ -1,5 +1,5 @@
 //Extra Part For EducationMetadataError.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EDUCATIONMETADATAERROR
 // Include Headers or Declare Types Here
 
 

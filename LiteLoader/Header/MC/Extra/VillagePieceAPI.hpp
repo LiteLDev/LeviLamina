@@ -1,5 +1,5 @@
 //Extra Part For VillagePiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VILLAGEPIECE
 // Include Headers or Declare Types Here
 
 

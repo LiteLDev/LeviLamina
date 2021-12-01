@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetherFortressPiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NBCASTLECORRIDORTBALCONYPIECE
 #include "Extra/NBCastleCorridorTBalconyPieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NBCASTLECORRIDORTBALCONYPIECE
 class NBCastleCorridorTBalconyPiece : public NetherFortressPiece {
 #include "Extra/NBCastleCorridorTBalconyPieceAPI.hpp"
 public:

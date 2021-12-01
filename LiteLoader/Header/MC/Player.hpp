@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLAYER
 #include "Extra/PlayerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLAYER
 class Player : public Mob {
 #include "Extra/PlayerAPI.hpp"
 public:

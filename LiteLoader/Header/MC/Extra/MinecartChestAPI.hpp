@@ -1,5 +1,5 @@
 //Extra Part For MinecartChest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINECARTCHEST
 // Include Headers or Declare Types Here
 
 

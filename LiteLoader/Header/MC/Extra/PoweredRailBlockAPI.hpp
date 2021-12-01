@@ -1,5 +1,5 @@
 //Extra Part For PoweredRailBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_POWEREDRAILBLOCK
 // Include Headers or Declare Types Here
 
 

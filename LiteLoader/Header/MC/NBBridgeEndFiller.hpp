@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetherFortressPiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NBBRIDGEENDFILLER
 #include "Extra/NBBridgeEndFillerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NBBRIDGEENDFILLER
 class NBBridgeEndFiller : public NetherFortressPiece {
 #include "Extra/NBBridgeEndFillerAPI.hpp"
 public:

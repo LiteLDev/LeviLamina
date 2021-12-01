@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKPILEFEATURE
 #include "Extra/BlockPileFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKPILEFEATURE
 class BlockPileFeature : public Feature {
 #include "Extra/BlockPileFeatureAPI.hpp"
 public:

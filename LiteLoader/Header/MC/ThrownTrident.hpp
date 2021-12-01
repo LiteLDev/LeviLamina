@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AbstractArrow.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_THROWNTRIDENT
 #include "Extra/ThrownTridentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_THROWNTRIDENT
 class ThrownTrident : public AbstractArrow {
 #include "Extra/ThrownTridentAPI.hpp"
 public:

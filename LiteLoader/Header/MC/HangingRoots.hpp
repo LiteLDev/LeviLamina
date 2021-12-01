@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HANGINGROOTS
 #include "Extra/HangingRootsAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HANGINGROOTS
 class HangingRoots : public BlockLegacy {
 #include "Extra/HangingRootsAPI.hpp"
 public:

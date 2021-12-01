@@ -1,5 +1,5 @@
 //Extra Part For SurfaceBuilderRegistry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SURFACEBUILDERREGISTRY
 // Include Headers or Declare Types Here
 
 

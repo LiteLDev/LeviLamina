@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CORALHANGFEATURE
 #include "Extra/CoralHangFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CORALHANGFEATURE
 class CoralHangFeature : public Feature {
 #include "Extra/CoralHangFeatureAPI.hpp"
 public:

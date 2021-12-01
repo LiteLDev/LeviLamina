@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StairBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CUTCOPPERSTAIRS
 #include "Extra/CutCopperStairsAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CUTCOPPERSTAIRS
 class CutCopperStairs : public StairBlock {
 #include "Extra/CutCopperStairsAPI.hpp"
 public:

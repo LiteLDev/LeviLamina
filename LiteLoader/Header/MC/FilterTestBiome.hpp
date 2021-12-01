@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTBIOME
 #include "Extra/FilterTestBiomeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTBIOME
 class FilterTestBiome : public FilterTest {
 #include "Extra/FilterTestBiomeAPI.hpp"
 public:

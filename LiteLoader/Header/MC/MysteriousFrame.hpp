@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MYSTERIOUSFRAME
 #include "Extra/MysteriousFrameAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MYSTERIOUSFRAME
 class MysteriousFrame : public BlockLegacy {
 #include "Extra/MysteriousFrameAPI.hpp"
 public:

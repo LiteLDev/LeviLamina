@@ -1,5 +1,5 @@
 //Extra Part For BellBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BELLBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

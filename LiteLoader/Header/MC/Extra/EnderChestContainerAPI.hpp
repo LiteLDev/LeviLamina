@@ -1,5 +1,5 @@
 //Extra Part For EnderChestContainer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENDERCHESTCONTAINER
 // Include Headers or Declare Types Here
 
 

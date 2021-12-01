@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveToLiquidGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOVETOLAVAGOAL
 #include "Extra/MoveToLavaGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOVETOLAVAGOAL
 class MoveToLavaGoal : public MoveToLiquidGoal {
 #include "Extra/MoveToLavaGoalAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For PistonBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PISTONBLOCK
 // Include Headers or Declare Types Here
 
 

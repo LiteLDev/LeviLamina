@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TargetGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HURTBYTARGETGOAL
 #include "Extra/HurtByTargetGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HURTBYTARGETGOAL
 class HurtByTargetGoal : public TargetGoal {
 #include "Extra/HurtByTargetGoalAPI.hpp"
 public:

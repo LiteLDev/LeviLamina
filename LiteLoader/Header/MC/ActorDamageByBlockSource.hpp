@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorDamageSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORDAMAGEBYBLOCKSOURCE
 #include "Extra/ActorDamageByBlockSourceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORDAMAGEBYBLOCKSOURCE
 class ActorDamageByBlockSource : public ActorDamageSource {
 #include "Extra/ActorDamageByBlockSourceAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BlockEventDispatcher.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKEVENTDISPATCHER
 // Include Headers or Declare Types Here
 
 

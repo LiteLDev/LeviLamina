@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkHandler.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTEVENTCOORDINATOR
 #include "Extra/ScriptEventCoordinatorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTEVENTCOORDINATOR
 class ScriptEventCoordinator : public NetworkHandler {
 #include "Extra/ScriptEventCoordinatorAPI.hpp"
 public:

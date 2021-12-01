@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENTITYSERVERPACKET
 #include "Extra/EntityServerPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENTITYSERVERPACKET
 class EntityServerPacket : public Packet {
 #include "Extra/EntityServerPacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SetItemNameFunction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETITEMNAMEFUNCTION
 // Include Headers or Declare Types Here
 
 

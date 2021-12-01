@@ -1,5 +1,5 @@
 //Extra Part For SimpleContainer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SIMPLECONTAINER
 // Include Headers or Declare Types Here
 
 

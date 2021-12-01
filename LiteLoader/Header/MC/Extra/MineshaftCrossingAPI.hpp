@@ -1,5 +1,5 @@
 //Extra Part For MineshaftCrossing.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINESHAFTCROSSING
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PRISMARINEBLOCK
 #include "Extra/PrismarineBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PRISMARINEBLOCK
 class PrismarineBlock : public BlockLegacy {
 #include "Extra/PrismarineBlockAPI.hpp"
 public:

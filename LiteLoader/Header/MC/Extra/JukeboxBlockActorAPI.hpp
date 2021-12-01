@@ -1,5 +1,5 @@
 //Extra Part For JukeboxBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_JUKEBOXBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

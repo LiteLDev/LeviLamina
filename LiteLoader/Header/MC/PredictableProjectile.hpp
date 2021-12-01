@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PREDICTABLEPROJECTILE
 #include "Extra/PredictableProjectileAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PREDICTABLEPROJECTILE
 class PredictableProjectile : public Actor {
 #include "Extra/PredictableProjectileAPI.hpp"
 public:

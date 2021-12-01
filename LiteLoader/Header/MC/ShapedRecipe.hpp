@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHAPEDRECIPE
 #include "Extra/ShapedRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHAPEDRECIPE
 class ShapedRecipe : public Recipe {
 #include "Extra/ShapedRecipeAPI.hpp"
 public:

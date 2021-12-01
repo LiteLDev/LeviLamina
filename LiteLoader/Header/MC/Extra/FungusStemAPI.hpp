@@ -1,5 +1,5 @@
 //Extra Part For FungusStem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FUNGUSSTEM
 // Include Headers or Declare Types Here
 
 

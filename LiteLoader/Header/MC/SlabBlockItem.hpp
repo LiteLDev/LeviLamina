@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SLABBLOCKITEM
 #include "Extra/SlabBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SLABBLOCKITEM
 class SlabBlockItem : public BlockItem {
 #include "Extra/SlabBlockItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For EnchantingTableBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENCHANTINGTABLEBLOCK
 // Include Headers or Declare Types Here
 
 

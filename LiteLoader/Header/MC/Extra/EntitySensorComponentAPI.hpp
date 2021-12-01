@@ -1,5 +1,5 @@
 //Extra Part For EntitySensorComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENTITYSENSORCOMPONENT
 // Include Headers or Declare Types Here
 
 

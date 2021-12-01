@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_IRONGOLEM
 #include "Extra/IronGolemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_IRONGOLEM
 class IronGolem : public Mob {
 #include "Extra/IronGolemAPI.hpp"
 public:

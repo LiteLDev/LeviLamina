@@ -1,5 +1,5 @@
 //Extra Part For MoveInputHandler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVEINPUTHANDLER
 // Include Headers or Declare Types Here
 
 

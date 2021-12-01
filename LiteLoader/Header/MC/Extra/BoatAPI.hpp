@@ -1,5 +1,5 @@
 //Extra Part For Boat.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOAT
 // Include Headers or Declare Types Here
 
 

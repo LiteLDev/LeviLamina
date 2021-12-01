@@ -1,5 +1,5 @@
 //Extra Part For StonecutterContainerManagerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STONECUTTERCONTAINERMANAGERMODEL
 // Include Headers or Declare Types Here
 
 

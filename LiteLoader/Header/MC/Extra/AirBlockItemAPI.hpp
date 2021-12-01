@@ -1,5 +1,5 @@
 //Extra Part For AirBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AIRBLOCKITEM
 // Include Headers or Declare Types Here
 
 

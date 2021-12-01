@@ -1,5 +1,5 @@
 //Extra Part For RotateState.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ROTATESTATE
 // Include Headers or Declare Types Here
 
 

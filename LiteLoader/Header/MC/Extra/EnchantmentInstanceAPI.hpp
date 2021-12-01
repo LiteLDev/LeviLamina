@@ -1,5 +1,5 @@
 //Extra Part For EnchantmentInstance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENCHANTMENTINSTANCE
 // Include Headers or Declare Types Here
 
 

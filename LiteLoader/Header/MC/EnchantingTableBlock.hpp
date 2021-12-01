@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENCHANTINGTABLEBLOCK
 #include "Extra/EnchantingTableBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENCHANTINGTABLEBLOCK
 class EnchantingTableBlock : public ActorBlock {
 #include "Extra/EnchantingTableBlockAPI.hpp"
 public:

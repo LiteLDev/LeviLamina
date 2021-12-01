@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LookAtActorGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LOOKATENTITYGOAL
 #include "Extra/LookAtEntityGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LOOKATENTITYGOAL
 class LookAtEntityGoal : public LookAtActorGoal {
 #include "Extra/LookAtEntityGoalAPI.hpp"
 public:

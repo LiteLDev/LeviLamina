@@ -1,5 +1,5 @@
 //Extra Part For OceanMonumentFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OCEANMONUMENTFEATURE
 // Include Headers or Declare Types Here
 
 

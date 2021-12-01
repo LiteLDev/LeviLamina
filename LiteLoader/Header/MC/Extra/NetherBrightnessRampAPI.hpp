@@ -1,5 +1,5 @@
 //Extra Part For NetherBrightnessRamp.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETHERBRIGHTNESSRAMP
 // Include Headers or Declare Types Here
 
 

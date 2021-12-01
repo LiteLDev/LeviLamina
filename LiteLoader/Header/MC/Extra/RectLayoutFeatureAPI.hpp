@@ -1,5 +1,5 @@
 //Extra Part For RectLayoutFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RECTLAYOUTFEATURE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For MovingBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVINGBLOCK
 // Include Headers or Declare Types Here
 
 

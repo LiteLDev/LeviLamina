@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMBATREGENERATIONSYSTEM
 #include "Extra/CombatRegenerationSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMBATREGENERATIONSYSTEM
 class CombatRegenerationSystem : public ITickingSystem {
 #include "Extra/CombatRegenerationSystemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For DropItemForDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DROPITEMFORDEFINITION
 // Include Headers or Declare Types Here
 
 

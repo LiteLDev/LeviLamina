@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WATERANIMAL
 #include "Extra/WaterAnimalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WATERANIMAL
 class WaterAnimal : public Mob {
 #include "Extra/WaterAnimalAPI.hpp"
 public:

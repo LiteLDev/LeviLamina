@@ -1,5 +1,5 @@
 //Extra Part For CraftHandlerLoom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTHANDLERLOOM
 // Include Headers or Declare Types Here
 
 

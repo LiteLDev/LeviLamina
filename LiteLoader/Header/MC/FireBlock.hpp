@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FIREBLOCK
 #include "Extra/FireBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FIREBLOCK
 class FireBlock : public BlockLegacy {
 #include "Extra/FireBlockAPI.hpp"
 public:

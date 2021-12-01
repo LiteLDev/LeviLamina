@@ -1,5 +1,5 @@
 //Extra Part For TcpProxy.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TCPPROXY
 // Include Headers or Declare Types Here
 
 

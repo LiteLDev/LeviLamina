@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ELEMENTBLOCK
 #include "Extra/ElementBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ELEMENTBLOCK
 class ElementBlock : public BlockLegacy {
 #include "Extra/ElementBlockAPI.hpp"
 public:

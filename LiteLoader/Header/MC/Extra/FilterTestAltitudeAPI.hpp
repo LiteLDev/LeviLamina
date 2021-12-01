@@ -1,5 +1,5 @@
 //Extra Part For FilterTestAltitude.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTALTITUDE
 // Include Headers or Declare Types Here
 
 

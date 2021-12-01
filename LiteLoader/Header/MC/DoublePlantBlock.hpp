@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DOUBLEPLANTBLOCK
 #include "Extra/DoublePlantBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DOUBLEPLANTBLOCK
 class DoublePlantBlock : public BushBlock {
 #include "Extra/DoublePlantBlockAPI.hpp"
 public:

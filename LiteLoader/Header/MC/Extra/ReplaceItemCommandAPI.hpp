@@ -1,5 +1,5 @@
 //Extra Part For ReplaceItemCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REPLACEITEMCOMMAND
 // Include Headers or Declare Types Here
 
 

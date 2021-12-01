@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DRAGONEGGBLOCK
 #include "Extra/DragonEggBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DRAGONEGGBLOCK
 class DragonEggBlock : public HeavyBlock {
 #include "Extra/DragonEggBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOSSVEGETATIONFEATURE
 #include "Extra/MossVegetationFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOSSVEGETATIONFEATURE
 class MossVegetationFeature : public Feature {
 #include "Extra/MossVegetationFeatureAPI.hpp"
 public:

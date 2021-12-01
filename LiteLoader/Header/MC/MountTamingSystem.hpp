@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOUNTTAMINGSYSTEM
 #include "Extra/MountTamingSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOUNTTAMINGSYSTEM
 class MountTamingSystem : public ITickingSystem {
 #include "Extra/MountTamingSystemAPI.hpp"
 public:

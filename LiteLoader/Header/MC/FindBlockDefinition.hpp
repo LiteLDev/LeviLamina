@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FINDBLOCKDEFINITION
 #include "Extra/FindBlockDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FINDBLOCKDEFINITION
 class FindBlockDefinition : public BehaviorDefinition {
 #include "Extra/FindBlockDefinitionAPI.hpp"
 public:

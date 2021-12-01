@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHIELDITEM
 #include "Extra/ShieldItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHIELDITEM
 class ShieldItem : public Item {
 #include "Extra/ShieldItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For LevelStorageWriteBatch.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELSTORAGEWRITEBATCH
 // Include Headers or Declare Types Here
 
 

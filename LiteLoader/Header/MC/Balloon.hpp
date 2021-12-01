@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BALLOON
 #include "Extra/BalloonAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BALLOON
 class Balloon : public PredictableProjectile {
 #include "Extra/BalloonAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BasaltColumnsFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BASALTCOLUMNSFEATURE
 // Include Headers or Declare Types Here
 
 

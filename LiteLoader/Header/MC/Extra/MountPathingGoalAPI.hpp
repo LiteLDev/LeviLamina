@@ -1,5 +1,5 @@
 //Extra Part For MountPathingGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOUNTPATHINGGOAL
 // Include Headers or Declare Types Here
 
 

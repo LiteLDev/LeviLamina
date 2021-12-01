@@ -1,5 +1,5 @@
 //Extra Part For PlayerBlockActions.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERBLOCKACTIONS
 // Include Headers or Declare Types Here
 
 

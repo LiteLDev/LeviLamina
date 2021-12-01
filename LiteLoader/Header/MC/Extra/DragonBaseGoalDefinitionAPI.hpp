@@ -1,5 +1,5 @@
 //Extra Part For DragonBaseGoalDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DRAGONBASEGOALDEFINITION
 // Include Headers or Declare Types Here
 
 

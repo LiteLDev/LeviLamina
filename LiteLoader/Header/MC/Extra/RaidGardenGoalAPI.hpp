@@ -1,5 +1,5 @@
 //Extra Part For RaidGardenGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAIDGARDENGOAL
 // Include Headers or Declare Types Here
 
 

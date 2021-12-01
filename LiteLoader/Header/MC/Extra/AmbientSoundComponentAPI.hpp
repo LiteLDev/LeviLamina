@@ -1,5 +1,5 @@
 //Extra Part For AmbientSoundComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AMBIENTSOUNDCOMPONENT
 // Include Headers or Declare Types Here
 
 

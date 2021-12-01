@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureStart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCATTEREDFEATURESTART
 #include "Extra/ScatteredFeatureStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCATTEREDFEATURESTART
 class ScatteredFeatureStart : public StructureStart {
 #include "Extra/ScatteredFeatureStartAPI.hpp"
 public:

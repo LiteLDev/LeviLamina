@@ -1,5 +1,5 @@
 //Extra Part For BlockCommandOrigin.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKCOMMANDORIGIN
 // Include Headers or Declare Types Here
 
 

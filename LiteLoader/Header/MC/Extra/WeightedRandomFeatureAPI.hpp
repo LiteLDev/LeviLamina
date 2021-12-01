@@ -1,5 +1,5 @@
 //Extra Part For WeightedRandomFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WEIGHTEDRANDOMFEATURE
 // Include Headers or Declare Types Here
 
 

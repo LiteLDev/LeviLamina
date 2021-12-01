@@ -1,5 +1,5 @@
 //Extra Part For TagCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TAGCOMMAND
 // Include Headers or Declare Types Here
 
 

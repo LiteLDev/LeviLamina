@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_METALBLOCK
 #include "Extra/MetalBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_METALBLOCK
 class MetalBlock : public BlockLegacy {
 #include "Extra/MetalBlockAPI.hpp"
 public:

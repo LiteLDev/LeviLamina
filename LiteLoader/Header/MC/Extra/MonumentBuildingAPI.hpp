@@ -1,5 +1,5 @@
 //Extra Part For MonumentBuilding.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MONUMENTBUILDING
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BlockSourceComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKSOURCECOMPONENT
 // Include Headers or Declare Types Here
 
 

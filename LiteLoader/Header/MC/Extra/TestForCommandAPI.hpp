@@ -1,5 +1,5 @@
 //Extra Part For TestForCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TESTFORCOMMAND
 // Include Headers or Declare Types Here
 
 

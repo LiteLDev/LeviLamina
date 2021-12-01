@@ -1,5 +1,5 @@
 //Extra Part For RedStoneWireBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REDSTONEWIREBLOCK
 // Include Headers or Declare Types Here
 
 

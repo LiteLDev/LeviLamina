@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LODESTONEBLOCK
 #include "Extra/LodestoneBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LODESTONEBLOCK
 class LodestoneBlock : public ActorBlock {
 #include "Extra/LodestoneBlockAPI.hpp"
 public:

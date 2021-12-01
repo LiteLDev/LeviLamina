@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseScriptBlockLiquidContainerComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTBLOCKLAVACONTAINERCOMPONENT
 #include "Extra/ScriptBlockLavaContainerComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTBLOCKLAVACONTAINERCOMPONENT
 class ScriptBlockLavaContainerComponent : public BaseScriptBlockLiquidContainerComponent {
 #include "Extra/ScriptBlockLavaContainerComponentAPI.hpp"
 public:

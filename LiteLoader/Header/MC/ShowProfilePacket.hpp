@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHOWPROFILEPACKET
 #include "Extra/ShowProfilePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHOWPROFILEPACKET
 class ShowProfilePacket : public Packet {
 #include "Extra/ShowProfilePacketAPI.hpp"
 public:

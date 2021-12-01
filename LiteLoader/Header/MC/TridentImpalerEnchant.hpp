@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRIDENTIMPALERENCHANT
 #include "Extra/TridentImpalerEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRIDENTIMPALERENCHANT
 class TridentImpalerEnchant : public Enchant {
 #include "Extra/TridentImpalerEnchantAPI.hpp"
 public:

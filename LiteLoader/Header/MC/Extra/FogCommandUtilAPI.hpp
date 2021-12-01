@@ -1,5 +1,5 @@
 //Extra Part For FogCommandUtil.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOGCOMMANDUTIL
 // Include Headers or Declare Types Here
 
 

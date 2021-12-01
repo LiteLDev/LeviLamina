@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkPeer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WEBRTCNETWORKPEER
 #include "Extra/WebRTCNetworkPeerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WEBRTCNETWORKPEER
 class WebRTCNetworkPeer : public NetworkPeer {
 #include "Extra/WebRTCNetworkPeerAPI.hpp"
 public:

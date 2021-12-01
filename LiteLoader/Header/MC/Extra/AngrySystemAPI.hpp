@@ -1,5 +1,5 @@
 //Extra Part For AngrySystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ANGRYSYSTEM
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLOTHBLOCK
 #include "Extra/ClothBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLOTHBLOCK
 class ClothBlock : public BlockLegacy {
 #include "Extra/ClothBlockAPI.hpp"
 public:

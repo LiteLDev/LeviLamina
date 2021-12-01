@@ -1,5 +1,5 @@
 //Extra Part For CanyonFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CANYONFEATURE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptEngine.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTEVENTDATA
 #include "Extra/ScriptEventDataAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTEVENTDATA
 class ScriptEventData : public ScriptEngine {
 #include "Extra/ScriptEventDataAPI.hpp"
 public:

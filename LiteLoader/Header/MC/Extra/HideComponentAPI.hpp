@@ -1,5 +1,5 @@
 //Extra Part For HideComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HIDECOMPONENT
 // Include Headers or Declare Types Here
 
 

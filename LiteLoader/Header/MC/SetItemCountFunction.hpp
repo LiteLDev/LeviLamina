@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETITEMCOUNTFUNCTION
 #include "Extra/SetItemCountFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETITEMCOUNTFUNCTION
 class SetItemCountFunction : public LootItemFunction {
 #include "Extra/SetItemCountFunctionAPI.hpp"
 public:

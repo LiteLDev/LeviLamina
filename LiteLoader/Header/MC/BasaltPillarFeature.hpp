@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASALTPILLARFEATURE
 #include "Extra/BasaltPillarFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASALTPILLARFEATURE
 class BasaltPillarFeature : public Feature {
 #include "Extra/BasaltPillarFeatureAPI.hpp"
 public:

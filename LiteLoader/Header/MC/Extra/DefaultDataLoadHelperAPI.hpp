@@ -1,5 +1,5 @@
 //Extra Part For DefaultDataLoadHelper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEFAULTDATALOADHELPER
 // Include Headers or Declare Types Here
 
 

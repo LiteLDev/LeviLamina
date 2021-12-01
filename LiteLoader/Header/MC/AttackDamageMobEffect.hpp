@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MobEffect.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ATTACKDAMAGEMOBEFFECT
 #include "Extra/AttackDamageMobEffectAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ATTACKDAMAGEMOBEFFECT
 class AttackDamageMobEffect : public MobEffect {
 #include "Extra/AttackDamageMobEffectAPI.hpp"
 public:

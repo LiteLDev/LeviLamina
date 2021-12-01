@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCULKSENSORBLOCK
 #include "Extra/SculkSensorBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCULKSENSORBLOCK
 class SculkSensorBlock : public ActorBlock {
 #include "Extra/SculkSensorBlockAPI.hpp"
 public:

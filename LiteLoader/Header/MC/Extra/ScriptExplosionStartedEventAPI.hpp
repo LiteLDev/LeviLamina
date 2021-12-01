@@ -1,5 +1,5 @@
 //Extra Part For ScriptExplosionStartedEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTEXPLOSIONSTARTEDEVENT
 // Include Headers or Declare Types Here
 
 

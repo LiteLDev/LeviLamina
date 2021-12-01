@@ -1,5 +1,5 @@
 //Extra Part For HorseArmorItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HORSEARMORITEM
 // Include Headers or Declare Types Here
 
 

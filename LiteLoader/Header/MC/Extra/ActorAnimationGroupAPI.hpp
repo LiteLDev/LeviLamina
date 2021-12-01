@@ -1,5 +1,5 @@
 //Extra Part For ActorAnimationGroup.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORANIMATIONGROUP
 // Include Headers or Declare Types Here
 
 

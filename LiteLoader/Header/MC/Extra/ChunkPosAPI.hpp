@@ -1,5 +1,5 @@
 //Extra Part For ChunkPos.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CHUNKPOS
 // Include Headers or Declare Types Here
 
 

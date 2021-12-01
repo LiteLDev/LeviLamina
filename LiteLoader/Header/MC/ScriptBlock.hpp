@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptObject.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTBLOCK
 #include "Extra/ScriptBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTBLOCK
 class ScriptBlock : public ScriptObject {
 #include "Extra/ScriptBlockAPI.hpp"
 public:

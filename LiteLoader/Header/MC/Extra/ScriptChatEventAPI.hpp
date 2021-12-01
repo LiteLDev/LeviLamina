@@ -1,5 +1,5 @@
 //Extra Part For ScriptChatEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTCHATEVENT
 // Include Headers or Declare Types Here
 
 

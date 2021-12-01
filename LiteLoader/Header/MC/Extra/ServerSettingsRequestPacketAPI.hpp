@@ -1,5 +1,5 @@
 //Extra Part For ServerSettingsRequestPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERSETTINGSREQUESTPACKET
 // Include Headers or Declare Types Here
 
 

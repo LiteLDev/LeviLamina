@@ -1,5 +1,5 @@
 //Extra Part For ScriptBeforeChatEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBEFORECHATEVENT
 // Include Headers or Declare Types Here
 
 

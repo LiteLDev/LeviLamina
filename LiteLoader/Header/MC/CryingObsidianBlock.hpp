@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CRYINGOBSIDIANBLOCK
 #include "Extra/CryingObsidianBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CRYINGOBSIDIANBLOCK
 class CryingObsidianBlock : public BlockLegacy {
 #include "Extra/CryingObsidianBlockAPI.hpp"
 public:

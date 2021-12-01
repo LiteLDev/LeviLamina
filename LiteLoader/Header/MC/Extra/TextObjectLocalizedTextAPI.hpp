@@ -1,5 +1,5 @@
 //Extra Part For TextObjectLocalizedText.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEXTOBJECTLOCALIZEDTEXT
 // Include Headers or Declare Types Here
 
 

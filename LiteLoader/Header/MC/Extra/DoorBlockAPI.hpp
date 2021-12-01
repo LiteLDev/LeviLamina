@@ -1,5 +1,5 @@
 //Extra Part For DoorBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DOORBLOCK
 // Include Headers or Declare Types Here
 
 

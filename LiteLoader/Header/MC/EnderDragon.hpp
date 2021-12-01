@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDERDRAGON
 #include "Extra/EnderDragonAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDERDRAGON
 class EnderDragon : public Monster {
 #include "Extra/EnderDragonAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ProducerComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REPEATERCAPACITOR
 #include "Extra/RepeaterCapacitorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REPEATERCAPACITOR
 class RepeaterCapacitor : public ProducerComponent {
 #include "Extra/RepeaterCapacitorAPI.hpp"
 public:

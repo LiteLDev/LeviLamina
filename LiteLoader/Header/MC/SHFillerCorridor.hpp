@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHFILLERCORRIDOR
 #include "Extra/SHFillerCorridorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHFILLERCORRIDOR
 class SHFillerCorridor : public StructurePiece {
 #include "Extra/SHFillerCorridorAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For CraftingTableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTINGTABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAMERAITEM
 #include "Extra/CameraItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAMERAITEM
 class CameraItem : public Item {
 #include "Extra/CameraItemAPI.hpp"
 public:

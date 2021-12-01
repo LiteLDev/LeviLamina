@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEGACYCHUNKSTORAGE
 #include "Extra/LegacyChunkStorageAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEGACYCHUNKSTORAGE
 class LegacyChunkStorage : public ChunkSource {
 #include "Extra/LegacyChunkStorageAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For LeafBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEAFBLOCK
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For MockUnknownBlockTypeRegistry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOCKUNKNOWNBLOCKTYPEREGISTRY
 // Include Headers or Declare Types Here
 
 

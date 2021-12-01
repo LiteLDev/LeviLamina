@@ -1,5 +1,5 @@
 //Extra Part For BlockFlammableDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKFLAMMABLEDESCRIPTION
 // Include Headers or Declare Types Here
 
 

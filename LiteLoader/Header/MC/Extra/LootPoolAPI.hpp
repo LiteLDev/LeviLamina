@@ -1,5 +1,5 @@
 //Extra Part For LootPool.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOTPOOL
 // Include Headers or Declare Types Here
 
 

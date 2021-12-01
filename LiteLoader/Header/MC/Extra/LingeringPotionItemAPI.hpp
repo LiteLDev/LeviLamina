@@ -1,5 +1,5 @@
 //Extra Part For LingeringPotionItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LINGERINGPOTIONITEM
 // Include Headers or Declare Types Here
 
 

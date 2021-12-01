@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRADERESUPPLYDESCRIPTION
 #include "Extra/TradeResupplyDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRADERESUPPLYDESCRIPTION
 class TradeResupplyDescription : public Description {
 #include "Extra/TradeResupplyDescriptionAPI.hpp"
 public:

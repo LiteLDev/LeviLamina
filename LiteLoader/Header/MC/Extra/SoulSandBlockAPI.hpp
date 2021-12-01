@@ -1,5 +1,5 @@
 //Extra Part For SoulSandBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SOULSANDBLOCK
 // Include Headers or Declare Types Here
 
 

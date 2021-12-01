@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PotionItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LINGERINGPOTIONITEM
 #include "Extra/LingeringPotionItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LINGERINGPOTIONITEM
 class LingeringPotionItem : public PotionItem {
 #include "Extra/LingeringPotionItemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EVOCATIONFANG
 #include "Extra/EvocationFangAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EVOCATIONFANG
 class EvocationFang : public Actor {
 #include "Extra/EvocationFangAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ScriptExplodeComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTEXPLODECOMPONENT
 // Include Headers or Declare Types Here
 
 

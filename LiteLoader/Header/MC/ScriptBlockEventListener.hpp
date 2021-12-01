@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockEventListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTBLOCKEVENTLISTENER
 #include "Extra/ScriptBlockEventListenerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTBLOCKEVENTLISTENER
 class ScriptBlockEventListener : public BlockEventListener {
 #include "Extra/ScriptBlockEventListenerAPI.hpp"
 public:

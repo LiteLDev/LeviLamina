@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MELONBLOCK
 #include "Extra/MelonBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MELONBLOCK
 class MelonBlock : public BlockLegacy {
 #include "Extra/MelonBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DISCONNECTPACKET
 #include "Extra/DisconnectPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DISCONNECTPACKET
 class DisconnectPacket : public Packet {
 #include "Extra/DisconnectPacketAPI.hpp"
 public:

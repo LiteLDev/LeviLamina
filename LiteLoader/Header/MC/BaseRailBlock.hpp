@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASERAILBLOCK
 #include "Extra/BaseRailBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASERAILBLOCK
 class BaseRailBlock : public BlockLegacy {
 #include "Extra/BaseRailBlockAPI.hpp"
 public:

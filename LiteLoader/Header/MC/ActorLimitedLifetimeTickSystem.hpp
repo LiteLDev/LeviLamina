@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORLIMITEDLIFETIMETICKSYSTEM
 #include "Extra/ActorLimitedLifetimeTickSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORLIMITEDLIFETIMETICKSYSTEM
 class ActorLimitedLifetimeTickSystem : public ITickingSystem {
 #include "Extra/ActorLimitedLifetimeTickSystemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHESTBLOCK
 #include "Extra/ChestBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHESTBLOCK
 class ChestBlock : public ActorBlock {
 #include "Extra/ChestBlockAPI.hpp"
 public:

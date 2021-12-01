@@ -1,5 +1,5 @@
 //Extra Part For EmotePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EMOTEPACKET
 // Include Headers or Declare Types Here
 
 

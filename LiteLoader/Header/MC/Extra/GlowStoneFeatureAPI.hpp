@@ -1,5 +1,5 @@
 //Extra Part For GlowStoneFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GLOWSTONEFEATURE
 // Include Headers or Declare Types Here
 
 

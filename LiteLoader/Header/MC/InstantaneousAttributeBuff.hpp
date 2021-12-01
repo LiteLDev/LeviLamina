@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AttributeBuff.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INSTANTANEOUSATTRIBUTEBUFF
 #include "Extra/InstantaneousAttributeBuffAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INSTANTANEOUSATTRIBUTEBUFF
 class InstantaneousAttributeBuff : public AttributeBuff {
 #include "Extra/InstantaneousAttributeBuffAPI.hpp"
 public:

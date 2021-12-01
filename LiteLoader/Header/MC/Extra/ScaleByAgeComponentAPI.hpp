@@ -1,5 +1,5 @@
 //Extra Part For ScaleByAgeComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCALEBYAGECOMPONENT
 // Include Headers or Declare Types Here
 
 

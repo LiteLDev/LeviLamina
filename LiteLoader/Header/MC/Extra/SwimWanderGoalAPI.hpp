@@ -1,5 +1,5 @@
 //Extra Part For SwimWanderGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWIMWANDERGOAL
 // Include Headers or Declare Types Here
 
 

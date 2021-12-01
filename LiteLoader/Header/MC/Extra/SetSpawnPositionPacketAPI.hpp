@@ -1,5 +1,5 @@
 //Extra Part For SetSpawnPositionPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETSPAWNPOSITIONPACKET
 // Include Headers or Declare Types Here
 
 

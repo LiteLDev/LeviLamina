@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMobSpawner.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEFAULTMOBSPAWNER
 #include "Extra/DefaultMobSpawnerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEFAULTMOBSPAWNER
 class DefaultMobSpawner : public BaseMobSpawner {
 #include "Extra/DefaultMobSpawnerAPI.hpp"
 public:

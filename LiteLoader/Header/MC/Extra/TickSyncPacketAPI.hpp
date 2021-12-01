@@ -1,5 +1,5 @@
 //Extra Part For TickSyncPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TICKSYNCPACKET
 // Include Headers or Declare Types Here
 
 

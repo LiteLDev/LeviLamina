@@ -1,5 +1,5 @@
 //Extra Part For HashedString.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HASHEDSTRING
 // Include Headers or Declare Types Here
 
 

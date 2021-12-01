@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SLIMEBLOCK
 #include "Extra/SlimeBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SLIMEBLOCK
 class SlimeBlock : public BlockLegacy {
 #include "Extra/SlimeBlockAPI.hpp"
 public:

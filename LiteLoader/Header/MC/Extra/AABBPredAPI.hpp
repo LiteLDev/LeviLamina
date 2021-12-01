@@ -1,5 +1,5 @@
 //Extra Part For AABBPred.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AABBPRED
 // Include Headers or Declare Types Here
 
 

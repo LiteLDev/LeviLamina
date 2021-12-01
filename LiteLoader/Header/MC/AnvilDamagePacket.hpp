@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ANVILDAMAGEPACKET
 #include "Extra/AnvilDamagePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ANVILDAMAGEPACKET
 class AnvilDamagePacket : public Packet {
 #include "Extra/AnvilDamagePacketAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WEBBLOCK
 #include "Extra/WebBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WEBBLOCK
 class WebBlock : public BlockLegacy {
 #include "Extra/WebBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For LevelDbRandomAccessFile.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELDBRANDOMACCESSFILE
 // Include Headers or Declare Types Here
 
 

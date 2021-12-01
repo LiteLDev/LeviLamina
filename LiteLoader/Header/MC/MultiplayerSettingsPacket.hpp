@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MULTIPLAYERSETTINGSPACKET
 #include "Extra/MultiplayerSettingsPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MULTIPLAYERSETTINGSPACKET
 class MultiplayerSettingsPacket : public Packet {
 #include "Extra/MultiplayerSettingsPacketAPI.hpp"
 public:

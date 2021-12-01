@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SUBCHUNKREQUESTPACKET
 #include "Extra/SubChunkRequestPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SUBCHUNKREQUESTPACKET
 class SubChunkRequestPacket : public Packet {
 #include "Extra/SubChunkRequestPacketAPI.hpp"
 public:

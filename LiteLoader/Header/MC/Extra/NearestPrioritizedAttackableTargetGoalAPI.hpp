@@ -1,5 +1,5 @@
 //Extra Part For NearestPrioritizedAttackableTargetGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NEARESTPRIORITIZEDATTACKABLETARGETGOAL
 // Include Headers or Declare Types Here
 
 

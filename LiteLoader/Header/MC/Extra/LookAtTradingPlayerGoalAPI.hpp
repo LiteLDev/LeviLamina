@@ -1,5 +1,5 @@
 //Extra Part For LookAtTradingPlayerGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOKATTRADINGPLAYERGOAL
 // Include Headers or Declare Types Here
 
 

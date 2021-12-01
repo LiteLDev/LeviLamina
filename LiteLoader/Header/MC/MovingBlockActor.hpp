@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOVINGBLOCKACTOR
 #include "Extra/MovingBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOVINGBLOCKACTOR
 class MovingBlockActor : public BlockActor {
 #include "Extra/MovingBlockActorAPI.hpp"
 public:

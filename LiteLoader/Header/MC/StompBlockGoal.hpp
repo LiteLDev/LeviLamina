@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STOMPBLOCKGOAL
 #include "Extra/StompBlockGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STOMPBLOCKGOAL
 class StompBlockGoal : public BaseMoveToGoal {
 #include "Extra/StompBlockGoalAPI.hpp"
 public:

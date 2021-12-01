@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SILVERFISH
 #include "Extra/SilverfishAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SILVERFISH
 class Silverfish : public Monster {
 #include "Extra/SilverfishAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For FilterTestLightLevel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTLIGHTLEVEL
 // Include Headers or Declare Types Here
 
 

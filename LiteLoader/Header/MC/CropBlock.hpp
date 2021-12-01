@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CROPBLOCK
 #include "Extra/CropBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CROPBLOCK
 class CropBlock : public BushBlock {
 #include "Extra/CropBlockAPI.hpp"
 public:

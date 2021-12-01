@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LeafBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NEWLEAFBLOCK
 #include "Extra/NewLeafBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NEWLEAFBLOCK
 class NewLeafBlock : public LeafBlock {
 #include "Extra/NewLeafBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For IconItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ICONITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

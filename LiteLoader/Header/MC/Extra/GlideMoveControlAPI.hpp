@@ -1,5 +1,5 @@
 //Extra Part For GlideMoveControl.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GLIDEMOVECONTROL
 // Include Headers or Declare Types Here
 
 

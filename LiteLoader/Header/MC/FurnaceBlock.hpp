@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FURNACEBLOCK
 #include "Extra/FurnaceBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FURNACEBLOCK
 class FurnaceBlock : public ActorBlock {
 #include "Extra/FurnaceBlockAPI.hpp"
 public:

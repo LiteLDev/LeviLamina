@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RandomStrollGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WITHERRANDOMATTACKPOSGOAL
 #include "Extra/WitherRandomAttackPosGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WITHERRANDOMATTACKPOSGOAL
 class WitherRandomAttackPosGoal : public RandomStrollGoal {
 #include "Extra/WitherRandomAttackPosGoalAPI.hpp"
 public:

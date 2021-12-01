@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHSTRAIGHTSTAIRSDOWN
 #include "Extra/SHStraightStairsDownAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHSTRAIGHTSTAIRSDOWN
 class SHStraightStairsDown : public StructurePiece {
 #include "Extra/SHStraightStairsDownAPI.hpp"
 public:

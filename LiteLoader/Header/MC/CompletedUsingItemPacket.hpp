@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPLETEDUSINGITEMPACKET
 #include "Extra/CompletedUsingItemPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPLETEDUSINGITEMPACKET
 class CompletedUsingItemPacket : public Packet {
 #include "Extra/CompletedUsingItemPacketAPI.hpp"
 public:

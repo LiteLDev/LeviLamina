@@ -1,5 +1,5 @@
 //Extra Part For NetherFossilFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETHERFOSSILFEATURE
 // Include Headers or Declare Types Here
 
 

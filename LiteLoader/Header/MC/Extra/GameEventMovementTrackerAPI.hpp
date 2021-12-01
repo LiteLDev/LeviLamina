@@ -1,5 +1,5 @@
 //Extra Part For GameEventMovementTracker.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GAMEEVENTMOVEMENTTRACKER
 // Include Headers or Declare Types Here
 
 

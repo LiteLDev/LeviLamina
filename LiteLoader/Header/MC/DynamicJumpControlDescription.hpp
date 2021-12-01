@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DYNAMICJUMPCONTROLDESCRIPTION
 #include "Extra/DynamicJumpControlDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DYNAMICJUMPCONTROLDESCRIPTION
 class DynamicJumpControlDescription : public Description {
 #include "Extra/DynamicJumpControlDescriptionAPI.hpp"
 public:

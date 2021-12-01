@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_JIGSAWBLOCK
 #include "Extra/JigsawBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_JIGSAWBLOCK
 class JigsawBlock : public ActorBlock {
 #include "Extra/JigsawBlockAPI.hpp"
 public:

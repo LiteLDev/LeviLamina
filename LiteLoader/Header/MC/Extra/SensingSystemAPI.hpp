@@ -1,5 +1,5 @@
 //Extra Part For SensingSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SENSINGSYSTEM
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For FilterGroup.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERGROUP
 // Include Headers or Declare Types Here
 
 

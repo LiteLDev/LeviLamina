@@ -1,5 +1,5 @@
 //Extra Part For SculkBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCULKBLOCK
 // Include Headers or Declare Types Here
 
 

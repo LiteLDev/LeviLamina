@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkHandler.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NPCEVENTCOORDINATOR
 #include "Extra/NpcEventCoordinatorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NPCEVENTCOORDINATOR
 class NpcEventCoordinator : public NetworkHandler {
 #include "Extra/NpcEventCoordinatorAPI.hpp"
 public:

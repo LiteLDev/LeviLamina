@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INT64TAG
 #include "Extra/Int64TagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INT64TAG
 class Int64Tag : public Tag {
 #include "Extra/Int64TagAPI.hpp"
 public:

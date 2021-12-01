@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPARATORBLOCKACTOR
 #include "Extra/ComparatorBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPARATORBLOCKACTOR
 class ComparatorBlockActor : public BlockActor {
 #include "Extra/ComparatorBlockActorAPI.hpp"
 public:

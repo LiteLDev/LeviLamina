@@ -1,5 +1,5 @@
 //Extra Part For VehicleUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VEHICLEUTILS
 // Include Headers or Declare Types Here
 
 

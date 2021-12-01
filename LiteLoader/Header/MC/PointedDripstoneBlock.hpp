@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_POINTEDDRIPSTONEBLOCK
 #include "Extra/PointedDripstoneBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_POINTEDDRIPSTONEBLOCK
 class PointedDripstoneBlock : public HeavyBlock {
 #include "Extra/PointedDripstoneBlockAPI.hpp"
 public:

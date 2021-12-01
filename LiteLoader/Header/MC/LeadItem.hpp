@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEADITEM
 #include "Extra/LeadItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEADITEM
 class LeadItem : public Item {
 #include "Extra/LeadItemAPI.hpp"
 public:

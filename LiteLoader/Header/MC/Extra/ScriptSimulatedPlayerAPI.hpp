@@ -1,5 +1,5 @@
 //Extra Part For ScriptSimulatedPlayer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSIMULATEDPLAYER
 // Include Headers or Declare Types Here
 
 

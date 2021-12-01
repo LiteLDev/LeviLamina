@@ -1,5 +1,5 @@
 //Extra Part For TemplateStructurePiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEMPLATESTRUCTUREPIECE
 // Include Headers or Declare Types Here
 
 

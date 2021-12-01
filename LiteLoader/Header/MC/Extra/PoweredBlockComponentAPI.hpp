@@ -1,5 +1,5 @@
 //Extra Part For PoweredBlockComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_POWEREDBLOCKCOMPONENT
 // Include Headers or Declare Types Here
 
 

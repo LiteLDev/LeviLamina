@@ -1,5 +1,5 @@
 //Extra Part For PetSleepWithOwnerGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PETSLEEPWITHOWNERGOAL
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKEVENTPACKET
 #include "Extra/BlockEventPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKEVENTPACKET
 class BlockEventPacket : public Packet {
 #include "Extra/BlockEventPacketAPI.hpp"
 public:

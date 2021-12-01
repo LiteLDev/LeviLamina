@@ -1,5 +1,5 @@
 //Extra Part For CopperUtil.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COPPERUTIL
 // Include Headers or Declare Types Here
 
 

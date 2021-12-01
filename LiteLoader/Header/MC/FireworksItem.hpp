@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FIREWORKSITEM
 #include "Extra/FireworksItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FIREWORKSITEM
 class FireworksItem : public Item {
 #include "Extra/FireworksItemAPI.hpp"
 public:

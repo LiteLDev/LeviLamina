@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WRITTENBOOKITEM
 #include "Extra/WrittenBookItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WRITTENBOOKITEM
 class WrittenBookItem : public Item {
 #include "Extra/WrittenBookItemAPI.hpp"
 public:

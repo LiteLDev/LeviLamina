@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEVELEVENTGENERICPACKET
 #include "Extra/LevelEventGenericPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEVELEVENTGENERICPACKET
 class LevelEventGenericPacket : public Packet {
 #include "Extra/LevelEventGenericPacketAPI.hpp"
 public:

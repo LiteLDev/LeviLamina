@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LIQUIDBLOCK
 #include "Extra/LiquidBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LIQUIDBLOCK
 class LiquidBlock : public BlockLegacy {
 #include "Extra/LiquidBlockAPI.hpp"
 public:

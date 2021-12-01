@@ -1,5 +1,5 @@
 //Extra Part For SitGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SITGOAL
 // Include Headers or Declare Types Here
 
 

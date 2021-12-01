@@ -1,5 +1,5 @@
 //Extra Part For Interaction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INTERACTION
 // Include Headers or Declare Types Here
 
 

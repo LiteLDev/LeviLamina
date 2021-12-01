@@ -1,5 +1,5 @@
 //Extra Part For ListCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LISTCOMMAND
 // Include Headers or Declare Types Here
 
 

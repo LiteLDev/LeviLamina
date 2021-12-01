@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DAYLIGHTDETECTORBLOCK
 #include "Extra/DaylightDetectorBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DAYLIGHTDETECTORBLOCK
 class DaylightDetectorBlock : public ActorBlock {
 #include "Extra/DaylightDetectorBlockAPI.hpp"
 public:

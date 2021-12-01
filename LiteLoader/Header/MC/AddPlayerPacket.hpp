@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ADDPLAYERPACKET
 #include "Extra/AddPlayerPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ADDPLAYERPACKET
 class AddPlayerPacket : public Packet {
 #include "Extra/AddPlayerPacketAPI.hpp"
 public:

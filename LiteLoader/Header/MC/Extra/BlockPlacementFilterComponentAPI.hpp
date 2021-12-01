@@ -1,5 +1,5 @@
 //Extra Part For BlockPlacementFilterComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKPLACEMENTFILTERCOMPONENT
 // Include Headers or Declare Types Here
 
 

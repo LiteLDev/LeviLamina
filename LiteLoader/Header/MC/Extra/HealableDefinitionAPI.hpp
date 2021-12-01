@@ -1,5 +1,5 @@
 //Extra Part For HealableDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HEALABLEDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For AddOceanTemperatureOperationNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ADDOCEANTEMPERATUREOPERATIONNODE
 // Include Headers or Declare Types Here
 
 

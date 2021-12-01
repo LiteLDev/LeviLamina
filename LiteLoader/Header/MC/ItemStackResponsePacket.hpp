@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMSTACKRESPONSEPACKET
 #include "Extra/ItemStackResponsePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMSTACKRESPONSEPACKET
 class ItemStackResponsePacket : public Packet {
 #include "Extra/ItemStackResponsePacketAPI.hpp"
 public:

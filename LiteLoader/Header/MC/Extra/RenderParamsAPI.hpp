@@ -1,5 +1,5 @@
 //Extra Part For RenderParams.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RENDERPARAMS
 // Include Headers or Declare Types Here
 
 

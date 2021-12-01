@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LIGHTNINGBOLT
 #include "Extra/LightningBoltAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LIGHTNINGBOLT
 class LightningBolt : public Actor {
 #include "Extra/LightningBoltAPI.hpp"
 public:

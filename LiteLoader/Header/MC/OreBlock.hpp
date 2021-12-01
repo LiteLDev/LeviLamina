@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OREBLOCK
 #include "Extra/OreBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OREBLOCK
 class OreBlock : public BlockLegacy {
 #include "Extra/OreBlockAPI.hpp"
 public:

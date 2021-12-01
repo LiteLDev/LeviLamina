@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AttributeScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTMOVEMENTCOMPONENT
 #include "Extra/ScriptMovementComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTMOVEMENTCOMPONENT
 class ScriptMovementComponent : public AttributeScriptActorComponent {
 #include "Extra/ScriptMovementComponentAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For AgeableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AGEABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PUMPKINBLOCKITEM
 #include "Extra/PumpkinBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PUMPKINBLOCKITEM
 class PumpkinBlockItem : public BlockItem {
 #include "Extra/PumpkinBlockItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For MapUpgradingRecipe.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MAPUPGRADINGRECIPE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXPLOSIONDECAYFUNCTION
 #include "Extra/ExplosionDecayFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXPLOSIONDECAYFUNCTION
 class ExplosionDecayFunction : public LootItemFunction {
 #include "Extra/ExplosionDecayFunctionAPI.hpp"
 public:

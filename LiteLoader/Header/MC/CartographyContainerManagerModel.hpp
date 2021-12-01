@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ContainerManagerModel.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CARTOGRAPHYCONTAINERMANAGERMODEL
 #include "Extra/CartographyContainerManagerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CARTOGRAPHYCONTAINERMANAGERMODEL
 class CartographyContainerManagerModel : public ContainerManagerModel {
 #include "Extra/CartographyContainerManagerModelAPI.hpp"
 public:

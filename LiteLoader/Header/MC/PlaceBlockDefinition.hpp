@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLACEBLOCKDEFINITION
 #include "Extra/PlaceBlockDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLACEBLOCKDEFINITION
 class PlaceBlockDefinition : public BehaviorDefinition {
 #include "Extra/PlaceBlockDefinitionAPI.hpp"
 public:

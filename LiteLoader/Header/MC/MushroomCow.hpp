@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Animal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MUSHROOMCOW
 #include "Extra/MushroomCowAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MUSHROOMCOW
 class MushroomCow : public Animal {
 #include "Extra/MushroomCowAPI.hpp"
 public:

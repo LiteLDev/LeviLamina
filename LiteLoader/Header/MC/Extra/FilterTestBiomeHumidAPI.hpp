@@ -1,5 +1,5 @@
 //Extra Part For FilterTestBiomeHumid.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTBIOMEHUMID
 // Include Headers or Declare Types Here
 
 

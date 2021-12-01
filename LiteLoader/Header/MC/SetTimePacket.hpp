@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETTIMEPACKET
 #include "Extra/SetTimePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETTIMEPACKET
 class SetTimePacket : public Packet {
 #include "Extra/SetTimePacketAPI.hpp"
 public:

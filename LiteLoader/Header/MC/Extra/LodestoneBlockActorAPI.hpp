@@ -1,5 +1,5 @@
 //Extra Part For LodestoneBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LODESTONEBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

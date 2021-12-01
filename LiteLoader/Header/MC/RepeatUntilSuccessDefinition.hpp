@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REPEATUNTILSUCCESSDEFINITION
 #include "Extra/RepeatUntilSuccessDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REPEATUNTILSUCCESSDEFINITION
 class RepeatUntilSuccessDefinition : public BehaviorDefinition {
 #include "Extra/RepeatUntilSuccessDefinitionAPI.hpp"
 public:

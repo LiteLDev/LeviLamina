@@ -1,5 +1,5 @@
 //Extra Part For PauseManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PAUSEMANAGER
 // Include Headers or Declare Types Here
 
 

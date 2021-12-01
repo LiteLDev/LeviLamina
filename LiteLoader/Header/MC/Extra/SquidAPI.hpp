@@ -1,5 +1,5 @@
 //Extra Part For Squid.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SQUID
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For Raid.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAID
 // Include Headers or Declare Types Here
 
 

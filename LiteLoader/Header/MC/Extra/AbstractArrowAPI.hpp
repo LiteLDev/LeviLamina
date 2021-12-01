@@ -1,5 +1,5 @@
 //Extra Part For AbstractArrow.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ABSTRACTARROW
 // Include Headers or Declare Types Here
 
 

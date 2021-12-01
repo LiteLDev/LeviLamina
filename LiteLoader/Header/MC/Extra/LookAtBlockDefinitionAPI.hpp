@@ -1,5 +1,5 @@
 //Extra Part For LookAtBlockDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOKATBLOCKDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DimensionBrightnessRamp.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERBRIGHTNESSRAMP
 #include "Extra/NetherBrightnessRampAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERBRIGHTNESSRAMP
 class NetherBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/NetherBrightnessRampAPI.hpp"
 public:

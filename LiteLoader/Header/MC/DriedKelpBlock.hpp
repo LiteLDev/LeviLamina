@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DRIEDKELPBLOCK
 #include "Extra/DriedKelpBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DRIEDKELPBLOCK
 class DriedKelpBlock : public BlockLegacy {
 #include "Extra/DriedKelpBlockAPI.hpp"
 public:

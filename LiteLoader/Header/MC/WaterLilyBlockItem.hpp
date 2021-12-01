@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WATERLILYBLOCKITEM
 #include "Extra/WaterLilyBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WATERLILYBLOCKITEM
 class WaterLilyBlockItem : public BlockItem {
 #include "Extra/WaterLilyBlockItemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TorchBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COLOREDTORCHBLOCK
 #include "Extra/ColoredTorchBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COLOREDTORCHBLOCK
 class ColoredTorchBlock : public TorchBlock {
 #include "Extra/ColoredTorchBlockAPI.hpp"
 public:

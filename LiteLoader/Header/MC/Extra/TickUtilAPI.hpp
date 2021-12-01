@@ -1,5 +1,5 @@
 //Extra Part For TickUtil.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TICKUTIL
 // Include Headers or Declare Types Here
 
 

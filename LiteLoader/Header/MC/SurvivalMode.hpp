@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "GameMode.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SURVIVALMODE
 #include "Extra/SurvivalModeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SURVIVALMODE
 class SurvivalMode : public GameMode {
 #include "Extra/SurvivalModeAPI.hpp"
 public:

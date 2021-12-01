@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GUARDIAN
 #include "Extra/GuardianAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GUARDIAN
 class Guardian : public Monster {
 #include "Extra/GuardianAPI.hpp"
 public:

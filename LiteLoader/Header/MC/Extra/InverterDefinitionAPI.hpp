@@ -1,5 +1,5 @@
 //Extra Part For InverterDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INVERTERDEFINITION
 // Include Headers or Declare Types Here
 
 

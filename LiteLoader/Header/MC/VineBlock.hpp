@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_VINEBLOCK
 #include "Extra/VineBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_VINEBLOCK
 class VineBlock : public BlockLegacy {
 #include "Extra/VineBlockAPI.hpp"
 public:

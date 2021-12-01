@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FROSTWALKERENCHANT
 #include "Extra/FrostWalkerEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FROSTWALKERENCHANT
 class FrostWalkerEnchant : public Enchant {
 #include "Extra/FrostWalkerEnchantAPI.hpp"
 public:

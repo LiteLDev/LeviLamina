@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHEMISTRYTABLEBLOCK
 #include "Extra/ChemistryTableBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHEMISTRYTABLEBLOCK
 class ChemistryTableBlock : public ActorBlock {
 #include "Extra/ChemistryTableBlockAPI.hpp"
 public:

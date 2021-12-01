@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_THROWABLE
 #include "Extra/ThrowableAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_THROWABLE
 class Throwable : public PredictableProjectile {
 #include "Extra/ThrowableAPI.hpp"
 public:

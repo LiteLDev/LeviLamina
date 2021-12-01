@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LAYEGGGOAL
 #include "Extra/LayEggGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LAYEGGGOAL
 class LayEggGoal : public BaseMoveToGoal {
 #include "Extra/LayEggGoalAPI.hpp"
 public:

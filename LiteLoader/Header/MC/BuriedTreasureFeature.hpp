@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BURIEDTREASUREFEATURE
 #include "Extra/BuriedTreasureFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BURIEDTREASUREFEATURE
 class BuriedTreasureFeature : public StructureFeature {
 #include "Extra/BuriedTreasureFeatureAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For MeleeAttackGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MELEEATTACKGOAL
 // Include Headers or Declare Types Here
 
 

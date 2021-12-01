@@ -1,5 +1,5 @@
 //Extra Part For ScriptBinderItemStackTemplate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBINDERITEMSTACKTEMPLATE
 // Include Headers or Declare Types Here
 
 

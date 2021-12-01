@@ -1,5 +1,5 @@
 //Extra Part For BoneAnimation.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BONEANIMATION
 // Include Headers or Declare Types Here
 
 

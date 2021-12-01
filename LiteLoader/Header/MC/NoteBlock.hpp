@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NOTEBLOCK
 #include "Extra/NoteBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NOTEBLOCK
 class NoteBlock : public ActorBlock {
 #include "Extra/NoteBlockAPI.hpp"
 public:

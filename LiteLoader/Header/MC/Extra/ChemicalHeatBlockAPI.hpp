@@ -1,5 +1,5 @@
 //Extra Part For ChemicalHeatBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CHEMICALHEATBLOCK
 // Include Headers or Declare Types Here
 
 

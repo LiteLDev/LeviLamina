@@ -1,5 +1,5 @@
 //Extra Part For VolumeBoundsDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VOLUMEBOUNDSDEFINITION
 // Include Headers or Declare Types Here
 
 

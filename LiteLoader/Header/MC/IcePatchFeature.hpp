@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ICEPATCHFEATURE
 #include "Extra/IcePatchFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ICEPATCHFEATURE
 class IcePatchFeature : public Feature {
 #include "Extra/IcePatchFeatureAPI.hpp"
 public:

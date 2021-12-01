@@ -1,5 +1,5 @@
 //Extra Part For LodestoneCompassComponentCalculator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LODESTONECOMPASSCOMPONENTCALCULATOR
 // Include Headers or Declare Types Here
 
 

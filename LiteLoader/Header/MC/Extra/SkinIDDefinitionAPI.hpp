@@ -1,5 +1,5 @@
 //Extra Part For SkinIDDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SKINIDDEFINITION
 // Include Headers or Declare Types Here
 
 

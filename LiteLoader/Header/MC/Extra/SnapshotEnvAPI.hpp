@@ -1,5 +1,5 @@
 //Extra Part For SnapshotEnv.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SNAPSHOTENV
 // Include Headers or Declare Types Here
 
 

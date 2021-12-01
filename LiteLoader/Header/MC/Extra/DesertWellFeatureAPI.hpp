@@ -1,5 +1,5 @@
 //Extra Part For DesertWellFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DESERTWELLFEATURE
 // Include Headers or Declare Types Here
 
 

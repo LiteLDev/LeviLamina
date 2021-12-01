@@ -1,5 +1,5 @@
 //Extra Part For SandStoneBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SANDSTONEBLOCK
 // Include Headers or Declare Types Here
 
 

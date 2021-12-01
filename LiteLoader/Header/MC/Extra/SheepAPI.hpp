@@ -1,5 +1,5 @@
 //Extra Part For Sheep.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHEEP
 // Include Headers or Declare Types Here
 
 

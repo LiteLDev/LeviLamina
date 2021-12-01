@@ -1,5 +1,5 @@
 //Extra Part For MoveToDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVETODEFINITION
 // Include Headers or Declare Types Here
 
 

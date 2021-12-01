@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BREWINGSTANDBLOCK
 #include "Extra/BrewingStandBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BREWINGSTANDBLOCK
 class BrewingStandBlock : public ActorBlock {
 #include "Extra/BrewingStandBlockAPI.hpp"
 public:

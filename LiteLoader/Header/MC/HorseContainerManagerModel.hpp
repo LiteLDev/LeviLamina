@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LevelContainerManagerModel.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HORSECONTAINERMANAGERMODEL
 #include "Extra/HorseContainerManagerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HORSECONTAINERMANAGERMODEL
 class HorseContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/HorseContainerManagerModelAPI.hpp"
 public:

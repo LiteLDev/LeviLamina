@@ -1,5 +1,5 @@
 //Extra Part For SuspiciousStewItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUSPICIOUSSTEWITEM
 // Include Headers or Declare Types Here
 
 

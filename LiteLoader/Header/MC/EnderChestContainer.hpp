@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FillingContainer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDERCHESTCONTAINER
 #include "Extra/EnderChestContainerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDERCHESTCONTAINER
 class EnderChestContainer : public FillingContainer {
 #include "Extra/EnderChestContainerAPI.hpp"
 public:

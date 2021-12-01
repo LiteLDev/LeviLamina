@@ -1,5 +1,5 @@
 //Extra Part For ScriptActorGameplayHandler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTACTORGAMEPLAYHANDLER
 // Include Headers or Declare Types Here
 
 

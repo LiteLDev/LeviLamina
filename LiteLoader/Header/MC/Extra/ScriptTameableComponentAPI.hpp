@@ -1,5 +1,5 @@
 //Extra Part For ScriptTameableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTTAMEABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

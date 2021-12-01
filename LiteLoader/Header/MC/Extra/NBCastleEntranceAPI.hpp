@@ -1,5 +1,5 @@
 //Extra Part For NBCastleEntrance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBCASTLEENTRANCE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WORLDLIMITCHUNKSOURCE
 #include "Extra/WorldLimitChunkSourceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WORLDLIMITCHUNKSOURCE
 class WorldLimitChunkSource : public ChunkSource {
 #include "Extra/WorldLimitChunkSourceAPI.hpp"
 public:

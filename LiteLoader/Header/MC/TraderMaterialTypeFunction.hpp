@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRADERMATERIALTYPEFUNCTION
 #include "Extra/TraderMaterialTypeFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRADERMATERIALTYPEFUNCTION
 class TraderMaterialTypeFunction : public LootItemFunction {
 #include "Extra/TraderMaterialTypeFunctionAPI.hpp"
 public:

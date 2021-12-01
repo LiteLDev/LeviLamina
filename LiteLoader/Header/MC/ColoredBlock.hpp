@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COLOREDBLOCK
 #include "Extra/ColoredBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COLOREDBLOCK
 class ColoredBlock : public BlockLegacy {
 #include "Extra/ColoredBlockAPI.hpp"
 public:

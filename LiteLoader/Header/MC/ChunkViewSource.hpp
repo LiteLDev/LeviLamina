@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHUNKVIEWSOURCE
 #include "Extra/ChunkViewSourceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHUNKVIEWSOURCE
 class ChunkViewSource : public ChunkSource {
 #include "Extra/ChunkViewSourceAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BAMBOOFEATURE
 #include "Extra/BambooFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BAMBOOFEATURE
 class BambooFeature : public Feature {
 #include "Extra/BambooFeatureAPI.hpp"
 public:

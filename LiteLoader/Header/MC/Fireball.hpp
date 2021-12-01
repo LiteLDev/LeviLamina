@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FIREBALL
 #include "Extra/FireballAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FIREBALL
 class Fireball : public PredictableProjectile {
 #include "Extra/FireballAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For GeneticsComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GENETICSCOMPONENT
 // Include Headers or Declare Types Here
 
 

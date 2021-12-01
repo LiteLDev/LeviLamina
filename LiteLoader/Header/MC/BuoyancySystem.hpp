@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BUOYANCYSYSTEM
 #include "Extra/BuoyancySystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BUOYANCYSYSTEM
 class BuoyancySystem : public ITickingSystem {
 #include "Extra/BuoyancySystemAPI.hpp"
 public:

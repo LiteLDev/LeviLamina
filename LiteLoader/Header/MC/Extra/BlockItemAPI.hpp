@@ -1,5 +1,5 @@
 //Extra Part For BlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKITEM
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScriptLevelWeatherComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTLEVELWEATHERCOMPONENT
 // Include Headers or Declare Types Here
 
 

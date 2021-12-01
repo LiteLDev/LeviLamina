@@ -1,5 +1,5 @@
 //Extra Part For ShulkerBoxBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHULKERBOXBLOCK
 // Include Headers or Declare Types Here
 
 

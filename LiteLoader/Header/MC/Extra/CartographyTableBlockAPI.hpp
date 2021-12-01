@@ -1,5 +1,5 @@
 //Extra Part For CartographyTableBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CARTOGRAPHYTABLEBLOCK
 // Include Headers or Declare Types Here
 
 

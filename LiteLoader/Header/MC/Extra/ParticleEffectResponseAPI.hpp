@@ -1,5 +1,5 @@
 //Extra Part For ParticleEffectResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PARTICLEEFFECTRESPONSE
 // Include Headers or Declare Types Here
 
 

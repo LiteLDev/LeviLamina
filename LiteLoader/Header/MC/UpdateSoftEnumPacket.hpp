@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_UPDATESOFTENUMPACKET
 #include "Extra/UpdateSoftEnumPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_UPDATESOFTENUMPACKET
 class UpdateSoftEnumPacket : public Packet {
 #include "Extra/UpdateSoftEnumPacketAPI.hpp"
 public:

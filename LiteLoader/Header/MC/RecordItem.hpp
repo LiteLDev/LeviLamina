@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RECORDITEM
 #include "Extra/RecordItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RECORDITEM
 class RecordItem : public Item {
 #include "Extra/RecordItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For EntityTypes.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENTITYTYPES
 // Include Headers or Declare Types Here
 
 

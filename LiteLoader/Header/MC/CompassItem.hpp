@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPASSITEM
 #include "Extra/CompassItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPASSITEM
 class CompassItem : public Item {
 #include "Extra/CompassItemAPI.hpp"
 public:

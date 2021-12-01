@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BOATITEM
 #include "Extra/BoatItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BOATITEM
 class BoatItem : public Item {
 #include "Extra/BoatItemAPI.hpp"
 public:

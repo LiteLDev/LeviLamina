@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BANNERBLOCK
 #include "Extra/BannerBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BANNERBLOCK
 class BannerBlock : public ActorBlock {
 #include "Extra/BannerBlockAPI.hpp"
 public:

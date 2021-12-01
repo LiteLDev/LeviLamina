@@ -1,5 +1,5 @@
 //Extra Part For FishingRodItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FISHINGRODITEM
 // Include Headers or Declare Types Here
 
 

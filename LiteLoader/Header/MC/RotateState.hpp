@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PetSleepWithOwnerState.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ROTATESTATE
 #include "Extra/RotateStateAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ROTATESTATE
 class RotateState : public PetSleepWithOwnerState {
 #include "Extra/RotateStateAPI.hpp"
 public:

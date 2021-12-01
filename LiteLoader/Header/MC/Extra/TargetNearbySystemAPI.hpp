@@ -1,5 +1,5 @@
 //Extra Part For TargetNearbySystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TARGETNEARBYSYSTEM
 // Include Headers or Declare Types Here
 
 

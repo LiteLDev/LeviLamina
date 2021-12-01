@@ -1,5 +1,5 @@
 //Extra Part For EndGatewayBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENDGATEWAYBLOCK
 // Include Headers or Declare Types Here
 
 

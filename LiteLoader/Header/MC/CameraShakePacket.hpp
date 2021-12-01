@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAMERASHAKEPACKET
 #include "Extra/CameraShakePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAMERASHAKEPACKET
 class CameraShakePacket : public Packet {
 #include "Extra/CameraShakePacketAPI.hpp"
 public:

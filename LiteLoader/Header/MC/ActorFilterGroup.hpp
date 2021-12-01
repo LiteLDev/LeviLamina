@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterGroup.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORFILTERGROUP
 #include "Extra/ActorFilterGroupAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORFILTERGROUP
 class ActorFilterGroup : public FilterGroup {
 #include "Extra/ActorFilterGroupAPI.hpp"
 public:

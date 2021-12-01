@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EVOCATIONILLAGER
 #include "Extra/EvocationIllagerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EVOCATIONILLAGER
 class EvocationIllager : public Monster {
 #include "Extra/EvocationIllagerAPI.hpp"
 public:

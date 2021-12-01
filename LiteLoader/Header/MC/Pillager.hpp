@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PILLAGER
 #include "Extra/PillagerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PILLAGER
 class Pillager : public Monster {
 #include "Extra/PillagerAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LiquidBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LIQUIDBLOCKDYNAMIC
 #include "Extra/LiquidBlockDynamicAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LIQUIDBLOCKDYNAMIC
 class LiquidBlockDynamic : public LiquidBlock {
 #include "Extra/LiquidBlockDynamicAPI.hpp"
 public:

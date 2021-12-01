@@ -1,5 +1,5 @@
 //Extra Part For ItemUseMethodMap.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMUSEMETHODMAP
 // Include Headers or Declare Types Here
 
 

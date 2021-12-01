@@ -1,5 +1,5 @@
 //Extra Part For KnockbackRules.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_KNOCKBACKRULES
 // Include Headers or Declare Types Here
 
 

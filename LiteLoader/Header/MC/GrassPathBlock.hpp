@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GRASSPATHBLOCK
 #include "Extra/GrassPathBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GRASSPATHBLOCK
 class GrassPathBlock : public BlockLegacy {
 #include "Extra/GrassPathBlockAPI.hpp"
 public:

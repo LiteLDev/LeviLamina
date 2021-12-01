@@ -1,5 +1,5 @@
 //Extra Part For ScriptDefinitionTrigger.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTDEFINITIONTRIGGER
 // Include Headers or Declare Types Here
 
 

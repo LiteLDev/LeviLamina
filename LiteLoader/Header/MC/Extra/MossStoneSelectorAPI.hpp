@@ -1,5 +1,5 @@
 //Extra Part For MossStoneSelector.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOSSSTONESELECTOR
 // Include Headers or Declare Types Here
 
 

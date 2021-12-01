@@ -1,5 +1,5 @@
 //Extra Part For ScriptBeforePistonActionEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBEFOREPISTONACTIONEVENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For CommandParameterData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDPARAMETERDATA
 // Include Headers or Declare Types Here
 #include "CommandRegistry.hpp"
 #include <string_view>

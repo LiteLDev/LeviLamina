@@ -1,5 +1,5 @@
 //Extra Part For PlaySoundPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYSOUNDPACKET
 // Include Headers or Declare Types Here
 
 

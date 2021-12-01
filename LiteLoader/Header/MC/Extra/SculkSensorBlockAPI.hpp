@@ -1,5 +1,5 @@
 //Extra Part For SculkSensorBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCULKSENSORBLOCK
 // Include Headers or Declare Types Here
 
 

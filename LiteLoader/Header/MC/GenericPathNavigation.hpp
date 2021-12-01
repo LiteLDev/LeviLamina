@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PathNavigation.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GENERICPATHNAVIGATION
 #include "Extra/GenericPathNavigationAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GENERICPATHNAVIGATION
 class GenericPathNavigation : public PathNavigation {
 #include "Extra/GenericPathNavigationAPI.hpp"
 public:

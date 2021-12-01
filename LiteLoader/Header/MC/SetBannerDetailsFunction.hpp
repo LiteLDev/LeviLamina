@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETBANNERDETAILSFUNCTION
 #include "Extra/SetBannerDetailsFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETBANNERDETAILSFUNCTION
 class SetBannerDetailsFunction : public LootItemFunction {
 #include "Extra/SetBannerDetailsFunctionAPI.hpp"
 public:

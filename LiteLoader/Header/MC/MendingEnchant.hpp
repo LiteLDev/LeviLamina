@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MENDINGENCHANT
 #include "Extra/MendingEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MENDINGENCHANT
 class MendingEnchant : public Enchant {
 #include "Extra/MendingEnchantAPI.hpp"
 public:

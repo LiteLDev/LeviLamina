@@ -1,5 +1,5 @@
 //Extra Part For SquidFleeGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SQUIDFLEEGOAL
 // Include Headers or Declare Types Here
 
 

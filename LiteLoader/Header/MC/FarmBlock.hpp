@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FARMBLOCK
 #include "Extra/FarmBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FARMBLOCK
 class FarmBlock : public BlockLegacy {
 #include "Extra/FarmBlockAPI.hpp"
 public:

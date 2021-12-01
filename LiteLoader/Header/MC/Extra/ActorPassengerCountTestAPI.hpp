@@ -1,5 +1,5 @@
 //Extra Part For ActorPassengerCountTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORPASSENGERCOUNTTEST
 // Include Headers or Declare Types Here
 
 

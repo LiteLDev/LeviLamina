@@ -1,5 +1,5 @@
 //Extra Part For KickCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_KICKCOMMAND
 // Include Headers or Declare Types Here
 
 

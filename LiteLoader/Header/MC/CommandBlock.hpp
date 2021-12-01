@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMMANDBLOCK
 #include "Extra/CommandBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMMANDBLOCK
 class CommandBlock : public ActorBlock {
 #include "Extra/CommandBlockAPI.hpp"
 public:

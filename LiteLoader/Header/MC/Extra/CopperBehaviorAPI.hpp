@@ -1,5 +1,5 @@
 //Extra Part For CopperBehavior.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COPPERBEHAVIOR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For GrantXPSubcomponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GRANTXPSUBCOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SummonActorGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUMMONACTORGOAL
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERFORTRESSFEATURE
 #include "Extra/NetherFortressFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERFORTRESSFEATURE
 class NetherFortressFeature : public StructureFeature {
 #include "Extra/NetherFortressFeatureAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SwingEventResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWINGEVENTRESPONSE
 // Include Headers or Declare Types Here
 
 

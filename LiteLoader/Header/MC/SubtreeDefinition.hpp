@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SUBTREEDEFINITION
 #include "Extra/SubtreeDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SUBTREEDEFINITION
 class SubtreeDefinition : public BehaviorDefinition {
 #include "Extra/SubtreeDefinitionAPI.hpp"
 public:

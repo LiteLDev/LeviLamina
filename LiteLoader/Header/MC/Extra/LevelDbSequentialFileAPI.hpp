@@ -1,5 +1,5 @@
 //Extra Part For LevelDbSequentialFile.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELDBSEQUENTIALFILE
 // Include Headers or Declare Types Here
 
 

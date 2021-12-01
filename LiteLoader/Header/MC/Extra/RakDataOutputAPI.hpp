@@ -1,5 +1,5 @@
 //Extra Part For RakDataOutput.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAKDATAOUTPUT
 // Include Headers or Declare Types Here
 
 

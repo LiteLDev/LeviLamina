@@ -1,5 +1,5 @@
 //Extra Part For ResourcePackManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RESOURCEPACKMANAGER
 // Include Headers or Declare Types Here
 
 

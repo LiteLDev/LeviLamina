@@ -1,5 +1,5 @@
 //Extra Part For CommandRegistry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDREGISTRY
 // Include Headers or Declare Types Here
 #include <memory>
 #include "../Command.hpp"

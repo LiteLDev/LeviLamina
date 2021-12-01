@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SAVESURROUNDINGCHUNKSSYSTEM
 #include "Extra/SaveSurroundingChunksSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SAVESURROUNDINGCHUNKSSYSTEM
 class SaveSurroundingChunksSystem : public ITickingSystem {
 #include "Extra/SaveSurroundingChunksSystemAPI.hpp"
 public:

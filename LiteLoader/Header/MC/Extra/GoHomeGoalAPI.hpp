@@ -1,5 +1,5 @@
 //Extra Part For GoHomeGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GOHOMEGOAL
 // Include Headers or Declare Types Here
 
 

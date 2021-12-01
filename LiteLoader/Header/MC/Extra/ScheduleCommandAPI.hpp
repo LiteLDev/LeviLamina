@@ -1,5 +1,5 @@
 //Extra Part For ScheduleCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCHEDULECOMMAND
 // Include Headers or Declare Types Here
 
 

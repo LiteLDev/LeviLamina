@@ -1,5 +1,5 @@
 //Extra Part For NpcComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NPCCOMPONENT
 // Include Headers or Declare Types Here
 
 

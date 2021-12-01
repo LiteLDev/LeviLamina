@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NavigationScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONFLOATCOMPONENT
 #include "Extra/ScriptNavigationFloatComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONFLOATCOMPONENT
 class ScriptNavigationFloatComponent : public NavigationScriptActorComponent {
 #include "Extra/ScriptNavigationFloatComponentAPI.hpp"
 public:

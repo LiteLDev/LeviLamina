@@ -1,5 +1,5 @@
 //Extra Part For MobEquipmentPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOBEQUIPMENTPACKET
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INTERACTACTIONDEFINITION
 #include "Extra/InteractActionDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INTERACTACTIONDEFINITION
 class InteractActionDefinition : public BehaviorDefinition {
 #include "Extra/InteractActionDefinitionAPI.hpp"
 public:

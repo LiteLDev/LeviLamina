@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TemplateStructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OCEANRUINSTART
 #include "Extra/OceanRuinStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OCEANRUINSTART
 class OceanRuinStart : public TemplateStructurePiece {
 #include "Extra/OceanRuinStartAPI.hpp"
 public:

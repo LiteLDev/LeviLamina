@@ -1,5 +1,5 @@
 //Extra Part For TwistingVinesBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TWISTINGVINESBLOCK
 // Include Headers or Declare Types Here
 
 

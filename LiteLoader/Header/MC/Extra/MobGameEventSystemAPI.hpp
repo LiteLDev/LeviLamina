@@ -1,5 +1,5 @@
 //Extra Part For MobGameEventSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOBGAMEEVENTSYSTEM
 // Include Headers or Declare Types Here
 
 

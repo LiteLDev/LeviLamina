@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerActorAttackEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERACTORATTACKEVENT
 // Include Headers or Declare Types Here
 
 

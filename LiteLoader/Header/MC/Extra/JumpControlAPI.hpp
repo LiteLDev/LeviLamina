@@ -1,5 +1,5 @@
 //Extra Part For JumpControl.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_JUMPCONTROL
 // Include Headers or Declare Types Here
 
 

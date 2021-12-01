@@ -1,5 +1,5 @@
 //Extra Part For PerlinNoise.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PERLINNOISE
 // Include Headers or Declare Types Here
 
 

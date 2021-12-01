@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToBlockGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OCELOTSITONBLOCKGOAL
 #include "Extra/OcelotSitOnBlockGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OCELOTSITONBLOCKGOAL
 class OcelotSitOnBlockGoal : public BaseMoveToBlockGoal {
 #include "Extra/OcelotSitOnBlockGoalAPI.hpp"
 public:

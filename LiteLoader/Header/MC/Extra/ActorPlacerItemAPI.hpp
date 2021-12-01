@@ -1,5 +1,5 @@
 //Extra Part For ActorPlacerItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORPLACERITEM
 // Include Headers or Declare Types Here
 
 

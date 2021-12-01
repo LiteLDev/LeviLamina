@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GUIDATAPICKITEMPACKET
 #include "Extra/GuiDataPickItemPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GUIDATAPICKITEMPACKET
 class GuiDataPickItemPacket : public Packet {
 #include "Extra/GuiDataPickItemPacketAPI.hpp"
 public:

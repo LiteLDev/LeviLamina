@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRONGHOLDFEATURE
 #include "Extra/StrongholdFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRONGHOLDFEATURE
 class StrongholdFeature : public StructureFeature {
 #include "Extra/StrongholdFeatureAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BlockBreathabilityDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKBREATHABILITYDESCRIPTION
 // Include Headers or Declare Types Here
 
 

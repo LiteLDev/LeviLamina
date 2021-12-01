@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CURSEVANISHINGENCHANT
 #include "Extra/CurseVanishingEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CURSEVANISHINGENCHANT
 class CurseVanishingEnchant : public Enchant {
 #include "Extra/CurseVanishingEnchantAPI.hpp"
 public:

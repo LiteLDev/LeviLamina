@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SIGNITEM
 #include "Extra/SignItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SIGNITEM
 class SignItem : public Item {
 #include "Extra/SignItemAPI.hpp"
 public:

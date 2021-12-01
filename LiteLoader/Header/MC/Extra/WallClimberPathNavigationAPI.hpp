@@ -1,5 +1,5 @@
 //Extra Part For WallClimberPathNavigation.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WALLCLIMBERPATHNAVIGATION
 // Include Headers or Declare Types Here
 
 

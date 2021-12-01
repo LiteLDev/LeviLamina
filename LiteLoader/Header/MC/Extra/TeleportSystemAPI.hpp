@@ -1,5 +1,5 @@
 //Extra Part For TeleportSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TELEPORTSYSTEM
 // Include Headers or Declare Types Here
 
 

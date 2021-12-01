@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SNOWBLOCK
 #include "Extra/SnowBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SNOWBLOCK
 class SnowBlock : public BlockLegacy {
 #include "Extra/SnowBlockAPI.hpp"
 public:

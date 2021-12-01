@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PanicGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RABBITPANICGOAL
 #include "Extra/RabbitPanicGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RABBITPANICGOAL
 class RabbitPanicGoal : public PanicGoal {
 #include "Extra/RabbitPanicGoalAPI.hpp"
 public:

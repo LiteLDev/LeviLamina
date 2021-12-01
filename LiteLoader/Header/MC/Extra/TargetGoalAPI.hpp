@@ -1,5 +1,5 @@
 //Extra Part For TargetGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TARGETGOAL
 // Include Headers or Declare Types Here
 
 

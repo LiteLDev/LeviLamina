@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PISTONBLOCK
 #include "Extra/PistonBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PISTONBLOCK
 class PistonBlock : public ActorBlock {
 #include "Extra/PistonBlockAPI.hpp"
 public:

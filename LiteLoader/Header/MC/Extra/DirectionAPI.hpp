@@ -1,5 +1,5 @@
 //Extra Part For Direction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DIRECTION
 // Include Headers or Declare Types Here
 
 

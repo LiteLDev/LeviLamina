@@ -1,5 +1,5 @@
 //Extra Part For ScreenHandlerBeacon.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCREENHANDLERBEACON
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "VillagerBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_VILLAGER
 #include "Extra/VillagerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_VILLAGER
 class Villager : public VillagerBase {
 #include "Extra/VillagerAPI.hpp"
 public:

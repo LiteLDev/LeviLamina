@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CREATIVECONTENTPACKET
 #include "Extra/CreativeContentPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CREATIVECONTENTPACKET
 class CreativeContentPacket : public Packet {
 #include "Extra/CreativeContentPacketAPI.hpp"
 public:

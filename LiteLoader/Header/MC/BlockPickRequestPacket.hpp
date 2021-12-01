@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKPICKREQUESTPACKET
 #include "Extra/BlockPickRequestPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKPICKREQUESTPACKET
 class BlockPickRequestPacket : public Packet {
 #include "Extra/BlockPickRequestPacketAPI.hpp"
 public:

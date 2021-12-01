@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Mob.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WANDERINGTRADER
 #include "Extra/WanderingTraderAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WANDERINGTRADER
 class WanderingTrader : public Mob {
 #include "Extra/WanderingTraderAPI.hpp"
 public:

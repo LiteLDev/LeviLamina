@@ -1,5 +1,5 @@
 //Extra Part For InventoryMenu.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INVENTORYMENU
 // Include Headers or Declare Types Here
 
 

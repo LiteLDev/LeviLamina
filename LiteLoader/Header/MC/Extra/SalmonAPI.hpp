@@ -1,5 +1,5 @@
 //Extra Part For Salmon.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SALMON
 // Include Headers or Declare Types Here
 
 

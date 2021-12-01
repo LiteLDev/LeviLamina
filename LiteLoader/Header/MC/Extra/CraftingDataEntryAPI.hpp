@@ -1,5 +1,5 @@
 //Extra Part For CraftingDataEntry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTINGDATAENTRY
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PHOTOTRANSFERPACKET
 #include "Extra/PhotoTransferPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PHOTOTRANSFERPACKET
 class PhotoTransferPacket : public Packet {
 #include "Extra/PhotoTransferPacketAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MANAGEDWANDERINGTRADERDESCRIPTION
 #include "Extra/ManagedWanderingTraderDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MANAGEDWANDERINGTRADERDESCRIPTION
 class ManagedWanderingTraderDescription : public Description {
 #include "Extra/ManagedWanderingTraderDescriptionAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKPOSTRACKERSYSTEM
 #include "Extra/BlockPosTrackerSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKPOSTRACKERSYSTEM
 class BlockPosTrackerSystem : public ITickingSystem {
 #include "Extra/BlockPosTrackerSystemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DISPENSERBLOCK
 #include "Extra/DispenserBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DISPENSERBLOCK
 class DispenserBlock : public ActorBlock {
 #include "Extra/DispenserBlockAPI.hpp"
 public:

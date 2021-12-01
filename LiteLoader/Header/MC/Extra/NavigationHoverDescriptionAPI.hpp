@@ -1,5 +1,5 @@
 //Extra Part For NavigationHoverDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAVIGATIONHOVERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

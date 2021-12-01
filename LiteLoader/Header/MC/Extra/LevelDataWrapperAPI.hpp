@@ -1,5 +1,5 @@
 //Extra Part For LevelDataWrapper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELDATAWRAPPER
 // Include Headers or Declare Types Here
 
 

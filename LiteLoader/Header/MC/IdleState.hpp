@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PetSleepWithOwnerState.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_IDLESTATE
 #include "Extra/IdleStateAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_IDLESTATE
 class IdleState : public PetSleepWithOwnerState {
 #include "Extra/IdleStateAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ReadOnlyBinaryStream.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BINARYSTREAM
 #include "Extra/BinaryStreamAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BINARYSTREAM
 class BinaryStream : public ReadOnlyBinaryStream {
 #include "Extra/BinaryStreamAPI.hpp"
 public:

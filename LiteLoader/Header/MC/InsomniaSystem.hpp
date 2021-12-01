@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INSOMNIASYSTEM
 #include "Extra/InsomniaSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INSOMNIASYSTEM
 class InsomniaSystem : public ITickingSystem {
 #include "Extra/InsomniaSystemAPI.hpp"
 public:

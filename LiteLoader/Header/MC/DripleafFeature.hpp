@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DRIPLEAFFEATURE
 #include "Extra/DripleafFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DRIPLEAFFEATURE
 class DripleafFeature : public Feature {
 #include "Extra/DripleafFeatureAPI.hpp"
 public:

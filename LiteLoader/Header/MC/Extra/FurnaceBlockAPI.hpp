@@ -1,5 +1,5 @@
 //Extra Part For FurnaceBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FURNACEBLOCK
 // Include Headers or Declare Types Here
 
 

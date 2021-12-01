@@ -1,5 +1,5 @@
 //Extra Part For LoopbackPacketSender.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOPBACKPACKETSENDER
 // Include Headers or Declare Types Here
 
 

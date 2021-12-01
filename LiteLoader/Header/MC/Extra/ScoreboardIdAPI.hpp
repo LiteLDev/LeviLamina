@@ -1,5 +1,5 @@
 //Extra Part For ScoreboardId.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCOREBOARDID
 // Include Headers or Declare Types Here
 
 

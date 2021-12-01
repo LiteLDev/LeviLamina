@@ -1,5 +1,5 @@
 //Extra Part For ParticleTypeMap.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PARTICLETYPEMAP
 // Include Headers or Declare Types Here
 
 

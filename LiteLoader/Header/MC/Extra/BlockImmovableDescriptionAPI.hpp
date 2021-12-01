@@ -1,5 +1,5 @@
 //Extra Part For BlockImmovableDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKIMMOVABLEDESCRIPTION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StubServerLocator.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERNETSERVERLOCATOR
 #include "Extra/NetherNetServerLocatorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERNETSERVERLOCATOR
 class NetherNetServerLocator : public StubServerLocator {
 #include "Extra/NetherNetServerLocatorAPI.hpp"
 public:

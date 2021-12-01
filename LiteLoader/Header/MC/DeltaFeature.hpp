@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DELTAFEATURE
 #include "Extra/DeltaFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DELTAFEATURE
 class DeltaFeature : public Feature {
 #include "Extra/DeltaFeatureAPI.hpp"
 public:

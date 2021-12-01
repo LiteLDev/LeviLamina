@@ -1,5 +1,5 @@
 //Extra Part For IDefinitionInstance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IDEFINITIONINSTANCE
 // Include Headers or Declare Types Here
 
 

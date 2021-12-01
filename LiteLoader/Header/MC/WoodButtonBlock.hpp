@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ButtonBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WOODBUTTONBLOCK
 #include "Extra/WoodButtonBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WOODBUTTONBLOCK
 class WoodButtonBlock : public ButtonBlock {
 #include "Extra/WoodButtonBlockAPI.hpp"
 public:

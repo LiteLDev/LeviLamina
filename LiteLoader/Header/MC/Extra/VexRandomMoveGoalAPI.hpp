@@ -1,5 +1,5 @@
 //Extra Part For VexRandomMoveGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VEXRANDOMMOVEGOAL
 // Include Headers or Declare Types Here
 
 

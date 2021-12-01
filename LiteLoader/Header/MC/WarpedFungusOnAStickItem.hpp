@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WARPEDFUNGUSONASTICKITEM
 #include "Extra/WarpedFungusOnAStickItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WARPEDFUNGUSONASTICKITEM
 class WarpedFungusOnAStickItem : public Item {
 #include "Extra/WarpedFungusOnAStickItemAPI.hpp"
 public:

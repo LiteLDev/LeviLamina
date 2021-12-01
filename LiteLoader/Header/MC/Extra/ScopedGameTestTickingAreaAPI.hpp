@@ -1,5 +1,5 @@
 //Extra Part For ScopedGameTestTickingArea.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCOPEDGAMETESTTICKINGAREA
 // Include Headers or Declare Types Here
 
 

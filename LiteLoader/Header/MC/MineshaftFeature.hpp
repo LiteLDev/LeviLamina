@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINESHAFTFEATURE
 #include "Extra/MineshaftFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINESHAFTFEATURE
 class MineshaftFeature : public StructureFeature {
 #include "Extra/MineshaftFeatureAPI.hpp"
 public:

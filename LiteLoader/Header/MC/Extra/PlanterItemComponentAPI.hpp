@@ -1,5 +1,5 @@
 //Extra Part For PlanterItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLANTERITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

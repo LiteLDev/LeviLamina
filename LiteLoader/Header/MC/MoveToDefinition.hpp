@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOVETODEFINITION
 #include "Extra/MoveToDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOVETODEFINITION
 class MoveToDefinition : public BehaviorDefinition {
 #include "Extra/MoveToDefinitionAPI.hpp"
 public:

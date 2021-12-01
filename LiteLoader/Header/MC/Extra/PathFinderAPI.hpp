@@ -1,5 +1,5 @@
 //Extra Part For PathFinder.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PATHFINDER
 // Include Headers or Declare Types Here
 
 

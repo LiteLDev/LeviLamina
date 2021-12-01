@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PathNavigation.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WATERBOUNDPATHNAVIGATION
 #include "Extra/WaterBoundPathNavigationAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WATERBOUNDPATHNAVIGATION
 class WaterBoundPathNavigation : public PathNavigation {
 #include "Extra/WaterBoundPathNavigationAPI.hpp"
 public:

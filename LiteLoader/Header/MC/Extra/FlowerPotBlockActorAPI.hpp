@@ -1,5 +1,5 @@
 //Extra Part For FlowerPotBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLOWERPOTBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

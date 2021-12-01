@@ -1,5 +1,5 @@
 //Extra Part For ShiftedDurationAmplifier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHIFTEDDURATIONAMPLIFIER
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BehaviorFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEHAVIORFACTORY
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For FilterTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTEST
 // Include Headers or Declare Types Here
 
 

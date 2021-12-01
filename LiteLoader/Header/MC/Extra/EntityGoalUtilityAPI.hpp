@@ -1,5 +1,5 @@
 //Extra Part For EntityGoalUtility.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENTITYGOALUTILITY
 // Include Headers or Declare Types Here
 
 

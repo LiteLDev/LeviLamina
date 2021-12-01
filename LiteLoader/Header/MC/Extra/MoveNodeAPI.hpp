@@ -1,5 +1,5 @@
 //Extra Part For MoveNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVENODE
 // Include Headers or Declare Types Here
 
 

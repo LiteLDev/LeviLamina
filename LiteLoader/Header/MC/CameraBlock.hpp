@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAMERABLOCK
 #include "Extra/CameraBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAMERABLOCK
 class CameraBlock : public BlockLegacy {
 #include "Extra/CameraBlockAPI.hpp"
 public:

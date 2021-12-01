@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Fireball.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WITHERSKULL
 #include "Extra/WitherSkullAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WITHERSKULL
 class WitherSkull : public Fireball {
 #include "Extra/WitherSkullAPI.hpp"
 public:

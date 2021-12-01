@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHORTTAG
 #include "Extra/ShortTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHORTTAG
 class ShortTag : public Tag {
 #include "Extra/ShortTagAPI.hpp"
 public:

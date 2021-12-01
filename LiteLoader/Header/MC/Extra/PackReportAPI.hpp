@@ -1,5 +1,5 @@
 //Extra Part For PackReport.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKREPORT
 // Include Headers or Declare Types Here
 
 

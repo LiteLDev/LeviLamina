@@ -1,5 +1,5 @@
 //Extra Part For CommandOriginData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDORIGINDATA
 // Include Headers or Declare Types Here
 
 

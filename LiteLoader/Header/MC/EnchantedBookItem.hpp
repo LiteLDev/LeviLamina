@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENCHANTEDBOOKITEM
 #include "Extra/EnchantedBookItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENCHANTEDBOOKITEM
 class EnchantedBookItem : public Item {
 #include "Extra/EnchantedBookItemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BlockGeometryDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKGEOMETRYDESCRIPTION
 // Include Headers or Declare Types Here
 
 

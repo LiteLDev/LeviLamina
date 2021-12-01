@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestHandlerSlotInfo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTHANDLERSLOTINFO
 // Include Headers or Declare Types Here
 
 

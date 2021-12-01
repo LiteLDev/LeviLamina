@@ -1,5 +1,5 @@
 //Extra Part For ILevel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ILEVEL
 // Include Headers or Declare Types Here
 
 

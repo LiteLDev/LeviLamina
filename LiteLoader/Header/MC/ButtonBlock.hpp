@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BUTTONBLOCK
 #include "Extra/ButtonBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BUTTONBLOCK
 class ButtonBlock : public BlockLegacy {
 #include "Extra/ButtonBlockAPI.hpp"
 public:

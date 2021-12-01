@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EMPTYMAPITEM
 #include "Extra/EmptyMapItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EMPTYMAPITEM
 class EmptyMapItem : public Item {
 #include "Extra/EmptyMapItemAPI.hpp"
 public:

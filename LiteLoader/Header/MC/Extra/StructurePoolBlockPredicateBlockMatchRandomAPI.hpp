@@ -1,5 +1,5 @@
 //Extra Part For StructurePoolBlockPredicateBlockMatchRandom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCHRANDOM
 // Include Headers or Declare Types Here
 
 

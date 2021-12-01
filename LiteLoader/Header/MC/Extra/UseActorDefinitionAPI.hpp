@@ -1,5 +1,5 @@
 //Extra Part For UseActorDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_USEACTORDEFINITION
 // Include Headers or Declare Types Here
 
 

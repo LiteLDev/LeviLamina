@@ -1,5 +1,5 @@
 //Extra Part For BossDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOSSDEFINITION
 // Include Headers or Declare Types Here
 
 

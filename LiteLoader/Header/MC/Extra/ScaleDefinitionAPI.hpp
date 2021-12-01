@@ -1,5 +1,5 @@
 //Extra Part For ScaleDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCALEDEFINITION
 // Include Headers or Declare Types Here
 
 

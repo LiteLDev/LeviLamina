@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHOOTBOWDEFINITION
 #include "Extra/ShootBowDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHOOTBOWDEFINITION
 class ShootBowDefinition : public BehaviorDefinition {
 #include "Extra/ShootBowDefinitionAPI.hpp"
 public:

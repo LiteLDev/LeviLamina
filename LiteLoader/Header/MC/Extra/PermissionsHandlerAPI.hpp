@@ -1,5 +1,5 @@
 //Extra Part For PermissionsHandler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PERMISSIONSHANDLER
 // Include Headers or Declare Types Here
 
 

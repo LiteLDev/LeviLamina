@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Slime.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LAVASLIME
 #include "Extra/LavaSlimeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LAVASLIME
 class LavaSlime : public Slime {
 #include "Extra/LavaSlimeAPI.hpp"
 public:

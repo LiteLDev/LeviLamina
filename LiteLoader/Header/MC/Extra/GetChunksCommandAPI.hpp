@@ -1,5 +1,5 @@
 //Extra Part For GetChunksCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GETCHUNKSCOMMAND
 // Include Headers or Declare Types Here
 
 

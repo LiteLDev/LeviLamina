@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CaveFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_UNDERWATERCAVEFEATURE
 #include "Extra/UnderwaterCaveFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_UNDERWATERCAVEFEATURE
 class UnderwaterCaveFeature : public CaveFeature {
 #include "Extra/UnderwaterCaveFeatureAPI.hpp"
 public:

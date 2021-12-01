@@ -1,5 +1,5 @@
 //Extra Part For NetworkStatistics.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETWORKSTATISTICS
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CropBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_POTATOBLOCK
 #include "Extra/PotatoBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_POTATOBLOCK
 class PotatoBlock : public CropBlock {
 #include "Extra/PotatoBlockAPI.hpp"
 public:

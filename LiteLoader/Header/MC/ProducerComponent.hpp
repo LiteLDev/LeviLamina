@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseCircuitComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PRODUCERCOMPONENT
 #include "Extra/ProducerComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PRODUCERCOMPONENT
 class ProducerComponent : public BaseCircuitComponent {
 #include "Extra/ProducerComponentAPI.hpp"
 public:

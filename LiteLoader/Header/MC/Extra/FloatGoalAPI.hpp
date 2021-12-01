@@ -1,5 +1,5 @@
 //Extra Part For FloatGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLOATGOAL
 // Include Headers or Declare Types Here
 
 

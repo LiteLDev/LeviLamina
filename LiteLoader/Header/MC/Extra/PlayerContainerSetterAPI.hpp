@@ -1,5 +1,5 @@
 //Extra Part For PlayerContainerSetter.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERCONTAINERSETTER
 // Include Headers or Declare Types Here
 
 

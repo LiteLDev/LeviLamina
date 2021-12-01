@@ -1,5 +1,5 @@
 //Extra Part For ArmorStand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ARMORSTAND
 // Include Headers or Declare Types Here
 
 

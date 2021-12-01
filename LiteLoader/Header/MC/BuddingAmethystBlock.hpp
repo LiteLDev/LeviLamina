@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AmethystBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BUDDINGAMETHYSTBLOCK
 #include "Extra/BuddingAmethystBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BUDDINGAMETHYSTBLOCK
 class BuddingAmethystBlock : public AmethystBlock {
 #include "Extra/BuddingAmethystBlockAPI.hpp"
 public:

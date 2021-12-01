@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SMALLDRIPLEAFBLOCK
 #include "Extra/SmallDripleafBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SMALLDRIPLEAFBLOCK
 class SmallDripleafBlock : public BushBlock {
 #include "Extra/SmallDripleafBlockAPI.hpp"
 public:

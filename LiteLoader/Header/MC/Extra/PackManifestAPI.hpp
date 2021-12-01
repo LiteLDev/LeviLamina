@@ -1,5 +1,5 @@
 //Extra Part For PackManifest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKMANIFEST
 // Include Headers or Declare Types Here
 
 

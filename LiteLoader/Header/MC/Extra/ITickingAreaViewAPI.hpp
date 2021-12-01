@@ -1,5 +1,5 @@
 //Extra Part For ITickingAreaView.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITICKINGAREAVIEW
 // Include Headers or Declare Types Here
 
 

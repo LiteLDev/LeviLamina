@@ -1,5 +1,5 @@
 //Extra Part For SHStairsDown.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHSTAIRSDOWN
 // Include Headers or Declare Types Here
 
 

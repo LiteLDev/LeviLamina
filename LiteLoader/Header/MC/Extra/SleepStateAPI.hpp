@@ -1,5 +1,5 @@
 //Extra Part For SleepState.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SLEEPSTATE
 // Include Headers or Declare Types Here
 
 

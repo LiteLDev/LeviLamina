@@ -1,5 +1,5 @@
 //Extra Part For DanceComponentListener.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DANCECOMPONENTLISTENER
 // Include Headers or Declare Types Here
 
 

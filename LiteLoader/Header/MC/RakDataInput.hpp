@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BytesDataInput.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAKDATAINPUT
 #include "Extra/RakDataInputAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAKDATAINPUT
 class RakDataInput : public BytesDataInput {
 #include "Extra/RakDataInputAPI.hpp"
 public:

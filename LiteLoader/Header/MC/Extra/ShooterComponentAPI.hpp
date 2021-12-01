@@ -1,5 +1,5 @@
 //Extra Part For ShooterComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHOOTERCOMPONENT
 // Include Headers or Declare Types Here
 
 

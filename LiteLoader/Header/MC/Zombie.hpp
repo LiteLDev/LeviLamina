@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ZOMBIE
 #include "Extra/ZombieAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ZOMBIE
 class Zombie : public Monster {
 #include "Extra/ZombieAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BiomeHeight.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BIOMEHEIGHT
 // Include Headers or Declare Types Here
 
 

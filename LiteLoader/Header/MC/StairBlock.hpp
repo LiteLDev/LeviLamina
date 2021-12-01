@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STAIRBLOCK
 #include "Extra/StairBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STAIRBLOCK
 class StairBlock : public BlockLegacy {
 #include "Extra/StairBlockAPI.hpp"
 public:

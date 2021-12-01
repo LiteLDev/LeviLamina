@@ -1,5 +1,5 @@
 //Extra Part For TrailSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRAILSYSTEM
 // Include Headers or Declare Types Here
 
 

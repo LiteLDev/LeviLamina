@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDTAG
 #include "Extra/EndTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDTAG
 class EndTag : public Tag {
 #include "Extra/EndTagAPI.hpp"
 public:

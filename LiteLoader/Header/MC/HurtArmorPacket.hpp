@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HURTARMORPACKET
 #include "Extra/HurtArmorPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HURTARMORPACKET
 class HurtArmorPacket : public Packet {
 #include "Extra/HurtArmorPacketAPI.hpp"
 public:

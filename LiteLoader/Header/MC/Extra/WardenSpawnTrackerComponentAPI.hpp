@@ -1,5 +1,5 @@
 //Extra Part For WardenSpawnTrackerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WARDENSPAWNTRACKERCOMPONENT
 // Include Headers or Declare Types Here
 
 

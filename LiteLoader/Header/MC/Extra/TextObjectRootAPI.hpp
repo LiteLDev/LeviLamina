@@ -1,5 +1,5 @@
 //Extra Part For TextObjectRoot.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEXTOBJECTROOT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For EquippableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EQUIPPABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

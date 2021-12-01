@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WEAPONITEM
 #include "Extra/WeaponItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WEAPONITEM
 class WeaponItem : public Item {
 #include "Extra/WeaponItemAPI.hpp"
 public:

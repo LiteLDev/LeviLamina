@@ -1,5 +1,5 @@
 //Extra Part For DragonHoldingPatternGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DRAGONHOLDINGPATTERNGOAL
 // Include Headers or Declare Types Here
 
 

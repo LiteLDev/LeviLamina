@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SEAPICKLEBLOCKITEM
 #include "Extra/SeaPickleBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SEAPICKLEBLOCKITEM
 class SeaPickleBlockItem : public BlockItem {
 #include "Extra/SeaPickleBlockItemAPI.hpp"
 public:

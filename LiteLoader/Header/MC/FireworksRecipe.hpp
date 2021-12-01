@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FIREWORKSRECIPE
 #include "Extra/FireworksRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FIREWORKSRECIPE
 class FireworksRecipe : public Recipe {
 #include "Extra/FireworksRecipeAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For MonsterRoomFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MONSTERROOMFEATURE
 // Include Headers or Declare Types Here
 
 

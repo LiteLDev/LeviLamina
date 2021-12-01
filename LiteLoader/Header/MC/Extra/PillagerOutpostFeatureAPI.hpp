@@ -1,5 +1,5 @@
 //Extra Part For PillagerOutpostFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PILLAGEROUTPOSTFEATURE
 // Include Headers or Declare Types Here
 
 

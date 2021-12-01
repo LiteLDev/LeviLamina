@@ -1,5 +1,5 @@
 //Extra Part For MolangVariableMap.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOLANGVARIABLEMAP
 // Include Headers or Declare Types Here
 
 

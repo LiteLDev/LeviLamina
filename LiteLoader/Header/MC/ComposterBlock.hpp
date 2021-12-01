@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPOSTERBLOCK
 #include "Extra/ComposterBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPOSTERBLOCK
 class ComposterBlock : public BlockLegacy {
 #include "Extra/ComposterBlockAPI.hpp"
 public:

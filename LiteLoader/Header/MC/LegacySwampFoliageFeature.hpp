@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEGACYSWAMPFOLIAGEFEATURE
 #include "Extra/LegacySwampFoliageFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEGACYSWAMPFOLIAGEFEATURE
 class LegacySwampFoliageFeature : public Feature {
 #include "Extra/LegacySwampFoliageFeatureAPI.hpp"
 public:

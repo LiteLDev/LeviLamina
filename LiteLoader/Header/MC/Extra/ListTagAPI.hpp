@@ -1,5 +1,5 @@
 //Extra Part For ListTag.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LISTTAG
 // Include Headers or Declare Types Here
 
 

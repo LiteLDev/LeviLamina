@@ -1,5 +1,5 @@
 //Extra Part For PlayerFogPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERFOGPACKET
 // Include Headers or Declare Types Here
 
 

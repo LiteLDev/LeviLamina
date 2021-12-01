@@ -1,5 +1,5 @@
 //Extra Part For ZipPackAccessStrategy.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ZIPPACKACCESSSTRATEGY
 // Include Headers or Declare Types Here
 
 

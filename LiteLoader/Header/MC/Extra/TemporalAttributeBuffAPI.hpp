@@ -1,5 +1,5 @@
 //Extra Part For TemporalAttributeBuff.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEMPORALATTRIBUTEBUFF
 // Include Headers or Declare Types Here
 
 

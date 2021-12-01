@@ -1,5 +1,5 @@
 //Extra Part For DiggerItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DIGGERITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

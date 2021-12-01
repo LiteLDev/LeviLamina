@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HEAVYBLOCK
 #include "Extra/HeavyBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HEAVYBLOCK
 class HeavyBlock : public BlockLegacy {
 #include "Extra/HeavyBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For FogVolumetricDensitySetting.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOGVOLUMETRICDENSITYSETTING
 // Include Headers or Declare Types Here
 
 

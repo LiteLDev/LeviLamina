@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENTITYENTERVOLUMESYSTEM
 #include "Extra/EntityEnterVolumeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENTITYENTERVOLUMESYSTEM
 class EntityEnterVolumeSystem : public ITickingSystem {
 #include "Extra/EntityEnterVolumeSystemAPI.hpp"
 public:

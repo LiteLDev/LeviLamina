@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SUBCLIENTLOGINPACKET
 #include "Extra/SubClientLoginPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SUBCLIENTLOGINPACKET
 class SubClientLoginPacket : public Packet {
 #include "Extra/SubClientLoginPacketAPI.hpp"
 public:

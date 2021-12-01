@@ -1,5 +1,5 @@
 //Extra Part For ScriptDimensionBinderComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTDIMENSIONBINDERCOMPONENT
 // Include Headers or Declare Types Here
 
 

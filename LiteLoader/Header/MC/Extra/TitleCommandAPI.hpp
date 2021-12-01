@@ -1,5 +1,5 @@
 //Extra Part For TitleCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TITLECOMMAND
 // Include Headers or Declare Types Here
 
 

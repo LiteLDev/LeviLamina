@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FOSSILFEATURE
 #include "Extra/FossilFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FOSSILFEATURE
 class FossilFeature : public Feature {
 #include "Extra/FossilFeatureAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HORSEARMORITEM
 #include "Extra/HorseArmorItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HORSEARMORITEM
 class HorseArmorItem : public Item {
 #include "Extra/HorseArmorItemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEVELSOUNDEVENTPACKETV1
 #include "Extra/LevelSoundEventPacketV1API.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEVELSOUNDEVENTPACKETV1
 class LevelSoundEventPacketV1 : public Packet {
 #include "Extra/LevelSoundEventPacketV1API.hpp"
 public:

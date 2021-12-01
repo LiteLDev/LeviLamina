@@ -1,5 +1,5 @@
 //Extra Part For RandomSitGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RANDOMSITGOAL
 // Include Headers or Declare Types Here
 
 

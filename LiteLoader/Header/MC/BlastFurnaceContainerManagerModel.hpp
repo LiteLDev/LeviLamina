@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FurnaceContainerManagerModel.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLASTFURNACECONTAINERMANAGERMODEL
 #include "Extra/BlastFurnaceContainerManagerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLASTFURNACECONTAINERMANAGERMODEL
 class BlastFurnaceContainerManagerModel : public FurnaceContainerManagerModel {
 #include "Extra/BlastFurnaceContainerManagerModelAPI.hpp"
 public:

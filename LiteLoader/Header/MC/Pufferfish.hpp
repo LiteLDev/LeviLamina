@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Fish.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PUFFERFISH
 #include "Extra/PufferfishAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PUFFERFISH
 class Pufferfish : public Fish {
 #include "Extra/PufferfishAPI.hpp"
 public:

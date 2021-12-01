@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TORCHBLOCK
 #include "Extra/TorchBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TORCHBLOCK
 class TorchBlock : public BlockLegacy {
 #include "Extra/TorchBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DRYINGOUTTIMERSYSTEM
 #include "Extra/DryingOutTimerSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DRYINGOUTTIMERSYSTEM
 class DryingOutTimerSystem : public ITickingSystem {
 #include "Extra/DryingOutTimerSystemAPI.hpp"
 public:

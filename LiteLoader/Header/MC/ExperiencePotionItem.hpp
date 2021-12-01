@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXPERIENCEPOTIONITEM
 #include "Extra/ExperiencePotionItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXPERIENCEPOTIONITEM
 class ExperiencePotionItem : public Item {
 #include "Extra/ExperiencePotionItemAPI.hpp"
 public:

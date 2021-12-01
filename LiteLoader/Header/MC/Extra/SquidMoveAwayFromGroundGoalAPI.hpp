@@ -1,5 +1,5 @@
 //Extra Part For SquidMoveAwayFromGroundGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SQUIDMOVEAWAYFROMGROUNDGOAL
 // Include Headers or Declare Types Here
 
 

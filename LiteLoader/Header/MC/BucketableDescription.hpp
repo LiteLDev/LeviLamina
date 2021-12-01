@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BUCKETABLEDESCRIPTION
 #include "Extra/BucketableDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BUCKETABLEDESCRIPTION
 class BucketableDescription : public Description {
 #include "Extra/BucketableDescriptionAPI.hpp"
 public:

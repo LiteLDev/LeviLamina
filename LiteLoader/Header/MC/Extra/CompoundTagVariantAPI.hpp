@@ -1,5 +1,5 @@
 //Extra Part For CompoundTagVariant.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMPOUNDTAGVARIANT
 // Include Headers or Declare Types Here
 
 

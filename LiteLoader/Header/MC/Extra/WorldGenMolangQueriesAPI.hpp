@@ -1,5 +1,5 @@
 //Extra Part For WorldGenMolangQueries.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WORLDGENMOLANGQUERIES
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SnackGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SNACKGOAL
 // Include Headers or Declare Types Here
 
 

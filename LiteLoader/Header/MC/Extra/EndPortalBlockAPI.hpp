@@ -1,5 +1,5 @@
 //Extra Part For EndPortalBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENDPORTALBLOCK
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SAPLING
 #include "Extra/SaplingAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SAPLING
 class Sapling : public BushBlock {
 #include "Extra/SaplingAPI.hpp"
 public:

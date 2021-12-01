@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXPLORATIONMAPFUNCTION
 #include "Extra/ExplorationMapFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXPLORATIONMAPFUNCTION
 class ExplorationMapFunction : public LootItemFunction {
 #include "Extra/ExplorationMapFunctionAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLIENTBOUNDDEBUGRENDERERPACKET
 #include "Extra/ClientboundDebugRendererPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLIENTBOUNDDEBUGRENDERERPACKET
 class ClientboundDebugRendererPacket : public Packet {
 #include "Extra/ClientboundDebugRendererPacketAPI.hpp"
 public:

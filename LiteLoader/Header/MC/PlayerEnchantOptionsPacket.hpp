@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLAYERENCHANTOPTIONSPACKET
 #include "Extra/PlayerEnchantOptionsPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLAYERENCHANTOPTIONSPACKET
 class PlayerEnchantOptionsPacket : public Packet {
 #include "Extra/PlayerEnchantOptionsPacketAPI.hpp"
 public:

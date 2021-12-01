@@ -1,5 +1,5 @@
 //Extra Part For OldLeafBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OLDLEAFBLOCK
 // Include Headers or Declare Types Here
 
 

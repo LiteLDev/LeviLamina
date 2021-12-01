@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AbstractCandleBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CANDLEBLOCK
 #include "Extra/CandleBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CANDLEBLOCK
 class CandleBlock : public AbstractCandleBlock {
 #include "Extra/CandleBlockAPI.hpp"
 public:

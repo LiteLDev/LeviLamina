@@ -1,5 +1,5 @@
 //Extra Part For BedBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEDBLOCK
 // Include Headers or Declare Types Here
 
 

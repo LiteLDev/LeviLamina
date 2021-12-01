@@ -1,5 +1,5 @@
 //Extra Part For ImmutableWorldCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IMMUTABLEWORLDCOMMAND
 // Include Headers or Declare Types Here
 
 

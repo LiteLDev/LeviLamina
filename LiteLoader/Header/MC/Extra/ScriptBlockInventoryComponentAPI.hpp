@@ -1,5 +1,5 @@
 //Extra Part For ScriptBlockInventoryComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBLOCKINVENTORYCOMPONENT
 // Include Headers or Declare Types Here
 
 

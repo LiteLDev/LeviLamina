@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEGACYEMERALDOREFEATURE
 #include "Extra/LegacyEmeraldOreFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEGACYEMERALDOREFEATURE
 class LegacyEmeraldOreFeature : public Feature {
 #include "Extra/LegacyEmeraldOreFeatureAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For PulseCapacitor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PULSECAPACITOR
 // Include Headers or Declare Types Here
 
 

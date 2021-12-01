@@ -1,5 +1,5 @@
 //Extra Part For QuerySetIdentifier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_QUERYSETIDENTIFIER
 // Include Headers or Declare Types Here
 
 

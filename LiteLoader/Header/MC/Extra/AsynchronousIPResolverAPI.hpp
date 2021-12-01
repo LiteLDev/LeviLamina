@@ -1,5 +1,5 @@
 //Extra Part For AsynchronousIPResolver.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ASYNCHRONOUSIPRESOLVER
 // Include Headers or Declare Types Here
 
 

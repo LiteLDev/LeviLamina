@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MobEffect.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INSTANTANEOUSMOBEFFECT
 #include "Extra/InstantaneousMobEffectAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INSTANTANEOUSMOBEFFECT
 class InstantaneousMobEffect : public MobEffect {
 #include "Extra/InstantaneousMobEffectAPI.hpp"
 public:

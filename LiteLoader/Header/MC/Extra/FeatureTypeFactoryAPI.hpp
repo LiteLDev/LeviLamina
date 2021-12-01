@@ -1,5 +1,5 @@
 //Extra Part For FeatureTypeFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FEATURETYPEFACTORY
 // Include Headers or Declare Types Here
 
 

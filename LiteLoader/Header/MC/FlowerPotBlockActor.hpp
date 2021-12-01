@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLOWERPOTBLOCKACTOR
 #include "Extra/FlowerPotBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLOWERPOTBLOCKACTOR
 class FlowerPotBlockActor : public BlockActor {
 #include "Extra/FlowerPotBlockActorAPI.hpp"
 public:

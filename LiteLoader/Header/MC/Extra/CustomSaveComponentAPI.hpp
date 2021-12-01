@@ -1,5 +1,5 @@
 //Extra Part For CustomSaveComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CUSTOMSAVECOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For TransportInterface.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRANSPORTINTERFACE
 // Include Headers or Declare Types Here
 
 

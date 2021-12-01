@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDPORTALFRAMEBLOCK
 #include "Extra/EndPortalFrameBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDPORTALFRAMEBLOCK
 class EndPortalFrameBlock : public BlockLegacy {
 #include "Extra/EndPortalFrameBlockAPI.hpp"
 public:

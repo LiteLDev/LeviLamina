@@ -1,5 +1,5 @@
 //Extra Part For MoveControlBasicDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVECONTROLBASICDESCRIPTION
 // Include Headers or Declare Types Here
 
 

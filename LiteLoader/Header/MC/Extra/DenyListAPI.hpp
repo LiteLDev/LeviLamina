@@ -1,5 +1,5 @@
 //Extra Part For DenyList.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DENYLIST
 // Include Headers or Declare Types Here
 
 

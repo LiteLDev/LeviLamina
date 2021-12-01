@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAIDBOSSSYSTEM
 #include "Extra/RaidBossSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAIDBOSSSYSTEM
 class RaidBossSystem : public ITickingSystem {
 #include "Extra/RaidBossSystemAPI.hpp"
 public:

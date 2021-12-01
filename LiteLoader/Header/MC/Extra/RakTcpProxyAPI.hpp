@@ -1,5 +1,5 @@
 //Extra Part For RakTcpProxy.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAKTCPPROXY
 // Include Headers or Declare Types Here
 
 

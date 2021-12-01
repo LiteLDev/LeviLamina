@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AttributeInstanceDelegate.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXHAUSTIONATTRIBUTEDELEGATE
 #include "Extra/ExhaustionAttributeDelegateAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXHAUSTIONATTRIBUTEDELEGATE
 class ExhaustionAttributeDelegate : public AttributeInstanceDelegate {
 #include "Extra/ExhaustionAttributeDelegateAPI.hpp"
 public:

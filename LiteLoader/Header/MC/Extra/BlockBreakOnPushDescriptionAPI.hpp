@@ -1,5 +1,5 @@
 //Extra Part For BlockBreakOnPushDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKBREAKONPUSHDESCRIPTION
 // Include Headers or Declare Types Here
 
 

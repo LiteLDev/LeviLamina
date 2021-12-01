@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SAPLINGBLOCKITEM
 #include "Extra/SaplingBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SAPLINGBLOCKITEM
 class SaplingBlockItem : public BlockItem {
 #include "Extra/SaplingBlockItemAPI.hpp"
 public:

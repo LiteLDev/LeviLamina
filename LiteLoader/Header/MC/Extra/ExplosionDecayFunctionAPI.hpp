@@ -1,5 +1,5 @@
 //Extra Part For ExplosionDecayFunction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EXPLOSIONDECAYFUNCTION
 // Include Headers or Declare Types Here
 
 

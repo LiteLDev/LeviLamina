@@ -1,5 +1,5 @@
 //Extra Part For UpdatePlayerGameTypePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_UPDATEPLAYERGAMETYPEPACKET
 // Include Headers or Declare Types Here
 
 

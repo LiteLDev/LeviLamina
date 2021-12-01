@@ -1,5 +1,5 @@
 //Extra Part For MoveTowardsDwellingRestrictionDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVETOWARDSDWELLINGRESTRICTIONDEFINITION
 // Include Headers or Declare Types Here
 
 

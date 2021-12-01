@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TALLGRASS
 #include "Extra/TallGrassAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TALLGRASS
 class TallGrass : public BushBlock {
 #include "Extra/TallGrassAPI.hpp"
 public:

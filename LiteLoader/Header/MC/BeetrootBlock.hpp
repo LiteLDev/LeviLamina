@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CropBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEETROOTBLOCK
 #include "Extra/BeetrootBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEETROOTBLOCK
 class BeetrootBlock : public CropBlock {
 #include "Extra/BeetrootBlockAPI.hpp"
 public:

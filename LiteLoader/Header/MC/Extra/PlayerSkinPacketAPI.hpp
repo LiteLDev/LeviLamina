@@ -1,5 +1,5 @@
 //Extra Part For PlayerSkinPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERSKINPACKET
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AttributeInstanceDelegate.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HUNGERATTRIBUTEDELEGATE
 #include "Extra/HungerAttributeDelegateAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HUNGERATTRIBUTEDELEGATE
 class HungerAttributeDelegate : public AttributeInstanceDelegate {
 #include "Extra/HungerAttributeDelegateAPI.hpp"
 public:

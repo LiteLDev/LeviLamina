@@ -1,5 +1,5 @@
 //Extra Part For ThrownEnderpearl.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_THROWNENDERPEARL
 // Include Headers or Declare Types Here
 
 

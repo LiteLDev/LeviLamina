@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TorchBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SOULTORCHBLOCK
 #include "Extra/SoulTorchBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SOULTORCHBLOCK
 class SoulTorchBlock : public TorchBlock {
 #include "Extra/SoulTorchBlockAPI.hpp"
 public:

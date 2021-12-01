@@ -1,5 +1,5 @@
 //Extra Part For StompAttackGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STOMPATTACKGOAL
 // Include Headers or Declare Types Here
 
 

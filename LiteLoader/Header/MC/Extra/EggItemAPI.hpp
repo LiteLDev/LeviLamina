@@ -1,5 +1,5 @@
 //Extra Part For EggItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EGGITEM
 // Include Headers or Declare Types Here
 
 

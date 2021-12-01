@@ -1,5 +1,5 @@
 //Extra Part For SimpleIntFilterTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SIMPLEINTFILTERTEST
 // Include Headers or Declare Types Here
 
 

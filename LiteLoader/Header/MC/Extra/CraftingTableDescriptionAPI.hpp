@@ -1,5 +1,5 @@
 //Extra Part For CraftingTableDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTINGTABLEDESCRIPTION
 // Include Headers or Declare Types Here
 
 

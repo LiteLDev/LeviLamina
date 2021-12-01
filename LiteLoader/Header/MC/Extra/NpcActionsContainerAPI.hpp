@@ -1,5 +1,5 @@
 //Extra Part For NpcActionsContainer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NPCACTIONSCONTAINER
 // Include Headers or Declare Types Here
 
 

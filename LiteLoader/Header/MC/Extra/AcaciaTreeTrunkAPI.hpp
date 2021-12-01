@@ -1,5 +1,5 @@
 //Extra Part For AcaciaTreeTrunk.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACACIATREETRUNK
 // Include Headers or Declare Types Here
 
 

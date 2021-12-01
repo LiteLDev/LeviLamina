@@ -1,5 +1,5 @@
 //Extra Part For HitboxComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HITBOXCOMPONENT
 // Include Headers or Declare Types Here
 
 

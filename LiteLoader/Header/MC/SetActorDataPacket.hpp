@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETACTORDATAPACKET
 #include "Extra/SetActorDataPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETACTORDATAPACKET
 class SetActorDataPacket : public Packet {
 #include "Extra/SetActorDataPacketAPI.hpp"
 public:

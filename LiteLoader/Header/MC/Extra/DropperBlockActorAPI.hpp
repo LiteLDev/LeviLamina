@@ -1,5 +1,5 @@
 //Extra Part For DropperBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DROPPERBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

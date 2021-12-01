@@ -1,5 +1,5 @@
 //Extra Part For ActorHistory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORHISTORY
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLUEICEBLOCK
 #include "Extra/BlueIceBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLUEICEBLOCK
 class BlueIceBlock : public BlockLegacy {
 #include "Extra/BlueIceBlockAPI.hpp"
 public:

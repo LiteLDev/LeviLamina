@@ -1,5 +1,5 @@
 //Extra Part For VillagerBase.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VILLAGERBASE
 // Include Headers or Declare Types Here
 
 

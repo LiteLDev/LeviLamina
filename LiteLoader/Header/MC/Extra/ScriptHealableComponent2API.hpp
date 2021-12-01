@@ -1,5 +1,5 @@
 //Extra Part For ScriptHealableComponent2.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTHEALABLECOMPONENT2
 // Include Headers or Declare Types Here
 
 

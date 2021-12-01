@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CELEBRATEHUNTSYSTEM
 #include "Extra/CelebrateHuntSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CELEBRATEHUNTSYSTEM
 class CelebrateHuntSystem : public ITickingSystem {
 #include "Extra/CelebrateHuntSystemAPI.hpp"
 public:

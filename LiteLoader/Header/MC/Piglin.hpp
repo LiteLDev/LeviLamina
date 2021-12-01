@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PIGLIN
 #include "Extra/PiglinAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PIGLIN
 class Piglin : public Monster {
 #include "Extra/PiglinAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For FilterTestTemperatureValue.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTTEMPERATUREVALUE
 // Include Headers or Declare Types Here
 
 

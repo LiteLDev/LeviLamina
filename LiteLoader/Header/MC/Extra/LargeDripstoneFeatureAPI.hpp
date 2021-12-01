@@ -1,5 +1,5 @@
 //Extra Part For LargeDripstoneFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LARGEDRIPSTONEFEATURE
 // Include Headers or Declare Types Here
 
 

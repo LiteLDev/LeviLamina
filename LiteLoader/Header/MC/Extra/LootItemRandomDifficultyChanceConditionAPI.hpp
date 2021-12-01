@@ -1,5 +1,5 @@
 //Extra Part For LootItemRandomDifficultyChanceCondition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOTITEMRANDOMDIFFICULTYCHANCECONDITION
 // Include Headers or Declare Types Here
 
 

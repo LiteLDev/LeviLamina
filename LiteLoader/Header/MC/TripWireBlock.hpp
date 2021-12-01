@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRIPWIREBLOCK
 #include "Extra/TripWireBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRIPWIREBLOCK
 class TripWireBlock : public BlockLegacy {
 #include "Extra/TripWireBlockAPI.hpp"
 public:

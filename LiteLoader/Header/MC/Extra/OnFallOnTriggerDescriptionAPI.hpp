@@ -1,5 +1,5 @@
 //Extra Part For OnFallOnTriggerDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONFALLONTRIGGERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

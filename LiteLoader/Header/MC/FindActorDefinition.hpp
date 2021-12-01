@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FINDACTORDEFINITION
 #include "Extra/FindActorDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FINDACTORDEFINITION
 class FindActorDefinition : public BehaviorDefinition {
 #include "Extra/FindActorDefinitionAPI.hpp"
 public:

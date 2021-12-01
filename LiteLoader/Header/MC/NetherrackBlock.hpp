@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERRACKBLOCK
 #include "Extra/NetherrackBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERRACKBLOCK
 class NetherrackBlock : public BlockLegacy {
 #include "Extra/NetherrackBlockAPI.hpp"
 public:

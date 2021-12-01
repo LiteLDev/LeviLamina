@@ -1,5 +1,5 @@
 //Extra Part For Palette.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PALETTE
 // Include Headers or Declare Types Here
 
 

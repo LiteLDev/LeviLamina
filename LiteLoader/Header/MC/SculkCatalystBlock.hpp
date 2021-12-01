@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCULKCATALYSTBLOCK
 #include "Extra/SculkCatalystBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCULKCATALYSTBLOCK
 class SculkCatalystBlock : public ActorBlock {
 #include "Extra/SculkCatalystBlockAPI.hpp"
 public:

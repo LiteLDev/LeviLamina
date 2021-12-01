@@ -1,5 +1,5 @@
 //Extra Part For IllagerBeastBlockedComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ILLAGERBEASTBLOCKEDCOMPONENT
 // Include Headers or Declare Types Here
 
 

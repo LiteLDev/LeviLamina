@@ -1,5 +1,5 @@
 //Extra Part For AddItemActorPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ADDITEMACTORPACKET
 // Include Headers or Declare Types Here
 
 

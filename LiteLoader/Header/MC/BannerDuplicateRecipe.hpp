@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BANNERDUPLICATERECIPE
 #include "Extra/BannerDuplicateRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BANNERDUPLICATERECIPE
 class BannerDuplicateRecipe : public Recipe {
 #include "Extra/BannerDuplicateRecipeAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SimpleEventPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SIMPLEEVENTPACKET
 // Include Headers or Declare Types Here
 
 

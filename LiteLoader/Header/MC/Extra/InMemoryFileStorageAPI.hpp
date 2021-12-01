@@ -1,5 +1,5 @@
 //Extra Part For InMemoryFileStorage.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INMEMORYFILESTORAGE
 // Include Headers or Declare Types Here
 
 

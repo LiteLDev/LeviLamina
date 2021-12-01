@@ -1,5 +1,5 @@
 //Extra Part For MoveActorDeltaPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVEACTORDELTAPACKET
 // Include Headers or Declare Types Here
 
 

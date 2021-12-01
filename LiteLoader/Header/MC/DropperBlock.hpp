@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DispenserBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DROPPERBLOCK
 #include "Extra/DropperBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DROPPERBLOCK
 class DropperBlock : public DispenserBlock {
 #include "Extra/DropperBlockAPI.hpp"
 public:

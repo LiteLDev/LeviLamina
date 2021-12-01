@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HOPPERSYSTEM
 #include "Extra/HopperSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HOPPERSYSTEM
 class HopperSystem : public ITickingSystem {
 #include "Extra/HopperSystemAPI.hpp"
 public:

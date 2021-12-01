@@ -1,5 +1,5 @@
 //Extra Part For RemoveEntityPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REMOVEENTITYPACKET
 // Include Headers or Declare Types Here
 
 

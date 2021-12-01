@@ -1,5 +1,5 @@
 //Extra Part For WeaponItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WEAPONITEM
 // Include Headers or Declare Types Here
 
 

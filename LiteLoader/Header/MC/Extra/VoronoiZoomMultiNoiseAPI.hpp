@@ -1,5 +1,5 @@
 //Extra Part For VoronoiZoomMultiNoise.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VORONOIZOOMMULTINOISE
 // Include Headers or Declare Types Here
 
 

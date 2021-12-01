@@ -1,5 +1,5 @@
 //Extra Part For NBRoomCrossing.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBROOMCROSSING
 // Include Headers or Declare Types Here
 
 

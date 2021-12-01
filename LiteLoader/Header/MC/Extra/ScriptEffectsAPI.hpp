@@ -1,5 +1,5 @@
 //Extra Part For ScriptEffects.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTEFFECTS
 // Include Headers or Declare Types Here
 
 

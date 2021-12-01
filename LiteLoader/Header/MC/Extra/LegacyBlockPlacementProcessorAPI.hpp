@@ -1,5 +1,5 @@
 //Extra Part For LegacyBlockPlacementProcessor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEGACYBLOCKPLACEMENTPROCESSOR
 // Include Headers or Declare Types Here
 
 

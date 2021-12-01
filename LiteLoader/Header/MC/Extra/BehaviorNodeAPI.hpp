@@ -1,5 +1,5 @@
 //Extra Part For BehaviorNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEHAVIORNODE
 // Include Headers or Declare Types Here
 
 

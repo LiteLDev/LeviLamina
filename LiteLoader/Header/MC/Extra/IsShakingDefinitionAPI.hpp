@@ -1,5 +1,5 @@
 //Extra Part For IsShakingDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ISSHAKINGDEFINITION
 // Include Headers or Declare Types Here
 
 

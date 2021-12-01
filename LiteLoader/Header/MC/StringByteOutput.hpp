@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BytesDataOutput.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRINGBYTEOUTPUT
 #include "Extra/StringByteOutputAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRINGBYTEOUTPUT
 class StringByteOutput : public BytesDataOutput {
 #include "Extra/StringByteOutputAPI.hpp"
 public:

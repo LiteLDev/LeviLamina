@@ -1,5 +1,5 @@
 //Extra Part For Crypto.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRYPTO
 // Include Headers or Declare Types Here
 
 

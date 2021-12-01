@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLIENTCACHESTATUSPACKET
 #include "Extra/ClientCacheStatusPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLIENTCACHESTATUSPACKET
 class ClientCacheStatusPacket : public Packet {
 #include "Extra/ClientCacheStatusPacketAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LIGHTGEMBLOCK
 #include "Extra/LightGemBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LIGHTGEMBLOCK
 class LightGemBlock : public BlockLegacy {
 #include "Extra/LightGemBlockAPI.hpp"
 public:

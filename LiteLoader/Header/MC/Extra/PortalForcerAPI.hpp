@@ -1,5 +1,5 @@
 //Extra Part For PortalForcer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PORTALFORCER
 // Include Headers or Declare Types Here
 
 

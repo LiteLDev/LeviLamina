@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveToPOIGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SLEEPGOAL
 #include "Extra/SleepGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SLEEPGOAL
 class SleepGoal : public MoveToPOIGoal {
 #include "Extra/SleepGoalAPI.hpp"
 public:

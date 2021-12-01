@@ -1,5 +1,5 @@
 //Extra Part For DataItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DATAITEM
 // Include Headers or Declare Types Here
 
 

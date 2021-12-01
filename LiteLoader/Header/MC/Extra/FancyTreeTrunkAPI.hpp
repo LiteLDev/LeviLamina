@@ -1,5 +1,5 @@
 //Extra Part For FancyTreeTrunk.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FANCYTREETRUNK
 // Include Headers or Declare Types Here
 
 

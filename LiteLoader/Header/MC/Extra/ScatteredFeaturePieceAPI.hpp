@@ -1,5 +1,5 @@
 //Extra Part For ScatteredFeaturePiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCATTEREDFEATUREPIECE
 // Include Headers or Declare Types Here
 
 

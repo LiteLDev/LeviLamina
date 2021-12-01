@@ -1,5 +1,5 @@
 //Extra Part For RepeatUntilSuccessNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REPEATUNTILSUCCESSNODE
 // Include Headers or Declare Types Here
 
 

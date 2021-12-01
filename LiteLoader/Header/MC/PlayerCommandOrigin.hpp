@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CommandOrigin.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLAYERCOMMANDORIGIN
 #include "Extra/PlayerCommandOriginAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLAYERCOMMANDORIGIN
 class PlayerCommandOrigin : public CommandOrigin {
 #include "Extra/PlayerCommandOriginAPI.hpp"
 public:

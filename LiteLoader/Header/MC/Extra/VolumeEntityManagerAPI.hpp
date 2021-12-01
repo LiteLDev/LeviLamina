@@ -1,5 +1,5 @@
 //Extra Part For VolumeEntityManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VOLUMEENTITYMANAGER
 // Include Headers or Declare Types Here
 
 

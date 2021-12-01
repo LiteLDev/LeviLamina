@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PACKETVIOLATIONWARNINGPACKET
 #include "Extra/PacketViolationWarningPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PACKETVIOLATIONWARNINGPACKET
 class PacketViolationWarningPacket : public Packet {
 #include "Extra/PacketViolationWarningPacketAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseCircuitComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASERAILTRANSPORTER
 #include "Extra/BaseRailTransporterAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASERAILTRANSPORTER
 class BaseRailTransporter : public BaseCircuitComponent {
 #include "Extra/BaseRailTransporterAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPIKEFEATURE
 #include "Extra/SpikeFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPIKEFEATURE
 class SpikeFeature : public Feature {
 #include "Extra/SpikeFeatureAPI.hpp"
 public:

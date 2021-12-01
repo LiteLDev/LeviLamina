@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PISTONARMBLOCK
 #include "Extra/PistonArmBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PISTONARMBLOCK
 class PistonArmBlock : public BlockLegacy {
 #include "Extra/PistonArmBlockAPI.hpp"
 public:

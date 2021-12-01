@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CACTUSBLOCK
 #include "Extra/CactusBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CACTUSBLOCK
 class CactusBlock : public BlockLegacy {
 #include "Extra/CactusBlockAPI.hpp"
 public:

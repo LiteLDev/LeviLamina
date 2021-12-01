@@ -1,5 +1,5 @@
 //Extra Part For ScriptMovementSkipComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTMOVEMENTSKIPCOMPONENT
 // Include Headers or Declare Types Here
 
 

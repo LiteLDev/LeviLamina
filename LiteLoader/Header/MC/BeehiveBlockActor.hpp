@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEEHIVEBLOCKACTOR
 #include "Extra/BeehiveBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEEHIVEBLOCKACTOR
 class BeehiveBlockActor : public BlockActor {
 #include "Extra/BeehiveBlockActorAPI.hpp"
 public:

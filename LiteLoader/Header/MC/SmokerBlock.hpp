@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FurnaceBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SMOKERBLOCK
 #include "Extra/SmokerBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SMOKERBLOCK
 class SmokerBlock : public FurnaceBlock {
 #include "Extra/SmokerBlockAPI.hpp"
 public:

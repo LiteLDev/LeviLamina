@@ -1,5 +1,5 @@
 //Extra Part For SequenceBehaviorNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SEQUENCEBEHAVIORNODE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BasePressurePlateBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WEIGHTEDPRESSUREPLATEBLOCK
 #include "Extra/WeightedPressurePlateBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WEIGHTEDPRESSUREPLATEBLOCK
 class WeightedPressurePlateBlock : public BasePressurePlateBlock {
 #include "Extra/WeightedPressurePlateBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For DrinkPotionGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DRINKPOTIONGOAL
 // Include Headers or Declare Types Here
 
 

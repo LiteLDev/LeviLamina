@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CarpetBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WOOLCARPETBLOCK
 #include "Extra/WoolCarpetBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WOOLCARPETBLOCK
 class WoolCarpetBlock : public CarpetBlock {
 #include "Extra/WoolCarpetBlockAPI.hpp"
 public:

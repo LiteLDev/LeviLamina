@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CARROTONASTICKITEM
 #include "Extra/CarrotOnAStickItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CARROTONASTICKITEM
 class CarrotOnAStickItem : public Item {
 #include "Extra/CarrotOnAStickItemAPI.hpp"
 public:

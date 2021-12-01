@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MAPEXTENDINGRECIPE
 #include "Extra/MapExtendingRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MAPEXTENDINGRECIPE
 class MapExtendingRecipe : public Recipe {
 #include "Extra/MapExtendingRecipeAPI.hpp"
 public:

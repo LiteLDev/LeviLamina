@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BytesDataInput.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRINGBYTEINPUT
 #include "Extra/StringByteInputAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRINGBYTEINPUT
 class StringByteInput : public BytesDataInput {
 #include "Extra/StringByteInputAPI.hpp"
 public:

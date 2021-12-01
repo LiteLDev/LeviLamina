@@ -1,5 +1,5 @@
 //Extra Part For JumpInfo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_JUMPINFO
 // Include Headers or Declare Types Here
 
 

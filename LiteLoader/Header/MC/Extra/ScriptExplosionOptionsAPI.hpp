@@ -1,5 +1,5 @@
 //Extra Part For ScriptExplosionOptions.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTEXPLOSIONOPTIONS
 // Include Headers or Declare Types Here
 
 

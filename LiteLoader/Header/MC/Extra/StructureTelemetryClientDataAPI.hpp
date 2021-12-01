@@ -1,5 +1,5 @@
 //Extra Part For StructureTelemetryClientData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTURETELEMETRYCLIENTDATA
 // Include Headers or Declare Types Here
 
 

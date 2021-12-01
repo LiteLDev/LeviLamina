@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GROUPSIZESYSTEM
 #include "Extra/GroupSizeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GROUPSIZESYSTEM
 class GroupSizeSystem : public ITickingSystem {
 #include "Extra/GroupSizeSystemAPI.hpp"
 public:

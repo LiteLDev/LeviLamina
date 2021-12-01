@@ -1,5 +1,5 @@
 //Extra Part For ScriptColor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTCOLOR
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EMOTEPACKET
 #include "Extra/EmotePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EMOTEPACKET
 class EmotePacket : public Packet {
 #include "Extra/EmotePacketAPI.hpp"
 public:

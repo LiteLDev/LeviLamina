@@ -1,5 +1,5 @@
 //Extra Part For AreaAttackComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AREAATTACKCOMPONENT
 // Include Headers or Declare Types Here
 
 

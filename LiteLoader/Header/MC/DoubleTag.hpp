@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DOUBLETAG
 #include "Extra/DoubleTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DOUBLETAG
 class DoubleTag : public Tag {
 #include "Extra/DoubleTagAPI.hpp"
 public:

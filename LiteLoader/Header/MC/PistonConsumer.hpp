@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ConsumerComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PISTONCONSUMER
 #include "Extra/PistonConsumerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PISTONCONSUMER
 class PistonConsumer : public ConsumerComponent {
 #include "Extra/PistonConsumerAPI.hpp"
 public:

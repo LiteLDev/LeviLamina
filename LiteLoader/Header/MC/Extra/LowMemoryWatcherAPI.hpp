@@ -1,5 +1,5 @@
 //Extra Part For LowMemoryWatcher.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOWMEMORYWATCHER
 // Include Headers or Declare Types Here
 
 

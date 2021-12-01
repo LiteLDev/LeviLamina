@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BANNERITEM
 #include "Extra/BannerItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BANNERITEM
 class BannerItem : public Item {
 #include "Extra/BannerItemAPI.hpp"
 public:

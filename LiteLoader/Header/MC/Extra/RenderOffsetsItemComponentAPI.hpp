@@ -1,5 +1,5 @@
 //Extra Part For RenderOffsetsItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RENDEROFFSETSITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

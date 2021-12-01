@@ -1,5 +1,5 @@
 //Extra Part For ScriptGameTestSequence.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTGAMETESTSEQUENCE
 // Include Headers or Declare Types Here
 
 

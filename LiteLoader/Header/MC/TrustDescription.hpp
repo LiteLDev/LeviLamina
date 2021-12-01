@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRUSTDESCRIPTION
 #include "Extra/TrustDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRUSTDESCRIPTION
 class TrustDescription : public Description {
 #include "Extra/TrustDescriptionAPI.hpp"
 public:

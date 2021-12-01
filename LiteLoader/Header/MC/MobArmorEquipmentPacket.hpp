@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOBARMOREQUIPMENTPACKET
 #include "Extra/MobArmorEquipmentPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOBARMOREQUIPMENTPACKET
 class MobArmorEquipmentPacket : public Packet {
 #include "Extra/MobArmorEquipmentPacketAPI.hpp"
 public:

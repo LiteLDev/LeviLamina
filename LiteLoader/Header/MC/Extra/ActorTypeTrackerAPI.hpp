@@ -1,5 +1,5 @@
 //Extra Part For ActorTypeTracker.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORTYPETRACKER
 // Include Headers or Declare Types Here
 
 

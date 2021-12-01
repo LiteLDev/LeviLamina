@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAULDRONBLOCK
 #include "Extra/CauldronBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAULDRONBLOCK
 class CauldronBlock : public ActorBlock {
 #include "Extra/CauldronBlockAPI.hpp"
 public:

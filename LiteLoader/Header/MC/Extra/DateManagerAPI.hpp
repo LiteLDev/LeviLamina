@@ -1,5 +1,5 @@
 //Extra Part For DateManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DATEMANAGER
 // Include Headers or Declare Types Here
 
 

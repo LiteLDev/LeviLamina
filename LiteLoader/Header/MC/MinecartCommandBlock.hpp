@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Minecart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINECARTCOMMANDBLOCK
 #include "Extra/MinecartCommandBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINECARTCOMMANDBLOCK
 class MinecartCommandBlock : public Minecart {
 #include "Extra/MinecartCommandBlockAPI.hpp"
 public:

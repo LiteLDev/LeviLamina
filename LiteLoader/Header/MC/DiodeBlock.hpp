@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DIODEBLOCK
 #include "Extra/DiodeBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DIODEBLOCK
 class DiodeBlock : public BlockLegacy {
 #include "Extra/DiodeBlockAPI.hpp"
 public:

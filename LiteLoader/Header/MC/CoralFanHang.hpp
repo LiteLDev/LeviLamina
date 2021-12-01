@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CoralFan.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CORALFANHANG
 #include "Extra/CoralFanHangAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CORALFANHANG
 class CoralFanHang : public CoralFan {
 #include "Extra/CoralFanHangAPI.hpp"
 public:

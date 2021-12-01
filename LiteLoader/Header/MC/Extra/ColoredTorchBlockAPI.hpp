@@ -1,5 +1,5 @@
 //Extra Part For ColoredTorchBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COLOREDTORCHBLOCK
 // Include Headers or Declare Types Here
 
 

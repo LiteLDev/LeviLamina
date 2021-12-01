@@ -1,5 +1,5 @@
 //Extra Part For OnFriendlyAngerDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONFRIENDLYANGERDEFINITION
 // Include Headers or Declare Types Here
 
 

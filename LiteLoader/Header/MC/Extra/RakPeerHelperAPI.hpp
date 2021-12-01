@@ -1,5 +1,5 @@
 //Extra Part For RakPeerHelper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAKPEERHELPER
 // Include Headers or Declare Types Here
 
 

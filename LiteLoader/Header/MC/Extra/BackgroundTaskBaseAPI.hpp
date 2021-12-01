@@ -1,5 +1,5 @@
 //Extra Part For BackgroundTaskBase.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BACKGROUNDTASKBASE
 // Include Headers or Declare Types Here
 
 

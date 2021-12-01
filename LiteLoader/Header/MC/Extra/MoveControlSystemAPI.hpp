@@ -1,5 +1,5 @@
 //Extra Part For MoveControlSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVECONTROLSYSTEM
 // Include Headers or Declare Types Here
 
 

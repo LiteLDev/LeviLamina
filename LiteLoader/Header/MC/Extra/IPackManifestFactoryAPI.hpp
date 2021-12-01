@@ -1,5 +1,5 @@
 //Extra Part For IPackManifestFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IPACKMANIFESTFACTORY
 // Include Headers or Declare Types Here
 
 

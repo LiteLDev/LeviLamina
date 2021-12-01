@@ -1,5 +1,5 @@
 //Extra Part For BarrelBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BARRELBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

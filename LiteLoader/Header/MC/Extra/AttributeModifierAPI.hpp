@@ -1,5 +1,5 @@
 //Extra Part For AttributeModifier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ATTRIBUTEMODIFIER
 // Include Headers or Declare Types Here
 
 

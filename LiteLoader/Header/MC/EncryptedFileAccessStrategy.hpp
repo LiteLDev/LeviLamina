@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DirectoryPackAccessStrategy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENCRYPTEDFILEACCESSSTRATEGY
 #include "Extra/EncryptedFileAccessStrategyAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENCRYPTEDFILEACCESSSTRATEGY
 class EncryptedFileAccessStrategy : public DirectoryPackAccessStrategy {
 #include "Extra/EncryptedFileAccessStrategyAPI.hpp"
 public:

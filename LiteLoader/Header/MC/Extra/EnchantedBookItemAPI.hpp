@@ -1,5 +1,5 @@
 //Extra Part For EnchantedBookItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENCHANTEDBOOKITEM
 // Include Headers or Declare Types Here
 
 

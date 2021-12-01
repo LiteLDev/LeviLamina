@@ -1,5 +1,5 @@
 //Extra Part For SwimWithEntityGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWIMWITHENTITYGOAL
 // Include Headers or Declare Types Here
 
 

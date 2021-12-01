@@ -1,5 +1,5 @@
 //Extra Part For MineshaftFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINESHAFTFEATURE
 // Include Headers or Declare Types Here
 
 

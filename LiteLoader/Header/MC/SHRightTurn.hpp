@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHRIGHTTURN
 #include "Extra/SHRightTurnAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHRIGHTTURN
 class SHRightTurn : public StructurePiece {
 #include "Extra/SHRightTurnAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ActorIsFamilyTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORISFAMILYTEST
 // Include Headers or Declare Types Here
 
 

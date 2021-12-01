@@ -1,5 +1,5 @@
 //Extra Part For MountTameableDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOUNTTAMEABLEDEFINITION
 // Include Headers or Declare Types Here
 
 

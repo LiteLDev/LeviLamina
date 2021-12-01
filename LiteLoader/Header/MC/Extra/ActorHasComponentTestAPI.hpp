@@ -1,5 +1,5 @@
 //Extra Part For ActorHasComponentTest.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORHASCOMPONENTTEST
 // Include Headers or Declare Types Here
 
 

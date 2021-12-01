@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveToPOIGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HIDEGOAL
 #include "Extra/HideGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HIDEGOAL
 class HideGoal : public MoveToPOIGoal {
 #include "Extra/HideGoalAPI.hpp"
 public:

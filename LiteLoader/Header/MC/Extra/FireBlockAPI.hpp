@@ -1,5 +1,5 @@
 //Extra Part For FireBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FIREBLOCK
 // Include Headers or Declare Types Here
 
 

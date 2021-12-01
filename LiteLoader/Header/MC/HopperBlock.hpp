@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HOPPERBLOCK
 #include "Extra/HopperBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HOPPERBLOCK
 class HopperBlock : public ActorBlock {
 #include "Extra/HopperBlockAPI.hpp"
 public:

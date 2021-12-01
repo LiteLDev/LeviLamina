@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LogBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OLDLOGBLOCK
 #include "Extra/OldLogBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OLDLOGBLOCK
 class OldLogBlock : public LogBlock {
 #include "Extra/OldLogBlockAPI.hpp"
 public:

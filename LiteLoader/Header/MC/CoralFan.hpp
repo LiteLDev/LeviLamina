@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CORALFAN
 #include "Extra/CoralFanAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CORALFAN
 class CoralFan : public BlockLegacy {
 #include "Extra/CoralFanAPI.hpp"
 public:

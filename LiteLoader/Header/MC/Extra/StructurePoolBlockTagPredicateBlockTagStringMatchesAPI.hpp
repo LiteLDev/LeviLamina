@@ -1,5 +1,5 @@
 //Extra Part For StructurePoolBlockTagPredicateBlockTagStringMatches.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTUREPOOLBLOCKTAGPREDICATEBLOCKTAGSTRINGMATCHES
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestActionTransferBase.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONTRANSFERBASE
 // Include Headers or Declare Types Here
 
 

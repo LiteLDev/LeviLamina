@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEGACYSMALLMUSHROOMSFEATURE
 #include "Extra/LegacySmallMushroomsFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEGACYSMALLMUSHROOMSFEATURE
 class LegacySmallMushroomsFeature : public Feature {
 #include "Extra/LegacySmallMushroomsFeatureAPI.hpp"
 public:

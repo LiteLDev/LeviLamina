@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Throwable.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_THROWNENDERPEARL
 #include "Extra/ThrownEnderpearlAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_THROWNENDERPEARL
 class ThrownEnderpearl : public Throwable {
 #include "Extra/ThrownEnderpearlAPI.hpp"
 public:

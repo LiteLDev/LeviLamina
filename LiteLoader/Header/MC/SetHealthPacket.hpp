@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETHEALTHPACKET
 #include "Extra/SetHealthPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETHEALTHPACKET
 class SetHealthPacket : public Packet {
 #include "Extra/SetHealthPacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ScriptQueryComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTQUERYCOMPONENT
 // Include Headers or Declare Types Here
 
 

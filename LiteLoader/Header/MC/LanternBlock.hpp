@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LANTERNBLOCK
 #include "Extra/LanternBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LANTERNBLOCK
 class LanternBlock : public BlockLegacy {
 #include "Extra/LanternBlockAPI.hpp"
 public:

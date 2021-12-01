@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TEMPLATESTRUCTUREPIECE
 #include "Extra/TemplateStructurePieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TEMPLATESTRUCTUREPIECE
 class TemplateStructurePiece : public StructurePiece {
 #include "Extra/TemplateStructurePieceAPI.hpp"
 public:

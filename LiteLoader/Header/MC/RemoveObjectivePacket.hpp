@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REMOVEOBJECTIVEPACKET
 #include "Extra/RemoveObjectivePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REMOVEOBJECTIVEPACKET
 class RemoveObjectivePacket : public Packet {
 #include "Extra/RemoveObjectivePacketAPI.hpp"
 public:

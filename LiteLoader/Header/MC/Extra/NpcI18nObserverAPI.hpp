@@ -1,5 +1,5 @@
 //Extra Part For NpcI18nObserver.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NPCI18NOBSERVER
 // Include Headers or Declare Types Here
 
 

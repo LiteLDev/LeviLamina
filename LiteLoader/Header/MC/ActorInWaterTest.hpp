@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORINWATERTEST
 #include "Extra/ActorInWaterTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORINWATERTEST
 class ActorInWaterTest : public FilterTest {
 #include "Extra/ActorInWaterTestAPI.hpp"
 public:

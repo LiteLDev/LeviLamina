@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CraftHandlerBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CRAFTHANDLERENCHANT
 #include "Extra/CraftHandlerEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CRAFTHANDLERENCHANT
 class CraftHandlerEnchant : public CraftHandlerBase {
 #include "Extra/CraftHandlerEnchantAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ScreenCapabilitiesRepo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCREENCAPABILITIESREPO
 // Include Headers or Declare Types Here
 
 

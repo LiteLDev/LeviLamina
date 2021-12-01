@@ -1,5 +1,5 @@
 //Extra Part For ScriptNavigationFlyComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONFLYCOMPONENT
 // Include Headers or Declare Types Here
 
 

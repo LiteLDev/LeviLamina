@@ -1,5 +1,5 @@
 //Extra Part For IPacketHandlerDispatcher.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IPACKETHANDLERDISPATCHER
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For PrismarineBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PRISMARINEBLOCK
 // Include Headers or Declare Types Here
 
 

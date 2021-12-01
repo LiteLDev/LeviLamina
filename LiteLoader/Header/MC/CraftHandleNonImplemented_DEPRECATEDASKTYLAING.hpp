@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CraftHandlerBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
 #include "Extra/CraftHandleNonImplemented_DEPRECATEDASKTYLAINGAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
 class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public CraftHandlerBase {
 #include "Extra/CraftHandleNonImplemented_DEPRECATEDASKTYLAINGAPI.hpp"
 public:

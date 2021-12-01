@@ -1,5 +1,5 @@
 //Extra Part For LevelUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELUTILS
 // Include Headers or Declare Types Here
 
 

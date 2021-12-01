@@ -1,5 +1,5 @@
 //Extra Part For GameMode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GAMEMODE
 // Include Headers or Declare Types Here
 
 

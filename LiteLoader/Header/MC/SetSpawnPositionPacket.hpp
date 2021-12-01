@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETSPAWNPOSITIONPACKET
 #include "Extra/SetSpawnPositionPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETSPAWNPOSITIONPACKET
 class SetSpawnPositionPacket : public Packet {
 #include "Extra/SetSpawnPositionPacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For RailActivatorSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAILACTIVATORSYSTEM
 // Include Headers or Declare Types Here
 
 

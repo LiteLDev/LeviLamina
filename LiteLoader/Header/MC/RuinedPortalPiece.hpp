@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RUINEDPORTALPIECE
 #include "Extra/RuinedPortalPieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RUINEDPORTALPIECE
 class RuinedPortalPiece : public StructurePiece {
 #include "Extra/RuinedPortalPieceAPI.hpp"
 public:

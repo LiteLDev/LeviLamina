@@ -1,5 +1,5 @@
 //Extra Part For CryingObsidianBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRYINGOBSIDIANBLOCK
 // Include Headers or Declare Types Here
 
 

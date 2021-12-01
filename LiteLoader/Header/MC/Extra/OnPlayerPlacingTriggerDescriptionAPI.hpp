@@ -1,5 +1,5 @@
 //Extra Part For OnPlayerPlacingTriggerDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONPLAYERPLACINGTRIGGERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

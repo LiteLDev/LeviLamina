@@ -1,5 +1,5 @@
 //Extra Part For SurfaceMaterialAdjustmentEvaluated.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SURFACEMATERIALADJUSTMENTEVALUATED
 // Include Headers or Declare Types Here
 
 

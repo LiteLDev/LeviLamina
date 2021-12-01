@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TOPSNOWBLOCK
 #include "Extra/TopSnowBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TOPSNOWBLOCK
 class TopSnowBlock : public HeavyBlock {
 #include "Extra/TopSnowBlockAPI.hpp"
 public:

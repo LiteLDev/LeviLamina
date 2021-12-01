@@ -1,5 +1,5 @@
 //Extra Part For ProfilerLite.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PROFILERLITE
 // Include Headers or Declare Types Here
 
 

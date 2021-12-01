@@ -1,5 +1,5 @@
 //Extra Part For PolarBear.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_POLARBEAR
 // Include Headers or Declare Types Here
 
 

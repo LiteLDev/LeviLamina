@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLOATTAG
 #include "Extra/FloatTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLOATTAG
 class FloatTag : public Tag {
 #include "Extra/FloatTagAPI.hpp"
 public:

@@ -1,4 +1,4 @@
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TELEPORTTARGET
 // Add include headers & pre-declares
 #else
 // Add new members to class

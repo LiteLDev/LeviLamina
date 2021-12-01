@@ -1,5 +1,5 @@
 //Extra Part For FilterTestGameRule.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTGAMERULE
 // Include Headers or Declare Types Here
 
 

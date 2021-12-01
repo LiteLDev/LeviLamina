@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PERSISTENTDESCRIPTION
 #include "Extra/PersistentDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PERSISTENTDESCRIPTION
 class PersistentDescription : public Description {
 #include "Extra/PersistentDescriptionAPI.hpp"
 public:

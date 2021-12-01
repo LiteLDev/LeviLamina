@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MAPLOCKINGRECIPE
 #include "Extra/MapLockingRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MAPLOCKINGRECIPE
 class MapLockingRecipe : public Recipe {
 #include "Extra/MapLockingRecipeAPI.hpp"
 public:

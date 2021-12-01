@@ -1,5 +1,5 @@
 //Extra Part For FitSimpleTopRoom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FITSIMPLETOPROOM
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SimulationTypePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SIMULATIONTYPEPACKET
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For FloatRange.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLOATRANGE
 // Include Headers or Declare Types Here
 
 

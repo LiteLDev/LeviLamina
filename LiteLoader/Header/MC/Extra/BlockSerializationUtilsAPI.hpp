@@ -1,5 +1,5 @@
 //Extra Part For BlockSerializationUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKSERIALIZATIONUTILS
 // Include Headers or Declare Types Here
 
 

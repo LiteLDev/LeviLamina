@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REDSTONEOREBLOCK
 #include "Extra/RedStoneOreBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REDSTONEOREBLOCK
 class RedStoneOreBlock : public BlockLegacy {
 #include "Extra/RedStoneOreBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMMANDBLOCKSYSTEM
 #include "Extra/CommandBlockSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMMANDBLOCKSYSTEM
 class CommandBlockSystem : public ITickingSystem {
 #include "Extra/CommandBlockSystemAPI.hpp"
 public:

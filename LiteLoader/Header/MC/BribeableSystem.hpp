@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BRIBEABLESYSTEM
 #include "Extra/BribeableSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BRIBEABLESYSTEM
 class BribeableSystem : public ITickingSystem {
 #include "Extra/BribeableSystemAPI.hpp"
 public:

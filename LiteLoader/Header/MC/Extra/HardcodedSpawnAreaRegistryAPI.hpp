@@ -1,5 +1,5 @@
 //Extra Part For HardcodedSpawnAreaRegistry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HARDCODEDSPAWNAREAREGISTRY
 // Include Headers or Declare Types Here
 
 

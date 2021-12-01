@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CURSEBINDINGENCHANT
 #include "Extra/CurseBindingEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CURSEBINDINGENCHANT
 class CurseBindingEnchant : public Enchant {
 #include "Extra/CurseBindingEnchantAPI.hpp"
 public:

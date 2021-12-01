@@ -1,5 +1,5 @@
 //Extra Part For StructureTemplatePool.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTURETEMPLATEPOOL
 // Include Headers or Declare Types Here
 
 

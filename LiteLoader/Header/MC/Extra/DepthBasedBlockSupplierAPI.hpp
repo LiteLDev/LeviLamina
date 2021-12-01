@@ -1,5 +1,5 @@
 //Extra Part For DepthBasedBlockSupplier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEPTHBASEDBLOCKSUPPLIER
 // Include Headers or Declare Types Here
 
 

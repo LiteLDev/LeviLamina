@@ -1,4 +1,4 @@
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPAWNER
 // Add include headers & pre-declares
 class Mob;
 class ItemActor;

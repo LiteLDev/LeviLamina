@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCHEDULERSYSTEM
 #include "Extra/SchedulerSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCHEDULERSYSTEM
 class SchedulerSystem : public ITickingSystem {
 #include "Extra/SchedulerSystemAPI.hpp"
 public:

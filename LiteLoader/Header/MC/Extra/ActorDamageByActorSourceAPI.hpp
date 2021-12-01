@@ -1,5 +1,5 @@
 //Extra Part For ActorDamageByActorSource.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORDAMAGEBYACTORSOURCE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For AbsorptionMobEffect.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ABSORPTIONMOBEFFECT
 // Include Headers or Declare Types Here
 
 

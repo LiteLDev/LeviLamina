@@ -1,5 +1,5 @@
 //Extra Part For AreaEffectCloud.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AREAEFFECTCLOUD
 // Include Headers or Declare Types Here
 
 

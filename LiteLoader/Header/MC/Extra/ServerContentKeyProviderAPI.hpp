@@ -1,5 +1,5 @@
 //Extra Part For ServerContentKeyProvider.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERCONTENTKEYPROVIDER
 // Include Headers or Declare Types Here
 
 

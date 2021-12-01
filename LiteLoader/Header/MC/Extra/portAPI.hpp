@@ -1,5 +1,5 @@
 //Extra Part For port.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PORT
 // Include Headers or Declare Types Here
 
 

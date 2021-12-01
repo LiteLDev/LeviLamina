@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_UPDATETRADEPACKET
 #include "Extra/UpdateTradePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_UPDATETRADEPACKET
 class UpdateTradePacket : public Packet {
 #include "Extra/UpdateTradePacketAPI.hpp"
 public:

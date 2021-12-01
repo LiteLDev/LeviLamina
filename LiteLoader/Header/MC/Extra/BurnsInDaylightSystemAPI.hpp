@@ -1,5 +1,5 @@
 //Extra Part For BurnsInDaylightSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BURNSINDAYLIGHTSYSTEM
 // Include Headers or Declare Types Here
 
 

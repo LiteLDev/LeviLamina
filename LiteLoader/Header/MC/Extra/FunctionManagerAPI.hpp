@@ -1,5 +1,5 @@
 //Extra Part For FunctionManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FUNCTIONMANAGER
 // Include Headers or Declare Types Here
 
 

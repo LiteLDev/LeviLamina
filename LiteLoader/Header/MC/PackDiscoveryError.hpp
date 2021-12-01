@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PackError.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PACKDISCOVERYERROR
 #include "Extra/PackDiscoveryErrorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PACKDISCOVERYERROR
 class PackDiscoveryError : public PackError {
 #include "Extra/PackDiscoveryErrorAPI.hpp"
 public:

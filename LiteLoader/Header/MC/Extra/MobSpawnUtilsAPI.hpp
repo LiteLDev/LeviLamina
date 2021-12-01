@@ -1,5 +1,5 @@
 //Extra Part For MobSpawnUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOBSPAWNUTILS
 // Include Headers or Declare Types Here
 
 

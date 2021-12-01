@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASEPRESSUREPLATEBLOCK
 #include "Extra/BasePressurePlateBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASEPRESSUREPLATEBLOCK
 class BasePressurePlateBlock : public BlockLegacy {
 #include "Extra/BasePressurePlateBlockAPI.hpp"
 public:

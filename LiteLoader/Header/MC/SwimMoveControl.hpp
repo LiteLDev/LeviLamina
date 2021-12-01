@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveControl.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SWIMMOVECONTROL
 #include "Extra/SwimMoveControlAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SWIMMOVECONTROL
 class SwimMoveControl : public MoveControl {
 #include "Extra/SwimMoveControlAPI.hpp"
 public:

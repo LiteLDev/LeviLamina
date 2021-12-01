@@ -1,5 +1,5 @@
 //Extra Part For ToggleDownfallCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TOGGLEDOWNFALLCOMMAND
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScriptObjectBinder.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTOBJECTBINDER
 // Include Headers or Declare Types Here
 
 

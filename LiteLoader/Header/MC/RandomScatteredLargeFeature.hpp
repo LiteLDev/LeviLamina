@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RANDOMSCATTEREDLARGEFEATURE
 #include "Extra/RandomScatteredLargeFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RANDOMSCATTEREDLARGEFEATURE
 class RandomScatteredLargeFeature : public StructureFeature {
 #include "Extra/RandomScatteredLargeFeatureAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PoolElementStructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BASTIONPIECE
 #include "Extra/BastionPieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BASTIONPIECE
 class BastionPiece : public PoolElementStructurePiece {
 #include "Extra/BastionPieceAPI.hpp"
 public:

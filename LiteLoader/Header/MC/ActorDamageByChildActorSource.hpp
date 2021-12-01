@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorDamageSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORDAMAGEBYCHILDACTORSOURCE
 #include "Extra/ActorDamageByChildActorSourceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORDAMAGEBYCHILDACTORSOURCE
 class ActorDamageByChildActorSource : public ActorDamageSource {
 #include "Extra/ActorDamageByChildActorSourceAPI.hpp"
 public:

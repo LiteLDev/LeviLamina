@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SEAGRASS
 #include "Extra/SeaGrassAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SEAGRASS
 class SeaGrass : public BlockLegacy {
 #include "Extra/SeaGrassAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For CoralFan.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CORALFAN
 // Include Headers or Declare Types Here
 
 

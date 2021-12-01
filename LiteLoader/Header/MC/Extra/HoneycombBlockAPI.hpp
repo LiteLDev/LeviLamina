@@ -1,5 +1,5 @@
 //Extra Part For HoneycombBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HONEYCOMBBLOCK
 // Include Headers or Declare Types Here
 
 

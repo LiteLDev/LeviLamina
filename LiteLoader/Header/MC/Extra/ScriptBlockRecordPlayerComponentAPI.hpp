@@ -1,5 +1,5 @@
 //Extra Part For ScriptBlockRecordPlayerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBLOCKRECORDPLAYERCOMPONENT
 // Include Headers or Declare Types Here
 
 

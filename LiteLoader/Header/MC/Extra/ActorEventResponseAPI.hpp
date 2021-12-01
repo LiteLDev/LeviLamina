@@ -1,5 +1,5 @@
 //Extra Part For ActorEventResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTOREVENTRESPONSE
 // Include Headers or Declare Types Here
 
 

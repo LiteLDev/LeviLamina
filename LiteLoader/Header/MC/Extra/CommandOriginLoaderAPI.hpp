@@ -1,5 +1,5 @@
 //Extra Part For CommandOriginLoader.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDORIGINLOADER
 // Include Headers or Declare Types Here
 
 

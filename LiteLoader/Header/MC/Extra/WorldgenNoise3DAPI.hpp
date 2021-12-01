@@ -1,5 +1,5 @@
 //Extra Part For WorldgenNoise3D.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WORLDGENNOISE3D
 // Include Headers or Declare Types Here
 
 

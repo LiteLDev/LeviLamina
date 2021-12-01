@@ -1,5 +1,5 @@
 //Extra Part For BannerDuplicateRecipe.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BANNERDUPLICATERECIPE
 // Include Headers or Declare Types Here
 
 

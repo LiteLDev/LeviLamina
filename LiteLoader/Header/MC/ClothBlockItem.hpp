@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLOTHBLOCKITEM
 #include "Extra/ClothBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLOTHBLOCKITEM
 class ClothBlockItem : public BlockItem {
 #include "Extra/ClothBlockItemAPI.hpp"
 public:

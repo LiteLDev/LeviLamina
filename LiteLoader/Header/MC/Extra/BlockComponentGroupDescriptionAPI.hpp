@@ -1,5 +1,5 @@
 //Extra Part For BlockComponentGroupDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKCOMPONENTGROUPDESCRIPTION
 // Include Headers or Declare Types Here
 
 

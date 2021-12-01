@@ -1,5 +1,5 @@
 //Extra Part For BlockPosTrackerSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKPOSTRACKERSYSTEM
 // Include Headers or Declare Types Here
 
 

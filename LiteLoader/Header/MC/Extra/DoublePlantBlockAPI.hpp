@@ -1,5 +1,5 @@
 //Extra Part For DoublePlantBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DOUBLEPLANTBLOCK
 // Include Headers or Declare Types Here
 
 

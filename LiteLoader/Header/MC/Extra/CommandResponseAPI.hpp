@@ -1,5 +1,5 @@
 //Extra Part For CommandResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDRESPONSE
 // Include Headers or Declare Types Here
 
 

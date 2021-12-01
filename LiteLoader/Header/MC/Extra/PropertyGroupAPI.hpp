@@ -1,5 +1,5 @@
 //Extra Part For PropertyGroup.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PROPERTYGROUP
 // Include Headers or Declare Types Here
 
 

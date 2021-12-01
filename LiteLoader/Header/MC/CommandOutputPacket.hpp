@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMMANDOUTPUTPACKET
 #include "Extra/CommandOutputPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMMANDOUTPUTPACKET
 class CommandOutputPacket : public Packet {
 #include "Extra/CommandOutputPacketAPI.hpp"
 public:

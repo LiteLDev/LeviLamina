@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPAWNACTORSYSTEM
 #include "Extra/SpawnActorSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPAWNACTORSYSTEM
 class SpawnActorSystem : public ITickingSystem {
 #include "Extra/SpawnActorSystemAPI.hpp"
 public:

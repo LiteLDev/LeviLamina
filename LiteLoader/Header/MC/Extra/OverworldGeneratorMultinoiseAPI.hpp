@@ -1,5 +1,5 @@
 //Extra Part For OverworldGeneratorMultinoise.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OVERWORLDGENERATORMULTINOISE
 // Include Headers or Declare Types Here
 
 

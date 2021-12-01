@@ -1,5 +1,5 @@
 //Extra Part For SnowBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SNOWBLOCK
 // Include Headers or Declare Types Here
 
 

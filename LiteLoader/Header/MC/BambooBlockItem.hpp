@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BAMBOOBLOCKITEM
 #include "Extra/BambooBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BAMBOOBLOCKITEM
 class BambooBlockItem : public BlockItem {
 #include "Extra/BambooBlockItemAPI.hpp"
 public:

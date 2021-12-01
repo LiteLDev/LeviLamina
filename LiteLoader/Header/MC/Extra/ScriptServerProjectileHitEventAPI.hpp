@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerProjectileHitEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERPROJECTILEHITEVENT
 // Include Headers or Declare Types Here
 
 

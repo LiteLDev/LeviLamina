@@ -1,5 +1,5 @@
 //Extra Part For WitherSkull.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WITHERSKULL
 // Include Headers or Declare Types Here
 
 

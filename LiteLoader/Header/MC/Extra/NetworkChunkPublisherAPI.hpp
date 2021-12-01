@@ -1,5 +1,5 @@
 //Extra Part For NetworkChunkPublisher.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETWORKCHUNKPUBLISHER
 // Include Headers or Declare Types Here
 
 

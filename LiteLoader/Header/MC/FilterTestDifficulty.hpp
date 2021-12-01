@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTDIFFICULTY
 #include "Extra/FilterTestDifficultyAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTDIFFICULTY
 class FilterTestDifficulty : public FilterTest {
 #include "Extra/FilterTestDifficultyAPI.hpp"
 public:

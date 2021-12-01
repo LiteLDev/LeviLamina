@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkPeer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPRESSEDNETWORKPEER
 #include "Extra/CompressedNetworkPeerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPRESSEDNETWORKPEER
 class CompressedNetworkPeer : public NetworkPeer {
 #include "Extra/CompressedNetworkPeerAPI.hpp"
 public:

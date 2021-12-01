@@ -1,5 +1,5 @@
 //Extra Part For PackSource.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKSOURCE
 // Include Headers or Declare Types Here
 
 

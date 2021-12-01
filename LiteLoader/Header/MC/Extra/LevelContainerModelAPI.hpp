@@ -1,5 +1,5 @@
 //Extra Part For LevelContainerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELCONTAINERMODEL
 // Include Headers or Declare Types Here
 
 

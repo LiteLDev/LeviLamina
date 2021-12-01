@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TemplateStructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDCITYSTART
 #include "Extra/EndCityStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDCITYSTART
 class EndCityStart : public TemplateStructurePiece {
 #include "Extra/EndCityStartAPI.hpp"
 public:

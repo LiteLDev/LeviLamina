@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKACTORLEVELLISTENER
 #include "Extra/BlockActorLevelListenerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKACTORLEVELLISTENER
 class BlockActorLevelListener : public BlockSourceListener {
 #include "Extra/BlockActorLevelListenerAPI.hpp"
 public:

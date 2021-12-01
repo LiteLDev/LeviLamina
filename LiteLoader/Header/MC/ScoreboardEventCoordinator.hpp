@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkHandler.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCOREBOARDEVENTCOORDINATOR
 #include "Extra/ScoreboardEventCoordinatorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCOREBOARDEVENTCOORDINATOR
 class ScoreboardEventCoordinator : public NetworkHandler {
 #include "Extra/ScoreboardEventCoordinatorAPI.hpp"
 public:

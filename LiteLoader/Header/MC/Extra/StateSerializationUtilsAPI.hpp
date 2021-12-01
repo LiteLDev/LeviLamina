@@ -1,5 +1,5 @@
 //Extra Part For StateSerializationUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STATESERIALIZATIONUTILS
 // Include Headers or Declare Types Here
 
 

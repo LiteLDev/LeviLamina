@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LOOTSYSTEM
 #include "Extra/LootSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LOOTSYSTEM
 class LootSystem : public ITickingSystem {
 #include "Extra/LootSystemAPI.hpp"
 public:

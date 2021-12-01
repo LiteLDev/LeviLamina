@@ -1,5 +1,5 @@
 //Extra Part For GiveCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GIVECOMMAND
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerPlayerPlacedBlockEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERPLAYERPLACEDBLOCKEVENT
 // Include Headers or Declare Types Here
 
 

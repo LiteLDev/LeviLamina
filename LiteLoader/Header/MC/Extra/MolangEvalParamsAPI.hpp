@@ -1,5 +1,5 @@
 //Extra Part For MolangEvalParams.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOLANGEVALPARAMS
 // Include Headers or Declare Types Here
 
 

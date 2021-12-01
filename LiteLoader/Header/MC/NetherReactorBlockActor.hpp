@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERREACTORBLOCKACTOR
 #include "Extra/NetherReactorBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERREACTORBLOCKACTOR
 class NetherReactorBlockActor : public BlockActor {
 #include "Extra/NetherReactorBlockActorAPI.hpp"
 public:

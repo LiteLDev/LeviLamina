@@ -1,5 +1,5 @@
 //Extra Part For OnInteractTriggerDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONINTERACTTRIGGERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

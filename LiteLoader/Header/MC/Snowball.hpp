@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Throwable.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SNOWBALL
 #include "Extra/SnowballAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SNOWBALL
 class Snowball : public Throwable {
 #include "Extra/SnowballAPI.hpp"
 public:

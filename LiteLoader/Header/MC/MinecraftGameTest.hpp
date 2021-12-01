@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINECRAFTGAMETEST
 #include "Extra/MinecraftGameTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINECRAFTGAMETEST
 class MinecraftGameTest : public BlockSourceListener {
 #include "Extra/MinecraftGameTestAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For SculkPatchFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCULKPATCHFEATURE
 // Include Headers or Declare Types Here
 
 

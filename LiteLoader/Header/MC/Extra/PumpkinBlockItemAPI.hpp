@@ -1,5 +1,5 @@
 //Extra Part For PumpkinBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PUMPKINBLOCKITEM
 // Include Headers or Declare Types Here
 
 

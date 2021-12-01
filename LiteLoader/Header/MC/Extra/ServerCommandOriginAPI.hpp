@@ -1,5 +1,5 @@
 //Extra Part For ServerCommandOrigin.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERCOMMANDORIGIN
 // Include Headers or Declare Types Here
 
 

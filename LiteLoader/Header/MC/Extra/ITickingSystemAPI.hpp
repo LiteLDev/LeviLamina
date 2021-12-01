@@ -1,5 +1,5 @@
 //Extra Part For ITickingSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITICKINGSYSTEM
 // Include Headers or Declare Types Here
 
 

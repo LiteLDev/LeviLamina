@@ -1,5 +1,5 @@
 //Extra Part For KnockbackResistanceItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_KNOCKBACKRESISTANCEITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

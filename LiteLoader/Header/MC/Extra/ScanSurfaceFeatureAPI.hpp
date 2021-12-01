@@ -1,5 +1,5 @@
 //Extra Part For ScanSurfaceFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCANSURFACEFEATURE
 // Include Headers or Declare Types Here
 
 

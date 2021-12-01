@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SEAGRASSFEATURE
 #include "Extra/SeagrassFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SEAGRASSFEATURE
 class SeagrassFeature : public Feature {
 #include "Extra/SeagrassFeatureAPI.hpp"
 public:

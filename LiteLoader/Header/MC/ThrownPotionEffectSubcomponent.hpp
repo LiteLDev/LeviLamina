@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "SplashPotionEffectSubcomponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
 #include "Extra/ThrownPotionEffectSubcomponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
 class ThrownPotionEffectSubcomponent : public SplashPotionEffectSubcomponent {
 #include "Extra/ThrownPotionEffectSubcomponentAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDCRYSTALITEM
 #include "Extra/EndCrystalItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDCRYSTALITEM
 class EndCrystalItem : public Item {
 #include "Extra/EndCrystalItemAPI.hpp"
 public:

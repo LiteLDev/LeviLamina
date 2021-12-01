@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOBSPAWNERBLOCK
 #include "Extra/MobSpawnerBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOBSPAWNERBLOCK
 class MobSpawnerBlock : public ActorBlock {
 #include "Extra/MobSpawnerBlockAPI.hpp"
 public:

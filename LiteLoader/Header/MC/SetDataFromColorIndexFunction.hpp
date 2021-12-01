@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETDATAFROMCOLORINDEXFUNCTION
 #include "Extra/SetDataFromColorIndexFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETDATAFROMCOLORINDEXFUNCTION
 class SetDataFromColorIndexFunction : public LootItemFunction {
 #include "Extra/SetDataFromColorIndexFunctionAPI.hpp"
 public:

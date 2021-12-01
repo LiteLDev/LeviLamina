@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OPENDOORANNOTATIONDESCRIPTION
 #include "Extra/OpenDoorAnnotationDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OPENDOORANNOTATIONDESCRIPTION
 class OpenDoorAnnotationDescription : public Description {
 #include "Extra/OpenDoorAnnotationDescriptionAPI.hpp"
 public:

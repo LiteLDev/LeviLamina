@@ -1,5 +1,5 @@
 //Extra Part For TradeResupplyComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRADERESUPPLYCOMPONENT
 // Include Headers or Declare Types Here
 
 

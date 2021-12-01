@@ -1,5 +1,5 @@
 //Extra Part For AdmireItemDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ADMIREITEMDEFINITION
 // Include Headers or Declare Types Here
 
 

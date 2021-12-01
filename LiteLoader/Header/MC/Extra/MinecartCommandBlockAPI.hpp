@@ -1,5 +1,5 @@
 //Extra Part For MinecartCommandBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINECARTCOMMANDBLOCK
 // Include Headers or Declare Types Here
 
 

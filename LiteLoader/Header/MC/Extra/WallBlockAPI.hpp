@@ -1,5 +1,5 @@
 //Extra Part For WallBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WALLBLOCK
 // Include Headers or Declare Types Here
 
 

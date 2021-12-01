@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TWISTINGVINESCLUSTERFEATURE
 #include "Extra/TwistingVinesClusterFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TWISTINGVINESCLUSTERFEATURE
 class TwistingVinesClusterFeature : public Feature {
 #include "Extra/TwistingVinesClusterFeatureAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ConditionalBandwidthOptimizationDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONDITIONALBANDWIDTHOPTIMIZATIONDEFINITION
 // Include Headers or Declare Types Here
 
 

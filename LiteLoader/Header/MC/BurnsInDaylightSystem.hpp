@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BURNSINDAYLIGHTSYSTEM
 #include "Extra/BurnsInDaylightSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BURNSINDAYLIGHTSYSTEM
 class BurnsInDaylightSystem : public ITickingSystem {
 #include "Extra/BurnsInDaylightSystemAPI.hpp"
 public:

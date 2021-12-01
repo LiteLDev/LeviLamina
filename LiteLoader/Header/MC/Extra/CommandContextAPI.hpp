@@ -1,5 +1,5 @@
 //Extra Part For CommandContext.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDCONTEXT
 // Include Headers or Declare Types Here
 #include <string>
 

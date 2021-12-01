@@ -1,5 +1,5 @@
 //Extra Part For CappedSurfaceAttributes.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CAPPEDSURFACEATTRIBUTES
 // Include Headers or Declare Types Here
 
 

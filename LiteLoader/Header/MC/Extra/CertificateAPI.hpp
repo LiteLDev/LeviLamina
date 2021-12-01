@@ -1,5 +1,5 @@
 //Extra Part For Certificate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CERTIFICATE
 // Include Headers or Declare Types Here
 
 

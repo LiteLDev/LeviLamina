@@ -1,5 +1,5 @@
 //Extra Part For BuriedTreasurePiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BURIEDTREASUREPIECE
 // Include Headers or Declare Types Here
 
 

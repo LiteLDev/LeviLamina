@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPONGEBLOCK
 #include "Extra/SpongeBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPONGEBLOCK
 class SpongeBlock : public BlockLegacy {
 #include "Extra/SpongeBlockAPI.hpp"
 public:

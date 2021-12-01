@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETTINGSCOMMANDPACKET
 #include "Extra/SettingsCommandPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETTINGSCOMMANDPACKET
 class SettingsCommandPacket : public Packet {
 #include "Extra/SettingsCommandPacketAPI.hpp"
 public:

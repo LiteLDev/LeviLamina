@@ -1,5 +1,5 @@
 //Extra Part For BlastFurnaceBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLASTFURNACEBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

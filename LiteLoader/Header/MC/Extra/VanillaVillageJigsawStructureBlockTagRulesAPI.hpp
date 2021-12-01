@@ -1,5 +1,5 @@
 //Extra Part For VanillaVillageJigsawStructureBlockTagRules.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
 // Include Headers or Declare Types Here
 
 

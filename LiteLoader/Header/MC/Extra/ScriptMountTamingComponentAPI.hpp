@@ -1,5 +1,5 @@
 //Extra Part For ScriptMountTamingComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTMOUNTTAMINGCOMPONENT
 // Include Headers or Declare Types Here
 
 

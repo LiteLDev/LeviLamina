@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDERMITE
 #include "Extra/EndermiteAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDERMITE
 class Endermite : public Monster {
 #include "Extra/EndermiteAPI.hpp"
 public:

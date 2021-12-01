@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RotatedPillarBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HAYBLOCKBLOCK
 #include "Extra/HayBlockBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HAYBLOCKBLOCK
 class HayBlockBlock : public RotatedPillarBlock {
 #include "Extra/HayBlockBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For BedrockItems.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEDROCKITEMS
 // Include Headers or Declare Types Here
 
 

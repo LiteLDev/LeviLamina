@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCULKBLOCK
 #include "Extra/SculkBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCULKBLOCK
 class SculkBlock : public BlockLegacy {
 #include "Extra/SculkBlockAPI.hpp"
 public:

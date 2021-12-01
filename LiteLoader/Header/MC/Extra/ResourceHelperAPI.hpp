@@ -1,5 +1,5 @@
 //Extra Part For ResourceHelper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RESOURCEHELPER
 // Include Headers or Declare Types Here
 
 

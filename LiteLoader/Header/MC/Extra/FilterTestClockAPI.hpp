@@ -1,5 +1,5 @@
 //Extra Part For FilterTestClock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILTERTESTCLOCK
 // Include Headers or Declare Types Here
 
 

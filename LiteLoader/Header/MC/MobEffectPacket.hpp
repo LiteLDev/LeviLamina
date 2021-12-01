@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOBEFFECTPACKET
 #include "Extra/MobEffectPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOBEFFECTPACKET
 class MobEffectPacket : public Packet {
 #include "Extra/MobEffectPacketAPI.hpp"
 public:

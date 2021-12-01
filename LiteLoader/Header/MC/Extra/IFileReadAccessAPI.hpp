@@ -1,5 +1,5 @@
 //Extra Part For IFileReadAccess.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IFILEREADACCESS
 // Include Headers or Declare Types Here
 
 

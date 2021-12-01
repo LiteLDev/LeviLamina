@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTHOURLYCLOCK
 #include "Extra/FilterTestHourlyClockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTHOURLYCLOCK
 class FilterTestHourlyClock : public FilterTest {
 #include "Extra/FilterTestHourlyClockAPI.hpp"
 public:

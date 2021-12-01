@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TWISTINGVINESBLOCK
 #include "Extra/TwistingVinesBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TWISTINGVINESBLOCK
 class TwistingVinesBlock : public BlockLegacy {
 #include "Extra/TwistingVinesBlockAPI.hpp"
 public:

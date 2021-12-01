@@ -1,5 +1,5 @@
 //Extra Part For Control.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONTROL
 // Include Headers or Declare Types Here
 
 

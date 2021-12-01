@@ -1,5 +1,5 @@
 //Extra Part For BoatFrictionHelper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOATFRICTIONHELPER
 // Include Headers or Declare Types Here
 
 

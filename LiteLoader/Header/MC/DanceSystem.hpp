@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DANCESYSTEM
 #include "Extra/DanceSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DANCESYSTEM
 class DanceSystem : public ITickingSystem {
 #include "Extra/DanceSystemAPI.hpp"
 public:

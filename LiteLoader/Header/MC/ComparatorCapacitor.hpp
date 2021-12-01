@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ProducerComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COMPARATORCAPACITOR
 #include "Extra/ComparatorCapacitorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COMPARATORCAPACITOR
 class ComparatorCapacitor : public ProducerComponent {
 #include "Extra/ComparatorCapacitorAPI.hpp"
 public:

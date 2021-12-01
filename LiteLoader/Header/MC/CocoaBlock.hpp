@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_COCOABLOCK
 #include "Extra/CocoaBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_COCOABLOCK
 class CocoaBlock : public BlockLegacy {
 #include "Extra/CocoaBlockAPI.hpp"
 public:

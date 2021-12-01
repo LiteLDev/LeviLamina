@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SOULSANDBLOCK
 #include "Extra/SoulSandBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SOULSANDBLOCK
 class SoulSandBlock : public BlockLegacy {
 #include "Extra/SoulSandBlockAPI.hpp"
 public:

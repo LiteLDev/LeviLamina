@@ -1,5 +1,5 @@
 //Extra Part For AbilityCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ABILITYCOMMAND
 // Include Headers or Declare Types Here
 
 

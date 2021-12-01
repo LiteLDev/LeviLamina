@@ -1,5 +1,5 @@
 //Extra Part For HopperDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HOPPERDEFINITION
 // Include Headers or Declare Types Here
 
 

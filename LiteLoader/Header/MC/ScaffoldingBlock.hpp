@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCAFFOLDINGBLOCK
 #include "Extra/ScaffoldingBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCAFFOLDINGBLOCK
 class ScaffoldingBlock : public HeavyBlock {
 #include "Extra/ScaffoldingBlockAPI.hpp"
 public:

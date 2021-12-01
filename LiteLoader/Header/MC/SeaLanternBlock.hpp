@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SEALANTERNBLOCK
 #include "Extra/SeaLanternBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SEALANTERNBLOCK
 class SeaLanternBlock : public BlockLegacy {
 #include "Extra/SeaLanternBlockAPI.hpp"
 public:

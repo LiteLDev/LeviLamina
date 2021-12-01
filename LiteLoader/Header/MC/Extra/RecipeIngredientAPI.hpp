@@ -1,5 +1,5 @@
 //Extra Part For RecipeIngredient.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RECIPEINGREDIENT
 // Include Headers or Declare Types Here
 
 

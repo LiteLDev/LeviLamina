@@ -1,5 +1,5 @@
 //Extra Part For RaiderCelebrationGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAIDERCELEBRATIONGOAL
 // Include Headers or Declare Types Here
 
 

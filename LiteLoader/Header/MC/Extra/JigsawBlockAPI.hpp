@@ -1,5 +1,5 @@
 //Extra Part For JigsawBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_JIGSAWBLOCK
 // Include Headers or Declare Types Here
 
 

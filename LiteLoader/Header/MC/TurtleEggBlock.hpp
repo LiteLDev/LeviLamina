@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TURTLEEGGBLOCK
 #include "Extra/TurtleEggBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TURTLEEGGBLOCK
 class TurtleEggBlock : public BlockLegacy {
 #include "Extra/TurtleEggBlockAPI.hpp"
 public:

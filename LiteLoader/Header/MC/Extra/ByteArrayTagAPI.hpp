@@ -1,5 +1,5 @@
 //Extra Part For ByteArrayTag.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BYTEARRAYTAG
 // Include Headers or Declare Types Here
 
 

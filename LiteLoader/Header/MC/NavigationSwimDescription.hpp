@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NavigationDescription.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NAVIGATIONSWIMDESCRIPTION
 #include "Extra/NavigationSwimDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NAVIGATIONSWIMDESCRIPTION
 class NavigationSwimDescription : public NavigationDescription {
 #include "Extra/NavigationSwimDescriptionAPI.hpp"
 public:

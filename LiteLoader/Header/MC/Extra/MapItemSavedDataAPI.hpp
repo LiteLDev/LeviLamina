@@ -1,5 +1,5 @@
 //Extra Part For MapItemSavedData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MAPITEMSAVEDDATA
 // Include Headers or Declare Types Here
 
 

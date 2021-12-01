@@ -1,5 +1,5 @@
 //Extra Part For ActorInContactWithWater.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORINCONTACTWITHWATER
 // Include Headers or Declare Types Here
 
 

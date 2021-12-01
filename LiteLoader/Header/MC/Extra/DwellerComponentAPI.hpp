@@ -1,5 +1,5 @@
 //Extra Part For DwellerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DWELLERCOMPONENT
 // Include Headers or Declare Types Here
 
 

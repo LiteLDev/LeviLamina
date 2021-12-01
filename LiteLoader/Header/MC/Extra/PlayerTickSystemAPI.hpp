@@ -1,5 +1,5 @@
 //Extra Part For PlayerTickSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERTICKSYSTEM
 // Include Headers or Declare Types Here
 
 

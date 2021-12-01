@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RandomStrollGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SILVERFISHMERGEWITHSTONEGOAL
 #include "Extra/SilverfishMergeWithStoneGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SILVERFISHMERGEWITHSTONEGOAL
 class SilverfishMergeWithStoneGoal : public RandomStrollGoal {
 #include "Extra/SilverfishMergeWithStoneGoalAPI.hpp"
 public:

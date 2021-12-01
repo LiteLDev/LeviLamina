@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REEDBLOCK
 #include "Extra/ReedBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REEDBLOCK
 class ReedBlock : public BlockLegacy {
 #include "Extra/ReedBlockAPI.hpp"
 public:

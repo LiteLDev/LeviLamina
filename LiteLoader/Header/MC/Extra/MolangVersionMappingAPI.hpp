@@ -1,5 +1,5 @@
 //Extra Part For MolangVersionMapping.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOLANGVERSIONMAPPING
 // Include Headers or Declare Types Here
 
 

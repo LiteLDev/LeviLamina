@@ -1,5 +1,5 @@
 //Extra Part For PacketViolationDetectedTelemetryData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKETVIOLATIONDETECTEDTELEMETRYDATA
 // Include Headers or Declare Types Here
 
 

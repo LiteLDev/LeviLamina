@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMFRAMEBLOCK
 #include "Extra/ItemFrameBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMFRAMEBLOCK
 class ItemFrameBlock : public ActorBlock {
 #include "Extra/ItemFrameBlockAPI.hpp"
 public:

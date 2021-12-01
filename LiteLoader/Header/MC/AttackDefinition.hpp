@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ATTACKDEFINITION
 #include "Extra/AttackDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ATTACKDEFINITION
 class AttackDefinition : public BehaviorDefinition {
 #include "Extra/AttackDefinitionAPI.hpp"
 public:

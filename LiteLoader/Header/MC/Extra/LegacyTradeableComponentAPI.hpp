@@ -1,5 +1,5 @@
 //Extra Part For LegacyTradeableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEGACYTRADEABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

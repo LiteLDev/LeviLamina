@@ -1,5 +1,5 @@
 //Extra Part For PlayerInteractionSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERINTERACTIONSYSTEM
 // Include Headers or Declare Types Here
 
 

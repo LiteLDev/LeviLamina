@@ -1,5 +1,5 @@
 //Extra Part For ScoreboardIdentityRef.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCOREBOARDIDENTITYREF
 // Include Headers or Declare Types Here
 
 

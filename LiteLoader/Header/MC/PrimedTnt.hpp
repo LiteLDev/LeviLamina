@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PRIMEDTNT
 #include "Extra/PrimedTntAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PRIMEDTNT
 class PrimedTnt : public PredictableProjectile {
 #include "Extra/PrimedTntAPI.hpp"
 public:

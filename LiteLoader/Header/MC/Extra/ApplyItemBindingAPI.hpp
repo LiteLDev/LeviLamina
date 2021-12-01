@@ -1,5 +1,5 @@
 //Extra Part For ApplyItemBinding.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_APPLYITEMBINDING
 // Include Headers or Declare Types Here
 
 

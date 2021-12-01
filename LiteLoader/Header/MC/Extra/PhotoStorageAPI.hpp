@@ -1,5 +1,5 @@
 //Extra Part For PhotoStorage.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PHOTOSTORAGE
 // Include Headers or Declare Types Here
 
 

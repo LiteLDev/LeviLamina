@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PILLAGEROUTPOSTFEATURE
 #include "Extra/PillagerOutpostFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PILLAGEROUTPOSTFEATURE
 class PillagerOutpostFeature : public StructureFeature {
 #include "Extra/PillagerOutpostFeatureAPI.hpp"
 public:

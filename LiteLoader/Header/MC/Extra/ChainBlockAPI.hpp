@@ -1,5 +1,5 @@
 //Extra Part For ChainBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CHAINBLOCK
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ServerMetrics.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERMETRICS
 // Include Headers or Declare Types Here
 
 

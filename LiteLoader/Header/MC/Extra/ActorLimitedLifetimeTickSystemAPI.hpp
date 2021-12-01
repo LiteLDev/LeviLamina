@@ -1,5 +1,5 @@
 //Extra Part For ActorLimitedLifetimeTickSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORLIMITEDLIFETIMETICKSYSTEM
 // Include Headers or Declare Types Here
 
 

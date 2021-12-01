@@ -1,5 +1,5 @@
 //Extra Part For FreezingSystemInternal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FREEZINGSYSTEMINTERNAL
 // Include Headers or Declare Types Here
 
 

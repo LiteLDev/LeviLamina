@@ -1,5 +1,5 @@
 //Extra Part For FindCoverGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FINDCOVERGOAL
 // Include Headers or Declare Types Here
 
 

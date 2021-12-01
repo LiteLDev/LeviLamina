@@ -1,5 +1,5 @@
 //Extra Part For VanillaVillageJigsawStructures.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAVILLAGEJIGSAWSTRUCTURES
 // Include Headers or Declare Types Here
 
 

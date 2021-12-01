@@ -1,5 +1,5 @@
 //Extra Part For ShootEventResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHOOTEVENTRESPONSE
 // Include Headers or Declare Types Here
 
 

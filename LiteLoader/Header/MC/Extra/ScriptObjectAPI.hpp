@@ -1,5 +1,5 @@
 //Extra Part For ScriptObject.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTOBJECT
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToBlockGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAIDGARDENGOAL
 #include "Extra/RaidGardenGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAIDGARDENGOAL
 class RaidGardenGoal : public BaseMoveToBlockGoal {
 #include "Extra/RaidGardenGoalAPI.hpp"
 public:

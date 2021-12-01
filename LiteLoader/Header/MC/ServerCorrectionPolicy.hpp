@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ClientReplayStatePolicy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SERVERCORRECTIONPOLICY
 #include "Extra/ServerCorrectionPolicyAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SERVERCORRECTIONPOLICY
 class ServerCorrectionPolicy : public ClientReplayStatePolicy {
 #include "Extra/ServerCorrectionPolicyAPI.hpp"
 public:

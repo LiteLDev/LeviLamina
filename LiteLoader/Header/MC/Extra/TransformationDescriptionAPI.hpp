@@ -1,5 +1,5 @@
 //Extra Part For TransformationDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRANSFORMATIONDESCRIPTION
 // Include Headers or Declare Types Here
 
 

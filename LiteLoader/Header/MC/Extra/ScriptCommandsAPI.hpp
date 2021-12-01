@@ -1,5 +1,5 @@
 //Extra Part For ScriptCommands.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTCOMMANDS
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DANCECOMPONENTLISTENER
 #include "Extra/DanceComponentListenerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DANCECOMPONENTLISTENER
 class DanceComponentListener : public BlockSourceListener {
 #include "Extra/DanceComponentListenerAPI.hpp"
 public:

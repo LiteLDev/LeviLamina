@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTMOONPHASE
 #include "Extra/FilterTestMoonPhaseAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTMOONPHASE
 class FilterTestMoonPhase : public FilterTest {
 #include "Extra/FilterTestMoonPhaseAPI.hpp"
 public:

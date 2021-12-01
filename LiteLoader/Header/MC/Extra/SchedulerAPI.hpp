@@ -1,5 +1,5 @@
 //Extra Part For Scheduler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCHEDULER
 // Include Headers or Declare Types Here
 
 

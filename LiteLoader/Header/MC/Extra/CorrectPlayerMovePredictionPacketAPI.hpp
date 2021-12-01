@@ -1,5 +1,5 @@
 //Extra Part For CorrectPlayerMovePredictionPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CORRECTPLAYERMOVEPREDICTIONPACKET
 // Include Headers or Declare Types Here
 
 

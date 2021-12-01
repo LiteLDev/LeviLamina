@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TargetGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_VEXCOPYOWNERTARGETGOAL
 #include "Extra/VexCopyOwnerTargetGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_VEXCOPYOWNERTARGETGOAL
 class VexCopyOwnerTargetGoal : public TargetGoal {
 #include "Extra/VexCopyOwnerTargetGoalAPI.hpp"
 public:

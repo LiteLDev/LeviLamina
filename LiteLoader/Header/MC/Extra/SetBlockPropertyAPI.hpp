@@ -1,5 +1,5 @@
 //Extra Part For SetBlockProperty.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETBLOCKPROPERTY
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ImitateMobSoundsComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IMITATEMOBSOUNDSCOMPONENT
 // Include Headers or Declare Types Here
 
 

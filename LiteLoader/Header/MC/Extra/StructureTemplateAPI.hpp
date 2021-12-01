@@ -1,5 +1,5 @@
 //Extra Part For StructureTemplate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTURETEMPLATE
 // Include Headers or Declare Types Here
 class CompoundTag;
 class StructureTemplateData;

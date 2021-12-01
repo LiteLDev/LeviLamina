@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FISHINGENCHANT
 #include "Extra/FishingEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FISHINGENCHANT
 class FishingEnchant : public Enchant {
 #include "Extra/FishingEnchantAPI.hpp"
 public:

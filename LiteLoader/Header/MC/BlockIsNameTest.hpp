@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKISNAMETEST
 #include "Extra/BlockIsNameTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKISNAMETEST
 class BlockIsNameTest : public FilterTest {
 #include "Extra/BlockIsNameTestAPI.hpp"
 public:

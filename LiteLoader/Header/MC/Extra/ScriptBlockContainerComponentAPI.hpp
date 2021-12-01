@@ -1,5 +1,5 @@
 //Extra Part For ScriptBlockContainerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBLOCKCONTAINERCOMPONENT
 // Include Headers or Declare Types Here
 
 

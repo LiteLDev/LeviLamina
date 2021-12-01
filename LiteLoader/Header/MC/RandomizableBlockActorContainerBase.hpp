@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RANDOMIZABLEBLOCKACTORCONTAINERBASE
 #include "Extra/RandomizableBlockActorContainerBaseAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RANDOMIZABLEBLOCKACTORCONTAINERBASE
 class RandomizableBlockActorContainerBase : public BlockActor {
 #include "Extra/RandomizableBlockActorContainerBaseAPI.hpp"
 public:

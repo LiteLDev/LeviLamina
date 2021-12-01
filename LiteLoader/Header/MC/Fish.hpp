@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "WaterAnimal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FISH
 #include "Extra/FishAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FISH
 class Fish : public WaterAnimal {
 #include "Extra/FishAPI.hpp"
 public:

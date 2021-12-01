@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorCommandOrigin.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORSERVERCOMMANDORIGIN
 #include "Extra/ActorServerCommandOriginAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORSERVERCOMMANDORIGIN
 class ActorServerCommandOrigin : public ActorCommandOrigin {
 #include "Extra/ActorServerCommandOriginAPI.hpp"
 public:

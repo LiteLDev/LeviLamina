@@ -1,5 +1,5 @@
 //Extra Part For TimerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TIMERCOMPONENT
 // Include Headers or Declare Types Here
 
 

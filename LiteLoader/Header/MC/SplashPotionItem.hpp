@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PotionItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPLASHPOTIONITEM
 #include "Extra/SplashPotionItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPLASHPOTIONITEM
 class SplashPotionItem : public PotionItem {
 #include "Extra/SplashPotionItemAPI.hpp"
 public:

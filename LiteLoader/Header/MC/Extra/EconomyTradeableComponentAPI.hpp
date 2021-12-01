@@ -1,5 +1,5 @@
 //Extra Part For EconomyTradeableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ECONOMYTRADEABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

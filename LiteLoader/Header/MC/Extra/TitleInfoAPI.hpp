@@ -1,5 +1,5 @@
 //Extra Part For TitleInfo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TITLEINFO
 // Include Headers or Declare Types Here
 
 

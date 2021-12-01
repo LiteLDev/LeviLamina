@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLYDEFINITION
 #include "Extra/FlyDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLYDEFINITION
 class FlyDefinition : public BehaviorDefinition {
 #include "Extra/FlyDefinitionAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For IPreliminarySurfaceProviderNullImplementation.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IPRELIMINARYSURFACEPROVIDERNULLIMPLEMENTATION
 // Include Headers or Declare Types Here
 
 

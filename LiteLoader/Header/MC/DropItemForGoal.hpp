@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToBlockGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DROPITEMFORGOAL
 #include "Extra/DropItemForGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DROPITEMFORGOAL
 class DropItemForGoal : public BaseMoveToBlockGoal {
 #include "Extra/DropItemForGoalAPI.hpp"
 public:

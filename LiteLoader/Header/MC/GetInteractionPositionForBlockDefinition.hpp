@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
 #include "Extra/GetInteractionPositionForBlockDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GETINTERACTIONPOSITIONFORBLOCKDEFINITION
 class GetInteractionPositionForBlockDefinition : public BehaviorDefinition {
 #include "Extra/GetInteractionPositionForBlockDefinitionAPI.hpp"
 public:

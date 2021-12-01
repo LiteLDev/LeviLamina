@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_AIRBLOCK
 #include "Extra/AirBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_AIRBLOCK
 class AirBlock : public BlockLegacy {
 #include "Extra/AirBlockAPI.hpp"
 public:

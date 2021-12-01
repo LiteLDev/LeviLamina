@@ -1,5 +1,5 @@
 //Extra Part For SandBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SANDBLOCK
 // Include Headers or Declare Types Here
 
 

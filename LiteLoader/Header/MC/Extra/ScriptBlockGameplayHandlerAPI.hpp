@@ -1,5 +1,5 @@
 //Extra Part For ScriptBlockGameplayHandler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBLOCKGAMEPLAYHANDLER
 // Include Headers or Declare Types Here
 
 

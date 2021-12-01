@@ -1,5 +1,5 @@
 //Extra Part For SparklerItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPARKLERITEM
 // Include Headers or Declare Types Here
 
 

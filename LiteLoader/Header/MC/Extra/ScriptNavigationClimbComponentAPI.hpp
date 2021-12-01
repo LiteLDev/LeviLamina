@@ -1,5 +1,5 @@
 //Extra Part For ScriptNavigationClimbComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONCLIMBCOMPONENT
 // Include Headers or Declare Types Here
 
 

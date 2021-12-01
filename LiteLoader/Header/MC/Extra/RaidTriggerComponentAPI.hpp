@@ -1,5 +1,5 @@
 //Extra Part For RaidTriggerComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAIDTRIGGERCOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For CommandFunctionEntry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDFUNCTIONENTRY
 // Include Headers or Declare Types Here
 
 

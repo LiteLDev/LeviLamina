@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTHASTRADESUPPLY
 #include "Extra/FilterTestHasTradeSupplyAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTHASTRADESUPPLY
 class FilterTestHasTradeSupply : public FilterTest {
 #include "Extra/FilterTestHasTradeSupplyAPI.hpp"
 public:

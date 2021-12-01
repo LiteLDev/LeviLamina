@@ -1,5 +1,5 @@
 //Extra Part For DeepslateOreBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEEPSLATEOREBLOCK
 // Include Headers or Declare Types Here
 
 

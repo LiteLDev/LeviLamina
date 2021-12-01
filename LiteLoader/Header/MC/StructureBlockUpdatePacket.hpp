@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRUCTUREBLOCKUPDATEPACKET
 #include "Extra/StructureBlockUpdatePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRUCTUREBLOCKUPDATEPACKET
 class StructureBlockUpdatePacket : public Packet {
 #include "Extra/StructureBlockUpdatePacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For CrashDumpEventData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRASHDUMPEVENTDATA
 // Include Headers or Declare Types Here
 
 

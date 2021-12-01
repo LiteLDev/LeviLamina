@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INVENTORYCONTENTPACKET
 #include "Extra/InventoryContentPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INVENTORYCONTENTPACKET
 class InventoryContentPacket : public Packet {
 #include "Extra/InventoryContentPacketAPI.hpp"
 public:

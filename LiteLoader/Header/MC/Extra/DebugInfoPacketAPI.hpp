@@ -1,5 +1,5 @@
 //Extra Part For DebugInfoPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEBUGINFOPACKET
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SwimWanderDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWIMWANDERDEFINITION
 // Include Headers or Declare Types Here
 
 

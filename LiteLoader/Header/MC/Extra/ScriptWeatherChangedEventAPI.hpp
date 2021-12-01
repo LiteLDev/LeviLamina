@@ -1,5 +1,5 @@
 //Extra Part For ScriptWeatherChangedEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTWEATHERCHANGEDEVENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ExternalFileLevelStorage.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EXTERNALFILELEVELSTORAGE
 // Include Headers or Declare Types Here
 
 

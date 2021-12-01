@@ -1,5 +1,5 @@
 //Extra Part For BannerPattern.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BANNERPATTERN
 // Include Headers or Declare Types Here
 
 

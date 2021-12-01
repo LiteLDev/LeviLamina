@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AuxDataBlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ELEMENTBLOCKITEM
 #include "Extra/ElementBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ELEMENTBLOCKITEM
 class ElementBlockItem : public AuxDataBlockItem {
 #include "Extra/ElementBlockItemAPI.hpp"
 public:

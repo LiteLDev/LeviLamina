@@ -1,5 +1,5 @@
 //Extra Part For StopCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STOPCOMMAND
 // Include Headers or Declare Types Here
 
 

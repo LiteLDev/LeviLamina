@@ -1,5 +1,5 @@
 //Extra Part For BlueFireBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLUEFIREBLOCK
 // Include Headers or Declare Types Here
 
 

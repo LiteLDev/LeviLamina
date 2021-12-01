@@ -1,5 +1,5 @@
 //Extra Part For ScriptDebuggerTransport.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTDEBUGGERTRANSPORT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For LookAtActorGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOKATACTORGOAL
 // Include Headers or Declare Types Here
 
 

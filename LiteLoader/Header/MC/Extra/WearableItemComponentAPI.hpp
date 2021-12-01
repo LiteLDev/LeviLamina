@@ -1,5 +1,5 @@
 //Extra Part For WearableItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WEARABLEITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

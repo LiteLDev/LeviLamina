@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EXPLODESYSTEM
 #include "Extra/ExplodeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EXPLODESYSTEM
 class ExplodeSystem : public ITickingSystem {
 #include "Extra/ExplodeSystemAPI.hpp"
 public:

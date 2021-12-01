@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RakWebSocket.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAKWEBSOCKETCLIENT
 #include "Extra/RakWebSocketClientAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAKWEBSOCKETCLIENT
 class RakWebSocketClient : public RakWebSocket {
 #include "Extra/RakWebSocketClientAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PISTONBLOCKACTOR
 #include "Extra/PistonBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PISTONBLOCKACTOR
 class PistonBlockActor : public BlockActor {
 #include "Extra/PistonBlockActorAPI.hpp"
 public:

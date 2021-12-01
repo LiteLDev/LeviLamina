@@ -1,5 +1,5 @@
 //Extra Part For PackInstance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKINSTANCE
 // Include Headers or Declare Types Here
 
 

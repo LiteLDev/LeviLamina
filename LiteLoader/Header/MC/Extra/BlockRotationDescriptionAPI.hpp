@@ -1,5 +1,5 @@
 //Extra Part For BlockRotationDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKROTATIONDESCRIPTION
 // Include Headers or Declare Types Here
 
 

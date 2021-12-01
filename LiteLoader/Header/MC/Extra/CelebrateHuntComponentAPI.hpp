@@ -1,5 +1,5 @@
 //Extra Part For CelebrateHuntComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CELEBRATEHUNTCOMPONENT
 // Include Headers or Declare Types Here
 
 

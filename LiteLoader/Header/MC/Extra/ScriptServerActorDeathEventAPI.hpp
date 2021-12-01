@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerActorDeathEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERACTORDEATHEVENT
 // Include Headers or Declare Types Here
 
 

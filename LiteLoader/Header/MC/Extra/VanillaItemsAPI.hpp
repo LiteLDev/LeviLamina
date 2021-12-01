@@ -1,5 +1,5 @@
 //Extra Part For VanillaItems.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAITEMS
 // Include Headers or Declare Types Here
 
 

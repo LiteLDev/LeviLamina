@@ -1,5 +1,5 @@
 //Extra Part For ShareableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAREABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For PositionalRandomFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_POSITIONALRANDOMFACTORY
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GOALSELECTORSYSTEM
 #include "Extra/GoalSelectorSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GOALSELECTORSYSTEM
 class GoalSelectorSystem : public ITickingSystem {
 #include "Extra/GoalSelectorSystemAPI.hpp"
 public:

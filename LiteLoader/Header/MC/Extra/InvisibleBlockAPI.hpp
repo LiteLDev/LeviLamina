@@ -1,5 +1,5 @@
 //Extra Part For InvisibleBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INVISIBLEBLOCK
 // Include Headers or Declare Types Here
 
 

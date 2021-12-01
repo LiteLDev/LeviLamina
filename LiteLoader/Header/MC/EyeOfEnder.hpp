@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EYEOFENDER
 #include "Extra/EyeOfEnderAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EYEOFENDER
 class EyeOfEnder : public Actor {
 #include "Extra/EyeOfEnderAPI.hpp"
 public:

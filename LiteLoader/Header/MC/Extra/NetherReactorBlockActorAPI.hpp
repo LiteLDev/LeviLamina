@@ -1,5 +1,5 @@
 //Extra Part For NetherReactorBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETHERREACTORBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

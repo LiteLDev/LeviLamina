@@ -1,5 +1,5 @@
 //Extra Part For Panda.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PANDA
 // Include Headers or Declare Types Here
 
 

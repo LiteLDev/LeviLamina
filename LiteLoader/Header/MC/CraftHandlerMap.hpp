@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "CraftHandlerBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CRAFTHANDLERMAP
 #include "Extra/CraftHandlerMapAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CRAFTHANDLERMAP
 class CraftHandlerMap : public CraftHandlerBase {
 #include "Extra/CraftHandlerMapAPI.hpp"
 public:

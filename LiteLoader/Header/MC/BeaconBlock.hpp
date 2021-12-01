@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEACONBLOCK
 #include "Extra/BeaconBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEACONBLOCK
 class BeaconBlock : public ActorBlock {
 #include "Extra/BeaconBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For CommandBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDBLOCK
 // Include Headers or Declare Types Here
 
 

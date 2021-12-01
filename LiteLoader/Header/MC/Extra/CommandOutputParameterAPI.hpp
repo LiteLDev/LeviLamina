@@ -1,5 +1,5 @@
 //Extra Part For CommandOutputParameter.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDOUTPUTPARAMETER
 // Include Headers or Declare Types Here
 
 #else

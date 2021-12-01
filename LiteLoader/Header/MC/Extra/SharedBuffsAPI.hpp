@@ -1,5 +1,5 @@
 //Extra Part For SharedBuffs.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAREDBUFFS
 // Include Headers or Declare Types Here
 
 

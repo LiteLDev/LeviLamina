@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SANDBLOCK
 #include "Extra/SandBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SANDBLOCK
 class SandBlock : public HeavyBlock {
 #include "Extra/SandBlockAPI.hpp"
 public:

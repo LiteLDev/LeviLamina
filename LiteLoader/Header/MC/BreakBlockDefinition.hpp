@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BREAKBLOCKDEFINITION
 #include "Extra/BreakBlockDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BREAKBLOCKDEFINITION
 class BreakBlockDefinition : public BehaviorDefinition {
 #include "Extra/BreakBlockDefinitionAPI.hpp"
 public:

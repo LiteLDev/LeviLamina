@@ -1,5 +1,5 @@
 //Extra Part For ClientRequestPlaceholderBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLIENTREQUESTPLACEHOLDERBLOCK
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HELLSPRINGFEATURE
 #include "Extra/HellSpringFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HELLSPRINGFEATURE
 class HellSpringFeature : public Feature {
 #include "Extra/HellSpringFeatureAPI.hpp"
 public:

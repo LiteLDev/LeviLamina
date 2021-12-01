@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEEPSLATEOREBLOCK
 #include "Extra/DeepslateOreBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEEPSLATEOREBLOCK
 class DeepslateOreBlock : public BlockLegacy {
 #include "Extra/DeepslateOreBlockAPI.hpp"
 public:

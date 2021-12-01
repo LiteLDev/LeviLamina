@@ -1,5 +1,5 @@
 //Extra Part For RuinedPortalPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RUINEDPORTALPIECE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REPAIRITEMRECIPE
 #include "Extra/RepairItemRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REPAIRITEMRECIPE
 class RepairItemRecipe : public Recipe {
 #include "Extra/RepairItemRecipeAPI.hpp"
 public:

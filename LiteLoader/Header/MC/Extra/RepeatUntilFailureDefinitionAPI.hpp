@@ -1,5 +1,5 @@
 //Extra Part For RepeatUntilFailureDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REPEATUNTILFAILUREDEFINITION
 // Include Headers or Declare Types Here
 
 

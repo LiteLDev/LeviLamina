@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETWORKCHUNKSOURCE
 #include "Extra/NetworkChunkSourceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETWORKCHUNKSOURCE
 class NetworkChunkSource : public ChunkSource {
 #include "Extra/NetworkChunkSourceAPI.hpp"
 public:

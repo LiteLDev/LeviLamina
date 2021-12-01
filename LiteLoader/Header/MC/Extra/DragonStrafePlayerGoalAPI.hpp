@@ -1,5 +1,5 @@
 //Extra Part For DragonStrafePlayerGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DRAGONSTRAFEPLAYERGOAL
 // Include Headers or Declare Types Here
 
 

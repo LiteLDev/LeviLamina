@@ -1,5 +1,5 @@
 //Extra Part For BucketItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BUCKETITEM
 // Include Headers or Declare Types Here
 
 

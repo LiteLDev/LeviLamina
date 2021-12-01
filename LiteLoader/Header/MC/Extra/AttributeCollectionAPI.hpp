@@ -1,5 +1,5 @@
 //Extra Part For AttributeCollection.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ATTRIBUTECOLLECTION
 // Include Headers or Declare Types Here
 
 

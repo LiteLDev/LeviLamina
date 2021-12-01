@@ -1,5 +1,5 @@
 //Extra Part For CanFlyDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CANFLYDEFINITION
 // Include Headers or Declare Types Here
 
 

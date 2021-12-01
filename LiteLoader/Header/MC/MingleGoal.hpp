@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveToPOIGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINGLEGOAL
 #include "Extra/MingleGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINGLEGOAL
 class MingleGoal : public MoveToPOIGoal {
 #include "Extra/MingleGoalAPI.hpp"
 public:

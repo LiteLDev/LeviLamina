@@ -1,5 +1,5 @@
 //Extra Part For SwoopAttackGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWOOPATTACKGOAL
 // Include Headers or Declare Types Here
 
 

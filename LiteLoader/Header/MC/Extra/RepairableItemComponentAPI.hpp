@@ -1,5 +1,5 @@
 //Extra Part For RepairableItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REPAIRABLEITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

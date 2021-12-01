@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ItemStackBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ITEMINSTANCE
 #include "Extra/ItemInstanceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ITEMINSTANCE
 class ItemInstance : public ItemStackBase {
 #include "Extra/ItemInstanceAPI.hpp"
 public:

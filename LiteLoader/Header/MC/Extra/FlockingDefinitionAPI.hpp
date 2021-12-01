@@ -1,5 +1,5 @@
 //Extra Part For FlockingDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLOCKINGDEFINITION
 // Include Headers or Declare Types Here
 
 

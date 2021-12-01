@@ -1,5 +1,5 @@
 //Extra Part For SortItemInstanceIdAux.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SORTITEMINSTANCEIDAUX
 // Include Headers or Declare Types Here
 
 

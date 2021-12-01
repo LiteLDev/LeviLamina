@@ -1,5 +1,5 @@
 //Extra Part For PushableDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PUSHABLEDESCRIPTION
 // Include Headers or Declare Types Here
 
 

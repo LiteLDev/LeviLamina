@@ -1,5 +1,5 @@
 //Extra Part For ActorUniqueID.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORUNIQUEID
 // Include Headers or Declare Types Here
 
 

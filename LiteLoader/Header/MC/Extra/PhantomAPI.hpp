@@ -1,5 +1,5 @@
 //Extra Part For Phantom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PHANTOM
 // Include Headers or Declare Types Here
 
 

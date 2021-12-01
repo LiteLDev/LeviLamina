@@ -1,5 +1,5 @@
 //Extra Part For VinesSingleFaceFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VINESSINGLEFACEFEATURE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureStart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRONGHOLDSTART
 #include "Extra/StrongholdStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRONGHOLDSTART
 class StrongholdStart : public StructureStart {
 #include "Extra/StrongholdStartAPI.hpp"
 public:

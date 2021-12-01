@@ -1,5 +1,5 @@
 //Extra Part For LecternBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LECTERNBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

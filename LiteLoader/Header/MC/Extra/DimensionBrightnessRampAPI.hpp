@@ -1,5 +1,5 @@
 //Extra Part For DimensionBrightnessRamp.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DIMENSIONBRIGHTNESSRAMP
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For FollowMobGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOLLOWMOBGOAL
 // Include Headers or Declare Types Here
 
 

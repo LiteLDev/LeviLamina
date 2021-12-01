@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseRailBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DETECTORRAILBLOCK
 #include "Extra/DetectorRailBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DETECTORRAILBLOCK
 class DetectorRailBlock : public BaseRailBlock {
 #include "Extra/DetectorRailBlockAPI.hpp"
 public:

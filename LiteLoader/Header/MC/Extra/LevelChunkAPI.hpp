@@ -1,5 +1,5 @@
 //Extra Part For LevelChunk.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELCHUNK
 // Include Headers or Declare Types Here
 
 

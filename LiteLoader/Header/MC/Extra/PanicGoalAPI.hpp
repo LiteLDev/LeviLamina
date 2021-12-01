@@ -1,5 +1,5 @@
 //Extra Part For PanicGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PANICGOAL
 // Include Headers or Declare Types Here
 
 

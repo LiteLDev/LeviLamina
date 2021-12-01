@@ -1,5 +1,5 @@
 //Extra Part For EnchantRandomEquipmentFunction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENCHANTRANDOMEQUIPMENTFUNCTION
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For CraftHandlerCrafting.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTHANDLERCRAFTING
 // Include Headers or Declare Types Here
 
 

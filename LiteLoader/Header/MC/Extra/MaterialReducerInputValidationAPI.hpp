@@ -1,5 +1,5 @@
 //Extra Part For MaterialReducerInputValidation.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MATERIALREDUCERINPUTVALIDATION
 // Include Headers or Declare Types Here
 
 

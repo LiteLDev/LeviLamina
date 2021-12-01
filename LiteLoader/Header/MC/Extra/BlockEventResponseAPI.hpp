@@ -1,5 +1,5 @@
 //Extra Part For BlockEventResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKEVENTRESPONSE
 // Include Headers or Declare Types Here
 
 

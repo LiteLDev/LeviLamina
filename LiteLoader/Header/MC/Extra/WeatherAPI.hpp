@@ -1,5 +1,5 @@
 //Extra Part For Weather.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WEATHER
 // Include Headers or Declare Types Here
 
 

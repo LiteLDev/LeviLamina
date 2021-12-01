@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_QUARTZBLOCKBLOCK
 #include "Extra/QuartzBlockBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_QUARTZBLOCKBLOCK
 class QuartzBlockBlock : public BlockLegacy {
 #include "Extra/QuartzBlockBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For MissingTextureAtlasItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MISSINGTEXTUREATLASITEM
 // Include Headers or Declare Types Here
 
 

@@ -1,4 +1,4 @@
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONTAINER
 // Add include headers & pre-declares
 class ItemStack;
 #else

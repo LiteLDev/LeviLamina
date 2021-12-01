@@ -1,5 +1,5 @@
 //Extra Part For TripodCameraDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRIPODCAMERADESCRIPTION
 // Include Headers or Declare Types Here
 
 

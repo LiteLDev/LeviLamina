@@ -1,5 +1,5 @@
 //Extra Part For BoneAnimationChannel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BONEANIMATIONCHANNEL
 // Include Headers or Declare Types Here
 
 

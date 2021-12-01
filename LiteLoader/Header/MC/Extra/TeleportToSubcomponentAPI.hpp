@@ -1,5 +1,5 @@
 //Extra Part For TeleportToSubcomponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TELEPORTTOSUBCOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For CommandRequestPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDREQUESTPACKET
 // Include Headers or Declare Types Here
 
 

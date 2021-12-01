@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETSCOREPACKET
 #include "Extra/SetScorePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETSCOREPACKET
 class SetScorePacket : public Packet {
 #include "Extra/SetScorePacketAPI.hpp"
 public:

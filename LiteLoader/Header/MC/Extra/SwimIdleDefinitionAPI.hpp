@@ -1,5 +1,5 @@
 //Extra Part For SwimIdleDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SWIMIDLEDEFINITION
 // Include Headers or Declare Types Here
 
 

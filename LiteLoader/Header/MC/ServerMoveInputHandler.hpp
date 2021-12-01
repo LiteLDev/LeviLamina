@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveInput.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SERVERMOVEINPUTHANDLER
 #include "Extra/ServerMoveInputHandlerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SERVERMOVEINPUTHANDLER
 class ServerMoveInputHandler : public MoveInput {
 #include "Extra/ServerMoveInputHandlerAPI.hpp"
 public:

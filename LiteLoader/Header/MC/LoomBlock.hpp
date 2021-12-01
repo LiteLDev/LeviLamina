@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FaceDirectionalBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LOOMBLOCK
 #include "Extra/LoomBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LOOMBLOCK
 class LoomBlock : public FaceDirectionalBlock {
 #include "Extra/LoomBlockAPI.hpp"
 public:

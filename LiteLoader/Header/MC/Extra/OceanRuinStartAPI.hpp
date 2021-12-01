@@ -1,5 +1,5 @@
 //Extra Part For OceanRuinStart.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OCEANRUINSTART
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For TransporterComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRANSPORTERCOMPONENT
 // Include Headers or Declare Types Here
 
 

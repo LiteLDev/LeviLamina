@@ -1,5 +1,5 @@
 //Extra Part For DedicatedServer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DEDICATEDSERVER
 // Include Headers or Declare Types Here
 
 

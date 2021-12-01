@@ -1,5 +1,5 @@
 //Extra Part For CompassSpriteCalculator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMPASSSPRITECALCULATOR
 // Include Headers or Declare Types Here
 
 

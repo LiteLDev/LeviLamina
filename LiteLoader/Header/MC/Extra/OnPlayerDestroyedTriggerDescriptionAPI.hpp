@@ -1,5 +1,5 @@
 //Extra Part For OnPlayerDestroyedTriggerDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONPLAYERDESTROYEDTRIGGERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

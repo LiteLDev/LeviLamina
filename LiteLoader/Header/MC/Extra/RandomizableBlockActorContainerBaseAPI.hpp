@@ -1,5 +1,5 @@
 //Extra Part For RandomizableBlockActorContainerBase.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RANDOMIZABLEBLOCKACTORCONTAINERBASE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_JUKEBOXBLOCK
 #include "Extra/JukeboxBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_JUKEBOXBLOCK
 class JukeboxBlock : public ActorBlock {
 #include "Extra/JukeboxBlockAPI.hpp"
 public:

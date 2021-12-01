@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PODZOLBLOCK
 #include "Extra/PodzolBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PODZOLBLOCK
 class PodzolBlock : public BlockLegacy {
 #include "Extra/PodzolBlockAPI.hpp"
 public:

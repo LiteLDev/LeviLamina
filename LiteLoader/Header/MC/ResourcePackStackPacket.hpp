@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RESOURCEPACKSTACKPACKET
 #include "Extra/ResourcePackStackPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RESOURCEPACKSTACKPACKET
 class ResourcePackStackPacket : public Packet {
 #include "Extra/ResourcePackStackPacketAPI.hpp"
 public:

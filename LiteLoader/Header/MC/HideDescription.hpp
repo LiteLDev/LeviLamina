@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HIDEDESCRIPTION
 #include "Extra/HideDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HIDEDESCRIPTION
 class HideDescription : public Description {
 #include "Extra/HideDescriptionAPI.hpp"
 public:

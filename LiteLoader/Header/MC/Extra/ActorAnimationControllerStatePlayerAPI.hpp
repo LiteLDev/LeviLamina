@@ -1,5 +1,5 @@
 //Extra Part For ActorAnimationControllerStatePlayer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORANIMATIONCONTROLLERSTATEPLAYER
 // Include Headers or Declare Types Here
 
 

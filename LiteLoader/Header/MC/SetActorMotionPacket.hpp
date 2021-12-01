@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETACTORMOTIONPACKET
 #include "Extra/SetActorMotionPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETACTORMOTIONPACKET
 class SetActorMotionPacket : public Packet {
 #include "Extra/SetActorMotionPacketAPI.hpp"
 public:

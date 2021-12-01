@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "SlabBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CUTCOPPERSLAB
 #include "Extra/CutCopperSlabAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CUTCOPPERSLAB
 class CutCopperSlab : public SlabBlock {
 #include "Extra/CutCopperSlabAPI.hpp"
 public:

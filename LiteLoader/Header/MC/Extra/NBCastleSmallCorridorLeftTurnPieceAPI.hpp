@@ -1,5 +1,5 @@
 //Extra Part For NBCastleSmallCorridorLeftTurnPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBCASTLESMALLCORRIDORLEFTTURNPIECE
 // Include Headers or Declare Types Here
 
 

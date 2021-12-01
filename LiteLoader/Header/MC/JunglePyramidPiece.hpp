@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_JUNGLEPYRAMIDPIECE
 #include "Extra/JunglePyramidPieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_JUNGLEPYRAMIDPIECE
 class JunglePyramidPiece : public StructurePiece {
 #include "Extra/JunglePyramidPieceAPI.hpp"
 public:

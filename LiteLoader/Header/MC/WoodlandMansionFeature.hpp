@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureFeature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WOODLANDMANSIONFEATURE
 #include "Extra/WoodlandMansionFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WOODLANDMANSIONFEATURE
 class WoodlandMansionFeature : public StructureFeature {
 #include "Extra/WoodlandMansionFeatureAPI.hpp"
 public:

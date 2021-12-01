@@ -1,5 +1,5 @@
 //Extra Part For BlockCollisionComponentDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKCOLLISIONCOMPONENTDESCRIPTION
 // Include Headers or Declare Types Here
 
 

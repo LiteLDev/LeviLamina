@@ -1,5 +1,5 @@
 //Extra Part For StructureSettings.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTURESETTINGS
 // Include Headers or Declare Types Here
 
 enum class MirRor : unsigned char {

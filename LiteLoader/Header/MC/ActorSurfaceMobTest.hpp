@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORSURFACEMOBTEST
 #include "Extra/ActorSurfaceMobTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORSURFACEMOBTEST
 class ActorSurfaceMobTest : public FilterTest {
 #include "Extra/ActorSurfaceMobTestAPI.hpp"
 public:

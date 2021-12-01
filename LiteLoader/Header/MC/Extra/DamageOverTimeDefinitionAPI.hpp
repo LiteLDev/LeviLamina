@@ -1,5 +1,5 @@
 //Extra Part For DamageOverTimeDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DAMAGEOVERTIMEDEFINITION
 // Include Headers or Declare Types Here
 
 

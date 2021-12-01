@@ -1,5 +1,5 @@
 //Extra Part For Igloo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IGLOO
 // Include Headers or Declare Types Here
 
 

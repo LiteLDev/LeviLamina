@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_AZALEABLOCK
 #include "Extra/AzaleaBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_AZALEABLOCK
 class AzaleaBlock : public BushBlock {
 #include "Extra/AzaleaBlockAPI.hpp"
 public:

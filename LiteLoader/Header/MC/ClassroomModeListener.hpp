@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLASSROOMMODELISTENER
 #include "Extra/ClassroomModeListenerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLASSROOMMODELISTENER
 class ClassroomModeListener : public BlockSourceListener {
 #include "Extra/ClassroomModeListenerAPI.hpp"
 public:

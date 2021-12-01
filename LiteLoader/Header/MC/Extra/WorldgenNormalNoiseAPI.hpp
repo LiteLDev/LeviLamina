@@ -1,5 +1,5 @@
 //Extra Part For WorldgenNormalNoise.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WORLDGENNORMALNOISE
 // Include Headers or Declare Types Here
 
 

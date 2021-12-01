@@ -1,5 +1,5 @@
 //Extra Part For CameraShakeCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CAMERASHAKECOMMAND
 // Include Headers or Declare Types Here
 
 

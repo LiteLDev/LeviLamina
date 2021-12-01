@@ -1,5 +1,5 @@
 //Extra Part For SparseContainerClient.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPARSECONTAINERCLIENT
 // Include Headers or Declare Types Here
 
 

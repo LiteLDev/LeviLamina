@@ -1,5 +1,5 @@
 //Extra Part For VanillaLevelChunkUpgrade.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLALEVELCHUNKUPGRADE
 // Include Headers or Declare Types Here
 
 

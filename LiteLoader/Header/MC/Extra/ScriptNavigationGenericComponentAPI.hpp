@@ -1,5 +1,5 @@
 //Extra Part For ScriptNavigationGenericComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONGENERICCOMPONENT
 // Include Headers or Declare Types Here
 
 

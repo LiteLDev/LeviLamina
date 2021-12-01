@@ -1,5 +1,5 @@
 //Extra Part For CarpetBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CARPETBLOCK
 // Include Headers or Declare Types Here
 
 

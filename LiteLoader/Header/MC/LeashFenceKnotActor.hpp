@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HangingActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LEASHFENCEKNOTACTOR
 #include "Extra/LeashFenceKnotActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LEASHFENCEKNOTACTOR
 class LeashFenceKnotActor : public HangingActor {
 #include "Extra/LeashFenceKnotActorAPI.hpp"
 public:

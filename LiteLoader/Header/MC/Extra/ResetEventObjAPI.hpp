@@ -1,5 +1,5 @@
 //Extra Part For ResetEventObj.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RESETEVENTOBJ
 // Include Headers or Declare Types Here
 
 

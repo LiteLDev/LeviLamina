@@ -1,5 +1,5 @@
 //Extra Part For FoodConstants.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOODCONSTANTS
 // Include Headers or Declare Types Here
 
 

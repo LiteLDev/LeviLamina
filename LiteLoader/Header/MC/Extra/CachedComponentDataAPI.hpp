@@ -1,5 +1,5 @@
 //Extra Part For CachedComponentData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CACHEDCOMPONENTDATA
 // Include Headers or Declare Types Here
 
 

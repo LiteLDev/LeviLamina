@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DAMAGEOVERTIMESYSTEM
 #include "Extra/DamageOverTimeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DAMAGEOVERTIMESYSTEM
 class DamageOverTimeSystem : public ITickingSystem {
 #include "Extra/DamageOverTimeSystemAPI.hpp"
 public:

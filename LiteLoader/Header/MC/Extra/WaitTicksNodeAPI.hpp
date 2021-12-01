@@ -1,5 +1,5 @@
 //Extra Part For WaitTicksNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WAITTICKSNODE
 // Include Headers or Declare Types Here
 
 

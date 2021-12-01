@@ -1,5 +1,5 @@
 //Extra Part For NBBridgeCrossing.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBBRIDGECROSSING
 // Include Headers or Declare Types Here
 
 

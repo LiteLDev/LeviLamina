@@ -1,5 +1,5 @@
 //Extra Part For VillageManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VILLAGEMANAGER
 // Include Headers or Declare Types Here
 
 

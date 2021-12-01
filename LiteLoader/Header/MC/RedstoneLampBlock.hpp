@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REDSTONELAMPBLOCK
 #include "Extra/RedstoneLampBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REDSTONELAMPBLOCK
 class RedstoneLampBlock : public BlockLegacy {
 #include "Extra/RedstoneLampBlockAPI.hpp"
 public:

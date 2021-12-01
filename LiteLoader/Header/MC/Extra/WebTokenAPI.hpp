@@ -1,5 +1,5 @@
 //Extra Part For WebToken.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WEBTOKEN
 // Include Headers or Declare Types Here
 
 

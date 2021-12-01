@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MUSICBLOCKACTOR
 #include "Extra/MusicBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MUSICBLOCKACTOR
 class MusicBlockActor : public BlockActor {
 #include "Extra/MusicBlockActorAPI.hpp"
 public:

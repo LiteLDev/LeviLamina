@@ -1,5 +1,5 @@
 //Extra Part For BlockOnlyPistonPushDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKONLYPISTONPUSHDESCRIPTION
 // Include Headers or Declare Types Here
 
 

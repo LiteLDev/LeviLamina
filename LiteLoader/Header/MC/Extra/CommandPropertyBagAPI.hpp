@@ -1,5 +1,5 @@
 //Extra Part For CommandPropertyBag.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDPROPERTYBAG
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BlockLegacyPtr.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKLEGACYPTR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For WorkerPool.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WORKERPOOL
 // Include Headers or Declare Types Here
 
 

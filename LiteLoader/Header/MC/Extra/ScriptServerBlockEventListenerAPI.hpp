@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerBlockEventListener.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERBLOCKEVENTLISTENER
 // Include Headers or Declare Types Here
 
 

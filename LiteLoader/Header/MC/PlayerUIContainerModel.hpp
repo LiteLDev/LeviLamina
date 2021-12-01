@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PlayerUIContainerModelBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLAYERUICONTAINERMODEL
 #include "Extra/PlayerUIContainerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLAYERUICONTAINERMODEL
 class PlayerUIContainerModel : public PlayerUIContainerModelBase {
 #include "Extra/PlayerUIContainerModelAPI.hpp"
 public:

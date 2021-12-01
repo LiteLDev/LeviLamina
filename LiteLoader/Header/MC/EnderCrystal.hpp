@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDERCRYSTAL
 #include "Extra/EnderCrystalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDERCRYSTAL
 class EnderCrystal : public Actor {
 #include "Extra/EnderCrystalAPI.hpp"
 public:

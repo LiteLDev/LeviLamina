@@ -1,5 +1,5 @@
 //Extra Part For SpawnParticleEffectPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPAWNPARTICLEEFFECTPACKET
 // Include Headers or Declare Types Here
 
 

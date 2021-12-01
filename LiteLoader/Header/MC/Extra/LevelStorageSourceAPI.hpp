@@ -1,5 +1,5 @@
 //Extra Part For LevelStorageSource.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELSTORAGESOURCE
 // Include Headers or Declare Types Here
 
 

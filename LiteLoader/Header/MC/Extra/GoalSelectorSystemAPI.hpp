@@ -1,5 +1,5 @@
 //Extra Part For GoalSelectorSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_GOALSELECTORSYSTEM
 // Include Headers or Declare Types Here
 
 

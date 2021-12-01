@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLIENTBOUNDMAPITEMDATAPACKET
 #include "Extra/ClientboundMapItemDataPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLIENTBOUNDMAPITEMDATAPACKET
 class ClientboundMapItemDataPacket : public Packet {
 #include "Extra/ClientboundMapItemDataPacketAPI.hpp"
 public:

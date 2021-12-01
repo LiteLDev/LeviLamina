@@ -1,5 +1,5 @@
 //Extra Part For WoodBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WOODBLOCK
 // Include Headers or Declare Types Here
 
 

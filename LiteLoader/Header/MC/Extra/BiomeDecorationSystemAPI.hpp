@@ -1,5 +1,5 @@
 //Extra Part For BiomeDecorationSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BIOMEDECORATIONSYSTEM
 // Include Headers or Declare Types Here
 
 

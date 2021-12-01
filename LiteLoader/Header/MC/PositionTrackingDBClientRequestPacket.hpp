@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_POSITIONTRACKINGDBCLIENTREQUESTPACKET
 #include "Extra/PositionTrackingDBClientRequestPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_POSITIONTRACKINGDBCLIENTREQUESTPACKET
 class PositionTrackingDBClientRequestPacket : public Packet {
 #include "Extra/PositionTrackingDBClientRequestPacketAPI.hpp"
 public:

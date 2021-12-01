@@ -1,5 +1,5 @@
 //Extra Part For DiggerItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DIGGERITEM
 // Include Headers or Declare Types Here
 
 

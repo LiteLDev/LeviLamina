@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LIGHTNINGROD
 #include "Extra/LightningRodAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LIGHTNINGROD
 class LightningRod : public BlockLegacy {
 #include "Extra/LightningRodAPI.hpp"
 public:

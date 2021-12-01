@@ -1,5 +1,5 @@
 //Extra Part For WanderingTrader.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WANDERINGTRADER
 // Include Headers or Declare Types Here
 
 

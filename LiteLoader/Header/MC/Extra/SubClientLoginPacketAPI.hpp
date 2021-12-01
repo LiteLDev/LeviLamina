@@ -1,5 +1,5 @@
 //Extra Part For SubClientLoginPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUBCLIENTLOGINPACKET
 // Include Headers or Declare Types Here
 
 

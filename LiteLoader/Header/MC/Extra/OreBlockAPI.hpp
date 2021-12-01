@@ -1,5 +1,5 @@
 //Extra Part For OreBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OREBLOCK
 // Include Headers or Declare Types Here
 
 

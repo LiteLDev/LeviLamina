@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ContainerValidationBase.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MATERIALREDUCERINPUTVALIDATION
 #include "Extra/MaterialReducerInputValidationAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MATERIALREDUCERINPUTVALIDATION
 class MaterialReducerInputValidation : public ContainerValidationBase {
 #include "Extra/MaterialReducerInputValidationAPI.hpp"
 public:

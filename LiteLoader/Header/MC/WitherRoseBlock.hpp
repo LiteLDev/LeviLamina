@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FlowerBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WITHERROSEBLOCK
 #include "Extra/WitherRoseBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WITHERROSEBLOCK
 class WitherRoseBlock : public FlowerBlock {
 #include "Extra/WitherRoseBlockAPI.hpp"
 public:

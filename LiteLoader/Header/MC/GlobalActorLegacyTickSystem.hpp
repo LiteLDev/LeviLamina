@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GLOBALACTORLEGACYTICKSYSTEM
 #include "Extra/GlobalActorLegacyTickSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GLOBALACTORLEGACYTICKSYSTEM
 class GlobalActorLegacyTickSystem : public ITickingSystem {
 #include "Extra/GlobalActorLegacyTickSystemAPI.hpp"
 public:

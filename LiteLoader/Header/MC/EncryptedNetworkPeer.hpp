@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetworkPeer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENCRYPTEDNETWORKPEER
 #include "Extra/EncryptedNetworkPeerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENCRYPTEDNETWORKPEER
 class EncryptedNetworkPeer : public NetworkPeer {
 #include "Extra/EncryptedNetworkPeerAPI.hpp"
 public:

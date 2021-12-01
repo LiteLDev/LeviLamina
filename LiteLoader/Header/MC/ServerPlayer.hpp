@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Player.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SERVERPLAYER
 #include "Extra/ServerPlayerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SERVERPLAYER
 class ServerPlayer : public Player {
 #include "Extra/ServerPlayerAPI.hpp"
 public:

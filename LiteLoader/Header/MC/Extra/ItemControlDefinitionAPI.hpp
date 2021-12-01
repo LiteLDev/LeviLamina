@@ -1,5 +1,5 @@
 //Extra Part For ItemControlDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMCONTROLDEFINITION
 // Include Headers or Declare Types Here
 
 

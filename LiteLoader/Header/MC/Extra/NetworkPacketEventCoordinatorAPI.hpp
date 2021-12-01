@@ -1,5 +1,5 @@
 //Extra Part For NetworkPacketEventCoordinator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETWORKPACKETEVENTCOORDINATOR
 // Include Headers or Declare Types Here
 
 

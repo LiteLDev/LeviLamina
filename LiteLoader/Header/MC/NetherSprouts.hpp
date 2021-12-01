@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERSPROUTS
 #include "Extra/NetherSproutsAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERSPROUTS
 class NetherSprouts : public BlockLegacy {
 #include "Extra/NetherSproutsAPI.hpp"
 public:

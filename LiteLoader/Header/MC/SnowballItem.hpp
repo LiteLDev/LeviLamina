@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SNOWBALLITEM
 #include "Extra/SnowballItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SNOWBALLITEM
 class SnowballItem : public Item {
 #include "Extra/SnowballItemAPI.hpp"
 public:

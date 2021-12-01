@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTCOLORCOMPONENT
 #include "Extra/ScriptColorComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTCOLORCOMPONENT
 class ScriptColorComponent : public ScriptActorComponent {
 #include "Extra/ScriptColorComponentAPI.hpp"
 public:

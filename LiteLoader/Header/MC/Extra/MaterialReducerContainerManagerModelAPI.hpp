@@ -1,5 +1,5 @@
 //Extra Part For MaterialReducerContainerManagerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MATERIALREDUCERCONTAINERMANAGERMODEL
 // Include Headers or Declare Types Here
 
 

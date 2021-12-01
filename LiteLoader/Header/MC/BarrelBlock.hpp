@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FaceDirectionalBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BARRELBLOCK
 #include "Extra/BarrelBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BARRELBLOCK
 class BarrelBlock : public FaceDirectionalBlock {
 #include "Extra/BarrelBlockAPI.hpp"
 public:

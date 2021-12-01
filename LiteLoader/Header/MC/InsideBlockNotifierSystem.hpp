@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INSIDEBLOCKNOTIFIERSYSTEM
 #include "Extra/InsideBlockNotifierSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INSIDEBLOCKNOTIFIERSYSTEM
 class InsideBlockNotifierSystem : public ITickingSystem {
 #include "Extra/InsideBlockNotifierSystemAPI.hpp"
 public:

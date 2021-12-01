@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WEATHER
 #include "Extra/WeatherAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WEATHER
 class Weather : public BlockSourceListener {
 #include "Extra/WeatherAPI.hpp"
 public:

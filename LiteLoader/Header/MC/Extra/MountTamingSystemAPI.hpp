@@ -1,5 +1,5 @@
 //Extra Part For MountTamingSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOUNTTAMINGSYSTEM
 // Include Headers or Declare Types Here
 
 

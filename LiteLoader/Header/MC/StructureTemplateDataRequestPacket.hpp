@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STRUCTURETEMPLATEDATAREQUESTPACKET
 #include "Extra/StructureTemplateDataRequestPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STRUCTURETEMPLATEDATAREQUESTPACKET
 class StructureTemplateDataRequestPacket : public Packet {
 #include "Extra/StructureTemplateDataRequestPacketAPI.hpp"
 public:

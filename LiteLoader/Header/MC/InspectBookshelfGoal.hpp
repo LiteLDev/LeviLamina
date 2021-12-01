@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToBlockGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_INSPECTBOOKSHELFGOAL
 #include "Extra/InspectBookshelfGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_INSPECTBOOKSHELFGOAL
 class InspectBookshelfGoal : public BaseMoveToBlockGoal {
 #include "Extra/InspectBookshelfGoalAPI.hpp"
 public:

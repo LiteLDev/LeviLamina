@@ -1,5 +1,5 @@
 //Extra Part For RandomHoverGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RANDOMHOVERGOAL
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "AmethystBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_AMETHYSTCLUSTERBLOCK
 #include "Extra/AmethystClusterBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_AMETHYSTCLUSTERBLOCK
 class AmethystClusterBlock : public AmethystBlock {
 #include "Extra/AmethystClusterBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ExpressionOpBitField.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EXPRESSIONOPBITFIELD
 // Include Headers or Declare Types Here
 
 

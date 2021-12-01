@@ -1,5 +1,5 @@
 //Extra Part For BlockUnwalkableDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKUNWALKABLEDESCRIPTION
 // Include Headers or Declare Types Here
 
 

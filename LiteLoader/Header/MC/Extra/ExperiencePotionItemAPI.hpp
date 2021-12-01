@@ -1,5 +1,5 @@
 //Extra Part For ExperiencePotionItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EXPERIENCEPOTIONITEM
 // Include Headers or Declare Types Here
 
 

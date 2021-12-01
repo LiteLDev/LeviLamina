@@ -1,5 +1,5 @@
 //Extra Part For NavigationComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAVIGATIONCOMPONENT
 // Include Headers or Declare Types Here
 
 

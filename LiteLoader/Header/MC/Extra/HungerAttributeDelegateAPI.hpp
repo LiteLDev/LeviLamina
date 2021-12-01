@@ -1,5 +1,5 @@
 //Extra Part For HungerAttributeDelegate.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HUNGERATTRIBUTEDELEGATE
 // Include Headers or Declare Types Here
 
 

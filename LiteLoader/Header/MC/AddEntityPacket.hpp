@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ADDENTITYPACKET
 #include "Extra/AddEntityPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ADDENTITYPACKET
 class AddEntityPacket : public Packet {
 #include "Extra/AddEntityPacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For PersistentDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PERSISTENTDESCRIPTION
 // Include Headers or Declare Types Here
 
 

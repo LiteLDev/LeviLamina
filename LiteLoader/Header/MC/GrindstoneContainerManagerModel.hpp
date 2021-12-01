@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ContainerManagerModel.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GRINDSTONECONTAINERMANAGERMODEL
 #include "Extra/GrindstoneContainerManagerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GRINDSTONECONTAINERMANAGERMODEL
 class GrindstoneContainerManagerModel : public ContainerManagerModel {
 #include "Extra/GrindstoneContainerManagerModelAPI.hpp"
 public:

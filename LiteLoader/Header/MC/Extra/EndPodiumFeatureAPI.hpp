@@ -1,5 +1,5 @@
 //Extra Part For EndPodiumFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENDPODIUMFEATURE
 // Include Headers or Declare Types Here
 
 

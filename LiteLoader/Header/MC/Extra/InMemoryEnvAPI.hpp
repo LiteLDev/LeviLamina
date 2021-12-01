@@ -1,5 +1,5 @@
 //Extra Part For InMemoryEnv.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INMEMORYENV
 // Include Headers or Declare Types Here
 
 

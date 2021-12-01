@@ -1,5 +1,5 @@
 //Extra Part For LeashableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEASHABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

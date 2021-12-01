@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ROOTEDDIRTBLOCK
 #include "Extra/RootedDirtBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ROOTEDDIRTBLOCK
 class RootedDirtBlock : public BlockLegacy {
 #include "Extra/RootedDirtBlockAPI.hpp"
 public:

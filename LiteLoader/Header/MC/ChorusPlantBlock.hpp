@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHORUSPLANTBLOCK
 #include "Extra/ChorusPlantBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHORUSPLANTBLOCK
 class ChorusPlantBlock : public BlockLegacy {
 #include "Extra/ChorusPlantBlockAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEPRECATEDSLABBLOCKITEM
 #include "Extra/DeprecatedSlabBlockItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEPRECATEDSLABBLOCKITEM
 class DeprecatedSlabBlockItem : public BlockItem {
 #include "Extra/DeprecatedSlabBlockItemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERWARTBLOCK
 #include "Extra/NetherWartBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERWARTBLOCK
 class NetherWartBlock : public BushBlock {
 #include "Extra/NetherWartBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For EducationEditionOfferValue.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EDUCATIONEDITIONOFFERVALUE
 // Include Headers or Declare Types Here
 
 

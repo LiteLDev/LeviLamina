@@ -1,5 +1,5 @@
 //Extra Part For TextObjectSelector.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TEXTOBJECTSELECTOR
 // Include Headers or Declare Types Here
 
 

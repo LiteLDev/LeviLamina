@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "TorchBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_REDSTONETORCHBLOCK
 #include "Extra/RedstoneTorchBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_REDSTONETORCHBLOCK
 class RedstoneTorchBlock : public TorchBlock {
 #include "Extra/RedstoneTorchBlockAPI.hpp"
 public:

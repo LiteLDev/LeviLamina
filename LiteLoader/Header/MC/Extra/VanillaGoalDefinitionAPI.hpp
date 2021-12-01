@@ -1,5 +1,5 @@
 //Extra Part For VanillaGoalDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAGOALDEFINITION
 // Include Headers or Declare Types Here
 
 

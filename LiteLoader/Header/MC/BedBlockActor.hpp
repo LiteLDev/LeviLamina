@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEDBLOCKACTOR
 #include "Extra/BedBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEDBLOCKACTOR
 class BedBlockActor : public BlockActor {
 #include "Extra/BedBlockActorAPI.hpp"
 public:

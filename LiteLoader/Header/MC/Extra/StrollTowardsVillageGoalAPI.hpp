@@ -1,5 +1,5 @@
 //Extra Part For StrollTowardsVillageGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STROLLTOWARDSVILLAGEGOAL
 // Include Headers or Declare Types Here
 
 

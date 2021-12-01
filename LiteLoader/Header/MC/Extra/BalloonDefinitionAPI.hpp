@@ -1,5 +1,5 @@
 //Extra Part For BalloonDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BALLOONDEFINITION
 // Include Headers or Declare Types Here
 
 

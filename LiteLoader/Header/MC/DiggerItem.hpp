@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DIGGERITEM
 #include "Extra/DiggerItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DIGGERITEM
 class DiggerItem : public Item {
 #include "Extra/DiggerItemAPI.hpp"
 public:

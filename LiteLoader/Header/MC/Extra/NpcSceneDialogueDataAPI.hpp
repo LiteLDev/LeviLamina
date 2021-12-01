@@ -1,5 +1,5 @@
 //Extra Part For NpcSceneDialogueData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NPCSCENEDIALOGUEDATA
 // Include Headers or Declare Types Here
 
 

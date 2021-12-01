@@ -1,5 +1,5 @@
 //Extra Part For MainChunkSource.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MAINCHUNKSOURCE
 // Include Headers or Declare Types Here
 
 

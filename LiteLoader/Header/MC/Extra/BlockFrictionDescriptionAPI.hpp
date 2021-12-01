@@ -1,5 +1,5 @@
 //Extra Part For BlockFrictionDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKFRICTIONDESCRIPTION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptObject.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTACTOR
 #include "Extra/ScriptActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTACTOR
 class ScriptActor : public ScriptObject {
 #include "Extra/ScriptActorAPI.hpp"
 public:

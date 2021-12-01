@@ -1,5 +1,5 @@
 //Extra Part For VanillaGameModuleServer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAGAMEMODULESERVER
 // Include Headers or Declare Types Here
 
 

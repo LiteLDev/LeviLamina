@@ -1,5 +1,5 @@
 //Extra Part For BoolOption.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOOLOPTION
 // Include Headers or Declare Types Here
 
 

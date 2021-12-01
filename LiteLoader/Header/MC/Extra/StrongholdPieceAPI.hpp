@@ -1,5 +1,5 @@
 //Extra Part For StrongholdPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRONGHOLDPIECE
 // Include Headers or Declare Types Here
 
 

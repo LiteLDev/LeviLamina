@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockSourceListener.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENTITYEXITVOLUMESYSTEM
 #include "Extra/EntityExitVolumeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENTITYEXITVOLUMESYSTEM
 class EntityExitVolumeSystem : public BlockSourceListener {
 #include "Extra/EntityExitVolumeSystemAPI.hpp"
 public:

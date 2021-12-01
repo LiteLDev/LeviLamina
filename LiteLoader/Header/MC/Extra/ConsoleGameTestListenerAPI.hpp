@@ -1,5 +1,5 @@
 //Extra Part For ConsoleGameTestListener.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONSOLEGAMETESTLISTENER
 // Include Headers or Declare Types Here
 
 

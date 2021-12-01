@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BEDROCKBLOCK
 #include "Extra/BedrockBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BEDROCKBLOCK
 class BedrockBlock : public BlockLegacy {
 #include "Extra/BedrockBlockAPI.hpp"
 public:

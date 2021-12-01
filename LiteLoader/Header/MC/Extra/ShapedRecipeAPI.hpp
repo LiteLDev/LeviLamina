@@ -1,5 +1,5 @@
 //Extra Part For ShapedRecipe.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAPEDRECIPE
 // Include Headers or Declare Types Here
 
 

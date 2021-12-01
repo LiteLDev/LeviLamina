@@ -1,5 +1,5 @@
 //Extra Part For ScriptInventoryComponentFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTINVENTORYCOMPONENTFACTORY
 // Include Headers or Declare Types Here
 
 

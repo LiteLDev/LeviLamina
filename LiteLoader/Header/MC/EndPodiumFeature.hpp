@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDPODIUMFEATURE
 #include "Extra/EndPodiumFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDPODIUMFEATURE
 class EndPodiumFeature : public Feature {
 #include "Extra/EndPodiumFeatureAPI.hpp"
 public:

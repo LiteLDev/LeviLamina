@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Recipe.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MULTIRECIPE
 #include "Extra/MultiRecipeAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MULTIRECIPE
 class MultiRecipe : public Recipe {
 #include "Extra/MultiRecipeAPI.hpp"
 public:

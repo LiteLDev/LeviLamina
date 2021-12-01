@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FileUploadManager.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RESOURCEPACKFILEUPLOADMANAGER
 #include "Extra/ResourcePackFileUploadManagerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RESOURCEPACKFILEUPLOADMANAGER
 class ResourcePackFileUploadManager : public FileUploadManager {
 #include "Extra/ResourcePackFileUploadManagerAPI.hpp"
 public:

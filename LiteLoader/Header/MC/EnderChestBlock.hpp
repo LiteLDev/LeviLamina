@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChestBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDERCHESTBLOCK
 #include "Extra/EnderChestBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDERCHESTBLOCK
 class EnderChestBlock : public ChestBlock {
 #include "Extra/EnderChestBlockAPI.hpp"
 public:

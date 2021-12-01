@@ -1,5 +1,5 @@
 //Extra Part For JsonPackUtils.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_JSONPACKUTILS
 // Include Headers or Declare Types Here
 
 

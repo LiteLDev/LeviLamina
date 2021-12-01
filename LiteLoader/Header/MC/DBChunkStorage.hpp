@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DBCHUNKSTORAGE
 #include "Extra/DBChunkStorageAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DBCHUNKSTORAGE
 class DBChunkStorage : public ChunkSource {
 #include "Extra/DBChunkStorageAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For StructurePoolActorPredicateActorMatch.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTUREPOOLACTORPREDICATEACTORMATCH
 // Include Headers or Declare Types Here
 
 

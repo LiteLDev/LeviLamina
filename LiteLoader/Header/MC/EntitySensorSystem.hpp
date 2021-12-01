@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENTITYSENSORSYSTEM
 #include "Extra/EntitySensorSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENTITYSENSORSYSTEM
 class EntitySensorSystem : public ITickingSystem {
 #include "Extra/EntitySensorSystemAPI.hpp"
 public:

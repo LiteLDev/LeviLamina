@@ -1,5 +1,5 @@
 //Extra Part For LootTableDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOOTTABLEDEFINITION
 // Include Headers or Declare Types Here
 
 

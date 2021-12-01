@@ -1,5 +1,5 @@
 //Extra Part For NBBridgeStraight.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBBRIDGESTRAIGHT
 // Include Headers or Declare Types Here
 
 

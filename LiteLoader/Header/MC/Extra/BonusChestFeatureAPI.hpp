@@ -1,5 +1,5 @@
 //Extra Part For BonusChestFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BONUSCHESTFEATURE
 // Include Headers or Declare Types Here
 
 

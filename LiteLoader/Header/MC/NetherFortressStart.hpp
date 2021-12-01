@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureStart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERFORTRESSSTART
 #include "Extra/NetherFortressStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERFORTRESSSTART
 class NetherFortressStart : public StructureStart {
 #include "Extra/NetherFortressStartAPI.hpp"
 public:

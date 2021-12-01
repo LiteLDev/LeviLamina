@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HOLDBLOCKSYSTEM
 #include "Extra/HoldBlockSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HOLDBLOCKSYSTEM
 class HoldBlockSystem : public ITickingSystem {
 #include "Extra/HoldBlockSystemAPI.hpp"
 public:

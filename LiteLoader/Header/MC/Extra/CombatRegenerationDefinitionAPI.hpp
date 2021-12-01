@@ -1,5 +1,5 @@
 //Extra Part For CombatRegenerationDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMBATREGENERATIONDEFINITION
 // Include Headers or Declare Types Here
 
 

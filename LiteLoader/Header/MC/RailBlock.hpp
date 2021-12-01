@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseRailBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAILBLOCK
 #include "Extra/RailBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAILBLOCK
 class RailBlock : public BaseRailBlock {
 #include "Extra/RailBlockAPI.hpp"
 public:

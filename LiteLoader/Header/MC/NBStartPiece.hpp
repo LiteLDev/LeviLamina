@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NBBridgeCrossing.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NBSTARTPIECE
 #include "Extra/NBStartPieceAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NBSTARTPIECE
 class NBStartPiece : public NBBridgeCrossing {
 #include "Extra/NBStartPieceAPI.hpp"
 public:

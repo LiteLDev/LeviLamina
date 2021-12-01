@@ -1,5 +1,5 @@
 //Extra Part For CodeBuilderPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CODEBUILDERPACKET
 // Include Headers or Declare Types Here
 
 

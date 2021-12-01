@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NETHERFOSSILFEATURE
 #include "Extra/NetherFossilFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NETHERFOSSILFEATURE
 class NetherFossilFeature : public Feature {
 #include "Extra/NetherFossilFeatureAPI.hpp"
 public:

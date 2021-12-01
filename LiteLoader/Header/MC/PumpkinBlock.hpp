@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PUMPKINBLOCK
 #include "Extra/PumpkinBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PUMPKINBLOCK
 class PumpkinBlock : public BlockLegacy {
 #include "Extra/PumpkinBlockAPI.hpp"
 public:

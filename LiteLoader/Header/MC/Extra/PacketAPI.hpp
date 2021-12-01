@@ -1,5 +1,5 @@
 //Extra Part For Packet.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKET
 // Include Headers or Declare Types Here
 class BinaryStream;
 enum class PacketReliability {

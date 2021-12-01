@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MOBEFFECTSYSTEM
 #include "Extra/MobEffectSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MOBEFFECTSYSTEM
 class MobEffectSystem : public ITickingSystem {
 #include "Extra/MobEffectSystemAPI.hpp"
 public:

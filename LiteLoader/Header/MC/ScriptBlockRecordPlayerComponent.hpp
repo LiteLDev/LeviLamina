@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptObject.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTBLOCKRECORDPLAYERCOMPONENT
 #include "Extra/ScriptBlockRecordPlayerComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTBLOCKRECORDPLAYERCOMPONENT
 class ScriptBlockRecordPlayerComponent : public ScriptObject {
 #include "Extra/ScriptBlockRecordPlayerComponentAPI.hpp"
 public:

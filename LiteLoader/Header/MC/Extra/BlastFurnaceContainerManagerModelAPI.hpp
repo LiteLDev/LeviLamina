@@ -1,5 +1,5 @@
 //Extra Part For BlastFurnaceContainerManagerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLASTFURNACECONTAINERMANAGERMODEL
 // Include Headers or Declare Types Here
 
 

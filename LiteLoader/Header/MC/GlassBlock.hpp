@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GLASSBLOCK
 #include "Extra/GlassBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GLASSBLOCK
 class GlassBlock : public BlockLegacy {
 #include "Extra/GlassBlockAPI.hpp"
 public:

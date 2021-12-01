@@ -1,5 +1,5 @@
 //Extra Part For TeleportCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TELEPORTCOMMAND
 // Include Headers or Declare Types Here
 
 

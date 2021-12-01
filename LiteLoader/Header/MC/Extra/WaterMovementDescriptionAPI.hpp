@@ -1,5 +1,5 @@
 //Extra Part For WaterMovementDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WATERMOVEMENTDESCRIPTION
 // Include Headers or Declare Types Here
 
 

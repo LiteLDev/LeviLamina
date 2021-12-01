@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PLANKSBLOCK
 #include "Extra/PlanksBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PLANKSBLOCK
 class PlanksBlock : public BlockLegacy {
 #include "Extra/PlanksBlockAPI.hpp"
 public:

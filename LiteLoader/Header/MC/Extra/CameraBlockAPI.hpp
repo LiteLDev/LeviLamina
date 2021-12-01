@@ -1,5 +1,5 @@
 //Extra Part For CameraBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CAMERABLOCK
 // Include Headers or Declare Types Here
 
 

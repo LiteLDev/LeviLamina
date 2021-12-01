@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PetSleepWithOwnerState.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WALKSTATE
 #include "Extra/WalkStateAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WALKSTATE
 class WalkState : public PetSleepWithOwnerState {
 #include "Extra/WalkStateAPI.hpp"
 public:

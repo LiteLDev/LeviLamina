@@ -1,5 +1,5 @@
 //Extra Part For ContainerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONTAINERMODEL
 // Include Headers or Declare Types Here
 
 

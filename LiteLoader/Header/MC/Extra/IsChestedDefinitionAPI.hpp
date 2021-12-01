@@ -1,5 +1,5 @@
 //Extra Part For IsChestedDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ISCHESTEDDEFINITION
 // Include Headers or Declare Types Here
 
 

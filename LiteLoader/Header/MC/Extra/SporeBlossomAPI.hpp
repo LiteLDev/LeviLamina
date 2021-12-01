@@ -1,5 +1,5 @@
 //Extra Part For SporeBlossom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPOREBLOSSOM
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For AnimatePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ANIMATEPACKET
 // Include Headers or Declare Types Here
 
 

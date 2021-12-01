@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePoolElement.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FEATUREPOOLELEMENT
 #include "Extra/FeaturePoolElementAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FEATUREPOOLELEMENT
 class FeaturePoolElement : public StructurePoolElement {
 #include "Extra/FeaturePoolElementAPI.hpp"
 public:

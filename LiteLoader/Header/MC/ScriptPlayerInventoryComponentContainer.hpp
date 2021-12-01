@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptInventoryComponentContainer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTPLAYERINVENTORYCOMPONENTCONTAINER
 #include "Extra/ScriptPlayerInventoryComponentContainerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTPLAYERINVENTORYCOMPONENTCONTAINER
 class ScriptPlayerInventoryComponentContainer : public ScriptInventoryComponentContainer {
 #include "Extra/ScriptPlayerInventoryComponentContainerAPI.hpp"
 public:

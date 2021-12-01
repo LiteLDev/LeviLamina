@@ -1,5 +1,5 @@
 //Extra Part For IFileAccess.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IFILEACCESS
 // Include Headers or Declare Types Here
 
 

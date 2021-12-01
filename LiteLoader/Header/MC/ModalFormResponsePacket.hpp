@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MODALFORMRESPONSEPACKET
 #include "Extra/ModalFormResponsePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MODALFORMRESPONSEPACKET
 class ModalFormResponsePacket : public Packet {
 #include "Extra/ModalFormResponsePacketAPI.hpp"
 public:

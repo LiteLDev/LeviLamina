@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DiggerItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PICKAXEITEM
 #include "Extra/PickaxeItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PICKAXEITEM
 class PickaxeItem : public DiggerItem {
 #include "Extra/PickaxeItemAPI.hpp"
 public:

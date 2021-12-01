@@ -1,5 +1,5 @@
 //Extra Part For NoiseCellInterpolator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NOISECELLINTERPOLATOR
 // Include Headers or Declare Types Here
 
 

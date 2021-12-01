@@ -1,5 +1,5 @@
 //Extra Part For CircuitSceneGraph.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CIRCUITSCENEGRAPH
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScaffoldingBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCAFFOLDINGBLOCKITEM
 // Include Headers or Declare Types Here
 
 

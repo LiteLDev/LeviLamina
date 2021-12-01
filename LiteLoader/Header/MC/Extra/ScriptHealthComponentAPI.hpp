@@ -1,5 +1,5 @@
 //Extra Part For ScriptHealthComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTHEALTHCOMPONENT
 // Include Headers or Declare Types Here
 
 

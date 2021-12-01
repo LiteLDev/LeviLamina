@@ -1,5 +1,5 @@
 //Extra Part For PingedCompatibleServer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PINGEDCOMPATIBLESERVER
 // Include Headers or Declare Types Here
 
 

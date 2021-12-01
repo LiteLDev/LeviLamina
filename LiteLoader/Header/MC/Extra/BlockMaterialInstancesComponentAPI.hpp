@@ -1,5 +1,5 @@
 //Extra Part For BlockMaterialInstancesComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKMATERIALINSTANCESCOMPONENT
 // Include Headers or Declare Types Here
 
 

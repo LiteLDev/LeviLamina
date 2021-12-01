@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "InfestedBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MONSTEREGGBLOCK
 #include "Extra/MonsterEggBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MONSTEREGGBLOCK
 class MonsterEggBlock : public InfestedBlock {
 #include "Extra/MonsterEggBlockAPI.hpp"
 public:

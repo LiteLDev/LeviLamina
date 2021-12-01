@@ -1,5 +1,5 @@
 //Extra Part For NBStartPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBSTARTPIECE
 // Include Headers or Declare Types Here
 
 

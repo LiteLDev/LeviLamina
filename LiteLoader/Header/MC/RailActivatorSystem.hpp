@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RAILACTIVATORSYSTEM
 #include "Extra/RailActivatorSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RAILACTIVATORSYSTEM
 class RailActivatorSystem : public ITickingSystem {
 #include "Extra/RailActivatorSystemAPI.hpp"
 public:

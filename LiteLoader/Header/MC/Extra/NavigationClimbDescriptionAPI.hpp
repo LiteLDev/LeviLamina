@@ -1,5 +1,5 @@
 //Extra Part For NavigationClimbDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAVIGATIONCLIMBDESCRIPTION
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For TradeableSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRADEABLESYSTEM
 // Include Headers or Declare Types Here
 
 

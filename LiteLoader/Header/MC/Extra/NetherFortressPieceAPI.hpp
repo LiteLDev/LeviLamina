@@ -1,5 +1,5 @@
 //Extra Part For NetherFortressPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETHERFORTRESSPIECE
 // Include Headers or Declare Types Here
 
 

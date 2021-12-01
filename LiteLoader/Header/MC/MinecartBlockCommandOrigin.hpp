@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockCommandOrigin.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINECARTBLOCKCOMMANDORIGIN
 #include "Extra/MinecartBlockCommandOriginAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINECARTBLOCKCOMMANDORIGIN
 class MinecartBlockCommandOrigin : public BlockCommandOrigin {
 #include "Extra/MinecartBlockCommandOriginAPI.hpp"
 public:

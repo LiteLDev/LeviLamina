@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTTAMEABLECOMPONENT
 #include "Extra/ScriptTameableComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTTAMEABLECOMPONENT
 class ScriptTameableComponent : public ScriptActorComponent {
 #include "Extra/ScriptTameableComponentAPI.hpp"
 public:

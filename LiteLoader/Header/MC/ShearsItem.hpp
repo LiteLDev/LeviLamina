@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHEARSITEM
 #include "Extra/ShearsItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHEARSITEM
 class ShearsItem : public Item {
 #include "Extra/ShearsItemAPI.hpp"
 public:

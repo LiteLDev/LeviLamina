@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Description.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRIPODCAMERADESCRIPTION
 #include "Extra/TripodCameraDescriptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRIPODCAMERADESCRIPTION
 class TripodCameraDescription : public Description {
 #include "Extra/TripodCameraDescriptionAPI.hpp"
 public:

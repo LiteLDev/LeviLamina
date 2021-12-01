@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GROWCROPSYSTEM
 #include "Extra/GrowCropSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GROWCROPSYSTEM
 class GrowCropSystem : public ITickingSystem {
 #include "Extra/GrowCropSystemAPI.hpp"
 public:

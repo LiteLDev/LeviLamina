@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCALEBYAGESYSTEM
 #include "Extra/ScaleByAgeSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCALEBYAGESYSTEM
 class ScaleByAgeSystem : public ITickingSystem {
 #include "Extra/ScaleByAgeSystemAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FertilizerItem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DYEPOWDERITEM
 #include "Extra/DyePowderItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DYEPOWDERITEM
 class DyePowderItem : public FertilizerItem {
 #include "Extra/DyePowderItemAPI.hpp"
 public:

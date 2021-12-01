@@ -1,5 +1,5 @@
 //Extra Part For ChalkboardBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CHALKBOARDBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For EatBlockDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EATBLOCKDEFINITION
 // Include Headers or Declare Types Here
 
 

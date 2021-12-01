@@ -1,5 +1,5 @@
 //Extra Part For ItemEventResponse.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMEVENTRESPONSE
 // Include Headers or Declare Types Here
 
 

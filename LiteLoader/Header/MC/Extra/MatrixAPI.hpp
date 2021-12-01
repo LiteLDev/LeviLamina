@@ -1,5 +1,5 @@
 //Extra Part For Matrix.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MATRIX
 // Include Headers or Declare Types Here
 
 

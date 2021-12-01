@@ -1,5 +1,5 @@
 //Extra Part For BalloonableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BALLOONABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

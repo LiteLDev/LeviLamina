@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Option.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BOOLOPTION
 #include "Extra/BoolOptionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BOOLOPTION
 class BoolOption : public Option {
 #include "Extra/BoolOptionAPI.hpp"
 public:

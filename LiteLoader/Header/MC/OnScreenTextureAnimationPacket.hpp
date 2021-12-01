@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ONSCREENTEXTUREANIMATIONPACKET
 #include "Extra/OnScreenTextureAnimationPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ONSCREENTEXTUREANIMATIONPACKET
 class OnScreenTextureAnimationPacket : public Packet {
 #include "Extra/OnScreenTextureAnimationPacketAPI.hpp"
 public:

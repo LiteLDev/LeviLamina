@@ -1,5 +1,5 @@
 //Extra Part For FakeThermalMonitorInterface.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FAKETHERMALMONITORINTERFACE
 // Include Headers or Declare Types Here
 
 

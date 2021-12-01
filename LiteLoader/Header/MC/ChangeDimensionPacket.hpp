@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHANGEDIMENSIONPACKET
 #include "Extra/ChangeDimensionPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHANGEDIMENSIONPACKET
 class ChangeDimensionPacket : public Packet {
 #include "Extra/ChangeDimensionPacketAPI.hpp"
 public:

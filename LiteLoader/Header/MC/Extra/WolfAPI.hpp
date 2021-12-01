@@ -1,5 +1,5 @@
 //Extra Part For Wolf.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WOLF
 // Include Headers or Declare Types Here
 
 

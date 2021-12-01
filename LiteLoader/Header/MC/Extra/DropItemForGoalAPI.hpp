@@ -1,5 +1,5 @@
 //Extra Part For DropItemForGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DROPITEMFORGOAL
 // Include Headers or Declare Types Here
 
 

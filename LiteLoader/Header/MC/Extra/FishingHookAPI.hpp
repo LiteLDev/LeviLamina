@@ -1,5 +1,5 @@
 //Extra Part For FishingHook.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FISHINGHOOK
 // Include Headers or Declare Types Here
 
 

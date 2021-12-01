@@ -1,5 +1,5 @@
 //Extra Part For BiomeSourceUtil.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BIOMESOURCEUTIL
 // Include Headers or Declare Types Here
 
 

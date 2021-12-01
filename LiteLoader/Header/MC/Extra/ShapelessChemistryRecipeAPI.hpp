@@ -1,5 +1,5 @@
 //Extra Part For ShapelessChemistryRecipe.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAPELESSCHEMISTRYRECIPE
 // Include Headers or Declare Types Here
 
 

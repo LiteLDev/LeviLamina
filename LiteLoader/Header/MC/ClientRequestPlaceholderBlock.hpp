@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLIENTREQUESTPLACEHOLDERBLOCK
 #include "Extra/ClientRequestPlaceholderBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLIENTREQUESTPLACEHOLDERBLOCK
 class ClientRequestPlaceholderBlock : public BlockLegacy {
 #include "Extra/ClientRequestPlaceholderBlockAPI.hpp"
 public:

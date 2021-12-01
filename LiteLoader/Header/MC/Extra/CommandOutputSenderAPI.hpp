@@ -1,5 +1,5 @@
 //Extra Part For CommandOutputSender.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_COMMANDOUTPUTSENDER
 // Include Headers or Declare Types Here
 
 

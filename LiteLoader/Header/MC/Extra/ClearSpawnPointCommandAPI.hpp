@@ -1,5 +1,5 @@
 //Extra Part For ClearSpawnPointCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLEARSPAWNPOINTCOMMAND
 // Include Headers or Declare Types Here
 
 

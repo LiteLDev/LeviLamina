@@ -1,5 +1,5 @@
 //Extra Part For ServerToClientHandshakePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERTOCLIENTHANDSHAKEPACKET
 // Include Headers or Declare Types Here
 
 

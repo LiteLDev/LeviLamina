@@ -1,5 +1,5 @@
 //Extra Part For Skeleton.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SKELETON
 // Include Headers or Declare Types Here
 
 

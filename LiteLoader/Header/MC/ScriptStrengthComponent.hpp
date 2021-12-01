@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptActorComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTSTRENGTHCOMPONENT
 #include "Extra/ScriptStrengthComponentAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTSTRENGTHCOMPONENT
 class ScriptStrengthComponent : public ScriptActorComponent {
 #include "Extra/ScriptStrengthComponentAPI.hpp"
 public:

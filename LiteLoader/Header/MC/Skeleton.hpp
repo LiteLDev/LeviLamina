@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SKELETON
 #include "Extra/SkeletonAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SKELETON
 class Skeleton : public Monster {
 #include "Extra/SkeletonAPI.hpp"
 public:

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SPAWNPARTICLEEFFECTPACKET
 #include "Extra/SpawnParticleEffectPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SPAWNPARTICLEEFFECTPACKET
 class SpawnParticleEffectPacket : public Packet {
 #include "Extra/SpawnParticleEffectPacketAPI.hpp"
 public:

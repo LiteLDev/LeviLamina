@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerBlockDestructionStartedEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERBLOCKDESTRUCTIONSTARTEDEVENT
 // Include Headers or Declare Types Here
 
 

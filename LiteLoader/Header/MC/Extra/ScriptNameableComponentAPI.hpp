@@ -1,5 +1,5 @@
 //Extra Part For ScriptNameableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAMEABLECOMPONENT
 // Include Headers or Declare Types Here
 
 

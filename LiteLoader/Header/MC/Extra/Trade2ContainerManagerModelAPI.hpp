@@ -1,5 +1,5 @@
 //Extra Part For Trade2ContainerManagerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TRADE2CONTAINERMANAGERMODEL
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ItemState.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTATE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For RailMovementDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAILMOVEMENTDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SetActorDataPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETACTORDATAPACKET
 // Include Headers or Declare Types Here
 
 

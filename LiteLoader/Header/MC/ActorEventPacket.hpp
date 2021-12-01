@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTOREVENTPACKET
 #include "Extra/ActorEventPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTOREVENTPACKET
 class ActorEventPacket : public Packet {
 #include "Extra/ActorEventPacketAPI.hpp"
 public:

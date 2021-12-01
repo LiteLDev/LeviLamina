@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FindCoverGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLEESUNGOAL
 #include "Extra/FleeSunGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLEESUNGOAL
 class FleeSunGoal : public FindCoverGoal {
 #include "Extra/FleeSunGoalAPI.hpp"
 public:

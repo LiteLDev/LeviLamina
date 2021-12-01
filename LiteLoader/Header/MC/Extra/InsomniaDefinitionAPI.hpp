@@ -1,5 +1,5 @@
 //Extra Part For InsomniaDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_INSOMNIADEFINITION
 // Include Headers or Declare Types Here
 
 

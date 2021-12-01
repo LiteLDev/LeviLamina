@@ -1,5 +1,5 @@
 //Extra Part For RemoveOnHitSubcomponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_REMOVEONHITSUBCOMPONENT
 // Include Headers or Declare Types Here
 
 

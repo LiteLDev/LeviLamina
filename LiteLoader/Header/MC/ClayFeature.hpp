@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLAYFEATURE
 #include "Extra/ClayFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLAYFEATURE
 class ClayFeature : public Feature {
 #include "Extra/ClayFeatureAPI.hpp"
 public:

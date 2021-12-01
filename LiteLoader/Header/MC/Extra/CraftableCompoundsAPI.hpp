@@ -1,5 +1,5 @@
 //Extra Part For CraftableCompounds.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTABLECOMPOUNDS
 // Include Headers or Declare Types Here
 
 

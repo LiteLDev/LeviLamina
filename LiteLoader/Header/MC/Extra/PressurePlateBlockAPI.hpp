@@ -1,5 +1,5 @@
 //Extra Part For PressurePlateBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PRESSUREPLATEBLOCK
 // Include Headers or Declare Types Here
 
 

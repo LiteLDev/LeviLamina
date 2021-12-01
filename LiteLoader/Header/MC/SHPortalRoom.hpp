@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHPORTALROOM
 #include "Extra/SHPortalRoomAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHPORTALROOM
 class SHPortalRoom : public StructurePiece {
 #include "Extra/SHPortalRoomAPI.hpp"
 public:

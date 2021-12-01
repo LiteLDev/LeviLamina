@@ -1,5 +1,5 @@
 //Extra Part For FoliageColor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FOLIAGECOLOR
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRAPDOORBLOCK
 #include "Extra/TrapDoorBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRAPDOORBLOCK
 class TrapDoorBlock : public BlockLegacy {
 #include "Extra/TrapDoorBlockAPI.hpp"
 public:

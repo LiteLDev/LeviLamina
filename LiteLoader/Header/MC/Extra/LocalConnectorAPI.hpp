@@ -1,5 +1,5 @@
 //Extra Part For LocalConnector.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LOCALCONNECTOR
 // Include Headers or Declare Types Here
 
 

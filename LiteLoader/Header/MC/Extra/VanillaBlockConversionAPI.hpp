@@ -1,5 +1,5 @@
 //Extra Part For VanillaBlockConversion.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLABLOCKCONVERSION
 // Include Headers or Declare Types Here
 
 

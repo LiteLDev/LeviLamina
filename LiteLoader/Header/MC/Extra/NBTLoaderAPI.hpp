@@ -1,5 +1,5 @@
 //Extra Part For NBTLoader.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBTLOADER
 // Include Headers or Declare Types Here
 
 

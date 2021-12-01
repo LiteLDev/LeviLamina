@@ -1,5 +1,5 @@
 //Extra Part For MobEffectSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOBEFFECTSYSTEM
 // Include Headers or Declare Types Here
 
 

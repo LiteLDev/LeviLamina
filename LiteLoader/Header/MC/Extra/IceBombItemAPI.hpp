@@ -1,5 +1,5 @@
 //Extra Part For IceBombItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ICEBOMBITEM
 // Include Headers or Declare Types Here
 
 

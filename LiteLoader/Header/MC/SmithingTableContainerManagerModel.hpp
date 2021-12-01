@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ContainerManagerModel.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SMITHINGTABLECONTAINERMANAGERMODEL
 #include "Extra/SmithingTableContainerManagerModelAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SMITHINGTABLECONTAINERMANAGERMODEL
 class SmithingTableContainerManagerModel : public ContainerManagerModel {
 #include "Extra/SmithingTableContainerManagerModelAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For EntityNetId.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENTITYNETID
 // Include Headers or Declare Types Here
 
 

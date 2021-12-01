@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructurePiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHROOMCROSSING
 #include "Extra/SHRoomCrossingAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHROOMCROSSING
 class SHRoomCrossing : public StructurePiece {
 #include "Extra/SHRoomCrossingAPI.hpp"
 public:

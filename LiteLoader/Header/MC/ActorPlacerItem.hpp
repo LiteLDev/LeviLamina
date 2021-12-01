@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORPLACERITEM
 #include "Extra/ActorPlacerItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORPLACERITEM
 class ActorPlacerItem : public Item {
 #include "Extra/ActorPlacerItemAPI.hpp"
 public:

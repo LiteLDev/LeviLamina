@@ -1,5 +1,5 @@
 //Extra Part For BlockPropertyComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKPROPERTYCOMPONENT
 // Include Headers or Declare Types Here
 
 

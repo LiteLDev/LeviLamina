@@ -1,5 +1,5 @@
 //Extra Part For BatteryMonitorInterface.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BATTERYMONITORINTERFACE
 // Include Headers or Declare Types Here
 
 

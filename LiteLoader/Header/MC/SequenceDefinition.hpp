@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SEQUENCEDEFINITION
 #include "Extra/SequenceDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SEQUENCEDEFINITION
 class SequenceDefinition : public BehaviorDefinition {
 #include "Extra/SequenceDefinitionAPI.hpp"
 public:

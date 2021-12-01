@@ -1,5 +1,5 @@
 //Extra Part For ProjectileItemComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PROJECTILEITEMCOMPONENT
 // Include Headers or Declare Types Here
 
 

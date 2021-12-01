@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLOCKINGSYSTEM
 #include "Extra/FlockingSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLOCKINGSYSTEM
 class FlockingSystem : public ITickingSystem {
 #include "Extra/FlockingSystemAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For AppConfigsFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_APPCONFIGSFACTORY
 // Include Headers or Declare Types Here
 
 

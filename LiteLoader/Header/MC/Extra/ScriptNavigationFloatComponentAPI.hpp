@@ -1,5 +1,5 @@
 //Extra Part For ScriptNavigationFloatComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTNAVIGATIONFLOATCOMPONENT
 // Include Headers or Declare Types Here
 
 

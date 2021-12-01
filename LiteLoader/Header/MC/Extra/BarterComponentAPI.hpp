@@ -1,5 +1,5 @@
 //Extra Part For BarterComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BARTERCOMPONENT
 // Include Headers or Declare Types Here
 
 

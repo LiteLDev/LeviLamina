@@ -1,5 +1,5 @@
 //Extra Part For EduAppConfigs.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EDUAPPCONFIGS
 // Include Headers or Declare Types Here
 
 

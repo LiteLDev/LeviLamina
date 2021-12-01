@@ -1,5 +1,5 @@
 //Extra Part For EventResponseFactory.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_EVENTRESPONSEFACTORY
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For MoveTowardsRestrictionDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOVETOWARDSRESTRICTIONDEFINITION
 // Include Headers or Declare Types Here
 
 

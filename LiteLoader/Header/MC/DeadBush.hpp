@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEADBUSH
 #include "Extra/DeadBushAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEADBUSH
 class DeadBush : public BushBlock {
 #include "Extra/DeadBushAPI.hpp"
 public:

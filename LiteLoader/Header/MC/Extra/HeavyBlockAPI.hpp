@@ -1,5 +1,5 @@
 //Extra Part For HeavyBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HEAVYBLOCK
 // Include Headers or Declare Types Here
 
 

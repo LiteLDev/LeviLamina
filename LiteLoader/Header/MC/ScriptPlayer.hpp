@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ScriptObject.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SCRIPTPLAYER
 #include "Extra/ScriptPlayerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SCRIPTPLAYER
 class ScriptPlayer : public ScriptObject {
 #include "Extra/ScriptPlayerAPI.hpp"
 public:

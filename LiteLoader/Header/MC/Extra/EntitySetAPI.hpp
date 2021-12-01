@@ -1,5 +1,5 @@
 //Extra Part For EntitySet.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ENTITYSET
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKCLIMBERSYSTEM
 #include "Extra/BlockClimberSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKCLIMBERSYSTEM
 class BlockClimberSystem : public ITickingSystem {
 #include "Extra/BlockClimberSystemAPI.hpp"
 public:

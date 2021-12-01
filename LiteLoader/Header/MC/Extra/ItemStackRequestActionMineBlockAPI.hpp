@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestActionMineBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONMINEBLOCK
 // Include Headers or Declare Types Here
 
 

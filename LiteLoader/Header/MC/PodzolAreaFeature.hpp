@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Feature.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PODZOLAREAFEATURE
 #include "Extra/PodzolAreaFeatureAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PODZOLAREAFEATURE
 class PodzolAreaFeature : public Feature {
 #include "Extra/PodzolAreaFeatureAPI.hpp"
 public:

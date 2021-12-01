@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DESPAWNSYSTEM
 #include "Extra/DespawnSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DESPAWNSYSTEM
 class DespawnSystem : public ITickingSystem {
 #include "Extra/DespawnSystemAPI.hpp"
 public:

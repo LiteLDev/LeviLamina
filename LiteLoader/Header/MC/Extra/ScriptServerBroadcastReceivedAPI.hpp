@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerBroadcastReceived.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERBROADCASTRECEIVED
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For SetScoreboardIdentityPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETSCOREBOARDIDENTITYPACKET
 // Include Headers or Declare Types Here
 
 

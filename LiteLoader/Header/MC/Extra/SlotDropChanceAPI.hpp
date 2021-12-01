@@ -1,5 +1,5 @@
 //Extra Part For SlotDropChance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SLOTDROPCHANCE
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ShulkerPeekGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHULKERPEEKGOAL
 // Include Headers or Declare Types Here
 
 

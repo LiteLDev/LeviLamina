@@ -1,5 +1,5 @@
 //Extra Part For ActorMapping.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTORMAPPING
 // Include Headers or Declare Types Here
 
 

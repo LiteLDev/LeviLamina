@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BehaviorDefinition.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WAITTICKSDEFINITION
 #include "Extra/WaitTicksDefinitionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WAITTICKSDEFINITION
 class WaitTicksDefinition : public BehaviorDefinition {
 #include "Extra/WaitTicksDefinitionAPI.hpp"
 public:

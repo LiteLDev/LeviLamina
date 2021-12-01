@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ENDGATEWAYBLOCKACTOR
 #include "Extra/EndGatewayBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ENDGATEWAYBLOCKACTOR
 class EndGatewayBlockActor : public BlockActor {
 #include "Extra/EndGatewayBlockActorAPI.hpp"
 public:

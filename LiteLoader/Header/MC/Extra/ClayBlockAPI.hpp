@@ -1,5 +1,5 @@
 //Extra Part For ClayBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLAYBLOCK
 // Include Headers or Declare Types Here
 
 

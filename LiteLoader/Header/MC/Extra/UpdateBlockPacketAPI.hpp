@@ -1,5 +1,5 @@
 //Extra Part For UpdateBlockPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_UPDATEBLOCKPACKET
 // Include Headers or Declare Types Here
 
 

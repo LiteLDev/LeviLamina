@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CAMPFIREBLOCKACTOR
 #include "Extra/CampfireBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CAMPFIREBLOCKACTOR
 class CampfireBlockActor : public BlockActor {
 #include "Extra/CampfireBlockActorAPI.hpp"
 public:

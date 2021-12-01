@@ -1,5 +1,5 @@
 //Extra Part For SlimeRandomDirectionGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SLIMERANDOMDIRECTIONGOAL
 // Include Headers or Declare Types Here
 
 

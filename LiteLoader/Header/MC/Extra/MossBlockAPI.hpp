@@ -1,5 +1,5 @@
 //Extra Part For MossBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MOSSBLOCK
 // Include Headers or Declare Types Here
 
 

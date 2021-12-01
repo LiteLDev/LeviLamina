@@ -1,5 +1,5 @@
 //Extra Part For BeehiveBlockActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEEHIVEBLOCKACTOR
 // Include Headers or Declare Types Here
 
 

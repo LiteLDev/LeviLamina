@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NetherFortressPiece.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NBBRIDGESTRAIGHT
 #include "Extra/NBBridgeStraightAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NBBRIDGESTRAIGHT
 class NBBridgeStraight : public NetherFortressPiece {
 #include "Extra/NBBridgeStraightAPI.hpp"
 public:

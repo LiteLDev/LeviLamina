@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FALLINGBLOCK
 #include "Extra/FallingBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FALLINGBLOCK
 class FallingBlock : public PredictableProjectile {
 #include "Extra/FallingBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For DropperContainerManagerModel.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DROPPERCONTAINERMANAGERMODEL
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SETSPAWNEGGFUNCTION
 #include "Extra/SetSpawnEggFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SETSPAWNEGGFUNCTION
 class SetSpawnEggFunction : public LootItemFunction {
 #include "Extra/SetSpawnEggFunctionAPI.hpp"
 public:

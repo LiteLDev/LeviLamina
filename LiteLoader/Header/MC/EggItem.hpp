@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_EGGITEM
 #include "Extra/EggItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_EGGITEM
 class EggItem : public Item {
 #include "Extra/EggItemAPI.hpp"
 public:

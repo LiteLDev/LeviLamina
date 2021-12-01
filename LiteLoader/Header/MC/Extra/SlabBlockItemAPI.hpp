@@ -1,5 +1,5 @@
 //Extra Part For SlabBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SLABBLOCKITEM
 // Include Headers or Declare Types Here
 
 

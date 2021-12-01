@@ -1,5 +1,5 @@
 //Extra Part For IMinecraftApp.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_IMINECRAFTAPP
 // Include Headers or Declare Types Here
 
 

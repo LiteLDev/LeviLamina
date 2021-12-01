@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "NearestAttackableTargetGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DEFENDTRUSTEDTARGETGOAL
 #include "Extra/DefendTrustedTargetGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DEFENDTRUSTEDTARGETGOAL
 class DefendTrustedTargetGoal : public NearestAttackableTargetGoal {
 #include "Extra/DefendTrustedTargetGoalAPI.hpp"
 public:

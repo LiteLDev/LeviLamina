@@ -1,5 +1,5 @@
 //Extra Part For DesertPyramidPiece.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DESERTPYRAMIDPIECE
 // Include Headers or Declare Types Here
 
 

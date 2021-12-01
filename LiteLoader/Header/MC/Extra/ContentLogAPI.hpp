@@ -1,5 +1,5 @@
 //Extra Part For ContentLog.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONTENTLOG
 // Include Headers or Declare Types Here
 
 

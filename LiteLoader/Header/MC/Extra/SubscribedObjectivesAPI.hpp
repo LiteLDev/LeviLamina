@@ -1,5 +1,5 @@
 //Extra Part For SubscribedObjectives.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUBSCRIBEDOBJECTIVES
 // Include Headers or Declare Types Here
 
 

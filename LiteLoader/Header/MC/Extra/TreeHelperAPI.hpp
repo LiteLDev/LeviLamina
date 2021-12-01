@@ -1,5 +1,5 @@
 //Extra Part For TreeHelper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TREEHELPER
 // Include Headers or Declare Types Here
 
 

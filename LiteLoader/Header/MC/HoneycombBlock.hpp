@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HONEYCOMBBLOCK
 #include "Extra/HoneycombBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HONEYCOMBBLOCK
 class HoneycombBlock : public BlockLegacy {
 #include "Extra/HoneycombBlockAPI.hpp"
 public:

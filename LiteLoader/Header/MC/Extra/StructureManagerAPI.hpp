@@ -1,5 +1,5 @@
 //Extra Part For StructureManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STRUCTUREMANAGER
 // Include Headers or Declare Types Here
 
 

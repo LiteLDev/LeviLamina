@@ -1,5 +1,5 @@
 //Extra Part For SubtreeNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SUBTREENODE
 // Include Headers or Declare Types Here
 
 

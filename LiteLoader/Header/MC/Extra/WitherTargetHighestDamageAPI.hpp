@@ -1,5 +1,5 @@
 //Extra Part For WitherTargetHighestDamage.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WITHERTARGETHIGHESTDAMAGE
 // Include Headers or Declare Types Here
 
 

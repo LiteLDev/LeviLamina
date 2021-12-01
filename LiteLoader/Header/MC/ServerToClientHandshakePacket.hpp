@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SERVERTOCLIENTHANDSHAKEPACKET
 #include "Extra/ServerToClientHandshakePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SERVERTOCLIENTHANDSHAKEPACKET
 class ServerToClientHandshakePacket : public Packet {
 #include "Extra/ServerToClientHandshakePacketAPI.hpp"
 public:

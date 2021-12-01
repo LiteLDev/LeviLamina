@@ -1,5 +1,5 @@
 //Extra Part For ShovelItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHOVELITEM
 // Include Headers or Declare Types Here
 
 

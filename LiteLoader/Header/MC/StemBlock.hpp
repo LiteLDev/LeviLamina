@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STEMBLOCK
 #include "Extra/StemBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STEMBLOCK
 class StemBlock : public BushBlock {
 #include "Extra/StemBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For HumanoidMonster.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_HUMANOIDMONSTER
 // Include Headers or Declare Types Here
 
 

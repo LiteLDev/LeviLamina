@@ -1,5 +1,5 @@
 //Extra Part For LavaSlime.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LAVASLIME
 // Include Headers or Declare Types Here
 
 

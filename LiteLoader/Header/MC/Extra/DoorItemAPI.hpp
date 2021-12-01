@@ -1,5 +1,5 @@
 //Extra Part For DoorItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DOORITEM
 // Include Headers or Declare Types Here
 
 

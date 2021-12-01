@@ -1,5 +1,5 @@
 //Extra Part For SpreadPlayersCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SPREADPLAYERSCOMMAND
 // Include Headers or Declare Types Here
 
 

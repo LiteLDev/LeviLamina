@@ -1,5 +1,5 @@
 //Extra Part For SeagrassFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SEAGRASSFEATURE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "MoveControl.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLYMOVECONTROL
 #include "Extra/FlyMoveControlAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLYMOVECONTROL
 class FlyMoveControl : public MoveControl {
 #include "Extra/FlyMoveControlAPI.hpp"
 public:

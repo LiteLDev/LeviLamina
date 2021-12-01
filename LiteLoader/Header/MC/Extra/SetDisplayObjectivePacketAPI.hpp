@@ -1,5 +1,5 @@
 //Extra Part For SetDisplayObjectivePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETDISPLAYOBJECTIVEPACKET
 // Include Headers or Declare Types Here
 
 

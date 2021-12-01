@@ -1,5 +1,5 @@
 //Extra Part For PerfTimer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PERFTIMER
 // Include Headers or Declare Types Here
 
 

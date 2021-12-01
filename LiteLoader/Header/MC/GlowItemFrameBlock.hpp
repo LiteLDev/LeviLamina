@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ItemFrameBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GLOWITEMFRAMEBLOCK
 #include "Extra/GlowItemFrameBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GLOWITEMFRAMEBLOCK
 class GlowItemFrameBlock : public ItemFrameBlock {
 #include "Extra/GlowItemFrameBlockAPI.hpp"
 public:

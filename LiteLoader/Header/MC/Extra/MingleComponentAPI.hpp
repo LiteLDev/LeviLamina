@@ -1,5 +1,5 @@
 //Extra Part For MingleComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINGLECOMPONENT
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For CurseVanishingEnchant.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CURSEVANISHINGENCHANT
 // Include Headers or Declare Types Here
 
 

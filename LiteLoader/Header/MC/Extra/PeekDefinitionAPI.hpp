@@ -1,5 +1,5 @@
 //Extra Part For PeekDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PEEKDEFINITION
 // Include Headers or Declare Types Here
 
 

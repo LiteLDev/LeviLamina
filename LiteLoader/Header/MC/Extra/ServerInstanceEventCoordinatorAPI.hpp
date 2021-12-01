@@ -1,5 +1,5 @@
 //Extra Part For ServerInstanceEventCoordinator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERINSTANCEEVENTCOORDINATOR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For WantsJockeyDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_WANTSJOCKEYDEFINITION
 // Include Headers or Declare Types Here
 
 

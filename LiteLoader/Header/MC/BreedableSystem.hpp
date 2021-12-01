@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BREEDABLESYSTEM
 #include "Extra/BreedableSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BREEDABLESYSTEM
 class BreedableSystem : public ITickingSystem {
 #include "Extra/BreedableSystemAPI.hpp"
 public:

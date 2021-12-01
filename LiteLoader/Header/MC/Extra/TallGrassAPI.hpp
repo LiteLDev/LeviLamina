@@ -1,5 +1,5 @@
 //Extra Part For TallGrass.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TALLGRASS
 // Include Headers or Declare Types Here
 
 

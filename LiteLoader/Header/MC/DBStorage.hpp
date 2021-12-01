@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LevelStorage.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_DBSTORAGE
 #include "Extra/DBStorageAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_DBSTORAGE
 class DBStorage : public LevelStorage {
 #include "Extra/DBStorageAPI.hpp"
 public:

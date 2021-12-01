@@ -1,5 +1,5 @@
 //Extra Part For CandleBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CANDLEBLOCKITEM
 // Include Headers or Declare Types Here
 
 

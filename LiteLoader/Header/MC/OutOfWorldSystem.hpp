@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OUTOFWORLDSYSTEM
 #include "Extra/OutOfWorldSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OUTOFWORLDSYSTEM
 class OutOfWorldSystem : public ITickingSystem {
 #include "Extra/OutOfWorldSystemAPI.hpp"
 public:

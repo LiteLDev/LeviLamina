@@ -1,5 +1,5 @@
 //Extra Part For TestSummaryDisplayer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TESTSUMMARYDISPLAYER
 // Include Headers or Declare Types Here
 
 

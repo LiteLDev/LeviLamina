@@ -1,5 +1,5 @@
 //Extra Part For ListenerInfo.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LISTENERINFO
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_TRAILSYSTEM
 #include "Extra/TrailSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_TRAILSYSTEM
 class TrailSystem : public ITickingSystem {
 #include "Extra/TrailSystemAPI.hpp"
 public:

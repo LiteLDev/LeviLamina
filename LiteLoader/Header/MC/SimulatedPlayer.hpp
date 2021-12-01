@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ServerPlayer.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SIMULATEDPLAYER
 #include "Extra/SimulatedPlayerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SIMULATEDPLAYER
 class SimulatedPlayer : public ServerPlayer {
 #include "Extra/SimulatedPlayerAPI.hpp"
 public:

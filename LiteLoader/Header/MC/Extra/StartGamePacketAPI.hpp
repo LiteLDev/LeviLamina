@@ -1,5 +1,5 @@
 //Extra Part For StartGamePacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_STARTGAMEPACKET
 // Include Headers or Declare Types Here
 
 

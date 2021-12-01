@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTDISTANCETONEARESTPLAYER
 #include "Extra/FilterTestDistanceToNearestPlayerAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTDISTANCETONEARESTPLAYER
 class FilterTestDistanceToNearestPlayer : public FilterTest {
 #include "Extra/FilterTestDistanceToNearestPlayerAPI.hpp"
 public:

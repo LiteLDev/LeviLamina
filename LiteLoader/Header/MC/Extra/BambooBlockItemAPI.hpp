@@ -1,5 +1,5 @@
 //Extra Part For BambooBlockItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BAMBOOBLOCKITEM
 // Include Headers or Declare Types Here
 
 

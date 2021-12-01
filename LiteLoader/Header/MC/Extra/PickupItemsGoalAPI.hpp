@@ -1,5 +1,5 @@
 //Extra Part For PickupItemsGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PICKUPITEMSGOAL
 // Include Headers or Declare Types Here
 
 

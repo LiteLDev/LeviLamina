@@ -1,5 +1,5 @@
 //Extra Part For FlyNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLYNODE
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHULKERBULLET
 #include "Extra/ShulkerBulletAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHULKERBULLET
 class ShulkerBullet : public PredictableProjectile {
 #include "Extra/ShulkerBulletAPI.hpp"
 public:

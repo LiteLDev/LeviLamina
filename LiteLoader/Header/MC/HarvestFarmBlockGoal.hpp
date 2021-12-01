@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BaseMoveToBlockGoal.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HARVESTFARMBLOCKGOAL
 #include "Extra/HarvestFarmBlockGoalAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HARVESTFARMBLOCKGOAL
 class HarvestFarmBlockGoal : public BaseMoveToBlockGoal {
 #include "Extra/HarvestFarmBlockGoalAPI.hpp"
 public:

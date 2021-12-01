@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BushBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WATERLILYBLOCK
 #include "Extra/WaterlilyBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WATERLILYBLOCK
 class WaterlilyBlock : public BushBlock {
 #include "Extra/WaterlilyBlockAPI.hpp"
 public:

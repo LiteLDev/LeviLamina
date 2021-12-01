@@ -1,5 +1,5 @@
 //Extra Part For ItemComponentPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMCOMPONENTPACKET
 // Include Headers or Declare Types Here
 
 

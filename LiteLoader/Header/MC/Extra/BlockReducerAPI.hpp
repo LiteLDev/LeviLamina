@@ -1,5 +1,5 @@
 //Extra Part For BlockReducer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKREDUCER
 // Include Headers or Declare Types Here
 
 

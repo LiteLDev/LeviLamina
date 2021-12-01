@@ -1,5 +1,5 @@
 //Extra Part For UriListener.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_URILISTENER
 // Include Headers or Declare Types Here
 
 

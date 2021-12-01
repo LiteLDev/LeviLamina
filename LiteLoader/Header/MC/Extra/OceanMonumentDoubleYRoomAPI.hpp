@@ -1,5 +1,5 @@
 //Extra Part For OceanMonumentDoubleYRoom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OCEANMONUMENTDOUBLEYROOM
 // Include Headers or Declare Types Here
 
 

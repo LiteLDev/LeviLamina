@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Minecart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_MINECARTHOPPER
 #include "Extra/MinecartHopperAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_MINECARTHOPPER
 class MinecartHopper : public Minecart {
 #include "Extra/MinecartHopperAPI.hpp"
 public:

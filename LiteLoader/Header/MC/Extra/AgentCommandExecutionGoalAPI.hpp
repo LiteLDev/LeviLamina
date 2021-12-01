@@ -1,5 +1,5 @@
 //Extra Part For AgentCommandExecutionGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AGENTCOMMANDEXECUTIONGOAL
 // Include Headers or Declare Types Here
 
 

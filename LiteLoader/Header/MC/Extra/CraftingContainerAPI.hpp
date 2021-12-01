@@ -1,5 +1,5 @@
 //Extra Part For CraftingContainer.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CRAFTINGCONTAINER
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScreenHandlerLabTable.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCREENHANDLERLABTABLE
 // Include Headers or Declare Types Here
 
 

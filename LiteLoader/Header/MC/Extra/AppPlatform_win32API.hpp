@@ -1,5 +1,5 @@
 //Extra Part For AppPlatform_win32.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_APPPLATFORM_WIN32
 // Include Headers or Declare Types Here
 
 

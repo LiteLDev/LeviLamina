@@ -1,5 +1,5 @@
 //Extra Part For BorderBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BORDERBLOCK
 // Include Headers or Declare Types Here
 
 

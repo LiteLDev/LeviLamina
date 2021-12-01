@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "RotatedPillarBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FUNGUSSTEM
 #include "Extra/FungusStemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FUNGUSSTEM
 class FungusStem : public RotatedPillarBlock {
 #include "Extra/FungusStemAPI.hpp"
 public:

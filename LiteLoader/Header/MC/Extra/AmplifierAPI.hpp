@@ -1,5 +1,5 @@
 //Extra Part For Amplifier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_AMPLIFIER
 // Include Headers or Declare Types Here
 
 

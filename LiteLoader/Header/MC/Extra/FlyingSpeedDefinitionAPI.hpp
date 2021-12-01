@@ -1,5 +1,5 @@
 //Extra Part For FlyingSpeedDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLYINGSPEEDDEFINITION
 // Include Headers or Declare Types Here
 
 

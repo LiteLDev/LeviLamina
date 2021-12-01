@@ -1,5 +1,5 @@
 //Extra Part For OnIgniteDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONIGNITEDEFINITION
 // Include Headers or Declare Types Here
 
 

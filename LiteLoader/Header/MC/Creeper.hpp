@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CREEPER
 #include "Extra/CreeperAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CREEPER
 class Creeper : public Monster {
 #include "Extra/CreeperAPI.hpp"
 public:

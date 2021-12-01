@@ -1,5 +1,5 @@
 //Extra Part For BottleItem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BOTTLEITEM
 // Include Headers or Declare Types Here
 
 

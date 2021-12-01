@@ -1,5 +1,5 @@
 //Extra Part For FillCommand.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FILLCOMMAND
 // Include Headers or Declare Types Here
 
 

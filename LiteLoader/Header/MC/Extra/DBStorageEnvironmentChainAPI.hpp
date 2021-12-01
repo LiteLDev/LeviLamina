@@ -1,5 +1,5 @@
 //Extra Part For DBStorageEnvironmentChain.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DBSTORAGEENVIRONMENTCHAIN
 // Include Headers or Declare Types Here
 
 

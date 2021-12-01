@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORRANDOMCHANCETEST
 #include "Extra/ActorRandomChanceTestAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORRANDOMCHANCETEST
 class ActorRandomChanceTest : public FilterTest {
 #include "Extra/ActorRandomChanceTestAPI.hpp"
 public:

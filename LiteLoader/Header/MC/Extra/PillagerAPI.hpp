@@ -1,5 +1,5 @@
 //Extra Part For Pillager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PILLAGER
 // Include Headers or Declare Types Here
 
 

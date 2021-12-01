@@ -1,5 +1,5 @@
 //Extra Part For NetworkItemStackDescriptor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETWORKITEMSTACKDESCRIPTOR
 // Include Headers or Declare Types Here
 
 

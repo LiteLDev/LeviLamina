@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_STOPSOUNDPACKET
 #include "Extra/StopSoundPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_STOPSOUNDPACKET
 class StopSoundPacket : public Packet {
 #include "Extra/StopSoundPacketAPI.hpp"
 public:

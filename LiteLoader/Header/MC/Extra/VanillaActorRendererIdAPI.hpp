@@ -1,5 +1,5 @@
 //Extra Part For VanillaActorRendererId.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_VANILLAACTORRENDERERID
 // Include Headers or Declare Types Here
 
 

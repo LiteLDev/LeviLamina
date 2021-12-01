@@ -1,5 +1,5 @@
 //Extra Part For FireworksRocketActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FIREWORKSROCKETACTOR
 // Include Headers or Declare Types Here
 
 

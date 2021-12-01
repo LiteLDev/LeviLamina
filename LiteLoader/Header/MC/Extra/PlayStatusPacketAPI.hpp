@@ -1,5 +1,5 @@
 //Extra Part For PlayStatusPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYSTATUSPACKET
 // Include Headers or Declare Types Here
 
 

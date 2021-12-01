@@ -1,5 +1,5 @@
 //Extra Part For ActivateToolNode.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ACTIVATETOOLNODE
 // Include Headers or Declare Types Here
 
 

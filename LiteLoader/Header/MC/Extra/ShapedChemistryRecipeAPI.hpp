@@ -1,5 +1,5 @@
 //Extra Part For ShapedChemistryRecipe.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAPEDCHEMISTRYRECIPE
 // Include Headers or Declare Types Here
 
 

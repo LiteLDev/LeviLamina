@@ -1,5 +1,5 @@
 //Extra Part For ObjectiveCriteria.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OBJECTIVECRITERIA
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "HeavyBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GRAVELBLOCK
 #include "Extra/GravelBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GRAVELBLOCK
 class GravelBlock : public HeavyBlock {
 #include "Extra/GravelBlockAPI.hpp"
 public:

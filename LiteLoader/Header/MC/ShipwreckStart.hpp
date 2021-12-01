@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "StructureStart.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SHIPWRECKSTART
 #include "Extra/ShipwreckStartAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SHIPWRECKSTART
 class ShipwreckStart : public StructureStart {
 #include "Extra/ShipwreckStartAPI.hpp"
 public:

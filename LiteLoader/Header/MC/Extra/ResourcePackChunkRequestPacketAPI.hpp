@@ -1,5 +1,5 @@
 //Extra Part For ResourcePackChunkRequestPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RESOURCEPACKCHUNKREQUESTPACKET
 // Include Headers or Declare Types Here
 
 

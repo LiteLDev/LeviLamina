@@ -1,5 +1,5 @@
 //Extra Part For OnHurtByPlayerDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ONHURTBYPLAYERDEFINITION
 // Include Headers or Declare Types Here
 
 

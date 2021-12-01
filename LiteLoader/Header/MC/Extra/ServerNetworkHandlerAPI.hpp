@@ -1,5 +1,5 @@
 //Extra Part For ServerNetworkHandler.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SERVERNETWORKHANDLER
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FACEDIRECTIONALBLOCK
 #include "Extra/FaceDirectionalBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FACEDIRECTIONALBLOCK
 class FaceDirectionalBlock : public BlockLegacy {
 #include "Extra/FaceDirectionalBlockAPI.hpp"
 public:

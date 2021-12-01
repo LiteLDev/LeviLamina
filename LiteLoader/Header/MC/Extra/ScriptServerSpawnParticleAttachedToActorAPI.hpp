@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerSpawnParticleAttachedToActor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERSPAWNPARTICLEATTACHEDTOACTOR
 // Include Headers or Declare Types Here
 
 

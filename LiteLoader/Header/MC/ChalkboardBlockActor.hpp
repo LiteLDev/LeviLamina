@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockActor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHALKBOARDBLOCKACTOR
 #include "Extra/ChalkboardBlockActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHALKBOARDBLOCKACTOR
 class ChalkboardBlockActor : public BlockActor {
 #include "Extra/ChalkboardBlockActorAPI.hpp"
 public:

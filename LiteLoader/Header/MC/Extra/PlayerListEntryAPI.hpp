@@ -1,5 +1,5 @@
 //Extra Part For PlayerListEntry.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PLAYERLISTENTRY
 // Include Headers or Declare Types Here
 
 

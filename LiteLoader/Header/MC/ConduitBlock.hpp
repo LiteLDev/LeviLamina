@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ActorBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CONDUITBLOCK
 #include "Extra/ConduitBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CONDUITBLOCK
 class ConduitBlock : public ActorBlock {
 #include "Extra/ConduitBlockAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For DespawnDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DESPAWNDEFINITION
 // Include Headers or Declare Types Here
 
 

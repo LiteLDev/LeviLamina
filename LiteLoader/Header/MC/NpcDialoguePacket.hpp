@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_NPCDIALOGUEPACKET
 #include "Extra/NpcDialoguePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_NPCDIALOGUEPACKET
 class NpcDialoguePacket : public Packet {
 #include "Extra/NpcDialoguePacketAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For NavigationWalkDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NAVIGATIONWALKDESCRIPTION
 // Include Headers or Declare Types Here
 
 

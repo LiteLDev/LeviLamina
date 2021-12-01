@@ -1,5 +1,5 @@
 //Extra Part For OreVeinifier.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_OREVEINIFIER
 // Include Headers or Declare Types Here
 
 

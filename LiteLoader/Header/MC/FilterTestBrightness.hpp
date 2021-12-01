@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FILTERTESTBRIGHTNESS
 #include "Extra/FilterTestBrightnessAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FILTERTESTBRIGHTNESS
 class FilterTestBrightness : public FilterTest {
 #include "Extra/FilterTestBrightnessAPI.hpp"
 public:

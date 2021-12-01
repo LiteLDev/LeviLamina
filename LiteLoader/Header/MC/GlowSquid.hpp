@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Squid.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_GLOWSQUID
 #include "Extra/GlowSquidAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_GLOWSQUID
 class GlowSquid : public Squid {
 #include "Extra/GlowSquidAPI.hpp"
 public:

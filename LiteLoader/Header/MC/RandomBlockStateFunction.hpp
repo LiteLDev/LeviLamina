@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_RANDOMBLOCKSTATEFUNCTION
 #include "Extra/RandomBlockStateFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_RANDOMBLOCKSTATEFUNCTION
 class RandomBlockStateFunction : public LootItemFunction {
 #include "Extra/RandomBlockStateFunctionAPI.hpp"
 public:

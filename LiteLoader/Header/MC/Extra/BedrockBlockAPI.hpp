@@ -1,5 +1,5 @@
 //Extra Part For BedrockBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEDROCKBLOCK
 // Include Headers or Declare Types Here
 
 

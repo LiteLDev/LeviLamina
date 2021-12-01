@@ -1,5 +1,5 @@
 //Extra Part For PrecompiledCommandOrigin.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PRECOMPILEDCOMMANDORIGIN
 // Include Headers or Declare Types Here
 
 

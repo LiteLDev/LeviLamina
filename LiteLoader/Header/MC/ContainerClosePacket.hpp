@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CONTAINERCLOSEPACKET
 #include "Extra/ContainerClosePacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CONTAINERCLOSEPACKET
 class ContainerClosePacket : public Packet {
 #include "Extra/ContainerClosePacketAPI.hpp"
 public:

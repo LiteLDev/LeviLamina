@@ -1,5 +1,5 @@
 //Extra Part For TickingAreaDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TICKINGAREADESCRIPTION
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For BlueIceBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLUEICEBLOCK
 // Include Headers or Declare Types Here
 
 

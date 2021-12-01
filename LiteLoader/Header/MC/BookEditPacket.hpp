@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Packet.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BOOKEDITPACKET
 #include "Extra/BookEditPacketAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BOOKEDITPACKET
 class BookEditPacket : public Packet {
 #include "Extra/BookEditPacketAPI.hpp"
 public:

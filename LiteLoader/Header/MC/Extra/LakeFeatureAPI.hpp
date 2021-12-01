@@ -1,5 +1,5 @@
 //Extra Part For LakeFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LAKEFEATURE
 // Include Headers or Declare Types Here
 
 

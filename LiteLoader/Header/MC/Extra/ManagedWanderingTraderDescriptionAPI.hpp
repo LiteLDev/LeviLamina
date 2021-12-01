@@ -1,5 +1,5 @@
 //Extra Part For ManagedWanderingTraderDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MANAGEDWANDERINGTRADERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

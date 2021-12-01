@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Enchant.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_SOULSPEEDENCHANT
 #include "Extra/SoulSpeedEnchantAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_SOULSPEEDENCHANT
 class SoulSpeedEnchant : public Enchant {
 #include "Extra/SoulSpeedEnchantAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For ClientLevelEventCoordinator.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CLIENTLEVELEVENTCOORDINATOR
 // Include Headers or Declare Types Here
 
 

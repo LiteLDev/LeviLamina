@@ -1,5 +1,5 @@
 //Extra Part For RaidTriggerDescription.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RAIDTRIGGERDESCRIPTION
 // Include Headers or Declare Types Here
 
 

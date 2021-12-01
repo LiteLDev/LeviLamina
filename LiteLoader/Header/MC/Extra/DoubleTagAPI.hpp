@@ -1,5 +1,5 @@
 //Extra Part For DoubleTag.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DOUBLETAG
 // Include Headers or Declare Types Here
 
 

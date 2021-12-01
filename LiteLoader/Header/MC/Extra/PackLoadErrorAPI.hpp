@@ -1,5 +1,5 @@
 //Extra Part For PackLoadError.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKLOADERROR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ScriptBoolBlockProperty.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTBOOLBLOCKPROPERTY
 // Include Headers or Declare Types Here
 
 

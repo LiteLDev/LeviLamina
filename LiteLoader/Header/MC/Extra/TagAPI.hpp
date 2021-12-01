@@ -1,5 +1,5 @@
 //Extra Part For Tag.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_TAG
 // Include Headers or Declare Types Here
 #include "../Global.h"
 #include <map>

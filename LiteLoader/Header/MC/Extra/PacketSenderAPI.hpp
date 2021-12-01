@@ -1,5 +1,5 @@
 //Extra Part For PacketSender.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_PACKETSENDER
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ConditionalListFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CONDITIONALLISTFEATURE
 // Include Headers or Declare Types Here
 
 

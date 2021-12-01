@@ -1,5 +1,5 @@
 //Extra Part For LabTableReaction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LABTABLEREACTION
 // Include Headers or Declare Types Here
 
 

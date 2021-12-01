@@ -1,4 +1,4 @@
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACK
 // Add include headers & pre-declares
 
 #include "../ItemStackBase.hpp"

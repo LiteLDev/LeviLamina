@@ -1,5 +1,5 @@
 //Extra Part For ShareableDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SHAREABLEDEFINITION
 // Include Headers or Declare Types Here
 
 

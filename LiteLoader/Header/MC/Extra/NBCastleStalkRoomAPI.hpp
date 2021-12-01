@@ -1,5 +1,5 @@
 //Extra Part For NBCastleStalkRoom.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NBCASTLESTALKROOM
 // Include Headers or Declare Types Here
 
 

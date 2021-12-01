@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PathNavigation.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_FLOATNAVIGATION
 #include "Extra/FloatNavigationAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_FLOATNAVIGATION
 class FloatNavigation : public PathNavigation {
 #include "Extra/FloatNavigationAPI.hpp"
 public:

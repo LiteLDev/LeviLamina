@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BLOCKBREAKSENSORSYSTEM
 #include "Extra/BlockBreakSensorSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BLOCKBREAKSENSORSYSTEM
 class BlockBreakSensorSystem : public ITickingSystem {
 #include "Extra/BlockBreakSensorSystemAPI.hpp"
 public:

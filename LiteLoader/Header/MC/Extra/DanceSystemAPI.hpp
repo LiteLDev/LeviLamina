@@ -1,5 +1,5 @@
 //Extra Part For DanceSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_DANCESYSTEM
 // Include Headers or Declare Types Here
 
 

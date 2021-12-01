@@ -1,5 +1,5 @@
 //Extra Part For FrostedIceBlock.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FROSTEDICEBLOCK
 // Include Headers or Declare Types Here
 
 

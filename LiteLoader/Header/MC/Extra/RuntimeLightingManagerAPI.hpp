@@ -1,5 +1,5 @@
 //Extra Part For RuntimeLightingManager.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_RUNTIMELIGHTINGMANAGER
 // Include Headers or Declare Types Here
 
 

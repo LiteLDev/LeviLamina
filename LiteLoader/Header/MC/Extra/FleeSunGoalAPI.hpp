@@ -1,5 +1,5 @@
 //Extra Part For FleeSunGoal.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_FLEESUNGOAL
 // Include Headers or Declare Types Here
 
 

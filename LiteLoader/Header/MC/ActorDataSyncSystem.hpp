@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ITickingSystem.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ACTORDATASYNCSYSTEM
 #include "Extra/ActorDataSyncSystemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ACTORDATASYNCSYSTEM
 class ActorDataSyncSystem : public ITickingSystem {
 #include "Extra/ActorDataSyncSystemAPI.hpp"
 public:

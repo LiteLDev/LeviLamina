@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Actor.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_HANGINGACTOR
 #include "Extra/HangingActorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_HANGINGACTOR
 class HangingActor : public Actor {
 #include "Extra/HangingActorAPI.hpp"
 public:

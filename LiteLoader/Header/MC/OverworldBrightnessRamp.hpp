@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "DimensionBrightnessRamp.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_OVERWORLDBRIGHTNESSRAMP
 #include "Extra/OverworldBrightnessRampAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_OVERWORLDBRIGHTNESSRAMP
 class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/OverworldBrightnessRampAPI.hpp"
 public:

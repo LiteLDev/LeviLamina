@@ -1,5 +1,5 @@
 //Extra Part For MinecartRideable.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_MINECARTRIDEABLE
 // Include Headers or Declare Types Here
 
 

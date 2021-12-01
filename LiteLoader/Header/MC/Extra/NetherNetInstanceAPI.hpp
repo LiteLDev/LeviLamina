@@ -1,5 +1,5 @@
 //Extra Part For NetherNetInstance.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_NETHERNETINSTANCE
 // Include Headers or Declare Types Here
 
 

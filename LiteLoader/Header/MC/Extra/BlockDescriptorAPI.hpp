@@ -1,5 +1,5 @@
 //Extra Part For BlockDescriptor.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKDESCRIPTOR
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ItemStackRequestActionCraftGrindstone.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTGRINDSTONE
 // Include Headers or Declare Types Here
 
 

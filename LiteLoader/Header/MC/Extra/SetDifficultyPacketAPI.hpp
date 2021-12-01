@@ -1,5 +1,5 @@
 //Extra Part For SetDifficultyPacket.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SETDIFFICULTYPACKET
 // Include Headers or Declare Types Here
 
 

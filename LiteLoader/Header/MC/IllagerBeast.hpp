@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Monster.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_ILLAGERBEAST
 #include "Extra/IllagerBeastAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_ILLAGERBEAST
 class IllagerBeast : public Monster {
 #include "Extra/IllagerBeastAPI.hpp"
 public:

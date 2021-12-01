@@ -1,5 +1,5 @@
 //Extra Part For BehaviorData.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BEHAVIORDATA
 // Include Headers or Declare Types Here
 
 

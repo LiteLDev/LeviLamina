@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "BlockLegacy.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CLAYBLOCK
 #include "Extra/ClayBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CLAYBLOCK
 class ClayBlock : public BlockLegacy {
 #include "Extra/ClayBlockAPI.hpp"
 public:

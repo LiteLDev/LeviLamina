@@ -1,5 +1,5 @@
 //Extra Part For ISecureStorageKeySystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ISECURESTORAGEKEYSYSTEM
 // Include Headers or Declare Types Here
 
 

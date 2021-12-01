@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "ProducerComponent.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_PULSECAPACITOR
 #include "Extra/PulseCapacitorAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_PULSECAPACITOR
 class PulseCapacitor : public ProducerComponent {
 #include "Extra/PulseCapacitorAPI.hpp"
 public:

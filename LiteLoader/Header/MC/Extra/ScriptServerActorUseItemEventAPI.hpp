@@ -1,5 +1,5 @@
 //Extra Part For ScriptServerActorUseItemEvent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTSERVERACTORUSEITEMEVENT
 // Include Headers or Declare Types Here
 
 

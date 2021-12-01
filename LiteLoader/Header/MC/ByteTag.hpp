@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_BYTETAG
 #include "Extra/ByteTagAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_BYTETAG
 class ByteTag : public Tag {
 #include "Extra/ByteTagAPI.hpp"
 public:

@@ -1,5 +1,5 @@
 //Extra Part For CaveSpider.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CAVESPIDER
 // Include Headers or Declare Types Here
 
 

@@ -1,5 +1,5 @@
 //Extra Part For ItemReleaseInventoryTransaction.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ITEMRELEASEINVENTORYTRANSACTION
 // Include Headers or Declare Types Here
 
 

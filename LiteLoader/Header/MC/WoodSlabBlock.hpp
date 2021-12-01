@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "SlabBlock.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_WOODSLABBLOCK
 #include "Extra/WoodSlabBlockAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_WOODSLABBLOCK
 class WoodSlabBlock : public SlabBlock {
 #include "Extra/WoodSlabBlockAPI.hpp"
 public:

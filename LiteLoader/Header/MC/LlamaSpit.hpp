@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "PredictableProjectile.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LLAMASPIT
 #include "Extra/LlamaSpitAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LLAMASPIT
 class LlamaSpit : public PredictableProjectile {
 #include "Extra/LlamaSpitAPI.hpp"
 public:

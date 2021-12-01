@@ -1,5 +1,5 @@
 //Extra Part For CelebrateHuntSystem.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CELEBRATEHUNTSYSTEM
 // Include Headers or Declare Types Here
 
 

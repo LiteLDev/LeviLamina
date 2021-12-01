@@ -1,5 +1,5 @@
 //Extra Part For LevelSummary.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_LEVELSUMMARY
 // Include Headers or Declare Types Here
 
 

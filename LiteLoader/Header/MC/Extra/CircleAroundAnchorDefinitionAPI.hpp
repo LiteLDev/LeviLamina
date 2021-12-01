@@ -1,5 +1,5 @@
 //Extra Part For CircleAroundAnchorDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_CIRCLEAROUNDANCHORDEFINITION
 // Include Headers or Declare Types Here
 
 

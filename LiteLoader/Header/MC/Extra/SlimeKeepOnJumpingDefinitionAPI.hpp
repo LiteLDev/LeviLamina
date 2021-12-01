@@ -1,5 +1,5 @@
 //Extra Part For SlimeKeepOnJumpingDefinition.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SLIMEKEEPONJUMPINGDEFINITION
 // Include Headers or Declare Types Here
 
 

@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "LootItemFunction.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_LOOTINGENCHANTFUNCTION
 #include "Extra/LootingEnchantFunctionAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_LOOTINGENCHANTFUNCTION
 class LootingEnchantFunction : public LootItemFunction {
 #include "Extra/LootingEnchantFunctionAPI.hpp"
 public:

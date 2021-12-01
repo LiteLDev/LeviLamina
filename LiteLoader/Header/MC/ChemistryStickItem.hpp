@@ -2,9 +2,9 @@
 #pragma once
 #include <Global.h>
 #include "Item.hpp"
-#define EXTRA_INCLUDE_PART
+#define EXTRA_INCLUDE_PART_CHEMISTRYSTICKITEM
 #include "Extra/ChemistryStickItemAPI.hpp"
-#undef EXTRA_INCLUDE_PART
+#undef EXTRA_INCLUDE_PART_CHEMISTRYSTICKITEM
 class ChemistryStickItem : public Item {
 #include "Extra/ChemistryStickItemAPI.hpp"
 public:

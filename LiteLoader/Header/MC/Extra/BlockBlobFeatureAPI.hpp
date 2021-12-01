@@ -1,5 +1,5 @@
 //Extra Part For BlockBlobFeature.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_BLOCKBLOBFEATURE
 // Include Headers or Declare Types Here
 
 

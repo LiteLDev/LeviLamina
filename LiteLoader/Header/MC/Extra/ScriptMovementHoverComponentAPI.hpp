@@ -1,5 +1,5 @@
 //Extra Part For ScriptMovementHoverComponent.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_SCRIPTMOVEMENTHOVERCOMPONENT
 // Include Headers or Declare Types Here
 
 

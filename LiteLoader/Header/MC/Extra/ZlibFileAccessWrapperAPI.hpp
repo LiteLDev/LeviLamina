@@ -1,5 +1,5 @@
 //Extra Part For ZlibFileAccessWrapper.hpp
-#ifdef EXTRA_INCLUDE_PART
+#ifdef EXTRA_INCLUDE_PART_ZLIBFILEACCESSWRAPPER
 // Include Headers or Declare Types Here
 
 
