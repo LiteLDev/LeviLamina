@@ -20,7 +20,6 @@ using fifo_json = basic_json<workaround_fifo_map>;
 #define JSON_ROOT fifo_json
 #define JSON_VALUE fifo_json
 
-
 class Player;
 class Actor;
 class Block;
@@ -104,7 +103,6 @@ LIAPI TagMemoryChunk& asByteArray();
 LIAPI void destroy();
 
 //list
-
 
 //static
 LIAPI void setItem(ItemStack* item);

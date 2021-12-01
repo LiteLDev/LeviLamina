@@ -2,7 +2,6 @@
 #ifdef EXTRA_INCLUDE_PART_COMPOUNDTAG
 // Include Headers or Declare Types Here
 
-
 #else
 // Add Member There
 public:
@@ -19,6 +18,5 @@ LIAPI void putEnd(const std::string& k);
 LIAPI void putByteArray(const std::string& key, void* data, size_t size);
 //LIAPI void _putByteArray(const string& key, const TagMemoryChunk& value);
 LIAPI void putDouble(const std::string& k, double v);
-
 
 #endif

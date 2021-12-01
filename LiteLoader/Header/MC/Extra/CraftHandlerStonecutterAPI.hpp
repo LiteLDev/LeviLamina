@@ -1,0 +1,8 @@
+//Extra Part For CraftHandlerStonecutter.hpp
+#ifdef EXTRA_INCLUDE_PART_CRAFTHANDLERSTONECUTTER
+// Include Headers or Declare Types Here
+
+#else
+// Add Member There
+
+#endif

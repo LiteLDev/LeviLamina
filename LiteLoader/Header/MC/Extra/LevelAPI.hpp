@@ -401,7 +401,6 @@ inline bool extinguishFire(class BlockSource& a0, class BlockPos const& a1, unsi
     return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned char>(a2));
 }
 
-
 inline std::unique_ptr<class Path> findPath(class Actor& a0, int a1, int a2, int a3, class NavigationComponent& a4) {
     std::unique_ptr<class Path> (Level::*rv)(class Actor&, int, int, int, class NavigationComponent&);
     *((void**)&rv) = dlsym("?findPath@Level@@UEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHAEAVNavigationComponent@@@Z");
@@ -443,7 +442,6 @@ inline void forEachDimension(class std::function<bool(class Dimension&)> a0) {
     *((void**)&rv) = dlsym("?forEachDimension@Level@@UEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z");
     return (this->*rv)(std::forward<class std::function<bool(class Dimension&)>>(a0));
 }
-
 
 inline void forEachUser(class std::function<bool(class EntityContext&)> a0) const {
     void (Level::*rv)(class std::function<bool(class EntityContext&)>) const;
@@ -679,7 +677,6 @@ inline int /*enum Difficulty/ getDifficulty() const {
     *((void**)&rv) = dlsym("?getDifficulty@Level@@UEBA?AW4Difficulty@@XZ");
     return (this->*rv)();
 }
-
 
 
 inline class DimensionConversionData getDimensionConversionData() const {

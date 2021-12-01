@@ -7,7 +7,6 @@ enum class PacketReliability {
     RelibleOrdered
 };
 
-
 #else
 // Add Member There
 public:

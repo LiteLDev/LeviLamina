@@ -10,5 +10,4 @@ inline void emitBoneMeal(class Level& a1, class BlockSource& a2, class BlockPos 
     return _emitBoneMeal(a1,a2,a3);
 }
 
-
 #endif

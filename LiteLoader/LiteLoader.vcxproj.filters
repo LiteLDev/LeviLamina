@@ -419,6 +419,9 @@
     <ClInclude Include="Header\MC\Extra\CommandMessageAPI.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\TeleportTarget.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">
