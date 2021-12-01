@@ -3,7 +3,7 @@
 
 namespace Translation
 {
-	LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath)
+	bool loadImpl(HMODULE hPlugin, const std::string& filePath)
 	{
 		try
 		{

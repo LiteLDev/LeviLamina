@@ -5,18 +5,18 @@
 #include <MC/Level.hpp>
 #include <MC/Dimension.hpp>
 
-LIAPI StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag){
+StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag){
     auto name_span = gsl::string_span<-1>(name);
     auto st = StructureTemplate(name_span);
     st.getData().load(*tag);
     return st;
 }
 
-LIAPI std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
+std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();
 }
 
-LIAPI StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
+StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
     auto name_span = gsl::string_span<-1>(name);
     auto st = StructureTemplate(name_span);
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
@@ -29,7 +29,7 @@ LIAPI StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid
     return st;
 }
 
-LIAPI bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation) {
+bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation) {
     auto palette = Level::getBlockPalette();
     auto bs = Level::getBlockSource(dimid);
     auto setting = StructureSettings();
@@ -39,7 +39,7 @@ LIAPI bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rot
     placeInWorld(*bs, *palette, p1, setting, nullptr, false);
     return true;
 };
-LIAPI StructureTemplateData& StructureTemplate::getData() {
+StructureTemplateData& StructureTemplate::getData() {
     return *dAccess<StructureTemplateData*, 32>(this);
 };
 
