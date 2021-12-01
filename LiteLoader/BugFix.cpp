@@ -43,6 +43,7 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
     }
 }
 
+
 class InventoryTransaction;
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
     ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)

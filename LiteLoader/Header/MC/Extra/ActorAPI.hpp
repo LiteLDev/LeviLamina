@@ -22,4 +22,5 @@ public:
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face ,bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
     LIAPI Actor* getActorFromViewVector(float maxDistance);
+    LIAPI Vec3 const& getPos();
 #endif

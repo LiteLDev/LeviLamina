@@ -21,25 +21,31 @@
 #include <MC/HitDetection.hpp>
 class UserEntityIdentifierComponent;
 
-LIAPI UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
+UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
     return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
 }
 
-LIAPI bool Actor::isSimulatedPlayer() {
+Vec3 const& Actor::getPos(){
+    Vec3 const& (Actor::*rv)();
+    *((void**)&rv) = dlsym("?getPos@Actor@@UEBAAEBVVec3@@XZ");
+    return (this->*rv)();
+}
+
+bool Actor::isSimulatedPlayer() {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7SimulatedPlayer@@6B@");
     return *(void**)this == vtbl;
 }
 
-LIAPI bool Actor::isPlayer() {
+bool Actor::isPlayer() {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7ServerPlayer@@6B@");
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
-LIAPI std::string Actor::getTypeName() {
+std::string Actor::getTypeName() {
     /*string res = SymCall("?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
         string, int, int) (Raw_GetEntityTypeId(actor), 1);*/
     if (isPlayer())
@@ -50,25 +56,25 @@ LIAPI std::string Actor::getTypeName() {
     }
 }
 
-LIAPI bool Actor::hurtEntity(int damage) {
+bool Actor::hurtEntity(int damage) {
     char a[16];
     ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
                                     ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::Void); //ActorDamageCause::Void
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-LIAPI Vec2* Actor::getDirction() {
+Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 
-LIAPI void Actor::teleport(Vec3 to, int dimid) {
+void Actor::teleport(Vec3 to, int dimid) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
     auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
 }
 
-LIAPI Vec3 Actor::getCameraPos() {
+Vec3 Actor::getCameraPos() {
     Vec3 pos = *(Vec3*)&getStateVectorComponent();
     if (isSneaking()) {
         pos.y += -0.125;
@@ -78,7 +84,7 @@ LIAPI Vec3 Actor::getCameraPos() {
     return pos;
 }
 
-LIAPI BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
+BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
     auto& bs = getRegion();
     auto& pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
@@ -101,12 +107,12 @@ LIAPI BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiqu
     return BlockInstance::Null;
 }
 
-LIAPI BlockInstance Actor::getBlockFromViewVector(bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
+BlockInstance Actor::getBlockFromViewVector(bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
     FaceID face = FaceID::Unknown;
     return getBlockFromViewVector(face, includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
 }
 
-LIAPI Actor* Actor::getActorFromViewVector(float maxDistance) {
+Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto& bs = getRegion();
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
