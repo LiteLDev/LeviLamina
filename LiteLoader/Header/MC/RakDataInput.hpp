@@ -10,5 +10,5 @@ class RakDataInput : public BytesDataInput {
 public:
     virtual ~RakDataInput();
     virtual bool readBytes(void*, unsigned __int64);
-    virtual unsigned __int64 numBytesLeft();
+    virtual unsigned __int64 numBytesLeft() const;
 };

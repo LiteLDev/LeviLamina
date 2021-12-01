@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_MOVECONTROLDESCRIPTION
 #include "Extra/MoveControlDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOVECONTROLDESCRIPTION
-namespace MoveControlDescription {
+struct MoveControlDescription {
 #include "Extra/MoveControlDescriptionAPI.hpp"
-
-
-}
+};

@@ -4,13 +4,12 @@
 #define EXTRA_INCLUDE_PART_DIRTYTICKSCOUNTER
 #include "Extra/DirtyTicksCounterAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DIRTYTICKSCOUNTER
-class DirtyTicksCounter {
+struct DirtyTicksCounter {
 #include "Extra/DirtyTicksCounterAPI.hpp"
 
 public:
     MCAPI int getTicksSinceLastChange() const;
     MCAPI struct DirtyTicksCounter& operator++();
-    MCAPI DirtyTicksCounter();
     MCAPI int getTotalDirtyTicks() const;
     MCAPI void reset();
     MCAPI void touch();

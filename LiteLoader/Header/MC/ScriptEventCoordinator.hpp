@@ -10,13 +10,10 @@ class ScriptEventCoordinator : public NetworkHandler {
 public:
     virtual ~ScriptEventCoordinator();
     virtual void _onDisable();
-    virtual();
-    virtual();
+    virtual void unk_vfn_3();
+    virtual void unk_vfn_11();
     virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual();
-    virtual();
-    virtual();
+    virtual void unk_vfn_16();
 
 public:
     MCAPI void sendScriptAddFilterToView(std::string const&);

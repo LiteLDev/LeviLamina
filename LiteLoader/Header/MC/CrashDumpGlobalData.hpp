@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CRASHDUMPGLOBALDATA
 #include "Extra/CrashDumpGlobalDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CRASHDUMPGLOBALDATA
-namespace CrashDumpGlobalData {
+class CrashDumpGlobalData {
 #include "Extra/CrashDumpGlobalDataAPI.hpp"
 
 public:
-MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
-
-
-} // namespace CrashDumpGlobalData
+    MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
+};

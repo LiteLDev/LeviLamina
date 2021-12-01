@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_SLOTDROPCHANCE
 #include "Extra/SlotDropChanceAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SLOTDROPCHANCE
-class SlotDropChance {
+struct SlotDropChance {
 #include "Extra/SlotDropChanceAPI.hpp"
 
 public:

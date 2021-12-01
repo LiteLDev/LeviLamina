@@ -9,9 +9,9 @@ class BlockActor {
 public:
     virtual ~BlockActor();
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    virtual bool save(class CompoundTag&);
+    virtual bool save(class CompoundTag&) const;
     virtual bool saveItemInstanceData(class CompoundTag&);
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&);
+    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
     virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     virtual void onCustomTagLoadDone(class BlockSource&);
     virtual void tick(class BlockSource&);
@@ -22,31 +22,30 @@ public:
     virtual void unk_vfn_12();
     virtual void onRemoved(class BlockSource&);
     virtual void triggerEvent(int, int);
-    virtual void unk_vfn_15();
+    virtual void clearCache();
     virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
+    virtual float getShadowRadius(class BlockSource&) const;
+    virtual bool hasAlphaLayer() const;
     virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
     virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
-    virtual void unk_vfn_21();
+    virtual std::string const& getCustomName() const;
     virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
-    virtual std::string getName();
+    virtual std::string getName() const;
     virtual void setCustomName(std::string const&);
     virtual std::string getImmersiveReaderText(class BlockSource&);
-    virtual void unk_vfn_26();
+    virtual int getRepairCost() const;
     virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
     virtual void unk_vfn_28();
     virtual void unk_vfn_29();
-    virtual void unk_vfn_30();
+    virtual float getDeletionDelayTimeSeconds() const;
     virtual void unk_vfn_31();
     virtual void unk_vfn_32();
     virtual void unk_vfn_33();
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    virtual bool _playerCanUpdate(class Player const&);
+    virtual bool _playerCanUpdate(class Player const&) const;
 
 public:
-    MCAPI BlockActor(enum BlockActorType, class BlockPos const&, std::string const&);
     MCAPI void assignBlockIfNotAssigned(class BlockSource&);
     MCAPI class AABB const& getAABB() const;
     MCAPI class Block const* getBlock() const;
@@ -65,6 +64,9 @@ public:
     MCAPI static bool isType(class BlockActor&, enum BlockActorType);
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
 
+private:
+    MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> _createIdClassMap();
+    MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, enum BlockActorType>>> const mIdClassMap;
 
 protected:
     MCAPI void _resetAABB();

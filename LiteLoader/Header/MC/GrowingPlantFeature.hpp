@@ -8,9 +8,5 @@ class GrowingPlantFeature {
 #include "Extra/GrowingPlantFeatureAPI.hpp"
 public:
     virtual ~GrowingPlantFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI GrowingPlantFeature();
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

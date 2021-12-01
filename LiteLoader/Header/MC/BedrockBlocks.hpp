@@ -8,10 +8,6 @@ namespace BedrockBlocks {
 #include "Extra/BedrockBlocksAPI.hpp"
 
 MCAPI void assignBlocks();
-MCAPI class Block const* mAir;
-MCAPI class Block const* mClientRequestPlaceholderBlock;
-MCAPI class Block const* mUnknown;
 MCAPI void unassignBlocks();
-
 
 } // namespace BedrockBlocks

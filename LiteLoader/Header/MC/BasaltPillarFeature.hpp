@@ -10,8 +10,7 @@ class BasaltPillarFeature : public Feature {
 public:
     virtual ~BasaltPillarFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _growColumn(class BlockSource&, class BlockPos const&, class Random&, float) const;

@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_ENTITYNETID
 #include "Extra/EntityNetIdAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ENTITYNETID
-namespace EntityNetId {
+class EntityNetId {
 #include "Extra/EntityNetIdAPI.hpp"
 
 public:
-MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
-
-
-} // namespace EntityNetId
+    MCAPI static class EntityNetId _serverGetEntityNetId(class EntityContext const&);
+};

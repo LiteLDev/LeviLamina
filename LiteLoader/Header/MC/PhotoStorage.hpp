@@ -8,9 +8,6 @@ class PhotoStorage {
 #include "Extra/PhotoStorageAPI.hpp"
 
 public:
-    MCAPI PhotoStorage(class Core::Path const&);
-    MCAPI ~PhotoStorage();
-
     MCAPI static std::string const BOOKS_DIR;
     MCAPI static std::string const MANIFEST_NAME;
     MCAPI static std::string const PHOTOITEM_DIR;

@@ -10,10 +10,9 @@ class SpikeFeature : public Feature {
 public:
     virtual ~SpikeFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
-    MCAPI SpikeFeature(class SpikeFeature::EndSpike const&);
     MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);
     MCAPI void postProcessMobsAt(class BlockSource&, class BlockPos const&, class Random&) const;
     MCAPI void setCrystalBeamTarget(class BlockPos const&);

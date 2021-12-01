@@ -8,8 +8,5 @@ class WorldgenNormalNoise {
 #include "Extra/WorldgenNormalNoiseAPI.hpp"
 public:
     virtual ~WorldgenNormalNoise();
-    virtual float getValue(float, float, float);
-
-public:
-    MCAPI WorldgenNormalNoise(class IRandom&, int, std::vector<float> const&);
+    virtual float getValue(float, float, float) const;
 };

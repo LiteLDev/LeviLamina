@@ -8,6 +8,6 @@ class FitSimpleRoom {
 #include "Extra/FitSimpleRoomAPI.hpp"
 public:
     virtual ~FitSimpleRoom();
-    virtual void unk_vfn_1();
+    virtual bool fits(class RoomDefinition const&) const;
     virtual std::unique_ptr<class OceanMonumentPiece> create(int&, class std::shared_ptr<class RoomDefinition>, class Random&);
 };

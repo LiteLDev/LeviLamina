@@ -8,7 +8,6 @@ class BaseCommandBlock {
 #include "Extra/BaseCommandBlockAPI.hpp"
 
 public:
-    MCAPI BaseCommandBlock();
     MCAPI std::string const& getCommand() const;
     MCAPI std::string getLastOutput() const;
     MCAPI std::string const& getName() const;
@@ -19,13 +18,12 @@ public:
     MCAPI bool save(class CompoundTag&) const;
     MCAPI void setCommand(class BlockSource&, struct ActorUniqueID const&, std::string const&);
     MCAPI void setCommand(class BlockSource&, class BlockPos const&, std::string const&);
+    MCAPI void setLastOutput(std::string const&, std::vector<std::string> const&);
     MCAPI void setName(std::string const&);
     MCAPI void setShouldExecuteOnFirstTick(bool);
     MCAPI void setTickDelay(int);
     MCAPI void setTrackOutput(bool);
     MCAPI bool shouldExecuteOnFirstTick() const;
-    MCAPI ~BaseCommandBlock();
-
 
 private:
     MCAPI bool _performCommand(class BlockSource&, class CommandOrigin const&, bool&);

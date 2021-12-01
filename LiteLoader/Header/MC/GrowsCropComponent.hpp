@@ -8,6 +8,5 @@ class GrowsCropComponent {
 #include "Extra/GrowsCropComponentAPI.hpp"
 
 public:
-    MCAPI GrowsCropComponent();
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
 };

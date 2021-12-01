@@ -8,16 +8,14 @@ class DisplayNameItemComponent {
 #include "Extra/DisplayNameItemComponentAPI.hpp"
 public:
     virtual ~DisplayNameItemComponent();
-    virtual void unk_vfn_1();
+    virtual bool isNetworkComponent() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
-    MCAPI DisplayNameItemComponent(class ComponentItem*);
-
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 };

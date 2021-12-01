@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
-
+class Hash{
+    class md5;
+}
 #endif

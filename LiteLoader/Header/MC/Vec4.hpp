@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_VEC4
 #include "Extra/Vec4API.hpp"
 #undef EXTRA_INCLUDE_PART_VEC4
-namespace Vec4 {
+class Vec4 {
 #include "Extra/Vec4API.hpp"
 
 public:
-MCAPI static class Vec4 const MAX;
-MCAPI static class Vec4 const MIN;
-MCAPI static class Vec4 const ONE;
-MCAPI static class Vec4 const ZERO;
-
-
-} // namespace Vec4
+    MCAPI static class Vec4 const MAX;
+    MCAPI static class Vec4 const MIN;
+    MCAPI static class Vec4 const ONE;
+    MCAPI static class Vec4 const ZERO;
+};

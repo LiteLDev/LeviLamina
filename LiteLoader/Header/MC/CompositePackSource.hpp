@@ -8,12 +8,9 @@ class CompositePackSource {
 #include "Extra/CompositePackSourceAPI.hpp"
 public:
     virtual ~CompositePackSource();
-    virtual void forEachPackConst(class std::function<void(class Pack const&)>);
+    virtual void forEachPackConst(class std::function<void(class Pack const&)>) const;
     virtual void forEachPack(class std::function<void(class Pack&)>);
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
-public:
-    MCAPI CompositePackSource(std::vector<class PackSource*>&&);
 };

@@ -11,7 +11,4 @@ public:
     virtual ~GlideMoveControl();
     virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
     virtual void tick(class MoveControlComponent&, class Mob&);
-
-public:
-    MCAPI GlideMoveControl();
 };

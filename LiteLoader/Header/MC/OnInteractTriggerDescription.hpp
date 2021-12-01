@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Types.hpp"
-#include "Types.h"
 #define EXTRA_INCLUDE_PART_ONINTERACTTRIGGERDESCRIPTION
 #include "Extra/OnInteractTriggerDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ONINTERACTTRIGGERDESCRIPTION
@@ -10,15 +9,12 @@ class OnInteractTriggerDescription : public BlockTriggerDescription<struct OnInt
 #include "Extra/OnInteractTriggerDescriptionAPI.hpp"
 public:
     virtual ~OnInteractTriggerDescription();
-    virtual std::string const& getName();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual std::string const& getName() const;
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual void initializeFromNetwork(class CompoundTag const&);
     virtual ~OnInteractTriggerDescription();
     virtual void unk_vfn_8();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
 
 public:
     MCAPI static std::string const NameID;

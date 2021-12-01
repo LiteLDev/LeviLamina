@@ -8,11 +8,9 @@ class ActorInteraction {
 #include "Extra/ActorInteractionAPI.hpp"
 
 public:
-    MCAPI ActorInteraction(bool);
     MCAPI void capture(class std::function<void(void)>);
     MCAPI std::string const& getInteractText() const;
     MCAPI void interact();
     MCAPI void setInteractText(std::string const&);
     MCAPI bool shouldCapture() const;
-    MCAPI ~ActorInteraction();
 };

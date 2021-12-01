@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_MOBSPAWNINFO
 #include "Extra/MobSpawnInfoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOBSPAWNINFO
-namespace MobSpawnInfo {
+class MobSpawnInfo {
 #include "Extra/MobSpawnInfoAPI.hpp"
 
 public:
-MCAPI static int categoryID(enum ActorType);
-
-
-} // namespace MobSpawnInfo
+    MCAPI static int categoryID(enum ActorType);
+};

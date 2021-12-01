@@ -10,7 +10,6 @@ public:
     virtual ~Biome();
 
 public:
-    MCAPI Biome(int);
     MCAPI class Biome& addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);
     MCAPI bool canHaveSnowfall(class BlockSource const&, class BlockPos const&) const;
     MCAPI class WeakRefT<struct SharePtrRefTraits<class PerlinSimplexNoise>> getBiomeInfoNoise() const;

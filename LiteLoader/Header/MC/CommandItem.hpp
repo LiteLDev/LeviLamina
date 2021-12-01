@@ -10,9 +10,6 @@ class CommandItem {
 public:
     MCAPI class std::optional<class ItemInstance> createInstance(int, int, class CommandOutput*, bool) const;
     MCAPI operator bool();
-    MCAPI CommandItem();
-    MCAPI CommandItem(int, short, bool);
-    MCAPI CommandItem(unsigned __int64);
     MCAPI operator unsigned __int64();
     MCAPI int getId() const;
 };

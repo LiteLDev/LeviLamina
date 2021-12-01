@@ -8,7 +8,5 @@ class CommandMessage {
 #include "Extra/CommandMessageAPI.hpp"
 
 public:
-    MCAPI CommandMessage();
     MCAPI std::string getMessage(class CommandOrigin const&) const;
-    MCAPI ~CommandMessage();
 };

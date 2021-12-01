@@ -6,8 +6,21 @@
 #include "../CommandPosition.hpp"
 #include "../CommandMessage.hpp"
 #include "../CommandSelector.hpp"
-class CommandOrigin;
+#include "../CommandOrigin.hpp"
 class CommandParameterData;
+
+template <typename T>
+class typeid_t {
+public:
+    unsigned short value;
+    typeid_t<T>(typeid_t<T> const& id)
+        : value(id.value) {
+    }
+    typeid_t<T>(unsigned short value)
+        : value(value) {
+    }
+};
+
 #else
 // Add Member There
 public:

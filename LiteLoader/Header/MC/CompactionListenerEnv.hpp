@@ -22,9 +22,4 @@ public:
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
     virtual void Schedule(void (*)(void*), void*);
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
 };

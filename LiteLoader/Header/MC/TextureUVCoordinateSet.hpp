@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_TEXTUREUVCOORDINATESET
 #include "Extra/TextureUVCoordinateSetAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TEXTUREUVCOORDINATESET
-class TextureUVCoordinateSet {
+struct TextureUVCoordinateSet {
 #include "Extra/TextureUVCoordinateSetAPI.hpp"
 
 public:
-    MCAPI TextureUVCoordinateSet();
-    MCAPI TextureUVCoordinateSet(struct TextureUVCoordinateSet const&);
     MCAPI struct TextureUVCoordinateSet& operator=(struct TextureUVCoordinateSet const&);
-    MCAPI ~TextureUVCoordinateSet();
 };

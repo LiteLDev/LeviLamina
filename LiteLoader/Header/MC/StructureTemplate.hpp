@@ -8,7 +8,6 @@ class StructureTemplate {
 #include "Extra/StructureTemplateAPI.hpp"
 
 public:
-    MCAPI StructureTemplate(class gsl::basic_string_span<char const, -1>);
     MCAPI void fillFromWorld(class BlockSource&, class BlockPos const&, class StructureSettings const&);
     MCAPI class Block const& getBlockAtPos(class BlockPos const&) const;
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
@@ -19,7 +18,6 @@ public:
     MCAPI void placeInWorld(class BlockSource&, class BlockPalette const&, class BlockPos const&, class StructureSettings const&, class StructureTelemetryServerData*, bool) const;
     MCAPI void placeNextSegmentInWorld(class StructureAnimationData&, class BlockPalette const&) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
-    MCAPI ~StructureTemplate();
 
     MCAPI static class BlockPos const INVALID_POSITION;
 
@@ -27,4 +25,5 @@ private:
     MCAPI void _fillBlockInfo(class BlockSource&, class BlockPos const&, class BlockPos const&, class BlockPos const&);
     MCAPI void _fillEntityList(class BlockSource&, class BlockPos const&, class BlockPos const&);
     MCAPI void _placeEntitiesInWorld(class BlockSource&, class DataLoadHelper&, bool) const;
+    MCAPI void _placeNextBlockSegmentInWorld(class BlockSource&, unsigned __int64, unsigned __int64, class StructureSettings const&, class DataLoadHelper&, class StructureBlockPalette const&, class BlockPalette const&, class BlockPos, class BlockPos const&, class Vec3 const&, enum Rotation, enum Mirror, float, unsigned int, class StructureTelemetryServerData*, bool, bool) const;
 };

@@ -4,16 +4,14 @@
 #define EXTRA_INCLUDE_PART_SHAREDMODIFIERS
 #include "Extra/SharedModifiersAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SHAREDMODIFIERS
-namespace SharedModifiers {
+class SharedModifiers {
 #include "Extra/SharedModifiersAPI.hpp"
 
 public:
-MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;
-MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SPEED;
-MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
-MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
-
-
-} // namespace SharedModifiers
+    MCAPI static class std::shared_ptr<class AttributeModifier> DAMAGE_BOOST;
+    MCAPI static class std::shared_ptr<class AttributeModifier> HEALTH_BOOST;
+    MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SLOWDOWN;
+    MCAPI static class std::shared_ptr<class AttributeModifier> MOVEMENT_SPEED;
+    MCAPI static class std::shared_ptr<class AttributeModifier> SPRINTING_BOOST;
+    MCAPI static class std::shared_ptr<class AttributeModifier> WEAKNESS;
+};

@@ -13,7 +13,6 @@ public:
     virtual void print(std::string const&);
 
 public:
-    MCAPI Stopwatch();
     MCAPI void reset();
     MCAPI void start();
 };

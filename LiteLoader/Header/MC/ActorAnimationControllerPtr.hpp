@@ -9,7 +9,6 @@ class ActorAnimationControllerPtr {
 
 public:
     MCAPI bool isNull() const;
-    MCAPI ~ActorAnimationControllerPtr();
 
     MCAPI static class ActorAnimationControllerPtr const NONE;
 };

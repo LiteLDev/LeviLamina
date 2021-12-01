@@ -8,7 +8,5 @@ class LegacyPackIdVersion {
 #include "Extra/LegacyPackIdVersionAPI.hpp"
 
 public:
-    MCAPI LegacyPackIdVersion(std::string const&, std::string const&);
     MCAPI struct PackIdVersion getUpgradedPackId() const;
-    MCAPI ~LegacyPackIdVersion();
 };

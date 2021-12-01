@@ -8,7 +8,7 @@ class SayCommand {
 #include "Extra/SayCommandAPI.hpp"
 public:
     virtual ~SayCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

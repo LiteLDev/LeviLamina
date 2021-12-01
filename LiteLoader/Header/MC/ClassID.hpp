@@ -7,7 +7,6 @@
 class ClassID {
 #include "Extra/ClassIDAPI.hpp"
 
-
 private:
     MCAPI static unsigned __int64 getNextID();
 };

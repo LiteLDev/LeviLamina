@@ -12,13 +12,10 @@ public:
     virtual void init();
     virtual void setItem(int, class ItemStack const&);
     virtual void unk_vfn_14();
-    virtual int getMaxStackSize();
+    virtual int getMaxStackSize() const;
     virtual void startOpen(class Player&);
     virtual void stopOpen(class Player&);
     virtual void unk_vfn_22();
     virtual void unk_vfn_23();
     virtual void unk_vfn_31();
-
-public:
-    MCAPI SimplePlayerContainer(class Player&, std::string const&, bool, int, enum ContainerType);
 };

@@ -8,8 +8,5 @@ class SurfaceLevelCache {
 #include "Extra/SurfaceLevelCacheAPI.hpp"
 public:
     virtual ~SurfaceLevelCache();
-    virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>);
-
-public:
-    MCAPI SurfaceLevelCache(class DividedPos2d<4>, class IPreliminarySurfaceProvider const&, unsigned __int64);
+    virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 };

@@ -9,5 +9,4 @@ namespace BehaviorNodeUtils {
 
 MCAPI void lookAt(class Actor&, class Vec3 const&, float, float);
 
-
 } // namespace BehaviorNodeUtils

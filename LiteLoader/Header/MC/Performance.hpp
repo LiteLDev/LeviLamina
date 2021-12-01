@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_PERFORMANCE
 #include "Extra/PerformanceAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PERFORMANCE
-namespace Performance {
+class Performance {
 #include "Extra/PerformanceAPI.hpp"
 
 public:
-MCAPI static class StopwatchHandler watches;
-
-
-} // namespace Performance
+    MCAPI static class StopwatchHandler watches;
+};

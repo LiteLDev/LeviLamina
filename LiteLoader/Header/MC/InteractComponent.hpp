@@ -13,7 +13,6 @@ public:
     MCAPI void initFromDefinition(class Actor&, class InteractDefinition const&);
     MCAPI void setCooldownCounter(short);
 
-
 private:
     MCAPI bool _runInteraction(class Actor&, struct Interaction const&, class Player&, class ActorInteraction&);
 };

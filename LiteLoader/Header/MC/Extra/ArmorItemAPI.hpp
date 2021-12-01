@@ -4,5 +4,6 @@
 
 #else
 // Add Member There
-
+public:
+class ArmorMaterial;
 #endif

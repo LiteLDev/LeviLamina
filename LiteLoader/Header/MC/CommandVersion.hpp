@@ -8,7 +8,6 @@ class CommandVersion {
 #include "Extra/CommandVersionAPI.hpp"
 
 public:
-    MCAPI CommandVersion(int, int);
     MCAPI bool covers(class CommandVersion const&) const;
     MCAPI bool isCompatible(int) const;
 

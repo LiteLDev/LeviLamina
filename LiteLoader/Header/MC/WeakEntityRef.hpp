@@ -10,7 +10,5 @@ class WeakEntityRef {
 public:
     MCAPI bool operator==(class WeakRefT<struct EntityRefTraits>);
     MCAPI bool operator==(class WeakEntityRef);
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits>&);
-    MCAPI WeakEntityRef(class WeakRefT<struct EntityRefTraits> const&);
-    MCAPI ~WeakEntityRef();
+    MCAPI class WeakEntityRef& operator=(class WeakEntityRef&&);
 };

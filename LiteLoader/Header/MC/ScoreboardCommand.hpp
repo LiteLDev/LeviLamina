@@ -8,7 +8,7 @@ class ScoreboardCommand {
 #include "Extra/ScoreboardCommandAPI.hpp"
 public:
     virtual ~ScoreboardCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&);
@@ -16,10 +16,21 @@ public:
 private:
     MCAPI void _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const&, class Objective const&, class CommandOutput&) const;
     MCAPI class Objective* _getObjective(class Scoreboard const&, std::string const&, bool, class CommandOutput&) const;
+    MCAPI std::vector<struct ScoreboardId> _getScoreboardIdsForSelector(class Scoreboard&, class WildcardCommandSelector<class Actor> const&, class CommandOrigin const&, class CommandOutput&, bool) const;
+    MCAPI bool _getSelectorResultsForObjective(std::vector<struct ScoreboardId>&, class Scoreboard&, class WildcardCommandSelector<class Actor> const&, class Objective&, class CommandOrigin const&, class CommandOutput&, bool) const;
     MCAPI void addObjective(class Scoreboard&, std::string const&, std::string const&, std::string const&, class CommandOutput&) const;
+    MCAPI void addPlayerScore(class Scoreboard&, enum PlayerScoreSetFunction, struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&) const;
+    MCAPI bool applyPlayerOperation(class Scoreboard&, class std::function<std::string const&(struct ActorUniqueID)> const&, struct ScoreboardId const&, class Objective&, class Objective&, class CommandOrigin const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&) const;
     MCAPI void listObjectives(class Scoreboard const&, class CommandOutput&) const;
+    MCAPI void listPlayers(class Scoreboard&, struct ScoreboardId const&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&) const;
     MCAPI void objectives(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void players(class Scoreboard&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void removeObjective(class Scoreboard&, std::string const&, class CommandOutput&) const;
+    MCAPI void resetPlayer(class Scoreboard&, struct ScoreboardId const&, class Objective*, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&) const;
     MCAPI void setDisplayObjective(class Scoreboard&, std::string const&, std::string const&, enum ObjectiveSortOrder, class CommandOutput&) const;
+    MCAPI bool setPlayerRandomScore(class Scoreboard&, struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&, struct ScoreboardCommand::SetScoreOutput&) const;
+    MCAPI void testPlayerScore(struct ScoreboardId const&, class Objective&, class std::function<std::string const&(struct ActorUniqueID)> const&, class CommandOutput&) const;
+
+    MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
+    MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
 };

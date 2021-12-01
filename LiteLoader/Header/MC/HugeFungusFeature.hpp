@@ -10,8 +10,5 @@ class HugeFungusFeature : public Feature {
 public:
     virtual ~HugeFungusFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI HugeFungusFeature(bool);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

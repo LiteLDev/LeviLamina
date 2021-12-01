@@ -9,8 +9,5 @@ class LookAtBlockNode {
 public:
     virtual ~LookAtBlockNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI LookAtBlockNode();
+    virtual void initializeFromDefinition(class Actor&);
 };

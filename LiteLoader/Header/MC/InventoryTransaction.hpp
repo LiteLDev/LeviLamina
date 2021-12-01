@@ -8,7 +8,6 @@ class InventoryTransaction {
 #include "Extra/InventoryTransactionAPI.hpp"
 
 public:
-    MCAPI InventoryTransaction(class InventoryTransaction const&);
     MCAPI void _logTransaction(bool) const;
     MCAPI void addAction(class InventoryAction const&);
     MCAPI enum InventoryTransactionError executeFull(class Player&, bool) const;
@@ -16,7 +15,6 @@ public:
     MCAPI std::vector<class InventoryAction> const& getActions(class InventorySource const&) const;
     MCAPI void postLoadItems(class BlockPalette&, bool);
     MCAPI void serialize(class BinaryStream&, bool) const;
-    MCAPI ~InventoryTransaction();
 
     MCAPI static class InventoryTransaction deserialize(class ReadOnlyBinaryStream&);
     MCAPI static std::string const getInventoryTransactionErrorName(enum InventoryTransactionError);

@@ -9,14 +9,9 @@ class LevelEventPacket : public Packet {
 #include "Extra/LevelEventPacketAPI.hpp"
 public:
     virtual ~LevelEventPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI LevelEventPacket();
-    MCAPI LevelEventPacket(enum LevelEvent, float, float, float, int);
-    MCAPI LevelEventPacket(enum LevelEvent, class Vec3 const&, int);
 };

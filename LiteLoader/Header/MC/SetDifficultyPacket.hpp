@@ -9,14 +9,12 @@ class SetDifficultyPacket : public Packet {
 #include "Extra/SetDifficultyPacketAPI.hpp"
 public:
     virtual ~SetDifficultyPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI SetDifficultyPacket();
-    MCAPI SetDifficultyPacket(enum Difficulty);
     MCAPI enum Difficulty getDifficulty() const;
 };

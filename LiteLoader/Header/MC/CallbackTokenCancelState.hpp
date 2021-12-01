@@ -8,6 +8,5 @@ class CallbackTokenCancelState {
 #include "Extra/CallbackTokenCancelStateAPI.hpp"
 
 public:
-    MCAPI CallbackTokenCancelState();
     MCAPI bool wasCanceled() const;
 };

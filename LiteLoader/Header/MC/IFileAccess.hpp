@@ -8,27 +8,4 @@ class IFileAccess {
 #include "Extra/IFileAccessAPI.hpp"
 public:
     virtual ~IFileAccess();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual ~IFileAccess();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual ~IFileAccess();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
-    virtual void unk_vfn_20();
-    virtual void unk_vfn_21();
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
 };

@@ -8,6 +8,5 @@ class GameEventMovementTracker {
 #include "Extra/GameEventMovementTrackerAPI.hpp"
 
 public:
-    MCAPI GameEventMovementTracker(class Mob&);
     MCAPI void trackMovement(bool);
 };

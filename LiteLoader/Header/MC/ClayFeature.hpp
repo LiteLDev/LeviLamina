@@ -10,8 +10,5 @@ class ClayFeature : public Feature {
 public:
     virtual ~ClayFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI ClayFeature(int);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

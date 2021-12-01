@@ -9,17 +9,15 @@ class Goal {
 public:
     virtual ~Goal();
     virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual bool canContinueToUse();
+    virtual bool canBeInterrupted();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    virtual bool isTargetGoal() const;
 
 public:
-    MCAPI Goal();
     MCAPI int getRequiredControlFlags() const;
     MCAPI unsigned short getTypeId() const;
     MCAPI void setRequiredControlFlags(int);

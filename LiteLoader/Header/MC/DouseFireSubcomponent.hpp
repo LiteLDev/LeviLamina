@@ -14,6 +14,5 @@ public:
     virtual char const* getName();
 
 public:
-    MCAPI DouseFireSubcomponent();
     MCAPI void douseFire(class BlockSource&, class BlockPos const&);
 };

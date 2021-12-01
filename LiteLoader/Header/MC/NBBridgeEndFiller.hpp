@@ -10,9 +10,12 @@ class NBBridgeEndFiller : public NetherFortressPiece {
 public:
     virtual ~NBBridgeEndFiller();
     virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void unk_vfn_4();
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void unk_vfn_6();
     virtual void unk_vfn_10();
+
+public:
+    MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
 };

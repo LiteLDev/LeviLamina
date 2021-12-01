@@ -8,8 +8,6 @@ class CommandOutput {
 #include "Extra/CommandOutputAPI.hpp"
 
 public:
-    MCAPI CommandOutput(enum CommandOutputType);
-    MCAPI CommandOutput(class CommandOutput const&);
     MCAPI void addToResultList(std::string const&, std::string const&);
     MCAPI void addToResultList(std::string const&, class Actor const&);
     MCAPI bool empty() const;
@@ -19,9 +17,12 @@ public:
     MCAPI std::vector<class CommandOutputMessage> const& getMessages() const;
     MCAPI int getSuccessCount() const;
     MCAPI enum CommandOutputType getType() const;
+    MCAPI void load(enum CommandOutputType, int, std::vector<class CommandOutputMessage>&&, std::unique_ptr<class CommandPropertyBag>&&);
     MCAPI void setHasPlayerText();
     MCAPI void success(std::string const&, std::vector<class CommandOutputParameter> const&);
     MCAPI void success();
     MCAPI bool wantsData() const;
-    MCAPI ~CommandOutput();
+
+private:
+    MCAPI void addMessage(std::string const&, std::vector<class CommandOutputParameter> const&, enum CommandOutputMessageType);
 };

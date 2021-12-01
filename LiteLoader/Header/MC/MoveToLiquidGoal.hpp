@@ -12,13 +12,10 @@ public:
     virtual bool canUse();
     virtual bool canContinueToUse();
     virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     virtual void unk_vfn_16();
     virtual bool findTargetBlock();
-
-public:
-    MCAPI MoveToLiquidGoal(class Mob&, float, int, int, int, enum MaterialType, float);
 };

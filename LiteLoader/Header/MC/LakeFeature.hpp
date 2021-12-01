@@ -10,11 +10,7 @@ class LakeFeature : public Feature {
 public:
     virtual ~LakeFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LakeFeature(class Block const&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _check(class BlockPos const&, class gsl::span<bool, 2048>) const;

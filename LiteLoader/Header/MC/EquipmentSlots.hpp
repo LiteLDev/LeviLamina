@@ -11,5 +11,4 @@ MCAPI char const* equipmentSlotToString(enum EquipmentSlot);
 MCAPI enum EquipmentSlot hashToEquipmentSlot(unsigned __int64 const&);
 MCAPI enum EquipmentSlot stringToEquipmentSlot(std::string const&);
 
-
 } // namespace EquipmentSlots

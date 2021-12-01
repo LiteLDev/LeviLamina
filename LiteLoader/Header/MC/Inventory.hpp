@@ -20,9 +20,9 @@ public:
     virtual void unk_vfn_23();
     virtual void unk_vfn_31();
     virtual bool add(class ItemStack&);
-    virtual bool canAdd(class ItemStack const&);
-    virtual int getEmptySlotsCount();
-    virtual int getFirstEmptySlot();
+    virtual bool canAdd(class ItemStack const&) const;
+    virtual int getEmptySlotsCount() const;
+    virtual int getFirstEmptySlot() const;
     virtual void setContainerSize(int);
 
 public:

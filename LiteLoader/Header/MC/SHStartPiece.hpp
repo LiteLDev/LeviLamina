@@ -10,7 +10,7 @@ class SHStartPiece : public SHStairsDown {
 public:
     virtual ~SHStartPiece();
     virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     virtual int getWorldZ(int, int);

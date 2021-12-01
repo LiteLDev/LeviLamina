@@ -9,7 +9,7 @@ class SporeBlossomBlockActor : public BlockActor {
 #include "Extra/SporeBlossomBlockActorAPI.hpp"
 public:
     virtual ~SporeBlossomBlockActor();
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&);
+    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
     virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     virtual void onCustomTagLoadDone(class BlockSource&);
     virtual void tick(class BlockSource&);
@@ -24,7 +24,7 @@ public:
     virtual void unk_vfn_18();
     virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
     virtual void unk_vfn_21();
-    virtual std::string getName();
+    virtual std::string getName() const;
     virtual std::string getImmersiveReaderText(class BlockSource&);
     virtual void unk_vfn_26();
     virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
@@ -36,8 +36,5 @@ public:
     virtual void unk_vfn_33();
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    virtual bool _playerCanUpdate(class Player const&);
-
-public:
-    MCAPI SporeBlossomBlockActor(class BlockPos const&);
+    virtual bool _playerCanUpdate(class Player const&) const;
 };

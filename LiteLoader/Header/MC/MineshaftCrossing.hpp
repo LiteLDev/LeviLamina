@@ -10,7 +10,7 @@ class MineshaftCrossing : public MineshaftPiece {
 public:
     virtual ~MineshaftCrossing();
     virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);

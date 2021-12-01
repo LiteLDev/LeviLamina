@@ -13,10 +13,5 @@ public:
     virtual bool canContinueToUse();
     virtual void unk_vfn_3();
     virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
+    virtual void appendDebugInfo(std::string&) const;
 };

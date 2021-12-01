@@ -12,17 +12,12 @@ public:
     virtual bool canContinueToUse();
     virtual void unk_vfn_3();
     virtual void start();
-    virtual void unk_vfn_5();
+    virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
+    MCAPI std::vector<class gsl::not_null<class ItemActor*>> _filterValidTargets(std::vector<struct DistanceSortedActor> const&) const;
     MCAPI struct Shareable const* _getShareableItem(class ItemStack const&) const;
     MCAPI void _pickItemUp(class ItemActor*);
 };

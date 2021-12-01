@@ -8,16 +8,9 @@ class ScreenHandlerBase {
 #include "Extra/ScreenHandlerBaseAPI.hpp"
 public:
     virtual ~ScreenHandlerBase();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-
-public:
-    MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler&);
-
+    virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    virtual int /*enum ItemStackNetResult*/ endRequest();
 
 protected:
-    MCAPI class SparseContainer* _tryGetSparseContainer(enum ContainerEnumName);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
 };

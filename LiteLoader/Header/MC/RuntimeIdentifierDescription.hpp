@@ -8,5 +8,5 @@ class RuntimeIdentifierDescription {
 #include "Extra/RuntimeIdentifierDescriptionAPI.hpp"
 public:
     virtual ~RuntimeIdentifierDescription();
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
 };

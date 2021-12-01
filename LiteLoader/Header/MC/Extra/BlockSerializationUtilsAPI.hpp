@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+struct NbtToBlockCache;
+enum NBTState;
 
 #endif

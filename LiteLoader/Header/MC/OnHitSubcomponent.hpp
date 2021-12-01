@@ -13,10 +13,6 @@ public:
     virtual void unk_vfn_3();
     virtual char const* getName();
 
-public:
-    MCAPI OnHitSubcomponent();
-
-
 protected:
     MCAPI bool _canAttack(class Actor*, class Actor*) const;
 };

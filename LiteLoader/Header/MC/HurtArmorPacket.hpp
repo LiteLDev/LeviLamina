@@ -9,13 +9,9 @@ class HurtArmorPacket : public Packet {
 #include "Extra/HurtArmorPacketAPI.hpp"
 public:
     virtual ~HurtArmorPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI HurtArmorPacket();
-    MCAPI HurtArmorPacket(enum ActorDamageCause, int, class std::bitset<4>);
 };

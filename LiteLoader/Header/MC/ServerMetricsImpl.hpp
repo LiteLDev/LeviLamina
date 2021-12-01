@@ -12,10 +12,6 @@ public:
     virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const&);
     virtual void sendChunkLoadTelemetryData();
 
-public:
-    MCAPI ServerMetricsImpl(class ServerCommunicationInterface*);
-
-
 private:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance&);
 };

@@ -11,8 +11,8 @@ public:
     virtual ~ActorDamageByBlockSource();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*);
+    virtual bool isBlockSource() const;
+    virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
@@ -20,8 +20,8 @@ public:
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
-    virtual struct ActorUniqueID getDamagingEntityUniqueID();
-    virtual int /*enum ActorType*/ getDamagingEntityType();
+    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    virtual int /*enum ActorType*/ getDamagingEntityType() const;
     virtual void unk_vfn_15();
-    virtual std::unique_ptr<class ActorDamageSource> clone();
+    virtual std::unique_ptr<class ActorDamageSource> clone() const;
 };

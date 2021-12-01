@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_ITEXTOBJECT
 #include "Extra/ITextObjectAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ITEXTOBJECT
-namespace ITextObject {
+class ITextObject {
 #include "Extra/ITextObjectAPI.hpp"
 
 public:
-MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
-MCAPI static std::string const RAW_TEXT_TEXT_KEY;
-MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
-MCAPI static std::string const RAW_TEXT_WITH_KEY;
-
-
-} // namespace ITextObject
+    MCAPI static std::string const RAW_TEXT_OBJECT_KEY;
+    MCAPI static std::string const RAW_TEXT_TEXT_KEY;
+    MCAPI static std::string const RAW_TEXT_TRANSLATE_KEY;
+    MCAPI static std::string const RAW_TEXT_WITH_KEY;
+};

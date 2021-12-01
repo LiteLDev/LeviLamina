@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_FOGDISTANCESETTING
 #include "Extra/FogDistanceSettingAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FOGDISTANCESETTING
-namespace FogDistanceSetting {
+struct FogDistanceSetting {
 #include "Extra/FogDistanceSettingAPI.hpp"
 
 public:
-MCAPI static struct FogDistanceSetting const ZERO_SETTING;
-
-
-} // namespace FogDistanceSetting
+    MCAPI static struct FogDistanceSetting const ZERO_SETTING;
+};

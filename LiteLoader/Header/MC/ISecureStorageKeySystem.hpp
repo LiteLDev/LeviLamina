@@ -8,6 +8,4 @@ class ISecureStorageKeySystem {
 #include "Extra/ISecureStorageKeySystemAPI.hpp"
 public:
     virtual ~ISecureStorageKeySystem();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

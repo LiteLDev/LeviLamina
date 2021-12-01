@@ -8,9 +8,11 @@ class ScreenHandlerBeacon {
 #include "Extra/ScreenHandlerBeaconAPI.hpp"
 public:
     virtual ~ScreenHandlerBeacon();
-    virtual bool canDestroy(int /*enum ContainerEnumName*/, unsigned char);
     virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
     virtual int /*enum ItemStackNetResult*/ endRequest();
-    virtual void unk_vfn_4();
+    virtual void unk_vfn_3();
     virtual void postRequest(bool);
+
+private:
+    MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const&);
 };

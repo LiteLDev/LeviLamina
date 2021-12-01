@@ -8,8 +8,4 @@ class PacketObserver {
 #include "Extra/PacketObserverAPI.hpp"
 public:
     virtual ~PacketObserver();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
 };

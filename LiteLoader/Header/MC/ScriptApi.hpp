@@ -29,11 +29,11 @@ MCAPI enum _JsErrorCode JsCreatePropertyIdHelper(std::string const&, void**);
 MCAPI enum _JsErrorCode JsGetStringHelper(void*, std::string&);
 MCAPI void* ListenForEventChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* LogChakraCallback(void*, bool, void**, unsigned short, void*);
+MCAPI void* OnChakraEngineCall(void*, bool, void**, unsigned short, void*, class std::function<void(class ScriptApi::ScriptCallbackInterface&, std::vector<class ScriptApi::ScriptObjectHandle> const&, class ScriptApi::ScriptObjectHandle&)>);
 MCAPI void* RegisterComponentChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* RegisterEventDataChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* RegisterQueryChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* RegisterSystemChakraCallback(void*, bool, void**, unsigned short, void*);
 MCAPI void* WarningChakraCallback(void*, bool, void**, unsigned short, void*);
-
 
 } // namespace ScriptApi

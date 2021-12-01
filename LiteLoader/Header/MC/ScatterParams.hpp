@@ -8,9 +8,7 @@ class ScatterParams {
 #include "Extra/ScatterParamsAPI.hpp"
 
 public:
-    MCAPI ScatterParams();
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams&, class BlockPos const&, class Random&) const;
-    MCAPI ~ScatterParams();
 
     MCAPI static void initMolangParams(class RenderParams&, class BlockPos const&, class Random&);
 

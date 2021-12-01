@@ -8,7 +8,5 @@ class CommandParameterData {
 #include "Extra/CommandParameterDataAPI.hpp"
 
 public:
-    MCAPI CommandParameterData(class CommandParameterData const&);
     MCAPI class CommandParameterData& addOptions(enum CommandParameterOption);
-    MCAPI ~CommandParameterData();
 };

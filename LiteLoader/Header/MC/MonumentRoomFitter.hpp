@@ -8,6 +8,4 @@ class MonumentRoomFitter {
 #include "Extra/MonumentRoomFitterAPI.hpp"
 public:
     virtual ~MonumentRoomFitter();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

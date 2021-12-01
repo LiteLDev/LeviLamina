@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_BEDROCKITEMS
 #include "Extra/BedrockItemsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BEDROCKITEMS
-namespace BedrockItems {
+class BedrockItems {
 #include "Extra/BedrockItemsAPI.hpp"
 
 public:
-MCAPI static class WeakPtr<class Item> mAir;
-MCAPI static void registerItems();
-MCAPI static void unregisterItems();
-
-
-} // namespace BedrockItems
+    MCAPI static class WeakPtr<class Item> mAir;
+    MCAPI static void registerItems();
+    MCAPI static void unregisterItems();
+};

@@ -9,5 +9,4 @@ class LootTables {
 
 public:
     MCAPI class LootTable* lookupByName(std::string const&, class ResourcePackManager&);
-    MCAPI ~LootTables();
 };

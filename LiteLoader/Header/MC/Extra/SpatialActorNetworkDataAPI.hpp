@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+struct DebugSendRateModifiers;
+struct DebugSpatialPacketModifiers;
 
 #endif

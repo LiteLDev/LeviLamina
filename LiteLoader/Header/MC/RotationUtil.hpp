@@ -13,5 +13,4 @@ MCAPI std::vector<enum Rotation> getShuffledRotations(class Random&);
 MCAPI class BlockPos rotate(class BlockPos const&, enum Rotation);
 MCAPI unsigned char rotate(enum Rotation, unsigned char);
 
-
 } // namespace RotationUtil

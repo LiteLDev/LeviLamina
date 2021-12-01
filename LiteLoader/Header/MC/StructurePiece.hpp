@@ -9,10 +9,10 @@ class StructurePiece {
 public:
     virtual ~StructurePiece();
     virtual void moveBoundingBox(int, int, int);
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual bool isValid() const;
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     virtual int getWorldX(int, int);
     virtual int getWorldZ(int, int);
@@ -37,5 +37,6 @@ public:
     MCAPI void maybeGenerateBlock(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
     MCAPI void maybeGenerateBlockIfNotFloating(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int, class Block const&);
 
+    MCAPI static class StructurePiece* findCollisionPiece(std::vector<std::unique_ptr<class StructurePiece>> const&, class BoundingBox const&);
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const&);
 };

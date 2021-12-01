@@ -8,9 +8,6 @@ class FlockingComponent {
 #include "Extra/FlockingComponentAPI.hpp"
 
 public:
-    MCAPI FlockingComponent();
-    MCAPI class FlockingComponent& operator=(class FlockingComponent&&);
-    MCAPI FlockingComponent(class FlockingComponent&&);
     MCAPI void addFlockMember(struct ActorUniqueID);
     MCAPI void breakFlock(class Actor const&);
     MCAPI void calculateFlockVector(class Actor const&);
@@ -19,6 +16,7 @@ public:
     MCAPI void joinFlock(class Actor&);
     MCAPI void manageNeighborhood(class Actor&);
     MCAPI void mergeNeighborhoods(class Actor&);
+    MCAPI class FlockingComponent& operator=(class FlockingComponent&&);
     MCAPI void updateNeighborhoodData(class Actor const&);
     MCAPI bool validateVariantEntityTypes(class Actor const&, class Actor const&) const;
 };

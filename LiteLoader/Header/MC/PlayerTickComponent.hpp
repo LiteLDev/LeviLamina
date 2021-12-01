@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_PLAYERTICKCOMPONENT
 #include "Extra/PlayerTickComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PLAYERTICKCOMPONENT
-class PlayerTickComponent {
+struct PlayerTickComponent {
 #include "Extra/PlayerTickComponentAPI.hpp"
 
 public:
     MCAPI struct PlayerTickComponent& operator=(struct PlayerTickComponent&&);
-    MCAPI PlayerTickComponent(std::unique_ptr<struct IPlayerTickPolicy>);
-    MCAPI PlayerTickComponent(struct PlayerTickComponent&&);
-    MCAPI ~PlayerTickComponent();
 };

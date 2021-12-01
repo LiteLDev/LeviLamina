@@ -10,8 +10,5 @@ class MineshaftStart : public StructureStart {
 public:
     virtual ~MineshaftStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI MineshaftStart(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&);
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

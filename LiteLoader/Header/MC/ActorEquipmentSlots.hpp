@@ -9,5 +9,4 @@ namespace ActorEquipmentSlots {
 
 MCAPI class ItemStack const* getItem(class Actor const&, enum EquipmentSlot, int);
 
-
 } // namespace ActorEquipmentSlots

@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_MOVEINPUTHANDLER
 #include "Extra/MoveInputHandlerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOVEINPUTHANDLER
-namespace MoveInputHandler {
+class MoveInputHandler {
 #include "Extra/MoveInputHandlerAPI.hpp"
-
-
-}
+};

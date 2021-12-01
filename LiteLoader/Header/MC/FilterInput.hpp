@@ -9,6 +9,4 @@ class FilterInput {
 
 public:
     MCAPI class FilterInput& operator=(class FilterInput const&);
-    MCAPI FilterInput(int);
-    MCAPI ~FilterInput();
 };

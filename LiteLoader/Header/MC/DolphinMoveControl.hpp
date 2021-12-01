@@ -11,10 +11,6 @@ public:
     virtual ~DolphinMoveControl();
     virtual void tick(class MoveControlComponent&, class Mob&);
 
-public:
-    MCAPI DolphinMoveControl();
-
-
 private:
     MCAPI float _calcRotX(float, float, float);
     MCAPI float _calcRotY(float, float);

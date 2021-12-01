@@ -8,12 +8,10 @@ class JukeboxBlockActor {
 #include "Extra/JukeboxBlockActorAPI.hpp"
 
 public:
-    MCAPI JukeboxBlockActor(class BlockPos const&);
     MCAPI class ItemStack const& getRecord() const;
     MCAPI bool isRecordPlaying() const;
     MCAPI void setRecord(class ItemStack const&);
     MCAPI void stopPlayingRecord(class BlockSource&) const;
-
 
 private:
     MCAPI void _onChanged(class BlockSource&, enum LevelSoundEvent);

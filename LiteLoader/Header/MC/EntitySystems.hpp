@@ -8,11 +8,13 @@ class EntitySystems {
 #include "Extra/EntitySystemsAPI.hpp"
 
 public:
-    MCAPI EntitySystems();
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
     MCAPI void registerEvents(class EntityRegistry&);
+    MCAPI void registerMovementTickingSystem(std::unique_ptr<class ITickingSystem>);
     MCAPI void registerSystem(std::unique_ptr<struct ISystem>);
     MCAPI void registerTickingSystem(std::unique_ptr<class ITickingSystem>);
-    MCAPI void tick(class EntityRegistry&, enum SimulationType);
-    MCAPI ~EntitySystems();
+    MCAPI void registerUnconditionalTickingSystem(std::unique_ptr<class ITickingSystem>);
+    MCAPI void tick(class EntityRegistry&);
+    MCAPI void tickEditor(class EntityRegistry&);
+    MCAPI void tickMovementCatchup(class EntityRegistry&);
 };

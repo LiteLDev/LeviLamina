@@ -7,7 +7,6 @@
 class ListenerInfo {
 #include "Extra/ListenerInfoAPI.hpp"
 
-
 private:
     MCAPI static float const SQRT_FLT_MAX;
 };

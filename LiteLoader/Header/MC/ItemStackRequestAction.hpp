@@ -8,14 +8,11 @@ class ItemStackRequestAction {
 #include "Extra/ItemStackRequestActionAPI.hpp"
 public:
     virtual ~ItemStackRequestAction();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+    virtual int getFilteredStringIndex() const;
+    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 
 public:
-    MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
 
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);

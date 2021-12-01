@@ -8,14 +8,12 @@ class AngryComponent {
 #include "Extra/AngryComponentAPI.hpp"
 
 public:
-    MCAPI AngryComponent();
-    MCAPI class AngryComponent& operator=(class AngryComponent&&);
-    MCAPI AngryComponent(class AngryComponent&&);
     MCAPI bool canAttack(class Mob&, class Mob*, class Actor*, bool, bool);
     MCAPI enum LevelSoundEvent const getAngrySound(class Mob const&) const;
     MCAPI bool getBroadcastAnger() const;
     MCAPI bool getBroadcastAngerOnAttack() const;
     MCAPI bool getBroadcastAngerOnBeingAttacked() const;
+    MCAPI class AngryComponent& operator=(class AngryComponent&&);
     MCAPI class ActorFilterGroup const& getBroadcastFilter() const;
     MCAPI int getBroadcastRange() const;
     MCAPI bool getHasTicked() const;
@@ -24,5 +22,4 @@ public:
     MCAPI void setAngry(class Mob&, bool);
     MCAPI void setHasTicked(bool);
     MCAPI void setNextSoundEventTick(class Mob const&);
-    MCAPI ~AngryComponent();
 };

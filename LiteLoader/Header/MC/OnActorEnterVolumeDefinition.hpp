@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_ONACTORENTERVOLUMEDEFINITION
 #include "Extra/OnActorEnterVolumeDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ONACTORENTERVOLUMEDEFINITION
-class OnActorEnterVolumeDefinition {
+struct OnActorEnterVolumeDefinition {
 #include "Extra/OnActorEnterVolumeDefinitionAPI.hpp"
 
 public:

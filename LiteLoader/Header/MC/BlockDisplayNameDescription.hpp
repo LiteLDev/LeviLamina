@@ -4,16 +4,16 @@
 #define EXTRA_INCLUDE_PART_BLOCKDISPLAYNAMEDESCRIPTION
 #include "Extra/BlockDisplayNameDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKDISPLAYNAMEDESCRIPTION
-class BlockDisplayNameDescription {
+struct BlockDisplayNameDescription {
 #include "Extra/BlockDisplayNameDescriptionAPI.hpp"
 public:
     virtual ~BlockDisplayNameDescription();
-    virtual std::string const& getName();
-    virtual void initializeComponent(class EntityContext&);
+    virtual std::string const& getName() const;
+    virtual void initializeComponent(class EntityContext&) const;
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI static std::string const NameID;

@@ -8,27 +8,25 @@ class ContainerManagerModel {
 #include "Extra/ContainerManagerModelAPI.hpp"
 public:
     virtual ~ContainerManagerModel();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual int /*enum ContainerID*/ getContainerId() const;
+    virtual void setContainerId(int /*enum ContainerID*/);
+    virtual int /*enum ContainerType*/ getContainerType() const;
+    virtual void setContainerType(int /*enum ContainerType*/);
     virtual void serverInitItemStackIds();
-    virtual std::vector<class ItemStack> getItemCopies();
-    virtual void setSlot(int, class ItemStack const&, bool);
-    virtual class ItemStack const& getSlot(int);
-    virtual void setData(int, int);
-    virtual void broadcastChanges();
+    virtual std::vector<class ItemStack> getItemCopies() const = 0;
+    virtual void setSlot(int, class ItemStack const&, bool)    = 0;
+    virtual class ItemStack const& getSlot(int) const          = 0;
+    virtual void setData(int, int)                             = 0;
+    virtual void broadcastChanges()                            = 0;
     virtual void debitPlayerLevels(int);
-    virtual bool isCreativeMode();
-    virtual bool isClientSide();
-    virtual bool isServerAuthoritative();
+    virtual bool isCreativeMode() const;
+    virtual bool isClientSide() const;
+    virtual bool isServerAuthoritative() const;
     virtual bool isValid(float);
-    virtual class ContainerScreenContext _postInit();
+    virtual class ContainerScreenContext _postInit() = 0;
 
 public:
-    MCAPI ContainerManagerModel(enum ContainerID, class Player&);
     MCAPI void postInit();
-
 
 protected:
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);

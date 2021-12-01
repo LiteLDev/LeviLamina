@@ -8,7 +8,5 @@ class ScopedAutoreleasePool {
 #include "Extra/ScopedAutoreleasePoolAPI.hpp"
 
 public:
-    MCAPI ScopedAutoreleasePool();
     MCAPI void drain();
-    MCAPI ~ScopedAutoreleasePool();
 };

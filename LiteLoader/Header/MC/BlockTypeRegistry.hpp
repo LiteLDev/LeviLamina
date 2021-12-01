@@ -8,6 +8,7 @@ class BlockTypeRegistry {
 #include "Extra/BlockTypeRegistryAPI.hpp"
 
 public:
+    MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
     MCAPI static void forEachBlock(class std::function<bool(class BlockLegacy const&)>);
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
     MCAPI static void initBlockEntities();
@@ -17,5 +18,6 @@ public:
     MCAPI static void unregisterBlocks();
 
 private:
+    MCAPI static class std::map<std::string, class SharedPtr<class BlockLegacy>, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, class SharedPtr<class BlockLegacy>>>> mBlockLookupMap;
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
 };

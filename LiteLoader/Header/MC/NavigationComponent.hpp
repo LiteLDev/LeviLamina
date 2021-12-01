@@ -8,17 +8,17 @@ class NavigationComponent {
 #include "Extra/NavigationComponentAPI.hpp"
 
 public:
-    MCAPI NavigationComponent();
-    MCAPI NavigationComponent(class NavigationComponent&&);
     MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Actor&);
     MCAPI std::unique_ptr<class Path> createPath(class Mob&, class Vec3 const&);
-    MCAPI bool getAvoidDamageBlocks() const;
     MCAPI bool getAvoidPortals() const;
-    MCAPI bool getAvoidSun() const;
     MCAPI bool getAvoidWater() const;
-    MCAPI std::vector<class BlockDescriptor> const& getBlocksToAvoid() const;
     MCAPI bool getCanBreach() const;
     MCAPI bool getCanFloat() const;
+    MCAPI class Path* getPath() const;
+    MCAPI class NavigationComponent& operator=(class NavigationComponent&&);
+    MCAPI bool getAvoidDamageBlocks() const;
+    MCAPI bool getAvoidSun() const;
+    MCAPI std::vector<class BlockDescriptor> const& getBlocksToAvoid() const;
     MCAPI bool getCanJump() const;
     MCAPI bool getCanOpenDoors() const;
     MCAPI bool getCanOpenIronDoors() const;
@@ -33,11 +33,9 @@ public:
     MCAPI bool getIsFollowingRivers() const;
     MCAPI class Vec3 getLastStuckCheckPosition() const;
     MCAPI float getMaxDistance(class Actor const&) const;
-    MCAPI class Path* getPath() const;
     MCAPI float getSpeed() const;
-    MCAPI float getTerminationThreshold() const;
-    MCAPI class NavigationComponent& operator=(class NavigationComponent&&);
     MCAPI class Vec3 const& getTargetOffset() const;
+    MCAPI float getTerminationThreshold() const;
     MCAPI int getTickTimeout() const;
     MCAPI void incrementTick();
     MCAPI void initMultiTypeNavigationComponent(class Mob&, class ActorDefinitionDescriptor&);
@@ -71,5 +69,4 @@ public:
     MCAPI bool travel(class Mob&, float&, float&, float&);
     MCAPI void update(class Mob&);
     MCAPI void updateLastStuckCheck(class Mob const&);
-    MCAPI ~NavigationComponent();
 };

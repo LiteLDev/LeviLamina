@@ -12,7 +12,4 @@ public:
     virtual void tick();
     virtual void notify(__int64);
     virtual void unk_vfn_3();
-
-public:
-    MCAPI ExhaustionAttributeDelegate(class AttributeInstance const&);
 };

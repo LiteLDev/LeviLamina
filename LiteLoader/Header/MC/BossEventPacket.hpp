@@ -9,14 +9,9 @@ class BossEventPacket : public Packet {
 #include "Extra/BossEventPacketAPI.hpp"
 public:
     virtual ~BossEventPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI BossEventPacket();
-    MCAPI BossEventPacket(enum BossEventUpdateType, struct ActorUniqueID, class BossComponent&);
-    MCAPI BossEventPacket(enum BossEventUpdateType, class RaidBossComponent&);
 };

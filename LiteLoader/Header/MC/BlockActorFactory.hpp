@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_BLOCKACTORFACTORY
 #include "Extra/BlockActorFactoryAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKACTORFACTORY
-namespace BlockActorFactory {
+class BlockActorFactory {
 #include "Extra/BlockActorFactoryAPI.hpp"
 
 public:
-MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const&, class BlockLegacy const&);
-MCAPI static void flushCustomBlockEntityCreationCallbacks();
-
-
-} // namespace BlockActorFactory
+    MCAPI static class std::shared_ptr<class BlockActor> createBlockEntity(enum BlockActorType, class BlockPos const&, class BlockLegacy const&);
+    MCAPI static void flushCustomBlockEntityCreationCallbacks();
+};

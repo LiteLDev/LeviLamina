@@ -10,11 +10,9 @@ class EndPodiumFeature : public Feature {
 public:
     virtual ~EndPodiumFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
-    MCAPI EndPodiumFeature(bool);
-
     MCAPI static float const CORNER_ROUNDING;
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
     MCAPI static class BlockPos const END_PODIUM_LOCATION;

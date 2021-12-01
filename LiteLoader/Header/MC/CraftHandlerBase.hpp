@@ -9,16 +9,14 @@ class CraftHandlerBase {
 public:
     virtual ~CraftHandlerBase();
     virtual int /*enum ItemStackNetResult*/ handleConsumedItem(int /*enum ContainerEnumName*/, unsigned char, class ItemStack const&);
-    virtual void unk_vfn_2();
+    virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
     virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
     virtual void _postCraftRequest(bool);
-
-public:
-    MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler&);
-
+    virtual class Recipes const* _getLevelRecipes() const;
 
 protected:
-    MCAPI class SparseContainer* _tryGetSparseContainer(enum ContainerEnumName);
+    MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const*> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 };

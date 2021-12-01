@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
+#include "Json.hpp"
 #define EXTRA_INCLUDE_PART_FILTERTESTDIFFICULTY
 #include "Extra/FilterTestDifficultyAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILTERTESTDIFFICULTY
@@ -9,8 +10,8 @@ class FilterTestDifficulty : public FilterTest {
 #include "Extra/FilterTestDifficultyAPI.hpp"
 public:
     virtual ~FilterTestDifficulty();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
-    virtual class Json::Value _serializeValue();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    virtual class Json::Value _serializeValue() const;
 };

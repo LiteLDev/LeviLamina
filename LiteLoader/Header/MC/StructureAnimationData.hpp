@@ -8,13 +8,11 @@ class StructureAnimationData {
 #include "Extra/StructureAnimationDataAPI.hpp"
 
 public:
-    MCAPI StructureAnimationData(class StructureAnimationData&&);
     MCAPI class BlockPos const& getPosition() const;
     MCAPI std::string const& getStructureName() const;
     MCAPI class StructureSettings const& getStructureSettings() const;
     MCAPI class CompoundTag& serialize(class CompoundTag&);
     MCAPI void setCmdArea(std::unique_ptr<class CommandArea>);
-    MCAPI ~StructureAnimationData();
 
     MCAPI static class StructureAnimationData load(std::string const&, class CompoundTag const&);
 };

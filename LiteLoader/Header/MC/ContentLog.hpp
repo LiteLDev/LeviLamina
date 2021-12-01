@@ -10,7 +10,6 @@ public:
     virtual ~ContentLog();
 
 public:
-    MCAPI ContentLog();
     MCAPI bool isEnabled() const;
     MCAPI void log(bool, enum LogLevel, enum LogArea, ...);
     MCAPI void updateEnabledStatus();

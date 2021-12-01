@@ -2,6 +2,9 @@
 #ifdef EXTRA_INCLUDE_PART_COMMANDSELECTORBASE
 // Include Headers or Declare Types Here
 #include "../ActorDefinitionIdentifier.hpp"
+#include <functional>
+class CommandOrigin;
+class Actor;
 
 #else
 // Add Member There

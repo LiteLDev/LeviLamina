@@ -16,12 +16,4 @@ public:
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
     virtual int /*enum EventResult*/ onLevelWeatherChange(std::string const&, bool, bool);
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-
-public:
-    MCAPI ScriptLevelWeatherEventListener(class MinecraftServerScriptEngine&);
 };

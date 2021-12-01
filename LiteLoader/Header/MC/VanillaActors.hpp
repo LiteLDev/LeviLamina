@@ -7,7 +7,6 @@
 namespace VanillaActors {
 #include "Extra/VanillaActorsAPI.hpp"
 
-MCAPI void registerVanillaActorData();
-
+MCAPI void registerVanillaActorData(class BaseGameVersion const&);
 
 } // namespace VanillaActors

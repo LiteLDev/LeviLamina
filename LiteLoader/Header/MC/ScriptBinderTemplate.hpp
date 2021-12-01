@@ -8,9 +8,4 @@ class ScriptBinderTemplate {
 #include "Extra/ScriptBinderTemplateAPI.hpp"
 public:
     virtual ~ScriptBinderTemplate();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI ScriptBinderTemplate();
 };

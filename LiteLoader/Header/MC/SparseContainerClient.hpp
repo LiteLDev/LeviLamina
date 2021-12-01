@@ -10,7 +10,6 @@ class SparseContainerClient {
 public:
     MCAPI void _networkUpdateItem(int, class ItemStack const&);
 
-
 private:
     MCAPI static class BidirectionalUnorderedMap<enum SparseContainerClient::PushSlotPredictionResult, std::string> const pushSlotPredictionResultMap;
 };

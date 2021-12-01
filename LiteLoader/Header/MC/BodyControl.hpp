@@ -10,10 +10,6 @@ public:
     virtual ~BodyControl();
     virtual void clientTick(class Mob&);
 
-public:
-    MCAPI BodyControl();
-
-
 private:
     MCAPI static float const MAX_CLAMP_ANGLE;
 };

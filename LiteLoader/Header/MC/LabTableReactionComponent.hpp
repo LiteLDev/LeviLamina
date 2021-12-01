@@ -8,7 +8,4 @@ class LabTableReactionComponent {
 #include "Extra/LabTableReactionComponentAPI.hpp"
 public:
     virtual ~LabTableReactionComponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
 };

@@ -8,10 +8,5 @@ class MultiplyValueAmplifier {
 #include "Extra/MultiplyValueAmplifierAPI.hpp"
 public:
     virtual ~MultiplyValueAmplifier();
-    virtual float getAmount(int, float);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI MultiplyValueAmplifier(float);
+    virtual float getAmount(int, float) const;
 };

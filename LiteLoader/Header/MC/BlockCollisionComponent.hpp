@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_BLOCKCOLLISIONCOMPONENT
 #include "Extra/BlockCollisionComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKCOLLISIONCOMPONENT
-class BlockCollisionComponent {
+struct BlockCollisionComponent {
 #include "Extra/BlockCollisionComponentAPI.hpp"
 
 public:

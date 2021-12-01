@@ -16,9 +16,9 @@ public:
     virtual bool postProcess(class ChunkViewSource&);
     virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     virtual void unk_vfn_19();
-    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const& getStorage();
+    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const& getStorage() const;
     virtual void clearDeletedEntities();
     virtual void unk_vfn_22();
 };

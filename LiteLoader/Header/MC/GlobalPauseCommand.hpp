@@ -8,5 +8,5 @@ class GlobalPauseCommand {
 #include "Extra/GlobalPauseCommandAPI.hpp"
 public:
     virtual ~GlobalPauseCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 };

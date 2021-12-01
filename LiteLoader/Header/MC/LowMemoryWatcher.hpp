@@ -7,7 +7,6 @@
 class LowMemoryWatcher {
 #include "Extra/LowMemoryWatcherAPI.hpp"
 
-
 private:
     MCAPI static bool mPlatformToldUsLowMemory;
     MCAPI static std::list<class std::vector<char, class std::allocator<char>>> mPleaseLeakMemory;

@@ -8,21 +8,11 @@ class BackgroundTaskBase {
 #include "Extra/BackgroundTaskBaseAPI.hpp"
 public:
     virtual ~BackgroundTaskBase();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
 
 public:
-    MCAPI BackgroundTaskBase(class gsl::not_null<class ITaskGroup*>, struct TaskStartInfoBase const&, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;
-    MCAPI class ITaskGroup* getGroup();
+    MCAPI class IBackgroundTaskOwner* getGroup();
     MCAPI enum TaskGroupState getGroupState() const;
     MCAPI class std::shared_ptr<class BackgroundTaskBase> getNext();
     MCAPI class BackgroundTaskBase* getPrev();
@@ -37,9 +27,6 @@ public:
     MCAPI void setSyncPriority();
 
     MCAPI static class BackgroundTaskBase* getCurrent();
-
-private:
-    MCAPI static class BackgroundTaskBase* gCurrentTask;
 
 protected:
     MCAPI void backDownPriority();

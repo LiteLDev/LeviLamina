@@ -10,8 +10,6 @@ public:
     virtual ~CreativeGroupInfo();
 
 public:
-    MCAPI CreativeGroupInfo(class CreativeItemRegistry*, enum CreativeItemCategory, class HashedString const&, unsigned int, class ItemInstance const&);
-    MCAPI CreativeGroupInfo(class CreativeGroupInfo const&);
     MCAPI void addCreativeItem(class CreativeItemEntry*);
     MCAPI class ItemInstance const getIcon() const;
     MCAPI unsigned int getIndex() const;

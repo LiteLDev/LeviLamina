@@ -8,18 +8,16 @@ class PathFinder {
 #include "Extra/PathFinderAPI.hpp"
 
 public:
-    MCAPI PathFinder(class BlockSource*, class NavigationComponent const&);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, float);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
     MCAPI enum NodeType isFree(class Actor&, class BlockPos const&, class BlockPos const&, class BlockPos const&, enum CanJumpIntoNode, enum CanClimbIntoNode);
-    MCAPI ~PathFinder();
-
 
 private:
     MCAPI void _addNeighbor(class PathfinderNode*, class PathfinderNode const&, unsigned int, unsigned __int64&);
     MCAPI bool _checkBlockAndNeighborsProperty(class Actor&, class BlockPos const&, class Block const&, enum BlockProperty, int, class BreakBlocksComponent const*, class std::function<bool(class Block const&, class BlockPos const&)>);
     MCAPI bool _checkForDamagingBlock(class Actor&, class BlockPos const&, class Block const&, int, class BreakBlocksComponent const*);
     MCAPI enum NodeType _classifyDoorNode(class Actor&, class Block const&, class BlockPos const&, class BlockPos const&);
+    MCAPI enum NodeType _classifyNode(class Actor&, class BlockPos const&, class BlockPos const&);
     MCAPI enum NodeType _classifyNode(class Actor&, class BlockPos const&, class Block const&, class BlockPos const&, enum CanJumpIntoNode, enum CanClimbIntoNode);
     MCAPI bool _findNearestPathableNeighbor(class BlockPos&, class Actor&, class BlockPos const&);
     MCAPI std::unique_ptr<class Path> _findPath(class Actor&, float, float, float, float);

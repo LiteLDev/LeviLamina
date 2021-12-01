@@ -8,9 +8,7 @@ class AllowListFile {
 #include "Extra/AllowListFileAPI.hpp"
 
 public:
-    MCAPI AllowListFile(class Core::Path const&);
     MCAPI class AllowList& getAllowList() const;
     MCAPI enum FileReadResult reload();
     MCAPI void syncToDisc();
-    MCAPI ~AllowListFile();
 };

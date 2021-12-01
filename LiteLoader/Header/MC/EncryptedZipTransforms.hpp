@@ -8,9 +8,6 @@ class EncryptedZipTransforms {
 #include "Extra/EncryptedZipTransformsAPI.hpp"
 public:
     virtual ~EncryptedZipTransforms();
-    virtual bool readTransform(std::vector<unsigned char>&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI EncryptedZipTransforms(class IContentKeyProvider const&);
+    virtual bool readTransform(std::vector<unsigned char>&) const;
+    virtual bool writeTransform(std::vector<unsigned char>&) const;
 };

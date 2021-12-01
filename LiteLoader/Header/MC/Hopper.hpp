@@ -8,11 +8,9 @@ class Hopper {
 #include "Extra/HopperAPI.hpp"
 
 public:
-    MCAPI Hopper(int, bool);
     MCAPI int getCooldownTime() const;
     MCAPI bool isOnCooldown() const;
     MCAPI void setCooldownTime(int);
-
 
 protected:
     MCAPI bool _addItem(class BlockSource&, class Container&, class ItemStack&, int, int);

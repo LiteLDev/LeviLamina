@@ -8,7 +8,6 @@ class Dimension {
 #include "Extra/DimensionAPI.hpp"
 
 public:
-    MCAPI Dimension(class ILevel&, class AutomaticID<class Dimension, int>, class DimensionHeightRange, class Scheduler&, std::string);
     MCAPI void _onNewTickingEntity(class Actor&);
     MCAPI void addWither(struct ActorUniqueID const&);
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3);
@@ -31,6 +30,8 @@ public:
     MCAPI class CircuitSystem& getCircuitSystem();
     MCAPI class gsl::not_null<class DelayActionList*> getDelayActionList();
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>>& getEntityIdMap();
+    MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef>>> const& getEntityIdMapConst() const;
     MCAPI class FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
     MCAPI short getHeight() const;
     MCAPI class DimensionHeightRange const& getHeightRange() const;
@@ -84,7 +85,6 @@ private:
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const&);
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();
-
 
 protected:
     MCAPI void _completeEntityTransfer(class BlockSource&, class OwnerPtrT<struct EntityRefTraits>, bool);

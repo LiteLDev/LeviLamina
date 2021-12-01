@@ -9,10 +9,10 @@ class NBTLoader {
 public:
     virtual ~NBTLoader();
     virtual void unk_vfn_1();
-    virtual bool isInt();
-    virtual bool isString();
-    virtual bool isObject();
-    virtual bool isArray();
+    virtual bool isInt() const;
+    virtual bool isString() const;
+    virtual bool isObject() const;
+    virtual bool isArray() const;
     virtual bool doSerialize(std::string&);
     virtual void unk_vfn_7();
     virtual bool doSerialize(float&);
@@ -25,20 +25,17 @@ public:
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
     virtual bool doSerialize(bool&);
-    virtual bool doBeginMember(unsigned __int64, std::string&);
     virtual bool doBeginMember(char const*, bool);
+    virtual bool doBeginMember(unsigned __int64, std::string&);
     virtual bool doEndMember();
     virtual bool doBeginArray(unsigned __int64&);
     virtual bool doBeginArrayItem(unsigned __int64);
     virtual bool doEndArrayItem();
     virtual void unk_vfn_24();
-    virtual bool doBeginObject(unsigned __int64&);
     virtual bool doBeginObject();
+    virtual bool doBeginObject(unsigned __int64&);
     virtual void unk_vfn_27();
-    virtual bool isShort();
+    virtual bool isShort() const;
     virtual void unk_vfn_29();
-    virtual bool isFloat();
-
-public:
-    MCAPI NBTLoader(class gsl::not_null<class CompoundTag const*>);
+    virtual bool isFloat() const;
 };

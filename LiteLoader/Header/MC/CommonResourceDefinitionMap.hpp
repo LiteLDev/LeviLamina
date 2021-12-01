@@ -8,14 +8,14 @@ class CommonResourceDefinitionMap {
 #include "Extra/CommonResourceDefinitionMapAPI.hpp"
 
 public:
-    MCAPI CommonResourceDefinitionMap();
     MCAPI std::vector<struct NamedMolangScript> const& getAnimateScriptArray() const;
+    MCAPI class std::unordered_map<class HashedString, class ActorAnimationControllerPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorAnimationControllerPtr>>> const& getAnimationControllers() const;
+    MCAPI class std::unordered_map<class HashedString, class ActorSkeletalAnimationPtr, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class ActorSkeletalAnimationPtr>>> const& getAnimations() const;
     MCAPI std::vector<struct MolangVariableSettings> const& getVariableSettings() const;
     MCAPI bool isCommonResourceDefinitionMapEmpty() const;
     MCAPI void mergeActorAnimateScriptArray(std::vector<struct NamedMolangScript> const&);
     MCAPI void mergeAnimation(class HashedString const&, class ActorSkeletalAnimationPtr);
     MCAPI void mergeAnimationController(class HashedString const&, class ActorAnimationControllerPtr);
-
 
 private:
     MCAPI static class std::recursive_mutex& _getAnimationResourceDefinitionLock();

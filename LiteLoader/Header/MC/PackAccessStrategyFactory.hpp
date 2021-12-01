@@ -4,14 +4,13 @@
 #define EXTRA_INCLUDE_PART_PACKACCESSSTRATEGYFACTORY
 #include "Extra/PackAccessStrategyFactoryAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PACKACCESSSTRATEGYFACTORY
-namespace PackAccessStrategyFactory {
+class PackAccessStrategyFactory {
 #include "Extra/PackAccessStrategyFactoryAPI.hpp"
 
 public:
-MCAPI static std::unique_ptr<class PackAccessStrategy> create(class ResourceLocation&, class IContentKeyProvider const&, class PackReport&, bool);
-MCAPI static std::unique_ptr<class PackAccessStrategy> createForDirectory(class ResourceLocation const&, bool);
-MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const&, class IContentKeyProvider const&);
-MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const&, bool);
-
-
-} // namespace PackAccessStrategyFactory
+    MCAPI static std::unique_ptr<class PackAccessStrategy> create(class ResourceLocation&, class IContentKeyProvider const&, class PackReport&, bool);
+    MCAPI static std::unique_ptr<class PackAccessStrategy> createForDirectory(class ResourceLocation const&, bool);
+    MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncrypted(class ResourceLocation const&, class ContentIdentity const&, class IContentKeyProvider const&, bool);
+    MCAPI static std::unique_ptr<class PackAccessStrategy> createForEncryptedZip(class ResourceLocation const&, class IContentKeyProvider const&);
+    MCAPI static std::unique_ptr<class PackAccessStrategy> createForZip(class ResourceLocation const&, bool);
+};

@@ -7,19 +7,18 @@
 namespace VanillaActorRendererId {
 #include "Extra/VanillaActorRendererIdAPI.hpp"
 
-MCAPI class HashedString const _map;
-MCAPI class HashedString const _photo;
-MCAPI class HashedString const _query;
-MCAPI class HashedString const elderGuardian;
-MCAPI class HashedString const elderGuardianGhost;
-MCAPI class HashedString const guardian;
-MCAPI class HashedString const itemEntity;
-MCAPI class HashedString const lingeringPotion;
-MCAPI class HashedString const npc;
-MCAPI class HashedString const player;
-MCAPI class HashedString const shield;
-MCAPI class HashedString const thrownPotion;
-MCAPI class HashedString const trident;
-
+MCAPI extern class HashedString const _map;
+MCAPI extern class HashedString const _photo;
+MCAPI extern class HashedString const _query;
+MCAPI extern class HashedString const elderGuardian;
+MCAPI extern class HashedString const elderGuardianGhost;
+MCAPI extern class HashedString const guardian;
+MCAPI extern class HashedString const itemEntity;
+MCAPI extern class HashedString const lingeringPotion;
+MCAPI extern class HashedString const npc;
+MCAPI extern class HashedString const player;
+MCAPI extern class HashedString const shield;
+MCAPI extern class HashedString const thrownPotion;
+MCAPI extern class HashedString const trident;
 
 } // namespace VanillaActorRendererId

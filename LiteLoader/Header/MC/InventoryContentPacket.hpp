@@ -9,15 +9,12 @@ class InventoryContentPacket : public Packet {
 #include "Extra/InventoryContentPacketAPI.hpp"
 public:
     virtual ~InventoryContentPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI InventoryContentPacket();
-    MCAPI InventoryContentPacket(enum ContainerID, std::vector<class ItemStack> const&);
-
     MCAPI static class InventoryContentPacket fromPlayerInventoryId(enum ContainerID, class Player&);
 };

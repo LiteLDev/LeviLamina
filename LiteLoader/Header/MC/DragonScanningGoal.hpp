@@ -14,13 +14,7 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI DragonScanningGoal(class EnderDragon&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;

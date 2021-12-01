@@ -8,8 +8,8 @@ class SimpleRandom {
 #include "Extra/SimpleRandomAPI.hpp"
 public:
     virtual ~SimpleRandom();
-    virtual int nextInt(int);
     virtual int nextInt();
+    virtual int nextInt(int);
     virtual __int64 nextLong();
     virtual bool nextBoolean();
     virtual float nextFloat();
@@ -17,7 +17,5 @@ public:
     virtual double nextGaussianDouble();
     virtual void consumeCount(unsigned int);
     virtual std::unique_ptr<class IRandom> fork();
-
-public:
-    MCAPI SimpleRandom(__int64);
+    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 };

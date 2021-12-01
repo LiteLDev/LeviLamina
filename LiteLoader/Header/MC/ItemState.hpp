@@ -8,8 +8,6 @@ class ItemState {
 #include "Extra/ItemStateAPI.hpp"
 public:
     virtual ~ItemState();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 
 public:
     MCAPI static void forEachState(class std::function<bool(class ItemState const&)>);

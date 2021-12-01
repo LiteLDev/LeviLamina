@@ -8,9 +8,7 @@ class VegetationPatchFeature {
 #include "Extra/VegetationPatchFeatureAPI.hpp"
 public:
     virtual ~VegetationPatchFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
-    virtual void unk_vfn_2();
-
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
 private:
     MCAPI bool _isExposedDirection(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char) const;

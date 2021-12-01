@@ -4,20 +4,44 @@
 
 #else
 // Add Member There
-    class ContextUserData {};
-    class Reflection {
-    public:
-        class IFunction {};
-        class IPropertyGetter {};
-    };
-    struct ObjectHandle {};
-    struct PropertyGetSet {};
-    class RuntimeUserData {};
-    template <typename T>
-    class StrongTypedObjectHandle;
-
-    class WeakLifetimeScope {
-    };
-    enum class HandleReference;
+struct ArrayProxy;
+template <typename T>
+class ClassBindingBuilder;
+struct ContextId;
+class ContextUserData;
+struct Error;
+enum HandleReference;
+class IDebuggerController;
+class IModuleBindingFactory;
+class LifetimeRegistry;
+class ModuleBindingBuilder;
+struct ModuleDescriptor;
+struct ObjectHandle;
+struct PropertyGetSet;
+class Reflection {
+public:
+    class IFunction {};
+    class IPropertyGetter {};
+};
+template <typename T>
+class Result;
+class StrongObjectHandle;
+class JSON;
+template <typename T>
+class TypedScriptClosure;
+class RuntimeUserData;
+struct ScriptContextResult;
+class ScriptObjectFactory;
+template <typename T>
+class ScriptPromise;
+template <typename T>
+class StrongTypedObjectHandle;
+template <typename T>
+struct TypedObjectHandle;
+struct Version;
+class WeakLifetimeScope;
+class WeakObjectHandle;
+template <typename T>
+class WeakTypedObjectHandle;
 
 #endif

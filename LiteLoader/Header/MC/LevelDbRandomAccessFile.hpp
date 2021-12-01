@@ -8,5 +8,5 @@ class LevelDbRandomAccessFile {
 #include "Extra/LevelDbRandomAccessFileAPI.hpp"
 public:
     virtual ~LevelDbRandomAccessFile();
-    virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*);
+    virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
 };

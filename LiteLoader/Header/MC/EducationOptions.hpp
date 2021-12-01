@@ -7,15 +7,10 @@
 class EducationOptions {
 #include "Extra/EducationOptionsAPI.hpp"
 public:
-    virtual();
+    virtual void unk_vfn_0();
     virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
 
 public:
-    MCAPI EducationOptions(class ResourcePackManager*);
     MCAPI void init(class LevelData const&);
 
     MCAPI static class gsl::basic_string_span<char const, -1> const CHEMISTRY_ENABLED;

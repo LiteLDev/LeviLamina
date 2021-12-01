@@ -6,4 +6,11 @@
 #undef EXTRA_INCLUDE_PART_PLAYERTICKSYSTEM
 class PlayerTickSystem {
 #include "Extra/PlayerTickSystemAPI.hpp"
+public:
+    virtual ~PlayerTickSystem();
+    virtual void unk_vfn_1();
+    virtual void tick(class EntityRegistry&);
+
+public:
+    MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const&);
 };

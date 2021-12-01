@@ -8,10 +8,7 @@ class PackSettingsError {
 #include "Extra/PackSettingsErrorAPI.hpp"
 public:
     virtual ~PackSettingsError();
-    virtual std::string getLocErrorMessage();
-    virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const& getLocErrorMessageMap();
-    virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const& getEventErrorMessageMap();
-
-public:
-    MCAPI PackSettingsError(std::vector<std::string> const&);
+    virtual std::string getLocErrorMessage() const;
+    virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const& getLocErrorMessageMap() const;
+    virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string>>> const& getEventErrorMessageMap() const;
 };

@@ -16,6 +16,6 @@ public:
     virtual short readShort();
     virtual int readInt();
     virtual __int64 readLongLong();
-    virtual void unk_vfn_9();
-    virtual unsigned __int64 numBytesLeft();
+    virtual bool readBytes(void*, unsigned __int64);
+    virtual unsigned __int64 numBytesLeft() const;
 };

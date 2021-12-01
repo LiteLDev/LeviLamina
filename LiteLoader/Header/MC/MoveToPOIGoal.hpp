@@ -13,23 +13,18 @@ public:
     virtual void unk_vfn_3();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     virtual void _moveToBlock();
-    virtual class Vec3 _getTargetPosition();
-    virtual void unk_vfn_16();
+    virtual class Vec3 _getTargetPosition() const;
+    virtual unsigned __int64 _getRepathTime() const;
     virtual bool getPOI(int /*enum POIType*/);
-    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/);
-
-public:
-    MCAPI MoveToPOIGoal(class Mob&, float, enum POIType, float);
-
+    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/) const;
 
 private:
     MCAPI void _updatePOIBooking();
-
 
 protected:
     MCAPI bool _canReachPOI(class Vec3 const&, float, bool);

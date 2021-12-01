@@ -12,9 +12,6 @@ public:
     MCAPI bool operator!=(struct ScoreboardId const&);
     MCAPI bool operator==(struct ScoreboardId const&);
     MCAPI struct ScoreboardId& operator=(struct ScoreboardId const&);
-    MCAPI ScoreboardId(__int64);
-    MCAPI ScoreboardId();
-    MCAPI ScoreboardId(struct ScoreboardId const&);
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool isValid() const;
 

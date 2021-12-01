@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_TAGMEMORYCHUNK
 #include "Extra/TagMemoryChunkAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TAGMEMORYCHUNK
-class TagMemoryChunk {
+struct TagMemoryChunk {
 #include "Extra/TagMemoryChunkAPI.hpp"
 
 public:
     MCAPI bool operator!=(struct TagMemoryChunk const&);
     MCAPI struct TagMemoryChunk copy() const;
-    MCAPI ~TagMemoryChunk();
 };

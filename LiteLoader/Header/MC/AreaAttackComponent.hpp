@@ -8,7 +8,5 @@ class AreaAttackComponent {
 #include "Extra/AreaAttackComponentAPI.hpp"
 
 public:
-    MCAPI AreaAttackComponent();
     MCAPI class AreaAttackComponent& operator=(class AreaAttackComponent&&);
-    MCAPI ~AreaAttackComponent();
 };

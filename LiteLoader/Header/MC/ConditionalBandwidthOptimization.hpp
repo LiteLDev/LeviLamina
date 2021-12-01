@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_CONDITIONALBANDWIDTHOPTIMIZATION
 #include "Extra/ConditionalBandwidthOptimizationAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CONDITIONALBANDWIDTHOPTIMIZATION
-class ConditionalBandwidthOptimization {
+struct ConditionalBandwidthOptimization {
 #include "Extra/ConditionalBandwidthOptimizationAPI.hpp"
 
 public:
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
-    MCAPI ~ConditionalBandwidthOptimization();
 };

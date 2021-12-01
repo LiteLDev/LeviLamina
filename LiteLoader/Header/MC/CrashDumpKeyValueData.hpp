@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CRASHDUMPKEYVALUEDATA
 #include "Extra/CrashDumpKeyValueDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CRASHDUMPKEYVALUEDATA
-class CrashDumpKeyValueData {
+struct CrashDumpKeyValueData {
 #include "Extra/CrashDumpKeyValueDataAPI.hpp"
 
 public:
-    MCAPI CrashDumpKeyValueData(enum CrashDumpLogStringID, enum CrashDumpLogStringID, int, unsigned __int64);
-
     MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
 };

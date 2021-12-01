@@ -8,6 +8,4 @@ class FileAccessTransforms {
 #include "Extra/FileAccessTransformsAPI.hpp"
 public:
     virtual ~FileAccessTransforms();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

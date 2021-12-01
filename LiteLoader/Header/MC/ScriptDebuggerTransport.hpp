@@ -11,14 +11,11 @@ public:
     virtual bool listen(unsigned short);
     virtual bool connect(std::string const&, unsigned short);
     virtual bool selectClient();
-    virtual bool connected();
-    virtual bool lostConnection();
-    virtual bool readyClose();
+    virtual bool connected() const;
+    virtual bool lostConnection() const;
+    virtual bool readyClose() const;
     virtual void close();
-    virtual bool peek();
+    virtual bool peek() const;
     virtual bool receive(char*, unsigned __int64);
     virtual void send(char const*, unsigned __int64);
-
-public:
-    MCAPI ScriptDebuggerTransport(class IScriptDebuggerWatchdog&);
 };

@@ -10,8 +10,5 @@ class LegacySpringsFeature : public Feature {
 public:
     virtual ~LegacySpringsFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LegacySpringsFeature(class FeatureRegistry const&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

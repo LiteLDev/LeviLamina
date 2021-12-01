@@ -11,7 +11,6 @@ public:
     MCAPI operator bool();
     MCAPI bool readValue(char const*, unsigned long&) const;
     MCAPI bool readValue(char const*, std::string&) const;
-    MCAPI ~RegistryKey();
 
     MCAPI static class RegistryKey open(struct HKEY__*, char const*, unsigned long);
 };

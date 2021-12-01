@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_VANILLAFEATURES
 #include "Extra/VanillaFeaturesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VANILLAFEATURES
-namespace VanillaFeatures {
+class VanillaFeatures {
 #include "Extra/VanillaFeaturesAPI.hpp"
 
 public:
-MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
-MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
-
-
-} // namespace VanillaFeatures
+    MCAPI static void registerFeatureTypes(class FeatureTypeFactory&);
+    MCAPI static void registerFeatures(class FeatureRegistry&, class BaseGameVersion const&, class Experiments const&);
+};

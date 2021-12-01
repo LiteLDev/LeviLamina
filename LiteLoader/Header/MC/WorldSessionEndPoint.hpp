@@ -6,7 +6,4 @@
 #undef EXTRA_INCLUDE_PART_WORLDSESSIONENDPOINT
 class WorldSessionEndPoint {
 #include "Extra/WorldSessionEndPointAPI.hpp"
-
-public:
-    MCAPI WorldSessionEndPoint(class IMinecraftEventing&);
 };

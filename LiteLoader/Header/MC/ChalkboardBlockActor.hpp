@@ -10,8 +10,8 @@ class ChalkboardBlockActor : public BlockActor {
 public:
     virtual ~ChalkboardBlockActor();
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    virtual bool save(class CompoundTag&);
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&);
+    virtual bool save(class CompoundTag&) const;
+    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
     virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     virtual void onCustomTagLoadDone(class BlockSource&);
     virtual void tick(class BlockSource&);
@@ -22,11 +22,11 @@ public:
     virtual void triggerEvent(int, int);
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
+    virtual float getShadowRadius(class BlockSource&) const;
     virtual void unk_vfn_18();
     virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
     virtual void unk_vfn_21();
-    virtual std::string getName();
+    virtual std::string getName() const;
     virtual std::string getImmersiveReaderText(class BlockSource&);
     virtual void unk_vfn_26();
     virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
@@ -38,10 +38,9 @@ public:
     virtual void unk_vfn_33();
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    virtual bool _playerCanUpdate(class Player const&);
+    virtual bool _playerCanUpdate(class Player const&) const;
 
 public:
-    MCAPI ChalkboardBlockActor(class BlockPos const&);
     MCAPI enum ChalkboardSize const getChalkboardSize() const;
     MCAPI bool getLocked() const;
     MCAPI int getTextCharCount() const;

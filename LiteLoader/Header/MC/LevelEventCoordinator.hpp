@@ -10,7 +10,6 @@ public:
     virtual ~LevelEventCoordinator();
 
 public:
-    MCAPI LevelEventCoordinator();
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>);
     MCAPI void sendLevelAddedActor(struct LevelAddedActorEvent const&);
     MCAPI void sendLevelBiomesRegistered(class BiomeRegistry&);

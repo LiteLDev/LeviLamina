@@ -9,6 +9,6 @@ class EnchantRandomlyFunction : public LootItemFunction {
 #include "Extra/EnchantRandomlyFunctionAPI.hpp"
 public:
     virtual ~EnchantRandomlyFunction();
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 };

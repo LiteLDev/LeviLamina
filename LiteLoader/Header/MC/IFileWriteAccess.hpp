@@ -8,5 +8,4 @@ class IFileWriteAccess {
 #include "Extra/IFileWriteAccessAPI.hpp"
 public:
     virtual ~IFileWriteAccess();
-    virtual void unk_vfn_1();
 };

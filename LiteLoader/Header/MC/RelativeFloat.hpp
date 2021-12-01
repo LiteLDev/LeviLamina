@@ -8,6 +8,5 @@ class RelativeFloat {
 #include "Extra/RelativeFloatAPI.hpp"
 
 public:
-    MCAPI RelativeFloat();
     MCAPI float getValue(float) const;
 };

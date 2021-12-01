@@ -10,8 +10,5 @@ class BlockBlobFeature : public Feature {
 public:
     virtual ~BlockBlobFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI BlockBlobFeature(class Block const&, int);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

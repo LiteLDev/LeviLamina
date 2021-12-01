@@ -7,7 +7,6 @@
 namespace CopperSlabInternal {
 #include "Extra/CopperSlabInternalAPI.hpp"
 
-MCAPI class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;
-
+MCAPI extern class WeakPtr<class BlockLegacy> BlockLegacy_nullptr;
 
 } // namespace CopperSlabInternal

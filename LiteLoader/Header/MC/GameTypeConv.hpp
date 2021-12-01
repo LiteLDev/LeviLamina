@@ -12,5 +12,4 @@ MCAPI std::string gameTypeToString(enum GameType);
 MCAPI enum GameType intToGameType(int);
 MCAPI enum GameType stringToGameType(std::string const&);
 
-
 } // namespace GameTypeConv

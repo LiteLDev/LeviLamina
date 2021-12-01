@@ -11,11 +11,5 @@ public:
     virtual ~CompressedNetworkPeer();
     virtual void sendPacket(std::string const&, int /*enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum Compressibility*/);
     virtual int /*enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const&);
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
+    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
 };

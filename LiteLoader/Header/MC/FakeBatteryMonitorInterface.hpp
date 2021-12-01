@@ -8,9 +8,6 @@ class FakeBatteryMonitorInterface {
 #include "Extra/FakeBatteryMonitorInterfaceAPI.hpp"
 public:
     virtual ~FakeBatteryMonitorInterface();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI FakeBatteryMonitorInterface();
+    virtual int /*enum BatteryStatus*/ getBatteryStatus() const;
+    virtual float getBatteryLevel() const;
 };

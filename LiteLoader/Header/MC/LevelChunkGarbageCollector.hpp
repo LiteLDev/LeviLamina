@@ -9,8 +9,6 @@ class LevelChunkGarbageCollector {
 
 public:
     MCAPI unsigned __int64 getPendingDeletesCount() const;
-    MCAPI ~LevelChunkGarbageCollector();
-
 
 protected:
     MCAPI void flush();

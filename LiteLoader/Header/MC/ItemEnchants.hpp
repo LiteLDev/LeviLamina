@@ -8,8 +8,6 @@ class ItemEnchants {
 #include "Extra/ItemEnchantsAPI.hpp"
 
 public:
-    MCAPI ItemEnchants(int, class ListTag const&);
-    MCAPI ItemEnchants(int);
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
     MCAPI struct EnchantResult canEnchant(class EnchantmentInstance, bool);
     MCAPI std::vector<class EnchantmentInstance> getAllEnchants() const;
@@ -18,8 +16,6 @@ public:
     MCAPI int getTotalValue(bool) const;
     MCAPI int hasEnchant(enum Enchant::Type) const;
     MCAPI bool isEmpty() const;
-    MCAPI ~ItemEnchants();
-
 
 private:
     MCAPI std::unique_ptr<class ListTag> _toList() const;

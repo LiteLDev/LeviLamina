@@ -9,7 +9,4 @@ class CommandDispatcher {
 public:
     virtual ~CommandDispatcher();
     virtual int performCommand(class CommandOrigin const&, class Command&);
-
-public:
-    MCAPI CommandDispatcher();
 };

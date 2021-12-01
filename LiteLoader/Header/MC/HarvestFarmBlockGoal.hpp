@@ -15,15 +15,11 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     virtual void unk_vfn_16();
-
-public:
-    MCAPI HarvestFarmBlockGoal(class Mob&);
-
 
 protected:
     MCAPI bool trySowCrop(class BlockSource&, class BlockPos const&);

@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_MINECRAFTPACKETS
 #include "Extra/MinecraftPacketsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MINECRAFTPACKETS
-namespace MinecraftPackets {
+class MinecraftPackets {
 #include "Extra/MinecraftPacketsAPI.hpp"
 
 public:
-MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
-
-
-} // namespace MinecraftPackets
+    MCAPI static class std::shared_ptr<class Packet> createPacket(enum MinecraftPacketIds);
+};

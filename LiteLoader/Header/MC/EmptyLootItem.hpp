@@ -7,6 +7,6 @@
 class EmptyLootItem {
 #include "Extra/EmptyLootItemAPI.hpp"
 public:
-    virtual void unk_vfn_0();
+    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
     virtual ~EmptyLootItem();
 };

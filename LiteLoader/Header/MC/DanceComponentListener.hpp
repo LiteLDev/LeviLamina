@@ -11,10 +11,10 @@ public:
     virtual ~DanceComponentListener();
     virtual void unk_vfn_1();
     virtual void onSourceDestroyed(class BlockSource&);
-    virtual bool shouldTick(int /*enum SimulationType*/);
+    virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_6();
-    virtual();
+    virtual void unk_vfn_7();
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
@@ -36,9 +36,6 @@ public:
     virtual void unk_vfn_26();
     virtual void unk_vfn_27();
     virtual void unk_vfn_28();
+    virtual void unk_vfn_29();
     virtual void levelSoundEvent(int /*enum LevelSoundEvent*/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
-    virtual void unk_vfn_30();
-    virtual void unk_vfn_31();
-    virtual void unk_vfn_32();
-    virtual void unk_vfn_33();
 };

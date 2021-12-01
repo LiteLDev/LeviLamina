@@ -4,20 +4,14 @@
 #define EXTRA_INCLUDE_PART_BLOCKPARTVISIBILITYDESCRIPTION
 #include "Extra/BlockPartVisibilityDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKPARTVISIBILITYDESCRIPTION
-class BlockPartVisibilityDescription {
+struct BlockPartVisibilityDescription {
 #include "Extra/BlockPartVisibilityDescriptionAPI.hpp"
 public:
     virtual ~BlockPartVisibilityDescription();
-    virtual std::string const& getName();
-    virtual void initializeComponent(class EntityContext&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual std::string const& getName() const;
+    virtual void initializeComponent(class EntityContext&) const;
 
 public:
-    MCAPI BlockPartVisibilityDescription();
-
     MCAPI static std::string const NameID;
     MCAPI static void bindType();
 };

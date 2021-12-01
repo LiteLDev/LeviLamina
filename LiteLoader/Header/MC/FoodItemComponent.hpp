@@ -8,6 +8,10 @@ class FoodItemComponent {
 #include "Extra/FoodItemComponentAPI.hpp"
 
 public:
+    MCAPI bool canAlwaysEat() const;
+    MCAPI class ItemDescriptor getUsingConvertsToItemDescriptor() const;
+    MCAPI class FoodItemComponent& operator=(class FoodItemComponent const&);
+
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 };

@@ -9,7 +9,6 @@ class ItemStackRequestBatch {
 
 public:
     MCAPI void write(class BinaryStream&) const;
-    MCAPI ~ItemStackRequestBatch();
 
     MCAPI static std::unique_ptr<class ItemStackRequestBatch> read(class ReadOnlyBinaryStream&);
 };

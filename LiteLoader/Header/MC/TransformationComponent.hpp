@@ -8,7 +8,6 @@ class TransformationComponent {
 #include "Extra/TransformationComponentAPI.hpp"
 
 public:
-    MCAPI TransformationComponent();
     MCAPI int getDelayTicks() const;
     MCAPI void initFromDefinition(class Actor&);
     MCAPI void maintainOldData(class Actor&, class Actor&, struct TransformationDescription const&, struct ActorUniqueID const&, class Level const&);

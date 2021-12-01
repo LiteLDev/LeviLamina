@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_BLOCKSTATEDEFINITION
 #include "Extra/BlockStateDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKSTATEDEFINITION
-class BlockStateDefinition {
+struct BlockStateDefinition {
 #include "Extra/BlockStateDefinitionAPI.hpp"
 
 public:
     MCAPI struct BlockStateDefinition& operator=(struct BlockStateDefinition&&);
-    MCAPI ~BlockStateDefinition();
-
 
 private:
     MCAPI void _copy(struct BlockStateDefinition const&);

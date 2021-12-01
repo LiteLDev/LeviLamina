@@ -10,8 +10,6 @@ class CompoundTagEditHelper {
 public:
     MCAPI class CompoundTag const* getParent() const;
     MCAPI void replaceWith(std::string const&, std::unique_ptr<class Tag>);
-    MCAPI ~CompoundTagEditHelper();
-
 
 private:
     MCAPI void pushChild(std::string const&);

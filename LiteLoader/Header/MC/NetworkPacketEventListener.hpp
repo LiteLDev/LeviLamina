@@ -8,5 +8,5 @@ class NetworkPacketEventListener {
 #include "Extra/NetworkPacketEventListenerAPI.hpp"
 public:
     virtual ~NetworkPacketEventListener();
-    virtual void unk_vfn_1();
+    virtual int /*enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
 };

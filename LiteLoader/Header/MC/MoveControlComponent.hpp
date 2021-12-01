@@ -8,13 +8,12 @@ class MoveControlComponent {
 #include "Extra/MoveControlComponentAPI.hpp"
 
 public:
-    MCAPI MoveControlComponent();
+    MCAPI float getMaxTurn() const;
+    MCAPI class Vec3 const& getWantedPosition() const;
     MCAPI class MoveControlComponent& operator=(class MoveControlComponent&&);
     MCAPI bool getHasWantedPosition() const;
-    MCAPI float getMaxTurn() const;
     MCAPI bool getShouldBreach() const;
     MCAPI float getSpeedModifier() const;
-    MCAPI class Vec3 const& getWantedPosition() const;
     MCAPI void initMultiTypeMovementComponent(class Mob&, class ActorDefinitionDescriptor&);
     MCAPI void initializeFromDefinition(class Mob&, struct MoveControlDescription*);
     MCAPI void setHasWantedPosition(bool);
@@ -24,7 +23,6 @@ public:
     MCAPI void setSpeedModifier(float);
     MCAPI void setWantedPosition(class Mob&, class Vec3 const&, float);
     MCAPI void update(class Mob&);
-
 
 private:
     MCAPI void _setWantedPosition(class Vec3 const&);

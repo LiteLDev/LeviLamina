@@ -18,13 +18,9 @@ public:
     virtual bool useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
     virtual bool interact(class Actor&, class Vec3 const&);
     virtual bool attack(class Actor&);
-    virtual void unk_vfn_16();
+    virtual void setTrialMode(bool);
     virtual bool isInTrialMode();
     virtual void registerUpsellScreenCallback(class std::function<void(bool)>);
-
-public:
-    MCAPI SurvivalMode(class Player&);
-
 
 private:
     MCAPI void _messagePlayers(std::string);

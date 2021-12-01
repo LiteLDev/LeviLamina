@@ -10,8 +10,5 @@ class HellSpringFeature : public Feature {
 public:
     virtual ~HellSpringFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI HellSpringFeature(class Block const&, bool);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

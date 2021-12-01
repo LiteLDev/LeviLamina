@@ -8,9 +8,9 @@ class ItemStackRequestData {
 #include "Extra/ItemStackRequestDataAPI.hpp"
 
 public:
+    MCAPI std::vector<std::unique_ptr<class ItemStackRequestAction>> const& getActions() const;
     MCAPI class ItemStackRequestAction const* tryFindAction(enum ItemStackRequestActionType) const;
     MCAPI void write(class BinaryStream&) const;
-    MCAPI ~ItemStackRequestData();
 
     MCAPI static std::unique_ptr<class ItemStackRequestData> read(class ReadOnlyBinaryStream&);
 };

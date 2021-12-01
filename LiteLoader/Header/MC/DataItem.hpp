@@ -8,6 +8,5 @@ class DataItem {
 #include "Extra/DataItemAPI.hpp"
 public:
     virtual ~DataItem();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
+    virtual bool isDataEqual(class DataItem const&) const;
 };

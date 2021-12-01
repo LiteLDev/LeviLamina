@@ -8,8 +8,5 @@ class ActorAnimationEvent {
 #include "Extra/ActorAnimationEventAPI.hpp"
 
 public:
-    MCAPI ActorAnimationEvent(float, std::string const&, enum CurrentCmdVersion, enum MolangVersion);
-    MCAPI ActorAnimationEvent(class ActorAnimationEvent&&);
     MCAPI void fire(class RenderParams&, class Actor*) const;
-    MCAPI ~ActorAnimationEvent();
 };

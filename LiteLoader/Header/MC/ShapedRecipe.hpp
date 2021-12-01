@@ -9,18 +9,17 @@ class ShapedRecipe : public Recipe {
 #include "Extra/ShapedRecipeAPI.hpp"
 public:
     virtual ~ShapedRecipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&);
-    virtual int getCraftingSize();
-    virtual void unk_vfn_3();
+    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
+    virtual int getCraftingSize() const;
+    virtual class RecipeIngredient const& getIngredient(int, int) const;
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual bool matches(class CraftingContainer&, class Level&);
-    virtual int size();
-    virtual class mce::UUID const& getId();
+    virtual bool matches(class CraftingContainer&, class Level&) const;
+    virtual int size() const;
+    virtual class mce::UUID const& getId() const;
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
-    virtual void unk_vfn_15();
-
+    virtual void loadResultList(class BlockPalette const&) const;
 
 private:
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, int, int, class mce::UUID const*);

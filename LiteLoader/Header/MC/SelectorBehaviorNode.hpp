@@ -9,8 +9,5 @@ class SelectorBehaviorNode {
 public:
     virtual ~SelectorBehaviorNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI SelectorBehaviorNode();
+    virtual void initializeFromDefinition(class Actor&);
 };

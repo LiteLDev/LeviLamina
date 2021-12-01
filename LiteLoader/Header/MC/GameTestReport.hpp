@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_GAMETESTREPORT
 #include "Extra/GameTestReportAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GAMETESTREPORT
-class GameTestReport {
+struct GameTestReport {
 #include "Extra/GameTestReportAPI.hpp"
 
 public:
-    MCAPI ~GameTestReport();
-
     MCAPI static void bindType();
 };

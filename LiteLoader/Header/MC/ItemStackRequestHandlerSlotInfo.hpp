@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_ITEMSTACKREQUESTHANDLERSLOTINFO
 #include "Extra/ItemStackRequestHandlerSlotInfoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTHANDLERSLOTINFO
-class ItemStackRequestHandlerSlotInfo {
+struct ItemStackRequestHandlerSlotInfo {
 #include "Extra/ItemStackRequestHandlerSlotInfoAPI.hpp"
 
 public:
     MCAPI operator bool();
-    MCAPI ~ItemStackRequestHandlerSlotInfo();
 };

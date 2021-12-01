@@ -4,15 +4,11 @@
 #define EXTRA_INCLUDE_PART_MOLANGMEMBERARRAY
 #include "Extra/MolangMemberArrayAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOLANGMEMBERARRAY
-class MolangMemberArray {
+struct MolangMemberArray {
 #include "Extra/MolangMemberArrayAPI.hpp"
 
 public:
     MCAPI struct MolangScriptArg const* get(class HashedString const&) const;
-    MCAPI bool operator==(struct MolangMemberArray const&);
-    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
-    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
-    MCAPI MolangMemberArray(class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&, class HashedString const&, struct MolangScriptArg const&);
     MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
-    MCAPI ~MolangMemberArray();
+    MCAPI bool operator==(struct MolangMemberArray const&);
 };

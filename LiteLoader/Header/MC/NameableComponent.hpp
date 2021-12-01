@@ -8,7 +8,6 @@ class NameableComponent {
 #include "Extra/NameableComponentAPI.hpp"
 
 public:
-    MCAPI NameableComponent();
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     MCAPI void initFromDefinition(class Actor&, class NameableDefinition const&);
     MCAPI void nameEntity(class Actor&, std::string const&);

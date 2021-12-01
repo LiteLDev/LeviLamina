@@ -13,7 +13,9 @@ MCAPI bool convertVillagerV1TagToV2(class CompoundTag&);
 MCAPI bool convertVillagerV2TagToV1(class CompoundTag&);
 MCAPI bool convertZombieVillagerV1TagToV2(class CompoundTag&);
 MCAPI bool convertZombieVillagerV2TagToV1(class CompoundTag&);
+MCAPI void fillNegativeSubChunksWithAir(class LevelChunk&, class BlockSource&);
 MCAPI void fillNegativeSubChunksWithGeneration(class LevelChunk&, class LevelChunk&);
+MCAPI void fillNegativeSubChunksWithGenerationOrAir(class LevelChunk&, class LevelChunk&, class BlockSource&);
 MCAPI void fixBlockStatesOnChunkBorderAxis(class BlockSource&, class LevelChunk const&, unsigned char, class BlockPos, enum VanillaLevelChunkUpgrade::Axis);
 MCAPI void fixStemBlockStates(class BlockSource&, class BlockPos, class Block const&);
 MCAPI void fixUselessDynamicWater(class LevelChunk&, class BlockSource&);
@@ -25,6 +27,5 @@ MCAPI bool upgradeArmorStandComponents(class CompoundTag&);
 MCAPI void upgradeLevelChunk(class LevelChunk&, class BlockSource&);
 MCAPI void upgradeOldLimboEntity(class CompoundTag&, enum LimboEntitiesVersion, bool);
 MCAPI void upgradeWorldHeight(class LevelChunk&, class LevelChunk&, class BlockSource&);
-
 
 } // namespace VanillaLevelChunkUpgrade

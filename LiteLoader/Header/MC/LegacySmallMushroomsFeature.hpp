@@ -10,8 +10,5 @@ class LegacySmallMushroomsFeature : public Feature {
 public:
     virtual ~LegacySmallMushroomsFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LegacySmallMushroomsFeature(class FeatureRegistry const&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

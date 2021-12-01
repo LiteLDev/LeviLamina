@@ -8,9 +8,7 @@ class ShooterComponent {
 #include "Extra/ShooterComponentAPI.hpp"
 
 public:
-    MCAPI ShooterComponent();
     MCAPI int getAuxValue();
     MCAPI void initFromDefinition(class Actor&, class ShooterDefinition const&);
     MCAPI void onShoot(class Actor&);
-    MCAPI ~ShooterComponent();
 };

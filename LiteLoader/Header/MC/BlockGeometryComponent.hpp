@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_BLOCKGEOMETRYCOMPONENT
 #include "Extra/BlockGeometryComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKGEOMETRYCOMPONENT
-class BlockGeometryComponent {
+struct BlockGeometryComponent {
 #include "Extra/BlockGeometryComponentAPI.hpp"
 
 public:
     MCAPI struct BlockGeometryComponent& operator=(struct BlockGeometryComponent&&);
-    MCAPI ~BlockGeometryComponent();
 };

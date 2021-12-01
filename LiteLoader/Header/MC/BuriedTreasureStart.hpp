@@ -10,5 +10,5 @@ class BuriedTreasureStart : public StructureStart {
 public:
     virtual ~BuriedTreasureStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

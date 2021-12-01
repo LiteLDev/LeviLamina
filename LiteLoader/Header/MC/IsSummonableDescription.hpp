@@ -8,5 +8,5 @@ class IsSummonableDescription {
 #include "Extra/IsSummonableDescriptionAPI.hpp"
 public:
     virtual ~IsSummonableDescription();
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
 };

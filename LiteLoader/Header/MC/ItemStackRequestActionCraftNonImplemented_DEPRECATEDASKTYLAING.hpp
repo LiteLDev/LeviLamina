@@ -10,10 +10,7 @@ public:
     virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-
-public:
-    MCAPI ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
+    virtual void _write(class BinaryStream&) const;
+    virtual void _write(class BinaryStream&) const;
+    virtual bool _read(class ReadOnlyBinaryStream&);
 };

@@ -10,15 +10,9 @@ class SerializedSkin {
 public:
     MCAPI bool isTrustedSkin() const;
     MCAPI class SerializedSkin& operator=(class SerializedSkin const&);
-    MCAPI SerializedSkin(class SubClientConnectionRequest const&);
-    MCAPI SerializedSkin(class ConnectionRequest const&);
-    MCAPI SerializedSkin(class SerializedSkin const&);
-    MCAPI SerializedSkin(class SerializedSkin&&);
-    MCAPI SerializedSkin();
     MCAPI std::string const& getName() const;
     MCAPI bool read(class ReadOnlyBinaryStream&);
     MCAPI void setIsTrustedSkin(bool);
     MCAPI void updateGeometryName();
     MCAPI void write(class BinaryStream&) const;
-    MCAPI ~SerializedSkin();
 };

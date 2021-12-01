@@ -8,5 +8,4 @@ class IPackTelemetry {
 #include "Extra/IPackTelemetryAPI.hpp"
 public:
     virtual ~IPackTelemetry();
-    virtual void unk_vfn_1();
 };

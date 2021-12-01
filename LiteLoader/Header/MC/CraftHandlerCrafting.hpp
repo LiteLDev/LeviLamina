@@ -13,7 +13,7 @@ public:
     virtual void unk_vfn_3();
     virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     virtual void unk_vfn_5();
-
+    virtual class Recipes const* _getLevelRecipes() const;
 
 private:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const&);

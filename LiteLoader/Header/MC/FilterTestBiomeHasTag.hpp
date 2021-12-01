@@ -9,10 +9,9 @@ class FilterTestBiomeHasTag : public FilterTest {
 #include "Extra/FilterTestBiomeHasTagAPI.hpp"
 public:
     virtual ~FilterTestBiomeHasTag();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
-
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
 
 private:
     MCAPI bool _evalBiome(class Biome const&, struct FilterContext const&) const;

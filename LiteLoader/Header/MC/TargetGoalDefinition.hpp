@@ -8,8 +8,6 @@ class TargetGoalDefinition {
 #include "Extra/TargetGoalDefinitionAPI.hpp"
 public:
     virtual ~TargetGoalDefinition();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 
 public:
     MCAPI void initialize(class EntityContext&, class TargetGoal&);

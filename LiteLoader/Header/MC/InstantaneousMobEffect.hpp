@@ -9,9 +9,6 @@ class InstantaneousMobEffect : public MobEffect {
 #include "Extra/InstantaneousMobEffectAPI.hpp"
 public:
     virtual ~InstantaneousMobEffect();
-    virtual void unk_vfn_4();
-    virtual bool isDurationEffectTick(int, int);
-
-public:
-    MCAPI InstantaneousMobEffect(int, std::string const&, std::string const&, bool, int, int);
+    virtual bool isInstantaneous() const;
+    virtual bool isDurationEffectTick(int, int) const;
 };

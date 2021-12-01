@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_EDUAPPCONFIGS
 #include "Extra/EduAppConfigsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_EDUAPPCONFIGS
-namespace EduAppConfigs {
+class EduAppConfigs {
 #include "Extra/EduAppConfigsAPI.hpp"
 
 public:
-MCAPI static struct PackIdVersion const EDUResourcePack;
-
-
-} // namespace EduAppConfigs
+    MCAPI static struct PackIdVersion const EDUResourcePack;
+};

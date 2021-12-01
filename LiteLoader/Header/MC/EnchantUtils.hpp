@@ -41,6 +41,7 @@ public:
     MCAPI static int getTotalProtectionLevels(enum Enchant::Type, class Mob const&);
     MCAPI static bool hasCurse(class ItemStackBase const&);
     MCAPI static bool hasEnchant(enum Enchant::Type, class ItemStackBase const&);
+    MCAPI static bool isCurse(enum Enchant::Type);
     MCAPI static void randomlyEnchant(class ItemInstance&, int, int, bool);
     MCAPI static void randomlyEnchant(class ItemStack&, int, int, bool);
     MCAPI static void removeEnchants(class ItemStack&);

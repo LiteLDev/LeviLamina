@@ -8,9 +8,5 @@ class BeardAndShaverFeature {
 #include "Extra/BeardAndShaverFeatureAPI.hpp"
 public:
     virtual ~BeardAndShaverFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI BeardAndShaverFeature();
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

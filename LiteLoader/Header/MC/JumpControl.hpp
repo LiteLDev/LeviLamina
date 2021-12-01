@@ -11,11 +11,5 @@ public:
     virtual void unk_vfn_1();
     virtual void tick(class JumpControlComponent&, class Mob&);
     virtual void unk_vfn_3();
-    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&);
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-
-public:
-    MCAPI JumpControl();
+    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
 };

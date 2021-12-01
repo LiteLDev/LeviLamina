@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_SCATTERPARAMSMOLANGVARIABLEINDICES
 #include "Extra/ScatterParamsMolangVariableIndicesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SCATTERPARAMSMOLANGVARIABLEINDICES
-class ScatterParamsMolangVariableIndices {
+struct ScatterParamsMolangVariableIndices {
 #include "Extra/ScatterParamsMolangVariableIndicesAPI.hpp"
 
 public:

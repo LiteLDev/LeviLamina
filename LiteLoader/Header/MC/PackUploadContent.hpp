@@ -7,6 +7,6 @@
 namespace PackUploadContent {
 #include "Extra/PackUploadContentAPI.hpp"
 
-MCAPI std::vector<std::string> const &getClientDataPaths();
+MCAPI std::vector<std::string> const& getClientDataPaths();
 
 } // namespace PackUploadContent

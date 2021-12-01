@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_ROPEPARAMS
 #include "Extra/RopeParamsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ROPEPARAMS
-class RopeParams {
+struct RopeParams {
 #include "Extra/RopeParamsAPI.hpp"
 
 public:
-    MCAPI RopeParams(class Vec3 const&, class Vec3 const&, float);
     MCAPI void leadInit();
 };

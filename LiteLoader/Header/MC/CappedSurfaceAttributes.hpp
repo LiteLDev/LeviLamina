@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_CAPPEDSURFACEATTRIBUTES
 #include "Extra/CappedSurfaceAttributesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CAPPEDSURFACEATTRIBUTES
-class CappedSurfaceAttributes {
+struct CappedSurfaceAttributes {
 #include "Extra/CappedSurfaceAttributesAPI.hpp"
 
 public:

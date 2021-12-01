@@ -8,7 +8,4 @@ class ThermalMonitorInterface {
 #include "Extra/ThermalMonitorInterfaceAPI.hpp"
 public:
     virtual ~ThermalMonitorInterface();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
 };

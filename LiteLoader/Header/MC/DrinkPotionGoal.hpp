@@ -11,16 +11,12 @@ public:
     virtual bool canUse();
     virtual bool canContinueToUse();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI DrinkPotionGoal(class Mob&, float, std::vector<struct DrinkPotionData> const&);
-
+    virtual void start();
 
 private:
     MCAPI void _updateEquipment(class ItemStack const&);

@@ -9,11 +9,9 @@ class NetherFortressFeature : public StructureFeature {
 #include "Extra/NetherFortressFeatureAPI.hpp"
 public:
     virtual ~NetherFortressFeature();
-    virtual bool isFeatureChunk(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int);
+    virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
 public:
-    MCAPI NetherFortressFeature(unsigned int&, class BaseGameVersion const&);
-
     MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 };

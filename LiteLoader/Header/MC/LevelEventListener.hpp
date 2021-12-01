@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_LEVELEVENTLISTENER
 #include "Extra/LevelEventListenerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LEVELEVENTLISTENER
-namespace LevelEventListener {
+class LevelEventListener {
 #include "Extra/LevelEventListenerAPI.hpp"
-
-
-}
+};

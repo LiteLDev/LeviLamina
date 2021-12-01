@@ -10,5 +10,4 @@ namespace VanillaGoalUtility {
 MCAPI void initialize(class Level*);
 MCAPI void registerGoalsToFactory(class ActorGoalFactory&);
 
-
 } // namespace VanillaGoalUtility

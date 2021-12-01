@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_PINGEDCOMPATIBLESERVER
 #include "Extra/PingedCompatibleServerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PINGEDCOMPATIBLESERVER
-class PingedCompatibleServer {
+struct PingedCompatibleServer {
 #include "Extra/PingedCompatibleServerAPI.hpp"
 
 public:
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer&&);
     MCAPI struct PingedCompatibleServer& operator=(struct PingedCompatibleServer&&);
-    MCAPI PingedCompatibleServer(struct PingedCompatibleServer const&);
-    MCAPI ~PingedCompatibleServer();
 };

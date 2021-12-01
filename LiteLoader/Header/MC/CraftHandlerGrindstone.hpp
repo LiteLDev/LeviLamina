@@ -14,12 +14,9 @@ public:
     virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     virtual void _postCraftRequest(bool);
 
-public:
-    MCAPI CraftHandlerGrindstone(class ItemStackRequestActionCraftHandler&);
-
-
 private:
     MCAPI class ItemStack _createResultItem(class ItemStack const&, class ItemStack const&);
+    MCAPI int _getExperienceFromItem(class ItemStack const&) const;
     MCAPI class ItemStack _getResultItemWithNoEnchants(std::vector<class ItemStack> const&, bool&);
     MCAPI bool _resolveNetIdAndValidate(enum ContainerEnumName, unsigned char, struct ItemStackNetIdVariant const&);
 };

@@ -8,5 +8,5 @@ class LevelDbLogger {
 #include "Extra/LevelDbLoggerAPI.hpp"
 public:
     virtual ~LevelDbLogger();
-    virtual void unk_vfn_1();
+    virtual void Logv(char const*, char*);
 };

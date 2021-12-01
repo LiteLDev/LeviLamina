@@ -9,7 +9,4 @@ class ItemStackDescriptor {
 
 public:
     MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&&);
-    MCAPI ItemStackDescriptor();
-    MCAPI ItemStackDescriptor(class Item const&, int, unsigned short, class CompoundTag const*);
-    MCAPI ~ItemStackDescriptor();
 };

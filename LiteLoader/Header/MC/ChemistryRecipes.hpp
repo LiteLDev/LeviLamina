@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CHEMISTRYRECIPES
 #include "Extra/ChemistryRecipesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CHEMISTRYRECIPES
-namespace ChemistryRecipes {
+class ChemistryRecipes {
 #include "Extra/ChemistryRecipesAPI.hpp"
 
 public:
-MCAPI static void addRecipes(class Recipes&);
-
-
-} // namespace ChemistryRecipes
+    MCAPI static void addRecipes(class Recipes&);
+};

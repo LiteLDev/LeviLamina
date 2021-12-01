@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_AGENTSERVERCOMMANDS
 #include "Extra/AgentServerCommandsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_AGENTSERVERCOMMANDS
-namespace AgentServerCommands {
+class AgentServerCommands {
 #include "Extra/AgentServerCommandsAPI.hpp"
 
 public:
-MCAPI static void setupStandardServer(class Minecraft&, std::string const&);
-
-
-} // namespace AgentServerCommands
+    MCAPI static void setupStandardServer(class Minecraft&, std::string const&);
+};

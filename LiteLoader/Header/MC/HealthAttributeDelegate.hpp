@@ -11,8 +11,5 @@ public:
     virtual void tick();
     virtual void unk_vfn_2();
     virtual bool change(float, float, struct AttributeBuffInfo);
-    virtual float getBuffValue(class AttributeBuff const&);
-
-public:
-    MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*);
+    virtual float getBuffValue(class AttributeBuff const&) const;
 };

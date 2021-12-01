@@ -8,6 +8,4 @@ class SavedData {
 #include "Extra/SavedDataAPI.hpp"
 public:
     virtual ~SavedData();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

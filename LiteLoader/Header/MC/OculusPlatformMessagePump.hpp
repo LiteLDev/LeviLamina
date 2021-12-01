@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_OCULUSPLATFORMMESSAGEPUMP
 #include "Extra/OculusPlatformMessagePumpAPI.hpp"
 #undef EXTRA_INCLUDE_PART_OCULUSPLATFORMMESSAGEPUMP
-namespace OculusPlatformMessagePump {
+class OculusPlatformMessagePump {
 #include "Extra/OculusPlatformMessagePumpAPI.hpp"
 
 public:
-MCAPI static std::string const mOculusAppId;
-
-
-} // namespace OculusPlatformMessagePump
+    MCAPI static std::string const mOculusAppId;
+};

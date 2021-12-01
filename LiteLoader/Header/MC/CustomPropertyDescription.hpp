@@ -4,19 +4,16 @@
 #define EXTRA_INCLUDE_PART_CUSTOMPROPERTYDESCRIPTION
 #include "Extra/CustomPropertyDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CUSTOMPROPERTYDESCRIPTION
-class CustomPropertyDescription {
+struct CustomPropertyDescription {
 #include "Extra/CustomPropertyDescriptionAPI.hpp"
 
 public:
-    MCAPI CustomPropertyDescription();
     MCAPI float getFloatMax() const;
     MCAPI float getFloatMin() const;
     MCAPI int getIntMax() const;
     MCAPI int getIntMin() const;
     MCAPI int indexOf(unsigned __int64 const&) const;
     MCAPI class CompoundTag toCompoundTag() const;
-    MCAPI ~CustomPropertyDescription();
-
 
 private:
     MCAPI void _copy(struct CustomPropertyDescription const&);

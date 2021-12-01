@@ -8,22 +8,7 @@ class ServerNetworkController {
 #include "Extra/ServerNetworkControllerAPI.hpp"
 public:
     virtual ~ServerNetworkController();
-    virtual void unk_vfn_1();
-    virtual bool isHost(class mce::UUID const&);
-    virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-
-public:
-    MCAPI ServerNetworkController(bool, class mce::UUID const&, class std::function<bool(class ServerPlayer const&, enum AbilitiesIndex)>);
+    virtual bool isDedicatedServer() const;
+    virtual bool isHost(class mce::UUID const&) const;
+    virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&) const;
 };

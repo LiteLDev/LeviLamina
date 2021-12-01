@@ -23,12 +23,11 @@ public:
     virtual bool interact(class Actor&, class Vec3 const&);
     virtual bool attack(class Actor&);
     virtual void releaseUsingItem();
-    virtual void unk_vfn_16();
+    virtual void setTrialMode(bool);
     virtual bool isInTrialMode();
     virtual void registerUpsellScreenCallback(class std::function<void(bool)>);
 
 public:
-    MCAPI GameMode(class Player&, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&, class std::function<void(void)> const&);
     MCAPI bool baseUseItem(class ItemStack&);

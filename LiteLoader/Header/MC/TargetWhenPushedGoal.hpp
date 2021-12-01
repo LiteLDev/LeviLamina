@@ -13,8 +13,8 @@ public:
     virtual void unk_vfn_3();
     virtual void start();
     virtual void stop();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
+    virtual void appendDebugInfo(std::string&) const;
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    virtual void appendDebugInfo(std::string&) const;
 };

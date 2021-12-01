@@ -9,13 +9,9 @@ class ResourcePackStackPacket : public Packet {
 #include "Extra/ResourcePackStackPacketAPI.hpp"
 public:
     virtual ~ResourcePackStackPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI ResourcePackStackPacket();
-    MCAPI ResourcePackStackPacket(std::vector<struct PackInstanceId>, std::vector<struct PackInstanceId>, class BaseGameVersion const&, bool, class Experiments const&);
 };

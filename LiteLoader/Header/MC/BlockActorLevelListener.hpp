@@ -11,10 +11,10 @@ public:
     virtual ~BlockActorLevelListener();
     virtual void unk_vfn_1();
     virtual void onSourceDestroyed(class BlockSource&);
-    virtual bool shouldTick(int /*enum SimulationType*/);
+    virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_6();
-    virtual();
+    virtual void unk_vfn_7();
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
@@ -31,17 +31,6 @@ public:
     virtual void unk_vfn_21();
     virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
     virtual void unk_vfn_23();
+    virtual void unk_vfn_24();
     virtual void onChunkUnloaded(class LevelChunk&);
-    virtual void unk_vfn_25();
-    virtual void unk_vfn_26();
-    virtual void unk_vfn_27();
-    virtual void unk_vfn_28();
-    virtual void unk_vfn_29();
-    virtual void unk_vfn_30();
-    virtual void unk_vfn_31();
-    virtual void unk_vfn_32();
-    virtual void unk_vfn_33();
-
-public:
-    MCAPI BlockActorLevelListener();
 };

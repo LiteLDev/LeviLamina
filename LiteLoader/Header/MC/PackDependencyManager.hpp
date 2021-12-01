@@ -10,5 +10,4 @@ namespace PackDependencyManager {
 MCAPI std::vector<struct PackIdVersion> getMissingDependencyIdentities(class gsl::not_null<class PackSource const*>, class PackManifest const&);
 MCAPI bool isNativeModule(std::string const&);
 
-
 } // namespace PackDependencyManager

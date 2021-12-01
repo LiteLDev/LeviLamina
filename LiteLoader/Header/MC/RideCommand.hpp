@@ -8,7 +8,7 @@ class RideCommand {
 #include "Extra/RideCommandAPI.hpp"
 public:
     virtual ~RideCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

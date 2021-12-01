@@ -9,13 +9,9 @@ class UpdateTradePacket : public Packet {
 #include "Extra/UpdateTradePacketAPI.hpp"
 public:
     virtual ~UpdateTradePacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI UpdateTradePacket();
-    MCAPI UpdateTradePacket(enum ContainerID, enum ContainerType, int, std::string const&, class CompoundTag&&, struct ActorUniqueID const&, struct ActorUniqueID const&, int, bool, bool);
 };

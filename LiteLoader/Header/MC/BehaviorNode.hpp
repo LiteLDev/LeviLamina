@@ -9,9 +9,8 @@ class BehaviorNode {
 public:
     virtual ~BehaviorNode();
     virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
+    virtual void initializeFromDefinition(class Actor&);
 
 public:
-    MCAPI BehaviorNode();
     MCAPI class BehaviorData& getBehaviorData();
 };

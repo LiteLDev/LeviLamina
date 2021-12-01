@@ -9,8 +9,5 @@ class AttackNode {
 public:
     virtual ~AttackNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI AttackNode();
+    virtual void initializeFromDefinition(class Actor&);
 };

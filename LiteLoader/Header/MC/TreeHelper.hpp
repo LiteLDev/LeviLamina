@@ -10,7 +10,7 @@ namespace TreeHelper {
 MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos const&);
 MCAPI bool isValidTreePosition(class IBlockWorldGenAPI const&, class BlockPos const&, struct TreeHelper::TreeParams const&);
 MCAPI class std::optional<class BlockPos> placeBaseBlock(class IBlockWorldGenAPI&, class BlockPos const&, std::vector<class BlockDescriptor> const&);
-MCAPI bool prepareSpawn(class IBlockWorldGenAPI&, class BlockPos const&, int, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
-
+MCAPI class std::optional<class BlockPos> placeRadialBlockGroup(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class Block const&, int, int, bool, std::vector<class BlockDescriptor> const&);
+MCAPI bool prepareSpawn(class IBlockWorldGenAPI const&, class BlockPos const&, int, std::vector<class BlockDescriptor> const&, std::vector<class BlockDescriptor> const&);
 
 } // namespace TreeHelper

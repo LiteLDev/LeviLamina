@@ -14,12 +14,9 @@ public:
     virtual void unk_vfn_3();
     virtual void start();
     virtual void stop();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual void unk_vfn_16();
-    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/);
-
-public:
-    MCAPI HideGoal(class Mob&, float, float, float, enum POIType);
+    virtual unsigned __int64 _getRepathTime() const;
+    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/) const;
 };

@@ -4,17 +4,14 @@
 #define EXTRA_INCLUDE_PART_INTERACTION
 #include "Extra/InteractionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_INTERACTION
-class Interaction {
+struct Interaction {
 #include "Extra/InteractionAPI.hpp"
 
 public:
-    MCAPI Interaction();
-    MCAPI Interaction(struct Interaction const&);
     MCAPI void addActorDefinitionIdentifierByName(std::string const&);
     MCAPI void addLevelSoundEventByName(std::string const&);
     MCAPI void setCooldown(float const&);
     MCAPI void setCooldownAfterBeingAttacked(float const&);
     MCAPI void setParticleType(std::string const&);
     MCAPI void setTransformItem(std::string const&);
-    MCAPI ~Interaction();
 };

@@ -8,7 +8,6 @@ class LootTableContext {
 #include "Extra/LootTableContextAPI.hpp"
 
 public:
-    MCAPI LootTableContext(float, class Level*, class Actor*, class Player*, class ActorDamageSource const*, float, class ItemStack const*);
     MCAPI class Actor* getEntity(enum ActorTarget) const;
     MCAPI class Actor* getKillerEntity() const;
     MCAPI class Actor* getKillerPet() const;
@@ -18,5 +17,4 @@ public:
     MCAPI class Actor* getThisEntity() const;
     MCAPI class ItemStack const* getTool() const;
     MCAPI void setOriginalItemName(std::string const&);
-    MCAPI ~LootTableContext();
 };

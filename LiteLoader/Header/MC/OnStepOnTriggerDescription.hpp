@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Types.hpp"
-#include "Types.h"
 #define EXTRA_INCLUDE_PART_ONSTEPONTRIGGERDESCRIPTION
 #include "Extra/OnStepOnTriggerDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ONSTEPONTRIGGERDESCRIPTION
@@ -10,15 +9,12 @@ class OnStepOnTriggerDescription : public BlockTriggerDescription<struct OnStepO
 #include "Extra/OnStepOnTriggerDescriptionAPI.hpp"
 public:
     virtual ~OnStepOnTriggerDescription();
-    virtual std::string const& getName();
+    virtual std::string const& getName() const;
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
     virtual ~OnStepOnTriggerDescription();
     virtual void unk_vfn_8();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
 
 public:
     MCAPI static std::string const NameID;

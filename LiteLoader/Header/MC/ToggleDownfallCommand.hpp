@@ -8,7 +8,7 @@ class ToggleDownfallCommand {
 #include "Extra/ToggleDownfallCommandAPI.hpp"
 public:
     virtual ~ToggleDownfallCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

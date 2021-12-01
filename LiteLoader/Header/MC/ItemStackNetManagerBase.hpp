@@ -8,11 +8,11 @@ class ItemStackNetManagerBase {
 #include "Extra/ItemStackNetManagerBaseAPI.hpp"
 public:
     virtual ~ItemStackNetManagerBase();
-    virtual void unk_vfn_1();
-    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId();
-    virtual bool retainSetItemStackNetIdVariant();
-    virtual bool allowInventoryTransactionManager();
-    virtual();
+    virtual bool isEnabled() const;
+    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
+    virtual bool retainSetItemStackNetIdVariant() const;
+    virtual bool allowInventoryTransactionManager() const = 0;
+    virtual void unk_vfn_5();
     virtual void unk_vfn_6();
     virtual void onContainerScreenClose();
     virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum ContainerEnumName*/, class ContainerWeakRef const&);
@@ -20,9 +20,11 @@ public:
     virtual void _initScreen(class ItemStackNetManagerScreen&);
 
 public:
-    MCAPI ItemStackNetManagerBase(class Player&, bool, bool);
     MCAPI bool isClientSide() const;
     MCAPI bool isScreenOpen() const;
 
     MCAPI static bool setPlayerContainer(class Player&, enum ContainerType, int, class ItemStack const&, class ItemStack&, class std::function<void(class ItemStack const&)> const&);
+
+private:
+    MCAPI void _pushScreen(class ContainerScreenContext);
 };

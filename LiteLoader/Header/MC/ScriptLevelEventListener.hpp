@@ -21,7 +21,4 @@ public:
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual int /*enum EventResult*/ onLevelStartLeaveGame(struct LevelStartLeaveGameEvent const&);
-
-public:
-    MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 };

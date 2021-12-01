@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_MARKETPLACESKINVALIDATOR
 #include "Extra/MarketplaceSkinValidatorAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MARKETPLACESKINVALIDATOR
-namespace MarketplaceSkinValidator {
+class MarketplaceSkinValidator {
 #include "Extra/MarketplaceSkinValidatorAPI.hpp"
 
 public:
-MCAPI static bool checkIfValid(std::string const&);
-
-
-} // namespace MarketplaceSkinValidator
+    MCAPI static bool checkIfValid(std::string const&);
+};

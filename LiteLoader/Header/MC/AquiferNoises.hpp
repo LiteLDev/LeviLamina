@@ -8,5 +8,5 @@ class AquiferNoises {
 #include "Extra/AquiferNoisesAPI.hpp"
 
 public:
-    MCAPI AquiferNoises(class std::function<class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>(int, std::vector<float> const&)>, class IRandom&);
+    MCAPI static std::unique_ptr<class AquiferNoises> make(class XoroshiroPositionalRandomFactory const&);
 };

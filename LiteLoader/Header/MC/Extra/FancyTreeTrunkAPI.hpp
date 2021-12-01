@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+public:
+class FoliageCoords;
 
 #endif

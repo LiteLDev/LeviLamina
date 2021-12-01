@@ -10,8 +10,5 @@ class ScatteredFeatureStart : public StructureStart {
 public:
     virtual ~ScatteredFeatureStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&);
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

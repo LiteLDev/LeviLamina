@@ -8,7 +8,7 @@ class DayLockCommand {
 #include "Extra/DayLockCommandAPI.hpp"
 public:
     virtual ~DayLockCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

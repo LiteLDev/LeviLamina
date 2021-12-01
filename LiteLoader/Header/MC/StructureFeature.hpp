@@ -9,14 +9,13 @@ class StructureFeature {
 public:
     virtual ~StructureFeature();
     virtual bool postProcess(class BlockSource&, class Random&, int, int);
-    virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, bool);
-    virtual bool isFeatureChunk(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int);
-    virtual int getFeatureChunkSampleHeight(class Dimension const&);
-    virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
+    virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
+    virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&)                                            = 0;
+    virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
     virtual class StructureStart* getStructureAt(int, int, int);
 
 public:
-    MCAPI StructureFeature(unsigned int);
+    MCAPI class BlockPos chunkStartAtSurfaceLevel(class IPreliminarySurfaceProvider const&, class ChunkPos, int);
     MCAPI void createBlueprints(class Dimension&, class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
     MCAPI void debugRender();
     MCAPI std::vector<class ChunkPos> findFarAwayStructures(class buffer_span<class ChunkPos>, unsigned int);
@@ -27,6 +26,7 @@ public:
     MCAPI void postProcessMobsAt(class BlockSource&, int, int, class Random&);
     MCAPI void waitForFeatureBlueprints();
 
-    MCAPI static bool findNearestFeaturePositionBySpacing(class Dimension&, class StructureFeature&, class BiomeSource const&, class BlockPos const&, class BlockPos&, int, int, int, bool, int, bool);
+    MCAPI static bool findNearestFeaturePositionBySpacing(class Dimension&, class IPreliminarySurfaceProvider const&, class StructureFeature&, class BiomeSource const&, class BlockPos const&, class BlockPos&, int, int, int, bool, int, bool);
+    MCAPI static class ChunkPos getChunkPosInSpace(class ChunkPos const&, class Random&, unsigned int, int, int, int, bool);
     MCAPI static void setRandomSeedFor(class Random&, int, int, int, unsigned int);
 };

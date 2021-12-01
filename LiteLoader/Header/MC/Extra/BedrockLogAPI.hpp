@@ -4,5 +4,6 @@
 
 #else
 // Add Member There
-
+class LogAreaFilter;
+struct LogDetails;
 #endif

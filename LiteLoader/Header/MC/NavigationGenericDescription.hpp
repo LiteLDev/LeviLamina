@@ -8,6 +8,6 @@
 class NavigationGenericDescription : public NavigationDescription {
 #include "Extra/NavigationGenericDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
     virtual ~NavigationGenericDescription();
 };

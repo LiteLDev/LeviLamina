@@ -11,16 +11,6 @@ public:
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
     virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
-    virtual void _write(class BinaryStream&);
+    virtual void _write(class BinaryStream&) const;
     virtual bool _read(class ReadOnlyBinaryStream&);
-    virtual();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-
-public:
-    MCAPI ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
 };

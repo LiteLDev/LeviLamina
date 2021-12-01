@@ -10,7 +10,4 @@ class AmphibiousMoveControl : public GenericMoveControl {
 public:
     virtual ~AmphibiousMoveControl();
     virtual void tick(class MoveControlComponent&, class Mob&);
-
-public:
-    MCAPI AmphibiousMoveControl();
 };

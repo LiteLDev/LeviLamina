@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_RAILMOVEMENT
 #include "Extra/RailMovementAPI.hpp"
 #undef EXTRA_INCLUDE_PART_RAILMOVEMENT
-namespace RailMovement {
+class RailMovement {
 #include "Extra/RailMovementAPI.hpp"
 
 public:
-MCAPI static bool getPos(class Actor&, class Vec3&, class Vec3);
-
-
-} // namespace RailMovement
+    MCAPI static bool getPos(class Actor&, class Vec3&, class Vec3);
+};

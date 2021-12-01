@@ -4,5 +4,10 @@
 
 #else
 // Add Member There
+public:
+class CachedMetaData{
+    public:
+    struct CarveEllipsoidParams;
+};
 
 #endif

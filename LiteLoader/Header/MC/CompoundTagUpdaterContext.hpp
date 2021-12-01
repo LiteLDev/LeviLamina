@@ -8,11 +8,9 @@ class CompoundTagUpdaterContext {
 #include "Extra/CompoundTagUpdaterContextAPI.hpp"
 
 public:
-    MCAPI CompoundTagUpdaterContext();
     MCAPI class CompoundTagUpdaterBuilder addUpdater(unsigned char, unsigned char, unsigned char);
     MCAPI void sortUpdaters();
     MCAPI enum CompoundTagUpdaterResult update(class CompoundTag&, unsigned int);
-
 
 private:
     MCAPI static bool comparisonPredicate(std::unique_ptr<class CompoundTagUpdater> const&, std::unique_ptr<class CompoundTagUpdater> const&);

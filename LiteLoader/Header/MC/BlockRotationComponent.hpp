@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_BLOCKROTATIONCOMPONENT
 #include "Extra/BlockRotationComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKROTATIONCOMPONENT
-class BlockRotationComponent {
+struct BlockRotationComponent {
 #include "Extra/BlockRotationComponentAPI.hpp"
 
 public:

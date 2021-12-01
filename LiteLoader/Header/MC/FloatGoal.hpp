@@ -14,10 +14,5 @@ public:
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI FloatGoal(class Mob&);
+    virtual void appendDebugInfo(std::string&) const;
 };

@@ -13,7 +13,4 @@ public:
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
-
-public:
-    MCAPI BlastFurnaceContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
 };

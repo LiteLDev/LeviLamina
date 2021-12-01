@@ -14,10 +14,5 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI KnockbackRoarGoal(class Mob&, int, int, int, int, int, int, class ActorFilterGroup const&, class ActorFilterGroup const&, class DefinitionTrigger, float);
+    virtual void appendDebugInfo(std::string&) const;
 };

@@ -9,14 +9,13 @@ class SettingsCommandPacket : public Packet {
 #include "Extra/SettingsCommandPacketAPI.hpp"
 public:
     virtual ~SettingsCommandPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI SettingsCommandPacket();
     MCAPI std::string const& getCommandString() const;
     MCAPI bool getSupressOutput() const;
 };

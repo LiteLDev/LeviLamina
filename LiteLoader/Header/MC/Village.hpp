@@ -8,7 +8,6 @@ class Village {
 #include "Extra/VillageAPI.hpp"
 
 public:
-    MCAPI Village(class Dimension&, class mce::UUID, class BlockPos const&);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const&);
     MCAPI void addAggressor(class Mob const&);
     MCAPI bool addPOI(class std::weak_ptr<class POIInstance>);
@@ -26,6 +25,7 @@ public:
     MCAPI class std::weak_ptr<class POIInstance> getClosestPOI(enum POIType, class BlockPos const&);
     MCAPI class Raid const* getRaid() const;
     MCAPI class AABB const& getRaidBounds() const;
+    MCAPI class Raid* getRaidMutable();
     MCAPI int getStanding(struct ActorUniqueID const&);
     MCAPI class mce::UUID getUniqueID() const;
     MCAPI bool hasInvalidRole(struct ActorUniqueID const&, enum DwellerRole const&);
@@ -33,6 +33,7 @@ public:
     MCAPI bool hasSpecificDweller(enum DwellerRole, struct ActorUniqueID const&) const;
     MCAPI void loadDataByKey(std::string const&, class CompoundTag const&);
     MCAPI int modifyStanding(struct ActorUniqueID const&, int);
+    MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<struct ActorUniqueID const, struct Village::DwellerData>>>> removeActorFromVillage(enum DwellerRole, struct ActorUniqueID const&);
     MCAPI void removeAllInstancesofActorFromVillage(struct ActorUniqueID const&);
     MCAPI void removeVillageSavedData();
     MCAPI void resetDwellerTimer(enum DwellerRole, struct ActorUniqueID const&);
@@ -89,6 +90,7 @@ private:
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
     MCAPI static std::string const RAIDER_CELEBRATION_EVENT;
     MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
+    MCAPI static std::string const RAID_EXPIRY_EVENT;
     MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
     MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
     MCAPI static unsigned char const RAID_MAX_SPAWN_FAILURES;
@@ -104,7 +106,6 @@ private:
     MCAPI static int const UNINITIALIZED_VILLAGE_LIFETIME_MAX_TICKS;
     MCAPI static __int64 const VILLAGER_EXPECTED_WORK_INTERVAL;
     MCAPI static int const VILLAGE_HERO_BESTOW_TIME;
-    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
     MCAPI static unsigned __int64 const VILLAGE_POI_PURGE_TIME;
     MCAPI static float const VILLAGE_RADIUS_APPROX_SCALAR;
     MCAPI static unsigned __int64 const VILLAGE_SAVE_TICK_DELAY;

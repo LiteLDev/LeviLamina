@@ -8,7 +8,6 @@ class WaterMovementComponent {
 #include "Extra/WaterMovementComponentAPI.hpp"
 
 public:
-    MCAPI WaterMovementComponent();
     MCAPI float getDragFactor() const;
     MCAPI void initFromDefinition(class Actor&);
 

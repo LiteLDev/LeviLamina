@@ -8,7 +8,6 @@ class TeleportComponent {
 #include "Extra/TeleportComponentAPI.hpp"
 
 public:
-    MCAPI TeleportComponent();
     MCAPI float getDarkTeleportChance();
     MCAPI float getLightTeleportChance();
     MCAPI int getMaxTeleportTime();

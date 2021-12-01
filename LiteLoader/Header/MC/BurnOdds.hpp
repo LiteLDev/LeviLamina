@@ -4,15 +4,13 @@
 #define EXTRA_INCLUDE_PART_BURNODDS
 #include "Extra/BurnOddsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BURNODDS
-namespace BurnOdds {
+class BurnOdds {
 #include "Extra/BurnOddsAPI.hpp"
 
 public:
-MCAPI static class BurnOdds const EASY;
-MCAPI static class BurnOdds const HARD;
-MCAPI static class BurnOdds const INSTANT;
-MCAPI static class BurnOdds const MEDIUM;
-MCAPI static class BurnOdds const NEVER;
-
-
-} // namespace BurnOdds
+    MCAPI static class BurnOdds const EASY;
+    MCAPI static class BurnOdds const HARD;
+    MCAPI static class BurnOdds const INSTANT;
+    MCAPI static class BurnOdds const MEDIUM;
+    MCAPI static class BurnOdds const NEVER;
+};

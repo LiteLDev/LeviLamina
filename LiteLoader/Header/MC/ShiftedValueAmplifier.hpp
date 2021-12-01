@@ -8,10 +8,5 @@ class ShiftedValueAmplifier {
 #include "Extra/ShiftedValueAmplifierAPI.hpp"
 public:
     virtual ~ShiftedValueAmplifier();
-    virtual float getAmount(int, float);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI ShiftedValueAmplifier(int, float);
+    virtual float getAmount(int, float) const;
 };

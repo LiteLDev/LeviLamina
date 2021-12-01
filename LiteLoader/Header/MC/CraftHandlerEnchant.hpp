@@ -14,7 +14,6 @@ public:
     virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     virtual void _postCraftRequest(bool);
 
-
 private:
     MCAPI class EnchantingContainerManagerModel& _getEnchantingModel() const;
     MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 10> const&);

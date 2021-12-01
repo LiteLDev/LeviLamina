@@ -10,7 +10,4 @@ public:
     virtual ~FlyNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
     virtual void initializeFromDefinition(class Actor&);
-
-public:
-    MCAPI FlyNode();
 };

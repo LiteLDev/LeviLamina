@@ -8,14 +8,4 @@ class ScriptEventListener {
 #include "Extra/ScriptEventListenerAPI.hpp"
 public:
     virtual ~ScriptEventListener();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
 };

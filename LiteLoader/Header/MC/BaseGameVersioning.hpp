@@ -7,11 +7,10 @@
 namespace BaseGameVersioning {
 #include "Extra/BaseGameVersioningAPI.hpp"
 
-MCAPI class BaseGameVersion const PATCH_UPGRADE_VERSION;
-MCAPI class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
+MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
+MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
 MCAPI std::vector<class BaseGameVersion> const& getAvailableBehaviorPackBaseGameVersions();
 MCAPI std::vector<class BaseGameVersion> const& getAvailableResourcePackBaseGameVersions();
 MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class WorldTemplateManager const&, class LevelData&);
-
 
 } // namespace BaseGameVersioning

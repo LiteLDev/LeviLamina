@@ -8,5 +8,6 @@ class JigsawStructureBlockTagRulesRegistry {
 #include "Extra/JigsawStructureBlockTagRulesRegistryAPI.hpp"
 
 public:
-    MCAPI ~JigsawStructureBlockTagRulesRegistry();
+    MCAPI std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const* lookupByName(std::string) const;
+    MCAPI void registerBlockTagRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockTagRule, struct std::default_delete<class StructurePoolBlockTagRule>>>>&&);
 };

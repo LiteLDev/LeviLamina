@@ -23,6 +23,8 @@ public:
     LIAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
     LIAPI static bool removeFromObjective(const std::string& objname, Player* player);
 
+    LIAPI static struct ScoreboardId& getOrCreateScoreboardId(std::string const& id);
+
     LIAPI static int getScore(const std::string& objname, const std::string& id);
     LIAPI static std::optional<int> setScore(const std::string& objname, const std::string& id, int score);
     LIAPI static std::optional<int> addScore(const std::string& objname, const std::string& id, int score);

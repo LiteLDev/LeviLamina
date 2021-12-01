@@ -7,7 +7,6 @@
 namespace MissingTextureAtlasItem {
 #include "Extra/MissingTextureAtlasItemAPI.hpp"
 
-MCAPI class TextureAtlasItem const missingTextureItem;
-
+MCAPI extern class TextureAtlasItem const missingTextureItem;
 
 } // namespace MissingTextureAtlasItem

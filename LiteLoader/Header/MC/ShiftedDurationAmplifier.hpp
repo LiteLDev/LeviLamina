@@ -9,9 +9,6 @@ class ShiftedDurationAmplifier {
 public:
     virtual ~ShiftedDurationAmplifier();
     virtual void unk_vfn_1();
-    virtual bool shouldBuff(int, int);
-    virtual int getTickInterval(int);
-
-public:
-    MCAPI ShiftedDurationAmplifier(int);
+    virtual bool shouldBuff(int, int) const;
+    virtual int getTickInterval(int) const;
 };

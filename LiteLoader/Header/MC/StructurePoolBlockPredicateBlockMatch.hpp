@@ -8,9 +8,6 @@ class StructurePoolBlockPredicateBlockMatch {
 #include "Extra/StructurePoolBlockPredicateBlockMatchAPI.hpp"
 public:
     virtual ~StructurePoolBlockPredicateBlockMatch();
-    virtual void unk_vfn_1();
-    virtual bool test(class Block const&, class Randomize&);
-
-public:
-    MCAPI StructurePoolBlockPredicateBlockMatch(class Block const&);
+    virtual bool test(class Block const&, class Randomize&) const;
+    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 };

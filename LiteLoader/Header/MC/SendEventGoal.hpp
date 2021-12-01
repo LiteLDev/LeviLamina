@@ -14,13 +14,7 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI SendEventGoal(class Mob&, std::vector<struct SendEventData> const&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI int _selectBestSpell();

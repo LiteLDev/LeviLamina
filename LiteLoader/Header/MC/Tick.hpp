@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_TICK
 #include "Extra/TickAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TICK
-namespace Tick {
+struct Tick {
 #include "Extra/TickAPI.hpp"
 
 public:
-MCAPI static struct Tick const MAX;
-
-
-} // namespace Tick
+    MCAPI static struct Tick const MAX;
+};

@@ -10,13 +10,10 @@ class NetworkPacketEventCoordinator : public NetworkHandler {
 public:
     virtual ~NetworkPacketEventCoordinator();
     virtual void _onDisable();
-    virtual();
-    virtual();
+    virtual void unk_vfn_3();
+    virtual void unk_vfn_11();
     virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual();
-    virtual();
-    virtual();
+    virtual void unk_vfn_16();
 
 public:
     MCAPI void sendPacketReceivedFrom(class PacketHeader const&, class Packet const&);

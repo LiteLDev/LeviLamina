@@ -9,8 +9,6 @@ class IContentKeyProvider {
 public:
     virtual ~IContentKeyProvider();
     virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
+    virtual bool requireEncryptedReads() const;
 };

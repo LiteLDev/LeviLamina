@@ -10,8 +10,7 @@ class IcebergFeature : public Feature {
 public:
     virtual ~IcebergFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI void carve(int, int, class BlockPos const&, class BlockSource&, bool, float, class BlockPos const&, int, int) const;

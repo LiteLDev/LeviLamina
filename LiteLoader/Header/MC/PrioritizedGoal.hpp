@@ -13,5 +13,4 @@ public:
     MCAPI bool getUsed() const;
     MCAPI void setToStart(bool);
     MCAPI void setUsed(bool);
-    MCAPI ~PrioritizedGoal();
 };

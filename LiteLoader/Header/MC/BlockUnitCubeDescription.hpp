@@ -4,16 +4,16 @@
 #define EXTRA_INCLUDE_PART_BLOCKUNITCUBEDESCRIPTION
 #include "Extra/BlockUnitCubeDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKUNITCUBEDESCRIPTION
-class BlockUnitCubeDescription {
+struct BlockUnitCubeDescription {
 #include "Extra/BlockUnitCubeDescriptionAPI.hpp"
 public:
     virtual ~BlockUnitCubeDescription();
-    virtual std::string const& getName();
-    virtual void initializeComponent(class EntityContext&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
-    virtual void unk_vfn_6();
+    virtual std::string const& getName() const;
+    virtual void initializeComponent(class EntityContext&) const;
+    virtual void initializeFromNetwork(class CompoundTag const&);
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI static std::string const NameID;

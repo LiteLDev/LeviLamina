@@ -11,11 +11,11 @@ public:
     MCAPI struct ActorUniqueID const& getEntityId() const;
     MCAPI std::string const& getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
+    MCAPI std::string const& getName(class std::function<std::string const&(struct ActorUniqueID)> const&) const;
     MCAPI struct PlayerScoreboardId const& getPlayerId() const;
     MCAPI bool isEntityType() const;
     MCAPI bool isPlayerType() const;
     MCAPI bool isValid() const;
-    MCAPI ~IdentityDefinition();
 
     MCAPI static class IdentityDefinition const Invalid;
 };

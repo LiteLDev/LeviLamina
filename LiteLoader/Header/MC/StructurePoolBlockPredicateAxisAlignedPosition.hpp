@@ -8,9 +8,6 @@ class StructurePoolBlockPredicateAxisAlignedPosition {
 #include "Extra/StructurePoolBlockPredicateAxisAlignedPositionAPI.hpp"
 public:
     virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI StructurePoolBlockPredicateAxisAlignedPosition(float, float, int, int, unsigned char);
+    virtual bool test(class Block const&, class Randomize&) const;
+    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 };

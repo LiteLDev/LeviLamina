@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_GENEDEFINITION
 #include "Extra/GeneDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GENEDEFINITION
-class GeneDefinition {
+struct GeneDefinition {
 #include "Extra/GeneDefinitionAPI.hpp"
 
 public:
     MCAPI void addGeneticVariant(struct GeneticVariant const&);
-    MCAPI ~GeneDefinition();
 };

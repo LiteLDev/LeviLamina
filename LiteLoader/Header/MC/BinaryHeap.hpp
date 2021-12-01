@@ -8,14 +8,11 @@ class BinaryHeap {
 #include "Extra/BinaryHeapAPI.hpp"
 
 public:
-    MCAPI BinaryHeap();
     MCAPI void changeCost(class PathfinderNode*, float);
     MCAPI void clear();
     MCAPI class PathfinderNode* insert(class PathfinderNode*);
     MCAPI bool isEmpty();
     MCAPI class PathfinderNode* pop();
-    MCAPI ~BinaryHeap();
-
 
 private:
     MCAPI void downHeap(int);

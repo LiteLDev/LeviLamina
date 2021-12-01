@@ -10,10 +10,7 @@ public:
     virtual ~InPackagePackSource();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual int /*enum PackOrigin*/ getPackOrigin() const;
+    virtual int /*enum PackType*/ getPackType() const;
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
-public:
-    MCAPI InPackagePackSource(class std::shared_ptr<class IInPackagePacks> const&, enum PackType);
 };

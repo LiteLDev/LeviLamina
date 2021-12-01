@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_CHUNKSLOADEDINFO
 #include "Extra/ChunksLoadedInfoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CHUNKSLOADEDINFO
-class ChunksLoadedInfo {
+struct ChunksLoadedInfo {
 #include "Extra/ChunksLoadedInfoAPI.hpp"
 
 public:

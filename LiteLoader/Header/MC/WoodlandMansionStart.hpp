@@ -10,8 +10,7 @@ public:
     virtual ~WoodlandMansionStart();
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
+    virtual int /*enum StructureFeatureType*/ getType() const;
 
 private:
     MCAPI void _create(class Dimension&, class OverworldGenerator&, class Random&, int, int);

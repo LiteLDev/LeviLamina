@@ -8,9 +8,7 @@ class PacketViolationHandler {
 #include "Extra/PacketViolationHandlerAPI.hpp"
 
 public:
-    MCAPI PacketViolationHandler();
     MCAPI enum PacketViolationResponse checkForViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const&, bool*);
-
 
 private:
     MCAPI enum PacketViolationResponse _handleViolation(enum MinecraftPacketIds, enum StreamReadResult, class NetworkIdentifier const&, bool*);

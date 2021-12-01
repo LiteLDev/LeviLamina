@@ -9,5 +9,4 @@ namespace VanillaDimensionFactory {
 
 MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level&, class Scheduler&>&);
 
-
 } // namespace VanillaDimensionFactory

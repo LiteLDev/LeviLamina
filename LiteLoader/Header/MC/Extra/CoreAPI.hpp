@@ -4,5 +4,17 @@
 
 #else
 // Add Member There
+class File;
+class FileOpenMode;
+class FileSystemImpl;
+template <typename T>
+class PathBuffer;
+template <typename T, int i>
+class StackString;
+class Result;
+class StringSpan;
+class SingleThreadedLock;
+template <typename T, typename T2>
+class Subject;
 
 #endif

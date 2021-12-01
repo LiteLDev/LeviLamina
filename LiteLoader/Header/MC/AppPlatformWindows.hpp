@@ -10,7 +10,6 @@ class AppPlatformWindows {
 public:
     MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
-
 protected:
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 };

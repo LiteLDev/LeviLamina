@@ -10,11 +10,7 @@ class NetherFossilFeature : public Feature {
 public:
     virtual ~NetherFossilFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI NetherFossilFeature(std::vector<class Block const*>&&, bool);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI static std::string const* const const STRUCTURE_LOCATION_FOSSIL;

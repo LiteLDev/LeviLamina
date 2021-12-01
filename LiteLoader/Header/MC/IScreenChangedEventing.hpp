@@ -8,6 +8,4 @@ class IScreenChangedEventing {
 #include "Extra/IScreenChangedEventingAPI.hpp"
 public:
     virtual ~IScreenChangedEventing();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

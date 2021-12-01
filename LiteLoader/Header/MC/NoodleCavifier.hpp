@@ -8,8 +8,7 @@ class NoodleCavifier {
 #include "Extra/NoodleCavifierAPI.hpp"
 
 public:
-    MCAPI NoodleCavifier(class NoodleCavifierNoises const&, short);
     MCAPI float cavify(float, class BlockPos const&) const;
-    MCAPI void fillNoiseAtPos(class Vec3 const&, int);
+    MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);
     MCAPI class std::array<class NoiseCellInterpolator*, 4> getInterpolators(int, int);
 };

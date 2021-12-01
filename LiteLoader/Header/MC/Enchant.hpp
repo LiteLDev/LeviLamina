@@ -8,23 +8,22 @@ class Enchant {
 #include "Extra/EnchantAPI.hpp"
 public:
     virtual ~Enchant();
-    virtual bool isCompatibleWith(int /*enum Enchant::Type*/);
-    virtual int getMinCost(int);
-    virtual int getMaxCost(int);
+    virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
+    virtual int getMinCost(int) const;
+    virtual int getMaxCost(int) const;
     virtual void unk_vfn_4();
-    virtual int getMaxLevel();
-    virtual int getDamageProtection(int, class ActorDamageSource const&);
-    virtual float getDamageBonus(int, class Actor const&);
-    virtual void doPostAttack(class Actor&, class Actor&, int);
-    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int);
+    virtual int getMaxLevel() const;
+    virtual int getDamageProtection(int, class ActorDamageSource const&) const;
+    virtual float getDamageBonus(int, class Actor const&) const;
+    virtual void doPostAttack(class Actor&, class Actor&, int) const;
+    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
-    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/);
+    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/) const;
 
 public:
-    MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI std::string getDescriptionId() const;
     MCAPI class HashedString const& getStringId() const;
     MCAPI bool isAvailable() const;

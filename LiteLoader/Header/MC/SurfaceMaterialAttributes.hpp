@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_SURFACEMATERIALATTRIBUTES
 #include "Extra/SurfaceMaterialAttributesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SURFACEMATERIALATTRIBUTES
-class SurfaceMaterialAttributes {
+struct SurfaceMaterialAttributes {
 #include "Extra/SurfaceMaterialAttributesAPI.hpp"
 
 public:
     MCAPI struct SurfaceMaterialAttributes& operator=(struct SurfaceMaterialAttributes&&);
-    MCAPI SurfaceMaterialAttributes(struct SurfaceMaterialAttributes&&);
-    MCAPI ~SurfaceMaterialAttributes();
 };

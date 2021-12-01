@@ -9,13 +9,9 @@ class NetworkChunkPublisherUpdatePacket : public Packet {
 #include "Extra/NetworkChunkPublisherUpdatePacketAPI.hpp"
 public:
     virtual ~NetworkChunkPublisherUpdatePacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI NetworkChunkPublisherUpdatePacket();
-    MCAPI NetworkChunkPublisherUpdatePacket(class BlockPos const&, unsigned int);
 };

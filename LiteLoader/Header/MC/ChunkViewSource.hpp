@@ -15,15 +15,14 @@ public:
     virtual bool postProcess(class ChunkViewSource&);
     virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     virtual void unk_vfn_19();
     virtual void clearDeletedEntities();
     virtual void unk_vfn_22();
 
 public:
-    MCAPI ChunkViewSource(class ChunkSource&, enum ChunkSource::LoadMode);
-    MCAPI ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk>>&, struct Bounds const&);
     MCAPI void clear();
+    MCAPI void clearEntryAtChunkPos(class ChunkPos const&);
     MCAPI std::vector<class LevelChunkBlockActorAccessToken> enableBlockEntityAccess();
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>>& getArea();
     MCAPI void move(struct Bounds const&, bool, class std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);

@@ -7,7 +7,6 @@
 class EnderChestBlockActor {
 #include "Extra/EnderChestBlockActorAPI.hpp"
 
-
 private:
     MCAPI static int const ITEMS_SIZE;
 };

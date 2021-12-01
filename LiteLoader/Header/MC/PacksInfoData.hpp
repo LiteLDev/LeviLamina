@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_PACKSINFODATA
 #include "Extra/PacksInfoDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PACKSINFODATA
-class PacksInfoData {
+struct PacksInfoData {
 #include "Extra/PacksInfoDataAPI.hpp"
 
 public:

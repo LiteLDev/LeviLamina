@@ -13,7 +13,4 @@ public:
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual void unk_vfn_16();
-
-public:
-    MCAPI MoveToLavaGoal(class Mob&, float, int, int, int, float);
 };

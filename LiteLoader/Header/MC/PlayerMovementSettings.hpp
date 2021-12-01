@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_PLAYERMOVEMENTSETTINGS
 #include "Extra/PlayerMovementSettingsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PLAYERMOVEMENTSETTINGS
-namespace PlayerMovementSettings {
+struct PlayerMovementSettings {
 #include "Extra/PlayerMovementSettingsAPI.hpp"
 
 public:
-MCAPI static struct PlayerMovementSettings const INVALID;
-MCAPI static struct PlayerMovementSettings getDefault();
-
-
-} // namespace PlayerMovementSettings
+    MCAPI static struct PlayerMovementSettings const INVALID;
+    MCAPI static struct PlayerMovementSettings getDefault();
+};

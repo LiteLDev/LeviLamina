@@ -24,6 +24,7 @@
 #include <utility>
 #include <vector>
 #include <variant>
+#include <mutex>
 
 #include <gsl/gsl>
 #include <entt/entt.hpp>

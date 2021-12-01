@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_FOGVOLUMETRICDENSITYSETTING
 #include "Extra/FogVolumetricDensitySettingAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FOGVOLUMETRICDENSITYSETTING
-namespace FogVolumetricDensitySetting {
+struct FogVolumetricDensitySetting {
 #include "Extra/FogVolumetricDensitySettingAPI.hpp"
 
 public:
-MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
-MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
-MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
-
-
-} // namespace FogVolumetricDensitySetting
+    MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
+    MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
+    MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
+};

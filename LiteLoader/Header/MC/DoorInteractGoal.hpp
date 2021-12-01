@@ -14,13 +14,7 @@ public:
     virtual void start();
     virtual void unk_vfn_5();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI DoorInteractGoal(class Mob&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI static class DoorBlock const* _findBlockingDoorAtPos(class BlockPos const&, class Mob const&, class Path*, enum Direction::Type&, enum Direction::Type&);

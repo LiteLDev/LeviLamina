@@ -8,7 +8,7 @@ class XPCommand {
 #include "Extra/XPCommandAPI.hpp"
 public:
     virtual ~XPCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

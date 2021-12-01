@@ -9,5 +9,4 @@ class CompoundTagUpdater {
 
 public:
     MCAPI bool update(class CompoundTag&) const;
-    MCAPI ~CompoundTagUpdater();
 };

@@ -8,5 +8,4 @@ class IPacketHandlerDispatcher {
 #include "Extra/IPacketHandlerDispatcherAPI.hpp"
 public:
     virtual ~IPacketHandlerDispatcher();
-    virtual void unk_vfn_1();
 };

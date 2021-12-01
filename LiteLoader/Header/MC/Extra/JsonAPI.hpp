@@ -4,5 +4,6 @@
 
 #else
 // Add Member There
+class Value;
 
 #endif

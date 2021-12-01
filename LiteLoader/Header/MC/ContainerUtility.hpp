@@ -9,5 +9,4 @@ namespace ContainerUtility {
 
 MCAPI class ContainerComponent* getNotNoneTypeContainerComponentFromActor(class Actor*);
 
-
 } // namespace ContainerUtility

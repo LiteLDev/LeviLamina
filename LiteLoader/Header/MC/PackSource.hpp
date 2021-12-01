@@ -10,9 +10,8 @@ public:
     virtual void unk_vfn_0();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    virtual int /*enum PackOrigin*/ getPackOrigin() const;
+    virtual int /*enum PackType*/ getPackType() const;
 
 public:
     MCAPI class Pack* fetchPack(struct PackIdVersion const&);

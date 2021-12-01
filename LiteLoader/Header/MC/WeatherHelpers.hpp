@@ -11,5 +11,4 @@ MCAPI class BlockPos const getTopRainBlockPos(class LevelChunk*, class BlockPos 
 MCAPI bool shouldFreeze(class BlockSource&, class BlockPos const&, bool);
 MCAPI bool shouldSnow(class BlockSource&, class BlockPos const&);
 
-
 } // namespace WeatherHelpers

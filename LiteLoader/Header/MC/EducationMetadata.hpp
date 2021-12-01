@@ -4,10 +4,10 @@
 #define EXTRA_INCLUDE_PART_EDUCATIONMETADATA
 #include "Extra/EducationMetadataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_EDUCATIONMETADATA
-class EducationMetadata {
+struct EducationMetadata {
 #include "Extra/EducationMetadataAPI.hpp"
 
 public:
-    MCAPI EducationMetadata();
-    MCAPI ~EducationMetadata();
+    MCAPI static class std::unordered_map<std::string, enum EducationMetadata::ContentType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum EducationMetadata::ContentType>>> const STRING_TO_CONTENT_TYPE;
+    MCAPI static class std::unordered_map<std::string, enum EducationMetadata::UserType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum EducationMetadata::UserType>>> const STRING_TO_USER_TYPE;
 };

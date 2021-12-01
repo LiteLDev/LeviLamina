@@ -9,8 +9,5 @@ class ActivateToolNode {
 public:
     virtual ~ActivateToolNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI ActivateToolNode();
+    virtual void initializeFromDefinition(class Actor&);
 };

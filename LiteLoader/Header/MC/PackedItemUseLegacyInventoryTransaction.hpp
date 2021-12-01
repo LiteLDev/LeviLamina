@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
 #include "Extra/PackedItemUseLegacyInventoryTransactionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PACKEDITEMUSELEGACYINVENTORYTRANSACTION
-class PackedItemUseLegacyInventoryTransaction {
+struct PackedItemUseLegacyInventoryTransaction {
 #include "Extra/PackedItemUseLegacyInventoryTransactionAPI.hpp"
 
 public:
     MCAPI struct PackedItemUseLegacyInventoryTransaction& operator=(struct PackedItemUseLegacyInventoryTransaction&&);
-    MCAPI PackedItemUseLegacyInventoryTransaction(struct PackedItemUseLegacyInventoryTransaction&&);
-    MCAPI ~PackedItemUseLegacyInventoryTransaction();
 };

@@ -10,12 +10,12 @@ class CoralCrustFeature : public Feature {
 public:
     virtual ~CoralCrustFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;
     MCAPI class BlockPos _getOffsetFromRot(int, int) const;
+    MCAPI void _placeCoral(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, int) const;
     MCAPI void _placeCoralBase(class BlockSource&, class BlockPos const&, class Random&, class LegacyStructureTemplate&, class LegacyStructureSettings&) const;
     MCAPI void _placeSideDecorations(class BlockSource&, class BlockPos const&, class Random&, unsigned char) const;
 };

@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_BYTESDATAINPUT
 #include "Extra/BytesDataInputAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BYTESDATAINPUT
-namespace BytesDataInput {
+class BytesDataInput {
 #include "Extra/BytesDataInputAPI.hpp"
-
-
-}
+};

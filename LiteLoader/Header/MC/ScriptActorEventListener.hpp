@@ -36,10 +36,4 @@ public:
     virtual void unk_vfn_26();
     virtual int /*enum EventResult*/ onActorAddEffect(struct ActorAddEffectEvent const&);
     virtual int /*enum EventResult*/ onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
-    virtual void unk_vfn_29();
-    virtual void unk_vfn_30();
-    virtual void unk_vfn_31();
-
-public:
-    MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 };

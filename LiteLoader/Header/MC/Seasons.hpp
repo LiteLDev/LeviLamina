@@ -8,8 +8,6 @@ class Seasons {
 #include "Extra/SeasonsAPI.hpp"
 
 public:
-    MCAPI Seasons(class Dimension&);
     MCAPI void postProcess(class LevelChunk&, class BlockSource&, class ChunkPos const&);
     MCAPI void tick();
-    MCAPI ~Seasons();
 };

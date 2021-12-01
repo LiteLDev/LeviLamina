@@ -13,8 +13,6 @@ public:
     MCAPI std::string const& getMessage(struct DenyList::Entry const&) const;
     MCAPI bool isBlocked(struct DenyList::Entry const&) const;
     MCAPI void removeEntry(struct DenyList::Entry const&);
-    MCAPI ~DenyList();
-
 
 private:
     MCAPI bool isBlocked(struct DenyList::Entry const&, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry>>>&) const;

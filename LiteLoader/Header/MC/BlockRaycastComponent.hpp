@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_BLOCKRAYCASTCOMPONENT
 #include "Extra/BlockRaycastComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKRAYCASTCOMPONENT
-class BlockRaycastComponent {
+struct BlockRaycastComponent {
 #include "Extra/BlockRaycastComponentAPI.hpp"
 
 public:

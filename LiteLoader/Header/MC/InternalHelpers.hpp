@@ -7,8 +7,7 @@
 namespace InternalHelpers {
 #include "Extra/InternalHelpersAPI.hpp"
 
-MCAPI class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> lastRenderTime;
+MCAPI extern class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>> lastRenderTime;
 MCAPI std::string toString(enum MovePredictionType);
-
 
 } // namespace InternalHelpers

@@ -8,9 +8,4 @@ class EmptyLevelGameplayHandler {
 #include "Extra/EmptyLevelGameplayHandlerAPI.hpp"
 public:
     virtual ~EmptyLevelGameplayHandler();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
 };

@@ -13,6 +13,7 @@ public:
     }
     inline virtual ~MyPkt() {
     }
+
     virtual int getId() const {
         return pid;
     }
@@ -22,7 +23,12 @@ public:
     virtual void write(BinaryStream& bs) const {
         bs.getRaw().append(view);
     }
+    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) {
+        throw("TODO in MyPkt::_read()");
+        return 0;
+    } 
     virtual void dummyread() {
+        throw("TODO in MyPkt::dummyread()");
     }
     virtual bool disallowBatching() const {
         return !batching;

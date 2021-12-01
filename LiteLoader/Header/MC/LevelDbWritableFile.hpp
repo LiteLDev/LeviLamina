@@ -12,7 +12,4 @@ public:
     virtual class leveldb::Status Close();
     virtual class leveldb::Status Flush();
     virtual class leveldb::Status Sync();
-
-public:
-    MCAPI LevelDbWritableFile(std::string, class Core::File&&);
 };

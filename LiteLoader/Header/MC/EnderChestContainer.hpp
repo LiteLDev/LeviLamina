@@ -20,7 +20,5 @@ public:
     virtual void unk_vfn_31();
 
 public:
-    MCAPI EnderChestContainer();
-
     MCAPI static int const ITEMS_SIZE;
 };

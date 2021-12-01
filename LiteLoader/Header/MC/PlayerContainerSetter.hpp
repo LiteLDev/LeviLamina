@@ -11,7 +11,4 @@ public:
     virtual void setArmor(int, class ItemStack const&);
     virtual void setOffhandSlot(class ItemStack const&);
     virtual void setPlayerUIItem(int, class ItemStack const&);
-
-public:
-    MCAPI PlayerContainerSetter(class Player&);
 };

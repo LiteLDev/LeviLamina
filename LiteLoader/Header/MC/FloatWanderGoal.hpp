@@ -14,13 +14,7 @@ public:
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI FloatWanderGoal(class Mob&, float, float, float, bool, bool, struct FloatRange);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI bool _canReach(class Vec3 const&, float);

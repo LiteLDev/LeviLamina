@@ -9,6 +9,7 @@ class FogCommandComponent {
 
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI std::vector<std::string> getFogSettingsStack() const;
     MCAPI bool popFogSetting(std::string const&);
     MCAPI bool pushFogSetting(std::string const&, std::string const&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);

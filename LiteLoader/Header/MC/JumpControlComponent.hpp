@@ -8,7 +8,6 @@ class JumpControlComponent {
 #include "Extra/JumpControlComponentAPI.hpp"
 
 public:
-    MCAPI JumpControlComponent();
     MCAPI int getAnimationDuration() const;
     MCAPI float getDistanceScale() const;
     MCAPI int getJumpDelay(class Mob const&) const;
@@ -24,7 +23,6 @@ public:
     MCAPI void setJumping(bool);
     MCAPI void setSwimming(bool);
     MCAPI void update(class Mob&);
-
 
 private:
     MCAPI float _getDelayInternal() const;

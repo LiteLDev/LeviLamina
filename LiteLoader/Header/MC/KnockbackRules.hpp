@@ -14,5 +14,4 @@ MCAPI bool isKnockbackResistant(class Actor const&);
 MCAPI bool shouldApplyKnockback(class Mob const&);
 MCAPI bool useLegacyKnockback(class Level const&);
 
-
 } // namespace KnockbackRules

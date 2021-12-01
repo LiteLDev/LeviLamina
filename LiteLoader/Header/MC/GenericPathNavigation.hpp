@@ -11,7 +11,7 @@ public:
     virtual ~GenericPathNavigation();
     virtual void initializeInternal(class Mob&, struct NavigationDescription*);
     virtual void tick(class NavigationComponent&, class Mob&);
-    virtual class Vec3 getTempMobPos(class Mob const&);
+    virtual class Vec3 getTempMobPos(class Mob const&) const;
     virtual void stop(class NavigationComponent&, class Mob&);
     virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     virtual void updatePath(class NavigationComponent&, class Mob&);

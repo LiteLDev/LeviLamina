@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_SCRIPTDIMENSIONBINDERCOMPONENT
 #include "Extra/ScriptDimensionBinderComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SCRIPTDIMENSIONBINDERCOMPONENT
-namespace ScriptDimensionBinderComponent {
+class ScriptDimensionBinderComponent {
 #include "Extra/ScriptDimensionBinderComponentAPI.hpp"
 
 public:
-MCAPI static std::string const TAG;
-
-
-} // namespace ScriptDimensionBinderComponent
+    MCAPI static std::string const TAG;
+};

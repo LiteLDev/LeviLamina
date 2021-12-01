@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_TICKINGAREADESCRIPTION
 #include "Extra/TickingAreaDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TICKINGAREADESCRIPTION
-class TickingAreaDescription {
+struct TickingAreaDescription {
 #include "Extra/TickingAreaDescriptionAPI.hpp"
 
 public:
     MCAPI std::string asString() const;
-    MCAPI ~TickingAreaDescription();
 };

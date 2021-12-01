@@ -8,11 +8,11 @@ class PlanterItemComponent {
 #include "Extra/PlanterItemComponentAPI.hpp"
 public:
     virtual ~PlanterItemComponent();
-    virtual void unk_vfn_1();
+    virtual bool isNetworkComponent() const;
     virtual void unk_vfn_2();
-    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:

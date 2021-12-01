@@ -11,10 +11,10 @@ public:
     virtual void init(struct Bounds const&, bool);
     virtual void tick(struct Tick const&, class BlockSource&, bool);
     virtual void tickSeasons(class BlockSource&, class Random&);
-    virtual class AutomaticID<class Dimension, int> getDimensionId();
-    virtual struct Bounds const& getBounds();
-    virtual bool isCircle();
-    virtual bool isDoneLoading();
+    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    virtual struct Bounds const& getBounds() const;
+    virtual bool isCircle() const;
+    virtual bool isDoneLoading() const;
     virtual bool checkInitialLoadDone();
     virtual float getInitialLoadPercentage();
     virtual void move(struct Bounds const&);
@@ -22,9 +22,7 @@ public:
     virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
 
 public:
-    MCAPI TickingAreaView(class ChunkSource&);
     MCAPI void unregisterChunkBuildOrderPolicies(class ChunkBuildOrderPolicyBase&);
-
 
 private:
     MCAPI void _tickChunk(struct Tick const&, class BlockSource&, class Level&, class ChunkPos const&);

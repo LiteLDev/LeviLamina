@@ -8,5 +8,5 @@ class NoodleCavifierNoises {
 #include "Extra/NoodleCavifierNoisesAPI.hpp"
 
 public:
-    MCAPI NoodleCavifierNoises(class std::function<class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>(int, std::vector<float> const&)>&);
+    MCAPI static std::unique_ptr<class NoodleCavifierNoises> make(class XoroshiroPositionalRandomFactory const&);
 };

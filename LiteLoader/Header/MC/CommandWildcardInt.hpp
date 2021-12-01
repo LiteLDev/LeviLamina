@@ -8,7 +8,6 @@ class CommandWildcardInt {
 #include "Extra/CommandWildcardIntAPI.hpp"
 
 public:
-    MCAPI CommandWildcardInt();
     MCAPI int getValue() const;
     MCAPI bool isWildcard() const;
 };

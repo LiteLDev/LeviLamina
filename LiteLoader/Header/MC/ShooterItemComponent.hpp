@@ -8,16 +8,14 @@ class ShooterItemComponent {
 #include "Extra/ShooterItemComponentAPI.hpp"
 public:
     virtual ~ShooterItemComponent();
-    virtual bool checkComponentDataForContentErrors();
+    virtual bool checkComponentDataForContentErrors() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
-    MCAPI ShooterItemComponent(class ComponentItem*);
-    MCAPI ShooterItemComponent(class ShooterItemComponent const&);
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
     MCAPI bool use(class ItemStack&, class Player&) const;
 

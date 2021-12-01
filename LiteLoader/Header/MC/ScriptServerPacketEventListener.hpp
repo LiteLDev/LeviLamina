@@ -9,7 +9,4 @@ class ScriptServerPacketEventListener {
 public:
     virtual ~ScriptServerPacketEventListener();
     virtual int /*enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
-
-public:
-    MCAPI ScriptServerPacketEventListener(class MinecraftServerScriptEngine&);
 };

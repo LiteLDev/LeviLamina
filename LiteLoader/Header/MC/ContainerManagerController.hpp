@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_CONTAINERMANAGERCONTROLLER
 #include "Extra/ContainerManagerControllerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CONTAINERMANAGERCONTROLLER
-namespace ContainerManagerController {
+class ContainerManagerController {
 #include "Extra/ContainerManagerControllerAPI.hpp"
 
 public:
-MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_DESTINATION;
-MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_ORIGIN;
-
-
-} // namespace ContainerManagerController
+    MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_DESTINATION;
+    MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_ORIGIN;
+};

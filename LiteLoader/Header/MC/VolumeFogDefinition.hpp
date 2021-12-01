@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_VOLUMEFOGDEFINITION
 #include "Extra/VolumeFogDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VOLUMEFOGDEFINITION
-namespace VolumeFogDefinition {
+struct VolumeFogDefinition {
 #include "Extra/VolumeFogDefinitionAPI.hpp"
 
 public:
-MCAPI static std::string const NAME;
-MCAPI static void bindType();
-
-
-} // namespace VolumeFogDefinition
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
+};

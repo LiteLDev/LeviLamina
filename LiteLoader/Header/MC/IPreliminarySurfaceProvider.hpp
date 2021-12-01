@@ -8,5 +8,4 @@ class IPreliminarySurfaceProvider {
 #include "Extra/IPreliminarySurfaceProviderAPI.hpp"
 public:
     virtual ~IPreliminarySurfaceProvider();
-    virtual void unk_vfn_1();
 };

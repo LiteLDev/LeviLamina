@@ -8,8 +8,4 @@ class I18nObserver {
 #include "Extra/I18nObserverAPI.hpp"
 public:
     virtual ~I18nObserver();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
 };

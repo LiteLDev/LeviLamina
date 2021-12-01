@@ -10,8 +10,8 @@ class CommandBlockActor : public BlockActor {
 public:
     virtual ~CommandBlockActor();
     virtual void load(class Level&, class CompoundTag const&, class DataLoadHelper&);
-    virtual bool save(class CompoundTag&);
-    virtual void saveBlockData(class CompoundTag&, class BlockSource&);
+    virtual bool save(class CompoundTag&) const;
+    virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
     virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     virtual void onCustomTagLoadDone(class BlockSource&);
     virtual void tick(class BlockSource&);
@@ -25,9 +25,9 @@ public:
     virtual void unk_vfn_17();
     virtual void unk_vfn_18();
     virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    virtual void unk_vfn_21();
+    virtual std::string const& getCustomName() const;
     virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
-    virtual std::string getName();
+    virtual std::string getName() const;
     virtual void setCustomName(std::string const&);
     virtual std::string getImmersiveReaderText(class BlockSource&);
     virtual void unk_vfn_26();
@@ -40,7 +40,7 @@ public:
     virtual void unk_vfn_33();
     virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    virtual bool _playerCanUpdate(class Player const&);
+    virtual bool _playerCanUpdate(class Player const&) const;
 
 public:
     MCAPI class BaseCommandBlock& getBaseCommandBlock();
@@ -61,7 +61,6 @@ public:
     MCAPI void setSuccessCount(int);
     MCAPI void updateBlock(class BlockSource&, std::string const&, std::string const&, enum CommandBlockMode, bool, bool, bool, int, bool);
     MCAPI bool wasConditionMet();
-
 
 private:
     MCAPI void _setAutomatic(class BlockSource&, bool, enum CommandBlockMode);

@@ -8,9 +8,9 @@ class NetworkPeer {
 #include "Extra/NetworkPeerAPI.hpp"
 public:
     virtual ~NetworkPeer();
-    virtual void sendPacket(std::string const&, int /*enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum Compressibility*/);
-    virtual int /*enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const&);
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus();
+    virtual void sendPacket(std::string const&, int /*enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum Compressibility*/)                                                                                                           = 0;
+    virtual int /*enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const&) = 0;
+    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const                                                                                                                                                                              = 0;
     virtual void update();
     virtual void flush(class std::function<void(void)>&&);
 };

@@ -8,5 +8,5 @@ class GetSpawnPointCommand {
 #include "Extra/GetSpawnPointCommandAPI.hpp"
 public:
     virtual ~GetSpawnPointCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 };

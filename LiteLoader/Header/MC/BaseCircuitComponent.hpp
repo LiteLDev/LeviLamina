@@ -8,14 +8,14 @@ class BaseCircuitComponent {
 #include "Extra/BaseCircuitComponentAPI.hpp"
 public:
     virtual ~BaseCircuitComponent();
-    virtual int getStrength();
-    virtual void unk_vfn_2();
+    virtual int getStrength() const;
+    virtual int getDirection() const;
     virtual void setStrength(int);
-    virtual void unk_vfn_4();
+    virtual void setDirection(unsigned char);
     virtual void setConsumePowerAnyDirection(bool);
-    virtual bool canConsumePowerAnyDirection();
+    virtual bool canConsumePowerAnyDirection() const;
     virtual void unk_vfn_7();
-    virtual bool canStopPower();
+    virtual bool canStopPower() const;
     virtual void setStopPower(bool);
     virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
@@ -25,16 +25,12 @@ public:
     virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
     virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
+    virtual bool isHalfPulse() const;
     virtual bool hasSource(class BaseCircuitComponent&);
     virtual void unk_vfn_20();
-    virtual void unk_vfn_21();
-    virtual int /*enum CircuitComponentType*/ getCircuitComponentType();
-    virtual int /*enum CircuitComponentType*/ getCircuitComponentGroupType();
-
-public:
-    MCAPI BaseCircuitComponent();
-
+    virtual bool isSecondaryPowered() const;
+    virtual int /*enum CircuitComponentType*/ getCircuitComponentType() const;
+    virtual int /*enum CircuitComponentType*/ getCircuitComponentGroupType() const;
 
 protected:
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int, bool, int);

@@ -8,10 +8,10 @@ class ServerContentKeyProvider {
 #include "Extra/ServerContentKeyProviderAPI.hpp"
 public:
     virtual ~ServerContentKeyProvider();
-    virtual std::string getContentKey(class ContentIdentity const&);
+    virtual std::string getContentKey(class ContentIdentity const&) const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual bool canAccess(class ContentIdentity const&) const;
 };

@@ -25,16 +25,14 @@ public:
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     virtual void compact();
     virtual void flushPendingWrites();
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
-    virtual void unk_vfn_19();
-    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const& getStorage();
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
+    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const* getChunkMap();
+    virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk>>>> const& getStorage() const;
     virtual void clearDeletedEntities();
-    virtual void unk_vfn_22();
+    virtual bool canCreateViews() const;
     virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
 
 public:
-    MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
-    MCAPI ChunkSource(class Dimension*, int);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
     MCAPI class GridArea<class std::shared_ptr<class LevelChunk>> createEmptyView(enum ChunkSource::LoadMode, bool, class std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)>);
     MCAPI class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
@@ -43,7 +41,6 @@ public:
     MCAPI class Dimension& getDimension() const;
     MCAPI class std::shared_ptr<class LevelChunk> getGeneratedChunk(class ChunkPos const&);
     MCAPI class Level& getLevel() const;
-
 
 protected:
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const&, bool);

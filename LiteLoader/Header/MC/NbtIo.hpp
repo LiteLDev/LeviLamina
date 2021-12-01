@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_NBTIO
 #include "Extra/NbtIoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NBTIO
-namespace NbtIo {
+class NbtIo {
 #include "Extra/NbtIoAPI.hpp"
 
 public:
-MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput&);
-MCAPI static void write(class CompoundTag const*, class IDataOutput&);
-
-
-} // namespace NbtIo
+    MCAPI static std::unique_ptr<class CompoundTag> read(class IDataInput&);
+    MCAPI static void write(class CompoundTag const*, class IDataOutput&);
+};

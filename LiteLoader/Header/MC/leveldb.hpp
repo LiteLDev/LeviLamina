@@ -55,5 +55,4 @@ MCAPI int VarintLength(unsigned __int64);
 MCAPI class leveldb::Status WriteStringToFile(class leveldb::Env*, class leveldb::Slice const&, std::string const&);
 MCAPI class leveldb::Status WriteStringToFileSync(class leveldb::Env*, class leveldb::Slice const&, std::string const&);
 
-
 } // namespace leveldb

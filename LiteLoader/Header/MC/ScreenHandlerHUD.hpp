@@ -8,9 +8,5 @@ class ScreenHandlerHUD {
 #include "Extra/ScreenHandlerHUDAPI.hpp"
 public:
     virtual ~ScreenHandlerHUD();
-    virtual void unk_vfn_1();
     virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
 };

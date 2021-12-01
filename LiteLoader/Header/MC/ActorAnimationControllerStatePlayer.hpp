@@ -13,13 +13,12 @@ public:
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual bool hasAnimationFinished() const;
     virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    virtual int /*enum ActorAnimationType*/ getAnimationType() const;
+    virtual class HashedString const& getRawName() const;
 
 public:
-    MCAPI ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&);
     MCAPI bool allAnimationsFinished() const;
     MCAPI bool anyAnimationsFinished() const;
 };

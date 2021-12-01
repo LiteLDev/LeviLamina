@@ -8,7 +8,6 @@ class LookControlComponent {
 #include "Extra/LookControlComponentAPI.hpp"
 
 public:
-    MCAPI LookControlComponent();
     MCAPI bool getHasWantedRotation() const;
     MCAPI class Vec3 getWantedPosition() const;
     MCAPI class LookControlComponent& operator=(class LookControlComponent&&);

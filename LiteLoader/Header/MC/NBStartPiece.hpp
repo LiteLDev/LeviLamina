@@ -10,10 +10,7 @@ class NBStartPiece : public NBBridgeCrossing {
 public:
     virtual ~NBStartPiece();
     virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void unk_vfn_6();
     virtual void unk_vfn_10();
-
-public:
-    MCAPI NBStartPiece(class Random&, int, int);
 };

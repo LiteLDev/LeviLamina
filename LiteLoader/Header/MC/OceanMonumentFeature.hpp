@@ -9,12 +9,10 @@ class OceanMonumentFeature : public StructureFeature {
 #include "Extra/OceanMonumentFeatureAPI.hpp"
 public:
     virtual ~OceanMonumentFeature();
-    virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, bool);
-    virtual bool isFeatureChunk(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int);
+    virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
+    virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
     virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
 public:
-    MCAPI OceanMonumentFeature(unsigned int);
-
     MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 };

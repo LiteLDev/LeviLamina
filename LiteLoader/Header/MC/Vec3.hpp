@@ -17,6 +17,7 @@ public:
     MCAPI class Vec3 floor(float) const;
     MCAPI bool isNan() const;
     MCAPI float maxComponent() const;
+    MCAPI class Vec3 operator+(class Vec3 const&);
     MCAPI class Vec3 operator-(class Vec3 const&);
     MCAPI class Vec3 normalized() const;
     MCAPI std::string toString() const;

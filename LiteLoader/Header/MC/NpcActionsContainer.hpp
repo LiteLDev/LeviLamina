@@ -4,12 +4,14 @@
 #define EXTRA_INCLUDE_PART_NPCACTIONSCONTAINER
 #include "Extra/NpcActionsContainerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NPCACTIONSCONTAINER
-class NpcActionsContainer {
+struct NpcActionsContainer {
 #include "Extra/NpcActionsContainerAPI.hpp"
 
 public:
+    MCAPI std::vector<std::unique_ptr<class NpcAction>> cloneActions() const;
     MCAPI class NpcAction* getActionAt(unsigned __int64);
     MCAPI unsigned __int64 getActionCount() const;
+    MCAPI std::vector<std::unique_ptr<class NpcAction>>& getActions();
+    MCAPI std::vector<std::unique_ptr<class NpcAction>> const& getActions() const;
     MCAPI int getUrlCount() const;
-    MCAPI ~NpcActionsContainer();
 };

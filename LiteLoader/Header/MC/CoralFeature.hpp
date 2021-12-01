@@ -10,10 +10,15 @@ class CoralFeature : public Feature {
 public:
     virtual ~CoralFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
+    MCAPI void _buildHand(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, class gsl::not_null<class Block const*>) const;
+    MCAPI void _buildPlantArm(class BlockSource&, class Random&, class BlockPos const&, class gsl::not_null<class Block const*>, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, unsigned char, bool) const;
+    MCAPI void _buildPlantLike(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, class gsl::not_null<class Block const*>) const;
+    MCAPI void _buildSmallClump(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, class gsl::not_null<class Block const*>) const;
+    MCAPI void _buildSpire(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, class gsl::not_null<class Block const*>) const;
+    MCAPI void _placeCoral(class BlockSource&, class BlockPos const&, class Random&, std::vector<class BlockPos>&, std::vector<struct std::pair<class BlockPos, unsigned char>>&, int) const;
     MCAPI void _placeSideDecorations(class BlockSource&, class BlockPos const&, class Random&, unsigned char) const;
     MCAPI unsigned char _randomDirectionExcept(class Random&, unsigned char) const;
     MCAPI bool _setBlock(class BlockSource&, class BlockPos const&, class gsl::not_null<class Block const*>, int) const;

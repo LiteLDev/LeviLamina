@@ -9,14 +9,10 @@ class NetworkIdentifier {
 
 public:
     MCAPI std::string getAddress() const;
-    MCAPI bool operator==(class NetworkIdentifier const&);
-    MCAPI NetworkIdentifier(struct sockaddr_in const&);
-    MCAPI NetworkIdentifier(struct sockaddr_in6 const&);
-    //MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const&);
     MCAPI unsigned __int64 getHash() const;
     MCAPI bool isUnassigned() const;
+    MCAPI bool operator==(class NetworkIdentifier const&);
     MCAPI std::string toString() const;
-
 
 private:
     MCAPI bool equalsTypeData(class NetworkIdentifier const&) const;

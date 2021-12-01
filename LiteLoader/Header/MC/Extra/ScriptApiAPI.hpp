@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+class ScriptObjectHandle;
+class ScriptReport;
+class ScriptVersionInfo;
 
 #endif

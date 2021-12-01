@@ -14,13 +14,7 @@ public:
     virtual void start();
     virtual void stop();
     virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI NapGoal(class Mob&, float, float, float, float, class ActorFilterGroup const&, class ActorFilterGroup const&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI bool _canSleep(struct Tick const&) const;

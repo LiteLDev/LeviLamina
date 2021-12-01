@@ -14,10 +14,5 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI HoldGroundGoal(class Mob&, float, bool, float, class DefinitionTrigger const&);
+    virtual void appendDebugInfo(std::string&) const;
 };

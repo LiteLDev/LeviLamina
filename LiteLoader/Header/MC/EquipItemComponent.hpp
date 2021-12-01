@@ -9,5 +9,4 @@ class EquipItemComponent {
 
 public:
     MCAPI void onEquipItemPickedUp(class ItemStack, int);
-    MCAPI ~EquipItemComponent();
 };

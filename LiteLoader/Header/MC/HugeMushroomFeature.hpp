@@ -10,13 +10,10 @@ class HugeMushroomFeature : public Feature {
 public:
     virtual ~HugeMushroomFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
-    MCAPI HugeMushroomFeature();
-    MCAPI HugeMushroomFeature(int);
     MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const;
-
 
 private:
     MCAPI bool _canSurvive(class Block const&) const;

@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
-
+public:
+class ValidationError;
+union Value;
 #endif

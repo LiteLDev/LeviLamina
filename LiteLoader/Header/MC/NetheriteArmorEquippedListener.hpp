@@ -29,14 +29,4 @@ public:
     virtual void unk_vfn_19();
     virtual void unk_vfn_20();
     virtual int /*enum EventResult*/ onActorEquippedArmor(class Actor&, class ItemInstance const&, int /*enum ArmorSlot*/);
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_24();
-    virtual void unk_vfn_25();
-    virtual void unk_vfn_26();
-    virtual void unk_vfn_27();
-    virtual void unk_vfn_28();
-    virtual void unk_vfn_29();
-    virtual void unk_vfn_30();
-    virtual void unk_vfn_31();
 };

@@ -8,11 +8,6 @@ class ScriptGameTestModuleFactory {
 #include "Extra/ScriptGameTestModuleFactoryAPI.hpp"
 public:
     virtual ~ScriptGameTestModuleFactory();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
 
 public:
     MCAPI static std::string getModuleUUIDAsString();
@@ -20,6 +15,5 @@ public:
 private:
     MCAPI void _addV1();
 
-    MCAPI static char const* ModuleName;
     MCAPI static class mce::UUID ModuleUUID;
 };

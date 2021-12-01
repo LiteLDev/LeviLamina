@@ -11,26 +11,25 @@ public:
     virtual ~FillingContainer();
     virtual void init();
     virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
-    virtual class ItemStack const& getItem(int);
+    virtual class ItemStack const& getItem(int) const;
     virtual void setItem(int, class ItemStack const&);
     virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
     virtual void removeItem(int, int);
-    virtual void unk_vfn_14();
-    virtual int getMaxStackSize();
+    virtual int getContainerSize() const;
+    virtual int getMaxStackSize() const;
     virtual void startOpen(class Player&);
     virtual void stopOpen(class Player&);
     virtual void unk_vfn_22();
     virtual void unk_vfn_23();
     virtual void unk_vfn_31();
     virtual bool add(class ItemStack&);
-    virtual bool canAdd(class ItemStack const&);
+    virtual bool canAdd(class ItemStack const&) const;
     virtual void clearSlot(int);
     virtual int clearInventory(int);
     virtual void load(class ListTag const&, class SemVersion const&, class Level&);
-    virtual int getEmptySlotsCount();
+    virtual int getEmptySlotsCount() const;
 
 public:
-    MCAPI FillingContainer(class Player*, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
     MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
     MCAPI bool hasResource(int);
@@ -38,7 +37,6 @@ public:
     MCAPI bool removeResource(int);
     MCAPI std::unique_ptr<class ListTag> save();
     MCAPI void swapSlots(int, int);
-
 
 protected:
     MCAPI int _addResource(class ItemStack const&);

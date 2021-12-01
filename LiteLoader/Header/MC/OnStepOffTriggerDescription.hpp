@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Types.hpp"
-#include "Types.h"
 #define EXTRA_INCLUDE_PART_ONSTEPOFFTRIGGERDESCRIPTION
 #include "Extra/OnStepOffTriggerDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ONSTEPOFFTRIGGERDESCRIPTION
@@ -10,10 +9,7 @@ class OnStepOffTriggerDescription : public BlockTriggerDescription<struct OnStep
 #include "Extra/OnStepOffTriggerDescriptionAPI.hpp"
 public:
     virtual ~OnStepOffTriggerDescription();
-    virtual std::string const& getName();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual std::string const& getName() const;
 
 public:
     MCAPI static std::string const NameID;

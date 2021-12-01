@@ -9,12 +9,12 @@ class StructureStart {
 public:
     virtual ~StructureStart();
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
+    virtual bool isValid() const;
+    virtual int /*enum StructureFeatureType*/ getType() const = 0;
 
 protected:
     MCAPI void calculateBoundingBox();
+    MCAPI void moveBoundingBoxes(int);
     MCAPI void moveInsideHeights(class Random&, short, short);
     MCAPI void moveToLevel(short, class Random&, int);
 };

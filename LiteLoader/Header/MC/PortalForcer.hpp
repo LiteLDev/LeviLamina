@@ -9,7 +9,7 @@ class PortalForcer {
 public:
     virtual ~PortalForcer();
     virtual void deserialize(class CompoundTag const&);
-    virtual void serialize(class CompoundTag&);
+    virtual void serialize(class CompoundTag&) const;
 
 public:
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);
@@ -18,6 +18,7 @@ public:
     MCAPI bool findPortal(class AutomaticID<class Dimension, int>, class BlockPos const&, int, class BlockPos&) const;
     MCAPI void force(class Actor&);
     MCAPI bool portalRecordExists(class AutomaticID<class Dimension, int>, class PortalRecord const&) const;
+    MCAPI void removeMisalignedPortalRecords(class BlockSource&, class PortalShape const&, class PortalRecord const&);
     MCAPI void removePortalRecord(class BlockSource&, class BlockPos const&);
     MCAPI void travelPortal(class Actor&, class BlockPos const&, class AutomaticID<class Dimension, int>) const;
 

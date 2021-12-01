@@ -9,5 +9,4 @@ class BlockEventDispatcherToken {
 
 public:
     MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
-    MCAPI ~BlockEventDispatcherToken();
 };

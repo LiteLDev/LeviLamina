@@ -7,24 +7,19 @@
 class StructurePoolElement {
 #include "Extra/StructurePoolElementAPI.hpp"
 public:
-    virtual class BlockPos getSize(int /*enum Rotation*/);
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*);
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, int /*enum Rotation*/);
-    virtual class BoundingBox getBoundingBox(class BlockPos, int /*enum Rotation*/);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual bool place(class BlockSource&, class BlockPos, int /*enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&, class BlockPos);
-    virtual void placeActors(class BlockSource&, class BlockPos, int /*enum Rotation*/, class Random&);
-    virtual void handleJigsawBlock(class BlockSource&, class JigsawBlockInfo&, class LegacyStructureSettings&);
-    virtual void handleDataMarker(class BlockSource&, class BlockPos, std::string, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&);
-    virtual void unk_vfn_11();
+    virtual class BlockPos getSize(int /*enum Rotation*/) const;
+    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, int /*enum Rotation*/) const;
+    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    virtual class BoundingBox getBoundingBox(class BlockPos, int /*enum Rotation*/) const;
+    virtual void setProjection(int /*enum Projection*/);
+    virtual int /*enum Projection*/ getProjection() const;
+    virtual int /*enum PostProcessSettings*/ getPostProcessSettings() const;
+    virtual bool place(class BlockSource&, class BlockPos, int /*enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&, class BlockPos) const;
+    virtual void placeActors(class BlockSource&, class BlockPos, int /*enum Rotation*/, class Random&) const;
+    virtual void handleJigsawBlock(class BlockSource&, class JigsawBlockInfo&, class LegacyStructureSettings&) const;
+    virtual void handleDataMarker(class BlockSource&, class BlockPos, std::string, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&) const;
+    virtual bool isValid() const;
     virtual ~StructurePoolElement();
-
-public:
-    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const&, enum Projection, enum PostProcessSettings);
-    MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager>>, std::string const&, struct StructurePoolElementSettings);
-
 
 private:
     MCAPI class StructurePoolElement::LazyTemplate const& _getTemplate() const;

@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_FEEDITEM
 #include "Extra/FeedItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FEEDITEM
-class FeedItem {
+struct FeedItem {
 #include "Extra/FeedItemAPI.hpp"
 
 public:
-    MCAPI FeedItem(struct FeedItem const&);
     MCAPI void addEffect(struct FeedItem::Effect const&);
-    MCAPI ~FeedItem();
 };

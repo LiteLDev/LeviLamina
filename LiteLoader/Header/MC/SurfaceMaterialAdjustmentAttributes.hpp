@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_SURFACEMATERIALADJUSTMENTATTRIBUTES
 #include "Extra/SurfaceMaterialAdjustmentAttributesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SURFACEMATERIALADJUSTMENTATTRIBUTES
-class SurfaceMaterialAdjustmentAttributes {
+struct SurfaceMaterialAdjustmentAttributes {
 #include "Extra/SurfaceMaterialAdjustmentAttributesAPI.hpp"
 
 public:

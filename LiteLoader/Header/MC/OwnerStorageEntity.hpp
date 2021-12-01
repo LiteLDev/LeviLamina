@@ -7,15 +7,10 @@
 class OwnerStorageEntity {
 #include "Extra/OwnerStorageEntityAPI.hpp"
 
-
 protected:
     MCAPI class EntityContext& _getStackRef() const;
-    MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&&);
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistryOwned&);
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
-    MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
     MCAPI bool _hasValue() const;
     MCAPI void _remake(class EntityRegistryOwned&);
     MCAPI void _reset();
-    MCAPI ~OwnerStorageEntity();
+    MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&&);
 };

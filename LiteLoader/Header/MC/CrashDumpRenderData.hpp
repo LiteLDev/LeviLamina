@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CRASHDUMPRENDERDATA
 #include "Extra/CrashDumpRenderDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CRASHDUMPRENDERDATA
-namespace CrashDumpRenderData {
+class CrashDumpRenderData {
 #include "Extra/CrashDumpRenderDataAPI.hpp"
 
 public:
-MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
-
-
-} // namespace CrashDumpRenderData
+    MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
+};

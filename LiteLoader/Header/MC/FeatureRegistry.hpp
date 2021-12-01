@@ -8,13 +8,16 @@ class FeatureRegistry {
 #include "Extra/FeatureRegistryAPI.hpp"
 
 public:
-    MCAPI FeatureRegistry();
     MCAPI void forEachFeature(class std::function<void(class HashedString const&, class WeakRefT<struct FeatureRefTraits>)>) const;
+    MCAPI std::vector<std::string> getLargeFeaturePasses() const;
+    MCAPI std::vector<std::string> getSmallFeaturePasses() const;
     MCAPI bool isFeaturePassDefined(std::string const&) const;
     MCAPI void loadFromDefinitions(class IWorldRegistriesProvider&, class ResourcePackManager const&, class Experiments const&);
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupByName(std::string const&) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> lookupOrReserveFeature(std::string const&);
     MCAPI class WeakRefT<struct FeatureRefTraits> reserveFeature(std::string const&);
+    MCAPI void setLargeFeaturePasses(std::vector<std::string>);
+    MCAPI void setSmallFeaturePasses(std::vector<std::string>);
 
     MCAPI static std::string const AFTER_SKY_PASS;
     MCAPI static std::string const AFTER_SURFACE_PASS;

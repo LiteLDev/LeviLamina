@@ -11,13 +11,10 @@ public:
     virtual bool canUse();
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&);
+    virtual void start();
+    virtual void stop();
+    virtual void stop();
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI SitGoal(class Mob&);
+    virtual void stop();
 };

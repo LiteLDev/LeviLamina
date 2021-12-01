@@ -29,5 +29,4 @@ MCAPI bool moveCondition(class Mob const&, class Block const&);
 MCAPI bool swimCondition(class Mob const&, class BlockSource&, int, int, int);
 MCAPI void trimPathFromSun(class Mob const&);
 
-
 } // namespace NavigationUtility

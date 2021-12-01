@@ -8,7 +8,7 @@ class VillageStart {
 #include "Extra/VillageStartAPI.hpp"
 public:
     virtual ~VillageStart();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    virtual bool isValid() const;
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

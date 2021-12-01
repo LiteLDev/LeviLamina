@@ -16,8 +16,4 @@ public:
     virtual void setData(int, int);
     virtual bool isValid(float);
     virtual class ContainerScreenContext _postInit();
-
-public:
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID);
-    MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&, enum BlockActorType);
 };

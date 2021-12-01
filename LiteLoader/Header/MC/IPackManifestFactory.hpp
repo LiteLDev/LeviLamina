@@ -8,5 +8,4 @@ class IPackManifestFactory {
 #include "Extra/IPackManifestFactoryAPI.hpp"
 public:
     virtual ~IPackManifestFactory();
-    virtual void unk_vfn_1();
 };

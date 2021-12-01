@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "ChunkSource.hpp"
+#include "Bedrock.hpp"
 #define EXTRA_INCLUDE_PART_DBCHUNKSTORAGE
 #include "Extra/DBChunkStorageAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DBCHUNKSTORAGE
@@ -22,15 +23,13 @@ public:
     virtual void hintDiscardBatchEnd();
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     virtual void flushPendingWrites();
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     virtual void unk_vfn_19();
     virtual void clearDeletedEntities();
     virtual void unk_vfn_22();
     virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
 
 public:
-    MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage&, class Scheduler&);
-
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const&, class Experiments const&);
 
 private:
@@ -43,4 +42,5 @@ private:
     MCAPI void _writeBatch();
 
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch>> threadBatch;
+    MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string>> threadBuffer;
 };

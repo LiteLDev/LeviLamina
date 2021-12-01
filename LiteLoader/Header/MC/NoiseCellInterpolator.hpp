@@ -8,8 +8,6 @@ class NoiseCellInterpolator {
 #include "Extra/NoiseCellInterpolatorAPI.hpp"
 
 public:
-    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
-    MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     MCAPI float getLerpedValue() const;
     MCAPI void selectCellXZ(int, int, int, int);
     MCAPI void updateForX(unsigned char);

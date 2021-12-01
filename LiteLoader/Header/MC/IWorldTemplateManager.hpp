@@ -8,5 +8,4 @@ class IWorldTemplateManager {
 #include "Extra/IWorldTemplateManagerAPI.hpp"
 public:
     virtual ~IWorldTemplateManager();
-    virtual void unk_vfn_1();
 };

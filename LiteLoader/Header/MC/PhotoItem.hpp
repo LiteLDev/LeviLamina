@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_PHOTOITEM
 #include "Extra/PhotoItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PHOTOITEM
-namespace PhotoItem {
+class PhotoItem {
 #include "Extra/PhotoItemAPI.hpp"
 
 public:
-MCAPI static std::string const TAG_PHOTO_NAME;
-MCAPI static std::string const TAG_PHOTO_OWNER;
-MCAPI static std::string const TAG_PHOTO_UUID;
-
-
-} // namespace PhotoItem
+    MCAPI static std::string const TAG_PHOTO_NAME;
+    MCAPI static std::string const TAG_PHOTO_OWNER;
+    MCAPI static std::string const TAG_PHOTO_UUID;
+};

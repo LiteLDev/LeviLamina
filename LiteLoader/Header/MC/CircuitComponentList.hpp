@@ -9,5 +9,4 @@ class CircuitComponentList {
 
 public:
     MCAPI bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    MCAPI ~CircuitComponentList();
 };

@@ -8,12 +8,10 @@ class IRequestAction {
 #include "Extra/IRequestActionAPI.hpp"
 public:
     virtual ~IRequestAction();
-    virtual void execute(class ServerLevel&, class Dimension&);
+    virtual void execute(class ServerLevel&, class Dimension&) = 0;
     virtual void serialize(class CompoundTag&);
     virtual bool operator==(class IRequestAction&);
 
 public:
-    MCAPI IRequestAction(enum IRequestAction::RequestActionType const&);
-
     MCAPI static bool isValidTag(class CompoundTag const&);
 };

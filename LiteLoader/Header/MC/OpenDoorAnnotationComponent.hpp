@@ -8,12 +8,9 @@ class OpenDoorAnnotationComponent {
 #include "Extra/OpenDoorAnnotationComponentAPI.hpp"
 
 public:
-    MCAPI OpenDoorAnnotationComponent();
-    MCAPI OpenDoorAnnotationComponent(class OpenDoorAnnotationComponent&&);
     MCAPI void checkPath(class Mob&);
     MCAPI void initFromDefinition(class Actor&);
     MCAPI void onComponentRemoved(class EntityContext&);
-
 
 private:
     MCAPI void _cleanUp(class Mob const&);

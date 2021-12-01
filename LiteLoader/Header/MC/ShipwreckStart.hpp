@@ -10,8 +10,5 @@ class ShipwreckStart : public StructureStart {
 public:
     virtual ~ShipwreckStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

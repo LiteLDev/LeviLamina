@@ -8,5 +8,5 @@ class IsSpawnableDescription {
 #include "Extra/IsSpawnableDescriptionAPI.hpp"
 public:
     virtual ~IsSpawnableDescription();
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
 };

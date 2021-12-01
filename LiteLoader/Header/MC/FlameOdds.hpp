@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_FLAMEODDS
 #include "Extra/FlameOddsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FLAMEODDS
-namespace FlameOdds {
+class FlameOdds {
 #include "Extra/FlameOddsAPI.hpp"
 
 public:
-MCAPI static class FlameOdds const EASY;
-MCAPI static class FlameOdds const HARD;
-MCAPI static class FlameOdds const INSTANT;
-MCAPI static class FlameOdds const MEDIUM;
-
-
-} // namespace FlameOdds
+    MCAPI static class FlameOdds const EASY;
+    MCAPI static class FlameOdds const HARD;
+    MCAPI static class FlameOdds const INSTANT;
+    MCAPI static class FlameOdds const MEDIUM;
+};

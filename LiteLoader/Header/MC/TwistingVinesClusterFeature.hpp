@@ -10,8 +10,7 @@ class TwistingVinesClusterFeature : public Feature {
 public:
     virtual ~TwistingVinesClusterFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI void _placeVineString(class BlockSource&, class Random&, class BlockPos const&, int, int, int) const;

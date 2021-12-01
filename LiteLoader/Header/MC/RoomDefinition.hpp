@@ -8,10 +8,7 @@ class RoomDefinition {
 #include "Extra/RoomDefinitionAPI.hpp"
 
 public:
-    MCAPI RoomDefinition(int);
-    MCAPI RoomDefinition(class RoomDefinition const&);
     MCAPI bool findSource(int);
     MCAPI void setConnection(unsigned char const&, class std::shared_ptr<class RoomDefinition>);
     MCAPI void updateOpenings();
-    MCAPI ~RoomDefinition();
 };

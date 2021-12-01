@@ -9,17 +9,17 @@ class FishingEnchant : public Enchant {
 #include "Extra/FishingEnchantAPI.hpp"
 public:
     virtual ~FishingEnchant();
-    virtual int getMinCost(int);
-    virtual int getMaxCost(int);
+    virtual int getMinCost(int) const;
+    virtual int getMaxCost(int) const;
     virtual void unk_vfn_4();
-    virtual int getMaxLevel();
-    virtual int getDamageProtection(int, class ActorDamageSource const&);
-    virtual float getDamageBonus(int, class Actor const&);
-    virtual void doPostAttack(class Actor&, class Actor&, int);
-    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int);
+    virtual int getMaxLevel() const;
+    virtual int getDamageProtection(int, class ActorDamageSource const&) const;
+    virtual float getDamageBonus(int, class Actor const&) const;
+    virtual void doPostAttack(class Actor&, class Actor&, int) const;
+    virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
-    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/);
+    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/) const;
 };

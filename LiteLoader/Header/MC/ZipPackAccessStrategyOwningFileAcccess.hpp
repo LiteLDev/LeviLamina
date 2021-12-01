@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "ZipPackAccessStrategy.hpp"
+#include "Core.hpp"
 #define EXTRA_INCLUDE_PART_ZIPPACKACCESSSTRATEGYOWNINGFILEACCCESS
 #include "Extra/ZipPackAccessStrategyOwningFileAcccessAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ZIPPACKACCESSSTRATEGYOWNINGFILEACCCESS
@@ -11,11 +12,8 @@ public:
     virtual ~ZipPackAccessStrategyOwningFileAcccess();
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>);
+    virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>) const;
     virtual void unk_vfn_14();
-    virtual class Core::PathBuffer<std::string> const& getSubPath();
+    virtual class Core::PathBuffer<std::string> const& getSubPath() const;
     virtual void unk_vfn_18();
-
-public:
-    MCAPI ZipPackAccessStrategyOwningFileAcccess(class std::shared_ptr<class IFileAccess>, class ResourceLocation const&, class Core::Path const&);
 };

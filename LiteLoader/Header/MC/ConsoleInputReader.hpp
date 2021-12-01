@@ -8,8 +8,6 @@ class ConsoleInputReader {
 #include "Extra/ConsoleInputReaderAPI.hpp"
 
 public:
-    MCAPI ConsoleInputReader();
     MCAPI bool getLine(std::string&);
     MCAPI void unblockReading();
-    MCAPI ~ConsoleInputReader();
 };

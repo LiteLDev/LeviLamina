@@ -9,26 +9,25 @@ class BlockVolumeTarget {
 public:
     virtual ~BlockVolumeTarget();
     virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual class Block const& getExtraBlock(class BlockPos const&);
-    virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&);
+    virtual short getMinHeight() const;
+    virtual void unk_vfn_3();
+    virtual void unk_vfn_4();
+    virtual class Block const& getExtraBlock(class BlockPos const&) const;
+    virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     virtual bool setBlock(class BlockPos const&, class Block const&, int);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
+    virtual bool setBlockSimple(class BlockPos const&, class Block const&);
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
-    virtual short getMaxHeight();
+    virtual void unk_vfn_11();
     virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
+    virtual short getMaxHeight() const;
+    virtual short getMinHeight() const;
+    virtual void unk_vfn_15();
     virtual short getHeightmap(int, int);
     virtual bool isLegacyLevel();
-    virtual class Biome const* getBiome(class BlockPos const&);
-    virtual bool isInBounds(class Pos const&);
-    virtual short getLocalWaterLevel(class BlockPos const&);
-    virtual class LevelData const& getLevelData();
-    virtual void unk_vfn_20();
-
-public:
-    MCAPI BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, class AutomaticID<class Dimension, int>, struct WorldGenContext const&);
+    virtual class Biome const* getBiome(class BlockPos const&) const;
+    virtual bool isInBounds(class Pos const&) const;
+    virtual short getLocalWaterLevel(class BlockPos const&) const;
+    virtual class LevelData const& getLevelData() const;
+    virtual struct WorldGenContext const& getContext();
 };

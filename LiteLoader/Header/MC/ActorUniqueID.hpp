@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_ACTORUNIQUEID
 #include "Extra/ActorUniqueIDAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORUNIQUEID
-class ActorUniqueID {
+struct ActorUniqueID {
 #include "Extra/ActorUniqueIDAPI.hpp"
 
 public:

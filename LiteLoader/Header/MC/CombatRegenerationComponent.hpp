@@ -10,7 +10,6 @@ class CombatRegenerationComponent {
 public:
     MCAPI void tick(class Actor&);
 
-
 private:
     MCAPI void _applyCombatBuffsToMob(class Actor&, class Actor&);
 };

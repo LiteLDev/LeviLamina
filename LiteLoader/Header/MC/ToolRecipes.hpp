@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_TOOLRECIPES
 #include "Extra/ToolRecipesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TOOLRECIPES
-namespace ToolRecipes {
+class ToolRecipes {
 #include "Extra/ToolRecipesAPI.hpp"
 
 public:
-MCAPI static void addRecipes(class Recipes&);
-
-
-} // namespace ToolRecipes
+    MCAPI static void addRecipes(class Recipes&);
+};

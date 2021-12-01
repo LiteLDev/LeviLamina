@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
 #include "Extra/VanillaVillageJigsawStructureBlockTagRulesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VANILLAVILLAGEJIGSAWSTRUCTUREBLOCKTAGRULES
-namespace VanillaVillageJigsawStructureBlockTagRules {
+class VanillaVillageJigsawStructureBlockTagRules {
 #include "Extra/VanillaVillageJigsawStructureBlockTagRulesAPI.hpp"
 
 public:
-MCAPI static void initialize(class JigsawStructureRegistry&);
-
-
-} // namespace VanillaVillageJigsawStructureBlockTagRules
+    MCAPI static void initialize(class JigsawStructureRegistry&);
+};

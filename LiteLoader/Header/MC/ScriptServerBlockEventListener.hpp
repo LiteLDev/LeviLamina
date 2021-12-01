@@ -15,17 +15,4 @@ public:
     virtual int /*enum EventResult*/ onBlockDestructionStarted(class Player&, class BlockPos const&);
     virtual int /*enum EventResult*/ onBlockInteractedWith(class Player&, class BlockPos const&);
     virtual int /*enum EventResult*/ onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-
-public:
-    MCAPI ScriptServerBlockEventListener(class MinecraftServerScriptEngine&);
 };

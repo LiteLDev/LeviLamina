@@ -9,14 +9,9 @@ class ClientboundDebugRendererPacket : public Packet {
 #include "Extra/ClientboundDebugRendererPacketAPI.hpp"
 public:
     virtual ~ClientboundDebugRendererPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI ClientboundDebugRendererPacket();
-    MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
-    MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, class std::chrono::duration<__int64, struct std::ratio<1, 1000>>);
 };

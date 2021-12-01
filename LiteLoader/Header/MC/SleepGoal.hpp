@@ -15,14 +15,10 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual void unk_vfn_16();
-
-public:
-    MCAPI SleepGoal(class Mob&, float, float, float, float, int, float);
-
+    virtual unsigned __int64 _getRepathTime() const;
 
 private:
     MCAPI void _wakeUp();

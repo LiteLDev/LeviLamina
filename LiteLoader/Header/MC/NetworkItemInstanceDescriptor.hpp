@@ -8,10 +8,7 @@ class NetworkItemInstanceDescriptor {
 #include "Extra/NetworkItemInstanceDescriptorAPI.hpp"
 
 public:
-    MCAPI NetworkItemInstanceDescriptor(class ItemStackDescriptor const&);
-    MCAPI NetworkItemInstanceDescriptor(class ItemInstance const&);
     MCAPI class ItemInstance getItemInstance(class BlockPalette const&) const;
     MCAPI void read(class ReadOnlyBinaryStream&);
     MCAPI void write(class BinaryStream&) const;
-    MCAPI ~NetworkItemInstanceDescriptor();
 };

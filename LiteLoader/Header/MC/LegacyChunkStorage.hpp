@@ -16,14 +16,10 @@ public:
     virtual void loadChunk(class LevelChunk&, bool);
     virtual bool saveLiveChunk(class LevelChunk&);
     virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     virtual void unk_vfn_19();
     virtual void clearDeletedEntities();
     virtual void unk_vfn_22();
-
-public:
-    MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage&, enum StorageVersion, class Biome&);
-
 
 private:
     MCAPI bool _isImported(class ChunkPos const&);

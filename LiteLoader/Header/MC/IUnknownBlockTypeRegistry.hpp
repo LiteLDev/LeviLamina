@@ -6,7 +6,4 @@
 #undef EXTRA_INCLUDE_PART_IUNKNOWNBLOCKTYPEREGISTRY
 class IUnknownBlockTypeRegistry {
 #include "Extra/IUnknownBlockTypeRegistryAPI.hpp"
-public:
-    virtual void unk_vfn_0();
-    virtual void unk_vfn_1();
 };

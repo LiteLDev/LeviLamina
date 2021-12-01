@@ -9,15 +9,13 @@ class PlayerAuthInputPacket : public Packet {
 #include "Extra/PlayerAuthInputPacketAPI.hpp"
 public:
     virtual ~PlayerAuthInputPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI PlayerAuthInputPacket();
-    MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);

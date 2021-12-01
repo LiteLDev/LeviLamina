@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "DirectoryPackAccessStrategy.hpp"
+#include "Core.hpp"
 #define EXTRA_INCLUDE_PART_ENCRYPTEDFILEACCESSSTRATEGY
 #include "Extra/EncryptedFileAccessStrategyAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ENCRYPTEDFILEACCESSSTRATEGY
@@ -11,20 +12,20 @@ public:
     virtual ~EncryptedFileAccessStrategy();
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual bool isWritable();
+    virtual bool isWritable() const;
     virtual void setIsTrusted(bool);
-    virtual bool isTrusted();
-    virtual bool hasAsset(class Core::Path const&, bool);
-    virtual bool hasFolder(class Core::Path const&);
-    virtual bool getAsset(class Core::Path const&, std::string&, bool);
+    virtual bool isTrusted() const;
+    virtual bool hasAsset(class Core::Path const&, bool) const;
+    virtual bool hasFolder(class Core::Path const&) const;
+    virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
     virtual bool deleteAsset(class Core::PathBuffer<std::string> const&);
     virtual bool writeAsset(class Core::Path const&, std::string const&);
     virtual void unk_vfn_14();
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&);
+    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     virtual int /*enum PackAccessAssetGenerationResult*/ generateAssetSet();
     virtual void unk_vfn_18();
     virtual void unload();
-    virtual class ContentIdentity readContentIdentity();
+    virtual class ContentIdentity readContentIdentity() const;
 
 public:
     MCAPI static bool isValidEncryptedPack(class Core::Path const&, class ContentIdentity&);

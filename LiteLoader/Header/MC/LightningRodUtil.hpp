@@ -9,5 +9,4 @@ namespace LightningRodUtil {
 
 MCAPI void emitLightningRodParticles(class BlockSource&, class BlockPos const&, int);
 
-
 } // namespace LightningRodUtil

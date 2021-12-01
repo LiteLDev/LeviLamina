@@ -15,8 +15,4 @@ public:
     virtual void unk_vfn_4();
     virtual void setData(int, int);
     virtual class ContainerScreenContext _postInit();
-
-public:
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
-    MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
 };

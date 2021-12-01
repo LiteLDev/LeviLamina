@@ -8,5 +8,11 @@ class StrongholdPiece {
 #include "Extra/StrongholdPieceAPI.hpp"
 
 public:
+    MCAPI std::unique_ptr<class StructurePiece> findAndCreatePieceFactory(std::string const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI class StructurePiece* generateAndAddPiece(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI std::unique_ptr<class StructurePiece> generatePieceFromSmallDoor(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random const&, int, int, int, int, int);
     MCAPI void generateSmallDoor(class BlockSource&, class Random&, class BoundingBox const&, enum StrongholdPiece::SmallDoorType, int, int, int);
+    MCAPI class StructurePiece* generateSmallDoorChildForward(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int);
+    MCAPI class StructurePiece* generateSmallDoorChildLeft(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int);
+    MCAPI class StructurePiece* generateSmallDoorChildRight(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int);
 };

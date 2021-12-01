@@ -11,12 +11,10 @@ public:
 
 public:
     MCAPI void addAdditionalSaveData(class Actor&, class CompoundTag&) const;
-    MCAPI class NpcComponent& operator=(class NpcComponent&&);
-    MCAPI NpcComponent();
-    MCAPI NpcComponent(class NpcComponent&&);
     MCAPI void cleanUpBeforeLeavingScreen();
     MCAPI void clearSceneStateForAllPlayers();
     MCAPI void executeCommandAction(class Actor&, class Player const&, int, std::string const&);
+    MCAPI class NpcComponent& operator=(class NpcComponent&&);
     MCAPI struct NpcActionsContainer& getActionsContainer();
     MCAPI std::vector<int> getButtonCounts() const;
     MCAPI enum CommandPermissionLevel getCommandPermissionLevel() const;
@@ -26,6 +24,7 @@ public:
     MCAPI std::string const& getName(class Actor const&) const;
     MCAPI std::string const& getNameRawText(class Actor const&) const;
     MCAPI int getSkinIndex() const;
+    MCAPI void getUpdatedActions(std::string const&, std::vector<std::unique_ptr<class NpcAction>>&, bool&, bool&);
     MCAPI int getUrlCount() const;
     MCAPI void handleNpcRequest(class Actor&, class Player const&, class NpcRequestPacket const&);
     MCAPI void initClientOnlyData(class Actor&);
@@ -35,6 +34,7 @@ public:
     MCAPI void loadNPCData(class Actor&);
     MCAPI void loadNameRawText(class Actor&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI void setActions(class Actor&, std::vector<std::unique_ptr<class NpcAction>>&&);
     MCAPI bool setDialogueScene(class Actor&, std::string const&);
     MCAPI void setInteractiveText(class Actor&, std::string const&, bool);
     MCAPI void setLeaveScreenRemainingTicks(class std::optional<int>);
@@ -48,6 +48,7 @@ public:
 private:
     MCAPI void _defineEntityDataString(class Actor&, enum ActorDataIDs);
     MCAPI void _deserializeData();
+    MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>>&, std::string const&) const;
     MCAPI std::string _serializeActions() const;
 
     MCAPI static std::string const ACTIONS_TAG;

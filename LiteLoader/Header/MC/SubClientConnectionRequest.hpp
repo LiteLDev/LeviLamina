@@ -8,7 +8,6 @@ class SubClientConnectionRequest {
 #include "Extra/SubClientConnectionRequestAPI.hpp"
 
 public:
-    MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const&);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
     MCAPI std::vector<unsigned char> getCapeData() const;
@@ -38,12 +37,11 @@ public:
     MCAPI bool isPremiumSkin() const;
     MCAPI bool isPrimaryUser() const;
     MCAPI std::string toString();
+    MCAPI bool verify(std::vector<std::string> const&, __int64);
     MCAPI bool verifySelfSigned();
-    MCAPI ~SubClientConnectionRequest();
 
     MCAPI static class SubClientConnectionRequest fromString(std::string const&);
 
 private:
-    MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
 };

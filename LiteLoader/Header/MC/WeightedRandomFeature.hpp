@@ -8,9 +8,5 @@ class WeightedRandomFeature {
 #include "Extra/WeightedRandomFeatureAPI.hpp"
 public:
     virtual ~WeightedRandomFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI WeightedRandomFeature();
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

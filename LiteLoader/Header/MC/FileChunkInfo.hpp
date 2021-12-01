@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_FILECHUNKINFO
 #include "Extra/FileChunkInfoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILECHUNKINFO
-class FileChunkInfo {
+struct FileChunkInfo {
 #include "Extra/FileChunkInfoAPI.hpp"
 
 public:
-    MCAPI FileChunkInfo(int, unsigned __int64, unsigned __int64);
     MCAPI bool isValid() const;
     MCAPI int size() const;
 };

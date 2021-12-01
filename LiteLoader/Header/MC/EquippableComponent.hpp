@@ -9,13 +9,11 @@ class EquippableComponent {
 
 public:
     MCAPI class UpdateEquipPacket createDataPacket(class Actor&, enum ContainerID) const;
-    MCAPI class EquippableComponent& operator=(class EquippableComponent&&);
-    MCAPI EquippableComponent(class EquippableComponent&&);
     MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor&) const;
     MCAPI int getSlotCount() const;
     MCAPI bool hasSlotAllowedItems(int) const;
     MCAPI void initFromDefinition(class Actor&, class EquippableDefinition const&);
     MCAPI bool onItemChanged(class Actor&, unsigned __int64, class ItemStack const&) const;
+    MCAPI class EquippableComponent& operator=(class EquippableComponent&&);
     MCAPI std::vector<class ItemDescriptor> const* tryGetSlotAllowedItems(int) const;
-    MCAPI ~EquippableComponent();
 };

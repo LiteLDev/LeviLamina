@@ -10,10 +10,9 @@ class AzaleaTreeAndRootsFeature : public Feature {
 public:
     virtual ~AzaleaTreeAndRootsFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _isLushGroundReplaceable(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&) const;
+    MCAPI bool _tryPlaceAzaleaTree(class BlockSource&, class BlockPos const&, class Random&, unsigned int) const;
 };

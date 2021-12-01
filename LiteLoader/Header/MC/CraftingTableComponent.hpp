@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_CRAFTINGTABLECOMPONENT
 #include "Extra/CraftingTableComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CRAFTINGTABLECOMPONENT
-class CraftingTableComponent {
+struct CraftingTableComponent {
 #include "Extra/CraftingTableComponentAPI.hpp"
 
 public:
     MCAPI struct CraftingTableComponent& operator=(struct CraftingTableComponent&&);
-    MCAPI ~CraftingTableComponent();
 };

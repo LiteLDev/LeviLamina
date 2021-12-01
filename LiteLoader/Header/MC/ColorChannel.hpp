@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_COLORCHANNEL
 #include "Extra/ColorChannelAPI.hpp"
 #undef EXTRA_INCLUDE_PART_COLORCHANNEL
-namespace ColorChannel {
+class ColorChannel {
 #include "Extra/ColorChannelAPI.hpp"
 
 public:
-MCAPI static class ColorChannel const INVALID;
-
-
-} // namespace ColorChannel
+    MCAPI static class ColorChannel const INVALID;
+};

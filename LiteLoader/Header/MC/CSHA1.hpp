@@ -8,13 +8,10 @@ class CSHA1 {
 #include "Extra/CSHA1API.hpp"
 
 public:
-    MCAPI CSHA1();
     MCAPI void Final();
     MCAPI unsigned char* GetHash() const;
     MCAPI void Reset();
     MCAPI void Update(unsigned char const*, unsigned int);
-    MCAPI ~CSHA1();
-
 
 private:
     MCAPI void Transform(unsigned int*, unsigned char const*);

@@ -20,21 +20,18 @@ public:
     virtual void unk_vfn_10();
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
-    virtual bool doBeginMember(unsigned __int64, std::string const&);
     virtual bool doBeginMember(char const*, bool);
+    virtual bool doBeginMember(unsigned __int64, std::string const&);
     virtual bool doEndMember();
     virtual bool doBeginArray(unsigned __int64);
     virtual bool doBeginArrayItem(unsigned __int64);
     virtual bool doEndArrayItem();
     virtual void unk_vfn_19();
-    virtual void unk_vfn_20();
     virtual bool doBeginObject();
-    virtual void unk_vfn_22();
+    virtual bool doBeginObject(unsigned __int64);
 
 public:
-    MCAPI NBTSaver();
     MCAPI class CompoundTag getSavedCompoundTag();
-
 
 private:
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);

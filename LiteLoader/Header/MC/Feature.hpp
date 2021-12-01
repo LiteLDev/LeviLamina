@@ -8,13 +8,9 @@ class Feature {
 #include "Extra/FeatureAPI.hpp"
 public:
     virtual ~Feature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI Feature(class Actor*);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const = 0;
 
 protected:
     MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const;

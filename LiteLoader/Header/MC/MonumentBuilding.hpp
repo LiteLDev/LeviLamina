@@ -10,15 +10,11 @@ class MonumentBuilding : public OceanMonumentPiece {
 public:
     virtual ~MonumentBuilding();
     virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-
-public:
-    MCAPI MonumentBuilding(class Random&, short, int, int, int&);
-
 
 private:
     MCAPI void generateEntranceArchs(class BlockSource&, class Random&, class BoundingBox const&);

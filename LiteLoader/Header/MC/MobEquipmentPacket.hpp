@@ -9,14 +9,9 @@ class MobEquipmentPacket : public Packet {
 #include "Extra/MobEquipmentPacketAPI.hpp"
 public:
     virtual ~MobEquipmentPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI MobEquipmentPacket();
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const&, int, int, enum ContainerID);
-    MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, enum ContainerID);
 };

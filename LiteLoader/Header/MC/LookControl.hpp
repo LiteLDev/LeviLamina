@@ -8,9 +8,6 @@ class LookControl {
 #include "Extra/LookControlAPI.hpp"
 public:
     virtual ~LookControl();
-    virtual void unk_vfn_1();
+    virtual void initializeInternal(class Mob&);
     virtual void tick(class Mob&);
-
-public:
-    MCAPI LookControl();
 };

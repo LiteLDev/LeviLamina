@@ -10,7 +10,6 @@ public:
     virtual ~ItemEventCoordinator();
 
 public:
-    MCAPI ItemEventCoordinator();
     MCAPI void onItemModifiedActor(class ItemStackBase const&, class Actor const&);
     MCAPI void onItemSpawnedActor(class ItemStackBase const&, class Actor const&);
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);

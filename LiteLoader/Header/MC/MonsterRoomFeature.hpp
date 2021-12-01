@@ -10,8 +10,5 @@ class MonsterRoomFeature : public Feature {
 public:
     virtual ~MonsterRoomFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI MonsterRoomFeature();
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

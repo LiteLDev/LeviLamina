@@ -8,6 +8,4 @@ class UriListener {
 #include "Extra/UriListenerAPI.hpp"
 public:
     virtual ~UriListener();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

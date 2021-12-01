@@ -8,7 +8,6 @@ class BoostableComponent {
 #include "Extra/BoostableComponentAPI.hpp"
 
 public:
-    MCAPI BoostableComponent();
     MCAPI int getBoostTime() const;
     MCAPI int getBoostTimeTotal() const;
     MCAPI bool getIsBoosting() const;

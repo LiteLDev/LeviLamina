@@ -9,5 +9,4 @@ namespace MobSpawnUtils {
 
 MCAPI class Mob* trySpawnMob(class BlockSource&, struct ActorDefinitionIdentifier const&, class BlockPos, int, int, int, class std::function<bool(class BlockPos)> const&);
 
-
 } // namespace MobSpawnUtils

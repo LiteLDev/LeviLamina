@@ -8,7 +8,7 @@ class ReplaceItemCommand {
 #include "Extra/ReplaceItemCommandAPI.hpp"
 public:
     virtual ~ReplaceItemCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

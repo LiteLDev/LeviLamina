@@ -15,11 +15,10 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual void unk_vfn_16();
-
 
 private:
     MCAPI bool _isInsideOrIsNotRaining();

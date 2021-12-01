@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_ENVIRONMENTREQUIREMENT
 #include "Extra/EnvironmentRequirementAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ENVIRONMENTREQUIREMENT
-class EnvironmentRequirement {
+struct EnvironmentRequirement {
 #include "Extra/EnvironmentRequirementAPI.hpp"
 
 public:
     MCAPI void addBlockDescriptor(class BlockDescriptor const&);
-    MCAPI ~EnvironmentRequirement();
 };

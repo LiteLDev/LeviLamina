@@ -8,7 +8,6 @@ class FurnaceBlockActor {
 #include "Extra/FurnaceBlockActorAPI.hpp"
 
 public:
-    MCAPI FurnaceBlockActor(class BlockPos const&);
     MCAPI void checkForAlternativeFuelAchievement(class BlockSource&, class ItemStack const&);
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);
     MCAPI int getLitDuration() const;
@@ -46,7 +45,4 @@ private:
     MCAPI static std::string const SLOT_KEY;
     MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
     MCAPI static std::string const STORED_XP_KEY;
-
-protected:
-    MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const&, class HashedString const&, enum LevelSoundEvent, enum ContainerType, int, class Block const&, class Block const&);
 };

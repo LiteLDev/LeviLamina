@@ -10,8 +10,5 @@ class NetherFortressStart : public StructureStart {
 public:
     virtual ~NetherFortressStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI NetherFortressStart(class Random&, short, int, int);
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

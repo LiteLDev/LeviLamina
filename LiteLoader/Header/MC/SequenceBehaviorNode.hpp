@@ -9,8 +9,5 @@ class SequenceBehaviorNode {
 public:
     virtual ~SequenceBehaviorNode();
     virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI SequenceBehaviorNode();
+    virtual void initializeFromDefinition(class Actor&);
 };

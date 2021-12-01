@@ -7,17 +7,7 @@
 namespace VanillaTagMaps {
 #include "Extra/VanillaTagMapsAPI.hpp"
 
-MCAPI class std::unordered_map<
-    std::string, std::vector<class HashedString>, struct std::hash<std::string>,
-    struct std::equal_to<std::string>,
-    class std::allocator<struct std::pair<
-        std::string const, std::vector<class HashedString>>>> const
-    BlockNameIdToTagsMap;
-MCAPI class std::unordered_map<
-    std::string, std::vector<class HashedString>, struct std::hash<std::string>,
-    struct std::equal_to<std::string>,
-    class std::allocator<struct std::pair<
-        std::string const, std::vector<class HashedString>>>> const
-    ItemNameIdToTagsMap;
+MCAPI extern class std::unordered_map<std::string, std::vector<class HashedString>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<class HashedString>>>> const BlockNameIdToTagsMap;
+MCAPI extern class std::unordered_map<std::string, std::vector<class HashedString>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::vector<class HashedString>>>> const ItemNameIdToTagsMap;
 
 } // namespace VanillaTagMaps

@@ -8,7 +8,7 @@ class ClientReplayStatePolicy {
 #include "Extra/ClientReplayStatePolicyAPI.hpp"
 public:
     virtual ~ClientReplayStatePolicy();
-    virtual bool isReplayNeeded(int /*enum AdvanceFrameResult*/);
+    virtual bool isReplayNeeded(int /*enum AdvanceFrameResult*/) const;
     virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
     virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
     virtual void flagUnsupportedMovement(unsigned __int64);

@@ -9,7 +9,7 @@ class ActorIsImmobileTest : public FilterTest {
 #include "Extra/ActorIsImmobileTestAPI.hpp"
 public:
     virtual ~ActorIsImmobileTest();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
 };

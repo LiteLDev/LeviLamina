@@ -8,8 +8,4 @@ class EnchantWithLevelsFunction {
 #include "Extra/EnchantWithLevelsFunctionAPI.hpp"
 public:
     virtual ~EnchantWithLevelsFunction();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
 };

@@ -8,15 +8,8 @@ class Scheduler {
 #include "Extra/SchedulerAPI.hpp"
 public:
     virtual ~Scheduler();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
 
 public:
-    MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
     MCAPI class WorkerPool& getCoroutinePool();
     MCAPI void processCoroutines(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>);

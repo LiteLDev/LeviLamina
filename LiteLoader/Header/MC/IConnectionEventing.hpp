@@ -8,7 +8,4 @@ class IConnectionEventing {
 #include "Extra/IConnectionEventingAPI.hpp"
 public:
     virtual ~IConnectionEventing();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
 };

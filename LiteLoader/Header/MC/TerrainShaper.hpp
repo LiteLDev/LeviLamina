@@ -9,14 +9,17 @@ class TerrainShaper {
 
 public:
     MCAPI float factor(float, float, float) const;
+    MCAPI float jaggedness(float, float, float) const;
     MCAPI float offset(float, float, float) const;
-    MCAPI float peakyness(float, float, float) const;
 
     MCAPI static class TerrainShaper buildOverworld();
 
 private:
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionJaggednessSpline(float, float, float, float);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionOffsetSpline(std::string const&, float, float, float, float, float, float, bool, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildMountainRidgeSplineWithPoints(float, bool);
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildRidgeJaggednessSpline(float, float);
+    MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildWeirdnessJaggednessSpline(float);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(std::string const&, float, float, float, float, float, float);
 };

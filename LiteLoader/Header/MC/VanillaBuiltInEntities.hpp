@@ -7,7 +7,6 @@
 namespace VanillaBuiltInEntities {
 #include "Extra/VanillaBuiltInEntitiesAPI.hpp"
 
-MCAPI void registerMappings();
-
+MCAPI void registerMappings(class BaseGameVersion const&);
 
 } // namespace VanillaBuiltInEntities

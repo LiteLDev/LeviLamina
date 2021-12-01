@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_PREDICTEDMOVEMENTVALUES
 #include "Extra/PredictedMovementValuesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PREDICTEDMOVEMENTVALUES
-namespace PredictedMovementValues {
+struct PredictedMovementValues {
 #include "Extra/PredictedMovementValuesAPI.hpp"
 
 public:
-MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
-MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
-MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
-
-
-} // namespace PredictedMovementValues
+    MCAPI static __int64 const DEFAULT_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+    MCAPI static bool const DEFAULT_USE_AGGRESSIVE_TICK_INTERVAL;
+    MCAPI static __int64 const SMALL_INTERPOLATION_WINDOW_SIZE_IN_TICKS;
+};

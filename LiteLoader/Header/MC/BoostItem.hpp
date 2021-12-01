@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_BOOSTITEM
 #include "Extra/BoostItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BOOSTITEM
-class BoostItem {
+struct BoostItem {
 #include "Extra/BoostItemAPI.hpp"
 
 public:
     MCAPI void setReplacementItemDescriptor(class ItemDescriptor const&);
-    MCAPI ~BoostItem();
 };

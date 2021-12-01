@@ -17,7 +17,7 @@ public:
     virtual void stopServerDiscovery();
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
-    virtual std::vector<struct PingedCompatibleServer> getServerList();
+    virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     virtual void clearServerList();
     virtual void update();
     virtual void unk_vfn_12();
@@ -25,13 +25,10 @@ public:
     virtual void unk_vfn_14();
     virtual void unk_vfn_15();
 
-public:
-    MCAPI NetherNetServerLocator();
-
-
 private:
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const*, int);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const&);
+    MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const&);
 };

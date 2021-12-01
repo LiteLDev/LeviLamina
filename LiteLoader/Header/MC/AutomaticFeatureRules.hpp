@@ -8,6 +8,6 @@ namespace AutomaticFeatureRules {
 #include "Extra/AutomaticFeatureRulesAPI.hpp"
 
 MCAPI void attachAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&, class Experiments const&);
-
+MCAPI void parseAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&, class Experiments const&, class std::unordered_map<std::string, class std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct AutomaticFeatureRules::AutomaticFeatureRule>>>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, class std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct AutomaticFeatureRules::AutomaticFeatureRule>>>>>>&);
 
 } // namespace AutomaticFeatureRules

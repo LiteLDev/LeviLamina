@@ -8,12 +8,9 @@ class AsynchronousIPResolver {
 #include "Extra/AsynchronousIPResolverAPI.hpp"
 
 public:
-    MCAPI AsynchronousIPResolver(std::string);
     MCAPI std::string getIp() const;
     MCAPI std::string const& getOriginalUrl() const;
     MCAPI bool isDone() const;
-    MCAPI ~AsynchronousIPResolver();
-
 
 private:
     MCAPI void _resolve();

@@ -9,7 +9,9 @@ class BaseAttributeMap {
 
 public:
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin();
+    MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> begin() const;
     MCAPI void clearDirtyAttributes();
+    MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> end() const;
     MCAPI class std::_List_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned int const, class AttributeInstance>>>> end();
     MCAPI std::vector<class AttributeInstanceHandle> const& getDirtyAttributes();
     MCAPI class AttributeInstance const& getInstance(class Attribute const&) const;
@@ -20,7 +22,8 @@ public:
     MCAPI std::vector<class AttributeInstanceHandle> getSyncableAttributes() const;
     MCAPI void onAttributeModified(class AttributeInstance const&);
     MCAPI class AttributeInstance& registerAttribute(class Attribute const&);
-
+    MCAPI unsigned __int64 size() const;
+    MCAPI void updateAttribute(class HashedString const&, float, float, float, float);
 
 private:
     MCAPI static class AttributeInstance mInvalidInstance;

@@ -20,8 +20,5 @@ public:
     virtual void unk_vfn_17();
     virtual void unk_vfn_18();
     virtual void unk_vfn_19();
-    virtual int _getContainerOffset();
-
-public:
-    MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player&);
+    virtual int _getContainerOffset() const;
 };

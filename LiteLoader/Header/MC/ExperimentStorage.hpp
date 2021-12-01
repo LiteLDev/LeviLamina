@@ -8,8 +8,6 @@ class ExperimentStorage {
 #include "Extra/ExperimentStorageAPI.hpp"
 
 public:
-    MCAPI ExperimentStorage(class ExperimentStorage const&);
     MCAPI bool isAnyToggleEnabled() const;
     MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
-    MCAPI ~ExperimentStorage();
 };

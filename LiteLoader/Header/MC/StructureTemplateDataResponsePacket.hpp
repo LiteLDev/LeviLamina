@@ -9,13 +9,12 @@ class StructureTemplateDataResponsePacket : public Packet {
 #include "Extra/StructureTemplateDataResponsePacketAPI.hpp"
 public:
     virtual ~StructureTemplateDataResponsePacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI StructureTemplateDataResponsePacket();
     MCAPI class StructureTemplateDataResponsePacket& operator=(class StructureTemplateDataResponsePacket&&);
 };

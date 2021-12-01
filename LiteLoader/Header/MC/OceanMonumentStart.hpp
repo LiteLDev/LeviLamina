@@ -10,7 +10,7 @@ public:
     virtual ~OceanMonumentStart();
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual int /*enum StructureFeatureType*/ getType() const;
 
 public:
     MCAPI void createMonument(class Dimension&, class Random&, int, int);

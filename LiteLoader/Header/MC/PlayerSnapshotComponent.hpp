@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_PLAYERSNAPSHOTCOMPONENT
 #include "Extra/PlayerSnapshotComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PLAYERSNAPSHOTCOMPONENT
-class PlayerSnapshotComponent {
+struct PlayerSnapshotComponent {
 #include "Extra/PlayerSnapshotComponentAPI.hpp"
 
 public:

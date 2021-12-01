@@ -2,13 +2,14 @@
 #pragma once
 #include <Global.h>
 #include "NavigationDescription.hpp"
+#include "Json.hpp"
 #define EXTRA_INCLUDE_PART_NAVIGATIONSWIMDESCRIPTION
 #include "Extra/NavigationSwimDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NAVIGATIONSWIMDESCRIPTION
 class NavigationSwimDescription : public NavigationDescription {
 #include "Extra/NavigationSwimDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
     virtual ~NavigationSwimDescription();
-    virtual void serializeData(class Json::Value&);
+    virtual void serializeData(class Json::Value&) const;
 };

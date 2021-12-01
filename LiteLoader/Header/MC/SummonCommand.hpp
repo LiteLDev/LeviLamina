@@ -8,7 +8,7 @@ class SummonCommand {
 #include "Extra/SummonCommandAPI.hpp"
 public:
     virtual ~SummonCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

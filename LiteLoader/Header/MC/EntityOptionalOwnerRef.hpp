@@ -8,7 +8,6 @@ class EntityOptionalOwnerRef {
 #include "Extra/EntityOptionalOwnerRefAPI.hpp"
 
 public:
-    MCAPI EntityOptionalOwnerRef();
     MCAPI bool isSet() const;
     MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>&&);
     MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits> const&);

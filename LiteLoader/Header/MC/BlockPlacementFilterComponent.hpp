@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_BLOCKPLACEMENTFILTERCOMPONENT
 #include "Extra/BlockPlacementFilterComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKPLACEMENTFILTERCOMPONENT
-class BlockPlacementFilterComponent {
+struct BlockPlacementFilterComponent {
 #include "Extra/BlockPlacementFilterComponentAPI.hpp"
 
 public:

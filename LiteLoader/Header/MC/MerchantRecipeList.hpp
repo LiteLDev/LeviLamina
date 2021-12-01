@@ -10,13 +10,12 @@ public:
     virtual ~MerchantRecipeList();
     virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
     virtual void addIfNewOrBetter(class MerchantRecipe*);
-    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
     virtual class MerchantRecipe* getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
     virtual void load(class CompoundTag const&);
-    virtual std::unique_ptr<class CompoundTag> createTag(bool);
+    virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
 
 public:
-    MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
 };

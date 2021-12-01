@@ -8,6 +8,5 @@ class CommandSoftEnumRegistry {
 #include "Extra/CommandSoftEnumRegistryAPI.hpp"
 
 public:
-    MCAPI CommandSoftEnumRegistry(class CommandRegistry*);
-    MCAPI ~CommandSoftEnumRegistry();
+    MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const&, std::vector<std::string>);
 };

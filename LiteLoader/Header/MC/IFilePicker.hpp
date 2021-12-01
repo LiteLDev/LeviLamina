@@ -8,7 +8,4 @@ class IFilePicker {
 #include "Extra/IFilePickerAPI.hpp"
 public:
     virtual ~IFilePicker();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
 };

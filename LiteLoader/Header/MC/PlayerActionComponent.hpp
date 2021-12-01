@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_PLAYERACTIONCOMPONENT
 #include "Extra/PlayerActionComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PLAYERACTIONCOMPONENT
-class PlayerActionComponent {
+struct PlayerActionComponent {
 #include "Extra/PlayerActionComponentAPI.hpp"
 
 public:
-    MCAPI PlayerActionComponent();
     MCAPI void addAbortDestroyBlock(class BlockPos const&, int);
     MCAPI void addContinueDestroyBlock(class BlockPos const&, int);
     MCAPI void addStartDestroyBlock(class BlockPos const&, int);
     MCAPI void addStopDestroyBlock();
-    MCAPI ~PlayerActionComponent();
 };

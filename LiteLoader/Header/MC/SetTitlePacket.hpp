@@ -9,16 +9,9 @@ class SetTitlePacket : public Packet {
 #include "Extra/SetTitlePacketAPI.hpp"
 public:
     virtual ~SetTitlePacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI SetTitlePacket();
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, class ResolvedTextObject const&);
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const&);
-    MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
-    MCAPI SetTitlePacket(int, int, int);
 };

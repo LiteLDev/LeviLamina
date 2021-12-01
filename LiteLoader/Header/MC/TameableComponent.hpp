@@ -8,10 +8,8 @@ class TameableComponent {
 #include "Extra/TameableComponentAPI.hpp"
 
 public:
-    MCAPI TameableComponent();
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     MCAPI void tame(class Actor&, class Player&);
-
 
 private:
     MCAPI void _becomeTame(class Actor&);

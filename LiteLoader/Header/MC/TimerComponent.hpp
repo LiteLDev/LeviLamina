@@ -8,18 +8,14 @@ class TimerComponent {
 #include "Extra/TimerComponentAPI.hpp"
 
 public:
-    MCAPI TimerComponent();
+    MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool getLooping() const;
     MCAPI class TimerComponent& operator=(class TimerComponent&&);
-    MCAPI TimerComponent(class TimerComponent&&);
-    MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool getHasExecuted() const;
     MCAPI unsigned __int64 getTimeStamp(class Level const&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI void restartTimer(class Actor&);
     MCAPI void setHasExecuted(bool);
-    MCAPI ~TimerComponent();
-
 
 private:
     MCAPI int getRandomTime(class Actor&);

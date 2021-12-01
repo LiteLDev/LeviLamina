@@ -11,14 +11,10 @@ public:
     virtual ~RandomFlyingGoal();
     virtual bool canUse();
     virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool _setWantedPosition();
-
-public:
-    MCAPI RandomFlyingGoal(class Mob&, float, int, int, bool);
-
 
 private:
     MCAPI bool _getTreePos(class Vec3&) const;

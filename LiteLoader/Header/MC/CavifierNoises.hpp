@@ -8,6 +8,5 @@ class CavifierNoises {
 #include "Extra/CavifierNoisesAPI.hpp"
 
 public:
-    MCAPI CavifierNoises(class std::function<class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0>>>(int, std::vector<float> const&)>, class IRandom&);
-    MCAPI ~CavifierNoises();
+    MCAPI static std::unique_ptr<class CavifierNoises> make(class XoroshiroPositionalRandomFactory const&);
 };

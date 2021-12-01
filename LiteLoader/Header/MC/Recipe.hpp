@@ -8,21 +8,21 @@ class Recipe {
 #include "Extra/RecipeAPI.hpp"
 public:
     virtual ~Recipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&);
-    virtual int getCraftingSize();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual bool matches(class CraftingContainer&, class Level&);
-    virtual int size();
-    virtual class mce::UUID const& getId();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const&);
-    virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*);
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*);
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&);
-    virtual void unk_vfn_15();
+    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
+    virtual int getCraftingSize() const                                                     = 0;
+    virtual class RecipeIngredient const& getIngredient(int, int) const                     = 0;
+    virtual std::vector<class ItemInstance> const& getResultItem() const                    = 0;
+    virtual bool isShapeless() const                                                        = 0;
+    virtual bool matches(class CraftingContainer&, class Level&) const                      = 0;
+    virtual int size() const                                                                = 0;
+    virtual class mce::UUID const& getId() const;
+    virtual class ItemPack const& getItemPack() const;
+    virtual bool isShapeless() const;
+    virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const&) const;
+    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
+    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;
+    virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
+    virtual void loadResultList(class BlockPalette const&) const;
 
 public:
     MCAPI int countQuantityOfIngredient(class ItemInstance const&) const;
@@ -36,8 +36,4 @@ public:
     MCAPI void setNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
 
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
-
-
-protected:
-    MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const&);
 };

@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CRASHDUMPGAMEPLAYDATA
 #include "Extra/CrashDumpGameplayDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CRASHDUMPGAMEPLAYDATA
-namespace CrashDumpGameplayData {
+class CrashDumpGameplayData {
 #include "Extra/CrashDumpGameplayDataAPI.hpp"
 
 public:
-MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
-
-
-} // namespace CrashDumpGameplayData
+    MCAPI static struct CrashDumpFormatEntryImpl const* const const kFormat;
+};

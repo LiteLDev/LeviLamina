@@ -8,7 +8,6 @@ class BoneOrientation {
 #include "Extra/BoneOrientationAPI.hpp"
 
 public:
-    MCAPI BoneOrientation();
     MCAPI class HashedString const& getName() const;
     MCAPI class Vec3& getPivot();
     MCAPI class Vec3 const& getPivot() const;

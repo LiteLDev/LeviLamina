@@ -9,12 +9,12 @@ class BaseRailTransporter : public BaseCircuitComponent {
 #include "Extra/BaseRailTransporterAPI.hpp"
 public:
     virtual ~BaseRailTransporter();
-    virtual int getStrength();
+    virtual int getStrength() const;
     virtual void unk_vfn_2();
     virtual void setStrength(int);
     virtual void unk_vfn_4();
     virtual void unk_vfn_7();
-    virtual bool canStopPower();
+    virtual bool canStopPower() const;
     virtual void setStopPower(bool);
     virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
@@ -26,5 +26,5 @@ public:
     virtual void unk_vfn_18();
     virtual void unk_vfn_20();
     virtual void unk_vfn_21();
-    virtual int /*enum CircuitComponentType*/ getCircuitComponentType();
+    virtual int /*enum CircuitComponentType*/ getCircuitComponentType() const;
 };

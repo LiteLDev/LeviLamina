@@ -22,6 +22,6 @@ public:
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
     virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
+    virtual int /*enum DataLoadHelperType*/ getType() const;
+    virtual bool shouldResetTime();
 };

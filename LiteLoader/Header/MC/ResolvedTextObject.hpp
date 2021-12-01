@@ -9,5 +9,4 @@ class ResolvedTextObject {
 
 public:
     MCAPI std::string getAsJsonString() const;
-    MCAPI ~ResolvedTextObject();
 };

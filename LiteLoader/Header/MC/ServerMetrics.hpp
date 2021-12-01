@@ -8,7 +8,4 @@ class ServerMetrics {
 #include "Extra/ServerMetricsAPI.hpp"
 public:
     virtual ~ServerMetrics();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
 };

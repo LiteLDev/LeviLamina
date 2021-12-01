@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_BRIGHTNESS
 #include "Extra/BrightnessAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BRIGHTNESS
-class Brightness {
+struct Brightness {
 #include "Extra/BrightnessAPI.hpp"
 
 public:
     MCAPI struct Brightness& operator=(struct Brightness&&);
-    MCAPI Brightness(unsigned char const&);
     MCAPI struct Brightness& operator=(struct Brightness const&);
-    MCAPI Brightness(struct Brightness const&);
 
     MCAPI static struct Brightness const INVALID;
     MCAPI static struct Brightness const MAX;

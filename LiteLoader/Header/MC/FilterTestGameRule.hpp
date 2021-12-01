@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
+#include "Json.hpp"
 #define EXTRA_INCLUDE_PART_FILTERTESTGAMERULE
 #include "Extra/FilterTestGameRuleAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILTERTESTGAMERULE
@@ -10,8 +11,8 @@ class FilterTestGameRule : public FilterTest {
 public:
     virtual ~FilterTestGameRule();
     virtual bool setup(struct FilterTest::Definition const&, struct FilterInputs const&);
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
-    virtual class Json::Value _serializeValue();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    virtual class Json::Value _serializeValue() const;
 };

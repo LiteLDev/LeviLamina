@@ -9,19 +9,17 @@ class DwellerComponent {
 
 public:
     MCAPI void DecrementDwellingUpdateInterval();
-    MCAPI DwellerComponent();
-    MCAPI bool getCanFindPOI() const;
-    MCAPI int getUpdateIntervalVariant() const;
-    MCAPI class DwellerComponent& operator=(class DwellerComponent&&);
-    MCAPI DwellerComponent(class DwellerComponent&&);
     MCAPI void addAdditionalSaveData(class CompoundTag&, class Actor&);
     MCAPI void checkandUpdateDwellingStatus(class Actor const&, class Village*);
     MCAPI void clearPreferredProfession();
     MCAPI void fixupProfession(class Actor const&, class Village*);
+    MCAPI bool getCanFindPOI() const;
     MCAPI enum DwellerRole getDwellerRole() const;
     MCAPI class mce::UUID getDwellingUniqueID() const;
     MCAPI unsigned __int64 getDwellingUpdateInterval() const;
     MCAPI bool getFixUpRole() const;
+    MCAPI int getUpdateIntervalVariant() const;
+    MCAPI class DwellerComponent& operator=(class DwellerComponent&&);
     MCAPI class HashedString const& getPreferredProfession() const;
     MCAPI unsigned __int64 getUpdateIntervalBase() const;
     MCAPI class std::weak_ptr<class Village> const getVillage(class Actor const&) const;
@@ -44,9 +42,10 @@ public:
     MCAPI bool tryToFixupRole(class Actor const&, class Village*);
     MCAPI bool tryToMigrate(class Actor&, class Village*, class Village*);
     MCAPI bool wantsToMigrate(class Actor const&, class Village*) const;
-    MCAPI ~DwellerComponent();
-
 
 private:
     MCAPI bool _isLockedInToProfession(class Actor const&) const;
+
+    MCAPI static class std::unordered_map<std::string, enum DwellerRole, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerRole>>> const DWELLING_ROLES;
+    MCAPI static class std::unordered_map<std::string, enum DwellerComponent::DwellingType, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, enum DwellerComponent::DwellingType>>> const DWELLING_TYPES;
 };

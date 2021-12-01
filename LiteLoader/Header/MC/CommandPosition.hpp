@@ -8,7 +8,6 @@ class CommandPosition {
 #include "Extra/CommandPositionAPI.hpp"
 
 public:
-    MCAPI CommandPosition();
     MCAPI class BlockPos getBlockPos(class CommandOrigin const&, class Vec3 const&) const;
     MCAPI class BlockPos getBlockPos(class Vec3 const&, class Vec3 const&) const;
     MCAPI class Vec3 getPosition(class Vec3 const&, class Vec3 const&) const;

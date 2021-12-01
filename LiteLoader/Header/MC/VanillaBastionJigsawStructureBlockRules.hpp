@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_VANILLABASTIONJIGSAWSTRUCTUREBLOCKRULES
 #include "Extra/VanillaBastionJigsawStructureBlockRulesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VANILLABASTIONJIGSAWSTRUCTUREBLOCKRULES
-namespace VanillaBastionJigsawStructureBlockRules {
+class VanillaBastionJigsawStructureBlockRules {
 #include "Extra/VanillaBastionJigsawStructureBlockRulesAPI.hpp"
 
 public:
-MCAPI static void initialize(class JigsawStructureRegistry&);
-
-
-} // namespace VanillaBastionJigsawStructureBlockRules
+    MCAPI static void initialize(class JigsawStructureRegistry&);
+};

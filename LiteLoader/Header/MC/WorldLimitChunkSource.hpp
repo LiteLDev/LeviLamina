@@ -14,11 +14,8 @@ public:
     virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, int /*enum ChunkSource::LoadMode*/, bool);
     virtual bool postProcess(class ChunkViewSource&);
     virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
-    virtual bool isWithinWorldLimit(class ChunkPos const&);
+    virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     virtual void unk_vfn_19();
     virtual void clearDeletedEntities();
     virtual void unk_vfn_22();
-
-public:
-    MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const&, int, int);
 };

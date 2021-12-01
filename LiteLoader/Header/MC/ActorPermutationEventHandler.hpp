@@ -8,7 +8,6 @@ class ActorPermutationEventHandler {
 #include "Extra/ActorPermutationEventHandlerAPI.hpp"
 
 public:
-    MCAPI ActorPermutationEventHandler(class Actor&);
     MCAPI void checkActiveComponents(class std::shared_ptr<class ActorPermutation>);
     MCAPI class ActorDefinitionDescriptor* getPermutationDescriptor();
     MCAPI bool hasChanged();

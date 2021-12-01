@@ -8,13 +8,9 @@ class ItemComponent {
 #include "Extra/ItemComponentAPI.hpp"
 public:
     virtual ~ItemComponent();
-    virtual void unk_vfn_1();
+    virtual bool checkComponentDataForContentErrors() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-
-public:
-    MCAPI ItemComponent(class ComponentItem*);
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 };

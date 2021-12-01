@@ -8,11 +8,11 @@ class CrossbowEnchant {
 #include "Extra/CrossbowEnchantAPI.hpp"
 public:
     virtual ~CrossbowEnchant();
-    virtual bool isCompatibleWith(int /*enum Enchant::Type*/);
-    virtual int getMinCost(int);
-    virtual int getMaxCost(int);
+    virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
+    virtual int getMinCost(int) const;
+    virtual int getMaxCost(int) const;
     virtual void unk_vfn_4();
-    virtual int getMaxLevel();
+    virtual int getMaxLevel() const;
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
@@ -21,8 +21,7 @@ public:
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
-    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/);
-
+    virtual bool _isValidEnchantmentTypeForCategory(int /*enum Enchant::Type*/) const;
 
 private:
     MCAPI static std::vector<enum Enchant::Type> const VALID_ENCHANTMENTS;

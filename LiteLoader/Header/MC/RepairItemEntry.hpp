@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_REPAIRITEMENTRY
 #include "Extra/RepairItemEntryAPI.hpp"
 #undef EXTRA_INCLUDE_PART_REPAIRITEMENTRY
-class RepairItemEntry {
+struct RepairItemEntry {
 #include "Extra/RepairItemEntryAPI.hpp"
 
 public:
-    MCAPI RepairItemEntry();
-    MCAPI RepairItemEntry(struct RepairItemEntry const&);
-    MCAPI ~RepairItemEntry();
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry const&);
+    MCAPI struct RepairItemEntry& operator=(struct RepairItemEntry&&);
 };

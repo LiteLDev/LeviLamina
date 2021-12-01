@@ -10,8 +10,5 @@ class LegacyIceFeature : public Feature {
 public:
     virtual ~LegacyIceFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LegacyIceFeature(class FeatureRegistry const&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

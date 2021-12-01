@@ -14,10 +14,5 @@ public:
     virtual void start();
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool);
+    virtual void appendDebugInfo(std::string&) const;
 };

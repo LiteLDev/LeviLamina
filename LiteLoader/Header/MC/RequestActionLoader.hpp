@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_REQUESTACTIONLOADER
 #include "Extra/RequestActionLoaderAPI.hpp"
 #undef EXTRA_INCLUDE_PART_REQUESTACTIONLOADER
-namespace RequestActionLoader {
+class RequestActionLoader {
 #include "Extra/RequestActionLoaderAPI.hpp"
 
 public:
-MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const&);
-
-
-} // namespace RequestActionLoader
+    MCAPI static bool isValidTag(enum IRequestAction::RequestActionType, class CompoundTag const&);
+    MCAPI static std::unique_ptr<class IRequestAction> load(enum IRequestAction::RequestActionType, class CompoundTag const&, class ICommandOriginLoader&, std::string const&);
+};

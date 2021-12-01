@@ -4,14 +4,10 @@
 #define EXTRA_INCLUDE_PART_BLOCKCOMPONENTGROUPDESCRIPTION
 #include "Extra/BlockComponentGroupDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKCOMPONENTGROUPDESCRIPTION
-class BlockComponentGroupDescription {
+struct BlockComponentGroupDescription {
 #include "Extra/BlockComponentGroupDescriptionAPI.hpp"
 
 public:
-    MCAPI BlockComponentGroupDescription();
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const&);
-    MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription&&);
     MCAPI void foreachDescription(class std::function<void(struct BlockComponentDescription const&)>) const;
     MCAPI struct BlockComponentDescription* getComponentDescription(std::string const&) const;
-    MCAPI ~BlockComponentGroupDescription();
 };

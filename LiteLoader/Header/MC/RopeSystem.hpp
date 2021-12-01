@@ -8,14 +8,12 @@ class RopeSystem {
 #include "Extra/RopeSystemAPI.hpp"
 
 public:
-    MCAPI RopeSystem();
     MCAPI void _initializePins(class Vec3 const&, class Vec3 const&);
     MCAPI void cutAtPercent(float);
     MCAPI void initialize(struct RopeParams const&);
     MCAPI bool isCut() const;
     MCAPI bool isDestroyed() const;
     MCAPI void queueTick(class BlockSource&, class std::shared_ptr<class RopeSystem>&);
-    MCAPI ~RopeSystem();
 
     MCAPI static float const sBucketLength;
     MCAPI static bool sEnabled;

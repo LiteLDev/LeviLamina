@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+struct ItemTransforms;
+struct TRS;
 
 #endif

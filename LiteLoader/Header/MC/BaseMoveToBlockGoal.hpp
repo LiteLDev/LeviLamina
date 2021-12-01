@@ -12,14 +12,11 @@ public:
     virtual bool canUse();
     virtual bool canContinueToUse();
     virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const = 0;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
     virtual void _moveToBlock();
     virtual void unk_vfn_16();
     virtual bool findTargetBlock();
-
-public:
-    MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
 };

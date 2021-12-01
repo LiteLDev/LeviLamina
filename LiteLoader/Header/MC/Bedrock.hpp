@@ -9,5 +9,4 @@ namespace Bedrock {
 
 MCAPI void throw_system_error(enum std::errc);
 
-
 } // namespace Bedrock

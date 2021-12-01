@@ -8,7 +8,6 @@ class StructureTelemetryServerData {
 #include "Extra/StructureTelemetryServerDataAPI.hpp"
 
 public:
-    MCAPI StructureTelemetryServerData();
     MCAPI bool hasBeenActivatedByRedstone();
     MCAPI void setHasBeenActivedByRedstone();
 };

@@ -4,13 +4,12 @@
 #define EXTRA_INCLUDE_PART_CHUNKPERFORMANCEDATA
 #include "Extra/ChunkPerformanceDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CHUNKPERFORMANCEDATA
-class ChunkPerformanceData {
+struct ChunkPerformanceData {
 #include "Extra/ChunkPerformanceDataAPI.hpp"
 public:
     virtual ~ChunkPerformanceData();
 
 public:
-    MCAPI ChunkPerformanceData();
     MCAPI void recordLoadedChunk(class LevelChunk const&);
     MCAPI void resetAll();
 };

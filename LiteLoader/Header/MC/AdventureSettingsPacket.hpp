@@ -9,14 +9,12 @@ class AdventureSettingsPacket : public Packet {
 #include "Extra/AdventureSettingsPacketAPI.hpp"
 public:
     virtual ~AdventureSettingsPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI AdventureSettingsPacket();
-    MCAPI AdventureSettingsPacket(struct AdventureSettings const&, class Abilities const&, struct ActorUniqueID, bool);
     MCAPI void fillIn(struct AdventureSettings&, class Abilities&) const;
 };

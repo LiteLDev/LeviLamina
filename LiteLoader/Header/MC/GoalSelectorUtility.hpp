@@ -10,5 +10,4 @@ namespace GoalSelectorUtility {
 MCAPI void tickGoals(class Mob&, bool);
 MCAPI void tryStartGoals(class Mob&, bool);
 
-
 } // namespace GoalSelectorUtility

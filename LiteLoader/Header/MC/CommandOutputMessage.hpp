@@ -8,10 +8,7 @@ class CommandOutputMessage {
 #include "Extra/CommandOutputMessageAPI.hpp"
 
 public:
-    MCAPI CommandOutputMessage(class CommandOutputMessage const&);
-    MCAPI CommandOutputMessage(class CommandOutputMessage&&);
     MCAPI std::string const& getMessageId() const;
     MCAPI std::vector<std::string> const& getParams() const;
     MCAPI enum CommandOutputMessageType getType() const;
-    MCAPI ~CommandOutputMessage();
 };

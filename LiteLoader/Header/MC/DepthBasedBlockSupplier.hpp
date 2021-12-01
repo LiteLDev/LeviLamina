@@ -8,6 +8,5 @@ class DepthBasedBlockSupplier {
 #include "Extra/DepthBasedBlockSupplierAPI.hpp"
 
 public:
-    MCAPI DepthBasedBlockSupplier(class PositionalRandomFactory, class Block const*);
     MCAPI class Block const* getBlock(class BlockPos const&, class Block const*) const;
 };

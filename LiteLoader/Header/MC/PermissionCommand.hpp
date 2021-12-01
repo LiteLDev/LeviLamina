@@ -8,7 +8,7 @@ class PermissionCommand {
 #include "Extra/PermissionCommandAPI.hpp"
 public:
     virtual ~PermissionCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class PermissionsFile*);
@@ -17,6 +17,4 @@ private:
     MCAPI void list(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void reload(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void set(class CommandOrigin const&, class CommandOutput&) const;
-
-    MCAPI static class PermissionsFile* mPermissionsFile;
 };

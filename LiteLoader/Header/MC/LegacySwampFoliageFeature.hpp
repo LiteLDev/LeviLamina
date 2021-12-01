@@ -10,8 +10,5 @@ class LegacySwampFoliageFeature : public Feature {
 public:
     virtual ~LegacySwampFoliageFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LegacySwampFoliageFeature(class FeatureRegistry&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

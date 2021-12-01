@@ -13,7 +13,4 @@ public:
     virtual void endRequestBatch();
     virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     virtual void _postCraftRequest(bool);
-
-public:
-    MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler&);
 };

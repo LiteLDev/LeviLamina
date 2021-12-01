@@ -4,8 +4,14 @@
 #define EXTRA_INCLUDE_PART_NETHERFORTRESSPIECE
 #include "Extra/NetherFortressPieceAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NETHERFORTRESSPIECE
-namespace NetherFortressPiece {
+class NetherFortressPiece {
 #include "Extra/NetherFortressPieceAPI.hpp"
 
-
-}
+public:
+    MCAPI std::unique_ptr<class NetherFortressPiece> findAndCreateBridgePieceFactory(std::string const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+    MCAPI class StructurePiece* generateAndAddPiece(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int, bool);
+    MCAPI class StructurePiece* generateChildForward(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
+    MCAPI class StructurePiece* generateChildLeft(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
+    MCAPI class StructurePiece* generateChildRight(class NBStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, bool);
+    MCAPI std::unique_ptr<class NetherFortressPiece> generatePiece(class NBStartPiece&, std::vector<class PieceWeight>&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
+};

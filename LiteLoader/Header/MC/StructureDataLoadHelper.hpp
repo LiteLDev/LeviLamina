@@ -16,16 +16,13 @@ public:
     virtual void unk_vfn_6();
     virtual float loadRotationRadiansY(float);
     virtual unsigned char loadFacingID(unsigned char);
-    virtual int /*enum Direction::Type*/ loadDirection(int /*enum Direction::Type*/);
     virtual class Vec3 loadDirection(class Vec3 const&);
+    virtual int /*enum Direction::Type*/ loadDirection(int /*enum Direction::Type*/);
     virtual int /*enum Rotation*/ loadRotation(int /*enum Rotation*/);
     virtual int /*enum Mirror*/ loadMirror(int /*enum Mirror*/);
     virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
+    virtual int /*enum DataLoadHelperType*/ getType() const;
+    virtual bool shouldResetTime();
     virtual struct ActorUniqueID _generateNewID();
-
-public:
-    MCAPI StructureDataLoadHelper(class BlockPos const&, class BlockPos const&, class Vec3 const&, struct ActorUniqueID, enum Rotation, enum Mirror, class Level&);
 };

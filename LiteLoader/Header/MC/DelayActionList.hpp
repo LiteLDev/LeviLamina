@@ -8,13 +8,8 @@ class DelayActionList {
 #include "Extra/DelayActionListAPI.hpp"
 public:
     virtual ~DelayActionList();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
 
 public:
-    MCAPI DelayActionList();
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel&, class Dimension&, unsigned __int64, bool);
     MCAPI void tick(class ServerLevel&, class Dimension&, unsigned __int64);
 };

@@ -8,7 +8,6 @@ class LevelStorageEventing {
 #include "Extra/LevelStorageEventingAPI.hpp"
 
 public:
-    MCAPI LevelStorageEventing(std::string const&, class LevelData const&, std::string const&);
     MCAPI void fireDBStorageError(char const*);
     MCAPI void fireEventWorldCorruptionCausedWorldShutdown(std::string const&, class std::optional<bool>);
 };

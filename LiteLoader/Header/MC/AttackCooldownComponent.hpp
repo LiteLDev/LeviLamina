@@ -9,6 +9,4 @@ class AttackCooldownComponent {
 
 public:
     MCAPI class AttackCooldownComponent& operator=(class AttackCooldownComponent&&);
-    MCAPI AttackCooldownComponent(class AttackCooldownComponent&&);
-    MCAPI ~AttackCooldownComponent();
 };

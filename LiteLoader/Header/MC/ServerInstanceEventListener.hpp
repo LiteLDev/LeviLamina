@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_SERVERINSTANCEEVENTLISTENER
 #include "Extra/ServerInstanceEventListenerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SERVERINSTANCEEVENTLISTENER
-namespace ServerInstanceEventListener {
+class ServerInstanceEventListener {
 #include "Extra/ServerInstanceEventListenerAPI.hpp"
-
-
-}
+};

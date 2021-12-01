@@ -8,9 +8,6 @@ class LegacyStructureSettings {
 #include "Extra/LegacyStructureSettingsAPI.hpp"
 
 public:
-    MCAPI LegacyStructureSettings();
-    MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const*, class BoundingBox const&);
-    MCAPI LegacyStructureSettings(class LegacyStructureSettings const&);
     MCAPI void addSwapAuxValue(int, int);
     MCAPI class BoundingBox const& getBoundingBox();
     MCAPI enum Mirror const& getMirror() const;
@@ -18,6 +15,8 @@ public:
     MCAPI enum Rotation const& getRotation() const;
     MCAPI class Block const& getSwappedBlock(class BlockPalette const&, class Block const&) const;
     MCAPI void placeWaterBelowSeaLevel(bool);
+    MCAPI void setBlockRules(std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*);
+    MCAPI void setBlockTagRules(std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*);
     MCAPI void setBoundingBox(class BoundingBox const&);
     MCAPI void setIgnoreBlock(class Block const*);
     MCAPI void setIntegrity(float);
@@ -27,7 +26,6 @@ public:
     MCAPI void setRotation(enum Rotation);
     MCAPI void setSeed(unsigned int);
     MCAPI void updateBoundingBoxFromChunkPos();
-    MCAPI ~LegacyStructureSettings();
 
     MCAPI static float const INTEGRITY_MAX;
     MCAPI static float const INTEGRITY_MIN;

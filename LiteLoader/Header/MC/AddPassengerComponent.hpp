@@ -9,5 +9,4 @@ class AddPassengerComponent {
 
 public:
     MCAPI void reloadComponent(class Actor&);
-    MCAPI ~AddPassengerComponent();
 };

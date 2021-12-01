@@ -4,5 +4,10 @@
 
 #else
 // Add Member There
+class Events{
+    public:
+    class Event;
+};
+class GameConnectionInfo;
 
 #endif

@@ -9,13 +9,9 @@ class SetDisplayObjectivePacket : public Packet {
 #include "Extra/SetDisplayObjectivePacketAPI.hpp"
 public:
     virtual ~SetDisplayObjectivePacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI SetDisplayObjectivePacket();
-    MCAPI SetDisplayObjectivePacket(std::string const&, std::string const&, std::string const&, std::string const&, enum ObjectiveSortOrder);
 };

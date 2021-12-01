@@ -10,7 +10,6 @@ class BalloonableComponent {
 public:
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
 
-
 private:
     MCAPI bool attach(class Actor&, class Actor&, class ItemStack&);
 };

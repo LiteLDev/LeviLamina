@@ -4,14 +4,13 @@
 #define EXTRA_INCLUDE_PART_BLOCKCOMPONENTDESCRIPTION
 #include "Extra/BlockComponentDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKCOMPONENTDESCRIPTION
-class BlockComponentDescription {
+struct BlockComponentDescription {
 #include "Extra/BlockComponentDescriptionAPI.hpp"
 public:
     virtual ~BlockComponentDescription();
-    virtual void unk_vfn_1();
+    virtual std::string const& getName() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
 };

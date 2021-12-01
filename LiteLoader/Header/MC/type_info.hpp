@@ -10,6 +10,5 @@ public:
     virtual ~type_info();
 
 public:
-    MCAPI   `RTTI Base Class Array '; MCAPI   `RTTI Base Class Descriptor at(0, -1, 0, 64)';
-    MCAPI   `RTTI Class Hierarchy Descriptor';
+    MCAPI extern   `RTTI Base Class Array'; MCAPI extern   `RTTI Base Class Descriptor at(0, -1, 0, 64)'; MCAPI extern   `RTTI Class Hierarchy Descriptor';
 };

@@ -15,7 +15,4 @@ public:
     virtual void unk_vfn_5();
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-
-public:
-    MCAPI OwnerHurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
 };

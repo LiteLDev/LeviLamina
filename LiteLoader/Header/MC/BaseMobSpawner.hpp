@@ -11,13 +11,11 @@ public:
     virtual void tick(class BlockSource&);
     virtual void load(class CompoundTag const&);
     virtual void save(class CompoundTag&);
-    virtual class BlockPos const& getPos();
+    virtual class BlockPos const& getPos() = 0;
 
 public:
-    MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
     MCAPI class Mob* getDisplayEntity(class BlockSource&);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
-
 
 protected:
     MCAPI void _delay(class BlockSource&);

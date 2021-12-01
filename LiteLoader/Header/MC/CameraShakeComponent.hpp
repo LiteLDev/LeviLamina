@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_CAMERASHAKECOMPONENT
 #include "Extra/CameraShakeComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CAMERASHAKECOMPONENT
-namespace CameraShakeComponent {
+class CameraShakeComponent {
 #include "Extra/CameraShakeComponentAPI.hpp"
 
 public:
-MCAPI static float getMaxIntensity();
-
-
-} // namespace CameraShakeComponent
+    MCAPI static float getMaxIntensity();
+};

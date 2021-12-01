@@ -4,9 +4,10 @@
 #define EXTRA_INCLUDE_PART_VOLUMEIDENTIFIER
 #include "Extra/VolumeIdentifierAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VOLUMEIDENTIFIER
-class VolumeIdentifier {
+struct VolumeIdentifier {
 #include "Extra/VolumeIdentifierAPI.hpp"
 
 public:
     MCAPI bool operator==(struct VolumeIdentifier const&);
+    MCAPI struct VolumeIdentifier& operator=(struct VolumeIdentifier const&);
 };

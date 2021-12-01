@@ -8,11 +8,9 @@ class FullPlayerInventoryWrapper {
 #include "Extra/FullPlayerInventoryWrapperAPI.hpp"
 
 public:
-    MCAPI FullPlayerInventoryWrapper(class PlayerInventory&, class SimpleContainer&, class SimpleContainer&, class InventoryTransactionManager*, class Player*);
     MCAPI int clearAllItems();
     MCAPI int getItemCount(class std::function<bool(class ItemStack const&)>);
     MCAPI int removeResource(class ItemStack const&, class std::function<bool(class ItemStack const&)>, bool, int);
-
 
 private:
     MCAPI int _clearSimpleContainerItem(class SimpleContainer&, enum ContainerID, int);

@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_ACTORINFO
 #include "Extra/ActorInfoAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORINFO
-class ActorInfo {
+struct ActorInfo {
 #include "Extra/ActorInfoAPI.hpp"
 
 public:
     MCAPI void load(class CompoundTag const*);
     MCAPI struct ActorInfo& operator=(struct ActorInfo const&);
-    MCAPI ActorInfo(struct ActorInfo const&);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
-    MCAPI ~ActorInfo();
 };

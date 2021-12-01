@@ -4,17 +4,15 @@
 #define EXTRA_INCLUDE_PART_DYECOLORUTIL
 #include "Extra/DyeColorUtilAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DYECOLORUTIL
-namespace DyeColorUtil {
+class DyeColorUtil {
 #include "Extra/DyeColorUtilAPI.hpp"
 
 public:
-MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
-MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
-MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
-MCAPI static int getAuxValue(enum ItemColor);
-MCAPI static enum ItemColor getItemColor(int);
-MCAPI static enum ItemColor getRandomItemColor(class Random&);
-MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
-
-
-} // namespace DyeColorUtil
+    MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
+    MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
+    MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
+    MCAPI static int getAuxValue(enum ItemColor);
+    MCAPI static enum ItemColor getItemColor(int);
+    MCAPI static enum ItemColor getRandomItemColor(class Random&);
+    MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
+};

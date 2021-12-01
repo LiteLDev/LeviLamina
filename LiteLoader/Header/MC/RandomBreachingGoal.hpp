@@ -11,14 +11,11 @@ public:
     virtual ~RandomBreachingGoal();
     virtual bool canUse();
     virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
+    virtual bool canBeInterrupted();
     virtual void start();
     virtual void stop();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool _setWantedPosition();
-
-public:
-    MCAPI RandomBreachingGoal(class Mob&, float, int, int, int, float);
 };

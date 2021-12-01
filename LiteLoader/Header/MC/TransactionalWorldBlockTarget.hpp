@@ -8,28 +8,28 @@ class TransactionalWorldBlockTarget {
 #include "Extra/TransactionalWorldBlockTargetAPI.hpp"
 public:
     virtual ~TransactionalWorldBlockTarget();
-    virtual class Block const& getBlock(class BlockPos const&);
+    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual class Block const& getBlock(class BlockPos const&) const;
+    virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const;
+    virtual class Block const& getExtraBlock(class BlockPos const&) const;
+    virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     virtual bool setBlock(class BlockPos const&, class Block const&, int);
-    virtual void unk_vfn_6();
-    virtual bool apply();
-    virtual void unk_vfn_8();
-    virtual bool mayPlace(class BlockPos const&, class Block const&);
-    virtual bool canSurvive(class BlockPos const&, class Block const&);
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual class Biome const* getBiome(class BlockPos const&);
-    virtual bool isInBounds(class Pos const&);
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
+    virtual bool setBlockSimple(class BlockPos const&, class Block const&);
+    virtual bool apply() const;
+    virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
+    virtual bool mayPlace(class BlockPos const&, class Block const&) const;
+    virtual bool canSurvive(class BlockPos const&, class Block const&) const;
+    virtual short getMaxHeight() const;
+    virtual short getMinHeight() const;
+    virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
+    virtual short getHeightmap(int, int);
+    virtual bool isLegacyLevel();
+    virtual class Biome const* getBiome(class BlockPos const&) const;
+    virtual bool isInBounds(class Pos const&) const;
+    virtual short getLocalWaterLevel(class BlockPos const&) const;
+    virtual class LevelData const& getLevelData() const;
     virtual struct WorldGenContext const& getContext();
-    virtual void unk_vfn_21();
-    virtual void unk_vfn_22();
     virtual void unk_vfn_23();
     virtual void unk_vfn_24();
     virtual void unk_vfn_25();
@@ -222,9 +222,5 @@ public:
     virtual void unk_vfn_212();
     virtual void unk_vfn_213();
     virtual void unk_vfn_214();
-    virtual void unk_vfn_215();
-    virtual void unk_vfn_216();
-
-public:
-    MCAPI TransactionalWorldBlockTarget(class IBlockWorldGenAPI&);
+    virtual class Block const& getExtraBlock(class BlockPos const&) const;
 };

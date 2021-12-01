@@ -8,6 +8,6 @@
 class MoveControlDolphinDescription : public MoveControlDescription {
 #include "Extra/MoveControlDolphinDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
     virtual ~MoveControlDolphinDescription();
 };

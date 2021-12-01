@@ -8,25 +8,24 @@ class ActorDamageSource {
 #include "Extra/ActorDamageSourceAPI.hpp"
 public:
     virtual ~ActorDamageSource();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual bool isFire();
-    virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
+    virtual bool isEntitySource() const;
+    virtual bool isChildEntitySource() const;
+    virtual bool isBlockSource() const;
+    virtual bool isFire() const;
+    virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
+    virtual bool getIsCreative() const;
+    virtual bool getIsWorldBuilder() const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual struct ActorUniqueID getDamagingEntityUniqueID();
-    virtual int /*enum ActorType*/ getDamagingEntityType();
-    virtual void unk_vfn_15();
-    virtual std::unique_ptr<class ActorDamageSource> clone();
+    virtual int /*enum ActorCategory*/ getEntityCategories() const;
+    virtual bool getDamagingEntityIsCreative() const;
+    virtual bool getDamagingEntityIsWorldBuilder() const;
+    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    virtual int /*enum ActorType*/ getDamagingEntityType() const;
+    virtual int /*enum ActorCategory*/ getDamagingEntityCategories() const;
+    virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
 public:
-    MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
 

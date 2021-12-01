@@ -8,18 +8,9 @@ class TridentRiptideEnchant {
 #include "Extra/TridentRiptideEnchantAPI.hpp"
 public:
     virtual ~TridentRiptideEnchant();
-    virtual bool isCompatibleWith(int /*enum Enchant::Type*/);
-    virtual int getMinCost(int);
-    virtual void unk_vfn_3();
+    virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
+    virtual int getMinCost(int) const;
+    virtual int getMaxCost(int) const;
     virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
+    virtual int getMaxLevel() const;
 };

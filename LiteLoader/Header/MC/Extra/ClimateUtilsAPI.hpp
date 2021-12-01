@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+struct Parameter;
+struct TargetSpace;
 
 #endif

@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_AABBBUCKET
 #include "Extra/AABBBucketAPI.hpp"
 #undef EXTRA_INCLUDE_PART_AABBBUCKET
-class AABBBucket {
+struct AABBBucket {
 #include "Extra/AABBBucketAPI.hpp"
 
 public:

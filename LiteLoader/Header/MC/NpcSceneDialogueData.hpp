@@ -8,18 +8,12 @@ class NpcSceneDialogueData {
 #include "Extra/NpcSceneDialogueDataAPI.hpp"
 public:
     virtual ~NpcSceneDialogueData();
-    virtual std::string const& getDialogueText();
+    virtual std::string const& getDialogueText() const;
     virtual void unk_vfn_2();
-    virtual std::string const& getNameText();
-    virtual std::string const& getNameRawText();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-
-public:
-    MCAPI NpcSceneDialogueData(class NpcComponent&, class Actor&, std::string const&);
+    virtual std::string const& getNameText() const;
+    virtual std::string const& getNameRawText() const;
+    virtual std::string const& getSceneName() const;
+    virtual struct NpcActionsContainer& getActionsContainer();
+    virtual struct NpcActionsContainer const& getActionsContainer() const;
+    virtual struct ActorUniqueID const& getActorUniqueID();
 };

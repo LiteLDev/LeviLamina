@@ -4,20 +4,18 @@
 #define EXTRA_INCLUDE_PART_SHAREDBUFFS
 #include "Extra/SharedBuffsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SHAREDBUFFS
-namespace SharedBuffs {
+class SharedBuffs {
 #include "Extra/SharedBuffsAPI.hpp"
 
 public:
-MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
-MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
-MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
-MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
-MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
-MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
-MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
-MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
-MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
-MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
-
-
-} // namespace SharedBuffs
+    MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
+    MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
+    MCAPI static class std::shared_ptr<class AttributeBuff> HARM;
+    MCAPI static class std::shared_ptr<class AttributeBuff> HEAL;
+    MCAPI static class std::shared_ptr<class AttributeBuff> POISON;
+    MCAPI static class std::shared_ptr<class AttributeBuff> PUFFER_POSIONING;
+    MCAPI static class std::shared_ptr<class AttributeBuff> REGENERATION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> SATURATION;
+    MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
+};

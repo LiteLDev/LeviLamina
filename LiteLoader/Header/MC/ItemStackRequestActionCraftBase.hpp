@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTBASE
 #include "Extra/ItemStackRequestActionCraftBaseAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTBASE
-namespace ItemStackRequestActionCraftBase {
+class ItemStackRequestActionCraftBase {
 #include "Extra/ItemStackRequestActionCraftBaseAPI.hpp"
-
-
-}
+};

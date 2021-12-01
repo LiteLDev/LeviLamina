@@ -14,11 +14,8 @@ public:
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&);
-
-public:
-    MCAPI EndermanTakeBlockGoal(class EnderMan&);
+    virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
 };

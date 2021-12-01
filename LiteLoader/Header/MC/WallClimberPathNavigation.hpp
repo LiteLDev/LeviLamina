@@ -10,10 +10,10 @@ class WallClimberPathNavigation : public PathNavigation {
 public:
     virtual ~WallClimberPathNavigation();
     virtual void tick(class NavigationComponent&, class Mob&);
-    virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
     virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
+    virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
     virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
     virtual void stop(class NavigationComponent&, class Mob&);
     virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    virtual bool canUpdatePath(class Mob const&);
+    virtual bool canUpdatePath(class Mob const&) const;
 };

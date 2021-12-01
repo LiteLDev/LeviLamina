@@ -10,8 +10,7 @@ class WeepingVinesClusterFeature : public Feature {
 public:
     virtual ~WeepingVinesClusterFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _isInvalidPlacementLocation(class BlockSource&, class BlockPos const&) const;

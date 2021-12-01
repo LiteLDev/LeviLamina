@@ -8,5 +8,5 @@ class ServerNetworkEventListener {
 #include "Extra/ServerNetworkEventListenerAPI.hpp"
 public:
     virtual ~ServerNetworkEventListener();
-    virtual void unk_vfn_1();
+    virtual int /*enum EventResult*/ onChat(struct ChatEvent const&);
 };

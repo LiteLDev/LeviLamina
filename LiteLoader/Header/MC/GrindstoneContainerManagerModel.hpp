@@ -13,17 +13,15 @@ public:
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
-    virtual std::vector<class ItemStack> getItemCopies();
+    virtual std::vector<class ItemStack> getItemCopies() const;
     virtual void setSlot(int, class ItemStack const&, bool);
-    virtual class ItemStack const& getSlot(int);
+    virtual class ItemStack const& getSlot(int) const;
     virtual void setData(int, int);
     virtual void broadcastChanges();
     virtual bool isValid(float);
     virtual class ContainerScreenContext _postInit();
 
 public:
-    MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
-
     MCAPI static int const ADDITIONAL_SLOT;
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const RESULT_SLOT;

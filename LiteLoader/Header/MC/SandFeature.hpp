@@ -10,8 +10,5 @@ class SandFeature : public Feature {
 public:
     virtual ~SandFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI SandFeature(class Block const&, int);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

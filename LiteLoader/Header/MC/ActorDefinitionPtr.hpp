@@ -9,10 +9,6 @@ class ActorDefinitionPtr {
 
 public:
     MCAPI class ActorDefinitionPtr& operator=(class ActorDefinitionPtr&&);
-    MCAPI ActorDefinitionPtr(class ActorDefinitionPtr const&);
-    MCAPI ActorDefinitionPtr(class ActorDefinitionGroup&, class ActorDefinition&);
-    MCAPI ActorDefinitionPtr();
-    MCAPI ~ActorDefinitionPtr();
 
     MCAPI static class ActorDefinitionPtr const NONE;
 };

@@ -8,8 +8,6 @@ class ItemGroup {
 #include "Extra/ItemGroupAPI.hpp"
 
 public:
-    MCAPI ItemGroup(class ItemInstance const&);
     MCAPI bool isEmpty() const;
     MCAPI class ItemGroup& operator=(class ItemGroup&&);
-    MCAPI ~ItemGroup();
 };

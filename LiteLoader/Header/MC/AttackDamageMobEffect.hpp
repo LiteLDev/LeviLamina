@@ -10,11 +10,9 @@ class AttackDamageMobEffect : public MobEffect {
 public:
     virtual ~AttackDamageMobEffect();
     virtual void unk_vfn_4();
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&);
+    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
 
 public:
-    MCAPI AttackDamageMobEffect(int, std::string const&, std::string const&, bool, int, int);
-
     MCAPI static int getDamageAfterDamageBoost(int, int);
     MCAPI static int getDamageAfterWeakness(int, int);
 };

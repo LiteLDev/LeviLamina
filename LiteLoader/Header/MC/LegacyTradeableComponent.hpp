@@ -8,9 +8,8 @@ class LegacyTradeableComponent {
 #include "Extra/LegacyTradeableComponentAPI.hpp"
 
 public:
-    MCAPI void IncrementTradeTier();
-    MCAPI LegacyTradeableComponent();
     MCAPI void DecrementMerchantTimer();
+    MCAPI void IncrementTradeTier();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI class UpdateTradePacket createDataPacket(class Actor&, enum ContainerID);
     MCAPI bool getAddRecipeOnUpdate() const;
@@ -36,8 +35,6 @@ public:
     MCAPI bool shouldConvertTrades(class Actor&) const;
     MCAPI bool shouldPersistTrades(class Actor&) const;
     MCAPI void updateTradeTier(class Actor&);
-    MCAPI ~LegacyTradeableComponent();
-
 
 private:
     MCAPI struct TradeTable* _getTradeTable(class Actor&);

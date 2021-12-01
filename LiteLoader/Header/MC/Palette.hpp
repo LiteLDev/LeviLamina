@@ -4,28 +4,26 @@
 #define EXTRA_INCLUDE_PART_PALETTE
 #include "Extra/PaletteAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PALETTE
-namespace Palette {
+class Palette {
 #include "Extra/PaletteAPI.hpp"
 
 public:
-MCAPI static class mce::Color const BLACK;
-MCAPI static class mce::Color const BLUE;
-MCAPI static class mce::Color const BROWN;
-MCAPI static class mce::Color const CYAN;
-MCAPI static class mce::Color const GRAY;
-MCAPI static class mce::Color const GREEN;
-MCAPI static class mce::Color const LIGHT_BLUE;
-MCAPI static class mce::Color const LIGHT_GREEN;
-MCAPI static class mce::Color const MAGENTA;
-MCAPI static class mce::Color const ORANGE;
-MCAPI static class mce::Color const PINK;
-MCAPI static class mce::Color const PURPLE;
-MCAPI static class mce::Color const RED;
-MCAPI static class mce::Color const SILVER;
-MCAPI static class mce::Color const WHITE;
-MCAPI static class mce::Color const YELLOW;
-MCAPI static enum PaletteColor fromByte(unsigned char);
-MCAPI static class mce::Color const& getColor(enum PaletteColor);
-
-
-} // namespace Palette
+    MCAPI static class mce::Color const BLACK;
+    MCAPI static class mce::Color const BLUE;
+    MCAPI static class mce::Color const BROWN;
+    MCAPI static class mce::Color const CYAN;
+    MCAPI static class mce::Color const GRAY;
+    MCAPI static class mce::Color const GREEN;
+    MCAPI static class mce::Color const LIGHT_BLUE;
+    MCAPI static class mce::Color const LIGHT_GREEN;
+    MCAPI static class mce::Color const MAGENTA;
+    MCAPI static class mce::Color const ORANGE;
+    MCAPI static class mce::Color const PINK;
+    MCAPI static class mce::Color const PURPLE;
+    MCAPI static class mce::Color const RED;
+    MCAPI static class mce::Color const SILVER;
+    MCAPI static class mce::Color const WHITE;
+    MCAPI static class mce::Color const YELLOW;
+    MCAPI static enum PaletteColor fromByte(unsigned char);
+    MCAPI static class mce::Color const& getColor(enum PaletteColor);
+};

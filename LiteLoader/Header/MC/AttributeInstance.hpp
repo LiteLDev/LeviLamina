@@ -11,8 +11,6 @@ public:
     virtual void tick();
 
 public:
-    MCAPI AttributeInstance();
-    MCAPI AttributeInstance(class AttributeInstance const&);
     MCAPI void addBuff(class AttributeBuff const&);
     MCAPI void addModifier(class AttributeModifier const&);
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);
@@ -27,8 +25,8 @@ public:
     MCAPI class AttributeModifier getModifier(class mce::UUID const&) const;
     MCAPI std::vector<class AttributeModifier> getModifiers(int) const;
     MCAPI std::vector<class AttributeModifier> getModifiers() const;
-    MCAPI bool hasModifier(class mce::UUID const&) const;
     MCAPI bool hasModifier(class std::shared_ptr<class AttributeModifier>) const;
+    MCAPI bool hasModifier(class mce::UUID const&) const;
     MCAPI bool hasModifiers() const;
     MCAPI bool hasTemporalBuffs() const;
     MCAPI bool isValid() const;
@@ -43,6 +41,7 @@ public:
     MCAPI void resetToDefaultValue();
     MCAPI void resetToMaxValue();
     MCAPI void resetToMinValue();
+    MCAPI void serializationSetRange(float, float, float);
     MCAPI void serializationSetValue(float, int, float);
     MCAPI void setCurrentValue(float);
     MCAPI void setDefaultValue(float, int);
@@ -51,9 +50,7 @@ public:
     MCAPI void setMaxValue(float);
     MCAPI void setRange(float, float, float);
 
-
 private:
-    MCAPI AttributeInstance(class BaseAttributeMap*, class Attribute const*);
     MCAPI float _calculateValue(class AttributeBuff const&);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);

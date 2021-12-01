@@ -8,5 +8,6 @@ class JigsawStructureBlockRulesRegistry {
 #include "Extra/JigsawStructureBlockRulesRegistryAPI.hpp"
 
 public:
-    MCAPI ~JigsawStructureBlockRulesRegistry();
+    MCAPI std::vector<std::unique_ptr<class StructurePoolBlockRule>> const* lookupByName(std::string) const;
+    MCAPI void registerBlockRules(std::string, std::unique_ptr<std::vector<class std::unique_ptr<class StructurePoolBlockRule, struct std::default_delete<class StructurePoolBlockRule>>>>&&);
 };

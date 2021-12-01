@@ -47,8 +47,8 @@ vector<Tag*>& Tag::asList() {
     return *(vector<Tag*>*)((uintptr_t)this + 8);
 }
 
-map<string, Tag>& Tag::asCompound() {
-    return *(map<string, Tag>*)((uintptr_t)this + 8);
+map<string, Tag&>& Tag::asCompound() {
+    return *(map<string, Tag&>*)((uintptr_t)this + 8);
 }
 
 TagMemoryChunk& Tag::asByteArray() {
@@ -102,7 +102,7 @@ Tag* Tag::fromBlock(Block* blk) {
 
 void Tag::setBlock(Block* blk) {
     //SymCall("??0CompoundTag@@QEAA@$$QEAV0@@Z", Tag*, Tag*, Tag*)((Tag*)((uintptr_t)blk + 96), this);
-    *(Tag*)((uintptr_t)blk + 96) = *this;
+    *(CompoundTag**)((uintptr_t)blk + 96) = *(CompoundTag**)this;
 }
 
 Tag* Tag::fromActor(Actor* actor) {
@@ -151,52 +151,52 @@ Tag* Tag::fromBlockEntity(BlockActor* ble) {
 
 using namespace nbt;
 
-void TagToSNBT_Compound_Helper(tags::compound_tag& res, Tag* nbt);
-void TagToSNBT_List_Helper(tags::compound_list_tag& res, Tag* nbt);
+void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt);
+void TagToSNBT_List_Helper(tags::compound_list_tag& res, ListTag* nbt);
 
-void TagToSNBT_List_Helper(tags::byte_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::byte_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asByte());
 }
 
-void TagToSNBT_List_Helper(tags::short_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::short_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asShort());
 }
 
-void TagToSNBT_List_Helper(tags::int_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::int_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asInt());
 }
 
-void TagToSNBT_List_Helper(tags::long_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::long_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asLong());
 }
 
-void TagToSNBT_List_Helper(tags::float_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::float_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asFloat());
 }
 
-void TagToSNBT_List_Helper(tags::double_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::double_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asDouble());
 }
 
-void TagToSNBT_List_Helper(tags::string_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::string_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list)
         res.value.emplace_back(tag->asString());
 }
 
-void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list) {
         auto& bytes = tag->asByteArray();
@@ -211,7 +211,7 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, Tag* nbt) {
     }
 }
 
-tags::tag_list_tag TagToSNBT_List_Helper(Tag* nbt) {
+tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
     auto& list = nbt->asList();
     if (list.empty()) {
         return tags::tag_list_tag();
@@ -263,7 +263,7 @@ tags::tag_list_tag TagToSNBT_List_Helper(Tag* nbt) {
         case Tag::Type::List: {
             tags::list_list_tag res;
             for (auto& tag : list) {
-                tags::tag_list_tag data = TagToSNBT_List_Helper(tag);
+                tags::tag_list_tag data = TagToSNBT_List_Helper((ListTag*)tag);
                 res.value.emplace_back(std::make_unique<tags::tag_list_tag>(data));
             }
             return res.as_tags();
@@ -279,16 +279,16 @@ tags::tag_list_tag TagToSNBT_List_Helper(Tag* nbt) {
     }
 }
 
-void TagToSNBT_List_Helper(tags::compound_list_tag& res, Tag* nbt) {
+void TagToSNBT_List_Helper(tags::compound_list_tag& res, ListTag* nbt) {
     auto& list = nbt->asList();
     for (auto& tag : list) {
         auto obj = tags::compound_tag(false);
-        TagToSNBT_Compound_Helper(obj, tag);
+        TagToSNBT_Compound_Helper(obj, (CompoundTag*)tag);
         res.value.emplace_back(obj.value);
     }
 }
 
-void TagToSNBT_Compound_Helper(tags::compound_tag& res, Tag* nbt) {
+void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
     auto& list = nbt->asCompound();
     for (auto& [key, tag] : list) {
         switch (tag.getTagType()) {
@@ -333,13 +333,13 @@ void TagToSNBT_Compound_Helper(tags::compound_tag& res, Tag* nbt) {
                     res.value[key] = make_unique<tags::tag_list_tag>();
                     break;
                 }
-                tags::tag_list_tag obj = TagToSNBT_List_Helper(&tag);
+                tags::tag_list_tag obj = TagToSNBT_List_Helper((ListTag*) & tag);
                 res.value[key] = make_unique<tags::tag_list_tag>(obj);
                 break;
             }
             case Tag::Type::Compound: {
                 auto obj = tags::compound_tag(false);
-                TagToSNBT_Compound_Helper(obj, &tag);
+                TagToSNBT_Compound_Helper(obj, (CompoundTag*) & tag);
                 res.value[key] = make_unique<tags::compound_tag>(obj);
                 break;
             }
@@ -355,7 +355,7 @@ string Tag::toSNBT() {
     if (nbt->getTagType() != (char)Tag::Type::Compound)
         return "";
     tags::compound_tag root(true);
-    TagToSNBT_Compound_Helper(root, nbt);
+    TagToSNBT_Compound_Helper(root, (CompoundTag*)nbt);
 
     ostringstream sout;
     sout << contexts::mojangson << root;
@@ -534,21 +534,21 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                     default:
                         break;
                 }
-                nbt->put(key, std::move(*(Tag*)res));
+                nbt->put(key, std::move((Tag&)res));
                 break;
             }
             case tag_id::tag_compound: {
                 CompoundTag* res = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
                 tags::compound_tag* data = (tags::compound_tag*)value.get();
                 SNBTToTag_Compound_Helper(res, *data);
-                nbt->put(key, std::move(*(Tag*)res));
+                nbt->put(key, std::move(*(CompoundTag*)res));
                 break;
             }
         }
     }
 }
 
-Tag* Tag::fromSNBT(const string& snbt) {
+CompoundTag* Tag::fromSNBT(const string& snbt) {
     istringstream sin(snbt);
     tags::compound_tag root(true);
     sin >> contexts::mojangson >> root;
@@ -561,7 +561,7 @@ Tag* Tag::fromSNBT(const string& snbt) {
 
 //////////////////// From Binary ////////////////////
 
-Tag* Tag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
+CompoundTag* Tag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian)
         vtbl = dlsym("??_7StringByteInput@@6B@");
@@ -569,15 +569,15 @@ Tag* Tag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEnd
         vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
 
     uintptr_t iDataInput[4] = {(uintptr_t)vtbl, offset, len, (uintptr_t)data};
-    Tag* tag = Tag::createTag(Tag::Type::Compound);
+    CompoundTag* tag = CompoundTag::createTag();
     auto rtn = SymCall("?read@NbtIo@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVIDataInput@@@Z",
-                       unique_ptr<Tag>*, Tag**, void*)(&tag, (void*)iDataInput);
+                       unique_ptr<CompoundTag>*, CompoundTag**, void*)(&tag, (void*)iDataInput);
 
     offset = iDataInput[1];
     return rtn->get();
 }
 
-Tag* Tag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
+CompoundTag* Tag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
     size_t offset = 0;
     return fromBinaryNBT(data, len, offset, isLittleEndian);
 }

@@ -8,15 +8,12 @@ class ChunkLoadActionList {
 #include "Extra/ChunkLoadActionListAPI.hpp"
 
 public:
-    MCAPI ChunkLoadActionList();
     MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);
     MCAPI void loadRequests(class LevelStorage&, class ICommandOriginLoader&, std::string const&);
     MCAPI void onChunkLoaded(class ServerLevel&, class LevelStorage&, class Dimension&, class LevelChunk&);
     MCAPI void onStaticTickingAreaAdded(class ServerLevel&, class LevelStorage&, class Dimension&, std::string const&);
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class ChunkLoadedRequest, class ServerLevel&, class LevelStorage&, class Dimension&);
     MCAPI void tickRequests(class ServerLevel&, class Dimension&);
-    MCAPI ~ChunkLoadActionList();
-
 
 private:
     MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);

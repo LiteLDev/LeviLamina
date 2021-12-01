@@ -8,10 +8,4 @@ class ResourcePackListener {
 #include "Extra/ResourcePackListenerAPI.hpp"
 public:
     virtual ~ResourcePackListener();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
 };

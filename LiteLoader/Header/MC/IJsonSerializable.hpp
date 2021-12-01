@@ -8,6 +8,4 @@ class IJsonSerializable {
 #include "Extra/IJsonSerializableAPI.hpp"
 public:
     virtual ~IJsonSerializable();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

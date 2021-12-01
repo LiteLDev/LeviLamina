@@ -9,15 +9,14 @@ class MultiRecipe : public Recipe {
 #include "Extra/MultiRecipeAPI.hpp"
 public:
     virtual ~MultiRecipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&);
-    virtual int getCraftingSize();
+    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
+    virtual int getCraftingSize() const                                                     = 0;
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual bool matches(class CraftingContainer&, class Level&);
-    virtual int size();
-    virtual class mce::UUID const& getId();
+    virtual bool matches(class CraftingContainer&, class Level&) const = 0;
+    virtual int size() const                                           = 0;
+    virtual class mce::UUID const& getId() const;
     virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_15();
+    virtual bool isMultiRecipe() const;
 };

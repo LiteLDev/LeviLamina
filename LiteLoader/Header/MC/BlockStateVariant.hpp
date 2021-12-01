@@ -8,6 +8,6 @@ class BlockStateVariant {
 #include "Extra/BlockStateVariantAPI.hpp"
 public:
     virtual ~BlockStateVariant();
-    virtual void toNBT(class CompoundTag&, int);
-    virtual bool fromNBT(class CompoundTag const&, int&);
+    virtual void toNBT(class CompoundTag&, int) const;
+    virtual bool fromNBT(class CompoundTag const&, int&) const;
 };

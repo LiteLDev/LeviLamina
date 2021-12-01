@@ -4,14 +4,13 @@
 #define EXTRA_INCLUDE_PART_PENDINGAREA
 #include "Extra/PendingAreaAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PENDINGAREA
-class PendingArea {
+struct PendingArea {
 #include "Extra/PendingAreaAPI.hpp"
 
 public:
     MCAPI bool isEntityOwned() const;
     MCAPI struct PendingArea& operator=(struct PendingArea&&);
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
-    MCAPI ~PendingArea();
 
     MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const&, bool, float);
     MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const&, struct Bounds const&, bool);

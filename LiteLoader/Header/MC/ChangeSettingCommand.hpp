@@ -8,7 +8,7 @@ class ChangeSettingCommand {
 #include "Extra/ChangeSettingCommandAPI.hpp"
 public:
     virtual ~ChangeSettingCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

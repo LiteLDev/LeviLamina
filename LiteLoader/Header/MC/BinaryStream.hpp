@@ -11,8 +11,6 @@ public:
     virtual ~BinaryStream();
 
 public:
-    MCAPI BinaryStream();
-    MCAPI BinaryStream(std::string&, bool);
     MCAPI std::string getAndReleaseData();
     MCAPI void reset();
     MCAPI void writeBool(bool);
@@ -32,7 +30,6 @@ public:
     MCAPI void writeUnsignedVarInt64(unsigned __int64);
     MCAPI void writeVarInt(int);
     MCAPI void writeVarInt64(__int64);
-
 
 private:
     MCAPI void write(void const*, unsigned __int64);

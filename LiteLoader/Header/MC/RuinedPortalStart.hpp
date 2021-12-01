@@ -10,8 +10,5 @@ class RuinedPortalStart : public StructureStart {
 public:
     virtual ~RuinedPortalStart();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-
-public:
-    MCAPI RuinedPortalStart(class BiomeSource const&, int, int, short, class IPreliminarySurfaceProvider const&);
+    virtual int /*enum StructureFeatureType*/ getType() const;
 };

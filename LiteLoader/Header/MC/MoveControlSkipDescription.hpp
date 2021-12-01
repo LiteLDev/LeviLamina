@@ -8,6 +8,6 @@
 class MoveControlSkipDescription : public MoveControlDescription {
 #include "Extra/MoveControlSkipDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName();
+    virtual char const* getJsonName() const;
     virtual ~MoveControlSkipDescription();
 };

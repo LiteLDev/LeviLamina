@@ -8,5 +8,5 @@ class GetChunksCommand {
 #include "Extra/GetChunksCommandAPI.hpp"
 public:
     virtual ~GetChunksCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 };

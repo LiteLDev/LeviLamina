@@ -4,16 +4,12 @@
 #define EXTRA_INCLUDE_PART_BLOCKFLAMMABLEDESCRIPTION
 #include "Extra/BlockFlammableDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKFLAMMABLEDESCRIPTION
-class BlockFlammableDescription {
+struct BlockFlammableDescription {
 #include "Extra/BlockFlammableDescriptionAPI.hpp"
 public:
     virtual ~BlockFlammableDescription();
-    virtual std::string const& getName();
-    virtual void initializeComponent(class EntityContext&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual std::string const& getName() const;
+    virtual void initializeComponent(class EntityContext&) const;
 
 public:
     MCAPI static std::string const NameID;

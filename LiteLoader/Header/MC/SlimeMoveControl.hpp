@@ -10,7 +10,4 @@ class SlimeMoveControl : public MoveControl {
 public:
     virtual ~SlimeMoveControl();
     virtual void tick(class MoveControlComponent&, class Mob&);
-
-public:
-    MCAPI SlimeMoveControl();
 };

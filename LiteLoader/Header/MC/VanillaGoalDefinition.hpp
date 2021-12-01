@@ -9,5 +9,4 @@ namespace VanillaGoalDefinition {
 
 MCAPI void init();
 
-
 } // namespace VanillaGoalDefinition

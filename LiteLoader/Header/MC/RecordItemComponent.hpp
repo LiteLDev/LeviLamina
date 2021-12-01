@@ -8,11 +8,11 @@ class RecordItemComponent {
 #include "Extra/RecordItemComponentAPI.hpp"
 public:
     virtual ~RecordItemComponent();
-    virtual void unk_vfn_1();
+    virtual bool isNetworkComponent() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:

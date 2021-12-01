@@ -8,7 +8,7 @@ class DialogueCommand {
 #include "Extra/DialogueCommandAPI.hpp"
 public:
     virtual ~DialogueCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

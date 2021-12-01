@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
+#include "Json.hpp"
 #define EXTRA_INCLUDE_PART_ACTORRANDOMCHANCETEST
 #include "Extra/ActorRandomChanceTestAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORRANDOMCHANCETEST
@@ -9,8 +10,8 @@ class ActorRandomChanceTest : public FilterTest {
 #include "Extra/ActorRandomChanceTestAPI.hpp"
 public:
     virtual ~ActorRandomChanceTest();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
-    virtual class Json::Value _serializeValue();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    virtual class Json::Value _serializeValue() const;
 };

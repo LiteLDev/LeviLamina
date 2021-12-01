@@ -10,8 +10,5 @@ class IcePatchFeature : public Feature {
 public:
     virtual ~IcePatchFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI IcePatchFeature(int);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

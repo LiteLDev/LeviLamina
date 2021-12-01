@@ -8,12 +8,8 @@ class ProjectileComponent {
 #include "Extra/ProjectileComponentAPI.hpp"
 
 public:
-    MCAPI ProjectileComponent();
-    MCAPI enum ProjectileAnchor getAnchor();
-    MCAPI enum LevelSoundEvent getShootSound();
-    MCAPI class ProjectileComponent& operator=(class ProjectileComponent const&);
-    MCAPI ProjectileComponent(class ProjectileComponent const&);
     MCAPI void addAdditionalSaveData(class CompoundTag&);
+    MCAPI enum ProjectileAnchor getAnchor();
     MCAPI bool getCatchFire() const;
     MCAPI bool getEnchantChanneling() const;
     MCAPI float getGravity();
@@ -21,11 +17,13 @@ public:
     MCAPI float getKnockbackForce() const;
     MCAPI bool getNoPhysics() const;
     MCAPI class Vec3 getOffset();
+    MCAPI enum LevelSoundEvent getShootSound();
     MCAPI bool getShootTarget();
     MCAPI class Vec3 getShooterAngle(class Actor&) const;
     MCAPI float getThrowPower() const;
     MCAPI float getUncertainty(enum Difficulty) const;
     MCAPI float getUncertaintyBase() const;
+    MCAPI class ProjectileComponent& operator=(class ProjectileComponent const&);
     MCAPI float getUncertaintyMultiplier() const;
     MCAPI void handleMovementGravity(class Actor&);
     MCAPI void handleMovementHoming(class Actor&);
@@ -49,7 +47,6 @@ public:
     MCAPI void setSplashRange(float);
     MCAPI void shoot(class Actor&, class Actor&);
     MCAPI void shoot(class Actor&, class Vec3 const&, float, float, class Vec3 const&, class Actor*);
-    MCAPI ~ProjectileComponent();
 
     MCAPI static unsigned int const DELAY_ON_HIT;
 

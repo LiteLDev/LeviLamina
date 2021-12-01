@@ -8,15 +8,17 @@ class LevelStorageWriteBatch {
 #include "Extra/LevelStorageWriteBatchAPI.hpp"
 public:
     virtual ~LevelStorageWriteBatch();
-    virtual void putKey(std::string const&, class std::shared_ptr<std::string>, int /*enum DBHelpers::Category*/);
-    virtual void putKey(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
-    virtual void putKey(std::string const&, std::string const&, int /*enum DBHelpers::Category*/);
     virtual void putKey(std::string const&, class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/);
+    virtual void putKey(std::string const&, std::string const&, int /*enum DBHelpers::Category*/);
+    virtual void putKey(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
+    virtual void putKey(std::string const&, class std::shared_ptr<std::string>, int /*enum DBHelpers::Category*/);
     virtual void deleteKey(std::string const&, int /*enum DBHelpers::Category*/);
     virtual void flush(class LevelStorage&);
 
 public:
-    MCAPI LevelStorageWriteBatch();
     MCAPI void addFlushCallback(class std::function<void(void)>);
     MCAPI void clear();
+    MCAPI void erase(class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> const&);
+    MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const&) const;
+    MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry>>>> find(std::string const&);
 };

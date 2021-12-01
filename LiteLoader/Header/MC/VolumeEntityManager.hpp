@@ -14,9 +14,7 @@ public:
     MCAPI static bool isTriggerVolumesEnabled;
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&);
 
-
 protected:
-    MCAPI VolumeEntityManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner>>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const&);
     MCAPI bool _definitionAlreadyExists(struct VolumeDefinition const&) const;
 };

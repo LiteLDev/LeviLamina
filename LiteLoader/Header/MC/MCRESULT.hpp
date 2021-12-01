@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_MCRESULT
 #include "Extra/MCRESULTAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MCRESULT
-class MCRESULT {
+struct MCRESULT {
 #include "Extra/MCRESULTAPI.hpp"
 
 public:

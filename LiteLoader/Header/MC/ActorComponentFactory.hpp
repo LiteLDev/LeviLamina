@@ -9,7 +9,6 @@ class ActorComponentFactory {
 public:
     virtual ~ActorComponentFactory();
 
-
 private:
     MCAPI void _initialize();
 };

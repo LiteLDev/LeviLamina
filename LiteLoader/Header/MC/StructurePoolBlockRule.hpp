@@ -8,7 +8,5 @@ class StructurePoolBlockRule {
 #include "Extra/StructurePoolBlockRuleAPI.hpp"
 
 public:
-    MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
-    MCAPI StructurePoolBlockRule(std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, std::unique_ptr<class IStructurePoolBlockPredicate>&&, class Block const*);
     MCAPI bool processRule(class Block const&, class Block const&, class Random&, class Block const*&, class BlockPos const&, class BlockPos const&) const;
 };

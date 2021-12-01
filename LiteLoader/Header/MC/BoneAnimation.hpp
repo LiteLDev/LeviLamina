@@ -8,7 +8,6 @@ class BoneAnimation {
 #include "Extra/BoneAnimationAPI.hpp"
 
 public:
-    MCAPI BoneAnimation(class BoneAnimation const&);
     MCAPI class BoneAnimationChannel& addAnimationChannel(enum BoneTransformType);
     MCAPI void setRotationRelativeMode(enum BoneAnimationRelativeMode);
 };

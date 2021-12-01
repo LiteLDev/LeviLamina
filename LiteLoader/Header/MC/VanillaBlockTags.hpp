@@ -4,17 +4,15 @@
 #define EXTRA_INCLUDE_PART_VANILLABLOCKTAGS
 #include "Extra/VanillaBlockTagsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VANILLABLOCKTAGS
-namespace VanillaBlockTags {
+class VanillaBlockTags {
 #include "Extra/VanillaBlockTagsAPI.hpp"
 
 public:
-MCAPI static char const* const const Acacia;
-MCAPI static char const* const const Birch;
-MCAPI static char const* const const DarkOak;
-MCAPI static char const* const const Jungle;
-MCAPI static char const* const const Log;
-MCAPI static char const* const const Oak;
-MCAPI static char const* const const Spruce;
-
-
-} // namespace VanillaBlockTags
+    MCAPI static char const* const const Acacia;
+    MCAPI static char const* const const Birch;
+    MCAPI static char const* const const DarkOak;
+    MCAPI static char const* const const Jungle;
+    MCAPI static char const* const const Log;
+    MCAPI static char const* const const Oak;
+    MCAPI static char const* const const Spruce;
+};

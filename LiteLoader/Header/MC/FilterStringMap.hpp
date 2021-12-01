@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_FILTERSTRINGMAP
 #include "Extra/FilterStringMapAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILTERSTRINGMAP
-class FilterStringMap {
+struct FilterStringMap {
 #include "Extra/FilterStringMapAPI.hpp"
 
 public:
     MCAPI struct FilterStringMap& operator=(struct FilterStringMap&&);
-    MCAPI FilterStringMap(class std::initializer_list<struct std::pair<std::string const, struct FilterInputDefinition>>);
-    MCAPI FilterStringMap(struct FilterStringMap const&);
-    MCAPI ~FilterStringMap();
 };

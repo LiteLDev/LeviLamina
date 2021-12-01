@@ -8,18 +8,8 @@ class FixedBiomeSource {
 #include "Extra/FixedBiomeSourceAPI.hpp"
 public:
     virtual ~FixedBiomeSource();
-    virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&);
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int);
-    virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-
-public:
-    MCAPI FixedBiomeSource(class Biome const&);
+    virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
+    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
+    virtual class Biome const* getBiome(int, int, int) const;
 };

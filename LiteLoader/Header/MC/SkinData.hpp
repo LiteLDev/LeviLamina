@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_SKINDATA
 #include "Extra/SkinDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SKINDATA
-class SkinData {
+struct SkinData {
 #include "Extra/SkinDataAPI.hpp"
 
 public:
-    MCAPI SkinData(class Json::Value const&);
-    MCAPI SkinData(class Actor const&);
     MCAPI void applyToActor(class Actor&) const;
     MCAPI bool softMatch(struct SkinData const&, bool&) const;
 };

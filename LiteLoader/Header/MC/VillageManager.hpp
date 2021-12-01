@@ -8,7 +8,6 @@ class VillageManager {
 #include "Extra/VillageManagerAPI.hpp"
 
 public:
-    MCAPI VillageManager(class Dimension&);
     MCAPI class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> getClosestVillageWithRaid(class BlockPos const&);
@@ -25,7 +24,6 @@ public:
     MCAPI void tick(struct Tick const&);
     MCAPI void tickVillages(struct Tick const&, class Vec3 const&, class BlockSource&);
     MCAPI class std::shared_ptr<class POIInstance> tryCreatePOI(class BlockPos const&, class Block const&);
-    MCAPI ~VillageManager();
 
     MCAPI static int const MAX_POI_TOLERANCE_DIST;
 
@@ -34,6 +32,7 @@ private:
     MCAPI void _assignPOIOnly(class std::shared_ptr<class POIInstance>&&);
     MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const&, class Village const&) const;
     MCAPI class std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const&, class BlockPos const&);
+    MCAPI class std::unordered_map<class Village const*, enum VillageManager::BedAvailabilityState, struct std::hash<class Village const*>, struct std::equal_to<class Village const*>, class std::allocator<struct std::pair<class Village const* const, enum VillageManager::BedAvailabilityState>>> _getVillageWithBedsAvailableMap() const;
     MCAPI void _loadPOIBlueprints();
     MCAPI void _processNextUnclusteredPOIQuery();
     MCAPI void _removeVillage(class Village&);
@@ -42,4 +41,5 @@ private:
 
     MCAPI static unsigned __int64 const MAX_POI_QUERIES;
     MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
+    MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
 };

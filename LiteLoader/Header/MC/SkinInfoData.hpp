@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_SKININFODATA
 #include "Extra/SkinInfoDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SKININFODATA
-namespace SkinInfoData {
+class SkinInfoData {
 #include "Extra/SkinInfoDataAPI.hpp"
 
 public:
-MCAPI static bool isValidSize(unsigned __int64);
-
-
-} // namespace SkinInfoData
+    MCAPI static bool isValidSize(unsigned __int64);
+};

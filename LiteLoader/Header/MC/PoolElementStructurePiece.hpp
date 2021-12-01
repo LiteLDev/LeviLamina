@@ -10,18 +10,16 @@ class PoolElementStructurePiece : public StructurePiece {
 public:
     virtual ~PoolElementStructurePiece();
     virtual void moveBoundingBox(int, int, int);
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType();
+    virtual class PoolElementStructurePiece* asPoolElement();
+    virtual int /*enum StructurePieceType*/ getType() const;
     virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     virtual int getWorldZ(int, int);
-    virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>>&);
-    virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&);
-    virtual class Block const& getBeardStabilizeBlock(class Block const&);
+    virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>>>>>&) const = 0;
+    virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const                                                                                                                                                                                                                                                    = 0;
+    virtual class Block const& getBeardStabilizeBlock(class Block const&) const                                                                                                                                                                                                                                                                                        = 0;
+    virtual int /*enum AdjustmentEffect*/ getTerrainAdjustmentEffect() const                                                                                                                                                                                                                                                                                           = 0;
     virtual bool _needsPostProcessing(class BlockSource&);
-
-public:
-    MCAPI PoolElementStructurePiece(class StructurePoolElement const&, class BlockPos, enum Rotation, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos);
 };

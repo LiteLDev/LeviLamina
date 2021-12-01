@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "FilterTest.hpp"
+#include "Json.hpp"
 #define EXTRA_INCLUDE_PART_ACTORISSKINIDTEST
 #include "Extra/ActorIsSkinIDTestAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORISSKINIDTEST
@@ -9,8 +10,8 @@ class ActorIsSkinIDTest : public FilterTest {
 #include "Extra/ActorIsSkinIDTestAPI.hpp"
 public:
     virtual ~ActorIsSkinIDTest();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
-    virtual class Json::Value _serializeValue();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    virtual class Json::Value _serializeValue() const;
 };

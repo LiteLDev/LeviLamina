@@ -9,5 +9,4 @@ namespace StateSerializationUtils {
 
 MCAPI enum WallConnectionType fromJavaNbtString(std::string const&);
 
-
 } // namespace StateSerializationUtils

@@ -4,12 +4,12 @@
 #define EXTRA_INCLUDE_PART_PERMISSIONSHANDLER
 #include "Extra/PermissionsHandlerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PERMISSIONSHANDLER
-namespace PermissionsHandler {
+class PermissionsHandler {
 #include "Extra/PermissionsHandlerAPI.hpp"
 
 public:
-MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const&);
-MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const&);
+    MCAPI bool loadSaveData(class CompoundTag const&);
 
-
-} // namespace PermissionsHandler
+    MCAPI static enum PlayerPermissionLevel playerPermissionLevelFromString(std::string const&);
+    MCAPI static std::string playerPermissionLevelToString(enum PlayerPermissionLevel const&);
+};

@@ -9,13 +9,16 @@ class FeatureTerrainAdjustments {
 
 public:
     MCAPI void setBeardAndShaver(class BoundingBox const&, int, float, float);
+    MCAPI void setBeardifier(class BoundingBox const&, int);
     MCAPI void setBury(class BoundingBox const&);
     MCAPI struct FeatureTerrainAdjustments::Descriptions take(class ChunkPos const&);
-    MCAPI ~FeatureTerrainAdjustments();
 
     MCAPI static float calculateContribution(struct FeatureTerrainAdjustments::Descriptions const&, class BlockPos const&, float);
+    MCAPI static struct BeardKernel& getBeardKernel();
     MCAPI static bool shouldDoTerrainAdjustments(struct FeatureTerrainAdjustments::Descriptions const&);
 
 private:
     MCAPI void _insertDescriptions(std::vector<class ChunkPos> const&, class std::function<void(struct FeatureTerrainAdjustments::Descriptions&)>&&);
+
+    MCAPI static struct BeardKernel mBeardKernel;
 };

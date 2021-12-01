@@ -7,7 +7,6 @@
 namespace GeodeFeatureInternal {
 #include "Extra/GeodeFeatureInternalAPI.hpp"
 
-MCAPI std::vector<enum MaterialType> geodeInvalidMaterials;
-
+MCAPI extern std::vector<enum MaterialType> geodeInvalidMaterials;
 
 } // namespace GeodeFeatureInternal

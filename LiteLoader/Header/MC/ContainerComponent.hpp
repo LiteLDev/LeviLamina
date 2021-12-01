@@ -13,8 +13,6 @@ public:
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI class ContainerComponent& operator=(class ContainerComponent&&);
-    MCAPI ContainerComponent();
-    MCAPI ContainerComponent(class ContainerComponent&&);
     MCAPI class Container* _getRawContainerPtr() const;
     MCAPI bool addItem(class BlockSource&, class ItemStack&, int, int);
     MCAPI bool addItem(class ItemActor&);
@@ -42,7 +40,6 @@ public:
     MCAPI bool setItem(int, class ItemStack const&);
     MCAPI void setLootTable(std::string const&, int);
     MCAPI void unpackLootTable(class Level&);
-
 
 private:
     MCAPI bool _tryMoveInItem(class BlockSource&, class ItemStack&, int, int, int);

@@ -8,5 +8,4 @@ class BlockSelector {
 #include "Extra/BlockSelectorAPI.hpp"
 public:
     virtual ~BlockSelector();
-    virtual void unk_vfn_1();
 };

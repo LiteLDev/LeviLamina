@@ -8,14 +8,10 @@ class SyncActorPropertyPacket {
 #include "Extra/SyncActorPropertyPacketAPI.hpp"
 public:
     virtual ~SyncActorPropertyPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void unk_vfn_3();
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-
-public:
-    MCAPI SyncActorPropertyPacket();
-    MCAPI SyncActorPropertyPacket(class Actor const&);
+    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 };

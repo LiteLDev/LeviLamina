@@ -8,12 +8,6 @@ class BlockPos {
 #include "Extra/BlockPosAPI.hpp"
 
 public:
-    MCAPI BlockPos(double, double, double);
-    MCAPI BlockPos(float, float, float);
-    MCAPI BlockPos(class Vec3 const&);
-    MCAPI BlockPos(class SubChunkPos const&);
-    MCAPI BlockPos(class ChunkPos const&, int);
-    MCAPI BlockPos(class ChunkPos const&, class ChunkBlockPos const&, short);
     MCAPI class Vec3 bottomCenter() const;
     MCAPI class Vec3 center() const;
     MCAPI bool cerealize(class BasicSaver&, struct SerializerTraits const&) const;

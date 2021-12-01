@@ -9,16 +9,15 @@ class ShulkerBoxRecipe : public ShapelessRecipe {
 #include "Extra/ShulkerBoxRecipeAPI.hpp"
 public:
     virtual ~ShulkerBoxRecipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&);
+    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual class mce::UUID const& getId();
+    virtual class mce::UUID const& getId() const;
     virtual void unk_vfn_9();
     virtual void unk_vfn_10();
-    virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*);
-    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&);
-    virtual void unk_vfn_15();
+    virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
+    virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
 
 public:
     MCAPI static class mce::UUID const ID;

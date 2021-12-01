@@ -8,7 +8,7 @@ class SleepState {
 #include "Extra/SleepStateAPI.hpp"
 public:
     virtual ~SleepState();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
+    virtual void tick();
+    virtual void tick();
     virtual void stop();
 };

@@ -4,9 +4,9 @@
 #define EXTRA_INCLUDE_PART_CLIMATEPARAMETERS
 #include "Extra/ClimateParametersAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CLIMATEPARAMETERS
-class ClimateParameters {
+struct ClimateParameters {
 #include "Extra/ClimateParametersAPI.hpp"
 
 public:
-    MCAPI ClimateParameters(struct Parameter, struct Parameter, struct Parameter, struct Parameter, struct Parameter, struct Parameter, float);
+    MCAPI __int64 fitness(struct TargetPoint const&) const;
 };

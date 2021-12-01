@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_WEAPONRECIPES
 #include "Extra/WeaponRecipesAPI.hpp"
 #undef EXTRA_INCLUDE_PART_WEAPONRECIPES
-namespace WeaponRecipes {
+class WeaponRecipes {
 #include "Extra/WeaponRecipesAPI.hpp"
 
 public:
-MCAPI static void addRecipes(class Recipes&);
-
-
-} // namespace WeaponRecipes
+    MCAPI static void addRecipes(class Recipes&);
+};

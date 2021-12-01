@@ -4,18 +4,16 @@
 #define EXTRA_INCLUDE_PART_ACTORCLASSTREE
 #include "Extra/ActorClassTreeAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORCLASSTREE
-namespace ActorClassTree {
+class ActorClassTree {
 #include "Extra/ActorClassTreeAPI.hpp"
 
 public:
-MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
-MCAPI static bool hasCategory(enum ActorCategory const&, enum ActorCategory);
-MCAPI static bool isHangingEntity(class Actor const&);
-MCAPI static bool isInstanceOf(class Actor const&, enum ActorType);
-MCAPI static bool isMob(enum ActorType);
-MCAPI static bool isMobLegacy(enum ActorType);
-MCAPI static bool isOfType(enum ActorType, enum ActorType);
-MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
-
-
-} // namespace ActorClassTree
+    MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
+    MCAPI static bool hasCategory(enum ActorCategory const&, enum ActorCategory);
+    MCAPI static bool isHangingEntity(class Actor const&);
+    MCAPI static bool isInstanceOf(class Actor const&, enum ActorType);
+    MCAPI static bool isMob(enum ActorType);
+    MCAPI static bool isMobLegacy(enum ActorType);
+    MCAPI static bool isOfType(enum ActorType, enum ActorType);
+    MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
+};

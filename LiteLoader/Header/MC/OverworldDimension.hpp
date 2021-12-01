@@ -6,7 +6,4 @@
 #undef EXTRA_INCLUDE_PART_OVERWORLDDIMENSION
 class OverworldDimension {
 #include "Extra/OverworldDimensionAPI.hpp"
-
-public:
-    MCAPI OverworldDimension(class Level&, class Scheduler&);
 };

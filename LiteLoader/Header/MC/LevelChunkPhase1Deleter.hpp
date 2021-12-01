@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_LEVELCHUNKPHASE1DELETER
 #include "Extra/LevelChunkPhase1DeleterAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LEVELCHUNKPHASE1DELETER
-class LevelChunkPhase1Deleter {
+struct LevelChunkPhase1Deleter {
 #include "Extra/LevelChunkPhase1DeleterAPI.hpp"
 
 public:

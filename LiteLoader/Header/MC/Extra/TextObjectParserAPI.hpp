@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+struct ErrorLocalization;
+struct ServerData;
 
 #endif

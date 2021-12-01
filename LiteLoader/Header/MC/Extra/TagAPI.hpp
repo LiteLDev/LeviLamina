@@ -5,7 +5,6 @@
 #include <map>
 #include <string>
 #include <vector>
-
 //////////////// Json ////////////////
 #include "../third-party/Nlohmann/fifo_map.hpp"
 #include "../third-party/Nlohmann/json.hpp"
@@ -25,6 +24,7 @@ class Actor;
 class Block;
 class ItemStack;
 class BlockActor;
+class CompoundTag;
 
 struct TagMemoryChunk {
     size_t capacity = 0;
@@ -84,7 +84,7 @@ LIAPI float& asFloat();
 LIAPI double& asDouble();
 LIAPI std::string& asString();
 LIAPI std::vector<Tag*>& asList();
-LIAPI std::map<std::string, Tag>& asCompound();
+LIAPI std::map<std::string, Tag&>& asCompound();
 LIAPI TagMemoryChunk& asByteArray();
 
 //compound
@@ -119,8 +119,8 @@ LIAPI static Tag* fromBlockEntity(BlockActor* ble);
 LIAPI std::string toJson(int formatIndent);
 LIAPI std::string toSNBT();
 LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
-LIAPI static Tag* fromSNBT(const std::string& snbt);
-LIAPI static Tag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-LIAPI static Tag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian);
+LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
+LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
+LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian);
 
 #endif

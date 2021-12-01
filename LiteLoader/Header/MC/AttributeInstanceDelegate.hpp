@@ -10,12 +10,8 @@ public:
     virtual ~AttributeInstanceDelegate();
     virtual void tick();
     virtual void notify(__int64);
-    virtual void unk_vfn_3();
-    virtual float getBuffValue(class AttributeBuff const&);
-
-public:
-    MCAPI AttributeInstanceDelegate(class AttributeInstance const&);
-
+    virtual bool change(float, float, struct AttributeBuffInfo);
+    virtual float getBuffValue(class AttributeBuff const&) const;
 
 protected:
     MCAPI class AttributeInstance const& _getInstance() const;

@@ -8,8 +8,6 @@ class IdentityDictionary {
 #include "Extra/IdentityDictionaryAPI.hpp"
 
 public:
-    MCAPI IdentityDictionary();
     MCAPI bool clearIdentity(struct ScoreboardId const&);
     MCAPI struct ScoreboardId const& convertFakeToReal(struct ScoreboardId const&, struct PlayerScoreboardId const&);
-    MCAPI ~IdentityDictionary();
 };

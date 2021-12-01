@@ -8,7 +8,6 @@ class LookAtComponent {
 #include "Extra/LookAtComponentAPI.hpp"
 
 public:
-    MCAPI LookAtComponent();
     MCAPI int& getCoolingTime();
     MCAPI float getSearchRadius() const;
     MCAPI bool getTarget() const;

@@ -10,35 +10,33 @@ public:
     virtual void addListener(class BlockSourceListener&);
     virtual void removeListener(class BlockSourceListener&);
     virtual class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(int /*enum ActorType*/, class AABB const&, class Actor const*);
-    virtual bool hasChunksAt(class AABB const&);
-    virtual bool hasChunksAt(class BlockPos const&, int);
-    virtual bool hasChunksAt(struct Bounds const&);
-    virtual class Block const& getBlock(int, int, int);
-    virtual class Block const& getBlock(class BlockPos const&);
-    virtual class Material const& getMaterial(int, int, int);
-    virtual class Material const& getMaterial(class BlockPos const&);
+    virtual bool hasChunksAt(struct Bounds const&) const;
+    virtual bool hasChunksAt(class BlockPos const&, int) const;
+    virtual bool hasChunksAt(class AABB const&) const;
+    virtual class Block const& getBlock(int, int, int) const;
+    virtual class Block const& getBlock(class BlockPos const&) const;
+    virtual class Material const& getMaterial(class BlockPos const&) const;
+    virtual class Material const& getMaterial(int, int, int) const;
     virtual bool containsAnyLiquid(class AABB const&);
-    virtual bool containsMaterial(class AABB const&, int /*enum MaterialType*/);
-    virtual short getMinHeight();
+    virtual bool containsMaterial(class AABB const&, int /*enum MaterialType*/) const;
+    virtual short getMinHeight() const;
     virtual void unk_vfn_13();
     virtual void unk_vfn_14();
-    virtual class AutomaticID<class Dimension, int> getDimensionId();
+    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
     virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
-    virtual void unk_vfn_18();
+    virtual class ChunkSource& getChunkSource();
     virtual ~BlockSource();
 
 public:
-    MCAPI BlockSource(class Level&, class Dimension&, class ChunkSource&, bool, bool);
-    MCAPI BlockSource(class ChunkSource&, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
-    MCAPI void addToRandomTickingQueue(class BlockPos const&, class Block const&, int, int);
-    MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const&, class Block const&, float, int);
-    MCAPI void addToTickingQueue(class BlockPos const&, class Block const&, int, int);
+    MCAPI void addToRandomTickingQueue(class BlockPos const&, class Block const&, int, int, bool);
+    MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const&, class Block const&, float, int, bool);
+    MCAPI void addToTickingQueue(class BlockPos const&, class Block const&, int, int, bool);
     MCAPI bool allowsRunes(class BlockPos const&);
     MCAPI bool areAllChunksLoaded(class BlockPos const&, class BlockVolume&) const;
-    MCAPI bool areChunksFullyLoaded(class BlockPos const&, int);
     MCAPI bool areChunksFullyLoaded(class BlockPos const&, class BlockPos const&);
+    MCAPI bool areChunksFullyLoaded(class BlockPos const&, int);
     MCAPI void blockEvent(class BlockPos const&, int, int);
     MCAPI bool canProvideSupport(class BlockPos const&, unsigned char, enum BlockSupportType) const;
     MCAPI bool canSeeSky(class BlockPos const&) const;
@@ -103,7 +101,7 @@ public:
     MCAPI struct Brightness getRawBrightness(class BlockPos const&, bool, bool) const;
     MCAPI struct Brightness getRawBrightnessWithManualDarken(class BlockPos const&, struct Brightness, bool, bool) const;
     MCAPI float getSeenPercent(class Vec3 const&, class AABB const&);
-    MCAPI class BlockTickingQueue* getTickingQueue(class BlockPos const&, enum TickingQueueType) const;
+    MCAPI class BlockTickingQueue* getTickingQueue(class BlockPos const&, enum TickingQueueType, bool) const;
     MCAPI float getVisualLiquidHeight(class Vec3 const&);
     MCAPI short getVoidHeight() const;
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource>> getWeakRef();
@@ -159,13 +157,11 @@ public:
     MCAPI void updateNeighborsAt(class BlockPos const&);
     MCAPI void updateNeighborsAtExceptFromFacing(class BlockPos const&, class BlockPos const&, int);
 
-
 private:
     MCAPI bool _getBlockPermissions(class BlockPos const&, bool);
     MCAPI float _getLiquidHeight(class BlockPos const&, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const&, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const&, class Block const&, enum TickingQueueType);
-
 
 protected:
     MCAPI void _blockChanged(class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*);

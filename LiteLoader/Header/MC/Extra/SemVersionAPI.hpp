@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+public:
+struct any_version_constructor;
 
 #endif

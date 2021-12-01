@@ -8,7 +8,7 @@ class ClearCommand {
 #include "Extra/ClearCommandAPI.hpp"
 public:
     virtual ~ClearCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

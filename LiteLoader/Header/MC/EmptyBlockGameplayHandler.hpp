@@ -10,10 +10,8 @@ public:
     virtual ~EmptyBlockGameplayHandler();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual int /*enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
+    virtual struct GameplayHandlerResult<class std::optional<std::string>> handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
 };

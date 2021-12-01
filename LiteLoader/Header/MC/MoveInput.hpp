@@ -13,11 +13,11 @@ public:
     virtual void unk_vfn_3();
     virtual void clearInputState();
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual bool allowPicking(float, float);
     virtual void setJumping(bool);
-    virtual void unk_vfn_8();
+    virtual void setAutoJumpingInWater(bool);
     virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual bool isPlayerMoving();
-    virtual void unk_vfn_12();
+    virtual void setSneakDown(bool);
+    virtual bool isPlayerMoving() const;
+    virtual class Vec3 const& getGazeDirection() const;
 };

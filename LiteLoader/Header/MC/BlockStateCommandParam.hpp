@@ -8,7 +8,5 @@ class BlockStateCommandParam {
 #include "Extra/BlockStateCommandParamAPI.hpp"
 
 public:
-    MCAPI BlockStateCommandParam(std::string, std::string, enum BlockStateCommandParam::Type);
     MCAPI bool setBlockState(class Block const**, class CommandOutput&) const;
-    MCAPI ~BlockStateCommandParam();
 };

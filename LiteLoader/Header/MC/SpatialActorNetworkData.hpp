@@ -8,7 +8,6 @@ class SpatialActorNetworkData {
 #include "Extra/SpatialActorNetworkDataAPI.hpp"
 
 public:
-    MCAPI SpatialActorNetworkData(class Actor&);
     MCAPI void enableAutoSend(bool);
     MCAPI void handleClientData(class MoveActorAbsoluteData const&);
     MCAPI bool isAutoSendEnabled() const;

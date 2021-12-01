@@ -9,18 +9,18 @@ class MinecraftGameTestInstance {
 public:
     virtual ~MinecraftGameTestInstance();
     virtual void initialize();
-    virtual bool hasStructureBlock();
+    virtual bool hasStructureBlock() const;
     virtual void clearStructure();
     virtual void spawnStructure();
-    virtual class std::optional<class AABB> getStructureBounds();
-    virtual class std::optional<class Vec3> getStructureBlockPivot();
-    virtual class std::optional<class Vec3> getStructureBlockPosPivot();
-    virtual class BoundingBox getStructureBoundingBox();
-    virtual class AutomaticID<class Dimension, int> getStructureDimension();
-    virtual int _getLevelTick();
+    virtual class std::optional<class AABB> getStructureBounds() const;
+    virtual class std::optional<class Vec3> getStructureBlockPivot() const;
+    virtual class std::optional<class Vec3> getStructureBlockPosPivot() const;
+    virtual class BoundingBox getStructureBoundingBox() const;
+    virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
+    virtual int _getLevelTick() const;
     virtual bool _isTestReady();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
     virtual void unk_vfn_14();
-    virtual class BlockSource& getBlockSource();
+    virtual class BlockSource& getBlockSource() const;
 };

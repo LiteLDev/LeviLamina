@@ -9,6 +9,6 @@ class SetDataFromColorIndexFunction : public LootItemFunction {
 #include "Extra/SetDataFromColorIndexFunctionAPI.hpp"
 public:
     virtual ~SetDataFromColorIndexFunction();
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 };

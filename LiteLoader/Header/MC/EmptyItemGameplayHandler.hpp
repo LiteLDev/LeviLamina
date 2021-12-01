@@ -8,5 +8,5 @@ class EmptyItemGameplayHandler {
 #include "Extra/EmptyItemGameplayHandlerAPI.hpp"
 public:
     virtual ~EmptyItemGameplayHandler();
-    virtual void unk_vfn_1();
+    virtual int /*enum HandlerResult*/ handleShapedRecipeTriggered(struct ShapedRecipeTriggeredEvent const&);
 };

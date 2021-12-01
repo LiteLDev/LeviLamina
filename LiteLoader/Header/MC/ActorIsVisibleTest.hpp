@@ -9,7 +9,7 @@ class ActorIsVisibleTest : public FilterTest {
 #include "Extra/ActorIsVisibleTestAPI.hpp"
 public:
     virtual ~ActorIsVisibleTest();
-    virtual bool evaluate(struct FilterContext const&);
+    virtual bool evaluate(struct FilterContext const&) const;
     virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName();
+    virtual class gsl::basic_string_span<char const, -1> getName() const;
 };

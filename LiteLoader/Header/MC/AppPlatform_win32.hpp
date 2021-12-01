@@ -8,8 +8,6 @@ class AppPlatform_win32 {
 #include "Extra/AppPlatform_win32API.hpp"
 
 public:
-    MCAPI AppPlatform_win32(struct HWND__*, std::string const&, std::string const&, class gsl::basic_string_span<char const, -1>, class std::shared_ptr<class HIDController>, int, int);
-
     MCAPI static void setupWorkingDirectory();
 
 private:

@@ -10,17 +10,12 @@ public:
     virtual ~RollGoal();
     virtual bool canUse();
     virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
+    virtual bool canBeInterrupted();
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI RollGoal(class Mob&, float);
-
+    virtual void appendDebugInfo(std::string&) const;
+    virtual bool canBeInterrupted();
 
 private:
     MCAPI void _handleRoll(int, class Vec3&, float&, float&) const;

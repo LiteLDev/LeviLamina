@@ -4,5 +4,9 @@
 
 #else
 // Add Member There
+public:
+struct HardcodedSpawningArea;
+class Neighbors;
+enum Finalization;
 
 #endif

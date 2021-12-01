@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_SLOTDESCRIPTOR
 #include "Extra/SlotDescriptorAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SLOTDESCRIPTOR
-class SlotDescriptor {
+struct SlotDescriptor {
 #include "Extra/SlotDescriptorAPI.hpp"
 
 public:
-    MCAPI SlotDescriptor();
-    MCAPI SlotDescriptor(struct SlotDescriptor const&);
     MCAPI void addAcceptedItem(class ItemDescriptor const&);
-    MCAPI ~SlotDescriptor();
 };

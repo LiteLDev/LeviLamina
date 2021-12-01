@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_MOLANGPROGRAMBUILDSTATE
 #include "Extra/MolangProgramBuildStateAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOLANGPROGRAMBUILDSTATE
-class MolangProgramBuildState {
+struct MolangProgramBuildState {
 #include "Extra/MolangProgramBuildStateAPI.hpp"
 
 public:
@@ -18,5 +18,4 @@ public:
     MCAPI void pushLoopScope(unsigned __int64, unsigned __int64, unsigned __int64, unsigned __int64);
     MCAPI void pushReturnValue();
     MCAPI void setReturnValue(float);
-    MCAPI ~MolangProgramBuildState();
 };

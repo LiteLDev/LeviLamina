@@ -8,6 +8,5 @@ class TrailComponent {
 #include "Extra/TrailComponentAPI.hpp"
 
 public:
-    MCAPI TrailComponent();
     MCAPI void initFromDefinition(class Actor&);
 };

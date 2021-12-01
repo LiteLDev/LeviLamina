@@ -8,9 +8,8 @@ class WorldTemplatePackManifest {
 #include "Extra/WorldTemplatePackManifestAPI.hpp"
 public:
     virtual ~WorldTemplatePackManifest();
-    virtual std::unique_ptr<class PackManifest> clone();
+    virtual std::unique_ptr<class PackManifest> clone() const;
 
 public:
-    MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
 };

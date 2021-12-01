@@ -13,13 +13,8 @@ public:
     virtual void unk_vfn_3();
     virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&);
     virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const&);
-    virtual bool hasAnimationFinished();
+    virtual bool hasAnimationFinished() const;
     virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    virtual void unk_vfn_8();
-    virtual class HashedString const& getRawName();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-
-public:
-    MCAPI ActorAnimationControllerPlayer(class HashedString const&, class ActorAnimationControllerPtr const&, class AnimationComponent&, class ExpressionNode const&);
+    virtual int /*enum ActorAnimationType*/ getAnimationType() const;
+    virtual class HashedString const& getRawName() const;
 };

@@ -10,5 +10,4 @@ namespace GameModeExt {
 MCAPI std::unique_ptr<struct IGameModeMessenger> createDefaultMessenger(class Player&);
 MCAPI std::unique_ptr<struct IGameModeTimer> createDefaultTimer(class Player const&);
 
-
 } // namespace GameModeExt

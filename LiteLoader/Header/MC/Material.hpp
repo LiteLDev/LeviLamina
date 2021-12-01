@@ -8,7 +8,7 @@ class Material {
 #include "Extra/MaterialAPI.hpp"
 
 public:
-    MCAPI bool isSolidBlocking() const;
+    MCAPI bool isSolid() const;
     MCAPI bool operator!=(class Material const&);
     MCAPI bool operator==(class Material const&);
     MCAPI bool getBlocksMotion() const;
@@ -18,7 +18,7 @@ public:
     MCAPI bool isFlammable() const;
     MCAPI bool isLiquid() const;
     MCAPI bool isReplaceable() const;
-    MCAPI bool isSolid() const;
+    MCAPI bool isSolidBlocking() const;
     MCAPI bool isSuperHot() const;
     MCAPI bool isTopSolid(bool, bool) const;
     MCAPI bool isType(enum MaterialType) const;

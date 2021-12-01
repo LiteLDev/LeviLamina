@@ -7,5 +7,4 @@
 namespace SimpleBoolFilterTest {
 #include "Extra/SimpleBoolFilterTestAPI.hpp"
 
-
 }

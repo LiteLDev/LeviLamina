@@ -9,5 +9,4 @@ class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/OverworldBrightnessRampAPI.hpp"
 public:
     virtual ~OverworldBrightnessRamp();
-    virtual void unk_vfn_2();
 };

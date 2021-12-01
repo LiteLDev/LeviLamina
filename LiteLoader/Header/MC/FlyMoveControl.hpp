@@ -10,7 +10,4 @@ class FlyMoveControl : public MoveControl {
 public:
     virtual ~FlyMoveControl();
     virtual void tick(class MoveControlComponent&, class Mob&);
-
-public:
-    MCAPI FlyMoveControl();
 };

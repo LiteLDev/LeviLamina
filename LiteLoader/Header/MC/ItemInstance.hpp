@@ -9,29 +9,15 @@ class ItemInstance : public ItemStackBase {
 #include "Extra/ItemInstanceAPI.hpp"
 public:
     virtual ~ItemInstance();
-    virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-    virtual void reinit(class BlockLegacy const&, int);
     virtual void reinit(class Item const&, int, int);
+    virtual void reinit(class BlockLegacy const&, int);
+    virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
 
 public:
     MCAPI class ItemInstance clone() const;
     MCAPI class ItemInstance& operator=(class ItemInstance const&);
-    MCAPI ItemInstance();
-    MCAPI ItemInstance(class gsl::basic_string_span<char const, -1>, int, int, class CompoundTag const*);
-    MCAPI ItemInstance(class Item const&, int, int, class CompoundTag const*);
-    MCAPI ItemInstance(class Item const&, int, int);
-    MCAPI ItemInstance(class Item const&, int);
-    MCAPI ItemInstance(class Item const&);
-    MCAPI ItemInstance(class BlockLegacy const&, int);
-    MCAPI ItemInstance(class Block const&, int, class CompoundTag const*);
-    MCAPI ItemInstance(class ItemInstance const&);
-    MCAPI ItemInstance(class ItemStackBase const&);
     MCAPI void __autoclassinit2(unsigned __int64);
 
     MCAPI static class ItemInstance const EMPTY_ITEM;
     MCAPI static class ItemInstance fromTag(class CompoundTag const&);
-
-
-protected:
-    MCAPI ItemInstance(class BlockLegacy const&, int, short);
 };

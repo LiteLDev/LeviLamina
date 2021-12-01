@@ -9,6 +9,8 @@ class Raid {
 
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
+    MCAPI void addPlayerToHeroList(class Actor const&);
+    MCAPI void appendDebugInfo(std::string&) const;
     MCAPI float getBossBarFilledFraction() const;
     MCAPI unsigned __int64 getRemainingRaiders() const;
     MCAPI void readAdditionalSaveData(class CompoundTag const&);
@@ -17,6 +19,7 @@ public:
     MCAPI static class Vec3 const INVALID_SPAWN_POINT;
 
 private:
+    MCAPI float _getTotalRaiderHealth() const;
     MCAPI void _tickGroupInPlay();
 
     MCAPI static unsigned char const NUM_GROUPS_ON_EASY;

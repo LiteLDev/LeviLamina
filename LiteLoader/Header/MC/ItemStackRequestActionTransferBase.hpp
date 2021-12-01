@@ -8,6 +8,5 @@ class ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionTransferBaseAPI.hpp"
 
 public:
-    MCAPI unsigned char getAmount() const;
     MCAPI struct ItemStackRequestSlotInfo const& getSrc() const;
 };

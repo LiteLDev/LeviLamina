@@ -8,8 +8,6 @@ class BasicTimer {
 #include "Extra/BasicTimerAPI.hpp"
 
 public:
-    MCAPI BasicTimer(double, class std::function<double(void)>);
     MCAPI bool isFinished() const;
     MCAPI void resetTime();
-    MCAPI ~BasicTimer();
 };

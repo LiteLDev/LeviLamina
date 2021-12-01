@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_BLOCKMATERIALINSTANCESCOMPONENT
 #include "Extra/BlockMaterialInstancesComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKMATERIALINSTANCESCOMPONENT
-class BlockMaterialInstancesComponent {
+struct BlockMaterialInstancesComponent {
 #include "Extra/BlockMaterialInstancesComponentAPI.hpp"
 
 public:
     MCAPI enum BlockRenderLayer getRenderLayer() const;
     MCAPI struct BlockMaterialInstancesComponent& operator=(struct BlockMaterialInstancesComponent&&);
-    MCAPI BlockMaterialInstancesComponent(struct BlockMaterialInstancesComponent&&);
-    MCAPI ~BlockMaterialInstancesComponent();
 };

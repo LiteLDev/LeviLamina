@@ -10,12 +10,9 @@ public:
     virtual ~DynamicJumpControl();
     virtual void initializeInternal(class Mob&, struct JumpControlDescription*);
     virtual void tick(class JumpControlComponent&, class Mob&);
-    virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&);
-    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&);
-    virtual int /*enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&);
+    virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&) const;
+    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
+    virtual int /*enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&) const;
     virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum JumpType*/);
     virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
-
-public:
-    MCAPI DynamicJumpControl();
 };

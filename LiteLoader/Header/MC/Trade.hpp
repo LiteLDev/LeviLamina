@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_TRADE
 #include "Extra/TradeAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TRADE
-class Trade {
+struct Trade {
 #include "Extra/TradeAPI.hpp"
 
 public:
     MCAPI struct Trade& operator=(struct Trade&&);
-    MCAPI ~Trade();
 };

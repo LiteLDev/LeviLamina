@@ -10,12 +10,5 @@ class LegacyFlowerFeature : public Feature {
 public:
     virtual ~LegacyFlowerFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-
-public:
-    MCAPI LegacyFlowerFeature(enum FlowerPlacementType);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

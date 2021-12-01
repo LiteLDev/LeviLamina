@@ -8,18 +8,9 @@ class TridentChannelingEnchant {
 #include "Extra/TridentChannelingEnchantAPI.hpp"
 public:
     virtual ~TridentChannelingEnchant();
-    virtual bool isCompatibleWith(int /*enum Enchant::Type*/);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
+    virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
+    virtual int getMinCost(int) const;
+    virtual int getMaxCost(int) const;
+    virtual int getMaxLevel() const;
+    virtual int getMaxLevel() const;
 };

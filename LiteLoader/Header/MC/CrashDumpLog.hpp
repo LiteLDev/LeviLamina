@@ -33,7 +33,4 @@ private:
     MCAPI static class std::mutex mKeyValueDataMutex;
     MCAPI static class std::mutex mPlayerDataMutex;
     MCAPI static class std::mutex mRenderDataMutex;
-
-protected:
-    MCAPI static struct CrashDump_AllData* mAllData;
 };

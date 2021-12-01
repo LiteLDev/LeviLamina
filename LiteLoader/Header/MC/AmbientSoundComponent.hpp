@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_AMBIENTSOUNDCOMPONENT
 #include "Extra/AmbientSoundComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_AMBIENTSOUNDCOMPONENT
-namespace AmbientSoundComponent {
+class AmbientSoundComponent {
 #include "Extra/AmbientSoundComponentAPI.hpp"
 
 public:
-MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
-
-
-} // namespace AmbientSoundComponent
+    MCAPI static void setAmbientSoundRemainingTime(class Actor&, float);
+};

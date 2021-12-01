@@ -10,5 +10,4 @@ namespace QuerySetIdentifier {
 MCAPI class gsl::span<class HashedString const, -1> getDefaultCollection();
 MCAPI class gsl::span<class HashedString const, -1> getTagsCollection();
 
-
 } // namespace QuerySetIdentifier

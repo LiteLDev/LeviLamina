@@ -8,15 +8,14 @@ class ThrowableItemComponent {
 #include "Extra/ThrowableItemComponentAPI.hpp"
 public:
     virtual ~ThrowableItemComponent();
-    virtual void unk_vfn_1();
+    virtual bool isNetworkComponent() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag();
+    virtual bool isNetworkComponent() const;
+    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
-    MCAPI ThrowableItemComponent(class ComponentItem*);
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
     MCAPI bool use(class ItemStack&, class Player&) const;
 

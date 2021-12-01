@@ -4,12 +4,11 @@
 #define EXTRA_INCLUDE_PART_BEARDKERNEL
 #include "Extra/BeardKernelAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BEARDKERNEL
-class BeardKernel {
+struct BeardKernel {
 #include "Extra/BeardKernelAPI.hpp"
 
 public:
-    MCAPI BeardKernel();
-
+    MCAPI float getContribution(int, int, int) const;
 
 private:
     MCAPI class std::array<float, 13824> const createBeardKernel();

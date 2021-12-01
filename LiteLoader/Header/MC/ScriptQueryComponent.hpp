@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_SCRIPTQUERYCOMPONENT
 #include "Extra/ScriptQueryComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SCRIPTQUERYCOMPONENT
-class ScriptQueryComponent {
+struct ScriptQueryComponent {
 #include "Extra/ScriptQueryComponentAPI.hpp"
 
 public:
     MCAPI struct ScriptQueryComponent& operator=(struct ScriptQueryComponent&&);
-    MCAPI ScriptQueryComponent(struct ScriptQueryComponent&&);
-    MCAPI ~ScriptQueryComponent();
 };

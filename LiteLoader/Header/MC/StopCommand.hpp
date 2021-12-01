@@ -8,11 +8,8 @@ class StopCommand {
 #include "Extra/StopCommandAPI.hpp"
 public:
     virtual ~StopCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
-
-private:
-    MCAPI static class DedicatedServer* mServer;
 };

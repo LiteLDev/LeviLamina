@@ -8,7 +8,6 @@ class CircuitSystem {
 #include "Extra/CircuitSystemAPI.hpp"
 
 public:
-    MCAPI CircuitSystem();
     MCAPI void evaluate(class BlockSource*);
     MCAPI int getStrength(class BlockPos const&);
     MCAPI void invalidatePos(class BlockPos const&);
@@ -18,7 +17,6 @@ public:
     MCAPI void setStrength(class BlockPos const&, int);
     MCAPI void updateBlocks(class BlockSource&, class BlockPos const&);
     MCAPI void updateDependencies(class BlockSource*);
-
 
 private:
     MCAPI class BaseCircuitComponent* createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>);

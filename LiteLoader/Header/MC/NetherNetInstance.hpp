@@ -4,9 +4,6 @@
 #define EXTRA_INCLUDE_PART_NETHERNETINSTANCE
 #include "Extra/NetherNetInstanceAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NETHERNETINSTANCE
-class NetherNetInstance {
+struct NetherNetInstance {
 #include "Extra/NetherNetInstanceAPI.hpp"
-
-public:
-    MCAPI NetherNetInstance();
 };

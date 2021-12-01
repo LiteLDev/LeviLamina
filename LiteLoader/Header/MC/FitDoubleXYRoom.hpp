@@ -8,6 +8,6 @@ class FitDoubleXYRoom {
 #include "Extra/FitDoubleXYRoomAPI.hpp"
 public:
     virtual ~FitDoubleXYRoom();
-    virtual bool fits(class RoomDefinition const&);
+    virtual bool fits(class RoomDefinition const&) const;
     virtual std::unique_ptr<class OceanMonumentPiece> create(int&, class std::shared_ptr<class RoomDefinition>, class Random&);
 };

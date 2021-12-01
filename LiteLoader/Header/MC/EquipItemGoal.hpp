@@ -9,18 +9,12 @@ class EquipItemGoal {
 public:
     virtual ~EquipItemGoal();
     virtual bool canUse();
-    virtual void unk_vfn_2();
+    virtual bool canContinueToUse();
     virtual void unk_vfn_3();
     virtual void unk_vfn_4();
     virtual void unk_vfn_5();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI EquipItemGoal(class Mob&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI void _dropItem(class ItemStack const&) const;

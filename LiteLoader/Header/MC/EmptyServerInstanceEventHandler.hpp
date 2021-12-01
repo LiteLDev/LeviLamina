@@ -8,5 +8,5 @@ class EmptyServerInstanceEventHandler {
 #include "Extra/EmptyServerInstanceEventHandlerAPI.hpp"
 public:
     virtual ~EmptyServerInstanceEventHandler();
-    virtual void unk_vfn_1();
+    virtual int /*enum HandlerResult*/ handleLeaveGameDone(struct ServerInstanceEvent const&);
 };

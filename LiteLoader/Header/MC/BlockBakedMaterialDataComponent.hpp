@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_BLOCKBAKEDMATERIALDATACOMPONENT
 #include "Extra/BlockBakedMaterialDataComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKBAKEDMATERIALDATACOMPONENT
-class BlockBakedMaterialDataComponent {
+struct BlockBakedMaterialDataComponent {
 #include "Extra/BlockBakedMaterialDataComponentAPI.hpp"
 
 public:

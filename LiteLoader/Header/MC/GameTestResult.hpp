@@ -4,13 +4,13 @@
 #define EXTRA_INCLUDE_PART_GAMETESTRESULT
 #include "Extra/GameTestResultAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GAMETESTRESULT
-class GameTestResult {
+struct GameTestResult {
 #include "Extra/GameTestResultAPI.hpp"
 
 public:
     MCAPI bool operator==(struct GameTestResult const&);
-    MCAPI GameTestResult(struct GameTestResult const&);
-    MCAPI ~GameTestResult();
+    MCAPI struct GameTestResult& operator=(struct GameTestResult const&);
+    MCAPI struct GameTestResult& operator=(struct GameTestResult&&);
 
     MCAPI static void bindType();
 };

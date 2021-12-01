@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_IFEATURE
 #include "Extra/IFeatureAPI.hpp"
 #undef EXTRA_INCLUDE_PART_IFEATURE
-namespace IFeature {
+class IFeature {
 #include "Extra/IFeatureAPI.hpp"
-
-
-}
+};

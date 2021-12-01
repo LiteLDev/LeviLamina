@@ -4,20 +4,18 @@
 #define EXTRA_INCLUDE_PART_SHAREDAMPLIFIERS
 #include "Extra/SharedAmplifiersAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SHAREDAMPLIFIERS
-namespace SharedAmplifiers {
+class SharedAmplifiers {
 #include "Extra/SharedAmplifiersAPI.hpp"
 
 public:
-MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
-MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
-MCAPI static class std::shared_ptr<class Amplifier> HARM;
-MCAPI static class std::shared_ptr<class Amplifier> HEAL;
-MCAPI static class std::shared_ptr<class Amplifier> HUNGER_DURATION;
-MCAPI static class std::shared_ptr<class Amplifier> HUNGER_VALUE;
-MCAPI static class std::shared_ptr<class Amplifier> POISON;
-MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
-MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
-MCAPI static class std::shared_ptr<class Amplifier> WITHER;
-
-
-} // namespace SharedAmplifiers
+    MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
+    MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
+    MCAPI static class std::shared_ptr<class Amplifier> HARM;
+    MCAPI static class std::shared_ptr<class Amplifier> HEAL;
+    MCAPI static class std::shared_ptr<class Amplifier> HUNGER_DURATION;
+    MCAPI static class std::shared_ptr<class Amplifier> HUNGER_VALUE;
+    MCAPI static class std::shared_ptr<class Amplifier> POISON;
+    MCAPI static class std::shared_ptr<class Amplifier> REGENERATION;
+    MCAPI static class std::shared_ptr<class Amplifier> SATURATION;
+    MCAPI static class std::shared_ptr<class Amplifier> WITHER;
+};

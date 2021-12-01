@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_TESTCONFIG
 #include "Extra/TestConfigAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TESTCONFIG
-namespace TestConfig {
+class TestConfig {
 #include "Extra/TestConfigAPI.hpp"
 
 public:
-MCAPI static void bindType();
-
-
-} // namespace TestConfig
+    MCAPI static void bindType();
+};

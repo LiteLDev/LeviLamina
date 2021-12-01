@@ -15,7 +15,6 @@ public:
 public:
     MCAPI void set(bool, bool);
 
-
 private:
     MCAPI void _set(bool, bool);
 };

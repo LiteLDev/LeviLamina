@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_DAMAGESENSORTRIGGER
 #include "Extra/DamageSensorTriggerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DAMAGESENSORTRIGGER
-class DamageSensorTrigger {
+struct DamageSensorTrigger {
 #include "Extra/DamageSensorTriggerAPI.hpp"
 
 public:
-    MCAPI DamageSensorTrigger();
-    MCAPI DamageSensorTrigger(struct DamageSensorTrigger const&);
     MCAPI void setCause(std::string const&);
-    MCAPI ~DamageSensorTrigger();
 };

@@ -4,15 +4,12 @@
 #define EXTRA_INCLUDE_PART_EDUCATIONLEVELSETTINGS
 #include "Extra/EducationLevelSettingsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_EDUCATIONLEVELSETTINGS
-class EducationLevelSettings {
+struct EducationLevelSettings {
 #include "Extra/EducationLevelSettingsAPI.hpp"
 
 public:
-    MCAPI EducationLevelSettings();
     MCAPI struct EducationLevelSettings& operator=(struct EducationLevelSettings const&);
-    MCAPI EducationLevelSettings(struct EducationLevelSettings const&);
     MCAPI void save(class LevelLooseFileStorage const&);
-    MCAPI ~EducationLevelSettings();
 
     MCAPI static std::string const DEFAULT_BORDER_PATH;
 };

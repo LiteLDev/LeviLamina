@@ -8,7 +8,7 @@ class WorldBuilderCommand {
 #include "Extra/WorldBuilderCommandAPI.hpp"
 public:
     virtual ~WorldBuilderCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

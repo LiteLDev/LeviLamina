@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_BLOCKPLACEMENTCONDITION
 #include "Extra/BlockPlacementConditionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKPLACEMENTCONDITION
-class BlockPlacementCondition {
+struct BlockPlacementCondition {
 #include "Extra/BlockPlacementConditionAPI.hpp"
 
 public:
     MCAPI void _addBlockDescriptor(class BlockDescriptor const&);
-    MCAPI ~BlockPlacementCondition();
 };

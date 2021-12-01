@@ -8,11 +8,8 @@ class DedicatedWSServerCommand {
 #include "Extra/DedicatedWSServerCommandAPI.hpp"
 public:
     virtual ~DedicatedWSServerCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
-
-private:
-    MCAPI static class IMinecraftApp* mApp;
 };

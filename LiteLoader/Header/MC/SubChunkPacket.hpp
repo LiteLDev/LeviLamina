@@ -9,13 +9,9 @@ class SubChunkPacket : public Packet {
 #include "Extra/SubChunkPacketAPI.hpp"
 public:
     virtual ~SubChunkPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI SubChunkPacket();
-    MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const&, class SubChunkPos const&, std::string const&, enum SubChunkPacket::SubChunkRequestResult);
 };

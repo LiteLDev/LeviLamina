@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_PACKIDVERSION
 #include "Extra/PackIdVersionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PACKIDVERSION
-class PackIdVersion {
+struct PackIdVersion {
 #include "Extra/PackIdVersionAPI.hpp"
 
 public:
@@ -12,8 +12,5 @@ public:
     MCAPI bool operator<(struct PackIdVersion const&);
     MCAPI bool operator!=(struct PackIdVersion const&);
     MCAPI bool operator==(struct PackIdVersion const&);
-    MCAPI PackIdVersion();
-    MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum PackType);
     MCAPI bool satisfies(struct PackIdVersion const&) const;
-    MCAPI ~PackIdVersion();
 };

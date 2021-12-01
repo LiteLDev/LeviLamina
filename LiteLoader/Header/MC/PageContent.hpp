@@ -4,13 +4,12 @@
 #define EXTRA_INCLUDE_PART_PAGECONTENT
 #include "Extra/PageContentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PAGECONTENT
-class PageContent {
+struct PageContent {
 #include "Extra/PageContentAPI.hpp"
 
 public:
     MCAPI struct PageContent& operator=(struct PageContent const&);
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
-    MCAPI ~PageContent();
 
     MCAPI static struct PageContent const BLANK_PAGE;
     MCAPI static struct PageContent read(class CompoundTag const&);

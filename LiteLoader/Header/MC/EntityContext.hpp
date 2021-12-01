@@ -8,6 +8,5 @@ class EntityContext {
 #include "Extra/EntityContextAPI.hpp"
 
 public:
-    MCAPI EntityContext(class EntityRegistry&, class EntityId);
     MCAPI class WeakRefT<struct EntityRefTraits> getWeakRef() const;
 };

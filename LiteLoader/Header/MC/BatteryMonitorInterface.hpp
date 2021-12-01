@@ -8,6 +8,4 @@ class BatteryMonitorInterface {
 #include "Extra/BatteryMonitorInterfaceAPI.hpp"
 public:
     virtual ~BatteryMonitorInterface();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

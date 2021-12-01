@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_VOLUMEBOUNDSDEFINITION
 #include "Extra/VolumeBoundsDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VOLUMEBOUNDSDEFINITION
-namespace VolumeBoundsDefinition {
+struct VolumeBoundsDefinition {
 #include "Extra/VolumeBoundsDefinitionAPI.hpp"
 
 public:
-MCAPI static std::string const NAME;
-MCAPI static void bindType();
-
-
-} // namespace VolumeBoundsDefinition
+    MCAPI static std::string const NAME;
+    MCAPI static void bindType();
+};

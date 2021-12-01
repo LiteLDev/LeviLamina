@@ -12,5 +12,4 @@ MCAPI void forRandomOffset(unsigned char, unsigned char, unsigned char, unsigned
 MCAPI struct Bounds getDeterministicBounds(struct Bounds const&);
 MCAPI class ChunkPos getRandomInBounds(struct Bounds const&, class Random&);
 
-
 } // namespace TickUtil

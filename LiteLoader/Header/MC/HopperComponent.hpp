@@ -8,7 +8,6 @@ class HopperComponent {
 #include "Extra/HopperComponentAPI.hpp"
 
 public:
-    MCAPI HopperComponent();
     MCAPI class BlockPos getLastPosition() const;
     MCAPI bool pullInItems(class Actor&);
 };

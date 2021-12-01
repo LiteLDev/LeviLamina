@@ -8,12 +8,7 @@ class SnapToSurfaceFeature {
 #include "Extra/SnapToSurfaceFeatureAPI.hpp"
 public:
     virtual ~SnapToSurfaceFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&);
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI SnapToSurfaceFeature();
-
+    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
 private:
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI&, class BlockPos const&, enum SnapToSurfaceFeature::Surface) const;

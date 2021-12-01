@@ -7,7 +7,6 @@
 namespace BlockEventResponse {
 #include "Extra/BlockEventResponseAPI.hpp"
 
-MCAPI class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
-
+MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
 
 } // namespace BlockEventResponse

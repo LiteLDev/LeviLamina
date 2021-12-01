@@ -14,10 +14,7 @@ public:
     virtual void unk_vfn_3();
     virtual void start();
     virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-
-public:
-    MCAPI DefendVillageTargetGoal(class Mob&);
 };

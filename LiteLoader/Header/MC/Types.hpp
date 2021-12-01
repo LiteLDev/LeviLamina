@@ -206,7 +206,69 @@ class PathBuffer {
     }
 };
 
-} // namespace Core
+}; // namespace Core
+namespace gametest{
+    class BaseGameTestFunction;
+    class BaseGameTestHelper;
+    class BaseGameTestInstance;
+    struct GameTestError;
+    class GameTestRegistry;
+    class GameTestTicker;
+    class IGameTestFunctionContext;
+    struct TestParameters;
+    }// namespace gametest
+
+class AgentCommands {
+public:
+    class Command;
+};
+
+class Automation {
+public:
+    class AutomationClient;
+};
+
+class ClientBlobCache {
+public:
+    struct Server {
+        class TransferBuilder;
+    };
+};
+
+class ClientBlockPipeline {
+public:
+    template <typename T>
+    class VolumeOf;
+};
+
+struct ISurfaceBuilder {
+    struct BuildParameters;
+};
+
+struct FeatureLoading {
+    template <typename T>
+    struct FeatureRootParseContext;
+    template <typename T>
+    struct ConcreteFeatureHolder;
+};
+
+struct OperationNodeDetails {
+    template <typename T1, typename T2>
+    class WorkingData;
+};
+
+struct PositionTrackingDB {
+    class TrackingRecord;
+};
+
+struct RakNetServerLocator {
+    struct AnnounceServerData;
+};
+
+struct SubChunkBrightnessStorage {
+    struct LightPair;
+};
+
 
 //Templates
 template <typename T, typename T2, int unk>

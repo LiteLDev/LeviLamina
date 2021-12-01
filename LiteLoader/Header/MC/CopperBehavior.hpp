@@ -14,8 +14,6 @@ public:
     MCAPI bool tryDecrementAge(class BlockSource&, class BlockPos const&) const;
     MCAPI bool tryIncrementAge(class BlockSource&, class BlockPos const&, float, float) const;
     MCAPI bool use(class Player&, class BlockPos const&, unsigned char) const;
-    MCAPI ~CopperBehavior();
-
 
 private:
     MCAPI void _incrementAge(class BlockSource&, class Block const&, class BlockPos const&, float) const;

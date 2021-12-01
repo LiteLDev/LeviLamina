@@ -24,12 +24,12 @@ public:
     virtual void unk_vfn_14();
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
+    virtual int /*enum EducationEditionOffer*/ getEducationEditionOffering() const;
     virtual void unk_vfn_18();
     virtual void unk_vfn_19();
-    virtual bool supports3DExport();
+    virtual bool supports3DExport() const;
     virtual void unk_vfn_21();
-    virtual struct ConnectionDefinition getConnectionDefinition();
+    virtual struct ConnectionDefinition getConnectionDefinition() const;
     virtual void unk_vfn_23();
     virtual void unk_vfn_24();
     virtual void unk_vfn_25();
@@ -37,12 +37,8 @@ public:
     virtual void unk_vfn_27();
     virtual void unk_vfn_28();
     virtual void unk_vfn_29();
-    virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool);
-    virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&);
-    virtual void unk_vfn_32();
-    virtual std::string getFeedbackURL();
-    virtual void unk_vfn_34();
-
-public:
-    MCAPI AppConfigs();
+    virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
+    virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
+    virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
+    virtual std::string getFeedbackURL() const;
 };

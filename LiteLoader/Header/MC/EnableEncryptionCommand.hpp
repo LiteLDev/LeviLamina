@@ -8,11 +8,8 @@ class EnableEncryptionCommand {
 #include "Extra/EnableEncryptionCommandAPI.hpp"
 public:
     virtual ~EnableEncryptionCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);
-
-private:
-    MCAPI static class IMinecraftApp* mApp;
 };

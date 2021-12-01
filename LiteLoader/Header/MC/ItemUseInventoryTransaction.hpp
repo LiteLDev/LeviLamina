@@ -9,17 +9,15 @@ class ItemUseInventoryTransaction {
 public:
     virtual ~ItemUseInventoryTransaction();
     virtual void read(class ReadOnlyBinaryStream&);
-    virtual void write(class BinaryStream&);
-    virtual void unk_vfn_3();
-    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool);
-    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/);
+    virtual void write(class BinaryStream&) const;
+    virtual void postLoadItems(class BlockPalette&, bool);
+    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
+    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
 
 public:
-    MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
     MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, unsigned char) const;
     MCAPI class ItemUseInventoryTransaction& setSelectedItem(class ItemStack const&);
-
 
 private:
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string> const actionTypeMap;

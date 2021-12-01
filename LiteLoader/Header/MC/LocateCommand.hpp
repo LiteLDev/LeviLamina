@@ -8,7 +8,7 @@ class LocateCommand {
 #include "Extra/LocateCommandAPI.hpp"
 public:
     virtual ~LocateCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

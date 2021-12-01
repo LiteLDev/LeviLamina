@@ -8,7 +8,6 @@ class BucketableComponent {
 #include "Extra/BucketableComponentAPI.hpp"
 
 public:
-    MCAPI BucketableComponent();
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
     MCAPI void initFromDefinition(class Actor&);
 

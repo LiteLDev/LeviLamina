@@ -9,15 +9,12 @@ class EmoteListPacket : public Packet {
 #include "Extra/EmoteListPacketAPI.hpp"
 public:
     virtual ~EmoteListPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI EmoteListPacket();
-    MCAPI EmoteListPacket(class ActorRuntimeID);
-
     MCAPI static int const MAX_EMOTE_PIECE_IDS;
 };

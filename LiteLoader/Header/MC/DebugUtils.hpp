@@ -9,12 +9,11 @@ namespace DebugUtils {
 
 MCAPI bool DEFAULT_ASSERT_HANDLER(struct AssertHandlerContext const&);
 MCAPI void SET_THREAD_NAME(std::string const&);
-MCAPI class std::mutex debugUtilMutex;
-MCAPI bool gAssertTelemetryRegistered;
-MCAPI bool gBreakpadSetupFailed;
-MCAPI std::string gPublishAssertFullMessage;
-MCAPI bool gShouldDebugBreak;
-MCAPI bool gShouldPresentDialog;
-
+MCAPI extern class std::mutex debugUtilMutex;
+MCAPI extern bool gAssertTelemetryRegistered;
+MCAPI extern bool gBreakpadSetupFailed;
+MCAPI extern std::string gPublishAssertFullMessage;
+MCAPI extern bool gShouldDebugBreak;
+MCAPI extern bool gShouldPresentDialog;
 
 } // namespace DebugUtils

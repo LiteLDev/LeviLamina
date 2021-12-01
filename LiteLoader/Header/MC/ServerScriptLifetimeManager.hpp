@@ -8,23 +8,21 @@ class ServerScriptLifetimeManager {
 #include "Extra/ServerScriptLifetimeManagerAPI.hpp"
 public:
     virtual ~ServerScriptLifetimeManager();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
     virtual int /*enum EventResult*/ onServerUpdateStart(class ServerInstance&);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
     virtual int /*enum EventResult*/ onServerThreadStarted(class ServerInstance&);
     virtual int /*enum EventResult*/ onServerThreadStopped(class ServerInstance&);
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
 
 public:
-    MCAPI ServerScriptLifetimeManager(class std::optional<struct ScriptSettings>&&);
     MCAPI void onMainThreadStartLeaveGame();
-
 
 private:
     MCAPI void _registerEventHandlers(class Level&) const;

@@ -7,7 +7,6 @@
 class PetSleepWithOwnerState {
 #include "Extra/PetSleepWithOwnerStateAPI.hpp"
 
-
 protected:
     MCAPI void dampenSpeed();
 };

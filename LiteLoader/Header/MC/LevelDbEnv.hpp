@@ -22,7 +22,7 @@ public:
     virtual class leveldb::Status LockFile(std::string const&, class leveldb::FileLock**);
     virtual class leveldb::Status UnlockFile(class leveldb::FileLock*);
     virtual void Schedule(void (*)(void*), void*);
-    virtual void unk_vfn_15();
+    virtual void StartThread(void (*)(void*), void*);
     virtual class leveldb::Status GetTestDirectory(std::string*);
     virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger**);
     virtual unsigned __int64 NowMicros();

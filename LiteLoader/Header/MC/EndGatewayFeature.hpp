@@ -10,5 +10,5 @@ class EndGatewayFeature : public Feature {
 public:
     virtual ~EndGatewayFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

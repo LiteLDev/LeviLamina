@@ -10,9 +10,4 @@ public:
     virtual ~InMemoryWritableFile();
     virtual class leveldb::Status Append(class leveldb::Slice const&);
     virtual class leveldb::Status Close();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-
-public:
-    MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
 };

@@ -15,13 +15,4 @@ public:
     virtual void unk_vfn_5();
     virtual void unk_vfn_6();
     virtual int /*enum EventResult*/ onLevelTick();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-
-public:
-    MCAPI ScriptServerLevelEventListener(class MinecraftServerScriptEngine&);
 };

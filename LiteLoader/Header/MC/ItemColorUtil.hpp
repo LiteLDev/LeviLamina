@@ -12,5 +12,4 @@ MCAPI enum ItemColor fromInt(int);
 MCAPI std::string const& getName(enum ItemColor);
 MCAPI int getRGBColor(enum ItemColor);
 
-
 } // namespace ItemColorUtil

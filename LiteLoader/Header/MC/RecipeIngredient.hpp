@@ -8,13 +8,7 @@ class RecipeIngredient {
 #include "Extra/RecipeIngredientAPI.hpp"
 
 public:
-    MCAPI RecipeIngredient(class gsl::basic_string_span<char const, -1>, int, unsigned short);
-    MCAPI RecipeIngredient(class Item const&, int, unsigned short);
-    MCAPI RecipeIngredient(class BlockLegacy const&, unsigned short);
-    MCAPI RecipeIngredient(class Block const&, unsigned short);
-    MCAPI RecipeIngredient(class RecipeIngredient const&);
     MCAPI void __autoclassinit2(unsigned __int64);
-    MCAPI ~RecipeIngredient();
 
     MCAPI static class RecipeIngredient EMPTY_INGREDIENT;
 };

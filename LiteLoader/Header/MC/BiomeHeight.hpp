@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_BIOMEHEIGHT
 #include "Extra/BiomeHeightAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BIOMEHEIGHT
-namespace BiomeHeight {
+class BiomeHeight {
 #include "Extra/BiomeHeightAPI.hpp"
 
 public:
-MCAPI static float const MIN_DEPTH;
-
-
-} // namespace BiomeHeight
+    MCAPI static float const MIN_DEPTH;
+};

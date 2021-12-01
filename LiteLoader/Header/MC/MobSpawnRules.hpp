@@ -8,9 +8,6 @@ class MobSpawnRules {
 #include "Extra/MobSpawnRulesAPI.hpp"
 
 public:
-    MCAPI MobSpawnRules();
-    MCAPI MobSpawnRules(class MobSpawnRules&&);
-    MCAPI MobSpawnRules(class MobSpawnRules const&);
     MCAPI class MobSpawnRules& addHerd(int, int, std::string const&);
     MCAPI class MobSpawnRules& addPermutation(int, int, struct ActorDefinitionIdentifier const&);
     MCAPI bool canSpawnInConditions(class SpawnConditions const&, class BlockSource&) const;
@@ -54,7 +51,6 @@ public:
     MCAPI class MobSpawnRules& setUndergroundSpawner();
     MCAPI class MobSpawnRules& setUnderwaterSpawner();
     MCAPI class MobSpawnRules& setWorldAgeRange(unsigned __int64, unsigned __int64);
-    MCAPI ~MobSpawnRules();
 
     MCAPI static int const LOW_END_MAX_SPAWN_DISTANCE;
     MCAPI static int const MAX_DEFAULT_SPAWN_DISTANCE;

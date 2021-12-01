@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_BYTESDATAOUTPUT
 #include "Extra/BytesDataOutputAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BYTESDATAOUTPUT
-namespace BytesDataOutput {
+class BytesDataOutput {
 #include "Extra/BytesDataOutputAPI.hpp"
-
-
-}
+};

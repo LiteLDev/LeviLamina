@@ -9,13 +9,9 @@ class ClientboundMapItemDataPacket : public Packet {
 #include "Extra/ClientboundMapItemDataPacketAPI.hpp"
 public:
     virtual ~ClientboundMapItemDataPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI ClientboundMapItemDataPacket();
-    MCAPI ClientboundMapItemDataPacket(class gsl::not_null<class MapItemSavedData*>, class Level&);
 };

@@ -8,15 +8,13 @@ class TemporalAttributeBuff {
 #include "Extra/TemporalAttributeBuffAPI.hpp"
 public:
     virtual ~TemporalAttributeBuff();
-    virtual void unk_vfn_1();
-    virtual bool isSerializable();
+    virtual bool isInstantaneous() const;
+    virtual bool isSerializable() const;
     virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
-    virtual bool shouldBuff();
-    virtual bool isComplete();
+    virtual bool shouldBuff() const;
+    virtual bool isComplete() const;
 
 public:
-    MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const&);
-    MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
     MCAPI float getBaseAmount() const;
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;

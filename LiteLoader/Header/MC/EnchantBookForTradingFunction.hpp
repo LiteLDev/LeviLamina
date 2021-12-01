@@ -8,11 +8,6 @@ class EnchantBookForTradingFunction {
 #include "Extra/EnchantBookForTradingFunctionAPI.hpp"
 public:
     virtual ~EnchantBookForTradingFunction();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-
 
 private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase&, class Random&, int&) const;

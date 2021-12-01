@@ -34,12 +34,15 @@ bool BlockInstance::breakNaturally(ItemStack* tool) {
 }
 
 ItemStack& BlockInstance::getBlockDrops() {
-    auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos,*block);
-    ItemStack* a = (ItemStack*)new char[272];
-    auto &out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
-    std::cout << &out << std::endl;
-    return out;
+    //auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos,*block);
+    //ItemStack* a = (ItemStack*)new char[272];
+    //auto &out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
+    //std::cout << &out << std::endl;
+    //return out;
+    throw("TODO: BlockInstance::getBlockDrops()");
+    return *(ItemStack*)0;
 }
+
 
 bool BlockInstance::isNull() {
     return *this == BlockInstance::Null;

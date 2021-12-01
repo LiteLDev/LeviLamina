@@ -7,7 +7,6 @@
 class LodestoneCompassComponentCalculator {
 #include "Extra/LodestoneCompassComponentCalculatorAPI.hpp"
 
-
 private:
     MCAPI static float COOLDOWN_TIME_SECONDS;
 };

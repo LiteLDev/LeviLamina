@@ -7,5 +7,4 @@
 namespace SimpleHashStringFilterTest {
 #include "Extra/SimpleHashStringFilterTestAPI.hpp"
 
-
 }

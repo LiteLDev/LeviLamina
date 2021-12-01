@@ -9,16 +9,12 @@ namespace DripstoneUtils {
 
 MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char, int, bool);
 MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&);
-MCAPI bool canPlacePool(class IBlockWorldGenAPI&, class BlockPos const&);
-MCAPI float getDripstoneHeight(float, float, float, float);
 MCAPI class Block const& getPlacementBlock(unsigned char, enum DripstoneThickness const&);
 MCAPI class std::optional<struct DripstoneUtils::PointedDripstoneBasePos> getPointedDripstoneBasePos(class IBlockWorldGenAPI&, class BlockPos const&, class Random&);
-MCAPI bool isCircleMostlyEmbeddedInStone(class IBlockWorldGenAPI&, class BlockPos const&, int);
 MCAPI bool isDripstoneBaseOrLava(class IBlockWorldGenAPI const&, class BlockPos const&);
 MCAPI bool isEmptyOrWater(class IBlockWorldGenAPI const&, class BlockPos const&);
 MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&);
 MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&);
 MCAPI bool replaceableByDripstone(class BlockLegacy const&);
-
 
 } // namespace DripstoneUtils

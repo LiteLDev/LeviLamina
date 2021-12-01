@@ -4,23 +4,19 @@
 #define EXTRA_INCLUDE_PART_ITEMSTACKNETIDVARIANT
 #include "Extra/ItemStackNetIdVariantAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ITEMSTACKNETIDVARIANT
-class ItemStackNetIdVariant {
+struct ItemStackNetIdVariant {
 #include "Extra/ItemStackNetIdVariantAPI.hpp"
 
 public:
     MCAPI void deserialize(class ReadOnlyBinaryStream&);
+    MCAPI bool hasServerNetId() const;
+    MCAPI bool isValid() const;
     MCAPI bool operator==(struct ItemStackNetIdVariant const&);
     MCAPI struct ItemStackNetIdVariant& operator=(class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
     MCAPI struct ItemStackNetIdVariant& operator=(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant const&);
     MCAPI struct ItemStackNetIdVariant& operator=(struct ItemStackNetIdVariant&&);
-    MCAPI ItemStackNetIdVariant();
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&);
-    MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&);
-    MCAPI bool hasServerNetId() const;
-    MCAPI bool isValid() const;
     MCAPI void serialize(class BinaryStream&) const;
     MCAPI std::string toString() const;
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetServerNetId() const;
-    MCAPI ~ItemStackNetIdVariant();
 };

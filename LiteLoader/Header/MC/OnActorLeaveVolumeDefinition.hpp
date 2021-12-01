@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_ONACTORLEAVEVOLUMEDEFINITION
 #include "Extra/OnActorLeaveVolumeDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ONACTORLEAVEVOLUMEDEFINITION
-class OnActorLeaveVolumeDefinition {
+struct OnActorLeaveVolumeDefinition {
 #include "Extra/OnActorLeaveVolumeDefinitionAPI.hpp"
 
 public:

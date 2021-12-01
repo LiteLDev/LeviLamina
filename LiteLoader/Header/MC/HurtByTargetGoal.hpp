@@ -13,11 +13,8 @@ public:
     virtual void unk_vfn_3();
     virtual void start();
     virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual void alertOther(class Mob*, class Mob*);
-
-public:
-    MCAPI HurtByTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool);
 };

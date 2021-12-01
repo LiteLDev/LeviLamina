@@ -8,7 +8,7 @@ class Amplifier {
 #include "Extra/AmplifierAPI.hpp"
 public:
     virtual ~Amplifier();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    virtual float getAmount(int, float) const;
+    virtual bool shouldBuff(int, int) const;
+    virtual int getTickInterval(int) const;
 };

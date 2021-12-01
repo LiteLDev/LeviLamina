@@ -4,11 +4,10 @@
 #define EXTRA_INCLUDE_PART_SURFACEMATERIALADJUSTMENTEVALUATED
 #include "Extra/SurfaceMaterialAdjustmentEvaluatedAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SURFACEMATERIALADJUSTMENTEVALUATED
-class SurfaceMaterialAdjustmentEvaluated {
+struct SurfaceMaterialAdjustmentEvaluated {
 #include "Extra/SurfaceMaterialAdjustmentEvaluatedAPI.hpp"
 
 public:
     MCAPI bool empty() const;
     MCAPI void makeAdjustments(struct SurfaceMaterialBlocks&, int) const;
-    MCAPI ~SurfaceMaterialAdjustmentEvaluated();
 };

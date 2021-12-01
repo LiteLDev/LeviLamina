@@ -14,54 +14,54 @@
 namespace CMDREG {
 
 template <typename T>
-inline typeid_CommandRegistry getTPID();
+inline typeid_t<CommandRegistry> getTPID();
 
-inline typeid_CommandRegistry& GETID(const char* name) {
-    return *(typeid_CommandRegistry*)(dlsym_real(name));
+inline typeid_t<CommandRegistry>& GETID(const char* name) {
+    return *(typeid_t<CommandRegistry>*)(dlsym_real(name));
 }
 
-inline typeid_CommandRegistry ALLOCID() {
+inline typeid_t<CommandRegistry> ALLOCID() {
     auto& id = *((unsigned short*)SYM("?count@?$typeid_t@VCommandRegistry@@@@2GA"));
     return {id++};
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<CommandMessage>() {
+inline typeid_t<CommandRegistry> getTPID<CommandMessage>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@VCommandMessage@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<bool>() {
+inline typeid_t<CommandRegistry> getTPID<bool>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<int>() {
+inline typeid_t<CommandRegistry> getTPID<int>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@H@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<float>() {
+inline typeid_t<CommandRegistry> getTPID<float>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@M@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<string>() {
+inline typeid_t<CommandRegistry> getTPID<string>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<CommandSelector<Actor>>() {
+inline typeid_t<CommandRegistry> getTPID<CommandSelector<Actor>>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VActor@@@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry getTPID<CommandSelector<Player>>() {
+inline typeid_t<CommandRegistry> getTPID<CommandSelector<Player>>() {
     return GETID("?id@?1???$type_id@VCommandRegistry@@V?$CommandSelector@VPlayer@@@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
 
 template <>
-inline typeid_CommandRegistry _cdecl getTPID<CommandPosition>() {
+inline typeid_t<CommandRegistry> _cdecl getTPID<CommandPosition>() {
     return GETID(
         "?id@?1???$type_id@VCommandRegistry@@VCommandPosition@@@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ@4V1@A");
 }
@@ -69,7 +69,7 @@ inline typeid_CommandRegistry _cdecl getTPID<CommandPosition>() {
 template <typename T>
 class CEnum {
   public:
-    static typeid_CommandRegistry myid;
+    static typeid_t<CommandRegistry> myid;
     static string name;
     CEnum(string const &nam, std::initializer_list<std::string> const &values) {
         name = nam;
@@ -88,7 +88,7 @@ class CEnum {
 };
 
 template <typename T>
-typeid_CommandRegistry CEnum<T>::myid(65535);
+typeid_t<CommandRegistry> CEnum<T>::myid(65535);
 
 template <typename T>
 string CEnum<T>::name;
@@ -104,7 +104,7 @@ struct MyEnum : IMyEnum {
 LIAPI void MakeCommand(string const& name, const char* desc, int lvl);
 
 template <typename T>
-typeid_CommandRegistry typeid_getter() {
+typeid_t<CommandRegistry> typeid_getter() {
     if constexpr (std::is_base_of_v<IMyEnum, T>) {
         return CEnum<decltype(T::val)>::myid;
     } else {
@@ -126,10 +126,10 @@ struct MakeOverload {
         static uintptr_t cb;
 
         template <std::size_t... Index>
-        inline bool invoke_impl(CommandOrigin const &a,CommandOutput &b,std::index_sequence<Index...>) {
+        inline bool invoke_impl(CommandOrigin const &a,CommandOutput &b,std::index_sequence<Index...>) const {
             return ((bool (*)(CommandOrigin const &, CommandOutput &, TP...))cb)(a, b, std::get<Index>(data)...);
         }
-        void execute(CommandOrigin const &a, CommandOutput &b) {
+        void execute(CommandOrigin const &a, CommandOutput &b) const {
             constexpr auto size = std::tuple_size<container>::value;
             try {
                 if (invoke_impl(a, b, std::make_index_sequence<size>{})) {

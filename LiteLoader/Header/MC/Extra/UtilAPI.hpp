@@ -4,5 +4,6 @@
 
 #else
 // Add Member There
-
+template <typename T, int a1, int a2, int a3>
+class MultidimensionalArray;
 #endif

@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_INPCDIALOGUEDATA
 #include "Extra/INpcDialogueDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_INPCDIALOGUEDATA
-namespace INpcDialogueData {
+struct INpcDialogueData {
 #include "Extra/INpcDialogueDataAPI.hpp"
-
-
-}
+};

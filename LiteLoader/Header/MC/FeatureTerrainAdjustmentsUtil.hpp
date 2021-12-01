@@ -9,5 +9,4 @@ namespace FeatureTerrainAdjustmentsUtil {
 
 MCAPI std::vector<class ChunkPos> _findIntersectingChunks(class BlockPos const&, class BlockPos const&);
 
-
 } // namespace FeatureTerrainAdjustmentsUtil

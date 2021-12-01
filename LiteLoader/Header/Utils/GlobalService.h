@@ -9,7 +9,7 @@ class Level;
 class CommandRegistry;
 class Minecraft;
 class MinecraftCommands;
-class RakNetServerLocator;
+struct RakNetServerLocator;
 class ServerLevel;
 class ServerNetworkHandler;
 class LevelStorage;

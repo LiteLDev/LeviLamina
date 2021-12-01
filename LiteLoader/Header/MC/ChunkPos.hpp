@@ -8,8 +8,6 @@ class ChunkPos {
 #include "Extra/ChunkPosAPI.hpp"
 
 public:
-    MCAPI ChunkPos(class Vec3 const&);
-    MCAPI ChunkPos(class BlockPos const&);
     MCAPI bool isWithinBounds(class ChunkPos const&, class ChunkPos const&) const;
     MCAPI class Vec3 toBlockSpaceVec3(float) const;
 

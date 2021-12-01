@@ -8,9 +8,5 @@ class IDefinitionInstance {
 #include "Extra/IDefinitionInstanceAPI.hpp"
 public:
     virtual ~IDefinitionInstance();
-    virtual unsigned short getRuntimeTypeId();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    virtual unsigned short getRuntimeTypeId() const;
 };

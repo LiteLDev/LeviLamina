@@ -10,22 +10,21 @@ public:
     virtual ~Scoreboard();
     virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, int /*enum ObjectiveSortOrder*/);
     virtual class Objective* clearDisplayObjective(std::string const&);
-    virtual struct ScoreboardId const& createScoreboardId(std::string const&);
-    virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
     virtual struct ScoreboardId const& createScoreboardId(class Player const&);
-    virtual void unk_vfn_6();
+    virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
+    virtual struct ScoreboardId const& createScoreboardId(std::string const&);
+    virtual void onObjectiveAdded(class Objective const&);
     virtual void onObjectiveRemoved(class Objective&);
     virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
+    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const&);
+    virtual void onPlayerJoined(class Player const&);
+    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const&);
+    virtual void tick();
+    virtual void setPacketSender(class PacketSender*);
+    virtual void writeToLevelStorage();
+    virtual bool isClientSide() const;
 
 public:
-    MCAPI Scoreboard(class CommandSoftEnumRegistry);
     MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);
     MCAPI void addScoreListener(class Player&, std::string const&);
     MCAPI int applyPlayerOperation(bool&, std::vector<struct ScoreboardId>&, struct ScoreboardId const&, class Objective&, std::vector<struct ScoreboardId>&, class Objective&, enum CommandOperator);
@@ -33,6 +32,7 @@ public:
     MCAPI std::vector<std::string> getCriteriaNames() const;
     MCAPI std::vector<struct PlayerScore> getDisplayInfoFiltered(std::string const&) const;
     MCAPI class DisplayObjective const* getDisplayObjective(std::string const&) const;
+    MCAPI std::vector<std::string> getDisplayObjectiveSlotNames() const;
     MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const&) const;
     MCAPI class Objective* getObjective(std::string const&) const;
     MCAPI std::vector<std::string> getObjectiveNames() const;
@@ -59,7 +59,6 @@ public:
     MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
     MCAPI static std::string const DISPLAY_SLOT_LIST;
     MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
-    MCAPI static char const* OBJECTIVES_ENUM;
     MCAPI static bool shouldClearScoresOnDeath(class Actor const&);
 
 private:

@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_SPAWNFINDER
 #include "Extra/SpawnFinderAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SPAWNFINDER
-namespace SpawnFinder {
+class SpawnFinder {
 #include "Extra/SpawnFinderAPI.hpp"
 
 public:
-MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const&, class BlockSource const&);
-MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&);
-
-
-} // namespace SpawnFinder
+    MCAPI static class std::optional<class BlockPos> findStandupPosition(class BlockPos const&, class BlockSource const&);
+    MCAPI static bool isStandupPosition(class BlockPos const&, class BlockSource const&);
+};

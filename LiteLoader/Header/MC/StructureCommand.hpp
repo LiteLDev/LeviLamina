@@ -8,7 +8,7 @@ class StructureCommand {
 #include "Extra/StructureCommandAPI.hpp"
 public:
     virtual ~StructureCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);
@@ -16,7 +16,7 @@ public:
 private:
     MCAPI void _delete(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI std::string _getFullName() const;
-    MCAPI bool _isValidSize(class BlockPos const&, class CommandOutput&) const;
+    MCAPI bool _isValidSize(class BlockPos const&, class DimensionHeightRange const&, class CommandOutput&) const;
     MCAPI void _load(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void _save(class CommandOrigin const&, class CommandOutput&) const;
 };

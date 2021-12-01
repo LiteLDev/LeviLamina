@@ -8,11 +8,9 @@ class CommandBlockComponent {
 #include "Extra/CommandBlockComponentAPI.hpp"
 
 public:
-    MCAPI CommandBlockComponent();
-    MCAPI class CommandBlockComponent& operator=(class CommandBlockComponent&&);
-    MCAPI CommandBlockComponent(class CommandBlockComponent&&);
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI int decrementTickCount();
+    MCAPI class CommandBlockComponent& operator=(class CommandBlockComponent&&);
     MCAPI class BaseCommandBlock& getBaseCommandBlock();
     MCAPI int getCurrentTickCount() const;
     MCAPI bool getTicking() const;

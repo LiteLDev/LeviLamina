@@ -8,10 +8,7 @@ class BlockBreakSensorComponent {
 #include "Extra/BlockBreakSensorComponentAPI.hpp"
 
 public:
-    MCAPI BlockBreakSensorComponent();
-    MCAPI class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent&&);
-    MCAPI BlockBreakSensorComponent(class BlockBreakSensorComponent&&);
     MCAPI void initialize(class Actor&);
+    MCAPI class BlockBreakSensorComponent& operator=(class BlockBreakSensorComponent&&);
     MCAPI void updateSensorPos(class Vec3 const&);
-    MCAPI ~BlockBreakSensorComponent();
 };

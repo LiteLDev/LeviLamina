@@ -6,11 +6,16 @@
 #undef EXTRA_INCLUDE_PART_NETWORKHANDLER
 class NetworkHandler {
 #include "Extra/NetworkHandlerAPI.hpp"
+public:
+    virtual void unk_vfn_0();
+    virtual void _onDisable();
+    virtual void _onEnable();
 
 public:
     MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const&);
     MCAPI void disconnect();
     MCAPI void enableAsyncFlush(class NetworkIdentifier const&);
+    MCAPI std::vector<std::unique_ptr<class NetworkHandler::Connection>> const& getConnections() const;
     MCAPI class Connector& getConnector();
     MCAPI class std::weak_ptr<class EncryptedNetworkPeer> getEncryptedPeerForUser(class NetworkIdentifier const&);
     MCAPI class NetworkIdentifier getLocalNetworkId() const;
@@ -35,6 +40,7 @@ public:
 
 private:
     MCAPI class NetworkHandler::Connection* _getConnectionFromId(class NetworkIdentifier const&) const;
+    MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const&, class NetworkHandler::Connection&, unsigned char, std::string const&);
     MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const&, std::string const&);
     MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection&, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>);
 };

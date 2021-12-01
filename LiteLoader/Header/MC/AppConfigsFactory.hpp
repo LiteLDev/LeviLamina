@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_APPCONFIGSFACTORY
 #include "Extra/AppConfigsFactoryAPI.hpp"
 #undef EXTRA_INCLUDE_PART_APPCONFIGSFACTORY
-namespace AppConfigsFactory {
+class AppConfigsFactory {
 #include "Extra/AppConfigsFactoryAPI.hpp"
 
 public:
-MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
-
-
-} // namespace AppConfigsFactory
+    MCAPI static std::unique_ptr<class AppConfigs> createAppConfigs();
+};

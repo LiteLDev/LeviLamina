@@ -8,7 +8,5 @@ class ContentLogFileEndPoint {
 #include "Extra/ContentLogFileEndPointAPI.hpp"
 
 public:
-    MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
-
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 };

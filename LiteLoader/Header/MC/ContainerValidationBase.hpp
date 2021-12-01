@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_CONTAINERVALIDATIONBASE
 #include "Extra/ContainerValidationBaseAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CONTAINERVALIDATIONBASE
-namespace ContainerValidationBase {
+class ContainerValidationBase {
 #include "Extra/ContainerValidationBaseAPI.hpp"
-
-
-}
+};

@@ -4,9 +4,7 @@
 #define EXTRA_INCLUDE_PART_CONTENTLOGENDPOINT
 #include "Extra/ContentLogEndPointAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CONTENTLOGENDPOINT
-class ContentLogEndPoint {
+namespace ContentLogEndPoint {
 #include "Extra/ContentLogEndPointAPI.hpp"
 
-public:
-    MCAPI ContentLogEndPoint();
-};
+}

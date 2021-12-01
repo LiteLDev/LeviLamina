@@ -9,14 +9,9 @@ class SpawnParticleEffectPacket : public Packet {
 #include "Extra/SpawnParticleEffectPacketAPI.hpp"
 public:
     virtual ~SpawnParticleEffectPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI SpawnParticleEffectPacket();
-    MCAPI SpawnParticleEffectPacket(struct ActorUniqueID, class Vec3 const&, std::string const&, unsigned char);
-    MCAPI SpawnParticleEffectPacket(class Vec3 const&, std::string const&, unsigned char);
 };

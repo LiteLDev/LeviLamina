@@ -8,7 +8,6 @@ class POIInstance {
 #include "Extra/POIInstanceAPI.hpp"
 
 public:
-    MCAPI POIInstance(class BlockPos const&, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     MCAPI class BlockPos const& getPosition() const;
     MCAPI float getRadius() const;
     MCAPI class AABB getSecondBlockFullAABB(class BlockSource&);

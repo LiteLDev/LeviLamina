@@ -8,5 +8,4 @@ class IUIEventTelemetry {
 #include "Extra/IUIEventTelemetryAPI.hpp"
 public:
     virtual ~IUIEventTelemetry();
-    virtual void unk_vfn_1();
 };

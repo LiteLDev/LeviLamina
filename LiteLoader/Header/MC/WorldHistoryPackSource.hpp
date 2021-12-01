@@ -10,10 +10,9 @@ public:
     virtual ~WorldHistoryPackSource();
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    virtual int /*enum PackOrigin*/ getPackOrigin() const;
+    virtual int /*enum PackType*/ getPackType() const;
     virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
 
 private:
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const&);

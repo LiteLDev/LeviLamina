@@ -14,28 +14,13 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-
-public:
-    MCAPI RamAttackGoal(class Mob&);
-
+    virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI bool _hasChargePath();
     MCAPI bool _pathablePos(class BlockSource const&, class BlockPos);
     MCAPI void _resetCooldown();
     MCAPI void _tryKnockbackTarget();
-
 
 protected:
     MCAPI bool _initiateRamAttack();

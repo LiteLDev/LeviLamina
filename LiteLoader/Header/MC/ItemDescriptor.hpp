@@ -9,18 +9,11 @@ class ItemDescriptor {
 
 public:
     MCAPI bool deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
+    MCAPI short getAuxValue() const;
+    MCAPI class Block const* getBlock() const;
     MCAPI bool operator==(class ItemDescriptor const&);
     MCAPI void operator=(class ItemDescriptor const&);
     MCAPI void operator=(class ItemDescriptor&&);
-    MCAPI ItemDescriptor();
-    MCAPI ItemDescriptor(class gsl::basic_string_span<char const, -1>, int);
-    MCAPI ItemDescriptor(class Item const&, int);
-    MCAPI ItemDescriptor(class BlockLegacy const&);
-    MCAPI ItemDescriptor(class Block const&);
-    MCAPI ItemDescriptor(class ItemDescriptor const&);
-    MCAPI ItemDescriptor(class ItemDescriptor&&);
-    MCAPI short getAuxValue() const;
-    MCAPI class Block const* getBlock() const;
     MCAPI std::string const& getFullName() const;
     MCAPI short getId() const;
     MCAPI int getIdAux() const;
@@ -37,14 +30,12 @@ public:
     MCAPI bool sameItemAndAux(class ItemStack const&) const;
     MCAPI class std::optional<class CompoundTag> save() const;
     MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
-    MCAPI ~ItemDescriptor();
 
     MCAPI static void bindType();
     MCAPI static class std::optional<class ItemDescriptor> fromTag(class CompoundTag const*);
     MCAPI static class ItemDescriptor fromTagExpression(std::string const&, enum MolangVersion);
 
 private:
-    MCAPI ItemDescriptor(int, int);
     MCAPI bool _hasTagOfItem(class Item const*) const;
     MCAPI void _initFromBlockLegacy(class BlockLegacy const&, class WeakPtr<class Item>) const;
     MCAPI void _initFromItem(class WeakPtr<class Item>, short) const;

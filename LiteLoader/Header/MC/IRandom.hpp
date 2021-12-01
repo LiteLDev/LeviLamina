@@ -17,7 +17,7 @@ public:
     virtual void unk_vfn_7();
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
+    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
     virtual void unk_vfn_11();
     virtual void unk_vfn_12();
     virtual void unk_vfn_13();
@@ -27,4 +27,6 @@ public:
     virtual void unk_vfn_17();
     virtual void unk_vfn_18();
     virtual void unk_vfn_19();
+    virtual void unk_vfn_20();
+    virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
 };

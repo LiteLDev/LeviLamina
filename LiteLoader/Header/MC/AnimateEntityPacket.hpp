@@ -9,13 +9,9 @@ class AnimateEntityPacket : public Packet {
 #include "Extra/AnimateEntityPacketAPI.hpp"
 public:
     virtual ~AnimateEntityPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI AnimateEntityPacket();
-    MCAPI AnimateEntityPacket(std::vector<class ActorRuntimeID> const&, std::string const&, std::string const&, float, std::string const&, enum MolangVersion, std::string const&);
 };

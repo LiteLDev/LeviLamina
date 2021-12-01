@@ -8,5 +8,4 @@ class IFileReadAccess {
 #include "Extra/IFileReadAccessAPI.hpp"
 public:
     virtual ~IFileReadAccess();
-    virtual void unk_vfn_1();
 };

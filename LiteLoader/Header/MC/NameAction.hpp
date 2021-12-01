@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_NAMEACTION
 #include "Extra/NameActionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_NAMEACTION
-class NameAction {
+struct NameAction {
 #include "Extra/NameActionAPI.hpp"
 
 public:
-    MCAPI NameAction(struct NameAction const&);
     MCAPI void addNameFilterByName(std::string const&);
-    MCAPI ~NameAction();
 };

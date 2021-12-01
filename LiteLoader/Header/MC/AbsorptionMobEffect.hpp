@@ -9,7 +9,7 @@ class AbsorptionMobEffect : public MobEffect {
 #include "Extra/AbsorptionMobEffectAPI.hpp"
 public:
     virtual ~AbsorptionMobEffect();
-    virtual void applyEffects(class Actor*, int, int);
+    virtual void applyEffects(class Actor*, int, int) const;
     virtual void removeEffects(class Actor*);
     virtual void unk_vfn_4();
 };

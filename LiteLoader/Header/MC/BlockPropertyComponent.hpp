@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_BLOCKPROPERTYCOMPONENT
 #include "Extra/BlockPropertyComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKPROPERTYCOMPONENT
-class BlockPropertyComponent {
+struct BlockPropertyComponent {
 #include "Extra/BlockPropertyComponentAPI.hpp"
 
 public:
     MCAPI bool getProperty(enum BlockProperty) const;
-    MCAPI struct BlockPropertyComponent& operator=(struct BlockPropertyComponent&&);
-    MCAPI BlockPropertyComponent(struct BlockPropertyComponent&&);
     MCAPI bool hasProperty(enum BlockProperty) const;
 };

@@ -26,4 +26,6 @@ private:
     MCAPI static std::vector<class PotionBrewing::Mix<class Item const&>> mContainerMixes;
     MCAPI static std::vector<class PotionBrewing::Mix<class ItemDescriptor>> mPotionMixes;
     MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidIngredients;
+    MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient>> mValidRecipeInputs;
 };

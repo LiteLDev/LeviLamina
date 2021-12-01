@@ -9,6 +9,6 @@ class ExplosionDecayFunction : public LootItemFunction {
 #include "Extra/ExplosionDecayFunctionAPI.hpp"
 public:
     virtual ~ExplosionDecayFunction();
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 };

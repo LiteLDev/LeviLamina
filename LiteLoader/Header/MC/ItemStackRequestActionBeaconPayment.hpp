@@ -11,6 +11,6 @@ public:
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
     virtual void unk_vfn_3();
-    virtual void _write(class BinaryStream&);
+    virtual void _write(class BinaryStream&) const;
     virtual bool _read(class ReadOnlyBinaryStream&);
 };

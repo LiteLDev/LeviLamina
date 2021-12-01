@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Tag.hpp"
-#include "MC/Tag.hpp"
 #define EXTRA_INCLUDE_PART_COMPOUNDTAG
 #include "Extra/CompoundTagAPI.hpp"
 #undef EXTRA_INCLUDE_PART_COMPOUNDTAG
@@ -11,25 +10,25 @@ class CompoundTag : public Tag {
 public:
     virtual ~CompoundTag();
     virtual void deleteChildren();
-    virtual void write(class IDataOutput&);
+    virtual void write(class IDataOutput&) const;
     virtual void load(class IDataInput&);
-    virtual std::string toString();
-    virtual void unk_vfn_5();
-    virtual bool equals(class Tag const&);
-    virtual void print(std::string const&, class PrintStream&);
-    virtual std::unique_ptr<class Tag> copy();
-    virtual unsigned __int64 hash();
+    virtual std::string toString() const;
+    virtual int /*enum Tag::Type*/ getId() const;
+    virtual bool equals(class Tag const&) const;
+    virtual void print(std::string const&, class PrintStream&) const;
+    virtual std::unique_ptr<class Tag> copy() const;
+    virtual unsigned __int64 hash() const;
 
 public:
     MCAPI void append(class CompoundTag const&);
-    MCAPI class CompoundTag& operator=(class CompoundTag&&);
-    MCAPI CompoundTag();
-    MCAPI CompoundTag(class CompoundTag&&);
+    MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> begin() const;
     MCAPI void clear();
+    MCAPI class CompoundTag& operator=(class CompoundTag&&);
     MCAPI std::unique_ptr<class CompoundTag> clone() const;
     MCAPI bool contains(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool contains(class gsl::basic_string_span<char const, -1>, enum Tag::Type) const;
     MCAPI void deepCopy(class CompoundTag const&);
+    MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant>>>> end() const;
     MCAPI class Tag* get(class gsl::basic_string_span<char const, -1>);
     MCAPI class Tag const* get(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool getBoolean(class gsl::basic_string_span<char const, -1>) const;
@@ -43,8 +42,8 @@ public:
     MCAPI class Int64Tag const* getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag* getInt64Tag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const* getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI class ListTag const* getList(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const& getString(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool isEmpty() const;
@@ -60,6 +59,7 @@ public:
     MCAPI __int64& putInt64(std::string, __int64);
     MCAPI short& putShort(std::string, short);
     MCAPI std::string& putString(std::string, std::string);
+    MCAPI class std::map<std::string, class CompoundTagVariant, struct std::less<void>, class std::allocator<struct std::pair<std::string const, class CompoundTagVariant>>> const& rawView() const;
     MCAPI bool remove(class gsl::basic_string_span<char const, -1>);
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
 };

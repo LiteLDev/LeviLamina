@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_GIVEABLETRIGGER
 #include "Extra/GiveableTriggerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GIVEABLETRIGGER
-class GiveableTrigger {
+struct GiveableTrigger {
 #include "Extra/GiveableTriggerAPI.hpp"
 
 public:
-    MCAPI GiveableTrigger(struct GiveableTrigger const&);
     MCAPI void addItem(class ItemDescriptor const&);
-    MCAPI ~GiveableTrigger();
 };

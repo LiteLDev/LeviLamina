@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_VOLUMEDEFINITION
 #include "Extra/VolumeDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VOLUMEDEFINITION
-class VolumeDefinition {
+struct VolumeDefinition {
 #include "Extra/VolumeDefinitionAPI.hpp"
 
 public:
-    MCAPI ~VolumeDefinition();
-
     MCAPI static std::string const NAME;
     MCAPI static void bindType();
 };

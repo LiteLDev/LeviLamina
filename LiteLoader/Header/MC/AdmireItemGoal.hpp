@@ -9,15 +9,10 @@ class AdmireItemGoal {
 public:
     virtual ~AdmireItemGoal();
     virtual bool canUse();
-    virtual void unk_vfn_2();
+    virtual bool canContinueToUse();
     virtual void unk_vfn_3();
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-
-public:
-    MCAPI AdmireItemGoal(class Mob&, enum LevelSoundEvent, struct FloatRange, class DefinitionTrigger const&, class DefinitionTrigger const&);
+    virtual void appendDebugInfo(std::string&) const;
 };

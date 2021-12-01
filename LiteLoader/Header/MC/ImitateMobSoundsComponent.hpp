@@ -4,12 +4,10 @@
 #define EXTRA_INCLUDE_PART_IMITATEMOBSOUNDSCOMPONENT
 #include "Extra/ImitateMobSoundsComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_IMITATEMOBSOUNDSCOMPONENT
-namespace ImitateMobSoundsComponent {
+class ImitateMobSoundsComponent {
 #include "Extra/ImitateMobSoundsComponentAPI.hpp"
 
 public:
-MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const&);
-MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&);
-
-
-} // namespace ImitateMobSoundsComponent
+    MCAPI static enum LevelSoundEvent getRandomImitatedSound(class Randomize const&);
+    MCAPI static bool imitateNearbyMobs(class Actor&, class Randomize const&);
+};

@@ -7,7 +7,6 @@
 class BaseContainerMenu {
 #include "Extra/BaseContainerMenuAPI.hpp"
 
-
 protected:
     MCAPI void _saveLastSlots(class Container*);
 };

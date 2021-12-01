@@ -8,9 +8,8 @@ class KeyManager {
 #include "Extra/KeyManagerAPI.hpp"
 public:
     virtual ~KeyManager();
-    virtual bool isValid();
+    virtual bool isValid() const;
 
 public:
-    MCAPI KeyManager(std::string const&, enum Crypto::Asymmetric::System);
     MCAPI std::string getPublicKey() const;
 };

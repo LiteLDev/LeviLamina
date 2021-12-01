@@ -4,19 +4,17 @@
 #define EXTRA_INCLUDE_PART_BLOCKUTILS
 #include "Extra/BlockUtilsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKUTILS
-namespace BlockUtils {
+class BlockUtils {
 #include "Extra/BlockUtilsAPI.hpp"
 
 public:
-MCAPI static bool allowsNetherVegetation(class BlockLegacy const&);
-MCAPI static bool canGrowTreeWithBeehive(class Block const&);
-MCAPI static float getLiquidBlockHeight(class Block const&, class BlockPos const&);
-MCAPI static bool isBeehiveBlock(class BlockLegacy const&);
-MCAPI static bool isDownwardFlowingLiquid(class Block const&);
-MCAPI static bool isFullFlowingLiquid(class Block const&);
-MCAPI static bool isLiquidSource(class Block const&);
-MCAPI static bool isThinFenceOrWallBlock(class Block const&);
-MCAPI static bool isWaterSource(class Block const&);
-
-
-} // namespace BlockUtils
+    MCAPI static bool allowsNetherVegetation(class BlockLegacy const&);
+    MCAPI static bool canGrowTreeWithBeehive(class Block const&);
+    MCAPI static float getLiquidBlockHeight(class Block const&, class BlockPos const&);
+    MCAPI static bool isBeehiveBlock(class BlockLegacy const&);
+    MCAPI static bool isDownwardFlowingLiquid(class Block const&);
+    MCAPI static bool isFullFlowingLiquid(class Block const&);
+    MCAPI static bool isLiquidSource(class Block const&);
+    MCAPI static bool isThinFenceOrWallBlock(class Block const&);
+    MCAPI static bool isWaterSource(class Block const&);
+};

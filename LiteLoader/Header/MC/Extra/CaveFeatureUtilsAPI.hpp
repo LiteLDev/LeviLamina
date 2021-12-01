@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+struct CarverConfiguration;
+struct CarvingParameters;
 
 #endif

@@ -9,20 +9,20 @@ class TextPacket : public Packet {
 #include "Extra/TextPacketAPI.hpp"
 public:
     virtual ~TextPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI TextPacket();
-
     MCAPI static class TextPacket createAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
     MCAPI static class TextPacket createChat(std::string const&, std::string const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createJukeboxPopup(std::string const&, std::vector<std::string> const&);
     MCAPI static class TextPacket createSystemMessage(std::string const&);
     MCAPI static class TextPacket createTextObjectMessage(class ResolvedTextObject const&, std::string, std::string);
     MCAPI static class TextPacket createTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
+    MCAPI static class TextPacket createTranslated(std::string const&, std::vector<std::string> const&);
     MCAPI static class TextPacket createTranslatedAnnouncement(std::string const&, std::string const&, std::string const&, std::string const&);
     MCAPI static class TextPacket createWhisper(std::string const&, std::string const&, std::string const&, std::string const&);
 };

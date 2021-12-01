@@ -8,18 +8,13 @@ class StructureBlockPalette {
 #include "Extra/StructureBlockPaletteAPI.hpp"
 
 public:
-    MCAPI StructureBlockPalette();
-    MCAPI StructureBlockPalette(class StructureBlockPalette&&);
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
     MCAPI struct StructureBlockPalette::BlockPositionData const* getBlockPositionData(unsigned __int64) const;
     MCAPI bool load(class CompoundTag const&, int);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
-    MCAPI ~StructureBlockPalette();
-
 
 private:
     MCAPI void _contentErrorMissingField(std::string const&) const;
-
 
 protected:
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);

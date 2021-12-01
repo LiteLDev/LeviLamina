@@ -8,9 +8,8 @@ class PrivateKeyManager {
 #include "Extra/PrivateKeyManagerAPI.hpp"
 public:
     virtual ~PrivateKeyManager();
-    virtual bool isValid();
+    virtual bool isValid() const;
 
 public:
-    MCAPI PrivateKeyManager(enum Crypto::Asymmetric::System);
     MCAPI std::string computeSecret(class KeyManager const&) const;
 };

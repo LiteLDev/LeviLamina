@@ -4,13 +4,11 @@
 #define EXTRA_INCLUDE_PART_VANILLAITEMS
 #include "Extra/VanillaItemsAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VANILLAITEMS
-namespace VanillaItems {
+class VanillaItems {
 #include "Extra/VanillaItemsAPI.hpp"
 
 public:
-MCAPI static void registerItems(class BaseGameVersion const&, class Experiments const&, bool);
-MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
-MCAPI static void unregisterItems();
-
-
-} // namespace VanillaItems
+    MCAPI static void registerItems(class BaseGameVersion const&, class Experiments const&, bool);
+    MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
+    MCAPI static void unregisterItems();
+};

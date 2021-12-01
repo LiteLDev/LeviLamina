@@ -25,7 +25,4 @@ public:
     virtual void unk_vfn_15();
     virtual void unk_vfn_16();
     virtual int /*enum EventResult*/ onExplosionStartedEvent(struct ExplosionStartedEvent const&);
-
-public:
-    MCAPI ScriptBlockEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 };

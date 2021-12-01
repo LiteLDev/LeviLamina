@@ -4,10 +4,9 @@
 #define EXTRA_INCLUDE_PART_BLOCKQUEUEDTICKINGCOMPONENT
 #include "Extra/BlockQueuedTickingComponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKQUEUEDTICKINGCOMPONENT
-class BlockQueuedTickingComponent {
+struct BlockQueuedTickingComponent {
 #include "Extra/BlockQueuedTickingComponentAPI.hpp"
 
 public:
     MCAPI struct BlockQueuedTickingComponent& operator=(struct BlockQueuedTickingComponent&&);
-    MCAPI ~BlockQueuedTickingComponent();
 };

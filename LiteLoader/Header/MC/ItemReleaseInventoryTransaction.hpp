@@ -9,8 +9,8 @@ class ItemReleaseInventoryTransaction {
 public:
     virtual ~ItemReleaseInventoryTransaction();
     virtual void read(class ReadOnlyBinaryStream&);
-    virtual void write(class BinaryStream&);
-    virtual void unk_vfn_3();
-    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool);
-    virtual void unk_vfn_5();
+    virtual void write(class BinaryStream&) const;
+    virtual void postLoadItems(class BlockPalette&, bool);
+    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
+    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
 };

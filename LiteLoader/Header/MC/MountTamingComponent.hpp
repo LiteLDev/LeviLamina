@@ -8,7 +8,6 @@ class MountTamingComponent {
 #include "Extra/MountTamingComponentAPI.hpp"
 
 public:
-    MCAPI MountTamingComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void becomeTame(class Actor&, bool);
     MCAPI int& getCounter();

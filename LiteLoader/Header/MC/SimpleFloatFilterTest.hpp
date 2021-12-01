@@ -7,5 +7,4 @@
 namespace SimpleFloatFilterTest {
 #include "Extra/SimpleFloatFilterTestAPI.hpp"
 
-
 }

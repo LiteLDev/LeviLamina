@@ -9,5 +9,4 @@ class InventoryTransactionItemGroup {
 
 public:
     MCAPI class ItemStack getItemInstance() const;
-    MCAPI ~InventoryTransactionItemGroup();
 };

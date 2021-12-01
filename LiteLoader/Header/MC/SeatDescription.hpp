@@ -4,11 +4,11 @@
 #define EXTRA_INCLUDE_PART_SEATDESCRIPTION
 #include "Extra/SeatDescriptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SEATDESCRIPTION
-class SeatDescription {
+struct SeatDescription {
 #include "Extra/SeatDescriptionAPI.hpp"
 
 public:
-    MCAPI SeatDescription(struct SeatDescription const&);
+    MCAPI struct SeatDescription& operator=(struct SeatDescription&&);
+    MCAPI struct SeatDescription& operator=(struct SeatDescription const&);
     MCAPI void addRotationExpressionNode(class ExpressionNode const&);
-    MCAPI ~SeatDescription();
 };

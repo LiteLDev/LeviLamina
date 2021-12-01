@@ -8,5 +8,5 @@ class ScoreboardEventListener {
 #include "Extra/ScoreboardEventListenerAPI.hpp"
 public:
     virtual ~ScoreboardEventListener();
-    virtual void unk_vfn_1();
+    virtual int /*enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
 };

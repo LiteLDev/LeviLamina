@@ -8,7 +8,7 @@ class WeatherCommand {
 #include "Extra/WeatherCommandAPI.hpp"
 public:
     virtual ~WeatherCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,22 +8,22 @@ class TickingArea {
 #include "Extra/TickingAreaAPI.hpp"
 public:
     virtual ~TickingArea();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual bool isEntityOwned();
-    virtual void unk_vfn_5();
-    virtual bool isAlwaysActive();
-    virtual float getMaxDistToPlayers();
+    virtual class mce::UUID const& getId() const;
+    virtual std::string const& getName() const;
+    virtual struct ActorUniqueID const& getEntityId() const;
+    virtual bool isEntityOwned() const;
+    virtual class BlockSource& getBlockSource();
+    virtual bool isAlwaysActive() const;
+    virtual float getMaxDistToPlayers() const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual struct TickingAreaDescription getDescription();
+    virtual struct TickingAreaDescription getDescription() const;
     virtual void tick(struct Tick const&, bool);
     virtual void tickSeasons(class Random&);
     virtual void updatePosition(class Vec3 const&);
     virtual void center();
     virtual class Actor* findOwner(unsigned char&);
-    virtual bool entityHasBeenFound();
+    virtual bool entityHasBeenFound() const;
     virtual void setEntityFound();
     virtual bool isRemoved();
     virtual void remove();
@@ -33,15 +33,8 @@ public:
     virtual void unk_vfn_23();
     virtual void unk_vfn_24();
     virtual void unk_vfn_25();
-    virtual void unk_vfn_26();
-
-public:
-    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct Bounds const&, bool);
-    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID, float);
-    MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID);
-
+    virtual class mce::UUID const& getId() const;
 
 private:
-    MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct ActorUniqueID, struct Bounds const&, bool, float, bool);
     MCAPI void _save();
 };

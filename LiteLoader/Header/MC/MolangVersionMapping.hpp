@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_MOLANGVERSIONMAPPING
 #include "Extra/MolangVersionMappingAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MOLANGVERSIONMAPPING
-namespace MolangVersionMapping {
+class MolangVersionMapping {
 #include "Extra/MolangVersionMappingAPI.hpp"
 
 public:
-MCAPI static enum MolangVersion const getVersion(class SemVersion const&);
-
-
-} // namespace MolangVersionMapping
+    MCAPI static enum MolangVersion const getVersion(class SemVersion const&);
+};

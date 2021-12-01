@@ -14,18 +14,13 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    virtual void appendDebugInfo(std::string&) const;
 
 public:
-    MCAPI GoHomeGoal(class Mob&, float, int, float, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>);
-
     MCAPI static int const GIVE_UP_TICKS;
 
 private:
     MCAPI bool _hasRequiredComponents() const;
-
 
 protected:
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;

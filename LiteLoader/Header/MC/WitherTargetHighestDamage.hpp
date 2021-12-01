@@ -14,14 +14,10 @@ public:
     virtual void unk_vfn_3();
     virtual void start();
     virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
     virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
-
-public:
-    MCAPI WitherTargetHighestDamage(class WitherBoss&, std::vector<struct MobDescriptor> const&);
-
 
 private:
     MCAPI class Player* getHighestDamageTarget();

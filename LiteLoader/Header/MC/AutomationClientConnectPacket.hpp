@@ -9,13 +9,9 @@ class AutomationClientConnectPacket : public Packet {
 #include "Extra/AutomationClientConnectPacketAPI.hpp"
 public:
     virtual ~AutomationClientConnectPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI AutomationClientConnectPacket();
-    MCAPI AutomationClientConnectPacket(struct WebSocketPacketData);
 };

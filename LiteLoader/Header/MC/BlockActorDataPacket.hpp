@@ -9,13 +9,9 @@ class BlockActorDataPacket : public Packet {
 #include "Extra/BlockActorDataPacketAPI.hpp"
 public:
     virtual ~BlockActorDataPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI BlockActorDataPacket();
-    MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);
 };

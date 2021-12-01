@@ -8,8 +8,8 @@ class AttributeBuff {
 #include "Extra/AttributeBuffAPI.hpp"
 public:
     virtual ~AttributeBuff();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
+    virtual bool isInstantaneous() const = 0;
+    virtual bool isSerializable() const  = 0;
     virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
 
 public:

@@ -8,15 +8,13 @@ class PlayerListPacket {
 #include "Extra/PlayerListPacketAPI.hpp"
 public:
     virtual ~PlayerListPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
+    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
-    MCAPI PlayerListPacket();
-    MCAPI PlayerListPacket(class mce::UUID const&);
     MCAPI void emplace(class PlayerListEntry&&);
 };

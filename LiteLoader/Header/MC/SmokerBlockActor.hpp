@@ -6,7 +6,4 @@
 #undef EXTRA_INCLUDE_PART_SMOKERBLOCKACTOR
 class SmokerBlockActor {
 #include "Extra/SmokerBlockActorAPI.hpp"
-
-public:
-    MCAPI SmokerBlockActor(class BlockPos const&);
 };

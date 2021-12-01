@@ -9,7 +9,7 @@ class RedstoneTorchCapacitor : public ProducerComponent {
 #include "Extra/RedstoneTorchCapacitorAPI.hpp"
 public:
     virtual ~RedstoneTorchCapacitor();
-    virtual int getStrength();
+    virtual int getStrength() const;
     virtual void unk_vfn_2();
     virtual void unk_vfn_4();
     virtual void unk_vfn_7();
@@ -21,17 +21,14 @@ public:
     virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
     virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
+    virtual bool isHalfPulse() const;
     virtual void unk_vfn_20();
     virtual void unk_vfn_21();
-    virtual int /*enum CircuitComponentType*/ getCircuitComponentType();
-    virtual void unk_vfn_24();
+    virtual int /*enum CircuitComponentType*/ getCircuitComponentType() const;
 
 public:
-    MCAPI RedstoneTorchCapacitor();
     MCAPI void resetBurnOutCount();
     MCAPI void setOn(bool);
-
 
 private:
     MCAPI int FindStrongestStrength(class BlockPos const&, class CircuitSystem&, bool&);

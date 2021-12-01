@@ -9,40 +9,39 @@ class Container {
 public:
     virtual ~Container();
     virtual void init();
-    virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
+    virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>) = 0;
     virtual void addContentChangeListener(class ContainerContentChangeListener*);
     virtual void removeContentChangeListener(class ContainerContentChangeListener*);
-    virtual class ItemStack const& getItem(int);
+    virtual class ItemStack const& getItem(int) const = 0;
     virtual bool hasRoomForItem(class ItemStack const&);
     virtual void addItem(class ItemStack&);
-    virtual bool addItemToFirstEmptySlot(class ItemStack&);
-    virtual void setItem(int, class ItemStack const&);
+    virtual bool addItemToFirstEmptySlot(class ItemStack const&);
+    virtual void setItem(int, class ItemStack const&) = 0;
     virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
     virtual void removeItem(int, int);
     virtual void removeAllItems();
     virtual void dropContents(class BlockSource&, class Vec3 const&, bool);
-    virtual void unk_vfn_14();
-    virtual int getMaxStackSize();
-    virtual void startOpen(class Player&);
-    virtual void stopOpen(class Player&);
-    virtual std::vector<class ItemStack> getSlotCopies();
-    virtual std::vector<class ItemStack const*> const getSlots();
-    virtual int getItemCount(class ItemStack const&);
-    virtual int findFirstSlotForItem(class ItemStack const&);
+    virtual int getContainerSize() const  = 0;
+    virtual int getMaxStackSize() const   = 0;
+    virtual void startOpen(class Player&) = 0;
+    virtual void stopOpen(class Player&)  = 0;
+    virtual std::vector<class ItemStack> getSlotCopies() const;
+    virtual std::vector<class ItemStack const*> const getSlots() const;
+    virtual int getItemCount(class ItemStack const&) const;
+    virtual int findFirstSlotForItem(class ItemStack const&) const;
     virtual void unk_vfn_22();
     virtual void unk_vfn_23();
     virtual void setContainerChanged(int);
     virtual void setContainerMoved();
     virtual void setCustomName(std::string const&);
-    virtual bool hasCustomName();
+    virtual bool hasCustomName() const;
     virtual void readAdditionalSaveData(class CompoundTag const&);
     virtual void addAdditionalSaveData(class CompoundTag&);
     virtual void createTransactionContext(class std::function<void(class Container&, int, class ItemStack const&, class ItemStack const&)>, class std::function<void(void)>);
     virtual void unk_vfn_31();
-    virtual bool isEmpty();
+    virtual bool isEmpty() const;
 
 public:
-    MCAPI Container(enum ContainerType);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;
     MCAPI int getItemCount(class std::function<bool(class ItemStack const&)>);
@@ -56,9 +55,7 @@ public:
     MCAPI static enum ContainerType getContainerTypeId(std::string const&);
     MCAPI static std::string const& getContainerTypeName(enum ContainerType);
 
-
 protected:
-    MCAPI void _initRuntimeId(class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
     MCAPI void _serverInitId(int, class ItemStack&, class std::function<void(int, class ItemStack const&)>);
 
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string> const containerTypeMap;

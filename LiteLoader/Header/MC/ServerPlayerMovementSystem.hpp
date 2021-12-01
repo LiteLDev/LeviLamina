@@ -6,7 +6,12 @@
 #undef EXTRA_INCLUDE_PART_SERVERPLAYERMOVEMENTSYSTEM
 class ServerPlayerMovementSystem {
 #include "Extra/ServerPlayerMovementSystemAPI.hpp"
+public:
+    virtual ~ServerPlayerMovementSystem();
+    virtual void unk_vfn_1();
+    virtual void tick(class EntityRegistry&);
 
 public:
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void(class InventoryTransactionPacket&)> const&);
+    MCAPI static void _tickPlayerMovement(struct PlayerTickComponent const&, struct ServerPlayerMovementComponent&, class std::function<void(class PlayerAuthInputPacket const&)> const&);
 };

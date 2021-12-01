@@ -9,11 +9,11 @@ class RepeaterCapacitor : public ProducerComponent {
 #include "Extra/RepeaterCapacitorAPI.hpp"
 public:
     virtual ~RepeaterCapacitor();
-    virtual int getStrength();
+    virtual int getStrength() const;
     virtual void unk_vfn_2();
     virtual void setStrength(int);
     virtual void unk_vfn_4();
-    virtual bool canConsumePowerAnyDirection();
+    virtual bool canConsumePowerAnyDirection() const;
     virtual void unk_vfn_7();
     virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
@@ -26,10 +26,9 @@ public:
     virtual void unk_vfn_18();
     virtual void unk_vfn_20();
     virtual void unk_vfn_21();
-    virtual int /*enum CircuitComponentType*/ getCircuitComponentType();
-    virtual void unk_vfn_24();
+    virtual int /*enum CircuitComponentType*/ getCircuitComponentType() const;
+    virtual unsigned char getPoweroutDirection() const;
 
 public:
-    MCAPI RepeaterCapacitor();
     MCAPI void setDelay(int);
 };

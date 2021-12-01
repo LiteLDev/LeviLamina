@@ -8,7 +8,6 @@ class PerfContextTracker {
 #include "Extra/PerfContextTrackerAPI.hpp"
 
 public:
-    MCAPI PerfContextTracker();
     MCAPI void incrementPacketReceivedInfo(unsigned int);
     MCAPI void incrementPacketSentInfo(unsigned int);
 

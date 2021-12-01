@@ -8,7 +8,6 @@ class TradeResupplyComponent {
 #include "Extra/TradeResupplyComponentAPI.hpp"
 
 public:
-    MCAPI TradeResupplyComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void initFromDefinition(class Actor&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);

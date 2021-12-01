@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_SHAREABLE
 #include "Extra/ShareableAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SHAREABLE
-class Shareable {
+struct Shareable {
 #include "Extra/ShareableAPI.hpp"
 
 public:

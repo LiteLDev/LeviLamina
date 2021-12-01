@@ -10,9 +10,6 @@ class BlockPileFeature : public Feature {
 public:
     virtual ~BlockPileFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-    virtual class Block const& getBlockToPlace(class Random&);
-
-public:
-    MCAPI BlockPileFeature(class Block const&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    virtual class Block const& getBlockToPlace(class Random&) const;
 };

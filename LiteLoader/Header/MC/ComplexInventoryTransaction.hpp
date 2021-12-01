@@ -11,12 +11,10 @@ public:
     virtual void unk_vfn_1();
     virtual void unk_vfn_2();
     virtual void postLoadItems(class BlockPalette&, bool);
-    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool);
-    virtual void unk_vfn_5();
+    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
+    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
 
 public:
-    MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
-
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const&);
     MCAPI static std::string const getTransactionTypeName(enum ComplexInventoryTransaction::Type);

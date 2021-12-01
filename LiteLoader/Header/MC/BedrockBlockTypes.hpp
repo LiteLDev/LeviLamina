@@ -7,11 +7,10 @@
 namespace BedrockBlockTypes {
 #include "Extra/BedrockBlockTypesAPI.hpp"
 
-MCAPI class WeakPtr<class BlockLegacy> mAir;
-MCAPI class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
-MCAPI class WeakPtr<class BlockLegacy> mUnknown;
+MCAPI extern class WeakPtr<class BlockLegacy> mAir;
+MCAPI extern class WeakPtr<class BlockLegacy> mClientRequestPlaceholderBlock;
+MCAPI extern class WeakPtr<class BlockLegacy> mUnknown;
 MCAPI void registerBlocks();
 MCAPI void unregisterBlocks();
-
 
 } // namespace BedrockBlockTypes

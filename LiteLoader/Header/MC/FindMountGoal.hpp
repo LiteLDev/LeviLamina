@@ -14,11 +14,8 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    virtual void appendDebugInfo(std::string&) const;
 
 public:
-    MCAPI FindMountGoal(class Mob&, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
 };

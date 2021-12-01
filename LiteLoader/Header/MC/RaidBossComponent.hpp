@@ -9,8 +9,6 @@ class RaidBossComponent {
 
 public:
     MCAPI enum BossBarColor getColor();
-    MCAPI class RaidBossComponent& operator=(class RaidBossComponent&&);
-    MCAPI RaidBossComponent(class RaidBossComponent&&);
     MCAPI float getHealthPercent();
     MCAPI std::string getName();
     MCAPI struct ActorUniqueID getOwnerUniqueID();
@@ -19,6 +17,7 @@ public:
     MCAPI bool getWaveStarted();
     MCAPI void initialize(struct ActorUniqueID);
     MCAPI bool isWithinRange(class Mob const&);
+    MCAPI class RaidBossComponent& operator=(class RaidBossComponent&&);
     MCAPI void registerPlayer(class Player*);
     MCAPI void removeBossBar(class Actor&);
     MCAPI void sendRegistryMessages(class Actor&);
@@ -28,8 +27,6 @@ public:
     MCAPI bool tryRemoveBoss(class Actor&, class Player&);
     MCAPI void unRegisterPlayer(class Player*);
     MCAPI void updateBossBarStats(class Actor&, class Raid const&);
-    MCAPI ~RaidBossComponent();
-
 
 private:
     MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor&);

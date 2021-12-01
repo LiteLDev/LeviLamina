@@ -8,6 +8,4 @@ class ScriptBinderComponent {
 #include "Extra/ScriptBinderComponentAPI.hpp"
 public:
     virtual ~ScriptBinderComponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
 };

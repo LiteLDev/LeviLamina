@@ -8,5 +8,5 @@ class MossStoneSelector {
 #include "Extra/MossStoneSelectorAPI.hpp"
 public:
     virtual ~MossStoneSelector();
-    virtual class Block const& next(class Random&, int, int, int, bool);
+    virtual class Block const& next(class Random&, int, int, int, bool) const;
 };

@@ -10,8 +10,5 @@ class CentralSpikedFeature : public Feature {
 public:
     virtual ~CentralSpikedFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI CentralSpikedFeature(class Block const&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

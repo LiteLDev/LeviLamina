@@ -8,8 +8,7 @@ class ScriptDebuggerWatchdog {
 #include "Extra/ScriptDebuggerWatchdogAPI.hpp"
 public:
     virtual ~ScriptDebuggerWatchdog();
-    virtual void unk_vfn_1();
+    virtual bool requireClose() const;
     virtual void startListenTimeout();
-    virtual bool listenTimeoutExpired();
-    virtual void unk_vfn_4();
+    virtual bool listenTimeoutExpired() const;
 };

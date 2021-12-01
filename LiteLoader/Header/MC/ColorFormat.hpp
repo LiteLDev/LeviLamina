@@ -7,31 +7,30 @@
 namespace ColorFormat {
 #include "Extra/ColorFormatAPI.hpp"
 
-MCAPI std::string const AQUA;
-MCAPI std::string const BLACK;
-MCAPI std::string const BLUE;
-MCAPI std::string const BOLD;
+MCAPI extern std::string const AQUA;
+MCAPI extern std::string const BLACK;
+MCAPI extern std::string const BLUE;
+MCAPI extern std::string const BOLD;
 MCAPI std::string ColorCodeFromColor(class mce::Color const&);
 MCAPI class mce::Color const* ColorFromColorCode(std::string const&);
-MCAPI std::string const DARK_AQUA;
-MCAPI std::string const DARK_BLUE;
-MCAPI std::string const DARK_GRAY;
-MCAPI std::string const DARK_GREEN;
-MCAPI std::string const DARK_PURPLE;
-MCAPI std::string const DARK_RED;
-MCAPI std::string const ESCAPE;
+MCAPI extern std::string const DARK_AQUA;
+MCAPI extern std::string const DARK_BLUE;
+MCAPI extern std::string const DARK_GRAY;
+MCAPI extern std::string const DARK_GREEN;
+MCAPI extern std::string const DARK_PURPLE;
+MCAPI extern std::string const DARK_RED;
+MCAPI extern std::string const ESCAPE;
 MCAPI class gsl::basic_string_span<char const, -1> const FromString(std::string const&);
-MCAPI std::string const GOLD;
-MCAPI std::string const GRAY;
-MCAPI std::string const GREEN;
-MCAPI std::string const ITALIC;
-MCAPI std::string const LIGHT_PURPLE;
-MCAPI std::string const MINECOIN_GOLD;
-MCAPI std::string const OBFUSCATED;
-MCAPI std::string const RED;
-MCAPI std::string const RESET;
-MCAPI std::string const WHITE;
-MCAPI std::string const YELLOW;
-
+MCAPI extern std::string const GOLD;
+MCAPI extern std::string const GRAY;
+MCAPI extern std::string const GREEN;
+MCAPI extern std::string const ITALIC;
+MCAPI extern std::string const LIGHT_PURPLE;
+MCAPI extern std::string const MINECOIN_GOLD;
+MCAPI extern std::string const OBFUSCATED;
+MCAPI extern std::string const RED;
+MCAPI extern std::string const RESET;
+MCAPI extern std::string const WHITE;
+MCAPI extern std::string const YELLOW;
 
 } // namespace ColorFormat

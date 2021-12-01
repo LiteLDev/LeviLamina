@@ -8,7 +8,7 @@ class ChunkBuildOrderPolicy {
 #include "Extra/ChunkBuildOrderPolicyAPI.hpp"
 public:
     virtual ~ChunkBuildOrderPolicy();
-    virtual int getChunkRebuildPriority(class ChunkPos const&);
+    virtual int getChunkRebuildPriority(class ChunkPos const&) const;
     virtual unsigned int registerForUpdates();
     virtual void unregisterForUpdates(unsigned int);
     virtual void setBuildOrderInfluence(unsigned int, class ChunkPos const&, class Vec3 const&);

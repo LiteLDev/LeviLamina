@@ -4,5 +4,6 @@
 
 #else
 // Add Member There
+class Property;
 
 #endif

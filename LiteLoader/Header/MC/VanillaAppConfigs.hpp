@@ -37,5 +37,4 @@ public:
     virtual void unk_vfn_28();
     virtual void unk_vfn_29();
     virtual void unk_vfn_32();
-    virtual void unk_vfn_34();
 };

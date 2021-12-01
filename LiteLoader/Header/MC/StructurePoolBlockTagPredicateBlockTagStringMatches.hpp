@@ -8,8 +8,5 @@ class StructurePoolBlockTagPredicateBlockTagStringMatches {
 #include "Extra/StructurePoolBlockTagPredicateBlockTagStringMatchesAPI.hpp"
 public:
     virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
-    virtual bool test(class Block const&, class CompoundTag const&);
-
-public:
-    MCAPI StructurePoolBlockTagPredicateBlockTagStringMatches(class Block const&, std::string, std::string);
+    virtual bool test(class Block const&, class CompoundTag const&) const;
 };

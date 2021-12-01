@@ -10,8 +10,5 @@ class LegacyForestFoliageFeature : public Feature {
 public:
     virtual ~LegacyForestFoliageFeature();
     virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&);
-
-public:
-    MCAPI LegacyForestFoliageFeature(enum LegacyForestFoliageFeature::Type, class FeatureRegistry&);
+    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

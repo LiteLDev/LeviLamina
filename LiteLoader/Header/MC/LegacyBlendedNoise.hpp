@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_LEGACYBLENDEDNOISE
 #include "Extra/LegacyBlendedNoiseAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LEGACYBLENDEDNOISE
-namespace LegacyBlendedNoise {
+class LegacyBlendedNoise {
 #include "Extra/LegacyBlendedNoiseAPI.hpp"
 
 public:
-MCAPI static std::unique_ptr<class LegacyBlendedNoise> make(std::unique_ptr<class IRandom>);
-
-
-} // namespace LegacyBlendedNoise
+    MCAPI static std::unique_ptr<class LegacyBlendedNoise> make(class IRandom&);
+};

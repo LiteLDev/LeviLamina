@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_LEVELCHUNKFINALDELETER
 #include "Extra/LevelChunkFinalDeleterAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LEVELCHUNKFINALDELETER
-class LevelChunkFinalDeleter {
+struct LevelChunkFinalDeleter {
 #include "Extra/LevelChunkFinalDeleterAPI.hpp"
 
 public:

@@ -8,6 +8,12 @@
     class RakNetSocket2;
     struct SplitPacketChannel;
     class BitStream;
+    struct Packet;
+    class RakNetSocket2;
+    class RakPeerInterface;
+    class SimpleMutex;
+    struct SocketDescriptor;
+    struct SplitPacketChannel;
 
     struct SystemAddress {
         char filler[17 * 8]; // uncertain?

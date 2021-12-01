@@ -8,7 +8,7 @@ class GetChunkDataCommand {
 #include "Extra/GetChunkDataCommandAPI.hpp"
 public:
     virtual ~GetChunkDataCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&);
+    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

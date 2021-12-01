@@ -9,9 +9,8 @@ class RandomDyeFunction : public LootItemFunction {
 #include "Extra/RandomDyeFunctionAPI.hpp"
 public:
     virtual ~RandomDyeFunction();
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
     virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-
+    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 
 private:
     MCAPI void _applyBase(class ItemStackBase&, class Random&) const;

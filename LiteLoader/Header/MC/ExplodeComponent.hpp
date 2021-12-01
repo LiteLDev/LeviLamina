@@ -8,7 +8,6 @@ class ExplodeComponent {
 #include "Extra/ExplodeComponentAPI.hpp"
 
 public:
-    MCAPI ExplodeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void explode(class Actor&, class Vec3 const&);
     MCAPI int getFuseLength() const;

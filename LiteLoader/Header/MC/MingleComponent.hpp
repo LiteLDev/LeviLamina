@@ -8,7 +8,6 @@ class MingleComponent {
 #include "Extra/MingleComponentAPI.hpp"
 
 public:
-    MCAPI MingleComponent();
     MCAPI class MingleComponent& clearPreviousPartnerId();
     MCAPI class Actor* fetchCurrentPartner(class Actor const&) const;
     MCAPI void resetState();

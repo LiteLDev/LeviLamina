@@ -10,13 +10,11 @@ class MolangVariableMap {
 public:
     MCAPI class MolangVariableMap& clear();
     MCAPI struct MolangScriptArg const& getMolangVariable(unsigned __int64, char const*) const;
-    MCAPI void setMolangStructMember(unsigned __int64, char const*, unsigned __int64, char const*, struct MolangScriptArg const&);
+    MCAPI void setMolangStructMember(class HashedString const&, class HashedString const&, struct MolangScriptArg const&);
     MCAPI void setMolangVariable(class HashedString const&, struct MolangScriptArg const&);
     MCAPI void setMolangVariable(enum MolangVariableIndex, struct MolangScriptArg const&);
     MCAPI void setMolangVariable(unsigned __int64, char const*, struct MolangScriptArg const&);
     MCAPI void setMolangVariableSettings(struct MolangVariableSettings const&);
-    MCAPI ~MolangVariableMap();
-
 
 private:
     MCAPI class MolangVariable const* _getMolangVariable(enum MolangVariableIndex) const;

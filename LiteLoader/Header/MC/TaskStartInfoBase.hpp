@@ -4,11 +4,9 @@
 #define EXTRA_INCLUDE_PART_TASKSTARTINFOBASE
 #include "Extra/TaskStartInfoBaseAPI.hpp"
 #undef EXTRA_INCLUDE_PART_TASKSTARTINFOBASE
-namespace TaskStartInfoBase {
+class TaskStartInfoBase {
 #include "Extra/TaskStartInfoBaseAPI.hpp"
 
 public:
-MCAPI static class std::thread::id const NoAffinity;
-
-
-} // namespace TaskStartInfoBase
+    MCAPI static class std::thread::id const NoAffinity;
+};

@@ -8,34 +8,33 @@ class Block {
 #include "Extra/BlockAPI.hpp"
 public:
     virtual ~Block();
-    virtual int /*enum BlockRenderLayer*/ getRenderLayer();
+    virtual int /*enum BlockRenderLayer*/ getRenderLayer() const;
 
 public:
-    MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy*>, class CompoundTag, unsigned int const&);
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI bool addCollisionShapes(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
     MCAPI class Block& addTag(class HashedString const&);
     MCAPI void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     MCAPI class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&) const;
-    MCAPI bool breaksFallingBlocks(class BaseGameVersion) const;
-    MCAPI bool causesFreezeEffect() const;
-    MCAPI bool operator!=(class Block const&);
-    MCAPI bool canHurtAndBreakItem() const;
-    MCAPI bool operator==(class Block const&);
     MCAPI bool attack(class Player*, class BlockPos const&) const;
+    MCAPI bool breaksFallingBlocks(class BaseGameVersion) const;
     MCAPI std::string buildDescriptionId() const;
-    MCAPI std::string buildDescriptionName() const;
     MCAPI void cacheComponentData();
     MCAPI float calcGroundFriction(struct IMobMovementProxy const&, class BlockPos const&) const;
     MCAPI bool canBeBrokenFromFalling() const;
+    MCAPI bool operator!=(class Block const&);
     MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
     MCAPI bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI bool canBeOriginalSurface() const;
     MCAPI bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    MCAPI bool canHurtAndBreakItem() const;
+    MCAPI bool operator==(class Block const&);
+    MCAPI std::string buildDescriptionName() const;
     MCAPI bool canInstatick() const;
     MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
     MCAPI bool canSlide(class BlockSource&, class BlockPos const&) const;
     MCAPI bool canSurvive(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool causesFreezeEffect() const;
     MCAPI bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&) const;
@@ -57,6 +56,7 @@ public:
     MCAPI void getConnectedDirections(class BlockPos const&, class BlockSource&, bool&, bool&, bool&, bool&) const;
     MCAPI enum CreativeItemCategory getCreativeCategory() const;
     MCAPI class gsl::basic_string_span<char const, -1> getCreativeGroup() const;
+    MCAPI void getDebugText(std::vector<std::string>&, class BlockPos const&) const;
     MCAPI class Block const& getDefaultState() const;
     MCAPI std::string getDescriptionId() const;
     MCAPI float getDestroySpeed() const;
@@ -73,6 +73,7 @@ public:
     MCAPI class MobSpawnerData const* getMobToSpawn(class SpawnConditions const&, class BlockSource&) const;
     MCAPI class HashedString const& getName() const;
     MCAPI class Block const& getPlacementBlock(class Actor&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
+    MCAPI int getResourceCount(class Randomize&, int) const;
     MCAPI unsigned int const& getRuntimeId() const;
     MCAPI bool getSecondPart(class BlockSource const&, class BlockPos const&, class BlockPos&) const;
     MCAPI class CompoundTag const& getSerializationId() const;
@@ -110,6 +111,7 @@ public:
     MCAPI bool isMotionBlockingBlock() const;
     MCAPI bool isObstructingChests(class BlockSource&, class BlockPos const&) const;
     MCAPI bool isPartialBlock(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool isPreservingMediumWhenPlaced(class Block const&) const;
     MCAPI bool isRailBlock() const;
     MCAPI bool isSignalSource() const;
     MCAPI bool isSlabBlock() const;
@@ -176,7 +178,6 @@ public:
 
 private:
     MCAPI bool _isSolid() const;
-
 
 protected:
     MCAPI void buildSerializationId(unsigned int);

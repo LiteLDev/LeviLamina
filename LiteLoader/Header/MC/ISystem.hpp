@@ -4,8 +4,6 @@
 #define EXTRA_INCLUDE_PART_ISYSTEM
 #include "Extra/ISystemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ISYSTEM
-namespace ISystem {
+struct ISystem {
 #include "Extra/ISystemAPI.hpp"
-
-
-}
+};

@@ -14,21 +14,19 @@ public:
     virtual void start();
     virtual void stop();
     virtual void tick();
-    virtual void appendDebugInfo(std::string&);
+    virtual void appendDebugInfo(std::string&) const = 0;
     virtual void unk_vfn_8();
     virtual void unk_vfn_9();
-    virtual bool hasReachedTarget();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    virtual bool hasReachedTarget() const;
+    virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
     virtual int _nextStartTick();
     virtual bool _canReach(class BlockPos const&);
-    virtual void _moveToBlock();
-    virtual class Vec3 _getTargetPosition();
-    virtual void unk_vfn_16();
+    virtual void _moveToBlock() = 0;
+    virtual class Vec3 _getTargetPosition() const;
+    virtual unsigned __int64 _getRepathTime() const;
 
 public:
-    MCAPI BaseMoveToGoal(class Mob&, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const&);
-
 
 protected:
     MCAPI class BlockPos _blockAboveTarget() const;

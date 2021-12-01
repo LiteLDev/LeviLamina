@@ -4,7 +4,7 @@
 #define EXTRA_INCLUDE_PART_EXPRESSIONOPBITFIELD
 #include "Extra/ExpressionOpBitFieldAPI.hpp"
 #undef EXTRA_INCLUDE_PART_EXPRESSIONOPBITFIELD
-class ExpressionOpBitField {
+struct ExpressionOpBitField {
 #include "Extra/ExpressionOpBitFieldAPI.hpp"
 
 public:

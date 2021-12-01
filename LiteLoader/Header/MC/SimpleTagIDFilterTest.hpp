@@ -7,5 +7,4 @@
 namespace SimpleTagIDFilterTest {
 #include "Extra/SimpleTagIDFilterTestAPI.hpp"
 
-
 }

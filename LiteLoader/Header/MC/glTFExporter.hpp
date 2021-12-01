@@ -4,14 +4,12 @@
 #define EXTRA_INCLUDE_PART_GLTFEXPORTER
 #include "Extra/glTFExporterAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GLTFEXPORTER
-namespace glTFExporter {
+class glTFExporter {
 #include "Extra/glTFExporterAPI.hpp"
 
 public:
-MCAPI static class gsl::basic_string_span<char const, -1> const BINARY_EXTENSION;
-MCAPI static class gsl::basic_string_span<char const, -1> const GLB_BUFFER_URI;
-MCAPI static class gsl::basic_string_span<char const, -1> const GLB_EXTENSION;
-MCAPI static class gsl::basic_string_span<char const, -1> const GLTF_EXTENSION;
-
-
-} // namespace glTFExporter
+    MCAPI static class gsl::basic_string_span<char const, -1> const BINARY_EXTENSION;
+    MCAPI static class gsl::basic_string_span<char const, -1> const GLB_BUFFER_URI;
+    MCAPI static class gsl::basic_string_span<char const, -1> const GLB_EXTENSION;
+    MCAPI static class gsl::basic_string_span<char const, -1> const GLTF_EXTENSION;
+};

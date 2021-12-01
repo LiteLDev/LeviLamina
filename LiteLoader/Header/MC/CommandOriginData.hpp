@@ -4,12 +4,9 @@
 #define EXTRA_INCLUDE_PART_COMMANDORIGINDATA
 #include "Extra/CommandOriginDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_COMMANDORIGINDATA
-class CommandOriginData {
+struct CommandOriginData {
 #include "Extra/CommandOriginDataAPI.hpp"
 
 public:
     MCAPI struct CommandOriginData& operator=(struct CommandOriginData const&);
-    MCAPI CommandOriginData();
-    MCAPI CommandOriginData(struct CommandOriginData const&);
-    MCAPI ~CommandOriginData();
 };

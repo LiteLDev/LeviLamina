@@ -9,11 +9,9 @@ class UPNPInterface {
 public:
     virtual ~UPNPInterface();
     virtual void _onDisable();
-    virtual void unk_vfn_2();
-    virtual();
+    virtual void _onEnable();
 
 public:
-    MCAPI UPNPInterface(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     MCAPI void reset();
     MCAPI void tick();
 };

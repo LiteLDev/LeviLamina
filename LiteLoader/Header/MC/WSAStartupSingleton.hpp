@@ -4,15 +4,13 @@
 #define EXTRA_INCLUDE_PART_WSASTARTUPSINGLETON
 #include "Extra/WSAStartupSingletonAPI.hpp"
 #undef EXTRA_INCLUDE_PART_WSASTARTUPSINGLETON
-namespace WSAStartupSingleton {
+class WSAStartupSingleton {
 #include "Extra/WSAStartupSingletonAPI.hpp"
 
 public:
-MCAPI static void AddRef();
-MCAPI static void Deref();
-
+    MCAPI static void AddRef();
+    MCAPI static void Deref();
 
 protected:
-MCAPI static int refCount;
-
-} // namespace WSAStartupSingleton
+    MCAPI static int refCount;
+};

@@ -9,15 +9,9 @@ class PlayerActionPacket : public Packet {
 #include "Extra/PlayerActionPacketAPI.hpp"
 public:
     virtual ~PlayerActionPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId();
-    virtual std::string getName();
-    virtual void write(class BinaryStream&);
+    virtual int /*enum MinecraftPacketIds*/ getId() const;
+    virtual std::string getName() const;
+    virtual void write(class BinaryStream&) const;
     virtual void unk_vfn_5();
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-public:
-    MCAPI PlayerActionPacket();
-    MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const&, int, class ActorRuntimeID);
-    MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const&, unsigned char, class ActorRuntimeID);
 };

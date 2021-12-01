@@ -9,9 +9,6 @@ class InstantaneousAttributeBuff : public AttributeBuff {
 #include "Extra/InstantaneousAttributeBuffAPI.hpp"
 public:
     virtual ~InstantaneousAttributeBuff();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-
-public:
-    MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
+    virtual bool isInstantaneous() const;
+    virtual bool isSerializable() const;
 };

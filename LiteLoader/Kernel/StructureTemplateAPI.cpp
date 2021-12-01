@@ -7,7 +7,8 @@
 
 StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag){
     auto name_span = gsl::string_span<-1>(name);
-    auto st = StructureTemplate(name_span);
+    auto st = StructureTemplate();
+    //st.getName(name_span)
     st.getData().load(*tag);
     return st;
 }
@@ -18,7 +19,8 @@ std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
 
 StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
     auto name_span = gsl::string_span<-1>(name);
-    auto st = StructureTemplate(name_span);
+    auto st = StructureTemplate();
+    //st.getName();
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
     BlockPos size = {std::abs(p1.x - p2.x) + 1, std::abs(p1.y - p2.y) + 1, std::abs(p1.z - p2.z) + 1};
     auto setting = StructureSettings();

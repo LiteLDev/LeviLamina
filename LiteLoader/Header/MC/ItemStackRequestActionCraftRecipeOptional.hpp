@@ -2,7 +2,6 @@
 #pragma once
 #include <Global.h>
 #include "Types.hpp"
-#include "Types.h"
 #define EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
 #include "Extra/ItemStackRequestActionCraftRecipeOptionalAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTRECIPEOPTIONAL
@@ -11,9 +10,9 @@ class ItemStackRequestActionCraftRecipeOptional : public ItemStackRequestActionC
 public:
     virtual ~ItemStackRequestActionCraftRecipeOptional();
     virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
+    virtual int getFilteredStringIndex() const;
     virtual void unk_vfn_3();
-    virtual void _write(class BinaryStream&);
+    virtual void _write(class BinaryStream&) const;
     virtual bool _read(class ReadOnlyBinaryStream&);
     virtual void unk_vfn_6();
     virtual void unk_vfn_7();
@@ -21,6 +20,5 @@ public:
     virtual void unk_vfn_9();
 
 public:
-    MCAPI ItemStackRequestActionCraftRecipeOptional();
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const& getRecipeNetId() const;
 };

@@ -8,5 +8,4 @@ class ServerNetworkEventHandler {
 #include "Extra/ServerNetworkEventHandlerAPI.hpp"
 public:
     virtual ~ServerNetworkEventHandler();
-    virtual void unk_vfn_1();
 };

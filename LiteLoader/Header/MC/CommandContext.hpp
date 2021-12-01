@@ -8,6 +8,5 @@ class CommandContext {
 #include "Extra/CommandContextAPI.hpp"
 
 public:
-    MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int);
     MCAPI class CommandOrigin const& getCommandOrigin() const;
 };

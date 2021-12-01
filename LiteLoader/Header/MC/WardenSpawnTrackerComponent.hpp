@@ -10,8 +10,6 @@ class WardenSpawnTrackerComponent {
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void copyWarningLevelFrom(class WardenSpawnTrackerComponent const&);
-    MCAPI void decreaseWarningCooldownTicks();
-    MCAPI void decreaseWarningLevel();
     MCAPI enum LevelSoundEvent getSoundEventForCurrentWarningLevel();
     MCAPI bool increaseWarningLevel();
     MCAPI bool isAtMaxWarningLevel() const;
