@@ -1,7 +1,7 @@
 #include "Global.h"
 #include "MC/Item.hpp"
-#include "MC/itemstack.hpp"
-#include "MC/spawner.hpp"
+#include "MC/ItemStack.hpp"
+#include "MC/Spawner.hpp"
 #include "MC/level.hpp"
 #include <string>
 #include <vector>
@@ -66,11 +66,10 @@ int ItemStack::getAux() {
     return ((ItemStack*)this)->getAuxValue();
 }
 
-#include <MC/ScriptItemStack.hpp>
 int ItemStack::getCount() {
     if (this->isNull())
         return 0;
-    return ((ScriptItemStack*)this)->getAmount();
+    return dAccess<unsigned char, 34>(this);
 }
 
 bool ItemStack::setItem(ItemStack* newItem) {

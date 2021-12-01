@@ -1,7 +1,5 @@
 #ifdef EXTRA_INCLUDE_PART_ITEMSTACK
 // Add include headers & pre-declares
-
-#include "../ItemStackBase.hpp"
 class Tag;
 class ItemActor;
 

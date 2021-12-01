@@ -5,6 +5,7 @@
 
 #else
 // Add Member There
-
+private:
+char filler[136];
 
 #endif
