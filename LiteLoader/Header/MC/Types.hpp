@@ -512,7 +512,7 @@ public:
 
 template <typename T>
 struct InvertableFilter {
-    T value;
+    T    value;
     bool inverted;
 };
 

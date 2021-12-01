@@ -1,7 +1,7 @@
 //Extra Part For CommandParameterData.hpp
 #ifdef EXTRA_INCLUDE_PART_COMMANDPARAMETERDATA
 // Include Headers or Declare Types Here
-#include "CommandRegistry.hpp"
+#include "../CommandRegistry.hpp"
 #include <string_view>
 
 enum class CommandParameterDataType {
@@ -27,7 +27,7 @@ using ParseFn = bool (CommandRegistry::*)(
     std::vector<std::string>&) const;
 
 public:
-	typeid_CommandRegistry tid;  // 0
+	typeid_CommandRegistry tid;     // 0
     ParseFn parser;                 // 8
 	std::string name;               // 16
 	char const* desc;               // 48

@@ -380,9 +380,6 @@
     <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Extra\CommandContextAPI.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
@@ -418,6 +415,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\TagAPI.hpp">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CommandMessage.hpp">
+      <Filter>Header\Command</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

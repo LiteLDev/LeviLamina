@@ -5,6 +5,7 @@
 
 #else
 // Add Member There
+char filler[32];
 
 
 #endif

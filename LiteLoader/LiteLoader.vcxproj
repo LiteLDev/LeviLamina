@@ -153,6 +153,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
+    <ClInclude Include="Header\MC\CommandMessage.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp" />
     <ClInclude Include="Header\MC\CommandSelector.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandOriginAPI.hpp" />
@@ -187,7 +188,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\PlayerAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
-    <ClInclude Include="Header\MC\Extra\CommandRegHelper.hpp" />
     <ClInclude Include="Header\regCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\MC\Types.hpp" />
