@@ -6,6 +6,8 @@
 #else
 // Add Member There
 public:
-	void addMessage(std::string str);
+	LIAPI void addMessage(std::string str);
+	LIAPI void success(const string& str);
+	LIAPI void error(const string& str);
 
 #endif
