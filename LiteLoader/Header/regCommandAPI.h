@@ -156,13 +156,13 @@ struct MakeOverload {
             if constexpr (std::is_base_of_v<IMyEnum, TXX>) {
                 vc.emplace_back(typeid_getter<TXX>(), &CommandRegistry::parseEnumInt, desc,CommandParameterDataType::ENUM,CEnum<decltype(TXX::val)>::name.c_str(),int(off + offsetof(TX, filler) + offsetof(TXX, val)), true,int(off + offsetof(TX, set)));
             } else {
-                vc.emplace_back(typeid_getter<TXX>(), CommandRegistry::getParseFn<TXX>(), desc,CommandParameterDataType::NORMAL, nullptr,int(off + offsetof(TX, filler)), true,int(off + offsetof(TX, set)));
+                vc.emplace_back(typeid_getter<TXX>(), CommandRegistry::getParseFn<TXX>(), desc, CommandParameterDataType::NORMAL, nullptr, int(off + offsetof(TX, filler)), true, int(off + offsetof(TX, set)));
             }
         } else {
             if constexpr (std::is_base_of_v<IMyEnum, TX>) {
                 vc.emplace_back(typeid_getter<TX>(), &CommandRegistry::parseEnumInt, desc,CommandParameterDataType::ENUM,CEnum<decltype(TX::val)>::name.c_str(),int(off + offsetof(TX, val)), false, -1);
             } else {
-                vc.emplace_back(typeid_getter<TX>(), CommandRegistry::getParseFn<TX>(), desc,CommandParameterDataType::NORMAL, nullptr, int(off), false, -1);
+                vc.emplace_back(typeid_getter<TX>(), CommandRegistry::getParseFn<TX>(), desc, CommandParameterDataType::NORMAL, nullptr, int(off), false, -1);
             }
         }
     }

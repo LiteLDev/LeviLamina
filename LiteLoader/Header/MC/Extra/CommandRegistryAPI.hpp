@@ -5,7 +5,6 @@
 #include "../Command.hpp"
 class CommandOrigin;
 class CommandParameterData;
-class CommandParameterData;
 
 #else
 // Add Member There

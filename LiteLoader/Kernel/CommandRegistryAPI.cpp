@@ -6,6 +6,10 @@
 static_assert(offsetof(CommandParameterData, pad73) == 73);
 static_assert(offsetof(CommandParameterData, name) == 16);
 static_assert(offsetof(CommandParameterData, unk56) == 56);
+static_assert(offsetof(CommandRegistry::Overload, unk) == 40);
+static_assert(sizeof(CommandRegistry::Overload) == 72);
+static_assert(offsetof(CommandRegistry::Signature, alt_symbol) == 96);
+static_assert(sizeof(CommandRegistry::Signature) == 120);
 /*
 void CommandRegistry::registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args)
 {
@@ -61,7 +65,6 @@ static std::unordered_map<string, void*> parse_ptr = {
          "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
 };
     
-
 template <typename T>
 ParseFn CommandRegistry::getParseFn() {
     bool (CommandRegistry::*ptr)(void*, CommandRegistry::ParseToken const&,
