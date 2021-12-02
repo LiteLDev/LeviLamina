@@ -8,8 +8,8 @@
 class LootPoolEntry {
 #include "Extra/LootPoolEntryAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual ~LootPoolEntry();
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual ~LootPoolEntry();
 
 public:
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);

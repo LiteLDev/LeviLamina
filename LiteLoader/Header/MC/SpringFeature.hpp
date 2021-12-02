@@ -8,9 +8,9 @@
 class SpringFeature : public Feature {
 #include "Extra/SpringFeatureAPI.hpp"
 public:
-    virtual ~SpringFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~SpringFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool isValidSpringBorderBlock(class BlockLegacy const&, class BlockSource&) const;

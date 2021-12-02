@@ -8,7 +8,7 @@
 class CircleAroundAnchorDefinition {
 #include "Extra/CircleAroundAnchorDefinitionAPI.hpp"
 public:
-    virtual ~CircleAroundAnchorDefinition();
+    /*0*/ virtual ~CircleAroundAnchorDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class CircleAroundAnchorGoal&);

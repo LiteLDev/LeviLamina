@@ -7,9 +7,9 @@
 class FreezingSystem {
 #include "Extra/FreezingSystemAPI.hpp"
 public:
-    virtual ~FreezingSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~FreezingSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 public:
     MCAPI static class mce::UUID const FREEZE_EFFECT_UUID;

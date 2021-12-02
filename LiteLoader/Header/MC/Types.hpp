@@ -278,12 +278,12 @@ struct BlockGeometry{
     struct Model;
     class TessellatedModel;
 
-}
+};
 
-class IInPackagePacks{
+class IInPackagePacks {
 public:
-struct MetaData;
-}
+    struct MetaData;
+};
 
 //Templates
 template <typename T, typename T2, int unk>

@@ -7,7 +7,7 @@
 namespace class ScriptMovementAmphibiousComponent {
 #include "Extra/class ScriptMovementAmphibiousComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

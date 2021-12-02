@@ -7,16 +7,16 @@
 class SkeletonHorseTrapGoal {
 #include "Extra/SkeletonHorseTrapGoalAPI.hpp"
 public:
-    virtual ~SkeletonHorseTrapGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void start();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void start();
+    /*0*/ virtual ~SkeletonHorseTrapGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void start();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void start();
 
 private:
     MCAPI class Skeleton* _createSkeleton(enum Difficulty const&, class Horse const&);

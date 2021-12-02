@@ -7,8 +7,8 @@
 class PlaySoundCommand {
 #include "Extra/PlaySoundCommandAPI.hpp"
 public:
-    virtual ~PlaySoundCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~PlaySoundCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

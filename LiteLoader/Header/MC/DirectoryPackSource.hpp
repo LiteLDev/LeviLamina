@@ -8,12 +8,12 @@
 class DirectoryPackSource {
 #include "Extra/DirectoryPackSourceAPI.hpp"
 public:
-    virtual ~DirectoryPackSource();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual int /*enum PackOrigin*/ getPackOrigin() const;
-    virtual int /*enum PackType*/ getPackType() const;
-    virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
+    /*0*/ virtual ~DirectoryPackSource();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum PackOrigin*/ getPackOrigin() const;
+    /*4*/ virtual int /*enum PackType*/ getPackType() const;
+    /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
 
 public:
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);

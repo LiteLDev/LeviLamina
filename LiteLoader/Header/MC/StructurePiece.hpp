@@ -7,19 +7,19 @@
 class StructurePiece {
 #include "Extra/StructurePieceAPI.hpp"
 public:
-    virtual ~StructurePiece();
-    virtual void moveBoundingBox(int, int, int);
-    virtual bool isValid() const;
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual int getWorldX(int, int);
-    virtual int getWorldZ(int, int);
-    virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
-    virtual int getWorldZ(int, int);
+    /*0*/ virtual ~StructurePiece();
+    /*1*/ virtual void moveBoundingBox(int, int, int);
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
+    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    /*7*/ virtual int getWorldX(int, int);
+    /*8*/ virtual int getWorldZ(int, int);
+    /*9*/ virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
+    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*11*/ virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
+    /*12*/ virtual int getWorldZ(int, int);
 
 public:
     MCAPI class BlockPos _getWorldPos(int, int, int);

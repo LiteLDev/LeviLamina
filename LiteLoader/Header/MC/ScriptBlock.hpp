@@ -9,7 +9,7 @@
 class ScriptBlock : public ScriptObject {
 #include "Extra/ScriptBlockAPI.hpp"
 public:
-    virtual ~ScriptBlock();
+    /*0*/ virtual ~ScriptBlock();
 
 public:
     MCAPI class Scripting::Result<class Scripting::StrongObjectHandle> getComponent(std::string const&);

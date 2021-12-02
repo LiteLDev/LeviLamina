@@ -7,6 +7,6 @@
 class GameSpecificNetEventCallback {
 #include "Extra/GameSpecificNetEventCallbackAPI.hpp"
 public:
-    virtual ~GameSpecificNetEventCallback();
-    virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    /*0*/ virtual ~GameSpecificNetEventCallback();
+    /*1*/ virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
 };

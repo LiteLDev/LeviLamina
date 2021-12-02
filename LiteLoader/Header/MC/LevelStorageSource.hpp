@@ -7,7 +7,7 @@
 class LevelStorageSource {
 #include "Extra/LevelStorageSourceAPI.hpp"
 public:
-    virtual ~LevelStorageSource();
+    /*0*/ virtual ~LevelStorageSource();
 
 public:
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const WORLD_SAVE_FLUSH_INTERVAL;

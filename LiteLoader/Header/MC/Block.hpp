@@ -7,8 +7,8 @@
 class Block {
 #include "Extra/BlockAPI.hpp"
 public:
-    virtual ~Block();
-    virtual int /*enum BlockRenderLayer*/ getRenderLayer() const;
+    /*0*/ virtual ~Block();
+    /*1*/ virtual int /*enum BlockRenderLayer*/ getRenderLayer() const;
 
 public:
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;

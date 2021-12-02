@@ -7,7 +7,7 @@
 class CreativeGroupInfo {
 #include "Extra/CreativeGroupInfoAPI.hpp"
 public:
-    virtual ~CreativeGroupInfo();
+    /*0*/ virtual ~CreativeGroupInfo();
 
 public:
     MCAPI void addCreativeItem(class CreativeItemEntry*);

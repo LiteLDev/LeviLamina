@@ -8,20 +8,20 @@
 class MoveToPOIGoal : public BaseMoveToGoal {
 #include "Extra/MoveToPOIGoalAPI.hpp"
 public:
-    virtual ~MoveToPOIGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    virtual void _moveToBlock();
-    virtual class Vec3 _getTargetPosition() const;
-    virtual unsigned __int64 _getRepathTime() const;
-    virtual bool getPOI(int /*enum POIType*/);
-    virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/) const;
+    /*0*/ virtual ~MoveToPOIGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*14*/ virtual void _moveToBlock();
+    /*15*/ virtual class Vec3 _getTargetPosition() const;
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual bool getPOI(int /*enum POIType*/);
+    /*18*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum POIType*/) const;
 
 private:
     MCAPI void _updatePOIBooking();

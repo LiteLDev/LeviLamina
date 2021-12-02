@@ -8,12 +8,12 @@
 class ChestContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/ChestContainerManagerModelAPI.hpp"
 public:
-    virtual ~ChestContainerManagerModel();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void setData(int, int);
-    virtual bool isValid(float);
-    virtual class ContainerScreenContext _postInit();
+    /*0*/ virtual ~ChestContainerManagerModel();
+    /*1*/ virtual int /*enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum ContainerID*/);
+    /*3*/ virtual int /*enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum ContainerType*/);
+    /*9*/ virtual void setData(int, int);
+    /*15*/ virtual bool isValid(float);
+    /*16*/ virtual class ContainerScreenContext _postInit();
 };

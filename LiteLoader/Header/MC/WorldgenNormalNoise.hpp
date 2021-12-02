@@ -7,6 +7,6 @@
 class WorldgenNormalNoise {
 #include "Extra/WorldgenNormalNoiseAPI.hpp"
 public:
-    virtual ~WorldgenNormalNoise();
-    virtual float getValue(float, float, float) const;
+    /*0*/ virtual ~WorldgenNormalNoise();
+    /*1*/ virtual float getValue(float, float, float) const;
 };

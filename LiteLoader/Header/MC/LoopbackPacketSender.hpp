@@ -7,15 +7,15 @@
 class LoopbackPacketSender {
 #include "Extra/LoopbackPacketSenderAPI.hpp"
 public:
-    virtual ~LoopbackPacketSender();
-    virtual void send(class Packet&);
-    virtual void sendToServer(class Packet&);
-    virtual void sendToClient(class UserEntityIdentifierComponent const*, class Packet const&);
-    virtual void sendToClient(class NetworkIdentifier const&, class Packet const&, unsigned char);
-    virtual void sendToClients(std::vector<struct NetworkIdentifierWithSubId> const&, class Packet const&);
-    virtual void sendBroadcast(class Packet const&);
-    virtual void sendBroadcast(class NetworkIdentifier const&, unsigned char, class Packet const&);
-    virtual void flush(class NetworkIdentifier const&, class std::function<void(void)>&&);
+    /*0*/ virtual ~LoopbackPacketSender();
+    /*1*/ virtual void send(class Packet&);
+    /*2*/ virtual void sendToServer(class Packet&);
+    /*3*/ virtual void sendToClient(class UserEntityIdentifierComponent const*, class Packet const&);
+    /*4*/ virtual void sendToClient(class NetworkIdentifier const&, class Packet const&, unsigned char);
+    /*5*/ virtual void sendToClients(std::vector<struct NetworkIdentifierWithSubId> const&, class Packet const&);
+    /*6*/ virtual void sendBroadcast(class Packet const&);
+    /*7*/ virtual void sendBroadcast(class NetworkIdentifier const&, unsigned char, class Packet const&);
+    /*8*/ virtual void flush(class NetworkIdentifier const&, class std::function<void(void)>&&);
 
 public:
     MCAPI void addLoopbackCallback(class NetEventCallback&);

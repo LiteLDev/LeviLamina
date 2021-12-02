@@ -9,6 +9,6 @@
 class WaitDefinition : public BehaviorDefinition {
 #include "Extra/WaitDefinitionAPI.hpp"
 public:
-    virtual ~WaitDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~WaitDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

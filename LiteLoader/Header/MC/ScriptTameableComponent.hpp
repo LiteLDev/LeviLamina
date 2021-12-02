@@ -9,7 +9,7 @@
 class ScriptTameableComponent : public ScriptActorComponent {
 #include "Extra/ScriptTameableComponentAPI.hpp"
 public:
-    virtual ~ScriptTameableComponent();
+    /*0*/ virtual ~ScriptTameableComponent();
 
 public:
     MCAPI class Scripting::Result<float> getProbability() const;

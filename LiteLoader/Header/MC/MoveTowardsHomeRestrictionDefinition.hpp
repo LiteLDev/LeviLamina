@@ -8,7 +8,7 @@
 class MoveTowardsHomeRestrictionDefinition {
 #include "Extra/MoveTowardsHomeRestrictionDefinitionAPI.hpp"
 public:
-    virtual ~MoveTowardsHomeRestrictionDefinition();
+    /*0*/ virtual ~MoveTowardsHomeRestrictionDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsHomeRestrictionDefinition>>&);

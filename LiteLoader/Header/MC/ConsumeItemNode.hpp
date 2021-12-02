@@ -7,6 +7,6 @@
 class ConsumeItemNode {
 #include "Extra/ConsumeItemNodeAPI.hpp"
 public:
-    virtual ~ConsumeItemNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*0*/ virtual ~ConsumeItemNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
 };

@@ -8,9 +8,9 @@
 class LakeFeature : public Feature {
 #include "Extra/LakeFeatureAPI.hpp"
 public:
-    virtual ~LakeFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~LakeFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _check(class BlockPos const&, class gsl::span<bool, 2048>) const;

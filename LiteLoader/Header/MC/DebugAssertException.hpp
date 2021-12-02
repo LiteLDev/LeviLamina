@@ -7,8 +7,8 @@
 class DebugAssertException {
 #include "Extra/DebugAssertExceptionAPI.hpp"
 public:
-    virtual ~DebugAssertException();
-    virtual char const* what() const;
+    /*0*/ virtual ~DebugAssertException();
+    /*1*/ virtual char const* what() const;
 
 public:
     MCAPI static bool isEnabled();

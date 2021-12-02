@@ -7,7 +7,7 @@
 class ContainerScreenValidatorBase {
 #include "Extra/ContainerScreenValidatorBaseAPI.hpp"
 public:
-    virtual ~ContainerScreenValidatorBase();
+    /*0*/ virtual ~ContainerScreenValidatorBase();
 
 public:
     MCAPI bool isValidContainerForScreen(enum ContainerEnumName) const;

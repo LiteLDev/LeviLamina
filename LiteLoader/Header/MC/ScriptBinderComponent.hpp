@@ -7,5 +7,5 @@
 class ScriptBinderComponent {
 #include "Extra/ScriptBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptBinderComponent();
+    /*0*/ virtual ~ScriptBinderComponent();
 };

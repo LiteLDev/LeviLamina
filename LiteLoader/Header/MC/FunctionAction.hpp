@@ -7,10 +7,10 @@
 class FunctionAction {
 #include "Extra/FunctionActionAPI.hpp"
 public:
-    virtual ~FunctionAction();
-    virtual void execute(class ServerLevel&, class Dimension&);
-    virtual void serialize(class CompoundTag&);
-    virtual bool operator==(class IRequestAction&);
+    /*0*/ virtual ~FunctionAction();
+    /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
+    /*2*/ virtual void serialize(class CompoundTag&);
+    /*3*/ virtual bool operator==(class IRequestAction&);
 
 public:
     MCAPI static bool isValidTag(class CompoundTag const&);

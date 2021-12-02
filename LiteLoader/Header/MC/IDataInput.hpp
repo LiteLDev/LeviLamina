@@ -7,5 +7,5 @@
 class IDataInput {
 #include "Extra/IDataInputAPI.hpp"
 public:
-    virtual ~IDataInput();
+    /*0*/ virtual ~IDataInput();
 };

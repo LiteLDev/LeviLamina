@@ -7,12 +7,12 @@
 class ComplexInventoryTransaction {
 #include "Extra/ComplexInventoryTransactionAPI.hpp"
 public:
-    virtual ~ComplexInventoryTransaction();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void postLoadItems(class BlockPalette&, bool);
-    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
-    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
+    /*0*/ virtual ~ComplexInventoryTransaction();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
+    /*4*/ virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
+    /*5*/ virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
 
 public:
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);

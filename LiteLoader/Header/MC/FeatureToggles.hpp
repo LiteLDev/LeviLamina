@@ -7,7 +7,7 @@
 class FeatureToggles {
 #include "Extra/FeatureTogglesAPI.hpp"
 public:
-    virtual ~FeatureToggles();
+    /*0*/ virtual ~FeatureToggles();
 
 public:
     MCAPI class Option* get(enum FeatureOptionID);

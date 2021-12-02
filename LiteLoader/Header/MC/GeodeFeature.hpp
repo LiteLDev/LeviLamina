@@ -7,6 +7,6 @@
 class GeodeFeature {
 #include "Extra/GeodeFeatureAPI.hpp"
 public:
-    virtual ~GeodeFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~GeodeFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

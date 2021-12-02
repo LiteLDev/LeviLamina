@@ -7,9 +7,9 @@
 class PortalForcer {
 #include "Extra/PortalForcerAPI.hpp"
 public:
-    virtual ~PortalForcer();
-    virtual void deserialize(class CompoundTag const&);
-    virtual void serialize(class CompoundTag&) const;
+    /*0*/ virtual ~PortalForcer();
+    /*1*/ virtual void deserialize(class CompoundTag const&);
+    /*2*/ virtual void serialize(class CompoundTag&) const;
 
 public:
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);

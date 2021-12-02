@@ -7,9 +7,9 @@
 class EntityEnterVolumeSystem {
 #include "Extra/EntityEnterVolumeSystemAPI.hpp"
 public:
-    virtual ~EntityEnterVolumeSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~EntityEnterVolumeSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 private:
     MCAPI void _tick(class EntityContext&, class VolumeBoundsComponent&) const;

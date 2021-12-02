@@ -7,5 +7,5 @@
 class WebviewObserver {
 #include "Extra/WebviewObserverAPI.hpp"
 public:
-    virtual ~WebviewObserver();
+    /*0*/ virtual ~WebviewObserver();
 };

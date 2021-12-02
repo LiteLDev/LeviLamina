@@ -7,5 +7,5 @@
 class I18nObserver {
 #include "Extra/I18nObserverAPI.hpp"
 public:
-    virtual ~I18nObserver();
+    /*0*/ virtual ~I18nObserver();
 };

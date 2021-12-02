@@ -7,7 +7,7 @@
 class ShootBowNode {
 #include "Extra/ShootBowNodeAPI.hpp"
 public:
-    virtual ~ShootBowNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~ShootBowNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

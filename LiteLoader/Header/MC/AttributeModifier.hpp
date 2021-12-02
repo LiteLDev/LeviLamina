@@ -7,8 +7,8 @@
 class AttributeModifier {
 #include "Extra/AttributeModifierAPI.hpp"
 public:
-    virtual ~AttributeModifier();
-    virtual bool isInstantaneous() const;
+    /*0*/ virtual ~AttributeModifier();
+    /*1*/ virtual bool isInstantaneous() const;
 
 public:
     MCAPI bool operator==(class AttributeModifier const&);

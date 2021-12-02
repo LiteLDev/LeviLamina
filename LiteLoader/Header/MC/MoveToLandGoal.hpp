@@ -8,14 +8,14 @@
 class MoveToLandGoal : public BaseMoveToBlockGoal {
 #include "Extra/MoveToLandGoalAPI.hpp"
 public:
-    virtual ~MoveToLandGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    virtual void _moveToBlock();
-    virtual void unk_vfn_16();
+    /*0*/ virtual ~MoveToLandGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*14*/ virtual void _moveToBlock();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
 };

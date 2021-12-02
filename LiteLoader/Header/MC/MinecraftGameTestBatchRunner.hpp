@@ -8,7 +8,7 @@
 class MinecraftGameTestBatchRunner {
 #include "Extra/MinecraftGameTestBatchRunnerAPI.hpp"
 public:
-    virtual ~MinecraftGameTestBatchRunner();
-    virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction&);
-    virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
+    /*0*/ virtual ~MinecraftGameTestBatchRunner();
+    /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction&);
+    /*2*/ virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
 };

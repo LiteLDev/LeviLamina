@@ -7,6 +7,6 @@
 class LegacyBodyControl {
 #include "Extra/LegacyBodyControlAPI.hpp"
 public:
-    virtual ~LegacyBodyControl();
-    virtual void clientTick(class Mob&);
+    /*0*/ virtual ~LegacyBodyControl();
+    /*1*/ virtual void clientTick(class Mob&);
 };

@@ -7,10 +7,10 @@
 class MoveControl {
 #include "Extra/MoveControlAPI.hpp"
 public:
-    virtual ~MoveControl();
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
-    virtual void tick(class MoveControlComponent&, class Mob&);
-    virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
+    /*0*/ virtual ~MoveControl();
+    /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*3*/ virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
 
 public:
     MCAPI static float const MIN_DELTA_TO_JUMP;

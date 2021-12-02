@@ -7,7 +7,7 @@
 class NetworkEnableDisableListener {
 #include "Extra/NetworkEnableDisableListenerAPI.hpp"
 public:
-    virtual ~NetworkEnableDisableListener();
+    /*0*/ virtual ~NetworkEnableDisableListener();
 
 public:
     MCAPI void disable();

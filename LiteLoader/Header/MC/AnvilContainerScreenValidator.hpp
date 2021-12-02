@@ -7,5 +7,5 @@
 class AnvilContainerScreenValidator {
 #include "Extra/AnvilContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~AnvilContainerScreenValidator();
+    /*0*/ virtual ~AnvilContainerScreenValidator();
 };

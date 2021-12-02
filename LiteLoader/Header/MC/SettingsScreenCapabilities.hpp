@@ -7,5 +7,5 @@
 struct SettingsScreenCapabilities : public TypedScreenCapabilities<struct SettingsScreenCapabilities> {
 #include "Extra/SettingsScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~SettingsScreenCapabilities();
+    /*0*/ virtual ~SettingsScreenCapabilities();
 };

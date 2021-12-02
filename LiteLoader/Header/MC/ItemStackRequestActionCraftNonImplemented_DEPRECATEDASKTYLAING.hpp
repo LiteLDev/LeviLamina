@@ -7,10 +7,10 @@
 class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING {
 #include "Extra/ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAINGAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _write(class BinaryStream&) const;
-    virtual void _write(class BinaryStream&) const;
-    virtual bool _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _write(class BinaryStream&) const;
+    /*4*/ virtual void _write(class BinaryStream&) const;
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
 };

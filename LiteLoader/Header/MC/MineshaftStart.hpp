@@ -8,7 +8,7 @@
 class MineshaftStart : public StructureStart {
 #include "Extra/MineshaftStartAPI.hpp"
 public:
-    virtual ~MineshaftStart();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~MineshaftStart();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 };

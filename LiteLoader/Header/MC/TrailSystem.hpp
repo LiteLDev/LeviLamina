@@ -7,9 +7,9 @@
 class TrailSystem {
 #include "Extra/TrailSystemAPI.hpp"
 public:
-    virtual ~TrailSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~TrailSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 private:
     MCAPI void _tickComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class TrailComponent>&);

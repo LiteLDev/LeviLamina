@@ -7,7 +7,7 @@
 namespace class ScriptStrengthComponent {
 #include "Extra/class ScriptStrengthComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

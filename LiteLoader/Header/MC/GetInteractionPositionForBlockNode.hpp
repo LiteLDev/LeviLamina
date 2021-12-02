@@ -7,9 +7,9 @@
 class GetInteractionPositionForBlockNode {
 #include "Extra/GetInteractionPositionForBlockNodeAPI.hpp"
 public:
-    virtual ~GetInteractionPositionForBlockNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~GetInteractionPositionForBlockNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 
 private:
     MCAPI enum Facing::Name parseFacingNameFromString(std::string);

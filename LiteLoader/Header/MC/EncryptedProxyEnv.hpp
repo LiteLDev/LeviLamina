@@ -7,16 +7,16 @@
 class EncryptedProxyEnv {
 #include "Extra/EncryptedProxyEnvAPI.hpp"
 public:
-    virtual ~EncryptedProxyEnv();
-    virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
-    virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
-    virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual class leveldb::Status DeleteFileA(std::string const&);
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*0*/ virtual ~EncryptedProxyEnv();
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
 };

@@ -7,5 +7,5 @@
 class WorldgenNoise3D {
 #include "Extra/WorldgenNoise3DAPI.hpp"
 public:
-    virtual ~WorldgenNoise3D();
+    /*0*/ virtual ~WorldgenNoise3D();
 };

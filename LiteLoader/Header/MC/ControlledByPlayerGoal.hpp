@@ -7,14 +7,14 @@
 class ControlledByPlayerGoal {
 #include "Extra/ControlledByPlayerGoalAPI.hpp"
 public:
-    virtual ~ControlledByPlayerGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~ControlledByPlayerGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI bool _canBeControlledByPassenger();

@@ -8,9 +8,9 @@
 class CompoundCreatorInputValidation : public ContainerValidationBase {
 #include "Extra/CompoundCreatorInputValidationAPI.hpp"
 public:
-    virtual ~CompoundCreatorInputValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~CompoundCreatorInputValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
 };

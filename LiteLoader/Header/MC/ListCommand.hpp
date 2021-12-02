@@ -7,8 +7,8 @@
 class ListCommand {
 #include "Extra/ListCommandAPI.hpp"
 public:
-    virtual ~ListCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ListCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

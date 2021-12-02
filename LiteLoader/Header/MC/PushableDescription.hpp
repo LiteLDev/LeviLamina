@@ -8,8 +8,8 @@
 struct PushableDescription {
 #include "Extra/PushableDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~PushableDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~PushableDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

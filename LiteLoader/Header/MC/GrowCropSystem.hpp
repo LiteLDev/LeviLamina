@@ -7,7 +7,7 @@
 class GrowCropSystem {
 #include "Extra/GrowCropSystemAPI.hpp"
 public:
-    virtual ~GrowCropSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~GrowCropSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

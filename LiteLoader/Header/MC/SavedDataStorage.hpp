@@ -7,7 +7,7 @@
 class SavedDataStorage {
 #include "Extra/SavedDataStorageAPI.hpp"
 public:
-    virtual ~SavedDataStorage();
+    /*0*/ virtual ~SavedDataStorage();
 
 public:
     MCAPI bool loadAndSet(class SavedData&, std::string const&);

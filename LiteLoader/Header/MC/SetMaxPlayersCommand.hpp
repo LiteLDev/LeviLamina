@@ -7,8 +7,8 @@
 class SetMaxPlayersCommand {
 #include "Extra/SetMaxPlayersCommandAPI.hpp"
 public:
-    virtual ~SetMaxPlayersCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~SetMaxPlayersCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

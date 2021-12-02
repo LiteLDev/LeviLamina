@@ -7,7 +7,7 @@
 class ServerNetworkEventCoordinator {
 #include "Extra/ServerNetworkEventCoordinatorAPI.hpp"
 public:
-    virtual ~ServerNetworkEventCoordinator();
+    /*0*/ virtual ~ServerNetworkEventCoordinator();
 
 public:
     MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler();

@@ -9,7 +9,7 @@
 class TripodCameraDescription : public Description {
 #include "Extra/TripodCameraDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~TripodCameraDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~TripodCameraDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

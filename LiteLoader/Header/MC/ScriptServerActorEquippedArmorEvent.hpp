@@ -8,8 +8,8 @@
 class ScriptServerActorEquippedArmorEvent {
 #include "Extra/ScriptServerActorEquippedArmorEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorEquippedArmorEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorEquippedArmorEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

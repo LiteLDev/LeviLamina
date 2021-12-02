@@ -9,7 +9,7 @@
 class HideDescription : public Description {
 #include "Extra/HideDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~HideDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~HideDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

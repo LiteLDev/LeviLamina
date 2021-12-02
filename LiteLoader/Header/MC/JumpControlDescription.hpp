@@ -8,8 +8,8 @@
 struct JumpControlDescription {
 #include "Extra/JumpControlDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~JumpControlDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~JumpControlDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

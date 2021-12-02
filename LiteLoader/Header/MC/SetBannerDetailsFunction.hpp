@@ -9,9 +9,9 @@
 class SetBannerDetailsFunction : public LootItemFunction {
 #include "Extra/SetBannerDetailsFunctionAPI.hpp"
 public:
-    virtual ~SetBannerDetailsFunction();
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*0*/ virtual ~SetBannerDetailsFunction();
+    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
+    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 
 public:
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);

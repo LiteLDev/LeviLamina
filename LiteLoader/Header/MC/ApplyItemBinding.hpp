@@ -8,6 +8,6 @@
 class ApplyItemBinding {
 #include "Extra/ApplyItemBindingAPI.hpp"
 public:
-    virtual ~ApplyItemBinding();
-    virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
+    /*0*/ virtual ~ApplyItemBinding();
+    /*1*/ virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
 };

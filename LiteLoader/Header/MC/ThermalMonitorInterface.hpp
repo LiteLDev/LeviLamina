@@ -7,5 +7,5 @@
 class ThermalMonitorInterface {
 #include "Extra/ThermalMonitorInterfaceAPI.hpp"
 public:
-    virtual ~ThermalMonitorInterface();
+    /*0*/ virtual ~ThermalMonitorInterface();
 };

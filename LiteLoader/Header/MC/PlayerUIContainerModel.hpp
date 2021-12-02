@@ -8,17 +8,17 @@
 class PlayerUIContainerModel : public PlayerUIContainerModelBase {
 #include "Extra/PlayerUIContainerModelAPI.hpp"
 public:
-    virtual ~PlayerUIContainerModel();
-    virtual void releaseResources();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual bool isValid();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
-    virtual int _getContainerOffset() const;
+    /*1*/ virtual ~PlayerUIContainerModel();
+    /*3*/ virtual void releaseResources();
+    /*6*/ virtual void unk_vfn_6();
+    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
+    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*12*/ virtual void unk_vfn_12();
+    /*14*/ virtual bool isValid();
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual void unk_vfn_16();
+    /*17*/ virtual void unk_vfn_17();
+    /*18*/ virtual std::string const& getItemGroupName(int) const;
+    /*19*/ virtual void unk_vfn_19();
+    /*21*/ virtual int _getContainerOffset() const;
 };

@@ -8,8 +8,8 @@
 class ScriptServerActorDefinitionEventTriggeredEvent {
 #include "Extra/ScriptServerActorDefinitionEventTriggeredEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorDefinitionEventTriggeredEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorDefinitionEventTriggeredEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

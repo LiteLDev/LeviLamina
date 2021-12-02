@@ -7,7 +7,7 @@
 class NpcSystem {
 #include "Extra/NpcSystemAPI.hpp"
 public:
-    virtual ~NpcSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~NpcSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

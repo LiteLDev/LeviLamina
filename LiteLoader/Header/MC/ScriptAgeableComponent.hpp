@@ -9,7 +9,7 @@
 class ScriptAgeableComponent : public ScriptActorComponent {
 #include "Extra/ScriptAgeableComponentAPI.hpp"
 public:
-    virtual ~ScriptAgeableComponent();
+    /*0*/ virtual ~ScriptAgeableComponent();
 
 public:
     MCAPI class Scripting::Result<std::vector<std::string>> getDropItems() const;

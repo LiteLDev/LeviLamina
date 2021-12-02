@@ -7,7 +7,7 @@
 class CreativeItemGroupCategory {
 #include "Extra/CreativeItemGroupCategoryAPI.hpp"
 public:
-    virtual ~CreativeItemGroupCategory();
+    /*0*/ virtual ~CreativeItemGroupCategory();
 
 public:
     MCAPI class CreativeGroupInfo* addAnonymousGroup();

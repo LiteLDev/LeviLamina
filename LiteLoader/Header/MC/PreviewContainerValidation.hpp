@@ -8,9 +8,9 @@
 class PreviewContainerValidation : public ContainerValidationBase {
 #include "Extra/PreviewContainerValidationAPI.hpp"
 public:
-    virtual ~PreviewContainerValidation();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~PreviewContainerValidation();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
 };

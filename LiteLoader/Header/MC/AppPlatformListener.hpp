@@ -7,7 +7,7 @@
 class AppPlatformListener {
 #include "Extra/AppPlatformListenerAPI.hpp"
 public:
-    virtual ~AppPlatformListener();
+    /*0*/ virtual ~AppPlatformListener();
 
 public:
     MCAPI void initListener(float);

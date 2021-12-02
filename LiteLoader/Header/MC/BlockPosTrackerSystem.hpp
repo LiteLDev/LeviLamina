@@ -7,9 +7,9 @@
 class BlockPosTrackerSystem {
 #include "Extra/BlockPosTrackerSystemAPI.hpp"
 public:
-    virtual ~BlockPosTrackerSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BlockPosTrackerSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 public:
     MCAPI static void _tickBlockPosTrackerComponent(class Actor*, class BlockPosTrackerComponent&);

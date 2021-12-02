@@ -7,8 +7,8 @@
 class ServerNetworkController {
 #include "Extra/ServerNetworkControllerAPI.hpp"
 public:
-    virtual ~ServerNetworkController();
-    virtual bool isDedicatedServer() const;
-    virtual bool isHost(class mce::UUID const&) const;
-    virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&) const;
+    /*0*/ virtual ~ServerNetworkController();
+    /*1*/ virtual bool isDedicatedServer() const;
+    /*2*/ virtual bool isHost(class mce::UUID const&) const;
+    /*3*/ virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&) const;
 };

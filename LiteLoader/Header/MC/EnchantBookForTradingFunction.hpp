@@ -7,7 +7,7 @@
 class EnchantBookForTradingFunction {
 #include "Extra/EnchantBookForTradingFunctionAPI.hpp"
 public:
-    virtual ~EnchantBookForTradingFunction();
+    /*0*/ virtual ~EnchantBookForTradingFunction();
 
 private:
     MCAPI class EnchantmentInstance _getRandomEnchantAndCalculateCost(class ItemStackBase&, class Random&, int&) const;

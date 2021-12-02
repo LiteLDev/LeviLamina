@@ -7,7 +7,7 @@
 namespace class ScriptColorComponent {
 #include "Extra/class ScriptColorComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

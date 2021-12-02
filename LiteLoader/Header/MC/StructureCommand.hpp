@@ -7,8 +7,8 @@
 class StructureCommand {
 #include "Extra/StructureCommandAPI.hpp"
 public:
-    virtual ~StructureCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~StructureCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

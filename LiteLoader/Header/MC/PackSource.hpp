@@ -7,11 +7,11 @@
 class PackSource {
 #include "Extra/PackSourceAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual int /*enum PackOrigin*/ getPackOrigin() const;
-    virtual int /*enum PackType*/ getPackType() const;
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum PackOrigin*/ getPackOrigin() const;
+    /*4*/ virtual int /*enum PackType*/ getPackType() const;
 
 public:
     MCAPI class Pack* fetchPack(struct PackIdVersion const&);

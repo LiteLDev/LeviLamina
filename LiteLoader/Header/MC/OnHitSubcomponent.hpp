@@ -7,11 +7,11 @@
 class OnHitSubcomponent {
 #include "Extra/OnHitSubcomponentAPI.hpp"
 public:
-    virtual ~OnHitSubcomponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual char const* getName();
+    /*0*/ virtual ~OnHitSubcomponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual char const* getName();
 
 protected:
     MCAPI bool _canAttack(class Actor*, class Actor*) const;

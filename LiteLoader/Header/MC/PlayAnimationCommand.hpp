@@ -7,8 +7,8 @@
 class PlayAnimationCommand {
 #include "Extra/PlayAnimationCommandAPI.hpp"
 public:
-    virtual ~PlayAnimationCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~PlayAnimationCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

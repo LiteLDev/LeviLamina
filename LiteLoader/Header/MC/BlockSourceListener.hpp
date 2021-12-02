@@ -7,12 +7,12 @@
 class BlockSourceListener {
 #include "Extra/BlockSourceListenerAPI.hpp"
 public:
-    virtual ~BlockSourceListener();
-    virtual void unk_vfn_1();
-    virtual void onSourceDestroyed(class BlockSource&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
-    virtual void unk_vfn_6();
-    virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*0*/ virtual ~BlockSourceListener();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
 };

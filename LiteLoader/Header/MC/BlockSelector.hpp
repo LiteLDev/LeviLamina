@@ -7,5 +7,5 @@
 class BlockSelector {
 #include "Extra/BlockSelectorAPI.hpp"
 public:
-    virtual ~BlockSelector();
+    /*0*/ virtual ~BlockSelector();
 };

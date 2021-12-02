@@ -7,8 +7,8 @@
 class TagCommand {
 #include "Extra/TagCommandAPI.hpp"
 public:
-    virtual ~TagCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TagCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

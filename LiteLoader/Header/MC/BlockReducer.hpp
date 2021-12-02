@@ -7,8 +7,8 @@
 class BlockReducer {
 #include "Extra/BlockReducerAPI.hpp"
 public:
-    virtual ~BlockReducer();
-    virtual void registerBlock(class ItemStack const&, std::vector<class ItemStack>&&);
+    /*0*/ virtual ~BlockReducer();
+    /*1*/ virtual void registerBlock(class ItemStack const&, std::vector<class ItemStack>&&);
 
 public:
     MCAPI std::vector<class ItemStack> const* getReduction(class ItemStackBase const&) const;

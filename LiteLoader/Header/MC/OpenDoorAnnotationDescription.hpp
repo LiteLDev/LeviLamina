@@ -9,7 +9,7 @@
 class OpenDoorAnnotationDescription : public Description {
 #include "Extra/OpenDoorAnnotationDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~OpenDoorAnnotationDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~OpenDoorAnnotationDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

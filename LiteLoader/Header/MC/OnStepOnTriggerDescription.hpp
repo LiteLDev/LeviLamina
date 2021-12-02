@@ -8,13 +8,13 @@
 class OnStepOnTriggerDescription : public BlockTriggerDescription<struct OnStepOffTrigger> {
 #include "Extra/OnStepOnTriggerDescriptionAPI.hpp"
 public:
-    virtual ~OnStepOnTriggerDescription();
-    virtual std::string const& getName() const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual ~OnStepOnTriggerDescription();
-    virtual void unk_vfn_8();
+    /*0*/ virtual ~OnStepOnTriggerDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual ~OnStepOnTriggerDescription();
+    /*8*/ virtual void unk_vfn_8();
 
 public:
     MCAPI static std::string const NameID;

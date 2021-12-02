@@ -8,7 +8,7 @@
 class InstantaneousMobEffect : public MobEffect {
 #include "Extra/InstantaneousMobEffectAPI.hpp"
 public:
-    virtual ~InstantaneousMobEffect();
-    virtual bool isInstantaneous() const;
-    virtual bool isDurationEffectTick(int, int) const;
+    /*0*/ virtual ~InstantaneousMobEffect();
+    /*4*/ virtual bool isInstantaneous() const;
+    /*6*/ virtual bool isDurationEffectTick(int, int) const;
 };

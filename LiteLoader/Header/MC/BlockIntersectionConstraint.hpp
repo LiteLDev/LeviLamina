@@ -7,6 +7,6 @@
 class BlockIntersectionConstraint {
 #include "Extra/BlockIntersectionConstraintAPI.hpp"
 public:
-    virtual ~BlockIntersectionConstraint();
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&) const;
+    /*0*/ virtual ~BlockIntersectionConstraint();
+    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&) const;
 };

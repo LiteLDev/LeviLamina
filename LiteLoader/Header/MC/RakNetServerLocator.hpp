@@ -8,23 +8,23 @@
 class RakNetServerLocator {
 #include "Extra/RakNetServerLocatorAPI.hpp"
 public:
-    virtual ~RakNetServerLocator();
-    virtual void _onDisable();
-    virtual void _onEnable();
-    virtual void startAnnouncingServer(std::string const&, std::string const&, int /*enum GameType*/, int, int, bool);
-    virtual void stopAnnouncingServer();
-    virtual void startServerDiscovery(struct PortPair);
-    virtual void stopServerDiscovery();
-    virtual void addCustomServer(class AsynchronousIPResolver const&, int);
-    virtual void addCustomServer(std::string const&, int);
-    virtual std::vector<struct PingedCompatibleServer> getServerList() const;
-    virtual void clearServerList();
-    virtual void update();
-    virtual bool isIPv4Supported() const;
-    virtual bool isIPv6Supported() const;
-    virtual void setHostGUID(class std::function<struct RakNet::RakNetGUID(void)>);
-    virtual float getPingTimeForGUID(std::string const&);
-    virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void(bool)>);
+    /*0*/ virtual ~RakNetServerLocator();
+    /*1*/ virtual void _onDisable();
+    /*2*/ virtual void _onEnable();
+    /*3*/ virtual void startAnnouncingServer(std::string const&, std::string const&, int /*enum GameType*/, int, int, bool);
+    /*4*/ virtual void stopAnnouncingServer();
+    /*5*/ virtual void startServerDiscovery(struct PortPair);
+    /*6*/ virtual void stopServerDiscovery();
+    /*7*/ virtual void addCustomServer(class AsynchronousIPResolver const&, int);
+    /*8*/ virtual void addCustomServer(std::string const&, int);
+    /*9*/ virtual std::vector<struct PingedCompatibleServer> getServerList() const;
+    /*10*/ virtual void clearServerList();
+    /*11*/ virtual void update();
+    /*12*/ virtual bool isIPv4Supported() const;
+    /*13*/ virtual bool isIPv6Supported() const;
+    /*14*/ virtual void setHostGUID(class std::function<struct RakNet::RakNetGUID(void)>);
+    /*15*/ virtual float getPingTimeForGUID(std::string const&);
+    /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void(bool)>);
 
 public:
     MCAPI static bool parseUnconnectedPongPacketData(std::string const&, std::vector<std::string>&);

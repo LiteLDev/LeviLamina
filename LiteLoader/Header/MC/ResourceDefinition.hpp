@@ -7,6 +7,6 @@
 namespace ResourceDefinition {
 #include "Extra/ResourceDefinitionAPI.hpp"
 
-MCAPI extern std::string const VANILLA_NAMESPACE;
+MCAPI std::string const VANILLA_NAMESPACE;
 
 } // namespace ResourceDefinition

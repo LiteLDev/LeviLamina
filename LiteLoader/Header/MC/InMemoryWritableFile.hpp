@@ -7,7 +7,7 @@
 class InMemoryWritableFile {
 #include "Extra/InMemoryWritableFileAPI.hpp"
 public:
-    virtual ~InMemoryWritableFile();
-    virtual class leveldb::Status Append(class leveldb::Slice const&);
-    virtual class leveldb::Status Close();
+    /*0*/ virtual ~InMemoryWritableFile();
+    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
+    /*2*/ virtual class leveldb::Status Close();
 };

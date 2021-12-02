@@ -8,7 +8,7 @@
 class HellSpringFeature : public Feature {
 #include "Extra/HellSpringFeatureAPI.hpp"
 public:
-    virtual ~HellSpringFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~HellSpringFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

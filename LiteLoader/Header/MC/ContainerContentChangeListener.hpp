@@ -7,6 +7,6 @@
 class ContainerContentChangeListener {
 #include "Extra/ContainerContentChangeListenerAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual ~ContainerContentChangeListener();
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual ~ContainerContentChangeListener();
 };

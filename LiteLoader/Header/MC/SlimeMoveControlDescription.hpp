@@ -8,8 +8,8 @@
 class SlimeMoveControlDescription {
 #include "Extra/SlimeMoveControlDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~SlimeMoveControlDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~SlimeMoveControlDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

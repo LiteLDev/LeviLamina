@@ -9,7 +9,7 @@
 class ScriptItemDurabilityComponent : public ScriptObject {
 #include "Extra/ScriptItemDurabilityComponentAPI.hpp"
 public:
-    virtual ~ScriptItemDurabilityComponent();
+    /*0*/ virtual ~ScriptItemDurabilityComponent();
 
 public:
     MCAPI class Scripting::Result<int> getCurrentDamage();

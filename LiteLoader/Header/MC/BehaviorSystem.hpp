@@ -7,7 +7,7 @@
 class BehaviorSystem {
 #include "Extra/BehaviorSystemAPI.hpp"
 public:
-    virtual ~BehaviorSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BehaviorSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

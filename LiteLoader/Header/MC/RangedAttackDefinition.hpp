@@ -8,7 +8,7 @@
 class RangedAttackDefinition {
 #include "Extra/RangedAttackDefinitionAPI.hpp"
 public:
-    virtual ~RangedAttackDefinition();
+    /*0*/ virtual ~RangedAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class RangedAttackGoal&);

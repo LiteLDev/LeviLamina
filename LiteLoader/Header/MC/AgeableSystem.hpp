@@ -7,7 +7,7 @@
 class AgeableSystem {
 #include "Extra/AgeableSystemAPI.hpp"
 public:
-    virtual ~AgeableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~AgeableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

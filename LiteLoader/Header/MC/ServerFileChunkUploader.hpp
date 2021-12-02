@@ -9,15 +9,15 @@
 class ServerFileChunkUploader : public IFileChunkUploader {
 #include "Extra/ServerFileChunkUploaderAPI.hpp"
 public:
-    virtual ~ServerFileChunkUploader();
-    virtual void unk_vfn_1();
-    virtual void initFileUploader(std::string const&, struct FileInfo const&, int, class Json::Value const&, class std::function<void(bool)>);
-    virtual void getServerMissingChunks(struct FileInfo const&, class std::function<void(std::vector<struct FileChunkInfo>)>) const;
-    virtual void unk_vfn_4();
-    virtual void uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void(bool)>);
-    virtual bool canCancelUpload(struct FileInfo const&) const;
-    virtual void unk_vfn_8();
-    virtual int /*enum UploadError*/ getInitErrorCode() const;
-    virtual float getUploadProgress(struct FileInfo const&) const;
-    virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
+    /*0*/ virtual ~ServerFileChunkUploader();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void initFileUploader(std::string const&, struct FileInfo const&, int, class Json::Value const&, class std::function<void(bool)>);
+    /*3*/ virtual void getServerMissingChunks(struct FileInfo const&, class std::function<void(std::vector<struct FileChunkInfo>)>) const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void(bool)>);
+    /*7*/ virtual bool canCancelUpload(struct FileInfo const&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual int /*enum UploadError*/ getInitErrorCode() const;
+    /*10*/ virtual float getUploadProgress(struct FileInfo const&) const;
+    /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
 };

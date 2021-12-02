@@ -7,13 +7,13 @@
 namespace ResourceLoaders {
 #include "Extra/ResourceLoadersAPI.hpp"
 
-MCAPI extern std::string const EMPTY_STRING;
-MCAPI extern std::string const IMGEXT_JPEG;
-MCAPI extern std::string const IMGEXT_JPG;
-MCAPI extern std::string const IMGEXT_PNG;
-MCAPI extern std::string const IMGEXT_TARGA;
-MCAPI extern std::string const IMGEXT_TEXTURESET;
-MCAPI extern class BackwardsCompatTextureGroup backCompatGroup;
-MCAPI extern std::vector<std::string> const supportedImageExtensions;
+MCAPI std::string const EMPTY_STRING;
+MCAPI std::string const IMGEXT_JPEG;
+MCAPI std::string const IMGEXT_JPG;
+MCAPI std::string const IMGEXT_PNG;
+MCAPI std::string const IMGEXT_TARGA;
+MCAPI std::string const IMGEXT_TEXTURESET;
+MCAPI class BackwardsCompatTextureGroup backCompatGroup;
+MCAPI std::vector<std::string> const supportedImageExtensions;
 
 } // namespace ResourceLoaders

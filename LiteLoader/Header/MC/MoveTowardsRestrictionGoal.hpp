@@ -7,11 +7,11 @@
 class MoveTowardsRestrictionGoal {
 #include "Extra/MoveTowardsRestrictionGoalAPI.hpp"
 public:
-    virtual ~MoveTowardsRestrictionGoal();
-    virtual void unk_vfn_1();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
+    /*0*/ virtual ~MoveTowardsRestrictionGoal();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
 
 protected:
     MCAPI class Mob const& _getMob() const;

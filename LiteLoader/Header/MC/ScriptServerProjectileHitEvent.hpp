@@ -8,8 +8,8 @@
 class ScriptServerProjectileHitEvent {
 #include "Extra/ScriptServerProjectileHitEventAPI.hpp"
 public:
-    virtual ~ScriptServerProjectileHitEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerProjectileHitEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setHitId(struct ActorUniqueID const&);

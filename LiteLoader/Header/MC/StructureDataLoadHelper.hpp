@@ -7,22 +7,22 @@
 class StructureDataLoadHelper {
 #include "Extra/StructureDataLoadHelperAPI.hpp"
 public:
-    virtual ~StructureDataLoadHelper();
-    virtual class Vec3 loadPosition(class Vec3 const&);
-    virtual class BlockPos loadBlockPosition(class BlockPos const&);
-    virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
-    virtual void unk_vfn_4();
-    virtual float loadRotationDegreesY(float);
-    virtual void unk_vfn_6();
-    virtual float loadRotationRadiansY(float);
-    virtual unsigned char loadFacingID(unsigned char);
-    virtual class Vec3 loadDirection(class Vec3 const&);
-    virtual int /*enum Direction::Type*/ loadDirection(int /*enum Direction::Type*/);
-    virtual int /*enum Rotation*/ loadRotation(int /*enum Rotation*/);
-    virtual int /*enum Mirror*/ loadMirror(int /*enum Mirror*/);
-    virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
-    virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    virtual int /*enum DataLoadHelperType*/ getType() const;
-    virtual bool shouldResetTime();
-    virtual struct ActorUniqueID _generateNewID();
+    /*0*/ virtual ~StructureDataLoadHelper();
+    /*1*/ virtual class Vec3 loadPosition(class Vec3 const&);
+    /*2*/ virtual class BlockPos loadBlockPosition(class BlockPos const&);
+    /*3*/ virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual float loadRotationDegreesY(float);
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual float loadRotationRadiansY(float);
+    /*8*/ virtual unsigned char loadFacingID(unsigned char);
+    /*9*/ virtual class Vec3 loadDirection(class Vec3 const&);
+    /*10*/ virtual int /*enum Direction::Type*/ loadDirection(int /*enum Direction::Type*/);
+    /*11*/ virtual int /*enum Rotation*/ loadRotation(int /*enum Rotation*/);
+    /*12*/ virtual int /*enum Mirror*/ loadMirror(int /*enum Mirror*/);
+    /*13*/ virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
+    /*14*/ virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
+    /*15*/ virtual int /*enum DataLoadHelperType*/ getType() const;
+    /*16*/ virtual bool shouldResetTime();
+    /*17*/ virtual struct ActorUniqueID _generateNewID();
 };

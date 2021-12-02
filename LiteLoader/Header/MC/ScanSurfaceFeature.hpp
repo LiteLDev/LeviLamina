@@ -7,6 +7,6 @@
 class ScanSurfaceFeature {
 #include "Extra/ScanSurfaceFeatureAPI.hpp"
 public:
-    virtual ~ScanSurfaceFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~ScanSurfaceFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

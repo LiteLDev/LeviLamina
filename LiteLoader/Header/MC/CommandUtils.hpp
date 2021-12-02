@@ -8,7 +8,7 @@
 namespace CommandUtils {
 #include "Extra/CommandUtilsAPI.hpp"
 
-MCAPI extern std::vector<struct std::pair<std::string, char>> const CMD_INPUT_UNICODE_TRANSLATE_MAP;
+MCAPI std::vector<struct std::pair<std::string, char>> const CMD_INPUT_UNICODE_TRANSLATE_MAP;
 MCAPI bool addItemInstanceComponents(class ItemInstance&, class Json::Value const&, std::string&);
 MCAPI void addtoCSVList(std::string&, std::string const&);
 MCAPI void alterSpawnableEntities(class LevelData&, struct ActorDefinitionIdentifier const&, struct ActorDefinitionIdentifier&);

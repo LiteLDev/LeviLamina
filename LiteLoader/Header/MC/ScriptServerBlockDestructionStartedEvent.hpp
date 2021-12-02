@@ -8,8 +8,8 @@
 class ScriptServerBlockDestructionStartedEvent {
 #include "Extra/ScriptServerBlockDestructionStartedEventAPI.hpp"
 public:
-    virtual ~ScriptServerBlockDestructionStartedEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerBlockDestructionStartedEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

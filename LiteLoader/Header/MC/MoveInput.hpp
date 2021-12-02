@@ -7,17 +7,17 @@
 class MoveInput {
 #include "Extra/MoveInputAPI.hpp"
 public:
-    virtual ~MoveInput();
-    virtual void tick(struct IPlayerMovementProxy&);
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void clearInputState();
-    virtual void unk_vfn_5();
-    virtual bool allowPicking(float, float);
-    virtual void setJumping(bool);
-    virtual void setAutoJumpingInWater(bool);
-    virtual void unk_vfn_9();
-    virtual void setSneakDown(bool);
-    virtual bool isPlayerMoving() const;
-    virtual class Vec3 const& getGazeDirection() const;
+    /*0*/ virtual ~MoveInput();
+    /*1*/ virtual void tick(struct IPlayerMovementProxy&);
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void clearInputState();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual bool allowPicking(float, float);
+    /*7*/ virtual void setJumping(bool);
+    /*8*/ virtual void setAutoJumpingInWater(bool);
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void setSneakDown(bool);
+    /*11*/ virtual bool isPlayerMoving() const;
+    /*12*/ virtual class Vec3 const& getGazeDirection() const;
 };

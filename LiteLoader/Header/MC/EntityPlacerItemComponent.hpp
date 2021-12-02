@@ -7,13 +7,13 @@
 class EntityPlacerItemComponent {
 #include "Extra/EntityPlacerItemComponentAPI.hpp"
 public:
-    virtual ~EntityPlacerItemComponent();
-    virtual bool isNetworkComponent() const;
-    virtual void unk_vfn_2();
-    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
-    virtual bool isNetworkComponent() const;
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    /*0*/ virtual ~EntityPlacerItemComponent();
+    /*1*/ virtual bool isNetworkComponent() const;
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;

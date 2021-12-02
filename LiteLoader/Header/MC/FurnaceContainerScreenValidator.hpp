@@ -7,5 +7,5 @@
 class FurnaceContainerScreenValidator {
 #include "Extra/FurnaceContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~FurnaceContainerScreenValidator();
+    /*0*/ virtual ~FurnaceContainerScreenValidator();
 };

@@ -7,10 +7,10 @@
 class OceanMonumentStart {
 #include "Extra/OceanMonumentStartAPI.hpp"
 public:
-    virtual ~OceanMonumentStart();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~OceanMonumentStart();
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 
 public:
     MCAPI void createMonument(class Dimension&, class Random&, int, int);

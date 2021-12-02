@@ -8,7 +8,7 @@
 class RakWebSocketClient : public RakWebSocket {
 #include "Extra/RakWebSocketClientAPI.hpp"
 public:
-    virtual ~RakWebSocketClient();
-    virtual void _updateState();
-    virtual unsigned int _genMaskingKey() const;
+    /*0*/ virtual ~RakWebSocketClient();
+    /*8*/ virtual void _updateState();
+    /*9*/ virtual unsigned int _genMaskingKey() const;
 };

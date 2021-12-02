@@ -7,8 +7,8 @@
 class CraftableCompounds {
 #include "Extra/CraftableCompoundsAPI.hpp"
 public:
-    virtual ~CraftableCompounds();
-    virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, int /*enum LabTableReactionType*/, int /*enum CompoundContainerType*/);
+    /*0*/ virtual ~CraftableCompounds();
+    /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, int /*enum LabTableReactionType*/, int /*enum CompoundContainerType*/);
 
 public:
     MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const;

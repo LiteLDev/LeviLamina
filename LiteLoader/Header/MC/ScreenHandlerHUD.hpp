@@ -7,6 +7,6 @@
 class ScreenHandlerHUD {
 #include "Extra/ScreenHandlerHUDAPI.hpp"
 public:
-    virtual ~ScreenHandlerHUD();
-    virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    /*0*/ virtual ~ScreenHandlerHUD();
+    /*1*/ virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
 };

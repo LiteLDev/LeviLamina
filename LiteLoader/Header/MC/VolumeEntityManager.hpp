@@ -7,7 +7,7 @@
 class VolumeEntityManager {
 #include "Extra/VolumeEntityManagerAPI.hpp"
 public:
-    virtual ~VolumeEntityManager();
+    /*0*/ virtual ~VolumeEntityManager();
 
 public:
     MCAPI static void bindVolumeDefinitions();

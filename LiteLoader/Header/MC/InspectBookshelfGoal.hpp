@@ -8,15 +8,15 @@
 class InspectBookshelfGoal : public BaseMoveToBlockGoal {
 #include "Extra/InspectBookshelfGoalAPI.hpp"
 public:
-    virtual ~InspectBookshelfGoal();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    virtual bool _canReach(class BlockPos const&);
-    virtual void unk_vfn_16();
-    virtual bool findTargetBlock();
+    /*0*/ virtual ~InspectBookshelfGoal();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*13*/ virtual bool _canReach(class BlockPos const&);
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual bool findTargetBlock();
 };

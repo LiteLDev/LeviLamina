@@ -8,9 +8,9 @@
 class ScriptBinderPureEcsTemplate {
 #include "Extra/ScriptBinderPureEcsTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderPureEcsTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderPureEcsTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, enum entt::entity);

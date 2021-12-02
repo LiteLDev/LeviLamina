@@ -8,7 +8,7 @@
 class SwimIdleDefinition {
 #include "Extra/SwimIdleDefinitionAPI.hpp"
 public:
-    virtual ~SwimIdleDefinition();
+    /*0*/ virtual ~SwimIdleDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimIdleDefinition>>&);

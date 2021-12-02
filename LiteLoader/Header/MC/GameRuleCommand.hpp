@@ -8,8 +8,8 @@
 class GameRuleCommand {
 #include "Extra/GameRuleCommandAPI.hpp"
 public:
-    virtual ~GameRuleCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~GameRuleCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, struct GameRuleCommand::InitProxy&&);

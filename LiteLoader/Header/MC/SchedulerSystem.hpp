@@ -7,7 +7,7 @@
 class SchedulerSystem {
 #include "Extra/SchedulerSystemAPI.hpp"
 public:
-    virtual ~SchedulerSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~SchedulerSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

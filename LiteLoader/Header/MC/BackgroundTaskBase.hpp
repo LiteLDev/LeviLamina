@@ -7,7 +7,7 @@
 class BackgroundTaskBase {
 #include "Extra/BackgroundTaskBaseAPI.hpp"
 public:
-    virtual ~BackgroundTaskBase();
+    /*0*/ virtual ~BackgroundTaskBase();
 
 public:
     MCAPI void _makeOrphan();

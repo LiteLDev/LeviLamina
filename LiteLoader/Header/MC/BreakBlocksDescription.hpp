@@ -8,8 +8,8 @@
 class BreakBlocksDescription {
 #include "Extra/BreakBlocksDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~BreakBlocksDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~BreakBlocksDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

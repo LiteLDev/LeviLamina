@@ -7,11 +7,11 @@
 class BiomeDefinitionListPacket {
 #include "Extra/BiomeDefinitionListPacketAPI.hpp"
 public:
-    virtual ~BiomeDefinitionListPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId() const;
-    virtual std::string getName() const;
-    virtual void write(class BinaryStream&) const;
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    virtual void unk_vfn_5();
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~BiomeDefinitionListPacket();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const;
+    /*2*/ virtual std::string getName() const;
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 };

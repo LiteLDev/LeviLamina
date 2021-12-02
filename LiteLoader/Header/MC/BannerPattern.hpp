@@ -7,7 +7,7 @@
 class BannerPattern {
 #include "Extra/BannerPatternAPI.hpp"
 public:
-    virtual ~BannerPattern();
+    /*0*/ virtual ~BannerPattern();
 
 public:
     MCAPI bool getIgnoreAux() const;

@@ -7,33 +7,33 @@
 class TickingArea {
 #include "Extra/TickingAreaAPI.hpp"
 public:
-    virtual ~TickingArea();
-    virtual class mce::UUID const& getId() const;
-    virtual std::string const& getName() const;
-    virtual struct ActorUniqueID const& getEntityId() const;
-    virtual bool isEntityOwned() const;
-    virtual class BlockSource& getBlockSource();
-    virtual bool isAlwaysActive() const;
-    virtual float getMaxDistToPlayers() const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual struct TickingAreaDescription getDescription() const;
-    virtual void tick(struct Tick const&, bool);
-    virtual void tickSeasons(class Random&);
-    virtual void updatePosition(class Vec3 const&);
-    virtual void center();
-    virtual class Actor* findOwner(unsigned char&);
-    virtual bool entityHasBeenFound() const;
-    virtual void setEntityFound();
-    virtual bool isRemoved();
-    virtual void remove();
-    virtual void onComponentChanged(unsigned int, float, bool);
-    virtual void unk_vfn_21();
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_24();
-    virtual void unk_vfn_25();
-    virtual class mce::UUID const& getId() const;
+    /*0*/ virtual ~TickingArea();
+    /*1*/ virtual class mce::UUID const& getId() const;
+    /*2*/ virtual std::string const& getName() const;
+    /*3*/ virtual struct ActorUniqueID const& getEntityId() const;
+    /*4*/ virtual bool isEntityOwned() const;
+    /*5*/ virtual class BlockSource& getBlockSource();
+    /*6*/ virtual bool isAlwaysActive() const;
+    /*7*/ virtual float getMaxDistToPlayers() const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual struct TickingAreaDescription getDescription() const;
+    /*11*/ virtual void tick(struct Tick const&, bool);
+    /*12*/ virtual void tickSeasons(class Random&);
+    /*13*/ virtual void updatePosition(class Vec3 const&);
+    /*14*/ virtual void center();
+    /*15*/ virtual class Actor* findOwner(unsigned char&);
+    /*16*/ virtual bool entityHasBeenFound() const;
+    /*17*/ virtual void setEntityFound();
+    /*18*/ virtual bool isRemoved();
+    /*19*/ virtual void remove();
+    /*20*/ virtual void onComponentChanged(unsigned int, float, bool);
+    /*21*/ virtual void unk_vfn_21();
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*24*/ virtual void unk_vfn_24();
+    /*25*/ virtual void unk_vfn_25();
+    /*26*/ virtual class mce::UUID const& getId() const;
 
 private:
     MCAPI void _save();

@@ -8,8 +8,8 @@
 class ScriptPrintLogger {
 #include "Extra/ScriptPrintLoggerAPI.hpp"
 public:
-    virtual ~ScriptPrintLogger();
-    virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
-    virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
-    virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
+    /*0*/ virtual ~ScriptPrintLogger();
+    /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
+    /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
+    /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char>> const&) const;
 };

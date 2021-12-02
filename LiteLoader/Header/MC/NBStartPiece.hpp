@@ -8,9 +8,9 @@
 class NBStartPiece : public NBBridgeCrossing {
 #include "Extra/NBStartPieceAPI.hpp"
 public:
-    virtual ~NBStartPiece();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_10();
+    /*0*/ virtual ~NBStartPiece();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*6*/ virtual void unk_vfn_6();
+    /*10*/ virtual void unk_vfn_10();
 };

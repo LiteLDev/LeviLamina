@@ -8,7 +8,7 @@
 class ExploreOutskirtsDefinition {
 #include "Extra/ExploreOutskirtsDefinitionAPI.hpp"
 public:
-    virtual ~ExploreOutskirtsDefinition();
+    /*0*/ virtual ~ExploreOutskirtsDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&);

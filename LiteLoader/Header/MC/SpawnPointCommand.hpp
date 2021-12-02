@@ -7,8 +7,8 @@
 class SpawnPointCommand {
 #include "Extra/SpawnPointCommandAPI.hpp"
 public:
-    virtual ~SpawnPointCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~SpawnPointCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

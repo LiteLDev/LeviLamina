@@ -7,7 +7,7 @@
 class DelayActionList {
 #include "Extra/DelayActionListAPI.hpp"
 public:
-    virtual ~DelayActionList();
+    /*0*/ virtual ~DelayActionList();
 
 public:
     MCAPI enum QueueRequestResult queueRequestOrExecuteAction(class DelayRequest, class ServerLevel&, class Dimension&, unsigned __int64, bool);

@@ -7,7 +7,7 @@
 class ActorUpdatePreviousPositionSystem {
 #include "Extra/ActorUpdatePreviousPositionSystemAPI.hpp"
 public:
-    virtual ~ActorUpdatePreviousPositionSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ActorUpdatePreviousPositionSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

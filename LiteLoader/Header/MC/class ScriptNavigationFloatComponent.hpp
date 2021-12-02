@@ -7,7 +7,7 @@
 namespace class ScriptNavigationFloatComponent {
 #include "Extra/class ScriptNavigationFloatComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

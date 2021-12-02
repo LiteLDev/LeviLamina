@@ -9,6 +9,6 @@
 class GetInteractionPositionForBlockDefinition : public BehaviorDefinition {
 #include "Extra/GetInteractionPositionForBlockDefinitionAPI.hpp"
 public:
-    virtual ~GetInteractionPositionForBlockDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~GetInteractionPositionForBlockDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

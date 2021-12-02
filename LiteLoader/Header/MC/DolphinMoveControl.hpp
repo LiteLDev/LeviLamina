@@ -8,8 +8,8 @@
 class DolphinMoveControl : public MoveControl {
 #include "Extra/DolphinMoveControlAPI.hpp"
 public:
-    virtual ~DolphinMoveControl();
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~DolphinMoveControl();
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 
 private:
     MCAPI float _calcRotX(float, float, float);

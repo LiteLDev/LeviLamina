@@ -7,16 +7,16 @@
 class ActorAnimationControllerStatePlayer {
 #include "Extra/ActorAnimationControllerStatePlayerAPI.hpp"
 public:
-    virtual ~ActorAnimationControllerStatePlayer();
-    virtual void unk_vfn_1();
-    virtual void resetAnimation();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual bool hasAnimationFinished() const;
-    virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    virtual int /*enum ActorAnimationType*/ getAnimationType() const;
-    virtual class HashedString const& getRawName() const;
+    /*0*/ virtual ~ActorAnimationControllerStatePlayer();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void resetAnimation();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual bool hasAnimationFinished() const;
+    /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
+    /*8*/ virtual int /*enum ActorAnimationType*/ getAnimationType() const;
+    /*9*/ virtual class HashedString const& getRawName() const;
 
 public:
     MCAPI bool allAnimationsFinished() const;

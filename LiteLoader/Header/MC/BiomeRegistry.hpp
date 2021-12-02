@@ -8,8 +8,8 @@
 class BiomeRegistry {
 #include "Extra/BiomeRegistryAPI.hpp"
 public:
-    virtual ~BiomeRegistry();
-    virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
+    /*0*/ virtual ~BiomeRegistry();
+    /*1*/ virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
 
 public:
     MCAPI void forEachBiome(class std::function<void(class Biome&)>) const;

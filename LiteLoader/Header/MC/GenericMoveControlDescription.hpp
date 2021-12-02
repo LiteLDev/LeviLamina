@@ -8,6 +8,6 @@
 class GenericMoveControlDescription : public MoveControlDescription {
 #include "Extra/GenericMoveControlDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~GenericMoveControlDescription();
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~GenericMoveControlDescription();
 };

@@ -7,20 +7,20 @@
 class MinecraftGameTestInstance {
 #include "Extra/MinecraftGameTestInstanceAPI.hpp"
 public:
-    virtual ~MinecraftGameTestInstance();
-    virtual void initialize();
-    virtual bool hasStructureBlock() const;
-    virtual void clearStructure();
-    virtual void spawnStructure();
-    virtual class std::optional<class AABB> getStructureBounds() const;
-    virtual class std::optional<class Vec3> getStructureBlockPivot() const;
-    virtual class std::optional<class Vec3> getStructureBlockPosPivot() const;
-    virtual class BoundingBox getStructureBoundingBox() const;
-    virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
-    virtual int _getLevelTick() const;
-    virtual bool _isTestReady();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual class BlockSource& getBlockSource() const;
+    /*0*/ virtual ~MinecraftGameTestInstance();
+    /*1*/ virtual void initialize();
+    /*2*/ virtual bool hasStructureBlock() const;
+    /*3*/ virtual void clearStructure();
+    /*4*/ virtual void spawnStructure();
+    /*5*/ virtual class std::optional<class AABB> getStructureBounds() const;
+    /*6*/ virtual class std::optional<class Vec3> getStructureBlockPivot() const;
+    /*7*/ virtual class std::optional<class Vec3> getStructureBlockPosPivot() const;
+    /*8*/ virtual class BoundingBox getStructureBoundingBox() const;
+    /*9*/ virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
+    /*10*/ virtual int _getLevelTick() const;
+    /*11*/ virtual bool _isTestReady();
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void unk_vfn_14();
+    /*15*/ virtual class BlockSource& getBlockSource() const;
 };

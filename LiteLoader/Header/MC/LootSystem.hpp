@@ -8,7 +8,7 @@
 class LootSystem {
 #include "Extra/LootSystemAPI.hpp"
 public:
-    virtual ~LootSystem();
-    virtual void registerEvents(class entt::dispatcher&);
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~LootSystem();
+    /*1*/ virtual void registerEvents(class entt::dispatcher&);
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

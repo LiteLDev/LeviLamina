@@ -8,8 +8,8 @@
 class ScriptServerActorDroppedItemEvent {
 #include "Extra/ScriptServerActorDroppedItemEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorDroppedItemEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorDroppedItemEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

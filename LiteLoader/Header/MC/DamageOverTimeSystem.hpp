@@ -7,7 +7,7 @@
 class DamageOverTimeSystem {
 #include "Extra/DamageOverTimeSystemAPI.hpp"
 public:
-    virtual ~DamageOverTimeSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~DamageOverTimeSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

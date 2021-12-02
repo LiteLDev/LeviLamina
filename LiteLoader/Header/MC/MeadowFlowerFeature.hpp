@@ -8,9 +8,9 @@
 class MeadowFlowerFeature : public Feature {
 #include "Extra/MeadowFlowerFeatureAPI.hpp"
 public:
-    virtual ~MeadowFlowerFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~MeadowFlowerFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI int getRandomArrayIndex(class BlockPos const&, unsigned __int64, float) const;

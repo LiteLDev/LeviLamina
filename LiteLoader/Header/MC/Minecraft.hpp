@@ -8,12 +8,12 @@
 class Minecraft {
 #include "Extra/MinecraftAPI.hpp"
 public:
-    virtual ~Minecraft();
-    virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
-    virtual void setSimTimePause(bool);
-    virtual void setSimTimeScale(float);
-    virtual bool getSimPaused() const;
-    virtual bool isOnlineClient() const;
+    /*0*/ virtual ~Minecraft();
+    /*1*/ virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
+    /*2*/ virtual void setSimTimePause(bool);
+    /*3*/ virtual void setSimTimeScale(float);
+    /*4*/ virtual bool getSimPaused() const;
+    /*5*/ virtual bool isOnlineClient() const;
 
 public:
     MCAPI void activateAllowList();

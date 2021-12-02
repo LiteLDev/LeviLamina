@@ -9,7 +9,7 @@
 class BehaviorTreeDescription : public Description {
 #include "Extra/BehaviorTreeDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~BehaviorTreeDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~BehaviorTreeDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

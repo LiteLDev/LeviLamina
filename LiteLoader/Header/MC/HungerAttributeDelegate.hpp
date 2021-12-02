@@ -8,8 +8,8 @@
 class HungerAttributeDelegate : public AttributeInstanceDelegate {
 #include "Extra/HungerAttributeDelegateAPI.hpp"
 public:
-    virtual ~HungerAttributeDelegate();
-    virtual void tick();
-    virtual void notify(__int64);
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~HungerAttributeDelegate();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void notify(__int64);
+    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
 };

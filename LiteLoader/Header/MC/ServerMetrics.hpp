@@ -7,5 +7,5 @@
 class ServerMetrics {
 #include "Extra/ServerMetricsAPI.hpp"
 public:
-    virtual ~ServerMetrics();
+    /*0*/ virtual ~ServerMetrics();
 };

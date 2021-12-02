@@ -7,9 +7,9 @@
 class DimensionBrightnessRamp {
 #include "Extra/DimensionBrightnessRampAPI.hpp"
 public:
-    virtual ~DimensionBrightnessRamp();
-    virtual void buildBrightnessRamp();
-    virtual float getBaseAmbientValue() const;
+    /*0*/ virtual ~DimensionBrightnessRamp();
+    /*1*/ virtual void buildBrightnessRamp();
+    /*2*/ virtual float getBaseAmbientValue() const;
 
 public:
     MCAPI float getBrightnessRampValue(int) const;

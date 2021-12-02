@@ -8,12 +8,12 @@
 class ItemStackRequestPacket : public Packet {
 #include "Extra/ItemStackRequestPacketAPI.hpp"
 public:
-    virtual ~ItemStackRequestPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId() const;
-    virtual std::string getName() const;
-    virtual void write(class BinaryStream&) const;
-    virtual void unk_vfn_5();
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~ItemStackRequestPacket();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const;
+    /*2*/ virtual std::string getName() const;
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*5*/ virtual bool disallowBatching() const;
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 
 public:
     MCAPI class ItemStackRequestBatch const& getRequestBatch() const;

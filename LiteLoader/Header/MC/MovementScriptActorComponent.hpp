@@ -9,6 +9,6 @@
 class MovementScriptActorComponent : public ScriptActorComponent {
 #include "Extra/MovementScriptActorComponentAPI.hpp"
 public:
-    virtual ~MovementScriptActorComponent();
-    virtual class Scripting::Result<float> getMaxTurn() const;
+    /*0*/ virtual ~MovementScriptActorComponent();
+    /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
 };

@@ -8,9 +8,10 @@
 class CraftHandlerLoom : public CraftHandlerBase {
 #include "Extra/CraftHandlerLoomAPI.hpp"
 public:
-    virtual ~CraftHandlerLoom();
-    virtual void unk_vfn_2();
-    virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    virtual void _postCraftRequest(bool);
+    /*0*/ virtual ~CraftHandlerLoom();
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 };

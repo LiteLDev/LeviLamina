@@ -7,6 +7,6 @@
 class PointedDripstoneFeature {
 #include "Extra/PointedDripstoneFeatureAPI.hpp"
 public:
-    virtual ~PointedDripstoneFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~PointedDripstoneFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

@@ -8,11 +8,12 @@
 class CraftHandlerEnchant : public CraftHandlerBase {
 #include "Extra/CraftHandlerEnchantAPI.hpp"
 public:
-    virtual ~CraftHandlerEnchant();
-    virtual void unk_vfn_2();
-    virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    virtual void _postCraftRequest(bool);
+    /*0*/ virtual ~CraftHandlerEnchant();
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 
 private:
     MCAPI class EnchantingContainerManagerModel& _getEnchantingModel() const;

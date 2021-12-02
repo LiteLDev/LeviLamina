@@ -8,7 +8,7 @@
 class StringByteInput : public BytesDataInput {
 #include "Extra/StringByteInputAPI.hpp"
 public:
-    virtual ~StringByteInput();
-    virtual void unk_vfn_9();
-    virtual unsigned __int64 numBytesLeft() const;
+    /*0*/ virtual ~StringByteInput();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual unsigned __int64 numBytesLeft() const;
 };

@@ -7,5 +7,5 @@
 class IFileWriteAccess {
 #include "Extra/IFileWriteAccessAPI.hpp"
 public:
-    virtual ~IFileWriteAccess();
+    /*0*/ virtual ~IFileWriteAccess();
 };

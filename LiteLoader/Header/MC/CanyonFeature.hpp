@@ -8,9 +8,9 @@
 class CanyonFeature {
 #include "Extra/CanyonFeatureAPI.hpp"
 public:
-    virtual ~CanyonFeature();
-    virtual bool carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&) const;
-    virtual void addFeature(class BlockVolume&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
+    /*0*/ virtual ~CanyonFeature();
+    /*1*/ virtual bool carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&) const;
+    /*2*/ virtual void addFeature(class BlockVolume&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
 
 public:
     MCAPI void apply(class BlockVolume&, class ChunkPos const&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class Random&, unsigned int, struct WorldGenContext const&);

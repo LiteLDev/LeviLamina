@@ -7,5 +7,5 @@
 class HUDContainerScreenValidator {
 #include "Extra/HUDContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~HUDContainerScreenValidator();
+    /*0*/ virtual ~HUDContainerScreenValidator();
 };

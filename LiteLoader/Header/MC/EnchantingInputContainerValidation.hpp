@@ -8,10 +8,10 @@
 class EnchantingInputContainerValidation : public ContainerValidationBase {
 #include "Extra/EnchantingInputContainerValidationAPI.hpp"
 public:
-    virtual ~EnchantingInputContainerValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
-    virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~EnchantingInputContainerValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*5*/ virtual void unk_vfn_5();
 };

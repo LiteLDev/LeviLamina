@@ -8,8 +8,8 @@
 class ScriptServerWeatherEventData {
 #include "Extra/ScriptServerWeatherEventDataAPI.hpp"
 public:
-    virtual ~ScriptServerWeatherEventData();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerWeatherEventData();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setDimension(std::string const&);

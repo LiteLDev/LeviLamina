@@ -8,7 +8,7 @@
 class SlimeAttackDefinition {
 #include "Extra/SlimeAttackDefinitionAPI.hpp"
 public:
-    virtual ~SlimeAttackDefinition();
+    /*0*/ virtual ~SlimeAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class SlimeAttackGoal&);

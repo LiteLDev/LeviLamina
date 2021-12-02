@@ -7,11 +7,11 @@
 class BaseMobSpawner {
 #include "Extra/BaseMobSpawnerAPI.hpp"
 public:
-    virtual ~BaseMobSpawner();
-    virtual void tick(class BlockSource&);
-    virtual void load(class CompoundTag const&);
-    virtual void save(class CompoundTag&);
-    virtual class BlockPos const& getPos() = 0;
+    /*0*/ virtual ~BaseMobSpawner();
+    /*1*/ virtual void tick(class BlockSource&);
+    /*2*/ virtual void load(class CompoundTag const&);
+    /*3*/ virtual void save(class CompoundTag&);
+    /*4*/ virtual class BlockPos const& getPos() = 0;
 
 public:
     MCAPI class Mob* getDisplayEntity(class BlockSource&);

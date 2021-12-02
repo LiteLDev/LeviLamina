@@ -7,9 +7,9 @@
 class PlayerTickSystem {
 #include "Extra/PlayerTickSystemAPI.hpp"
 public:
-    virtual ~PlayerTickSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~PlayerTickSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 public:
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const&);

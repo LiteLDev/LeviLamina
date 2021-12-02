@@ -8,7 +8,7 @@
 class SwimWithEntityDefinition {
 #include "Extra/SwimWithEntityDefinitionAPI.hpp"
 public:
-    virtual ~SwimWithEntityDefinition();
+    /*0*/ virtual ~SwimWithEntityDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwimWithEntityDefinition>>&);

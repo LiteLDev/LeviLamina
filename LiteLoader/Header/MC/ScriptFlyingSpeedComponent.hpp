@@ -9,9 +9,9 @@
 class ScriptFlyingSpeedComponent : public ScriptActorComponent {
 #include "Extra/ScriptFlyingSpeedComponentAPI.hpp"
 public:
-    virtual ~ScriptFlyingSpeedComponent();
-    virtual class Scripting::Result<float> getValue() const;
-    virtual class Scripting::Result<void> setValue(float const&) const;
+    /*0*/ virtual ~ScriptFlyingSpeedComponent();
+    /*4*/ virtual class Scripting::Result<float> getValue() const;
+    /*5*/ virtual class Scripting::Result<void> setValue(float const&) const;
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptFlyingSpeedComponent> bind(struct Scripting::Version);

@@ -8,7 +8,7 @@
 class ScriptComponent : public ScriptObject {
 #include "Extra/ScriptComponentAPI.hpp"
 public:
-    virtual ~ScriptComponent();
+    /*0*/ virtual ~ScriptComponent();
 
 public:
     MCAPI class ScriptComponent& operator=(class ScriptComponent const&);

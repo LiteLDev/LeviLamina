@@ -8,19 +8,19 @@
 class MoveToVillageGoal : public BaseMoveToGoal {
 #include "Extra/MoveToVillageGoalAPI.hpp"
 public:
-    virtual ~MoveToVillageGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    virtual void _moveToBlock();
-    virtual void unk_vfn_16();
-    virtual class BlockPos _selectRandomPosInVillage();
+    /*0*/ virtual ~MoveToVillageGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*14*/ virtual void _moveToBlock();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual class BlockPos _selectRandomPosInVillage();
 
 protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();

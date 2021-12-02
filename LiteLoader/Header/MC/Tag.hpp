@@ -7,17 +7,17 @@
 class Tag {
 #include "Extra/TagAPI.hpp"
 public:
-    virtual ~Tag();
-    virtual void deleteChildren();
-    virtual void write(class IDataOutput&) const = 0;
-    virtual void load(class IDataInput&)         = 0;
-    virtual std::string toString() const         = 0;
-    virtual int /*enum Tag::Type*/ getId() const = 0;
-    virtual bool equals(class Tag const&) const;
-    virtual void print(class PrintStream&) const;
-    virtual void print(std::string const&, class PrintStream&) const;
-    virtual std::unique_ptr<class Tag> copy() const = 0;
-    virtual unsigned __int64 hash() const           = 0;
+    /*0*/ virtual ~Tag();
+    /*1*/ virtual void deleteChildren();
+    /*2*/ virtual void write(class IDataOutput&) const = 0;
+    /*3*/ virtual void load(class IDataInput&)         = 0;
+    /*4*/ virtual std::string toString() const         = 0;
+    /*5*/ virtual int /*enum Tag::Type*/ getId() const = 0;
+    /*6*/ virtual bool equals(class Tag const&) const;
+    /*7*/ virtual void print(class PrintStream&) const;
+    /*8*/ virtual void print(std::string const&, class PrintStream&) const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
+    /*10*/ virtual unsigned __int64 hash() const          = 0;
 
 public:
     MCAPI static std::string const NullString;

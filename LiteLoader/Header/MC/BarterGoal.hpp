@@ -7,14 +7,14 @@
 class BarterGoal {
 #include "Extra/BarterGoalAPI.hpp"
 public:
-    virtual ~BarterGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~BarterGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI class Vec3 _getThrowVector();

@@ -9,7 +9,7 @@
 class PersistentDescription : public Description {
 #include "Extra/PersistentDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~PersistentDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~PersistentDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

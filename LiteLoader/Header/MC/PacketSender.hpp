@@ -7,5 +7,5 @@
 class PacketSender {
 #include "Extra/PacketSenderAPI.hpp"
 public:
-    virtual ~PacketSender();
+    /*0*/ virtual ~PacketSender();
 };

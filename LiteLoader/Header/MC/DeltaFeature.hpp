@@ -8,9 +8,9 @@
 class DeltaFeature : public Feature {
 #include "Extra/DeltaFeatureAPI.hpp"
 public:
-    virtual ~DeltaFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~DeltaFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI class std::optional<class BlockPos> _findDeltaLevel(class BlockSource&, class BlockPos) const;

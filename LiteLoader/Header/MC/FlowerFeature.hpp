@@ -8,9 +8,9 @@
 class FlowerFeature : public Feature {
 #include "Extra/FlowerFeatureAPI.hpp"
 public:
-    virtual ~FlowerFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~FlowerFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _placeMushroom(class BlockSource&, class BlockPos const&, class Block const&, class Random&) const;

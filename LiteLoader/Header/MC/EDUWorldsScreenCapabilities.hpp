@@ -7,5 +7,5 @@
 struct EDUWorldsScreenCapabilities : public TypedScreenCapabilities<struct EDUWorldsScreenCapabilities> {
 #include "Extra/EDUWorldsScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~EDUWorldsScreenCapabilities();
+    /*0*/ virtual ~EDUWorldsScreenCapabilities();
 };

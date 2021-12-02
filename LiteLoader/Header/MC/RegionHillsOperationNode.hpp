@@ -8,8 +8,8 @@
 class RegionHillsOperationNode : public MixerOperationNode<class Biome*, class Pos2d, class Biome*> {
 #include "Extra/RegionHillsOperationNodeAPI.hpp"
 public:
-    virtual ~RegionHillsOperationNode();
-    virtual void unk_vfn_1();
-    virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int) const;
-    virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
+    /*0*/ virtual ~RegionHillsOperationNode();
+    /*1*/ virtual void unk_vfn_1();
+    /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int) const;
+    /*4*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
 };

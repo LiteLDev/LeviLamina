@@ -7,8 +7,8 @@
 class BurstReactionComponent {
 #include "Extra/BurstReactionComponentAPI.hpp"
 public:
-    virtual ~BurstReactionComponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*0*/ virtual ~BurstReactionComponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
 };

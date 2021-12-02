@@ -7,7 +7,7 @@
 namespace class ScriptAddPassengerComponent {
 #include "Extra/class ScriptAddPassengerComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

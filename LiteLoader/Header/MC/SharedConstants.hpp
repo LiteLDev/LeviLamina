@@ -7,28 +7,28 @@
 namespace SharedConstants {
 #include "Extra/SharedConstantsAPI.hpp"
 
-MCAPI extern int const AutomationProtocolVersion;
-MCAPI extern int const CompanionAppProtocolVersion;
-MCAPI extern class SemVersion const CurrentGameSemVersion;
-MCAPI extern enum LevelChunkFormat const CurrentLevelChunkFormat;
-MCAPI extern enum StorageVersion const CurrentStorageVersion;
-MCAPI extern enum SubChunkFormat const CurrentSubChunkFormat;
-MCAPI extern int const EduDiscoveryProtocolVersion;
-MCAPI extern bool const IsBeta;
-MCAPI extern bool const IsBetaApp;
-MCAPI extern int const LevelDBCompressorID;
-MCAPI extern int const MajorVersion;
-MCAPI extern int const MaxChatLength;
-MCAPI extern unsigned int const MinTickingChunksRadius;
-MCAPI extern class GameVersion const MinimumCompatibleGameVersionForLevelData;
-MCAPI extern int const MinorVersion;
-MCAPI extern unsigned short const NetworkDefaultGamePort;
-MCAPI extern unsigned short const NetworkDefaultGamePortv6;
-MCAPI extern int const NetworkDefaultMaxConnections;
-MCAPI extern unsigned short const NetworkEphemeralPort;
-MCAPI extern int const NetworkProtocolVersion;
-MCAPI extern int const PatchVersion;
-MCAPI extern int const RevisionVersion;
-MCAPI extern int const StoreVersion;
+MCAPI int const AutomationProtocolVersion;
+MCAPI int const CompanionAppProtocolVersion;
+MCAPI class SemVersion const CurrentGameSemVersion;
+MCAPI enum LevelChunkFormat const CurrentLevelChunkFormat;
+MCAPI enum StorageVersion const CurrentStorageVersion;
+MCAPI enum SubChunkFormat const CurrentSubChunkFormat;
+MCAPI int const EduDiscoveryProtocolVersion;
+MCAPI bool const IsBeta;
+MCAPI bool const IsBetaApp;
+MCAPI int const LevelDBCompressorID;
+MCAPI int const MajorVersion;
+MCAPI int const MaxChatLength;
+MCAPI unsigned int const MinTickingChunksRadius;
+MCAPI class GameVersion const MinimumCompatibleGameVersionForLevelData;
+MCAPI int const MinorVersion;
+MCAPI unsigned short const NetworkDefaultGamePort;
+MCAPI unsigned short const NetworkDefaultGamePortv6;
+MCAPI int const NetworkDefaultMaxConnections;
+MCAPI unsigned short const NetworkEphemeralPort;
+MCAPI int const NetworkProtocolVersion;
+MCAPI int const PatchVersion;
+MCAPI int const RevisionVersion;
+MCAPI int const StoreVersion;
 
 } // namespace SharedConstants

@@ -7,5 +7,5 @@
 class IResourcePackRepository {
 #include "Extra/IResourcePackRepositoryAPI.hpp"
 public:
-    virtual ~IResourcePackRepository();
+    /*0*/ virtual ~IResourcePackRepository();
 };

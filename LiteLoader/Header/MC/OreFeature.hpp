@@ -7,6 +7,6 @@
 class OreFeature {
 #include "Extra/OreFeatureAPI.hpp"
 public:
-    virtual ~OreFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~OreFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

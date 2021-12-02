@@ -7,23 +7,23 @@
 class BaseMoveToGoal {
 #include "Extra/BaseMoveToGoalAPI.hpp"
 public:
-    virtual ~BaseMoveToGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const = 0;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool hasReachedTarget() const;
-    virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
-    virtual int _nextStartTick();
-    virtual bool _canReach(class BlockPos const&);
-    virtual void _moveToBlock() = 0;
-    virtual class Vec3 _getTargetPosition() const;
-    virtual unsigned __int64 _getRepathTime() const;
+    /*0*/ virtual ~BaseMoveToGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const = 0;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual bool hasReachedTarget() const;
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
+    /*12*/ virtual int _nextStartTick();
+    /*13*/ virtual bool _canReach(class BlockPos const&);
+    /*14*/ virtual void _moveToBlock() = 0;
+    /*15*/ virtual class Vec3 _getTargetPosition() const;
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
 
 public:
     MCAPI void setTargetPositionOffset(class Vec3 const&);

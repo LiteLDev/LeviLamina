@@ -7,8 +7,8 @@
 class ReadOnlyBinaryStream {
 #include "Extra/ReadOnlyBinaryStreamAPI.hpp"
 public:
-    virtual ~ReadOnlyBinaryStream();
-    virtual bool read(void*, unsigned __int64);
+    /*0*/ virtual ~ReadOnlyBinaryStream();
+    /*1*/ virtual bool read(void*, unsigned __int64);
 
 public:
     MCAPI bool canReadBool() const;

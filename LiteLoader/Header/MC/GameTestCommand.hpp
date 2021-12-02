@@ -8,8 +8,8 @@
 class GameTestCommand {
 #include "Extra/GameTestCommandAPI.hpp"
 public:
-    virtual ~GameTestCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~GameTestCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void postScriptRegisterSetup(class CommandRegistry&);

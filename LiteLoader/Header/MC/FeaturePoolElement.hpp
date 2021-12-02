@@ -8,12 +8,12 @@
 class FeaturePoolElement : public StructurePoolElement {
 #include "Extra/FeaturePoolElementAPI.hpp"
 public:
-    virtual class BlockPos getSize(int /*enum Rotation*/) const;
-    virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual bool place(class BlockSource&, class BlockPos, int /*enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&, class BlockPos) const;
-    virtual void unk_vfn_11();
-    virtual ~FeaturePoolElement();
+    /*0*/ virtual class BlockPos getSize(int /*enum Rotation*/) const;
+    /*2*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
+    /*4*/ virtual void setProjection(int /*enum Projection*/);
+    /*5*/ virtual int /*enum Projection*/ getProjection() const;
+    /*6*/ virtual int /*enum PostProcessSettings*/ getPostProcessSettings() const;
+    /*7*/ virtual bool place(class BlockSource&, class BlockPos, int /*enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier>>>>&, class BlockPos) const;
+    /*11*/ virtual bool isValid() const;
+    /*12*/ virtual ~FeaturePoolElement();
 };

@@ -7,8 +7,8 @@
 class GameModeCommand {
 #include "Extra/GameModeCommandAPI.hpp"
 public:
-    virtual ~GameModeCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~GameModeCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

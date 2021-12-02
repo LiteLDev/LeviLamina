@@ -8,11 +8,11 @@
 class GenericPathNavigation : public PathNavigation {
 #include "Extra/GenericPathNavigationAPI.hpp"
 public:
-    virtual ~GenericPathNavigation();
-    virtual void initializeInternal(class Mob&, struct NavigationDescription*);
-    virtual void tick(class NavigationComponent&, class Mob&);
-    virtual class Vec3 getTempMobPos(class Mob const&) const;
-    virtual void stop(class NavigationComponent&, class Mob&);
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*0*/ virtual ~GenericPathNavigation();
+    /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
+    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
+    /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
 };

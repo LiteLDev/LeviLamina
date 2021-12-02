@@ -7,5 +7,5 @@
 class BeaconContainerScreenValidator {
 #include "Extra/BeaconContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~BeaconContainerScreenValidator();
+    /*0*/ virtual ~BeaconContainerScreenValidator();
 };

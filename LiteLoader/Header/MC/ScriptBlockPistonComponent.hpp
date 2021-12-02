@@ -9,7 +9,7 @@
 class ScriptBlockPistonComponent : public ScriptObject {
 #include "Extra/ScriptBlockPistonComponentAPI.hpp"
 public:
-    virtual ~ScriptBlockPistonComponent();
+    /*0*/ virtual ~ScriptBlockPistonComponent();
 
 public:
     MCAPI class Scripting::Result<std::vector<class BlockPos>> getAttachedBlocks();

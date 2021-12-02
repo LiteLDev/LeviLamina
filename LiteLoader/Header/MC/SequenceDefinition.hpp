@@ -9,6 +9,6 @@
 class SequenceDefinition : public BehaviorDefinition {
 #include "Extra/SequenceDefinitionAPI.hpp"
 public:
-    virtual ~SequenceDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~SequenceDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

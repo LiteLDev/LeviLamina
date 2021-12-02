@@ -7,23 +7,23 @@
 class ContainerManagerModel {
 #include "Extra/ContainerManagerModelAPI.hpp"
 public:
-    virtual ~ContainerManagerModel();
-    virtual int /*enum ContainerID*/ getContainerId() const;
-    virtual void setContainerId(int /*enum ContainerID*/);
-    virtual int /*enum ContainerType*/ getContainerType() const;
-    virtual void setContainerType(int /*enum ContainerType*/);
-    virtual void serverInitItemStackIds();
-    virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    virtual void setSlot(int, class ItemStack const&, bool)    = 0;
-    virtual class ItemStack const& getSlot(int) const          = 0;
-    virtual void setData(int, int)                             = 0;
-    virtual void broadcastChanges()                            = 0;
-    virtual void debitPlayerLevels(int);
-    virtual bool isCreativeMode() const;
-    virtual bool isClientSide() const;
-    virtual bool isServerAuthoritative() const;
-    virtual bool isValid(float);
-    virtual class ContainerScreenContext _postInit() = 0;
+    /*0*/ virtual ~ContainerManagerModel();
+    /*1*/ virtual int /*enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum ContainerID*/);
+    /*3*/ virtual int /*enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum ContainerType*/);
+    /*5*/ virtual void serverInitItemStackIds();
+    /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
+    /*7*/ virtual void setSlot(int, class ItemStack const&, bool)    = 0;
+    /*8*/ virtual class ItemStack const& getSlot(int) const          = 0;
+    /*9*/ virtual void setData(int, int)                             = 0;
+    /*10*/ virtual void broadcastChanges()                           = 0;
+    /*11*/ virtual void debitPlayerLevels(int);
+    /*12*/ virtual bool isCreativeMode() const;
+    /*13*/ virtual bool isClientSide() const;
+    /*14*/ virtual bool isServerAuthoritative() const;
+    /*15*/ virtual bool isValid(float);
+    /*16*/ virtual class ContainerScreenContext _postInit() = 0;
 
 public:
     MCAPI void postInit();

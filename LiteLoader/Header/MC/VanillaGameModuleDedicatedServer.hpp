@@ -7,9 +7,9 @@
 class VanillaGameModuleDedicatedServer {
 #include "Extra/VanillaGameModuleDedicatedServerAPI.hpp"
 public:
-    virtual ~VanillaGameModuleDedicatedServer();
-    virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
-    virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
-    virtual void registerMolangQueries();
-    virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator&);
+    /*0*/ virtual ~VanillaGameModuleDedicatedServer();
+    /*1*/ virtual std::unique_ptr<class GameModuleServer> createGameModuleServer();
+    /*2*/ virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
+    /*3*/ virtual void registerMolangQueries();
+    /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator&);
 };

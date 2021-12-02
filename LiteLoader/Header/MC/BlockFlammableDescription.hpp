@@ -7,9 +7,9 @@
 struct BlockFlammableDescription {
 #include "Extra/BlockFlammableDescriptionAPI.hpp"
 public:
-    virtual ~BlockFlammableDescription();
-    virtual std::string const& getName() const;
-    virtual void initializeComponent(class EntityContext&) const;
+    /*0*/ virtual ~BlockFlammableDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext&) const;
 
 public:
     MCAPI static std::string const NameID;

@@ -7,8 +7,8 @@
 class WSServerCommand {
 #include "Extra/WSServerCommandAPI.hpp"
 public:
-    virtual ~WSServerCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~WSServerCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

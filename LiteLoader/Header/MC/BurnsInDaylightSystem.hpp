@@ -7,7 +7,7 @@
 class BurnsInDaylightSystem {
 #include "Extra/BurnsInDaylightSystemAPI.hpp"
 public:
-    virtual ~BurnsInDaylightSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BurnsInDaylightSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

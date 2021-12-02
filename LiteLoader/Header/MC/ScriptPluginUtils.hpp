@@ -12,7 +12,7 @@ MCAPI std::unique_ptr<class Scripting::IRuntime> CreateRuntimeByName(std::string
 MCAPI std::string const& GetRuntimeNameFromFileExtension(std::string const&);
 MCAPI std::string const& GetRuntimeNameFromResourceType(enum ResourceInformation::ResourceType);
 MCAPI bool IsValidRuntimeName(std::string const&);
-MCAPI extern std::string const JAVA_SCRIPT_RUNTIME_NAME;
+MCAPI std::string const JAVA_SCRIPT_RUNTIME_NAME;
 MCAPI struct PluginDefStack PluginDefsFromPackStack(std::vector<class PackInstance> const&, std::vector<class PackInstance> const&);
 
 } // namespace ScriptPluginUtils

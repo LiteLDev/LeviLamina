@@ -7,29 +7,29 @@
 class JsonSaver {
 #include "Extra/JsonSaverAPI.hpp"
 public:
-    virtual ~JsonSaver();
-    virtual bool doSerialize(bool);
-    virtual bool doSerialize(signed char);
-    virtual bool doSerialize(unsigned char);
-    virtual bool doSerialize(short);
-    virtual bool doSerialize(unsigned short);
-    virtual bool doSerialize(int);
-    virtual bool doSerialize(unsigned int);
-    virtual bool doSerialize(__int64);
-    virtual bool doSerialize(unsigned __int64);
-    virtual bool doSerialize(float);
-    virtual bool doSerialize(double);
-    virtual bool doSerialize(std::string const&);
-    virtual bool doBeginMember(char const*, bool);
-    virtual bool doBeginMember(unsigned __int64, std::string const&);
-    virtual void unk_vfn_15();
-    virtual bool doBeginArray(unsigned __int64);
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual bool doEndArray();
-    virtual bool doBeginObject();
-    virtual bool doBeginObject(unsigned __int64);
-    virtual bool doEndObject();
+    /*0*/ virtual ~JsonSaver();
+    /*1*/ virtual bool doSerialize(bool);
+    /*2*/ virtual bool doSerialize(signed char);
+    /*3*/ virtual bool doSerialize(unsigned char);
+    /*4*/ virtual bool doSerialize(short);
+    /*5*/ virtual bool doSerialize(unsigned short);
+    /*6*/ virtual bool doSerialize(int);
+    /*7*/ virtual bool doSerialize(unsigned int);
+    /*8*/ virtual bool doSerialize(__int64);
+    /*9*/ virtual bool doSerialize(unsigned __int64);
+    /*10*/ virtual bool doSerialize(float);
+    /*11*/ virtual bool doSerialize(double);
+    /*12*/ virtual bool doSerialize(std::string const&);
+    /*13*/ virtual bool doBeginMember(char const*, bool);
+    /*14*/ virtual bool doBeginMember(unsigned __int64, std::string const&);
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual bool doBeginArray(unsigned __int64);
+    /*17*/ virtual void unk_vfn_17();
+    /*18*/ virtual void unk_vfn_18();
+    /*19*/ virtual bool doEndArray();
+    /*20*/ virtual bool doBeginObject();
+    /*21*/ virtual bool doBeginObject(unsigned __int64);
+    /*22*/ virtual bool doEndObject();
 
 public:
     MCAPI void configurePrettyOutput(bool, char, unsigned int);

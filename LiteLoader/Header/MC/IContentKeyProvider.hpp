@@ -7,8 +7,8 @@
 class IContentKeyProvider {
 #include "Extra/IContentKeyProviderAPI.hpp"
 public:
-    virtual ~IContentKeyProvider();
-    virtual void unk_vfn_1();
-    virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
-    virtual bool requireEncryptedReads() const;
+    /*0*/ virtual ~IContentKeyProvider();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
+    /*3*/ virtual bool requireEncryptedReads() const;
 };

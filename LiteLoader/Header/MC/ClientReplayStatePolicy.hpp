@@ -7,11 +7,11 @@
 class ClientReplayStatePolicy {
 #include "Extra/ClientReplayStatePolicyAPI.hpp"
 public:
-    virtual ~ClientReplayStatePolicy();
-    virtual bool isReplayNeeded(int /*enum AdvanceFrameResult*/) const;
-    virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
-    virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
-    virtual void flagUnsupportedMovement(unsigned __int64);
+    /*0*/ virtual ~ClientReplayStatePolicy();
+    /*1*/ virtual bool isReplayNeeded(int /*enum AdvanceFrameResult*/) const;
+    /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
+    /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
+    /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
 
 public:
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy&) const;

@@ -8,11 +8,11 @@
 class ArmorContainerValidation : public ContainerValidationBase {
 #include "Extra/ArmorContainerValidationAPI.hpp"
 public:
-    virtual ~ArmorContainerValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
-    virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
-    virtual void unk_vfn_6();
+    /*0*/ virtual ~ArmorContainerValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*6*/ virtual void unk_vfn_6();
 };

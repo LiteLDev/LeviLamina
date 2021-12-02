@@ -7,16 +7,16 @@
 class NetEventCallback {
 #include "Extra/NetEventCallbackAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual ~NetEventCallback();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void onWebsocketRequest(std::string const&, std::string const&, class std::function<void(void)>);
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual ~NetEventCallback();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void onWebsocketRequest(std::string const&, std::string const&, class std::function<void(void)>);
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
 };

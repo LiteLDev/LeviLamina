@@ -7,7 +7,7 @@
 class CommandPropertyBag {
 #include "Extra/CommandPropertyBagAPI.hpp"
 public:
-    virtual ~CommandPropertyBag();
+    /*0*/ virtual ~CommandPropertyBag();
 
 public:
     MCAPI void addToResultList(std::string const&, std::string const&);

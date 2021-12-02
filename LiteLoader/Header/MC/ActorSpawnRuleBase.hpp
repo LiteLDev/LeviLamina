@@ -8,7 +8,7 @@
 class ActorSpawnRuleBase {
 #include "Extra/ActorSpawnRuleBaseAPI.hpp"
 public:
-    virtual ~ActorSpawnRuleBase();
+    /*0*/ virtual ~ActorSpawnRuleBase();
 
 protected:
     MCAPI void _applySpawnCondition(class std::function<void(std::string const&, int, class BiomeFilterGroup&, class MobSpawnRules&)>, class Json::Value&, class MobSpawnRules const&, std::string const&);

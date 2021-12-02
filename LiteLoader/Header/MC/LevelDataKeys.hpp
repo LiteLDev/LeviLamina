@@ -7,15 +7,15 @@
 namespace LevelDataKeys {
 #include "Extra/LevelDataKeysAPI.hpp"
 
-MCAPI extern class HashedString EDUCATION_OID;
-MCAPI extern class HashedString EDUCATION_SHARED_RESOURCE;
-MCAPI extern class HashedString FLAT_WORLD_VERSION;
-MCAPI extern class HashedString GAME_TYPE;
-MCAPI extern class HashedString GENERATOR;
-MCAPI extern class HashedString LIMITED_WORLD_DEPTH;
-MCAPI extern class HashedString LIMITED_WORLD_WIDTH;
-MCAPI extern class HashedString LOADED_PLAYER_TAG;
-MCAPI extern class HashedString SEED;
-MCAPI extern class HashedString SPAWN_POS;
+MCAPI class HashedString EDUCATION_OID;
+MCAPI class HashedString EDUCATION_SHARED_RESOURCE;
+MCAPI class HashedString FLAT_WORLD_VERSION;
+MCAPI class HashedString GAME_TYPE;
+MCAPI class HashedString GENERATOR;
+MCAPI class HashedString LIMITED_WORLD_DEPTH;
+MCAPI class HashedString LIMITED_WORLD_WIDTH;
+MCAPI class HashedString LOADED_PLAYER_TAG;
+MCAPI class HashedString SEED;
+MCAPI class HashedString SPAWN_POS;
 
 } // namespace LevelDataKeys

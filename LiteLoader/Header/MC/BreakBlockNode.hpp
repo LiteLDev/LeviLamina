@@ -7,7 +7,7 @@
 class BreakBlockNode {
 #include "Extra/BreakBlockNodeAPI.hpp"
 public:
-    virtual ~BreakBlockNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~BreakBlockNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

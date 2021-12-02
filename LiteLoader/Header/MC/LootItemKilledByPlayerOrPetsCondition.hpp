@@ -7,6 +7,6 @@
 class LootItemKilledByPlayerOrPetsCondition {
 #include "Extra/LootItemKilledByPlayerOrPetsConditionAPI.hpp"
 public:
-    virtual ~LootItemKilledByPlayerOrPetsCondition();
-    virtual bool applies(class Random&, class LootTableContext&);
+    /*0*/ virtual ~LootItemKilledByPlayerOrPetsCondition();
+    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
 };

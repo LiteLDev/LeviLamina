@@ -9,6 +9,6 @@
 class InteractActionDefinition : public BehaviorDefinition {
 #include "Extra/InteractActionDefinitionAPI.hpp"
 public:
-    virtual ~InteractActionDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~InteractActionDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

@@ -7,13 +7,13 @@
 class CraftHandlerBase {
 #include "Extra/CraftHandlerBaseAPI.hpp"
 public:
-    virtual ~CraftHandlerBase();
-    virtual int /*enum ItemStackNetResult*/ handleConsumedItem(int /*enum ContainerEnumName*/, unsigned char, class ItemStack const&);
-    virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
-    virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
-    virtual void _postCraftRequest(bool);
-    virtual class Recipes const* _getLevelRecipes() const;
+    /*0*/ virtual ~CraftHandlerBase();
+    /*1*/ virtual int /*enum ItemStackNetResult*/ handleConsumedItem(int /*enum ContainerEnumName*/, unsigned char, class ItemStack const&);
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 
 protected:
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const*> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);

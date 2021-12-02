@@ -7,7 +7,7 @@
 class LookAtSystem {
 #include "Extra/LookAtSystemAPI.hpp"
 public:
-    virtual ~LookAtSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~LookAtSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

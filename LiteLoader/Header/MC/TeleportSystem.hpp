@@ -7,7 +7,7 @@
 class TeleportSystem {
 #include "Extra/TeleportSystemAPI.hpp"
 public:
-    virtual ~TeleportSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~TeleportSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

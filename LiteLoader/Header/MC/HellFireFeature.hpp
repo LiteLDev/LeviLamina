@@ -8,7 +8,7 @@
 class HellFireFeature : public Feature {
 #include "Extra/HellFireFeatureAPI.hpp"
 public:
-    virtual ~HellFireFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~HellFireFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

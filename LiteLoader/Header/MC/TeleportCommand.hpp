@@ -7,8 +7,8 @@
 class TeleportCommand {
 #include "Extra/TeleportCommandAPI.hpp"
 public:
-    virtual ~TeleportCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TeleportCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void applyTarget(class Actor&, class TeleportTarget);

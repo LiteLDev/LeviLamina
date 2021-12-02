@@ -8,8 +8,8 @@
 class TextObjectLocalizedTextWithParams {
 #include "Extra/TextObjectLocalizedTextWithParamsAPI.hpp"
 public:
-    virtual ~TextObjectLocalizedTextWithParams();
-    virtual std::string asString() const;
-    virtual class Json::Value asJsonValue() const;
-    virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*0*/ virtual ~TextObjectLocalizedTextWithParams();
+    /*1*/ virtual std::string asString() const;
+    /*2*/ virtual class Json::Value asJsonValue() const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
 };

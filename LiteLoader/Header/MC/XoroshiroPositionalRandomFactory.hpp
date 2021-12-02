@@ -9,9 +9,9 @@
 class XoroshiroPositionalRandomFactory {
 #include "Extra/XoroshiroPositionalRandomFactoryAPI.hpp"
 public:
-    virtual ~XoroshiroPositionalRandomFactory();
-    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
-    virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
+    /*0*/ virtual ~XoroshiroPositionalRandomFactory();
+    /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
+    /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
 
 public:
     MCAPI class XoroshiroRandom forStringImpl(std::string const&) const;

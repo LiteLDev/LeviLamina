@@ -8,8 +8,8 @@
 class ActorAliasDescription {
 #include "Extra/ActorAliasDescriptionAPI.hpp"
 public:
-    virtual ~ActorAliasDescription();
-    virtual char const* getJsonName() const;
+    /*0*/ virtual ~ActorAliasDescription();
+    /*1*/ virtual char const* getJsonName() const;
 
 public:
     MCAPI void parse(class Json::Value&, bool);

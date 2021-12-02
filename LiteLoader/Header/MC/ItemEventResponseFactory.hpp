@@ -7,8 +7,8 @@
 class ItemEventResponseFactory {
 #include "Extra/ItemEventResponseFactoryAPI.hpp"
 public:
-    virtual ~ItemEventResponseFactory();
-    virtual void initializeFactory(class Experiments const&);
+    /*0*/ virtual ~ItemEventResponseFactory();
+    /*1*/ virtual void initializeFactory(class Experiments const&);
 
 public:
     MCAPI void initSchema();

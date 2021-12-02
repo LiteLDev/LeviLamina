@@ -7,14 +7,14 @@
 class MoveIndoorsGoal {
 #include "Extra/MoveIndoorsGoalAPI.hpp"
 public:
-    virtual ~MoveIndoorsGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~MoveIndoorsGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 
 private:
     MCAPI bool _isInside(class BlockPos const&);

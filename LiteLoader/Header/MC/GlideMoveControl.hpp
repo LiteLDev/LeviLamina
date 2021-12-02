@@ -8,7 +8,7 @@
 class GlideMoveControl : public MoveControl {
 #include "Extra/GlideMoveControlAPI.hpp"
 public:
-    virtual ~GlideMoveControl();
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~GlideMoveControl();
+    /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 };

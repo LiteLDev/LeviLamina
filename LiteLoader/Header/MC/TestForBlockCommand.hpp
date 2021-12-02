@@ -7,8 +7,8 @@
 class TestForBlockCommand {
 #include "Extra/TestForBlockCommandAPI.hpp"
 public:
-    virtual ~TestForBlockCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TestForBlockCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,7 +8,7 @@
 class MoveTowardsDwellingRestrictionDefinition {
 #include "Extra/MoveTowardsDwellingRestrictionDefinitionAPI.hpp"
 public:
-    virtual ~MoveTowardsDwellingRestrictionDefinition();
+    /*0*/ virtual ~MoveTowardsDwellingRestrictionDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class MoveTowardsDwellingRestrictionDefinition>>&);

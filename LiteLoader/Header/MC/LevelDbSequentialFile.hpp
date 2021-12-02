@@ -7,7 +7,7 @@
 class LevelDbSequentialFile {
 #include "Extra/LevelDbSequentialFileAPI.hpp"
 public:
-    virtual ~LevelDbSequentialFile();
-    virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
-    virtual class leveldb::Status Skip(unsigned __int64);
+    /*0*/ virtual ~LevelDbSequentialFile();
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
+    /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
 };

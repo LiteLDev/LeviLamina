@@ -7,6 +7,6 @@
 class EmptyServerInstanceEventHandler {
 #include "Extra/EmptyServerInstanceEventHandlerAPI.hpp"
 public:
-    virtual ~EmptyServerInstanceEventHandler();
-    virtual int /*enum HandlerResult*/ handleLeaveGameDone(struct ServerInstanceEvent const&);
+    /*0*/ virtual ~EmptyServerInstanceEventHandler();
+    /*1*/ virtual int /*enum HandlerResult*/ handleLeaveGameDone(struct ServerInstanceEvent const&);
 };

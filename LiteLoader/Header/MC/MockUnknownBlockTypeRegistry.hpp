@@ -7,6 +7,6 @@
 class MockUnknownBlockTypeRegistry {
 #include "Extra/MockUnknownBlockTypeRegistryAPI.hpp"
 public:
-    virtual ~MockUnknownBlockTypeRegistry();
-    virtual class Block const& getUnknownBlock(class CompoundTag const&);
+    /*0*/ virtual ~MockUnknownBlockTypeRegistry();
+    /*1*/ virtual class Block const& getUnknownBlock(class CompoundTag const&);
 };

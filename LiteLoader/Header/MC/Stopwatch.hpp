@@ -7,10 +7,10 @@
 class Stopwatch {
 #include "Extra/StopwatchAPI.hpp"
 public:
-    virtual ~Stopwatch();
-    virtual double stop();
-    virtual double stopContinue();
-    virtual void print(std::string const&);
+    /*0*/ virtual ~Stopwatch();
+    /*1*/ virtual double stop();
+    /*2*/ virtual double stopContinue();
+    /*3*/ virtual void print(std::string const&);
 
 public:
     MCAPI void reset();

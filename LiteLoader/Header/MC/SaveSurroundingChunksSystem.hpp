@@ -8,13 +8,13 @@
 class SaveSurroundingChunksSystem : public RemoveFromAllEntitiesSystem<class FlagComponent<struct ActorMovementTickNeededFlag>> {
 #include "Extra/SaveSurroundingChunksSystemAPI.hpp"
 public:
-    virtual ~SaveSurroundingChunksSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
-    virtual ~SaveSurroundingChunksSystem();
-    virtual void unk_vfn_4();
-    virtual ~SaveSurroundingChunksSystem();
-    virtual void unk_vfn_7();
+    /*0*/ virtual ~SaveSurroundingChunksSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
+    /*3*/ virtual ~SaveSurroundingChunksSystem();
+    /*4*/ virtual void unk_vfn_4();
+    /*6*/ virtual ~SaveSurroundingChunksSystem();
+    /*7*/ virtual void unk_vfn_7();
 
 private:
     MCAPI static void _tickSaveSurroundingChunks(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class FlagComponent<struct SaveSurroundingChunksFlag>>&);

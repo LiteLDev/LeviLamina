@@ -7,5 +7,5 @@
 class IPackManifestFactory {
 #include "Extra/IPackManifestFactoryAPI.hpp"
 public:
-    virtual ~IPackManifestFactory();
+    /*0*/ virtual ~IPackManifestFactory();
 };

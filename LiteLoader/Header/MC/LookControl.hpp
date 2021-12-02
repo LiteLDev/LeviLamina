@@ -7,7 +7,7 @@
 class LookControl {
 #include "Extra/LookControlAPI.hpp"
 public:
-    virtual ~LookControl();
-    virtual void initializeInternal(class Mob&);
-    virtual void tick(class Mob&);
+    /*0*/ virtual ~LookControl();
+    /*1*/ virtual void initializeInternal(class Mob&);
+    /*2*/ virtual void tick(class Mob&);
 };

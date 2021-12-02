@@ -8,8 +8,8 @@
 class ScriptServerActorSneakChangedEvent {
 #include "Extra/ScriptServerActorSneakChangedEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorSneakChangedEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorSneakChangedEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

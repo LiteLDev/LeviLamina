@@ -8,7 +8,7 @@
 class SeaAnemoneFeature : public Feature {
 #include "Extra/SeaAnemoneFeatureAPI.hpp"
 public:
-    virtual ~SeaAnemoneFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~SeaAnemoneFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

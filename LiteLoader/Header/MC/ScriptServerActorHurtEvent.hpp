@@ -8,8 +8,8 @@
 class ScriptServerActorHurtEvent {
 #include "Extra/ScriptServerActorHurtEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorHurtEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorHurtEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setAbsorbedDamage(int);

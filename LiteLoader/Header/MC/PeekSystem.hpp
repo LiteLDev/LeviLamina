@@ -7,7 +7,7 @@
 class PeekSystem {
 #include "Extra/PeekSystemAPI.hpp"
 public:
-    virtual ~PeekSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~PeekSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

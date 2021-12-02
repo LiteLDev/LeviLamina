@@ -7,7 +7,7 @@
 class LookControlSystem {
 #include "Extra/LookControlSystemAPI.hpp"
 public:
-    virtual ~LookControlSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~LookControlSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

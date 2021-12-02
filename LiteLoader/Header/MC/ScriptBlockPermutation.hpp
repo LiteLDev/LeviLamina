@@ -9,7 +9,7 @@
 class ScriptBlockPermutation : public ScriptObject {
 #include "Extra/ScriptBlockPermutationAPI.hpp"
 public:
-    virtual ~ScriptBlockPermutation();
+    /*0*/ virtual ~ScriptBlockPermutation();
 
 public:
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> clone() const;

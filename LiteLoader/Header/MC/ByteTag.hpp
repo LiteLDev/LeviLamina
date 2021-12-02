@@ -8,13 +8,13 @@
 class ByteTag : public Tag {
 #include "Extra/ByteTagAPI.hpp"
 public:
-    virtual ~ByteTag();
-    virtual void deleteChildren();
-    virtual void write(class IDataOutput&) const;
-    virtual void load(class IDataInput&);
-    virtual std::string toString() const;
-    virtual int /*enum Tag::Type*/ getId() const;
-    virtual bool equals(class Tag const&) const;
-    virtual std::unique_ptr<class Tag> copy() const;
-    virtual unsigned __int64 hash() const;
+    /*0*/ virtual ~ByteTag();
+    /*1*/ virtual void deleteChildren();
+    /*2*/ virtual void write(class IDataOutput&) const;
+    /*3*/ virtual void load(class IDataInput&);
+    /*4*/ virtual std::string toString() const;
+    /*5*/ virtual int /*enum Tag::Type*/ getId() const;
+    /*6*/ virtual bool equals(class Tag const&) const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const;
+    /*10*/ virtual unsigned __int64 hash() const;
 };

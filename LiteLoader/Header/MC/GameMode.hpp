@@ -7,25 +7,25 @@
 class GameMode {
 #include "Extra/GameModeAPI.hpp"
 public:
-    virtual ~GameMode();
-    virtual bool startDestroyBlock(class BlockPos const&, unsigned char, bool&);
-    virtual bool destroyBlock(class BlockPos const&, unsigned char);
-    virtual bool continueDestroyBlock(class BlockPos const&, unsigned char, class Vec3 const&, bool&);
-    virtual void stopDestroyBlock(class BlockPos const&);
-    virtual void startBuildBlock(class BlockPos const&, unsigned char);
-    virtual bool buildBlock(class BlockPos const&, unsigned char, bool);
-    virtual void continueBuildBlock(class BlockPos const&, unsigned char);
-    virtual void stopBuildBlock();
-    virtual void tick();
-    virtual float getPickRange(int /*enum InputMode*/ const&, bool);
-    virtual bool useItem(class ItemStack&);
-    virtual bool useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
-    virtual bool interact(class Actor&, class Vec3 const&);
-    virtual bool attack(class Actor&);
-    virtual void releaseUsingItem();
-    virtual void setTrialMode(bool);
-    virtual bool isInTrialMode();
-    virtual void registerUpsellScreenCallback(class std::function<void(bool)>);
+    /*0*/ virtual ~GameMode();
+    /*1*/ virtual bool startDestroyBlock(class BlockPos const&, unsigned char, bool&);
+    /*2*/ virtual bool destroyBlock(class BlockPos const&, unsigned char);
+    /*3*/ virtual bool continueDestroyBlock(class BlockPos const&, unsigned char, class Vec3 const&, bool&);
+    /*4*/ virtual void stopDestroyBlock(class BlockPos const&);
+    /*5*/ virtual void startBuildBlock(class BlockPos const&, unsigned char);
+    /*6*/ virtual bool buildBlock(class BlockPos const&, unsigned char, bool);
+    /*7*/ virtual void continueBuildBlock(class BlockPos const&, unsigned char);
+    /*8*/ virtual void stopBuildBlock();
+    /*9*/ virtual void tick();
+    /*10*/ virtual float getPickRange(int /*enum InputMode*/ const&, bool);
+    /*11*/ virtual bool useItem(class ItemStack&);
+    /*12*/ virtual bool useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
+    /*13*/ virtual bool interact(class Actor&, class Vec3 const&);
+    /*14*/ virtual bool attack(class Actor&);
+    /*15*/ virtual void releaseUsingItem();
+    /*16*/ virtual void setTrialMode(bool);
+    /*17*/ virtual bool isInTrialMode();
+    /*18*/ virtual void registerUpsellScreenCallback(class std::function<void(bool)>);
 
 public:
     MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);

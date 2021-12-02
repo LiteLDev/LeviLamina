@@ -8,16 +8,16 @@
 class ResourceLoader {
 #include "Extra/ResourceLoaderAPI.hpp"
 public:
-    virtual ~ResourceLoader();
-    virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
-    virtual struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*0*/ virtual ~ResourceLoader();
+    /*1*/ virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
+    /*8*/ virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*9*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
+    /*10*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
+    /*11*/ virtual struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
 };

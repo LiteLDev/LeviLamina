@@ -7,7 +7,7 @@
 class InsideBlockNotifierSystem {
 #include "Extra/InsideBlockNotifierSystemAPI.hpp"
 public:
-    virtual ~InsideBlockNotifierSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~InsideBlockNotifierSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -8,8 +8,8 @@
 class ScriptServerActorStopRidingEvent {
 #include "Extra/ScriptServerActorStopRidingEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorStopRidingEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorStopRidingEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

@@ -8,8 +8,8 @@
 class GuardianAttackDefinition {
 #include "Extra/GuardianAttackDefinitionAPI.hpp"
 public:
-    virtual ~GuardianAttackDefinition();
-    virtual bool validateMobType(class Mob&);
+    /*0*/ virtual ~GuardianAttackDefinition();
+    /*1*/ virtual bool validateMobType(class Mob&);
 
 public:
     MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&);

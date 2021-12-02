@@ -8,12 +8,12 @@
 class FileSystemFileAccess {
 #include "Extra/FileSystemFileAccessAPI.hpp"
 public:
-    virtual ~FileSystemFileAccess();
-    virtual void* fopen(class Core::Path const&, std::string const&);
-    virtual int fclose(void*);
-    virtual int fseek(void*, __int64, int);
-    virtual __int64 ftell(void*);
-    virtual class IFileReadAccess const* getReadInterface() const;
-    virtual class IFileWriteAccess* getWriteInterface();
-    virtual void unload();
+    /*0*/ virtual ~FileSystemFileAccess();
+    /*1*/ virtual void* fopen(class Core::Path const&, std::string const&);
+    /*2*/ virtual int fclose(void*);
+    /*3*/ virtual int fseek(void*, __int64, int);
+    /*4*/ virtual __int64 ftell(void*);
+    /*5*/ virtual class IFileReadAccess const* getReadInterface() const;
+    /*6*/ virtual class IFileWriteAccess* getWriteInterface();
+    /*7*/ virtual void unload();
 };

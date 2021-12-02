@@ -8,8 +8,8 @@
 class WorldTemplateManager {
 #include "Extra/WorldTemplateManagerAPI.hpp"
 public:
-    virtual ~WorldTemplateManager();
-    virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const;
+    /*0*/ virtual ~WorldTemplateManager();
+    /*1*/ virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const;
 
 public:
     MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const;

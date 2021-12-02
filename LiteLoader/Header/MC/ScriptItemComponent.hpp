@@ -8,7 +8,7 @@
 class ScriptItemComponent : public ScriptObject {
 #include "Extra/ScriptItemComponentAPI.hpp"
 public:
-    virtual ~ScriptItemComponent();
+    /*0*/ virtual ~ScriptItemComponent();
 
 public:
     MCAPI std::string const& getId() const;

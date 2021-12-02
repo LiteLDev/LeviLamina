@@ -7,8 +7,8 @@
 class PrintStream {
 #include "Extra/PrintStreamAPI.hpp"
 public:
-    virtual ~PrintStream();
-    virtual void print(std::string const&);
+    /*0*/ virtual ~PrintStream();
+    /*1*/ virtual void print(std::string const&);
 
 public:
     MCAPI void println(std::string const&);

@@ -8,8 +8,8 @@
 class IslandOperationNode {
 #include "Extra/IslandOperationNodeAPI.hpp"
 public:
-    virtual ~IslandOperationNode();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _fillArea(class OperationNodeDetails::WorkingData<int /*enum OperationNodeValues::Terrain*/, char>&, class Pos2d const&, class Pos2d const&) const;
+    /*0*/ virtual ~IslandOperationNode();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<int /*enum OperationNodeValues::Terrain*/, char>&, class Pos2d const&, class Pos2d const&) const;
 };

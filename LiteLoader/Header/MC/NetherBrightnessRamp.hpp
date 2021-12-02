@@ -8,6 +8,6 @@
 class NetherBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/NetherBrightnessRampAPI.hpp"
 public:
-    virtual ~NetherBrightnessRamp();
-    virtual float getBaseAmbientValue() const;
+    /*0*/ virtual ~NetherBrightnessRamp();
+    /*2*/ virtual float getBaseAmbientValue() const;
 };

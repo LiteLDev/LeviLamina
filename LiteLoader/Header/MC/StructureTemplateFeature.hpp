@@ -7,6 +7,6 @@
 class StructureTemplateFeature {
 #include "Extra/StructureTemplateFeatureAPI.hpp"
 public:
-    virtual ~StructureTemplateFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~StructureTemplateFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

@@ -8,15 +8,15 @@
 class RakTcpProxy {
 #include "Extra/RakTcpProxyAPI.hpp"
 public:
-    virtual ~RakTcpProxy();
-    virtual bool start(unsigned short, unsigned short, unsigned short);
-    virtual struct RakNet::SystemAddress connect(std::string const&, unsigned short);
-    virtual void send(char const*, unsigned int, struct RakNet::SystemAddress);
-    virtual void close(struct RakNet::SystemAddress);
-    virtual bool packetsAvailable();
-    virtual struct RakNet::Packet* nextPacket();
-    virtual void deallocatePacket(struct RakNet::Packet*);
-    virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
-    virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
-    virtual struct RakNet::SystemAddress nextLostConnection();
+    /*0*/ virtual ~RakTcpProxy();
+    /*1*/ virtual bool start(unsigned short, unsigned short, unsigned short);
+    /*2*/ virtual struct RakNet::SystemAddress connect(std::string const&, unsigned short);
+    /*3*/ virtual void send(char const*, unsigned int, struct RakNet::SystemAddress);
+    /*4*/ virtual void close(struct RakNet::SystemAddress);
+    /*5*/ virtual bool packetsAvailable();
+    /*6*/ virtual struct RakNet::Packet* nextPacket();
+    /*7*/ virtual void deallocatePacket(struct RakNet::Packet*);
+    /*8*/ virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
+    /*9*/ virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
+    /*10*/ virtual struct RakNet::SystemAddress nextLostConnection();
 };

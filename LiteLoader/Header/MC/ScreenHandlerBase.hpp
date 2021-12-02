@@ -7,9 +7,9 @@
 class ScreenHandlerBase {
 #include "Extra/ScreenHandlerBaseAPI.hpp"
 public:
-    virtual ~ScreenHandlerBase();
-    virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
-    virtual int /*enum ItemStackNetResult*/ endRequest();
+    /*0*/ virtual ~ScreenHandlerBase();
+    /*1*/ virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    /*2*/ virtual int /*enum ItemStackNetResult*/ endRequest();
 
 protected:
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);

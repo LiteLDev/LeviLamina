@@ -8,11 +8,11 @@
 class NearestPrioritizedAttackableTargetGoal : public NearestAttackableTargetGoal {
 #include "Extra/NearestPrioritizedAttackableTargetGoalAPI.hpp"
 public:
-    virtual ~NearestPrioritizedAttackableTargetGoal();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
+    /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
+    /*3*/ virtual bool isTargetGoal() const;
+    /*5*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
+    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
 };

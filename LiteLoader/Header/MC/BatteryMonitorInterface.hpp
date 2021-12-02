@@ -7,5 +7,5 @@
 class BatteryMonitorInterface {
 #include "Extra/BatteryMonitorInterfaceAPI.hpp"
 public:
-    virtual ~BatteryMonitorInterface();
+    /*0*/ virtual ~BatteryMonitorInterface();
 };

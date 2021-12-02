@@ -8,8 +8,8 @@
 class GameTestInstanceLedger {
 #include "Extra/GameTestInstanceLedgerAPI.hpp"
 public:
-    virtual ~GameTestInstanceLedger();
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    /*0*/ virtual ~GameTestInstanceLedger();
+    /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
 
 public:
     MCAPI void clear(class AutomaticID<class Dimension, int>);

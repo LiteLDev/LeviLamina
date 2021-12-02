@@ -7,8 +7,8 @@
 class TitleRawCommand {
 #include "Extra/TitleRawCommandAPI.hpp"
 public:
-    virtual ~TitleRawCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TitleRawCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,7 +8,7 @@
 class DelayedAttackDefinition {
 #include "Extra/DelayedAttackDefinitionAPI.hpp"
 public:
-    virtual ~DelayedAttackDefinition();
+    /*0*/ virtual ~DelayedAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class DelayedAttackGoal&);

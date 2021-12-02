@@ -7,10 +7,10 @@
 class StructureAnimationAction {
 #include "Extra/StructureAnimationActionAPI.hpp"
 public:
-    virtual ~StructureAnimationAction();
-    virtual void execute(class ServerLevel&, class Dimension&);
-    virtual void serialize(class CompoundTag&);
-    virtual bool operator==(class IRequestAction&);
+    /*0*/ virtual ~StructureAnimationAction();
+    /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
+    /*2*/ virtual void serialize(class CompoundTag&);
+    /*3*/ virtual bool operator==(class IRequestAction&);
 
 public:
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const&, std::string const&);

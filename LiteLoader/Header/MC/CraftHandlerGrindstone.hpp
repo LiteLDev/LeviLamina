@@ -8,11 +8,12 @@
 class CraftHandlerGrindstone : public CraftHandlerBase {
 #include "Extra/CraftHandlerGrindstoneAPI.hpp"
 public:
-    virtual ~CraftHandlerGrindstone();
-    virtual void unk_vfn_2();
-    virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    virtual void _postCraftRequest(bool);
+    /*0*/ virtual ~CraftHandlerGrindstone();
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 
 private:
     MCAPI class ItemStack _createResultItem(class ItemStack const&, class ItemStack const&);

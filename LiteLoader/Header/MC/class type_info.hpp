@@ -7,7 +7,7 @@
 namespace class type_info {
 #include "Extra/class type_infoAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

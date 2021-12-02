@@ -7,7 +7,7 @@
 namespace class ScriptActorComponent {
 #include "Extra/class ScriptActorComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

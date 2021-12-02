@@ -7,8 +7,8 @@
 class EducationOptions {
 #include "Extra/EducationOptionsAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
 
 public:
     MCAPI void init(class LevelData const&);

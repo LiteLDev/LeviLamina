@@ -8,9 +8,9 @@
 class AttackDamageMobEffect : public MobEffect {
 #include "Extra/AttackDamageMobEffectAPI.hpp"
 public:
-    virtual ~AttackDamageMobEffect();
-    virtual void unk_vfn_4();
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    /*0*/ virtual ~AttackDamageMobEffect();
+    /*4*/ virtual bool isInstantaneous() const;
+    /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
 
 public:
     MCAPI static int getDamageAfterDamageBoost(int, int);

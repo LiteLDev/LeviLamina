@@ -7,5 +7,5 @@
 class IConnectionEventing {
 #include "Extra/IConnectionEventingAPI.hpp"
 public:
-    virtual ~IConnectionEventing();
+    /*0*/ virtual ~IConnectionEventing();
 };

@@ -7,7 +7,7 @@
 class InteractSystem {
 #include "Extra/InteractSystemAPI.hpp"
 public:
-    virtual ~InteractSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~InteractSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

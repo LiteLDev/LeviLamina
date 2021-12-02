@@ -7,6 +7,6 @@
 class GrowingPlantFeature {
 #include "Extra/GrowingPlantFeatureAPI.hpp"
 public:
-    virtual ~GrowingPlantFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~GrowingPlantFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

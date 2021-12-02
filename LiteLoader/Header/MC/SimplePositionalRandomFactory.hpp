@@ -7,9 +7,9 @@
 class SimplePositionalRandomFactory {
 #include "Extra/SimplePositionalRandomFactoryAPI.hpp"
 public:
-    virtual ~SimplePositionalRandomFactory();
-    virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
-    virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
+    /*0*/ virtual ~SimplePositionalRandomFactory();
+    /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
+    /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
 
 public:
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const&) const;

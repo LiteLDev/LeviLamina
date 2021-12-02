@@ -8,12 +8,12 @@
 class BatchedNetworkPeer {
 #include "Extra/BatchedNetworkPeerAPI.hpp"
 public:
-    virtual ~BatchedNetworkPeer();
-    virtual void sendPacket(std::string const&, int /*enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum Compressibility*/);
-    virtual int /*enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const&);
-    virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
-    virtual void update();
-    virtual void flush(class std::function<void(void)>&&);
+    /*0*/ virtual ~BatchedNetworkPeer();
+    /*1*/ virtual void sendPacket(std::string const&, int /*enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum Compressibility*/);
+    /*2*/ virtual int /*enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>>>> const&);
+    /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
+    /*4*/ virtual void update();
+    /*5*/ virtual void flush(class std::function<void(void)>&&);
 
 private:
     MCAPI void _startSendTask();

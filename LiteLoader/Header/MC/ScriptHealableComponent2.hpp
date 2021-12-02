@@ -9,7 +9,7 @@
 class ScriptHealableComponent2 : public ScriptActorComponent {
 #include "Extra/ScriptHealableComponent2API.hpp"
 public:
-    virtual ~ScriptHealableComponent2();
+    /*0*/ virtual ~ScriptHealableComponent2();
 
 public:
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;

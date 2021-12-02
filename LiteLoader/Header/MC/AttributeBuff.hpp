@@ -7,10 +7,10 @@
 class AttributeBuff {
 #include "Extra/AttributeBuffAPI.hpp"
 public:
-    virtual ~AttributeBuff();
-    virtual bool isInstantaneous() const = 0;
-    virtual bool isSerializable() const  = 0;
-    virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
+    /*0*/ virtual ~AttributeBuff();
+    /*1*/ virtual bool isInstantaneous() const = 0;
+    /*2*/ virtual bool isSerializable() const  = 0;
+    /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
 
 public:
     MCAPI float getAmount() const;

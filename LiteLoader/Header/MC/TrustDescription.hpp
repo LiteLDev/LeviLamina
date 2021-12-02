@@ -9,7 +9,7 @@
 class TrustDescription : public Description {
 #include "Extra/TrustDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~TrustDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~TrustDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

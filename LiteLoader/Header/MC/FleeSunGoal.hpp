@@ -8,9 +8,9 @@
 class FleeSunGoal : public FindCoverGoal {
 #include "Extra/FleeSunGoalAPI.hpp"
 public:
-    virtual ~FleeSunGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~FleeSunGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 };

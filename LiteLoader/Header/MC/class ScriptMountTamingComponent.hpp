@@ -7,7 +7,7 @@
 namespace class ScriptMountTamingComponent {
 #include "Extra/class ScriptMountTamingComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

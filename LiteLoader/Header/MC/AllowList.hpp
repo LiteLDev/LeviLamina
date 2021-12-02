@@ -8,9 +8,9 @@
 class AllowList {
 #include "Extra/AllowListAPI.hpp"
 public:
-    virtual ~AllowList();
-    virtual void serialize(class Json::Value&);
-    virtual void deserialize(class Json::Value&);
+    /*0*/ virtual ~AllowList();
+    /*1*/ virtual void serialize(class Json::Value&);
+    /*2*/ virtual void deserialize(class Json::Value&);
 
 public:
     MCAPI bool addEntry(class AllowListEntry const&);

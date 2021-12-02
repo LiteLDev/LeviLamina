@@ -8,10 +8,10 @@
 class MobEffectPacket : public Packet {
 #include "Extra/MobEffectPacketAPI.hpp"
 public:
-    virtual ~MobEffectPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId() const;
-    virtual std::string getName() const;
-    virtual void write(class BinaryStream&) const;
-    virtual void unk_vfn_5();
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~MobEffectPacket();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const;
+    /*2*/ virtual std::string getName() const;
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*5*/ virtual bool disallowBatching() const;
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 };

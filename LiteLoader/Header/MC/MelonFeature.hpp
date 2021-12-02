@@ -8,7 +8,7 @@
 class MelonFeature : public Feature {
 #include "Extra/MelonFeatureAPI.hpp"
 public:
-    virtual ~MelonFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~MelonFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

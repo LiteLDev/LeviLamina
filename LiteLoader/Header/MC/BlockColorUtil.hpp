@@ -7,7 +7,7 @@
 namespace BlockColorUtil {
 #include "Extra/BlockColorUtilAPI.hpp"
 
-MCAPI extern class std::array<enum BlockColor, 16> RAINBOW;
+MCAPI class std::array<enum BlockColor, 16> RAINBOW;
 MCAPI enum BlockColor fromInt(int);
 MCAPI enum BlockColor fromItemColor(enum ItemColor);
 MCAPI class mce::Color getColor(enum BlockColor);

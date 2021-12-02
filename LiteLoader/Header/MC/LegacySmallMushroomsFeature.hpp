@@ -8,7 +8,7 @@
 class LegacySmallMushroomsFeature : public Feature {
 #include "Extra/LegacySmallMushroomsFeatureAPI.hpp"
 public:
-    virtual ~LegacySmallMushroomsFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~LegacySmallMushroomsFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

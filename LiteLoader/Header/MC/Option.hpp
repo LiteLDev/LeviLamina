@@ -9,11 +9,11 @@
 class Option {
 #include "Extra/OptionAPI.hpp"
 public:
-    virtual ~Option();
-    virtual void save(std::vector<struct std::pair<std::string, std::string>>&) = 0;
-    virtual void load(std::string const&)                                       = 0;
-    virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
-    virtual void load(class Json::Value const&);
+    /*0*/ virtual ~Option();
+    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>>&) = 0;
+    /*2*/ virtual void load(std::string const&)                                       = 0;
+    /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
+    /*4*/ virtual void load(class Json::Value const&);
 
 public:
     MCAPI bool getBool() const;

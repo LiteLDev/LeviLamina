@@ -7,5 +7,5 @@
 class ChestContainerScreenValidator {
 #include "Extra/ChestContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~ChestContainerScreenValidator();
+    /*0*/ virtual ~ChestContainerScreenValidator();
 };

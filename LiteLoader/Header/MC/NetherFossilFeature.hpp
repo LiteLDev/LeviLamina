@@ -8,9 +8,9 @@
 class NetherFossilFeature : public Feature {
 #include "Extra/NetherFossilFeatureAPI.hpp"
 public:
-    virtual ~NetherFossilFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~NetherFossilFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI static std::string const* const const STRUCTURE_LOCATION_FOSSIL;

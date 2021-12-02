@@ -7,13 +7,13 @@
 class AgentCommandExecutionGoal {
 #include "Extra/AgentCommandExecutionGoalAPI.hpp"
 public:
-    virtual ~AgentCommandExecutionGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_2();
-    virtual bool canBeInterrupted();
-    virtual void start();
-    virtual void stop();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual bool canBeInterrupted();
+    /*0*/ virtual ~AgentCommandExecutionGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool canBeInterrupted();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool canBeInterrupted();
 };

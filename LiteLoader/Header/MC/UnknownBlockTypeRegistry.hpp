@@ -7,8 +7,8 @@
 class UnknownBlockTypeRegistry {
 #include "Extra/UnknownBlockTypeRegistryAPI.hpp"
 public:
-    virtual ~UnknownBlockTypeRegistry();
-    virtual class Block const& getUnknownBlock(class CompoundTag const&);
+    /*0*/ virtual ~UnknownBlockTypeRegistry();
+    /*1*/ virtual class Block const& getUnknownBlock(class CompoundTag const&);
 
 private:
     MCAPI void _registerBlock(std::string const&, unsigned __int64);

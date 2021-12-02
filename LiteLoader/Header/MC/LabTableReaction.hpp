@@ -7,7 +7,7 @@
 class LabTableReaction {
 #include "Extra/LabTableReactionAPI.hpp"
 public:
-    virtual ~LabTableReaction();
+    /*0*/ virtual ~LabTableReaction();
 
 public:
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);

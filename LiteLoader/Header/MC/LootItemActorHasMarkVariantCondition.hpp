@@ -7,6 +7,6 @@
 class LootItemActorHasMarkVariantCondition {
 #include "Extra/LootItemActorHasMarkVariantConditionAPI.hpp"
 public:
-    virtual ~LootItemActorHasMarkVariantCondition();
-    virtual bool applies(class Random&, class LootTableContext&);
+    /*0*/ virtual ~LootItemActorHasMarkVariantCondition();
+    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
 };

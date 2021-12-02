@@ -9,8 +9,8 @@
 class ArrowEffectSubcomponent : public MobEffectSubcomponent {
 #include "Extra/ArrowEffectSubcomponentAPI.hpp"
 public:
-    virtual ~ArrowEffectSubcomponent();
-    virtual void writetoJSON(class Json::Value&) const;
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    virtual char const* getName();
+    /*0*/ virtual ~ArrowEffectSubcomponent();
+    /*2*/ virtual void writetoJSON(class Json::Value&) const;
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 };

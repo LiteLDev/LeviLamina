@@ -7,7 +7,7 @@
 class BaseGoalDefinition {
 #include "Extra/BaseGoalDefinitionAPI.hpp"
 public:
-    virtual ~BaseGoalDefinition();
+    /*0*/ virtual ~BaseGoalDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class Goal&);

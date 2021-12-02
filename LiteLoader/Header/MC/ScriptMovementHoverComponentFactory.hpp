@@ -8,7 +8,7 @@
 class ScriptMovementHoverComponentFactory {
 #include "Extra/ScriptMovementHoverComponentFactoryAPI.hpp"
 public:
-    virtual ~ScriptMovementHoverComponentFactory();
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
-    virtual bool hasComponent(class WeakEntityRef) const;
+    /*0*/ virtual ~ScriptMovementHoverComponentFactory();
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 };

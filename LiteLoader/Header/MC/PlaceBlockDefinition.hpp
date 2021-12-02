@@ -8,5 +8,5 @@
 class PlaceBlockDefinition : public BehaviorDefinition {
 #include "Extra/PlaceBlockDefinitionAPI.hpp"
 public:
-    virtual ~PlaceBlockDefinition();
+    /*0*/ virtual ~PlaceBlockDefinition();
 };

@@ -7,7 +7,7 @@
 class AttackCooldownSystem {
 #include "Extra/AttackCooldownSystemAPI.hpp"
 public:
-    virtual ~AttackCooldownSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~AttackCooldownSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

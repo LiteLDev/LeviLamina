@@ -7,7 +7,7 @@
 class BlockEventCoordinator {
 #include "Extra/BlockEventCoordinatorAPI.hpp"
 public:
-    virtual ~BlockEventCoordinator();
+    /*0*/ virtual ~BlockEventCoordinator();
 
 public:
     MCAPI class BlockGameplayHandler& getBlockGameplayHandler();

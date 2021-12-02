@@ -7,11 +7,11 @@
 class ScreenHandlerLabTable {
 #include "Extra/ScreenHandlerLabTableAPI.hpp"
 public:
-    virtual ~ScreenHandlerLabTable();
-    virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
-    virtual int /*enum ItemStackNetResult*/ endRequest();
-    virtual void unk_vfn_3();
-    virtual void postRequest(bool);
+    /*0*/ virtual ~ScreenHandlerLabTable();
+    /*1*/ virtual int /*enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    /*2*/ virtual int /*enum ItemStackNetResult*/ endRequest();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void postRequest(bool);
 
 private:
     MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<7> const&);

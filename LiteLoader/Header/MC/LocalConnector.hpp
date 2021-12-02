@@ -9,14 +9,14 @@
 class LocalConnector {
 #include "Extra/LocalConnectorAPI.hpp"
 public:
-    virtual ~LocalConnector();
-    virtual void unk_vfn_1();
-    virtual std::string getLocalIp();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
-    virtual void unk_vfn_6();
-    virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
+    /*0*/ virtual ~LocalConnector();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual std::string getLocalIp();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
 
 public:
     MCAPI void disconnect();

@@ -7,26 +7,26 @@
 class LevelDbEnv {
 #include "Extra/LevelDbEnvAPI.hpp"
 public:
-    virtual ~LevelDbEnv();
-    virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
-    virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
-    virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
-    virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile**);
-    virtual bool FileExists(std::string const&);
-    virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
-    virtual class leveldb::Status DeleteFileA(std::string const&);
-    virtual class leveldb::Status CreateDir(std::string const&);
-    virtual class leveldb::Status DeleteDir(std::string const&);
-    virtual class leveldb::Status GetFileSize(std::string const&, unsigned __int64*);
-    virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
-    virtual class leveldb::Status LockFile(std::string const&, class leveldb::FileLock**);
-    virtual class leveldb::Status UnlockFile(class leveldb::FileLock*);
-    virtual void Schedule(void (*)(void*), void*);
-    virtual void StartThread(void (*)(void*), void*);
-    virtual class leveldb::Status GetTestDirectory(std::string*);
-    virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger**);
-    virtual unsigned __int64 NowMicros();
-    virtual void SleepForMicroseconds(int);
+    /*0*/ virtual ~LevelDbEnv();
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
+    /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile**);
+    /*5*/ virtual bool FileExists(std::string const&);
+    /*6*/ virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
+    /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
+    /*8*/ virtual class leveldb::Status CreateDir(std::string const&);
+    /*9*/ virtual class leveldb::Status DeleteDir(std::string const&);
+    /*10*/ virtual class leveldb::Status GetFileSize(std::string const&, unsigned __int64*);
+    /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*12*/ virtual class leveldb::Status LockFile(std::string const&, class leveldb::FileLock**);
+    /*13*/ virtual class leveldb::Status UnlockFile(class leveldb::FileLock*);
+    /*14*/ virtual void Schedule(void (*)(void*), void*);
+    /*15*/ virtual void StartThread(void (*)(void*), void*);
+    /*16*/ virtual class leveldb::Status GetTestDirectory(std::string*);
+    /*17*/ virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger**);
+    /*18*/ virtual unsigned __int64 NowMicros();
+    /*19*/ virtual void SleepForMicroseconds(int);
 
 public:
     MCAPI bool IsComplete() const;

@@ -8,9 +8,9 @@
 class FossilFeature : public Feature {
 #include "Extra/FossilFeatureAPI.hpp"
 public:
-    virtual ~FossilFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~FossilFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
     MCAPI static std::string const* const const STRUCTURE_LOCATION_FOSSIL;

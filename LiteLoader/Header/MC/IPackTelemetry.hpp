@@ -7,5 +7,5 @@
 class IPackTelemetry {
 #include "Extra/IPackTelemetryAPI.hpp"
 public:
-    virtual ~IPackTelemetry();
+    /*0*/ virtual ~IPackTelemetry();
 };

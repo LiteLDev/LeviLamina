@@ -7,7 +7,7 @@
 class CreativeItemRegistry {
 #include "Extra/CreativeItemRegistryAPI.hpp"
 public:
-    virtual ~CreativeItemRegistry();
+    /*0*/ virtual ~CreativeItemRegistry();
 
 public:
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);

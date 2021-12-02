@@ -7,5 +7,5 @@
 class IPacketHandlerDispatcher {
 #include "Extra/IPacketHandlerDispatcherAPI.hpp"
 public:
-    virtual ~IPacketHandlerDispatcher();
+    /*0*/ virtual ~IPacketHandlerDispatcher();
 };

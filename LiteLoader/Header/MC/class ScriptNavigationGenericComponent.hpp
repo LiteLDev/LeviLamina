@@ -7,7 +7,7 @@
 namespace class ScriptNavigationGenericComponent {
 #include "Extra/class ScriptNavigationGenericComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

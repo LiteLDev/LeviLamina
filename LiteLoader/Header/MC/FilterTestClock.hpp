@@ -8,8 +8,8 @@
 class FilterTestClock : public FilterTest {
 #include "Extra/FilterTestClockAPI.hpp"
 public:
-    virtual ~FilterTestClock();
-    virtual bool evaluate(struct FilterContext const&) const;
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    /*0*/ virtual ~FilterTestClock();
+    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 };

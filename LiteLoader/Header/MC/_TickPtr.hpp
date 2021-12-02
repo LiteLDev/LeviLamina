@@ -7,6 +7,6 @@
 class _TickPtr {
 #include "Extra/_TickPtrAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual ~_TickPtr();
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual ~_TickPtr();
 };

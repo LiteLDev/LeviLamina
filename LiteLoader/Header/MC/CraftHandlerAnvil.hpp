@@ -8,10 +8,10 @@
 class CraftHandlerAnvil : public CraftHandlerBase {
 #include "Extra/CraftHandlerAnvilAPI.hpp"
 public:
-    virtual ~CraftHandlerAnvil();
-    virtual void unk_vfn_2();
-    virtual void endRequestBatch();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    virtual void _postCraftRequest(bool);
-    virtual class Recipes const* _getLevelRecipes() const;
+    /*0*/ virtual ~CraftHandlerAnvil();
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 };

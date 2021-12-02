@@ -7,15 +7,15 @@
 class ScriptDebuggerTransport {
 #include "Extra/ScriptDebuggerTransportAPI.hpp"
 public:
-    virtual ~ScriptDebuggerTransport();
-    virtual bool listen(unsigned short);
-    virtual bool connect(std::string const&, unsigned short);
-    virtual bool selectClient();
-    virtual bool connected() const;
-    virtual bool lostConnection() const;
-    virtual bool readyClose() const;
-    virtual void close();
-    virtual bool peek() const;
-    virtual bool receive(char*, unsigned __int64);
-    virtual void send(char const*, unsigned __int64);
+    /*0*/ virtual ~ScriptDebuggerTransport();
+    /*1*/ virtual bool listen(unsigned short);
+    /*2*/ virtual bool connect(std::string const&, unsigned short);
+    /*3*/ virtual bool selectClient();
+    /*4*/ virtual bool connected() const;
+    /*5*/ virtual bool lostConnection() const;
+    /*6*/ virtual bool readyClose() const;
+    /*7*/ virtual void close();
+    /*8*/ virtual bool peek() const;
+    /*9*/ virtual bool receive(char*, unsigned __int64);
+    /*10*/ virtual void send(char const*, unsigned __int64);
 };

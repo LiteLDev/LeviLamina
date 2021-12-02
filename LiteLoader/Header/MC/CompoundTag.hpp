@@ -8,16 +8,16 @@
 class CompoundTag : public Tag {
 #include "Extra/CompoundTagAPI.hpp"
 public:
-    virtual ~CompoundTag();
-    virtual void deleteChildren();
-    virtual void write(class IDataOutput&) const;
-    virtual void load(class IDataInput&);
-    virtual std::string toString() const;
-    virtual int /*enum Tag::Type*/ getId() const;
-    virtual bool equals(class Tag const&) const;
-    virtual void print(std::string const&, class PrintStream&) const;
-    virtual std::unique_ptr<class Tag> copy() const;
-    virtual unsigned __int64 hash() const;
+    /*0*/ virtual ~CompoundTag();
+    /*1*/ virtual void deleteChildren();
+    /*2*/ virtual void write(class IDataOutput&) const;
+    /*3*/ virtual void load(class IDataInput&);
+    /*4*/ virtual std::string toString() const;
+    /*5*/ virtual int /*enum Tag::Type*/ getId() const;
+    /*6*/ virtual bool equals(class Tag const&) const;
+    /*8*/ virtual void print(std::string const&, class PrintStream&) const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const;
+    /*10*/ virtual unsigned __int64 hash() const;
 
 public:
     MCAPI void append(class CompoundTag const&);

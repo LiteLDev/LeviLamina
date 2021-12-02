@@ -7,7 +7,7 @@
 class WorkerPool {
 #include "Extra/WorkerPoolAPI.hpp"
 public:
-    virtual ~WorkerPool();
+    /*0*/ virtual ~WorkerPool();
 
 public:
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);

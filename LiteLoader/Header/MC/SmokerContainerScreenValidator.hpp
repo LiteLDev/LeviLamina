@@ -7,5 +7,5 @@
 class SmokerContainerScreenValidator {
 #include "Extra/SmokerContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~SmokerContainerScreenValidator();
+    /*0*/ virtual ~SmokerContainerScreenValidator();
 };

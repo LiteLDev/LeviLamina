@@ -7,13 +7,13 @@
 struct BlockUnitCubeDescription {
 #include "Extra/BlockUnitCubeDescriptionAPI.hpp"
 public:
-    virtual ~BlockUnitCubeDescription();
-    virtual std::string const& getName() const;
-    virtual void initializeComponent(class EntityContext&) const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
-    virtual bool isNetworkComponent() const;
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    /*0*/ virtual ~BlockUnitCubeDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext&) const;
+    /*3*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI static std::string const NameID;

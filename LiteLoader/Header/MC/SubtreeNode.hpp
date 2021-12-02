@@ -7,7 +7,7 @@
 class SubtreeNode {
 #include "Extra/SubtreeNodeAPI.hpp"
 public:
-    virtual ~SubtreeNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~SubtreeNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

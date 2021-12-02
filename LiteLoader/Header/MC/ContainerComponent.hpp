@@ -7,8 +7,8 @@
 class ContainerComponent {
 #include "Extra/ContainerComponentAPI.hpp"
 public:
-    virtual void containerContentChanged(int);
-    virtual ~ContainerComponent();
+    /*0*/ virtual void containerContentChanged(int);
+    /*1*/ virtual ~ContainerComponent();
 
 public:
     MCAPI void addAdditionalSaveData(class CompoundTag&);

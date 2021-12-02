@@ -7,7 +7,7 @@
 namespace class ScriptMovementGlideComponent {
 #include "Extra/class ScriptMovementGlideComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

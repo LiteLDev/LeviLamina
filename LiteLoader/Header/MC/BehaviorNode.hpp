@@ -7,9 +7,9 @@
 class BehaviorNode {
 #include "Extra/BehaviorNodeAPI.hpp"
 public:
-    virtual ~BehaviorNode();
-    virtual void unk_vfn_1();
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~BehaviorNode();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 
 public:
     MCAPI class BehaviorData& getBehaviorData();

@@ -7,10 +7,10 @@
 class VibrationListener {
 #include "Extra/VibrationListenerAPI.hpp"
 public:
-    virtual ~VibrationListener();
-    virtual void handleGameEvent(class GameEvent const&, class BlockPos const&, class Actor const*, class BlockSource&);
-    virtual class BlockPos getOwnerPos() const;
-    virtual bool isEventInRange(class GameEvent const&, class BlockPos const&) const;
+    /*0*/ virtual ~VibrationListener();
+    /*1*/ virtual void handleGameEvent(class GameEvent const&, class BlockPos const&, class Actor const*, class BlockSource&);
+    /*2*/ virtual class BlockPos getOwnerPos() const;
+    /*3*/ virtual bool isEventInRange(class GameEvent const&, class BlockPos const&) const;
 
 public:
     MCAPI class GameEvent const& getGameEvent() const;

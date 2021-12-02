@@ -7,5 +7,5 @@
 class TcpProxy {
 #include "Extra/TcpProxyAPI.hpp"
 public:
-    virtual ~TcpProxy();
+    /*0*/ virtual ~TcpProxy();
 };

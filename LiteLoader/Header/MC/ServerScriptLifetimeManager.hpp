@@ -7,19 +7,19 @@
 class ServerScriptLifetimeManager {
 #include "Extra/ServerScriptLifetimeManagerAPI.hpp"
 public:
-    virtual ~ServerScriptLifetimeManager();
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerUpdateStart(class ServerInstance&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerThreadStarted(class ServerInstance&);
-    virtual int /*enum EventResult*/ onServerThreadStopped(class ServerInstance&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*0*/ virtual ~ServerScriptLifetimeManager();
+    /*1*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*2*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*3*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*4*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*5*/ virtual int /*enum EventResult*/ onServerUpdateStart(class ServerInstance&);
+    /*6*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*7*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*8*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*9*/ virtual int /*enum EventResult*/ onServerThreadStarted(class ServerInstance&);
+    /*10*/ virtual int /*enum EventResult*/ onServerThreadStopped(class ServerInstance&);
+    /*11*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*12*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
 
 public:
     MCAPI void onMainThreadStartLeaveGame();

@@ -7,7 +7,7 @@
 class ContentLog {
 #include "Extra/ContentLogAPI.hpp"
 public:
-    virtual ~ContentLog();
+    /*0*/ virtual ~ContentLog();
 
 public:
     MCAPI bool isEnabled() const;

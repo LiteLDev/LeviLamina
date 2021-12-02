@@ -7,5 +7,5 @@
 class ElementConstructorContainerScreenValidator {
 #include "Extra/ElementConstructorContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~ElementConstructorContainerScreenValidator();
+    /*0*/ virtual ~ElementConstructorContainerScreenValidator();
 };

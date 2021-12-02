@@ -7,7 +7,7 @@
 namespace class ScriptMovementHoverComponent {
 #include "Extra/class ScriptMovementHoverComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

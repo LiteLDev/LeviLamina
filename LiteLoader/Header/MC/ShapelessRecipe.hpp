@@ -8,18 +8,18 @@
 class ShapelessRecipe : public Recipe {
 #include "Extra/ShapelessRecipeAPI.hpp"
 public:
-    virtual ~ShapelessRecipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    virtual int getCraftingSize() const;
-    virtual class RecipeIngredient const& getIngredient(int, int) const;
-    virtual void unk_vfn_4();
-    virtual bool isShapeless() const;
-    virtual bool matches(class CraftingContainer&, class Level&) const;
-    virtual int size() const;
-    virtual class mce::UUID const& getId() const;
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void loadResultList(class BlockPalette const&) const;
+    /*0*/ virtual ~ShapelessRecipe();
+    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
+    /*2*/ virtual int getCraftingSize() const;
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*5*/ virtual bool isShapeless() const;
+    /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
+    /*7*/ virtual int size() const;
+    /*8*/ virtual class mce::UUID const& getId() const;
+    /*9*/ virtual class ItemPack const& getItemPack() const;
+    /*10*/ virtual bool isShapeless() const;
+    /*15*/ virtual void loadResultList(class BlockPalette const&) const;
 
 private:
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, class mce::UUID const*);

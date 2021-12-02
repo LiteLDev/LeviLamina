@@ -7,5 +7,5 @@
 class StoneCutterContainerScreenValidator {
 #include "Extra/StoneCutterContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~StoneCutterContainerScreenValidator();
+    /*0*/ virtual ~StoneCutterContainerScreenValidator();
 };

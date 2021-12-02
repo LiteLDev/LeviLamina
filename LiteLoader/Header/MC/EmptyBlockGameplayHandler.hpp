@@ -7,11 +7,11 @@
 class EmptyBlockGameplayHandler {
 #include "Extra/EmptyBlockGameplayHandlerAPI.hpp"
 public:
-    virtual ~EmptyBlockGameplayHandler();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual int /*enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual struct GameplayHandlerResult<class std::optional<std::string>> handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
+    /*0*/ virtual ~EmptyBlockGameplayHandler();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string>> handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
 };

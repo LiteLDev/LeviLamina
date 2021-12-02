@@ -8,8 +8,8 @@
 struct NavigationDescription {
 #include "Extra/NavigationDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const = 0;
-    virtual ~NavigationDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const = 0;
+    /*1*/ virtual ~NavigationDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

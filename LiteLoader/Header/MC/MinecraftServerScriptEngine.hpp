@@ -8,19 +8,19 @@
 class MinecraftServerScriptEngine {
 #include "Extra/MinecraftServerScriptEngineAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    virtual int /*enum EventResult*/ onServerUpdateStart(class ServerInstance&);
-    virtual int /*enum EventResult*/ onServerUpdateEnd(class ServerInstance&);
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual int /*enum EventResult*/ onServerThreadStarted(class ServerInstance&);
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual int /*enum EventResult*/ onLeaveGameDone(struct ServerInstanceEvent const&);
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual int /*enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*5*/ virtual int /*enum EventResult*/ onServerUpdateStart(class ServerInstance&);
+    /*6*/ virtual int /*enum EventResult*/ onServerUpdateEnd(class ServerInstance&);
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual int /*enum EventResult*/ onServerThreadStarted(class ServerInstance&);
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual void unk_vfn_11();
+    /*12*/ virtual int /*enum EventResult*/ onLeaveGameDone(struct ServerInstanceEvent const&);
 
 private:
     MCAPI void _queueResourcePackScripts(class ResourcePackManager&);

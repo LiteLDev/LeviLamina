@@ -9,6 +9,6 @@
 class WaitTicksDefinition : public BehaviorDefinition {
 #include "Extra/WaitTicksDefinitionAPI.hpp"
 public:
-    virtual ~WaitTicksDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~WaitTicksDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

@@ -7,8 +7,8 @@
 class SpreadPlayersCommand {
 #include "Extra/SpreadPlayersCommandAPI.hpp"
 public:
-    virtual ~SpreadPlayersCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~SpreadPlayersCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

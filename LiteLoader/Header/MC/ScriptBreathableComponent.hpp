@@ -9,7 +9,7 @@
 class ScriptBreathableComponent : public ScriptActorComponent {
 #include "Extra/ScriptBreathableComponentAPI.hpp"
 public:
-    virtual ~ScriptBreathableComponent();
+    /*0*/ virtual ~ScriptBreathableComponent();
 
 public:
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>>> getBreatheBlocks() const;

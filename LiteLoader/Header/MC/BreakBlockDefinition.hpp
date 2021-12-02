@@ -9,6 +9,6 @@
 class BreakBlockDefinition : public BehaviorDefinition {
 #include "Extra/BreakBlockDefinitionAPI.hpp"
 public:
-    virtual ~BreakBlockDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~BreakBlockDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

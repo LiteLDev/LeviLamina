@@ -8,9 +8,9 @@
 class NpcCommandAction {
 #include "Extra/NpcCommandActionAPI.hpp"
 public:
-    virtual ~NpcCommandAction();
-    virtual class Json::Value toJson();
-    virtual bool fromJson(class Json::Value const&);
+    /*0*/ virtual ~NpcCommandAction();
+    /*1*/ virtual class Json::Value toJson();
+    /*2*/ virtual bool fromJson(class Json::Value const&);
 
 public:
     MCAPI std::vector<struct NpcCommandAction::SavedCommand>& getCommands();

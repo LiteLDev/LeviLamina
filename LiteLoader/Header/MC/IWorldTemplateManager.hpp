@@ -7,5 +7,5 @@
 class IWorldTemplateManager {
 #include "Extra/IWorldTemplateManagerAPI.hpp"
 public:
-    virtual ~IWorldTemplateManager();
+    /*0*/ virtual ~IWorldTemplateManager();
 };

@@ -8,9 +8,9 @@
 class HoldBlockSystem {
 #include "Extra/HoldBlockSystemAPI.hpp"
 public:
-    virtual ~HoldBlockSystem();
-    virtual void registerEvents(class entt::dispatcher&);
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~HoldBlockSystem();
+    /*1*/ virtual void registerEvents(class entt::dispatcher&);
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 private:
     MCAPI static void _holdBlockSystemOnActorDie(struct ActorDieEvent&);

@@ -7,7 +7,7 @@
 class SensingSystem {
 #include "Extra/SensingSystemAPI.hpp"
 public:
-    virtual ~SensingSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~SensingSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -8,7 +8,7 @@
 class LegacySwampFoliageFeature : public Feature {
 #include "Extra/LegacySwampFoliageFeatureAPI.hpp"
 public:
-    virtual ~LegacySwampFoliageFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~LegacySwampFoliageFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

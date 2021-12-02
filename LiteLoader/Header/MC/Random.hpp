@@ -8,16 +8,16 @@
 class Random {
 #include "Extra/RandomAPI.hpp"
 public:
-    virtual ~Random();
-    virtual int nextInt();
-    virtual int nextInt(int);
-    virtual __int64 nextLong();
-    virtual bool nextBoolean();
-    virtual float nextFloat();
-    virtual double nextDouble();
-    virtual double nextGaussianDouble();
-    virtual void consumeCount(unsigned int);
-    virtual std::unique_ptr<class IRandom> fork();
+    /*0*/ virtual ~Random();
+    /*1*/ virtual int nextInt();
+    /*2*/ virtual int nextInt(int);
+    /*3*/ virtual __int64 nextLong();
+    /*4*/ virtual bool nextBoolean();
+    /*5*/ virtual float nextFloat();
+    /*6*/ virtual double nextDouble();
+    /*7*/ virtual double nextGaussianDouble();
+    /*8*/ virtual void consumeCount(unsigned int);
+    /*9*/ virtual std::unique_ptr<class IRandom> fork();
 
 public:
     MCAPI float nextFloat(float, float);

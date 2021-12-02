@@ -7,5 +7,5 @@
 class LoomContainerScreenValidator {
 #include "Extra/LoomContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~LoomContainerScreenValidator();
+    /*0*/ virtual ~LoomContainerScreenValidator();
 };

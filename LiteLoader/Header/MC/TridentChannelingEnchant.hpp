@@ -7,10 +7,10 @@
 class TridentChannelingEnchant {
 #include "Extra/TridentChannelingEnchantAPI.hpp"
 public:
-    virtual ~TridentChannelingEnchant();
-    virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
-    virtual int getMinCost(int) const;
-    virtual int getMaxCost(int) const;
-    virtual int getMaxLevel() const;
-    virtual int getMaxLevel() const;
+    /*0*/ virtual ~TridentChannelingEnchant();
+    /*1*/ virtual bool isCompatibleWith(int /*enum Enchant::Type*/) const;
+    /*2*/ virtual int getMinCost(int) const;
+    /*3*/ virtual int getMaxCost(int) const;
+    /*4*/ virtual int getMaxLevel() const;
+    /*5*/ virtual int getMaxLevel() const;
 };

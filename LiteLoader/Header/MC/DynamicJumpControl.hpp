@@ -7,12 +7,12 @@
 class DynamicJumpControl {
 #include "Extra/DynamicJumpControlAPI.hpp"
 public:
-    virtual ~DynamicJumpControl();
-    virtual void initializeInternal(class Mob&, struct JumpControlDescription*);
-    virtual void tick(class JumpControlComponent&, class Mob&);
-    virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&) const;
-    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
-    virtual int /*enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&) const;
-    virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum JumpType*/);
-    virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
+    /*0*/ virtual ~DynamicJumpControl();
+    /*1*/ virtual void initializeInternal(class Mob&, struct JumpControlDescription*);
+    /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
+    /*3*/ virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&) const;
+    /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
+    /*5*/ virtual int /*enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&) const;
+    /*6*/ virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum JumpType*/);
+    /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
 };

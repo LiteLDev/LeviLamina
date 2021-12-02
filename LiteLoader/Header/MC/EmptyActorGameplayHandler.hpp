@@ -7,5 +7,5 @@
 class EmptyActorGameplayHandler {
 #include "Extra/EmptyActorGameplayHandlerAPI.hpp"
 public:
-    virtual ~EmptyActorGameplayHandler();
+    /*0*/ virtual ~EmptyActorGameplayHandler();
 };

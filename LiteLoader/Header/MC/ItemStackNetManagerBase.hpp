@@ -7,17 +7,17 @@
 class ItemStackNetManagerBase {
 #include "Extra/ItemStackNetManagerBaseAPI.hpp"
 public:
-    virtual ~ItemStackNetManagerBase();
-    virtual bool isEnabled() const;
-    virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
-    virtual bool retainSetItemStackNetIdVariant() const;
-    virtual bool allowInventoryTransactionManager() const = 0;
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void onContainerScreenClose();
-    virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum ContainerEnumName*/, class ContainerWeakRef const&);
-    virtual void unk_vfn_9();
-    virtual void _initScreen(class ItemStackNetManagerScreen&);
+    /*0*/ virtual ~ItemStackNetManagerBase();
+    /*1*/ virtual bool isEnabled() const;
+    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
+    /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
+    /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onContainerScreenClose();
+    /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum ContainerEnumName*/, class ContainerWeakRef const&);
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
 
 public:
     MCAPI bool isClientSide() const;

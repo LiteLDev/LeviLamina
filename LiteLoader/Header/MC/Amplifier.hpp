@@ -7,8 +7,8 @@
 class Amplifier {
 #include "Extra/AmplifierAPI.hpp"
 public:
-    virtual ~Amplifier();
-    virtual float getAmount(int, float) const;
-    virtual bool shouldBuff(int, int) const;
-    virtual int getTickInterval(int) const;
+    /*0*/ virtual ~Amplifier();
+    /*1*/ virtual float getAmount(int, float) const;
+    /*2*/ virtual bool shouldBuff(int, int) const;
+    /*3*/ virtual int getTickInterval(int) const;
 };

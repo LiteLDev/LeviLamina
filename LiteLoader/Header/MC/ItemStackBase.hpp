@@ -8,13 +8,13 @@
 class ItemStackBase {
 #include "Extra/ItemStackBaseAPI.hpp"
 public:
-    virtual ~ItemStackBase();
-    virtual void reinit(class Item const&, int, int)                            = 0;
-    virtual void reinit(class BlockLegacy const&, int)                          = 0;
-    virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int) = 0;
-    virtual void setNull();
-    virtual std::string toString() const;
-    virtual std::string toDebugString() const;
+    /*0*/ virtual ~ItemStackBase();
+    /*1*/ virtual void reinit(class Item const&, int, int)                            = 0;
+    /*2*/ virtual void reinit(class BlockLegacy const&, int)                          = 0;
+    /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int) = 0;
+    /*4*/ virtual void setNull();
+    /*5*/ virtual std::string toString() const;
+    /*6*/ virtual std::string toDebugString() const;
 
 public:
     MCAPI void add(int);

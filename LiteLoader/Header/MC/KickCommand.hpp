@@ -7,8 +7,8 @@
 class KickCommand {
 #include "Extra/KickCommandAPI.hpp"
 public:
-    virtual ~KickCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~KickCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

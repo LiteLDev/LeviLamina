@@ -7,10 +7,10 @@
 class StructureStart {
 #include "Extra/StructureStartAPI.hpp"
 public:
-    virtual ~StructureStart();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual bool isValid() const;
-    virtual int /*enum StructureFeatureType*/ getType() const = 0;
+    /*0*/ virtual ~StructureStart();
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const = 0;
 
 protected:
     MCAPI void calculateBoundingBox();

@@ -8,10 +8,10 @@
 class SetBlock {
 #include "Extra/SetBlockAPI.hpp"
 public:
-    virtual ~SetBlock();
-    virtual std::string const& getName() const;
-    virtual void executeAction(class RenderParams&) const;
-    virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&) const;
+    /*0*/ virtual ~SetBlock();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void executeAction(class RenderParams&) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&) const;
 
 public:
     MCAPI static std::string const NameID;

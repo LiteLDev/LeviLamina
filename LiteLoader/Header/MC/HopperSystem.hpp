@@ -7,7 +7,7 @@
 class HopperSystem {
 #include "Extra/HopperSystemAPI.hpp"
 public:
-    virtual ~HopperSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~HopperSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

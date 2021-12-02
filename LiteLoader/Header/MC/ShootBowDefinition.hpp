@@ -9,6 +9,6 @@
 class ShootBowDefinition : public BehaviorDefinition {
 #include "Extra/ShootBowDefinitionAPI.hpp"
 public:
-    virtual ~ShootBowDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~ShootBowDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

@@ -8,11 +8,11 @@
 class NBBridgeStraight : public NetherFortressPiece {
 #include "Extra/NBBridgeStraightAPI.hpp"
 public:
-    virtual ~NBBridgeStraight();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_10();
+    /*0*/ virtual ~NBBridgeStraight();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*6*/ virtual void unk_vfn_6();
+    /*10*/ virtual void unk_vfn_10();
 };

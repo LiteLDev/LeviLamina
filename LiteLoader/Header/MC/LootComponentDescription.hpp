@@ -7,9 +7,9 @@
 struct LootComponentDescription {
 #include "Extra/LootComponentDescriptionAPI.hpp"
 public:
-    virtual ~LootComponentDescription();
-    virtual std::string const& getName() const;
-    virtual void initializeComponent(class EntityContext&) const;
+    /*0*/ virtual ~LootComponentDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext&) const;
 
 public:
     MCAPI static std::string const NameID;

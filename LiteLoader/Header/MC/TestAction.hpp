@@ -8,7 +8,7 @@
 class TestAction : public IRequestAction {
 #include "Extra/TestActionAPI.hpp"
 public:
-    virtual ~TestAction();
-    virtual void execute(class ServerLevel&, class Dimension&);
-    virtual bool operator==(class IRequestAction&);
+    /*0*/ virtual ~TestAction();
+    /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
+    /*3*/ virtual bool operator==(class IRequestAction&);
 };

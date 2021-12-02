@@ -8,11 +8,11 @@
 class OwnerHurtByTargetGoal : public TargetGoal {
 #include "Extra/OwnerHurtByTargetGoalAPI.hpp"
 public:
-    virtual ~OwnerHurtByTargetGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~OwnerHurtByTargetGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual bool isTargetGoal() const;
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
 };

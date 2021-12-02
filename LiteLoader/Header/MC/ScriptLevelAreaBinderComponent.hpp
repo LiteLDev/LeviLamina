@@ -8,9 +8,9 @@
 class ScriptLevelAreaBinderComponent {
 #include "Extra/ScriptLevelAreaBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptLevelAreaBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptLevelAreaBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI class mce::UUID const& getIdentifier() const;

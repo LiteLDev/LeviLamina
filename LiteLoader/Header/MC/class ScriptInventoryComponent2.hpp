@@ -7,7 +7,7 @@
 namespace class ScriptInventoryComponent2 {
 #include "Extra/class ScriptInventoryComponent2API.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

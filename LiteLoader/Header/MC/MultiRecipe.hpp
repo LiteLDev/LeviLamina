@@ -8,15 +8,16 @@
 class MultiRecipe : public Recipe {
 #include "Extra/MultiRecipeAPI.hpp"
 public:
-    virtual ~MultiRecipe();
-    virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
-    virtual int getCraftingSize() const                                                     = 0;
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual bool matches(class CraftingContainer&, class Level&) const = 0;
-    virtual int size() const                                           = 0;
-    virtual class mce::UUID const& getId() const;
-    virtual void unk_vfn_9();
-    virtual bool isMultiRecipe() const;
+    /*0*/ virtual ~MultiRecipe();
+    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
+    /*2*/ virtual int getCraftingSize() const                                                     = 0;
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const                     = 0;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const                    = 0;
+    /*5*/ virtual bool isShapeless() const;
+    /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
+    /*7*/ virtual int size() const                                           = 0;
+    /*8*/ virtual class mce::UUID const& getId() const;
+    /*9*/ virtual class ItemPack const& getItemPack() const;
+    /*10*/ virtual bool isMultiRecipe() const;
+    /*15*/ virtual void loadResultList(class BlockPalette const&) const;
 };

@@ -9,9 +9,9 @@
 class BiomeFilterGroup : public FilterGroup {
 #include "Extra/BiomeFilterGroupAPI.hpp"
 public:
-    virtual ~BiomeFilterGroup();
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const;
-    virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*0*/ virtual ~BiomeFilterGroup();
+    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const;
+    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
 
 public:
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);

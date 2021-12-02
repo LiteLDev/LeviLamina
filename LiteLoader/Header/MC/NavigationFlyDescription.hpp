@@ -8,6 +8,6 @@
 class NavigationFlyDescription : public NavigationDescription {
 #include "Extra/NavigationFlyDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~NavigationFlyDescription();
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~NavigationFlyDescription();
 };

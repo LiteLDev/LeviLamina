@@ -7,7 +7,7 @@
 class ActorComponentFactory {
 #include "Extra/ActorComponentFactoryAPI.hpp"
 public:
-    virtual ~ActorComponentFactory();
+    /*0*/ virtual ~ActorComponentFactory();
 
 private:
     MCAPI void _initialize();

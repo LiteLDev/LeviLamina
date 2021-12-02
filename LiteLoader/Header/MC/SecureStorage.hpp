@@ -7,5 +7,5 @@
 class SecureStorage {
 #include "Extra/SecureStorageAPI.hpp"
 public:
-    virtual ~SecureStorage();
+    /*0*/ virtual ~SecureStorage();
 };

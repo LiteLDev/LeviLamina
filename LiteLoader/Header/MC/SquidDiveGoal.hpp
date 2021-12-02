@@ -7,12 +7,12 @@
 class SquidDiveGoal {
 #include "Extra/SquidDiveGoalAPI.hpp"
 public:
-    virtual ~SquidDiveGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~SquidDiveGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 };

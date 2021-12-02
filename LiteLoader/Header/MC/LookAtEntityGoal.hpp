@@ -8,7 +8,7 @@
 class LookAtEntityGoal : public LookAtActorGoal {
 #include "Extra/LookAtEntityGoalAPI.hpp"
 public:
-    virtual ~LookAtEntityGoal();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~LookAtEntityGoal();
+    /*3*/ virtual void unk_vfn_3();
+    /*5*/ virtual void stop();
 };

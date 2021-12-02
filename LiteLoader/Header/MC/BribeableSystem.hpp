@@ -7,7 +7,7 @@
 class BribeableSystem {
 #include "Extra/BribeableSystemAPI.hpp"
 public:
-    virtual ~BribeableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BribeableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

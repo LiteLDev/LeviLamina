@@ -7,5 +7,5 @@
 class ScriptEventListener {
 #include "Extra/ScriptEventListenerAPI.hpp"
 public:
-    virtual ~ScriptEventListener();
+    /*0*/ virtual ~ScriptEventListener();
 };

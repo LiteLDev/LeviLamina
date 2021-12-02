@@ -7,8 +7,8 @@
 class MusicCommand {
 #include "Extra/MusicCommandAPI.hpp"
 public:
-    virtual ~MusicCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~MusicCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -9,22 +9,22 @@
 class DirectoryPackAccessStrategy : public PackAccessStrategy {
 #include "Extra/DirectoryPackAccessStrategyAPI.hpp"
 public:
-    virtual ~DirectoryPackAccessStrategy();
-    virtual unsigned __int64 getPackSize() const;
-    virtual class ResourceLocation const& getPackLocation() const;
-    virtual std::string const& getPackName() const;
-    virtual bool isWritable() const;
-    virtual void setIsTrusted(bool);
-    virtual bool isTrusted() const;
-    virtual bool hasAsset(class Core::Path const&, bool) const;
-    virtual bool hasFolder(class Core::Path const&) const;
-    virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
-    virtual bool deleteAsset(class Core::PathBuffer<std::string> const&);
-    virtual bool writeAsset(class Core::Path const&, std::string const&);
-    virtual void forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, bool) const;
-    virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>) const;
-    virtual int /*enum PackAccessStrategyType*/ getStrategyType() const;
-    virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    virtual bool canRecurse() const;
-    virtual void unload();
+    /*0*/ virtual ~DirectoryPackAccessStrategy();
+    /*1*/ virtual unsigned __int64 getPackSize() const;
+    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
+    /*3*/ virtual std::string const& getPackName() const;
+    /*4*/ virtual bool isWritable() const;
+    /*5*/ virtual void setIsTrusted(bool);
+    /*6*/ virtual bool isTrusted() const;
+    /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
+    /*8*/ virtual bool hasFolder(class Core::Path const&) const;
+    /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
+    /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string> const&);
+    /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
+    /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void(class Core::Path const&)>, bool) const;
+    /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>) const;
+    /*14*/ virtual int /*enum PackAccessStrategyType*/ getStrategyType() const;
+    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    /*18*/ virtual bool canRecurse() const;
+    /*19*/ virtual void unload();
 };

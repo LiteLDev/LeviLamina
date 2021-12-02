@@ -7,5 +7,5 @@
 class ActorEventListener {
 #include "Extra/ActorEventListenerAPI.hpp"
 public:
-    virtual ~ActorEventListener();
+    /*0*/ virtual ~ActorEventListener();
 };

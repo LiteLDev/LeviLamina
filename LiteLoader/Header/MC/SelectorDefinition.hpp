@@ -9,6 +9,6 @@
 class SelectorDefinition : public BehaviorDefinition {
 #include "Extra/SelectorDefinitionAPI.hpp"
 public:
-    virtual ~SelectorDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~SelectorDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

@@ -8,8 +8,8 @@
 class AbsorptionMobEffect : public MobEffect {
 #include "Extra/AbsorptionMobEffectAPI.hpp"
 public:
-    virtual ~AbsorptionMobEffect();
-    virtual void applyEffects(class Actor*, int, int) const;
-    virtual void removeEffects(class Actor*);
-    virtual void unk_vfn_4();
+    /*0*/ virtual ~AbsorptionMobEffect();
+    /*1*/ virtual void applyEffects(class Actor*, int, int) const;
+    /*2*/ virtual void removeEffects(class Actor*);
+    /*4*/ virtual bool isInstantaneous() const;
 };

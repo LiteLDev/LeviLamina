@@ -7,8 +7,8 @@
 class BodyControl {
 #include "Extra/BodyControlAPI.hpp"
 public:
-    virtual ~BodyControl();
-    virtual void clientTick(class Mob&);
+    /*0*/ virtual ~BodyControl();
+    /*1*/ virtual void clientTick(class Mob&);
 
 private:
     MCAPI static float const MAX_CLAMP_ANGLE;

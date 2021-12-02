@@ -7,8 +7,8 @@
 class MeCommand {
 #include "Extra/MeCommandAPI.hpp"
 public:
-    virtual ~MeCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~MeCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

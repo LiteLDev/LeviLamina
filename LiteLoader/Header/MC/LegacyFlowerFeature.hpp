@@ -8,7 +8,7 @@
 class LegacyFlowerFeature : public Feature {
 #include "Extra/LegacyFlowerFeatureAPI.hpp"
 public:
-    virtual ~LegacyFlowerFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~LegacyFlowerFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

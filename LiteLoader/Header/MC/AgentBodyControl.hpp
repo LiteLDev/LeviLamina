@@ -7,6 +7,6 @@
 class AgentBodyControl {
 #include "Extra/AgentBodyControlAPI.hpp"
 public:
-    virtual ~AgentBodyControl();
-    virtual void clientTick(class Mob&);
+    /*0*/ virtual ~AgentBodyControl();
+    /*1*/ virtual void clientTick(class Mob&);
 };

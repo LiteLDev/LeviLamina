@@ -7,5 +7,5 @@
 class Control {
 #include "Extra/ControlAPI.hpp"
 public:
-    virtual ~Control();
+    /*0*/ virtual ~Control();
 };

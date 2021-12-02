@@ -7,7 +7,7 @@
 class FlockingSystem {
 #include "Extra/FlockingSystemAPI.hpp"
 public:
-    virtual ~FlockingSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~FlockingSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

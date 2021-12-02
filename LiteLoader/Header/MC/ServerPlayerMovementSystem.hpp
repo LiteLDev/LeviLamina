@@ -7,9 +7,9 @@
 class ServerPlayerMovementSystem {
 #include "Extra/ServerPlayerMovementSystemAPI.hpp"
 public:
-    virtual ~ServerPlayerMovementSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ServerPlayerMovementSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 public:
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void(class InventoryTransactionPacket&)> const&);

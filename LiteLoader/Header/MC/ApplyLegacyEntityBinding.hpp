@@ -8,6 +8,6 @@
 class ApplyLegacyEntityBinding {
 #include "Extra/ApplyLegacyEntityBindingAPI.hpp"
 public:
-    virtual ~ApplyLegacyEntityBinding();
-    virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
+    /*0*/ virtual ~ApplyLegacyEntityBinding();
+    /*1*/ virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
 };

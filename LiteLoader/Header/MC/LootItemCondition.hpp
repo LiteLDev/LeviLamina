@@ -8,7 +8,7 @@
 class LootItemCondition {
 #include "Extra/LootItemConditionAPI.hpp"
 public:
-    virtual ~LootItemCondition();
+    /*0*/ virtual ~LootItemCondition();
 
 public:
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);

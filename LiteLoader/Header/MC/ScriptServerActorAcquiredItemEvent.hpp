@@ -8,8 +8,8 @@
 class ScriptServerActorAcquiredItemEvent {
 #include "Extra/ScriptServerActorAcquiredItemEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorAcquiredItemEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorAcquiredItemEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setAcquiredAmount(unsigned int);

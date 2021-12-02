@@ -8,7 +8,7 @@
 class CoralHangFeature : public Feature {
 #include "Extra/CoralHangFeatureAPI.hpp"
 public:
-    virtual ~CoralHangFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~CoralHangFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

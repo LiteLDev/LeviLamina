@@ -7,8 +7,8 @@
 class PartiallyExposedBlobFeature {
 #include "Extra/PartiallyExposedBlobFeatureAPI.hpp"
 public:
-    virtual ~PartiallyExposedBlobFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~PartiallyExposedBlobFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
 private:
     MCAPI static bool isWaterOrAir(class IBlockWorldGenAPI const&, class BlockPos const&);

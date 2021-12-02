@@ -7,9 +7,9 @@
 class HealthAttributeDelegate {
 #include "Extra/HealthAttributeDelegateAPI.hpp"
 public:
-    virtual ~HealthAttributeDelegate();
-    virtual void tick();
-    virtual void unk_vfn_2();
-    virtual bool change(float, float, struct AttributeBuffInfo);
-    virtual float getBuffValue(class AttributeBuff const&) const;
+    /*0*/ virtual ~HealthAttributeDelegate();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
+    /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
 };

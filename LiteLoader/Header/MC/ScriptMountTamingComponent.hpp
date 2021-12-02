@@ -9,7 +9,7 @@
 class ScriptMountTamingComponent : public ScriptActorComponent {
 #include "Extra/ScriptMountTamingComponentAPI.hpp"
 public:
-    virtual ~ScriptMountTamingComponent();
+    /*0*/ virtual ~ScriptMountTamingComponent();
 
 public:
     MCAPI class Scripting::Result<void> setTamed(bool) const;

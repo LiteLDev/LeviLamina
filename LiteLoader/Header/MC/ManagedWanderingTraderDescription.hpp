@@ -9,7 +9,7 @@
 class ManagedWanderingTraderDescription : public Description {
 #include "Extra/ManagedWanderingTraderDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~ManagedWanderingTraderDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~ManagedWanderingTraderDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

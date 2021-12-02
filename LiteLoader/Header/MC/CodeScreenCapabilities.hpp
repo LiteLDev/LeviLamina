@@ -7,5 +7,5 @@
 struct CodeScreenCapabilities : public TypedScreenCapabilities<struct CodeScreenCapabilities> {
 #include "Extra/CodeScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~CodeScreenCapabilities();
+    /*0*/ virtual ~CodeScreenCapabilities();
 };

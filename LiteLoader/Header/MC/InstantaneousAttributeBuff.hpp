@@ -8,7 +8,7 @@
 class InstantaneousAttributeBuff : public AttributeBuff {
 #include "Extra/InstantaneousAttributeBuffAPI.hpp"
 public:
-    virtual ~InstantaneousAttributeBuff();
-    virtual bool isInstantaneous() const;
-    virtual bool isSerializable() const;
+    /*0*/ virtual ~InstantaneousAttributeBuff();
+    /*1*/ virtual bool isInstantaneous() const;
+    /*2*/ virtual bool isSerializable() const;
 };

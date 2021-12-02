@@ -7,7 +7,7 @@
 namespace class ScriptFlyingSpeedComponent {
 #include "Extra/class ScriptFlyingSpeedComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

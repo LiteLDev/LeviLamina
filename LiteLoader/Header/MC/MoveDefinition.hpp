@@ -9,6 +9,6 @@
 class MoveDefinition : public BehaviorDefinition {
 #include "Extra/MoveDefinitionAPI.hpp"
 public:
-    virtual ~MoveDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~MoveDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

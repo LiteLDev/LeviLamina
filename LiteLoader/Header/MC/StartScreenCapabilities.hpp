@@ -7,5 +7,5 @@
 struct StartScreenCapabilities : public TypedScreenCapabilities<struct StartScreenCapabilities> {
 #include "Extra/StartScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~StartScreenCapabilities();
+    /*0*/ virtual ~StartScreenCapabilities();
 };

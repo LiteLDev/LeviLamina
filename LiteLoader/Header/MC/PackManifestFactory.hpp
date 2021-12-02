@@ -8,8 +8,8 @@
 class PackManifestFactory {
 #include "Extra/PackManifestFactoryAPI.hpp"
 public:
-    virtual ~PackManifestFactory();
-    virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
+    /*0*/ virtual ~PackManifestFactory();
+    /*1*/ virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
 
 public:
     MCAPI static class Core::PathBuffer<std::string> const MANIFEST_LOG_PATH;

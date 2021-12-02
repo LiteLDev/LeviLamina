@@ -8,11 +8,11 @@
 class LootItemFunction {
 #include "Extra/LootItemFunctionAPI.hpp"
 public:
-    virtual ~LootItemFunction();
-    virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
-    virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
-    virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
-    virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    /*0*/ virtual ~LootItemFunction();
+    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
+    /*2*/ virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
+    /*4*/ virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
 
 public:
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);

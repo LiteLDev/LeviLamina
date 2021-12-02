@@ -8,10 +8,10 @@
 class EntityServerPacket : public Packet {
 #include "Extra/EntityServerPacketAPI.hpp"
 public:
-    virtual ~EntityServerPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId() const = 0;
-    virtual std::string getName() const                   = 0;
-    virtual void write(class BinaryStream&) const;
-    virtual void unk_vfn_5();
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~EntityServerPacket();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const = 0;
+    /*2*/ virtual std::string getName() const                   = 0;
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*5*/ virtual bool disallowBatching() const;
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 };

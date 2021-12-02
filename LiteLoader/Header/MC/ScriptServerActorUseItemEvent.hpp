@@ -8,8 +8,8 @@
 class ScriptServerActorUseItemEvent {
 #include "Extra/ScriptServerActorUseItemEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorUseItemEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorUseItemEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

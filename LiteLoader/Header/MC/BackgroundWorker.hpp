@@ -7,9 +7,9 @@
 class BackgroundWorker {
 #include "Extra/BackgroundWorkerAPI.hpp"
 public:
-    virtual ~BackgroundWorker();
-    virtual bool isAsync() const;
-    virtual bool canTaskRunAgain() const;
+    /*0*/ virtual ~BackgroundWorker();
+    /*1*/ virtual bool isAsync() const;
+    /*2*/ virtual bool canTaskRunAgain() const;
 
 public:
     MCAPI unsigned __int64 getApproximateTaskCount() const;

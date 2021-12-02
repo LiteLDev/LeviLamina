@@ -8,7 +8,7 @@
 class SlimeKeepOnJumpingDefinition {
 #include "Extra/SlimeKeepOnJumpingDefinitionAPI.hpp"
 public:
-    virtual ~SlimeKeepOnJumpingDefinition();
+    /*0*/ virtual ~SlimeKeepOnJumpingDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class SlimeKeepOnJumpingGoal&);

@@ -8,13 +8,13 @@
 class DefendVillageTargetGoal : public TargetGoal {
 #include "Extra/DefendVillageTargetGoalAPI.hpp"
 public:
-    virtual ~DefendVillageTargetGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~DefendVillageTargetGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool isTargetGoal() const;
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
 };

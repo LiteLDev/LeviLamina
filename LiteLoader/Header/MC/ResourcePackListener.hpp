@@ -7,5 +7,5 @@
 class ResourcePackListener {
 #include "Extra/ResourcePackListenerAPI.hpp"
 public:
-    virtual ~ResourcePackListener();
+    /*0*/ virtual ~ResourcePackListener();
 };

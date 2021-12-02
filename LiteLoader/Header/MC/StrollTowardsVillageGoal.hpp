@@ -8,12 +8,12 @@
 class StrollTowardsVillageGoal : public MoveToVillageGoal {
 #include "Extra/StrollTowardsVillageGoalAPI.hpp"
 public:
-    virtual ~StrollTowardsVillageGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_16();
-    virtual class BlockPos _selectRandomPosInVillage();
+    /*0*/ virtual ~StrollTowardsVillageGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual class BlockPos _selectRandomPosInVillage();
 };

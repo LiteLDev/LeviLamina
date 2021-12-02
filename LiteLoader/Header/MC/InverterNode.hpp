@@ -7,7 +7,7 @@
 class InverterNode {
 #include "Extra/InverterNodeAPI.hpp"
 public:
-    virtual ~InverterNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~InverterNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

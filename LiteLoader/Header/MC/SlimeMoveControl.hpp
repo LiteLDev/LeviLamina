@@ -8,6 +8,6 @@
 class SlimeMoveControl : public MoveControl {
 #include "Extra/SlimeMoveControlAPI.hpp"
 public:
-    virtual ~SlimeMoveControl();
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~SlimeMoveControl();
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 };

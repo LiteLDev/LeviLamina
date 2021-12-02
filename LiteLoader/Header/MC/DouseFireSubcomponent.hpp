@@ -7,11 +7,11 @@
 class DouseFireSubcomponent {
 #include "Extra/DouseFireSubcomponentAPI.hpp"
 public:
-    virtual ~DouseFireSubcomponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    virtual char const* getName();
+    /*0*/ virtual ~DouseFireSubcomponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 
 public:
     MCAPI void douseFire(class BlockSource&, class BlockPos const&);

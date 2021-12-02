@@ -7,7 +7,7 @@
 class ItemStackNetManagerScreen {
 #include "Extra/ItemStackNetManagerScreenAPI.hpp"
 public:
-    virtual ~ItemStackNetManagerScreen();
+    /*0*/ virtual ~ItemStackNetManagerScreen();
 
 public:
     MCAPI class EntityContext& getEntity();

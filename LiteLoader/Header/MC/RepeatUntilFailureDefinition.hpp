@@ -9,6 +9,6 @@
 class RepeatUntilFailureDefinition : public BehaviorDefinition {
 #include "Extra/RepeatUntilFailureDefinitionAPI.hpp"
 public:
-    virtual ~RepeatUntilFailureDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~RepeatUntilFailureDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

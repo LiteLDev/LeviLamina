@@ -7,7 +7,7 @@
 class NetworkDebugManager {
 #include "Extra/NetworkDebugManagerAPI.hpp"
 public:
-    virtual ~NetworkDebugManager();
+    /*0*/ virtual ~NetworkDebugManager();
 
 public:
     MCAPI static int const MAX_NUMBER_OF_SAMPLES;

@@ -7,5 +7,5 @@
 class LevelDbFileLock {
 #include "Extra/LevelDbFileLockAPI.hpp"
 public:
-    virtual ~LevelDbFileLock();
+    /*0*/ virtual ~LevelDbFileLock();
 };

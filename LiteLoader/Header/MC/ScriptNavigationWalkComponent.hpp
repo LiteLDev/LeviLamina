@@ -9,7 +9,7 @@
 class ScriptNavigationWalkComponent : public NavigationScriptActorComponent {
 #include "Extra/ScriptNavigationWalkComponentAPI.hpp"
 public:
-    virtual ~ScriptNavigationWalkComponent();
+    /*0*/ virtual ~ScriptNavigationWalkComponent();
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationWalkComponent> bind(struct Scripting::Version);

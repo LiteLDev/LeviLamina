@@ -7,5 +7,5 @@
 class DragonBaseGoal {
 #include "Extra/DragonBaseGoalAPI.hpp"
 public:
-    virtual ~DragonBaseGoal();
+    /*0*/ virtual ~DragonBaseGoal();
 };

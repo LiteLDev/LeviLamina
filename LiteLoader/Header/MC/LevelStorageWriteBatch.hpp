@@ -7,13 +7,13 @@
 class LevelStorageWriteBatch {
 #include "Extra/LevelStorageWriteBatchAPI.hpp"
 public:
-    virtual ~LevelStorageWriteBatch();
-    virtual void putKey(std::string const&, class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/);
-    virtual void putKey(std::string const&, std::string const&, int /*enum DBHelpers::Category*/);
-    virtual void putKey(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
-    virtual void putKey(std::string const&, class std::shared_ptr<std::string>, int /*enum DBHelpers::Category*/);
-    virtual void deleteKey(std::string const&, int /*enum DBHelpers::Category*/);
-    virtual void flush(class LevelStorage&);
+    /*0*/ virtual ~LevelStorageWriteBatch();
+    /*1*/ virtual void putKey(std::string const&, class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/);
+    /*2*/ virtual void putKey(std::string const&, std::string const&, int /*enum DBHelpers::Category*/);
+    /*3*/ virtual void putKey(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
+    /*4*/ virtual void putKey(std::string const&, class std::shared_ptr<std::string>, int /*enum DBHelpers::Category*/);
+    /*5*/ virtual void deleteKey(std::string const&, int /*enum DBHelpers::Category*/);
+    /*6*/ virtual void flush(class LevelStorage&);
 
 public:
     MCAPI void addFlushCallback(class std::function<void(void)>);

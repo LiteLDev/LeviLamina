@@ -7,5 +7,5 @@
 class CraftingContainerScreenValidator {
 #include "Extra/CraftingContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~CraftingContainerScreenValidator();
+    /*0*/ virtual ~CraftingContainerScreenValidator();
 };

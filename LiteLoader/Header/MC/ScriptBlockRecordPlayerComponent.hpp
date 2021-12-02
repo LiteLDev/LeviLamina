@@ -9,7 +9,7 @@
 class ScriptBlockRecordPlayerComponent : public ScriptObject {
 #include "Extra/ScriptBlockRecordPlayerComponentAPI.hpp"
 public:
-    virtual ~ScriptBlockRecordPlayerComponent();
+    /*0*/ virtual ~ScriptBlockRecordPlayerComponent();
 
 public:
     MCAPI class ScriptBlockRecordPlayerComponent& operator=(class ScriptBlockRecordPlayerComponent&&);

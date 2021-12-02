@@ -7,5 +7,5 @@
 class NullSecureStorage {
 #include "Extra/NullSecureStorageAPI.hpp"
 public:
-    virtual ~NullSecureStorage();
+    /*0*/ virtual ~NullSecureStorage();
 };

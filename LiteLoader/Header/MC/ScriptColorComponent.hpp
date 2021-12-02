@@ -9,9 +9,9 @@
 class ScriptColorComponent : public ScriptActorComponent {
 #include "Extra/ScriptColorComponentAPI.hpp"
 public:
-    virtual ~ScriptColorComponent();
-    virtual class Scripting::Result<int> getValue() const;
-    virtual class Scripting::Result<void> setValue(int const&) const;
+    /*0*/ virtual ~ScriptColorComponent();
+    /*4*/ virtual class Scripting::Result<int> getValue() const;
+    /*5*/ virtual class Scripting::Result<void> setValue(int const&) const;
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptColorComponent> bind(struct Scripting::Version);

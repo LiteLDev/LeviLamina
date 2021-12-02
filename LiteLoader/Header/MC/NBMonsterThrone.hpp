@@ -8,11 +8,11 @@
 class NBMonsterThrone : public NetherFortressPiece {
 #include "Extra/NBMonsterThroneAPI.hpp"
 public:
-    virtual ~NBMonsterThrone();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void unk_vfn_4();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_10();
+    /*0*/ virtual ~NBMonsterThrone();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*6*/ virtual void unk_vfn_6();
+    /*10*/ virtual void unk_vfn_10();
 };

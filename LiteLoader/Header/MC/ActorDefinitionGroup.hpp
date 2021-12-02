@@ -9,7 +9,7 @@
 class ActorDefinitionGroup {
 #include "Extra/ActorDefinitionGroupAPI.hpp"
 public:
-    virtual ~ActorDefinitionGroup();
+    /*0*/ virtual ~ActorDefinitionGroup();
 
 public:
     MCAPI std::vector<std::string> buildActorEventList() const;

@@ -7,7 +7,7 @@
 class DespawnSystem {
 #include "Extra/DespawnSystemAPI.hpp"
 public:
-    virtual ~DespawnSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~DespawnSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

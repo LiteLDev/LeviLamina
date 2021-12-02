@@ -7,7 +7,7 @@
 class SpawnActorSystem {
 #include "Extra/SpawnActorSystemAPI.hpp"
 public:
-    virtual ~SpawnActorSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~SpawnActorSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

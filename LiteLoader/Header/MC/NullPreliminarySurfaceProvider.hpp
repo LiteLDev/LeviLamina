@@ -7,6 +7,6 @@
 class NullPreliminarySurfaceProvider {
 #include "Extra/NullPreliminarySurfaceProviderAPI.hpp"
 public:
-    virtual ~NullPreliminarySurfaceProvider();
-    virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    /*0*/ virtual ~NullPreliminarySurfaceProvider();
+    /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 };

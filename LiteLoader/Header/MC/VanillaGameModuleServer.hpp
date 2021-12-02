@@ -7,15 +7,15 @@
 class VanillaGameModuleServer {
 #include "Extra/VanillaGameModuleServerAPI.hpp"
 public:
-    virtual ~VanillaGameModuleServer();
-    virtual void init(class ServerInstance&, class Level&);
-    virtual void initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
-    virtual void configureLevel(class Level&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void setupCommands(class CommandRegistry&);
-    virtual void configureServerNetworkHandler(class ServerInstance&, class ServerNetworkHandler&);
+    /*0*/ virtual ~VanillaGameModuleServer();
+    /*1*/ virtual void init(class ServerInstance&, class Level&);
+    /*2*/ virtual void initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
+    /*3*/ virtual void configureLevel(class Level&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void setupCommands(class CommandRegistry&);
+    /*8*/ virtual void configureServerNetworkHandler(class ServerInstance&, class ServerNetworkHandler&);
 
 private:
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider&, struct SpawnSettings const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);

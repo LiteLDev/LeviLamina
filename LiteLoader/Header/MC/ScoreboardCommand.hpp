@@ -7,8 +7,8 @@
 class ScoreboardCommand {
 #include "Extra/ScoreboardCommandAPI.hpp"
 public:
-    virtual ~ScoreboardCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ScoreboardCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&);

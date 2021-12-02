@@ -9,7 +9,7 @@
 class ScriptMovementAmphibiousComponent : public ScriptActorComponent {
 #include "Extra/ScriptMovementAmphibiousComponentAPI.hpp"
 public:
-    virtual ~ScriptMovementAmphibiousComponent();
+    /*0*/ virtual ~ScriptMovementAmphibiousComponent();
 
 public:
     MCAPI class Scripting::Result<float> getMaxTurn() const;

@@ -8,7 +8,7 @@
 class VinesFeature : public Feature {
 #include "Extra/VinesFeatureAPI.hpp"
 public:
-    virtual ~VinesFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~VinesFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

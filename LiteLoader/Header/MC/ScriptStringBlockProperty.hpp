@@ -8,7 +8,7 @@
 class ScriptStringBlockProperty {
 #include "Extra/ScriptStringBlockPropertyAPI.hpp"
 public:
-    virtual ~ScriptStringBlockProperty();
+    /*0*/ virtual ~ScriptStringBlockProperty();
 
 public:
     MCAPI class Scripting::Result<std::string> getState() const;

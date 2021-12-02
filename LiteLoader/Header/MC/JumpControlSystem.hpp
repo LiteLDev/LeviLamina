@@ -7,7 +7,7 @@
 class JumpControlSystem {
 #include "Extra/JumpControlSystemAPI.hpp"
 public:
-    virtual ~JumpControlSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~JumpControlSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

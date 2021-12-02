@@ -8,8 +8,8 @@
 class AcaciaTreeTrunk {
 #include "Extra/AcaciaTreeTrunkAPI.hpp"
 public:
-    virtual ~AcaciaTreeTrunk();
-    virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
+    /*0*/ virtual ~AcaciaTreeTrunk();
+    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
 
 private:
     MCAPI void _placeLeaningBranches(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, class Random&, class RenderParams&, int, int, int, struct TreeHelper::TreeParams const&) const;

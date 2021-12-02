@@ -8,5 +8,5 @@
 class ConsumeItemDefinition : public BehaviorDefinition {
 #include "Extra/ConsumeItemDefinitionAPI.hpp"
 public:
-    virtual ~ConsumeItemDefinition();
+    /*0*/ virtual ~ConsumeItemDefinition();
 };

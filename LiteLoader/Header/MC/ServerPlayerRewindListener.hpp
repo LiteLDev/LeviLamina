@@ -7,15 +7,15 @@
 class ServerPlayerRewindListener {
 #include "Extra/ServerPlayerRewindListenerAPI.hpp"
 public:
-    virtual ~ServerPlayerRewindListener();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual int /*enum EventResult*/ onPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
-    virtual int /*enum EventResult*/ onPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
+    /*0*/ virtual ~ServerPlayerRewindListener();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual int /*enum EventResult*/ onPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
+    /*8*/ virtual int /*enum EventResult*/ onPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
 
 public:
     MCAPI static void _onPlayerAuthInputReceived(unsigned __int64, struct PlayerMovementSettings const&, class EntityContext&, struct IActorMovementProxy&);

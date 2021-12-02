@@ -7,5 +7,5 @@
 class ScriptActorGameplayHandler {
 #include "Extra/ScriptActorGameplayHandlerAPI.hpp"
 public:
-    virtual ~ScriptActorGameplayHandler();
+    /*0*/ virtual ~ScriptActorGameplayHandler();
 };

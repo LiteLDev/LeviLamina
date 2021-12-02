@@ -8,12 +8,12 @@
 class FoodItemComponentLegacy {
 #include "Extra/FoodItemComponentLegacyAPI.hpp"
 public:
-    virtual ~FoodItemComponentLegacy();
-    virtual int getNutrition() const;
-    virtual float getSaturationModifier() const;
-    virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
-    virtual bool use(class ItemStack&, class Player&);
-    virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
+    /*0*/ virtual ~FoodItemComponentLegacy();
+    /*1*/ virtual int getNutrition() const;
+    /*2*/ virtual float getSaturationModifier() const;
+    /*3*/ virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
+    /*4*/ virtual bool use(class ItemStack&, class Player&);
+    /*5*/ virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
 
 public:
     MCAPI bool init(class Json::Value&, class SemVersion const&);

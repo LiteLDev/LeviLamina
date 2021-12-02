@@ -7,5 +7,5 @@
 class Connector {
 #include "Extra/ConnectorAPI.hpp"
 public:
-    virtual ~Connector();
+    /*0*/ virtual ~Connector();
 };

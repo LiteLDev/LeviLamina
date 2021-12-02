@@ -7,6 +7,6 @@
 class SmoothStoneSelector {
 #include "Extra/SmoothStoneSelectorAPI.hpp"
 public:
-    virtual ~SmoothStoneSelector();
-    virtual class Block const& next(class Random&, int, int, int, bool) const;
+    /*0*/ virtual ~SmoothStoneSelector();
+    /*1*/ virtual class Block const& next(class Random&, int, int, int, bool) const;
 };

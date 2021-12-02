@@ -8,6 +8,6 @@
 class AmphibiousMoveControl : public GenericMoveControl {
 #include "Extra/AmphibiousMoveControlAPI.hpp"
 public:
-    virtual ~AmphibiousMoveControl();
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~AmphibiousMoveControl();
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 };

@@ -8,13 +8,13 @@
 class MineshaftCrossing : public MineshaftPiece {
 #include "Extra/MineshaftCrossingAPI.hpp"
 public:
-    virtual ~MineshaftCrossing();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual int getWorldZ(int, int);
+    /*0*/ virtual ~MineshaftCrossing();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    /*12*/ virtual int getWorldZ(int, int);
 
 public:
     MCAPI void _placeSupportPillar(class BlockSource&, class BoundingBox const&, int, int, int, int);

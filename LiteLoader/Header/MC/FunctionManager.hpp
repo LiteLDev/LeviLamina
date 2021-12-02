@@ -8,7 +8,7 @@
 class FunctionManager {
 #include "Extra/FunctionManagerAPI.hpp"
 public:
-    virtual ~FunctionManager();
+    /*0*/ virtual ~FunctionManager();
 
 public:
     MCAPI int execute(class FunctionEntry&, class CommandOrigin const&);

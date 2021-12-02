@@ -8,8 +8,8 @@
 class ItemStackRequestActionDestroy : public ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionDestroyAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionDestroy();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~ItemStackRequestActionDestroy();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
 };

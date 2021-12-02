@@ -7,7 +7,7 @@
 class ActorLimitedLifetimeTickSystem {
 #include "Extra/ActorLimitedLifetimeTickSystemAPI.hpp"
 public:
-    virtual ~ActorLimitedLifetimeTickSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ActorLimitedLifetimeTickSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

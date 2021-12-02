@@ -9,10 +9,10 @@
 class FilterGroup {
 #include "Extra/FilterGroupAPI.hpp"
 public:
-    virtual ~FilterGroup();
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const = 0;
-    virtual bool _setupContext(class FilterTest const&, struct FilterContext&) const;
-    virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*0*/ virtual ~FilterGroup();
+    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const = 0;
+    /*2*/ virtual bool _setupContext(class FilterTest const&, struct FilterContext&) const;
+    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
 
 public:
     MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);

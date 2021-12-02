@@ -7,10 +7,10 @@
 class ItemStackRequestAction {
 #include "Extra/ItemStackRequestActionAPI.hpp"
 public:
-    virtual ~ItemStackRequestAction();
-    virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-    virtual int getFilteredStringIndex() const;
-    virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+    /*0*/ virtual ~ItemStackRequestAction();
+    /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+    /*2*/ virtual int getFilteredStringIndex() const;
+    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
 
 public:
     MCAPI enum ItemStackRequestActionType getActionType() const;

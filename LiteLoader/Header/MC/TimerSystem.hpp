@@ -7,7 +7,7 @@
 class TimerSystem {
 #include "Extra/TimerSystemAPI.hpp"
 public:
-    virtual ~TimerSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~TimerSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

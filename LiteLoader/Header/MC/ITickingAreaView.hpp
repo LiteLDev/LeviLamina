@@ -7,5 +7,5 @@
 class ITickingAreaView {
 #include "Extra/ITickingAreaViewAPI.hpp"
 public:
-    virtual ~ITickingAreaView();
+    /*0*/ virtual ~ITickingAreaView();
 };

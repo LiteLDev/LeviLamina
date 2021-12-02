@@ -8,7 +8,7 @@
 class ScriptMovementFlyComponentFactory {
 #include "Extra/ScriptMovementFlyComponentFactoryAPI.hpp"
 public:
-    virtual ~ScriptMovementFlyComponentFactory();
-    virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
-    virtual bool hasComponent(class WeakEntityRef) const;
+    /*0*/ virtual ~ScriptMovementFlyComponentFactory();
+    /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
+    /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
 };

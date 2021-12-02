@@ -7,7 +7,7 @@
 class MoveTowardsRestrictionDefinition {
 #include "Extra/MoveTowardsRestrictionDefinitionAPI.hpp"
 public:
-    virtual ~MoveTowardsRestrictionDefinition();
+    /*0*/ virtual ~MoveTowardsRestrictionDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class MoveTowardsRestrictionGoal&);

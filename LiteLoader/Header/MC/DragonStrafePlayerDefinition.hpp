@@ -8,7 +8,7 @@
 class DragonStrafePlayerDefinition {
 #include "Extra/DragonStrafePlayerDefinitionAPI.hpp"
 public:
-    virtual ~DragonStrafePlayerDefinition();
+    /*0*/ virtual ~DragonStrafePlayerDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class DragonStrafePlayerGoal&);

@@ -7,8 +7,8 @@
 class BastionStart {
 #include "Extra/BastionStartAPI.hpp"
 public:
-    virtual ~BastionStart();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual bool isValid() const;
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~BastionStart();
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 };

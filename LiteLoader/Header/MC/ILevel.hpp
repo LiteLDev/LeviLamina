@@ -7,5 +7,5 @@
 class ILevel {
 #include "Extra/ILevelAPI.hpp"
 public:
-    virtual ~ILevel();
+    /*0*/ virtual ~ILevel();
 };

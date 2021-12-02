@@ -9,11 +9,11 @@
 class ScriptActor : public ScriptObject {
 #include "Extra/ScriptActorAPI.hpp"
 public:
-    virtual ~ScriptActor();
-    virtual class Scripting::Result<std::string> getNameTag() const;
-    virtual class Scripting::Result<void> setNameTag(std::string const&) const;
-    virtual class Scripting::Result<bool> getSneaking() const;
-    virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*0*/ virtual ~ScriptActor();
+    /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
+    /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
+    /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
+    /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 
 public:
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const&, int, int);

@@ -8,7 +8,7 @@
 class EventResponseFactory {
 #include "Extra/EventResponseFactoryAPI.hpp"
 public:
-    virtual ~EventResponseFactory();
+    /*0*/ virtual ~EventResponseFactory();
 
 public:
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>> const& getSchema() const;

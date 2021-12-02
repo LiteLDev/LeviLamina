@@ -7,7 +7,7 @@
 class ActorEventCoordinator {
 #include "Extra/ActorEventCoordinatorAPI.hpp"
 public:
-    virtual ~ActorEventCoordinator();
+    /*0*/ virtual ~ActorEventCoordinator();
 
 public:
     MCAPI class ActorGameplayHandler& getActorGameplayHandler();

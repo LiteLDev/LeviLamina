@@ -8,32 +8,32 @@
 class JsonLoader {
 #include "Extra/JsonLoaderAPI.hpp"
 public:
-    virtual ~JsonLoader();
-    virtual bool isBool() const;
-    virtual bool isInt() const;
-    virtual bool isString() const;
-    virtual void unk_vfn_4();
-    virtual bool isArray() const;
-    virtual bool doSerialize(bool&);
-    virtual bool doSerialize(signed char&);
-    virtual bool doSerialize(unsigned char&);
-    virtual bool doSerialize(short&);
-    virtual bool doSerialize(unsigned short&);
-    virtual bool doSerialize(int&);
-    virtual bool doSerialize(unsigned int&);
-    virtual bool doSerialize(__int64&);
-    virtual bool doSerialize(unsigned __int64&);
-    virtual bool doSerialize(float&);
-    virtual bool doSerialize(double&);
-    virtual bool doSerialize(std::string&);
-    virtual bool doBeginMember(char const*, bool);
-    virtual bool doBeginMember(unsigned __int64, std::string&);
-    virtual void unk_vfn_20();
-    virtual bool doBeginArray(unsigned __int64&);
-    virtual bool doBeginArrayItem(unsigned __int64);
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_24();
-    virtual bool doBeginObject(unsigned __int64&);
+    /*0*/ virtual ~JsonLoader();
+    /*1*/ virtual bool isBool() const;
+    /*2*/ virtual bool isInt() const;
+    /*3*/ virtual bool isString() const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual bool isArray() const;
+    /*6*/ virtual bool doSerialize(bool&);
+    /*7*/ virtual bool doSerialize(signed char&);
+    /*8*/ virtual bool doSerialize(unsigned char&);
+    /*9*/ virtual bool doSerialize(short&);
+    /*10*/ virtual bool doSerialize(unsigned short&);
+    /*11*/ virtual bool doSerialize(int&);
+    /*12*/ virtual bool doSerialize(unsigned int&);
+    /*13*/ virtual bool doSerialize(__int64&);
+    /*14*/ virtual bool doSerialize(unsigned __int64&);
+    /*15*/ virtual bool doSerialize(float&);
+    /*16*/ virtual bool doSerialize(double&);
+    /*17*/ virtual bool doSerialize(std::string&);
+    /*18*/ virtual bool doBeginMember(char const*, bool);
+    /*19*/ virtual bool doBeginMember(unsigned __int64, std::string&);
+    /*20*/ virtual void unk_vfn_20();
+    /*21*/ virtual bool doBeginArray(unsigned __int64&);
+    /*22*/ virtual bool doBeginArrayItem(unsigned __int64);
+    /*23*/ virtual void unk_vfn_23();
+    /*24*/ virtual void unk_vfn_24();
+    /*25*/ virtual bool doBeginObject(unsigned __int64&);
 
 private:
     MCAPI void _loadJson(std::string const&);

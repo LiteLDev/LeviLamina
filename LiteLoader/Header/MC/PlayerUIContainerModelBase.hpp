@@ -8,24 +8,24 @@
 class PlayerUIContainerModelBase : public ContainerModel {
 #include "Extra/PlayerUIContainerModelBaseAPI.hpp"
 public:
-    virtual void containerContentChanged(int);
-    virtual ~PlayerUIContainerModelBase();
-    virtual void postInit();
-    virtual void releaseResources();
-    virtual void unk_vfn_6();
-    virtual class ContainerWeakRef getContainerWeakRef() const;
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual bool isValid();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
-    virtual class Container* _getContainer() const;
-    virtual int _getContainerOffset() const;
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    /*0*/ virtual void containerContentChanged(int);
+    /*1*/ virtual ~PlayerUIContainerModelBase();
+    /*2*/ virtual void postInit();
+    /*3*/ virtual void releaseResources();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
+    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
+    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*12*/ virtual void unk_vfn_12();
+    /*14*/ virtual bool isValid();
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual void unk_vfn_16();
+    /*17*/ virtual void unk_vfn_17();
+    /*18*/ virtual std::string const& getItemGroupName(int) const;
+    /*19*/ virtual void unk_vfn_19();
+    /*20*/ virtual class Container* _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
+    /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
 protected:
     MCAPI void _refreshContainer(bool);

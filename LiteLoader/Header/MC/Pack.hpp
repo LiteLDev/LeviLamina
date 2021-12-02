@@ -8,7 +8,7 @@
 class Pack {
 #include "Extra/PackAPI.hpp"
 public:
-    virtual ~Pack();
+    /*0*/ virtual ~Pack();
 
 public:
     MCAPI class PackManifest const& getManifest() const;

@@ -7,7 +7,7 @@
 class InsomniaSystem {
 #include "Extra/InsomniaSystemAPI.hpp"
 public:
-    virtual ~InsomniaSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~InsomniaSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

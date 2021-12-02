@@ -7,7 +7,7 @@
 namespace BiomeIdCompatibility {
 #include "Extra/BiomeIdCompatibilityAPI.hpp"
 
-MCAPI extern unsigned int const MAX_CUSTOM_BIOMES;
+MCAPI unsigned int const MAX_CUSTOM_BIOMES;
 MCAPI unsigned int adjustForReservedRanges(unsigned int, std::string const&);
 MCAPI bool isReserved(unsigned int);
 

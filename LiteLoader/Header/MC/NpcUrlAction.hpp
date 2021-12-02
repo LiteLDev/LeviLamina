@@ -8,6 +8,6 @@
 class NpcUrlAction {
 #include "Extra/NpcUrlActionAPI.hpp"
 public:
-    virtual ~NpcUrlAction();
-    virtual class Json::Value toJson();
+    /*0*/ virtual ~NpcUrlAction();
+    /*1*/ virtual class Json::Value toJson();
 };

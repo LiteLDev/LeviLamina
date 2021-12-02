@@ -7,7 +7,7 @@
 class RaidBossSystem {
 #include "Extra/RaidBossSystemAPI.hpp"
 public:
-    virtual ~RaidBossSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~RaidBossSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

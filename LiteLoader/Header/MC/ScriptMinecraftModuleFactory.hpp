@@ -8,7 +8,7 @@
 class ScriptMinecraftModuleFactory {
 #include "Extra/ScriptMinecraftModuleFactoryAPI.hpp"
 public:
-    virtual ~ScriptMinecraftModuleFactory();
+    /*0*/ virtual ~ScriptMinecraftModuleFactory();
 
 public:
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory>>>>& getActorComponentFactoriesV1();

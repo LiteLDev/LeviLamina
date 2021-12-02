@@ -7,7 +7,7 @@
 struct ChunkPerformanceData {
 #include "Extra/ChunkPerformanceDataAPI.hpp"
 public:
-    virtual ~ChunkPerformanceData();
+    /*0*/ virtual ~ChunkPerformanceData();
 
 public:
     MCAPI void recordLoadedChunk(class LevelChunk const&);

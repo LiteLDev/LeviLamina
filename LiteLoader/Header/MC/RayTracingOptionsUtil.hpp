@@ -8,6 +8,6 @@
 namespace RayTracingOptionsUtil {
 #include "Extra/RayTracingOptionsUtilAPI.hpp"
 
-MCAPI extern struct PackManifest::CapabilityRegisterer rayTracingCapabilityRegister;
+MCAPI struct PackManifest::CapabilityRegisterer rayTracingCapabilityRegister;
 
 } // namespace RayTracingOptionsUtil

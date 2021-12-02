@@ -7,7 +7,7 @@
 namespace class ScriptMovementFlyComponent {
 #include "Extra/class ScriptMovementFlyComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

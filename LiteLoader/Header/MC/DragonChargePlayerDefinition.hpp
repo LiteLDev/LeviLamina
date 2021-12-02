@@ -8,7 +8,7 @@
 class DragonChargePlayerDefinition {
 #include "Extra/DragonChargePlayerDefinitionAPI.hpp"
 public:
-    virtual ~DragonChargePlayerDefinition();
+    /*0*/ virtual ~DragonChargePlayerDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class DragonChargePlayerGoal&);

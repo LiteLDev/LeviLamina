@@ -7,9 +7,9 @@
 class NpcI18nObserver {
 #include "Extra/NpcI18nObserverAPI.hpp"
 public:
-    virtual ~NpcI18nObserver();
-    virtual void onLanguageChanged(std::string const&, bool);
-    virtual void onLanguageChanged(std::string const&, bool);
+    /*0*/ virtual ~NpcI18nObserver();
+    /*1*/ virtual void onLanguageChanged(std::string const&, bool);
+    /*2*/ virtual void onLanguageChanged(std::string const&, bool);
 
 private:
     MCAPI void _loadNpcData();

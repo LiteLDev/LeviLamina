@@ -8,7 +8,7 @@
 class RegionFile {
 #include "Extra/RegionFileAPI.hpp"
 public:
-    virtual ~RegionFile();
+    /*0*/ virtual ~RegionFile();
 
 public:
     MCAPI bool open();

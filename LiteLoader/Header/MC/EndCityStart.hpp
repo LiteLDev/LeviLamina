@@ -8,15 +8,15 @@
 class EndCityStart : public TemplateStructurePiece {
 #include "Extra/EndCityStartAPI.hpp"
 public:
-    virtual ~EndCityStart();
-    virtual bool isValid() const;
-    virtual int /*enum StructurePieceType*/ getType() const;
-    virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual int getWorldX(int, int);
-    virtual int getWorldZ(int, int);
-    virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    virtual void unk_vfn_14();
+    /*0*/ virtual ~EndCityStart();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructurePieceType*/ getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    /*7*/ virtual int getWorldX(int, int);
+    /*8*/ virtual int getWorldZ(int, int);
+    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*14*/ virtual void unk_vfn_14();
 
 public:
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);

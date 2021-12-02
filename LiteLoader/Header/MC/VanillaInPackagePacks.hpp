@@ -8,6 +8,6 @@
 class VanillaInPackagePacks {
 #include "Extra/VanillaInPackagePacksAPI.hpp"
 public:
-    virtual ~VanillaInPackagePacks();
-    virtual std::vector<struct IInPackagePacks::MetaData> getPacks(int /*enum PackType*/) const;
+    /*0*/ virtual ~VanillaInPackagePacks();
+    /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(int /*enum PackType*/) const;
 };

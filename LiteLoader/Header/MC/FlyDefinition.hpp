@@ -9,6 +9,6 @@
 class FlyDefinition : public BehaviorDefinition {
 #include "Extra/FlyDefinitionAPI.hpp"
 public:
-    virtual ~FlyDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~FlyDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

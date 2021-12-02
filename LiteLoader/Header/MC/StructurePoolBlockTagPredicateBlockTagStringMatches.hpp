@@ -7,6 +7,6 @@
 class StructurePoolBlockTagPredicateBlockTagStringMatches {
 #include "Extra/StructurePoolBlockTagPredicateBlockTagStringMatchesAPI.hpp"
 public:
-    virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
-    virtual bool test(class Block const&, class CompoundTag const&) const;
+    /*0*/ virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
+    /*1*/ virtual bool test(class Block const&, class CompoundTag const&) const;
 };

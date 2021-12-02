@@ -7,6 +7,6 @@
 class UseActorNode {
 #include "Extra/UseActorNodeAPI.hpp"
 public:
-    virtual ~UseActorNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*0*/ virtual ~UseActorNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
 };

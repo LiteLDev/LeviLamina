@@ -7,8 +7,8 @@
 class OpCommand {
 #include "Extra/OpCommandAPI.hpp"
 public:
-    virtual ~OpCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~OpCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

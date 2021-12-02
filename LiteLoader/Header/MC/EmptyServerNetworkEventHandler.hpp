@@ -7,6 +7,6 @@
 class EmptyServerNetworkEventHandler {
 #include "Extra/EmptyServerNetworkEventHandlerAPI.hpp"
 public:
-    virtual ~EmptyServerNetworkEventHandler();
-    virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleChat(struct ChatEvent&);
+    /*0*/ virtual ~EmptyServerNetworkEventHandler();
+    /*1*/ virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleChat(struct ChatEvent&);
 };

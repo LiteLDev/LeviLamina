@@ -9,6 +9,6 @@
 class SubtreeDefinition : public BehaviorDefinition {
 #include "Extra/SubtreeDefinitionAPI.hpp"
 public:
-    virtual ~SubtreeDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~SubtreeDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

@@ -8,7 +8,7 @@
 class IdleState : public PetSleepWithOwnerState {
 #include "Extra/IdleStateAPI.hpp"
 public:
-    virtual ~IdleState();
-    virtual void unk_vfn_1();
-    virtual void start();
+    /*0*/ virtual ~IdleState();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void start();
 };

@@ -7,12 +7,12 @@
 class ItemUseOnActorInventoryTransaction {
 #include "Extra/ItemUseOnActorInventoryTransactionAPI.hpp"
 public:
-    virtual ~ItemUseOnActorInventoryTransaction();
-    virtual void read(class ReadOnlyBinaryStream&);
-    virtual void write(class BinaryStream&) const;
-    virtual void postLoadItems(class BlockPalette&, bool);
-    virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
-    virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
+    /*0*/ virtual ~ItemUseOnActorInventoryTransaction();
+    /*1*/ virtual void read(class ReadOnlyBinaryStream&);
+    /*2*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
+    /*4*/ virtual int /*enum InventoryTransactionError*/ handle(class Player&, bool) const;
+    /*5*/ virtual void onTransactionError(class Player&, int /*enum InventoryTransactionError*/) const;
 
 public:
     MCAPI class ItemUseOnActorInventoryTransaction& setSelectedItem(class ItemStack const&);

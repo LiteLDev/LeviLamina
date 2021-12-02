@@ -7,5 +7,5 @@
 class IPreliminarySurfaceProvider {
 #include "Extra/IPreliminarySurfaceProviderAPI.hpp"
 public:
-    virtual ~IPreliminarySurfaceProvider();
+    /*0*/ virtual ~IPreliminarySurfaceProvider();
 };

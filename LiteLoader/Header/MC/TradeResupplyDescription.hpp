@@ -9,7 +9,7 @@
 class TradeResupplyDescription : public Description {
 #include "Extra/TradeResupplyDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~TradeResupplyDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~TradeResupplyDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

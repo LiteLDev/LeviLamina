@@ -8,9 +8,9 @@
 class ScriptServerCommandReceived {
 #include "Extra/ScriptServerCommandReceivedAPI.hpp"
 public:
-    virtual ~ScriptServerCommandReceived();
-    virtual bool receivedEvent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, std::string const&, class ScriptApi::ScriptObjectHandle const&);
-    virtual bool getEventData(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, std::string const&, class ScriptApi::ScriptObjectHandle&);
+    /*0*/ virtual ~ScriptServerCommandReceived();
+    /*1*/ virtual bool receivedEvent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, std::string const&, class ScriptApi::ScriptObjectHandle const&);
+    /*2*/ virtual bool getEventData(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, std::string const&, class ScriptApi::ScriptObjectHandle&);
 
 private:
     MCAPI static class HashedString const mHash;

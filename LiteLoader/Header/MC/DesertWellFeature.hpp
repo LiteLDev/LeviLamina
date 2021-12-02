@@ -8,7 +8,7 @@
 class DesertWellFeature : public Feature {
 #include "Extra/DesertWellFeatureAPI.hpp"
 public:
-    virtual ~DesertWellFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~DesertWellFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

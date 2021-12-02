@@ -8,6 +8,6 @@
 class RakDataOutput : public BytesDataOutput {
 #include "Extra/RakDataOutputAPI.hpp"
 public:
-    virtual ~RakDataOutput();
-    virtual void writeBytes(void const*, unsigned __int64);
+    /*0*/ virtual ~RakDataOutput();
+    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
 };

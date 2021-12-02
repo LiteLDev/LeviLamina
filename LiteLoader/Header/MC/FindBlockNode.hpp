@@ -7,7 +7,7 @@
 class FindBlockNode {
 #include "Extra/FindBlockNodeAPI.hpp"
 public:
-    virtual ~FindBlockNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~FindBlockNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

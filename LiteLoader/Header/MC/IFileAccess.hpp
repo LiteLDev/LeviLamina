@@ -7,5 +7,5 @@
 class IFileAccess {
 #include "Extra/IFileAccessAPI.hpp"
 public:
-    virtual ~IFileAccess();
+    /*0*/ virtual ~IFileAccess();
 };

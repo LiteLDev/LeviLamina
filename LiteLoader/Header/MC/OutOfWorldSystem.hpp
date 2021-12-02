@@ -7,7 +7,7 @@
 class OutOfWorldSystem {
 #include "Extra/OutOfWorldSystemAPI.hpp"
 public:
-    virtual ~OutOfWorldSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~OutOfWorldSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

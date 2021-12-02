@@ -7,5 +7,5 @@
 struct LibraryScreenCapabilities : public TypedScreenCapabilities<struct LibraryScreenCapabilities> {
 #include "Extra/LibraryScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~LibraryScreenCapabilities();
+    /*0*/ virtual ~LibraryScreenCapabilities();
 };

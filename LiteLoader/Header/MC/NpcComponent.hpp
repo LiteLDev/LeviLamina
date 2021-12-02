@@ -7,7 +7,7 @@
 class NpcComponent {
 #include "Extra/NpcComponentAPI.hpp"
 public:
-    virtual ~NpcComponent();
+    /*0*/ virtual ~NpcComponent();
 
 public:
     MCAPI void addAdditionalSaveData(class Actor&, class CompoundTag&) const;

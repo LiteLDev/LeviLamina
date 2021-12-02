@@ -8,11 +8,11 @@
 class SpawnGroupRegistry {
 #include "Extra/SpawnGroupRegistryAPI.hpp"
 public:
-    virtual ~SpawnGroupRegistry();
-    virtual std::string const& getRootKey();
-    virtual std::string const& getFileType();
-    virtual bool processPopulationControl(std::string const&, class Json::Value&);
-    virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
+    /*0*/ virtual ~SpawnGroupRegistry();
+    /*1*/ virtual std::string const& getRootKey();
+    /*2*/ virtual std::string const& getFileType();
+    /*3*/ virtual bool processPopulationControl(std::string const&, class Json::Value&);
+    /*4*/ virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
 
 public:
     MCAPI class SpawnGroupData const* getSpawnGroup(std::string const&) const;

@@ -7,7 +7,7 @@
 class DispatcherUpdateSystem {
 #include "Extra/DispatcherUpdateSystemAPI.hpp"
 public:
-    virtual ~DispatcherUpdateSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~DispatcherUpdateSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

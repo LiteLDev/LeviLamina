@@ -7,7 +7,7 @@
 namespace class ScriptHealthComponent2 {
 #include "Extra/class ScriptHealthComponent2API.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

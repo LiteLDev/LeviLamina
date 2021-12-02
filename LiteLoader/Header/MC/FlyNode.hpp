@@ -7,7 +7,7 @@
 class FlyNode {
 #include "Extra/FlyNodeAPI.hpp"
 public:
-    virtual ~FlyNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~FlyNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };
