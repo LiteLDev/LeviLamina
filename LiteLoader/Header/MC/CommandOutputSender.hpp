@@ -8,9 +8,9 @@
 class CommandOutputSender {
 #include "Extra/CommandOutputSenderAPI.hpp"
 public:
-    virtual ~CommandOutputSender();
-    virtual void send(class CommandOrigin const&, class CommandOutput const&);
-    virtual void registerOutputCallback(class std::function<void(class AutomationCmdOutput&)> const&);
+    /*0*/ virtual ~CommandOutputSender();
+    /*1*/ virtual void send(class CommandOrigin const&, class CommandOutput const&);
+    /*2*/ virtual void registerOutputCallback(class std::function<void(class AutomationCmdOutput&)> const&);
 
 public:
     MCAPI void sendToAdmins(class CommandOrigin const&, class CommandOutput const&, enum CommandPermissionLevel);

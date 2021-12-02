@@ -7,7 +7,7 @@
 class StructurePoolBlockPredicateAxisAlignedPosition {
 #include "Extra/StructurePoolBlockPredicateAxisAlignedPositionAPI.hpp"
 public:
-    virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
-    virtual bool test(class Block const&, class Randomize&) const;
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+    /*0*/ virtual ~StructurePoolBlockPredicateAxisAlignedPosition();
+    /*1*/ virtual bool test(class Block const&, class Randomize&) const;
+    /*2*/ virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 };

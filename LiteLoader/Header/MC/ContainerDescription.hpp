@@ -8,8 +8,8 @@
 struct ContainerDescription {
 #include "Extra/ContainerDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~ContainerDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~ContainerDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

@@ -7,7 +7,7 @@
 namespace class DebugAssertException {
 #include "Extra/class DebugAssertExceptionAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

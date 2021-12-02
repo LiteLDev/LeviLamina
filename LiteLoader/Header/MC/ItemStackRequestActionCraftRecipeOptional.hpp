@@ -8,16 +8,16 @@
 class ItemStackRequestActionCraftRecipeOptional : public ItemStackRequestActionCraft<struct ItemStackNetIdVariant, 14> {
 #include "Extra/ItemStackRequestActionCraftRecipeOptionalAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionCraftRecipeOptional();
-    virtual void unk_vfn_1();
-    virtual int getFilteredStringIndex() const;
-    virtual void unk_vfn_3();
-    virtual void _write(class BinaryStream&) const;
-    virtual bool _read(class ReadOnlyBinaryStream&);
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~ItemStackRequestActionCraftRecipeOptional();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual int getFilteredStringIndex() const;
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void _write(class BinaryStream&) const;
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
 
 public:
     MCAPI class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const& getRecipeNetId() const;

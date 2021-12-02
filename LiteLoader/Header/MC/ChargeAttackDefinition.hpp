@@ -8,7 +8,7 @@
 class ChargeAttackDefinition {
 #include "Extra/ChargeAttackDefinitionAPI.hpp"
 public:
-    virtual ~ChargeAttackDefinition();
+    /*0*/ virtual ~ChargeAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class ChargeAttackGoal&);

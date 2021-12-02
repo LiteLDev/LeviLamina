@@ -8,10 +8,10 @@
 class ScriptActorComponent {
 #include "Extra/ScriptActorComponentAPI.hpp"
 public:
-    virtual ~ScriptActorComponent();
-    virtual struct Scripting::Error _functionError(std::string const&) const;
-    virtual struct Scripting::Error _getPropertyError(std::string const&) const;
-    virtual struct Scripting::Error _setPropertyError(std::string const&) const;
+    /*0*/ virtual ~ScriptActorComponent();
+    /*1*/ virtual struct Scripting::Error _functionError(std::string const&) const;
+    /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const&) const;
+    /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const&) const;
 
 public:
     MCAPI class ScriptActorComponent& operator=(class ScriptActorComponent const&);

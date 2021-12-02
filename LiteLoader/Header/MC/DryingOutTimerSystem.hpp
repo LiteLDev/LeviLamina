@@ -7,7 +7,7 @@
 class DryingOutTimerSystem {
 #include "Extra/DryingOutTimerSystemAPI.hpp"
 public:
-    virtual ~DryingOutTimerSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~DryingOutTimerSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

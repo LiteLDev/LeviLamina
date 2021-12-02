@@ -8,9 +8,9 @@
 class MoveToLavaGoal : public MoveToLiquidGoal {
 #include "Extra/MoveToLavaGoalAPI.hpp"
 public:
-    virtual ~MoveToLavaGoal();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_16();
+    /*0*/ virtual ~MoveToLavaGoal();
+    /*3*/ virtual void unk_vfn_3();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
 };

@@ -7,7 +7,7 @@
 class StructurePoolBlockPredicateBlockMatchRandom {
 #include "Extra/StructurePoolBlockPredicateBlockMatchRandomAPI.hpp"
 public:
-    virtual ~StructurePoolBlockPredicateBlockMatchRandom();
-    virtual bool test(class Block const&, class Randomize&) const;
-    virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+    /*0*/ virtual ~StructurePoolBlockPredicateBlockMatchRandom();
+    /*1*/ virtual bool test(class Block const&, class Randomize&) const;
+    /*2*/ virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
 };

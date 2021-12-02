@@ -7,5 +7,5 @@
 class BrewingStandContainerScreenValidator {
 #include "Extra/BrewingStandContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~BrewingStandContainerScreenValidator();
+    /*0*/ virtual ~BrewingStandContainerScreenValidator();
 };

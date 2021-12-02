@@ -7,6 +7,6 @@
 class CommandFunctionEntry {
 #include "Extra/CommandFunctionEntryAPI.hpp"
 public:
-    virtual ~CommandFunctionEntry();
-    virtual void execute(class FunctionManager&, class CommandOrigin const&);
+    /*0*/ virtual ~CommandFunctionEntry();
+    /*1*/ virtual void execute(class FunctionManager&, class CommandOrigin const&);
 };

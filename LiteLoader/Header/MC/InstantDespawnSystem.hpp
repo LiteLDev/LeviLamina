@@ -7,7 +7,7 @@
 class InstantDespawnSystem {
 #include "Extra/InstantDespawnSystemAPI.hpp"
 public:
-    virtual ~InstantDespawnSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~InstantDespawnSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

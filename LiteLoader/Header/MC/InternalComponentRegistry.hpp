@@ -7,8 +7,8 @@
 class InternalComponentRegistry {
 #include "Extra/InternalComponentRegistryAPI.hpp"
 public:
-    virtual ~InternalComponentRegistry();
-    virtual void registerComponents();
+    /*0*/ virtual ~InternalComponentRegistry();
+    /*1*/ virtual void registerComponents();
 
 public:
     MCAPI void addComponentSaveData(class Actor const&, class CompoundTag&);

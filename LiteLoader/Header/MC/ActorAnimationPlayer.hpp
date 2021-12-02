@@ -7,5 +7,5 @@
 class ActorAnimationPlayer {
 #include "Extra/ActorAnimationPlayerAPI.hpp"
 public:
-    virtual ~ActorAnimationPlayer();
+    /*0*/ virtual ~ActorAnimationPlayer();
 };

@@ -8,9 +8,9 @@
 class ScriptLevelBinderComponent {
 #include "Extra/ScriptLevelBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptLevelBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptLevelBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI enum entt::entity getIdentifier() const;

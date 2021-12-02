@@ -7,8 +7,8 @@
 class NullLogger {
 #include "Extra/NullLoggerAPI.hpp"
 public:
-    virtual ~NullLogger();
-    virtual void Logv(char const*, char*);
+    /*0*/ virtual ~NullLogger();
+    /*1*/ virtual void Logv(char const*, char*);
 
 public:
     MCAPI static class NullLogger instance;

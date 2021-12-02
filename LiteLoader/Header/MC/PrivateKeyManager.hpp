@@ -7,8 +7,8 @@
 class PrivateKeyManager {
 #include "Extra/PrivateKeyManagerAPI.hpp"
 public:
-    virtual ~PrivateKeyManager();
-    virtual bool isValid() const;
+    /*0*/ virtual ~PrivateKeyManager();
+    /*1*/ virtual bool isValid() const;
 
 public:
     MCAPI std::string computeSecret(class KeyManager const&) const;

@@ -7,7 +7,7 @@
 namespace class ScriptBreathableComponent {
 #include "Extra/class ScriptBreathableComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

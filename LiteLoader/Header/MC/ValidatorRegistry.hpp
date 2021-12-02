@@ -7,7 +7,7 @@
 class ValidatorRegistry {
 #include "Extra/ValidatorRegistryAPI.hpp"
 public:
-    virtual ~ValidatorRegistry();
+    /*0*/ virtual ~ValidatorRegistry();
 
 public:
     MCAPI static void registerValidators(class gsl::basic_string_span<char const, -1>, class std::function<class ContentTierIncompatibleReason(class PackInstance const&, class ContentTierInfo const&)>, class std::function<class ContentTierIncompatibleReason(struct SubpackInfo const&, class ContentTierInfo const&)>);

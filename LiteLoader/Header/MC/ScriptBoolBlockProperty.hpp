@@ -8,7 +8,7 @@
 class ScriptBoolBlockProperty {
 #include "Extra/ScriptBoolBlockPropertyAPI.hpp"
 public:
-    virtual ~ScriptBoolBlockProperty();
+    /*0*/ virtual ~ScriptBoolBlockProperty();
 
 public:
     MCAPI class Scripting::Result<bool> getState() const;

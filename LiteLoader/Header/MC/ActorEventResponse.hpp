@@ -7,6 +7,6 @@
 namespace ActorEventResponse {
 #include "Extra/ActorEventResponseAPI.hpp"
 
-MCAPI extern class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
+MCAPI class SemVersion const EVENT_RESPONSE_VERSION_1_16_100;
 
 } // namespace ActorEventResponse

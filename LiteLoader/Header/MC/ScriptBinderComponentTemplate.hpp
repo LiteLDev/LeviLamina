@@ -8,9 +8,9 @@
 class ScriptBinderComponentTemplate {
 #include "Extra/ScriptBinderComponentTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderComponentTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderComponentTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(std::string const&, class ScriptApi::ScriptObjectHandle&&);

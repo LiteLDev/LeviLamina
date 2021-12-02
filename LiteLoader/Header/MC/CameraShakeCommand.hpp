@@ -7,8 +7,8 @@
 class CameraShakeCommand {
 #include "Extra/CameraShakeCommandAPI.hpp"
 public:
-    virtual ~CameraShakeCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~CameraShakeCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,9 +8,9 @@
 class BonusChestFeature : public Feature {
 #include "Extra/BonusChestFeatureAPI.hpp"
 public:
-    virtual ~BonusChestFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~BonusChestFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _place(class BlockSource&, class BlockPos const&, class Random&) const;

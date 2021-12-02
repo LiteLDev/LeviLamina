@@ -9,22 +9,22 @@
 class AutomationPlayerCommandOrigin : public PlayerCommandOrigin {
 #include "Extra/AutomationPlayerCommandOriginAPI.hpp"
 public:
-    virtual ~AutomationPlayerCommandOrigin();
-    virtual std::string const& getRequestId() const;
-    virtual std::string getName() const;
-    virtual class Level* getLevel() const;
-    virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-    virtual bool hasChatPerms() const;
-    virtual bool hasTellPerms() const;
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    virtual bool isSelectorExpansionAllowed() const;
-    virtual class NetworkIdentifier const& getSourceId() const;
-    virtual void unk_vfn_20();
-    virtual int /*enum CommandOriginType*/ getOriginType() const;
-    virtual struct CommandOriginData toCommandOriginData() const;
-    virtual void unk_vfn_24();
-    virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    virtual class CompoundTag serialize() const;
-    virtual bool isValid() const;
+    /*0*/ virtual ~AutomationPlayerCommandOrigin();
+    /*1*/ virtual std::string const& getRequestId() const;
+    /*2*/ virtual std::string getName() const;
+    /*5*/ virtual class Level* getLevel() const;
+    /*8*/ virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
+    /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*12*/ virtual bool hasChatPerms() const;
+    /*13*/ virtual bool hasTellPerms() const;
+    /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual bool isSelectorExpansionAllowed() const;
+    /*18*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*20*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*22*/ virtual int /*enum CommandOriginType*/ getOriginType() const;
+    /*23*/ virtual struct CommandOriginData toCommandOriginData() const;
+    /*24*/ virtual class mce::UUID const& getUUID() const;
+    /*25*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual class CompoundTag serialize() const;
+    /*27*/ virtual bool isValid() const;
 };

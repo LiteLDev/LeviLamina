@@ -7,6 +7,6 @@
 class LootTableEntry {
 #include "Extra/LootTableEntryAPI.hpp"
 public:
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
-    virtual ~LootTableEntry();
+    /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    /*1*/ virtual ~LootTableEntry();
 };

@@ -9,28 +9,28 @@
 class MinecartBlockCommandOrigin : public BlockCommandOrigin {
 #include "Extra/MinecartBlockCommandOriginAPI.hpp"
 public:
-    virtual ~MinecartBlockCommandOrigin();
-    virtual std::string const& getRequestId() const;
-    virtual class BlockPos getBlockPosition() const;
-    virtual class Vec3 getWorldPosition() const;
-    virtual class Level* getLevel() const;
-    virtual class Actor* getEntity() const;
-    virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-    virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    virtual class std::optional<class Vec3> getCursorHitPos() const;
-    virtual bool canUseAbility(int /*enum AbilitiesIndex*/) const;
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    virtual bool isSelectorExpansionAllowed() const;
-    virtual unsigned char getSourceSubId() const;
-    virtual void unk_vfn_20();
-    virtual int /*enum CommandOriginType*/ getOriginType() const;
-    virtual void unk_vfn_24();
-    virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    virtual class CompoundTag serialize() const;
-    virtual bool isValid() const;
-    virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
-    virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
+    /*0*/ virtual ~MinecartBlockCommandOrigin();
+    /*1*/ virtual std::string const& getRequestId() const;
+    /*3*/ virtual class BlockPos getBlockPosition() const;
+    /*4*/ virtual class Vec3 getWorldPosition() const;
+    /*5*/ virtual class Level* getLevel() const;
+    /*7*/ virtual class Actor* getEntity() const;
+    /*8*/ virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
+    /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*14*/ virtual bool canUseAbility(int /*enum AbilitiesIndex*/) const;
+    /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual bool isSelectorExpansionAllowed() const;
+    /*19*/ virtual unsigned char getSourceSubId() const;
+    /*20*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*22*/ virtual int /*enum CommandOriginType*/ getOriginType() const;
+    /*24*/ virtual class mce::UUID const& getUUID() const;
+    /*25*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual class CompoundTag serialize() const;
+    /*27*/ virtual bool isValid() const;
+    /*29*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
+    /*30*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
 
 public:
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const&, class Level&);

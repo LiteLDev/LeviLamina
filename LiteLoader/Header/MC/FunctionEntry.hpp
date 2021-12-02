@@ -7,8 +7,8 @@
 class FunctionEntry {
 #include "Extra/FunctionEntryAPI.hpp"
 public:
-    virtual ~FunctionEntry();
-    virtual void execute(class FunctionManager&, class CommandOrigin const&);
+    /*0*/ virtual ~FunctionEntry();
+    /*1*/ virtual void execute(class FunctionManager&, class CommandOrigin const&);
 
 public:
     MCAPI enum FunctionState getErrorState() const;

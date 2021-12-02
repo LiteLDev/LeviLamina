@@ -8,8 +8,8 @@
 class LootTableReference {
 #include "Extra/LootTableReferenceAPI.hpp"
 public:
-    virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
-    virtual ~LootTableReference();
+    /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
+    /*1*/ virtual ~LootTableReference();
 
 public:
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);

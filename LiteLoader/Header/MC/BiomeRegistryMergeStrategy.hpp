@@ -7,6 +7,6 @@
 class BiomeRegistryMergeStrategy {
 #include "Extra/BiomeRegistryMergeStrategyAPI.hpp"
 public:
-    virtual ~BiomeRegistryMergeStrategy();
-    virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
+    /*0*/ virtual ~BiomeRegistryMergeStrategy();
+    /*1*/ virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
 };

@@ -8,6 +8,6 @@
 class MegaTreeCanopy {
 #include "Extra/MegaTreeCanopyAPI.hpp"
 public:
-    virtual ~MegaTreeCanopy();
-    virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
+    /*0*/ virtual ~MegaTreeCanopy();
+    /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
 };

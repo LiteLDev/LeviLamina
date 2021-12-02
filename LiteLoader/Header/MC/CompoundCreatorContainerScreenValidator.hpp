@@ -7,5 +7,5 @@
 class CompoundCreatorContainerScreenValidator {
 #include "Extra/CompoundCreatorContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~CompoundCreatorContainerScreenValidator();
+    /*0*/ virtual ~CompoundCreatorContainerScreenValidator();
 };

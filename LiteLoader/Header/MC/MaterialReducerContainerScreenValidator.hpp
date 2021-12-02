@@ -7,5 +7,5 @@
 class MaterialReducerContainerScreenValidator {
 #include "Extra/MaterialReducerContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~MaterialReducerContainerScreenValidator();
+    /*0*/ virtual ~MaterialReducerContainerScreenValidator();
 };

@@ -7,5 +7,5 @@
 class HorseContainerScreenValidator {
 #include "Extra/HorseContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~HorseContainerScreenValidator();
+    /*0*/ virtual ~HorseContainerScreenValidator();
 };

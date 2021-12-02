@@ -9,7 +9,7 @@
 class ScriptNavigationHoverComponent : public NavigationScriptActorComponent {
 #include "Extra/ScriptNavigationHoverComponentAPI.hpp"
 public:
-    virtual ~ScriptNavigationHoverComponent();
+    /*0*/ virtual ~ScriptNavigationHoverComponent();
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationHoverComponent> bind(struct Scripting::Version);

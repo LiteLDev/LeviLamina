@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+struct ItemAlias;
+struct ItemHashAlias;
 
 #endif

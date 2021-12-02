@@ -8,9 +8,9 @@
 class Trade2Ingredient2ContainerValidation : public ContainerValidationBase {
 #include "Extra/Trade2Ingredient2ContainerValidationAPI.hpp"
 public:
-    virtual ~Trade2Ingredient2ContainerValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~Trade2Ingredient2ContainerValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual void unk_vfn_2();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
 };

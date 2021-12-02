@@ -9,6 +9,6 @@
 class ActivateToolDefinition : public BehaviorDefinition {
 #include "Extra/ActivateToolDefinitionAPI.hpp"
 public:
-    virtual ~ActivateToolDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~ActivateToolDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

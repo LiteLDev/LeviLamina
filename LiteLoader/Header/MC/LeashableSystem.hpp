@@ -7,7 +7,7 @@
 class LeashableSystem {
 #include "Extra/LeashableSystemAPI.hpp"
 public:
-    virtual ~LeashableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~LeashableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

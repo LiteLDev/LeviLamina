@@ -8,9 +8,9 @@
 class SpikeFeature : public Feature {
 #include "Extra/SpikeFeatureAPI.hpp"
 public:
-    virtual ~SpikeFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~SpikeFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
     MCAPI bool placeManually(class BlockSource&, class BlockPos const&, class Random&, class Actor*);

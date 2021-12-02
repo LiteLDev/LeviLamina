@@ -7,5 +7,5 @@
 class IFileReadAccess {
 #include "Extra/IFileReadAccessAPI.hpp"
 public:
-    virtual ~IFileReadAccess();
+    /*0*/ virtual ~IFileReadAccess();
 };

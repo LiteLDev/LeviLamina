@@ -8,22 +8,22 @@
 class NetherNetServerLocator : public StubServerLocator {
 #include "Extra/NetherNetServerLocatorAPI.hpp"
 public:
-    virtual ~NetherNetServerLocator();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void startAnnouncingServer(std::string const&, std::string const&, int /*enum GameType*/, int, int, bool);
-    virtual void stopAnnouncingServer();
-    virtual void startServerDiscovery(struct PortPair);
-    virtual void stopServerDiscovery();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual std::vector<struct PingedCompatibleServer> getServerList() const;
-    virtual void clearServerList();
-    virtual void update();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
+    /*0*/ virtual ~NetherNetServerLocator();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void startAnnouncingServer(std::string const&, std::string const&, int /*enum GameType*/, int, int, bool);
+    /*4*/ virtual void stopAnnouncingServer();
+    /*5*/ virtual void startServerDiscovery(struct PortPair);
+    /*6*/ virtual void stopServerDiscovery();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual std::vector<struct PingedCompatibleServer> getServerList() const;
+    /*10*/ virtual void clearServerList();
+    /*11*/ virtual void update();
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void unk_vfn_14();
+    /*15*/ virtual void unk_vfn_15();
 
 private:
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const*, int);

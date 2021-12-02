@@ -9,7 +9,7 @@
 class NavigationSwimDescription : public NavigationDescription {
 #include "Extra/NavigationSwimDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~NavigationSwimDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~NavigationSwimDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

@@ -7,5 +7,5 @@
 class LabTableReactionComponent {
 #include "Extra/LabTableReactionComponentAPI.hpp"
 public:
-    virtual ~LabTableReactionComponent();
+    /*0*/ virtual ~LabTableReactionComponent();
 };

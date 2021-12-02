@@ -7,7 +7,7 @@
 class EncryptedZipTransforms {
 #include "Extra/EncryptedZipTransformsAPI.hpp"
 public:
-    virtual ~EncryptedZipTransforms();
-    virtual bool readTransform(std::vector<unsigned char>&) const;
-    virtual bool writeTransform(std::vector<unsigned char>&) const;
+    /*0*/ virtual ~EncryptedZipTransforms();
+    /*1*/ virtual bool readTransform(std::vector<unsigned char>&) const;
+    /*2*/ virtual bool writeTransform(std::vector<unsigned char>&) const;
 };

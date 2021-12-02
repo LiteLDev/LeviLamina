@@ -7,7 +7,7 @@
 class CreativeItemEntry {
 #include "Extra/CreativeItemEntryAPI.hpp"
 public:
-    virtual ~CreativeItemEntry();
+    /*0*/ virtual ~CreativeItemEntry();
 
 public:
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const& getCreativeNetId() const;

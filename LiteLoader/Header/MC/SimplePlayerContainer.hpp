@@ -8,14 +8,14 @@
 class SimplePlayerContainer : public SimpleContainer {
 #include "Extra/SimplePlayerContainerAPI.hpp"
 public:
-    virtual ~SimplePlayerContainer();
-    virtual void init();
-    virtual void setItem(int, class ItemStack const&);
-    virtual void unk_vfn_14();
-    virtual int getMaxStackSize() const;
-    virtual void startOpen(class Player&);
-    virtual void stopOpen(class Player&);
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_31();
+    /*0*/ virtual ~SimplePlayerContainer();
+    /*1*/ virtual void init();
+    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*14*/ virtual int getContainerSize() const;
+    /*15*/ virtual int getMaxStackSize() const;
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*31*/ virtual void unk_vfn_31();
 };

@@ -7,7 +7,7 @@
 class BreakBlocksSystem {
 #include "Extra/BreakBlocksSystemAPI.hpp"
 public:
-    virtual ~BreakBlocksSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BreakBlocksSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

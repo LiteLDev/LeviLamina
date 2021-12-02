@@ -7,7 +7,7 @@
 class MoveControlSystem {
 #include "Extra/MoveControlSystemAPI.hpp"
 public:
-    virtual ~MoveControlSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~MoveControlSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

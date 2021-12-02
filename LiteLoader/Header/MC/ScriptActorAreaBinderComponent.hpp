@@ -8,9 +8,9 @@
 class ScriptActorAreaBinderComponent {
 #include "Extra/ScriptActorAreaBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptActorAreaBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptActorAreaBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI struct ActorUniqueID getIdentifier() const;

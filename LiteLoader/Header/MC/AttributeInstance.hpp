@@ -7,8 +7,8 @@
 class AttributeInstance {
 #include "Extra/AttributeInstanceAPI.hpp"
 public:
-    virtual ~AttributeInstance();
-    virtual void tick();
+    /*0*/ virtual ~AttributeInstance();
+    /*1*/ virtual void tick();
 
 public:
     MCAPI void addBuff(class AttributeBuff const&);

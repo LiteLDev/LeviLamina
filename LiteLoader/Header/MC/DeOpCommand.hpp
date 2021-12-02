@@ -7,8 +7,8 @@
 class DeOpCommand {
 #include "Extra/DeOpCommandAPI.hpp"
 public:
-    virtual ~DeOpCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~DeOpCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

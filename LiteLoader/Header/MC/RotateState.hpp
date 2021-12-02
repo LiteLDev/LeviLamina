@@ -8,7 +8,7 @@
 class RotateState : public PetSleepWithOwnerState {
 #include "Extra/RotateStateAPI.hpp"
 public:
-    virtual ~RotateState();
-    virtual void tick();
-    virtual void unk_vfn_2();
+    /*0*/ virtual ~RotateState();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void unk_vfn_2();
 };

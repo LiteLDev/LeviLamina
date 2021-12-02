@@ -13,6 +13,7 @@ struct Error;
 enum HandleReference;
 class IDebuggerController;
 class IModuleBindingFactory;
+class IRuntime;
 class LifetimeRegistry;
 class ModuleBindingBuilder;
 struct ModuleDescriptor;

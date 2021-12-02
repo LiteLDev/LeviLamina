@@ -8,8 +8,8 @@
 class TickWorldDescription {
 #include "Extra/TickWorldDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~TickWorldDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~TickWorldDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

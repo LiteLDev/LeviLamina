@@ -8,9 +8,11 @@
 class ClassroomModeListener : public BlockSourceListener {
 #include "Extra/ClassroomModeListenerAPI.hpp"
 public:
-    virtual ~ClassroomModeListener();
-    virtual void unk_vfn_1();
-    virtual void onSourceDestroyed(class BlockSource&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
+    /*0*/ virtual ~ClassroomModeListener();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
 };

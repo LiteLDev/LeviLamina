@@ -7,8 +7,8 @@
 class MobEventCommand {
 #include "Extra/MobEventCommandAPI.hpp"
 public:
-    virtual ~MobEventCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~MobEventCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&);

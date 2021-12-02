@@ -8,11 +8,11 @@
 class SplashPotionEffectSubcomponent {
 #include "Extra/SplashPotionEffectSubcomponentAPI.hpp"
 public:
-    virtual ~SplashPotionEffectSubcomponent();
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
-    virtual void writetoJSON(class Json::Value&) const;
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    virtual char const* getName();
+    /*0*/ virtual ~SplashPotionEffectSubcomponent();
+    /*1*/ virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    /*2*/ virtual void writetoJSON(class Json::Value&) const;
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 
 public:
     MCAPI void applyMobEffects(class MobEffectInstance const&, std::vector<class Actor*> const&, class Actor&, class std::shared_ptr<class Potion const> const&, float, class MobEffect*, class HitResult&, int);

@@ -7,14 +7,14 @@
 class ActorSkeletalAnimationPlayer {
 #include "Extra/ActorSkeletalAnimationPlayerAPI.hpp"
 public:
-    virtual ~ActorSkeletalAnimationPlayer();
-    virtual void unk_vfn_1();
-    virtual void resetAnimation();
-    virtual void buildBoneToPartMapping(class AnimationComponent&);
-    virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&);
-    virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const&);
-    virtual bool hasAnimationFinished() const;
-    virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    virtual int /*enum ActorAnimationType*/ getAnimationType() const;
-    virtual class HashedString const& getRawName() const;
+    /*0*/ virtual ~ActorSkeletalAnimationPlayer();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void resetAnimation();
+    /*3*/ virtual void buildBoneToPartMapping(class AnimationComponent&);
+    /*4*/ virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString>>> const&);
+    /*5*/ virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string>>> const&);
+    /*6*/ virtual bool hasAnimationFinished() const;
+    /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
+    /*8*/ virtual int /*enum ActorAnimationType*/ getAnimationType() const;
+    /*9*/ virtual class HashedString const& getRawName() const;
 };

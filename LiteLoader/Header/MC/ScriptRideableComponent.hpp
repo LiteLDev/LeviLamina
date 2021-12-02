@@ -9,7 +9,7 @@
 class ScriptRideableComponent : public ScriptActorComponent {
 #include "Extra/ScriptRideableComponentAPI.hpp"
 public:
-    virtual ~ScriptRideableComponent();
+    /*0*/ virtual ~ScriptRideableComponent();
 
 public:
     MCAPI class Scripting::Result<bool> addPassenger(class ScriptActor&) const;

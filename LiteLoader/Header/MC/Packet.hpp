@@ -7,11 +7,11 @@
 class Packet {
 #include "Extra/PacketAPI.hpp"
 public:
-    virtual ~Packet();
-    virtual int /*enum MinecraftPacketIds*/ getId() const = 0;
-    virtual std::string getName() const                   = 0;
-    virtual void write(class BinaryStream&) const         = 0;
-    virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    virtual bool disallowBatching() const;
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
+    /*0*/ virtual ~Packet();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const = 0;
+    /*2*/ virtual std::string getName() const                   = 0;
+    /*3*/ virtual void write(class BinaryStream&) const         = 0;
+    /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
+    /*5*/ virtual bool disallowBatching() const;
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
 };

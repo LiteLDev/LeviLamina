@@ -8,7 +8,7 @@
 class WalkState : public PetSleepWithOwnerState {
 #include "Extra/WalkStateAPI.hpp"
 public:
-    virtual ~WalkState();
-    virtual void tick();
-    virtual void unk_vfn_2();
+    /*0*/ virtual ~WalkState();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void unk_vfn_2();
 };

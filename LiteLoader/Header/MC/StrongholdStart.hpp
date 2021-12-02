@@ -8,9 +8,9 @@
 class StrongholdStart : public StructureStart {
 #include "Extra/StrongholdStartAPI.hpp"
 public:
-    virtual ~StrongholdStart();
-    virtual bool isValid() const;
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~StrongholdStart();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 
 private:
     MCAPI void _initializePieceSet(class Random&);

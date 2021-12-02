@@ -7,7 +7,7 @@
 namespace class ScriptAgeableComponent {
 #include "Extra/class ScriptAgeableComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

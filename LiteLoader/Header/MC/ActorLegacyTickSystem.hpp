@@ -7,7 +7,7 @@
 class ActorLegacyTickSystem {
 #include "Extra/ActorLegacyTickSystemAPI.hpp"
 public:
-    virtual ~ActorLegacyTickSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ActorLegacyTickSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

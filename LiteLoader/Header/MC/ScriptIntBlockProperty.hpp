@@ -8,7 +8,7 @@
 class ScriptIntBlockProperty {
 #include "Extra/ScriptIntBlockPropertyAPI.hpp"
 public:
-    virtual ~ScriptIntBlockProperty();
+    /*0*/ virtual ~ScriptIntBlockProperty();
 
 public:
     MCAPI class Scripting::Result<int> getState() const;

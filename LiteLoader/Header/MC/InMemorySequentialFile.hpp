@@ -7,7 +7,7 @@
 class InMemorySequentialFile {
 #include "Extra/InMemorySequentialFileAPI.hpp"
 public:
-    virtual ~InMemorySequentialFile();
-    virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
-    virtual class leveldb::Status Skip(unsigned __int64);
+    /*0*/ virtual ~InMemorySequentialFile();
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
+    /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
 };

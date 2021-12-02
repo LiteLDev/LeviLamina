@@ -8,6 +8,6 @@
 class ServerCorrectionPolicy : public ClientReplayStatePolicy {
 #include "Extra/ServerCorrectionPolicyAPI.hpp"
 public:
-    virtual ~ServerCorrectionPolicy();
-    virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
+    /*0*/ virtual ~ServerCorrectionPolicy();
+    /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
 };

@@ -7,9 +7,9 @@
 class ScriptBinderLevelTickingAreaTemplate {
 #include "Extra/ScriptBinderLevelTickingAreaTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderLevelTickingAreaTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderLevelTickingAreaTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class ITickingArea const&);

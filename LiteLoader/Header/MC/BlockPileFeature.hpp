@@ -8,8 +8,8 @@
 class BlockPileFeature : public Feature {
 #include "Extra/BlockPileFeatureAPI.hpp"
 public:
-    virtual ~BlockPileFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    virtual class Block const& getBlockToPlace(class Random&) const;
+    /*0*/ virtual ~BlockPileFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*4*/ virtual class Block const& getBlockToPlace(class Random&) const;
 };

@@ -7,7 +7,7 @@
 class ScaleByAgeSystem {
 #include "Extra/ScaleByAgeSystemAPI.hpp"
 public:
-    virtual ~ScaleByAgeSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ScaleByAgeSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

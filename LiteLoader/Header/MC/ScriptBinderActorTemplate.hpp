@@ -8,9 +8,9 @@
 class ScriptBinderActorTemplate {
 #include "Extra/ScriptBinderActorTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderActorTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderActorTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, class Actor const&);

@@ -8,7 +8,7 @@
 class OcelotAttackDefinition {
 #include "Extra/OcelotAttackDefinitionAPI.hpp"
 public:
-    virtual ~OcelotAttackDefinition();
+    /*0*/ virtual ~OcelotAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class OcelotAttackGoal&);

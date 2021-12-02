@@ -8,10 +8,10 @@
 class ScriptDebugger {
 #include "Extra/ScriptDebuggerAPI.hpp"
 public:
-    virtual bool listen(unsigned short);
-    virtual bool connect(std::string const&, unsigned short);
-    virtual void close();
-    virtual ~ScriptDebugger();
+    /*0*/ virtual bool listen(unsigned short);
+    /*1*/ virtual bool connect(std::string const&, unsigned short);
+    /*2*/ virtual void close();
+    /*3*/ virtual ~ScriptDebugger();
 
 public:
     MCAPI void checkConnections();

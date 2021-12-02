@@ -8,9 +8,9 @@
 class ScriptBlockPositionBinderComponent {
 #include "Extra/ScriptBlockPositionBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptBlockPositionBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptBlockPositionBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI class BlockPos const& getPosition() const;

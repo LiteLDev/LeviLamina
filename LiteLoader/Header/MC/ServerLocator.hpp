@@ -7,5 +7,5 @@
 class ServerLocator {
 #include "Extra/ServerLocatorAPI.hpp"
 public:
-    virtual ~ServerLocator();
+    /*0*/ virtual ~ServerLocator();
 };

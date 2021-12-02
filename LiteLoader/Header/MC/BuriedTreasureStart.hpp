@@ -8,7 +8,7 @@
 class BuriedTreasureStart : public StructureStart {
 #include "Extra/BuriedTreasureStartAPI.hpp"
 public:
-    virtual ~BuriedTreasureStart();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~BuriedTreasureStart();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 };

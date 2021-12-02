@@ -7,7 +7,7 @@
 class BlockClimberSystem {
 #include "Extra/BlockClimberSystemAPI.hpp"
 public:
-    virtual ~BlockClimberSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BlockClimberSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

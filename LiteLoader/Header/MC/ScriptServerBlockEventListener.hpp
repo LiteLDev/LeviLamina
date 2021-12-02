@@ -7,12 +7,12 @@
 class ScriptServerBlockEventListener {
 #include "Extra/ScriptServerBlockEventListenerAPI.hpp"
 public:
-    virtual ~ScriptServerBlockEventListener();
-    virtual int /*enum EventResult*/ onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
-    virtual int /*enum EventResult*/ onBlockDestroyedByPlayer(class Player&, std::string, class BlockPos const&);
-    virtual int /*enum EventResult*/ onBlockMovedByPiston(class BlockPos const&, class BlockPos const&, int /*enum PistonState*/);
-    virtual int /*enum EventResult*/ onBlockDestructionStopped(class Player&, class BlockPos const&, int);
-    virtual int /*enum EventResult*/ onBlockDestructionStarted(class Player&, class BlockPos const&);
-    virtual int /*enum EventResult*/ onBlockInteractedWith(class Player&, class BlockPos const&);
-    virtual int /*enum EventResult*/ onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
+    /*0*/ virtual ~ScriptServerBlockEventListener();
+    /*1*/ virtual int /*enum EventResult*/ onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
+    /*2*/ virtual int /*enum EventResult*/ onBlockDestroyedByPlayer(class Player&, std::string, class BlockPos const&);
+    /*3*/ virtual int /*enum EventResult*/ onBlockMovedByPiston(class BlockPos const&, class BlockPos const&, int /*enum PistonState*/);
+    /*4*/ virtual int /*enum EventResult*/ onBlockDestructionStopped(class Player&, class BlockPos const&, int);
+    /*5*/ virtual int /*enum EventResult*/ onBlockDestructionStarted(class Player&, class BlockPos const&);
+    /*6*/ virtual int /*enum EventResult*/ onBlockInteractedWith(class Player&, class BlockPos const&);
+    /*7*/ virtual int /*enum EventResult*/ onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
 };

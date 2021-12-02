@@ -7,7 +7,7 @@
 class MessagingCommand {
 #include "Extra/MessagingCommandAPI.hpp"
 public:
-    virtual ~MessagingCommand();
+    /*0*/ virtual ~MessagingCommand();
 
 protected:
     MCAPI bool checkChatPermissions(class CommandOrigin const&, class CommandOutput&) const;

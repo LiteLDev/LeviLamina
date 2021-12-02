@@ -9,21 +9,21 @@
 class DedicatedServer {
 #include "Extra/DedicatedServerAPI.hpp"
 public:
-    virtual ~DedicatedServer();
-    virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
-    virtual class Automation::AutomationClient& getAutomationClient() const;
-    virtual bool isEduMode() const;
-    virtual bool isDedicatedServer() const;
-    virtual void onNetworkMaxPlayersChanged(unsigned int);
-    virtual class IGameModuleShared& getGameModule();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual bool isDedicatedServer() const;
-    virtual bool isDedicatedServer() const;
-    virtual bool isDedicatedServer() const;
-    virtual bool stop();
-    virtual void onNetworkMaxPlayersChanged(unsigned int);
-    virtual void onNetworkMaxPlayersChanged(unsigned int);
+    /*0*/ virtual ~DedicatedServer();
+    /*1*/ virtual class gsl::not_null<class Bedrock::NonOwnerPointer<class Minecraft>> getPrimaryMinecraft();
+    /*2*/ virtual class Automation::AutomationClient& getAutomationClient() const;
+    /*3*/ virtual bool isEduMode() const;
+    /*4*/ virtual bool isDedicatedServer() const;
+    /*5*/ virtual void onNetworkMaxPlayersChanged(unsigned int);
+    /*6*/ virtual class IGameModuleShared& getGameModule();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual bool isDedicatedServer() const;
+    /*10*/ virtual bool isDedicatedServer() const;
+    /*11*/ virtual bool isDedicatedServer() const;
+    /*12*/ virtual bool stop();
+    /*13*/ virtual void onNetworkMaxPlayersChanged(unsigned int);
+    /*14*/ virtual void onNetworkMaxPlayersChanged(unsigned int);
 
 public:
     MCAPI enum DedicatedServer::StartResult start(std::string const&);

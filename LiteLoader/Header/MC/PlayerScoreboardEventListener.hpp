@@ -7,8 +7,8 @@
 class PlayerScoreboardEventListener {
 #include "Extra/PlayerScoreboardEventListenerAPI.hpp"
 public:
-    virtual ~PlayerScoreboardEventListener();
-    virtual int /*enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
+    /*0*/ virtual ~PlayerScoreboardEventListener();
+    /*1*/ virtual int /*enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
 
 public:
     MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const&, class Player const&);

@@ -7,6 +7,6 @@
 class MultiplyValueAmplifier {
 #include "Extra/MultiplyValueAmplifierAPI.hpp"
 public:
-    virtual ~MultiplyValueAmplifier();
-    virtual float getAmount(int, float) const;
+    /*0*/ virtual ~MultiplyValueAmplifier();
+    /*1*/ virtual float getAmount(int, float) const;
 };

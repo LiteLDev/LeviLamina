@@ -7,13 +7,13 @@
 class VexRandomMoveGoal {
 #include "Extra/VexRandomMoveGoalAPI.hpp"
 public:
-    virtual ~VexRandomMoveGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual bool canContinueToUse();
+    /*0*/ virtual ~VexRandomMoveGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool canContinueToUse();
 };

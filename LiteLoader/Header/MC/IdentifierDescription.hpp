@@ -7,6 +7,6 @@
 class IdentifierDescription {
 #include "Extra/IdentifierDescriptionAPI.hpp"
 public:
-    virtual ~IdentifierDescription();
-    virtual char const* getJsonName() const;
+    /*0*/ virtual ~IdentifierDescription();
+    /*1*/ virtual char const* getJsonName() const;
 };

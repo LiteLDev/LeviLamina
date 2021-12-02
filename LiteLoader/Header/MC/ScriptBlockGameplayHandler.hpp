@@ -8,15 +8,15 @@
 class ScriptBlockGameplayHandler {
 #include "Extra/ScriptBlockGameplayHandlerAPI.hpp"
 public:
-    virtual ~ScriptBlockGameplayHandler();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual int /*enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual struct GameplayHandlerResult<class std::optional<std::string>> handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
-    virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handlePistonActionEvent(struct PistonActionEvent const&);
-    virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleExplosionStartedEvent(struct ExplosionStartedEvent&);
+    /*0*/ virtual ~ScriptBlockGameplayHandler();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string>> handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
+    /*7*/ virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handlePistonActionEvent(struct PistonActionEvent const&);
+    /*8*/ virtual struct GameplayHandlerResult<int /*enum CoordinatorResult*/> handleExplosionStartedEvent(struct ExplosionStartedEvent&);
 
 private:
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;

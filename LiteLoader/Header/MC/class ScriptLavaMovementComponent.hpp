@@ -7,7 +7,7 @@
 namespace class ScriptLavaMovementComponent {
 #include "Extra/class ScriptLavaMovementComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

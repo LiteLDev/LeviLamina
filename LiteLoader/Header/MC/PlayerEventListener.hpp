@@ -7,5 +7,5 @@
 class PlayerEventListener {
 #include "Extra/PlayerEventListenerAPI.hpp"
 public:
-    virtual ~PlayerEventListener();
+    /*0*/ virtual ~PlayerEventListener();
 };

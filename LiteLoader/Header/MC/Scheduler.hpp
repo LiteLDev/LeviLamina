@@ -7,7 +7,7 @@
 class Scheduler {
 #include "Extra/SchedulerAPI.hpp"
 public:
-    virtual ~Scheduler();
+    /*0*/ virtual ~Scheduler();
 
 public:
     MCAPI void changeThread(class std::thread::id);

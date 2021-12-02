@@ -8,8 +8,8 @@
 class ActorOnLadderTest : public FilterTest {
 #include "Extra/ActorOnLadderTestAPI.hpp"
 public:
-    virtual ~ActorOnLadderTest();
-    virtual bool evaluate(struct FilterContext const&) const;
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    /*0*/ virtual ~ActorOnLadderTest();
+    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 };

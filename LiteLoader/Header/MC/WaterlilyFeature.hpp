@@ -8,7 +8,7 @@
 class WaterlilyFeature : public Feature {
 #include "Extra/WaterlilyFeatureAPI.hpp"
 public:
-    virtual ~WaterlilyFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~WaterlilyFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

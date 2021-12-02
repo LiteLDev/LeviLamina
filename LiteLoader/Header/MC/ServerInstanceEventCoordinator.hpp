@@ -8,7 +8,7 @@
 class ServerInstanceEventCoordinator {
 #include "Extra/ServerInstanceEventCoordinatorAPI.hpp"
 public:
-    virtual ~ServerInstanceEventCoordinator();
+    /*0*/ virtual ~ServerInstanceEventCoordinator();
 
 public:
     MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler>&&);

@@ -8,6 +8,6 @@
 class MoveControlFlyDescription : public MoveControlDescription {
 #include "Extra/MoveControlFlyDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~MoveControlFlyDescription();
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~MoveControlFlyDescription();
 };

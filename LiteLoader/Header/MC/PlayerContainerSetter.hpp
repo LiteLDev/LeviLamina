@@ -7,8 +7,8 @@
 class PlayerContainerSetter {
 #include "Extra/PlayerContainerSetterAPI.hpp"
 public:
-    virtual ~PlayerContainerSetter();
-    virtual void setArmor(int, class ItemStack const&);
-    virtual void setOffhandSlot(class ItemStack const&);
-    virtual void setPlayerUIItem(int, class ItemStack const&);
+    /*0*/ virtual ~PlayerContainerSetter();
+    /*1*/ virtual void setArmor(int, class ItemStack const&);
+    /*2*/ virtual void setOffhandSlot(class ItemStack const&);
+    /*3*/ virtual void setPlayerUIItem(int, class ItemStack const&);
 };

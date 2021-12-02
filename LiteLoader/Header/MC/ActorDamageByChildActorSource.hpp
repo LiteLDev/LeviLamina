@@ -8,20 +8,20 @@
 class ActorDamageByChildActorSource : public ActorDamageSource {
 #include "Extra/ActorDamageByChildActorSourceAPI.hpp"
 public:
-    virtual ~ActorDamageByChildActorSource();
-    virtual bool isChildEntitySource() const;
-    virtual bool isChildEntitySource() const;
-    virtual void unk_vfn_3();
-    virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual bool getDamagingEntityIsCreative() const;
-    virtual bool getDamagingEntityIsWorldBuilder() const;
-    virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    virtual int /*enum ActorType*/ getDamagingEntityType() const;
-    virtual int /*enum ActorCategory*/ getDamagingEntityCategories() const;
-    virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*0*/ virtual ~ActorDamageByChildActorSource();
+    /*1*/ virtual bool isChildEntitySource() const;
+    /*2*/ virtual bool isChildEntitySource() const;
+    /*3*/ virtual bool isBlockSource() const;
+    /*5*/ virtual struct std::pair<std::string, std::vector<std::string>> getDeathMessage(std::string, class Actor*) const;
+    /*6*/ virtual bool getIsCreative() const;
+    /*7*/ virtual bool getIsWorldBuilder() const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual int /*enum ActorCategory*/ getEntityCategories() const;
+    /*11*/ virtual bool getDamagingEntityIsCreative() const;
+    /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*14*/ virtual int /*enum ActorType*/ getDamagingEntityType() const;
+    /*15*/ virtual int /*enum ActorCategory*/ getDamagingEntityCategories() const;
+    /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 };

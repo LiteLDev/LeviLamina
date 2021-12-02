@@ -7,6 +7,6 @@
 class ScriptServerNetworkEventListener {
 #include "Extra/ScriptServerNetworkEventListenerAPI.hpp"
 public:
-    virtual ~ScriptServerNetworkEventListener();
-    virtual int /*enum EventResult*/ onChat(struct ChatEvent const&);
+    /*0*/ virtual ~ScriptServerNetworkEventListener();
+    /*1*/ virtual int /*enum EventResult*/ onChat(struct ChatEvent const&);
 };

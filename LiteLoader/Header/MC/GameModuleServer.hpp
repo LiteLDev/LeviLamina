@@ -7,5 +7,5 @@
 class GameModuleServer {
 #include "Extra/GameModuleServerAPI.hpp"
 public:
-    virtual ~GameModuleServer();
+    /*0*/ virtual ~GameModuleServer();
 };

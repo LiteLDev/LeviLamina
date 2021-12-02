@@ -7,13 +7,13 @@
 class ContainerScreenValidation {
 #include "Extra/ContainerScreenValidationAPI.hpp"
 public:
-    virtual ~ContainerScreenValidation();
-    virtual struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
-    virtual class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(int /*enum ContainerEnumName*/);
-    virtual int /*enum ItemAddType*/ _canAdd(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-    virtual int /*enum ItemSetType*/ _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-    virtual bool _canRemove(struct ContainerValidatorPairScope const&, int, int, bool) const;
-    virtual bool _canDestroy(struct ContainerValidatorPairScope const&) const;
+    /*0*/ virtual ~ContainerScreenValidation();
+    /*1*/ virtual struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
+    /*2*/ virtual class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(int /*enum ContainerEnumName*/);
+    /*3*/ virtual int /*enum ItemAddType*/ _canAdd(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual int /*enum ItemSetType*/ _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
+    /*5*/ virtual bool _canRemove(struct ContainerValidatorPairScope const&, int, int, bool) const;
+    /*6*/ virtual bool _canDestroy(struct ContainerValidatorPairScope const&) const;
 
 public:
     MCAPI bool tryCommitActionResults();

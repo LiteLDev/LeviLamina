@@ -8,8 +8,8 @@
 class ItemStackRequestActionSwap : public ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionSwapAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionSwap();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~ItemStackRequestActionSwap();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
 };

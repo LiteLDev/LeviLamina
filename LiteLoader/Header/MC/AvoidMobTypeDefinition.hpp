@@ -8,7 +8,7 @@
 class AvoidMobTypeDefinition {
 #include "Extra/AvoidMobTypeDefinitionAPI.hpp"
 public:
-    virtual ~AvoidMobTypeDefinition();
+    /*0*/ virtual ~AvoidMobTypeDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class AvoidMobTypeGoal&);

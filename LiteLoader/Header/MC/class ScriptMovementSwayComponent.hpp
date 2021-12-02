@@ -7,7 +7,7 @@
 namespace class ScriptMovementSwayComponent {
 #include "Extra/class ScriptMovementSwayComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

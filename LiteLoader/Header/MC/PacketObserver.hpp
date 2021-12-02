@@ -7,5 +7,5 @@
 class PacketObserver {
 #include "Extra/PacketObserverAPI.hpp"
 public:
-    virtual ~PacketObserver();
+    /*0*/ virtual ~PacketObserver();
 };

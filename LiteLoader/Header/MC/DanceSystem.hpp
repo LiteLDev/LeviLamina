@@ -7,7 +7,7 @@
 class DanceSystem {
 #include "Extra/DanceSystemAPI.hpp"
 public:
-    virtual ~DanceSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~DanceSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -9,6 +9,6 @@
 class FindBlockDefinition : public BehaviorDefinition {
 #include "Extra/FindBlockDefinitionAPI.hpp"
 public:
-    virtual ~FindBlockDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~FindBlockDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

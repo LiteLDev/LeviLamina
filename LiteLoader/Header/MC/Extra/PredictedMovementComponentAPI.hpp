@@ -6,5 +6,8 @@
 // Add Member There
 public:
 struct PredictionDbgData;
+struct HistoryItem;
+struct RuntimePredictionData;
+
 
 #endif

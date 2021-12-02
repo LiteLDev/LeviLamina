@@ -7,5 +7,5 @@
 class FlushableEnv {
 #include "Extra/FlushableEnvAPI.hpp"
 public:
-    virtual ~FlushableEnv();
+    /*0*/ virtual ~FlushableEnv();
 };

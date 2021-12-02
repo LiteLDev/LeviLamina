@@ -8,9 +8,9 @@
 class HugeMushroomFeature : public Feature {
 #include "Extra/HugeMushroomFeatureAPI.hpp"
 public:
-    virtual ~HugeMushroomFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~HugeMushroomFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
     MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const;

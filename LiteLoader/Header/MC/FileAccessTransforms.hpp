@@ -7,5 +7,5 @@
 class FileAccessTransforms {
 #include "Extra/FileAccessTransformsAPI.hpp"
 public:
-    virtual ~FileAccessTransforms();
+    /*0*/ virtual ~FileAccessTransforms();
 };

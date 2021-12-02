@@ -8,6 +8,6 @@
 class AmphibiousMoveControlDescription : public MoveControlDescription {
 #include "Extra/AmphibiousMoveControlDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~AmphibiousMoveControlDescription();
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~AmphibiousMoveControlDescription();
 };

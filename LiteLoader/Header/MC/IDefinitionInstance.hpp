@@ -7,6 +7,6 @@
 class IDefinitionInstance {
 #include "Extra/IDefinitionInstanceAPI.hpp"
 public:
-    virtual ~IDefinitionInstance();
-    virtual unsigned short getRuntimeTypeId() const;
+    /*0*/ virtual ~IDefinitionInstance();
+    /*1*/ virtual unsigned short getRuntimeTypeId() const;
 };

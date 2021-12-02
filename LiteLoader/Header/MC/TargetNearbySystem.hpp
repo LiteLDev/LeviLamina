@@ -7,7 +7,7 @@
 class TargetNearbySystem {
 #include "Extra/TargetNearbySystemAPI.hpp"
 public:
-    virtual ~TargetNearbySystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~TargetNearbySystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

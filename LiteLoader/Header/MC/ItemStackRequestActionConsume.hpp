@@ -8,8 +8,8 @@
 class ItemStackRequestActionConsume : public ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionConsumeAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionConsume();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~ItemStackRequestActionConsume();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
 };

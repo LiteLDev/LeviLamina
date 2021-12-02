@@ -7,5 +7,5 @@
 class LabTableContainerScreenValidator {
 #include "Extra/LabTableContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~LabTableContainerScreenValidator();
+    /*0*/ virtual ~LabTableContainerScreenValidator();
 };

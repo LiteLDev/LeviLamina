@@ -7,5 +7,5 @@
 class CartographyContainerScreenValidator {
 #include "Extra/CartographyContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~CartographyContainerScreenValidator();
+    /*0*/ virtual ~CartographyContainerScreenValidator();
 };

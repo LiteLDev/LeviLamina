@@ -9,7 +9,7 @@
 class ScriptDimension : public ScriptObject {
 #include "Extra/ScriptDimensionAPI.hpp"
 public:
-    virtual ~ScriptDimension();
+    /*0*/ virtual ~ScriptDimension();
 
 public:
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const&, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;

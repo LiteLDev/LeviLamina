@@ -7,7 +7,7 @@
 class ActorDataSyncSystem {
 #include "Extra/ActorDataSyncSystemAPI.hpp"
 public:
-    virtual ~ActorDataSyncSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ActorDataSyncSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

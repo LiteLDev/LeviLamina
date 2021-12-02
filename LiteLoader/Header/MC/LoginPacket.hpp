@@ -8,10 +8,10 @@
 class LoginPacket : public Packet {
 #include "Extra/LoginPacketAPI.hpp"
 public:
-    virtual ~LoginPacket();
-    virtual int /*enum MinecraftPacketIds*/ getId() const;
-    virtual std::string getName() const;
-    virtual void write(class BinaryStream&) const;
-    virtual bool disallowBatching() const;
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~LoginPacket();
+    /*1*/ virtual int /*enum MinecraftPacketIds*/ getId() const;
+    /*2*/ virtual std::string getName() const;
+    /*3*/ virtual void write(class BinaryStream&) const;
+    /*5*/ virtual bool disallowBatching() const;
+    /*6*/ virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
 };

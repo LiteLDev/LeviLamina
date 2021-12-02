@@ -9,9 +9,9 @@
 class FileUploadManager {
 #include "Extra/FileUploadManagerAPI.hpp"
 public:
-    virtual ~FileUploadManager();
-    virtual float getUploadProgress() const;
-    virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
+    /*0*/ virtual ~FileUploadManager();
+    /*1*/ virtual float getUploadProgress() const;
+    /*2*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
 
 public:
     MCAPI void addCallbackQueue(class std::function<void(void)>);

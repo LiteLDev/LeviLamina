@@ -6,5 +6,6 @@
 // Add Member There
 public:
 struct ScreenData;
+struct RequestSlotIdAssignment;
 
 #endif

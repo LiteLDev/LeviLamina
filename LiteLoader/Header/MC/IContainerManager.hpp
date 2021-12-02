@@ -7,5 +7,5 @@
 class IContainerManager {
 #include "Extra/IContainerManagerAPI.hpp"
 public:
-    virtual ~IContainerManager();
+    /*0*/ virtual ~IContainerManager();
 };

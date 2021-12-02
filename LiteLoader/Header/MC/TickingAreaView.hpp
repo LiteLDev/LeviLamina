@@ -7,19 +7,19 @@
 class TickingAreaView {
 #include "Extra/TickingAreaViewAPI.hpp"
 public:
-    virtual ~TickingAreaView();
-    virtual void init(struct Bounds const&, bool);
-    virtual void tick(struct Tick const&, class BlockSource&, bool);
-    virtual void tickSeasons(class BlockSource&, class Random&);
-    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
-    virtual struct Bounds const& getBounds() const;
-    virtual bool isCircle() const;
-    virtual bool isDoneLoading() const;
-    virtual bool checkInitialLoadDone();
-    virtual float getInitialLoadPercentage();
-    virtual void move(struct Bounds const&);
-    virtual std::unique_ptr<class ChunkViewSource> createChildSource();
-    virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
+    /*0*/ virtual ~TickingAreaView();
+    /*1*/ virtual void init(struct Bounds const&, bool);
+    /*2*/ virtual void tick(struct Tick const&, class BlockSource&, bool);
+    /*3*/ virtual void tickSeasons(class BlockSource&, class Random&);
+    /*4*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    /*5*/ virtual struct Bounds const& getBounds() const;
+    /*6*/ virtual bool isCircle() const;
+    /*7*/ virtual bool isDoneLoading() const;
+    /*8*/ virtual bool checkInitialLoadDone();
+    /*9*/ virtual float getInitialLoadPercentage();
+    /*10*/ virtual void move(struct Bounds const&);
+    /*11*/ virtual std::unique_ptr<class ChunkViewSource> createChildSource();
+    /*12*/ virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
 
 public:
     MCAPI void unregisterChunkBuildOrderPolicies(class ChunkBuildOrderPolicyBase&);

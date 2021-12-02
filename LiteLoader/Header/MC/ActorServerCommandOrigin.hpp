@@ -9,23 +9,23 @@
 class ActorServerCommandOrigin : public ActorCommandOrigin {
 #include "Extra/ActorServerCommandOriginAPI.hpp"
 public:
-    virtual ~ActorServerCommandOrigin();
-    virtual std::string const& getRequestId() const;
-    virtual class Level* getLevel() const;
-    virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
-    virtual std::unique_ptr<class CommandOrigin> clone() const;
-    virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    virtual class std::optional<class Vec3> getCursorHitPos() const;
-    virtual bool canUseAbility(int /*enum AbilitiesIndex*/) const;
-    virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    virtual bool isSelectorExpansionAllowed() const;
-    virtual unsigned char getSourceSubId() const;
-    virtual void unk_vfn_20();
-    virtual int /*enum CommandOriginType*/ getOriginType() const;
-    virtual void unk_vfn_24();
-    virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    virtual class CompoundTag serialize() const;
-    virtual bool isValid() const;
+    /*0*/ virtual ~ActorServerCommandOrigin();
+    /*1*/ virtual std::string const& getRequestId() const;
+    /*5*/ virtual class Level* getLevel() const;
+    /*8*/ virtual int /*enum CommandPermissionLevel*/ getPermissionsLevel() const;
+    /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*14*/ virtual bool canUseAbility(int /*enum AbilitiesIndex*/) const;
+    /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*17*/ virtual bool isSelectorExpansionAllowed() const;
+    /*19*/ virtual unsigned char getSourceSubId() const;
+    /*20*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*22*/ virtual int /*enum CommandOriginType*/ getOriginType() const;
+    /*24*/ virtual class mce::UUID const& getUUID() const;
+    /*25*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual class CompoundTag serialize() const;
+    /*27*/ virtual bool isValid() const;
 
 public:
     MCAPI void setTargetOther(struct ActorUniqueID);

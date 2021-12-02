@@ -7,7 +7,7 @@
 class ITickingArea {
 #include "Extra/ITickingAreaAPI.hpp"
 public:
-    virtual ~ITickingArea();
+    /*0*/ virtual ~ITickingArea();
 
 public:
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;

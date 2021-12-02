@@ -7,29 +7,29 @@
 class ContainerModel {
 #include "Extra/ContainerModelAPI.hpp"
 public:
-    virtual void containerContentChanged(int);
-    virtual ~ContainerModel();
-    virtual void postInit();
-    virtual void releaseResources();
-    virtual int getContainerSize() const;
-    virtual int getFilteredContainerSize() const;
-    virtual void unk_vfn_6();
-    virtual class ContainerWeakRef getContainerWeakRef() const;
-    virtual class ItemStack const& getItemStack(int) const;
-    virtual std::vector<class ItemStack> const& getItems() const;
-    virtual class ItemInstance const& getItemInstance(int) const;
-    virtual class ItemStackBase const& getItemStackBase(int) const;
-    virtual void unk_vfn_12();
-    virtual void setItem(int, class ItemStack const&);
-    virtual bool isValid();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual std::string const& getItemGroupName(int) const;
-    virtual void unk_vfn_19();
-    virtual class Container* _getContainer() const;
-    virtual int _getContainerOffset() const;
-    virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    /*0*/ virtual void containerContentChanged(int);
+    /*1*/ virtual ~ContainerModel();
+    /*2*/ virtual void postInit();
+    /*3*/ virtual void releaseResources();
+    /*4*/ virtual int getContainerSize() const;
+    /*5*/ virtual int getFilteredContainerSize() const;
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
+    /*8*/ virtual class ItemStack const& getItemStack(int) const;
+    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
+    /*10*/ virtual class ItemInstance const& getItemInstance(int) const;
+    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void setItem(int, class ItemStack const&);
+    /*14*/ virtual bool isValid();
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual void unk_vfn_16();
+    /*17*/ virtual void unk_vfn_17();
+    /*18*/ virtual std::string const& getItemGroupName(int) const;
+    /*19*/ virtual void unk_vfn_19();
+    /*20*/ virtual class Container* _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
+    /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
 
 public:
     MCAPI bool isContainerSlotInRange(int) const;

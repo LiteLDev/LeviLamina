@@ -8,13 +8,13 @@
 class OnInteractTriggerDescription : public BlockTriggerDescription<struct OnInteractTrigger> {
 #include "Extra/OnInteractTriggerDescriptionAPI.hpp"
 public:
-    virtual ~OnInteractTriggerDescription();
-    virtual std::string const& getName() const;
-    virtual bool isNetworkComponent() const;
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
-    virtual ~OnInteractTriggerDescription();
-    virtual void unk_vfn_8();
+    /*0*/ virtual ~OnInteractTriggerDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*7*/ virtual ~OnInteractTriggerDescription();
+    /*8*/ virtual void unk_vfn_8();
 
 public:
     MCAPI static std::string const NameID;

@@ -7,5 +7,5 @@
 class BlockGameplayHandler {
 #include "Extra/BlockGameplayHandlerAPI.hpp"
 public:
-    virtual ~BlockGameplayHandler();
+    /*0*/ virtual ~BlockGameplayHandler();
 };

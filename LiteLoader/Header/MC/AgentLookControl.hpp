@@ -7,9 +7,9 @@
 class AgentLookControl {
 #include "Extra/AgentLookControlAPI.hpp"
 public:
-    virtual ~AgentLookControl();
-    virtual void initializeInternal(class Mob&);
-    virtual void tick(class Mob&);
+    /*0*/ virtual ~AgentLookControl();
+    /*1*/ virtual void initializeInternal(class Mob&);
+    /*2*/ virtual void tick(class Mob&);
 
 public:
     MCAPI static float sBaseYMax;

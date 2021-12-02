@@ -7,7 +7,7 @@
 namespace struct LevelChunkPhase1Deleter {
 #include "Extra/struct LevelChunkPhase1DeleterAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

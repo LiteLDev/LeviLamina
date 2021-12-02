@@ -9,7 +9,7 @@
 class ScriptStrengthComponent : public ScriptActorComponent {
 #include "Extra/ScriptStrengthComponentAPI.hpp"
 public:
-    virtual ~ScriptStrengthComponent();
+    /*0*/ virtual ~ScriptStrengthComponent();
 
 public:
     MCAPI class Scripting::Result<int> getMax() const;

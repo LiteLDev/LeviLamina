@@ -8,7 +8,7 @@
 class CentralSpikedFeature : public Feature {
 #include "Extra/CentralSpikedFeatureAPI.hpp"
 public:
-    virtual ~CentralSpikedFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~CentralSpikedFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

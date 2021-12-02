@@ -2,46 +2,46 @@
 #pragma once
 #include <Global.h>
 #include "LevelStorageWriteBatch.hpp"
+#include "LevelStorage.hpp"
 #include "Core.hpp"
 #include "Bedrock.hpp"
-#include "LevelStorage.hpp"
 #define EXTRA_INCLUDE_PART_DBSTORAGE
 #include "Extra/DBStorageAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DBSTORAGE
 class DBStorage : public LevelStorage {
 #include "Extra/DBStorageAPI.hpp"
 public:
-    virtual ~DBStorage();
-    virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
-    virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, int /*enum DBHelpers::Category*/);
-    virtual bool hasKey(class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/) const;
-    virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/, class std::function<void(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const;
-    virtual bool loadLevelData(class LevelData&);
-    virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, int /*enum StorageVersion*/);
-    virtual void saveLevelData(class LevelData const&);
-    virtual class Core::PathBuffer<std::string> const& getFullPath() const;
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(class LevelStorageWriteBatch const&);
-    virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> deleteData(std::string const&, int /*enum DBHelpers::Category*/);
-    virtual void syncIO();
-    virtual void getStatistics(std::string&) const;
-    virtual void unk_vfn_15();
-    virtual void startShutdown();
-    virtual bool isShuttingDown() const;
-    virtual bool checkShutdownDone();
-    virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, int /*enum DBHelpers::Category*/) const;
-    virtual void unk_vfn_20();
-    virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&);
-    virtual void releaseSnapshot();
-    virtual void compactStorage();
-    virtual void syncAndSuspendStorage();
-    virtual void resumeStorage();
-    virtual void setFlushAllowed(bool);
-    virtual void flushToPermanentStorage();
-    virtual void freeCaches();
-    virtual void setCompactionCallback(class std::function<void(int /*enum CompactionStatus*/)>);
-    virtual void setCriticalSyncSaveCallback(class std::function<void(void)>);
-    virtual void corruptLevel();
+    /*0*/ virtual ~DBStorage();
+    /*1*/ virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
+    /*2*/ virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, int /*enum DBHelpers::Category*/);
+    /*3*/ virtual bool hasKey(class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/) const;
+    /*4*/ virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, int /*enum DBHelpers::Category*/, class std::function<void(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const;
+    /*5*/ virtual bool loadLevelData(class LevelData&);
+    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, int /*enum StorageVersion*/);
+    /*7*/ virtual void saveLevelData(class LevelData const&);
+    /*8*/ virtual class Core::PathBuffer<std::string> const& getFullPath() const;
+    /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(std::string const&, std::string&&, int /*enum DBHelpers::Category*/);
+    /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> saveData(class LevelStorageWriteBatch const&);
+    /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void>> deleteData(std::string const&, int /*enum DBHelpers::Category*/);
+    /*12*/ virtual void syncIO();
+    /*13*/ virtual void getStatistics(std::string&) const;
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual void startShutdown();
+    /*17*/ virtual bool isShuttingDown() const;
+    /*18*/ virtual bool checkShutdownDone();
+    /*19*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, int /*enum DBHelpers::Category*/) const;
+    /*20*/ virtual void unk_vfn_20();
+    /*21*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&);
+    /*22*/ virtual void releaseSnapshot();
+    /*23*/ virtual void compactStorage();
+    /*24*/ virtual void syncAndSuspendStorage();
+    /*25*/ virtual void resumeStorage();
+    /*26*/ virtual void setFlushAllowed(bool);
+    /*27*/ virtual void flushToPermanentStorage();
+    /*28*/ virtual void freeCaches();
+    /*29*/ virtual void setCompactionCallback(class std::function<void(int /*enum CompactionStatus*/)>);
+    /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void(void)>);
+    /*31*/ virtual void corruptLevel();
 
 public:
     MCAPI bool tryRepair(class Core::Path const&) const;

@@ -8,7 +8,7 @@
 class DropItemForDefinition {
 #include "Extra/DropItemForDefinitionAPI.hpp"
 public:
-    virtual ~DropItemForDefinition();
+    /*0*/ virtual ~DropItemForDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class DropItemForGoal&);

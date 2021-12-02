@@ -7,7 +7,7 @@
 class ServerPlayerEventCoordinator {
 #include "Extra/ServerPlayerEventCoordinatorAPI.hpp"
 public:
-    virtual ~ServerPlayerEventCoordinator();
+    /*0*/ virtual ~ServerPlayerEventCoordinator();
 
 public:
     MCAPI void sendPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);

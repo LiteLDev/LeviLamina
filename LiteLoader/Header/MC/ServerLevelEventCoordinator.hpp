@@ -7,7 +7,7 @@
 class ServerLevelEventCoordinator {
 #include "Extra/ServerLevelEventCoordinatorAPI.hpp"
 public:
-    virtual ~ServerLevelEventCoordinator();
+    /*0*/ virtual ~ServerLevelEventCoordinator();
 
 public:
     MCAPI void sendLevelAddedPlayer(class Level&, class Player&);

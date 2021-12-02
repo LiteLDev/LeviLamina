@@ -7,8 +7,8 @@
 class KeyManager {
 #include "Extra/KeyManagerAPI.hpp"
 public:
-    virtual ~KeyManager();
-    virtual bool isValid() const;
+    /*0*/ virtual ~KeyManager();
+    /*1*/ virtual bool isValid() const;
 
 public:
     MCAPI std::string getPublicKey() const;

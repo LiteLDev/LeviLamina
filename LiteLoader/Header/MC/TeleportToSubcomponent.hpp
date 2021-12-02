@@ -7,9 +7,9 @@
 class TeleportToSubcomponent {
 #include "Extra/TeleportToSubcomponentAPI.hpp"
 public:
-    virtual ~TeleportToSubcomponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    virtual char const* getName();
+    /*0*/ virtual ~TeleportToSubcomponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 };

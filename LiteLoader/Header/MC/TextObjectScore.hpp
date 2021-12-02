@@ -8,10 +8,10 @@
 class TextObjectScore {
 #include "Extra/TextObjectScoreAPI.hpp"
 public:
-    virtual ~TextObjectScore();
-    virtual std::string asString() const;
-    virtual class Json::Value asJsonValue() const;
-    virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*0*/ virtual ~TextObjectScore();
+    /*1*/ virtual std::string asString() const;
+    /*2*/ virtual class Json::Value asJsonValue() const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
 
 public:
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;

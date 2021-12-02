@@ -7,8 +7,8 @@
 class EventCommand {
 #include "Extra/EventCommandAPI.hpp"
 public:
-    virtual ~EventCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~EventCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

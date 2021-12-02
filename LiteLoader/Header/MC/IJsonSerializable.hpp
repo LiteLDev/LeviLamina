@@ -7,5 +7,5 @@
 class IJsonSerializable {
 #include "Extra/IJsonSerializableAPI.hpp"
 public:
-    virtual ~IJsonSerializable();
+    /*0*/ virtual ~IJsonSerializable();
 };

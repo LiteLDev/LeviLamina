@@ -8,7 +8,7 @@
 class StompAttackDefinition {
 #include "Extra/StompAttackDefinitionAPI.hpp"
 public:
-    virtual ~StompAttackDefinition();
+    /*0*/ virtual ~StompAttackDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class StompAttackDefinition>>&);

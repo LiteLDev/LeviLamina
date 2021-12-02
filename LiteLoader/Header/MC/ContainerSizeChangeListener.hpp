@@ -7,6 +7,6 @@
 class ContainerSizeChangeListener {
 #include "Extra/ContainerSizeChangeListenerAPI.hpp"
 public:
-    virtual void unk_vfn_0();
-    virtual ~ContainerSizeChangeListener();
+    /*0*/ virtual void unk_vfn_0();
+    /*1*/ virtual ~ContainerSizeChangeListener();
 };

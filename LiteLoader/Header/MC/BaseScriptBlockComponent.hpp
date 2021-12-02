@@ -8,5 +8,5 @@
 class BaseScriptBlockComponent : public ScriptObject {
 #include "Extra/BaseScriptBlockComponentAPI.hpp"
 public:
-    virtual ~BaseScriptBlockComponent();
+    /*0*/ virtual ~BaseScriptBlockComponent();
 };

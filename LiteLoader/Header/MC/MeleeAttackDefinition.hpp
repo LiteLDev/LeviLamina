@@ -8,7 +8,7 @@
 class MeleeAttackDefinition {
 #include "Extra/MeleeAttackDefinitionAPI.hpp"
 public:
-    virtual ~MeleeAttackDefinition();
+    /*0*/ virtual ~MeleeAttackDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class MeleeAttackGoal&);

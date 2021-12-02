@@ -7,7 +7,7 @@
 class ItemState {
 #include "Extra/ItemStateAPI.hpp"
 public:
-    virtual ~ItemState();
+    /*0*/ virtual ~ItemState();
 
 public:
     MCAPI static void forEachState(class std::function<bool(class ItemState const&)>);

@@ -7,8 +7,8 @@
 class PillagerOutpostStart {
 #include "Extra/PillagerOutpostStartAPI.hpp"
 public:
-    virtual ~PillagerOutpostStart();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~PillagerOutpostStart();
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 };

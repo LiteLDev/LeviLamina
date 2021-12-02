@@ -7,8 +7,8 @@
 class EffectCommand {
 #include "Extra/EffectCommandAPI.hpp"
 public:
-    virtual ~EffectCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~EffectCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

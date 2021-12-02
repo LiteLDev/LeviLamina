@@ -7,9 +7,9 @@
 class ScriptBinderActorTickingAreaTemplate {
 #include "Extra/ScriptBinderActorTickingAreaTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderActorTickingAreaTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderActorTickingAreaTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(struct ActorUniqueID const&);

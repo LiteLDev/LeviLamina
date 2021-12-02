@@ -8,12 +8,12 @@
 class ScoreboardEventCoordinator : public NetworkHandler {
 #include "Extra/ScoreboardEventCoordinatorAPI.hpp"
 public:
-    virtual ~ScoreboardEventCoordinator();
-    virtual void _onDisable();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_16();
+    /*0*/ virtual ~ScoreboardEventCoordinator();
+    /*1*/ virtual void _onDisable();
+    /*3*/ virtual void unk_vfn_3();
+    /*11*/ virtual void unk_vfn_11();
+    /*12*/ virtual void unk_vfn_12();
+    /*16*/ virtual void unk_vfn_16();
 
 public:
     MCAPI void sendOnScoreChanged(struct ScoreboardId const&, std::string const&, int);

@@ -7,5 +7,5 @@
 class IUIEventTelemetry {
 #include "Extra/IUIEventTelemetryAPI.hpp"
 public:
-    virtual ~IUIEventTelemetry();
+    /*0*/ virtual ~IUIEventTelemetry();
 };

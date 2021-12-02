@@ -7,5 +7,5 @@
 struct PauseScreenCapabilities : public TypedScreenCapabilities<struct PauseScreenCapabilities> {
 #include "Extra/PauseScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~PauseScreenCapabilities();
+    /*0*/ virtual ~PauseScreenCapabilities();
 };

@@ -7,6 +7,6 @@
 class ShiftedValueAmplifier {
 #include "Extra/ShiftedValueAmplifierAPI.hpp"
 public:
-    virtual ~ShiftedValueAmplifier();
-    virtual float getAmount(int, float) const;
+    /*0*/ virtual ~ShiftedValueAmplifier();
+    /*1*/ virtual float getAmount(int, float) const;
 };

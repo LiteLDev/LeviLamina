@@ -7,7 +7,7 @@
 class WaitTicksNode {
 #include "Extra/WaitTicksNodeAPI.hpp"
 public:
-    virtual ~WaitTicksNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~WaitTicksNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

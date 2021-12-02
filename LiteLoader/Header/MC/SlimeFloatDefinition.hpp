@@ -8,7 +8,7 @@
 class SlimeFloatDefinition {
 #include "Extra/SlimeFloatDefinitionAPI.hpp"
 public:
-    virtual ~SlimeFloatDefinition();
+    /*0*/ virtual ~SlimeFloatDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class SlimeFloatGoal&);

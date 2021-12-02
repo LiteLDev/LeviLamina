@@ -8,7 +8,7 @@
 class RabbitPanicGoal : public PanicGoal {
 #include "Extra/RabbitPanicGoalAPI.hpp"
 public:
-    virtual ~RabbitPanicGoal();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~RabbitPanicGoal();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
 };

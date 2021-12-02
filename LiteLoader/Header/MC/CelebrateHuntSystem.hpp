@@ -7,7 +7,7 @@
 class CelebrateHuntSystem {
 #include "Extra/CelebrateHuntSystemAPI.hpp"
 public:
-    virtual ~CelebrateHuntSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~CelebrateHuntSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

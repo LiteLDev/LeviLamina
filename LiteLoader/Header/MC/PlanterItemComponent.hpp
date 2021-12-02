@@ -7,13 +7,13 @@
 class PlanterItemComponent {
 #include "Extra/PlanterItemComponentAPI.hpp"
 public:
-    virtual ~PlanterItemComponent();
-    virtual bool isNetworkComponent() const;
-    virtual void unk_vfn_2();
-    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
-    virtual bool isNetworkComponent() const;
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    /*0*/ virtual ~PlanterItemComponent();
+    /*1*/ virtual bool isNetworkComponent() const;
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI static void bindType();

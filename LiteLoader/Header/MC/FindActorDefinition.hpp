@@ -9,6 +9,6 @@
 class FindActorDefinition : public BehaviorDefinition {
 #include "Extra/FindActorDefinitionAPI.hpp"
 public:
-    virtual ~FindActorDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~FindActorDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

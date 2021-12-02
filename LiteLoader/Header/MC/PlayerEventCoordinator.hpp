@@ -7,7 +7,7 @@
 class PlayerEventCoordinator {
 #include "Extra/PlayerEventCoordinatorAPI.hpp"
 public:
-    virtual ~PlayerEventCoordinator();
+    /*0*/ virtual ~PlayerEventCoordinator();
 
 public:
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler>&&);

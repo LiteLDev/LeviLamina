@@ -7,7 +7,7 @@
 class ItemStackRequestActionCraftHandler {
 #include "Extra/ItemStackRequestActionCraftHandlerAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionCraftHandler();
+    /*0*/ virtual ~ItemStackRequestActionCraftHandler();
 
 public:
     MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, unsigned char);

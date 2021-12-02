@@ -7,12 +7,12 @@
 class FollowFlockGoal {
 #include "Extra/FollowFlockGoalAPI.hpp"
 public:
-    virtual ~FollowFlockGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual bool canBeInterrupted();
-    virtual void start();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~FollowFlockGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 };

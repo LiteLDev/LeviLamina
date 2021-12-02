@@ -8,12 +8,12 @@
 class WaterBoundPathNavigation : public PathNavigation {
 #include "Extra/WaterBoundPathNavigationAPI.hpp"
 public:
-    virtual ~WaterBoundPathNavigation();
-    virtual void initializeInternal(class Mob&, struct NavigationDescription*);
-    virtual void tick(class NavigationComponent&, class Mob&);
-    virtual class Vec3 getTempMobPos(class Mob const&) const;
-    virtual void stop(class NavigationComponent&, class Mob&);
-    virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    virtual bool canUpdatePath(class Mob const&) const;
-    virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*0*/ virtual ~WaterBoundPathNavigation();
+    /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
+    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
+    /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
+    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
 };

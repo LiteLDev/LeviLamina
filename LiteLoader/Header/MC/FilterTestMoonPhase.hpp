@@ -8,8 +8,8 @@
 class FilterTestMoonPhase : public FilterTest {
 #include "Extra/FilterTestMoonPhaseAPI.hpp"
 public:
-    virtual ~FilterTestMoonPhase();
-    virtual bool evaluate(struct FilterContext const&) const;
-    virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
-    virtual class gsl::basic_string_span<char const, -1> getName() const;
+    /*0*/ virtual ~FilterTestMoonPhase();
+    /*2*/ virtual bool evaluate(struct FilterContext const&) const;
+    /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
+    /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
 };

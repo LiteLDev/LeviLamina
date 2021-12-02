@@ -9,24 +9,24 @@
 class NavigationScriptActorComponent : public ScriptActorComponent {
 #include "Extra/NavigationScriptActorComponentAPI.hpp"
 public:
-    virtual ~NavigationScriptActorComponent();
-    virtual class Scripting::Result<bool> getIsAmphibious() const;
-    virtual class Scripting::Result<bool> getAvoidSun() const;
-    virtual class Scripting::Result<bool> getCanPassDoors() const;
-    virtual class Scripting::Result<bool> getCanOpenDoors() const;
-    virtual class Scripting::Result<bool> getCanOpenIronDoors() const;
-    virtual class Scripting::Result<bool> getCanBreakDoors() const;
-    virtual class Scripting::Result<bool> getAvoidWater() const;
-    virtual class Scripting::Result<bool> getAvoidDamageBlocks() const;
-    virtual class Scripting::Result<bool> getCanFloat() const;
-    virtual class Scripting::Result<bool> getCanSink() const;
-    virtual class Scripting::Result<bool> getCanPathOverWater() const;
-    virtual class Scripting::Result<bool> getCanPathOverLava() const;
-    virtual class Scripting::Result<bool> getCanWalkInLava() const;
-    virtual class Scripting::Result<bool> getAvoidPortals() const;
-    virtual class Scripting::Result<bool> getCanWalk() const;
-    virtual class Scripting::Result<bool> getCanSwim() const;
-    virtual class Scripting::Result<bool> getCanBreach() const;
-    virtual class Scripting::Result<bool> getCanJump() const;
-    virtual class Scripting::Result<bool> getCanPathFromAir() const;
+    /*0*/ virtual ~NavigationScriptActorComponent();
+    /*4*/ virtual class Scripting::Result<bool> getIsAmphibious() const;
+    /*5*/ virtual class Scripting::Result<bool> getAvoidSun() const;
+    /*6*/ virtual class Scripting::Result<bool> getCanPassDoors() const;
+    /*7*/ virtual class Scripting::Result<bool> getCanOpenDoors() const;
+    /*8*/ virtual class Scripting::Result<bool> getCanOpenIronDoors() const;
+    /*9*/ virtual class Scripting::Result<bool> getCanBreakDoors() const;
+    /*10*/ virtual class Scripting::Result<bool> getAvoidWater() const;
+    /*11*/ virtual class Scripting::Result<bool> getAvoidDamageBlocks() const;
+    /*12*/ virtual class Scripting::Result<bool> getCanFloat() const;
+    /*13*/ virtual class Scripting::Result<bool> getCanSink() const;
+    /*14*/ virtual class Scripting::Result<bool> getCanPathOverWater() const;
+    /*15*/ virtual class Scripting::Result<bool> getCanPathOverLava() const;
+    /*16*/ virtual class Scripting::Result<bool> getCanWalkInLava() const;
+    /*17*/ virtual class Scripting::Result<bool> getAvoidPortals() const;
+    /*18*/ virtual class Scripting::Result<bool> getCanWalk() const;
+    /*19*/ virtual class Scripting::Result<bool> getCanSwim() const;
+    /*20*/ virtual class Scripting::Result<bool> getCanBreach() const;
+    /*21*/ virtual class Scripting::Result<bool> getCanJump() const;
+    /*22*/ virtual class Scripting::Result<bool> getCanPathFromAir() const;
 };

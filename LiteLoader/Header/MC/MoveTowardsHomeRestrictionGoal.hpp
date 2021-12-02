@@ -7,12 +7,12 @@
 class MoveTowardsHomeRestrictionGoal {
 #include "Extra/MoveTowardsHomeRestrictionGoalAPI.hpp"
 public:
-    virtual ~MoveTowardsHomeRestrictionGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~MoveTowardsHomeRestrictionGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 };

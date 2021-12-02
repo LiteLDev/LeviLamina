@@ -7,6 +7,6 @@
 class ContentTierManager {
 #include "Extra/ContentTierManagerAPI.hpp"
 public:
-    virtual ~ContentTierManager();
-    virtual class ContentTierInfo getContentTierInfo() const;
+    /*0*/ virtual ~ContentTierManager();
+    /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
 };

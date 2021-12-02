@@ -7,5 +7,5 @@
 class TradeContainerScreenValidator {
 #include "Extra/TradeContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~TradeContainerScreenValidator();
+    /*0*/ virtual ~TradeContainerScreenValidator();
 };

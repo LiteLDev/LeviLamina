@@ -7,6 +7,6 @@
 class GroundedConstraint {
 #include "Extra/GroundedConstraintAPI.hpp"
 public:
-    virtual ~GroundedConstraint();
-    virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&) const;
+    /*0*/ virtual ~GroundedConstraint();
+    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum Rotation*/ const&) const;
 };

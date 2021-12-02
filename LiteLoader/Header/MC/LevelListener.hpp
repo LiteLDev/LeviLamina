@@ -8,15 +8,15 @@
 class LevelListener : public BlockSourceListener {
 #include "Extra/LevelListenerAPI.hpp"
 public:
-    virtual ~LevelListener();
-    virtual void unk_vfn_1();
-    virtual void onSourceDestroyed(class BlockSource&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual class Particle* addParticle(int /*enum ParticleType*/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
+    /*0*/ virtual ~LevelListener();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual class Particle* addParticle(int /*enum ParticleType*/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
 };

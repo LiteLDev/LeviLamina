@@ -7,9 +7,9 @@
 class GoalSelectorSystem {
 #include "Extra/GoalSelectorSystemAPI.hpp"
 public:
-    virtual ~GoalSelectorSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~GoalSelectorSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 private:
     MCAPI static void _tickGoalSelectorComponent(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class GoalSelectorComponent>&);

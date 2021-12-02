@@ -8,7 +8,7 @@
 class BambooFeature : public Feature {
 #include "Extra/BambooFeatureAPI.hpp"
 public:
-    virtual ~BambooFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~BambooFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

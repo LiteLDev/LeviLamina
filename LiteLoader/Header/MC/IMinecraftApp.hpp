@@ -7,5 +7,5 @@
 class IMinecraftApp {
 #include "Extra/IMinecraftAppAPI.hpp"
 public:
-    virtual ~IMinecraftApp();
+    /*0*/ virtual ~IMinecraftApp();
 };

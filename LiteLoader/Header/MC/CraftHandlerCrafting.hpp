@@ -7,13 +7,13 @@
 class CraftHandlerCrafting {
 #include "Extra/CraftHandlerCraftingAPI.hpp"
 public:
-    virtual ~CraftHandlerCrafting();
-    virtual int /*enum ItemStackNetResult*/ handleConsumedItem(int /*enum ContainerEnumName*/, unsigned char, class ItemStack const&);
-    virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
-    virtual void unk_vfn_3();
-    virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    virtual void unk_vfn_5();
-    virtual class Recipes const* _getLevelRecipes() const;
+    /*0*/ virtual ~CraftHandlerCrafting();
+    /*1*/ virtual int /*enum ItemStackNetResult*/ handleConsumedItem(int /*enum ContainerEnumName*/, unsigned char, class ItemStack const&);
+    /*2*/ virtual int /*enum ItemStackNetResult*/ preHandleAction(int /*enum ItemStackRequestActionType*/);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual int /*enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 
 private:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const&);

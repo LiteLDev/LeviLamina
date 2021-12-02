@@ -7,13 +7,13 @@
 class ShooterItemComponent {
 #include "Extra/ShooterItemComponentAPI.hpp"
 public:
-    virtual ~ShooterItemComponent();
-    virtual bool checkComponentDataForContentErrors() const;
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual bool isNetworkComponent() const;
-    virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    virtual void initializeFromNetwork(class CompoundTag const&);
+    /*0*/ virtual ~ShooterItemComponent();
+    /*1*/ virtual bool checkComponentDataForContentErrors() const;
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
 
 public:
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;

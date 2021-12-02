@@ -7,8 +7,8 @@
 class CodeBuilderCommand {
 #include "Extra/CodeBuilderCommandAPI.hpp"
 public:
-    virtual ~CodeBuilderCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~CodeBuilderCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

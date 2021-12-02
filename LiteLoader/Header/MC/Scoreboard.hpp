@@ -7,22 +7,22 @@
 class Scoreboard {
 #include "Extra/ScoreboardAPI.hpp"
 public:
-    virtual ~Scoreboard();
-    virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, int /*enum ObjectiveSortOrder*/);
-    virtual class Objective* clearDisplayObjective(std::string const&);
+    /*0*/ virtual ~Scoreboard();
+    /*1*/ virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, int /*enum ObjectiveSortOrder*/);
+    /*2*/ virtual class Objective* clearDisplayObjective(std::string const&);
     virtual struct ScoreboardId const& createScoreboardId(class Player const&);
     virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
     virtual struct ScoreboardId const& createScoreboardId(std::string const&);
-    virtual void onObjectiveAdded(class Objective const&);
-    virtual void onObjectiveRemoved(class Objective&);
-    virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
-    virtual void onPlayerScoreRemoved(struct ScoreboardId const&, class Objective const&);
-    virtual void onPlayerJoined(class Player const&);
-    virtual void onPlayerIdentityUpdated(struct PlayerScoreboardId const&);
-    virtual void tick();
-    virtual void setPacketSender(class PacketSender*);
-    virtual void writeToLevelStorage();
-    virtual bool isClientSide() const;
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onObjectiveRemoved(class Objective&);
+    /*8*/ virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual void unk_vfn_11();
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void unk_vfn_14();
+    /*15*/ virtual bool isClientSide() const;
 
 public:
     MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);

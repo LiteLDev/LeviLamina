@@ -7,7 +7,7 @@
 class BodyControlSystem {
 #include "Extra/BodyControlSystemAPI.hpp"
 public:
-    virtual ~BodyControlSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BodyControlSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

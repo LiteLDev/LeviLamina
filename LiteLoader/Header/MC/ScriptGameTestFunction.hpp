@@ -8,7 +8,7 @@
 class ScriptGameTestFunction {
 #include "Extra/ScriptGameTestFunctionAPI.hpp"
 public:
-    virtual ~ScriptGameTestFunction();
-    virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper&) const;
-    virtual class std::optional<struct gametest::GameTestError> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
+    /*0*/ virtual ~ScriptGameTestFunction();
+    /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper&) const;
+    /*2*/ virtual class std::optional<struct gametest::GameTestError> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
 };

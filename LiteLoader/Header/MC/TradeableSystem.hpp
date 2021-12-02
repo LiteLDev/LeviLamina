@@ -7,7 +7,7 @@
 class TradeableSystem {
 #include "Extra/TradeableSystemAPI.hpp"
 public:
-    virtual ~TradeableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~TradeableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

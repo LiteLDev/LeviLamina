@@ -8,10 +8,10 @@
 class OffhandContainerValidation : public ContainerValidationBase {
 #include "Extra/OffhandContainerValidationAPI.hpp"
 public:
-    virtual ~OffhandContainerValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    virtual void unk_vfn_4();
-    virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
-    virtual void unk_vfn_6();
+    /*0*/ virtual ~OffhandContainerValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*6*/ virtual void unk_vfn_6();
 };

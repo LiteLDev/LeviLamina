@@ -7,5 +7,5 @@
 class ISecureStorageKeySystem {
 #include "Extra/ISecureStorageKeySystemAPI.hpp"
 public:
-    virtual ~ISecureStorageKeySystem();
+    /*0*/ virtual ~ISecureStorageKeySystem();
 };

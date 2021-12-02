@@ -8,12 +8,12 @@
 class WitherRandomAttackPosGoal : public RandomStrollGoal {
 #include "Extra/WitherRandomAttackPosGoalAPI.hpp"
 public:
-    virtual ~WitherRandomAttackPosGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void stop();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~WitherRandomAttackPosGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
 };

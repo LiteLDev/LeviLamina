@@ -8,8 +8,8 @@
 class RotationDescription {
 #include "Extra/RotationDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~RotationDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~RotationDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

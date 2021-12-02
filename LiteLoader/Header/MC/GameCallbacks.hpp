@@ -7,8 +7,8 @@
 class GameCallbacks {
 #include "Extra/GameCallbacksAPI.hpp"
 public:
-    virtual ~GameCallbacks();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void onBeforeSimTick();
+    /*0*/ virtual ~GameCallbacks();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void onBeforeSimTick();
 };

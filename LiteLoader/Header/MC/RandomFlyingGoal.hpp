@@ -8,13 +8,13 @@
 class RandomFlyingGoal : public RandomStrollGoal {
 #include "Extra/RandomFlyingGoalAPI.hpp"
 public:
-    virtual ~RandomFlyingGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool _setWantedPosition();
+    /*0*/ virtual ~RandomFlyingGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual bool canBeInterrupted();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual bool _setWantedPosition();
 
 private:
     MCAPI bool _getTreePos(class Vec3&) const;

@@ -8,7 +8,7 @@
 class AllowListEntry {
 #include "Extra/AllowListEntryAPI.hpp"
 public:
-    virtual ~AllowListEntry();
-    virtual void serialize(class Json::Value&);
-    virtual void deserialize(class Json::Value&);
+    /*0*/ virtual ~AllowListEntry();
+    /*1*/ virtual void serialize(class Json::Value&);
+    /*2*/ virtual void deserialize(class Json::Value&);
 };

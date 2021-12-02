@@ -8,9 +8,9 @@
 class EndPodiumFeature : public Feature {
 #include "Extra/EndPodiumFeatureAPI.hpp"
 public:
-    virtual ~EndPodiumFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~EndPodiumFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 public:
     MCAPI static float const CORNER_ROUNDING;

@@ -7,5 +7,5 @@
 class EmptyLevelGameplayHandler {
 #include "Extra/EmptyLevelGameplayHandlerAPI.hpp"
 public:
-    virtual ~EmptyLevelGameplayHandler();
+    /*0*/ virtual ~EmptyLevelGameplayHandler();
 };

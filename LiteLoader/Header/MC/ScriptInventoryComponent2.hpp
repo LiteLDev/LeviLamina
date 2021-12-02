@@ -9,7 +9,7 @@
 class ScriptInventoryComponent2 : public ScriptActorComponent {
 #include "Extra/ScriptInventoryComponent2API.hpp"
 public:
-    virtual ~ScriptInventoryComponent2();
+    /*0*/ virtual ~ScriptInventoryComponent2();
 
 public:
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;

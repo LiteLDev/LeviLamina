@@ -7,5 +7,5 @@
 class EnchantWithLevelsFunction {
 #include "Extra/EnchantWithLevelsFunctionAPI.hpp"
 public:
-    virtual ~EnchantWithLevelsFunction();
+    /*0*/ virtual ~EnchantWithLevelsFunction();
 };

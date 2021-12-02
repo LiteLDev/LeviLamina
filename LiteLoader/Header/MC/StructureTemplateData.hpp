@@ -7,7 +7,7 @@
 class StructureTemplateData {
 #include "Extra/StructureTemplateDataAPI.hpp"
 public:
-    virtual ~StructureTemplateData();
+    /*0*/ virtual ~StructureTemplateData();
 
 public:
     MCAPI class StructureBlockPalette const* getPalette(std::string const&) const;

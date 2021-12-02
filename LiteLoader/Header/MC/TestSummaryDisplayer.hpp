@@ -7,7 +7,7 @@
 class TestSummaryDisplayer {
 #include "Extra/TestSummaryDisplayerAPI.hpp"
 public:
-    virtual ~TestSummaryDisplayer();
+    /*0*/ virtual ~TestSummaryDisplayer();
 
 private:
     MCAPI void _say(std::string const&, std::string const&) const;

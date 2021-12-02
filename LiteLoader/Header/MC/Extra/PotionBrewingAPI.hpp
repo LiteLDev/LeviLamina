@@ -6,4 +6,7 @@
 // Add Member There
 public:
 class Ingredient;
+template <typename T>
+class Mix;
+
 #endif

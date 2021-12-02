@@ -7,7 +7,7 @@
 class MountTamingSystem {
 #include "Extra/MountTamingSystemAPI.hpp"
 public:
-    virtual ~MountTamingSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~MountTamingSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

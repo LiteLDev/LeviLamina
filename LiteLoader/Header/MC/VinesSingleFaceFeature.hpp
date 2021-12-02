@@ -7,6 +7,6 @@
 class VinesSingleFaceFeature {
 #include "Extra/VinesSingleFaceFeatureAPI.hpp"
 public:
-    virtual ~VinesSingleFaceFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~VinesSingleFaceFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

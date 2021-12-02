@@ -7,15 +7,15 @@
 class Goal {
 #include "Extra/GoalAPI.hpp"
 public:
-    virtual ~Goal();
-    virtual void unk_vfn_1();
-    virtual bool canContinueToUse();
-    virtual bool canBeInterrupted();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual bool isTargetGoal() const;
+    /*0*/ virtual ~Goal();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual bool isTargetGoal() const;
 
 public:
     MCAPI int getRequiredControlFlags() const;

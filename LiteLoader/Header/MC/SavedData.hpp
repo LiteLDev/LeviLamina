@@ -7,5 +7,5 @@
 class SavedData {
 #include "Extra/SavedDataAPI.hpp"
 public:
-    virtual ~SavedData();
+    /*0*/ virtual ~SavedData();
 };

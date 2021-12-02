@@ -7,6 +7,6 @@
 class LootItemRandomChanceCondition {
 #include "Extra/LootItemRandomChanceConditionAPI.hpp"
 public:
-    virtual ~LootItemRandomChanceCondition();
-    virtual bool applies(class Random&, class LootTableContext&);
+    /*0*/ virtual ~LootItemRandomChanceCondition();
+    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
 };

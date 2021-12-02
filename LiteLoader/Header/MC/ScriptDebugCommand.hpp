@@ -7,8 +7,8 @@
 class ScriptDebugCommand {
 #include "Extra/ScriptDebugCommandAPI.hpp"
 public:
-    virtual ~ScriptDebugCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ScriptDebugCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class IScriptDebugger*, class std::optional<struct ScriptSettings> const&);

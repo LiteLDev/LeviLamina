@@ -8,7 +8,7 @@
 class BinaryStream : public ReadOnlyBinaryStream {
 #include "Extra/BinaryStreamAPI.hpp"
 public:
-    virtual ~BinaryStream();
+    /*0*/ virtual ~BinaryStream();
 
 public:
     MCAPI std::string getAndReleaseData();

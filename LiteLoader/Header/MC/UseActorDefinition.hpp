@@ -8,5 +8,5 @@
 class UseActorDefinition : public BehaviorDefinition {
 #include "Extra/UseActorDefinitionAPI.hpp"
 public:
-    virtual ~UseActorDefinition();
+    /*0*/ virtual ~UseActorDefinition();
 };

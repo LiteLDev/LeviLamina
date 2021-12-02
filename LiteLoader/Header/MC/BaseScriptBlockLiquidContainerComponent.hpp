@@ -9,8 +9,8 @@
 class BaseScriptBlockLiquidContainerComponent : public ScriptObject {
 #include "Extra/BaseScriptBlockLiquidContainerComponentAPI.hpp"
 public:
-    virtual ~BaseScriptBlockLiquidContainerComponent();
-    virtual class Scripting::Result<void> setFillLevel(int);
+    /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
+    /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
 
 public:
     MCAPI class Scripting::Result<int> getFillLevel();

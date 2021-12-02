@@ -7,6 +7,6 @@
 class BlockEventResponseFactory {
 #include "Extra/BlockEventResponseFactoryAPI.hpp"
 public:
-    virtual ~BlockEventResponseFactory();
-    virtual void initializeFactory(class Experiments const&);
+    /*0*/ virtual ~BlockEventResponseFactory();
+    /*1*/ virtual void initializeFactory(class Experiments const&);
 };

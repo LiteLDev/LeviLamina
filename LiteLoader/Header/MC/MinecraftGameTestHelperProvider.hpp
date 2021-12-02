@@ -8,7 +8,7 @@
 class MinecraftGameTestHelperProvider {
 #include "Extra/MinecraftGameTestHelperProviderAPI.hpp"
 public:
-    virtual ~MinecraftGameTestHelperProvider();
-    virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance&);
-    virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
+    /*0*/ virtual ~MinecraftGameTestHelperProvider();
+    /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance&);
+    /*2*/ virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 };

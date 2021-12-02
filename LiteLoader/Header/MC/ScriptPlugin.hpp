@@ -7,8 +7,8 @@
 class ScriptPlugin {
 #include "Extra/ScriptPluginAPI.hpp"
 public:
-    virtual ~ScriptPlugin();
-    virtual class std::optional<std::string> onLoadScript(std::string const&);
+    /*0*/ virtual ~ScriptPlugin();
+    /*1*/ virtual class std::optional<std::string> onLoadScript(std::string const&);
 
 public:
     MCAPI bool hasErrors() const;

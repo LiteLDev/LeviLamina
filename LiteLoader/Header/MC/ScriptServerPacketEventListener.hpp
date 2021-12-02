@@ -7,6 +7,6 @@
 class ScriptServerPacketEventListener {
 #include "Extra/ScriptServerPacketEventListenerAPI.hpp"
 public:
-    virtual ~ScriptServerPacketEventListener();
-    virtual int /*enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+    /*0*/ virtual ~ScriptServerPacketEventListener();
+    /*1*/ virtual int /*enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
 };

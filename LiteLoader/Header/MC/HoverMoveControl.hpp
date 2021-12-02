@@ -8,6 +8,6 @@
 class HoverMoveControl : public MoveControl {
 #include "Extra/HoverMoveControlAPI.hpp"
 public:
-    virtual ~HoverMoveControl();
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~HoverMoveControl();
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 };

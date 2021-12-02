@@ -7,5 +7,5 @@
 class SoundPlayerInterface {
 #include "Extra/SoundPlayerInterfaceAPI.hpp"
 public:
-    virtual ~SoundPlayerInterface();
+    /*0*/ virtual ~SoundPlayerInterface();
 };

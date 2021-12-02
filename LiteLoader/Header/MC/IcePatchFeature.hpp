@@ -8,7 +8,7 @@
 class IcePatchFeature : public Feature {
 #include "Extra/IcePatchFeatureAPI.hpp"
 public:
-    virtual ~IcePatchFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~IcePatchFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

@@ -7,8 +7,8 @@
 class InternalTaskGroup {
 #include "Extra/InternalTaskGroupAPI.hpp"
 public:
-    virtual ~InternalTaskGroup();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual int /*enum TaskGroupState*/ getState() const;
+    /*0*/ virtual ~InternalTaskGroup();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum TaskGroupState*/ getState() const;
 };

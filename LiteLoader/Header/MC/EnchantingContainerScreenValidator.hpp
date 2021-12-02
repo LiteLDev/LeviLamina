@@ -7,5 +7,5 @@
 class EnchantingContainerScreenValidator {
 #include "Extra/EnchantingContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~EnchantingContainerScreenValidator();
+    /*0*/ virtual ~EnchantingContainerScreenValidator();
 };

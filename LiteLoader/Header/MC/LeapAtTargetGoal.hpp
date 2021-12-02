@@ -7,12 +7,12 @@
 class LeapAtTargetGoal {
 #include "Extra/LeapAtTargetGoalAPI.hpp"
 public:
-    virtual ~LeapAtTargetGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void appendDebugInfo(std::string&) const;
+    /*0*/ virtual ~LeapAtTargetGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
 };

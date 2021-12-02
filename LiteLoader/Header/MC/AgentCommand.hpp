@@ -8,8 +8,8 @@
 class AgentCommand {
 #include "Extra/AgentCommandAPI.hpp"
 public:
-    virtual ~AgentCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~AgentCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

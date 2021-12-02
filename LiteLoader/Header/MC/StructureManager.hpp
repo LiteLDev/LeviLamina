@@ -8,7 +8,7 @@
 class StructureManager {
 #include "Extra/StructureManagerAPI.hpp"
 public:
-    virtual ~StructureManager();
+    /*0*/ virtual ~StructureManager();
 
 public:
     MCAPI void clearAndShutdownStructurePlacement();

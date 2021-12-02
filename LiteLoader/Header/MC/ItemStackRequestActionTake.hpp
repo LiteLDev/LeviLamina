@@ -8,8 +8,8 @@
 class ItemStackRequestActionTake : public ItemStackRequestActionTransferBase {
 #include "Extra/ItemStackRequestActionTakeAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionTake();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
+    /*0*/ virtual ~ItemStackRequestActionTake();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
 };

@@ -7,8 +7,8 @@
 class ParticleCommand {
 #include "Extra/ParticleCommandAPI.hpp"
 public:
-    virtual ~ParticleCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ParticleCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -7,7 +7,7 @@
 class LookAtBlockNode {
 #include "Extra/LookAtBlockNodeAPI.hpp"
 public:
-    virtual ~LookAtBlockNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~LookAtBlockNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

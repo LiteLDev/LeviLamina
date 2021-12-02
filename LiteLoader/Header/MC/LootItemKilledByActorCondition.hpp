@@ -8,8 +8,8 @@
 class LootItemKilledByActorCondition {
 #include "Extra/LootItemKilledByActorConditionAPI.hpp"
 public:
-    virtual ~LootItemKilledByActorCondition();
-    virtual bool applies(class Random&, class LootTableContext&);
+    /*0*/ virtual ~LootItemKilledByActorCondition();
+    /*1*/ virtual bool applies(class Random&, class LootTableContext&);
 
 public:
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);

@@ -7,10 +7,10 @@
 class WoodlandMansionStart {
 #include "Extra/WoodlandMansionStartAPI.hpp"
 public:
-    virtual ~WoodlandMansionStart();
-    virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~WoodlandMansionStart();
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 
 private:
     MCAPI void _create(class Dimension&, class OverworldGenerator&, class Random&, int, int);

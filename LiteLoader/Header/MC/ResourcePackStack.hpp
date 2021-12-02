@@ -8,9 +8,9 @@
 class ResourcePackStack {
 #include "Extra/ResourcePackStackAPI.hpp"
 public:
-    virtual ~ResourcePackStack();
-    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
-    virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
+    /*0*/ virtual ~ResourcePackStack();
+    /*1*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
+    /*2*/ virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
 
 public:
     MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);

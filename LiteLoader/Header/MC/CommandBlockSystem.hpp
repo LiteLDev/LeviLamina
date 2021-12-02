@@ -7,7 +7,7 @@
 class CommandBlockSystem {
 #include "Extra/CommandBlockSystemAPI.hpp"
 public:
-    virtual ~CommandBlockSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~CommandBlockSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

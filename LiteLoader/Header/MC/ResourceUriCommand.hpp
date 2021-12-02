@@ -7,8 +7,8 @@
 class ResourceUriCommand {
 #include "Extra/ResourceUriCommandAPI.hpp"
 public:
-    virtual ~ResourceUriCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ResourceUriCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,9 +8,9 @@
 class ScriptItemStackBinderComponent {
 #include "Extra/ScriptItemStackBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptItemStackBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptItemStackBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI static std::string const COUNT;

@@ -7,8 +7,8 @@
 namespace TitleInfo {
 #include "Extra/TitleInfoAPI.hpp"
 
-MCAPI extern std::string const BedrockVanillaTag;
-MCAPI extern enum TitleInfo::TitleId const CurrentTitleId;
-MCAPI extern std::string const EarthTag;
+MCAPI std::string const BedrockVanillaTag;
+MCAPI enum TitleInfo::TitleId const CurrentTitleId;
+MCAPI std::string const EarthTag;
 
 } // namespace TitleInfo

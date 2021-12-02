@@ -8,8 +8,8 @@
 class DragonFlamingDefinition {
 #include "Extra/DragonFlamingDefinitionAPI.hpp"
 public:
-    virtual ~DragonFlamingDefinition();
-    virtual bool validateMobType(class Mob&);
+    /*0*/ virtual ~DragonFlamingDefinition();
+    /*1*/ virtual bool validateMobType(class Mob&);
 
 public:
     MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&);

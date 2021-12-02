@@ -8,19 +8,19 @@
 class ResourcePackManager {
 #include "Extra/ResourcePackManagerAPI.hpp"
 public:
-    virtual ~ResourcePackManager();
-    virtual bool load(class ResourceLocation const&, std::string&) const;
-    virtual bool load(class ResourceLocation const&, std::string&, std::vector<std::string> const&) const;
-    virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
-    virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
-    virtual bool isInStreamableLocation(class ResourceLocation const&) const;
-    virtual bool isInStreamableLocation(class ResourceLocation const&, std::vector<std::string> const&) const;
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
-    virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
-    virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
-    virtual struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
-    virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
+    /*0*/ virtual ~ResourcePackManager();
+    /*1*/ virtual bool load(class ResourceLocation const&, std::string&) const;
+    /*2*/ virtual bool load(class ResourceLocation const&, std::string&, std::vector<std::string> const&) const;
+    /*3*/ virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
+    /*4*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
+    /*5*/ virtual bool isInStreamableLocation(class ResourceLocation const&) const;
+    /*6*/ virtual bool isInStreamableLocation(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*7*/ virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&) const;
+    /*8*/ virtual class Core::PathBuffer<std::string> getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*9*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&) const;
+    /*10*/ virtual class Core::PathBuffer<std::string> getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
+    /*11*/ virtual struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*12*/ virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
 
 public:
     MCAPI int composeFullStack(class ResourcePackStack&, class ResourcePackStack const&, class ResourcePackStack const&, class ResourcePackStack const&) const;

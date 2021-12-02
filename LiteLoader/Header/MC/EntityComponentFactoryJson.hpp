@@ -7,7 +7,7 @@
 class EntityComponentFactoryJson {
 #include "Extra/EntityComponentFactoryJsonAPI.hpp"
 public:
-    virtual ~EntityComponentFactoryJson();
+    /*0*/ virtual ~EntityComponentFactoryJson();
 
 public:
     MCAPI class IJsonDefinitionSerializer* tryGetDefinitionSerializer(std::string const&) const;

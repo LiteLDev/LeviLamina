@@ -7,5 +7,6 @@
 class ScriptObjectHandle;
 class ScriptReport;
 class ScriptVersionInfo;
+class ScriptCallbackInterface;
 
 #endif

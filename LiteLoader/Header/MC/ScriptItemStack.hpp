@@ -8,7 +8,7 @@
 class ScriptItemStack {
 #include "Extra/ScriptItemStackAPI.hpp"
 public:
-    virtual ~ScriptItemStack();
+    /*0*/ virtual ~ScriptItemStack();
 
 public:
     MCAPI class Scripting::WeakObjectHandle getComponent(class Scripting::WeakLifetimeScope, std::string const&);

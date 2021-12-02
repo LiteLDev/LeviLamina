@@ -8,19 +8,19 @@
 class ScriptBlockContainerComponent {
 #include "Extra/ScriptBlockContainerComponentAPI.hpp"
 public:
-    virtual ~ScriptBlockContainerComponent();
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool retrieveComponentFrom(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
-    virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
-    virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, bool&) const;
-    virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*0*/ virtual ~ScriptBlockContainerComponent();
+    /*1*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*3*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*4*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*5*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*6*/ virtual bool retrieveComponentFrom(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle&) const;
+    /*7*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*8*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*9*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*10*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*11*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, bool&) const;
+    /*12*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
 
 private:
     MCAPI static class HashedString const mHash;

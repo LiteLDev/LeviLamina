@@ -8,11 +8,11 @@
 class ActorSpawnRuleGroup {
 #include "Extra/ActorSpawnRuleGroupAPI.hpp"
 public:
-    virtual ~ActorSpawnRuleGroup();
-    virtual std::string const& getRootKey();
-    virtual std::string const& getFileType();
-    virtual bool processPopulationControl(std::string const&, class Json::Value&);
-    virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
+    /*0*/ virtual ~ActorSpawnRuleGroup();
+    /*1*/ virtual std::string const& getRootKey();
+    /*2*/ virtual std::string const& getFileType();
+    /*3*/ virtual bool processPopulationControl(std::string const&, class Json::Value&);
+    /*4*/ virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, std::string>>>&);
 
 public:
     MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const&) const;

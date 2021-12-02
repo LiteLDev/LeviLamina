@@ -7,8 +7,8 @@
 class SetBlockCommand {
 #include "Extra/SetBlockCommandAPI.hpp"
 public:
-    virtual ~SetBlockCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~SetBlockCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

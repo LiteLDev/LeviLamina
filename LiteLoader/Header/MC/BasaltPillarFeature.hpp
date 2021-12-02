@@ -8,9 +8,9 @@
 class BasaltPillarFeature : public Feature {
 #include "Extra/BasaltPillarFeatureAPI.hpp"
 public:
-    virtual ~BasaltPillarFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~BasaltPillarFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _growColumn(class BlockSource&, class BlockPos const&, class Random&, float) const;

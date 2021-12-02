@@ -9,7 +9,7 @@
 class ScriptAddPassengerComponent : public ScriptActorComponent {
 #include "Extra/ScriptAddPassengerComponentAPI.hpp"
 public:
-    virtual ~ScriptAddPassengerComponent();
+    /*0*/ virtual ~ScriptAddPassengerComponent();
 
 public:
     MCAPI class Scripting::Result<std::string> getEntityType() const;

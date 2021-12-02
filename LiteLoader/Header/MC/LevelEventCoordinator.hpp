@@ -7,7 +7,7 @@
 class LevelEventCoordinator {
 #include "Extra/LevelEventCoordinatorAPI.hpp"
 public:
-    virtual ~LevelEventCoordinator();
+    /*0*/ virtual ~LevelEventCoordinator();
 
 public:
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>);

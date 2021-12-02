@@ -7,5 +7,5 @@
 class UriListener {
 #include "Extra/UriListenerAPI.hpp"
 public:
-    virtual ~UriListener();
+    /*0*/ virtual ~UriListener();
 };

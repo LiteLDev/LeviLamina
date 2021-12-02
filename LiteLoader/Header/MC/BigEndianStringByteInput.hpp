@@ -8,12 +8,12 @@
 class BigEndianStringByteInput : public StringByteInput {
 #include "Extra/BigEndianStringByteInputAPI.hpp"
 public:
-    virtual ~BigEndianStringByteInput();
-    virtual float readFloat();
-    virtual double readDouble();
-    virtual short readShort();
-    virtual int readInt();
-    virtual __int64 readLongLong();
-    virtual void unk_vfn_9();
-    virtual bool readBigEndianBytes(void*, unsigned __int64);
+    /*0*/ virtual ~BigEndianStringByteInput();
+    /*3*/ virtual float readFloat();
+    /*4*/ virtual double readDouble();
+    /*6*/ virtual short readShort();
+    /*7*/ virtual int readInt();
+    /*8*/ virtual __int64 readLongLong();
+    /*9*/ virtual void unk_vfn_9();
+    /*11*/ virtual bool readBigEndianBytes(void*, unsigned __int64);
 };

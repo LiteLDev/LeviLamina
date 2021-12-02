@@ -8,8 +8,8 @@
 class AnimationScriptsDescription {
 #include "Extra/AnimationScriptsDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~AnimationScriptsDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~AnimationScriptsDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

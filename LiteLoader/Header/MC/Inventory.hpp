@@ -8,22 +8,22 @@
 class Inventory : public FillingContainer {
 #include "Extra/InventoryAPI.hpp"
 public:
-    virtual ~Inventory();
-    virtual void init();
-    virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
-    virtual void setItem(int, class ItemStack const&);
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
-    virtual void unk_vfn_14();
-    virtual void startOpen(class Player&);
-    virtual void stopOpen(class Player&);
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_31();
-    virtual bool add(class ItemStack&);
-    virtual bool canAdd(class ItemStack const&) const;
-    virtual int getEmptySlotsCount() const;
-    virtual int getFirstEmptySlot() const;
-    virtual void setContainerSize(int);
+    /*0*/ virtual ~Inventory();
+    /*1*/ virtual void init();
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
+    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    /*14*/ virtual int getContainerSize() const;
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*31*/ virtual void unk_vfn_31();
+    /*33*/ virtual bool add(class ItemStack&);
+    /*34*/ virtual bool canAdd(class ItemStack const&) const;
+    /*38*/ virtual int getEmptySlotsCount() const;
+    /*39*/ virtual int getFirstEmptySlot() const;
+    /*40*/ virtual void setContainerSize(int);
 
 public:
     MCAPI void dropSlot(int, bool, bool, bool);

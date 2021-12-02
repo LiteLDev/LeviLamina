@@ -9,7 +9,7 @@
 class BucketableDescription : public Description {
 #include "Extra/BucketableDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~BucketableDescription();
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~BucketableDescription();
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

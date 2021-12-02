@@ -7,5 +7,5 @@
 class IScreenChangedEventing {
 #include "Extra/IScreenChangedEventingAPI.hpp"
 public:
-    virtual ~IScreenChangedEventing();
+    /*0*/ virtual ~IScreenChangedEventing();
 };

@@ -8,7 +8,7 @@
 class EndGatewayFeature : public Feature {
 #include "Extra/EndGatewayFeatureAPI.hpp"
 public:
-    virtual ~EndGatewayFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~EndGatewayFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

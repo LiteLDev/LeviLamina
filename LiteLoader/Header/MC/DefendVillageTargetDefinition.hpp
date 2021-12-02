@@ -8,7 +8,7 @@
 class DefendVillageTargetDefinition {
 #include "Extra/DefendVillageTargetDefinitionAPI.hpp"
 public:
-    virtual ~DefendVillageTargetDefinition();
+    /*0*/ virtual ~DefendVillageTargetDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class DefendVillageTargetGoal&);

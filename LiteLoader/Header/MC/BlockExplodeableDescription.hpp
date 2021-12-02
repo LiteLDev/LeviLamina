@@ -8,10 +8,10 @@
 class BlockExplodeableDescription {
 #include "Extra/BlockExplodeableDescriptionAPI.hpp"
 public:
-    virtual ~BlockExplodeableDescription();
-    virtual std::string const& getName() const;
-    virtual void initializeComponent(class EntityContext&) const;
-    virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&) const;
+    /*0*/ virtual ~BlockExplodeableDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext&) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&) const;
 
 public:
     MCAPI static std::string const NameID;

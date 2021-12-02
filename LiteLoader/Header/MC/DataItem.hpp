@@ -7,6 +7,6 @@
 class DataItem {
 #include "Extra/DataItemAPI.hpp"
 public:
-    virtual ~DataItem();
-    virtual bool isDataEqual(class DataItem const&) const;
+    /*0*/ virtual ~DataItem();
+    /*1*/ virtual bool isDataEqual(class DataItem const&) const;
 };

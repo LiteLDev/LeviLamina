@@ -7,15 +7,15 @@
 class JumpToBlockGoal {
 #include "Extra/JumpToBlockGoalAPI.hpp"
 public:
-    virtual ~JumpToBlockGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual bool canBeInterrupted();
-    virtual void start();
-    virtual void stop();
-    virtual void tick();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual bool canBeInterrupted();
+    /*0*/ virtual ~JumpToBlockGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool canBeInterrupted();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool canBeInterrupted();
 
 public:
     MCAPI void resetCooldown();

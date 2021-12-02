@@ -7,8 +7,8 @@
 class ScriptDebuggerWatchdog {
 #include "Extra/ScriptDebuggerWatchdogAPI.hpp"
 public:
-    virtual ~ScriptDebuggerWatchdog();
-    virtual bool requireClose() const;
-    virtual void startListenTimeout();
-    virtual bool listenTimeoutExpired() const;
+    /*0*/ virtual ~ScriptDebuggerWatchdog();
+    /*1*/ virtual bool requireClose() const;
+    /*2*/ virtual void startListenTimeout();
+    /*3*/ virtual bool listenTimeoutExpired() const;
 };

@@ -8,15 +8,15 @@
 struct OnFallOnTriggerDescription : public BlockTriggerDescription<struct OnInteractTrigger> {
 #include "Extra/OnFallOnTriggerDescriptionAPI.hpp"
 public:
-    virtual ~OnFallOnTriggerDescription();
-    virtual std::string const& getName() const;
-    virtual void initializeComponent(class EntityContext&) const;
-    virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&) const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
+    /*0*/ virtual ~OnFallOnTriggerDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void initializeComponent(class EntityContext&) const;
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription>>&, class BlockComponentFactory const&) const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
 
 public:
     MCAPI static std::string const NameID;

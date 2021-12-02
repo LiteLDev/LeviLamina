@@ -7,8 +7,8 @@
 class WorldGenerator {
 #include "Extra/WorldGeneratorAPI.hpp"
 public:
-    virtual ~WorldGenerator();
-    virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+    /*0*/ virtual ~WorldGenerator();
+    /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
 
 public:
     MCAPI static enum StructureFeatureType getFeatureId(std::string const&);

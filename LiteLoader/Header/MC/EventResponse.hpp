@@ -8,8 +8,8 @@
 class EventResponse {
 #include "Extra/EventResponseAPI.hpp"
 public:
-    virtual ~EventResponse();
-    virtual std::string const& getName() const;
-    virtual void unk_vfn_2();
-    virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&) const;
+    /*0*/ virtual ~EventResponse();
+    /*1*/ virtual std::string const& getName() const;
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection>>&, class Factory<class EventResponse> const&) const;
 };

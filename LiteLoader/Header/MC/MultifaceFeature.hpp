@@ -7,8 +7,8 @@
 class MultifaceFeature {
 #include "Extra/MultifaceFeatureAPI.hpp"
 public:
-    virtual ~MultifaceFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~MultifaceFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
 private:
     MCAPI class std::optional<class BlockPos> _placeBlockIfPossible(class BlockSource&, class BlockPos const&, class Random&, std::vector<unsigned char> const&) const;

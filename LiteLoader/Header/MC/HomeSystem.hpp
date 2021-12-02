@@ -7,7 +7,7 @@
 class HomeSystem {
 #include "Extra/HomeSystemAPI.hpp"
 public:
-    virtual ~HomeSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~HomeSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -7,5 +7,5 @@
 class StructurePoolBlockPredicateAlwaysTrue {
 #include "Extra/StructurePoolBlockPredicateAlwaysTrueAPI.hpp"
 public:
-    virtual ~StructurePoolBlockPredicateAlwaysTrue();
+    /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrue();
 };

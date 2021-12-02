@@ -7,26 +7,26 @@
 class BlockSource {
 #include "Extra/BlockSourceAPI.hpp"
 public:
-    virtual void addListener(class BlockSourceListener&);
-    virtual void removeListener(class BlockSourceListener&);
-    virtual class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(int /*enum ActorType*/, class AABB const&, class Actor const*);
-    virtual bool hasChunksAt(struct Bounds const&) const;
-    virtual bool hasChunksAt(class BlockPos const&, int) const;
-    virtual bool hasChunksAt(class AABB const&) const;
-    virtual class Block const& getBlock(int, int, int) const;
-    virtual class Block const& getBlock(class BlockPos const&) const;
-    virtual class Material const& getMaterial(class BlockPos const&) const;
-    virtual class Material const& getMaterial(int, int, int) const;
-    virtual bool containsAnyLiquid(class AABB const&);
-    virtual bool containsMaterial(class AABB const&, int /*enum MaterialType*/) const;
-    virtual short getMinHeight() const;
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual class AutomaticID<class Dimension, int> getDimensionId() const;
-    virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
-    virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
-    virtual class ChunkSource& getChunkSource();
-    virtual ~BlockSource();
+    /*0*/ virtual void addListener(class BlockSourceListener&);
+    /*1*/ virtual void removeListener(class BlockSourceListener&);
+    /*2*/ virtual class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(int /*enum ActorType*/, class AABB const&, class Actor const*);
+    /*3*/ virtual bool hasChunksAt(struct Bounds const&) const;
+    /*4*/ virtual bool hasChunksAt(class BlockPos const&, int) const;
+    /*5*/ virtual bool hasChunksAt(class AABB const&) const;
+    /*6*/ virtual class Block const& getBlock(int, int, int) const;
+    /*7*/ virtual class Block const& getBlock(class BlockPos const&) const;
+    /*8*/ virtual class Material const& getMaterial(class BlockPos const&) const;
+    /*9*/ virtual class Material const& getMaterial(int, int, int) const;
+    /*10*/ virtual bool containsAnyLiquid(class AABB const&);
+    /*11*/ virtual bool containsMaterial(class AABB const&, int /*enum MaterialType*/) const;
+    /*12*/ virtual short getMinHeight() const;
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void unk_vfn_14();
+    /*15*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
+    /*16*/ virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
+    /*17*/ virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
+    /*18*/ virtual class ChunkSource& getChunkSource();
+    /*19*/ virtual ~BlockSource();
 
 public:
     MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);

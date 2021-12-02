@@ -8,15 +8,15 @@
 class FakeThermalMonitorInterface : public TypedBlockActorScriptBlockComponentFactory<class ScriptBlockInventoryComponent> {
 #include "Extra/FakeThermalMonitorInterfaceAPI.hpp"
 public:
-    virtual ~FakeThermalMonitorInterface();
-    virtual int /*enum ThermalState*/ getThermalState() const;
-    virtual float getThermalValueCelsius() const;
-    virtual bool isLowBatteryModeEnabled() const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_16();
+    /*0*/ virtual ~FakeThermalMonitorInterface();
+    /*1*/ virtual int /*enum ThermalState*/ getThermalState() const;
+    /*2*/ virtual float getThermalValueCelsius() const;
+    /*3*/ virtual bool isLowBatteryModeEnabled() const;
+    /*4*/ virtual void unk_vfn_4();
+    /*6*/ virtual void unk_vfn_6();
+    /*8*/ virtual void unk_vfn_8();
+    /*10*/ virtual void unk_vfn_10();
+    /*12*/ virtual void unk_vfn_12();
+    /*14*/ virtual void unk_vfn_14();
+    /*16*/ virtual void unk_vfn_16();
 };

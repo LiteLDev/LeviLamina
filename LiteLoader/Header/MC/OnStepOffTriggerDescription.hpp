@@ -8,8 +8,8 @@
 class OnStepOffTriggerDescription : public BlockTriggerDescription<struct OnStepOffTrigger> {
 #include "Extra/OnStepOffTriggerDescriptionAPI.hpp"
 public:
-    virtual ~OnStepOffTriggerDescription();
-    virtual std::string const& getName() const;
+    /*0*/ virtual ~OnStepOffTriggerDescription();
+    /*1*/ virtual std::string const& getName() const;
 
 public:
     MCAPI static std::string const NameID;

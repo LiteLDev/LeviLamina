@@ -8,8 +8,8 @@
 class RaidTriggerDescription {
 #include "Extra/RaidTriggerDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~RaidTriggerDescription();
-    virtual void deserializeData(struct DeserializeDataParams);
-    virtual void serializeData(class Json::Value&) const;
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~RaidTriggerDescription();
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
 };

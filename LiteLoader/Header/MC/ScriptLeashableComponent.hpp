@@ -9,7 +9,7 @@
 class ScriptLeashableComponent : public ScriptActorComponent {
 #include "Extra/ScriptLeashableComponentAPI.hpp"
 public:
-    virtual ~ScriptLeashableComponent();
+    /*0*/ virtual ~ScriptLeashableComponent();
 
 public:
     MCAPI class Scripting::Result<float> getSoftDistance() const;

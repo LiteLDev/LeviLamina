@@ -7,14 +7,14 @@
 class TradeWithPlayerGoal {
 #include "Extra/TradeWithPlayerGoalAPI.hpp"
 public:
-    virtual ~TradeWithPlayerGoal();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void stop();
-    virtual void stop();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void stop();
+    /*0*/ virtual ~TradeWithPlayerGoal();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void stop();
 };

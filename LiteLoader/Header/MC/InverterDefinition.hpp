@@ -9,6 +9,6 @@
 class InverterDefinition : public BehaviorDefinition {
 #include "Extra/InverterDefinitionAPI.hpp"
 public:
-    virtual ~InverterDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~InverterDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

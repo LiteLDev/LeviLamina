@@ -7,5 +7,5 @@
 class ScriptGameTestFunctionContext {
 #include "Extra/ScriptGameTestFunctionContextAPI.hpp"
 public:
-    virtual ~ScriptGameTestFunctionContext();
+    /*0*/ virtual ~ScriptGameTestFunctionContext();
 };

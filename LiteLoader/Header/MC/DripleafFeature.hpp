@@ -8,9 +8,9 @@
 class DripleafFeature : public Feature {
 #include "Extra/DripleafFeatureAPI.hpp"
 public:
-    virtual ~DripleafFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~DripleafFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI static bool _placeBigDripleaf(class BlockSource&, class BlockPos const&, class Random&);

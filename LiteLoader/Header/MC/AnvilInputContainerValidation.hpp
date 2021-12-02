@@ -8,9 +8,9 @@
 class AnvilInputContainerValidation : public ContainerValidationBase {
 #include "Extra/AnvilInputContainerValidationAPI.hpp"
 public:
-    virtual ~AnvilInputContainerValidation();
-    virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
+    /*0*/ virtual ~AnvilInputContainerValidation();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual void unk_vfn_2();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
 };

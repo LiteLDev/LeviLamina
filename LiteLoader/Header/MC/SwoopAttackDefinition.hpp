@@ -8,7 +8,7 @@
 class SwoopAttackDefinition {
 #include "Extra/SwoopAttackDefinitionAPI.hpp"
 public:
-    virtual ~SwoopAttackDefinition();
+    /*0*/ virtual ~SwoopAttackDefinition();
 
 public:
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SwoopAttackDefinition>>&);

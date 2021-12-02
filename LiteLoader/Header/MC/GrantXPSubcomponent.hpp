@@ -8,9 +8,9 @@
 class GrantXPSubcomponent {
 #include "Extra/GrantXPSubcomponentAPI.hpp"
 public:
-    virtual ~GrantXPSubcomponent();
-    virtual void readfromJSON(class Json::Value&, class SemVersion const&);
-    virtual void writetoJSON(class Json::Value&) const;
-    virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    virtual char const* getName();
+    /*0*/ virtual ~GrantXPSubcomponent();
+    /*1*/ virtual void readfromJSON(class Json::Value&, class SemVersion const&);
+    /*2*/ virtual void writetoJSON(class Json::Value&) const;
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 };

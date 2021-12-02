@@ -8,7 +8,7 @@
 class ShipwreckStart : public StructureStart {
 #include "Extra/ShipwreckStartAPI.hpp"
 public:
-    virtual ~ShipwreckStart();
-    virtual void unk_vfn_2();
-    virtual int /*enum StructureFeatureType*/ getType() const;
+    /*0*/ virtual ~ShipwreckStart();
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum StructureFeatureType*/ getType() const;
 };

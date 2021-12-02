@@ -7,7 +7,7 @@
 namespace class ScriptMovementSkipComponent {
 #include "Extra/class ScriptMovementSkipComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

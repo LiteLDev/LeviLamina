@@ -7,7 +7,7 @@
 namespace class ScriptHealableComponent2 {
 #include "Extra/class ScriptHealableComponent2API.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

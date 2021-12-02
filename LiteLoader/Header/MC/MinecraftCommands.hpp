@@ -7,7 +7,7 @@
 class MinecraftCommands {
 #include "Extra/MinecraftCommandsAPI.hpp"
 public:
-    virtual ~MinecraftCommands();
+    /*0*/ virtual ~MinecraftCommands();
 
 public:
     MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void(std::string const&)>);

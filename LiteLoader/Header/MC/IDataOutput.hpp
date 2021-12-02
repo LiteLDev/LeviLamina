@@ -7,5 +7,5 @@
 class IDataOutput {
 #include "Extra/IDataOutputAPI.hpp"
 public:
-    virtual ~IDataOutput();
+    /*0*/ virtual ~IDataOutput();
 };

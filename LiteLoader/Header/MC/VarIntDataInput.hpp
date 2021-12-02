@@ -7,15 +7,15 @@
 class VarIntDataInput {
 #include "Extra/VarIntDataInputAPI.hpp"
 public:
-    virtual ~VarIntDataInput();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual float readFloat();
-    virtual double readDouble();
-    virtual char readByte();
-    virtual short readShort();
-    virtual int readInt();
-    virtual __int64 readLongLong();
-    virtual bool readBytes(void*, unsigned __int64);
-    virtual unsigned __int64 numBytesLeft() const;
+    /*0*/ virtual ~VarIntDataInput();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual float readFloat();
+    /*4*/ virtual double readDouble();
+    /*5*/ virtual char readByte();
+    /*6*/ virtual short readShort();
+    /*7*/ virtual int readInt();
+    /*8*/ virtual __int64 readLongLong();
+    /*9*/ virtual bool readBytes(void*, unsigned __int64);
+    /*10*/ virtual unsigned __int64 numBytesLeft() const;
 };

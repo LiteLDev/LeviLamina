@@ -7,7 +7,7 @@
 class ItemEventCoordinator {
 #include "Extra/ItemEventCoordinatorAPI.hpp"
 public:
-    virtual ~ItemEventCoordinator();
+    /*0*/ virtual ~ItemEventCoordinator();
 
 public:
     MCAPI void onItemModifiedActor(class ItemStackBase const&, class Actor const&);

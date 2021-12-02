@@ -8,10 +8,10 @@
 class MinecraftReportGameListener {
 #include "Extra/MinecraftReportGameListenerAPI.hpp"
 public:
-    virtual ~MinecraftReportGameListener();
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
-    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
-    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+    /*0*/ virtual ~MinecraftReportGameListener();
+    /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+    /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
 private:
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const&) const;

@@ -8,13 +8,13 @@
 class OnPlacedTriggerDescription : public BlockTriggerDescription<struct OnPlacedTrigger> {
 #include "Extra/OnPlacedTriggerDescriptionAPI.hpp"
 public:
-    virtual ~OnPlacedTriggerDescription();
-    virtual std::string const& getName() const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual ~OnPlacedTriggerDescription();
-    virtual void unk_vfn_8();
+    /*0*/ virtual ~OnPlacedTriggerDescription();
+    /*1*/ virtual std::string const& getName() const;
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual ~OnPlacedTriggerDescription();
+    /*8*/ virtual void unk_vfn_8();
 
 public:
     MCAPI static std::string const NameID;

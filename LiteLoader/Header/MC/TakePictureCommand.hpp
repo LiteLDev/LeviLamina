@@ -7,8 +7,8 @@
 class TakePictureCommand {
 #include "Extra/TakePictureCommandAPI.hpp"
 public:
-    virtual ~TakePictureCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TakePictureCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -8,9 +8,9 @@
 class NearestAttackableTargetDefinition {
 #include "Extra/NearestAttackableTargetDefinitionAPI.hpp"
 public:
-    virtual ~NearestAttackableTargetDefinition();
-    virtual void unk_vfn_1();
-    virtual bool validate(class Mob&);
+    /*0*/ virtual ~NearestAttackableTargetDefinition();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual bool validate(class Mob&);
 
 public:
     MCAPI void initialize(class EntityContext&, class NearestAttackableTargetGoal&);

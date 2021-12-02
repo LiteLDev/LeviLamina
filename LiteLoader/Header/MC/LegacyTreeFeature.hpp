@@ -7,6 +7,6 @@
 class LegacyTreeFeature {
 #include "Extra/LegacyTreeFeatureAPI.hpp"
 public:
-    virtual ~LegacyTreeFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~LegacyTreeFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 };

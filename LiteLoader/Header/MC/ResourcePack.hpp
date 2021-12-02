@@ -8,7 +8,7 @@
 class ResourcePack {
 #include "Extra/ResourcePackAPI.hpp"
 public:
-    virtual ~ResourcePack();
+    /*0*/ virtual ~ResourcePack();
 
 public:
     MCAPI bool areKnownFilesValid();

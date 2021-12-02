@@ -8,10 +8,10 @@
 class TextObjectSelector {
 #include "Extra/TextObjectSelectorAPI.hpp"
 public:
-    virtual ~TextObjectSelector();
-    virtual std::string asString() const;
-    virtual class Json::Value asJsonValue() const;
-    virtual class Json::Value resolve(struct ResolveData const&) const;
+    /*0*/ virtual ~TextObjectSelector();
+    /*1*/ virtual std::string asString() const;
+    /*2*/ virtual class Json::Value asJsonValue() const;
+    /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
 
 public:
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;

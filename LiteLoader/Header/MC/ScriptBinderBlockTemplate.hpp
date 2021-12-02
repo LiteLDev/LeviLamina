@@ -8,9 +8,9 @@
 class ScriptBinderBlockTemplate {
 #include "Extra/ScriptBinderBlockTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderBlockTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderBlockTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class Block const&, class BlockPos const&, class ScriptApi::ScriptObjectHandle&&);

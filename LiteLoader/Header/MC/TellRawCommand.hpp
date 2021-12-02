@@ -7,8 +7,8 @@
 class TellRawCommand {
 #include "Extra/TellRawCommandAPI.hpp"
 public:
-    virtual ~TellRawCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~TellRawCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

@@ -7,8 +7,8 @@
 class ShiftedDurationAmplifier {
 #include "Extra/ShiftedDurationAmplifierAPI.hpp"
 public:
-    virtual ~ShiftedDurationAmplifier();
-    virtual void unk_vfn_1();
-    virtual bool shouldBuff(int, int) const;
-    virtual int getTickInterval(int) const;
+    /*0*/ virtual ~ShiftedDurationAmplifier();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual bool shouldBuff(int, int) const;
+    /*3*/ virtual int getTickInterval(int) const;
 };

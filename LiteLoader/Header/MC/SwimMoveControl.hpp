@@ -8,7 +8,7 @@
 class SwimMoveControl : public MoveControl {
 #include "Extra/SwimMoveControlAPI.hpp"
 public:
-    virtual ~SwimMoveControl();
-    virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
-    virtual void tick(class MoveControlComponent&, class Mob&);
+    /*0*/ virtual ~SwimMoveControl();
+    /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
 };

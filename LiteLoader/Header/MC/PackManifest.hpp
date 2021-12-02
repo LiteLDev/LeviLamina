@@ -8,8 +8,8 @@
 class PackManifest {
 #include "Extra/PackManifestAPI.hpp"
 public:
-    virtual ~PackManifest();
-    virtual std::unique_ptr<class PackManifest> clone() const;
+    /*0*/ virtual ~PackManifest();
+    /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
 
 public:
     MCAPI void addModule(class ResourceInformation const&);

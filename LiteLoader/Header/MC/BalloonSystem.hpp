@@ -7,7 +7,7 @@
 class BalloonSystem {
 #include "Extra/BalloonSystemAPI.hpp"
 public:
-    virtual ~BalloonSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BalloonSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

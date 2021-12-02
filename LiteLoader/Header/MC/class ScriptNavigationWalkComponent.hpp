@@ -7,7 +7,7 @@
 namespace class ScriptNavigationWalkComponent {
 #include "Extra/class ScriptNavigationWalkComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

@@ -9,6 +9,6 @@
 class LookAtBlockDefinition : public BehaviorDefinition {
 #include "Extra/LookAtBlockDefinitionAPI.hpp"
 public:
-    virtual ~LookAtBlockDefinition();
-    virtual void load(class Json::Value, class BehaviorFactory const&);
+    /*0*/ virtual ~LookAtBlockDefinition();
+    /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
 };

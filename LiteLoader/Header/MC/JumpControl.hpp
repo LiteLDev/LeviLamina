@@ -7,9 +7,9 @@
 class JumpControl {
 #include "Extra/JumpControlAPI.hpp"
 public:
-    virtual ~JumpControl();
-    virtual void unk_vfn_1();
-    virtual void tick(class JumpControlComponent&, class Mob&);
-    virtual void unk_vfn_3();
-    virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
+    /*0*/ virtual ~JumpControl();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
 };

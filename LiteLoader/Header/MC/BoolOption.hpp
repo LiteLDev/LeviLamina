@@ -8,9 +8,9 @@
 class BoolOption : public Option {
 #include "Extra/BoolOptionAPI.hpp"
 public:
-    virtual ~BoolOption();
-    virtual void save(std::vector<struct std::pair<std::string, std::string>>&);
-    virtual void load(std::string const&);
+    /*0*/ virtual ~BoolOption();
+    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string>>&);
+    /*2*/ virtual void load(std::string const&);
 
 public:
     MCAPI void set(bool, bool);

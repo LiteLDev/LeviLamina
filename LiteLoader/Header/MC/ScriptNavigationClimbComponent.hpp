@@ -9,7 +9,7 @@
 class ScriptNavigationClimbComponent : public NavigationScriptActorComponent {
 #include "Extra/ScriptNavigationClimbComponentAPI.hpp"
 public:
-    virtual ~ScriptNavigationClimbComponent();
+    /*0*/ virtual ~ScriptNavigationClimbComponent();
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptNavigationClimbComponent> bind(struct Scripting::Version);

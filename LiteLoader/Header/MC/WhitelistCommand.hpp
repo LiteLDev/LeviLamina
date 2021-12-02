@@ -7,8 +7,8 @@
 class WhitelistCommand {
 #include "Extra/WhitelistCommandAPI.hpp"
 public:
-    virtual ~WhitelistCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~WhitelistCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class AllowListFile&);

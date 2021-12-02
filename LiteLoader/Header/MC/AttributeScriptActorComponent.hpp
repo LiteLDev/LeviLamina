@@ -9,10 +9,10 @@
 class AttributeScriptActorComponent : public ScriptActorComponent {
 #include "Extra/AttributeScriptActorComponentAPI.hpp"
 public:
-    virtual ~AttributeScriptActorComponent();
-    virtual class Scripting::Result<float> getCurrent() const;
-    virtual class Scripting::Result<void> setCurrent(float const&) const;
-    virtual class Scripting::Result<float> getValue() const;
+    /*0*/ virtual ~AttributeScriptActorComponent();
+    /*4*/ virtual class Scripting::Result<float> getCurrent() const;
+    /*5*/ virtual class Scripting::Result<void> setCurrent(float const&) const;
+    /*6*/ virtual class Scripting::Result<float> getValue() const;
 
 public:
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;

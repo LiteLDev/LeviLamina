@@ -7,7 +7,7 @@
 class ActorMotionSyncSystem {
 #include "Extra/ActorMotionSyncSystemAPI.hpp"
 public:
-    virtual ~ActorMotionSyncSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ActorMotionSyncSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -8,9 +8,9 @@
 class ScriptTickingAreaBinderComponent {
 #include "Extra/ScriptTickingAreaBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptTickingAreaBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptTickingAreaBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI class ScriptApi::ScriptObjectHandle const& getData() const;

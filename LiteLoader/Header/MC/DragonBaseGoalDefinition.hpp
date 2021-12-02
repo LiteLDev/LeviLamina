@@ -7,6 +7,6 @@
 class DragonBaseGoalDefinition {
 #include "Extra/DragonBaseGoalDefinitionAPI.hpp"
 public:
-    virtual ~DragonBaseGoalDefinition();
-    virtual bool validateMobType(class Mob&);
+    /*0*/ virtual ~DragonBaseGoalDefinition();
+    /*1*/ virtual bool validateMobType(class Mob&);
 };

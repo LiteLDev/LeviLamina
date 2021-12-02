@@ -7,8 +7,8 @@
 class ItemReactionComponent {
 #include "Extra/ItemReactionComponentAPI.hpp"
 public:
-    virtual ~ItemReactionComponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*0*/ virtual ~ItemReactionComponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
 };

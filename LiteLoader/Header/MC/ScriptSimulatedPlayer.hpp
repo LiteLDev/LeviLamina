@@ -10,11 +10,11 @@
 class ScriptSimulatedPlayer : public ScriptObject {
 #include "Extra/ScriptSimulatedPlayerAPI.hpp"
 public:
-    virtual ~ScriptSimulatedPlayer();
-    virtual class Scripting::Result<std::string> getNameTag() const;
-    virtual class Scripting::Result<void> setNameTag(std::string const&) const;
-    virtual class Scripting::Result<bool> getSneaking() const;
-    virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*0*/ virtual ~ScriptSimulatedPlayer();
+    /*4*/ virtual class Scripting::Result<std::string> getNameTag() const;
+    /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
+    /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
+    /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
 
 public:
     MCAPI class Scripting::Result<bool> attack() const;

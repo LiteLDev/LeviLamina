@@ -8,9 +8,9 @@
 class BasaltColumnsFeature : public Feature {
 #include "Extra/BasaltColumnsFeatureAPI.hpp"
 public:
-    virtual ~BasaltColumnsFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~BasaltColumnsFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI bool _placeColumnCluster(class BlockSource&, class BlockPos, int, int) const;

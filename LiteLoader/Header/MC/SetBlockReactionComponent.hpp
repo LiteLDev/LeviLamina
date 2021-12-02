@@ -7,8 +7,8 @@
 class SetBlockReactionComponent {
 #include "Extra/SetBlockReactionComponentAPI.hpp"
 public:
-    virtual ~SetBlockReactionComponent();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _onEnd(class LabTableReaction&, class BlockSource&);
+    /*0*/ virtual ~SetBlockReactionComponent();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
 };

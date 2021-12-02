@@ -8,7 +8,7 @@
 class EatBlockDefinition {
 #include "Extra/EatBlockDefinitionAPI.hpp"
 public:
-    virtual ~EatBlockDefinition();
+    /*0*/ virtual ~EatBlockDefinition();
 
 public:
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const&);

@@ -8,7 +8,7 @@
 class SlimeRandomDirectionDefinition {
 #include "Extra/SlimeRandomDirectionDefinitionAPI.hpp"
 public:
-    virtual ~SlimeRandomDirectionDefinition();
+    /*0*/ virtual ~SlimeRandomDirectionDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class SlimeRandomDirectionGoal&);

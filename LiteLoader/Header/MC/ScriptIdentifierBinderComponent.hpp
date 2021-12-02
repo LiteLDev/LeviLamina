@@ -8,9 +8,9 @@
 class ScriptIdentifierBinderComponent {
 #include "Extra/ScriptIdentifierBinderComponentAPI.hpp"
 public:
-    virtual ~ScriptIdentifierBinderComponent();
-    virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-    virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
+    /*0*/ virtual ~ScriptIdentifierBinderComponent();
+    /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
 
 public:
     MCAPI std::string const& getIdentifier() const;

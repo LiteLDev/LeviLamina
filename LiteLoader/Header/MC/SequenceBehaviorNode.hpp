@@ -7,7 +7,7 @@
 class SequenceBehaviorNode {
 #include "Extra/SequenceBehaviorNodeAPI.hpp"
 public:
-    virtual ~SequenceBehaviorNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~SequenceBehaviorNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 };

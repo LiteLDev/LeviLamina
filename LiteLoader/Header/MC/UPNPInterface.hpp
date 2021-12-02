@@ -7,9 +7,9 @@
 class UPNPInterface {
 #include "Extra/UPNPInterfaceAPI.hpp"
 public:
-    virtual ~UPNPInterface();
-    virtual void _onDisable();
-    virtual void _onEnable();
+    /*0*/ virtual ~UPNPInterface();
+    /*1*/ virtual void _onDisable();
+    /*2*/ virtual void _onEnable();
 
 public:
     MCAPI void reset();

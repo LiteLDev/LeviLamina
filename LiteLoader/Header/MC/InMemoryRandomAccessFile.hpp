@@ -7,6 +7,6 @@
 class InMemoryRandomAccessFile {
 #include "Extra/InMemoryRandomAccessFileAPI.hpp"
 public:
-    virtual ~InMemoryRandomAccessFile();
-    virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
+    /*0*/ virtual ~InMemoryRandomAccessFile();
+    /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
 };

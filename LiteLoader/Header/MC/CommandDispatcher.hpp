@@ -7,6 +7,6 @@
 class CommandDispatcher {
 #include "Extra/CommandDispatcherAPI.hpp"
 public:
-    virtual ~CommandDispatcher();
-    virtual int performCommand(class CommandOrigin const&, class Command&);
+    /*0*/ virtual ~CommandDispatcher();
+    /*1*/ virtual int performCommand(class CommandOrigin const&, class Command&);
 };

@@ -8,8 +8,8 @@
 class FancyTreeTrunk {
 #include "Extra/FancyTreeTrunkAPI.hpp"
 public:
-    virtual ~FancyTreeTrunk();
-    virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
+    /*0*/ virtual ~FancyTreeTrunk();
+    /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
 
 private:
     MCAPI int _checkLine(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, struct TreeHelper::TreeParams const&) const;

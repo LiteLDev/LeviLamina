@@ -8,34 +8,34 @@
 class Weather : public BlockSourceListener {
 #include "Extra/WeatherAPI.hpp"
 public:
-    virtual ~Weather();
-    virtual void unk_vfn_1();
-    virtual void onSourceDestroyed(class BlockSource&);
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void unk_vfn_14();
-    virtual void unk_vfn_15();
-    virtual void unk_vfn_16();
-    virtual void unk_vfn_17();
-    virtual void unk_vfn_18();
-    virtual void unk_vfn_19();
-    virtual void unk_vfn_20();
-    virtual void unk_vfn_21();
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_24();
-    virtual void unk_vfn_25();
-    virtual void unk_vfn_26();
-    virtual void unk_vfn_27();
-    virtual void levelEvent(int /*enum LevelEvent*/, class Vec3 const&, int);
+    /*0*/ virtual ~Weather();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void onSourceDestroyed(class BlockSource&);
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual void unk_vfn_11();
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void unk_vfn_14();
+    /*15*/ virtual void unk_vfn_15();
+    /*16*/ virtual void unk_vfn_16();
+    /*17*/ virtual void unk_vfn_17();
+    /*18*/ virtual void unk_vfn_18();
+    /*19*/ virtual void unk_vfn_19();
+    /*20*/ virtual void unk_vfn_20();
+    /*21*/ virtual void unk_vfn_21();
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*24*/ virtual void unk_vfn_24();
+    /*25*/ virtual void unk_vfn_25();
+    /*26*/ virtual void unk_vfn_26();
+    /*27*/ virtual void unk_vfn_27();
+    /*28*/ virtual void levelEvent(int /*enum LevelEvent*/, class Vec3 const&, int);
 
 public:
     MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;

@@ -7,7 +7,7 @@
 class Biome {
 #include "Extra/BiomeAPI.hpp"
 public:
-    virtual ~Biome();
+    /*0*/ virtual ~Biome();
 
 public:
     MCAPI class Biome& addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType>>&);

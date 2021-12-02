@@ -7,8 +7,8 @@
 class DedicatedWSServerCommand {
 #include "Extra/DedicatedWSServerCommandAPI.hpp"
 public:
-    virtual ~DedicatedWSServerCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~DedicatedWSServerCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&, class IMinecraftApp&);

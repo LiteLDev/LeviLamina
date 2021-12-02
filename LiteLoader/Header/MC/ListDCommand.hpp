@@ -7,8 +7,8 @@
 class ListDCommand {
 #include "Extra/ListDCommandAPI.hpp"
 public:
-    virtual ~ListDCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~ListDCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

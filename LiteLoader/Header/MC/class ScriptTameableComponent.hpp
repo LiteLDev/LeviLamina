@@ -7,7 +7,7 @@
 namespace class ScriptTameableComponent {
 #include "Extra/class ScriptTameableComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

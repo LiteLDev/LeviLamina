@@ -7,9 +7,9 @@
 class FixedBiomeSource {
 #include "Extra/FixedBiomeSourceAPI.hpp"
 public:
-    virtual ~FixedBiomeSource();
-    virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
-    virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
-    virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
-    virtual class Biome const* getBiome(int, int, int) const;
+    /*0*/ virtual ~FixedBiomeSource();
+    /*1*/ virtual void fillBiomes(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
+    /*2*/ virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
+    /*3*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
+    /*4*/ virtual class Biome const* getBiome(int, int, int) const;
 };

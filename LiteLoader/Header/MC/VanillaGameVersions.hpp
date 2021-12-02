@@ -7,12 +7,12 @@
 namespace VanillaGameVersions {
 #include "Extra/VanillaGameVersionsAPI.hpp"
 
-MCAPI extern class BaseGameVersion const BeeUpdate;
-MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
-MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
-MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
-MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
-MCAPI extern class BaseGameVersion const NetherUpdate;
-MCAPI extern class BaseGameVersion const NetherUpdate_U3;
+MCAPI class BaseGameVersion const BeeUpdate;
+MCAPI class BaseGameVersion const CavesAndCliffsUpdate;
+MCAPI class BaseGameVersion const CavesAndCliffs_Part1;
+MCAPI class BaseGameVersion const CavesAndCliffs_Part1_U1;
+MCAPI class BaseGameVersion const LastLegacyGeneratorUpdate;
+MCAPI class BaseGameVersion const NetherUpdate;
+MCAPI class BaseGameVersion const NetherUpdate_U3;
 
 } // namespace VanillaGameVersions

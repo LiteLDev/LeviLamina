@@ -8,7 +8,7 @@
 class LegacyForestFoliageFeature : public Feature {
 #include "Extra/LegacyForestFoliageFeatureAPI.hpp"
 public:
-    virtual ~LegacyForestFoliageFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~LegacyForestFoliageFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

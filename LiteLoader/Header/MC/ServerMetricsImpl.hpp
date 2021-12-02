@@ -7,10 +7,10 @@
 class ServerMetricsImpl {
 #include "Extra/ServerMetricsImplAPI.hpp"
 public:
-    virtual ~ServerMetricsImpl();
-    virtual void sendPeriodicMetrics(class ServerInstance&);
-    virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const&);
-    virtual void sendChunkLoadTelemetryData();
+    /*0*/ virtual ~ServerMetricsImpl();
+    /*1*/ virtual void sendPeriodicMetrics(class ServerInstance&);
+    /*2*/ virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000>> const&);
+    /*3*/ virtual void sendChunkLoadTelemetryData();
 
 private:
     MCAPI void sendPeriodicMetricsInternal(class ServerInstance&);

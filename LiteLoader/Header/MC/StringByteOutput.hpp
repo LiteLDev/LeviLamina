@@ -8,6 +8,6 @@
 class StringByteOutput : public BytesDataOutput {
 #include "Extra/StringByteOutputAPI.hpp"
 public:
-    virtual ~StringByteOutput();
-    virtual void writeBytes(void const*, unsigned __int64);
+    /*0*/ virtual ~StringByteOutput();
+    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
 };

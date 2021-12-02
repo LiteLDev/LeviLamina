@@ -7,6 +7,6 @@
 namespace TrustedKeys {
 #include "Extra/TrustedKeysAPI.hpp"
 
-MCAPI extern std::string const AuthServicePublicKey;
+MCAPI std::string const AuthServicePublicKey;
 
 } // namespace TrustedKeys

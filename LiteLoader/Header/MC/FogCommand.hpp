@@ -7,8 +7,8 @@
 class FogCommand {
 #include "Extra/FogCommandAPI.hpp"
 public:
-    virtual ~FogCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~FogCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

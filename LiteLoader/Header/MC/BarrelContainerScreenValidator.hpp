@@ -7,5 +7,5 @@
 class BarrelContainerScreenValidator {
 #include "Extra/BarrelContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~BarrelContainerScreenValidator();
+    /*0*/ virtual ~BarrelContainerScreenValidator();
 };

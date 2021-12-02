@@ -7,8 +7,8 @@
 class FillCommand {
 #include "Extra/FillCommandAPI.hpp"
 public:
-    virtual ~FillCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~FillCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

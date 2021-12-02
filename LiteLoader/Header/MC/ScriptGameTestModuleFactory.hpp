@@ -7,7 +7,7 @@
 class ScriptGameTestModuleFactory {
 #include "Extra/ScriptGameTestModuleFactoryAPI.hpp"
 public:
-    virtual ~ScriptGameTestModuleFactory();
+    /*0*/ virtual ~ScriptGameTestModuleFactory();
 
 public:
     MCAPI static std::string getModuleUUIDAsString();

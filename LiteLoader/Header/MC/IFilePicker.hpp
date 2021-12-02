@@ -7,5 +7,5 @@
 class IFilePicker {
 #include "Extra/IFilePickerAPI.hpp"
 public:
-    virtual ~IFilePicker();
+    /*0*/ virtual ~IFilePicker();
 };

@@ -7,7 +7,7 @@
 class ExplodeSystem {
 #include "Extra/ExplodeSystemAPI.hpp"
 public:
-    virtual ~ExplodeSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~ExplodeSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

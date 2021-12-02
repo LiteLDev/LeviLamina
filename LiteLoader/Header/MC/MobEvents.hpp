@@ -7,7 +7,7 @@
 class MobEvents {
 #include "Extra/MobEventsAPI.hpp"
 public:
-    virtual ~MobEvents();
+    /*0*/ virtual ~MobEvents();
 
 public:
     MCAPI bool areEventsEnabled() const;

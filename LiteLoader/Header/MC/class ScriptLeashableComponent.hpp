@@ -7,7 +7,7 @@
 namespace class ScriptLeashableComponent {
 #include "Extra/class ScriptLeashableComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

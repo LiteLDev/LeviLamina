@@ -7,9 +7,9 @@
 class MoveNode {
 #include "Extra/MoveNodeAPI.hpp"
 public:
-    virtual ~MoveNode();
-    virtual int /*enum BehaviorStatus*/ tick(class Actor&);
-    virtual void initializeFromDefinition(class Actor&);
+    /*0*/ virtual ~MoveNode();
+    /*1*/ virtual int /*enum BehaviorStatus*/ tick(class Actor&);
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
 
 private:
     MCAPI unsigned char convertDirectionStringToKeyPress(std::string);

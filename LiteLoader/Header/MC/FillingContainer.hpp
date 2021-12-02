@@ -8,26 +8,26 @@
 class FillingContainer : public Container {
 #include "Extra/FillingContainerAPI.hpp"
 public:
-    virtual ~FillingContainer();
-    virtual void init();
-    virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
-    virtual class ItemStack const& getItem(int) const;
-    virtual void setItem(int, class ItemStack const&);
-    virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
-    virtual void removeItem(int, int);
-    virtual int getContainerSize() const;
-    virtual int getMaxStackSize() const;
-    virtual void startOpen(class Player&);
-    virtual void stopOpen(class Player&);
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void unk_vfn_31();
-    virtual bool add(class ItemStack&);
-    virtual bool canAdd(class ItemStack const&) const;
-    virtual void clearSlot(int);
-    virtual int clearInventory(int);
-    virtual void load(class ListTag const&, class SemVersion const&, class Level&);
-    virtual int getEmptySlotsCount() const;
+    /*0*/ virtual ~FillingContainer();
+    /*1*/ virtual void init();
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
+    /*5*/ virtual class ItemStack const& getItem(int) const;
+    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
+    /*11*/ virtual void removeItem(int, int);
+    /*14*/ virtual int getContainerSize() const;
+    /*15*/ virtual int getMaxStackSize() const;
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*31*/ virtual void unk_vfn_31();
+    /*33*/ virtual bool add(class ItemStack&);
+    /*34*/ virtual bool canAdd(class ItemStack const&) const;
+    /*35*/ virtual void clearSlot(int);
+    /*36*/ virtual int clearInventory(int);
+    /*37*/ virtual void load(class ListTag const&, class SemVersion const&, class Level&);
+    /*38*/ virtual int getEmptySlotsCount() const;
 
 public:
     MCAPI int getHotbarSize() const;

@@ -7,12 +7,12 @@
 class MobEffect {
 #include "Extra/MobEffectAPI.hpp"
 public:
-    virtual ~MobEffect();
-    virtual void applyEffects(class Actor*, int, int) const;
-    virtual void removeEffects(class Actor*);
-    virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int, float) const;
-    virtual bool isInstantaneous() const;
-    virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    /*0*/ virtual ~MobEffect();
+    /*1*/ virtual void applyEffects(class Actor*, int, int) const;
+    /*2*/ virtual void removeEffects(class Actor*);
+    /*3*/ virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int, float) const;
+    /*4*/ virtual bool isInstantaneous() const;
+    /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
 
 public:
     MCAPI void addAttributeBuff(class Attribute const&, class std::shared_ptr<class AttributeBuff>);

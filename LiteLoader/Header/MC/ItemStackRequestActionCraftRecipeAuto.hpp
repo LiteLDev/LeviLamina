@@ -7,10 +7,10 @@
 class ItemStackRequestActionCraftRecipeAuto {
 #include "Extra/ItemStackRequestActionCraftRecipeAutoAPI.hpp"
 public:
-    virtual ~ItemStackRequestActionCraftRecipeAuto();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void _write(class BinaryStream&) const;
-    virtual bool _read(class ReadOnlyBinaryStream&);
+    /*0*/ virtual ~ItemStackRequestActionCraftRecipeAuto();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void _write(class BinaryStream&) const;
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
 };

@@ -8,8 +8,8 @@
 class ScriptServerActorCarriedItemChangedEvent {
 #include "Extra/ScriptServerActorCarriedItemChangedEventAPI.hpp"
 public:
-    virtual ~ScriptServerActorCarriedItemChangedEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerActorCarriedItemChangedEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setActorId(struct ActorUniqueID const&);

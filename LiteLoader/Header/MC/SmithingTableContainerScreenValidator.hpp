@@ -7,5 +7,5 @@
 class SmithingTableContainerScreenValidator {
 #include "Extra/SmithingTableContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~SmithingTableContainerScreenValidator();
+    /*0*/ virtual ~SmithingTableContainerScreenValidator();
 };

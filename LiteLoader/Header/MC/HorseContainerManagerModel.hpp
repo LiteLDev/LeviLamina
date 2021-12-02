@@ -8,14 +8,14 @@
 class HorseContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/HorseContainerManagerModelAPI.hpp"
 public:
-    virtual ~HorseContainerManagerModel();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual std::vector<class ItemStack> getItemCopies() const;
-    virtual void setSlot(int, class ItemStack const&, bool);
-    virtual class ItemStack const& getSlot(int) const;
-    virtual void setData(int, int);
-    virtual class ContainerScreenContext _postInit();
+    /*0*/ virtual ~HorseContainerManagerModel();
+    /*1*/ virtual int /*enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum ContainerID*/);
+    /*3*/ virtual int /*enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum ContainerType*/);
+    /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
+    /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
+    /*8*/ virtual class ItemStack const& getSlot(int) const;
+    /*9*/ virtual void setData(int, int);
+    /*16*/ virtual class ContainerScreenContext _postInit();
 };

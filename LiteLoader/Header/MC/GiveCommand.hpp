@@ -7,8 +7,8 @@
 class GiveCommand {
 #include "Extra/GiveCommandAPI.hpp"
 public:
-    virtual ~GiveCommand();
-    virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    /*0*/ virtual ~GiveCommand();
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
 
 public:
     MCAPI static void setup(class CommandRegistry&);

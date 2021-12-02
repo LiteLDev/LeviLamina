@@ -7,5 +7,5 @@
 struct ActiveDirectoryScreenCapabilities : public TypedScreenCapabilities<struct ActiveDirectoryScreenCapabilities> {
 #include "Extra/ActiveDirectoryScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~ActiveDirectoryScreenCapabilities();
+    /*0*/ virtual ~ActiveDirectoryScreenCapabilities();
 };

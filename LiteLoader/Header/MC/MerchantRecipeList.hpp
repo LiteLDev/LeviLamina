@@ -7,13 +7,13 @@
 class MerchantRecipeList {
 #include "Extra/MerchantRecipeListAPI.hpp"
 public:
-    virtual ~MerchantRecipeList();
-    virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
-    virtual void addIfNewOrBetter(class MerchantRecipe*);
-    virtual class MerchantRecipe* getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
-    virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
-    virtual void load(class CompoundTag const&);
-    virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
+    /*0*/ virtual ~MerchantRecipeList();
+    /*1*/ virtual class MerchantRecipe* getRecipeFor(class ItemInstance const&, class ItemInstance const&, int);
+    /*2*/ virtual void addIfNewOrBetter(class MerchantRecipe*);
+    /*3*/ virtual class MerchantRecipe* getMatchingRecipeFor(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
+    /*4*/ virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
+    /*5*/ virtual void load(class CompoundTag const&);
+    /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
 
 public:
     MCAPI void assignNetIds();

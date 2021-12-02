@@ -7,6 +7,6 @@
 class ScoreboardEventListener {
 #include "Extra/ScoreboardEventListenerAPI.hpp"
 public:
-    virtual ~ScoreboardEventListener();
-    virtual int /*enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
+    /*0*/ virtual ~ScoreboardEventListener();
+    /*1*/ virtual int /*enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
 };

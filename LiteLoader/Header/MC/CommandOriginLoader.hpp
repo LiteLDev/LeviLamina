@@ -7,8 +7,8 @@
 class CommandOriginLoader {
 #include "Extra/CommandOriginLoaderAPI.hpp"
 public:
-    virtual ~CommandOriginLoader();
-    virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const&);
+    /*0*/ virtual ~CommandOriginLoader();
+    /*1*/ virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const&);
 
 public:
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const&, class ServerLevel&);

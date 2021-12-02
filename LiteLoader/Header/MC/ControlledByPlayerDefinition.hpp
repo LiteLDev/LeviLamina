@@ -8,7 +8,7 @@
 class ControlledByPlayerDefinition {
 #include "Extra/ControlledByPlayerDefinitionAPI.hpp"
 public:
-    virtual ~ControlledByPlayerDefinition();
+    /*0*/ virtual ~ControlledByPlayerDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class ControlledByPlayerGoal&);

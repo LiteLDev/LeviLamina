@@ -7,6 +7,7 @@
 class Events{
     public:
     class Event;
+    class AchievementEventing;
 };
 class GameConnectionInfo;
 

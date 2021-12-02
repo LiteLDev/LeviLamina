@@ -8,8 +8,8 @@
 class ScriptServerBlockMovedByPistonEvent {
 #include "Extra/ScriptServerBlockMovedByPistonEventAPI.hpp"
 public:
-    virtual ~ScriptServerBlockMovedByPistonEvent();
-    virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+    /*0*/ virtual ~ScriptServerBlockMovedByPistonEvent();
+    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
 
 public:
     MCAPI void setBlockPos(class BlockPos const&);

@@ -7,7 +7,7 @@
 class BuoyancySystem {
 #include "Extra/BuoyancySystemAPI.hpp"
 public:
-    virtual ~BuoyancySystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BuoyancySystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

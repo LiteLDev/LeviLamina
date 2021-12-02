@@ -8,19 +8,19 @@
 class CraftingContainer : public Container {
 #include "Extra/CraftingContainerAPI.hpp"
 public:
-    virtual ~CraftingContainer();
-    virtual void init();
-    virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
-    virtual class ItemStack const& getItem(int) const;
-    virtual void setItem(int, class ItemStack const&);
-    virtual int getContainerSize() const;
-    virtual int getMaxStackSize() const;
-    virtual void startOpen(class Player&);
-    virtual void stopOpen(class Player&);
-    virtual void unk_vfn_22();
-    virtual void unk_vfn_23();
-    virtual void setContainerChanged(int);
-    virtual void unk_vfn_31();
+    /*0*/ virtual ~CraftingContainer();
+    /*1*/ virtual void init();
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void(int, class ItemStack const&)>);
+    /*5*/ virtual class ItemStack const& getItem(int) const;
+    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*14*/ virtual int getContainerSize() const;
+    /*15*/ virtual int getMaxStackSize() const;
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void unk_vfn_22();
+    /*23*/ virtual void unk_vfn_23();
+    /*24*/ virtual void setContainerChanged(int);
+    /*31*/ virtual void unk_vfn_31();
 
 public:
     MCAPI class ItemStack const& getItem(int, int) const;

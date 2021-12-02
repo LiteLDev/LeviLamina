@@ -7,5 +7,5 @@
 class GrindstoneContainerScreenValidator {
 #include "Extra/GrindstoneContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~GrindstoneContainerScreenValidator();
+    /*0*/ virtual ~GrindstoneContainerScreenValidator();
 };

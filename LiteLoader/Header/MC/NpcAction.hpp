@@ -8,9 +8,9 @@
 class NpcAction {
 #include "Extra/NpcActionAPI.hpp"
 public:
-    virtual ~NpcAction();
-    virtual void unk_vfn_1();
-    virtual bool fromJson(class Json::Value const&);
+    /*0*/ virtual ~NpcAction();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual bool fromJson(class Json::Value const&);
 
 public:
     MCAPI std::string const& getText() const;

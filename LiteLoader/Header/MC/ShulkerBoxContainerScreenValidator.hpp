@@ -7,5 +7,5 @@
 class ShulkerBoxContainerScreenValidator {
 #include "Extra/ShulkerBoxContainerScreenValidatorAPI.hpp"
 public:
-    virtual ~ShulkerBoxContainerScreenValidator();
+    /*0*/ virtual ~ShulkerBoxContainerScreenValidator();
 };

@@ -9,7 +9,7 @@
 class ScriptBlockInventoryComponent : public ScriptObject {
 #include "Extra/ScriptBlockInventoryComponentAPI.hpp"
 public:
-    virtual ~ScriptBlockInventoryComponent();
+    /*0*/ virtual ~ScriptBlockInventoryComponent();
 
 public:
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer>> getOrCreateContainer();

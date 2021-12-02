@@ -8,7 +8,7 @@
 class HarvestFarmBlockDefinition {
 #include "Extra/HarvestFarmBlockDefinitionAPI.hpp"
 public:
-    virtual ~HarvestFarmBlockDefinition();
+    /*0*/ virtual ~HarvestFarmBlockDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class HarvestFarmBlockGoal&);

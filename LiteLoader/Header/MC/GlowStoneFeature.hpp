@@ -8,11 +8,11 @@
 class GlowStoneFeature : public BiomeClimateSelectorOperationNode<class Pos2d> {
 #include "Extra/GlowStoneFeatureAPI.hpp"
 public:
-    virtual ~GlowStoneFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~GlowStoneFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*4*/ virtual void unk_vfn_4();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
 };

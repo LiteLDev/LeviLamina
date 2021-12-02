@@ -2,15 +2,15 @@
 #pragma once
 #include <Global.h>
 #include "Core.hpp"
-#include "Types.hpp"
 #include "VolumeEntityManager.hpp"
+#include "Types.hpp"
 #define EXTRA_INCLUDE_PART_VOLUMEENTITYMANAGERSERVER
 #include "Extra/VolumeEntityManagerServerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_VOLUMEENTITYMANAGERSERVER
 class VolumeEntityManagerServer {
 #include "Extra/VolumeEntityManagerServerAPI.hpp"
 public:
-    virtual ~VolumeEntityManagerServer();
+    /*0*/ virtual ~VolumeEntityManagerServer();
 
 public:
     MCAPI std::vector<class WeakRefT<struct EntityRefTraits>> getAllVolumesOverlappingChunkPosition(class ChunkPos const&, class AutomaticID<class Dimension, int>) const;

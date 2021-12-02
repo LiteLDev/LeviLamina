@@ -7,7 +7,7 @@
 class SpawnData {
 #include "Extra/SpawnDataAPI.hpp"
 public:
-    virtual ~SpawnData();
+    /*0*/ virtual ~SpawnData();
 
 public:
     MCAPI std::unique_ptr<class CompoundTag> save();

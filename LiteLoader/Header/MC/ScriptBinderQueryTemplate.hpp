@@ -7,9 +7,9 @@
 class ScriptBinderQueryTemplate {
 #include "Extra/ScriptBinderQueryTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderQueryTemplate();
-    virtual std::string const& getTemplateIdentifier() const;
-    virtual void applyTemplate(class ScriptObjectBinder&) const;
+    /*0*/ virtual ~ScriptBinderQueryTemplate();
+    /*1*/ virtual std::string const& getTemplateIdentifier() const;
+    /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
 
 public:
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(enum entt::entity);

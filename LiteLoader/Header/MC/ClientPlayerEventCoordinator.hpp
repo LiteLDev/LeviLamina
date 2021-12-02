@@ -7,7 +7,7 @@
 class ClientPlayerEventCoordinator {
 #include "Extra/ClientPlayerEventCoordinatorAPI.hpp"
 public:
-    virtual ~ClientPlayerEventCoordinator();
+    /*0*/ virtual ~ClientPlayerEventCoordinator();
 
 public:
     MCAPI void sendPlayerDestroyedBlock(class Player&, class BlockLegacy const&);

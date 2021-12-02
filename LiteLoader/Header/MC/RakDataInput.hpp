@@ -8,7 +8,7 @@
 class RakDataInput : public BytesDataInput {
 #include "Extra/RakDataInputAPI.hpp"
 public:
-    virtual ~RakDataInput();
-    virtual bool readBytes(void*, unsigned __int64);
-    virtual unsigned __int64 numBytesLeft() const;
+    /*0*/ virtual ~RakDataInput();
+    /*9*/ virtual bool readBytes(void*, unsigned __int64);
+    /*10*/ virtual unsigned __int64 numBytesLeft() const;
 };

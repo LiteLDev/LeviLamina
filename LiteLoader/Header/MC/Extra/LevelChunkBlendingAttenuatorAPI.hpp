@@ -4,5 +4,9 @@
 
 #else
 // Add Member There
+public:
+struct CornerDepthData;
+struct HeightAttenuationData;
+struct BatchEntry;
 
 #endif

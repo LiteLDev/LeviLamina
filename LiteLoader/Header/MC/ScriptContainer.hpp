@@ -9,16 +9,16 @@
 class ScriptContainer : public ScriptObject {
 #include "Extra/ScriptContainerAPI.hpp"
 public:
-    virtual ~ScriptContainer();
-    virtual class Scripting::Result<int> getSize() const;
-    virtual class Scripting::Result<int> getEmptySlotsCount() const;
-    virtual class Scripting::Result<void> setItem(int, class ScriptItemStack const&) const;
-    virtual class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack>> getItem(int) const;
-    virtual class Scripting::Result<void> addItem(class ScriptItemStack const&) const;
-    virtual class Scripting::Result<bool> transferItem(int, int, class ScriptContainer&) const;
-    virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer&) const;
-    virtual class Container* _tryGetContainer() const = 0;
-    virtual void _balanceTransaction(class ItemStack const&) const;
+    /*0*/ virtual ~ScriptContainer();
+    /*4*/ virtual class Scripting::Result<int> getSize() const;
+    /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    /*6*/ virtual class Scripting::Result<void> setItem(int, class ScriptItemStack const&) const;
+    /*7*/ virtual class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack>> getItem(int) const;
+    /*8*/ virtual class Scripting::Result<void> addItem(class ScriptItemStack const&) const;
+    /*9*/ virtual class Scripting::Result<bool> transferItem(int, int, class ScriptContainer&) const;
+    /*10*/ virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer&) const;
+    /*11*/ virtual class Container* _tryGetContainer() const = 0;
+    /*12*/ virtual void _balanceTransaction(class ItemStack const&) const;
 
 public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);

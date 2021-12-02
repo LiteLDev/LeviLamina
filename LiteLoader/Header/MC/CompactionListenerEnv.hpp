@@ -7,19 +7,19 @@
 class CompactionListenerEnv {
 #include "Extra/CompactionListenerEnvAPI.hpp"
 public:
-    virtual ~CompactionListenerEnv();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void unk_vfn_5();
-    virtual void unk_vfn_6();
-    virtual void unk_vfn_7();
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual void unk_vfn_10();
-    virtual void unk_vfn_11();
-    virtual void unk_vfn_12();
-    virtual void unk_vfn_13();
-    virtual void Schedule(void (*)(void*), void*);
+    /*0*/ virtual ~CompactionListenerEnv();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void unk_vfn_3();
+    /*4*/ virtual void unk_vfn_4();
+    /*5*/ virtual void unk_vfn_5();
+    /*6*/ virtual void unk_vfn_6();
+    /*7*/ virtual void unk_vfn_7();
+    /*8*/ virtual void unk_vfn_8();
+    /*9*/ virtual void unk_vfn_9();
+    /*10*/ virtual void unk_vfn_10();
+    /*11*/ virtual void unk_vfn_11();
+    /*12*/ virtual void unk_vfn_12();
+    /*13*/ virtual void unk_vfn_13();
+    /*14*/ virtual void Schedule(void (*)(void*), void*);
 };

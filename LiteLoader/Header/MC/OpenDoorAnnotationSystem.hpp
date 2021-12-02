@@ -7,7 +7,7 @@
 class OpenDoorAnnotationSystem {
 #include "Extra/OpenDoorAnnotationSystemAPI.hpp"
 public:
-    virtual ~OpenDoorAnnotationSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~OpenDoorAnnotationSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

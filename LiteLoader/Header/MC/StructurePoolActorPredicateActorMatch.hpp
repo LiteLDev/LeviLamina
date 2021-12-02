@@ -7,6 +7,6 @@
 class StructurePoolActorPredicateActorMatch {
 #include "Extra/StructurePoolActorPredicateActorMatchAPI.hpp"
 public:
-    virtual ~StructurePoolActorPredicateActorMatch();
-    virtual bool test(std::string const&) const;
+    /*0*/ virtual ~StructurePoolActorPredicateActorMatch();
+    /*1*/ virtual bool test(std::string const&) const;
 };

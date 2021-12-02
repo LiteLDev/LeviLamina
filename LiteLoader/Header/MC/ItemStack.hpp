@@ -8,13 +8,13 @@
 class ItemStack : public ItemStackBase {
 #include "Extra/ItemStackAPI.hpp"
 public:
-    virtual ~ItemStack();
-    virtual void reinit(class Item const&, int, int);
-    virtual void reinit(class BlockLegacy const&, int);
-    virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-    virtual void setNull();
-    virtual std::string toString() const;
-    virtual std::string toDebugString() const;
+    /*0*/ virtual ~ItemStack();
+    /*1*/ virtual void reinit(class Item const&, int, int);
+    /*2*/ virtual void reinit(class BlockLegacy const&, int);
+    /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
+    /*4*/ virtual void setNull();
+    /*5*/ virtual std::string toString() const;
+    /*6*/ virtual std::string toDebugString() const;
 
 public:
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;

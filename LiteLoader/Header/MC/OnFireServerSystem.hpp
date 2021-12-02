@@ -7,9 +7,9 @@
 class OnFireServerSystem {
 #include "Extra/OnFireServerSystemAPI.hpp"
 public:
-    virtual ~OnFireServerSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~OnFireServerSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 
 private:
     MCAPI static void _tickServer(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, class OnFireComponent>&);

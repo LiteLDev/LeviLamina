@@ -8,8 +8,8 @@
 class ConsoleGameTestListener {
 #include "Extra/ConsoleGameTestListenerAPI.hpp"
 public:
-    virtual ~ConsoleGameTestListener();
-    virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
-    virtual void onTestPassed(class gametest::BaseGameTestInstance&);
-    virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+    /*0*/ virtual ~ConsoleGameTestListener();
+    /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
+    /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
+    /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 };

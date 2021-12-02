@@ -8,16 +8,16 @@
 class RakWebSocket {
 #include "Extra/RakWebSocketAPI.hpp"
 public:
-    virtual ~RakWebSocket();
-    virtual int /*enum WSConnectionResult*/ connect(std::string const&, std::vector<std::string> const&);
-    virtual int /*enum WSConnectionResult*/ connect(std::string const&);
-    virtual bool isReady() const;
-    virtual void setOnMessageReceivedHandler(class std::function<void(class RakWebSocketDataFrame const&)> const&);
-    virtual void setOnCloseHandler(class std::function<void(int /*enum CloseStatusCode*/, std::string const&)> const&);
-    virtual void setOnConnectedHandler(class std::function<void(std::string const&)> const&);
-    virtual void tick();
-    virtual void _updateState()                 = 0;
-    virtual unsigned int _genMaskingKey() const = 0;
+    /*0*/ virtual ~RakWebSocket();
+    /*1*/ virtual int /*enum WSConnectionResult*/ connect(std::string const&, std::vector<std::string> const&);
+    /*2*/ virtual int /*enum WSConnectionResult*/ connect(std::string const&);
+    /*3*/ virtual bool isReady() const;
+    /*4*/ virtual void setOnMessageReceivedHandler(class std::function<void(class RakWebSocketDataFrame const&)> const&);
+    /*5*/ virtual void setOnCloseHandler(class std::function<void(int /*enum CloseStatusCode*/, std::string const&)> const&);
+    /*6*/ virtual void setOnConnectedHandler(class std::function<void(std::string const&)> const&);
+    /*7*/ virtual void tick();
+    /*8*/ virtual void _updateState()                 = 0;
+    /*9*/ virtual unsigned int _genMaskingKey() const = 0;
 
 protected:
     MCAPI void _close(enum CloseStatusCode);

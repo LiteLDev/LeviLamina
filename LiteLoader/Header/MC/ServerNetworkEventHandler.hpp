@@ -7,5 +7,5 @@
 class ServerNetworkEventHandler {
 #include "Extra/ServerNetworkEventHandlerAPI.hpp"
 public:
-    virtual ~ServerNetworkEventHandler();
+    /*0*/ virtual ~ServerNetworkEventHandler();
 };

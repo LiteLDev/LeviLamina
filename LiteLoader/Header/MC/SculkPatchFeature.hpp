@@ -7,8 +7,8 @@
 class SculkPatchFeature {
 #include "Extra/SculkPatchFeatureAPI.hpp"
 public:
-    virtual ~SculkPatchFeature();
-    virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
+    /*0*/ virtual ~SculkPatchFeature();
+    /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
 private:
     MCAPI void _placeGround(class IBlockWorldGenAPI&, std::vector<class BlockPos>&, class BlockPos, int) const;

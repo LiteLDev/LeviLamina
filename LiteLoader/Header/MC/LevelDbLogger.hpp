@@ -7,6 +7,6 @@
 class LevelDbLogger {
 #include "Extra/LevelDbLoggerAPI.hpp"
 public:
-    virtual ~LevelDbLogger();
-    virtual void Logv(char const*, char*);
+    /*0*/ virtual ~LevelDbLogger();
+    /*1*/ virtual void Logv(char const*, char*);
 };

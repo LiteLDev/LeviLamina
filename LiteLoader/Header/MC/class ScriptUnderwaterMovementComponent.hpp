@@ -7,7 +7,7 @@
 namespace class ScriptUnderwaterMovementComponent {
 #include "Extra/class ScriptUnderwaterMovementComponentAPI.hpp"
 
-	MCAPI extern   `RTTI Type Descriptor';
+	MCAPI   `RTTI Type Descriptor';
 
 
 

@@ -7,14 +7,14 @@
 class VarIntDataOutput {
 #include "Extra/VarIntDataOutputAPI.hpp"
 public:
-    virtual ~VarIntDataOutput();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void writeFloat(float);
-    virtual void writeDouble(double);
-    virtual void writeByte(char);
-    virtual void writeShort(short);
-    virtual void writeInt(int);
-    virtual void writeLongLong(__int64);
-    virtual void writeBytes(void const*, unsigned __int64);
+    /*0*/ virtual ~VarIntDataOutput();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void writeFloat(float);
+    /*4*/ virtual void writeDouble(double);
+    /*5*/ virtual void writeByte(char);
+    /*6*/ virtual void writeShort(short);
+    /*7*/ virtual void writeInt(int);
+    /*8*/ virtual void writeLongLong(__int64);
+    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
 };

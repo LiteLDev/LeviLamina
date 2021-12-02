@@ -7,6 +7,6 @@
 class ActorPropertiesDescription {
 #include "Extra/ActorPropertiesDescriptionAPI.hpp"
 public:
-    virtual ~ActorPropertiesDescription();
-    virtual char const* getJsonName() const;
+    /*0*/ virtual ~ActorPropertiesDescription();
+    /*1*/ virtual char const* getJsonName() const;
 };

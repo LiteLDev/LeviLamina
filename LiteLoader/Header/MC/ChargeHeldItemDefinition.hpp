@@ -8,7 +8,7 @@
 class ChargeHeldItemDefinition {
 #include "Extra/ChargeHeldItemDefinitionAPI.hpp"
 public:
-    virtual ~ChargeHeldItemDefinition();
+    /*0*/ virtual ~ChargeHeldItemDefinition();
 
 public:
     MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&);

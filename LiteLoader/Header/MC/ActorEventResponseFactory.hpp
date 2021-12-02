@@ -7,8 +7,8 @@
 class ActorEventResponseFactory {
 #include "Extra/ActorEventResponseFactoryAPI.hpp"
 public:
-    virtual ~ActorEventResponseFactory();
-    virtual void initializeFactory(class Experiments const&);
+    /*0*/ virtual ~ActorEventResponseFactory();
+    /*1*/ virtual void initializeFactory(class Experiments const&);
 
 public:
     MCAPI void initSchema();

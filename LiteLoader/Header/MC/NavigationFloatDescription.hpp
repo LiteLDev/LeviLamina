@@ -8,6 +8,6 @@
 class NavigationFloatDescription : public NavigationDescription {
 #include "Extra/NavigationFloatDescriptionAPI.hpp"
 public:
-    virtual char const* getJsonName() const;
-    virtual ~NavigationFloatDescription();
+    /*0*/ virtual char const* getJsonName() const;
+    /*1*/ virtual ~NavigationFloatDescription();
 };

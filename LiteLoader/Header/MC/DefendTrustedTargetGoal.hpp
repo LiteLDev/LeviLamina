@@ -8,14 +8,14 @@
 class DefendTrustedTargetGoal : public NearestAttackableTargetGoal {
 #include "Extra/DefendTrustedTargetGoalAPI.hpp"
 public:
-    virtual ~DefendTrustedTargetGoal();
-    virtual bool canUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
+    /*0*/ virtual ~DefendTrustedTargetGoal();
+    /*1*/ virtual bool canUse();
+    /*3*/ virtual bool isTargetGoal() const;
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
 
 private:
     MCAPI struct ActorUniqueID _findTrustedTarget(class TrustComponent const&);

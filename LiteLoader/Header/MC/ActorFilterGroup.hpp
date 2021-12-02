@@ -9,9 +9,9 @@
 class ActorFilterGroup : public FilterGroup {
 #include "Extra/ActorFilterGroupAPI.hpp"
 public:
-    virtual ~ActorFilterGroup();
-    virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const;
-    virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*0*/ virtual ~ActorFilterGroup();
+    /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum FilterGroup::CollectionType*/) const;
+    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
 
 public:
     MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;

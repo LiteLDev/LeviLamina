@@ -7,6 +7,6 @@
 class VanillaServerNetworkHandler {
 #include "Extra/VanillaServerNetworkHandlerAPI.hpp"
 public:
-    virtual ~VanillaServerNetworkHandler();
-    virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+    /*0*/ virtual ~VanillaServerNetworkHandler();
+    /*1*/ virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
 };

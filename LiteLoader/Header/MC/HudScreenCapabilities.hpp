@@ -7,5 +7,5 @@
 struct HudScreenCapabilities : public TypedScreenCapabilities<struct HudScreenCapabilities> {
 #include "Extra/HudScreenCapabilitiesAPI.hpp"
 public:
-    virtual ~HudScreenCapabilities();
+    /*0*/ virtual ~HudScreenCapabilities();
 };

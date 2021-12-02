@@ -7,11 +7,11 @@
 class AttributeInstanceDelegate {
 #include "Extra/AttributeInstanceDelegateAPI.hpp"
 public:
-    virtual ~AttributeInstanceDelegate();
-    virtual void tick();
-    virtual void notify(__int64);
-    virtual bool change(float, float, struct AttributeBuffInfo);
-    virtual float getBuffValue(class AttributeBuff const&) const;
+    /*0*/ virtual ~AttributeInstanceDelegate();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void notify(__int64);
+    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
+    /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
 
 protected:
     MCAPI class AttributeInstance const& _getInstance() const;

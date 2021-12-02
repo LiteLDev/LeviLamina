@@ -7,7 +7,7 @@
 class FakeBatteryMonitorInterface {
 #include "Extra/FakeBatteryMonitorInterfaceAPI.hpp"
 public:
-    virtual ~FakeBatteryMonitorInterface();
-    virtual int /*enum BatteryStatus*/ getBatteryStatus() const;
-    virtual float getBatteryLevel() const;
+    /*0*/ virtual ~FakeBatteryMonitorInterface();
+    /*1*/ virtual int /*enum BatteryStatus*/ getBatteryStatus() const;
+    /*2*/ virtual float getBatteryLevel() const;
 };

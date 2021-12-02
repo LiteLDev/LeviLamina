@@ -7,7 +7,7 @@
 class BreedableSystem {
 #include "Extra/BreedableSystemAPI.hpp"
 public:
-    virtual ~BreedableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BreedableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

@@ -8,19 +8,19 @@
 class CameraItemComponentLegacy {
 #include "Extra/CameraItemComponentLegacyAPI.hpp"
 public:
-    virtual ~CameraItemComponentLegacy();
-    virtual float blackBarsDuration() const;
-    virtual float blackBarsScreenRatio() const;
-    virtual float shutterScreenRatio() const;
-    virtual float shutterDuration() const;
-    virtual float pictureDuration() const;
-    virtual float slideAwayDuration() const;
-    virtual bool canPlace(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
-    virtual void takePictureNow(class Player&, class Actor*, class Actor*);
-    virtual void registerCallbacks(class CameraCallbacks*);
-    virtual void use(class ItemStack&, class Player&);
-    virtual void releaseUsing(class ItemStack&, class Player&, int);
-    virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
+    /*0*/ virtual ~CameraItemComponentLegacy();
+    /*1*/ virtual float blackBarsDuration() const;
+    /*2*/ virtual float blackBarsScreenRatio() const;
+    /*3*/ virtual float shutterScreenRatio() const;
+    /*4*/ virtual float shutterDuration() const;
+    /*5*/ virtual float pictureDuration() const;
+    /*6*/ virtual float slideAwayDuration() const;
+    /*7*/ virtual bool canPlace(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char) const;
+    /*8*/ virtual void takePictureNow(class Player&, class Actor*, class Actor*);
+    /*9*/ virtual void registerCallbacks(class CameraCallbacks*);
+    /*10*/ virtual void use(class ItemStack&, class Player&);
+    /*11*/ virtual void releaseUsing(class ItemStack&, class Player&, int);
+    /*12*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
 
 public:
     MCAPI bool init(class Json::Value&, class SemVersion const&);

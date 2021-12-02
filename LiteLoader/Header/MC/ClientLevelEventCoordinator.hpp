@@ -7,5 +7,5 @@
 class ClientLevelEventCoordinator {
 #include "Extra/ClientLevelEventCoordinatorAPI.hpp"
 public:
-    virtual ~ClientLevelEventCoordinator();
+    /*0*/ virtual ~ClientLevelEventCoordinator();
 };

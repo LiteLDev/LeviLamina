@@ -8,11 +8,11 @@
 class HopperContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/HopperContainerManagerModelAPI.hpp"
 public:
-    virtual ~HopperContainerManagerModel();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void unk_vfn_4();
-    virtual void setData(int, int);
-    virtual class ContainerScreenContext _postInit();
+    /*0*/ virtual ~HopperContainerManagerModel();
+    /*1*/ virtual int /*enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum ContainerID*/);
+    /*3*/ virtual int /*enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum ContainerType*/);
+    /*9*/ virtual void setData(int, int);
+    /*16*/ virtual class ContainerScreenContext _postInit();
 };

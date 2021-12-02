@@ -7,7 +7,7 @@
 class BoostableSystem {
 #include "Extra/BoostableSystemAPI.hpp"
 public:
-    virtual ~BoostableSystem();
-    virtual void unk_vfn_1();
-    virtual void tick(class EntityRegistry&);
+    /*0*/ virtual ~BoostableSystem();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void tick(class EntityRegistry&);
 };

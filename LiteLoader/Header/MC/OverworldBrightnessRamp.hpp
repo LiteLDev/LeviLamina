@@ -8,5 +8,6 @@
 class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/OverworldBrightnessRampAPI.hpp"
 public:
-    virtual ~OverworldBrightnessRamp();
+    /*0*/ virtual ~OverworldBrightnessRamp();
+    /*2*/ virtual float getBaseAmbientValue() const;
 };

@@ -8,6 +8,6 @@
 class DefaultMobSpawner : public BaseMobSpawner {
 #include "Extra/DefaultMobSpawnerAPI.hpp"
 public:
-    virtual ~DefaultMobSpawner();
-    virtual class BlockPos const& getPos();
+    /*0*/ virtual ~DefaultMobSpawner();
+    /*4*/ virtual class BlockPos const& getPos();
 };

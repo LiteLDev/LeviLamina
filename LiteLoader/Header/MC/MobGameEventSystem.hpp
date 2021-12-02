@@ -8,8 +8,8 @@
 class MobGameEventSystem {
 #include "Extra/MobGameEventSystemAPI.hpp"
 public:
-    virtual ~MobGameEventSystem();
-    virtual void registerEvents(class entt::dispatcher&);
+    /*0*/ virtual ~MobGameEventSystem();
+    /*1*/ virtual void registerEvents(class entt::dispatcher&);
 
 private:
     MCAPI static void _onMobDeathTimeComplete(struct MobDeathTimeCompleteEvent&);

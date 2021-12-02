@@ -8,7 +8,7 @@
 class NetworkChunkPublisher {
 #include "Extra/NetworkChunkPublisherAPI.hpp"
 public:
-    virtual ~NetworkChunkPublisher();
+    /*0*/ virtual ~NetworkChunkPublisher();
 
 public:
     MCAPI void clearRegion();

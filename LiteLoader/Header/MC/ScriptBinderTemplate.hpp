@@ -7,5 +7,5 @@
 class ScriptBinderTemplate {
 #include "Extra/ScriptBinderTemplateAPI.hpp"
 public:
-    virtual ~ScriptBinderTemplate();
+    /*0*/ virtual ~ScriptBinderTemplate();
 };

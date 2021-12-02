@@ -8,16 +8,16 @@
 class WitherTargetHighestDamage : public TargetGoal {
 #include "Extra/WitherTargetHighestDamageAPI.hpp"
 public:
-    virtual ~WitherTargetHighestDamage();
-    virtual bool canUse();
-    virtual bool canContinueToUse();
-    virtual void unk_vfn_3();
-    virtual void start();
-    virtual void unk_vfn_5();
-    virtual void appendDebugInfo(std::string&) const;
-    virtual void unk_vfn_8();
-    virtual void unk_vfn_9();
-    virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
+    /*0*/ virtual ~WitherTargetHighestDamage();
+    /*1*/ virtual bool canUse();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual bool isTargetGoal() const;
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void stop();
+    /*10*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
 
 private:
     MCAPI class Player* getHighestDamageTarget();

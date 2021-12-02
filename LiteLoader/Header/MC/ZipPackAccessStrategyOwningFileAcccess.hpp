@@ -9,11 +9,11 @@
 class ZipPackAccessStrategyOwningFileAcccess : public ZipPackAccessStrategy {
 #include "Extra/ZipPackAccessStrategyOwningFileAcccessAPI.hpp"
 public:
-    virtual ~ZipPackAccessStrategyOwningFileAcccess();
-    virtual void unk_vfn_2();
-    virtual void unk_vfn_3();
-    virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>) const;
-    virtual void unk_vfn_14();
-    virtual class Core::PathBuffer<std::string> const& getSubPath() const;
-    virtual void unk_vfn_18();
+    /*0*/ virtual ~ZipPackAccessStrategyOwningFileAcccess();
+    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
+    /*3*/ virtual std::string const& getPackName() const;
+    /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void(class Core::Path const&)>) const;
+    /*14*/ virtual int /*enum PackAccessStrategyType*/ getStrategyType() const;
+    /*15*/ virtual class Core::PathBuffer<std::string> const& getSubPath() const;
+    /*18*/ virtual bool canRecurse() const;
 };

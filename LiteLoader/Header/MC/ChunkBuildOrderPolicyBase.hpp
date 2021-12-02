@@ -7,7 +7,7 @@
 class ChunkBuildOrderPolicyBase {
 #include "Extra/ChunkBuildOrderPolicyBaseAPI.hpp"
 public:
-    virtual ~ChunkBuildOrderPolicyBase();
-    virtual void unk_vfn_1();
-    virtual unsigned int registerForUpdates();
+    /*0*/ virtual ~ChunkBuildOrderPolicyBase();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual unsigned int registerForUpdates();
 };

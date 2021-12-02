@@ -208,13 +208,16 @@ class PathBuffer {
 
 }; // namespace Core
 namespace gametest{
+    class BaseGameTestBatchRunner;
     class BaseGameTestFunction;
     class BaseGameTestHelper;
     class BaseGameTestInstance;
+    class GameTestBatch;
     struct GameTestError;
     class GameTestRegistry;
     class GameTestTicker;
     class IGameTestFunctionContext;
+    class IGameTestHelperProvider;
     struct TestParameters;
     }// namespace gametest
 
@@ -239,6 +242,7 @@ class ClientBlockPipeline {
 public:
     template <typename T>
     class VolumeOf;
+    struct BlockSchematic;
 };
 
 struct ISurfaceBuilder {
@@ -247,6 +251,7 @@ struct ISurfaceBuilder {
 
 struct FeatureLoading {
     template <typename T>
+    struct ConcreteFeatureHolder;
     struct FeatureRootParseContext;
     template <typename T>
     struct ConcreteFeatureHolder;
@@ -269,6 +274,16 @@ struct SubChunkBrightnessStorage {
     struct LightPair;
 };
 
+struct BlockGeometry{
+    struct Model;
+    class TessellatedModel;
+
+};
+
+class IInPackagePacks {
+public:
+    struct MetaData;
+};
 
 //Templates
 template <typename T, typename T2, int unk>

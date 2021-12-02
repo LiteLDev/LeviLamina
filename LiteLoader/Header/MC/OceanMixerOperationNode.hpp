@@ -8,9 +8,9 @@
 class OceanMixerOperationNode {
 #include "Extra/OceanMixerOperationNodeAPI.hpp"
 public:
-    virtual ~OceanMixerOperationNode();
-    virtual void unk_vfn_1();
-    virtual void unk_vfn_2();
-    virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<int /*enum BiomeTemperatureCategory*/>) const;
-    virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
+    /*0*/ virtual ~OceanMixerOperationNode();
+    /*1*/ virtual void unk_vfn_1();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<int /*enum BiomeTemperatureCategory*/>) const;
+    /*4*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
 };

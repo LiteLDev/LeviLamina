@@ -7,9 +7,9 @@
 class LevelDbWritableFile {
 #include "Extra/LevelDbWritableFileAPI.hpp"
 public:
-    virtual ~LevelDbWritableFile();
-    virtual class leveldb::Status Append(class leveldb::Slice const&);
-    virtual class leveldb::Status Close();
-    virtual class leveldb::Status Flush();
-    virtual class leveldb::Status Sync();
+    /*0*/ virtual ~LevelDbWritableFile();
+    /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
+    /*2*/ virtual class leveldb::Status Close();
+    /*3*/ virtual class leveldb::Status Flush();
+    /*4*/ virtual class leveldb::Status Sync();
 };

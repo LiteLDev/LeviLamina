@@ -8,7 +8,7 @@
 class PodzolAreaFeature : public Feature {
 #include "Extra/PodzolAreaFeatureAPI.hpp"
 public:
-    virtual ~PodzolAreaFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~PodzolAreaFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 };

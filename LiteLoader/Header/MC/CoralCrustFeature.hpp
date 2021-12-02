@@ -8,9 +8,9 @@
 class CoralCrustFeature : public Feature {
 #include "Extra/CoralCrustFeatureAPI.hpp"
 public:
-    virtual ~CoralCrustFeature();
-    virtual void unk_vfn_2();
-    virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*0*/ virtual ~CoralCrustFeature();
+    /*2*/ virtual void unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
 
 private:
     MCAPI class BlockPos _getCropOffsetFromRot(int, int) const;

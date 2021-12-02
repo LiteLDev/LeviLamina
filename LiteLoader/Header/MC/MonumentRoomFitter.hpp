@@ -7,5 +7,5 @@
 class MonumentRoomFitter {
 #include "Extra/MonumentRoomFitterAPI.hpp"
 public:
-    virtual ~MonumentRoomFitter();
+    /*0*/ virtual ~MonumentRoomFitter();
 };

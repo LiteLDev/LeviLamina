@@ -7,11 +7,11 @@
 class FileSecureStorage {
 #include "Extra/FileSecureStorageAPI.hpp"
 public:
-    virtual ~FileSecureStorage();
-    virtual bool add(std::string const&, std::string const&);
-    virtual bool addOrUpdate(std::string const&, std::string const&);
-    virtual bool remove(std::string const&);
-    virtual bool get(std::string const&, std::string&);
+    /*0*/ virtual ~FileSecureStorage();
+    /*1*/ virtual bool add(std::string const&, std::string const&);
+    /*2*/ virtual bool addOrUpdate(std::string const&, std::string const&);
+    /*3*/ virtual bool remove(std::string const&);
+    /*4*/ virtual bool get(std::string const&, std::string&);
 
 private:
     MCAPI std::string _contentKeyObfuscator(std::string const&, std::string const&);
