@@ -10,9 +10,9 @@ public:
     /*0*/ virtual ~Scoreboard();
     /*1*/ virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, int /*enum ObjectiveSortOrder*/);
     /*2*/ virtual class Objective* clearDisplayObjective(std::string const&);
-    /*3*/ virtual void unk_vfn_3();
-    /*4*/ virtual void unk_vfn_4();
-    /*5*/ virtual void unk_vfn_5();
+    virtual struct ScoreboardId const& createScoreboardId(class Player const&);
+    virtual struct ScoreboardId const& createScoreboardId(class Actor const&);
+    virtual struct ScoreboardId const& createScoreboardId(std::string const&);
     /*6*/ virtual void unk_vfn_6();
     /*7*/ virtual void onObjectiveRemoved(class Objective&);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
