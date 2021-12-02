@@ -56,7 +56,7 @@ string Player::getDeviceName() {
         case -1:
             return u8"§2unkown";
         case 1:
-            return u8"§b安卓";
+            return u8"§bAndroid;
         case 2:
             return u8"§diOS";
         case 3:
