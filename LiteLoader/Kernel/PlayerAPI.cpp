@@ -54,7 +54,7 @@ string Player::getLanguageCode() {
 string Player::getDeviceName() {
     switch ((int)getPlatform()) {
         case -1:
-            return u8"Unkown";
+            return u8"Unknown";
         case 1:
             return u8"Android";
         case 2:
@@ -84,7 +84,7 @@ string Player::getDeviceName() {
         case 14:
             return u8"WindowsPhone";
         default:
-            return u8"Unkown";
+            return u8"Unknown";
     }
 }
 
