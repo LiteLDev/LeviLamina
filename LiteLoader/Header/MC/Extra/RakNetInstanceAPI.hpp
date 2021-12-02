@@ -6,5 +6,6 @@
 // Add Member There
 public:
 class RakNetNetworkPeer;
+enum NATState;
 
 #endif

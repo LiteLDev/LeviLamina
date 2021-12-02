@@ -207,6 +207,7 @@ class PathBuffer {
 };
 
 }; // namespace Core
+
 namespace gametest{
     class BaseGameTestBatchRunner;
     class BaseGameTestFunction;
@@ -219,7 +220,11 @@ namespace gametest{
     class IGameTestFunctionContext;
     class IGameTestHelperProvider;
     struct TestParameters;
-    }// namespace gametest
+};// namespace gametest
+
+namespace DBHelpers{
+enum Category;
+};// namespace DBHelpers
 
 class AgentCommands {
 public:
@@ -277,12 +282,27 @@ struct SubChunkBrightnessStorage {
 struct BlockGeometry{
     struct Model;
     class TessellatedModel;
-
 };
 
 class IInPackagePacks {
 public:
     struct MetaData;
+};
+
+struct GameEventConfig {
+    enum GameEvents;
+};
+
+class IMinecraftEventing{
+    enum StructureBlockActionType;
+};
+
+struct OperationNodeValues{
+    enum Terrain;
+};
+
+struct SubChunkStorageUnit{
+enum PruneType;
 };
 
 //Templates

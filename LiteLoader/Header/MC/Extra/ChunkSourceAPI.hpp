@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+public:
+enum LoadMode;
 
 #endif

@@ -6,4 +6,8 @@
 // Add Member There
 class LogAreaFilter;
 struct LogDetails;
+enum LogCategory;
+enum LogChannel;
+enum LogRule;
+
 #endif

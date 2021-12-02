@@ -6,5 +6,7 @@
 // Add Member There
 public:
 struct any_version_constructor;
+enum MatchType;
+enum ParseOption;
 
 #endif

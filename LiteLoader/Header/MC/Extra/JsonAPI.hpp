@@ -5,5 +5,6 @@
 #else
 // Add Member There
 class Value;
+enum ValueType : char;
 
 #endif

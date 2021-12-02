@@ -6,5 +6,6 @@
 // Add Member There
 public:
 struct LegacyMapping;
+enum Processing;
 
 #endif

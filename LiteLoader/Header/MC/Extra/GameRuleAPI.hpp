@@ -7,4 +7,6 @@
 public:
 class ValidationError;
 union Value;
+enum Type;
+
 #endif

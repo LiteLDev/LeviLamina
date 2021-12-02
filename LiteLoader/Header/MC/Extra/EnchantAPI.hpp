@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+enum Slot;
+enum Type;
 
 #endif

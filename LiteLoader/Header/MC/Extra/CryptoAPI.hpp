@@ -6,5 +6,10 @@
 // Add Member There
 class Hash{
     class md5;
+    enum HashType;
+    
+}
+struct Asymmetric{
+    enum System;
 }
 #endif

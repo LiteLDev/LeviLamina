@@ -10,5 +10,6 @@ class Events{
     class AchievementEventing;
 };
 class GameConnectionInfo;
+enum GamePublishSetting;
 
 #endif

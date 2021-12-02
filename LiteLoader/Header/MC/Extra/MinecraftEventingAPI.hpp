@@ -4,5 +4,11 @@
 
 #else
 // Add Member There
+public:
+enum AchievementIds;
+enum BlockPlacementMethod;
+enum ChangeType;
+enum POIBlockInteractionType;
+enum TeleportationCause;
 
 #endif

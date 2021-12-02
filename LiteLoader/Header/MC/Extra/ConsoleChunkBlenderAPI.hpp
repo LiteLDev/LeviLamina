@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+enum BlenderMode;
+enum ShiftBlockTypes;
 
 #endif

@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+enum Options;
+enum Type;
 
 #endif

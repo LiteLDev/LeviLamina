@@ -4,7 +4,7 @@
 
 #else
 // Add Member There
-
+    enum StartupResult;
     class RakNetSocket2;
     struct SplitPacketChannel;
     class BitStream;

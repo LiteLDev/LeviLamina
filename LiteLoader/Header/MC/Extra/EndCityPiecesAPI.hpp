@@ -7,5 +7,6 @@
 public:
 class EndCityPiece;
 class SectionGenerator;
+enum SectionType;
 
 #endif

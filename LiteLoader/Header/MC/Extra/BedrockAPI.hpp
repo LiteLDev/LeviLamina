@@ -21,5 +21,6 @@ public:
     class ThreadLocalObject;
     template <typename T>
     class IAsyncResult;
+    enum AsyncStatus;
 };
 #endif

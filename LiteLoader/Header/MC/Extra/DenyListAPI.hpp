@@ -6,5 +6,6 @@
 // Add Member There
 public:
 struct Entry;
+enum Duration;
 
 #endif

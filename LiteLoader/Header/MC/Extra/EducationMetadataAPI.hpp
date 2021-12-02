@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+enum ContentType;
+enum UserType;
 
 #endif

@@ -7,5 +7,6 @@
 public:
 struct ScreenData;
 struct RequestSlotIdAssignment;
+enum RemoveType;
 
 #endif

@@ -18,4 +18,8 @@ class StringSpan;
 class SingleThreadedLock;
 template <typename T, typename T2>
 class Subject;
+enum DirectoryIterationFlags;
+enum FileBufferingMode;
+enum LevelStorageState;
+
 #endif

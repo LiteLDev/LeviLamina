@@ -4,5 +4,8 @@
 
 #else
 // Add Member There
+public:
+enum PotionType;
+enum PotionVariant;
 
 #endif
