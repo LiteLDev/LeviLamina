@@ -1,5 +1,5 @@
 #include <Global.h>
-#include <regCommandAPI.h>
+#include <RegCommandAPI.h>
 #include <Config.h>
 
 void CMDREG::MakeCommand(string const& name, const char* desc, int lvl) {

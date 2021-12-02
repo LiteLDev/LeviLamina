@@ -392,7 +392,7 @@
     <ClInclude Include="Header\MC\Extra\CommandRegistryAPI.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
-    <ClInclude Include="Header\regCommandAPI.h">
+    <ClInclude Include="Header\RegCommandAPI.h">
       <Filter>Header\Command</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\CommandParameterDataAPI.hpp">

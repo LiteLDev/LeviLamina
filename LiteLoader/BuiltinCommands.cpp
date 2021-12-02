@@ -6,7 +6,7 @@
 #include <MC/CommandOutput.hpp>
 #include <MC/CommandOrigin.hpp>
 #include <MC/CommandPosition.hpp>
-#include <regCommandAPI.h>
+#include <RegCommandAPI.h>
 #include <filesystem>
 #include <MC/Packet.hpp>
 #include <LoggerAPI.h>
