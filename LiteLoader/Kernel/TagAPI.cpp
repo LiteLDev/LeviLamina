@@ -47,8 +47,8 @@ vector<Tag*>& Tag::asList() {
     return *(vector<Tag*>*)((uintptr_t)this + 8);
 }
 
-map<string, Tag&>& Tag::asCompound() {
-    return *(map<string, Tag&>*)((uintptr_t)this + 8);
+map<string, char[0x28]>& Tag::asCompound() {
+    return *(map<string, char[0x28]>*)((uintptr_t)this + 8);
 }
 
 TagMemoryChunk& Tag::asByteArray() {
@@ -63,11 +63,7 @@ Tag* Tag::createTag(Tag::Type t) {
 }
 
 char Tag::getTagType() {
-    __try {
-        return VirtualCall<char>(this, 40, this); //IDA Tag::print
-    } __except (EXCEPTION_EXECUTE_HANDLER) {
-        return -1;
-    }
+    return getId();
 }
 
 void Tag::destroy() {
@@ -290,7 +286,8 @@ void TagToSNBT_List_Helper(tags::compound_list_tag& res, ListTag* nbt) {
 
 void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
     auto& list = nbt->asCompound();
-    for (auto& [key, tag] : list) {
+    for (auto& [key, tmp] : list) {
+        auto& tag = (Tag&)tmp;
         switch (tag.getTagType()) {
             case Tag::Type::End:
                 res.value[key].reset();
@@ -534,7 +531,7 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                     default:
                         break;
                 }
-                nbt->put(key, std::move((Tag&)res));
+                nbt->put(key, std::move(*res));
                 break;
             }
             case tag_id::tag_compound: {
@@ -574,7 +571,7 @@ CompoundTag* Tag::fromBinaryNBT(void* data, size_t len, size_t& offset, bool isL
                        unique_ptr<CompoundTag>*, CompoundTag**, void*)(&tag, (void*)iDataInput);
 
     offset = iDataInput[1];
-    return rtn->get();
+    return rtn->release();
 }
 
 CompoundTag* Tag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
@@ -710,7 +707,8 @@ void TagToJson_List_Helper(JSON_VALUE& res, ListTag* nbt) {
 
 void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt) {
     auto& list = nbt->asCompound();
-    for (auto& [key, tag] : list) {
+    for (auto& [key, tmp] : list) {
+        auto& tag = (Tag&)tmp;
         switch (tag.getTagType()) {
             case Tag::Type::End:
                 res.push_back({key, nullptr});

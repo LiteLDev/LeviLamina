@@ -5,11 +5,16 @@
 #include <MC/Level.hpp>
 #include <MC/Dimension.hpp>
 
+StructureTemplate::StructureTemplate(std::string const& name) {
+    auto name_span = gsl::basic_string_span<char const, -1>(name);
+    SymCall("??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
+        StructureTemplate*, StructureTemplate*, gsl::basic_string_span<char const,-1>)(this, name_span);
+}
+
 StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag){
-    auto name_span = gsl::string_span<-1>(name);
-    auto st = StructureTemplate();
+    auto st = StructureTemplate(name);
     //st.getName(name_span)
-    st.getData().load(*tag);
+    st.getData()->load(*tag);
     return st;
 }
 
@@ -18,8 +23,7 @@ std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
 }
 
 StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
-    auto name_span = gsl::string_span<-1>(name);
-    auto st = StructureTemplate();
+    auto st = StructureTemplate(name);
     //st.getName();
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
     BlockPos size = {std::abs(p1.x - p2.x) + 1, std::abs(p1.y - p2.y) + 1, std::abs(p1.z - p2.z) + 1};
@@ -41,7 +45,7 @@ bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation 
     placeInWorld(*bs, *palette, p1, setting, nullptr, false);
     return true;
 };
-StructureTemplateData& StructureTemplate::getData() {
-    return *dAccess<StructureTemplateData*, 32>(this);
+StructureTemplateData* StructureTemplate::getData() {
+    return (StructureTemplateData*)((uintptr_t)this+32);
 };
 

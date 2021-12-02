@@ -84,22 +84,9 @@ LIAPI float& asFloat();
 LIAPI double& asDouble();
 LIAPI std::string& asString();
 LIAPI std::vector<Tag*>& asList();
-LIAPI std::map<std::string, Tag&>& asCompound();
+LIAPI std::map<std::string, char[0x28]>& asCompound();
 LIAPI TagMemoryChunk& asByteArray();
 
-//compound
-//LIAPI void put(const std::string& k, Tag* v);
-//LIAPI void putEnd(const std::string& k);
-//LIAPI void putShort(const std::string& k, short v);
-//LIAPI void putString(const std::string& k, std::string v);
-//LIAPI void putInt(const std::string& k, int v);
-//LIAPI void putLong(const std::string& k, __int64 v);
-//LIAPI void putFloat(const std::string& k, float v);
-//LIAPI void putDouble(const std::string& k, double v);
-//LIAPI void putCompound(const std::string& k, Tag* v);
-//LIAPI void putByte(const std::string& k, char v);
-//LIAPI void putByteArray(const std::string& key, const TagMemoryChunk& value);
-//LIAPI void putByteArray(const std::string& key, void* data, size_t size);
 LIAPI void destroy();
 
 //list

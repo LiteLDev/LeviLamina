@@ -80,6 +80,20 @@ public:
         std::vector<std::string> list;  // 32
     };
 
+    template <typename Type>
+    struct DefaultIdConverter {
+        template <typename Target, typename Source>
+        static Target convert(Source source) {
+            return (Target)source;
+        }
+        uint64_t operator()(Type value) const {
+            return convert<uint64_t, Type>(value);
+        }
+        Type operator()(uint64_t value) const {
+            return convert<Type, uint64_t>(value);
+        }
+    };
+
     inline void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
         Signature* signature = const_cast<Signature*>(findCommand(name));
         auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
@@ -158,5 +172,34 @@ public:
         auto data = getEnumData(token);
         *(int*)target = (int)data;
         return true;
+    }
+
+    template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
+    bool parseEnum(
+        void* target, CommandRegistry::ParseToken const& token, CommandOrigin const&, int, std::string&,
+        std::vector<std::string>&) const {
+        auto data = getEnumData(token);
+        *(Type*)target = IDConverter{}(data);
+        return true;
+    }
+
+    template <typename Type, typename IDConverter = CommandRegistry::DefaultIdConverter<Type>>
+    unsigned addEnumValues(
+        std::string const& name, typeid_t<CommandRegistry> tid,
+        std::vector<std::pair<std::string, Type>> const& values) {
+        std::vector<std::pair<std::string, uint64_t>> converted;
+        IDConverter converter;
+        for (auto& value : values)
+            converted.emplace_back(value.first, converter(value.second));
+        return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnum<Type, IDConverter>).val;
+    }
+    unsigned addEnumValues(std::string const& name,
+                           typeid_t<CommandRegistry> tid,
+                           std::initializer_list<std::string> const& values) {
+        std::vector<std::pair<std::string, uint64_t>> converted;
+        uint64_t idx = 0;
+        for (auto& value : values)
+            converted.emplace_back(value, ++idx);
+        return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnumInt).val;
     }
 #endif
