@@ -4,6 +4,7 @@
 
 #else
 // Add Member There
+class EntityComponentProcessor;
 template <typename T, int a1, int a2, int a3>
 class MultidimensionalArray;
 #endif

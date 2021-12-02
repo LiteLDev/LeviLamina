@@ -6,6 +6,7 @@
 // Add Member There
 template <typename T>
 class NonOwnerPointer;
+struct PlatformRuntimeInfo;
 class WorkerPoolManager{
     public:
     class PoolHandleInterface;
@@ -18,5 +19,7 @@ class Threading{
 public:
     template <typename T1, typename T2 = std::allocator<T1>>
     class ThreadLocalObject;
+    template <typename T>
+    class IAsyncResult;
 };
 #endif

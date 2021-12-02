@@ -6,5 +6,6 @@
 // Add Member There
 public:
 class EndCityPiece;
+class SectionGenerator;
 
 #endif

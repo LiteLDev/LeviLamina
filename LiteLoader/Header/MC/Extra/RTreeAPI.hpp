@@ -6,5 +6,6 @@
 // Add Member There
 public:
 struct Hint;
+class Node;
 
 #endif

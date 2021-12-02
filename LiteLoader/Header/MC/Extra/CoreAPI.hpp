@@ -7,6 +7,8 @@
 class File;
 class FileOpenMode;
 class FileSystemImpl;
+class FilePathManager;
+class FileStorageArea;
 template <typename T>
 class PathBuffer;
 template <typename T, int i>
@@ -16,5 +18,4 @@ class StringSpan;
 class SingleThreadedLock;
 template <typename T, typename T2>
 class Subject;
-
 #endif
