@@ -104,6 +104,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
@@ -160,6 +161,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\CommandOutputAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandParameterDataAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandRegistryAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\GameModeAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />

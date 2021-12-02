@@ -13,6 +13,7 @@
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/CommandContext.hpp>
 #include <MC/CommandOrigin.hpp>
+#include <mc/GameMode.hpp>
 class ServerPlayer;
 class NetworkIdentifier;
 using std::vector;
@@ -212,9 +213,9 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
 #include <MC/BlockSource.hpp>
 #include <MC/ItemStack.hpp>
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
-      void* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
+      GameMode* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     try {
-        auto sp = dAccess<ServerPlayer*, 8>(thi);
+        auto sp = thi->getPlayer();
         PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
         CallEvent(Player_use_item_on_call_backs, Player_use_item_on_event);
     } catch (seh_exception) {
@@ -244,9 +245,9 @@ LIAPI void Event::addEventListener(function<void(PlayerUseItemEV)> callback) {
     Player_use_item_call_backs.push_back(callback);
 }
 
-THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", void* thi, ItemStack& a2) {
+THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, ItemStack& a2) {
     try {
-        auto sp = dAccess<ServerPlayer*, 8>(thi);
+        auto sp = thi->getPlayer();
         PlayerUseItemEV player_use_item_event = {sp, &a2};
 
         CallEvent(Player_use_item_call_backs, player_use_item_event);
