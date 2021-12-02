@@ -425,6 +425,9 @@
     <ClInclude Include="Header\MC\TeleportTarget.hpp">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\Extra\GameModeAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\bedrock_server_api.lib">
