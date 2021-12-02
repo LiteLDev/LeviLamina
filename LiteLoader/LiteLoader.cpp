@@ -44,7 +44,7 @@ void isDebug() {
         Logger::Log("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
         Logger::Log("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
         Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|");
-        Logger::Warn("You Are In DevelopMode!\n");
+        Logger::Warn("You Are In DevelopMode!");
     }
 }
 void LLMain() {

@@ -1,4 +1,4 @@
-#include <Global.h>
+﻿#include <Global.h>
 #include <LLAPI.h>
 #include <ServerAPI.h>
 #include <EventAPI.h>
@@ -10,7 +10,7 @@
 #include <filesystem>
 #include <MC/Packet.hpp>
 #include <LoggerAPI.h>
-
+#include <MC/ServerPlayer.hpp>
 void checkUpdate();
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     outp.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() + " with LiteLoaderBDS " +

@@ -54,37 +54,37 @@ string Player::getLanguageCode() {
 string Player::getDeviceName() {
     switch ((int)getPlatform()) {
         case -1:
-            return u8"§2unkown";
+            return u8"Unkown";
         case 1:
-            return u8"§bAndroid;
+            return u8"Android";
         case 2:
-            return u8"§diOS";
+            return u8"iOS";
         case 3:
-            return u8"§eOSX";
+            return u8"OSX";
         case 4:
-            return u8"§eAmazon";
+            return u8"Amazon";
         case 5:
-            return u8"§eGearVR";
+            return u8"GearVR";
         case 6:
-            return u8"§eHololens";
+            return u8"Hololens";
         case 7:
-            return u8"§eWin10";
+            return u8"Win10";
         case 8:
-            return u8"§eWIN32";
+            return u8"WIN32";
         case 9:
-            return u8"§eDedicated";
+            return u8"Dedicated";
         case 10:
-            return u8"§eTVOS";
+            return u8"TVOS";
         case 11:
-            return u8"§ePlayStation";
+            return u8"PlayStation";
         case 12:
-            return u8"§eNintendo";
+            return u8"Nintendo";
         case 13:
-            return u8"§eXbox";
+            return u8"Xbox";
         case 14:
-            return u8"§eWwindowsPhone";
+            return u8"WindowsPhone";
         default:
-            return u8"§2unkown";
+            return u8"Unkown";
     }
 }
 
@@ -97,14 +97,6 @@ string Player::getName()
 {
     return getNameTag();
 }
-
-/*string Player::getXuid()
-{
-    auto cert = getCert();
-    if (!cert)
-        return "";
-    return ((ExtendedCertificate*)cert)->getXuid(cert);
-}*/
 
 string Player::getUuid()
 {
