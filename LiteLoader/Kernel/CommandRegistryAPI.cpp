@@ -1,7 +1,7 @@
 #include <MC/CommandRegistry.hpp>
 #include <MC/CommandParameterData.hpp>
 #include <vector>
-#include <regCommandAPI.h>
+#include <RegCommandAPI.h>
 
 static_assert(offsetof(CommandParameterData, pad73) == 73);
 static_assert(offsetof(CommandParameterData, name) == 16);

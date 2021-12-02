@@ -9,7 +9,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/Level.hpp>
-#include <regCommandAPI.h>
+#include <RegCommandAPI.h>
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/CommandContext.hpp>
 #include <MC/CommandOrigin.hpp>
