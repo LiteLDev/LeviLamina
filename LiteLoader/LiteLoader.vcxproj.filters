@@ -424,15 +424,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="Lib\bedrock_server_api.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\bedrock_server_var.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\SymDBHelper.lib">
-      <Filter>Lib</Filter>
-    </Library>
     <Library Include="Lib\third-party\leveldb\leveldb.lib">
       <Filter>Lib</Filter>
     </Library>
@@ -443,6 +434,15 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\SymDBHelper.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\bedrock_server_api.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\bedrock_server_var.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
