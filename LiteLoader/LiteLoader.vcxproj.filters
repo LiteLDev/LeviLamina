@@ -31,6 +31,12 @@
     <Filter Include="Lib">
       <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\NBT">
+      <UniqueIdentifier>{4337a0ac-2dc4-4c54-8052-8a461c46788a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\NBT">
+      <UniqueIdentifier>{4fd86d70-9a2a-4ae7-9492-e9b6001e547d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -123,9 +129,6 @@
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\TagAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ScheduleAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -177,12 +180,6 @@
     <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ListTagAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CompoundTagAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\CommandAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
@@ -200,6 +197,15 @@
     </ClCompile>
     <ClCompile Include="Kernel\GameModeAPI.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ListTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\CompoundTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\TagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -413,9 +419,6 @@
     <ClInclude Include="Header\SendPacketAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Extra\TagAPI.hpp">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Extra\CommandPositionAPI.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
@@ -427,6 +430,15 @@
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\GameModeAPI.hpp">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CompoundTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\TagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -5,5 +5,5 @@ class ServerPlayer;
 #else
 // Add Member There
 public:
-LIAPI ServerPlayer* getPlayer();
+	LIAPI ServerPlayer* getPlayer();
 #endif

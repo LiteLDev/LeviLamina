@@ -161,9 +161,11 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\CommandOutputAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandParameterDataAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandRegistryAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\CompoundTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\GameModeAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HashedStringAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\HitResultAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureTemplateAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\TagAPI.hpp" />

@@ -67,7 +67,7 @@ void LLMain() {
 
     //Rename Window
     HWND hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1)) + L" with LiteLoaderBDS " + str2wstr(LL::getLoaderVersionString());
+    std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
     //Init LL Logger
