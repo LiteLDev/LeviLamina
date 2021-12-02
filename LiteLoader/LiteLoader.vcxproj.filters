@@ -198,6 +198,9 @@
     <ClCompile Include="Kernel\CommandParameterDataAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\GameModeAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

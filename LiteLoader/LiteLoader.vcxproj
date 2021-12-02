@@ -104,6 +104,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
