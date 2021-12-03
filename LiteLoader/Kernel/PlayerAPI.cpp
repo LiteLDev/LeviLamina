@@ -183,8 +183,44 @@ void Player::SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, 
     sendNetworkPacket(pkts);
 }
 
+//bad
+void Player::PlaySound(string Soundname, Vec3 Position, float Volume, float Pitch) {
+    BinaryStream wp;
+    wp.reserve(Soundname.size());
+    wp.writeString(Soundname);
+    wp.writeVarInt(Position.x);
+    wp.writeUnsignedVarInt(Position.y * 8);
+    wp.writeVarInt(Position.z);
+    wp.writeFloat(Volume);
+    wp.writeFloat(Pitch);
+    MyPkt<0x56> pkts{wp.getAndReleaseData()};
+    sendNetworkPacket(pkts);
+}
+#include <MC/SynchedActorData.hpp>
+#include <MC/dataitem.hpp>
+void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos) {
+    BinaryStream wp;
+    wp.writeVarInt64(runtimeid);                                   //RuntimeId
+    wp.writeUnsignedVarInt64(runtimeid);                           //EntityId
+    wp.writeVarInt(itemid);                                        //ItemId
+    wp.writeUnsignedShort(static_cast<unsigned short>(stacksize)); //StackSize
+    wp.writeUnsignedVarInt(aux);                                   //Aux
+    wp.writeBool(1);
+    wp.writeUnsignedVarInt(110);
+    wp.writeVarInt(0);
+    wp.writeString("minecraft:apple"); 
+    wp.writeFloat(pos.x);
+    wp.writeFloat(pos.y);
+    wp.writeFloat(pos.z);
+    wp.writeFloat(pos.x);
+    wp.writeFloat(pos.y);
+    wp.writeFloat(pos.z); 
+    wp.writeUnsignedVarInt(0);//EntityMetadata & DataItem
+    wp.writeBool(1);
+    MyPkt<0x0F> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
+}
 
-/*
 TClasslessInstanceHook(
     void,
     "?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@"
@@ -194,9 +230,10 @@ TClasslessInstanceHook(
     auto pktid = stream.getUnsignedVarInt();
     auto pkthash = do_hash(data.c_str());
     auto pkttime = _time64(0);
-    if (pktid == 0x58) {
+    if (pktid == 0x56) {
         std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
+        //return original(this, id, pkt, data);
     }
+   // std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
     original(this, id, pkt, data);
 }
-*/

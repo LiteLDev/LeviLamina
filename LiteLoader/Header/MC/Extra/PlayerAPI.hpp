@@ -34,7 +34,8 @@ public:
     LIAPI void sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
     LIAPI void sendNote(unsigned int tone);
     LIAPI void SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
-
+    /*bad*/LIAPI void PlaySound(string Soundname, Vec3 Position, float Volume, float Pitch);
+    LIAPI void AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos);
 
     template <typename T>
     inline bool runcmd(T&& str) {
