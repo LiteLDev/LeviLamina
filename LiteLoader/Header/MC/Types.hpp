@@ -425,7 +425,7 @@ enum class ContainerType {
     NONE = 0xf7
 };
 
-enum TextType : char {
+enum class TextType : char {
     RAW = 0,
     CHAT = 1,
     TRANSLATION = 2,
@@ -437,6 +437,15 @@ enum TextType : char {
     ANNOUNCEMENT = 8,
     JSON = 9,
     JSON_WHISPER = 10
+};
+
+enum class TitleType : int {
+    Clear = 0,
+    Reset = 1,
+    SetTitle = 2,
+    SetSubtitle = 3,
+    SetActionBar = 4,
+    SetDurations = 5,
 };
 
 enum class ParticleType {

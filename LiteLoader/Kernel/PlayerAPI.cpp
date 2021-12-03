@@ -111,25 +111,25 @@ string Player::getUuid()
 }
 
 
-void Player::sendText(string text, TextType tp) {
+void Player::sendText(string text, TextType Type) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
-    wp.writeUnsignedChar((char)tp);
+    wp.writeUnsignedChar((char)Type);
     wp.writeBool(false);
-    switch (tp) {
-        case CHAT:
-        case WHISPER:
-        case ANNOUNCEMENT:
+    switch (Type) {
+        case TextType::CHAT:
+        case TextType::WHISPER:
+        case TextType::ANNOUNCEMENT:
             wp.writeString("Server");
-        case RAW:
-        case TIP:
-        case SYSTEM:
-        case JSON:
+        case TextType::RAW:
+        case TextType::TIP:
+        case TextType::SYSTEM:
+        case TextType::JSON:
             wp.writeString(text);
             break;
-        case TRANSLATION:
-        case POPUP:
-        case JUKEBOX_POPUP:
+        case TextType::TRANSLATION:
+        case TextType::POPUP:
+        case TextType::JUKEBOX_POPUP:
             wp.writeString(text);
             wp.writeVarInt(0);
     }
@@ -137,4 +137,33 @@ void Player::sendText(string text, TextType tp) {
     wp.writeString("");
     MyPkt<0x09> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
+}
+
+void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+    BinaryStream wp;
+    wp.reserve(8 + text.size());
+    wp.writeVarInt((int)Type);
+    wp.writeString(text);
+    wp.writeVarInt(FadeInDuration);
+    wp.writeVarInt(RemainDuration);
+    wp.writeVarInt(FadeOutDuration);
+    wp.writeString(getXuid());
+    wp.writeString("");
+    MyPkt<0x58> pkt{wp.getAndReleaseData()};
+    sendNetworkPacket(pkt);
+}
+
+TClasslessInstanceHook(
+    void,
+    "?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@"
+    "V?$allocator@D@2@@std@@@Z",
+    NetworkIdentifier const& id, Packet const& pkt, std::string& data) {
+    auto stream = ReadOnlyBinaryStream(data, 0i64);
+    auto pktid = stream.getUnsignedVarInt();
+    auto pkthash = do_hash(data.c_str());
+    auto pkttime = _time64(0);
+    if (pktid == 0x58) {
+        std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
+    }
+    original(this, id, pkt, data);
 }

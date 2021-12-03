@@ -28,7 +28,9 @@ public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();
-    LIAPI void sendText(string text, TextType tp);
+    LIAPI void sendText(string text, TextType Type);
+    LIAPI void sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

@@ -1,4 +1,4 @@
-#include <EventAPI.h>
+﻿#include <EventAPI.h>
 #include <Global.h>
 #include <functional>
 #include <iostream>
@@ -210,8 +210,7 @@ vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     Player_use_item_on_call_backs.push_back(callback);
 }
-#include <MC/BlockSource.hpp>
-#include <MC/ItemStack.hpp>
+
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
       GameMode* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     try {
@@ -224,7 +223,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
     return original(thi, a2, a3_pos, side, a5, a6_block);
 }
 
-/////////////////// MobHurted ///////////////////
+    /////////////////// MobHurted ///////////////////
 
 vector<function<void(MobHurtedEV)>> Mob_hurted_call_backs;
 LIAPI void Event::addEventListener(function<void(MobHurtedEV)> callback) {
@@ -249,7 +248,6 @@ THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, Ite
     try {
         auto sp = thi->getPlayer();
         PlayerUseItemEV player_use_item_event = {sp, &a2};
-
         CallEvent(Player_use_item_call_backs, player_use_item_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemEV");
