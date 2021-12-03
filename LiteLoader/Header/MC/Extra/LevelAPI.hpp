@@ -40,7 +40,7 @@ public:
     LIAPI static BlockPalette* getBlockPalette();
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-    
+    LIAPI static void broadcastText(string a1, TextType ty)
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {

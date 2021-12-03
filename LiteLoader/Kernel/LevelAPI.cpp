@@ -179,7 +179,12 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
     return itemstack;
 }
 
-
+void Level::broadcastText(string a1, TextType ty) {
+    auto players = getAllPlayers();
+    for (auto& sp : players) {
+        sp->sendText(a1, ty);
+    }
+}
 //HOOK
 #include <LoggerAPI.h>
 #include <sstream>
