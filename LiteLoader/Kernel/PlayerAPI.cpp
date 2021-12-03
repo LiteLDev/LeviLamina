@@ -110,7 +110,6 @@ string Player::getUuid()
     return uuidStr;
 }
 
-
 void Player::sendText(string text, TextType Type) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
@@ -152,9 +151,6 @@ void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int Rema
     MyPkt<0x58> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
 }
-std::vector<unsigned int> Music_Tones;
-unsigned short scale = 1;
-
 
 void Player::sendNote(unsigned int tone) {
     if (tone == 0) {
@@ -172,6 +168,21 @@ void Player::sendNote(unsigned int tone) {
      MyPkt<0x7B> pkts{wp.getAndReleaseData()};
      sendNetworkPacket(pkts);
 }
+
+void Player::SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
+    BinaryStream wp;
+    wp.writeUnsignedChar(dimid);
+    //If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
+    wp.writeVarInt64(EntityUniqueID);
+    wp.writeFloat(spawnpos.x);
+    wp.writeFloat(spawnpos.y);
+    wp.writeFloat(spawnpos.z);
+    //ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
+    wp.writeString(ParticleName);
+    MyPkt<0x76> pkts{wp.getAndReleaseData()};
+    sendNetworkPacket(pkts);
+}
+
 
 /*
 TClasslessInstanceHook(

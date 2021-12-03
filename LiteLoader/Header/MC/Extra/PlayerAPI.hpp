@@ -28,9 +28,14 @@ public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();
+
+    //Packet
     LIAPI void sendText(string text, TextType Type);
     LIAPI void sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
     LIAPI void sendNote(unsigned int tone);
+    LIAPI void SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
+
+
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));
