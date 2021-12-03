@@ -36,7 +36,7 @@ public:
     LIAPI void SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
     /*bad*/LIAPI void PlaySound(string Soundname, Vec3 Position, float Volume, float Pitch);
     LIAPI void AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
-
+    LIAPI void AddEntity(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

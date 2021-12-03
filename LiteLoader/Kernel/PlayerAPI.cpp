@@ -221,7 +221,8 @@ void setDataItem(BinaryStream wp, vector<FakeDataItem> a3) {
                 wp.writeString(i.strings);
                 break;
             case 5:
-                break;
+
+                break;//NBT
             case 6:
                 wp.writeVarInt(i.bpos.x);
                 wp.writeVarInt(i.bpos.y);
@@ -264,6 +265,26 @@ void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksi
     sendNetworkPacket(pk);
 }
 
+void Player::AddEntity(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
+    BinaryStream wp;
+    wp.writeVarInt64(runtimeid); //RuntimeId
+    wp.writeUnsignedVarInt64(runtimeid);  //EntityId
+    wp.writeString(entitytype);
+    wp.writeFloat(pos.x);       //pos
+    wp.writeFloat(pos.y);
+    wp.writeFloat(pos.z);
+    wp.writeFloat(0);
+    wp.writeFloat(0);
+    wp.writeFloat(0);
+    wp.writeFloat(rotation.x); //rotation
+    wp.writeFloat(rotation.y);
+    wp.writeFloat(rotation.z);
+    wp.writeUnsignedVarInt(0); //attr
+    setDataItem(wp, DataItem); //EntityMetadata & DataItem
+    wp.writeUnsignedVarInt(0); //entity link
+    MyPkt<0xd> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
+}
     /*
 TClasslessInstanceHook(
     void,
