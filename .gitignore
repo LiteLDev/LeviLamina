@@ -9,3 +9,4 @@ x64/
 **/bedrock_server_var.lib
 **/SymDB_DelayLoadHelper.lib
 LiteLoader/Lib/SymDBHelper.lib
+**/*.lastcodeanalysissucceeded
