@@ -84,7 +84,6 @@ LibraryBuilder.exe
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
     <ClCompile Include="CheckNotice.cpp" />
-    <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
@@ -136,6 +135,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="ModifyName.cpp" />
+    <ClCompile Include="PlayerDB.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="BuiltinCommands.cpp" />
   </ItemGroup>
@@ -218,6 +218,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Loader.h" />
+    <ClInclude Include="PlayerDB.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\KVDBAPI.h" />
     <ClInclude Include="Header\Utils\StringHelper.h" />
