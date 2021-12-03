@@ -204,6 +204,9 @@
     <ClCompile Include="Kernel\TagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerDB.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -436,6 +439,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp">
       <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDB.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
