@@ -87,9 +87,6 @@
     <ClCompile Include="BugFix.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="CheckUpdate.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Config.cpp">
       <Filter>Main</Filter>
     </ClCompile>

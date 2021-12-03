@@ -84,7 +84,6 @@ LibraryBuilder.exe
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
     <ClCompile Include="CheckNotice.cpp" />
-    <ClCompile Include="CheckUpdate.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
