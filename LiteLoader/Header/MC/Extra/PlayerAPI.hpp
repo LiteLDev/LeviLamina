@@ -30,7 +30,7 @@ public:
     LIAPI Certificate* getCert();
     LIAPI void sendText(string text, TextType Type);
     LIAPI void sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
-
+    LIAPI void sendNote(unsigned int tone);
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

@@ -152,6 +152,26 @@ void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int Rema
     MyPkt<0x58> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
 }
+std::vector<unsigned int> Music_Tones;
+unsigned short scale = 1;
+
+
+void Player::sendNote(unsigned int tone) {
+    if (tone == 0) {
+        return;
+    }
+     BinaryStream wp;
+     wp.writeUnsignedChar(81);
+     wp.writeFloat(getPos().x);
+     wp.writeFloat(getPos().y);
+     wp.writeFloat(getPos().z);
+     wp.writeVarInt(tone * 2);
+     wp.writeString("");
+     wp.writeBool(0);
+     wp.writeBool(1);
+     MyPkt<0x7B> pkts{wp.getAndReleaseData()};
+     sendNetworkPacket(pkts);
+}
 
 /*
 TClasslessInstanceHook(
