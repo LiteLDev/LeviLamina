@@ -192,6 +192,35 @@ void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int 
         sp->sendTitle(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
     }
 }
+#include <MC/CompoundTag.hpp>
+
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
+    return FakeDataItem::FakeDataItem(a1,type,a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int16_t a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int32_t a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, float a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, string a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, BlockPos a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, Vec3 a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int64_t a2) {
+    return FakeDataItem::FakeDataItem(a1, type, a2);
+}
+
+
+
 
 //HOOK
 #include <LoggerAPI.h>

@@ -13,6 +13,7 @@
 #include <EventAPI.h>
 #include <MC/ScriptItemStack.hpp>
 #include <SendPacketAPI.h>
+
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
 }
@@ -196,9 +197,51 @@ void Player::PlaySound(string Soundname, Vec3 Position, float Volume, float Pitc
     MyPkt<0x56> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
 }
-#include <MC/SynchedActorData.hpp>
-#include <MC/dataitem.hpp>
-void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos) {
+
+void setDataItem(BinaryStream wp, vector<FakeDataItem> a3) {
+    wp.writeUnsignedVarInt(a3.size());
+    for (auto& i : a3) {
+        wp.writeUnsignedVarInt(i.id);
+        wp.writeUnsignedVarInt((int)i.type);
+        std::cout << (int)i.type << std::endl;
+        switch ((int)i.type) {
+            case 0:
+                wp.writeUnsignedChar(i.byte);
+                break;
+            case 1:
+                wp.writeUnsignedShort(i.shorts);
+                break;
+            case 2:
+                wp.writeVarInt(i.ints);
+                break;
+            case 3:
+                wp.writeFloat(i.floats);
+                break;
+            case 4:        
+                wp.writeString(i.strings);
+                break;
+            case 5:
+                break;
+            case 6:
+                wp.writeVarInt(i.bpos.x);
+                wp.writeVarInt(i.bpos.y);
+                wp.writeVarInt(i.bpos.z);
+                break;
+            case 7:
+                wp.writeVarInt64(i.longs);
+                break;
+            case 8:
+                wp.writeFloat(i.vec3.x);
+                wp.writeFloat(i.vec3.y);
+                wp.writeFloat(i.vec3.z);
+                break;
+            default:
+                return;
+        }
+    }
+}
+
+void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
     wp.writeVarInt64(runtimeid);                                   //RuntimeId
     wp.writeUnsignedVarInt64(runtimeid);                           //EntityId
@@ -215,12 +258,13 @@ void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksi
     wp.writeFloat(pos.x);
     wp.writeFloat(pos.y);
     wp.writeFloat(pos.z); 
-    wp.writeUnsignedVarInt(0);//EntityMetadata & DataItem
+    setDataItem(wp, DataItem); //EntityMetadata & DataItem
     wp.writeBool(1);
     MyPkt<0x0F> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
 }
 
+    /*
 TClasslessInstanceHook(
     void,
     "?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@"
@@ -237,3 +281,4 @@ TClasslessInstanceHook(
    // std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
     original(this, id, pkt, data);
 }
+*/

@@ -35,7 +35,6 @@
 #include "utils/optional.h"
 #include "Utils/GlobalService.h"
 #include "Utils/Json.h"
-
 using std::map;
 using std::string;
 using std::vector;

@@ -31,6 +31,7 @@ public:
     }
 };
 
+
 struct MCRESULT {
     unsigned char filler[4];
     operator bool() {
@@ -425,6 +426,18 @@ enum class ContainerType {
     NONE = 0xf7
 };
 
+enum class DataItemType : unsigned char { 
+    BYTE = 0,                                         
+    SHORT = 1,                                          
+    INT = 2,                                         
+    FLOAT = 3,                                         
+    STRING = 4,                                         
+    NBT = 5,                                         
+    POS = 6,                                         
+    LONG = 7,                                         
+    VEC3 = 8
+};
+
 enum class TextType : char {
     RAW = 0,
     CHAT = 1,
@@ -640,4 +653,59 @@ public:
     auto end() { return data->end(); }
     auto count() const { return data->size(); }
     auto empty() const { return data->empty(); }
+};
+
+class FakeDataItem {
+public:
+    DataItemType type;
+    uint16_t id;
+    int8_t byte;
+    int16_t shorts;
+    int32_t ints;
+    float floats;
+    std::string strings;
+    BlockPos bpos;
+    Vec3 vec3;
+    int64_t longs;
+
+    FakeDataItem(uint16_t a1, DataItemType a3, int8_t a2)
+        : id(a1)
+        , type(a3)
+        , byte(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, int16_t a2)
+        : id(a1)
+        , type(a3)
+        , shorts(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, int32_t a2)
+        : id(a1)
+        , type(a3)
+        , ints(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, float a2)
+        : id(a1)
+        , type(a3)
+        , floats(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, std::string a2)
+        : id(a1)
+        , type(a3)
+        , strings(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, BlockPos a2)
+        : id(a1)
+        , type(a3)
+        , bpos(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, Vec3 a2)
+        : id(a1)
+        , type(a3)
+        , vec3(a2) {
+    }
+    FakeDataItem(uint16_t a1, DataItemType a3, int64_t a2)
+        : id(a1)
+        , type(a3)
+        , longs(a2) {
+    }
 };

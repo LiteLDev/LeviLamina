@@ -42,6 +42,19 @@ public:
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(string a1, TextType ty);
     LIAPI static void broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+
+
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int8_t a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int16_t a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int32_t a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, float a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, string a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, BlockPos a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, Vec3 a2);
+    LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int64_t a2);
+
+
+
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {
