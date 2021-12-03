@@ -41,7 +41,7 @@ public:
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(string a1, TextType ty);
-
+    LIAPI static void broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
  public:
     static void dummy() { ; }
     struct ServerCommandOrigin {

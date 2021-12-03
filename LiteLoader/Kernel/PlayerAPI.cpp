@@ -153,6 +153,7 @@ void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int Rema
     sendNetworkPacket(pkt);
 }
 
+/*
 TClasslessInstanceHook(
     void,
     "?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@"
@@ -167,3 +168,4 @@ TClasslessInstanceHook(
     }
     original(this, id, pkt, data);
 }
+*/

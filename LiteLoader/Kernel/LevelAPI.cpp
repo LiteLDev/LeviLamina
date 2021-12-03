@@ -185,6 +185,14 @@ void Level::broadcastText(string a1, TextType ty) {
         sp->sendText(a1, ty);
     }
 }
+
+void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+    auto players = getAllPlayers();
+    for (auto& sp : players) {
+        sp->sendTitle(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
+    }
+}
+
 //HOOK
 #include <LoggerAPI.h>
 #include <sstream>
