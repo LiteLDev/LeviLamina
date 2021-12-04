@@ -9,10 +9,15 @@ enum class Reliability : int {};
 enum class DataStatus : int { OK,
                               BUSY };
 struct NetworkStatus {
-    int level;
-    int ping, avgping;
-    double packetloss, avgpacketloss;
-    char pkt[64];
+    int unk0;             //0
+    int ping;             //4
+    int avgping;          //8
+    int unk12;            //12
+    float packetloss;     //16
+    float avgpacketloss;  //20
+    double unk24;         //24
+    double unk32;         //32
+    double unk40;         //40
 };
 
 #endif

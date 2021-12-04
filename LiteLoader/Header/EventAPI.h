@@ -3,7 +3,6 @@
 
 #include <functional>
 #include <string>
-extern std::unordered_map<string, std::pair<string, string>> PlayerJoinData;
 using std::function;
 using std::string;
 class Actor;

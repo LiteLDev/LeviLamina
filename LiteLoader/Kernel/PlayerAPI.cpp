@@ -13,6 +13,7 @@
 #include <EventAPI.h>
 #include <MC/ScriptItemStack.hpp>
 #include <SendPacketAPI.h>
+#include <MC/ConnectionRequest.hpp>
 
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
@@ -21,13 +22,17 @@ UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
 NetworkIdentifier* Player::getNetworkIdentifier(){
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
-
+/*
 Certificate* Player::getCert() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
     }
     return nullptr;
+}
+*/
+Certificate* Player::getCert() {
+    return const_cast<Certificate*>(Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getCertificate());
 }
 
 std::string Player::getRealName() {
@@ -42,12 +47,15 @@ int Player::getLastPing() {
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
+
 string Player::getLanguageCode() {
-    for (auto& [i, j] : PlayerJoinData) {
-        if (i == this->getRealName())
-            if (j.first == "LanguageCode") {
-                return j.second;
-            }
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    for (auto iter = map->begin(); iter != map->end(); ++iter) {
+        string s(iter->first.c_str());
+        if (s.find("LanguageCode") != s.npos) {
+            auto langcode = iter->second.value_.string_;
+            return langcode;
+        }
     }
     return "unkown";
 }

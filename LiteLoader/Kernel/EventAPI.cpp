@@ -39,7 +39,6 @@ bool CallEventEx(vector<T>& vec, T1& ev) {
 }
 
 /////////////////// PlayerJoin ///////////////////
-std::unordered_map<string, std::pair<string,string>> PlayerJoinData;
 #include <MC/ConnectionRequest.hpp>
 #include <MC/WebToken.hpp>
 vector<function<void(JoinEV)>> Join_call_backs;
@@ -53,14 +52,6 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
         string ip = Ni->getIP();
         string xuid = sp->getXuid();
         JoinEV join_event = {sp, ip, xuid};
-        auto map1 = a3->rawToken->dataInfo.value_.map_;
-        for (auto iter = map1->begin(); iter != map1->end(); ++iter) {
-            string s(iter->first.c_str());
-            if (s.find("LanguageCode") != s.npos) {
-                auto langcode = iter->second.value_.string_;
-                PlayerJoinData[sp->getRealName()] = std::make_pair("LanguageCode", langcode);
-            }
-        }
         CallEvent(Join_call_backs, join_event);
     } catch (seh_exception) {
         Logger::Error("Exception at JoinEV");
@@ -81,9 +72,6 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
     try {
         string xuid = sp->getXuid();
         LeftEV left_event = {sp, xuid};
-        auto iterss = PlayerJoinData.find(sp->getRealName());
-        if (iterss != PlayerJoinData.end())
-            iterss = PlayerJoinData.erase(iterss);
         CallEvent(Left_call_backs, left_event);
     } catch (seh_exception) {
         Logger::Error("Exception at LeftEV");
@@ -101,6 +89,7 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
       ServerNetworkHandler* self, NetworkIdentifier* id, void* text) {
     try {
         auto sp = self->getServerPlayer(*id);
+        sp->getAvgPing();
         auto msg = std::string(*(std::string*)((uintptr_t)text + 88));
         ChatEV chat_event = {sp, msg};
         if (!CallEventEx(Chat_call_backs, chat_event))
@@ -193,33 +182,6 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
 
 /////////////////// PlayerDestroy ///////////////////
 
-#include <MC/CompoundTag.hpp>
-#include <MC/Tag.hpp>
-CompoundTag* createBlockActorNBT1(BlockPos blockpos, string nametag) {
-    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
-    auto newpos = blockpos.add(1);
-    nbt->putString("id", "Chest");
-    nbt->putInt("x", blockpos.x);
-    nbt->putInt("y", blockpos.y);
-    nbt->putInt("z", blockpos.z);
-    nbt->putInt("pairx", newpos.x);
-    nbt->putInt("pairz", newpos.z);
-    nbt->putString("CustomName", nametag);
-    return nbt;
-}
-
-CompoundTag* createBlockActorNBT2(BlockPos blockpos, string nametag) {
-    auto newpos = blockpos.add(1);
-    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
-    nbt->putString("id", "Chest");
-    nbt->putInt("x", newpos.x);
-    nbt->putInt("y", newpos.y);
-    nbt->putInt("z", newpos.z);
-    nbt->putInt("pairx", blockpos.x);
-    nbt->putInt("pairz", blockpos.z);
-    nbt->putString("CustomName", nametag);
-    return nbt;
-}
 
 vector<function<void(PlayerDestroyEV)>> Player_destroy_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
@@ -229,7 +191,7 @@ LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
       BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl) {
     PlayerDestroyEV player_destroy_event = {pl, blkpos, &bl};
-
+    pl->sendTextPacket(u8"延迟"+ std::to_string(pl->getLastPing()));
     CallEvent(Player_destroy_call_backs, player_destroy_event);
     return original(_this, pl, blkpos, bl);
 }
