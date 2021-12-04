@@ -191,12 +191,9 @@ LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
       BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl) {
     PlayerDestroyEV player_destroy_event = {pl, blkpos, &bl};
-    pl->sendTextPacket(u8"延迟"+ std::to_string(pl->getLastPing()));
     CallEvent(Player_destroy_call_backs, player_destroy_event);
     return original(_this, pl, blkpos, bl);
 }
-
-
 
     /////////////////// PlayerUseItemOn ///////////////////
 vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;

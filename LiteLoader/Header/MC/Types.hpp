@@ -289,9 +289,6 @@ struct PositionTrackingDB {
     class TrackingRecord;
 };
 
-struct RakNetServerLocator {
-    struct AnnounceServerData;
-};
 
 struct SubChunkBrightnessStorage {
     struct LightPair;
