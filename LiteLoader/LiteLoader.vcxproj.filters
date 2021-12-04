@@ -466,6 +466,12 @@
     <Library Include="Lib\bedrock_server_var.lib">
       <Filter>Lib</Filter>
     </Library>
+    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
+      <Filter>Lib</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint">

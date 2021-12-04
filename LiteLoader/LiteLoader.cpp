@@ -36,6 +36,7 @@ void FixUpCWD() {
 void startWBThread();
 void checkUpdate();
 void registerCommands();
+bool InitPlayerDatabase();
 void isDebug() {
     if (LL::globalConfig.debugMode) {
         Logger::Log("=================LiteLoader================");
@@ -64,7 +65,8 @@ void LLMain() {
 
     //Load Config
     LoadLLConfig();
-
+    InitPlayerDatabase();
+    
     //Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));

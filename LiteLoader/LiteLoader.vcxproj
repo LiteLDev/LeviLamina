@@ -234,6 +234,8 @@ LibraryBuilder.exe
     <Library Include="Lib\third-party\leveldb\leveldb.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
+    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />
+    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
