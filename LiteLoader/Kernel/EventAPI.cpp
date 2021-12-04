@@ -318,3 +318,18 @@ THook(void, "?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdent
 
     CallEvent(Pre_join_call_backs, pre_join_event);
 }
+
+////////////// ItemUseOnActorInventoryEV //////////////
+vector<function<void(ItemUseOnActorInventoryEV)>> Pre_ItemUseOnActor_call_backs;
+LIAPI void Event::addEventListener(function<void(ItemUseOnActorInventoryEV)> callback) {
+    Pre_ItemUseOnActor_call_backs.push_back(callback);
+}
+
+THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z"
+    , ServerNetworkHandler* thi, ServerPlayer* sp, bool unk) {
+    auto rtid = dAccess<ActorRuntimeID, 104>(thi);
+    auto id = dAccess<int, 112>(thi);
+    ItemUseOnActorInventoryEV pre_ItemUseOnActor_event = {rtid, id};
+    CallEvent(Pre_ItemUseOnActor_call_backs, pre_ItemUseOnActor_event);
+    return original(thi, sp, unk);
+}
