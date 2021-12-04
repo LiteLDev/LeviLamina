@@ -3,6 +3,7 @@
 #include <exception>
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
+#include <PlayerDB.h>
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;
 

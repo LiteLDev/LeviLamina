@@ -193,6 +193,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\ScoreboardAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\SpawnerAPI.hpp" />
     <ClInclude Include="Header\MC\TeleportTarget.hpp" />
+    <ClInclude Include="Header\PlayerDB.h" />
     <ClInclude Include="Header\RegCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\MC\Types.hpp" />
@@ -218,7 +219,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
     <ClInclude Include="Loader.h" />
-    <ClInclude Include="PlayerDB.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\KVDBAPI.h" />
     <ClInclude Include="Header\Utils\StringHelper.h" />

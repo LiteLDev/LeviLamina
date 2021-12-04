@@ -440,7 +440,7 @@
     <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp">
       <Filter>Header\NBT</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerDB.h">
+    <ClInclude Include="Header\PlayerDB.h">
       <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
