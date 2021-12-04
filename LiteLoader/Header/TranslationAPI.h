@@ -66,7 +66,8 @@ namespace Translation
     inline const char* trcImpl(HMODULE hPlugin, const S& formatStr, const Args&... args)
     {
         std::string res = trImpl(hPlugin, formatStr, args...);
-        auto& str = PluginOwnData::setImpl<std::string>(hPlugin, TRANSLATION_DATA_NAME + "_" + formatStr, res);
+        string name = string(TRANSLATION_DATA_NAME) + "_" + fmt::v8::detail::to_string_view<S>(formatStr).data();
+        auto& str = PluginOwnData::setImpl<std::string>(hPlugin, name, res);
         return str.c_str();
     }
 
