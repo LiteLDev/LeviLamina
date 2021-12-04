@@ -16,12 +16,12 @@ std::string GetDataPath(const std::string& myname)
 
 std::string LL::getLoaderVersionString()
 {
-    return to_string(LITELOADER_VERSION_MAJOR) + "." + to_string(LITELOADER_VERSION_MINOR) + "." + to_string(LITELOADER_VERSION_REVISION);
+    return getLoaderVersion().toString();
 }
 
 LL::Version LL::getLoaderVersion()
 {
-    return LL::Version{ LITELOADER_VERSION_MAJOR, LITELOADER_VERSION_MINOR, LITELOADER_VERSION_REVISION, LL::Version::LITELOADER_VERSION_STATUS };
+    return LITELOADER_VERSION;
 }
 
 bool LL::isDebugMode() {
