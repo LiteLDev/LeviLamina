@@ -5,5 +5,6 @@
 #else
 // Add Member There
 public:
-class Occupant;
+struct Occupant;
+
 #endif

@@ -299,6 +299,10 @@ struct BlockGeometry{
     class TessellatedModel;
 };
 
+struct CanyonFeatureUtils{
+    struct CanyonConfiguration;
+}
+
 class IInPackagePacks {
 public:
     struct MetaData;

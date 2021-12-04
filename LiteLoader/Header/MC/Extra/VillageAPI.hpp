@@ -5,6 +5,6 @@
 #else
 // Add Member There
 public:
-class DwellerData;
+struct DwellerData;
 
 #endif
