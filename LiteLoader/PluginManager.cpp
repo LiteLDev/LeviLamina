@@ -21,6 +21,14 @@ bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction,
     if (GetPlugin(name) != nullptr) {
         return false;
     }
+    if (GetPlugin(handler) != nullptr) {
+        auto map = GetPlugin(handler);
+        for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
+            if (iter->second.handler == handler) {
+                plugins.erase(iter->first);
+            }
+        } 
+    }
     LL::Plugin plugin{name, introduction, version, git, license, website};
     plugin.handler = handler;
     plugin.filePath = GetModulePath(handler);

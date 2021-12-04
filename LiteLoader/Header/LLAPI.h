@@ -65,7 +65,7 @@ namespace LL
     // @param license *插件许可证
     // @param website *网站
     // @return 是否成功(失败则为插件名重复)
-    LIAPI inline bool registerPlugin(std::string name, std::string introduction, std::string version,
+    inline bool registerPlugin(std::string name, std::string introduction, std::string version,
                               std::string git = "", std::string license = "", std::string website = "") {
         //此函数的实现必须放在头文件中
         Logger::setTitle(name);

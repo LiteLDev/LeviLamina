@@ -45,5 +45,5 @@ class WeakLifetimeScope;
 class WeakObjectHandle;
 template <typename T>
 class WeakTypedObjectHandle;
-
+class ResultAny;
 #endif
