@@ -24,12 +24,12 @@ void ProcessData(int code, string body)
 			}
 		}
 		catch (nlohmann::json::exception& e) {
-			Debug("LL通知信息解析失败。{}", e.what());
+			Debug("Failed to parse the announcement information file, Errcode: {}", e.what());
 		}
 	}
 	else
 	{
-		Debug("LL获取通知信息失败。错误码：{}", code);
+		Debug("Failed to download the announcement information file, Errcode: {}", code);
 	}
 }
 
@@ -37,6 +37,6 @@ void CheckNotice()
 {
 	if (!HttpGet(LL_UPDATE_CHECK, ProcessData))
 	{
-		Debug("LL获取通知信息失败。");
+		Debug("Failed to download the announcement information file, Errcode: {}");
 	}
 }
