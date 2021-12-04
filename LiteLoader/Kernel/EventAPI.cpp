@@ -225,13 +225,13 @@ vector<function<void(PlayerDestroyEV)>> Player_destroy_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
     Player_destroy_call_backs.push_back(callback);
 }
-
+#include <MC/BlockLegacy.hpp>
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
-      BlockLegacy* _this, Player* pl, BlockPos& blkposs, Block& bl) {
-    PlayerDestroyEV player_destroy_event = {pl, blkposs, &bl};
+      BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl) {
+    PlayerDestroyEV player_destroy_event = {pl, blkpos, &bl};
 
     CallEvent(Player_destroy_call_backs, player_destroy_event);
-    return original(_this, pl, blkposs, bl);
+    return original(_this, pl, blkpos, bl);
 }
 
 
