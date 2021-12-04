@@ -30,7 +30,7 @@ public:
     LIAPI Certificate* getCert();
 
     //Packet
-    LIAPI void sendTextPacket(string text, TextType Type);
+    LIAPI void sendTextPacket(string text, TextType Type = TextType::RAW);
     LIAPI void sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
     LIAPI void sendNotePacket(unsigned int tone);
     LIAPI void sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
