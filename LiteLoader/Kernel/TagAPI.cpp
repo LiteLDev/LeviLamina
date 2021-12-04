@@ -322,7 +322,7 @@ void TagToSNBT_List_Helper(tags::compound_list_tag& res, ListTag* nbt) {
 void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
     auto& list = nbt->value();
     for (auto& [key, tmp] : list) {
-        auto& tag = (Tag&)tmp;
+        auto& tag = *tmp.get();
         switch (tag.getTagType()) {
             case Tag::Type::End:
                 res.value[key].reset();
@@ -744,7 +744,7 @@ void TagToJson_List_Helper(JSON_VALUE& res, ListTag* nbt) {
 void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt) {
     auto& list = nbt->value();
     for (auto& [key, tmp] : list) {
-        auto& tag = (Tag&)tmp;
+        auto& tag = *tmp.get();
         switch (tag.getTagType()) {
             case Tag::Type::End:
                 res.push_back({key, nullptr});
@@ -845,17 +845,3 @@ string Tag::toJson(int formatIndent) {
     }
     return result;
 }
-/*
-    End,
-    Byte,
-    Short,
-    Int,
-    Int64,
-    Float,
-    Double,
-    ByteArray,
-    String,
-    List,
-    Compound,
-    IntArray,
-    */

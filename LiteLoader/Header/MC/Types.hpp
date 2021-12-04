@@ -299,9 +299,9 @@ struct BlockGeometry{
     class TessellatedModel;
 };
 
-struct CanyonFeatureUtils{
+struct CanyonFeatureUtils {
     struct CanyonConfiguration;
-}
+};
 
 class IInPackagePacks {
 public:
