@@ -138,6 +138,7 @@ LibraryBuilder.exe
     <ClCompile Include="PlayerDB.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="BuiltinCommands.cpp" />
+    <ClCompile Include="ServerLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
