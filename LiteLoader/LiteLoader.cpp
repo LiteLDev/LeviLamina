@@ -37,6 +37,7 @@ void startWBThread();
 void checkUpdate();
 void registerCommands();
 bool InitPlayerDatabase();
+void RegisterServerLogger();
 void isDebug() {
     if (LL::globalConfig.debugMode) {
         Logger::Log("=================LiteLoader================");
@@ -83,6 +84,7 @@ void LLMain() {
 
     //XIDREG::initAll();  // Initialize the xuid database
     registerCommands(); // Register built-in commands
+    RegisterServerLogger();
    // Event::addEventListener([](ServerStartedEV) {  // Server started event
    //     startWBThread();
     //    LOG("LiteLoader is distributed under the GPLv3 License");
