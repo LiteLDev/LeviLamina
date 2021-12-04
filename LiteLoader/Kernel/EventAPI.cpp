@@ -233,7 +233,8 @@ vector<function<void(PlayerUseItemEV)>> Player_use_item_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerUseItemEV)> callback) {
     Player_use_item_call_backs.push_back(callback);
 }
-
+long long i = 1234324234;
+int s = 1;
 THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, ItemStack& a2) {
     try {
         auto sp = thi->getPlayer();

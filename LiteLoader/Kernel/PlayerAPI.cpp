@@ -211,7 +211,6 @@ void setDataItem(BinaryStream wp, vector<FakeDataItem> a3) {
     for (auto& i : a3) {
         wp.writeUnsignedVarInt(i.id);
         wp.writeUnsignedVarInt((int)i.type);
-        std::cout << (int)i.type << std::endl;
         switch ((int)i.type) {
             case 0:
                 wp.writeUnsignedChar(i.byte);
