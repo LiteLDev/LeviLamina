@@ -47,7 +47,6 @@ void LLUpdate()
 	if (!newVer.empty())
 	{
 		cout << "[LiteLoader][Info] LL Auto Upgrade working..." << endl;
-		cout << "[LiteLoader][Info] LL自动更新工作中..." << endl;
 		list<CSimpleIniA::Entry> files;
 		ini.GetAllSections(files);
 
@@ -61,7 +60,6 @@ void LLUpdate()
 			if (!Raw_CheckFileMD5(from, ini.GetValue(file.pItem, "MD5","")))
 			{
 				cout << "[LiteLoader][Error] MD5 Check failed! Auto Upgrade has not been finished." << endl;
-				cout << "[LiteLoader][Error] MD5校验失败！自动更新未执行。" << endl;
 				ClearUpdates();
 				return;
 			}
@@ -78,16 +76,13 @@ void LLUpdate()
 			string to = ini.GetValue(name.c_str(), "Install","") + string("/") + name;
 
 			cout << "[LiteLoader][Info] Copying files..." << endl;
-			cout << "[LiteLoader][Info] 正在更新文件..." << to << endl;
 
 			std::error_code ec;
 			if (!filesystem::copy_file(from, to, filesystem::copy_options::overwrite_existing, ec))
 			{
-				cout << "[LiteLoader][FATAL] Error occurred in Automatic Update! Files copy failed. Error Code ：" << ec << endl;
+				cout << "[LiteLoader][FATAL] Error occurred in Automatic Update! Files copy failed. Errcode ：" << ec << endl;
 				cout << "[LiteLoader][FATAL] WARN! Incomplete update may cause LL to work abnormally." << endl;
 				cout << "[LiteLoader][FATAL] It is recommended to manually update LiteLoader! " << endl;
-				cout << "[LiteLoader][FATAL] 自动更新出现错误！文件复制失败。错误码：" << ec << endl;
-				cout << "[LiteLoader][FATAL] 警告！自动更新不完整可能造成LL工作异常。建议前往LL相关链接手动更新加载器" << endl;
 				ClearUpdates();
 				return;
 			}
@@ -96,7 +91,5 @@ void LLUpdate()
 		ClearUpdates();
 		cout << "[LiteLoader][Info] LL Upgrade finished successfully." << endl;
 		cout << "[LiteLoader][Info] Updated to version：v" << newVer << endl;
-		cout << "[LiteLoader][Info] LL自动更新已结束。" << endl;
-		cout << "[LiteLoader][Info] 已更新到版本：v" << newVer << endl;
 	}
 }
