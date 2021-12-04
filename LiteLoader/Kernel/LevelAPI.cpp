@@ -182,14 +182,14 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
 void Level::broadcastText(string a1, TextType ty) {
     auto players = getAllPlayers();
     for (auto& sp : players) {
-        sp->sendText(a1, ty);
+        sp->sendTextPacket(a1, ty);
     }
 }
 
 void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
     auto players = getAllPlayers();
     for (auto& sp : players) {
-        sp->sendTitle(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
+        sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
     }
 }
 #include <MC/CompoundTag.hpp>

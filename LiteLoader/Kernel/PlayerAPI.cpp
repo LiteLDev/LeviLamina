@@ -111,7 +111,7 @@ string Player::getUuid()
     return uuidStr;
 }
 
-void Player::sendText(string text, TextType Type) {
+void Player::sendTextPacket(string text, TextType Type) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
@@ -139,7 +139,7 @@ void Player::sendText(string text, TextType Type) {
     sendNetworkPacket(pkt);
 }
 
-void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+void Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -153,7 +153,7 @@ void Player::sendTitle(string text, TitleType Type, int FadeInDuration, int Rema
     sendNetworkPacket(pkt);
 }
 
-void Player::sendNote(unsigned int tone) {
+void Player::sendNotePacket(unsigned int tone) {
     if (tone == 0) {
         return;
     }
@@ -170,7 +170,7 @@ void Player::sendNote(unsigned int tone) {
      sendNetworkPacket(pkts);
 }
 
-void Player::SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
+void Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
     BinaryStream wp;
     wp.writeUnsignedChar(dimid);
     //If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
@@ -185,7 +185,7 @@ void Player::SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, 
 }
 
 //bad
-void Player::PlaySound(string Soundname, Vec3 Position, float Volume, float Pitch) {
+void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
     BinaryStream wp;
     wp.reserve(Soundname.size());
     wp.writeString(Soundname);
@@ -242,7 +242,7 @@ void setDataItem(BinaryStream wp, vector<FakeDataItem> a3) {
     }
 }
 
-void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
+void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
     wp.writeVarInt64(runtimeid);                                   //RuntimeId
     wp.writeUnsignedVarInt64(runtimeid);                           //EntityId
@@ -265,7 +265,7 @@ void Player::AddItemEntity(unsigned long long runtimeid, int itemid, int stacksi
     sendNetworkPacket(pk);
 }
 
-void Player::AddEntity(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
+void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
     wp.writeVarInt64(runtimeid); //RuntimeId
     wp.writeUnsignedVarInt64(runtimeid);  //EntityId
@@ -285,21 +285,42 @@ void Player::AddEntity(unsigned long long runtimeid, string entitytype, Vec3 pos
     MyPkt<0xd> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
 }
-    /*
-TClasslessInstanceHook(
-    void,
-    "?_sendInternal@NetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVPacket@@AEBV?$basic_string@DU?$char_traits@D@std@@"
-    "V?$allocator@D@2@@std@@@Z",
-    NetworkIdentifier const& id, Packet const& pkt, std::string& data) {
-    auto stream = ReadOnlyBinaryStream(data, 0i64);
-    auto pktid = stream.getUnsignedVarInt();
-    auto pkthash = do_hash(data.c_str());
-    auto pkttime = _time64(0);
-    if (pktid == 0x56) {
-        std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
-        //return original(this, id, pkt, data);
-    }
-   // std::cout << "[Network][O][" << pkttime << "]\tLength:" << data.length() << "\tPktID:" << pktid << "[" << pkt.getName() << "]\tHash:" << pkthash << "\n";
-    original(this, id, pkt, data);
+/**
+void Player::sendUpdateBlockPacket(BlockPos blockpos, int blockid, UpdateBlockFlags UpdateBlockType, int Layer) {
+    BinaryStream wp;
+    wp.writeVarInt(blockpos.x);
+    wp.writeVarInt(blockpos.y);
+    wp.writeVarInt(blockpos.z);
+    wp.writeUnsignedVarInt(blockid);
+    wp.writeUnsignedVarInt((int)UpdateBlockFlags::BlockUpdateNetwork);
+    wp.writeUnsignedVarInt(blockid);
+    wp.writeUnsignedVarInt(Layer);
+    MyPkt<0x15> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
+}
+
+#include <MC/Tag.hpp>
+#include <MC/CompoundTag.hpp>
+void Player::sendBlockActorDataPacket(BlockPos blockpos, CompoundTag* nametag) {
+    BinaryStream wps;
+    wps.dwrite(blockpos.x);
+    wps.dwrite(blockpos.y);
+    wps.dwrite(blockpos.z);
+    wps.dwrite(nametag);
+    MyPkt<0x38> pk{wps.getAndReleaseData()};
+    sendNetworkPacket(*pk);
+}
+
+
+void Player::sendContainerOpenPacket(BlockPos blockpos, unsigned char windowsid, ContainerType type, int64_t ContainerEntityUniqueID) {
+    BinaryStream wp;
+    wp.writeUnsignedChar(windowsid);
+    wp.writeUnsignedChar((unsigned char)type);
+    wp.writeVarInt(blockpos.x);
+    wp.writeUnsignedVarInt(blockpos.y);
+    wp.writeVarInt(blockpos.z);
+    wp.writeVarInt64(ContainerEntityUniqueID);
+    MyPkt<0x2E> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
 }
 */

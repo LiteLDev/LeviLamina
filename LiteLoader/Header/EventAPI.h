@@ -105,8 +105,14 @@ class PreJoinEV {
 public:
     Certificate* cert;
 };
+
+class ItemUseOnActorInventoryEV {
+public:
+    ActorRuntimeID ActorRuntimeID;
+    int interactiveMode;
+};
 namespace Event {
-LIAPI inline void addEventListener(function<void(JoinEV)> callback);
+    LIAPI inline void addEventListener(function<void(JoinEV)> callback);
 LIAPI inline void addEventListener(function<void(LeftEV)> callback);
 LIAPI inline void addEventListener(function<bool(ChatEV)> callback);
 LIAPI inline void addEventListener(function<void(ChangeDimEV)> callback);
@@ -122,4 +128,6 @@ LIAPI inline void addEventListener(function<void(PlayerUseItemEV)> callback);
 LIAPI inline void addEventListener(function<void(PostInitEV)> callback);
 LIAPI inline void addEventListener(function<void(MobDieEV)> callback);
 LIAPI inline void addEventListener(function<void(PreJoinEV)> callback);
+LIAPI inline void addEventListener(function<void(ItemUseOnActorInventoryEV)> callback);
+
 }; // namespace Event

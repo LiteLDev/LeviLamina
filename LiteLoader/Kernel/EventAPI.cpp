@@ -193,19 +193,50 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
 
 /////////////////// PlayerDestroy ///////////////////
 
+#include <MC/CompoundTag.hpp>
+#include <MC/Tag.hpp>
+CompoundTag* createBlockActorNBT1(BlockPos blockpos, string nametag) {
+    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
+    auto newpos = blockpos.add(1);
+    nbt->putString("id", "Chest");
+    nbt->putInt("x", blockpos.x);
+    nbt->putInt("y", blockpos.y);
+    nbt->putInt("z", blockpos.z);
+    nbt->putInt("pairx", newpos.x);
+    nbt->putInt("pairz", newpos.z);
+    nbt->putString("CustomName", nametag);
+    return nbt;
+}
+
+CompoundTag* createBlockActorNBT2(BlockPos blockpos, string nametag) {
+    auto newpos = blockpos.add(1);
+    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
+    nbt->putString("id", "Chest");
+    nbt->putInt("x", newpos.x);
+    nbt->putInt("y", newpos.y);
+    nbt->putInt("z", newpos.z);
+    nbt->putInt("pairx", blockpos.x);
+    nbt->putInt("pairz", blockpos.z);
+    nbt->putString("CustomName", nametag);
+    return nbt;
+}
+
 vector<function<void(PlayerDestroyEV)>> Player_destroy_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
     Player_destroy_call_backs.push_back(callback);
 }
-class BlockLegacy;
+#include <MC/BlockLegacy.hpp>
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
-      BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
-    PlayerDestroyEV player_destroy_event = {&pl, blkpos, &bl};
+      BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl) {
+    PlayerDestroyEV player_destroy_event = {pl, blkpos, &bl};
+
     CallEvent(Player_destroy_call_backs, player_destroy_event);
     return original(_this, pl, blkpos, bl);
 }
 
-/////////////////// PlayerUseItemOn ///////////////////
+
+
+    /////////////////// PlayerUseItemOn ///////////////////
 vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     Player_use_item_on_call_backs.push_back(callback);
@@ -286,4 +317,19 @@ THook(void, "?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdent
     PreJoinEV pre_join_event = {&cert};
 
     CallEvent(Pre_join_call_backs, pre_join_event);
+}
+
+////////////// ItemUseOnActorInventoryEV //////////////
+vector<function<void(ItemUseOnActorInventoryEV)>> Pre_ItemUseOnActor_call_backs;
+LIAPI void Event::addEventListener(function<void(ItemUseOnActorInventoryEV)> callback) {
+    Pre_ItemUseOnActor_call_backs.push_back(callback);
+}
+
+THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z"
+    , ServerNetworkHandler* thi, ServerPlayer* sp, bool unk) {
+    auto rtid = dAccess<ActorRuntimeID, 104>(thi);
+    auto id = dAccess<int, 112>(thi);
+    ItemUseOnActorInventoryEV pre_ItemUseOnActor_event = {rtid, id};
+    CallEvent(Pre_ItemUseOnActor_call_backs, pre_ItemUseOnActor_event);
+    return original(thi, sp, unk);
 }

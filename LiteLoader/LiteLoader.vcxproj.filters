@@ -440,8 +440,47 @@
     <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp">
       <Filter>Header\NBT</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerDB.h">
+    <ClInclude Include="Header\PlayerDB.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\TagMemoryChunkAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\IntTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ShortTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ByteTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\StringTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\EndTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\IntArrayTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\ByteArrayTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\FloatTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\DoubleTagAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\NbtIoAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\CompoundTagVariantAPI.hpp">
+      <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Extra\Int64TagAPI.hpp">
+      <Filter>Header\NBT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -464,6 +503,12 @@
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\bedrock_server_var.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
