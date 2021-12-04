@@ -30,13 +30,16 @@ public:
     LIAPI Certificate* getCert();
 
     //Packet
-    LIAPI void sendText(string text, TextType Type);
-    LIAPI void sendTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
-    LIAPI void sendNote(unsigned int tone);
-    LIAPI void SpawnParticleEffect(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
-    /*bad*/LIAPI void PlaySound(string Soundname, Vec3 Position, float Volume, float Pitch);
-    LIAPI void AddItemEntity(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
-    LIAPI void AddEntity(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
+    LIAPI void sendTextPacket(string text, TextType Type);
+    LIAPI void sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI void sendNotePacket(unsigned int tone);
+    LIAPI void sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
+    /*bad*/ LIAPI void sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch);
+    LIAPI void sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
+    LIAPI void sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
+    LIAPI void sendUpdateBlockPacket(BlockPos vec3, int blockid, UpdateBlockFlags UpdateBlockType = UpdateBlockFlags::BlockUpdateNetwork, int Layer = 0);
+    LIAPI void sendBlockActorDataPacket(BlockPos blockpos, CompoundTag* nametag);
+    LIAPI void sendContainerOpenPacket(BlockPos blockpos, unsigned char windowsid, ContainerType type, int64_t ContainerEntityUniqueID);
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));

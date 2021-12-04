@@ -8,10 +8,10 @@
 namespace Util {
 #include "Extra/UtilAPI.hpp"
 
-MCAPI int const COLOR_CODE;
-MCAPI std::string const EMPTY_GUID;
-MCAPI std::string const EMPTY_STRING;
-MCAPI std::string const NEW_LINE;
+MCAPI extern int const COLOR_CODE;
+MCAPI extern std::string const EMPTY_GUID;
+MCAPI extern std::string const EMPTY_STRING;
+MCAPI extern std::string const NEW_LINE;
 MCAPI void _breakIntoWordsAndFindProfanity(std::string&, std::string&, std::vector<struct std::pair<int, int>> const&, class std::unordered_set<char, struct std::hash<char>, struct std::equal_to<char>, class std::allocator<char>> const&, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>>&, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const&, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const&);
 MCAPI void _logIfValidLogArea(enum LogArea, std::string const&);
 MCAPI void _recordProfanityLocationInWord(std::string const&, std::string&, std::vector<struct std::pair<int, int>> const&, int, int, class std::set<struct std::pair<int, int>, struct std::less<struct std::pair<int, int>>, class std::allocator<struct std::pair<int, int>>>&, class std::unordered_map<std::string, int, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<struct std::pair<std::string const, int>>> const&, class std::unordered_set<std::string, struct std::hash<std::string>, struct std::equal_to<std::string>, class std::allocator<std::string>> const&);

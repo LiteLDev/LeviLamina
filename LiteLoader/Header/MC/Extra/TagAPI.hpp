@@ -5,6 +5,20 @@
 #include <map>
 #include <string>
 #include <vector>
+
+class ByteTag;
+class ShortTag;
+class IntTag;
+class Int64Tag;
+class FloatTag;
+class DoubleTag;
+class ByteArrayTag;
+class StringTag;
+class ListTag;
+class CompoundTag;
+class IntArrayTag;
+class CompoundTagVariant;
+
 //////////////// Json ////////////////
 #include "../third-party/Nlohmann/fifo_map.hpp"
 #include "../third-party/Nlohmann/json.hpp"
@@ -24,29 +38,6 @@ class Actor;
 class Block;
 class ItemStack;
 class BlockActor;
-class CompoundTag;
-
-struct TagMemoryChunk {
-    size_t capacity = 0;
-    size_t size = 0;
-    std::unique_ptr<uint8_t[]> data;
-
-    TagMemoryChunk(size_t size, uint8_t data[])
-        : capacity(size)
-        , size(size)
-        , data(data) {
-    }
-
-    TagMemoryChunk(const TagMemoryChunk& a1)
-        : capacity(a1.capacity)
-        , size(a1.size)
-        , data(a1.data.get()) {
-    }
-
-    void operator=(const TagMemoryChunk& a1) {
-        
-    }
-};
 
 #else
 // Add Member There
@@ -59,13 +50,14 @@ enum Type : uint8_t {
     Byte,
     Short,
     Int,
-    Long,
+    Int64,
     Float,
     Double,
     ByteArray,
     String,
     List,
     Compound,
+    IntArray,
 };
 //MCAPI static std::string getTagName(enum Tag::Type);
 //MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
@@ -73,23 +65,33 @@ enum Type : uint8_t {
 //MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
 LIAPI static Tag* createTag(Tag::Type t);
-LIAPI char getTagType();
+LIAPI Type getTagType() const;
 
 //value
-LIAPI char& asByte();
-LIAPI short& asShort();
-LIAPI int& asInt();
-LIAPI __int64& asLong();
-LIAPI float& asFloat();
-LIAPI double& asDouble();
-LIAPI std::string& asString();
-LIAPI std::vector<Tag*>& asList();
-LIAPI std::map<std::string, char[0x28]>& asCompound();
-LIAPI TagMemoryChunk& asByteArray();
+//LIAPI char& asByte();
+//LIAPI short& asShort();
+//LIAPI int& asInt();
+//LIAPI __int64& asLong();
+//LIAPI float& asFloat();
+//LIAPI double& asDouble();
+//LIAPI std::string& asString();
+//LIAPI std::vector<Tag*>& asList();
+//LIAPI std::map<std::string, char[0x28]>& asCompound();
+//LIAPI TagMemoryChunk& asByteArray();
+
+LIAPI ByteTag* asByteTag();
+LIAPI ShortTag* asShortTag();
+LIAPI IntTag* asIntTag();
+LIAPI Int64Tag* asInt64Tag();
+LIAPI FloatTag* asFloatTag();
+LIAPI DoubleTag* asDoubleTag();
+LIAPI StringTag* asStringTag();
+LIAPI ListTag* asListTag();
+LIAPI CompoundTag* asCompoundTag();
+LIAPI ByteArrayTag* asByteArrayTag();
+LIAPI IntArrayTag* asIntArrayTag();
 
 LIAPI void destroy();
-
-//list
 
 //static
 LIAPI void setItem(ItemStack* item);
@@ -108,6 +110,6 @@ LIAPI std::string toSNBT();
 LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
 LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
 LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian);
+LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
 
 #endif

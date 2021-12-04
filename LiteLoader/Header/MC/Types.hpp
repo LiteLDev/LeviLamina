@@ -29,6 +29,15 @@ public:
     inline std::string toString() {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
+    inline BlockPos add(int dx) {
+        return {x + dx, y, z};
+    }
+    inline BlockPos add(int dx, int dy) {
+        return {x + dx, y + dy, z};
+    }
+    inline BlockPos add(int dx, int dy, int dz) {
+        return {x + dx, y + dy, z + dz};
+    }
 };
 
 
@@ -62,7 +71,15 @@ public:
         return { px, py, pz };
     }
 
-    inline Vec3 add(float dx, float dy, float dz) { return { x + dx, y + dy, z + dz }; }
+    inline Vec3 add(float dx, float dy, float dz) {
+        return {x + dx, y, z};
+    }
+    inline Vec3 add(float dx, float dy) {
+        return {x + dx, y + dy, z };
+    }
+    inline Vec3 add(float dx) {
+        return {x + dx, y , z };
+    }
 
     inline Vec3 operator*(float num) { return { x * num, y * num, z * num }; }
     inline Vec3 operator+(const Vec3& b) { return { this->x + b.x, this->y + b.y, this->z + b.z }; }
@@ -401,7 +418,7 @@ template <typename T>
 class optional_ref;
 
 //enum
-enum class ContainerType {
+enum class ContainerType : unsigned char {
     INVENTORY = 0xff,
     CONTAINER = 0x00,
     WORKBENCH = 0x01,
@@ -424,6 +441,13 @@ enum class ContainerType {
     HUD = 0x1f,
     SMITHING_TABLE = 0x21,
     NONE = 0xf7
+};
+
+enum class UpdateBlockFlags : int {
+    BlockUpdateNeighbours = 1,
+    BlockUpdateNetwork = 2,
+    BlockUpdateNoGraphics = 3,
+    BlockUpdatePriority = 4,
 };
 
 enum class DataItemType : unsigned char { 

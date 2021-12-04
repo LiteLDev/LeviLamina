@@ -4,5 +4,7 @@
 
 #else
 // Add Member There
+// TODO: Uncertain
+char filler[0x30];
 
 #endif
