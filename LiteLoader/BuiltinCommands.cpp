@@ -216,7 +216,7 @@ void testCompoundTag(CompoundTag* tag) {
               << tag->getCompound("Compound");
     //std::cout<<std::endl<<tag->getIntArray("IntArray").size;
 
-    (*tag)["Byte"];
+    *(*tag)["Byte"]->asByteTag() = 4;
     tag->getByteTag("Byte");
     tag->getShortTag("Short");
     tag->getIntTag("Int");

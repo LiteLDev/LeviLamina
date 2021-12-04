@@ -4,12 +4,12 @@
 
 #else
 // Add Member There
-class Hash{
+class Hash {
     class md5;
     enum HashType;
-    
-}
-struct Asymmetric{
+};
+struct Asymmetric {
     enum System;
-}
+};
+
 #endif

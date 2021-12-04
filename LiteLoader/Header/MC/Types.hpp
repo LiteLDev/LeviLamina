@@ -352,13 +352,13 @@ class BlockDataFetchResult;
 template <typename T>
 class CommandSelectorResults;
 
-template <typename T>
+template <typename ...T>
 class Factory;
 
 template <typename T>
 class InheritanceTree;
 
-template <typename T, typename T2, int unk>
+template <typename T, int unk>
 class ItemStackRequestActionCraft;
 
 template <typename T>
@@ -366,6 +366,9 @@ class ItemStateVariant;
 
 template <typename T>
 class LevelChunkGridAreaElement;
+
+template <typename T>
+class GridArea;
 
 template <typename T>
 class OwnerPtrT;
@@ -400,6 +403,9 @@ struct IDType;
 template <typename T>
 class ToFloatFunction;
 
+template <typename T>
+class TypedScreenCapabilities;
+
 template <typename T, typename T2, typename T3, typename T4 = class UNK>
 class ViewedEntityContextT;
 
@@ -417,6 +423,12 @@ class buffer_span_mut;
 
 template <typename T>
 class optional_ref;
+
+template <int i>
+class DividedPos2d;
+
+template <int i>
+struct GameplayHandlerResult;
 
 //enum
 enum class ContainerType : unsigned char {

@@ -54,7 +54,6 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ExceptionHandling>Async</ExceptionHandling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <Optimization>MaxSpeed</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -149,6 +148,7 @@ LibraryBuilder.exe
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoUpgrade.h" />
+    <ClInclude Include="Bomb.h" />
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
