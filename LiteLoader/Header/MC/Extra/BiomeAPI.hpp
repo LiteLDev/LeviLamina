@@ -4,6 +4,6 @@
 
 #else
 // Add Member There
-enum class BiomeTempCategory;
+enum BiomeTempCategory;
 
 #endif

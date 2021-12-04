@@ -9,6 +9,7 @@ class FileOpenMode;
 class FileSystemImpl;
 class FilePathManager;
 class FileStorageArea;
+class Path;
 template <typename T>
 class PathBuffer;
 template <typename T, int i>
