@@ -193,19 +193,50 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, v
 
 /////////////////// PlayerDestroy ///////////////////
 
+#include <MC/CompoundTag.hpp>
+#include <MC/Tag.hpp>
+CompoundTag* createBlockActorNBT1(BlockPos blockpos, string nametag) {
+    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
+    auto newpos = blockpos.add(1);
+    nbt->putString("id", "Chest");
+    nbt->putInt("x", blockpos.x);
+    nbt->putInt("y", blockpos.y);
+    nbt->putInt("z", blockpos.z);
+    nbt->putInt("pairx", newpos.x);
+    nbt->putInt("pairz", newpos.z);
+    nbt->putString("CustomName", nametag);
+    return nbt;
+}
+
+CompoundTag* createBlockActorNBT2(BlockPos blockpos, string nametag) {
+    auto newpos = blockpos.add(1);
+    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
+    nbt->putString("id", "Chest");
+    nbt->putInt("x", newpos.x);
+    nbt->putInt("y", newpos.y);
+    nbt->putInt("z", newpos.z);
+    nbt->putInt("pairx", blockpos.x);
+    nbt->putInt("pairz", blockpos.z);
+    nbt->putString("CustomName", nametag);
+    return nbt;
+}
+
 vector<function<void(PlayerDestroyEV)>> Player_destroy_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
     Player_destroy_call_backs.push_back(callback);
 }
-class BlockLegacy;
+
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
-      BlockLegacy* _this, Player& pl, BlockPos& blkpos, Block& bl) {
-    PlayerDestroyEV player_destroy_event = {&pl, blkpos, &bl};
+      BlockLegacy* _this, Player* pl, BlockPos& blkposs, Block& bl) {
+    PlayerDestroyEV player_destroy_event = {pl, blkposs, &bl};
+
     CallEvent(Player_destroy_call_backs, player_destroy_event);
-    return original(_this, pl, blkpos, bl);
+    return original(_this, pl, blkposs, bl);
 }
 
-/////////////////// PlayerUseItemOn ///////////////////
+
+
+    /////////////////// PlayerUseItemOn ///////////////////
 vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;
 LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
     Player_use_item_on_call_backs.push_back(callback);
