@@ -1,5 +1,32 @@
 #include <MC/ListTag.hpp>
+#include <MC/Tag.hpp>
+#include <MC/ByteTag.hpp>
+#include <MC/ShortTag.hpp>
+#include <MC/IntTag.hpp>
+#include <MC/Int64Tag.hpp>
+#include <MC/FloatTag.hpp>
+#include <MC/DoubleTag.hpp>
 #include <MC/ByteArrayTag.hpp>
+#include <MC/StringTag.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/IntArrayTag.hpp>
+#include <MC/CompoundTagVariant.hpp>
+
+// get value
+// get value
+unsigned char ListTag::getByte(int index) const {
+    return get(index)->asByteTag()->value();
+};
+short ListTag::getShort(int index) const {
+    return get(index)->asShortTag()->value();
+};
+int64_t ListTag::getInt64(int index) const {
+    return get(index)->asInt64Tag()->value();
+};
+TagMemoryChunk ListTag::getByteArray(int index) const {
+    return get(index)->asByteArrayTag()->value();
+};
+
 
 void ListTag::add(Tag* t) {
     SymCall("?add@ListTag@@QEAAXV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z",
@@ -11,45 +38,43 @@ void ListTag::addEnd() {
     add(t);
 }
 
-void ListTag::addByte(char v) {
-    Tag* t = Tag::createTag(Tag::Type::Byte);
-    t->asByte() = v;
+void ListTag::addByte(unsigned char v) {
+    ByteTag* t = ByteTag::create(v);
     add(t);
 }
 
 void ListTag::addShort(short v) {
-    Tag* t = Tag::createTag(Tag::Type::Short);
-    t->asShort() = v;
+    ShortTag* t = ShortTag::create(v);
     add(t);
 }
 
 void ListTag::addInt(int v) {
     Tag* t = Tag::createTag(Tag::Type::Int);
-    t->asInt() = v;
+    t->asIntTag()->value() = v;
     add(t);
 }
 
-void ListTag::addLong(__int64 v) {
-    Tag* t = Tag::createTag(Tag::Type::Long);
-    t->asLong() = v;
+void ListTag::addInt64(__int64 v) {
+    Tag* t = Tag::createTag(Tag::Type::Int64);
+    t->asInt64Tag()->value() = v;
     add(t);
 }
 
 void ListTag::addFloat(float v) {
     Tag* t = Tag::createTag(Tag::Type::Float);
-    t->asFloat() = v;
+    t->asFloatTag()->value() = v;
     add(t);
 }
 
 void ListTag::addDouble(double v) {
     Tag* t = Tag::createTag(Tag::Type::Double);
-    t->asDouble() = v;
+    t->asDoubleTag()->value() = v;
     add(t);
 }
 
 void ListTag::addString(const string& v) {
     Tag* t = Tag::createTag(Tag::Type::String);
-    t->asString() = v;
+    t->asStringTag()->value() = v;
     add(t);
 }
 
@@ -59,7 +84,20 @@ void ListTag::addByteArray(void* data, size_t size) {
     uint8_t* written = new uint8_t[size];
     memcpy(written, data, size);
     auto tmc = TagMemoryChunk(size, written);
-    t->asByteArray() = tmc;
+    t->asByteArrayTag()->value() = tmc;
 
     add(t);
 }
+void ListTag::addByteArray(TagMemoryChunk tmc) {
+    throw("TODO");
+    Tag* t = Tag::createTag(Tag::Type::ByteArray);
+    t->asByteArrayTag()->value() = tmc;
+    add(t);
+}
+void ListTag::addIntArray(TagMemoryChunk tmc) {
+    throw("TODO");
+    Tag* t = Tag::createTag(Tag::Type::IntArray);
+    t->asByteArrayTag()->value() = tmc;
+    add(t);
+}
+
