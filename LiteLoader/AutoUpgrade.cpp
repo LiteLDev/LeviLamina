@@ -105,9 +105,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(LL_RELAY_INDEX, &status, &id, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("LL自动更新连接失败！错误码：{}", status);
+				Log("Unable to check for updates, connection failed. Errcode: {}", status);
 			else
-				Debug("LL自动更新连接失败！错误码：{}", status);
+				Debug("Unable to check for updates, connection failed. Errcode: {}", status);
 			return false;
 		}
 		if (EndsWith(id, "\n"))
@@ -121,9 +121,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(infoUrl, &status, &info, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("LL自动更新信息拉取失败！错误码：{}", status);
+				Log("Unable to check for updates, download failed. Errcode: {}", status);
 			else
-				Debug("LL自动更新信息拉取失败！错误码：{}", status);
+				Debug("Unable to check for updates, download failed. Errcode: {}", status);
 			return false;
 		}
 
@@ -159,11 +159,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 				if (nowVersion < newVersion)
 				{
 					if (isUpdateManually)
-					{
-						Log("正在更新附属文件：{}", fileName);
-					}
+						Log("Updating attached file: {}", fileName);
 					else
-						Debug("正在更新附属文件：{}", fileName);
+						Debug("Updating attached file: {}", fileName);
 
 					string path = file["Path"].get<string>();
 					string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
@@ -180,35 +178,27 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 						break;
 					case DownloadResult::FailInit:
 						if (isUpdateManually)
-						{
-							Log("附属文件更新 - 连接初始化失败！");
-						}
+							Log("Update attached file: Fail to init connection.");
 						else
-							Debug("附属文件更新 - 连接初始化失败！");
+							Debug("Update attached file: Fail to init connection.");
 						break;
 					case DownloadResult::FailDownload:
 						if (isUpdateManually)
-						{
-							Log("附属文件更新 - 下载文件失败！错误码：{}", errorCode);
-						}
+							Log("Update attached file: Fail to download resource, Errcode: {}", errorCode);
 						else
-							Debug("附属文件更新 - 下载文件失败！错误码：{}", errorCode);
+							Debug("Update attached file: Fail to download resource, Errcode: {}", errorCode);
 						break;
 					case DownloadResult::FailDownloadMd5:
 						if (isUpdateManually)
-						{
-							Log("附属文件更新 - 下载MD5校验文件失败！错误码：{}", errorCode);
-						}
+							Log("Update attached file: Fail to download md5.verify, Errcode: {}", errorCode);
 						else
-							Debug("附属文件更新 - 下载MD5校验文件失败！错误码：{}", errorCode);
+							Debug("Update attached file: Fail to download md5.verify, Errcode: {}", errorCode);
 						break;
 					case DownloadResult::FailCheckMd5:
 						if (isUpdateManually)
-						{
-							Log("附属文件更新 - MD5校验失败！");
-						}
+							Log("Update attached file: Check MD5 failed!");
 						else
-							Debug("附属文件更新 - MD5校验失败！");
+							Debug("Update attached file: Check MD5 failed!");
 						break;
 					}
 				}
@@ -223,8 +213,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			bds.erase(0, 1);
 		if (!data[bds].is_object())
 		{
-			Info("提示：您的BDS版本不存在于当前主线维护版本中，自动更新将不会推送");
-			Info("如果有需要，请前往LL相关页面手动更新加载器");
+			Info("Your BDS does not match the current mainline LiteLoader, and automatic updates will not be pushed.");
 			if (isUpdateManually)
 				return false;
 			else
@@ -239,9 +228,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			if(!forceUpdate && verCurrent >= verRemote)
 			{
 				if (isUpdateManually)
-				{
-					Log("当前LL已是最新版本，无需更新。");
-				}
+					Log("Currently is the latest version.");
 				return true;
 			}
 
@@ -252,20 +239,16 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			if (res >= 0 && Version::parse(ini->GetValue("Info", "Version", "0.0.0")) == verRemote)
 			{
 				if (isUpdateManually)
-				{
-					Log("自动更新已下载完毕。请重启服务器升级到新版LL");
-				}
+					Log("The automatic update download is complete, please restart the server to update.");
 				return true;
 			}
 			delete ini;
 
 			//Init for Download
 			if (isUpdateManually)
-			{
-				Log("检测到新版本，启动更新");
-			}
+				Log("New version found, updating...");
 			else
-				Debug("检测到新版本，启动更新");
+				Debug("New version found, updating...");
 			filesystem::remove_all(LL_UPDATE_CACHE_PATH);
 			filesystem::create_directories(LL_UPDATE_CACHE_PATH);
 
@@ -276,11 +259,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			{
 				string fileName = file["Name"].get<string>();
 				if (isUpdateManually)
-				{
-					Log("正在下载更新：{}", fileName);
-				}
+					Log("Get: {}", fileName);
 				else
-					Debug("正在下载更新：{}", fileName);
+					Debug("Get: {}", fileName);
 
 				string path = file["Path"].get<string>();
 				string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
@@ -296,38 +277,30 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 					break;
 				case DownloadResult::FailInit:
 					if (isUpdateManually)
-					{
-						Log("自动更新 - 连接初始化失败！");
-					}
+						Log("Update LiteLoader: Fail to init connection.");
 					else
-						Debug("自动更新 - 连接初始化失败！");
+						Debug("Update LiteLoader: Fail to init connection.");
 					return false;
 					break;
 				case DownloadResult::FailDownload:
 					if (isUpdateManually)
-					{
-						Log("自动更新 - 下载文件失败！错误码：{}", errorCode);
-					}
+						Log("Update LiteLoader: Fail to download resource, Errcode: {}", errorCode);
 					else
-						Debug("自动更新 - 下载文件失败！错误码：{}", errorCode);
+						Debug("Update LiteLoader: Fail to download resource, Errcode: {}", errorCode);
 					return false;
 					break;
 				case DownloadResult::FailDownloadMd5:
 					if (isUpdateManually)
-					{
-						Log("自动更新 - 下载MD5校验文件失败！错误码：{}", errorCode);
-					}
+						Log("Update LiteLoader: Fail to download md5.verify, Errcode: {}", errorCode);
 					else
-						Debug("自动更新 - 下载MD5校验文件失败！错误码：{}", errorCode);
+						Debug("Update LiteLoader: Fail to download md5.verify, Errcode: {}", errorCode);
 					return false;
 					break;
 				case DownloadResult::FailCheckMd5:
 					if (isUpdateManually)
-					{
-						Log("自动更新 - MD5校验失败！");
-					}
+						Log("Update LiteLoader: Check MD5 failed!");
 					else
-						Debug("自动更新 - MD5校验失败！");
+						Debug("Update LiteLoader: Check MD5 failed!");
 					return false;
 					break;
 				}
@@ -343,17 +316,14 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			iniUpdate->SaveFile(LL_UPDATE_INFO_RECORD);
 			delete iniUpdate;
 
-			Info("LL自动更新文件下载完毕。新版本：v{}", verRemote.toString());
-			Info("在你下次重启服务器的时候，LL将自动更新为最新版本");
+            Info("Congratulations! The automatic update download is complete, now restart the server to enjoy the new version.");
 		}
 	}
 	catch (nlohmann::json::exception& e) {
 		if (isUpdateManually)
-		{
-			Log("LL版本更新信息解析失败！{}", e.what());
-		}
+			Log("An error occurred while parsing the update configuration, {}", e.what());
 		else
-			Debug("LL版本更新信息解析失败！{}", e.what());
+			Debug("An error occurred while parsing the update configuration, {}", e.what());
 	}
 	catch (const seh_exception& e)
 	{
@@ -371,11 +341,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 	catch (...)
 	{
 		if (isUpdateManually)
-		{
-			Log("LL自动更新发生错误！");
-		}
+			Log("An error was caught during the automatic update process.");
 		else
-			Debug("LL自动更新发生错误！");
+			Debug("An error was caught during the automatic update process.");
 	}
 	return false;
 }
@@ -414,7 +382,7 @@ void InitAutoUpdateCheck()
 	//Check Files
 	if (!filesystem::exists(LL_UPDATE_PROGRAM))
 	{
-		Warn("LL自动更新系统未启动！自动更新程序缺失");
+		Warn("The automatic update is not running, and the automatic update component is missing.");
 		return;
 	}
 	if (!filesystem::exists(LL_UPDATE_CACHE_PATH))

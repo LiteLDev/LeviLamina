@@ -12,6 +12,7 @@
 #include <unordered_map>
 #include <LoggerAPI.h>
 using namespace LL;
+bool ip_information_logged = false;
 
 //Fix disconnect packet crash bug
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
@@ -25,16 +26,13 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 }
 
 
-//Fix the listening port twice
-//From https://github.com/Redbeanw44602/FixIPLogger
-
-bool a_call = true;
+//Fix the listening port twice.
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void* _this)
 {
     if (globalConfig.enableFixListenPort) {
-        if (a_call) {
-            a_call = false;
+        if (!ip_information_logged) {
+            ip_information_logged = true;
             return original(_this);
         }
         return 0;
@@ -43,7 +41,7 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
     }
 }
 
-
+// Fix abnormal items.
 class InventoryTransaction;
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
     ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)
