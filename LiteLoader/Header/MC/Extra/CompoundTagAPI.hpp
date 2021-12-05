@@ -17,8 +17,10 @@ inline map<std::string, CompoundTagVariant>& value() {
     return dAccess<map<std::string, CompoundTagVariant>, 8>(this);
 }
 
-//template <typename T>
-//LIAPI T const* get(class gsl::basic_string_span<char const, -1> key) const;
+template <typename T>
+inline T const* get(class gsl::basic_string_span<char const, -1> key) const {
+    return (T*)get(key);
+};
 
 // put value
 LIAPI void putEnd(std::string key);

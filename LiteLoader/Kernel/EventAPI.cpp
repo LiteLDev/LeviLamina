@@ -234,7 +234,8 @@ vector<PlayerUseItemEventCallback> PlayerUseItemCallbacks;
 LIAPI void Event::addEventListener(PlayerUseItemEventCallback callback) {
     PlayerUseItemCallbacks.push_back(callback);
 }
-
+long long i = 1234324234;
+int s = 1;
 THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, ItemStack& a2) {
     try {
         auto sp = thi->getPlayer();

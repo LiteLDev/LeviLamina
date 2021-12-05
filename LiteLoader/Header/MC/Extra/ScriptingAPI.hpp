@@ -21,13 +21,14 @@ struct ObjectHandle;
 struct PropertyGetSet;
 class Reflection {
 public:
-    class IFunction {};
-    class IPropertyGetter {};
+    class IFunction;
+    class IPropertyGetter;
 };
 template <typename T>
 class Result;
+class ResultAny;
 class StrongObjectHandle;
-class JSON;
+struct JSON;
 template <typename T>
 class TypedScriptClosure;
 class RuntimeUserData;

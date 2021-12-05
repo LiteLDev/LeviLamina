@@ -5,6 +5,6 @@
 #else
 // Add Member There
 public:
-class PendingWriteResult;
+struct PendingWriteResult;
 
 #endif
