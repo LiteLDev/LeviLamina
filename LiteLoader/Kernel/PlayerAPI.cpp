@@ -116,17 +116,13 @@ void Player::kick(string msg) {
      Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
-<<<<<<< Updated upstream
 bool Player::giveItem(ItemStack* item)
 {
     return this->add(*item);
 }
 
-string Player::getName()
-=======
 
-    string Player::getName()
->>>>>>> Stashed changes
+string Player::getName()
 {
     return getNameTag();
 }
