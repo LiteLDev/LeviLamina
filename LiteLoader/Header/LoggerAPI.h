@@ -3,6 +3,7 @@
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
 #endif
+#include <filesystem>
 #include "third-party/fmt/chrono.h"
 #include "third-party/fmt/color.h"
 #include "third-party/fmt/core.h"
@@ -73,6 +74,9 @@ namespace Logger
         }
         else
         {
+            std::error_code ec;
+            std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+
             auto& res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile, std::ios::app);
             return res.is_open();
         }

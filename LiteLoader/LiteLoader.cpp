@@ -38,7 +38,8 @@ void checkUpdate();
 void registerCommands();
 bool InitPlayerDatabase();
 void RegisterServerLogger();
-void isDebug() {
+
+void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
         Logger::Log("=================LiteLoader================");
         Logger::Log(" ____             __  __           _      ");
@@ -75,9 +76,10 @@ void LLMain() {
 
     //Init LL Logger
     Logger::setTitle("LiteLoader");
+    Logger::setFile("logs/LiteLoader.log");
 
     //isDebug
-    isDebug();
+    CheckDevMode();
 
     //Load plugins
     LoadMain();
