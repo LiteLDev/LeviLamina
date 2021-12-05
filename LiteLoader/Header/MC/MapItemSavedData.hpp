@@ -3,6 +3,7 @@
 #include <Global.h>
 #include "MapDecoration.hpp"
 #include "MapItemTrackedActor.hpp"
+#include "MapDecoration.hpp"
 #define EXTRA_INCLUDE_PART_MAPITEMSAVEDDATA
 #include "Extra/MapItemSavedDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MAPITEMSAVEDDATA

@@ -1,10 +1,10 @@
 #pragma once
 #include "Global.h"
-
 #include <functional>
 #include <string>
 using std::function;
 using std::string;
+
 class Actor;
 class ServerPlayer;
 class Player;
@@ -14,66 +14,66 @@ class ItemStack;
 class ActorDamageSource;
 class Certificate;
 
-class JoinEV {
+class JoinEvent {
 public:
     ServerPlayer* Player;
     string IP;
     string xuid;
 };
 
-class LeftEV {
+class LeftEvent {
 public:
     ServerPlayer* Player;
     string xuid;
 };
 
-class ChatEV {
+class ChatEvent {
 public:
     Player* pl;
     string msg;
 };
 
-class ChangeDimEV {
+class ChangeDimEvent {
 public:
     Player* Player;
 };
 
-class PlayerUseCmdEV {
+class PlayerCmdEvent {
 public:
     Player* Player;
     string cmd;
     MCRESULT mc_result;
 };
 
-class CmdBlockExeEV {
+class CmdBlockExecuteEvent {
 public:
     string cmd;
     BlockPos bpos;
 };
 
-class ServerStartedEV {};
+class ServerStartedEvent {};
 
-class PostInitEV {};
+class PostInitEvent {};
 
-class PlayerDeathEV {
+class PlayerDeathEvent {
 public:
     ServerPlayer* Player;
 };
 
 class CommandRegistry;
-class RegCmdEV {
+class RegCmdEvent {
 public:
     CommandRegistry* CMDRg;
 };
 
-class PlayerDestroyEV {
+class PlayerDestroyEvent {
 public:
     Player* Player;
     BlockPos blkpos;
     Block* bl;
 };
 
-class PlayerUseItemOnEV {
+class PlayerUseItemOnEvent {
 public:
     ServerPlayer* Player;
     ItemStack* ItemStack;
@@ -81,52 +81,87 @@ public:
     unsigned char side;
 };
 
-class MobHurtedEV {
+class MobHurtedEvent {
 public:
     Mob* Mob;
     ActorDamageSource* ActorDamageSource;
     int Damage;
 };
 
-class PlayerUseItemEV {
+class PlayerUseItemEvent {
 public:
     ServerPlayer* Player;
     ItemStack* ItemStack;
 };
 
-class MobDieEV {
+class MobDieEvent {
 public:
     Mob* mob;
     Actor* DamageSource;
 };
 
-class PreJoinEV {
+class PreJoinEvent {
 public:
     Certificate* cert;
 };
 
-class ItemUseOnActorInventoryEV {
+class ItemUseOnActorEvent {
 public:
     ActorRuntimeID ActorRuntimeID;
     int interactiveMode;
 };
-namespace Event {
-    LIAPI inline void addEventListener(function<void(JoinEV)> callback);
-LIAPI inline void addEventListener(function<void(LeftEV)> callback);
-LIAPI inline void addEventListener(function<bool(ChatEV)> callback);
-LIAPI inline void addEventListener(function<void(ChangeDimEV)> callback);
-LIAPI inline void addEventListener(function<void(ServerStartedEV)> callback);
-LIAPI inline void addEventListener(function<bool(PlayerUseCmdEV)> callback);
-LIAPI inline void addEventListener(function<bool(CmdBlockExeEV)> callback);
-LIAPI inline void addEventListener(function<void(RegCmdEV)> callback);
-LIAPI inline void addEventListener(function<void(PlayerDeathEV)> callback);
-LIAPI inline void addEventListener(function<void(PlayerDestroyEV)> callback);
-LIAPI inline void addEventListener(function<void(PlayerUseItemOnEV)> callback);
-LIAPI inline void addEventListener(function<void(MobHurtedEV)> callback);
-LIAPI inline void addEventListener(function<void(PlayerUseItemEV)> callback);
-LIAPI inline void addEventListener(function<void(PostInitEV)> callback);
-LIAPI inline void addEventListener(function<void(MobDieEV)> callback);
-LIAPI inline void addEventListener(function<void(PreJoinEV)> callback);
-LIAPI inline void addEventListener(function<void(ItemUseOnActorInventoryEV)> callback);
+
+namespace Event
+{
+    using PostInitEventCallback = function<void(PostInitEvent)>;
+    LIAPI inline void addEventListener(function<void(PostInitEvent)> callback);
+
+    using PreJoinEventCallback = function<void(PreJoinEvent)>;
+    LIAPI inline void addEventListener(function<void(PreJoinEvent)> callback);
+
+    using JoinEventCallback = function<void(JoinEvent)>;
+    LIAPI inline void addEventListener(function<void(JoinEvent)> callback);
+
+    using LeftEventCallback = function<void(LeftEvent)>;
+    LIAPI inline void addEventListener(function<void(LeftEvent)> callback);
+
+    using ChatEventCallback = function<bool(ChatEvent)>;
+    LIAPI inline void addEventListener(function<bool(ChatEvent)> callback);
+
+    using ChangeDimEventCallback = function<void(ChangeDimEvent)>;
+    LIAPI inline void addEventListener(function<void(ChangeDimEvent)> callback);
+
+    using ServerStartedEventCallback = function<void(ServerStartedEvent)>;
+    LIAPI inline void addEventListener(function<void(ServerStartedEvent)> callback);
+
+    using PlayerCmdCallback = function<bool(PlayerCmdEvent)>;
+    LIAPI inline void addEventListener(function<bool(PlayerCmdEvent)> callback);
+
+    using CmdBlockExecuteEventCallback = function<bool(CmdBlockExecuteEvent)>;
+    LIAPI inline void addEventListener(function<bool(CmdBlockExecuteEvent)> callback);
+
+    using RegCmdEventCallback = function<void(RegCmdEvent)>;
+    LIAPI inline void addEventListener(function<void(RegCmdEvent)> callback);
+
+    using PlayerDeathEventCallback = function<void(PlayerDeathEvent)>;
+    LIAPI inline void addEventListener(function<void(PlayerDeathEvent)> callback);
+
+    using PlayerDestroyEventCallback = function<void(PlayerDestroyEvent)>;
+    LIAPI inline void addEventListener(function<void(PlayerDestroyEvent)> callback);
+
+    using PlayerUseItemOnEventCallback = function<void(PlayerUseItemOnEvent)>;
+    LIAPI inline void addEventListener(function<void(PlayerUseItemOnEvent)> callback);
+
+    using MobHurtedEventCallback = function<void(MobHurtedEvent)>;
+    LIAPI inline void addEventListener(function<void(MobHurtedEvent)> callback);
+
+    using PlayerUseItemEventCallback = function<void(PlayerUseItemEvent)>;
+    LIAPI inline void addEventListener(function<void(PlayerUseItemEvent)> callback);
+
+    using MobDieEventCallback = function<void(MobDieEvent)>;
+    LIAPI inline void addEventListener(function<void(MobDieEvent)> callback);
+
+    using ItemUseOnActorEventCallback = function<void(ItemUseOnActorEvent)>;
+    LIAPI inline void addEventListener(function<void(ItemUseOnActorEvent)> callback);
 
 }; // namespace Event
