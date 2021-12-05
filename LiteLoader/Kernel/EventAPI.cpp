@@ -17,6 +17,7 @@
 class ServerPlayer;
 class NetworkIdentifier;
 using std::vector;
+using namespace Event;
 
 // Call Event
 template <typename T, typename T1>
@@ -41,9 +42,9 @@ bool CallEventEx(vector<T>& vec, T1& ev) {
 /////////////////// PlayerJoin ///////////////////
 #include <MC/ConnectionRequest.hpp>
 #include <MC/WebToken.hpp>
-vector<function<void(JoinEV)>> Join_call_backs;
-LIAPI void Event::addEventListener(function<void(JoinEV)> callback) {
-    Join_call_backs.push_back(callback);
+vector<JoinEventCallback> JoinCallbacks;
+LIAPI void Event::addEventListener(JoinEventCallback callback) {
+    JoinCallbacks.push_back(callback);
 }
 THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
             "AEBVConnectionRequest@@AEAVServerPlayer@@@Z",
@@ -51,8 +52,8 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
     try {
         string ip = Ni->getIP();
         string xuid = sp->getXuid();
-        JoinEV join_event = {sp, ip, xuid};
-        CallEvent(Join_call_backs, join_event);
+        JoinEvent join_event = {sp, ip, xuid};
+        CallEvent(JoinCallbacks, join_event);
     } catch (seh_exception) {
         Logger::Error("Exception at JoinEV");
     }
@@ -63,16 +64,16 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
 
 class DisconnectPacket;
 class ServerNetworkHandler;
-vector<function<void(LeftEV)>> Left_call_backs;
-LIAPI void Event::addEventListener(function<void(LeftEV)> callback) {
-    Left_call_backs.push_back(callback);
+vector<LeftEventCallback> LeftCallbacks;
+LIAPI void Event::addEventListener(LeftEventCallback callback) {
+    LeftCallbacks.push_back(callback);
 }
 THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
       ServerNetworkHandler* _this, ServerPlayer* sp, bool a3) {
     try {
         string xuid = sp->getXuid();
-        LeftEV left_event = {sp, xuid};
-        CallEvent(Left_call_backs, left_event);
+        LeftEvent left_event = {sp, xuid};
+        CallEvent(LeftCallbacks, left_event);
     } catch (seh_exception) {
         Logger::Error("Exception at LeftEV");
     }
@@ -81,9 +82,9 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
 
 /////////////////// PlayerChat ///////////////////
 
-vector<function<bool(ChatEV)>> Chat_call_backs;
-LIAPI void Event::addEventListener(function<bool(ChatEV)> callback) {
-    Chat_call_backs.push_back(callback);
+vector<ChatEventCallback> ChatCallbacks;
+LIAPI void Event::addEventListener(ChatEventCallback callback) {
+    ChatCallbacks.push_back(callback);
 }
 THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z",
       ServerNetworkHandler* self, NetworkIdentifier* id, void* text) {
@@ -91,8 +92,8 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
         auto sp = self->getServerPlayer(*id);
         sp->getAvgPing();
         auto msg = std::string(*(std::string*)((uintptr_t)text + 88));
-        ChatEV chat_event = {sp, msg};
-        if (!CallEventEx(Chat_call_backs, chat_event))
+        ChatEvent chat_event = {sp, msg};
+        if (!CallEventEx(ChatCallbacks, chat_event))
             return;
     } catch (seh_exception) {
         Logger::Error("Exception at ChatEV");
@@ -104,25 +105,25 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 
 class ChangeDimensionRequest;
 class Level;
-vector<function<void(ChangeDimEV)>> Change_dim_call_backs;
-LIAPI void Event::addEventListener(function<void(ChangeDimEV)> callback) {
-    Change_dim_call_backs.push_back(callback);
+vector<ChangeDimEventCallback> ChangeDimCallbacks;
+LIAPI void Event::addEventListener(ChangeDimEventCallback callback) {
+    ChangeDimCallbacks.push_back(callback);
 }
 THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
       Level* _this, Player* _this_sp, ChangeDimensionRequest* cdimreq) {
-    ChangeDimEV change_dim_event;
+    ChangeDimEvent change_dim_event;
     change_dim_event.Player = _this_sp;
     bool ret = original(_this, _this_sp, cdimreq);
 
-    CallEvent(Change_dim_call_backs, change_dim_event);
+    CallEvent(ChangeDimCallbacks, change_dim_event);
     return ret;
 }
 
 /////////////////// PlayerUseCmd ///////////////////
 #include <MC/CommandContext.hpp>
-vector<function<bool(PlayerUseCmdEV)>> Player_use_cmd_call_backs;
-LIAPI void Event::addEventListener(function<bool(PlayerUseCmdEV)> callback) {
-    Player_use_cmd_call_backs.push_back(callback);
+vector<PlayerCmdCallback> PlayerCmdCallbacks;
+LIAPI void Event::addEventListener(PlayerCmdCallback callback) {
+    PlayerCmdCallbacks.push_back(callback);
 }
 THook(bool, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
       MinecraftCommands* _this, unsigned int* a2, std::shared_ptr<CommandContext> x, char a4) {
@@ -134,9 +135,9 @@ THook(bool, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@V
             if (!cmd.empty() && cmd.at(0) == '/') {
                 cmd = cmd.substr(1, cmd.size() - 1);
             }
-            PlayerUseCmdEV player_use_cmd_event = {sp, cmd, result};
+            PlayerCmdEvent player_use_cmd_event = {sp, cmd, result};
 
-            if (!CallEventEx(Player_use_cmd_call_backs, player_use_cmd_event))
+            if (!CallEventEx(PlayerCmdCallbacks, player_use_cmd_event))
                 return true;
         } catch (seh_exception) {
             Logger::Error("Exception at PlayerUseCmdEV");
@@ -149,16 +150,16 @@ THook(bool, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@V
 #include <MC/BaseCommandBlock.hpp>
 class BaseCommandBlock;
 class BlockSource;
-vector<function<bool(CmdBlockExeEV)>> Cmd_block_exe_ev_call_backs;
-LIAPI void Event::addEventListener(function<bool(CmdBlockExeEV)> callback) {
-    Cmd_block_exe_ev_call_backs.push_back(callback);
+vector<CmdBlockExecuteEventCallback> CmdBlockExecuteCallbacks;
+LIAPI void Event::addEventListener(CmdBlockExecuteEventCallback callback) {
+    CmdBlockExecuteCallbacks.push_back(callback);
 }
 THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
       BaseCommandBlock* _this, BlockSource* a2, CommandOrigin* a3, bool* a4) {
     try {
-        CmdBlockExeEV cmd_block_execute_event = {_this->getCommand(), a3->getBlockPosition()};
+        CmdBlockExecuteEvent cmd_block_execute_event = {_this->getCommand(), a3->getBlockPosition()};
 
-        if (!CallEventEx(Cmd_block_exe_ev_call_backs, cmd_block_execute_event))
+        if (!CallEventEx(CmdBlockExecuteCallbacks, cmd_block_execute_event))
             return true;
     } catch (seh_exception) {
         Logger::Error("Exception at CmdBlockExeEV");
@@ -168,45 +169,45 @@ THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVComma
 
 /////////////////// PlayerDeath ///////////////////
 
-vector<function<void(PlayerDeathEV)>> Player_death_call_backs;
-LIAPI void Event::addEventListener(function<void(PlayerDeathEV)> callback) {
-    Player_death_call_backs.push_back(callback);
+vector<PlayerDeathEventCallback> PlayerDeathCallbacks;
+LIAPI void Event::addEventListener(PlayerDeathEventCallback callback) {
+    PlayerDeathCallbacks.push_back(callback);
 }
 
 THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer& thi, void* src) {
-    PlayerDeathEV player_death_event = {&thi};
+    PlayerDeathEvent player_death_event = {&thi};
 
-    CallEvent(Player_death_call_backs, player_death_event);
+    CallEvent(PlayerDeathCallbacks, player_death_event);
     return original(thi, src);
 }
 
 /////////////////// PlayerDestroy ///////////////////
 
 
-vector<function<void(PlayerDestroyEV)>> Player_destroy_call_backs;
-LIAPI void Event::addEventListener(function<void(PlayerDestroyEV)> callback) {
-    Player_destroy_call_backs.push_back(callback);
+vector<PlayerDestroyEventCallback> PlayerDestroyCallbacks;
+LIAPI void Event::addEventListener(PlayerDestroyEventCallback callback) {
+    PlayerDestroyCallbacks.push_back(callback);
 }
 #include <MC/BlockLegacy.hpp>
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
       BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl) {
-    PlayerDestroyEV player_destroy_event = {pl, blkpos, &bl};
-    CallEvent(Player_destroy_call_backs, player_destroy_event);
+    PlayerDestroyEvent player_destroy_event = {pl, blkpos, &bl};
+    CallEvent(PlayerDestroyCallbacks, player_destroy_event);
     return original(_this, pl, blkpos, bl);
 }
 
     /////////////////// PlayerUseItemOn ///////////////////
-vector<function<void(PlayerUseItemOnEV)>> Player_use_item_on_call_backs;
-LIAPI void Event::addEventListener(function<void(PlayerUseItemOnEV)> callback) {
-    Player_use_item_on_call_backs.push_back(callback);
+vector<PlayerUseItemOnEventCallback> PlayerUseItemOnCallbacks;
+LIAPI void Event::addEventListener(PlayerUseItemOnEventCallback callback) {
+    PlayerUseItemOnCallbacks.push_back(callback);
 }
 
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
       GameMode* thi, ItemStack& a2, BlockPos a3_pos, unsigned char side, void* a5, void* a6_block) {
     try {
         auto sp = thi->getPlayer();
-        PlayerUseItemOnEV Player_use_item_on_event = {sp, &a2, a3_pos, side};
-        CallEvent(Player_use_item_on_call_backs, Player_use_item_on_event);
+        PlayerUseItemOnEvent Player_use_item_on_event = {sp, &a2, a3_pos, side};
+        CallEvent(PlayerUseItemOnCallbacks, Player_use_item_on_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemOnEV");
     }
@@ -215,31 +216,31 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
 
     /////////////////// MobHurted ///////////////////
 
-vector<function<void(MobHurtedEV)>> Mob_hurted_call_backs;
-LIAPI void Event::addEventListener(function<void(MobHurtedEV)> callback) {
-    Mob_hurted_call_backs.push_back(callback);
+vector<MobHurtedEventCallback> MobHurtedCallbacks;
+LIAPI void Event::addEventListener(MobHurtedEventCallback callback) {
+    MobHurtedCallbacks.push_back(callback);
 }
 
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
       Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) {
-    MobHurtedEV Mob_hurted_event = {ac, &src, damage};
-    CallEvent(Mob_hurted_call_backs, Mob_hurted_event);
+    MobHurtedEvent Mob_hurted_event = {ac, &src, damage};
+    CallEvent(MobHurtedCallbacks, Mob_hurted_event);
     return original(ac, src, damage, unk1_1, unk2_0);
 }
 
 /////////////////// PlayerUseItem ///////////////////
 
-vector<function<void(PlayerUseItemEV)>> Player_use_item_call_backs;
-LIAPI void Event::addEventListener(function<void(PlayerUseItemEV)> callback) {
-    Player_use_item_call_backs.push_back(callback);
+vector<PlayerUseItemEventCallback> PlayerUseItemCallbacks;
+LIAPI void Event::addEventListener(PlayerUseItemEventCallback callback) {
+    PlayerUseItemCallbacks.push_back(callback);
 }
 long long i = 1234324234;
 int s = 1;
 THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, ItemStack& a2) {
     try {
         auto sp = thi->getPlayer();
-        PlayerUseItemEV player_use_item_event = {sp, &a2};
-        CallEvent(Player_use_item_call_backs, player_use_item_event);
+        PlayerUseItemEvent player_use_item_event = {sp, &a2};
+        CallEvent(PlayerUseItemCallbacks, player_use_item_event);
     } catch (seh_exception) {
         Logger::Error("Exception at PlayerUseItemEV");
     }
@@ -248,17 +249,17 @@ THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* thi, Ite
 
 /////////////////// MobDie ///////////////////
 
-vector<function<void(MobDieEV)>> Mob_die_call_backs;
-LIAPI void Event::addEventListener(function<void(MobDieEV)> callback) {
-    Mob_die_call_backs.push_back(callback);
+vector<MobDieEventCallback> MobDieCallbacks;
+LIAPI void Event::addEventListener(MobDieEventCallback callback) {
+    MobDieCallbacks.push_back(callback);
 }
 
 THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSource* ads) {
     try {
         auto level = mob->getLevel();
         auto src = Level::getDamageSourceEntity(ads);
-        MobDieEV mob_die_event = {mob, src};
-        CallEvent(Mob_die_call_backs, mob_die_event);
+        MobDieEvent mob_die_event = {mob, src};
+        CallEvent(MobDieCallbacks, mob_die_event);
     } catch (seh_exception) {
         Logger::Error("Exception at MobDieEV");
     }
@@ -267,29 +268,29 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSou
 
 /////////////////// PreJoinEV ///////////////////
 
-vector<function<void(PreJoinEV)>> Pre_join_call_backs;
-LIAPI void Event::addEventListener(function<void(PreJoinEV)> callback) {
-    Pre_join_call_backs.push_back(callback);
+vector<PreJoinEventCallback> PreJoinCallbacks;
+LIAPI void Event::addEventListener(PreJoinEventCallback callback) {
+    PreJoinCallbacks.push_back(callback);
 }
 THook(void, "?_onClientAuthenticated@ServerNetworkHandler@@AEAAXAEBVNetworkIdentifier@@AEBVCertificate@@@Z",
       void* snh, NetworkIdentifier& neti, Certificate& cert) {
     original(snh, neti, cert);
-    PreJoinEV pre_join_event = {&cert};
+    PreJoinEvent pre_join_event = {&cert};
 
-    CallEvent(Pre_join_call_backs, pre_join_event);
+    CallEvent(PreJoinCallbacks, pre_join_event);
 }
 
 ////////////// ItemUseOnActorInventoryEV //////////////
-vector<function<void(ItemUseOnActorInventoryEV)>> Pre_ItemUseOnActor_call_backs;
-LIAPI void Event::addEventListener(function<void(ItemUseOnActorInventoryEV)> callback) {
-    Pre_ItemUseOnActor_call_backs.push_back(callback);
+vector<ItemUseOnActorEventCallback> ItemUseOnActorCallbacks;
+LIAPI void Event::addEventListener(ItemUseOnActorEventCallback callback) {
+    ItemUseOnActorCallbacks.push_back(callback);
 }
 
 THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z"
     , ServerNetworkHandler* thi, ServerPlayer* sp, bool unk) {
     auto rtid = dAccess<ActorRuntimeID, 104>(thi);
     auto id = dAccess<int, 112>(thi);
-    ItemUseOnActorInventoryEV pre_ItemUseOnActor_event = {rtid, id};
-    CallEvent(Pre_ItemUseOnActor_call_backs, pre_ItemUseOnActor_event);
+    ItemUseOnActorEvent pre_ItemUseOnActor_event = {rtid, id};
+    CallEvent(ItemUseOnActorCallbacks, pre_ItemUseOnActor_event);
     return original(thi, sp, unk);
 }

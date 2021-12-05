@@ -2,12 +2,12 @@
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
 
-bool onPlayerChat(ChatEV e) {
+bool onPlayerChat(ChatEvent e) {
     Logger::Info("[Chat] {} > {}", e.pl->getRealName(), e.msg);
     return true;
 }
 
-bool onPlayerCmd(PlayerUseCmdEV e) {
+bool onPlayerCmd(PlayerCmdEvent e) {
     Logger::Info("[CMD] {} /{}", e.Player->getRealName(), e.cmd);
     return true;
 }
