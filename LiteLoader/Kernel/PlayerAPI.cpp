@@ -102,6 +102,11 @@ void Player::kick(string msg) {
      Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
+bool Player::giveItem(ItemStack* item)
+{
+    return this->add(*item);
+}
+
 string Player::getName()
 {
     return getNameTag();

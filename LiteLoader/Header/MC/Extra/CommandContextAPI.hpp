@@ -2,6 +2,7 @@
 #ifdef EXTRA_INCLUDE_PART_COMMANDCONTEXT
 // Include Headers or Declare Types Here
 #include <string>
+class CommandOrigin;
 
 #else
 // Add Member There
