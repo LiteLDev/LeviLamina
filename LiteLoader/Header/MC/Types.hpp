@@ -86,22 +86,7 @@ public:
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
 };
 
-
-class AABB {
-public:
-    Vec3 p1{};
-    Vec3 p2{};
-
-    AABB(Vec3 _p1, Vec3 _p2) {
-        p1 = _p1;
-        p2 = _p2;
-    }
-
-    inline Vec3 getCenter() {
-        return (p1 + p2) * 0.5;
-    }
-};
-
+#include "AABB.hpp"
 class BoundingBox {
 public:
     BlockPos bpos1;

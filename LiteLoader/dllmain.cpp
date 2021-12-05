@@ -1,5 +1,4 @@
-﻿#include "Bomb.h"
-#pragma comment(lib, "Lib/bedrock_server_api.lib")
+﻿#pragma comment(lib, "Lib/bedrock_server_api.lib")
 #pragma comment(lib, "Lib/bedrock_server_var.lib")
 #pragma comment(lib, "Lib/SymDBHelper.lib")
 #pragma comment(lib, "../Release/Chakra.lib")
