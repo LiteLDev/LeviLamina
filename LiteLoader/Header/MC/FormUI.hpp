@@ -17,7 +17,7 @@ namespace Form
 	class Button : public SimpleFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 
 	public:
 		using ButtonCallback = std::function<void(void)>;
@@ -39,7 +39,7 @@ namespace Form
 	class CustomFormElement
 	{
 	protected:
-		virtual string serialize() = 0;
+		LIAPI virtual string serialize() = 0;
 		friend class CustomForm;
 	public:
 		string name;
@@ -49,7 +49,7 @@ namespace Form
 	class Label : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string text;
 
@@ -65,7 +65,7 @@ namespace Form
 	class Input : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string title, placeholder, def;
 
@@ -82,7 +82,7 @@ namespace Form
 	class Toggle : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string title;
 		bool def;
@@ -100,7 +100,7 @@ namespace Form
 	class Dropdown : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string title;
 		vector<string> options;
@@ -121,7 +121,7 @@ namespace Form
 	class Slider : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string title;
 		int min, max, step, def;
@@ -142,7 +142,7 @@ namespace Form
 	class StepSlider : public CustomFormElement
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 	public:
 		string title;
 		vector<string> options;
@@ -172,7 +172,7 @@ namespace Form
 	class SimpleForm : public FormImpl
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 
 	public:
 		using Callback = std::function<void(int)>;
@@ -192,14 +192,14 @@ namespace Form
 			SimpleForm(title, content, args...);
 		}
 
-		SimpleForm& append(const Button &element);
-		bool sendTo(ServerPlayer* player, Callback callback = Callback());
+		LIAPI SimpleForm& append(const Button &element);
+		LIAPI bool sendTo(ServerPlayer* player, Callback callback = Callback());
 	};
 
 	class CustomForm : public FormImpl
 	{
 	protected:
-		virtual string serialize() override;
+		LIAPI virtual string serialize() override;
 
 	public:
 		using Callback = std::function<void(const std::map<string, std::shared_ptr<CustomFormElement>>&)>;
@@ -219,12 +219,12 @@ namespace Form
 			CustomForm(title, args...);
 		}
 		
-		CustomForm& append(const Label& element);
-		CustomForm& append(const Input& element);
-		CustomForm& append(const Toggle& element);
-		CustomForm& append(const Dropdown& element);
-		CustomForm& append(const Slider& element);
-		CustomForm& append(const StepSlider& element);
-		bool sendTo(ServerPlayer* player, Callback callback);
+		LIAPI CustomForm& append(const Label& element);
+		LIAPI CustomForm& append(const Input& element);
+		LIAPI CustomForm& append(const Toggle& element);
+		LIAPI CustomForm& append(const Dropdown& element);
+		LIAPI CustomForm& append(const Slider& element);
+		LIAPI CustomForm& append(const StepSlider& element);
+		LIAPI bool sendTo(ServerPlayer* player, Callback callback);
 	};
 }
