@@ -41,15 +41,15 @@ public:
 };
 
 
-struct MCRESULT {
-    unsigned char filler[4];
-    operator bool() {
-        return filler[0];
-    }
-    bool isSuccess() {
-        return operator bool();
-    }
-};
+//struct MCRESULT {
+//    unsigned char filler[4];
+//    operator bool() {
+//        return filler[0];
+//    }
+//    bool isSuccess() {
+//        return operator bool();
+//    }
+//};
 
 class Vec3 {
 public:
@@ -139,10 +139,10 @@ public:
     AutomaticID(T x) { id = x; }
     inline operator T() { return id; }
 };
-
-struct Tick {
-    unsigned long long t;
-};
+#include "MC/Tick.hpp"
+//struct Tick {
+//    unsigned long long t;
+//};
 
 
 struct ActorUniqueID {
@@ -417,16 +417,16 @@ class DividedPos2d;
 //template <typename T>
 //struct GameplayHandlerResult;
 
-template <int a>
+template <typename T>
 struct GameplayHandlerResult;
 
-template <int a /*enum BiomeTemperatureCategory*/>
+template <int T>
 class ItemStackRequestActionDataless;
 
-template <int a /*enum BiomeTemperatureCategory*/>
+template <typename T>
 class OperationGraphResult;
 
-template <typename T1, typename T2>
+template <typename T1>
 class SmallSet;
 
 template <typename T1>

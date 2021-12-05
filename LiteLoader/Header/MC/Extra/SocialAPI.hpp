@@ -11,7 +11,9 @@ class Events{
 };
 class GameConnectionInfo {
 public:
-    GameConnectionInfo() = delete;
+    inline GameConnectionInfo() = delete;
+    inline GameConnectionInfo(GameConnectionInfo const&) = delete;
+    inline GameConnectionInfo(GameConnectionInfo const&&) = delete;
 };
 enum GamePublishSetting;
 

@@ -4,7 +4,7 @@
 
 #else
 // Add Member There
-
+public:
 enum class Reliability : int {};
 enum class DataStatus : int { OK,
                               BUSY };

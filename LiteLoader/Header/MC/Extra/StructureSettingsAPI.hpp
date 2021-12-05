@@ -2,11 +2,18 @@
 #ifdef EXTRA_INCLUDE_PART_STRUCTURESETTINGS
 // Include Headers or Declare Types Here
 
-enum class Mirror : unsigned char {
-	None = 0,
+enum Mirror : unsigned char {
+    None_15=0,
+    X,
+    Z,
+    XZ,
 };
-enum class Rotation : unsigned char {
-    None = 0,
+enum Rotation : unsigned char {
+    None_14=0,
+    Rotate90,
+    Rotate180,
+    Rotate270,
+    Total,
 };
 
 #else
