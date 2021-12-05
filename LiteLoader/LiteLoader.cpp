@@ -35,7 +35,7 @@ void FixUpCWD() {
 
 void startWBThread();
 void checkUpdate();
-void registerCommands();
+void RegisterCommands();
 bool InitPlayerDatabase();
 void RegisterServerLogger();
 
@@ -50,6 +50,7 @@ void CheckDevMode() {
         Logger::Warn("You Are In DevelopMode!");
     }
 }
+
 void LLMain() {
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
@@ -76,7 +77,7 @@ void LLMain() {
 
     //Init LL Logger
     Logger::setTitle("LiteLoader");
-    Logger::setFile("logs/LiteLoader.log");
+    Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //isDebug
     CheckDevMode();
@@ -85,7 +86,7 @@ void LLMain() {
     LoadMain();
 
     //XIDREG::initAll();  // Initialize the xuid database
-    registerCommands(); // Register built-in commands
+    RegisterCommands(); // Register built-in commands
     RegisterServerLogger();
    // Event::addEventListener([](ServerStartedEV) {  // Server started event
    //     startWBThread();

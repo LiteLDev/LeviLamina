@@ -65,7 +65,7 @@ namespace Logger
     }
 
     //file
-    bool inline setFile(const std::string& logFile)
+    bool inline setFile(const std::string& logFile, bool appendMode = true)
     {
         if (logFile.empty())
         {
@@ -77,7 +77,7 @@ namespace Logger
             std::error_code ec;
             std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
 
-            auto& res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile, std::ios::app);
+            auto& res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile, appendMode ? std::ios::app : std::ios::out);
             return res.is_open();
         }
     }

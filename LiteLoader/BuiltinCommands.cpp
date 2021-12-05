@@ -284,7 +284,7 @@ bool testApiCommand(CommandOrigin const& ori, CommandOutput& outp) {
 }
 static_assert(sizeof(std::vector<int>) == 24);
 
-void registerCommands() {
+void RegisterCommands() {
     Event::addEventListener([](RegCmdEvent ev) { // Register commands
         MakeCommand("version", "Get the version of this server", 0);
         MakeCommand("plugins", "View plugin information", 0);
