@@ -33,8 +33,6 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
-void startWBThread();
-void checkUpdate();
 void RegisterCommands();
 bool InitPlayerDatabase();
 void RegisterServerLogger();
@@ -85,13 +83,11 @@ void LLMain() {
     //Load plugins
     LoadMain();
 
-    //XIDREG::initAll();  // Initialize the xuid database
     RegisterCommands(); // Register built-in commands
     RegisterServerLogger();
    // Event::addEventListener([](ServerStartedEV) {  // Server started event
    //     startWBThread();
     //    LOG("LiteLoader is distributed under the GPLv3 License");
-    //    checkUpdate();
     //});
 
    // PostInitEV post_init_ev;  // Register PostInit event
