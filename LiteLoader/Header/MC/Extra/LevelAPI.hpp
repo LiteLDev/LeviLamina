@@ -20,7 +20,8 @@ public:
     LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> a0);
     LIAPI static std::vector<Player*> getAllPlayers();
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
-
+    LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
+    LIAPI static class LevelStorage& getLevelStorage();
     //Block
     LIAPI static bool setBlock(Vec3& pos, int dim, Block* block);
     LIAPI static bool setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData);
