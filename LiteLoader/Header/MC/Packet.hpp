@@ -12,7 +12,7 @@ public:
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream&) const = 0;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
     /*
     inline bool disallowBatching() const{
