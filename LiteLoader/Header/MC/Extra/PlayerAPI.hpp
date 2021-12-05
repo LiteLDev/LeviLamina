@@ -25,7 +25,7 @@ public:
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
     LIAPI string getLanguageCode();
-    
+    LIAPI string getServerAddress();
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCert();

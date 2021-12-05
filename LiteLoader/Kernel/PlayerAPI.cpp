@@ -22,6 +22,7 @@ UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
 NetworkIdentifier* Player::getNetworkIdentifier(){
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
+
 /*
 Certificate* Player::getCert() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
@@ -31,6 +32,7 @@ Certificate* Player::getCert() {
     return nullptr;
 }
 */
+
 Certificate* Player::getCert() {
     return const_cast<Certificate*>(Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getCertificate());
 }
@@ -55,6 +57,18 @@ string Player::getLanguageCode() {
         if (s.find("LanguageCode") != s.npos) {
             auto langcode = iter->second.value_.string_;
             return langcode;
+        }
+    }
+    return "unkown";
+}
+
+string Player::getServerAddress() {
+    auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
+    for (auto iter = map->begin(); iter != map->end(); ++iter) {
+        string s(iter->first.c_str());
+        if (s.find("ServerAddress") != s.npos) {
+            auto ServerAddress = iter->second.value_.string_;
+            return ServerAddress;
         }
     }
     return "unkown";
@@ -102,12 +116,17 @@ void Player::kick(string msg) {
      Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
+<<<<<<< Updated upstream
 bool Player::giveItem(ItemStack* item)
 {
     return this->add(*item);
 }
 
 string Player::getName()
+=======
+
+    string Player::getName()
+>>>>>>> Stashed changes
 {
     return getNameTag();
 }

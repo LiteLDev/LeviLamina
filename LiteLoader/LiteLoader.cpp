@@ -85,14 +85,16 @@ void LLMain() {
     //Load plugins
     LoadMain();
 
-    //XIDREG::initAll();  // Initialize the xuid database
-    RegisterCommands(); // Register built-in commands
+    //Register built-in commands
+    RegisterCommands();
+
 
     RegisterServerLogger();
+
+
     Event::addEventListener([](ServerStartedEvent) { // Server started event
         Logger::Info("LiteLoader is distributed under the GPLv3 License");
         Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
-       //checkUpdate();
     });
 
 
