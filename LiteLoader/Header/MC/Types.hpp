@@ -280,6 +280,9 @@ struct FeatureLoading {
     struct ConcreteFeatureHolder;
 };
 
+template <typename T1, typename T2>
+class OperationNode;
+
 struct OperationNodeDetails {
     template <typename T1, typename T2>
     class WorkingData;
@@ -404,7 +407,7 @@ template <typename T>
 class ToFloatFunction;
 
 template <typename T>
-class TypedScreenCapabilities;
+class TypedScreenCapabilities {};
 
 template <typename T, typename T2, typename T3, typename T4 = class UNK>
 class ViewedEntityContextT;
@@ -424,11 +427,29 @@ class buffer_span_mut;
 template <typename T>
 class optional_ref;
 
-template <int i>
+template <int a>
 class DividedPos2d;
 
-template <int i>
+//template <typename T>
+//struct GameplayHandlerResult;
+
+template <int a>
 struct GameplayHandlerResult;
+
+template <int a /*enum BiomeTemperatureCategory*/>
+class ItemStackRequestActionDataless;
+
+template <int a /*enum BiomeTemperatureCategory*/>
+class OperationGraphResult;
+
+template <typename T1, typename T2>
+class SmallSet;
+
+template <typename T1>
+struct TaskStartInfoEx;
+
+template <typename T1>
+class WildcardCommandSelector;
 
 //enum
 enum class ContainerType : unsigned char {
