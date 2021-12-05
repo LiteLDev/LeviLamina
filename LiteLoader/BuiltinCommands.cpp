@@ -11,7 +11,7 @@
 #include <MC/Packet.hpp>
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
-void checkUpdate();
+
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     outp.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() + " with LiteLoaderBDS " +
         LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS", {});
@@ -20,7 +20,7 @@ bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
 
 bool pluginsCommand(CommandOrigin const& ori, CommandOutput& outp, optional<string> pl) {
     if (pl.set) {
-        std::string name = pl.val() + ".dll";
+        std::string name = pl.val();
         auto plugin = LL::getPlugin(name);
         if (plugin) {
             std::ostringstream oss;

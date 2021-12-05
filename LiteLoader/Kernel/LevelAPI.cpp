@@ -31,6 +31,11 @@ MCINLINE class MapItemSavedData* Level::getMapSavedData(struct ActorUniqueID a0)
     *((void**)&rv) = dlsym("?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
     return (Global<Level>->*rv)(a0);
 }
+MCINLINE class LevelStorage& getLevelStorage() {
+    class LevelStorage& (Level::*rv)();
+    *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
+    return (Global<Level>->*rv)();
+}
 
 void Level::forEachPlayer(class std::function<bool(class Player&)> a0) {
 	void (Level:: * rv)(class std::function<bool(class Player&)>);

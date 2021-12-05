@@ -12,6 +12,7 @@
 #include <Version.h>
 #include <Config.h>
 #include "Loader.h"
+#include <Header/EventAPI.h>
 using namespace std;
 
 
@@ -33,8 +34,6 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
-void startWBThread();
-void checkUpdate();
 void RegisterCommands();
 bool InitPlayerDatabase();
 void RegisterServerLogger();
@@ -79,6 +78,7 @@ void LLMain() {
     Logger::setTitle("LiteLoader");
     Logger::setFile("logs/LiteLoader-latest.log", false);
 
+
     //isDebug
     CheckDevMode();
 
@@ -87,12 +87,14 @@ void LLMain() {
 
     //XIDREG::initAll();  // Initialize the xuid database
     RegisterCommands(); // Register built-in commands
+
     RegisterServerLogger();
-   // Event::addEventListener([](ServerStartedEV) {  // Server started event
-   //     startWBThread();
-    //    LOG("LiteLoader is distributed under the GPLv3 License");
-    //    checkUpdate();
-    //});
+    Event::addEventListener([](ServerStartedEvent) { // Server started event
+        Logger::Info("LiteLoader is distributed under the GPLv3 License");
+        Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
+       //checkUpdate();
+    });
+
 
    // PostInitEV post_init_ev;  // Register PostInit event
    // for (size_t count = 0; count < Post_init_call_backs.size(); count++) {
