@@ -86,7 +86,7 @@ void LLMain() {
     LoadMain();
 
     //XIDREG::initAll();  // Initialize the xuid database
-    registerCommands(); // Register built-in commands
+    RegisterCommands(); // Register built-in commands
 
     RegisterServerLogger();
     Event::addEventListener([](ServerStartedEvent) { // Server started event
