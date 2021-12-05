@@ -137,7 +137,7 @@ bool InitPlayerDatabase() {
 		) \
 			WITHOUT ROWID; ");
         Event::addEventListener([](JoinEvent e) {
-            insert(e.Player->getRealName(), e.xuid, e.Player->getUuid());
+            insert(e.player->getRealName(), e.player->getXuid(), e.player->getUuid());
         });
     } catch (std::exception const& e) {
         Logger::setTitle("DB");

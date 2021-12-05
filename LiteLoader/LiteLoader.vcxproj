@@ -178,6 +178,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Extra\IntTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ListTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\NbtIoAPI.hpp" />
+    <ClInclude Include="Header\MC\Extra\PacketAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ShortTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StringTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\StructureSettingsAPI.hpp" />

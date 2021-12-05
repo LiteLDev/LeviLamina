@@ -485,8 +485,8 @@
     <ClInclude Include="Header\MC\Extra\Int64TagAPI.hpp">
       <Filter>Header\NBT</Filter>
     </ClInclude>
-    <ClInclude Include="Bomb.h">
-      <Filter>Main</Filter>
+    <ClInclude Include="Header\MC\Extra\PacketAPI.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
