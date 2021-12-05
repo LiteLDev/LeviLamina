@@ -34,9 +34,7 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
-void startWBThread();
-void checkUpdate();
-void registerCommands();
+void RegisterCommands();
 bool InitPlayerDatabase();
 void RegisterServerLogger();
 
@@ -51,6 +49,7 @@ void CheckDevMode() {
         Logger::Warn("You Are In DevelopMode!");
     }
 }
+
 void LLMain() {
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
@@ -77,13 +76,15 @@ void LLMain() {
 
     //Init LL Logger
     Logger::setTitle("LiteLoader");
-   // Logger::setFile("logs/LiteLoader.log");
+    Logger::setFile("logs/LiteLoader-latest.log", false);
+
 
     //isDebug
     CheckDevMode();
 
     //Load plugins
     LoadMain();
+
     //XIDREG::initAll();  // Initialize the xuid database
     registerCommands(); // Register built-in commands
 
@@ -93,6 +94,7 @@ void LLMain() {
         Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
        //checkUpdate();
     });
+
 
    // PostInitEV post_init_ev;  // Register PostInit event
    // for (size_t count = 0; count < Post_init_call_backs.size(); count++) {

@@ -11,7 +11,7 @@
 #include <MC/Packet.hpp>
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
-void checkUpdate();
+
 bool versionCommand(CommandOrigin const& ori, CommandOutput& outp) {
     outp.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() + " with LiteLoaderBDS " +
         LL::getLoaderVersionString() + "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS", {});
@@ -284,7 +284,7 @@ bool testApiCommand(CommandOrigin const& ori, CommandOutput& outp) {
 }
 static_assert(sizeof(std::vector<int>) == 24);
 
-void registerCommands() {
+void RegisterCommands() {
     Event::addEventListener([](RegCmdEvent ev) { // Register commands
         MakeCommand("version", "Get the version of this server", 0);
         MakeCommand("plugins", "View plugin information", 0);
