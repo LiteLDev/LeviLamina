@@ -70,8 +70,8 @@ bool loadLiteLoader() {
 }
 
 void loadCsrs() {
-    if (exists(path(TEXT(".\\plugins\\lib\\ConsoleOutput.dll")))) {
-        loadLib(TEXT(".\\plugins\\lib\\ConsoleOutput.dll"));
+    if (exists(path(TEXT(".\\plugins\\lib\\LLUnifiedOutput.dll")))) {
+        loadLib(TEXT(".\\plugins\\lib\\LLUnifiedOutput.dll"));
     }
 }
 
