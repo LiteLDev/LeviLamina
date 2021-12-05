@@ -9,7 +9,10 @@ class Events{
     class Event;
     class AchievementEventing;
 };
-class GameConnectionInfo;
+class GameConnectionInfo {
+public:
+    GameConnectionInfo() = delete;
+};
 enum GamePublishSetting;
 
 #endif

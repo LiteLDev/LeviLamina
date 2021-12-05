@@ -180,11 +180,6 @@ public:
 };
 static_assert(std::is_pod_v<ActorRuntimeID>);
 
-class MinecraftEventing {
-public:
-    enum POIBlockInteractionType;
-};
-
 class RelativeFloat {
 public:
     float value;
@@ -316,6 +311,7 @@ struct GameEventConfig {
 };
 
 class IMinecraftEventing{
+public:
     enum StructureBlockActionType;
 };
 
@@ -330,16 +326,19 @@ enum PruneType;
 //Templates
 template <typename T, typename T2, int unk>
 class TypedServerNetId {
+public:
     T2 netId;
 };
 
 template <typename T, typename T2, int unk>
 class TypedClientNetId {
+public:
     T2 netId;
 };
 
 template <typename T, typename T2, int unk>
 class TypedRuntimeId {
+public:
     T2 netId;
 };
 
