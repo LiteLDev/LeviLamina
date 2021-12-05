@@ -2,6 +2,7 @@
 #pragma once
 #include <Global.h>
 #include "MapItemTrackedActor.hpp"
+#include "MapDecoration.hpp"
 #define EXTRA_INCLUDE_PART_MAPITEMSAVEDDATA
 #include "Extra/MapItemSavedDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MAPITEMSAVEDDATA
