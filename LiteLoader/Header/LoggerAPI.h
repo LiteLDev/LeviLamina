@@ -371,7 +371,7 @@ namespace Logger
             lock();
             fmt::print(fmt::fg(fmt::color::yellow2) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE) << str;
             unlock();
         }
         void PrintPrefix()
@@ -469,7 +469,7 @@ namespace Logger
             lock();
             fmt::print(fmt::fg(fmt::color::red2) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE) << str;
             unlock();
         }
         void PrintPrefix()
@@ -567,7 +567,7 @@ namespace Logger
             lock();
             fmt::print(fmt::fg(fmt::color::red) | fmt::emphasis::bold, str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE) << str;
             unlock();
         }
         void PrintPrefix()
