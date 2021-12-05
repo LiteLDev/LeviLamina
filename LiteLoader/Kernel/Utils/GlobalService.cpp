@@ -12,8 +12,8 @@ THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
 	original(mc);
 }
 
-vector<function<void(ServerStartedEV)>> ServerStartedEVCallBacks;
-LIAPI void Event::addEventListener(function<void(ServerStartedEV)> callback) {
+vector<function<void(ServerStartedEvent)>> ServerStartedEVCallBacks;
+LIAPI void Event::addEventListener(function<void(ServerStartedEvent)> callback) {
     ServerStartedEVCallBacks.push_back(callback);
 }
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
@@ -22,15 +22,15 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a) {
     Global<Level> = (Level*)Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-    ServerStartedEV ServerStartedEV;
+    ServerStartedEvent ServerStartedEV;
     for (size_t count = 0; count < ServerStartedEVCallBacks.size(); count++) {
         ServerStartedEVCallBacks[count](ServerStartedEV);
     }
 }
 #include <EventAPI.h>
 class CommandRegistry;
-vector<function<void(RegCmdEV)>> RegCmdEVCallBacks;
-LIAPI void Event::addEventListener(function<void(RegCmdEV)> callback) {
+vector<function<void(RegCmdEvent)>> RegCmdEVCallBacks;
+LIAPI void Event::addEventListener(function<void(RegCmdEvent)> callback) {
     RegCmdEVCallBacks.push_back(callback);
 }
 #include <LoggerAPI.h>
@@ -40,7 +40,7 @@ THook(void,
       void* a1) {
     Global<CommandRegistry> = rg;
     original(rg, a1);
-    RegCmdEV cmdregev = {rg};
+    RegCmdEvent cmdregev = {rg};
     for (size_t count = 0; count < RegCmdEVCallBacks.size(); count++) {
         RegCmdEVCallBacks[count](cmdregev);
     }
