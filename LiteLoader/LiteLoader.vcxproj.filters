@@ -485,6 +485,9 @@
     <ClInclude Include="Header\MC\Extra\Int64TagAPI.hpp">
       <Filter>Header\NBT</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\Extra\PacketAPI.hpp">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\leveldb\leveldb.lib">

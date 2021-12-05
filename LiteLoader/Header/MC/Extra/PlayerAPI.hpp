@@ -19,6 +19,7 @@ public:
     //LIAPI bool kill();
 
     LIAPI void kick(string msg);
+    LIAPI bool giveItem(ItemStack* item);
     
     LIAPI string getDeviceName();
     LIAPI int getAvgPing();
@@ -40,6 +41,7 @@ public:
     LIAPI void sendUpdateBlockPacket(BlockPos vec3, int blockid, UpdateBlockFlags UpdateBlockType = UpdateBlockFlags::BlockUpdateNetwork, int Layer = 0);
     LIAPI void sendBlockActorDataPacket(BlockPos blockpos, CompoundTag* nametag);
     LIAPI void sendContainerOpenPacket(BlockPos blockpos, unsigned char windowsid, ContainerType type, int64_t ContainerEntityUniqueID);
+    
     template <typename T>
     inline bool runcmd(T&& str) {
         return Level::runcmdAs(this, std::forward<T>(str));
