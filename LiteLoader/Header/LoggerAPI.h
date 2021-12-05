@@ -102,7 +102,7 @@ namespace Logger
             lock();
             fmt::print(str);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)), str);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE) << str << std::flush;
             unlock();
         }
 
@@ -198,8 +198,8 @@ namespace Logger
             fmt::print("[{:%H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)), title);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             {
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)),
-                    "[{:%Y-%m-%d %H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)), title);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+                    << fmt::format("[{:%Y-%m-%d %H:%M:%S} DEBUG]{}", fmt::localtime(_time64(0)), title);
             }
             unlock();
         }
@@ -286,8 +286,8 @@ namespace Logger
             fmt::print("[{:%H:%M:%S} INFO]{}", fmt::localtime(_time64(0)), title);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             {
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)),
-                    "[{:%Y-%m-%d %H:%M:%S} INFO]{}", fmt::localtime(_time64(0)), title);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+                    << fmt::format("[{:%Y-%m-%d %H:%M:%S} INFO]{}", fmt::localtime(_time64(0)), title);
             }
             unlock();
         }
@@ -384,8 +384,8 @@ namespace Logger
                 "[{:%H:%M:%S} WARN]{}", fmt::localtime(_time64(0)), title);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             {
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)),
-                    "[{:%Y-%m-%d %H:%M:%S} WARN]{}", fmt::localtime(_time64(0)), title);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+                    << fmt::format("[{:%Y-%m-%d %H:%M:%S} WARN]{}", fmt::localtime(_time64(0)), title);
             }
             unlock();
         }
@@ -482,8 +482,8 @@ namespace Logger
                 "[{:%H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)), title);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             {
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)),
-                    "[{:%Y-%m-%d %H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)), title);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+                    << fmt::format("[{:%Y-%m-%d %H:%M:%S} ERROR]{}", fmt::localtime(_time64(0)), title);
             }
             unlock();
         }
@@ -580,8 +580,8 @@ namespace Logger
                 "[{:%H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)), title);
             if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             {
-                fmt::print(GetFILEfromFstream(PluginOwnData::get<std::fstream>(LOGGER_CURRENT_FILE)),
-                    "[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)), title);
+                PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+                    << fmt::format("[{:%Y-%m-%d %H:%M:%S} FATAL]{}", fmt::localtime(_time64(0)), title);
             }
             unlock();
         }
