@@ -27,6 +27,33 @@ Block* BlockInstance::getBlock() {
     return isNull() ? nullptr : block;
 };
 
+bool BlockInstance::hasBlockEntity()
+{
+    return block->hasBlockEntity();
+}
+
+BlockActor* BlockInstance::getBlockEntity()
+{
+    return Level::getBlockSource(dim)->getBlockEntity(pos);
+}
+
+bool BlockInstance::hasContainer()
+{
+    return getContainer() != nullptr;
+}
+
+class DropperBlockActor;
+Container* BlockInstance::getContainer()
+{
+    Vec3 vec{ pos.x, pos.y, pos.z };
+
+    // This function didn't use 'this' pointer
+    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
+        Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
+
+    return container;
+}
+
 //bad
 bool BlockInstance::breakNaturally() {
     auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim),pos, 1);
@@ -49,7 +76,7 @@ ItemStack& BlockInstance::getBlockDrops() {
     //auto &out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
     //std::cout << &out << std::endl;
     //return out;
-    throw("TODO: BlockInstance::getBlockDrops()");
+#pragma message("####################### TODO: BlockInstance::getBlockDrops() #######################")
     return *(ItemStack*)0;
 }
 

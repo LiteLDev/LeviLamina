@@ -6,6 +6,7 @@
 #include <vector>
 #include <LoggerAPI.h>
 #include <MC/Player.hpp>
+#include <MC/BlockActor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/ServerNetworkHandler.hpp>
@@ -374,10 +375,13 @@ THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_
 THook(__int64, "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
     void* a1, void* a2)
 {
+    BlockPos bp = dAccess<BlockPos>(a2, 28);        // IDA VanillaServerGameplayEventListener::onPlayerOpenContainer
+    Player* pl = SymCall("??$tryUnwrap@VPlayer@@$$V@WeakEntityRef@@QEBAPEAVPlayer@@XZ", Player*, void*)(a2);
+
     PlayerOpenContainerEvent ev;
-    ev.player = SymCall("??$tryUnwrap@VPlayer@@$$V@WeakEntityRef@@QEBAPEAVPlayer@@XZ", Player*, void*)(a2);
-    ev.blockPos = dAccess<BlockPos>(a2, 28);        // IDA VanillaServerGameplayEventListener::onPlayerOpenContainer
-    //ev.container = ;
+    ev.player = pl;
+    ev.blockPos = bp;
+    ev.container = Level::getBlockInstance(bp, pl->getDimensionId()).getContainer();
     if (!ev.call())
         return 0;
     return original(a1, a2);
