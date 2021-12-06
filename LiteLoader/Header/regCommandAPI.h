@@ -128,7 +128,7 @@ struct MakeOverload {
 
         template <std::size_t... Index>
         inline bool invoke_impl(CommandOrigin const &a,CommandOutput &b,std::index_sequence<Index...>) const {
-            return ((bool (*)(CommandOrigin const &, CommandOutput &, TP...))cb)(a, b, std::get<Index>(data)...);
+            return ((bool (*)(CommandOrigin const &, CommandOutput &, TP...))cb)(a, b, const_cast<TP&>(std::get<Index>(data))...);
         }
         void execute(CommandOrigin const &a, CommandOutput &b) const {
             constexpr auto size = std::tuple_size<container>::value;

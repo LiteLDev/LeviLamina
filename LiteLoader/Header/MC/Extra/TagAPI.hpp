@@ -79,7 +79,7 @@ LIAPI Type getTagType() const;
 //LIAPI std::map<std::string, char[0x28]>& asCompound();
 //LIAPI TagMemoryChunk& asByteArray();
 
-inline ByteTag* asByteTag();
+LIAPI ByteTag* asByteTag();
 LIAPI ShortTag* asShortTag();
 LIAPI IntTag* asIntTag();
 LIAPI Int64Tag* asInt64Tag();
