@@ -9,13 +9,7 @@ class IsSpawnableDescription {
 public:
     /*0*/ virtual ~IsSpawnableDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (IsSpawnableDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@IsSpawnableDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

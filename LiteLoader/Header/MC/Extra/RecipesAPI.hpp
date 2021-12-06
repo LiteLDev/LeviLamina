@@ -5,7 +5,16 @@
 #else
 // Add Member There
 public:
-struct NormalizedRectangularRecipeResults;
-class Type;
+class Type {
+public:
+    Type() = delete;
+    Type(Type const&) = delete;
+    Type(Type const&&) = delete;
+};
+struct NormalizedRectangularRecipeResults {
+    NormalizedRectangularRecipeResults() = delete;
+    NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&) = delete;
+    NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&&) = delete;
+};
 
 #endif

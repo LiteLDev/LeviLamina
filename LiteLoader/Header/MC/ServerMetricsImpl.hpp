@@ -11,23 +11,7 @@ public:
     /*1*/ virtual void sendPeriodicMetrics(class ServerInstance&);
     /*2*/ virtual void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const&);
     /*3*/ virtual void sendChunkLoadTelemetryData();
-    /*
-    inline void sendChunkLoadTelemetryData(){
-        void (ServerMetricsImpl::*rv)();
-        *((void**)&rv) = dlsym("?sendChunkLoadTelemetryData@ServerMetricsImpl@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void sendPeriodicMetrics(class ServerInstance& a0){
-        void (ServerMetricsImpl::*rv)(class ServerInstance&);
-        *((void**)&rv) = dlsym("?sendPeriodicMetrics@ServerMetricsImpl@@UEAAXAEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0));
-    }
-    inline void sendServerTickTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const& a0){
-        void (ServerMetricsImpl::*rv)(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const&);
-        *((void**)&rv) = dlsym("?sendServerTickTime@ServerMetricsImpl@@UEAAXAEBV?$duration@_JU?$ratio@$00$0DLJKMKAA@@std@@@chrono@std@@@Z");
-        return (this->*rv)(std::forward<class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const&>(a0));
-    }
-    */
+
 
 protected:
 

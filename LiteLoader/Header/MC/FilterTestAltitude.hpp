@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "FilterTest.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_FILTERTESTALTITUDE
 #include "Extra/FilterTestAltitudeAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILTERTESTALTITUDE
@@ -14,18 +14,7 @@ public:
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*4*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (FilterTestAltitude::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@FilterTestAltitude@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (FilterTestAltitude::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@FilterTestAltitude@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

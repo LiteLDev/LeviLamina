@@ -11,13 +11,7 @@ class BaseScriptBlockLiquidContainerComponent : public ScriptObject {
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
     /*1*/ virtual class Scripting::Result<void> setFillLevel(int);
-    /*
-    inline class Scripting::Result<void> setFillLevel(int a0){
-        class Scripting::Result<void> (BaseScriptBlockLiquidContainerComponent::*rv)(int);
-        *((void**)&rv) = dlsym("?setFillLevel@BaseScriptBlockLiquidContainerComponent@@UEAA?AV?$Result@X@Scripting@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+
     MCAPI class Scripting::Result<int> getFillLevel();
 
 protected:

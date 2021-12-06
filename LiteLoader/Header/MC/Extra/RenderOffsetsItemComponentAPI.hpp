@@ -5,7 +5,15 @@
 #else
 // Add Member There
 public:
-struct ItemTransforms;
-struct TRS;
+struct TRS {
+    TRS() = delete;
+    TRS(TRS const&) = delete;
+    TRS(TRS const&&) = delete;
+};
+struct ItemTransforms {
+    ItemTransforms() = delete;
+    ItemTransforms(ItemTransforms const&) = delete;
+    ItemTransforms(ItemTransforms const&&) = delete;
+};
 
 #endif

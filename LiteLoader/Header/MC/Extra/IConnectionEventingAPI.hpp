@@ -4,5 +4,9 @@
 
 #else
 // Add Member There
+public:
+enum ServerConnectionOutcome;
+enum PlayerJoinWorldAttemptState;
+enum ConnectionFailureReason;
 
 #endif

@@ -12,8 +12,8 @@ public:
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*
     inline bool canContinueToUse(){
@@ -24,21 +24,6 @@ public:
     inline bool canUse(){
         bool (MoveThroughVillageGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@MoveThroughVillageGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MoveThroughVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MoveThroughVillageGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveThroughVillageGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveThroughVillageGoal@@EEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline void start(){
-        void (MoveThroughVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MoveThroughVillageGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

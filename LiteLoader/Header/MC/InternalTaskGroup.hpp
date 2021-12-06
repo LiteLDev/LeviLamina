@@ -8,21 +8,19 @@ class InternalTaskGroup {
 #include "Extra/InternalTaskGroupAPI.hpp"
 public:
     /*0*/ virtual ~InternalTaskGroup();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual int /*enum enum TaskGroupState*/ getState() const;
     /*
-    inline int \/*enum enum TaskGroupState*\/ getState() const{
-        int \/*enum enum TaskGroupState*\/ (InternalTaskGroup::*rv)() const;
-        *((void**)&rv) = dlsym("?getState@InternalTaskGroup@@UEBA?AW4TaskGroupState@@XZ");
-        return (this->*rv)();
-    }
     inline void processCoroutines(){
         void (InternalTaskGroup::*rv)();
         *((void**)&rv) = dlsym("?processCoroutines@InternalTaskGroup@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void taskComplete(class gsl::not_null<class BackgroundTaskBase*> a0){
-        void (InternalTaskGroup::*rv)(class gsl::not_null<class BackgroundTaskBase*>);
+    inline void taskComplete(class gsl::not_null<class BackgroundTaskBase* > a0){
+        void (InternalTaskGroup::*rv)(class gsl::not_null<class BackgroundTaskBase* >);
         *((void**)&rv) = dlsym("?taskComplete@InternalTaskGroup@@UEAAXV?$not_null@PEAVBackgroundTaskBase@@@gsl@@@Z");
-        return (this->*rv)(std::forward<class gsl::not_null<class BackgroundTaskBase*>>(a0));
+        return (this->*rv)(std::forward<class gsl::not_null<class BackgroundTaskBase* >>(a0));
     }
     inline void taskRegister(class std::shared_ptr<class BackgroundTaskBase> a0){
         void (InternalTaskGroup::*rv)(class std::shared_ptr<class BackgroundTaskBase>);

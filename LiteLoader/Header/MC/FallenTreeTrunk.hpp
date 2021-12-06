@@ -10,13 +10,7 @@ class FallenTreeTrunk {
 public:
     /*0*/ virtual ~FallenTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
-    /*
-    inline class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI& a0, class BlockPos const& a1, class Random& a2, class RenderParams& a3, struct TreeHelper::TreeParams const& a4, class ITreeCanopy const* a5) const{
-        class std::optional<class BlockPos> (FallenTreeTrunk::*rv)(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
-        *((void**)&rv) = dlsym("?placeTrunk@FallenTreeTrunk@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@PEBVITreeCanopy@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2), std::forward<class RenderParams&>(a3), std::forward<struct TreeHelper::TreeParams const&>(a4), std::forward<class ITreeCanopy const*>(a5));
-    }
-    */
+
 
 protected:
 

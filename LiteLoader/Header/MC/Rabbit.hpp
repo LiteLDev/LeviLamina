@@ -35,76 +35,50 @@ public:
     /*23*/ virtual void onFailedTame();
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*26*/ virtual void __unk_vfn_12();
+    /*26*/ virtual float getPickRadius();
     /*27*/ virtual void awardKillScore(class Actor&, int);
     /*28*/ virtual class HashedString const& queryEntityRenderer() const;
     /*29*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*30*/ virtual int getPortalWaitTime() const;
     /*31*/ virtual bool canChangeDimensions() const;
-    /*32*/ virtual void __unk_vfn_13();
+    /*32*/ virtual void __unk_vfn_12();
     /*33*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*34*/ virtual void onSynchedDataUpdate(int);
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
     /*49*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*50*/ virtual void __unk_vfn_20();
+    /*50*/ virtual void __unk_vfn_19();
     /*51*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*52*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual int getItemUseDuration() const;
     /*57*/ virtual float getItemUseStartupProgress() const;
     /*58*/ virtual float getItemUseIntervalProgress() const;
-    /*59*/ virtual void __unk_vfn_23();
+    /*59*/ virtual void __unk_vfn_22();
     /*60*/ virtual bool isAlliedTo(class Mob*);
-    /*61*/ virtual void __unk_vfn_24();
+    /*61*/ virtual void __unk_vfn_23();
     /*62*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*63*/ virtual void onBorn(class Actor&, class Actor&);
-    /*64*/ virtual void __unk_vfn_25();
-    /*65*/ virtual void __unk_vfn_26();
+    /*64*/ virtual int getAttackTime();
+    /*65*/ virtual void __unk_vfn_24();
     /*66*/ virtual void newServerAiStep();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
-    /*
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Rabbit::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Rabbit@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void newServerAiStep(){
-        void (Rabbit::*rv)();
-        *((void**)&rv) = dlsym("?newServerAiStep@Rabbit@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (Rabbit::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@Rabbit@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Rabbit::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Rabbit@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Rabbit::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Rabbit@@MEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*68*/ virtual void __unk_vfn_25();
+
 
 protected:
 

@@ -21,14 +21,8 @@ public:
     /*11*/ virtual void __unk_vfn_10();
     /*12*/ virtual void __unk_vfn_11();
     /*13*/ virtual void __unk_vfn_12();
-    /*14*/ virtual void Schedule(void (*)(void*), void*);
-    /*
-    inline void Schedule(void (*a0)(void*), void* a1){
-        void (CompactionListenerEnv::*rv)(void (*)(void*), void*);
-        *((void**)&rv) = dlsym("?Schedule@CompactionListenerEnv@@UEAAXP6AXPEAX@Z0@Z");
-        return (this->*rv)(std::forward<void (*)(void*)>(a0), std::forward<void*>(a1));
-    }
-    */
+    /*14*/ virtual void Schedule(void (* )(void* ), void*);
+
 
 protected:
 

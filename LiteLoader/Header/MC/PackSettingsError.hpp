@@ -11,23 +11,7 @@ public:
     /*1*/ virtual std::string getLocErrorMessage() const;
     /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const;
     /*3*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const;
-    /*
-    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const{
-        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackSettingsError::*rv)() const;
-        *((void**)&rv) = dlsym("?getEventErrorMessageMap@PackSettingsError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getLocErrorMessage() const{
-        std::string (PackSettingsError::*rv)() const;
-        *((void**)&rv) = dlsym("?getLocErrorMessage@PackSettingsError@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const{
-        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackSettingsError::*rv)() const;
-        *((void**)&rv) = dlsym("?getLocErrorMessageMap@PackSettingsError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

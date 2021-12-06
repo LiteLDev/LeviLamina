@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BehaviorDefinition.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_ATTACKDEFINITION
 #include "Extra/AttackDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ATTACKDEFINITION
@@ -11,13 +11,7 @@ class AttackDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~AttackDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (AttackDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@AttackDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

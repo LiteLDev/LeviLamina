@@ -8,10 +8,10 @@ class ContainerManagerModel {
 #include "Extra/ContainerManagerModelAPI.hpp"
 public:
     /*0*/ virtual ~ContainerManagerModel();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
+    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
     /*5*/ virtual void serverInitItemStackIds();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
     /*7*/ virtual void setSlot(int, class ItemStack const&, bool) = 0;
@@ -24,58 +24,7 @@ public:
     /*14*/ virtual bool isServerAuthoritative() const;
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit() = 0;
-    /*
-    inline int \/*enum enum ContainerID*\/ getContainerId() const{
-        int \/*enum enum ContainerID*\/ (ContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerId@ContainerManagerModel@@UEBA?AW4ContainerID@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ContainerType*\/ getContainerType() const{
-        int \/*enum enum ContainerType*\/ (ContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerType@ContainerManagerModel@@UEBA?AW4ContainerType@@XZ");
-        return (this->*rv)();
-    }
-    inline void setContainerId(int \/*enum enum ContainerID*\/ a0){
-        void (ContainerManagerModel::*rv)(int \/*enum enum ContainerID*\/);
-        *((void**)&rv) = dlsym("?setContainerId@ContainerManagerModel@@UEAAXW4ContainerID@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerID*\/>(a0));
-    }
-    inline void setContainerType(int \/*enum enum ContainerType*\/ a0){
-        void (ContainerManagerModel::*rv)(int \/*enum enum ContainerType*\/);
-        *((void**)&rv) = dlsym("?setContainerType@ContainerManagerModel@@UEAAXW4ContainerType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerType*\/>(a0));
-    }
-    inline void debitPlayerLevels(int a0){
-        void (ContainerManagerModel::*rv)(int);
-        *((void**)&rv) = dlsym("?debitPlayerLevels@ContainerManagerModel@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isClientSide() const{
-        bool (ContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@ContainerManagerModel@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCreativeMode() const{
-        bool (ContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?isCreativeMode@ContainerManagerModel@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isServerAuthoritative() const{
-        bool (ContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?isServerAuthoritative@ContainerManagerModel@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValid(float a0){
-        bool (ContainerManagerModel::*rv)(float);
-        *((void**)&rv) = dlsym("?isValid@ContainerManagerModel@@UEAA_NM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void serverInitItemStackIds(){
-        void (ContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?serverInitItemStackIds@ContainerManagerModel@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void postInit();
 
 protected:

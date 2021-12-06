@@ -9,18 +9,8 @@ class LookAtBlockNode {
 public:
     /*0*/ virtual ~LookAtBlockNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (LookAtBlockNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@LookAtBlockNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (LookAtBlockNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@LookAtBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
+
 
 protected:
 

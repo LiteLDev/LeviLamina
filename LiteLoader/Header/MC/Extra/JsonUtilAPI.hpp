@@ -4,12 +4,31 @@
 
 #else
 // Add Member There
-template <typename T, typename T2>
-class JsonSchemaObjectNode;
-
-template <typename T, typename T2>
-class JsonParseState;
-class JsonSchemaNodeBase;
-class EmptyClass;
+class JsonSchemaNodeBase {
+public:
+    JsonSchemaNodeBase() = delete;
+    JsonSchemaNodeBase(JsonSchemaNodeBase const&) = delete;
+    JsonSchemaNodeBase(JsonSchemaNodeBase const&&) = delete;
+};
+class EmptyClass {
+public:
+    EmptyClass() = delete;
+    EmptyClass(EmptyClass const&) = delete;
+    EmptyClass(EmptyClass const&&) = delete;
+};
+template <typename T0, typename T1>
+class JsonSchemaObjectNode {
+public:
+    JsonSchemaObjectNode() = delete;
+    JsonSchemaObjectNode(JsonSchemaObjectNode const&) = delete;
+    JsonSchemaObjectNode(JsonSchemaObjectNode const&&) = delete;
+};
+template <typename T0, typename T1>
+class JsonParseState {
+public:
+    JsonParseState() = delete;
+    JsonParseState(JsonParseState const&) = delete;
+    JsonParseState(JsonParseState const&&) = delete;
+};
 
 #endif

@@ -19,50 +19,9 @@ public:
     /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*10*/ virtual void _moveToBlock();
-    /*11*/ virtual void __unk_vfn_3();
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual class BlockPos _selectRandomPosInVillage();
-    /*
-    inline void _moveToBlock(){
-        void (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?_moveToBlock@MoveToVillageGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos _selectRandomPosInVillage(){
-        class BlockPos (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?_selectRandomPosInVillage@MoveToVillageGoal@@MEAA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveToVillageGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveToVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MoveToVillageGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveToVillageGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (MoveToVillageGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@MoveToVillageGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void start(){
-        void (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MoveToVillageGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MoveToVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MoveToVillageGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();

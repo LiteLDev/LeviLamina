@@ -7,7 +7,7 @@
 class TickingAreaList {
 #include "Extra/TickingAreaListAPI.hpp"
 public:
-    MCAPI void checkEntityConditions(std::vector<class Vec3> const&, class std::function<void (class ITickingArea const&)>);
+    MCAPI void checkEntityConditions(std::vector<class Vec3> const&, class std::function<void (class ITickingArea const& )>);
 
 protected:
 

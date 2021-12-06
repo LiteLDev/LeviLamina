@@ -10,19 +10,9 @@ public:
     /*0*/ virtual ~OceanMixerOperationNode();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<int /*enum enum BiomeTemperatureCategory*/>) const;
-    /*
-    inline class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& a0, class Pos2d const& a1) const{
-        class std::tuple<class Pos2d, class Pos2d> (OceanMixerOperationNode::*rv)(class Pos2d const&, class Pos2d const&) const;
-        *((void**)&rv) = dlsym("?_getAreaRead@OceanMixerOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z");
-        return (this->*rv)(std::forward<class Pos2d const&>(a0), std::forward<class Pos2d const&>(a1));
-    }
-    inline void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>& a0, class Pos2d const& a1, class Pos2d const& a2, int a3, class OperationGraphResult<int \/*enum enum BiomeTemperatureCategory*\/> a4) const{
-        void (OceanMixerOperationNode::*rv)(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<int \/*enum enum BiomeTemperatureCategory*\/>) const;
-        *((void**)&rv) = dlsym("?_fillArea@OceanMixerOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1HV?$OperationGraphResult@W4BiomeTemperatureCategory@@@@@Z");
-        return (this->*rv)(std::forward<class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&>(a0), std::forward<class Pos2d const&>(a1), std::forward<class Pos2d const&>(a2), std::forward<int>(a3), std::forward<class OperationGraphResult<int \/*enum enum BiomeTemperatureCategory*\/>>(a4));
-    }
-    */
+    /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome* , class Biome* >&, class Pos2d const&, class Pos2d const&, int, class OperationGraphResult<int /*enum enum BiomeTemperatureCategory*/>) const;
+    /*4*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
+
 
 protected:
 

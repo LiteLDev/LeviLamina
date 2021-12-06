@@ -52,10 +52,10 @@ public:    /*
         *((void**)&rv) = dlsym("?save@ChemistryTableBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag&>(a0));
     }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const&)> a2){
-        void (ChemistryTableBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const&)>);
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
+        void (ChemistryTableBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@ChemistryTableBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const&)>>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
     }
     inline void setItem(int a0, class ItemStack const& a1){
         void (ChemistryTableBlockActor::*rv)(int, class ItemStack const&);

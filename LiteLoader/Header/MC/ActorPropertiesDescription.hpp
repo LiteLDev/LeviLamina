@@ -9,13 +9,7 @@ class ActorPropertiesDescription {
 public:
     /*0*/ virtual ~ActorPropertiesDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (ActorPropertiesDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@ActorPropertiesDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

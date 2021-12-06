@@ -9,13 +9,7 @@ class TickingAreaCommand {
 public:
     /*0*/ virtual ~TickingAreaCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (TickingAreaCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@TickingAreaCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&);
 
 protected:

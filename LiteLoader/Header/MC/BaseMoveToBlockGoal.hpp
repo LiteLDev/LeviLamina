@@ -17,30 +17,9 @@ public:
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
     /*8*/ virtual void _moveToBlock();
-    /*9*/ virtual void __unk_vfn_3();
+    /*9*/ virtual unsigned __int64 _getRepathTime() const;
     /*10*/ virtual bool findTargetBlock();
-    /*
-    inline void _moveToBlock(){
-        void (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?_moveToBlock@BaseMoveToBlockGoal@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BaseMoveToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BaseMoveToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool findTargetBlock(){
-        bool (BaseMoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?findTargetBlock@BaseMoveToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

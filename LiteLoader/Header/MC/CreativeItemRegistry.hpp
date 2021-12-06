@@ -21,13 +21,13 @@ public:
     MCAPI class CreativeItemEntry* updateItemEntry(unsigned int, class ItemInstance const&);
     MCAPI void updateNetIdMap();
     MCAPI static class CreativeItemRegistry* current();
-    MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance&)>);
+    MCAPI static void forEachCreativeItemInstance(class std::function<bool (class ItemInstance& )>);
     MCAPI static class std::mutex mCreativeListMutex;
     MCAPI static void setCurrentRegistry(std::unique_ptr<class CreativeItemRegistry>&&);
 
 protected:
 
 private:
-    MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance&)>);
+    MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance& )>);
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
 };

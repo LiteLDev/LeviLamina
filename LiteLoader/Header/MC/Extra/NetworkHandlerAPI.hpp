@@ -4,6 +4,12 @@
 
 #else
 // Add Member There
-class Connection;
+public:
+class Connection {
+public:
+    Connection() = delete;
+    Connection(Connection const&) = delete;
+    Connection(Connection const&&) = delete;
+};
 
 #endif

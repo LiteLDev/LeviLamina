@@ -8,16 +8,10 @@ class AttributeBuff {
 #include "Extra/AttributeBuffAPI.hpp"
 public:
     /*0*/ virtual ~AttributeBuff();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual void __unk_vfn_1() = 0;
+    /*1*/ virtual bool isInstantaneous() const = 0;
+    /*2*/ virtual bool isSerializable() const = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
-    /*
-    inline void setDurationAmplifier(class std::shared_ptr<class Amplifier> a0){
-        void (AttributeBuff::*rv)(class std::shared_ptr<class Amplifier>);
-        *((void**)&rv) = dlsym("?setDurationAmplifier@AttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class Amplifier>>(a0));
-    }
-    */
+
     MCAPI float getAmount() const;
     MCAPI unsigned __int64 getId() const;
     MCAPI int getOperand() const;

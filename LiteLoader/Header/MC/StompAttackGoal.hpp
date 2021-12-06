@@ -18,38 +18,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (StompAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@StompAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (StompAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@StompAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (StompAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@StompAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (StompAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@StompAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (StompAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@StompAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (StompAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@StompAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

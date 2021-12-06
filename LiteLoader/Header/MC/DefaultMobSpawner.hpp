@@ -10,13 +10,7 @@ class DefaultMobSpawner : public BaseMobSpawner {
 public:
     /*0*/ virtual ~DefaultMobSpawner();
     /*1*/ virtual class BlockPos const& getPos();
-    /*
-    inline class BlockPos const& getPos(){
-        class BlockPos const& (DefaultMobSpawner::*rv)();
-        *((void**)&rv) = dlsym("?getPos@DefaultMobSpawner@@UEAAAEBVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

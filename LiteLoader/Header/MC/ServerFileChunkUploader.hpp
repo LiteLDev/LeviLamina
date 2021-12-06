@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "IFileChunkUploader.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_SERVERFILECHUNKUPLOADER
 #include "Extra/ServerFileChunkUploaderAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SERVERFILECHUNKUPLOADER
@@ -15,17 +15,12 @@ public:
     /*3*/ virtual void getServerMissingChunks(struct FileInfo const&, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual void uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void (bool)>);
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
-    /*8*/ virtual void __unk_vfn_4();
-    /*9*/ virtual void __unk_vfn_5();
+    /*6*/ virtual bool canCancelUpload(struct FileInfo const&) const;
+    /*7*/ virtual void __unk_vfn_2();
+    /*8*/ virtual int /*enum enum UploadError*/ getInitErrorCode() const;
+    /*9*/ virtual float getUploadProgress(struct FileInfo const&) const;
     /*10*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
     /*
-    inline bool canCancelUpload(struct FileInfo const& a0) const{
-        bool (ServerFileChunkUploader::*rv)(struct FileInfo const&) const;
-        *((void**)&rv) = dlsym("?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
     inline void update(){
         void (ServerFileChunkUploader::*rv)();
         *((void**)&rv) = dlsym("?update@ServerFileChunkUploader@@UEAAXXZ");
@@ -40,36 +35,6 @@ public:
         void (ServerFileChunkUploader::*rv)(struct FileInfo const&);
         *((void**)&rv) = dlsym("?cancelUpload@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@@Z");
         return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
-    inline float getUploadProgress(struct FileInfo const& a0) const{
-        float (ServerFileChunkUploader::*rv)(struct FileInfo const&) const;
-        *((void**)&rv) = dlsym("?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
-    inline int \/*enum enum UploadError*\/ getInitErrorCode() const{
-        int \/*enum enum UploadError*\/ (ServerFileChunkUploader::*rv)() const;
-        *((void**)&rv) = dlsym("?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ");
-        return (this->*rv)();
-    }
-    inline struct FileChunkInfo getChunkInfo(struct FileInfo const& a0, int a1) const{
-        struct FileChunkInfo (ServerFileChunkUploader::*rv)(struct FileInfo const&, int) const;
-        *((void**)&rv) = dlsym("?getChunkInfo@ServerFileChunkUploader@@UEBA?AUFileChunkInfo@@AEBUFileInfo@@H@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0), std::forward<int>(a1));
-    }
-    inline void getServerMissingChunks(struct FileInfo const& a0, class std::function<void (std::vector<struct FileChunkInfo>)> a1) const{
-        void (ServerFileChunkUploader::*rv)(struct FileInfo const&, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
-        *((void**)&rv) = dlsym("?getServerMissingChunks@ServerFileChunkUploader@@UEBAXAEBUFileInfo@@V?$function@$$A6AXV?$vector@UFileChunkInfo@@V?$allocator@UFileChunkInfo@@@std@@@std@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0), std::forward<class std::function<void (std::vector<struct FileChunkInfo>)>>(a1));
-    }
-    inline void initFileUploader(std::string const& a0, struct FileInfo const& a1, int a2, class Json::Value const& a3, class std::function<void (bool)> a4){
-        void (ServerFileChunkUploader::*rv)(std::string const&, struct FileInfo const&, int, class Json::Value const&, class std::function<void (bool)>);
-        *((void**)&rv) = dlsym("?initFileUploader@ServerFileChunkUploader@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBUFileInfo@@HAEBVValue@Json@@V?$function@$$A6AX_N@Z@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<struct FileInfo const&>(a1), std::forward<int>(a2), std::forward<class Json::Value const&>(a3), std::forward<class std::function<void (bool)>>(a4));
-    }
-    inline void uploadChunk(struct FileInfo const& a0, struct FileChunkInfo const& a1, std::vector<unsigned char> const& a2, class std::function<void (bool)> a3){
-        void (ServerFileChunkUploader::*rv)(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void (bool)>);
-        *((void**)&rv) = dlsym("?uploadChunk@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@AEBUFileChunkInfo@@AEBV?$vector@EV?$allocator@E@std@@@std@@V?$function@$$A6AX_N@Z@5@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0), std::forward<struct FileChunkInfo const&>(a1), std::forward<std::vector<unsigned char> const&>(a2), std::forward<class std::function<void (bool)>>(a3));
     }
     */
 

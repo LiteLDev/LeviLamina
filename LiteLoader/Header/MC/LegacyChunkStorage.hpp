@@ -17,26 +17,10 @@ public:
     /*6*/ virtual bool saveLiveChunk(class LevelChunk&);
     /*7*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*8*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*9*/ virtual void __unk_vfn_0();
+    /*9*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*10*/ virtual void clearDeletedEntities();
-    /*11*/ virtual void __unk_vfn_1();
-    /*
-    inline void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> a0){
-        void (LegacyChunkStorage::*rv)(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-        *((void**)&rv) = dlsym("?acquireDiscarded@LegacyChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>>(a0));
-    }
-    inline void loadChunk(class LevelChunk& a0, bool a1){
-        void (LegacyChunkStorage::*rv)(class LevelChunk&, bool);
-        *((void**)&rv) = dlsym("?loadChunk@LegacyChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0), std::forward<bool>(a1));
-    }
-    inline bool saveLiveChunk(class LevelChunk& a0){
-        bool (LegacyChunkStorage::*rv)(class LevelChunk&);
-        *((void**)&rv) = dlsym("?saveLiveChunk@LegacyChunkStorage@@UEAA_NAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    */
+    /*11*/ virtual bool canCreateViews() const;
+
 
 protected:
 

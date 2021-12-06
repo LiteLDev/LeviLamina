@@ -5,7 +5,15 @@
 #else
 // Add Member There
 public:
-struct InitProxy;
-struct SetScoreOutput;
+struct InitProxy {
+    InitProxy() = delete;
+    InitProxy(InitProxy const&) = delete;
+    InitProxy(InitProxy const&&) = delete;
+};
+struct SetScoreOutput {
+    SetScoreOutput() = delete;
+    SetScoreOutput(SetScoreOutput const&) = delete;
+    SetScoreOutput(SetScoreOutput const&&) = delete;
+};
 
 #endif

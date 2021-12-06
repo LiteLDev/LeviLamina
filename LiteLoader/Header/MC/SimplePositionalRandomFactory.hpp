@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~SimplePositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
     /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
-    /*
-    inline std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& a0) const{
-        std::unique_ptr<class IRandom> (SimplePositionalRandomFactory::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?forBlockPos@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline std::unique_ptr<class IRandom> forString(std::string const& a0) const{
-        std::unique_ptr<class IRandom> (SimplePositionalRandomFactory::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?forString@SimplePositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
     MCAPI class SimpleRandom forBlockPosImpl(class BlockPos const&) const;
 
 protected:

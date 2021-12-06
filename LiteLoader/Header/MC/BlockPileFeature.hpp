@@ -12,18 +12,7 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /*3*/ virtual class Block const& getBlockToPlace(class Random&) const;
-    /*
-    inline class Block const& getBlockToPlace(class Random& a0) const{
-        class Block const& (BlockPileFeature::*rv)(class Random&) const;
-        *((void**)&rv) = dlsym("?getBlockToPlace@BlockPileFeature@@MEBAAEBVBlock@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Random&>(a0));
-    }
-    inline bool place(class BlockSource& a0, class BlockPos const& a1, class Random& a2) const{
-        bool (BlockPileFeature::*rv)(class BlockSource&, class BlockPos const&, class Random&) const;
-        *((void**)&rv) = dlsym("?place@BlockPileFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
-    }
-    */
+
 
 protected:
 

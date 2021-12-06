@@ -10,35 +10,14 @@ class HurtByTargetGoal : public TargetGoal {
 public:
     /*0*/ virtual ~HurtByTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual bool isTargetGoal() const;
     /*3*/ virtual void start();
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void stop();
     /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
     /*8*/ virtual void alertOther(class Mob*, class Mob*);
-    /*
-    inline void alertOther(class Mob* a0, class Mob* a1){
-        void (HurtByTargetGoal::*rv)(class Mob*, class Mob*);
-        *((void**)&rv) = dlsym("?alertOther@HurtByTargetGoal@@MEAAXPEAVMob@@0@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0), std::forward<class Mob*>(a1));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (HurtByTargetGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@HurtByTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (HurtByTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@HurtByTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (HurtByTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@HurtByTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

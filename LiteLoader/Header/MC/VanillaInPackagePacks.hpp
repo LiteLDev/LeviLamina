@@ -9,13 +9,7 @@ class VanillaInPackagePacks {
 public:
     /*0*/ virtual ~VanillaInPackagePacks();
     /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(int /*enum enum PackType*/) const;
-    /*
-    inline std::vector<struct IInPackagePacks::MetaData> getPacks(int \/*enum enum PackType*\/ a0) const{
-        std::vector<struct IInPackagePacks::MetaData> (VanillaInPackagePacks::*rv)(int \/*enum enum PackType*\/) const;
-        *((void**)&rv) = dlsym("?getPacks@VanillaInPackagePacks@@UEBA?AV?$vector@UMetaData@IInPackagePacks@@V?$allocator@UMetaData@IInPackagePacks@@@std@@@std@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum PackType*\/>(a0));
-    }
-    */
+
 
 protected:
 

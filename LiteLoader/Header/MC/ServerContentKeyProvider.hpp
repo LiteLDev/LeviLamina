@@ -9,6 +9,11 @@ class ServerContentKeyProvider {
 public:
     /*0*/ virtual ~ServerContentKeyProvider();
     /*1*/ virtual std::string getContentKey(class ContentIdentity const&) const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
+    /*6*/ virtual bool canAccess(class ContentIdentity const&) const;
     /*
     inline void setTempContentKeys(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string > > > const& a0){
         void (ServerContentKeyProvider::*rv)(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string > > > const&);
@@ -19,16 +24,6 @@ public:
         void (ServerContentKeyProvider::*rv)();
         *((void**)&rv) = dlsym("?clearTempContentKeys@ServerContentKeyProvider@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline bool canAccess(class ContentIdentity const& a0) const{
-        bool (ServerContentKeyProvider::*rv)(class ContentIdentity const&) const;
-        *((void**)&rv) = dlsym("?canAccess@ServerContentKeyProvider@@UEBA_NAEBVContentIdentity@@@Z");
-        return (this->*rv)(std::forward<class ContentIdentity const&>(a0));
-    }
-    inline std::string getContentKey(class ContentIdentity const& a0) const{
-        std::string (ServerContentKeyProvider::*rv)(class ContentIdentity const&) const;
-        *((void**)&rv) = dlsym("?getContentKey@ServerContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z");
-        return (this->*rv)(std::forward<class ContentIdentity const&>(a0));
     }
     */
 

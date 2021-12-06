@@ -4,5 +4,11 @@
 
 #else
 // Add Member There
+public:
+struct BlockVolumeDimensions {
+    BlockVolumeDimensions() = delete;
+    BlockVolumeDimensions(BlockVolumeDimensions const&) = delete;
+    BlockVolumeDimensions(BlockVolumeDimensions const&&) = delete;
+};
 
 #endif

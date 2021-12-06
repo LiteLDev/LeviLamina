@@ -17,7 +17,7 @@
 #ifndef GSL_POINTERS_H
 #define GSL_POINTERS_H
 
-#include <gsl/gsl_assert>  // for Ensures, Expects
+#include "gsl_assert"  // for Ensures, Expects
 
 #include <algorithm>    // for forward
 #include <iosfwd>       // for ptrdiff_t, nullptr_t, ostream, size_t

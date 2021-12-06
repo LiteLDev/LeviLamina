@@ -9,13 +9,7 @@ class AgentBodyControl {
 public:
     /*0*/ virtual ~AgentBodyControl();
     /*1*/ virtual void clientTick(class Mob&);
-    /*
-    inline void clientTick(class Mob& a0){
-        void (AgentBodyControl::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?clientTick@AgentBodyControl@@UEAAXAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+
 
 protected:
 

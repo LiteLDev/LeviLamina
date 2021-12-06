@@ -28,13 +28,7 @@ public:
     /*18*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_18();
     /*20*/ virtual void flushToPermanentStorage();
-    /*
-    inline void flushToPermanentStorage(){
-        void (FlushableStorageAreaEnv::*rv)();
-        *((void**)&rv) = dlsym("?flushToPermanentStorage@FlushableStorageAreaEnv@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

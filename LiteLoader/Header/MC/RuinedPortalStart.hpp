@@ -9,13 +9,9 @@ class RuinedPortalStart : public StructureStart {
 #include "Extra/RuinedPortalStartAPI.hpp"
 public:
     /*0*/ virtual ~RuinedPortalStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (RuinedPortalStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@RuinedPortalStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

@@ -8,8 +8,8 @@ class DBStoragePerformanceData {
 #include "Extra/DBStoragePerformanceDataAPI.hpp"
 public:
     MCAPI void resetAll();
-    MCAPI static class std::array<char const*, 11> CATEGORY_NAMES;
-    MCAPI static class std::array<char const*, 4> OPERATION_NAMES;
+    MCAPI static class std::array<char const* , 11> CATEGORY_NAMES;
+    MCAPI static class std::array<char const* , 4> OPERATION_NAMES;
 
 protected:
 

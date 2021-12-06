@@ -42,39 +42,39 @@ public:
     /*30*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*32*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*33*/ virtual void __unk_vfn_12();
+    /*33*/ virtual float getPickRadius();
     /*34*/ virtual void awardKillScore(class Actor&, int);
     /*35*/ virtual class HashedString const& queryEntityRenderer() const;
     /*36*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*37*/ virtual bool canFreeze() const;
     /*38*/ virtual int getPortalWaitTime() const;
     /*39*/ virtual bool canChangeDimensions() const;
-    /*40*/ virtual void __unk_vfn_13();
+    /*40*/ virtual void __unk_vfn_12();
     /*41*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*42*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*43*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*44*/ virtual bool canBePulledIntoVehicle() const;
-    /*45*/ virtual void __unk_vfn_14();
+    /*45*/ virtual void __unk_vfn_13();
     /*46*/ virtual bool canSynchronizeNewEntity() const;
     /*47*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
     /*48*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
-    /*49*/ virtual void __unk_vfn_15();
-    /*50*/ virtual void __unk_vfn_16();
+    /*49*/ virtual void __unk_vfn_14();
+    /*50*/ virtual void __unk_vfn_15();
     /*51*/ virtual bool isWorldBuilder() const;
-    /*52*/ virtual void __unk_vfn_17();
+    /*52*/ virtual void __unk_vfn_16();
     /*53*/ virtual bool isAdventure() const;
     /*54*/ virtual bool canDestroyBlock(class Block const&) const;
     /*55*/ virtual void setAuxValue(int);
     /*56*/ virtual void stopSpinAttack();
-    /*57*/ virtual void __unk_vfn_18();
-    /*58*/ virtual void __unk_vfn_19();
+    /*57*/ virtual void __unk_vfn_17();
+    /*58*/ virtual void __unk_vfn_18();
     /*59*/ virtual void die(class ActorDamageSource const&);
-    /*60*/ virtual void __unk_vfn_20();
+    /*60*/ virtual void __unk_vfn_19();
     /*61*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*62*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*63*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*64*/ virtual void __unk_vfn_21();
-    /*65*/ virtual void __unk_vfn_22();
+    /*64*/ virtual void __unk_vfn_20();
+    /*65*/ virtual void __unk_vfn_21();
     /*66*/ virtual void spawnAnim();
     /*67*/ virtual bool hurtEffects(class ActorDamageSource const&, int, bool, bool);
     /*68*/ virtual void aiStep();
@@ -82,117 +82,22 @@ public:
     /*70*/ virtual int getItemUseDuration() const;
     /*71*/ virtual float getItemUseStartupProgress() const;
     /*72*/ virtual float getItemUseIntervalProgress() const;
-    /*73*/ virtual void __unk_vfn_23();
+    /*73*/ virtual void __unk_vfn_22();
     /*74*/ virtual bool isAlliedTo(class Mob*);
-    /*75*/ virtual void __unk_vfn_24();
+    /*75*/ virtual void __unk_vfn_23();
     /*76*/ virtual int getArmorValue();
     /*77*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*78*/ virtual void onBorn(class Actor&, class Actor&);
-    /*79*/ virtual void __unk_vfn_25();
-    /*80*/ virtual void __unk_vfn_26();
+    /*79*/ virtual int getAttackTime();
+    /*80*/ virtual void __unk_vfn_24();
     /*81*/ virtual void newServerAiStep();
     /*82*/ virtual void _serverAiMobStep();
-    /*83*/ virtual void __unk_vfn_27();
+    /*83*/ virtual void __unk_vfn_25();
     /*
-    inline bool canFreeze() const{
-        bool (WitherBoss::*rv)() const;
-        *((void**)&rv) = dlsym("?canFreeze@WitherBoss@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool startRiding(class Actor& a0){
-        bool (WitherBoss::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?startRiding@WitherBoss@@UEAA_NAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
     inline void causeFallDamage(float a0, float a1, class ActorDamageSource a2){
         void (WitherBoss::*rv)(float, float, class ActorDamageSource);
         *((void**)&rv) = dlsym("?causeFallDamage@WitherBoss@@UEAAXMMVActorDamageSource@@@Z");
         return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<class ActorDamageSource>(a2));
-    }
-    inline void setBlockMovementSlowdownMultiplier(class Vec3 const& a0){
-        void (WitherBoss::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setBlockMovementSlowdownMultiplier@WitherBoss@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (WitherBoss::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@WitherBoss@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (WitherBoss::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@WitherBoss@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (WitherBoss::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@WitherBoss@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (WitherBoss::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool canBeAffectedByArrow(class MobEffectInstance const& a0) const{
-        bool (WitherBoss::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffectedByArrow@WitherBoss@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (WitherBoss::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@WitherBoss@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline int getArmorValue(){
-        int (WitherBoss::*rv)();
-        *((void**)&rv) = dlsym("?getArmorValue@WitherBoss@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getFiringPos() const{
-        class Vec3 (WitherBoss::*rv)() const;
-        *((void**)&rv) = dlsym("?getFiringPos@WitherBoss@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (WitherBoss::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@WitherBoss@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline bool hurtEffects(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (WitherBoss::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?hurtEffects@WitherBoss@@UEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (WitherBoss::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@WitherBoss@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void newServerAiStep(){
-        void (WitherBoss::*rv)();
-        *((void**)&rv) = dlsym("?newServerAiStep@WitherBoss@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (WitherBoss::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@WitherBoss@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (WitherBoss::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (WitherBoss::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@WitherBoss@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void remove(){
-        void (WitherBoss::*rv)();
-        *((void**)&rv) = dlsym("?remove@WitherBoss@@UEAAXXZ");
-        return (this->*rv)();
     }
     */
     MCAPI void awardSpawnWitherAchievement() const;

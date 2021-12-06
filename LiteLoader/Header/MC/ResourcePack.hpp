@@ -11,7 +11,7 @@ public:
     /*0*/ virtual ~ResourcePack();
 
     MCAPI bool areKnownFilesValid();
-    MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const&)>, int, bool) const;
+    MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, int, bool) const;
     MCAPI void generateAssetSet();
     MCAPI class PackManifest& getManifest();
     MCAPI enum PackCategory getPackCategory() const;

@@ -9,17 +9,11 @@ class Trade2Ingredient1ContainerValidation : public ContainerValidationBase {
 #include "Extra/Trade2Ingredient1ContainerValidationAPI.hpp"
 public:
     /*0*/ virtual ~Trade2Ingredient1ContainerValidation();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*
-    inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
-        bool (Trade2Ingredient1ContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@Trade2Ingredient1ContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class Container const&>(a1), std::forward<int>(a2));
-    }
-    */
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
+
 
 protected:
 

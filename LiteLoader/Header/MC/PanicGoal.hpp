@@ -9,44 +9,13 @@ class PanicGoal {
 public:
     /*0*/ virtual ~PanicGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (PanicGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@PanicGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@PanicGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@PanicGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@PanicGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@PanicGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (PanicGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@PanicGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

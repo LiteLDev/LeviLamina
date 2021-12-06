@@ -10,16 +10,10 @@ class AcaciaTreeCanopy {
 public:
     /*0*/ virtual ~AcaciaTreeCanopy();
     /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
-    /*
-    inline class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI& a0, class BlockPos const& a1, class Random& a2, class RenderParams& a3, struct TreeHelper::TreeParams const& a4, std::vector<class BlockPos> const& a5) const{
-        class std::optional<class BlockPos> (AcaciaTreeCanopy::*rv)(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
-        *((void**)&rv) = dlsym("?placeCanopy@AcaciaTreeCanopy@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@AEBUTreeParams@TreeHelper@@AEBV?$vector@VBlockPos@@V?$allocator@VBlockPos@@@std@@@3@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2), std::forward<class RenderParams&>(a3), std::forward<struct TreeHelper::TreeParams const&>(a4), std::forward<std::vector<class BlockPos> const&>(a5));
-    }
-    */
+
 
 protected:
 
 private:
-    MCAPI void _placeLeaf(class IBlockWorldGenAPI&, class BlockPos const&, class gsl::not_null<class Block const*>, struct TreeHelper::TreeParams const&) const;
+    MCAPI void _placeLeaf(class IBlockWorldGenAPI&, class BlockPos const&, class gsl::not_null<class Block const* >, struct TreeHelper::TreeParams const&) const;
 };

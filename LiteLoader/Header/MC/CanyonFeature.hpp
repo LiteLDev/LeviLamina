@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~CanyonFeature();
     /*1*/ virtual bool carve(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&) const;
     /*2*/ virtual void addFeature(class BlockVolume&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
-    /*
-    inline void addFeature(class BlockVolume& a0, class BiomeSource const& a1, struct CanyonFeatureUtils::CanyonConfiguration const& a2, class ChunkPos const& a3, class Random& a4, int a5, int a6, struct WorldGenContext const& a7){
-        void (CanyonFeature::*rv)(class BlockVolume&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class ChunkPos const&, class Random&, int, int, struct WorldGenContext const&);
-        *((void**)&rv) = dlsym("?addFeature@CanyonFeature@@MEAAXAEAVBlockVolume@@AEBVBiomeSource@@AEBUCanyonConfiguration@CanyonFeatureUtils@@AEBVChunkPos@@AEAVRandom@@HHAEBUWorldGenContext@@@Z");
-        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class BiomeSource const&>(a1), std::forward<struct CanyonFeatureUtils::CanyonConfiguration const&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class Random&>(a4), std::forward<int>(a5), std::forward<int>(a6), std::forward<struct WorldGenContext const&>(a7));
-    }
-    inline bool carve(class BlockVolume& a0, class BiomeSource const& a1, class Random& a2, class ChunkPos const& a3, class Vec3 const& a4, class Vec3 const& a5, int a6, int a7, int a8, int a9, int a10, int a11, float a12, float a13, class gsl::span<float const, -1> a14, struct WorldGenContext const& a15) const{
-        bool (CanyonFeature::*rv)(class BlockVolume&, class BiomeSource const&, class Random&, class ChunkPos const&, class Vec3 const&, class Vec3 const&, int, int, int, int, int, int, float, float, class gsl::span<float const, -1>, struct WorldGenContext const&) const;
-        *((void**)&rv) = dlsym("?carve@CanyonFeature@@MEBA_NAEAVBlockVolume@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@4HHHHHHMMV?$span@$$CBM$0?0@gsl@@AEBUWorldGenContext@@@Z");
-        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class BiomeSource const&>(a1), std::forward<class Random&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class Vec3 const&>(a4), std::forward<class Vec3 const&>(a5), std::forward<int>(a6), std::forward<int>(a7), std::forward<int>(a8), std::forward<int>(a9), std::forward<int>(a10), std::forward<int>(a11), std::forward<float>(a12), std::forward<float>(a13), std::forward<class gsl::span<float const, -1>>(a14), std::forward<struct WorldGenContext const&>(a15));
-    }
-    */
+
     MCAPI void apply(class BlockVolume&, class ChunkPos const&, class BiomeSource const&, struct CanyonFeatureUtils::CanyonConfiguration const&, class Random&, unsigned int, struct WorldGenContext const&);
 
 protected:

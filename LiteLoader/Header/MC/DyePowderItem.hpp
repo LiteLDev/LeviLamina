@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "FertilizerItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_DYEPOWDERITEM
 #include "Extra/DyePowderItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_DYEPOWDERITEM
@@ -28,15 +28,15 @@ public:
     /*16*/ virtual bool isUseable() const;
     /*17*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*18*/ virtual class FuelItemComponent* getFuel() const;
-    /*19*/ virtual void __unk_vfn_6();
+    /*19*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*20*/ virtual bool canDestroySpecial(class Block const&) const;
     /*21*/ virtual int getLevelDataForAuxValue(int) const;
     /*22*/ virtual short getMaxDamage() const;
     /*23*/ virtual int getAttackDamage() const;
     /*24*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*25*/ virtual void __unk_vfn_7();
-    /*26*/ virtual void __unk_vfn_8();
-    /*27*/ virtual void __unk_vfn_9();
+    /*25*/ virtual void __unk_vfn_6();
+    /*26*/ virtual int getPatternIndex() const;
+    /*27*/ virtual void __unk_vfn_7();
     /*28*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*29*/ virtual bool canDestroyInCreative() const;
     /*30*/ virtual bool isDestructive(int) const;
@@ -47,22 +47,22 @@ public:
     /*35*/ virtual int getEnchantSlot() const;
     /*36*/ virtual int getEnchantValue() const;
     /*37*/ virtual int getArmorValue() const;
-    /*38*/ virtual void __unk_vfn_10();
+    /*38*/ virtual void __unk_vfn_8();
     /*39*/ virtual bool isValidAuxValue(int) const;
-    /*40*/ virtual void __unk_vfn_11();
-    /*41*/ virtual void __unk_vfn_12();
-    /*42*/ virtual void __unk_vfn_13();
-    /*43*/ virtual void __unk_vfn_14();
+    /*40*/ virtual float getViewDamping() const;
+    /*41*/ virtual void __unk_vfn_9();
+    /*42*/ virtual void __unk_vfn_10();
+    /*43*/ virtual void __unk_vfn_11();
     /*44*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*45*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*46*/ virtual void __unk_vfn_15();
-    /*47*/ virtual void clearColor(class CompoundTag*) const;
-    /*48*/ virtual void __unk_vfn_16();
-    /*49*/ virtual void __unk_vfn_17();
-    /*50*/ virtual void __unk_vfn_18();
-    /*51*/ virtual void __unk_vfn_19();
-    /*52*/ virtual void __unk_vfn_20();
-    /*53*/ virtual void __unk_vfn_21();
+    /*46*/ virtual void __unk_vfn_12();
+    /*47*/ virtual void clearColor(class ItemStackBase&) const;
+    /*48*/ virtual void clearColor(class CompoundTag*) const;
+    /*49*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*50*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_14();
+    /*52*/ virtual void __unk_vfn_15();
+    /*53*/ virtual void __unk_vfn_16();
     /*54*/ virtual bool canUseOnSimTick() const;
     /*55*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     /*56*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
@@ -70,14 +70,14 @@ public:
     /*58*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*59*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*60*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*61*/ virtual void __unk_vfn_22();
+    /*61*/ virtual void __unk_vfn_17();
     /*62*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*63*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*64*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*65*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*66*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*67*/ virtual void __unk_vfn_23();
-    /*68*/ virtual void __unk_vfn_24();
+    /*67*/ virtual void __unk_vfn_18();
+    /*68*/ virtual void __unk_vfn_19();
     /*69*/ virtual bool validFishInteraction(int) const;
     /*70*/ virtual std::string getInteractText(class Player const&) const;
     /*71*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -85,52 +85,11 @@ public:
     /*73*/ virtual class Item& setIcon(std::string const&, int);
     /*74*/ virtual bool canBeCharged() const;
     /*75*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*76*/ virtual void __unk_vfn_25();
+    /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*79*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-    /*
-    inline bool isDye() const{
-        bool (DyePowderItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isDye@DyePowderItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidAuxValue(int a0) const{
-        bool (DyePowderItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isValidAuxValue@DyePowderItem@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool _useOn(class ItemStack& a0, class Actor& a1, class BlockPos a2, unsigned char a3, float a4, float a5, float a6) const{
-        bool (DyePowderItem::*rv)(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-        *((void**)&rv) = dlsym("?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos>(a2), std::forward<unsigned char>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
-    }
-    inline std::string buildDescriptionId(class ItemDescriptor const& a0, class CompoundTag const* a1) const{
-        std::string (DyePowderItem::*rv)(class ItemDescriptor const&, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?buildDescriptionId@DyePowderItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class CompoundTag const*>(a1));
-    }
-    inline bool dispense(class BlockSource& a0, class Container& a1, int a2, class Vec3 const& a3, unsigned char a4) const{
-        bool (DyePowderItem::*rv)(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?dispense@DyePowderItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Container&>(a1), std::forward<int>(a2), std::forward<class Vec3 const&>(a3), std::forward<unsigned char>(a4));
-    }
-    inline int \/*enum enum ItemColor*\/ getItemColor() const{
-        int \/*enum enum ItemColor*\/ (DyePowderItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemColor@DyePowderItem@@UEBA?AW4ItemColor@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isFertilizer() const{
-        bool (DyePowderItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isFertilizer@DyePowderItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Item& setIcon(std::string const& a0, int a1){
-        class Item& (DyePowderItem::*rv)(std::string const&, int);
-        *((void**)&rv) = dlsym("?setIcon@DyePowderItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int>(a1));
-    }
-    */
+
 
 protected:
 

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (ChargeAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@ChargeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (ChargeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@ChargeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (ChargeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@ChargeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (ChargeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@ChargeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (ChargeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@ChargeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (ChargeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@ChargeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

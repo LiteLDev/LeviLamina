@@ -23,43 +23,7 @@ public:
     /*13*/ virtual void __unk_vfn_5();
     /*14*/ virtual void __unk_vfn_6();
     /*15*/ virtual void __unk_vfn_7();
-    /*
-    inline void clearServerList(){
-        void (NetherNetServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?clearServerList@NetherNetServerLocator@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline std::vector<struct PingedCompatibleServer> getServerList() const{
-        std::vector<struct PingedCompatibleServer> (NetherNetServerLocator::*rv)() const;
-        *((void**)&rv) = dlsym("?getServerList@NetherNetServerLocator@@UEBA?AV?$vector@UPingedCompatibleServer@@V?$allocator@UPingedCompatibleServer@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void startAnnouncingServer(std::string const& a0, std::string const& a1, int \/*enum enum GameType*\/ a2, int a3, int a4, bool a5){
-        void (NetherNetServerLocator::*rv)(std::string const&, std::string const&, int \/*enum enum GameType*\/, int, int, bool);
-        *((void**)&rv) = dlsym("?startAnnouncingServer@NetherNetServerLocator@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4GameType@@HH_N@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<int \/*enum enum GameType*\/>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<bool>(a5));
-    }
-    inline void startServerDiscovery(struct PortPair a0){
-        void (NetherNetServerLocator::*rv)(struct PortPair);
-        *((void**)&rv) = dlsym("?startServerDiscovery@NetherNetServerLocator@@UEAAXUPortPair@@@Z");
-        return (this->*rv)(std::forward<struct PortPair>(a0));
-    }
-    inline void stopAnnouncingServer(){
-        void (NetherNetServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?stopAnnouncingServer@NetherNetServerLocator@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stopServerDiscovery(){
-        void (NetherNetServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?stopServerDiscovery@NetherNetServerLocator@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void update(){
-        void (NetherNetServerLocator::*rv)();
-        *((void**)&rv) = dlsym("?update@NetherNetServerLocator@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -12,46 +12,15 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (PickupItemsGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@PickupItemsGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@PickupItemsGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@PickupItemsGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@PickupItemsGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@PickupItemsGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (PickupItemsGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@PickupItemsGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 
 private:
-    MCAPI std::vector<class gsl::not_null<class ItemActor*>> _filterValidTargets(std::vector<struct DistanceSortedActor> const&) const;
+    MCAPI std::vector<class gsl::not_null<class ItemActor* >> _filterValidTargets(std::vector<struct DistanceSortedActor> const&) const;
     MCAPI struct Shareable const* _getShareableItem(class ItemStack const&) const;
     MCAPI void _pickItemUp(class ItemActor*);
 };

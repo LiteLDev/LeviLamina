@@ -7,7 +7,7 @@
 class FeatureRegistry {
 #include "Extra/FeatureRegistryAPI.hpp"
 public:
-    MCAPI void forEachFeature(class std::function<void (class HashedString const&, class WeakRefT<struct FeatureRefTraits>)>) const;
+    MCAPI void forEachFeature(class std::function<void (class HashedString const& , class WeakRefT<struct FeatureRefTraits>)>) const;
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;
     MCAPI std::vector<std::string> getSmallFeaturePasses() const;
     MCAPI bool isFeaturePassDefined(std::string const&) const;

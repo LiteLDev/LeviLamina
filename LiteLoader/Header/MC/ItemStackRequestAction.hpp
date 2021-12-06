@@ -8,23 +8,10 @@ class ItemStackRequestAction {
 #include "Extra/ItemStackRequestActionAPI.hpp"
 public:
     /*0*/ virtual ~ItemStackRequestAction();
-    /*
-    inline class ItemStackRequestActionCraftBase const* getCraftAction() const{
-        class ItemStackRequestActionCraftBase const* (ItemStackRequestAction::*rv)() const;
-        *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ");
-        return (this->*rv)();
-    }
-    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& a0, bool a1){
-        void (ItemStackRequestAction::*rv)(class BlockPalette&, bool);
-        *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
-    }
-    inline int getFilteredStringIndex() const{
-        int (ItemStackRequestAction::*rv)() const;
-        *((void**)&rv) = dlsym("?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
+    /*2*/ virtual int getFilteredStringIndex() const;
+    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
+
     MCAPI enum ItemStackRequestActionType getActionType() const;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
     MCAPI static std::unique_ptr<class ItemStackRequestAction> read(class ReadOnlyBinaryStream&);

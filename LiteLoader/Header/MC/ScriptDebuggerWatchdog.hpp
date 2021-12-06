@@ -8,26 +8,10 @@ class ScriptDebuggerWatchdog {
 #include "Extra/ScriptDebuggerWatchdogAPI.hpp"
 public:
     /*0*/ virtual ~ScriptDebuggerWatchdog();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool requireClose() const;
     /*2*/ virtual void startListenTimeout();
     /*3*/ virtual bool listenTimeoutExpired() const;
-    /*
-    inline bool requireClose() const{
-        bool (ScriptDebuggerWatchdog::*rv)() const;
-        *((void**)&rv) = dlsym("?requireClose@ScriptDebuggerWatchdog@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool listenTimeoutExpired() const{
-        bool (ScriptDebuggerWatchdog::*rv)() const;
-        *((void**)&rv) = dlsym("?listenTimeoutExpired@ScriptDebuggerWatchdog@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void startListenTimeout(){
-        void (ScriptDebuggerWatchdog::*rv)();
-        *((void**)&rv) = dlsym("?startListenTimeout@ScriptDebuggerWatchdog@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

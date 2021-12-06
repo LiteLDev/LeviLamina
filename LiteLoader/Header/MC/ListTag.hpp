@@ -13,58 +13,12 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;
     /*9*/ virtual unsigned __int64 hash() const;
-    /*
-    inline int \/*enum enum Tag::Type*\/ getId() const{
-        int \/*enum enum Tag::Type*\/ (ListTag::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@ListTag@@UEBA?AW4Type@Tag@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class Tag> copy() const{
-        std::unique_ptr<class Tag> (ListTag::*rv)() const;
-        *((void**)&rv) = dlsym("?copy@ListTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void deleteChildren(){
-        void (ListTag::*rv)();
-        *((void**)&rv) = dlsym("?deleteChildren@ListTag@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool equals(class Tag const& a0) const{
-        bool (ListTag::*rv)(class Tag const&) const;
-        *((void**)&rv) = dlsym("?equals@ListTag@@UEBA_NAEBVTag@@@Z");
-        return (this->*rv)(std::forward<class Tag const&>(a0));
-    }
-    inline unsigned __int64 hash() const{
-        unsigned __int64 (ListTag::*rv)() const;
-        *((void**)&rv) = dlsym("?hash@ListTag@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline void load(class IDataInput& a0){
-        void (ListTag::*rv)(class IDataInput&);
-        *((void**)&rv) = dlsym("?load@ListTag@@UEAAXAEAVIDataInput@@@Z");
-        return (this->*rv)(std::forward<class IDataInput&>(a0));
-    }
-    inline void print(std::string const& a0, class PrintStream& a1) const{
-        void (ListTag::*rv)(std::string const&, class PrintStream&) const;
-        *((void**)&rv) = dlsym("?print@ListTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class PrintStream&>(a1));
-    }
-    inline std::string toString() const{
-        std::string (ListTag::*rv)() const;
-        *((void**)&rv) = dlsym("?toString@ListTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void write(class IDataOutput& a0) const{
-        void (ListTag::*rv)(class IDataOutput&) const;
-        *((void**)&rv) = dlsym("?write@ListTag@@UEBAXAEAVIDataOutput@@@Z");
-        return (this->*rv)(std::forward<class IDataOutput&>(a0));
-    }
-    */
+
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;
     MCAPI class Tag* get(int) const;

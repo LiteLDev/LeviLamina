@@ -9,13 +9,7 @@ class CraftableCompounds {
 public:
     /*0*/ virtual ~CraftableCompounds();
     /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, int /*enum enum LabTableReactionType*/, int /*enum enum CompoundContainerType*/);
-    /*
-    inline void _registerCompound(std::vector<class ItemStack> const& a0, class ItemStack const& a1, int \/*enum enum LabTableReactionType*\/ a2, int \/*enum enum CompoundContainerType*\/ a3){
-        void (CraftableCompounds::*rv)(std::vector<class ItemStack> const&, class ItemStack const&, int \/*enum enum LabTableReactionType*\/, int \/*enum enum CompoundContainerType*\/);
-        *((void**)&rv) = dlsym("?_registerCompound@CraftableCompounds@@MEAAXAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEBVItemStack@@W4LabTableReactionType@@W4CompoundContainerType@@@Z");
-        return (this->*rv)(std::forward<std::vector<class ItemStack> const&>(a0), std::forward<class ItemStack const&>(a1), std::forward<int \/*enum enum LabTableReactionType*\/>(a2), std::forward<int \/*enum enum CompoundContainerType*\/>(a3));
-    }
-    */
+
     MCAPI std::vector<class ItemStack> const* getComponents(class ItemDescriptor const&) const;
     MCAPI class ItemStack const& getCompound(std::vector<class ItemStack> const&);
     MCAPI enum LabTableReactionType getReaction(std::vector<class ItemStack> const&);

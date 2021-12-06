@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct FunctionInfo;
+struct FunctionInfo {
+    FunctionInfo() = delete;
+    FunctionInfo(FunctionInfo const&) = delete;
+    FunctionInfo(FunctionInfo const&&) = delete;
+};
 
 #endif

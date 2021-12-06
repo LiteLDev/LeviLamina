@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Core.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_RESOURCELOCATION
 #include "Extra/ResourceLocationAPI.hpp"
 #undef EXTRA_INCLUDE_PART_RESOURCELOCATION

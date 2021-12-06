@@ -9,20 +9,9 @@ class InstantaneousAttributeBuff : public AttributeBuff {
 #include "Extra/InstantaneousAttributeBuffAPI.hpp"
 public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*
-    inline bool isSerializable() const{
-        bool (InstantaneousAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInstantaneous() const{
-        bool (InstantaneousAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isInstantaneous() const;
+    /*2*/ virtual bool isSerializable() const;
+
 
 protected:
 

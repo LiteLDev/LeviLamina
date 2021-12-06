@@ -5,9 +5,20 @@
 #else
 // Add Member There
 public:
-struct PredictionDbgData;
-struct HistoryItem;
-struct RuntimePredictionData;
-
+struct RuntimePredictionData {
+    RuntimePredictionData() = delete;
+    RuntimePredictionData(RuntimePredictionData const&) = delete;
+    RuntimePredictionData(RuntimePredictionData const&&) = delete;
+};
+struct PredictionDbgData {
+    PredictionDbgData() = delete;
+    PredictionDbgData(PredictionDbgData const&) = delete;
+    PredictionDbgData(PredictionDbgData const&&) = delete;
+};
+struct HistoryItem {
+    HistoryItem() = delete;
+    HistoryItem(HistoryItem const&) = delete;
+    HistoryItem(HistoryItem const&&) = delete;
+};
 
 #endif

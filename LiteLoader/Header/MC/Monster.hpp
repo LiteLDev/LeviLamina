@@ -36,101 +36,56 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
-    /*49*/ virtual void __unk_vfn_20();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
+    /*49*/ virtual void __unk_vfn_19();
     /*50*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*51*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*52*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual void aiStep();
     /*57*/ virtual bool checkSpawnRules(bool);
     /*58*/ virtual int getItemUseDuration() const;
     /*59*/ virtual float getItemUseStartupProgress() const;
     /*60*/ virtual float getItemUseIntervalProgress() const;
-    /*61*/ virtual void __unk_vfn_23();
+    /*61*/ virtual void __unk_vfn_22();
     /*62*/ virtual bool isAlliedTo(class Mob*);
-    /*63*/ virtual void __unk_vfn_24();
+    /*63*/ virtual void __unk_vfn_23();
     /*64*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*65*/ virtual void onBorn(class Actor&, class Actor&);
-    /*66*/ virtual void __unk_vfn_25();
+    /*66*/ virtual int getAttackTime();
     /*67*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*68*/ virtual void __unk_vfn_26();
+    /*68*/ virtual void __unk_vfn_24();
     /*69*/ virtual void _serverAiMobStep();
-    /*70*/ virtual void __unk_vfn_27();
+    /*70*/ virtual void __unk_vfn_25();
     /*71*/ virtual bool isDarkEnoughToSpawn() const;
     /*
     inline bool canExistInPeaceful() const{
         bool (Monster::*rv)() const;
         *((void**)&rv) = dlsym("?canExistInPeaceful@Monster@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Monster::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Monster@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Monster::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Monster@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Monster::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Monster@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (Monster::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Monster@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Monster::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Monster@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline class Actor* findAttackTarget(){
-        class Actor* (Monster::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@Monster@@MEAAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isDarkEnoughToSpawn() const{
-        bool (Monster::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@Monster@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Monster::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Monster@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Monster::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Monster@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
     }
     */
 

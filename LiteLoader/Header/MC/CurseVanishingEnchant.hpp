@@ -28,16 +28,6 @@ public:
         *((void**)&rv) = dlsym("?isTreasureOnly@CurseVanishingEnchant@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getMaxCost(int a0) const{
-        int (CurseVanishingEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@CurseVanishingEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (CurseVanishingEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@CurseVanishingEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     */
 
 protected:

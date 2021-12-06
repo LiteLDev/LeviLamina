@@ -9,13 +9,7 @@ class RuntimeIdentifierDescription {
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (RuntimeIdentifierDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@RuntimeIdentifierDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

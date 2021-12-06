@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~MinecraftGameTestHelperProvider();
     /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance&);
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
-    /*
-    inline std::unique_ptr<class gametest::IGameTestHelperProvider> clone(){
-        std::unique_ptr<class gametest::IGameTestHelperProvider> (MinecraftGameTestHelperProvider::*rv)();
-        *((void**)&rv) = dlsym("?clone@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VIGameTestHelperProvider@gametest@@U?$default_delete@VIGameTestHelperProvider@gametest@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance& a0){
-        std::unique_ptr<class gametest::BaseGameTestHelper> (MinecraftGameTestHelperProvider::*rv)(class gametest::BaseGameTestInstance&);
-        *((void**)&rv) = dlsym("?createGameTestHelper@MinecraftGameTestHelperProvider@@UEAA?AV?$unique_ptr@VBaseGameTestHelper@gametest@@U?$default_delete@VBaseGameTestHelper@gametest@@@std@@@std@@AEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
-    }
-    */
+
 
 protected:
 

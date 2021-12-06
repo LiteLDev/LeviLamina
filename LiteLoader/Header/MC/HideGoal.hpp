@@ -17,45 +17,9 @@ public:
     /*6*/ virtual void appendDebugInfo(std::string&) const;
     /*7*/ virtual void __unk_vfn_1();
     /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
+    /*9*/ virtual unsigned __int64 _getRepathTime() const;
     /*10*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum enum POIType*/) const;
-    /*
-    inline class std::weak_ptr<class POIInstance> _getOwnedPOI(int \/*enum enum POIType*\/ a0) const{
-        class std::weak_ptr<class POIInstance> (HideGoal::*rv)(int \/*enum enum POIType*\/) const;
-        *((void**)&rv) = dlsym("?_getOwnedPOI@HideGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum POIType*\/>(a0));
-    }
-    inline unsigned __int64 _getRepathTime() const{
-        unsigned __int64 (HideGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?_getRepathTime@HideGoal@@MEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (HideGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@HideGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (HideGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@HideGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (HideGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@HideGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (HideGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@HideGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (HideGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@HideGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

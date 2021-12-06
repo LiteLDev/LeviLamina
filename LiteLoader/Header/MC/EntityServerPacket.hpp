@@ -12,18 +12,13 @@ public:
     /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
     /*
     inline int \/*enum enum StreamReadResult*\/ _read(class ReadOnlyBinaryStream& a0){
         int \/*enum enum StreamReadResult*\/ (EntityServerPacket::*rv)(class ReadOnlyBinaryStream&);
         *((void**)&rv) = dlsym("?_read@EntityServerPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
         return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (EntityServerPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@EntityServerPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
     }
     */
 

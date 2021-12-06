@@ -15,5 +15,6 @@ protected:
 
 private:
     MCAPI void _addV1();
+    MCAPI static char const* ModuleName;
     MCAPI static class mce::UUID ModuleUUID;
 };

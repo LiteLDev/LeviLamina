@@ -8,29 +8,13 @@ class DisplayNameItemComponent {
 #include "Extra/DisplayNameItemComponentAPI.hpp"
 public:
     /*0*/ virtual ~DisplayNameItemComponent();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual bool isNetworkComponent() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (DisplayNameItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@DisplayNameItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
-        std::unique_ptr<class CompoundTag> (DisplayNameItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?buildNetworkTag@DisplayNameItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (DisplayNameItemComponent::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@DisplayNameItemComponent@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    */
+
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 

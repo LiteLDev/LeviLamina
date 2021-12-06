@@ -47,7 +47,7 @@ public:
     /*35*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*36*/ virtual void animateHurt();
     /*37*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*38*/ virtual void __unk_vfn_12();
+    /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
     /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,34 +58,34 @@ public:
     /*46*/ virtual bool canFreeze() const;
     /*47*/ virtual int getPortalWaitTime() const;
     /*48*/ virtual bool canChangeDimensions() const;
-    /*49*/ virtual void __unk_vfn_13();
+    /*49*/ virtual void __unk_vfn_12();
     /*50*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*51*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*52*/ virtual bool canBePulledIntoVehicle() const;
     /*53*/ virtual bool inCaravan() const;
-    /*54*/ virtual void __unk_vfn_14();
+    /*54*/ virtual void __unk_vfn_13();
     /*55*/ virtual bool canSynchronizeNewEntity() const;
     /*56*/ virtual void buildDebugInfo(std::string&) const;
     /*57*/ virtual int getDeathTime() const;
     /*58*/ virtual void swing();
-    /*59*/ virtual void __unk_vfn_15();
-    /*60*/ virtual void __unk_vfn_16();
+    /*59*/ virtual void __unk_vfn_14();
+    /*60*/ virtual void __unk_vfn_15();
     /*61*/ virtual float getYHeadRot() const;
     /*62*/ virtual bool isWorldBuilder() const;
-    /*63*/ virtual void __unk_vfn_17();
+    /*63*/ virtual void __unk_vfn_16();
     /*64*/ virtual bool isAdventure() const;
     /*65*/ virtual bool canDestroyBlock(class Block const&) const;
     /*66*/ virtual void setAuxValue(int);
     /*67*/ virtual void stopSpinAttack();
-    /*68*/ virtual void __unk_vfn_18();
-    /*69*/ virtual void __unk_vfn_19();
+    /*68*/ virtual void __unk_vfn_17();
+    /*69*/ virtual void __unk_vfn_18();
     /*70*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*71*/ virtual void __unk_vfn_20();
+    /*71*/ virtual void __unk_vfn_19();
     /*72*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*73*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*74*/ virtual void __unk_vfn_21();
+    /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void _onSizeUpdated();
-    /*76*/ virtual void __unk_vfn_22();
+    /*76*/ virtual void __unk_vfn_21();
     /*77*/ virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
     /*78*/ virtual class ItemStack _getPickupItem() const;
     /*79*/ virtual void applyParticleColor(class Particle*);
@@ -95,56 +95,6 @@ public:
         bool (Arrow::*rv)() const;
         *((void**)&rv) = dlsym("?canMakeStepSound@Arrow@@MEBA_NXZ");
         return (this->*rv)();
-    }
-    inline class ItemStack _getPickupItem() const{
-        class ItemStack (Arrow::*rv)() const;
-        *((void**)&rv) = dlsym("?_getPickupItem@Arrow@@MEBA?AVItemStack@@XZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Arrow::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Arrow@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void applyParticleColor(class Particle* a0){
-        void (Arrow::*rv)(class Particle*);
-        *((void**)&rv) = dlsym("?applyParticleColor@Arrow@@MEAAXPEAVParticle@@@Z");
-        return (this->*rv)(std::forward<class Particle*>(a0));
-    }
-    inline class mce::Color getEffectColor(){
-        class mce::Color (Arrow::*rv)();
-        *((void**)&rv) = dlsym("?getEffectColor@Arrow@@MEAA?AVColor@mce@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Arrow::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Arrow@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playerTouch(class Player& a0){
-        void (Arrow::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@Arrow@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Arrow::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Arrow@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Arrow::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Arrow@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void setAuxValue(int a0){
-        void (Arrow::*rv)(int);
-        *((void**)&rv) = dlsym("?setAuxValue@Arrow@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void shoot(class Vec3 const& a0, float a1, float a2, class Vec3 const& a3){
-        void (Arrow::*rv)(class Vec3 const&, float, float, class Vec3 const&);
-        *((void**)&rv) = dlsym("?shoot@Arrow@@UEAAXAEBVVec3@@MM0@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<class Vec3 const&>(a3));
     }
     */
     MCAPI void addMobEffect(class MobEffectInstance);

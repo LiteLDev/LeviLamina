@@ -9,13 +9,7 @@ class WorldTemplatePackManifest {
 public:
     /*0*/ virtual ~WorldTemplatePackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-    /*
-    inline std::unique_ptr<class PackManifest> clone() const{
-        std::unique_ptr<class PackManifest> (WorldTemplatePackManifest::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@WorldTemplatePackManifest@@UEBA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI enum GameType getGameType() const;
 
 protected:

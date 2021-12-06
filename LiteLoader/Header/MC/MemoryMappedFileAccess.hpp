@@ -13,46 +13,10 @@ public:
     /*2*/ virtual int fclose(void*);
     /*3*/ virtual int fseek(void*, __int64, int);
     /*4*/ virtual __int64 ftell(void*);
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual class IFileReadAccess const* getReadInterface() const;
     /*6*/ virtual class IFileWriteAccess* getWriteInterface();
     /*7*/ virtual void unload();
-    /*
-    inline class IFileReadAccess const* getReadInterface() const{
-        class IFileReadAccess const* (MemoryMappedFileAccess::*rv)() const;
-        *((void**)&rv) = dlsym("?getReadInterface@MemoryMappedFileAccess@@UEBAPEBVIFileReadAccess@@XZ");
-        return (this->*rv)();
-    }
-    inline int fclose(void* a0){
-        int (MemoryMappedFileAccess::*rv)(void*);
-        *((void**)&rv) = dlsym("?fclose@MemoryMappedFileAccess@@UEAAHPEAX@Z");
-        return (this->*rv)(std::forward<void*>(a0));
-    }
-    inline void* fopen(class Core::Path const& a0, std::string const& a1){
-        void* (MemoryMappedFileAccess::*rv)(class Core::Path const&, std::string const&);
-        *((void**)&rv) = dlsym("?fopen@MemoryMappedFileAccess@@UEAAPEAXAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<std::string const&>(a1));
-    }
-    inline int fseek(void* a0, __int64 a1, int a2){
-        int (MemoryMappedFileAccess::*rv)(void*, __int64, int);
-        *((void**)&rv) = dlsym("?fseek@MemoryMappedFileAccess@@UEAAHPEAX_JH@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<__int64>(a1), std::forward<int>(a2));
-    }
-    inline __int64 ftell(void* a0){
-        __int64 (MemoryMappedFileAccess::*rv)(void*);
-        *((void**)&rv) = dlsym("?ftell@MemoryMappedFileAccess@@UEAA_JPEAX@Z");
-        return (this->*rv)(std::forward<void*>(a0));
-    }
-    inline class IFileWriteAccess* getWriteInterface(){
-        class IFileWriteAccess* (MemoryMappedFileAccess::*rv)();
-        *((void**)&rv) = dlsym("?getWriteInterface@MemoryMappedFileAccess@@UEAAPEAVIFileWriteAccess@@XZ");
-        return (this->*rv)();
-    }
-    inline void unload(){
-        void (MemoryMappedFileAccess::*rv)();
-        *((void**)&rv) = dlsym("?unload@MemoryMappedFileAccess@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 protected:

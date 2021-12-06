@@ -13,13 +13,7 @@ public:
     /*2*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
-    /*
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (NBStartPiece::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@NBStartPiece@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

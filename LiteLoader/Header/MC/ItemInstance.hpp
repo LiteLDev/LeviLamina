@@ -12,23 +12,7 @@ public:
     /*1*/ virtual void reinit(class Item const&, int, int);
     /*2*/ virtual void reinit(class BlockLegacy const&, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-    /*
-    inline void reinit(class BlockLegacy const& a0, int a1){
-        void (ItemInstance::*rv)(class BlockLegacy const&, int);
-        *((void**)&rv) = dlsym("?reinit@ItemInstance@@UEAAXAEBVBlockLegacy@@H@Z");
-        return (this->*rv)(std::forward<class BlockLegacy const&>(a0), std::forward<int>(a1));
-    }
-    inline void reinit(class Item const& a0, int a1, int a2){
-        void (ItemInstance::*rv)(class Item const&, int, int);
-        *((void**)&rv) = dlsym("?reinit@ItemInstance@@UEAAXAEBVItem@@HH@Z");
-        return (this->*rv)(std::forward<class Item const&>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline void reinit(class gsl::basic_string_span<char const, -1> a0, int a1, int a2){
-        void (ItemInstance::*rv)(class gsl::basic_string_span<char const, -1>, int, int);
-        *((void**)&rv) = dlsym("?reinit@ItemInstance@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@HH@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    */
+
     MCAPI void __autoclassinit2(unsigned __int64);
     MCAPI class ItemInstance clone() const;
     MCAPI class ItemInstance& operator=(class ItemInstance const&);

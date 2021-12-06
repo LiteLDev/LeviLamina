@@ -37,51 +37,51 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
     /*51*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*52*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*53*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*54*/ virtual void __unk_vfn_21();
+    /*54*/ virtual void __unk_vfn_20();
     /*55*/ virtual void _onSizeUpdated();
-    /*56*/ virtual void __unk_vfn_22();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual void aiStep();
     /*59*/ virtual bool checkSpawnRules(bool);
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;
-    /*63*/ virtual void __unk_vfn_23();
+    /*63*/ virtual void __unk_vfn_22();
     /*64*/ virtual float getMaxHeadXRot();
     /*65*/ virtual bool isAlliedTo(class Mob*);
-    /*66*/ virtual void __unk_vfn_24();
+    /*66*/ virtual void __unk_vfn_23();
     /*67*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*68*/ virtual void onBorn(class Actor&, class Actor&);
-    /*69*/ virtual void __unk_vfn_25();
-    /*70*/ virtual void __unk_vfn_26();
+    /*69*/ virtual int getAttackTime();
+    /*70*/ virtual void __unk_vfn_24();
     /*71*/ virtual void _serverAiMobStep();
-    /*72*/ virtual void __unk_vfn_27();
+    /*72*/ virtual void __unk_vfn_25();
     /*73*/ virtual bool isDarkEnoughToSpawn() const;
     /*
     inline bool isDarkEnoughToSpawn() const{
@@ -93,56 +93,6 @@ public:
         bool (Guardian::*rv)() const;
         *((void**)&rv) = dlsym("?canSeeInvisible@Guardian@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Guardian::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Guardian@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (Guardian::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Guardian@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Guardian::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Guardian@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (Guardian::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Guardian@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Guardian::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Guardian@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline float getMaxHeadXRot(){
-        float (Guardian::*rv)();
-        *((void**)&rv) = dlsym("?getMaxHeadXRot@Guardian@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Guardian::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Guardian@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Guardian::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Guardian::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Guardian@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void setTarget(class Actor* a0){
-        void (Guardian::*rv)(class Actor*);
-        *((void**)&rv) = dlsym("?setTarget@Guardian@@UEAAXPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
     }
     */
     MCAPI int getAttackDuration();

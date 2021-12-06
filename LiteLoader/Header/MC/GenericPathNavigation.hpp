@@ -15,33 +15,7 @@ public:
     /*4*/ virtual void stop(class NavigationComponent&, class Mob&);
     /*5*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     /*6*/ virtual void updatePath(class NavigationComponent&, class Mob&);
-    /*
-    inline class Vec3 getTempMobPos(class Mob const& a0) const{
-        class Vec3 (GenericPathNavigation::*rv)(class Mob const&) const;
-        *((void**)&rv) = dlsym("?getTempMobPos@GenericPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob const&>(a0));
-    }
-    inline void initializeInternal(class Mob& a0, struct NavigationDescription* a1){
-        void (GenericPathNavigation::*rv)(class Mob&, struct NavigationDescription*);
-        *((void**)&rv) = dlsym("?initializeInternal@GenericPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0), std::forward<struct NavigationDescription*>(a1));
-    }
-    inline void stop(class NavigationComponent& a0, class Mob& a1){
-        void (GenericPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?stop@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    inline void tick(class NavigationComponent& a0, class Mob& a1){
-        void (GenericPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    inline void updatePath(class NavigationComponent& a0, class Mob& a1){
-        void (GenericPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?updatePath@GenericPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

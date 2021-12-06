@@ -36,61 +36,51 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
-    /*49*/ virtual void __unk_vfn_20();
-    /*50*/ virtual void __unk_vfn_21();
-    /*51*/ virtual void __unk_vfn_22();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
+    /*49*/ virtual void __unk_vfn_19();
+    /*50*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_21();
     /*52*/ virtual void spawnAnim();
     /*53*/ virtual int getItemUseDuration() const;
     /*54*/ virtual float getItemUseStartupProgress() const;
     /*55*/ virtual float getItemUseIntervalProgress() const;
-    /*56*/ virtual void __unk_vfn_23();
+    /*56*/ virtual void __unk_vfn_22();
     /*57*/ virtual bool isAlliedTo(class Mob*);
-    /*58*/ virtual void __unk_vfn_24();
+    /*58*/ virtual void __unk_vfn_23();
     /*59*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*60*/ virtual void onBorn(class Actor&, class Actor&);
-    /*61*/ virtual void __unk_vfn_25();
+    /*61*/ virtual int getAttackTime();
     /*62*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*63*/ virtual void __unk_vfn_26();
+    /*63*/ virtual void __unk_vfn_24();
     /*64*/ virtual void _serverAiMobStep();
-    /*65*/ virtual void __unk_vfn_27();
+    /*65*/ virtual void __unk_vfn_25();
     /*66*/ virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const&, class Vec3 const&) const;
     /*
     inline float _getWalkTargetValue(class BlockPos const& a0){
         float (Axolotl::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?_getWalkTargetValue@Axolotl@@UEAAMAEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class AABB _getAdjustedAABBForSpawnCheck(class AABB const& a0, class Vec3 const& a1) const{
-        class AABB (Axolotl::*rv)(class AABB const&, class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?_getAdjustedAABBForSpawnCheck@Axolotl@@UEBA?AVAABB@@AEBV2@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0), std::forward<class Vec3 const&>(a1));
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Axolotl::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Axolotl@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
 

@@ -9,18 +9,9 @@ class EndCityStart : public StructureStart {
 #include "Extra/EndCityStartAPI.hpp"
 public:
     /*0*/ virtual ~EndCityStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (EndCityStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@EndCityStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (EndCityStart::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@EndCityStart@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);
 
 protected:

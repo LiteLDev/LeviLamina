@@ -9,13 +9,7 @@ class MultiplyValueAmplifier {
 public:
     /*0*/ virtual ~MultiplyValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
-    /*
-    inline float getAmount(int a0, float a1) const{
-        float (MultiplyValueAmplifier::*rv)(int, float) const;
-        *((void**)&rv) = dlsym("?getAmount@MultiplyValueAmplifier@@UEBAMHM@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
-    }
-    */
+
 
 protected:
 

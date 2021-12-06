@@ -5,7 +5,12 @@
 #else
 // Add Member There
 public:
-class RakNetNetworkPeer;
+class RakNetNetworkPeer {
+public:
+    RakNetNetworkPeer() = delete;
+    RakNetNetworkPeer(RakNetNetworkPeer const&) = delete;
+    RakNetNetworkPeer(RakNetNetworkPeer const&&) = delete;
+};
 enum NATState;
 
 #endif

@@ -37,101 +37,56 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual bool canFreeze() const;
     /*33*/ virtual int getPortalWaitTime() const;
     /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_13();
+    /*35*/ virtual void __unk_vfn_12();
     /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
     /*41*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
-    /*42*/ virtual void __unk_vfn_15();
-    /*43*/ virtual void __unk_vfn_16();
+    /*42*/ virtual void __unk_vfn_14();
+    /*43*/ virtual void __unk_vfn_15();
     /*44*/ virtual void getDebugText(std::vector<std::string>&);
     /*45*/ virtual bool isWorldBuilder() const;
-    /*46*/ virtual void __unk_vfn_17();
+    /*46*/ virtual void __unk_vfn_16();
     /*47*/ virtual bool isAdventure() const;
     /*48*/ virtual bool canDestroyBlock(class Block const&) const;
     /*49*/ virtual void setAuxValue(int);
     /*50*/ virtual void stopSpinAttack();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
+    /*51*/ virtual void __unk_vfn_17();
+    /*52*/ virtual void __unk_vfn_18();
     /*53*/ virtual void die(class ActorDamageSource const&);
-    /*54*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_19();
     /*55*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*56*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*57*/ virtual void __unk_vfn_21();
-    /*58*/ virtual void __unk_vfn_22();
+    /*57*/ virtual void __unk_vfn_20();
+    /*58*/ virtual void __unk_vfn_21();
     /*59*/ virtual void spawnAnim();
     /*60*/ virtual void aiStep();
     /*61*/ virtual bool checkSpawnRules(bool);
     /*62*/ virtual float getItemUseStartupProgress() const;
     /*63*/ virtual float getItemUseIntervalProgress() const;
-    /*64*/ virtual void __unk_vfn_23();
+    /*64*/ virtual void __unk_vfn_22();
     /*65*/ virtual bool isAlliedTo(class Mob*);
     /*66*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
-    /*67*/ virtual void __unk_vfn_24();
+    /*67*/ virtual void __unk_vfn_23();
     /*68*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*69*/ virtual void onBorn(class Actor&, class Actor&);
-    /*70*/ virtual void __unk_vfn_25();
-    /*71*/ virtual void __unk_vfn_26();
+    /*70*/ virtual int getAttackTime();
+    /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
-    /*73*/ virtual void __unk_vfn_27();
+    /*73*/ virtual void __unk_vfn_25();
     /*
     inline bool useNewAi() const{
         bool (Skeleton::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Skeleton@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (Skeleton::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Skeleton@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool canFreeze() const{
-        bool (Skeleton::*rv)() const;
-        *((void**)&rv) = dlsym("?canFreeze@Skeleton@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (Skeleton::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@Skeleton@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool doHurtTarget(class Actor* a0, int \/*enum enum ActorDamageCause*\/ const& a1){
-        bool (Skeleton::*rv)(class Actor*, int \/*enum enum ActorDamageCause*\/ const&);
-        *((void**)&rv) = dlsym("?doHurtTarget@Skeleton@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int \/*enum enum ActorDamageCause*\/ const&>(a1));
-    }
-    inline void getDebugText(std::vector<std::string>& a0){
-        void (Skeleton::*rv)(std::vector<std::string>&);
-        *((void**)&rv) = dlsym("?getDebugText@Skeleton@@EEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<std::string>&>(a0));
-    }
-    inline float getRidingHeight(){
-        float (Skeleton::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@Skeleton@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Skeleton::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Skeleton@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setTarget(class Actor* a0){
-        void (Skeleton::*rv)(class Actor*);
-        *((void**)&rv) = dlsym("?setTarget@Skeleton@@UEAAXPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
-    }
-    inline void vehicleTick(){
-        void (Skeleton::*rv)();
-        *((void**)&rv) = dlsym("?vehicleTick@Skeleton@@UEAAXXZ");
         return (this->*rv)();
     }
     */

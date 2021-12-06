@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct StrongholdResult;
+struct StrongholdResult {
+    StrongholdResult() = delete;
+    StrongholdResult(StrongholdResult const&) = delete;
+    StrongholdResult(StrongholdResult const&&) = delete;
+};
 
 #endif

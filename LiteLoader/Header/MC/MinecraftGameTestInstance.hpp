@@ -23,68 +23,7 @@ public:
     /*13*/ virtual void __unk_vfn_1();
     /*14*/ virtual void __unk_vfn_2();
     /*15*/ virtual class BlockSource& getBlockSource() const;
-    /*
-    inline int _getLevelTick() const{
-        int (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?_getLevelTick@MinecraftGameTestInstance@@MEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool _isTestReady(){
-        bool (MinecraftGameTestInstance::*rv)();
-        *((void**)&rv) = dlsym("?_isTestReady@MinecraftGameTestInstance@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void clearStructure(){
-        void (MinecraftGameTestInstance::*rv)();
-        *((void**)&rv) = dlsym("?clearStructure@MinecraftGameTestInstance@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class BlockSource& getBlockSource() const{
-        class BlockSource& (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockSource@MinecraftGameTestInstance@@UEBAAEAVBlockSource@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class Vec3> getStructureBlockPivot() const{
-        class std::optional<class Vec3> (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getStructureBlockPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class Vec3> getStructureBlockPosPivot() const{
-        class std::optional<class Vec3> (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getStructureBlockPosPivot@MinecraftGameTestInstance@@UEBA?AV?$optional@VVec3@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class BoundingBox getStructureBoundingBox() const{
-        class BoundingBox (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getStructureBoundingBox@MinecraftGameTestInstance@@UEBA?AVBoundingBox@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class AABB> getStructureBounds() const{
-        class std::optional<class AABB> (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getStructureBounds@MinecraftGameTestInstance@@UEBA?AV?$optional@VAABB@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class AutomaticID<class Dimension, int> getStructureDimension() const{
-        class AutomaticID<class Dimension, int> (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getStructureDimension@MinecraftGameTestInstance@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasStructureBlock() const{
-        bool (MinecraftGameTestInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?hasStructureBlock@MinecraftGameTestInstance@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void initialize(){
-        void (MinecraftGameTestInstance::*rv)();
-        *((void**)&rv) = dlsym("?initialize@MinecraftGameTestInstance@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void spawnStructure(){
-        void (MinecraftGameTestInstance::*rv)();
-        *((void**)&rv) = dlsym("?spawnStructure@MinecraftGameTestInstance@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

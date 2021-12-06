@@ -13,53 +13,12 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;
     /*9*/ virtual unsigned __int64 hash() const;
-    /*
-    inline int \/*enum enum Tag::Type*\/ getId() const{
-        int \/*enum enum Tag::Type*\/ (CompoundTag::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@CompoundTag@@UEBA?AW4Type@Tag@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class Tag> copy() const{
-        std::unique_ptr<class Tag> (CompoundTag::*rv)() const;
-        *((void**)&rv) = dlsym("?copy@CompoundTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline bool equals(class Tag const& a0) const{
-        bool (CompoundTag::*rv)(class Tag const&) const;
-        *((void**)&rv) = dlsym("?equals@CompoundTag@@UEBA_NAEBVTag@@@Z");
-        return (this->*rv)(std::forward<class Tag const&>(a0));
-    }
-    inline unsigned __int64 hash() const{
-        unsigned __int64 (CompoundTag::*rv)() const;
-        *((void**)&rv) = dlsym("?hash@CompoundTag@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline void load(class IDataInput& a0){
-        void (CompoundTag::*rv)(class IDataInput&);
-        *((void**)&rv) = dlsym("?load@CompoundTag@@UEAAXAEAVIDataInput@@@Z");
-        return (this->*rv)(std::forward<class IDataInput&>(a0));
-    }
-    inline void print(std::string const& a0, class PrintStream& a1) const{
-        void (CompoundTag::*rv)(std::string const&, class PrintStream&) const;
-        *((void**)&rv) = dlsym("?print@CompoundTag@@UEBAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVPrintStream@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class PrintStream&>(a1));
-    }
-    inline std::string toString() const{
-        std::string (CompoundTag::*rv)() const;
-        *((void**)&rv) = dlsym("?toString@CompoundTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void write(class IDataOutput& a0) const{
-        void (CompoundTag::*rv)(class IDataOutput&) const;
-        *((void**)&rv) = dlsym("?write@CompoundTag@@UEBAXAEAVIDataOutput@@@Z");
-        return (this->*rv)(std::forward<class IDataOutput&>(a0));
-    }
-    */
+
     MCAPI void append(class CompoundTag const&);
     MCAPI class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, class CompoundTagVariant> > > > begin() const;
     MCAPI void clear();

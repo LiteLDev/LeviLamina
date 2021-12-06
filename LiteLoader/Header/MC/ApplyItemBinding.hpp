@@ -9,14 +9,8 @@ class ApplyItemBinding {
 #include "Extra/ApplyItemBindingAPI.hpp"
 public:
     /*0*/ virtual ~ApplyItemBinding();
-    /*1*/ virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
-    /*
-    inline bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Actor** a3, std::string const& a4) const{
-        bool (ApplyItemBinding::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor**, std::string const&) const;
-        *((void**)&rv) = dlsym("?createAndApplyTemplate@ApplyItemBinding@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@PEAPEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Actor**>(a3), std::forward<std::string const&>(a4));
-    }
-    */
+    /*1*/ virtual bool createAndApplyTemplate(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor* *, std::string const&) const;
+
 
 protected:
 

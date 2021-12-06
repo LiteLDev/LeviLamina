@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct ServerData;
+struct ServerData {
+    ServerData() = delete;
+    ServerData(ServerData const&) = delete;
+    ServerData(ServerData const&&) = delete;
+};
 
 #endif

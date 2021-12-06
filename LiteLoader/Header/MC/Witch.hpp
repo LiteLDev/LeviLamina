@@ -37,87 +37,51 @@ public:
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
     /*50*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*51*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*53*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*54*/ virtual void __unk_vfn_21();
+    /*54*/ virtual void __unk_vfn_20();
     /*55*/ virtual void _onSizeUpdated();
-    /*56*/ virtual void __unk_vfn_22();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual void aiStep();
     /*59*/ virtual bool checkSpawnRules(bool);
     /*60*/ virtual float getItemUseStartupProgress() const;
     /*61*/ virtual float getItemUseIntervalProgress() const;
-    /*62*/ virtual void __unk_vfn_23();
+    /*62*/ virtual void __unk_vfn_22();
     /*63*/ virtual bool isAlliedTo(class Mob*);
-    /*64*/ virtual void __unk_vfn_24();
+    /*64*/ virtual void __unk_vfn_23();
     /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*66*/ virtual int getDamageAfterMagicAbsorb(class ActorDamageSource const&, int);
     /*67*/ virtual void onBorn(class Actor&, class Actor&);
-    /*68*/ virtual void __unk_vfn_25();
-    /*69*/ virtual void __unk_vfn_26();
+    /*68*/ virtual int getAttackTime();
+    /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void _serverAiMobStep();
-    /*71*/ virtual void __unk_vfn_27();
-    /*
-    inline bool canAttack(class Actor* a0, bool a1) const{
-        bool (Witch::*rv)(class Actor*, bool) const;
-        *((void**)&rv) = dlsym("?canAttack@Witch@@UEBA_NPEAVActor@@_N@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<bool>(a1));
-    }
-    inline void _onSizeUpdated(){
-        void (Witch::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Witch@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void aiStep(){
-        void (Witch::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Witch@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline int getDamageAfterMagicAbsorb(class ActorDamageSource const& a0, int a1){
-        int (Witch::*rv)(class ActorDamageSource const&, int);
-        *((void**)&rv) = dlsym("?getDamageAfterMagicAbsorb@Witch@@MEAAHAEBVActorDamageSource@@H@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Witch::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Witch@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void performRangedAttack(class Actor& a0, float a1){
-        void (Witch::*rv)(class Actor&, float);
-        *((void**)&rv) = dlsym("?performRangedAttack@Witch@@UEAAXAEAVActor@@M@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<float>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Witch::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Witch@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*71*/ virtual void __unk_vfn_25();
+
 
 protected:
 

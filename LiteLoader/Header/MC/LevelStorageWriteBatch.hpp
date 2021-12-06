@@ -14,38 +14,7 @@ public:
     /*4*/ virtual void putKey(std::string const&, class std::shared_ptr<std::string >, int /*enum enum DBHelpers::Category*/);
     /*5*/ virtual void deleteKey(std::string const&, int /*enum enum DBHelpers::Category*/);
     /*6*/ virtual void flush(class LevelStorage&);
-    /*
-    inline void deleteKey(std::string const& a0, int \/*enum enum DBHelpers::Category*\/ a1){
-        void (LevelStorageWriteBatch::*rv)(std::string const&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?deleteKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int \/*enum enum DBHelpers::Category*\/>(a1));
-    }
-    inline void flush(class LevelStorage& a0){
-        void (LevelStorageWriteBatch::*rv)(class LevelStorage&);
-        *((void**)&rv) = dlsym("?flush@LevelStorageWriteBatch@@UEAAXAEAVLevelStorage@@@Z");
-        return (this->*rv)(std::forward<class LevelStorage&>(a0));
-    }
-    inline void putKey(std::string const& a0, std::string&& a1, int \/*enum enum DBHelpers::Category*\/ a2){
-        void (LevelStorageWriteBatch::*rv)(std::string const&, std::string&&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@$$QEAV23@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string&&>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    inline void putKey(std::string const& a0, std::string const& a1, int \/*enum enum DBHelpers::Category*\/ a2){
-        void (LevelStorageWriteBatch::*rv)(std::string const&, std::string const&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    inline void putKey(std::string const& a0, class gsl::basic_string_span<char const, -1> a1, int \/*enum enum DBHelpers::Category*\/ a2){
-        void (LevelStorageWriteBatch::*rv)(std::string const&, class gsl::basic_string_span<char const, -1>, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class gsl::basic_string_span<char const, -1>>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    inline void putKey(std::string const& a0, class std::shared_ptr<std::string > a1, int \/*enum enum DBHelpers::Category*\/ a2){
-        void (LevelStorageWriteBatch::*rv)(std::string const&, class std::shared_ptr<std::string >, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?putKey@LevelStorageWriteBatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$shared_ptr@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@3@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class std::shared_ptr<std::string >>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    */
+
     MCAPI void addFlushCallback(class std::function<void (void)>);
     MCAPI void clear();
     MCAPI void erase(class std::_Tree_const_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry> > > > const&);

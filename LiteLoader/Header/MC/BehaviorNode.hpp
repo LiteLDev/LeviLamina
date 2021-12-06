@@ -8,13 +8,9 @@ class BehaviorNode {
 #include "Extra/BehaviorNodeAPI.hpp"
 public:
     /*0*/ virtual ~BehaviorNode();
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (BehaviorNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@BehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
+
     MCAPI class BehaviorData& getBehaviorData();
 
 protected:

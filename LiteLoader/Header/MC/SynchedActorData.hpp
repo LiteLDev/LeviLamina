@@ -9,7 +9,7 @@ class SynchedActorData {
 public:
     MCAPI class SynchedActorData _clone() const;
     MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const&, class Actor*);
-    MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const&)> const&) const;
+    MCAPI void forEachDataItem(class std::function<void (std::unique_ptr<class DataItem> const& )> const&) const;
     MCAPI class CompoundTag const& getCompoundTag(unsigned short) const;
     MCAPI float getFloat(unsigned short) const;
     MCAPI int getInt(unsigned short) const;

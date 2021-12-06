@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Option.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_BOOLOPTION
 #include "Extra/BoolOptionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BOOLOPTION
@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~BoolOption();
     /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string >>&);
     /*2*/ virtual void load(std::string const&);
-    /*
-    inline void load(std::string const& a0){
-        void (BoolOption::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?load@BoolOption@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline void save(std::vector<struct std::pair<std::string, std::string >>& a0){
-        void (BoolOption::*rv)(std::vector<struct std::pair<std::string, std::string >>&);
-        *((void**)&rv) = dlsym("?save@BoolOption@@UEAAXAEAV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<struct std::pair<std::string, std::string >>&>(a0));
-    }
-    */
+
     MCAPI void set(bool, bool);
 
 protected:

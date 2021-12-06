@@ -38,16 +38,6 @@ public:
         *((void**)&rv) = dlsym("?resetSpeedModifier@JumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z");
         return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob&>(a1));
     }
-    inline float getJumpPower(class JumpControlComponent const& a0, class Mob const& a1) const{
-        float (JumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
-        *((void**)&rv) = dlsym("?getJumpPower@JumpControl@@MEBAMAEBVJumpControlComponent@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
-    }
-    inline void tick(class JumpControlComponent& a0, class Mob& a1){
-        void (JumpControl::*rv)(class JumpControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
     */
 
 protected:

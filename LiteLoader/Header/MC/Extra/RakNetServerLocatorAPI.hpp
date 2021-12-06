@@ -4,6 +4,11 @@
 
 #else
 // Add Member There
-struct AnnounceServerData;
+public:
+struct AnnounceServerData {
+    AnnounceServerData() = delete;
+    AnnounceServerData(AnnounceServerData const&) = delete;
+    AnnounceServerData(AnnounceServerData const&&) = delete;
+};
 
 #endif

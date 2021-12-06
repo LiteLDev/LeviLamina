@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Item.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_HORSEARMORITEM
 #include "Extra/HorseArmorItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_HORSEARMORITEM
@@ -29,15 +29,15 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual int getAttackDamage() const;
     /*25*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*26*/ virtual void __unk_vfn_7();
-    /*27*/ virtual void __unk_vfn_8();
-    /*28*/ virtual void __unk_vfn_9();
+    /*26*/ virtual void __unk_vfn_6();
+    /*27*/ virtual int getPatternIndex() const;
+    /*28*/ virtual void __unk_vfn_7();
     /*29*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*30*/ virtual bool canDestroyInCreative() const;
     /*31*/ virtual bool isDestructive(int) const;
@@ -49,22 +49,22 @@ public:
     /*37*/ virtual int getEnchantSlot() const;
     /*38*/ virtual int getEnchantValue() const;
     /*39*/ virtual int getArmorValue() const;
-    /*40*/ virtual void __unk_vfn_10();
+    /*40*/ virtual void __unk_vfn_8();
     /*41*/ virtual bool isValidAuxValue(int) const;
-    /*42*/ virtual void __unk_vfn_11();
-    /*43*/ virtual void __unk_vfn_12();
-    /*44*/ virtual void __unk_vfn_13();
-    /*45*/ virtual void __unk_vfn_14();
+    /*42*/ virtual float getViewDamping() const;
+    /*43*/ virtual void __unk_vfn_9();
+    /*44*/ virtual void __unk_vfn_10();
+    /*45*/ virtual void __unk_vfn_11();
     /*46*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*47*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*48*/ virtual void __unk_vfn_15();
-    /*49*/ virtual void clearColor(class CompoundTag*) const;
-    /*50*/ virtual void __unk_vfn_16();
-    /*51*/ virtual void __unk_vfn_17();
-    /*52*/ virtual void __unk_vfn_18();
-    /*53*/ virtual void __unk_vfn_19();
-    /*54*/ virtual void __unk_vfn_20();
-    /*55*/ virtual void __unk_vfn_21();
+    /*48*/ virtual void __unk_vfn_12();
+    /*49*/ virtual void clearColor(class ItemStackBase&) const;
+    /*50*/ virtual void clearColor(class CompoundTag*) const;
+    /*51*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*52*/ virtual void __unk_vfn_13();
+    /*53*/ virtual void __unk_vfn_14();
+    /*54*/ virtual void __unk_vfn_15();
+    /*55*/ virtual void __unk_vfn_16();
     /*56*/ virtual bool canUseOnSimTick() const;
     /*57*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     /*58*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
@@ -72,64 +72,23 @@ public:
     /*60*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*61*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*62*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*63*/ virtual void __unk_vfn_22();
+    /*63*/ virtual void __unk_vfn_17();
     /*64*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*65*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*66*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*67*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*68*/ virtual void __unk_vfn_23();
-    /*69*/ virtual void __unk_vfn_24();
+    /*68*/ virtual void __unk_vfn_18();
+    /*69*/ virtual void __unk_vfn_19();
     /*70*/ virtual bool validFishInteraction(int) const;
     /*71*/ virtual std::string getInteractText(class Player const&) const;
     /*72*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
     /*73*/ virtual int getIconYOffset() const;
     /*74*/ virtual bool canBeCharged() const;
     /*75*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*76*/ virtual void __unk_vfn_25();
+    /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*
-    inline void setColor(class ItemStackBase& a0, class mce::Color const& a1) const{
-        void (HorseArmorItem::*rv)(class ItemStackBase&, class mce::Color const&) const;
-        *((void**)&rv) = dlsym("?setColor@HorseArmorItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class mce::Color const&>(a1));
-    }
-    inline void appendFormattedHovertext(class ItemStackBase const& a0, class Level& a1, std::string& a2, bool a3) const{
-        void (HorseArmorItem::*rv)(class ItemStackBase const&, class Level&, std::string&, bool) const;
-        *((void**)&rv) = dlsym("?appendFormattedHovertext@HorseArmorItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class Level&>(a1), std::forward<std::string&>(a2), std::forward<bool>(a3));
-    }
-    inline void clearColor(class CompoundTag* a0) const{
-        void (HorseArmorItem::*rv)(class CompoundTag*) const;
-        *((void**)&rv) = dlsym("?clearColor@HorseArmorItem@@UEBAXPEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag*>(a0));
-    }
-    inline bool dispense(class BlockSource& a0, class Container& a1, int a2, class Vec3 const& a3, unsigned char a4) const{
-        bool (HorseArmorItem::*rv)(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?dispense@HorseArmorItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Container&>(a1), std::forward<int>(a2), std::forward<class Vec3 const&>(a3), std::forward<unsigned char>(a4));
-    }
-    inline int getArmorValue() const{
-        int (HorseArmorItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getArmorValue@HorseArmorItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class mce::Color getColor(class CompoundTag const* a0, class ItemDescriptor const& a1) const{
-        class mce::Color (HorseArmorItem::*rv)(class CompoundTag const*, class ItemDescriptor const&) const;
-        *((void**)&rv) = dlsym("?getColor@HorseArmorItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const*>(a0), std::forward<class ItemDescriptor const&>(a1));
-    }
-    inline bool hasCustomColor(class CompoundTag const* a0) const{
-        bool (HorseArmorItem::*rv)(class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?hasCustomColor@HorseArmorItem@@UEBA_NPEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const*>(a0));
-    }
-    inline bool isDyeable() const{
-        bool (HorseArmorItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isDyeable@HorseArmorItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI enum HorseArmorItem::Tier getTier() const;
     MCAPI static int const* const const mHealthPerTier;
 

@@ -10,13 +10,7 @@ class AmphibiousMoveControl : public GenericMoveControl {
 public:
     /*0*/ virtual ~AmphibiousMoveControl();
     /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
-    /*
-    inline void tick(class MoveControlComponent& a0, class Mob& a1){
-        void (AmphibiousMoveControl::*rv)(class MoveControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@AmphibiousMoveControl@@UEAAXAEAVMoveControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

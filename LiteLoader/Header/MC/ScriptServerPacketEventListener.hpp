@@ -9,13 +9,7 @@ class ScriptServerPacketEventListener {
 public:
     /*0*/ virtual ~ScriptServerPacketEventListener();
     /*1*/ virtual int /*enum enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onPacketReceivedFrom(class PacketHeader const& a0, class Packet const& a1){
-        int \/*enum enum EventResult*\/ (ScriptServerPacketEventListener::*rv)(class PacketHeader const&, class Packet const&);
-        *((void**)&rv) = dlsym("?onPacketReceivedFrom@ScriptServerPacketEventListener@@UEAA?AW4EventResult@@AEBVPacketHeader@@AEBVPacket@@@Z");
-        return (this->*rv)(std::forward<class PacketHeader const&>(a0), std::forward<class Packet const&>(a1));
-    }
-    */
+
 
 protected:
 

@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct TreeParams;
+struct TreeParams {
+    TreeParams() = delete;
+    TreeParams(TreeParams const&) = delete;
+    TreeParams(TreeParams const&&) = delete;
+};
 
 #endif

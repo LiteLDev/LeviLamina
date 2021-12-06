@@ -13,31 +13,22 @@ public:
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void clearInputState();
     /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
+    /*6*/ virtual bool allowPicking(float, float);
     /*7*/ virtual void setJumping(bool);
-    /*8*/ virtual void __unk_vfn_4();
-    /*9*/ virtual void __unk_vfn_5();
-    /*10*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void setAutoJumpingInWater(bool);
+    /*9*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void setSneakDown(bool);
     /*11*/ virtual bool isPlayerMoving() const;
+    /*12*/ virtual class Vec3 const& getGazeDirection() const;
     /*
     inline bool isChangeHeight() const{
         bool (MoveInput::*rv)() const;
         *((void**)&rv) = dlsym("?isChangeHeight@MoveInput@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isPlayerMoving() const{
-        bool (MoveInput::*rv)() const;
-        *((void**)&rv) = dlsym("?isPlayerMoving@MoveInput@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void clearMovementState(){
         void (MoveInput::*rv)();
         *((void**)&rv) = dlsym("?clearMovementState@MoveInput@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void clearInputState(){
-        void (MoveInput::*rv)();
-        *((void**)&rv) = dlsym("?clearInputState@MoveInput@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void setKey(int a0, bool a1){
@@ -49,36 +40,6 @@ public:
         void (MoveInput::*rv)(float);
         *((void**)&rv) = dlsym("?render@MoveInput@@UEAAXM@Z");
         return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void tick(struct IPlayerMovementProxy& a0){
-        void (MoveInput::*rv)(struct IPlayerMovementProxy&);
-        *((void**)&rv) = dlsym("?tick@MoveInput@@UEAAXAEAUIPlayerMovementProxy@@@Z");
-        return (this->*rv)(std::forward<struct IPlayerMovementProxy&>(a0));
-    }
-    inline bool allowPicking(float a0, float a1){
-        bool (MoveInput::*rv)(float, float);
-        *((void**)&rv) = dlsym("?allowPicking@MoveInput@@UEAA_NMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1));
-    }
-    inline class Vec3 const& getGazeDirection() const{
-        class Vec3 const& (MoveInput::*rv)() const;
-        *((void**)&rv) = dlsym("?getGazeDirection@MoveInput@@UEBAAEBVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline void setAutoJumpingInWater(bool a0){
-        void (MoveInput::*rv)(bool);
-        *((void**)&rv) = dlsym("?setAutoJumpingInWater@MoveInput@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setJumping(bool a0){
-        void (MoveInput::*rv)(bool);
-        *((void**)&rv) = dlsym("?setJumping@MoveInput@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setSneakDown(bool a0){
-        void (MoveInput::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSneakDown@MoveInput@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
     }
     */
 

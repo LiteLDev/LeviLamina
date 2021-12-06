@@ -5,7 +5,15 @@
 #else
 // Add Member There
 public:
-struct ErrorLocalization;
-struct ServerData;
+struct ErrorLocalization {
+    ErrorLocalization() = delete;
+    ErrorLocalization(ErrorLocalization const&) = delete;
+    ErrorLocalization(ErrorLocalization const&&) = delete;
+};
+struct ServerData {
+    ServerData() = delete;
+    ServerData(ServerData const&) = delete;
+    ServerData(ServerData const&&) = delete;
+};
 
 #endif

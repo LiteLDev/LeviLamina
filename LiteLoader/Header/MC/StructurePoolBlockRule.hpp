@@ -7,7 +7,7 @@
 class StructurePoolBlockRule {
 #include "Extra/StructurePoolBlockRuleAPI.hpp"
 public:
-    MCAPI bool processRule(class Block const&, class Block const&, class Random&, class Block const*&, class BlockPos const&, class BlockPos const&) const;
+    MCAPI bool processRule(class Block const&, class Block const&, class Random&, class Block const* &, class BlockPos const&, class BlockPos const&) const;
 
 protected:
 

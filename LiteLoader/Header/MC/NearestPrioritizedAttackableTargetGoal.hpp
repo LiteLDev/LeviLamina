@@ -9,24 +9,13 @@ class NearestPrioritizedAttackableTargetGoal : public NearestAttackableTargetGoa
 #include "Extra/NearestPrioritizedAttackableTargetGoalAPI.hpp"
 public:
     /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool isTargetGoal() const;
+    /*2*/ virtual void stop();
     /*3*/ virtual void appendDebugInfo(std::string&) const;
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const**);
-    /*
-    inline struct ActorUniqueID _findTarget(struct MobDescriptor const** a0){
-        struct ActorUniqueID (NearestPrioritizedAttackableTargetGoal::*rv)(struct MobDescriptor const**);
-        *((void**)&rv) = dlsym("?_findTarget@NearestPrioritizedAttackableTargetGoal@@EEAA?AUActorUniqueID@@PEAPEBUMobDescriptor@@@Z");
-        return (this->*rv)(std::forward<struct MobDescriptor const**>(a0));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (NearestPrioritizedAttackableTargetGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@NearestPrioritizedAttackableTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    */
+    /*4*/ virtual void __unk_vfn_0();
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
+
 
 protected:
 

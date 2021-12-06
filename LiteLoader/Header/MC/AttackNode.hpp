@@ -9,18 +9,8 @@ class AttackNode {
 public:
     /*0*/ virtual ~AttackNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (AttackNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@AttackNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (AttackNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@AttackNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
+
 
 protected:
 

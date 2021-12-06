@@ -9,7 +9,7 @@ class StructurePiece {
 public:
     /*0*/ virtual ~StructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*3*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
@@ -20,63 +20,7 @@ public:
     /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*11*/ virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (StructurePiece::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@StructurePiece@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    inline class PoolElementStructurePiece* asPoolElement(){
-        class PoolElementStructurePiece* (StructurePiece::*rv)();
-        *((void**)&rv) = dlsym("?asPoolElement@StructurePiece@@UEAAPEAVPoolElementStructurePiece@@XZ");
-        return (this->*rv)();
-    }
-    inline void postProcessMobsAt(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        void (StructurePiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcessMobsAt@StructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    inline void addHardcodedSpawnAreas(class LevelChunk& a0) const{
-        void (StructurePiece::*rv)(class LevelChunk&) const;
-        *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@StructurePiece@@UEBAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    inline void addChildren(class StructurePiece& a0, std::vector<std::unique_ptr<class StructurePiece>>& a1, class Random& a2){
-        void (StructurePiece::*rv)(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-        *((void**)&rv) = dlsym("?addChildren@StructurePiece@@UEAAXAEAV1@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class StructurePiece&>(a0), std::forward<std::vector<std::unique_ptr<class StructurePiece>>&>(a1), std::forward<class Random&>(a2));
-    }
-    inline bool canBeReplaced(class BlockSource& a0, int a1, int a2, int a3, class BoundingBox const& a4){
-        bool (StructurePiece::*rv)(class BlockSource&, int, int, int, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?canBeReplaced@StructurePiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<class BoundingBox const&>(a4));
-    }
-    inline void moveBoundingBox(int a0, int a1, int a2){
-        void (StructurePiece::*rv)(int, int, int);
-        *((void**)&rv) = dlsym("?moveBoundingBox@StructurePiece@@UEAAXHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline void generateBox(class BlockSource& a0, class BoundingBox const& a1, int a2, int a3, int a4, int a5, int a6, int a7, class Block const& a8, class Block const& a9, bool a10){
-        void (StructurePiece::*rv)(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
-        *((void**)&rv) = dlsym("?generateBox@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBoundingBox@@HHHHHHAEBVBlock@@2_N@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BoundingBox const&>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5), std::forward<int>(a6), std::forward<int>(a7), std::forward<class Block const&>(a8), std::forward<class Block const&>(a9), std::forward<bool>(a10));
-    }
-    inline int getWorldX(int a0, int a1){
-        int (StructurePiece::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getWorldX@StructurePiece@@UEAAHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline int getWorldZ(int a0, int a1){
-        int (StructurePiece::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getWorldZ@StructurePiece@@UEAAHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline void placeBlock(class BlockSource& a0, class Block const& a1, int a2, int a3, int a4, class BoundingBox const& a5){
-        void (StructurePiece::*rv)(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?placeBlock@StructurePiece@@UEAAXAEAVBlockSource@@AEBVBlock@@HHHAEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<class BoundingBox const&>(a5));
-    }
-    */
+
     MCAPI class BlockPos _getWorldPos(int, int, int);
     MCAPI bool edgesLiquid(class BlockSource&, class BoundingBox const&);
     MCAPI void generateAirBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int);

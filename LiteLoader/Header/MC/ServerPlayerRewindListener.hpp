@@ -16,18 +16,7 @@ public:
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual int /*enum enum EventResult*/ onPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
     /*8*/ virtual int /*enum enum EventResult*/ onPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onPlayerAuthInputApplied(class Player& a0, class PlayerAuthInputPacket const& a1){
-        int \/*enum enum EventResult*\/ (ServerPlayerRewindListener::*rv)(class Player&, class PlayerAuthInputPacket const&);
-        *((void**)&rv) = dlsym("?onPlayerAuthInputApplied@ServerPlayerRewindListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVPlayerAuthInputPacket@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class PlayerAuthInputPacket const&>(a1));
-    }
-    inline int \/*enum enum EventResult*\/ onPlayerAuthInputReceived(class Player& a0, class PlayerAuthInputPacket const& a1){
-        int \/*enum enum EventResult*\/ (ServerPlayerRewindListener::*rv)(class Player&, class PlayerAuthInputPacket const&);
-        *((void**)&rv) = dlsym("?onPlayerAuthInputReceived@ServerPlayerRewindListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVPlayerAuthInputPacket@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class PlayerAuthInputPacket const&>(a1));
-    }
-    */
+
     MCAPI static void _onPlayerAuthInputReceived(unsigned __int64, struct PlayerMovementSettings const&, class EntityContext&, struct IActorMovementProxy&);
 
 protected:

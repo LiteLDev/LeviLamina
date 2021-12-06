@@ -9,13 +9,7 @@ class KeyManager {
 public:
     /*0*/ virtual ~KeyManager();
     /*1*/ virtual bool isValid() const;
-    /*
-    inline bool isValid() const{
-        bool (KeyManager::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@KeyManager@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI std::string getPublicKey() const;
 
 protected:

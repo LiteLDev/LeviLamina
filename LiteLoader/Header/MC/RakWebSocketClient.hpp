@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~RakWebSocketClient();
     /*1*/ virtual void _updateState();
     /*2*/ virtual unsigned int _genMaskingKey() const;
-    /*
-    inline unsigned int _genMaskingKey() const{
-        unsigned int (RakWebSocketClient::*rv)() const;
-        *((void**)&rv) = dlsym("?_genMaskingKey@RakWebSocketClient@@MEBAIXZ");
-        return (this->*rv)();
-    }
-    inline void _updateState(){
-        void (RakWebSocketClient::*rv)();
-        *((void**)&rv) = dlsym("?_updateState@RakWebSocketClient@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

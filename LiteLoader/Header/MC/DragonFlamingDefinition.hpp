@@ -9,13 +9,8 @@ class DragonFlamingDefinition {
 #include "Extra/DragonFlamingDefinitionAPI.hpp"
 public:
     /*0*/ virtual ~DragonFlamingDefinition();
-    /*
-    inline bool validateMobType(class Mob& a0){
-        bool (DragonFlamingDefinition::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?validateMobType@DragonFlamingDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+    /*1*/ virtual bool validateMobType(class Mob&);
+
     MCAPI void initialize(class EntityContext&, class DragonFlamingGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class DragonFlamingDefinition> >&);
 

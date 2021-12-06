@@ -36,68 +36,47 @@ public:
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*26*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canBePulledIntoVehicle() const;
-    /*36*/ virtual void __unk_vfn_14();
+    /*36*/ virtual void __unk_vfn_13();
     /*37*/ virtual bool canSynchronizeNewEntity() const;
-    /*38*/ virtual void __unk_vfn_15();
-    /*39*/ virtual void __unk_vfn_16();
+    /*38*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_15();
     /*40*/ virtual bool isWorldBuilder() const;
-    /*41*/ virtual void __unk_vfn_17();
+    /*41*/ virtual void __unk_vfn_16();
     /*42*/ virtual bool isAdventure() const;
     /*43*/ virtual bool canDestroyBlock(class Block const&) const;
     /*44*/ virtual void setAuxValue(int);
     /*45*/ virtual void stopSpinAttack();
-    /*46*/ virtual void __unk_vfn_18();
-    /*47*/ virtual void __unk_vfn_19();
-    /*48*/ virtual void __unk_vfn_20();
+    /*46*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_18();
+    /*48*/ virtual void __unk_vfn_19();
     /*49*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*50*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual void aiStep();
     /*55*/ virtual float getItemUseStartupProgress() const;
     /*56*/ virtual float getItemUseIntervalProgress() const;
-    /*57*/ virtual void __unk_vfn_23();
+    /*57*/ virtual void __unk_vfn_22();
     /*58*/ virtual bool isAlliedTo(class Mob*);
-    /*59*/ virtual void __unk_vfn_24();
+    /*59*/ virtual void __unk_vfn_23();
     /*60*/ virtual int getArmorValue();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
-    /*64*/ virtual void __unk_vfn_26();
+    /*63*/ virtual int getAttackTime();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
-    /*
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ZombieVillager::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ZombieVillager@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (ZombieVillager::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@ZombieVillager@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ZombieVillager::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ZombieVillager@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ZombieVillager::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ZombieVillager@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+    /*66*/ virtual void __unk_vfn_25();
+
 
 protected:
 

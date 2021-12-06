@@ -6,10 +6,7 @@
 #undef EXTRA_INCLUDE_PART_UPNPINTERFACE
 class UPNPInterface {
 #include "Extra/UPNPInterfaceAPI.hpp"
-public:
-    /*0*/ virtual ~UPNPInterface();
-    /*1*/ virtual void _onDisable();
-    /*
+public:    /*
     inline void _onEnable(){
         void (UPNPInterface::*rv)();
         *((void**)&rv) = dlsym("?_onEnable@UPNPInterface@@EEAAXXZ");

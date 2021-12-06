@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BehaviorDefinition.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_FINDBLOCKDEFINITION
 #include "Extra/FindBlockDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FINDBLOCKDEFINITION
@@ -11,13 +11,7 @@ class FindBlockDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~FindBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (FindBlockDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@FindBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

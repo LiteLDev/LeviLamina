@@ -12,36 +12,10 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void stop(){
-        void (HoverGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@HoverGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (HoverGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@HoverGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (HoverGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@HoverGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (HoverGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@HoverGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (HoverGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@HoverGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

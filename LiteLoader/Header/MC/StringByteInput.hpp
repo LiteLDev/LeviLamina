@@ -11,11 +11,6 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual unsigned __int64 numBytesLeft() const;
     /*
-    inline unsigned __int64 numBytesLeft() const{
-        unsigned __int64 (StringByteInput::*rv)() const;
-        *((void**)&rv) = dlsym("?numBytesLeft@StringByteInput@@UEBA_KXZ");
-        return (this->*rv)();
-    }
     inline bool readBytes(void* a0, unsigned __int64 a1){
         bool (StringByteInput::*rv)(void*, unsigned __int64);
         *((void**)&rv) = dlsym("?readBytes@StringByteInput@@UEAA_NPEAX_K@Z");

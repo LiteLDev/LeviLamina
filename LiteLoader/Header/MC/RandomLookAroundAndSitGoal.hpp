@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RandomLookAroundAndSitGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RandomLookAroundAndSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RandomLookAroundAndSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RandomLookAroundAndSitGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RandomLookAroundAndSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RandomLookAroundAndSitGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RandomLookAroundAndSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RandomLookAroundAndSitGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RandomLookAroundAndSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RandomLookAroundAndSitGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (RandomLookAroundAndSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@RandomLookAroundAndSitGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

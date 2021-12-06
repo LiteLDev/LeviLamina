@@ -9,18 +9,8 @@ class LootSystem {
 public:
     /*0*/ virtual ~LootSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher&);
-    /*
-    inline void tick(class EntityRegistry& a0){
-        void (LootSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@LootSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    inline void registerEvents(class entt::dispatcher& a0){
-        void (LootSystem::*rv)(class entt::dispatcher&);
-        *((void**)&rv) = dlsym("?registerEvents@LootSystem@@UEAAXAEAVdispatcher@entt@@@Z");
-        return (this->*rv)(std::forward<class entt::dispatcher&>(a0));
-    }
-    */
+    /*2*/ virtual void tick(class EntityRegistry&);
+
 
 protected:
 

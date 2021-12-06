@@ -4,6 +4,11 @@
 
 #else
 // Add Member There
-struct SavedCommand;
+public:
+struct SavedCommand {
+    SavedCommand() = delete;
+    SavedCommand(SavedCommand const&) = delete;
+    SavedCommand(SavedCommand const&&) = delete;
+};
 
 #endif

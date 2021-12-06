@@ -12,23 +12,7 @@ public:
     /*1*/ virtual std::string const& getName() const;
     /*2*/ virtual void executeAction(class RenderParams&) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
-    /*
-    inline void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >& a0, class Factory<class EventResponse> const& a1) const{
-        void (PlaySoundResponse::*rv)(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&, class Factory<class EventResponse> const&) const;
-        *((void**)&rv) = dlsym("?buildSchema@PlaySoundResponse@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UEventResponseCollection@@@JsonUtil@@@std@@AEBV?$Factory@VEventResponse@@$$V@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct EventResponseCollection> >&>(a0), std::forward<class Factory<class EventResponse> const&>(a1));
-    }
-    inline void executeAction(class RenderParams& a0) const{
-        void (PlaySoundResponse::*rv)(class RenderParams&) const;
-        *((void**)&rv) = dlsym("?executeAction@PlaySoundResponse@@UEBAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    inline std::string const& getName() const{
-        std::string const& (PlaySoundResponse::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@PlaySoundResponse@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::string const NameID;
 
 protected:

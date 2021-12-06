@@ -28,36 +28,6 @@ public:
         *((void**)&rv) = dlsym("?isProtectionEnchant@ProtectionEnchant@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool _isValidEnchantmentTypeForCategory(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (ProtectionEnchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?_isValidEnchantmentTypeForCategory@ProtectionEnchant@@EEBA_NW4Type@Enchant@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    inline void doPostHurt(class ItemInstance& a0, class Actor& a1, class Actor& a2, int a3) const{
-        void (ProtectionEnchant::*rv)(class ItemInstance&, class Actor&, class Actor&, int) const;
-        *((void**)&rv) = dlsym("?doPostHurt@ProtectionEnchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z");
-        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Actor&>(a1), std::forward<class Actor&>(a2), std::forward<int>(a3));
-    }
-    inline int getDamageProtection(int a0, class ActorDamageSource const& a1) const{
-        int (ProtectionEnchant::*rv)(int, class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?getDamageProtection@ProtectionEnchant@@UEBAHHAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ActorDamageSource const&>(a1));
-    }
-    inline int getMaxCost(int a0) const{
-        int (ProtectionEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@ProtectionEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMaxLevel() const{
-        int (ProtectionEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@ProtectionEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMinCost(int a0) const{
-        int (ProtectionEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@ProtectionEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     */
 
 protected:

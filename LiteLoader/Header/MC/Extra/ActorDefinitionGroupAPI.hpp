@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct LoadActorResult;
+struct LoadActorResult {
+    LoadActorResult() = delete;
+    LoadActorResult(LoadActorResult const&) = delete;
+    LoadActorResult(LoadActorResult const&&) = delete;
+};
 
 #endif

@@ -64,46 +64,6 @@ public:
         *((void**)&rv) = dlsym("?doEndObject@NBTLoader@@EEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool doBeginArray(unsigned __int64& a0){
-        bool (NBTLoader::*rv)(unsigned __int64&);
-        *((void**)&rv) = dlsym("?doBeginArray@NBTLoader@@EEAA_NAEA_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64&>(a0));
-    }
-    inline bool doBeginArrayItem(unsigned __int64 a0){
-        bool (NBTLoader::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doBeginArrayItem@NBTLoader@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doBeginMember(char const* a0, bool a1){
-        bool (NBTLoader::*rv)(char const*, bool);
-        *((void**)&rv) = dlsym("?doBeginMember@NBTLoader@@EEAA_NPEBD_N@Z");
-        return (this->*rv)(std::forward<char const*>(a0), std::forward<bool>(a1));
-    }
-    inline bool doBeginMember(unsigned __int64 a0, std::string& a1){
-        bool (NBTLoader::*rv)(unsigned __int64, std::string&);
-        *((void**)&rv) = dlsym("?doBeginMember@NBTLoader@@EEAA_N_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<std::string&>(a1));
-    }
-    inline bool doBeginObject(unsigned __int64& a0){
-        bool (NBTLoader::*rv)(unsigned __int64&);
-        *((void**)&rv) = dlsym("?doBeginObject@NBTLoader@@EEAA_NAEA_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64&>(a0));
-    }
-    inline bool doBeginObject(){
-        bool (NBTLoader::*rv)();
-        *((void**)&rv) = dlsym("?doBeginObject@NBTLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndArrayItem(){
-        bool (NBTLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndArrayItem@NBTLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndMember(){
-        bool (NBTLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndMember@NBTLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool doSerialize(signed char& a0){
         bool (NBTLoader::*rv)(signed char&);
         *((void**)&rv) = dlsym("?doSerialize@NBTLoader@@EEAA_NAEAC@Z");
@@ -134,26 +94,6 @@ public:
         *((void**)&rv) = dlsym("?doSerialize@NBTLoader@@EEAA_NAEAH@Z");
         return (this->*rv)(std::forward<int&>(a0));
     }
-    inline bool doSerialize(float& a0){
-        bool (NBTLoader::*rv)(float&);
-        *((void**)&rv) = dlsym("?doSerialize@NBTLoader@@EEAA_NAEAM@Z");
-        return (this->*rv)(std::forward<float&>(a0));
-    }
-    inline bool doSerialize(std::string& a0){
-        bool (NBTLoader::*rv)(std::string&);
-        *((void**)&rv) = dlsym("?doSerialize@NBTLoader@@EEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool doSerialize(bool& a0){
-        bool (NBTLoader::*rv)(bool&);
-        *((void**)&rv) = dlsym("?doSerialize@NBTLoader@@EEAA_NAEA_N@Z");
-        return (this->*rv)(std::forward<bool&>(a0));
-    }
-    inline bool isArray() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isArray@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isChar() const{
         bool (NBTLoader::*rv)() const;
         *((void**)&rv) = dlsym("?isChar@NBTLoader@@UEBA_NXZ");
@@ -162,31 +102,6 @@ public:
     inline bool isBool() const{
         bool (NBTLoader::*rv)() const;
         *((void**)&rv) = dlsym("?isBool@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isFloat() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isFloat@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInt() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isInt@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isObject() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isObject@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isShort() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isShort@NBTLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isString() const{
-        bool (NBTLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isString@NBTLoader@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

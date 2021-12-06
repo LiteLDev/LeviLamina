@@ -16,7 +16,7 @@ protected:
 
 private:
     MCAPI void _initialize(class AppPlatform&);
-    MCAPI void _registerFeature(enum FeatureOptionTabID, enum FeatureOptionID, std::string const&, std::string const&, bool, enum FeatureOptionID, class std::function<void (class Option&)>, class std::function<void (bool&)>);
+    MCAPI void _registerFeature(enum FeatureOptionTabID, enum FeatureOptionID, std::string const&, std::string const&, bool, enum FeatureOptionID, class std::function<void (class Option& )>, class std::function<void (bool& )>);
     MCAPI void _registerFeatures();
     MCAPI void _setupDependencies();
     MCAPI static std::unique_ptr<class FeatureToggles> mFeatureToggles;

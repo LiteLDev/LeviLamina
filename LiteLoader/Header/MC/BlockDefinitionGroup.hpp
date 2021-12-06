@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "JsonUtil.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_BLOCKDEFINITIONGROUP
 #include "Extra/BlockDefinitionGroupAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKDEFINITIONGROUP
@@ -13,7 +13,7 @@ public:
     MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const&, class BlockComponentFactory const&);
     MCAPI std::unique_ptr<struct BlockDefinition> generateBlockDefinition(struct BlockDefinitionGroup::BlockResource const&, class Experiments const&);
     MCAPI std::vector<struct std::pair<std::string, class CompoundTag>> generateServerBlockProperties() const;
-    MCAPI std::vector<struct BlockDefinition const*> getBlockDefinitions() const;
+    MCAPI std::vector<struct BlockDefinition const* > getBlockDefinitions() const;
     MCAPI void initializeBlockFromDefinition(struct BlockDefinition const&, class EntityRegistryOwned&, class Level&);
     MCAPI void initializeBlocks(class EntityRegistryOwned&, class Level&);
     MCAPI void loadResources(class ResourcePackManager&, class BlockComponentFactory const&, class Experiments const&);

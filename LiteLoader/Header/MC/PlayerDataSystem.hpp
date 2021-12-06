@@ -7,7 +7,7 @@
 #undef EXTRA_INCLUDE_PART_PLAYERDATASYSTEM
 namespace PlayerDataSystem {
 #include "Extra/PlayerDataSystemAPI.hpp"
-    MCAPI void forEachIdByPrecedence(struct PlayerStorageIds const&, class std::function<bool (std::string const&, std::string const&)>);
+    MCAPI void forEachIdByPrecedence(struct PlayerStorageIds const&, class std::function<bool (std::string const& , std::string const& )>);
     MCAPI class Core::PathBuffer<std::string > getPlayerFilename(class Core::Path const&, std::string const&);
     MCAPI std::string getServerId(class LevelStorage&, struct PlayerStorageIds const&);
     MCAPI std::unique_ptr<class CompoundTag> legacyLoadClientPlayer(std::string const&, class Core::Path const&);

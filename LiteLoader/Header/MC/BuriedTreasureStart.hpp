@@ -9,13 +9,9 @@ class BuriedTreasureStart : public StructureStart {
 #include "Extra/BuriedTreasureStartAPI.hpp"
 public:
     /*0*/ virtual ~BuriedTreasureStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (BuriedTreasureStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@BuriedTreasureStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

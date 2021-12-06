@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct Point;
+struct Point {
+    Point() = delete;
+    Point(Point const&) = delete;
+    Point(Point const&&) = delete;
+};
 
 #endif

@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Item.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #include "JsonUtil.hpp"
 #define EXTRA_INCLUDE_PART_COMPONENTITEM
 #include "Extra/ComponentItemAPI.hpp"
@@ -34,16 +34,16 @@ public:
     /*21*/ virtual class IFoodItemComponent* getFood() const;
     /*22*/ virtual class FuelItemComponent* getFuel() const;
     /*23*/ virtual class Item& setMaxDamage(int);
-    /*24*/ virtual void __unk_vfn_6();
+    /*24*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*25*/ virtual bool canBeDepleted() const;
     /*26*/ virtual bool canDestroySpecial(class Block const&) const;
     /*27*/ virtual int getLevelDataForAuxValue(int) const;
     /*28*/ virtual short getMaxDamage() const;
     /*29*/ virtual int getAttackDamage() const;
     /*30*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*31*/ virtual void __unk_vfn_7();
-    /*32*/ virtual void __unk_vfn_8();
-    /*33*/ virtual void __unk_vfn_9();
+    /*31*/ virtual void __unk_vfn_6();
+    /*32*/ virtual int getPatternIndex() const;
+    /*33*/ virtual void __unk_vfn_7();
     /*34*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*35*/ virtual bool canDestroyInCreative() const;
     /*36*/ virtual bool isDestructive(int) const;
@@ -55,23 +55,23 @@ public:
     /*42*/ virtual int getEnchantSlot() const;
     /*43*/ virtual int getEnchantValue() const;
     /*44*/ virtual int getArmorValue() const;
-    /*45*/ virtual void __unk_vfn_10();
+    /*45*/ virtual void __unk_vfn_8();
     /*46*/ virtual bool isValidAuxValue(int) const;
     /*47*/ virtual int getDamageChance(int) const;
-    /*48*/ virtual void __unk_vfn_11();
-    /*49*/ virtual void __unk_vfn_12();
-    /*50*/ virtual void __unk_vfn_13();
-    /*51*/ virtual void __unk_vfn_14();
+    /*48*/ virtual float getViewDamping() const;
+    /*49*/ virtual void __unk_vfn_9();
+    /*50*/ virtual void __unk_vfn_10();
+    /*51*/ virtual void __unk_vfn_11();
     /*52*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*53*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*54*/ virtual void __unk_vfn_15();
-    /*55*/ virtual void clearColor(class CompoundTag*) const;
-    /*56*/ virtual void __unk_vfn_16();
-    /*57*/ virtual void __unk_vfn_17();
-    /*58*/ virtual void __unk_vfn_18();
-    /*59*/ virtual void __unk_vfn_19();
-    /*60*/ virtual void __unk_vfn_20();
-    /*61*/ virtual void __unk_vfn_21();
+    /*54*/ virtual void __unk_vfn_12();
+    /*55*/ virtual void clearColor(class ItemStackBase&) const;
+    /*56*/ virtual void clearColor(class CompoundTag*) const;
+    /*57*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*58*/ virtual void __unk_vfn_13();
+    /*59*/ virtual void __unk_vfn_14();
+    /*60*/ virtual void __unk_vfn_15();
+    /*61*/ virtual void __unk_vfn_16();
     /*62*/ virtual bool canUseOnSimTick() const;
     /*63*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*64*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
@@ -83,7 +83,7 @@ public:
     /*70*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*71*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*72*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*73*/ virtual void __unk_vfn_22();
+    /*73*/ virtual void __unk_vfn_17();
     /*74*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*75*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
     /*76*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
@@ -92,8 +92,8 @@ public:
     /*79*/ virtual class HashedString const& getCooldownType() const;
     /*80*/ virtual int getCooldownTime() const;
     /*81*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*82*/ virtual void __unk_vfn_23();
-    /*83*/ virtual void __unk_vfn_24();
+    /*82*/ virtual void __unk_vfn_18();
+    /*83*/ virtual void __unk_vfn_19();
     /*84*/ virtual bool validFishInteraction(int) const;
     /*85*/ virtual void initClient(class Json::Value&, class SemVersion const&);
     /*86*/ virtual std::string getInteractText(class Player const&) const;
@@ -104,22 +104,12 @@ public:
     /*91*/ virtual class Item& setIcon(std::string const&, int);
     /*92*/ virtual bool canBeCharged() const;
     /*93*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*94*/ virtual void __unk_vfn_25();
+    /*94*/ virtual void __unk_vfn_20();
     /*95*/ virtual std::string getAuxValuesDescription() const;
     /*96*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
     /*97*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*98*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
     /*
-    inline bool isDestructive(int a0) const{
-        bool (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isDestructive@ComponentItem@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isEmissive(int a0) const{
-        bool (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isEmissive@ComponentItem@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline bool useVariant(int a0, int a1, bool a2) const{
         bool (ComponentItem::*rv)(int, int, bool) const;
         *((void**)&rv) = dlsym("?useVariant@ComponentItem@@UEBA_NHH_N@Z");
@@ -135,60 +125,15 @@ public:
         *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
     }
-    inline int getAnimationFrameFor(class Mob* a0, bool a1, class ItemStack const* a2, bool a3) const{
-        int (ComponentItem::*rv)(class Mob*, bool, class ItemStack const*, bool) const;
-        *((void**)&rv) = dlsym("?getAnimationFrameFor@ComponentItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0), std::forward<bool>(a1), std::forward<class ItemStack const*>(a2), std::forward<bool>(a3));
-    }
-    inline int getLevelDataForAuxValue(int a0) const{
-        int (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getLevelDataForAuxValue@ComponentItem@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void clearColor(class ItemStackBase& a0) const{
-        void (ComponentItem::*rv)(class ItemStackBase&) const;
-        *((void**)&rv) = dlsym("?clearColor@ComponentItem@@UEBAXAEAVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0));
-    }
-    inline void tearDown(){
-        void (ComponentItem::*rv)();
-        *((void**)&rv) = dlsym("?tearDown@ComponentItem@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setColor(class ItemStackBase& a0, class mce::Color const& a1) const{
-        void (ComponentItem::*rv)(class ItemStackBase&, class mce::Color const&) const;
-        *((void**)&rv) = dlsym("?setColor@ComponentItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class mce::Color const&>(a1));
-    }
     inline bool isComponentBased() const{
         bool (ComponentItem::*rv)() const;
         *((void**)&rv) = dlsym("?isComponentBased@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::string getAuxValuesDescription() const{
-        std::string (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getAuxValuesDescription@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum BlockShape*\/ getBlockShape() const{
-        int \/*enum enum BlockShape*\/ (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockShape@ComponentItem@@UEBA?AW4BlockShape@@XZ");
         return (this->*rv)();
     }
     inline std::string buildDescriptionName(class ItemStackBase const& a0) const{
         std::string (ComponentItem::*rv)(class ItemStackBase const&) const;
         *((void**)&rv) = dlsym("?buildDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
-    }
-    inline std::string getInteractText(class Player const& a0) const{
-        std::string (ComponentItem::*rv)(class Player const&) const;
-        *((void**)&rv) = dlsym("?getInteractText@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
-    inline unsigned char getMaxStackSize(class ItemDescriptor const& a0) const{
-        unsigned char (ComponentItem::*rv)(class ItemDescriptor const&) const;
-        *((void**)&rv) = dlsym("?getMaxStackSize@ComponentItem@@UEBAEAEBVItemDescriptor@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0));
     }
     inline bool isFood() const{
         bool (ComponentItem::*rv)() const;
@@ -199,251 +144,6 @@ public:
         bool (ComponentItem::*rv)(class ItemStackBase const&) const;
         *((void**)&rv) = dlsym("?isGlint@ComponentItem@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
-    }
-    inline int getEnchantValue() const{
-        int (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getEnchantValue@ComponentItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool _calculatePlacePos(class ItemStackBase& a0, class Actor& a1, unsigned char& a2, class BlockPos& a3) const{
-        bool (ComponentItem::*rv)(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-        *((void**)&rv) = dlsym("?_calculatePlacePos@ComponentItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class Actor&>(a1), std::forward<unsigned char&>(a2), std::forward<class BlockPos&>(a3));
-    }
-    inline bool _checkUseOnPermissions(class Actor& a0, class ItemStackBase& a1, unsigned char const& a2, class BlockPos const& a3) const{
-        bool (ComponentItem::*rv)(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?_checkUseOnPermissions@ComponentItem@@EEBA_NAEAVActor@@AEAVItemStackBase@@AEBEAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemStackBase&>(a1), std::forward<unsigned char const&>(a2), std::forward<class BlockPos const&>(a3));
-    }
-    inline bool _useOn(class ItemStack& a0, class Actor& a1, class BlockPos a2, unsigned char a3, float a4, float a5, float a6) const{
-        bool (ComponentItem::*rv)(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-        *((void**)&rv) = dlsym("?_useOn@ComponentItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos>(a2), std::forward<unsigned char>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
-    }
-    inline void appendFormattedHovertext(class ItemStackBase const& a0, class Level& a1, std::string& a2, bool a3) const{
-        void (ComponentItem::*rv)(class ItemStackBase const&, class Level&, std::string&, bool) const;
-        *((void**)&rv) = dlsym("?appendFormattedHovertext@ComponentItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class Level&>(a1), std::forward<std::string&>(a2), std::forward<bool>(a3));
-    }
-    inline std::string buildDescriptionId(class ItemDescriptor const& a0, class CompoundTag const* a1) const{
-        std::string (ComponentItem::*rv)(class ItemDescriptor const&, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?buildDescriptionId@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class CompoundTag const*>(a1));
-    }
-    inline std::string buildEffectDescriptionName(class ItemStackBase const& a0) const{
-        std::string (ComponentItem::*rv)(class ItemStackBase const&) const;
-        *((void**)&rv) = dlsym("?buildEffectDescriptionName@ComponentItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
-    }
-    inline bool canBeCharged() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeCharged@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeDepleted() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeDepleted@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canDestroyInCreative() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?canDestroyInCreative@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canDestroySpecial(class Block const& a0) const{
-        bool (ComponentItem::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?canDestroySpecial@ComponentItem@@UEBA_NAEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline bool dispense(class BlockSource& a0, class Container& a1, int a2, class Vec3 const& a3, unsigned char a4) const{
-        bool (ComponentItem::*rv)(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?dispense@ComponentItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Container&>(a1), std::forward<int>(a2), std::forward<class Vec3 const&>(a3), std::forward<unsigned char>(a4));
-    }
-    inline void executeEvent(class ItemStackBase& a0, std::string const& a1, class RenderParams& a2) const{
-        void (ComponentItem::*rv)(class ItemStackBase&, std::string const&, class RenderParams&) const;
-        *((void**)&rv) = dlsym("?executeEvent@ComponentItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<std::string const&>(a1), std::forward<class RenderParams&>(a2));
-    }
-    inline int getArmorValue() const{
-        int (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getArmorValue@ComponentItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getAttackDamage() const{
-        int (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getAttackDamage@ComponentItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class mce::Color getColor(class CompoundTag const* a0, class ItemDescriptor const& a1) const{
-        class mce::Color (ComponentItem::*rv)(class CompoundTag const*, class ItemDescriptor const&) const;
-        *((void**)&rv) = dlsym("?getColor@ComponentItem@@UEBA?AVColor@mce@@PEBVCompoundTag@@AEBVItemDescriptor@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const*>(a0), std::forward<class ItemDescriptor const&>(a1));
-    }
-    inline class ItemComponent* getComponent(class HashedString const& a0) const{
-        class ItemComponent* (ComponentItem::*rv)(class HashedString const&) const;
-        *((void**)&rv) = dlsym("?getComponent@ComponentItem@@UEBAPEAVItemComponent@@AEBVHashedString@@@Z");
-        return (this->*rv)(std::forward<class HashedString const&>(a0));
-    }
-    inline int getCooldownTime() const{
-        int (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getCooldownTime@ComponentItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class HashedString const& getCooldownType() const{
-        class HashedString const& (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getCooldownType@ComponentItem@@UEBAAEBVHashedString@@XZ");
-        return (this->*rv)();
-    }
-    inline int getDamageChance(int a0) const{
-        int (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getDamageChance@ComponentItem@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline float getDestroySpeed(class ItemStackBase const& a0, class Block const& a1) const{
-        float (ComponentItem::*rv)(class ItemStackBase const&, class Block const&) const;
-        *((void**)&rv) = dlsym("?getDestroySpeed@ComponentItem@@UEBAMAEBVItemStackBase@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline int getEnchantSlot() const{
-        int (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getEnchantSlot@ComponentItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class IFoodItemComponent* getFood() const{
-        class IFoodItemComponent* (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getFood@ComponentItem@@UEBAPEAVIFoodItemComponent@@XZ");
-        return (this->*rv)();
-    }
-    inline class FuelItemComponent* getFuel() const{
-        class FuelItemComponent* (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getFuel@ComponentItem@@UEBAPEAVFuelItemComponent@@XZ");
-        return (this->*rv)();
-    }
-    inline struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const& a0, int a1, bool a2) const{
-        struct TextureUVCoordinateSet const& (ComponentItem::*rv)(class ItemStackBase const&, int, bool) const;
-        *((void**)&rv) = dlsym("?getIcon@ComponentItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline short getMaxDamage() const{
-        short (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxDamage@ComponentItem@@UEBAFXZ");
-        return (this->*rv)();
-    }
-    inline void hitActor(class ItemStack& a0, class Actor& a1, class Mob& a2) const{
-        void (ComponentItem::*rv)(class ItemStack&, class Actor&, class Mob&) const;
-        *((void**)&rv) = dlsym("?hitActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class Mob&>(a2));
-    }
-    inline void hitBlock(class ItemStack& a0, class Block const& a1, class BlockPos const& a2, class Mob& a3) const{
-        void (ComponentItem::*rv)(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
-        *((void**)&rv) = dlsym("?hitBlock@ComponentItem@@UEBAXAEAVItemStack@@AEBVBlock@@AEBVBlockPos@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Block const&>(a1), std::forward<class BlockPos const&>(a2), std::forward<class Mob&>(a3));
-    }
-    inline void hurtActor(class ItemStack& a0, class Actor& a1, class Mob& a2) const{
-        void (ComponentItem::*rv)(class ItemStack&, class Actor&, class Mob&) const;
-        *((void**)&rv) = dlsym("?hurtActor@ComponentItem@@UEBAXAEAVItemStack@@AEAVActor@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class Mob&>(a2));
-    }
-    inline void initClient(class Json::Value& a0, class SemVersion const& a1){
-        void (ComponentItem::*rv)(class Json::Value&, class SemVersion const&);
-        *((void**)&rv) = dlsym("?initClient@ComponentItem@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
-    }
-    inline bool initServer(class Json::Value& a0, class SemVersion const& a1){
-        bool (ComponentItem::*rv)(class Json::Value&, class SemVersion const&);
-        *((void**)&rv) = dlsym("?initServer@ComponentItem@@UEAA_NAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
-    }
-    inline bool isArmor() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isArmor@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBlockPlanterItem() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isBlockPlanterItem@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDamageable() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isDamageable@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDye() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isDye@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDyeable() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isDyeable@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isLiquidClipItem(int a0) const{
-        bool (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isLiquidClipItem@ComponentItem@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isThrowable() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isThrowable@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isUseable() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isUseable@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidAuxValue(int a0) const{
-        bool (ComponentItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isValidAuxValue@ComponentItem@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isValidRepairItem(class ItemStackBase const& a0, class ItemStackBase const& a1, class BaseGameVersion const& a2) const{
-        bool (ComponentItem::*rv)(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
-        *((void**)&rv) = dlsym("?isValidRepairItem@ComponentItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class ItemStackBase const&>(a1), std::forward<class BaseGameVersion const&>(a2));
-    }
-    inline bool mineBlock(class ItemInstance& a0, class Block const& a1, int a2, int a3, int a4, class Actor* a5) const{
-        bool (ComponentItem::*rv)(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
-        *((void**)&rv) = dlsym("?mineBlock@ComponentItem@@UEBA_NAEAVItemInstance@@AEBVBlock@@HHHPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<class Actor*>(a5));
-    }
-    inline bool mineBlock(class ItemStack& a0, class Block const& a1, int a2, int a3, int a4, class Actor* a5) const{
-        bool (ComponentItem::*rv)(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-        *((void**)&rv) = dlsym("?mineBlock@ComponentItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<class Actor*>(a5));
-    }
-    inline void releaseUsing(class ItemStack& a0, class Player* a1, int a2) const{
-        void (ComponentItem::*rv)(class ItemStack&, class Player*, int) const;
-        *((void**)&rv) = dlsym("?releaseUsing@ComponentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Player*>(a1), std::forward<int>(a2));
-    }
-    inline bool requiresInteract() const{
-        bool (ComponentItem::*rv)() const;
-        *((void**)&rv) = dlsym("?requiresInteract@ComponentItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Item& setIcon(std::string const& a0, int a1){
-        class Item& (ComponentItem::*rv)(std::string const&, int);
-        *((void**)&rv) = dlsym("?setIcon@ComponentItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int>(a1));
-    }
-    inline class Item& setMaxDamage(int a0){
-        class Item& (ComponentItem::*rv)(int);
-        *((void**)&rv) = dlsym("?setMaxDamage@ComponentItem@@UEAAAEAVItem@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline class ItemStack& use(class ItemStack& a0, class Player& a1) const{
-        class ItemStack& (ComponentItem::*rv)(class ItemStack&, class Player&) const;
-        *((void**)&rv) = dlsym("?use@ComponentItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Player&>(a1));
-    }
-    inline int \/*enum enum ItemUseMethod*\/ useTimeDepleted(class ItemStack& a0, class Level* a1, class Player* a2) const{
-        int \/*enum enum ItemUseMethod*\/ (ComponentItem::*rv)(class ItemStack&, class Level*, class Player*) const;
-        *((void**)&rv) = dlsym("?useTimeDepleted@ComponentItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Level*>(a1), std::forward<class Player*>(a2));
     }
     */
     MCAPI void _addCerealItemsToMap();

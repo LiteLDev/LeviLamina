@@ -9,13 +9,7 @@ class ScriptDebugCommand {
 public:
     /*0*/ virtual ~ScriptDebugCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (ScriptDebugCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@ScriptDebugCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&, class IScriptDebugger*, class std::optional<struct ScriptSettings> const&);
 
 protected:
@@ -23,4 +17,5 @@ protected:
 private:
     MCAPI void _handleDebugger(class CommandOutput&) const;
     MCAPI static class std::optional<unsigned short> sForcedPort;
+    MCAPI static class IScriptDebugger* sScriptDebugger;
 };

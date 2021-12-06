@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct ISharedController;
+struct ISharedController {
+    ISharedController() = delete;
+    ISharedController(ISharedController const&) = delete;
+    ISharedController(ISharedController const&&) = delete;
+};
 
 #endif

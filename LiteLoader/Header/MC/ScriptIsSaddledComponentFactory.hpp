@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~ScriptIsSaddledComponentFactory();
     /*1*/ virtual class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
     /*2*/ virtual bool hasComponent(class WeakEntityRef) const;
-    /*
-    inline class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> createComponent(class WeakEntityRef a0, class Scripting::WeakLifetimeScope const& a1, std::string const& a2){
-        class Scripting::StrongTypedObjectHandle<class ScriptActorComponent> (ScriptIsSaddledComponentFactory::*rv)(class WeakEntityRef, class Scripting::WeakLifetimeScope const&, std::string const&);
-        *((void**)&rv) = dlsym("?createComponent@ScriptIsSaddledComponentFactory@@UEAA?AV?$StrongTypedObjectHandle@VScriptActorComponent@@@Scripting@@VWeakEntityRef@@AEBVWeakLifetimeScope@3@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class WeakEntityRef>(a0), std::forward<class Scripting::WeakLifetimeScope const&>(a1), std::forward<std::string const&>(a2));
-    }
-    inline bool hasComponent(class WeakEntityRef a0) const{
-        bool (ScriptIsSaddledComponentFactory::*rv)(class WeakEntityRef) const;
-        *((void**)&rv) = dlsym("?hasComponent@ScriptIsSaddledComponentFactory@@UEBA_NVWeakEntityRef@@@Z");
-        return (this->*rv)(std::forward<class WeakEntityRef>(a0));
-    }
-    */
+
 
 protected:
 

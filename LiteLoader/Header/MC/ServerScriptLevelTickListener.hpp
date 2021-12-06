@@ -15,13 +15,7 @@ public:
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual int /*enum enum EventResult*/ onLevelTick();
-    /*
-    inline int \/*enum enum EventResult*\/ onLevelTick(){
-        int \/*enum enum EventResult*\/ (ServerScriptLevelTickListener::*rv)();
-        *((void**)&rv) = dlsym("?onLevelTick@ServerScriptLevelTickListener@@UEAA?AW4EventResult@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

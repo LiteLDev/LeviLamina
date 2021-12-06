@@ -12,23 +12,13 @@ public:
     /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*5*/ virtual void __unk_vfn_2();
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (InventoryContainerValidation::*rv)(class ItemStackBase const&) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@InventoryContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
-    }
-    inline bool isItemAllowedToRemove(class ContainerScreenContext const& a0, class ItemStackBase const& a1) const{
-        bool (InventoryContainerValidation::*rv)(class ContainerScreenContext const&, class ItemStackBase const&) const;
-        *((void**)&rv) = dlsym("?isItemAllowedToRemove@InventoryContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class ItemStackBase const&>(a1));
-    }
-    inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
-        bool (InventoryContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@InventoryContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class Container const&>(a1), std::forward<int>(a2));
     }
     */
 

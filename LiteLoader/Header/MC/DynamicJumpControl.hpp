@@ -8,50 +8,14 @@ class DynamicJumpControl {
 #include "Extra/DynamicJumpControlAPI.hpp"
 public:
     /*0*/ virtual ~DynamicJumpControl();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void initializeInternal(class Mob&, struct JumpControlDescription*);
     /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
     /*3*/ virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&) const;
     /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
     /*5*/ virtual int /*enum enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&) const;
     /*6*/ virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum enum JumpType*/);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
-    /*
-    inline int getJumpDelay(class JumpControlComponent const& a0, class Mob const& a1) const{
-        int (DynamicJumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
-        *((void**)&rv) = dlsym("?getJumpDelay@DynamicJumpControl@@MEBAHAEBVJumpControlComponent@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
-    }
-    inline float getJumpPower(class JumpControlComponent const& a0, class Mob const& a1) const{
-        float (DynamicJumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
-        *((void**)&rv) = dlsym("?getJumpPower@DynamicJumpControl@@MEBAMAEBVJumpControlComponent@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
-    }
-    inline int \/*enum enum JumpType*\/ getJumpType(class JumpControlComponent const& a0, class Mob const& a1) const{
-        int \/*enum enum JumpType*\/ (DynamicJumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
-        *((void**)&rv) = dlsym("?getJumpType@DynamicJumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
-    }
-    inline void initializeInternal(class Mob& a0, struct JumpControlDescription* a1){
-        void (DynamicJumpControl::*rv)(class Mob&, struct JumpControlDescription*);
-        *((void**)&rv) = dlsym("?initializeInternal@DynamicJumpControl@@UEAAXAEAVMob@@PEAUJumpControlDescription@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0), std::forward<struct JumpControlDescription*>(a1));
-    }
-    inline void resetSpeedModifier(class JumpControlComponent const& a0, class Mob& a1){
-        void (DynamicJumpControl::*rv)(class JumpControlComponent const&, class Mob&);
-        *((void**)&rv) = dlsym("?resetSpeedModifier@DynamicJumpControl@@MEAAXAEBVJumpControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob&>(a1));
-    }
-    inline void setJumpType(class JumpControlComponent& a0, class Mob& a1, int \/*enum enum JumpType*\/ a2){
-        void (DynamicJumpControl::*rv)(class JumpControlComponent&, class Mob&, int \/*enum enum JumpType*\/);
-        *((void**)&rv) = dlsym("?setJumpType@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@W4JumpType@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent&>(a0), std::forward<class Mob&>(a1), std::forward<int \/*enum enum JumpType*\/>(a2));
-    }
-    inline void tick(class JumpControlComponent& a0, class Mob& a1){
-        void (DynamicJumpControl::*rv)(class JumpControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@DynamicJumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

@@ -43,56 +43,56 @@ public:
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*32*/ virtual void feed(int);
     /*33*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*34*/ virtual void __unk_vfn_12();
+    /*34*/ virtual float getPickRadius();
     /*35*/ virtual void awardKillScore(class Actor&, int);
     /*36*/ virtual class HashedString const& queryEntityRenderer() const;
     /*37*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*38*/ virtual bool canFreeze() const;
     /*39*/ virtual int getPortalWaitTime() const;
     /*40*/ virtual bool canChangeDimensions() const;
-    /*41*/ virtual void __unk_vfn_13();
+    /*41*/ virtual void __unk_vfn_12();
     /*42*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*43*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*44*/ virtual void handleFallDistanceOnServer(float, float, bool);
     /*45*/ virtual void onSynchedDataUpdate(int);
     /*46*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*47*/ virtual bool canBePulledIntoVehicle() const;
-    /*48*/ virtual void __unk_vfn_14();
+    /*48*/ virtual void __unk_vfn_13();
     /*49*/ virtual bool canSynchronizeNewEntity() const;
     /*50*/ virtual void openContainerComponent(class Player&);
-    /*51*/ virtual void __unk_vfn_15();
-    /*52*/ virtual void __unk_vfn_16();
+    /*51*/ virtual void __unk_vfn_14();
+    /*52*/ virtual void __unk_vfn_15();
     /*53*/ virtual bool isWorldBuilder() const;
-    /*54*/ virtual void __unk_vfn_17();
+    /*54*/ virtual void __unk_vfn_16();
     /*55*/ virtual bool isAdventure() const;
     /*56*/ virtual bool canDestroyBlock(class Block const&) const;
     /*57*/ virtual void setAuxValue(int);
     /*58*/ virtual void stopSpinAttack();
-    /*59*/ virtual void __unk_vfn_18();
-    /*60*/ virtual void __unk_vfn_19();
+    /*59*/ virtual void __unk_vfn_17();
+    /*60*/ virtual void __unk_vfn_18();
     /*61*/ virtual void die(class ActorDamageSource const&);
     /*62*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*63*/ virtual void __unk_vfn_20();
+    /*63*/ virtual void __unk_vfn_19();
     /*64*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*65*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*66*/ virtual void __unk_vfn_21();
-    /*67*/ virtual void __unk_vfn_22();
+    /*66*/ virtual void __unk_vfn_20();
+    /*67*/ virtual void __unk_vfn_21();
     /*68*/ virtual void spawnAnim();
     /*69*/ virtual void travel(float, float, float);
     /*70*/ virtual void aiStep();
     /*71*/ virtual int getItemUseDuration() const;
     /*72*/ virtual float getItemUseStartupProgress() const;
     /*73*/ virtual float getItemUseIntervalProgress() const;
-    /*74*/ virtual void __unk_vfn_23();
+    /*74*/ virtual void __unk_vfn_22();
     /*75*/ virtual bool isAlliedTo(class Mob*);
-    /*76*/ virtual void __unk_vfn_24();
+    /*76*/ virtual void __unk_vfn_23();
     /*77*/ virtual int getArmorValue();
     /*78*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*79*/ virtual void onBorn(class Actor&, class Actor&);
-    /*80*/ virtual void __unk_vfn_25();
-    /*81*/ virtual void __unk_vfn_26();
+    /*80*/ virtual int getAttackTime();
+    /*81*/ virtual void __unk_vfn_24();
     /*82*/ virtual void _serverAiMobStep();
-    /*83*/ virtual void __unk_vfn_27();
+    /*83*/ virtual void __unk_vfn_25();
     /*84*/ virtual void setType(int);
     /*85*/ virtual int getType() const;
     /*86*/ virtual void setHorseEating(bool);
@@ -108,171 +108,6 @@ public:
         bool (Horse::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Horse@@MEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Horse::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Horse@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Horse::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Horse@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void aiStep(){
-        void (Horse::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Horse@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canFreeze() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?canFreeze@Horse@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void causeFallDamage(float a0, float a1, class ActorDamageSource a2){
-        void (Horse::*rv)(float, float, class ActorDamageSource);
-        *((void**)&rv) = dlsym("?causeFallDamage@Horse@@MEAAXMMVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<class ActorDamageSource>(a2));
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (Horse::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@Horse@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void feed(int a0){
-        void (Horse::*rv)(int);
-        *((void**)&rv) = dlsym("?feed@Horse@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getArmorValue(){
-        int (Horse::*rv)();
-        *((void**)&rv) = dlsym("?getArmorValue@Horse@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getControllingPlayer() const{
-        struct ActorUniqueID (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?getControllingPlayer@Horse@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getInterpolatedRidingOffset(float a0) const{
-        class Vec3 (Horse::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedRidingOffset@Horse@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getShadowRadius() const{
-        float (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Horse@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline float getStandAnim(float a0) const{
-        float (Horse::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getStandAnim@Horse@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline int getType() const{
-        int (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@Horse@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Horse::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Horse@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void handleFallDistanceOnServer(float a0, float a1, bool a2){
-        void (Horse::*rv)(float, float, bool);
-        *((void**)&rv) = dlsym("?handleFallDistanceOnServer@Horse@@MEAAXMM_N@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<bool>(a2));
-    }
-    inline bool isAdult() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?isAdult@Horse@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isHorseEating() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?isHorseEating@Horse@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isImmobile() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?isImmobile@Horse@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isMouthOpen() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?isMouthOpen@Horse@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isTailMoving() const{
-        bool (Horse::*rv)() const;
-        *((void**)&rv) = dlsym("?isTailMoving@Horse@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void makeMad(){
-        void (Horse::*rv)();
-        *((void**)&rv) = dlsym("?makeMad@Horse@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Horse::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Horse@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onFailedTame(){
-        void (Horse::*rv)();
-        *((void**)&rv) = dlsym("?onFailedTame@Horse@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (Horse::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@Horse@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void openContainerComponent(class Player& a0){
-        void (Horse::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?openContainerComponent@Horse@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void positionPassenger(class Actor& a0, float a1){
-        void (Horse::*rv)(class Actor&, float);
-        *((void**)&rv) = dlsym("?positionPassenger@Horse@@UEAAXAEAVActor@@M@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<float>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Horse::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Horse@@EEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void setHorseEating(bool a0){
-        void (Horse::*rv)(bool);
-        *((void**)&rv) = dlsym("?setHorseEating@Horse@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setStanding(bool a0){
-        void (Horse::*rv)(bool);
-        *((void**)&rv) = dlsym("?setStanding@Horse@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setType(int a0){
-        void (Horse::*rv)(int);
-        *((void**)&rv) = dlsym("?setType@Horse@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool tameToPlayer(class Player& a0, bool a1){
-        bool (Horse::*rv)(class Player&, bool);
-        *((void**)&rv) = dlsym("?tameToPlayer@Horse@@UEAA_NAEAVPlayer@@_N@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<bool>(a1));
-    }
-    inline void travel(float a0, float a1, float a2){
-        void (Horse::*rv)(float, float, float);
-        *((void**)&rv) = dlsym("?travel@Horse@@UEAAXMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Horse::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Horse@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI static int const DONKEY_CHEST_COUNT;

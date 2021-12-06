@@ -7,7 +7,7 @@
 struct BlockComponentGroupDescription {
 #include "Extra/BlockComponentGroupDescriptionAPI.hpp"
 public:
-    MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const&)>) const;
+    MCAPI void foreachDescription(class std::function<void (struct BlockComponentDescription const& )>) const;
     MCAPI struct BlockComponentDescription* getComponentDescription(std::string const&) const;
 
 protected:

@@ -14,33 +14,7 @@ public:
     /*3*/ virtual void setSimTimeScale(float);
     /*4*/ virtual bool getSimPaused() const;
     /*5*/ virtual bool isOnlineClient() const;
-    /*
-    inline class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry(){
-        class OwnerPtrT<struct EntityRegistryRefTraits>& (Minecraft::*rv)();
-        *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEAAAEAV?$OwnerPtrT@UEntityRegistryRefTraits@@@@XZ");
-        return (this->*rv)();
-    }
-    inline bool getSimPaused() const{
-        bool (Minecraft::*rv)() const;
-        *((void**)&rv) = dlsym("?getSimPaused@Minecraft@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isOnlineClient() const{
-        bool (Minecraft::*rv)() const;
-        *((void**)&rv) = dlsym("?isOnlineClient@Minecraft@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void setSimTimePause(bool a0){
-        void (Minecraft::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSimTimePause@Minecraft@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setSimTimeScale(float a0){
-        void (Minecraft::*rv)(float);
-        *((void**)&rv) = dlsym("?setSimTimeScale@Minecraft@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    */
+
     MCAPI void activateAllowList();
     MCAPI void configureGameTest(class Level&, class Experiments const&);
     MCAPI void disconnectClient(class NetworkIdentifier const&, std::string const&);

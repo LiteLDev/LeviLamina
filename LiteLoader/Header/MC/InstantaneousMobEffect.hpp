@@ -9,20 +9,9 @@ class InstantaneousMobEffect : public MobEffect {
 #include "Extra/InstantaneousMobEffectAPI.hpp"
 public:
     /*0*/ virtual ~InstantaneousMobEffect();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isDurationEffectTick(int, int) const;
-    /*
-    inline bool isInstantaneous() const{
-        bool (InstantaneousMobEffect::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@InstantaneousMobEffect@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDurationEffectTick(int a0, int a1) const{
-        bool (InstantaneousMobEffect::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?isDurationEffectTick@InstantaneousMobEffect@@UEBA_NHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    */
+
 
 protected:
 

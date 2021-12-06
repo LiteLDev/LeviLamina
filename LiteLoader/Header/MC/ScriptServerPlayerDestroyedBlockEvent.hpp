@@ -10,13 +10,7 @@ class ScriptServerPlayerDestroyedBlockEvent {
 public:
     /*0*/ virtual ~ScriptServerPlayerDestroyedBlockEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerPlayerDestroyedBlockEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerPlayerDestroyedBlockEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setBlockIdentifier(std::string);
     MCAPI void setBlockPos(class BlockPos const&);

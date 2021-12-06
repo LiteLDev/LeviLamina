@@ -19,44 +19,8 @@ public:
     /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*10*/ virtual bool _canReach(class BlockPos const&);
-    /*11*/ virtual void __unk_vfn_3();
-    /*
-    inline void stop(){
-        void (OcelotSitOnBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@OcelotSitOnBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (OcelotSitOnBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@OcelotSitOnBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool _canReach(class BlockPos const& a0){
-        bool (OcelotSitOnBlockGoal::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_canReach@OcelotSitOnBlockGoal@@UEAA_NAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (OcelotSitOnBlockGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@OcelotSitOnBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (OcelotSitOnBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@OcelotSitOnBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (OcelotSitOnBlockGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@OcelotSitOnBlockGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void tick(){
-        void (OcelotSitOnBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@OcelotSitOnBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
+
 
 protected:
 

@@ -11,7 +11,7 @@ public:
     /*0*/ virtual ~RegionFile();
 
     MCAPI bool open();
-    MCAPI bool readChunk(int, int, class RakNet::BitStream**);
+    MCAPI bool readChunk(int, int, class RakNet::BitStream* *);
 
 protected:
 

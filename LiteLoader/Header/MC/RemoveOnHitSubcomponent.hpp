@@ -23,16 +23,6 @@ public:
         *((void**)&rv) = dlsym("?writetoJSON@RemoveOnHitSubcomponent@@UEBAXAEAVValue@Json@@@Z");
         return (this->*rv)(std::forward<class Json::Value&>(a0));
     }
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (RemoveOnHitSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@RemoveOnHitSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (RemoveOnHitSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@RemoveOnHitSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
     */
 
 protected:

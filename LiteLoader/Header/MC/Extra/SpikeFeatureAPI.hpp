@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class EndSpike;
+class EndSpike {
+public:
+    EndSpike() = delete;
+    EndSpike(EndSpike const&) = delete;
+    EndSpike(EndSpike const&&) = delete;
+};
 
 #endif

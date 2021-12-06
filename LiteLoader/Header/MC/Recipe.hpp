@@ -10,58 +10,24 @@ public:
     /*0*/ virtual ~Recipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
     /*2*/ virtual int getCraftingSize() const = 0;
-    /*3*/ virtual void __unk_vfn_0() = 0;
-    /*4*/ virtual void __unk_vfn_1() = 0;
-    /*5*/ virtual void __unk_vfn_2() = 0;
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
+    /*5*/ virtual bool isShapeless() const = 0;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
     /*7*/ virtual int size() const = 0;
     /*8*/ virtual class mce::UUID const& getId() const;
-    /*9*/ virtual void __unk_vfn_3();
-    /*10*/ virtual void __unk_vfn_4();
+    /*9*/ virtual class ItemPack const& getItemPack() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     /*11*/ virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const&) const;
     /*12*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*13*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
+    /*15*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
     inline bool isMultiRecipe() const{
         bool (Recipe::*rv)() const;
         *((void**)&rv) = dlsym("?isMultiRecipe@Recipe@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void loadResultList(class BlockPalette const& a0) const{
-        void (Recipe::*rv)(class BlockPalette const&) const;
-        *((void**)&rv) = dlsym("?loadResultList@Recipe@@UEBAXAEBVBlockPalette@@@Z");
-        return (this->*rv)(std::forward<class BlockPalette const&>(a0));
-    }
-    inline class ItemPack const& getItemPack() const{
-        class ItemPack const& (Recipe::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemPack@Recipe@@UEBAAEBVItemPack@@XZ");
-        return (this->*rv)();
-    }
-    inline class mce::UUID const& getId() const{
-        class mce::UUID const& (Recipe::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@Recipe@@UEBAAEBVUUID@mce@@XZ");
-        return (this->*rv)();
-    }
-    inline bool itemValidForRecipe(class ItemDescriptor const& a0, class ItemStack const& a1) const{
-        bool (Recipe::*rv)(class ItemDescriptor const&, class ItemStack const&) const;
-        *((void**)&rv) = dlsym("?itemValidForRecipe@Recipe@@UEBA_NAEBVItemDescriptor@@AEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class ItemStack const&>(a1));
-    }
-    inline bool itemsMatch(class ItemDescriptor const& a0, class ItemDescriptor const& a1) const{
-        bool (Recipe::*rv)(class ItemDescriptor const&, class ItemDescriptor const&) const;
-        *((void**)&rv) = dlsym("?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class ItemDescriptor const&>(a1));
-    }
-    inline bool itemsMatch(class ItemDescriptor const& a0, class ItemDescriptor const& a1, class CompoundTag const* a2) const{
-        bool (Recipe::*rv)(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@0PEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class ItemDescriptor const&>(a1), std::forward<class CompoundTag const*>(a2));
-    }
-    inline bool itemsMatch(class ItemDescriptor const& a0, int a1, int a2, class CompoundTag const* a3) const{
-        bool (Recipe::*rv)(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?itemsMatch@Recipe@@UEBA_NAEBVItemDescriptor@@HHPEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class CompoundTag const*>(a3));
     }
     */
     MCAPI int countQuantityOfIngredient(class ItemInstance const&) const;

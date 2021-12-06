@@ -5,5 +5,10 @@
 #else
 // Add Member There
 public:
-struct BiomeParent;
+struct BiomeParent {
+    BiomeParent() = delete;
+    BiomeParent(BiomeParent const&) = delete;
+    BiomeParent(BiomeParent const&&) = delete;
+};
+
 #endif

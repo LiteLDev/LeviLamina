@@ -47,7 +47,7 @@ public:
     /*35*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*36*/ virtual void animateHurt();
     /*37*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*38*/ virtual void __unk_vfn_12();
+    /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
     /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,75 +58,39 @@ public:
     /*46*/ virtual bool canFreeze() const;
     /*47*/ virtual int getPortalWaitTime() const;
     /*48*/ virtual bool canChangeDimensions() const;
-    /*49*/ virtual void __unk_vfn_13();
+    /*49*/ virtual void __unk_vfn_12();
     /*50*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*51*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*52*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*53*/ virtual bool canBePulledIntoVehicle() const;
     /*54*/ virtual bool inCaravan() const;
-    /*55*/ virtual void __unk_vfn_14();
+    /*55*/ virtual void __unk_vfn_13();
     /*56*/ virtual bool canSynchronizeNewEntity() const;
     /*57*/ virtual void buildDebugInfo(std::string&) const;
     /*58*/ virtual int getDeathTime() const;
     /*59*/ virtual void swing();
-    /*60*/ virtual void __unk_vfn_15();
-    /*61*/ virtual void __unk_vfn_16();
+    /*60*/ virtual void __unk_vfn_14();
+    /*61*/ virtual void __unk_vfn_15();
     /*62*/ virtual float getYHeadRot() const;
     /*63*/ virtual bool isWorldBuilder() const;
-    /*64*/ virtual void __unk_vfn_17();
+    /*64*/ virtual void __unk_vfn_16();
     /*65*/ virtual bool isAdventure() const;
     /*66*/ virtual bool canDestroyBlock(class Block const&) const;
     /*67*/ virtual void setAuxValue(int);
     /*68*/ virtual void stopSpinAttack();
-    /*69*/ virtual void __unk_vfn_18();
-    /*70*/ virtual void __unk_vfn_19();
+    /*69*/ virtual void __unk_vfn_17();
+    /*70*/ virtual void __unk_vfn_18();
     /*71*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*72*/ virtual void __unk_vfn_20();
+    /*72*/ virtual void __unk_vfn_19();
     /*73*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*74*/ virtual void __unk_vfn_21();
-    /*75*/ virtual void __unk_vfn_22();
+    /*74*/ virtual void __unk_vfn_20();
+    /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*77*/ virtual void __unk_vfn_23();
+    /*77*/ virtual int /*enum enum MinecartType*/ getType();
     /*78*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*79*/ virtual void __unk_vfn_24();
-    /*80*/ virtual void __unk_vfn_25();
-    /*
-    inline int \/*enum enum MinecartType*\/ getType(){
-        int \/*enum enum MinecartType*\/ (MinecartTNT::*rv)();
-        *((void**)&rv) = dlsym("?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (MinecartTNT::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@MinecartTNT@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void causeFallDamage(float a0, float a1, class ActorDamageSource a2){
-        void (MinecartTNT::*rv)(float, float, class ActorDamageSource);
-        *((void**)&rv) = dlsym("?causeFallDamage@MinecartTNT@@MEAAXMMVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<class ActorDamageSource>(a2));
-    }
-    inline void destroy(class ActorDamageSource const& a0, bool a1){
-        void (MinecartTNT::*rv)(class ActorDamageSource const&, bool);
-        *((void**)&rv) = dlsym("?destroy@MinecartTNT@@UEAAXAEBVActorDamageSource@@_N@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<bool>(a1));
-    }
-    inline class Block const* getDefaultDisplayBlock() const{
-        class Block const* (MinecartTNT::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultDisplayBlock@MinecartTNT@@UEBAPEBVBlock@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (MinecartTNT::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@MinecartTNT@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void normalTick(){
-        void (MinecartTNT::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@MinecartTNT@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*79*/ virtual void __unk_vfn_22();
+    /*80*/ virtual int getDefaultDisplayOffset() const;
+
     MCAPI void primeFuse(enum ActorDamageCause);
 
 protected:

@@ -18,13 +18,7 @@ public:
     /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual void __unk_vfn_8();
     /*10*/ virtual int /*enum enum EventResult*/ onActorDefinitionEventTriggered(struct ActorDefinitionEvent const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onActorDefinitionEventTriggered(struct ActorDefinitionEvent const& a0){
-        int \/*enum enum EventResult*\/ (DebugInfoComponent::*rv)(struct ActorDefinitionEvent const&);
-        *((void**)&rv) = dlsym("?onActorDefinitionEventTriggered@DebugInfoComponent@@UEAA?AW4EventResult@@AEBUActorDefinitionEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorDefinitionEvent const&>(a0));
-    }
-    */
+
     MCAPI void addListener(class HashedString const&, class NetworkIdentifier, unsigned char);
     MCAPI bool listenersEmpty() const;
     MCAPI class DebugInfoComponent& operator=(class DebugInfoComponent&&);

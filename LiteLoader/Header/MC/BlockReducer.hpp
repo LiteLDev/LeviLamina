@@ -9,13 +9,7 @@ class BlockReducer {
 public:
     /*0*/ virtual ~BlockReducer();
     /*1*/ virtual void registerBlock(class ItemStack const&, std::vector<class ItemStack>&&);
-    /*
-    inline void registerBlock(class ItemStack const& a0, std::vector<class ItemStack>&& a1){
-        void (BlockReducer::*rv)(class ItemStack const&, std::vector<class ItemStack>&&);
-        *((void**)&rv) = dlsym("?registerBlock@BlockReducer@@UEAAXAEBVItemStack@@$$QEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0), std::forward<std::vector<class ItemStack>&&>(a1));
-    }
-    */
+
     MCAPI std::vector<class ItemStack> const* getReduction(class ItemStackBase const&) const;
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack> > > > const& getReductionMap() const;
 

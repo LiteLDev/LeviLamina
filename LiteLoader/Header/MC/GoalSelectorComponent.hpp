@@ -20,6 +20,6 @@ public:
 protected:
 
 private:
-    MCAPI void _eraseGoals(bool (*)(struct std::pair<unsigned short, class PrioritizedGoal>&));
+    MCAPI void _eraseGoals(bool (* )(struct std::pair<unsigned short, class PrioritizedGoal>& ));
     MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal> > > > _findGoalByKey(unsigned short) const;
 };

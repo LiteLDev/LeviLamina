@@ -9,11 +9,11 @@ class SquidDiveGoal {
 public:
     /*0*/ virtual ~SquidDiveGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*
     inline void stop(){
@@ -24,26 +24,6 @@ public:
     inline void tick(){
         void (SquidDiveGoal::*rv)();
         *((void**)&rv) = dlsym("?tick@SquidDiveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SquidDiveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SquidDiveGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SquidDiveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SquidDiveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SquidDiveGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SquidDiveGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

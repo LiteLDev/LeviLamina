@@ -20,94 +20,28 @@ public:
     /*9*/ virtual void __unk_vfn_0();
     /*10*/ virtual void onRemoved(class BlockSource&);
     /*11*/ virtual void triggerEvent(int, int);
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual void __unk_vfn_2();
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
+    /*12*/ virtual void clearCache();
+    /*13*/ virtual void __unk_vfn_1();
+    /*14*/ virtual float getShadowRadius(class BlockSource&) const;
+    /*15*/ virtual bool hasAlphaLayer() const;
     /*16*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*17*/ virtual void __unk_vfn_5();
+    /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
     /*19*/ virtual std::string getName() const;
     /*20*/ virtual void setCustomName(std::string const&);
     /*21*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*22*/ virtual void __unk_vfn_6();
+    /*22*/ virtual int getRepairCost() const;
     /*23*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*24*/ virtual void __unk_vfn_7();
-    /*25*/ virtual void __unk_vfn_8();
-    /*26*/ virtual void __unk_vfn_9();
-    /*27*/ virtual void __unk_vfn_10();
-    /*28*/ virtual void __unk_vfn_11();
-    /*29*/ virtual void __unk_vfn_12();
+    /*24*/ virtual void __unk_vfn_2();
+    /*25*/ virtual void __unk_vfn_3();
+    /*26*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*27*/ virtual void __unk_vfn_4();
+    /*28*/ virtual void __unk_vfn_5();
+    /*29*/ virtual void __unk_vfn_6();
     /*30*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*31*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*32*/ virtual bool _playerCanUpdate(class Player const&) const;
-    /*
-    inline void onChanged(class BlockSource& a0){
-        void (CommandBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onChanged@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& a0){
-        std::unique_ptr<class BlockActorDataPacket> (CommandBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@CommandBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void _onUpdatePacket(class CompoundTag const& a0, class BlockSource& a1){
-        void (CommandBlockActor::*rv)(class CompoundTag const&, class BlockSource&);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@CommandBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1));
-    }
-    inline bool _playerCanUpdate(class Player const& a0) const{
-        bool (CommandBlockActor::*rv)(class Player const&) const;
-        *((void**)&rv) = dlsym("?_playerCanUpdate@CommandBlockActor@@MEBA_NAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
-    inline std::string const& getCustomName() const{
-        std::string const& (CommandBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCustomName@CommandBlockActor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getFilteredCustomName(class UIProfanityContext const& a0){
-        std::string const& (CommandBlockActor::*rv)(class UIProfanityContext const&);
-        *((void**)&rv) = dlsym("?getFilteredCustomName@CommandBlockActor@@UEAAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVUIProfanityContext@@@Z");
-        return (this->*rv)(std::forward<class UIProfanityContext const&>(a0));
-    }
-    inline void load(class Level& a0, class CompoundTag const& a1, class DataLoadHelper& a2){
-        void (CommandBlockActor::*rv)(class Level&, class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?load@CommandBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class DataLoadHelper&>(a2));
-    }
-    inline void loadBlockData(class CompoundTag const& a0, class BlockSource& a1, class DataLoadHelper& a2){
-        void (CommandBlockActor::*rv)(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?loadBlockData@CommandBlockActor@@UEAAXAEBVCompoundTag@@AEAVBlockSource@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class DataLoadHelper&>(a2));
-    }
-    inline void onCustomTagLoadDone(class BlockSource& a0){
-        void (CommandBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onCustomTagLoadDone@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void onPlace(class BlockSource& a0){
-        void (CommandBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onPlace@CommandBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline bool save(class CompoundTag& a0) const{
-        bool (CommandBlockActor::*rv)(class CompoundTag&) const;
-        *((void**)&rv) = dlsym("?save@CommandBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void saveBlockData(class CompoundTag& a0, class BlockSource& a1) const{
-        void (CommandBlockActor::*rv)(class CompoundTag&, class BlockSource&) const;
-        *((void**)&rv) = dlsym("?saveBlockData@CommandBlockActor@@UEBAXAEAVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0), std::forward<class BlockSource&>(a1));
-    }
-    inline void setCustomName(std::string const& a0){
-        void (CommandBlockActor::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?setCustomName@CommandBlockActor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
     MCAPI class BaseCommandBlock& getBaseCommandBlock();
     MCAPI std::string const& getCommand() const;
     MCAPI class CommandBlock const* getCommandBlock(class BlockSource&) const;

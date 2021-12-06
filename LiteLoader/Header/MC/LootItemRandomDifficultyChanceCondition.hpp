@@ -9,13 +9,7 @@ class LootItemRandomDifficultyChanceCondition {
 public:
     /*0*/ virtual ~LootItemRandomDifficultyChanceCondition();
     /*1*/ virtual bool applies(class Random&, class LootTableContext&);
-    /*
-    inline bool applies(class Random& a0, class LootTableContext& a1){
-        bool (LootItemRandomDifficultyChanceCondition::*rv)(class Random&, class LootTableContext&);
-        *((void**)&rv) = dlsym("?applies@LootItemRandomDifficultyChanceCondition@@UEAA_NAEAVRandom@@AEAVLootTableContext@@@Z");
-        return (this->*rv)(std::forward<class Random&>(a0), std::forward<class LootTableContext&>(a1));
-    }
-    */
+
 
 protected:
 

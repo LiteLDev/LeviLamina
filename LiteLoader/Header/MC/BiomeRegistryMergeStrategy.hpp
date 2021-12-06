@@ -9,13 +9,7 @@ class BiomeRegistryMergeStrategy {
 public:
     /*0*/ virtual ~BiomeRegistryMergeStrategy();
     /*1*/ virtual void mergeFiles(std::vector<class LoadedResourceData> const&);
-    /*
-    inline void mergeFiles(std::vector<class LoadedResourceData> const& a0){
-        void (BiomeRegistryMergeStrategy::*rv)(std::vector<class LoadedResourceData> const&);
-        *((void**)&rv) = dlsym("?mergeFiles@BiomeRegistryMergeStrategy@@UEAAXAEBV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<class LoadedResourceData> const&>(a0));
-    }
-    */
+
 
 protected:
 

@@ -15,43 +15,10 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SnackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SnackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (SnackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SnackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (SnackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SnackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getRandomEatingEnd() const{
-        int (SnackGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?getRandomEatingEnd@SnackGoal@@MEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SnackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SnackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (SnackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SnackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SnackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SnackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
+    /*10*/ virtual int getRandomEatingEnd() const;
+
 
 protected:
 

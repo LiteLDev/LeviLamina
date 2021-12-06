@@ -8,20 +8,9 @@ class StructurePoolBlockPredicateBlockMatch {
 #include "Extra/StructurePoolBlockPredicateBlockMatchAPI.hpp"
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatch();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual bool test(class Block const&, class Randomize&) const;
-    /*
-    inline bool test(class BlockPos const& a0, class BlockPos const& a1, class Randomize& a2) const{
-        bool (StructurePoolBlockPredicateBlockMatch::*rv)(class BlockPos const&, class BlockPos const&, class Randomize&) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlockPos@@0AEAVRandomize@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Randomize&>(a2));
-    }
-    inline bool test(class Block const& a0, class Randomize& a1) const{
-        bool (StructurePoolBlockPredicateBlockMatch::*rv)(class Block const&, class Randomize&) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolBlockPredicateBlockMatch@@UEBA_NAEBVBlock@@AEAVRandomize@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class Randomize&>(a1));
-    }
-    */
+    /*1*/ virtual bool test(class Block const&, class Randomize&) const;
+    /*2*/ virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
+
 
 protected:
 

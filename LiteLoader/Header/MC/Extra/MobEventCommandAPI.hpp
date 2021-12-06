@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct InitProxy;
+struct InitProxy {
+    InitProxy() = delete;
+    InitProxy(InitProxy const&) = delete;
+    InitProxy(InitProxy const&&) = delete;
+};
 
 #endif

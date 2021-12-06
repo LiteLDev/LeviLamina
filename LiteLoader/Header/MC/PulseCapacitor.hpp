@@ -10,62 +10,28 @@ class PulseCapacitor : public ProducerComponent {
 public:
     /*0*/ virtual ~PulseCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual bool canConsumePowerAnyDirection() const;
-    /*6*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_0();
     /*7*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*8*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
     /*9*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
     /*10*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*11*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*13*/ virtual void __unk_vfn_3();
-    /*14*/ virtual void __unk_vfn_4();
-    /*15*/ virtual void __unk_vfn_5();
-    /*16*/ virtual void __unk_vfn_6();
+    /*13*/ virtual void __unk_vfn_1();
+    /*14*/ virtual bool isHalfPulse() const;
+    /*15*/ virtual void __unk_vfn_2();
+    /*16*/ virtual bool isSecondaryPowered() const;
     /*17*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
+    /*18*/ virtual unsigned char getPoweroutDirection() const;
     /*
     inline bool canConsumerPower() const{
         bool (PulseCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@PulseCapacitor@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool canConsumePowerAnyDirection() const{
-        bool (PulseCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CircuitComponentType*\/ getCircuitComponentType() const{
-        int \/*enum enum CircuitComponentType*\/ (PulseCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCircuitComponentType@PulseCapacitor@@UEBA?AW4CircuitComponentType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
-        bool (PulseCapacitor::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-        *((void**)&rv) = dlsym("?allowConnection@PulseCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
-    }
-    inline bool evaluate(class CircuitSystem& a0, class BlockPos const& a1){
-        bool (PulseCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?evaluate@PulseCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline unsigned char getPoweroutDirection() const{
-        unsigned char (PulseCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPoweroutDirection@PulseCapacitor@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline int getStrength() const{
-        int (PulseCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getStrength@PulseCapacitor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void setStrength(int a0){
-        void (PulseCapacitor::*rv)(int);
-        *((void**)&rv) = dlsym("?setStrength@PulseCapacitor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
     }
     */
 

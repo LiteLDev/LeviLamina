@@ -8,26 +8,10 @@ class ServerNetworkController {
 #include "Extra/ServerNetworkControllerAPI.hpp"
 public:
     /*0*/ virtual ~ServerNetworkController();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isDedicatedServer() const;
     /*2*/ virtual bool isHost(class mce::UUID const&) const;
     /*3*/ virtual bool canChangePermission(class mce::UUID const&, class ServerPlayer const&) const;
-    /*
-    inline bool isDedicatedServer() const{
-        bool (ServerNetworkController::*rv)() const;
-        *((void**)&rv) = dlsym("?isDedicatedServer@ServerNetworkController@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canChangePermission(class mce::UUID const& a0, class ServerPlayer const& a1) const{
-        bool (ServerNetworkController::*rv)(class mce::UUID const&, class ServerPlayer const&) const;
-        *((void**)&rv) = dlsym("?canChangePermission@ServerNetworkController@@UEBA_NAEBVUUID@mce@@AEBVServerPlayer@@@Z");
-        return (this->*rv)(std::forward<class mce::UUID const&>(a0), std::forward<class ServerPlayer const&>(a1));
-    }
-    inline bool isHost(class mce::UUID const& a0) const{
-        bool (ServerNetworkController::*rv)(class mce::UUID const&) const;
-        *((void**)&rv) = dlsym("?isHost@ServerNetworkController@@UEBA_NAEBVUUID@mce@@@Z");
-        return (this->*rv)(std::forward<class mce::UUID const&>(a0));
-    }
-    */
+
 
 protected:
 

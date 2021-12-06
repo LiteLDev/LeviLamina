@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "CommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_BLOCKCOMMANDORIGIN
 #include "Extra/BlockCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BLOCKCOMMANDORIGIN
@@ -25,96 +25,15 @@ public:
     /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
-    /*16*/ virtual void __unk_vfn_0();
-    /*17*/ virtual void __unk_vfn_1();
-    /*18*/ virtual void __unk_vfn_2();
+    /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*17*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual class CompoundTag serialize() const;
     /*21*/ virtual bool isValid() const;
     /*22*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*23*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
-    /*
-    inline class Actor* getEntity() const{
-        class Actor* (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@BlockCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class BaseCommandBlock* _getBaseCommandBlock(class BlockSource& a0) const{
-        class BaseCommandBlock* (BlockCommandOrigin::*rv)(class BlockSource&) const;
-        *((void**)&rv) = dlsym("?_getBaseCommandBlock@BlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline class CommandBlockActor* _getBlockEntity(class BlockSource& a0) const{
-        class CommandBlockActor* (BlockCommandOrigin::*rv)(class BlockSource&) const;
-        *((void**)&rv) = dlsym("?_getBlockEntity@BlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@BlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@BlockCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@BlockCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@BlockCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@BlockCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@BlockCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:

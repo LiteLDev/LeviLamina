@@ -36,85 +36,49 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canBePulledIntoVehicle() const;
-    /*36*/ virtual void __unk_vfn_14();
+    /*36*/ virtual void __unk_vfn_13();
     /*37*/ virtual bool canSynchronizeNewEntity() const;
-    /*38*/ virtual void __unk_vfn_15();
-    /*39*/ virtual void __unk_vfn_16();
+    /*38*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_15();
     /*40*/ virtual bool isWorldBuilder() const;
-    /*41*/ virtual void __unk_vfn_17();
+    /*41*/ virtual void __unk_vfn_16();
     /*42*/ virtual bool isAdventure() const;
     /*43*/ virtual bool canDestroyBlock(class Block const&) const;
     /*44*/ virtual void setAuxValue(int);
     /*45*/ virtual void stopSpinAttack();
-    /*46*/ virtual void __unk_vfn_18();
-    /*47*/ virtual void __unk_vfn_19();
-    /*48*/ virtual void __unk_vfn_20();
+    /*46*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_18();
+    /*48*/ virtual void __unk_vfn_19();
     /*49*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*50*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*51*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*52*/ virtual void __unk_vfn_21();
-    /*53*/ virtual void __unk_vfn_22();
+    /*52*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual void aiStep();
     /*56*/ virtual bool checkSpawnRules(bool);
     /*57*/ virtual float getItemUseStartupProgress() const;
     /*58*/ virtual float getItemUseIntervalProgress() const;
-    /*59*/ virtual void __unk_vfn_23();
+    /*59*/ virtual void __unk_vfn_22();
     /*60*/ virtual bool isAlliedTo(class Mob*);
-    /*61*/ virtual void __unk_vfn_24();
+    /*61*/ virtual void __unk_vfn_23();
     /*62*/ virtual int getArmorValue();
     /*63*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
-    /*66*/ virtual void __unk_vfn_26();
+    /*65*/ virtual int getAttackTime();
+    /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
-    /*
-    inline int getAttackTime(){
-        int (PigZombie::*rv)();
-        *((void**)&rv) = dlsym("?getAttackTime@PigZombie@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (PigZombie::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@PigZombie@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (PigZombie::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@PigZombie@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (PigZombie::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@PigZombie@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline class Actor* findAttackTarget(){
-        class Actor* (PigZombie::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@PigZombie@@MEAAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (PigZombie::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@PigZombie@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (PigZombie::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@PigZombie@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    */
+    /*68*/ virtual void __unk_vfn_25();
+
 
 protected:
 

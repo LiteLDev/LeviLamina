@@ -9,7 +9,7 @@ class OceanMonumentPiece : public StructurePiece {
 #include "Extra/OceanMonumentPieceAPI.hpp"
 public:
     /*0*/ virtual ~OceanMonumentPiece();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*2*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*3*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
@@ -18,28 +18,7 @@ public:
     /*7*/ virtual int getWorldZ(int, int);
     /*8*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*9*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline void postProcessMobsAt(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        void (OceanMonumentPiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcessMobsAt@OceanMonumentPiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    inline void addHardcodedSpawnAreas(class LevelChunk& a0) const{
-        void (OceanMonumentPiece::*rv)(class LevelChunk&) const;
-        *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@OceanMonumentPiece@@UEBAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    inline int getWorldX(int a0, int a1){
-        int (OceanMonumentPiece::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getWorldX@OceanMonumentPiece@@UEAAHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline int getWorldZ(int a0, int a1){
-        int (OceanMonumentPiece::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getWorldZ@OceanMonumentPiece@@UEAAHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    */
+
 
 protected:
     MCAPI bool chunkIntersects(class BoundingBox const&, int, int, int, int);

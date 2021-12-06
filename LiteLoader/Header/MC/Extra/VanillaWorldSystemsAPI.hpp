@@ -4,6 +4,11 @@
 
 #else
 // Add Member There
-class Impl;
+class Impl {
+public:
+    Impl() = delete;
+    Impl(Impl const&) = delete;
+    Impl(Impl const&&) = delete;
+};
 
 #endif

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (GuardianAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@GuardianAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (GuardianAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@GuardianAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (GuardianAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@GuardianAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (GuardianAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@GuardianAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (GuardianAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@GuardianAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (GuardianAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@GuardianAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

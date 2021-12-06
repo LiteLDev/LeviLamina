@@ -18,7 +18,7 @@ public:
     MCAPI bool hasTickInPendingTicks(class BlockPos const&) const;
     MCAPI bool isEmpty() const;
     MCAPI void load(class CompoundTag const&, class BlockPalette const&);
-    MCAPI void remove(class std::function<bool (class TickNextTickData const&)>&&);
+    MCAPI void remove(class std::function<bool (class TickNextTickData const& )>&&);
     MCAPI void save(class CompoundTag&) const;
     MCAPI void setOwningChunk(class LevelChunk*);
     MCAPI void tickAllPendingTicks(class BlockSource&, unsigned __int64);

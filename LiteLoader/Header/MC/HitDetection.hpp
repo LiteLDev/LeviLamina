@@ -6,5 +6,5 @@
 #undef EXTRA_INCLUDE_PART_HITDETECTION
 namespace HitDetection {
 #include "Extra/HitDetectionAPI.hpp"
-    MCAPI void searchActors(class Vec3 const&, float, class Vec3 const&, class AABB const&, class Actor*, class Player*, float&, class Actor*&, class Vec3&, bool);
+    MCAPI void searchActors(class Vec3 const&, float, class Vec3 const&, class AABB const&, class Actor*, class Player*, float&, class Actor* &, class Vec3&, bool);
 };

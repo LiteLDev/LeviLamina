@@ -4,6 +4,7 @@
 
 #else
 // Add Member There
+public:
 enum BiomeTempCategory;
 
 #endif

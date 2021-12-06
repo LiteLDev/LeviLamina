@@ -8,13 +8,8 @@ class AttributeModifier {
 #include "Extra/AttributeModifierAPI.hpp"
 public:
     /*0*/ virtual ~AttributeModifier();
-    /*
-    inline bool isInstantaneous() const{
-        bool (AttributeModifier::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@AttributeModifier@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isInstantaneous() const;
+
     MCAPI float getAmount() const;
     MCAPI class mce::UUID const& getId() const;
     MCAPI std::string const& getName() const;

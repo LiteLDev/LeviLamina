@@ -16,11 +16,6 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DragonDeathGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DragonDeathGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
     inline bool canUse(){
         bool (DragonDeathGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@DragonDeathGoal@@UEAA_NXZ");
@@ -29,21 +24,6 @@ public:
     inline bool canContinueToUse(){
         bool (DragonDeathGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@DragonDeathGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (DragonDeathGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DragonDeathGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (DragonDeathGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@DragonDeathGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DragonDeathGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DragonDeathGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

@@ -8,7 +8,7 @@
 class FileArchiver {
 #include "Extra/FileArchiverAPI.hpp"
 public:
-    MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const&, class Core::Path const&, class std::function<void (struct FileArchiver::Result&)>);
+    MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const&, class Core::Path const&, class std::function<void (struct FileArchiver::Result& )>);
     MCAPI static std::string const EXTENSION_ADDON;
     MCAPI static std::string const EXTENSION_RESOURCEPACK;
     MCAPI static std::string const EXTENSION_TEMPLATE;

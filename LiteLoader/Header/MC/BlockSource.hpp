@@ -10,7 +10,7 @@ public:
     /*0*/ virtual class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getWeakRef();
     /*1*/ virtual void addListener(class BlockSourceListener&);
     /*2*/ virtual void removeListener(class BlockSourceListener&);
-    /*3*/ virtual class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(int /*enum enum ActorType*/, class AABB const&, class Actor const*);
+    /*3*/ virtual class gsl::span<class gsl::not_null<class Actor* >, -1> fetchEntities(int /*enum enum ActorType*/, class AABB const&, class Actor const*);
     /*4*/ virtual bool hasChunksAt(struct Bounds const&) const;
     /*5*/ virtual bool hasChunksAt(class BlockPos const&, int) const;
     /*6*/ virtual bool hasChunksAt(class AABB const&) const;
@@ -26,14 +26,9 @@ public:
     /*16*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /*17*/ virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
     /*18*/ virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
-    /*19*/ virtual void __unk_vfn_2();
+    /*19*/ virtual class ChunkSource& getChunkSource();
     /*20*/ virtual ~BlockSource();
     /*
-    inline class ChunkSource& getChunkSource(){
-        class ChunkSource& (BlockSource::*rv)();
-        *((void**)&rv) = dlsym("?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ");
-        return (this->*rv)();
-    }
     inline class Dimension& getDimension() const{
         class Dimension& (BlockSource::*rv)() const;
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEBAAEAVDimension@@XZ");
@@ -44,93 +39,8 @@ public:
         *((void**)&rv) = dlsym("?getDimension@BlockSource@@UEAAAEAVDimension@@XZ");
         return (this->*rv)();
     }
-    inline void addListener(class BlockSourceListener& a0){
-        void (BlockSource::*rv)(class BlockSourceListener&);
-        *((void**)&rv) = dlsym("?addListener@BlockSource@@UEAAXAEAVBlockSourceListener@@@Z");
-        return (this->*rv)(std::forward<class BlockSourceListener&>(a0));
-    }
-    inline bool containsAnyLiquid(class AABB const& a0){
-        bool (BlockSource::*rv)(class AABB const&);
-        *((void**)&rv) = dlsym("?containsAnyLiquid@BlockSource@@UEAA_NAEBVAABB@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0));
-    }
-    inline bool containsMaterial(class AABB const& a0, int \/*enum enum MaterialType*\/ a1) const{
-        bool (BlockSource::*rv)(class AABB const&, int \/*enum enum MaterialType*\/) const;
-        *((void**)&rv) = dlsym("?containsMaterial@BlockSource@@UEBA_NAEBVAABB@@W4MaterialType@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0), std::forward<int \/*enum enum MaterialType*\/>(a1));
-    }
-    inline std::vector<class AABB>& fetchAABBs(class AABB const& a0, bool a1){
-        std::vector<class AABB>& (BlockSource::*rv)(class AABB const&, bool);
-        *((void**)&rv) = dlsym("?fetchAABBs@BlockSource@@UEAAAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@_N@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0), std::forward<bool>(a1));
-    }
-    inline std::vector<class AABB>& fetchCollisionShapes(class AABB const& a0, float* a1, bool a2, struct IActorMovementProxy* a3){
-        std::vector<class AABB>& (BlockSource::*rv)(class AABB const&, float*, bool, struct IActorMovementProxy*);
-        *((void**)&rv) = dlsym("?fetchCollisionShapes@BlockSource@@UEAAAEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@AEBVAABB@@PEAM_NPEAUIActorMovementProxy@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0), std::forward<float*>(a1), std::forward<bool>(a2), std::forward<struct IActorMovementProxy*>(a3));
-    }
-    inline class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(int \/*enum enum ActorType*\/ a0, class AABB const& a1, class Actor const* a2){
-        class gsl::span<class gsl::not_null<class Actor*>, -1> (BlockSource::*rv)(int \/*enum enum ActorType*\/, class AABB const&, class Actor const*);
-        *((void**)&rv) = dlsym("?fetchEntities@BlockSource@@UEAA?AV?$span@V?$not_null@PEAVActor@@@gsl@@$0?0@gsl@@W4ActorType@@AEBVAABB@@PEBVActor@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorType*\/>(a0), std::forward<class AABB const&>(a1), std::forward<class Actor const*>(a2));
-    }
-    inline class Block const& getBlock(class BlockPos const& a0) const{
-        class Block const& (BlockSource::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getBlock@BlockSource@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class Block const& getBlock(int a0, int a1, int a2) const{
-        class Block const& (BlockSource::*rv)(int, int, int) const;
-        *((void**)&rv) = dlsym("?getBlock@BlockSource@@UEBAAEBVBlock@@HHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline class AutomaticID<class Dimension, int> getDimensionId() const{
-        class AutomaticID<class Dimension, int> (BlockSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimensionId@BlockSource@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ");
-        return (this->*rv)();
-    }
-    inline class Material const& getMaterial(class BlockPos const& a0) const{
-        class Material const& (BlockSource::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getMaterial@BlockSource@@UEBAAEBVMaterial@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class Material const& getMaterial(int a0, int a1, int a2) const{
-        class Material const& (BlockSource::*rv)(int, int, int) const;
-        *((void**)&rv) = dlsym("?getMaterial@BlockSource@@UEBAAEBVMaterial@@HHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline short getMinHeight() const{
-        short (BlockSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinHeight@BlockSource@@UEBAFXZ");
-        return (this->*rv)();
-    }
-    inline class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getWeakRef(){
-        class WeakRefT<struct SharePtrRefTraits<class BlockSource> > (BlockSource::*rv)();
-        *((void**)&rv) = dlsym("?getWeakRef@BlockSource@@UEAA?AV?$WeakRefT@U?$SharePtrRefTraits@VBlockSource@@@@@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasChunksAt(struct Bounds const& a0) const{
-        bool (BlockSource::*rv)(struct Bounds const&) const;
-        *((void**)&rv) = dlsym("?hasChunksAt@BlockSource@@UEBA_NAEBUBounds@@@Z");
-        return (this->*rv)(std::forward<struct Bounds const&>(a0));
-    }
-    inline bool hasChunksAt(class AABB const& a0) const{
-        bool (BlockSource::*rv)(class AABB const&) const;
-        *((void**)&rv) = dlsym("?hasChunksAt@BlockSource@@UEBA_NAEBVAABB@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0));
-    }
-    inline bool hasChunksAt(class BlockPos const& a0, int a1) const{
-        bool (BlockSource::*rv)(class BlockPos const&, int) const;
-        *((void**)&rv) = dlsym("?hasChunksAt@BlockSource@@UEBA_NAEBVBlockPos@@H@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<int>(a1));
-    }
-    inline void removeListener(class BlockSourceListener& a0){
-        void (BlockSource::*rv)(class BlockSourceListener&);
-        *((void**)&rv) = dlsym("?removeListener@BlockSource@@UEAAXAEAVBlockSourceListener@@@Z");
-        return (this->*rv)(std::forward<class BlockSourceListener&>(a0));
-    }
     */
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
+    MCAPI class gsl::span<class gsl::not_null<class Actor* >, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
     MCAPI void addToRandomTickingQueue(class BlockPos const&, class Block const&, int, int, bool);
     MCAPI void addToRandomTickingQueuePercentChance(class BlockPos const&, class Block const&, float, int, bool);
     MCAPI void addToTickingQueue(class BlockPos const&, class Block const&, int, int, bool);
@@ -147,23 +57,23 @@ public:
     MCAPI bool checkBlockPermissions(class Actor&, class BlockPos const&, unsigned char, class ItemStackBase const&, bool);
     MCAPI void clearDeletedEntities();
     MCAPI class HitResult clip(class Vec3 const&, class Vec3 const&, bool, bool, int, bool, bool, class Player*) const;
-    MCAPI bool containsAnyBlockInBox(class BoundingBox const&, class std::function<bool (class Block const&)>);
+    MCAPI bool containsAnyBlockInBox(class BoundingBox const&, class std::function<bool (class Block const& )>);
     MCAPI bool containsAnyBlockOfType(class BlockPos const&, class BlockPos const&, class Block const&) const;
     MCAPI bool containsAnySolidBlocking(class AABB const&);
     MCAPI unsigned __int64 countBlocksOfType(class BlockDescriptor const&, class BlockPos const&, class BlockPos const&, unsigned __int64) const;
     MCAPI void fetchActorIds(class AABB const&, std::vector<struct ActorUniqueID>&) const;
     MCAPI void fetchActorIds(unsigned __int64, class AABB const&, std::vector<struct ActorUniqueID>&) const;
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> fetchActors(struct ActorDefinitionIdentifier const&, class AABB const&);
-    MCAPI std::vector<class BlockActor*> const& fetchBlockEntities(class AABB const&);
-    MCAPI std::vector<class BlockActor*> fetchBlockEntities(enum BlockActorType, class AABB const&) const;
+    MCAPI class gsl::span<class gsl::not_null<class Actor* >, -1> fetchActors(struct ActorDefinitionIdentifier const&, class AABB const&);
+    MCAPI std::vector<class BlockActor* > const& fetchBlockEntities(class AABB const&);
+    MCAPI std::vector<class BlockActor* > fetchBlockEntities(enum BlockActorType, class AABB const&) const;
     MCAPI bool fetchBlocks(class BlockPos const&, class BlockVolume&) const;
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const&, class std::function<bool (class Block const&)>);
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBoxSorted(class BoundingBox const&, class std::function<bool (class Block const&)>);
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinder(class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const&)>);
-    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinderSorted(class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const&)>);
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(class Actor const*, class AABB const&, bool);
-    MCAPI class gsl::span<class gsl::not_null<class Actor*>, -1> fetchEntities(class gsl::span<class gsl::not_null<class Actor const*>, -1>, class AABB const&, bool);
-    MCAPI std::vector<class Actor*> const& fetchEntities2(enum ActorType, class AABB const&, bool);
+    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBox(class BoundingBox const&, class std::function<bool (class Block const& )>);
+    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInBoxSorted(class BoundingBox const&, class std::function<bool (class Block const& )>);
+    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinder(class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const& )>);
+    MCAPI class gsl::span<class BlockDataFetchResult<class Block> const, -1> fetchBlocksInCylinderSorted(class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const& )>);
+    MCAPI class gsl::span<class gsl::not_null<class Actor* >, -1> fetchEntities(class Actor const*, class AABB const&, bool);
+    MCAPI class gsl::span<class gsl::not_null<class Actor* >, -1> fetchEntities(class gsl::span<class gsl::not_null<class Actor const* >, -1>, class AABB const&, bool);
+    MCAPI std::vector<class Actor* > const& fetchEntities2(enum ActorType, class AABB const&, bool);
     MCAPI class Actor* fetchNearestEntityOfType(class Actor*, class AABB const&, enum ActorType);
     MCAPI class Actor* fetchNearestEntityOfType(class Actor*, class Vec3 const&, float, enum ActorType);
     MCAPI bool findNextTopSolidBlockAbove(class BlockPos&);
@@ -231,7 +141,7 @@ public:
     MCAPI bool isTouchingMaterial(class BlockPos const&, enum MaterialType) const;
     MCAPI bool isUnderWater(class Vec3 const&, class Block const&) const;
     MCAPI bool isUnobstructedByEntities(class AABB const&, class Actor const*);
-    MCAPI bool isUnobstructedByEntities(class AABB const&, class gsl::span<class gsl::not_null<class Actor const*>, -1>);
+    MCAPI bool isUnobstructedByEntities(class AABB const&, class gsl::span<class gsl::not_null<class Actor const* >, -1>);
     MCAPI bool mayPlace(class Block const&, class BlockPos const&, unsigned char, class Actor*, bool);
     MCAPI void neighborChanged(class BlockPos const&, class BlockPos const&);
     MCAPI void postGameEvent(class Actor const*, class GameEvent const&, class Vec3 const&, class BlockSource&) const;

@@ -10,7 +10,7 @@ public:
     MCAPI class BlockPatternBuilder& aisle(int, ...);
     MCAPI class BlockPatternBuilder& build();
     MCAPI class BlockPatternBuilder& define(char, class Block const&);
-    MCAPI class BlockPatternBuilder& define(char, class std::function<bool (class BlockSource&, class BlockPos const&, class Block const&)>);
+    MCAPI class BlockPatternBuilder& define(char, class std::function<bool (class BlockSource& , class BlockPos const& , class Block const& )>);
     MCAPI bool isReadyForMatch();
     MCAPI struct BuildMatch match(class BlockPos const&);
     MCAPI struct BuildMatch match(class BlockPos const&, int, int);

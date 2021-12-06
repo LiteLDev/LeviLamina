@@ -49,7 +49,7 @@ public:
     /*38*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*39*/ virtual void animateHurt();
     /*40*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*41*/ virtual void __unk_vfn_12();
+    /*41*/ virtual float getPickRadius();
     /*42*/ virtual void awardKillScore(class Actor&, int);
     /*43*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*44*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -60,42 +60,42 @@ public:
     /*49*/ virtual bool canFreeze() const;
     /*50*/ virtual int getPortalWaitTime() const;
     /*51*/ virtual bool canChangeDimensions() const;
-    /*52*/ virtual void __unk_vfn_13();
+    /*52*/ virtual void __unk_vfn_12();
     /*53*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*54*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*55*/ virtual bool canBePulledIntoVehicle() const;
     /*56*/ virtual bool inCaravan() const;
-    /*57*/ virtual void __unk_vfn_14();
+    /*57*/ virtual void __unk_vfn_13();
     /*58*/ virtual bool canSynchronizeNewEntity() const;
     /*59*/ virtual void buildDebugInfo(std::string&) const;
     /*60*/ virtual int getDeathTime() const;
     /*61*/ virtual void swing();
-    /*62*/ virtual void __unk_vfn_15();
-    /*63*/ virtual void __unk_vfn_16();
+    /*62*/ virtual void __unk_vfn_14();
+    /*63*/ virtual void __unk_vfn_15();
     /*64*/ virtual float getYHeadRot() const;
     /*65*/ virtual bool isWorldBuilder() const;
-    /*66*/ virtual void __unk_vfn_17();
+    /*66*/ virtual void __unk_vfn_16();
     /*67*/ virtual bool isAdventure() const;
     /*68*/ virtual bool canDestroyBlock(class Block const&) const;
     /*69*/ virtual void setAuxValue(int);
     /*70*/ virtual void stopSpinAttack();
-    /*71*/ virtual void __unk_vfn_18();
-    /*72*/ virtual void __unk_vfn_19();
+    /*71*/ virtual void __unk_vfn_17();
+    /*72*/ virtual void __unk_vfn_18();
     /*73*/ virtual void kill();
     /*74*/ virtual void interpolatorTick();
     /*75*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*76*/ virtual void __unk_vfn_20();
+    /*76*/ virtual void __unk_vfn_19();
     /*77*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*78*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*79*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*80*/ virtual void __unk_vfn_21();
+    /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual void _onSizeUpdated();
-    /*82*/ virtual void __unk_vfn_22();
+    /*82*/ virtual void __unk_vfn_21();
     /*83*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*84*/ virtual void __unk_vfn_23() = 0;
+    /*84*/ virtual int /*enum enum MinecartType*/ getType() = 0;
     /*85*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*86*/ virtual void __unk_vfn_24();
-    /*87*/ virtual void __unk_vfn_25();
+    /*86*/ virtual void __unk_vfn_22();
+    /*87*/ virtual int getDefaultDisplayOffset() const;
     /*88*/ virtual void applyNaturalSlowdown(class BlockSource&);
     /*89*/ virtual void _lazyInitDisplayBlock();
     /*
@@ -104,115 +104,10 @@ public:
         *((void**)&rv) = dlsym("?canMakeStepSound@Minecart@@EEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getDefaultDisplayOffset() const{
-        int (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultDisplayOffset@Minecart@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline int getDefaultDisplayData() const{
         int (Minecart::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultDisplayData@Minecart@@UEBAHXZ");
         return (this->*rv)();
-    }
-    inline class Block const* getDefaultDisplayBlock() const{
-        class Block const* (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getDefaultDisplayBlock@Minecart@@UEBAPEBVBlock@@XZ");
-        return (this->*rv)();
-    }
-    inline float getShadowHeightOffs(){
-        float (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@Minecart@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Minecart@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getControllingPlayer() const{
-        struct ActorUniqueID (Minecart::*rv)() const;
-        *((void**)&rv) = dlsym("?getControllingPlayer@Minecart@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Minecart::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Minecart@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Minecart::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Minecart@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _lazyInitDisplayBlock(){
-        void (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?_lazyInitDisplayBlock@Minecart@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void _onSizeUpdated(){
-        void (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Minecart@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Minecart::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Minecart@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void applyNaturalSlowdown(class BlockSource& a0){
-        void (Minecart::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?applyNaturalSlowdown@Minecart@@MEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void destroy(class ActorDamageSource const& a0, bool a1){
-        void (Minecart::*rv)(class ActorDamageSource const&, bool);
-        *((void**)&rv) = dlsym("?destroy@Minecart@@UEAAXAEBVActorDamageSource@@_N@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<bool>(a1));
-    }
-    inline float getInterpolatedBodyYaw(float a0) const{
-        float (Minecart::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedBodyYaw@Minecart@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void interpolatorTick(){
-        void (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?interpolatorTick@Minecart@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isPickable(){
-        bool (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Minecart@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void kill(){
-        void (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?kill@Minecart@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Minecart::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Minecart@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onBounceStarted(class BlockPos const& a0, class Block const& a1){
-        void (Minecart::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?onBounceStarted@Minecart@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Minecart::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Minecart@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Minecart::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Minecart::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Minecart@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
     MCAPI void setCustomDisplay(bool);

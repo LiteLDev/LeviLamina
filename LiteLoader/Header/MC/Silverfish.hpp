@@ -37,98 +37,53 @@ public:
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
     /*51*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*52*/ virtual void __unk_vfn_21();
-    /*53*/ virtual void __unk_vfn_22();
+    /*52*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual void aiStep();
     /*56*/ virtual bool checkSpawnRules(bool);
     /*57*/ virtual int getItemUseDuration() const;
     /*58*/ virtual float getItemUseStartupProgress() const;
     /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_23();
+    /*60*/ virtual void __unk_vfn_22();
     /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_24();
+    /*62*/ virtual void __unk_vfn_23();
     /*63*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
+    /*65*/ virtual int getAttackTime();
     /*66*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*67*/ virtual void __unk_vfn_26();
+    /*67*/ virtual void __unk_vfn_24();
     /*68*/ virtual void _serverAiMobStep();
-    /*69*/ virtual void __unk_vfn_27();
+    /*69*/ virtual void __unk_vfn_25();
     /*70*/ virtual bool isDarkEnoughToSpawn() const;
     /*
-    inline bool isDarkEnoughToSpawn() const{
-        bool (Silverfish::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@Silverfish@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Silverfish::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Silverfish@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Silverfish::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Silverfish@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Silverfish::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Silverfish@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void aiStep(){
-        void (Silverfish::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Silverfish@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Silverfish::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Silverfish@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline class Actor* findAttackTarget(){
-        class Actor* (Silverfish::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@Silverfish@@MEAAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Silverfish::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Silverfish@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void normalTick(){
-        void (Silverfish::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Silverfish@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void spawnAnim(){
-        void (Silverfish::*rv)();
-        *((void**)&rv) = dlsym("?spawnAnim@Silverfish@@UEAAXXZ");
         return (this->*rv)();
     }
     */

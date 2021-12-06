@@ -5,7 +5,11 @@
 #else
 // Add Member There
 public:
-struct Entry;
 enum Duration;
+struct Entry {
+    Entry() = delete;
+    Entry(Entry const&) = delete;
+    Entry(Entry const&&) = delete;
+};
 
 #endif

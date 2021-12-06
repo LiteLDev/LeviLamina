@@ -9,13 +9,7 @@ class PermissionCommand {
 public:
     /*0*/ virtual ~PermissionCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (PermissionCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@PermissionCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&, class PermissionsFile*);
 
 protected:
@@ -24,4 +18,5 @@ private:
     MCAPI void list(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void reload(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void set(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI static class PermissionsFile* mPermissionsFile;
 };

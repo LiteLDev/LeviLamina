@@ -9,26 +9,27 @@ class BlockVolumeTarget {
 public:
     /*0*/ virtual ~BlockVolumeTarget();
     /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*2*/ virtual short getMinHeight() const;
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual class Block const& getExtraBlock(class BlockPos const&) const;
     /*6*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     /*7*/ virtual bool setBlock(class BlockPos const&, class Block const&, int);
-    /*8*/ virtual void __unk_vfn_4();
-    /*9*/ virtual void __unk_vfn_5();
-    /*10*/ virtual void __unk_vfn_6();
-    /*11*/ virtual void __unk_vfn_7();
-    /*12*/ virtual void __unk_vfn_8();
+    /*8*/ virtual bool setBlockSimple(class BlockPos const&, class Block const&);
+    /*9*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void __unk_vfn_4();
+    /*11*/ virtual void __unk_vfn_5();
+    /*12*/ virtual void __unk_vfn_6();
     /*13*/ virtual short getMaxHeight() const;
-    /*14*/ virtual void __unk_vfn_9();
-    /*15*/ virtual void __unk_vfn_10();
+    /*14*/ virtual void __unk_vfn_7();
+    /*15*/ virtual void __unk_vfn_8();
     /*16*/ virtual short getHeightmap(int, int);
     /*17*/ virtual bool isLegacyLevel();
     /*18*/ virtual class Biome const* getBiome(class BlockPos const&) const;
     /*19*/ virtual bool isInBounds(class Pos const&) const;
     /*20*/ virtual short getLocalWaterLevel(class BlockPos const&) const;
     /*21*/ virtual class LevelData const& getLevelData() const;
+    /*22*/ virtual struct WorldGenContext const& getContext();
     /*
     inline bool shimPlaceForOldFeatures(class Feature const& a0, class BlockPos const& a1, class Random& a2) const{
         bool (BlockVolumeTarget::*rv)(class Feature const&, class BlockPos const&, class Random&) const;
@@ -39,11 +40,6 @@ public:
         bool (BlockVolumeTarget::*rv)(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
         *((void**)&rv) = dlsym("?placeStructure@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class StructureTemplate&>(a1), std::forward<class StructureSettings&>(a2));
-    }
-    inline short getMinHeight() const{
-        short (BlockVolumeTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinHeight@BlockVolumeTarget@@UEBAFXZ");
-        return (this->*rv)();
     }
     inline bool apply() const{
         bool (BlockVolumeTarget::*rv)() const;
@@ -60,21 +56,6 @@ public:
         *((void**)&rv) = dlsym("?mayPlace@BlockVolumeTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
     }
-    inline struct WorldGenContext const& getContext(){
-        struct WorldGenContext const& (BlockVolumeTarget::*rv)();
-        *((void**)&rv) = dlsym("?getContext@BlockVolumeTarget@@UEAAAEBUWorldGenContext@@XZ");
-        return (this->*rv)();
-    }
-    inline bool setBlockSimple(class BlockPos const& a0, class Block const& a1){
-        bool (BlockVolumeTarget::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?setBlockSimple@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline class Biome const* getBiome(class BlockPos const& a0) const{
-        class Biome const* (BlockVolumeTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getBiome@BlockVolumeTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
     inline class Block const& getBlock(class BlockPos const& a0) const{
         class Block const& (BlockVolumeTarget::*rv)(class BlockPos const&) const;
         *((void**)&rv) = dlsym("?getBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
@@ -84,51 +65,6 @@ public:
         class Block const& (BlockVolumeTarget::*rv)(class BlockPos const&) const;
         *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class Block const& getExtraBlock(class BlockPos const& a0) const{
-        class Block const& (BlockVolumeTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getExtraBlock@BlockVolumeTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline short getHeightmap(int a0, int a1){
-        short (BlockVolumeTarget::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getHeightmap@BlockVolumeTarget@@UEAAFHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline class LevelData const& getLevelData() const{
-        class LevelData const& (BlockVolumeTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevelData@BlockVolumeTarget@@UEBAAEBVLevelData@@XZ");
-        return (this->*rv)();
-    }
-    inline short getLocalWaterLevel(class BlockPos const& a0) const{
-        short (BlockVolumeTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getLocalWaterLevel@BlockVolumeTarget@@UEBAFAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline short getMaxHeight() const{
-        short (BlockVolumeTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxHeight@BlockVolumeTarget@@UEBAFXZ");
-        return (this->*rv)();
-    }
-    inline bool hasBiomeTag(unsigned __int64 a0, class BlockPos const& a1) const{
-        bool (BlockVolumeTarget::*rv)(unsigned __int64, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?hasBiomeTag@BlockVolumeTarget@@UEBA_N_KAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool isInBounds(class Pos const& a0) const{
-        bool (BlockVolumeTarget::*rv)(class Pos const&) const;
-        *((void**)&rv) = dlsym("?isInBounds@BlockVolumeTarget@@UEBA_NAEBVPos@@@Z");
-        return (this->*rv)(std::forward<class Pos const&>(a0));
-    }
-    inline bool isLegacyLevel(){
-        bool (BlockVolumeTarget::*rv)();
-        *((void**)&rv) = dlsym("?isLegacyLevel@BlockVolumeTarget@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool setBlock(class BlockPos const& a0, class Block const& a1, int a2){
-        bool (BlockVolumeTarget::*rv)(class BlockPos const&, class Block const&, int);
-        *((void**)&rv) = dlsym("?setBlock@BlockVolumeTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2));
     }
     */
 

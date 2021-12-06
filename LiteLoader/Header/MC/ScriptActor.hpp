@@ -14,28 +14,7 @@ public:
     /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
     /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-    /*
-    inline class Scripting::Result<std::string > getNameTag() const{
-        class Scripting::Result<std::string > (ScriptActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTag@ScriptActor@@UEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<bool> getSneaking() const{
-        class Scripting::Result<bool> (ScriptActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getSneaking@ScriptActor@@UEBA?AV?$Result@_N@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setNameTag(std::string const& a0) const{
-        class Scripting::Result<void> (ScriptActor::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?setNameTag@ScriptActor@@UEBA?AV?$Result@X@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline class Scripting::Result<void> setSneaking(bool a0) const{
-        class Scripting::Result<void> (ScriptActor::*rv)(bool) const;
-        *((void**)&rv) = dlsym("?setSneaking@ScriptActor@@UEBA?AV?$Result@X@Scripting@@_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    */
+
     MCAPI class Scripting::Result<void> addEffect(class ScriptEffectType const&, int, int);
     MCAPI class Scripting::WeakTypedObjectHandle<class ScriptActorComponent> getComponent(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory> > > > const&, std::string const&);
     MCAPI std::vector<class Scripting::WeakTypedObjectHandle<class ScriptActorComponent>> getComponents(class Scripting::WeakLifetimeScope, class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory> > > > const&);

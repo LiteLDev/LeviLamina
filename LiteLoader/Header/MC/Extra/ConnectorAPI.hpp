@@ -5,6 +5,16 @@
 #else
 // Add Member There
 public:
-struct NatPunchInfo;
+class ConnectionStateListener {
+public:
+    ConnectionStateListener() = delete;
+    ConnectionStateListener(ConnectionStateListener const&) = delete;
+    ConnectionStateListener(ConnectionStateListener const&&) = delete;
+};
+struct NatPunchInfo {
+    NatPunchInfo() = delete;
+    NatPunchInfo(NatPunchInfo const&) = delete;
+    NatPunchInfo(NatPunchInfo const&&) = delete;
+};
 
 #endif

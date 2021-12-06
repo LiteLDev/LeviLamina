@@ -9,22 +9,12 @@ class CraftHandlerStonecutter : public CraftHandlerBase {
 #include "Extra/CraftHandlerStonecutterAPI.hpp"
 public:
     /*0*/ virtual ~CraftHandlerStonecutter();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
     /*2*/ virtual void endRequestBatch();
     /*3*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*4*/ virtual void _postCraftRequest(bool);
-    /*
-    inline class Recipes const* _getLevelRecipes() const{
-        class Recipes const* (CraftHandlerStonecutter::*rv)() const;
-        *((void**)&rv) = dlsym("?_getLevelRecipes@CraftHandlerStonecutter@@EEBAPEBVRecipes@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ _handleCraftAction(class ItemStackRequestActionCraftBase const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerStonecutter::*rv)(class ItemStackRequestActionCraftBase const&);
-        *((void**)&rv) = dlsym("?_handleCraftAction@CraftHandlerStonecutter@@EEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestActionCraftBase const&>(a0));
-    }
-    */
+    /*5*/ virtual class Recipes const* _getLevelRecipes() const;
+
 
 protected:
 

@@ -8,13 +8,8 @@ class DataItem {
 #include "Extra/DataItemAPI.hpp"
 public:
     /*0*/ virtual ~DataItem();
-    /*
-    inline bool isDataEqual(class DataItem const& a0) const{
-        bool (DataItem::*rv)(class DataItem const&) const;
-        *((void**)&rv) = dlsym("?isDataEqual@DataItem@@UEBA_NAEBV1@@Z");
-        return (this->*rv)(std::forward<class DataItem const&>(a0));
-    }
-    */
+    /*1*/ virtual bool isDataEqual(class DataItem const&) const;
+
 
 protected:
 

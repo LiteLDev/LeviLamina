@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct UniqueId;
+struct UniqueId {
+    UniqueId() = delete;
+    UniqueId(UniqueId const&) = delete;
+    UniqueId(UniqueId const&&) = delete;
+};
 
 #endif

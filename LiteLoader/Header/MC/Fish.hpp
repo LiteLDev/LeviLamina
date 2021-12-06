@@ -38,74 +38,48 @@ public:
     /*26*/ virtual void onFailedTame();
     /*27*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*28*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*29*/ virtual void __unk_vfn_12();
+    /*29*/ virtual float getPickRadius();
     /*30*/ virtual void awardKillScore(class Actor&, int);
     /*31*/ virtual class HashedString const& queryEntityRenderer() const;
     /*32*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*33*/ virtual int getPortalWaitTime() const;
     /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_13();
+    /*35*/ virtual void __unk_vfn_12();
     /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
     /*51*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*52*/ virtual void __unk_vfn_20();
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*52*/ virtual void __unk_vfn_19();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual int getItemUseDuration() const;
     /*57*/ virtual float getItemUseStartupProgress() const;
     /*58*/ virtual float getItemUseIntervalProgress() const;
-    /*59*/ virtual void __unk_vfn_23();
+    /*59*/ virtual void __unk_vfn_22();
     /*60*/ virtual bool isAlliedTo(class Mob*);
-    /*61*/ virtual void __unk_vfn_24();
+    /*61*/ virtual void __unk_vfn_23();
     /*62*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*63*/ virtual bool createAIGoals();
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
+    /*65*/ virtual int getAttackTime();
     /*66*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*67*/ virtual void __unk_vfn_26();
+    /*67*/ virtual void __unk_vfn_24();
     /*68*/ virtual void _serverAiMobStep();
-    /*69*/ virtual void __unk_vfn_27();
-    /*
-    inline bool startRiding(class Actor& a0){
-        bool (Fish::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?startRiding@Fish@@UEAA_NAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline bool createAIGoals(){
-        bool (Fish::*rv)();
-        *((void**)&rv) = dlsym("?createAIGoals@Fish@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Fish::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Fish@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void normalTick(){
-        void (Fish::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Fish@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Fish::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Fish@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*69*/ virtual void __unk_vfn_25();
+
 
 protected:
 

@@ -5,5 +5,11 @@
 #else
 // Add Member There
 public:
-class TickDataSet;
+class TickDataSet {
+public:
+    TickDataSet() = delete;
+    TickDataSet(TickDataSet const&) = delete;
+    TickDataSet(TickDataSet const&&) = delete;
+};
+
 #endif

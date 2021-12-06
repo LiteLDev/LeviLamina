@@ -19,43 +19,7 @@ public:
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _attemptMoveToTarget(class Actor&);
-    /*
-    inline bool canUse(){
-        bool (DelayedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DelayedAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (DelayedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DelayedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void _attemptMoveToTarget(class Actor& a0){
-        void (DelayedAttackGoal::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?_attemptMoveToTarget@DelayedAttackGoal@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DelayedAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DelayedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (DelayedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DelayedAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (DelayedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@DelayedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DelayedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DelayedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

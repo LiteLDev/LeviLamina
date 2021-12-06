@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "SplashPotionEffectSubcomponent.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
 #include "Extra/ThrownPotionEffectSubcomponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
@@ -13,23 +13,7 @@ public:
     /*1*/ virtual void writetoJSON(class Json::Value&) const;
     /*2*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*3*/ virtual char const* getName();
-    /*
-    inline void writetoJSON(class Json::Value& a0) const{
-        void (ThrownPotionEffectSubcomponent::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?writetoJSON@ThrownPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (ThrownPotionEffectSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@ThrownPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (ThrownPotionEffectSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@ThrownPotionEffectSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

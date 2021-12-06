@@ -17,5 +17,6 @@ public:
 protected:
 
 private:
+    MCAPI static char const* ModuleName;
     MCAPI static class mce::UUID const ModuleUUID;
 };

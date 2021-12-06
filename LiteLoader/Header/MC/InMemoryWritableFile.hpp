@@ -21,16 +21,6 @@ public:
         *((void**)&rv) = dlsym("?Flush@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ");
         return (this->*rv)();
     }
-    inline class leveldb::Status Append(class leveldb::Slice const& a0){
-        class leveldb::Status (InMemoryWritableFile::*rv)(class leveldb::Slice const&);
-        *((void**)&rv) = dlsym("?Append@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z");
-        return (this->*rv)(std::forward<class leveldb::Slice const&>(a0));
-    }
-    inline class leveldb::Status Close(){
-        class leveldb::Status (InMemoryWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Close@InMemoryWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
     */
 
 protected:

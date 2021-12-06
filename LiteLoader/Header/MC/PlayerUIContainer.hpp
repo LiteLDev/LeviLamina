@@ -10,13 +10,13 @@ class PlayerUIContainer : public SimpleContainer {
 public:
     /*0*/ virtual ~PlayerUIContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual int getContainerSize() const;
     /*3*/ virtual int getMaxStackSize() const;
     /*4*/ virtual void startOpen(class Player&);
     /*5*/ virtual void stopOpen(class Player&);
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_2();
 
     MCAPI void load(class ListTag const&, class SemVersion const&);
     MCAPI std::unique_ptr<class ListTag> save();

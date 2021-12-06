@@ -42,47 +42,47 @@ public:
     /*30*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
     /*31*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*32*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*33*/ virtual void __unk_vfn_12();
+    /*33*/ virtual float getPickRadius();
     /*34*/ virtual void awardKillScore(class Actor&, int);
     /*35*/ virtual class HashedString const& queryEntityRenderer() const;
     /*36*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*37*/ virtual int getPortalWaitTime() const;
     /*38*/ virtual bool canChangeDimensions() const;
-    /*39*/ virtual void __unk_vfn_13();
+    /*39*/ virtual void __unk_vfn_12();
     /*40*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*41*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*42*/ virtual bool canBePulledIntoVehicle() const;
-    /*43*/ virtual void __unk_vfn_14();
+    /*43*/ virtual void __unk_vfn_13();
     /*44*/ virtual bool canSynchronizeNewEntity() const;
-    /*45*/ virtual void __unk_vfn_15();
-    /*46*/ virtual void __unk_vfn_16();
+    /*45*/ virtual void __unk_vfn_14();
+    /*46*/ virtual void __unk_vfn_15();
     /*47*/ virtual bool isWorldBuilder() const;
-    /*48*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_16();
     /*49*/ virtual bool isAdventure() const;
     /*50*/ virtual bool canDestroyBlock(class Block const&) const;
     /*51*/ virtual void setAuxValue(int);
     /*52*/ virtual void stopSpinAttack();
-    /*53*/ virtual void __unk_vfn_18();
-    /*54*/ virtual void __unk_vfn_19();
-    /*55*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_17();
+    /*54*/ virtual void __unk_vfn_18();
+    /*55*/ virtual void __unk_vfn_19();
     /*56*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*57*/ virtual void __unk_vfn_21();
-    /*58*/ virtual void __unk_vfn_22();
+    /*57*/ virtual void __unk_vfn_20();
+    /*58*/ virtual void __unk_vfn_21();
     /*59*/ virtual void spawnAnim();
     /*60*/ virtual void aiStep();
     /*61*/ virtual int getItemUseDuration() const;
     /*62*/ virtual float getItemUseStartupProgress() const;
     /*63*/ virtual float getItemUseIntervalProgress() const;
-    /*64*/ virtual void __unk_vfn_23();
+    /*64*/ virtual void __unk_vfn_22();
     /*65*/ virtual bool isAlliedTo(class Mob*);
-    /*66*/ virtual void __unk_vfn_24();
+    /*66*/ virtual void __unk_vfn_23();
     /*67*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*68*/ virtual void onBorn(class Actor&, class Actor&);
-    /*69*/ virtual void __unk_vfn_25();
+    /*69*/ virtual int getAttackTime();
     /*70*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*71*/ virtual void __unk_vfn_26();
+    /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
-    /*73*/ virtual void __unk_vfn_27();
+    /*73*/ virtual void __unk_vfn_25();
     /*
     inline bool useNewAi() const{
         bool (Parrot::*rv)() const;
@@ -93,66 +93,6 @@ public:
         bool (Parrot::*rv)() const;
         *((void**)&rv) = dlsym("?_makeFlySound@Parrot@@MEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Parrot::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Parrot@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Parrot::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Parrot@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void aiStep(){
-        void (Parrot::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Parrot@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canBePulledIntoVehicle() const{
-        bool (Parrot::*rv)() const;
-        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Parrot@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getAmbientSound() const{
-        int \/*enum enum LevelSoundEvent*\/ (Parrot::*rv)() const;
-        *((void**)&rv) = dlsym("?getAmbientSound@Parrot@@UEBA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getInterpolatedRidingPosition(float a0) const{
-        class Vec3 (Parrot::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedRidingPosition@Parrot@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getShadowRadius() const{
-        float (Parrot::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Parrot@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Parrot::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Parrot@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void playAmbientSound(){
-        void (Parrot::*rv)();
-        *((void**)&rv) = dlsym("?playAmbientSound@Parrot@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Parrot::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Parrot@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void setSitting(bool a0){
-        void (Parrot::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSitting@Parrot@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void vehicleLanded(class Vec3 const& a0, class Vec3 const& a1){
-        void (Parrot::*rv)(class Vec3 const&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?vehicleLanded@Parrot@@UEAAXAEBVVec3@@0@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<class Vec3 const&>(a1));
     }
     */
     MCAPI float getFlap() const;

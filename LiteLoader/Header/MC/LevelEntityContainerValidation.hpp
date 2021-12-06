@@ -13,13 +13,7 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
-    /*
-    inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
-        bool (LevelEntityContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@LevelEntityContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class Container const&>(a1), std::forward<int>(a2));
-    }
-    */
+
 
 protected:
 

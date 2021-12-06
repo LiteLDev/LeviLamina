@@ -13,18 +13,7 @@ public:
     /*1*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
     /*2*/ virtual class Container* _tryGetContainer() const;
     /*3*/ virtual void _balanceTransaction(class ItemStack const&) const;
-    /*
-    inline class Container* _tryGetContainer() const{
-        class Container* (ScriptBlockInventoryComponentContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?_tryGetContainer@ScriptBlockInventoryComponentContainer@@MEBAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<int> getEmptySlotsCount() const{
-        class Scripting::Result<int> (ScriptBlockInventoryComponentContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getEmptySlotsCount@ScriptBlockInventoryComponentContainer@@UEBA?AV?$Result@H@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI class ScriptBlockInventoryComponentContainer& operator=(class ScriptBlockInventoryComponentContainer const&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponentContainer> bind(struct Scripting::Version);
 

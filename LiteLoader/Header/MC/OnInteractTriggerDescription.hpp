@@ -10,33 +10,10 @@ class OnInteractTriggerDescription {
 public:
     /*0*/ virtual ~OnInteractTriggerDescription();
     /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual ~OnInteractTriggerDescription();
-    /*6*/ virtual void __unk_vfn_3();
-    /*
-    inline bool isNetworkComponent() const{
-        bool (OnInteractTriggerDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@OnInteractTriggerDescription@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
-        std::unique_ptr<class CompoundTag> (OnInteractTriggerDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?buildNetworkTag@OnInteractTriggerDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (OnInteractTriggerDescription::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@OnInteractTriggerDescription@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    inline std::string const& getName() const{
-        std::string const& (OnInteractTriggerDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@OnInteractTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual bool isNetworkComponent() const;
+    /*3*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*4*/ virtual void initializeFromNetwork(class CompoundTag const&);
+
     MCAPI static std::string const NameID;
 
 protected:

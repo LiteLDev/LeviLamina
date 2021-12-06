@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~PortalForcer();
     /*1*/ virtual void deserialize(class CompoundTag const&);
     /*2*/ virtual void serialize(class CompoundTag&) const;
-    /*
-    inline void deserialize(class CompoundTag const& a0){
-        void (PortalForcer::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?deserialize@PortalForcer@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    inline void serialize(class CompoundTag& a0) const{
-        void (PortalForcer::*rv)(class CompoundTag&) const;
-        *((void**)&rv) = dlsym("?serialize@PortalForcer@@UEBAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    */
+
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);
     MCAPI class PortalRecord const& createPortal(class Actor const&, int);

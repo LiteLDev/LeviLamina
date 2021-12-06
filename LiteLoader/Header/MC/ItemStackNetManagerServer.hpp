@@ -10,40 +10,20 @@ class ItemStackNetManagerServer : public ItemStackNetManagerBase {
 #include "Extra/ItemStackNetManagerServerAPI.hpp"
 public:
     /*0*/ virtual ~ItemStackNetManagerServer();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isEnabled() const;
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
-    /*8*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
+    /*7*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
+    /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*
-    inline void _initScreen(class ItemStackNetManagerScreen& a0){
-        void (ItemStackNetManagerServer::*rv)(class ItemStackNetManagerScreen&);
-        *((void**)&rv) = dlsym("?_initScreen@ItemStackNetManagerServer@@EEAAXAEAVItemStackNetManagerScreen@@@Z");
-        return (this->*rv)(std::forward<class ItemStackNetManagerScreen&>(a0));
-    }
-    inline bool allowInventoryTransactionManager() const{
-        bool (ItemStackNetManagerServer::*rv)() const;
-        *((void**)&rv) = dlsym("?allowInventoryTransactionManager@ItemStackNetManagerServer@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const{
-        class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> (ItemStackNetManagerServer::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@ItemStackNetManagerServer@@UEBA?AV?$TypedClientNetId@UItemStackRequestIdTag@@H$0A@@@XZ");
-        return (this->*rv)();
-    }
     inline void onContainerScreenOpen(class ContainerScreenContext const& a0){
         void (ItemStackNetManagerServer::*rv)(class ContainerScreenContext const&);
         *((void**)&rv) = dlsym("?onContainerScreenOpen@ItemStackNetManagerServer@@UEAAXAEBVContainerScreenContext@@@Z");
         return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
-    }
-    inline bool retainSetItemStackNetIdVariant() const{
-        bool (ItemStackNetManagerServer::*rv)() const;
-        *((void**)&rv) = dlsym("?retainSetItemStackNetIdVariant@ItemStackNetManagerServer@@UEBA_NXZ");
-        return (this->*rv)();
     }
     */
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char> > >> const&);

@@ -13,39 +13,18 @@ public:
     /*2*/ virtual void postInit();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual class ContainerWeakRef getContainerWeakRef() const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
+    /*5*/ virtual std::vector<class ItemStack> const& getItems() const;
+    /*6*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*7*/ virtual void __unk_vfn_1();
     /*8*/ virtual bool isValid();
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual void __unk_vfn_5();
-    /*11*/ virtual void __unk_vfn_6();
-    /*12*/ virtual void __unk_vfn_7();
-    /*13*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_2();
+    /*10*/ virtual void __unk_vfn_3();
+    /*11*/ virtual void __unk_vfn_4();
+    /*12*/ virtual std::string const& getItemGroupName(int) const;
+    /*13*/ virtual void __unk_vfn_5();
     /*14*/ virtual class Container* _getContainer() const;
     /*15*/ virtual int _getContainerOffset() const;
-    /*
-    inline class Container* _getContainer() const{
-        class Container* (HudContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?_getContainer@HudContainerModel@@EEBAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    inline void containerContentChanged(int a0){
-        void (HudContainerModel::*rv)(int);
-        *((void**)&rv) = dlsym("?containerContentChanged@HudContainerModel@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline class ContainerWeakRef getContainerWeakRef() const{
-        class ContainerWeakRef (HudContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerWeakRef@HudContainerModel@@UEBA?AVContainerWeakRef@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid(){
-        bool (HudContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?isValid@HudContainerModel@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

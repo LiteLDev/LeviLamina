@@ -10,13 +10,7 @@ class ScriptServerPlayerAttackedActorEvent {
 public:
     /*0*/ virtual ~ScriptServerPlayerAttackedActorEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerPlayerAttackedActorEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerPlayerAttackedActorEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setAttackedActorId(struct ActorUniqueID const&);
     MCAPI void setPlayerId(struct ActorUniqueID const&);
 

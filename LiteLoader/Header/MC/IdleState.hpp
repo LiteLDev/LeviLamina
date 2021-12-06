@@ -17,11 +17,6 @@ public:
         *((void**)&rv) = dlsym("?tick@IdleState@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void start(){
-        void (IdleState::*rv)();
-        *((void**)&rv) = dlsym("?start@IdleState@@UEAAXXZ");
-        return (this->*rv)();
-    }
     */
 
 protected:

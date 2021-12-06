@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "CommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_PRECOMPILEDCOMMANDORIGIN
 #include "Extra/PrecompiledCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PRECOMPILEDCOMMANDORIGIN
@@ -28,104 +28,13 @@ public:
     /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*17*/ virtual bool isSelectorExpansionAllowed() const;
     /*18*/ virtual unsigned char getSourceSubId() const;
-    /*19*/ virtual void __unk_vfn_0();
-    /*20*/ virtual void __unk_vfn_1();
-    /*21*/ virtual void __unk_vfn_2();
+    /*19*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*20*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*21*/ virtual class mce::UUID const& getUUID() const;
     /*22*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*23*/ virtual class CompoundTag serialize() const;
     /*24*/ virtual bool isValid() const;
-    /*
-    inline class Level* getLevel() const{
-        class Level* (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@PrecompiledCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class Actor* getEntity() const{
-        class Actor* (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@PrecompiledCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@PrecompiledCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasTellPerms() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasTellPerms@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@PrecompiledCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isWorldBuilder() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isWorldBuilder@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasChatPerms() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChatPerms@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAbility(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        bool (PrecompiledCommandOrigin::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
-        *((void**)&rv) = dlsym("?canUseAbility@PrecompiledCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@PrecompiledCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@PrecompiledCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (PrecompiledCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@PrecompiledCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

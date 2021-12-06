@@ -9,18 +9,8 @@ class SelectorBehaviorNode {
 public:
     /*0*/ virtual ~SelectorBehaviorNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (SelectorBehaviorNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@SelectorBehaviorNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (SelectorBehaviorNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@SelectorBehaviorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+    /*2*/ virtual void initializeFromDefinition(class Actor&);
+
 
 protected:
 

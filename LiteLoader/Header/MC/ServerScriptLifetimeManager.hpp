@@ -8,38 +8,17 @@ class ServerScriptLifetimeManager {
 #include "Extra/ServerScriptLifetimeManagerAPI.hpp"
 public:
     /*0*/ virtual ~ServerScriptLifetimeManager();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual int /*enum enum EventResult*/ onServerUpdateStart(class ServerInstance&);
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_6();
+    /*6*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual int /*enum enum EventResult*/ onServerThreadStarted(class ServerInstance&);
     /*10*/ virtual int /*enum enum EventResult*/ onServerThreadStopped(class ServerInstance&);
-    /*
-    inline int \/*enum enum EventResult*\/ onServerLevelInitialized(class ServerInstance& a0, class Level& a1){
-        int \/*enum enum EventResult*\/ (ServerScriptLifetimeManager::*rv)(class ServerInstance&, class Level&);
-        *((void**)&rv) = dlsym("?onServerLevelInitialized@ServerScriptLifetimeManager@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0), std::forward<class Level&>(a1));
-    }
-    inline int \/*enum enum EventResult*\/ onServerThreadStarted(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (ServerScriptLifetimeManager::*rv)(class ServerInstance&);
-        *((void**)&rv) = dlsym("?onServerThreadStarted@ServerScriptLifetimeManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onServerThreadStopped(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (ServerScriptLifetimeManager::*rv)(class ServerInstance&);
-        *((void**)&rv) = dlsym("?onServerThreadStopped@ServerScriptLifetimeManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onServerUpdateStart(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (ServerScriptLifetimeManager::*rv)(class ServerInstance&);
-        *((void**)&rv) = dlsym("?onServerUpdateStart@ServerScriptLifetimeManager@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0));
-    }
-    */
+
     MCAPI void onMainThreadStartLeaveGame();
 
 protected:

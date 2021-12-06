@@ -5,8 +5,15 @@
 #else
 // Add Member There
 public:
-struct CornerDepthData;
-struct HeightAttenuationData;
-struct BatchEntry;
+struct HeightAttenuationData {
+    HeightAttenuationData() = delete;
+    HeightAttenuationData(HeightAttenuationData const&) = delete;
+    HeightAttenuationData(HeightAttenuationData const&&) = delete;
+};
+struct CornerDepthData {
+    CornerDepthData() = delete;
+    CornerDepthData(CornerDepthData const&) = delete;
+    CornerDepthData(CornerDepthData const&&) = delete;
+};
 
 #endif

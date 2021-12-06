@@ -14,28 +14,7 @@ public:
     /*2*/ virtual void addRoom(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
     /*3*/ virtual void addTunnel(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, float, int, int, float, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
     /*4*/ virtual void addFeature(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
-    /*
-    inline void addFeature(class IBlockWorldGenAPI& a0, class ChunkPos const& a1, class Random& a2, class ChunkPos const& a3, class RenderParams& a4, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& a5) const{
-        void (HellCaveFeature::*rv)(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
-        *((void**)&rv) = dlsym("?addFeature@HellCaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBVChunkPos@@AEAVRandom@@1AEAVRenderParams@@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<class Random&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class RenderParams&>(a4), std::forward<std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&>(a5));
-    }
-    inline void addRoom(class IBlockWorldGenAPI& a0, struct CaveFeatureUtils::CarverConfiguration const& a1, class Random& a2, class ChunkPos const& a3, class Vec3 const& a4, class RenderParams& a5, struct CaveFeatureUtils::CarvingParameters const& a6, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& a7) const{
-        void (HellCaveFeature::*rv)(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
-        *((void**)&rv) = dlsym("?addRoom@HellCaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@AEAVRenderParams@@AEBUCarvingParameters@4@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<struct CaveFeatureUtils::CarverConfiguration const&>(a1), std::forward<class Random&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class Vec3 const&>(a4), std::forward<class RenderParams&>(a5), std::forward<struct CaveFeatureUtils::CarvingParameters const&>(a6), std::forward<std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&>(a7));
-    }
-    inline void addTunnel(class IBlockWorldGenAPI& a0, struct CaveFeatureUtils::CarverConfiguration const& a1, class Random& a2, class ChunkPos const& a3, class Vec3 const& a4, float a5, float a6, float a7, int a8, int a9, float a10, class RenderParams& a11, struct CaveFeatureUtils::CarvingParameters const& a12, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>& a13) const{
-        void (HellCaveFeature::*rv)(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, float, int, int, float, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
-        *((void**)&rv) = dlsym("?addTunnel@HellCaveFeature@@MEBAXAEAVIBlockWorldGenAPI@@AEBUCarverConfiguration@CaveFeatureUtils@@AEAVRandom@@AEBVChunkPos@@AEBVVec3@@MMMHHMAEAVRenderParams@@AEBUCarvingParameters@4@AEAV?$vector@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@V?$allocator@UCarveEllipsoidParams@CachedMetaData@CaveFeature@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<struct CaveFeatureUtils::CarverConfiguration const&>(a1), std::forward<class Random&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class Vec3 const&>(a4), std::forward<float>(a5), std::forward<float>(a6), std::forward<float>(a7), std::forward<int>(a8), std::forward<int>(a9), std::forward<float>(a10), std::forward<class RenderParams&>(a11), std::forward<struct CaveFeatureUtils::CarvingParameters const&>(a12), std::forward<std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&>(a13));
-    }
-    inline class std::optional<class BlockPos> place(class IBlockWorldGenAPI& a0, class BlockPos const& a1, class Random& a2, class RenderParams& a3) const{
-        class std::optional<class BlockPos> (HellCaveFeature::*rv)(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-        *((void**)&rv) = dlsym("?place@HellCaveFeature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2), std::forward<class RenderParams&>(a3));
-    }
-    */
+
 
 protected:
 

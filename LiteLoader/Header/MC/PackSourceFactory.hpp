@@ -23,78 +23,7 @@ public:
     /*12*/ virtual class InPackagePackSource* getDynamicPackagePackSource(int /*enum enum PackType*/);
     /*13*/ virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const&);
     /*14*/ virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string >);
-    /*
-    inline class DirectoryPackSource& createDirectoryPackSource(class Core::Path const& a0, int \/*enum enum PackType*\/ a1, int \/*enum enum PackOrigin*\/ a2, bool a3){
-        class DirectoryPackSource& (PackSourceFactory::*rv)(class Core::Path const&, int \/*enum enum PackType*\/, int \/*enum enum PackOrigin*\/, bool);
-        *((void**)&rv) = dlsym("?createDirectoryPackSource@PackSourceFactory@@UEAAAEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@W4PackOrigin@@_N@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<int \/*enum enum PackType*\/>(a1), std::forward<int \/*enum enum PackOrigin*\/>(a2), std::forward<bool>(a3));
-    }
-    inline class InPackagePackSource& createDynamicPackagePackSource(int \/*enum enum PackType*\/ a0){
-        class InPackagePackSource& (PackSourceFactory::*rv)(int \/*enum enum PackType*\/);
-        *((void**)&rv) = dlsym("?createDynamicPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum PackType*\/>(a0));
-    }
-    inline class InPackagePackSource& createInPackagePackSource(int \/*enum enum PackType*\/ a0){
-        class InPackagePackSource& (PackSourceFactory::*rv)(int \/*enum enum PackType*\/);
-        *((void**)&rv) = dlsym("?createInPackagePackSource@PackSourceFactory@@UEAAAEAVInPackagePackSource@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum PackType*\/>(a0));
-    }
-    inline class WorldHistoryPackSource& createWorldHistoryPackSource(class Core::Path const& a0, int \/*enum enum PackType*\/ a1){
-        class WorldHistoryPackSource& (PackSourceFactory::*rv)(class Core::Path const&, int \/*enum enum PackType*\/);
-        *((void**)&rv) = dlsym("?createWorldHistoryPackSource@PackSourceFactory@@UEAAAEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<int \/*enum enum PackType*\/>(a1));
-    }
-    inline class WorldTemplatePackSource& createWorldTemplatePackSource(class WorldTemplateManager const& a0, class mce::UUID const& a1, int \/*enum enum PackType*\/ a2, int \/*enum enum PackOrigin*\/ a3){
-        class WorldTemplatePackSource& (PackSourceFactory::*rv)(class WorldTemplateManager const&, class mce::UUID const&, int \/*enum enum PackType*\/, int \/*enum enum PackOrigin*\/);
-        *((void**)&rv) = dlsym("?createWorldTemplatePackSource@PackSourceFactory@@UEAAAEAVWorldTemplatePackSource@@AEBVWorldTemplateManager@@AEBVUUID@mce@@W4PackType@@W4PackOrigin@@@Z");
-        return (this->*rv)(std::forward<class WorldTemplateManager const&>(a0), std::forward<class mce::UUID const&>(a1), std::forward<int \/*enum enum PackType*\/>(a2), std::forward<int \/*enum enum PackOrigin*\/>(a3));
-    }
-    inline class DirectoryPackSource* getDirectoryPackSource(class Core::Path const& a0, int \/*enum enum PackType*\/ a1) const{
-        class DirectoryPackSource* (PackSourceFactory::*rv)(class Core::Path const&, int \/*enum enum PackType*\/) const;
-        *((void**)&rv) = dlsym("?getDirectoryPackSource@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBVPath@Core@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<int \/*enum enum PackType*\/>(a1));
-    }
-    inline class DirectoryPackSource* getDirectoryPackSourceContaining(struct PackIdVersion const& a0) const{
-        class DirectoryPackSource* (PackSourceFactory::*rv)(struct PackIdVersion const&) const;
-        *((void**)&rv) = dlsym("?getDirectoryPackSourceContaining@PackSourceFactory@@UEBAPEAVDirectoryPackSource@@AEBUPackIdVersion@@@Z");
-        return (this->*rv)(std::forward<struct PackIdVersion const&>(a0));
-    }
-    inline class InPackagePackSource* getDynamicPackagePackSource(int \/*enum enum PackType*\/ a0){
-        class InPackagePackSource* (PackSourceFactory::*rv)(int \/*enum enum PackType*\/);
-        *((void**)&rv) = dlsym("?getDynamicPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum PackType*\/>(a0));
-    }
-    inline class InPackagePackSource* getInPackagePackSource(int \/*enum enum PackType*\/ a0){
-        class InPackagePackSource* (PackSourceFactory::*rv)(int \/*enum enum PackType*\/);
-        *((void**)&rv) = dlsym("?getInPackagePackSource@PackSourceFactory@@UEAAPEAVInPackagePackSource@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum PackType*\/>(a0));
-    }
-    inline class WorldHistoryPackSource* getWorldHistoryPackSource(class Core::Path const& a0, int \/*enum enum PackType*\/ a1) const{
-        class WorldHistoryPackSource* (PackSourceFactory::*rv)(class Core::Path const&, int \/*enum enum PackType*\/) const;
-        *((void**)&rv) = dlsym("?getWorldHistoryPackSource@PackSourceFactory@@UEBAPEAVWorldHistoryPackSource@@AEBVPath@Core@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<int \/*enum enum PackType*\/>(a1));
-    }
-    inline class WorldTemplatePackSource* getWorldTemplatePackSource(class mce::UUID const& a0, int \/*enum enum PackType*\/ a1) const{
-        class WorldTemplatePackSource* (PackSourceFactory::*rv)(class mce::UUID const&, int \/*enum enum PackType*\/) const;
-        *((void**)&rv) = dlsym("?getWorldTemplatePackSource@PackSourceFactory@@UEBAPEAVWorldTemplatePackSource@@AEBVUUID@mce@@W4PackType@@@Z");
-        return (this->*rv)(std::forward<class mce::UUID const&>(a0), std::forward<int \/*enum enum PackType*\/>(a1));
-    }
-    inline void removeFromDirectoryPackSource(class Core::Path const& a0){
-        void (PackSourceFactory::*rv)(class Core::Path const&);
-        *((void**)&rv) = dlsym("?removeFromDirectoryPackSource@PackSourceFactory@@UEAAXAEBVPath@Core@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0));
-    }
-    inline void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const& a0){
-        void (PackSourceFactory::*rv)(class std::shared_ptr<class IDynamicPackagePacks> const&);
-        *((void**)&rv) = dlsym("?setDynamicPackagePacks@PackSourceFactory@@UEAAXAEBV?$shared_ptr@VIDynamicPackagePacks@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class IDynamicPackagePacks> const&>(a0));
-    }
-    inline void setDynamicPackageRoot(class Core::PathBuffer<std::string > a0){
-        void (PackSourceFactory::*rv)(class Core::PathBuffer<std::string >);
-        *((void**)&rv) = dlsym("?setDynamicPackageRoot@PackSourceFactory@@UEAAXV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z");
-        return (this->*rv)(std::forward<class Core::PathBuffer<std::string >>(a0));
-    }
-    */
+
 
 protected:
 

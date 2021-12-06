@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Core.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_FILEUPLOADMANAGER
 #include "Extra/FileUploadManagerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILEUPLOADMANAGER
@@ -12,13 +12,7 @@ public:
     /*0*/ virtual ~FileUploadManager();
     /*1*/ virtual float getUploadProgress() const;
     /*2*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
-    /*
-    inline float getUploadProgress() const{
-        float (FileUploadManager::*rv)() const;
-        *((void**)&rv) = dlsym("?getUploadProgress@FileUploadManager@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void addCallbackQueue(class std::function<void (void)>);
     MCAPI void setFailed(enum UploadError);
     MCAPI void setUseStream(bool);

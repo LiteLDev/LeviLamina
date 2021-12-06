@@ -12,28 +12,7 @@ public:
     /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
-    /*
-    inline bool canRewindToFrame(struct IActorMovementProxy& a0, unsigned __int64 a1, unsigned __int64 a2){
-        bool (ClientReplayStatePolicy::*rv)(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
-        *((void**)&rv) = dlsym("?canRewindToFrame@ClientReplayStatePolicy@@UEAA_NAEAUIActorMovementProxy@@_K1@Z");
-        return (this->*rv)(std::forward<struct IActorMovementProxy&>(a0), std::forward<unsigned __int64>(a1), std::forward<unsigned __int64>(a2));
-    }
-    inline void flagUnsupportedMovement(unsigned __int64 a0){
-        void (ClientReplayStatePolicy::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?flagUnsupportedMovement@ClientReplayStatePolicy@@UEAAX_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool isReplayNeeded(int \/*enum enum AdvanceFrameResult*\/ a0) const{
-        bool (ClientReplayStatePolicy::*rv)(int \/*enum enum AdvanceFrameResult*\/) const;
-        *((void**)&rv) = dlsym("?isReplayNeeded@ClientReplayStatePolicy@@UEBA_NW4AdvanceFrameResult@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AdvanceFrameResult*\/>(a0));
-    }
-    inline struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy& a0, class PlayerAuthInputPacket const& a1, unsigned __int64 a2){
-        struct MovementCorrection (ClientReplayStatePolicy::*rv)(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
-        *((void**)&rv) = dlsym("?shouldCorrectMovement@ClientReplayStatePolicy@@UEAA?AUMovementCorrection@@AEAUIActorMovementProxy@@AEBVPlayerAuthInputPacket@@_K@Z");
-        return (this->*rv)(std::forward<struct IActorMovementProxy&>(a0), std::forward<class PlayerAuthInputPacket const&>(a1), std::forward<unsigned __int64>(a2));
-    }
-    */
+
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy&) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const&) const;
 

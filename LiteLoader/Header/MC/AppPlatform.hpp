@@ -869,8 +869,8 @@ public:    /*
         *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform@@EEBA?AW4UIScalingRules@@XZ");
         return (this->*rv)();
     }
-    inline class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const{
-        class std::variant<struct HWND__*, struct std::monostate> (AppPlatform::*rv)() const;
+    inline class std::variant<struct HWND__* , struct std::monostate> getRenderSurfaceParameters() const{
+        class std::variant<struct HWND__* , struct std::monostate> (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getRenderSurfaceParameters@AppPlatform@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ");
         return (this->*rv)();
     }

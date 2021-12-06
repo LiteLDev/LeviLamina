@@ -37,90 +37,55 @@ public:
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
     /*50*/ virtual void die(class ActorDamageSource const&);
     /*51*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*52*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_19();
     /*53*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*54*/ virtual void __unk_vfn_21();
-    /*55*/ virtual void __unk_vfn_22();
+    /*54*/ virtual void __unk_vfn_20();
+    /*55*/ virtual void __unk_vfn_21();
     /*56*/ virtual void spawnAnim();
     /*57*/ virtual void aiStep();
     /*58*/ virtual int getItemUseDuration() const;
     /*59*/ virtual float getItemUseStartupProgress() const;
     /*60*/ virtual float getItemUseIntervalProgress() const;
-    /*61*/ virtual void __unk_vfn_23();
+    /*61*/ virtual void __unk_vfn_22();
     /*62*/ virtual bool isAlliedTo(class Mob*);
     /*63*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
-    /*64*/ virtual void __unk_vfn_24();
+    /*64*/ virtual void __unk_vfn_23();
     /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*66*/ virtual void onBorn(class Actor&, class Actor&);
-    /*67*/ virtual void __unk_vfn_25();
+    /*67*/ virtual int getAttackTime();
     /*68*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*69*/ virtual void __unk_vfn_26();
+    /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void _serverAiMobStep();
-    /*71*/ virtual void __unk_vfn_27();
+    /*71*/ virtual void __unk_vfn_25();
     /*
     inline bool useNewAi() const{
         bool (IronGolem::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@IronGolem@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (IronGolem::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@IronGolem@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (IronGolem::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@IronGolem@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline float getShadowRadius() const{
-        float (IronGolem::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@IronGolem@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void aiStep(){
-        void (IronGolem::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@IronGolem@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool doHurtTarget(class Actor* a0, int \/*enum enum ActorDamageCause*\/ const& a1){
-        bool (IronGolem::*rv)(class Actor*, int \/*enum enum ActorDamageCause*\/ const&);
-        *((void**)&rv) = dlsym("?doHurtTarget@IronGolem@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int \/*enum enum ActorDamageCause*\/ const&>(a1));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (IronGolem::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@IronGolem@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (IronGolem::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@IronGolem@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI int getOfferFlowerTick() const;

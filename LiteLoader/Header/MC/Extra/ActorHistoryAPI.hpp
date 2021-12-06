@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct Snapshot;
+struct Snapshot {
+    Snapshot() = delete;
+    Snapshot(Snapshot const&) = delete;
+    Snapshot(Snapshot const&&) = delete;
+};
 
 #endif

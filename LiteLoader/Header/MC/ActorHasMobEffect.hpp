@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "FilterTest.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_ACTORHASMOBEFFECT
 #include "Extra/ActorHasMobEffectAPI.hpp"
 #undef EXTRA_INCLUDE_PART_ACTORHASMOBEFFECT
@@ -15,28 +15,7 @@ public:
     /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline class Json::Value _serializeValue() const{
-        class Json::Value (ActorHasMobEffect::*rv)() const;
-        *((void**)&rv) = dlsym("?_serializeValue@ActorHasMobEffect@@MEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (ActorHasMobEffect::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@ActorHasMobEffect@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline bool setup(struct FilterTest::Definition const& a0, struct FilterInputs const& a1){
-        bool (ActorHasMobEffect::*rv)(struct FilterTest::Definition const&, struct FilterInputs const&);
-        *((void**)&rv) = dlsym("?setup@ActorHasMobEffect@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z");
-        return (this->*rv)(std::forward<struct FilterTest::Definition const&>(a0), std::forward<struct FilterInputs const&>(a1));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (ActorHasMobEffect::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@ActorHasMobEffect@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

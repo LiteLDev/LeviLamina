@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct FactorCalculationData;
+struct FactorCalculationData {
+    FactorCalculationData() = delete;
+    FactorCalculationData(FactorCalculationData const&) = delete;
+    FactorCalculationData(FactorCalculationData const&&) = delete;
+};
 
 #endif

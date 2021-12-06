@@ -8,13 +8,8 @@ class NetworkPacketEventListener {
 #include "Extra/NetworkPacketEventListenerAPI.hpp"
 public:
     /*0*/ virtual ~NetworkPacketEventListener();
-    /*
-    inline int \/*enum enum EventResult*\/ onPacketReceivedFrom(class PacketHeader const& a0, class Packet const& a1){
-        int \/*enum enum EventResult*\/ (NetworkPacketEventListener::*rv)(class PacketHeader const&, class Packet const&);
-        *((void**)&rv) = dlsym("?onPacketReceivedFrom@NetworkPacketEventListener@@UEAA?AW4EventResult@@AEBVPacketHeader@@AEBVPacket@@@Z");
-        return (this->*rv)(std::forward<class PacketHeader const&>(a0), std::forward<class Packet const&>(a1));
-    }
-    */
+    /*1*/ virtual int /*enum enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+
 
 protected:
 

@@ -17,5 +17,5 @@ public:
 protected:
 
 private:
-    MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char*&);
+    MCAPI void _writeToLog(bool, enum LogArea, enum LogLevel, char* &);
 };

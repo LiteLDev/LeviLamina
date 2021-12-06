@@ -12,30 +12,9 @@ public:
     /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-    /*
-    inline int \/*enum enum StreamReadResult*\/ _read(class ReadOnlyBinaryStream& a0){
-        int \/*enum enum StreamReadResult*\/ (SpawnExperienceOrbPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@SpawnExperienceOrbPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline int \/*enum enum MinecraftPacketIds*\/ getId() const{
-        int \/*enum enum MinecraftPacketIds*\/ (SpawnExperienceOrbPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@SpawnExperienceOrbPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (SpawnExperienceOrbPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@SpawnExperienceOrbPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (SpawnExperienceOrbPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@SpawnExperienceOrbPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+
 
 protected:
 

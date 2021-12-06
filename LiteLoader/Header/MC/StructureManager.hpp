@@ -35,4 +35,6 @@ private:
     MCAPI class LegacyStructureTemplate* _readLegacyStructure(std::string const&);
     MCAPI void _removePlacementQueueItem(std::string const&, class StructureAnimationData&);
     MCAPI void _savePlacementQueueItem(std::string const&, class StructureAnimationData&);
+    MCAPI static char const* BEHAVIOR_PACK_STRUCTURES_FOLDER;
+    MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
 };

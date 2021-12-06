@@ -13,18 +13,7 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void _write(class BinaryStream&) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
-    /*
-    inline bool _read(class ReadOnlyBinaryStream& a0){
-        bool (ItemStackRequestActionDrop::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@ItemStackRequestActionDrop@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void _write(class BinaryStream& a0) const{
-        void (ItemStackRequestActionDrop::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionDrop@@MEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+
 
 protected:
 

@@ -5,7 +5,16 @@
 #else
 // Add Member There
 public:
-struct Hint;
-class Node;
+struct Hint {
+    Hint() = delete;
+    Hint(Hint const&) = delete;
+    Hint(Hint const&&) = delete;
+};
+class Node {
+public:
+    Node() = delete;
+    Node(Node const&) = delete;
+    Node(Node const&&) = delete;
+};
 
 #endif

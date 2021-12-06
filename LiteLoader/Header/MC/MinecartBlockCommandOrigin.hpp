@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BlockCommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_MINECARTBLOCKCOMMANDORIGIN
 #include "Extra/MinecartBlockCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_MINECARTBLOCKCOMMANDORIGIN
@@ -23,66 +23,15 @@ public:
     /*11*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*12*/ virtual bool isSelectorExpansionAllowed() const;
     /*13*/ virtual unsigned char getSourceSubId() const;
-    /*14*/ virtual void __unk_vfn_0();
-    /*15*/ virtual void __unk_vfn_1();
-    /*16*/ virtual void __unk_vfn_2();
+    /*14*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*15*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*16*/ virtual class mce::UUID const& getUUID() const;
     /*17*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*18*/ virtual class CompoundTag serialize() const;
     /*19*/ virtual bool isValid() const;
     /*20*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*21*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
-    /*
-    inline class CommandBlockActor* _getBlockEntity(class BlockSource& a0) const{
-        class CommandBlockActor* (MinecartBlockCommandOrigin::*rv)(class BlockSource&) const;
-        *((void**)&rv) = dlsym("?_getBlockEntity@MinecartBlockCommandOrigin@@MEBAPEAVCommandBlockActor@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline class BaseCommandBlock* _getBaseCommandBlock(class BlockSource& a0) const{
-        class BaseCommandBlock* (MinecartBlockCommandOrigin::*rv)(class BlockSource&) const;
-        *((void**)&rv) = dlsym("?_getBaseCommandBlock@MinecartBlockCommandOrigin@@MEBAPEAVBaseCommandBlock@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@MinecartBlockCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@MinecartBlockCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline class Actor* getEntity() const{
-        class Actor* (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@MinecartBlockCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@MinecartBlockCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (MinecartBlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@MinecartBlockCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:

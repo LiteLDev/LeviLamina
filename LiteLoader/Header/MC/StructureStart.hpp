@@ -9,18 +9,9 @@ class StructureStart {
 public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*
-    inline bool isValid() const{
-        bool (StructureStart::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@StructureStart@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (StructureStart::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@StructureStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const = 0;
+
 
 protected:
     MCAPI void calculateBoundingBox();

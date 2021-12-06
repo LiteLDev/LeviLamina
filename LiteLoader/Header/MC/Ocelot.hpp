@@ -36,68 +36,47 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
     /*49*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*50*/ virtual void __unk_vfn_20();
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*50*/ virtual void __unk_vfn_19();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual int getItemUseDuration() const;
     /*55*/ virtual float getItemUseStartupProgress() const;
     /*56*/ virtual float getItemUseIntervalProgress() const;
-    /*57*/ virtual void __unk_vfn_23();
+    /*57*/ virtual void __unk_vfn_22();
     /*58*/ virtual bool isAlliedTo(class Mob*);
     /*59*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
-    /*64*/ virtual void __unk_vfn_26();
+    /*63*/ virtual int getAttackTime();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
-    /*
-    inline void _serverAiMobStep(){
-        void (Ocelot::*rv)();
-        *((void**)&rv) = dlsym("?_serverAiMobStep@Ocelot@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool doHurtTarget(class Actor* a0, int \/*enum enum ActorDamageCause*\/ const& a1){
-        bool (Ocelot::*rv)(class Actor*, int \/*enum enum ActorDamageCause*\/ const&);
-        *((void**)&rv) = dlsym("?doHurtTarget@Ocelot@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int \/*enum enum ActorDamageCause*\/ const&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Ocelot::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Ocelot@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Ocelot::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Ocelot@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*66*/ virtual void __unk_vfn_25();
+
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;
 

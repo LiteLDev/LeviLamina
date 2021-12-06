@@ -8,7 +8,7 @@ class Motive {
 #include "Extra/MotiveAPI.hpp"
 public:
     MCAPI std::string const getName() const;
-    MCAPI static std::vector<class Motive const*> getAllMotivesAsList();
+    MCAPI static std::vector<class Motive const* > getAllMotivesAsList();
     MCAPI static class Motive const& getMotiveByName(std::string const&);
     MCAPI static class Motive const mAlban;
     MCAPI static class Motive const mAztec;

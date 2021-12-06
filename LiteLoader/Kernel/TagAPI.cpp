@@ -98,7 +98,7 @@ Tag* Tag::createTag(Tag::Type t) {
 }
 
 Tag::Type Tag::getTagType() const {
-    return VirtualCall<Tag::Type>(const_cast<Tag*>(this), 5 * 8);
+    return (Tag::Type)getId();
 }
 
 void Tag::destroy() {

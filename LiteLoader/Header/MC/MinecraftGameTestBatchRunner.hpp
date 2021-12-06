@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~MinecraftGameTestBatchRunner();
     /*1*/ virtual class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction&);
     /*2*/ virtual void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
-    /*
-    inline class std::shared_ptr<class gametest::BaseGameTestInstance> _createGameTestInstance(class gametest::BaseGameTestFunction& a0){
-        class std::shared_ptr<class gametest::BaseGameTestInstance> (MinecraftGameTestBatchRunner::*rv)(class gametest::BaseGameTestFunction&);
-        *((void**)&rv) = dlsym("?_createGameTestInstance@MinecraftGameTestBatchRunner@@MEAA?AV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVBaseGameTestFunction@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestFunction&>(a0));
-    }
-    inline void _runTest(class std::shared_ptr<class gametest::BaseGameTestInstance> a0, class gametest::GameTestTicker& a1){
-        void (MinecraftGameTestBatchRunner::*rv)(class std::shared_ptr<class gametest::BaseGameTestInstance>, class gametest::GameTestTicker&);
-        *((void**)&rv) = dlsym("?_runTest@MinecraftGameTestBatchRunner@@MEAAXV?$shared_ptr@VBaseGameTestInstance@gametest@@@std@@AEAVGameTestTicker@gametest@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class gametest::BaseGameTestInstance>>(a0), std::forward<class gametest::GameTestTicker&>(a1));
-    }
-    */
+
 
 protected:
 

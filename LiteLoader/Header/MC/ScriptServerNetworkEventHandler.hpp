@@ -10,13 +10,7 @@ class ScriptServerNetworkEventHandler {
 public:
     /*0*/ virtual ~ScriptServerNetworkEventHandler();
     /*1*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handleChat(struct ChatEvent&);
-    /*
-    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleChat(struct ChatEvent& a0){
-        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptServerNetworkEventHandler::*rv)(struct ChatEvent&);
-        *((void**)&rv) = dlsym("?handleChat@ScriptServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z");
-        return (this->*rv)(std::forward<struct ChatEvent&>(a0));
-    }
-    */
+
 
 protected:
 

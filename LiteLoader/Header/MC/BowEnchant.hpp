@@ -22,28 +22,7 @@ public:
     /*11*/ virtual void __unk_vfn_3();
     /*12*/ virtual void __unk_vfn_4();
     /*13*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
-    /*
-    inline bool _isValidEnchantmentTypeForCategory(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (BowEnchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?_isValidEnchantmentTypeForCategory@BowEnchant@@EEBA_NW4Type@Enchant@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    inline int getMaxCost(int a0) const{
-        int (BowEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@BowEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMaxLevel() const{
-        int (BowEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@BowEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMinCost(int a0) const{
-        int (BowEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@BowEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+
 
 protected:
 

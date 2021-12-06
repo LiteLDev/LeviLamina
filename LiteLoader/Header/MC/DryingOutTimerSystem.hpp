@@ -10,13 +10,7 @@ public:
     /*0*/ virtual ~DryingOutTimerSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
-    /*
-    inline void tick(class EntityRegistry& a0){
-        void (DryingOutTimerSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@DryingOutTimerSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    */
+
 
 protected:
 

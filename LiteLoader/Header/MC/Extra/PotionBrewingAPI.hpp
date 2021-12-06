@@ -5,8 +5,18 @@
 #else
 // Add Member There
 public:
-class Ingredient;
-template <typename T>
-class Mix;
+class Ingredient {
+public:
+    Ingredient() = delete;
+    Ingredient(Ingredient const&) = delete;
+    Ingredient(Ingredient const&&) = delete;
+};
+template <typename T0>
+class Mix {
+public:
+    Mix() = delete;
+    Mix(Mix const&) = delete;
+    Mix(Mix const&&) = delete;
+};
 
 #endif

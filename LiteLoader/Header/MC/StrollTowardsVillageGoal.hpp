@@ -14,25 +14,9 @@ public:
     /*3*/ virtual void appendDebugInfo(std::string&) const;
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
+    /*6*/ virtual unsigned __int64 _getRepathTime() const;
     /*7*/ virtual class BlockPos _selectRandomPosInVillage();
-    /*
-    inline class BlockPos _selectRandomPosInVillage(){
-        class BlockPos (StrollTowardsVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?_selectRandomPosInVillage@StrollTowardsVillageGoal@@MEAA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (StrollTowardsVillageGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@StrollTowardsVillageGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (StrollTowardsVillageGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@StrollTowardsVillageGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 
