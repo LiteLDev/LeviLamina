@@ -5,7 +5,6 @@
 #else
 // Add Member There
 public:
-struct RectLayoutFeature;
 struct FeatureArea;
 
 #endif

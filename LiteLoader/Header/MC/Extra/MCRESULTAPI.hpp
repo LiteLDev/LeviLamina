@@ -4,5 +4,9 @@
 
 #else
 // Add Member There
+unsigned char filler[4];
+operator bool() {
+    return filler[0];
+}
 
 #endif

@@ -1,6 +1,7 @@
 //Extra Part For MinecraftCommands.hpp
 #ifdef EXTRA_INCLUDE_PART_MINECRAFTCOMMANDS
 // Include Headers or Declare Types Here
+#include "../MCRESULT.hpp"
 
 #else
 // Add Member There

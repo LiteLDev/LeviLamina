@@ -1,5 +1,6 @@
 #pragma once
 #include "Global.h"
+#include "MC/MCRESULT.hpp"
 #include <functional>
 #include <string>
 using std::function;

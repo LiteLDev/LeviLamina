@@ -101,7 +101,7 @@ bool mcstructureCommand(CommandOrigin const& ori, CommandOutput& outp, MyEnum<Mc
                 CompoundTag* tag = Tag::fromBinaryNBT((void*)nbtOpt.value().c_str(), nbtOpt.value().size());
                 StructureTemplate& st = StructureTemplate::fromTag(name, tag);
                 tag->destroy();
-                bool result = st.toWorld(dimid, from, Mirror::None, Rotation::None);
+                bool result = st.toWorld(dimid, from, Mirror::None_15, Rotation::None_14);
                 if (result) {
                     outp.success(fmt::format("Set structure success"));
                 } else {
@@ -165,8 +165,8 @@ public:
 };
 #include <MC/ByteTag.hpp>
 #include <MC/Util.hpp>
+#include <MC/Social.hpp>
 void testCompoundTag(CompoundTag* tag) {
-
     auto a = (ByteTag*)Tag::createTag(Tag::Type::Byte);
     tag->put("", std::move(*a));
     tag->putBoolean("Boolean", false);

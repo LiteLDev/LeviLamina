@@ -4,5 +4,5 @@
 
 #else
 // Add Member There
-
+unsigned long long t;
 #endif

@@ -9,7 +9,7 @@ class ActorSkeletalAnimationPtr {
 public:
     MCAPI class HashedString const& getName() const;
     MCAPI bool isNull() const;
-    MCAPI class ActorSkeletalAnimation const* operator->();
+    MCAPI class ActorSkeletalAnimation const* operator->() const;
     MCAPI class ActorSkeletalAnimation* operator->();
     MCAPI class ActorSkeletalAnimationPtr& operator=(class ActorSkeletalAnimationPtr const&);
     MCAPI static class ActorSkeletalAnimationPtr const NONE;
