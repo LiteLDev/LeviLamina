@@ -37,6 +37,9 @@
     <Filter Include="Kernel\NBT">
       <UniqueIdentifier>{4fd86d70-9a2a-4ae7-9492-e9b6001e547d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\Impl">
+      <UniqueIdentifier>{87c09065-27f5-4c6f-a4f1-bb2e829dc6a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">

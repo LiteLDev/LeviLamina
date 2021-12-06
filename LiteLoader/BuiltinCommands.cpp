@@ -284,8 +284,9 @@ bool testApiCommand(CommandOrigin const& ori, CommandOutput& outp) {
 }
 static_assert(sizeof(std::vector<int>) == 24);
 
-void RegisterCommands() {
-    Event::addEventListener([](RegCmdEvent ev) { // Register commands
+void RegisterCommands()
+{
+    Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         MakeCommand("version", "Get the version of this server", 0);
         MakeCommand("plugins", "View plugin information", 0);
         MakeCommand("tpdim", "Teleport", 0);
@@ -303,5 +304,6 @@ void RegisterCommands() {
         MakeCommand("testapi", "View plugin information", 0);
         CmdOverload(testapi, testApiCommand);
 
+        return true;
     });
 }
