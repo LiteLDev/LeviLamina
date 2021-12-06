@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BlockItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_SCAFFOLDINGBLOCKITEM
 #include "Extra/ScaffoldingBlockItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SCAFFOLDINGBLOCKITEM

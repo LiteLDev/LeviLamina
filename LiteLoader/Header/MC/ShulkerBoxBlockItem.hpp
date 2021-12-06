@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BlockItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_SHULKERBOXBLOCKITEM
 #include "Extra/ShulkerBoxBlockItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SHULKERBOXBLOCKITEM

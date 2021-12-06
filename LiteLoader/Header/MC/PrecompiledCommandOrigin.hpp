@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "CommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_PRECOMPILEDCOMMANDORIGIN
 #include "Extra/PrecompiledCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PRECOMPILEDCOMMANDORIGIN

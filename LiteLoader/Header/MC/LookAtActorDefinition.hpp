@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BehaviorDefinition.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_LOOKATACTORDEFINITION
 #include "Extra/LookAtActorDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LOOKATACTORDEFINITION

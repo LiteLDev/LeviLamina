@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct ColumnRange;
+struct ColumnRange {
+    ColumnRange() = delete;
+    ColumnRange(ColumnRange const&) = delete;
+    ColumnRange(ColumnRange const&&) = delete;
+};
 
 #endif

@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct BlockVolumeIter;
+struct BlockVolumeIter {
+    BlockVolumeIter() = delete;
+    BlockVolumeIter(BlockVolumeIter const&) = delete;
+    BlockVolumeIter(BlockVolumeIter const&&) = delete;
+};
 
 #endif

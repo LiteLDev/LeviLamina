@@ -5,7 +5,15 @@
 #else
 // Add Member There
 public:
-struct ItemAlias;
-struct ItemHashAlias;
+struct ItemHashAlias {
+    ItemHashAlias() = delete;
+    ItemHashAlias(ItemHashAlias const&) = delete;
+    ItemHashAlias(ItemHashAlias const&&) = delete;
+};
+struct ItemAlias {
+    ItemAlias() = delete;
+    ItemAlias(ItemAlias const&) = delete;
+    ItemAlias(ItemAlias const&&) = delete;
+};
 
 #endif

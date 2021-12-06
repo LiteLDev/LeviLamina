@@ -6,4 +6,5 @@
 // Add Member There
 public:
 enum Type;
+
 #endif

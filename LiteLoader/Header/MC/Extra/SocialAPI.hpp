@@ -4,17 +4,59 @@
 
 #else
 // Add Member There
-class Events{
-    public:
-    class Event;
-    class AchievementEventing;
+namespace Events {
+class AchievementEventing {
+public:
+    AchievementEventing() = delete;
+    AchievementEventing(AchievementEventing const&) = delete;
+    AchievementEventing(AchievementEventing const&&) = delete;
 };
+class Event {
+public:
+    Event() = delete;
+    Event(Event const&) = delete;
+    Event(Event const&&) = delete;
+};
+class EventManager {
+public:
+    EventManager() = delete;
+    EventManager(EventManager const&) = delete;
+    EventManager(EventManager const&&) = delete;
+};
+class IEventListener {
+public:
+    IEventListener() = delete;
+    IEventListener(IEventListener const&) = delete;
+    IEventListener(IEventListener const&&) = delete;
+};
+class Property {
+public:
+    Property() = delete;
+    Property(Property const&) = delete;
+    Property(Property const&&) = delete;
+};
+
+}
+class MultiplayerService {
+public:
+    MultiplayerService() = delete;
+    MultiplayerService(MultiplayerService const&) = delete;
+    MultiplayerService(MultiplayerService const&&) = delete;
+};
+enum SignInResult;
+enum MultiplayerServiceIdentifier;
 class GameConnectionInfo {
 public:
-    inline GameConnectionInfo() = delete;
-    inline GameConnectionInfo(GameConnectionInfo const&) = delete;
-    inline GameConnectionInfo(GameConnectionInfo const&&) = delete;
+    GameConnectionInfo() = delete;
+    GameConnectionInfo(GameConnectionInfo const&) = delete;
+    GameConnectionInfo(GameConnectionInfo const&&) = delete;
 };
 enum GamePublishSetting;
+class IUserManager {
+public:
+    IUserManager() = delete;
+    IUserManager(IUserManager const&) = delete;
+    IUserManager(IUserManager const&&) = delete;
+};
 
 #endif

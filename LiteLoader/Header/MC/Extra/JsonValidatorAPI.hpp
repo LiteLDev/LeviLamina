@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class Property;
+class Property {
+public:
+    Property() = delete;
+    Property(Property const&) = delete;
+    Property(Property const&&) = delete;
+};
 
 #endif

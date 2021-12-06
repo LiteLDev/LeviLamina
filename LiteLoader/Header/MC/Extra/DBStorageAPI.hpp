@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct PendingWriteResult;
+struct PendingWriteResult {
+    PendingWriteResult() = delete;
+    PendingWriteResult(PendingWriteResult const&) = delete;
+    PendingWriteResult(PendingWriteResult const&&) = delete;
+};
 
 #endif

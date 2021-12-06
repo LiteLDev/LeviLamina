@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct AutomaticFeatureRule;
+struct AutomaticFeatureRule {
+    AutomaticFeatureRule() = delete;
+    AutomaticFeatureRule(AutomaticFeatureRule const&) = delete;
+    AutomaticFeatureRule(AutomaticFeatureRule const&&) = delete;
+};
 
 #endif

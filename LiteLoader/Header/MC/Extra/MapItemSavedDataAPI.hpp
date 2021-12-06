@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct ChunkBounds;
+struct ChunkBounds {
+    ChunkBounds() = delete;
+    ChunkBounds(ChunkBounds const&) = delete;
+    ChunkBounds(ChunkBounds const&&) = delete;
+};
 
 #endif

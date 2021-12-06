@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct Pose;
+struct Pose {
+    Pose() = delete;
+    Pose(Pose const&) = delete;
+    Pose(Pose const&&) = delete;
+};
 
 #endif

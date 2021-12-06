@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "DeprecatedSlabBlockItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_STONESLABBLOCKITEM
 #include "Extra/StoneSlabBlockItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_STONESLABBLOCKITEM

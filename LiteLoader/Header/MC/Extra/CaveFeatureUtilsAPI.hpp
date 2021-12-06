@@ -4,7 +4,15 @@
 
 #else
 // Add Member There
-struct CarverConfiguration;
-struct CarvingParameters;
+struct CarverConfiguration {
+    CarverConfiguration() = delete;
+    CarverConfiguration(CarverConfiguration const&) = delete;
+    CarverConfiguration(CarverConfiguration const&&) = delete;
+};
+struct CarvingParameters {
+    CarvingParameters() = delete;
+    CarvingParameters(CarvingParameters const&) = delete;
+    CarvingParameters(CarvingParameters const&&) = delete;
+};
 
 #endif

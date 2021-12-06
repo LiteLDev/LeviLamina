@@ -5,8 +5,17 @@
 #else
 // Add Member There
 public:
-struct HardcodedSpawningArea;
-class Neighbors;
 enum Finalization;
+class Neighbors {
+public:
+    Neighbors() = delete;
+    Neighbors(Neighbors const&) = delete;
+    Neighbors(Neighbors const&&) = delete;
+};
+struct HardcodedSpawningArea {
+    HardcodedSpawningArea() = delete;
+    HardcodedSpawningArea(HardcodedSpawningArea const&) = delete;
+    HardcodedSpawningArea(HardcodedSpawningArea const&&) = delete;
+};
 
 #endif

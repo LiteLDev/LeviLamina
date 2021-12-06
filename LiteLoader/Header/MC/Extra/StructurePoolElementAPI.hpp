@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class LazyTemplate;
+class LazyTemplate {
+public:
+    LazyTemplate() = delete;
+    LazyTemplate(LazyTemplate const&) = delete;
+    LazyTemplate(LazyTemplate const&&) = delete;
+};
 
 #endif

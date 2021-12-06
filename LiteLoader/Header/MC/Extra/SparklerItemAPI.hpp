@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct ColorInfo;
+struct ColorInfo {
+    ColorInfo() = delete;
+    ColorInfo(ColorInfo const&) = delete;
+    ColorInfo(ColorInfo const&&) = delete;
+};
 
 #endif

@@ -5,8 +5,16 @@
 #else
 // Add Member There
 public:
-struct ScreenData;
-struct RequestSlotIdAssignment;
 enum RemoveType;
+struct RequestSlotIdAssignment {
+    RequestSlotIdAssignment() = delete;
+    RequestSlotIdAssignment(RequestSlotIdAssignment const&) = delete;
+    RequestSlotIdAssignment(RequestSlotIdAssignment const&&) = delete;
+};
+struct ScreenData {
+    ScreenData() = delete;
+    ScreenData(ScreenData const&) = delete;
+    ScreenData(ScreenData const&&) = delete;
+};
 
 #endif

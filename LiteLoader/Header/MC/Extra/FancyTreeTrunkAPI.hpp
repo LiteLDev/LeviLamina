@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class FoliageCoords;
+class FoliageCoords {
+public:
+    FoliageCoords() = delete;
+    FoliageCoords(FoliageCoords const&) = delete;
+    FoliageCoords(FoliageCoords const&&) = delete;
+};
 
 #endif

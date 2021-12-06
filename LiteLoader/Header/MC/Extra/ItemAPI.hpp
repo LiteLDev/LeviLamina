@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class Tier;
+class Tier {
+public:
+    Tier() = delete;
+    Tier(Tier const&) = delete;
+    Tier(Tier const&&) = delete;
+};
 
 #endif

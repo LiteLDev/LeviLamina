@@ -7,7 +7,7 @@
 // Add Member There
 public:
 
-MCAPI CompoundTag::CompoundTag(CompoundTag&&);
+//MCAPI CompoundTag(CompoundTag&&);
 
 inline static CompoundTag* create() {
     return (CompoundTag*)Tag::createTag((Tag::Type)10);

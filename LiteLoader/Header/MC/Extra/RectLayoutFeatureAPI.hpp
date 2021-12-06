@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct FeatureArea;
+struct FeatureArea {
+    FeatureArea() = delete;
+    FeatureArea(FeatureArea const&) = delete;
+    FeatureArea(FeatureArea const&&) = delete;
+};
 
 #endif

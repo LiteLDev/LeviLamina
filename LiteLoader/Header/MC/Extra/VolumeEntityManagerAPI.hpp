@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct VolumeEntityDefinition;
+struct VolumeEntityDefinition {
+    VolumeEntityDefinition() = delete;
+    VolumeEntityDefinition(VolumeEntityDefinition const&) = delete;
+    VolumeEntityDefinition(VolumeEntityDefinition const&&) = delete;
+};
 
 #endif

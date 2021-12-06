@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct CachedItemStateMapPtr;
+struct CachedItemStateMapPtr {
+    CachedItemStateMapPtr() = delete;
+    CachedItemStateMapPtr(CachedItemStateMapPtr const&) = delete;
+    CachedItemStateMapPtr(CachedItemStateMapPtr const&&) = delete;
+};
 
 #endif

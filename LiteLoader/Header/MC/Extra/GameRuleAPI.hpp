@@ -5,8 +5,13 @@
 #else
 // Add Member There
 public:
-class ValidationError;
 union Value;
+class ValidationError {
+public:
+    ValidationError() = delete;
+    ValidationError(ValidationError const&) = delete;
+    ValidationError(ValidationError const&&) = delete;
+};
 enum Type;
 
 #endif

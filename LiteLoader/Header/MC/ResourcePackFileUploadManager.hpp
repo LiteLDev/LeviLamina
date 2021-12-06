@@ -3,7 +3,7 @@
 #include "../Global.h"
 #include "FileUploadManager.hpp"
 #include "Core.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_RESOURCEPACKFILEUPLOADMANAGER
 #include "Extra/ResourcePackFileUploadManagerAPI.hpp"
 #undef EXTRA_INCLUDE_PART_RESOURCEPACKFILEUPLOADMANAGER

@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct Definition;
+struct Definition {
+    Definition() = delete;
+    Definition(Definition const&) = delete;
+    Definition(Definition const&&) = delete;
+};
 
 #endif

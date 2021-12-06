@@ -5,7 +5,15 @@
 #else
 // Add Member There
 public:
-struct DebugSendRateModifiers;
-struct DebugSpatialPacketModifiers;
+struct DebugSpatialPacketModifiers {
+    DebugSpatialPacketModifiers() = delete;
+    DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&) = delete;
+    DebugSpatialPacketModifiers(DebugSpatialPacketModifiers const&&) = delete;
+};
+struct DebugSendRateModifiers {
+    DebugSendRateModifiers() = delete;
+    DebugSendRateModifiers(DebugSendRateModifiers const&) = delete;
+    DebugSendRateModifiers(DebugSendRateModifiers const&&) = delete;
+};
 
 #endif

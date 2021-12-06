@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct MaterialLayer;
+struct MaterialLayer {
+    MaterialLayer() = delete;
+    MaterialLayer(MaterialLayer const&) = delete;
+    MaterialLayer(MaterialLayer const&&) = delete;
+};
 
 #endif

@@ -5,5 +5,10 @@
 #else
 // Add Member There
 public:
-struct BlockResource;
+struct BlockResource {
+    BlockResource() = delete;
+    BlockResource(BlockResource const&) = delete;
+    BlockResource(BlockResource const&&) = delete;
+};
+
 #endif

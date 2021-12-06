@@ -5,7 +5,10 @@
 #else
 // Add Member There
 public:
-struct LegacyMapping;
-enum Processing;
+struct LegacyMapping {
+    LegacyMapping() = delete;
+    LegacyMapping(LegacyMapping const&) = delete;
+    LegacyMapping(LegacyMapping const&&) = delete;
+};
 
 #endif

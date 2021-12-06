@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "ChemistryStickItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_SPARKLERITEM
 #include "Extra/SparklerItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SPARKLERITEM

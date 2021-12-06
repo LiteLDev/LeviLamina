@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct SlotData;
+struct SlotData {
+    SlotData() = delete;
+    SlotData(SlotData const&) = delete;
+    SlotData(SlotData const&&) = delete;
+};
 
 #endif
