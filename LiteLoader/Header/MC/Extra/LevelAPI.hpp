@@ -22,10 +22,13 @@ public:
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
     LIAPI static class LevelStorage& getLevelStorage();
+
     //Block
-    LIAPI static bool setBlock(Vec3& pos, int dim, Block* block);
-    LIAPI static bool setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(Vec3& pos, int dim, Tag* nbt);
+    LIAPI static Block* getBlock(BlockPos& pos, int dim);
+    LIAPI static BlockInstance getBlockInstance(BlockPos& pos, int dim);
+    LIAPI static bool setBlock(BlockPos& pos, int dim, Block* block);
+    LIAPI static bool setBlock(BlockPos& pos, int dim, const string& name, unsigned short tileData);
+    LIAPI static bool setBlock(BlockPos& pos, int dim, Tag* nbt);
     LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos);
     LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos, ItemStack* item);
     LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);

@@ -79,19 +79,29 @@ BlockPalette* Level::getBlockPalette() {
     return (Global<Level>->*rv)();
 }
 
-bool Level::setBlock(Vec3& pos, int dim, Block* block) {
-	BlockSource* bs = getBlockSource(dim);
-	return bs->setBlock(pos.toBlockPos(), *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
+Block* Level::getBlock(BlockPos& pos, int dim)
+{
+    return (Block*) & Level::getBlockSource(dim)->getBlock(pos);
 }
 
-bool Level::setBlock(Vec3& pos, int dim, const string& name, unsigned short tileData) {
+BlockInstance Level::getBlockInstance(BlockPos& pos, int dim)
+{
+    return BlockInstance(pos, dim);
+}
+
+bool Level::setBlock(BlockPos& pos, int dim, Block* block) {
+	BlockSource* bs = getBlockSource(dim);
+	return bs->setBlock(pos, *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
+}
+
+bool Level::setBlock(BlockPos& pos, int dim, const string& name, unsigned short tileData) {
 	Block* newBlock = Block::create(name, tileData);
 	if (!newBlock)
 		return false;
 	return setBlock(pos,dim, newBlock);
 }
 
-bool Level::setBlock(Vec3& pos, int dim, Tag* nbt) {
+bool Level::setBlock(BlockPos& pos, int dim, Tag* nbt) {
 	Block* newBlock = Block::create(nbt);
 	if (!newBlock)
 		return false;

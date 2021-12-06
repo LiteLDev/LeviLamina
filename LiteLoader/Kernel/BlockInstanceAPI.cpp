@@ -9,6 +9,16 @@
 #include <MC/BlockLegacy.hpp>
 #include <MC/ItemInstance.hpp>
 
+BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimid)
+    :block(block), pos(pos), dim(dimid)
+{ }
+
+BlockInstance::BlockInstance(BlockPos pos, int dimid)
+    : pos(pos), dim(dimid)
+{
+    block = Level::getBlock(pos, dimid);
+}
+
 bool BlockInstance::operator==(BlockInstance const& bli) {
     return block == bli.block && pos == bli.pos && dim == bli.dim;
 };
@@ -41,6 +51,18 @@ ItemStack& BlockInstance::getBlockDrops() {
     //return out;
     throw("TODO: BlockInstance::getBlockDrops()");
     return *(ItemStack*)0;
+}
+
+BlockPos BlockInstance::getPosition() {
+    return pos;
+}
+
+BlockSource* BlockInstance::getBlockSource() {
+    return Level::getBlockSource(dim);
+}
+
+int BlockInstance::getDimensionId() {
+    return dim;
 }
 
 
