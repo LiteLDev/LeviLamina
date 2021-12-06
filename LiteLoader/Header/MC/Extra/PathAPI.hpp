@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class Node;
+class Node {
+public:
+    Node() = delete;
+    Node(Node const&) = delete;
+    Node(Node const&&) = delete;
+};
 
 #endif

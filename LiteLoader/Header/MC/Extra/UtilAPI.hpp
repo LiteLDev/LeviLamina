@@ -4,9 +4,23 @@
 
 #else
 // Add Member There
-class EntityComponentProcessor;
-template <typename T, int a1, int a2, int a3>
-class MultidimensionalArray;
+struct ResourceUri {
+enum ValidationStatus;
+
+};
+class EntityComponentProcessor {
+public:
+    EntityComponentProcessor() = delete;
+    EntityComponentProcessor(EntityComponentProcessor const&) = delete;
+    EntityComponentProcessor(EntityComponentProcessor const&&) = delete;
+};
 enum NumberConversionResult;
+template <typename T0, int i1, int i2, int i3>
+class MultidimensionalArray {
+public:
+    MultidimensionalArray() = delete;
+    MultidimensionalArray(MultidimensionalArray const&) = delete;
+    MultidimensionalArray(MultidimensionalArray const&&) = delete;
+};
 
 #endif

@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct KnownPackContainer;
+struct KnownPackContainer {
+    KnownPackContainer() = delete;
+    KnownPackContainer(KnownPackContainer const&) = delete;
+    KnownPackContainer(KnownPackContainer const&&) = delete;
+};
 
 #endif

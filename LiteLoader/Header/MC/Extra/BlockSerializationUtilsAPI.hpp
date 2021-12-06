@@ -4,7 +4,11 @@
 
 #else
 // Add Member There
-struct NbtToBlockCache;
+struct NbtToBlockCache {
+    NbtToBlockCache() = delete;
+    NbtToBlockCache(NbtToBlockCache const&) = delete;
+    NbtToBlockCache(NbtToBlockCache const&&) = delete;
+};
 enum NBTState;
 
 #endif

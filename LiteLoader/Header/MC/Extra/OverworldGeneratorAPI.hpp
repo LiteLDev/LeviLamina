@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct ThreadData;
+struct ThreadData {
+    ThreadData() = delete;
+    ThreadData(ThreadData const&) = delete;
+    ThreadData(ThreadData const&&) = delete;
+};
 
 #endif

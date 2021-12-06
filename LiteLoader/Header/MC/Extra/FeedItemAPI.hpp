@@ -4,6 +4,10 @@
 
 #else
 // Add Member There
-struct Effect;
+struct Effect {
+    Effect() = delete;
+    Effect(Effect const&) = delete;
+    Effect(Effect const&&) = delete;
+};
 
 #endif

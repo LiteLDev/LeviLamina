@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct CacheEntry;
+struct CacheEntry {
+    CacheEntry() = delete;
+    CacheEntry(CacheEntry const&) = delete;
+    CacheEntry(CacheEntry const&&) = delete;
+};
 
 #endif

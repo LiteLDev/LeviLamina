@@ -5,8 +5,12 @@
 #else
 // Add Member There
 public:
-struct any_version_constructor;
 enum MatchType;
 enum ParseOption;
+struct any_version_constructor {
+    any_version_constructor() = delete;
+    any_version_constructor(any_version_constructor const&) = delete;
+    any_version_constructor(any_version_constructor const&&) = delete;
+};
 
 #endif

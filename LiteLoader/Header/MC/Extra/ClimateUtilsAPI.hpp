@@ -4,7 +4,15 @@
 
 #else
 // Add Member There
-struct Parameter;
-struct TargetSpace;
+struct TargetSpace {
+    TargetSpace() = delete;
+    TargetSpace(TargetSpace const&) = delete;
+    TargetSpace(TargetSpace const&&) = delete;
+};
+struct Parameter {
+    Parameter() = delete;
+    Parameter(Parameter const&) = delete;
+    Parameter(Parameter const&&) = delete;
+};
 
 #endif

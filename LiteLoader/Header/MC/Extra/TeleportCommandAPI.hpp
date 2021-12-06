@@ -4,7 +4,8 @@
 
 #else
 // Add Member There
-enum class FacingResult;
-enum class TeleportAnalysis;
+public:
+enum FacingResult;
+enum TeleportAnalysis;
 
 #endif

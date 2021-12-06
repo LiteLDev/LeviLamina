@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct LockedChunk;
+struct LockedChunk {
+    LockedChunk() = delete;
+    LockedChunk(LockedChunk const&) = delete;
+    LockedChunk(LockedChunk const&&) = delete;
+};
 
 #endif

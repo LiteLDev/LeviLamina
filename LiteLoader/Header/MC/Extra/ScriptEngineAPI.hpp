@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct ScriptQueueData;
+struct ScriptQueueData {
+    ScriptQueueData() = delete;
+    ScriptQueueData(ScriptQueueData const&) = delete;
+    ScriptQueueData(ScriptQueueData const&&) = delete;
+};
 
 #endif

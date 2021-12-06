@@ -5,7 +5,11 @@
 #else
 // Add Member There
 public:
-struct GateWayGenerator;
 enum GatewayTask;
+struct GateWayGenerator {
+    GateWayGenerator() = delete;
+    GateWayGenerator(GateWayGenerator const&) = delete;
+    GateWayGenerator(GateWayGenerator const&&) = delete;
+};
 
 #endif

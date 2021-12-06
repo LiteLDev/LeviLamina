@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct CapabilityRegisterer;
+struct CapabilityRegisterer {
+    CapabilityRegisterer() = delete;
+    CapabilityRegisterer(CapabilityRegisterer const&) = delete;
+    CapabilityRegisterer(CapabilityRegisterer const&&) = delete;
+};
 
 #endif

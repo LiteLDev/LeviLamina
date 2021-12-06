@@ -5,5 +5,11 @@
 #else
 // Add Member There
 public:
-class ArmorMaterial;
+class ArmorMaterial {
+public:
+    ArmorMaterial() = delete;
+    ArmorMaterial(ArmorMaterial const&) = delete;
+    ArmorMaterial(ArmorMaterial const&&) = delete;
+};
+
 #endif

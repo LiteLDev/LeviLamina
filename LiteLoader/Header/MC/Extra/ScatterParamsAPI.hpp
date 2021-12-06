@@ -5,6 +5,11 @@
 #else
 // Add Member There
 public:
-class ScatteredPositions;
+class ScatteredPositions {
+public:
+    ScatteredPositions() = delete;
+    ScatteredPositions(ScatteredPositions const&) = delete;
+    ScatteredPositions(ScatteredPositions const&&) = delete;
+};
 
 #endif

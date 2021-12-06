@@ -6,6 +6,10 @@
 #else
 // Add Member There
 public:
-struct Result;
+struct Result {
+    Result() = delete;
+    Result(Result const&) = delete;
+    Result(Result const&&) = delete;
+};
 
 #endif

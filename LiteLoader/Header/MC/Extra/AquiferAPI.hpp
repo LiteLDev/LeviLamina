@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct FluidSample;
+struct FluidSample {
+    FluidSample() = delete;
+    FluidSample(FluidSample const&) = delete;
+    FluidSample(FluidSample const&&) = delete;
+};
 
 #endif

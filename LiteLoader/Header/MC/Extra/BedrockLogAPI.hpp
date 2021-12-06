@@ -4,10 +4,19 @@
 
 #else
 // Add Member There
-class LogAreaFilter;
-struct LogDetails;
-enum LogCategory;
+class LogAreaFilter {
+public:
+    LogAreaFilter() = delete;
+    LogAreaFilter(LogAreaFilter const&) = delete;
+    LogAreaFilter(LogAreaFilter const&&) = delete;
+};
 enum LogChannel;
 enum LogRule;
+enum LogCategory;
+struct LogDetails {
+    LogDetails() = delete;
+    LogDetails(LogDetails const&) = delete;
+    LogDetails(LogDetails const&&) = delete;
+};
 
 #endif

@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct Occupant;
+struct Occupant {
+    Occupant() = delete;
+    Occupant(Occupant const&) = delete;
+    Occupant(Occupant const&&) = delete;
+};
 
 #endif

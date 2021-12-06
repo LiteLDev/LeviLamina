@@ -5,8 +5,18 @@
 #else
 // Add Member There
 public:
-class EndCityPiece;
-class SectionGenerator;
+class EndCityPiece {
+public:
+    EndCityPiece() = delete;
+    EndCityPiece(EndCityPiece const&) = delete;
+    EndCityPiece(EndCityPiece const&&) = delete;
+};
+class SectionGenerator {
+public:
+    SectionGenerator() = delete;
+    SectionGenerator(SectionGenerator const&) = delete;
+    SectionGenerator(SectionGenerator const&&) = delete;
+};
 enum SectionType;
 
 #endif

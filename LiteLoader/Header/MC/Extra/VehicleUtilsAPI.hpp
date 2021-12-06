@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct VehicleDirections;
+struct VehicleDirections {
+    VehicleDirections() = delete;
+    VehicleDirections(VehicleDirections const&) = delete;
+    VehicleDirections(VehicleDirections const&&) = delete;
+};
 
 #endif

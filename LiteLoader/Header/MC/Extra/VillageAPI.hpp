@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct DwellerData;
+struct DwellerData {
+    DwellerData() = delete;
+    DwellerData(DwellerData const&) = delete;
+    DwellerData(DwellerData const&&) = delete;
+};
 
 #endif

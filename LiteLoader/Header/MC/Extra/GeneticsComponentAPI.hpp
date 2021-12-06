@@ -5,5 +5,10 @@
 #else
 // Add Member There
 public:
-struct Gene;
+struct Gene {
+    Gene() = delete;
+    Gene(Gene const&) = delete;
+    Gene(Gene const&&) = delete;
+};
+
 #endif

@@ -4,6 +4,11 @@
 
 #else
 // Add Member There
-struct BatchEntry;
+public:
+struct BatchEntry {
+    BatchEntry() = delete;
+    BatchEntry(BatchEntry const&) = delete;
+    BatchEntry(BatchEntry const&&) = delete;
+};
 
 #endif

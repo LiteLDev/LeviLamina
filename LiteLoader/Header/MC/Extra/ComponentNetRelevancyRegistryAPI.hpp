@@ -5,5 +5,10 @@
 #else
 // Add Member There
 public:
-struct NetSerializationCallbacks;
+struct NetSerializationCallbacks {
+    NetSerializationCallbacks() = delete;
+    NetSerializationCallbacks(NetSerializationCallbacks const&) = delete;
+    NetSerializationCallbacks(NetSerializationCallbacks const&&) = delete;
+};
+
 #endif

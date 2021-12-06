@@ -5,6 +5,10 @@
 #else
 // Add Member There
 public:
-struct BlockPositionData;
+struct BlockPositionData {
+    BlockPositionData() = delete;
+    BlockPositionData(BlockPositionData const&) = delete;
+    BlockPositionData(BlockPositionData const&&) = delete;
+};
 
 #endif

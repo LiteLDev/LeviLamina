@@ -4,12 +4,13 @@
 
 #else
 // Add Member There
-class Hash {
-    class md5;
-    enum HashType;
+namespace Hash {
+class md5 {
+public:
+    md5() = delete;
+    md5(md5 const&) = delete;
+    md5(md5 const&&) = delete;
 };
-struct Asymmetric {
-    enum System;
-};
+} // namespace Hash
 
 #endif

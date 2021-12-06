@@ -5,9 +5,17 @@
 #else
 // Add Member There
 public:
-class CachedMetaData{
-    public:
-    struct CarveEllipsoidParams;
+class CachedMetaData {
+public:
+struct CarveEllipsoidParams {
+    CarveEllipsoidParams() = delete;
+    CarveEllipsoidParams(CarveEllipsoidParams const&) = delete;
+    CarveEllipsoidParams(CarveEllipsoidParams const&&) = delete;
 };
+
+CachedMetaData() = delete;
+CachedMetaData(CachedMetaData const&) = delete;
+CachedMetaData(CachedMetaData const&&) = delete;
+}£»
 
 #endif

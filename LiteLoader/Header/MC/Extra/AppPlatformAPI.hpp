@@ -4,5 +4,11 @@
 
 #else
 // Add Member There
+public:
+struct AndroidScopedStorageInfo {
+    AndroidScopedStorageInfo() = delete;
+    AndroidScopedStorageInfo(AndroidScopedStorageInfo const&) = delete;
+    AndroidScopedStorageInfo(AndroidScopedStorageInfo const&&) = delete;
+};
 
 #endif
