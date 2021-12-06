@@ -68,7 +68,7 @@ See [Docs](https://docs.litetitle.com/)
 
 ## Restrictions & Exceptions
 
-- First, you must accept the Minecraft EULA.
+First, you must accept the Minecraft EULA.
 - It means **DO NOT MAKE COMMERCIAL USE OF ANYTHING which breaks the EULA.**
 - Accepting this LICENSE means you ACCEPTED [Minecraft EULA](https://account.mojang.com/terms) too.
 - If you violate the EULA, any legal liability is **IRRELEVANT** to the developers
