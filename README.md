@@ -73,6 +73,5 @@ Second, If you provides a server hosting service, you can use this framework for
 Do not do evil.
 
 Although we expected to build an open-source community, but forcing everything open-source will ruin this community.  
-So you can write plugins based on LiteLoader with **ANY** open-source license or even dont publish your source code.but **DO NOT MAKE COMMERICIAL USE**.
-
+So you can write plugins based on LiteLoader with **ANY** open-source license or even dont publish your source code.
 Exception,if you modified the framework, or write a new framework based on this framework, you HAVE TO open-source it.
