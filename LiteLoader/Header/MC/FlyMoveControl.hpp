@@ -10,13 +10,7 @@ class FlyMoveControl : public MoveControl {
 public:
     /*0*/ virtual ~FlyMoveControl();
     /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
-    /*
-    inline void tick(class MoveControlComponent& a0, class Mob& a1){
-        void (FlyMoveControl::*rv)(class MoveControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@FlyMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

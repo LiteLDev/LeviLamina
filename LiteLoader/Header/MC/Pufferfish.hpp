@@ -37,75 +37,49 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
     /*50*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*51*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*53*/ virtual void __unk_vfn_21();
+    /*53*/ virtual void __unk_vfn_20();
     /*54*/ virtual void _onSizeUpdated();
-    /*55*/ virtual void __unk_vfn_22();
+    /*55*/ virtual void __unk_vfn_21();
     /*56*/ virtual void spawnAnim();
     /*57*/ virtual int getItemUseDuration() const;
     /*58*/ virtual float getItemUseStartupProgress() const;
     /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_23();
+    /*60*/ virtual void __unk_vfn_22();
     /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_24();
+    /*62*/ virtual void __unk_vfn_23();
     /*63*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
+    /*65*/ virtual int getAttackTime();
     /*66*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*67*/ virtual void __unk_vfn_26();
+    /*67*/ virtual void __unk_vfn_24();
     /*68*/ virtual void _serverAiMobStep();
-    /*69*/ virtual void __unk_vfn_27();
-    /*
-    inline bool startRiding(class Actor& a0){
-        bool (Pufferfish::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?startRiding@Pufferfish@@UEAA_NAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Pufferfish::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Pufferfish@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (Pufferfish::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Pufferfish@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Pufferfish::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Pufferfish@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Pufferfish::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Pufferfish@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*69*/ virtual void __unk_vfn_25();
+
 
 protected:
 

@@ -21,5 +21,5 @@ protected:
 
 private:
     MCAPI bool _sendQueuedChunk(class ChunkPos const&, class ClientBlobCache::Server::TransferBuilder*);
-    MCAPI void _serializeAndCache(class LevelChunkPacket&, class ClientBlobCache::Server::TransferBuilder&, class std::function<void (class VarIntDataOutput&)>&&);
+    MCAPI void _serializeAndCache(class LevelChunkPacket&, class ClientBlobCache::Server::TransferBuilder&, class std::function<void (class VarIntDataOutput& )>&&);
 };

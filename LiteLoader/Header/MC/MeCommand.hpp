@@ -9,13 +9,7 @@ class MeCommand {
 public:
     /*0*/ virtual ~MeCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (MeCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@MeCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&);
 
 protected:

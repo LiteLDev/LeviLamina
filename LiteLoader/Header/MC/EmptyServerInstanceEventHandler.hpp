@@ -8,13 +8,8 @@ class EmptyServerInstanceEventHandler {
 #include "Extra/EmptyServerInstanceEventHandlerAPI.hpp"
 public:
     /*0*/ virtual ~EmptyServerInstanceEventHandler();
-    /*
-    inline int \/*enum enum HandlerResult*\/ handleLeaveGameDone(struct ServerInstanceEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (EmptyServerInstanceEventHandler::*rv)(struct ServerInstanceEvent const&);
-        *((void**)&rv) = dlsym("?handleLeaveGameDone@EmptyServerInstanceEventHandler@@UEAA?AW4HandlerResult@@AEBUServerInstanceEvent@@@Z");
-        return (this->*rv)(std::forward<struct ServerInstanceEvent const&>(a0));
-    }
-    */
+    /*1*/ virtual int /*enum enum HandlerResult*/ handleLeaveGameDone(struct ServerInstanceEvent const&);
+
 
 protected:
 

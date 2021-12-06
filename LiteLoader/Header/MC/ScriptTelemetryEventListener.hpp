@@ -16,18 +16,7 @@ public:
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual int /*enum enum EventResult*/ onScriptLoaded(std::string const&, unsigned __int64);
     /*8*/ virtual int /*enum enum EventResult*/ onScriptRan(std::string const&, std::string const&, bool);
-    /*
-    inline int \/*enum enum EventResult*\/ onScriptLoaded(std::string const& a0, unsigned __int64 a1){
-        int \/*enum enum EventResult*\/ (ScriptTelemetryEventListener::*rv)(std::string const&, unsigned __int64);
-        *((void**)&rv) = dlsym("?onScriptLoaded@ScriptTelemetryEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_K@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<unsigned __int64>(a1));
-    }
-    inline int \/*enum enum EventResult*\/ onScriptRan(std::string const& a0, std::string const& a1, bool a2){
-        int \/*enum enum EventResult*\/ (ScriptTelemetryEventListener::*rv)(std::string const&, std::string const&, bool);
-        *((void**)&rv) = dlsym("?onScriptRan@ScriptTelemetryEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<bool>(a2));
-    }
-    */
+
 
 protected:
 

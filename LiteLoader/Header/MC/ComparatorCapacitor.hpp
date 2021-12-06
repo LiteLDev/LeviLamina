@@ -10,10 +10,10 @@ class ComparatorCapacitor : public ProducerComponent {
 public:
     /*0*/ virtual ~ComparatorCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual int getDirection() const;
+    /*3*/ virtual void setDirection(unsigned char);
     /*4*/ virtual bool canConsumePowerAnyDirection() const;
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /*7*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*8*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
@@ -21,61 +21,17 @@ public:
     /*10*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*11*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*13*/ virtual void __unk_vfn_3();
-    /*14*/ virtual void __unk_vfn_4();
-    /*15*/ virtual void __unk_vfn_5();
-    /*16*/ virtual void __unk_vfn_6();
+    /*13*/ virtual void __unk_vfn_1();
+    /*14*/ virtual bool isHalfPulse() const;
+    /*15*/ virtual void __unk_vfn_2();
+    /*16*/ virtual bool isSecondaryPowered() const;
     /*17*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
+    /*18*/ virtual unsigned char getPoweroutDirection() const;
     /*
     inline bool canConsumerPower() const{
         bool (ComparatorCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@ComparatorCapacitor@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool canConsumePowerAnyDirection() const{
-        bool (ComparatorCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@ComparatorCapacitor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CircuitComponentType*\/ getCircuitComponentType() const{
-        int \/*enum enum CircuitComponentType*\/ (ComparatorCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCircuitComponentType@ComparatorCapacitor@@UEBA?AW4CircuitComponentType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool addSource(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, int& a2, bool& a3){
-        bool (ComparatorCapacitor::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-        *((void**)&rv) = dlsym("?addSource@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<int&>(a2), std::forward<bool&>(a3));
-    }
-    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
-        bool (ComparatorCapacitor::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-        *((void**)&rv) = dlsym("?allowConnection@ComparatorCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
-    }
-    inline void cacheValues(class CircuitSystem& a0, class BlockPos const& a1){
-        void (ComparatorCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?cacheValues@ComparatorCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool evaluate(class CircuitSystem& a0, class BlockPos const& a1){
-        bool (ComparatorCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?evaluate@ComparatorCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline unsigned char getPoweroutDirection() const{
-        unsigned char (ComparatorCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPoweroutDirection@ComparatorCapacitor@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline bool removeSource(class BlockPos const& a0, class BaseCircuitComponent const* a1){
-        bool (ComparatorCapacitor::*rv)(class BlockPos const&, class BaseCircuitComponent const*);
-        *((void**)&rv) = dlsym("?removeSource@ComparatorCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class BaseCircuitComponent const*>(a1));
-    }
-    inline void updateDependencies(class CircuitSceneGraph& a0, class BlockPos const& a1){
-        void (ComparatorCapacitor::*rv)(class CircuitSceneGraph&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?updateDependencies@ComparatorCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class BlockPos const&>(a1));
     }
     */
     MCAPI void clearAnalogStrength(unsigned char);

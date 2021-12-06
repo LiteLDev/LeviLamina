@@ -6,6 +6,6 @@
 #undef EXTRA_INCLUDE_PART_PACKDEPENDENCYMANAGER
 namespace PackDependencyManager {
 #include "Extra/PackDependencyManagerAPI.hpp"
-    MCAPI std::vector<struct PackIdVersion> getMissingDependencyIdentities(class gsl::not_null<class PackSource const*>, class PackManifest const&);
+    MCAPI std::vector<struct PackIdVersion> getMissingDependencyIdentities(class gsl::not_null<class PackSource const* >, class PackManifest const&);
     MCAPI bool isNativeModule(std::string const&);
 };

@@ -10,51 +10,15 @@ public:
     /*0*/ virtual ~RandomStrollGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
+    /*8*/ virtual void __unk_vfn_0();
+    /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual bool _setWantedPosition();
-    /*
-    inline bool _setWantedPosition(){
-        bool (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?_setWantedPosition@RandomStrollGoal@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RandomStrollGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RandomStrollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RandomStrollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RandomStrollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RandomStrollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RandomStrollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (RandomStrollGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@RandomStrollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

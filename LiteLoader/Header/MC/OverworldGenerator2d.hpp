@@ -8,10 +8,10 @@
 class OverworldGenerator2d {
 #include "Extra/OverworldGenerator2dAPI.hpp"
 public:    /*
-    inline void _prepareHeights(class BlockVolume& a0, class ChunkPos const& a1, class WorldGenCache const& a2, class Aquifer* a3, class std::function<void (class BlockPos const&, class Block const&, int)>&& a4, bool a5, std::vector<short>* a6, int a7){
-        void (OverworldGenerator2d::*rv)(class BlockVolume&, class ChunkPos const&, class WorldGenCache const&, class Aquifer*, class std::function<void (class BlockPos const&, class Block const&, int)>&&, bool, std::vector<short>*, int);
+    inline void _prepareHeights(class BlockVolume& a0, class ChunkPos const& a1, class WorldGenCache const& a2, class Aquifer* a3, class std::function<void (class BlockPos const& , class Block const& , int)>&& a4, bool a5, std::vector<short>* a6, int a7){
+        void (OverworldGenerator2d::*rv)(class BlockVolume&, class ChunkPos const&, class WorldGenCache const&, class Aquifer*, class std::function<void (class BlockPos const& , class Block const& , int)>&&, bool, std::vector<short>*, int);
         *((void**)&rv) = dlsym("?_prepareHeights@OverworldGenerator2d@@EEAAXAEAVBlockVolume@@AEBVChunkPos@@AEBVWorldGenCache@@PEAVAquifer@@$$QEAV?$function@$$A6AXAEBVBlockPos@@AEBVBlock@@H@Z@std@@_NPEAV?$vector@FV?$allocator@F@std@@@7@H@Z");
-        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<class WorldGenCache const&>(a2), std::forward<class Aquifer*>(a3), std::forward<class std::function<void (class BlockPos const&, class Block const&, int)>&&>(a4), std::forward<bool>(a5), std::forward<std::vector<short>*>(a6), std::forward<int>(a7));
+        return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<class WorldGenCache const&>(a2), std::forward<class Aquifer*>(a3), std::forward<class std::function<void (class BlockPos const& , class Block const& , int)>&&>(a4), std::forward<bool>(a5), std::forward<std::vector<short>*>(a6), std::forward<int>(a7));
     }
     inline void decorateWorldGenPostProcess(class Biome& a0, class LevelChunk& a1, class BlockSource& a2, class Random& a3) const{
         void (OverworldGenerator2d::*rv)(class Biome&, class LevelChunk&, class BlockSource&, class Random&) const;

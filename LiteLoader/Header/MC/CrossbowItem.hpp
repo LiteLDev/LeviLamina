@@ -29,15 +29,15 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual int getAttackDamage() const;
     /*25*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*26*/ virtual void __unk_vfn_7();
-    /*27*/ virtual void __unk_vfn_8();
-    /*28*/ virtual void __unk_vfn_9();
+    /*26*/ virtual void __unk_vfn_6();
+    /*27*/ virtual int getPatternIndex() const;
+    /*28*/ virtual void __unk_vfn_7();
     /*29*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*30*/ virtual bool canDestroyInCreative() const;
     /*31*/ virtual bool isDestructive(int) const;
@@ -48,22 +48,22 @@ public:
     /*36*/ virtual int getEnchantSlot() const;
     /*37*/ virtual int getEnchantValue() const;
     /*38*/ virtual int getArmorValue() const;
-    /*39*/ virtual void __unk_vfn_10();
+    /*39*/ virtual void __unk_vfn_8();
     /*40*/ virtual bool isValidAuxValue(int) const;
-    /*41*/ virtual void __unk_vfn_11();
-    /*42*/ virtual void __unk_vfn_12();
-    /*43*/ virtual void __unk_vfn_13();
-    /*44*/ virtual void __unk_vfn_14();
+    /*41*/ virtual float getViewDamping() const;
+    /*42*/ virtual void __unk_vfn_9();
+    /*43*/ virtual void __unk_vfn_10();
+    /*44*/ virtual void __unk_vfn_11();
     /*45*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*46*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*47*/ virtual void __unk_vfn_15();
-    /*48*/ virtual void clearColor(class CompoundTag*) const;
-    /*49*/ virtual void __unk_vfn_16();
-    /*50*/ virtual void __unk_vfn_17();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
-    /*53*/ virtual void __unk_vfn_20();
-    /*54*/ virtual void __unk_vfn_21();
+    /*47*/ virtual void __unk_vfn_12();
+    /*48*/ virtual void clearColor(class ItemStackBase&) const;
+    /*49*/ virtual void clearColor(class CompoundTag*) const;
+    /*50*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*51*/ virtual void __unk_vfn_13();
+    /*52*/ virtual void __unk_vfn_14();
+    /*53*/ virtual void __unk_vfn_15();
+    /*54*/ virtual void __unk_vfn_16();
     /*55*/ virtual bool canUseOnSimTick() const;
     /*56*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*57*/ virtual int /*enum enum ItemUseMethod*/ useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
@@ -74,13 +74,13 @@ public:
     /*62*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*63*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*64*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*65*/ virtual void __unk_vfn_22();
+    /*65*/ virtual void __unk_vfn_17();
     /*66*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*67*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*68*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*69*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*70*/ virtual void __unk_vfn_23();
-    /*71*/ virtual void __unk_vfn_24();
+    /*70*/ virtual void __unk_vfn_18();
+    /*71*/ virtual void __unk_vfn_19();
     /*72*/ virtual bool validFishInteraction(int) const;
     /*73*/ virtual std::string getInteractText(class Player const&) const;
     /*74*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -89,61 +89,10 @@ public:
     /*77*/ virtual class Item& setIcon(std::string const&, int);
     /*78*/ virtual bool canBeCharged() const;
     /*79*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*80*/ virtual void __unk_vfn_25();
+    /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual std::string getAuxValuesDescription() const;
     /*82*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*
-    inline bool canBeCharged() const{
-        bool (CrossbowItem::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeCharged@CrossbowItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getAnimationFrameFor(class Mob* a0, bool a1, class ItemStack const* a2, bool a3) const{
-        int (CrossbowItem::*rv)(class Mob*, bool, class ItemStack const*, bool) const;
-        *((void**)&rv) = dlsym("?getAnimationFrameFor@CrossbowItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0), std::forward<bool>(a1), std::forward<class ItemStack const*>(a2), std::forward<bool>(a3));
-    }
-    inline int getEnchantSlot() const{
-        int (CrossbowItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getEnchantSlot@CrossbowItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const& a0, int a1, bool a2) const{
-        struct TextureUVCoordinateSet const& (CrossbowItem::*rv)(class ItemStackBase const&, int, bool) const;
-        *((void**)&rv) = dlsym("?getIcon@CrossbowItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline int getMaxUseDuration(class ItemStack const* a0) const{
-        int (CrossbowItem::*rv)(class ItemStack const*) const;
-        *((void**)&rv) = dlsym("?getMaxUseDuration@CrossbowItem@@UEBAHPEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const*>(a0));
-    }
-    inline void playSoundIncrementally(class ItemStack const& a0, class Mob& a1) const{
-        void (CrossbowItem::*rv)(class ItemStack const&, class Mob&) const;
-        *((void**)&rv) = dlsym("?playSoundIncrementally@CrossbowItem@@UEBAXAEBVItemStack@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0), std::forward<class Mob&>(a1));
-    }
-    inline void releaseUsing(class ItemStack& a0, class Player* a1, int a2) const{
-        void (CrossbowItem::*rv)(class ItemStack&, class Player*, int) const;
-        *((void**)&rv) = dlsym("?releaseUsing@CrossbowItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Player*>(a1), std::forward<int>(a2));
-    }
-    inline class Item& setIcon(std::string const& a0, int a1){
-        class Item& (CrossbowItem::*rv)(std::string const&, int);
-        *((void**)&rv) = dlsym("?setIcon@CrossbowItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int>(a1));
-    }
-    inline class ItemStack& use(class ItemStack& a0, class Player& a1) const{
-        class ItemStack& (CrossbowItem::*rv)(class ItemStack&, class Player&) const;
-        *((void**)&rv) = dlsym("?use@CrossbowItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Player&>(a1));
-    }
-    inline int \/*enum enum ItemUseMethod*\/ useTimeDepleted(class ItemStack& a0, class Level* a1, class Player* a2) const{
-        int \/*enum enum ItemUseMethod*\/ (CrossbowItem::*rv)(class ItemStack&, class Level*, class Player*) const;
-        *((void**)&rv) = dlsym("?useTimeDepleted@CrossbowItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Level*>(a1), std::forward<class Player*>(a2));
-    }
-    */
+
 
 protected:
 

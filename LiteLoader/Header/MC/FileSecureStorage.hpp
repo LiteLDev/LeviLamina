@@ -12,28 +12,7 @@ public:
     /*2*/ virtual bool addOrUpdate(std::string const&, std::string const&);
     /*3*/ virtual bool remove(std::string const&);
     /*4*/ virtual bool get(std::string const&, std::string&);
-    /*
-    inline bool add(std::string const& a0, std::string const& a1){
-        bool (FileSecureStorage::*rv)(std::string const&, std::string const&);
-        *((void**)&rv) = dlsym("?add@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
-    }
-    inline bool addOrUpdate(std::string const& a0, std::string const& a1){
-        bool (FileSecureStorage::*rv)(std::string const&, std::string const&);
-        *((void**)&rv) = dlsym("?addOrUpdate@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
-    }
-    inline bool get(std::string const& a0, std::string& a1){
-        bool (FileSecureStorage::*rv)(std::string const&, std::string&);
-        *((void**)&rv) = dlsym("?get@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV23@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string&>(a1));
-    }
-    inline bool remove(std::string const& a0){
-        bool (FileSecureStorage::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?remove@FileSecureStorage@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
 
 protected:
     MCAPI bool _init(bool);

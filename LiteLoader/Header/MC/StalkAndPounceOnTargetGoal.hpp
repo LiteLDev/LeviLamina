@@ -15,43 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (StalkAndPounceOnTargetGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@StalkAndPounceOnTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canBeInterrupted(){
-        bool (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@StalkAndPounceOnTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@StalkAndPounceOnTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@StalkAndPounceOnTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@StalkAndPounceOnTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (StalkAndPounceOnTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@StalkAndPounceOnTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

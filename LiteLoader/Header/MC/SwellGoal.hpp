@@ -15,33 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SwellGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SwellGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (SwellGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SwellGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SwellGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SwellGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (SwellGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SwellGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SwellGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SwellGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

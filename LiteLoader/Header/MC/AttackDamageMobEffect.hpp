@@ -9,15 +9,9 @@ class AttackDamageMobEffect : public MobEffect {
 #include "Extra/AttackDamageMobEffectAPI.hpp"
 public:
     /*0*/ virtual ~AttackDamageMobEffect();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
-    /*
-    inline float getAttributeModifierValue(int a0, class AttributeModifier const& a1) const{
-        float (AttackDamageMobEffect::*rv)(int, class AttributeModifier const&) const;
-        *((void**)&rv) = dlsym("?getAttributeModifierValue@AttackDamageMobEffect@@UEBAMHAEBVAttributeModifier@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class AttributeModifier const&>(a1));
-    }
-    */
+
     MCAPI static int getDamageAfterDamageBoost(int, int);
     MCAPI static int getDamageAfterWeakness(int, int);
 

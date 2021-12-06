@@ -29,15 +29,15 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual bool isHandEquipped() const;
     /*25*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*26*/ virtual void __unk_vfn_7();
-    /*27*/ virtual void __unk_vfn_8();
-    /*28*/ virtual void __unk_vfn_9();
+    /*26*/ virtual void __unk_vfn_6();
+    /*27*/ virtual int getPatternIndex() const;
+    /*28*/ virtual void __unk_vfn_7();
     /*29*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*30*/ virtual bool canDestroyInCreative() const;
     /*31*/ virtual bool isDestructive(int) const;
@@ -47,65 +47,44 @@ public:
     /*35*/ virtual int getEnchantSlot() const;
     /*36*/ virtual int getEnchantValue() const;
     /*37*/ virtual int getArmorValue() const;
-    /*38*/ virtual void __unk_vfn_10();
+    /*38*/ virtual void __unk_vfn_8();
     /*39*/ virtual bool isValidAuxValue(int) const;
-    /*40*/ virtual void __unk_vfn_11();
-    /*41*/ virtual void __unk_vfn_12();
-    /*42*/ virtual void __unk_vfn_13();
-    /*43*/ virtual void __unk_vfn_14();
+    /*40*/ virtual float getViewDamping() const;
+    /*41*/ virtual void __unk_vfn_9();
+    /*42*/ virtual void __unk_vfn_10();
+    /*43*/ virtual void __unk_vfn_11();
     /*44*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*45*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*46*/ virtual void __unk_vfn_15();
-    /*47*/ virtual void clearColor(class CompoundTag*) const;
-    /*48*/ virtual void __unk_vfn_16();
-    /*49*/ virtual void __unk_vfn_17();
-    /*50*/ virtual void __unk_vfn_18();
-    /*51*/ virtual void __unk_vfn_19();
-    /*52*/ virtual void __unk_vfn_20();
-    /*53*/ virtual void __unk_vfn_21();
+    /*46*/ virtual void __unk_vfn_12();
+    /*47*/ virtual void clearColor(class ItemStackBase&) const;
+    /*48*/ virtual void clearColor(class CompoundTag*) const;
+    /*49*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*50*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_14();
+    /*52*/ virtual void __unk_vfn_15();
+    /*53*/ virtual void __unk_vfn_16();
     /*54*/ virtual bool canUseOnSimTick() const;
     /*55*/ virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
     /*56*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*57*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
-    /*58*/ virtual void __unk_vfn_22();
+    /*58*/ virtual void __unk_vfn_17();
     /*59*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*60*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*61*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*62*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*63*/ virtual void __unk_vfn_23();
-    /*64*/ virtual void __unk_vfn_24();
+    /*63*/ virtual void __unk_vfn_18();
+    /*64*/ virtual void __unk_vfn_19();
     /*65*/ virtual bool validFishInteraction(int) const;
     /*66*/ virtual std::string getInteractText(class Player const&) const;
     /*67*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
     /*68*/ virtual int getIconYOffset() const;
     /*69*/ virtual bool canBeCharged() const;
     /*70*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*71*/ virtual void __unk_vfn_25();
+    /*71*/ virtual void __unk_vfn_20();
     /*72*/ virtual std::string getAuxValuesDescription() const;
     /*73*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*74*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-    /*
-    inline void executeEvent(class ItemStackBase& a0, std::string const& a1, class RenderParams& a2) const{
-        void (ShovelItem::*rv)(class ItemStackBase&, std::string const&, class RenderParams&) const;
-        *((void**)&rv) = dlsym("?executeEvent@ShovelItem@@UEBAXAEAVItemStackBase@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<std::string const&>(a1), std::forward<class RenderParams&>(a2));
-    }
-    inline bool _useOn(class ItemStack& a0, class Actor& a1, class BlockPos a2, unsigned char a3, float a4, float a5, float a6) const{
-        bool (ShovelItem::*rv)(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-        *((void**)&rv) = dlsym("?_useOn@ShovelItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos>(a2), std::forward<unsigned char>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
-    }
-    inline bool canDestroySpecial(class Block const& a0) const{
-        bool (ShovelItem::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?canDestroySpecial@ShovelItem@@UEBA_NAEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline int getEnchantSlot() const{
-        int (ShovelItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getEnchantSlot@ShovelItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

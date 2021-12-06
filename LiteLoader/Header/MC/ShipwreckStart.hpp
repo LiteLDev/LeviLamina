@@ -9,13 +9,9 @@ class ShipwreckStart : public StructureStart {
 #include "Extra/ShipwreckStartAPI.hpp"
 public:
     /*0*/ virtual ~ShipwreckStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (ShipwreckStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@ShipwreckStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

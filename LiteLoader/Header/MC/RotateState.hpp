@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~RotateState();
     /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline void tick(){
-        void (RotateState::*rv)();
-        *((void**)&rv) = dlsym("?tick@RotateState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -25,18 +25,18 @@ public:
     /*14*/ virtual void __unk_vfn_13();
     /*15*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_16();
-    /*18*/ virtual void __unk_vfn_17();
-    /*19*/ virtual void __unk_vfn_18();
-    /*20*/ virtual void __unk_vfn_19();
-    /*21*/ virtual void __unk_vfn_20();
-    /*22*/ virtual void __unk_vfn_21();
-    /*23*/ virtual void __unk_vfn_22();
-    /*24*/ virtual void __unk_vfn_23();
-    /*25*/ virtual void __unk_vfn_24();
-    /*26*/ virtual void __unk_vfn_25();
-    /*27*/ virtual void __unk_vfn_26();
-    /*28*/ virtual void __unk_vfn_27();
+    /*17*/ virtual int /*enum enum EducationEditionOffer*/ getEducationEditionOffering() const;
+    /*18*/ virtual void __unk_vfn_16();
+    /*19*/ virtual void __unk_vfn_17();
+    /*20*/ virtual void __unk_vfn_18();
+    /*21*/ virtual void __unk_vfn_19();
+    /*22*/ virtual void __unk_vfn_20();
+    /*23*/ virtual void __unk_vfn_21();
+    /*24*/ virtual void __unk_vfn_22();
+    /*25*/ virtual void __unk_vfn_23();
+    /*26*/ virtual void __unk_vfn_24();
+    /*27*/ virtual void __unk_vfn_25();
+    /*28*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
 
 
 protected:

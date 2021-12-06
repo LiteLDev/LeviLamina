@@ -9,7 +9,7 @@ class VillagePiece : public PoolElementStructurePiece {
 #include "Extra/VillagePieceAPI.hpp"
 public:
     /*0*/ virtual ~VillagePiece();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*2*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*3*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*4*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
@@ -17,35 +17,9 @@ public:
     /*6*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const;
     /*7*/ virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*8*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const;
-    /*9*/ virtual void __unk_vfn_1();
+    /*9*/ virtual int /*enum enum AdjustmentEffect*/ getTerrainAdjustmentEffect() const;
     /*10*/ virtual bool _needsPostProcessing(class BlockSource&);
-    /*
-    inline int \/*enum enum AdjustmentEffect*\/ getTerrainAdjustmentEffect() const{
-        int \/*enum enum AdjustmentEffect*\/ (VillagePiece::*rv)() const;
-        *((void**)&rv) = dlsym("?getTerrainAdjustmentEffect@VillagePiece@@UEBA?AW4AdjustmentEffect@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _needsPostProcessing(class BlockSource& a0){
-        bool (VillagePiece::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?_needsPostProcessing@VillagePiece@@MEAA_NAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline int generateHeightAtPosition(class BlockPos const& a0, class Dimension& a1, class BlockVolume& a2, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >& a3) const{
-        int (VillagePiece::*rv)(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const;
-        *((void**)&rv) = dlsym("?generateHeightAtPosition@VillagePiece@@UEBAHAEBVBlockPos@@AEAVDimension@@AEAVBlockVolume@@AEAV?$unordered_map@VChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$unique_ptr@V?$vector@FV?$allocator@F@std@@@std@@U?$default_delete@V?$vector@FV?$allocator@F@std@@@std@@@2@@std@@@std@@@3@@std@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Dimension&>(a1), std::forward<class BlockVolume&>(a2), std::forward<class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&>(a3));
-    }
-    inline class Block const& getBeardStabilizeBlock(class Block const& a0) const{
-        class Block const& (VillagePiece::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getBeardStabilizeBlock@VillagePiece@@UEBAAEBVBlock@@AEBV2@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline class Block const* getSupportBlock(class BlockSource& a0, class BlockPos const& a1, class Block const& a2) const{
-        class Block const* (VillagePiece::*rv)(class BlockSource&, class BlockPos const&, class Block const&) const;
-        *((void**)&rv) = dlsym("?getSupportBlock@VillagePiece@@UEBAPEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBV2@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Block const&>(a2));
-    }
-    */
+
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, class JigsawStructureRegistry&, enum VanillaBiomeTypes, class Dimension&);
 
 protected:

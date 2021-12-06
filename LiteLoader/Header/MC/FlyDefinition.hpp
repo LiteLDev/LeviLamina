@@ -11,13 +11,7 @@ class FlyDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~FlyDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (FlyDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@FlyDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

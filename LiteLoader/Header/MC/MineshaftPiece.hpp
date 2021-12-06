@@ -9,20 +9,14 @@ class MineshaftPiece : public StructurePiece {
 #include "Extra/MineshaftPieceAPI.hpp"
 public:
     /*0*/ virtual ~MineshaftPiece();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*2*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*3*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
     /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline bool canBeReplaced(class BlockSource& a0, int a1, int a2, int a3, class BoundingBox const& a4){
-        bool (MineshaftPiece::*rv)(class BlockSource&, int, int, int, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?canBeReplaced@MineshaftPiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<class BoundingBox const&>(a4));
-    }
-    */
+
     MCAPI std::unique_ptr<class StructurePiece> createRandomShaftPiece(struct MineshaftData&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
     MCAPI class StructurePiece* generateAndAddPiece(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
     MCAPI void setPlanksBlock(class BlockSource&, class Block const&, int, int, int);

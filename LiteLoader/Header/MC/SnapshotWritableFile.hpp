@@ -12,28 +12,7 @@ public:
     /*2*/ virtual class leveldb::Status Close();
     /*3*/ virtual class leveldb::Status Flush();
     /*4*/ virtual class leveldb::Status Sync();
-    /*
-    inline class leveldb::Status Append(class leveldb::Slice const& a0){
-        class leveldb::Status (SnapshotWritableFile::*rv)(class leveldb::Slice const&);
-        *((void**)&rv) = dlsym("?Append@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@AEBVSlice@3@@Z");
-        return (this->*rv)(std::forward<class leveldb::Slice const&>(a0));
-    }
-    inline class leveldb::Status Close(){
-        class leveldb::Status (SnapshotWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Close@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
-    inline class leveldb::Status Flush(){
-        class leveldb::Status (SnapshotWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Flush@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
-    inline class leveldb::Status Sync(){
-        class leveldb::Status (SnapshotWritableFile::*rv)();
-        *((void**)&rv) = dlsym("?Sync@SnapshotWritableFile@@UEAA?AVStatus@leveldb@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

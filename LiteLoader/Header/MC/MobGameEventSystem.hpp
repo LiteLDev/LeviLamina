@@ -9,13 +9,7 @@ class MobGameEventSystem {
 public:
     /*0*/ virtual ~MobGameEventSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher&);
-    /*
-    inline void registerEvents(class entt::dispatcher& a0){
-        void (MobGameEventSystem::*rv)(class entt::dispatcher&);
-        *((void**)&rv) = dlsym("?registerEvents@MobGameEventSystem@@UEAAXAEAVdispatcher@entt@@@Z");
-        return (this->*rv)(std::forward<class entt::dispatcher&>(a0));
-    }
-    */
+
 
 protected:
 

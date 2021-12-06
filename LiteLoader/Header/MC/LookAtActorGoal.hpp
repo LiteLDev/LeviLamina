@@ -12,41 +12,10 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (LookAtActorGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@LookAtActorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (LookAtActorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@LookAtActorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (LookAtActorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@LookAtActorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (LookAtActorGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@LookAtActorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (LookAtActorGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@LookAtActorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (LookAtActorGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@LookAtActorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

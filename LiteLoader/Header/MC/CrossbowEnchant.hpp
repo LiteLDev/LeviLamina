@@ -23,33 +23,7 @@ public:
     /*12*/ virtual void __unk_vfn_7();
     /*13*/ virtual void __unk_vfn_8();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
-    /*
-    inline bool _isValidEnchantmentTypeForCategory(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (CrossbowEnchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?_isValidEnchantmentTypeForCategory@CrossbowEnchant@@EEBA_NW4Type@Enchant@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    inline int getMaxCost(int a0) const{
-        int (CrossbowEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@CrossbowEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMaxLevel() const{
-        int (CrossbowEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@CrossbowEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMinCost(int a0) const{
-        int (CrossbowEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@CrossbowEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isCompatibleWith(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (CrossbowEnchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?isCompatibleWith@CrossbowEnchant@@UEBA_NW4Type@Enchant@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    */
+
 
 protected:
 

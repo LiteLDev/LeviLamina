@@ -38,6 +38,8 @@ private:
     MCAPI static class Localization& _getPackKeywordLocale(std::string const&);
     MCAPI static std::vector<std::unique_ptr<class Localization>> mAdditionalTranslationsBackup;
     MCAPI static class std::mutex mAdditionalTranslationsBackupMutex;
+    MCAPI static class Localization const* mCurrentLanguage;
+    MCAPI static class Localization const* mCurrentPackMetaLanguage;
     MCAPI static class Localization const mEmptyLanguage;
     MCAPI static class std::unordered_map<std::string, std::vector<std::string>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::vector<std::string> > > > mFormatDictionary;
     MCAPI static std::vector<std::string> mLanguageCodes;
@@ -46,5 +48,6 @@ private:
     MCAPI static std::vector<std::unique_ptr<class Localization>> mLanguages;
     MCAPI static std::vector<std::unique_ptr<class Localization>> mPackKeywordLanguages;
     MCAPI static std::vector<std::string> const mPackReservedKeys;
+    MCAPI static class ResourcePackManager* mResourcePackManager;
     MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
 };

@@ -18,28 +18,7 @@ public:
     /*8*/ virtual void __unk_vfn_4();
     /*9*/ virtual void __unk_vfn_5();
     /*10*/ virtual class BlockPos getRandomNearbyBlockPos(class Vec3 const&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (EndermanTakeBlockGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@EndermanTakeBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (EndermanTakeBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@EndermanTakeBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getRandomNearbyBlockPos(class Vec3 const& a0) const{
-        class BlockPos (EndermanTakeBlockGoal::*rv)(class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?getRandomNearbyBlockPos@EndermanTakeBlockGoal@@MEBA?AVBlockPos@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void tick(){
-        void (EndermanTakeBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@EndermanTakeBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

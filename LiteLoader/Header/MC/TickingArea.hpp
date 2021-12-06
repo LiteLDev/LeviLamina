@@ -8,15 +8,15 @@ class TickingArea {
 #include "Extra/TickingAreaAPI.hpp"
 public:
     /*0*/ virtual ~TickingArea();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
+    /*1*/ virtual class mce::UUID const& getId() const;
+    /*2*/ virtual std::string const& getName() const;
+    /*3*/ virtual struct ActorUniqueID const& getEntityId() const;
     /*4*/ virtual bool isEntityOwned() const;
     /*5*/ virtual class BlockSource& getBlockSource();
     /*6*/ virtual bool isAlwaysActive() const;
     /*7*/ virtual float getMaxDistToPlayers() const;
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_0();
+    /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual struct TickingAreaDescription getDescription() const;
     /*11*/ virtual void tick(struct Tick const&, bool);
     /*12*/ virtual void tickSeasons(class Random&);
@@ -29,51 +29,6 @@ public:
     /*19*/ virtual void remove();
     /*20*/ virtual void onComponentChanged(unsigned int, float, bool);
     /*
-    inline class mce::UUID const& getId() const{
-        class mce::UUID const& (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@TickingArea@@UEBAAEBVUUID@mce@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getName() const{
-        std::string const& (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@TickingArea@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID const& getEntityId() const{
-        struct ActorUniqueID const& (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityId@TickingArea@@UEBAAEBUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline void center(){
-        void (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("?center@TickingArea@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool entityHasBeenFound() const{
-        bool (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?entityHasBeenFound@TickingArea@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Actor* findOwner(unsigned char& a0){
-        class Actor* (TickingArea::*rv)(unsigned char&);
-        *((void**)&rv) = dlsym("?findOwner@TickingArea@@UEAAPEAVActor@@AEAE@Z");
-        return (this->*rv)(std::forward<unsigned char&>(a0));
-    }
-    inline class BlockSource& getBlockSource(){
-        class BlockSource& (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("?getBlockSource@TickingArea@@UEAAAEAVBlockSource@@XZ");
-        return (this->*rv)();
-    }
-    inline struct TickingAreaDescription getDescription() const{
-        struct TickingAreaDescription (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getDescription@TickingArea@@UEBA?AUTickingAreaDescription@@XZ");
-        return (this->*rv)();
-    }
-    inline float getMaxDistToPlayers() const{
-        float (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxDistToPlayers@TickingArea@@UEBAMXZ");
-        return (this->*rv)();
-    }
     inline class ITickingAreaView const& getView() const{
         class ITickingAreaView const& (TickingArea::*rv)() const;
         *((void**)&rv) = dlsym("?getView@TickingArea@@UEBAAEBVITickingAreaView@@XZ");
@@ -83,51 +38,6 @@ public:
         class ITickingAreaView& (TickingArea::*rv)();
         *((void**)&rv) = dlsym("?getView@TickingArea@@UEAAAEAVITickingAreaView@@XZ");
         return (this->*rv)();
-    }
-    inline bool isAlwaysActive() const{
-        bool (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?isAlwaysActive@TickingArea@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isEntityOwned() const{
-        bool (TickingArea::*rv)() const;
-        *((void**)&rv) = dlsym("?isEntityOwned@TickingArea@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRemoved(){
-        bool (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("?isRemoved@TickingArea@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void onComponentChanged(unsigned int a0, float a1, bool a2){
-        void (TickingArea::*rv)(unsigned int, float, bool);
-        *((void**)&rv) = dlsym("?onComponentChanged@TickingArea@@UEAAXIM_N@Z");
-        return (this->*rv)(std::forward<unsigned int>(a0), std::forward<float>(a1), std::forward<bool>(a2));
-    }
-    inline void remove(){
-        void (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("?remove@TickingArea@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setEntityFound(){
-        void (TickingArea::*rv)();
-        *((void**)&rv) = dlsym("?setEntityFound@TickingArea@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(struct Tick const& a0, bool a1){
-        void (TickingArea::*rv)(struct Tick const&, bool);
-        *((void**)&rv) = dlsym("?tick@TickingArea@@UEAAXAEBUTick@@_N@Z");
-        return (this->*rv)(std::forward<struct Tick const&>(a0), std::forward<bool>(a1));
-    }
-    inline void tickSeasons(class Random& a0){
-        void (TickingArea::*rv)(class Random&);
-        *((void**)&rv) = dlsym("?tickSeasons@TickingArea@@UEAAXAEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Random&>(a0));
-    }
-    inline void updatePosition(class Vec3 const& a0){
-        void (TickingArea::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?updatePosition@TickingArea@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
     }
     */
 

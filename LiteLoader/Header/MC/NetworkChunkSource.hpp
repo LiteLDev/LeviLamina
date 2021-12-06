@@ -17,47 +17,11 @@ public:
     /*6*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*7*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*8*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*9*/ virtual void __unk_vfn_0();
+    /*9*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*10*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const& getStorage() const;
     /*11*/ virtual void clearDeletedEntities();
-    /*12*/ virtual void __unk_vfn_1();
-    /*
-    inline bool canCreateViews() const{
-        bool (NetworkChunkSource::*rv)() const;
-        *((void**)&rv) = dlsym("?canCreateViews@NetworkChunkSource@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const& getStorage() const{
-        class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const& (NetworkChunkSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getStorage@NetworkChunkSource@@UEBAAEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap(){
-        class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* (NetworkChunkSource::*rv)();
-        *((void**)&rv) = dlsym("?getChunkMap@NetworkChunkSource@@UEAAPEBV?$unordered_map@VChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@U?$hash@VChunkPos@@@3@U?$equal_to@VChunkPos@@@3@V?$allocator@U?$pair@$$CBVChunkPos@@V?$weak_ptr@VLevelChunk@@@std@@@std@@@3@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> a0){
-        void (NetworkChunkSource::*rv)(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-        *((void**)&rv) = dlsym("?acquireDiscarded@NetworkChunkSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>>(a0));
-    }
-    inline class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const& a0, int \/*enum enum ChunkSource::LoadMode*\/ a1, bool a2){
-        class std::shared_ptr<class LevelChunk> (NetworkChunkSource::*rv)(class ChunkPos const&, int \/*enum enum ChunkSource::LoadMode*\/, bool);
-        *((void**)&rv) = dlsym("?createNewChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<int \/*enum enum ChunkSource::LoadMode*\/>(a1), std::forward<bool>(a2));
-    }
-    inline class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& a0){
-        class std::shared_ptr<class LevelChunk> (NetworkChunkSource::*rv)(class ChunkPos const&);
-        *((void**)&rv) = dlsym("?getExistingChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    inline class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const& a0, int \/*enum enum ChunkSource::LoadMode*\/ a1, bool a2){
-        class std::shared_ptr<class LevelChunk> (NetworkChunkSource::*rv)(class ChunkPos const&, int \/*enum enum ChunkSource::LoadMode*\/, bool);
-        *((void**)&rv) = dlsym("?getOrLoadChunk@NetworkChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<int \/*enum enum ChunkSource::LoadMode*\/>(a1), std::forward<bool>(a2));
-    }
-    */
+    /*12*/ virtual bool canCreateViews() const;
+
 
 protected:
 

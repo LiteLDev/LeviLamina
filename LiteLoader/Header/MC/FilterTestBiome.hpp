@@ -14,18 +14,7 @@ public:
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*4*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (FilterTestBiome::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@FilterTestBiome@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (FilterTestBiome::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@FilterTestBiome@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -10,13 +10,7 @@ class ScriptServerActorUseItemEvent {
 public:
     /*0*/ virtual ~ScriptServerActorUseItemEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerActorUseItemEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerActorUseItemEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setItemStack(class ItemInstance const&);
     MCAPI void setUseMethod(enum ItemUseMethod);

@@ -229,10 +229,7 @@ public:
     class Command;
 };
 
-class Automation {
-public:
-    class AutomationClient;
-};
+#include "Automation.hpp"
 
 class ClientBlobCache {
 public:

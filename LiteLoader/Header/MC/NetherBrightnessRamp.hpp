@@ -9,13 +9,8 @@ class NetherBrightnessRamp : public DimensionBrightnessRamp {
 #include "Extra/NetherBrightnessRampAPI.hpp"
 public:
     /*0*/ virtual ~NetherBrightnessRamp();
-    /*
-    inline float getBaseAmbientValue() const{
-        float (NetherBrightnessRamp::*rv)() const;
-        *((void**)&rv) = dlsym("?getBaseAmbientValue@NetherBrightnessRamp@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual float getBaseAmbientValue() const;
+
 
 protected:
 

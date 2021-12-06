@@ -10,7 +10,7 @@ class LookAtPlayerGoal : public LookAtActorGoal {
 public:
     /*0*/ virtual ~LookAtPlayerGoal();
     /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void stop();
 
 
 protected:

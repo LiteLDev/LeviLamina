@@ -16,17 +16,17 @@ public:
     /*6*/ virtual void __unk_vfn_0();
     /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
     /*8*/ virtual class ItemStack const& getItemStack(int) const;
-    /*9*/ virtual void __unk_vfn_1();
+    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
     /*10*/ virtual class ItemInstance const& getItemInstance(int) const;
-    /*11*/ virtual void __unk_vfn_2();
-    /*12*/ virtual void __unk_vfn_3();
+    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*12*/ virtual void __unk_vfn_1();
     /*13*/ virtual void setItem(int, class ItemStack const&);
     /*14*/ virtual bool isValid();
-    /*15*/ virtual void __unk_vfn_4();
-    /*16*/ virtual void __unk_vfn_5();
-    /*17*/ virtual void __unk_vfn_6();
-    /*18*/ virtual void __unk_vfn_7();
-    /*19*/ virtual void __unk_vfn_8();
+    /*15*/ virtual void __unk_vfn_2();
+    /*16*/ virtual void __unk_vfn_3();
+    /*17*/ virtual void __unk_vfn_4();
+    /*18*/ virtual std::string const& getItemGroupName(int) const;
+    /*19*/ virtual void __unk_vfn_5();
     /*20*/ virtual class Container* _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
@@ -46,11 +46,6 @@ public:
         *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int _getContainerOffset() const{
-        int (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?_getContainerOffset@ContainerModel@@MEBAHXZ");
-        return (this->*rv)();
-    }
     inline class Container* _getContainer() const{
         class Container* (ContainerModel::*rv)() const;
         *((void**)&rv) = dlsym("?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ");
@@ -60,11 +55,6 @@ public:
         int \/*enum enum ContainerExpandStatus*\/ (ContainerModel::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void postInit(){
-        void (ContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?postInit@ContainerModel@@UEAAXXZ");
-        return (this->*rv)();
     }
     inline void switchItemExpando(int a0){
         void (ContainerModel::*rv)(int);
@@ -76,76 +66,11 @@ public:
         *((void**)&rv) = dlsym("?tick@ContainerModel@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline bool isValid(){
-        bool (ContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?isValid@ContainerModel@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getItemGroupName(int a0) const{
-        std::string const& (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemGroupName@ContainerModel@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void _onItemChanged(int a0, class ItemStack const& a1, class ItemStack const& a2){
-        void (ContainerModel::*rv)(int, class ItemStack const&, class ItemStack const&);
-        *((void**)&rv) = dlsym("?_onItemChanged@ContainerModel@@MEAAXHAEBVItemStack@@0@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<class ItemStack const&>(a2));
-    }
-    inline void containerContentChanged(int a0){
-        void (ContainerModel::*rv)(int);
-        *((void**)&rv) = dlsym("?containerContentChanged@ContainerModel@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getContainerSize() const{
-        int (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@ContainerModel@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class ContainerWeakRef getContainerWeakRef() const{
-        class ContainerWeakRef (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerWeakRef@ContainerModel@@UEBA?AVContainerWeakRef@@XZ");
-        return (this->*rv)();
-    }
-    inline int getFilteredContainerSize() const{
-        int (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getFilteredContainerSize@ContainerModel@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class ItemInstance const& getItemInstance(int a0) const{
-        class ItemInstance const& (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemInstance@ContainerModel@@UEBAAEBVItemInstance@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline class ItemStack const& getItemStack(int a0) const{
-        class ItemStack const& (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemStack@ContainerModel@@UEBAAEBVItemStack@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline class ItemStackBase const& getItemStackBase(int a0) const{
-        class ItemStackBase const& (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemStackBase@ContainerModel@@UEBAAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline std::vector<class ItemStack> const& getItems() const{
-        std::vector<class ItemStack> const& (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getItems@ContainerModel@@UEBAAEBV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void releaseResources(){
-        void (ContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?releaseResources@ContainerModel@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (ContainerModel::*rv)(int, class ItemStack const&);
-        *((void**)&rv) = dlsym("?setItem@ContainerModel@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
-    }
     */
     MCAPI bool isContainerSlotInRange(int) const;
     MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
-    MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const&, class ItemStack const&)>);
-    MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const&, class ItemStack const&)>);
+    MCAPI void registerOnContainerChangedCallback(class std::function<void (int, class ItemStack const& , class ItemStack const& )>);
+    MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const& , class ItemStack const& )>);
 
 protected:
     MCAPI void _init();

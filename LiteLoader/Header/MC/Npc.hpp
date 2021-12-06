@@ -39,92 +39,67 @@ public:
     /*27*/ virtual void onFailedTame();
     /*28*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*29*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*30*/ virtual void __unk_vfn_12();
+    /*30*/ virtual float getPickRadius();
     /*31*/ virtual void awardKillScore(class Actor&, int);
     /*32*/ virtual class HashedString const& queryEntityRenderer() const;
     /*33*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*34*/ virtual int getPortalWaitTime() const;
     /*35*/ virtual bool canChangeDimensions() const;
-    /*36*/ virtual void __unk_vfn_13();
+    /*36*/ virtual void __unk_vfn_12();
     /*37*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*38*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*39*/ virtual bool canBePulledIntoVehicle() const;
-    /*40*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_13();
     /*41*/ virtual bool canSynchronizeNewEntity() const;
     /*42*/ virtual void buildDebugInfo(std::string&) const;
     /*43*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
-    /*44*/ virtual void __unk_vfn_15();
-    /*45*/ virtual void __unk_vfn_16();
+    /*44*/ virtual void __unk_vfn_14();
+    /*45*/ virtual void __unk_vfn_15();
     /*46*/ virtual bool isWorldBuilder() const;
-    /*47*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_16();
     /*48*/ virtual bool isAdventure() const;
     /*49*/ virtual bool canDestroyBlock(class Block const&) const;
     /*50*/ virtual void setAuxValue(int);
     /*51*/ virtual void stopSpinAttack();
-    /*52*/ virtual void __unk_vfn_18();
-    /*53*/ virtual void __unk_vfn_19();
+    /*52*/ virtual void __unk_vfn_17();
+    /*53*/ virtual void __unk_vfn_18();
     /*54*/ virtual void die(class ActorDamageSource const&);
-    /*55*/ virtual void __unk_vfn_20();
+    /*55*/ virtual void __unk_vfn_19();
     /*56*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*57*/ virtual void __unk_vfn_21();
+    /*57*/ virtual void __unk_vfn_20();
     /*58*/ virtual void _onSizeUpdated();
-    /*59*/ virtual void __unk_vfn_22();
+    /*59*/ virtual void __unk_vfn_21();
     /*60*/ virtual void knockback(class Actor*, int, float, float, float, float, float);
     /*61*/ virtual void spawnAnim();
     /*62*/ virtual int getItemUseDuration() const;
     /*63*/ virtual float getItemUseStartupProgress() const;
     /*64*/ virtual float getItemUseIntervalProgress() const;
-    /*65*/ virtual void __unk_vfn_23();
+    /*65*/ virtual void __unk_vfn_22();
     /*66*/ virtual bool isAlliedTo(class Mob*);
-    /*67*/ virtual void __unk_vfn_24();
+    /*67*/ virtual void __unk_vfn_23();
     /*68*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*69*/ virtual void onBorn(class Actor&, class Actor&);
-    /*70*/ virtual void __unk_vfn_25();
+    /*70*/ virtual int getAttackTime();
     /*71*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*72*/ virtual bool canExistWhenDisallowMob() const;
-    /*73*/ virtual void __unk_vfn_26();
+    /*73*/ virtual void __unk_vfn_24();
     /*74*/ virtual void newServerAiStep();
     /*75*/ virtual void _serverAiMobStep();
-    /*76*/ virtual void __unk_vfn_27();
+    /*76*/ virtual void __unk_vfn_25();
     /*
     inline bool isFishable() const{
         bool (Npc::*rv)() const;
         *((void**)&rv) = dlsym("?isFishable@Npc@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canBePulledIntoVehicle() const{
-        bool (Npc::*rv)() const;
-        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Npc@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (Npc::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Npc@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
     inline bool isTargetable() const{
         bool (Npc::*rv)() const;
         *((void**)&rv) = dlsym("?isTargetable@Npc@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void die(class ActorDamageSource const& a0){
-        void (Npc::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@Npc@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
     inline void _serverAiMobStep(){
         void (Npc::*rv)();
         *((void**)&rv) = dlsym("?_serverAiMobStep@Npc@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void knockback(class Actor* a0, int a1, float a2, float a3, float a4, float a5, float a6){
-        void (Npc::*rv)(class Actor*, int, float, float, float, float, float);
-        *((void**)&rv) = dlsym("?knockback@Npc@@UEAAXPEAVActor@@HMMMMM@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int>(a1), std::forward<float>(a2), std::forward<float>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
-    }
-    inline bool canExistWhenDisallowMob() const{
-        bool (Npc::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistWhenDisallowMob@Npc@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool interactPreventDefault(){
@@ -137,50 +112,15 @@ public:
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Npc@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canShowNameTag() const{
-        bool (Npc::*rv)() const;
-        *((void**)&rv) = dlsym("?canShowNameTag@Npc@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Npc::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Npc@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Npc::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Npc@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (Npc::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Npc@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void buildDebugInfo(std::string& a0) const{
-        void (Npc::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?buildDebugInfo@Npc@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline std::string getFormattedNameTag() const{
-        std::string (Npc::*rv)() const;
-        *((void**)&rv) = dlsym("?getFormattedNameTag@Npc@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Npc::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Npc@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
     inline void newServerAiStep(){
         void (Npc::*rv)();
         *((void**)&rv) = dlsym("?newServerAiStep@Npc@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Npc::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Npc@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
     MCAPI static std::string const SKIN_ID_TAG;

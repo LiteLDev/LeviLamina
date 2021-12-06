@@ -16,35 +16,9 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*8*/ virtual void __unk_vfn_3();
+    /*8*/ virtual unsigned __int64 _getRepathTime() const;
     /*9*/ virtual bool findTargetBlock();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveToLiquidGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveToLiquidGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MoveToLiquidGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MoveToLiquidGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MoveToLiquidGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveToLiquidGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool findTargetBlock(){
-        bool (MoveToLiquidGoal::*rv)();
-        *((void**)&rv) = dlsym("?findTargetBlock@MoveToLiquidGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (MoveToLiquidGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@MoveToLiquidGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    */
+
 
 protected:
 

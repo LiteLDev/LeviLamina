@@ -13,28 +13,7 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value&) const;
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
-    /*
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (SpawnAoECloudSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@SpawnAoECloudSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (SpawnAoECloudSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@SpawnAoECloudSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void readfromJSON(class Json::Value& a0, class SemVersion const& a1){
-        void (SpawnAoECloudSubcomponent::*rv)(class Json::Value&, class SemVersion const&);
-        *((void**)&rv) = dlsym("?readfromJSON@SpawnAoECloudSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
-    }
-    inline void writetoJSON(class Json::Value& a0) const{
-        void (SpawnAoECloudSubcomponent::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?writetoJSON@SpawnAoECloudSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

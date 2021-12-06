@@ -12,23 +12,7 @@ public:
     /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
     /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
     /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-    /*
-    inline void onError(struct Scripting::ContextId a0, class std::basic_string_view<char, struct std::char_traits<char> > const& a1) const{
-        void (ScriptPrintLogger::*rv)(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-        *((void**)&rv) = dlsym("?onError@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
-        return (this->*rv)(std::forward<struct Scripting::ContextId>(a0), std::forward<class std::basic_string_view<char, struct std::char_traits<char> > const&>(a1));
-    }
-    inline void onInfo(struct Scripting::ContextId a0, class std::basic_string_view<char, struct std::char_traits<char> > const& a1) const{
-        void (ScriptPrintLogger::*rv)(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-        *((void**)&rv) = dlsym("?onInfo@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
-        return (this->*rv)(std::forward<struct Scripting::ContextId>(a0), std::forward<class std::basic_string_view<char, struct std::char_traits<char> > const&>(a1));
-    }
-    inline void onWarn(struct Scripting::ContextId a0, class std::basic_string_view<char, struct std::char_traits<char> > const& a1) const{
-        void (ScriptPrintLogger::*rv)(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
-        *((void**)&rv) = dlsym("?onWarn@ScriptPrintLogger@@UEBAXUContextId@Scripting@@AEBV?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
-        return (this->*rv)(std::forward<struct Scripting::ContextId>(a0), std::forward<class std::basic_string_view<char, struct std::char_traits<char> > const&>(a1));
-    }
-    */
+
 
 protected:
 

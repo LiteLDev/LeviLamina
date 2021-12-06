@@ -13,28 +13,7 @@ public:
     /*2*/ virtual class BiomeArea getBiomeArea(class BoundingBox const&, unsigned int) const;
     /*3*/ virtual bool containsOnly(int, int, int, int, class gsl::span<int const, -1>) const;
     /*4*/ virtual class Biome const* getBiome(int, int, int) const;
-    /*
-    inline bool containsOnly(int a0, int a1, int a2, int a3, class gsl::span<int const, -1> a4) const{
-        bool (MultiNoiseBiomeSource3d::*rv)(int, int, int, int, class gsl::span<int const, -1>) const;
-        *((void**)&rv) = dlsym("?containsOnly@MultiNoiseBiomeSource3d@@UEBA_NHHHHV?$span@$$CBH$0?0@gsl@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<class gsl::span<int const, -1>>(a4));
-    }
-    inline void fillBiomes(class LevelChunk& a0, class ChunkLocalNoiseCache const& a1) const{
-        void (MultiNoiseBiomeSource3d::*rv)(class LevelChunk&, class ChunkLocalNoiseCache const&) const;
-        *((void**)&rv) = dlsym("?fillBiomes@MultiNoiseBiomeSource3d@@UEBAXAEAVLevelChunk@@AEBVChunkLocalNoiseCache@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0), std::forward<class ChunkLocalNoiseCache const&>(a1));
-    }
-    inline class Biome const* getBiome(int a0, int a1, int a2) const{
-        class Biome const* (MultiNoiseBiomeSource3d::*rv)(int, int, int) const;
-        *((void**)&rv) = dlsym("?getBiome@MultiNoiseBiomeSource3d@@UEBAPEBVBiome@@HHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline class BiomeArea getBiomeArea(class BoundingBox const& a0, unsigned int a1) const{
-        class BiomeArea (MultiNoiseBiomeSource3d::*rv)(class BoundingBox const&, unsigned int) const;
-        *((void**)&rv) = dlsym("?getBiomeArea@MultiNoiseBiomeSource3d@@UEBA?AVBiomeArea@@AEBVBoundingBox@@I@Z");
-        return (this->*rv)(std::forward<class BoundingBox const&>(a0), std::forward<unsigned int>(a1));
-    }
-    */
+
 
 protected:
 

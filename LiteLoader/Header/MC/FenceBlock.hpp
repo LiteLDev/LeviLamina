@@ -17,7 +17,7 @@ public:
     /*6*/ virtual bool getLiquidClipVolume(class BlockSource&, class BlockPos const&, class AABB&) const;
     /*7*/ virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
     /*8*/ virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
-    /*9*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const& (class BlockPos const&)> const&, class BlockPos const&) const;
+    /*9*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const& (class BlockPos const& )> const&, class BlockPos const&) const;
     /*10*/ virtual void __unk_vfn_0();
     /*11*/ virtual bool isStrippable(class Block const&) const;
     /*12*/ virtual class Block const& getStrippedBlock(class Block const&) const;
@@ -51,21 +51,21 @@ public:
     /*40*/ virtual bool canContainLiquid() const;
     /*41*/ virtual bool shouldConnectToRedstone(class BlockSource&, class BlockPos const&, int) const;
     /*42*/ virtual void handlePrecipitation(class BlockSource&, class BlockPos const&, float, float) const;
-    /*43*/ virtual void __unk_vfn_19();
+    /*43*/ virtual float getFlexibility(class BlockSource&, class BlockPos const&) const;
     /*44*/ virtual bool shouldDispense(class BlockSource&, class Container&) const;
     /*45*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     /*46*/ virtual void transformOnFall(class BlockSource&, class BlockPos const&, class Actor*, float) const;
     /*47*/ virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
     /*48*/ virtual void onMove(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
-    /*49*/ virtual void __unk_vfn_20();
+    /*49*/ virtual void __unk_vfn_19();
     /*50*/ virtual void movedByPiston(class BlockSource&, class BlockPos const&) const;
     /*51*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*52*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*53*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
     /*54*/ virtual int /*enum enum BlockProperty*/ getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
-    /*55*/ virtual void __unk_vfn_21();
+    /*55*/ virtual void __unk_vfn_20();
     /*56*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
-    /*57*/ virtual void __unk_vfn_22();
+    /*57*/ virtual void __unk_vfn_21();
     /*58*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
     /*59*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, int /*enum enum FertilizerType*/) const;
     /*60*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
@@ -83,8 +83,8 @@ public:
     /*72*/ virtual int getResourceCount(class Randomize&, class Block const&, int) const;
     /*73*/ virtual class ItemInstance getResourceItem(class Randomize&, class Block const&, int) const;
     /*74*/ virtual class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, class Block const&) const;
-    /*75*/ virtual void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, std::vector<class Item const*>*, float, int) const;
-    /*76*/ virtual void __unk_vfn_23();
+    /*75*/ virtual void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, std::vector<class Item const* >*, float, int) const;
+    /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual class Block const& getPlacementBlock(class Actor&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
     /*78*/ virtual bool isAttachedTo(class BlockSource&, class BlockPos const&, class BlockPos&) const;
     /*79*/ virtual bool attack(class Player*, class BlockPos const&) const;
@@ -92,14 +92,14 @@ public:
     /*81*/ virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
     /*82*/ virtual int getExperienceDrop(class Random&) const;
     /*83*/ virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
-    /*84*/ virtual void __unk_vfn_24();
+    /*84*/ virtual void __unk_vfn_23();
     /*85*/ virtual float calcGroundFriction(struct IMobMovementProxy const&, class BlockPos const&) const;
-    /*86*/ virtual void __unk_vfn_25();
-    /*87*/ virtual void __unk_vfn_26();
+    /*86*/ virtual void __unk_vfn_24();
+    /*87*/ virtual void __unk_vfn_25();
     /*88*/ virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
     /*89*/ virtual bool canSpawnAt(class BlockSource const&, class BlockPos const&) const;
     /*90*/ virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
-    /*91*/ virtual void __unk_vfn_27();
+    /*91*/ virtual void __unk_vfn_26();
     /*92*/ virtual int getIconYOffset() const;
     /*93*/ virtual std::string buildDescriptionId(class Block const&) const;
     /*94*/ virtual bool isAuxValueRelevantForPicking() const;
@@ -109,12 +109,12 @@ public:
     /*98*/ virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*99*/ virtual class AABB const& getVisualShapeInWorld(class Block const&, class BlockSource const&, class BlockPos const&, class AABB&, bool) const;
     /*100*/ virtual class AABB const& getVisualShape(class Block const&, class AABB&, bool) const;
-    /*101*/ virtual void __unk_vfn_28();
+    /*101*/ virtual void __unk_vfn_27();
     /*102*/ virtual class Block const& getRenderBlock() const;
     /*103*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
     /*104*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
     /*105*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
-    /*106*/ virtual void __unk_vfn_29();
+    /*106*/ virtual void __unk_vfn_28();
     /*107*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;
     /*108*/ virtual bool dealsContactDamage(class Actor const&, class Block const&, bool) const;
     /*109*/ virtual class Block const* tryGetInfested(class Block const&) const;
@@ -123,92 +123,27 @@ public:
     /*112*/ virtual void onExploded(class BlockSource&, class BlockPos const&, class Actor*) const;
     /*113*/ virtual void onStandOn(class Actor&, class BlockPos const&) const;
     /*114*/ virtual void onStepOn(class Actor&, class BlockPos const&) const;
-    /*115*/ virtual void __unk_vfn_30();
-    /*116*/ virtual void __unk_vfn_31();
+    /*115*/ virtual void __unk_vfn_29();
+    /*116*/ virtual void __unk_vfn_30();
     /*117*/ virtual void onPlace(class BlockSource&, class BlockPos const&) const;
     /*118*/ virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
-    /*119*/ virtual void __unk_vfn_32();
+    /*119*/ virtual void __unk_vfn_31();
     /*120*/ virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
     /*121*/ virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
-    /*122*/ virtual void __unk_vfn_33();
+    /*122*/ virtual int getExtraRenderLayers() const;
     /*123*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
-    /*124*/ virtual void __unk_vfn_34();
-    /*125*/ virtual void __unk_vfn_35();
+    /*124*/ virtual void __unk_vfn_32();
+    /*125*/ virtual void __unk_vfn_33();
     /*
     inline bool canBeSilkTouched() const{
         bool (FenceBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canBeSilkTouched@FenceBlock@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool getLiquidClipVolume(class BlockSource& a0, class BlockPos const& a1, class AABB& a2) const{
-        bool (FenceBlock::*rv)(class BlockSource&, class BlockPos const&, class AABB&) const;
-        *((void**)&rv) = dlsym("?getLiquidClipVolume@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVAABB@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class AABB&>(a2));
-    }
     inline bool isFenceBlock() const{
         bool (FenceBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isFenceBlock@FenceBlock@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool isAuxValueRelevantForPicking() const{
-        bool (FenceBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isAuxValueRelevantForPicking@FenceBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canContainLiquid() const{
-        bool (FenceBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?canContainLiquid@FenceBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canProvideSupport(class Block const& a0, unsigned char a1, int \/*enum enum BlockSupportType*\/ a2) const{
-        bool (FenceBlock::*rv)(class Block const&, unsigned char, int \/*enum enum BlockSupportType*\/) const;
-        *((void**)&rv) = dlsym("?canProvideSupport@FenceBlock@@UEBA_NAEBVBlock@@EW4BlockSupportType@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<unsigned char>(a1), std::forward<int \/*enum enum BlockSupportType*\/>(a2));
-    }
-    inline bool addCollisionShapes(class Block const& a0, class BlockSource& a1, class BlockPos const& a2, class AABB const* a3, std::vector<class AABB>& a4, class optional_ref<struct IActorMovementProxy> a5) const{
-        bool (FenceBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
-        *((void**)&rv) = dlsym("?addCollisionShapes@FenceBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@UIActorMovementProxy@@@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2), std::forward<class AABB const*>(a3), std::forward<std::vector<class AABB>&>(a4), std::forward<class optional_ref<struct IActorMovementProxy>>(a5));
-    }
-    inline bool breaksFallingBlocks(class Block const& a0, class BaseGameVersion a1) const{
-        bool (FenceBlock::*rv)(class Block const&, class BaseGameVersion) const;
-        *((void**)&rv) = dlsym("?breaksFallingBlocks@FenceBlock@@UEBA_NAEBVBlock@@VBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BaseGameVersion>(a1));
-    }
-    inline std::string buildDescriptionId(class Block const& a0) const{
-        std::string (FenceBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?buildDescriptionId@FenceBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline bool canConnect(class Block const& a0, unsigned char a1, class Block const& a2) const{
-        bool (FenceBlock::*rv)(class Block const&, unsigned char, class Block const&) const;
-        *((void**)&rv) = dlsym("?canConnect@FenceBlock@@UEBA_NAEBVBlock@@E0@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<unsigned char>(a1), std::forward<class Block const&>(a2));
-    }
-    inline class AABB const& getAABB(class BlockSource const& a0, class BlockPos const& a1, class Block const& a2, class AABB& a3, bool a4) const{
-        class AABB const& (FenceBlock::*rv)(class BlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool) const;
-        *((void**)&rv) = dlsym("?getAABB@FenceBlock@@UEBAAEBVAABB@@AEBVBlockSource@@AEBVBlockPos@@AEBVBlock@@AEAV2@_N@Z");
-        return (this->*rv)(std::forward<class BlockSource const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Block const&>(a2), std::forward<class AABB&>(a3), std::forward<bool>(a4));
-    }
-    inline class ItemInstance getResourceItem(class Randomize& a0, class Block const& a1, int a2) const{
-        class ItemInstance (FenceBlock::*rv)(class Randomize&, class Block const&, int) const;
-        *((void**)&rv) = dlsym("?getResourceItem@FenceBlock@@UEBA?AVItemInstance@@AEAVRandomize@@AEBVBlock@@H@Z");
-        return (this->*rv)(std::forward<class Randomize&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2));
-    }
-    inline class AABB const& getVisualShapeInWorld(class Block const& a0, class BlockSource const& a1, class BlockPos const& a2, class AABB& a3, bool a4) const{
-        class AABB const& (FenceBlock::*rv)(class Block const&, class BlockSource const&, class BlockPos const&, class AABB&, bool) const;
-        *((void**)&rv) = dlsym("?getVisualShapeInWorld@FenceBlock@@UEBAAEBVAABB@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@AEAV2@_N@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource const&>(a1), std::forward<class BlockPos const&>(a2), std::forward<class AABB&>(a3), std::forward<bool>(a4));
-    }
-    inline bool mayPlace(class BlockSource& a0, class BlockPos const& a1) const{
-        bool (FenceBlock::*rv)(class BlockSource&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?mayPlace@FenceBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool use(class Player& a0, class BlockPos const& a1, unsigned char a2) const{
-        bool (FenceBlock::*rv)(class Player&, class BlockPos const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?use@FenceBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned char>(a2));
     }
     */
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos>&, class BlockSource&, class BlockPos const&, class Vec3 const&) const;

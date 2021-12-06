@@ -9,48 +9,17 @@ class HudContainerManagerModel : public ContainerManagerModel {
 #include "Extra/HudContainerManagerModelAPI.hpp"
 public:
     /*0*/ virtual ~HudContainerManagerModel();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
+    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
     /*8*/ virtual void setData(int, int);
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline void setData(int a0, int a1){
-        void (HudContainerManagerModel::*rv)(int, int);
-        *((void**)&rv) = dlsym("?setData@HudContainerManagerModel@@UEAAXHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline std::vector<class ItemStack> getItemCopies() const{
-        std::vector<class ItemStack> (HudContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class ContainerScreenContext _postInit(){
-        class ContainerScreenContext (HudContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?_postInit@HudContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ");
-        return (this->*rv)();
-    }
-    inline void broadcastChanges(){
-        void (HudContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?broadcastChanges@HudContainerManagerModel@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class ItemStack const& getSlot(int a0) const{
-        class ItemStack const& (HudContainerManagerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getSlot@HudContainerManagerModel@@UEBAAEBVItemStack@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void setSlot(int a0, class ItemStack const& a1, bool a2){
-        void (HudContainerManagerModel::*rv)(int, class ItemStack const&, bool);
-        *((void**)&rv) = dlsym("?setSlot@HudContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<bool>(a2));
-    }
-    */
+
 
 protected:
 

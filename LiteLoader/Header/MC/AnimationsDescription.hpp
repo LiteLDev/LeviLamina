@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~AnimationsDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (AnimationsDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@AnimationsDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (AnimationsDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@AnimationsDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (AnimationsDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@AnimationsDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

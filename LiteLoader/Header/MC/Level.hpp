@@ -463,45 +463,45 @@ public:    /*
         *((void**)&rv) = dlsym("?findPath@Level@@UEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVActor@@HHHAEAVNavigationComponent@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<class NavigationComponent&>(a4));
     }
-    inline class Player* findPlayer(class std::function<bool (class Player const&)> a0) const{
-        class Player* (Level::*rv)(class std::function<bool (class Player const&)>) const;
+    inline class Player* findPlayer(class std::function<bool (class Player const& )> a0) const{
+        class Player* (Level::*rv)(class std::function<bool (class Player const& )>) const;
         *((void**)&rv) = dlsym("?findPlayer@Level@@UEBAPEAVPlayer@@V?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class Player const&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class Player const& )>>(a0));
     }
-    inline class Player* findPlayer(class std::function<bool (class WeakEntityRef const&)> a0) const{
-        class Player* (Level::*rv)(class std::function<bool (class WeakEntityRef const&)>) const;
+    inline class Player* findPlayer(class std::function<bool (class WeakEntityRef const& )> a0) const{
+        class Player* (Level::*rv)(class std::function<bool (class WeakEntityRef const& )>) const;
         *((void**)&rv) = dlsym("?findPlayer@Level@@UEBAPEAVPlayer@@V?$function@$$A6A_NAEBVWeakEntityRef@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class WeakEntityRef const&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class WeakEntityRef const& )>>(a0));
     }
     inline void flushRunTimeLighting(){
         void (Level::*rv)();
         *((void**)&rv) = dlsym("?flushRunTimeLighting@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void forEachDimension(class std::function<bool (class Dimension const&)> a0) const{
-        void (Level::*rv)(class std::function<bool (class Dimension const&)>) const;
+    inline void forEachDimension(class std::function<bool (class Dimension const& )> a0) const{
+        void (Level::*rv)(class std::function<bool (class Dimension const& )>) const;
         *((void**)&rv) = dlsym("?forEachDimension@Level@@UEBAXV?$function@$$A6A_NAEBVDimension@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class Dimension const&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class Dimension const& )>>(a0));
     }
-    inline void forEachDimension(class std::function<bool (class Dimension&)> a0){
-        void (Level::*rv)(class std::function<bool (class Dimension&)>);
+    inline void forEachDimension(class std::function<bool (class Dimension& )> a0){
+        void (Level::*rv)(class std::function<bool (class Dimension& )>);
         *((void**)&rv) = dlsym("?forEachDimension@Level@@UEAAXV?$function@$$A6A_NAEAVDimension@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class Dimension&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class Dimension& )>>(a0));
     }
-    inline void forEachPlayer(class std::function<bool (class Player const&)> a0) const{
-        void (Level::*rv)(class std::function<bool (class Player const&)>) const;
+    inline void forEachPlayer(class std::function<bool (class Player const& )> a0) const{
+        void (Level::*rv)(class std::function<bool (class Player const& )>) const;
         *((void**)&rv) = dlsym("?forEachPlayer@Level@@UEBAXV?$function@$$A6A_NAEBVPlayer@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class Player const&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class Player const& )>>(a0));
     }
-    inline void forEachPlayer(class std::function<bool (class Player&)> a0){
-        void (Level::*rv)(class std::function<bool (class Player&)>);
+    inline void forEachPlayer(class std::function<bool (class Player& )> a0){
+        void (Level::*rv)(class std::function<bool (class Player& )>);
         *((void**)&rv) = dlsym("?forEachPlayer@Level@@UEAAXV?$function@$$A6A_NAEAVPlayer@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class Player&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class Player& )>>(a0));
     }
-    inline void forEachUser(class std::function<bool (class EntityContext&)> a0) const{
-        void (Level::*rv)(class std::function<bool (class EntityContext&)>) const;
+    inline void forEachUser(class std::function<bool (class EntityContext& )> a0) const{
+        void (Level::*rv)(class std::function<bool (class EntityContext& )>) const;
         *((void**)&rv) = dlsym("?forEachUser@Level@@UEBAXV?$function@$$A6A_NAEAVEntityContext@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<bool (class EntityContext&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<bool (class EntityContext& )>>(a0));
     }
     inline void forceFlushRemovedPlayers(){
         void (Level::*rv)();
@@ -688,13 +688,13 @@ public:    /*
         *((void**)&rv) = dlsym("?getDimensionConversionData@Level@@UEBA?AVDimensionConversionData@@XZ");
         return (this->*rv)();
     }
-    inline class Factory<class Dimension, class Level&, class Scheduler&> const& getDimensionFactory() const{
-        class Factory<class Dimension, class Level&, class Scheduler&> const& (Level::*rv)() const;
+    inline class Factory<class Dimension, class Level& , class Scheduler& > const& getDimensionFactory() const{
+        class Factory<class Dimension, class Level& , class Scheduler& > const& (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getDimensionFactory@Level@@UEBAAEBV?$Factory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ");
         return (this->*rv)();
     }
-    inline class Factory<class Dimension, class Level&, class Scheduler&>& getDimensionFactory(){
-        class Factory<class Dimension, class Level&, class Scheduler&>& (Level::*rv)();
+    inline class Factory<class Dimension, class Level& , class Scheduler& >& getDimensionFactory(){
+        class Factory<class Dimension, class Level& , class Scheduler& >& (Level::*rv)();
         *((void**)&rv) = dlsym("?getDimensionFactory@Level@@UEAAAEAV?$Factory@VDimension@@AEAVLevel@@AEAVScheduler@@@@XZ");
         return (this->*rv)();
     }
@@ -813,13 +813,13 @@ public:    /*
         *((void**)&rv) = dlsym("?getLevelId@Level@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>& getLightTextureImageBuilderFactory(){
-        class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&>& (Level::*rv)();
+    inline class Factory<class BaseLightTextureImageBuilder, class Level& , class Scheduler& >& getLightTextureImageBuilderFactory(){
+        class Factory<class BaseLightTextureImageBuilder, class Level& , class Scheduler& >& (Level::*rv)();
         *((void**)&rv) = dlsym("?getLightTextureImageBuilderFactory@Level@@UEAAAEAV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ");
         return (this->*rv)();
     }
-    inline class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&> const& getLightTextureImageBuilderFactory() const{
-        class Factory<class BaseLightTextureImageBuilder, class Level&, class Scheduler&> const& (Level::*rv)() const;
+    inline class Factory<class BaseLightTextureImageBuilder, class Level& , class Scheduler& > const& getLightTextureImageBuilderFactory() const{
+        class Factory<class BaseLightTextureImageBuilder, class Level& , class Scheduler& > const& (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getLightTextureImageBuilderFactory@Level@@UEBAAEBV?$Factory@VBaseLightTextureImageBuilder@@AEAVLevel@@AEAVScheduler@@@@XZ");
         return (this->*rv)();
     }
@@ -1038,8 +1038,8 @@ public:    /*
         *((void**)&rv) = dlsym("?getRemotePlayerEventCoordinator@Level@@UEAAAEAVPlayerEventCoordinator@@XZ");
         return (this->*rv)();
     }
-    inline std::vector<class Actor*> getRuntimeActorList() const{
-        std::vector<class Actor*> (Level::*rv)() const;
+    inline std::vector<class Actor* > getRuntimeActorList() const{
+        std::vector<class Actor* > (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getRuntimeActorList@Level@@UEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ");
         return (this->*rv)();
     }

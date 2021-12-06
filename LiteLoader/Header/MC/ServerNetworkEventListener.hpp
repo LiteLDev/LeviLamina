@@ -8,13 +8,8 @@ class ServerNetworkEventListener {
 #include "Extra/ServerNetworkEventListenerAPI.hpp"
 public:
     /*0*/ virtual ~ServerNetworkEventListener();
-    /*
-    inline int \/*enum enum EventResult*\/ onChat(struct ChatEvent const& a0){
-        int \/*enum enum EventResult*\/ (ServerNetworkEventListener::*rv)(struct ChatEvent const&);
-        *((void**)&rv) = dlsym("?onChat@ServerNetworkEventListener@@UEAA?AW4EventResult@@AEBUChatEvent@@@Z");
-        return (this->*rv)(std::forward<struct ChatEvent const&>(a0));
-    }
-    */
+    /*1*/ virtual int /*enum enum EventResult*/ onChat(struct ChatEvent const&);
+
 
 protected:
 

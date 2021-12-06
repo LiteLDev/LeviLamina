@@ -11,13 +11,7 @@ class MovementScriptActorComponent : public ScriptActorComponent {
 public:
     /*0*/ virtual ~MovementScriptActorComponent();
     /*1*/ virtual class Scripting::Result<float> getMaxTurn() const;
-    /*
-    inline class Scripting::Result<float> getMaxTurn() const{
-        class Scripting::Result<float> (MovementScriptActorComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxTurn@MovementScriptActorComponent@@UEBA?AV?$Result@M@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

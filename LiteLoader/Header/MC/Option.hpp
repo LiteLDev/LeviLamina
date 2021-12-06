@@ -14,21 +14,10 @@ public:
     /*2*/ virtual void load(std::string const&) = 0;
     /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
     /*4*/ virtual void load(class Json::Value const&);
-    /*
-    inline void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >& a0){
-        void (Option::*rv)(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
-        *((void**)&rv) = dlsym("?load@Option@@UEAAXAEAV?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V12@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&>(a0));
-    }
-    inline void load(class Json::Value const& a0){
-        void (Option::*rv)(class Json::Value const&);
-        *((void**)&rv) = dlsym("?load@Option@@UEAAXAEBVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value const&>(a0));
-    }
-    */
+
     MCAPI bool getBool() const;
-    MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool&)>);
-    MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const&)>);
+    MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool& )>);
+    MCAPI class Bedrock::PubSub::Subscription registerObserver(class std::function<void (class Option const& )>);
     MCAPI static bool read(std::string const&, bool&);
 
 protected:

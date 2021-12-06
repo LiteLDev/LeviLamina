@@ -18,6 +18,6 @@ namespace ExternalFileLevelStorage {
     MCAPI class Core::Result readLevelDataFromFile(class Core::Path const&, std::string const&, class LevelData&);
     MCAPI void saveLevelData(class Core::Path const&, std::string const&, class LevelData const&, bool);
     MCAPI void saveLevelDataToPath(class Core::Path const&, std::string const&, class LevelData const&);
-    MCAPI void saveLevelDisplayDataToCache(std::string const&, class LevelData const&, class gsl::not_null<class TaskGroup*>);
+    MCAPI void saveLevelDisplayDataToCache(std::string const&, class LevelData const&, class gsl::not_null<class TaskGroup* >);
     MCAPI class Core::Result validateLevelDat(class Core::Path);
 };

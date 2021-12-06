@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~SubtreeNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
     /*2*/ virtual void initializeFromDefinition(class Actor&);
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (SubtreeNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@SubtreeNode@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (SubtreeNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@SubtreeNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+
 
 protected:
 

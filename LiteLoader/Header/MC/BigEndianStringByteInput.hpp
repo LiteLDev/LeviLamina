@@ -22,36 +22,6 @@ public:
         *((void**)&rv) = dlsym("?readBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z");
         return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
     }
-    inline bool readBigEndianBytes(void* a0, unsigned __int64 a1){
-        bool (BigEndianStringByteInput::*rv)(void*, unsigned __int64);
-        *((void**)&rv) = dlsym("?readBigEndianBytes@BigEndianStringByteInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    inline double readDouble(){
-        double (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("?readDouble@BigEndianStringByteInput@@UEAANXZ");
-        return (this->*rv)();
-    }
-    inline float readFloat(){
-        float (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("?readFloat@BigEndianStringByteInput@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline int readInt(){
-        int (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("?readInt@BigEndianStringByteInput@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline __int64 readLongLong(){
-        __int64 (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("?readLongLong@BigEndianStringByteInput@@UEAA_JXZ");
-        return (this->*rv)();
-    }
-    inline short readShort(){
-        short (BigEndianStringByteInput::*rv)();
-        *((void**)&rv) = dlsym("?readShort@BigEndianStringByteInput@@UEAAFXZ");
-        return (this->*rv)();
-    }
     */
 
 protected:

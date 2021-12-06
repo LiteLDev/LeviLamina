@@ -9,18 +9,12 @@ class SHStartPiece : public SHStairsDown {
 #include "Extra/SHStartPieceAPI.hpp"
 public:
     /*0*/ virtual ~SHStartPiece();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*2*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*3*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*4*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*5*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (SHStartPiece::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@SHStartPiece@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

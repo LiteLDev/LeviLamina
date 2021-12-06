@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~AllowList();
     /*1*/ virtual void serialize(class Json::Value&);
     /*2*/ virtual void deserialize(class Json::Value&);
-    /*
-    inline void deserialize(class Json::Value& a0){
-        void (AllowList::*rv)(class Json::Value&);
-        *((void**)&rv) = dlsym("?deserialize@AllowList@@UEAAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    inline void serialize(class Json::Value& a0){
-        void (AllowList::*rv)(class Json::Value&);
-        *((void**)&rv) = dlsym("?serialize@AllowList@@UEAAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
     MCAPI bool addEntry(class AllowListEntry const&);
     MCAPI std::vector<class AllowListEntry> const& getEntries() const;
     MCAPI bool isAllowed(class mce::UUID const&, std::string const&) const;

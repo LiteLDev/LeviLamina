@@ -8,29 +8,13 @@ class ProjectileItemComponent {
 #include "Extra/ProjectileItemComponentAPI.hpp"
 public:
     /*0*/ virtual ~ProjectileItemComponent();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual bool isNetworkComponent() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (ProjectileItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@ProjectileItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
-        std::unique_ptr<class CompoundTag> (ProjectileItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?buildNetworkTag@ProjectileItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (ProjectileItemComponent::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@ProjectileItemComponent@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    */
+
     MCAPI class Vec3 getShootDir(class Player const&, float) const;
     MCAPI class Actor* shootProjectile(class BlockSource&, class Vec3 const&, class Vec3 const&, float, class Player*) const;
     MCAPI static void bindType();

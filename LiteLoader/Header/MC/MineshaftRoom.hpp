@@ -10,34 +10,13 @@ class MineshaftRoom : public MineshaftPiece {
 public:
     /*0*/ virtual ~MineshaftRoom();
     /*1*/ virtual void moveBoundingBox(int, int, int);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*3*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline void addChildren(class StructurePiece& a0, std::vector<std::unique_ptr<class StructurePiece>>& a1, class Random& a2){
-        void (MineshaftRoom::*rv)(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-        *((void**)&rv) = dlsym("?addChildren@MineshaftRoom@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class StructurePiece&>(a0), std::forward<std::vector<std::unique_ptr<class StructurePiece>>&>(a1), std::forward<class Random&>(a2));
-    }
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (MineshaftRoom::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@MineshaftRoom@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    inline void moveBoundingBox(int a0, int a1, int a2){
-        void (MineshaftRoom::*rv)(int, int, int);
-        *((void**)&rv) = dlsym("?moveBoundingBox@MineshaftRoom@@UEAAXHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (MineshaftRoom::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@MineshaftRoom@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+
 
 protected:
 

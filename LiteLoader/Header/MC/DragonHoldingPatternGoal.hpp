@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DragonHoldingPatternGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DragonHoldingPatternGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (DragonHoldingPatternGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DragonHoldingPatternGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (DragonHoldingPatternGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DragonHoldingPatternGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (DragonHoldingPatternGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DragonHoldingPatternGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (DragonHoldingPatternGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@DragonHoldingPatternGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DragonHoldingPatternGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DragonHoldingPatternGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

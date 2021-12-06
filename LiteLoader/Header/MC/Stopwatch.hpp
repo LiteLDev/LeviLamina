@@ -11,23 +11,7 @@ public:
     /*1*/ virtual double stop();
     /*2*/ virtual double stopContinue();
     /*3*/ virtual void print(std::string const&);
-    /*
-    inline void print(std::string const& a0){
-        void (Stopwatch::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?print@Stopwatch@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline double stop(){
-        double (Stopwatch::*rv)();
-        *((void**)&rv) = dlsym("?stop@Stopwatch@@UEAANXZ");
-        return (this->*rv)();
-    }
-    inline double stopContinue(){
-        double (Stopwatch::*rv)();
-        *((void**)&rv) = dlsym("?stopContinue@Stopwatch@@UEAANXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void reset();
     MCAPI void start();
 

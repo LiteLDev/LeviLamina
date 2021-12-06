@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~RakDataInput();
     /*1*/ virtual bool readBytes(void*, unsigned __int64);
     /*2*/ virtual unsigned __int64 numBytesLeft() const;
-    /*
-    inline unsigned __int64 numBytesLeft() const{
-        unsigned __int64 (RakDataInput::*rv)() const;
-        *((void**)&rv) = dlsym("?numBytesLeft@RakDataInput@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline bool readBytes(void* a0, unsigned __int64 a1){
-        bool (RakDataInput::*rv)(void*, unsigned __int64);
-        *((void**)&rv) = dlsym("?readBytes@RakDataInput@@UEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+
 
 protected:
 

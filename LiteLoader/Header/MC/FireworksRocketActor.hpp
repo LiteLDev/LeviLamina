@@ -49,7 +49,7 @@ public:
     /*37*/ virtual void animateHurt();
     /*38*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*39*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*40*/ virtual void __unk_vfn_12();
+    /*40*/ virtual float getPickRadius();
     /*41*/ virtual void awardKillScore(class Actor&, int);
     /*42*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*43*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -60,71 +60,35 @@ public:
     /*48*/ virtual bool canFreeze() const;
     /*49*/ virtual int getPortalWaitTime() const;
     /*50*/ virtual bool canChangeDimensions() const;
-    /*51*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_12();
     /*52*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*53*/ virtual void onSynchedDataUpdate(int);
     /*54*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*55*/ virtual bool canBePulledIntoVehicle() const;
     /*56*/ virtual bool inCaravan() const;
-    /*57*/ virtual void __unk_vfn_14();
+    /*57*/ virtual void __unk_vfn_13();
     /*58*/ virtual bool canSynchronizeNewEntity() const;
     /*59*/ virtual void buildDebugInfo(std::string&) const;
     /*60*/ virtual int getDeathTime() const;
     /*61*/ virtual void swing();
-    /*62*/ virtual void __unk_vfn_15();
-    /*63*/ virtual void __unk_vfn_16();
+    /*62*/ virtual void __unk_vfn_14();
+    /*63*/ virtual void __unk_vfn_15();
     /*64*/ virtual float getYHeadRot() const;
     /*65*/ virtual bool isWorldBuilder() const;
-    /*66*/ virtual void __unk_vfn_17();
+    /*66*/ virtual void __unk_vfn_16();
     /*67*/ virtual bool isAdventure() const;
     /*68*/ virtual bool canDestroyBlock(class Block const&) const;
     /*69*/ virtual void setAuxValue(int);
     /*70*/ virtual void stopSpinAttack();
-    /*71*/ virtual void __unk_vfn_18();
-    /*72*/ virtual void __unk_vfn_19();
+    /*71*/ virtual void __unk_vfn_17();
+    /*72*/ virtual void __unk_vfn_18();
     /*73*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*74*/ virtual void __unk_vfn_20();
+    /*74*/ virtual void __unk_vfn_19();
     /*75*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*77*/ virtual void __unk_vfn_21();
+    /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
-    /*
-    inline float getShadowRadius() const{
-        float (FireworksRocketActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@FireworksRocketActor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (FireworksRocketActor::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@FireworksRocketActor@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (FireworksRocketActor::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@FireworksRocketActor@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void lerpMotion(class Vec3 const& a0){
-        void (FireworksRocketActor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?lerpMotion@FireworksRocketActor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void normalTick(){
-        void (FireworksRocketActor::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@FireworksRocketActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (FireworksRocketActor::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@FireworksRocketActor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (FireworksRocketActor::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@FireworksRocketActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    */
+
     MCAPI void init(class Level&, class Vec3 const&, class CompoundTag const&, class Vec3 const&, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;
     MCAPI void setDispensed(bool);

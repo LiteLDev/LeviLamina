@@ -19,70 +19,9 @@ public:
     /*8*/ virtual class Core::PathBuffer<std::string > getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
     /*9*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&) const;
     /*10*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
-    /*11*/ virtual struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
+    /*11*/ virtual struct std::pair<int, std::string const& > getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
     /*12*/ virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
-    /*
-    inline struct std::pair<int, std::string const&> getPackStackIndexOfResource(class ResourceLocation const& a0, std::vector<std::string> const& a1) const{
-        struct std::pair<int, std::string const&> (ResourcePackManager::*rv)(class ResourceLocation const&, std::vector<std::string> const&) const;
-        *((void**)&rv) = dlsym("?getPackStackIndexOfResource@ResourcePackManager@@UEBA?AU?$pair@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@3@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::vector<std::string> const&>(a1));
-    }
-    inline class Core::PathBuffer<std::string > getPath(class ResourceLocation const& a0) const{
-        class Core::PathBuffer<std::string > (ResourcePackManager::*rv)(class ResourceLocation const&) const;
-        *((void**)&rv) = dlsym("?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0));
-    }
-    inline class Core::PathBuffer<std::string > getPath(class ResourceLocation const& a0, std::vector<std::string> const& a1) const{
-        class Core::PathBuffer<std::string > (ResourcePackManager::*rv)(class ResourceLocation const&, std::vector<std::string> const&) const;
-        *((void**)&rv) = dlsym("?getPath@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::vector<std::string> const&>(a1));
-    }
-    inline class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const& a0) const{
-        class Core::PathBuffer<std::string > (ResourcePackManager::*rv)(class ResourceLocation const&) const;
-        *((void**)&rv) = dlsym("?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0));
-    }
-    inline class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const& a0, std::vector<std::string> a1) const{
-        class Core::PathBuffer<std::string > (ResourcePackManager::*rv)(class ResourceLocation const&, std::vector<std::string>) const;
-        *((void**)&rv) = dlsym("?getPathContainingResource@ResourcePackManager@@UEBA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVResourceLocation@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::vector<std::string>>(a1));
-    }
-    inline bool hasCapability(class gsl::basic_string_span<char const, -1> a0) const{
-        bool (ResourcePackManager::*rv)(class gsl::basic_string_span<char const, -1>) const;
-        *((void**)&rv) = dlsym("?hasCapability@ResourcePackManager@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0));
-    }
-    inline bool isInStreamableLocation(class ResourceLocation const& a0) const{
-        bool (ResourcePackManager::*rv)(class ResourceLocation const&) const;
-        *((void**)&rv) = dlsym("?isInStreamableLocation@ResourcePackManager@@UEBA_NAEBVResourceLocation@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0));
-    }
-    inline bool isInStreamableLocation(class ResourceLocation const& a0, std::vector<std::string> const& a1) const{
-        bool (ResourcePackManager::*rv)(class ResourceLocation const&, std::vector<std::string> const&) const;
-        *((void**)&rv) = dlsym("?isInStreamableLocation@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::vector<std::string> const&>(a1));
-    }
-    inline bool load(class ResourceLocation const& a0, std::string& a1) const{
-        bool (ResourcePackManager::*rv)(class ResourceLocation const&, std::string&) const;
-        *((void**)&rv) = dlsym("?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::string&>(a1));
-    }
-    inline bool load(class ResourceLocation const& a0, std::string& a1, std::vector<std::string> const& a2) const{
-        bool (ResourcePackManager::*rv)(class ResourceLocation const&, std::string&, std::vector<std::string> const&) const;
-        *((void**)&rv) = dlsym("?load@ResourcePackManager@@UEBA_NAEBVResourceLocation@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<std::string&>(a1), std::forward<std::vector<std::string> const&>(a2));
-    }
-    inline bool load(class ResourceLocationPair const& a0, std::string& a1, std::vector<std::string> const& a2) const{
-        bool (ResourcePackManager::*rv)(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
-        *((void**)&rv) = dlsym("?load@ResourcePackManager@@UEBA_NAEBVResourceLocationPair@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z");
-        return (this->*rv)(std::forward<class ResourceLocationPair const&>(a0), std::forward<std::string&>(a1), std::forward<std::vector<std::string> const&>(a2));
-    }
-    inline std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const& a0) const{
-        std::vector<class LoadedResourceData> (ResourcePackManager::*rv)(class ResourceLocation const&) const;
-        *((void**)&rv) = dlsym("?loadAllVersionsOf@ResourcePackManager@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0));
-    }
-    */
+
     MCAPI int composeFullStack(class ResourcePackStack&, class ResourcePackStack const&, class ResourcePackStack const&, class ResourcePackStack const&) const;
     MCAPI class SemVersion getFullStackMinEngineVersion() const;
     MCAPI class PackSourceReport const* getPackSourceReport() const;

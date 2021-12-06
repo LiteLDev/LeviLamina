@@ -11,50 +11,14 @@ public:
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual float _getAttackReachSqr();
-    /*
-    inline void start(){
-        void (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MountPathingGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline float _getAttackReachSqr(){
-        float (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?_getAttackReachSqr@MountPathingGoal@@MEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MountPathingGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MountPathingGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MountPathingGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MountPathingGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MountPathingGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MountPathingGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MountPathingGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

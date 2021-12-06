@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~AgentLookControl();
     /*1*/ virtual void initializeInternal(class Mob&);
     /*2*/ virtual void tick(class Mob&);
-    /*
-    inline void initializeInternal(class Mob& a0){
-        void (AgentLookControl::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?initializeInternal@AgentLookControl@@UEAAXAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    inline void tick(class Mob& a0){
-        void (AgentLookControl::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?tick@AgentLookControl@@UEAAXAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+
     MCAPI static float sBaseYMax;
 
 protected:

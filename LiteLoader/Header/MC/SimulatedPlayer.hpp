@@ -31,67 +31,62 @@ public:
     /*18*/ virtual void onTame();
     /*19*/ virtual void onFailedTame();
     /*20*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*21*/ virtual void __unk_vfn_12();
+    /*21*/ virtual float getPickRadius();
     /*22*/ virtual class ItemStack const& getCarriedItem() const;
     /*23*/ virtual class HashedString const& queryEntityRenderer() const;
     /*24*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*25*/ virtual int getPortalCooldown() const;
-    /*26*/ virtual void __unk_vfn_13();
+    /*26*/ virtual void __unk_vfn_12();
     /*27*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*28*/ virtual bool canBePulledIntoVehicle() const;
-    /*29*/ virtual void __unk_vfn_14();
+    /*29*/ virtual void __unk_vfn_13();
     /*30*/ virtual void sendMotionPacketIfNeeded();
     /*31*/ virtual bool canSynchronizeNewEntity() const;
-    /*32*/ virtual void __unk_vfn_15();
-    /*33*/ virtual void __unk_vfn_16();
-    /*34*/ virtual void __unk_vfn_17();
+    /*32*/ virtual void __unk_vfn_14();
+    /*33*/ virtual void __unk_vfn_15();
+    /*34*/ virtual void __unk_vfn_16();
     /*35*/ virtual bool canDestroyBlock(class Block const&) const;
     /*36*/ virtual void setAuxValue(int);
-    /*37*/ virtual void __unk_vfn_18();
-    /*38*/ virtual void __unk_vfn_19();
-    /*39*/ virtual void __unk_vfn_20();
-    /*40*/ virtual void __unk_vfn_21();
-    /*41*/ virtual void __unk_vfn_22();
+    /*37*/ virtual void __unk_vfn_17();
+    /*38*/ virtual void __unk_vfn_18();
+    /*39*/ virtual void __unk_vfn_19();
+    /*40*/ virtual void __unk_vfn_20();
+    /*41*/ virtual void __unk_vfn_21();
     /*42*/ virtual void spawnAnim();
     /*43*/ virtual void aiStep();
-    /*44*/ virtual void __unk_vfn_23();
+    /*44*/ virtual void __unk_vfn_22();
     /*45*/ virtual bool isAlliedTo(class Mob*);
-    /*46*/ virtual void __unk_vfn_24();
+    /*46*/ virtual void __unk_vfn_23();
     /*47*/ virtual void onBorn(class Actor&, class Actor&);
-    /*48*/ virtual void __unk_vfn_25();
+    /*48*/ virtual int getAttackTime();
     /*49*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*50*/ virtual bool canExistWhenDisallowMob() const;
-    /*51*/ virtual void __unk_vfn_26();
+    /*51*/ virtual void __unk_vfn_24();
     /*52*/ virtual void updateAi();
     /*53*/ virtual void _serverAiMobStep();
-    /*54*/ virtual void __unk_vfn_27();
-    /*55*/ virtual void __unk_vfn_28();
-    /*56*/ virtual void __unk_vfn_29();
-    /*57*/ virtual void __unk_vfn_30();
-    /*58*/ virtual void __unk_vfn_31();
-    /*59*/ virtual void __unk_vfn_32();
-    /*60*/ virtual void __unk_vfn_33();
-    /*61*/ virtual void __unk_vfn_34();
-    /*62*/ virtual void __unk_vfn_35();
-    /*63*/ virtual void __unk_vfn_36();
-    /*64*/ virtual void __unk_vfn_37();
-    /*65*/ virtual void __unk_vfn_38();
-    /*66*/ virtual void __unk_vfn_39();
-    /*67*/ virtual void __unk_vfn_40();
-    /*68*/ virtual void __unk_vfn_41();
-    /*69*/ virtual void __unk_vfn_42();
-    /*70*/ virtual void __unk_vfn_43();
+    /*54*/ virtual void __unk_vfn_25();
+    /*55*/ virtual void __unk_vfn_26();
+    /*56*/ virtual void __unk_vfn_27();
+    /*57*/ virtual void __unk_vfn_28();
+    /*58*/ virtual void __unk_vfn_29();
+    /*59*/ virtual void __unk_vfn_30();
+    /*60*/ virtual void __unk_vfn_31();
+    /*61*/ virtual void __unk_vfn_32();
+    /*62*/ virtual void __unk_vfn_33();
+    /*63*/ virtual void __unk_vfn_34();
+    /*64*/ virtual void __unk_vfn_35();
+    /*65*/ virtual void __unk_vfn_36();
+    /*66*/ virtual void __unk_vfn_37();
+    /*67*/ virtual void __unk_vfn_38();
+    /*68*/ virtual void __unk_vfn_39();
+    /*69*/ virtual void __unk_vfn_40();
+    /*70*/ virtual void __unk_vfn_41();
     /*71*/ virtual std::string getXuid() const;
     /*72*/ virtual struct PlayerMovementSettings const& getMovementSettings() const;
     /*73*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
     /*74*/ virtual int _getSpawnChunkLimit() const;
     /*75*/ virtual void _updateChunkPublisherView(class Vec3 const&, float);
     /*
-    inline void _updateChunkPublisherView(class Vec3 const& a0, float a1){
-        void (SimulatedPlayer::*rv)(class Vec3 const&, float);
-        *((void**)&rv) = dlsym("?_updateChunkPublisherView@SimulatedPlayer@@MEAAXAEBVVec3@@M@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<float>(a1));
-    }
     inline bool useNewAi() const{
         bool (SimulatedPlayer::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@SimulatedPlayer@@UEBA_NXZ");
@@ -101,36 +96,6 @@ public:
         bool (SimulatedPlayer::*rv)() const;
         *((void**)&rv) = dlsym("?isSimulated@SimulatedPlayer@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline std::string getXuid() const{
-        std::string (SimulatedPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getXuid@SimulatedPlayer@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int _getSpawnChunkLimit() const{
-        int (SimulatedPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?_getSpawnChunkLimit@SimulatedPlayer@@MEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource& a0){
-        class std::shared_ptr<class ChunkViewSource> (SimulatedPlayer::*rv)(class ChunkSource&);
-        *((void**)&rv) = dlsym("?_createChunkSource@SimulatedPlayer@@MEAA?AV?$shared_ptr@VChunkViewSource@@@std@@AEAVChunkSource@@@Z");
-        return (this->*rv)(std::forward<class ChunkSource&>(a0));
-    }
-    inline void aiStep(){
-        void (SimulatedPlayer::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@SimulatedPlayer@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline struct PlayerMovementSettings const& getMovementSettings() const{
-        struct PlayerMovementSettings const& (SimulatedPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getMovementSettings@SimulatedPlayer@@UEBAAEBUPlayerMovementSettings@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (SimulatedPlayer::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@SimulatedPlayer@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;

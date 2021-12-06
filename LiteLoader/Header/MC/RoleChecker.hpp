@@ -7,7 +7,7 @@
 class RoleChecker {
 #include "Extra/RoleCheckerAPI.hpp"
 public:
-    MCAPI void checkRole(std::string const&, class std::function<void (enum ADRole, std::string const&, std::string const&)>);
+    MCAPI void checkRole(std::string const&, class std::function<void (enum ADRole, std::string const& , std::string const& )>);
     MCAPI bool lookupInProgress() const;
 
 protected:

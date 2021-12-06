@@ -25,23 +25,7 @@ public:
     /*14*/ virtual void __unk_vfn_11();
     /*15*/ virtual void __unk_vfn_12();
     /*16*/ virtual int /*enum enum EventResult*/ onExplosionStartedEvent(struct ExplosionStartedEvent const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onBlockExploded(class BlockPos const& a0, class Block const& a1, class Actor* a2){
-        int \/*enum enum EventResult*\/ (ScriptBlockEventListener::*rv)(class BlockPos const&, class Block const&, class Actor*);
-        *((void**)&rv) = dlsym("?onBlockExploded@ScriptBlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Actor*>(a2));
-    }
-    inline int \/*enum enum EventResult*\/ onExplosionStartedEvent(struct ExplosionStartedEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptBlockEventListener::*rv)(struct ExplosionStartedEvent const&);
-        *((void**)&rv) = dlsym("?onExplosionStartedEvent@ScriptBlockEventListener@@UEAA?AW4EventResult@@AEBUExplosionStartedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ExplosionStartedEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onPistonActionEvent(struct PistonActionEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptBlockEventListener::*rv)(struct PistonActionEvent const&);
-        *((void**)&rv) = dlsym("?onPistonActionEvent@ScriptBlockEventListener@@UEAA?AW4EventResult@@AEBUPistonActionEvent@@@Z");
-        return (this->*rv)(std::forward<struct PistonActionEvent const&>(a0));
-    }
-    */
+
 
 protected:
 

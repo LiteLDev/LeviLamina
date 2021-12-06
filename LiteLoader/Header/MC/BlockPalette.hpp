@@ -9,7 +9,7 @@ class BlockPalette {
 public:
     MCAPI void cacheBlockComponentData();
     MCAPI class Block const& convertLegacyBlock(struct BlockID, unsigned short) const;
-    MCAPI bool convertLegacyBlocks(class buffer_span_mut<class Block const*>, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, unsigned __int64) const;
+    MCAPI bool convertLegacyBlocks(class buffer_span_mut<class Block const* >, class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>, unsigned __int64) const;
     MCAPI class Block const& getBlock(unsigned int const&) const;
     MCAPI class Block const& getBlock(class CompoundTag const&) const;
     MCAPI class Block const& getBlockFromLegacyData(struct NewBlockID, unsigned int) const;

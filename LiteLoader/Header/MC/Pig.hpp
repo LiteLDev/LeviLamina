@@ -36,66 +36,51 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
-    /*49*/ virtual void __unk_vfn_20();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
+    /*49*/ virtual void __unk_vfn_19();
     /*50*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*51*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*52*/ virtual void __unk_vfn_21();
-    /*53*/ virtual void __unk_vfn_22();
+    /*52*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual int getItemUseDuration() const;
     /*56*/ virtual float getItemUseStartupProgress() const;
     /*57*/ virtual float getItemUseIntervalProgress() const;
-    /*58*/ virtual void __unk_vfn_23();
+    /*58*/ virtual void __unk_vfn_22();
     /*59*/ virtual bool isAlliedTo(class Mob*);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
-    /*64*/ virtual void __unk_vfn_26();
+    /*63*/ virtual int getAttackTime();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
+    /*66*/ virtual void __unk_vfn_25();
     /*
     inline bool useNewAi() const{
         bool (Pig::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Pig@@MEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Pig::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Pig@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void normalTick(){
-        void (Pig::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Pig@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Pig::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Pig@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
     }
     */
 

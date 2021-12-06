@@ -488,6 +488,7 @@
     <ClInclude Include="Header\MC\Extra\PacketAPI.hpp">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\Extra\AutomationAPI.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\leveldb\leveldb.lib">

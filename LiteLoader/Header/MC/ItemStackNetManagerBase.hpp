@@ -8,27 +8,17 @@ class ItemStackNetManagerBase {
 #include "Extra/ItemStackNetManagerBaseAPI.hpp"
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isEnabled() const;
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void onContainerScreenClose();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
+    /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*
-    inline bool retainSetItemStackNetIdVariant() const{
-        bool (ItemStackNetManagerBase::*rv)() const;
-        *((void**)&rv) = dlsym("?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class SparseContainer* initOpenContainer(class BlockSource& a0, int \/*enum enum ContainerEnumName*\/ a1, class ContainerWeakRef const& a2){
-        class SparseContainer* (ItemStackNetManagerBase::*rv)(class BlockSource&, int \/*enum enum ContainerEnumName*\/, class ContainerWeakRef const&);
-        *((void**)&rv) = dlsym("?initOpenContainer@ItemStackNetManagerBase@@UEAAPEAVSparseContainer@@AEAVBlockSource@@W4ContainerEnumName@@AEBVContainerWeakRef@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum ContainerEnumName*\/>(a1), std::forward<class ContainerWeakRef const&>(a2));
-    }
     inline void _initScreen(class ItemStackNetManagerScreen& a0){
         void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen&);
         *((void**)&rv) = dlsym("?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z");
@@ -39,16 +29,6 @@ public:
         *((void**)&rv) = dlsym("?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z");
         return (this->*rv)(std::forward<class ItemStackNetManagerScreen&>(a0), std::forward<int \/*enum enum ContainerType*\/>(a1), std::forward<int>(a2));
     }
-    inline bool isEnabled() const{
-        bool (ItemStackNetManagerBase::*rv)() const;
-        *((void**)&rv) = dlsym("?isEnabled@ItemStackNetManagerBase@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void onContainerScreenClose(){
-        void (ItemStackNetManagerBase::*rv)();
-        *((void**)&rv) = dlsym("?onContainerScreenClose@ItemStackNetManagerBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onContainerScreenOpen(class ContainerScreenContext const& a0){
         void (ItemStackNetManagerBase::*rv)(class ContainerScreenContext const&);
         *((void**)&rv) = dlsym("?onContainerScreenOpen@ItemStackNetManagerBase@@UEAAXAEBVContainerScreenContext@@@Z");
@@ -57,7 +37,7 @@ public:
     */
     MCAPI bool isClientSide() const;
     MCAPI bool isScreenOpen() const;
-    MCAPI static bool setPlayerContainer(class Player&, enum ContainerType, int, class ItemStack const&, class ItemStack&, class std::function<void (class ItemStack const&)> const&);
+    MCAPI static bool setPlayerContainer(class Player&, enum ContainerType, int, class ItemStack const&, class ItemStack&, class std::function<void (class ItemStack const& )> const&);
 
 protected:
 

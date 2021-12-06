@@ -38,48 +38,48 @@ public:
     /*26*/ virtual void onLightningHit();
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*28*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*29*/ virtual void __unk_vfn_12();
+    /*29*/ virtual float getPickRadius();
     /*30*/ virtual void awardKillScore(class Actor&, int);
     /*31*/ virtual class HashedString const& queryEntityRenderer() const;
     /*32*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*33*/ virtual int getPortalWaitTime() const;
     /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_13();
+    /*35*/ virtual void __unk_vfn_12();
     /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
-    /*51*/ virtual void __unk_vfn_20();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*53*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*54*/ virtual void __unk_vfn_21();
+    /*54*/ virtual void __unk_vfn_20();
     /*55*/ virtual void _onSizeUpdated();
-    /*56*/ virtual void __unk_vfn_22();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual int getItemUseDuration() const;
     /*59*/ virtual float getItemUseStartupProgress() const;
     /*60*/ virtual float getItemUseIntervalProgress() const;
-    /*61*/ virtual void __unk_vfn_23();
+    /*61*/ virtual void __unk_vfn_22();
     /*62*/ virtual bool isAlliedTo(class Mob*);
-    /*63*/ virtual void __unk_vfn_24();
+    /*63*/ virtual void __unk_vfn_23();
     /*64*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*65*/ virtual void onBorn(class Actor&, class Actor&);
-    /*66*/ virtual void __unk_vfn_25();
+    /*66*/ virtual int getAttackTime();
     /*67*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*68*/ virtual void __unk_vfn_26();
+    /*68*/ virtual void __unk_vfn_24();
     /*69*/ virtual void _serverAiMobStep();
-    /*70*/ virtual void __unk_vfn_27();
+    /*70*/ virtual void __unk_vfn_25();
     /*
     inline void _serverAiMobStep(){
         void (VillagerBase::*rv)();
@@ -95,36 +95,6 @@ public:
         bool (VillagerBase::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@VillagerBase@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void _onSizeUpdated(){
-        void (VillagerBase::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@VillagerBase@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (VillagerBase::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@VillagerBase@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (VillagerBase::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@VillagerBase@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void onLightningHit(){
-        void (VillagerBase::*rv)();
-        *((void**)&rv) = dlsym("?onLightningHit@VillagerBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (VillagerBase::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@VillagerBase@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (VillagerBase::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadComponents@VillagerBase@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
     MCAPI void consumeLoveFood();

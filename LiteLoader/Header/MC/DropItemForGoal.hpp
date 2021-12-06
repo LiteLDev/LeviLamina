@@ -19,50 +19,9 @@ public:
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*11*/ virtual void __unk_vfn_3();
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual bool findTargetBlock();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DropItemForGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DropItemForGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DropItemForGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DropItemForGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool findTargetBlock(){
-        bool (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?findTargetBlock@DropItemForGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (DropItemForGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@DropItemForGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void start(){
-        void (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DropItemForGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@DropItemForGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DropItemForGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DropItemForGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

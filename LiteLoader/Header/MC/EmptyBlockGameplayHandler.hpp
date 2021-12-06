@@ -8,12 +8,13 @@ class EmptyBlockGameplayHandler {
 #include "Extra/EmptyBlockGameplayHandlerAPI.hpp"
 public:
     /*0*/ virtual ~EmptyBlockGameplayHandler();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual int /*enum enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
+    /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
     /*
-    inline int \/*enum enum HandlerResult*\/ handleBlockPatternPostEvent(struct BlockPatternEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (EmptyBlockGameplayHandler::*rv)(struct BlockPatternEvent const&);
-        *((void**)&rv) = dlsym("?handleBlockPatternPostEvent@EmptyBlockGameplayHandler@@UEAA?AW4HandlerResult@@AEBUBlockPatternEvent@@@Z");
-        return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
-    }
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (EmptyBlockGameplayHandler::*rv)(struct ActorStandOnBlockEvent const&);
         *((void**)&rv) = dlsym("?handleActorStandOnBlock@EmptyBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUActorStandOnBlockEvent@@@Z");
@@ -43,11 +44,6 @@ public:
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (EmptyBlockGameplayHandler::*rv)(struct PistonActionEvent const&);
         *((void**)&rv) = dlsym("?handlePistonActionEvent@EmptyBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUPistonActionEvent@@@Z");
         return (this->*rv)(std::forward<struct PistonActionEvent const&>(a0));
-    }
-    inline struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const& a0){
-        struct GameplayHandlerResult<class std::optional<std::string > > (EmptyBlockGameplayHandler::*rv)(struct CraftUISetResultNameEvent const&);
-        *((void**)&rv) = dlsym("?handleCraftUISetResultName@EmptyBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@AEBUCraftUISetResultNameEvent@@@Z");
-        return (this->*rv)(std::forward<struct CraftUISetResultNameEvent const&>(a0));
     }
     */
 

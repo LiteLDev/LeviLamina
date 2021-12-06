@@ -614,10 +614,10 @@ public:    /*
         *((void**)&rv) = dlsym("?fireEventMultiplayerConnectionStateChanged@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@1III1@Z");
         return (this->*rv)(std::forward<bool>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<unsigned int>(a3), std::forward<unsigned int>(a4), std::forward<unsigned int>(a5), std::forward<std::string const&>(a6));
     }
-    inline void fireEventMultiplayerSessionUpdate(class gsl::not_null<class Level const*> a0, class Player const* a1){
-        void (MinecraftEventing::*rv)(class gsl::not_null<class Level const*>, class Player const*);
+    inline void fireEventMultiplayerSessionUpdate(class gsl::not_null<class Level const* > a0, class Player const* a1){
+        void (MinecraftEventing::*rv)(class gsl::not_null<class Level const* >, class Player const*);
         *((void**)&rv) = dlsym("?fireEventMultiplayerSessionUpdate@MinecraftEventing@@UEAAXV?$not_null@PEBVLevel@@@gsl@@PEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class gsl::not_null<class Level const*>>(a0), std::forward<class Player const*>(a1));
+        return (this->*rv)(std::forward<class gsl::not_null<class Level const* >>(a0), std::forward<class Player const*>(a1));
     }
     inline void fireEventNewContentCheckCompleted(std::string const& a0, bool a1){
         void (MinecraftEventing::*rv)(std::string const&, bool);
@@ -1259,8 +1259,8 @@ public:    /*
         *((void**)&rv) = dlsym("?getAchievementsAlwaysEnabled@MinecraftEventing@@EEAA_NXZ");
         return (this->*rv)();
     }
-    inline class gsl::not_null<class Bedrock::CrashTelemetryProcessor*> getCrashTelemetryProcessor(){
-        class gsl::not_null<class Bedrock::CrashTelemetryProcessor*> (MinecraftEventing::*rv)();
+    inline class gsl::not_null<class Bedrock::CrashTelemetryProcessor* > getCrashTelemetryProcessor(){
+        class gsl::not_null<class Bedrock::CrashTelemetryProcessor* > (MinecraftEventing::*rv)();
         *((void**)&rv) = dlsym("?getCrashTelemetryProcessor@MinecraftEventing@@UEAA?AV?$not_null@PEAVCrashTelemetryProcessor@Bedrock@@@gsl@@XZ");
         return (this->*rv)();
     }

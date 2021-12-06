@@ -9,13 +9,7 @@ class Block {
 public:
     /*0*/ virtual ~Block();
     /*1*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer() const;
-    /*
-    inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer() const{
-        int \/*enum enum BlockRenderLayer*\/ (Block::*rv)() const;
-        *((void**)&rv) = dlsym("?getRenderLayer@Block@@UEBA?AW4BlockRenderLayer@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI bool addCollisionShapes(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
     MCAPI class Block& addTag(class HashedString const&);
@@ -163,8 +157,8 @@ public:
     MCAPI bool shouldRandomTick() const;
     MCAPI bool shouldRandomTickExtraLayer() const;
     MCAPI bool shouldStopFalling(class Actor&) const;
-    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Randomize&, std::vector<class Item const*>*, float, int) const;
-    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, std::vector<class Item const*>*, float, int, class ItemStack const&) const;
+    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Randomize&, std::vector<class Item const* >*, float, int) const;
+    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, std::vector<class Item const* >*, float, int, class ItemStack const&) const;
     MCAPI int telemetryVariant(class BlockSource&, class BlockPos const&) const;
     MCAPI std::string toDebugString() const;
     MCAPI void transformOnFall(class BlockSource&, class BlockPos const&, class Actor*, float) const;
@@ -172,7 +166,7 @@ public:
     MCAPI class CopperBehavior const* tryGetCopperBehavior() const;
     MCAPI class Block const* tryGetInfested() const;
     MCAPI class Block const* tryGetUninfested() const;
-    MCAPI void trySpawnResourcesOnExplosion(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const*>*, float, int) const;
+    MCAPI void trySpawnResourcesOnExplosion(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const* >*, float, int) const;
     MCAPI bool tryToPlace(class BlockSource&, class BlockPos const&, struct ActorBlockSyncMessage const*) const;
     MCAPI bool tryToTill(class BlockSource&, class BlockPos const&, class Actor&, class ItemStack&) const;
     MCAPI void updateEntityAfterFallOn(class BlockPos const&, struct IActorMovementProxy&) const;

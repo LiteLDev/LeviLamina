@@ -15,31 +15,10 @@ public:
     /*4*/ virtual bool postProcess(class ChunkViewSource&);
     /*5*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*6*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*7*/ virtual void __unk_vfn_0();
+    /*7*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*8*/ virtual void clearDeletedEntities();
-    /*9*/ virtual void __unk_vfn_1();
-    /*
-    inline bool canCreateViews() const{
-        bool (WorldLimitChunkSource::*rv)() const;
-        *((void**)&rv) = dlsym("?canCreateViews@WorldLimitChunkSource@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const& a0, int \/*enum enum ChunkSource::LoadMode*\/ a1, bool a2){
-        class std::shared_ptr<class LevelChunk> (WorldLimitChunkSource::*rv)(class ChunkPos const&, int \/*enum enum ChunkSource::LoadMode*\/, bool);
-        *((void**)&rv) = dlsym("?createNewChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<int \/*enum enum ChunkSource::LoadMode*\/>(a1), std::forward<bool>(a2));
-    }
-    inline class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& a0){
-        class std::shared_ptr<class LevelChunk> (WorldLimitChunkSource::*rv)(class ChunkPos const&);
-        *((void**)&rv) = dlsym("?getExistingChunk@WorldLimitChunkSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    inline bool isWithinWorldLimit(class ChunkPos const& a0) const{
-        bool (WorldLimitChunkSource::*rv)(class ChunkPos const&) const;
-        *((void**)&rv) = dlsym("?isWithinWorldLimit@WorldLimitChunkSource@@UEBA_NAEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    */
+    /*9*/ virtual bool canCreateViews() const;
+
 
 protected:
 

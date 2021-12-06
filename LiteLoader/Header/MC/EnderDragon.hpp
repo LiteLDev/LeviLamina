@@ -42,141 +42,61 @@ public:
     /*30*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*32*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*33*/ virtual void __unk_vfn_12();
+    /*33*/ virtual float getPickRadius();
     /*34*/ virtual void awardKillScore(class Actor&, int);
     /*35*/ virtual class HashedString const& queryEntityRenderer() const;
     /*36*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*37*/ virtual int getPortalWaitTime() const;
     /*38*/ virtual bool canChangeDimensions() const;
-    /*39*/ virtual void __unk_vfn_13();
+    /*39*/ virtual void __unk_vfn_12();
     /*40*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*41*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*42*/ virtual bool canBePulledIntoVehicle() const;
-    /*43*/ virtual void __unk_vfn_14();
+    /*43*/ virtual void __unk_vfn_13();
     /*44*/ virtual bool canSynchronizeNewEntity() const;
     /*45*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
-    /*46*/ virtual void __unk_vfn_15();
-    /*47*/ virtual void __unk_vfn_16();
+    /*46*/ virtual void __unk_vfn_14();
+    /*47*/ virtual void __unk_vfn_15();
     /*48*/ virtual bool isWorldBuilder() const;
-    /*49*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_16();
     /*50*/ virtual bool isAdventure() const;
     /*51*/ virtual bool canDestroyBlock(class Block const&) const;
     /*52*/ virtual void setAuxValue(int);
     /*53*/ virtual void stopSpinAttack();
-    /*54*/ virtual void __unk_vfn_18();
-    /*55*/ virtual void __unk_vfn_19();
+    /*54*/ virtual void __unk_vfn_17();
+    /*55*/ virtual void __unk_vfn_18();
     /*56*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*57*/ virtual void __unk_vfn_20();
+    /*57*/ virtual void __unk_vfn_19();
     /*58*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*59*/ virtual void __unk_vfn_21();
+    /*59*/ virtual void __unk_vfn_20();
     /*60*/ virtual void _onSizeUpdated();
-    /*61*/ virtual void __unk_vfn_22();
+    /*61*/ virtual void __unk_vfn_21();
     /*62*/ virtual void spawnAnim();
     /*63*/ virtual void aiStep();
     /*64*/ virtual bool checkSpawnRules(bool);
     /*65*/ virtual int getItemUseDuration() const;
     /*66*/ virtual float getItemUseStartupProgress() const;
     /*67*/ virtual float getItemUseIntervalProgress() const;
-    /*68*/ virtual void __unk_vfn_23();
+    /*68*/ virtual void __unk_vfn_22();
     /*69*/ virtual bool isAlliedTo(class Mob*);
-    /*70*/ virtual void __unk_vfn_24();
+    /*70*/ virtual void __unk_vfn_23();
     /*71*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*72*/ virtual void onBorn(class Actor&, class Actor&);
-    /*73*/ virtual void __unk_vfn_25();
-    /*74*/ virtual void __unk_vfn_26();
+    /*73*/ virtual int getAttackTime();
+    /*74*/ virtual void __unk_vfn_24();
     /*75*/ virtual void _serverAiMobStep();
     /*76*/ virtual void tickDeath();
-    /*77*/ virtual void __unk_vfn_27();
+    /*77*/ virtual void __unk_vfn_25();
     /*
     inline bool isFishable() const{
         bool (EnderDragon::*rv)() const;
         *((void**)&rv) = dlsym("?isFishable@EnderDragon@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canChangeDimensions() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?canChangeDimensions@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (EnderDragon::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@EnderDragon@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool canBePulledIntoVehicle() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canExistInPeaceful() const{
         bool (EnderDragon::*rv)() const;
         *((void**)&rv) = dlsym("?canExistInPeaceful@EnderDragon@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (EnderDragon::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@EnderDragon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (EnderDragon::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@EnderDragon@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (EnderDragon::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@EnderDragon@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void aiStep(){
-        void (EnderDragon::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@EnderDragon@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getHeadLookVector(float a0) const{
-        class Vec3 (EnderDragon::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getHeadLookVector@EnderDragon@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getShadowRadius() const{
-        float (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@EnderDragon@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (EnderDragon::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@EnderDragon@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline bool isImmobile() const{
-        bool (EnderDragon::*rv)() const;
-        *((void**)&rv) = dlsym("?isImmobile@EnderDragon@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (EnderDragon::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@EnderDragon@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void remove(){
-        void (EnderDragon::*rv)();
-        *((void**)&rv) = dlsym("?remove@EnderDragon@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setSitting(bool a0){
-        void (EnderDragon::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSitting@EnderDragon@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void tickDeath(){
-        void (EnderDragon::*rv)();
-        *((void**)&rv) = dlsym("?tickDeath@EnderDragon@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (EnderDragon::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@EnderDragon@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI void dieNaturally();
@@ -192,7 +112,7 @@ public:
     MCAPI void incrementFlameCount();
     MCAPI void onCrystalDestroyed(class EnderCrystal const&, class BlockPos, class ActorDamageSource const&);
     MCAPI void resetFlameCount();
-    MCAPI void setDragonKilledCallback(class std::function<void (class EnderDragon&)>);
+    MCAPI void setDragonKilledCallback(class std::function<void (class EnderDragon& )>);
     MCAPI void setHasDragonPreviouslyBeenKilled(bool);
     MCAPI void setNumCrystalsAlive(int);
     MCAPI void setTargetPos(class Vec3);
@@ -204,8 +124,8 @@ protected:
 private:
     MCAPI void checkCrystals();
     MCAPI bool checkWalls(class AABB);
-    MCAPI void hurtEntities(class gsl::span<class gsl::not_null<class Actor*>, -1>) const;
-    MCAPI void knockBack(class gsl::span<class gsl::not_null<class Actor*>, -1>) const;
+    MCAPI void hurtEntities(class gsl::span<class gsl::not_null<class Actor* >, -1>) const;
+    MCAPI void knockBack(class gsl::span<class gsl::not_null<class Actor* >, -1>) const;
     MCAPI std::unique_ptr<class Path> reconstructPath(class PathfinderNode&, class PathfinderNode&, enum PathCompletionType);
     MCAPI static int GROWL_INTERVAL_MAX;
     MCAPI static int GROWL_INTERVAL_MIN;

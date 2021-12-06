@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (GoHomeGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@GoHomeGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (GoHomeGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@GoHomeGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (GoHomeGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@GoHomeGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (GoHomeGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@GoHomeGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (GoHomeGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@GoHomeGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (GoHomeGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@GoHomeGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static int const GIVE_UP_TICKS;
 
 protected:

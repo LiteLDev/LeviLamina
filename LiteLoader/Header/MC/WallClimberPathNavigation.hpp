@@ -16,33 +16,7 @@ public:
     /*5*/ virtual void stop(class NavigationComponent&, class Mob&);
     /*6*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     /*7*/ virtual bool canUpdatePath(class Mob const&) const;
-    /*
-    inline bool canUpdatePath(class Mob const& a0) const{
-        bool (WallClimberPathNavigation::*rv)(class Mob const&) const;
-        *((void**)&rv) = dlsym("?canUpdatePath@WallClimberPathNavigation@@MEBA_NAEBVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob const&>(a0));
-    }
-    inline std::unique_ptr<class Path> createPath(class NavigationComponent& a0, class Mob& a1, class Actor& a2){
-        std::unique_ptr<class Path> (WallClimberPathNavigation::*rv)(class NavigationComponent&, class Mob&, class Actor&);
-        *((void**)&rv) = dlsym("?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<class Actor&>(a2));
-    }
-    inline std::unique_ptr<class Path> createPath(class NavigationComponent& a0, class Mob& a1, class Vec3 const& a2){
-        std::unique_ptr<class Path> (WallClimberPathNavigation::*rv)(class NavigationComponent&, class Mob&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?createPath@WallClimberPathNavigation@@MEAA?AV?$unique_ptr@VPath@@U?$default_delete@VPath@@@std@@@std@@AEAVNavigationComponent@@AEAVMob@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<class Vec3 const&>(a2));
-    }
-    inline bool moveTo(class NavigationComponent& a0, class Mob& a1, class Actor& a2, float a3){
-        bool (WallClimberPathNavigation::*rv)(class NavigationComponent&, class Mob&, class Actor&, float);
-        *((void**)&rv) = dlsym("?moveTo@WallClimberPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAVActor@@M@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<class Actor&>(a2), std::forward<float>(a3));
-    }
-    inline void tick(class NavigationComponent& a0, class Mob& a1){
-        void (WallClimberPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@WallClimberPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

@@ -10,48 +10,12 @@ public:
     /*0*/ virtual ~RollGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline bool canBeInterrupted(){
-        bool (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@RollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RollGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RollGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RollGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (RollGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@RollGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

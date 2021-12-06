@@ -22,28 +22,7 @@ public:
     /*11*/ virtual void __unk_vfn_3();
     /*12*/ virtual void __unk_vfn_4();
     /*13*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
-    /*
-    inline int getMaxLevel() const{
-        int (TridentImpalerEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@TridentImpalerEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline float getDamageBonus(int a0, class Actor const& a1) const{
-        float (TridentImpalerEnchant::*rv)(int, class Actor const&) const;
-        *((void**)&rv) = dlsym("?getDamageBonus@TridentImpalerEnchant@@UEBAMHAEBVActor@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class Actor const&>(a1));
-    }
-    inline int getMaxCost(int a0) const{
-        int (TridentImpalerEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@TridentImpalerEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (TridentImpalerEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@TridentImpalerEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+
 
 protected:
 

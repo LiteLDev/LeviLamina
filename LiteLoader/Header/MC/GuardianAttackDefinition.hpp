@@ -10,13 +10,7 @@ class GuardianAttackDefinition {
 public:
     /*0*/ virtual ~GuardianAttackDefinition();
     /*1*/ virtual bool validateMobType(class Mob&);
-    /*
-    inline bool validateMobType(class Mob& a0){
-        bool (GuardianAttackDefinition::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?validateMobType@GuardianAttackDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+
     MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition> >&);
 

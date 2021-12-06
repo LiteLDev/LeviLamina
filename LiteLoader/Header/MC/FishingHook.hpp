@@ -47,7 +47,7 @@ public:
     /*36*/ virtual void animateHurt();
     /*37*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*38*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*39*/ virtual void __unk_vfn_12();
+    /*39*/ virtual float getPickRadius();
     /*40*/ virtual void awardKillScore(class Actor&, int);
     /*41*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*42*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -59,63 +59,32 @@ public:
     /*48*/ virtual bool canFreeze() const;
     /*49*/ virtual int getPortalWaitTime() const;
     /*50*/ virtual bool canChangeDimensions() const;
-    /*51*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_12();
     /*52*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*53*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*54*/ virtual bool canBePulledIntoVehicle() const;
     /*55*/ virtual bool inCaravan() const;
-    /*56*/ virtual void __unk_vfn_14();
+    /*56*/ virtual void __unk_vfn_13();
     /*57*/ virtual bool canSynchronizeNewEntity() const;
     /*58*/ virtual void buildDebugInfo(std::string&) const;
     /*59*/ virtual int getDeathTime() const;
     /*60*/ virtual void swing();
-    /*61*/ virtual void __unk_vfn_15();
-    /*62*/ virtual void __unk_vfn_16();
+    /*61*/ virtual void __unk_vfn_14();
+    /*62*/ virtual void __unk_vfn_15();
     /*63*/ virtual float getYHeadRot() const;
     /*64*/ virtual bool isWorldBuilder() const;
-    /*65*/ virtual void __unk_vfn_17();
+    /*65*/ virtual void __unk_vfn_16();
     /*66*/ virtual bool isAdventure() const;
     /*67*/ virtual bool canDestroyBlock(class Block const&) const;
     /*68*/ virtual void setAuxValue(int);
     /*69*/ virtual void stopSpinAttack();
-    /*70*/ virtual void __unk_vfn_18();
-    /*71*/ virtual void __unk_vfn_19();
+    /*70*/ virtual void __unk_vfn_17();
+    /*71*/ virtual void __unk_vfn_18();
     /*72*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*73*/ virtual void __unk_vfn_20();
-    /*74*/ virtual void __unk_vfn_21();
+    /*73*/ virtual void __unk_vfn_19();
+    /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void _onSizeUpdated();
-    /*
-    inline bool save(class CompoundTag& a0){
-        bool (FishingHook::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?save@FishingHook@@UEAA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline float getShadowRadius() const{
-        float (FishingHook::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@FishingHook@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (FishingHook::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@FishingHook@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (FishingHook::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@FishingHook@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void normalTick(){
-        void (FishingHook::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@FishingHook@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (FishingHook::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@FishingHook@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+
     MCAPI class Actor* getOwner();
     MCAPI int retrieve();
     MCAPI static float const BOBBER_SIZE;

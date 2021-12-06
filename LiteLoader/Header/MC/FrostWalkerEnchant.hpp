@@ -28,21 +28,6 @@ public:
         *((void**)&rv) = dlsym("?isTreasureOnly@FrostWalkerEnchant@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getMaxLevel() const{
-        int (FrostWalkerEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@FrostWalkerEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMaxCost(int a0) const{
-        int (FrostWalkerEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@FrostWalkerEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (FrostWalkerEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@FrostWalkerEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     */
 
 protected:

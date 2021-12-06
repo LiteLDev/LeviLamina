@@ -11,40 +11,14 @@ public:
     /*0*/ virtual ~WitherTargetHighestDamage();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool isTargetGoal() const;
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void stop();
     /*6*/ virtual void appendDebugInfo(std::string&) const;
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
-    /*
-    inline bool _canAttack(class Mob* a0, class Actor* a1, bool a2, bool a3, struct MobDescriptor const** a4){
-        bool (WitherTargetHighestDamage::*rv)(class Mob*, class Actor*, bool, bool, struct MobDescriptor const**);
-        *((void**)&rv) = dlsym("?_canAttack@WitherTargetHighestDamage@@EEAA_NPEAVMob@@PEAVActor@@_N2PEAPEBUMobDescriptor@@@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0), std::forward<class Actor*>(a1), std::forward<bool>(a2), std::forward<bool>(a3), std::forward<struct MobDescriptor const**>(a4));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (WitherTargetHighestDamage::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@WitherTargetHighestDamage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (WitherTargetHighestDamage::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@WitherTargetHighestDamage@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (WitherTargetHighestDamage::*rv)();
-        *((void**)&rv) = dlsym("?canUse@WitherTargetHighestDamage@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (WitherTargetHighestDamage::*rv)();
-        *((void**)&rv) = dlsym("?start@WitherTargetHighestDamage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*7*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
+
 
 protected:
 

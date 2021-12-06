@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~ActorFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum enum FilterGroup::CollectionType*/) const;
     /*2*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
-    /*
-    inline class std::shared_ptr<class FilterGroup> _createSubgroup(int \/*enum enum FilterGroup::CollectionType*\/ a0) const{
-        class std::shared_ptr<class FilterGroup> (ActorFilterGroup::*rv)(int \/*enum enum FilterGroup::CollectionType*\/) const;
-        *((void**)&rv) = dlsym("?_createSubgroup@ActorFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum FilterGroup::CollectionType*\/>(a0));
-    }
-    inline bool _handleUnknownMember(std::string const& a0, class Json::Value const& a1){
-        bool (ActorFilterGroup::*rv)(std::string const&, class Json::Value const&);
-        *((void**)&rv) = dlsym("?_handleUnknownMember@ActorFilterGroup@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Json::Value const&>(a1));
-    }
-    */
+
     MCAPI bool evaluateActor(class Actor const&, class VariantParameterList const&) const;
     MCAPI class ActorFilterGroup& operator=(class ActorFilterGroup const&);
     MCAPI static void initialize();

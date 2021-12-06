@@ -11,18 +11,7 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool shouldBuff(int, int) const;
     /*3*/ virtual int getTickInterval(int) const;
-    /*
-    inline int getTickInterval(int a0) const{
-        int (ShiftedDurationAmplifier::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getTickInterval@ShiftedDurationAmplifier@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool shouldBuff(int a0, int a1) const{
-        bool (ShiftedDurationAmplifier::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?shouldBuff@ShiftedDurationAmplifier@@UEBA_NHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    */
+
 
 protected:
 

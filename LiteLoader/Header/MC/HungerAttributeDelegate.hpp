@@ -11,19 +11,8 @@ public:
     /*0*/ virtual ~HungerAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    /*3*/ virtual void __unk_vfn_0();
-    /*
-    inline void notify(__int64 a0){
-        void (HungerAttributeDelegate::*rv)(__int64);
-        *((void**)&rv) = dlsym("?notify@HungerAttributeDelegate@@UEAAX_J@Z");
-        return (this->*rv)(std::forward<__int64>(a0));
-    }
-    inline void tick(){
-        void (HungerAttributeDelegate::*rv)();
-        *((void**)&rv) = dlsym("?tick@HungerAttributeDelegate@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
+
 
 protected:
 

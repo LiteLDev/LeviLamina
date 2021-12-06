@@ -12,13 +12,7 @@ public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum enum FilterGroup::CollectionType*/) const;
     /*2*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
-    /*
-    inline class std::shared_ptr<class FilterGroup> _createSubgroup(int \/*enum enum FilterGroup::CollectionType*\/ a0) const{
-        class std::shared_ptr<class FilterGroup> (BiomeFilterGroup::*rv)(int \/*enum enum FilterGroup::CollectionType*\/) const;
-        *((void**)&rv) = dlsym("?_createSubgroup@BiomeFilterGroup@@MEBA?AV?$shared_ptr@VFilterGroup@@@std@@W4CollectionType@FilterGroup@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum FilterGroup::CollectionType*\/>(a0));
-    }
-    */
+
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
 
 protected:

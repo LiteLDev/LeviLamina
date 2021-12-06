@@ -3,6 +3,7 @@
 #include "../Global.h"
 #include "PotionItem.hpp"
 #include "Json.hpp"
+#include "Potion.hpp"
 #define EXTRA_INCLUDE_PART_SPLASHPOTIONITEM
 #include "Extra/SplashPotionItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SPLASHPOTIONITEM
@@ -29,14 +30,14 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual int getAttackDamage() const;
-    /*25*/ virtual void __unk_vfn_7();
-    /*26*/ virtual void __unk_vfn_8();
-    /*27*/ virtual void __unk_vfn_9();
+    /*25*/ virtual void __unk_vfn_6();
+    /*26*/ virtual int getPatternIndex() const;
+    /*27*/ virtual void __unk_vfn_7();
     /*28*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*29*/ virtual bool canDestroyInCreative() const;
     /*30*/ virtual bool isLiquidClipItem(int) const;
@@ -47,21 +48,21 @@ public:
     /*35*/ virtual int getEnchantSlot() const;
     /*36*/ virtual int getEnchantValue() const;
     /*37*/ virtual int getArmorValue() const;
-    /*38*/ virtual void __unk_vfn_10();
-    /*39*/ virtual void __unk_vfn_11();
-    /*40*/ virtual void __unk_vfn_12();
-    /*41*/ virtual void __unk_vfn_13();
-    /*42*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_8();
+    /*39*/ virtual float getViewDamping() const;
+    /*40*/ virtual void __unk_vfn_9();
+    /*41*/ virtual void __unk_vfn_10();
+    /*42*/ virtual void __unk_vfn_11();
     /*43*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*44*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*45*/ virtual void __unk_vfn_15();
-    /*46*/ virtual void clearColor(class CompoundTag*) const;
-    /*47*/ virtual void __unk_vfn_16();
-    /*48*/ virtual void __unk_vfn_17();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
-    /*51*/ virtual void __unk_vfn_20();
-    /*52*/ virtual void __unk_vfn_21();
+    /*45*/ virtual void __unk_vfn_12();
+    /*46*/ virtual void clearColor(class ItemStackBase&) const;
+    /*47*/ virtual void clearColor(class CompoundTag*) const;
+    /*48*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*49*/ virtual void __unk_vfn_13();
+    /*50*/ virtual void __unk_vfn_14();
+    /*51*/ virtual void __unk_vfn_15();
+    /*52*/ virtual void __unk_vfn_16();
     /*53*/ virtual bool canUseOnSimTick() const;
     /*54*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*55*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
@@ -70,14 +71,14 @@ public:
     /*58*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*59*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*60*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*61*/ virtual void __unk_vfn_22();
+    /*61*/ virtual void __unk_vfn_17();
     /*62*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*63*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*64*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*65*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*66*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*67*/ virtual void __unk_vfn_23();
-    /*68*/ virtual void __unk_vfn_24();
+    /*67*/ virtual void __unk_vfn_18();
+    /*68*/ virtual void __unk_vfn_19();
     /*69*/ virtual bool validFishInteraction(int) const;
     /*70*/ virtual std::string getInteractText(class Player const&) const;
     /*71*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -86,51 +87,11 @@ public:
     /*74*/ virtual class Item& setIcon(std::string const&, int);
     /*75*/ virtual bool canBeCharged() const;
     /*76*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*77*/ virtual void __unk_vfn_25();
+    /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*
-    inline bool isThrowable() const{
-        bool (SplashPotionItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isThrowable@SplashPotionItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum Potion::PotionType*\/ getPotionType() const{
-        int \/*enum enum Potion::PotionType*\/ (SplashPotionItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getPotionType@SplashPotionItem@@UEBA?AW4PotionType@Potion@@XZ");
-        return (this->*rv)();
-    }
-    inline void appendFormattedHovertext(class ItemStackBase const& a0, class Level& a1, std::string& a2, bool a3) const{
-        void (SplashPotionItem::*rv)(class ItemStackBase const&, class Level&, std::string&, bool) const;
-        *((void**)&rv) = dlsym("?appendFormattedHovertext@SplashPotionItem@@UEBAXAEBVItemStackBase@@AEAVLevel@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class Level&>(a1), std::forward<std::string&>(a2), std::forward<bool>(a3));
-    }
-    inline std::string buildDescriptionId(class ItemDescriptor const& a0, class CompoundTag const* a1) const{
-        std::string (SplashPotionItem::*rv)(class ItemDescriptor const&, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?buildDescriptionId@SplashPotionItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class CompoundTag const*>(a1));
-    }
-    inline bool dispense(class BlockSource& a0, class Container& a1, int a2, class Vec3 const& a3, unsigned char a4) const{
-        bool (SplashPotionItem::*rv)(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?dispense@SplashPotionItem@@UEBA_NAEAVBlockSource@@AEAVContainer@@HAEBVVec3@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Container&>(a1), std::forward<int>(a2), std::forward<class Vec3 const&>(a3), std::forward<unsigned char>(a4));
-    }
-    inline struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const& a0, int a1, bool a2) const{
-        struct TextureUVCoordinateSet const& (SplashPotionItem::*rv)(class ItemStackBase const&, int, bool) const;
-        *((void**)&rv) = dlsym("?getIcon@SplashPotionItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline class Item& setIcon(std::string const& a0, int a1){
-        class Item& (SplashPotionItem::*rv)(std::string const&, int);
-        *((void**)&rv) = dlsym("?setIcon@SplashPotionItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int>(a1));
-    }
-    inline class ItemStack& use(class ItemStack& a0, class Player& a1) const{
-        class ItemStack& (SplashPotionItem::*rv)(class ItemStack&, class Player&) const;
-        *((void**)&rv) = dlsym("?use@SplashPotionItem@@UEBAAEAVItemStack@@AEAV2@AEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Player&>(a1));
-    }
-    */
+    /*80*/ virtual int /*enum enum Potion::PotionType*/ getPotionType() const;
+
 
 protected:
 

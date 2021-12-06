@@ -11,23 +11,7 @@ public:
     /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
     /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
     /*3*/ virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
-    /*
-    inline void initializeInternal(class Mob& a0, struct MoveControlDescription* a1){
-        void (MoveControl::*rv)(class Mob&, struct MoveControlDescription*);
-        *((void**)&rv) = dlsym("?initializeInternal@MoveControl@@UEAAXAEAVMob@@PEAUMoveControlDescription@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0), std::forward<struct MoveControlDescription*>(a1));
-    }
-    inline void setWantedPosition(class MoveControlComponent& a0, class Mob& a1, class Vec3 const& a2, float a3){
-        void (MoveControl::*rv)(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
-        *((void**)&rv) = dlsym("?setWantedPosition@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1), std::forward<class Vec3 const&>(a2), std::forward<float>(a3));
-    }
-    inline void tick(class MoveControlComponent& a0, class Mob& a1){
-        void (MoveControl::*rv)(class MoveControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@MoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
     MCAPI static float const MIN_DELTA_TO_JUMP;
     MCAPI static float const MIN_DELTA_TO_JUMP_UNDERWATER;
     MCAPI static float const MIN_DELTA_TO_MOVE;

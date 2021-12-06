@@ -12,23 +12,7 @@ public:
     /*1*/ virtual std::string const& getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext&) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
-    /*
-    inline void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >& a0, class BlockComponentFactory const& a1) const{
-        void (BlockExplodeableDescription::*rv)(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
-        *((void**)&rv) = dlsym("?buildSchema@BlockExplodeableDescription@@UEBAXAEAV?$shared_ptr@V?$JsonSchemaObjectNode@VEmptyClass@JsonUtil@@UBlockComponentGroupDescription@@@JsonUtil@@@std@@AEBVBlockComponentFactory@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&>(a0), std::forward<class BlockComponentFactory const&>(a1));
-    }
-    inline std::string const& getName() const{
-        std::string const& (BlockExplodeableDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@BlockExplodeableDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponent(class EntityContext& a0) const{
-        void (BlockExplodeableDescription::*rv)(class EntityContext&) const;
-        *((void**)&rv) = dlsym("?initializeComponent@BlockExplodeableDescription@@UEBAXAEAVEntityContext@@@Z");
-        return (this->*rv)(std::forward<class EntityContext&>(a0));
-    }
-    */
+
     MCAPI static std::string const NameID;
 
 protected:

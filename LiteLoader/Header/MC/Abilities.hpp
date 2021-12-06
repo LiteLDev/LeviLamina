@@ -9,7 +9,7 @@ class Abilities {
 #include "Extra/AbilitiesAPI.hpp"
 public:
     MCAPI void addSaveData(class CompoundTag&) const;
-    MCAPI void forEachAbility(class std::function<void (class Ability&, char const*)> const&, enum Ability::Options);
+    MCAPI void forEachAbility(class std::function<void (class Ability& , char const* )> const&, enum Ability::Options);
     MCAPI class Ability& getAbility(enum AbilitiesIndex);
     MCAPI class Ability const& getAbility(enum AbilitiesIndex) const;
     MCAPI bool getBool(enum AbilitiesIndex) const;
@@ -31,6 +31,6 @@ protected:
 
 private:
     MCAPI void _registerAbilities();
-    MCAPI static class std::array<char const*, 18> ABILITY_NAMES;
+    MCAPI static class std::array<char const* , 18> ABILITY_NAMES;
     MCAPI static std::string const TAG;
 };

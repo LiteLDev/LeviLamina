@@ -11,13 +11,7 @@ class SelectorDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~SelectorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (SelectorDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@SelectorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

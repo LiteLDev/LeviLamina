@@ -8,20 +8,10 @@ class RegionHillsOperationNode {
 #include "Extra/RegionHillsOperationNodeAPI.hpp"
 public:
     /*0*/ virtual ~RegionHillsOperationNode();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int) const;
-    /*
-    inline class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& a0, class Pos2d const& a1) const{
-        class std::tuple<class Pos2d, class Pos2d> (RegionHillsOperationNode::*rv)(class Pos2d const&, class Pos2d const&) const;
-        *((void**)&rv) = dlsym("?_getAreaRead@RegionHillsOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z");
-        return (this->*rv)(std::forward<class Pos2d const&>(a0), std::forward<class Pos2d const&>(a1));
-    }
-    inline void _fillArea(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>& a0, class Pos2d const& a1, class Pos2d const& a2, int a3) const{
-        void (RegionHillsOperationNode::*rv)(class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&, class Pos2d const&, class Pos2d const&, int) const;
-        *((void**)&rv) = dlsym("?_fillArea@RegionHillsOperationNode@@MEBAXAEAV?$WorkingData@PEAVBiome@@PEAV1@@OperationNodeDetails@@AEBVPos2d@@1H@Z");
-        return (this->*rv)(std::forward<class OperationNodeDetails::WorkingData<class Biome*, class Biome*>&>(a0), std::forward<class Pos2d const&>(a1), std::forward<class Pos2d const&>(a2), std::forward<int>(a3));
-    }
-    */
+    /*1*/ virtual void init(__int64);
+    /*2*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome* , class Biome* >&, class Pos2d const&, class Pos2d const&, int) const;
+    /*3*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
+
 
 protected:
 

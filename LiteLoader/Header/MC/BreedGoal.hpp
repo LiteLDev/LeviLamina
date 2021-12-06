@@ -15,33 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (BreedGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@BreedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (BreedGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BreedGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BreedGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BreedGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (BreedGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@BreedGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (BreedGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@BreedGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

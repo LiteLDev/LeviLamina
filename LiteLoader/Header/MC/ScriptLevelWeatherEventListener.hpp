@@ -16,13 +16,7 @@ public:
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_6();
     /*8*/ virtual int /*enum enum EventResult*/ onLevelWeatherChange(std::string const&, bool, bool);
-    /*
-    inline int \/*enum enum EventResult*\/ onLevelWeatherChange(std::string const& a0, bool a1, bool a2){
-        int \/*enum enum EventResult*\/ (ScriptLevelWeatherEventListener::*rv)(std::string const&, bool, bool);
-        *((void**)&rv) = dlsym("?onLevelWeatherChange@ScriptLevelWeatherEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
-    }
-    */
+
 
 protected:
 

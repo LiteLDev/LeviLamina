@@ -47,7 +47,7 @@ public:
     /*35*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*36*/ virtual void animateHurt();
     /*37*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*38*/ virtual void __unk_vfn_12();
+    /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
     /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,70 +58,34 @@ public:
     /*46*/ virtual bool canFreeze() const;
     /*47*/ virtual int getPortalWaitTime() const;
     /*48*/ virtual bool canChangeDimensions() const;
-    /*49*/ virtual void __unk_vfn_13();
+    /*49*/ virtual void __unk_vfn_12();
     /*50*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*51*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*52*/ virtual bool canBePulledIntoVehicle() const;
     /*53*/ virtual bool inCaravan() const;
-    /*54*/ virtual void __unk_vfn_14();
+    /*54*/ virtual void __unk_vfn_13();
     /*55*/ virtual bool canSynchronizeNewEntity() const;
     /*56*/ virtual void buildDebugInfo(std::string&) const;
     /*57*/ virtual int getDeathTime() const;
     /*58*/ virtual void swing();
-    /*59*/ virtual void __unk_vfn_15();
-    /*60*/ virtual void __unk_vfn_16();
+    /*59*/ virtual void __unk_vfn_14();
+    /*60*/ virtual void __unk_vfn_15();
     /*61*/ virtual float getYHeadRot() const;
     /*62*/ virtual bool isWorldBuilder() const;
-    /*63*/ virtual void __unk_vfn_17();
+    /*63*/ virtual void __unk_vfn_16();
     /*64*/ virtual bool isAdventure() const;
     /*65*/ virtual bool canDestroyBlock(class Block const&) const;
     /*66*/ virtual void setAuxValue(int);
     /*67*/ virtual void stopSpinAttack();
-    /*68*/ virtual void __unk_vfn_18();
-    /*69*/ virtual void __unk_vfn_19();
+    /*68*/ virtual void __unk_vfn_17();
+    /*69*/ virtual void __unk_vfn_18();
     /*70*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*71*/ virtual void __unk_vfn_20();
+    /*71*/ virtual void __unk_vfn_19();
     /*72*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*73*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*74*/ virtual void __unk_vfn_21();
+    /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void _onSizeUpdated();
-    /*
-    inline bool isOnFire() const{
-        bool (ShulkerBullet::*rv)() const;
-        *((void**)&rv) = dlsym("?isOnFire@ShulkerBullet@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ShulkerBullet::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ShulkerBullet@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ShulkerBullet::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ShulkerBullet@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline bool isPickable(){
-        bool (ShulkerBullet::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@ShulkerBullet@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (ShulkerBullet::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@ShulkerBullet@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (ShulkerBullet::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@ShulkerBullet@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ShulkerBullet::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ShulkerBullet@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+
 
 protected:
 

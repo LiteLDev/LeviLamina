@@ -22,90 +22,15 @@ public:
     /*12*/ virtual void tick();
     /*13*/ virtual void setPacketSender(class PacketSender*);
     /*14*/ virtual void writeToLevelStorage();
-    /*
-    inline bool isClientSide() const{
-        bool (ServerScoreboard::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@ServerScoreboard@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Objective* clearDisplayObjective(std::string const& a0){
-        class Objective* (ServerScoreboard::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?clearDisplayObjective@ServerScoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline struct ScoreboardId const& createScoreboardId(std::string const& a0){
-        struct ScoreboardId const& (ServerScoreboard::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline struct ScoreboardId const& createScoreboardId(class Actor const& a0){
-        struct ScoreboardId const& (ServerScoreboard::*rv)(class Actor const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor const&>(a0));
-    }
-    inline struct ScoreboardId const& createScoreboardId(class Player const& a0){
-        struct ScoreboardId const& (ServerScoreboard::*rv)(class Player const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
-    inline void onObjectiveAdded(class Objective const& a0){
-        void (ServerScoreboard::*rv)(class Objective const&);
-        *((void**)&rv) = dlsym("?onObjectiveAdded@ServerScoreboard@@UEAAXAEBVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective const&>(a0));
-    }
-    inline void onObjectiveRemoved(class Objective& a0){
-        void (ServerScoreboard::*rv)(class Objective&);
-        *((void**)&rv) = dlsym("?onObjectiveRemoved@ServerScoreboard@@UEAAXAEAVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective&>(a0));
-    }
-    inline void onPlayerIdentityUpdated(struct PlayerScoreboardId const& a0){
-        void (ServerScoreboard::*rv)(struct PlayerScoreboardId const&);
-        *((void**)&rv) = dlsym("?onPlayerIdentityUpdated@ServerScoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z");
-        return (this->*rv)(std::forward<struct PlayerScoreboardId const&>(a0));
-    }
-    inline void onPlayerJoined(class Player const& a0){
-        void (ServerScoreboard::*rv)(class Player const&);
-        *((void**)&rv) = dlsym("?onPlayerJoined@ServerScoreboard@@UEAAXAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
-    inline void onPlayerScoreRemoved(struct ScoreboardId const& a0, class Objective const& a1){
-        void (ServerScoreboard::*rv)(struct ScoreboardId const&, class Objective const&);
-        *((void**)&rv) = dlsym("?onPlayerScoreRemoved@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
-        return (this->*rv)(std::forward<struct ScoreboardId const&>(a0), std::forward<class Objective const&>(a1));
-    }
-    inline void onScoreChanged(struct ScoreboardId const& a0, class Objective const& a1){
-        void (ServerScoreboard::*rv)(struct ScoreboardId const&, class Objective const&);
-        *((void**)&rv) = dlsym("?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
-        return (this->*rv)(std::forward<struct ScoreboardId const&>(a0), std::forward<class Objective const&>(a1));
-    }
-    inline class DisplayObjective const* setDisplayObjective(std::string const& a0, class Objective const& a1, int \/*enum enum ObjectiveSortOrder*\/ a2){
-        class DisplayObjective const* (ServerScoreboard::*rv)(std::string const&, class Objective const&, int \/*enum enum ObjectiveSortOrder*\/);
-        *((void**)&rv) = dlsym("?setDisplayObjective@ServerScoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Objective const&>(a1), std::forward<int \/*enum enum ObjectiveSortOrder*\/>(a2));
-    }
-    inline void setPacketSender(class PacketSender* a0){
-        void (ServerScoreboard::*rv)(class PacketSender*);
-        *((void**)&rv) = dlsym("?setPacketSender@ServerScoreboard@@UEAAXPEAVPacketSender@@@Z");
-        return (this->*rv)(std::forward<class PacketSender*>(a0));
-    }
-    inline void tick(){
-        void (ServerScoreboard::*rv)();
-        *((void**)&rv) = dlsym("?tick@ServerScoreboard@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void writeToLevelStorage(){
-        void (ServerScoreboard::*rv)();
-        *((void**)&rv) = dlsym("?writeToLevelStorage@ServerScoreboard@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*15*/ virtual bool isClientSide() const;
+
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
-    MCAPI void setClearDisplayObjectiveCallback(class std::function<void (std::string const&, class DisplayObjective const&)>);
-    MCAPI void setIdentityUpdatedCallback(class std::function<void (struct ScoreboardId const&)>);
-    MCAPI void setScoreChangedCallback(class std::function<void (struct ScoreboardId const&)>);
-    MCAPI void setScoreRemovedCallback(class std::function<void (struct ScoreboardId const&)>);
-    MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const&, class DisplayObjective const&)>);
+    MCAPI void setClearDisplayObjectiveCallback(class std::function<void (std::string const& , class DisplayObjective const& )>);
+    MCAPI void setIdentityUpdatedCallback(class std::function<void (struct ScoreboardId const& )>);
+    MCAPI void setScoreChangedCallback(class std::function<void (struct ScoreboardId const& )>);
+    MCAPI void setScoreRemovedCallback(class std::function<void (struct ScoreboardId const& )>);
+    MCAPI void setSetDisplayObjectiveCallback(class std::function<void (std::string const& , class DisplayObjective const& )>);
 
 protected:
 

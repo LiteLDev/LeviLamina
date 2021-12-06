@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~XoroshiroPositionalRandomFactory();
     /*1*/ virtual std::unique_ptr<class IRandom> forBlockPos(class BlockPos const&) const;
     /*2*/ virtual std::unique_ptr<class IRandom> forString(std::string const&) const;
-    /*
-    inline std::unique_ptr<class IRandom> forBlockPos(class BlockPos const& a0) const{
-        std::unique_ptr<class IRandom> (XoroshiroPositionalRandomFactory::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?forBlockPos@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline std::unique_ptr<class IRandom> forString(std::string const& a0) const{
-        std::unique_ptr<class IRandom> (XoroshiroPositionalRandomFactory::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?forString@XoroshiroPositionalRandomFactory@@UEBA?AV?$unique_ptr@VIRandom@@U?$default_delete@VIRandom@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
     MCAPI class XoroshiroRandom forStringImpl(std::string const&) const;
 
 protected:

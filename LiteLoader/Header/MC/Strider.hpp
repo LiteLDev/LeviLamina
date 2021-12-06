@@ -36,75 +36,49 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
     /*49*/ virtual float getNextStep(float);
     /*50*/ virtual bool shouldTryMakeStepSound();
-    /*51*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual int getItemUseDuration() const;
     /*57*/ virtual float getItemUseStartupProgress() const;
     /*58*/ virtual float getItemUseIntervalProgress() const;
-    /*59*/ virtual void __unk_vfn_23();
+    /*59*/ virtual void __unk_vfn_22();
     /*60*/ virtual bool isAlliedTo(class Mob*);
-    /*61*/ virtual void __unk_vfn_24();
+    /*61*/ virtual void __unk_vfn_23();
     /*62*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*63*/ virtual void onBorn(class Actor&, class Actor&);
-    /*64*/ virtual void __unk_vfn_25();
+    /*64*/ virtual int getAttackTime();
     /*65*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*66*/ virtual void __unk_vfn_26();
+    /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
-    /*
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Strider::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Strider@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Strider::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Strider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline float getNextStep(float a0){
-        float (Strider::*rv)(float);
-        *((void**)&rv) = dlsym("?getNextStep@Strider@@MEAAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void normalTick(){
-        void (Strider::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Strider@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldTryMakeStepSound(){
-        bool (Strider::*rv)();
-        *((void**)&rv) = dlsym("?shouldTryMakeStepSound@Strider@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*68*/ virtual void __unk_vfn_25();
+
 
 protected:
 

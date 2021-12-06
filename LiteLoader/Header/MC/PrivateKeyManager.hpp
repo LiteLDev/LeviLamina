@@ -9,13 +9,7 @@ class PrivateKeyManager {
 public:
     /*0*/ virtual ~PrivateKeyManager();
     /*1*/ virtual bool isValid() const;
-    /*
-    inline bool isValid() const{
-        bool (PrivateKeyManager::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@PrivateKeyManager@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI std::string computeSecret(class KeyManager const&) const;
 
 protected:

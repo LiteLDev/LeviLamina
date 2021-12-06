@@ -37,74 +37,48 @@ public:
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
     /*51*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*52*/ virtual void __unk_vfn_21();
+    /*52*/ virtual void __unk_vfn_20();
     /*53*/ virtual void _onSizeUpdated();
-    /*54*/ virtual void __unk_vfn_22();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual int getItemUseDuration() const;
     /*57*/ virtual float getItemUseStartupProgress() const;
     /*58*/ virtual float getItemUseIntervalProgress() const;
-    /*59*/ virtual void __unk_vfn_23();
+    /*59*/ virtual void __unk_vfn_22();
     /*60*/ virtual bool isAlliedTo(class Mob*);
-    /*61*/ virtual void __unk_vfn_24();
+    /*61*/ virtual void __unk_vfn_23();
     /*62*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*63*/ virtual void onBorn(class Actor&, class Actor&);
-    /*64*/ virtual void __unk_vfn_25();
+    /*64*/ virtual int getAttackTime();
     /*65*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*66*/ virtual void __unk_vfn_26();
+    /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
-    /*
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Animal::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Animal@@MEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Animal::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Animal@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (Animal::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Animal@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Animal::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Animal@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Animal::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Animal@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+    /*68*/ virtual void __unk_vfn_25();
+
 
 protected:
 

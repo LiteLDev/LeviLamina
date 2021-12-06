@@ -9,13 +9,7 @@ class LegacyBodyControl {
 public:
     /*0*/ virtual ~LegacyBodyControl();
     /*1*/ virtual void clientTick(class Mob&);
-    /*
-    inline void clientTick(class Mob& a0){
-        void (LegacyBodyControl::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?clientTick@LegacyBodyControl@@UEAAXAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+
 
 protected:
 

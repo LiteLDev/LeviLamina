@@ -30,11 +30,6 @@ public:
         *((void**)&rv) = dlsym("?canItemMoveToContainer@CreatedOutputContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
-    inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
-        bool (CreatedOutputContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@CreatedOutputContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class Container const&>(a1), std::forward<int>(a2));
-    }
     */
 
 protected:

@@ -147,8 +147,8 @@ public:    /*
         *((void**)&rv) = dlsym("?getPlatformTTSEnabled@AppPlatform_win32@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline class std::variant<struct HWND__*, struct std::monostate> getRenderSurfaceParameters() const{
-        class std::variant<struct HWND__*, struct std::monostate> (AppPlatform_win32::*rv)() const;
+    inline class std::variant<struct HWND__* , struct std::monostate> getRenderSurfaceParameters() const{
+        class std::variant<struct HWND__* , struct std::monostate> (AppPlatform_win32::*rv)() const;
         *((void**)&rv) = dlsym("?getRenderSurfaceParameters@AppPlatform_win32@@UEBA?AV?$variant@PEAUHWND__@@Umonostate@std@@@std@@XZ");
         return (this->*rv)();
     }

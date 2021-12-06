@@ -9,37 +9,16 @@ class BeaconContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/BeaconContainerManagerModelAPI.hpp"
 public:
     /*0*/ virtual ~BeaconContainerManagerModel();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
+    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
     /*8*/ virtual void setData(int, int);
     /*9*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline class ContainerScreenContext _postInit(){
-        class ContainerScreenContext (BeaconContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?_postInit@BeaconContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ");
-        return (this->*rv)();
-    }
-    inline std::vector<class ItemStack> getItemCopies() const{
-        std::vector<class ItemStack> (BeaconContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemCopies@BeaconContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class ItemStack const& getSlot(int a0) const{
-        class ItemStack const& (BeaconContainerManagerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getSlot@BeaconContainerManagerModel@@UEBAAEBVItemStack@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void setSlot(int a0, class ItemStack const& a1, bool a2){
-        void (BeaconContainerManagerModel::*rv)(int, class ItemStack const&, bool);
-        *((void**)&rv) = dlsym("?setSlot@BeaconContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<bool>(a2));
-    }
-    */
+
     MCAPI static int const PAYMENT_SLOT;
 
 protected:

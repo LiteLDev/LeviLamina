@@ -155,6 +155,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\EventAPI.h" />
+    <ClInclude Include="Header\MC\Extra\AutomationAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ByteArrayTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\ByteTagAPI.hpp" />
     <ClInclude Include="Header\MC\Extra\CommandMessageAPI.hpp" />

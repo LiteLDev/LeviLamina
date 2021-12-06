@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (EatCarriedItemGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@EatCarriedItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (EatCarriedItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@EatCarriedItemGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (EatCarriedItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@EatCarriedItemGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (EatCarriedItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@EatCarriedItemGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (EatCarriedItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@EatCarriedItemGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (EatCarriedItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@EatCarriedItemGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

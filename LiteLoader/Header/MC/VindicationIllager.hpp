@@ -34,48 +34,48 @@ public:
     /*22*/ virtual void onFailedTame();
     /*23*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*24*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*25*/ virtual void __unk_vfn_12();
+    /*25*/ virtual float getPickRadius();
     /*26*/ virtual void awardKillScore(class Actor&, int);
     /*27*/ virtual class HashedString const& queryEntityRenderer() const;
     /*28*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*29*/ virtual int getPortalWaitTime() const;
     /*30*/ virtual bool canChangeDimensions() const;
-    /*31*/ virtual void __unk_vfn_13();
+    /*31*/ virtual void __unk_vfn_12();
     /*32*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*33*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*34*/ virtual bool canBePulledIntoVehicle() const;
-    /*35*/ virtual void __unk_vfn_14();
+    /*35*/ virtual void __unk_vfn_13();
     /*36*/ virtual bool canSynchronizeNewEntity() const;
-    /*37*/ virtual void __unk_vfn_15();
-    /*38*/ virtual void __unk_vfn_16();
+    /*37*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_15();
     /*39*/ virtual bool isWorldBuilder() const;
-    /*40*/ virtual void __unk_vfn_17();
+    /*40*/ virtual void __unk_vfn_16();
     /*41*/ virtual bool isAdventure() const;
     /*42*/ virtual bool canDestroyBlock(class Block const&) const;
     /*43*/ virtual void setAuxValue(int);
     /*44*/ virtual void stopSpinAttack();
-    /*45*/ virtual void __unk_vfn_18();
-    /*46*/ virtual void __unk_vfn_19();
-    /*47*/ virtual void __unk_vfn_20();
+    /*45*/ virtual void __unk_vfn_17();
+    /*46*/ virtual void __unk_vfn_18();
+    /*47*/ virtual void __unk_vfn_19();
     /*48*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*49*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*50*/ virtual void __unk_vfn_21();
-    /*51*/ virtual void __unk_vfn_22();
+    /*50*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_21();
     /*52*/ virtual void spawnAnim();
     /*53*/ virtual void aiStep();
     /*54*/ virtual bool checkSpawnRules(bool);
     /*55*/ virtual float getItemUseStartupProgress() const;
     /*56*/ virtual float getItemUseIntervalProgress() const;
-    /*57*/ virtual void __unk_vfn_23();
+    /*57*/ virtual void __unk_vfn_22();
     /*58*/ virtual bool isAlliedTo(class Mob*);
-    /*59*/ virtual void __unk_vfn_24();
+    /*59*/ virtual void __unk_vfn_23();
     /*60*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*61*/ virtual void onBorn(class Actor&, class Actor&);
-    /*62*/ virtual void __unk_vfn_25();
+    /*62*/ virtual int getAttackTime();
     /*63*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*64*/ virtual void __unk_vfn_26();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
+    /*66*/ virtual void __unk_vfn_25();
     /*
     inline bool canExistInPeaceful() const{
         bool (VindicationIllager::*rv)() const;
@@ -85,16 +85,6 @@ public:
     inline bool useNewAi() const{
         bool (VindicationIllager::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@VindicationIllager@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (VindicationIllager::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@VindicationIllager@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline float getRidingHeight(){
-        float (VindicationIllager::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@VindicationIllager@@UEAAMXZ");
         return (this->*rv)();
     }
     */

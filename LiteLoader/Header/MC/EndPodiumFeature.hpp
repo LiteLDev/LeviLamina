@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~EndPodiumFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    /*
-    inline bool place(class BlockSource& a0, class BlockPos const& a1, class Random& a2) const{
-        bool (EndPodiumFeature::*rv)(class BlockSource&, class BlockPos const&, class Random&) const;
-        *((void**)&rv) = dlsym("?place@EndPodiumFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
-    }
-    */
+
     MCAPI static float const CORNER_ROUNDING;
     MCAPI static class BlockPos const END_PODIUM_CHUNK_POSITION;
     MCAPI static class BlockPos const END_PODIUM_LOCATION;

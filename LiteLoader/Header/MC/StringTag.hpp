@@ -13,47 +13,11 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;
-    /*
-    inline int \/*enum enum Tag::Type*\/ getId() const{
-        int \/*enum enum Tag::Type*\/ (StringTag::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@StringTag@@UEBA?AW4Type@Tag@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class Tag> copy() const{
-        std::unique_ptr<class Tag> (StringTag::*rv)() const;
-        *((void**)&rv) = dlsym("?copy@StringTag@@UEBA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline bool equals(class Tag const& a0) const{
-        bool (StringTag::*rv)(class Tag const&) const;
-        *((void**)&rv) = dlsym("?equals@StringTag@@UEBA_NAEBVTag@@@Z");
-        return (this->*rv)(std::forward<class Tag const&>(a0));
-    }
-    inline unsigned __int64 hash() const{
-        unsigned __int64 (StringTag::*rv)() const;
-        *((void**)&rv) = dlsym("?hash@StringTag@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline void load(class IDataInput& a0){
-        void (StringTag::*rv)(class IDataInput&);
-        *((void**)&rv) = dlsym("?load@StringTag@@UEAAXAEAVIDataInput@@@Z");
-        return (this->*rv)(std::forward<class IDataInput&>(a0));
-    }
-    inline std::string toString() const{
-        std::string (StringTag::*rv)() const;
-        *((void**)&rv) = dlsym("?toString@StringTag@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void write(class IDataOutput& a0) const{
-        void (StringTag::*rv)(class IDataOutput&) const;
-        *((void**)&rv) = dlsym("?write@StringTag@@UEBAXAEAVIDataOutput@@@Z");
-        return (this->*rv)(std::forward<class IDataOutput&>(a0));
-    }
-    */
+
 
 protected:
 

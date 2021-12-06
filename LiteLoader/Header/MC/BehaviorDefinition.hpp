@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~BehaviorDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
     /*2*/ virtual std::unique_ptr<class BehaviorNode> createNode(class Actor&, class BehaviorFactory const&, class BehaviorNode*, class BehaviorData*) const;
-    /*
-    inline std::unique_ptr<class BehaviorNode> createNode(class Actor& a0, class BehaviorFactory const& a1, class BehaviorNode* a2, class BehaviorData* a3) const{
-        std::unique_ptr<class BehaviorNode> (BehaviorDefinition::*rv)(class Actor&, class BehaviorFactory const&, class BehaviorNode*, class BehaviorData*) const;
-        *((void**)&rv) = dlsym("?createNode@BehaviorDefinition@@UEBA?AV?$unique_ptr@VBehaviorNode@@U?$default_delete@VBehaviorNode@@@std@@@std@@AEAVActor@@AEBVBehaviorFactory@@PEAVBehaviorNode@@PEAVBehaviorData@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class BehaviorFactory const&>(a1), std::forward<class BehaviorNode*>(a2), std::forward<class BehaviorData*>(a3));
-    }
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (BehaviorDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@BehaviorDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

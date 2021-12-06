@@ -8,13 +8,8 @@ class NullPreliminarySurfaceProvider {
 #include "Extra/NullPreliminarySurfaceProviderAPI.hpp"
 public:
     /*0*/ virtual ~NullPreliminarySurfaceProvider();
-    /*
-    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
-        class std::optional<short> (NullPreliminarySurfaceProvider::*rv)(class DividedPos2d<4>) const;
-        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@NullPreliminarySurfaceProvider@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
-        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
-    }
-    */
+    /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
+
 
 protected:
 

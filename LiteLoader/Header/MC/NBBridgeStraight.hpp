@@ -15,23 +15,7 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
-    /*
-    inline void addChildren(class StructurePiece& a0, std::vector<std::unique_ptr<class StructurePiece>>& a1, class Random& a2){
-        void (NBBridgeStraight::*rv)(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-        *((void**)&rv) = dlsym("?addChildren@NBBridgeStraight@@UEAAXAEAVStructurePiece@@AEAV?$vector@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@V?$allocator@V?$unique_ptr@VStructurePiece@@U?$default_delete@VStructurePiece@@@std@@@std@@@2@@std@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class StructurePiece&>(a0), std::forward<std::vector<std::unique_ptr<class StructurePiece>>&>(a1), std::forward<class Random&>(a2));
-    }
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (NBBridgeStraight::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@NBBridgeStraight@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (NBBridgeStraight::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@NBBridgeStraight@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+
 
 protected:
 

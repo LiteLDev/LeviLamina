@@ -10,13 +10,7 @@ class ScriptServerWeatherEventData {
 public:
     /*0*/ virtual ~ScriptServerWeatherEventData();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerWeatherEventData::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerWeatherEventData@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setDimension(std::string const&);
     MCAPI void setLightning(bool);
     MCAPI void setRaining(bool);

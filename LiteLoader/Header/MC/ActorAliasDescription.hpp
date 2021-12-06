@@ -10,13 +10,7 @@ class ActorAliasDescription {
 public:
     /*0*/ virtual ~ActorAliasDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (ActorAliasDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@ActorAliasDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void parse(class Json::Value&, bool);
 
 protected:

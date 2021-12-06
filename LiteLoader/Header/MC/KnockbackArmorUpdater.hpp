@@ -29,13 +29,7 @@ public:
     /*19*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_19();
     /*21*/ virtual int /*enum enum EventResult*/ onActorEquippedArmor(class Actor&, class ItemInstance const&, int /*enum enum ArmorSlot*/);
-    /*
-    inline int \/*enum enum EventResult*\/ onActorEquippedArmor(class Actor& a0, class ItemInstance const& a1, int \/*enum enum ArmorSlot*\/ a2){
-        int \/*enum enum EventResult*\/ (KnockbackArmorUpdater::*rv)(class Actor&, class ItemInstance const&, int \/*enum enum ArmorSlot*\/);
-        *((void**)&rv) = dlsym("?onActorEquippedArmor@KnockbackArmorUpdater@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemInstance@@W4ArmorSlot@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemInstance const&>(a1), std::forward<int \/*enum enum ArmorSlot*\/>(a2));
-    }
-    */
+
 
 protected:
 

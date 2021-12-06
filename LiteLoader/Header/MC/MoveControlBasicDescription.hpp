@@ -10,13 +10,7 @@ class MoveControlBasicDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~MoveControlBasicDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (MoveControlBasicDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@MoveControlBasicDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

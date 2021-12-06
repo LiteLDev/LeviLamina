@@ -49,7 +49,7 @@ public:
     /*37*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*38*/ virtual void animateHurt();
     /*39*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*40*/ virtual void __unk_vfn_12();
+    /*40*/ virtual float getPickRadius();
     /*41*/ virtual void awardKillScore(class Actor&, int);
     /*42*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*43*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -60,96 +60,40 @@ public:
     /*48*/ virtual bool canFreeze() const;
     /*49*/ virtual int getPortalWaitTime() const;
     /*50*/ virtual bool canChangeDimensions() const;
-    /*51*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_12();
     /*52*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*53*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*54*/ virtual bool canBePulledIntoVehicle() const;
     /*55*/ virtual bool inCaravan() const;
-    /*56*/ virtual void __unk_vfn_14();
+    /*56*/ virtual void __unk_vfn_13();
     /*57*/ virtual bool canSynchronizeNewEntity() const;
     /*58*/ virtual void buildDebugInfo(std::string&) const;
     /*59*/ virtual int getDeathTime() const;
     /*60*/ virtual void swing();
-    /*61*/ virtual void __unk_vfn_15();
-    /*62*/ virtual void __unk_vfn_16();
+    /*61*/ virtual void __unk_vfn_14();
+    /*62*/ virtual void __unk_vfn_15();
     /*63*/ virtual float getYHeadRot() const;
     /*64*/ virtual bool isWorldBuilder() const;
-    /*65*/ virtual void __unk_vfn_17();
+    /*65*/ virtual void __unk_vfn_16();
     /*66*/ virtual bool isAdventure() const;
     /*67*/ virtual bool canDestroyBlock(class Block const&) const;
     /*68*/ virtual void setAuxValue(int);
     /*69*/ virtual void setSize(float, float);
     /*70*/ virtual void stopSpinAttack();
-    /*71*/ virtual void __unk_vfn_18();
-    /*72*/ virtual void __unk_vfn_19();
+    /*71*/ virtual void __unk_vfn_17();
+    /*72*/ virtual void __unk_vfn_18();
     /*73*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*74*/ virtual void __unk_vfn_20();
+    /*74*/ virtual void __unk_vfn_19();
     /*75*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*77*/ virtual void __unk_vfn_21();
+    /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
-    /*79*/ virtual void __unk_vfn_22();
+    /*79*/ virtual void __unk_vfn_21();
     /*80*/ virtual int getWidth() const;
     /*81*/ virtual int getHeight() const;
     /*82*/ virtual void dropItem();
     /*83*/ virtual bool placeHangingEntity(class BlockSource&, int);
-    /*
-    inline bool isPickable(){
-        bool (Painting::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Painting@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Painting::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Painting@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Painting::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Painting@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void dropItem(){
-        void (Painting::*rv)();
-        *((void**)&rv) = dlsym("?dropItem@Painting@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline int getHeight() const{
-        int (Painting::*rv)() const;
-        *((void**)&rv) = dlsym("?getHeight@Painting@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getWidth() const{
-        int (Painting::*rv)() const;
-        *((void**)&rv) = dlsym("?getWidth@Painting@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool placeHangingEntity(class BlockSource& a0, int a1){
-        bool (Painting::*rv)(class BlockSource&, int);
-        *((void**)&rv) = dlsym("?placeHangingEntity@Painting@@UEAA_NAEAVBlockSource@@H@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Painting::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Painting@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void remove(){
-        void (Painting::*rv)();
-        *((void**)&rv) = dlsym("?remove@Painting@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setPos(class Vec3 const& a0){
-        void (Painting::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setPos@Painting@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket(){
-        std::unique_ptr<class AddActorBasePacket> (Painting::*rv)();
-        *((void**)&rv) = dlsym("?tryCreateAddActorPacket@Painting@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI class Motive const& getCurrentMotive() const;
 
 protected:

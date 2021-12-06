@@ -9,13 +9,7 @@ class LevelDbRandomAccessFile {
 public:
     /*0*/ virtual ~LevelDbRandomAccessFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
-    /*
-    inline class leveldb::Status Read(unsigned __int64 a0, unsigned __int64 a1, class leveldb::Slice* a2, char* a3) const{
-        class leveldb::Status (LevelDbRandomAccessFile::*rv)(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
-        *((void**)&rv) = dlsym("?Read@LevelDbRandomAccessFile@@UEBA?AVStatus@leveldb@@_K0PEAVSlice@3@PEAD@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<unsigned __int64>(a1), std::forward<class leveldb::Slice*>(a2), std::forward<char*>(a3));
-    }
-    */
+
 
 protected:
 

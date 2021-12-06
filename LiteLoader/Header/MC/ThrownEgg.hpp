@@ -46,7 +46,7 @@ public:
     /*34*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*35*/ virtual void animateHurt();
     /*36*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*37*/ virtual void __unk_vfn_12();
+    /*37*/ virtual float getPickRadius();
     /*38*/ virtual void awardKillScore(class Actor&, int);
     /*39*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*40*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -56,41 +56,36 @@ public:
     /*44*/ virtual bool canFreeze() const;
     /*45*/ virtual int getPortalWaitTime() const;
     /*46*/ virtual bool canChangeDimensions() const;
-    /*47*/ virtual void __unk_vfn_13();
+    /*47*/ virtual void __unk_vfn_12();
     /*48*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*49*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*50*/ virtual bool canBePulledIntoVehicle() const;
     /*51*/ virtual bool inCaravan() const;
-    /*52*/ virtual void __unk_vfn_14();
+    /*52*/ virtual void __unk_vfn_13();
     /*53*/ virtual bool canSynchronizeNewEntity() const;
     /*54*/ virtual void buildDebugInfo(std::string&) const;
     /*55*/ virtual int getDeathTime() const;
     /*56*/ virtual void swing();
-    /*57*/ virtual void __unk_vfn_15();
-    /*58*/ virtual void __unk_vfn_16();
+    /*57*/ virtual void __unk_vfn_14();
+    /*58*/ virtual void __unk_vfn_15();
     /*59*/ virtual float getYHeadRot() const;
     /*60*/ virtual bool isWorldBuilder() const;
-    /*61*/ virtual void __unk_vfn_17();
+    /*61*/ virtual void __unk_vfn_16();
     /*62*/ virtual bool isAdventure() const;
     /*63*/ virtual bool canDestroyBlock(class Block const&) const;
     /*64*/ virtual void setAuxValue(int);
     /*65*/ virtual void stopSpinAttack();
-    /*66*/ virtual void __unk_vfn_18();
-    /*67*/ virtual void __unk_vfn_19();
+    /*66*/ virtual void __unk_vfn_17();
+    /*67*/ virtual void __unk_vfn_18();
     /*68*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*69*/ virtual void __unk_vfn_20();
-    /*70*/ virtual void __unk_vfn_21();
+    /*69*/ virtual void __unk_vfn_19();
+    /*70*/ virtual void __unk_vfn_20();
     /*71*/ virtual void _onSizeUpdated();
-    /*72*/ virtual void __unk_vfn_22();
-    /*73*/ virtual void __unk_vfn_23();
+    /*72*/ virtual void __unk_vfn_21();
+    /*73*/ virtual void __unk_vfn_22();
     /*74*/ virtual float getThrowUpAngleOffset();
-    /*
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ThrownEgg::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ThrownEgg@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+    /*75*/ virtual int /*enum enum ParticleType*/ getParticleType();
+
 
 protected:
 

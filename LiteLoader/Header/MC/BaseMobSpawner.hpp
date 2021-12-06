@@ -12,23 +12,7 @@ public:
     /*2*/ virtual void load(class CompoundTag const&);
     /*3*/ virtual void save(class CompoundTag&);
     /*4*/ virtual class BlockPos const& getPos() = 0;
-    /*
-    inline void load(class CompoundTag const& a0){
-        void (BaseMobSpawner::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?load@BaseMobSpawner@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    inline void save(class CompoundTag& a0){
-        void (BaseMobSpawner::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?save@BaseMobSpawner@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void tick(class BlockSource& a0){
-        void (BaseMobSpawner::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?tick@BaseMobSpawner@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
+
     MCAPI class Mob* getDisplayEntity(class BlockSource&);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
 

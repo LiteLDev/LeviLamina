@@ -13,6 +13,8 @@ public:
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
+    /*6*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
     /*
     inline void onAreaChanged(class BlockSource& a0, class BlockPos const& a1, class BlockPos const& a2){
         void (BlockSourceListener::*rv)(class BlockSource&, class BlockPos const&, class BlockPos const&);
@@ -39,25 +41,10 @@ public:
         *((void**)&rv) = dlsym("?onSourceCreated@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
-    inline void onSourceDestroyed(class BlockSource& a0){
-        void (BlockSourceListener::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onSourceDestroyed@BlockSourceListener@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
     inline void onBlockEvent(class BlockSource& a0, int a1, int a2, int a3, int a4, int a5){
         void (BlockSourceListener::*rv)(class BlockSource&, int, int, int, int, int);
         *((void**)&rv) = dlsym("?onBlockEvent@BlockSourceListener@@UEAAXAEAVBlockSource@@HHHHH@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5));
-    }
-    inline void onBlockEntityAboutToBeRemoved(class BlockSource& a0, class std::shared_ptr<class BlockActor> a1){
-        void (BlockSourceListener::*rv)(class BlockSource&, class std::shared_ptr<class BlockActor>);
-        *((void**)&rv) = dlsym("?onBlockEntityAboutToBeRemoved@BlockSourceListener@@UEAAXAEAVBlockSource@@V?$shared_ptr@VBlockActor@@@std@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class std::shared_ptr<class BlockActor>>(a1));
-    }
-    inline void onBrightnessChanged(class BlockSource& a0, class BlockPos const& a1){
-        void (BlockSourceListener::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?onBrightnessChanged@BlockSourceListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
     }
     */
 

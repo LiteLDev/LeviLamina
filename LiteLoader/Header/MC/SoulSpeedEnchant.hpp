@@ -33,21 +33,6 @@ public:
         *((void**)&rv) = dlsym("?isTreasureOnly@SoulSpeedEnchant@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getMaxLevel() const{
-        int (SoulSpeedEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@SoulSpeedEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMaxCost(int a0) const{
-        int (SoulSpeedEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@SoulSpeedEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (SoulSpeedEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@SoulSpeedEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     */
     MCAPI static class mce::UUID const SOUL_SPEED_BOOST_UUID;
     MCAPI static int getLevel(class Actor const&);

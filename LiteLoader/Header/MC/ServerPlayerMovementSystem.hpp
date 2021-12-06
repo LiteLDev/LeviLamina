@@ -10,15 +10,9 @@ public:
     /*0*/ virtual ~ServerPlayerMovementSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
-    /*
-    inline void tick(class EntityRegistry& a0){
-        void (ServerPlayerMovementSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@ServerPlayerMovementSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    */
-    MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void (class InventoryTransactionPacket&)> const&);
-    MCAPI static void _tickPlayerMovement(struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class std::function<void (class PlayerAuthInputPacket const&)> const&);
+
+    MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void (class InventoryTransactionPacket& )> const&);
+    MCAPI static void _tickPlayerMovement(struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class std::function<void (class PlayerAuthInputPacket const& )> const&);
     MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
 
 protected:

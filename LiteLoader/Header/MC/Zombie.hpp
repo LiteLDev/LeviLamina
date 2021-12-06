@@ -35,78 +35,58 @@ public:
     /*23*/ virtual void onFailedTame();
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*26*/ virtual void __unk_vfn_12();
+    /*26*/ virtual float getPickRadius();
     /*27*/ virtual void awardKillScore(class Actor&, int);
     /*28*/ virtual class HashedString const& queryEntityRenderer() const;
     /*29*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*30*/ virtual int getPortalWaitTime() const;
     /*31*/ virtual bool canChangeDimensions() const;
-    /*32*/ virtual void __unk_vfn_13();
+    /*32*/ virtual void __unk_vfn_12();
     /*33*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*34*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*35*/ virtual bool canBePulledIntoVehicle() const;
-    /*36*/ virtual void __unk_vfn_14();
+    /*36*/ virtual void __unk_vfn_13();
     /*37*/ virtual bool canSynchronizeNewEntity() const;
-    /*38*/ virtual void __unk_vfn_15();
-    /*39*/ virtual void __unk_vfn_16();
+    /*38*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_15();
     /*40*/ virtual bool isWorldBuilder() const;
-    /*41*/ virtual void __unk_vfn_17();
+    /*41*/ virtual void __unk_vfn_16();
     /*42*/ virtual bool isAdventure() const;
     /*43*/ virtual bool canDestroyBlock(class Block const&) const;
     /*44*/ virtual void setAuxValue(int);
     /*45*/ virtual void stopSpinAttack();
-    /*46*/ virtual void __unk_vfn_18();
-    /*47*/ virtual void __unk_vfn_19();
-    /*48*/ virtual void __unk_vfn_20();
+    /*46*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_18();
+    /*48*/ virtual void __unk_vfn_19();
     /*49*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*50*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual void aiStep();
     /*55*/ virtual bool checkSpawnRules(bool);
     /*56*/ virtual float getItemUseStartupProgress() const;
     /*57*/ virtual float getItemUseIntervalProgress() const;
-    /*58*/ virtual void __unk_vfn_23();
+    /*58*/ virtual void __unk_vfn_22();
     /*59*/ virtual bool isAlliedTo(class Mob*);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual int getArmorValue();
     /*62*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*63*/ virtual void onBorn(class Actor&, class Actor&);
-    /*64*/ virtual void __unk_vfn_25();
-    /*65*/ virtual void __unk_vfn_26();
+    /*64*/ virtual int getAttackTime();
+    /*65*/ virtual void __unk_vfn_24();
     /*66*/ virtual void _serverAiMobStep();
-    /*67*/ virtual void __unk_vfn_27();
+    /*67*/ virtual void __unk_vfn_25();
     /*
     inline bool useNewAi() const{
         bool (Zombie::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Zombie@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canPickupItem(class ItemStack const& a0) const{
-        bool (Zombie::*rv)(class ItemStack const&) const;
-        *((void**)&rv) = dlsym("?canPickupItem@Zombie@@UEBA_NAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Zombie::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Zombie@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
     inline int getArmorValue(){
         int (Zombie::*rv)();
         *((void**)&rv) = dlsym("?getArmorValue@Zombie@@MEAAHXZ");
         return (this->*rv)();
-    }
-    inline float getRidingHeight(){
-        float (Zombie::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@Zombie@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Zombie::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Zombie@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
     MCAPI void setZombieType(enum Zombie::ZombieType);

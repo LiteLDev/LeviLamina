@@ -10,23 +10,12 @@ class OwnerHurtByTargetGoal : public TargetGoal {
 public:
     /*0*/ virtual ~OwnerHurtByTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual bool isTargetGoal() const;
     /*3*/ virtual void start();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*
-    inline bool canUse(){
-        bool (OwnerHurtByTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@OwnerHurtByTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (OwnerHurtByTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@OwnerHurtByTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*4*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
+
 
 protected:
 

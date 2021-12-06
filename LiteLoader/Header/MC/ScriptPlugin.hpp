@@ -9,13 +9,7 @@ class ScriptPlugin {
 public:
     /*0*/ virtual ~ScriptPlugin();
     /*1*/ virtual class std::optional<std::string > onLoadScript(std::string const&);
-    /*
-    inline class std::optional<std::string > onLoadScript(std::string const& a0){
-        class std::optional<std::string > (ScriptPlugin::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?onLoadScript@ScriptPlugin@@UEAA?AV?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
     MCAPI bool hasErrors() const;
     MCAPI std::vector<std::string> reportErrors() const;
 

@@ -17,34 +17,8 @@ public:
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*8*/ virtual void _moveToBlock();
-    /*9*/ virtual void __unk_vfn_3();
-    /*
-    inline void _moveToBlock(){
-        void (MoveToLandGoal::*rv)();
-        *((void**)&rv) = dlsym("?_moveToBlock@MoveToLandGoal@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveToLandGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveToLandGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MoveToLandGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MoveToLandGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MoveToLandGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveToLandGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (MoveToLandGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@MoveToLandGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    */
+    /*9*/ virtual unsigned __int64 _getRepathTime() const;
+
 
 protected:
 

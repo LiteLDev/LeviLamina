@@ -11,13 +11,7 @@ class RepeatUntilSuccessDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~RepeatUntilSuccessDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (RepeatUntilSuccessDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@RepeatUntilSuccessDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

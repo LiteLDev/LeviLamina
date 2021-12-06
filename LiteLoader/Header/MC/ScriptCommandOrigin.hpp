@@ -25,83 +25,12 @@ public:
     /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
-    /*16*/ virtual void __unk_vfn_0();
-    /*17*/ virtual void __unk_vfn_1();
-    /*18*/ virtual void __unk_vfn_2();
+    /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*17*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual bool isValid() const;
-    /*
-    inline class Actor* getEntity() const{
-        class Actor* (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@ScriptCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@ScriptCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@ScriptCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@ScriptCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@ScriptCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@ScriptCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@ScriptCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@ScriptCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@ScriptCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@ScriptCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@ScriptCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleCommandOutputCallback(class Json::Value&& a0) const{
-        void (ScriptCommandOrigin::*rv)(class Json::Value&&) const;
-        *((void**)&rv) = dlsym("?handleCommandOutputCallback@ScriptCommandOrigin@@UEBAX$$QEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&&>(a0));
-    }
-    inline bool isValid() const{
-        bool (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@ScriptCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

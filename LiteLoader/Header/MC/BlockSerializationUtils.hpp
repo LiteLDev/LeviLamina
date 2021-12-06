@@ -7,5 +7,5 @@
 namespace BlockSerializationUtils {
 #include "Extra/BlockSerializationUtilsAPI.hpp"
     MCAPI void clearNBTToBlockCache();
-    MCAPI struct std::pair<enum BlockSerializationUtils::NBTState, class Block const*> tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*);
+    MCAPI struct std::pair<enum BlockSerializationUtils::NBTState, class Block const* > tryGetBlockFromNBT(class CompoundTag const&, struct BlockSerializationUtils::NbtToBlockCache*);
 };

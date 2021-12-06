@@ -31,4 +31,5 @@ protected:
     MCAPI void taskComplete();
 
 private:
+    MCAPI static class BackgroundTaskBase* gCurrentTask;
 };

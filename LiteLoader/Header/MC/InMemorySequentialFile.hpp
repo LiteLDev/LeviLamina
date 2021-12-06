@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~InMemorySequentialFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
-    /*
-    inline class leveldb::Status Read(unsigned __int64 a0, class leveldb::Slice* a1, char* a2){
-        class leveldb::Status (InMemorySequentialFile::*rv)(unsigned __int64, class leveldb::Slice*, char*);
-        *((void**)&rv) = dlsym("?Read@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_KPEAVSlice@3@PEAD@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<class leveldb::Slice*>(a1), std::forward<char*>(a2));
-    }
-    inline class leveldb::Status Skip(unsigned __int64 a0){
-        class leveldb::Status (InMemorySequentialFile::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?Skip@InMemorySequentialFile@@UEAA?AVStatus@leveldb@@_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    */
+
 
 protected:
 

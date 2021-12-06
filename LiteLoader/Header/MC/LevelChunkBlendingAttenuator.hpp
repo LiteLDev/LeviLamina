@@ -9,7 +9,7 @@ class LevelChunkBlendingAttenuator {
 public:
     MCAPI struct std::pair<float, float> attenuateOffsetAndFactor(class DividedPos2d<4> const&, short, float, float, class PerlinSimplexNoise const&);
     MCAPI static void adjustHeightAttenuationFactors(class std::array<class std::array<struct LevelChunkBlendingAttenuator::HeightAttenuationData, 2>, 2>&, class std::array<class std::array<struct LevelChunkBlendingAttenuator::CornerDepthData, 2>, 2>&, class ChunkPos const&, class std::array<class std::array<class Vec2, 2>, 2> const&, float);
-    MCAPI static class std::optional<class std::array<class std::array<struct LevelChunkBlendingAttenuator::HeightAttenuationData, 2>, 2> > determineHeightAttenuationFactors(class ChunkPos const&, class std::function<class std::tuple<bool, float> (class ChunkPos const&)>);
+    MCAPI static class std::optional<class std::array<class std::array<struct LevelChunkBlendingAttenuator::HeightAttenuationData, 2>, 2> > determineHeightAttenuationFactors(class ChunkPos const&, class std::function<class std::tuple<bool, float> (class ChunkPos const& )>);
 
 protected:
 

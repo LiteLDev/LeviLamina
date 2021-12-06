@@ -19,44 +19,8 @@ public:
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*11*/ virtual void __unk_vfn_3();
-    /*
-    inline void stop(){
-        void (HarvestFarmBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@HarvestFarmBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (HarvestFarmBlockGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@HarvestFarmBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (HarvestFarmBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@HarvestFarmBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (HarvestFarmBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@HarvestFarmBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (HarvestFarmBlockGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@HarvestFarmBlockGoal@@MEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void start(){
-        void (HarvestFarmBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@HarvestFarmBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (HarvestFarmBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@HarvestFarmBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
+
 
 protected:
     MCAPI bool trySowCrop(class BlockSource&, class BlockPos const&);

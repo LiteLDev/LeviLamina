@@ -7,7 +7,7 @@
 class CommandSelectorBase {
 #include "Extra/CommandSelectorBaseAPI.hpp"
 public:
-    MCAPI void addFilter(class std::function<bool (class CommandOrigin const&, class Actor const&)>);
+    MCAPI void addFilter(class std::function<bool (class CommandOrigin const& , class Actor const& )>);
     MCAPI bool compile(class CommandOrigin const&, std::string&);
     MCAPI std::string getName() const;
     MCAPI bool hasName() const;
@@ -16,7 +16,7 @@ public:
     MCAPI void setType(enum CommandSelectionType);
 
 protected:
-    MCAPI class std::shared_ptr<std::vector<class Actor*> > newResults(class CommandOrigin const&) const;
+    MCAPI class std::shared_ptr<std::vector<class Actor* > > newResults(class CommandOrigin const&) const;
 
 private:
     MCAPI bool filter(class CommandOrigin const&, class Actor&, float) const;

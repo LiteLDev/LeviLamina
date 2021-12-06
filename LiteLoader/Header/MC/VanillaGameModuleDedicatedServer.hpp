@@ -12,28 +12,7 @@ public:
     /*2*/ virtual class std::shared_ptr<class IInPackagePacks> createInPackagePacks();
     /*3*/ virtual void registerMolangQueries();
     /*4*/ virtual void registerServerInstanceHandler(class ServerInstanceEventCoordinator&);
-    /*
-    inline std::unique_ptr<class GameModuleServer> createGameModuleServer(){
-        std::unique_ptr<class GameModuleServer> (VanillaGameModuleDedicatedServer::*rv)();
-        *((void**)&rv) = dlsym("?createGameModuleServer@VanillaGameModuleDedicatedServer@@UEAA?AV?$unique_ptr@VGameModuleServer@@U?$default_delete@VGameModuleServer@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::shared_ptr<class IInPackagePacks> createInPackagePacks(){
-        class std::shared_ptr<class IInPackagePacks> (VanillaGameModuleDedicatedServer::*rv)();
-        *((void**)&rv) = dlsym("?createInPackagePacks@VanillaGameModuleDedicatedServer@@UEAA?AV?$shared_ptr@VIInPackagePacks@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void registerMolangQueries(){
-        void (VanillaGameModuleDedicatedServer::*rv)();
-        *((void**)&rv) = dlsym("?registerMolangQueries@VanillaGameModuleDedicatedServer@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void registerServerInstanceHandler(class ServerInstanceEventCoordinator& a0){
-        void (VanillaGameModuleDedicatedServer::*rv)(class ServerInstanceEventCoordinator&);
-        *((void**)&rv) = dlsym("?registerServerInstanceHandler@VanillaGameModuleDedicatedServer@@UEAAXAEAVServerInstanceEventCoordinator@@@Z");
-        return (this->*rv)(std::forward<class ServerInstanceEventCoordinator&>(a0));
-    }
-    */
+
 
 protected:
 

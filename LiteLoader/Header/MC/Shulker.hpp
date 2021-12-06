@@ -43,36 +43,36 @@ public:
     /*31*/ virtual bool shouldRender() const;
     /*32*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*33*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*34*/ virtual void __unk_vfn_12();
+    /*34*/ virtual float getPickRadius();
     /*35*/ virtual void awardKillScore(class Actor&, int);
     /*36*/ virtual class HashedString const& queryEntityRenderer() const;
     /*37*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*38*/ virtual int getPortalWaitTime() const;
     /*39*/ virtual bool canChangeDimensions() const;
-    /*40*/ virtual void __unk_vfn_13();
+    /*40*/ virtual void __unk_vfn_12();
     /*41*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*42*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*43*/ virtual bool canBePulledIntoVehicle() const;
-    /*44*/ virtual void __unk_vfn_14();
+    /*44*/ virtual void __unk_vfn_13();
     /*45*/ virtual bool canSynchronizeNewEntity() const;
-    /*46*/ virtual void __unk_vfn_15();
-    /*47*/ virtual void __unk_vfn_16();
+    /*46*/ virtual void __unk_vfn_14();
+    /*47*/ virtual void __unk_vfn_15();
     /*48*/ virtual bool isWorldBuilder() const;
-    /*49*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_16();
     /*50*/ virtual bool isAdventure() const;
     /*51*/ virtual bool canDestroyBlock(class Block const&) const;
     /*52*/ virtual void setAuxValue(int);
     /*53*/ virtual void stopSpinAttack();
-    /*54*/ virtual void __unk_vfn_18();
-    /*55*/ virtual void __unk_vfn_19();
+    /*54*/ virtual void __unk_vfn_17();
+    /*55*/ virtual void __unk_vfn_18();
     /*56*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*57*/ virtual void __unk_vfn_20();
+    /*57*/ virtual void __unk_vfn_19();
     /*58*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*59*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*60*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*61*/ virtual void __unk_vfn_21();
+    /*61*/ virtual void __unk_vfn_20();
     /*62*/ virtual void _onSizeUpdated();
-    /*63*/ virtual void __unk_vfn_22();
+    /*63*/ virtual void __unk_vfn_21();
     /*64*/ virtual void spawnAnim();
     /*65*/ virtual void travel(float, float, float);
     /*66*/ virtual void aiStep();
@@ -80,129 +80,34 @@ public:
     /*68*/ virtual int getItemUseDuration() const;
     /*69*/ virtual float getItemUseStartupProgress() const;
     /*70*/ virtual float getItemUseIntervalProgress() const;
-    /*71*/ virtual void __unk_vfn_23();
+    /*71*/ virtual void __unk_vfn_22();
     /*72*/ virtual float getMaxHeadXRot();
     /*73*/ virtual bool isAlliedTo(class Mob*);
-    /*74*/ virtual void __unk_vfn_24();
+    /*74*/ virtual void __unk_vfn_23();
     /*75*/ virtual int getArmorValue();
     /*76*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*77*/ virtual void onBorn(class Actor&, class Actor&);
-    /*78*/ virtual void __unk_vfn_25();
+    /*78*/ virtual int getAttackTime();
     /*79*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*80*/ virtual void __unk_vfn_26();
+    /*80*/ virtual void __unk_vfn_24();
     /*81*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*82*/ virtual void _serverAiMobStep();
-    /*83*/ virtual void __unk_vfn_27();
+    /*83*/ virtual void __unk_vfn_25();
     /*
     inline bool isLeashableType(){
         bool (Shulker::*rv)();
         *((void**)&rv) = dlsym("?isLeashableType@Shulker@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline void travel(float a0, float a1, float a2){
-        void (Shulker::*rv)(float, float, float);
-        *((void**)&rv) = dlsym("?travel@Shulker@@UEAAXMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
-    }
     inline bool useNewAi() const{
         bool (Shulker::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Shulker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldRender() const{
-        bool (Shulker::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@Shulker@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline std::unique_ptr<class BodyControl> initBodyControl(){
         std::unique_ptr<class BodyControl> (Shulker::*rv)();
         *((void**)&rv) = dlsym("?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ");
         return (this->*rv)();
-    }
-    inline float getPickRadius(){
-        float (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?getPickRadius@Shulker@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Shulker::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Shulker@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _onSizeUpdated(){
-        void (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Shulker@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Shulker::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Shulker@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Shulker@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canAttack(class Actor* a0, bool a1) const{
-        bool (Shulker::*rv)(class Actor*, bool) const;
-        *((void**)&rv) = dlsym("?canAttack@Shulker@@UEBA_NPEAVActor@@_N@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<bool>(a1));
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Shulker::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Shulker@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline int getArmorValue(){
-        int (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?getArmorValue@Shulker@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline float getMaxHeadXRot(){
-        float (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?getMaxHeadXRot@Shulker@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Shulker::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Shulker@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline bool isInWall() const{
-        bool (Shulker::*rv)() const;
-        *((void**)&rv) = dlsym("?isInWall@Shulker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Shulker::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Shulker@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void normalTick(){
-        void (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Shulker@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Shulker::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Shulker@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Shulker::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Shulker@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void setPos(class Vec3 const& a0){
-        void (Shulker::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setPos@Shulker@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Shulker::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Shulker@@MEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI void calculateBB();

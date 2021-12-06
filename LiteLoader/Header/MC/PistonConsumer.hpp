@@ -10,11 +10,11 @@ class PistonConsumer : public ConsumerComponent {
 public:
     /*0*/ virtual ~PistonConsumer();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual bool canConsumePowerAnyDirection() const;
-    /*6*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_0();
     /*7*/ virtual bool canStopPower() const;
     /*8*/ virtual void setStopPower(bool);
     /*9*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
@@ -22,33 +22,12 @@ public:
     /*11*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
-    /*16*/ virtual void __unk_vfn_5();
-    /*17*/ virtual void __unk_vfn_6();
+    /*14*/ virtual void __unk_vfn_1();
+    /*15*/ virtual bool isHalfPulse() const;
+    /*16*/ virtual void __unk_vfn_2();
+    /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
-    /*
-    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
-        bool (PistonConsumer::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-        *((void**)&rv) = dlsym("?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
-    }
-    inline bool canConsumePowerAnyDirection() const{
-        bool (PistonConsumer::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CircuitComponentType*\/ getCircuitComponentType() const{
-        int \/*enum enum CircuitComponentType*\/ (PistonConsumer::*rv)() const;
-        *((void**)&rv) = dlsym("?getCircuitComponentType@PistonConsumer@@UEBA?AW4CircuitComponentType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool addSource(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, int& a2, bool& a3){
-        bool (PistonConsumer::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-        *((void**)&rv) = dlsym("?addSource@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<int&>(a2), std::forward<bool&>(a3));
-    }
-    */
+
     MCAPI void setBlockPowerFace(unsigned char);
 
 protected:

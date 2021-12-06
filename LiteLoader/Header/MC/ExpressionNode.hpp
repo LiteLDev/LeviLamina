@@ -28,13 +28,13 @@ public:
     MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI static void bindType();
     MCAPI static void buildExpressionOpTable();
-    MCAPI static float fast_atof_positiveOnly(char const*&);
+    MCAPI static float fast_atof_positiveOnly(char const* &);
     MCAPI static char const* getOpFriendlyName(enum ExpressionOp);
     MCAPI static class std::recursive_mutex& getQueryFunctionMutex();
     MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
     MCAPI static std::vector<std::string> mExpressionOpTokens;
     MCAPI static struct std::atomic<int> mNumRootExpressionsWithVariables;
-    MCAPI static struct MolangQueryFunction& registerQueryFunction(std::string const&, class std::function<struct MolangScriptArg const& (class RenderParams&, std::vector<class ExpressionNode> const&)>, std::string const&, enum MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, class std::initializer_list<int> const&);
+    MCAPI static struct MolangQueryFunction& registerQueryFunction(std::string const&, class std::function<struct MolangScriptArg const& (class RenderParams& , std::vector<class ExpressionNode> const& )>, std::string const&, enum MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, class std::initializer_list<int> const&);
     MCAPI static void setExperiments(class Experiments const&);
     MCAPI static void unregisterQueryFunction(std::string const&, class HashedString);
 
@@ -43,7 +43,7 @@ protected:
 private:
     MCAPI bool _checkIsValidAndPopulateUsedTokenFlags(struct ExpressionOpBitField const&);
     MCAPI bool _optimize(enum MolangVersion);
-    MCAPI bool _readNextToken(char const*&, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
+    MCAPI bool _readNextToken(char const* &, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
     MCAPI void _setExpressionStringWithoutRelink(std::string const&);
     MCAPI bool _tokenize(char const*, struct ExpressionOpBitField&, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
     MCAPI bool _validate(enum MolangVersion, bool, int) const;

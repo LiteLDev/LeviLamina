@@ -44,31 +44,6 @@ public:
         *((void**)&rv) = dlsym("?doEndArray@JsonLoader@@EEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool doBeginArray(unsigned __int64& a0){
-        bool (JsonLoader::*rv)(unsigned __int64&);
-        *((void**)&rv) = dlsym("?doBeginArray@JsonLoader@@EEAA_NAEA_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64&>(a0));
-    }
-    inline bool doBeginArrayItem(unsigned __int64 a0){
-        bool (JsonLoader::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doBeginArrayItem@JsonLoader@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doBeginMember(char const* a0, bool a1){
-        bool (JsonLoader::*rv)(char const*, bool);
-        *((void**)&rv) = dlsym("?doBeginMember@JsonLoader@@EEAA_NPEBD_N@Z");
-        return (this->*rv)(std::forward<char const*>(a0), std::forward<bool>(a1));
-    }
-    inline bool doBeginMember(unsigned __int64 a0, std::string& a1){
-        bool (JsonLoader::*rv)(unsigned __int64, std::string&);
-        *((void**)&rv) = dlsym("?doBeginMember@JsonLoader@@EEAA_N_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<std::string&>(a1));
-    }
-    inline bool doBeginObject(unsigned __int64& a0){
-        bool (JsonLoader::*rv)(unsigned __int64&);
-        *((void**)&rv) = dlsym("?doBeginObject@JsonLoader@@EEAA_NAEA_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64&>(a0));
-    }
     inline bool doBeginObject(){
         bool (JsonLoader::*rv)();
         *((void**)&rv) = dlsym("?doBeginObject@JsonLoader@@EEAA_NXZ");
@@ -87,86 +62,6 @@ public:
     inline bool doEndMember(){
         bool (JsonLoader::*rv)();
         *((void**)&rv) = dlsym("?doEndMember@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doSerialize(signed char& a0){
-        bool (JsonLoader::*rv)(signed char&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAC@Z");
-        return (this->*rv)(std::forward<signed char&>(a0));
-    }
-    inline bool doSerialize(unsigned char& a0){
-        bool (JsonLoader::*rv)(unsigned char&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAE@Z");
-        return (this->*rv)(std::forward<unsigned char&>(a0));
-    }
-    inline bool doSerialize(short& a0){
-        bool (JsonLoader::*rv)(short&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAF@Z");
-        return (this->*rv)(std::forward<short&>(a0));
-    }
-    inline bool doSerialize(unsigned short& a0){
-        bool (JsonLoader::*rv)(unsigned short&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAG@Z");
-        return (this->*rv)(std::forward<unsigned short&>(a0));
-    }
-    inline bool doSerialize(int& a0){
-        bool (JsonLoader::*rv)(int&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAH@Z");
-        return (this->*rv)(std::forward<int&>(a0));
-    }
-    inline bool doSerialize(unsigned int& a0){
-        bool (JsonLoader::*rv)(unsigned int&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAI@Z");
-        return (this->*rv)(std::forward<unsigned int&>(a0));
-    }
-    inline bool doSerialize(float& a0){
-        bool (JsonLoader::*rv)(float&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAM@Z");
-        return (this->*rv)(std::forward<float&>(a0));
-    }
-    inline bool doSerialize(double& a0){
-        bool (JsonLoader::*rv)(double&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAN@Z");
-        return (this->*rv)(std::forward<double&>(a0));
-    }
-    inline bool doSerialize(std::string& a0){
-        bool (JsonLoader::*rv)(std::string&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool doSerialize(__int64& a0){
-        bool (JsonLoader::*rv)(__int64&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEA_J@Z");
-        return (this->*rv)(std::forward<__int64&>(a0));
-    }
-    inline bool doSerialize(unsigned __int64& a0){
-        bool (JsonLoader::*rv)(unsigned __int64&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEA_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64&>(a0));
-    }
-    inline bool doSerialize(bool& a0){
-        bool (JsonLoader::*rv)(bool&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonLoader@@EEAA_NAEA_N@Z");
-        return (this->*rv)(std::forward<bool&>(a0));
-    }
-    inline bool isArray() const{
-        bool (JsonLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isArray@JsonLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBool() const{
-        bool (JsonLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isBool@JsonLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInt() const{
-        bool (JsonLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isInt@JsonLoader@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isString() const{
-        bool (JsonLoader::*rv)() const;
-        *((void**)&rv) = dlsym("?isString@JsonLoader@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

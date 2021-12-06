@@ -9,13 +9,7 @@ class IsSummonableDescription {
 public:
     /*0*/ virtual ~IsSummonableDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (IsSummonableDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@IsSummonableDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

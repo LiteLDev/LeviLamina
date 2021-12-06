@@ -32,7 +32,7 @@ private:
     MCAPI void _assignPOIOnly(class std::shared_ptr<class POIInstance>&&);
     MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const&, class Village const&) const;
     MCAPI class std::shared_ptr<class Village> _createOrGetVillage(class mce::UUID const&, class BlockPos const&);
-    MCAPI class std::unordered_map<class Village const*, enum VillageManager::BedAvailabilityState, struct std::hash<class Village const*>, struct std::equal_to<class Village const*>, class std::allocator<struct std::pair<class Village const* const, enum VillageManager::BedAvailabilityState> > > _getVillageWithBedsAvailableMap() const;
+    MCAPI class std::unordered_map<class Village const* , enum VillageManager::BedAvailabilityState, struct std::hash<class Village const* >, struct std::equal_to<class Village const* >, class std::allocator<struct std::pair<class Village const* const, enum VillageManager::BedAvailabilityState> > > _getVillageWithBedsAvailableMap() const;
     MCAPI void _loadPOIBlueprints();
     MCAPI void _processNextUnclusteredPOIQuery();
     MCAPI void _removeVillage(class Village&);

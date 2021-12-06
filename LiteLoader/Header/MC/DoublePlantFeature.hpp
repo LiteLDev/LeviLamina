@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~DoublePlantFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    /*
-    inline bool place(class BlockSource& a0, class BlockPos const& a1, class Random& a2) const{
-        bool (DoublePlantFeature::*rv)(class BlockSource&, class BlockPos const&, class Random&) const;
-        *((void**)&rv) = dlsym("?place@DoublePlantFeature@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
-    }
-    */
+
     MCAPI bool place(class BlockSource&, class BlockPos const&, class Random&, enum DoublePlantType) const;
 
 protected:

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (FollowCaravanGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@FollowCaravanGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (FollowCaravanGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@FollowCaravanGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (FollowCaravanGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@FollowCaravanGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (FollowCaravanGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@FollowCaravanGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (FollowCaravanGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@FollowCaravanGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (FollowCaravanGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@FollowCaravanGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~ScriptColorComponent();
     /*1*/ virtual class Scripting::Result<int> getValue() const;
     /*2*/ virtual class Scripting::Result<void> setValue(int const&) const;
-    /*
-    inline class Scripting::Result<int> getValue() const{
-        class Scripting::Result<int> (ScriptColorComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?getValue@ScriptColorComponent@@UEBA?AV?$Result@H@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setValue(int const& a0) const{
-        class Scripting::Result<void> (ScriptColorComponent::*rv)(int const&) const;
-        *((void**)&rv) = dlsym("?setValue@ScriptColorComponent@@UEBA?AV?$Result@X@Scripting@@AEBH@Z");
-        return (this->*rv)(std::forward<int const&>(a0));
-    }
-    */
+
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptColorComponent> bind(struct Scripting::Version);
 
 protected:

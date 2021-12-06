@@ -48,7 +48,7 @@ public:
     /*36*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*37*/ virtual void animateHurt();
     /*38*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*39*/ virtual void __unk_vfn_12();
+    /*39*/ virtual float getPickRadius();
     /*40*/ virtual void awardKillScore(class Actor&, int);
     /*41*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*42*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -59,38 +59,39 @@ public:
     /*47*/ virtual bool canFreeze() const;
     /*48*/ virtual int getPortalWaitTime() const;
     /*49*/ virtual bool canChangeDimensions() const;
-    /*50*/ virtual void __unk_vfn_13();
+    /*50*/ virtual void __unk_vfn_12();
     /*51*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*52*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*53*/ virtual bool canBePulledIntoVehicle() const;
     /*54*/ virtual bool inCaravan() const;
-    /*55*/ virtual void __unk_vfn_14();
+    /*55*/ virtual void __unk_vfn_13();
     /*56*/ virtual bool canSynchronizeNewEntity() const;
     /*57*/ virtual void buildDebugInfo(std::string&) const;
     /*58*/ virtual int getDeathTime() const;
     /*59*/ virtual void swing();
-    /*60*/ virtual void __unk_vfn_15();
-    /*61*/ virtual void __unk_vfn_16();
+    /*60*/ virtual void __unk_vfn_14();
+    /*61*/ virtual void __unk_vfn_15();
     /*62*/ virtual float getYHeadRot() const;
     /*63*/ virtual bool isWorldBuilder() const;
-    /*64*/ virtual void __unk_vfn_17();
+    /*64*/ virtual void __unk_vfn_16();
     /*65*/ virtual bool isAdventure() const;
     /*66*/ virtual bool canDestroyBlock(class Block const&) const;
     /*67*/ virtual void setAuxValue(int);
     /*68*/ virtual void stopSpinAttack();
-    /*69*/ virtual void __unk_vfn_18();
-    /*70*/ virtual void __unk_vfn_19();
+    /*69*/ virtual void __unk_vfn_17();
+    /*70*/ virtual void __unk_vfn_18();
     /*71*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*72*/ virtual void __unk_vfn_20();
+    /*72*/ virtual void __unk_vfn_19();
     /*73*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*75*/ virtual void __unk_vfn_21();
+    /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
-    /*77*/ virtual void __unk_vfn_22();
+    /*77*/ virtual void __unk_vfn_21();
     /*78*/ virtual float getThrowPower();
-    /*79*/ virtual void __unk_vfn_23();
+    /*79*/ virtual void __unk_vfn_22();
     /*80*/ virtual float getThrowUpAngleOffset();
     /*81*/ virtual float getGravity();
+    /*82*/ virtual int /*enum enum ParticleType*/ getParticleType();
     /*
     inline bool stopUponGroundCollision() const{
         bool (Throwable::*rv)() const;
@@ -106,56 +107,6 @@ public:
         void (Throwable::*rv)(class HitResult const&);
         *((void**)&rv) = dlsym("?onHit@Throwable@@MEAAXAEBVHitResult@@@Z");
         return (this->*rv)(std::forward<class HitResult const&>(a0));
-    }
-    inline float getShadowHeightOffs(){
-        float (Throwable::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@Throwable@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getThrowUpAngleOffset(){
-        float (Throwable::*rv)();
-        *((void**)&rv) = dlsym("?getThrowUpAngleOffset@Throwable@@MEAAMXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ParticleType*\/ getParticleType(){
-        int \/*enum enum ParticleType*\/ (Throwable::*rv)();
-        *((void**)&rv) = dlsym("?getParticleType@Throwable@@MEAA?AW4ParticleType@@XZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Throwable::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Throwable@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline float getGravity(){
-        float (Throwable::*rv)();
-        *((void**)&rv) = dlsym("?getGravity@Throwable@@MEAAMXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (Throwable::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@Throwable@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline float getThrowPower(){
-        float (Throwable::*rv)();
-        *((void**)&rv) = dlsym("?getThrowPower@Throwable@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Throwable::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Throwable@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void lerpMotion(class Vec3 const& a0){
-        void (Throwable::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?lerpMotion@Throwable@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Throwable::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Throwable@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
     }
     */
     MCAPI void shoot(class Mob&);

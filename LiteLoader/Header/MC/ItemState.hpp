@@ -9,7 +9,7 @@ class ItemState {
 public:
     /*0*/ virtual ~ItemState();
 
-    MCAPI static void forEachState(class std::function<bool (class ItemState const&)>);
+    MCAPI static void forEachState(class std::function<bool (class ItemState const& )>);
 
 protected:
 

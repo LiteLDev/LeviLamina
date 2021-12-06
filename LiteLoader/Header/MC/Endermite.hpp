@@ -35,86 +35,50 @@ public:
     /*23*/ virtual void onFailedTame();
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*26*/ virtual void __unk_vfn_12();
+    /*26*/ virtual float getPickRadius();
     /*27*/ virtual void awardKillScore(class Actor&, int);
     /*28*/ virtual class HashedString const& queryEntityRenderer() const;
     /*29*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*30*/ virtual int getPortalWaitTime() const;
     /*31*/ virtual bool canChangeDimensions() const;
-    /*32*/ virtual void __unk_vfn_13();
+    /*32*/ virtual void __unk_vfn_12();
     /*33*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*34*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*35*/ virtual bool canBePulledIntoVehicle() const;
-    /*36*/ virtual void __unk_vfn_14();
+    /*36*/ virtual void __unk_vfn_13();
     /*37*/ virtual bool canSynchronizeNewEntity() const;
-    /*38*/ virtual void __unk_vfn_15();
-    /*39*/ virtual void __unk_vfn_16();
+    /*38*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_15();
     /*40*/ virtual bool isWorldBuilder() const;
-    /*41*/ virtual void __unk_vfn_17();
+    /*41*/ virtual void __unk_vfn_16();
     /*42*/ virtual bool isAdventure() const;
     /*43*/ virtual bool canDestroyBlock(class Block const&) const;
     /*44*/ virtual void setAuxValue(int);
     /*45*/ virtual void stopSpinAttack();
-    /*46*/ virtual void __unk_vfn_18();
-    /*47*/ virtual void __unk_vfn_19();
-    /*48*/ virtual void __unk_vfn_20();
+    /*46*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_18();
+    /*48*/ virtual void __unk_vfn_19();
     /*49*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*50*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*51*/ virtual void __unk_vfn_21();
+    /*51*/ virtual void __unk_vfn_20();
     /*52*/ virtual void _onSizeUpdated();
-    /*53*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual void aiStep();
     /*56*/ virtual bool checkSpawnRules(bool);
     /*57*/ virtual int getItemUseDuration() const;
     /*58*/ virtual float getItemUseStartupProgress() const;
     /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_23();
+    /*60*/ virtual void __unk_vfn_22();
     /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_24();
+    /*62*/ virtual void __unk_vfn_23();
     /*63*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
-    /*66*/ virtual void __unk_vfn_26();
+    /*65*/ virtual int getAttackTime();
+    /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
-    /*
-    inline void _onSizeUpdated(){
-        void (Endermite::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@Endermite@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Endermite::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Endermite@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (Endermite::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Endermite@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Endermite::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Endermite@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline float getRidingHeight(){
-        float (Endermite::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@Endermite@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Endermite::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Endermite@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Endermite::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Endermite@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    */
+    /*68*/ virtual void __unk_vfn_25();
+
 
 protected:
 

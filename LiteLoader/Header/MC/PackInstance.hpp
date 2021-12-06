@@ -8,7 +8,7 @@
 class PackInstance {
 #include "Extra/PackInstanceAPI.hpp"
 public:
-    MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const&)>, bool) const;
+    MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     MCAPI std::string const& getFolderName() const;
     MCAPI double getLoadTime() const;
     MCAPI class PackManifest& getManifest();

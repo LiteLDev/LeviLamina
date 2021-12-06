@@ -10,13 +10,7 @@ class LootTableReference {
 public:
     /*0*/ virtual bool _createItem(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
     /*1*/ virtual ~LootTableReference();
-    /*
-    inline bool _createItem(std::vector<class ItemStack>& a0, class Random& a1, class LootTableContext& a2){
-        bool (LootTableReference::*rv)(std::vector<class ItemStack>&, class Random&, class LootTableContext&);
-        *((void**)&rv) = dlsym("?_createItem@LootTableReference@@MEAA_NAEAV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@AEAVRandom@@AEAVLootTableContext@@@Z");
-        return (this->*rv)(std::forward<std::vector<class ItemStack>&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
-    }
-    */
+
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value, int, int, std::vector<std::unique_ptr<class LootItemCondition>>&);
 
 protected:

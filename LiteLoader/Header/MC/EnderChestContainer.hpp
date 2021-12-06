@@ -10,26 +10,15 @@ class EnderChestContainer : public FillingContainer {
 public:
     /*0*/ virtual ~EnderChestContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const&)>);
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     /*3*/ virtual void setItem(int, class ItemStack const&);
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual int getContainerSize() const;
     /*5*/ virtual void startOpen(class Player&);
     /*6*/ virtual void stopOpen(class Player&);
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
-    /*
-    inline void startOpen(class Player& a0){
-        void (EnderChestContainer::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?startOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void stopOpen(class Player& a0){
-        void (EnderChestContainer::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?stopOpen@EnderChestContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    */
+    /*7*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
+
     MCAPI static int const ITEMS_SIZE;
 
 protected:

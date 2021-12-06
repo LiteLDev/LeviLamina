@@ -29,102 +29,16 @@ public:
     /*17*/ virtual bool isSelectorExpansionAllowed() const;
     /*18*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*19*/ virtual unsigned char getSourceSubId() const;
-    /*20*/ virtual void __unk_vfn_0();
+    /*20*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*21*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*22*/ virtual void __unk_vfn_1() = 0;
+    /*22*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const = 0;
     /*23*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*24*/ virtual void __unk_vfn_2();
+    /*24*/ virtual class mce::UUID const& getUUID() const;
     /*25*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*26*/ virtual class CompoundTag serialize() const;
     /*27*/ virtual bool isValid() const = 0;
     /*28*/ virtual void _setUUID(class mce::UUID const&);
-    /*
-    inline unsigned char getSourceSubId() const{
-        unsigned char (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceSubId@CommandOrigin@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void handleCommandOutputCallback(class Json::Value&& a0) const{
-        void (CommandOrigin::*rv)(class Json::Value&&) const;
-        *((void**)&rv) = dlsym("?handleCommandOutputCallback@CommandOrigin@@UEBAX$$QEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&&>(a0));
-    }
-    inline class mce::UUID const& getUUID() const{
-        class mce::UUID const& (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getUUID@CommandOrigin@@UEBAAEBVUUID@mce@@XZ");
-        return (this->*rv)();
-    }
-    inline class CommandOrigin const& getOutputReceiver() const{
-        class CommandOrigin const& (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOutputReceiver@CommandOrigin@@UEBAAEBV1@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAbility(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        bool (CommandOrigin::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
-        *((void**)&rv) = dlsym("?canUseAbility@CommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
-    }
-    inline class std::optional<class BlockPos> getCursorHitBlockPos() const{
-        class std::optional<class BlockPos> (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getCursorHitBlockPos@CommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class Vec3> getCursorHitPos() const{
-        class std::optional<class Vec3> (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getCursorHitPos@CommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void _setUUID(class mce::UUID const& a0){
-        void (CommandOrigin::*rv)(class mce::UUID const&);
-        *((void**)&rv) = dlsym("?_setUUID@CommandOrigin@@MEAAXAEBVUUID@mce@@@Z");
-        return (this->*rv)(std::forward<class mce::UUID const&>(a0));
-    }
-    inline struct CommandOriginIdentity getIdentity() const{
-        struct CommandOriginIdentity (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getIdentity@CommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ");
-        return (this->*rv)();
-    }
-    inline class NetworkIdentifier const& getSourceId() const{
-        class NetworkIdentifier const& (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceId@CommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasChatPerms() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChatPerms@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasTellPerms() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasTellPerms@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWorldBuilder() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isWorldBuilder@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@CommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    inline struct CommandOriginData toCommandOriginData() const{
-        struct CommandOriginData (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?toCommandOriginData@CommandOrigin@@UEBA?AUCommandOriginData@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAtWithBuffer(class BlockPos const&, class BlockPos const&, bool) const;

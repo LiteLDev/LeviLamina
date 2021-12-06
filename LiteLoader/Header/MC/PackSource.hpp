@@ -6,18 +6,13 @@
 #undef EXTRA_INCLUDE_PART_PACKSOURCE
 class PackSource {
 #include "Extra/PackSourceAPI.hpp"
-public:    /*
-    inline int \/*enum enum PackType*\/ getPackType() const{
-        int \/*enum enum PackType*\/ (PackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackType@PackSource@@UEBA?AW4PackType@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum PackOrigin*\/ getPackOrigin() const{
-        int \/*enum enum PackOrigin*\/ (PackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ");
-        return (this->*rv)();
-    }
-    */
+public:
+    /*0*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual void __unk_vfn_1() = 0;
+    /*2*/ virtual void __unk_vfn_2() = 0;
+    /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
+    /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
+
     MCAPI class Pack* fetchPack(struct PackIdVersion const&);
     MCAPI void resolveUpgradeDependencies(class Pack&, class IContentKeyProvider const&);
 

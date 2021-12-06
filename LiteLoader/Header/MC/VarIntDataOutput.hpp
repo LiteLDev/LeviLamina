@@ -18,36 +18,6 @@ public:
     /*8*/ virtual void writeLongLong(__int64);
     /*9*/ virtual void writeBytes(void const*, unsigned __int64);
     /*
-    inline void writeByte(char a0){
-        void (VarIntDataOutput::*rv)(char);
-        *((void**)&rv) = dlsym("?writeByte@VarIntDataOutput@@UEAAXD@Z");
-        return (this->*rv)(std::forward<char>(a0));
-    }
-    inline void writeBytes(void const* a0, unsigned __int64 a1){
-        void (VarIntDataOutput::*rv)(void const*, unsigned __int64);
-        *((void**)&rv) = dlsym("?writeBytes@VarIntDataOutput@@UEAAXPEBX_K@Z");
-        return (this->*rv)(std::forward<void const*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    inline void writeDouble(double a0){
-        void (VarIntDataOutput::*rv)(double);
-        *((void**)&rv) = dlsym("?writeDouble@VarIntDataOutput@@UEAAXN@Z");
-        return (this->*rv)(std::forward<double>(a0));
-    }
-    inline void writeFloat(float a0){
-        void (VarIntDataOutput::*rv)(float);
-        *((void**)&rv) = dlsym("?writeFloat@VarIntDataOutput@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void writeInt(int a0){
-        void (VarIntDataOutput::*rv)(int);
-        *((void**)&rv) = dlsym("?writeInt@VarIntDataOutput@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void writeLongLong(__int64 a0){
-        void (VarIntDataOutput::*rv)(__int64);
-        *((void**)&rv) = dlsym("?writeLongLong@VarIntDataOutput@@UEAAX_J@Z");
-        return (this->*rv)(std::forward<__int64>(a0));
-    }
     inline void writeString(class gsl::basic_string_span<char const, -1> a0){
         void (VarIntDataOutput::*rv)(class gsl::basic_string_span<char const, -1>);
         *((void**)&rv) = dlsym("?writeString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z");
@@ -57,11 +27,6 @@ public:
         void (VarIntDataOutput::*rv)(class gsl::basic_string_span<char const, -1>);
         *((void**)&rv) = dlsym("?writeLongString@VarIntDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z");
         return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0));
-    }
-    inline void writeShort(short a0){
-        void (VarIntDataOutput::*rv)(short);
-        *((void**)&rv) = dlsym("?writeShort@VarIntDataOutput@@UEAAXF@Z");
-        return (this->*rv)(std::forward<short>(a0));
     }
     */
 

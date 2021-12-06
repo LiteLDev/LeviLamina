@@ -15,23 +15,7 @@ public:
     /*3*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (FilterTestHourlyClock::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@FilterTestHourlyClock@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (FilterTestHourlyClock::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@FilterTestHourlyClock@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    inline bool setup(struct FilterTest::Definition const& a0, struct FilterInputs const& a1){
-        bool (FilterTestHourlyClock::*rv)(struct FilterTest::Definition const&, struct FilterInputs const&);
-        *((void**)&rv) = dlsym("?setup@FilterTestHourlyClock@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z");
-        return (this->*rv)(std::forward<struct FilterTest::Definition const&>(a0), std::forward<struct FilterInputs const&>(a1));
-    }
-    */
+
 
 protected:
 

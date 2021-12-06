@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~DwellerSystem();
     /*1*/ virtual void registerEvents(class entt::dispatcher&);
     /*2*/ virtual void tick(class EntityRegistry&);
-    /*
-    inline void registerEvents(class entt::dispatcher& a0){
-        void (DwellerSystem::*rv)(class entt::dispatcher&);
-        *((void**)&rv) = dlsym("?registerEvents@DwellerSystem@@UEAAXAEAVdispatcher@entt@@@Z");
-        return (this->*rv)(std::forward<class entt::dispatcher&>(a0));
-    }
-    inline void tick(class EntityRegistry& a0){
-        void (DwellerSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@DwellerSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    */
+
 
 protected:
 

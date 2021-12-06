@@ -12,33 +12,9 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    /*
-    inline int \/*enum enum StreamReadResult*\/ _read(class ReadOnlyBinaryStream& a0){
-        int \/*enum enum StreamReadResult*\/ (PlayerListPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@PlayerListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline int \/*enum enum MinecraftPacketIds*\/ getId() const{
-        int \/*enum enum MinecraftPacketIds*\/ (PlayerListPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@PlayerListPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (PlayerListPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@PlayerListPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream& a0){
-        struct ExtendedStreamReadResult (PlayerListPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?readExtended@PlayerListPacket@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (PlayerListPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@PlayerListPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+
     MCAPI void emplace(class PlayerListEntry&&);
 
 protected:

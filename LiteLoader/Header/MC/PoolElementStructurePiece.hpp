@@ -10,7 +10,7 @@ class PoolElementStructurePiece : public StructurePiece {
 public:
     /*0*/ virtual ~PoolElementStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*3*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
@@ -20,35 +20,9 @@ public:
     /*9*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const = 0;
     /*10*/ virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
     /*11*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
-    /*12*/ virtual void __unk_vfn_1() = 0;
+    /*12*/ virtual int /*enum enum AdjustmentEffect*/ getTerrainAdjustmentEffect() const = 0;
     /*13*/ virtual bool _needsPostProcessing(class BlockSource&);
-    /*
-    inline class PoolElementStructurePiece* asPoolElement(){
-        class PoolElementStructurePiece* (PoolElementStructurePiece::*rv)();
-        *((void**)&rv) = dlsym("?asPoolElement@PoolElementStructurePiece@@UEAAPEAV1@XZ");
-        return (this->*rv)();
-    }
-    inline bool _needsPostProcessing(class BlockSource& a0){
-        bool (PoolElementStructurePiece::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?_needsPostProcessing@PoolElementStructurePiece@@MEAA_NAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void moveBoundingBox(int a0, int a1, int a2){
-        void (PoolElementStructurePiece::*rv)(int, int, int);
-        *((void**)&rv) = dlsym("?moveBoundingBox@PoolElementStructurePiece@@UEAAXHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (PoolElementStructurePiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@PoolElementStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    inline void postProcessMobsAt(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        void (PoolElementStructurePiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcessMobsAt@PoolElementStructurePiece@@UEAAXAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+
 
 protected:
 

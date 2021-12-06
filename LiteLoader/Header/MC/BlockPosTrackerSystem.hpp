@@ -10,13 +10,7 @@ public:
     /*0*/ virtual ~BlockPosTrackerSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
-    /*
-    inline void tick(class EntityRegistry& a0){
-        void (BlockPosTrackerSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@BlockPosTrackerSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    */
+
     MCAPI static void _tickBlockPosTrackerComponent(class Actor*, class BlockPosTrackerComponent&);
 
 protected:

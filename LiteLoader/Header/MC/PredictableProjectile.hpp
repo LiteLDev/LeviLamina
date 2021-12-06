@@ -45,7 +45,7 @@ public:
     /*34*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*35*/ virtual void animateHurt();
     /*36*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*37*/ virtual void __unk_vfn_12();
+    /*37*/ virtual float getPickRadius();
     /*38*/ virtual void awardKillScore(class Actor&, int);
     /*39*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*40*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -56,38 +56,32 @@ public:
     /*45*/ virtual bool canFreeze() const;
     /*46*/ virtual int getPortalWaitTime() const;
     /*47*/ virtual bool canChangeDimensions() const;
-    /*48*/ virtual void __unk_vfn_13();
+    /*48*/ virtual void __unk_vfn_12();
     /*49*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*50*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*51*/ virtual bool canBePulledIntoVehicle() const;
     /*52*/ virtual bool inCaravan() const;
-    /*53*/ virtual void __unk_vfn_14();
+    /*53*/ virtual void __unk_vfn_13();
     /*54*/ virtual bool canSynchronizeNewEntity() const;
     /*55*/ virtual void buildDebugInfo(std::string&) const;
     /*56*/ virtual int getDeathTime() const;
     /*57*/ virtual void swing();
-    /*58*/ virtual void __unk_vfn_15();
-    /*59*/ virtual void __unk_vfn_16();
+    /*58*/ virtual void __unk_vfn_14();
+    /*59*/ virtual void __unk_vfn_15();
     /*60*/ virtual float getYHeadRot() const;
     /*61*/ virtual bool isWorldBuilder() const;
-    /*62*/ virtual void __unk_vfn_17();
+    /*62*/ virtual void __unk_vfn_16();
     /*63*/ virtual bool isAdventure() const;
     /*64*/ virtual bool canDestroyBlock(class Block const&) const;
     /*65*/ virtual void setAuxValue(int);
     /*66*/ virtual void stopSpinAttack();
-    /*67*/ virtual void __unk_vfn_18();
-    /*68*/ virtual void __unk_vfn_19();
+    /*67*/ virtual void __unk_vfn_17();
+    /*68*/ virtual void __unk_vfn_18();
     /*69*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*70*/ virtual void __unk_vfn_20();
-    /*71*/ virtual void __unk_vfn_21();
+    /*70*/ virtual void __unk_vfn_19();
+    /*71*/ virtual void __unk_vfn_20();
     /*72*/ virtual void _onSizeUpdated();
-    /*
-    inline void _doInitialMove(){
-        void (PredictableProjectile::*rv)();
-        *((void**)&rv) = dlsym("?_doInitialMove@PredictableProjectile@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

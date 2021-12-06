@@ -20,67 +20,26 @@ public:
     /*9*/ virtual void __unk_vfn_0();
     /*10*/ virtual void onRemoved(class BlockSource&);
     /*11*/ virtual void triggerEvent(int, int);
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual void __unk_vfn_2();
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
+    /*12*/ virtual void clearCache();
+    /*13*/ virtual void __unk_vfn_1();
+    /*14*/ virtual float getShadowRadius(class BlockSource&) const;
+    /*15*/ virtual bool hasAlphaLayer() const;
     /*16*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*17*/ virtual void __unk_vfn_5();
+    /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string getName() const;
     /*19*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int getRepairCost() const;
     /*21*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*22*/ virtual void __unk_vfn_7();
-    /*23*/ virtual void __unk_vfn_8();
-    /*24*/ virtual void __unk_vfn_9();
-    /*25*/ virtual void __unk_vfn_10();
-    /*26*/ virtual void __unk_vfn_11();
-    /*27*/ virtual void __unk_vfn_12();
+    /*22*/ virtual void __unk_vfn_2();
+    /*23*/ virtual void __unk_vfn_3();
+    /*24*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*25*/ virtual void __unk_vfn_4();
+    /*26*/ virtual void __unk_vfn_5();
+    /*27*/ virtual void __unk_vfn_6();
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-    /*
-    inline class PistonBlockActor* getOwningPiston(class BlockSource& a0){
-        class PistonBlockActor* (PistonBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& a0){
-        std::unique_ptr<class BlockActorDataPacket> (PistonBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@PistonBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void _onUpdatePacket(class CompoundTag const& a0, class BlockSource& a1){
-        void (PistonBlockActor::*rv)(class CompoundTag const&, class BlockSource&);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@PistonBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1));
-    }
-    inline float getDeletionDelayTimeSeconds() const{
-        float (PistonBlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@PistonBlockActor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void load(class Level& a0, class CompoundTag const& a1, class DataLoadHelper& a2){
-        void (PistonBlockActor::*rv)(class Level&, class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?load@PistonBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class DataLoadHelper&>(a2));
-    }
-    inline void onRemoved(class BlockSource& a0){
-        void (PistonBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onRemoved@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline bool save(class CompoundTag& a0) const{
-        bool (PistonBlockActor::*rv)(class CompoundTag&) const;
-        *((void**)&rv) = dlsym("?save@PistonBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void tick(class BlockSource& a0){
-        void (PistonBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?tick@PistonBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
+
     MCAPI std::vector<class BlockPos> const& getAttachedBlocks() const;
     MCAPI class Block const* getCorrectArmBlock() const;
     MCAPI class BlockPos const& getFacingDir(class BlockSource const&) const;

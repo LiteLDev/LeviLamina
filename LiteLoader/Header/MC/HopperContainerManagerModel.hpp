@@ -9,19 +9,13 @@ class HopperContainerManagerModel : public LevelContainerManagerModel {
 #include "Extra/HopperContainerManagerModelAPI.hpp"
 public:
     /*0*/ virtual ~HopperContainerManagerModel();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
+    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
     /*5*/ virtual void setData(int, int);
     /*6*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline class ContainerScreenContext _postInit(){
-        class ContainerScreenContext (HopperContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?_postInit@HopperContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

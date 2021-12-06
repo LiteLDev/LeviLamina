@@ -11,23 +11,12 @@ public:
     /*0*/ virtual ~ResourcePackStack();
     /*1*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
     /*2*/ virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
-    /*
-    inline std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const& a0) const{
-        std::vector<class LoadedResourceData> (ResourcePackStack::*rv)(class ResourceLocation const&) const;
-        *((void**)&rv) = dlsym("?loadAllVersionsOf@ResourcePackStack@@UEBA?AV?$vector@VLoadedResourceData@@V?$allocator@VLoadedResourceData@@@std@@@std@@AEBVResourceLocation@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0));
-    }
-    inline bool loadAllVersionsOf(class ResourceLocation const& a0, class ResourcePackMergeStrategy& a1) const{
-        bool (ResourcePackStack::*rv)(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
-        *((void**)&rv) = dlsym("?loadAllVersionsOf@ResourcePackStack@@UEBA_NAEBVResourceLocation@@AEAVResourcePackMergeStrategy@@@Z");
-        return (this->*rv)(std::forward<class ResourceLocation const&>(a0), std::forward<class ResourcePackMergeStrategy&>(a1));
-    }
-    */
+
     MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);
     MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
     MCAPI bool hasPlatformLockedContent() const;
     MCAPI void removeDuplicates();
-    MCAPI void removeIf(class std::function<bool (class PackInstance const&)> const&);
+    MCAPI void removeIf(class std::function<bool (class PackInstance const& )> const&);
     MCAPI void removeInvalidPacks();
     MCAPI static std::unique_ptr<class ResourcePackStack> deserialize(class std::basic_istream<char, struct std::char_traits<char> >&, class IResourcePackRepository const&);
 

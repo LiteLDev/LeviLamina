@@ -11,33 +11,12 @@ public:
     /*0*/ virtual ~SilverfishMergeWithStoneGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SilverfishMergeWithStoneGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SilverfishMergeWithStoneGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (SilverfishMergeWithStoneGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (SilverfishMergeWithStoneGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SilverfishMergeWithStoneGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SilverfishMergeWithStoneGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SilverfishMergeWithStoneGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+
 
 protected:
 

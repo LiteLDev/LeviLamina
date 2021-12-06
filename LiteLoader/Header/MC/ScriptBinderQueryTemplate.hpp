@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~ScriptBinderQueryTemplate();
     /*1*/ virtual std::string const& getTemplateIdentifier() const;
     /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
-    /*
-    inline void applyTemplate(class ScriptObjectBinder& a0) const{
-        void (ScriptBinderQueryTemplate::*rv)(class ScriptObjectBinder&) const;
-        *((void**)&rv) = dlsym("?applyTemplate@ScriptBinderQueryTemplate@@UEBAXAEAVScriptObjectBinder@@@Z");
-        return (this->*rv)(std::forward<class ScriptObjectBinder&>(a0));
-    }
-    inline std::string const& getTemplateIdentifier() const{
-        std::string const& (ScriptBinderQueryTemplate::*rv)() const;
-        *((void**)&rv) = dlsym("?getTemplateIdentifier@ScriptBinderQueryTemplate@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(enum entt::entity);
 
 protected:

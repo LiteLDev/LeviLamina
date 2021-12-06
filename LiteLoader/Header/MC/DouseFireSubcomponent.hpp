@@ -23,16 +23,6 @@ public:
         *((void**)&rv) = dlsym("?readfromJSON@DouseFireSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
         return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
     }
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (DouseFireSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@DouseFireSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (DouseFireSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@DouseFireSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
     */
     MCAPI void douseFire(class BlockSource&, class BlockPos const&);
 

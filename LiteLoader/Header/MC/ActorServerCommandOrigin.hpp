@@ -20,39 +20,13 @@ public:
     /*8*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual unsigned char getSourceSubId() const;
-    /*11*/ virtual void __unk_vfn_0();
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual void __unk_vfn_2();
+    /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*12*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*13*/ virtual class mce::UUID const& getUUID() const;
     /*14*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*15*/ virtual class CompoundTag serialize() const;
     /*16*/ virtual bool isValid() const;
-    /*
-    inline bool isSelectorExpansionAllowed() const{
-        bool (ActorServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@ActorServerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (ActorServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (ActorServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@ActorServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (ActorServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@ActorServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (ActorServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@ActorServerCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const&, class Level&);
 

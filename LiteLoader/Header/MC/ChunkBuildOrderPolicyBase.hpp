@@ -8,13 +8,9 @@ class ChunkBuildOrderPolicyBase {
 #include "Extra/ChunkBuildOrderPolicyBaseAPI.hpp"
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicyBase();
-    /*
-    inline unsigned int registerForUpdates(){
-        unsigned int (ChunkBuildOrderPolicyBase::*rv)();
-        *((void**)&rv) = dlsym("?registerForUpdates@ChunkBuildOrderPolicyBase@@UEAAIXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual unsigned int registerForUpdates();
+
 
 protected:
 

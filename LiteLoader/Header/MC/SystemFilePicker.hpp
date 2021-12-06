@@ -12,23 +12,7 @@ public:
     /*1*/ virtual void initFilePick(class Core::Path const&, class std::function<void (bool, struct FileInfo)>);
     /*2*/ virtual unsigned __int64 readBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char>&);
     /*3*/ virtual bool writeBytes(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char> const&);
-    /*
-    inline void initFilePick(class Core::Path const& a0, class std::function<void (bool, struct FileInfo)> a1){
-        void (SystemFilePicker::*rv)(class Core::Path const&, class std::function<void (bool, struct FileInfo)>);
-        *((void**)&rv) = dlsym("?initFilePick@SystemFilePicker@@UEAAXAEBVPath@Core@@V?$function@$$A6AX_NUFileInfo@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<class std::function<void (bool, struct FileInfo)>>(a1));
-    }
-    inline unsigned __int64 readBytes(struct FileInfo const& a0, unsigned __int64 a1, unsigned __int64 a2, std::vector<unsigned char>& a3){
-        unsigned __int64 (SystemFilePicker::*rv)(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char>&);
-        *((void**)&rv) = dlsym("?readBytes@SystemFilePicker@@UEAA_KAEBUFileInfo@@_K1AEAV?$vector@EV?$allocator@E@std@@@std@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0), std::forward<unsigned __int64>(a1), std::forward<unsigned __int64>(a2), std::forward<std::vector<unsigned char>&>(a3));
-    }
-    inline bool writeBytes(struct FileInfo const& a0, unsigned __int64 a1, unsigned __int64 a2, std::vector<unsigned char> const& a3){
-        bool (SystemFilePicker::*rv)(struct FileInfo const&, unsigned __int64, unsigned __int64, std::vector<unsigned char> const&);
-        *((void**)&rv) = dlsym("?writeBytes@SystemFilePicker@@UEAA_NAEBUFileInfo@@_K1AEBV?$vector@EV?$allocator@E@std@@@std@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0), std::forward<unsigned __int64>(a1), std::forward<unsigned __int64>(a2), std::forward<std::vector<unsigned char> const&>(a3));
-    }
-    */
+
 
 protected:
     MCAPI struct FileInfo _fillFileInfo(class Core::Path const&);

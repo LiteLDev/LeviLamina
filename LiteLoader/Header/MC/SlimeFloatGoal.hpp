@@ -15,23 +15,7 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SlimeFloatGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SlimeFloatGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (SlimeFloatGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SlimeFloatGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SlimeFloatGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SlimeFloatGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -12,23 +12,7 @@ public:
     /*1*/ virtual struct Scripting::Error _functionError(std::string const&) const;
     /*2*/ virtual struct Scripting::Error _getPropertyError(std::string const&) const;
     /*3*/ virtual struct Scripting::Error _setPropertyError(std::string const&) const;
-    /*
-    inline struct Scripting::Error _functionError(std::string const& a0) const{
-        struct Scripting::Error (ScriptActorComponent::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?_functionError@ScriptActorComponent@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline struct Scripting::Error _getPropertyError(std::string const& a0) const{
-        struct Scripting::Error (ScriptActorComponent::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?_getPropertyError@ScriptActorComponent@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline struct Scripting::Error _setPropertyError(std::string const& a0) const{
-        struct Scripting::Error (ScriptActorComponent::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?_setPropertyError@ScriptActorComponent@@MEBA?AUError@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+
     MCAPI class ScriptActorComponent& operator=(class ScriptActorComponent const&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptActorComponent> bind(struct Scripting::Version);
 

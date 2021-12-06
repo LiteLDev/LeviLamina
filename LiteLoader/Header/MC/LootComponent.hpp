@@ -7,7 +7,7 @@
 class LootComponent {
 #include "Extra/LootComponentAPI.hpp"
 public:
-    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const*>*, float, int, class ItemStack const&) const;
+    MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const* >*, float, int, class ItemStack const&) const;
 
 protected:
 

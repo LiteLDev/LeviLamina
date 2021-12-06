@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RaiderCelebrationGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RaiderCelebrationGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RaiderCelebrationGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RaiderCelebrationGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RaiderCelebrationGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RaiderCelebrationGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RaiderCelebrationGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RaiderCelebrationGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RaiderCelebrationGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RaiderCelebrationGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (RaiderCelebrationGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@RaiderCelebrationGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -38,60 +38,15 @@ public:
         *((void**)&rv) = dlsym("?isMeleeDamageEnchant@Enchant@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getDamageProtection(int a0, class ActorDamageSource const& a1) const{
-        int (Enchant::*rv)(int, class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?getDamageProtection@Enchant@@UEBAHHAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ActorDamageSource const&>(a1));
-    }
-    inline void doPostHurt(class ItemInstance& a0, class Actor& a1, class Actor& a2, int a3) const{
-        void (Enchant::*rv)(class ItemInstance&, class Actor&, class Actor&, int) const;
-        *((void**)&rv) = dlsym("?doPostHurt@Enchant@@UEBAXAEAVItemInstance@@AEAVActor@@1H@Z");
-        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Actor&>(a1), std::forward<class Actor&>(a2), std::forward<int>(a3));
-    }
-    inline void doPostAttack(class Actor& a0, class Actor& a1, int a2) const{
-        void (Enchant::*rv)(class Actor&, class Actor&, int) const;
-        *((void**)&rv) = dlsym("?doPostAttack@Enchant@@UEBAXAEAVActor@@0H@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Actor&>(a1), std::forward<int>(a2));
-    }
     inline bool isDiscoverable() const{
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool _isValidEnchantmentTypeForCategory(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (Enchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    inline int getMaxLevel() const{
-        int (Enchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@Enchant@@UEBAHXZ");
         return (this->*rv)();
     }
     inline int getMinLevel() const{
         int (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?getMinLevel@Enchant@@UEBAHXZ");
         return (this->*rv)();
-    }
-    inline float getDamageBonus(int a0, class Actor const& a1) const{
-        float (Enchant::*rv)(int, class Actor const&) const;
-        *((void**)&rv) = dlsym("?getDamageBonus@Enchant@@UEBAMHAEBVActor@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class Actor const&>(a1));
-    }
-    inline int getMaxCost(int a0) const{
-        int (Enchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@Enchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (Enchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@Enchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isCompatibleWith(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (Enchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?isCompatibleWith@Enchant@@UEBA_NW4Type@1@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
     }
     */
     MCAPI std::string getDescriptionId() const;

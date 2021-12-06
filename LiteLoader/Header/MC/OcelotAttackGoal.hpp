@@ -15,33 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (OcelotAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@OcelotAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (OcelotAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@OcelotAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (OcelotAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@OcelotAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (OcelotAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@OcelotAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (OcelotAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@OcelotAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

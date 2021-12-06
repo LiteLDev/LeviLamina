@@ -9,13 +9,7 @@ class BlockIntersectionConstraint {
 public:
     /*0*/ virtual ~BlockIntersectionConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum enum Rotation*/ const&) const;
-    /*
-    inline bool isSatisfied(class IBlockWorldGenAPI const& a0, class BlockPos const& a1, int \/*enum enum Rotation*\/ const& a2) const{
-        bool (BlockIntersectionConstraint::*rv)(class IBlockWorldGenAPI const&, class BlockPos const&, int \/*enum enum Rotation*\/ const&) const;
-        *((void**)&rv) = dlsym("?isSatisfied@BlockIntersectionConstraint@@UEBA_NAEBVIBlockWorldGenAPI@@AEBVBlockPos@@AEBW4Rotation@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<int \/*enum enum Rotation*\/ const&>(a2));
-    }
-    */
+
 
 protected:
 

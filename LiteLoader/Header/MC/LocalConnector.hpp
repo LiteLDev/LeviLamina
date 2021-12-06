@@ -2,6 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Social.hpp"
+#include "Connector.hpp"
 #define EXTRA_INCLUDE_PART_LOCALCONNECTOR
 #include "Extra/LocalConnectorAPI.hpp"
 #undef EXTRA_INCLUDE_PART_LOCALCONNECTOR
@@ -10,10 +11,12 @@ class LocalConnector {
 public:
     /*0*/ virtual ~LocalConnector();
     /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*2*/ virtual std::string getLocalIp();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
+    /*6*/ virtual void __unk_vfn_3();
+    /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
     /*
     inline bool isIPv4Supported() const{
         bool (LocalConnector::*rv)() const;
@@ -60,11 +63,6 @@ public:
         *((void**)&rv) = dlsym("?setupNatPunch@LocalConnector@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline std::string getLocalIp(){
-        std::string (LocalConnector::*rv)();
-        *((void**)&rv) = dlsym("?getLocalIp@LocalConnector@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
     inline std::vector<struct RakNet::SystemAddress> getRefinedLocalIps() const{
         std::vector<struct RakNet::SystemAddress> (LocalConnector::*rv)() const;
         *((void**)&rv) = dlsym("?getRefinedLocalIps@LocalConnector@@UEBA?AV?$vector@USystemAddress@RakNet@@V?$allocator@USystemAddress@RakNet@@@std@@@std@@XZ");
@@ -73,16 +71,6 @@ public:
     inline std::vector<std::string> getLocalIps() const{
         std::vector<std::string> (LocalConnector::*rv)() const;
         *((void**)&rv) = dlsym("?getLocalIps@LocalConnector@@UEBA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Social::GameConnectionInfo const& getConnectedGameInfo() const{
-        class Social::GameConnectionInfo const& (LocalConnector::*rv)() const;
-        *((void**)&rv) = dlsym("?getConnectedGameInfo@LocalConnector@@UEBAAEBVGameConnectionInfo@Social@@XZ");
-        return (this->*rv)();
-    }
-    inline struct Connector::NatPunchInfo getNatPunchInfo() const{
-        struct Connector::NatPunchInfo (LocalConnector::*rv)() const;
-        *((void**)&rv) = dlsym("?getNatPunchInfo@LocalConnector@@UEBA?AUNatPunchInfo@Connector@@XZ");
         return (this->*rv)();
     }
     */

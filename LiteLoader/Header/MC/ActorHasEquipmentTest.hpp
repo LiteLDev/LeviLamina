@@ -16,33 +16,7 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const;
-    /*
-    inline class Json::Value _serializeDomain() const{
-        class Json::Value (ActorHasEquipmentTest::*rv)() const;
-        *((void**)&rv) = dlsym("?_serializeDomain@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline class Json::Value _serializeValue() const{
-        class Json::Value (ActorHasEquipmentTest::*rv)() const;
-        *((void**)&rv) = dlsym("?_serializeValue@ActorHasEquipmentTest@@MEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (ActorHasEquipmentTest::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@ActorHasEquipmentTest@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline bool setup(struct FilterTest::Definition const& a0, struct FilterInputs const& a1){
-        bool (ActorHasEquipmentTest::*rv)(struct FilterTest::Definition const&, struct FilterInputs const&);
-        *((void**)&rv) = dlsym("?setup@ActorHasEquipmentTest@@UEAA_NAEBUDefinition@FilterTest@@AEBUFilterInputs@@@Z");
-        return (this->*rv)(std::forward<struct FilterTest::Definition const&>(a0), std::forward<struct FilterInputs const&>(a1));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (ActorHasEquipmentTest::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@ActorHasEquipmentTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

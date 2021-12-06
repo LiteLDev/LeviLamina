@@ -18,6 +18,6 @@ public:
 protected:
 
 private:
-    MCAPI void _insertDescriptions(std::vector<class ChunkPos> const&, class std::function<void (struct FeatureTerrainAdjustments::Descriptions&)>&&);
+    MCAPI void _insertDescriptions(std::vector<class ChunkPos> const&, class std::function<void (struct FeatureTerrainAdjustments::Descriptions& )>&&);
     MCAPI static struct BeardKernel mBeardKernel;
 };

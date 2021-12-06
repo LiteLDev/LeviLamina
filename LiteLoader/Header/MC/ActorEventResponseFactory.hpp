@@ -9,13 +9,7 @@ class ActorEventResponseFactory {
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const&);
-    /*
-    inline void initializeFactory(class Experiments const& a0){
-        void (ActorEventResponseFactory::*rv)(class Experiments const&);
-        *((void**)&rv) = dlsym("?initializeFactory@ActorEventResponseFactory@@UEAAXAEBVExperiments@@@Z");
-        return (this->*rv)(std::forward<class Experiments const&>(a0));
-    }
-    */
+
     MCAPI void initSchema();
 
 protected:

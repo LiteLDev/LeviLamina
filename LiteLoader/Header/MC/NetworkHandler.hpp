@@ -6,11 +6,7 @@
 #undef EXTRA_INCLUDE_PART_NETWORKHANDLER
 class NetworkHandler {
 #include "Extra/NetworkHandlerAPI.hpp"
-public:
-    /*0*/ virtual void __unk_vfn_0();
-    /*1*/ virtual void _onDisable();
-    /*2*/ virtual void _onEnable();
-    /*
+public:    /*
     inline bool useIPv4Only() const{
         bool (NetworkHandler::*rv)() const;
         *((void**)&rv) = dlsym("?useIPv4Only@NetworkHandler@@UEBA_NXZ");

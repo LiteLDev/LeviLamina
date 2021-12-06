@@ -8,128 +8,29 @@ class TransactionalWorldBlockTarget {
 #include "Extra/TransactionalWorldBlockTargetAPI.hpp"
 public:
     /*0*/ virtual ~TransactionalWorldBlockTarget();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool shimPlaceForOldFeatures(class Feature const&, class BlockPos const&, class Random&) const;
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual class Block const& getBlock(class BlockPos const&) const;
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
+    /*4*/ virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const;
+    /*5*/ virtual class Block const& getExtraBlock(class BlockPos const&) const;
+    /*6*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     /*7*/ virtual bool setBlock(class BlockPos const&, class Block const&, int);
-    /*8*/ virtual void __unk_vfn_5();
+    /*8*/ virtual bool setBlockSimple(class BlockPos const&, class Block const&);
     /*9*/ virtual bool apply() const;
     /*10*/ virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
-    /*11*/ virtual void __unk_vfn_6();
+    /*11*/ virtual bool mayPlace(class BlockPos const&, class Block const&) const;
     /*12*/ virtual bool canSurvive(class BlockPos const&, class Block const&) const;
-    /*13*/ virtual void __unk_vfn_7();
-    /*14*/ virtual void __unk_vfn_8();
-    /*15*/ virtual void __unk_vfn_9();
+    /*13*/ virtual short getMaxHeight() const;
+    /*14*/ virtual short getMinHeight() const;
+    /*15*/ virtual void __unk_vfn_1();
     /*16*/ virtual short getHeightmap(int, int);
     /*17*/ virtual bool isLegacyLevel();
-    /*18*/ virtual void __unk_vfn_10();
-    /*19*/ virtual void __unk_vfn_11();
+    /*18*/ virtual class Biome const* getBiome(class BlockPos const&) const;
+    /*19*/ virtual bool isInBounds(class Pos const&) const;
     /*20*/ virtual short getLocalWaterLevel(class BlockPos const&) const;
-    /*
-    inline bool shimPlaceForOldFeatures(class Feature const& a0, class BlockPos const& a1, class Random& a2) const{
-        bool (TransactionalWorldBlockTarget::*rv)(class Feature const&, class BlockPos const&, class Random&) const;
-        *((void**)&rv) = dlsym("?shimPlaceForOldFeatures@TransactionalWorldBlockTarget@@UEBA_NAEBVFeature@@AEBVBlockPos@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Feature const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
-    }
-    inline short getMaxHeight() const{
-        short (TransactionalWorldBlockTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxHeight@TransactionalWorldBlockTarget@@UEBAFXZ");
-        return (this->*rv)();
-    }
-    inline class LevelData const& getLevelData() const{
-        class LevelData const& (TransactionalWorldBlockTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevelData@TransactionalWorldBlockTarget@@UEBAAEBVLevelData@@XZ");
-        return (this->*rv)();
-    }
-    inline short getMinHeight() const{
-        short (TransactionalWorldBlockTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?getMinHeight@TransactionalWorldBlockTarget@@UEBAFXZ");
-        return (this->*rv)();
-    }
-    inline class Block const& getExtraBlock(class BlockPos const& a0) const{
-        class Block const& (TransactionalWorldBlockTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getExtraBlock@TransactionalWorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline bool mayPlace(class BlockPos const& a0, class Block const& a1) const{
-        bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const&, class Block const&) const;
-        *((void**)&rv) = dlsym("?mayPlace@TransactionalWorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline bool apply() const{
-        bool (TransactionalWorldBlockTarget::*rv)() const;
-        *((void**)&rv) = dlsym("?apply@TransactionalWorldBlockTarget@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canSurvive(class BlockPos const& a0, class Block const& a1) const{
-        bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const&, class Block const&) const;
-        *((void**)&rv) = dlsym("?canSurvive@TransactionalWorldBlockTarget@@UEBA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline class Biome const* getBiome(class BlockPos const& a0) const{
-        class Biome const* (TransactionalWorldBlockTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getBiome@TransactionalWorldBlockTarget@@UEBAPEBVBiome@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class Block const& getBlock(class BlockPos const& a0) const{
-        class Block const& (TransactionalWorldBlockTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getBlock@TransactionalWorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline class Block const& getBlockNoBoundsCheck(class BlockPos const& a0) const{
-        class Block const& (TransactionalWorldBlockTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getBlockNoBoundsCheck@TransactionalWorldBlockTarget@@UEBAAEBVBlock@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline struct WorldGenContext const& getContext(){
-        struct WorldGenContext const& (TransactionalWorldBlockTarget::*rv)();
-        *((void**)&rv) = dlsym("?getContext@TransactionalWorldBlockTarget@@UEAAAEBUWorldGenContext@@XZ");
-        return (this->*rv)();
-    }
-    inline short getHeightmap(int a0, int a1){
-        short (TransactionalWorldBlockTarget::*rv)(int, int);
-        *((void**)&rv) = dlsym("?getHeightmap@TransactionalWorldBlockTarget@@UEAAFHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline short getLocalWaterLevel(class BlockPos const& a0) const{
-        short (TransactionalWorldBlockTarget::*rv)(class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?getLocalWaterLevel@TransactionalWorldBlockTarget@@UEBAFAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline bool hasBiomeTag(unsigned __int64 a0, class BlockPos const& a1) const{
-        bool (TransactionalWorldBlockTarget::*rv)(unsigned __int64, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?hasBiomeTag@TransactionalWorldBlockTarget@@UEBA_N_KAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool isInBounds(class Pos const& a0) const{
-        bool (TransactionalWorldBlockTarget::*rv)(class Pos const&) const;
-        *((void**)&rv) = dlsym("?isInBounds@TransactionalWorldBlockTarget@@UEBA_NAEBVPos@@@Z");
-        return (this->*rv)(std::forward<class Pos const&>(a0));
-    }
-    inline bool isLegacyLevel(){
-        bool (TransactionalWorldBlockTarget::*rv)();
-        *((void**)&rv) = dlsym("?isLegacyLevel@TransactionalWorldBlockTarget@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool placeStructure(class BlockPos const& a0, class StructureTemplate& a1, class StructureSettings& a2){
-        bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
-        *((void**)&rv) = dlsym("?placeStructure@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEAVStructureTemplate@@AEAVStructureSettings@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class StructureTemplate&>(a1), std::forward<class StructureSettings&>(a2));
-    }
-    inline bool setBlock(class BlockPos const& a0, class Block const& a1, int a2){
-        bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const&, class Block const&, int);
-        *((void**)&rv) = dlsym("?setBlock@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@H@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2));
-    }
-    inline bool setBlockSimple(class BlockPos const& a0, class Block const& a1){
-        bool (TransactionalWorldBlockTarget::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?setBlockSimple@TransactionalWorldBlockTarget@@UEAA_NAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    */
+    /*21*/ virtual class LevelData const& getLevelData() const;
+    /*22*/ virtual struct WorldGenContext const& getContext();
+
 
 protected:
 

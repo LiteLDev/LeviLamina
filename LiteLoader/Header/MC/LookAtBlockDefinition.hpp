@@ -11,13 +11,7 @@ class LookAtBlockDefinition : public BehaviorDefinition {
 public:
     /*0*/ virtual ~LookAtBlockDefinition();
     /*1*/ virtual void load(class Json::Value, class BehaviorFactory const&);
-    /*
-    inline void load(class Json::Value a0, class BehaviorFactory const& a1){
-        void (LookAtBlockDefinition::*rv)(class Json::Value, class BehaviorFactory const&);
-        *((void**)&rv) = dlsym("?load@LookAtBlockDefinition@@UEAAXVValue@Json@@AEBVBehaviorFactory@@@Z");
-        return (this->*rv)(std::forward<class Json::Value>(a0), std::forward<class BehaviorFactory const&>(a1));
-    }
-    */
+
 
 protected:
 

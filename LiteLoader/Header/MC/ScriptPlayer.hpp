@@ -14,28 +14,7 @@ public:
     /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
     /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-    /*
-    inline class Scripting::Result<std::string > getNameTag() const{
-        class Scripting::Result<std::string > (ScriptPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTag@ScriptPlayer@@UEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<bool> getSneaking() const{
-        class Scripting::Result<bool> (ScriptPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getSneaking@ScriptPlayer@@UEBA?AV?$Result@_N@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setNameTag(std::string const& a0) const{
-        class Scripting::Result<void> (ScriptPlayer::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?setNameTag@ScriptPlayer@@UEBA?AV?$Result@X@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline class Scripting::Result<void> setSneaking(bool a0) const{
-        class Scripting::Result<void> (ScriptPlayer::*rv)(bool) const;
-        *((void**)&rv) = dlsym("?setSneaking@ScriptPlayer@@UEBA?AV?$Result@X@Scripting@@_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    */
+
     MCAPI class Scripting::Result<std::string > getName() const;
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
 

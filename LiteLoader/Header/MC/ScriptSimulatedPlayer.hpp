@@ -14,28 +14,7 @@ public:
     /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
     /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-    /*
-    inline class Scripting::Result<std::string > getNameTag() const{
-        class Scripting::Result<std::string > (ScriptSimulatedPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTag@ScriptSimulatedPlayer@@UEBA?AV?$Result@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<bool> getSneaking() const{
-        class Scripting::Result<bool> (ScriptSimulatedPlayer::*rv)() const;
-        *((void**)&rv) = dlsym("?getSneaking@ScriptSimulatedPlayer@@UEBA?AV?$Result@_N@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setNameTag(std::string const& a0) const{
-        class Scripting::Result<void> (ScriptSimulatedPlayer::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?setNameTag@ScriptSimulatedPlayer@@UEBA?AV?$Result@X@Scripting@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline class Scripting::Result<void> setSneaking(bool a0) const{
-        class Scripting::Result<void> (ScriptSimulatedPlayer::*rv)(bool) const;
-        *((void**)&rv) = dlsym("?setSneaking@ScriptSimulatedPlayer@@UEBA?AV?$Result@X@Scripting@@_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    */
+
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const&) const;
     MCAPI class Scripting::Result<bool> destroyBlock(class BlockPos const&, int) const;

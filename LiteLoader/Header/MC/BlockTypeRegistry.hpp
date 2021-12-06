@@ -8,7 +8,7 @@ class BlockTypeRegistry {
 #include "Extra/BlockTypeRegistryAPI.hpp"
 public:
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
-    MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const&)>);
+    MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const& )>);
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
     MCAPI static void initBlockEntities();
     MCAPI static void initEntityRegistry();

@@ -10,13 +10,7 @@ class ScriptServerActorAcquiredItemEvent {
 public:
     /*0*/ virtual ~ScriptServerActorAcquiredItemEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerActorAcquiredItemEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerActorAcquiredItemEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setAcquiredAmount(unsigned int);
     MCAPI void setAcquisitionMethod(enum ItemAcquisitionMethod);
     MCAPI void setActorId(struct ActorUniqueID const&);

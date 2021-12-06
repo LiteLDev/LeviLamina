@@ -14,5 +14,6 @@ public:
 protected:
 
 private:
+    MCAPI static class ComponentItem* mItemContext;
     MCAPI static class std::map<std::string, struct CerealItemComponentFactory::Constructor, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor> > > mRegisteredComponents;
 };

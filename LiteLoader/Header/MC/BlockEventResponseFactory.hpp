@@ -9,13 +9,7 @@ class BlockEventResponseFactory {
 public:
     /*0*/ virtual ~BlockEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const&);
-    /*
-    inline void initializeFactory(class Experiments const& a0){
-        void (BlockEventResponseFactory::*rv)(class Experiments const&);
-        *((void**)&rv) = dlsym("?initializeFactory@BlockEventResponseFactory@@UEAAXAEBVExperiments@@@Z");
-        return (this->*rv)(std::forward<class Experiments const&>(a0));
-    }
-    */
+
 
 protected:
 

@@ -9,13 +9,7 @@ class SurfaceLevelCache {
 public:
     /*0*/ virtual ~SurfaceLevelCache();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-    /*
-    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
-        class std::optional<short> (SurfaceLevelCache::*rv)(class DividedPos2d<4>) const;
-        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@SurfaceLevelCache@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
-        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
-    }
-    */
+
 
 protected:
 

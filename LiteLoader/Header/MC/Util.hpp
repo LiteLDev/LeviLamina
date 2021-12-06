@@ -59,7 +59,7 @@ namespace Util {
     MCAPI std::string simpleFormat(std::string const&, std::vector<std::string> const&);
     MCAPI std::string simpleJoin(class buffer_span<class gsl::basic_string_span<char const, -1> >, class gsl::basic_string_span<char const, -1>);
     MCAPI std::vector<std::string> split(std::string const&, char);
-    MCAPI std::vector<std::string> splitLines(std::string const&, std::vector<std::string> const&, bool, bool, class std::basic_istream<char, struct std::char_traits<char> >& (*)(class std::basic_istream<char, struct std::char_traits<char> >&, std::string&));
+    MCAPI std::vector<std::string> splitLines(std::string const&, std::vector<std::string> const&, bool, bool, class std::basic_istream<char, struct std::char_traits<char> >& (* )(class std::basic_istream<char, struct std::char_traits<char> >& , std::string& ));
     MCAPI std::vector<std::string>& splitString(std::string const&, char, std::vector<std::string>&);
     MCAPI bool startsWith(std::string const&, std::string const&);
     MCAPI bool startsWith(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);

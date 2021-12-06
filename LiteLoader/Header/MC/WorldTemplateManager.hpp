@@ -10,13 +10,7 @@ class WorldTemplateManager {
 public:
     /*0*/ virtual ~WorldTemplateManager();
     /*1*/ virtual struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const&) const;
-    /*
-    inline struct WorldTemplateInfo const* findInstalledWorldTemplateByUUID(std::vector<class mce::UUID> const& a0) const{
-        struct WorldTemplateInfo const* (WorldTemplateManager::*rv)(std::vector<class mce::UUID> const&) const;
-        *((void**)&rv) = dlsym("?findInstalledWorldTemplateByUUID@WorldTemplateManager@@UEBAPEBUWorldTemplateInfo@@AEBV?$vector@VUUID@mce@@V?$allocator@VUUID@mce@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<class mce::UUID> const&>(a0));
-    }
-    */
+
     MCAPI struct WorldTemplateInfo const* findInstalledWorldTemplate(struct PackIdVersion const&) const;
     MCAPI class Core::PathBuffer<std::string > getWorldTemplatesPath() const;
 

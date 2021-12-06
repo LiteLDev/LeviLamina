@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~HopMoveControl();
     /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
     /*2*/ virtual void setWantedPosition(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
-    /*
-    inline void setWantedPosition(class MoveControlComponent& a0, class Mob& a1, class Vec3 const& a2, float a3){
-        void (HopMoveControl::*rv)(class MoveControlComponent&, class Mob&, class Vec3 const&, float);
-        *((void**)&rv) = dlsym("?setWantedPosition@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@AEBVVec3@@M@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1), std::forward<class Vec3 const&>(a2), std::forward<float>(a3));
-    }
-    inline void tick(class MoveControlComponent& a0, class Mob& a1){
-        void (HopMoveControl::*rv)(class MoveControlComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@HopMoveControl@@MEAAXAEAVMoveControlComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class MoveControlComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

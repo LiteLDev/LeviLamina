@@ -9,13 +9,7 @@ class TeleportCommand {
 public:
     /*0*/ virtual ~TeleportCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (TeleportCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@TeleportCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void applyTarget(class Actor&, class TeleportTarget);
     MCAPI static class TeleportTarget computeTarget(class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int);
     MCAPI static void setup(class CommandRegistry&);

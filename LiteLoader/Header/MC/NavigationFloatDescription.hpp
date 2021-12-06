@@ -10,13 +10,7 @@ class NavigationFloatDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~NavigationFloatDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (NavigationFloatDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@NavigationFloatDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

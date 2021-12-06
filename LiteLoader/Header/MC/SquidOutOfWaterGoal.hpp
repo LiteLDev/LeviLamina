@@ -26,11 +26,6 @@ public:
         *((void**)&rv) = dlsym("?tick@SquidOutOfWaterGoal@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SquidOutOfWaterGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SquidOutOfWaterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
     inline bool canUse(){
         bool (SquidOutOfWaterGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@SquidOutOfWaterGoal@@UEAA_NXZ");
@@ -39,11 +34,6 @@ public:
     inline bool canContinueToUse(){
         bool (SquidOutOfWaterGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@SquidOutOfWaterGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SquidOutOfWaterGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SquidOutOfWaterGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

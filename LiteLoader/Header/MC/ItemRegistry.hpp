@@ -9,7 +9,7 @@ class ItemRegistry {
 #include "Extra/ItemRegistryAPI.hpp"
 public:
     MCAPI static class gsl::basic_string_span<char const, -1> const MINECRAFT_NAMESPACE;
-    MCAPI static std::string _parseItemDefinition(std::string const&, bool, class std::function<void (class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&)>, bool, enum ItemVersion, enum PackType);
+    MCAPI static std::string _parseItemDefinition(std::string const&, bool, class std::function<void (class WeakPtr<class Item>& , class Json::Value& , class SemVersion const& )>, bool, enum ItemVersion, enum PackType);
     MCAPI static void alterAvailableCreativeItems(class ActorInfoRegistry*, class LevelData&);
     MCAPI static void clearItemAndCreativeItemRegistry();
     MCAPI static void digestServerItemComponents(std::vector<struct std::pair<std::string, class CompoundTag>> const&);
@@ -22,7 +22,7 @@ public:
     MCAPI static struct std::pair<class HashedString, int> getNameFromAlias(class HashedString const&, int);
     MCAPI static class HashedString getNameFromLegacyID(short);
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item> > > > const& getNameToItemMap();
-    MCAPI static void initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, class std::function<void (class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&)>);
+    MCAPI static void initCreativeItemsServer(class ActorInfoRegistry*, class BlockDefinitionGroup*, bool, class Experiments const&, class std::function<void (class ActorInfoRegistry* , class BlockDefinitionGroup* , class CreativeItemRegistry* , bool, class BaseGameVersion const& , class Experiments const& )>);
     MCAPI static void initServerData(class ResourcePackManager&, class Experiments const&, enum ItemVersion);
     MCAPI static bool isCreativeItem(class ItemInstance const&);
     MCAPI static class WeakPtr<class Item> lookupByName(int&, int&, std::string const&);
@@ -53,7 +53,7 @@ public:
 protected:
 
 private:
-    MCAPI static void _loadItemDefinition(class Json::Value&, bool, class std::function<void (class WeakPtr<class Item>&, class Json::Value&, class SemVersion const&)>, bool, enum ItemVersion, enum PackType);
+    MCAPI static void _loadItemDefinition(class Json::Value&, bool, class std::function<void (class WeakPtr<class Item>& , class Json::Value& , class SemVersion const& )>, bool, enum ItemVersion, enum PackType);
     MCAPI static std::vector<class HashedString> mAttachableDefinitions;
     MCAPI static class std::unordered_map<int, class WeakPtr<class Item>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class WeakPtr<class Item> > > > mIdToItemMap;
     MCAPI static class std::unordered_map<class HashedString, struct ItemRegistry::ItemAlias, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct ItemRegistry::ItemAlias> > > mItemAliasLookupMap;

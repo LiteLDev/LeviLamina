@@ -15,33 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RandomSitGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RandomSitGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RandomSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RandomSitGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RandomSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RandomSitGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RandomSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RandomSitGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RandomSitGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RandomSitGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -9,26 +9,10 @@ class TextObjectScore {
 #include "Extra/TextObjectScoreAPI.hpp"
 public:
     /*0*/ virtual ~TextObjectScore();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
-    /*
-    inline std::string asString() const{
-        std::string (TextObjectScore::*rv)() const;
-        *((void**)&rv) = dlsym("?asString@TextObjectScore@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Json::Value asJsonValue() const{
-        class Json::Value (TextObjectScore::*rv)() const;
-        *((void**)&rv) = dlsym("?asJsonValue@TextObjectScore@@UEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline class Json::Value resolve(struct ResolveData const& a0) const{
-        class Json::Value (TextObjectScore::*rv)(struct ResolveData const&) const;
-        *((void**)&rv) = dlsym("?resolve@TextObjectScore@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
-        return (this->*rv)(std::forward<struct ResolveData const&>(a0));
-    }
-    */
+
     MCAPI static std::string const RAW_TEXT_SCORE_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_NAME_KEY;
     MCAPI static std::string const RAW_TEXT_SCORE_OBJECTIVE_KEY;

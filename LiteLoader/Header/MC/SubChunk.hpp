@@ -9,8 +9,8 @@ struct SubChunk {
 public:
     MCAPI void deserialize(class IDataInput&, class BlockPalette const&);
     MCAPI void fetchBlocks(class BlockPos const&, class BlockPos const&, short, class BlockVolume&) const;
-    MCAPI void fetchBlocksInBox(class BlockPos const&, class BoundingBox const&, class std::function<bool (class Block const&)> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
-    MCAPI void fetchBlocksInCylinder(class BlockPos const&, class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const&)> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
+    MCAPI void fetchBlocksInBox(class BlockPos const&, class BoundingBox const&, class std::function<bool (class Block const& )> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
+    MCAPI void fetchBlocksInCylinder(class BlockPos const&, class BlockPos const&, unsigned int, unsigned int, class std::function<bool (class Block const& )> const&, std::vector<class BlockDataFetchResult<class Block>>&) const;
     MCAPI struct SubChunkBrightnessStorage::LightPair getLight(unsigned short) const;
     MCAPI void initialize(class Block const*, bool, bool, class SpinLock&, signed char);
     MCAPI bool isUniform(class Block const&) const;

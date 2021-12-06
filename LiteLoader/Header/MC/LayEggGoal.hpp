@@ -19,50 +19,9 @@ public:
     /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*10*/ virtual void _moveToBlock();
-    /*11*/ virtual void __unk_vfn_3();
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual bool findTargetBlock();
-    /*
-    inline void _moveToBlock(){
-        void (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?_moveToBlock@LayEggGoal@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (LayEggGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@LayEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@LayEggGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@LayEggGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool findTargetBlock(){
-        bool (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?findTargetBlock@LayEggGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (LayEggGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@LayEggGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void start(){
-        void (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@LayEggGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (LayEggGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@LayEggGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
     MCAPI void _layEgg(class BlockPos const&);

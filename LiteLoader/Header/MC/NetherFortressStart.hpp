@@ -9,13 +9,9 @@ class NetherFortressStart : public StructureStart {
 #include "Extra/NetherFortressStartAPI.hpp"
 public:
     /*0*/ virtual ~NetherFortressStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (NetherFortressStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@NetherFortressStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

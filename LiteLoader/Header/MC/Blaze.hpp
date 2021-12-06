@@ -37,31 +37,31 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual void travel(float, float, float);
     /*55*/ virtual void aiStep();
@@ -69,51 +69,21 @@ public:
     /*57*/ virtual int getItemUseDuration() const;
     /*58*/ virtual float getItemUseStartupProgress() const;
     /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_23();
+    /*60*/ virtual void __unk_vfn_22();
     /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_24();
+    /*62*/ virtual void __unk_vfn_23();
     /*63*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*64*/ virtual void onBorn(class Actor&, class Actor&);
-    /*65*/ virtual void __unk_vfn_25();
-    /*66*/ virtual void __unk_vfn_26();
+    /*65*/ virtual int getAttackTime();
+    /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
-    /*68*/ virtual void __unk_vfn_27();
+    /*68*/ virtual void __unk_vfn_25();
     /*69*/ virtual bool isDarkEnoughToSpawn() const;
     /*
-    inline bool isDarkEnoughToSpawn() const{
-        bool (Blaze::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@Blaze@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Blaze::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Blaze@@MEBA_NXZ");
         return (this->*rv)();
-    }
-    inline float getBrightness(float a0) const{
-        float (Blaze::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getBrightness@Blaze@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void aiStep(){
-        void (Blaze::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Blaze@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isOnFire() const{
-        bool (Blaze::*rv)() const;
-        *((void**)&rv) = dlsym("?isOnFire@Blaze@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Blaze::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Blaze@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void travel(float a0, float a1, float a2){
-        void (Blaze::*rv)(float, float, float);
-        *((void**)&rv) = dlsym("?travel@Blaze@@UEAAXMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
     }
     */
 

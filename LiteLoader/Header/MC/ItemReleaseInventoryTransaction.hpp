@@ -10,35 +10,10 @@ public:
     /*0*/ virtual ~ItemReleaseInventoryTransaction();
     /*1*/ virtual void read(class ReadOnlyBinaryStream&);
     /*2*/ virtual void write(class BinaryStream&) const;
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
     /*4*/ virtual int /*enum enum InventoryTransactionError*/ handle(class Player&, bool) const;
-    /*
-    inline void onTransactionError(class Player& a0, int \/*enum enum InventoryTransactionError*\/ a1) const{
-        void (ItemReleaseInventoryTransaction::*rv)(class Player&, int \/*enum enum InventoryTransactionError*\/) const;
-        *((void**)&rv) = dlsym("?onTransactionError@ItemReleaseInventoryTransaction@@UEBAXAEAVPlayer@@W4InventoryTransactionError@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<int \/*enum enum InventoryTransactionError*\/>(a1));
-    }
-    inline int \/*enum enum InventoryTransactionError*\/ handle(class Player& a0, bool a1) const{
-        int \/*enum enum InventoryTransactionError*\/ (ItemReleaseInventoryTransaction::*rv)(class Player&, bool) const;
-        *((void**)&rv) = dlsym("?handle@ItemReleaseInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<bool>(a1));
-    }
-    inline void postLoadItems(class BlockPalette& a0, bool a1){
-        void (ItemReleaseInventoryTransaction::*rv)(class BlockPalette&, bool);
-        *((void**)&rv) = dlsym("?postLoadItems@ItemReleaseInventoryTransaction@@UEAAXAEAVBlockPalette@@_N@Z");
-        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
-    }
-    inline void read(class ReadOnlyBinaryStream& a0){
-        void (ItemReleaseInventoryTransaction::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?read@ItemReleaseInventoryTransaction@@UEAAXAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (ItemReleaseInventoryTransaction::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@ItemReleaseInventoryTransaction@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+    /*5*/ virtual void onTransactionError(class Player&, int /*enum enum InventoryTransactionError*/) const;
+
 
 protected:
 

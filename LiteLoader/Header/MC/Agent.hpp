@@ -43,36 +43,36 @@ public:
     /*31*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*32*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*33*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*34*/ virtual void __unk_vfn_12();
+    /*34*/ virtual float getPickRadius();
     /*35*/ virtual void awardKillScore(class Actor&, int);
     /*36*/ virtual void setCarriedItem(class ItemStack const&);
     /*37*/ virtual class HashedString const& queryEntityRenderer() const;
     /*38*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*39*/ virtual int getPortalWaitTime() const;
     /*40*/ virtual bool canChangeDimensions() const;
-    /*41*/ virtual void __unk_vfn_13();
+    /*41*/ virtual void __unk_vfn_12();
     /*42*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*43*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*44*/ virtual bool canBePulledIntoVehicle() const;
-    /*45*/ virtual void __unk_vfn_14();
+    /*45*/ virtual void __unk_vfn_13();
     /*46*/ virtual bool canSynchronizeNewEntity() const;
     /*47*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
-    /*48*/ virtual void __unk_vfn_15();
-    /*49*/ virtual void __unk_vfn_16();
+    /*48*/ virtual void __unk_vfn_14();
+    /*49*/ virtual void __unk_vfn_15();
     /*50*/ virtual bool isWorldBuilder() const;
-    /*51*/ virtual void __unk_vfn_17();
+    /*51*/ virtual void __unk_vfn_16();
     /*52*/ virtual bool isAdventure() const;
     /*53*/ virtual bool canDestroyBlock(class Block const&) const;
     /*54*/ virtual void setAuxValue(int);
     /*55*/ virtual void stopSpinAttack();
-    /*56*/ virtual void __unk_vfn_18();
-    /*57*/ virtual void __unk_vfn_19();
+    /*56*/ virtual void __unk_vfn_17();
+    /*57*/ virtual void __unk_vfn_18();
     /*58*/ virtual void kill();
     /*59*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*60*/ virtual void __unk_vfn_20();
+    /*60*/ virtual void __unk_vfn_19();
     /*61*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*62*/ virtual void __unk_vfn_21();
-    /*63*/ virtual void __unk_vfn_22();
+    /*62*/ virtual void __unk_vfn_20();
+    /*63*/ virtual void __unk_vfn_21();
     /*64*/ virtual void knockback(class Actor*, int, float, float, float, float, float);
     /*65*/ virtual void spawnAnim();
     /*66*/ virtual void travel(float, float, float);
@@ -80,39 +80,24 @@ public:
     /*68*/ virtual int getItemUseDuration() const;
     /*69*/ virtual float getItemUseStartupProgress() const;
     /*70*/ virtual float getItemUseIntervalProgress() const;
-    /*71*/ virtual void __unk_vfn_23();
+    /*71*/ virtual void __unk_vfn_22();
     /*72*/ virtual bool isAlliedTo(class Mob*);
-    /*73*/ virtual void __unk_vfn_24();
+    /*73*/ virtual void __unk_vfn_23();
     /*74*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*75*/ virtual bool createAIGoals();
     /*76*/ virtual void onBorn(class Actor&, class Actor&);
-    /*77*/ virtual void __unk_vfn_25();
+    /*77*/ virtual int getAttackTime();
     /*78*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*79*/ virtual bool canExistWhenDisallowMob() const;
-    /*80*/ virtual void __unk_vfn_26();
+    /*80*/ virtual void __unk_vfn_24();
     /*81*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*82*/ virtual void _serverAiMobStep();
-    /*83*/ virtual void __unk_vfn_27();
+    /*83*/ virtual void __unk_vfn_25();
     /*
-    inline bool canBePulledIntoVehicle() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (Agent::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Agent@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
     inline bool isTargetable() const{
         bool (Agent::*rv)() const;
         *((void**)&rv) = dlsym("?isTargetable@Agent@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline void knockback(class Actor* a0, int a1, float a2, float a3, float a4, float a5, float a6){
-        void (Agent::*rv)(class Actor*, int, float, float, float, float, float);
-        *((void**)&rv) = dlsym("?knockback@Agent@@UEAAXPEAVActor@@HMMMMM@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int>(a1), std::forward<float>(a2), std::forward<float>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
     }
     inline bool interactPreventDefault(){
         bool (Agent::*rv)();
@@ -124,105 +109,10 @@ public:
         *((void**)&rv) = dlsym("?getAlwaysShowNameTag@Agent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canExistWhenDisallowMob() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistWhenDisallowMob@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canShowNameTag() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?canShowNameTag@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool breaksFallingBlocks() const{
         bool (Agent::*rv)() const;
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Agent@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Agent::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Agent@@EEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void aiStep(){
-        void (Agent::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Agent@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool createAIGoals(){
-        bool (Agent::*rv)();
-        *((void**)&rv) = dlsym("?createAIGoals@Agent@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::string getFormattedNameTag() const{
-        std::string (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?getFormattedNameTag@Agent@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Agent::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Agent@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline std::unique_ptr<class BodyControl> initBodyControl(){
-        std::unique_ptr<class BodyControl> (Agent::*rv)();
-        *((void**)&rv) = dlsym("?initBodyControl@Agent@@EEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Agent::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Agent@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline bool isAdventure() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?isAdventure@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvisible() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?isInvisible@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isPickable(){
-        bool (Agent::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Agent@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWorldBuilder() const{
-        bool (Agent::*rv)() const;
-        *((void**)&rv) = dlsym("?isWorldBuilder@Agent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void kill(){
-        void (Agent::*rv)();
-        *((void**)&rv) = dlsym("?kill@Agent@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Agent::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Agent@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setCarriedItem(class ItemStack const& a0){
-        void (Agent::*rv)(class ItemStack const&);
-        *((void**)&rv) = dlsym("?setCarriedItem@Agent@@UEAAXAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline void teleportTo(class Vec3 const& a0, bool a1, int a2, int a3){
-        void (Agent::*rv)(class Vec3 const&, bool, int, int);
-        *((void**)&rv) = dlsym("?teleportTo@Agent@@UEAAXAEBVVec3@@_NHH@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<bool>(a1), std::forward<int>(a2), std::forward<int>(a3));
-    }
-    inline void travel(float a0, float a1, float a2){
-        void (Agent::*rv)(float, float, float);
-        *((void**)&rv) = dlsym("?travel@Agent@@UEAAXMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Agent::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Agent@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI float getMoveSpeedScalar() const;

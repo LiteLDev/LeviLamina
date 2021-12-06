@@ -14,7 +14,7 @@ public:
     MCAPI class ModelPartLocator* getLocator(unsigned __int64 const&);
     MCAPI class RenderParams& getRenderParams();
     MCAPI void initInstanceSpecificAnimationData(class MolangVariableMap*);
-    MCAPI void initializeServerAnimationComponent(class Actor&, class std::shared_ptr<class CommonResourceDefinitionMap>, class std::function<void (class ActorAnimationPlayer&)>);
+    MCAPI void initializeServerAnimationComponent(class Actor&, class std::shared_ptr<class CommonResourceDefinitionMap>, class std::function<void (class ActorAnimationPlayer& )>);
     MCAPI bool isInitialized();
     MCAPI void serverUpdate(class Actor&);
     MCAPI void setCurrentAnimationControllerStatePlayer(class std::shared_ptr<class ActorAnimationControllerStatePlayer>);

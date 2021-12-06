@@ -15,23 +15,7 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
-    /*
-    inline void setNull(){
-        void (ItemStackBase::*rv)();
-        *((void**)&rv) = dlsym("?setNull@ItemStackBase@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline std::string toDebugString() const{
-        std::string (ItemStackBase::*rv)() const;
-        *((void**)&rv) = dlsym("?toDebugString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string toString() const{
-        std::string (ItemStackBase::*rv)() const;
-        *((void**)&rv) = dlsym("?toString@ItemStackBase@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const&, std::string&);
     MCAPI void addCustomUserData(class BlockActor&, class BlockSource&);

@@ -18,58 +18,7 @@ public:
     /*8*/ virtual bool peek() const;
     /*9*/ virtual bool receive(char*, unsigned __int64);
     /*10*/ virtual void send(char const*, unsigned __int64);
-    /*
-    inline void close(){
-        void (ScriptDebuggerTransport::*rv)();
-        *((void**)&rv) = dlsym("?close@ScriptDebuggerTransport@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool connect(std::string const& a0, unsigned short a1){
-        bool (ScriptDebuggerTransport::*rv)(std::string const&, unsigned short);
-        *((void**)&rv) = dlsym("?connect@ScriptDebuggerTransport@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<unsigned short>(a1));
-    }
-    inline bool connected() const{
-        bool (ScriptDebuggerTransport::*rv)() const;
-        *((void**)&rv) = dlsym("?connected@ScriptDebuggerTransport@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool listen(unsigned short a0){
-        bool (ScriptDebuggerTransport::*rv)(unsigned short);
-        *((void**)&rv) = dlsym("?listen@ScriptDebuggerTransport@@UEAA_NG@Z");
-        return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    inline bool lostConnection() const{
-        bool (ScriptDebuggerTransport::*rv)() const;
-        *((void**)&rv) = dlsym("?lostConnection@ScriptDebuggerTransport@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool peek() const{
-        bool (ScriptDebuggerTransport::*rv)() const;
-        *((void**)&rv) = dlsym("?peek@ScriptDebuggerTransport@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool readyClose() const{
-        bool (ScriptDebuggerTransport::*rv)() const;
-        *((void**)&rv) = dlsym("?readyClose@ScriptDebuggerTransport@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool receive(char* a0, unsigned __int64 a1){
-        bool (ScriptDebuggerTransport::*rv)(char*, unsigned __int64);
-        *((void**)&rv) = dlsym("?receive@ScriptDebuggerTransport@@UEAA_NPEAD_K@Z");
-        return (this->*rv)(std::forward<char*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    inline bool selectClient(){
-        bool (ScriptDebuggerTransport::*rv)();
-        *((void**)&rv) = dlsym("?selectClient@ScriptDebuggerTransport@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void send(char const* a0, unsigned __int64 a1){
-        void (ScriptDebuggerTransport::*rv)(char const*, unsigned __int64);
-        *((void**)&rv) = dlsym("?send@ScriptDebuggerTransport@@UEAAXPEBD_K@Z");
-        return (this->*rv)(std::forward<char const*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+
 
 protected:
 

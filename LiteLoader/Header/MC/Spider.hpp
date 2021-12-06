@@ -39,104 +39,55 @@ public:
     /*27*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*28*/ virtual bool shouldRender() const;
     /*29*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*30*/ virtual void __unk_vfn_12();
+    /*30*/ virtual float getPickRadius();
     /*31*/ virtual void awardKillScore(class Actor&, int);
     /*32*/ virtual class HashedString const& queryEntityRenderer() const;
     /*33*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*34*/ virtual int getPortalWaitTime() const;
     /*35*/ virtual bool canChangeDimensions() const;
-    /*36*/ virtual void __unk_vfn_13();
+    /*36*/ virtual void __unk_vfn_12();
     /*37*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*38*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*39*/ virtual bool canBePulledIntoVehicle() const;
-    /*40*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_13();
     /*41*/ virtual bool canSynchronizeNewEntity() const;
     /*42*/ virtual bool canBeAffected(class MobEffectInstance const&) const;
-    /*43*/ virtual void __unk_vfn_15();
-    /*44*/ virtual void __unk_vfn_16();
+    /*43*/ virtual void __unk_vfn_14();
+    /*44*/ virtual void __unk_vfn_15();
     /*45*/ virtual bool isWorldBuilder() const;
-    /*46*/ virtual void __unk_vfn_17();
+    /*46*/ virtual void __unk_vfn_16();
     /*47*/ virtual bool isAdventure() const;
     /*48*/ virtual bool canDestroyBlock(class Block const&) const;
     /*49*/ virtual void setAuxValue(int);
     /*50*/ virtual void stopSpinAttack();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
-    /*53*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_17();
+    /*52*/ virtual void __unk_vfn_18();
+    /*53*/ virtual void __unk_vfn_19();
     /*54*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*55*/ virtual void __unk_vfn_21();
-    /*56*/ virtual void __unk_vfn_22();
+    /*55*/ virtual void __unk_vfn_20();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual void aiStep();
     /*59*/ virtual bool checkSpawnRules(bool);
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;
-    /*63*/ virtual void __unk_vfn_23();
+    /*63*/ virtual void __unk_vfn_22();
     /*64*/ virtual bool isAlliedTo(class Mob*);
-    /*65*/ virtual void __unk_vfn_24();
+    /*65*/ virtual void __unk_vfn_23();
     /*66*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*67*/ virtual void onBorn(class Actor&, class Actor&);
-    /*68*/ virtual void __unk_vfn_25();
-    /*69*/ virtual void __unk_vfn_26();
+    /*68*/ virtual int getAttackTime();
+    /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void _serverAiMobStep();
-    /*71*/ virtual void __unk_vfn_27();
+    /*71*/ virtual void __unk_vfn_25();
     /*72*/ virtual float getModelScale() const;
+    /*73*/ virtual int /*enum enum Spider::Type*/ getSpiderType() const;
     /*
-    inline int \/*enum enum Spider::Type*\/ getSpiderType() const{
-        int \/*enum enum Spider::Type*\/ (Spider::*rv)() const;
-        *((void**)&rv) = dlsym("?getSpiderType@Spider@@UEBA?AW4Type@1@XZ");
-        return (this->*rv)();
-    }
     inline bool useNewAi() const{
         bool (Spider::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Spider@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool shouldRender() const{
-        bool (Spider::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@Spider@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getModelScale() const{
-        float (Spider::*rv)() const;
-        *((void**)&rv) = dlsym("?getModelScale@Spider@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Spider::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Spider@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Spider::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Spider@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void aiStep(){
-        void (Spider::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Spider@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (Spider::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Spider@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline class Actor* findAttackTarget(){
-        class Actor* (Spider::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@Spider@@MEAAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Spider::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Spider@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setBlockMovementSlowdownMultiplier(class Vec3 const& a0){
-        void (Spider::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setBlockMovementSlowdownMultiplier@Spider@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
     }
     */
 

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SendEventGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SendEventGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (SendEventGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SendEventGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (SendEventGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SendEventGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SendEventGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SendEventGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (SendEventGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SendEventGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SendEventGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SendEventGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

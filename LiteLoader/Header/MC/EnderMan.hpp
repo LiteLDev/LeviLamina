@@ -37,35 +37,35 @@ public:
     /*25*/ virtual bool shouldRender() const;
     /*26*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
     /*40*/ virtual bool canBeAffectedByArrow(class MobEffectInstance const&) const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
-    /*51*/ virtual void __unk_vfn_20();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*53*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*54*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*55*/ virtual void __unk_vfn_21();
-    /*56*/ virtual void __unk_vfn_22();
+    /*55*/ virtual void __unk_vfn_20();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual bool hurtEffects(class ActorDamageSource const&, int, bool, bool);
     /*59*/ virtual void aiStep();
@@ -73,73 +73,22 @@ public:
     /*61*/ virtual int getItemUseDuration() const;
     /*62*/ virtual float getItemUseStartupProgress() const;
     /*63*/ virtual float getItemUseIntervalProgress() const;
-    /*64*/ virtual void __unk_vfn_23();
+    /*64*/ virtual void __unk_vfn_22();
     /*65*/ virtual bool isAlliedTo(class Mob*);
-    /*66*/ virtual void __unk_vfn_24();
+    /*66*/ virtual void __unk_vfn_23();
     /*67*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*68*/ virtual void onBorn(class Actor&, class Actor&);
-    /*69*/ virtual void __unk_vfn_25();
-    /*70*/ virtual void __unk_vfn_26();
+    /*69*/ virtual int getAttackTime();
+    /*70*/ virtual void __unk_vfn_24();
     /*71*/ virtual void newServerAiStep();
     /*72*/ virtual void _serverAiMobStep();
-    /*73*/ virtual void __unk_vfn_27();
-    /*
-    inline bool canBeAffectedByArrow(class MobEffectInstance const& a0) const{
-        bool (EnderMan::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffectedByArrow@EnderMan@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool shouldRender() const{
-        bool (EnderMan::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@EnderMan@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (EnderMan::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@EnderMan@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (EnderMan::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@EnderMan@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (EnderMan::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@EnderMan@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getAmbientSound() const{
-        int \/*enum enum LevelSoundEvent*\/ (EnderMan::*rv)() const;
-        *((void**)&rv) = dlsym("?getAmbientSound@EnderMan@@UEBA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hurtEffects(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (EnderMan::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?hurtEffects@EnderMan@@UEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void newServerAiStep(){
-        void (EnderMan::*rv)();
-        *((void**)&rv) = dlsym("?newServerAiStep@EnderMan@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (EnderMan::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@EnderMan@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (EnderMan::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@EnderMan@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    */
+    /*73*/ virtual void __unk_vfn_25();
+
     MCAPI class Block const& getCarryingBlock();
     MCAPI void setCarryingBlock(class Block const&);
     MCAPI static class std::shared_ptr<class AttributeModifier> SPEED_MODIFIER_ATTACKING;
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACKING_UUID;
-    MCAPI static class std::set<class Block const*, struct std::less<class Block const*>, class std::allocator<class Block const*> > mMayTake;
+    MCAPI static class std::set<class Block const* , struct std::less<class Block const* >, class std::allocator<class Block const* > > mMayTake;
     MCAPI static void shutdown();
 
 protected:

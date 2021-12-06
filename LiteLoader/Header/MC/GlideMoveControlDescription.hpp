@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~GlideMoveControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (GlideMoveControlDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@GlideMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (GlideMoveControlDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@GlideMoveControlDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (GlideMoveControlDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@GlideMoveControlDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

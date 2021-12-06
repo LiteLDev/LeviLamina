@@ -11,46 +11,16 @@ public:
     /*0*/ virtual ~MapUpgradingRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
     /*2*/ virtual int getCraftingSize() const;
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*5*/ virtual bool isShapeless() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*7*/ virtual int size() const;
     /*8*/ virtual class mce::UUID const& getId() const;
-    /*9*/ virtual void __unk_vfn_3();
-    /*10*/ virtual void __unk_vfn_4();
-    /*
-    inline int getCraftingSize() const{
-        int (MapUpgradingRecipe::*rv)() const;
-        *((void**)&rv) = dlsym("?getCraftingSize@MapUpgradingRecipe@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline std::vector<class ItemInstance> const& getResultItem() const{
-        std::vector<class ItemInstance> const& (MapUpgradingRecipe::*rv)() const;
-        *((void**)&rv) = dlsym("?getResultItem@MapUpgradingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int size() const{
-        int (MapUpgradingRecipe::*rv)() const;
-        *((void**)&rv) = dlsym("?size@MapUpgradingRecipe@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline std::vector<class ItemInstance> const& assemble(class CraftingContainer& a0) const{
-        std::vector<class ItemInstance> const& (MapUpgradingRecipe::*rv)(class CraftingContainer&) const;
-        *((void**)&rv) = dlsym("?assemble@MapUpgradingRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z");
-        return (this->*rv)(std::forward<class CraftingContainer&>(a0));
-    }
-    inline class RecipeIngredient const& getIngredient(int a0, int a1) const{
-        class RecipeIngredient const& (MapUpgradingRecipe::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?getIngredient@MapUpgradingRecipe@@UEBAAEBVRecipeIngredient@@HH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline bool matches(class CraftingContainer& a0, class Level& a1) const{
-        bool (MapUpgradingRecipe::*rv)(class CraftingContainer&, class Level&) const;
-        *((void**)&rv) = dlsym("?matches@MapUpgradingRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z");
-        return (this->*rv)(std::forward<class CraftingContainer&>(a0), std::forward<class Level&>(a1));
-    }
-    */
+    /*9*/ virtual class ItemPack const& getItemPack() const;
+    /*10*/ virtual bool isMultiRecipe() const;
+    /*11*/ virtual void loadResultList(class BlockPalette const&) const;
+
     MCAPI static class mce::UUID const CartographyTableID;
     MCAPI static class mce::UUID const CraftingTableID;
 

@@ -10,13 +10,7 @@ class NavigationFlyDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~NavigationFlyDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (NavigationFlyDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@NavigationFlyDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

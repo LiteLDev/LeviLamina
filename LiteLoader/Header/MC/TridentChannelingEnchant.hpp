@@ -10,28 +10,10 @@ class TridentChannelingEnchant {
 public:
     /*0*/ virtual ~TridentChannelingEnchant();
     /*1*/ virtual bool isCompatibleWith(int /*enum enum Enchant::Type*/) const;
-    /*
-    inline int getMaxLevel() const{
-        int (TridentChannelingEnchant::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxLevel@TridentChannelingEnchant@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getMaxCost(int a0) const{
-        int (TridentChannelingEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMaxCost@TridentChannelingEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline int getMinCost(int a0) const{
-        int (TridentChannelingEnchant::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getMinCost@TridentChannelingEnchant@@UEBAHH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isCompatibleWith(int \/*enum enum Enchant::Type*\/ a0) const{
-        bool (TridentChannelingEnchant::*rv)(int \/*enum enum Enchant::Type*\/) const;
-        *((void**)&rv) = dlsym("?isCompatibleWith@TridentChannelingEnchant@@UEBA_NW4Type@Enchant@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Enchant::Type*\/>(a0));
-    }
-    */
+    /*2*/ virtual int getMinCost(int) const;
+    /*3*/ virtual int getMaxCost(int) const;
+    /*4*/ virtual int getMaxLevel() const;
+
 
 protected:
 

@@ -9,7 +9,7 @@ class DimensionDataSerializer {
 public:
     MCAPI std::string createSaveID(std::string const&, std::string const&);
     MCAPI void deleteDataWithID(std::string const&, class LevelStorage&);
-    MCAPI void forEachKeyWithDimensionPrefix(std::string const&, std::string const&, class LevelStorage&, class std::function<void (std::string const&, class CompoundTag const&)> const&);
+    MCAPI void forEachKeyWithDimensionPrefix(std::string const&, std::string const&, class LevelStorage&, class std::function<void (std::string const& , class CompoundTag const& )> const&);
     MCAPI void saveDataWithID(std::string const&, class CompoundTag const&, class LevelStorage&);
 
 protected:

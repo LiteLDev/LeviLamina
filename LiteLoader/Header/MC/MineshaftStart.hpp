@@ -9,13 +9,9 @@ class MineshaftStart : public StructureStart {
 #include "Extra/MineshaftStartAPI.hpp"
 public:
     /*0*/ virtual ~MineshaftStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (MineshaftStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@MineshaftStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

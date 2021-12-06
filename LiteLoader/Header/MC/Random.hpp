@@ -7,18 +7,7 @@
 #undef EXTRA_INCLUDE_PART_RANDOM
 class Random {
 #include "Extra/RandomAPI.hpp"
-public:
-    /*0*/ virtual ~Random();
-    /*1*/ virtual int nextInt();
-    /*2*/ virtual int nextInt(int);
-    /*3*/ virtual __int64 nextLong();
-    /*4*/ virtual bool nextBoolean();
-    /*5*/ virtual float nextFloat();
-    /*6*/ virtual double nextDouble();
-    /*7*/ virtual double nextGaussianDouble();
-    /*8*/ virtual void consumeCount(unsigned int);
-    /*9*/ virtual std::unique_ptr<class IRandom> fork();
-    /*
+public:    /*
     inline void consumeCount(unsigned int a0){
         void (Random::*rv)(unsigned int);
         *((void**)&rv) = dlsym("?consumeCount@Random@@UEAAXI@Z");

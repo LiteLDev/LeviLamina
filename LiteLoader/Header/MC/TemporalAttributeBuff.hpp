@@ -8,38 +8,12 @@ class TemporalAttributeBuff {
 #include "Extra/TemporalAttributeBuffAPI.hpp"
 public:
     /*0*/ virtual ~TemporalAttributeBuff();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /*4*/ virtual bool shouldBuff() const;
     /*5*/ virtual bool isComplete() const;
-    /*
-    inline bool isInstantaneous() const{
-        bool (TemporalAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@TemporalAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isComplete() const{
-        bool (TemporalAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isComplete@TemporalAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSerializable() const{
-        bool (TemporalAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isSerializable@TemporalAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void setDurationAmplifier(class std::shared_ptr<class Amplifier> a0){
-        void (TemporalAttributeBuff::*rv)(class std::shared_ptr<class Amplifier>);
-        *((void**)&rv) = dlsym("?setDurationAmplifier@TemporalAttributeBuff@@UEAAXV?$shared_ptr@VAmplifier@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class Amplifier>>(a0));
-    }
-    inline bool shouldBuff() const{
-        bool (TemporalAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldBuff@TemporalAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI float getBaseAmount() const;
     MCAPI int getDuration() const;
     MCAPI int getLifeTimer() const;
