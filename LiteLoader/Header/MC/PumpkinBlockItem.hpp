@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BlockItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_PUMPKINBLOCKITEM
 #include "Extra/PumpkinBlockItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PUMPKINBLOCKITEM

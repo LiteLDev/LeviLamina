@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "FilterGroup.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_BIOMEFILTERGROUP
 #include "Extra/BiomeFilterGroupAPI.hpp"
 #undef EXTRA_INCLUDE_PART_BIOMEFILTERGROUP

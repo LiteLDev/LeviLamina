@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "BehaviorDefinition.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_PLACEBLOCKDEFINITION
 #include "Extra/PlaceBlockDefinitionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PLACEBLOCKDEFINITION

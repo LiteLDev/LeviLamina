@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "LootItemFunction.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_EXPLORATIONMAPFUNCTION
 #include "Extra/ExplorationMapFunctionAPI.hpp"
 #undef EXTRA_INCLUDE_PART_EXPLORATIONMAPFUNCTION

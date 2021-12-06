@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "ChemistryStickItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_GLOWSTICKITEM
 #include "Extra/GlowStickItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GLOWSTICKITEM

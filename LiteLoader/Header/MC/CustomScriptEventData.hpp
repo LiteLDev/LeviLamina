@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "ScriptApi.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_CUSTOMSCRIPTEVENTDATA
 #include "Extra/CustomScriptEventDataAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CUSTOMSCRIPTEVENTDATA

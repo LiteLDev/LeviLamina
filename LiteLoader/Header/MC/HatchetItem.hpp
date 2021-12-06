@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "DiggerItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_HATCHETITEM
 #include "Extra/HatchetItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_HATCHETITEM

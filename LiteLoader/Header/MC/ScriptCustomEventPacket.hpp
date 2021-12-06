@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "Packet.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_SCRIPTCUSTOMEVENTPACKET
 #include "Extra/ScriptCustomEventPacketAPI.hpp"
 #undef EXTRA_INCLUDE_PART_SCRIPTCUSTOMEVENTPACKET

@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "PlayerCommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_AUTOMATIONPLAYERCOMMANDORIGIN
 #include "Extra/AutomationPlayerCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_AUTOMATIONPLAYERCOMMANDORIGIN

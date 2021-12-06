@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "ActorServerCommandOrigin.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_GAMEDIRECTORENTITYSERVERCOMMANDORIGIN
 #include "Extra/GameDirectorEntityServerCommandOriginAPI.hpp"
 #undef EXTRA_INCLUDE_PART_GAMEDIRECTORENTITYSERVERCOMMANDORIGIN

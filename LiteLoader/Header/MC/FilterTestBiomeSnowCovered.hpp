@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "FilterTest.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_FILTERTESTBIOMESNOWCOVERED
 #include "Extra/FilterTestBiomeSnowCoveredAPI.hpp"
 #undef EXTRA_INCLUDE_PART_FILTERTESTBIOMESNOWCOVERED

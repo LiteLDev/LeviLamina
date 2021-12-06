@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "DiggerItem.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_PICKAXEITEM
 #include "Extra/PickaxeItemAPI.hpp"
 #undef EXTRA_INCLUDE_PART_PICKAXEITEM

@@ -2,7 +2,7 @@
 #pragma once
 #include "../Global.h"
 #include "SplashPotionEffectSubcomponent.hpp"
-#include "Json.hpp"
+#include "../Utils/Json.h"
 #define EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
 #include "Extra/ThrownPotionEffectSubcomponentAPI.hpp"
 #undef EXTRA_INCLUDE_PART_THROWNPOTIONEFFECTSUBCOMPONENT
