@@ -23,6 +23,8 @@ class Container;
 
 namespace Event
 {
+    ///////////////////////////// Impl /////////////////////////////
+
     constexpr bool Ok = true;
     constexpr bool Cancel = false;
 
@@ -92,7 +94,10 @@ namespace Event
         }
     };
 
-    class PreJoinEvent : public EventTemplate<PreJoinEvent>
+
+    ///////////////////////////// Player Events /////////////////////////////
+
+    class PlayerPreJoinEvent : public EventTemplate<PlayerPreJoinEvent>
     {
     public:
         ServerPlayer* player;
@@ -100,13 +105,13 @@ namespace Event
         string xuid;
     };
 
-    class JoinEvent : public EventTemplate<JoinEvent>
+    class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent>
     {
     public:
         ServerPlayer* player;
     };
 
-    class LeftEvent : public EventTemplate<LeftEvent>
+    class PlayerLeftEvent : public EventTemplate<PlayerLeftEvent>
     {
     public:
         ServerPlayer* player;
@@ -119,14 +124,31 @@ namespace Event
         ServerPlayer* player;
     };
 
-    class ChatEvent : public EventTemplate<ChatEvent>
+    class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent>
+    {
+    public:
+        ServerPlayer* player;
+        ItemStack* itemStack;
+    };
+
+    class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent>
+    {
+    public:
+        ServerPlayer* player;
+        ItemStack* itemStack;
+        BlockPos blockPos;
+        int dimId;
+        unsigned char side;
+    };
+
+    class PlayerChatEvent : public EventTemplate<PlayerChatEvent>
     {
     public:
         Player* player;
         string msg;
     };
 
-    class ChangeDimEvent : public EventTemplate<ChangeDimEvent>
+    class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent>
     {
     public:
         Player* player;
@@ -151,6 +173,12 @@ namespace Event
         Player* attacker;
         Actor* victim;
         int damage;
+    };
+
+    class PlayerDeathEvent : public EventTemplate<PlayerDeathEvent>
+    {
+    public:
+        ServerPlayer* player;
     };
 
     class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent>
@@ -204,6 +232,7 @@ namespace Event
     public:
         Player* player;
         BlockPos blockPos;
+        int dimId;
     };
 
     class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
@@ -211,6 +240,7 @@ namespace Event
     public:
         Player* player;
         BlockPos blockPos;
+        int dimId;
     };
 
     class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent>
@@ -218,6 +248,7 @@ namespace Event
     public:
         Player* player;
         BlockPos blockPos;
+        int dimId;
         Container* container;
     };
 
@@ -226,50 +257,68 @@ namespace Event
     public:
         Player* player;
         BlockPos blockPos;
+        int dimId;
         Container* container;
     };
+
+    class PlayerInventoryChangeEvent : public EventTemplate<PlayerInventoryChangeEvent>
+    {
+    public:
+        Player* player;
+        int slotNumber;
+        ItemStack* oldItem;
+        ItemStack* newItem;
+    };
+
+    class PlayerMoveEvent : public EventTemplate<PlayerMoveEvent>
+    {
+    public:
+        Player* player;
+        Vec3 pos;
+    };
+
+    class PlayerSprintEvent : public EventTemplate<PlayerSprintEvent>
+    {
+    public:
+        Player* player;
+        bool isSprinting;
+    };
+
+    class PlayerSetArmorEvent : public EventTemplate<PlayerSetArmorEvent>
+    {
+    public:
+        Player* player;
+        int slotNumber;
+        ItemStack* armor;
+    };
+
+    class PlayerUseRespawnAnchorEvent : public EventTemplate<PlayerUseRespawnAnchorEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+        int dimId;
+    };
+
+    class PlayerOpenContainerScreenEvent : public EventTemplate<PlayerOpenContainerScreenEvent>
+    {
+    public:
+        Player* player;
+    };
+
+
+    ///////////////////////////// Block Events /////////////////////////////
 
     class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>
     {
     public:
         string cmd;
         BlockPos blockPos;
+        int dimId;
     };
 
-    class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
-    {};
 
-    class PostInitEvent : public EventTemplate<PostInitEvent>
-    {};
-
-    class PlayerDeathEvent : public EventTemplate<PlayerDeathEvent>
-    {
-    public:
-        ServerPlayer* player;
-    };
-
-    class RegCmdEvent : public EventTemplate<RegCmdEvent>
-    {
-    public:
-        CommandRegistry* CMDRg;
-    };
-
-    class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
-    {
-    public:
-        Player* player;
-        BlockPos blockPos;
-        Block* block;
-    };
-
-    class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent>
-    {
-    public:
-        ServerPlayer* player;
-        ItemStack* itemStack;
-        BlockPos blockPos;
-        unsigned char side;
-    };
+    ///////////////////////////// Entity Events /////////////////////////////
 
     class MobHurtedEvent : public EventTemplate<MobHurtedEvent>
     {
@@ -277,13 +326,6 @@ namespace Event
         Mob* victim;
         ActorDamageSource* source;
         int damage;
-    };
-
-    class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent>
-    {
-    public:
-        ServerPlayer* player;
-        ItemStack* itemStack;
     };
 
     class MobDieEvent : public EventTemplate<MobDieEvent>
@@ -300,4 +342,27 @@ namespace Event
         int interactiveMode;
     };
 
+    ///////////////////////////// Other Events /////////////////////////////
+
+    class PostInitEvent : public EventTemplate<PostInitEvent>
+    {};
+
+    class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
+    {};
+
+
+    class RegCmdEvent : public EventTemplate<RegCmdEvent>
+    {
+    public:
+        CommandRegistry* CMDRg;
+    };
+
+    class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+        int dimId;
+        Block* block;
+    };
 }; // namespace Event

@@ -23,7 +23,7 @@ UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
     return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
 }
 
-MCINLINE Vec3 const& Actor::getPos() {
+MCINLINE Vec3 const& Actor::getPosition() {
     Vec3 const& (Actor::*rv)();
     *((void**)&rv) = dlsym("?getPos@Actor@@UEBAAEBVVec3@@XZ");
     return (this->*rv)();

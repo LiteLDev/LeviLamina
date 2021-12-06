@@ -9,6 +9,7 @@
 #include <MC/BlockActor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/BlockSource.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/Level.hpp>
 #include <MC/RespawnPacket.hpp>
@@ -34,36 +35,42 @@ class BlockSource;
 
 #define DeclareEventListeners(EVENT) EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners
 
-DeclareEventListeners(PreJoinEvent);
-DeclareEventListeners(JoinEvent);
-DeclareEventListeners(LeftEvent);
+DeclareEventListeners(PlayerPreJoinEvent);
+DeclareEventListeners(PlayerJoinEvent);
+DeclareEventListeners(PlayerLeftEvent);
 DeclareEventListeners(PlayerRespawnEvent);
-DeclareEventListeners(Event::ChatEvent);
-DeclareEventListeners(ChangeDimEvent);
+DeclareEventListeners(Event::PlayerChatEvent);
+DeclareEventListeners(PlayerUseItemEvent);
+DeclareEventListeners(PlayerUseItemOnEvent);
+DeclareEventListeners(PlayerChangeDimEvent);
 DeclareEventListeners(PlayerJumpEvent);
 DeclareEventListeners(PlayerSneakEvent);
 DeclareEventListeners(PlayerAttackEvent);
+DeclareEventListeners(PlayerDeathEvent);
 DeclareEventListeners(PlayerTakeItemEvent);
 DeclareEventListeners(PlayerDropItemEvent);
 DeclareEventListeners(PlayerEatEvent);
 DeclareEventListeners(PlayerConsumeTotemEvent);
 DeclareEventListeners(PlayerCmdEvent);
+DeclareEventListeners(PlayerDestroyBlockEvent);
 DeclareEventListeners(PlayerPlaceBlockEvent);
-DeclareEventListeners(PlayerOpenContainerEvent);
-DeclareEventListeners(PlayerCloseContainerEvent);
 DeclareEventListeners(PlayerEffectChangedEvent);
 DeclareEventListeners(PlayerStartDestroyBlockEvent);
+DeclareEventListeners(PlayerOpenContainerEvent);
+DeclareEventListeners(PlayerCloseContainerEvent);
+DeclareEventListeners(PlayerInventoryChangeEvent);
+DeclareEventListeners(PlayerMoveEvent);
+DeclareEventListeners(PlayerSprintEvent);
+DeclareEventListeners(PlayerSetArmorEvent);
+DeclareEventListeners(PlayerUseRespawnAnchorEvent);
+DeclareEventListeners(PlayerOpenContainerScreenEvent);
+DeclareEventListeners(MobHurtedEvent);
+DeclareEventListeners(MobDieEvent);
+DeclareEventListeners(ItemUseOnActorEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(PostInitEvent);
-DeclareEventListeners(PlayerDeathEvent);
 DeclareEventListeners(RegCmdEvent);
-DeclareEventListeners(PlayerDestroyBlockEvent);
-DeclareEventListeners(PlayerUseItemOnEvent);
-DeclareEventListeners(MobHurtedEvent);
-DeclareEventListeners(PlayerUseItemEvent);
-DeclareEventListeners(MobDieEvent);
-DeclareEventListeners(ItemUseOnActorEvent);
 
 
 /////////////////// PreJoin ///////////////////
@@ -72,7 +79,7 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
       void* ServerNetworkHandler_this, NetworkIdentifier* Ni, ConnectionRequest* a3, ServerPlayer* sp)
 {
     try {
-        PreJoinEvent ev;
+        PlayerPreJoinEvent ev;
         ev.player = sp;
         ev.ip = Ni->getIP();
         ev.xuid = sp->getXuid();
@@ -92,7 +99,7 @@ THook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ",
     ServerPlayer* _this)
 {
     try {
-        JoinEvent ev;
+        PlayerJoinEvent ev;
         ev.player = _this;
 
         if (!ev.call())
@@ -110,7 +117,7 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
       ServerNetworkHandler* _this, ServerPlayer* sp, bool a3)
 {
     try {
-        LeftEvent ev;
+        PlayerLeftEvent ev;
         ev.player = sp;
         ev.xuid = sp->getXuid();
         ev.call();
@@ -142,7 +149,7 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
       ServerNetworkHandler* _this, NetworkIdentifier* id, void* text)
 {
     try {
-        Event::ChatEvent ev;
+        Event::PlayerChatEvent ev;
         ev.player = _this->getServerPlayer(*id);
         ev.msg = std::string(*(std::string*)((uintptr_t)text + 88));
 
@@ -158,7 +165,7 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
       Level* _this, Player* sp, ChangeDimensionRequest* cdimreq)
 {
-    ChangeDimEvent ev;
+    PlayerChangeDimEvent ev;
     ev.player = sp;
     bool ret = original(_this, sp, cdimreq);
     ev.call();
@@ -355,6 +362,7 @@ THook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer
     PlayerStartDestroyBlockEvent ev;
     ev.player = pl;
     ev.blockPos = *bp;
+    ev.dimId = pl->getDimensionId();
     ev.call();
     return original(_this, pl, bp);
 }
@@ -366,6 +374,7 @@ THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_
     PlayerPlaceBlockEvent ev;
     ev.player = (Player*)ac;
     ev.blockPos = *a3;
+    ev.dimId = ac->getDimensionId();
     if (!ev.call())
         return false;
     return original(_this, a2, a3, a4, ac, a6);
@@ -381,6 +390,7 @@ THook(__int64, "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?
     PlayerOpenContainerEvent ev;
     ev.player = pl;
     ev.blockPos = bp;
+    ev.dimId = pl->getDimensionId();
     ev.container = Level::getBlockInstance(bp, pl->getDimensionId()).getContainer();
     if (!ev.call())
         return 0;
@@ -388,7 +398,111 @@ THook(__int64, "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?
 }
 
 /////////////////// PlayerCloseContainer ///////////////////
+//chest
+THook(bool, "?stopOpen@ChestBlockActor@@UEAAXAEAVPlayer@@@Z",
+    void* _this, Player* pl)
+{
+    BlockActor* ba = (BlockActor*)((char*)_this - 240);        //IDA ChestBlockActor::stopOpen
+    BlockPos bp = ba->getPosition();
 
+    PlayerCloseContainerEvent ev;
+    ev.player = pl;
+    ev.blockPos = bp;
+    ev.dimId = pl->getDimensionId();
+    ev.container = Level::getBlockInstance(bp, pl->getDimensionId()).getContainer();
+    ev.call();
+    return original(_this, pl);
+}
+//barrel
+THook(bool, "?stopOpen@BarrelBlockActor@@UEAAXAEAVPlayer@@@Z",
+    void* _this, Player* pl)
+{
+    BlockActor* ba = (BlockActor*)((char*)_this - 240);        //IDA ChestBlockActor::stopOpen
+    BlockPos bp = ba->getPosition();
+
+    PlayerCloseContainerEvent ev;
+    ev.player = pl;
+    ev.blockPos = bp;
+    ev.dimId = pl->getDimensionId();
+    ev.container = Level::getBlockInstance(bp, pl->getDimensionId()).getContainer();
+    ev.call();
+    return original(_this, pl);
+}
+
+/////////////////// PlayerInventoryChange ///////////////////
+THook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z",
+    Player* _this, void* container, int slotNumber, ItemStack* oldItem, ItemStack* newItem, bool is)
+{
+    PlayerInventoryChangeEvent ev;
+    ev.player = _this;
+    ev.slotNumber = slotNumber;
+    ev.oldItem = oldItem;
+    ev.newItem = newItem;
+    ev.call();
+    return original(_this, container, slotNumber, oldItem, newItem, is);
+}
+
+/////////////////// PlayerMove ///////////////////
+THook(void, "?sendPlayerMove@PlayerEventCoordinator@@QEAAXAEAVPlayer@@@Z",
+    void* _this, Player* pl)
+{
+    if (pl->isMoving())
+    {
+        PlayerMoveEvent ev;
+        ev.player = pl;
+        ev.pos = pl->getPosition();
+        ev.call();
+    }
+    return original(_this, pl);
+}
+
+/////////////////// PlayerSprint ///////////////////
+THook(void, "?setSprinting@Mob@@UEAAX_N@Z",
+    Mob* _this, bool sprinting)
+{
+    PlayerSprintEvent ev;
+    ev.player = (Player*)_this;
+    ev.isSprinting = sprinting;
+    if (!ev.call())
+        return;
+    return original(_this, sprinting);
+}
+
+/////////////////// PlayerSetArmor ///////////////////
+THook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
+    Player* _this, unsigned slot, ItemStack* it)
+{
+    PlayerSetArmorEvent ev;
+    ev.player = _this;
+    ev.slotNumber = slot;
+    ev.armor = it;
+    ev.call();
+    return original(_this, slot, it);
+}
+
+/////////////////// PlayerUseRespawnAnchor ///////////////////
+THook(bool, "?trySetSpawn@RespawnAnchorBlock@@CA_NAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
+    Player* pl, BlockPos* bp, BlockSource* bs, Level* a4)
+{
+    PlayerUseRespawnAnchorEvent ev;
+    ev.player = pl;
+    ev.blockPos = *bp;
+    ev.dimId = pl->getDimensionId();
+    if (!ev.call())
+        return false;
+    return original(pl, bp, bs, a4);
+}
+
+/////////////////// PlayerOpenContainerScreen ///////////////////
+THook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",
+    Player* pl)
+{
+    PlayerOpenContainerScreenEvent ev;
+    ev.player = pl;
+    if (!ev.call())
+        return false;
+    return original(pl);
+}
 
 /////////////////// PlayerCmd ///////////////////
 THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
@@ -427,7 +541,7 @@ THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVComma
         CmdBlockExecuteEvent ev;
         ev.cmd = _this->getCommand();
         ev.blockPos = a3->getBlockPosition();
-
+        ev.dimId = a2->getDimensionId();
         if (!ev.call())
             return false;
     } catch (seh_exception) {
@@ -455,7 +569,7 @@ THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEB
     ev.player = pl;
     ev.block = &bl;
     ev.blockPos = blkpos;
-
+    ev.dimId = pl->getDimensionId();
     if (!ev.call())
         return false;
     return original(_this, pl, blkpos, bl);
@@ -472,7 +586,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
         ev.blockPos = bp;
         ev.itemStack = &it;
         ev.side = side;
-
+        ev.dimId = ev.player->getDimensionId();
         if (!ev.call())
             return false;
     } catch (seh_exception) {

@@ -137,7 +137,7 @@ bool InitPlayerDatabase() {
 		) \
 			WITHOUT ROWID; ");
 
-        Event::JoinEvent::subscribe([](const Event::JoinEvent &e)
+        Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent &e)
         {
             insert(e.player->getRealName(), e.player->getXuid(), e.player->getUuid());
             return true;
