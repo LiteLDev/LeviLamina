@@ -153,10 +153,10 @@ LibraryBuilder.exe
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\BinaryStreamAPI.h" />
-    <ClInclude Include="Header\Keep\BlockInstance.hpp" />
-    <ClInclude Include="Header\Keep\FormUI.hpp" />
-    <ClInclude Include="Header\Keep\TeleportTarget.hpp" />
-    <ClInclude Include="Header\Keep\Types.hpp" />
+    <ClInclude Include="Header\MC\BlockInstance.hpp" />
+    <ClInclude Include="Header\MC\FormUI.hpp" />
+    <ClInclude Include="Header\MC\TeleportTarget.hpp" />
+    <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\AABBBucket.hpp" />
     <ClInclude Include="Header\MC\AABBPred.hpp" />

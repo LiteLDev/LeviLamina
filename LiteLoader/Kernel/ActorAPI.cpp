@@ -6,14 +6,14 @@
 #include <MC/ActorDamageSource.hpp>
 #include <MC/UserEntityIdentifierComponent.hpp>
 #include <MC/TeleportCommand.hpp>
-#include <Keep/TeleportTarget.hpp>
+#include <MC/TeleportTarget.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/HitResult.hpp>
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Level.hpp>
 #include <MC/Material.hpp>
-#include <Keep/BlockInstance.hpp>
+#include <MC/BlockInstance.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/Player.hpp>
 #include <MC/HitDetection.hpp>

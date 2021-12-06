@@ -1,6 +1,6 @@
 #include "Global.h"
 #include <MC/BlockSource.hpp>
-#include <Keep/BlockInstance.hpp>
+#include <MC/BlockInstance.hpp>
 
 BlockInstance BlockSource::getBlockInstance(BlockPos a1) {
     return BlockInstance{const_cast<Block*>(&getBlock(a1)), a1, this->getDimensionId()};

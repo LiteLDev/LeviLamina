@@ -1,5 +1,6 @@
 #ifdef EXTRA_INCLUDE_PART_LEVEL
 // Add include headers & pre-declares
+#include "BlockInstance.hpp"
 class Actor;
 class ActorDamageSource;
 class ItemStack;

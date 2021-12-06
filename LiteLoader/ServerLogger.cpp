@@ -3,7 +3,7 @@
 #include <EventAPI.h>
 using namespace Event;
 
-bool onPlayerChat(ChatEvent e) {
+bool onPlayerChat(const ChatEvent &e) {
     Logger::Info("[Chat] {} > {}", e.player->getRealName(), e.msg);
     return true;
 }

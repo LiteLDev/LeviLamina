@@ -43,9 +43,6 @@
     <Filter Include="Header\Command">
       <UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header\Keep">
-      <UniqueIdentifier>{9956e58c-fbf2-4121-891f-cb3980628742}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -213,10 +210,10 @@
     <ClCompile Include="Kernel\TagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerDB.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="ServerLogger.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDB.cpp">
       <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
@@ -11090,17 +11087,17 @@
     <ClInclude Include="Header\MC\Extra\AABBAPI.hpp">
       <Filter>Header\Extra</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Keep\BlockInstance.hpp">
-      <Filter>Header\Keep</Filter>
+    <ClInclude Include="Header\MC\BlockInstance.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Keep\FormUI.hpp">
-      <Filter>Header\Keep</Filter>
+    <ClInclude Include="Header\MC\FormUI.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Keep\TeleportTarget.hpp">
-      <Filter>Header\Keep</Filter>
+    <ClInclude Include="Header\MC\TeleportTarget.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Keep\Types.hpp">
-      <Filter>Header\Keep</Filter>
+    <ClInclude Include="Header\MC\Types.hpp">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
