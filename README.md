@@ -70,16 +70,16 @@ See [Docs](https://docs.litetitle.com/)
 
 First, you must accept the Minecraft EULA.
 - It means **DO NOT MAKE COMMERCIAL USE OF ANYTHING which breaks the EULA.**
-- Accepting this LICENSE means you ACCEPTED [Minecraft EULA](https://account.mojang.com/terms) too.
-- If you violate the EULA, any legal liability is **IRRELEVANT** to the developers
+- Accepting this **LICENSE** means you **ACCEPTED** [Minecraft EULA](https://account.mojang.com/terms) too.
+- If you violate the **EULA**, any legal liability is **IRRELEVANT** to the developers
 - **NO WARRANTY**
 
-Second, if you provide a server hosting service, you can use this framework for free, but you **SHOULD NOT make
+Second, if you provide a server hosting service, you can use this framework for free, but you **SHOULD NOT MAKE
 PRIVATE** changes to this framework as a selling point. If you fixed or tweaked the code, please pull request, instead
 of making it private for commercial use. Do not do evil.
 
 Although we expected to build an open-source community but forcing everything open-source will ruin this community.  
 So, you can write plugins based on LiteLoader with **ANY** open-source license or even don't publish your source code.
-Exception, if you modified the framework, or write a new framework based on this framework, you HAVE TO open-source it.
+Exception, if you modified the framework, or write a new framework based on this framework, you **HAVE TO** open-source it.
 
  
