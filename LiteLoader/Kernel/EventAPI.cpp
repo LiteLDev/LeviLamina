@@ -31,7 +31,7 @@ class ServerNetworkHandler;
 class BaseCommandBlock;
 class BlockSource;
 
-#define DeclareEventListeners(EVENT) EventImpl<EVENT>::ListenersContainer EventImpl<EVENT>::listeners
+#define DeclareEventListeners(EVENT) EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners
 
 DeclareEventListeners(PreJoinEvent);
 DeclareEventListeners(JoinEvent);
@@ -47,6 +47,9 @@ DeclareEventListeners(PlayerDropItemEvent);
 DeclareEventListeners(PlayerEatEvent);
 DeclareEventListeners(PlayerConsumeTotemEvent);
 DeclareEventListeners(PlayerCmdEvent);
+DeclareEventListeners(PlayerPlaceBlockEvent);
+DeclareEventListeners(PlayerOpenContainerEvent);
+DeclareEventListeners(PlayerCloseContainerEvent);
 DeclareEventListeners(PlayerEffectChangedEvent);
 DeclareEventListeners(PlayerStartDestroyBlockEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
@@ -54,7 +57,7 @@ DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(PostInitEvent);
 DeclareEventListeners(PlayerDeathEvent);
 DeclareEventListeners(RegCmdEvent);
-DeclareEventListeners(PlayerDestroyEvent);
+DeclareEventListeners(PlayerDestroyBlockEvent);
 DeclareEventListeners(PlayerUseItemOnEvent);
 DeclareEventListeners(MobHurtedEvent);
 DeclareEventListeners(PlayerUseItemEvent);
@@ -355,6 +358,33 @@ THook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer
     return original(_this, pl, bp);
 }
 
+/////////////////// PlayerPlaceBlock ///////////////////
+THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_N@Z",
+    BlockSource* _this, Block* a2, BlockPos* a3, unsigned __int8 a4, Actor* ac, bool a6)
+{
+    PlayerPlaceBlockEvent ev;
+    ev.player = (Player*)ac;
+    ev.blockPos = *a3;
+    if (!ev.call())
+        return false;
+    return original(_this, a2, a3, a4, ac, a6);
+}
+
+/////////////////// PlayerOpenContainer ///////////////////
+THook(__int64, "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
+    void* a1, void* a2)
+{
+    PlayerOpenContainerEvent ev;
+    ev.player = SymCall("??$tryUnwrap@VPlayer@@$$V@WeakEntityRef@@QEBAPEAVPlayer@@XZ", Player*, void*)(a2);
+    ev.blockPos = dAccess<BlockPos>(a2, 28);        // IDA VanillaServerGameplayEventListener::onPlayerOpenContainer
+    //ev.container = ;
+    if (!ev.call())
+        return 0;
+    return original(a1, a2);
+}
+
+/////////////////// PlayerCloseContainer ///////////////////
+
 
 /////////////////// PlayerCmd ///////////////////
 THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
@@ -417,7 +447,7 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this,
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
       BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl)
 {
-    PlayerDestroyEvent ev;
+    PlayerDestroyBlockEvent ev;
     ev.player = pl;
     ev.block = &bl;
     ev.blockPos = blkpos;

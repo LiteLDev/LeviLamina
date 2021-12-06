@@ -1,6 +1,7 @@
 #pragma once
 #include "Global.h"
 #include "MC/MCRESULT.hpp"
+#include "LoggerAPI.h"
 #include <functional>
 #include <string>
 #include <list>
@@ -18,6 +19,7 @@ class ActorDamageSource;
 class Certificate;
 class CommandRegistry;
 class MobEffectInstance;
+class Container;
 
 namespace Event
 {
@@ -48,7 +50,7 @@ namespace Event
     };
 
     template<typename EVENT>
-    class EventImpl
+    class EventTemplate
     {
     public:
         using Callback = std::function<bool(const EVENT &)>;
@@ -90,7 +92,7 @@ namespace Event
         }
     };
 
-    class PreJoinEvent : public EventImpl<PreJoinEvent>
+    class PreJoinEvent : public EventTemplate<PreJoinEvent>
     {
     public:
         ServerPlayer* player;
@@ -98,52 +100,52 @@ namespace Event
         string xuid;
     };
 
-    class JoinEvent : public EventImpl<JoinEvent>
+    class JoinEvent : public EventTemplate<JoinEvent>
     {
     public:
         ServerPlayer* player;
     };
 
-    class LeftEvent : public EventImpl<LeftEvent>
+    class LeftEvent : public EventTemplate<LeftEvent>
     {
     public:
         ServerPlayer* player;
         string xuid;
     };
 
-    class PlayerRespawnEvent : public EventImpl<PlayerRespawnEvent>
+    class PlayerRespawnEvent : public EventTemplate<PlayerRespawnEvent>
     {
     public:
         ServerPlayer* player;
     };
 
-    class ChatEvent : public EventImpl<ChatEvent>
+    class ChatEvent : public EventTemplate<ChatEvent>
     {
     public:
         Player* player;
         string msg;
     };
 
-    class ChangeDimEvent : public EventImpl<ChangeDimEvent>
+    class ChangeDimEvent : public EventTemplate<ChangeDimEvent>
     {
     public:
         Player* player;
     };
 
-    class PlayerJumpEvent : public EventImpl<PlayerJumpEvent>
+    class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent>
     {
     public:
         Player* player;
     };
 
-    class PlayerSneakEvent : public EventImpl<PlayerSneakEvent>
+    class PlayerSneakEvent : public EventTemplate<PlayerSneakEvent>
     {
     public:
         Player* player;
         bool isSneaking;
     };
 
-    class PlayerAttackEvent : public EventImpl<PlayerAttackEvent>
+    class PlayerAttackEvent : public EventTemplate<PlayerAttackEvent>
     {
     public:
         Player* attacker;
@@ -151,7 +153,7 @@ namespace Event
         int damage;
     };
 
-    class PlayerTakeItemEvent : public EventImpl<PlayerTakeItemEvent>
+    class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent>
     {
     public:
         Player* player;
@@ -159,27 +161,27 @@ namespace Event
         ItemStack* itemStack;
     };
 
-    class PlayerDropItemEvent : public EventImpl<PlayerDropItemEvent>
+    class PlayerDropItemEvent : public EventTemplate<PlayerDropItemEvent>
     {
     public:
         Player* player;
         ItemStack* itemStack;
     };
 
-    class PlayerEatEvent : public EventImpl<PlayerEatEvent>
+    class PlayerEatEvent : public EventTemplate<PlayerEatEvent>
     {
     public:
         Player* player;
         ItemStack* eating;
     };
 
-    class PlayerConsumeTotemEvent : public EventImpl<PlayerConsumeTotemEvent>
+    class PlayerConsumeTotemEvent : public EventTemplate<PlayerConsumeTotemEvent>
     {
     public:
         Player* player;
     };
 
-    class PlayerCmdEvent : public EventImpl<PlayerCmdEvent>
+    class PlayerCmdEvent : public EventTemplate<PlayerCmdEvent>
     {
     public:
         Player* player;
@@ -187,7 +189,7 @@ namespace Event
         MCRESULT *result;
     };
 
-    class PlayerEffectChangedEvent : public EventImpl<PlayerEffectChangedEvent>
+    class PlayerEffectChangedEvent : public EventTemplate<PlayerEffectChangedEvent>
     {
     public:
         enum class EventType { Add, Remove, Update };
@@ -197,39 +199,62 @@ namespace Event
         MobEffectInstance* effect;
     };
 
-    class PlayerStartDestroyBlockEvent : public EventImpl<PlayerStartDestroyBlockEvent>
+    class PlayerStartDestroyBlockEvent : public EventTemplate<PlayerStartDestroyBlockEvent>
     {
     public:
         Player* player;
         BlockPos blockPos;
     };
 
-    class CmdBlockExecuteEvent : public EventImpl<CmdBlockExecuteEvent>
+    class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+    };
+
+    class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+        Container* container;
+    };
+
+    class PlayerCloseContainerEvent : public EventTemplate<PlayerCloseContainerEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+        Container* container;
+    };
+
+    class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>
     {
     public:
         string cmd;
         BlockPos blockPos;
     };
 
-    class ServerStartedEvent : public EventImpl<ServerStartedEvent>
+    class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
     {};
 
-    class PostInitEvent : public EventImpl<PostInitEvent>
+    class PostInitEvent : public EventTemplate<PostInitEvent>
     {};
 
-    class PlayerDeathEvent : public EventImpl<PlayerDeathEvent>
+    class PlayerDeathEvent : public EventTemplate<PlayerDeathEvent>
     {
     public:
         ServerPlayer* player;
     };
 
-    class RegCmdEvent : public EventImpl<RegCmdEvent>
+    class RegCmdEvent : public EventTemplate<RegCmdEvent>
     {
     public:
         CommandRegistry* CMDRg;
     };
 
-    class PlayerDestroyEvent : public EventImpl<PlayerDestroyEvent>
+    class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
     {
     public:
         Player* player;
@@ -237,7 +262,7 @@ namespace Event
         Block* block;
     };
 
-    class PlayerUseItemOnEvent : public EventImpl<PlayerUseItemOnEvent>
+    class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent>
     {
     public:
         ServerPlayer* player;
@@ -246,7 +271,7 @@ namespace Event
         unsigned char side;
     };
 
-    class MobHurtedEvent : public EventImpl<MobHurtedEvent>
+    class MobHurtedEvent : public EventTemplate<MobHurtedEvent>
     {
     public:
         Mob* victim;
@@ -254,21 +279,21 @@ namespace Event
         int damage;
     };
 
-    class PlayerUseItemEvent : public EventImpl<PlayerUseItemEvent>
+    class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent>
     {
     public:
         ServerPlayer* player;
         ItemStack* itemStack;
     };
 
-    class MobDieEvent : public EventImpl<MobDieEvent>
+    class MobDieEvent : public EventTemplate<MobDieEvent>
     {
     public:
         Mob* mob;
         Actor* source;
     };
 
-    class ItemUseOnActorEvent : public EventImpl<ItemUseOnActorEvent>
+    class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent>
     {
     public:
         ActorRuntimeID actorRuntimeID;
