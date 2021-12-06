@@ -13,13 +13,7 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-    /*
-    inline class PackSourceReport load(class IPackManifestFactory& a0, class IContentKeyProvider const& a1){
-        class PackSourceReport (WorldTemplatePackSource::*rv)(class IPackManifestFactory&, class IContentKeyProvider const&);
-        *((void**)&rv) = dlsym("?load@WorldTemplatePackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBVIContentKeyProvider@@@Z");
-        return (this->*rv)(std::forward<class IPackManifestFactory&>(a0), std::forward<class IContentKeyProvider const&>(a1));
-    }
-    */
+
 
 protected:
 

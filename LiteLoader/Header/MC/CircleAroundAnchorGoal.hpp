@@ -12,36 +12,10 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void stop(){
-        void (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@CircleAroundAnchorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (CircleAroundAnchorGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@CircleAroundAnchorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@CircleAroundAnchorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@CircleAroundAnchorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (CircleAroundAnchorGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@CircleAroundAnchorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

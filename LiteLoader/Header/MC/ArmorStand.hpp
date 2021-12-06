@@ -39,112 +39,57 @@ public:
     /*27*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*28*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*29*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*30*/ virtual void __unk_vfn_12();
+    /*30*/ virtual float getPickRadius();
     /*31*/ virtual void awardKillScore(class Actor&, int);
     /*32*/ virtual class HashedString const& queryEntityRenderer() const;
     /*33*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*34*/ virtual int getPortalWaitTime() const;
     /*35*/ virtual bool canChangeDimensions() const;
-    /*36*/ virtual void __unk_vfn_13();
+    /*36*/ virtual void __unk_vfn_12();
     /*37*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*38*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*39*/ virtual bool canBePulledIntoVehicle() const;
-    /*40*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_13();
     /*41*/ virtual bool canSynchronizeNewEntity() const;
-    /*42*/ virtual void __unk_vfn_15();
-    /*43*/ virtual void __unk_vfn_16();
+    /*42*/ virtual void __unk_vfn_14();
+    /*43*/ virtual void __unk_vfn_15();
     /*44*/ virtual bool isWorldBuilder() const;
-    /*45*/ virtual void __unk_vfn_17();
+    /*45*/ virtual void __unk_vfn_16();
     /*46*/ virtual bool isAdventure() const;
     /*47*/ virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
     /*48*/ virtual bool canDestroyBlock(class Block const&) const;
     /*49*/ virtual void setAuxValue(int);
     /*50*/ virtual void stopSpinAttack();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
+    /*51*/ virtual void __unk_vfn_17();
+    /*52*/ virtual void __unk_vfn_18();
     /*53*/ virtual void die(class ActorDamageSource const&);
     /*54*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*55*/ virtual void __unk_vfn_20();
+    /*55*/ virtual void __unk_vfn_19();
     /*56*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*57*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*58*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*59*/ virtual void __unk_vfn_21();
-    /*60*/ virtual void __unk_vfn_22();
+    /*59*/ virtual void __unk_vfn_20();
+    /*60*/ virtual void __unk_vfn_21();
     /*61*/ virtual void spawnAnim();
     /*62*/ virtual void pushActors();
     /*63*/ virtual int getItemUseDuration() const;
     /*64*/ virtual float getItemUseStartupProgress() const;
     /*65*/ virtual float getItemUseIntervalProgress() const;
-    /*66*/ virtual void __unk_vfn_23();
+    /*66*/ virtual void __unk_vfn_22();
     /*67*/ virtual bool isAlliedTo(class Mob*);
-    /*68*/ virtual void __unk_vfn_24();
+    /*68*/ virtual void __unk_vfn_23();
     /*69*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*70*/ virtual void onBorn(class Actor&, class Actor&);
-    /*71*/ virtual void __unk_vfn_25();
+    /*71*/ virtual int getAttackTime();
     /*72*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*73*/ virtual void __unk_vfn_26();
+    /*73*/ virtual void __unk_vfn_24();
     /*74*/ virtual void _serverAiMobStep();
-    /*75*/ virtual void __unk_vfn_27();
+    /*75*/ virtual void __unk_vfn_25();
     /*
     inline bool interactPreventDefault(){
         bool (ArmorStand::*rv)();
         *((void**)&rv) = dlsym("?interactPreventDefault@ArmorStand@@UEAA_NXZ");
         return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (ArmorStand::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@ArmorStand@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (ArmorStand::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@ArmorStand@@UEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ArmorStand::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ArmorStand@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (ArmorStand::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@ArmorStand@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool getInteraction(class Player& a0, class ActorInteraction& a1, class Vec3 const& a2){
-        bool (ArmorStand::*rv)(class Player&, class ActorInteraction&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?getInteraction@ArmorStand@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class ActorInteraction&>(a1), std::forward<class Vec3 const&>(a2));
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (ArmorStand::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@ArmorStand@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool isPickable(){
-        bool (ArmorStand::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@ArmorStand@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (ArmorStand::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@ArmorStand@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void pushActors(){
-        void (ArmorStand::*rv)();
-        *((void**)&rv) = dlsym("?pushActors@ArmorStand@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ArmorStand::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ArmorStand@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (ArmorStand::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@ArmorStand@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI int getNumSlotsFilled() const;
@@ -172,4 +117,5 @@ private:
     MCAPI static struct ArmorStand::Pose const POSE_SOLEMN;
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
+    MCAPI static struct ArmorStand::Pose const* * STAND_POSES;
 };

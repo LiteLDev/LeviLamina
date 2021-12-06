@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~FloatNavigation();
     /*1*/ virtual void stop(class NavigationComponent&, class Mob&);
     /*2*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    /*
-    inline bool travel(class NavigationComponent& a0, class Mob& a1, float& a2, float& a3, float& a4){
-        bool (FloatNavigation::*rv)(class NavigationComponent&, class Mob&, float&, float&, float&);
-        *((void**)&rv) = dlsym("?travel@FloatNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<float&>(a2), std::forward<float&>(a3), std::forward<float&>(a4));
-    }
-    */
+
 
 protected:
 

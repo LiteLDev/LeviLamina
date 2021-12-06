@@ -13,28 +13,7 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value&) const;
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
-    /*
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (ActorDefinitionEventSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@ActorDefinitionEventSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (ActorDefinitionEventSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@ActorDefinitionEventSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void readfromJSON(class Json::Value& a0, class SemVersion const& a1){
-        void (ActorDefinitionEventSubcomponent::*rv)(class Json::Value&, class SemVersion const&);
-        *((void**)&rv) = dlsym("?readfromJSON@ActorDefinitionEventSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
-    }
-    inline void writetoJSON(class Json::Value& a0) const{
-        void (ActorDefinitionEventSubcomponent::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?writetoJSON@ActorDefinitionEventSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

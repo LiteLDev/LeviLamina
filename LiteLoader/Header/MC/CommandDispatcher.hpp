@@ -9,13 +9,7 @@ class CommandDispatcher {
 public:
     /*0*/ virtual ~CommandDispatcher();
     /*1*/ virtual int performCommand(class CommandOrigin const&, class Command&);
-    /*
-    inline int performCommand(class CommandOrigin const& a0, class Command& a1){
-        int (CommandDispatcher::*rv)(class CommandOrigin const&, class Command&);
-        *((void**)&rv) = dlsym("?performCommand@CommandDispatcher@@UEAAHAEBVCommandOrigin@@AEAVCommand@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class Command&>(a1));
-    }
-    */
+
 
 protected:
 

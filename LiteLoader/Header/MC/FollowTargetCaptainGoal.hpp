@@ -12,41 +12,10 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void stop(){
-        void (FollowTargetCaptainGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@FollowTargetCaptainGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (FollowTargetCaptainGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@FollowTargetCaptainGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (FollowTargetCaptainGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@FollowTargetCaptainGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (FollowTargetCaptainGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@FollowTargetCaptainGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (FollowTargetCaptainGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@FollowTargetCaptainGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (FollowTargetCaptainGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@FollowTargetCaptainGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

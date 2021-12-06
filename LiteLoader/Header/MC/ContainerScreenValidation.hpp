@@ -14,38 +14,7 @@ public:
     /*4*/ virtual int /*enum enum ItemSetType*/ _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
     /*5*/ virtual bool _canRemove(struct ContainerValidatorPairScope const&, int, int, bool) const;
     /*6*/ virtual bool _canDestroy(struct ContainerValidatorPairScope const&) const;
-    /*
-    inline int \/*enum enum ItemAddType*\/ _canAdd(struct ContainerValidatorPairScope const& a0, int a1, class ItemStackBase const& a2, int a3) const{
-        int \/*enum enum ItemAddType*\/ (ContainerScreenValidation::*rv)(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-        *((void**)&rv) = dlsym("?_canAdd@ContainerScreenValidation@@MEBA?AW4ItemAddType@@AEBUContainerValidatorPairScope@@HAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<struct ContainerValidatorPairScope const&>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const&>(a2), std::forward<int>(a3));
-    }
-    inline bool _canDestroy(struct ContainerValidatorPairScope const& a0) const{
-        bool (ContainerScreenValidation::*rv)(struct ContainerValidatorPairScope const&) const;
-        *((void**)&rv) = dlsym("?_canDestroy@ContainerScreenValidation@@MEBA_NAEBUContainerValidatorPairScope@@@Z");
-        return (this->*rv)(std::forward<struct ContainerValidatorPairScope const&>(a0));
-    }
-    inline bool _canRemove(struct ContainerValidatorPairScope const& a0, int a1, int a2, bool a3) const{
-        bool (ContainerScreenValidation::*rv)(struct ContainerValidatorPairScope const&, int, int, bool) const;
-        *((void**)&rv) = dlsym("?_canRemove@ContainerScreenValidation@@MEBA_NAEBUContainerValidatorPairScope@@HH_N@Z");
-        return (this->*rv)(std::forward<struct ContainerValidatorPairScope const&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<bool>(a3));
-    }
-    inline int \/*enum enum ItemSetType*\/ _canSet(struct ContainerValidatorPairScope const& a0, int a1, class ItemStackBase const& a2, int a3) const{
-        int \/*enum enum ItemSetType*\/ (ContainerScreenValidation::*rv)(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-        *((void**)&rv) = dlsym("?_canSet@ContainerScreenValidation@@MEBA?AW4ItemSetType@@AEBUContainerValidatorPairScope@@HAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<struct ContainerValidatorPairScope const&>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const&>(a2), std::forward<int>(a3));
-    }
-    inline class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(int \/*enum enum ContainerEnumName*\/ a0){
-        class std::shared_ptr<class SimpleSparseContainer> (ContainerScreenValidation::*rv)(int \/*enum enum ContainerEnumName*\/);
-        *((void**)&rv) = dlsym("?getOrCreateSparseContainer@ContainerScreenValidation@@UEAA?AV?$shared_ptr@VSimpleSparseContainer@@@std@@W4ContainerEnumName@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerEnumName*\/>(a0));
-    }
-    inline struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const& a0, struct ContainerValidationSlotData const& a1, int a2, bool a3){
-        struct ContainerValidationResult (ContainerScreenValidation::*rv)(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
-        *((void**)&rv) = dlsym("?tryTransfer@ContainerScreenValidation@@UEAA?AUContainerValidationResult@@AEBUContainerValidationSlotData@@0H_N@Z");
-        return (this->*rv)(std::forward<struct ContainerValidationSlotData const&>(a0), std::forward<struct ContainerValidationSlotData const&>(a1), std::forward<int>(a2), std::forward<bool>(a3));
-    }
-    */
+
     MCAPI bool tryCommitActionResults();
     MCAPI struct ContainerValidationResult tryConsume(struct ContainerValidationSlotData const&, int);
     MCAPI struct ContainerValidationResult tryDestroy(struct ContainerValidationSlotData const&, int);

@@ -10,34 +10,19 @@ public:
     /*0*/ virtual ~RealmsUnknownPackSource();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
+    /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
     /*
-    inline int \/*enum enum PackOrigin*\/ getPackOrigin() const{
-        int \/*enum enum PackOrigin*\/ (RealmsUnknownPackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackOrigin@RealmsUnknownPackSource@@UEBA?AW4PackOrigin@@XZ");
-        return (this->*rv)();
-    }
-    inline void forEachPack(class std::function<void (class Pack&)> a0){
-        void (RealmsUnknownPackSource::*rv)(class std::function<void (class Pack&)>);
+    inline void forEachPack(class std::function<void (class Pack& )> a0){
+        void (RealmsUnknownPackSource::*rv)(class std::function<void (class Pack& )>);
         *((void**)&rv) = dlsym("?forEachPack@RealmsUnknownPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<void (class Pack& )>>(a0));
     }
-    inline void forEachPackConst(class std::function<void (class Pack const&)> a0) const{
-        void (RealmsUnknownPackSource::*rv)(class std::function<void (class Pack const&)>) const;
+    inline void forEachPackConst(class std::function<void (class Pack const& )> a0) const{
+        void (RealmsUnknownPackSource::*rv)(class std::function<void (class Pack const& )>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@RealmsUnknownPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack const&)>>(a0));
-    }
-    inline int \/*enum enum PackType*\/ getPackType() const{
-        int \/*enum enum PackType*\/ (RealmsUnknownPackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackType@RealmsUnknownPackSource@@UEBA?AW4PackType@@XZ");
-        return (this->*rv)();
-    }
-    inline class PackSourceReport load(class IPackManifestFactory& a0, class IContentKeyProvider const& a1){
-        class PackSourceReport (RealmsUnknownPackSource::*rv)(class IPackManifestFactory&, class IContentKeyProvider const&);
-        *((void**)&rv) = dlsym("?load@RealmsUnknownPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBVIContentKeyProvider@@@Z");
-        return (this->*rv)(std::forward<class IPackManifestFactory&>(a0), std::forward<class IContentKeyProvider const&>(a1));
+        return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
     }
     */
 

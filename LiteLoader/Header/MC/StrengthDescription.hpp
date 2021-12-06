@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~StrengthDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (StrengthDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@StrengthDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (StrengthDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@StrengthDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (StrengthDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@StrengthDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

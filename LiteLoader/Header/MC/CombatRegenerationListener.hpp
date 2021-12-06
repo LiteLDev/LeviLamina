@@ -17,13 +17,7 @@ public:
     /*7*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual int /*enum enum EventResult*/ onActorDeath(class Actor&, class ActorDamageSource const&, int /*enum enum ActorType*/);
-    /*
-    inline int \/*enum enum EventResult*\/ onActorDeath(class Actor& a0, class ActorDamageSource const& a1, int \/*enum enum ActorType*\/ a2){
-        int \/*enum enum EventResult*\/ (CombatRegenerationListener::*rv)(class Actor&, class ActorDamageSource const&, int \/*enum enum ActorType*\/);
-        *((void**)&rv) = dlsym("?onActorDeath@CombatRegenerationListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ActorDamageSource const&>(a1), std::forward<int \/*enum enum ActorType*\/>(a2));
-    }
-    */
+
 
 protected:
 

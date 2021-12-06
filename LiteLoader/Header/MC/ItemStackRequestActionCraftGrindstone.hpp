@@ -13,18 +13,7 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void _write(class BinaryStream&) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
-    /*
-    inline bool _read(class ReadOnlyBinaryStream& a0){
-        bool (ItemStackRequestActionCraftGrindstone::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@ItemStackRequestActionCraftGrindstone@@UEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void _write(class BinaryStream& a0) const{
-        void (ItemStackRequestActionCraftGrindstone::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftGrindstone@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+
     MCAPI struct ItemStackNetIdVariant const& getRecipeNetId() const;
     MCAPI int getRepairCost() const;
 

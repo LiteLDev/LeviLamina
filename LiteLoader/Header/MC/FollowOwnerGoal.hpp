@@ -17,43 +17,7 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>);
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (FollowOwnerGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@FollowOwnerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (FollowOwnerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@FollowOwnerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (FollowOwnerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@FollowOwnerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void onPlayerDimensionChanged(class Player* a0, class AutomaticID<class Dimension, int> a1){
-        void (FollowOwnerGoal::*rv)(class Player*, class AutomaticID<class Dimension, int>);
-        *((void**)&rv) = dlsym("?onPlayerDimensionChanged@FollowOwnerGoal@@UEAAXPEAVPlayer@@V?$AutomaticID@VDimension@@H@@@Z");
-        return (this->*rv)(std::forward<class Player*>(a0), std::forward<class AutomaticID<class Dimension, int>>(a1));
-    }
-    inline void start(){
-        void (FollowOwnerGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@FollowOwnerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (FollowOwnerGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@FollowOwnerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (FollowOwnerGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@FollowOwnerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

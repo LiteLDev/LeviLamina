@@ -10,13 +10,7 @@ class NpcUrlAction {
 public:
     /*0*/ virtual ~NpcUrlAction();
     /*1*/ virtual class Json::Value toJson();
-    /*
-    inline class Json::Value toJson(){
-        class Json::Value (NpcUrlAction::*rv)();
-        *((void**)&rv) = dlsym("?toJson@NpcUrlAction@@UEAA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

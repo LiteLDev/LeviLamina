@@ -9,13 +9,7 @@ class ContainerComponent {
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~ContainerComponent();
-    /*
-    inline void containerContentChanged(int a0){
-        void (ContainerComponent::*rv)(int);
-        *((void**)&rv) = dlsym("?containerContentChanged@ContainerComponent@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    */
+
     MCAPI class Container* _getRawContainerPtr() const;
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool addItem(class BlockSource&, class ItemStack&, int, int);
@@ -28,7 +22,7 @@ public:
     MCAPI int findFirstSlotForItem(class ItemStack const&) const;
     MCAPI int getContainerSize() const;
     MCAPI class ItemStack const& getItem(int) const;
-    MCAPI std::vector<class ItemStack const*> const getSlots() const;
+    MCAPI std::vector<class ItemStack const* > const getSlots() const;
     MCAPI bool hasRoomForItem(class ItemActor const&);
     MCAPI bool hasRoomForItem(class ItemStack const&);
     MCAPI void initFromDefinition(class Actor&);
@@ -40,7 +34,7 @@ public:
     MCAPI void rebuildContainer(class Actor&, enum ContainerType, int, bool, int, bool);
     MCAPI void removeItem(int, int);
     MCAPI void removeItemsOfType(class ItemStack const&, int);
-    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     MCAPI void setCustomName(std::string const&);
     MCAPI bool setItem(int, class ItemStack const&);
     MCAPI void setLootTable(std::string const&, int);

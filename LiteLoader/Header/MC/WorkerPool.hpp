@@ -15,7 +15,7 @@ public:
 
 protected:
     MCAPI static void _registerPool(class WorkerPool&);
-    MCAPI static class SmallSet<class WorkerPool*> sAllPools;
+    MCAPI static class SmallSet<class WorkerPool* > sAllPools;
     MCAPI static class std::mutex sAllPoolsMutex;
 
 private:

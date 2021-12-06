@@ -2,8 +2,8 @@
 #pragma once
 #include "../Global.h"
 #include "LevelStorage.hpp"
-#include "Bedrock.hpp"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 #include "LevelStorageWriteBatch.hpp"
 #define EXTRA_INCLUDE_PART_DBSTORAGE
 #include "Extra/DBStorageAPI.hpp"
@@ -19,18 +19,18 @@ public:
     /*5*/ virtual bool loadLevelData(class LevelData&);
     /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, int /*enum enum StorageVersion*/);
     /*7*/ virtual void saveLevelData(class LevelData const&);
-    /*8*/ virtual void __unk_vfn_0();
+    /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const;
     /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, int /*enum enum DBHelpers::Category*/);
     /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&);
     /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, int /*enum enum DBHelpers::Category*/);
     /*12*/ virtual void syncIO();
     /*13*/ virtual void getStatistics(std::string&) const;
-    /*14*/ virtual void __unk_vfn_1();
+    /*14*/ virtual void __unk_vfn_0();
     /*15*/ virtual void startShutdown();
     /*16*/ virtual bool isShuttingDown() const;
     /*17*/ virtual bool checkShutdownDone();
     /*18*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, int /*enum enum DBHelpers::Category*/) const;
-    /*19*/ virtual void __unk_vfn_2();
+    /*19*/ virtual void __unk_vfn_1();
     /*20*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&);
     /*21*/ virtual void releaseSnapshot();
     /*22*/ virtual void compactStorage();
@@ -43,66 +43,6 @@ public:
     /*29*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*30*/ virtual void corruptLevel();
     /*
-    inline class Core::PathBuffer<std::string > const& getFullPath() const{
-        class Core::PathBuffer<std::string > const& (DBStorage::*rv)() const;
-        *((void**)&rv) = dlsym("?getFullPath@DBStorage@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
-        return (this->*rv)();
-    }
-    inline void addStorageObserver(std::unique_ptr<class LevelStorageObserver> a0){
-        void (DBStorage::*rv)(std::unique_ptr<class LevelStorageObserver>);
-        *((void**)&rv) = dlsym("?addStorageObserver@DBStorage@@UEAAXV?$unique_ptr@VLevelStorageObserver@@U?$default_delete@VLevelStorageObserver@@@std@@@std@@@Z");
-        return (this->*rv)(std::forward<std::unique_ptr<class LevelStorageObserver>>(a0));
-    }
-    inline bool checkShutdownDone(){
-        bool (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?checkShutdownDone@DBStorage@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void compactStorage(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?compactStorage@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void corruptLevel(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?corruptLevel@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource> a0, int \/*enum enum StorageVersion*\/ a1){
-        std::unique_ptr<class ChunkSource> (DBStorage::*rv)(std::unique_ptr<class ChunkSource>, int \/*enum enum StorageVersion*\/);
-        *((void**)&rv) = dlsym("?createChunkStorage@DBStorage@@UEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
-        return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<int \/*enum enum StorageVersion*\/>(a1));
-    }
-    inline std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const& a0){
-        std::vector<struct SnapshotFilenameAndLength> (DBStorage::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?createSnapshot@DBStorage@@UEAA?AV?$vector@USnapshotFilenameAndLength@@V?$allocator@USnapshotFilenameAndLength@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const& a0, int \/*enum enum DBHelpers::Category*\/ a1){
-        class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > (DBStorage::*rv)(std::string const&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?deleteData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int \/*enum enum DBHelpers::Category*\/>(a1));
-    }
-    inline void flushToPermanentStorage(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?flushToPermanentStorage@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1> a0, int \/*enum enum DBHelpers::Category*\/ a1, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const& a2) const{
-        void (DBStorage::*rv)(class gsl::basic_string_span<char const, -1>, int \/*enum enum DBHelpers::Category*\/, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const;
-        *((void**)&rv) = dlsym("?forEachKeyWithPrefix@DBStorage@@UEBAXV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@AEBV?$function@$$A6AXV?$basic_string_span@$$CBD$0?0@gsl@@0@Z@std@@@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0), std::forward<int \/*enum enum DBHelpers::Category*\/>(a1), std::forward<class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&>(a2));
-    }
-    inline void freeCaches(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?freeCaches@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> getCompoundTag(std::string const& a0, int \/*enum enum DBHelpers::Category*\/ a1){
-        std::unique_ptr<class CompoundTag> (DBStorage::*rv)(std::string const&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?getCompoundTag@DBStorage@@UEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int \/*enum enum DBHelpers::Category*\/>(a1));
-    }
     inline struct Core::LevelStorageResult getState() const{
         struct Core::LevelStorageResult (DBStorage::*rv)() const;
         *((void**)&rv) = dlsym("?getState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ");
@@ -113,91 +53,11 @@ public:
         *((void**)&rv) = dlsym("?getLevelStorageState@DBStorage@@UEBA?AULevelStorageResult@Core@@XZ");
         return (this->*rv)();
     }
-    inline void getStatistics(std::string& a0) const{
-        void (DBStorage::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?getStatistics@DBStorage@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool hasKey(class gsl::basic_string_span<char const, -1> a0, int \/*enum enum DBHelpers::Category*\/ a1) const{
-        bool (DBStorage::*rv)(class gsl::basic_string_span<char const, -1>, int \/*enum enum DBHelpers::Category*\/) const;
-        *((void**)&rv) = dlsym("?hasKey@DBStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0), std::forward<int \/*enum enum DBHelpers::Category*\/>(a1));
-    }
-    inline bool isShuttingDown() const{
-        bool (DBStorage::*rv)() const;
-        *((void**)&rv) = dlsym("?isShuttingDown@DBStorage@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool loadData(class gsl::basic_string_span<char const, -1> a0, std::string& a1, int \/*enum enum DBHelpers::Category*\/ a2) const{
-        bool (DBStorage::*rv)(class gsl::basic_string_span<char const, -1>, std::string&, int \/*enum enum DBHelpers::Category*\/) const;
-        *((void**)&rv) = dlsym("?loadData@DBStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0), std::forward<std::string&>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    inline bool loadLevelData(class LevelData& a0){
-        bool (DBStorage::*rv)(class LevelData&);
-        *((void**)&rv) = dlsym("?loadLevelData@DBStorage@@UEAA_NAEAVLevelData@@@Z");
-        return (this->*rv)(std::forward<class LevelData&>(a0));
-    }
-    inline void releaseSnapshot(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?releaseSnapshot@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void resumeStorage(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?resumeStorage@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const& a0, std::string&& a1, int \/*enum enum DBHelpers::Category*\/ a2){
-        class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > (DBStorage::*rv)(std::string const&, std::string&&, int \/*enum enum DBHelpers::Category*\/);
-        *((void**)&rv) = dlsym("?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@$$QEAV43@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string&&>(a1), std::forward<int \/*enum enum DBHelpers::Category*\/>(a2));
-    }
-    inline class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const& a0){
-        class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > (DBStorage::*rv)(class LevelStorageWriteBatch const&);
-        *((void**)&rv) = dlsym("?saveData@DBStorage@@UEAA?AV?$shared_ptr@V?$IAsyncResult@X@Threading@Bedrock@@@std@@AEBVLevelStorageWriteBatch@@@Z");
-        return (this->*rv)(std::forward<class LevelStorageWriteBatch const&>(a0));
-    }
-    inline void saveLevelData(class LevelData const& a0){
-        void (DBStorage::*rv)(class LevelData const&);
-        *((void**)&rv) = dlsym("?saveLevelData@DBStorage@@UEAAXAEBVLevelData@@@Z");
-        return (this->*rv)(std::forward<class LevelData const&>(a0));
-    }
-    inline void setCompactionCallback(class std::function<void (int \/*enum enum CompactionStatus*\/)> a0){
-        void (DBStorage::*rv)(class std::function<void (int \/*enum enum CompactionStatus*\/)>);
-        *((void**)&rv) = dlsym("?setCompactionCallback@DBStorage@@UEAAXV?$function@$$A6AXW4CompactionStatus@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (int \/*enum enum CompactionStatus*\/)>>(a0));
-    }
-    inline void setCriticalSyncSaveCallback(class std::function<void (void)> a0){
-        void (DBStorage::*rv)(class std::function<void (void)>);
-        *((void**)&rv) = dlsym("?setCriticalSyncSaveCallback@DBStorage@@UEAAXV?$function@$$A6AXXZ@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (void)>>(a0));
-    }
-    inline void setFlushAllowed(bool a0){
-        void (DBStorage::*rv)(bool);
-        *((void**)&rv) = dlsym("?setFlushAllowed@DBStorage@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void startShutdown(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?startShutdown@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void syncAndSuspendStorage(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?syncAndSuspendStorage@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void syncIO(){
-        void (DBStorage::*rv)();
-        *((void**)&rv) = dlsym("?syncIO@DBStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
     */
     MCAPI bool tryRepair(class Core::Path const&) const;
 
 protected:
-    MCAPI struct std::pair<class LevelStorageWriteBatch*, class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry> > > > > _findCacheEntry(std::string const&);
+    MCAPI struct std::pair<class LevelStorageWriteBatch* , class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry> > > > > _findCacheEntry(std::string const&);
     MCAPI class std::map<std::string, struct DBStorage::PendingWriteResult, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct DBStorage::PendingWriteResult> > > _getAllPendingWrites() const;
     MCAPI void _handleErrorStatus(class leveldb::Status const&);
     MCAPI void _mergeIntoWriteCache(class LevelStorageWriteBatch const&);

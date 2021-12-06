@@ -49,7 +49,7 @@ public:
     /*38*/ virtual void animateHurt();
     /*39*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*40*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*41*/ virtual void __unk_vfn_12();
+    /*41*/ virtual float getPickRadius();
     /*42*/ virtual void awardKillScore(class Actor&, int);
     /*43*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*44*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -61,108 +61,38 @@ public:
     /*50*/ virtual class AABB getLiquidAABB(int /*enum enum MaterialType*/) const;
     /*51*/ virtual int getPortalWaitTime() const;
     /*52*/ virtual bool canChangeDimensions() const;
-    /*53*/ virtual void __unk_vfn_13();
+    /*53*/ virtual void __unk_vfn_12();
     /*54*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*55*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*56*/ virtual bool canBePulledIntoVehicle() const;
     /*57*/ virtual bool inCaravan() const;
-    /*58*/ virtual void __unk_vfn_14();
+    /*58*/ virtual void __unk_vfn_13();
     /*59*/ virtual bool canSynchronizeNewEntity() const;
     /*60*/ virtual void buildDebugInfo(std::string&) const;
     /*61*/ virtual int getDeathTime() const;
     /*62*/ virtual void swing();
-    /*63*/ virtual void __unk_vfn_15();
-    /*64*/ virtual void __unk_vfn_16();
+    /*63*/ virtual void __unk_vfn_14();
+    /*64*/ virtual void __unk_vfn_15();
     /*65*/ virtual float getYHeadRot() const;
     /*66*/ virtual bool isWorldBuilder() const;
-    /*67*/ virtual void __unk_vfn_17();
+    /*67*/ virtual void __unk_vfn_16();
     /*68*/ virtual bool isAdventure() const;
     /*69*/ virtual bool canDestroyBlock(class Block const&) const;
     /*70*/ virtual void setAuxValue(int);
     /*71*/ virtual void stopSpinAttack();
-    /*72*/ virtual void __unk_vfn_18();
-    /*73*/ virtual void __unk_vfn_19();
+    /*72*/ virtual void __unk_vfn_17();
+    /*73*/ virtual void __unk_vfn_18();
     /*74*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*75*/ virtual void __unk_vfn_20();
+    /*75*/ virtual void __unk_vfn_19();
     /*76*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*77*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*78*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*79*/ virtual void __unk_vfn_21();
+    /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual void _onSizeUpdated();
     /*
     inline bool canMakeStepSound() const{
         bool (ItemActor::*rv)() const;
         *((void**)&rv) = dlsym("?canMakeStepSound@ItemActor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRuntimePredictedMovementEnabled() const{
-        bool (ItemActor::*rv)() const;
-        *((void**)&rv) = dlsym("?isRuntimePredictedMovementEnabled@ItemActor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (ItemActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@ItemActor@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (ItemActor::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@ItemActor@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ItemActor::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ItemActor@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline bool canSynchronizeNewEntity() const{
-        bool (ItemActor::*rv)() const;
-        *((void**)&rv) = dlsym("?canSynchronizeNewEntity@ItemActor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class AABB getLiquidAABB(int \/*enum enum MaterialType*\/ a0) const{
-        class AABB (ItemActor::*rv)(int \/*enum enum MaterialType*\/) const;
-        *((void**)&rv) = dlsym("?getLiquidAABB@ItemActor@@UEBA?AVAABB@@W4MaterialType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum MaterialType*\/>(a0));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (ItemActor::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@ItemActor@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline bool isFireImmune() const{
-        bool (ItemActor::*rv)() const;
-        *((void**)&rv) = dlsym("?isFireImmune@ItemActor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (ItemActor::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@ItemActor@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void normalTick(){
-        void (ItemActor::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@ItemActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playerTouch(class Player& a0){
-        void (ItemActor::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@ItemActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ItemActor::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ItemActor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ItemActor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ItemActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket(){
-        std::unique_ptr<class AddActorBasePacket> (ItemActor::*rv)();
-        *((void**)&rv) = dlsym("?tryCreateAddActorPacket@ItemActor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ");
         return (this->*rv)();
     }
     */

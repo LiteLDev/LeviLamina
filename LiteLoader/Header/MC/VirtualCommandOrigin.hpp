@@ -28,115 +28,14 @@ public:
     /*16*/ virtual bool isSelectorExpansionAllowed() const;
     /*17*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*18*/ virtual unsigned char getSourceSubId() const;
-    /*19*/ virtual void __unk_vfn_0();
+    /*19*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*20*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*21*/ virtual void __unk_vfn_1();
-    /*22*/ virtual void __unk_vfn_2();
+    /*21*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*22*/ virtual class mce::UUID const& getUUID() const;
     /*23*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*24*/ virtual class CompoundTag serialize() const;
     /*25*/ virtual bool isValid() const;
-    /*
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAbility(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        bool (VirtualCommandOrigin::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
-        *((void**)&rv) = dlsym("?canUseAbility@VirtualCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@VirtualCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@VirtualCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@VirtualCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@VirtualCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline class Actor* getEntity() const{
-        class Actor* (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@VirtualCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline struct CommandOriginIdentity getIdentity() const{
-        struct CommandOriginIdentity (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getIdentity@VirtualCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@VirtualCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@VirtualCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class CommandOrigin const& getOutputReceiver() const{
-        class CommandOrigin const& (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOutputReceiver@VirtualCommandOrigin@@UEBAAEBVCommandOrigin@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@VirtualCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@VirtualCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class NetworkIdentifier const& getSourceId() const{
-        class NetworkIdentifier const& (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceId@VirtualCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@VirtualCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasChatPerms() const{
-        bool (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChatPerms@VirtualCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasTellPerms() const{
-        bool (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasTellPerms@VirtualCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@VirtualCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@VirtualCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@VirtualCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void updateExecutePosition();
     MCAPI static class Vec3 const getExecutePosition(int, class Actor&, class CommandPositionFloat const&, class CommandOrigin const&);
     MCAPI static std::unique_ptr<class VirtualCommandOrigin> load(class CompoundTag const&, class ServerLevel&);

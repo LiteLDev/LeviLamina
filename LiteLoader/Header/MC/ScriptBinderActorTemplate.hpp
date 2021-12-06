@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~ScriptBinderActorTemplate();
     /*1*/ virtual std::string const& getTemplateIdentifier() const;
     /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
-    /*
-    inline void applyTemplate(class ScriptObjectBinder& a0) const{
-        void (ScriptBinderActorTemplate::*rv)(class ScriptObjectBinder&) const;
-        *((void**)&rv) = dlsym("?applyTemplate@ScriptBinderActorTemplate@@UEBAXAEAVScriptObjectBinder@@@Z");
-        return (this->*rv)(std::forward<class ScriptObjectBinder&>(a0));
-    }
-    inline std::string const& getTemplateIdentifier() const{
-        std::string const& (ScriptBinderActorTemplate::*rv)() const;
-        *((void**)&rv) = dlsym("?getTemplateIdentifier@ScriptBinderActorTemplate@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, class Actor const&);
 
 protected:

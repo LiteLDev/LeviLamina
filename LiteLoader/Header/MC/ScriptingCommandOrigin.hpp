@@ -25,83 +25,12 @@ public:
     /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
-    /*16*/ virtual void __unk_vfn_0();
-    /*17*/ virtual void __unk_vfn_1();
-    /*18*/ virtual void __unk_vfn_2();
+    /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*17*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual bool isValid() const;
-    /*
-    inline class Actor* getEntity() const{
-        class Actor* (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@ScriptingCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@ScriptingCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@ScriptingCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@ScriptingCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@ScriptingCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@ScriptingCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@ScriptingCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@ScriptingCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@ScriptingCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@ScriptingCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@ScriptingCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@ScriptingCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (ScriptingCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@ScriptingCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleCommandOutputCallback(class Json::Value&& a0) const{
-        void (ScriptingCommandOrigin::*rv)(class Json::Value&&) const;
-        *((void**)&rv) = dlsym("?handleCommandOutputCallback@ScriptingCommandOrigin@@UEBAX$$QEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&&>(a0));
-    }
-    */
+
 
 protected:
 

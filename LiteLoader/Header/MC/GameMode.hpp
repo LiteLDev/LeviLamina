@@ -23,101 +23,10 @@ public:
     /*13*/ virtual bool interact(class Actor&, class Vec3 const&);
     /*14*/ virtual bool attack(class Actor&);
     /*15*/ virtual void releaseUsingItem();
-    /*16*/ virtual void __unk_vfn_0();
+    /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-    /*
-    inline bool isInTrialMode(){
-        bool (GameMode::*rv)();
-        *((void**)&rv) = dlsym("?isInTrialMode@GameMode@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void setTrialMode(bool a0){
-        void (GameMode::*rv)(bool);
-        *((void**)&rv) = dlsym("?setTrialMode@GameMode@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void registerUpsellScreenCallback(class std::function<void (bool)> a0){
-        void (GameMode::*rv)(class std::function<void (bool)>);
-        *((void**)&rv) = dlsym("?registerUpsellScreenCallback@GameMode@@UEAAXV?$function@$$A6AX_N@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (bool)>>(a0));
-    }
-    inline bool attack(class Actor& a0){
-        bool (GameMode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?attack@GameMode@@UEAA_NAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline bool buildBlock(class BlockPos const& a0, unsigned char a1, bool a2){
-        bool (GameMode::*rv)(class BlockPos const&, unsigned char, bool);
-        *((void**)&rv) = dlsym("?buildBlock@GameMode@@UEAA_NAEBVBlockPos@@E_N@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1), std::forward<bool>(a2));
-    }
-    inline void continueBuildBlock(class BlockPos const& a0, unsigned char a1){
-        void (GameMode::*rv)(class BlockPos const&, unsigned char);
-        *((void**)&rv) = dlsym("?continueBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1));
-    }
-    inline bool continueDestroyBlock(class BlockPos const& a0, unsigned char a1, class Vec3 const& a2, bool& a3){
-        bool (GameMode::*rv)(class BlockPos const&, unsigned char, class Vec3 const&, bool&);
-        *((void**)&rv) = dlsym("?continueDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEBVVec3@@AEA_N@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1), std::forward<class Vec3 const&>(a2), std::forward<bool&>(a3));
-    }
-    inline bool destroyBlock(class BlockPos const& a0, unsigned char a1){
-        bool (GameMode::*rv)(class BlockPos const&, unsigned char);
-        *((void**)&rv) = dlsym("?destroyBlock@GameMode@@UEAA_NAEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1));
-    }
-    inline float getPickRange(int \/*enum enum InputMode*\/ const& a0, bool a1){
-        float (GameMode::*rv)(int \/*enum enum InputMode*\/ const&, bool);
-        *((void**)&rv) = dlsym("?getPickRange@GameMode@@UEAAMAEBW4InputMode@@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum InputMode*\/ const&>(a0), std::forward<bool>(a1));
-    }
-    inline bool interact(class Actor& a0, class Vec3 const& a1){
-        bool (GameMode::*rv)(class Actor&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?interact@GameMode@@UEAA_NAEAVActor@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Vec3 const&>(a1));
-    }
-    inline void releaseUsingItem(){
-        void (GameMode::*rv)();
-        *((void**)&rv) = dlsym("?releaseUsingItem@GameMode@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void startBuildBlock(class BlockPos const& a0, unsigned char a1){
-        void (GameMode::*rv)(class BlockPos const&, unsigned char);
-        *((void**)&rv) = dlsym("?startBuildBlock@GameMode@@UEAAXAEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1));
-    }
-    inline bool startDestroyBlock(class BlockPos const& a0, unsigned char a1, bool& a2){
-        bool (GameMode::*rv)(class BlockPos const&, unsigned char, bool&);
-        *((void**)&rv) = dlsym("?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<unsigned char>(a1), std::forward<bool&>(a2));
-    }
-    inline void stopBuildBlock(){
-        void (GameMode::*rv)();
-        *((void**)&rv) = dlsym("?stopBuildBlock@GameMode@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stopDestroyBlock(class BlockPos const& a0){
-        void (GameMode::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?stopDestroyBlock@GameMode@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void tick(){
-        void (GameMode::*rv)();
-        *((void**)&rv) = dlsym("?tick@GameMode@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool useItem(class ItemStack& a0){
-        bool (GameMode::*rv)(class ItemStack&);
-        *((void**)&rv) = dlsym("?useItem@GameMode@@UEAA_NAEAVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0));
-    }
-    inline bool useItemOn(class ItemStack& a0, class BlockPos const& a1, unsigned char a2, class Vec3 const& a3, class Block const* a4){
-        bool (GameMode::*rv)(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
-        *((void**)&rv) = dlsym("?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned char>(a2), std::forward<class Vec3 const&>(a3), std::forward<class Block const*>(a4));
-    }
-    */
+
     MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&, class std::function<void (void)> const&);
     MCAPI bool baseUseItem(class ItemStack&);

@@ -13,18 +13,7 @@ public:
     /*1*/ virtual bool evaluate(struct FilterContext const&) const;
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-    /*
-    inline bool evaluate(struct FilterContext const& a0) const{
-        bool (ActorIsAvoidingMobsTest::*rv)(struct FilterContext const&) const;
-        *((void**)&rv) = dlsym("?evaluate@ActorIsAvoidingMobsTest@@UEBA_NAEBUFilterContext@@@Z");
-        return (this->*rv)(std::forward<struct FilterContext const&>(a0));
-    }
-    inline class gsl::basic_string_span<char const, -1> getName() const{
-        class gsl::basic_string_span<char const, -1> (ActorIsAvoidingMobsTest::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@ActorIsAvoidingMobsTest@@UEBA?AV?$basic_string_span@$$CBD$0?0@gsl@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

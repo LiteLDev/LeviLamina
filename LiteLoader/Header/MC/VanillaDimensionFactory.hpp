@@ -6,5 +6,5 @@
 #undef EXTRA_INCLUDE_PART_VANILLADIMENSIONFACTORY
 namespace VanillaDimensionFactory {
 #include "Extra/VanillaDimensionFactoryAPI.hpp"
-    MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level&, class Scheduler&>&);
+    MCAPI void registerDimensionTypes(class Factory<class Dimension, class Level& , class Scheduler& >&);
 };

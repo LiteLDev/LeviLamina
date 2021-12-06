@@ -9,7 +9,7 @@ class OreVeinifier {
 public:
     MCAPI void fillNoiseAtPos(class Vec3 const&, int, float);
     MCAPI class Block const* getVeinBlockOrFallback(class Vec3, class Block const*) const;
-    MCAPI class std::array<class NoiseCellInterpolator*, 3> resetAndGetInterpolators();
+    MCAPI class std::array<class NoiseCellInterpolator* , 3> resetAndGetInterpolators();
 
 protected:
 

@@ -18,39 +18,8 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual void __unk_vfn_3();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (WorkGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@WorkGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@WorkGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@WorkGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@WorkGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@WorkGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (WorkGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@WorkGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*10*/ virtual unsigned __int64 _getRepathTime() const;
+
 
 protected:
 

@@ -9,18 +9,9 @@ class WoodlandMansionStart {
 public:
     /*0*/ virtual ~WoodlandMansionStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (WoodlandMansionStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@WoodlandMansionStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (WoodlandMansionStart::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@WoodlandMansionStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

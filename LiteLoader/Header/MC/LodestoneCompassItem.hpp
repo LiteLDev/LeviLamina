@@ -29,15 +29,15 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual int getAttackDamage() const;
     /*25*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*26*/ virtual void __unk_vfn_7();
-    /*27*/ virtual void __unk_vfn_8();
-    /*28*/ virtual void __unk_vfn_9();
+    /*26*/ virtual void __unk_vfn_6();
+    /*27*/ virtual int getPatternIndex() const;
+    /*28*/ virtual void __unk_vfn_7();
     /*29*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*30*/ virtual bool canDestroyInCreative() const;
     /*31*/ virtual bool isDestructive(int) const;
@@ -48,35 +48,35 @@ public:
     /*36*/ virtual int getEnchantSlot() const;
     /*37*/ virtual int getEnchantValue() const;
     /*38*/ virtual int getArmorValue() const;
-    /*39*/ virtual void __unk_vfn_10();
+    /*39*/ virtual void __unk_vfn_8();
     /*40*/ virtual bool isValidAuxValue(int) const;
-    /*41*/ virtual void __unk_vfn_11();
-    /*42*/ virtual void __unk_vfn_12();
-    /*43*/ virtual void __unk_vfn_13();
-    /*44*/ virtual void __unk_vfn_14();
+    /*41*/ virtual float getViewDamping() const;
+    /*42*/ virtual void __unk_vfn_9();
+    /*43*/ virtual void __unk_vfn_10();
+    /*44*/ virtual void __unk_vfn_11();
     /*45*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*46*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*47*/ virtual void __unk_vfn_15();
-    /*48*/ virtual void clearColor(class CompoundTag*) const;
-    /*49*/ virtual void __unk_vfn_16();
-    /*50*/ virtual void __unk_vfn_17();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
-    /*53*/ virtual void __unk_vfn_20();
-    /*54*/ virtual void __unk_vfn_21();
+    /*47*/ virtual void __unk_vfn_12();
+    /*48*/ virtual void clearColor(class ItemStackBase&) const;
+    /*49*/ virtual void clearColor(class CompoundTag*) const;
+    /*50*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*51*/ virtual void __unk_vfn_13();
+    /*52*/ virtual void __unk_vfn_14();
+    /*53*/ virtual void __unk_vfn_15();
+    /*54*/ virtual void __unk_vfn_16();
     /*55*/ virtual bool canUseOnSimTick() const;
     /*56*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*57*/ virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
     /*58*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*59*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*60*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*61*/ virtual void __unk_vfn_22();
+    /*61*/ virtual void __unk_vfn_17();
     /*62*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*63*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*64*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*65*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*66*/ virtual void __unk_vfn_23();
-    /*67*/ virtual void __unk_vfn_24();
+    /*66*/ virtual void __unk_vfn_18();
+    /*67*/ virtual void __unk_vfn_19();
     /*68*/ virtual bool validFishInteraction(int) const;
     /*69*/ virtual std::string getInteractText(class Player const&) const;
     /*70*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -84,32 +84,11 @@ public:
     /*72*/ virtual int getIconYOffset() const;
     /*73*/ virtual bool canBeCharged() const;
     /*74*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*75*/ virtual void __unk_vfn_25();
+    /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual std::string getAuxValuesDescription() const;
     /*77*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*78*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-    /*
-    inline bool _useOn(class ItemStack& a0, class Actor& a1, class BlockPos a2, unsigned char a3, float a4, float a5, float a6) const{
-        bool (LodestoneCompassItem::*rv)(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-        *((void**)&rv) = dlsym("?_useOn@LodestoneCompassItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos>(a2), std::forward<unsigned char>(a3), std::forward<float>(a4), std::forward<float>(a5), std::forward<float>(a6));
-    }
-    inline int getAnimationFrameFor(class Mob* a0, bool a1, class ItemStack const* a2, bool a3) const{
-        int (LodestoneCompassItem::*rv)(class Mob*, bool, class ItemStack const*, bool) const;
-        *((void**)&rv) = dlsym("?getAnimationFrameFor@LodestoneCompassItem@@UEBAHPEAVMob@@_NPEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0), std::forward<bool>(a1), std::forward<class ItemStack const*>(a2), std::forward<bool>(a3));
-    }
-    inline int getEnchantSlot() const{
-        int (LodestoneCompassItem::*rv)() const;
-        *((void**)&rv) = dlsym("?getEnchantSlot@LodestoneCompassItem@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const& a0, int a1, bool a2) const{
-        struct TextureUVCoordinateSet const& (LodestoneCompassItem::*rv)(class ItemStackBase const&, int, bool) const;
-        *((void**)&rv) = dlsym("?getIcon@LodestoneCompassItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    */
+
     MCAPI static bool linkCompassToLodestone(class ItemStack&, class BlockSource&, class BlockPos);
 
 protected:

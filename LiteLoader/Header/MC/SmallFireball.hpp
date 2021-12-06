@@ -47,7 +47,7 @@ public:
     /*35*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*36*/ virtual void animateHurt();
     /*37*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*38*/ virtual void __unk_vfn_12();
+    /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
     /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,45 +58,36 @@ public:
     /*46*/ virtual bool canFreeze() const;
     /*47*/ virtual int getPortalWaitTime() const;
     /*48*/ virtual bool canChangeDimensions() const;
-    /*49*/ virtual void __unk_vfn_13();
+    /*49*/ virtual void __unk_vfn_12();
     /*50*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*51*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*52*/ virtual bool canBePulledIntoVehicle() const;
     /*53*/ virtual bool inCaravan() const;
-    /*54*/ virtual void __unk_vfn_14();
+    /*54*/ virtual void __unk_vfn_13();
     /*55*/ virtual bool canSynchronizeNewEntity() const;
     /*56*/ virtual void buildDebugInfo(std::string&) const;
     /*57*/ virtual int getDeathTime() const;
     /*58*/ virtual void swing();
-    /*59*/ virtual void __unk_vfn_15();
-    /*60*/ virtual void __unk_vfn_16();
+    /*59*/ virtual void __unk_vfn_14();
+    /*60*/ virtual void __unk_vfn_15();
     /*61*/ virtual float getYHeadRot() const;
     /*62*/ virtual bool isWorldBuilder() const;
-    /*63*/ virtual void __unk_vfn_17();
+    /*63*/ virtual void __unk_vfn_16();
     /*64*/ virtual bool isAdventure() const;
     /*65*/ virtual bool canDestroyBlock(class Block const&) const;
     /*66*/ virtual void setAuxValue(int);
     /*67*/ virtual void stopSpinAttack();
-    /*68*/ virtual void __unk_vfn_18();
-    /*69*/ virtual void __unk_vfn_19();
+    /*68*/ virtual void __unk_vfn_17();
+    /*69*/ virtual void __unk_vfn_18();
     /*70*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*71*/ virtual void __unk_vfn_20();
+    /*71*/ virtual void __unk_vfn_19();
     /*72*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*73*/ virtual void __unk_vfn_21();
+    /*73*/ virtual void __unk_vfn_20();
     /*74*/ virtual void _onSizeUpdated();
-    /*75*/ virtual void __unk_vfn_22();
-    /*
-    inline bool isPickable(){
-        bool (SmallFireball::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@SmallFireball@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (SmallFireball::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@SmallFireball@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    */
+    /*75*/ virtual void __unk_vfn_21();
+    /*76*/ virtual void __unk_vfn_22();
+    /*77*/ virtual int /*enum enum ParticleType*/ getTrailParticle();
+
 
 protected:
 

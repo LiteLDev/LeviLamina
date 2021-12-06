@@ -17,40 +17,9 @@ public:
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*8*/ virtual bool _canReach(class BlockPos const&);
-    /*9*/ virtual void __unk_vfn_3();
+    /*9*/ virtual unsigned __int64 _getRepathTime() const;
     /*10*/ virtual bool findTargetBlock();
-    /*
-    inline bool _canReach(class BlockPos const& a0){
-        bool (InspectBookshelfGoal::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_canReach@InspectBookshelfGoal@@MEAA_NAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (InspectBookshelfGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@InspectBookshelfGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (InspectBookshelfGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@InspectBookshelfGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool findTargetBlock(){
-        bool (InspectBookshelfGoal::*rv)();
-        *((void**)&rv) = dlsym("?findTargetBlock@InspectBookshelfGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (InspectBookshelfGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@InspectBookshelfGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void tick(){
-        void (InspectBookshelfGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@InspectBookshelfGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

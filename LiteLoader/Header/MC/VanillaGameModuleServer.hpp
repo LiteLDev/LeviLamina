@@ -32,31 +32,6 @@ public:
         *((void**)&rv) = dlsym("?configureNewPlayer@VanillaGameModuleServer@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player&>(a0));
     }
-    inline void configureLevel(class Level& a0, class Experiments const& a1, class ResourcePackManager& a2, class BaseGameVersion const& a3){
-        void (VanillaGameModuleServer::*rv)(class Level&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
-        *((void**)&rv) = dlsym("?configureLevel@VanillaGameModuleServer@@UEAAXAEAVLevel@@AEBVExperiments@@AEAVResourcePackManager@@AEBVBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class Experiments const&>(a1), std::forward<class ResourcePackManager&>(a2), std::forward<class BaseGameVersion const&>(a3));
-    }
-    inline void configureServerNetworkHandler(class ServerInstance& a0, class ServerNetworkHandler& a1){
-        void (VanillaGameModuleServer::*rv)(class ServerInstance&, class ServerNetworkHandler&);
-        *((void**)&rv) = dlsym("?configureServerNetworkHandler@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEAVServerNetworkHandler@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0), std::forward<class ServerNetworkHandler&>(a1));
-    }
-    inline void init(class ServerInstance& a0, class Level& a1){
-        void (VanillaGameModuleServer::*rv)(class ServerInstance&, class Level&);
-        *((void**)&rv) = dlsym("?init@VanillaGameModuleServer@@UEAAXAEAVServerInstance@@AEAVLevel@@@Z");
-        return (this->*rv)(std::forward<class ServerInstance&>(a0), std::forward<class Level&>(a1));
-    }
-    inline void initializeBehaviorStack(class Experiments const& a0, class IResourcePackRepository& a1, class ResourcePackStack& a2, class BaseGameVersion const& a3){
-        void (VanillaGameModuleServer::*rv)(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
-        *((void**)&rv) = dlsym("?initializeBehaviorStack@VanillaGameModuleServer@@UEAAXAEBVExperiments@@AEAVIResourcePackRepository@@AEAVResourcePackStack@@AEBVBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class Experiments const&>(a0), std::forward<class IResourcePackRepository&>(a1), std::forward<class ResourcePackStack&>(a2), std::forward<class BaseGameVersion const&>(a3));
-    }
-    inline void setupCommands(class CommandRegistry& a0){
-        void (VanillaGameModuleServer::*rv)(class CommandRegistry&);
-        *((void**)&rv) = dlsym("?setupCommands@VanillaGameModuleServer@@UEAAXAEAVCommandRegistry@@@Z");
-        return (this->*rv)(std::forward<class CommandRegistry&>(a0));
-    }
     */
 
 protected:

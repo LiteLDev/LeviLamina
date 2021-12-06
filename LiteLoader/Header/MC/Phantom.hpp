@@ -36,63 +36,47 @@ public:
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual bool shouldRender() const;
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;
     /*32*/ virtual bool canChangeDimensions() const;
-    /*33*/ virtual void __unk_vfn_13();
+    /*33*/ virtual void __unk_vfn_12();
     /*34*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*35*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*36*/ virtual bool canBePulledIntoVehicle() const;
-    /*37*/ virtual void __unk_vfn_14();
+    /*37*/ virtual void __unk_vfn_13();
     /*38*/ virtual bool canSynchronizeNewEntity() const;
-    /*39*/ virtual void __unk_vfn_15();
-    /*40*/ virtual void __unk_vfn_16();
+    /*39*/ virtual void __unk_vfn_14();
+    /*40*/ virtual void __unk_vfn_15();
     /*41*/ virtual bool isWorldBuilder() const;
-    /*42*/ virtual void __unk_vfn_17();
+    /*42*/ virtual void __unk_vfn_16();
     /*43*/ virtual bool isAdventure() const;
     /*44*/ virtual bool canDestroyBlock(class Block const&) const;
     /*45*/ virtual void setAuxValue(int);
     /*46*/ virtual void stopSpinAttack();
-    /*47*/ virtual void __unk_vfn_18();
-    /*48*/ virtual void __unk_vfn_19();
-    /*49*/ virtual void __unk_vfn_20();
-    /*50*/ virtual void __unk_vfn_21();
-    /*51*/ virtual void __unk_vfn_22();
+    /*47*/ virtual void __unk_vfn_17();
+    /*48*/ virtual void __unk_vfn_18();
+    /*49*/ virtual void __unk_vfn_19();
+    /*50*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_21();
     /*52*/ virtual void spawnAnim();
     /*53*/ virtual void aiStep();
     /*54*/ virtual bool checkSpawnRules(bool);
     /*55*/ virtual int getItemUseDuration() const;
     /*56*/ virtual float getItemUseStartupProgress() const;
     /*57*/ virtual float getItemUseIntervalProgress() const;
-    /*58*/ virtual void __unk_vfn_23();
+    /*58*/ virtual void __unk_vfn_22();
     /*59*/ virtual bool isAlliedTo(class Mob*);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
-    /*64*/ virtual void __unk_vfn_26();
+    /*63*/ virtual int getAttackTime();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
-    /*
-    inline bool shouldRender() const{
-        bool (Phantom::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@Phantom@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Phantom::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Phantom@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void normalTick(){
-        void (Phantom::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Phantom@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*66*/ virtual void __unk_vfn_25();
+
 
 protected:
 

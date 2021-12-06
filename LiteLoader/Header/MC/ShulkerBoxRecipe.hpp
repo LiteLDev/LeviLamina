@@ -10,31 +10,16 @@ class ShulkerBoxRecipe : public ShapelessRecipe {
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
+    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*4*/ virtual bool isShapeless() const;
     /*5*/ virtual class mce::UUID const& getId() const;
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
+    /*6*/ virtual class ItemPack const& getItemPack() const;
+    /*7*/ virtual bool isMultiRecipe() const;
     /*8*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*9*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
-    /*
-    inline std::vector<class ItemInstance> const& assemble(class CraftingContainer& a0) const{
-        std::vector<class ItemInstance> const& (ShulkerBoxRecipe::*rv)(class CraftingContainer&) const;
-        *((void**)&rv) = dlsym("?assemble@ShulkerBoxRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z");
-        return (this->*rv)(std::forward<class CraftingContainer&>(a0));
-    }
-    inline bool itemsMatch(class ItemDescriptor const& a0, class ItemDescriptor const& a1) const{
-        bool (ShulkerBoxRecipe::*rv)(class ItemDescriptor const&, class ItemDescriptor const&) const;
-        *((void**)&rv) = dlsym("?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@0@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class ItemDescriptor const&>(a1));
-    }
-    inline bool itemsMatch(class ItemDescriptor const& a0, int a1, int a2, class CompoundTag const* a3) const{
-        bool (ShulkerBoxRecipe::*rv)(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?itemsMatch@ShulkerBoxRecipe@@UEBA_NAEBVItemDescriptor@@HHPEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<class CompoundTag const*>(a3));
-    }
-    */
+    /*10*/ virtual void loadResultList(class BlockPalette const&) const;
+
     MCAPI static class mce::UUID const ID;
 
 protected:

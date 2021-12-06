@@ -14,18 +14,7 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
-    /*
-    inline bool disallowBatching() const{
-        bool (Packet::*rv)() const;
-        *((void**)&rv) = dlsym("?disallowBatching@Packet@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream& a0){
-        struct ExtendedStreamReadResult (Packet::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?readExtended@Packet@@UEAA?AUExtendedStreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    */
+
 
 protected:
 

@@ -26,11 +26,6 @@ public:
         *((void**)&rv) = dlsym("?start@PlayerVehicleTamedGoal@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (PlayerVehicleTamedGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@PlayerVehicleTamedGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
     inline bool canUse(){
         bool (PlayerVehicleTamedGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@PlayerVehicleTamedGoal@@UEAA_NXZ");

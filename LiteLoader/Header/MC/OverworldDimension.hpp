@@ -17,8 +17,8 @@ public:    /*
         *((void**)&rv) = dlsym("?_wrapStorageForVersionCompatibility@OverworldDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
         return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<int \/*enum enum StorageVersion*\/>(a1));
     }
-    inline class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator*> createGenerator(){
-        class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator*> (OverworldDimension::*rv)();
+    inline class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator* > createGenerator(){
+        class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator* > (OverworldDimension::*rv)();
         *((void**)&rv) = dlsym("?createGenerator@OverworldDimension@@UEAA?AV?$tuple@V?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@PEAVWorldGenerator@@@std@@XZ");
         return (this->*rv)();
     }

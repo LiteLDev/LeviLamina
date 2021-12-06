@@ -9,63 +9,22 @@ class ActorDamageByChildActorSource : public ActorDamageSource {
 #include "Extra/ActorDamageByChildActorSourceAPI.hpp"
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
+    /*1*/ virtual bool isChildEntitySource() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool isBlockSource() const;
     /*4*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_6();
-    /*9*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_8();
-    /*11*/ virtual void __unk_vfn_9();
+    /*5*/ virtual bool getIsCreative() const;
+    /*6*/ virtual bool getIsWorldBuilder() const;
+    /*7*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_2();
+    /*9*/ virtual int /*enum enum ActorCategory*/ getEntityCategories() const;
+    /*10*/ virtual bool getDamagingEntityIsCreative() const;
+    /*11*/ virtual bool getDamagingEntityIsWorldBuilder() const;
     /*12*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /*13*/ virtual int /*enum enum ActorType*/ getDamagingEntityType() const;
-    /*14*/ virtual void __unk_vfn_10();
+    /*14*/ virtual int /*enum enum ActorCategory*/ getDamagingEntityCategories() const;
     /*15*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-    /*
-    inline bool isChildEntitySource() const{
-        bool (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?isChildEntitySource@ActorDamageByChildActorSource@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool getDamagingEntityIsWorldBuilder() const{
-        bool (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDamagingEntityIsWorldBuilder@ActorDamageByChildActorSource@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class ActorDamageSource> clone() const{
-        std::unique_ptr<class ActorDamageSource> (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@ActorDamageByChildActorSource@@UEBA?AV?$unique_ptr@VActorDamageSource@@U?$default_delete@VActorDamageSource@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ActorCategory*\/ getDamagingEntityCategories() const{
-        int \/*enum enum ActorCategory*\/ (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDamagingEntityCategories@ActorDamageByChildActorSource@@UEBA?AW4ActorCategory@@XZ");
-        return (this->*rv)();
-    }
-    inline bool getDamagingEntityIsCreative() const{
-        bool (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDamagingEntityIsCreative@ActorDamageByChildActorSource@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ActorType*\/ getDamagingEntityType() const{
-        int \/*enum enum ActorType*\/ (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDamagingEntityType@ActorDamageByChildActorSource@@UEBA?AW4ActorType@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getDamagingEntityUniqueID() const{
-        struct ActorUniqueID (ActorDamageByChildActorSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getDamagingEntityUniqueID@ActorDamageByChildActorSource@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string a0, class Actor* a1) const{
-        struct std::pair<std::string, std::vector<std::string> > (ActorDamageByChildActorSource::*rv)(std::string, class Actor*) const;
-        *((void**)&rv) = dlsym("?getDeathMessage@ActorDamageByChildActorSource@@UEBA?AU?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@2@@std@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@PEAVActor@@@Z");
-        return (this->*rv)(std::forward<std::string>(a0), std::forward<class Actor*>(a1));
-    }
-    */
+
 
 protected:
 

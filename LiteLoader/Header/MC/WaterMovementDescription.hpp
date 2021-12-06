@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~WaterMovementDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (WaterMovementDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@WaterMovementDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (WaterMovementDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@WaterMovementDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (WaterMovementDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@WaterMovementDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

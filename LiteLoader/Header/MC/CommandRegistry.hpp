@@ -23,24 +23,27 @@ public:
     MCAPI void removeSoftEnumValues(std::string const&, std::vector<std::string>);
     MCAPI bool requiresCheatsEnabled(std::string const&) const;
     MCAPI class AvailableCommandsPacket serializeAvailableCommands() const;
-    MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag&, std::string const&)>);
-    MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const&)>);
-    MCAPI void setScoreCallback(class std::function<int (bool&, std::string const&, class Actor const&)>);
+    MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag& , std::string const& )>);
+    MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const& )>);
+    MCAPI void setScoreCallback(class std::function<int (bool& , std::string const& , class Actor const& )>);
     MCAPI void setSoftEnumValues(std::string const&, std::vector<std::string>);
+    MCAPI static char const* COMMAND_NAME_ENUM_NAME;
+    MCAPI static char const* FUNCTION_NAME_SOFTENUM_NAME;
+    MCAPI static char const* TAG_VALUES_SOFTENUM_NAME;
 
 protected:
 
 private:
     MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum SemanticConstraint);
-    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<std::string, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const);
-    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const);
+    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<std::string, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const);
+    MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const);
     MCAPI class CommandRegistry::Symbol _addFunctionSoftEnum();
     MCAPI class CommandRegistry::Symbol _getConstrainedParamEnumSymbol(class CommandRegistry::Symbol) const;
     MCAPI bool _isCommandElementValid(std::string const&) const;
     MCAPI bool _matchesEnumConstraintsSet(class CommandRegistry::Symbol const&, class CommandOrigin const&, class CommandRegistry::Symbol const&, enum SemanticConstraint) const;
     MCAPI void addEnumValuesToExisting(unsigned int, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const&);
     MCAPI class CommandRegistry::Symbol addPostfix(std::string const&);
-    MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol>&&, class std::function<struct CommandRegistry::ParseToken* (struct CommandRegistry::ParseToken&, class CommandRegistry::Symbol)>, class CommandVersion);
+    MCAPI void addRule(class CommandRegistry::Symbol, std::vector<class CommandRegistry::Symbol>&&, class std::function<struct CommandRegistry::ParseToken* (struct CommandRegistry::ParseToken& , class CommandRegistry::Symbol)>, class CommandVersion);
     MCAPI void addSemanticConstraint(enum SemanticConstraint);
     MCAPI class CommandRegistry::Symbol addSoftTerminal(std::string const&);
     MCAPI void buildFirstSet(struct CommandRegistry::ParseTable&, class CommandRegistry::Symbol, unsigned int) const;
@@ -48,7 +51,7 @@ private:
     MCAPI class CommandRegistry::Symbol buildOptionalRuleChain(struct CommandRegistry::Signature const&, std::vector<class CommandParameterData> const&, std::vector<class CommandRegistry::Symbol> const&);
     MCAPI void buildOverload(struct CommandRegistry::Overload&);
     MCAPI void buildParseTable(unsigned int) const;
-    MCAPI class CommandRegistry::Symbol buildRules(struct CommandRegistry::Signature&, std::vector<struct CommandRegistry::Overload*> const&, unsigned __int64);
+    MCAPI class CommandRegistry::Symbol buildRules(struct CommandRegistry::Signature&, std::vector<struct CommandRegistry::Overload* > const&, unsigned __int64);
     MCAPI bool checkOriginCommandFlags(class CommandOrigin const&, struct CommandFlag, enum CommandPermissionLevel) const;
     MCAPI std::unique_ptr<class Command> createCommand(struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const;
     MCAPI std::string describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, unsigned int, unsigned int*, unsigned int*) const;

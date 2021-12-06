@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
     /*1*/ virtual class Scripting::Result<float> getValue() const;
     /*2*/ virtual class Scripting::Result<void> setValue(float const&) const;
-    /*
-    inline class Scripting::Result<float> getValue() const{
-        class Scripting::Result<float> (ScriptFlyingSpeedComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?getValue@ScriptFlyingSpeedComponent@@UEBA?AV?$Result@M@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setValue(float const& a0) const{
-        class Scripting::Result<void> (ScriptFlyingSpeedComponent::*rv)(float const&) const;
-        *((void**)&rv) = dlsym("?setValue@ScriptFlyingSpeedComponent@@UEBA?AV?$Result@X@Scripting@@AEBM@Z");
-        return (this->*rv)(std::forward<float const&>(a0));
-    }
-    */
+
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptFlyingSpeedComponent> bind(struct Scripting::Version);
 
 protected:

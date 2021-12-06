@@ -8,18 +8,9 @@ class FakeBatteryMonitorInterface {
 #include "Extra/FakeBatteryMonitorInterfaceAPI.hpp"
 public:
     /*0*/ virtual ~FakeBatteryMonitorInterface();
-    /*
-    inline int \/*enum enum BatteryStatus*\/ getBatteryStatus() const{
-        int \/*enum enum BatteryStatus*\/ (FakeBatteryMonitorInterface::*rv)() const;
-        *((void**)&rv) = dlsym("?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ");
-        return (this->*rv)();
-    }
-    inline float getBatteryLevel() const{
-        float (FakeBatteryMonitorInterface::*rv)() const;
-        *((void**)&rv) = dlsym("?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual int /*enum enum BatteryStatus*/ getBatteryStatus() const;
+    /*2*/ virtual float getBatteryLevel() const;
+
 
 protected:
 

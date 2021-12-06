@@ -9,13 +9,7 @@ class GameTestInstanceLedger {
 public:
     /*0*/ virtual ~GameTestInstanceLedger();
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
-    /*
-    inline void onTestStructureLoaded(class gametest::BaseGameTestInstance& a0){
-        void (GameTestInstanceLedger::*rv)(class gametest::BaseGameTestInstance&);
-        *((void**)&rv) = dlsym("?onTestStructureLoaded@GameTestInstanceLedger@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
-    }
-    */
+
     MCAPI void clear(class AutomaticID<class Dimension, int>);
 
 protected:

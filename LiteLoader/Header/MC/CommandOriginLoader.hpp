@@ -9,13 +9,7 @@ class CommandOriginLoader {
 public:
     /*0*/ virtual ~CommandOriginLoader();
     /*1*/ virtual std::unique_ptr<class CommandOrigin> load(class CompoundTag const&);
-    /*
-    inline std::unique_ptr<class CommandOrigin> load(class CompoundTag const& a0){
-        std::unique_ptr<class CommandOrigin> (CommandOriginLoader::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?load@CommandOriginLoader@@UEAA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@AEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    */
+
     MCAPI static std::unique_ptr<class CommandOrigin> load(class CompoundTag const&, class ServerLevel&);
 
 protected:

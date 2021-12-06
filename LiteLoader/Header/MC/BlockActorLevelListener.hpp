@@ -14,37 +14,26 @@ public:
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_6();
-    /*9*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_8();
-    /*11*/ virtual void __unk_vfn_9();
-    /*12*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_11();
-    /*14*/ virtual void __unk_vfn_12();
-    /*15*/ virtual void __unk_vfn_13();
-    /*16*/ virtual void __unk_vfn_14();
-    /*17*/ virtual void __unk_vfn_15();
-    /*18*/ virtual void __unk_vfn_16();
-    /*19*/ virtual void __unk_vfn_17();
-    /*20*/ virtual void __unk_vfn_18();
+    /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
+    /*9*/ virtual void __unk_vfn_6();
+    /*10*/ virtual void __unk_vfn_7();
+    /*11*/ virtual void __unk_vfn_8();
+    /*12*/ virtual void __unk_vfn_9();
+    /*13*/ virtual void __unk_vfn_10();
+    /*14*/ virtual void __unk_vfn_11();
+    /*15*/ virtual void __unk_vfn_12();
+    /*16*/ virtual void __unk_vfn_13();
+    /*17*/ virtual void __unk_vfn_14();
+    /*18*/ virtual void __unk_vfn_15();
+    /*19*/ virtual void __unk_vfn_16();
+    /*20*/ virtual void __unk_vfn_17();
     /*21*/ virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
-    /*22*/ virtual void __unk_vfn_19();
-    /*23*/ virtual void __unk_vfn_20();
+    /*22*/ virtual void __unk_vfn_18();
+    /*23*/ virtual void __unk_vfn_19();
     /*24*/ virtual void onChunkUnloaded(class LevelChunk&);
-    /*
-    inline void onChunkLoaded(class ChunkSource& a0, class LevelChunk& a1){
-        void (BlockActorLevelListener::*rv)(class ChunkSource&, class LevelChunk&);
-        *((void**)&rv) = dlsym("?onChunkLoaded@BlockActorLevelListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class ChunkSource&>(a0), std::forward<class LevelChunk&>(a1));
-    }
-    inline void onChunkUnloaded(class LevelChunk& a0){
-        void (BlockActorLevelListener::*rv)(class LevelChunk&);
-        *((void**)&rv) = dlsym("?onChunkUnloaded@BlockActorLevelListener@@UEAAXAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    */
+
 
 protected:
 

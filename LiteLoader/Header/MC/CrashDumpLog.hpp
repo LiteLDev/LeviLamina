@@ -19,6 +19,7 @@ public:
     MCAPI static void stopCrashDumpLogThread();
 
 protected:
+    MCAPI static struct CrashDump_AllData* mAllData;
 
 private:
     MCAPI static void crashDumpLogThreadRoutine();

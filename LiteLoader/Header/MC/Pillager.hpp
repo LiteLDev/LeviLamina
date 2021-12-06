@@ -34,71 +34,51 @@ public:
     /*22*/ virtual void onFailedTame();
     /*23*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*24*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*25*/ virtual void __unk_vfn_12();
+    /*25*/ virtual float getPickRadius();
     /*26*/ virtual void awardKillScore(class Actor&, int);
     /*27*/ virtual class HashedString const& queryEntityRenderer() const;
     /*28*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*29*/ virtual int getPortalWaitTime() const;
     /*30*/ virtual bool canChangeDimensions() const;
-    /*31*/ virtual void __unk_vfn_13();
+    /*31*/ virtual void __unk_vfn_12();
     /*32*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*33*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*34*/ virtual bool canBePulledIntoVehicle() const;
-    /*35*/ virtual void __unk_vfn_14();
+    /*35*/ virtual void __unk_vfn_13();
     /*36*/ virtual bool canSynchronizeNewEntity() const;
-    /*37*/ virtual void __unk_vfn_15();
-    /*38*/ virtual void __unk_vfn_16();
+    /*37*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_15();
     /*39*/ virtual bool isWorldBuilder() const;
-    /*40*/ virtual void __unk_vfn_17();
+    /*40*/ virtual void __unk_vfn_16();
     /*41*/ virtual bool isAdventure() const;
     /*42*/ virtual bool canDestroyBlock(class Block const&) const;
     /*43*/ virtual void setAuxValue(int);
     /*44*/ virtual void stopSpinAttack();
-    /*45*/ virtual void __unk_vfn_18();
-    /*46*/ virtual void __unk_vfn_19();
+    /*45*/ virtual void __unk_vfn_17();
+    /*46*/ virtual void __unk_vfn_18();
     /*47*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*48*/ virtual void __unk_vfn_20();
+    /*48*/ virtual void __unk_vfn_19();
     /*49*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*50*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual void aiStep();
     /*55*/ virtual bool checkSpawnRules(bool);
     /*56*/ virtual float getItemUseStartupProgress() const;
     /*57*/ virtual float getItemUseIntervalProgress() const;
-    /*58*/ virtual void __unk_vfn_23();
+    /*58*/ virtual void __unk_vfn_22();
     /*59*/ virtual bool isAlliedTo(class Mob*);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
+    /*63*/ virtual int getAttackTime();
     /*64*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*65*/ virtual void __unk_vfn_26();
+    /*65*/ virtual void __unk_vfn_24();
     /*66*/ virtual void _serverAiMobStep();
-    /*67*/ virtual void __unk_vfn_27();
+    /*67*/ virtual void __unk_vfn_25();
     /*68*/ virtual bool isDarkEnoughToSpawn() const;
     /*
-    inline bool isDarkEnoughToSpawn() const{
-        bool (Pillager::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@Pillager@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Pillager::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Pillager@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline float getRidingHeight(){
-        float (Pillager::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@Pillager@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Pillager::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Pillager@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
     inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
         void (Pillager::*rv)(class RenderParams&);
         *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Pillager@@UEAAXAEAVRenderParams@@@Z");

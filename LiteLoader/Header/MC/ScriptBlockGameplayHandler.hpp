@@ -11,18 +11,13 @@ public:
     /*0*/ virtual ~ScriptBlockGameplayHandler();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_5();
+    /*3*/ virtual int /*enum enum HandlerResult*/ handleBlockPatternPostEvent(struct BlockPatternEvent const&);
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
+    /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
     /*7*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handlePistonActionEvent(struct PistonActionEvent const&);
     /*8*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handleExplosionStartedEvent(struct ExplosionStartedEvent&);
     /*
-    inline int \/*enum enum HandlerResult*\/ handleBlockPatternPostEvent(struct BlockPatternEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (ScriptBlockGameplayHandler::*rv)(struct BlockPatternEvent const&);
-        *((void**)&rv) = dlsym("?handleBlockPatternPostEvent@ScriptBlockGameplayHandler@@UEAA?AW4HandlerResult@@AEBUBlockPatternEvent@@@Z");
-        return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
-    }
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleChestBlockTryPaired(struct ChestBlockTryPairEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ChestBlockTryPairEvent const&);
         *((void**)&rv) = dlsym("?handleChestBlockTryPaired@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUChestBlockTryPairEvent@@@Z");
@@ -42,21 +37,6 @@ public:
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ActorStandOnBlockEvent const&);
         *((void**)&rv) = dlsym("?handleActorStandOnBlock@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUActorStandOnBlockEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorStandOnBlockEvent const&>(a0));
-    }
-    inline struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const& a0){
-        struct GameplayHandlerResult<class std::optional<std::string > > (ScriptBlockGameplayHandler::*rv)(struct CraftUISetResultNameEvent const&);
-        *((void**)&rv) = dlsym("?handleCraftUISetResultName@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@V?$optional@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@@AEBUCraftUISetResultNameEvent@@@Z");
-        return (this->*rv)(std::forward<struct CraftUISetResultNameEvent const&>(a0));
-    }
-    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleExplosionStartedEvent(struct ExplosionStartedEvent& a0){
-        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ExplosionStartedEvent&);
-        *((void**)&rv) = dlsym("?handleExplosionStartedEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUExplosionStartedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ExplosionStartedEvent&>(a0));
-    }
-    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handlePistonActionEvent(struct PistonActionEvent const& a0){
-        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct PistonActionEvent const&);
-        *((void**)&rv) = dlsym("?handlePistonActionEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUPistonActionEvent@@@Z");
-        return (this->*rv)(std::forward<struct PistonActionEvent const&>(a0));
     }
     */
 

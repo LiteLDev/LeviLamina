@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (TradeInterestGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@TradeInterestGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (TradeInterestGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@TradeInterestGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (TradeInterestGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@TradeInterestGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (TradeInterestGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@TradeInterestGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (TradeInterestGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@TradeInterestGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (TradeInterestGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@TradeInterestGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

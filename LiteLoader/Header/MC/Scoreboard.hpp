@@ -16,6 +16,13 @@ public:
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void onObjectiveRemoved(class Objective&);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
+    /*9*/ virtual void __unk_vfn_4();
+    /*10*/ virtual void __unk_vfn_5();
+    /*11*/ virtual void __unk_vfn_6();
+    /*12*/ virtual void __unk_vfn_7();
+    /*13*/ virtual void __unk_vfn_8();
+    /*14*/ virtual void __unk_vfn_9();
+    /*15*/ virtual bool isClientSide() const;
     /*
     inline void setPacketSender(class PacketSender* a0){
         void (Scoreboard::*rv)(class PacketSender*);
@@ -36,16 +43,6 @@ public:
         void (Scoreboard::*rv)();
         *((void**)&rv) = dlsym("?tick@Scoreboard@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline bool isClientSide() const{
-        bool (Scoreboard::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@Scoreboard@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Objective* clearDisplayObjective(std::string const& a0){
-        class Objective* (Scoreboard::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?clearDisplayObjective@Scoreboard@@UEAAPEAVObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
     }
     inline struct ScoreboardId const& createScoreboardId(std::string const& a0){
         struct ScoreboardId const& (Scoreboard::*rv)(std::string const&);
@@ -77,21 +74,6 @@ public:
         *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
         return (this->*rv)(std::forward<class Objective const&>(a0));
     }
-    inline void onObjectiveRemoved(class Objective& a0){
-        void (Scoreboard::*rv)(class Objective&);
-        *((void**)&rv) = dlsym("?onObjectiveRemoved@Scoreboard@@UEAAXAEAVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective&>(a0));
-    }
-    inline void onScoreChanged(struct ScoreboardId const& a0, class Objective const& a1){
-        void (Scoreboard::*rv)(struct ScoreboardId const&, class Objective const&);
-        *((void**)&rv) = dlsym("?onScoreChanged@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
-        return (this->*rv)(std::forward<struct ScoreboardId const&>(a0), std::forward<class Objective const&>(a1));
-    }
-    inline class DisplayObjective const* setDisplayObjective(std::string const& a0, class Objective const& a1, int \/*enum enum ObjectiveSortOrder*\/ a2){
-        class DisplayObjective const* (Scoreboard::*rv)(std::string const&, class Objective const&, int \/*enum enum ObjectiveSortOrder*\/);
-        *((void**)&rv) = dlsym("?setDisplayObjective@Scoreboard@@UEAAPEBVDisplayObjective@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVObjective@@W4ObjectiveSortOrder@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Objective const&>(a1), std::forward<int \/*enum enum ObjectiveSortOrder*\/>(a2));
-    }
     */
     MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);
     MCAPI void addScoreListener(class Player&, std::string const&);
@@ -104,7 +86,7 @@ public:
     MCAPI std::vector<struct ScoreInfo> getIdScores(struct ScoreboardId const&) const;
     MCAPI class Objective* getObjective(std::string const&) const;
     MCAPI std::vector<std::string> getObjectiveNames() const;
-    MCAPI std::vector<class Objective const*> getObjectives() const;
+    MCAPI std::vector<class Objective const* > getObjectives() const;
     MCAPI struct ScoreboardId const& getScoreboardId(std::string const&) const;
     MCAPI struct ScoreboardId const& getScoreboardId(class Actor const&) const;
     MCAPI struct ScoreboardId const& getScoreboardId(class Player const&) const;
@@ -126,6 +108,7 @@ public:
     MCAPI static std::string const DISPLAY_SLOT_BELOWNAME;
     MCAPI static std::string const DISPLAY_SLOT_LIST;
     MCAPI static std::string const DISPLAY_SLOT_SIDEBAR;
+    MCAPI static char const* OBJECTIVES_ENUM;
     MCAPI static bool shouldClearScoresOnDeath(class Actor const&);
 
 protected:

@@ -17,10 +17,10 @@ public:    /*
         *((void**)&rv) = dlsym("?containerContentChanged@PlayerInventory@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void createTransactionContext(class std::function<void (class Container&, int, class ItemStack const&, class ItemStack const&)> a0, class std::function<void (void)> a1){
-        void (PlayerInventory::*rv)(class std::function<void (class Container&, int, class ItemStack const&, class ItemStack const&)>, class std::function<void (void)>);
+    inline void createTransactionContext(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )> a0, class std::function<void (void)> a1){
+        void (PlayerInventory::*rv)(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>, class std::function<void (void)>);
         *((void**)&rv) = dlsym("?createTransactionContext@PlayerInventory@@UEAAXV?$function@$$A6AXAEAVContainer@@HAEBVItemStack@@1@Z@std@@V?$function@$$A6AXXZ@3@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Container&, int, class ItemStack const&, class ItemStack const&)>>(a0), std::forward<class std::function<void (void)>>(a1));
+        return (this->*rv)(std::forward<class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>>(a0), std::forward<class std::function<void (void)>>(a1));
     }
     */
     MCAPI bool add(class ItemStack&, bool);
@@ -32,17 +32,17 @@ public:    /*
     MCAPI int getFirstEmptySlot() const;
     MCAPI int getHotbarSize() const;
     MCAPI class ItemStack const& getItem(int, enum ContainerID) const;
-    MCAPI int getItemCount(class std::function<bool (class ItemStack const&)>);
+    MCAPI int getItemCount(class std::function<bool (class ItemStack const& )>);
     MCAPI enum ContainerID getSelectedContainerId();
     MCAPI class ItemStack const& getSelectedItem();
     MCAPI struct PlayerInventory::SlotData getSelectedSlot() const;
     MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
-    MCAPI std::vector<class ItemStack const*> getSlots() const;
+    MCAPI std::vector<class ItemStack const* > getSlots() const;
     MCAPI void removeItem(int, int, enum ContainerID);
     MCAPI void removeListener(class ContainerContentChangeListener*);
     MCAPI bool removeResource(int);
     MCAPI bool selectSlot(int, enum ContainerID);
-    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const&)>);
+    MCAPI void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     MCAPI void setContainerChanged(int);
     MCAPI void setItem(int, class ItemStack const&, enum ContainerID, bool);
     MCAPI void setSelectedItem(class ItemStack const&);

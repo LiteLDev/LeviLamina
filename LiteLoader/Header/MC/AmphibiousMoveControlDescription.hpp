@@ -10,13 +10,7 @@ class AmphibiousMoveControlDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~AmphibiousMoveControlDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (AmphibiousMoveControlDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@AmphibiousMoveControlDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

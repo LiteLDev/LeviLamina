@@ -38,113 +38,63 @@ public:
     /*26*/ virtual void onFailedTame();
     /*27*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*28*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*29*/ virtual void __unk_vfn_12();
+    /*29*/ virtual float getPickRadius();
     /*30*/ virtual void awardKillScore(class Actor&, int);
     /*31*/ virtual class HashedString const& queryEntityRenderer() const;
     /*32*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*33*/ virtual int getPortalWaitTime() const;
     /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_13();
+    /*35*/ virtual void __unk_vfn_12();
     /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
-    /*51*/ virtual void __unk_vfn_20();
-    /*52*/ virtual void __unk_vfn_21();
-    /*53*/ virtual void __unk_vfn_22();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
+    /*51*/ virtual void __unk_vfn_19();
+    /*52*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual void aiStep();
     /*56*/ virtual bool checkSpawnRules(bool);
     /*57*/ virtual int getItemUseDuration() const;
     /*58*/ virtual float getItemUseStartupProgress() const;
     /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_23();
+    /*60*/ virtual void __unk_vfn_22();
     /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_24();
+    /*62*/ virtual void __unk_vfn_23();
     /*63*/ virtual int getArmorValue();
     /*64*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*65*/ virtual void onBorn(class Actor&, class Actor&);
-    /*66*/ virtual void __unk_vfn_25();
-    /*67*/ virtual void __unk_vfn_26();
+    /*66*/ virtual int getAttackTime();
+    /*67*/ virtual void __unk_vfn_24();
     /*68*/ virtual void jumpFromGround();
     /*69*/ virtual void _serverAiMobStep();
-    /*70*/ virtual void __unk_vfn_27();
+    /*70*/ virtual void __unk_vfn_25();
     /*71*/ virtual bool isDarkEnoughToSpawn() const;
     /*72*/ virtual bool canDealDamage();
     /*73*/ virtual bool doPlayLandSound();
     /*74*/ virtual void decreaseSquish();
     /*75*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /*
-    inline bool isInLava() const{
-        bool (LavaSlime::*rv)() const;
-        *((void**)&rv) = dlsym("?isInLava@LavaSlime@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isOnFire() const{
         bool (LavaSlime::*rv)() const;
         *((void**)&rv) = dlsym("?isOnFire@LavaSlime@@MEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDarkEnoughToSpawn() const{
-        bool (LavaSlime::*rv)() const;
-        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doPlayLandSound(){
-        bool (LavaSlime::*rv)();
-        *((void**)&rv) = dlsym("?doPlayLandSound@LavaSlime@@MEAA_NXZ");
         return (this->*rv)();
     }
     inline bool canDealDamage(){
         bool (LavaSlime::*rv)();
         *((void**)&rv) = dlsym("?canDealDamage@LavaSlime@@MEAA_NXZ");
         return (this->*rv)();
-    }
-    inline float getBrightness(float a0) const{
-        float (LavaSlime::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getBrightness@LavaSlime@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (LavaSlime::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@LavaSlime@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline class OwnerPtrT<struct EntityRefTraits> createChild(int a0){
-        class OwnerPtrT<struct EntityRefTraits> (LavaSlime::*rv)(int);
-        *((void**)&rv) = dlsym("?createChild@LavaSlime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void decreaseSquish(){
-        void (LavaSlime::*rv)();
-        *((void**)&rv) = dlsym("?decreaseSquish@LavaSlime@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline int getArmorValue(){
-        int (LavaSlime::*rv)();
-        *((void**)&rv) = dlsym("?getArmorValue@LavaSlime@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline void jumpFromGround(){
-        void (LavaSlime::*rv)();
-        *((void**)&rv) = dlsym("?jumpFromGround@LavaSlime@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (LavaSlime::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@LavaSlime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
 

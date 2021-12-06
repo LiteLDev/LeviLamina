@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (BreakDoorGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@BreakDoorGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (BreakDoorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BreakDoorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BreakDoorGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BreakDoorGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (BreakDoorGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@BreakDoorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (BreakDoorGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@BreakDoorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (BreakDoorGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@BreakDoorGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

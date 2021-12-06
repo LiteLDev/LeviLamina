@@ -41,48 +41,48 @@ public:
     /*29*/ virtual void onFailedTame();
     /*30*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*32*/ virtual void __unk_vfn_12();
+    /*32*/ virtual float getPickRadius();
     /*33*/ virtual void awardKillScore(class Actor&, int);
     /*34*/ virtual class HashedString const& queryEntityRenderer() const;
     /*35*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*36*/ virtual int getPortalWaitTime() const;
     /*37*/ virtual bool canChangeDimensions() const;
-    /*38*/ virtual void __unk_vfn_13();
+    /*38*/ virtual void __unk_vfn_12();
     /*39*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*40*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*41*/ virtual bool canBePulledIntoVehicle() const;
-    /*42*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_13();
     /*43*/ virtual bool canSynchronizeNewEntity() const;
-    /*44*/ virtual void __unk_vfn_15();
-    /*45*/ virtual void __unk_vfn_16();
+    /*44*/ virtual void __unk_vfn_14();
+    /*45*/ virtual void __unk_vfn_15();
     /*46*/ virtual bool isWorldBuilder() const;
-    /*47*/ virtual void __unk_vfn_17();
+    /*47*/ virtual void __unk_vfn_16();
     /*48*/ virtual bool isAdventure() const;
     /*49*/ virtual bool canDestroyBlock(class Block const&) const;
     /*50*/ virtual void setAuxValue(int);
     /*51*/ virtual void stopSpinAttack();
-    /*52*/ virtual void __unk_vfn_18();
-    /*53*/ virtual void __unk_vfn_19();
+    /*52*/ virtual void __unk_vfn_17();
+    /*53*/ virtual void __unk_vfn_18();
     /*54*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*55*/ virtual void __unk_vfn_20();
+    /*55*/ virtual void __unk_vfn_19();
     /*56*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*57*/ virtual void __unk_vfn_21();
-    /*58*/ virtual void __unk_vfn_22();
+    /*57*/ virtual void __unk_vfn_20();
+    /*58*/ virtual void __unk_vfn_21();
     /*59*/ virtual void spawnAnim();
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;
-    /*63*/ virtual void __unk_vfn_23();
+    /*63*/ virtual void __unk_vfn_22();
     /*64*/ virtual bool isAlliedTo(class Mob*);
-    /*65*/ virtual void __unk_vfn_24();
+    /*65*/ virtual void __unk_vfn_23();
     /*66*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*67*/ virtual void onBorn(class Actor&, class Actor&);
-    /*68*/ virtual void __unk_vfn_25();
+    /*68*/ virtual int getAttackTime();
     /*69*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*70*/ virtual bool canExistWhenDisallowMob() const;
-    /*71*/ virtual void __unk_vfn_26();
+    /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
-    /*73*/ virtual void __unk_vfn_27();
+    /*73*/ virtual void __unk_vfn_25();
     /*
     inline bool isTargetable() const{
         bool (TripodCamera::*rv)() const;
@@ -98,51 +98,6 @@ public:
         bool (TripodCamera::*rv)() const;
         *((void**)&rv) = dlsym("?breaksFallingBlocks@TripodCamera@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool canExistWhenDisallowMob() const{
-        bool (TripodCamera::*rv)() const;
-        *((void**)&rv) = dlsym("?canExistWhenDisallowMob@TripodCamera@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowHeightOffs(){
-        float (TripodCamera::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@TripodCamera@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (TripodCamera::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@TripodCamera@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (TripodCamera::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@TripodCamera@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline bool isPickable(){
-        bool (TripodCamera::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@TripodCamera@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (TripodCamera::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@TripodCamera@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (TripodCamera::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@TripodCamera@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void remove(){
-        void (TripodCamera::*rv)();
-        *((void**)&rv) = dlsym("?remove@TripodCamera@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (TripodCamera::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@TripodCamera@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
     MCAPI bool interactWithPlayer(class Player&);

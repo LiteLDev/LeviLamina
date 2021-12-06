@@ -15,7 +15,7 @@ protected:
 
 private:
     MCAPI void _addNeighbor(class PathfinderNode*, class PathfinderNode const&, unsigned int, unsigned __int64&);
-    MCAPI bool _checkBlockAndNeighborsProperty(class Actor&, class BlockPos const&, class Block const&, enum BlockProperty, int, class BreakBlocksComponent const*, class std::function<bool (class Block const&, class BlockPos const&)>);
+    MCAPI bool _checkBlockAndNeighborsProperty(class Actor&, class BlockPos const&, class Block const&, enum BlockProperty, int, class BreakBlocksComponent const*, class std::function<bool (class Block const& , class BlockPos const& )>);
     MCAPI bool _checkForDamagingBlock(class Actor&, class BlockPos const&, class Block const&, int, class BreakBlocksComponent const*);
     MCAPI enum NodeType _classifyDoorNode(class Actor&, class Block const&, class BlockPos const&, class BlockPos const&);
     MCAPI enum NodeType _classifyNode(class Actor&, class BlockPos const&, class BlockPos const&);

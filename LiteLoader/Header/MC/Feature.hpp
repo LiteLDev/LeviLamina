@@ -11,13 +11,7 @@ public:
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const = 0;
-    /*
-    inline class std::optional<class BlockPos> place(class IBlockWorldGenAPI& a0, class BlockPos const& a1, class Random& a2, class RenderParams& a3) const{
-        class std::optional<class BlockPos> (Feature::*rv)(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-        *((void**)&rv) = dlsym("?place@Feature@@UEBA?AV?$optional@VBlockPos@@@std@@AEAVIBlockWorldGenAPI@@AEBVBlockPos@@AEAVRandom@@AEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class IBlockWorldGenAPI&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2), std::forward<class RenderParams&>(a3));
-    }
-    */
+
 
 protected:
     MCAPI bool _placeBlock(class BlockSource&, class BlockPos const&, class Block const&) const;

@@ -10,29 +10,13 @@ class VexCopyOwnerTargetGoal : public TargetGoal {
 public:
     /*0*/ virtual ~VexCopyOwnerTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual bool isTargetGoal() const;
     /*3*/ virtual void start();
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void stop();
     /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (VexCopyOwnerTargetGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@VexCopyOwnerTargetGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (VexCopyOwnerTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@VexCopyOwnerTargetGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (VexCopyOwnerTargetGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@VexCopyOwnerTargetGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+
 
 protected:
 

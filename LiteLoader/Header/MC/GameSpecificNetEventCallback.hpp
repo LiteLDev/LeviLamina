@@ -8,13 +8,8 @@ class GameSpecificNetEventCallback {
 #include "Extra/GameSpecificNetEventCallbackAPI.hpp"
 public:
     /*0*/ virtual ~GameSpecificNetEventCallback();
-    /*
-    inline void handle(class NetworkIdentifier const& a0, class ResourcePackClientResponsePacket const& a1){
-        void (GameSpecificNetEventCallback::*rv)(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
-        *((void**)&rv) = dlsym("?handle@GameSpecificNetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ResourcePackClientResponsePacket const&>(a1));
-    }
-    */
+    /*1*/ virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
+
 
 protected:
 

@@ -16,38 +16,7 @@ public:
     /*5*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     /*6*/ virtual bool canUpdatePath(class Mob const&) const;
     /*7*/ virtual void updatePath(class NavigationComponent&, class Mob&);
-    /*
-    inline bool canUpdatePath(class Mob const& a0) const{
-        bool (WaterBoundPathNavigation::*rv)(class Mob const&) const;
-        *((void**)&rv) = dlsym("?canUpdatePath@WaterBoundPathNavigation@@MEBA_NAEBVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob const&>(a0));
-    }
-    inline class Vec3 getTempMobPos(class Mob const& a0) const{
-        class Vec3 (WaterBoundPathNavigation::*rv)(class Mob const&) const;
-        *((void**)&rv) = dlsym("?getTempMobPos@WaterBoundPathNavigation@@MEBA?AVVec3@@AEBVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob const&>(a0));
-    }
-    inline void initializeInternal(class Mob& a0, struct NavigationDescription* a1){
-        void (WaterBoundPathNavigation::*rv)(class Mob&, struct NavigationDescription*);
-        *((void**)&rv) = dlsym("?initializeInternal@WaterBoundPathNavigation@@UEAAXAEAVMob@@PEAUNavigationDescription@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0), std::forward<struct NavigationDescription*>(a1));
-    }
-    inline void tick(class NavigationComponent& a0, class Mob& a1){
-        void (WaterBoundPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?tick@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    inline bool travel(class NavigationComponent& a0, class Mob& a1, float& a2, float& a3, float& a4){
-        bool (WaterBoundPathNavigation::*rv)(class NavigationComponent&, class Mob&, float&, float&, float&);
-        *((void**)&rv) = dlsym("?travel@WaterBoundPathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<float&>(a2), std::forward<float&>(a3), std::forward<float&>(a4));
-    }
-    inline void updatePath(class NavigationComponent& a0, class Mob& a1){
-        void (WaterBoundPathNavigation::*rv)(class NavigationComponent&, class Mob&);
-        *((void**)&rv) = dlsym("?updatePath@WaterBoundPathNavigation@@MEAAXAEAVNavigationComponent@@AEAVMob@@@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1));
-    }
-    */
+
 
 protected:
 

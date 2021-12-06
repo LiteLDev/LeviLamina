@@ -9,13 +9,7 @@ class ContentTierManager {
 public:
     /*0*/ virtual ~ContentTierManager();
     /*1*/ virtual class ContentTierInfo getContentTierInfo() const;
-    /*
-    inline class ContentTierInfo getContentTierInfo() const{
-        class ContentTierInfo (ContentTierManager::*rv)() const;
-        *((void**)&rv) = dlsym("?getContentTierInfo@ContentTierManager@@UEBA?AVContentTierInfo@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

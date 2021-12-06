@@ -10,29 +10,13 @@ class FeaturePoolElement : public StructurePoolElement {
 public:
     /*0*/ virtual class BlockPos getSize(int /*enum enum Rotation*/) const;
     /*1*/ virtual std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*2*/ virtual void setProjection(int /*enum enum Projection*/);
+    /*3*/ virtual int /*enum enum Projection*/ getProjection() const;
+    /*4*/ virtual int /*enum enum PostProcessSettings*/ getPostProcessSettings() const;
     /*5*/ virtual bool place(class BlockSource&, class BlockPos, int /*enum enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >&, class BlockPos) const;
-    /*6*/ virtual void __unk_vfn_3();
+    /*6*/ virtual bool isValid() const;
     /*7*/ virtual ~FeaturePoolElement();
-    /*
-    inline class BlockPos getSize(int \/*enum enum Rotation*\/ a0) const{
-        class BlockPos (FeaturePoolElement::*rv)(int \/*enum enum Rotation*\/) const;
-        *((void**)&rv) = dlsym("?getSize@FeaturePoolElement@@UEBA?AVBlockPos@@W4Rotation@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Rotation*\/>(a0));
-    }
-    inline std::vector<class JigsawBlockInfo> getJigsawMarkers(class BlockPos a0, class LegacyStructureSettings& a1, class BlockSource* a2) const{
-        std::vector<class JigsawBlockInfo> (FeaturePoolElement::*rv)(class BlockPos, class LegacyStructureSettings&, class BlockSource*) const;
-        *((void**)&rv) = dlsym("?getJigsawMarkers@FeaturePoolElement@@UEBA?AV?$vector@VJigsawBlockInfo@@V?$allocator@VJigsawBlockInfo@@@std@@@std@@VBlockPos@@AEAVLegacyStructureSettings@@PEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockPos>(a0), std::forward<class LegacyStructureSettings&>(a1), std::forward<class BlockSource*>(a2));
-    }
-    inline bool place(class BlockSource& a0, class BlockPos a1, int \/*enum enum Rotation*\/ a2, class BoundingBox a3, class Random& a4, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >& a5, class BlockPos a6) const{
-        bool (FeaturePoolElement::*rv)(class BlockSource&, class BlockPos, int \/*enum enum Rotation*\/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >&, class BlockPos) const;
-        *((void**)&rv) = dlsym("?place@FeaturePoolElement@@UEBA_NAEAVBlockSource@@VBlockPos@@W4Rotation@@VBoundingBox@@AEAVRandom@@AEAV?$unordered_map@VBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@U?$hash@VBlockPos@@@3@U?$equal_to@VBlockPos@@@3@V?$allocator@U?$pair@$$CBVBlockPos@@V?$optional@UActorDefinitionIdentifier@@@std@@@std@@@3@@std@@1@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos>(a1), std::forward<int \/*enum enum Rotation*\/>(a2), std::forward<class BoundingBox>(a3), std::forward<class Random&>(a4), std::forward<class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >&>(a5), std::forward<class BlockPos>(a6));
-    }
-    */
+
 
 protected:
 

@@ -13,12 +13,13 @@ public:
     /*2*/ virtual void onSourceDestroyed(class BlockSource&);
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
+    /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
+    /*9*/ virtual void __unk_vfn_6();
+    /*10*/ virtual class Particle* addParticle(int /*enum enum ParticleType*/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
     /*
-    inline class Particle* addParticle(int \/*enum enum ParticleType*\/ a0, class Vec3 const& a1, class Vec3 const& a2, int a3, class CompoundTag const* a4, bool a5){
-        class Particle* (LevelListener::*rv)(int \/*enum enum ParticleType*\/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
-        *((void**)&rv) = dlsym("?addParticle@LevelListener@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<class CompoundTag const*>(a4), std::forward<bool>(a5));
-    }
     inline void levelSoundEvent(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
         void (LevelListener::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z");

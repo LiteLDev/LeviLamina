@@ -10,13 +10,7 @@ class NavigationHoverDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~NavigationHoverDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (NavigationHoverDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@NavigationHoverDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

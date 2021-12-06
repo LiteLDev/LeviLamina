@@ -12,23 +12,7 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
     /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
-    /*
-    inline bool change(float a0, float a1, struct AttributeBuffInfo a2){
-        bool (HealthAttributeDelegate::*rv)(float, float, struct AttributeBuffInfo);
-        *((void**)&rv) = dlsym("?change@HealthAttributeDelegate@@UEAA_NMMUAttributeBuffInfo@@@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<struct AttributeBuffInfo>(a2));
-    }
-    inline float getBuffValue(class AttributeBuff const& a0) const{
-        float (HealthAttributeDelegate::*rv)(class AttributeBuff const&) const;
-        *((void**)&rv) = dlsym("?getBuffValue@HealthAttributeDelegate@@UEBAMAEBVAttributeBuff@@@Z");
-        return (this->*rv)(std::forward<class AttributeBuff const&>(a0));
-    }
-    inline void tick(){
-        void (HealthAttributeDelegate::*rv)();
-        *((void**)&rv) = dlsym("?tick@HealthAttributeDelegate@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

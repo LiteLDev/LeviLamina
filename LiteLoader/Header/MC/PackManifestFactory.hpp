@@ -10,13 +10,7 @@ class PackManifestFactory {
 public:
     /*0*/ virtual ~PackManifestFactory();
     /*1*/ virtual std::unique_ptr<class PackManifest> create(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
-    /*
-    inline std::unique_ptr<class PackManifest> create(class PackAccessStrategy& a0, class ResourceLocation const& a1, class PackReport& a2, class SubpackInfoCollection* a3){
-        std::unique_ptr<class PackManifest> (PackManifestFactory::*rv)(class PackAccessStrategy&, class ResourceLocation const&, class PackReport&, class SubpackInfoCollection*);
-        *((void**)&rv) = dlsym("?create@PackManifestFactory@@UEAA?AV?$unique_ptr@VPackManifest@@U?$default_delete@VPackManifest@@@std@@@std@@AEAVPackAccessStrategy@@AEBVResourceLocation@@AEAVPackReport@@PEAVSubpackInfoCollection@@@Z");
-        return (this->*rv)(std::forward<class PackAccessStrategy&>(a0), std::forward<class ResourceLocation const&>(a1), std::forward<class PackReport&>(a2), std::forward<class SubpackInfoCollection*>(a3));
-    }
-    */
+
     MCAPI static class Core::PathBuffer<std::string > const MANIFEST_LOG_PATH;
     MCAPI static std::string const MANIFEST_PACK_UUID_UPGRADE_SALT;
     MCAPI static class Core::PathBuffer<std::string > const MANIFEST_PATH;

@@ -47,7 +47,7 @@ public:
     /*36*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*37*/ virtual void animateHurt();
     /*38*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*39*/ virtual void __unk_vfn_12();
+    /*39*/ virtual float getPickRadius();
     /*40*/ virtual void awardKillScore(class Actor&, int);
     /*41*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*42*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,32 +58,32 @@ public:
     /*47*/ virtual bool canFreeze() const;
     /*48*/ virtual int getPortalWaitTime() const;
     /*49*/ virtual bool canChangeDimensions() const;
-    /*50*/ virtual void __unk_vfn_13();
+    /*50*/ virtual void __unk_vfn_12();
     /*51*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*52*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*53*/ virtual bool canBePulledIntoVehicle() const;
     /*54*/ virtual bool inCaravan() const;
-    /*55*/ virtual void __unk_vfn_14();
+    /*55*/ virtual void __unk_vfn_13();
     /*56*/ virtual bool canSynchronizeNewEntity() const;
     /*57*/ virtual void buildDebugInfo(std::string&) const;
     /*58*/ virtual int getDeathTime() const;
     /*59*/ virtual void swing();
-    /*60*/ virtual void __unk_vfn_15();
-    /*61*/ virtual void __unk_vfn_16();
+    /*60*/ virtual void __unk_vfn_14();
+    /*61*/ virtual void __unk_vfn_15();
     /*62*/ virtual float getYHeadRot() const;
     /*63*/ virtual bool isWorldBuilder() const;
-    /*64*/ virtual void __unk_vfn_17();
+    /*64*/ virtual void __unk_vfn_16();
     /*65*/ virtual bool isAdventure() const;
     /*66*/ virtual bool canDestroyBlock(class Block const&) const;
     /*67*/ virtual void setAuxValue(int);
     /*68*/ virtual void stopSpinAttack();
-    /*69*/ virtual void __unk_vfn_18();
-    /*70*/ virtual void __unk_vfn_19();
+    /*69*/ virtual void __unk_vfn_17();
+    /*70*/ virtual void __unk_vfn_18();
     /*71*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*72*/ virtual void __unk_vfn_20();
+    /*72*/ virtual void __unk_vfn_19();
     /*73*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*75*/ virtual void __unk_vfn_21();
+    /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
     /*
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
@@ -101,24 +101,9 @@ public:
         *((void**)&rv) = dlsym("?shouldAlwaysRender@LightningBolt@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline float getShadowRadius() const{
-        float (LightningBolt::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@LightningBolt@@UEBAMXZ");
-        return (this->*rv)();
-    }
     inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
         void (LightningBolt::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
         *((void**)&rv) = dlsym("?reloadHardcodedClient@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void normalTick(){
-        void (LightningBolt::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@LightningBolt@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (LightningBolt::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@LightningBolt@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
         return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */

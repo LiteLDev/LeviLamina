@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~TickWorldDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (TickWorldDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@TickWorldDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (TickWorldDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@TickWorldDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (TickWorldDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@TickWorldDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

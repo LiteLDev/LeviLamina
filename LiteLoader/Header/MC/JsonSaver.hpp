@@ -27,8 +27,8 @@ public:
     /*17*/ virtual void __unk_vfn_1();
     /*18*/ virtual void __unk_vfn_2();
     /*19*/ virtual bool doEndArray();
-    /*20*/ virtual void __unk_vfn_3();
-    /*21*/ virtual bool doBeginObject();
+    /*20*/ virtual bool doBeginObject();
+    /*21*/ virtual bool doBeginObject(unsigned __int64);
     /*22*/ virtual bool doEndObject();
     /*
     inline bool doBeginArrayItem(unsigned __int64 a0){
@@ -45,101 +45,6 @@ public:
         bool (JsonSaver::*rv)();
         *((void**)&rv) = dlsym("?doEndArrayItem@JsonSaver@@EEAA_NXZ");
         return (this->*rv)();
-    }
-    inline bool doBeginArray(unsigned __int64 a0){
-        bool (JsonSaver::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doBeginArray@JsonSaver@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doBeginMember(char const* a0, bool a1){
-        bool (JsonSaver::*rv)(char const*, bool);
-        *((void**)&rv) = dlsym("?doBeginMember@JsonSaver@@EEAA_NPEBD_N@Z");
-        return (this->*rv)(std::forward<char const*>(a0), std::forward<bool>(a1));
-    }
-    inline bool doBeginMember(unsigned __int64 a0, std::string const& a1){
-        bool (JsonSaver::*rv)(unsigned __int64, std::string const&);
-        *((void**)&rv) = dlsym("?doBeginMember@JsonSaver@@EEAA_N_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<std::string const&>(a1));
-    }
-    inline bool doBeginObject(){
-        bool (JsonSaver::*rv)();
-        *((void**)&rv) = dlsym("?doBeginObject@JsonSaver@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doBeginObject(unsigned __int64 a0){
-        bool (JsonSaver::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doBeginObject@JsonSaver@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doEndArray(){
-        bool (JsonSaver::*rv)();
-        *((void**)&rv) = dlsym("?doEndArray@JsonSaver@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doEndObject(){
-        bool (JsonSaver::*rv)();
-        *((void**)&rv) = dlsym("?doEndObject@JsonSaver@@EEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doSerialize(std::string const& a0){
-        bool (JsonSaver::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline bool doSerialize(signed char a0){
-        bool (JsonSaver::*rv)(signed char);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NC@Z");
-        return (this->*rv)(std::forward<signed char>(a0));
-    }
-    inline bool doSerialize(unsigned char a0){
-        bool (JsonSaver::*rv)(unsigned char);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool doSerialize(short a0){
-        bool (JsonSaver::*rv)(short);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NF@Z");
-        return (this->*rv)(std::forward<short>(a0));
-    }
-    inline bool doSerialize(unsigned short a0){
-        bool (JsonSaver::*rv)(unsigned short);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NG@Z");
-        return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    inline bool doSerialize(int a0){
-        bool (JsonSaver::*rv)(int);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool doSerialize(unsigned int a0){
-        bool (JsonSaver::*rv)(unsigned int);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NI@Z");
-        return (this->*rv)(std::forward<unsigned int>(a0));
-    }
-    inline bool doSerialize(float a0){
-        bool (JsonSaver::*rv)(float);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline bool doSerialize(double a0){
-        bool (JsonSaver::*rv)(double);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_NN@Z");
-        return (this->*rv)(std::forward<double>(a0));
-    }
-    inline bool doSerialize(__int64 a0){
-        bool (JsonSaver::*rv)(__int64);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_N_J@Z");
-        return (this->*rv)(std::forward<__int64>(a0));
-    }
-    inline bool doSerialize(unsigned __int64 a0){
-        bool (JsonSaver::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_N_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
-    inline bool doSerialize(bool a0){
-        bool (JsonSaver::*rv)(bool);
-        *((void**)&rv) = dlsym("?doSerialize@JsonSaver@@EEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
     }
     */
     MCAPI void configurePrettyOutput(bool, char, unsigned int);

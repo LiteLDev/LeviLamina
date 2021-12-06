@@ -9,34 +9,13 @@ class BarterGoal {
 public:
     /*0*/ virtual ~BarterGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (BarterGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@BarterGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (BarterGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BarterGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BarterGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BarterGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (BarterGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@BarterGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

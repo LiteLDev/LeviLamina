@@ -10,13 +10,7 @@ class OnStepOffTriggerDescription {
 public:
     /*0*/ virtual ~OnStepOffTriggerDescription();
     /*1*/ virtual std::string const& getName() const;
-    /*
-    inline std::string const& getName() const{
-        std::string const& (OnStepOffTriggerDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@OnStepOffTriggerDescription@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::string const NameID;
 
 protected:

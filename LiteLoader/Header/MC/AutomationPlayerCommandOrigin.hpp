@@ -20,70 +20,14 @@ public:
     /*8*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*11*/ virtual void __unk_vfn_0();
-    /*12*/ virtual void __unk_vfn_1();
+    /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*12*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
     /*13*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*14*/ virtual void __unk_vfn_2();
+    /*14*/ virtual class mce::UUID const& getUUID() const;
     /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*16*/ virtual class CompoundTag serialize() const;
     /*17*/ virtual bool isValid() const;
-    /*
-    inline bool hasChatPerms() const{
-        bool (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasChatPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasTellPerms() const{
-        bool (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?hasTellPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@AutomationPlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class NetworkIdentifier const& getSourceId() const{
-        class NetworkIdentifier const& (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceId@AutomationPlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@AutomationPlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@AutomationPlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@AutomationPlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@AutomationPlayerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@AutomationPlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    inline struct CommandOriginData toCommandOriginData() const{
-        struct CommandOriginData (AutomationPlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?toCommandOriginData@AutomationPlayerCommandOrigin@@UEBA?AUCommandOriginData@@XZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

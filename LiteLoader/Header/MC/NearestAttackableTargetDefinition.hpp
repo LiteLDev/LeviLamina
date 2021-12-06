@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~NearestAttackableTargetDefinition();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool validate(class Mob&);
-    /*
-    inline bool validate(class Mob& a0){
-        bool (NearestAttackableTargetDefinition::*rv)(class Mob&);
-        *((void**)&rv) = dlsym("?validate@NearestAttackableTargetDefinition@@UEAA_NAEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob&>(a0));
-    }
-    */
+
     MCAPI void initialize(class EntityContext&, class NearestAttackableTargetGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class NearestAttackableTargetDefinition> >&);
 

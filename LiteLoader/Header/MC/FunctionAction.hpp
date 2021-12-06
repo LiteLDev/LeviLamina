@@ -11,23 +11,7 @@ public:
     /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
     /*2*/ virtual void serialize(class CompoundTag&);
     /*3*/ virtual bool operator==(class IRequestAction&);
-    /*
-    inline bool operator==(class IRequestAction& a0){
-        bool (FunctionAction::*rv)(class IRequestAction&);
-        *((void**)&rv) = dlsym("??8FunctionAction@@UEBA_NAEAVIRequestAction@@@Z");
-        return (this->*rv)(std::forward<class IRequestAction&>(a0));
-    }
-    inline void execute(class ServerLevel& a0, class Dimension& a1){
-        void (FunctionAction::*rv)(class ServerLevel&, class Dimension&);
-        *((void**)&rv) = dlsym("?execute@FunctionAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z");
-        return (this->*rv)(std::forward<class ServerLevel&>(a0), std::forward<class Dimension&>(a1));
-    }
-    inline void serialize(class CompoundTag& a0){
-        void (FunctionAction::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?serialize@FunctionAction@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    */
+
     MCAPI static bool isValidTag(class CompoundTag const&);
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const&, class ICommandOriginLoader&);
 

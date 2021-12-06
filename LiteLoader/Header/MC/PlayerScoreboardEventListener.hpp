@@ -9,13 +9,7 @@ class PlayerScoreboardEventListener {
 public:
     /*0*/ virtual ~PlayerScoreboardEventListener();
     /*1*/ virtual int /*enum enum EventResult*/ onScoreChanged(struct ScoreboardId const&, std::string const&, int);
-    /*
-    inline int \/*enum enum EventResult*\/ onScoreChanged(struct ScoreboardId const& a0, std::string const& a1, int a2){
-        int \/*enum enum EventResult*\/ (PlayerScoreboardEventListener::*rv)(struct ScoreboardId const&, std::string const&, int);
-        *((void**)&rv) = dlsym("?onScoreChanged@PlayerScoreboardEventListener@@UEAA?AW4EventResult@@AEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<struct ScoreboardId const&>(a0), std::forward<std::string const&>(a1), std::forward<int>(a2));
-    }
-    */
+
     MCAPI class SubscribedObjectives& getPlayerSubscriptions(struct ScoreboardId const&, class Player const&);
     MCAPI void removePlayerSubscriptions(struct ScoreboardId const&);
 

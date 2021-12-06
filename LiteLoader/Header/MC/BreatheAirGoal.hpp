@@ -10,43 +10,12 @@ public:
     /*0*/ virtual ~BreatheAirGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline bool canBeInterrupted(){
-        bool (BreatheAirGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@BreatheAirGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (BreatheAirGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@BreatheAirGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (BreatheAirGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BreatheAirGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BreatheAirGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BreatheAirGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (BreatheAirGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@BreatheAirGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (BreatheAirGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@BreatheAirGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

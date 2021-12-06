@@ -12,23 +12,7 @@ public:
     /*1*/ virtual bool connect(std::string const&, unsigned short);
     /*2*/ virtual void close();
     /*3*/ virtual ~ScriptDebugger();
-    /*
-    inline void close(){
-        void (ScriptDebugger::*rv)();
-        *((void**)&rv) = dlsym("?close@ScriptDebugger@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool connect(std::string const& a0, unsigned short a1){
-        bool (ScriptDebugger::*rv)(std::string const&, unsigned short);
-        *((void**)&rv) = dlsym("?connect@ScriptDebugger@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@G@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<unsigned short>(a1));
-    }
-    inline bool listen(unsigned short a0){
-        bool (ScriptDebugger::*rv)(unsigned short);
-        *((void**)&rv) = dlsym("?listen@ScriptDebugger@@UEAA_NG@Z");
-        return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    */
+
     MCAPI void checkConnections();
 
 protected:

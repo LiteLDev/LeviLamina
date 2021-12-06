@@ -14,13 +14,7 @@ public:
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void onAppResumed();
-    /*
-    inline void onAppResumed(){
-        void (RandomThreadCheckManager::*rv)();
-        *((void**)&rv) = dlsym("?onAppResumed@RandomThreadCheckManager@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

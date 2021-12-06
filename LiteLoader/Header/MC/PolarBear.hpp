@@ -36,57 +36,46 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void __unk_vfn_12();
+    /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual bool canFreeze() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
-    /*51*/ virtual void __unk_vfn_21();
-    /*52*/ virtual void __unk_vfn_22();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
+    /*51*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual void spawnAnim();
     /*54*/ virtual int getItemUseDuration() const;
     /*55*/ virtual float getItemUseStartupProgress() const;
     /*56*/ virtual float getItemUseIntervalProgress() const;
-    /*57*/ virtual void __unk_vfn_23();
+    /*57*/ virtual void __unk_vfn_22();
     /*58*/ virtual bool isAlliedTo(class Mob*);
-    /*59*/ virtual void __unk_vfn_24();
+    /*59*/ virtual void __unk_vfn_23();
     /*60*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*61*/ virtual void onBorn(class Actor&, class Actor&);
-    /*62*/ virtual void __unk_vfn_25();
-    /*63*/ virtual void __unk_vfn_26();
+    /*62*/ virtual int getAttackTime();
+    /*63*/ virtual void __unk_vfn_24();
     /*64*/ virtual void _serverAiMobStep();
-    /*65*/ virtual void __unk_vfn_27();
-    /*
-    inline bool canFreeze() const{
-        bool (PolarBear::*rv)() const;
-        *((void**)&rv) = dlsym("?canFreeze@PolarBear@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (PolarBear::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@PolarBear@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*65*/ virtual void __unk_vfn_25();
+
     MCAPI float getStandingAnimationScale(float);
 
 protected:

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (RangedAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@RangedAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (RangedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@RangedAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (RangedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@RangedAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (RangedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@RangedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (RangedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@RangedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (RangedAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@RangedAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void handleAttackBehavior(class Actor*, class Vec3 const&, float, bool);
 
 protected:

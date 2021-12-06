@@ -13,29 +13,8 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value&) const;
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
-    /*
-    inline char const* getName(){
-        char const* (SplashPotionEffectSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@SplashPotionEffectSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (SplashPotionEffectSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@SplashPotionEffectSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline void readfromJSON(class Json::Value& a0, class SemVersion const& a1){
-        void (SplashPotionEffectSubcomponent::*rv)(class Json::Value&, class SemVersion const&);
-        *((void**)&rv) = dlsym("?readfromJSON@SplashPotionEffectSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
-    }
-    inline void writetoJSON(class Json::Value& a0) const{
-        void (SplashPotionEffectSubcomponent::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?writetoJSON@SplashPotionEffectSubcomponent@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
-    MCAPI void applyMobEffects(class MobEffectInstance const&, std::vector<class Actor*> const&, class Actor&, class std::shared_ptr<class Potion const> const&, float, class MobEffect*, class HitResult&, int);
+
+    MCAPI void applyMobEffects(class MobEffectInstance const&, std::vector<class Actor* > const&, class Actor&, class std::shared_ptr<class Potion const> const&, float, class MobEffect*, class HitResult&, int);
 
 protected:
 

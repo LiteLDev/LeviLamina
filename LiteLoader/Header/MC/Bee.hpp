@@ -37,62 +37,46 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual void onSynchedDataUpdate(int);
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
-    /*51*/ virtual void __unk_vfn_20();
-    /*52*/ virtual void __unk_vfn_21();
-    /*53*/ virtual void __unk_vfn_22();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
+    /*51*/ virtual void __unk_vfn_19();
+    /*52*/ virtual void __unk_vfn_20();
+    /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual void spawnAnim();
     /*55*/ virtual int getItemUseDuration() const;
     /*56*/ virtual float getItemUseStartupProgress() const;
     /*57*/ virtual float getItemUseIntervalProgress() const;
-    /*58*/ virtual void __unk_vfn_23();
+    /*58*/ virtual void __unk_vfn_22();
     /*59*/ virtual bool isAlliedTo(class Mob*);
-    /*60*/ virtual void __unk_vfn_24();
+    /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);
-    /*63*/ virtual void __unk_vfn_25();
-    /*64*/ virtual void __unk_vfn_26();
+    /*63*/ virtual int getAttackTime();
+    /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
-    /*66*/ virtual void __unk_vfn_27();
-    /*
-    inline void normalTick(){
-        void (Bee::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Bee@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (Bee::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@Bee@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Bee::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Bee@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+    /*66*/ virtual void __unk_vfn_25();
+
 
 protected:
     MCAPI void _registerLoopingSounds();

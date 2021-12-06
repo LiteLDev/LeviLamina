@@ -15,18 +15,7 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void __unk_vfn_3();
-    /*
-    inline int \/*enum enum StructurePieceType*\/ getType() const{
-        int \/*enum enum StructurePieceType*\/ (NBMonsterThrone::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@NBMonsterThrone@@UEBA?AW4StructurePieceType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (NBMonsterThrone::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@NBMonsterThrone@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+
 
 protected:
 

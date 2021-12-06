@@ -6,17 +6,7 @@
 #undef EXTRA_INCLUDE_PART_CLASSROOMMODENETWORKHANDLER
 class ClassroomModeNetworkHandler {
 #include "Extra/ClassroomModeNetworkHandlerAPI.hpp"
-public:
-    /*0*/ virtual void __unk_vfn_0();
-    /*1*/ virtual ~ClassroomModeNetworkHandler();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual void __unk_vfn_6();
-    /*8*/ virtual void onWebsocketRequest(std::string const&, std::string const&, class std::function<void (void)>);
-    /*
+public:    /*
     inline bool allowIncomingPacketId(class NetworkIdentifier const& a0, int \/*enum enum MinecraftPacketIds*\/ a1){
         bool (ClassroomModeNetworkHandler::*rv)(class NetworkIdentifier const&, int \/*enum enum MinecraftPacketIds*\/);
         *((void**)&rv) = dlsym("?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z");

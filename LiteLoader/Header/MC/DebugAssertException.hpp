@@ -9,13 +9,7 @@ class DebugAssertException {
 public:
     /*0*/ virtual ~DebugAssertException();
     /*1*/ virtual char const* what() const;
-    /*
-    inline char const* what() const{
-        char const* (DebugAssertException::*rv)() const;
-        *((void**)&rv) = dlsym("?what@DebugAssertException@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static bool isEnabled();
 
 protected:

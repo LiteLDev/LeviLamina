@@ -101,7 +101,7 @@ public:    /*
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData&, class BlockVolume&, class LevelChunk&, class ChunkPos const&, class SurfaceLevelCache const&);
 
 protected:
-    MCAPI class std::shared_ptr<class OperationNode<class Biome*, class Pos2d> > makeCommonNodeGraph(class LevelData const&, class BiomeRegistry const&) const;
+    MCAPI class std::shared_ptr<class OperationNode<class Biome* , class Pos2d> > makeCommonNodeGraph(class LevelData const&, class BiomeRegistry const&) const;
 
 private:
     MCAPI void _prepareStructureBlueprints(class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);

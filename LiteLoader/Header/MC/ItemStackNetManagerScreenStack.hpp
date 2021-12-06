@@ -7,7 +7,7 @@
 class ItemStackNetManagerScreenStack {
 #include "Extra/ItemStackNetManagerScreenStackAPI.hpp"
 public:
-    MCAPI void foreachScreen(class std::function<bool (class ItemStackNetManagerScreen&)>);
+    MCAPI void foreachScreen(class std::function<bool (class ItemStackNetManagerScreen& )>);
     MCAPI class ItemStackNetManagerScreen* getScreenForRequest(class ItemStackRequestData const&);
     MCAPI bool pop();
     MCAPI class ItemStackNetManagerScreen* push(std::unique_ptr<class ItemStackNetManagerScreen>);

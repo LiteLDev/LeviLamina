@@ -22,7 +22,47 @@ public:
     MCAPI static class std::optional<unsigned char> getPatternIndexFromName(std::string const&);
     MCAPI static unsigned char getPatternIndexFromNameID(std::string const&);
     MCAPI static void initPatterns();
+    MCAPI static class BannerPattern* mBase;
+    MCAPI static class BannerPattern* mBorder;
+    MCAPI static class BannerPattern* mBricks;
+    MCAPI static class BannerPattern* mCircle;
+    MCAPI static class BannerPattern* mCreeper;
+    MCAPI static class BannerPattern* mCross;
+    MCAPI static class BannerPattern* mCurlyBorder;
+    MCAPI static class BannerPattern* mDiagonalLeft;
+    MCAPI static class BannerPattern* mDiagonalRight;
+    MCAPI static class BannerPattern* mDiagonalUpLeft;
+    MCAPI static class BannerPattern* mDiagonalUpRight;
+    MCAPI static class BannerPattern* mFlower;
+    MCAPI static class BannerPattern* mGradient;
+    MCAPI static class BannerPattern* mGradientUp;
+    MCAPI static class BannerPattern* mHalfHorizontal;
+    MCAPI static class BannerPattern* mHalfHorizontalBottom;
+    MCAPI static class BannerPattern* mHalfVertical;
+    MCAPI static class BannerPattern* mHalfVerticalRight;
+    MCAPI static class BannerPattern* mMojang;
     MCAPI static std::vector<std::unique_ptr<class BannerPattern>> mPatterns;
+    MCAPI static class BannerPattern* mPiglin;
+    MCAPI static class BannerPattern* mRhombus;
+    MCAPI static class BannerPattern* mSkull;
+    MCAPI static class BannerPattern* mSmallStripes;
+    MCAPI static class BannerPattern* mSquareBottomLeft;
+    MCAPI static class BannerPattern* mSquareBottomRight;
+    MCAPI static class BannerPattern* mSquareTopLeft;
+    MCAPI static class BannerPattern* mSquareTopRight;
+    MCAPI static class BannerPattern* mStraightCross;
+    MCAPI static class BannerPattern* mStripeBottom;
+    MCAPI static class BannerPattern* mStripeCenter;
+    MCAPI static class BannerPattern* mStripeDownleft;
+    MCAPI static class BannerPattern* mStripeDownright;
+    MCAPI static class BannerPattern* mStripeLeft;
+    MCAPI static class BannerPattern* mStripeMiddle;
+    MCAPI static class BannerPattern* mStripeRight;
+    MCAPI static class BannerPattern* mStripeTop;
+    MCAPI static class BannerPattern* mTriangleBottom;
+    MCAPI static class BannerPattern* mTriangleTop;
+    MCAPI static class BannerPattern* mTrianglesBottom;
+    MCAPI static class BannerPattern* mTrianglesTop;
 
 protected:
 

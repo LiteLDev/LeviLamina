@@ -9,13 +9,7 @@ class ScreenHandlerHUD {
 public:
     /*0*/ virtual ~ScreenHandlerHUD();
     /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
-    /*
-    inline int \/*enum enum ItemStackNetResult*\/ handleAction(class ItemStackRequestAction const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (ScreenHandlerHUD::*rv)(class ItemStackRequestAction const&);
-        *((void**)&rv) = dlsym("?handleAction@ScreenHandlerHUD@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestAction const&>(a0));
-    }
-    */
+
 
 protected:
 

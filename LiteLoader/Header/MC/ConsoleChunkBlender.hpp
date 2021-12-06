@@ -14,7 +14,7 @@ protected:
     MCAPI void _blendChunkOverworld(class LevelChunk&, class LevelChunk&, enum ConsoleChunkBlender::ShiftBlockTypes);
     MCAPI void _copyColumnFromGeneratedChunkNether(class LevelChunk&, class LevelChunk&, int, int);
     MCAPI void _copyColumnFromGeneratedChunkOverworld(class LevelChunk&, class LevelChunk&, int, int, enum ConsoleChunkBlender::ShiftBlockTypes);
-    MCAPI class ChunkLocalHeight _findTopMostWaterHeight(class LevelChunk&, int, int, class std::unordered_set<class BlockLegacy const*, struct std::hash<class BlockLegacy const*>, struct std::equal_to<class BlockLegacy const*>, class std::allocator<class BlockLegacy const*> > const&);
+    MCAPI class ChunkLocalHeight _findTopMostWaterHeight(class LevelChunk&, int, int, class std::unordered_set<class BlockLegacy const* , struct std::hash<class BlockLegacy const* >, struct std::equal_to<class BlockLegacy const* >, class std::allocator<class BlockLegacy const* > > const&);
     MCAPI void _prepInterpTable();
     MCAPI void _shiftColumnBySetBlocks(class LevelChunk&, int, int, int, bool, class ChunkLocalHeight, enum ConsoleChunkBlender::ShiftBlockTypes, struct OverworldBlendRules const&);
 

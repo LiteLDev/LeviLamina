@@ -10,34 +10,19 @@ public:
     /*0*/ virtual ~WorldHistoryPackSource();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
+    /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
     /*
-    inline int \/*enum enum PackOrigin*\/ getPackOrigin() const{
-        int \/*enum enum PackOrigin*\/ (WorldHistoryPackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackOrigin@WorldHistoryPackSource@@UEBA?AW4PackOrigin@@XZ");
-        return (this->*rv)();
-    }
-    inline void forEachPackConst(class std::function<void (class Pack const&)> a0) const{
-        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const&)>) const;
+    inline void forEachPackConst(class std::function<void (class Pack const& )> a0) const{
+        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const& )>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@WorldHistoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack const&)>>(a0));
+        return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
     }
-    inline void forEachPack(class std::function<void (class Pack&)> a0){
-        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack&)>);
+    inline void forEachPack(class std::function<void (class Pack& )> a0){
+        void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack& )>);
         *((void**)&rv) = dlsym("?forEachPack@WorldHistoryPackSource@@UEAAXV?$function@$$A6AXAEAVPack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class Pack&)>>(a0));
-    }
-    inline int \/*enum enum PackType*\/ getPackType() const{
-        int \/*enum enum PackType*\/ (WorldHistoryPackSource::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackType@WorldHistoryPackSource@@UEBA?AW4PackType@@XZ");
-        return (this->*rv)();
-    }
-    inline class PackSourceReport load(class IPackManifestFactory& a0, class IContentKeyProvider const& a1){
-        class PackSourceReport (WorldHistoryPackSource::*rv)(class IPackManifestFactory&, class IContentKeyProvider const&);
-        *((void**)&rv) = dlsym("?load@WorldHistoryPackSource@@UEAA?AVPackSourceReport@@AEAVIPackManifestFactory@@AEBVIContentKeyProvider@@@Z");
-        return (this->*rv)(std::forward<class IPackManifestFactory&>(a0), std::forward<class IContentKeyProvider const&>(a1));
+        return (this->*rv)(std::forward<class std::function<void (class Pack& )>>(a0));
     }
     */
 

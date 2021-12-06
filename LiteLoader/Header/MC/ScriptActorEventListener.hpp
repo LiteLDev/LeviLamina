@@ -36,28 +36,7 @@ public:
     /*26*/ virtual void __unk_vfn_23();
     /*27*/ virtual int /*enum enum EventResult*/ onActorAddEffect(struct ActorAddEffectEvent const&);
     /*28*/ virtual int /*enum enum EventResult*/ onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onActorAddEffect(struct ActorAddEffectEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptActorEventListener::*rv)(struct ActorAddEffectEvent const&);
-        *((void**)&rv) = dlsym("?onActorAddEffect@ScriptActorEventListener@@UEAA?AW4EventResult@@AEBUActorAddEffectEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorAddEffectEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onActorCreated(class Actor& a0){
-        int \/*enum enum EventResult*\/ (ScriptActorEventListener::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?onActorCreated@ScriptActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onActorRemoveEffect(struct ActorRemoveEffectEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptActorEventListener::*rv)(struct ActorRemoveEffectEvent const&);
-        *((void**)&rv) = dlsym("?onActorRemoveEffect@ScriptActorEventListener@@UEAA?AW4EventResult@@AEBUActorRemoveEffectEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorRemoveEffectEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onActorRemoved(struct ActorRemovedEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptActorEventListener::*rv)(struct ActorRemovedEvent const&);
-        *((void**)&rv) = dlsym("?onActorRemoved@ScriptActorEventListener@@UEAA?AW4EventResult@@AEBUActorRemovedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorRemovedEvent const&>(a0));
-    }
-    */
+
 
 protected:
 

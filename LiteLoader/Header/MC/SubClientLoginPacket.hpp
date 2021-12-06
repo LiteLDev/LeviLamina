@@ -12,35 +12,9 @@ public:
     /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-    /*
-    inline bool disallowBatching() const{
-        bool (SubClientLoginPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?disallowBatching@SubClientLoginPacket@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum StreamReadResult*\/ _read(class ReadOnlyBinaryStream& a0){
-        int \/*enum enum StreamReadResult*\/ (SubClientLoginPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@SubClientLoginPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline int \/*enum enum MinecraftPacketIds*\/ getId() const{
-        int \/*enum enum MinecraftPacketIds*\/ (SubClientLoginPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@SubClientLoginPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (SubClientLoginPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@SubClientLoginPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (SubClientLoginPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@SubClientLoginPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    */
+
 
 protected:
 

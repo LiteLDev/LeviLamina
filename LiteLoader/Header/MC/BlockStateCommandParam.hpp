@@ -7,7 +7,7 @@
 class BlockStateCommandParam {
 #include "Extra/BlockStateCommandParamAPI.hpp"
 public:
-    MCAPI bool setBlockState(class Block const**, class CommandOutput&) const;
+    MCAPI bool setBlockState(class Block const* *, class CommandOutput&) const;
 
 protected:
 

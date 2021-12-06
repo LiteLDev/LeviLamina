@@ -12,49 +12,13 @@ public:
     /*1*/ virtual int /*enum enum WSConnectionResult*/ connect(std::string const&, std::vector<std::string> const&);
     /*2*/ virtual int /*enum enum WSConnectionResult*/ connect(std::string const&);
     /*3*/ virtual bool isReady() const;
-    /*4*/ virtual void setOnMessageReceivedHandler(class std::function<void (class RakWebSocketDataFrame const&)> const&);
-    /*5*/ virtual void setOnCloseHandler(class std::function<void (int /*enum enum CloseStatusCode*/, std::string const&)> const&);
-    /*6*/ virtual void setOnConnectedHandler(class std::function<void (std::string const&)> const&);
+    /*4*/ virtual void setOnMessageReceivedHandler(class std::function<void (class RakWebSocketDataFrame const& )> const&);
+    /*5*/ virtual void setOnCloseHandler(class std::function<void (int /*enum enum CloseStatusCode*/, std::string const& )> const&);
+    /*6*/ virtual void setOnConnectedHandler(class std::function<void (std::string const& )> const&);
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
-    /*
-    inline int \/*enum enum WSConnectionResult*\/ connect(std::string const& a0){
-        int \/*enum enum WSConnectionResult*\/ (RakWebSocket::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline int \/*enum enum WSConnectionResult*\/ connect(std::string const& a0, std::vector<std::string> const& a1){
-        int \/*enum enum WSConnectionResult*\/ (RakWebSocket::*rv)(std::string const&, std::vector<std::string> const&);
-        *((void**)&rv) = dlsym("?connect@RakWebSocket@@UEAA?AW4WSConnectionResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::vector<std::string> const&>(a1));
-    }
-    inline bool isReady() const{
-        bool (RakWebSocket::*rv)() const;
-        *((void**)&rv) = dlsym("?isReady@RakWebSocket@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void setOnCloseHandler(class std::function<void (int \/*enum enum CloseStatusCode*\/, std::string const&)> const& a0){
-        void (RakWebSocket::*rv)(class std::function<void (int \/*enum enum CloseStatusCode*\/, std::string const&)> const&);
-        *((void**)&rv) = dlsym("?setOnCloseHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXW4CloseStatusCode@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (int \/*enum enum CloseStatusCode*\/, std::string const&)> const&>(a0));
-    }
-    inline void setOnConnectedHandler(class std::function<void (std::string const&)> const& a0){
-        void (RakWebSocket::*rv)(class std::function<void (std::string const&)> const&);
-        *((void**)&rv) = dlsym("?setOnConnectedHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (std::string const&)> const&>(a0));
-    }
-    inline void setOnMessageReceivedHandler(class std::function<void (class RakWebSocketDataFrame const&)> const& a0){
-        void (RakWebSocket::*rv)(class std::function<void (class RakWebSocketDataFrame const&)> const&);
-        *((void**)&rv) = dlsym("?setOnMessageReceivedHandler@RakWebSocket@@UEAAXAEBV?$function@$$A6AXAEBVRakWebSocketDataFrame@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (class RakWebSocketDataFrame const&)> const&>(a0));
-    }
-    inline void tick(){
-        void (RakWebSocket::*rv)();
-        *((void**)&rv) = dlsym("?tick@RakWebSocket@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
     MCAPI void _close(enum CloseStatusCode);

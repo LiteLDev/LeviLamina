@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~FindBlockNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
     /*2*/ virtual void initializeFromDefinition(class Actor&);
-    /*
-    inline void initializeFromDefinition(class Actor& a0){
-        void (FindBlockNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?initializeFromDefinition@FindBlockNode@@EEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (FindBlockNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@FindBlockNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+
 
 protected:
 

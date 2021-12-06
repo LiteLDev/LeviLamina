@@ -9,34 +9,13 @@ class EquipItemGoal {
 public:
     /*0*/ virtual ~EquipItemGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline bool canContinueToUse(){
-        bool (EquipItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@EquipItemGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (EquipItemGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@EquipItemGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (EquipItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@EquipItemGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (EquipItemGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@EquipItemGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

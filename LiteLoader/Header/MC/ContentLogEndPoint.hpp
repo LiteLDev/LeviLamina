@@ -4,6 +4,17 @@
 #define EXTRA_INCLUDE_PART_CONTENTLOGENDPOINT
 #include "Extra/ContentLogEndPointAPI.hpp"
 #undef EXTRA_INCLUDE_PART_CONTENTLOGENDPOINT
-namespace ContentLogEndPoint {
+class ContentLogEndPoint {
 #include "Extra/ContentLogEndPointAPI.hpp"
+public:    /*
+    inline void log(char const* a0){
+        void (ContentLogEndPoint::*rv)(char const*);
+        *((void**)&rv) = dlsym("?log@ContentLogEndPoint@@UEAAXPEBD@Z");
+        return (this->*rv)(std::forward<char const*>(a0));
+    }
+    */
+
+protected:
+
+private:
 };

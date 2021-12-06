@@ -23,58 +23,8 @@ public:
     /*13*/ virtual bool _canReach(class BlockPos const&);
     /*14*/ virtual void _moveToBlock() = 0;
     /*15*/ virtual class Vec3 _getTargetPosition() const;
-    /*
-    inline bool _canReach(class BlockPos const& a0){
-        bool (BaseMoveToGoal::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_canReach@BaseMoveToGoal@@MEAA_NAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline unsigned __int64 _getRepathTime() const{
-        unsigned __int64 (BaseMoveToGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?_getRepathTime@BaseMoveToGoal@@MEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 _getTargetPosition() const{
-        class Vec3 (BaseMoveToGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?_getTargetPosition@BaseMoveToGoal@@MEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline int _nextStartTick(){
-        int (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?_nextStartTick@BaseMoveToGoal@@MEAAHXZ");
-        return (this->*rv)();
-    }
-    inline bool canContinueToUse(){
-        bool (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@BaseMoveToGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@BaseMoveToGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasReachedTarget() const{
-        bool (BaseMoveToGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?hasReachedTarget@BaseMoveToGoal@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@BaseMoveToGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@BaseMoveToGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (BaseMoveToGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@BaseMoveToGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+
     MCAPI void setTargetPositionOffset(class Vec3 const&);
 
 protected:

@@ -29,7 +29,7 @@ public:
     MCAPI void deserializeSubChunk(unsigned char, class IDataInput&, class std::optional<signed char>);
     MCAPI void deserializeSubChunkBlockEntities(class IDataInput&, class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor> > > >&);
     MCAPI class LevelChunkBlockActorAccessToken enableBlockEntityAccessForThisThread() const;
-    MCAPI void fetchBiomes(std::vector<class Biome const*>&) const;
+    MCAPI void fetchBiomes(std::vector<class Biome const* >&) const;
     MCAPI void fetchBlocks(class BlockPos const&, class BlockVolume&) const;
     MCAPI void fillBiomes(struct BiomeChunkData const&);
     MCAPI void finalizeDeserialization();
@@ -38,7 +38,7 @@ public:
     MCAPI class Vec3 findLightningTarget(class BlockPos const&, class BlockSource&);
     MCAPI bool generateOriginalLighting(class ChunkViewSource&, bool);
     MCAPI class ChunkLocalHeight getAboveTopSolidBlock(class ChunkBlockPos const&, bool, bool, bool);
-    MCAPI void getActors(struct ActorDefinitionIdentifier const&, class AABB const&, std::vector<class Actor*>&) const;
+    MCAPI void getActors(struct ActorDefinitionIdentifier const&, class AABB const&, std::vector<class Actor* >&) const;
     MCAPI class Biome& getBiome(class ChunkBlockPos const&) const;
     MCAPI class Block const& getBlock(class ChunkBlockPos const&) const;
     MCAPI class std::unordered_map<class ChunkBlockPos, class std::shared_ptr<class BlockActor>, struct std::hash<class ChunkBlockPos>, struct std::equal_to<class ChunkBlockPos>, class std::allocator<struct std::pair<class ChunkBlockPos const, class std::shared_ptr<class BlockActor> > > > const& getBlockEntities() const;
@@ -49,8 +49,8 @@ public:
     MCAPI signed char getCachedTemperatureNoise(class ChunkBlockPos const&);
     MCAPI std::vector<class WeakEntityRef>& getChunkEntities();
     MCAPI class Dimension& getDimension() const;
-    MCAPI void getEntities(class gsl::span<class gsl::not_null<class Actor const*>, -1>, class AABB const&, std::vector<class Actor*>&, bool) const;
-    MCAPI void getEntities(enum ActorType, class AABB const&, std::vector<class Actor*>&, bool) const;
+    MCAPI void getEntities(class gsl::span<class gsl::not_null<class Actor const* >, -1>, class AABB const&, std::vector<class Actor* >&, bool) const;
+    MCAPI void getEntities(enum ActorType, class AABB const&, std::vector<class Actor* >&, bool) const;
     MCAPI class Actor* getEntity(struct ActorUniqueID const&) const;
     MCAPI class Block const& getExtraBlock(class ChunkBlockPos const&) const;
     MCAPI enum LevelChunk::Finalization getFinalized() const;
@@ -122,7 +122,7 @@ public:
     MCAPI void serializeTicks(class IDataOutput&) const;
     MCAPI void setAllLegacyBlockIDAndData(class buffer_span<struct BlockID>, class buffer_span<struct NibblePair>);
     MCAPI void setBiome2d(class Biome const&, class ChunkBlockPos const&);
-    MCAPI void setBiomeFromVolume(class ClientBlockPipeline::VolumeOf<class Biome const*> const&, unsigned int);
+    MCAPI void setBiomeFromVolume(class ClientBlockPipeline::VolumeOf<class Biome const* > const&, unsigned int);
     MCAPI class Block const& setBlock(class ChunkBlockPos const&, class Block const&, class BlockSource*, class std::shared_ptr<class BlockActor>);
     MCAPI void setBlockSimple(class ChunkBlockPos const&, class Block const&);
     MCAPI void setBlockVolume(class BlockVolume const&, unsigned int);
@@ -167,7 +167,7 @@ protected:
     MCAPI static int const UPDATE_MAP_BIT_SHIFT;
 
 private:
-    MCAPI void _addEntityToVolumes(class gsl::not_null<class Actor*>);
+    MCAPI void _addEntityToVolumes(class gsl::not_null<class Actor* >);
     MCAPI void _deserializeBiomes(class IDataInput&, class BiomeRegistry const&);
     MCAPI void _deserializeCCsubChunks(short, class StringByteInput&);
     MCAPI bool _deserializeSubChunk(short, class StringByteInput&);

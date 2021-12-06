@@ -9,18 +9,8 @@ class DimensionBrightnessRamp {
 public:
     /*0*/ virtual ~DimensionBrightnessRamp();
     /*1*/ virtual void buildBrightnessRamp();
-    /*
-    inline float getBaseAmbientValue() const{
-        float (DimensionBrightnessRamp::*rv)() const;
-        *((void**)&rv) = dlsym("?getBaseAmbientValue@DimensionBrightnessRamp@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void buildBrightnessRamp(){
-        void (DimensionBrightnessRamp::*rv)();
-        *((void**)&rv) = dlsym("?buildBrightnessRamp@DimensionBrightnessRamp@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual float getBaseAmbientValue() const;
+
     MCAPI float getBrightnessRampValue(int) const;
 
 protected:

@@ -10,13 +10,7 @@ public:
     /*0*/ virtual ~EntityExitVolumeSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
-    /*
-    inline void tick(class EntityRegistry& a0){
-        void (EntityExitVolumeSystem::*rv)(class EntityRegistry&);
-        *((void**)&rv) = dlsym("?tick@EntityExitVolumeSystem@@UEAAXAEAVEntityRegistry@@@Z");
-        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
-    }
-    */
+
 
 protected:
 

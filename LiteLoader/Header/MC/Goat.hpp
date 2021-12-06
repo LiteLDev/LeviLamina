@@ -38,91 +38,50 @@ public:
     /*26*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*28*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*29*/ virtual void __unk_vfn_12();
+    /*29*/ virtual float getPickRadius();
     /*30*/ virtual void awardKillScore(class Actor&, int);
     /*31*/ virtual class HashedString const& queryEntityRenderer() const;
     /*32*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*33*/ virtual int getPortalWaitTime() const;
     /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_13();
+    /*35*/ virtual void __unk_vfn_12();
     /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_14();
+    /*39*/ virtual void __unk_vfn_13();
     /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool canDestroyBlock(class Block const&) const;
     /*47*/ virtual void setAuxValue(int);
     /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_18();
-    /*50*/ virtual void __unk_vfn_19();
+    /*49*/ virtual void __unk_vfn_17();
+    /*50*/ virtual void __unk_vfn_18();
     /*51*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*52*/ virtual void __unk_vfn_20();
+    /*52*/ virtual void __unk_vfn_19();
     /*53*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*54*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*55*/ virtual void __unk_vfn_21();
-    /*56*/ virtual void __unk_vfn_22();
+    /*55*/ virtual void __unk_vfn_20();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual int /*enum enum LevelSoundEvent*/ getHurtSound();
     /*59*/ virtual int /*enum enum LevelSoundEvent*/ getDeathSound();
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;
-    /*63*/ virtual void __unk_vfn_23();
+    /*63*/ virtual void __unk_vfn_22();
     /*64*/ virtual bool isAlliedTo(class Mob*);
-    /*65*/ virtual void __unk_vfn_24();
+    /*65*/ virtual void __unk_vfn_23();
     /*66*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*67*/ virtual void onBorn(class Actor&, class Actor&);
-    /*68*/ virtual void __unk_vfn_25();
-    /*69*/ virtual void __unk_vfn_26();
+    /*68*/ virtual int getAttackTime();
+    /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void _serverAiMobStep();
-    /*71*/ virtual void __unk_vfn_27();
-    /*
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Goat::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Goat@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getAmbientSound() const{
-        int \/*enum enum LevelSoundEvent*\/ (Goat::*rv)() const;
-        *((void**)&rv) = dlsym("?getAmbientSound@Goat@@UEBA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getDeathSound(){
-        int \/*enum enum LevelSoundEvent*\/ (Goat::*rv)();
-        *((void**)&rv) = dlsym("?getDeathSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getHurtSound(){
-        int \/*enum enum LevelSoundEvent*\/ (Goat::*rv)();
-        *((void**)&rv) = dlsym("?getHurtSound@Goat@@UEAA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Goat::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Goat@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Goat::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Goat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Goat::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Goat@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Goat::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Goat@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*71*/ virtual void __unk_vfn_25();
+
     MCAPI int getHornCount() const;
     MCAPI void reduceHornCount();
 

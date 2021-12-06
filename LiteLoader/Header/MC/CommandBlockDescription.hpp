@@ -8,27 +8,11 @@
 class CommandBlockDescription {
 #include "Extra/CommandBlockDescriptionAPI.hpp"
 public:
-    /*0*/ virtual void __unk_vfn_0();
+    /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~CommandBlockDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (CommandBlockDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@CommandBlockDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (CommandBlockDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@CommandBlockDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (CommandBlockDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@CommandBlockDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

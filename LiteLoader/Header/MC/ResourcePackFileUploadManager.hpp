@@ -12,13 +12,7 @@ class ResourcePackFileUploadManager : public FileUploadManager {
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
     /*1*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
-    /*
-    inline void uploadFileToRealmStorage(std::string const& a0, class Core::Path const& a1, int a2, std::string const& a3){
-        void (ResourcePackFileUploadManager::*rv)(std::string const&, class Core::Path const&, int, std::string const&);
-        *((void**)&rv) = dlsym("?uploadFileToRealmStorage@ResourcePackFileUploadManager@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@H0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Core::Path const&>(a1), std::forward<int>(a2), std::forward<std::string const&>(a3));
-    }
-    */
+
     MCAPI void uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, enum PackType, bool);
 
 protected:

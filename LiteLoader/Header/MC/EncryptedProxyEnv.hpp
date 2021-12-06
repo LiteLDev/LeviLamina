@@ -8,9 +8,9 @@ class EncryptedProxyEnv {
 #include "Extra/EncryptedProxyEnvAPI.hpp"
 public:
     /*0*/ virtual ~EncryptedProxyEnv();
-    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile**);
-    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile**);
-    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile**);
+    /*1*/ virtual class leveldb::Status NewSequentialFile(std::string const&, class leveldb::SequentialFile* *);
+    /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile* *);
+    /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile* *);
     /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
@@ -19,33 +19,7 @@ public:
     /*9*/ virtual void __unk_vfn_4();
     /*10*/ virtual void __unk_vfn_5();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
-    /*
-    inline class leveldb::Status DeleteFileA(std::string const& a0){
-        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?DeleteFileA@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline class leveldb::Status NewRandomAccessFile(std::string const& a0, class leveldb::RandomAccessFile** a1){
-        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const&, class leveldb::RandomAccessFile**);
-        *((void**)&rv) = dlsym("?NewRandomAccessFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVRandomAccessFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class leveldb::RandomAccessFile**>(a1));
-    }
-    inline class leveldb::Status NewSequentialFile(std::string const& a0, class leveldb::SequentialFile** a1){
-        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const&, class leveldb::SequentialFile**);
-        *((void**)&rv) = dlsym("?NewSequentialFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVSequentialFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class leveldb::SequentialFile**>(a1));
-    }
-    inline class leveldb::Status NewWritableFile(std::string const& a0, class leveldb::WritableFile** a1){
-        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const&, class leveldb::WritableFile**);
-        *((void**)&rv) = dlsym("?NewWritableFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAPEAVWritableFile@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class leveldb::WritableFile**>(a1));
-    }
-    inline class leveldb::Status RenameFile(std::string const& a0, std::string const& a1){
-        class leveldb::Status (EncryptedProxyEnv::*rv)(std::string const&, std::string const&);
-        *((void**)&rv) = dlsym("?RenameFile@EncryptedProxyEnv@@UEAA?AVStatus@leveldb@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
-    }
-    */
+
 
 protected:
 

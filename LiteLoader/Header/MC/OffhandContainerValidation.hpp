@@ -9,31 +9,16 @@ class OffhandContainerValidation : public ContainerValidationBase {
 #include "Extra/OffhandContainerValidationAPI.hpp"
 public:
     /*0*/ virtual ~OffhandContainerValidation();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
+    /*3*/ virtual void __unk_vfn_0();
+    /*4*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*5*/ virtual void __unk_vfn_1();
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (OffhandContainerValidation::*rv)(class ItemStackBase const&) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@OffhandContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
-    }
-    inline bool isItemAllowedInSlot(class ContainerScreenContext const& a0, int a1, class ItemStackBase const& a2, int a3) const{
-        bool (OffhandContainerValidation::*rv)(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-        *((void**)&rv) = dlsym("?isItemAllowedInSlot@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@HAEBVItemStackBase@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<int>(a1), std::forward<class ItemStackBase const&>(a2), std::forward<int>(a3));
-    }
-    inline bool isItemAllowedToRemove(class ContainerScreenContext const& a0, class ItemStackBase const& a1) const{
-        bool (OffhandContainerValidation::*rv)(class ContainerScreenContext const&, class ItemStackBase const&) const;
-        *((void**)&rv) = dlsym("?isItemAllowedToRemove@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class ItemStackBase const&>(a1));
-    }
-    inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
-        bool (OffhandContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
-        *((void**)&rv) = dlsym("?isValidSlotForContainer@OffhandContainerValidation@@UEBA_NAEBVContainerScreenContext@@AEBVContainer@@H@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class Container const&>(a1), std::forward<int>(a2));
     }
     */
 

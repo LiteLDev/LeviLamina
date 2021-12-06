@@ -10,13 +10,7 @@ class NavigationGenericDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~NavigationGenericDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (NavigationGenericDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@NavigationGenericDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

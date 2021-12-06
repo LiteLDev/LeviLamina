@@ -10,13 +10,7 @@ class MoveControlSkipDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~MoveControlSkipDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (MoveControlSkipDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@MoveControlSkipDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

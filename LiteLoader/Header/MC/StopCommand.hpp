@@ -9,16 +9,11 @@ class StopCommand {
 public:
     /*0*/ virtual ~StopCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (StopCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@StopCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&, class DedicatedServer&);
 
 protected:
 
 private:
+    MCAPI static class DedicatedServer* mServer;
 };

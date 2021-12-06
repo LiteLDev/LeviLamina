@@ -8,7 +8,7 @@ class ActorFactory {
 #include "Extra/ActorFactoryAPI.hpp"
 public:
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const&, class EntityContext&) const;
-    MCAPI std::vector<struct std::pair<std::string, struct ActorDefinitionIdentifier const*>> buildSummonEntityTypeEnum(class Experiments const&) const;
+    MCAPI std::vector<struct std::pair<std::string, struct ActorDefinitionIdentifier const* >> buildSummonEntityTypeEnum(class Experiments const&) const;
     MCAPI void clearDefinitionGroup();
     MCAPI class OwnerPtrT<struct EntityRefTraits> createBornEntity(struct ActorDefinitionIdentifier const&, class BlockPos const&);
     MCAPI class OwnerPtrT<struct EntityRefTraits> createBornEntity(struct ActorDefinitionIdentifier const&, class Actor*);
@@ -26,7 +26,7 @@ public:
 protected:
 
 private:
-    MCAPI void _buildSummonableActorList(class Experiments const&, class std::function<void (std::string const&, struct ActorFactoryData const&)>) const;
+    MCAPI void _buildSummonableActorList(class Experiments const&, class std::function<void (std::string const& , struct ActorFactoryData const& )>) const;
     MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const&, class Vec3 const&, class Vec2 const&) const;
     MCAPI void _initPropertiesOnActor(class Actor&) const;
     MCAPI void _loadDefinitionGroups(class ActorDefinitionGroup*);

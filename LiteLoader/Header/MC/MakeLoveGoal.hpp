@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MakeLoveGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MakeLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MakeLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MakeLoveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MakeLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MakeLoveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (MakeLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MakeLoveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MakeLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MakeLoveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MakeLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MakeLoveGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

@@ -9,26 +9,10 @@ class TextObjectSelector {
 #include "Extra/TextObjectSelectorAPI.hpp"
 public:
     /*0*/ virtual ~TextObjectSelector();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
-    /*
-    inline std::string asString() const{
-        std::string (TextObjectSelector::*rv)() const;
-        *((void**)&rv) = dlsym("?asString@TextObjectSelector@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Json::Value asJsonValue() const{
-        class Json::Value (TextObjectSelector::*rv)() const;
-        *((void**)&rv) = dlsym("?asJsonValue@TextObjectSelector@@UEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline class Json::Value resolve(struct ResolveData const& a0) const{
-        class Json::Value (TextObjectSelector::*rv)(struct ResolveData const&) const;
-        *((void**)&rv) = dlsym("?resolve@TextObjectSelector@@UEBA?AVValue@Json@@AEBUResolveData@@@Z");
-        return (this->*rv)(std::forward<struct ResolveData const&>(a0));
-    }
-    */
+
     MCAPI static std::string const RAW_TEXT_SELECTOR_KEY;
     MCAPI static std::string const RAW_TEXT_SELECTOR_STAR;
 

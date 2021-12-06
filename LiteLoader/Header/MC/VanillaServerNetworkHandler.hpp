@@ -9,13 +9,7 @@ class VanillaServerNetworkHandler {
 public:
     /*0*/ virtual ~VanillaServerNetworkHandler();
     /*1*/ virtual void handle(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
-    /*
-    inline void handle(class NetworkIdentifier const& a0, class ResourcePackClientResponsePacket const& a1){
-        void (VanillaServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ResourcePackClientResponsePacket const&);
-        *((void**)&rv) = dlsym("?handle@VanillaServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVResourcePackClientResponsePacket@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ResourcePackClientResponsePacket const&>(a1));
-    }
-    */
+
 
 protected:
 

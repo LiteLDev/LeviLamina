@@ -21,23 +21,7 @@ public:
     /*11*/ virtual void __unk_vfn_8();
     /*12*/ virtual void __unk_vfn_9();
     /*13*/ virtual int /*enum enum EventResult*/ onLevelStartLeaveGame(struct LevelStartLeaveGameEvent const&);
-    /*
-    inline int \/*enum enum EventResult*\/ onLevelStartLeaveGame(struct LevelStartLeaveGameEvent const& a0){
-        int \/*enum enum EventResult*\/ (ScriptLevelEventListener::*rv)(struct LevelStartLeaveGameEvent const&);
-        *((void**)&rv) = dlsym("?onLevelStartLeaveGame@ScriptLevelEventListener@@UEAA?AW4EventResult@@AEBULevelStartLeaveGameEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelStartLeaveGameEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onLevelTick(){
-        int \/*enum enum EventResult*\/ (ScriptLevelEventListener::*rv)();
-        *((void**)&rv) = dlsym("?onLevelTick@ScriptLevelEventListener@@UEAA?AW4EventResult@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum EventResult*\/ onLevelWeatherChange(std::string const& a0, bool a1, bool a2){
-        int \/*enum enum EventResult*\/ (ScriptLevelEventListener::*rv)(std::string const&, bool, bool);
-        *((void**)&rv) = dlsym("?onLevelWeatherChange@ScriptLevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
-    }
-    */
+
 
 protected:
 

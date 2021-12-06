@@ -14,38 +14,12 @@ public:
     /*3*/ virtual void appendDebugInfo(std::string&) const;
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
+    /*6*/ virtual unsigned __int64 _getRepathTime() const;
     /*7*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
     /*8*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
     /*9*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
     /*10*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
-    /*
-    inline void _createBreakProgressParticles(class Level& a0, class BlockSource& a1, class BlockPos a2){
-        void (StompEggGoal::*rv)(class Level&, class BlockSource&, class BlockPos);
-        *((void**)&rv) = dlsym("?_createBreakProgressParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos>(a2));
-    }
-    inline void _createDestroyParticles(class Level& a0, class BlockSource& a1, class BlockPos a2){
-        void (StompEggGoal::*rv)(class Level&, class BlockSource&, class BlockPos);
-        *((void**)&rv) = dlsym("?_createDestroyParticles@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos>(a2));
-    }
-    inline void _playBreakProgressSound(class Level& a0, class BlockSource& a1, class BlockPos a2){
-        void (StompEggGoal::*rv)(class Level&, class BlockSource&, class BlockPos);
-        *((void**)&rv) = dlsym("?_playBreakProgressSound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos>(a2));
-    }
-    inline void _playDestroySound(class Level& a0, class BlockSource& a1, class BlockPos a2){
-        void (StompEggGoal::*rv)(class Level&, class BlockSource&, class BlockPos);
-        *((void**)&rv) = dlsym("?_playDestroySound@StompEggGoal@@MEAAXAEAVLevel@@AEAVBlockSource@@VBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos>(a2));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (StompEggGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@StompEggGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    */
+
 
 protected:
 

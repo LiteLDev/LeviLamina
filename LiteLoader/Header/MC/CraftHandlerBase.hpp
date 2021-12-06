@@ -9,40 +9,21 @@ class CraftHandlerBase {
 public:
     /*0*/ virtual ~CraftHandlerBase();
     /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleConsumedItem(int /*enum enum ContainerEnumName*/, unsigned char, class ItemStack const&);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
     /*3*/ virtual void endRequestBatch();
     /*4*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
     /*
-    inline int \/*enum enum ItemStackNetResult*\/ preHandleAction(int \/*enum enum ItemStackRequestActionType*\/ a0){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerBase::*rv)(int \/*enum enum ItemStackRequestActionType*\/);
-        *((void**)&rv) = dlsym("?preHandleAction@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ItemStackRequestActionType*\/>(a0));
-    }
-    inline class Recipes const* _getLevelRecipes() const{
-        class Recipes const* (CraftHandlerBase::*rv)() const;
-        *((void**)&rv) = dlsym("?_getLevelRecipes@CraftHandlerBase@@MEBAPEBVRecipes@@XZ");
-        return (this->*rv)();
-    }
-    inline void _postCraftRequest(bool a0){
-        void (CraftHandlerBase::*rv)(bool);
-        *((void**)&rv) = dlsym("?_postCraftRequest@CraftHandlerBase@@MEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
     inline void endRequestBatch(){
         void (CraftHandlerBase::*rv)();
         *((void**)&rv) = dlsym("?endRequestBatch@CraftHandlerBase@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum ItemStackNetResult*\/ handleConsumedItem(int \/*enum enum ContainerEnumName*\/ a0, unsigned char a1, class ItemStack const& a2){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerBase::*rv)(int \/*enum enum ContainerEnumName*\/, unsigned char, class ItemStack const&);
-        *((void**)&rv) = dlsym("?handleConsumedItem@CraftHandlerBase@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerEnumName*\/>(a0), std::forward<unsigned char>(a1), std::forward<class ItemStack const&>(a2));
-    }
     */
 
 protected:
-    MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const*> _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const* > _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);
 

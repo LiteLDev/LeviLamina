@@ -12,28 +12,9 @@ public:
     /*2*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*
-    inline class Recipes const* _getLevelRecipes() const{
-        class Recipes const* (CraftHandlerCrafting::*rv)() const;
-        *((void**)&rv) = dlsym("?_getLevelRecipes@CraftHandlerCrafting@@EEBAPEBVRecipes@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ _handleCraftAction(class ItemStackRequestActionCraftBase const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerCrafting::*rv)(class ItemStackRequestActionCraftBase const&);
-        *((void**)&rv) = dlsym("?_handleCraftAction@CraftHandlerCrafting@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestActionCraftBase const&>(a0));
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ handleConsumedItem(int \/*enum enum ContainerEnumName*\/ a0, unsigned char a1, class ItemStack const& a2){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerCrafting::*rv)(int \/*enum enum ContainerEnumName*\/, unsigned char, class ItemStack const&);
-        *((void**)&rv) = dlsym("?handleConsumedItem@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ContainerEnumName@@EAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerEnumName*\/>(a0), std::forward<unsigned char>(a1), std::forward<class ItemStack const&>(a2));
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ preHandleAction(int \/*enum enum ItemStackRequestActionType*\/ a0){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerCrafting::*rv)(int \/*enum enum ItemStackRequestActionType*\/);
-        *((void**)&rv) = dlsym("?preHandleAction@CraftHandlerCrafting@@UEAA?AW4ItemStackNetResult@@W4ItemStackRequestActionType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ItemStackRequestActionType*\/>(a0));
-    }
-    */
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
+
 
 protected:
 

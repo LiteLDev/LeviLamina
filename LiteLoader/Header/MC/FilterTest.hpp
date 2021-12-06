@@ -15,23 +15,7 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const = 0;
     /*5*/ virtual class Json::Value _serializeDomain() const;
     /*6*/ virtual class Json::Value _serializeValue() const = 0;
-    /*
-    inline void finalizeParsedValue(class IWorldRegistriesProvider& a0){
-        void (FilterTest::*rv)(class IWorldRegistriesProvider&);
-        *((void**)&rv) = dlsym("?finalizeParsedValue@FilterTest@@UEAAXAEAVIWorldRegistriesProvider@@@Z");
-        return (this->*rv)(std::forward<class IWorldRegistriesProvider&>(a0));
-    }
-    inline class Json::Value _serializeDomain() const{
-        class Json::Value (FilterTest::*rv)() const;
-        *((void**)&rv) = dlsym("?_serializeDomain@FilterTest@@MEBA?AVValue@Json@@XZ");
-        return (this->*rv)();
-    }
-    inline bool setup(struct FilterTest::Definition const& a0, struct FilterInputs const& a1){
-        bool (FilterTest::*rv)(struct FilterTest::Definition const&, struct FilterInputs const&);
-        *((void**)&rv) = dlsym("?setup@FilterTest@@UEAA_NAEBUDefinition@1@AEBUFilterInputs@@@Z");
-        return (this->*rv)(std::forward<struct FilterTest::Definition const&>(a0), std::forward<struct FilterInputs const&>(a1));
-    }
-    */
+
     MCAPI class Json::Value serialize() const;
 
 protected:

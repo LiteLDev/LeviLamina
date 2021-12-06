@@ -9,13 +9,7 @@ class RakDataOutput {
 public:
     /*0*/ virtual ~RakDataOutput();
     /*1*/ virtual void writeBytes(void const*, unsigned __int64);
-    /*
-    inline void writeBytes(void const* a0, unsigned __int64 a1){
-        void (RakDataOutput::*rv)(void const*, unsigned __int64);
-        *((void**)&rv) = dlsym("?writeBytes@RakDataOutput@@UEAAXPEBX_K@Z");
-        return (this->*rv)(std::forward<void const*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+
 
 protected:
 

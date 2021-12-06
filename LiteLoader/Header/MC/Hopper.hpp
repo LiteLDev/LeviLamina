@@ -15,11 +15,11 @@ protected:
     MCAPI bool _addItem(class BlockSource&, class Container&, class ItemStack&, int, int);
     MCAPI bool _addItem(class Container&, class ItemActor&);
     MCAPI class Container* _getAttachedContainerInBlock(class BlockSource&, class Vec3 const&, int);
-    MCAPI std::vector<class Container*> _getAttachedContainers(class BlockSource&, class Vec3 const&, int);
+    MCAPI std::vector<class Container* > _getAttachedContainers(class BlockSource&, class Vec3 const&, int);
     MCAPI class Container* _getContainerInBlock(class BlockSource&, class Vec3 const&);
-    MCAPI std::vector<class Container*> _getContainersAt(class BlockSource&, class Vec3 const&);
+    MCAPI std::vector<class Container* > _getContainersAt(class BlockSource&, class Vec3 const&);
     MCAPI class ItemActor* _getItemAt(class BlockSource&, class Vec3 const&);
-    MCAPI std::vector<class Container*> _getSourceContainers(class BlockSource&, class Vec3 const&);
+    MCAPI std::vector<class Container* > _getSourceContainers(class BlockSource&, class Vec3 const&);
     MCAPI bool _isEmptyContainer(class Container&, int);
     MCAPI bool _isFullContainer(class BlockSource&, class Container&, int);
     MCAPI bool _pushOutItems(class BlockSource&, class Container&, class Vec3 const&, int);

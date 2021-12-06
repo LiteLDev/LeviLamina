@@ -37,98 +37,52 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
     /*40*/ virtual void buildDebugInfo(std::string&) const;
-    /*41*/ virtual void __unk_vfn_15();
-    /*42*/ virtual void __unk_vfn_16();
+    /*41*/ virtual void __unk_vfn_14();
+    /*42*/ virtual void __unk_vfn_15();
     /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_17();
+    /*44*/ virtual void __unk_vfn_16();
     /*45*/ virtual bool isAdventure() const;
     /*46*/ virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
     /*47*/ virtual bool canDestroyBlock(class Block const&) const;
     /*48*/ virtual void setAuxValue(int);
     /*49*/ virtual void stopSpinAttack();
-    /*50*/ virtual void __unk_vfn_18();
-    /*51*/ virtual void __unk_vfn_19();
+    /*50*/ virtual void __unk_vfn_17();
+    /*51*/ virtual void __unk_vfn_18();
     /*52*/ virtual void die(class ActorDamageSource const&);
     /*53*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*54*/ virtual void __unk_vfn_20();
-    /*55*/ virtual void __unk_vfn_21();
-    /*56*/ virtual void __unk_vfn_22();
+    /*54*/ virtual void __unk_vfn_19();
+    /*55*/ virtual void __unk_vfn_20();
+    /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
     /*58*/ virtual void travel(float, float, float);
     /*59*/ virtual int getItemUseDuration() const;
     /*60*/ virtual float getItemUseStartupProgress() const;
     /*61*/ virtual float getItemUseIntervalProgress() const;
-    /*62*/ virtual void __unk_vfn_23();
+    /*62*/ virtual void __unk_vfn_22();
     /*63*/ virtual bool isAlliedTo(class Mob*);
-    /*64*/ virtual void __unk_vfn_24();
+    /*64*/ virtual void __unk_vfn_23();
     /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*66*/ virtual void onBorn(class Actor&, class Actor&);
-    /*67*/ virtual void __unk_vfn_25();
+    /*67*/ virtual int getAttackTime();
     /*68*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*69*/ virtual void __unk_vfn_26();
+    /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void newServerAiStep();
     /*71*/ virtual void _serverAiMobStep();
-    /*72*/ virtual void __unk_vfn_27();
-    /*
-    inline void buildDebugInfo(std::string& a0) const{
-        void (VillagerV2::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?buildDebugInfo@VillagerV2@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (VillagerV2::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@VillagerV2@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool getInteraction(class Player& a0, class ActorInteraction& a1, class Vec3 const& a2){
-        bool (VillagerV2::*rv)(class Player&, class ActorInteraction&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?getInteraction@VillagerV2@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class ActorInteraction&>(a1), std::forward<class Vec3 const&>(a2));
-    }
-    inline bool isRuntimePredictedMovementEnabled() const{
-        bool (VillagerV2::*rv)() const;
-        *((void**)&rv) = dlsym("?isRuntimePredictedMovementEnabled@VillagerV2@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void newServerAiStep(){
-        void (VillagerV2::*rv)();
-        *((void**)&rv) = dlsym("?newServerAiStep@VillagerV2@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (VillagerV2::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@VillagerV2@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void remove(){
-        void (VillagerV2::*rv)();
-        *((void**)&rv) = dlsym("?remove@VillagerV2@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void travel(float a0, float a1, float a2){
-        void (VillagerV2::*rv)(float, float, float);
-        *((void**)&rv) = dlsym("?travel@VillagerV2@@UEAAXMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (VillagerV2::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@VillagerV2@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+    /*72*/ virtual void __unk_vfn_25();
+
 
 protected:
 

@@ -8,21 +8,10 @@ class SleepState {
 #include "Extra/SleepStateAPI.hpp"
 public:
     /*0*/ virtual ~SleepState();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void tick();
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void stop();
-    /*
-    inline void tick(){
-        void (SleepState::*rv)();
-        *((void**)&rv) = dlsym("?tick@SleepState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (SleepState::*rv)();
-        *((void**)&rv) = dlsym("?stop@SleepState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

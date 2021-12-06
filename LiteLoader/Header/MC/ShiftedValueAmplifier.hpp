@@ -9,13 +9,7 @@ class ShiftedValueAmplifier {
 public:
     /*0*/ virtual ~ShiftedValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
-    /*
-    inline float getAmount(int a0, float a1) const{
-        float (ShiftedValueAmplifier::*rv)(int, float) const;
-        *((void**)&rv) = dlsym("?getAmount@ShiftedValueAmplifier@@UEBAMHM@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<float>(a1));
-    }
-    */
+
 
 protected:
 

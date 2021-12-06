@@ -8,34 +8,13 @@ class PlanterItemComponent {
 #include "Extra/PlanterItemComponentAPI.hpp"
 public:
     /*0*/ virtual ~PlanterItemComponent();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool isNetworkComponent() const;
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
-    /*4*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-    /*
-    inline bool isNetworkComponent() const{
-        bool (PlanterItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isNetworkComponent@PlanterItemComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
-        std::unique_ptr<class CompoundTag> (PlanterItemComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?buildNetworkTag@PlanterItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline void initializeFromNetwork(class CompoundTag const& a0){
-        void (PlanterItemComponent::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?initializeFromNetwork@PlanterItemComponent@@UEAAXAEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    inline bool useOn(class ItemStack& a0, class Actor& a1, class BlockPos const& a2, unsigned char a3, class Vec3 const& a4) const{
-        bool (PlanterItemComponent::*rv)(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?useOn@PlanterItemComponent@@UEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Actor&>(a1), std::forward<class BlockPos const&>(a2), std::forward<unsigned char>(a3), std::forward<class Vec3 const&>(a4));
-    }
-    */
+
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 

@@ -12,18 +12,7 @@ public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
     /*1*/ virtual class Container* _tryGetContainer() const;
     /*2*/ virtual void _balanceTransaction(class ItemStack const&) const;
-    /*
-    inline void _balanceTransaction(class ItemStack const& a0) const{
-        void (ScriptPlayerInventoryComponentContainer::*rv)(class ItemStack const&) const;
-        *((void**)&rv) = dlsym("?_balanceTransaction@ScriptPlayerInventoryComponentContainer@@MEBAXAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline class Container* _tryGetContainer() const{
-        class Container* (ScriptPlayerInventoryComponentContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?_tryGetContainer@ScriptPlayerInventoryComponentContainer@@MEBAPEAVContainer@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptPlayerInventoryComponentContainer> bind(struct Scripting::Version);
 
 protected:

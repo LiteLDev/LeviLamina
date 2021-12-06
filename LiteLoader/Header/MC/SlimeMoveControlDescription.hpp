@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~SlimeMoveControlDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (SlimeMoveControlDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@SlimeMoveControlDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (SlimeMoveControlDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@SlimeMoveControlDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (SlimeMoveControlDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@SlimeMoveControlDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

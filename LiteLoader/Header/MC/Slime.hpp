@@ -39,50 +39,50 @@ public:
     /*27*/ virtual void onFailedTame();
     /*28*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*29*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*30*/ virtual void __unk_vfn_12();
+    /*30*/ virtual float getPickRadius();
     /*31*/ virtual void awardKillScore(class Actor&, int);
     /*32*/ virtual class HashedString const& queryEntityRenderer() const;
     /*33*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*34*/ virtual int getPortalWaitTime() const;
     /*35*/ virtual bool canChangeDimensions() const;
-    /*36*/ virtual void __unk_vfn_13();
+    /*36*/ virtual void __unk_vfn_12();
     /*37*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*38*/ virtual void onSynchedDataUpdate(int);
     /*39*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*40*/ virtual bool canBePulledIntoVehicle() const;
-    /*41*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_13();
     /*42*/ virtual bool canSynchronizeNewEntity() const;
-    /*43*/ virtual void __unk_vfn_15();
-    /*44*/ virtual void __unk_vfn_16();
+    /*43*/ virtual void __unk_vfn_14();
+    /*44*/ virtual void __unk_vfn_15();
     /*45*/ virtual bool isWorldBuilder() const;
-    /*46*/ virtual void __unk_vfn_17();
+    /*46*/ virtual void __unk_vfn_16();
     /*47*/ virtual bool isAdventure() const;
     /*48*/ virtual bool canDestroyBlock(class Block const&) const;
     /*49*/ virtual void setAuxValue(int);
     /*50*/ virtual void stopSpinAttack();
-    /*51*/ virtual void __unk_vfn_18();
-    /*52*/ virtual void __unk_vfn_19();
-    /*53*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_17();
+    /*52*/ virtual void __unk_vfn_18();
+    /*53*/ virtual void __unk_vfn_19();
     /*54*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*55*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*56*/ virtual void __unk_vfn_21();
-    /*57*/ virtual void __unk_vfn_22();
+    /*56*/ virtual void __unk_vfn_20();
+    /*57*/ virtual void __unk_vfn_21();
     /*58*/ virtual void spawnAnim();
     /*59*/ virtual void aiStep();
     /*60*/ virtual bool checkSpawnRules(bool);
     /*61*/ virtual int getItemUseDuration() const;
     /*62*/ virtual float getItemUseStartupProgress() const;
     /*63*/ virtual float getItemUseIntervalProgress() const;
-    /*64*/ virtual void __unk_vfn_23();
+    /*64*/ virtual void __unk_vfn_22();
     /*65*/ virtual bool isAlliedTo(class Mob*);
-    /*66*/ virtual void __unk_vfn_24();
+    /*66*/ virtual void __unk_vfn_23();
     /*67*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*68*/ virtual void onBorn(class Actor&, class Actor&);
-    /*69*/ virtual void __unk_vfn_25();
+    /*69*/ virtual int getAttackTime();
     /*70*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*71*/ virtual void __unk_vfn_26();
+    /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
-    /*73*/ virtual void __unk_vfn_27();
+    /*73*/ virtual void __unk_vfn_25();
     /*74*/ virtual bool canDealDamage();
     /*75*/ virtual int /*enum enum LevelSoundEvent*/ getSquishSound();
     /*76*/ virtual void setSlimeSize(int);
@@ -97,111 +97,6 @@ public:
         bool (Slime::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Slime@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Slime::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Slime@@MEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Slime::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Slime@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void aiStep(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Slime@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool canDealDamage(){
-        bool (Slime::*rv)();
-        *((void**)&rv) = dlsym("?canDealDamage@Slime@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Slime::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Slime@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline class OwnerPtrT<struct EntityRefTraits> createChild(int a0){
-        class OwnerPtrT<struct EntityRefTraits> (Slime::*rv)(int);
-        *((void**)&rv) = dlsym("?createChild@Slime@@MEAA?AV?$OwnerPtrT@UEntityRefTraits@@@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void decreaseSquish(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?decreaseSquish@Slime@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool doPlayJumpSound(){
-        bool (Slime::*rv)();
-        *((void**)&rv) = dlsym("?doPlayJumpSound@Slime@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool doPlayLandSound(){
-        bool (Slime::*rv)();
-        *((void**)&rv) = dlsym("?doPlayLandSound@Slime@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline class Actor* findAttackTarget(){
-        class Actor* (Slime::*rv)();
-        *((void**)&rv) = dlsym("?findAttackTarget@Slime@@MEAAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Slime::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Slime@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getSquishSound(){
-        int \/*enum enum LevelSoundEvent*\/ (Slime::*rv)();
-        *((void**)&rv) = dlsym("?getSquishSound@Slime@@UEAA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Slime@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (Slime::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@Slime@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void playJumpSound(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?playJumpSound@Slime@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playLandSound(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?playLandSound@Slime@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playerTouch(class Player& a0){
-        void (Slime::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@Slime@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Slime::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Slime@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Slime::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Slime@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void remove(){
-        void (Slime::*rv)();
-        *((void**)&rv) = dlsym("?remove@Slime@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setSlimeSize(int a0){
-        void (Slime::*rv)(int);
-        *((void**)&rv) = dlsym("?setSlimeSize@Slime@@MEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
     }
     */
     MCAPI float getOldSquishValue() const;

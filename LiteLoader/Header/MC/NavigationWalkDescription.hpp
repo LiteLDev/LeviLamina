@@ -10,13 +10,7 @@ class NavigationWalkDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~NavigationWalkDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (NavigationWalkDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@NavigationWalkDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

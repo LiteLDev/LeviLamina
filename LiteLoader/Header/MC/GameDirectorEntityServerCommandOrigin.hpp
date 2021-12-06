@@ -20,38 +20,12 @@ public:
     /*8*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual unsigned char getSourceSubId() const;
-    /*11*/ virtual void __unk_vfn_0();
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual void __unk_vfn_2();
+    /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*12*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*13*/ virtual class mce::UUID const& getUUID() const;
     /*14*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*15*/ virtual bool isValid() const;
-    /*
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (GameDirectorEntityServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (GameDirectorEntityServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (GameDirectorEntityServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@GameDirectorEntityServerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (GameDirectorEntityServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@GameDirectorEntityServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (GameDirectorEntityServerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@GameDirectorEntityServerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:

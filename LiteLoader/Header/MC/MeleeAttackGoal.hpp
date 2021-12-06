@@ -19,48 +19,7 @@ public:
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _attemptMoveToTarget(class Actor&);
     /*11*/ virtual void _attemptAttackTarget(class Actor&, float, float, float, float);
-    /*
-    inline void _attemptAttackTarget(class Actor& a0, float a1, float a2, float a3, float a4){
-        void (MeleeAttackGoal::*rv)(class Actor&, float, float, float, float);
-        *((void**)&rv) = dlsym("?_attemptAttackTarget@MeleeAttackGoal@@MEAAXAEAVActor@@MMMM@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<float>(a3), std::forward<float>(a4));
-    }
-    inline void _attemptMoveToTarget(class Actor& a0){
-        void (MeleeAttackGoal::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?_attemptMoveToTarget@MeleeAttackGoal@@MEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MeleeAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MeleeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MeleeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MeleeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MeleeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MeleeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MeleeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MeleeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
     MCAPI void _attemptMoveToTargetPosition(class Actor&, float);

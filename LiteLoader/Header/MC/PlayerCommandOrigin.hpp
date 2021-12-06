@@ -26,110 +26,14 @@ public:
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*16*/ virtual unsigned char getSourceSubId() const;
-    /*17*/ virtual void __unk_vfn_0();
+    /*17*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*18*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*19*/ virtual void __unk_vfn_1();
-    /*20*/ virtual void __unk_vfn_2();
+    /*19*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*20*/ virtual class mce::UUID const& getUUID() const;
     /*21*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*22*/ virtual class CompoundTag serialize() const;
     /*23*/ virtual bool isValid() const;
-    /*
-    inline int \/*enum enum CommandOriginType*\/ getOriginType() const{
-        int \/*enum enum CommandOriginType*\/ (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAbility(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        bool (PlayerCommandOrigin::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
-        *((void**)&rv) = dlsym("?canUseAbility@PlayerCommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
-    }
-    inline std::unique_ptr<class CommandOrigin> clone() const{
-        std::unique_ptr<class CommandOrigin> (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?clone@PlayerCommandOrigin@@UEBA?AV?$unique_ptr@VCommandOrigin@@U?$default_delete@VCommandOrigin@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@PlayerCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline class BlockPos getBlockPosition() const{
-        class BlockPos (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getBlockPosition@PlayerCommandOrigin@@UEBA?AVBlockPos@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class BlockPos> getCursorHitBlockPos() const{
-        class std::optional<class BlockPos> (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getCursorHitBlockPos@PlayerCommandOrigin@@UEBA?AV?$optional@VBlockPos@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::optional<class Vec3> getCursorHitPos() const{
-        class std::optional<class Vec3> (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getCursorHitPos@PlayerCommandOrigin@@UEBA?AV?$optional@VVec3@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@PlayerCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    inline class Actor* getEntity() const{
-        class Actor* (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@PlayerCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline struct CommandOriginIdentity getIdentity() const{
-        struct CommandOriginIdentity (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getIdentity@PlayerCommandOrigin@@UEBA?AUCommandOriginIdentity@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getName() const{
-        std::string (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getName@PlayerCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getPermissionsLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@PlayerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@PlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class NetworkIdentifier const& getSourceId() const{
-        class NetworkIdentifier const& (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceId@PlayerCommandOrigin@@UEBAAEBVNetworkIdentifier@@XZ");
-        return (this->*rv)();
-    }
-    inline unsigned char getSourceSubId() const{
-        unsigned char (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceSubId@PlayerCommandOrigin@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@PlayerCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@PlayerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@PlayerCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class CompoundTag serialize() const{
-        class CompoundTag (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?serialize@PlayerCommandOrigin@@UEBA?AVCompoundTag@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:

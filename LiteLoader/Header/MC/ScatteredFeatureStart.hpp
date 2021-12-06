@@ -9,13 +9,9 @@ class ScatteredFeatureStart : public StructureStart {
 #include "Extra/ScatteredFeatureStartAPI.hpp"
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (ScatteredFeatureStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@ScatteredFeatureStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

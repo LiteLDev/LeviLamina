@@ -6,10 +6,7 @@
 #undef EXTRA_INCLUDE_PART_EDUCATIONOPTIONS
 class EducationOptions {
 #include "Extra/EducationOptionsAPI.hpp"
-public:
-    /*0*/ virtual void __unk_vfn_0();
-    /*1*/ virtual void onActiveResourcePacksChanged(class ResourcePackManager&);
-    /*
+public:    /*
     inline void onActiveResourcePacksChanged(class ResourcePackManager& a0){
         void (EducationOptions::*rv)(class ResourcePackManager&);
         *((void**)&rv) = dlsym("?onActiveResourcePacksChanged@EducationOptions@@UEAAXAEAVResourcePackManager@@@Z");

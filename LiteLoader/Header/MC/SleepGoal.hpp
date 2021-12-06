@@ -18,44 +18,8 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual void __unk_vfn_3();
-    /*
-    inline unsigned __int64 _getRepathTime() const{
-        unsigned __int64 (SleepGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?_getRepathTime@SleepGoal@@EEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SleepGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SleepGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (SleepGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SleepGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (SleepGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SleepGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SleepGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SleepGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (SleepGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@SleepGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SleepGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SleepGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*10*/ virtual unsigned __int64 _getRepathTime() const;
+
 
 protected:
 

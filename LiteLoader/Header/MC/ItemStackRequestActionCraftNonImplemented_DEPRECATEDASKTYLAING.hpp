@@ -8,18 +8,12 @@ class ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING {
 #include "Extra/ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAINGAPI.hpp"
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING();
-    /*
-    inline void _write(class BinaryStream& a0) const{
-        void (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?_write@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
-    }
-    inline bool _read(class ReadOnlyBinaryStream& a0){
-        bool (ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@ItemStackRequestActionCraftNonImplemented_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    */
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void _write(class BinaryStream&) const;
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
+
 
 protected:
 

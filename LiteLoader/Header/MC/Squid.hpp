@@ -37,33 +37,33 @@ public:
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
     /*50*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*51*/ virtual void __unk_vfn_20();
+    /*51*/ virtual void __unk_vfn_19();
     /*52*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual float getJumpPower() const;
     /*57*/ virtual void aiStep();
@@ -72,64 +72,18 @@ public:
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;
-    /*63*/ virtual void __unk_vfn_23();
+    /*63*/ virtual void __unk_vfn_22();
     /*64*/ virtual bool isAlliedTo(class Mob*);
-    /*65*/ virtual void __unk_vfn_24();
+    /*65*/ virtual void __unk_vfn_23();
     /*66*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*67*/ virtual void onBorn(class Actor&, class Actor&);
-    /*68*/ virtual void __unk_vfn_25();
+    /*68*/ virtual int getAttackTime();
     /*69*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*70*/ virtual void __unk_vfn_26();
+    /*70*/ virtual void __unk_vfn_24();
     /*71*/ virtual void _serverAiMobStep();
-    /*72*/ virtual void __unk_vfn_27();
+    /*72*/ virtual void __unk_vfn_25();
     /*73*/ virtual int /*enum enum LevelSoundEvent*/ _getInkSquirtSoundEvent() const;
-    /*
-    inline bool checkSpawnObstruction() const{
-        bool (Squid::*rv)() const;
-        *((void**)&rv) = dlsym("?checkSpawnObstruction@Squid@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getJumpPower() const{
-        float (Squid::*rv)() const;
-        *((void**)&rv) = dlsym("?getJumpPower@Squid@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ _getInkSquirtSoundEvent() const{
-        int \/*enum enum LevelSoundEvent*\/ (Squid::*rv)() const;
-        *((void**)&rv) = dlsym("?_getInkSquirtSoundEvent@Squid@@MEBA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Squid::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Squid@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void aiStep(){
-        void (Squid::*rv)();
-        *((void**)&rv) = dlsym("?aiStep@Squid@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool checkSpawnRules(bool a0){
-        bool (Squid::*rv)(bool);
-        *((void**)&rv) = dlsym("?checkSpawnRules@Squid@@UEAA_N_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Squid::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Squid@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Squid::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Squid@@MEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
-        void (Squid::*rv)(class RenderParams&);
-        *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Squid@@UEAAXAEAVRenderParams@@@Z");
-        return (this->*rv)(std::forward<class RenderParams&>(a0));
-    }
-    */
+
     MCAPI void spawnInkParticles();
 
 protected:

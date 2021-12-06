@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~IllagerBeastBlockedDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (IllagerBeastBlockedDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@IllagerBeastBlockedDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (IllagerBeastBlockedDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@IllagerBeastBlockedDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (IllagerBeastBlockedDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@IllagerBeastBlockedDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

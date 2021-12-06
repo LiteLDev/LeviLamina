@@ -10,48 +10,12 @@ public:
     /*0*/ virtual ~JumpToBlockGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline bool canBeInterrupted(){
-        bool (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canBeInterrupted@JumpToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (JumpToBlockGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@JumpToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@JumpToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@JumpToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@JumpToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@JumpToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (JumpToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@JumpToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void resetCooldown();
 
 protected:

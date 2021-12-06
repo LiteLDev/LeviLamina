@@ -12,23 +12,7 @@ public:
     /*1*/ virtual ~RaidTriggerDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-    /*
-    inline void deserializeData(struct DeserializeDataParams a0){
-        void (RaidTriggerDescription::*rv)(struct DeserializeDataParams);
-        *((void**)&rv) = dlsym("?deserializeData@RaidTriggerDescription@@UEAAXUDeserializeDataParams@@@Z");
-        return (this->*rv)(std::forward<struct DeserializeDataParams>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (RaidTriggerDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@RaidTriggerDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    inline void serializeData(class Json::Value& a0) const{
-        void (RaidTriggerDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@RaidTriggerDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    */
+
 
 protected:
 

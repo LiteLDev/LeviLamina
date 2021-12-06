@@ -11,13 +11,7 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<int /*enum enum BiomeTemperatureCategory*/, char>&, class Pos2d const&, class Pos2d const&) const;
-    /*
-    inline void _fillArea(class OperationNodeDetails::WorkingData<int \/*enum enum BiomeTemperatureCategory*\/, char>& a0, class Pos2d const& a1, class Pos2d const& a2) const{
-        void (AddOceanTemperatureOperationNode::*rv)(class OperationNodeDetails::WorkingData<int \/*enum enum BiomeTemperatureCategory*\/, char>&, class Pos2d const&, class Pos2d const&) const;
-        *((void**)&rv) = dlsym("?_fillArea@AddOceanTemperatureOperationNode@@MEBAXAEAV?$WorkingData@W4BiomeTemperatureCategory@@D@OperationNodeDetails@@AEBVPos2d@@1@Z");
-        return (this->*rv)(std::forward<class OperationNodeDetails::WorkingData<int \/*enum enum BiomeTemperatureCategory*\/, char>&>(a0), std::forward<class Pos2d const&>(a1), std::forward<class Pos2d const&>(a2));
-    }
-    */
+
 
 protected:
 

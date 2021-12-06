@@ -11,33 +11,12 @@ public:
     /*0*/ virtual ~WitherRandomAttackPosGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*
-    inline bool canContinueToUse(){
-        bool (WitherRandomAttackPosGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@WitherRandomAttackPosGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (WitherRandomAttackPosGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@WitherRandomAttackPosGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (WitherRandomAttackPosGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@WitherRandomAttackPosGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (WitherRandomAttackPosGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@WitherRandomAttackPosGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+
 
 protected:
 

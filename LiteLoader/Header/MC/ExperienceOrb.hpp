@@ -47,7 +47,7 @@ public:
     /*36*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*37*/ virtual void animateHurt();
     /*38*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*39*/ virtual void __unk_vfn_12();
+    /*39*/ virtual float getPickRadius();
     /*40*/ virtual void awardKillScore(class Actor&, int);
     /*41*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*42*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -58,88 +58,37 @@ public:
     /*47*/ virtual bool canFreeze() const;
     /*48*/ virtual int getPortalWaitTime() const;
     /*49*/ virtual bool canChangeDimensions() const;
-    /*50*/ virtual void __unk_vfn_13();
+    /*50*/ virtual void __unk_vfn_12();
     /*51*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*52*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*53*/ virtual bool canBePulledIntoVehicle() const;
     /*54*/ virtual bool inCaravan() const;
-    /*55*/ virtual void __unk_vfn_14();
+    /*55*/ virtual void __unk_vfn_13();
     /*56*/ virtual bool canSynchronizeNewEntity() const;
     /*57*/ virtual void buildDebugInfo(std::string&) const;
     /*58*/ virtual int getDeathTime() const;
     /*59*/ virtual void swing();
-    /*60*/ virtual void __unk_vfn_15();
-    /*61*/ virtual void __unk_vfn_16();
+    /*60*/ virtual void __unk_vfn_14();
+    /*61*/ virtual void __unk_vfn_15();
     /*62*/ virtual float getYHeadRot() const;
     /*63*/ virtual bool isWorldBuilder() const;
-    /*64*/ virtual void __unk_vfn_17();
+    /*64*/ virtual void __unk_vfn_16();
     /*65*/ virtual bool isAdventure() const;
     /*66*/ virtual bool canDestroyBlock(class Block const&) const;
     /*67*/ virtual void setAuxValue(int);
     /*68*/ virtual void stopSpinAttack();
-    /*69*/ virtual void __unk_vfn_18();
-    /*70*/ virtual void __unk_vfn_19();
+    /*69*/ virtual void __unk_vfn_17();
+    /*70*/ virtual void __unk_vfn_18();
     /*71*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*72*/ virtual void __unk_vfn_20();
+    /*72*/ virtual void __unk_vfn_19();
     /*73*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*74*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*75*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*76*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
-    /*77*/ virtual void __unk_vfn_21();
+    /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void doWaterSplashEffect();
     /*79*/ virtual void _onSizeUpdated();
-    /*
-    inline void doWaterSplashEffect(){
-        void (ExperienceOrb::*rv)();
-        *((void**)&rv) = dlsym("?doWaterSplashEffect@ExperienceOrb@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (ExperienceOrb::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@ExperienceOrb@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline float getShadowRadius() const{
-        float (ExperienceOrb::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@ExperienceOrb@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (ExperienceOrb::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@ExperienceOrb@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ExperienceOrb::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ExperienceOrb@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (ExperienceOrb::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@ExperienceOrb@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline void normalTick(){
-        void (ExperienceOrb::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@ExperienceOrb@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playerTouch(class Player& a0){
-        void (ExperienceOrb::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@ExperienceOrb@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ExperienceOrb::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ExperienceOrb@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ExperienceOrb::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ExperienceOrb@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+
     MCAPI int getIconIndex() const;
     MCAPI void setValue(int);
     MCAPI static void spawnOrbs(class BlockSource&, class Vec3 const&, int, int, enum ExperienceOrb::DropType, class Player*);

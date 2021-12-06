@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DragonStrafePlayerGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DragonStrafePlayerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (DragonStrafePlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DragonStrafePlayerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (DragonStrafePlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DragonStrafePlayerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (DragonStrafePlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DragonStrafePlayerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (DragonStrafePlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@DragonStrafePlayerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DragonStrafePlayerGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DragonStrafePlayerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

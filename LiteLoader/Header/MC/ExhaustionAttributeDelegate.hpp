@@ -11,14 +11,8 @@ public:
     /*0*/ virtual ~ExhaustionAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    /*3*/ virtual void __unk_vfn_0();
-    /*
-    inline void tick(){
-        void (ExhaustionAttributeDelegate::*rv)();
-        *((void**)&rv) = dlsym("?tick@ExhaustionAttributeDelegate@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
+
 
 protected:
 

@@ -9,13 +9,7 @@ class AttributeInstance {
 public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
-    /*
-    inline void tick(){
-        void (AttributeInstance::*rv)();
-        *((void**)&rv) = dlsym("?tick@AttributeInstance@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI void addBuff(class AttributeBuff const&);
     MCAPI void addModifier(class AttributeModifier const&);
     MCAPI void addModifier(class std::shared_ptr<class AttributeModifier>);

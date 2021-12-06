@@ -16,36 +16,10 @@ public:
     /*5*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*6*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*7*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*8*/ virtual void __unk_vfn_0();
+    /*8*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*9*/ virtual void clearDeletedEntities();
-    /*10*/ virtual void __unk_vfn_1();
-    /*
-    inline class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const& a0, int \/*enum enum ChunkSource::LoadMode*\/ a1, bool a2){
-        class std::shared_ptr<class LevelChunk> (ChunkViewSource::*rv)(class ChunkPos const&, int \/*enum enum ChunkSource::LoadMode*\/, bool);
-        *((void**)&rv) = dlsym("?createNewChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@W4LoadMode@ChunkSource@@_N@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<int \/*enum enum ChunkSource::LoadMode*\/>(a1), std::forward<bool>(a2));
-    }
-    inline void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> a0){
-        void (ChunkViewSource::*rv)(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-        *((void**)&rv) = dlsym("?acquireDiscarded@ChunkViewSource@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>>(a0));
-    }
-    inline class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const& a0){
-        class std::shared_ptr<class LevelChunk> (ChunkViewSource::*rv)(class ChunkPos const&);
-        *((void**)&rv) = dlsym("?getExistingChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    inline class std::shared_ptr<class LevelChunk> getRandomChunk(class Random& a0){
-        class std::shared_ptr<class LevelChunk> (ChunkViewSource::*rv)(class Random&);
-        *((void**)&rv) = dlsym("?getRandomChunk@ChunkViewSource@@UEAA?AV?$shared_ptr@VLevelChunk@@@std@@AEAVRandom@@@Z");
-        return (this->*rv)(std::forward<class Random&>(a0));
-    }
-    inline bool isWithinWorldLimit(class ChunkPos const& a0) const{
-        bool (ChunkViewSource::*rv)(class ChunkPos const&) const;
-        *((void**)&rv) = dlsym("?isWithinWorldLimit@ChunkViewSource@@UEBA_NAEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    */
+    /*10*/ virtual bool canCreateViews() const;
+
     MCAPI void clear();
     MCAPI void clearEntryAtChunkPos(class ChunkPos const&);
     MCAPI std::vector<class LevelChunkBlockActorAccessToken> enableBlockEntityAccess();

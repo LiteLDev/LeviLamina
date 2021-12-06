@@ -15,18 +15,7 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_4();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveTowardsHomeRestrictionGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveTowardsHomeRestrictionGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (MoveTowardsHomeRestrictionGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveTowardsHomeRestrictionGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

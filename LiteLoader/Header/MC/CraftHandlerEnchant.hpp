@@ -9,27 +9,12 @@ class CraftHandlerEnchant : public CraftHandlerBase {
 #include "Extra/CraftHandlerEnchantAPI.hpp"
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
     /*2*/ virtual void endRequestBatch();
     /*3*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*4*/ virtual void _postCraftRequest(bool);
-    /*
-    inline int \/*enum enum ItemStackNetResult*\/ _handleCraftAction(class ItemStackRequestActionCraftBase const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (CraftHandlerEnchant::*rv)(class ItemStackRequestActionCraftBase const&);
-        *((void**)&rv) = dlsym("?_handleCraftAction@CraftHandlerEnchant@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestActionCraftBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestActionCraftBase const&>(a0));
-    }
-    inline void _postCraftRequest(bool a0){
-        void (CraftHandlerEnchant::*rv)(bool);
-        *((void**)&rv) = dlsym("?_postCraftRequest@CraftHandlerEnchant@@MEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void endRequestBatch(){
-        void (CraftHandlerEnchant::*rv)();
-        *((void**)&rv) = dlsym("?endRequestBatch@CraftHandlerEnchant@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+    /*5*/ virtual class Recipes const* _getLevelRecipes() const;
+
 
 protected:
 

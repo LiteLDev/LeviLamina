@@ -9,13 +9,7 @@ class AgentCommand {
 public:
     /*0*/ virtual ~AgentCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    /*
-    inline void execute(class CommandOrigin const& a0, class CommandOutput& a1) const{
-        void (AgentCommand::*rv)(class CommandOrigin const&, class CommandOutput&) const;
-        *((void**)&rv) = dlsym("?execute@AgentCommand@@UEBAXAEBVCommandOrigin@@AEAVCommandOutput@@@Z");
-        return (this->*rv)(std::forward<class CommandOrigin const&>(a0), std::forward<class CommandOutput&>(a1));
-    }
-    */
+
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
@@ -24,7 +18,7 @@ private:
     MCAPI void createAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void createAgentOutputSuccess(class CommandOutput&, bool) const;
     MCAPI void reportSuccess(bool, class CommandOutput&) const;
-    MCAPI bool runAgentCommand(class CommandOrigin const&, class CommandOutput&, class std::function<std::unique_ptr<class AgentCommands::Command> (class Player&)>) const;
+    MCAPI bool runAgentCommand(class CommandOrigin const&, class CommandOutput&, class std::function<std::unique_ptr<class AgentCommands::Command> (class Player& )>) const;
     MCAPI void setAgentOwner(class Agent&, class Player&) const;
     MCAPI void tpAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI static bool validateRange(class Agent*, class CommandOrigin const&, class CommandOutput&);

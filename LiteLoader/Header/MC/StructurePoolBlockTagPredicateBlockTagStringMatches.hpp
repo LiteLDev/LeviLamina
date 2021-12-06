@@ -9,13 +9,7 @@ class StructurePoolBlockTagPredicateBlockTagStringMatches {
 public:
     /*0*/ virtual ~StructurePoolBlockTagPredicateBlockTagStringMatches();
     /*1*/ virtual bool test(class Block const&, class CompoundTag const&) const;
-    /*
-    inline bool test(class Block const& a0, class CompoundTag const& a1) const{
-        bool (StructurePoolBlockTagPredicateBlockTagStringMatches::*rv)(class Block const&, class CompoundTag const&) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolBlockTagPredicateBlockTagStringMatches@@UEBA_NAEBVBlock@@AEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class CompoundTag const&>(a1));
-    }
-    */
+
 
 protected:
 

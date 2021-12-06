@@ -11,13 +11,7 @@ public:
     /*0*/ virtual ~WalkState();
     /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline void tick(){
-        void (WalkState::*rv)();
-        *((void**)&rv) = dlsym("?tick@WalkState@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

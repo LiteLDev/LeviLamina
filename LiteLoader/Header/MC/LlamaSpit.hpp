@@ -48,7 +48,7 @@ public:
     /*36*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*37*/ virtual void animateHurt();
     /*38*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*39*/ virtual void __unk_vfn_12();
+    /*39*/ virtual float getPickRadius();
     /*40*/ virtual void awardKillScore(class Actor&, int);
     /*41*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*42*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -59,63 +59,32 @@ public:
     /*47*/ virtual bool canFreeze() const;
     /*48*/ virtual int getPortalWaitTime() const;
     /*49*/ virtual bool canChangeDimensions() const;
-    /*50*/ virtual void __unk_vfn_13();
+    /*50*/ virtual void __unk_vfn_12();
     /*51*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*52*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*53*/ virtual bool canBePulledIntoVehicle() const;
     /*54*/ virtual bool inCaravan() const;
-    /*55*/ virtual void __unk_vfn_14();
+    /*55*/ virtual void __unk_vfn_13();
     /*56*/ virtual bool canSynchronizeNewEntity() const;
     /*57*/ virtual void buildDebugInfo(std::string&) const;
     /*58*/ virtual int getDeathTime() const;
     /*59*/ virtual void swing();
-    /*60*/ virtual void __unk_vfn_15();
-    /*61*/ virtual void __unk_vfn_16();
+    /*60*/ virtual void __unk_vfn_14();
+    /*61*/ virtual void __unk_vfn_15();
     /*62*/ virtual float getYHeadRot() const;
     /*63*/ virtual bool isWorldBuilder() const;
-    /*64*/ virtual void __unk_vfn_17();
+    /*64*/ virtual void __unk_vfn_16();
     /*65*/ virtual bool isAdventure() const;
     /*66*/ virtual bool canDestroyBlock(class Block const&) const;
     /*67*/ virtual void setAuxValue(int);
     /*68*/ virtual void stopSpinAttack();
-    /*69*/ virtual void __unk_vfn_18();
-    /*70*/ virtual void __unk_vfn_19();
+    /*69*/ virtual void __unk_vfn_17();
+    /*70*/ virtual void __unk_vfn_18();
     /*71*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*72*/ virtual void __unk_vfn_20();
-    /*73*/ virtual void __unk_vfn_21();
+    /*72*/ virtual void __unk_vfn_19();
+    /*73*/ virtual void __unk_vfn_20();
     /*74*/ virtual void _onSizeUpdated();
-    /*
-    inline bool isPickable(){
-        bool (LlamaSpit::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@LlamaSpit@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowHeightOffs(){
-        float (LlamaSpit::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@LlamaSpit@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getPickRadius(){
-        float (LlamaSpit::*rv)();
-        *((void**)&rv) = dlsym("?getPickRadius@LlamaSpit@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getBrightness(float a0) const{
-        float (LlamaSpit::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getBrightness@LlamaSpit@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (LlamaSpit::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@LlamaSpit@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (LlamaSpit::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@LlamaSpit@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

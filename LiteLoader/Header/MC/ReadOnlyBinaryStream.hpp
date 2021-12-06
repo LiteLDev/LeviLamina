@@ -9,13 +9,7 @@ class ReadOnlyBinaryStream {
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
     /*1*/ virtual bool read(void*, unsigned __int64);
-    /*
-    inline bool read(void* a0, unsigned __int64 a1){
-        bool (ReadOnlyBinaryStream::*rv)(void*, unsigned __int64);
-        *((void**)&rv) = dlsym("?read@ReadOnlyBinaryStream@@EEAA_NPEAX_K@Z");
-        return (this->*rv)(std::forward<void*>(a0), std::forward<unsigned __int64>(a1));
-    }
-    */
+
     MCAPI bool canReadBool() const;
     MCAPI bool getBool();
     MCAPI unsigned char getByte();

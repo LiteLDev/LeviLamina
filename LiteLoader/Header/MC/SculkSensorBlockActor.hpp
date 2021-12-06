@@ -18,37 +18,26 @@ public:
     /*7*/ virtual void __unk_vfn_0();
     /*8*/ virtual void onRemoved(class BlockSource&);
     /*9*/ virtual void triggerEvent(int, int);
-    /*10*/ virtual void __unk_vfn_1();
-    /*11*/ virtual void __unk_vfn_2();
-    /*12*/ virtual void __unk_vfn_3();
-    /*13*/ virtual void __unk_vfn_4();
+    /*10*/ virtual void clearCache();
+    /*11*/ virtual void __unk_vfn_1();
+    /*12*/ virtual float getShadowRadius(class BlockSource&) const;
+    /*13*/ virtual bool hasAlphaLayer() const;
     /*14*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*15*/ virtual void __unk_vfn_5();
+    /*15*/ virtual std::string const& getCustomName() const;
     /*16*/ virtual std::string getName() const;
     /*17*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*18*/ virtual void __unk_vfn_6();
+    /*18*/ virtual int getRepairCost() const;
     /*19*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*20*/ virtual void __unk_vfn_7();
-    /*21*/ virtual void __unk_vfn_8();
-    /*22*/ virtual void __unk_vfn_9();
-    /*23*/ virtual void __unk_vfn_10();
-    /*24*/ virtual void __unk_vfn_11();
-    /*25*/ virtual void __unk_vfn_12();
+    /*20*/ virtual void __unk_vfn_2();
+    /*21*/ virtual void __unk_vfn_3();
+    /*22*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*23*/ virtual void __unk_vfn_4();
+    /*24*/ virtual void __unk_vfn_5();
+    /*25*/ virtual void __unk_vfn_6();
     /*26*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*27*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*28*/ virtual bool _playerCanUpdate(class Player const&) const;
-    /*
-    inline void onRemoved(class BlockSource& a0){
-        void (SculkSensorBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onRemoved@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void tick(class BlockSource& a0){
-        void (SculkSensorBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?tick@SculkSensorBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
+
     MCAPI int getLatestGameEventFrequency() const;
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;

@@ -9,13 +9,7 @@ class IDefinitionInstance {
 public:
     /*0*/ virtual ~IDefinitionInstance();
     /*1*/ virtual unsigned short getRuntimeTypeId() const;
-    /*
-    inline unsigned short getRuntimeTypeId() const{
-        unsigned short (IDefinitionInstance::*rv)() const;
-        *((void**)&rv) = dlsym("?getRuntimeTypeId@IDefinitionInstance@@UEBAGXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

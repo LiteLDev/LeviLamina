@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~TestAction();
     /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
     /*2*/ virtual bool operator==(class IRequestAction&);
-    /*
-    inline bool operator==(class IRequestAction& a0){
-        bool (TestAction::*rv)(class IRequestAction&);
-        *((void**)&rv) = dlsym("??8TestAction@@UEBA_NAEAVIRequestAction@@@Z");
-        return (this->*rv)(std::forward<class IRequestAction&>(a0));
-    }
-    inline void execute(class ServerLevel& a0, class Dimension& a1){
-        void (TestAction::*rv)(class ServerLevel&, class Dimension&);
-        *((void**)&rv) = dlsym("?execute@TestAction@@UEAAXAEAVServerLevel@@AEAVDimension@@@Z");
-        return (this->*rv)(std::forward<class ServerLevel&>(a0), std::forward<class Dimension&>(a1));
-    }
-    */
+
 
 protected:
 

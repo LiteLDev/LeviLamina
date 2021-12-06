@@ -11,13 +11,7 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void _onEnd(class LabTableReaction&, class BlockSource&);
-    /*
-    inline void _onEnd(class LabTableReaction& a0, class BlockSource& a1){
-        void (PlaySoundReactionComponent::*rv)(class LabTableReaction&, class BlockSource&);
-        *((void**)&rv) = dlsym("?_onEnd@PlaySoundReactionComponent@@UEAAXAEAVLabTableReaction@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class LabTableReaction&>(a0), std::forward<class BlockSource&>(a1));
-    }
-    */
+
 
 protected:
 

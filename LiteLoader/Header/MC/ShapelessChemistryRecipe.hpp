@@ -10,25 +10,15 @@ class ShapelessChemistryRecipe : public ShapelessRecipe {
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
+    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*4*/ virtual bool isShapeless() const;
     /*5*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*6*/ virtual class mce::UUID const& getId() const;
-    /*7*/ virtual void __unk_vfn_3();
-    /*8*/ virtual void __unk_vfn_4();
-    /*
-    inline class mce::UUID const& getId() const{
-        class mce::UUID const& (ShapelessChemistryRecipe::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@ShapelessChemistryRecipe@@UEBAAEBVUUID@mce@@XZ");
-        return (this->*rv)();
-    }
-    inline bool matches(class CraftingContainer& a0, class Level& a1) const{
-        bool (ShapelessChemistryRecipe::*rv)(class CraftingContainer&, class Level&) const;
-        *((void**)&rv) = dlsym("?matches@ShapelessChemistryRecipe@@UEBA_NAEAVCraftingContainer@@AEAVLevel@@@Z");
-        return (this->*rv)(std::forward<class CraftingContainer&>(a0), std::forward<class Level&>(a1));
-    }
-    */
+    /*7*/ virtual class ItemPack const& getItemPack() const;
+    /*8*/ virtual bool isMultiRecipe() const;
+    /*9*/ virtual void loadResultList(class BlockPalette const&) const;
+
     MCAPI static class mce::UUID const ID;
 
 protected:

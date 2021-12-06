@@ -11,23 +11,7 @@ public:
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
-    /*
-    inline void onTestFailed(class gametest::BaseGameTestInstance& a0){
-        void (ConsoleGameTestListener::*rv)(class gametest::BaseGameTestInstance&);
-        *((void**)&rv) = dlsym("?onTestFailed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
-    }
-    inline void onTestPassed(class gametest::BaseGameTestInstance& a0){
-        void (ConsoleGameTestListener::*rv)(class gametest::BaseGameTestInstance&);
-        *((void**)&rv) = dlsym("?onTestPassed@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
-    }
-    inline void onTestStructureLoaded(class gametest::BaseGameTestInstance& a0){
-        void (ConsoleGameTestListener::*rv)(class gametest::BaseGameTestInstance&);
-        *((void**)&rv) = dlsym("?onTestStructureLoaded@ConsoleGameTestListener@@UEAAXAEAVBaseGameTestInstance@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestInstance&>(a0));
-    }
-    */
+
 
 protected:
 

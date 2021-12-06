@@ -25,72 +25,11 @@ public:
     /*12*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*13*/ virtual void flushPendingWrites();
     /*14*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*15*/ virtual void __unk_vfn_0();
+    /*15*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*16*/ virtual void clearDeletedEntities();
-    /*17*/ virtual void __unk_vfn_1();
+    /*17*/ virtual bool canCreateViews() const;
     /*18*/ virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
-    /*
-    inline void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter> a0){
-        void (DBChunkStorage::*rv)(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-        *((void**)&rv) = dlsym("?acquireDiscarded@DBChunkStorage@@UEAAXV?$unique_ptr@VLevelChunk@@ULevelChunkFinalDeleter@@@std@@@Z");
-        return (this->*rv)(std::forward<class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>>(a0));
-    }
-    inline void checkAndReplaceChunk(class ChunkViewSource& a0, class LevelChunk& a1){
-        void (DBChunkStorage::*rv)(class ChunkViewSource&, class LevelChunk&);
-        *((void**)&rv) = dlsym("?checkAndReplaceChunk@DBChunkStorage@@UEAAXAEAVChunkViewSource@@AEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class ChunkViewSource&>(a0), std::forward<class LevelChunk&>(a1));
-    }
-    inline void flushPendingWrites(){
-        void (DBChunkStorage::*rv)();
-        *((void**)&rv) = dlsym("?flushPendingWrites@DBChunkStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const& a0, class BiomeRegistry const& a1){
-        class LevelChunkBlendingAttenuator (DBChunkStorage::*rv)(class ChunkPos const&, class BiomeRegistry const&);
-        *((void**)&rv) = dlsym("?getHeightAttenuatorForLevelChunk@DBChunkStorage@@UEAA?AVLevelChunkBlendingAttenuator@@AEBVChunkPos@@AEBVBiomeRegistry@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<class BiomeRegistry const&>(a1));
-    }
-    inline void hintDiscardBatchBegin(){
-        void (DBChunkStorage::*rv)();
-        *((void**)&rv) = dlsym("?hintDiscardBatchBegin@DBChunkStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void hintDiscardBatchEnd(){
-        void (DBChunkStorage::*rv)();
-        *((void**)&rv) = dlsym("?hintDiscardBatchEnd@DBChunkStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isChunkKnown(class ChunkPos const& a0){
-        bool (DBChunkStorage::*rv)(class ChunkPos const&);
-        *((void**)&rv) = dlsym("?isChunkKnown@DBChunkStorage@@UEAA_NAEBVChunkPos@@@Z");
-        return (this->*rv)(std::forward<class ChunkPos const&>(a0));
-    }
-    inline bool isShutdownDone(){
-        bool (DBChunkStorage::*rv)();
-        *((void**)&rv) = dlsym("?isShutdownDone@DBChunkStorage@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void loadChunk(class LevelChunk& a0, bool a1){
-        void (DBChunkStorage::*rv)(class LevelChunk&, bool);
-        *((void**)&rv) = dlsym("?loadChunk@DBChunkStorage@@UEAAXAEAVLevelChunk@@_N@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0), std::forward<bool>(a1));
-    }
-    inline bool postProcess(class ChunkViewSource& a0){
-        bool (DBChunkStorage::*rv)(class ChunkViewSource&);
-        *((void**)&rv) = dlsym("?postProcess@DBChunkStorage@@UEAA_NAEAVChunkViewSource@@@Z");
-        return (this->*rv)(std::forward<class ChunkViewSource&>(a0));
-    }
-    inline bool saveLiveChunk(class LevelChunk& a0){
-        bool (DBChunkStorage::*rv)(class LevelChunk&);
-        *((void**)&rv) = dlsym("?saveLiveChunk@DBChunkStorage@@UEAA_NAEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class LevelChunk&>(a0));
-    }
-    inline void shutdown(){
-        void (DBChunkStorage::*rv)();
-        *((void**)&rv) = dlsym("?shutdown@DBChunkStorage@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const&, class Experiments const&);
 
 protected:

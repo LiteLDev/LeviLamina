@@ -6,6 +6,6 @@
 #undef EXTRA_INCLUDE_PART_BIOMESOURCEUTIL
 namespace BiomeSourceUtil {
 #include "Extra/BiomeSourceUtilAPI.hpp"
-    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const&)> const&, class BiomeSource const&, class BlockPos const&, class BlockPos const&, unsigned int);
-    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const&)> const&, class BiomeSource const&, class BlockPos const&, class BoundingBox, unsigned int);
+    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BlockPos const&, unsigned int);
+    MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BoundingBox, unsigned int);
 };

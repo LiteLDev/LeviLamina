@@ -12,23 +12,7 @@ public:
     /*2*/ virtual int /*enum enum ItemStackNetResult*/ endRequest();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void postRequest(bool);
-    /*
-    inline int \/*enum enum ItemStackNetResult*\/ endRequest(){
-        int \/*enum enum ItemStackNetResult*\/ (ScreenHandlerLabTable::*rv)();
-        *((void**)&rv) = dlsym("?endRequest@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ handleAction(class ItemStackRequestAction const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (ScreenHandlerLabTable::*rv)(class ItemStackRequestAction const&);
-        *((void**)&rv) = dlsym("?handleAction@ScreenHandlerLabTable@@MEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestAction const&>(a0));
-    }
-    inline void postRequest(bool a0){
-        void (ScreenHandlerLabTable::*rv)(bool);
-        *((void**)&rv) = dlsym("?postRequest@ScreenHandlerLabTable@@MEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    */
+
 
 protected:
 

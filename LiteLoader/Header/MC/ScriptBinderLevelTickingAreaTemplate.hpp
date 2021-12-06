@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~ScriptBinderLevelTickingAreaTemplate();
     /*1*/ virtual std::string const& getTemplateIdentifier() const;
     /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
-    /*
-    inline void applyTemplate(class ScriptObjectBinder& a0) const{
-        void (ScriptBinderLevelTickingAreaTemplate::*rv)(class ScriptObjectBinder&) const;
-        *((void**)&rv) = dlsym("?applyTemplate@ScriptBinderLevelTickingAreaTemplate@@UEBAXAEAVScriptObjectBinder@@@Z");
-        return (this->*rv)(std::forward<class ScriptObjectBinder&>(a0));
-    }
-    inline std::string const& getTemplateIdentifier() const{
-        std::string const& (ScriptBinderLevelTickingAreaTemplate::*rv)() const;
-        *((void**)&rv) = dlsym("?getTemplateIdentifier@ScriptBinderLevelTickingAreaTemplate@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class ITickingArea const&);
 
 protected:

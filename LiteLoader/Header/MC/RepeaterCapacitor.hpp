@@ -10,11 +10,11 @@ class RepeaterCapacitor : public ProducerComponent {
 public:
     /*0*/ virtual ~RepeaterCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual bool canConsumePowerAnyDirection() const;
-    /*6*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_0();
     /*7*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /*8*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*9*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
@@ -22,76 +22,17 @@ public:
     /*11*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
-    /*16*/ virtual void __unk_vfn_5();
-    /*17*/ virtual void __unk_vfn_6();
+    /*14*/ virtual void __unk_vfn_1();
+    /*15*/ virtual bool isHalfPulse() const;
+    /*16*/ virtual void __unk_vfn_2();
+    /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
+    /*19*/ virtual unsigned char getPoweroutDirection() const;
     /*
-    inline bool canConsumePowerAnyDirection() const{
-        bool (RepeaterCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@RepeaterCapacitor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canConsumerPower() const{
         bool (RepeaterCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@RepeaterCapacitor@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline int \/*enum enum CircuitComponentType*\/ getCircuitComponentType() const{
-        int \/*enum enum CircuitComponentType*\/ (RepeaterCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCircuitComponentType@RepeaterCapacitor@@UEBA?AW4CircuitComponentType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool addSource(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, int& a2, bool& a3){
-        bool (RepeaterCapacitor::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-        *((void**)&rv) = dlsym("?addSource@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<int&>(a2), std::forward<bool&>(a3));
-    }
-    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
-        bool (RepeaterCapacitor::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-        *((void**)&rv) = dlsym("?allowConnection@RepeaterCapacitor@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
-    }
-    inline void cacheValues(class CircuitSystem& a0, class BlockPos const& a1){
-        void (RepeaterCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?cacheValues@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void checkLock(class CircuitSystem& a0, class BlockPos const& a1){
-        void (RepeaterCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?checkLock@RepeaterCapacitor@@UEAAXAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool evaluate(class CircuitSystem& a0, class BlockPos const& a1){
-        bool (RepeaterCapacitor::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?evaluate@RepeaterCapacitor@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline unsigned char getPoweroutDirection() const{
-        unsigned char (RepeaterCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPoweroutDirection@RepeaterCapacitor@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline int getStrength() const{
-        int (RepeaterCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?getStrength@RepeaterCapacitor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline bool removeSource(class BlockPos const& a0, class BaseCircuitComponent const* a1){
-        bool (RepeaterCapacitor::*rv)(class BlockPos const&, class BaseCircuitComponent const*);
-        *((void**)&rv) = dlsym("?removeSource@RepeaterCapacitor@@UEAA_NAEBVBlockPos@@PEBVBaseCircuitComponent@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class BaseCircuitComponent const*>(a1));
-    }
-    inline void setStrength(int a0){
-        void (RepeaterCapacitor::*rv)(int);
-        *((void**)&rv) = dlsym("?setStrength@RepeaterCapacitor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void updateDependencies(class CircuitSceneGraph& a0, class BlockPos const& a1){
-        void (RepeaterCapacitor::*rv)(class CircuitSceneGraph&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?updateDependencies@RepeaterCapacitor@@UEAAXAEAVCircuitSceneGraph@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class BlockPos const&>(a1));
     }
     */
     MCAPI void setDelay(int);

@@ -37,33 +37,33 @@ public:
     /*25*/ virtual void onFailedTame();
     /*26*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void __unk_vfn_12();
+    /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
     /*31*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*32*/ virtual int getPortalWaitTime() const;
     /*33*/ virtual bool canChangeDimensions() const;
-    /*34*/ virtual void __unk_vfn_13();
+    /*34*/ virtual void __unk_vfn_12();
     /*35*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*36*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*37*/ virtual bool canBePulledIntoVehicle() const;
-    /*38*/ virtual void __unk_vfn_14();
+    /*38*/ virtual void __unk_vfn_13();
     /*39*/ virtual bool canSynchronizeNewEntity() const;
-    /*40*/ virtual void __unk_vfn_15();
-    /*41*/ virtual void __unk_vfn_16();
+    /*40*/ virtual void __unk_vfn_14();
+    /*41*/ virtual void __unk_vfn_15();
     /*42*/ virtual bool isWorldBuilder() const;
-    /*43*/ virtual void __unk_vfn_17();
+    /*43*/ virtual void __unk_vfn_16();
     /*44*/ virtual bool isAdventure() const;
     /*45*/ virtual bool canDestroyBlock(class Block const&) const;
     /*46*/ virtual void setAuxValue(int);
     /*47*/ virtual void stopSpinAttack();
-    /*48*/ virtual void __unk_vfn_18();
-    /*49*/ virtual void __unk_vfn_19();
-    /*50*/ virtual void __unk_vfn_20();
+    /*48*/ virtual void __unk_vfn_17();
+    /*49*/ virtual void __unk_vfn_18();
+    /*50*/ virtual void __unk_vfn_19();
     /*51*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*52*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void __unk_vfn_22();
+    /*53*/ virtual void __unk_vfn_20();
+    /*54*/ virtual void __unk_vfn_21();
     /*55*/ virtual void spawnAnim();
     /*56*/ virtual void applyFinalFriction(float, bool);
     /*57*/ virtual void aiStep();
@@ -71,45 +71,25 @@ public:
     /*59*/ virtual int getItemUseDuration() const;
     /*60*/ virtual float getItemUseStartupProgress() const;
     /*61*/ virtual float getItemUseIntervalProgress() const;
-    /*62*/ virtual void __unk_vfn_23();
+    /*62*/ virtual void __unk_vfn_22();
     /*63*/ virtual bool isAlliedTo(class Mob*);
-    /*64*/ virtual void __unk_vfn_24();
+    /*64*/ virtual void __unk_vfn_23();
     /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*66*/ virtual void onBorn(class Actor&, class Actor&);
-    /*67*/ virtual void __unk_vfn_25();
-    /*68*/ virtual void __unk_vfn_26();
+    /*67*/ virtual int getAttackTime();
+    /*68*/ virtual void __unk_vfn_24();
     /*69*/ virtual void _serverAiMobStep();
-    /*70*/ virtual void __unk_vfn_27();
+    /*70*/ virtual void __unk_vfn_25();
     /*
-    inline bool isInWall() const{
-        bool (Vex::*rv)() const;
-        *((void**)&rv) = dlsym("?isInWall@Vex@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void addAdditionalSaveData(class CompoundTag& a0){
         void (Vex::*rv)(class CompoundTag&);
         *((void**)&rv) = dlsym("?addAdditionalSaveData@Vex@@UEAAXAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag&>(a0));
     }
-    inline void applyFinalFriction(float a0, bool a1){
-        void (Vex::*rv)(float, bool);
-        *((void**)&rv) = dlsym("?applyFinalFriction@Vex@@UEAAXM_N@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<bool>(a1));
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Vex::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Vex@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
         void (Vex::*rv)(class CompoundTag const&, class DataLoadHelper&);
         *((void**)&rv) = dlsym("?readAdditionalSaveData@Vex@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Vex::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Vex@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
 

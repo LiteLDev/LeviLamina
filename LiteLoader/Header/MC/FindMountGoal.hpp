@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (FindMountGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@FindMountGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (FindMountGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@FindMountGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (FindMountGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@FindMountGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (FindMountGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@FindMountGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (FindMountGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@FindMountGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (FindMountGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@FindMountGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI bool isInMountRange();
 
 protected:

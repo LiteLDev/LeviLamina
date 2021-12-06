@@ -42,10 +42,10 @@ public:    /*
         *((void**)&rv) = dlsym("?getItem@BeaconBlockActor@@UEBAAEBVItemStack@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const&)> a2){
-        void (BeaconBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const&)>);
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
+        void (BeaconBlockActor::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
         *((void**)&rv) = dlsym("?serverInitItemStackIds@BeaconBlockActor@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const&)>>(a2));
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
     }
     inline int getMaxStackSize() const{
         int (BeaconBlockActor::*rv)() const;

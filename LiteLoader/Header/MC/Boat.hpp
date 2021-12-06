@@ -53,7 +53,7 @@ public:
     /*42*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*43*/ virtual void animateHurt();
     /*44*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*45*/ virtual void __unk_vfn_12();
+    /*45*/ virtual float getPickRadius();
     /*46*/ virtual void awardKillScore(class Actor&, int);
     /*47*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*48*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -64,117 +64,36 @@ public:
     /*53*/ virtual bool canFreeze() const;
     /*54*/ virtual int getPortalWaitTime() const;
     /*55*/ virtual bool canChangeDimensions() const;
-    /*56*/ virtual void __unk_vfn_13();
+    /*56*/ virtual void __unk_vfn_12();
     /*57*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*58*/ virtual bool canAddPassenger(class Actor&) const;
     /*59*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*60*/ virtual bool canBePulledIntoVehicle() const;
     /*61*/ virtual bool inCaravan() const;
-    /*62*/ virtual void __unk_vfn_14();
+    /*62*/ virtual void __unk_vfn_13();
     /*63*/ virtual bool canSynchronizeNewEntity() const;
     /*64*/ virtual void buildDebugInfo(std::string&) const;
     /*65*/ virtual int getDeathTime() const;
     /*66*/ virtual void swing();
-    /*67*/ virtual void __unk_vfn_15();
-    /*68*/ virtual void __unk_vfn_16();
+    /*67*/ virtual void __unk_vfn_14();
+    /*68*/ virtual void __unk_vfn_15();
     /*69*/ virtual float getPassengerYRotation(class Actor const&) const;
     /*70*/ virtual float getYHeadRot() const;
     /*71*/ virtual bool isWorldBuilder() const;
-    /*72*/ virtual void __unk_vfn_17();
+    /*72*/ virtual void __unk_vfn_16();
     /*73*/ virtual bool isAdventure() const;
     /*74*/ virtual bool canDestroyBlock(class Block const&) const;
     /*75*/ virtual void setAuxValue(int);
     /*76*/ virtual void stopSpinAttack();
-    /*77*/ virtual void __unk_vfn_18();
-    /*78*/ virtual void __unk_vfn_19();
+    /*77*/ virtual void __unk_vfn_17();
+    /*78*/ virtual void __unk_vfn_18();
     /*79*/ virtual void interpolatorTick();
     /*80*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*81*/ virtual void __unk_vfn_20();
+    /*81*/ virtual void __unk_vfn_19();
     /*82*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*83*/ virtual void __unk_vfn_21();
+    /*83*/ virtual void __unk_vfn_20();
     /*84*/ virtual void _onSizeUpdated();
-    /*
-    inline float getShadowHeightOffs(){
-        float (Boat::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@Boat@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Boat::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Boat@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void remove(){
-        void (Boat::*rv)();
-        *((void**)&rv) = dlsym("?remove@Boat@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Boat::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Boat@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Boat::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Boat@@EEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addPassenger(class Actor& a0){
-        void (Boat::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?addPassenger@Boat@@UEAAXAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline bool canAddPassenger(class Actor& a0) const{
-        bool (Boat::*rv)(class Actor&) const;
-        *((void**)&rv) = dlsym("?canAddPassenger@Boat@@UEBA_NAEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline struct ActorUniqueID getControllingPlayer() const{
-        struct ActorUniqueID (Boat::*rv)() const;
-        *((void**)&rv) = dlsym("?getControllingPlayer@Boat@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getExitTip(std::string const& a0, int \/*enum enum InputMode*\/ a1) const{
-        std::string (Boat::*rv)(std::string const&, int \/*enum enum InputMode*\/) const;
-        *((void**)&rv) = dlsym("?getExitTip@Boat@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int \/*enum enum InputMode*\/>(a1));
-    }
-    inline float getPassengerYRotation(class Actor const& a0) const{
-        float (Boat::*rv)(class Actor const&) const;
-        *((void**)&rv) = dlsym("?getPassengerYRotation@Boat@@UEBAMAEBVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor const&>(a0));
-    }
-    inline void interpolatorTick(){
-        void (Boat::*rv)();
-        *((void**)&rv) = dlsym("?interpolatorTick@Boat@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isPickable(){
-        bool (Boat::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Boat@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (Boat::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Boat@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onAboveBubbleColumn(bool a0){
-        void (Boat::*rv)(bool);
-        *((void**)&rv) = dlsym("?onAboveBubbleColumn@Boat@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Boat::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Boat::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Boat@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    */
+
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3&, float&, float&, float, float);
     MCAPI void destroy(class Actor*);
     MCAPI float getRowingTime(enum Side) const;

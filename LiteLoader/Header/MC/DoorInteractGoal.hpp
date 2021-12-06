@@ -16,33 +16,7 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (DoorInteractGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@DoorInteractGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (DoorInteractGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@DoorInteractGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (DoorInteractGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@DoorInteractGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (DoorInteractGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@DoorInteractGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (DoorInteractGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@DoorInteractGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

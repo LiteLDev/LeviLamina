@@ -19,8 +19,8 @@ public:
     MCAPI bool setBool(bool, bool*, class GameRule::ValidationError*);
     MCAPI bool setFloat(float, bool*, class GameRule::ValidationError*);
     MCAPI bool setInt(int, bool*, class GameRule::ValidationError*);
-    MCAPI class GameRule& setTagDataNotFoundCallback(class std::function<void (class GameRule&)>);
-    MCAPI class GameRule& setValidateValueCallback(class std::function<bool (union GameRule::Value const&, class GameRule::ValidationError*)>);
+    MCAPI class GameRule& setTagDataNotFoundCallback(class std::function<void (class GameRule& )>);
+    MCAPI class GameRule& setValidateValueCallback(class std::function<bool (union GameRule::Value const& , class GameRule::ValidationError* )>);
 
 protected:
 

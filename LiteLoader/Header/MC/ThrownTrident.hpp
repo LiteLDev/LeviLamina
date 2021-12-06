@@ -49,7 +49,7 @@ public:
     /*37*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*38*/ virtual void animateHurt();
     /*39*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*40*/ virtual void __unk_vfn_12();
+    /*40*/ virtual float getPickRadius();
     /*41*/ virtual void despawn();
     /*42*/ virtual void awardKillScore(class Actor&, int);
     /*43*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -61,94 +61,38 @@ public:
     /*49*/ virtual bool canFreeze() const;
     /*50*/ virtual int getPortalWaitTime() const;
     /*51*/ virtual bool canChangeDimensions() const;
-    /*52*/ virtual void __unk_vfn_13();
+    /*52*/ virtual void __unk_vfn_12();
     /*53*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*54*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*55*/ virtual bool canBePulledIntoVehicle() const;
     /*56*/ virtual bool inCaravan() const;
-    /*57*/ virtual void __unk_vfn_14();
+    /*57*/ virtual void __unk_vfn_13();
     /*58*/ virtual bool canSynchronizeNewEntity() const;
     /*59*/ virtual void buildDebugInfo(std::string&) const;
     /*60*/ virtual int getDeathTime() const;
     /*61*/ virtual void swing();
-    /*62*/ virtual void __unk_vfn_15();
-    /*63*/ virtual void __unk_vfn_16();
+    /*62*/ virtual void __unk_vfn_14();
+    /*63*/ virtual void __unk_vfn_15();
     /*64*/ virtual float getYHeadRot() const;
     /*65*/ virtual bool isWorldBuilder() const;
-    /*66*/ virtual void __unk_vfn_17();
+    /*66*/ virtual void __unk_vfn_16();
     /*67*/ virtual bool isAdventure() const;
     /*68*/ virtual bool canDestroyBlock(class Block const&) const;
     /*69*/ virtual void setAuxValue(int);
     /*70*/ virtual void stopSpinAttack();
-    /*71*/ virtual void __unk_vfn_18();
-    /*72*/ virtual void __unk_vfn_19();
+    /*71*/ virtual void __unk_vfn_17();
+    /*72*/ virtual void __unk_vfn_18();
     /*73*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*74*/ virtual void __unk_vfn_20();
+    /*74*/ virtual void __unk_vfn_19();
     /*75*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*76*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*77*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*78*/ virtual void __unk_vfn_21();
+    /*78*/ virtual void __unk_vfn_20();
     /*79*/ virtual void _onSizeUpdated();
-    /*80*/ virtual void __unk_vfn_22();
+    /*80*/ virtual void __unk_vfn_21();
     /*81*/ virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
     /*82*/ virtual class ItemStack _getPickupItem() const;
-    /*
-    inline class ItemStack _getPickupItem() const{
-        class ItemStack (ThrownTrident::*rv)() const;
-        *((void**)&rv) = dlsym("?_getPickupItem@ThrownTrident@@MEBA?AVItemStack@@XZ");
-        return (this->*rv)();
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (ThrownTrident::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@ThrownTrident@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (ThrownTrident::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@ThrownTrident@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void despawn(){
-        void (ThrownTrident::*rv)();
-        *((void**)&rv) = dlsym("?despawn@ThrownTrident@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isEnchanted() const{
-        bool (ThrownTrident::*rv)() const;
-        *((void**)&rv) = dlsym("?isEnchanted@ThrownTrident@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void normalTick(){
-        void (ThrownTrident::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@ThrownTrident@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void outOfWorld(){
-        void (ThrownTrident::*rv)();
-        *((void**)&rv) = dlsym("?outOfWorld@ThrownTrident@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playerTouch(class Player& a0){
-        void (ThrownTrident::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@ThrownTrident@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (ThrownTrident::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@ThrownTrident@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (ThrownTrident::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@ThrownTrident@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void shoot(class Vec3 const& a0, float a1, float a2, class Vec3 const& a3){
-        void (ThrownTrident::*rv)(class Vec3 const&, float, float, class Vec3 const&);
-        *((void**)&rv) = dlsym("?shoot@ThrownTrident@@UEAAXAEBVVec3@@MM0@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<float>(a1), std::forward<float>(a2), std::forward<class Vec3 const&>(a3));
-    }
-    */
+
     MCAPI class ItemStack getPickupItem() const;
     MCAPI void returnWithLoyalty(int);
     MCAPI void setTridentItem(class ItemStack const&);

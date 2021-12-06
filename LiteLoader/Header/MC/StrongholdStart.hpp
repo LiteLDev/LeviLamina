@@ -9,18 +9,9 @@ class StrongholdStart : public StructureStart {
 #include "Extra/StrongholdStartAPI.hpp"
 public:
     /*0*/ virtual ~StrongholdStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (StrongholdStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@StrongholdStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (StrongholdStart::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@StrongholdStart@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+    /*1*/ virtual bool isValid() const;
+    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

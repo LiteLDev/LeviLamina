@@ -76,11 +76,6 @@ public:
         *((void**)&rv) = dlsym("?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Block const&>(a2));
     }
-    inline int \/*enum enum EventResult*\/ onExplosionStartedEvent(struct ExplosionStartedEvent const& a0){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct ExplosionStartedEvent const&);
-        *((void**)&rv) = dlsym("?onExplosionStartedEvent@BlockEventListener@@UEAA?AW4EventResult@@AEBUExplosionStartedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ExplosionStartedEvent const&>(a0));
-    }
     inline int \/*enum enum EventResult*\/ onActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct ActorStandOnBlockEvent const&);
         *((void**)&rv) = dlsym("?onActorStandOnBlock@BlockEventListener@@UEAA?AW4EventResult@@AEBUActorStandOnBlockEvent@@@Z");
@@ -95,21 +90,6 @@ public:
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class BlockPos const&, class BlockPos const&, int \/*enum enum PistonState*\/);
         *((void**)&rv) = dlsym("?onBlockMovedByPiston@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@0W4PistonState@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<int \/*enum enum PistonState*\/>(a2));
-    }
-    inline int \/*enum enum EventResult*\/ onPistonActionEvent(struct PistonActionEvent const& a0){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct PistonActionEvent const&);
-        *((void**)&rv) = dlsym("?onPistonActionEvent@BlockEventListener@@UEAA?AW4EventResult@@AEBUPistonActionEvent@@@Z");
-        return (this->*rv)(std::forward<struct PistonActionEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onBlockExploded(class BlockPos const& a0, class Block const& a1, class Actor* a2){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class BlockPos const&, class Block const&, class Actor*);
-        *((void**)&rv) = dlsym("?onBlockExploded@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@PEAVActor@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Actor*>(a2));
-    }
-    inline int \/*enum enum EventResult*\/ onBlockDestroyedByPlayer(class Player& a0, std::string a1, class BlockPos const& a2){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, std::string, class BlockPos const&);
-        *((void**)&rv) = dlsym("?onBlockDestroyedByPlayer@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<std::string>(a1), std::forward<class BlockPos const&>(a2));
     }
     */
 

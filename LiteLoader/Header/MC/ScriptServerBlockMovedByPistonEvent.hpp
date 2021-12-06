@@ -10,13 +10,7 @@ class ScriptServerBlockMovedByPistonEvent {
 public:
     /*0*/ virtual ~ScriptServerBlockMovedByPistonEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-    /*
-    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
-        bool (ScriptServerBlockMovedByPistonEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-        *((void**)&rv) = dlsym("?_serialize@ScriptServerBlockMovedByPistonEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
-    }
-    */
+
     MCAPI void setBlockPos(class BlockPos const&);
     MCAPI void setPistonAction(std::string);
     MCAPI void setPistonPos(class BlockPos const&);

@@ -15,33 +15,7 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (SlimeAttackGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@SlimeAttackGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (SlimeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@SlimeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (SlimeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SlimeAttackGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (SlimeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@SlimeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (SlimeAttackGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@SlimeAttackGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

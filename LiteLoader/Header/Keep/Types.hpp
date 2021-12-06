@@ -86,7 +86,7 @@ public:
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
 };
 
-#include "AABB.hpp"
+#include "MC/AABB.hpp"
 class BoundingBox {
 public:
     BlockPos bpos1;
@@ -229,10 +229,7 @@ public:
     class Command;
 };
 
-class Automation {
-public:
-    class AutomationClient;
-};
+#include "MC/Automation.hpp"
 
 class ClientBlobCache {
 public:

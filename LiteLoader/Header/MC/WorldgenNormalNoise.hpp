@@ -9,13 +9,7 @@ class WorldgenNormalNoise {
 public:
     /*0*/ virtual ~WorldgenNormalNoise();
     /*1*/ virtual float getValue(float, float, float) const;
-    /*
-    inline float getValue(float a0, float a1, float a2) const{
-        float (WorldgenNormalNoise::*rv)(float, float, float) const;
-        *((void**)&rv) = dlsym("?getValue@WorldgenNormalNoise@@UEBAMMMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<float>(a2));
-    }
-    */
+
 
 protected:
 

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveToBlockGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveToBlockGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (MoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@MoveToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (MoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveToBlockGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (MoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@MoveToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (MoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MoveToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MoveToBlockGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MoveToBlockGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

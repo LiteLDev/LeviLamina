@@ -49,7 +49,7 @@ public:
     /*37*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*38*/ virtual void animateHurt();
     /*39*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*40*/ virtual void __unk_vfn_12();
+    /*40*/ virtual float getPickRadius();
     /*41*/ virtual void awardKillScore(class Actor&, int);
     /*42*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*43*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
@@ -60,36 +60,36 @@ public:
     /*48*/ virtual bool canFreeze() const;
     /*49*/ virtual int getPortalWaitTime() const;
     /*50*/ virtual bool canChangeDimensions() const;
-    /*51*/ virtual void __unk_vfn_13();
+    /*51*/ virtual void __unk_vfn_12();
     /*52*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*53*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*54*/ virtual bool canBePulledIntoVehicle() const;
     /*55*/ virtual bool inCaravan() const;
-    /*56*/ virtual void __unk_vfn_14();
+    /*56*/ virtual void __unk_vfn_13();
     /*57*/ virtual bool canSynchronizeNewEntity() const;
     /*58*/ virtual void buildDebugInfo(std::string&) const;
     /*59*/ virtual int getDeathTime() const;
     /*60*/ virtual void swing();
-    /*61*/ virtual void __unk_vfn_15();
-    /*62*/ virtual void __unk_vfn_16();
+    /*61*/ virtual void __unk_vfn_14();
+    /*62*/ virtual void __unk_vfn_15();
     /*63*/ virtual float getYHeadRot() const;
     /*64*/ virtual bool isWorldBuilder() const;
-    /*65*/ virtual void __unk_vfn_17();
+    /*65*/ virtual void __unk_vfn_16();
     /*66*/ virtual bool isAdventure() const;
     /*67*/ virtual bool getInteraction(class Player&, class ActorInteraction&, class Vec3 const&);
     /*68*/ virtual bool canDestroyBlock(class Block const&) const;
     /*69*/ virtual void setAuxValue(int);
     /*70*/ virtual void setSize(float, float);
     /*71*/ virtual void stopSpinAttack();
-    /*72*/ virtual void __unk_vfn_18();
-    /*73*/ virtual void __unk_vfn_19();
+    /*72*/ virtual void __unk_vfn_17();
+    /*73*/ virtual void __unk_vfn_18();
     /*74*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
-    /*75*/ virtual void __unk_vfn_20();
+    /*75*/ virtual void __unk_vfn_19();
     /*76*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*77*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*78*/ virtual void __unk_vfn_21();
+    /*78*/ virtual void __unk_vfn_20();
     /*79*/ virtual void _onSizeUpdated();
-    /*80*/ virtual void __unk_vfn_22();
+    /*80*/ virtual void __unk_vfn_21();
     /*81*/ virtual void setDir(int);
     /*82*/ virtual int getWidth() const;
     /*83*/ virtual int getHeight() const;
@@ -102,70 +102,10 @@ public:
         *((void**)&rv) = dlsym("?addAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag&>(a0));
     }
-    inline void dropItem(){
-        void (LeashFenceKnotActor::*rv)();
-        *((void**)&rv) = dlsym("?dropItem@LeashFenceKnotActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setDir(int a0){
-        void (LeashFenceKnotActor::*rv)(int);
-        *((void**)&rv) = dlsym("?setDir@LeashFenceKnotActor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
         void (LeashFenceKnotActor::*rv)(class CompoundTag const&, class DataLoadHelper&);
         *((void**)&rv) = dlsym("?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline bool isPickable(){
-        bool (LeashFenceKnotActor::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@LeashFenceKnotActor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (LeashFenceKnotActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@LeashFenceKnotActor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline int getHeight() const{
-        int (LeashFenceKnotActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getHeight@LeashFenceKnotActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getWidth() const{
-        int (LeashFenceKnotActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getWidth@LeashFenceKnotActor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void _onSizeUpdated(){
-        void (LeashFenceKnotActor::*rv)();
-        *((void**)&rv) = dlsym("?_onSizeUpdated@LeashFenceKnotActor@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool getInteraction(class Player& a0, class ActorInteraction& a1, class Vec3 const& a2){
-        bool (LeashFenceKnotActor::*rv)(class Player&, class ActorInteraction&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?getInteraction@LeashFenceKnotActor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class ActorInteraction&>(a1), std::forward<class Vec3 const&>(a2));
-    }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (LeashFenceKnotActor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@LeashFenceKnotActor@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void remove(){
-        void (LeashFenceKnotActor::*rv)();
-        *((void**)&rv) = dlsym("?remove@LeashFenceKnotActor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void teleportTo(class Vec3 const& a0, bool a1, int a2, int a3){
-        void (LeashFenceKnotActor::*rv)(class Vec3 const&, bool, int, int);
-        *((void**)&rv) = dlsym("?teleportTo@LeashFenceKnotActor@@UEAAXAEBVVec3@@_NHH@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<bool>(a1), std::forward<int>(a2), std::forward<int>(a3));
-    }
-    inline bool wouldSurvive(class BlockSource& a0){
-        bool (LeashFenceKnotActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?wouldSurvive@LeashFenceKnotActor@@UEAA_NAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
     MCAPI int numberofAnimalsAttached();

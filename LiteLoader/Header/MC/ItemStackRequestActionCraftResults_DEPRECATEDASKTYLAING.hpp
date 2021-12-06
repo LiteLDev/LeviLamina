@@ -6,14 +6,7 @@
 #undef EXTRA_INCLUDE_PART_ITEMSTACKREQUESTACTIONCRAFTRESULTS_DEPRECATEDASKTYLAING
 class ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING {
 #include "Extra/ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAINGAPI.hpp"
-public:
-    /*0*/ virtual ~ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
-    /*4*/ virtual void _write(class BinaryStream&) const;
-    /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
-    /*
+public:    /*
     inline bool _read(class ReadOnlyBinaryStream& a0){
         bool (ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING::*rv)(class ReadOnlyBinaryStream&);
         *((void**)&rv) = dlsym("?_read@ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING@@MEAA_NAEAVReadOnlyBinaryStream@@@Z");

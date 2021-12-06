@@ -9,13 +9,7 @@ class IdentifierDescription {
 public:
     /*0*/ virtual ~IdentifierDescription();
     /*1*/ virtual char const* getJsonName() const;
-    /*
-    inline char const* getJsonName() const{
-        char const* (IdentifierDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@IdentifierDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

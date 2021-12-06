@@ -19,56 +19,10 @@ public:
     /*8*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*9*/ virtual void _moveToBlock();
     /*10*/ virtual class Vec3 _getTargetPosition() const;
-    /*11*/ virtual void __unk_vfn_3();
+    /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual bool getPOI(int /*enum enum POIType*/);
     /*13*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(int /*enum enum POIType*/) const;
-    /*
-    inline class std::weak_ptr<class POIInstance> _getOwnedPOI(int \/*enum enum POIType*\/ a0) const{
-        class std::weak_ptr<class POIInstance> (MoveToPOIGoal::*rv)(int \/*enum enum POIType*\/) const;
-        *((void**)&rv) = dlsym("?_getOwnedPOI@MoveToPOIGoal@@MEBA?AV?$weak_ptr@VPOIInstance@@@std@@W4POIType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum POIType*\/>(a0));
-    }
-    inline class Vec3 _getTargetPosition() const{
-        class Vec3 (MoveToPOIGoal::*rv)() const;
-        *((void**)&rv) = dlsym("?_getTargetPosition@MoveToPOIGoal@@MEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline void _moveToBlock(){
-        void (MoveToPOIGoal::*rv)();
-        *((void**)&rv) = dlsym("?_moveToBlock@MoveToPOIGoal@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void appendDebugInfo(std::string& a0) const{
-        void (MoveToPOIGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@MoveToPOIGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (MoveToPOIGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@MoveToPOIGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool getPOI(int \/*enum enum POIType*\/ a0){
-        bool (MoveToPOIGoal::*rv)(int \/*enum enum POIType*\/);
-        *((void**)&rv) = dlsym("?getPOI@MoveToPOIGoal@@UEAA_NW4POIType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum POIType*\/>(a0));
-    }
-    inline bool isValidTarget(class BlockSource& a0, class BlockPos const& a1){
-        bool (MoveToPOIGoal::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?isValidTarget@MoveToPOIGoal@@UEAA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline void stop(){
-        void (MoveToPOIGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@MoveToPOIGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (MoveToPOIGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@MoveToPOIGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
     MCAPI bool _canReachPOI(class Vec3 const&, float, bool);

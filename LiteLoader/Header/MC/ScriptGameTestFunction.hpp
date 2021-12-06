@@ -10,18 +10,7 @@ public:
     /*0*/ virtual ~ScriptGameTestFunction();
     /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper&) const;
     /*2*/ virtual class std::optional<struct gametest::GameTestError> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
-    /*
-    inline std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper& a0) const{
-        std::unique_ptr<class gametest::IGameTestFunctionContext> (ScriptGameTestFunction::*rv)(class gametest::BaseGameTestHelper&) const;
-        *((void**)&rv) = dlsym("?createContext@ScriptGameTestFunction@@UEBA?AV?$unique_ptr@VIGameTestFunctionContext@gametest@@U?$default_delete@VIGameTestFunctionContext@gametest@@@std@@@std@@AEAVBaseGameTestHelper@gametest@@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestHelper&>(a0));
-    }
-    inline class std::optional<struct gametest::GameTestError> run(class gametest::BaseGameTestHelper& a0, class gametest::IGameTestFunctionContext& a1) const{
-        class std::optional<struct gametest::GameTestError> (ScriptGameTestFunction::*rv)(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
-        *((void**)&rv) = dlsym("?run@ScriptGameTestFunction@@UEBA?AV?$optional@UGameTestError@gametest@@@std@@AEAVBaseGameTestHelper@gametest@@AEAVIGameTestFunctionContext@5@@Z");
-        return (this->*rv)(std::forward<class gametest::BaseGameTestHelper&>(a0), std::forward<class gametest::IGameTestFunctionContext&>(a1));
-    }
-    */
+
 
 protected:
 

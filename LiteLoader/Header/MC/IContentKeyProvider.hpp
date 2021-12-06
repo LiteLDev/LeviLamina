@@ -8,18 +8,10 @@ class IContentKeyProvider {
 #include "Extra/IContentKeyProviderAPI.hpp"
 public:
     /*0*/ virtual ~IContentKeyProvider();
-    /*
-    inline bool requireEncryptedReads() const{
-        bool (IContentKeyProvider::*rv)() const;
-        *((void**)&rv) = dlsym("?requireEncryptedReads@IContentKeyProvider@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::string getAlternateContentKey(class ContentIdentity const& a0) const{
-        std::string (IContentKeyProvider::*rv)(class ContentIdentity const&) const;
-        *((void**)&rv) = dlsym("?getAlternateContentKey@IContentKeyProvider@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVContentIdentity@@@Z");
-        return (this->*rv)(std::forward<class ContentIdentity const&>(a0));
-    }
-    */
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
+    /*3*/ virtual bool requireEncryptedReads() const;
+
 
 protected:
 

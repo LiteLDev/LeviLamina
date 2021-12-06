@@ -8,20 +8,9 @@ class BackgroundWorker {
 #include "Extra/BackgroundWorkerAPI.hpp"
 public:
     /*0*/ virtual ~BackgroundWorker();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual bool isAsync() const;
     /*2*/ virtual bool canTaskRunAgain() const;
-    /*
-    inline bool isAsync() const{
-        bool (BackgroundWorker::*rv)() const;
-        *((void**)&rv) = dlsym("?isAsync@BackgroundWorker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canTaskRunAgain() const{
-        bool (BackgroundWorker::*rv)() const;
-        *((void**)&rv) = dlsym("?canTaskRunAgain@BackgroundWorker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;
     MCAPI bool isIdle() const;
@@ -37,4 +26,5 @@ protected:
 private:
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
+    MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
 };

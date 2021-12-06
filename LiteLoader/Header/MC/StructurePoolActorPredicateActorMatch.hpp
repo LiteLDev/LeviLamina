@@ -8,13 +8,8 @@ class StructurePoolActorPredicateActorMatch {
 #include "Extra/StructurePoolActorPredicateActorMatchAPI.hpp"
 public:
     /*0*/ virtual ~StructurePoolActorPredicateActorMatch();
-    /*
-    inline bool test(std::string const& a0) const{
-        bool (StructurePoolActorPredicateActorMatch::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?test@StructurePoolActorPredicateActorMatch@@UEBA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    */
+    /*1*/ virtual bool test(std::string const&) const;
+
 
 protected:
 

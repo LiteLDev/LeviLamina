@@ -11,19 +11,8 @@ public:
     /*0*/ virtual ~AbsorptionMobEffect();
     /*1*/ virtual void applyEffects(class Actor*, int, int) const;
     /*2*/ virtual void removeEffects(class Actor*);
-    /*3*/ virtual void __unk_vfn_0();
-    /*
-    inline void applyEffects(class Actor* a0, int a1, int a2) const{
-        void (AbsorptionMobEffect::*rv)(class Actor*, int, int) const;
-        *((void**)&rv) = dlsym("?applyEffects@AbsorptionMobEffect@@UEBAXPEAVActor@@HH@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline void removeEffects(class Actor* a0){
-        void (AbsorptionMobEffect::*rv)(class Actor*);
-        *((void**)&rv) = dlsym("?removeEffects@AbsorptionMobEffect@@UEAAXPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
-    }
-    */
+    /*3*/ virtual bool isInstantaneous() const;
+
 
 protected:
 

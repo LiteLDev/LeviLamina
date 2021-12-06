@@ -24,22 +24,22 @@ public:
     /*14*/ virtual void __unk_vfn_13();
     /*15*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_16();
-    /*18*/ virtual void __unk_vfn_17();
-    /*19*/ virtual void __unk_vfn_18();
+    /*17*/ virtual int /*enum enum EducationEditionOffer*/ getEducationEditionOffering() const;
+    /*18*/ virtual void __unk_vfn_16();
+    /*19*/ virtual void __unk_vfn_17();
     /*20*/ virtual bool supports3DExport() const;
-    /*21*/ virtual void __unk_vfn_19();
+    /*21*/ virtual void __unk_vfn_18();
     /*22*/ virtual struct ConnectionDefinition getConnectionDefinition() const;
-    /*23*/ virtual void __unk_vfn_20();
-    /*24*/ virtual void __unk_vfn_21();
-    /*25*/ virtual void __unk_vfn_22();
-    /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual void __unk_vfn_24();
-    /*28*/ virtual void __unk_vfn_25();
-    /*29*/ virtual void __unk_vfn_26();
+    /*23*/ virtual void __unk_vfn_19();
+    /*24*/ virtual void __unk_vfn_20();
+    /*25*/ virtual void __unk_vfn_21();
+    /*26*/ virtual void __unk_vfn_22();
+    /*27*/ virtual void __unk_vfn_23();
+    /*28*/ virtual void __unk_vfn_24();
+    /*29*/ virtual void __unk_vfn_25();
     /*30*/ virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
     /*31*/ virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
-    /*32*/ virtual void __unk_vfn_27();
+    /*32*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
     /*33*/ virtual std::string getFeedbackURL() const;
     /*
     inline bool areQuizzesSupported() const{
@@ -122,11 +122,6 @@ public:
         *((void**)&rv) = dlsym("?worldsAreSingleUse@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum EducationEditionOffer*\/ getEducationEditionOffering() const{
-        int \/*enum enum EducationEditionOffer*\/ (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?getEducationEditionOffering@AppConfigs@@UEBA?AW4EducationEditionOffer@@XZ");
-        return (this->*rv)();
-    }
     inline void setCanAccessWorldCallback(class IMinecraftGame& a0){
         void (AppConfigs::*rv)(class IMinecraftGame&);
         *((void**)&rv) = dlsym("?setCanAccessWorldCallback@AppConfigs@@UEAAXAEAVIMinecraftGame@@@Z");
@@ -180,36 +175,6 @@ public:
     inline bool isCoursesCacheEnabled() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?isCoursesCacheEnabled@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager& a0) const{
-        std::unique_ptr<class IContentAccessibilityProvider> (AppConfigs::*rv)(class IEntitlementManager&) const;
-        *((void**)&rv) = dlsym("?createContentAccessibility@AppConfigs@@UEBA?AV?$unique_ptr@VIContentAccessibilityProvider@@U?$default_delete@VIContentAccessibilityProvider@@@std@@@std@@AEAVIEntitlementManager@@@Z");
-        return (this->*rv)(std::forward<class IEntitlementManager&>(a0));
-    }
-    inline std::vector<struct PackIdVersion> getAdditionalClientPacks(bool a0) const{
-        std::vector<struct PackIdVersion> (AppConfigs::*rv)(bool) const;
-        *((void**)&rv) = dlsym("?getAdditionalClientPacks@AppConfigs@@UEBA?AV?$vector@UPackIdVersion@@V?$allocator@UPackIdVersion@@@std@@@std@@_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline struct ConnectionDefinition getConnectionDefinition() const{
-        struct ConnectionDefinition (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?getConnectionDefinition@AppConfigs@@UEBA?AUConnectionDefinition@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getFeedbackURL() const{
-        std::string (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?getFeedbackURL@AppConfigs@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const& a0) const{
-        std::unique_ptr<class IScreenCapabilities> (AppConfigs::*rv)(std::string const&) const;
-        *((void**)&rv) = dlsym("?getScreenCapabilities@AppConfigs@@UEBA?AV?$unique_ptr@VIScreenCapabilities@@U?$default_delete@VIScreenCapabilities@@@std@@@std@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@3@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline bool supports3DExport() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?supports3DExport@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

@@ -9,10 +9,10 @@ class CartographyContainerManagerModel : public ContainerManagerModel {
 #include "Extra/CartographyContainerManagerModelAPI.hpp"
 public:
     /*0*/ virtual ~CartographyContainerManagerModel();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
+    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
+    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
+    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
@@ -20,43 +20,7 @@ public:
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline void setData(int a0, int a1){
-        void (CartographyContainerManagerModel::*rv)(int, int);
-        *((void**)&rv) = dlsym("?setData@CartographyContainerManagerModel@@UEAAXHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline void broadcastChanges(){
-        void (CartographyContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?broadcastChanges@CartographyContainerManagerModel@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class ContainerScreenContext _postInit(){
-        class ContainerScreenContext (CartographyContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?_postInit@CartographyContainerManagerModel@@MEAA?AVContainerScreenContext@@XZ");
-        return (this->*rv)();
-    }
-    inline std::vector<class ItemStack> getItemCopies() const{
-        std::vector<class ItemStack> (CartographyContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemCopies@CartographyContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class ItemStack const& getSlot(int a0) const{
-        class ItemStack const& (CartographyContainerManagerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getSlot@CartographyContainerManagerModel@@UEBAAEBVItemStack@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isValid(float a0){
-        bool (CartographyContainerManagerModel::*rv)(float);
-        *((void**)&rv) = dlsym("?isValid@CartographyContainerManagerModel@@UEAA_NM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void setSlot(int a0, class ItemStack const& a1, bool a2){
-        void (CartographyContainerManagerModel::*rv)(int, class ItemStack const&, bool);
-        *((void**)&rv) = dlsym("?setSlot@CartographyContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<bool>(a2));
-    }
-    */
+
 
 protected:
 

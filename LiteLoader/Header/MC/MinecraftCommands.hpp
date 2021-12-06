@@ -9,7 +9,7 @@ class MinecraftCommands {
 public:
     /*0*/ virtual ~MinecraftCommands();
 
-    MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void (std::string const&)>);
+    MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void (std::string const& )>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     MCAPI class CommandRegistry& getRegistry();
     MCAPI void handleOutput(class CommandOrigin const&, class CommandOutput const&) const;
@@ -18,7 +18,7 @@ public:
     MCAPI struct MCRESULT requestCommandExecution(std::unique_ptr<class CommandOrigin>, std::string const&, int, bool) const;
     MCAPI void runCommand(class Command&, class CommandOrigin&);
     MCAPI void runCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion);
-    MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const&)>) const;
+    MCAPI void setRegistryNetworkUpdateCallback(class std::function<void (class Packet const& )>) const;
     MCAPI static enum CommandOutputType getOutputType(class CommandOrigin const&);
     MCAPI static void initBlockEnum(class CommandRegistry&, class BaseGameVersion const&);
     MCAPI static void initItemEnum(class CommandRegistry&, class BaseGameVersion const&);

@@ -16,11 +16,6 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (ReceiveLoveGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@ReceiveLoveGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
     inline bool canUse(){
         bool (ReceiveLoveGoal::*rv)();
         *((void**)&rv) = dlsym("?canUse@ReceiveLoveGoal@@UEAA_NXZ");
@@ -29,11 +24,6 @@ public:
     inline bool canContinueToUse(){
         bool (ReceiveLoveGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@ReceiveLoveGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (ReceiveLoveGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@ReceiveLoveGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

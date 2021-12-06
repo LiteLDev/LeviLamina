@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~ScriptEventDataBinderComponent();
     /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
     /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
-    /*
-    inline bool deserialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle const& a1){
-        bool (ScriptEventDataBinderComponent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
-        *((void**)&rv) = dlsym("?deserialize@ScriptEventDataBinderComponent@@UEAA_NAEAVScriptEngine@@AEBVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle const&>(a1));
-    }
-    inline bool serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle const& a1) const{
-        bool (ScriptEventDataBinderComponent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
-        *((void**)&rv) = dlsym("?serialize@ScriptEventDataBinderComponent@@UEBA_NAEAVScriptEngine@@AEBVScriptObjectHandle@ScriptApi@@@Z");
-        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle const&>(a1));
-    }
-    */
+
     MCAPI static std::string const TAG;
 
 protected:

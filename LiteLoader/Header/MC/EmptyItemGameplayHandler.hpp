@@ -8,13 +8,8 @@ class EmptyItemGameplayHandler {
 #include "Extra/EmptyItemGameplayHandlerAPI.hpp"
 public:
     /*0*/ virtual ~EmptyItemGameplayHandler();
-    /*
-    inline int \/*enum enum HandlerResult*\/ handleShapedRecipeTriggered(struct ShapedRecipeTriggeredEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (EmptyItemGameplayHandler::*rv)(struct ShapedRecipeTriggeredEvent const&);
-        *((void**)&rv) = dlsym("?handleShapedRecipeTriggered@EmptyItemGameplayHandler@@UEAA?AW4HandlerResult@@AEBUShapedRecipeTriggeredEvent@@@Z");
-        return (this->*rv)(std::forward<struct ShapedRecipeTriggeredEvent const&>(a0));
-    }
-    */
+    /*1*/ virtual int /*enum enum HandlerResult*/ handleShapedRecipeTriggered(struct ShapedRecipeTriggeredEvent const&);
+
 
 protected:
 

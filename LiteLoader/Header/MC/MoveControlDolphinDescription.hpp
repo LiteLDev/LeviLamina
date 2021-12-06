@@ -10,13 +10,7 @@ class MoveControlDolphinDescription {
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~MoveControlDolphinDescription();
-    /*
-    inline char const* getJsonName() const{
-        char const* (MoveControlDolphinDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@MoveControlDolphinDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

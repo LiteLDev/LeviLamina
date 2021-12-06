@@ -11,18 +11,7 @@ public:
     /*0*/ virtual ~NetherFortressFeature();
     /*1*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
     /*2*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-    /*
-    inline std::unique_ptr<class StructureStart> createStructureStart(class Dimension& a0, class BiomeSource const& a1, class Random& a2, class ChunkPos const& a3, class IPreliminarySurfaceProvider const& a4){
-        std::unique_ptr<class StructureStart> (NetherFortressFeature::*rv)(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-        *((void**)&rv) = dlsym("?createStructureStart@NetherFortressFeature@@MEAA?AV?$unique_ptr@VStructureStart@@U?$default_delete@VStructureStart@@@std@@@std@@AEAVDimension@@AEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@AEBVIPreliminarySurfaceProvider@@@Z");
-        return (this->*rv)(std::forward<class Dimension&>(a0), std::forward<class BiomeSource const&>(a1), std::forward<class Random&>(a2), std::forward<class ChunkPos const&>(a3), std::forward<class IPreliminarySurfaceProvider const&>(a4));
-    }
-    inline bool isFeatureChunk(class BiomeSource const& a0, class Random& a1, class ChunkPos const& a2, unsigned int a3, class IPreliminarySurfaceProvider const& a4){
-        bool (NetherFortressFeature::*rv)(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
-        *((void**)&rv) = dlsym("?isFeatureChunk@NetherFortressFeature@@MEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@@Z");
-        return (this->*rv)(std::forward<class BiomeSource const&>(a0), std::forward<class Random&>(a1), std::forward<class ChunkPos const&>(a2), std::forward<unsigned int>(a3), std::forward<class IPreliminarySurfaceProvider const&>(a4));
-    }
-    */
+
     MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
 protected:

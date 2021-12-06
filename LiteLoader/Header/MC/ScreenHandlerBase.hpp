@@ -8,12 +8,9 @@ class ScreenHandlerBase {
 #include "Extra/ScreenHandlerBaseAPI.hpp"
 public:
     /*0*/ virtual ~ScreenHandlerBase();
+    /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    /*2*/ virtual int /*enum enum ItemStackNetResult*/ endRequest();
     /*
-    inline int \/*enum enum ItemStackNetResult*\/ endRequest(){
-        int \/*enum enum ItemStackNetResult*\/ (ScreenHandlerBase::*rv)();
-        *((void**)&rv) = dlsym("?endRequest@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@XZ");
-        return (this->*rv)();
-    }
     inline void postRequest(bool a0){
         void (ScreenHandlerBase::*rv)(bool);
         *((void**)&rv) = dlsym("?postRequest@ScreenHandlerBase@@UEAAX_N@Z");
@@ -23,11 +20,6 @@ public:
         void (ScreenHandlerBase::*rv)();
         *((void**)&rv) = dlsym("?endRequestBatch@ScreenHandlerBase@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline int \/*enum enum ItemStackNetResult*\/ handleAction(class ItemStackRequestAction const& a0){
-        int \/*enum enum ItemStackNetResult*\/ (ScreenHandlerBase::*rv)(class ItemStackRequestAction const&);
-        *((void**)&rv) = dlsym("?handleAction@ScreenHandlerBase@@UEAA?AW4ItemStackNetResult@@AEBVItemStackRequestAction@@@Z");
-        return (this->*rv)(std::forward<class ItemStackRequestAction const&>(a0));
     }
     */
 

@@ -9,13 +9,7 @@ class UseActorNode {
 public:
     /*0*/ virtual ~UseActorNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
-    /*
-    inline int \/*enum enum BehaviorStatus*\/ tick(class Actor& a0){
-        int \/*enum enum BehaviorStatus*\/ (UseActorNode::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?tick@UseActorNode@@UEAA?AW4BehaviorStatus@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    */
+
 
 protected:
 

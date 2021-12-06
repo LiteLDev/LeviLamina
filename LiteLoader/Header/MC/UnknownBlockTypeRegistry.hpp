@@ -9,13 +9,7 @@ class UnknownBlockTypeRegistry {
 public:
     /*0*/ virtual ~UnknownBlockTypeRegistry();
     /*1*/ virtual class Block const& getUnknownBlock(class CompoundTag const&);
-    /*
-    inline class Block const& getUnknownBlock(class CompoundTag const& a0){
-        class Block const& (UnknownBlockTypeRegistry::*rv)(class CompoundTag const&);
-        *((void**)&rv) = dlsym("?getUnknownBlock@UnknownBlockTypeRegistry@@UEAAAEBVBlock@@AEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
-    }
-    */
+
 
 protected:
 

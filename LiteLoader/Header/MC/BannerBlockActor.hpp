@@ -20,57 +20,26 @@ public:
     /*9*/ virtual void __unk_vfn_0();
     /*10*/ virtual void onRemoved(class BlockSource&);
     /*11*/ virtual void triggerEvent(int, int);
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual void __unk_vfn_2();
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
+    /*12*/ virtual void clearCache();
+    /*13*/ virtual void __unk_vfn_1();
+    /*14*/ virtual float getShadowRadius(class BlockSource&) const;
+    /*15*/ virtual bool hasAlphaLayer() const;
     /*16*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
-    /*17*/ virtual void __unk_vfn_5();
+    /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string getName() const;
     /*19*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int getRepairCost() const;
     /*21*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*22*/ virtual void __unk_vfn_7();
-    /*23*/ virtual void __unk_vfn_8();
-    /*24*/ virtual void __unk_vfn_9();
-    /*25*/ virtual void __unk_vfn_10();
-    /*26*/ virtual void __unk_vfn_11();
-    /*27*/ virtual void __unk_vfn_12();
+    /*22*/ virtual void __unk_vfn_2();
+    /*23*/ virtual void __unk_vfn_3();
+    /*24*/ virtual float getDeletionDelayTimeSeconds() const;
+    /*25*/ virtual void __unk_vfn_4();
+    /*26*/ virtual void __unk_vfn_5();
+    /*27*/ virtual void __unk_vfn_6();
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-    /*
-    inline std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource& a0){
-        std::unique_ptr<class BlockActorDataPacket> (BannerBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?_getUpdatePacket@BannerBlockActor@@MEAA?AV?$unique_ptr@VBlockActorDataPacket@@U?$default_delete@VBlockActorDataPacket@@@std@@@std@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline void _onUpdatePacket(class CompoundTag const& a0, class BlockSource& a1){
-        void (BannerBlockActor::*rv)(class CompoundTag const&, class BlockSource&);
-        *((void**)&rv) = dlsym("?_onUpdatePacket@BannerBlockActor@@MEAAXAEBVCompoundTag@@AEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class BlockSource&>(a1));
-    }
-    inline void load(class Level& a0, class CompoundTag const& a1, class DataLoadHelper& a2){
-        void (BannerBlockActor::*rv)(class Level&, class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?load@BannerBlockActor@@UEAAXAEAVLevel@@AEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class Level&>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class DataLoadHelper&>(a2));
-    }
-    inline void onPlace(class BlockSource& a0){
-        void (BannerBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onPlace@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline bool save(class CompoundTag& a0) const{
-        bool (BannerBlockActor::*rv)(class CompoundTag&) const;
-        *((void**)&rv) = dlsym("?save@BannerBlockActor@@UEBA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void tick(class BlockSource& a0){
-        void (BannerBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?tick@BannerBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
+
     MCAPI unsigned char getBaseColorInt() const;
     MCAPI void setItemValues(class ItemStackBase const&);
     MCAPI static int const MAX_PATTERNS;

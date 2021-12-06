@@ -29,16 +29,16 @@ public:
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual void __unk_vfn_6();
+    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
     /*24*/ virtual int getAttackDamage() const;
     /*25*/ virtual bool isHandEquipped() const;
     /*26*/ virtual bool isGlint(class ItemStackBase const&) const;
-    /*27*/ virtual void __unk_vfn_7();
-    /*28*/ virtual void __unk_vfn_8();
-    /*29*/ virtual void __unk_vfn_9();
+    /*27*/ virtual void __unk_vfn_6();
+    /*28*/ virtual int getPatternIndex() const;
+    /*29*/ virtual void __unk_vfn_7();
     /*30*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*31*/ virtual bool canDestroyInCreative() const;
     /*32*/ virtual bool isDestructive(int) const;
@@ -49,22 +49,22 @@ public:
     /*37*/ virtual int getEnchantSlot() const;
     /*38*/ virtual int getEnchantValue() const;
     /*39*/ virtual int getArmorValue() const;
-    /*40*/ virtual void __unk_vfn_10();
+    /*40*/ virtual void __unk_vfn_8();
     /*41*/ virtual bool isValidAuxValue(int) const;
-    /*42*/ virtual void __unk_vfn_11();
-    /*43*/ virtual void __unk_vfn_12();
-    /*44*/ virtual void __unk_vfn_13();
-    /*45*/ virtual void __unk_vfn_14();
+    /*42*/ virtual float getViewDamping() const;
+    /*43*/ virtual void __unk_vfn_9();
+    /*44*/ virtual void __unk_vfn_10();
+    /*45*/ virtual void __unk_vfn_11();
     /*46*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*47*/ virtual bool hasCustomColor(class CompoundTag const*) const;
-    /*48*/ virtual void __unk_vfn_15();
-    /*49*/ virtual void clearColor(class CompoundTag*) const;
-    /*50*/ virtual void __unk_vfn_16();
-    /*51*/ virtual void __unk_vfn_17();
-    /*52*/ virtual void __unk_vfn_18();
-    /*53*/ virtual void __unk_vfn_19();
-    /*54*/ virtual void __unk_vfn_20();
-    /*55*/ virtual void __unk_vfn_21();
+    /*48*/ virtual void __unk_vfn_12();
+    /*49*/ virtual void clearColor(class ItemStackBase&) const;
+    /*50*/ virtual void clearColor(class CompoundTag*) const;
+    /*51*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*52*/ virtual void __unk_vfn_13();
+    /*53*/ virtual void __unk_vfn_14();
+    /*54*/ virtual void __unk_vfn_15();
+    /*55*/ virtual void __unk_vfn_16();
     /*56*/ virtual bool canUseOnSimTick() const;
     /*57*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*58*/ virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
@@ -72,14 +72,14 @@ public:
     /*60*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*61*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*62*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*63*/ virtual void __unk_vfn_22();
+    /*63*/ virtual void __unk_vfn_17();
     /*64*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*65*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
     /*66*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*67*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*68*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*69*/ virtual void __unk_vfn_23();
-    /*70*/ virtual void __unk_vfn_24();
+    /*69*/ virtual void __unk_vfn_18();
+    /*70*/ virtual void __unk_vfn_19();
     /*71*/ virtual bool validFishInteraction(int) const;
     /*72*/ virtual std::string getInteractText(class Player const&) const;
     /*73*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
@@ -89,41 +89,10 @@ public:
     /*77*/ virtual class Item& setIcon(std::string const&, int);
     /*78*/ virtual bool canBeCharged() const;
     /*79*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
-    /*80*/ virtual void __unk_vfn_25();
+    /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual std::string getAuxValuesDescription() const;
     /*82*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*
-    inline bool isHandEquipped() const{
-        bool (SparklerItem::*rv)() const;
-        *((void**)&rv) = dlsym("?isHandEquipped@SparklerItem@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline struct Brightness getLightEmission(int a0) const{
-        struct Brightness (SparklerItem::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getLightEmission@SparklerItem@@UEBA?AUBrightness@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline std::string buildDescriptionId(class ItemDescriptor const& a0, class CompoundTag const* a1) const{
-        std::string (SparklerItem::*rv)(class ItemDescriptor const&, class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?buildDescriptionId@SparklerItem@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemDescriptor@@PEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class ItemDescriptor const&>(a0), std::forward<class CompoundTag const*>(a1));
-    }
-    inline struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const& a0, int a1, bool a2) const{
-        struct TextureUVCoordinateSet const& (SparklerItem::*rv)(class ItemStackBase const&, int, bool) const;
-        *((void**)&rv) = dlsym("?getIcon@SparklerItem@@UEBAAEBUTextureUVCoordinateSet@@AEBVItemStackBase@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline bool inventoryTick(class ItemStack& a0, class Level& a1, class Actor& a2, int a3, bool a4) const{
-        bool (SparklerItem::*rv)(class ItemStack&, class Level&, class Actor&, int, bool) const;
-        *((void**)&rv) = dlsym("?inventoryTick@SparklerItem@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Level&>(a1), std::forward<class Actor&>(a2), std::forward<int>(a3), std::forward<bool>(a4));
-    }
-    inline class Item& setIcon(std::string const& a0, int a1){
-        class Item& (SparklerItem::*rv)(std::string const&, int);
-        *((void**)&rv) = dlsym("?setIcon@SparklerItem@@UEAAAEAVItem@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int>(a1));
-    }
-    */
+
     MCAPI static struct SparklerItem::ColorInfo const* const const COLORS;
     MCAPI static int const MAX_ACTIVE_TICKS;
 

@@ -45,7 +45,7 @@ public:
     /*34*/ virtual float getYawSpeedInDegreesPerSecond() const;
     /*35*/ virtual float getInterpolatedWalkAnimSpeed(float) const;
     /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*37*/ virtual void checkBlockCollisions(class AABB const&, class std::function<void (class BlockSource&, class Block const&, class BlockPos const&, class Actor&)>);
+    /*37*/ virtual void checkBlockCollisions(class AABB const&, class std::function<void (class BlockSource& , class Block const& , class BlockPos const& , class Actor& )>);
     /*38*/ virtual void updateEntityInside(class AABB const&);
     /*39*/ virtual void updateEntityInside();
     /*40*/ virtual bool isFireImmune() const;
@@ -151,7 +151,7 @@ public:
     /*140*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*141*/ virtual void feed(int);
     /*142*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
-    /*143*/ virtual void __unk_vfn_12();
+    /*143*/ virtual float getPickRadius();
     /*144*/ virtual class HashedString const& getActorRendererId() const;
     /*145*/ virtual class ItemActor* spawnAtLocation(int, int);
     /*146*/ virtual class ItemActor* spawnAtLocation(int, int, float);
@@ -163,7 +163,7 @@ public:
     /*152*/ virtual void awardKillScore(class Actor&, int);
     /*153*/ virtual void setArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
     /*154*/ virtual class ItemStack const& getArmor(int /*enum enum ArmorSlot*/) const;
-    /*155*/ virtual std::vector<class ItemStack const*> getAllArmor() const;
+    /*155*/ virtual std::vector<class ItemStack const* > getAllArmor() const;
     /*156*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*157*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
     /*158*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
@@ -190,7 +190,7 @@ public:
     /*179*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /*181*/ virtual bool canChangeDimensions() const;
-    /*182*/ virtual void __unk_vfn_13();
+    /*182*/ virtual void __unk_vfn_12();
     /*183*/ virtual void changeDimension(class AutomaticID<class Dimension, int>, bool);
     /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*185*/ virtual void checkFallDamage(float, bool);
@@ -204,7 +204,7 @@ public:
     /*193*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual bool inCaravan() const;
-    /*196*/ virtual void __unk_vfn_14();
+    /*196*/ virtual void __unk_vfn_13();
     /*197*/ virtual void tickLeash();
     /*198*/ virtual void sendMotionPacketIfNeeded();
     /*199*/ virtual bool canSynchronizeNewEntity() const;
@@ -229,14 +229,14 @@ public:
     /*218*/ virtual void openContainerComponent(class Player&);
     /*219*/ virtual void swing();
     /*220*/ virtual void useItem(class ItemStackBase&, int /*enum enum ItemUseMethod*/, bool);
-    /*221*/ virtual void __unk_vfn_15();
-    /*222*/ virtual void __unk_vfn_16();
+    /*221*/ virtual void __unk_vfn_14();
+    /*222*/ virtual void __unk_vfn_15();
     /*223*/ virtual void getDebugText(std::vector<std::string>&);
     /*224*/ virtual float getMapDecorationRotation() const;
     /*225*/ virtual float getPassengerYRotation(class Actor const&) const;
     /*226*/ virtual float getYHeadRot() const;
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_17();
+    /*228*/ virtual void __unk_vfn_16();
     /*229*/ virtual bool isAdventure() const;
     /*230*/ virtual bool add(class ItemStack&);
     /*231*/ virtual bool drop(class ItemStack const&, bool);
@@ -250,10 +250,10 @@ public:
     /*239*/ virtual void startSpinAttack();
     /*240*/ virtual void stopSpinAttack();
     /*241*/ virtual void setDamageNearbyMobs(bool);
-    /*242*/ virtual void __unk_vfn_18();
+    /*242*/ virtual void __unk_vfn_17();
     /*243*/ virtual void reloadLootTable();
     /*244*/ virtual void reloadLootTable(struct EquipmentTableDefinition const&);
-    /*245*/ virtual void __unk_vfn_19();
+    /*245*/ virtual void __unk_vfn_18();
     /*246*/ virtual void kill();
     /*247*/ virtual void die(class ActorDamageSource const&);
     /*248*/ virtual bool shouldDropDeathLoot() const;
@@ -265,7 +265,7 @@ public:
     /*254*/ virtual void interpolatorTick();
     /*255*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
     /*256*/ virtual bool shouldTryMakeStepSound();
-    /*257*/ virtual void __unk_vfn_20();
+    /*257*/ virtual void __unk_vfn_19();
     /*258*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*259*/ virtual void markHurt();
     /*260*/ virtual class AnimationComponent& _getAnimationComponent(class std::shared_ptr<class AnimationComponent>&, int /*enum enum AnimationComponentGroup*/);
@@ -273,7 +273,7 @@ public:
     /*262*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*263*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
     /*264*/ virtual void _playFlySound(class BlockPos const&, class Block const&);
-    /*265*/ virtual void __unk_vfn_21();
+    /*265*/ virtual void __unk_vfn_20();
     /*266*/ virtual void checkInsideBlocks(float);
     /*267*/ virtual void pushOutOfBlocks(class Vec3 const&);
     /*268*/ virtual bool updateWaterState();
@@ -288,19 +288,9 @@ public:
         *((void**)&rv) = dlsym("?canSeeInvisible@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool inCaravan() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?inCaravan@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isCreative() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isCreative@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBlocking() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isBlocking@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isCreativeModeAllowed(){
@@ -308,29 +298,9 @@ public:
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool canFreeze() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canFreeze@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isWorldBuilder() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isWorldBuilder@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isPickable(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isLocalPlayer() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isAdventure() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isAdventure@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isLeashableType(){
@@ -358,21 +328,6 @@ public:
         *((void**)&rv) = dlsym("?_makeFlySound@Actor@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canBePulledIntoVehicle() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDamageBlocked(class ActorDamageSource const& a0) const{
-        bool (Actor::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isDamageBlocked@Actor@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool isJumping() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isJumping@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isPlayer() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isPlayer@Actor@@UEBA_NXZ");
@@ -388,16 +343,6 @@ public:
         *((void**)&rv) = dlsym("?interactPreventDefault@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool isSleeping() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isSleeping@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline int getDeathTime() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getDeathTime@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline int getOutputSignal() const{
         int (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getOutputSignal@Actor@@UEBAHXZ");
@@ -408,24 +353,9 @@ public:
         *((void**)&rv) = dlsym("?findAttackTarget@Actor@@UEAAPEAV1@XZ");
         return (this->*rv)();
     }
-    inline int getPortalWaitTime() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPortalWaitTime@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void onFailedTame(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?onFailedTame@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void _onSizeUpdated(){
         void (Actor::*rv)();
         *((void**)&rv) = dlsym("?_onSizeUpdated@Actor@@EEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void animateHurt(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?animateHurt@Actor@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
@@ -433,130 +363,35 @@ public:
         *((void**)&rv) = dlsym("?reloadHardcoded@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
         return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
-    inline void awardKillScore(class Actor& a0, int a1){
-        void (Actor::*rv)(class Actor&, int);
-        *((void**)&rv) = dlsym("?awardKillScore@Actor@@UEAAXAEAV1@H@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<int>(a1));
-    }
-    inline void playerTouch(class Player& a0){
-        void (Actor::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?playerTouch@Actor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void swing(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?swing@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void vehicleLanded(class Vec3 const& a0, class Vec3 const& a1){
-        void (Actor::*rv)(class Vec3 const&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?vehicleLanded@Actor@@UEAAXAEBVVec3@@0@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<class Vec3 const&>(a1));
-    }
     inline void changeDimension(class ChangeDimensionPacket const& a0){
         void (Actor::*rv)(class ChangeDimensionPacket const&);
         *((void**)&rv) = dlsym("?changeDimension@Actor@@UEAAXAEBVChangeDimensionPacket@@@Z");
         return (this->*rv)(std::forward<class ChangeDimensionPacket const&>(a0));
-    }
-    inline void buildDebugInfo(std::string& a0) const{
-        void (Actor::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?buildDebugInfo@Actor@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline void stopSpinAttack(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?stopSpinAttack@Actor@@UEAAXXZ");
-        return (this->*rv)();
     }
     inline void renderDebugServerState(class Options const& a0){
         void (Actor::*rv)(class Options const&);
         *((void**)&rv) = dlsym("?renderDebugServerState@Actor@@UEAAXAEBVOptions@@@Z");
         return (this->*rv)(std::forward<class Options const&>(a0));
     }
-    inline void setAuxValue(int a0){
-        void (Actor::*rv)(int);
-        *((void**)&rv) = dlsym("?setAuxValue@Actor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void onTame(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?onTame@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setSleeping(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSleeping@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void onBounceStarted(class BlockPos const& a0, class Block const& a1){
-        void (Actor::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?onBounceStarted@Actor@@UEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
     inline void _doAutoAttackOnTouch(class Actor& a0){
         void (Actor::*rv)(class Actor&);
         *((void**)&rv) = dlsym("?_doAutoAttackOnTouch@Actor@@EEAAXAEAV1@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void adjustDamageAmount(int& a0) const{
-        void (Actor::*rv)(int&) const;
-        *((void**)&rv) = dlsym("?adjustDamageAmount@Actor@@UEBAXAEAH@Z");
-        return (this->*rv)(std::forward<int&>(a0));
-    }
-    inline void setEquippedSlot(int \/*enum enum EquipmentSlot*\/ a0, class ItemStack const& a1){
-        void (Actor::*rv)(int \/*enum enum EquipmentSlot*\/, class ItemStack const&);
-        *((void**)&rv) = dlsym("?setEquippedSlot@Actor@@UEAAXW4EquipmentSlot@@AEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum EquipmentSlot*\/>(a0), std::forward<class ItemStack const&>(a1));
     }
     inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
         void (Actor::*rv)(class RenderParams&);
         *((void**)&rv) = dlsym("?updateEntitySpecificMolangVariables@Actor@@MEAAXAEAVRenderParams@@@Z");
         return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
-    inline bool canSynchronizeNewEntity() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canSynchronizeNewEntity@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canChangeDimensions() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canChangeDimensions@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canDestroyBlock(class Block const& a0) const{
-        bool (Actor::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?canDestroyBlock@Actor@@UEBA_NAEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline bool isValidTarget(class Actor* a0) const{
-        bool (Actor::*rv)(class Actor*) const;
-        *((void**)&rv) = dlsym("?isValidTarget@Actor@@UEBA_NPEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
-    }
     inline bool canExistInPeaceful() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?canExistInPeaceful@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isRuntimePredictedMovementEnabled() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isRuntimePredictedMovementEnabled@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isFishable() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool isSurfaceMob() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isSurfaceMob@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canPickupItem(class ItemStack const& a0) const{
-        bool (Actor::*rv)(class ItemStack const&) const;
-        *((void**)&rv) = dlsym("?canPickupItem@Actor@@UEBA_NAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
     }
     inline bool isTargetable() const{
         bool (Actor::*rv)() const;
@@ -568,1089 +403,14 @@ public:
         *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline float getPickRadius(){
-        float (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getPickRadius@Actor@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getInterpolatedHeadRot(float a0) const{
-        float (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedHeadRot@Actor@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getInterpolatedBodyYaw(float a0) const{
-        float (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedBodyYaw@Actor@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getCameraOffset() const{
-        float (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCameraOffset@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
     inline float getDeletionDelayTimeSeconds() const{
         float (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@Actor@@UEBAMXZ");
         return (this->*rv)();
     }
-    inline float getYHeadRot() const{
-        float (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getYHeadRot@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline float getArmorColorInSlot(int \/*enum enum ArmorSlot*\/ a0, int a1) const{
-        float (Actor::*rv)(int \/*enum enum ArmorSlot*\/, int) const;
-        *((void**)&rv) = dlsym("?getArmorColorInSlot@Actor@@UEBAMW4ArmorSlot@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ArmorSlot*\/>(a0), std::forward<int>(a1));
-    }
-    inline int \/*enum enum ArmorMaterialType*\/ getArmorMaterialTypeInSlot(int \/*enum enum ArmorSlot*\/ a0) const{
-        int \/*enum enum ArmorMaterialType*\/ (Actor::*rv)(int \/*enum enum ArmorSlot*\/) const;
-        *((void**)&rv) = dlsym("?getArmorMaterialTypeInSlot@Actor@@UEBA?AW4ArmorMaterialType@@W4ArmorSlot@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ArmorSlot*\/>(a0));
-    }
-    inline int \/*enum enum ArmorTextureType*\/ getArmorMaterialTextureTypeInSlot(int \/*enum enum ArmorSlot*\/ a0) const{
-        int \/*enum enum ArmorTextureType*\/ (Actor::*rv)(int \/*enum enum ArmorSlot*\/) const;
-        *((void**)&rv) = dlsym("?getArmorMaterialTextureTypeInSlot@Actor@@UEBA?AW4ArmorTextureType@@W4ArmorSlot@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ArmorSlot*\/>(a0));
-    }
-    inline class Vec3 getHeadLookVector(float a0) const{
-        class Vec3 (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getHeadLookVector@Actor@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline class Vec3 getInterpolatedRidingOffset(float a0) const{
-        class Vec3 (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedRidingOffset@Actor@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void _doInitialMove(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?_doInitialMove@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline class AnimationComponent& _getAnimationComponent(class std::shared_ptr<class AnimationComponent>& a0, int \/*enum enum AnimationComponentGroup*\/ a1){
-        class AnimationComponent& (Actor::*rv)(class std::shared_ptr<class AnimationComponent>&, int \/*enum enum AnimationComponentGroup*\/);
-        *((void**)&rv) = dlsym("?_getAnimationComponent@Actor@@MEAAAEAVAnimationComponent@@AEAV?$shared_ptr@VAnimationComponent@@@std@@W4AnimationComponentGroup@@@Z");
-        return (this->*rv)(std::forward<class std::shared_ptr<class AnimationComponent>&>(a0), std::forward<int \/*enum enum AnimationComponentGroup*\/>(a1));
-    }
-    inline bool _hurt(class ActorDamageSource const& a0, int a1, bool a2, bool a3){
-        bool (Actor::*rv)(class ActorDamageSource const&, int, bool, bool);
-        *((void**)&rv) = dlsym("?_hurt@Actor@@MEAA_NAEBVActorDamageSource@@H_N1@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<int>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _playFlySound(class BlockPos const& a0, class Block const& a1){
-        void (Actor::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playFlySound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void _playStepSound(class BlockPos const& a0, class Block const& a1){
-        void (Actor::*rv)(class BlockPos const&, class Block const&);
-        *((void**)&rv) = dlsym("?_playStepSound@Actor@@MEAAXAEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1));
-    }
-    inline void _removePassenger(struct ActorUniqueID const& a0, bool a1, bool a2, bool a3){
-        void (Actor::*rv)(struct ActorUniqueID const&, bool, bool, bool);
-        *((void**)&rv) = dlsym("?_removePassenger@Actor@@MEAAXAEBUActorUniqueID@@_N11@Z");
-        return (this->*rv)(std::forward<struct ActorUniqueID const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
-    }
-    inline void _serverInitItemStackIds(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void actuallyHurt(int a0, class ActorDamageSource const& a1, bool a2){
-        void (Actor::*rv)(int, class ActorDamageSource const&, bool);
-        *((void**)&rv) = dlsym("?actuallyHurt@Actor@@UEAAXHAEBVActorDamageSource@@_N@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ActorDamageSource const&>(a1), std::forward<bool>(a2));
-    }
-    inline bool add(class ItemStack& a0){
-        bool (Actor::*rv)(class ItemStack&);
-        *((void**)&rv) = dlsym("?add@Actor@@UEAA_NAEAVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0));
-    }
-    inline void addAdditionalSaveData(class CompoundTag& a0){
-        void (Actor::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?addAdditionalSaveData@Actor@@MEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void addPassenger(class Actor& a0){
-        void (Actor::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?addPassenger@Actor@@UEAAXAEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void applySnapshot(struct PlayerSnapshotComponent const& a0, struct PlayerSnapshotComponent const& a1){
-        void (Actor::*rv)(struct PlayerSnapshotComponent const&, struct PlayerSnapshotComponent const&);
-        *((void**)&rv) = dlsym("?applySnapshot@Actor@@UEAAXAEBUPlayerSnapshotComponent@@0@Z");
-        return (this->*rv)(std::forward<struct PlayerSnapshotComponent const&>(a0), std::forward<struct PlayerSnapshotComponent const&>(a1));
-    }
-    inline bool attack(class Actor& a0, int \/*enum enum ActorDamageCause*\/ const& a1){
-        bool (Actor::*rv)(class Actor&, int \/*enum enum ActorDamageCause*\/ const&);
-        *((void**)&rv) = dlsym("?attack@Actor@@UEAA_NAEAV1@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<int \/*enum enum ActorDamageCause*\/ const&>(a1));
-    }
-    inline void baseTick(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?baseTick@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void blockedByShield(class ActorDamageSource const& a0, class Actor& a1){
-        void (Actor::*rv)(class ActorDamageSource const&, class Actor&);
-        *((void**)&rv) = dlsym("?blockedByShield@Actor@@UEAAXAEBVActorDamageSource@@AEAV1@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0), std::forward<class Actor&>(a1));
-    }
-    inline bool canAddPassenger(class Actor& a0) const{
-        bool (Actor::*rv)(class Actor&) const;
-        *((void**)&rv) = dlsym("?canAddPassenger@Actor@@UEBA_NAEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline bool canAttack(class Actor* a0, bool a1) const{
-        bool (Actor::*rv)(class Actor*, bool) const;
-        *((void**)&rv) = dlsym("?canAttack@Actor@@UEBA_NPEAV1@_N@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<bool>(a1));
-    }
-    inline bool canBeAffected(class MobEffectInstance const& a0) const{
-        bool (Actor::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Actor@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool canBeAffected(int a0) const{
-        bool (Actor::*rv)(int) const;
-        *((void**)&rv) = dlsym("?canBeAffected@Actor@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool canBeAffectedByArrow(class MobEffectInstance const& a0) const{
-        bool (Actor::*rv)(class MobEffectInstance const&) const;
-        *((void**)&rv) = dlsym("?canBeAffectedByArrow@Actor@@UEBA_NAEBVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance const&>(a0));
-    }
-    inline bool canPowerJump() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canPowerJump@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canSee(class Actor const& a0) const{
-        bool (Actor::*rv)(class Actor const&) const;
-        *((void**)&rv) = dlsym("?canSee@Actor@@UEBA_NAEBV1@@Z");
-        return (this->*rv)(std::forward<class Actor const&>(a0));
-    }
-    inline bool canSee(class Vec3 const& a0) const{
-        bool (Actor::*rv)(class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?canSee@Actor@@UEBA_NAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline bool canShowNameTag() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canShowNameTag@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void causeFallDamage(float a0, float a1, class ActorDamageSource a2){
-        void (Actor::*rv)(float, float, class ActorDamageSource);
-        *((void**)&rv) = dlsym("?causeFallDamage@Actor@@UEAAXMMVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<class ActorDamageSource>(a2));
-    }
-    inline void changeDimension(class AutomaticID<class Dimension, int> a0, bool a1){
-        void (Actor::*rv)(class AutomaticID<class Dimension, int>, bool);
-        *((void**)&rv) = dlsym("?changeDimension@Actor@@UEAAXV?$AutomaticID@VDimension@@H@@_N@Z");
-        return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0), std::forward<bool>(a1));
-    }
-    inline void checkBlockCollisions(class AABB const& a0, class std::function<void (class BlockSource&, class Block const&, class BlockPos const&, class Actor&)> a1){
-        void (Actor::*rv)(class AABB const&, class std::function<void (class BlockSource&, class Block const&, class BlockPos const&, class Actor&)>);
-        *((void**)&rv) = dlsym("?checkBlockCollisions@Actor@@UEAAXAEBVAABB@@V?$function@$$A6AXAEAVBlockSource@@AEBVBlock@@AEBVBlockPos@@AEAVActor@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0), std::forward<class std::function<void (class BlockSource&, class Block const&, class BlockPos const&, class Actor&)>>(a1));
-    }
-    inline void checkFallDamage(float a0, bool a1){
-        void (Actor::*rv)(float, bool);
-        *((void**)&rv) = dlsym("?checkFallDamage@Actor@@UEAAXM_N@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<bool>(a1));
-    }
-    inline void checkInsideBlocks(float a0){
-        void (Actor::*rv)(float);
-        *((void**)&rv) = dlsym("?checkInsideBlocks@Actor@@MEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline void chorusFruitTeleport(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?chorusFruitTeleport@Actor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline bool consumeTotem(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?consumeTotem@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void despawn(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?despawn@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void die(class ActorDamageSource const& a0){
-        void (Actor::*rv)(class ActorDamageSource const&);
-        *((void**)&rv) = dlsym("?die@Actor@@UEAAXAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool doFireHurt(int a0){
-        bool (Actor::*rv)(int);
-        *((void**)&rv) = dlsym("?doFireHurt@Actor@@UEAA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void doWaterSplashEffect(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?doWaterSplashEffect@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool drop(class ItemStack const& a0, bool a1){
-        bool (Actor::*rv)(class ItemStack const&, bool);
-        *((void**)&rv) = dlsym("?drop@Actor@@UEAA_NAEBVItemStack@@_N@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0), std::forward<bool>(a1));
-    }
-    inline void extractSnapshot(struct PlayerSnapshotComponent& a0) const{
-        void (Actor::*rv)(struct PlayerSnapshotComponent&) const;
-        *((void**)&rv) = dlsym("?extractSnapshot@Actor@@UEBAXAEAUPlayerSnapshotComponent@@@Z");
-        return (this->*rv)(std::forward<struct PlayerSnapshotComponent&>(a0));
-    }
-    inline void feed(int a0){
-        void (Actor::*rv)(int);
-        *((void**)&rv) = dlsym("?feed@Actor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void filterFormattedNameTag(class UIProfanityContext const& a0){
-        void (Actor::*rv)(class UIProfanityContext const&);
-        *((void**)&rv) = dlsym("?filterFormattedNameTag@Actor@@UEAAXAEBVUIProfanityContext@@@Z");
-        return (this->*rv)(std::forward<class UIProfanityContext const&>(a0));
-    }
-    inline void flagPassengerToRemove(class Actor& a0){
-        void (Actor::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?flagPassengerToRemove@Actor@@UEAAXAEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline class HashedString const& getActorRendererId() const{
-        class HashedString const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getActorRendererId@Actor@@UEBAAEBVHashedString@@XZ");
-        return (this->*rv)();
-    }
-    inline std::vector<class ItemStack const*> getAllArmor() const{
-        std::vector<class ItemStack const*> (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getAllArmor@Actor@@UEBA?AV?$vector@PEBVItemStack@@V?$allocator@PEBVItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum LevelSoundEvent*\/ getAmbientSound() const{
-        int \/*enum enum LevelSoundEvent*\/ (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getAmbientSound@Actor@@UEBA?AW4LevelSoundEvent@@XZ");
-        return (this->*rv)();
-    }
-    inline class AnimationComponent& getAnimationComponent(){
-        class AnimationComponent& (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getAnimationComponent@Actor@@UEAAAEAVAnimationComponent@@XZ");
-        return (this->*rv)();
-    }
-    inline class ItemStack const& getArmor(int \/*enum enum ArmorSlot*\/ a0) const{
-        class ItemStack const& (Actor::*rv)(int \/*enum enum ArmorSlot*\/) const;
-        *((void**)&rv) = dlsym("?getArmor@Actor@@UEBAAEBVItemStack@@W4ArmorSlot@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ArmorSlot*\/>(a0));
-    }
-    inline class Vec3 getAttachPos(int \/*enum enum ActorLocation*\/ a0, float a1) const{
-        class Vec3 (Actor::*rv)(int \/*enum enum ActorLocation*\/, float) const;
-        *((void**)&rv) = dlsym("?getAttachPos@Actor@@UEBA?AVVec3@@W4ActorLocation@@M@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorLocation*\/>(a0), std::forward<float>(a1));
-    }
-    inline class AttributeInstance const& getAttribute(class Attribute const& a0) const{
-        class AttributeInstance const& (Actor::*rv)(class Attribute const&) const;
-        *((void**)&rv) = dlsym("?getAttribute@Actor@@UEBAAEBVAttributeInstance@@AEBVAttribute@@@Z");
-        return (this->*rv)(std::forward<class Attribute const&>(a0));
-    }
-    inline int \/*enum enum ActorDamageCause*\/ getBlockDamageCause(class Block const& a0) const{
-        int \/*enum enum ActorDamageCause*\/ (Actor::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getBlockDamageCause@Actor@@UEBA?AW4ActorDamageCause@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline float getBrightness(float a0) const{
-        float (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getBrightness@Actor@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline class ItemStack const& getCarriedItem() const{
-        class ItemStack const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCarriedItem@Actor@@UEBAAEBVItemStack@@XZ");
-        return (this->*rv)();
-    }
-    inline int getChestSlots() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getChestSlots@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum CommandPermissionLevel*\/ getCommandPermissionLevel() const{
-        int \/*enum enum CommandPermissionLevel*\/ (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getCommandPermissionLevel@Actor@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getSourceUniqueID() const{
-        struct ActorUniqueID (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline struct ActorUniqueID getControllingPlayer() const{
-        struct ActorUniqueID (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getControllingPlayer@Actor@@UEBA?AUActorUniqueID@@XZ");
-        return (this->*rv)();
-    }
-    inline void getDebugText(std::vector<std::string>& a0){
-        void (Actor::*rv)(std::vector<std::string>&);
-        *((void**)&rv) = dlsym("?getDebugText@Actor@@UEAAXAEAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<std::string>&>(a0));
-    }
-    inline class AutomaticID<class Dimension, int> getDimensionId() const{
-        class AutomaticID<class Dimension, int> (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimensionId@Actor@@UEBA?AV?$AutomaticID@VDimension@@H@@XZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ActorType*\/ getEntityTypeId() const{
-        int \/*enum enum ActorType*\/ (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntityTypeId@Actor@@UEBA?AW4ActorType@@XZ");
-        return (this->*rv)();
-    }
-    inline int getEquipSlots() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getEquipSlots@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getEquipmentCount() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getEquipmentCount@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class ItemStack const& getEquippedSlot(int \/*enum enum EquipmentSlot*\/ a0) const{
-        class ItemStack const& (Actor::*rv)(int \/*enum enum EquipmentSlot*\/) const;
-        *((void**)&rv) = dlsym("?getEquippedSlot@Actor@@UEBAAEBVItemStack@@W4EquipmentSlot@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum EquipmentSlot*\/>(a0));
-    }
-    inline class ItemStack const& getEquippedTotem() const{
-        class ItemStack const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getEquippedTotem@Actor@@UEBAAEBVItemStack@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getExitTip(std::string const& a0, int \/*enum enum InputMode*\/ a1) const{
-        std::string (Actor::*rv)(std::string const&, int \/*enum enum InputMode*\/) const;
-        *((void**)&rv) = dlsym("?getExitTip@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBV23@W4InputMode@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<int \/*enum enum InputMode*\/>(a1));
-    }
-    inline class Vec3 getFiringPos() const{
-        class Vec3 (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getFiringPos@Actor@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string getFormattedNameTag() const{
-        std::string (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getFormattedNameTag@Actor@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline bool getInteraction(class Player& a0, class ActorInteraction& a1, class Vec3 const& a2){
-        bool (Actor::*rv)(class Player&, class ActorInteraction&, class Vec3 const&);
-        *((void**)&rv) = dlsym("?getInteraction@Actor@@UEAA_NAEAVPlayer@@AEAVActorInteraction@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class ActorInteraction&>(a1), std::forward<class Vec3 const&>(a2));
-    }
-    inline float getInterpolatedBodyRot(float a0) const{
-        float (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedBodyRot@Actor@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline class Vec3 getInterpolatedRidingPosition(float a0) const{
-        class Vec3 (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedRidingPosition@Actor@@UEBA?AVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline float getInterpolatedWalkAnimSpeed(float a0) const{
-        float (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getInterpolatedWalkAnimSpeed@Actor@@UEBAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline int getInventorySize() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getInventorySize@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline class Mob* getLastHurtByMob(){
-        class Mob* (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getLastHurtByMob@Actor@@UEAAPEAVMob@@XZ");
-        return (this->*rv)();
-    }
-    inline class Player* getLastHurtByPlayer(){
-        class Player* (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getLastHurtByPlayer@Actor@@UEAAPEAVPlayer@@XZ");
-        return (this->*rv)();
-    }
-    inline class Mob* getLastHurtMob(){
-        class Mob* (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getLastHurtMob@Actor@@UEAAPEAVMob@@XZ");
-        return (this->*rv)();
-    }
-    inline class AABB getLiquidAABB(int \/*enum enum MaterialType*\/ a0) const{
-        class AABB (Actor::*rv)(int \/*enum enum MaterialType*\/) const;
-        *((void**)&rv) = dlsym("?getLiquidAABB@Actor@@UEBA?AVAABB@@W4MaterialType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum MaterialType*\/>(a0));
-    }
-    inline class LootTable* getLootTable(){
-        class LootTable* (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getLootTable@Actor@@UEAAPEAVLootTable@@XZ");
-        return (this->*rv)();
-    }
-    inline float getMapDecorationRotation() const{
-        float (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getMapDecorationRotation@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline class AttributeInstance* getMutableAttribute(class Attribute const& a0){
-        class AttributeInstance* (Actor::*rv)(class Attribute const&);
-        *((void**)&rv) = dlsym("?getMutableAttribute@Actor@@UEAAPEAVAttributeInstance@@AEBVAttribute@@@Z");
-        return (this->*rv)(std::forward<class Attribute const&>(a0));
-    }
-    inline std::string const& getNameTag() const{
-        std::string const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline unsigned __int64 getNameTagAsHash() const{
-        unsigned __int64 (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getNameTagAsHash@Actor@@UEBA_KXZ");
-        return (this->*rv)();
-    }
-    inline float getNextStep(float a0){
-        float (Actor::*rv)(float);
-        *((void**)&rv) = dlsym("?getNextStep@Actor@@UEAAMM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline int getOnDeathExperience(){
-        int (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getOnDeathExperience@Actor@@UEAAHXZ");
-        return (this->*rv)();
-    }
-    inline int \/*enum enum ActorType*\/ getOwnerEntityType(){
-        int \/*enum enum ActorType*\/ (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getOwnerEntityType@Actor@@UEAA?AW4ActorType@@XZ");
-        return (this->*rv)();
-    }
-    inline float getPassengerYRotation(class Actor const& a0) const{
-        float (Actor::*rv)(class Actor const&) const;
-        *((void**)&rv) = dlsym("?getPassengerYRotation@Actor@@UEBAMAEBV1@@Z");
-        return (this->*rv)(std::forward<class Actor const&>(a0));
-    }
-    inline int getPortalCooldown() const{
-        int (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPortalCooldown@Actor@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline class Vec3 const& getPos() const{
         class Vec3 const& (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?getPos@Actor@@UEBAAEBVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 const getPosExtrapolated(float a0) const{
-        class Vec3 const (Actor::*rv)(float) const;
-        *((void**)&rv) = dlsym("?getPosExtrapolated@Actor@@UEBA?BVVec3@@M@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline class Vec3 const& getPosOld() const{
-        class Vec3 const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPosOld@Actor@@UEBAAEBVVec3@@XZ");
-        return (this->*rv)();
-    }
-    inline struct PredictedMovementValues const& getPredictedMovementValues() const{
-        struct PredictedMovementValues const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPredictedMovementValues@Actor@@UEBAAEBUPredictedMovementValues@@XZ");
-        return (this->*rv)();
-    }
-    inline float getRidingHeight(){
-        float (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getRidingHeight@Actor@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getScoreTag() const{
-        std::string const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getScoreTag@Actor@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline float getShadowHeightOffs(){
-        float (Actor::*rv)();
-        *((void**)&rv) = dlsym("?getShadowHeightOffs@Actor@@UEAAMXZ");
-        return (this->*rv)();
-    }
-    inline float getShadowRadius() const{
-        float (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getShadowRadius@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline float getYawSpeedInDegreesPerSecond() const{
-        float (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getYawSpeedInDegreesPerSecond@Actor@@UEBAMXZ");
-        return (this->*rv)();
-    }
-    inline void handleEntityEvent(int \/*enum enum ActorEvent*\/ a0, int a1){
-        void (Actor::*rv)(int \/*enum enum ActorEvent*\/, int);
-        *((void**)&rv) = dlsym("?handleEntityEvent@Actor@@UEAAXW4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ActorEvent*\/>(a0), std::forward<int>(a1));
-    }
-    inline void handleFallDistanceOnServer(float a0, float a1, bool a2){
-        void (Actor::*rv)(float, float, bool);
-        *((void**)&rv) = dlsym("?handleFallDistanceOnServer@Actor@@UEAAXMM_N@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<bool>(a2));
-    }
-    inline void handleInsidePortal(class BlockPos const& a0){
-        void (Actor::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?handleInsidePortal@Actor@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
-    }
-    inline bool hasComponent(class HashedString const& a0) const{
-        bool (Actor::*rv)(class HashedString const&) const;
-        *((void**)&rv) = dlsym("?hasComponent@Actor@@UEBA_NAEBVHashedString@@@Z");
-        return (this->*rv)(std::forward<class HashedString const&>(a0));
-    }
-    inline bool hasEnteredWater() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?hasEnteredWater@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline void heal(int a0){
-        void (Actor::*rv)(int);
-        *((void**)&rv) = dlsym("?heal@Actor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void initializeComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Actor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?initializeComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void interpolatorTick(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?interpolatorTick@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool intersects(class Vec3 const& a0, class Vec3 const& a1) const{
-        bool (Actor::*rv)(class Vec3 const&, class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?intersects@Actor@@UEBA_NAEBVVec3@@0@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<class Vec3 const&>(a1));
-    }
-    inline bool isAffectedByWaterBottle() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isAffectedByWaterBottle@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isAlive() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isAlive@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isClientSide() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isClientSide@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isEnchanted() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isEnchanted@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isFireImmune() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isFireImmune@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isImmobile() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isImmobile@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInLava() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isInLava@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInWall() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isInWall@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInWater() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isInWater@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvertedHealAndHarm() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isInvertedHealAndHarm@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvisible() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isInvisible@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInvulnerableTo(class ActorDamageSource const& a0) const{
-        bool (Actor::*rv)(class ActorDamageSource const&) const;
-        *((void**)&rv) = dlsym("?isInvulnerableTo@Actor@@UEBA_NAEBVActorDamageSource@@@Z");
-        return (this->*rv)(std::forward<class ActorDamageSource const&>(a0));
-    }
-    inline bool isOnFire() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isOnFire@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isOnHotBlock() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isOnHotBlock@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isOverWater() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isOverWater@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSilent(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?isSilent@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSkyLit(float a0){
-        bool (Actor::*rv)(float);
-        *((void**)&rv) = dlsym("?isSkyLit@Actor@@UEAA_NM@Z");
-        return (this->*rv)(std::forward<float>(a0));
-    }
-    inline bool isUnderLiquid(int \/*enum enum MaterialType*\/ a0) const{
-        bool (Actor::*rv)(int \/*enum enum MaterialType*\/) const;
-        *((void**)&rv) = dlsym("?isUnderLiquid@Actor@@UEBA_NW4MaterialType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum MaterialType*\/>(a0));
-    }
-    inline bool const isWearingLeatherArmor() const{
-        bool const (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isWearingLeatherArmor@Actor@@UEBA?B_NXZ");
-        return (this->*rv)();
-    }
-    inline void kill(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?kill@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void killed(class Actor& a0){
-        void (Actor::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?killed@Actor@@UEAAXAEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void lerpMotion(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?lerpMotion@Actor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline bool load(class CompoundTag const& a0, class DataLoadHelper& a1){
-        bool (Actor::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void loadLinks(class CompoundTag const& a0, std::vector<struct ActorLink>& a1, class DataLoadHelper& a2){
-        void (Actor::*rv)(class CompoundTag const&, std::vector<struct ActorLink>&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?loadLinks@Actor@@UEAAXAEBVCompoundTag@@AEAV?$vector@UActorLink@@V?$allocator@UActorLink@@@std@@@std@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<std::vector<struct ActorLink>&>(a1), std::forward<class DataLoadHelper&>(a2));
-    }
-    inline void markHurt(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?markHurt@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void move(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?move@Actor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void move(struct IActorMovementProxy& a0, class Vec3 const& a1) const{
-        void (Actor::*rv)(struct IActorMovementProxy&, class Vec3 const&) const;
-        *((void**)&rv) = dlsym("?move@Actor@@UEBAXAEAUIActorMovementProxy@@AEBVVec3@@@Z");
-        return (this->*rv)(std::forward<struct IActorMovementProxy&>(a0), std::forward<class Vec3 const&>(a1));
-    }
-    inline void normalTick(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?normalTick@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onAboveBubbleColumn(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?onAboveBubbleColumn@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void onEffectAdded(class MobEffectInstance& a0){
-        void (Actor::*rv)(class MobEffectInstance&);
-        *((void**)&rv) = dlsym("?onEffectAdded@Actor@@UEAAXAEAVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance&>(a0));
-    }
-    inline void onEffectRemoved(class MobEffectInstance& a0){
-        void (Actor::*rv)(class MobEffectInstance&);
-        *((void**)&rv) = dlsym("?onEffectRemoved@Actor@@UEAAXAEAVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance&>(a0));
-    }
-    inline void onEffectUpdated(class MobEffectInstance& a0){
-        void (Actor::*rv)(class MobEffectInstance&);
-        *((void**)&rv) = dlsym("?onEffectUpdated@Actor@@UEAAXAEAVMobEffectInstance@@@Z");
-        return (this->*rv)(std::forward<class MobEffectInstance&>(a0));
-    }
-    inline void onInsideBubbleColumn(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?onInsideBubbleColumn@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void onLightningHit(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?onLightningHit@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onOrphan(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?onOrphan@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void onSynchedDataUpdate(int a0){
-        void (Actor::*rv)(int);
-        *((void**)&rv) = dlsym("?onSynchedDataUpdate@Actor@@UEAAXH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline void onSynchedFlagUpdate(int a0, __int64 a1, __int64 a2){
-        void (Actor::*rv)(int, __int64, __int64);
-        *((void**)&rv) = dlsym("?onSynchedFlagUpdate@Actor@@UEAAXH_J0@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<__int64>(a1), std::forward<__int64>(a2));
-    }
-    inline void openContainerComponent(class Player& a0){
-        void (Actor::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?openContainerComponent@Actor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void outOfWorld(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?outOfWorld@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void performRangedAttack(class Actor& a0, float a1){
-        void (Actor::*rv)(class Actor&, float);
-        *((void**)&rv) = dlsym("?performRangedAttack@Actor@@UEAAXAEAV1@M@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<float>(a1));
-    }
-    inline void playAmbientSound(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?playAmbientSound@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void playSynchronizedSound(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, class Block const& a2, bool a3){
-        void (Actor::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, class Block const&, bool);
-        *((void**)&rv) = dlsym("?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Block const&>(a2), std::forward<bool>(a3));
-    }
-    inline void playSynchronizedSound(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, bool a3){
-        void (Actor::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, bool);
-        *((void**)&rv) = dlsym("?playSynchronizedSound@Actor@@UEAAXW4LevelSoundEvent@@AEBVVec3@@H_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<bool>(a3));
-    }
-    inline void positionPassenger(class Actor& a0, float a1){
-        void (Actor::*rv)(class Actor&, float);
-        *((void**)&rv) = dlsym("?positionPassenger@Actor@@UEAAXAEAV1@M@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<float>(a1));
-    }
-    inline void pushOutOfBlocks(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?pushOutOfBlocks@Actor@@MEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline class HashedString const& queryEntityRenderer() const{
-        class HashedString const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?queryEntityRenderer@Actor@@UEBAAEBVHashedString@@XZ");
-        return (this->*rv)();
-    }
-    inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
-        void (Actor::*rv)(class CompoundTag const&, class DataLoadHelper&);
-        *((void**)&rv) = dlsym("?readAdditionalSaveData@Actor@@MEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
-    }
-    inline void reloadComponents(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Actor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadComponents@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadHardcodedClient(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Actor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcodedClient@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline void reloadLootTable(struct EquipmentTableDefinition const& a0){
-        void (Actor::*rv)(struct EquipmentTableDefinition const&);
-        *((void**)&rv) = dlsym("?reloadLootTable@Actor@@UEAAXAEBUEquipmentTableDefinition@@@Z");
-        return (this->*rv)(std::forward<struct EquipmentTableDefinition const&>(a0));
-    }
-    inline void reloadLootTable(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?reloadLootTable@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void remove(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?remove@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void reset(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?reset@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void resetBlockMovementSlowdownMultiplier(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?resetBlockMovementSlowdownMultiplier@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool save(class CompoundTag& a0){
-        bool (Actor::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?save@Actor@@UEAA_NAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void saveWithoutId(class CompoundTag& a0){
-        void (Actor::*rv)(class CompoundTag&);
-        *((void**)&rv) = dlsym("?saveWithoutId@Actor@@UEAAXAEAVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0));
-    }
-    inline void sendMotionPacketIfNeeded(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?sendMotionPacketIfNeeded@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void setArmor(int \/*enum enum ArmorSlot*\/ a0, class ItemStack const& a1){
-        void (Actor::*rv)(int \/*enum enum ArmorSlot*\/, class ItemStack const&);
-        *((void**)&rv) = dlsym("?setArmor@Actor@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ArmorSlot*\/>(a0), std::forward<class ItemStack const&>(a1));
-    }
-    inline void setBlockMovementSlowdownMultiplier(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setBlockMovementSlowdownMultiplier@Actor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void setCanPowerJump(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setCanPowerJump@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setCarriedItem(class ItemStack const& a0){
-        void (Actor::*rv)(class ItemStack const&);
-        *((void**)&rv) = dlsym("?setCarriedItem@Actor@@UEAAXAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline void setDamageNearbyMobs(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setDamageNearbyMobs@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setLastHurtByMob(class Mob* a0){
-        void (Actor::*rv)(class Mob*);
-        *((void**)&rv) = dlsym("?setLastHurtByMob@Actor@@UEAAXPEAVMob@@@Z");
-        return (this->*rv)(std::forward<class Mob*>(a0));
-    }
-    inline void setLastHurtByPlayer(class Player* a0){
-        void (Actor::*rv)(class Player*);
-        *((void**)&rv) = dlsym("?setLastHurtByPlayer@Actor@@UEAAXPEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player*>(a0));
-    }
-    inline void setLastHurtMob(class Actor* a0){
-        void (Actor::*rv)(class Actor*);
-        *((void**)&rv) = dlsym("?setLastHurtMob@Actor@@UEAAXPEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
-    }
-    inline void setNameTag(std::string const& a0){
-        void (Actor::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?setNameTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline void setNameTagVisible(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setNameTagVisible@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setOffhandSlot(class ItemStack const& a0){
-        void (Actor::*rv)(class ItemStack const&);
-        *((void**)&rv) = dlsym("?setOffhandSlot@Actor@@UEAAXAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline void setOwner(struct ActorUniqueID a0){
-        void (Actor::*rv)(struct ActorUniqueID);
-        *((void**)&rv) = dlsym("?setOwner@Actor@@UEAAXUActorUniqueID@@@Z");
-        return (this->*rv)(std::forward<struct ActorUniqueID>(a0));
-    }
-    inline void setPos(class Vec3 const& a0){
-        void (Actor::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setPos@Actor@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
-    inline void setRot(class Vec2 const& a0){
-        void (Actor::*rv)(class Vec2 const&);
-        *((void**)&rv) = dlsym("?setRot@Actor@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
-    }
-    inline void setScoreTag(std::string const& a0){
-        void (Actor::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?setScoreTag@Actor@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline void setSitting(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSitting@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setSize(float a0, float a1){
-        void (Actor::*rv)(float, float);
-        *((void**)&rv) = dlsym("?setSize@Actor@@UEAAXMM@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1));
-    }
-    inline void setSneaking(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setSneaking@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setStanding(bool a0){
-        void (Actor::*rv)(bool);
-        *((void**)&rv) = dlsym("?setStanding@Actor@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setTarget(class Actor* a0){
-        void (Actor::*rv)(class Actor*);
-        *((void**)&rv) = dlsym("?setTarget@Actor@@UEAAXPEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0));
-    }
-    inline bool shouldDropDeathLoot() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldDropDeathLoot@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldRender() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldTick() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldTick@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldTryMakeStepSound(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?shouldTryMakeStepSound@Actor@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline class ItemActor* spawnAtLocation(class Block const& a0, int a1){
-        class ItemActor* (Actor::*rv)(class Block const&, int);
-        *((void**)&rv) = dlsym("?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@H@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<int>(a1));
-    }
-    inline class ItemActor* spawnAtLocation(class Block const& a0, int a1, float a2){
-        class ItemActor* (Actor::*rv)(class Block const&, int, float);
-        *((void**)&rv) = dlsym("?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVBlock@@HM@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<int>(a1), std::forward<float>(a2));
-    }
-    inline class ItemActor* spawnAtLocation(class ItemStack const& a0, float a1){
-        class ItemActor* (Actor::*rv)(class ItemStack const&, float);
-        *((void**)&rv) = dlsym("?spawnAtLocation@Actor@@UEAAPEAVItemActor@@AEBVItemStack@@M@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0), std::forward<float>(a1));
-    }
-    inline class ItemActor* spawnAtLocation(int a0, int a1){
-        class ItemActor* (Actor::*rv)(int, int);
-        *((void**)&rv) = dlsym("?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline class ItemActor* spawnAtLocation(int a0, int a1, float a2){
-        class ItemActor* (Actor::*rv)(int, int, float);
-        *((void**)&rv) = dlsym("?spawnAtLocation@Actor@@UEAAPEAVItemActor@@HHM@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<float>(a2));
-    }
-    inline void spawnTrailBubbles(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?spawnTrailBubbles@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool startRiding(class Actor& a0){
-        bool (Actor::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?startRiding@Actor@@UEAA_NAEAV1@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
-    }
-    inline void startSpinAttack(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?startSpinAttack@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void startSwimming(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?startSwimming@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stopRiding(bool a0, bool a1, bool a2){
-        void (Actor::*rv)(bool, bool, bool);
-        *((void**)&rv) = dlsym("?stopRiding@Actor@@UEAAX_N00@Z");
-        return (this->*rv)(std::forward<bool>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
-    }
-    inline void stopSwimming(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?stopSwimming@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void teleportTo(class Vec3 const& a0, bool a1, int a2, int a3){
-        void (Actor::*rv)(class Vec3 const&, bool, int, int);
-        *((void**)&rv) = dlsym("?teleportTo@Actor@@UEAAXAEBVVec3@@_NHH@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<bool>(a1), std::forward<int>(a2), std::forward<int>(a3));
-    }
-    inline void thawFreezeEffect(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?thawFreezeEffect@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tickLeash(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?tickLeash@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket(){
-        std::unique_ptr<class AddActorBasePacket> (Actor::*rv)();
-        *((void**)&rv) = dlsym("?tryCreateAddActorPacket@Actor@@UEAA?AV?$unique_ptr@VAddActorBasePacket@@U?$default_delete@VAddActorBasePacket@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline bool tryTeleportTo(class Vec3 const& a0, bool a1, bool a2, int a3, int a4){
-        bool (Actor::*rv)(class Vec3 const&, bool, bool, int, int);
-        *((void**)&rv) = dlsym("?tryTeleportTo@Actor@@UEAA_NAEBVVec3@@_N1HH@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2), std::forward<int>(a3), std::forward<int>(a4));
-    }
-    inline void updateEntityInside(class AABB const& a0){
-        void (Actor::*rv)(class AABB const&);
-        *((void**)&rv) = dlsym("?updateEntityInside@Actor@@UEAAXAEBVAABB@@@Z");
-        return (this->*rv)(std::forward<class AABB const&>(a0));
-    }
-    inline void updateEntityInside(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?updateEntityInside@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void updateInsideBlock(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?updateInsideBlock@Actor@@MEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool updateWaterState(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?updateWaterState@Actor@@MEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void useItem(class ItemStackBase& a0, int \/*enum enum ItemUseMethod*\/ a1, bool a2){
-        void (Actor::*rv)(class ItemStackBase&, int \/*enum enum ItemUseMethod*\/, bool);
-        *((void**)&rv) = dlsym("?useItem@Actor@@UEAAXAEAVItemStackBase@@W4ItemUseMethod@@_N@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<int \/*enum enum ItemUseMethod*\/>(a1), std::forward<bool>(a2));
-    }
-    inline void vehicleTick(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?vehicleTick@Actor@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool wasHurt(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?wasHurt@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void wobble(){
-        void (Actor::*rv)();
-        *((void**)&rv) = dlsym("?wobble@Actor@@UEAAXXZ");
         return (this->*rv)();
     }
     */
@@ -1687,17 +447,17 @@ public:
     MCAPI void dropLeash(bool, bool);
     MCAPI void dropTowards(class ItemStack const&, class Vec3);
     MCAPI bool executeEvent(std::string const&, class VariantParameterList const&);
-    MCAPI void exitVehicle(class Actor const&, class std::optional<class Vec3> (*)(struct VehicleUtils::VehicleDirections const&, class std::function<bool (class Vec3 const&, class Vec3 const&)>));
+    MCAPI void exitVehicle(class Actor const&, class std::optional<class Vec3> (* )(struct VehicleUtils::VehicleDirections const& , class std::function<bool (class Vec3 const& , class Vec3 const& )>));
     MCAPI class FishingHook* fetchFishingHook();
     MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const&, enum ActorType);
-    MCAPI void forEachLeashedActor(class std::function<void (class gsl::not_null<class Actor*>)>);
+    MCAPI void forEachLeashedActor(class std::function<void (class gsl::not_null<class Actor* >)>);
     MCAPI class AABBShapeComponent const& getAABBShapeComponent() const;
     MCAPI int getActiveEffectCount() const;
     MCAPI struct ActorDefinitionIdentifier const& getActorIdentifier() const;
     MCAPI std::vector<class MobEffectInstance> const& getAllEffects() const;
     MCAPI class SimpleContainer& getArmorContainer();
     MCAPI class SimpleContainer const& getArmorContainer() const;
-    MCAPI class gsl::not_null<class BaseAttributeMap*> getAttributes();
+    MCAPI class gsl::not_null<class BaseAttributeMap* > getAttributes();
     MCAPI class BlockPos getBlockPosCurrentlyStandingOn(class Actor*) const;
     MCAPI class BlockPos getBlockTarget() const;
     MCAPI bool getCanPickupItems() const;

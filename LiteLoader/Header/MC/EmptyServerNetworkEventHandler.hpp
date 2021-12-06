@@ -8,13 +8,8 @@ class EmptyServerNetworkEventHandler {
 #include "Extra/EmptyServerNetworkEventHandlerAPI.hpp"
 public:
     /*0*/ virtual ~EmptyServerNetworkEventHandler();
-    /*
-    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleChat(struct ChatEvent& a0){
-        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (EmptyServerNetworkEventHandler::*rv)(struct ChatEvent&);
-        *((void**)&rv) = dlsym("?handleChat@EmptyServerNetworkEventHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEAUChatEvent@@@Z");
-        return (this->*rv)(std::forward<struct ChatEvent&>(a0));
-    }
-    */
+    /*1*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handleChat(struct ChatEvent&);
+
 
 protected:
 

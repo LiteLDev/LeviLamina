@@ -23,16 +23,6 @@ public:
         *((void**)&rv) = dlsym("?readfromJSON@IgniteSubcomponent@@UEAAXAEAVValue@Json@@AEBVSemVersion@@@Z");
         return (this->*rv)(std::forward<class Json::Value&>(a0), std::forward<class SemVersion const&>(a1));
     }
-    inline void doOnHitEffect(class Actor& a0, class ProjectileComponent& a1){
-        void (IgniteSubcomponent::*rv)(class Actor&, class ProjectileComponent&);
-        *((void**)&rv) = dlsym("?doOnHitEffect@IgniteSubcomponent@@UEAAXAEAVActor@@AEAVProjectileComponent@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ProjectileComponent&>(a1));
-    }
-    inline char const* getName(){
-        char const* (IgniteSubcomponent::*rv)();
-        *((void**)&rv) = dlsym("?getName@IgniteSubcomponent@@UEAAPEBDXZ");
-        return (this->*rv)();
-    }
     */
 
 protected:

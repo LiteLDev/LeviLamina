@@ -13,18 +13,7 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)>&&);
-    /*
-    inline void flush(class std::function<void (void)>&& a0){
-        void (NetworkPeer::*rv)(class std::function<void (void)>&&);
-        *((void**)&rv) = dlsym("?flush@NetworkPeer@@UEAAX$$QEAV?$function@$$A6AXXZ@std@@@Z");
-        return (this->*rv)(std::forward<class std::function<void (void)>&&>(a0));
-    }
-    inline void update(){
-        void (NetworkPeer::*rv)();
-        *((void**)&rv) = dlsym("?update@NetworkPeer@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

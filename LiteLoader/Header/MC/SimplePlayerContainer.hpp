@@ -11,20 +11,14 @@ public:
     /*0*/ virtual ~SimplePlayerContainer();
     /*1*/ virtual void init();
     /*2*/ virtual void setItem(int, class ItemStack const&);
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual int getContainerSize() const;
     /*4*/ virtual int getMaxStackSize() const;
     /*5*/ virtual void startOpen(class Player&);
     /*6*/ virtual void stopOpen(class Player&);
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
-    /*
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (SimplePlayerContainer::*rv)(int, class ItemStack const&);
-        *((void**)&rv) = dlsym("?setItem@SimplePlayerContainer@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
-    }
-    */
+    /*7*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
+
 
 protected:
 

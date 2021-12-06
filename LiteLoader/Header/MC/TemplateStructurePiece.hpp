@@ -10,25 +10,14 @@ class TemplateStructurePiece : public StructurePiece {
 public:
     /*0*/ virtual ~TemplateStructurePiece();
     /*1*/ virtual void moveBoundingBox(int, int, int);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*3*/ virtual int /*enum enum StructurePieceType*/ getType() const;
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*7*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*8*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*
-    inline void moveBoundingBox(int a0, int a1, int a2){
-        void (TemplateStructurePiece::*rv)(int, int, int);
-        *((void**)&rv) = dlsym("?moveBoundingBox@TemplateStructurePiece@@UEAAXHHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2));
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (TemplateStructurePiece::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@TemplateStructurePiece@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+
 
 protected:
     MCAPI void _setup(class LegacyStructureTemplate&, class LegacyStructureSettings const&, class BlockPos const&);

@@ -15,38 +15,7 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (OfferFlowerGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@OfferFlowerGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canContinueToUse(){
-        bool (OfferFlowerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canContinueToUse@OfferFlowerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUse(){
-        bool (OfferFlowerGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@OfferFlowerGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline void start(){
-        void (OfferFlowerGoal::*rv)();
-        *((void**)&rv) = dlsym("?start@OfferFlowerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void stop(){
-        void (OfferFlowerGoal::*rv)();
-        *((void**)&rv) = dlsym("?stop@OfferFlowerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline void tick(){
-        void (OfferFlowerGoal::*rv)();
-        *((void**)&rv) = dlsym("?tick@OfferFlowerGoal@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

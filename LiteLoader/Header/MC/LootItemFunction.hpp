@@ -13,18 +13,7 @@ public:
     /*2*/ virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
     /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
     /*4*/ virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
-    /*
-    inline int apply(class ItemInstance& a0, class Random& a1, struct Trade const& a2, class LootTableContext& a3){
-        int (LootItemFunction::*rv)(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
-        *((void**)&rv) = dlsym("?apply@LootItemFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<struct Trade const&>(a2), std::forward<class LootTableContext&>(a3));
-    }
-    inline int apply(class ItemStack& a0, class Random& a1, struct Trade const& a2, class LootTableContext& a3){
-        int (LootItemFunction::*rv)(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
-        *((void**)&rv) = dlsym("?apply@LootItemFunction@@UEAAHAEAVItemStack@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Random&>(a1), std::forward<struct Trade const&>(a2), std::forward<class LootTableContext&>(a3));
-    }
-    */
+
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value);
 
 protected:

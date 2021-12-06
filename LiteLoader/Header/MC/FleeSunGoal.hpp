@@ -13,18 +13,7 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void appendDebugInfo(std::string&) const;
-    /*
-    inline void appendDebugInfo(std::string& a0) const{
-        void (FleeSunGoal::*rv)(std::string&) const;
-        *((void**)&rv) = dlsym("?appendDebugInfo@FleeSunGoal@@UEBAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string&>(a0));
-    }
-    inline bool canUse(){
-        bool (FleeSunGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@FleeSunGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
+
 
 protected:
 

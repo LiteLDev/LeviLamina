@@ -6,21 +6,7 @@
 #undef EXTRA_INCLUDE_PART_MINECRAFTSERVERSCRIPTENGINE
 class MinecraftServerScriptEngine {
 #include "Extra/MinecraftServerScriptEngineAPI.hpp"
-public:
-    /*0*/ virtual void __unk_vfn_0();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual int /*enum enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
-    /*5*/ virtual int /*enum enum EventResult*/ onServerUpdateStart(class ServerInstance&);
-    /*6*/ virtual int /*enum enum EventResult*/ onServerUpdateEnd(class ServerInstance&);
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual int /*enum enum EventResult*/ onServerThreadStarted(class ServerInstance&);
-    /*10*/ virtual void __unk_vfn_6();
-    /*11*/ virtual void __unk_vfn_7();
-    /*12*/ virtual int /*enum enum EventResult*/ onLeaveGameDone(struct ServerInstanceEvent const&);
-    /*
+public:    /*
     inline void _handleError(class ScriptApi::ScriptReportItem const& a0){
         void (MinecraftServerScriptEngine::*rv)(class ScriptApi::ScriptReportItem const&);
         *((void**)&rv) = dlsym("?_handleError@MinecraftServerScriptEngine@@EEAAXAEBVScriptReportItem@ScriptApi@@@Z");

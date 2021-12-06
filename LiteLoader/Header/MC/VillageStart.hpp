@@ -8,23 +8,10 @@ class VillageStart {
 #include "Extra/VillageStartAPI.hpp"
 public:
     /*0*/ virtual ~VillageStart();
-    /*
-    inline int \/*enum enum StructureFeatureType*\/ getType() const{
-        int \/*enum enum StructureFeatureType*\/ (VillageStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@VillageStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isValid() const{
-        bool (VillageStart::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@VillageStart@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
-        bool (VillageStart::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?postProcess@VillageStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
-    }
-    */
+    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
+    /*2*/ virtual bool isValid() const;
+    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+
 
 protected:
 

@@ -19,48 +19,7 @@ public:
     /*7*/ virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer&) const;
     /*8*/ virtual class Container* _tryGetContainer() const = 0;
     /*9*/ virtual void _balanceTransaction(class ItemStack const&) const;
-    /*
-    inline void _balanceTransaction(class ItemStack const& a0) const{
-        void (ScriptContainer::*rv)(class ItemStack const&) const;
-        *((void**)&rv) = dlsym("?_balanceTransaction@ScriptContainer@@MEBAXAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<class ItemStack const&>(a0));
-    }
-    inline class Scripting::Result<void> addItem(class ScriptItemStack const& a0) const{
-        class Scripting::Result<void> (ScriptContainer::*rv)(class ScriptItemStack const&) const;
-        *((void**)&rv) = dlsym("?addItem@ScriptContainer@@UEBA?AV?$Result@X@Scripting@@AEBVScriptItemStack@@@Z");
-        return (this->*rv)(std::forward<class ScriptItemStack const&>(a0));
-    }
-    inline class Scripting::Result<int> getEmptySlotsCount() const{
-        class Scripting::Result<int> (ScriptContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getEmptySlotsCount@ScriptContainer@@UEBA?AV?$Result@H@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack> > getItem(int a0) const{
-        class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptItemStack> > (ScriptContainer::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItem@ScriptContainer@@UEBA?AV?$Result@V?$StrongTypedObjectHandle@VScriptItemStack@@@Scripting@@@Scripting@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
-    inline class Scripting::Result<int> getSize() const{
-        class Scripting::Result<int> (ScriptContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getSize@ScriptContainer@@UEBA?AV?$Result@H@Scripting@@XZ");
-        return (this->*rv)();
-    }
-    inline class Scripting::Result<void> setItem(int a0, class ScriptItemStack const& a1) const{
-        class Scripting::Result<void> (ScriptContainer::*rv)(int, class ScriptItemStack const&) const;
-        *((void**)&rv) = dlsym("?setItem@ScriptContainer@@UEBA?AV?$Result@X@Scripting@@HAEBVScriptItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ScriptItemStack const&>(a1));
-    }
-    inline class Scripting::Result<bool> swapItems(int a0, int a1, class ScriptContainer& a2) const{
-        class Scripting::Result<bool> (ScriptContainer::*rv)(int, int, class ScriptContainer&) const;
-        *((void**)&rv) = dlsym("?swapItems@ScriptContainer@@UEBA?AV?$Result@_N@Scripting@@HHAEAV1@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class ScriptContainer&>(a2));
-    }
-    inline class Scripting::Result<bool> transferItem(int a0, int a1, class ScriptContainer& a2) const{
-        class Scripting::Result<bool> (ScriptContainer::*rv)(int, int, class ScriptContainer&) const;
-        *((void**)&rv) = dlsym("?transferItem@ScriptContainer@@UEBA?AV?$Result@_N@Scripting@@HHAEAV1@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class ScriptContainer&>(a2));
-    }
-    */
+
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);
 
 protected:
