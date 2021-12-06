@@ -4,12 +4,12 @@
 
 #else
 // Add Member There
-class Value {
-public:
-    Value() = delete;
-    Value(Value const&) = delete;
-    Value(Value const&&) = delete;
-};
-enum ValueType;
+//class Value {
+//public:
+//    Value() = delete;
+//    Value(Value const&) = delete;
+//    Value(Value const&&) = delete;
+//};
+//enum ValueType;
 
 #endif

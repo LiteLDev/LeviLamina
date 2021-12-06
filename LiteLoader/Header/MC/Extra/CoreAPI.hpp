@@ -7,14 +7,14 @@
 enum FileBufferingMode;
 enum LevelStorageState;
 enum DirectoryIterationFlags;
-template <typename T0>
+template <typename T0, int i1>
 class StackString {
 public:
     StackString() = delete;
     StackString(StackString const&) = delete;
     StackString(StackString const&&) = delete;
 };
-template <typename T0>
+template <typename T0, typename T1>
 class Subject {
 public:
     Subject() = delete;

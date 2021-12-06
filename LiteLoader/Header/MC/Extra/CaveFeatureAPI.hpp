@@ -16,6 +16,6 @@ struct CarveEllipsoidParams {
 CachedMetaData() = delete;
 CachedMetaData(CachedMetaData const&) = delete;
 CachedMetaData(CachedMetaData const&&) = delete;
-}£»
+};
 
 #endif

@@ -86,7 +86,7 @@ public:
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
 };
 
-#include "MC/AABB.hpp"
+#include "../MC/AABB.hpp"
 class BoundingBox {
 public:
     BlockPos bpos1;
@@ -139,7 +139,7 @@ public:
     AutomaticID(T x) { id = x; }
     inline operator T() { return id; }
 };
-#include "MC/Tick.hpp"
+#include "../MC/Tick.hpp"
 //struct Tick {
 //    unsigned long long t;
 //};
@@ -165,46 +165,47 @@ public:
 };
 static_assert(std::is_pod_v<ActorRuntimeID>);
 
-class RelativeFloat {
-public:
-    float value;
-    bool is_relative;
+#include "../MC/RelativeFloat.hpp"
+//class RelativeFloat {
+//public:
+//    float value;
+//    bool is_relative;
+//
+//    RelativeFloat(float value)
+//        : value(value)
+//        , is_relative(true) {
+//    }
+//
+//    inline float getFloat(float center) const {
+//        if (is_relative)
+//            return center + value;
+//        return value;
+//    }
+//};
 
-    RelativeFloat(float value)
-        : value(value)
-        , is_relative(true) {
-    }
-
-    inline float getFloat(float center) const {
-        if (is_relative)
-            return center + value;
-        return value;
-    }
-};
-
-namespace Core {
-
-class PathPart {
-public:
-    std::string data;
-};
-
-class Path : public PathPart {
-public:
-};
-
-template <typename T>
-class PathBuffer {
-    T value;
-    operator T&() noexcept {
-        return value;
-    }
-    operator T const &() const noexcept {
-        return value;
-    }
-};
-
-}; // namespace Core
+//namespace Core {
+//
+//class PathPart {
+//public:
+//    std::string data;
+//};
+//
+//class Path : public PathPart {
+//public:
+//};
+//
+//template <typename T>
+//class PathBuffer {
+//    T value;
+//    operator T&() noexcept {
+//        return value;
+//    }
+//    operator T const &() const noexcept {
+//        return value;
+//    }
+//};
+//
+//}; // namespace Core
 
 namespace gametest{
     class BaseGameTestBatchRunner;
@@ -229,7 +230,7 @@ public:
     class Command;
 };
 
-#include "MC/Automation.hpp"
+#include "../MC/Automation.hpp"
 
 class ClientBlobCache {
 public:
