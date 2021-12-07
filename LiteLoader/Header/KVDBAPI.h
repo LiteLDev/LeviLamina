@@ -1,47 +1,40 @@
 ﻿#pragma once
-#include "Global.h"
+#include <Global.h>
 #include <functional>
+#include <leveldb\c.h>
+#include <leveldb\cache.h>
+#include <leveldb\db.h>
+#include <leveldb\filter_policy.h>
+#include <leveldb\iterator.h>
 #include <string_view>
 #include <unordered_map>
-#include "third-party/leveldb/c.h"
-#include "third-party/leveldb/cache.h"
-#include "third-party/leveldb/db.h"
-#include "third-party/leveldb/filter_policy.h"
-#include "third-party/leveldb/iterator.h"
+using std::string_view, std::string;
 
-class KVDB
-{
-    leveldb::DB *db;
+class KVDB {
+    leveldb::DB* db;
     leveldb::ReadOptions rdopt;
     leveldb::WriteOptions wropt;
     leveldb::Options options;
-    leveldb::Status status;
-    std::string dbPath;
+    string dpath;
 
-  public:
-    LIAPI explicit KVDB(const std::string &path, bool read_cache = true, int cache_sz = 0, int Bfilter_bit = 0);
+public:
+    void __init(const char* path, bool read_cache, int cache_sz, int Bfilter_bit);
+
     LIAPI ~KVDB();
-    KVDB(KVDB const &) = delete;
-    KVDB& operator=(KVDB const &) = delete;
-
-    LIAPI bool get(std::string_view key, std::string &val);
-    LIAPI bool put(std::string_view key, std::string_view val);
-    LIAPI bool remove(std::string_view key);
-    LIAPI void iter(std::function<bool(std::string_view key, std::string_view val)> const &fn);
-    LIAPI void iter(std::function<bool(std::string_view key)> const &);
-
-    LIAPI bool isValid();
-    LIAPI operator bool();
-    LIAPI std::string error();
-
-
-    //For compatibility
-    inline bool del(std::string_view key)
-    {
-        return remove(key);
+    KVDB() {
     }
+    KVDB(KVDB const&) = delete;
+    KVDB& operator=(KVDB const&) = delete;
+
+    LIAPI bool get(string_view key, string& val);
+    LIAPI void put(string_view key, string_view val);
+    LIAPI void del(string_view key);
+    LIAPI void iter(std::function<bool(string_view key, string_view val)> const& fn);
+    LIAPI void iter(std::function<bool(string_view key)> const&);
+    LIAPI std::string error(leveldb::Status status);
 };
 
-
-
-
+LIAPI std::unique_ptr<KVDB> MakeKVDB(const string& path,
+                                         bool read_cache = true,
+                                         int cache_sz = 0,
+                                         int Bfilter_bit = 0);

@@ -16,6 +16,7 @@
 #include <LLAPI.h>
 #include <CrashLogger.h>
 #include <Config.h>
+
 using namespace std;
 
 vector<std::wstring> GetPreloadList() {
@@ -102,7 +103,7 @@ void LoadMain()
     for (auto& i : paths) {
         bool loaded = false;
         for (auto& p : preloadList)
-            if (p.find(str2wstr(i)) != std::wstring::npos) {
+            if (p.find(str2wstr(i)) != std::wstring::npos,true,0) {
                 loaded = true;
                 break;
             }
