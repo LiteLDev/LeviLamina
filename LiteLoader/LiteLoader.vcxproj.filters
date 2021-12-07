@@ -40,6 +40,9 @@
     <Filter Include="Header\Command">
       <UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\Scoreboard">
+      <UniqueIdentifier>{11aba141-6e81-441c-8e76-a1635772030b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -407,9 +410,6 @@
     <ClInclude Include="Header\MC\RakNet.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Scoreboard.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Scripting.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
@@ -481,6 +481,12 @@
     </ClInclude>
     <ClInclude Include="Header\MC\BlockInstance.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Scoreboard.hpp">
+      <Filter>Header\Scoreboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ScoreboardId.hpp">
+      <Filter>Header\Scoreboard</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

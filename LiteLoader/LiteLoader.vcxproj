@@ -118,6 +118,7 @@
     <ClInclude Include="Header\MC\ListTag.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\ScoreboardId.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
     <ClInclude Include="Header\MC\StringTag.hpp" />
     <ClInclude Include="Header\MC\StructureSettings.hpp" />

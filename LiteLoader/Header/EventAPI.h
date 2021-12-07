@@ -24,6 +24,8 @@ class MobEffectInstance;
 class Container;
 class WitherBoss;
 class ArmStand;
+class Objective;
+struct ScoreboardId;
 
 namespace Event
 {
@@ -322,6 +324,15 @@ namespace Event
         BlockInstance block;
     };
 
+    class PlayerScoreChangedEvent : public EventTemplate<PlayerScoreChangedEvent>
+    {
+    public:
+        Player* player;
+        int after;
+        Objective* scoreObjective;
+        ScoreboardId* scoreboardId;
+    };
+
 
     ///////////////////////////// Block Events /////////////////////////////
 
@@ -538,10 +549,21 @@ namespace Event
     class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
     {};
 
+    class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent>
+    {
+    public:
+        std::string cmd;
+    };
 
     class RegCmdEvent : public EventTemplate<RegCmdEvent>
     {
     public:
         CommandRegistry* CMDRg;
+    };
+
+    class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent>
+    {
+    public:
+        std::string output;
     };
 }; // namespace Event

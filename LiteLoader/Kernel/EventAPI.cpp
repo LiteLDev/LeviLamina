@@ -7,8 +7,12 @@
 #include <typeinfo>
 #include <LoggerAPI.h>
 #include <MC/Player.hpp>
+#include <MC/Scoreboard.hpp>
+#include <MC/ScoreboardId.hpp>
+#include <MC/Objective.hpp>
 #include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
+#include <MC/Player.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/BlockSource.hpp>
@@ -95,8 +99,11 @@ DeclareEventListeners(HopperBlockSearchItemEvent);
 DeclareEventListeners(FarmLandDecayEvent);
 DeclareEventListeners(FireSpreadEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
-DeclareEventListeners(ServerStartedEvent);
+DeclareEventListeners(ConsoleCmdEvent);
+DeclareEventListeners(PlayerScoreChangedEvent);
+DeclareEventListeners(ConsoleOutputEvent);
 DeclareEventListeners(PostInitEvent);
+DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(RegCmdEvent);
 
 
@@ -642,38 +649,59 @@ THook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",
     return original(pl);
 }
 
-/////////////////// PlayerCmd ///////////////////
+/////////////////// PlayerCmdEvent & ConsoleCmdEvent ///////////////////
 THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
       MinecraftCommands* _this, MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
 {
     MCRESULT* result = original(_this, rtn, context, print);
-    IF_LISTENED(PlayerCmdEvent)
+    
+    Player* sp;
+    string cmd;
+
+    try
     {
-        Player* sp = context->getOrigin().getPlayer();
-        if (sp)
+        sp = context->getOrigin().getPlayer();
+        cmd = context->getCmd();
+        if (!cmd.empty() && cmd.at(0) == '/')
         {
-            try {
-                string cmd = context->getCmd();
-                if (!cmd.empty() && cmd.at(0) == '/') {
-                    cmd = cmd.substr(1, cmd.size() - 1);
-                }
-
-                PlayerCmdEvent ev;
-                ev.cmd = cmd;
-                ev.player = sp;
-                ev.result = rtn;
-
-                if (!ev.call())
-                    return false;
-            } catch (seh_exception) {
-                Logger::Error("Exception at PlayerUseCmdEV");
-            }
+            cmd = cmd.substr(1, cmd.size() - 1);
         }
     }
-    IF_LISTENED_END(PlayerCmdEvent);
+    catch (...)
+    {
+        return result;
+    }
+
+    if (sp)
+    {
+        //PlayerCmd
+        IF_LISTENED(PlayerCmdEvent)
+        {
+            PlayerCmdEvent ev;
+            ev.cmd = cmd;
+            ev.player = sp;
+            ev.result = rtn;
+
+            if (!ev.call())
+                return false;
+        }
+        IF_LISTENED_END(PlayerCmdEvent);
+    }
+    else
+    {
+        //ConsoleCmd
+        IF_LISTENED(ConsoleCmdEvent)
+        {
+            ConsoleCmdEvent ev;
+            ev.cmd = cmd;
+
+            if (!ev.call())
+                return false;
+        }
+        IF_LISTENED_END(ConsoleCmdEvent);
+    }
     return result;
 }
-
 
 /////////////////// CmdBlockExecute ///////////////////
 THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVCommandOrigin@@AEA_N@Z",
@@ -1326,6 +1354,40 @@ THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransa
     return original(_this, sp, unk);
 }
 
+////////////// PlayerScoreChangedEvent  //////////////
+THook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z",
+    Scoreboard* _this, ScoreboardId* a1, Objective* a2)
+{
+    IF_LISTENED(PlayerScoreChangedEvent)
+    {
+        int id = a1->id;
+
+        Player* player = nullptr;
+        auto pls = Level::getAllPlayers();
+        for (auto& pl : pls)
+        {
+            if (Global<Scoreboard>->getScoreboardId(*pl).id == id)
+            {
+                player = pl;
+                break;
+            }
+        }
+
+        if (player)
+        {
+            PlayerScoreChangedEvent ev;
+            ev.player = player;
+            ev.after = a2->getPlayerScore(*a1).getCount();
+            ev.scoreboardId = a1;
+            ev.scoreObjective = a2;
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(PlayerScoreChangedEvent);
+
+    return original(_this, a1, a2);
+}
+
 ////////////// ServerStarted //////////////
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
 {
@@ -1351,4 +1413,22 @@ THook(void,"?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
         ev.call();
     }
     IF_LISTENED_END(RegCmdEvent);
+}
+
+////////////// ConsoleOutputEvent //////////////
+THook(std::ostream&, "??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z",
+    std::ostream& _this, const char* str, unsigned size)
+{
+    IF_LISTENED(ConsoleOutputEvent)
+    {
+        if (&_this == &std::cout)
+        {
+            ConsoleOutputEvent ev;
+            ev.output = string(str, size);
+            if (!ev.call())
+                return _this;
+        }
+    }
+    IF_LISTENED_END(ConsoleOutputEvent);
+    return original(_this, str, size);
 }
