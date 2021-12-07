@@ -2,6 +2,7 @@
 #include "Global.h"
 #include "MC/MCRESULT.hpp"
 #include "LoggerAPI.h"
+#include "MC/BlockInstance.hpp"
 #include <functional>
 #include <string>
 #include <list>
@@ -22,6 +23,7 @@ class CommandRegistry;
 class MobEffectInstance;
 class Container;
 class WitherBoss;
+class ArmStand;
 
 namespace Event
 {
@@ -140,8 +142,7 @@ namespace Event
     public:
         ServerPlayer* player;
         ItemStack* itemStack;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         unsigned char side;
     };
 
@@ -235,33 +236,28 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
-        Block* block;
+        BlockInstance block;
     };
 
     class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         Container* container;
     };
 
@@ -269,8 +265,7 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         Container* container;
     };
 
@@ -309,8 +304,7 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerOpenContainerScreenEvent : public EventTemplate<PlayerOpenContainerScreenEvent>
@@ -322,20 +316,24 @@ namespace Event
 
     ///////////////////////////// Block Events /////////////////////////////
 
+    class BlockInteractedEvent : public EventTemplate<BlockInteractedEvent>
+    {
+    public:
+        BlockInstance block;
+        Player* player;
+    };
+
     class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>
     {
     public:
         string cmd;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent>
     {
     public:
-        Block* block;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
 
@@ -393,12 +391,10 @@ namespace Event
     {
     public:
         Actor* entity;
-        Block* block;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
-    class NPCCmdEvent : public EventTemplate<NPCCmdEvent>
+    class NpcCmdEvent : public EventTemplate<NpcCmdEvent>
     {
     public:
         Actor* npc;
@@ -412,6 +408,15 @@ namespace Event
         Actor* shooter;
         ActorDefinitionIdentifier* identifier;
         std::string typeName;
+    };
+
+
+    class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent>
+    {
+    public:
+        ArmStand* armStand;
+        Player* causer;
+        int slotNumber;
     };
 
     class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent>

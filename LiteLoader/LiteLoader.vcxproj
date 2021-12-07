@@ -1,79 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<ItemGroup Label="ProjectConfigurations">
-		<ProjectConfiguration Include="Release|x64">
-			<Configuration>Release</Configuration>
-			<Platform>x64</Platform>
-		</ProjectConfiguration>
-	</ItemGroup>
-	<PropertyGroup Label="Globals">
-		<VCProjectVersion>16.0</VCProjectVersion>
-		<ProjectGuid>{A52A258C-73B1-4F64-B4F6-2859CE6262C5}</ProjectGuid>
-		<Keyword>Win32Proj</Keyword>
-		<RootNamespace>LiteLoader</RootNamespace>
-		<WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-	</PropertyGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-		<ConfigurationType>DynamicLibrary</ConfigurationType>
-		<UseDebugLibraries>false</UseDebugLibraries>
-		<PlatformToolset>v143</PlatformToolset>
-		<WholeProgramOptimization>true</WholeProgramOptimization>
-		<CharacterSet>Unicode</CharacterSet>
-	</PropertyGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
-	<ImportGroup Label="ExtensionSettings">
-	</ImportGroup>
-	<ImportGroup Label="Shared">
-	</ImportGroup>
-	<ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-	</ImportGroup>
-	<PropertyGroup Label="UserMacros" />
-	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<LinkIncremental>false</LinkIncremental>
-		<IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
-		<LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
-		<OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-	</PropertyGroup>
-	<PropertyGroup Label="LLVM" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<UseLldLink>true</UseLldLink>
-	</PropertyGroup>
-	<ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-		<ClCompile>
-			<PrecompiledHeader>NotUsing</PrecompiledHeader>
-			<WarningLevel>Level2</WarningLevel>
-			<FunctionLevelLinking>true</FunctionLevelLinking>
-			<IntrinsicFunctions>true</IntrinsicFunctions>
-			<SDLCheck>true</SDLCheck>
-			<PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;_AMD64_;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-			<ConformanceMode>false</ConformanceMode>
-			<PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-			<LanguageStandard>stdcpp17</LanguageStandard>
-			<RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-			<AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
-			<ExceptionHandling>Async</ExceptionHandling>
-			<MultiProcessorCompilation>true</MultiProcessorCompilation>
-			<Optimization>Disabled</Optimization>
-		</ClCompile>
-		<Link>
-			<SubSystem>Windows</SubSystem>
-			<EnableCOMDATFolding>true</EnableCOMDATFolding>
-			<OptimizeReferences>true</OptimizeReferences>
-			<GenerateDebugInformation>true</GenerateDebugInformation>
-			<EnableUAC>false</EnableUAC>
-			<DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
-			<AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;%(AdditionalDependencies)</AdditionalDependencies>
-		</Link>
-		<PostBuildEvent>
-			<Command>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{A52A258C-73B1-4F64-B4F6-2859CE6262C5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LiteLoader</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Label="LLVM" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <UseLldLink>true</UseLldLink>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;LITELOADER_EXPORTS;WIN32_LEAN_AND_MEAN;_CRT_SECURE_NO_WARNINGS;_WINDOWS;_USRDLL;_AMD64_;NOMINMAX;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+      <ExceptionHandling>Async</ExceptionHandling>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableUAC>false</EnableUAC>
+      <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
+      <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
 				if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
 				copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
 				)
 			</Command>
-		</PostBuildEvent>
-		<PreBuildEvent>
-			<Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
 				if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
 				if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
 				goto end
@@ -84,176 +84,176 @@
 
 				:end
 			</Command>
-		</PreBuildEvent>
-	</ItemDefinitionGroup>
-	<ItemGroup>
-		<ClCompile Include="AutoUpgrade.cpp" />
-		<ClCompile Include="CheckNotice.cpp" />
-		<ClCompile Include="Config.cpp" />
-		<ClCompile Include="CrashLogger.cpp" />
-		<ClCompile Include="dllmain.cpp" />
-		<ClCompile Include="BugFix.cpp" />
-
-		<ClInclude Include="Header\MC\AABB.hpp" />
-		<ClInclude Include="Header\MC\Automation.hpp" />
-		<ClInclude Include="Header\MC\ByteArrayTag.hpp" />
-		<ClInclude Include="Header\MC\ByteTag.hpp" />
-		<ClInclude Include="Header\MC\CommandMessage.hpp" />
-		<ClInclude Include="Header\MC\CommandPosition.hpp" />
-		<ClInclude Include="Header\MC\CommandOrigin.hpp" />
-		<ClInclude Include="Header\MC\CommandOutput.hpp" />
-		<ClInclude Include="Header\MC\CommandParameterData.hpp" />
-		<ClInclude Include="Header\MC\CommandRegistry.hpp" />
-		<ClInclude Include="Header\MC\CompoundTag.hpp" />
-		<ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
-		<ClInclude Include="Header\MC\DoubleTag.hpp" />
-		<ClInclude Include="Header\MC\EndTag.hpp" />
-		<ClInclude Include="Header\MC\FloatTag.hpp" />
-		<ClInclude Include="Header\MC\GameMode.hpp" />
-		<ClInclude Include="Header\MC\HashedString.hpp" />
-		<ClInclude Include="Header\MC\HitResult.hpp" />
-		<ClInclude Include="Header\MC\Int64Tag.hpp" />
-		<ClInclude Include="Header\MC\IntArrayTag.hpp" />
-		<ClInclude Include="Header\MC\IntTag.hpp" />
-		<ClInclude Include="Header\MC\ListTag.hpp" />
-		<ClInclude Include="Header\MC\NbtIo.hpp" />
-		<ClInclude Include="Header\MC\Packet.hpp" />
-		<ClInclude Include="Header\MC\ShortTag.hpp" />
-		<ClInclude Include="Header\MC\StringTag.hpp" />
-		<ClInclude Include="Header\MC\StructureSettings.hpp" />
-		<ClInclude Include="Header\MC\StructureTemplate.hpp" />
-		<ClInclude Include="Header\MC\Tag.hpp" />
-		<ClInclude Include="Header\MC\TagMemoryChunk.hpp" />
-		<ClInclude Include="Header\MC\BlockSource.hpp" />
-		<ClInclude Include="Header\MC\Command.hpp" />
-		<ClInclude Include="Header\MC\CommandContext.hpp" />
-		<ClInclude Include="Header\MC\ConnectionRequest.hpp" />
-		<ClInclude Include="Header\MC\ItemActor.hpp" />
-		<ClInclude Include="Header\MC\MinecraftCommands.hpp" />
-		<ClInclude Include="Header\MC\RakNet.hpp" />
-		<ClInclude Include="Header\MC\Scripting.hpp" />
-		<ClInclude Include="Header\MC\WebToken.hpp" />
-		<ClInclude Include="Header\MC\Actor.hpp" />
-		<ClInclude Include="Header\MC\Block.hpp" />
-		<ClInclude Include="Header\MC\BlockActor.hpp" />
-		<ClInclude Include="Header\MC\BlockLegacy.hpp" />
-		<ClInclude Include="Header\MC\Container.hpp" />
-		<ClInclude Include="Header\MC\ItemStack.hpp" />
-		<ClInclude Include="Header\MC\Level.hpp" />
-		<ClInclude Include="Header\MC\Mob.hpp" />
-		<ClInclude Include="Header\MC\NetworkIdentifier.hpp" />
-		<ClInclude Include="Header\MC\Player.hpp" />
-		<ClInclude Include="Header\MC\Scoreboard.hpp" />
-		<ClInclude Include="Header\MC\Spawner.hpp" />
-		<ClCompile Include="Kernel\ActorAPI.cpp" />
-		<ClCompile Include="Kernel\BlockActorAPI.cpp" />
-		<ClCompile Include="Kernel\BlockAPI.cpp" />
-		<ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
-		<ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
-		<ClCompile Include="Kernel\BlockSourceAPI.cpp" />
-		<ClCompile Include="Kernel\CommandAPI.cpp" />
-		<ClCompile Include="Kernel\CommandOriginAPI.cpp" />
-		<ClCompile Include="Kernel\CommandOutputAPI.cpp" />
-		<ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />
-		<ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
-		<ClCompile Include="Kernel\CompoundTagAPI.cpp" />
-		<ClCompile Include="Kernel\ContainerAPI.cpp" />
-		<ClCompile Include="Kernel\EventAPI.cpp" />
-		<ClCompile Include="Kernel\FormAPI.cpp" />
-		<ClCompile Include="Kernel\GameModeAPI.cpp" />
-		<ClCompile Include="Kernel\HitResultAPI.cpp" />
-		<ClCompile Include="Kernel\ItemActorAPI.cpp" />
-		<ClCompile Include="Kernel\ItemStackAPI.cpp" />
-		<ClCompile Include="Kernel\LevelAPI.cpp" />
-		<ClCompile Include="Kernel\ListTagAPI.cpp" />
-		<ClCompile Include="Kernel\LLAPI.cpp" />
-		<ClCompile Include="Kernel\MobAPI.cpp" />
-		<ClCompile Include="Kernel\TagAPI.cpp" />
-		<ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
-		<ClCompile Include="Kernel\PlayerAPI.cpp" />
-		<ClCompile Include="Kernel\ScheduleAPI.cpp" />
-		<ClCompile Include="Kernel\ScoreboardAPI.cpp" />
-		<ClCompile Include="Kernel\SpawnerAPI.cpp" />
-		<ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
-		<ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
-		<ClCompile Include="Kernel\Utils\FileHelper.cpp" />
-		<ClCompile Include="Kernel\TranslationAPI.cpp" />
-		<ClCompile Include="Kernel\LoggerAPI.cpp" />
-		<ClCompile Include="Kernel\Utils\GlobalService.cpp" />
-		<ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
-		<ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
-		<ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
-		<ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp" />
-		<ClCompile Include="Loader.cpp" />
-		<ClCompile Include="Kernel\ServerAPI.cpp" />
-		<ClCompile Include="Kernel\Utils\CsLock.cpp" />
-		<ClCompile Include="Kernel\Utils\StringHelper.cpp" />
-		<ClCompile Include="Kernel\KVDBAPI.cpp" />
-		<ClCompile Include="Kernel\Utils\WinHelper.cpp" />
-		<ClCompile Include="LiteLoader.cpp" />
-		<ClCompile Include="ModifyInfomation.cpp" />
-		<ClCompile Include="PlayerDB.cpp" />
-		<ClCompile Include="PluginManager.cpp" />
-		<ClCompile Include="BuiltinCommands.cpp" />
-		<ClCompile Include="ServerLogger.cpp" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="cpp.hint" />
-		<None Include="Resource\LiteLoader.aps" />
-	</ItemGroup>
-	<ItemGroup>
-		<ResourceCompile Include="Resource\LiteLoader.rc" />
-	</ItemGroup>
-	<ItemGroup>
-		<ClInclude Include="AutoUpgrade.h" />
-		<ClInclude Include="CheckNotice.h" />
-		<ClInclude Include="Config.h" />
-		<ClInclude Include="CrashLogger.h" />
-		<ClInclude Include="Header\BinaryStreamAPI.h" />
-		<ClInclude Include="Header\EventAPI.h" />
-		<ClInclude Include="Header\PlayerDB.h" />
-		<ClInclude Include="Header\RegCommandAPI.h" />
-		<ClInclude Include="Header\ScheduleAPI.h" />
-		<ClInclude Include="Header\Global.h" />
-		<ClInclude Include="Header\LLAPI.h" />
-		<ClInclude Include="Header\SendPacketAPI.h" />
-		<ClInclude Include="Header\ServerAPI.h" />
-		<ClInclude Include="Header\Utils\Bstream.h" />
-		<ClInclude Include="Header\Utils\CryptHelper.h" />
-		<ClInclude Include="Header\Utils\CsLock.h" />
-		<ClInclude Include="Header\Utils\FileHelper.h" />
-		<ClInclude Include="Header\Utils\Hash.h" />
-		<ClInclude Include="Header\HookAPI.h" />
-		<ClInclude Include="Header\TranslationAPI.h" />
-		<ClInclude Include="Header\LoggerAPI.h" />
-		<ClInclude Include="Header\Utils\Json.h" />
-		<ClInclude Include="Header\Utils\GlobalService.h" />
-		<ClInclude Include="Header\Utils\NetworkHelper.h" />
-		<ClInclude Include="Header\Utils\Optional.h" />
-		<ClInclude Include="Header\Utils\PatchHelper.h" />
-		<ClInclude Include="Header\Utils\PlayerMap.h" />
-		<ClInclude Include="Header\Utils\PluginOwnData.h" />
-		<ClInclude Include="Header\Utils\VarInt.h" />
-		<ClInclude Include="Header\Utils\ViewHelper.h" />
-		<ClInclude Include="Loader.h" />
-		<ClInclude Include="PluginManager.h" />
-		<ClInclude Include="Header\KVDBAPI.h" />
-		<ClInclude Include="Header\Utils\StringHelper.h" />
-		<ClInclude Include="Header\Utils\WinHelper.h" />
-		<ClInclude Include="Resource\resource.h" />
-		<ClInclude Include="Version.h" />
-	</ItemGroup>
-	<ItemGroup>
-		<Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib" />
-		<Library Include="Lib\bedrock_server_api.lib" />
-		<Library Include="Lib\bedrock_server_var.lib" />
-		<Library Include="Lib\SymDBHelper.lib" />
-		<Library Include="Lib\third-party\openssl\libcrypto.lib" />
-		<Library Include="Lib\third-party\openssl\libssl.lib" />
-		<Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />
-		<Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib" />
-	</ItemGroup>
-	<Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-	<ImportGroup Label="ExtensionTargets">
-	</ImportGroup>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AutoUpgrade.cpp" />
+    <ClCompile Include="CheckNotice.cpp" />
+    <ClCompile Include="Config.cpp" />
+    <ClCompile Include="CrashLogger.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="BugFix.cpp" />
+    <ClInclude Include="Header\MC\AABB.hpp" />
+    <ClInclude Include="Header\MC\Automation.hpp" />
+    <ClInclude Include="Header\MC\BlockInstance.hpp" />
+    <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
+    <ClInclude Include="Header\MC\ByteTag.hpp" />
+    <ClInclude Include="Header\MC\CommandMessage.hpp" />
+    <ClInclude Include="Header\MC\CommandPosition.hpp" />
+    <ClInclude Include="Header\MC\CommandOrigin.hpp" />
+    <ClInclude Include="Header\MC\CommandOutput.hpp" />
+    <ClInclude Include="Header\MC\CommandParameterData.hpp" />
+    <ClInclude Include="Header\MC\CommandRegistry.hpp" />
+    <ClInclude Include="Header\MC\CompoundTag.hpp" />
+    <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
+    <ClInclude Include="Header\MC\DoubleTag.hpp" />
+    <ClInclude Include="Header\MC\EndTag.hpp" />
+    <ClInclude Include="Header\MC\FloatTag.hpp" />
+    <ClInclude Include="Header\MC\GameMode.hpp" />
+    <ClInclude Include="Header\MC\HashedString.hpp" />
+    <ClInclude Include="Header\MC\HitResult.hpp" />
+    <ClInclude Include="Header\MC\Int64Tag.hpp" />
+    <ClInclude Include="Header\MC\IntArrayTag.hpp" />
+    <ClInclude Include="Header\MC\IntTag.hpp" />
+    <ClInclude Include="Header\MC\ListTag.hpp" />
+    <ClInclude Include="Header\MC\NbtIo.hpp" />
+    <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\ShortTag.hpp" />
+    <ClInclude Include="Header\MC\StringTag.hpp" />
+    <ClInclude Include="Header\MC\StructureSettings.hpp" />
+    <ClInclude Include="Header\MC\StructureTemplate.hpp" />
+    <ClInclude Include="Header\MC\Tag.hpp" />
+    <ClInclude Include="Header\MC\TagMemoryChunk.hpp" />
+    <ClInclude Include="Header\MC\BlockSource.hpp" />
+    <ClInclude Include="Header\MC\Command.hpp" />
+    <ClInclude Include="Header\MC\CommandContext.hpp" />
+    <ClInclude Include="Header\MC\ConnectionRequest.hpp" />
+    <ClInclude Include="Header\MC\ItemActor.hpp" />
+    <ClInclude Include="Header\MC\MinecraftCommands.hpp" />
+    <ClInclude Include="Header\MC\RakNet.hpp" />
+    <ClInclude Include="Header\MC\Scripting.hpp" />
+    <ClInclude Include="Header\MC\WebToken.hpp" />
+    <ClInclude Include="Header\MC\Actor.hpp" />
+    <ClInclude Include="Header\MC\Block.hpp" />
+    <ClInclude Include="Header\MC\BlockActor.hpp" />
+    <ClInclude Include="Header\MC\BlockLegacy.hpp" />
+    <ClInclude Include="Header\MC\Container.hpp" />
+    <ClInclude Include="Header\MC\ItemStack.hpp" />
+    <ClInclude Include="Header\MC\Level.hpp" />
+    <ClInclude Include="Header\MC\Mob.hpp" />
+    <ClInclude Include="Header\MC\NetworkIdentifier.hpp" />
+    <ClInclude Include="Header\MC\Player.hpp" />
+    <ClInclude Include="Header\MC\Scoreboard.hpp" />
+    <ClInclude Include="Header\MC\Spawner.hpp" />
+    <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\BlockActorAPI.cpp" />
+    <ClCompile Include="Kernel\BlockAPI.cpp" />
+    <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
+    <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
+    <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
+    <ClCompile Include="Kernel\CommandAPI.cpp" />
+    <ClCompile Include="Kernel\CommandOriginAPI.cpp" />
+    <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
+    <ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />
+    <ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
+    <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
+    <ClCompile Include="Kernel\ContainerAPI.cpp" />
+    <ClCompile Include="Kernel\EventAPI.cpp" />
+    <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\GameModeAPI.cpp" />
+    <ClCompile Include="Kernel\HitResultAPI.cpp" />
+    <ClCompile Include="Kernel\ItemActorAPI.cpp" />
+    <ClCompile Include="Kernel\ItemStackAPI.cpp" />
+    <ClCompile Include="Kernel\LevelAPI.cpp" />
+    <ClCompile Include="Kernel\ListTagAPI.cpp" />
+    <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\TagAPI.cpp" />
+    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
+    <ClCompile Include="Kernel\PlayerAPI.cpp" />
+    <ClCompile Include="Kernel\ScheduleAPI.cpp" />
+    <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
+    <ClCompile Include="Kernel\SpawnerAPI.cpp" />
+    <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
+    <ClCompile Include="Kernel\TranslationAPI.cpp" />
+    <ClCompile Include="Kernel\LoggerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\GlobalService.cpp" />
+    <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
+    <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
+    <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp" />
+    <ClCompile Include="Loader.cpp" />
+    <ClCompile Include="Kernel\ServerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\CsLock.cpp" />
+    <ClCompile Include="Kernel\Utils\StringHelper.cpp" />
+    <ClCompile Include="Kernel\KVDBAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
+    <ClCompile Include="LiteLoader.cpp" />
+    <ClCompile Include="ModifyInfomation.cpp" />
+    <ClCompile Include="PlayerDB.cpp" />
+    <ClCompile Include="PluginManager.cpp" />
+    <ClCompile Include="BuiltinCommands.cpp" />
+    <ClCompile Include="ServerLogger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="cpp.hint" />
+    <None Include="Resource\LiteLoader.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource\LiteLoader.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AutoUpgrade.h" />
+    <ClInclude Include="CheckNotice.h" />
+    <ClInclude Include="Config.h" />
+    <ClInclude Include="CrashLogger.h" />
+    <ClInclude Include="Header\BinaryStreamAPI.h" />
+    <ClInclude Include="Header\EventAPI.h" />
+    <ClInclude Include="Header\PlayerDB.h" />
+    <ClInclude Include="Header\RegCommandAPI.h" />
+    <ClInclude Include="Header\ScheduleAPI.h" />
+    <ClInclude Include="Header\Global.h" />
+    <ClInclude Include="Header\LLAPI.h" />
+    <ClInclude Include="Header\SendPacketAPI.h" />
+    <ClInclude Include="Header\ServerAPI.h" />
+    <ClInclude Include="Header\Utils\Bstream.h" />
+    <ClInclude Include="Header\Utils\CryptHelper.h" />
+    <ClInclude Include="Header\Utils\CsLock.h" />
+    <ClInclude Include="Header\Utils\FileHelper.h" />
+    <ClInclude Include="Header\Utils\Hash.h" />
+    <ClInclude Include="Header\HookAPI.h" />
+    <ClInclude Include="Header\TranslationAPI.h" />
+    <ClInclude Include="Header\LoggerAPI.h" />
+    <ClInclude Include="Header\Utils\Json.h" />
+    <ClInclude Include="Header\Utils\GlobalService.h" />
+    <ClInclude Include="Header\Utils\NetworkHelper.h" />
+    <ClInclude Include="Header\Utils\Optional.h" />
+    <ClInclude Include="Header\Utils\PatchHelper.h" />
+    <ClInclude Include="Header\Utils\PlayerMap.h" />
+    <ClInclude Include="Header\Utils\PluginOwnData.h" />
+    <ClInclude Include="Header\Utils\VarInt.h" />
+    <ClInclude Include="Header\Utils\ViewHelper.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="PluginManager.h" />
+    <ClInclude Include="Header\KVDBAPI.h" />
+    <ClInclude Include="Header\Utils\StringHelper.h" />
+    <ClInclude Include="Header\Utils\WinHelper.h" />
+    <ClInclude Include="Resource\resource.h" />
+    <ClInclude Include="Version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib" />
+    <Library Include="Lib\bedrock_server_api.lib" />
+    <Library Include="Lib\bedrock_server_var.lib" />
+    <Library Include="Lib\SymDBHelper.lib" />
+    <Library Include="Lib\third-party\openssl\libcrypto.lib" />
+    <Library Include="Lib\third-party\openssl\libssl.lib" />
+    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />
+    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
 </Project>

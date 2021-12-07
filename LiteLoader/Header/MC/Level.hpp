@@ -37,9 +37,13 @@ public:
     LIAPI static class LevelStorage& getLevelStorage();
 
     //Block
-    LIAPI static Block* getBlock(const BlockPos& pos, int dim);
+    LIAPI static Block* getBlock(BlockPos* pos, int dimId);
+    LIAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
+    LIAPI static Block* getBlock(const BlockPos& pos, int dimId);
     LIAPI static Block* getBlock(const BlockPos& pos, BlockSource *blockSource);
-    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dim);
+    LIAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimId);
+    LIAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
+    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
     LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);

@@ -8,14 +8,17 @@ class Container;
 
 class BlockInstance
 {
+    friend class Level;
+    friend class BlockSource;
+
     Block* block;
     BlockPos pos;
     int dim;
+    LIAPI BlockInstance(Block* block, BlockPos pos, int dimid);
+    LIAPI BlockInstance(BlockPos pos, int dimid = 0);
 
 public:
     LIAPI BlockInstance() = default;
-    LIAPI BlockInstance(Block* block, BlockPos pos, int dimid);
-    LIAPI BlockInstance(BlockPos pos, int dimid = 0);
 
     LIAPI Block* getBlock();
     LIAPI BlockPos getPosition();

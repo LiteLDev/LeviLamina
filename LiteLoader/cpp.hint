@@ -3,3 +3,5 @@
 // 有关详细信息，请参见 https://go.microsoft.com/fwlink/?linkid=865984
 #define LIAPI __declspec(dllexport)
 #define MCAPI __declspec(dllimport)
+#define IF_LISTENED(EVENT) if(EVENT::hasListener()) { try
+#define IF_LISTENED_END(EVENT) catch(...) { Logger::Error("Event Callback Failed!"); Logger::Error("Uncaught Exception Detected!"); Logger::Error("In Event: " #EVENT ""); } }
