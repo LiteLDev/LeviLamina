@@ -407,9 +407,6 @@
     <ClInclude Include="Header\MC\RakNet.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\RegCommandAPI.h">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Scoreboard.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
@@ -478,6 +475,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\ShortTag.hpp">
       <Filter>Header\NBT</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\RegCommandAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
