@@ -84,7 +84,7 @@ DeclareEventListeners(RegCmdEvent);
 
 
 #define IF_LISTENED(EVENT) \
-    if(!EVENT::hasListener()) { try
+    if(EVENT::hasListener()) { try
 
 #define IF_LISTENED_END(EVENT) \
         catch(...) { \

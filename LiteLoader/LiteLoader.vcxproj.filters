@@ -37,9 +37,6 @@
     <Filter Include="Header\MC">
       <UniqueIdentifier>{844b628b-f60c-4f0c-8292-6b0318207aa6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header\Extra">
-      <UniqueIdentifier>{106637ec-3fcd-43f3-b35c-aaa00e1ef2f7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header\Command">
       <UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
     </Filter>
