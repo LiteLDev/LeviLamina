@@ -41,7 +41,7 @@ DeclareEventListeners(PlayerPreJoinEvent);
 DeclareEventListeners(PlayerJoinEvent);
 DeclareEventListeners(PlayerLeftEvent);
 DeclareEventListeners(PlayerRespawnEvent);
-DeclareEventListeners(Event::PlayerChatEvent);
+DeclareEventListeners(PlayerChatEvent);
 DeclareEventListeners(PlayerUseItemEvent);
 DeclareEventListeners(PlayerUseItemOnEvent);
 DeclareEventListeners(PlayerChangeDimEvent);

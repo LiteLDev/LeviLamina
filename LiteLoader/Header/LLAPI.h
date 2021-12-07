@@ -84,24 +84,5 @@ namespace LL
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //For compatibility
 LIAPI std::string GetDataPath(const std::string& myname);
