@@ -23,6 +23,7 @@
 #include <MC/ConnectionRequest.hpp>
 #include <MC/GameMode.hpp>
 #include <MC/WebToken.hpp>
+#include <MC/HitResult.hpp>
 #include <RegCommandAPI.h>
 using namespace Event;
 using std::vector;
@@ -67,7 +68,15 @@ DeclareEventListeners(PlayerUseRespawnAnchorEvent);
 DeclareEventListeners(PlayerOpenContainerScreenEvent);
 DeclareEventListeners(MobHurtEvent);
 DeclareEventListeners(MobDieEvent);
+DeclareEventListeners(EntityExplodeEvent);
+DeclareEventListeners(ProjectileHitEntityEvent);
+DeclareEventListeners(WitherBossDestroyEvent);
+DeclareEventListeners(EntityRideEvent);
+DeclareEventListeners(EntityStepOnPressurePlateEvent);
+DeclareEventListeners(NPCCmdEvent);
+DeclareEventListeners(ProjectileSpawnEvent);
 DeclareEventListeners(ItemUseOnActorEvent);
+DeclareEventListeners(BlockExplodeEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(PostInitEvent);
@@ -775,8 +784,169 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSou
     return original(mob, ads);
 }
 
+///////////////////  EntityExplode & BlockExplode (bed) ///////////////////
+THook(void, "?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
+    Level* _this, BlockSource* bs, Actor* actor, Vec3* pos, float power, bool isFire, bool isDestroy, float range, bool a9)
+{
+    IF_LISTENED(EntityExplodeEvent)
+    {
+        if (actor)
+        {
+            EntityExplodeEvent ev;
+            ev.source = actor;
+            ev.pos = *pos;
+            ev.dimId = bs->getDimensionId();
+            ev.power = power;
+            ev.range = range;
+            ev.isDestroy = isDestroy;
+            ev.isFire = isFire;
+            if (!ev.call())
+                return;
+        }
+    }
+    IF_LISTENED_END(EntityExplodeEvent);
 
-////////////// ItemUseOnActorInventoryEV //////////////
+    //bed
+    IF_LISTENED(BlockExplodeEvent)
+    {
+        if (!actor)
+        {
+            BlockExplodeEvent ev;
+            ev.dimId = bs->getDimensionId();
+            ev.blockPos = pos->toBlockPos();
+            ev.block = Level::getBlock(ev.blockPos, ev.dimId);
+            if (!ev.call())
+                return;
+        }
+    }
+    IF_LISTENED_END(BlockExplodeEvent);
+
+    original(_this, bs, actor, pos, power, isFire, isDestroy, range, a9);
+}
+
+
+////////////// ProjectileHitEntityEvent //////////////
+THook(void, "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z",
+    void* _this, Actor* item, HitResult* res)
+{
+    IF_LISTENED(ProjectileHitEntityEvent)
+    {
+        Actor* to = res->getEntity();
+        if (to)
+        {
+            ProjectileHitEntityEvent ev;
+            ev.victim = to;
+            ev.source = item;
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(ProjectileHitEntityEvent);
+    return original(_this, item, res);
+}
+
+
+////////////// WitherBossDestroyEvent //////////////
+THook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@H@Z",
+    Actor* _this, Level* a2, AABB* aabb, BlockSource* a4, int a5)
+{
+    IF_LISTENED(WitherBossDestroyEvent)
+    {
+        WitherBossDestroyEvent ev;
+        ev.boss = (WitherBoss*)_this;
+        ev.destroyRange = *aabb;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(WitherBossDestroyEvent);
+    original(_this, a2, aabb, a4, a5);
+}
+
+
+////////////// EntityRideEvent ////////////// 
+THook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
+    Actor* a1, Actor* a2)
+{
+    IF_LISTENED(EntityRideEvent)
+    {
+        EntityRideEvent ev;
+        ev.rider = a2;
+        ev.ridee = a1;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(EntityRideEvent);
+    return original(a1, a2);
+}
+
+
+////////////// EntityStepOnPressurePlateEvent //////////////
+THook(void, "?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
+    void* _this, BlockSource* a2, BlockPos* a3, Actor* a4)
+{
+    IF_LISTENED(EntityStepOnPressurePlateEvent)
+    {
+        EntityStepOnPressurePlateEvent ev;
+        ev.entity = a4;
+        ev.block = Level::getBlock(*a3, a2);
+        ev.blockPos = *a3;
+        ev.dimId = a2->getDimensionId();
+        ev.call();
+    }
+    IF_LISTENED_END(EntityStepOnPressurePlateEvent);
+    original(_this, a2, a3, a4);
+}
+
+////////////// ProjectileSpawnEvent ////////////// 
+THook(Actor*, "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
+    void* _this, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6)
+{
+    IF_LISTENED(ProjectileSpawnEvent)
+    {
+        ProjectileSpawnEvent ev;
+        ev.shooter = a4;
+        ev.identifier = a3;
+        ev.typeName = a3->getFullName();
+        if (!ev.call())
+            return nullptr;
+    }
+    IF_LISTENED_END(ProjectileSpawnEvent);
+    return original(_this, a2, a3, a4, a5, a6);
+}
+
+////////////// NPCCmdEvent ////////////// 
+#include <MC/NpcSceneDialogueData.hpp>
+#include <MC/NpcActionsContainer.hpp>
+THook(bool, "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEBVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+    void* _this, Actor* ac, Player* pl, int a4, string& a5)
+{
+    IF_LISTENED(NPCCmdEvent)
+    {
+        //IDA NpcComponent::executeCommandAction
+        char buf[32];
+        NpcSceneDialogueData* data = (NpcSceneDialogueData*)buf;
+        SymCall("??0NpcSceneDialogueData@@QEAA@AEAVNpcComponent@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+            NpcSceneDialogueData*, NpcSceneDialogueData*, void*, Actor*, string&)(data, _this, ac, a5);
+
+        auto& container = data->getActionsContainer();
+        auto actionAt = container.getActionAt(a4);
+        if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
+        {
+            HashedString &str = dAccess<HashedString>(actionAt, 152);
+
+            NPCCmdEvent ev;
+            ev.causer = pl;
+            ev.npc = ac;
+            ev.cmd = str.getString();
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(NPCCmdEvent);
+    return original(_this, ac, pl, a4, a5);
+}
+
+
+////////////// ItemUseOnActorInventoryEvent //////////////
 THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z"
     , ServerNetworkHandler* _this, ServerPlayer* sp, bool unk) 
 {

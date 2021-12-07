@@ -13,6 +13,7 @@
 #include <MC/CommandContext.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ActorDamageSource.hpp>
+#include <MC/CompoundTag.hpp>
 
 Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
 	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
@@ -79,33 +80,53 @@ BlockPalette* Level::getBlockPalette() {
     return (Global<Level>->*rv)();
 }
 
-Block* Level::getBlock(BlockPos& pos, int dim)
+Block* Level::getBlock(const BlockPos& pos, int dim)
 {
-    return (Block*) & Level::getBlockSource(dim)->getBlock(pos);
+    return getBlock(pos, Level::getBlockSource(dim));
 }
 
-BlockInstance Level::getBlockInstance(BlockPos& pos, int dim)
+Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource)
+{
+    return (Block*)&(blockSource->getBlock(pos));
+}
+
+BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim)
 {
     return BlockInstance(pos, dim);
 }
 
-bool Level::setBlock(BlockPos& pos, int dim, Block* block) {
+BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSource)
+{
+    return BlockInstance(pos, blockSource->getDimensionId());
+}
+
+bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
 	BlockSource* bs = getBlockSource(dim);
 	return bs->setBlock(pos, *block, 3, nullptr);       // updateFlag = 3 from IDA SetBlockCommand::execute()
 }
 
-bool Level::setBlock(BlockPos& pos, int dim, const string& name, unsigned short tileData) {
+bool Level::setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData) {
 	Block* newBlock = Block::create(name, tileData);
 	if (!newBlock)
 		return false;
 	return setBlock(pos,dim, newBlock);
 }
 
-bool Level::setBlock(BlockPos& pos, int dim, Tag* nbt) {
+bool Level::setBlock(const BlockPos& pos, int dim, Tag* nbt) {
 	Block* newBlock = Block::create(nbt);
 	if (!newBlock)
 		return false;
 	return setBlock(pos, dim,newBlock);
+}
+
+bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos)
+{
+    return getBlockInstance(pos, bs).breakNaturally();
+}
+
+bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* item)
+{
+    return getBlockInstance(pos, bs).breakNaturally(item);
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
@@ -122,7 +143,8 @@ bool Level::runcmd(const string& cmd) {
 	return MinecraftCommands::_runcmd(&origin, cmd);
 }
 
-static std::unordered_map<void*, string*> origin_res;
+std::unordered_map<void*, string*> origin_res;
+
 std::pair<bool, string> Level::runcmdEx(const string& cmd) {
 	ServerCommandOrigin origin;
 	string val;
@@ -213,7 +235,6 @@ void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int 
         sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
     }
 }
-#include <MC/CompoundTag.hpp>
 
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
     return FakeDataItem::FakeDataItem(a1,type,a2);
@@ -238,45 +259,4 @@ FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, Vec3 a2) {
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int64_t a2) {
     return FakeDataItem::FakeDataItem(a1, type, a2);
-}
-
-
-
-
-//HOOK
-#include <LoggerAPI.h>
-#include <sstream>
-THook(void*,
-      "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-      void* thi,
-      void* ori,
-      void* out) {
-    auto it = origin_res.find(ori);
-    if (it == origin_res.end()) {
-        std::stringbuf sbuf;
-        auto oBuf = std::cout.rdbuf();
-        std::cout.rdbuf(&sbuf);
-        auto rv = original(thi, ori, out);
-        std::cout.rdbuf(oBuf);
-        auto str = sbuf.str();
-        std::istringstream iss(str);
-        string line;
-        while (getline(iss, line)){
-            Logger::setTitle("CmdOut");
-            str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
-            Logger::Info() << line << Logger::endl;
-            Logger::setTitle("Liteloader");
-        }
-        return rv;
-    }
-    std::stringbuf sbuf;
-    auto oBuf = std::cout.rdbuf();
-    std::cout.rdbuf(&sbuf);
-    auto rv = original(thi, ori, out);
-    std::cout.rdbuf(oBuf);
-    it->second->assign(sbuf.str());
-    while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
-        it->second->pop_back();
-    origin_res.erase(it);
-    return rv;
 }

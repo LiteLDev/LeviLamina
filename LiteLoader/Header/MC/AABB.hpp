@@ -13,6 +13,10 @@ class AABB {
 
 #define AFTER_EXTRA //DO NOT EDIT THIS LINE
 // Add Member There
+public:
+    Vec3 pointA {};
+    Vec3 pointB {};
+
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE
 
 public:

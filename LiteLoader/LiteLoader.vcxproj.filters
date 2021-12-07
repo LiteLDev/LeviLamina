@@ -108,7 +108,7 @@
     <ClCompile Include="Loader.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="ModifyName.cpp">
+    <ClCompile Include="ModifyInfomation.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="PluginManager.cpp">

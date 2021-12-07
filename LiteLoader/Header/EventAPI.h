@@ -14,12 +14,14 @@ class ServerPlayer;
 class Player;
 class Block;
 class Mob;
+struct ActorDefinitionIdentifier;
 class ItemStack;
 class ActorDamageSource;
 class Certificate;
 class CommandRegistry;
 class MobEffectInstance;
 class Container;
+class WitherBoss;
 
 namespace Event
 {
@@ -237,6 +239,15 @@ namespace Event
         int dimId;
     };
 
+    class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
+    {
+    public:
+        Player* player;
+        BlockPos blockPos;
+        int dimId;
+        Block* block;
+    };
+
     class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
     {
     public:
@@ -319,8 +330,28 @@ namespace Event
         int dimId;
     };
 
+    class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent>
+    {
+    public:
+        Block* block;
+        BlockPos blockPos;
+        int dimId;
+    };
+
 
     ///////////////////////////// Entity Events /////////////////////////////
+
+    class EntityExplodeEvent : public EventTemplate<EntityExplodeEvent>
+    {
+    public:
+        Actor* source;
+        Vec3 pos;
+        int dimId;
+        float power;
+        float range;
+        bool isDestroy;
+        bool isFire;
+    };
 
     class MobHurtEvent : public EventTemplate<MobHurtEvent>
     {
@@ -335,6 +366,52 @@ namespace Event
     public:
         Mob* mob;
         Actor* source;
+    };
+
+    class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent>
+    {
+    public:
+        Actor* victim;
+        Actor* source;
+    };
+
+    class WitherBossDestroyEvent : public EventTemplate<WitherBossDestroyEvent>
+    {
+    public:
+        WitherBoss* boss;
+        AABB destroyRange = { {},{} };
+    };
+
+    class EntityRideEvent : public EventTemplate<EntityRideEvent>
+    {
+    public:
+        Actor* rider;
+        Actor* ridee;
+    };
+
+    class EntityStepOnPressurePlateEvent : public EventTemplate<EntityStepOnPressurePlateEvent>
+    {
+    public:
+        Actor* entity;
+        Block* block;
+        BlockPos blockPos;
+        int dimId;
+    };
+
+    class NPCCmdEvent : public EventTemplate<NPCCmdEvent>
+    {
+    public:
+        Actor* npc;
+        std::string cmd;
+        Player* causer;
+    };
+
+    class ProjectileSpawnEvent : public EventTemplate<ProjectileSpawnEvent>
+    {
+    public:
+        Actor* shooter;
+        ActorDefinitionIdentifier* identifier;
+        std::string typeName;
     };
 
     class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent>
@@ -357,14 +434,5 @@ namespace Event
     {
     public:
         CommandRegistry* CMDRg;
-    };
-
-    class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
-    {
-    public:
-        Player* player;
-        BlockPos blockPos;
-        int dimId;
-        Block* block;
     };
 }; // namespace Event

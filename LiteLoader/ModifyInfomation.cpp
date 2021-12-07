@@ -2,6 +2,8 @@
 #include <string>
 #include <LLAPI.h>
 #include <ServerAPI.h>
+#include <LoggerAPI.h>
+#include <sstream>
 #include <regex>
 //#include <MC/BedrockLog.hpp>
 using namespace std;
@@ -52,4 +54,38 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
     va_start(va, a8);
     return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
                    void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
+}
+
+extern std::unordered_map<void*, string*> origin_res;
+THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
+    void* thi, void* ori, void* out)
+{
+    auto it = origin_res.find(ori);
+    if (it == origin_res.end()) {
+        std::stringbuf sbuf;
+        auto oBuf = std::cout.rdbuf();
+        std::cout.rdbuf(&sbuf);
+        auto rv = original(thi, ori, out);
+        std::cout.rdbuf(oBuf);
+        auto str = sbuf.str();
+        std::istringstream iss(str);
+        string line;
+        while (getline(iss, line)) {
+            Logger::setTitle("Command");
+            str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
+            Logger::Info() << line << Logger::endl;
+            Logger::setTitle("Liteloader");
+        }
+        return rv;
+    }
+    std::stringbuf sbuf;
+    auto oBuf = std::cout.rdbuf();
+    std::cout.rdbuf(&sbuf);
+    auto rv = original(thi, ori, out);
+    std::cout.rdbuf(oBuf);
+    it->second->assign(sbuf.str());
+    while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
+        it->second->pop_back();
+    origin_res.erase(it);
+    return rv;
 }
