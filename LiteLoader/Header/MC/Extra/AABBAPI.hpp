@@ -5,11 +5,10 @@
 #else
 // Add Member There
 public:
-    Vec3 p1{};
-    Vec3 p2{};
+    Vec3 pointA {};
+    Vec3 pointB {};
 
-    AABB(class Vec3 _p1, class Vec3 _p2) {
-        p1 = _p1;
-        p2 = _p2;
-    }
+    AABB(class Vec3 pointA, class Vec3 pointB)
+        :pointA(pointA), pointB(pointB)
+    { }
 #endif
