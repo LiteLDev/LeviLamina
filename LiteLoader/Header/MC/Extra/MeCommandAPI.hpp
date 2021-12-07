@@ -1,8 +1,0 @@
-//Extra Part For MeCommand.hpp
-#ifdef EXTRA_INCLUDE_PART_MECOMMAND
-// Include Headers or Declare Types Here
-
-#else
-// Add Member There
-
-#endif

@@ -1,8 +1,0 @@
-//Extra Part For BlockQueuedTickingComponent.hpp
-#ifdef EXTRA_INCLUDE_PART_BLOCKQUEUEDTICKINGCOMPONENT
-// Include Headers or Declare Types Here
-
-#else
-// Add Member There
-
-#endif

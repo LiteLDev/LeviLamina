@@ -1,8 +1,0 @@
-//Extra Part For Endermite.hpp
-#ifdef EXTRA_INCLUDE_PART_ENDERMITE
-// Include Headers or Declare Types Here
-
-#else
-// Add Member There
-
-#endif
