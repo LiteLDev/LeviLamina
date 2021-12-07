@@ -74,6 +74,8 @@ namespace Event
             listener.remove();
         }
 
+        static bool hasListener() { return !listeners.empty(); }
+
         bool call()
         {
             bool passToBDS = true;
