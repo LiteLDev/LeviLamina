@@ -7,6 +7,7 @@
 
 #define BEFORE_EXTRA //DO NOT EDIT THIS LINE
 // Include Headers or Declare Types Here
+class Item;
 
 #undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
 
