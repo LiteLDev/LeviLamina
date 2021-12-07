@@ -7,12 +7,18 @@
 #define BEFORE_EXTRA //DO NOT EDIT THIS LINE
 // Include Headers or Declare Types Here
 
+enum PlayerListPacketType { Add,
+                            Remove };
+
 #undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
 
 class PlayerListEntry {
 
 #define AFTER_EXTRA //DO NOT EDIT THIS LINE
 // Add Member There
+public:
+    std::vector<class PlayerListEntry> entries;
+    enum PlayerListPacketType type;
 
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE
 

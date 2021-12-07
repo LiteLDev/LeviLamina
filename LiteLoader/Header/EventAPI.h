@@ -76,7 +76,7 @@ namespace Event
             listener.remove();
         }
 
-        static bool hasListener() { return !listeners.empty(); }
+        static bool hasListener() { return listeners.empty(); }
 
         bool call()
         {
