@@ -313,6 +313,15 @@ namespace Event
         Player* player;
     };
 
+    class PlayerUseFrameBlockEvent : public EventTemplate<PlayerUseFrameBlockEvent>
+    {
+    public:
+        enum class Type { Use, Attack };
+        Type type;
+        Player* player;
+        BlockInstance block;
+    };
+
 
     ///////////////////////////// Block Events /////////////////////////////
 
@@ -321,6 +330,101 @@ namespace Event
     public:
         BlockInstance block;
         Player* player;
+    };
+
+    class BlockChangedEvent : public EventTemplate<BlockChangedEvent>
+    {
+    public:
+        BlockInstance before;
+        BlockInstance after;
+    };
+
+    class RespawnAnchorExplodeEvent : public EventTemplate<RespawnAnchorExplodeEvent>
+    {
+    public:
+        BlockInstance block;
+        Player* player;
+    };
+
+    class BlockExplodedEvent : public EventTemplate<BlockExplodedEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class FireSpreadEvent : public EventTemplate<FireSpreadEvent>
+    {
+    public:
+        BlockInstance block;
+    };
+
+    class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent>
+    {
+    public:
+        Player* player;
+        BlockInstance block;
+        Container* container;
+        int slotNumber;
+        ItemStack* oldItemStack;
+        ItemStack* newItemStack;
+    };
+
+    class ProjectileHitBlockEvent : public EventTemplate<ProjectileHitBlockEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class RedStoneUpdateEvent : public EventTemplate<RedStoneUpdateEvent>
+    {
+    public:
+        BlockInstance block;
+        int level;
+        bool isActive;
+    };
+
+    class HopperBlockSearchItemEvent : public EventTemplate<HopperBlockSearchItemEvent>
+    {
+    public:
+        BlockInstance block;
+    };
+
+    class MinecartHopperSearchItemEvent : public EventTemplate<MinecartHopperSearchItemEvent>
+    {
+    public:
+        Vec3 position;
+        int dimensionId;
+    };
+
+    class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent>
+    {
+    public:
+        Vec3 position;
+        int dimensionId;
+    };
+
+    class PistonPushEvent : public EventTemplate<PistonPushEvent>
+    {
+    public:
+        BlockInstance piston;
+        BlockInstance pushed;
+    };
+
+    class FarmLandDecayEvent : public EventTemplate<FarmLandDecayEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class LiquidFlowEvent : public EventTemplate<LiquidFlowEvent>
+    {
+    public:
+        BlockInstance sourceBlock;
+        BlockPos flowTo;
+        int dimensionId;
     };
 
     class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>

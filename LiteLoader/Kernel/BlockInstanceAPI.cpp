@@ -19,6 +19,11 @@ BlockInstance::BlockInstance(BlockPos pos, int dimid)
     block = Level::getBlock(pos, dimid);
 }
 
+BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimid)
+{
+    return BlockInstance(block, pos, dimid);
+}
+
 bool BlockInstance::operator==(BlockInstance const& bli) {
     return block == bli.block && pos == bli.pos && dim == bli.dim;
 };

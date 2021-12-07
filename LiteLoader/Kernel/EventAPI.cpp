@@ -7,6 +7,7 @@
 #include <typeinfo>
 #include <LoggerAPI.h>
 #include <MC/Player.hpp>
+#include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ItemStack.hpp>
@@ -66,6 +67,7 @@ DeclareEventListeners(PlayerSprintEvent);
 DeclareEventListeners(PlayerSetArmorEvent);
 DeclareEventListeners(PlayerUseRespawnAnchorEvent);
 DeclareEventListeners(PlayerOpenContainerScreenEvent);
+DeclareEventListeners(PlayerUseFrameBlockEvent);
 DeclareEventListeners(MobHurtEvent);
 DeclareEventListeners(MobDieEvent);
 DeclareEventListeners(EntityExplodeEvent);
@@ -79,6 +81,19 @@ DeclareEventListeners(ItemUseOnActorEvent);
 DeclareEventListeners(BlockInteractedEvent);
 DeclareEventListeners(ArmorStandChangeEvent);
 DeclareEventListeners(BlockExplodeEvent);
+DeclareEventListeners(ContainerChangeEvent);
+DeclareEventListeners(PistonPushEvent);
+DeclareEventListeners(RedStoneUpdateEvent);
+DeclareEventListeners(BlockExplodedEvent);
+DeclareEventListeners(LiquidFlowEvent);
+DeclareEventListeners(ProjectileHitBlockEvent);
+DeclareEventListeners(MinecartHopperSearchItemEvent);
+DeclareEventListeners(RespawnAnchorExplodeEvent);
+DeclareEventListeners(HopperPushOutEvent);
+DeclareEventListeners(BlockChangedEvent);
+DeclareEventListeners(HopperBlockSearchItemEvent);
+DeclareEventListeners(FarmLandDecayEvent);
+DeclareEventListeners(FireSpreadEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(PostInitEvent);
@@ -689,6 +704,336 @@ THook(unsigned short, "?onBlockInteractedWith@VanillaServerGameplayEventListener
     }
     IF_LISTENED_END(BlockInteractedEvent);
     return original(_this, pl, bp);
+}
+
+/////////////////// BlockChangedEvent /////////////////// 
+THook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z",
+    BlockSource* bs, BlockPos* bp, int a3, Block* afterBlock, Block* beforeBlock, int a6, void* a7)
+{
+    IF_LISTENED(BlockChangedEvent)
+    {
+        int dimId = bs->getDimensionId();
+        BlockChangedEvent ev;
+        ev.before = BlockInstance::createBlockInstance(beforeBlock, *bp, dimId);
+        ev.after = BlockInstance::createBlockInstance(afterBlock, *bp, dimId);
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(BlockChangedEvent);
+    return original(bs, bp, a3, afterBlock, beforeBlock, a6, a7);
+}
+
+/////////////////// RespawnAnchorExplodeEvent /////////////////// 
+THook(void, "?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
+    Player* pl, BlockPos* bp, BlockSource* bs, Level* level)
+{
+    IF_LISTENED(RespawnAnchorExplodeEvent)
+    {
+        RespawnAnchorExplodeEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.player = pl;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(RespawnAnchorExplodeEvent);
+    return original(pl, bp, bs, level);
+}
+
+/////////////////// BlockExplodedEvent /////////////////// 
+THook(void, "?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z",
+    Block* _this, BlockSource* bs, BlockPos* bp, Actor* actor)
+{
+    IF_LISTENED(BlockExplodedEvent)
+    {
+        if (actor)
+        {
+            BlockExplodedEvent ev;
+            ev.block = BlockInstance::createBlockInstance(_this, *bp, bs->getDimensionId());
+            ev.source = actor;
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(BlockExplodedEvent);
+    return original(_this, bs, bp, actor);
+}
+
+
+/////////////////// FireSpreadEvent /////////////////// 
+bool onFireSpread_OnPlace = false;
+THook(void, "?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
+    void* _this, BlockSource* bs, BlockPos* bp)
+{
+    onFireSpread_OnPlace = true;
+    original(_this, bs, bp);
+    onFireSpread_OnPlace = false;
+}
+THook(bool, "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
+    void* _this, BlockSource* bs, BlockPos* bp)
+{
+    auto rtn = original(_this, bs, bp);
+    if (!onFireSpread_OnPlace || !rtn)
+        return rtn;
+
+    IF_LISTENED(FireSpreadEvent)
+    {
+        FireSpreadEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(FireSpreadEvent);
+    return rtn;
+}
+
+
+/////////////////// ContainerChangeEvent /////////////////// 
+class LevelContainerModel;
+THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
+    LevelContainerModel* _this, int slotNumber, ItemStack* oldItem, ItemStack* newItem)
+{
+    IF_LISTENED(ContainerChangeEvent)
+    {
+        Player* pl = (Player*)dAccess<Actor*>(_this, 208);            //IDA LevelContainerModel::LevelContainerModel
+
+        if (pl->hasOpenContainer())
+        {
+            BlockPos* bp = (BlockPos*)((char*)_this + 216);
+
+            ContainerChangeEvent ev;
+            ev.block = Level::getBlockInstance(bp, pl->getDimensionId());
+            ev.container = ev.block.getContainer();
+            ev.player = pl;
+            ev.slotNumber = slotNumber;
+            ev.oldItemStack = oldItem;
+            ev.newItemStack = newItem;
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(ContainerChangeEvent);
+    return original(_this, slotNumber, oldItem, newItem);
+}
+
+
+/////////////////// ProjectileHitBlockEvent /////////////////// 
+THook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
+    Block* _this, BlockSource* bs, BlockPos* bp, Actor* actor)
+{
+    IF_LISTENED(ProjectileHitBlockEvent)
+    {
+        if (_this->getTypeName() != "minecraft:air")
+        {
+            ProjectileHitBlockEvent ev;
+            ev.block = Level::getBlockInstance(bp, bs);
+            ev.source = actor;
+            ev.call();
+        }
+    }
+    IF_LISTENED_END(ProjectileHitBlockEvent);
+    return original(_this, bs, bp, actor);
+}
+
+
+/////////////////// RedStoneUpdateEvent /////////////////// 
+// 红石粉
+THook(void, "?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z",
+    void* _this, BlockSource* bs, BlockPos* bp, int level, bool isActive)
+{
+    IF_LISTENED(RedStoneUpdateEvent)
+    {
+        RedStoneUpdateEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.level = level;
+        ev.isActive = level != 0;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(RedStoneUpdateEvent);
+    return original(_this, bs, bp, level, isActive);
+}
+// 红石火把
+THook(void, "?onRedstoneUpdate@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z",
+    void* _this, BlockSource* bs, BlockPos* bp, int level, bool isActive)
+{
+    IF_LISTENED(RedStoneUpdateEvent)
+    {
+        RedStoneUpdateEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.level = level;
+        ev.isActive = level != 0;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(RedStoneUpdateEvent);
+    return original(_this, bs, bp, level, isActive);
+}
+// 红石中继器
+THook(void, "?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z",
+    void* _this, BlockSource* bs, BlockPos* bp, int level, bool isActive)
+{
+    IF_LISTENED(RedStoneUpdateEvent)
+    {
+        RedStoneUpdateEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.level = level;
+        ev.isActive = level != 0;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(RedStoneUpdateEvent);
+    return original(_this, bs, bp, level, isActive);
+}
+// 红石比较器
+THook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z",
+    void* _this, BlockSource* bs, BlockPos* bp, int level, bool isActive)
+{
+    IF_LISTENED(RedStoneUpdateEvent)
+    {
+        RedStoneUpdateEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.level = level;
+        ev.isActive = level != 0;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(RedStoneUpdateEvent);
+    return original(_this, bs, bp, level, isActive);
+}
+
+
+/////////////////// HopperBlockSearchItemEvent & MinecartHopperSearchItemEvent /////////////////// 
+THook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
+    void* _this, BlockSource* bs, void* container, Vec3* pos)
+{
+    bool isMinecart = dAccess<bool>(_this, 5); // IDA Hopper::Hopper
+    IF_LISTENED(HopperBlockSearchItemEvent)
+    {
+        if (!isMinecart)
+        {
+            HopperBlockSearchItemEvent ev;
+            ev.block = Level::getBlockInstance(pos->toBlockPos(), bs);
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(HopperBlockSearchItemEvent);
+
+    IF_LISTENED(MinecartHopperSearchItemEvent)
+    {
+        if (isMinecart)
+        {
+            MinecartHopperSearchItemEvent ev;
+            ev.position = *pos;
+            ev.dimensionId = bs->getDimensionId();
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(MinecartHopperSearchItemEvent);
+    return original(_this, bs, container, pos);
+}
+
+/////////////////// HopperPushOutEvent /////////////////// 
+THook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
+    void* _this, BlockSource* bs, void* container, Vec3* pos, int a5)
+{
+    IF_LISTENED(HopperPushOutEvent)
+    {
+        HopperPushOutEvent ev;
+        ev.position = *pos;
+        ev.dimensionId = bs->getDimensionId();
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(HopperPushOutEvent);
+    return original(_this, bs, container, pos, a5);
+}
+
+/////////////////// PistonPushEvent ///////////////////
+THook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z",
+    BlockActor* _this, BlockSource* bs, BlockPos* bp, unsigned a3, unsigned a4)
+{
+    IF_LISTENED(PistonPushEvent)
+    {
+        
+        PistonPushEvent ev;
+        ev.piston = Level::getBlockInstance(_this->getPosition(), bs);
+        ev.pushed = Level::getBlockInstance(bp, bs);
+
+        if(ev.pushed.getBlock()->getTypeName() == "minecraft:air")
+            return original(_this, bs, bp, a3, a4);
+
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PistonPushEvent);
+    return original(_this, bs, bp, a3, a4);
+}
+
+
+/////////////////// FarmLandDecayEvent ///////////////////
+THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z",
+    void* _this, BlockSource* bs, BlockPos* bp, Actor* ac, float a5)
+{
+    IF_LISTENED(FarmLandDecayEvent)
+    {
+        FarmLandDecayEvent ev;
+        ev.block = Level::getBlockInstance(bp, bs);
+        ev.source = ac;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(FarmLandDecayEvent);
+    return original(_this, bs, bp, ac, a5);
+}
+
+
+/////////////////// PlayerUseFrameBlockEvent  ///////////////////
+THook(bool, "?use@ItemFrameBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@E@Z",
+    void* _this, Player* a2, BlockPos* a3)
+{
+    IF_LISTENED(PlayerUseFrameBlockEvent)
+    {
+        PlayerUseFrameBlockEvent ev;
+        ev.type = PlayerUseFrameBlockEvent::Type::Use;
+        ev.block = Level::getBlockInstance(a3, a2->getDimensionId());
+        ev.player = a2;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseFrameBlockEvent);
+    return original(_this, a2, a3);
+}
+THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+    void* _this, Player* a2, BlockPos* a3)
+{
+    IF_LISTENED(PlayerUseFrameBlockEvent)
+    {
+        PlayerUseFrameBlockEvent ev;
+        ev.type = PlayerUseFrameBlockEvent::Type::Attack;
+        ev.block = Level::getBlockInstance(a3, a2->getDimensionId());
+        ev.player = a2;
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerUseFrameBlockEvent);
+    return original(_this, a2, a3);
+}
+
+/////////////////// LiquidFlowEvent /////////////////// 
+THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
+    void* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
+{
+    IF_LISTENED(LiquidFlowEvent)
+    {
+        LiquidFlowEvent ev;
+        ev.sourceBlock = Level::getBlockInstance(from, bs);
+        ev.flowTo = *to;
+        ev.dimensionId = bs->getDimensionId();
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(LiquidFlowEvent);
+    return original(_this, bs, to, from, id);
 }
 
 

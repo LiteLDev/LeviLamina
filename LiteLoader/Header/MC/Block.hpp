@@ -18,6 +18,7 @@ public:
 	LIAPI static Block* create(Tag* nbt);
 
 	LIAPI string getNameString();
+    LIAPI string getTypeName();
 	LIAPI int getId();
 	LIAPI unsigned short getTileData();
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE

@@ -19,6 +19,7 @@ class BlockInstance
 
 public:
     LIAPI BlockInstance() = default;
+    LIAPI static BlockInstance createBlockInstance(Block* block, BlockPos pos, int dimId);
 
     LIAPI Block* getBlock();
     LIAPI BlockPos getPosition();

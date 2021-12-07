@@ -71,10 +71,10 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
         std::istringstream iss(str);
         string line;
         while (getline(iss, line)) {
-            Logger::setTitle("Command");
+            //Logger::setTitle("Command");
             str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
-            Logger::Info() << line << Logger::endl;
-            Logger::setTitle("Liteloader");
+            Logger::Log() << line << Logger::endl;
+            //Logger::setTitle("Liteloader");
         }
         return rv;
     }
