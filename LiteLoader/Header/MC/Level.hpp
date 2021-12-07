@@ -37,13 +37,15 @@ public:
     LIAPI static class LevelStorage& getLevelStorage();
 
     //Block
-    LIAPI static Block* getBlock(BlockPos& pos, int dim);
-    LIAPI static BlockInstance getBlockInstance(BlockPos& pos, int dim);
-    LIAPI static bool setBlock(BlockPos& pos, int dim, Block* block);
-    LIAPI static bool setBlock(BlockPos& pos, int dim, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(BlockPos& pos, int dim, Tag* nbt);
-    LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos);
-    LIAPI static bool breakNaturally(BlockSource* bs, BlockPos& pos, ItemStack* item);
+    LIAPI static Block* getBlock(const BlockPos& pos, int dim);
+    LIAPI static Block* getBlock(const BlockPos& pos, BlockSource *blockSource);
+    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dim);
+    LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
+    LIAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
+    LIAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);
+    LIAPI static bool setBlock(const BlockPos& pos, int dim, Tag* nbt);
+    LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos);
+    LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* tool);
     LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
     LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
     LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
@@ -57,7 +59,7 @@ public:
     LIAPI static BlockPalette* getBlockPalette();
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-    LIAPI static void broadcastText(string a1, TextType ty);
+    LIAPI static void broadcastText(string text, TextType type);
     LIAPI static void broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
 
 
