@@ -320,7 +320,7 @@ namespace Event
 
     ///////////////////////////// Entity Events /////////////////////////////
 
-    class MobHurtedEvent : public EventTemplate<MobHurtedEvent>
+    class MobHurtEvent : public EventTemplate<MobHurtEvent>
     {
     public:
         Mob* victim;
