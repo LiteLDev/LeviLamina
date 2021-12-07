@@ -236,6 +236,7 @@ class ClientBlobCache {
 public:
     struct Server {
         class TransferBuilder;
+        class ActiveTransfersManager;
     };
 };
 
@@ -293,10 +294,7 @@ struct GameEventConfig {
     enum GameEvents;
 };
 
-class IMinecraftEventing{
-public:
-    enum StructureBlockActionType;
-};
+#include "IMinecraftEventing.hpp"
 
 struct OperationNodeValues{
     enum Terrain;

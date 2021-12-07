@@ -1,8 +1,0 @@
-//Extra Part For DyeableComponent.hpp
-#ifdef EXTRA_INCLUDE_PART_DYEABLECOMPONENT
-// Include Headers or Declare Types Here
-
-#else
-// Add Member There
-
-#endif
