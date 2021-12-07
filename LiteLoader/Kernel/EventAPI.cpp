@@ -64,7 +64,7 @@ DeclareEventListeners(PlayerSprintEvent);
 DeclareEventListeners(PlayerSetArmorEvent);
 DeclareEventListeners(PlayerUseRespawnAnchorEvent);
 DeclareEventListeners(PlayerOpenContainerScreenEvent);
-DeclareEventListeners(MobHurtedEvent);
+DeclareEventListeners(MobHurtEvent);
 DeclareEventListeners(MobDieEvent);
 DeclareEventListeners(ItemUseOnActorEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
@@ -600,7 +600,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
       Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0) 
 {
-    MobHurtedEvent ev;
+    MobHurtEvent ev;
     ev.victim = ac;
     ev.source = &src;
     ev.damage = damage;
