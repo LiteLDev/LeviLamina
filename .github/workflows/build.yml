@@ -19,7 +19,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir Tools/Temp
-        serverLink = $(cat 'LINK.txt')
+        serverLink=$(cat 'LINK.txt')
         curl -L -o Tools/Temp/server.zip "$serverLink"
         unzip Tools/Temp/server.zip -d Tools/Temp/Server/
         cd Tools
