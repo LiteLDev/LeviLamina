@@ -139,7 +139,7 @@ bool InitPlayerDatabase() {
 
         Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent &e)
         {
-            insert(e.player->getRealName(), e.player->getXuid(), e.player->getUuid());
+            insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
             return true;
         });
     } catch (std::exception const& e) {

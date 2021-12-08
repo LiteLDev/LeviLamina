@@ -5,12 +5,12 @@
 using namespace Event;
 
 bool onPlayerChat(const PlayerChatEvent &e) {
-    Logger::Info("[Chat] {} > {}", e.player->getRealName(), e.msg);
+    Logger::Info("[Chat] {} > {}", e.mPlayer->getRealName(), e.mMessage);
     return true;
 }
 
 bool onPlayerCmd(PlayerCmdEvent e) {
-    Logger::Info("[Command] {} /{}", e.player->getRealName(), e.cmd);
+    Logger::Info("[Command] {} /{}", e.mPlayer->getRealName(), e.mCommand);
     return true;
 }
 
