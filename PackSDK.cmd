@@ -15,7 +15,10 @@ echo [INFO] Zipping Files...
 cd SDK
 ..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoader-SDK.zip *
 cd ..
+
+if [%1]==[action] goto Finish
 rmdir SDK /S /Q
+:Finish
 
 echo.
 echo [INFO] Packing LL-SDK... DONE!
