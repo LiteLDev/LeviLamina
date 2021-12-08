@@ -29,10 +29,11 @@ jobs:
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
-    - name: PackRelease
+    - name: PackRelease & SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         ./PackRelease.cmd
+        ./PackSDK.cmd
       shell: cmd
 
     - name: Upload LiteLoader
@@ -40,6 +41,14 @@ jobs:
       with:
         name: LiteLoader
         path: ./LiteLoader.zip
+    
+    - name: Upload LiteLoader-SDK
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: LiteLoader
+        path: | 
+          ./LiteLoader.zip
+          ./LiteLoader-SDK.zip
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
@@ -49,5 +58,6 @@ jobs:
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: |
           ./LiteLoader.zip
+          ./LiteLoader-SDK.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
