@@ -1387,11 +1387,14 @@ THook(void, "?onScoreChanged@ServerScoreboard@@UEAAXAEBUScoreboardId@@AEBVObject
 
     return original(_this, a1, a2);
 }
-
+#include <MC/Minecraft.hpp>
 ////////////// ServerStarted //////////////
 THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
 {
     original(a);
+    Global<Level> = Global<Minecraft>->getLevel();
+    Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
+    Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     IF_LISTENED(ServerStartedEvent)
     {
         ServerStartedEvent ev;
