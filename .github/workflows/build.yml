@@ -46,15 +46,21 @@ jobs:
       run: |
         ./PackRelease.cmd action
         ./PackSDK.cmd action
+        dir
       shell: cmd
 
-    - name: Upload LiteLoader & SDK
-      uses: actions/upload-artifact@v1.0.0
+    - name: Upload LiteLoader
+      run: ls ${{env.GITHUB_WORKSPACE}}
+      uses: actions/upload-artifact@v2
       with:
         name: LiteLoader
-        path: | 
-          ${{env.GITHUB_WORKSPACE}}\LiteLoader.zip
-          ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
+        path: ${{env.GITHUB_WORKSPACE}}\LiteLoader.zip
+    
+    - name: Upload LiteLoader SDK
+      uses: actions/upload-artifact@v2
+      with:
+        name: LiteLoader-SDK
+        path: ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
