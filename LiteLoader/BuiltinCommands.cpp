@@ -79,6 +79,112 @@ bool tpdimCommand(CommandOrigin const& ori, CommandOutput& outp, int dimid, opti
     return true;
 }
 
+
+template <typename T>
+char const* addEnum(CommandRegistry* registry, char const* name, std::vector<std::pair<std::string, T>> const& values) {
+    registry->addEnumValues<T>(name, CMDREG::ALLOCID(), values);
+    return name;
+}
+
+template <typename Command, typename Type>
+int getOffset(Type Command::*src) {
+    union {
+        Type Command::*src;
+        int value;
+    } u;
+    u.src = src;
+    return u.value;
+}
+
+template <typename Command, typename Type>
+CommandParameterData mandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+    return {
+        CMDREG::ALLOCID(),
+        CommandRegistry::getParseFn<Type>(),
+        name,
+        CommandParameterDataType::NORMAL,
+        nullptr,
+        getOffset(field),
+        false,
+        isSet ? getOffset(isSet) : -1,
+    };
+}
+template <CommandParameterDataType DataType, typename Command, typename Type>
+CommandParameterData
+    mandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+    return {
+        CMDREG::ALLOCID(),
+        &CommandRegistry::fakeparse<Type>,
+        name,
+        DataType,
+        desc,
+        getOffset(field),
+        false,
+        isSet ? getOffset(isSet) : -1,
+    };
+}
+template <typename Command, typename Type>
+CommandParameterData cmd_optional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+    return {
+        CMDREG::ALLOCID(),
+        CommandRegistry::getParseFn<Type>(),
+        name,
+        CommandParameterDataType::NORMAL,
+        nullptr,
+        getOffset(field),
+        true,
+        isSet ? getOffset(isSet) : -1,
+    };
+}
+template <CommandParameterDataType DataType, typename Command, typename Type>
+CommandParameterData
+    cmd_optional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+    return {
+        CMDREG::ALLOCID(),
+        &CommandRegistry::fakeparse<Type>,
+        name,
+        DataType,
+        desc,
+        getOffset(field),
+        true,
+        isSet ? getOffset(isSet) : -1,
+    };
+}
+
+class TestCommand : public Command {
+public:
+    CommandSelector<Player> selector;
+    enum class Action { Ui,
+                        To,
+                        List,
+                        Set,
+                        Del } action{};
+    std::string name;
+
+    virtual void execute(CommandOrigin const& origin, CommandOutput& output)const {
+        
+    }
+    static void setup(CommandRegistry* registry) {
+        registry->registerCommand(
+            "cmd_name", "commands.description", CommandPermissionLevel::OperatorOnly, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+        addEnum<Action>(registry, "warp-to", {{"to", Action::To}});
+        addEnum<Action>(registry, "warp-list", {{"list", Action::List}});
+        addEnum<Action>(registry, "warp-set", {{"set", Action::Set}});
+        addEnum<Action>(registry, "warp-del", {{"del", Action::Del}});
+        registry->registerOverload<TestCommand>("cmd_name");
+        registry->registerOverload<TestCommand>(
+            "cmd_name", mandatory<CommandParameterDataType::ENUM>(&TestCommand::action, "to", "warp-to"),
+            mandatory(&TestCommand::name, "name"));
+        registry->registerOverload<TestCommand>(
+            "cmd_name", mandatory<CommandParameterDataType::ENUM>(&TestCommand::action, "list", "warp-list"));
+        registry->registerOverload<TestCommand>(
+            "cmd_name", mandatory<CommandParameterDataType::ENUM>(&TestCommand::action, "set", "warp-set"),
+            mandatory(&TestCommand::name, "name"));
+        registry->registerOverload<TestCommand>(
+            "cmd_name", mandatory<CommandParameterDataType::ENUM>(&TestCommand::action, "del", "warp-del"),
+            mandatory(&TestCommand::name, "name"));
+    }
+};
 void RegisterCommands()
 {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
@@ -89,6 +195,8 @@ void RegisterCommands()
         CmdOverload(version, versionCommand);
         CmdOverload(plugins, pluginsCommand, "plugin name");
         CmdOverload(tpdim, tpdimCommand, "dimid", "position");
+
+        TestCommand::setup(ev.CMDRg);
 
         return true;
     });

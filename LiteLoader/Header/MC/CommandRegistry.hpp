@@ -103,18 +103,26 @@ public:
         }
     };
 
-    inline void registerOverload(std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
+    
+    template <typename T>
+    inline static std::unique_ptr<Command> allocateCommand() {
+        return std::make_unique<T>();
+    }
+    inline void registerOverload(
+        std::string const& name, Overload::FactoryFn factory, std::vector<CommandParameterData>&& args) {
         Signature* signature = const_cast<Signature*>(findCommand(name));
         auto& overload = signature->overloads.emplace_back(CommandVersion{}, factory, std::move(args));
         registerOverloadInternal(*signature, overload);
     }
-    template <typename T>
-    inline std::unique_ptr<Command> allocateCommand() {
-        return std::make_unique<T>();
-    }
     template <typename T, typename... Params>
     inline void registerOverload(std::string const& name, Params... params) {
         registerOverload(name, &allocateCommand<T>, {params...});
+    }
+    
+    template <typename Type>
+    bool
+        fakeparse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
+        return false;
     }
     struct ParseTable {};
     inline static std::unordered_map<string, void*> parse_ptr = {
