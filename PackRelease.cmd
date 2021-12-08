@@ -10,10 +10,13 @@ del /F /Q LiteLoader-SDK.zip 2>nul
 copy /Y x64\Release\Chakra.dll RELEASE\Chakra.dll
 copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
+copy /Y Tools\SymDB2.exe RELEASE\SymDB2.exe
 
 echo.
 echo [INFO] Zipping Files...
-.\Tools\7zip\7za.exe a -tzip -mmt -mx=9 LiteLoader.zip RELEASE\*
+cd RELEASE
+..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=9 ..\LiteLoader.zip *
+cd ..
 
 echo.
 echo [INFO] Packing RELEASE... DONE!
