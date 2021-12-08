@@ -19,9 +19,13 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir Tools/Temp
+        mkdir Tools/Temp/Server
         serverLink=$(cat 'LINK.txt')
         curl -L -o Tools/Temp/server.zip "$serverLink"
         unzip Tools/Temp/server.zip -d Tools/Temp/Server/ > /dev/null
+        ls Tools
+        ls Tools/Temp
+        ls Tools/Temp/Server
       shell: bash
 
     - name: Build Library
