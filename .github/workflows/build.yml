@@ -49,23 +49,21 @@ jobs:
       shell: cmd
 
     - name: Upload LiteLoader & SDK
-      working-directory: ${{env.GITHUB_WORKSPACE}}
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
         path: | 
-          ./LiteLoader.zip
-          ./LiteLoader-SDK.zip
+          ${{env.GITHUB_WORKSPACE}}\LiteLoader.zip
+          ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
 
     - name: Create New Release
-      working-directory: ${{env.GITHUB_WORKSPACE}}
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: |
-          ./LiteLoader.zip
-          ./LiteLoader-SDK.zip
+          ${{env.GITHUB_WORKSPACE}}\LiteLoader.zip
+          ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
