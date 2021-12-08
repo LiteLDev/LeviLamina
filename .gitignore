@@ -9,8 +9,6 @@ RELEASE/LiteLoader.dll
 RELEASE/Chakra.dll
 RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
-**/bedrock_server_api.lib
-**/bedrock_server_var.lib
 **/SymDB_DelayLoadHelper.lib
 LiteLoader/Lib/SymDBHelper.lib
 **/*.lastcodeanalysissucceeded
