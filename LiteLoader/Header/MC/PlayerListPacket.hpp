@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+class SerializedSkin;
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,13 @@ class PlayerListPacket {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    ActorUniqueID uid;
+    mce::UUID uuid;
+    std::string name, xuid, platform_online_id;
+    enum BuildPlatform platform;
+    SerializedSkin skin;
+    bool teacher, host;
 
 #undef AFTER_EXTRA
 

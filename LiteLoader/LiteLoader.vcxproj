@@ -92,7 +92,7 @@
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="BugFix.cpp" />
+    <ClCompile Include="BuiltinBugFix.cpp" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
     <ClInclude Include="Header\MC\BinaryStream.hpp" />
@@ -110,6 +110,7 @@
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
     <ClInclude Include="Header\MC\EndTag.hpp" />
     <ClInclude Include="Header\MC\FloatTag.hpp" />
+    <ClInclude Include="Header\MC\FormUI.hpp" />
     <ClInclude Include="Header\MC\GameMode.hpp" />
     <ClInclude Include="Header\MC\HashedString.hpp" />
     <ClInclude Include="Header\MC\HitResult.hpp" />
@@ -119,6 +120,7 @@
     <ClInclude Include="Header\MC\ListTag.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
@@ -164,7 +166,7 @@
     <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
-    <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
@@ -202,7 +204,7 @@
     <ClCompile Include="PlayerDB.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="BuiltinCommands.cpp" />
-    <ClCompile Include="ServerLogger.cpp" />
+    <ClCompile Include="SimpleServerLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />

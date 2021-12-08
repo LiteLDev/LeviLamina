@@ -1,6 +1,7 @@
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
+#include <Config.h>
 using namespace Event;
 
 bool onPlayerChat(const PlayerChatEvent &e) {
@@ -13,7 +14,10 @@ bool onPlayerCmd(PlayerCmdEvent e) {
     return true;
 }
 
-void RegisterServerLogger() {
-    Event::PlayerChatEvent::subscribe(onPlayerChat);
-    Event::PlayerCmdEvent::subscribe(onPlayerCmd);
+void RegisterSimpleServerLogger() {
+    if (LL::globalConfig.enableSimpleServerLogger)
+    {
+        Event::PlayerChatEvent::subscribe(onPlayerChat);
+        Event::PlayerCmdEvent::subscribe(onPlayerCmd);
+    }
 }
