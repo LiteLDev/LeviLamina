@@ -18,21 +18,17 @@ jobs:
     - name: Download Server
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mkdir Tools/Temp
-        mkdir Tools/Temp/Server
+        mkdir Tools/Server
         serverLink=$(cat 'LINK.txt')
         curl -L -o Tools/Temp/server.zip "$serverLink"
-        unzip Tools/Temp/server.zip -d Tools/Temp/Server/ > /dev/null
-        ls Tools
-        ls Tools/Temp
-        ls Tools/Temp/Server
+        unzip Tools/Temp/server.zip -d Tools/Server/ > /dev/null
       shell: bash
 
     - name: Build Library
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd Tools
-        LibraryBuilder.exe ".\Temp\Server"
+        LibraryBuilder.exe Server
       shell: cmd
 
     - name: Add MSBuild to PATH
