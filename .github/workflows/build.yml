@@ -18,87 +18,28 @@ jobs:
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
      
-    - name: Download Lib from server
-      run: |
-        curl -L -o D:/lib.zip https://github.com/LiteLDev/Resources/raw/main/lib.zip
-        curl -L -o D:/plugin-lib.zip https://github.com/LiteLDev/Resources/raw/main/plugin-lib.zip
-        unzip D:/lib.zip -d LiteLoader/Lib/
-        mkdir D:/lib
-        unzip D:/plugin-lib.zip -d D:/lib
-        rm D:/lib.zip
-        rm D:/plugin-lib.zip
-      shell: bash
-     
     - name: Build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       id: build
       run: |
         echo ::set-output name=tag::${GITHUB_REF:10}
-        echo  >> LiteLoader/Header/LoaderApi.h
-        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Header/LoaderApi.h
-        cat LiteLoader/Header/LoaderApi.h
+        echo  >> LiteLoader/Version.h
+        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Version.h
+        cat LiteLoader/Version.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
-    - name: MkDirs
+    - name: PackRelease
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        mkdir D:/out
-        mkdir D:/out/release
-        mkdir D:/out/release/plugins
-        mkdir D:/out/release/plugins/LiteLoader
-        mkdir D:/out/release/plugins/lib
-        mkdir D:/out/dev
-        mkdir D:/out/dev/lib
-        mkdir D:/out/dev/pdb
-        mkdir D:/out/dev/headers
-    
-    - name: Download ChakraCore
-      run: |
-        curl -L -o D:/cc.zip https://aka.ms/chakracore/${{ env.ChakraCore_version }}
-        mkdir D:/cc
-        cd D:/cc
-        unzip D:/cc.zip
-      shell: bash
-      
-    - name: Copy Tools
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        cp -a Tools/SymDB2.exe D:/out/release
-        cp -a Tools/CrashLogger_Daemon.exe D:/out/release/plugins/LiteLoader
-      shell: bash
-    
-    - name: Copy Output Files
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        cp -a Release/*.dll D:/out/release
-        cp -a D:/cc/x64_release/ChakraCore.dll D:/out/release
-        cp -a D:/lib/*.dll D:/out/release/plugins/lib
-        cp -a Release/*.lib D:/out/dev/lib
-        cp -a Release/*.pdb D:/out/dev/pdb
-        cp -a LiteLoader/Header/* D:/out/dev/headers
-      shell: bash
+        ./PackRelease.cmd
+      shell: cmd
 
-    - name: Upload Artifact
+    - name: Upload LiteLoader
       uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
-        path: D:/out/release
-
-    - name: Compress SDK to zip
-      run: 7z a D:/out/LiteLoader-SDK.zip D:/out/dev
-      shell: bash
-
-    - name: Upload SDK
-      uses: actions/upload-artifact@v1.0.0
-      with:
-        name: LiteLoader-SDK
-        path: D:/out/LiteLoader-SDK.zip
-      
-    - name: Compress to zip
-      if: startsWith(github.ref, 'refs/tags/')
-      run: 7z a D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip D:/out/release
-      shell: bash
+        path: ./LiteLoader.zip
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
@@ -107,7 +48,6 @@ jobs:
         body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: |
-          D:/out/LiteLoader-${{steps.build.outputs.tag}}.zip
-          D:/out/LiteLoader-SDK.zip
+          ./LiteLoader.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
