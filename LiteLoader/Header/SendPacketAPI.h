@@ -1,5 +1,6 @@
 #include "MC/Packet.hpp"
-#include "BinaryStreamAPI.h"
+#include "MC/BinaryStream.hpp"
+
 template <int pid, bool batching = true, bool compress = true>
 class MyPkt : public Packet {
 public:

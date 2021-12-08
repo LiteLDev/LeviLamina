@@ -95,6 +95,7 @@
     <ClCompile Include="BugFix.cpp" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
+    <ClInclude Include="Header\MC\BinaryStream.hpp" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
     <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
     <ClInclude Include="Header\MC\ByteTag.hpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="Header\MC\ListTag.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\RelativeFloat.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
     <ClInclude Include="Header\MC\StringTag.hpp" />
@@ -147,6 +149,7 @@
     <ClInclude Include="Header\MC\Scoreboard.hpp" />
     <ClInclude Include="Header\MC\Spawner.hpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\BinaryStream.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockAPI.cpp" />
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
@@ -169,6 +172,7 @@
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
@@ -176,6 +180,7 @@
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
     <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
+    <ClCompile Include="Kernel\Types.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -210,7 +215,6 @@
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
-    <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\PlayerDB.h" />
     <ClInclude Include="Header\RegCommandAPI.h" />

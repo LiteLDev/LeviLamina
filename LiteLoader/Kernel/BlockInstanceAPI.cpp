@@ -50,7 +50,7 @@ bool BlockInstance::hasContainer()
 class DropperBlockActor;
 Container* BlockInstance::getContainer()
 {
-    Vec3 vec{ pos.x, pos.y, pos.z };
+    Vec3 vec = pos.toVec3();
 
     // This function didn't use 'this' pointer
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",

@@ -13,6 +13,17 @@ class ReadOnlyBinaryStream {
 
 #define AFTER_EXTRA //DO NOT EDIT THIS LINE
 // Add Member There
+public:
+    size_t      readPointer{};
+    bool        unk;
+    std::string ownBuf, *pBuf;
+
+public:
+    LIAPI std::string const& getData() const;
+    LIAPI size_t getLength() const;
+    LIAPI size_t getReadPointer() const;
+    LIAPI size_t getUnreadLength() const;
+    LIAPI void setReadPointer(std::size_t size);
 
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE
 

@@ -216,6 +216,15 @@
     <ClCompile Include="PlayerDB.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BinaryStream.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Types.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -316,9 +325,6 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\PlayerMap.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\BinaryStreamAPI.h">
-      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\SendPacketAPI.h">
       <Filter>Header</Filter>
@@ -487,6 +493,12 @@
     </ClInclude>
     <ClInclude Include="Header\MC\ScoreboardId.hpp">
       <Filter>Header\Scoreboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BinaryStream.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\RelativeFloat.hpp">
+      <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
