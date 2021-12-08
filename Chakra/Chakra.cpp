@@ -55,7 +55,7 @@ bool loadLib(LPCTSTR libName, bool showFailInfo = true) {
 	}
 }
 
-void loadCsr() {
+void loadCSR() {
 	if (exists(path(TEXT("./plugins/BDSNetRunner.dll")))) {
 		loadLib(TEXT("./plugins/BDSNetRunner.dll"));
 	}
@@ -69,19 +69,19 @@ bool loadLiteLoader() {
 	return true;
 }
 
-void loadCsrs() {
-    if (exists(path(TEXT(".\\plugins\\lib\\LLUnifiedOutput.dll")))) {
-        loadLib(TEXT(".\\plugins\\lib\\LLUnifiedOutput.dll"));
+void loadUnifiedOutput() {
+    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll")))) {
+        loadLib(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll"));
     }
 }
 
 void loadDlls() {
-    loadCsrs();
+    loadUnifiedOutput();
 	if (!loadLiteLoader()) {
 		Sleep(3000);
 		exit(GetLastError());
 	}
-	loadCsr();
+	loadCSR();
 
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
