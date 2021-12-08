@@ -44,8 +44,8 @@ jobs:
     - name: PackRelease & SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
-        ./PackRelease.cmd
-        ./PackSDK.cmd
+        ./PackRelease.cmd action
+        ./PackSDK.cmd action
       shell: cmd
 
     - name: Upload LiteLoader & SDK

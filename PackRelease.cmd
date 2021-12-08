@@ -20,4 +20,7 @@ cd ..
 
 echo.
 echo [INFO] Packing RELEASE... DONE!
+
+if [%1]==[action] goto End
 timeout /t 3 >nul
+:End

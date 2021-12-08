@@ -19,4 +19,7 @@ rmdir SDK /S /Q
 
 echo.
 echo [INFO] Packing LL-SDK... DONE!
+
+if [%1]==[action] goto End
 timeout /t 3 >nul
+:End
