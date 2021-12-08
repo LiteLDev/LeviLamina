@@ -49,16 +49,16 @@ jobs:
       shell: cmd
 
     - name: Upload LiteLoader
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader
-        path: ${{ github.workspace }}/RELEASE/
+        path: ${{ github.workspace }}\RELEASE\
     
     - name: Upload LiteLoader SDK
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v1.0.0
       with:
         name: LiteLoader-SDK
-        path: ${{ github.workspace }}/SDK/
+        path: ${{ github.workspace }}\SDK\
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
