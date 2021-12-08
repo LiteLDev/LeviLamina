@@ -17,6 +17,7 @@ class CompoundTag : public Tag {
 public:
 
 //MCAPI CompoundTag(CompoundTag&&);
+map<std::string, CompoundTagVariant> val;
 
 inline static CompoundTag* create() {
     return (CompoundTag*)Tag::createTag((Tag::Type)10);

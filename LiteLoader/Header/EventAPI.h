@@ -76,7 +76,7 @@ public:
     }
 
     static bool hasListener() {
-        return listeners.empty();
+        return !listeners.empty();
     }
 
     bool call() {

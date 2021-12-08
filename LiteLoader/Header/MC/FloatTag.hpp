@@ -13,6 +13,8 @@ class FloatTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+float val;
+
 public:
 inline float& value() {
     return dAccess<float, 8>(this);

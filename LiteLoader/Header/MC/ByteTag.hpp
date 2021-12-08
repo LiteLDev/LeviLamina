@@ -13,6 +13,8 @@ class ByteTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+unsigned char val;
+
 public:
 inline unsigned char& value() {
     return dAccess<unsigned char, 8>(this);

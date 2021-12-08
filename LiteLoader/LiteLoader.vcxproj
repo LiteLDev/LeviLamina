@@ -192,7 +192,7 @@
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
     <ClCompile Include="Kernel\Utils\PluginOwnData.cpp" />
-    <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp" />
+    <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="Kernel\ServerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\CsLock.cpp" />

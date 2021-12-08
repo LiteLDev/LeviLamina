@@ -13,6 +13,8 @@ class DoubleTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+double val;
+
 public:
 inline double& value() {
     return dAccess<double, 8>(this);

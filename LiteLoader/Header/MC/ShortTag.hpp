@@ -13,6 +13,8 @@ class ShortTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+short val;
+
 public:
 inline short& value() {
     return dAccess<short, 8>(this);

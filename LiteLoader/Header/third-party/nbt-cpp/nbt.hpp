@@ -213,27 +213,28 @@ void skip_space(std::istream & input);
 std::size_t load_size(std::istream & input, const context & ctxt);
 void dump_size(std::ostream & output, const context & ctxt, std::size_t size);
 
-template <typename number_t>
-std::vector<number_t> load_array_text(std::istream & input) {
-	std::vector<number_t> result;
+template <typename F>
+void scan_sequence_text(std::istream & input, F element_action) {
 	for (;;) {
 		skip_space(input);
 		char c = cheof(input);
-		input.putback(c);
 		if (c == ']') {
 			break;
 		}
-		result.push_back(load_text<number_t>(input));
+		input.putback(c);
+ 		element_action();
 		skip_space(input);
-		char next = cheof(input);
-		if (next != ',') {
-			input.putback(next);
-			break;
+		int next = cheof(input);
+		switch (next) {
+			case ',': continue;
+			case ']': return;
+			default: throw std::runtime_error(std::string("unexpected character: ") + char(next));
 		}
 	}
-	result.shrink_to_fit();
-	return result;
 }
+
+template <typename number_t>
+std::vector<number_t> load_array_text(std::istream & input);
 
 template <typename number_t>
 std::vector<number_t> load_array_bin(std::istream & input, const context & ctxt) {
@@ -311,17 +312,7 @@ inline void dump<std::uint64_t>(std::ostream & output, std::uint64_t number, con
 }
 
 template <typename number_t>
-void dump_array_text(std::ostream & output, const std::vector<number_t> & array) {
-	auto iter = array.cbegin();
-	auto end = array.cend();
-	if (iter == end)
-		return;
-	dump_text(output, *iter);
-	for (++iter; iter != end; ++iter) {
-		output << ',';
-		dump_text(output, *iter);
-	}
-}
+void dump_array_text(std::ostream & output, const std::vector<number_t> & array);
 
 template <typename number_t>
 void dump_array_bin(std::ostream & output, const std::vector<number_t> & array, const context & ctxt) {
@@ -373,16 +364,11 @@ std::unique_ptr<tag_type> load_list(std::istream & input, F action) {
 		for (std::size_t i = 0; i < size; i++)
 			result.emplace_back(action(ctxt));
 	} else {
-		for (;;) {
+		scan_sequence_text(input, [&] {
 			result.emplace_back(action(ctxt));
-			skip_space(input);
-			int next = cheof(input);
-			if (next != ',') {
-				input.putback(next);
-				break;
-			}
-		}
+		});
 	}
+	result.shrink_to_fit();
 	return ptr;
 }
 
@@ -481,10 +467,11 @@ namespace tags {
 
 #	undef NUMERIC_TAG
 
-	template <tag_id TID, typename number_t, char prefix>
+	template <tag_id TID, typename number_t, char prefix_c>
 	struct array_tag final : public tag {
 		typedef number_t element_type;
 		typedef std::vector<element_type> value_type;
+		static constexpr char prefix = prefix_c;
 		value_type value;
 		static constexpr tag_id tid = TID;
 		virtual tag_id id() const noexcept override {
@@ -495,33 +482,12 @@ namespace tags {
 		array_tag(value_type && array) : value(std::move(array)) {}
 		static std::unique_ptr<array_tag> read(std::istream & input) {
 			const context & ctxt = context::get(input);
-			if (ctxt.format == context::formats::mojangson) {
-				skip_space(input);
-				char a = cheof(input);
-				if (a != '[')
-					throw std::runtime_error("failed to open array tag");
-				a = cheof(input);
-				if (a != prefix)
-					throw std::runtime_error("wrong array tag type");
-				a = cheof(input);
-				if (a != ';')
-					throw std::runtime_error("unexpected symbol in array tag");
-			}
 			auto result = std::make_unique<array_tag>(load_array<element_type>(input, ctxt));
-			if (ctxt.format == context::formats::mojangson) {
-				char a = cheof(input);
-				if (a != ']')
-					throw std::runtime_error("failed to close array tag");
-			}
 			return result;
 		}
 		virtual void write(std::ostream & output) const override {
 			const context & ctxt = context::get(output);
-			if (ctxt.format == context::formats::mojangson)
-				output << '[' << prefix << ';';
 			dump_array(output, value, ctxt);
-			if (ctxt.format == context::formats::mojangson)
-				output << ']';
 		}
 		virtual std::unique_ptr<tag> copy() const override {
 			return std::make_unique<array_tag>(value);
@@ -922,6 +888,41 @@ namespace tags {
 
 std::istream & operator>>(std::istream & input, tags::compound_tag & compound);
 std::ostream & operator<<(std::ostream & output, const tags::tag & tag);
+
+template <typename number_t>
+std::vector<number_t> load_array_text(std::istream & input) {
+	std::vector<number_t> result;
+	skip_space(input);
+	char a = cheof(input);
+	if (a != '[')
+		throw std::runtime_error("failed to open array tag");
+	a = cheof(input);
+	if (a != tags::tag_of<std::vector<number_t>>::prefix)
+		throw std::runtime_error("wrong array tag type");
+	a = cheof(input);
+	if (a != ';')
+		throw std::runtime_error("unexpected symbol in array tag");
+	scan_sequence_text(input, [&] {
+		result.push_back(load_text<number_t>(input));
+	});
+	result.shrink_to_fit();
+	return result;
+}
+
+template <typename number_t>
+void dump_array_text(std::ostream & output, const std::vector<number_t> & array) {
+	output << '[' << tags::tag_of<std::vector<number_t>>::prefix << ';';
+	auto iter = array.cbegin();
+	auto end = array.cend();
+	if (iter == end)
+		return;
+	dump_text(output, *iter);
+	for (++iter; iter != end; ++iter) {
+		output << ',';
+		dump_text(output, *iter);
+	}
+	output << ']';
+}
 
 } // namespace nbt
 

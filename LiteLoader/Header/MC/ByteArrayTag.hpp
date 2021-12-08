@@ -14,6 +14,8 @@ class ByteArrayTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+TagMemoryChunk val;
+
 public:
 inline TagMemoryChunk& value() {
     return dAccess<TagMemoryChunk, 8>(this);

@@ -649,10 +649,10 @@ enum class FaceID : char {
     East = 5,
 };
 
-class CommandVersion {
-public:
-    int Min = 1, Max = 0x7FFFFFFF;
-};
+//class CommandVersion {
+//public:
+//    int Min = 1, Max = 0x7FFFFFFF;
+//};
 
 template <typename T>
 struct InvertableFilter {

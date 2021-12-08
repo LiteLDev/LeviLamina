@@ -14,6 +14,8 @@ class ListTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+std::vector<Tag*> val;
+
 public:
 inline static ListTag* create() {
     return (ListTag*)Tag::createTag(Tag::Type::List);

@@ -19,9 +19,6 @@
     <Filter Include="Main">
       <UniqueIdentifier>{d6bc6c3c-081e-4a49-b3a2-502827f757d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Kernel\Utils\nbtcpp">
-      <UniqueIdentifier>{6c670ca4-b7e9-4e4d-a345-6ee43e30fe91}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Kernel\Command">
       <UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,9 @@
     </Filter>
     <Filter Include="Kernel\Scoreboard">
       <UniqueIdentifier>{d375fb36-d7c6-411f-8605-3cc7dff1f146}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Utils\nbt-cpp">
+      <UniqueIdentifier>{6c670ca4-b7e9-4e4d-a345-6ee43e30fe91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -129,8 +129,8 @@
     <ClCompile Include="Kernel\ScheduleAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp">
-      <Filter>Kernel\Utils\nbtcpp</Filter>
+    <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
+      <Filter>Kernel\Utils\nbt-cpp</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\EventAPI.cpp">
       <Filter>Kernel</Filter>

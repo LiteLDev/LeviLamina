@@ -13,6 +13,8 @@ class Int64Tag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+int64_t val;
+
 public:
 inline int64_t& value() {
     return dAccess<int64_t, 8>(this);

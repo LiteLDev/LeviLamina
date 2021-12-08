@@ -14,7 +14,9 @@ class CommandVersion {
 // Add Member There  
 public:
 int Min = 1, Max = 0x7FFFFFFF;
+CommandVersion(){};
 
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDVERSION
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDVERSION

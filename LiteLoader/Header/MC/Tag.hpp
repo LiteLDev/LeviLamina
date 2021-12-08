@@ -50,7 +50,6 @@ class Tag {
 #define AFTER_EXTRA
 // Add Member There
 private:
-char filler[0x28];
 
 public:
 enum Type : uint8_t {

@@ -13,6 +13,8 @@ class StringTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+string val;
+
 public:
 inline std::string& value() {
     return dAccess<std::string, 8>(this);

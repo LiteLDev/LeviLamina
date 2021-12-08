@@ -13,6 +13,8 @@ class IntTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+int val;
+
 public:
 inline int& value() {
     return dAccess<int, 8>(this);

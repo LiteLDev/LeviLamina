@@ -11,6 +11,7 @@
 #include "CommandMessage.hpp"
 #include "CommandSelector.hpp"
 #include "CommandOrigin.hpp"
+#include "CommandVersion.hpp"
 class CommandParameterData;
 
 template <typename T>

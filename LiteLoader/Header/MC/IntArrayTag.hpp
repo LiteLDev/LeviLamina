@@ -6,6 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "TagMemoryChunk.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -13,6 +14,7 @@ class IntArrayTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+TagMemoryChunk val;
 
 #undef AFTER_EXTRA
 
