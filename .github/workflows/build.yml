@@ -21,14 +21,14 @@ jobs:
         mkdir Tools/Temp
         serverLink=$(cat 'LINK.txt')
         curl -L -o Tools/Temp/server.zip "$serverLink"
-        unzip Tools/Temp/server.zip -d Tools/Temp/Server/
+        unzip Tools/Temp/server.zip -d Tools/Temp/Server/ > /dev/null
       shell: bash
 
     - name: Build Library
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         cd Tools
-        LibraryBuilder.exe Tools/Temp/Server
+        LibraryBuilder.exe ".\Temp\Server"
       shell: cmd
 
     - name: Add MSBuild to PATH
