@@ -46,7 +46,6 @@ jobs:
       run: |
         ./PackRelease.cmd action
         ./PackSDK.cmd action
-        dir ${{env.GITHUB_WORKSPACE}}
       shell: cmd
 
     - name: Upload LiteLoader
