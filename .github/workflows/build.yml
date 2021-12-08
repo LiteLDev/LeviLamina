@@ -52,13 +52,13 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: LiteLoader
-        path: ${{env.GITHUB_WORKSPACE}}/RELEASE/
+        path: ${{ github.workspace }}/RELEASE/
     
     - name: Upload LiteLoader SDK
       uses: actions/upload-artifact@v2
       with:
         name: LiteLoader-SDK
-        path: ${{env.GITHUB_WORKSPACE}}/SDK/
+        path: ${{ github.workspace }}/SDK/
 
     - name: Create New Release
       uses: softprops/action-gh-release@v1
