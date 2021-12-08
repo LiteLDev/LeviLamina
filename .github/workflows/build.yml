@@ -46,11 +46,10 @@ jobs:
       run: |
         ./PackRelease.cmd action
         ./PackSDK.cmd action
-        dir
+        dir ${{env.GITHUB_WORKSPACE}}
       shell: cmd
 
     - name: Upload LiteLoader
-      run: ls ${{env.GITHUB_WORKSPACE}}
       uses: actions/upload-artifact@v2
       with:
         name: LiteLoader
