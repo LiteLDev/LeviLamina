@@ -26,6 +26,12 @@ string Block::getNameString() {
 	return Block::getName().getString();
 }
 
+string Block::getTypeName()
+{
+	auto& blg = getLegacyBlock();
+	return dAccess<string>(&blg, 128);
+}
+
 int Block::getId() {
 	return getLegacyBlock().getBlockItemId();
 }

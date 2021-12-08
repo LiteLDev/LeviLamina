@@ -8,7 +8,7 @@
 #include <string>
 using namespace std;
 
-std::string GetDataPath(const std::string& myname)
+std::string LL::getDataPath(const std::string& myname)
 {
     filesystem::create_directory("plugins\\LiteLoader");
     return "plugins\\LiteLoader\\" + myname;

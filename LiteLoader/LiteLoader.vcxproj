@@ -66,20 +66,24 @@
       <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
-)</Command>
+      <Command>
+				if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
+				copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
+				)
+			</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
-if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
-goto end
+      <Command>
+				if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
+				if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
+				goto end
 
-:process
-cd /d $(SolutionDir)Tools
-LibraryBuilder.exe
+				:process
+				cd /d $(SolutionDir)Tools
+				LibraryBuilder.exe
 
-:end</Command>
+				:end
+			</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -88,8 +92,66 @@ LibraryBuilder.exe
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="BugFix.cpp" />
+    <ClCompile Include="BuiltinBugFix.cpp" />
+    <ClInclude Include="Header\MC\AABB.hpp" />
+    <ClInclude Include="Header\MC\Automation.hpp" />
+    <ClInclude Include="Header\MC\BinaryStream.hpp" />
+    <ClInclude Include="Header\MC\BlockInstance.hpp" />
+    <ClInclude Include="Header\MC\ByteArrayTag.hpp" />
+    <ClInclude Include="Header\MC\ByteTag.hpp" />
+    <ClInclude Include="Header\MC\CommandMessage.hpp" />
+    <ClInclude Include="Header\MC\CommandPosition.hpp" />
+    <ClInclude Include="Header\MC\CommandOrigin.hpp" />
+    <ClInclude Include="Header\MC\CommandOutput.hpp" />
+    <ClInclude Include="Header\MC\CommandParameterData.hpp" />
+    <ClInclude Include="Header\MC\CommandRegistry.hpp" />
+    <ClInclude Include="Header\MC\CompoundTag.hpp" />
+    <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
+    <ClInclude Include="Header\MC\DoubleTag.hpp" />
+    <ClInclude Include="Header\MC\EndTag.hpp" />
+    <ClInclude Include="Header\MC\FloatTag.hpp" />
+    <ClInclude Include="Header\MC\FormUI.hpp" />
+    <ClInclude Include="Header\MC\GameMode.hpp" />
+    <ClInclude Include="Header\MC\HashedString.hpp" />
+    <ClInclude Include="Header\MC\HitResult.hpp" />
+    <ClInclude Include="Header\MC\Int64Tag.hpp" />
+    <ClInclude Include="Header\MC\IntArrayTag.hpp" />
+    <ClInclude Include="Header\MC\IntTag.hpp" />
+    <ClInclude Include="Header\MC\ListTag.hpp" />
+    <ClInclude Include="Header\MC\NbtIo.hpp" />
+    <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
+    <ClInclude Include="Header\MC\RelativeFloat.hpp" />
+    <ClInclude Include="Header\MC\ScoreboardId.hpp" />
+    <ClInclude Include="Header\MC\ShortTag.hpp" />
+    <ClInclude Include="Header\MC\StringTag.hpp" />
+    <ClInclude Include="Header\MC\StructureSettings.hpp" />
+    <ClInclude Include="Header\MC\StructureTemplate.hpp" />
+    <ClInclude Include="Header\MC\Tag.hpp" />
+    <ClInclude Include="Header\MC\TagMemoryChunk.hpp" />
+    <ClInclude Include="Header\MC\BlockSource.hpp" />
+    <ClInclude Include="Header\MC\Command.hpp" />
+    <ClInclude Include="Header\MC\CommandContext.hpp" />
+    <ClInclude Include="Header\MC\ConnectionRequest.hpp" />
+    <ClInclude Include="Header\MC\ItemActor.hpp" />
+    <ClInclude Include="Header\MC\MinecraftCommands.hpp" />
+    <ClInclude Include="Header\MC\RakNet.hpp" />
+    <ClInclude Include="Header\MC\Scripting.hpp" />
+    <ClInclude Include="Header\MC\WebToken.hpp" />
+    <ClInclude Include="Header\MC\Actor.hpp" />
+    <ClInclude Include="Header\MC\Block.hpp" />
+    <ClInclude Include="Header\MC\BlockActor.hpp" />
+    <ClInclude Include="Header\MC\BlockLegacy.hpp" />
+    <ClInclude Include="Header\MC\Container.hpp" />
+    <ClInclude Include="Header\MC\ItemStack.hpp" />
+    <ClInclude Include="Header\MC\Level.hpp" />
+    <ClInclude Include="Header\MC\Mob.hpp" />
+    <ClInclude Include="Header\MC\NetworkIdentifier.hpp" />
+    <ClInclude Include="Header\MC\Player.hpp" />
+    <ClInclude Include="Header\MC\Scoreboard.hpp" />
+    <ClInclude Include="Header\MC\Spawner.hpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\BinaryStream.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockAPI.cpp" />
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
@@ -103,7 +165,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
-    <ClCompile Include="Kernel\FormAPI.cpp" />
+    <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
@@ -112,6 +174,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
@@ -119,6 +182,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
     <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
+    <ClCompile Include="Kernel\Types.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
@@ -139,7 +203,7 @@ LibraryBuilder.exe
     <ClCompile Include="PlayerDB.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="BuiltinCommands.cpp" />
-    <ClCompile Include="ServerLogger.cpp" />
+    <ClCompile Include="SimpleServerLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
@@ -153,7 +217,6 @@ LibraryBuilder.exe
     <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
-    <ClInclude Include="Header\BinaryStreamAPI.h" />
     <ClInclude Include="Header\EventAPI.h" />
     <ClInclude Include="Header\PlayerDB.h" />
     <ClInclude Include="Header\RegCommandAPI.h" />

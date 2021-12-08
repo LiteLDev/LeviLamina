@@ -217,9 +217,9 @@ void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, 
     BinaryStream wp;
     wp.reserve(Soundname.size());
     wp.writeString(Soundname);
-    wp.writeVarInt(Position.x);
-    wp.writeUnsignedVarInt(Position.y * 8);
-    wp.writeVarInt(Position.z);
+    wp.writeVarInt((int)Position.x);
+    wp.writeUnsignedVarInt((unsigned int)(Position.y * 8));
+    wp.writeVarInt((int)(Position.z));
     wp.writeFloat(Volume);
     wp.writeFloat(Pitch);
     MyPkt<0x56> pkts{wp.getAndReleaseData()};

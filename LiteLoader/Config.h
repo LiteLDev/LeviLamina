@@ -21,6 +21,7 @@ namespace LL
 
         bool enableAutoUpdate = true;
         bool enableCrashLogger = true;
+        bool enableSimpleServerLogger = true;
         ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
 
         bool enableFixDisconnectBug = true;

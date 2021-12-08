@@ -2,6 +2,7 @@
 #include "Global.h"
 #include "MC/MCRESULT.hpp"
 #include "LoggerAPI.h"
+#include "MC/BlockInstance.hpp"
 #include <functional>
 #include <string>
 #include <list>
@@ -22,6 +23,9 @@ class CommandRegistry;
 class MobEffectInstance;
 class Container;
 class WitherBoss;
+class ArmStand;
+class Objective;
+struct ScoreboardId;
 
 namespace Event
 {
@@ -140,8 +144,7 @@ namespace Event
     public:
         ServerPlayer* player;
         ItemStack* itemStack;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         unsigned char side;
     };
 
@@ -235,33 +238,28 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerDestroyBlockEvent : public EventTemplate<PlayerDestroyBlockEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
-        Block* block;
+        BlockInstance block;
     };
 
     class PlayerPlaceBlockEvent : public EventTemplate<PlayerPlaceBlockEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerOpenContainerEvent : public EventTemplate<PlayerOpenContainerEvent>
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         Container* container;
     };
 
@@ -269,8 +267,7 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
         Container* container;
     };
 
@@ -309,8 +306,7 @@ namespace Event
     {
     public:
         Player* player;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class PlayerOpenContainerScreenEvent : public EventTemplate<PlayerOpenContainerScreenEvent>
@@ -319,23 +315,140 @@ namespace Event
         Player* player;
     };
 
+    class PlayerUseFrameBlockEvent : public EventTemplate<PlayerUseFrameBlockEvent>
+    {
+    public:
+        enum class Type { Use, Attack };
+        Type type;
+        Player* player;
+        BlockInstance block;
+    };
+
+    class PlayerScoreChangedEvent : public EventTemplate<PlayerScoreChangedEvent>
+    {
+    public:
+        Player* player;
+        int after;
+        Objective* scoreObjective;
+        ScoreboardId* scoreboardId;
+    };
+
 
     ///////////////////////////// Block Events /////////////////////////////
+
+    class BlockInteractedEvent : public EventTemplate<BlockInteractedEvent>
+    {
+    public:
+        BlockInstance block;
+        Player* player;
+    };
+
+    class BlockChangedEvent : public EventTemplate<BlockChangedEvent>
+    {
+    public:
+        BlockInstance before;
+        BlockInstance after;
+    };
+
+    class RespawnAnchorExplodeEvent : public EventTemplate<RespawnAnchorExplodeEvent>
+    {
+    public:
+        BlockInstance block;
+        Player* player;
+    };
+
+    class BlockExplodedEvent : public EventTemplate<BlockExplodedEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class FireSpreadEvent : public EventTemplate<FireSpreadEvent>
+    {
+    public:
+        BlockInstance block;
+    };
+
+    class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent>
+    {
+    public:
+        Player* player;
+        BlockInstance block;
+        Container* container;
+        int slotNumber;
+        ItemStack* oldItemStack;
+        ItemStack* newItemStack;
+    };
+
+    class ProjectileHitBlockEvent : public EventTemplate<ProjectileHitBlockEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class RedStoneUpdateEvent : public EventTemplate<RedStoneUpdateEvent>
+    {
+    public:
+        BlockInstance block;
+        int level;
+        bool isActive;
+    };
+
+    class HopperBlockSearchItemEvent : public EventTemplate<HopperBlockSearchItemEvent>
+    {
+    public:
+        BlockInstance block;
+    };
+
+    class MinecartHopperSearchItemEvent : public EventTemplate<MinecartHopperSearchItemEvent>
+    {
+    public:
+        Vec3 position;
+        int dimensionId;
+    };
+
+    class HopperPushOutEvent : public EventTemplate<HopperPushOutEvent>
+    {
+    public:
+        Vec3 position;
+        int dimensionId;
+    };
+
+    class PistonPushEvent : public EventTemplate<PistonPushEvent>
+    {
+    public:
+        BlockInstance piston;
+        BlockInstance pushed;
+    };
+
+    class FarmLandDecayEvent : public EventTemplate<FarmLandDecayEvent>
+    {
+    public:
+        BlockInstance block;
+        Actor* source;
+    };
+
+    class LiquidFlowEvent : public EventTemplate<LiquidFlowEvent>
+    {
+    public:
+        BlockInstance sourceBlock;
+        BlockPos flowTo;
+        int dimensionId;
+    };
 
     class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent>
     {
     public:
         string cmd;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
     class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent>
     {
     public:
-        Block* block;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
 
@@ -393,12 +506,10 @@ namespace Event
     {
     public:
         Actor* entity;
-        Block* block;
-        BlockPos blockPos;
-        int dimId;
+        BlockInstance block;
     };
 
-    class NPCCmdEvent : public EventTemplate<NPCCmdEvent>
+    class NpcCmdEvent : public EventTemplate<NpcCmdEvent>
     {
     public:
         Actor* npc;
@@ -412,6 +523,15 @@ namespace Event
         Actor* shooter;
         ActorDefinitionIdentifier* identifier;
         std::string typeName;
+    };
+
+
+    class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent>
+    {
+    public:
+        ArmStand* armStand;
+        Player* causer;
+        int slotNumber;
     };
 
     class ItemUseOnActorEvent : public EventTemplate<ItemUseOnActorEvent>
@@ -429,10 +549,21 @@ namespace Event
     class ServerStartedEvent : public EventTemplate<ServerStartedEvent>
     {};
 
+    class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent>
+    {
+    public:
+        std::string cmd;
+    };
 
     class RegCmdEvent : public EventTemplate<RegCmdEvent>
     {
     public:
         CommandRegistry* CMDRg;
+    };
+
+    class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent>
+    {
+    public:
+        std::string output;
     };
 }; // namespace Event

@@ -15,13 +15,11 @@ class BinaryStream : public ReadOnlyBinaryStream {
 #define AFTER_EXTRA //DO NOT EDIT THIS LINE
 // Add Member There
 public:
-std::string writebuf, *pwbuf;
-inline void reserve(size_t size) {
-    writebuf.reserve(size);
-}
-std::string& getRaw() { // BinaryStream::getAndReleaseData
-    return *dAccess<std::string*, 96>(this);
-}
+    std::string writeBuf, *pwBuf;
+
+    LIAPI void reserve(size_t size);
+    LIAPI std::string& getRaw();
+
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE
 
 public:

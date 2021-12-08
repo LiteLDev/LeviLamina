@@ -19,6 +19,11 @@ BlockInstance::BlockInstance(BlockPos pos, int dimid)
     block = Level::getBlock(pos, dimid);
 }
 
+BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimid)
+{
+    return BlockInstance(block, pos, dimid);
+}
+
 bool BlockInstance::operator==(BlockInstance const& bli) {
     return block == bli.block && pos == bli.pos && dim == bli.dim;
 };
@@ -45,7 +50,7 @@ bool BlockInstance::hasContainer()
 class DropperBlockActor;
 Container* BlockInstance::getContainer()
 {
-    Vec3 vec{ pos.x, pos.y, pos.z };
+    Vec3 vec = pos.toVec3();
 
     // This function didn't use 'this' pointer
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",

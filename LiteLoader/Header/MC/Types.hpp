@@ -10,6 +10,7 @@ namespace mce {
     class Color;
 }; // namespace mce
 
+class Vec3;
 class BlockPos {
 public:
     int x, y, z;
@@ -17,27 +18,36 @@ public:
     inline bool operator==(BlockPos const& b) const {
         return x == b.x && y == b.y && z == b.z;
     }
+
     inline bool operator!=(BlockPos const& b) const {
         return x != b.x || y != b.y || z != b.z;
     }
+
     inline BlockPos operator+(BlockPos const& b) const {
         return {x + b.x, y + b.y, z + b.z};
     }
+
     inline BlockPos operator-(BlockPos const& b) const {
         return {x - b.x, y - b.y, z - b.z};
     }
+
     inline std::string toString() {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
+
     inline BlockPos add(int dx) {
         return {x + dx, y, z};
     }
+
     inline BlockPos add(int dx, int dy) {
         return {x + dx, y + dy, z};
     }
+
     inline BlockPos add(int dx, int dy, int dz) {
         return {x + dx, y + dy, z + dz};
     }
+
+    LIAPI Vec3 toVec3();
 };
 
 
@@ -58,18 +68,8 @@ public:
     inline std::string toString() {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
-    inline BlockPos toBlockPos() {
-        auto px = (int)x;
-        auto py = (int)y;
-        auto pz = (int)z;
-        if (px < 0 && px != x)
-            px = px - 1;
-        if (py < 0 && py != y)
-            py = py - 1;
-        if (pz < 0 && pz != z)
-            pz = pz - 1;
-        return { px, py, pz };
-    }
+
+    LIAPI BlockPos toBlockPos();
 
     inline Vec3 add(float dx, float dy, float dz) {
         return {x + dx, y, z};
@@ -86,7 +86,7 @@ public:
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
 };
 
-#include "../MC/AABB.hpp"
+#include "AABB.hpp"
 class BoundingBox {
 public:
     BlockPos bpos1;
@@ -96,20 +96,12 @@ public:
         return { (bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2 };
     }
 
-    inline AABB toAABB()
-    {
-        Vec3 vec1 = { (float)bpos1.x, (float)bpos1.y, (float)bpos1.z };
-        Vec3 vec2 = { (float)bpos1.x, (float)bpos1.y, (float)bpos1.z };
-        return { vec1, vec2 + Vec3{1, 1, 1} };
-    }
-
-
+    LIAPI AABB toAABB();
 };
 
 class ChunkPos {
 public:
     int x, z;
-
 };
 
 struct IVec2 {
@@ -139,11 +131,6 @@ public:
     AutomaticID(T x) { id = x; }
     inline operator T() { return id; }
 };
-#include "../MC/Tick.hpp"
-//struct Tick {
-//    unsigned long long t;
-//};
-
 
 struct ActorUniqueID {
     long long id;
@@ -693,18 +680,20 @@ public:
     auto empty() const { return data->empty(); }
 };
 
+#pragma warning(disable:26495)
+
 class FakeDataItem {
 public:
     DataItemType type;
-    uint16_t id;
-    int8_t byte;
-    int16_t shorts;
-    int32_t ints;
-    float floats;
-    std::string strings;
-    BlockPos bpos;
-    Vec3 vec3;
-    int64_t longs;
+    uint16_t id { 0 };
+    int8_t byte { 0 };
+    int16_t shorts { 0 };
+    int32_t ints { 0 };
+    float floats { 0.0 };
+    std::string strings { "" };
+    BlockPos bpos {};
+    Vec3 vec3 {};
+    int64_t longs { 0 };
 
     FakeDataItem(uint16_t a1, DataItemType a3, int8_t a2)
         : id(a1)

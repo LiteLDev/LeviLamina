@@ -29,6 +29,11 @@ MCINLINE Vec3 const& Actor::getPosition() {
     return (this->*rv)();
 }
 
+BlockSource* Actor::getBlockSource()
+{
+    return Level::getBlockSource(this);
+}
+
 bool Actor::isSimulatedPlayer() {
     if (!this)
         return false;
@@ -99,8 +104,8 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
             bpos = result.getBlockPos();
             face = result.getFacing();
         }
-        auto block = const_cast<Block*>(&bs.getBlock(bpos));
-        return BlockInstance(block, bpos, bs.getDimensionId());
+        //auto block = const_cast<Block*>(&bs.getBlock(bpos));
+        return Level::getBlockInstance(bpos, bs.getDimensionId());
     }
     return BlockInstance::Null;
 }

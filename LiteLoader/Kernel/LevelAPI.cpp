@@ -74,10 +74,21 @@ BlockSource* Level::getBlockSource(int dimid) {
 BlockSource* Level::getBlockSource(Actor* ac) {
     return const_cast<BlockSource*>(&ac->getRegionConst());
 }
+
 BlockPalette* Level::getBlockPalette() {
     BlockPalette* (Level::*rv)();
     *((void**)&rv) = dlsym("?getBlockPalette@Level@@UEAAAEAVBlockPalette@@XZ");
     return (Global<Level>->*rv)();
+}
+
+Block* Level::getBlock(BlockPos* pos, int dimId)
+{
+    return getBlock(*pos, Level::getBlockSource(dimId));
+}
+
+Block* Level::getBlock(BlockPos* pos, BlockSource* blockSource)
+{
+    return (Block*)&(blockSource->getBlock(*pos));
 }
 
 Block* Level::getBlock(const BlockPos& pos, int dim)
@@ -88,6 +99,16 @@ Block* Level::getBlock(const BlockPos& pos, int dim)
 Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource)
 {
     return (Block*)&(blockSource->getBlock(pos));
+}
+
+BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId)
+{
+    return BlockInstance(*pos, dimId);
+}
+
+BlockInstance Level::getBlockInstance(BlockPos* pos, BlockSource* blockSource)
+{
+    return BlockInstance(*pos, blockSource->getDimensionId());
 }
 
 BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim)

@@ -13,7 +13,9 @@ struct ScoreboardId {
 
 #define AFTER_EXTRA //DO NOT EDIT THIS LINE
 // Add Member There
-
+public:
+    int id;
+    void* null;
 #undef AFTER_EXTRA //DO NOT EDIT THIS LINE
 
 public:

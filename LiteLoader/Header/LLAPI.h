@@ -58,6 +58,8 @@ namespace LL
     // @return 是否为调试模式
     LIAPI bool isDebugMode();
 
+    LIAPI std::string getDataPath(const std::string& myPluginName);
+
     // @param name 插件名
     // @param introduction 插件介绍
     // @param version 插件版本
@@ -84,24 +86,3 @@ namespace LL
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//For compatibility
-LIAPI std::string GetDataPath(const std::string& myname);

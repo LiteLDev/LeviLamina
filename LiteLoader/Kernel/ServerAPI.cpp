@@ -5,11 +5,10 @@
 class UserEntityIdentifierComponent;
 
 namespace LL {
-
     std::string getBdsVersion() {
-    return Common::getGameVersionString();
+        return Common::getGameVersionString();
     }
     int getServerProtocolVersion() {
         return SharedConstants::NetworkProtocolVersion;
     }
-    } // namespace LL
+} // namespace LL
