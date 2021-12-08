@@ -150,7 +150,6 @@
     <ClInclude Include="Header\MC\Player.hpp" />
     <ClInclude Include="Header\MC\Scoreboard.hpp" />
     <ClInclude Include="Header\MC\Spawner.hpp" />
-    <ClCompile Include="Header\MC\Json.cpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
     <ClCompile Include="Kernel\BinaryStream.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
