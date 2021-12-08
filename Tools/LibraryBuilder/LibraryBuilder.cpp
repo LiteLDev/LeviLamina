@@ -41,7 +41,7 @@ void ErrorExit(int code)
     exit(code);
 }
 
-int main()
+int main(int argc, char **argv)
 {
     //Welcome
     cout << "\n";
@@ -52,13 +52,20 @@ int main()
     cout << "  /////////////////////////////////////////////////////\n";
     cout << "\n---Start Processing..." << endl;
 
-    MessageBox(NULL, L"Extra static library is needed to finish this compile.\n"
-        "You need to choose a folder contains bedrock_server.exe and bedrock_server.pdb next\n\n"
-        "需要额外的静态库来完成编译。接下来请需要选择一个含有bedrock_server.exe和bedrock_server.pdb文件的目录"
-        , L"More action needed", MB_OK | MB_ICONINFORMATION);
+    string bdsPath;
 
-    // Choose Folder
-    string bdsPath = ChooseFolder();
+    if (argc == 1)
+    {
+        MessageBox(NULL, L"Extra static library is needed to finish this compile.\n"
+            "You need to choose a folder contains bedrock_server.exe and bedrock_server.pdb next\n\n"
+            "需要额外的静态库来完成编译。接下来请需要选择一个含有bedrock_server.exe和bedrock_server.pdb文件的目录"
+            , L"More action needed", MB_OK | MB_ICONINFORMATION);
+
+        // Choose Folder
+        bdsPath = ChooseFolder();
+    }
+    else
+        bdsPath = string(argv[1]);
 
     // Check Valid
     if (bdsPath.empty())
