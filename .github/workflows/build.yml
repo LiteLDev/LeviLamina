@@ -22,9 +22,14 @@ jobs:
         serverLink=$(cat 'LINK.txt')
         curl -L -o Tools/Temp/server.zip "$serverLink"
         unzip Tools/Temp/server.zip -d Tools/Temp/Server/
-        cd Tools
-        LibraryBuilder Tools/Temp/Server
       shell: bash
+
+    - name: Build Library
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        cd Tools
+        LibraryBuilder.exe Tools/Temp/Server
+      shell: cmd
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1
