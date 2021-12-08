@@ -19,6 +19,7 @@ namespace LL
             {"Modules", {
                 {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}}},
                 {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
+                {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
                 {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
                 {"FixListenPort", {{"enabled", conf.enableFixListenPort}}}
             }}
@@ -27,26 +28,40 @@ namespace LL
 
     void inline from_json(const nlohmann::json& j, LLConfig& conf)
     {
-        if (j.find("DebugMode") != j.end())
-            j.at("DebugMode").get_to(conf.debugMode);
-        if (j.find("LogLevel") != j.end())
-            j.at("LogLevel").get_to(conf.logLevel);
-        if (j.find("Language") != j.end())
-            j.at("Language").get_to(conf.language);
+        conf.debugMode = j.value("DebugMode", false);
+        conf.logLevel = j.value("LogLevel", 4);
+        conf.language = j.value("Language", "en");
 
         if (j.find("Modules") != j.end())
         {
-            if (j.at("Modules").find("AutoUpgrade") != j.at("Modules").end())
-                j.at("Modules").at("AutoUpgrade").at("enabled").get_to(conf.enableAutoUpdate);
-            if (j.at("Modules").find("CrashLogger") != j.at("Modules").end())
+            const nlohmann::json& modules = j.at("Modules");
+
+            if (modules.find("AutoUpgrade") != modules.end())
             {
-                j.at("Modules").at("CrashLogger").at("enabled").get_to(conf.enableCrashLogger);
-                j.at("Modules").at("CrashLogger").at("path").get_to(conf.crashLoggerPath);
+                const nlohmann::json& update = modules.at("AutoUpgrade");
+                conf.enableAutoUpdate = update.value("enabled", true);
             }
-            if (j.at("Modules").find("FixDisconnectBug") != j.at("Modules").end())
-                j.at("Modules").at("FixDisconnectBug").at("enabled").get_to(conf.enableFixDisconnectBug);
-            if (j.at("Modules").find("FixListenPort") != j.at("Modules").end())
-                j.at("Modules").at("FixListenPort").at("enabled").get_to(conf.enableFixListenPort);
+            if (modules.find("CrashLogger") != modules.end())
+            {
+                const nlohmann::json& cl = modules.at("CrashLogger");
+                conf.enableCrashLogger = cl.value("enabled", true);
+                conf.crashLoggerPath = cl.value("path", "plugins\\LiteLoader\\CrashLogger_Daemon.exe");
+            }
+            if (modules.find("SimpleServerLogger") != modules.end())
+            {
+                const nlohmann::json& cl = modules.at("SimpleServerLogger");
+                conf.enableSimpleServerLogger = cl.value("enabled", true);
+            }
+            if (modules.find("FixDisconnectBug") != modules.end())
+            {
+                const nlohmann::json& dis = modules.at("FixDisconnectBug");
+                conf.enableFixDisconnectBug = dis.value("enabled", true);
+            }
+            if (modules.find("FixListenPort") != modules.end())
+            {
+                const nlohmann::json& listen = modules.at("FixListenPort");
+                conf.enableFixListenPort = listen.value("enabled", true);
+            }
         }
     }
 }

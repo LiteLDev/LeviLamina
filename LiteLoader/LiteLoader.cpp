@@ -37,7 +37,7 @@ void FixUpCWD() {
 
 void RegisterCommands();
 bool InitPlayerDatabase();
-void RegisterServerLogger();
+void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
@@ -90,7 +90,7 @@ void LLMain() {
     RegisterCommands();
 
     //Register simple server logger
-    RegisterServerLogger();
+    RegisterSimpleServerLogger();
 
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
     { 

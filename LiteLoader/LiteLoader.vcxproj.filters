@@ -43,6 +43,18 @@
     <Filter Include="Header\Scoreboard">
       <UniqueIdentifier>{11aba141-6e81-441c-8e76-a1635772030b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kernel\MC">
+      <UniqueIdentifier>{4b84964d-df75-4565-a71c-59caceead767}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header\Network">
+      <UniqueIdentifier>{267c13cb-41b5-4811-a67e-36c7db62c3dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Network">
+      <UniqueIdentifier>{0b9c3bec-df03-439f-ab69-45c3ff10bf78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\Scoreboard">
+      <UniqueIdentifier>{d375fb36-d7c6-411f-8605-3cc7dff1f146}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -75,15 +87,6 @@
     <ClCompile Include="Kernel\KVDBAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\PlayerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ActorAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\MobAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -114,43 +117,16 @@
     <ClCompile Include="PluginManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ContainerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ItemStackAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="AutoUpgrade.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="CheckNotice.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LevelAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\ScheduleAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockActorAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ScoreboardAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockInstanceAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\SpawnerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockLegacyAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbtcpp\nbt.cpp">
@@ -159,29 +135,11 @@
     <ClCompile Include="Kernel\EventAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\FormAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ItemActorAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockSourceAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="BuiltinCommands.cpp">
       <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\HitResultAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
-      <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\CommandAPI.cpp">
       <Filter>Kernel\Command</Filter>
@@ -198,9 +156,6 @@
     <ClCompile Include="Kernel\CommandParameterDataAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\GameModeAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ListTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
@@ -210,20 +165,77 @@
     <ClCompile Include="Kernel\TagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="ServerLogger.cpp">
+    <ClCompile Include="SimpleServerLogger.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="PlayerDB.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="Kernel\ActorAPI.cpp">
+      <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BinaryStream.cpp">
-      <Filter>Kernel</Filter>
+    <ClCompile Include="Kernel\BlockActorAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BlockAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BlockInstanceAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BlockLegacyAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BlockSourceAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ContainerAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FormUI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\GameModeAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\HitResultAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ItemActorAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ItemStackAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LevelAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\MobAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\PlayerAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\SpawnerAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
+      <Filter>Kernel\MC</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\Types.cpp">
-      <Filter>Kernel</Filter>
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
+      <Filter>Kernel\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\BinaryStream.cpp">
+      <Filter>Kernel\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ScoreboardAPI.cpp">
+      <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -407,13 +419,7 @@
     <ClInclude Include="Header\MC\NetworkIdentifier.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\Packet.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\Player.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\RakNet.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Scripting.hpp">
@@ -494,11 +500,23 @@
     <ClInclude Include="Header\MC\ScoreboardId.hpp">
       <Filter>Header\Scoreboard</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\BinaryStream.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\RelativeFloat.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\FormUI.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\RakNet.hpp">
+      <Filter>Header\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Packet.hpp">
+      <Filter>Header\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\BinaryStream.hpp">
+      <Filter>Header\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp">
+      <Filter>Header\Network</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
