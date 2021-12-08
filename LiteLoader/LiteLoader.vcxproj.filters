@@ -93,7 +93,7 @@
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="BugFix.cpp">
+    <ClCompile Include="BuiltinBugFix.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Config.cpp">
@@ -168,9 +168,6 @@
     <ClCompile Include="SimpleServerLogger.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerDB.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ActorAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
@@ -236,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerDB.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

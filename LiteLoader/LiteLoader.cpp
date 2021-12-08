@@ -35,9 +35,9 @@ void FixUpCWD() {
     SetCurrentDirectoryA(buf.c_str());
 }
 
-void RegisterCommands();
-bool InitPlayerDatabase();
-void RegisterSimpleServerLogger();
+extern void RegisterCommands();
+extern bool InitPlayerDatabase();
+extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
@@ -63,7 +63,6 @@ void LLMain() {
 
     //Fix problems
     FixUpCWD();
-
     FixPluginsLibDir();
 
     //Load Config
@@ -79,8 +78,7 @@ void LLMain() {
     Logger::setTitle("LiteLoader");
     Logger::setFile("logs/LiteLoader-latest.log", false);
 
-
-    //isDebug
+    //DebugMode
     CheckDevMode();
 
     //Load plugins
@@ -100,11 +98,6 @@ void LLMain() {
         return true;
     });
 
-
-   // PostInitEV post_init_ev;  // Register PostInit event
-   // for (size_t count = 0; count < Post_init_call_backs.size(); count++) {
-   //     Post_init_call_backs[count](post_init_ev);
-   // }
 }
 // Call LLMain
 
