@@ -66,4 +66,4 @@ jobs:
           ./LiteLoader.zip
           ./LiteLoader-SDK.zip
       env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
