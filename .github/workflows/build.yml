@@ -22,10 +22,6 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       id: build
       run: |
-        echo ::set-output name=tag::${GITHUB_REF:10}
-        echo  >> LiteLoader/Version.h
-        git log -1 --format='#define LITELOADER_VERSION_GITHUB LITELOADER_VERSION"-Ci-%h_%at"' >> LiteLoader/Version.h
-        cat LiteLoader/Version.h
         MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
       shell: bash
     
