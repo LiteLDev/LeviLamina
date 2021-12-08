@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GoalSelectorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOALSELECTORCOMPONENT
+public:
+    class GoalSelectorComponent& operator=(class GoalSelectorComponent const&) = delete;
+    GoalSelectorComponent(class GoalSelectorComponent const&) = delete;
+    GoalSelectorComponent() = delete;
+#endif
 
 public:
-
     MCAPI void addGoal(int, std::unique_ptr<class Goal>);
     MCAPI void buildDebugInfo(std::string&) const;
     MCAPI void clearAllGoals();
@@ -30,9 +35,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _eraseGoals(bool (* )(struct std::pair<unsigned short, class PrioritizedGoal>& ));
     MCAPI class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct std::pair<unsigned short, class PrioritizedGoal> > > > _findGoalByKey(unsigned short) const;
+
 };

@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RuntimeIdentifierDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNTIMEIDENTIFIERDESCRIPTION
+public:
+    class RuntimeIdentifierDescription& operator=(class RuntimeIdentifierDescription const&) = delete;
+    RuntimeIdentifierDescription(class RuntimeIdentifierDescription const&) = delete;
+    RuntimeIdentifierDescription() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RuntimeIdentifierDescription();
     /*1*/ virtual char const* getJsonName() const;
-
     /*
     inline  ~RuntimeIdentifierDescription(){
          (RuntimeIdentifierDescription::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BodyControl {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BODYCONTROL
+public:
+    class BodyControl& operator=(class BodyControl const&) = delete;
+    BodyControl(class BodyControl const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BodyControl();
     /*1*/ virtual void clientTick(class Mob&);
-
     /*
     inline  ~BodyControl(){
          (BodyControl::*rv)();
@@ -27,13 +31,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BodyControl();
 
 protected:
 
-
 private:
-
     MCAPI static float const MAX_CLAMP_ANGLE;
+
 };

@@ -2,22 +2,21 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
     class ServerPlayer;
     class Player;
     class NetworkIdentifier;
     class UserEntityIdentifierComponent;
     class Certificate;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Player : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
     LIAPI std::string getName();
@@ -62,7 +61,14 @@ public:
     inline bool runcmdA(T&&... a) {
         return Level::runcmdAsA(*this, std::forward<T>(a)...);
     }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER
+public:
+    class Player& operator=(class Player const&) = delete;
+    Player(class Player const&) = delete;
+    Player() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -285,7 +291,6 @@ public:
     /*217*/ virtual struct PlayerMovementSettings const& getMovementSettings() const;
     /*218*/ virtual void onMovePlayerPacketNormal(class Vec3 const&, class Vec2 const&, float);
     /*219*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
-
     /*
     inline int \/*enum enum StructureFeatureType*\/ getCurrentStructureFeature() const{
         int \/*enum enum StructureFeatureType*\/ (Player::*rv)() const;
@@ -408,7 +413,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Player(class Level&, class PacketSender&, enum GameType, class NetworkIdentifier const&, unsigned char, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, class OwnerPtrT<struct EntityRefTraits> const&, std::string const&, std::string const&);
     MCAPI void broadcastPlayerSpawnedMobEvent(enum ActorType, enum MobSpawnMethod);
     MCAPI bool canBeSeenOnMap() const;
@@ -569,7 +573,6 @@ public:
     MCAPI static class Player* tryGetFromEntity(class OwnerPtrT<struct EntityRefTraits> const&, bool);
 
 protected:
-
     MCAPI bool _checkAndFixSpawnPosition(class Vec3&, std::vector<class gsl::not_null<class BlockSource* >>, bool, bool, bool, bool, bool) const;
     MCAPI void _chooseSpawnArea();
     MCAPI bool _chooseSpawnPositionWithinArea();
@@ -580,7 +583,6 @@ protected:
     MCAPI bool checkSpawnBlock(class BlockSource const&) const;
 
 private:
-
     MCAPI void _addLevels(int);
     MCAPI bool _blockUsingShield(class ActorDamageSource const&, float);
     MCAPI void _ensureSafeSpawnPosition(class Vec3&);
@@ -590,4 +592,5 @@ private:
     MCAPI void _registerElytraLoopSound();
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const&, class ItemStack const&, class ItemStack const&, enum ContainerID, int);
     MCAPI void _tickLevelChunks(struct Tick const&);
+
 };

@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PackManifest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct CapabilityRegisterer {
@@ -21,12 +20,17 @@ struct CapabilityRegisterer {
     CapabilityRegisterer(CapabilityRegisterer const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKMANIFEST
+public:
+    class PackManifest& operator=(class PackManifest const&) = delete;
+    PackManifest() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-
     /*
     inline  ~PackManifest(){
          (PackManifest::*rv)();
@@ -34,7 +38,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PackManifest(class PackManifest const&);
     MCAPI PackManifest(enum ManifestType);
     MCAPI void addModule(class ResourceInformation const&);
@@ -68,12 +71,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _serializeDependencies(class Json::Value&) const;
     MCAPI void _serializeHeader(class Json::Value&) const;
     MCAPI void _serializeModules(class Json::Value&) const;
     MCAPI void _serializeVersion(class Json::Value&, class SemVersion const&) const;
     MCAPI static class std::unordered_map<std::string, enum PackScope, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, enum PackScope> > > const STRING_TO_PACK_SCOPE;
+
 };

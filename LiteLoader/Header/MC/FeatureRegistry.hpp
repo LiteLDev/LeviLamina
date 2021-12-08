@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FeatureRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREREGISTRY
+public:
+    class FeatureRegistry& operator=(class FeatureRegistry const&) = delete;
+    FeatureRegistry(class FeatureRegistry const&) = delete;
+#endif
 
 public:
-
     MCAPI FeatureRegistry();
     MCAPI void forEachFeature(class std::function<void (class HashedString const& , class WeakRefT<struct FeatureRefTraits>)>) const;
     MCAPI std::vector<std::string> getLargeFeaturePasses() const;
@@ -44,10 +48,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::string const _featureNamespaceFromInput(std::string const&, std::string const&);
     MCAPI void _registerFeature(std::string const&, std::unique_ptr<class IFeature>);
     MCAPI void _setupFeature(class IWorldRegistriesProvider&, class ResourcePackManager const&, std::string const&, std::string const&, class SemVersion const&);
+
 };

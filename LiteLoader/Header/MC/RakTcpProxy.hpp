@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakTcpProxy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKTCPPROXY
+public:
+    class RakTcpProxy& operator=(class RakTcpProxy const&) = delete;
+    RakTcpProxy(class RakTcpProxy const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~RakTcpProxy();
@@ -29,12 +34,9 @@ public:
     /*8*/ virtual struct RakNet::SystemAddress nextCompletedConnectionAttempt();
     /*9*/ virtual struct RakNet::SystemAddress nextFailedConnectionAttempt();
     /*10*/ virtual struct RakNet::SystemAddress nextLostConnection();
-
-
     MCAPI RakTcpProxy();
 
 protected:
-
 
 private:
 

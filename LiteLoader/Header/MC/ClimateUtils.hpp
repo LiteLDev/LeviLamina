@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ClimateUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct TargetSpace {
     TargetSpace() = delete;
@@ -24,6 +23,7 @@ struct Parameter {
     Parameter(Parameter const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI __int64 squareDistance(class std::array<struct ClimateUtils::Parameter, 7> const&, struct ClimateUtils::TargetSpace const&);
+
 };

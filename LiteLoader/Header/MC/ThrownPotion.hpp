@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Throwable.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ThrownPotion : public Throwable {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNPOTION
+public:
+    class ThrownPotion& operator=(class ThrownPotion const&) = delete;
+    ThrownPotion(class ThrownPotion const&) = delete;
+    ThrownPotion() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -98,15 +104,12 @@ public:
     /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual float getThrowUpAngleOffset();
     /*78*/ virtual int /*enum enum ParticleType*/ getParticleType();
-
-
     MCAPI ThrownPotion(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);
     MCAPI static float const SPLASH_RANGE;
 
 protected:
-
 
 private:
 

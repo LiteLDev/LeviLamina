@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerActionPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERACTIONPACKET
+public:
+    class PlayerActionPacket& operator=(class PlayerActionPacket const&) = delete;
+    PlayerActionPacket(class PlayerActionPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlayerActionPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~PlayerActionPacket(){
          (PlayerActionPacket::*rv)();
@@ -32,14 +36,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const&, unsigned char, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class BlockPos const&, int, class ActorRuntimeID);
     MCAPI PlayerActionPacket(enum PlayerActionType, class ActorRuntimeID);
     MCAPI PlayerActionPacket();
 
 protected:
-
 
 private:
 

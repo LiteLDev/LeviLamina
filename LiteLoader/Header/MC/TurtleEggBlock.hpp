@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TurtleEggBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TURTLEEGGBLOCK
+public:
+    class TurtleEggBlock& operator=(class TurtleEggBlock const&) = delete;
+    TurtleEggBlock(class TurtleEggBlock const&) = delete;
+    TurtleEggBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TurtleEggBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (TurtleEggBlock::*rv)() const;
@@ -153,14 +158,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TurtleEggBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI static void _decreaseEggs(class BlockSource&, class BlockPos const&, unsigned int, bool);
     MCAPI static void _destroyEgg(class BlockSource&, class BlockPos const&, class Actor&, int, bool);
+
 };

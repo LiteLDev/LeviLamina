@@ -3,26 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct CrashDumpKeyValueData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPKEYVALUEDATA
+public:
+    struct CrashDumpKeyValueData& operator=(struct CrashDumpKeyValueData const&) = delete;
+    CrashDumpKeyValueData(struct CrashDumpKeyValueData const&) = delete;
+    CrashDumpKeyValueData() = delete;
+#endif
 
 public:
-
     MCAPI CrashDumpKeyValueData(enum CrashDumpLogStringID, enum CrashDumpLogStringID, int, unsigned __int64);
-    MCAPI static struct CrashDumpFormatEntryImpl const* const kFormat;
 
 protected:
-
 
 private:
 

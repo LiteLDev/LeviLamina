@@ -3,24 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Potion {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum PotionType;
 enum PotionVariant;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTION
+public:
+    class Potion& operator=(class Potion const&) = delete;
+    Potion(class Potion const&) = delete;
+    Potion() = delete;
+#endif
 
 public:
-
     MCAPI void appendFormattedPotionText(std::string&, enum Potion::PotionType, enum Potion::PotionVariant, class Player const&, float) const;
     MCAPI std::string effectDurationToString(enum Potion::PotionType, float, class MobEffectInstance const&) const;
     MCAPI std::string effectPotencyToString(class MobEffectInstance const&) const;
@@ -87,9 +92,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI Potion(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, class MobEffectInstance const&, enum Potion::PotionVariant);
     MCAPI Potion(class gsl::basic_string_span<char const, -1>, std::vector<std::string>, std::vector<class MobEffectInstance>, enum Potion::PotionVariant);
     MCAPI std::string _getDescriptionIdCombiningStrings(enum Potion::PotionType) const;
@@ -98,4 +101,5 @@ private:
     MCAPI static int mLastId;
     MCAPI static class std::shared_ptr<class Potion const>* mPotionsById;
     MCAPI static class std::unordered_map<std::string, int, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, int> > > mPotionsByName;
+
 };

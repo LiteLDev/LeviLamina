@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 enum CommandPermissionLevel : char {
@@ -59,11 +58,11 @@ struct CommandFlag {
 
 class CommandOutput;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Command {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
 protected:
@@ -85,12 +84,17 @@ public:
         }
         return sym(a, b);
     }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMAND
+public:
+    class Command& operator=(class Command const&) = delete;
+    Command(class Command const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~Command();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
-
     /*
     inline  ~Command(){
          (Command::*rv)();
@@ -98,7 +102,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Command();
     MCAPI std::string getCommandName() const;
     MCAPI bool hasFlag(struct CommandFlag) const;
@@ -108,7 +111,6 @@ public:
     MCAPI static bool validRange(float, float, float, class CommandOutput&);
 
 protected:
-
     MCAPI class CommandRegistry const& getRegistry() const;
     MCAPI void sendTelemetry(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI bool shouldSendTelemetry(class CommandOrigin const&) const;

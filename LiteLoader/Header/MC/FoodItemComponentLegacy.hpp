@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FoodItemComponentLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOODITEMCOMPONENTLEGACY
+public:
+    class FoodItemComponentLegacy& operator=(class FoodItemComponentLegacy const&) = delete;
+    FoodItemComponentLegacy(class FoodItemComponentLegacy const&) = delete;
+    FoodItemComponentLegacy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FoodItemComponentLegacy();
@@ -24,17 +30,14 @@ public:
     /*3*/ virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
     /*4*/ virtual bool use(class ItemStack&, class Player&);
     /*5*/ virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
-
-
     MCAPI FoodItemComponentLegacy(class Item&);
     MCAPI bool init(class Json::Value&, class SemVersion const&);
 
 protected:
 
-
 private:
-
     MCAPI void _applyEatEffects(class ItemStack const&, class Actor&, class Level&);
     MCAPI void _loadEffects(class Json::Value&);
     MCAPI void _loadRemoveEffects(class Json::Value&);
+
 };

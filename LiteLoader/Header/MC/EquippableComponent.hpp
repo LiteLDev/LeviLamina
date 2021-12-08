@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EquippableComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPPABLECOMPONENT
+public:
+    class EquippableComponent& operator=(class EquippableComponent const&) = delete;
+    EquippableComponent(class EquippableComponent const&) = delete;
+    EquippableComponent() = delete;
+#endif
 
 public:
-
     MCAPI EquippableComponent(class EquippableComponent&&);
     MCAPI class UpdateEquipPacket createDataPacket(class Actor&, enum ContainerID) const;
     MCAPI std::unique_ptr<class CompoundTag> createTag(class Actor&) const;
@@ -30,7 +35,6 @@ public:
     MCAPI ~EquippableComponent();
 
 protected:
-
 
 private:
 

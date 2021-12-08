@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BeardAndShaverDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEARDANDSHAVERDESCRIPTION
+public:
+    class BeardAndShaverDescription& operator=(class BeardAndShaverDescription const&) = delete;
+    BeardAndShaverDescription(class BeardAndShaverDescription const&) = delete;
+    BeardAndShaverDescription() = delete;
+#endif
 
 public:
-
     MCAPI BeardAndShaverDescription(class BeardingDescriptionCache, struct BeardKernel const&, float, float);
     MCAPI float calculateContribution(class BlockPos const&) const;
     MCAPI class BeardingDescriptionCache const& getCache() const;
 
 protected:
-
 
 private:
 

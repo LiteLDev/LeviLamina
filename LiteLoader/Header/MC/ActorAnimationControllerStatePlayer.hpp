@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorAnimationControllerStatePlayer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONCONTROLLERSTATEPLAYER
+public:
+    class ActorAnimationControllerStatePlayer& operator=(class ActorAnimationControllerStatePlayer const&) = delete;
+    ActorAnimationControllerStatePlayer(class ActorAnimationControllerStatePlayer const&) = delete;
+    ActorAnimationControllerStatePlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorAnimationControllerStatePlayer();
@@ -27,7 +33,6 @@ public:
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
     /*8*/ virtual int /*enum enum ActorAnimationType*/ getAnimationType() const;
     /*9*/ virtual class HashedString const& getRawName() const;
-
     /*
     inline void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString> > > const& a0){
         void (ActorAnimationControllerStatePlayer::*rv)(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString> > > const&);
@@ -40,13 +45,11 @@ public:
         return (this->*rv)(std::forward<class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string > > > const&>(a0));
     }
     */
-
     MCAPI ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&);
     MCAPI bool allAnimationsFinished() const;
     MCAPI bool anyAnimationsFinished() const;
 
 protected:
-
 
 private:
 

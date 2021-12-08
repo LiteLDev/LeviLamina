@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class ItemStack;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Container {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 	LIAPI std::string getTypeName();
@@ -25,7 +24,14 @@ public:
 
 	LIAPI bool hasContainer(Vec3& pos, int dim);
 	LIAPI Container* getContainer(Vec3& pos, int dim);
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
+public:
+    class Container& operator=(class Container const&) = delete;
+    Container(class Container const&) = delete;
+    Container() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Container();
@@ -61,7 +67,6 @@ public:
     /*30*/ virtual void createTransactionContext(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>, class std::function<void (void)>);
     /*31*/ virtual void __unk_vfn_2();
     /*32*/ virtual bool isEmpty() const;
-
     /*
     inline void initializeContainerContents(class BlockSource& a0){
         void (Container::*rv)(class BlockSource&);
@@ -84,7 +89,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Container(enum ContainerType);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;
@@ -99,7 +103,6 @@ public:
     MCAPI static std::string const& getContainerTypeName(enum ContainerType);
 
 protected:
-
     MCAPI void _serverInitId(int, class ItemStack&, class std::function<void (int, class ItemStack const& )>);
     MCAPI static class BidirectionalUnorderedMap<enum ContainerType, std::string > const containerTypeMap;
 

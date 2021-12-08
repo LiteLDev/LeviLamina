@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VanillaGameModuleServer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAGAMEMODULESERVER
+public:
+    class VanillaGameModuleServer& operator=(class VanillaGameModuleServer const&) = delete;
+    VanillaGameModuleServer(class VanillaGameModuleServer const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~VanillaGameModuleServer();
@@ -26,7 +31,6 @@ public:
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual void setupCommands(class CommandRegistry&);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance&, class ServerNetworkHandler&);
-
     /*
     inline void tick(){
         void (VanillaGameModuleServer::*rv)();
@@ -44,15 +48,13 @@ public:
         return (this->*rv)(std::forward<class Player&>(a0));
     }
     */
-
     MCAPI VanillaGameModuleServer();
 
 protected:
 
-
 private:
-
     MCAPI void _configureWorldGen(class IWorldRegistriesProvider&, struct SpawnSettings const&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
     MCAPI void _registerGameplayHandlers(class Level&) const;
     MCAPI void _registerListeners(class Level&);
+
 };

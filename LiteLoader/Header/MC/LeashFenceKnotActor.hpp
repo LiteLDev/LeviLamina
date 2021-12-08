@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "HangingActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LeashFenceKnotActor : public HangingActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEASHFENCEKNOTACTOR
+public:
+    class LeashFenceKnotActor& operator=(class LeashFenceKnotActor const&) = delete;
+    LeashFenceKnotActor(class LeashFenceKnotActor const&) = delete;
+    LeashFenceKnotActor() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -106,7 +112,6 @@ public:
     /*84*/ virtual void dropItem();
     /*85*/ virtual bool placeHangingEntity(class BlockSource&, int);
     /*86*/ virtual bool wouldSurvive(class BlockSource&);
-
     /*
     inline void addAdditionalSaveData(class CompoundTag& a0){
         void (LeashFenceKnotActor::*rv)(class CompoundTag&);
@@ -119,13 +124,11 @@ public:
         return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
     }
     */
-
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int numberofAnimalsAttached();
     MCAPI void removeAnimals(class Player*);
 
 protected:
-
 
 private:
 

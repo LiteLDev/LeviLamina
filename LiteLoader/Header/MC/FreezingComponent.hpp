@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FreezingComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FREEZINGCOMPONENT
+public:
+    class FreezingComponent& operator=(class FreezingComponent const&) = delete;
+    FreezingComponent(class FreezingComponent const&) = delete;
+    FreezingComponent() = delete;
+#endif
 
 public:
-
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void decreaseFreezingEffect();
     MCAPI float getFreezingEffectStrength() const;
@@ -28,7 +33,6 @@ public:
     MCAPI void resetFreezingEffect();
 
 protected:
-
 
 private:
 

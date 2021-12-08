@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OwnerStorageEntity {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERSTORAGEENTITY
+public:
+    class OwnerStorageEntity& operator=(class OwnerStorageEntity const&) = delete;
+    OwnerStorageEntity(class OwnerStorageEntity const&) = delete;
+    OwnerStorageEntity() = delete;
+#endif
 
 public:
 
-
 protected:
-
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistryOwned&);

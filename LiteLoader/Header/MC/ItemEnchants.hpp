@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Enchant.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemEnchants {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMENCHANTS
+public:
+    class ItemEnchants& operator=(class ItemEnchants const&) = delete;
+    ItemEnchants(class ItemEnchants const&) = delete;
+    ItemEnchants() = delete;
+#endif
 
 public:
-
     MCAPI ItemEnchants(int);
     MCAPI ItemEnchants(int, class ListTag const&);
     MCAPI bool addEnchant(class EnchantmentInstance, bool);
@@ -33,8 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class ListTag> _toList() const;
+
 };

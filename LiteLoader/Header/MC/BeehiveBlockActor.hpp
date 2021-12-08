@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BeehiveBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Occupant {
@@ -21,7 +20,14 @@ struct Occupant {
     Occupant(Occupant const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCKACTOR
+public:
+    class BeehiveBlockActor& operator=(class BeehiveBlockActor const&) = delete;
+    BeehiveBlockActor(class BeehiveBlockActor const&) = delete;
+    BeehiveBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BeehiveBlockActor();
@@ -55,8 +61,6 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI void disableBeeSpawn();
     MCAPI void evictAll(class BlockSource&, bool);
     MCAPI void saveUserData(class CompoundTag&) const;
@@ -67,11 +71,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class Actor* _revive(class BlockSource&, struct BeehiveBlockActor::Occupant const&, unsigned char);
     MCAPI bool _tickOccupant(class BlockSource&, struct BeehiveBlockActor::Occupant&);
     MCAPI void _trySpawnBees(class BlockSource&);
     MCAPI static bool _validSpawnDirection(class BlockSource&, class BlockPos const&, unsigned char);
+
 };

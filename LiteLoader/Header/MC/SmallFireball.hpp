@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Fireball.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SmallFireball : public Fireball {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMALLFIREBALL
+public:
+    class SmallFireball& operator=(class SmallFireball const&) = delete;
+    SmallFireball(class SmallFireball const&) = delete;
+    SmallFireball() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -97,12 +103,9 @@ public:
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual int /*enum enum ParticleType*/ getTrailParticle();
-
-
     MCAPI SmallFireball(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

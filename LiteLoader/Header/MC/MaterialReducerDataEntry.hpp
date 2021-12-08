@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MaterialReducerDataEntry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MATERIALREDUCERDATAENTRY
+public:
+    class MaterialReducerDataEntry& operator=(class MaterialReducerDataEntry const&) = delete;
+    MaterialReducerDataEntry(class MaterialReducerDataEntry const&) = delete;
+    MaterialReducerDataEntry() = delete;
+#endif
 
 public:
-
     MCAPI ~MaterialReducerDataEntry();
 
 protected:
-
 
 private:
 

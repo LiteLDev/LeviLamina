@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JsonLoader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONLOADER
+public:
+    class JsonLoader& operator=(class JsonLoader const&) = delete;
+    JsonLoader(class JsonLoader const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~JsonLoader();
@@ -43,7 +48,6 @@ public:
     /*23*/ virtual void __unk_vfn_2();
     /*24*/ virtual void __unk_vfn_3();
     /*25*/ virtual bool doBeginObject(unsigned __int64&);
-
     /*
     inline bool doEndObject(){
         bool (JsonLoader::*rv)();
@@ -81,15 +85,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI JsonLoader();
 
 protected:
 
-
 private:
-
     MCAPI void _loadJson(std::string const&);
     MCAPI void _useJson(class rapidjson::GenericValue<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator> >&);
     MCAPI void _useJson(class rapidjson::GenericDocument<struct rapidjson::UTF8<char>, class rapidjson::MemoryPoolAllocator<class rapidjson::CrtAllocator>, class rapidjson::CrtAllocator>&);
+
 };

@@ -3,22 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SynchedActorData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCHEDACTORDATA
+public:
+    class SynchedActorData& operator=(class SynchedActorData const&) = delete;
+    SynchedActorData(class SynchedActorData const&) = delete;
+#endif
 
 public:
-
     MCAPI SynchedActorData();
     MCAPI class SynchedActorData _clone() const;
     MCAPI bool assignValues(std::vector<std::unique_ptr<class DataItem>> const&, class Actor*);
@@ -42,10 +46,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class DataItem* _find(unsigned short) const;
     MCAPI class DataItem& _get(unsigned short);
     MCAPI void _resizeToContain(unsigned short);
+
 };

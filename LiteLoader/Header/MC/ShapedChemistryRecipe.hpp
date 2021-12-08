@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ShapedRecipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShapedChemistryRecipe : public ShapedRecipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDCHEMISTRYRECIPE
+public:
+    class ShapedChemistryRecipe& operator=(class ShapedChemistryRecipe const&) = delete;
+    ShapedChemistryRecipe(class ShapedChemistryRecipe const&) = delete;
+    ShapedChemistryRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShapedChemistryRecipe();
@@ -28,13 +34,10 @@ public:
     /*7*/ virtual class ItemPack const& getItemPack() const;
     /*8*/ virtual bool isMultiRecipe() const;
     /*9*/ virtual void loadResultList(class BlockPalette const&) const;
-
-
     MCAPI ShapedChemistryRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
     MCAPI static class mce::UUID const ID;
 
 protected:
-
 
 private:
 

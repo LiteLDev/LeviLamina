@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Scheduler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULER
+public:
+    class Scheduler& operator=(class Scheduler const&) = delete;
+    Scheduler(class Scheduler const&) = delete;
+    Scheduler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Scheduler();
-
-
     MCAPI Scheduler(std::string, unsigned int);
     MCAPI void changeThread(class std::thread::id);
     MCAPI class WorkerPool& getCoroutinePool();
@@ -29,7 +33,6 @@ public:
     MCAPI static float const AVERAGE_TASK_TOLERANCE;
 
 protected:
-
 
 private:
 

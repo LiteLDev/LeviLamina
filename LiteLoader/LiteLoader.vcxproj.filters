@@ -225,6 +225,7 @@
     <ClCompile Include="Kernel\Types.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Header\MC\Json.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

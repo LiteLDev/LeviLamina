@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RuinedPortalPiece : public StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUINEDPORTALPIECE
+public:
+    class RuinedPortalPiece& operator=(class RuinedPortalPiece const&) = delete;
+    RuinedPortalPiece(class RuinedPortalPiece const&) = delete;
+    RuinedPortalPiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RuinedPortalPiece();
@@ -27,13 +33,9 @@ public:
     /*6*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI void _addNetherrackDripColumn(class Random&, class BlockSource&, class BlockPos);
     MCAPI void _maybeReplaceBlock(class Random&, class BlockSource&, class BlockPos);
     MCAPI void _maybeReplaceFullStoneBlock(class Random&, class BlockSource&, class BlockPos, class Block const&);
@@ -42,4 +44,5 @@ private:
     MCAPI void _spreadNetherrack(class Random&, class BlockSource&);
     MCAPI static class Block const& _getRandomFacingStairs(class Random&, class Block const&);
     MCAPI static bool _willLavaFlowIn(class BlockSource&, class BlockPos);
+
 };

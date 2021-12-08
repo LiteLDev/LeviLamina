@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FenceBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FENCEBLOCK
+public:
+    class FenceBlock& operator=(class FenceBlock const&) = delete;
+    FenceBlock(class FenceBlock const&) = delete;
+    FenceBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FenceBlock();
@@ -144,7 +150,6 @@ public:
     /*123*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*124*/ virtual void __unk_vfn_32();
     /*125*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (FenceBlock::*rv)() const;
@@ -157,14 +162,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI FenceBlock(std::string const&, int, class Material const&);
     MCAPI void fetchPathableNeighbors(std::vector<class BlockPos>&, class BlockSource&, class BlockPos const&, class Vec3 const&) const;
 
 protected:
 
-
 private:
-
     MCAPI static class BaseGameVersion const FENCE_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 };

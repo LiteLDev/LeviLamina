@@ -3,21 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;
 class Container;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 	
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR
+public:
+    class BlockActor& operator=(class BlockActor const&) = delete;
+    BlockActor(class BlockActor const&) = delete;
+    BlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockActor();
@@ -57,7 +63,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
-
     /*
     inline class Container* getContainer(){
         class Container* (BlockActor::*rv)();
@@ -100,7 +105,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BlockActor(enum BlockActorType, class BlockPos const&, std::string const&);
     MCAPI void assignBlockIfNotAssigned(class BlockSource&);
     MCAPI class AABB const& getAABB() const;
@@ -120,11 +124,10 @@ public:
     MCAPI static class std::shared_ptr<class BlockActor> loadStatic(class Level&, class CompoundTag const&, class DataLoadHelper&);
 
 protected:
-
     MCAPI void _resetAABB();
 
 private:
-
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, enum BlockActorType> > > _createIdClassMap();
     MCAPI static class std::map<std::string, enum BlockActorType, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, enum BlockActorType> > > const mIdClassMap;
+
 };

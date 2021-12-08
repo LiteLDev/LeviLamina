@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShieldItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIELDITEM
+public:
+    class ShieldItem& operator=(class ShieldItem const&) = delete;
+    ShieldItem(class ShieldItem const&) = delete;
+    ShieldItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShieldItem();
@@ -101,7 +107,6 @@ public:
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
     /*
     inline int \/*enum enum InHandUpdateType*\/ getInHandUpdateType(class Player const& a0, class ItemInstance const& a1, class ItemInstance const& a2, bool a3, bool a4) const{
         int \/*enum enum InHandUpdateType*\/ (ShieldItem::*rv)(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
@@ -114,7 +119,6 @@ public:
         return (this->*rv)(std::forward<class Player const&>(a0), std::forward<class ItemStack const&>(a1), std::forward<class ItemStack const&>(a2), std::forward<bool>(a3), std::forward<bool>(a4));
     }
     */
-
     MCAPI void playBlockSound(class Player*) const;
     MCAPI void playBreakSound(class Player*) const;
     MCAPI static int const EFFECTIVE_BLOCK_DELAY;
@@ -122,7 +126,6 @@ public:
     MCAPI static std::string const TIMESTAMP_TAG;
 
 protected:
-
 
 private:
 

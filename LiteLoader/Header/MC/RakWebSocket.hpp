@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakWebSocket {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKWEBSOCKET
+public:
+    class RakWebSocket& operator=(class RakWebSocket const&) = delete;
+    RakWebSocket(class RakWebSocket const&) = delete;
+    RakWebSocket() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RakWebSocket();
@@ -28,7 +34,6 @@ public:
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;
     /*9*/ virtual unsigned int _genMaskingKey() const = 0;
-
     /*
     inline  ~RakWebSocket(){
          (RakWebSocket::*rv)();
@@ -36,11 +41,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RakWebSocket(std::unique_ptr<class TcpProxy>, bool);
 
 protected:
-
     MCAPI void _close(enum CloseStatusCode);
     MCAPI void _createWebSocketKey();
     MCAPI void _fail(std::string const&, enum CloseStatusCode);

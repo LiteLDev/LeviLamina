@@ -3,24 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct DefinitionModifier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFINITIONMODIFIER
+public:
+    struct DefinitionModifier& operator=(struct DefinitionModifier const&) = delete;
+    DefinitionModifier() = delete;
+#endif
 
 public:
-
     MCAPI DefinitionModifier(struct DefinitionModifier const&);
     MCAPI ~DefinitionModifier();
 
 protected:
-
 
 private:
 

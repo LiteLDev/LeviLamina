@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftGameTestHelperProvider {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTHELPERPROVIDER
+public:
+    class MinecraftGameTestHelperProvider& operator=(class MinecraftGameTestHelperProvider const&) = delete;
+    MinecraftGameTestHelperProvider(class MinecraftGameTestHelperProvider const&) = delete;
+    MinecraftGameTestHelperProvider() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecraftGameTestHelperProvider();
     /*1*/ virtual std::unique_ptr<class gametest::BaseGameTestHelper> createGameTestHelper(class gametest::BaseGameTestInstance&);
     /*2*/ virtual std::unique_ptr<class gametest::IGameTestHelperProvider> clone();
 
-
-
 protected:
-
 
 private:
 

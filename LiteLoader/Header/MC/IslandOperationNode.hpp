@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class IslandOperationNode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISLANDOPERATIONNODE
+public:
+    class IslandOperationNode& operator=(class IslandOperationNode const&) = delete;
+    IslandOperationNode(class IslandOperationNode const&) = delete;
+    IslandOperationNode() = delete;
+#endif
 
 public:
     /*0*/ virtual ~IslandOperationNode();
@@ -22,10 +28,7 @@ public:
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<int /*enum enum OperationNodeValues::Terrain*/, char>&, class Pos2d const&, class Pos2d const&) const;
 
-
-
 protected:
-
 
 private:
 

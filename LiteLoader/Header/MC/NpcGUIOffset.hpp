@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NpcGUIOffset {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCGUIOFFSET
+public:
+    class NpcGUIOffset& operator=(class NpcGUIOffset const&) = delete;
+    NpcGUIOffset(class NpcGUIOffset const&) = delete;
+    NpcGUIOffset() = delete;
+#endif
 
 public:
-
     MCAPI NpcGUIOffset(class Json::Value const&);
 
 protected:
-
 
 private:
 

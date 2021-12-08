@@ -3,18 +3,18 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace BiomeSourceUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BlockPos const&, unsigned int);
     MCAPI class std::optional<class BlockPos> locateBiome(class std::function<bool (class Biome const& )> const&, class BiomeSource const&, class BlockPos const&, class BoundingBox, unsigned int);
+
 };

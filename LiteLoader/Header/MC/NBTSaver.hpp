@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NBTSaver {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTSAVER
+public:
+    class NBTSaver& operator=(class NBTSaver const&) = delete;
+    NBTSaver(class NBTSaver const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~NBTSaver();
@@ -39,7 +44,6 @@ public:
     /*19*/ virtual void __unk_vfn_10();
     /*20*/ virtual bool doBeginObject();
     /*21*/ virtual bool doBeginObject(unsigned __int64);
-
     /*
     inline bool doSerialize(unsigned __int64 a0){
         bool (NBTSaver::*rv)(unsigned __int64);
@@ -107,14 +111,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NBTSaver();
     MCAPI class CompoundTag getSavedCompoundTag();
 
 protected:
 
-
 private:
-
     MCAPI bool _serializeTag(std::unique_ptr<class Tag>);
+
 };

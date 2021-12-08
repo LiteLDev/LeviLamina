@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourceInformation {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum ResourceType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEINFORMATION
+public:
+    class ResourceInformation& operator=(class ResourceInformation const&) = delete;
+    ResourceInformation() = delete;
+#endif
 
 public:
-
     MCAPI ResourceInformation(class ResourceInformation const&);
     MCAPI ResourceInformation(std::string const&, class SemVersion const&, class mce::UUID const&, std::string const&, std::string const&);
     MCAPI ResourceInformation(std::string const&, class SemVersion const&, class mce::UUID const&, enum ResourceInformation::ResourceType, std::string const&);
@@ -29,7 +33,6 @@ public:
     MCAPI static std::string const& StringFromResourceType(enum ResourceInformation::ResourceType);
 
 protected:
-
 
 private:
 

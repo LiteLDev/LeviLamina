@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptPlayer : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLAYER
+public:
+    class ScriptPlayer& operator=(class ScriptPlayer const&) = delete;
+    ScriptPlayer(class ScriptPlayer const&) = delete;
+    ScriptPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptPlayer();
@@ -24,7 +30,6 @@ public:
     /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
     /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-
     /*
     inline  ~ScriptPlayer(){
          (ScriptPlayer::*rv)();
@@ -32,13 +37,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptPlayer(class Player const&, class Scripting::WeakLifetimeScope const&);
     MCAPI class Scripting::Result<std::string > getName() const;
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
 
 protected:
-
 
 private:
 

@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <future>
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FileArchiver {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Result {
@@ -22,10 +21,16 @@ struct Result {
     Result(Result const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILEARCHIVER
+public:
+    class FileArchiver& operator=(class FileArchiver const&) = delete;
+    FileArchiver(class FileArchiver const&) = delete;
+    FileArchiver() = delete;
+#endif
 
 public:
-
     MCAPI class std::future<struct FileArchiver::Result> archivePack(class Core::Path const&, class Core::Path const&, class std::function<void (struct FileArchiver::Result& )>);
     MCAPI static std::string const EXTENSION_ADDON;
     MCAPI static std::string const EXTENSION_RESOURCEPACK;
@@ -35,8 +40,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _printLevelResultMessage(struct FileArchiver::Result const&);
+
 };

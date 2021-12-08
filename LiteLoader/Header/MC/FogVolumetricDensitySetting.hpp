@@ -3,27 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct FogVolumetricDensitySetting {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGVOLUMETRICDENSITYSETTING
+public:
+    struct FogVolumetricDensitySetting& operator=(struct FogVolumetricDensitySetting const&) = delete;
+    FogVolumetricDensitySetting(struct FogVolumetricDensitySetting const&) = delete;
+    FogVolumetricDensitySetting() = delete;
+#endif
 
 public:
 
-    MCAPI static float const UNIFORM_MAX_DENSITY_HEIGHT;
-    MCAPI static float const UNIFORM_ZERO_DENSITY_HEIGHT;
-    MCAPI static struct FogVolumetricDensitySetting const ZERO_SETTING;
-
 protected:
-
 
 private:
 

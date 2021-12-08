@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DragonEggBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONEGGBLOCK
+public:
+    class DragonEggBlock& operator=(class DragonEggBlock const&) = delete;
+    DragonEggBlock(class DragonEggBlock const&) = delete;
+    DragonEggBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DragonEggBlock();
@@ -135,14 +141,11 @@ public:
     /*114*/ virtual std::string getDustParticleName(class Block const&) const;
     /*115*/ virtual void __unk_vfn_34();
     /*116*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-
-
     MCAPI DragonEggBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI void _teleport(class BlockSource&, class Random&, class BlockPos const&) const;
+
 };

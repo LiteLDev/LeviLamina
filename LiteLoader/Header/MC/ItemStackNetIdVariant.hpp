@@ -3,21 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ItemStackNetIdVariant {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant&&);
     MCAPI ItemStackNetIdVariant(struct ItemStackNetIdVariant const&);
     MCAPI ItemStackNetIdVariant();
@@ -35,7 +33,6 @@ public:
     MCAPI ~ItemStackNetIdVariant();
 
 protected:
-
 
 private:
 

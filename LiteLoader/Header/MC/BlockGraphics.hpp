@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockGraphics {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKGRAPHICS
+public:
+    class BlockGraphics& operator=(class BlockGraphics const&) = delete;
+    BlockGraphics(class BlockGraphics const&) = delete;
+    BlockGraphics() = delete;
+#endif
 
 public:
-
     MCAPI enum BlockShape getBlockShape() const;
     MCAPI struct TextureUVCoordinateSet const& getIconTexture(int) const;
     MCAPI bool isFull() const;
@@ -32,14 +37,13 @@ public:
     MCAPI static void setAtlasItemManager(class std::shared_ptr<class AtlasItemManager>);
 
 protected:
-
     MCAPI static class std::weak_ptr<class AtlasItemManager> mTerrainTextureAtlas;
 
 private:
-
     MCAPI static class std::mutex mBlockModelAccess;
     MCAPI static class std::unordered_map<unsigned int, class BlockGraphics* , struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, class BlockGraphics* > > > mBlocks;
     MCAPI static bool mInitialized;
     MCAPI static class std::map<std::string, std::unique_ptr<struct BlockGeometry::Model>, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<struct BlockGeometry::Model> > > > mModels;
     MCAPI static class std::map<std::string, std::unique_ptr<class BlockGeometry::TessellatedModel>, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class BlockGeometry::TessellatedModel> > > > mTessellatedModels;
+
 };

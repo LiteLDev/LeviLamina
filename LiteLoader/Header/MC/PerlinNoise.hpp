@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PerlinNoise {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERLINNOISE
+public:
+    class PerlinNoise& operator=(class PerlinNoise const&) = delete;
+    PerlinNoise(class PerlinNoise const&) = delete;
+    PerlinNoise() = delete;
+#endif
 
 public:
-
     MCAPI PerlinNoise(class IRandom&, int, int);
     MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
     MCAPI PerlinNoise(unsigned int, int, int);
@@ -29,8 +34,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _init(class IRandom&, struct YBlendingBugSettings);
+
 };

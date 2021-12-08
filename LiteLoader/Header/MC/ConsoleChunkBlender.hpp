@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConsoleChunkBlender {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum ShiftBlockTypes;
 enum BlenderMode;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLECHUNKBLENDER
+public:
+    class ConsoleChunkBlender& operator=(class ConsoleChunkBlender const&) = delete;
+    ConsoleChunkBlender(class ConsoleChunkBlender const&) = delete;
+    ConsoleChunkBlender() = delete;
+#endif
 
 public:
-
     MCAPI ~ConsoleChunkBlender();
 
 protected:
-
     MCAPI void _blendChunkEnd4J(class LevelChunk&, class LevelChunk&);
     MCAPI void _blendChunkNether4J(class LevelChunk&, class LevelChunk&);
     MCAPI void _blendChunkOverworld(class LevelChunk&, class LevelChunk&, enum ConsoleChunkBlender::ShiftBlockTypes);

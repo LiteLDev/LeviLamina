@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TorchBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TORCHBLOCK
+public:
+    class TorchBlock& operator=(class TorchBlock const&) = delete;
+    TorchBlock(class TorchBlock const&) = delete;
+    TorchBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TorchBlock();
@@ -137,7 +143,6 @@ public:
     /*116*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*117*/ virtual void __unk_vfn_32();
     /*118*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (TorchBlock::*rv)() const;
@@ -155,16 +160,14 @@ public:
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }
     */
-
     MCAPI TorchBlock(std::string const&, int, enum MaterialType);
 
 protected:
-
     MCAPI class Vec3 _flameParticlePos(class BlockPos const&, enum TorchFacing) const;
     MCAPI bool canBePlacedOn(class BlockSource&, class BlockPos const&, unsigned char) const;
 
 private:
-
     MCAPI static enum TorchFacing const* const DATA_FROM_FACING;
     MCAPI static unsigned short const* const FACING_FROM_DATA;
+
 };

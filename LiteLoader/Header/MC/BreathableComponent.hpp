@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BreathableComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum BreathableState;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREATHABLECOMPONENT
+public:
+    class BreathableComponent& operator=(class BreathableComponent const&) = delete;
+    BreathableComponent(class BreathableComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI BreathableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool canBreathe(class Actor const&) const;
@@ -36,7 +40,6 @@ public:
     MCAPI void updateBreathableState(class Actor&);
 
 protected:
-
 
 private:
 

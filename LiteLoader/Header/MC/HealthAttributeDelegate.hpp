@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HealthAttributeDelegate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALTHATTRIBUTEDELEGATE
+public:
+    class HealthAttributeDelegate& operator=(class HealthAttributeDelegate const&) = delete;
+    HealthAttributeDelegate(class HealthAttributeDelegate const&) = delete;
+    HealthAttributeDelegate() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HealthAttributeDelegate();
@@ -22,12 +28,9 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
     /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
-
-
     MCAPI HealthAttributeDelegate(class AttributeInstance const&, class Mob*);
 
 protected:
-
 
 private:
 

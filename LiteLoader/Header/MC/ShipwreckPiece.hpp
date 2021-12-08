@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShipwreckPiece : public StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHIPWRECKPIECE
+public:
+    class ShipwreckPiece& operator=(class ShipwreckPiece const&) = delete;
+    ShipwreckPiece(class ShipwreckPiece const&) = delete;
+    ShipwreckPiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShipwreckPiece();
@@ -27,14 +33,11 @@ public:
     /*6*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI static std::string const* const STRUCTURE_SHIPWRECK_TYPES;
     MCAPI static class BlockPos _calculateTargetPos(class BlockSource&, class BlockPos, enum Rotation, class BlockPos);
     MCAPI static class BlockPos _calculateTargetPosLegacy(class BlockSource&, class BlockPos, enum Rotation, class BlockPos);
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Recipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShapedRecipe : public Recipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPEDRECIPE
+public:
+    class ShapedRecipe& operator=(class ShapedRecipe const&) = delete;
+    ShapedRecipe(class ShapedRecipe const&) = delete;
+    ShapedRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShapedRecipe();
@@ -30,7 +36,6 @@ public:
     /*9*/ virtual class ItemPack const& getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
-
     /*
     inline  ~ShapedRecipe(){
          (ShapedRecipe::*rv)();
@@ -38,14 +43,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ShapedRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
 
 protected:
 
-
 private:
-
     MCAPI void init(class gsl::basic_string_span<char const, -1>, int, int, int, class mce::UUID const*);
     MCAPI bool matches(class CraftingContainer&, int, int, bool) const;
+
 };

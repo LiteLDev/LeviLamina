@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChorusPlantBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHORUSPLANTBLOCK
+public:
+    class ChorusPlantBlock& operator=(class ChorusPlantBlock const&) = delete;
+    ChorusPlantBlock(class ChorusPlantBlock const&) = delete;
+    ChorusPlantBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChorusPlantBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (ChorusPlantBlock::*rv)() const;
@@ -153,7 +158,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ChorusPlantBlock(std::string const&, int);
     MCAPI static float const PLANT_HEIGHT;
     MCAPI static float const PLANT_ITEM_DIMENSION;
@@ -161,7 +165,6 @@ public:
     MCAPI static bool canGrowChorus(class Block const&);
 
 protected:
-
 
 private:
 

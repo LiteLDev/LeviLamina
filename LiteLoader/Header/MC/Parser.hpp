@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Parser {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARSER
+public:
+    class Parser& operator=(class Parser const&) = delete;
+    Parser(class Parser const&) = delete;
+    Parser() = delete;
+#endif
 
 public:
-
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, unsigned char&, unsigned char);
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, int&, char const*, int);
     MCAPI static void parse(class Json::Value const&, class SemVersion const&, unsigned int&, char const*, unsigned int);
@@ -75,7 +80,6 @@ public:
     MCAPI static void serialize(enum ParticleType const&, class Json::Value&, char const*);
 
 protected:
-
 
 private:
 

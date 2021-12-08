@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TropicalFishInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TROPICALFISHINFO
+public:
+    class TropicalFishInfo& operator=(class TropicalFishInfo const&) = delete;
+    TropicalFishInfo(class TropicalFishInfo const&) = delete;
+    TropicalFishInfo() = delete;
+#endif
 
 public:
-
     MCAPI ~TropicalFishInfo();
 
 protected:
-
 
 private:
 

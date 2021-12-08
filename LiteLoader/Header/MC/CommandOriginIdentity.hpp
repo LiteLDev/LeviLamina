@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct CommandOriginIdentity {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGINIDENTITY
+public:
+    struct CommandOriginIdentity& operator=(struct CommandOriginIdentity const&) = delete;
+    CommandOriginIdentity(struct CommandOriginIdentity const&) = delete;
+    CommandOriginIdentity() = delete;
+#endif
 
 public:
-
     MCAPI ~CommandOriginIdentity();
 
 protected:
-
 
 private:
 

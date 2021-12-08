@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseMoveToBlockGoal : public BaseMoveToGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOVETOBLOCKGOAL
+public:
+    class BaseMoveToBlockGoal& operator=(class BaseMoveToBlockGoal const&) = delete;
+    BaseMoveToBlockGoal(class BaseMoveToBlockGoal const&) = delete;
+    BaseMoveToBlockGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BaseMoveToBlockGoal();
@@ -29,7 +35,6 @@ public:
     /*8*/ virtual void _moveToBlock();
     /*9*/ virtual unsigned __int64 _getRepathTime() const;
     /*10*/ virtual bool findTargetBlock();
-
     /*
     inline  ~BaseMoveToBlockGoal(){
          (BaseMoveToBlockGoal::*rv)();
@@ -37,11 +42,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BaseMoveToBlockGoal(class Mob&, float, int, int, int, float, float);
 
 protected:
-
 
 private:
 

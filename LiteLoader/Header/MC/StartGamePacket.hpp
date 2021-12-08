@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StartGamePacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STARTGAMEPACKET
+public:
+    class StartGamePacket& operator=(class StartGamePacket const&) = delete;
+    StartGamePacket(class StartGamePacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~StartGamePacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~StartGamePacket(){
          (StartGamePacket::*rv)();
@@ -32,12 +36,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StartGamePacket(class LevelSettings const&, struct ActorUniqueID, class ActorRuntimeID, enum GameType, bool, class Vec3 const&, class Vec2 const&, std::string const&, std::string const&, class ContentIdentity const&, class BlockPalette const&, std::string const&, class BlockDefinitionGroup const&, bool, struct PlayerMovementSettings const&, std::string const&, unsigned __int64, int, unsigned __int64);
     MCAPI StartGamePacket();
 
 protected:
-
 
 private:
 

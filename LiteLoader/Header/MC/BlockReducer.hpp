@@ -3,30 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockReducer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKREDUCER
+public:
+    class BlockReducer& operator=(class BlockReducer const&) = delete;
+    BlockReducer(class BlockReducer const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockReducer();
     /*1*/ virtual void registerBlock(class ItemStack const&, std::vector<class ItemStack>&&);
-
-
     MCAPI BlockReducer();
     MCAPI std::vector<class ItemStack> const* getReduction(class ItemStackBase const&) const;
     MCAPI class std::unordered_map<int, std::vector<class ItemStack>, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::vector<class ItemStack> > > > const& getReductionMap() const;
 
 protected:
-
 
 private:
 

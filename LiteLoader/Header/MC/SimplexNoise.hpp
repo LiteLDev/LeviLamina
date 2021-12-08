@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SimplexNoise {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEXNOISE
+public:
+    class SimplexNoise& operator=(class SimplexNoise const&) = delete;
+    SimplexNoise(class SimplexNoise const&) = delete;
+    SimplexNoise() = delete;
+#endif
 
 public:
-
     MCAPI SimplexNoise(class IRandom&, bool);
     MCAPI void _add(float*, float, float, int, int, float, float, float) const;
     MCAPI float _getValue(class Vec2 const&) const;
     MCAPI float _getValue(class Vec3 const&) const;
 
 protected:
-
 
 private:
 

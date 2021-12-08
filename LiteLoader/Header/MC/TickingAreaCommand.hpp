@@ -3,34 +3,37 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TickingAreaCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREACOMMAND
+public:
+    class TickingAreaCommand& operator=(class TickingAreaCommand const&) = delete;
+    TickingAreaCommand(class TickingAreaCommand const&) = delete;
+    TickingAreaCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TickingAreaCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
 
-
 private:
-
     MCAPI void _add(class CommandOrigin const&, class CommandOutput&, class Level&, class Dimension&) const;
     MCAPI std::string _formatTickingAreaList(std::vector<struct TickingAreaDescription> const&) const;
     MCAPI void _list(class CommandOrigin const&, class CommandOutput&, class Level&, class Dimension&) const;
     MCAPI void _remove(class CommandOrigin const&, class CommandOutput&, class Level&, class Dimension&) const;
     MCAPI void _removeAll(class CommandOrigin const&, class CommandOutput&, class Level&, class Dimension&) const;
+
 };

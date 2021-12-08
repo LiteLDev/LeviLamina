@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "TagMemoryChunk.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ListTag : public Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 inline static ListTag* create() {
@@ -49,7 +48,13 @@ LIAPI void addByteArray(void* data, size_t size);
 LIAPI void addIntArray(TagMemoryChunk);
 LIAPI void addIntArray(void* data, size_t size);
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAG
+public:
+    class ListTag& operator=(class ListTag const&) = delete;
+    ListTag(class ListTag const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ListTag();
@@ -62,7 +67,6 @@ public:
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;
     /*9*/ virtual unsigned __int64 hash() const;
-
     /*
     inline  ~ListTag(){
          (ListTag::*rv)();
@@ -70,7 +74,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;
@@ -83,7 +86,6 @@ public:
     MCAPI int size() const;
 
 protected:
-
 
 private:
 

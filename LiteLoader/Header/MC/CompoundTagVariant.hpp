@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Tag.hpp"
 class EndTag;
@@ -20,11 +19,11 @@ class ListTag;
 class CompoundTag;
 class IntArrayTag;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompoundTagVariant {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 //#define AllTagTypes EndTag, ByteTag, ShortTag, IntTag, Int64Tag, FloatTag, DoubleTag, ByteArrayTag, StringTag, ListTag, CompoundTag, IntArrayTag
 //std::variant<AllTagTypes> tagStorage;
@@ -68,17 +67,22 @@ inline IntArrayTag* asIntArrayTag(){
     return (IntArrayTag*)this;
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAGVARIANT
+public:
+    class CompoundTagVariant& operator=(class CompoundTagVariant const&) = delete;
+    CompoundTagVariant(class CompoundTagVariant const&) = delete;
+    CompoundTagVariant() = delete;
+#endif
 
 public:
-
     MCAPI class Tag& emplace(class Tag&&);
     MCAPI class Tag* get();
     MCAPI class Tag const* get() const;
     MCAPI ~CompoundTagVariant();
 
 protected:
-
 
 private:
 

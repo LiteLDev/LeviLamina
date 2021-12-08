@@ -2,20 +2,20 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaSystemsRegistration {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void registerSharedVanillaPlayerInteractionSystems(class EntitySystems&);
     MCAPI void registerVanillaServerTickingSystems(class EntitySystems&, class Experiments const&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ILevel const> >);
+
 };

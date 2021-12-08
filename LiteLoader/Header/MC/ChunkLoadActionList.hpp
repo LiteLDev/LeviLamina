@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkLoadActionList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOADACTIONLIST
+public:
+    class ChunkLoadActionList& operator=(class ChunkLoadActionList const&) = delete;
+    ChunkLoadActionList(class ChunkLoadActionList const&) = delete;
+#endif
 
 public:
-
     MCAPI ChunkLoadActionList();
     MCAPI void addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);
     MCAPI void loadRequests(class LevelStorage&, class ICommandOriginLoader&, std::string const&);
@@ -29,10 +33,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addChunkLoadedRequest(class ChunkLoadedRequest, std::string const&, enum ChunksLoadedStatus, class LevelStorage&);
     MCAPI bool _handleChunksLoadedStatusAsyncCallback(class ChunkLoadedRequest&, enum ChunksLoadedStatus, class ServerLevel&, class Dimension&, class LevelStorage&);
     MCAPI void _saveRequest(class ChunkLoadedRequest&, std::string const&, enum ChunkRequestListType, class LevelStorage&);
+
 };

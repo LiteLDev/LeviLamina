@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TickingArea {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREA
+public:
+    class TickingArea& operator=(class TickingArea const&) = delete;
+    TickingArea(class TickingArea const&) = delete;
+    TickingArea() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TickingArea();
@@ -38,7 +44,6 @@ public:
     /*18*/ virtual bool isRemoved();
     /*19*/ virtual void remove();
     /*20*/ virtual void onComponentChanged(unsigned int, float, bool);
-
     /*
     inline  ~TickingArea(){
          (TickingArea::*rv)();
@@ -56,16 +61,14 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID);
     MCAPI TickingArea(class Dimension&, class mce::UUID, struct Bounds const&, struct ActorUniqueID, float);
     MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct Bounds const&, bool);
 
 protected:
 
-
 private:
-
     MCAPI TickingArea(class Dimension&, class mce::UUID, std::string const&, struct ActorUniqueID, struct Bounds const&, bool, float, bool);
     MCAPI void _save();
+
 };

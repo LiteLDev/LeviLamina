@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WireframeQueue {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WIREFRAMEQUEUE
+public:
+    class WireframeQueue& operator=(class WireframeQueue const&) = delete;
+    WireframeQueue(class WireframeQueue const&) = delete;
+    WireframeQueue() = delete;
+#endif
 
 public:
-
     MCAPI ~WireframeQueue();
 
 protected:
-
 
 private:
 

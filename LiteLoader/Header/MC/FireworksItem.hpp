@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FireworksItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKSITEM
+public:
+    class FireworksItem& operator=(class FireworksItem const&) = delete;
+    FireworksItem(class FireworksItem const&) = delete;
+    FireworksItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FireworksItem();
@@ -100,8 +106,6 @@ public:
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*80*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI FireworksItem(std::string const&, int);
     MCAPI static std::string const TAG_EXPLOSIONS;
     MCAPI static std::string const TAG_E_FLIGHT;
@@ -110,7 +114,6 @@ public:
     MCAPI static class ItemStack const& initFireworksRocketItem(class ItemStack&, std::vector<class ItemStack> const&, int);
 
 protected:
-
 
 private:
 

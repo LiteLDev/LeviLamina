@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomizableBlockActorFillingContainer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORFILLINGCONTAINER
+public:
+    class RandomizableBlockActorFillingContainer& operator=(class RandomizableBlockActorFillingContainer const&) = delete;
+    RandomizableBlockActorFillingContainer(class RandomizableBlockActorFillingContainer const&) = delete;
+    RandomizableBlockActorFillingContainer() = delete;
+#endif
 
 public:
     /*
@@ -44,11 +50,9 @@ public:
         return (this->*rv)(std::forward<class Player&>(a0));
     }
     */
-
     MCAPI RandomizableBlockActorFillingContainer(enum BlockActorType, std::string const&, class BlockPos const&, int, enum ContainerType);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPIECE
+public:
+    class StructurePiece& operator=(class StructurePiece const&) = delete;
+    StructurePiece(class StructurePiece const&) = delete;
+    StructurePiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructurePiece();
@@ -30,7 +36,6 @@ public:
     /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*11*/ virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
     /*
     inline  ~StructurePiece(){
          (StructurePiece::*rv)();
@@ -38,7 +43,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class BlockPos _getWorldPos(int, int, int);
     MCAPI bool edgesLiquid(class BlockSource&, class BoundingBox const&);
     MCAPI void generateAirBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int);
@@ -57,7 +61,6 @@ public:
     MCAPI static int getTotalWeight(std::vector<class PieceWeight> const&);
 
 protected:
-
 
 private:
 

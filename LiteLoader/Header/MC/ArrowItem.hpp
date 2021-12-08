@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ArrowItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARROWITEM
+public:
+    class ArrowItem& operator=(class ArrowItem const&) = delete;
+    ArrowItem(class ArrowItem const&) = delete;
+    ArrowItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ArrowItem();
@@ -102,13 +108,10 @@ public:
     /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual std::string getAuxValuesDescription() const;
     /*82*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI ArrowItem(std::string const&, int);
     MCAPI void applyEffect(class Arrow*, class ItemInstance const&) const;
 
 protected:
-
     MCAPI std::vector<class MobEffectInstance> getMobEffects(int) const;
 
 private:

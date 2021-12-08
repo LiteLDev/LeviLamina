@@ -3,22 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CreativeItemRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMREGISTRY
+public:
+    class CreativeItemRegistry& operator=(class CreativeItemRegistry const&) = delete;
+    CreativeItemRegistry(class CreativeItemRegistry const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~CreativeItemRegistry();
-
     /*
     inline  ~CreativeItemRegistry(){
          (CreativeItemRegistry::*rv)();
@@ -26,7 +30,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CreativeItemRegistry();
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const&);
     MCAPI class CreativeItemEntry* findCreativeItemEntry(class ItemInstance const&);
@@ -46,9 +49,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _forEachCreativeItemInstance(class std::function<bool (class ItemInstance& )>);
     MCAPI static std::unique_ptr<class CreativeItemRegistry> mCurrentRegistry;
+
 };

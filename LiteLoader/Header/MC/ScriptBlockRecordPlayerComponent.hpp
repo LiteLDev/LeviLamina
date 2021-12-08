@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBlockRecordPlayerComponent : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKRECORDPLAYERCOMPONENT
+public:
+    class ScriptBlockRecordPlayerComponent& operator=(class ScriptBlockRecordPlayerComponent const&) = delete;
+    ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent const&) = delete;
+    ScriptBlockRecordPlayerComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBlockRecordPlayerComponent();
-
     /*
     inline  ~ScriptBlockRecordPlayerComponent(){
          (ScriptBlockRecordPlayerComponent::*rv)();
@@ -28,14 +33,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent&&);
     MCAPI class ScriptBlockRecordPlayerComponent& operator=(class ScriptBlockRecordPlayerComponent&&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockRecordPlayerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockRecordPlayerComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
 protected:
-
     MCAPI class Scripting::Result<void> clearRecord();
     MCAPI class Scripting::Result<bool> isPlaying();
     MCAPI class Scripting::Result<void> setRecord(class ScriptItemType const&);

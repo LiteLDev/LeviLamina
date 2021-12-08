@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SyncActorPropertyPacket {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SYNCACTORPROPERTYPACKET
+public:
+    class SyncActorPropertyPacket& operator=(class SyncActorPropertyPacket const&) = delete;
+    SyncActorPropertyPacket(class SyncActorPropertyPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SyncActorPropertyPacket();
@@ -24,7 +29,6 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~SyncActorPropertyPacket(){
          (SyncActorPropertyPacket::*rv)();
@@ -32,12 +36,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SyncActorPropertyPacket(class Actor const&);
     MCAPI SyncActorPropertyPacket();
 
 protected:
-
 
 private:
 

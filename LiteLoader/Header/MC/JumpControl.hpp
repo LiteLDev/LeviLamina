@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JumpControl {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUMPCONTROL
+public:
+    class JumpControl& operator=(class JumpControl const&) = delete;
+    JumpControl(class JumpControl const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~JumpControl();
@@ -22,7 +27,6 @@ public:
     /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
-
     /*
     inline int \/*enum enum JumpType*\/ getJumpType(class JumpControlComponent const& a0, class Mob const& a1) const{
         int \/*enum enum JumpType*\/ (JumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
@@ -55,11 +59,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI JumpControl();
 
 protected:
-
 
 private:
 

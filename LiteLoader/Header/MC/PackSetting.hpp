@@ -2,28 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PackSetting {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSETTING
+public:
+    class PackSetting& operator=(class PackSetting const&) = delete;
+    PackSetting(class PackSetting const&) = delete;
+    PackSetting() = delete;
+#endif
 
 public:
-
     MCAPI void set(class Json::Value const&);
     MCAPI ~PackSetting();
 
 protected:
-
 
 private:
 

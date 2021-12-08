@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnderMan : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERMAN
+public:
+    class EnderMan& operator=(class EnderMan const&) = delete;
+    EnderMan(class EnderMan const&) = delete;
+    EnderMan() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EnderMan();
@@ -93,8 +99,6 @@ public:
     /*71*/ virtual void newServerAiStep();
     /*72*/ virtual void _serverAiMobStep();
     /*73*/ virtual void __unk_vfn_25();
-
-
     MCAPI EnderMan(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Block const& getCarryingBlock();
     MCAPI void setCarryingBlock(class Block const&);
@@ -105,8 +109,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static bool mMayTakeIsSetup;
+
 };

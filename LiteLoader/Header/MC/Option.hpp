@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Option {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OPTION
+public:
+    class Option& operator=(class Option const&) = delete;
+    Option(class Option const&) = delete;
+    Option() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Option();
@@ -24,8 +30,6 @@ public:
     /*2*/ virtual void load(std::string const&) = 0;
     /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
     /*4*/ virtual void load(class Json::Value const&);
-
-
     MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const&, std::string const&, enum OptionType);
     MCAPI bool getBool() const;
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool& )>);
@@ -34,8 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _updatePropertyVector(std::vector<struct std::pair<std::string, std::string >>&, std::string const&);
+
 };

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InventoryTransaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTION
+public:
+    class InventoryTransaction& operator=(class InventoryTransaction const&) = delete;
+    InventoryTransaction() = delete;
+#endif
 
 public:
-
     MCAPI InventoryTransaction(class InventoryTransaction const&);
     MCAPI void _logTransaction(bool) const;
     MCAPI void addAction(class InventoryAction const&);
@@ -32,10 +36,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _dropCreatedItems(class Player&) const;
     MCAPI void addItemToContent(class ItemStack const&, int);
     MCAPI static class BidirectionalUnorderedMap<enum InventoryTransactionError, std::string > const inventoryTransactionErrorMap;
+
 };

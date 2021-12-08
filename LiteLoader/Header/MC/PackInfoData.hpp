@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct PackInfoData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINFODATA
+public:
+    struct PackInfoData& operator=(struct PackInfoData const&) = delete;
+    PackInfoData(struct PackInfoData const&) = delete;
+    PackInfoData() = delete;
+#endif
 
 public:
-
     MCAPI PackInfoData(class mce::UUID const&, class SemVersion const&, unsigned __int64, std::string const&, std::string const&, class ContentIdentity const&, bool, bool);
     MCAPI ~PackInfoData();
 
 protected:
-
 
 private:
 

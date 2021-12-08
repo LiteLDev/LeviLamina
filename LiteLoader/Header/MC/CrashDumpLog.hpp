@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CrashDumpLog {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRASHDUMPLOG
+public:
+    class CrashDumpLog& operator=(class CrashDumpLog const&) = delete;
+    CrashDumpLog(class CrashDumpLog const&) = delete;
+    CrashDumpLog() = delete;
+#endif
 
 public:
-
     MCAPI static void logEvent(struct CrashDumpEventData const&);
     MCAPI static void logFrame(struct CrashDumpFrameData const&);
     MCAPI static void logKeyValue(struct CrashDumpKeyValueData const&);
@@ -30,11 +35,9 @@ public:
     MCAPI static void stopCrashDumpLogThread();
 
 protected:
-
     MCAPI static struct CrashDump_AllData* mAllData;
 
 private:
-
     MCAPI static void crashDumpLogThreadRoutine();
     MCAPI static class std::mutex mAssertDataMutex;
     MCAPI static std::unique_ptr<class std::thread> mCrashDumpLog_logThread;
@@ -48,4 +51,5 @@ private:
     MCAPI static class std::mutex mKeyValueDataMutex;
     MCAPI static class std::mutex mPlayerDataMutex;
     MCAPI static class std::mutex mRenderDataMutex;
+
 };

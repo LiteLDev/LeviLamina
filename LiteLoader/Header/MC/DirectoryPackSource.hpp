@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DirectoryPackSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKSOURCE
+public:
+    class DirectoryPackSource& operator=(class DirectoryPackSource const&) = delete;
+    DirectoryPackSource(class DirectoryPackSource const&) = delete;
+    DirectoryPackSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DirectoryPackSource();
@@ -24,7 +30,6 @@ public:
     /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
     /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
     /*
     inline  ~DirectoryPackSource(){
          (DirectoryPackSource::*rv)();
@@ -42,12 +47,10 @@ public:
         return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
     }
     */
-
     MCAPI DirectoryPackSource(class Core::Path const&, enum PackType, enum PackOrigin, bool);
     MCAPI static void checkAndRemoveIncompletePacks(class Core::Path const&);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RotatedPillarInfestedBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InfestedDeepslateBlock : public RotatedPillarInfestedBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INFESTEDDEEPSLATEBLOCK
+public:
+    class InfestedDeepslateBlock& operator=(class InfestedDeepslateBlock const&) = delete;
+    InfestedDeepslateBlock(class InfestedDeepslateBlock const&) = delete;
+    InfestedDeepslateBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InfestedDeepslateBlock();
@@ -132,12 +138,9 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-
-
     MCAPI InfestedDeepslateBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

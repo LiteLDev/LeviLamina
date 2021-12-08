@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SculkBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKBLOCK
+public:
+    class SculkBlock& operator=(class SculkBlock const&) = delete;
+    SculkBlock(class SculkBlock const&) = delete;
+    SculkBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SculkBlock();
@@ -134,12 +140,9 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-
-
     MCAPI SculkBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

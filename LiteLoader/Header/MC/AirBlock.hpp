@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AirBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AIRBLOCK
+public:
+    class AirBlock& operator=(class AirBlock const&) = delete;
+    AirBlock(class AirBlock const&) = delete;
+    AirBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AirBlock();
@@ -143,7 +149,6 @@ public:
     /*122*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*123*/ virtual void __unk_vfn_32();
     /*124*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (AirBlock::*rv)() const;
@@ -156,11 +161,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AirBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

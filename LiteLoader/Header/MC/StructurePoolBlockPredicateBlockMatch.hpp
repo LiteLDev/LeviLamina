@@ -3,29 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructurePoolBlockPredicateBlockMatch {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKPREDICATEBLOCKMATCH
+public:
+    class StructurePoolBlockPredicateBlockMatch& operator=(class StructurePoolBlockPredicateBlockMatch const&) = delete;
+    StructurePoolBlockPredicateBlockMatch(class StructurePoolBlockPredicateBlockMatch const&) = delete;
+    StructurePoolBlockPredicateBlockMatch() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateBlockMatch();
     /*1*/ virtual bool test(class Block const&, class Randomize&) const;
     /*2*/ virtual bool test(class BlockPos const&, class BlockPos const&, class Randomize&) const;
-
-
     MCAPI StructurePoolBlockPredicateBlockMatch(class Block const&);
 
 protected:
-
 
 private:
 

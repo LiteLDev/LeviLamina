@@ -3,24 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScreenHandlerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBASE
+public:
+    class ScreenHandlerBase& operator=(class ScreenHandlerBase const&) = delete;
+    ScreenHandlerBase(class ScreenHandlerBase const&) = delete;
+    ScreenHandlerBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScreenHandlerBase();
     /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
     /*2*/ virtual int /*enum enum ItemStackNetResult*/ endRequest();
-
     /*
     inline void postRequest(bool a0){
         void (ScreenHandlerBase::*rv)(bool);
@@ -38,11 +43,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScreenHandlerBase(class ItemStackRequestActionHandler&);
 
 protected:
-
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
 
 private:

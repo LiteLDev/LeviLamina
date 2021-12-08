@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseMoveToGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEMOVETOGOAL
+public:
+    class BaseMoveToGoal& operator=(class BaseMoveToGoal const&) = delete;
+    BaseMoveToGoal(class BaseMoveToGoal const&) = delete;
+    BaseMoveToGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BaseMoveToGoal();
@@ -34,7 +40,6 @@ public:
     /*14*/ virtual void _moveToBlock() = 0;
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
-
     /*
     inline  ~BaseMoveToGoal(){
          (BaseMoveToGoal::*rv)();
@@ -42,12 +47,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BaseMoveToGoal(class Mob&, float, float, float, int, int);
     MCAPI void setTargetPositionOffset(class Vec3 const&);
 
 protected:
-
     MCAPI class BlockPos _blockAboveTarget() const;
     MCAPI void _checkIfStuck();
     MCAPI bool _isCooldownActive() const;

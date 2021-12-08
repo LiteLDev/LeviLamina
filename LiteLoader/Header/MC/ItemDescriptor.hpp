@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemDescriptor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMDESCRIPTOR
+public:
+    class ItemDescriptor& operator=(class ItemDescriptor const&) = delete;
+#endif
 
 public:
-
     MCAPI ItemDescriptor(class ItemDescriptor&&);
     MCAPI ItemDescriptor(class ItemDescriptor const&);
     MCAPI ItemDescriptor(class Block const&);
@@ -54,12 +57,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI ItemDescriptor(int, int);
     MCAPI bool _hasTagOfItem(class Item const*) const;
     MCAPI void _initFromBlockLegacy(class BlockLegacy const&, class WeakPtr<class Item>) const;
     MCAPI void _initFromItem(class WeakPtr<class Item>, short) const;
     MCAPI void _resolveImpl() const;
+
 };

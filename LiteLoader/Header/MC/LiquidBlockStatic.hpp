@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LiquidBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LiquidBlockStatic : public LiquidBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDBLOCKSTATIC
+public:
+    class LiquidBlockStatic& operator=(class LiquidBlockStatic const&) = delete;
+    LiquidBlockStatic(class LiquidBlockStatic const&) = delete;
+    LiquidBlockStatic() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LiquidBlockStatic();
@@ -130,12 +136,9 @@ public:
     /*109*/ virtual int getExtraRenderLayers() const;
     /*110*/ virtual void __unk_vfn_32();
     /*111*/ virtual void __unk_vfn_33();
-
-
     MCAPI LiquidBlockStatic(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

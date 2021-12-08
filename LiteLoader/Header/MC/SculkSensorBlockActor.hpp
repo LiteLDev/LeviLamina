@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SculkSensorBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKSENSORBLOCKACTOR
+public:
+    class SculkSensorBlockActor& operator=(class SculkSensorBlockActor const&) = delete;
+    SculkSensorBlockActor(class SculkSensorBlockActor const&) = delete;
+    SculkSensorBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SculkSensorBlockActor();
@@ -47,8 +53,6 @@ public:
     /*26*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*27*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*28*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI SculkSensorBlockActor(class BlockPos const&);
     MCAPI int getLatestGameEventFrequency() const;
     MCAPI static enum BlockActorType const TypeId;
@@ -56,9 +60,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _tryTriggerRedstoneSignal(class BlockSource&);
     MCAPI static class Block const& _getPoweredBlock();
+
 };

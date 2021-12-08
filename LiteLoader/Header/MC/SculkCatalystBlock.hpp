@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SculkCatalystBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKCATALYSTBLOCK
+public:
+    class SculkCatalystBlock& operator=(class SculkCatalystBlock const&) = delete;
+    SculkCatalystBlock(class SculkCatalystBlock const&) = delete;
+    SculkCatalystBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SculkCatalystBlock();
@@ -133,7 +139,6 @@ public:
     /*112*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*113*/ virtual void __unk_vfn_32();
     /*114*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (SculkCatalystBlock::*rv)() const;
@@ -141,12 +146,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SculkCatalystBlock(std::string const&, int, class Material const&);
     MCAPI static void bloom(class BlockSource&, class BlockPos const&, class Block const&, class Random&);
 
 protected:
-
 
 private:
 

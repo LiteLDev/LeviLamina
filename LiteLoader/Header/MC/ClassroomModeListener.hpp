@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockSourceListener.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClassroomModeListener : public BlockSourceListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSROOMMODELISTENER
+public:
+    class ClassroomModeListener& operator=(class ClassroomModeListener const&) = delete;
+    ClassroomModeListener(class ClassroomModeListener const&) = delete;
+    ClassroomModeListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ClassroomModeListener();
@@ -25,7 +31,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
-
     /*
     inline void onEntityRemoved(class Actor& a0){
         void (ClassroomModeListener::*rv)(class Actor&);
@@ -58,11 +63,9 @@ public:
         return (this->*rv)(std::forward<class Actor&>(a0));
     }
     */
-
     MCAPI ClassroomModeListener(class IMinecraftEventing&);
 
 protected:
-
 
 private:
 

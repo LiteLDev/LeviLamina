@@ -226,7 +226,7 @@ void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, 
     sendNetworkPacket(pkts);
 }
 
-void setDataItem(BinaryStream wp, vector<FakeDataItem> a3) {
+void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
     wp.writeUnsignedVarInt(a3.size());
     for (auto& i : a3) {
         wp.writeUnsignedVarInt(i.id);

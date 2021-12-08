@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandVersion {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There  
 public:
 int Min = 1, Max = 0x7FFFFFFF;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDVERSION
+public:
+    class CommandVersion& operator=(class CommandVersion const&) = delete;
+    CommandVersion(class CommandVersion const&) = delete;
+    CommandVersion() = delete;
+#endif
 
 public:
-
     MCAPI CommandVersion(int, int);
     MCAPI bool covers(class CommandVersion const&) const;
     MCAPI bool isCompatible(int) const;
@@ -27,7 +32,6 @@ public:
     MCAPI static enum CurrentCmdVersion const getVersionMapping(class SemVersion const&);
 
 protected:
-
 
 private:
 

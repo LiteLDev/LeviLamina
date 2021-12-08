@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct OverworldBlendRules {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBLENDRULES
+public:
+    struct OverworldBlendRules& operator=(struct OverworldBlendRules const&) = delete;
+    OverworldBlendRules(struct OverworldBlendRules const&) = delete;
+    OverworldBlendRules() = delete;
+#endif
 
 public:
-
     MCAPI ~OverworldBlendRules();
 
 protected:
-
 
 private:
 

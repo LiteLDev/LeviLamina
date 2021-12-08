@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptServerActorTickEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERACTORTICKEVENT
+public:
+    class ScriptServerActorTickEvent& operator=(class ScriptServerActorTickEvent const&) = delete;
+    ScriptServerActorTickEvent(class ScriptServerActorTickEvent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptServerActorTickEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-
     /*
     inline  ~ScriptServerActorTickEvent(){
          (ScriptServerActorTickEvent::*rv)();
@@ -28,14 +32,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptServerActorTickEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
 
 protected:
 
-
 private:
-
     MCAPI static class HashedString const mHash;
+
 };

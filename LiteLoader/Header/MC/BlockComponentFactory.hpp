@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockComponentFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Constructor {
@@ -20,10 +19,16 @@ struct Constructor {
     Constructor(Constructor const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTFACTORY
+public:
+    class BlockComponentFactory& operator=(class BlockComponentFactory const&) = delete;
+    BlockComponentFactory(class BlockComponentFactory const&) = delete;
+    BlockComponentFactory() = delete;
+#endif
 
 public:
-
     MCAPI BlockComponentFactory(class Experiments const&);
     MCAPI std::unique_ptr<struct BlockComponentDescription> createDescription(std::string const&) const;
     MCAPI void initializeFactory(class Experiments const&);
@@ -33,7 +38,6 @@ public:
     MCAPI static void registerAllCerealDescriptions();
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TorchBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SoulTorchBlock : public TorchBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SOULTORCHBLOCK
+public:
+    class SoulTorchBlock& operator=(class SoulTorchBlock const&) = delete;
+    SoulTorchBlock(class SoulTorchBlock const&) = delete;
+    SoulTorchBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SoulTorchBlock();
@@ -129,12 +135,9 @@ public:
     /*108*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*109*/ virtual void __unk_vfn_32();
     /*110*/ virtual void __unk_vfn_33();
-
-
     MCAPI SoulTorchBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

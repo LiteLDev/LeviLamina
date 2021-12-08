@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Path {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class Node {
@@ -21,10 +20,15 @@ public:
     Node(Node const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATH
+public:
+    class Path& operator=(class Path const&) = delete;
+    Path(class Path const&) = delete;
+#endif
 
 public:
-
     MCAPI Path();
     MCAPI class Vec3 currentPos(class Actor const*) const;
     MCAPI class BlockPos const& currentPos() const;
@@ -48,8 +52,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void buildFromNodes(std::vector<class Path::Node>&&, enum PathCompletionType);
+
 };

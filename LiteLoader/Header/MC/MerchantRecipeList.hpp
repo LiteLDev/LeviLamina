@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MerchantRecipeList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPELIST
+public:
+    class MerchantRecipeList& operator=(class MerchantRecipeList const&) = delete;
+    MerchantRecipeList(class MerchantRecipeList const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~MerchantRecipeList();
@@ -24,14 +29,11 @@ public:
     /*4*/ virtual class MerchantRecipe* getMatchingRecipeFor(class MerchantRecipe const&);
     /*5*/ virtual void load(class CompoundTag const&);
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
-
-
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
 
 protected:
-
 
 private:
 

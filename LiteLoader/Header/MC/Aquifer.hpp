@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Aquifer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct FluidSample {
@@ -20,10 +19,16 @@ struct FluidSample {
     FluidSample(FluidSample const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AQUIFER
+public:
+    class Aquifer& operator=(class Aquifer const&) = delete;
+    Aquifer(class Aquifer const&) = delete;
+    Aquifer() = delete;
+#endif
 
 public:
-
     MCAPI Aquifer(class ChunkPos const&, class AquiferNoises const&, class SurfaceLevelCache const&, int, int, int);
     MCAPI void computeAt(class BlockPos const&);
     MCAPI float getLastBarrier() const;
@@ -33,10 +38,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct Aquifer::FluidSample _computeAquifer(class BlockPos const&) const;
     MCAPI struct Aquifer::FluidSample _getOrComputeNewFluidSample(class BlockPos const&);
     MCAPI static class std::array<struct std::pair<int, int>, 13> const chunkOffset;
+
 };

@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomValueBounds {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMVALUEBOUNDS
+public:
+    class RandomValueBounds& operator=(class RandomValueBounds const&) = delete;
+    RandomValueBounds(class RandomValueBounds const&) = delete;
+    RandomValueBounds() = delete;
+#endif
 
 public:
-
     MCAPI void deserialize(class Json::Value const&);
     MCAPI float getFloat(class Random&) const;
     MCAPI int getInt(class Random&) const;
@@ -26,7 +31,6 @@ public:
     MCAPI float getMin() const;
 
 protected:
-
 
 private:
 

@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MobEvents {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENTS
+public:
+    class MobEvents& operator=(class MobEvents const&) = delete;
+    MobEvents(class MobEvents const&) = delete;
+    MobEvents() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MobEvents();
-
-
     MCAPI MobEvents(class LevelStorage&);
     MCAPI bool areEventsEnabled() const;
     MCAPI void deserialize(class CompoundTag const&);
@@ -35,7 +39,6 @@ public:
     MCAPI static std::string const EVENTS_ENABLED_STRING;
 
 protected:
-
 
 private:
 

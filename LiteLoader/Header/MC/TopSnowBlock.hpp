@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TopSnowBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOPSNOWBLOCK
+public:
+    class TopSnowBlock& operator=(class TopSnowBlock const&) = delete;
+    TopSnowBlock(class TopSnowBlock const&) = delete;
+    TopSnowBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TopSnowBlock();
@@ -151,7 +157,6 @@ public:
     /*130*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*131*/ virtual bool isFreeToFall(class BlockSource&, class BlockPos const&) const;
     /*132*/ virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (TopSnowBlock::*rv)() const;
@@ -174,7 +179,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TopSnowBlock(std::string const&, int);
     MCAPI bool melt(class BlockSource&, class BlockPos const&, int) const;
     MCAPI void startFallingIfLostSupport(class BlockSource&, class BlockPos const&, class Random&) const;
@@ -184,8 +188,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _canSurvive(class BlockSource&, class BlockPos const&) const;
+
 };

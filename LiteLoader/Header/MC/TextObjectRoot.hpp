@@ -2,27 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TextObjectRoot {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTROOT
+public:
+    class TextObjectRoot& operator=(class TextObjectRoot const&) = delete;
+    TextObjectRoot(class TextObjectRoot const&) = delete;
+    TextObjectRoot() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TextObjectRoot();
     /*1*/ virtual std::string asString() const;
     /*2*/ virtual class Json::Value asJsonValue() const;
     /*3*/ virtual class Json::Value resolve(struct ResolveData const&) const;
-
     /*
     inline  ~TextObjectRoot(){
          (TextObjectRoot::*rv)();
@@ -30,14 +35,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void addChild(std::unique_ptr<class ITextObject>);
     MCAPI void clear();
     MCAPI bool isEmpty() const;
     MCAPI class ResolvedTextObject resolveRoot(class Actor const&, class Scoreboard const&) const;
 
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "PlayerCommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AutomationPlayerCommandOrigin : public PlayerCommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AUTOMATIONPLAYERCOMMANDORIGIN
+public:
+    class AutomationPlayerCommandOrigin& operator=(class AutomationPlayerCommandOrigin const&) = delete;
+    AutomationPlayerCommandOrigin(class AutomationPlayerCommandOrigin const&) = delete;
+    AutomationPlayerCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
@@ -37,13 +43,10 @@ public:
     /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*16*/ virtual class CompoundTag serialize() const;
     /*17*/ virtual bool isValid() const;
-
-
     MCAPI AutomationPlayerCommandOrigin(std::string const&, class Player&);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level&, std::string const&, enum CommandPermissionLevel, class NetworkIdentifier const&);
 
 protected:
-
 
 private:
 

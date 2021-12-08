@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VolumeEntityManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct VolumeEntityDefinition {
@@ -21,11 +20,17 @@ struct VolumeEntityDefinition {
     VolumeEntityDefinition(VolumeEntityDefinition const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VOLUMEENTITYMANAGER
+public:
+    class VolumeEntityManager& operator=(class VolumeEntityManager const&) = delete;
+    VolumeEntityManager(class VolumeEntityManager const&) = delete;
+    VolumeEntityManager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~VolumeEntityManager();
-
     /*
     inline  ~VolumeEntityManager(){
          (VolumeEntityManager::*rv)();
@@ -33,13 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static void bindVolumeDefinitions();
     MCAPI static bool isTriggerVolumesEnabled;
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&);
 
 protected:
-
     MCAPI VolumeEntityManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner> >);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const&);
     MCAPI bool _definitionAlreadyExists(struct VolumeDefinition const&) const;

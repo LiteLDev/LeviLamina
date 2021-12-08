@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ReplayStateComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPLAYSTATECOMPONENT
+public:
+    class ReplayStateComponent& operator=(class ReplayStateComponent const&) = delete;
+    ReplayStateComponent(class ReplayStateComponent const&) = delete;
+    ReplayStateComponent() = delete;
+#endif
 
 public:
-
     MCAPI ReplayStateComponent(class ReplayStateComponent&&);
     MCAPI ReplayStateComponent(std::unique_ptr<class ActorHistory>, std::unique_ptr<struct IReplayStatePolicy>);
     MCAPI unsigned __int64 getCurrentTick() const;
@@ -27,7 +32,6 @@ public:
     MCAPI ~ReplayStateComponent();
 
 protected:
-
 
 private:
 

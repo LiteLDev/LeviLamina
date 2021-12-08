@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseGamePackSlices {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEGAMEPACKSLICES
+public:
+    class BaseGamePackSlices& operator=(class BaseGamePackSlices const&) = delete;
+    BaseGamePackSlices(class BaseGamePackSlices const&) = delete;
+#endif
 
 public:
-
     MCAPI BaseGamePackSlices();
     MCAPI void addFromVersions(std::vector<class BaseGameVersion> const&, class IResourcePackRepository const&, class mce::UUID const&);
     MCAPI void applyPackSlices(class BaseGameVersion const&, class IResourcePackRepository const&, class ResourcePackStack&) const;
     MCAPI ~BaseGamePackSlices();
 
 protected:
-
 
 private:
 

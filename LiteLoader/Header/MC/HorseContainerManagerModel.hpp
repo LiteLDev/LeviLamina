@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LevelContainerManagerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HorseContainerManagerModel : public LevelContainerManagerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSECONTAINERMANAGERMODEL
+public:
+    class HorseContainerManagerModel& operator=(class HorseContainerManagerModel const&) = delete;
+    HorseContainerManagerModel(class HorseContainerManagerModel const&) = delete;
+    HorseContainerManagerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HorseContainerManagerModel();
@@ -28,12 +34,9 @@ public:
     /*7*/ virtual class ItemStack const& getSlot(int) const;
     /*8*/ virtual void setData(int, int);
     /*9*/ virtual class ContainerScreenContext _postInit();
-
-
     MCAPI HorseContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
 
 protected:
-
 
 private:
 

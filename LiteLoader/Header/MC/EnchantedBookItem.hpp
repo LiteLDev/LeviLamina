@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnchantedBookItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTEDBOOKITEM
+public:
+    class EnchantedBookItem& operator=(class EnchantedBookItem const&) = delete;
+    EnchantedBookItem(class EnchantedBookItem const&) = delete;
+    EnchantedBookItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EnchantedBookItem();
@@ -96,7 +102,6 @@ public:
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual std::string getAuxValuesDescription() const;
     /*76*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
     /*
     inline bool isGlint(class ItemStackBase const& a0) const{
         bool (EnchantedBookItem::*rv)(class ItemStackBase const&) const;
@@ -104,11 +109,9 @@ public:
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     */
-
     MCAPI EnchantedBookItem(std::string const&, int, bool);
 
 protected:
-
 
 private:
 

@@ -2,29 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "DimensionBrightnessRamp.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverworldBrightnessRamp : public DimensionBrightnessRamp {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBRIGHTNESSRAMP
+public:
+    class OverworldBrightnessRamp& operator=(class OverworldBrightnessRamp const&) = delete;
+    OverworldBrightnessRamp(class OverworldBrightnessRamp const&) = delete;
+    OverworldBrightnessRamp() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OverworldBrightnessRamp();
     /*1*/ virtual float getBaseAmbientValue() const;
 
-
-
 protected:
-
 
 private:
 

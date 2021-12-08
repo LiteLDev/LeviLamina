@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace AutomaticFeatureRules {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct AutomaticFeatureRule {
     AutomaticFeatureRule() = delete;
@@ -19,7 +18,8 @@ struct AutomaticFeatureRule {
     AutomaticFeatureRule(AutomaticFeatureRule const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void attachAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&, class Experiments const&);
     MCAPI void parseAutomaticFeatures(class ResourcePackManager&, class IWorldRegistriesProvider&, class Experiments const&, class std::unordered_map<std::string, class std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct AutomaticFeatureRules::AutomaticFeatureRule> > >, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, class std::unordered_map<class HashedString, struct AutomaticFeatureRules::AutomaticFeatureRule, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct AutomaticFeatureRules::AutomaticFeatureRule> > > > > >&);
+
 };

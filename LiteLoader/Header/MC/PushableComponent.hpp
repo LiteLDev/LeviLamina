@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PushableComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PUSHABLECOMPONENT
+public:
+    class PushableComponent& operator=(class PushableComponent const&) = delete;
+    PushableComponent(class PushableComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI PushableComponent();
     MCAPI void initFromDefinition(class Actor&);
     MCAPI void initFromDefinition(class Actor&, struct PushableDescription&);
@@ -28,8 +32,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct std::pair<class Vec3, class Vec3> _calculatePushVectorMinecart(class Actor&, class Actor&, bool);
+
 };

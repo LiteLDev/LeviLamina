@@ -3,22 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
     LIAPI Block* toBlock(unsigned short tileData);
     LIAPI string getTypeName();
     LIAPI bool applyBoneMeal(BlockSource*, BlockPos*);
     LIAPI ItemStack* getBlockDrops();
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKLEGACY
+public:
+    class BlockLegacy& operator=(class BlockLegacy const&) = delete;
+    BlockLegacy(class BlockLegacy const&) = delete;
+    BlockLegacy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockLegacy();
@@ -213,7 +219,6 @@ public:
     /*189*/ virtual void _executeEvent(std::string const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&) const;
     /*190*/ virtual bool _executeTrigger(class DefinitionTrigger const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&) const;
     /*191*/ virtual void _forceExecuteTrigger(class DefinitionTrigger const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&) const;
-
     /*
     inline bool use(class Player& a0, class BlockPos const& a1, unsigned char a2) const{
         bool (BlockLegacy::*rv)(class Player&, class BlockPos const&, unsigned char) const;
@@ -446,7 +451,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
     }
     */
-
     MCAPI BlockLegacy(std::string const&, int, class Material const&);
     MCAPI bool addAABB(class AABB const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI class BlockLegacy& addBlockProperties(enum BlockProperty);
@@ -503,12 +507,11 @@ public:
     MCAPI static unsigned char getPlacementFacingAllExceptAxisY(class Actor&, class BlockPos const&, float);
 
 protected:
-
     MCAPI class HitResult clip(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool, class AABB const&) const;
     MCAPI float getFriction() const;
     MCAPI static class AABB createAABBWithPixelCoordinates(float, float, float, float, float, float);
 
 private:
-
     MCAPI void initParams(class RenderParams&, class BlockSource&, class BlockPos const&, class Actor*) const;
+
 };

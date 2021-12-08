@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEEVENT
+public:
+    class GameEvent& operator=(class GameEvent const&) = delete;
+    GameEvent(class GameEvent const&) = delete;
+    GameEvent() = delete;
+#endif
 
 public:
-
     MCAPI GameEvent(enum GameEventConfig::GameEvents, unsigned char);
     MCAPI enum GameEventConfig::GameEvents const getEventType() const;
     MCAPI float getRadius() const;
     MCAPI unsigned __int64 getRadiusSqrd() const;
 
 protected:
-
 
 private:
 

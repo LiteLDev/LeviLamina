@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class I18n {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18N
+public:
+    class I18n& operator=(class I18n const&) = delete;
+    I18n(class I18n const&) = delete;
+    I18n() = delete;
+#endif
 
 public:
-
     MCAPI static char const* const NeutralLangCode;
     MCAPI static void addI18nObserver(class I18nObserver&);
     MCAPI static void appendLanguageStringsFromPack(class PackManifest const&, class std::multimap<std::string, struct std::pair<std::string, std::string >, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct std::pair<std::string, std::string > > > > const&);
@@ -40,9 +45,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static void _findAvailableLanguageNames(class Json::Value const&, class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
     MCAPI static void _findAvailableLanguages(class Json::Value const&, std::vector<std::string>&);
     MCAPI static class Localization* _findLocaleFor(std::string const&);
@@ -63,4 +66,5 @@ private:
     MCAPI static std::vector<std::string> const mPackReservedKeys;
     MCAPI static class ResourcePackManager* mResourcePackManager;
     MCAPI static class Core::Subject<class I18nObserver, class Core::SingleThreadedLock> mSubject;
+
 };

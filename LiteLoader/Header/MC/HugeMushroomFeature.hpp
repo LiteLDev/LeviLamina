@@ -2,26 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Feature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HugeMushroomFeature : public Feature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUGEMUSHROOMFEATURE
+public:
+    class HugeMushroomFeature& operator=(class HugeMushroomFeature const&) = delete;
+    HugeMushroomFeature(class HugeMushroomFeature const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~HugeMushroomFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
     /*
     inline  ~HugeMushroomFeature(){
          (HugeMushroomFeature::*rv)();
@@ -29,15 +33,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI HugeMushroomFeature(int);
     MCAPI HugeMushroomFeature();
     MCAPI bool placeFixed(class BlockSource&, class BlockPos const&, int, int) const;
 
 protected:
 
-
 private:
-
     MCAPI bool _canSurvive(class Block const&) const;
+
 };

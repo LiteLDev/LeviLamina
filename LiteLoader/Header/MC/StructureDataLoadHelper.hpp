@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Direction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureDataLoadHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREDATALOADHELPER
+public:
+    class StructureDataLoadHelper& operator=(class StructureDataLoadHelper const&) = delete;
+    StructureDataLoadHelper(class StructureDataLoadHelper const&) = delete;
+    StructureDataLoadHelper() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructureDataLoadHelper();
@@ -36,7 +42,6 @@ public:
     /*15*/ virtual int /*enum enum DataLoadHelperType*/ getType() const;
     /*16*/ virtual bool shouldResetTime();
     /*17*/ virtual struct ActorUniqueID _generateNewID();
-
     /*
     inline float loadRotationDegreesX(float a0){
         float (StructureDataLoadHelper::*rv)(float);
@@ -54,11 +59,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StructureDataLoadHelper(class BlockPos const&, class BlockPos const&, class Vec3 const&, struct ActorUniqueID, enum Rotation, enum Mirror, class Level&);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DefaultDataLoadHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEFAULTDATALOADHELPER
+public:
+    class DefaultDataLoadHelper& operator=(class DefaultDataLoadHelper const&) = delete;
+    DefaultDataLoadHelper(class DefaultDataLoadHelper const&) = delete;
+    DefaultDataLoadHelper() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DefaultDataLoadHelper();
@@ -34,7 +40,6 @@ public:
     /*14*/ virtual void __unk_vfn_13();
     /*15*/ virtual int /*enum enum DataLoadHelperType*/ getType() const;
     /*16*/ virtual bool shouldResetTime();
-
     /*
     inline struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID a0){
         struct ActorUniqueID (DefaultDataLoadHelper::*rv)(struct ActorUniqueID);
@@ -108,9 +113,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

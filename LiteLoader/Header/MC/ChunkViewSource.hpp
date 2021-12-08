@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChunkSource.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkViewSource : public ChunkSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKVIEWSOURCE
+public:
+    class ChunkViewSource& operator=(class ChunkViewSource const&) = delete;
+    ChunkViewSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChunkViewSource();
@@ -29,7 +34,6 @@ public:
     /*8*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*9*/ virtual void clearDeletedEntities();
     /*10*/ virtual bool canCreateViews() const;
-
     /*
     inline  ~ChunkViewSource(){
          (ChunkViewSource::*rv)();
@@ -37,7 +41,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ChunkViewSource(class ChunkSource&, class LevelChunkGridAreaElement<class std::weak_ptr<class LevelChunk> >&, struct Bounds const&);
     MCAPI ChunkViewSource(class ChunkSource&, enum ChunkSource::LoadMode);
     MCAPI ChunkViewSource(class ChunkViewSource const&);
@@ -51,7 +54,6 @@ public:
     MCAPI void rebuildSpecificArea(struct Bounds const&, bool, class std::function<void (class buffer_span_mut<class std::shared_ptr<class LevelChunk> >, class buffer_span<unsigned int>)>);
 
 protected:
-
 
 private:
 

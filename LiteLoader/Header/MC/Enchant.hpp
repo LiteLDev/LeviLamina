@@ -3,21 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Enchant {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Slot;
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANT
+public:
+    class Enchant& operator=(class Enchant const&) = delete;
+    Enchant(class Enchant const&) = delete;
+    Enchant() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Enchant();
@@ -35,7 +41,6 @@ public:
     /*12*/ virtual void __unk_vfn_3();
     /*13*/ virtual void __unk_vfn_4();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
-
     /*
     inline bool isProtectionEnchant() const{
         bool (Enchant::*rv)() const;
@@ -68,7 +73,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Enchant(enum Enchant::Type, enum Enchant::Frequency, class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>, int, int, bool);
     MCAPI std::string getDescriptionId() const;
     MCAPI class HashedString const& getStringId() const;
@@ -79,7 +83,6 @@ public:
     MCAPI static void shutdownEnchants();
 
 protected:
-
 
 private:
 

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SubChunk {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNK
+public:
+    struct SubChunk& operator=(struct SubChunk const&) = delete;
+    SubChunk(struct SubChunk const&) = delete;
+#endif
 
 public:
-
     MCAPI SubChunk();
     MCAPI void deserialize(class IDataInput&, class BlockPalette const&);
     MCAPI void fetchBlocks(class BlockPos const&, class BlockPos const&, short, class BlockVolume&) const;
@@ -36,7 +40,6 @@ public:
     MCAPI ~SubChunk();
 
 protected:
-
     MCAPI void _createBlockLightStorage();
     MCAPI void _replaceBlocks(unsigned char, std::unique_ptr<class SubChunkStorage<class Block>>, class std::lock_guard<class SpinLock>&);
     MCAPI void _resetLight(bool, bool);

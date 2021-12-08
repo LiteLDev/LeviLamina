@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct LevelDataValue {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATAVALUE
+public:
+    struct LevelDataValue& operator=(struct LevelDataValue const&) = delete;
+    LevelDataValue(struct LevelDataValue const&) = delete;
+    LevelDataValue() = delete;
+#endif
 
 public:
-
     MCAPI ~LevelDataValue();
 
 protected:
-
 
 private:
 

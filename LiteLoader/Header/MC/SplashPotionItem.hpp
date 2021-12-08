@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Potion.hpp"
 #include "PotionItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SplashPotionItem : public PotionItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONITEM
+public:
+    class SplashPotionItem& operator=(class SplashPotionItem const&) = delete;
+    SplashPotionItem(class SplashPotionItem const&) = delete;
+    SplashPotionItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SplashPotionItem();
@@ -102,10 +108,7 @@ public:
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*80*/ virtual int /*enum enum Potion::PotionType*/ getPotionType() const;
 
-
-
 protected:
-
 
 private:
 

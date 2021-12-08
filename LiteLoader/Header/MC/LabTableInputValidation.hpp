@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerValidationBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LabTableInputValidation : public ContainerValidationBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEINPUTVALIDATION
+public:
+    class LabTableInputValidation& operator=(class LabTableInputValidation const&) = delete;
+    LabTableInputValidation(class LabTableInputValidation const&) = delete;
+    LabTableInputValidation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LabTableInputValidation();
@@ -23,7 +29,6 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void __unk_vfn_1();
-
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{
         bool (LabTableInputValidation::*rv)(class ContainerScreenContext const&) const;
@@ -32,9 +37,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RaidBossComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAIDBOSSCOMPONENT
+public:
+    class RaidBossComponent& operator=(class RaidBossComponent const&) = delete;
+    RaidBossComponent(class RaidBossComponent const&) = delete;
+    RaidBossComponent() = delete;
+#endif
 
 public:
-
     MCAPI RaidBossComponent(class RaidBossComponent&&);
     MCAPI enum BossBarColor getColor();
     MCAPI float getHealthPercent();
@@ -42,9 +47,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _broadcastBossEvent(enum BossEventUpdateType, class Actor&);
     MCAPI void _sendBossEvent(enum BossEventUpdateType, class Player&);
+
 };

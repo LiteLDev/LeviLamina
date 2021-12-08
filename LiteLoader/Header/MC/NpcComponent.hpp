@@ -3,22 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NpcComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCCOMPONENT
+public:
+    class NpcComponent& operator=(class NpcComponent const&) = delete;
+    NpcComponent(class NpcComponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~NpcComponent();
-
     /*
     inline  ~NpcComponent(){
          (NpcComponent::*rv)();
@@ -26,7 +30,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NpcComponent(class NpcComponent&&);
     MCAPI NpcComponent();
     MCAPI void addAdditionalSaveData(class Actor&, class CompoundTag&) const;
@@ -65,9 +68,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _defineEntityDataString(class Actor&, enum ActorDataIDs);
     MCAPI void _deserializeData();
     MCAPI void _loadActions(std::vector<std::unique_ptr<class NpcAction>>&, std::string const&) const;
@@ -79,4 +80,5 @@ private:
     MCAPI static std::string const PLAYER_SCENE_MAPPING_TAG;
     MCAPI static std::string const SCENE_NAME_TAG;
     MCAPI static std::string const URL_TAG;
+
 };

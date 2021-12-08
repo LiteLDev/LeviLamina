@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AppConfigs {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPCONFIGS
+public:
+    class AppConfigs& operator=(class AppConfigs const&) = delete;
+    AppConfigs(class AppConfigs const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~AppConfigs();
@@ -51,7 +56,6 @@ public:
     /*31*/ virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
     /*32*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
     /*33*/ virtual std::string getFeedbackURL() const;
-
     /*
     inline bool areQuizzesSupported() const{
         bool (AppConfigs::*rv)() const;
@@ -194,11 +198,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AppConfigs();
 
 protected:
-
 
 private:
 

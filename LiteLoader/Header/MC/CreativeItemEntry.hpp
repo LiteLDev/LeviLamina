@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CreativeItemEntry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CREATIVEITEMENTRY
+public:
+    class CreativeItemEntry& operator=(class CreativeItemEntry const&) = delete;
+    CreativeItemEntry(class CreativeItemEntry const&) = delete;
+    CreativeItemEntry() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CreativeItemEntry();
-
-
     MCAPI class TypedServerNetId<struct CreativeItemNetIdTag, unsigned int, 0> const& getCreativeNetId() const;
     MCAPI class CreativeGroupInfo* getGroup() const;
     MCAPI unsigned int getIndex() const;
@@ -27,8 +31,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _setGroup(class CreativeGroupInfo*);
+
 };

@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 #include "DiggerItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PickaxeItem : public DiggerItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PICKAXEITEM
+public:
+    class PickaxeItem& operator=(class PickaxeItem const&) = delete;
+    PickaxeItem(class PickaxeItem const&) = delete;
+    PickaxeItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PickaxeItem();
@@ -95,15 +101,12 @@ public:
     /*72*/ virtual void __unk_vfn_20();
     /*73*/ virtual std::string getAuxValuesDescription() const;
     /*74*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI PickaxeItem(std::string const&, int, class Item::Tier const&);
 
 protected:
 
-
 private:
-
     MCAPI bool const _isTierOneBlock(class BlockLegacy const&) const;
     MCAPI bool const _isTierTwoBlock(class BlockLegacy const&) const;
+
 };

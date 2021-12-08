@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AppPlatform {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct AndroidScopedStorageInfo {
@@ -22,7 +21,14 @@ struct AndroidScopedStorageInfo {
     AndroidScopedStorageInfo(AndroidScopedStorageInfo const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORM
+public:
+    class AppPlatform& operator=(class AppPlatform const&) = delete;
+    AppPlatform(class AppPlatform const&) = delete;
+    AppPlatform() = delete;
+#endif
 
 public:
     /*
@@ -1032,7 +1038,6 @@ public:
         return (this->*rv)(std::forward<bool>(a0), std::forward<class std::function<void (bool)>>(a1));
     }
     */
-
     MCAPI AppPlatform(bool);
     MCAPI std::unique_ptr<struct Bedrock::PlatformRuntimeInfo>& accessPlatformRuntimeInformation_Shim();
     MCAPI void addListener(class AppPlatformListener*, float);
@@ -1048,11 +1053,10 @@ public:
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024> > const SETTINGS_PATH;
 
 protected:
-
     MCAPI static class Core::PathBuffer<class Core::StackString<char, 1024> > const SHADERCACHE_PATH;
 
 private:
-
     MCAPI void _initializeLoadProfiler();
     MCAPI static bool mIsInitialized;
+
 };

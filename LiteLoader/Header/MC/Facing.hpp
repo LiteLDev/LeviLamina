@@ -2,30 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Direction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 namespace glm {
 template <int a1, int a2, typename a3, int a4>
 struct mat;
 }
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Facing {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Rotation;
 enum Name;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACING
+public:
+    class Facing& operator=(class Facing const&) = delete;
+    Facing(class Facing const&) = delete;
+    Facing() = delete;
+#endif
 
 public:
-
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT;
     MCAPI static class std::array<std::vector<unsigned char>, 6> const ALL_EXCEPT_AXIS_Y;
     MCAPI static std::vector<unsigned char> const ALL_FACES;
@@ -61,7 +66,6 @@ public:
     MCAPI static class gsl::basic_string_span<char const, -1> toString(unsigned char);
 
 protected:
-
 
 private:
 

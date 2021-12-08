@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SubChunkPos {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPOS
+public:
+    class SubChunkPos& operator=(class SubChunkPos const&) = delete;
+    SubChunkPos(class SubChunkPos const&) = delete;
+    SubChunkPos() = delete;
+#endif
 
 public:
-
     MCAPI SubChunkPos(class BlockPos const&);
     MCAPI operator class BlockPos();
     MCAPI static class SubChunkPos const MAX;
@@ -26,7 +31,6 @@ public:
     MCAPI static class SubChunkPos const ZERO;
 
 protected:
-
 
 private:
 

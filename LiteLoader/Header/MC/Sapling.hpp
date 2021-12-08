@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Sapling : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAPLING
+public:
+    class Sapling& operator=(class Sapling const&) = delete;
+    Sapling(class Sapling const&) = delete;
+    Sapling() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Sapling();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
         int \/*enum enum BlockRenderLayer*\/ (Sapling::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
@@ -153,19 +158,17 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Sapling(std::string const&, int);
 
 protected:
-
     MCAPI bool advanceTree(class BlockSource&, class BlockPos const&, class Random&, class Actor*) const;
 
 private:
-
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateJungleTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateOakTree(class FeatureRegistry const&, class BlockPos const&, class BlockSource&, class Random&, bool) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRedwoodTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&) const;
     MCAPI class WeakRefT<struct FeatureRefTraits> _generateRoofTree(int&, int&, bool&, class BlockPos const&, class BlockSource&, class FeatureRegistry const&) const;
     MCAPI bool _growTree(class BlockSource&, class BlockPos const&, class Random&, bool) const;
     MCAPI bool _isNearFlowerBlock(class BlockSource&, class BlockPos const&) const;
+
 };

@@ -3,19 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Scoreboard.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerScoreboard {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERSCOREBOARD
+public:
+    class ServerScoreboard& operator=(class ServerScoreboard const&) = delete;
+    ServerScoreboard(class ServerScoreboard const&) = delete;
+    ServerScoreboard() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerScoreboard();
@@ -34,7 +40,6 @@ public:
     /*13*/ virtual void setPacketSender(class PacketSender*);
     /*14*/ virtual void writeToLevelStorage();
     /*15*/ virtual bool isClientSide() const;
-
     /*
     inline  ~ServerScoreboard(){
          (ServerScoreboard::*rv)();
@@ -42,7 +47,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ServerScoreboard(class CommandSoftEnumRegistry, class LevelStorage*);
     MCAPI void deserialize(std::unique_ptr<class CompoundTag>);
     MCAPI std::unique_ptr<class CompoundTag> serialize() const;
@@ -54,9 +58,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _stopTrackingObjective(class Objective const&);
     MCAPI struct ScorePacketInfo _unpackIdentityDefToScorePacket(class ScoreboardIdentityRef const&, std::string const&, int);
+
 };

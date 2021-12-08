@@ -2,23 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GeneticsDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICSDEFINITION
+public:
+    class GeneticsDefinition& operator=(class GeneticsDefinition const&) = delete;
+    GeneticsDefinition(class GeneticsDefinition const&) = delete;
+#endif
 
 public:
-
     MCAPI GeneticsDefinition();
     MCAPI void addGeneDefinition(struct GeneDefinition const&);
     MCAPI void initialize(class EntityContext&, class GeneticsComponent&);
@@ -26,8 +30,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static float const DEFAULT_MUTATION_RATE;
+
 };

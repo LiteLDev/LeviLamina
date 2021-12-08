@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EntitySet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSET
+public:
+    class EntitySet& operator=(class EntitySet const&) = delete;
+    EntitySet(class EntitySet const&) = delete;
+    EntitySet() = delete;
+#endif
 
 public:
-
     MCAPI EntitySet(class EntitySet&&);
     MCAPI bool add(class EntityContext const&);
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > > erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > >);
     MCAPI class EntitySet& operator=(class EntitySet&&);
 
 protected:
-
 
 private:
 

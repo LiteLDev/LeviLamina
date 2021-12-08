@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Scripting.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptItemStack {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMSTACK
+public:
+    class ScriptItemStack& operator=(class ScriptItemStack const&) = delete;
+    ScriptItemStack(class ScriptItemStack const&) = delete;
+    ScriptItemStack() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptItemStack();
-
     /*
     inline  ~ScriptItemStack(){
          (ScriptItemStack::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptItemStack(class ScriptItemStack&&);
     MCAPI class Scripting::WeakObjectHandle getComponent(class Scripting::WeakLifetimeScope, std::string const&);
     MCAPI std::vector<class Scripting::WeakObjectHandle> getComponents(class Scripting::WeakLifetimeScope);
@@ -40,7 +44,6 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptItemStack> createHandle(class Scripting::WeakLifetimeScope, class ItemStack const&);
 
 protected:
-
 
 private:
 

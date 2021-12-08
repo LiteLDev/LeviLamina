@@ -2,32 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HttpHeaders {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum ParseState;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HTTPHEADERS
+public:
+    class HttpHeaders& operator=(class HttpHeaders const&) = delete;
+    HttpHeaders(class HttpHeaders const&) = delete;
+    HttpHeaders() = delete;
+#endif
 
 public:
-
     MCAPI void clear();
     MCAPI bool getHeader(std::string const&, std::string&) const;
     MCAPI enum HttpHeaders::ParseState parse(class RakNet::BitStream&);
     MCAPI ~HttpHeaders();
 
 protected:
-
 
 private:
 

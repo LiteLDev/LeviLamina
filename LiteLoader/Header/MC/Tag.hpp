@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Global.h"
 #include <map>
@@ -44,11 +43,11 @@ class Block;
 class ItemStack;
 class BlockActor;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 private:
 char filler[0x28];
@@ -121,7 +120,13 @@ LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
 LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
 LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAG
+public:
+    class Tag& operator=(class Tag const&) = delete;
+    Tag(class Tag const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~Tag();
@@ -135,7 +140,6 @@ public:
     /*8*/ virtual void print(std::string const&, class PrintStream&) const;
     /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
     /*10*/ virtual unsigned __int64 hash() const = 0;
-
     /*
     inline  ~Tag(){
          (Tag::*rv)();
@@ -143,7 +147,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static std::string const NullString;
     MCAPI static std::string getTagName(enum Tag::Type);
     MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
@@ -151,7 +154,6 @@ public:
     MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
 protected:
-
     MCAPI Tag();
 
 private:

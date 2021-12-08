@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorClassTree {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORCLASSTREE
+public:
+    class ActorClassTree& operator=(class ActorClassTree const&) = delete;
+    ActorClassTree(class ActorClassTree const&) = delete;
+    ActorClassTree() = delete;
+#endif
 
 public:
-
     MCAPI static enum ActorType getEntityTypeIdLegacy(enum ActorType);
     MCAPI static bool hasCategory(enum ActorCategory const&, enum ActorCategory);
     MCAPI static bool isHangingEntity(class Actor const&);
@@ -28,7 +33,6 @@ public:
     MCAPI static bool isTypeInstanceOf(enum ActorType, enum ActorType);
 
 protected:
-
 
 private:
 

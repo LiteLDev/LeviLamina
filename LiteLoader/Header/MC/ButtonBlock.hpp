@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ButtonBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUTTONBLOCK
+public:
+    class ButtonBlock& operator=(class ButtonBlock const&) = delete;
+    ButtonBlock(class ButtonBlock const&) = delete;
+    ButtonBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ButtonBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canSpawnOn() const{
         bool (ButtonBlock::*rv)() const;
@@ -163,17 +168,15 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void buttonPressed(class BlockSource&, class Block const&, class Vec3 const&) const;
     MCAPI static bool canAttachTo(class BlockSource&, class BlockPos const&, unsigned char);
 
 protected:
-
     MCAPI ButtonBlock(std::string const&, int, class Material const&, bool);
 
 private:
-
     MCAPI void _buttonUnpressed(class BlockSource&, class Block const&, class Vec3 const&) const;
     MCAPI void _checkPressed(class BlockSource&, class BlockPos const&) const;
     MCAPI void _getShape(class AABB&, bool, unsigned char, bool) const;
+
 };

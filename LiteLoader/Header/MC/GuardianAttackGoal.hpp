@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GuardianAttackGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANATTACKGOAL
+public:
+    class GuardianAttackGoal& operator=(class GuardianAttackGoal const&) = delete;
+    GuardianAttackGoal(class GuardianAttackGoal const&) = delete;
+    GuardianAttackGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GuardianAttackGoal();
@@ -25,12 +31,9 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI GuardianAttackGoal(class Mob&);
 
 protected:
-
 
 private:
 

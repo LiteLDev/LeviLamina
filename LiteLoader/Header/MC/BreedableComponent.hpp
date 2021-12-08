@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BreedableComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREEDABLECOMPONENT
+public:
+    class BreedableComponent& operator=(class BreedableComponent const&) = delete;
+    BreedableComponent(class BreedableComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI BreedableComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool canMate(class Actor const&, class Actor const&) const;
@@ -34,9 +38,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _handleMate(class Actor&, class Actor&);
     MCAPI void _handlePregnancy(class Actor&, class Actor&);
+
 };

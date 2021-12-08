@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkBlockPos {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
+public:
+    class ChunkBlockPos& operator=(class ChunkBlockPos const&) = delete;
+    ChunkBlockPos(class ChunkBlockPos const&) = delete;
+    ChunkBlockPos() = delete;
+#endif
 
 public:
-
     MCAPI ChunkBlockPos(class BlockPos const&, short);
     MCAPI ChunkBlockPos(unsigned char, class ChunkLocalHeight, unsigned char);
     MCAPI class Pos toPos() const;
@@ -25,7 +30,6 @@ public:
     MCAPI static class ChunkBlockPos fromLegacyIndex(unsigned short);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PackSourceFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKSOURCEFACTORY
+public:
+    class PackSourceFactory& operator=(class PackSourceFactory const&) = delete;
+    PackSourceFactory(class PackSourceFactory const&) = delete;
+    PackSourceFactory() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PackSourceFactory();
@@ -33,7 +39,6 @@ public:
     /*12*/ virtual class InPackagePackSource* getDynamicPackagePackSource(int /*enum enum PackType*/);
     /*13*/ virtual void setDynamicPackagePacks(class std::shared_ptr<class IDynamicPackagePacks> const&);
     /*14*/ virtual void setDynamicPackageRoot(class Core::PathBuffer<std::string >);
-
     /*
     inline  ~PackSourceFactory(){
          (PackSourceFactory::*rv)();
@@ -41,11 +46,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PackSourceFactory(class std::shared_ptr<class IInPackagePacks> const&);
 
 protected:
-
 
 private:
 

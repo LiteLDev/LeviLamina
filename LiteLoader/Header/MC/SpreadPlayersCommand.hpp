@@ -3,33 +3,36 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SpreadPlayersCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPREADPLAYERSCOMMAND
+public:
+    class SpreadPlayersCommand& operator=(class SpreadPlayersCommand const&) = delete;
+    SpreadPlayersCommand(class SpreadPlayersCommand const&) = delete;
+    SpreadPlayersCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SpreadPlayersCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
 
-
 private:
-
     MCAPI static std::vector<class Vec2> createInitialPositions(class Random&, int, class Vec2 const&, class Vec2 const&);
     MCAPI static float setPlayerPositions(class CommandSelectorResults<class Actor>&, class BlockSource&, std::vector<class Vec2>&);
     MCAPI static bool spreadEntities(class CommandOutput&, class CommandSelectorResults<class Actor>&, class BlockSource&, class Vec2 const&, float, float);
     MCAPI static int spreadPositions(class CommandOutput&, class Random&, class BlockSource&, class Vec2 const&, float, class Vec2 const&, class Vec2 const&, std::vector<class Vec2>&);
+
 };

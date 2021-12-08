@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptPluginResult {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGINRESULT
+public:
+    class ScriptPluginResult& operator=(class ScriptPluginResult const&) = delete;
+    ScriptPluginResult(class ScriptPluginResult const&) = delete;
+    ScriptPluginResult() = delete;
+#endif
 
 public:
-
     MCAPI void addError(std::string const&);
     MCAPI void addErrors(std::vector<std::string> const&);
     MCAPI void addWarning(std::string const&);
@@ -25,7 +30,6 @@ public:
     MCAPI ~ScriptPluginResult();
 
 protected:
-
 
 private:
 

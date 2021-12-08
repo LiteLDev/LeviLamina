@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class Tier {
@@ -22,7 +21,14 @@ public:
     Tier(Tier const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEM
+public:
+    class Item& operator=(class Item const&) = delete;
+    Item(class Item const&) = delete;
+    Item() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Item();
@@ -152,7 +158,6 @@ public:
     /*124*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
     /*125*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*126*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool isMultiColorTinted(class ItemStack const& a0) const{
         bool (Item::*rv)(class ItemStack const&) const;
@@ -280,7 +285,6 @@ public:
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     */
-
     MCAPI Item(std::string const&, short);
     MCAPI void addOnResetBAIcallback(class std::function<void (void)> const&);
     MCAPI class Item& addTag(class HashedString const&);
@@ -351,11 +355,10 @@ public:
     MCAPI static struct NewBlockID toBlockId(short);
 
 protected:
-
     MCAPI void _helpChangeInventoryItemInPlace(class Actor&, class ItemStack&, class ItemStack&, enum ItemAcquisitionMethod) const;
 
 private:
-
     MCAPI static void _addLooseCreativeItemsClient();
     MCAPI static std::unique_ptr<class std::set<short, struct std::less<short>, class std::allocator<short> >> mServerItemsUsedInCreativeItems;
+
 };

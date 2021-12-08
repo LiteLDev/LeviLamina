@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "FertilizerItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DyePowderItem : public FertilizerItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYEPOWDERITEM
+public:
+    class DyePowderItem& operator=(class DyePowderItem const&) = delete;
+    DyePowderItem(class DyePowderItem const&) = delete;
+    DyePowderItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DyePowderItem();
@@ -99,12 +105,9 @@ public:
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*79*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI DyePowderItem(std::string const&, int, enum ItemColor, bool, bool);
 
 protected:
-
 
 private:
 

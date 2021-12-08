@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Shulker : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKER
+public:
+    class Shulker& operator=(class Shulker const&) = delete;
+    Shulker(class Shulker const&) = delete;
+    Shulker() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -103,7 +109,6 @@ public:
     /*81*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*82*/ virtual void _serverAiMobStep();
     /*83*/ virtual void __unk_vfn_25();
-
     /*
     inline bool isLeashableType(){
         bool (Shulker::*rv)();
@@ -121,7 +126,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Shulker(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void calculateBB();
     MCAPI bool isValidAttach(class BlockPos, unsigned char);
@@ -132,7 +136,6 @@ public:
     MCAPI static class mce::UUID const COVERED_ARMOR_MODIFIER_UUID;
 
 protected:
-
     MCAPI bool tryFindNewAttachPosition();
     MCAPI bool trySetNewAttachPosition(class BlockPos const&);
 

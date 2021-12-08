@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WaterAnimal : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERANIMAL
+public:
+    class WaterAnimal& operator=(class WaterAnimal const&) = delete;
+    WaterAnimal(class WaterAnimal const&) = delete;
+    WaterAnimal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WaterAnimal();
@@ -86,7 +92,6 @@ public:
     /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
     /*66*/ virtual void __unk_vfn_25();
-
     /*
     inline bool useNewAi() const{
         bool (WaterAnimal::*rv)() const;
@@ -95,9 +100,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

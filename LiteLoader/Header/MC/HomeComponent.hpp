@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HomeComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOMECOMPONENT
+public:
+    class HomeComponent& operator=(class HomeComponent const&) = delete;
+    HomeComponent(class HomeComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI HomeComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI class AutomaticID<class Dimension, int> getHomeDimension() const;
@@ -32,7 +36,6 @@ public:
     MCAPI void tick(class Actor&);
 
 protected:
-
 
 private:
 

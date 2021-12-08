@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NavigationScriptActorComponent : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NAVIGATIONSCRIPTACTORCOMPONENT
+public:
+    class NavigationScriptActorComponent& operator=(class NavigationScriptActorComponent const&) = delete;
+    NavigationScriptActorComponent(class NavigationScriptActorComponent const&) = delete;
+    NavigationScriptActorComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NavigationScriptActorComponent();
@@ -40,10 +46,7 @@ public:
     /*18*/ virtual class Scripting::Result<bool> getCanJump() const;
     /*19*/ virtual class Scripting::Result<bool> getCanPathFromAir() const;
 
-
-
 protected:
-
 
 private:
 

@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 NCLUDE_PART_VANILLALEVELCHUNKUPGRADE
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorTickNeededComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORTICKNEEDEDCOMPONENT
+public:
+    class ActorTickNeededComponent& operator=(class ActorTickNeededComponent const&) = delete;
+    ActorTickNeededComponent(class ActorTickNeededComponent const&) = delete;
+    ActorTickNeededComponent() = delete;
+#endif
 
 public:
-
     MCAPI ActorTickNeededComponent(class ActorTickNeededComponent&&);
     MCAPI ActorTickNeededComponent(class BlockSource&);
     MCAPI class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getBlockSource();
@@ -26,7 +31,6 @@ public:
     MCAPI ~ActorTickNeededComponent();
 
 protected:
-
 
 private:
 

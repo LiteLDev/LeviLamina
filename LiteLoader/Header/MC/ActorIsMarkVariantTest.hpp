@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterTest.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorIsMarkVariantTest : public FilterTest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISMARKVARIANTTEST
+public:
+    class ActorIsMarkVariantTest& operator=(class ActorIsMarkVariantTest const&) = delete;
+    ActorIsMarkVariantTest(class ActorIsMarkVariantTest const&) = delete;
+    ActorIsMarkVariantTest() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorIsMarkVariantTest();
@@ -24,7 +30,6 @@ public:
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*4*/ virtual class Json::Value _serializeValue() const;
-
     /*
     inline  ~ActorIsMarkVariantTest(){
          (ActorIsMarkVariantTest::*rv)();
@@ -33,9 +38,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

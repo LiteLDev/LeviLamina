@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CerealItemComponentFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Constructor {
@@ -20,19 +19,24 @@ struct Constructor {
     Constructor(Constructor const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CEREALITEMCOMPONENTFACTORY
+public:
+    class CerealItemComponentFactory& operator=(class CerealItemComponentFactory const&) = delete;
+    CerealItemComponentFactory(class CerealItemComponentFactory const&) = delete;
+    CerealItemComponentFactory() = delete;
+#endif
 
 public:
-
     MCAPI static class entt::meta_any constructComponent(std::string const&);
     MCAPI static class entt::meta_any getComponent(std::string const&, void*);
     MCAPI static void setItemContext(class ComponentItem*);
 
 protected:
 
-
 private:
-
     MCAPI static class ComponentItem* mItemContext;
     MCAPI static class std::map<std::string, struct CerealItemComponentFactory::Constructor, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct CerealItemComponentFactory::Constructor> > > mRegisteredComponents;
+
 };

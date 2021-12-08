@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDITEM
+public:
+    class CommandItem& operator=(class CommandItem const&) = delete;
+    CommandItem(class CommandItem const&) = delete;
+#endif
 
 public:
-
     MCAPI CommandItem(unsigned __int64);
     MCAPI CommandItem(int, short, bool);
     MCAPI CommandItem();
@@ -27,7 +31,6 @@ public:
     MCAPI operator unsigned __int64();
 
 protected:
-
 
 private:
 

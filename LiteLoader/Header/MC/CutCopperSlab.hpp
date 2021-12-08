@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "SlabBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CutCopperSlab : public SlabBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUTCOPPERSLAB
+public:
+    class CutCopperSlab& operator=(class CutCopperSlab const&) = delete;
+    CutCopperSlab(class CutCopperSlab const&) = delete;
+    CutCopperSlab() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CutCopperSlab();
@@ -132,13 +138,10 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-
-
     MCAPI CutCopperSlab(std::string const&, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy>&, class WeakPtr<class BlockLegacy>&, class WeakPtr<class BlockLegacy>&);
     MCAPI CutCopperSlab(std::string const&, int, bool, class WeakPtr<class BlockLegacy>, enum CopperType, class WeakPtr<class BlockLegacy>&);
 
 protected:
-
 
 private:
 

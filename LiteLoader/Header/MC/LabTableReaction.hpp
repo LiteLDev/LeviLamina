@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LabTableReaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LABTABLEREACTION
+public:
+    class LabTableReaction& operator=(class LabTableReaction const&) = delete;
+    LabTableReaction(class LabTableReaction const&) = delete;
+    LabTableReaction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LabTableReaction();
-
-
     MCAPI void addComponent(std::unique_ptr<class LabTableReactionComponent>);
     MCAPI void addResultItem(class ItemStack const&);
     MCAPI int getReactionId();
@@ -28,7 +32,6 @@ public:
     MCAPI static std::unique_ptr<class LabTableReaction> createReaction(enum LabTableReactionType, class BlockPos const&, bool);
 
 protected:
-
 
 private:
 

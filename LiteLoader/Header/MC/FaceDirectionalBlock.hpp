@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FaceDirectionalBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACEDIRECTIONALBLOCK
+public:
+    class FaceDirectionalBlock& operator=(class FaceDirectionalBlock const&) = delete;
+    FaceDirectionalBlock(class FaceDirectionalBlock const&) = delete;
+    FaceDirectionalBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FaceDirectionalBlock();
@@ -134,7 +140,6 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-
     /*
     inline  ~FaceDirectionalBlock(){
          (FaceDirectionalBlock::*rv)();
@@ -142,14 +147,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI FaceDirectionalBlock(std::string const&, int, class Material const&, bool, float);
     MCAPI static enum Flip getFaceFlipStatic(unsigned char, class Block const&, bool);
     MCAPI static unsigned char getFacingDirection(class Block const&, bool);
     MCAPI static unsigned char getMappedFaceStatic(unsigned char, class Block const&, bool);
 
 protected:
-
 
 private:
 

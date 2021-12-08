@@ -2,34 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseScriptBlockLiquidContainerComponent : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASESCRIPTBLOCKLIQUIDCONTAINERCOMPONENT
+public:
+    class BaseScriptBlockLiquidContainerComponent& operator=(class BaseScriptBlockLiquidContainerComponent const&) = delete;
+    BaseScriptBlockLiquidContainerComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
     /*1*/ virtual class Scripting::Result<void> setFillLevel(int);
-
-
     MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent const&);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent&&);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&, enum CauldronLiquidType);
     MCAPI class Scripting::Result<int> getFillLevel();
 
 protected:
-
     MCAPI class CauldronBlock const* _tryGetCauldronBlock();
     MCAPI class CauldronBlockActor* _tryGetCauldronBlockActor();
     MCAPI static enum GameTestFluidType _getActualCauldronLiquidType(class BlockSource&, class BlockPos);

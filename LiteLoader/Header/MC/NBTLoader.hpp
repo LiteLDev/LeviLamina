@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NBTLoader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBTLOADER
+public:
+    class NBTLoader& operator=(class NBTLoader const&) = delete;
+    NBTLoader(class NBTLoader const&) = delete;
+    NBTLoader() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NBTLoader();
@@ -48,7 +54,6 @@ public:
     /*28*/ virtual bool isShort() const;
     /*29*/ virtual void __unk_vfn_12();
     /*30*/ virtual bool isFloat() const;
-
     /*
     inline bool doSerialize(unsigned __int64& a0){
         bool (NBTLoader::*rv)(unsigned __int64&);
@@ -121,11 +126,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NBTLoader(class gsl::not_null<class CompoundTag const* >);
 
 protected:
-
 
 private:
 

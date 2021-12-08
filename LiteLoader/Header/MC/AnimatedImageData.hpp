@@ -2,26 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "persona.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AnimatedImageData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATEDIMAGEDATA
+public:
+    class AnimatedImageData& operator=(class AnimatedImageData const&) = delete;
+    AnimatedImageData() = delete;
+#endif
 
 public:
-
     MCAPI AnimatedImageData(class AnimatedImageData const&);
     MCAPI AnimatedImageData(enum persona::AnimatedTextureType, enum persona::AnimationExpression, struct mce::Image const&, float);
 
 protected:
-
 
 private:
 

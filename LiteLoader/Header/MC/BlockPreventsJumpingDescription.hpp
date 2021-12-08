@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockPreventsJumpingDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPREVENTSJUMPINGDESCRIPTION
+public:
+    class BlockPreventsJumpingDescription& operator=(class BlockPreventsJumpingDescription const&) = delete;
+    BlockPreventsJumpingDescription(class BlockPreventsJumpingDescription const&) = delete;
+    BlockPreventsJumpingDescription() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockPreventsJumpingDescription();
@@ -25,12 +31,9 @@ public:
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI static std::string const NameID;
 
 protected:
-
 
 private:
 

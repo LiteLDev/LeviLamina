@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RandomStrollGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomSwimmingGoal : public RandomStrollGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSWIMMINGGOAL
+public:
+    class RandomSwimmingGoal& operator=(class RandomSwimmingGoal const&) = delete;
+    RandomSwimmingGoal(class RandomSwimmingGoal const&) = delete;
+    RandomSwimmingGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RandomSwimmingGoal();
@@ -26,12 +32,9 @@ public:
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual bool _setWantedPosition();
-
-
     MCAPI RandomSwimmingGoal(class Mob&, float, int, int, int, bool);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ItemFrameBlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GlowItemFrameBlockActor : public ItemFrameBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWITEMFRAMEBLOCKACTOR
+public:
+    class GlowItemFrameBlockActor& operator=(class GlowItemFrameBlockActor const&) = delete;
+    GlowItemFrameBlockActor(class GlowItemFrameBlockActor const&) = delete;
+    GlowItemFrameBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
@@ -46,12 +52,9 @@ public:
     /*25*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*26*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*27*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI GlowItemFrameBlockActor(class BlockPos);
 
 protected:
-
 
 private:
 

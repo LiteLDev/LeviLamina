@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREVENTLISTENER
+public:
+    class PlayerEventListener& operator=(class PlayerEventListener const&) = delete;
+    PlayerEventListener(class PlayerEventListener const&) = delete;
+    PlayerEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlayerEventListener();
-
     /*
     inline int \/*enum enum EventResult*\/ onPlayerAction(class Player& a0, int \/*enum enum PlayerActionType*\/ a1, class BlockPos const& a2, int a3){
         int \/*enum enum EventResult*\/ (PlayerEventListener::*rv)(class Player&, int \/*enum enum PlayerActionType*\/, class BlockPos const&, int);
@@ -322,9 +327,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

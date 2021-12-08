@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseCircuitComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TransporterComponent : public BaseCircuitComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSPORTERCOMPONENT
+public:
+    class TransporterComponent& operator=(class TransporterComponent const&) = delete;
+    TransporterComponent(class TransporterComponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~TransporterComponent();
@@ -37,7 +42,6 @@ public:
     /*16*/ virtual void __unk_vfn_2();
     /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
-
     /*
     inline bool canConsumerPower() const{
         bool (TransporterComponent::*rv)() const;
@@ -45,11 +49,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TransporterComponent();
 
 protected:
-
 
 private:
 

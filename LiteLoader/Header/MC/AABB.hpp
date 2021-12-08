@@ -3,24 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AABB {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_AABB
 public:
-    Vec3 pointA {};
-    Vec3 pointB {};
+    Vec3 pointA{};
+    Vec3 pointB{};
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AABB
+public:
+    class AABB& operator=(class AABB const&) = delete;
+    AABB(class AABB const&) = delete;
+    AABB() = delete;
+#endif
 
 public:
-
     MCAPI AABB(class Vec3 const&, class Vec3 const&);
     MCAPI AABB(class Vec3 const&, float);
     MCAPI AABB(float, float, float, float, float, float);
@@ -56,8 +62,5 @@ public:
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 
 protected:
-
-
 private:
-
 };

@@ -2,31 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveControl.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GenericMoveControl : public MoveControl {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENERICMOVECONTROL
+public:
+    class GenericMoveControl& operator=(class GenericMoveControl const&) = delete;
+    GenericMoveControl(class GenericMoveControl const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~GenericMoveControl();
     /*1*/ virtual void initializeInternal(class Mob&, struct MoveControlDescription*);
     /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
-
-
     MCAPI GenericMoveControl();
 
 protected:
-
 
 private:
 

@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemAcquisitionMethodMap {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACQUISITIONMETHODMAP
+public:
+    class ItemAcquisitionMethodMap& operator=(class ItemAcquisitionMethodMap const&) = delete;
+    ItemAcquisitionMethodMap(class ItemAcquisitionMethodMap const&) = delete;
+    ItemAcquisitionMethodMap() = delete;
+#endif
 
 public:
-
     MCAPI static std::string const& getItemAcquisitionMethodName(enum ItemAcquisitionMethod);
 
 protected:
 
-
 private:
-
     MCAPI static class BidirectionalUnorderedMap<enum ItemAcquisitionMethod, std::string > const mMap;
+
 };

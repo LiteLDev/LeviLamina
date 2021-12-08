@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace JsonPackUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool readBoolAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool, bool);
     MCAPI int readIntAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool, int);
     MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readRequiredValue(class Json::Value const&, std::string const&, enum Json::ValueType);
@@ -23,4 +22,5 @@ namespace JsonPackUtils {
     MCAPI std::vector<std::string> readStringArrayAndReport(class Json::Value const&, std::string const&, std::vector<std::string>&, class PackReport&, bool);
     MCAPI struct std::pair<class Json::Value const, enum PackParseErrorType> readValueAndReportErrors(class Json::Value const&, std::string const&, enum Json::ValueType, std::vector<std::string>&, class PackReport&, bool);
     MCAPI std::string stringizePath(std::vector<std::string> const&);
+
 };

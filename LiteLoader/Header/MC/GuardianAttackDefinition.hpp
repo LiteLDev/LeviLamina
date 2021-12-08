@@ -2,32 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GuardianAttackDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIANATTACKDEFINITION
+public:
+    class GuardianAttackDefinition& operator=(class GuardianAttackDefinition const&) = delete;
+    GuardianAttackDefinition(class GuardianAttackDefinition const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~GuardianAttackDefinition();
     /*1*/ virtual bool validateMobType(class Mob&);
-
-
     MCAPI GuardianAttackDefinition();
     MCAPI void initialize(class EntityContext&, class GuardianAttackGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class GuardianAttackDefinition> >&);
 
 protected:
-
 
 private:
 

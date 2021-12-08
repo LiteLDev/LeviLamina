@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockVolume {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct BlockVolumeIter {
@@ -20,10 +19,16 @@ struct BlockVolumeIter {
     BlockVolumeIter(BlockVolumeIter const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKVOLUME
+public:
+    class BlockVolume& operator=(class BlockVolume const&) = delete;
+    BlockVolume(class BlockVolume const&) = delete;
+    BlockVolume() = delete;
+#endif
 
 public:
-
     MCAPI BlockVolume(class buffer_span_mut<class Block const* >, int, int, int, class Block const&, int);
     MCAPI struct BlockVolume::BlockVolumeIter begin() const;
     MCAPI std::unique_ptr<std::vector<short>> computeHeightMap() const;
@@ -40,7 +45,6 @@ public:
     MCAPI bool isInBounds(class BlockPos const&) const;
 
 protected:
-
 
 private:
 

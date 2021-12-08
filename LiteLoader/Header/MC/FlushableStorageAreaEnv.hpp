@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FlushableStorageAreaEnv {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLUSHABLESTORAGEAREAENV
+public:
+    class FlushableStorageAreaEnv& operator=(class FlushableStorageAreaEnv const&) = delete;
+    FlushableStorageAreaEnv(class FlushableStorageAreaEnv const&) = delete;
+    FlushableStorageAreaEnv() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FlushableStorageAreaEnv();
@@ -39,10 +45,7 @@ public:
     /*19*/ virtual void __unk_vfn_18();
     /*20*/ virtual void flushToPermanentStorage();
 
-
-
 protected:
-
 
 private:
 

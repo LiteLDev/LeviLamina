@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptPlugin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPLUGIN
+public:
+    class ScriptPlugin& operator=(class ScriptPlugin const&) = delete;
+    ScriptPlugin(class ScriptPlugin const&) = delete;
+    ScriptPlugin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptPlugin();
     /*1*/ virtual class std::optional<std::string > onLoadScript(std::string const&);
-
     /*
     inline  ~ScriptPlugin(){
          (ScriptPlugin::*rv)();
@@ -27,15 +32,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptPlugin(class ScriptPlugin&&);
     MCAPI bool hasErrors() const;
     MCAPI std::vector<std::string> reportErrors() const;
 
 protected:
 
-
 private:
-
     MCAPI class std::optional<std::string > _loadScript(std::string const&);
+
 };

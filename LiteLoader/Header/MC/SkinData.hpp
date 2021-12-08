@@ -2,30 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SkinData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKINDATA
+public:
+    struct SkinData& operator=(struct SkinData const&) = delete;
+    SkinData(struct SkinData const&) = delete;
+    SkinData() = delete;
+#endif
 
 public:
-
     MCAPI SkinData(class Actor const&);
     MCAPI SkinData(class Json::Value const&);
     MCAPI void applyToActor(class Actor&) const;
     MCAPI bool softMatch(struct SkinData const&, bool&) const;
 
 protected:
-
 
 private:
 

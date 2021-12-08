@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StainedGlassBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STAINEDGLASSBLOCK
+public:
+    class StainedGlassBlock& operator=(class StainedGlassBlock const&) = delete;
+    StainedGlassBlock(class StainedGlassBlock const&) = delete;
+    StainedGlassBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StainedGlassBlock();
@@ -139,14 +145,11 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
-
     MCAPI StainedGlassBlock(std::string const&, int, class Material const&, bool, bool);
 
 protected:
 
-
 private:
-
     MCAPI static class BaseGameVersion const STAINED_GLASS_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 };

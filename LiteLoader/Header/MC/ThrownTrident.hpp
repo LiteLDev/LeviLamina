@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "AbstractArrow.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ThrownTrident : public AbstractArrow {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWNTRIDENT
+public:
+    class ThrownTrident& operator=(class ThrownTrident const&) = delete;
+    ThrownTrident(class ThrownTrident const&) = delete;
+    ThrownTrident() = delete;
+#endif
 
 public:
     /*0*/ virtual void outOfWorld();
@@ -102,15 +108,12 @@ public:
     /*80*/ virtual void __unk_vfn_21();
     /*81*/ virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
     /*82*/ virtual class ItemStack _getPickupItem() const;
-
-
     MCAPI ThrownTrident(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class ItemStack getPickupItem() const;
     MCAPI void returnWithLoyalty(int);
     MCAPI void setTridentItem(class ItemStack const&);
 
 protected:
-
 
 private:
 

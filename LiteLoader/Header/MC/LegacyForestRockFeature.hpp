@@ -2,31 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Feature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyForestRockFeature : public Feature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYFORESTROCKFEATURE
+public:
+    class LegacyForestRockFeature& operator=(class LegacyForestRockFeature const&) = delete;
+    LegacyForestRockFeature(class LegacyForestRockFeature const&) = delete;
+    LegacyForestRockFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LegacyForestRockFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-
     MCAPI LegacyForestRockFeature(class FeatureRegistry const&);
 
 protected:
-
 
 private:
 

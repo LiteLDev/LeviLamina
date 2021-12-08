@@ -2,21 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MapItemTrackedActor.hpp"
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClientboundMapItemDataPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBOUNDMAPITEMDATAPACKET
+public:
+    class ClientboundMapItemDataPacket& operator=(class ClientboundMapItemDataPacket const&) = delete;
+    ClientboundMapItemDataPacket(class ClientboundMapItemDataPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ClientboundMapItemDataPacket();
@@ -25,7 +30,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~ClientboundMapItemDataPacket(){
          (ClientboundMapItemDataPacket::*rv)();
@@ -33,13 +37,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ClientboundMapItemDataPacket(struct ActorUniqueID, signed char, std::vector<struct std::pair<struct MapItemTrackedActor::UniqueId, class std::shared_ptr<class MapDecoration> >> const&, class buffer_span<unsigned int>, int, int, int, int, class AutomaticID<class Dimension, int>, bool);
     MCAPI ClientboundMapItemDataPacket(class gsl::not_null<class MapItemSavedData* >, class Level&);
     MCAPI ClientboundMapItemDataPacket();
 
 protected:
-
 
 private:
 

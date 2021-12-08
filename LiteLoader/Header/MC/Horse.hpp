@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Animal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Horse : public Animal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSE
+public:
+    class Horse& operator=(class Horse const&) = delete;
+    Horse(class Horse const&) = delete;
+    Horse() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -113,7 +119,6 @@ public:
     /*91*/ virtual bool isTailMoving() const;
     /*92*/ virtual void makeMad();
     /*93*/ virtual bool tameToPlayer(class Player&, bool);
-
     /*
     inline bool useNewAi() const{
         bool (Horse::*rv)() const;
@@ -121,17 +126,15 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Horse(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI static int const DONKEY_CHEST_COUNT;
 
 protected:
 
-
 private:
-
     MCAPI void openMouth();
     MCAPI void setHorseFlag(enum HorseFlags, bool);
     MCAPI bool setHorseType(enum ActorType&);
     MCAPI static int const DATA_AGE;
+
 };

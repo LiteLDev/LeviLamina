@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScreenHandlerBeacon {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCREENHANDLERBEACON
+public:
+    class ScreenHandlerBeacon& operator=(class ScreenHandlerBeacon const&) = delete;
+    ScreenHandlerBeacon(class ScreenHandlerBeacon const&) = delete;
+    ScreenHandlerBeacon() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScreenHandlerBeacon();
@@ -23,12 +29,9 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void postRequest(bool);
 
-
-
 protected:
 
-
 private:
-
     MCAPI enum ItemStackNetResult _handleBeaconPaymentAction(class ItemStackRequestActionBeaconPayment const&);
+
 };

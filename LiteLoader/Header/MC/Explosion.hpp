@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Explosion {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSION
+public:
+    class Explosion& operator=(class Explosion const&) = delete;
+    Explosion(class Explosion const&) = delete;
+    Explosion() = delete;
+#endif
 
 public:
-
     MCAPI Explosion(class BlockSource&, class Actor*, class Vec3 const&, float);
     MCAPI void explode();
     MCAPI void overrideInWater(bool);
@@ -28,7 +33,6 @@ public:
     MCAPI ~Explosion();
 
 protected:
-
 
 private:
 

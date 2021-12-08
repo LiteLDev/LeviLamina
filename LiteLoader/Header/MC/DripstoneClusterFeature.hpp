@@ -3,30 +3,33 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DripstoneClusterFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRIPSTONECLUSTERFEATURE
+public:
+    class DripstoneClusterFeature& operator=(class DripstoneClusterFeature const&) = delete;
+    DripstoneClusterFeature(class DripstoneClusterFeature const&) = delete;
+    DripstoneClusterFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DripstoneClusterFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI static bool _placeColumn(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int, float, double, int, float);
     MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int, unsigned char);
+
 };

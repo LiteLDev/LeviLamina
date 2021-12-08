@@ -2,29 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ZlibFileAccessWrapper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZLIBFILEACCESSWRAPPER
+public:
+    class ZlibFileAccessWrapper& operator=(class ZlibFileAccessWrapper const&) = delete;
+    ZlibFileAccessWrapper(class ZlibFileAccessWrapper const&) = delete;
+    ZlibFileAccessWrapper() = delete;
+#endif
 
 public:
-
     MCAPI ZlibFileAccessWrapper(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> >);
     MCAPI struct zlib_filefunc64_32_def_s* getZipFunctions() const;
     MCAPI ~ZlibFileAccessWrapper();
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FileSecureStorage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILESECURESTORAGE
+public:
+    class FileSecureStorage& operator=(class FileSecureStorage const&) = delete;
+    FileSecureStorage(class FileSecureStorage const&) = delete;
+    FileSecureStorage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FileSecureStorage();
@@ -23,18 +29,15 @@ public:
     /*2*/ virtual bool addOrUpdate(std::string const&, std::string const&);
     /*3*/ virtual bool remove(std::string const&);
     /*4*/ virtual bool get(std::string const&, std::string&);
-
-
     MCAPI FileSecureStorage(class Core::PathBuffer<std::string > const&, class Core::PathBuffer<class Core::StackString<char, 1024> > const&, class ISecureStorageKeySystem*, class Core::Path const&, class FileSecureStorage::StorageSystem*);
 
 protected:
-
     MCAPI bool _init(bool);
 
 private:
-
     MCAPI std::string _contentKeyObfuscator(std::string const&, std::string const&);
     MCAPI class SecureStorageKey _getSecureStorageKey() const;
     MCAPI void _initalizeSymmetricEncyrption(std::string&, bool);
     MCAPI void _rebuildSecureStorageFile();
+
 };

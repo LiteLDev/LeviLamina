@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RangedWeaponItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANGEDWEAPONITEM
+public:
+    class RangedWeaponItem& operator=(class RangedWeaponItem const&) = delete;
+    RangedWeaponItem(class RangedWeaponItem const&) = delete;
+    RangedWeaponItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RangedWeaponItem();
@@ -99,7 +105,6 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
     /*
     inline  ~RangedWeaponItem(){
          (RangedWeaponItem::*rv)();
@@ -107,12 +112,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RangedWeaponItem(std::string const&, int);
     MCAPI float getLaunchPower(int, int, int) const;
 
 protected:
-
 
 private:
 

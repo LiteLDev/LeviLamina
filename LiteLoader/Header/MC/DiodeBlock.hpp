@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DiodeBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIODEBLOCK
+public:
+    class DiodeBlock& operator=(class DiodeBlock const&) = delete;
+    DiodeBlock(class DiodeBlock const&) = delete;
+    DiodeBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DiodeBlock();
@@ -150,7 +156,6 @@ public:
     /*129*/ virtual int getTurnOnDelay(class Block const&) const = 0;
     /*130*/ virtual class Block const* getOnBlock(class Block const*) const = 0;
     /*131*/ virtual class Block const* getOffBlock(class Block const*) const = 0;
-
     /*
     inline bool canSpawnOn() const{
         bool (DiodeBlock::*rv)() const;
@@ -168,12 +173,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DiodeBlock(std::string const&, int, bool);
     MCAPI static bool isDiode(class Block const&);
 
 protected:
-
     MCAPI int getAlternateSignalAt(class BlockSource&, class BlockPos const&, int) const;
 
 private:

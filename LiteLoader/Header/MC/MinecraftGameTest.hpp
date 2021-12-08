@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockSourceListener.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftGameTest : public BlockSourceListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETEST
+public:
+    class MinecraftGameTest& operator=(class MinecraftGameTest const&) = delete;
+    MinecraftGameTest(class MinecraftGameTest const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecraftGameTest();
@@ -44,8 +49,6 @@ public:
     /*23*/ virtual void __unk_vfn_20();
     /*24*/ virtual void __unk_vfn_21();
     /*25*/ virtual void onLevelDestruction(std::string const&);
-
-
     MCAPI MinecraftGameTest();
     MCAPI void clearAllTests(class BlockSource&);
     MCAPI class gametest::GameTestRegistry& getRegistry();
@@ -59,8 +62,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _runTestPreparation(class gametest::BaseGameTestFunction const&);
+
 };

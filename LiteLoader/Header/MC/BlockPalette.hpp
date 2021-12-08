@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockPalette {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPALETTE
+public:
+    class BlockPalette& operator=(class BlockPalette const&) = delete;
+    BlockPalette(class BlockPalette const&) = delete;
+    BlockPalette() = delete;
+#endif
 
 public:
-
     MCAPI BlockPalette(class Level&);
     MCAPI BlockPalette(struct BlockPalette::ConstructorToken);
     MCAPI void cacheBlockComponentData();
@@ -33,8 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool shouldWarnFor(struct NewBlockID, unsigned short) const;
+
 };

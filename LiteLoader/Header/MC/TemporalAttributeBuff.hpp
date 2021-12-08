@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TemporalAttributeBuff {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEMPORALATTRIBUTEBUFF
+public:
+    class TemporalAttributeBuff& operator=(class TemporalAttributeBuff const&) = delete;
+    TemporalAttributeBuff() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TemporalAttributeBuff();
@@ -23,7 +28,6 @@ public:
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /*4*/ virtual bool shouldBuff() const;
     /*5*/ virtual bool isComplete() const;
-
     /*
     inline  ~TemporalAttributeBuff(){
          (TemporalAttributeBuff::*rv)();
@@ -31,7 +35,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TemporalAttributeBuff(class TemporalAttributeBuff const&);
     MCAPI TemporalAttributeBuff(float, int, enum AttributeBuffType, bool, std::string const&);
     MCAPI float getBaseAmount() const;
@@ -40,7 +43,6 @@ public:
     MCAPI void serializationSetLifeTime(int);
 
 protected:
-
 
 private:
 

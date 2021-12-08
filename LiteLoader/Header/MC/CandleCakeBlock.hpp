@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "AbstractCandleBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CandleCakeBlock : public AbstractCandleBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANDLECAKEBLOCK
+public:
+    class CandleCakeBlock& operator=(class CandleCakeBlock const&) = delete;
+    CandleCakeBlock(class CandleCakeBlock const&) = delete;
+    CandleCakeBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CandleCakeBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual int _getNumCandles(class Block const&) const;
     /*119*/ virtual void _iterateCandles(class Block const&, class BlockPos const&, class std::function<void (class Vec3 const& , int)>) const;
     /*120*/ virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (CandleCakeBlock::*rv)() const;
@@ -157,7 +162,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CandleCakeBlock(std::string const&, int);
     MCAPI static class Block const& getCandleCakeFromCandle(class Block const&);
     MCAPI static class Block const& getCandleFromCandleCake(class Block const&);
@@ -165,9 +169,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _popCandle(class BlockSource&, class BlockPos const&) const;
     MCAPI static void _forEachCandle(class Block const&, class BlockPos const&, class std::function<void (class Vec3 const& , int)>);
+
 };

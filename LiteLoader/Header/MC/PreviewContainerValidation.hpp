@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerValidationBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PreviewContainerValidation : public ContainerValidationBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREVIEWCONTAINERVALIDATION
+public:
+    class PreviewContainerValidation& operator=(class PreviewContainerValidation const&) = delete;
+    PreviewContainerValidation(class PreviewContainerValidation const&) = delete;
+    PreviewContainerValidation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PreviewContainerValidation();
@@ -23,7 +29,6 @@ public:
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_3();
-
     /*
     inline bool isValidSlotForContainer(class ContainerScreenContext const& a0, class Container const& a1, int a2) const{
         bool (PreviewContainerValidation::*rv)(class ContainerScreenContext const&, class Container const&, int) const;
@@ -42,9 +47,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

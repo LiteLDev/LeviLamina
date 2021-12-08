@@ -2,29 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct IsChargedDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISCHARGEDDEFINITION
+public:
+    struct IsChargedDefinition& operator=(struct IsChargedDefinition const&) = delete;
+    IsChargedDefinition(struct IsChargedDefinition const&) = delete;
+    IsChargedDefinition() = delete;
+#endif
 
 public:
-
     MCAPI void initialize(class EntityContext&);
     MCAPI void uninitialize(class EntityContext&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct IsChargedDefinition> >&);
 
 protected:
-
 
 private:
 

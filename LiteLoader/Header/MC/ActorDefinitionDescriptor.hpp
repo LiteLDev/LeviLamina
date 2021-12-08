@@ -3,21 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorDefinitionDescriptor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor&&);
     MCAPI ActorDefinitionDescriptor();
     MCAPI ActorDefinitionDescriptor(class ActorDefinitionDescriptor const&);
@@ -38,9 +36,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _executeEvent(class Actor&, std::string const&, std::vector<struct std::pair<std::string const, std::string const>>&, class VariantParameterList const&);
     MCAPI void _forceExecuteTrigger(class Actor&, class DefinitionTrigger const&, std::vector<struct std::pair<std::string const, std::string const>>&, class VariantParameterList const&);
+
 };

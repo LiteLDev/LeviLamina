@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Objective {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OBJECTIVE
+public:
+    class Objective& operator=(class Objective const&) = delete;
+    Objective(class Objective const&) = delete;
+    Objective() = delete;
+#endif
 
 public:
-
     MCAPI Objective(std::string const&, class ObjectiveCriteria const&);
     MCAPI class ObjectiveCriteria const& getCriteria() const;
     MCAPI std::string const& getDisplayName() const;
@@ -30,7 +35,6 @@ public:
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class Objective const&);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BrewingStandBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDBLOCKACTOR
+public:
+    class BrewingStandBlockActor& operator=(class BrewingStandBlockActor const&) = delete;
+    BrewingStandBlockActor(class BrewingStandBlockActor const&) = delete;
+    BrewingStandBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -109,7 +115,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI void brew();
     MCAPI int getBrewTime() const;
     MCAPI int getFuelAmount() const;
@@ -121,8 +126,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool canBrew();
+
 };

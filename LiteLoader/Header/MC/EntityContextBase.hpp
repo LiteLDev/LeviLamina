@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EntityContextBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYCONTEXTBASE
+public:
+    class EntityContextBase& operator=(class EntityContextBase const&) = delete;
+    EntityContextBase(class EntityContextBase const&) = delete;
+    EntityContextBase() = delete;
+#endif
 
 public:
-
     MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
     MCAPI bool isValid() const;
     MCAPI bool operator==(class EntityContextBase const&);
 
 protected:
-
     MCAPI void _assertValid() const;
     MCAPI class entt::basic_registry<class EntityId> const& _enttRegistry() const;
     MCAPI class entt::basic_registry<class EntityId>& _enttRegistry();

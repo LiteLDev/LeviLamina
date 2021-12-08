@@ -2,32 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RegionFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REGIONFILE
+public:
+    class RegionFile& operator=(class RegionFile const&) = delete;
+    RegionFile(class RegionFile const&) = delete;
+    RegionFile() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RegionFile();
-
-
     MCAPI RegionFile(class Core::Path const&);
     MCAPI bool open();
     MCAPI bool readChunk(int, int, class RakNet::BitStream* *);
 
 protected:
-
 
 private:
 

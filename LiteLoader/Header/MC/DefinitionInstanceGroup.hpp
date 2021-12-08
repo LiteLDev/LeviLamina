@@ -3,21 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DefinitionInstanceGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI DefinitionInstanceGroup();
     MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup&&);
     MCAPI DefinitionInstanceGroup(class DefinitionInstanceGroup const&);
@@ -34,8 +32,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::string const& _getDefinitionNameFromTypeId(unsigned short const&) const;
+
 };

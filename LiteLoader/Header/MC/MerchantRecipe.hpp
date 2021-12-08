@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MerchantRecipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPE
+public:
+    class MerchantRecipe& operator=(class MerchantRecipe const&) = delete;
+    MerchantRecipe() = delete;
+#endif
 
 public:
-
     MCAPI MerchantRecipe(class MerchantRecipe const&);
     MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&, class ItemInstance const&);
     MCAPI MerchantRecipe(class ItemInstance const&, class ItemInstance const&);
@@ -53,7 +57,6 @@ public:
     MCAPI ~MerchantRecipe();
 
 protected:
-
 
 private:
 

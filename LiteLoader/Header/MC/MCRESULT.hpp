@@ -3,31 +3,34 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MCRESULT {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
-unsigned char filler[4];
-operator bool() {
-    return filler[0];
-}
+#define DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
+    unsigned char filler[4];
+    operator bool() {
+        return filler[0];
+    }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MCRESULT
+public:
+    struct MCRESULT& operator=(struct MCRESULT const&) = delete;
+    MCRESULT(struct MCRESULT const&) = delete;
+    MCRESULT() = delete;
+#endif
 
 public:
-
     MCAPI int getFullCode() const;
     MCAPI bool isSuccess() const;
 
 protected:
-
-
 private:
-
 };

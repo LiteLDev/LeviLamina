@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HangingActor : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HANGINGACTOR
+public:
+    class HangingActor& operator=(class HangingActor const&) = delete;
+    HangingActor(class HangingActor const&) = delete;
+    HangingActor() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -106,19 +112,16 @@ public:
     /*85*/ virtual void dropItem() = 0;
     /*86*/ virtual bool placeHangingEntity(class BlockSource&, int);
     /*87*/ virtual bool wouldSurvive(class BlockSource&);
-
-
     MCAPI HangingActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getDirection() const;
 
 protected:
-
     MCAPI void _calculateAABB();
     MCAPI void _calculateActorPositionFromPlacementPosition(class BlockPos const&);
     MCAPI bool _wouldSurvive(class BlockSource&, class BlockPos const&, bool);
 
 private:
-
     MCAPI bool _canSurviveOnBlock(class BlockSource const&, class BlockPos const&, bool) const;
     MCAPI static float const HANGING_OFFSET;
+
 };

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SculkCatalystBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKCATALYSTBLOCKACTOR
+public:
+    class SculkCatalystBlockActor& operator=(class SculkCatalystBlockActor const&) = delete;
+    SculkCatalystBlockActor(class SculkCatalystBlockActor const&) = delete;
+    SculkCatalystBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -44,13 +50,11 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI SculkCatalystBlockActor(class BlockPos const&);
     MCAPI static enum BlockActorType const TypeId;
     MCAPI static std::string const TypeString;
 
 protected:
-
 
 private:
 

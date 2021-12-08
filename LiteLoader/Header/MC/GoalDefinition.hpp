@@ -3,21 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct GoalDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI GoalDefinition(struct GoalDefinition&&);
     MCAPI GoalDefinition(struct GoalDefinition const&);
     MCAPI GoalDefinition();
@@ -26,13 +24,8 @@ public:
     MCAPI struct GoalDefinition& operator=(struct GoalDefinition const&);
     MCAPI bool parse(struct ConstDeserializeDataParams const&, int);
     MCAPI ~GoalDefinition();
-    MCAPI static std::unique_ptr<class Goal> CreateGoal(class Mob&, struct GoalDefinition const&);
-    MCAPI static bool GoalExists(std::string const&);
-    MCAPI static void init();
-    MCAPI static void shutdown();
 
 protected:
-
 
 private:
 

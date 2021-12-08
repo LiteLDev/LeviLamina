@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "Recipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BannerAddPatternRecipe : public Recipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERADDPATTERNRECIPE
+public:
+    class BannerAddPatternRecipe& operator=(class BannerAddPatternRecipe const&) = delete;
+    BannerAddPatternRecipe(class BannerAddPatternRecipe const&) = delete;
+    BannerAddPatternRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BannerAddPatternRecipe();
@@ -31,14 +37,11 @@ public:
     /*9*/ virtual class ItemPack const& getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
-
-
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const&);
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer&) const;
     MCAPI static class mce::UUID const ID;
 
 protected:
-
 
 private:
 

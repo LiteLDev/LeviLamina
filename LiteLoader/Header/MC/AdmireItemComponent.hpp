@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AdmireItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ADMIREITEMCOMPONENT
+public:
+    class AdmireItemComponent& operator=(class AdmireItemComponent const&) = delete;
+    AdmireItemComponent(class AdmireItemComponent const&) = delete;
+    AdmireItemComponent() = delete;
+#endif
 
 public:
-
     MCAPI class ItemStack const& getAdmireItem() const;
     MCAPI struct Tick const& getAdmireUntil() const;
     MCAPI class Actor* getItemOwner() const;
@@ -27,7 +32,6 @@ public:
     MCAPI ~AdmireItemComponent();
 
 protected:
-
 
 private:
 

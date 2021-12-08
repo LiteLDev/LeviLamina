@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BuriedTreasurePiece : public StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BURIEDTREASUREPIECE
+public:
+    class BuriedTreasurePiece& operator=(class BuriedTreasurePiece const&) = delete;
+    BuriedTreasurePiece(class BuriedTreasurePiece const&) = delete;
+    BuriedTreasurePiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BuriedTreasurePiece();
@@ -27,12 +33,9 @@ public:
     /*6*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI bool _isCovered(class BlockSource const&, class BlockPos const&) const;
+
 };

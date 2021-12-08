@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WrittenBookItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WRITTENBOOKITEM
+public:
+    class WrittenBookItem& operator=(class WrittenBookItem const&) = delete;
+    WrittenBookItem(class WrittenBookItem const&) = delete;
+    WrittenBookItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WrittenBookItem();
@@ -99,8 +105,6 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI WrittenBookItem(std::string const&, int);
     MCAPI static int const MAX_GENERATION;
     MCAPI static int const MAX_PAGES;
@@ -121,7 +125,6 @@ public:
     MCAPI static std::vector<struct PageContent> getPages(class ItemStack const&);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "NetherFortressPiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NBBridgeEndFiller : public NetherFortressPiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NBBRIDGEENDFILLER
+public:
+    class NBBridgeEndFiller& operator=(class NBBridgeEndFiller const&) = delete;
+    NBBridgeEndFiller(class NBBridgeEndFiller const&) = delete;
+    NBBridgeEndFiller() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NBBridgeEndFiller();
@@ -25,12 +31,9 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void __unk_vfn_3();
-
-
     MCAPI static std::unique_ptr<class NetherFortressPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
 
 protected:
-
 
 private:
 

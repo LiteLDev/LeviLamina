@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomPos {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMPOS
+public:
+    class RandomPos& operator=(class RandomPos const&) = delete;
+    RandomPos(class RandomPos const&) = delete;
+    RandomPos() = delete;
+#endif
 
 public:
-
     MCAPI static bool getPos(class Vec3&, class Mob&, int, int, int, enum SolidityCheckType);
     MCAPI static bool getPosAvoid(class Vec3&, class Mob&, int, int, class Vec3 const&, enum SolidityCheckType, int);
     MCAPI static bool getPosInDirection(class Vec3&, class Mob&, int, int, int, bool, bool, class Vec3*, struct IntRange const&, int, enum SolidityCheckType);
@@ -27,13 +32,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static bool generateRandomPos(class Randomize&, class Vec3&, class Mob&, int, int, int, class Vec3 const*, bool, bool, struct IntRange const&, int, enum SolidityCheckType);
     MCAPI static bool generateRandomPos(class Vec3&, class Mob&, int, int, class Vec3 const*, bool, bool, int, enum SolidityCheckType);
     MCAPI static bool snapToGround(class BlockPos&, class Mob&, int, struct IntRange const&, enum SolidityCheckType);
     MCAPI static bool snapToGround(class BlockPos&, int, int, int, class std::function<bool (class BlockPos& )>);
     MCAPI static bool snapToGround(class BlockPos&, int, int, class std::function<bool (class BlockPos& )>);
     MCAPI static bool spawnSnapToGround(class BlockSource&, class BlockPos&, float, int);
+
 };

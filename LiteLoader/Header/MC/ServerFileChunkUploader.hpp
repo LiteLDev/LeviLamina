@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "IFileChunkUploader.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerFileChunkUploader : public IFileChunkUploader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERFILECHUNKUPLOADER
+public:
+    class ServerFileChunkUploader& operator=(class ServerFileChunkUploader const&) = delete;
+    ServerFileChunkUploader(class ServerFileChunkUploader const&) = delete;
+    ServerFileChunkUploader() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerFileChunkUploader();
@@ -30,7 +36,6 @@ public:
     /*8*/ virtual int /*enum enum UploadError*/ getInitErrorCode() const;
     /*9*/ virtual float getUploadProgress(struct FileInfo const&) const;
     /*10*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
-
     /*
     inline void update(){
         void (ServerFileChunkUploader::*rv)();
@@ -49,9 +54,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ServerPlayerMovementComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTCOMPONENT
+public:
+    struct ServerPlayerMovementComponent& operator=(struct ServerPlayerMovementComponent const&) = delete;
+    ServerPlayerMovementComponent(struct ServerPlayerMovementComponent const&) = delete;
+    ServerPlayerMovementComponent() = delete;
+#endif
 
 public:
-
     MCAPI ServerPlayerMovementComponent(struct ServerPlayerMovementComponent&&);
     MCAPI ~ServerPlayerMovementComponent();
 
 protected:
-
 
 private:
 

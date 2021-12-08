@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AgeableComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGEABLECOMPONENT
+public:
+    class AgeableComponent& operator=(class AgeableComponent const&) = delete;
+    AgeableComponent(class AgeableComponent const&) = delete;
+    AgeableComponent() = delete;
+#endif
 
 public:
-
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     MCAPI int getAge() const;
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
@@ -25,7 +30,6 @@ public:
     MCAPI void setAge(int);
 
 protected:
-
 
 private:
 

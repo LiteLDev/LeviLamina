@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WebToken {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
 public:
@@ -22,10 +21,16 @@ public:
 	Json::Value dataInfo;
 	std::string signature;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEBTOKEN
+public:
+    class WebToken& operator=(class WebToken const&) = delete;
+    WebToken(class WebToken const&) = delete;
+    WebToken() = delete;
+#endif
 
 public:
-
     MCAPI WebToken(std::string);
     MCAPI std::string toString() const;
     MCAPI bool verifyWithIncludedKey(std::vector<std::string> const&) const;
@@ -34,10 +39,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _parse(class Json::Value&, std::string const&);
     MCAPI std::string _signatureToDER() const;
     MCAPI static std::string _DERToBinary(std::string const&, int);
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ExternalFileLevelStorageSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTERNALFILELEVELSTORAGESOURCE
+public:
+    class ExternalFileLevelStorageSource& operator=(class ExternalFileLevelStorageSource const&) = delete;
+    ExternalFileLevelStorageSource(class ExternalFileLevelStorageSource const&) = delete;
+    ExternalFileLevelStorageSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ExternalFileLevelStorageSource();
@@ -41,7 +47,6 @@ public:
     /*19*/ virtual class Core::PathBuffer<std::string > const getBasePath() const;
     /*20*/ virtual class Core::PathBuffer<std::string > const getPathToLevel(std::string const&) const;
     /*21*/ virtual class Core::PathBuffer<std::string > const getPathToLevelInfo(std::string const&, bool) const;
-
     /*
     inline bool requiresConversion(std::string const& a0){
         bool (ExternalFileLevelStorageSource::*rv)(std::string const&);
@@ -69,11 +74,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ExternalFileLevelStorageSource(class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, class std::shared_ptr<class SaveTransactionManager>);
 
 protected:
-
 
 private:
 

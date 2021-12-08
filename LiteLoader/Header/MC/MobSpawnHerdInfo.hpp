@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MobSpawnHerdInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBSPAWNHERDINFO
+public:
+    struct MobSpawnHerdInfo& operator=(struct MobSpawnHerdInfo const&) = delete;
+    MobSpawnHerdInfo(struct MobSpawnHerdInfo const&) = delete;
+    MobSpawnHerdInfo() = delete;
+#endif
 
 public:
-
     MCAPI MobSpawnHerdInfo(unsigned int, unsigned int, std::string const&, unsigned int, std::string const&, unsigned int);
     MCAPI ~MobSpawnHerdInfo();
 
 protected:
-
 
 private:
 

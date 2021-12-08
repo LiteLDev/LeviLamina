@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerContentKeyProvider {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCONTENTKEYPROVIDER
+public:
+    class ServerContentKeyProvider& operator=(class ServerContentKeyProvider const&) = delete;
+    ServerContentKeyProvider(class ServerContentKeyProvider const&) = delete;
+    ServerContentKeyProvider() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerContentKeyProvider();
@@ -24,7 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual bool canAccess(class ContentIdentity const&) const;
-
     /*
     inline void setTempContentKeys(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string > > > const& a0){
         void (ServerContentKeyProvider::*rv)(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string > > > const&);
@@ -38,9 +43,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

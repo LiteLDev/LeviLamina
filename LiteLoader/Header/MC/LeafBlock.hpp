@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LeafBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEAFBLOCK
+public:
+    class LeafBlock& operator=(class LeafBlock const&) = delete;
+    LeafBlock(class LeafBlock const&) = delete;
+    LeafBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LeafBlock();
@@ -141,7 +147,6 @@ public:
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
     /*122*/ virtual class ItemInstance getExtraResourceItem(class Block const&) const;
-
     /*
     inline  ~LeafBlock(){
          (LeafBlock::*rv)();
@@ -149,13 +154,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI LeafBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
     MCAPI class mce::Color getSeasonsColor(class BlockSource&, class BlockPos const&, int, int) const;
     MCAPI static void runDecay(class BlockSource&, class BlockPos const&, int);
 
 protected:
-
     MCAPI class Block const& getSapling() const;
     MCAPI static bool _isTransparent(class Block const&, enum BlockProperty const&);
 

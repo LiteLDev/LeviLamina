@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestActionCreate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCREATE
+public:
+    class ItemStackRequestActionCreate& operator=(class ItemStackRequestActionCreate const&) = delete;
+    ItemStackRequestActionCreate(class ItemStackRequestActionCreate const&) = delete;
+    ItemStackRequestActionCreate() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCreate();
@@ -23,12 +29,9 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void _write(class BinaryStream&) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
-
-
     MCAPI unsigned char getResultsIndex() const;
 
 protected:
-
 
 private:
 

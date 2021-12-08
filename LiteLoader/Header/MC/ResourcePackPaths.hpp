@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ResourcePackPaths {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI class Core::PathBuffer<std::string > getCachedBehaviorPacksPath();
     MCAPI class Core::PathBuffer<std::string > getCachedResourcePacksPath();
     MCAPI class Core::PathBuffer<std::string > getPremiumBehaviorPackPath();
@@ -24,4 +23,5 @@ namespace ResourcePackPaths {
     MCAPI class Core::PathBuffer<std::string > getPremiumWorldTemplatePath();
     MCAPI class Core::PathBuffer<std::string > getTemporaryPremiumBehaviorPacksPath();
     MCAPI class Core::PathBuffer<std::string > getTemporaryPremiumResourcePacksPath();
+
 };

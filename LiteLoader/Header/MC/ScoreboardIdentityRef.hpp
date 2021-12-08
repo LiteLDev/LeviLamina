@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "IdentityDefinition.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScoreboardIdentityRef {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDIDENTITYREF
+public:
+    class ScoreboardIdentityRef& operator=(class ScoreboardIdentityRef const&) = delete;
+    ScoreboardIdentityRef(class ScoreboardIdentityRef const&) = delete;
+    ScoreboardIdentityRef() = delete;
+#endif
 
 public:
-
     MCAPI struct ActorUniqueID const& getEntityId() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
     MCAPI std::string const& getName(class std::function<std::string const& (struct ActorUniqueID)> const&) const;
@@ -30,7 +35,6 @@ public:
     MCAPI static std::unique_ptr<class CompoundTag> serialize(class ScoreboardIdentityRef const&);
 
 protected:
-
 
 private:
 

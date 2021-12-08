@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClassroomModeNetworkHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLASSROOMMODENETWORKHANDLER
+public:
+    class ClassroomModeNetworkHandler& operator=(class ClassroomModeNetworkHandler const&) = delete;
+    ClassroomModeNetworkHandler(class ClassroomModeNetworkHandler const&) = delete;
+    ClassroomModeNetworkHandler() = delete;
+#endif
 
 public:
     /*
@@ -29,13 +35,11 @@ public:
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<class std::function<void (void)>>(a2));
     }
     */
-
     MCAPI ClassroomModeNetworkHandler(bool);
 
 protected:
 
-
 private:
-
     MCAPI void _connect(std::string const&);
+
 };

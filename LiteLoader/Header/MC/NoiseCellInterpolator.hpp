@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NoiseCellInterpolator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NOISECELLINTERPOLATOR
+public:
+    class NoiseCellInterpolator& operator=(class NoiseCellInterpolator const&) = delete;
+    NoiseCellInterpolator(class NoiseCellInterpolator const&) = delete;
+    NoiseCellInterpolator() = delete;
+#endif
 
 public:
-
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>);
     MCAPI NoiseCellInterpolator(class gsl::span<float const, -1>, int, int);
     MCAPI float getLerpedValue() const;
@@ -26,7 +31,6 @@ public:
     MCAPI void updateForZ(unsigned char);
 
 protected:
-
 
 private:
 

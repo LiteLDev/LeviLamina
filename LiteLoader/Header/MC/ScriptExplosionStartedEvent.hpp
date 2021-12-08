@@ -2,30 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ScriptExplosionStartedEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEXPLOSIONSTARTEDEVENT
+public:
+    ScriptExplosionStartedEvent(struct ScriptExplosionStartedEvent const&) = delete;
+    ScriptExplosionStartedEvent() = delete;
+#endif
 
 public:
-
     MCAPI ScriptExplosionStartedEvent(struct ExplosionStartedEvent const&, class Scripting::WeakLifetimeScope const&);
     MCAPI struct ScriptExplosionStartedEvent& operator=(struct ScriptExplosionStartedEvent&&);
     MCAPI struct ScriptExplosionStartedEvent& operator=(struct ScriptExplosionStartedEvent const&);
-    MCAPI static class Scripting::ClassBindingBuilder<struct ScriptExplosionStartedEvent> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

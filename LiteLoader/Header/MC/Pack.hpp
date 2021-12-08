@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Pack {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACK
+public:
+    class Pack& operator=(class Pack const&) = delete;
+    Pack(class Pack const&) = delete;
+    Pack() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Pack();
-
-
     MCAPI Pack(std::unique_ptr<class PackManifest>, std::unique_ptr<class PackAccessStrategy>, std::unique_ptr<class SubpackInfoCollection>, std::unique_ptr<class PackMetadata>);
     MCAPI class PackManifest const& getManifest() const;
     MCAPI void move(class Pack&&);
@@ -30,9 +34,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _loadLocalizationFiles();
     MCAPI static class Core::PathBuffer<std::string > const EDUCATION_METADATA_FILE;
+
 };

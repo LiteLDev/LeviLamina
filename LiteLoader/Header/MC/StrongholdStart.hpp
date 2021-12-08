@@ -2,33 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructureStart.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StrongholdStart : public StructureStart {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDSTART
+public:
+    class StrongholdStart& operator=(class StrongholdStart const&) = delete;
+    StrongholdStart(class StrongholdStart const&) = delete;
+    StrongholdStart() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StrongholdStart();
     /*1*/ virtual bool isValid() const;
     /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
-
-
     MCAPI StrongholdStart(class Dimension&, class Random&, int, int);
 
 protected:
 
-
 private:
-
     MCAPI void _initializePieceSet(class Random&);
+
 };

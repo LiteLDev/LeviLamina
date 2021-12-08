@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MingleComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum MingleState;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLECOMPONENT
+public:
+    class MingleComponent& operator=(class MingleComponent const&) = delete;
+    MingleComponent(class MingleComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI MingleComponent();
     MCAPI class MingleComponent& clearPreviousPartnerId();
     MCAPI class Actor* fetchCurrentPartner(class Actor const&) const;
@@ -28,7 +32,6 @@ public:
     MCAPI class MingleComponent& setPartnerId(struct ActorUniqueID);
 
 protected:
-
 
 private:
 

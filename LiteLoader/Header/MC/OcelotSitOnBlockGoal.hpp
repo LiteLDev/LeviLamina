@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToBlockGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OcelotSitOnBlockGoal : public BaseMoveToBlockGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOTSITONBLOCKGOAL
+public:
+    class OcelotSitOnBlockGoal& operator=(class OcelotSitOnBlockGoal const&) = delete;
+    OcelotSitOnBlockGoal(class OcelotSitOnBlockGoal const&) = delete;
+    OcelotSitOnBlockGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OcelotSitOnBlockGoal();
@@ -30,12 +36,9 @@ public:
     /*9*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*10*/ virtual bool _canReach(class BlockPos const&);
     /*11*/ virtual unsigned __int64 _getRepathTime() const;
-
-
     MCAPI OcelotSitOnBlockGoal(class Mob*, float);
 
 protected:
-
 
 private:
 

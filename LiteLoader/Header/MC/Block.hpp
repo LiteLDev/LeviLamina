@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Tag;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Block {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 	LIAPI static Block* create(string str, unsigned short tileData);
@@ -21,13 +20,18 @@ public:
     LIAPI string getTypeName();
 	LIAPI int getId();
 	LIAPI unsigned short getTileData();
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK
+public:
+    class Block& operator=(class Block const&) = delete;
+    Block(class Block const&) = delete;
+    Block() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Block();
     /*1*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer() const;
-
-
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy* >, class CompoundTag, unsigned int const&);
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI bool addCollisionShapes(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
@@ -194,11 +198,10 @@ public:
     MCAPI static float const SIZE_OFFSET;
 
 protected:
-
     MCAPI void buildSerializationId(unsigned int);
     MCAPI void setRuntimeId(unsigned int const&) const;
 
 private:
-
     MCAPI bool _isSolid() const;
+
 };

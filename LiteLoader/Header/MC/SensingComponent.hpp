@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SensingComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENSINGCOMPONENT
+public:
+    class SensingComponent& operator=(class SensingComponent const&) = delete;
+    SensingComponent(class SensingComponent const&) = delete;
+    SensingComponent() = delete;
+#endif
 
 public:
-
     MCAPI bool canSee(class Mob&, class Actor const&);
     MCAPI void reset();
     MCAPI bool withinFOV(class Mob&, class Vec3 const&, float);
 
 protected:
-
 
 private:
 

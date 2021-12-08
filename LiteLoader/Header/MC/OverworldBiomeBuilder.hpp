@@ -2,32 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ClimateUtils.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverworldBiomeBuilder {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDBIOMEBUILDER
+public:
+    class OverworldBiomeBuilder& operator=(class OverworldBiomeBuilder const&) = delete;
+    OverworldBiomeBuilder(class OverworldBiomeBuilder const&) = delete;
+#endif
 
 public:
-
     MCAPI OverworldBiomeBuilder();
     MCAPI void addBiomes(std::vector<struct BiomeNoiseTarget>&, class BiomeRegistry const&) const;
     MCAPI std::vector<struct ClimateParameters> getWorldSpawnParameters() const;
 
 protected:
 
-
 private:
-
     MCAPI void _addHighSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
     MCAPI void _addInlandBiomes(std::vector<struct BiomeNoiseTarget>&) const;
     MCAPI void _addLowSlice(std::vector<struct BiomeNoiseTarget>&, struct ClimateUtils::Parameter const&) const;
@@ -50,4 +52,5 @@ private:
     MCAPI static struct ClimateUtils::Parameter const mushroomFieldsContinentalness;
     MCAPI static struct ClimateUtils::Parameter const nearInlandContinentalness;
     MCAPI static struct ClimateUtils::Parameter const oceanContinentalness;
+
 };

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AtomicTimeAccumulator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATOMICTIMEACCUMULATOR
+public:
+    class AtomicTimeAccumulator& operator=(class AtomicTimeAccumulator const&) = delete;
+    AtomicTimeAccumulator(class AtomicTimeAccumulator const&) = delete;
+#endif
 
 public:
-
     MCAPI AtomicTimeAccumulator();
     MCAPI void addTime(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const&);
     MCAPI unsigned __int64 getCount() const;
@@ -25,7 +29,6 @@ public:
     MCAPI void reset();
 
 protected:
-
 
 private:
 

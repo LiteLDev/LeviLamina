@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TradeResupplyComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADERESUPPLYCOMPONENT
+public:
+    class TradeResupplyComponent& operator=(class TradeResupplyComponent const&) = delete;
+    TradeResupplyComponent(class TradeResupplyComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI TradeResupplyComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI void initFromDefinition(class Actor&);
@@ -25,7 +29,6 @@ public:
     MCAPI void reloadComponent(class Actor&);
 
 protected:
-
 
 private:
 

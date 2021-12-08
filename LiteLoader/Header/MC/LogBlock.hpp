@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RotatedPillarBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LogBlock : public RotatedPillarBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOGBLOCK
+public:
+    class LogBlock& operator=(class LogBlock const&) = delete;
+    LogBlock(class LogBlock const&) = delete;
+    LogBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LogBlock();
@@ -133,12 +139,9 @@ public:
     /*112*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*113*/ virtual void __unk_vfn_32();
     /*114*/ virtual void __unk_vfn_33();
-
-
     MCAPI LogBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorLegacySaveConverter {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORLEGACYSAVECONVERTER
+public:
+    class ActorLegacySaveConverter& operator=(class ActorLegacySaveConverter const&) = delete;
+    ActorLegacySaveConverter(class ActorLegacySaveConverter const&) = delete;
+    ActorLegacySaveConverter() = delete;
+#endif
 
 public:
-
     MCAPI static void convertSave(class Actor&, class CompoundTag const&);
 
 protected:
 
-
 private:
-
     MCAPI static void convertBoat(class Actor&, class CompoundTag const&);
     MCAPI static void convertChicken(class Actor&, class CompoundTag const&);
     MCAPI static void convertCow(class Actor&, class CompoundTag const&);
@@ -49,4 +52,5 @@ private:
     MCAPI static void convertWolf(class Actor&, class CompoundTag const&);
     MCAPI static void convertZombie(class Actor&, class CompoundTag const&);
     MCAPI static void convertZombieVillager(class Actor&, class CompoundTag const&);
+
 };

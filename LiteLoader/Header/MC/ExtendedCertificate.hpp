@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ExtendedCertificate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXTENDEDCERTIFICATE
+public:
+    class ExtendedCertificate& operator=(class ExtendedCertificate const&) = delete;
+    ExtendedCertificate(class ExtendedCertificate const&) = delete;
+    ExtendedCertificate() = delete;
+#endif
 
 public:
-
     MCAPI static class mce::UUID getIdentity(class Certificate const&);
     MCAPI static std::string getIdentityName(class Certificate const&);
     MCAPI static std::string getXuid(class Certificate const&);
     MCAPI static std::string getXuid(class Certificate const*);
 
 protected:
-
 
 private:
 

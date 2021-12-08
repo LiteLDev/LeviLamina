@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerBlockActions {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERBLOCKACTIONS
+public:
+    class PlayerBlockActions& operator=(class PlayerBlockActions const&) = delete;
+    PlayerBlockActions(class PlayerBlockActions const&) = delete;
+    PlayerBlockActions() = delete;
+#endif
 
 public:
-
     MCAPI struct PlayerBlockActionData const* findFirstOfType(enum PlayerActionType) const;
     MCAPI class gsl::span<struct PlayerBlockActionData const, -1> get() const;
     MCAPI ~PlayerBlockActions();
@@ -25,7 +30,6 @@ public:
     MCAPI static void write(class PlayerBlockActions const&, class BinaryStream&);
 
 protected:
-
 
 private:
 

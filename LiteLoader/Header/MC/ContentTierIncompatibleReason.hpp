@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContentTierIncompatibleReason {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTTIERINCOMPATIBLEREASON
+public:
+    class ContentTierIncompatibleReason& operator=(class ContentTierIncompatibleReason const&) = delete;
+    ContentTierIncompatibleReason(class ContentTierIncompatibleReason const&) = delete;
+    ContentTierIncompatibleReason() = delete;
+#endif
 
 public:
-
     MCAPI ContentTierIncompatibleReason(unsigned int);
     MCAPI std::string getExpandedI18nErrorList(std::string const&, std::vector<std::string> const&) const;
     MCAPI static class ContentTierIncompatibleReason NoError;
     MCAPI static std::string getExpandedI18nErrorList(unsigned int, std::string const&, std::vector<std::string> const&);
 
 protected:
-
 
 private:
 

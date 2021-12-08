@@ -3,20 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "BlockInstance.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 	LIAPI BlockInstance getBlockInstance(BlockPos);
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCE
+public:
+    class BlockSource& operator=(class BlockSource const&) = delete;
+    BlockSource(class BlockSource const&) = delete;
+    BlockSource() = delete;
+#endif
 
 public:
     /*0*/ virtual class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getWeakRef();
@@ -40,7 +46,6 @@ public:
     /*18*/ virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
     /*19*/ virtual class ChunkSource& getChunkSource();
     /*20*/ virtual ~BlockSource();
-
     /*
     inline class Dimension& getDimension() const{
         class Dimension& (BlockSource::*rv)() const;
@@ -58,7 +63,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BlockSource(class ChunkSource&, bool, bool);
     MCAPI BlockSource(class Level&, class Dimension&, class ChunkSource&, bool, bool);
     MCAPI class gsl::span<class gsl::not_null<class Actor* >, -1> _fetchEntities(struct IActorMovementProxy const*, class AABB const&, bool);
@@ -189,7 +193,6 @@ public:
     MCAPI void updateNeighborsAtExceptFromFacing(class BlockPos const&, class BlockPos const&, int);
 
 protected:
-
     MCAPI void _blockChanged(class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*);
     MCAPI std::vector<class AABB>& _fetchBorderBlockCollisions(class AABB const&, struct IActorMovementProxy*, bool);
     MCAPI bool _hasChunksAt(struct Bounds const&) const;
@@ -197,9 +200,9 @@ protected:
     MCAPI void addVoidFloor(class AABB const&);
 
 private:
-
     MCAPI bool _getBlockPermissions(class BlockPos const&, bool);
     MCAPI float _getLiquidHeight(class BlockPos const&, enum MaterialType, bool);
     MCAPI struct Brightness _getRawBrightness(class BlockPos const&, struct Brightness, bool, bool) const;
     MCAPI void _removeFromTickingQueue(class BlockPos const&, class Block const&, enum TickingQueueType);
+
 };

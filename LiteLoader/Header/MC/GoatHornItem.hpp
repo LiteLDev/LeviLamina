@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GoatHornItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOATHORNITEM
+public:
+    class GoatHornItem& operator=(class GoatHornItem const&) = delete;
+    GoatHornItem(class GoatHornItem const&) = delete;
+    GoatHornItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GoatHornItem();
@@ -98,13 +104,10 @@ public:
     /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI GoatHornItem(std::string const&, int);
     MCAPI static int const DEFAULT_USE_DURATION;
 
 protected:
-
 
 private:
 

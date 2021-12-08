@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetEventCallback {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETEVENTCALLBACK
+public:
+    class NetEventCallback& operator=(class NetEventCallback const&) = delete;
+    NetEventCallback(class NetEventCallback const&) = delete;
+    NetEventCallback() = delete;
+#endif
 
 public:
     /*0*/ virtual void __unk_vfn_0();
@@ -29,7 +35,6 @@ public:
     /*9*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_8();
     /*11*/ virtual class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
-
     /*
     inline void handle(class NetworkIdentifier const& a0, class MapInfoRequestPacket const& a1){
         void (NetEventCallback::*rv)(class NetworkIdentifier const&, class MapInfoRequestPacket const&);
@@ -958,9 +963,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

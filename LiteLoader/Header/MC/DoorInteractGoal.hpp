@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Direction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DoorInteractGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOORINTERACTGOAL
+public:
+    class DoorInteractGoal& operator=(class DoorInteractGoal const&) = delete;
+    DoorInteractGoal(class DoorInteractGoal const&) = delete;
+    DoorInteractGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DoorInteractGoal();
@@ -26,7 +32,6 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
     /*
     inline  ~DoorInteractGoal(){
          (DoorInteractGoal::*rv)();
@@ -34,13 +39,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DoorInteractGoal(class Mob&);
 
 protected:
 
-
 private:
-
     MCAPI static class DoorBlock const* _findBlockingDoorAtPos(class BlockPos const&, class Mob const&, class Path*, enum Direction::Type&, enum Direction::Type&);
+
 };

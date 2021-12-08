@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FindCoverGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FleeSunGoal : public FindCoverGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLEESUNGOAL
+public:
+    class FleeSunGoal& operator=(class FleeSunGoal const&) = delete;
+    FleeSunGoal(class FleeSunGoal const&) = delete;
+    FleeSunGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FleeSunGoal();
@@ -23,12 +29,9 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI FleeSunGoal(class Mob&, float);
 
 protected:
-
 
 private:
 

@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PropertyComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYCOMPONENT
+public:
+    class PropertyComponent& operator=(class PropertyComponent const&) = delete;
+    PropertyComponent(class PropertyComponent const&) = delete;
+    PropertyComponent() = delete;
+#endif
 
 public:
-
     MCAPI PropertyComponent(class PropertyComponent&&);
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     MCAPI class PropertyInstance* getProperty(class HashedString const&);
@@ -28,7 +33,6 @@ public:
     MCAPI class CompoundTag updateDirtyProperties();
 
 protected:
-
 
 private:
 

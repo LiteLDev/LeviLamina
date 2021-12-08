@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct BlockComponentGroupDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMPONENTGROUPDESCRIPTION
+public:
+    struct BlockComponentGroupDescription& operator=(struct BlockComponentGroupDescription const&) = delete;
+#endif
 
 public:
-
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription&&);
     MCAPI BlockComponentGroupDescription(struct BlockComponentGroupDescription const&);
     MCAPI BlockComponentGroupDescription();
@@ -26,7 +29,6 @@ public:
     MCAPI ~BlockComponentGroupDescription();
 
 protected:
-
 
 private:
 

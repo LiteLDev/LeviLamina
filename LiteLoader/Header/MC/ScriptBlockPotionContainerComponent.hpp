@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "BaseScriptBlockLiquidContainerComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBlockPotionContainerComponent : public BaseScriptBlockLiquidContainerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPOTIONCONTAINERCOMPONENT
+public:
+    class ScriptBlockPotionContainerComponent& operator=(class ScriptBlockPotionContainerComponent const&) = delete;
+    ScriptBlockPotionContainerComponent(class ScriptBlockPotionContainerComponent const&) = delete;
+    ScriptBlockPotionContainerComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBlockPotionContainerComponent();
-
     /*
     inline  ~ScriptBlockPotionContainerComponent(){
          (ScriptBlockPotionContainerComponent::*rv)();
@@ -28,14 +33,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class ScriptBlockPotionContainerComponent& operator=(class ScriptBlockPotionContainerComponent&&);
     MCAPI class Scripting::Result<void> setPotionType(class ScriptItemStack const&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockPotionContainerComponent> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPotionContainerComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
 protected:
-
 
 private:
 

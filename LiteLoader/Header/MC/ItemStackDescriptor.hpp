@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackDescriptor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKDESCRIPTOR
+public:
+    class ItemStackDescriptor& operator=(class ItemStackDescriptor const&) = delete;
+    ItemStackDescriptor(class ItemStackDescriptor const&) = delete;
+#endif
 
 public:
-
     MCAPI ItemStackDescriptor(class Item const&, int, unsigned short, class CompoundTag const*);
     MCAPI ItemStackDescriptor();
     MCAPI class ItemStackDescriptor& operator=(class ItemStackDescriptor&&);
     MCAPI ~ItemStackDescriptor();
 
 protected:
-
 
 private:
 

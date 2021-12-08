@@ -3,30 +3,33 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VanillaBlockUpdater {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLABLOCKUPDATER
+public:
+    class VanillaBlockUpdater& operator=(class VanillaBlockUpdater const&) = delete;
+    VanillaBlockUpdater(class VanillaBlockUpdater const&) = delete;
+    VanillaBlockUpdater() = delete;
+#endif
 
 public:
-
     MCAPI static void destroy();
     MCAPI static class CompoundTagUpdaterContext& get();
     MCAPI static void initialize();
 
 protected:
 
-
 private:
-
     MCAPI static void addBaseUpdater(class CompoundTagUpdaterContext&);
     MCAPI static void addRailUpdater_1_14_0(std::string const&, class CompoundTagUpdaterContext&);
     MCAPI static void addUpdaters_1_10_0(class CompoundTagUpdaterContext&);
@@ -37,4 +40,5 @@ private:
     MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext&);
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext&);
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
+
 };

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetherNetServerLocator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ServerData {
@@ -20,7 +19,13 @@ struct ServerData {
     ServerData(ServerData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERNETSERVERLOCATOR
+public:
+    class NetherNetServerLocator& operator=(class NetherNetServerLocator const&) = delete;
+    NetherNetServerLocator(class NetherNetServerLocator const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetherNetServerLocator();
@@ -39,18 +44,15 @@ public:
     /*13*/ virtual void __unk_vfn_5();
     /*14*/ virtual void __unk_vfn_6();
     /*15*/ virtual void __unk_vfn_7();
-
-
     MCAPI NetherNetServerLocator();
 
 protected:
 
-
 private:
-
     MCAPI void _onBroadcastResponseCallback(unsigned __int64, void const*, int);
     MCAPI void _setBroadcastDiscoveryResponse(struct NetherNetServerLocator::ServerData const&);
     MCAPI void _setIsAnnouncing(bool);
     MCAPI void _setIsDiscovering(bool);
     MCAPI struct PingedCompatibleServer _transformFrom(unsigned __int64, struct NetherNetServerLocator::ServerData const&);
+
 };

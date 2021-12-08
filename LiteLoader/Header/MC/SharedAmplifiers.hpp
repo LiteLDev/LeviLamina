@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SharedAmplifiers {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDAMPLIFIERS
+public:
+    class SharedAmplifiers& operator=(class SharedAmplifiers const&) = delete;
+    SharedAmplifiers(class SharedAmplifiers const&) = delete;
+    SharedAmplifiers() = delete;
+#endif
 
 public:
-
     MCAPI static class std::shared_ptr<class Amplifier> ABSORPTION;
     MCAPI static class std::shared_ptr<class Amplifier> FATAL_POISON;
     MCAPI static class std::shared_ptr<class Amplifier> HARM;
@@ -30,7 +35,6 @@ public:
     MCAPI static class std::shared_ptr<class Amplifier> WITHER;
 
 protected:
-
 
 private:
 

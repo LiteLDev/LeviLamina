@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 class StackResultStorageEntity;
@@ -16,11 +15,11 @@ enum class HitResultType:int {
     NO_HIT,
 };
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HitResult {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
     //char filler[112];
@@ -55,10 +54,9 @@ public:
     //LIAPI Vec3 getLiquidHitPos();
     LIAPI HitResultType getHitResultType();
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI HitResult(class HitResult const&);
     MCAPI HitResult(class HitResult&&);
     MCAPI HitResult(class Vec3 const&, class Vec3 const&, class Vec3 const&);
@@ -75,7 +73,6 @@ public:
     MCAPI ~HitResult();
 
 protected:
-
 
 private:
 

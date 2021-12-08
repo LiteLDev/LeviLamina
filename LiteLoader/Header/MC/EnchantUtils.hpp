@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Enchant.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnchantUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTUTILS
+public:
+    class EnchantUtils& operator=(class EnchantUtils const&) = delete;
+    EnchantUtils(class EnchantUtils const&) = delete;
+    EnchantUtils() = delete;
+#endif
 
 public:
-
     MCAPI static int const MAX_EXP_REPAIR_COST;
     MCAPI static int const PROTECTIONFACTOR_PRIMARYCAP;
     MCAPI static int const PROTECTIONFACTOR_SECONDARYCAP;
@@ -60,9 +65,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static void _convertBookCheck(class ItemStackBase&);
     MCAPI static std::vector<std::string> mEnchantmentNames;
+
 };

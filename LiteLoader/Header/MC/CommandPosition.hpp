@@ -3,28 +3,33 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandPosition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
-float offsetX;
-float offsetY;
-float offsetZ;
-bool relativeX;
-bool relativeY;
-bool relativeZ;
-bool local;
+#define DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPOSITION
+    float offsetX;
+    float offsetY;
+    float offsetZ;
+    bool relativeX;
+    bool relativeY;
+    bool relativeZ;
+    bool local;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDPOSITION
+public:
+    class CommandPosition& operator=(class CommandPosition const&) = delete;
+    CommandPosition(class CommandPosition const&) = delete;
+#endif
 
 public:
-
     MCAPI CommandPosition();
     MCAPI class BlockPos getBlockPos(class CommandOrigin const&, class Vec3 const&) const;
     MCAPI class BlockPos getBlockPos(class Vec3 const&, class Vec3 const&) const;
@@ -34,8 +39,5 @@ public:
     MCAPI class CompoundTag serialize() const;
 
 protected:
-
-
 private:
-
 };

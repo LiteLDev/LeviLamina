@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptServerLevelEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERLEVELEVENTLISTENER
+public:
+    class ScriptServerLevelEventListener& operator=(class ScriptServerLevelEventListener const&) = delete;
+    ScriptServerLevelEventListener(class ScriptServerLevelEventListener const&) = delete;
+    ScriptServerLevelEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptServerLevelEventListener();
@@ -25,12 +31,9 @@ public:
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual int /*enum enum EventResult*/ onLevelTick();
-
-
     MCAPI ScriptServerLevelEventListener(class MinecraftServerScriptEngine&);
 
 protected:
-
 
 private:
 

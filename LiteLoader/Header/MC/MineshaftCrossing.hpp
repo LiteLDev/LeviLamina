@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MineshaftPiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MineshaftCrossing : public MineshaftPiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTCROSSING
+public:
+    class MineshaftCrossing& operator=(class MineshaftCrossing const&) = delete;
+    MineshaftCrossing(class MineshaftCrossing const&) = delete;
+    MineshaftCrossing() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MineshaftCrossing();
@@ -25,12 +31,9 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-
     MCAPI void _placeSupportPillar(class BlockSource&, class BoundingBox const&, int, int, int, int);
 
 protected:
-
 
 private:
 

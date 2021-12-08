@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockEventDispatcherToken {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTDISPATCHERTOKEN
+public:
+    class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken const&) = delete;
+    BlockEventDispatcherToken(class BlockEventDispatcherToken const&) = delete;
+    BlockEventDispatcherToken() = delete;
+#endif
 
 public:
-
     MCAPI class BlockEventDispatcherToken& operator=(class BlockEventDispatcherToken&&);
     MCAPI ~BlockEventDispatcherToken();
 
 protected:
-
 
 private:
 

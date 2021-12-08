@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ArmorStand : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Pose {
@@ -22,7 +21,14 @@ struct Pose {
     Pose(Pose const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORSTAND
+public:
+    class ArmorStand& operator=(class ArmorStand const&) = delete;
+    ArmorStand(class ArmorStand const&) = delete;
+    ArmorStand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ArmorStand();
@@ -101,7 +107,6 @@ public:
     /*73*/ virtual void __unk_vfn_24();
     /*74*/ virtual void _serverAiMobStep();
     /*75*/ virtual void __unk_vfn_25();
-
     /*
     inline bool interactPreventDefault(){
         bool (ArmorStand::*rv)();
@@ -109,16 +114,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ArmorStand(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getNumSlotsFilled() const;
     MCAPI int getPoseIndex() const;
 
 protected:
 
-
 private:
-
     MCAPI void _causeDamage(float);
     MCAPI void _destroyWithEffects(class Vec3 const&);
     MCAPI void _dropHeldItems();
@@ -139,4 +141,5 @@ private:
     MCAPI static struct ArmorStand::Pose const POSE_ZERO_ROTATION;
     MCAPI static struct ArmorStand::Pose const POSE_ZOMBIE;
     MCAPI static struct ArmorStand::Pose const* * STAND_POSES;
+
 };

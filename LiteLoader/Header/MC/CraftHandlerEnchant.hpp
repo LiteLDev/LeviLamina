@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CraftHandlerBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CraftHandlerEnchant : public CraftHandlerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERENCHANT
+public:
+    class CraftHandlerEnchant& operator=(class CraftHandlerEnchant const&) = delete;
+    CraftHandlerEnchant(class CraftHandlerEnchant const&) = delete;
+    CraftHandlerEnchant() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CraftHandlerEnchant();
@@ -25,13 +31,10 @@ public:
     /*4*/ virtual void _postCraftRequest(bool);
     /*5*/ virtual class Recipes const* _getLevelRecipes() const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI class EnchantingContainerManagerModel& _getEnchantingModel() const;
     MCAPI enum ItemStackNetResult _handleEnchant(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 10> const&);
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BannerBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERBLOCK
+public:
+    class BannerBlock& operator=(class BannerBlock const&) = delete;
+    BannerBlock(class BannerBlock const&) = delete;
+    BannerBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BannerBlock();
@@ -136,8 +142,6 @@ public:
     /*115*/ virtual void __unk_vfn_32();
     /*116*/ virtual void __unk_vfn_33();
     /*117*/ virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
-
-
     MCAPI BannerBlock(std::string const&, int, bool);
     MCAPI static class AABB EAST_AABB;
     MCAPI static class AABB NORTH_AABB;
@@ -147,8 +151,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class ItemInstance _itemInstanceFromBlockEntity(class gsl::not_null<class BannerBlockActor const* >) const;
+
 };

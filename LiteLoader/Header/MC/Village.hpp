@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Village {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct DwellerData {
@@ -20,10 +19,16 @@ struct DwellerData {
     DwellerData(DwellerData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGE
+public:
+    class Village& operator=(class Village const&) = delete;
+    Village(class Village const&) = delete;
+    Village() = delete;
+#endif
 
 public:
-
     MCAPI Village(class Dimension&, class mce::UUID, class BlockPos const&);
     MCAPI void addActorToVillage(enum DwellerRole, struct ActorUniqueID const&);
     MCAPI void addAggressor(class Mob const&);
@@ -73,9 +78,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addPoiToVillage(struct ActorUniqueID const&, class std::weak_ptr<class POIInstance>);
     MCAPI void _calcPOIDist();
     MCAPI void _claimUnclaimedPOIs();
@@ -132,4 +135,5 @@ private:
     MCAPI static int const VILLAGE_UNCLAIMED_POI_CAP;
     MCAPI static unsigned __int64 const VILLAGE_UPDATE_TICK_DELAY;
     MCAPI static unsigned char const VILLAGE_VERSION_CURRENT;
+
 };

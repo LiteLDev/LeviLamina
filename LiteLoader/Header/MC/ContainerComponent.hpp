@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContainerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCOMPONENT
+public:
+    class ContainerComponent& operator=(class ContainerComponent const&) = delete;
+    ContainerComponent(class ContainerComponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~ContainerComponent();
-
     /*
     inline  ~ContainerComponent(){
          (ContainerComponent::*rv)();
@@ -27,7 +31,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ContainerComponent(class ContainerComponent&&);
     MCAPI ContainerComponent();
     MCAPI class Container* _getRawContainerPtr() const;
@@ -62,8 +65,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _tryMoveInItem(class BlockSource&, class ItemStack&, int, int, int);
+
 };

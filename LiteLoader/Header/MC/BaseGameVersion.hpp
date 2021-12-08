@@ -2,23 +2,21 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "SemVersion.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseGameVersion {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI BaseGameVersion(class BaseGameVersion const&);
     MCAPI BaseGameVersion(class SemVersion const&);
     MCAPI BaseGameVersion(unsigned short, unsigned int, unsigned int);
@@ -44,7 +42,6 @@ public:
     MCAPI static enum SemVersion::MatchType fromString(std::string const&, class BaseGameVersion&);
 
 protected:
-
 
 private:
 

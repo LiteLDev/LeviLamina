@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelContainerModel : public ContainerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMODEL
+public:
+    class LevelContainerModel& operator=(class LevelContainerModel const&) = delete;
+    LevelContainerModel(class LevelContainerModel const&) = delete;
+    LevelContainerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -36,17 +42,14 @@ public:
     /*15*/ virtual class Container* _getContainer() const;
     /*16*/ virtual int _getContainerOffset() const;
     /*17*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
-
-
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player&, struct ActorUniqueID, enum ContainerCategory);
     MCAPI LevelContainerModel(enum ContainerEnumName, int, class Player&, enum BlockActorType, class BlockPos const&, enum ContainerCategory);
     MCAPI static class Container* getContainerHelper(class Player&, enum BlockActorType, class BlockPos const&);
 
 protected:
 
-
 private:
-
     MCAPI class Actor* _getEntity() const;
     MCAPI void _refreshSlot(int);
+
 };

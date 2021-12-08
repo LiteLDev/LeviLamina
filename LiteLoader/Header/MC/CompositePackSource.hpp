@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompositePackSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSITEPACKSOURCE
+public:
+    class CompositePackSource& operator=(class CompositePackSource const&) = delete;
+    CompositePackSource(class CompositePackSource const&) = delete;
+    CompositePackSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CompositePackSource();
@@ -23,12 +29,9 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
-
     MCAPI CompositePackSource(std::vector<class PackSource* >&&);
 
 protected:
-
 
 private:
 

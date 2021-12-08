@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldChangeTransaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDCHANGETRANSACTION
+public:
+    class WorldChangeTransaction& operator=(class WorldChangeTransaction const&) = delete;
+    WorldChangeTransaction(class WorldChangeTransaction const&) = delete;
+    WorldChangeTransaction() = delete;
+#endif
 
 public:
-
     MCAPI WorldChangeTransaction(class IBlockWorldGenAPI&);
     MCAPI bool apply() const;
     MCAPI class Block const& getBlock(class BlockPos const&) const;
@@ -25,7 +30,6 @@ public:
     MCAPI ~WorldChangeTransaction();
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PickupItemsGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PICKUPITEMSGOAL
+public:
+    class PickupItemsGoal& operator=(class PickupItemsGoal const&) = delete;
+    PickupItemsGoal(class PickupItemsGoal const&) = delete;
+    PickupItemsGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PickupItemsGoal();
@@ -25,16 +31,13 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
 
 protected:
 
-
 private:
-
     MCAPI std::vector<class gsl::not_null<class ItemActor* >> _filterValidTargets(std::vector<struct DistanceSortedActor> const&) const;
     MCAPI struct Shareable const* _getShareableItem(class ItemStack const&) const;
     MCAPI void _pickItemUp(class ItemActor*);
+
 };

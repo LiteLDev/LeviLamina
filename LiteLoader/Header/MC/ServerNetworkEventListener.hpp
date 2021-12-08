@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerNetworkEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTLISTENER
+public:
+    class ServerNetworkEventListener& operator=(class ServerNetworkEventListener const&) = delete;
+    ServerNetworkEventListener(class ServerNetworkEventListener const&) = delete;
+    ServerNetworkEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerNetworkEventListener();
     /*1*/ virtual int /*enum enum EventResult*/ onChat(struct ChatEvent const&);
-
     /*
     inline  ~ServerNetworkEventListener(){
          (ServerNetworkEventListener::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

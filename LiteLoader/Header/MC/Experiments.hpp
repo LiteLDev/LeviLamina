@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Experiments {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTS
+public:
+    class Experiments& operator=(class Experiments const&) = delete;
+    Experiments(class Experiments const&) = delete;
+#endif
 
 public:
-
     MCAPI bool DataDrivenBiomes() const;
     MCAPI bool DataDrivenItems() const;
     MCAPI Experiments();
@@ -35,7 +39,6 @@ public:
     MCAPI static std::vector<std::string> const& getToggleNames();
 
 protected:
-
 
 private:
 

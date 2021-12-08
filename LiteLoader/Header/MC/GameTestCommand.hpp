@@ -3,32 +3,34 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameTestCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMETESTCOMMAND
+public:
+    class GameTestCommand& operator=(class GameTestCommand const&) = delete;
+    GameTestCommand(class GameTestCommand const&) = delete;
+    GameTestCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GameTestCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void postScriptRegisterSetup(class CommandRegistry&);
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
 
-
 private:
-
     MCAPI struct gametest::TestParameters _createTestParameters(class BlockSource&, class CommandOrigin const&) const;
     MCAPI void _handleCreateTest(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void _handleRun(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
@@ -38,4 +40,5 @@ private:
     MCAPI void _handleShowPosition(class BlockSource&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void _runTestAt(class BlockSource&, class CommandOutput*, class BlockPos const&, class std::optional<enum Rotation>) const;
     MCAPI static class MinecraftGameTest* sGameTest;
+
 };

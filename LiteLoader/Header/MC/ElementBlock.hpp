@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ElementBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTBLOCK
+public:
+    class ElementBlock& operator=(class ElementBlock const&) = delete;
+    ElementBlock(class ElementBlock const&) = delete;
+    ElementBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ElementBlock();
@@ -136,8 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
-
     MCAPI ElementBlock(std::string const&, int, enum ElementType);
     MCAPI static struct ElementInfo getElementInfo(enum ElementType);
     MCAPI static class RecipeIngredient getIngredientForElement(enum ElementType, int);
@@ -149,8 +153,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::vector<class BlockLegacy const* > mElements;
+
 };

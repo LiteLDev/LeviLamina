@@ -2,31 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "FilterTest.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FilterGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum CollectionType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERGROUP
+public:
+    class FilterGroup& operator=(class FilterGroup const&) = delete;
+    FilterGroup() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum enum FilterGroup::CollectionType*/) const = 0;
     /*2*/ virtual bool _setupContext(class FilterTest const&, struct FilterContext&) const;
     /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
-
-
     MCAPI FilterGroup(class FilterGroup const&);
     MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);
     MCAPI bool addFilterTest(std::string const&, struct FilterInputs const&);
@@ -38,7 +41,6 @@ public:
     MCAPI void serialize(class Json::Value&) const;
 
 protected:
-
     MCAPI bool _parseFilterInputs(class Json::Value const&, struct FilterTest::Definition const&, struct FilterInputs&);
     MCAPI bool _parseFilterParam(std::string const&, std::string const&, class Json::Value const&, struct FilterParamDefinition const&, class FilterInput&);
     MCAPI bool _parseMember(std::string const&, class Json::Value const&);

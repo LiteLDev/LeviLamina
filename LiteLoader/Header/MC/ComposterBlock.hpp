@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MinecraftEventing.hpp"
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ComposterBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 
@@ -21,7 +20,14 @@ inline void emitBoneMeal(class Level& a1, class BlockSource& a2, class BlockPos 
     return _emitBoneMeal(a1,a2,a3);
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOSTERBLOCK
+public:
+    class ComposterBlock& operator=(class ComposterBlock const&) = delete;
+    ComposterBlock(class ComposterBlock const&) = delete;
+    ComposterBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ComposterBlock();
@@ -146,7 +152,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline bool hasComparatorSignal() const{
         bool (ComposterBlock::*rv)() const;
@@ -154,7 +159,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ComposterBlock(std::string const&, int);
     MCAPI static bool addItem(class Container&, int, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
     MCAPI static bool addItem(class ItemStack const&, class BlockSource&, class Block const&, class BlockPos const&);
@@ -164,12 +168,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _emitBoneMeal(class Level&, class BlockSource&, class BlockPos const&) const;
     MCAPI void _notifyClientComposterUsed(class Player const&, short, enum MinecraftEventing::POIBlockInteractionType) const;
     MCAPI static class BaseGameVersion const COMPOSTER_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     MCAPI static class Vec3 const PARTICLE_OFFSET;
     MCAPI static std::vector<struct std::pair<int, signed char>> const& _getCompostableItems(class Experiments const&);
+
 };

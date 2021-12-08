@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Spider.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CaveSpider : public Spider {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVESPIDER
+public:
+    class CaveSpider& operator=(class CaveSpider const&) = delete;
+    CaveSpider(class CaveSpider const&) = delete;
+    CaveSpider() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CaveSpider();
@@ -93,12 +99,9 @@ public:
     /*71*/ virtual void __unk_vfn_25();
     /*72*/ virtual float getModelScale() const;
     /*73*/ virtual int /*enum enum Spider::Type*/ getSpiderType() const;
-
-
     MCAPI CaveSpider(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

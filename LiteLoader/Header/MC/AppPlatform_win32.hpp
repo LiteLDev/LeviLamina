@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AppPlatform_win32 {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORM_WIN32
+public:
+    class AppPlatform_win32& operator=(class AppPlatform_win32 const&) = delete;
+    AppPlatform_win32(class AppPlatform_win32 const&) = delete;
+    AppPlatform_win32() = delete;
+#endif
 
 public:
     /*
@@ -249,14 +255,12 @@ public:
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
     */
-
     MCAPI AppPlatform_win32(struct HWND__*, std::string const&, std::string const&, class gsl::basic_string_span<char const, -1>, class std::shared_ptr<class HIDController>, int, int);
     MCAPI static void setupWorkingDirectory();
 
 protected:
 
-
 private:
-
     MCAPI struct OSInformation _fetchOSInformation() const;
+
 };

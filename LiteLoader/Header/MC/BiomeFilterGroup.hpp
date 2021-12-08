@@ -2,27 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterGroup.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BiomeFilterGroup : public FilterGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEFILTERGROUP
+public:
+    class BiomeFilterGroup& operator=(class BiomeFilterGroup const&) = delete;
+    BiomeFilterGroup() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(int /*enum enum FilterGroup::CollectionType*/) const;
     /*2*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
-
     /*
     inline  ~BiomeFilterGroup(){
          (BiomeFilterGroup::*rv)();
@@ -30,12 +34,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BiomeFilterGroup(class BiomeFilterGroup const&);
     MCAPI void finalizeParsedValue(class IWorldRegistriesProvider&);
 
 protected:
-
 
 private:
 

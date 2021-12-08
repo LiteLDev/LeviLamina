@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AbstractCandleBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSTRACTCANDLEBLOCK
+public:
+    class AbstractCandleBlock& operator=(class AbstractCandleBlock const&) = delete;
+    AbstractCandleBlock(class AbstractCandleBlock const&) = delete;
+    AbstractCandleBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AbstractCandleBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual int _getNumCandles(class Block const&) const;
     /*120*/ virtual void _iterateCandles(class Block const&, class BlockPos const&, class std::function<void (class Vec3 const& , int)>) const;
     /*121*/ virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (AbstractCandleBlock::*rv)() const;
@@ -164,9 +169,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI void _addExtinguishEffects(class Block const&, class BlockSource&, class BlockPos const&) const;
     MCAPI void _checkForWaterlogging(class BlockSource&, class BlockPos const&) const;
 

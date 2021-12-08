@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MolangVariableMap {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVARIABLEMAP
+public:
+    class MolangVariableMap& operator=(class MolangVariableMap const&) = delete;
+    MolangVariableMap(class MolangVariableMap const&) = delete;
+    MolangVariableMap() = delete;
+#endif
 
 public:
-
     MCAPI class MolangVariableMap& clear();
     MCAPI struct MolangScriptArg const& getMolangVariable(unsigned __int64, char const*) const;
     MCAPI void setMolangStructMember(class HashedString const&, class HashedString const&, struct MolangScriptArg const&);
@@ -29,10 +34,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class MolangVariable const* _getMolangVariable(enum MolangVariableIndex) const;
     MCAPI class MolangVariable* _getOrAddMolangVariable(unsigned __int64 const&, char const*, bool);
     MCAPI class MolangVariable* _getOrAddMolangVariable(enum MolangVariableIndex);
+
 };

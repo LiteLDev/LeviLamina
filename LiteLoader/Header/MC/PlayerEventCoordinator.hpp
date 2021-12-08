@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MinecraftEventing.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerEventCoordinator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREVENTCOORDINATOR
+public:
+    class PlayerEventCoordinator& operator=(class PlayerEventCoordinator const&) = delete;
+    PlayerEventCoordinator(class PlayerEventCoordinator const&) = delete;
+    PlayerEventCoordinator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlayerEventCoordinator();
-
-
     MCAPI void registerPlayerGameplayHandler(std::unique_ptr<class PlayerGameplayHandler>&&);
     MCAPI void sendPlayerAddExp(struct PlayerAddExpEvent const&);
     MCAPI void sendPlayerAddLevel(struct PlayerAddLevelEvent const&);
@@ -50,7 +54,6 @@ public:
     MCAPI void sendPlayerUseNameTag(struct PlayerUseNameTagEvent const&);
 
 protected:
-
 
 private:
 

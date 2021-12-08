@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Sapling.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BambooSapling : public Sapling {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BAMBOOSAPLING
+public:
+    class BambooSapling& operator=(class BambooSapling const&) = delete;
+    BambooSapling(class BambooSapling const&) = delete;
+    BambooSapling() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BambooSapling();
@@ -141,7 +147,6 @@ public:
     /*120*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void __unk_vfn_32();
     /*122*/ virtual void __unk_vfn_33();
-
     /*
     inline void playerDestroy(class Player& a0, class BlockPos const& a1, class Block const& a2) const{
         void (BambooSapling::*rv)(class Player&, class BlockPos const&, class Block const&) const;
@@ -150,11 +155,9 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI bool _grow(class BlockSource&, class BlockPos const&) const;
+
 };

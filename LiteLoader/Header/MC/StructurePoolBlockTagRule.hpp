@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructurePoolBlockTagRule {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLBLOCKTAGRULE
+public:
+    class StructurePoolBlockTagRule& operator=(class StructurePoolBlockTagRule const&) = delete;
+    StructurePoolBlockTagRule(class StructurePoolBlockTagRule const&) = delete;
+    StructurePoolBlockTagRule() = delete;
+#endif
 
 public:
-
     MCAPI StructurePoolBlockTagRule(std::unique_ptr<class IStructurePoolBlockTagPredicate>&&, std::string, std::string);
 
 protected:
-
 
 private:
 

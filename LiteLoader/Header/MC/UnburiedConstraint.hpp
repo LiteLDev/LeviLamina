@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class UnburiedConstraint {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNBURIEDCONSTRAINT
+public:
+    class UnburiedConstraint& operator=(class UnburiedConstraint const&) = delete;
+    UnburiedConstraint(class UnburiedConstraint const&) = delete;
+    UnburiedConstraint() = delete;
+#endif
 
 public:
     /*0*/ virtual ~UnburiedConstraint();
     /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum enum Rotation*/ const&) const;
-
-
     MCAPI UnburiedConstraint(class StructureTemplate&);
 
 protected:
-
 
 private:
 

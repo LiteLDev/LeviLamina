@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftReportGameListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTREPORTGAMELISTENER
+public:
+    class MinecraftReportGameListener& operator=(class MinecraftReportGameListener const&) = delete;
+    MinecraftReportGameListener(class MinecraftReportGameListener const&) = delete;
+    MinecraftReportGameListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecraftReportGameListener();
@@ -22,13 +28,9 @@ public:
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
-
-
 protected:
 
-
 private:
-
     MCAPI std::string _generateErrorDescription(struct gametest::GameTestError const&) const;
     MCAPI void _reportFailure(struct gametest::GameTestError const&, class BlockSource&);
     MCAPI void _reportPassed(std::string const&, class BlockSource&);
@@ -36,4 +38,5 @@ private:
     MCAPI void _spawnBeacon(class Block const&);
     MCAPI void _spawnLectern(std::string const&);
     MCAPI void _visualizeFailedTest(struct gametest::GameTestError const&, class BlockSource&);
+
 };

@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePackChunkDataPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKCHUNKDATAPACKET
+public:
+    class ResourcePackChunkDataPacket& operator=(class ResourcePackChunkDataPacket const&) = delete;
+    ResourcePackChunkDataPacket(class ResourcePackChunkDataPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePackChunkDataPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~ResourcePackChunkDataPacket(){
          (ResourcePackChunkDataPacket::*rv)();
@@ -32,12 +36,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ResourcePackChunkDataPacket(std::string const&, int, unsigned __int64, std::vector<unsigned char> const&);
     MCAPI ResourcePackChunkDataPacket();
 
 protected:
-
 
 private:
 

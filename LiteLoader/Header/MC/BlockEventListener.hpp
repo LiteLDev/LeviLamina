@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKEVENTLISTENER
+public:
+    class BlockEventListener& operator=(class BlockEventListener const&) = delete;
+    BlockEventListener(class BlockEventListener const&) = delete;
+    BlockEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockEventListener();
@@ -35,7 +41,6 @@ public:
     /*15*/ virtual void __unk_vfn_11();
     /*16*/ virtual void __unk_vfn_12();
     /*17*/ virtual int /*enum enum EventResult*/ onExplosionStartedEvent(struct ExplosionStartedEvent const&);
-
     /*
     inline  ~BlockEventListener(){
          (BlockEventListener::*rv)();
@@ -109,9 +114,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

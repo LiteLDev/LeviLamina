@@ -2,23 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Social.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelSettings {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSETTINGS
+public:
+    class LevelSettings& operator=(class LevelSettings const&) = delete;
+#endif
 
 public:
-
     MCAPI LevelSettings(class LevelSettings const&);
     MCAPI LevelSettings(class LevelSettings&&);
     MCAPI LevelSettings(class LevelData const&, class AutomaticID<class Dimension, int>);
@@ -86,7 +89,6 @@ public:
     MCAPI static unsigned int parseSeedString(std::string const&, unsigned int);
 
 protected:
-
 
 private:
 

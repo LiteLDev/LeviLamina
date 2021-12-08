@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WallBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WALLBLOCK
+public:
+    class WallBlock& operator=(class WallBlock const&) = delete;
+    WallBlock(class WallBlock const&) = delete;
+    WallBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WallBlock();
@@ -143,7 +149,6 @@ public:
     /*122*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*123*/ virtual void __unk_vfn_32();
     /*124*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (WallBlock::*rv)() const;
@@ -161,7 +166,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WallBlock(std::string const&, int, class BlockLegacy const&);
     MCAPI WallBlock(std::string const&, int, class Material const&);
     MCAPI void tryFixWallStates(class BlockSource&, class BlockPos const&, int) const;
@@ -173,12 +177,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI enum WallConnectionType _desiredConnectionState(class BlockSource&, class BlockPos const&, unsigned char) const;
     MCAPI bool _isCovered(class BlockSource&, class BlockPos const&, class AABB const&) const;
     MCAPI bool _shouldBePost(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI bool _tryAddToTickingQueue(class BlockSource&, class BlockPos const&) const;
     MCAPI static class BaseGameVersion const WALL_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 };

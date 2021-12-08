@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class POIInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POIINSTANCE
+public:
+    class POIInstance& operator=(class POIInstance const&) = delete;
+    POIInstance(class POIInstance const&) = delete;
+    POIInstance() = delete;
+#endif
 
 public:
-
     MCAPI POIInstance(class BlockPos const&, bool, std::string, enum POIType, float, unsigned __int64, unsigned __int64, std::string, std::string, std::string);
     MCAPI class BlockPos const& getPosition() const;
     MCAPI float getRadius() const;
@@ -29,7 +34,6 @@ public:
     MCAPI bool useBoundingBox() const;
 
 protected:
-
 
 private:
 

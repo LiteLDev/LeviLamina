@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Minecart.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecartCommandBlock : public Minecart {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTCOMMANDBLOCK
+public:
+    class MinecartCommandBlock& operator=(class MinecartCommandBlock const&) = delete;
+    MinecartCommandBlock(class MinecartCommandBlock const&) = delete;
+    MinecartCommandBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -101,12 +107,9 @@ public:
     /*79*/ virtual int getDefaultDisplayOffset() const;
     /*80*/ virtual void applyNaturalSlowdown(class BlockSource&);
     /*81*/ virtual void _lazyInitDisplayBlock();
-
-
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

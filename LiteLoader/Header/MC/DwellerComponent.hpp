@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DwellerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum DwellingType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DWELLERCOMPONENT
+public:
+    class DwellerComponent& operator=(class DwellerComponent const&) = delete;
+    DwellerComponent(class DwellerComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI void DecrementDwellingUpdateInterval();
     MCAPI DwellerComponent(class DwellerComponent&&);
     MCAPI DwellerComponent();
@@ -60,10 +64,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _isLockedInToProfession(class Actor const&) const;
     MCAPI static class std::unordered_map<std::string, enum DwellerRole, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, enum DwellerRole> > > const DWELLING_ROLES;
     MCAPI static class std::unordered_map<std::string, enum DwellerComponent::DwellingType, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, enum DwellerComponent::DwellingType> > > const DWELLING_TYPES;
+
 };

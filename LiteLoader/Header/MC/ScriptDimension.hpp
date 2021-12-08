@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptDimension : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDIMENSION
+public:
+    class ScriptDimension& operator=(class ScriptDimension const&) = delete;
+    ScriptDimension(class ScriptDimension const&) = delete;
+    ScriptDimension() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptDimension();
-
     /*
     inline  ~ScriptDimension(){
          (ScriptDimension::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const&, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const&);
     MCAPI class Dimension* getDimension() const;
@@ -40,7 +44,6 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);
 
 protected:
-
 
 private:
 

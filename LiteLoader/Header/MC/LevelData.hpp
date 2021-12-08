@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Social.hpp"
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDATA
+public:
+    class LevelData& operator=(class LevelData const&) = delete;
+    LevelData(class LevelData const&) = delete;
+    LevelData() = delete;
+#endif
 
 public:
-
     MCAPI LevelData(class LevelSettings const&, std::string const&, enum GeneratorType, class BlockPos const&, bool, enum EducationEditionOffer, float, float);
     MCAPI LevelData(bool);
     MCAPI bool achievementsWillBeDisabledOnLoad() const;
@@ -145,10 +150,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const&, struct LevelDataValue&&);
     MCAPI void _tryCorrectSettingsForLegacyWorlds();
+
 };

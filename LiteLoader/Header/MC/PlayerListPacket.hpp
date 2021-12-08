@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerListPacket {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERLISTPACKET
+public:
+    class PlayerListPacket& operator=(class PlayerListPacket const&) = delete;
+    PlayerListPacket(class PlayerListPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlayerListPacket();
@@ -24,7 +29,6 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~PlayerListPacket(){
          (PlayerListPacket::*rv)();
@@ -32,13 +36,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PlayerListPacket(class mce::UUID const&);
     MCAPI PlayerListPacket();
     MCAPI void emplace(class PlayerListEntry&&);
 
 protected:
-
 
 private:
 

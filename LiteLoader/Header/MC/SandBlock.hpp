@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SandBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SANDBLOCK
+public:
+    class SandBlock& operator=(class SandBlock const&) = delete;
+    SandBlock(class SandBlock const&) = delete;
+    SandBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SandBlock();
@@ -140,12 +146,9 @@ public:
     /*119*/ virtual std::string getDustParticleName(class Block const&) const;
     /*120*/ virtual void __unk_vfn_34();
     /*121*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-
-
     MCAPI SandBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

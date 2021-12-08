@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DropperBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DROPPERBLOCKACTOR
+public:
+    class DropperBlockActor& operator=(class DropperBlockActor const&) = delete;
+    DropperBlockActor(class DropperBlockActor const&) = delete;
+    DropperBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -34,14 +40,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI bool pushOutItems(class BlockSource&);
 
 protected:
 
-
 private:
-
     MCAPI bool _addItem(class BlockSource&, class Container&, class ItemStack&, int);
     MCAPI class Container* _getContainerAt(class BlockSource&, class Vec3 const&);
+
 };

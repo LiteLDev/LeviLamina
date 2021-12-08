@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FollowOwnerGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWOWNERGOAL
+public:
+    class FollowOwnerGoal& operator=(class FollowOwnerGoal const&) = delete;
+    FollowOwnerGoal(class FollowOwnerGoal const&) = delete;
+    FollowOwnerGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FollowOwnerGoal();
@@ -27,12 +33,9 @@ public:
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void onPlayerDimensionChanged(class Player*, class AutomaticID<class Dimension, int>);
-
-
     MCAPI FollowOwnerGoal(class Mob&, float, float, float);
 
 protected:
-
 
 private:
 

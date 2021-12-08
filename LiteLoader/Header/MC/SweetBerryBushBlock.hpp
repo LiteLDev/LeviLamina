@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SweetBerryBushBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWEETBERRYBUSHBLOCK
+public:
+    class SweetBerryBushBlock& operator=(class SweetBerryBushBlock const&) = delete;
+    SweetBerryBushBlock(class SweetBerryBushBlock const&) = delete;
+    SweetBerryBushBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SweetBerryBushBlock();
@@ -141,7 +147,6 @@ public:
     /*120*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void __unk_vfn_32();
     /*122*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (SweetBerryBushBlock::*rv)() const;
@@ -169,15 +174,13 @@ public:
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }
     */
-
     MCAPI SweetBerryBushBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI bool _growBush(class BlockSource&, class BlockPos const&) const;
     MCAPI bool _pickBerries(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI void _popBerries(class BlockSource&, class BlockPos const&, int const&, std::vector<class Item const* >*) const;
+
 };

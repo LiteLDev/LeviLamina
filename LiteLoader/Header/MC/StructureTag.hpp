@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace StructureTag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern std::string const BLOCK_ENTITY_DATA;
     MCAPI extern std::string const BLOCK_INDICES;
     MCAPI extern std::string const BLOCK_PALETTE;
@@ -27,4 +26,5 @@ namespace StructureTag {
     MCAPI extern std::string const STRUCTURE_WORLD_ORIGIN;
     MCAPI extern std::string const TICK_DELAY;
     MCAPI extern std::string const TICK_QUEUE_DATA;
+
 };

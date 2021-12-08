@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GoHomeGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GOHOMEGOAL
+public:
+    class GoHomeGoal& operator=(class GoHomeGoal const&) = delete;
+    GoHomeGoal(class GoHomeGoal const&) = delete;
+    GoHomeGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GoHomeGoal();
@@ -25,18 +31,15 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI GoHomeGoal(class Mob&, float, int, float, std::vector<class DefinitionTrigger>, std::vector<class DefinitionTrigger>);
     MCAPI static int const GIVE_UP_TICKS;
 
 protected:
-
     MCAPI class AutomaticID<class Dimension, int> _getHomeDimension() const;
     MCAPI class BlockPos _getHomePos() const;
     MCAPI void _triggerOnFailedEvents();
 
 private:
-
     MCAPI bool _hasRequiredComponents() const;
+
 };

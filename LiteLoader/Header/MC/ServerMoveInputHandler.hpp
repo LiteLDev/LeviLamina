@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveInput.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerMoveInputHandler : public MoveInput {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERMOVEINPUTHANDLER
+public:
+    class ServerMoveInputHandler& operator=(class ServerMoveInputHandler const&) = delete;
+    ServerMoveInputHandler(class ServerMoveInputHandler const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
@@ -27,7 +32,6 @@ public:
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void setSneakDown(bool);
     /*8*/ virtual class Vec3 const& getGazeDirection() const;
-
     /*
     inline void registerInputHandlers(class InputHandler& a0){
         void (ServerMoveInputHandler::*rv)(class InputHandler&);
@@ -35,12 +39,10 @@ public:
         return (this->*rv)(std::forward<class InputHandler&>(a0));
     }
     */
-
     MCAPI ServerMoveInputHandler();
     MCAPI void digestPlayerInputPacket(class PlayerAuthInputPacket const&);
 
 protected:
-
 
 private:
 

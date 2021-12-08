@@ -3,20 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum LoadMode;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKSOURCE
+public:
+    class ChunkSource& operator=(class ChunkSource const&) = delete;
+    ChunkSource(class ChunkSource const&) = delete;
+    ChunkSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChunkSource();
@@ -43,7 +49,6 @@ public:
     /*21*/ virtual void clearDeletedEntities();
     /*22*/ virtual bool canCreateViews() const;
     /*23*/ virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
-
     /*
     inline  ~ChunkSource(){
          (ChunkSource::*rv)();
@@ -51,7 +56,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ChunkSource(class Dimension*, int);
     MCAPI ChunkSource(std::unique_ptr<class ChunkSource>);
     MCAPI void checkAndLaunchChunkGenerationTasks(bool);
@@ -64,7 +68,6 @@ public:
     MCAPI class Level& getLevel() const;
 
 protected:
-
     MCAPI bool _checkAndDispatchTaskForLevelChunk(struct std::pair<class ChunkPos, enum ChunkState> const&, bool);
     MCAPI void _checkForReplacementDataTask(class LevelChunk&, class ChunkViewSource&);
     MCAPI void _checkForUnblockingChunks(class LevelChunk const&);

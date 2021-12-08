@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FurnaceBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FURNACEBLOCKACTOR
+public:
+    class FurnaceBlockActor& operator=(class FurnaceBlockActor const&) = delete;
+    FurnaceBlockActor(class FurnaceBlockActor const&) = delete;
+    FurnaceBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -129,7 +135,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI FurnaceBlockActor(class BlockPos const&);
     MCAPI void checkForAlternativeFuelAchievement(class BlockSource&, class ItemStack const&);
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);
@@ -152,11 +157,9 @@ public:
     MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const&, int);
 
 protected:
-
     MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const&, class HashedString const&, enum LevelSoundEvent, enum ContainerType, int, class Block const&, class Block const&);
 
 private:
-
     MCAPI float _getXPRewardMultiplier(class ItemStackBase const&) const;
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource&);
     MCAPI int _roundXPReward(float) const;
@@ -171,4 +174,5 @@ private:
     MCAPI static std::string const SLOT_KEY;
     MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
     MCAPI static std::string const STORED_XP_KEY;
+
 };

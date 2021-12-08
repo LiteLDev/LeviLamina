@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AmphibiousMoveControlDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMPHIBIOUSMOVECONTROLDESCRIPTION
+public:
+    class AmphibiousMoveControlDescription& operator=(class AmphibiousMoveControlDescription const&) = delete;
+    AmphibiousMoveControlDescription(class AmphibiousMoveControlDescription const&) = delete;
+    AmphibiousMoveControlDescription() = delete;
+#endif
 
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~AmphibiousMoveControlDescription();
-
     /*
     inline  ~AmphibiousMoveControlDescription(){
          (AmphibiousMoveControlDescription::*rv)();
@@ -29,9 +34,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

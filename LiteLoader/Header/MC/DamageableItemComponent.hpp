@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DamageableItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGEABLEITEMCOMPONENT
+public:
+    class DamageableItemComponent& operator=(class DamageableItemComponent const&) = delete;
+    DamageableItemComponent(class DamageableItemComponent const&) = delete;
+    DamageableItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DamageableItemComponent();
@@ -24,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI int getDamageChance(int) const;
     MCAPI struct IntRange getDamageChanceRange() const;
     MCAPI int getMaxDamage() const;
@@ -33,7 +37,6 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
 protected:
-
 
 private:
 

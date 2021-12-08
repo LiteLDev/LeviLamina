@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WeepingVinesBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEEPINGVINESBLOCK
+public:
+    class WeepingVinesBlock& operator=(class WeepingVinesBlock const&) = delete;
+    WeepingVinesBlock(class WeepingVinesBlock const&) = delete;
+    WeepingVinesBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WeepingVinesBlock();
@@ -137,16 +143,13 @@ public:
     /*116*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*117*/ virtual void __unk_vfn_32();
     /*118*/ virtual void __unk_vfn_33();
-
-
     MCAPI WeepingVinesBlock(std::string const&, int);
     MCAPI static void placeVineString(class BlockSource&, class Random&, class BlockPos const&, int, int, int);
 
 protected:
 
-
 private:
-
     MCAPI bool _shouldGrow(class BlockSource&, class BlockPos const&, unsigned __int64) const;
     MCAPI void _tryGrow(class BlockSource&, class BlockPos const&, int) const;
+
 };

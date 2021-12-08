@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "IRequestAction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TestAction : public IRequestAction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTACTION
+public:
+    class TestAction& operator=(class TestAction const&) = delete;
+    TestAction(class TestAction const&) = delete;
+    TestAction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TestAction();
     /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
     /*2*/ virtual bool operator==(class IRequestAction&);
 
-
-
 protected:
-
 
 private:
 

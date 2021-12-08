@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DispenserBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DISPENSERBLOCK
+public:
+    class DispenserBlock& operator=(class DispenserBlock const&) = delete;
+    DispenserBlock(class DispenserBlock const&) = delete;
+    DispenserBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DispenserBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual void __unk_vfn_33();
     /*116*/ virtual int getTickDelay() const;
     /*117*/ virtual void dispenseFrom(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool isContainerBlock() const{
         bool (DispenserBlock::*rv)() const;
@@ -154,12 +159,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DispenserBlock(std::string const&, int);
     MCAPI static void ejectItem(class BlockSource&, class Vec3 const&, unsigned char, class ItemStack const&);
 
 protected:
-
     MCAPI void ejectItem(class BlockSource&, class Vec3 const&, unsigned char, class ItemStack const&, class Container&, int) const;
     MCAPI class Vec3 getDispensePosition(class BlockSource&, class Vec3 const&) const;
     MCAPI unsigned char getFacing(class Block const&) const;

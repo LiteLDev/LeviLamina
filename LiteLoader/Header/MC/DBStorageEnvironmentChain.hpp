@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DBStorageEnvironmentChain {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGEENVIRONMENTCHAIN
+public:
+    class DBStorageEnvironmentChain& operator=(class DBStorageEnvironmentChain const&) = delete;
+    DBStorageEnvironmentChain(class DBStorageEnvironmentChain const&) = delete;
+    DBStorageEnvironmentChain() = delete;
+#endif
 
 public:
-
     MCAPI DBStorageEnvironmentChain(struct DBStorageConfig const&, class Core::Path const&);
     MCAPI class Core::Result isChainValid(bool) const;
     MCAPI ~DBStorageEnvironmentChain();
@@ -26,8 +31,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::unique_ptr<class FlushableEnv> createFlushableEnv(class leveldb::Env*, class std::shared_ptr<class Core::FileStorageArea>, class Core::Path const&);
+
 };

@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerPlayerEventCoordinator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYEREVENTCOORDINATOR
+public:
+    class ServerPlayerEventCoordinator& operator=(class ServerPlayerEventCoordinator const&) = delete;
+    ServerPlayerEventCoordinator(class ServerPlayerEventCoordinator const&) = delete;
+    ServerPlayerEventCoordinator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerPlayerEventCoordinator();
-
-
     MCAPI void sendPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
     MCAPI void sendPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
     MCAPI void sendPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
@@ -27,7 +31,6 @@ public:
     MCAPI void sendPlayerOnGround(class Player&);
 
 protected:
-
 
 private:
 

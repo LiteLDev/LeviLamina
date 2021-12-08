@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LowMemoryWatcher {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOWMEMORYWATCHER
+public:
+    class LowMemoryWatcher& operator=(class LowMemoryWatcher const&) = delete;
+    LowMemoryWatcher(class LowMemoryWatcher const&) = delete;
+    LowMemoryWatcher() = delete;
+#endif
 
 public:
 
-
 protected:
 
-
 private:
-
     MCAPI static bool mPlatformToldUsLowMemory;
     MCAPI static std::list<class std::vector<char, class std::allocator<char> >> mPleaseLeakMemory;
     MCAPI static class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > mTimeToResetWarning;
+
 };

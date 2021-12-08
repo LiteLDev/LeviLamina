@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct WorldTemplateInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEINFO
+public:
+    struct WorldTemplateInfo& operator=(struct WorldTemplateInfo const&) = delete;
+    WorldTemplateInfo(struct WorldTemplateInfo const&) = delete;
+    WorldTemplateInfo() = delete;
+#endif
 
 public:
-
     MCAPI WorldTemplateInfo(class WorldTemplatePackManifest const&);
     MCAPI void addWorldTemplatePackSource(class WorldTemplatePackSource&);
     MCAPI class WorldTemplatePackManifest const& getPackManifest() const;
@@ -28,7 +33,6 @@ public:
     MCAPI ~WorldTemplateInfo();
 
 protected:
-
 
 private:
 

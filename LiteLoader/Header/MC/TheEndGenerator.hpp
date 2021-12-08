@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Util.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TheEndGenerator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THEENDGENERATOR
+public:
+    class TheEndGenerator& operator=(class TheEndGenerator const&) = delete;
+    TheEndGenerator(class TheEndGenerator const&) = delete;
+    TheEndGenerator() = delete;
+#endif
 
 public:
     /*
@@ -90,16 +96,14 @@ public:
         return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<bool>(a2));
     }
     */
-
     MCAPI TheEndGenerator(class Dimension&, unsigned int, class Biome const*);
     MCAPI class Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(class ChunkPos const&) const;
     MCAPI bool isIslandChunk(int, int);
 
 protected:
 
-
 private:
-
     MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);
     MCAPI float getIslandHeightValue(int, int, int, int) const;
+
 };

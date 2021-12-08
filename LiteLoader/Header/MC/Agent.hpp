@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Agent : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENT
+public:
+    class Agent& operator=(class Agent const&) = delete;
+    Agent(class Agent const&) = delete;
+    Agent() = delete;
+#endif
 
 public:
     /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -103,7 +109,6 @@ public:
     /*81*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
     /*82*/ virtual void _serverAiMobStep();
     /*83*/ virtual void __unk_vfn_25();
-
     /*
     inline bool isTargetable() const{
         bool (Agent::*rv)() const;
@@ -126,7 +131,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Agent(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI float getMoveSpeedScalar() const;
     MCAPI int getSelectedSlot() const;
@@ -140,7 +144,6 @@ public:
     MCAPI static class Vec3 roundTeleportPos(class Vec3 const&);
 
 protected:
-
 
 private:
 

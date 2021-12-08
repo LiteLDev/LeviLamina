@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RopeSystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROPESYSTEM
+public:
+    class RopeSystem& operator=(class RopeSystem const&) = delete;
+    RopeSystem(class RopeSystem const&) = delete;
+#endif
 
 public:
-
     MCAPI RopeSystem();
     MCAPI void _initializePins(class Vec3 const&, class Vec3 const&);
     MCAPI void cutAtPercent(float);
@@ -32,9 +36,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _finalizeBucket(struct AABBBucket&);
     MCAPI void _initializePins();
     MCAPI void _integrate();
@@ -50,4 +52,5 @@ private:
     MCAPI void _tick();
     MCAPI void _tickWaves();
     MCAPI void _updateRenderPoints();
+
 };

@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Biome {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum BiomeTempCategory;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOME
+public:
+    class Biome& operator=(class Biome const&) = delete;
+    Biome(class Biome const&) = delete;
+    Biome() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Biome();
-
-
     MCAPI Biome(int);
     MCAPI class Biome& addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType> >&);
     MCAPI bool canHaveSnowfall(class BlockSource const&, class BlockPos const&) const;
@@ -64,7 +68,6 @@ public:
     MCAPI static void buildCachedTemperatureNoise(class LevelChunk&);
 
 protected:
-
 
 private:
 

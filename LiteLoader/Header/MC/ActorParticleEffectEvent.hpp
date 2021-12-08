@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorParticleEffectEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPARTICLEEFFECTEVENT
+public:
+    class ActorParticleEffectEvent& operator=(class ActorParticleEffectEvent const&) = delete;
+    ActorParticleEffectEvent(class ActorParticleEffectEvent const&) = delete;
+    ActorParticleEffectEvent() = delete;
+#endif
 
 public:
-
     MCAPI ~ActorParticleEffectEvent();
 
 protected:
-
 
 private:
 

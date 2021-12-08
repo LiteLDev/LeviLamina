@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "persona.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SerializedPersonaPieceHandle {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZEDPERSONAPIECEHANDLE
+public:
+    class SerializedPersonaPieceHandle& operator=(class SerializedPersonaPieceHandle const&) = delete;
+    SerializedPersonaPieceHandle(class SerializedPersonaPieceHandle const&) = delete;
+    SerializedPersonaPieceHandle() = delete;
+#endif
 
 public:
-
     MCAPI SerializedPersonaPieceHandle(std::string const&, enum persona::PieceType, class mce::UUID, bool, std::string const&);
 
 protected:
-
 
 private:
 

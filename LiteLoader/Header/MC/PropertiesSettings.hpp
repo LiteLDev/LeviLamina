@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PropertiesSettings {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTIESSETTINGS
+public:
+    class PropertiesSettings& operator=(class PropertiesSettings const&) = delete;
+    PropertiesSettings(class PropertiesSettings const&) = delete;
+    PropertiesSettings() = delete;
+#endif
 
 public:
-
     MCAPI PropertiesSettings(std::string const&);
     MCAPI bool allowCheats() const;
     MCAPI bool enableItemStackNetManager() const;
@@ -58,7 +63,6 @@ public:
     MCAPI static bool parseBoolValue(std::string const&);
 
 protected:
-
 
 private:
 

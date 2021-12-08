@@ -3,23 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AttributeModifier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEMODIFIER
+public:
+    AttributeModifier(class AttributeModifier const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~AttributeModifier();
     /*1*/ virtual bool isInstantaneous() const;
-
     /*
     inline  ~AttributeModifier(){
          (AttributeModifier::*rv)();
@@ -27,7 +30,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AttributeModifier(class mce::UUID, std::string const&, float, int, int, bool);
     MCAPI AttributeModifier(class mce::UUID, std::string const&, float, enum AttributeModifierOperation, enum AttributeOperands, bool);
     MCAPI AttributeModifier();
@@ -41,8 +43,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class mce::UUID const mInvalidUUID;
+
 };

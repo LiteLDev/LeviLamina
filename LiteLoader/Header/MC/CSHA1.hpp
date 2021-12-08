@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CSHA1 {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CSHA1
+public:
+    class CSHA1& operator=(class CSHA1 const&) = delete;
+    CSHA1(class CSHA1 const&) = delete;
+#endif
 
 public:
-
     MCAPI CSHA1();
     MCAPI void Final();
     MCAPI unsigned char* GetHash() const;
@@ -27,8 +31,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void Transform(unsigned int*, unsigned char const*);
+
 };

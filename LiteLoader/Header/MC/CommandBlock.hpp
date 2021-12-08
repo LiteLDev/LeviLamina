@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDBLOCK
+public:
+    class CommandBlock& operator=(class CommandBlock const&) = delete;
+    CommandBlock(class CommandBlock const&) = delete;
+    CommandBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CommandBlock();
@@ -133,7 +139,6 @@ public:
     /*112*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*113*/ virtual void __unk_vfn_32();
     /*114*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isInteractiveBlock() const{
         bool (CommandBlock::*rv)() const;
@@ -146,19 +151,17 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CommandBlock(std::string const&, int, enum CommandBlockMode);
     MCAPI enum CommandBlockMode getMode() const;
     MCAPI void updateBlock(class BlockSource&, class BlockPos const&, enum CommandBlockMode, bool) const;
 
 protected:
 
-
 private:
-
     MCAPI void _execute(class BlockSource&, class CommandBlockActor&, class BlockPos const&, bool) const;
     MCAPI void _executeChain(class BlockSource&, class BlockPos const&) const;
     MCAPI bool _executeChainBlock(class BlockSource&, class BlockPos const&, class CommandBlockActor&, bool) const;
     MCAPI void _installCircuit(class BlockSource&, class BlockPos const&, bool) const;
     MCAPI static int* mCBModeMap;
+
 };

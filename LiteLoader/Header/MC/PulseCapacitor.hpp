@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ProducerComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PulseCapacitor : public ProducerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PULSECAPACITOR
+public:
+    class PulseCapacitor& operator=(class PulseCapacitor const&) = delete;
+    PulseCapacitor(class PulseCapacitor const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PulseCapacitor();
@@ -37,7 +42,6 @@ public:
     /*16*/ virtual bool isSecondaryPowered() const;
     /*17*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
     /*18*/ virtual unsigned char getPoweroutDirection() const;
-
     /*
     inline bool canConsumerPower() const{
         bool (PulseCapacitor::*rv)() const;
@@ -45,11 +49,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PulseCapacitor();
 
 protected:
-
 
 private:
 

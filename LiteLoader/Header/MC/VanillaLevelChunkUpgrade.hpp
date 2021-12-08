@@ -3,19 +3,18 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaLevelChunkUpgrade {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 enum Axis;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool addBiomeSpecificVillageSkins(class CompoundTag&, class BlockSource&);
     MCAPI bool convertOcelotTagToCat(class CompoundTag&);
     MCAPI bool convertVillagerV1TagToV2(class CompoundTag&);
@@ -36,4 +35,5 @@ enum Axis;
     MCAPI void upgradeLevelChunk(class LevelChunk&, class BlockSource&);
     MCAPI void upgradeOldLimboEntity(class CompoundTag&, enum LimboEntitiesVersion, bool);
     MCAPI void upgradeWorldHeight(class LevelChunk&, class LevelChunk&, class BlockSource&);
+
 };

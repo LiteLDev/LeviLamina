@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PackAccessStrategy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKACCESSSTRATEGY
+public:
+    class PackAccessStrategy& operator=(class PackAccessStrategy const&) = delete;
+    PackAccessStrategy(class PackAccessStrategy const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PackAccessStrategy();
@@ -40,7 +45,6 @@ public:
     /*19*/ virtual void unload() = 0;
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-
     /*
     inline  ~PackAccessStrategy(){
          (PackAccessStrategy::*rv)();
@@ -48,13 +52,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PackAccessStrategy();
     MCAPI bool hasGeneratedAssetSet() const;
     MCAPI static class Core::PathBuffer<std::string > const PACK_IMPORT_LOCK_FILE;
 
 protected:
-
     MCAPI void _addToAssetSet(class Core::Path const&);
     MCAPI void _deleteFromAssetSet(class Core::PathBuffer<std::string > const&);
     MCAPI bool _isInAssetSet(class Core::Path const&) const;

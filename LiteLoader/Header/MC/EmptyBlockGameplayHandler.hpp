@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EmptyBlockGameplayHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYBLOCKGAMEPLAYHANDLER
+public:
+    class EmptyBlockGameplayHandler& operator=(class EmptyBlockGameplayHandler const&) = delete;
+    EmptyBlockGameplayHandler(class EmptyBlockGameplayHandler const&) = delete;
+    EmptyBlockGameplayHandler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EmptyBlockGameplayHandler();
@@ -24,7 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
-
     /*
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (EmptyBlockGameplayHandler::*rv)(struct ActorStandOnBlockEvent const&);
@@ -58,9 +63,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

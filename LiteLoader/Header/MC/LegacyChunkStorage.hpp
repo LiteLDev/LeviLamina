@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChunkSource.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyChunkStorage : public ChunkSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYCHUNKSTORAGE
+public:
+    class LegacyChunkStorage& operator=(class LegacyChunkStorage const&) = delete;
+    LegacyChunkStorage(class LegacyChunkStorage const&) = delete;
+    LegacyChunkStorage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
@@ -30,18 +36,15 @@ public:
     /*9*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*10*/ virtual void clearDeletedEntities();
     /*11*/ virtual bool canCreateViews() const;
-
-
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage&, enum StorageVersion, class Biome&);
 
 protected:
 
-
 private:
-
     MCAPI bool _isImported(class ChunkPos const&);
     MCAPI bool _loadChunk(class LevelChunk&);
     MCAPI void _loadEntities();
     MCAPI void _markChunkAsImported(class ChunkPos const&);
     MCAPI bool _openRegionFile();
+
 };

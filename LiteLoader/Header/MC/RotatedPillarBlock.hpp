@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RotatedPillarBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROTATEDPILLARBLOCK
+public:
+    class RotatedPillarBlock& operator=(class RotatedPillarBlock const&) = delete;
+    RotatedPillarBlock(class RotatedPillarBlock const&) = delete;
+    RotatedPillarBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RotatedPillarBlock();
@@ -135,7 +141,6 @@ public:
     /*114*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*115*/ virtual void __unk_vfn_32();
     /*116*/ virtual void __unk_vfn_33();
-
     /*
     inline  ~RotatedPillarBlock(){
          (RotatedPillarBlock::*rv)();
@@ -143,14 +148,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RotatedPillarBlock(std::string const&, int, class Material const&);
 
 protected:
 
-
 private:
-
     MCAPI static int const* const mRotatedX;
     MCAPI static int const* const mRotatedZ;
+
 };

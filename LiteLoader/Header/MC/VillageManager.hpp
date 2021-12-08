@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VillageManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum BedAvailabilityState;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGEMANAGER
+public:
+    class VillageManager& operator=(class VillageManager const&) = delete;
+    VillageManager(class VillageManager const&) = delete;
+    VillageManager() = delete;
+#endif
 
 public:
-
     MCAPI VillageManager(class Dimension&);
     MCAPI class std::weak_ptr<class Village> fetchClosestVillage(class BlockPos const&, int, unsigned int) const;
     MCAPI class std::weak_ptr<class Village> fetchClosestVillageMostSuitableForDweller(class BlockPos const&, int, unsigned int) const;
@@ -42,9 +47,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addPOIWithinRadius(class BlockPos const&, class BlockSource&);
     MCAPI void _assignPOIOnly(class std::shared_ptr<class POIInstance>&&);
     MCAPI float _calculateDistanceFromPositionToEdgeOfVillage(class BlockPos const&, class Village const&) const;
@@ -58,4 +61,5 @@ private:
     MCAPI static unsigned __int64 const MAX_POI_QUERIES;
     MCAPI static int const MAX_QUERY_SCAN_ITERATIONS;
     MCAPI static int const VILLAGE_HERO_EFFECT_DURATION;
+
 };

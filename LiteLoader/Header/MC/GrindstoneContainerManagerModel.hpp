@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerManagerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GrindstoneContainerManagerModel : public ContainerManagerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRINDSTONECONTAINERMANAGERMODEL
+public:
+    class GrindstoneContainerManagerModel& operator=(class GrindstoneContainerManagerModel const&) = delete;
+    GrindstoneContainerManagerModel(class GrindstoneContainerManagerModel const&) = delete;
+    GrindstoneContainerManagerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GrindstoneContainerManagerModel();
@@ -30,15 +36,12 @@ public:
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
-
-
     MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const ADDITIONAL_SLOT;
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const RESULT_SLOT;
 
 protected:
-
 
 private:
 

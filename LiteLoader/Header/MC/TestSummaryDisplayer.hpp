@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TestSummaryDisplayer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TESTSUMMARYDISPLAYER
+public:
+    class TestSummaryDisplayer& operator=(class TestSummaryDisplayer const&) = delete;
+    TestSummaryDisplayer(class TestSummaryDisplayer const&) = delete;
+    TestSummaryDisplayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TestSummaryDisplayer();
-
     /*
     inline void onTestFailed(class gametest::BaseGameTestInstance& a0){
         void (TestSummaryDisplayer::*rv)(class gametest::BaseGameTestInstance&);
@@ -32,12 +37,10 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI void _say(std::string const&, std::string const&) const;
     MCAPI void _showTestSummaryIfAllDone() const;
+
 };

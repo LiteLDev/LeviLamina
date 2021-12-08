@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FunctionManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNCTIONMANAGER
+public:
+    class FunctionManager& operator=(class FunctionManager const&) = delete;
+    FunctionManager(class FunctionManager const&) = delete;
+    FunctionManager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FunctionManager();
-
-
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const*);
     MCAPI int execute(class FunctionEntry&, class CommandOrigin const&);
     MCAPI class FunctionEntry* getFunction(std::string const&);
@@ -28,12 +32,11 @@ public:
     MCAPI void tick();
 
 protected:
-
     MCAPI void _addTickFunctionsFromJson(class Json::Value const&);
     MCAPI void _processFunctionEntry(std::string const&, std::vector<std::string> const&, std::vector<std::string>&, enum CurrentCmdVersion, class CommandRegistry const&);
 
 private:
-
     MCAPI class CommandOrigin const& _addOriginReference(class CommandOrigin const&, unsigned int);
     MCAPI void _removeOriginReference(class CommandOrigin const&, unsigned int);
+
 };

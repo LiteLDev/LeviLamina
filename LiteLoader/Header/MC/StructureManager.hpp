@@ -2,25 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREMANAGER
+public:
+    class StructureManager& operator=(class StructureManager const&) = delete;
+    StructureManager(class StructureManager const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructureManager();
-
-
     MCAPI StructureManager();
     MCAPI void clearAndShutdownStructurePlacement();
     MCAPI class StructureTemplateDataResponsePacket createStructureDataExportPacket(std::string const&, class ResourcePackManager const*, class LevelStorage*, enum StructureTemplateResponseType);
@@ -40,9 +43,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::string _createLevelStorageId(std::string const&, std::string const&);
     MCAPI bool _placeSegment(class Dimension&, class StructureAnimationData&, class ChunkLoadActionList&, class BoundingBox const&, class std::function<enum ChunksLoadedStatus (__int64)> const&);
     MCAPI bool _placeSegment(class StructureAnimationData&);
@@ -51,4 +52,5 @@ private:
     MCAPI void _savePlacementQueueItem(std::string const&, class StructureAnimationData&);
     MCAPI static char const* BEHAVIOR_PACK_STRUCTURES_FOLDER;
     MCAPI static char const* LEVEL_STORAGE_STRUCTURE_TEMPLATE_PREFIX;
+
 };

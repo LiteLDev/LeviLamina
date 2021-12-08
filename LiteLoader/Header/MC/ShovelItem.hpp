@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 #include "DiggerItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShovelItem : public DiggerItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOVELITEM
+public:
+    class ShovelItem& operator=(class ShovelItem const&) = delete;
+    ShovelItem(class ShovelItem const&) = delete;
+    ShovelItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShovelItem();
@@ -95,12 +101,9 @@ public:
     /*72*/ virtual std::string getAuxValuesDescription() const;
     /*73*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*74*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI ShovelItem(std::string const&, int, class Item::Tier const&);
 
 protected:
-
 
 private:
 

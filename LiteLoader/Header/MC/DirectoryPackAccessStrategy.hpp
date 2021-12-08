@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "PackAccessStrategy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DirectoryPackAccessStrategy : public PackAccessStrategy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKACCESSSTRATEGY
+public:
+    class DirectoryPackAccessStrategy& operator=(class DirectoryPackAccessStrategy const&) = delete;
+    DirectoryPackAccessStrategy(class DirectoryPackAccessStrategy const&) = delete;
+    DirectoryPackAccessStrategy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DirectoryPackAccessStrategy();
@@ -37,7 +43,6 @@ public:
     /*15*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*16*/ virtual bool canRecurse() const;
     /*17*/ virtual void unload();
-
     /*
     inline  ~DirectoryPackAccessStrategy(){
          (DirectoryPackAccessStrategy::*rv)();
@@ -45,11 +50,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DirectoryPackAccessStrategy(class ResourceLocation const&, bool);
 
 protected:
-
 
 private:
 

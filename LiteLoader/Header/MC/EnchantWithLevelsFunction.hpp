@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnchantWithLevelsFunction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTWITHLEVELSFUNCTION
+public:
+    class EnchantWithLevelsFunction& operator=(class EnchantWithLevelsFunction const&) = delete;
+    EnchantWithLevelsFunction(class EnchantWithLevelsFunction const&) = delete;
+    EnchantWithLevelsFunction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EnchantWithLevelsFunction();
-
     /*
     inline int apply(class ItemInstance& a0, class Random& a1, struct Trade const& a2, class LootTableContext& a3){
         int (EnchantWithLevelsFunction::*rv)(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
@@ -42,9 +47,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelStorageWriteBatch {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct BatchEntry {
@@ -20,7 +19,13 @@ struct BatchEntry {
     BatchEntry(BatchEntry const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSTORAGEWRITEBATCH
+public:
+    class LevelStorageWriteBatch& operator=(class LevelStorageWriteBatch const&) = delete;
+    LevelStorageWriteBatch(class LevelStorageWriteBatch const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~LevelStorageWriteBatch();
@@ -30,7 +35,6 @@ public:
     /*4*/ virtual void putKey(std::string const&, class std::shared_ptr<std::string >, int /*enum enum DBHelpers::Category*/);
     /*5*/ virtual void deleteKey(std::string const&, int /*enum enum DBHelpers::Category*/);
     /*6*/ virtual void flush(class LevelStorage&);
-
     /*
     inline  ~LevelStorageWriteBatch(){
          (LevelStorageWriteBatch::*rv)();
@@ -38,7 +42,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI LevelStorageWriteBatch();
     MCAPI void addFlushCallback(class std::function<void (void)>);
     MCAPI void clear();
@@ -47,7 +50,6 @@ public:
     MCAPI class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry> > > > find(std::string const&);
 
 protected:
-
 
 private:
 

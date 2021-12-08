@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DyeColorUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DYECOLORUTIL
+public:
+    class DyeColorUtil& operator=(class DyeColorUtil const&) = delete;
+    DyeColorUtil(class DyeColorUtil const&) = delete;
+    DyeColorUtil() = delete;
+#endif
 
 public:
-
     MCAPI static class std::array<short, 16> const COLOR_TO_AUX;
     MCAPI static class std::array<short, 4> const DEPRECATED_DYE_AUX_VALUES;
     MCAPI static class std::array<short, 16> const DYE_AUX_VALUES;
@@ -27,7 +32,6 @@ public:
     MCAPI static class std::array<enum ItemColor, 20> const mColorMap;
 
 protected:
-
 
 private:
 

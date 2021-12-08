@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ByteTag : public Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 inline unsigned char& value() {
@@ -37,7 +36,13 @@ inline unsigned char get() {
     return value();
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BYTETAG
+public:
+    class ByteTag& operator=(class ByteTag const&) = delete;
+    ByteTag(class ByteTag const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ByteTag();
@@ -49,7 +54,6 @@ public:
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;
-
     /*
     inline  ~ByteTag(){
          (ByteTag::*rv)();
@@ -57,12 +61,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ByteTag(unsigned char);
     MCAPI ByteTag();
 
 protected:
-
 
 private:
 

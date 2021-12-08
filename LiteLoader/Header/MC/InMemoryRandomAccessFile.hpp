@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InMemoryRandomAccessFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYRANDOMACCESSFILE
+public:
+    class InMemoryRandomAccessFile& operator=(class InMemoryRandomAccessFile const&) = delete;
+    InMemoryRandomAccessFile(class InMemoryRandomAccessFile const&) = delete;
+    InMemoryRandomAccessFile() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InMemoryRandomAccessFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, unsigned __int64, class leveldb::Slice*, char*) const;
-
-
     MCAPI InMemoryRandomAccessFile(class std::shared_ptr<class InMemoryFile>);
 
 protected:
-
 
 private:
 

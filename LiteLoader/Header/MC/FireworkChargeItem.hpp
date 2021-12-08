@@ -2,23 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FireworkChargeItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Shape;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKCHARGEITEM
+public:
+    class FireworkChargeItem& operator=(class FireworkChargeItem const&) = delete;
+    FireworkChargeItem(class FireworkChargeItem const&) = delete;
+    FireworkChargeItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FireworkChargeItem();
@@ -100,8 +106,6 @@ public:
     /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI FireworkChargeItem(std::string const&, int);
     MCAPI static std::string const TAG_EXPLOSION;
     MCAPI static std::string const TAG_E_COLORS;
@@ -116,9 +120,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static void _initFireworkChargeItem(class ItemStackBase&, enum FireworkChargeItem::Shape, std::vector<unsigned char>, std::vector<unsigned char>, bool, bool);
     MCAPI static void appendColors(std::string&, std::vector<unsigned char>);
+
 };

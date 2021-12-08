@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldBlockTarget {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDBLOCKTARGET
+public:
+    class WorldBlockTarget& operator=(class WorldBlockTarget const&) = delete;
+    WorldBlockTarget(class WorldBlockTarget const&) = delete;
+    WorldBlockTarget() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorldBlockTarget();
@@ -40,7 +46,6 @@ public:
     /*20*/ virtual short getLocalWaterLevel(class BlockPos const&) const;
     /*21*/ virtual class LevelData const& getLevelData() const;
     /*22*/ virtual struct WorldGenContext const& getContext();
-
     /*
     inline bool apply() const{
         bool (WorldBlockTarget::*rv)() const;
@@ -58,11 +63,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WorldBlockTarget(class BlockSource&, struct WorldGenContext const&);
 
 protected:
-
 
 private:
 

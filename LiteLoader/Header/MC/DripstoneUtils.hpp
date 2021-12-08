@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace DripstoneUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct PointedDripstoneBasePos {
     PointedDripstoneBasePos() = delete;
@@ -19,7 +18,7 @@ struct PointedDripstoneBasePos {
     PointedDripstoneBasePos(PointedDripstoneBasePos const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void buildBaseToTipColumn(class IBlockWorldGenAPI&, class BlockPos const&, unsigned char, int, bool);
     MCAPI bool canBeAdjacentToWater(class IBlockWorldGenAPI&, class BlockPos const&);
     MCAPI class Block const& getPlacementBlock(unsigned char, enum DripstoneThickness const&);
@@ -29,4 +28,5 @@ struct PointedDripstoneBasePos {
     MCAPI bool isLava(class IBlockWorldGenAPI const&, class BlockPos const&);
     MCAPI bool placeDripstoneBlockIfPossible(class IBlockWorldGenAPI&, class BlockPos const&);
     MCAPI bool replaceableByDripstone(class BlockLegacy const&);
+
 };

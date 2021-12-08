@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "FertilizerItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RapidFertilizerItem : public FertilizerItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAPIDFERTILIZERITEM
+public:
+    class RapidFertilizerItem& operator=(class RapidFertilizerItem const&) = delete;
+    RapidFertilizerItem(class RapidFertilizerItem const&) = delete;
+    RapidFertilizerItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RapidFertilizerItem();
@@ -97,10 +103,7 @@ public:
     /*75*/ virtual std::string getAuxValuesDescription() const;
     /*76*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
 
-
-
 protected:
-
 
 private:
 

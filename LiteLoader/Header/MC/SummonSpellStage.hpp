@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SummonSpellStage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUMMONSPELLSTAGE
+public:
+    class SummonSpellStage& operator=(class SummonSpellStage const&) = delete;
+    SummonSpellStage(class SummonSpellStage const&) = delete;
+    SummonSpellStage() = delete;
+#endif
 
 public:
-
     MCAPI ~SummonSpellStage();
 
 protected:
-
 
 private:
 

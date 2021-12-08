@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class IronGolem : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IRONGOLEM
+public:
+    class IronGolem& operator=(class IronGolem const&) = delete;
+    IronGolem(class IronGolem const&) = delete;
+    IronGolem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~IronGolem();
@@ -91,7 +97,6 @@ public:
     /*69*/ virtual void __unk_vfn_24();
     /*70*/ virtual void _serverAiMobStep();
     /*71*/ virtual void __unk_vfn_25();
-
     /*
     inline bool useNewAi() const{
         bool (IronGolem::*rv)() const;
@@ -99,13 +104,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI IronGolem(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getOfferFlowerTick() const;
     MCAPI void offerFlower(bool);
 
 protected:
-
 
 private:
 

@@ -3,27 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyStructureBlockPalette {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREBLOCKPALETTE
+public:
+    class LegacyStructureBlockPalette& operator=(class LegacyStructureBlockPalette const&) = delete;
+    LegacyStructureBlockPalette(class LegacyStructureBlockPalette const&) = delete;
+#endif
 
 public:
-
     MCAPI LegacyStructureBlockPalette();
     MCAPI class Block const& getBlock(int);
     MCAPI ~LegacyStructureBlockPalette();
 
 protected:
-
 
 private:
 

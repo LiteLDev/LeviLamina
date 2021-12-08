@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Fireball.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DragonFireball : public Fireball {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONFIREBALL
+public:
+    class DragonFireball& operator=(class DragonFireball const&) = delete;
+    DragonFireball(class DragonFireball const&) = delete;
+    DragonFireball() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -97,7 +103,6 @@ public:
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual int /*enum enum ParticleType*/ getTrailParticle();
-
     /*
     inline bool shouldBurn(){
         bool (DragonFireball::*rv)();
@@ -105,12 +110,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DragonFireball(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI static float SPLASH_RANGE;
 
 protected:
-
 
 private:
 

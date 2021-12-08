@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureEditorData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREEDITORDATA
+public:
+    class StructureEditorData& operator=(class StructureEditorData const&) = delete;
+#endif
 
 public:
-
     MCAPI StructureEditorData(class StructureEditorData&&);
     MCAPI StructureEditorData(class StructureEditorData const&);
     MCAPI StructureEditorData();
@@ -66,8 +69,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static enum StructureBlockType const DEFAULT_STRUCTURE_TYPE;
+
 };

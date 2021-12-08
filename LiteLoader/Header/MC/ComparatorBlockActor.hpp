@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ComparatorBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORBLOCKACTOR
+public:
+    class ComparatorBlockActor& operator=(class ComparatorBlockActor const&) = delete;
+    ComparatorBlockActor(class ComparatorBlockActor const&) = delete;
+    ComparatorBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ComparatorBlockActor();
@@ -52,10 +58,7 @@ public:
     /*31*/ virtual int getOutputSignal();
     /*32*/ virtual void setOutputSignal(int);
 
-
-
 protected:
-
 
 private:
 

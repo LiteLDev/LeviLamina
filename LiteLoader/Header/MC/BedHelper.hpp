@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BedHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDHELPER
+public:
+    class BedHelper& operator=(class BedHelper const&) = delete;
+    BedHelper(class BedHelper const&) = delete;
+    BedHelper() = delete;
+#endif
 
 public:
-
     MCAPI BedHelper(int, int, int, int, float, float, float, float);
     MCAPI BedHelper(int, int, int, int, float, float, float, float, float, float);
     MCAPI float getBedRotation(int) const;
     MCAPI void setBedPositionOffsets(int, float&, float&, class Vec3&);
 
 protected:
-
 
 private:
 

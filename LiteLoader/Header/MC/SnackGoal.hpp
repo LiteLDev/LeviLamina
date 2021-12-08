@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SnackGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNACKGOAL
+public:
+    class SnackGoal& operator=(class SnackGoal const&) = delete;
+    SnackGoal(class SnackGoal const&) = delete;
+    SnackGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SnackGoal();
@@ -28,15 +34,11 @@ public:
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual int getRandomEatingEnd() const;
-
-
     MCAPI SnackGoal(class Mob&, std::vector<class ItemDescriptor> const&, float, float, float);
 
 protected:
 
-
 private:
-
     MCAPI bool _hasSnackableItems();
     MCAPI bool _isSnackableItem(class ItemStack const&) const;
     MCAPI void _updateHand(class ItemStack const&);
@@ -47,4 +49,5 @@ private:
     MCAPI static int const RANDOM_EATING_START;
     MCAPI static float const SEARCH_SIZE;
     MCAPI static float const STOP_DIST_SQRD;
+
 };

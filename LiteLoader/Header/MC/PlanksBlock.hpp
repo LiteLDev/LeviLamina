@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlanksBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLANKSBLOCK
+public:
+    class PlanksBlock& operator=(class PlanksBlock const&) = delete;
+    PlanksBlock(class PlanksBlock const&) = delete;
+    PlanksBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlanksBlock();
@@ -137,7 +143,6 @@ public:
     /*116*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*117*/ virtual void __unk_vfn_32();
     /*118*/ virtual void __unk_vfn_33();
-
     /*
     inline class ItemInstance getResourceItem(class Randomize& a0, class Block const& a1, int a2) const{
         class ItemInstance (PlanksBlock::*rv)(class Randomize&, class Block const&, int) const;
@@ -145,13 +150,11 @@ public:
         return (this->*rv)(std::forward<class Randomize&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2));
     }
     */
-
     MCAPI PlanksBlock(std::string const&, int);
     MCAPI static class std::array<std::string, 6> const WOOD_NAMES;
     MCAPI static bool isValidWoodMaterial(int);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StairBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STAIRBLOCK
+public:
+    class StairBlock& operator=(class StairBlock const&) = delete;
+    StairBlock(class StairBlock const&) = delete;
+    StairBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StairBlock();
@@ -145,7 +151,6 @@ public:
     /*124*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*125*/ virtual void __unk_vfn_32();
     /*126*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (StairBlock::*rv)() const;
@@ -163,17 +168,15 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StairBlock(std::string const&, int, class BlockLegacy const&, int);
     MCAPI bool setInnerPieceShape(class Block const&, class BlockSource&, class BlockPos const&, class AABB&, bool) const;
     MCAPI bool setStepShape(class Block const&, class BlockSource&, class BlockPos const&, class AABB&, bool) const;
     MCAPI static unsigned char stairDirectionToFacing(int);
 
 protected:
-
     MCAPI void shapeZFightShrink(class AABB&) const;
 
 private:
-
     MCAPI static class BaseGameVersion const STAIR_BLOCK_DOESNT_BREAK_FALLING_BLOCK_VERSION;
+
 };

@@ -3,29 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LookAtBlockNode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATBLOCKNODE
+public:
+    class LookAtBlockNode& operator=(class LookAtBlockNode const&) = delete;
+    LookAtBlockNode(class LookAtBlockNode const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~LookAtBlockNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
     /*2*/ virtual void initializeFromDefinition(class Actor&);
-
-
     MCAPI LookAtBlockNode();
 
 protected:
-
 
 private:
 

@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OnFireSystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRESYSTEM
+public:
+    class OnFireSystem& operator=(class OnFireSystem const&) = delete;
+    OnFireSystem(class OnFireSystem const&) = delete;
+    OnFireSystem() = delete;
+#endif
 
 public:
-
     MCAPI static void extinguishFire(class Actor&);
     MCAPI static void onFireChanged(class Actor&);
     MCAPI static void setOnFire(class Actor&, int);
@@ -25,7 +30,6 @@ public:
     MCAPI static void stopFire(class Actor&);
 
 protected:
-
     MCAPI static bool _extinguishFireIfInWater(class Actor&);
 
 private:

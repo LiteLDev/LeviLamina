@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorEventResponseFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTRESPONSEFACTORY
+public:
+    class ActorEventResponseFactory& operator=(class ActorEventResponseFactory const&) = delete;
+    ActorEventResponseFactory(class ActorEventResponseFactory const&) = delete;
+    ActorEventResponseFactory() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorEventResponseFactory();
     /*1*/ virtual void initializeFactory(class Experiments const&);
-
     /*
     inline  ~ActorEventResponseFactory(){
          (ActorEventResponseFactory::*rv)();
@@ -27,11 +32,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void initSchema();
 
 protected:
-
 
 private:
 

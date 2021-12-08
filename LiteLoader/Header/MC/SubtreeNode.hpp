@@ -3,29 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SubtreeNode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBTREENODE
+public:
+    class SubtreeNode& operator=(class SubtreeNode const&) = delete;
+    SubtreeNode(class SubtreeNode const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SubtreeNode();
     /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
     /*2*/ virtual void initializeFromDefinition(class Actor&);
-
-
     MCAPI SubtreeNode();
 
 protected:
-
 
 private:
 

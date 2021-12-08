@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Util.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverworldGenerator2d {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATOR2D
+public:
+    class OverworldGenerator2d& operator=(class OverworldGenerator2d const&) = delete;
+    OverworldGenerator2d(class OverworldGenerator2d const&) = delete;
+    OverworldGenerator2d() = delete;
+#endif
 
 public:
     /*
@@ -50,14 +56,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI OverworldGenerator2d(class Dimension&, unsigned int, bool, class Biome const*);
 
 protected:
 
-
 private:
-
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const&) const;
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class LevelData const&, class BiomeRegistry const&) const;
+
 };

@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBlockPistonComponent : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPISTONCOMPONENT
+public:
+    class ScriptBlockPistonComponent& operator=(class ScriptBlockPistonComponent const&) = delete;
+    ScriptBlockPistonComponent(class ScriptBlockPistonComponent const&) = delete;
+    ScriptBlockPistonComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBlockPistonComponent();
-
     /*
     inline  ~ScriptBlockPistonComponent(){
          (ScriptBlockPistonComponent::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent&&);
     MCAPI class Scripting::Result<std::vector<class BlockPos> > getAttachedBlocks();
     MCAPI class Scripting::Result<bool> isExpanded();
@@ -41,7 +45,6 @@ public:
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockPistonComponent> tryCreate(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
 
 protected:
-
 
 private:
 

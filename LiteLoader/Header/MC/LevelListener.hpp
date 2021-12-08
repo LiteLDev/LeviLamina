@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockSourceListener.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelListener : public BlockSourceListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELLISTENER
+public:
+    class LevelListener& operator=(class LevelListener const&) = delete;
+    LevelListener(class LevelListener const&) = delete;
+    LevelListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LevelListener();
@@ -29,7 +35,6 @@ public:
     /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual void __unk_vfn_6();
     /*10*/ virtual class Particle* addParticle(int /*enum enum ParticleType*/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
-
     /*
     inline void levelSoundEvent(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
         void (LevelListener::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
@@ -158,9 +163,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

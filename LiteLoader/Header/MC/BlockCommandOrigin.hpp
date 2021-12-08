@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "CommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockCommandOrigin : public CommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKCOMMANDORIGIN
+public:
+    class BlockCommandOrigin& operator=(class BlockCommandOrigin const&) = delete;
+    BlockCommandOrigin(class BlockCommandOrigin const&) = delete;
+    BlockCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockCommandOrigin();
@@ -43,7 +49,6 @@ public:
     /*21*/ virtual bool isValid() const;
     /*22*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*23*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
-
     /*
     inline  ~BlockCommandOrigin(){
          (BlockCommandOrigin::*rv)();
@@ -51,13 +56,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BlockCommandOrigin(class BlockSource&, class BlockPos const&);
     MCAPI BlockCommandOrigin(class Level&, class AutomaticID<class Dimension, int>, std::string const&, class BlockPos const&);
     MCAPI static std::unique_ptr<class BlockCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:
-
     MCAPI std::string _getName(class BlockSource&) const;
 
 private:

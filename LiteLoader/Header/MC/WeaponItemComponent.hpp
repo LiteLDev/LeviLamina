@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WeaponItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAPONITEMCOMPONENT
+public:
+    class WeaponItemComponent& operator=(class WeaponItemComponent const&) = delete;
+    WeaponItemComponent(class WeaponItemComponent const&) = delete;
+    WeaponItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WeaponItemComponent();
@@ -24,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI WeaponItemComponent(class ComponentItem*);
     MCAPI void appendFormattedHovertext(class ItemStackBase const&, std::string&, bool) const;
     MCAPI void hitActor(class ItemStack&, class Actor&, class Mob&) const;
@@ -35,7 +39,6 @@ public:
     MCAPI static class HashedString const& getIdentifier();
 
 protected:
-
 
 private:
 

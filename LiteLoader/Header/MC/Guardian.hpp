@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Guardian : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GUARDIAN
+public:
+    class Guardian& operator=(class Guardian const&) = delete;
+    Guardian(class Guardian const&) = delete;
+    Guardian() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -93,7 +99,6 @@ public:
     /*71*/ virtual void _serverAiMobStep();
     /*72*/ virtual void __unk_vfn_25();
     /*73*/ virtual bool isDarkEnoughToSpawn() const;
-
     /*
     inline bool isDarkEnoughToSpawn() const{
         bool (Guardian::*rv)() const;
@@ -106,7 +111,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Guardian(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getAttackDuration();
     MCAPI class Vec3 getMoveEyeVector();
@@ -116,11 +120,10 @@ public:
     MCAPI void setElder(bool);
 
 protected:
-
     MCAPI void registerLoopingSounds();
 
 private:
-
     MCAPI static int const ATTACK_TIME;
     MCAPI static int const FIRST_DAMAGE_TIME;
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemFrameBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMFRAMEBLOCK
+public:
+    class ItemFrameBlock& operator=(class ItemFrameBlock const&) = delete;
+    ItemFrameBlock(class ItemFrameBlock const&) = delete;
+    ItemFrameBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemFrameBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual void __unk_vfn_33();
     /*119*/ virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
     /*120*/ virtual class HashedString getSpawnedItemName() const;
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (ItemFrameBlock::*rv)() const;
@@ -157,14 +162,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemFrameBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI void _checkAchievements(class Player&, class BlockPos const&) const;
     MCAPI void getShape(int, class AABB&, bool) const;
+
 };

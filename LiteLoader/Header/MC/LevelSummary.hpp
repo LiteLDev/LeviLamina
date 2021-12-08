@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelSummary {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELSUMMARY
+public:
+    class LevelSummary& operator=(class LevelSummary const&) = delete;
+    LevelSummary(class LevelSummary const&) = delete;
+    LevelSummary() = delete;
+#endif
 
 public:
-
     MCAPI static class Core::PathBuffer<std::string > const CUSTOM_ICON_FILENAME;
     MCAPI static std::string const DEFAULT_WORLD_ICON_FILENAME;
     MCAPI static std::string const INVALID_LEVEL_ID;
@@ -27,7 +32,6 @@ public:
     MCAPI static class Core::PathBuffer<std::string > buildWorldIconPath(class Core::Path const&);
 
 protected:
-
 
 private:
 

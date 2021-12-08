@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameSession {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMESESSION
+public:
+    class GameSession& operator=(class GameSession const&) = delete;
+    GameSession(class GameSession const&) = delete;
+    GameSession() = delete;
+#endif
 
 public:
-
     MCAPI GameSession(class NetworkHandler&, std::unique_ptr<class ServerNetworkHandler>, class LoopbackPacketSender&, std::unique_ptr<class NetEventCallback>, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >, unsigned char);
     MCAPI void setLevel(struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >);
 
 protected:
-
 
 private:
 

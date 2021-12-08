@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MobEventCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct InitProxy {
@@ -20,17 +19,21 @@ struct InitProxy {
     InitProxy(InitProxy const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEVENTCOMMAND
+public:
+    class MobEventCommand& operator=(class MobEventCommand const&) = delete;
+    MobEventCommand(class MobEventCommand const&) = delete;
+    MobEventCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MobEventCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void setup(class CommandRegistry&, struct MobEventCommand::InitProxy&&);
 
 protected:
-
 
 private:
 

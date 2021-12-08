@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FillingContainer.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Inventory : public FillingContainer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORY
+public:
+    class Inventory& operator=(class Inventory const&) = delete;
+    Inventory(class Inventory const&) = delete;
+    Inventory() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Inventory();
@@ -34,14 +40,11 @@ public:
     /*13*/ virtual int getEmptySlotsCount() const;
     /*14*/ virtual int getFirstEmptySlot() const;
     /*15*/ virtual void setContainerSize(int);
-
-
     MCAPI void dropSlot(int, bool, bool, bool);
     MCAPI void setupDefault();
     MCAPI void tick(int);
 
 protected:
-
 
 private:
 

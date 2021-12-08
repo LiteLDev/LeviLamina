@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BasicTimer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICTIMER
+public:
+    class BasicTimer& operator=(class BasicTimer const&) = delete;
+    BasicTimer(class BasicTimer const&) = delete;
+    BasicTimer() = delete;
+#endif
 
 public:
-
     MCAPI BasicTimer(double, class std::function<double (void)>);
     MCAPI bool isFinished() const;
     MCAPI void resetTime();
     MCAPI ~BasicTimer();
 
 protected:
-
 
 private:
 

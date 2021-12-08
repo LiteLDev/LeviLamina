@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SavedDataStorage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SAVEDDATASTORAGE
+public:
+    class SavedDataStorage& operator=(class SavedDataStorage const&) = delete;
+    SavedDataStorage(class SavedDataStorage const&) = delete;
+    SavedDataStorage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SavedDataStorage();
-
-
     MCAPI SavedDataStorage(class LevelStorage*);
     MCAPI bool loadAndSet(class SavedData&, std::string const&);
     MCAPI void save();
@@ -27,8 +31,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _save(class SavedData const&);
+
 };

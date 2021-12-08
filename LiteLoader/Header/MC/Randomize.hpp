@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Randomize {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZE
+public:
+    class Randomize& operator=(class Randomize const&) = delete;
+    Randomize(class Randomize const&) = delete;
+    Randomize() = delete;
+#endif
 
 public:
-
     MCAPI Randomize(class Random&);
     MCAPI bool chance(int, int) const;
     MCAPI bool chanceAllButOneIn(int) const;
@@ -30,7 +35,6 @@ public:
     MCAPI static float const ChanceFloatGreaterThan_MinExcessiveImprobability;
 
 protected:
-
 
 private:
 

@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ScriptQueryComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTQUERYCOMPONENT
+public:
+    struct ScriptQueryComponent& operator=(struct ScriptQueryComponent const&) = delete;
+    ScriptQueryComponent(struct ScriptQueryComponent const&) = delete;
+    ScriptQueryComponent() = delete;
+#endif
 
 public:
-
     MCAPI ScriptQueryComponent(struct ScriptQueryComponent&&);
     MCAPI struct ScriptQueryComponent& operator=(struct ScriptQueryComponent&&);
     MCAPI ~ScriptQueryComponent();
 
 protected:
-
 
 private:
 

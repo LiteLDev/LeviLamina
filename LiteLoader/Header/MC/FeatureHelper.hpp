@@ -3,21 +3,21 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace FeatureHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool isEmptyBlock(class IBlockWorldGenAPI const&, class BlockPos const&);
     MCAPI class RenderParams makeFeatureRenderParams(class BlockSource&, class BlockPos const&, class MolangVariableMap&);
     MCAPI bool passesAllowList(class Block const&, std::vector<class BlockDescriptor> const&);
     MCAPI bool passesAllowList(class IBlockWorldGenAPI const&, class BlockPos const&, std::vector<class BlockDescriptor> const&);
     MCAPI class std::optional<class BlockPos> placeBlock(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&);
+
 };

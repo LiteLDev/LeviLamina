@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TextObjectParser {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ErrorLocalization {
@@ -26,10 +25,16 @@ struct ServerData {
     ServerData(ServerData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTOBJECTPARSER
+public:
+    class TextObjectParser& operator=(class TextObjectParser const&) = delete;
+    TextObjectParser(class TextObjectParser const&) = delete;
+    TextObjectParser() = delete;
+#endif
 
 public:
-
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_ARRAY;
     MCAPI static std::string const RAW_TEXT_ERROR_NOT_OBJECT;
     MCAPI static std::string const RAW_TEXT_ERROR_NO_DATA;
@@ -46,12 +51,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static bool _getObjectsFromTextObject(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
     MCAPI static bool _parseScoreTextObject(class TextObjectRoot&, class Json::Value const&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
     MCAPI static bool _parseSelectorTextObject(class TextObjectRoot&, std::string, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
     MCAPI static bool _textObjectFromJson(class Json::Value const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
     MCAPI static bool _textObjectFromString(std::string const&, class TextObjectRoot&, struct TextObjectParser::ServerData*, struct TextObjectParser::ErrorLocalization&);
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MinecraftEventing.hpp"
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CauldronBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAULDRONBLOCK
+public:
+    class CauldronBlock& operator=(class CauldronBlock const&) = delete;
+    CauldronBlock(class CauldronBlock const&) = delete;
+    CauldronBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CauldronBlock();
@@ -140,7 +146,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isInteractiveBlock() const{
         bool (CauldronBlock::*rv)() const;
@@ -153,7 +158,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CauldronBlock(std::string const&, int);
     MCAPI int getLiquidLevel(int) const;
     MCAPI void setLiquidLevel(class BlockSource&, class BlockPos const&, int, enum CauldronLiquidType) const;
@@ -162,9 +166,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _explodeCauldronContents(class BlockSource&, class BlockPos const&, unsigned short) const;
     MCAPI bool const _mayUpdateLiquidLevel(class BlockSource&, class BlockPos const&) const;
     MCAPI void _sendCauldronUsedEventToClient(class Player const&, short, enum MinecraftEventing::POIBlockInteractionType) const;
@@ -173,4 +175,5 @@ private:
     MCAPI static int const BASE_WATER_PIXEL;
     MCAPI static class BaseGameVersion const CAULDRON_DOESNT_BREAK_FALLING_BLOCK_VERSION;
     MCAPI static int const PIXEL_PER_LEVEL;
+
 };

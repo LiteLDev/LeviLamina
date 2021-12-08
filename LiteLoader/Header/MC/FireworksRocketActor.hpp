@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "PredictableProjectile.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FireworksRocketActor : public PredictableProjectile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FIREWORKSROCKETACTOR
+public:
+    class FireworksRocketActor& operator=(class FireworksRocketActor const&) = delete;
+    FireworksRocketActor(class FireworksRocketActor const&) = delete;
+    FireworksRocketActor() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -98,8 +104,6 @@ public:
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
-
-
     MCAPI FireworksRocketActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void init(class Level&, class Vec3 const&, class CompoundTag const&, class Vec3 const&, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;
@@ -107,10 +111,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void checkAchievement() const;
     MCAPI void dealExplosionDamage();
     MCAPI void initTagData(class Random&);
+
 };

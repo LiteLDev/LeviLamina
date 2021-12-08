@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DragonLandingGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONLANDINGGOAL
+public:
+    class DragonLandingGoal& operator=(class DragonLandingGoal const&) = delete;
+    DragonLandingGoal(class DragonLandingGoal const&) = delete;
+    DragonLandingGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DragonLandingGoal();
@@ -25,14 +31,11 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI DragonLandingGoal(class EnderDragon&);
 
 protected:
 
-
 private:
-
     MCAPI void findNewTarget();
+
 };

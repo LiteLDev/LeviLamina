@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContainerManagerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMANAGERMODEL
+public:
+    class ContainerManagerModel& operator=(class ContainerManagerModel const&) = delete;
+    ContainerManagerModel(class ContainerManagerModel const&) = delete;
+    ContainerManagerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ContainerManagerModel();
@@ -34,7 +40,6 @@ public:
     /*14*/ virtual bool isServerAuthoritative() const;
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit() = 0;
-
     /*
     inline  ~ContainerManagerModel(){
          (ContainerManagerModel::*rv)();
@@ -42,12 +47,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ContainerManagerModel(enum ContainerID, class Player&);
     MCAPI void postInit();
 
 protected:
-
     MCAPI void _addContainer(class std::shared_ptr<class ContainerModel>);
     MCAPI class ContainerScreenContext _containerScreenContext(class BlockPos const&);
     MCAPI class ContainerScreenContext _containerScreenContext(struct ActorUniqueID);

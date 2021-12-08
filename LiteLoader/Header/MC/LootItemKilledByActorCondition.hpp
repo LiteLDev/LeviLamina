@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LootItemKilledByActorCondition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMKILLEDBYACTORCONDITION
+public:
+    class LootItemKilledByActorCondition& operator=(class LootItemKilledByActorCondition const&) = delete;
+    LootItemKilledByActorCondition(class LootItemKilledByActorCondition const&) = delete;
+    LootItemKilledByActorCondition() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LootItemKilledByActorCondition();
     /*1*/ virtual bool applies(class Random&, class LootTableContext&);
-
-
     MCAPI static std::unique_ptr<class LootItemCondition> deserialize(class Json::Value);
 
 protected:
-
 
 private:
 

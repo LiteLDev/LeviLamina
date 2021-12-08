@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BackgroundTaskBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDTASKBASE
+public:
+    class BackgroundTaskBase& operator=(class BackgroundTaskBase const&) = delete;
+    BackgroundTaskBase(class BackgroundTaskBase const&) = delete;
+    BackgroundTaskBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BackgroundTaskBase();
-
     /*
     inline  ~BackgroundTaskBase(){
          (BackgroundTaskBase::*rv)();
@@ -26,7 +31,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BackgroundTaskBase(class gsl::not_null<class IBackgroundTaskOwner* >, struct TaskStartInfoBase const&, bool);
     MCAPI void _makeOrphan();
     MCAPI bool canBeRunBy(class std::thread::id) const;
@@ -46,11 +50,10 @@ public:
     MCAPI static class BackgroundTaskBase* getCurrent();
 
 protected:
-
     MCAPI void backDownPriority();
     MCAPI void taskComplete();
 
 private:
-
     MCAPI static class BackgroundTaskBase* gCurrentTask;
+
 };

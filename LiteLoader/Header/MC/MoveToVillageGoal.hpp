@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MoveToVillageGoal : public BaseMoveToGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOVILLAGEGOAL
+public:
+    class MoveToVillageGoal& operator=(class MoveToVillageGoal const&) = delete;
+    MoveToVillageGoal(class MoveToVillageGoal const&) = delete;
+    MoveToVillageGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MoveToVillageGoal();
@@ -31,12 +37,9 @@ public:
     /*10*/ virtual void _moveToBlock();
     /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual class BlockPos _selectRandomPosInVillage();
-
-
     MCAPI MoveToVillageGoal(class Mob&, float, float, float, int);
 
 protected:
-
     MCAPI class std::shared_ptr<class Village> _tryGetCurrentVillage();
 
 private:

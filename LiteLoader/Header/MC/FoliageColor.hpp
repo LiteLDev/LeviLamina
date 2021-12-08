@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FoliageColor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum PaletteName;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLIAGECOLOR
+public:
+    class FoliageColor& operator=(class FoliageColor const&) = delete;
+    FoliageColor(class FoliageColor const&) = delete;
+    FoliageColor() = delete;
+#endif
 
 public:
-
     MCAPI static int getBirchColor(float, float);
     MCAPI static int getDefaultColor();
     MCAPI static int getEvergreenColor(float, float);
@@ -33,9 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_LEFT;
     MCAPI static class mce::Color const FOLIAGE_BOTTOM_RIGHT;
     MCAPI static class mce::Color const FOLIAGE_TOP_LEFT;
@@ -46,4 +49,5 @@ private:
     MCAPI static class mce::Color const GRASS_TOP_RIGHT;
     MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 4> mFoliagePalettes;
     MCAPI static class std::array<std::unique_ptr<class std::array<int, 65536>>, 4> mGrassPalettes;
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Animal : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMAL
+public:
+    class Animal& operator=(class Animal const&) = delete;
+    Animal(class Animal const&) = delete;
+    Animal() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -88,7 +94,6 @@ public:
     /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
     /*68*/ virtual void __unk_vfn_25();
-
     /*
     inline  ~Animal(){
          (Animal::*rv)();
@@ -96,11 +101,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Animal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

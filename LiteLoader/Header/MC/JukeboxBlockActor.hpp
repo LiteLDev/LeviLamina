@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JukeboxBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUKEBOXBLOCKACTOR
+public:
+    class JukeboxBlockActor& operator=(class JukeboxBlockActor const&) = delete;
+    JukeboxBlockActor(class JukeboxBlockActor const&) = delete;
+    JukeboxBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -104,7 +110,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI JukeboxBlockActor(class BlockPos const&);
     MCAPI class ItemStack const& getRecord() const;
     MCAPI bool isRecordPlaying() const;
@@ -113,9 +118,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _onChanged(class BlockSource&, enum LevelSoundEvent);
     MCAPI void _spawnMusicParticles(class Level&, float);
+
 };

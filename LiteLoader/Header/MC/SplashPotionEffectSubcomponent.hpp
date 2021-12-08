@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SplashPotionEffectSubcomponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPLASHPOTIONEFFECTSUBCOMPONENT
+public:
+    class SplashPotionEffectSubcomponent& operator=(class SplashPotionEffectSubcomponent const&) = delete;
+    SplashPotionEffectSubcomponent(class SplashPotionEffectSubcomponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SplashPotionEffectSubcomponent();
@@ -23,7 +28,6 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value&) const;
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
-
     /*
     inline  ~SplashPotionEffectSubcomponent(){
          (SplashPotionEffectSubcomponent::*rv)();
@@ -31,12 +35,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SplashPotionEffectSubcomponent();
     MCAPI void applyMobEffects(class MobEffectInstance const&, std::vector<class Actor* > const&, class Actor&, class std::shared_ptr<class Potion const> const&, float, class MobEffect*, class HitResult&, int);
 
 protected:
-
 
 private:
 

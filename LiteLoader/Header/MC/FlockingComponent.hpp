@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FlockingComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOCKINGCOMPONENT
+public:
+    class FlockingComponent& operator=(class FlockingComponent const&) = delete;
+    FlockingComponent(class FlockingComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI FlockingComponent(class FlockingComponent&&);
     MCAPI FlockingComponent();
     MCAPI void addFlockMember(struct ActorUniqueID);
@@ -33,7 +37,6 @@ public:
     MCAPI bool validateVariantEntityTypes(class Actor const&, class Actor const&) const;
 
 protected:
-
 
 private:
 

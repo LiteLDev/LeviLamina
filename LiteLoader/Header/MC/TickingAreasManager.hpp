@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TickingAreasManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREASMANAGER
+public:
+    class TickingAreasManager& operator=(class TickingAreasManager const&) = delete;
+    TickingAreasManager(class TickingAreasManager const&) = delete;
+    TickingAreasManager() = delete;
+#endif
 
 public:
-
     MCAPI TickingAreasManager(class std::unordered_map<class AutomaticID<class Dimension, int>, std::unique_ptr<class Dimension>, struct std::hash<class AutomaticID<class Dimension, int> >, struct std::equal_to<class AutomaticID<class Dimension, int> >, class std::allocator<struct std::pair<class AutomaticID<class Dimension, int> const, std::unique_ptr<class Dimension> > > >&);
     MCAPI void _requeueEntityArea(class Dimension&, struct ActorUniqueID const&, struct Bounds const&, bool, float);
     MCAPI enum AddTickingAreaStatus addArea(class Dimension&, std::string const&, class BlockPos const&, class BlockPos const&, bool, bool);
@@ -35,13 +40,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI enum AddTickingAreaStatus _addArea(class Dimension&, std::string const&, struct Bounds const&, bool, bool, bool);
     MCAPI void _deletePendingArea(class LevelStorage&, struct PendingArea const&);
     MCAPI std::string _findUsableDefaultName(class TickingAreaList const&, std::vector<struct PendingArea> const&) const;
     MCAPI bool _hasPendingTickingAreaNamed(std::string const&, std::vector<struct PendingArea> const&) const;
     MCAPI void _processAdds(class Level&);
     MCAPI void _savePendingArea(class LevelStorage&, class AutomaticID<class Dimension, int>, struct PendingArea const&);
+
 };

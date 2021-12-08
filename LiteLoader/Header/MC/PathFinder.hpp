@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PathFinder {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHFINDER
+public:
+    class PathFinder& operator=(class PathFinder const&) = delete;
+    PathFinder(class PathFinder const&) = delete;
+    PathFinder() = delete;
+#endif
 
 public:
-
     MCAPI PathFinder(class BlockSource*, class NavigationComponent const&);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, class Actor&, float);
     MCAPI std::unique_ptr<class Path> findPath(class Actor&, int, int, int, float);
@@ -26,9 +31,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addNeighbor(class PathfinderNode*, class PathfinderNode const&, unsigned int, unsigned __int64&);
     MCAPI bool _checkBlockAndNeighborsProperty(class Actor&, class BlockPos const&, class Block const&, enum BlockProperty, int, class BreakBlocksComponent const*, class std::function<bool (class Block const& , class BlockPos const& )>);
     MCAPI bool _checkForDamagingBlock(class Actor&, class BlockPos const&, class Block const&, int, class BreakBlocksComponent const*);
@@ -49,4 +52,5 @@ private:
     MCAPI class PathfinderNode* _getWaterNode(class Actor&, class BlockPos const&, class BlockPos const&);
     MCAPI enum NodeType _isFreeWaterNode(class Actor&, class BlockPos const&, class BlockPos const&);
     MCAPI std::unique_ptr<class Path> _reconstructPath(class PathfinderNode*, enum PathCompletionType, struct ActorUniqueID);
+
 };

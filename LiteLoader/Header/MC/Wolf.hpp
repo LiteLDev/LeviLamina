@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Animal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Wolf : public Animal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOLF
+public:
+    class Wolf& operator=(class Wolf const&) = delete;
+    Wolf(class Wolf const&) = delete;
+    Wolf() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Wolf();
@@ -93,8 +99,6 @@ public:
     /*71*/ virtual void newServerAiStep();
     /*72*/ virtual void _serverAiMobStep();
     /*73*/ virtual void __unk_vfn_25();
-
-
     MCAPI Wolf(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI float getHeadRollAngle(float);
     MCAPI float getShakeAnim() const;
@@ -103,8 +107,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _avoidSnowBury();
+
 };

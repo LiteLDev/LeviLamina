@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 #include "PackAccessStrategy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ZipPackAccessStrategy : public PackAccessStrategy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ZIPPACKACCESSSTRATEGY
+public:
+    class ZipPackAccessStrategy& operator=(class ZipPackAccessStrategy const&) = delete;
+    ZipPackAccessStrategy(class ZipPackAccessStrategy const&) = delete;
+    ZipPackAccessStrategy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ZipPackAccessStrategy();
@@ -40,7 +46,6 @@ public:
     /*17*/ virtual bool canRecurse() const;
     /*18*/ virtual void unload();
     /*19*/ virtual class ContentIdentity readContentIdentity() const;
-
     /*
     inline  ~ZipPackAccessStrategy(){
          (ZipPackAccessStrategy::*rv)();
@@ -48,13 +53,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ZipPackAccessStrategy(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > const&, class ResourceLocation const&, class Core::Path const&);
 
 protected:
 
-
 private:
-
     MCAPI bool _tryReadFromPendingQueue(class Core::Path const&, std::string&) const;
+
 };

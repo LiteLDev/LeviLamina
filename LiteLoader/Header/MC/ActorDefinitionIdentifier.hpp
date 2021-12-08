@@ -3,16 +3,15 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "HashedString.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ActorDefinitionIdentifier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 std::string ns;             // 0
 std::string identifier;     // 32
@@ -20,10 +19,9 @@ std::string event;          // 64
 std::string fullname;       // 96
 HashedString canonicalHash; // 128
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier&&);
     MCAPI ActorDefinitionIdentifier(struct ActorDefinitionIdentifier const&);
     MCAPI ActorDefinitionIdentifier(std::string const&);
@@ -50,15 +48,11 @@ public:
     MCAPI void setIdentifier(std::string const&);
     MCAPI void setInitEvent(std::string const&);
     MCAPI ~ActorDefinitionIdentifier();
-    MCAPI static std::string const EVENT_BEGIN;
-    MCAPI static std::string const EVENT_END;
-    MCAPI static std::string const NAMESPACE_SEPARATOR;
 
 protected:
 
-
 private:
-
     MCAPI void _initialize();
     MCAPI static void _extractIdentifier(std::string const&, struct ActorDefinitionIdentifier&);
+
 };

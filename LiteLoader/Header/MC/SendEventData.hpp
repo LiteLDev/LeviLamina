@@ -3,24 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SendEventData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SENDEVENTDATA
+public:
+    struct SendEventData& operator=(struct SendEventData const&) = delete;
+    SendEventData() = delete;
+#endif
 
 public:
-
     MCAPI SendEventData(struct SendEventData const&);
     MCAPI ~SendEventData();
 
 protected:
-
 
 private:
 

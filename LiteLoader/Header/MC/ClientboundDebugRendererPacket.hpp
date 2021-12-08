@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClientboundDebugRendererPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTBOUNDDEBUGRENDERERPACKET
+public:
+    class ClientboundDebugRendererPacket& operator=(class ClientboundDebugRendererPacket const&) = delete;
+    ClientboundDebugRendererPacket(class ClientboundDebugRendererPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ClientboundDebugRendererPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~ClientboundDebugRendererPacket(){
          (ClientboundDebugRendererPacket::*rv)();
@@ -32,13 +36,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ClientboundDebugRendererPacket(std::string, class mce::Color const&, class Vec3 const&, class std::chrono::duration<__int64, struct std::ratio<1, 1000> >);
     MCAPI ClientboundDebugRendererPacket(enum ClientboundDebugRendererPacket::Type);
     MCAPI ClientboundDebugRendererPacket();
 
 protected:
-
 
 private:
 

@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverloadSyntaxInformation {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERLOADSYNTAXINFORMATION
+public:
+    class OverloadSyntaxInformation& operator=(class OverloadSyntaxInformation const&) = delete;
+    OverloadSyntaxInformation(class OverloadSyntaxInformation const&) = delete;
+    OverloadSyntaxInformation() = delete;
+#endif
 
 public:
-
     MCAPI OverloadSyntaxInformation(std::string const&, unsigned int, unsigned int);
 
 protected:
-
 
 private:
 

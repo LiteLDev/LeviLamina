@@ -2,23 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SchedulerDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULERDEFINITION
+public:
+    class SchedulerDefinition& operator=(class SchedulerDefinition const&) = delete;
+    SchedulerDefinition(class SchedulerDefinition const&) = delete;
+#endif
 
 public:
-
     MCAPI SchedulerDefinition();
     MCAPI void initialize(class EntityContext&, class SchedulerComponent&);
     MCAPI void setMaxDelayTicks(float const&);
@@ -26,7 +30,6 @@ public:
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class SchedulerDefinition> >&);
 
 protected:
-
 
 private:
 

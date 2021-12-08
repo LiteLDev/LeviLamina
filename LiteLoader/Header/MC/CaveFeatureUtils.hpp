@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace CaveFeatureUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct CarverConfiguration {
     CarverConfiguration() = delete;
@@ -24,11 +23,12 @@ struct CarvingParameters {
     CarvingParameters(CarvingParameters const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI int getDistance_1_16(class Random&);
     MCAPI int getDistance_1_18(class Random&);
     MCAPI float getTunnelThickness_1_16(class Random&);
     MCAPI float getTunnelThickness_1_18(class Random&);
     MCAPI bool isDiggable_1_16(class Block const&, class Block const&);
     MCAPI bool isDiggable_1_18(class Block const&, class Block const&);
+
 };

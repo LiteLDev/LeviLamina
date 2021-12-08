@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SwimWanderGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SWIMWANDERGOAL
+public:
+    class SwimWanderGoal& operator=(class SwimWanderGoal const&) = delete;
+    SwimWanderGoal(class SwimWanderGoal const&) = delete;
+    SwimWanderGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SwimWanderGoal();
@@ -26,10 +32,7 @@ public:
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
 
-
-
 protected:
-
     MCAPI bool _setWantedPosition();
 
 private:

@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelDbSequentialFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBSEQUENTIALFILE
+public:
+    class LevelDbSequentialFile& operator=(class LevelDbSequentialFile const&) = delete;
+    LevelDbSequentialFile(class LevelDbSequentialFile const&) = delete;
+    LevelDbSequentialFile() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LevelDbSequentialFile();
     /*1*/ virtual class leveldb::Status Read(unsigned __int64, class leveldb::Slice*, char*);
     /*2*/ virtual class leveldb::Status Skip(unsigned __int64);
 
-
-
 protected:
-
 
 private:
 

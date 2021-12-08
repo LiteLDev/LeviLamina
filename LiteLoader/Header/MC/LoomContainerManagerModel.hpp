@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerManagerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LoomContainerManagerModel : public ContainerManagerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOMCONTAINERMANAGERMODEL
+public:
+    class LoomContainerManagerModel& operator=(class LoomContainerManagerModel const&) = delete;
+    LoomContainerManagerModel(class LoomContainerManagerModel const&) = delete;
+    LoomContainerManagerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LoomContainerManagerModel();
@@ -30,8 +36,6 @@ public:
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
-
-
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const BANNER_SLOT;
     MCAPI static int const DYE_SLOT;
@@ -39,7 +43,6 @@ public:
     MCAPI static int const RESULT_SLOT;
 
 protected:
-
 
 private:
 

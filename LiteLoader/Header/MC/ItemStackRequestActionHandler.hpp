@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestActionHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum RemoveType;
@@ -26,10 +25,16 @@ struct ScreenData {
     ScreenData(ScreenData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONHANDLER
+public:
+    class ItemStackRequestActionHandler& operator=(class ItemStackRequestActionHandler const&) = delete;
+    ItemStackRequestActionHandler(class ItemStackRequestActionHandler const&) = delete;
+    ItemStackRequestActionHandler() = delete;
+#endif
 
 public:
-
     MCAPI ItemStackRequestActionHandler(class ItemStackNetManagerServer&, class Player&);
     MCAPI void _addResponseSlotInfo(struct ItemStackRequestHandlerSlotInfo const&, class ItemStack const&);
     MCAPI void _cacheLegacySlotIdAssignment(enum ContainerEnumName, unsigned char, class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const&);
@@ -47,11 +52,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI enum ItemStackNetResult _handleDestroy(class ItemStackRequestActionDestroy const&);
     MCAPI enum ItemStackNetResult _handleTransfer(class ItemStackRequestActionTransferBase const&, bool, bool, bool);
     MCAPI class std::optional<struct ItemStackRequestActionHandler::RequestSlotIdAssignment> _resolveSlotIdAssignment(struct ItemStackRequestSlotInfo const&, class TypedRuntimeId<struct ContainerRuntimeIdTag, unsigned int, 0> const&);
     MCAPI struct ItemStackRequestActionHandler::ScreenData* _tryGetCurrentScreenData() const;
+
 };

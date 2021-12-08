@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptServerActorSneakChangedEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERACTORSNEAKCHANGEDEVENT
+public:
+    class ScriptServerActorSneakChangedEvent& operator=(class ScriptServerActorSneakChangedEvent const&) = delete;
+    ScriptServerActorSneakChangedEvent(class ScriptServerActorSneakChangedEvent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptServerActorSneakChangedEvent();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-
     /*
     inline  ~ScriptServerActorSneakChangedEvent(){
          (ScriptServerActorSneakChangedEvent::*rv)();
@@ -28,15 +32,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptServerActorSneakChangedEvent();
     MCAPI void setActorId(struct ActorUniqueID const&);
     MCAPI void setIsSneaking(bool);
 
 protected:
 
-
 private:
-
     MCAPI static class HashedString const mHash;
+
 };

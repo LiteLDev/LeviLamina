@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RotatedPillarBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FungusStem : public RotatedPillarBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FUNGUSSTEM
+public:
+    class FungusStem& operator=(class FungusStem const&) = delete;
+    FungusStem(class FungusStem const&) = delete;
+    FungusStem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FungusStem();
@@ -134,12 +140,9 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-
-
     MCAPI FungusStem(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

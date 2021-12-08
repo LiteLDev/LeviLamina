@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveToLiquidGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MoveToWaterGoal : public MoveToLiquidGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWATERGOAL
+public:
+    class MoveToWaterGoal& operator=(class MoveToWaterGoal const&) = delete;
+    MoveToWaterGoal(class MoveToWaterGoal const&) = delete;
+    MoveToWaterGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MoveToWaterGoal();
@@ -23,12 +29,9 @@ public:
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual unsigned __int64 _getRepathTime() const;
-
-
     MCAPI MoveToWaterGoal(class Mob&, float, int, int, int, float);
 
 protected:
-
 
 private:
 

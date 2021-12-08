@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ArmorItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class ArmorMaterial {
@@ -23,7 +22,14 @@ public:
     ArmorMaterial(ArmorMaterial const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORITEM
+public:
+    class ArmorItem& operator=(class ArmorItem const&) = delete;
+    ArmorItem(class ArmorItem const&) = delete;
+    ArmorItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ArmorItem();
@@ -112,8 +118,6 @@ public:
     /*83*/ virtual std::string getAuxValuesDescription() const;
     /*84*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*85*/ virtual float getArmorKnockbackResistance() const;
-
-
     MCAPI ArmorItem(std::string const&, int, class ArmorItem::ArmorMaterial const&, int, enum ArmorSlot);
     MCAPI static class ArmorItem::ArmorMaterial const CHAIN;
     MCAPI static class ArmorItem::ArmorMaterial const DIAMOND;
@@ -130,8 +134,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class ItemInstance getTierItem() const;
+
 };

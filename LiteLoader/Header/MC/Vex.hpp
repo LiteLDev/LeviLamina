@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Vex : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEX
+public:
+    class Vex& operator=(class Vex const&) = delete;
+    Vex(class Vex const&) = delete;
+    Vex() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -90,7 +96,6 @@ public:
     /*68*/ virtual void __unk_vfn_24();
     /*69*/ virtual void _serverAiMobStep();
     /*70*/ virtual void __unk_vfn_25();
-
     /*
     inline void addAdditionalSaveData(class CompoundTag& a0){
         void (Vex::*rv)(class CompoundTag&);
@@ -103,11 +108,9 @@ public:
         return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
     }
     */
-
     MCAPI Vex(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

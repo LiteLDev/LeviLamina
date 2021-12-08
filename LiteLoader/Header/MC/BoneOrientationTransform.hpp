@@ -3,23 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BoneOrientationTransform {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BONEORIENTATIONTRANSFORM
+public:
+    class BoneOrientationTransform& operator=(class BoneOrientationTransform const&) = delete;
+    BoneOrientationTransform(class BoneOrientationTransform const&) = delete;
+#endif
 
 public:
-
     MCAPI BoneOrientationTransform();
 
 protected:
-
 
 private:
 

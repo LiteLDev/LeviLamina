@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TripodCamera : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPODCAMERA
+public:
+    class TripodCamera& operator=(class TripodCamera const&) = delete;
+    TripodCamera(class TripodCamera const&) = delete;
+    TripodCamera() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -93,7 +99,6 @@ public:
     /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
     /*73*/ virtual void __unk_vfn_25();
-
     /*
     inline bool isTargetable() const{
         bool (TripodCamera::*rv)() const;
@@ -111,14 +116,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TripodCamera(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI bool interactWithPlayer(class Player&);
     MCAPI void setPlayerOwner(class Player*);
     MCAPI void startTakingPicture(class Player&);
 
 protected:
-
 
 private:
 

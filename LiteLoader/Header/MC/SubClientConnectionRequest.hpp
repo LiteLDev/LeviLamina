@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SubClientConnectionRequest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCLIENTCONNECTIONREQUEST
+public:
+    class SubClientConnectionRequest& operator=(class SubClientConnectionRequest const&) = delete;
+    SubClientConnectionRequest() = delete;
+#endif
 
 public:
-
     MCAPI SubClientConnectionRequest(class SubClientConnectionRequest const&);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
@@ -55,9 +59,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI SubClientConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+
 };

@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VariantParameterList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARIANTPARAMETERLIST
+public:
+    class VariantParameterList& operator=(class VariantParameterList const&) = delete;
+    VariantParameterList(class VariantParameterList const&) = delete;
+    VariantParameterList() = delete;
+#endif
 
 public:
-
     MCAPI bool hasParameter(enum FilterSubject) const;
 
 protected:
-
 
 private:
 

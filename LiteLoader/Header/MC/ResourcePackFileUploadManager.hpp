@@ -2,27 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Json.hpp"
 #include "FileUploadManager.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePackFileUploadManager : public FileUploadManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKFILEUPLOADMANAGER
+public:
+    class ResourcePackFileUploadManager& operator=(class ResourcePackFileUploadManager const&) = delete;
+    ResourcePackFileUploadManager(class ResourcePackFileUploadManager const&) = delete;
+    ResourcePackFileUploadManager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
     /*1*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
-
     /*
     inline  ~ResourcePackFileUploadManager(){
          (ResourcePackFileUploadManager::*rv)();
@@ -30,14 +35,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void uploadResourcePack(std::string const&, class ResourceLocation const&, bool, bool, enum PackType, bool);
 
 protected:
 
-
 private:
-
     MCAPI void _uploadPackToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
     MCAPI void _uploadResourcePackFolder(std::string const&, class ResourceLocation const&, class Core::Path const&, bool, class Json::Value const&);
+
 };

@@ -2,26 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkIdentifier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
 public:
 	LIAPI std::string getIP();
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKIDENTIFIER
+public:
+    class NetworkIdentifier& operator=(class NetworkIdentifier const&) = delete;
+    NetworkIdentifier(class NetworkIdentifier const&) = delete;
+    NetworkIdentifier() = delete;
+#endif
 
 public:
-
     MCAPI NetworkIdentifier(struct RakNet::RakNetGUID const&);
     MCAPI NetworkIdentifier(struct sockaddr_in6 const&);
     MCAPI NetworkIdentifier(struct sockaddr_in const&);
@@ -33,8 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool equalsTypeData(class NetworkIdentifier const&) const;
+
 };

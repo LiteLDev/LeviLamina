@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverworldGenerator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ThreadData {
@@ -20,7 +19,14 @@ struct ThreadData {
     ThreadData(ThreadData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATOR
+public:
+    class OverworldGenerator& operator=(class OverworldGenerator const&) = delete;
+    OverworldGenerator(class OverworldGenerator const&) = delete;
+    OverworldGenerator() = delete;
+#endif
 
 public:
     /*
@@ -120,15 +126,13 @@ public:
         return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<bool>(a2));
     }
     */
-
     MCAPI OverworldGenerator(class Dimension&, unsigned int, bool);
     MCAPI void buildSurfaces(struct OverworldGenerator::ThreadData&, class BlockVolume&, class LevelChunk&, class ChunkPos const&, class SurfaceLevelCache const&);
 
 protected:
-
     MCAPI class std::shared_ptr<class OperationNode<class Biome* , class Pos2d> > makeCommonNodeGraph(class LevelData const&, class BiomeRegistry const&) const;
 
 private:
-
     MCAPI void _prepareStructureBlueprints(class ChunkPos const&, class BiomeSource const&, class IPreliminarySurfaceProvider const&);
+
 };

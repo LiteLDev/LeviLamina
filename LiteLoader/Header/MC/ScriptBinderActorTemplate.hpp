@@ -3,29 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBinderActorTemplate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBINDERACTORTEMPLATE
+public:
+    class ScriptBinderActorTemplate& operator=(class ScriptBinderActorTemplate const&) = delete;
+    ScriptBinderActorTemplate(class ScriptBinderActorTemplate const&) = delete;
+    ScriptBinderActorTemplate() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBinderActorTemplate();
     /*1*/ virtual std::string const& getTemplateIdentifier() const;
     /*2*/ virtual void applyTemplate(class ScriptObjectBinder&) const;
-
-
     MCAPI static std::unique_ptr<class ScriptObjectBinder> build(class entt::basic_registry<enum entt::entity>&, class Actor const&);
 
 protected:
-
 
 private:
 

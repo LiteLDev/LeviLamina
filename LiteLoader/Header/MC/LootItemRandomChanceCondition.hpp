@@ -3,27 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LootItemRandomChanceCondition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTITEMRANDOMCHANCECONDITION
+public:
+    class LootItemRandomChanceCondition& operator=(class LootItemRandomChanceCondition const&) = delete;
+    LootItemRandomChanceCondition(class LootItemRandomChanceCondition const&) = delete;
+    LootItemRandomChanceCondition() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LootItemRandomChanceCondition();
     /*1*/ virtual bool applies(class Random&, class LootTableContext&);
 
-
-
 protected:
-
 
 private:
 

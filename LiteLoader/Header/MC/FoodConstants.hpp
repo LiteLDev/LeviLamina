@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace FoodConstants {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern float const EXHAUSTION_ATTACK;
     MCAPI extern float const EXHAUSTION_DAMAGE;
     MCAPI extern float const EXHAUSTION_HEAL;
@@ -38,4 +37,5 @@ namespace FoodConstants {
     MCAPI extern float const MAX_SATURATION;
     MCAPI extern float const START_SATURATION;
     MCAPI extern int const STARVE_LEVEL;
+
 };

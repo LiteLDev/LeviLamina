@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemReleaseInventoryTransaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMRELEASEINVENTORYTRANSACTION
+public:
+    class ItemReleaseInventoryTransaction& operator=(class ItemReleaseInventoryTransaction const&) = delete;
+    ItemReleaseInventoryTransaction(class ItemReleaseInventoryTransaction const&) = delete;
+    ItemReleaseInventoryTransaction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemReleaseInventoryTransaction();
@@ -24,10 +30,7 @@ public:
     /*4*/ virtual int /*enum enum InventoryTransactionError*/ handle(class Player&, bool) const;
     /*5*/ virtual void onTransactionError(class Player&, int /*enum enum InventoryTransactionError*/) const;
 
-
-
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CombatRegenerationListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMBATREGENERATIONLISTENER
+public:
+    class CombatRegenerationListener& operator=(class CombatRegenerationListener const&) = delete;
+    CombatRegenerationListener(class CombatRegenerationListener const&) = delete;
+    CombatRegenerationListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CombatRegenerationListener();
@@ -28,10 +34,7 @@ public:
     /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual int /*enum enum EventResult*/ onActorDeath(class Actor&, class ActorDamageSource const&, int /*enum enum ActorType*/);
 
-
-
 protected:
-
 
 private:
 

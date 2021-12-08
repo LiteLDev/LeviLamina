@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Minecart : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECART
+public:
+    class Minecart& operator=(class Minecart const&) = delete;
+    Minecart(class Minecart const&) = delete;
+    Minecart() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -108,7 +114,6 @@ public:
     /*87*/ virtual int getDefaultDisplayOffset() const;
     /*88*/ virtual void applyNaturalSlowdown(class BlockSource&);
     /*89*/ virtual void _lazyInitDisplayBlock();
-
     /*
     inline bool canMakeStepSound() const{
         bool (Minecart::*rv)() const;
@@ -126,15 +131,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Minecart(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void setCustomDisplay(bool);
     MCAPI void setDisplayBlock(class Block const&);
 
 protected:
 
-
 private:
-
     MCAPI void _registerLoopingSounds();
+
 };

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PotionBrewing {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class Ingredient {
@@ -28,10 +27,16 @@ public:
     Mix(Mix const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONBREWING
+public:
+    class PotionBrewing& operator=(class PotionBrewing const&) = delete;
+    PotionBrewing(class PotionBrewing const&) = delete;
+    PotionBrewing() = delete;
+#endif
 
 public:
-
     MCAPI static void addContainerRecipe(class Item const&, class PotionBrewing::Ingredient const&, class Item const&);
     MCAPI static void addPotionMix(class ItemDescriptor const&, class PotionBrewing::Ingredient const&, class ItemDescriptor const&);
     MCAPI static int getFuelValue(class ItemDescriptor const&);
@@ -45,9 +50,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static void addChemistryMix(class ItemInstance const&, class PotionBrewing::Ingredient const&, class ItemInstance const&);
     MCAPI static class ItemInstance getChemistryMix(class ItemDescriptor const&, class ItemDescriptor const&);
     MCAPI static std::vector<class PotionBrewing::Mix<class ItemInstance>> mChemistryMixes;
@@ -56,4 +59,5 @@ private:
     MCAPI static std::vector<class PotionBrewing::Ingredient> mValidContainers;
     MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient> > mValidIngredients;
     MCAPI static class std::unordered_set<class PotionBrewing::Ingredient, struct std::hash<class PotionBrewing::Ingredient>, struct std::equal_to<class PotionBrewing::Ingredient>, class std::allocator<class PotionBrewing::Ingredient> > mValidRecipeInputs;
+
 };

@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CaveFeatureUtils.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CaveFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class CachedMetaData {
@@ -28,7 +27,13 @@ CachedMetaData(CachedMetaData const&) = delete;
 CachedMetaData(CachedMetaData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVEFEATURE
+public:
+    class CaveFeature& operator=(class CaveFeature const&) = delete;
+    CaveFeature(class CaveFeature const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~CaveFeature();
@@ -38,7 +43,6 @@ public:
     /*4*/ virtual void addTunnel(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, float, int, int, float, class RenderParams&, struct CaveFeatureUtils::CarvingParameters const&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
     /*5*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&) const;
     /*6*/ virtual void addFeature(class IBlockWorldGenAPI&, class ChunkPos const&, class Random&, class ChunkPos const&, class RenderParams&, std::vector<struct CaveFeature::CachedMetaData::CarveEllipsoidParams>&) const;
-
     /*
     inline  ~CaveFeature(){
          (CaveFeature::*rv)();
@@ -46,12 +50,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CaveFeature();
     MCAPI float getWidthModifier(class RenderParams&) const;
 
 protected:
-
     MCAPI bool carveBlock(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class BlockPos, bool*, bool, class Vec3 const&, int, class BlockPos) const;
     MCAPI bool carveEllipsoid(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, float, float, struct CaveFeatureUtils::CarvingParameters const&) const;
     MCAPI bool detectWater(class IBlockWorldGenAPI&, class BoundingBox const&) const;

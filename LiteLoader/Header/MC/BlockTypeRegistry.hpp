@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockTypeRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTYPEREGISTRY
+public:
+    class BlockTypeRegistry& operator=(class BlockTypeRegistry const&) = delete;
+    BlockTypeRegistry(class BlockTypeRegistry const&) = delete;
+    BlockTypeRegistry() = delete;
+#endif
 
 public:
-
     MCAPI static unsigned __int64 computeBlockTypeRegistryChecksum(class BaseGameVersion const&);
     MCAPI static void forEachBlock(class std::function<bool (class BlockLegacy const& )>);
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
@@ -29,9 +34,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::map<std::string, class SharedPtr<class BlockLegacy>, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, class SharedPtr<class BlockLegacy> > > > mBlockLookupMap;
     MCAPI static class OwnerPtrT<struct EntityRegistryRefTraits> mEntities;
+
 };

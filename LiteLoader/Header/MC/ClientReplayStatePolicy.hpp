@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClientReplayStatePolicy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTREPLAYSTATEPOLICY
+public:
+    class ClientReplayStatePolicy& operator=(class ClientReplayStatePolicy const&) = delete;
+    ClientReplayStatePolicy(class ClientReplayStatePolicy const&) = delete;
+    ClientReplayStatePolicy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
@@ -22,13 +28,10 @@ public:
     /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);
-
-
     MCAPI bool _checkSupportedFrame(struct IActorMovementProxy&) const;
     MCAPI bool _isSupportedMovementMode(struct IMobMovementProxy const&) const;
 
 protected:
-
 
 private:
 

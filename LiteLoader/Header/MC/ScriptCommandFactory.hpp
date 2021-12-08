@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptCommandFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMANDFACTORY
+public:
+    class ScriptCommandFactory& operator=(class ScriptCommandFactory const&) = delete;
+    ScriptCommandFactory(class ScriptCommandFactory const&) = delete;
+    ScriptCommandFactory() = delete;
+#endif
 
 public:
 
-
 protected:
 
-
 private:
-
     MCAPI static unsigned int mCurrentId;
     MCAPI static class std::mutex mIdMutex;
+
 };

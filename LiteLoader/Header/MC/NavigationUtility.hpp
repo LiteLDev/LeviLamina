@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace NavigationUtility {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool canFlyDirectly(class Mob&, class Vec3 const&, class Vec3 const&);
     MCAPI bool canMoveDirectly(class Mob&, class Vec3 const&, class Vec3 const&, int, int, int, bool);
     MCAPI bool canMoveDirectlyWaterBound(class Mob const&, class Vec3 const&, class Vec3 const&);
@@ -36,4 +35,5 @@ namespace NavigationUtility {
     MCAPI bool moveCondition(class Mob const&, class Block const&);
     MCAPI bool swimCondition(class Mob const&, class BlockSource&, int, int, int);
     MCAPI void trimPathFromSun(class Mob const&);
+
 };

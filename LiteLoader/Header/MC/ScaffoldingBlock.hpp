@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScaffoldingBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCAFFOLDINGBLOCK
+public:
+    class ScaffoldingBlock& operator=(class ScaffoldingBlock const&) = delete;
+    ScaffoldingBlock(class ScaffoldingBlock const&) = delete;
+    ScaffoldingBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScaffoldingBlock();
@@ -146,7 +152,6 @@ public:
     /*125*/ virtual std::string getDustParticleName(class Block const&) const;
     /*126*/ virtual void __unk_vfn_34();
     /*127*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (ScaffoldingBlock::*rv)() const;
@@ -154,15 +159,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScaffoldingBlock(std::string const&, int);
     MCAPI static int const MAX_STABILITY;
 
 protected:
-
     MCAPI int calculateStability(class BlockSource const&, class BlockPos const&) const;
 
 private:
-
     MCAPI bool _updateBlockStability(class BlockSource&, class BlockPos const&) const;
+
 };

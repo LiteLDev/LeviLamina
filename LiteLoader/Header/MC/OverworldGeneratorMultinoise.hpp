@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Util.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OverworldGeneratorMultinoise {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDGENERATORMULTINOISE
+public:
+    class OverworldGeneratorMultinoise& operator=(class OverworldGeneratorMultinoise const&) = delete;
+    OverworldGeneratorMultinoise(class OverworldGeneratorMultinoise const&) = delete;
+    OverworldGeneratorMultinoise() = delete;
+#endif
 
 public:
     /*
@@ -70,17 +76,15 @@ public:
         return (this->*rv)(std::forward<class ChunkPos const&>(a0), std::forward<class SurfaceLevelCache const&>(a1), std::forward<short>(a2), std::forward<short>(a3), std::forward<short>(a4));
     }
     */
-
     MCAPI OverworldGeneratorMultinoise(class Dimension&, unsigned __int64, class Biome const*);
     MCAPI static float _applySlides(class DimensionHeightRange const&, float, unsigned char);
     MCAPI static std::unique_ptr<struct OverworldNoises3d> makeNoise(class XoroshiroPositionalRandomFactory const&);
 
 protected:
 
-
 private:
-
     MCAPI struct std::pair<float, float> _attenuateOffsetAndFactor(class DividedPos2d<4>, float, float) const;
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const&, class WorldGenCache const&, class NoodleCavifier*, class OreVeinifier*) const;
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class XoroshiroPositionalRandomFactory const&, class BiomeRegistry const&, class Biome const*);
+
 };

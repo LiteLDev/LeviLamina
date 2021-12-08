@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RenderParams {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDERPARAMS
+public:
+    class RenderParams& operator=(class RenderParams const&) = delete;
+#endif
 
 public:
-
     MCAPI RenderParams(class RenderParams const&);
     MCAPI RenderParams(class RenderParams&&);
     MCAPI RenderParams();
@@ -28,7 +31,6 @@ public:
     MCAPI static class RenderParams& getRenderParams(class Actor&);
 
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Phantom : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHANTOM
+public:
+    class Phantom& operator=(class Phantom const&) = delete;
+    Phantom(class Phantom const&) = delete;
+    Phantom() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Phantom();
@@ -86,12 +92,9 @@ public:
     /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
     /*66*/ virtual void __unk_vfn_25();
-
-
     MCAPI Phantom(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

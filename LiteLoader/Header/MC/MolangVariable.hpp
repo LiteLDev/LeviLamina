@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MolangVariable {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGVARIABLE
+public:
+    class MolangVariable& operator=(class MolangVariable const&) = delete;
+    MolangVariable(class MolangVariable const&) = delete;
+    MolangVariable() = delete;
+#endif
 
 public:
-
     MCAPI MolangVariable(enum MolangVariableIndex, class HashedString, struct MolangScriptArg);
     MCAPI ~MolangVariable();
     MCAPI static enum MolangVariableIndex getVariableIndex(class HashedString const&);
@@ -29,11 +34,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::recursive_mutex& _getMolangVariableIndexLock();
     MCAPI static bool mHasSetWatermark;
     MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex> > > mVariableNameToIndexMap;
     MCAPI static class std::unordered_map<unsigned __int64, enum MolangVariableIndex, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, enum MolangVariableIndex> > > mVariableNameToIndexMap_LowWaterMark;
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "AmethystBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AmethystClusterBlock : public AmethystBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AMETHYSTCLUSTERBLOCK
+public:
+    class AmethystClusterBlock& operator=(class AmethystClusterBlock const&) = delete;
+    AmethystClusterBlock(class AmethystClusterBlock const&) = delete;
+    AmethystClusterBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AmethystClusterBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (AmethystClusterBlock::*rv)() const;
@@ -152,13 +157,11 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Block const&>(a2));
     }
     */
-
     MCAPI AmethystClusterBlock(std::string const&, int, int, int);
 
 protected:
 
-
 private:
-
     MCAPI class AABB _shapeFromDirection(int) const;
+
 };

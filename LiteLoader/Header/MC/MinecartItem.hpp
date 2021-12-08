@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecartItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTITEM
+public:
+    class MinecartItem& operator=(class MinecartItem const&) = delete;
+    MinecartItem(class MinecartItem const&) = delete;
+    MinecartItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecartItem();
@@ -98,12 +104,9 @@ public:
     /*76*/ virtual std::string getAuxValuesDescription() const;
     /*77*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*78*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI MinecartItem(std::string const&, int, enum MinecartType);
 
 protected:
-
 
 private:
 

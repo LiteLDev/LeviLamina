@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Attribute {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTE
+public:
+    class Attribute& operator=(class Attribute const&) = delete;
+    Attribute(class Attribute const&) = delete;
+    Attribute() = delete;
+#endif
 
 public:
-
     MCAPI Attribute(class HashedString const&, enum RedefinitionMode, bool);
     MCAPI unsigned int const getIDValue() const;
     MCAPI class HashedString const& getName() const;
@@ -26,7 +31,6 @@ public:
     MCAPI static class Attribute& getByName(class HashedString const&);
 
 protected:
-
 
 private:
 

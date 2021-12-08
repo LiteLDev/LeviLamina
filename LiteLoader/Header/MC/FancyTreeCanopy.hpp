@@ -2,31 +2,34 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TreeHelper.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FancyTreeCanopy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FANCYTREECANOPY
+public:
+    class FancyTreeCanopy& operator=(class FancyTreeCanopy const&) = delete;
+    FancyTreeCanopy(class FancyTreeCanopy const&) = delete;
+    FancyTreeCanopy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FancyTreeCanopy();
     /*1*/ virtual class std::optional<class BlockPos> placeCanopy(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, std::vector<class BlockPos> const&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI class std::optional<class BlockPos> _fillLayer(class IBlockWorldGenAPI&, class BlockPos const&, class Block const*, int, struct TreeHelper::TreeParams const&) const;
+
 };

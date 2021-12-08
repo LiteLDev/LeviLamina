@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AppPlatformWindows {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMWINDOWS
+public:
+    class AppPlatformWindows& operator=(class AppPlatformWindows const&) = delete;
+    AppPlatformWindows(class AppPlatformWindows const&) = delete;
+    AppPlatformWindows() = delete;
+#endif
 
 public:
     /*
@@ -109,11 +115,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static std::string const EXPERIMENTS_ACTIVE_KEY;
 
 protected:
-
     MCAPI unsigned __int64 _findHighPerformanceThreadsCount() const;
 
 private:

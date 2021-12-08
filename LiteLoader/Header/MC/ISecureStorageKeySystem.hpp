@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ISecureStorageKeySystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ISECURESTORAGEKEYSYSTEM
+public:
+    class ISecureStorageKeySystem& operator=(class ISecureStorageKeySystem const&) = delete;
+    ISecureStorageKeySystem(class ISecureStorageKeySystem const&) = delete;
+    ISecureStorageKeySystem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ISecureStorageKeySystem();
-
     /*
     inline  ~ISecureStorageKeySystem(){
          (ISecureStorageKeySystem::*rv)();
@@ -27,9 +32,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

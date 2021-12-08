@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VillagerBase : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VILLAGERBASE
+public:
+    class VillagerBase& operator=(class VillagerBase const&) = delete;
+    VillagerBase(class VillagerBase const&) = delete;
+    VillagerBase() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -90,7 +96,6 @@ public:
     /*68*/ virtual void __unk_vfn_24();
     /*69*/ virtual void _serverAiMobStep();
     /*70*/ virtual void __unk_vfn_25();
-
     /*
     inline void _serverAiMobStep(){
         void (VillagerBase::*rv)();
@@ -108,7 +113,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI VillagerBase(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void consumeLoveFood();
     MCAPI int getBreedingStackIndex() const;
@@ -120,8 +124,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addParticlesAroundSelf(enum ParticleType);
+
 };

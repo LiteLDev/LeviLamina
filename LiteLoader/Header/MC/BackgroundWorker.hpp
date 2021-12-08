@@ -2,28 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BackgroundWorker {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum RunOneResult;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDWORKER
+public:
+    class BackgroundWorker& operator=(class BackgroundWorker const&) = delete;
+    BackgroundWorker(class BackgroundWorker const&) = delete;
+    BackgroundWorker() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BackgroundWorker();
     /*1*/ virtual bool isAsync() const;
     /*2*/ virtual bool canTaskRunAgain() const;
-
     /*
     inline  ~BackgroundWorker(){
          (BackgroundWorker::*rv)();
@@ -31,7 +36,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BackgroundWorker(std::string, bool, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, class WorkerPool&, bool);
     MCAPI unsigned __int64 getApproximateTaskCount() const;
     MCAPI class std::thread::id getThreadId() const;
@@ -45,10 +49,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _processNextTask();
     MCAPI enum BackgroundWorker::RunOneResult _runOneTask();
     MCAPI static class BackgroundWorker* gLocalWorkerMappingSingleton;
+
 };

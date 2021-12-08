@@ -2,32 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LootTable {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTTABLE
+public:
+    class LootTable& operator=(class LootTable const&) = delete;
+    LootTable(class LootTable const&) = delete;
+    LootTable() = delete;
+#endif
 
 public:
-
     MCAPI void deserialize(class Json::Value const&);
     MCAPI void fill(class Container&, class Random&, class LootTableContext&);
     MCAPI std::vector<class ItemStack> getRandomItems(class Random&, class LootTableContext&) const;
 
 protected:
 
-
 private:
-
     MCAPI std::vector<int> getAvailableSlots(class Container&, class Random&);
     MCAPI void shuffleAndSplitItems(std::vector<class ItemStack>&, int, class Random&);
+
 };

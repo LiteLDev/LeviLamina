@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace DebugUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool DEFAULT_ASSERT_HANDLER(struct AssertHandlerContext const&);
     MCAPI void SET_THREAD_NAME(std::string const&);
     MCAPI extern class std::mutex debugUtilMutex;
@@ -23,4 +22,5 @@ namespace DebugUtils {
     MCAPI extern std::string gPublishAssertFullMessage;
     MCAPI extern bool gShouldDebugBreak;
     MCAPI extern bool gShouldPresentDialog;
+
 };

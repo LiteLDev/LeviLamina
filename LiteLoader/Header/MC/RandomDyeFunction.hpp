@@ -2,34 +2,37 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LootItemFunction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomDyeFunction : public LootItemFunction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMDYEFUNCTION
+public:
+    class RandomDyeFunction& operator=(class RandomDyeFunction const&) = delete;
+    RandomDyeFunction(class RandomDyeFunction const&) = delete;
+    RandomDyeFunction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RandomDyeFunction();
     /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
     /*2*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 
-
-
 protected:
 
-
 private:
-
     MCAPI void _applyBase(class ItemStackBase&, class Random&) const;
     MCAPI class mce::Color _getRandomArmorColor(class Random&) const;
     MCAPI class mce::Color _getRandomDyeColor(class Random&) const;
+
 };

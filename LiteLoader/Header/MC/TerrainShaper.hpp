@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TerrainShaper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Point {
@@ -20,10 +19,16 @@ struct Point {
     Point(Point const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TERRAINSHAPER
+public:
+    class TerrainShaper& operator=(class TerrainShaper const&) = delete;
+    TerrainShaper(class TerrainShaper const&) = delete;
+    TerrainShaper() = delete;
+#endif
 
 public:
-
     MCAPI float factor(float, float, float) const;
     MCAPI float jaggedness(float, float, float) const;
     MCAPI float offset(float, float, float) const;
@@ -31,9 +36,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionJaggednessSpline(float, float, float, float);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildErosionOffsetSpline(std::string const&, float, float, float, float, float, float, bool, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildMountainRidgeSplineWithPoints(float, bool);
@@ -41,4 +44,5 @@ private:
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> buildWeirdnessJaggednessSpline(float);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> getErosionFactor(float, bool);
     MCAPI static class ToFloatFunction<struct TerrainShaper::Point> ridgeSpline(std::string const&, float, float, float, float, float, float);
+
 };

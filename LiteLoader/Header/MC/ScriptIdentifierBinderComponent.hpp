@@ -2,26 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptIdentifierBinderComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTIDENTIFIERBINDERCOMPONENT
+public:
+    class ScriptIdentifierBinderComponent& operator=(class ScriptIdentifierBinderComponent const&) = delete;
+    ScriptIdentifierBinderComponent(class ScriptIdentifierBinderComponent const&) = delete;
+    ScriptIdentifierBinderComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptIdentifierBinderComponent();
     /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
     /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
-
     /*
     inline  ~ScriptIdentifierBinderComponent(){
          (ScriptIdentifierBinderComponent::*rv)();
@@ -29,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptIdentifierBinderComponent(std::string const&);
     MCAPI ScriptIdentifierBinderComponent(class ItemActor const&);
     MCAPI ScriptIdentifierBinderComponent(class ItemInstance const&);
@@ -37,7 +41,6 @@ public:
     MCAPI static std::string const TAG;
 
 protected:
-
 
 private:
 

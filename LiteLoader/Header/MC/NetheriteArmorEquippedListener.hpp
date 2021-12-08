@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetheriteArmorEquippedListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERITEARMOREQUIPPEDLISTENER
+public:
+    class NetheriteArmorEquippedListener& operator=(class NetheriteArmorEquippedListener const&) = delete;
+    NetheriteArmorEquippedListener(class NetheriteArmorEquippedListener const&) = delete;
+    NetheriteArmorEquippedListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetheriteArmorEquippedListener();
@@ -39,7 +45,6 @@ public:
     /*19*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_19();
     /*21*/ virtual int /*enum enum EventResult*/ onActorEquippedArmor(class Actor&, class ItemInstance const&, int /*enum enum ArmorSlot*/);
-
     /*
     inline  ~NetheriteArmorEquippedListener(){
          (NetheriteArmorEquippedListener::*rv)();
@@ -48,9 +53,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

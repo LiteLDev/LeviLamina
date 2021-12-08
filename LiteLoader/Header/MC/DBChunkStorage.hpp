@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChunkSource.hpp"
 #include "ConsoleChunkBlender.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DBChunkStorage : public ChunkSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBCHUNKSTORAGE
+public:
+    class DBChunkStorage& operator=(class DBChunkStorage const&) = delete;
+    DBChunkStorage(class DBChunkStorage const&) = delete;
+    DBChunkStorage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DBChunkStorage();
@@ -39,16 +45,12 @@ public:
     /*16*/ virtual void clearDeletedEntities();
     /*17*/ virtual bool canCreateViews() const;
     /*18*/ virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
-
-
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage&, class Scheduler&);
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const&, class Experiments const&);
 
 protected:
 
-
 private:
-
     MCAPI bool _checkSubChunksUseAbsoluteIndices(class DBChunkStorageKey, class LevelChunk const&, bool&) const;
     MCAPI bool _hasChunk(class DBChunkStorageKey const&);
     MCAPI bool _hasChunkUncached(class DBChunkStorageKey const&);
@@ -58,4 +60,5 @@ private:
     MCAPI void _writeBatch();
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class LevelStorageWriteBatch, class std::allocator<class LevelStorageWriteBatch> > threadBatch;
     MCAPI static class Bedrock::Threading::ThreadLocalObject<std::string, class std::allocator<std::string > > threadBuffer;
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BucketItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUCKETITEM
+public:
+    class BucketItem& operator=(class BucketItem const&) = delete;
+    BucketItem(class BucketItem const&) = delete;
+    BucketItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BucketItem();
@@ -105,7 +111,6 @@ public:
     /*83*/ virtual std::string getAuxValuesDescription() const;
     /*84*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*85*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool uniqueAuxValues() const{
         bool (BucketItem::*rv)() const;
@@ -118,19 +123,17 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BucketItem(std::string const&, int, enum BucketFillType);
     MCAPI static int const DRINK_DURATION;
 
 protected:
-
     MCAPI void addBucketEntitySaveData(class Actor&, class ItemStack&) const;
     MCAPI bool readBucketEntitySaveData(class BlockSource&, class Actor*, unsigned char, class BlockPos, class ItemInstance const&) const;
 
 private:
-
     MCAPI bool _emptyBucket(class BlockSource&, class Block const&, class BlockPos const&, class Actor*, class ItemStack const&, unsigned char) const;
     MCAPI bool _takeLiquid(class ItemStack&, class Actor&, class BlockPos const&) const;
     MCAPI bool _takePowderSnow(class ItemStack&, class Actor&, class BlockPos const&) const;
     MCAPI static std::vector<struct std::pair<enum BucketFillType, enum ActorType>> const mFillTypeToEntityType;
+
 };

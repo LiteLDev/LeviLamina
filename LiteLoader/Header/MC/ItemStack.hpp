@@ -2,19 +2,18 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ItemStackBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Tag;
 class ItemActor;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStack : public ItemStackBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 	LIAPI static ItemStack* create();
@@ -30,7 +29,7 @@ public:
 
 	LIAPI bool setItem(ItemStack* newItem);
 	LIAPI bool setLore(std::vector<std::string> lores);
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
     /*0*/ virtual ~ItemStack();
@@ -40,7 +39,6 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
-
     /*
     inline  ~ItemStack(){
          (ItemStack::*rv)();
@@ -48,7 +46,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemStack(class ItemStack const&);
     MCAPI ItemStack(class Block const&, int, class CompoundTag const*);
     MCAPI ItemStack(class BlockLegacy const&, int);
@@ -90,7 +87,6 @@ public:
     MCAPI static class ItemStack fromTag(class CompoundTag const&, class Level&);
 
 protected:
-
 
 private:
 

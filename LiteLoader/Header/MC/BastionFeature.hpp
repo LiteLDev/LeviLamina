@@ -2,27 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructureFeature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BastionFeature : public StructureFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASTIONFEATURE
+public:
+    class BastionFeature& operator=(class BastionFeature const&) = delete;
+    BastionFeature(class BastionFeature const&) = delete;
+    BastionFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BastionFeature();
     /*1*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
     /*2*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
     /*3*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-
     /*
     inline  ~BastionFeature(){
          (BastionFeature::*rv)();
@@ -30,11 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BastionFeature(unsigned int, class BaseGameVersion const&);
 
 protected:
-
 
 private:
 

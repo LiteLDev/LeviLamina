@@ -2,19 +2,18 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 #include "RakPeerHelper.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakNetServerLocator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct AnnounceServerData {
@@ -23,7 +22,14 @@ struct AnnounceServerData {
     AnnounceServerData(AnnounceServerData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNETSERVERLOCATOR
+public:
+    class RakNetServerLocator& operator=(class RakNetServerLocator const&) = delete;
+    RakNetServerLocator(class RakNetServerLocator const&) = delete;
+    RakNetServerLocator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RakNetServerLocator();
@@ -43,7 +49,6 @@ public:
     /*14*/ virtual void setHostGUID(class std::function<struct RakNet::RakNetGUID (void)>);
     /*15*/ virtual float getPingTimeForGUID(std::string const&);
     /*16*/ virtual void checkCanConnectToCustomServerAsync(std::string, int, class std::function<void (bool)>);
-
     /*
     inline  ~RakNetServerLocator(){
          (RakNetServerLocator::*rv)();
@@ -51,15 +56,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RakNetServerLocator(class RakNetInstance&, class RakPeerHelper::IPSupportInterface&, std::vector<std::string>, bool, enum PermissionLAN, enum PermissionIPv6, class Bedrock::NonOwnerPointer<class AppPlatform> const&, class std::function<class std::unique_ptr<class RakNet::RakPeerInterface, void (* )(class RakNet::RakPeerInterface* )> (void)>);
     MCAPI static bool parseUnconnectedPongPacketData(std::string const&, std::vector<std::string>&);
 
 protected:
 
-
 private:
-
     MCAPI void _activate();
     MCAPI void _addCustomServerFromIpResolver(class AsynchronousIPResolver const&, int);
     MCAPI bool _addCustomServerV4(class AsynchronousIPResolver const&, int);
@@ -78,4 +80,5 @@ private:
     MCAPI void _stopServerDiscovery();
     MCAPI void _updateNetwork();
     MCAPI bool _updateQueuedPings();
+
 };

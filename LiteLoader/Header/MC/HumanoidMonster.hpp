@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HumanoidMonster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUMANOIDMONSTER
+public:
+    class HumanoidMonster& operator=(class HumanoidMonster const&) = delete;
+    HumanoidMonster(class HumanoidMonster const&) = delete;
+    HumanoidMonster() = delete;
+#endif
 
 public:
     /*
@@ -50,14 +56,12 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI static float const MAX_ENCHANTED_ARMOR_CHANCE;
     MCAPI static float const MAX_ENCHANTED_WEAPON_CHANCE;
     MCAPI static float const MAX_PICKUP_LOOT_CHANCE;
     MCAPI static float const MAX_WEARING_ARMOR_CHANCE;
+
 };

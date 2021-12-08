@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "ActorServerCommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameDirectorEntityServerCommandOrigin : public ActorServerCommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEDIRECTORENTITYSERVERCOMMANDORIGIN
+public:
+    class GameDirectorEntityServerCommandOrigin& operator=(class GameDirectorEntityServerCommandOrigin const&) = delete;
+    GameDirectorEntityServerCommandOrigin(class GameDirectorEntityServerCommandOrigin const&) = delete;
+    GameDirectorEntityServerCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GameDirectorEntityServerCommandOrigin();
@@ -35,14 +41,11 @@ public:
     /*13*/ virtual class mce::UUID const& getUUID() const;
     /*14*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*15*/ virtual bool isValid() const;
-
-
     MCAPI GameDirectorEntityServerCommandOrigin(class Actor&);
     MCAPI GameDirectorEntityServerCommandOrigin(struct ActorUniqueID, class Level&);
     MCAPI static std::unique_ptr<class GameDirectorEntityServerCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:
-
 
 private:
 

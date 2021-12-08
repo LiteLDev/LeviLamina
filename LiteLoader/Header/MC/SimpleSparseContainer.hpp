@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SimpleSparseContainer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLESPARSECONTAINER
+public:
+    class SimpleSparseContainer& operator=(class SimpleSparseContainer const&) = delete;
+    SimpleSparseContainer(class SimpleSparseContainer const&) = delete;
+    SimpleSparseContainer() = delete;
+#endif
 
 public:
     /*
@@ -59,15 +65,13 @@ public:
         return (this->*rv)(std::forward<class Player&>(a0));
     }
     */
-
     MCAPI SimpleSparseContainer(class Container&, enum SparseContainerBackingSetType, std::unique_ptr<class ISparseContainerSetListener>, std::unique_ptr<class IPlayerContainerSetter>);
     MCAPI void clearItem(int);
     MCAPI void pushAllToBackingContainer();
 
 protected:
 
-
 private:
-
     MCAPI void _setBackingContainerSlot(int, class ItemStack const&);
+
 };

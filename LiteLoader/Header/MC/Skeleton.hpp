@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Skeleton : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKELETON
+public:
+    class Skeleton& operator=(class Skeleton const&) = delete;
+    Skeleton(class Skeleton const&) = delete;
+    Skeleton() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Skeleton();
@@ -93,7 +99,6 @@ public:
     /*71*/ virtual void __unk_vfn_24();
     /*72*/ virtual void _serverAiMobStep();
     /*73*/ virtual void __unk_vfn_25();
-
     /*
     inline bool useNewAi() const{
         bool (Skeleton::*rv)() const;
@@ -101,14 +106,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Skeleton(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void setWitherParent(class WitherBoss*);
 
 protected:
 
-
 private:
-
     MCAPI static class mce::UUID const SPEED_MODIFIER_ATTACK_UUID;
+
 };

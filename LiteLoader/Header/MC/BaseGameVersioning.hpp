@@ -3,21 +3,21 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace BaseGameVersioning {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern class BaseGameVersion const PATCH_UPGRADE_VERSION;
     MCAPI extern class BaseGameVersion const REQUIRED_BASE_GAME_VERSION_FOR_OLD_CONTENT;
     MCAPI std::vector<class BaseGameVersion> const& getAvailableBehaviorPackBaseGameVersions();
     MCAPI std::vector<class BaseGameVersion> const& getAvailableResourcePackBaseGameVersions();
     MCAPI bool upgradeBaseGameVersionFromWorldTemplate(class WorldTemplateManager const&, class LevelData&);
+
 };

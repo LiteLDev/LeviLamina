@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ExperienceOrb : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum DropType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIENCEORB
+public:
+    class ExperienceOrb& operator=(class ExperienceOrb const&) = delete;
+    ExperienceOrb(class ExperienceOrb const&) = delete;
+    ExperienceOrb() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -100,8 +106,6 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void doWaterSplashEffect();
     /*79*/ virtual void _onSizeUpdated();
-
-
     MCAPI ExperienceOrb(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getIconIndex() const;
     MCAPI void setValue(int);
@@ -110,9 +114,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _handleMending(class Player&);
     MCAPI static int const LIFETIME;
+
 };

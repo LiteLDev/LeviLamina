@@ -3,30 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct PageContent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAGECONTENT
+public:
+    PageContent(struct PageContent const&) = delete;
+    PageContent() = delete;
+#endif
 
 public:
-
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI struct PageContent& operator=(struct PageContent const&);
     MCAPI ~PageContent();
-    MCAPI static struct PageContent const BLANK_PAGE;
-    MCAPI static struct PageContent read(class CompoundTag const&);
-    MCAPI static void write(struct PageContent const&, class CompoundTag&);
 
 protected:
-
 
 private:
 

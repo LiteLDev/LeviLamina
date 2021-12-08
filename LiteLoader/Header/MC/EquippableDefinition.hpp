@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EquippableDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPPABLEDEFINITION
+public:
+    class EquippableDefinition& operator=(class EquippableDefinition const&) = delete;
+    EquippableDefinition(class EquippableDefinition const&) = delete;
+    EquippableDefinition() = delete;
+#endif
 
 public:
-
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class EquippableComponent&);
     MCAPI void serializeData(class Json::Value&) const;
@@ -27,7 +32,6 @@ public:
     MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class EquippableDefinition> >&);
 
 protected:
-
 
 private:
 

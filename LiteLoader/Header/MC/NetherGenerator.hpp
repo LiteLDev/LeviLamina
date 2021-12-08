@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Util.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetherGenerator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERGENERATOR
+public:
+    class NetherGenerator& operator=(class NetherGenerator const&) = delete;
+    NetherGenerator(class NetherGenerator const&) = delete;
+    NetherGenerator() = delete;
+#endif
 
 public:
     /*
@@ -100,15 +106,13 @@ public:
         return (this->*rv)(std::forward<class BlockVolume&>(a0), std::forward<class ChunkPos const&>(a1), std::forward<bool>(a2));
     }
     */
-
     MCAPI NetherGenerator(class Dimension&, unsigned int, class Biome const*);
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const&) const;
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class LevelData const&, class BiomeRegistry const&) const;
     MCAPI void _prepareHeights(class BlockVolume&, class ChunkPos const&, bool, std::vector<short>*, int);
+
 };

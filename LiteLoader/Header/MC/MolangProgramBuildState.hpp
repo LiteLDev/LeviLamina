@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MolangProgramBuildState {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGPROGRAMBUILDSTATE
+public:
+    struct MolangProgramBuildState& operator=(struct MolangProgramBuildState const&) = delete;
+    MolangProgramBuildState(struct MolangProgramBuildState const&) = delete;
+    MolangProgramBuildState() = delete;
+#endif
 
 public:
-
     MCAPI unsigned __int64 allocateInstruction();
     MCAPI void emplaceInstruction(class std::function<void (struct MolangEvalParams& )>);
     MCAPI void emplaceInstruction(unsigned __int64, class std::function<void (struct MolangEvalParams& )>);
@@ -31,7 +36,6 @@ public:
     MCAPI ~MolangProgramBuildState();
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BeaconBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEACONBLOCKACTOR
+public:
+    class BeaconBlockActor& operator=(class BeaconBlockActor const&) = delete;
+    BeaconBlockActor(class BeaconBlockActor const&) = delete;
+    BeaconBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -104,7 +110,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI BeaconBlockActor(class BlockPos const&);
     MCAPI void checkShapeAndAchievement(class BlockSource&);
     MCAPI class CompoundTag getBeaconData();
@@ -116,13 +121,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _applyEffects(class BlockSource&);
     MCAPI int _getEffectTier(int) const;
     MCAPI bool _isEffectValid(int) const;
     MCAPI bool _isSecondaryEffectValid(int) const;
     MCAPI void _loadClientSideState(class Level&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI bool _saveClientSideState(class CompoundTag&) const;
+
 };

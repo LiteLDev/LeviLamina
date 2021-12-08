@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BalloonItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BALLOONITEM
+public:
+    class BalloonItem& operator=(class BalloonItem const&) = delete;
+    BalloonItem(class BalloonItem const&) = delete;
+    BalloonItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BalloonItem();
@@ -99,12 +105,9 @@ public:
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*79*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI BalloonItem(std::string const&, int);
 
 protected:
-
 
 private:
 

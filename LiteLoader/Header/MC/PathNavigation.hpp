@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PathNavigation {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHNAVIGATION
+public:
+    class PathNavigation& operator=(class PathNavigation const&) = delete;
+    PathNavigation(class PathNavigation const&) = delete;
+    PathNavigation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PathNavigation();
@@ -30,7 +36,6 @@ public:
     /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     /*11*/ virtual bool canUpdatePath(class Mob const&) const;
     /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
-
     /*
     inline  ~PathNavigation(){
          (PathNavigation::*rv)();
@@ -39,9 +44,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI float _getHighestBlockHeight(class BlockSource&, class Mob&, class Vec3 const&, class Vec2 const&) const;
     MCAPI bool _isPositionOnlyInAir(class BlockSource const&, class Vec3 const&, class Vec2 const&) const;
     MCAPI enum NodeType isFree(class NavigationComponent&, class Mob&, class BlockPos const&, class BlockPos const&, class BlockPos const&, enum CanJumpIntoNode);

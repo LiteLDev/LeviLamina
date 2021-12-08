@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "NetworkPeer.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BatchedNetworkPeer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BATCHEDNETWORKPEER
+public:
+    class BatchedNetworkPeer& operator=(class BatchedNetworkPeer const&) = delete;
+    BatchedNetworkPeer(class BatchedNetworkPeer const&) = delete;
+    BatchedNetworkPeer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BatchedNetworkPeer();
@@ -24,14 +30,11 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)>&&);
-
-
     MCAPI BatchedNetworkPeer(class std::shared_ptr<class NetworkPeer>, class Scheduler&);
 
 protected:
 
-
 private:
-
     MCAPI void _startSendTask();
+
 };

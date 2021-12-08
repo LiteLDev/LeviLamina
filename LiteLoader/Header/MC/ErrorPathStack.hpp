@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ErrorPathStack {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ERRORPATHSTACK
+public:
+    class ErrorPathStack& operator=(class ErrorPathStack const&) = delete;
+    ErrorPathStack(class ErrorPathStack const&) = delete;
+    ErrorPathStack() = delete;
+#endif
 
 public:
-
     MCAPI ErrorPathStack(std::vector<std::string>&, std::string const&);
     MCAPI ~ErrorPathStack();
 
 protected:
-
 
 private:
 

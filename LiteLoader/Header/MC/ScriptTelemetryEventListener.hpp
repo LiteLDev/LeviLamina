@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptTelemetryEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTELEMETRYEVENTLISTENER
+public:
+    class ScriptTelemetryEventListener& operator=(class ScriptTelemetryEventListener const&) = delete;
+    ScriptTelemetryEventListener(class ScriptTelemetryEventListener const&) = delete;
+    ScriptTelemetryEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptTelemetryEventListener();
@@ -26,12 +32,9 @@ public:
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual int /*enum enum EventResult*/ onScriptLoaded(std::string const&, unsigned __int64);
     /*8*/ virtual int /*enum enum EventResult*/ onScriptRan(std::string const&, std::string const&, bool);
-
-
     MCAPI ScriptTelemetryEventListener(class IMinecraftEventing&, bool);
 
 protected:
-
 
 private:
 

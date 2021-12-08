@@ -3,36 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct FogDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOGDEFINITION
+public:
+    struct FogDefinition& operator=(struct FogDefinition const&) = delete;
+    FogDefinition(struct FogDefinition const&) = delete;
+    FogDefinition() = delete;
+#endif
 
 public:
 
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_AIR_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_RESISTANCE_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_LAVA_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_NETHER_AIR_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_POWDER_SNOW_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WATER_SETTING;
-    MCAPI static struct FogDistanceSetting const DEFAULT_DISTANCE_WEATHER_SETTING;
-    MCAPI static struct FogDefinition const DEFAULT_FOG_DEFINITION;
-    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_AIR_SETTING;
-    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_CLOUD_SETTING;
-    MCAPI static struct FogVolumetricCoefficientSetting const DEFAULT_VOLUME_COEFFICIENT_WATER_SETTING;
-    MCAPI static bool isValidIdentifier(std::string const&);
-
 protected:
-
 
 private:
 

@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ListTagIntAdder {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LISTTAGINTADDER
+public:
+    class ListTagIntAdder& operator=(class ListTagIntAdder const&) = delete;
+    ListTagIntAdder(class ListTagIntAdder const&) = delete;
+    ListTagIntAdder() = delete;
+#endif
 
 public:
-
     MCAPI class ListTagIntAdder& operator()(int);
     MCAPI ~ListTagIntAdder();
 
 protected:
-
 
 private:
 

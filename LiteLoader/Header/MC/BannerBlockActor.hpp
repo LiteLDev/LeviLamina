@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BannerBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BANNERBLOCKACTOR
+public:
+    class BannerBlockActor& operator=(class BannerBlockActor const&) = delete;
+    BannerBlockActor(class BannerBlockActor const&) = delete;
+    BannerBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BannerBlockActor();
@@ -49,8 +55,6 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI unsigned char getBaseColorInt() const;
     MCAPI void setItemValues(class ItemStackBase const&);
     MCAPI static int const MAX_PATTERNS;
@@ -66,7 +70,6 @@ public:
     MCAPI static bool removeLastPattern(class ItemStack&, class Player&);
 
 protected:
-
 
 private:
 

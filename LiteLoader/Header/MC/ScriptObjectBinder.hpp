@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptObjectBinder {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTOBJECTBINDER
+public:
+    class ScriptObjectBinder& operator=(class ScriptObjectBinder const&) = delete;
+    ScriptObjectBinder(class ScriptObjectBinder const&) = delete;
+    ScriptObjectBinder() = delete;
+#endif
 
 public:
-
     MCAPI ScriptObjectBinder(std::string const&);
     MCAPI bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
     MCAPI ~ScriptObjectBinder();
@@ -27,9 +32,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI unsigned int _getComponentIndex(unsigned short) const;
     MCAPI bool _hasComponent(unsigned short) const;
+
 };

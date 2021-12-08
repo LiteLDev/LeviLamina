@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptGameTestFunction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTFUNCTION
+public:
+    class ScriptGameTestFunction& operator=(class ScriptGameTestFunction const&) = delete;
+    ScriptGameTestFunction(class ScriptGameTestFunction const&) = delete;
+    ScriptGameTestFunction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptGameTestFunction();
     /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionContext> createContext(class gametest::BaseGameTestHelper&) const;
     /*2*/ virtual class std::optional<struct gametest::GameTestError> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
 
-
-
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseRailBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASERAILBLOCK
+public:
+    class BaseRailBlock& operator=(class BaseRailBlock const&) = delete;
+    BaseRailBlock(class BaseRailBlock const&) = delete;
+    BaseRailBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BaseRailBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canSpawnOn() const{
         bool (BaseRailBlock::*rv)() const;
@@ -157,7 +162,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BaseRailBlock(std::string const&, int, bool);
     MCAPI static bool isCorner(class BlockSource const&, class BlockPos const&);
     MCAPI static bool isFacingWestEast(class BlockSource const&, class BlockPos const&);
@@ -167,10 +171,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _canSurvive(class BlockSource const&, class BlockPos const&) const;
     MCAPI void _updatePlacement(class BlockSource&, class BlockPos const&) const;
     MCAPI static void _createCircuitComponent(class BlockSource&, class BlockPos const&);
+
 };

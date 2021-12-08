@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerInventory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct SlotData {
@@ -20,7 +19,14 @@ struct SlotData {
     SlotData(SlotData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERINVENTORY
+public:
+    class PlayerInventory& operator=(class PlayerInventory const&) = delete;
+    PlayerInventory(class PlayerInventory const&) = delete;
+    PlayerInventory() = delete;
+#endif
 
 public:
     /*
@@ -40,7 +46,6 @@ public:
         return (this->*rv)(std::forward<class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>>(a0), std::forward<class std::function<void (void)>>(a1));
     }
     */
-
     MCAPI bool add(class ItemStack&, bool);
     MCAPI void addListener(class ContainerContentChangeListener*);
     MCAPI bool canAdd(class ItemStack const&) const;
@@ -68,7 +73,6 @@ public:
     MCAPI void swapSlots(int, int);
 
 protected:
-
 
 private:
 

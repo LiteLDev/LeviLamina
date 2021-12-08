@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Recipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MultiRecipe : public Recipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIRECIPE
+public:
+    class MultiRecipe& operator=(class MultiRecipe const&) = delete;
+    MultiRecipe(class MultiRecipe const&) = delete;
+    MultiRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MultiRecipe();
@@ -30,7 +36,6 @@ public:
     /*9*/ virtual class ItemPack const& getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
-
     /*
     inline bool isShapeless() const{
         bool (MultiRecipe::*rv)() const;
@@ -39,9 +44,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

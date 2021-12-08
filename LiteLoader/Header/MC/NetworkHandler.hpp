@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class Connection {
@@ -22,7 +21,14 @@ public:
     Connection(Connection const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKHANDLER
+public:
+    class NetworkHandler& operator=(class NetworkHandler const&) = delete;
+    NetworkHandler(class NetworkHandler const&) = delete;
+    NetworkHandler() = delete;
+#endif
 
 public:
     /*
@@ -112,7 +118,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI bool AddConnectionIfNeeded(unsigned __int64, class std::shared_ptr<struct NetherNetInstance> const&);
     MCAPI NetworkHandler(class Scheduler&, std::vector<std::string> const&, struct NetworkHandlerToggles, class Bedrock::NonOwnerPointer<class NetworkDebugManager> const&);
     MCAPI void disconnect();
@@ -141,11 +146,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class NetworkHandler::Connection* _getConnectionFromId(class NetworkIdentifier const&) const;
     MCAPI void _handlePacketViolation(enum StreamReadResult, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const&, class NetworkHandler::Connection&, unsigned char, std::string const&);
     MCAPI void _sendInternal(class NetworkIdentifier const&, class Packet const&, std::string const&);
     MCAPI bool _sortAndPacketizeEvents(class NetworkHandler::Connection&, class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > >);
+
 };

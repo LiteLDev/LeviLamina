@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ShapelessRecipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShapelessChemistryRecipe : public ShapelessRecipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAPELESSCHEMISTRYRECIPE
+public:
+    class ShapelessChemistryRecipe& operator=(class ShapelessChemistryRecipe const&) = delete;
+    ShapelessChemistryRecipe(class ShapelessChemistryRecipe const&) = delete;
+    ShapelessChemistryRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
@@ -28,12 +34,9 @@ public:
     /*7*/ virtual class ItemPack const& getItemPack() const;
     /*8*/ virtual bool isMultiRecipe() const;
     /*9*/ virtual void loadResultList(class BlockPalette const&) const;
-
-
     MCAPI static class mce::UUID const ID;
 
 protected:
-
 
 private:
 

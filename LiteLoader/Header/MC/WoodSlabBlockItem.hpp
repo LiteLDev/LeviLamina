@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "DeprecatedSlabBlockItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WoodSlabBlockItem : public DeprecatedSlabBlockItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WOODSLABBLOCKITEM
+public:
+    class WoodSlabBlockItem& operator=(class WoodSlabBlockItem const&) = delete;
+    WoodSlabBlockItem(class WoodSlabBlockItem const&) = delete;
+    WoodSlabBlockItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WoodSlabBlockItem();
@@ -94,10 +100,7 @@ public:
     /*72*/ virtual std::string getAuxValuesDescription() const;
     /*73*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
 
-
-
 protected:
-
 
 private:
 

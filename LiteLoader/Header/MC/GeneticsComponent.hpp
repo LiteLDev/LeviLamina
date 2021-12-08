@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GeneticsComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Gene {
@@ -20,10 +19,15 @@ struct Gene {
     Gene(Gene const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GENETICSCOMPONENT
+public:
+    class GeneticsComponent& operator=(class GeneticsComponent const&) = delete;
+    GeneticsComponent(class GeneticsComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI GeneticsComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&) const;
     MCAPI void buildDebugInfo(std::string&) const;
@@ -36,10 +40,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::string const GENE_ARRAY;
     MCAPI static std::string const HIDDEN_ALLELE;
     MCAPI static std::string const MAIN_ALLELE;
+
 };

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkPeer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum class Reliability : int {};
@@ -29,7 +28,14 @@ struct NetworkStatus {
     double unk40;         //40
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPEER
+public:
+    class NetworkPeer& operator=(class NetworkPeer const&) = delete;
+    NetworkPeer(class NetworkPeer const&) = delete;
+    NetworkPeer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetworkPeer();
@@ -38,7 +44,6 @@ public:
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)>&&);
-
     /*
     inline  ~NetworkPeer(){
          (NetworkPeer::*rv)();
@@ -47,9 +52,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BedrockItems {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEDROCKITEMS
+public:
+    class BedrockItems& operator=(class BedrockItems const&) = delete;
+    BedrockItems(class BedrockItems const&) = delete;
+    BedrockItems() = delete;
+#endif
 
 public:
-
     MCAPI static class WeakPtr<class Item> mAir;
     MCAPI static void registerItems();
     MCAPI static void unregisterItems();
 
 protected:
-
 
 private:
 

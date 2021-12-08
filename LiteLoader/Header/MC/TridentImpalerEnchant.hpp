@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Enchant.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TridentImpalerEnchant : public Enchant {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTIMPALERENCHANT
+public:
+    class TridentImpalerEnchant& operator=(class TridentImpalerEnchant const&) = delete;
+    TridentImpalerEnchant(class TridentImpalerEnchant const&) = delete;
+    TridentImpalerEnchant() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TridentImpalerEnchant();
@@ -33,10 +39,7 @@ public:
     /*12*/ virtual void __unk_vfn_4();
     /*13*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
 
-
-
 protected:
-
 
 private:
 

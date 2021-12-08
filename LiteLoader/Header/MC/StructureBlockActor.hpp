@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKACTOR
+public:
+    class StructureBlockActor& operator=(class StructureBlockActor const&) = delete;
+    StructureBlockActor(class StructureBlockActor const&) = delete;
+    StructureBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructureBlockActor();
@@ -49,8 +55,6 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI StructureBlockActor(class BlockPos const&);
     MCAPI class StructureEditorData const& getStructureData() const;
     MCAPI void setPowered(class BlockSource&, class BlockPos const&, bool, bool);
@@ -62,10 +66,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _loadStructure(class BlockSource&, class BlockPos const&, class BaseGameVersion const&);
     MCAPI bool _saveStructure(class BlockSource&, class BlockPos const&, bool);
     MCAPI void _trigger(class BlockSource&, class BlockPos const&, class BaseGameVersion const&, bool);
+
 };

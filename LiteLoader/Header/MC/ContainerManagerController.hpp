@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContainerManagerController {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMANAGERCONTROLLER
+public:
+    class ContainerManagerController& operator=(class ContainerManagerController const&) = delete;
+    ContainerManagerController(class ContainerManagerController const&) = delete;
+    ContainerManagerController() = delete;
+#endif
 
 public:
-
     MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_DESTINATION;
     MCAPI static class gsl::basic_string_span<char const, -1> const TRANSFER_NO_ORIGIN;
 
 protected:
-
 
 private:
 

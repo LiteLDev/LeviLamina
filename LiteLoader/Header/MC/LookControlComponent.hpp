@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LookControlComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKCONTROLCOMPONENT
+public:
+    class LookControlComponent& operator=(class LookControlComponent const&) = delete;
+    LookControlComponent(class LookControlComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI LookControlComponent();
     MCAPI bool getHasWantedPosition() const;
     MCAPI bool getHasWantedRotation() const;
@@ -37,7 +41,6 @@ public:
     MCAPI void update(class Mob&);
 
 protected:
-
 
 private:
 

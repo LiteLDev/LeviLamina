@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Monster : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONSTER
+public:
+    class Monster& operator=(class Monster const&) = delete;
+    Monster(class Monster const&) = delete;
+    Monster() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Monster();
@@ -91,7 +97,6 @@ public:
     /*69*/ virtual void _serverAiMobStep();
     /*70*/ virtual void __unk_vfn_25();
     /*71*/ virtual bool isDarkEnoughToSpawn() const;
-
     /*
     inline bool canExistInPeaceful() const{
         bool (Monster::*rv)() const;
@@ -104,11 +109,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Monster(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

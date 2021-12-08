@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkChunkPublisher {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKCHUNKPUBLISHER
+public:
+    class NetworkChunkPublisher& operator=(class NetworkChunkPublisher const&) = delete;
+    NetworkChunkPublisher(class NetworkChunkPublisher const&) = delete;
+    NetworkChunkPublisher() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetworkChunkPublisher();
-
     /*
     inline  ~NetworkChunkPublisher(){
          (NetworkChunkPublisher::*rv)();
@@ -26,7 +31,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NetworkChunkPublisher(class Level&, class NetworkHandler&, class ClientBlobCache::Server::ActiveTransfersManager&, class NetworkIdentifier const&, unsigned char);
     MCAPI void clearRegion();
     MCAPI void destroyRegion();
@@ -38,9 +42,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _sendQueuedChunk(class ChunkPos const&, class ClientBlobCache::Server::TransferBuilder*);
     MCAPI void _serializeAndCache(class LevelChunkPacket&, class ClientBlobCache::Server::TransferBuilder&, class std::function<void (class VarIntDataOutput& )>&&);
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WitherBoss : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERBOSS
+public:
+    class WitherBoss& operator=(class WitherBoss const&) = delete;
+    WitherBoss(class WitherBoss const&) = delete;
+    WitherBoss() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -103,7 +109,6 @@ public:
     /*81*/ virtual void newServerAiStep();
     /*82*/ virtual void _serverAiMobStep();
     /*83*/ virtual void __unk_vfn_25();
-
     /*
     inline void causeFallDamage(float a0, float a1, class ActorDamageSource a2){
         void (WitherBoss::*rv)(float, float, class ActorDamageSource);
@@ -111,7 +116,6 @@ public:
         return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<class ActorDamageSource>(a2));
     }
     */
-
     MCAPI WitherBoss(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void awardSpawnWitherAchievement() const;
     MCAPI class Vec3 getHeadPos(int) const;
@@ -133,12 +137,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _destroyBlocks(class Level&, class AABB const&, class BlockSource&, int);
     MCAPI void _performRangedAttack(int, class Actor&);
     MCAPI void _performRangedAttack(int, class Vec3 const&, bool);
     MCAPI bool canShoot();
     MCAPI static int const TIME_BEFORE_MOVING;
+
 };

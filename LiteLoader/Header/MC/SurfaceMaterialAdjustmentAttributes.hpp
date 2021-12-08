@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SurfaceMaterialAdjustmentAttributes {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURFACEMATERIALADJUSTMENTATTRIBUTES
+public:
+    struct SurfaceMaterialAdjustmentAttributes& operator=(struct SurfaceMaterialAdjustmentAttributes const&) = delete;
+    SurfaceMaterialAdjustmentAttributes(struct SurfaceMaterialAdjustmentAttributes const&) = delete;
+    SurfaceMaterialAdjustmentAttributes() = delete;
+#endif
 
 public:
-
     MCAPI struct SurfaceMaterialAdjustmentEvaluated evaluateAdjustments(class RenderParams&, class gsl::not_null<class PerlinSimplexNoise* >, class BlockPos const&, int, int) const;
 
 protected:
-
 
 private:
 

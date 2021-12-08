@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AttributeInstanceDelegate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCEDELEGATE
+public:
+    class AttributeInstanceDelegate& operator=(class AttributeInstanceDelegate const&) = delete;
+    AttributeInstanceDelegate(class AttributeInstanceDelegate const&) = delete;
+    AttributeInstanceDelegate() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AttributeInstanceDelegate();
@@ -22,7 +28,6 @@ public:
     /*2*/ virtual void notify(__int64);
     /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
     /*4*/ virtual float getBuffValue(class AttributeBuff const&) const;
-
     /*
     inline  ~AttributeInstanceDelegate(){
          (AttributeInstanceDelegate::*rv)();
@@ -30,11 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AttributeInstanceDelegate(class AttributeInstance const&);
 
 protected:
-
     MCAPI class AttributeInstance const& _getInstance() const;
     MCAPI class AttributeInstance* _getMutableInstance() const;
 

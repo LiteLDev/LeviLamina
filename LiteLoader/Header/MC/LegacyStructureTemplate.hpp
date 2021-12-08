@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyStructureTemplate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURETEMPLATE
+public:
+    class LegacyStructureTemplate& operator=(class LegacyStructureTemplate const&) = delete;
+    LegacyStructureTemplate(class LegacyStructureTemplate const&) = delete;
+    LegacyStructureTemplate() = delete;
+#endif
 
 public:
-
     MCAPI class BlockPos calculateConnectedPosition(class LegacyStructureSettings const&, class BlockPos const&, class LegacyStructureSettings const&, class BlockPos const&) const;
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
     MCAPI class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string > > > getMarkers(class BlockPos const&, class LegacyStructureSettings&) const;
@@ -49,8 +54,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class CompoundTag> _mapTag(std::unique_ptr<class CompoundTag>, std::string const&);
+
 };

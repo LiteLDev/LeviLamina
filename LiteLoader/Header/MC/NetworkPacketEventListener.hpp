@@ -3,27 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkPacketEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKPACKETEVENTLISTENER
+public:
+    class NetworkPacketEventListener& operator=(class NetworkPacketEventListener const&) = delete;
+    NetworkPacketEventListener(class NetworkPacketEventListener const&) = delete;
+    NetworkPacketEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetworkPacketEventListener();
     /*1*/ virtual int /*enum enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
 
-
-
 protected:
-
 
 private:
 

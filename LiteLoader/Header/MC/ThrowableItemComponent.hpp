@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ThrowableItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THROWABLEITEMCOMPONENT
+public:
+    class ThrowableItemComponent& operator=(class ThrowableItemComponent const&) = delete;
+    ThrowableItemComponent(class ThrowableItemComponent const&) = delete;
+    ThrowableItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ThrowableItemComponent();
@@ -24,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI ThrowableItemComponent(class ComponentItem*);
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
     MCAPI bool use(class ItemStack&, class Player&) const;
@@ -34,8 +38,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI float _getLaunchPower(int, int, int) const;
+
 };

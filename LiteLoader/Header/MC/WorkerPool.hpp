@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorkerPool {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORKERPOOL
+public:
+    class WorkerPool& operator=(class WorkerPool const&) = delete;
+    WorkerPool(class WorkerPool const&) = delete;
+    WorkerPool() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorkerPool();
-
     /*
     inline  ~WorkerPool(){
          (WorkerPool::*rv)();
@@ -27,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WorkerPool(std::string, class Scheduler&);
     MCAPI WorkerPool(std::string, unsigned __int64, class Bedrock::Threading::OSThreadPriority const&, class std::optional<unsigned __int64>, bool);
     MCAPI void queue(class std::shared_ptr<class BackgroundTaskBase>, bool);
@@ -35,12 +39,11 @@ public:
     MCAPI class std::shared_ptr<class BackgroundTaskBase> tryPop(int);
 
 protected:
-
     MCAPI static void _registerPool(class WorkerPool&);
     MCAPI static class SmallSet<class WorkerPool* > sAllPools;
     MCAPI static class std::mutex sAllPoolsMutex;
 
 private:
-
     MCAPI bool _checkPendingWork();
+
 };

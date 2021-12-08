@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace Automation {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 	class AutomationClient;
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern char const* Body;
     MCAPI extern char const* BodyData;
     MCAPI extern char const* Header;
@@ -24,4 +23,5 @@ namespace Automation {
     MCAPI extern char const* StatusCode;
     MCAPI extern char const* StatusMsg;
     MCAPI extern char const* VersionData;
+
 };

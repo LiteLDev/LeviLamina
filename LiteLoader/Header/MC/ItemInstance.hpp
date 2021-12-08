@@ -2,27 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ItemStackBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemInstance : public ItemStackBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
     /*0*/ virtual ~ItemInstance();
     /*1*/ virtual void reinit(class Item const&, int, int);
     /*2*/ virtual void reinit(class BlockLegacy const&, int);
     /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
-
     /*
     inline  ~ItemInstance(){
          (ItemInstance::*rv)();
@@ -30,7 +28,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemInstance(class ItemStackBase const&);
     MCAPI ItemInstance(class ItemInstance const&);
     MCAPI ItemInstance(class Block const&, int, class CompoundTag const*);
@@ -48,7 +45,6 @@ public:
     MCAPI static class ItemInstance fromTag(class CompoundTag const&);
 
 protected:
-
     MCAPI ItemInstance(class BlockLegacy const&, int, short);
 
 private:

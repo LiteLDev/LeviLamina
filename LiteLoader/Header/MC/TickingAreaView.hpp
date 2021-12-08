@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TickingAreaView {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKINGAREAVIEW
+public:
+    class TickingAreaView& operator=(class TickingAreaView const&) = delete;
+    TickingAreaView(class TickingAreaView const&) = delete;
+    TickingAreaView() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TickingAreaView();
@@ -30,7 +36,6 @@ public:
     /*10*/ virtual void move(struct Bounds const&);
     /*11*/ virtual std::unique_ptr<class ChunkViewSource> createChildSource();
     /*12*/ virtual class std::shared_ptr<class LevelChunk> getAvailableChunk(class ChunkPos const&);
-
     /*
     inline  ~TickingAreaView(){
          (TickingAreaView::*rv)();
@@ -38,14 +43,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TickingAreaView(class ChunkSource&);
     MCAPI void unregisterChunkBuildOrderPolicies(class ChunkBuildOrderPolicyBase&);
 
 protected:
 
-
 private:
-
     MCAPI void _tickChunk(struct Tick const&, class BlockSource&, class Level&, class ChunkPos const&);
+
 };

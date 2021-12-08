@@ -2,25 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePack {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACK
+public:
+    class ResourcePack& operator=(class ResourcePack const&) = delete;
+    ResourcePack(class ResourcePack const&) = delete;
+    ResourcePack() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePack();
-
-
     MCAPI ResourcePack(class Pack&);
     MCAPI bool areKnownFilesValid();
     MCAPI void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, int, bool) const;
@@ -45,10 +49,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _createSubpack(struct SubpackInfo const&);
     MCAPI void _createSubpacks();
     MCAPI void _generateIconPath();
+
 };

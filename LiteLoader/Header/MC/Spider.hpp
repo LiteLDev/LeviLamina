@@ -2,23 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Spider : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPIDER
+public:
+    class Spider& operator=(class Spider const&) = delete;
+    Spider(class Spider const&) = delete;
+    Spider() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Spider();
@@ -95,7 +101,6 @@ public:
     /*71*/ virtual void __unk_vfn_25();
     /*72*/ virtual float getModelScale() const;
     /*73*/ virtual int /*enum enum Spider::Type*/ getSpiderType() const;
-
     /*
     inline bool useNewAi() const{
         bool (Spider::*rv)() const;
@@ -103,11 +108,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Spider(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

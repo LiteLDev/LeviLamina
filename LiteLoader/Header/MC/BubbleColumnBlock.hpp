@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BubbleColumnBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BUBBLECOLUMNBLOCK
+public:
+    class BubbleColumnBlock& operator=(class BubbleColumnBlock const&) = delete;
+    BubbleColumnBlock(class BubbleColumnBlock const&) = delete;
+    BubbleColumnBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BubbleColumnBlock();
@@ -141,16 +147,13 @@ public:
     /*120*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void __unk_vfn_32();
     /*122*/ virtual void __unk_vfn_33();
-
-
     MCAPI BubbleColumnBlock(std::string const&, int);
     MCAPI static bool addBubbleColumnSegment(class BlockSource&, class BlockPos const&);
 
 protected:
 
-
 private:
-
     MCAPI static void createParticles(class BlockSource&, class BlockPos const&, class Random&, bool);
     MCAPI static bool getFlowDownward(class Block const&);
+
 };

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace Scripting {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 template <typename T0>
 class Result {
@@ -189,7 +188,7 @@ struct TypedObjectHandle {
 };
 enum HandleReference;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI struct JSValue ConvertJSValueArgsToNativeAnys(struct JSContext*, class Scripting::Reflection::IFunction*, unsigned int, struct JSValue*, class std::array<class entt::meta_any, 16>&, unsigned int);
     MCAPI struct JSValue CopyJSValueArrayToNativeSequenceContainer(struct JSContext*, struct JSValue, class entt::meta_sequence_container&);
     MCAPI struct Scripting::ArrayProxy CreateArrayProxy(struct JSContext*);
@@ -212,4 +211,5 @@ enum HandleReference;
     MCAPI struct JSValue NativeAnyToJSValue(struct JSContext*, class entt::meta_any&, bool, bool);
     MCAPI struct JSValue NativeObjectHandleToJSValue(struct JSContext*, struct Scripting::ObjectHandle, bool, enum Scripting::HandleReference);
     MCAPI void SetNativeObjectHandleToJSValue(struct Scripting::ObjectHandle, struct JSValue);
+
 };

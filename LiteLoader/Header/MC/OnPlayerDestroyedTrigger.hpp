@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct OnPlayerDestroyedTrigger {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONPLAYERDESTROYEDTRIGGER
+public:
+    struct OnPlayerDestroyedTrigger& operator=(struct OnPlayerDestroyedTrigger const&) = delete;
+    OnPlayerDestroyedTrigger(struct OnPlayerDestroyedTrigger const&) = delete;
+    OnPlayerDestroyedTrigger() = delete;
+#endif
 
 public:
-
     MCAPI ~OnPlayerDestroyedTrigger();
 
 protected:
-
 
 private:
 

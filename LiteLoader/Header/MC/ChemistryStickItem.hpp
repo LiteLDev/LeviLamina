@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChemistryStickItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYSTICKITEM
+public:
+    class ChemistryStickItem& operator=(class ChemistryStickItem const&) = delete;
+    ChemistryStickItem(class ChemistryStickItem const&) = delete;
+    ChemistryStickItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChemistryStickItem();
@@ -101,7 +107,6 @@ public:
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
     /*
     inline bool uniqueAuxValues() const{
         bool (ChemistryStickItem::*rv)() const;
@@ -119,19 +124,16 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ChemistryStickItem(std::string const&, int);
     MCAPI static enum ItemColor getColorType(int);
     MCAPI static bool isActive(int);
     MCAPI static bool isChemistryStick(class ItemStackBase const&);
 
 protected:
-
     MCAPI std::string _getColorName(int) const;
     MCAPI bool _tick(class ItemStack&, unsigned __int64) const;
 
 private:
-
     MCAPI void _storeActivationTimestamp(class ItemStack&, unsigned __int64, int) const;
     MCAPI static std::string const ACTIVATION_TIMESTAMP_TAG;
     MCAPI static int const ACTIVE_BIT;
@@ -140,4 +142,5 @@ private:
     MCAPI static int const DAMAGE_BITS;
     MCAPI static int const DAMAGE_MASK;
     MCAPI static int const DAMAGE_START_BIT;
+
 };

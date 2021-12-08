@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockPos {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPOS
+public:
+    class BlockPos& operator=(class BlockPos const&) = delete;
+    BlockPos(class BlockPos const&) = delete;
+    BlockPos() = delete;
+#endif
 
 public:
-
     MCAPI BlockPos(class ChunkPos const&, class ChunkBlockPos const&, short);
     MCAPI BlockPos(class ChunkPos const&, int);
     MCAPI BlockPos(class SubChunkPos const&);
@@ -41,7 +46,6 @@ public:
     MCAPI static void bindType();
 
 protected:
-
 
 private:
 

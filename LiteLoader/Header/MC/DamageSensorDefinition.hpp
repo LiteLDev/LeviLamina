@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DamageSensorDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DAMAGESENSORDEFINITION
+public:
+    class DamageSensorDefinition& operator=(class DamageSensorDefinition const&) = delete;
+    DamageSensorDefinition(class DamageSensorDefinition const&) = delete;
+    DamageSensorDefinition() = delete;
+#endif
 
 public:
-
     MCAPI void addDamageSensorTrigger(struct DamageSensorTrigger const&);
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class DamageSensorComponent&) const;
@@ -30,8 +35,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void deserializeTrigger(class Json::Value&, class SemVersion const&);
+
 };

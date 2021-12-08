@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BrewingStandBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDBLOCK
+public:
+    class BrewingStandBlock& operator=(class BrewingStandBlock const&) = delete;
+    BrewingStandBlock(class BrewingStandBlock const&) = delete;
+    BrewingStandBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BrewingStandBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
     /*
     inline bool hasComparatorSignal() const{
         bool (BrewingStandBlock::*rv)() const;
@@ -159,11 +164,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BrewingStandBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

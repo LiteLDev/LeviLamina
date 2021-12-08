@@ -3,25 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ThirdPartyInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_THIRDPARTYINFO
+public:
+    class ThirdPartyInfo& operator=(class ThirdPartyInfo const&) = delete;
+#endif
 
 public:
-
     MCAPI ThirdPartyInfo(class ThirdPartyInfo const&);
     MCAPI ThirdPartyInfo();
     MCAPI ~ThirdPartyInfo();
 
 protected:
-
 
 private:
 

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ReadOnlyBinaryStream {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     size_t      readPointer{};
@@ -25,12 +24,18 @@ public:
     LIAPI size_t getUnreadLength() const;
     LIAPI void setReadPointer(std::size_t size);
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_READONLYBINARYSTREAM
+public:
+    class ReadOnlyBinaryStream& operator=(class ReadOnlyBinaryStream const&) = delete;
+    ReadOnlyBinaryStream(class ReadOnlyBinaryStream const&) = delete;
+    ReadOnlyBinaryStream() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ReadOnlyBinaryStream();
     /*1*/ virtual bool read(void*, unsigned __int64);
-
     /*
     inline  ~ReadOnlyBinaryStream(){
          (ReadOnlyBinaryStream::*rv)();
@@ -38,7 +43,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ReadOnlyBinaryStream(std::string&&);
     MCAPI ReadOnlyBinaryStream(std::string const&, bool);
     MCAPI bool canReadBool() const;
@@ -63,7 +67,6 @@ public:
     MCAPI __int64 getVarInt64();
 
 protected:
-
 
 private:
 

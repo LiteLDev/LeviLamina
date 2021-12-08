@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BasePressurePlateBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WeightedPressurePlateBlock : public BasePressurePlateBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEIGHTEDPRESSUREPLATEBLOCK
+public:
+    class WeightedPressurePlateBlock& operator=(class WeightedPressurePlateBlock const&) = delete;
+    WeightedPressurePlateBlock(class WeightedPressurePlateBlock const&) = delete;
+    WeightedPressurePlateBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WeightedPressurePlateBlock();
@@ -134,14 +140,11 @@ public:
     /*113*/ virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual int getSignalForData(int) const;
     /*115*/ virtual int getRedstoneSignal(int) const;
-
-
     MCAPI WeightedPressurePlateBlock(std::string const&, int, class Material const&, int);
     MCAPI static int const MAX_WEIGHT_HEAVY;
     MCAPI static int const MAX_WEIGHT_LIGHT;
 
 protected:
-
 
 private:
 

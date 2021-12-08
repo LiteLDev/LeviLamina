@@ -3,31 +3,33 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AgentCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AGENTCOMMAND
+public:
+    class AgentCommand& operator=(class AgentCommand const&) = delete;
+    AgentCommand(class AgentCommand const&) = delete;
+    AgentCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AgentCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
 
-
 private:
-
     MCAPI void createAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void createAgentOutputSuccess(class CommandOutput&, bool) const;
     MCAPI void reportSuccess(bool, class CommandOutput&) const;
@@ -35,4 +37,5 @@ private:
     MCAPI void setAgentOwner(class Agent&, class Player&) const;
     MCAPI void tpAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI static bool validateRange(class Agent*, class CommandOrigin const&, class CommandOutput&);
+
 };

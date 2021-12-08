@@ -2,22 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SimpleEventPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Subtype;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLEEVENTPACKET
+public:
+    class SimpleEventPacket& operator=(class SimpleEventPacket const&) = delete;
+    SimpleEventPacket(class SimpleEventPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SimpleEventPacket();
@@ -26,7 +31,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~SimpleEventPacket(){
          (SimpleEventPacket::*rv)();
@@ -34,13 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SimpleEventPacket(enum SimpleEventPacket::Subtype const&);
     MCAPI SimpleEventPacket();
     MCAPI enum SimpleEventPacket::Subtype const& getSubtype() const;
 
 protected:
-
 
 private:
 

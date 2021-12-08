@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CaveVinesBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVEVINESBLOCK
+public:
+    class CaveVinesBlock& operator=(class CaveVinesBlock const&) = delete;
+    CaveVinesBlock(class CaveVinesBlock const&) = delete;
+    CaveVinesBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CaveVinesBlock();
@@ -141,17 +147,14 @@ public:
     /*120*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void __unk_vfn_32();
     /*122*/ virtual void __unk_vfn_33();
-
-
     MCAPI CaveVinesBlock(std::string const&, int, enum CaveVinesVariant);
 
 protected:
 
-
 private:
-
     MCAPI bool _isCaveVinesBlock(class Block const&) const;
     MCAPI bool _isCaveVinesHead(class BlockSource&, class BlockPos const&) const;
     MCAPI bool _pickBerries(class BlockSource&, class BlockPos const&) const;
     MCAPI void _updateBlockBasedOnNeighborBelow(class BlockSource&, class BlockPos const&) const;
+
 };

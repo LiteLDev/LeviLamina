@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HeavyBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEAVYBLOCK
+public:
+    class HeavyBlock& operator=(class HeavyBlock const&) = delete;
+    HeavyBlock(class HeavyBlock const&) = delete;
+    HeavyBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HeavyBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual bool isFreeToFall(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;
-
     /*
     inline bool falling() const{
         bool (HeavyBlock::*rv)() const;
@@ -153,12 +158,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI HeavyBlock(std::string const&, int, class Material const&);
     MCAPI void triggerFallCheck(class BlockSource&, class BlockPos const&) const;
 
 protected:
-
     MCAPI void _tickBlocksAround2D(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI void checkSlide(class BlockSource&, class BlockPos const&) const;
 

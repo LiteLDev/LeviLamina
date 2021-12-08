@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MushroomBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSHROOMBLOCK
+public:
+    class MushroomBlock& operator=(class MushroomBlock const&) = delete;
+    MushroomBlock(class MushroomBlock const&) = delete;
+    MushroomBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MushroomBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
     /*
     inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
         int \/*enum enum BlockRenderLayer*\/ (MushroomBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
@@ -149,11 +154,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MushroomBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

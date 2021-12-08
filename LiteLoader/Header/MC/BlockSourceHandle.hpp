@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockSourceListener.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockSourceHandle : public BlockSourceListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSOURCEHANDLE
+public:
+    class BlockSourceHandle& operator=(class BlockSourceHandle const&) = delete;
+    BlockSourceHandle(class BlockSourceHandle const&) = delete;
+    BlockSourceHandle() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockSourceHandle();
@@ -26,10 +32,7 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
 
-
-
 protected:
-
 
 private:
 

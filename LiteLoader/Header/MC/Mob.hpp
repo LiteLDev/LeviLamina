@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class UserEntityIdentifierComponent;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Mob : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct JumpPreventionResult {
@@ -25,7 +24,14 @@ struct JumpPreventionResult {
 public:
 LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOB
+public:
+    class Mob& operator=(class Mob const&) = delete;
+    Mob(class Mob const&) = delete;
+    Mob() = delete;
+#endif
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const&) const;
@@ -216,7 +222,6 @@ public:
     /*185*/ virtual void updateGliding();
     /*186*/ virtual void __unk_vfn_25();
     /*187*/ virtual class AABB _getAdjustedAABBForSpawnCheck(class AABB const&, class Vec3 const&) const;
-
     /*
     inline bool canBeControlledByPassenger(){
         bool (Mob::*rv)();
@@ -264,7 +269,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Mob(class Level&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI Mob(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void addSpeedModifier(class mce::UUID const&, std::string const&, float);
@@ -358,7 +362,6 @@ public:
     MCAPI static class Mob* tryGetFromEntity(class EntityContext&, bool);
 
 protected:
-
     MCAPI void _doSprintParticleEffect();
     MCAPI void _endJump();
     MCAPI void _registerMobAttributes();
@@ -372,9 +375,9 @@ protected:
     MCAPI static void _jumpFromGround(struct IMobMovementProxy&);
 
 private:
-
     MCAPI bool _initHardCodedComponents();
     MCAPI void _updateSprintingState();
     MCAPI void _verifyAttributes();
     MCAPI static bool _tryApplyingLevitation(struct IMobMovementProxy const&, class Vec3&);
+
 };

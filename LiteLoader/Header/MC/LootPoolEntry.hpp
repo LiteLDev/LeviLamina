@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LootPoolEntry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOTPOOLENTRY
+public:
+    class LootPoolEntry& operator=(class LootPoolEntry const&) = delete;
+    LootPoolEntry(class LootPoolEntry const&) = delete;
+    LootPoolEntry() = delete;
+#endif
 
 public:
     /*0*/ virtual void __unk_vfn_0() = 0;
     /*1*/ virtual ~LootPoolEntry();
-
     /*
     inline  ~LootPoolEntry(){
          (LootPoolEntry::*rv)();
@@ -28,11 +33,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static std::unique_ptr<class LootPoolEntry> deserialize(class Json::Value const&);
 
 protected:
-
 
 private:
 

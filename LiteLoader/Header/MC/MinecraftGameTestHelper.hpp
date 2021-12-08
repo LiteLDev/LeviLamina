@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftGameTestHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTGAMETESTHELPER
+public:
+    class MinecraftGameTestHelper& operator=(class MinecraftGameTestHelper const&) = delete;
+    MinecraftGameTestHelper(class MinecraftGameTestHelper const&) = delete;
+    MinecraftGameTestHelper() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecraftGameTestHelper();
@@ -76,16 +82,13 @@ public:
     /*56*/ virtual void removeSimulatedPlayer(class SimulatedPlayer&);
     /*57*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource* &);
 
-
-
 protected:
 
-
 private:
-
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const&, class AABB const&, class BlockPos const&, bool) const;
     MCAPI class Container const* _getContainer(class BlockPos const&);
     MCAPI int _getItemEntityCount(class Item const&, class AABB const&);
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const&, class AABB const&) const;
+
 };

@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MapDecoration {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPDECORATION
+public:
+    class MapDecoration& operator=(class MapDecoration const&) = delete;
+    MapDecoration(class MapDecoration const&) = delete;
+    MapDecoration() = delete;
+#endif
 
 public:
-
     MCAPI MapDecoration(enum MapDecoration::Type, signed char, signed char, signed char, std::string const&, class mce::Color const&);
     MCAPI class mce::Color const& getColor() const;
     MCAPI enum MapDecoration::Type getImg() const;
@@ -30,7 +35,6 @@ public:
     MCAPI ~MapDecoration();
 
 protected:
-
 
 private:
 

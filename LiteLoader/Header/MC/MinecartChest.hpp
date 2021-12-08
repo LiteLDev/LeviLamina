@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Minecart.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecartChest : public Minecart {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTCHEST
+public:
+    class MinecartChest& operator=(class MinecartChest const&) = delete;
+    MinecartChest(class MinecartChest const&) = delete;
+    MinecartChest() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecartChest();
@@ -97,7 +103,6 @@ public:
     /*75*/ virtual void __unk_vfn_22();
     /*76*/ virtual int getDefaultDisplayOffset() const;
     /*77*/ virtual void applyNaturalSlowdown(class BlockSource&);
-
     /*
     inline void applyNaturalSlowdown(class BlockSource& a0){
         void (MinecartChest::*rv)(class BlockSource&);
@@ -105,13 +110,11 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI MinecartChest(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
 
-
 private:
-
     MCAPI static int const ITEMS_SIZE;
+
 };

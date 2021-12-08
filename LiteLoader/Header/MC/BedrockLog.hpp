@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace BedrockLog {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 class LogAreaFilter {
 public:
@@ -29,7 +28,7 @@ struct LogDetails {
     LogDetails(LogDetails const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI enum LogAreaID _areaFilterFromString(std::string const&);
     MCAPI bool _constructAreaFilterFromString(std::string const&, class BedrockLog::LogAreaFilter&);
     MCAPI std::string _constructAreaFilterStringFromFilter(class BedrockLog::LogAreaFilter const&);
@@ -50,4 +49,5 @@ struct LogDetails {
     MCAPI void update();
     MCAPI void updateLogFilter(std::unique_ptr<class LogSettingsUpdater>, std::string const&, std::vector<std::string> const&, std::string&, bool);
     MCAPI void updateLogSetting(std::string const&, bool);
+
 };

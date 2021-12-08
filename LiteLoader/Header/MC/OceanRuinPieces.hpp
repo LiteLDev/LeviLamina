@@ -2,29 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OceanRuinPieces {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINPIECES
+public:
+    class OceanRuinPieces& operator=(class OceanRuinPieces const&) = delete;
+    OceanRuinPieces(class OceanRuinPieces const&) = delete;
+    OceanRuinPieces() = delete;
+#endif
 
 public:
 
-
 protected:
 
-
 private:
-
     MCAPI static class gsl::basic_string_span<char const, -1> BIG_RUIN_LOOT;
     MCAPI static class gsl::basic_string_span<char const, -1> RUIN_LOOT;
     MCAPI static class gsl::basic_string_span<char const, -1> STRUCTURE_BIG_RUIN1_BRICK;
@@ -43,4 +46,5 @@ private:
     MCAPI static class gsl::basic_string_span<char const, -1>* ruinsCracked;
     MCAPI static class gsl::basic_string_span<char const, -1>* ruinsMossy;
     MCAPI static class gsl::basic_string_span<char const, -1>* warmRuins;
+
 };

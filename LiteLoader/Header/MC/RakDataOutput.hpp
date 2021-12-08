@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakDataOutput {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKDATAOUTPUT
+public:
+    class RakDataOutput& operator=(class RakDataOutput const&) = delete;
+    RakDataOutput(class RakDataOutput const&) = delete;
+    RakDataOutput() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RakDataOutput();
     /*1*/ virtual void writeBytes(void const*, unsigned __int64);
-
     /*
     inline  ~RakDataOutput(){
          (RakDataOutput::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

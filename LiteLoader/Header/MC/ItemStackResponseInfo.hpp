@@ -3,25 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ItemStackResponseInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKRESPONSEINFO
+public:
+    struct ItemStackResponseInfo& operator=(struct ItemStackResponseInfo const&) = delete;
+    ItemStackResponseInfo(struct ItemStackResponseInfo const&) = delete;
+#endif
 
 public:
-
     MCAPI ItemStackResponseInfo(struct ItemStackResponseInfo&&);
     MCAPI ItemStackResponseInfo();
     MCAPI ~ItemStackResponseInfo();
 
 protected:
-
 
 private:
 

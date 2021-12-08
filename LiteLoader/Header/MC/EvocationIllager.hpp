@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EvocationIllager : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EVOCATIONILLAGER
+public:
+    class EvocationIllager& operator=(class EvocationIllager const&) = delete;
+    EvocationIllager(class EvocationIllager const&) = delete;
+    EvocationIllager() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -88,7 +94,6 @@ public:
     /*66*/ virtual void __unk_vfn_24();
     /*67*/ virtual void _serverAiMobStep();
     /*68*/ virtual void __unk_vfn_25();
-
     /*
     inline bool canExistInPeaceful() const{
         bool (EvocationIllager::*rv)() const;
@@ -106,11 +111,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI EvocationIllager(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

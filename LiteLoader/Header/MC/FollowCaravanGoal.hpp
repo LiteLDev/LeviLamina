@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FollowCaravanGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FOLLOWCARAVANGOAL
+public:
+    class FollowCaravanGoal& operator=(class FollowCaravanGoal const&) = delete;
+    FollowCaravanGoal(class FollowCaravanGoal const&) = delete;
+    FollowCaravanGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FollowCaravanGoal();
@@ -25,15 +31,12 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI FollowCaravanGoal(class Mob&, float, int, std::vector<struct MobDescriptor> const&);
 
 protected:
 
-
 private:
-
     MCAPI bool checkCaravanType(class Mob*);
     MCAPI bool firstIsLeashed(class Mob*, int);
+
 };

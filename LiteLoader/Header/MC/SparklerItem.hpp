@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "ChemistryStickItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SparklerItem : public ChemistryStickItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ColorInfo {
@@ -22,7 +21,14 @@ struct ColorInfo {
     ColorInfo(ColorInfo const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SPARKLERITEM
+public:
+    class SparklerItem& operator=(class SparklerItem const&) = delete;
+    SparklerItem(class SparklerItem const&) = delete;
+    SparklerItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SparklerItem();
@@ -108,13 +114,10 @@ public:
     /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual std::string getAuxValuesDescription() const;
     /*82*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI static struct SparklerItem::ColorInfo const* const COLORS;
     MCAPI static int const MAX_ACTIVE_TICKS;
 
 protected:
-
 
 private:
 

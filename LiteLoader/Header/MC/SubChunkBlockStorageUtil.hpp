@@ -3,17 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace SubChunkBlockStorageUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI std::unique_ptr<class SubChunkStorage<class Block>> makeDeserialized(class IDataInput&, class BlockPalette const&, class std::function<class Block const* (unsigned __int64)> const&, class std::function<class Block const* (class CompoundTag const& )> const&, enum SubChunkFormat);
+
 };

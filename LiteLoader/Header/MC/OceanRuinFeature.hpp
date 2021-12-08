@@ -2,27 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructureFeature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OceanRuinFeature : public StructureFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCEANRUINFEATURE
+public:
+    class OceanRuinFeature& operator=(class OceanRuinFeature const&) = delete;
+    OceanRuinFeature(class OceanRuinFeature const&) = delete;
+    OceanRuinFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OceanRuinFeature();
     /*1*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
     /*2*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&);
     /*3*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
-
     /*
     inline  ~OceanRuinFeature(){
          (OceanRuinFeature::*rv)();
@@ -30,11 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI OceanRuinFeature(class OverworldGenerator&, class OceanMonumentFeature&, unsigned int, class BaseGameVersion const&);
 
 protected:
-
 
 private:
 

@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CameraItemComponentLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum UseAction;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMERAITEMCOMPONENTLEGACY
+public:
+    class CameraItemComponentLegacy& operator=(class CameraItemComponentLegacy const&) = delete;
+    CameraItemComponentLegacy(class CameraItemComponentLegacy const&) = delete;
+    CameraItemComponentLegacy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CameraItemComponentLegacy();
@@ -33,15 +39,12 @@ public:
     /*10*/ virtual void use(class ItemStack&, class Player&);
     /*11*/ virtual void releaseUsing(class ItemStack&, class Player&, int);
     /*12*/ virtual bool useOn(class ItemStack&, class Actor&, class BlockPos const&, unsigned char, class Vec3 const&);
-
-
     MCAPI CameraItemComponentLegacy(class Item&);
     MCAPI bool init(class Json::Value&, class SemVersion const&);
 
 protected:
 
-
 private:
-
     MCAPI enum CameraItemComponentLegacy::UseAction _tryPlace(class ItemStack const&, class Actor&, class BlockPos const&, unsigned char, class Vec3&) const;
+
 };

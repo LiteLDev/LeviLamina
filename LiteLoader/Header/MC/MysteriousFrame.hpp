@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MysteriousFrame : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MYSTERIOUSFRAME
+public:
+    class MysteriousFrame& operator=(class MysteriousFrame const&) = delete;
+    MysteriousFrame(class MysteriousFrame const&) = delete;
+    MysteriousFrame() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MysteriousFrame();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (MysteriousFrame::*rv)() const;
@@ -144,11 +149,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MysteriousFrame(std::string const&, int);
 
 protected:
-
 
 private:
 

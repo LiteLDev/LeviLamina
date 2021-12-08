@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Vec3 {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VEC3
+public:
+    class Vec3& operator=(class Vec3 const&) = delete;
+    Vec3(class Vec3 const&) = delete;
+    Vec3() = delete;
+#endif
 
 public:
-
     MCAPI class Vec3 abs() const;
     MCAPI class Vec3 ceil() const;
     MCAPI float distanceToLineSquared(class Vec3 const&, class Vec3 const&) const;
@@ -49,7 +54,6 @@ public:
     MCAPI static class Vec2 rotationFromDirection(class Vec3 const&);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "PoolElementStructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BastionPiece : public PoolElementStructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASTIONPIECE
+public:
+    class BastionPiece& operator=(class BastionPiece const&) = delete;
+    BastionPiece(class BastionPiece const&) = delete;
+    BastionPiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BastionPiece();
@@ -29,12 +35,9 @@ public:
     /*8*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const;
     /*9*/ virtual int /*enum enum AdjustmentEffect*/ getTerrainAdjustmentEffect() const;
     /*10*/ virtual bool _needsPostProcessing(class BlockSource&);
-
-
     MCAPI static void addPieces(class BlockPos, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, class JigsawStructureRegistry&, enum VanillaBiomeTypes, class Dimension&);
 
 protected:
-
 
 private:
 

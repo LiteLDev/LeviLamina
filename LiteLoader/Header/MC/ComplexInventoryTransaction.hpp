@@ -3,20 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ComplexInventoryTransaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPLEXINVENTORYTRANSACTION
+public:
+    class ComplexInventoryTransaction& operator=(class ComplexInventoryTransaction const&) = delete;
+    ComplexInventoryTransaction(class ComplexInventoryTransaction const&) = delete;
+    ComplexInventoryTransaction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ComplexInventoryTransaction();
@@ -25,7 +31,6 @@ public:
     /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
     /*4*/ virtual int /*enum enum InventoryTransactionError*/ handle(class Player&, bool) const;
     /*5*/ virtual void onTransactionError(class Player&, int /*enum enum InventoryTransactionError*/) const;
-
     /*
     inline void write(class BinaryStream& a0) const{
         void (ComplexInventoryTransaction::*rv)(class BinaryStream&) const;
@@ -43,7 +48,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ComplexInventoryTransaction(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type);
     MCAPI static std::unique_ptr<class ComplexInventoryTransaction> fromType(enum ComplexInventoryTransaction::Type, class InventoryTransaction const&);
@@ -51,8 +55,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class BidirectionalUnorderedMap<enum ComplexInventoryTransaction::Type, std::string > const transactionTypeMap;
+
 };

@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SharedAttributes {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDATTRIBUTES
+public:
+    class SharedAttributes& operator=(class SharedAttributes const&) = delete;
+    SharedAttributes(class SharedAttributes const&) = delete;
+    SharedAttributes() = delete;
+#endif
 
 public:
-
     MCAPI static class Attribute const ABSORPTION;
     MCAPI static class Attribute const ATTACK_DAMAGE;
     MCAPI static class Attribute const FOLLOW_RANGE;
@@ -36,12 +41,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class AttributeInstance* _legacyGetInstance(class BaseAttributeMap&, std::string const&);
     MCAPI static std::string const& _legacyGetName(std::string const&);
     MCAPI static void _loadAttribute(class AttributeInstance&, class CompoundTag const*);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttribute(class AttributeInstance const&);
     MCAPI static std::unique_ptr<class CompoundTag> _saveAttributeModifier(class AttributeModifier const&);
+
 };

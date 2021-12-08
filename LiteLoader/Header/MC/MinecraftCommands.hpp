@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Automation.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "MCRESULT.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftCommands {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     static MCRESULT _runcmd(void* origin, const std::string& cmd) {
@@ -27,12 +26,17 @@ public:
         return rv;
     }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTCOMMANDS
+public:
+    class MinecraftCommands& operator=(class MinecraftCommands const&) = delete;
+    MinecraftCommands(class MinecraftCommands const&) = delete;
+    MinecraftCommands() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecraftCommands();
-
-
     MCAPI MinecraftCommands(class Minecraft&, class Automation::AutomationClient&);
     MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void (std::string const& )>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
@@ -49,7 +53,6 @@ public:
     MCAPI static void initItemEnum(class CommandRegistry&, class BaseGameVersion const&);
 
 protected:
-
 
 private:
 

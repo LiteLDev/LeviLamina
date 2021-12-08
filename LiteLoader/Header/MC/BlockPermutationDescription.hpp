@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockPermutationDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKPERMUTATIONDESCRIPTION
+public:
+    class BlockPermutationDescription& operator=(class BlockPermutationDescription const&) = delete;
+    BlockPermutationDescription(class BlockPermutationDescription const&) = delete;
+    BlockPermutationDescription() = delete;
+#endif
 
 public:
-
     MCAPI ~BlockPermutationDescription();
 
 protected:
-
 
 private:
 

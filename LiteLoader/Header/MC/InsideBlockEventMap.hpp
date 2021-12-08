@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InsideBlockEventMap {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSIDEBLOCKEVENTMAP
+public:
+    class InsideBlockEventMap& operator=(class InsideBlockEventMap const&) = delete;
+    InsideBlockEventMap() = delete;
+#endif
 
 public:
-
     MCAPI InsideBlockEventMap(class InsideBlockEventMap const&);
     MCAPI InsideBlockEventMap(class Block const&, bool, bool, bool, class DefinitionTrigger const&, class DefinitionTrigger const&);
     MCAPI class DefinitionTrigger const& getEnteredEvent() const;
@@ -29,7 +33,6 @@ public:
     MCAPI ~InsideBlockEventMap();
 
 protected:
-
 
 private:
 

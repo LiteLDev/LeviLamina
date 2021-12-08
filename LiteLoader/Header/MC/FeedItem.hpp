@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct FeedItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct Effect {
     Effect() = delete;
@@ -19,16 +18,20 @@ struct Effect {
     Effect(Effect const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEEDITEM
+public:
+    struct FeedItem& operator=(struct FeedItem const&) = delete;
+    FeedItem() = delete;
+#endif
 
 public:
-
     MCAPI FeedItem(struct FeedItem const&);
     MCAPI void addEffect(struct FeedItem::Effect const&);
     MCAPI ~FeedItem();
 
 protected:
-
 
 private:
 

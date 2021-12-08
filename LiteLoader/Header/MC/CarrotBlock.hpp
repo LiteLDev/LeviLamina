@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CropBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CarrotBlock : public CropBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CARROTBLOCK
+public:
+    class CarrotBlock& operator=(class CarrotBlock const&) = delete;
+    CarrotBlock(class CarrotBlock const&) = delete;
+    CarrotBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CarrotBlock();
@@ -134,7 +140,6 @@ public:
     /*113*/ virtual class ItemInstance const getBaseSeed() const;
     /*114*/ virtual class ItemInstance const getBaseCrop() const;
     /*115*/ virtual int getCropNum(class Randomize&, int, int) const;
-
     /*
     inline int getCropNum(class Randomize& a0, int a1, int a2) const{
         int (CarrotBlock::*rv)(class Randomize&, int, int) const;
@@ -162,11 +167,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CarrotBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

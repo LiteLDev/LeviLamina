@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ProjectileFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROJECTILEFACTORY
+public:
+    class ProjectileFactory& operator=(class ProjectileFactory const&) = delete;
+    ProjectileFactory(class ProjectileFactory const&) = delete;
+    ProjectileFactory() = delete;
+#endif
 
 public:
-
     MCAPI ProjectileFactory(class Level&);
     MCAPI bool shootProjectileFromDefinition(struct ActorDefinitionIdentifier const&, class Mob*, class Vec3);
     MCAPI static std::unique_ptr<class OnHitSubcomponent> createSubcomponent(class Json::Value&, class SemVersion const&, std::string const&);
@@ -26,7 +31,6 @@ public:
     MCAPI static void shutdown();
 
 protected:
-
 
 private:
 

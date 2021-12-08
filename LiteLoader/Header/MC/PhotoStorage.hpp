@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PhotoStorage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PHOTOSTORAGE
+public:
+    class PhotoStorage& operator=(class PhotoStorage const&) = delete;
+    PhotoStorage(class PhotoStorage const&) = delete;
+    PhotoStorage() = delete;
+#endif
 
 public:
-
     MCAPI PhotoStorage(class Core::Path const&);
     MCAPI ~PhotoStorage();
     MCAPI static std::string const BOOKS_DIR;
@@ -28,8 +33,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _readManifest();
+
 };

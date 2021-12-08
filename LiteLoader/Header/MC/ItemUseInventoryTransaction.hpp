@@ -3,20 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemUseInventoryTransaction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum ActionType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMUSEINVENTORYTRANSACTION
+public:
+    ItemUseInventoryTransaction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemUseInventoryTransaction();
@@ -25,7 +29,6 @@ public:
     /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
     /*4*/ virtual int /*enum enum InventoryTransactionError*/ handle(class Player&, bool) const;
     /*5*/ virtual void onTransactionError(class Player&, int /*enum enum InventoryTransactionError*/) const;
-
     /*
     inline  ~ItemUseInventoryTransaction(){
          (ItemUseInventoryTransaction::*rv)();
@@ -33,7 +36,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemUseInventoryTransaction(class ItemUseInventoryTransaction const&);
     MCAPI class ItemUseInventoryTransaction& operator=(class ItemUseInventoryTransaction const&);
     MCAPI void resendBlocksAroundArea(class Player&, class BlockPos const&, unsigned char) const;
@@ -41,8 +43,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class BidirectionalUnorderedMap<enum ItemUseInventoryTransaction::ActionType, std::string > const actionTypeMap;
+
 };

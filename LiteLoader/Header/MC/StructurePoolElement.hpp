@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructurePoolElement {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class LazyTemplate {
@@ -22,7 +21,14 @@ public:
     LazyTemplate(LazyTemplate const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREPOOLELEMENT
+public:
+    class StructurePoolElement& operator=(class StructurePoolElement const&) = delete;
+    StructurePoolElement(class StructurePoolElement const&) = delete;
+    StructurePoolElement() = delete;
+#endif
 
 public:
     /*0*/ virtual class BlockPos getSize(int /*enum enum Rotation*/) const;
@@ -38,7 +44,6 @@ public:
     /*10*/ virtual void handleDataMarker(class BlockSource&, class BlockPos, std::string, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >&) const;
     /*11*/ virtual bool isValid() const;
     /*12*/ virtual ~StructurePoolElement();
-
     /*
     inline  ~StructurePoolElement(){
          (StructurePoolElement::*rv)();
@@ -46,15 +51,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, std::string const&, std::vector<std::unique_ptr<class StructurePoolBlockRule>> const*, std::vector<std::unique_ptr<class StructurePoolBlockTagRule>> const*, std::vector<std::unique_ptr<class StructurePoolActorRule>> const*, enum Projection, enum PostProcessSettings);
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, std::string const&, struct StructurePoolElementSettings);
     MCAPI StructurePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, std::string const&, enum Projection, enum PostProcessSettings);
 
 protected:
 
-
 private:
-
     MCAPI class StructurePoolElement::LazyTemplate const& _getTemplate() const;
+
 };

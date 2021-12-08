@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InteractDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERACTDEFINITION
+public:
+    class InteractDefinition& operator=(class InteractDefinition const&) = delete;
+    InteractDefinition(class InteractDefinition const&) = delete;
+    InteractDefinition() = delete;
+#endif
 
 public:
-
     MCAPI void addInteraction(struct Interaction const&);
     MCAPI void deserializeData(class Json::Value&, class SemVersion const&);
     MCAPI void initialize(class EntityContext&, class InteractComponent&) const;
@@ -29,9 +34,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void deserializeInteraction(class Json::Value&, class SemVersion const&);
     MCAPI void serializeInteraction(struct Interaction const&, class Json::Value&) const;
+
 };

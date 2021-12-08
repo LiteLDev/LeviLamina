@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SetScorePacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETSCOREPACKET
+public:
+    class SetScorePacket& operator=(class SetScorePacket const&) = delete;
+    SetScorePacket(class SetScorePacket const&) = delete;
+    SetScorePacket() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SetScorePacket();
@@ -24,7 +30,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~SetScorePacket(){
          (SetScorePacket::*rv)();
@@ -32,15 +37,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static class SetScorePacket change(struct ScoreboardId const&, class Objective const&);
     MCAPI static class SetScorePacket change(std::vector<struct ScorePacketInfo>);
     MCAPI static class SetScorePacket remove(struct ScoreboardId const&, class Objective const&);
 
 protected:
 
-
 private:
-
     MCAPI SetScorePacket(enum ScorePacketType, struct ScoreboardId const&, class Objective const&);
+
 };

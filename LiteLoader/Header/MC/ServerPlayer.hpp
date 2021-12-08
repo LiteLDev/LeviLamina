@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Player.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Player.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerPlayer : public Player {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYER
+public:
+    class ServerPlayer& operator=(class ServerPlayer const&) = delete;
+    ServerPlayer(class ServerPlayer const&) = delete;
+    ServerPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -150,7 +156,6 @@ public:
     /*127*/ virtual void __unk_vfn_41();
     /*128*/ virtual int _getSpawnChunkLimit() const;
     /*129*/ virtual void _updateChunkPublisherView(class Vec3 const&, float);
-
     /*
     inline void frameUpdate(class FrameUpdateContextBase& a0){
         void (ServerPlayer::*rv)(class FrameUpdateContextBase&);
@@ -173,7 +178,6 @@ public:
         return (this->*rv)(std::forward<class std::shared_ptr<struct INpcDialogueData>>(a0));
     }
     */
-
     MCAPI ServerPlayer(class Level&, class PacketSender&, class NetworkHandler&, class ClientBlobCache::Server::ActiveTransfersManager&, enum GameType, class NetworkIdentifier const&, unsigned char, class std::function<void (class ServerPlayer& )>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int, bool, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void checkCheating(class Vec3 const&);
     MCAPI void disconnect();
@@ -197,13 +201,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _logCDEvent(enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID, enum CrashDumpLogStringID);
     MCAPI enum ContainerID _nextContainerCounter();
     MCAPI void _removeNearbyEntities();
     MCAPI void _scanForNearbyActors();
     MCAPI void _setContainerManager(class std::shared_ptr<class IContainerManager>);
     MCAPI void _updateNearbyActors();
+
 };

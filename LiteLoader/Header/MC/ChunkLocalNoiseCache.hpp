@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkLocalNoiseCache {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct CacheEntry {
@@ -20,10 +19,15 @@ struct CacheEntry {
     CacheEntry(CacheEntry const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKLOCALNOISECACHE
+public:
+    class ChunkLocalNoiseCache& operator=(class ChunkLocalNoiseCache const&) = delete;
+    ChunkLocalNoiseCache(class ChunkLocalNoiseCache const&) = delete;
+#endif
 
 public:
-
     MCAPI ChunkLocalNoiseCache(class DividedPos2d<4>, int);
     MCAPI ChunkLocalNoiseCache();
     MCAPI struct ChunkLocalNoiseCache::CacheEntry const& getCacheEntry(class DividedPos2d<4> const&) const;
@@ -31,7 +35,6 @@ public:
     MCAPI ~ChunkLocalNoiseCache();
 
 protected:
-
 
 private:
 

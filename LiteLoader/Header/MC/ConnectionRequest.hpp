@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #include "UnverifiedCertificate.hpp"
 #include "WebToken.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConnectionRequest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
 public:
@@ -23,10 +22,15 @@ public:
 	std::unique_ptr<WebToken> rawToken;
 	uint8_t clientSubId;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONNECTIONREQUEST
+public:
+    class ConnectionRequest& operator=(class ConnectionRequest const&) = delete;
+    ConnectionRequest() = delete;
+#endif
 
 public:
-
     MCAPI ConnectionRequest(class ConnectionRequest const&);
     MCAPI std::vector<class AnimatedImageData> getAnimatedImageData() const;
     MCAPI std::string getArmSize() const;
@@ -69,9 +73,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI ConnectionRequest(std::unique_ptr<class WebToken>, std::string const&);
     MCAPI std::unique_ptr<class Certificate> validate(std::unique_ptr<class Certificate>, __int64) const;
+
 };

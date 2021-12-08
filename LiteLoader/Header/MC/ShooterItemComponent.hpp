@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShooterItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHOOTERITEMCOMPONENT
+public:
+    class ShooterItemComponent& operator=(class ShooterItemComponent const&) = delete;
+    ShooterItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShooterItemComponent();
@@ -24,8 +29,6 @@ public:
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI ShooterItemComponent(class ShooterItemComponent const&);
     MCAPI ShooterItemComponent(class ComponentItem*);
     MCAPI bool releaseUsing(class ItemStack&, class Player*, int) const;
@@ -35,10 +38,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _consumeAmmunition(class Player*, class ItemStack const&, int, bool, bool) const;
     MCAPI int _getAmmunition(class Player const*, bool, class ItemStack&, bool&) const;
     MCAPI void _shootProjectiles(class ItemStack&, class Player*, int) const;
+
 };

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PredictedMovementComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct RuntimePredictionData {
@@ -30,10 +29,16 @@ struct HistoryItem {
     HistoryItem(HistoryItem const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PREDICTEDMOVEMENTCOMPONENT
+public:
+    class PredictedMovementComponent& operator=(class PredictedMovementComponent const&) = delete;
+    PredictedMovementComponent(class PredictedMovementComponent const&) = delete;
+    PredictedMovementComponent() = delete;
+#endif
 
 public:
-
     MCAPI PredictedMovementComponent(class Actor&);
     MCAPI bool isEnabled() const;
     MCAPI void reset();
@@ -41,9 +46,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _debugLog(struct PredictedMovementComponent::PredictionDbgData const&) const;
     MCAPI bool _isDebugLoggingEnabled() const;
     MCAPI void _sendPredictionEvent(enum MovePredictionType, class Vec3 const&) const;
@@ -52,4 +55,5 @@ private:
     MCAPI bool _tryInterpolate(class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > const&);
     MCAPI static unsigned int const LERP_STEP_SIZE;
     MCAPI static std::unique_ptr<struct PredictedMovementComponent::RuntimePredictionData> mGlobalRuntimePredictionData;
+
 };

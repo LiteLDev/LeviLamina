@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerRespawnRandomizer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERRESPAWNRANDOMIZER
+public:
+    class PlayerRespawnRandomizer& operator=(class PlayerRespawnRandomizer const&) = delete;
+    PlayerRespawnRandomizer(class PlayerRespawnRandomizer const&) = delete;
+    PlayerRespawnRandomizer() = delete;
+#endif
 
 public:
-
     MCAPI ~PlayerRespawnRandomizer();
 
 protected:
-
 
 private:
 

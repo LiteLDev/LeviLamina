@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ContainerValidatorPairScope {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERVALIDATORPAIRSCOPE
+public:
+    struct ContainerValidatorPairScope& operator=(struct ContainerValidatorPairScope const&) = delete;
+    ContainerValidatorPairScope(struct ContainerValidatorPairScope const&) = delete;
+    ContainerValidatorPairScope() = delete;
+#endif
 
 public:
-
     MCAPI ~ContainerValidatorPairScope();
 
 protected:
-
 
 private:
 

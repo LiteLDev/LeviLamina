@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonValidator.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FormJsonValidator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FORMJSONVALIDATOR
+public:
+    class FormJsonValidator& operator=(class FormJsonValidator const&) = delete;
+    FormJsonValidator(class FormJsonValidator const&) = delete;
+    FormJsonValidator() = delete;
+#endif
 
 public:
-
     MCAPI static class JsonValidator::Property getContentItemProperty(class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&, class JsonValidator::Property const&);
     MCAPI static class JsonValidator::Property getControlLockedProperty();
     MCAPI static class JsonValidator::Property getDropdownProperty(bool);
@@ -29,7 +34,6 @@ public:
     MCAPI static class JsonValidator::Property getToggleProperty(bool);
 
 protected:
-
 
 private:
 

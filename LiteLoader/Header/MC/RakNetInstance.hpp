@@ -2,19 +2,18 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakPeerHelper.hpp"
 #include "Bedrock.hpp"
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakNetInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class RakNetNetworkPeer {
@@ -25,7 +24,14 @@ public:
 };
 enum NATState;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKNETINSTANCE
+public:
+    class RakNetInstance& operator=(class RakNetInstance const&) = delete;
+    RakNetInstance(class RakNetInstance const&) = delete;
+    RakNetInstance() = delete;
+#endif
 
 public:
     /*
@@ -160,17 +166,15 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RakNetInstance(class RakNetInstance::ConnectionCallbacks&, class RakPeerHelper::IPSupportInterface&, class Bedrock::NonOwnerPointer<class AppPlatform> const&);
 
 protected:
 
-
 private:
-
     MCAPI void _changeNatState(enum RakNetInstance::NATState, int, std::string const&);
     MCAPI class std::shared_ptr<class RakNetInstance::RakNetNetworkPeer> _createPeer(class NetworkIdentifier const&);
     MCAPI void _openNatConnection(struct RakNet::SystemAddress const&);
     MCAPI void _pingNatService(bool);
     MCAPI void _storeLocalIP();
+
 };

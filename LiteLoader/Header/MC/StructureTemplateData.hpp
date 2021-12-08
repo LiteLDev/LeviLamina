@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureTemplateData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEDATA
+public:
+    class StructureTemplateData& operator=(class StructureTemplateData const&) = delete;
+    StructureTemplateData(class StructureTemplateData const&) = delete;
+    StructureTemplateData() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StructureTemplateData();
-
     /*
     inline  ~StructureTemplateData(){
          (StructureTemplateData::*rv)();
@@ -26,14 +31,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class StructureBlockPalette const* getPalette(std::string const&) const;
     MCAPI bool load(class CompoundTag const&);
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI static std::string const DEFAULT_PALETTE_NAME;
 
 protected:
-
     MCAPI enum StructureLoadResult _parseBlockIndices(class CompoundTag const&);
     MCAPI enum StructureLoadResult _parseEntities(class CompoundTag const&);
     MCAPI enum StructureLoadResult _parseFormatVersion(class CompoundTag const&);
@@ -44,6 +47,6 @@ protected:
     MCAPI void _saveStructureTag(class CompoundTag&) const;
 
 private:
-
     MCAPI void _contentErrorMissingField(std::string const&) const;
+
 };

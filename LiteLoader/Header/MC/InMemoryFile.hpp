@@ -2,28 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InMemoryFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYFILE
+public:
+    class InMemoryFile& operator=(class InMemoryFile const&) = delete;
+    InMemoryFile(class InMemoryFile const&) = delete;
+    InMemoryFile() = delete;
+#endif
 
 public:
-
     MCAPI class Core::PathBuffer<std::string > getFilename() const;
     MCAPI void rename(class Core::Path const&);
 
 protected:
-
 
 private:
 

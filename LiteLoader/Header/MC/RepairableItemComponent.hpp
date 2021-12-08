@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RepairableItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_REPAIRABLEITEMCOMPONENT
+public:
+    class RepairableItemComponent& operator=(class RepairableItemComponent const&) = delete;
+    RepairableItemComponent(class RepairableItemComponent const&) = delete;
+    RepairableItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RepairableItemComponent();
@@ -24,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI RepairableItemComponent(class ComponentItem*);
     MCAPI int handleItemRepair(class ItemStackBase&, class ItemStackBase&);
     MCAPI bool isValidRepairItem(class ItemStackBase const&) const;
@@ -34,9 +38,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct RepairItemEntry const* _getRepairItemEntry(class ItemStackBase const&) const;
     MCAPI int _repairItem(class ItemStackBase&, class ItemStackBase&, class ExpressionNode);
+
 };

@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ScriptCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTCOMMAND
+public:
+    struct ScriptCommand& operator=(struct ScriptCommand const&) = delete;
+    ScriptCommand(struct ScriptCommand const&) = delete;
+    ScriptCommand() = delete;
+#endif
 
 public:
-
     MCAPI ~ScriptCommand();
 
 protected:
-
 
 private:
 

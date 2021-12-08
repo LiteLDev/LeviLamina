@@ -2,28 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterTest.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorIsLeashedTest : public FilterTest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORISLEASHEDTEST
+public:
+    class ActorIsLeashedTest& operator=(class ActorIsLeashedTest const&) = delete;
+    ActorIsLeashedTest(class ActorIsLeashedTest const&) = delete;
+    ActorIsLeashedTest() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorIsLeashedTest();
     /*1*/ virtual bool evaluate(struct FilterContext const&) const;
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
-
     /*
     inline  ~ActorIsLeashedTest(){
          (ActorIsLeashedTest::*rv)();
@@ -32,9 +37,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

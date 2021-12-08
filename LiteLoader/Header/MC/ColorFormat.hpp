@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ColorFormat {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern std::string const AQUA;
     MCAPI extern std::string const BLACK;
     MCAPI extern std::string const BLUE;
@@ -40,4 +39,5 @@ namespace ColorFormat {
     MCAPI extern std::string const RESET;
     MCAPI extern std::string const WHITE;
     MCAPI extern std::string const YELLOW;
+
 };

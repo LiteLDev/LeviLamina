@@ -2,10 +2,9 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "VehicleUtils.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Actor;
 class Player;
@@ -14,11 +13,11 @@ class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
 enum class FaceID : char;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 	enum InitializationMethod;
@@ -38,7 +37,14 @@ public:
 
 	//For Compatibility
 	inline Vec3 const& getPos() { return getPosition(); }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
+public:
+    class Actor& operator=(class Actor const&) = delete;
+    Actor(class Actor const&) = delete;
+    Actor() = delete;
+#endif
 
 public:
     /*0*/ virtual bool hasComponent(class HashedString const&) const;
@@ -315,7 +321,6 @@ public:
     /*271*/ virtual void updateInsideBlock();
     /*272*/ virtual void _removePassenger(struct ActorUniqueID const&, bool, bool, bool);
     /*273*/ virtual void _onSizeUpdated();
-
     /*
     inline bool canSeeInvisible() const{
         bool (Actor::*rv)() const;
@@ -453,7 +458,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Actor(class ILevel&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Vec3 _randomHeartPos();
@@ -831,7 +835,6 @@ public:
     MCAPI static class Actor* tryGetFromEntity(class OwnerPtrT<struct EntityRefTraits> const&, bool);
 
 protected:
-
     MCAPI bool _damageSensorComponentHurt(int&, int, class ActorDamageSource const&);
     MCAPI class ItemActor const* _drop(class ItemStack const&, bool);
     MCAPI class AABBShapeComponent& _getAABBShapeComponentNonConst();
@@ -850,7 +853,6 @@ protected:
     MCAPI static class Block const& getBlockWhenClimbing(struct IActorMovementProxy const&);
 
 private:
-
     MCAPI void _initAliasProperties();
     MCAPI void _initializeLeashRopeSystem();
     MCAPI void _managePassengers(class BlockSource&);
@@ -867,4 +869,5 @@ private:
     MCAPI static float const DEFAULT_MAX_DISTANCE_OPTIMIZATION;
     MCAPI static unsigned __int64 const DEFAULT_MAX_TICK_DELAY_OPTIMIZATION;
     MCAPI static bool _containsSneakCollisionShapes(struct IActorMovementProxy&, class AABB const&);
+
 };

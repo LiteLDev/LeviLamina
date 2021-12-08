@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DenyList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Duration;
@@ -21,10 +20,16 @@ struct Entry {
     Entry(Entry const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DENYLIST
+public:
+    class DenyList& operator=(class DenyList const&) = delete;
+    DenyList(class DenyList const&) = delete;
+    DenyList() = delete;
+#endif
 
 public:
-
     MCAPI void addEntry(struct DenyList::Entry const&);
     MCAPI enum DenyList::Duration getDuration(struct DenyList::Entry const&) const;
     MCAPI std::string const& getMessage(struct DenyList::Entry const&) const;
@@ -34,8 +39,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool isBlocked(struct DenyList::Entry const&, class std::_Vector_const_iterator<class std::_Vector_val<struct std::_Simple_types<struct DenyList::Entry> > >&) const;
+
 };

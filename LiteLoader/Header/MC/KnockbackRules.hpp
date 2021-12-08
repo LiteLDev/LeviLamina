@@ -3,22 +3,22 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace KnockbackRules {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void doKnockbackAttack(class Mob&, class Mob&, class Vec2 const&, float, float);
     MCAPI void doKnockbackAttack(class Mob&, class Mob&, class Vec3 const&, float, float);
     MCAPI float getScaledKnockbackForce(class Actor const&, float);
     MCAPI bool isKnockbackResistant(class Actor const&);
     MCAPI bool shouldApplyKnockback(class Mob const&);
     MCAPI bool useLegacyKnockback(class Level const&);
+
 };

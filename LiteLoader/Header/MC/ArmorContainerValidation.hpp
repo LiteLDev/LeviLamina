@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerValidationBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ArmorContainerValidation : public ContainerValidationBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ARMORCONTAINERVALIDATION
+public:
+    class ArmorContainerValidation& operator=(class ArmorContainerValidation const&) = delete;
+    ArmorContainerValidation(class ArmorContainerValidation const&) = delete;
+    ArmorContainerValidation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ArmorContainerValidation();
@@ -25,7 +31,6 @@ public:
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
     /*6*/ virtual void __unk_vfn_0();
-
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (ArmorContainerValidation::*rv)(class ItemStackBase const&) const;
@@ -34,9 +39,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

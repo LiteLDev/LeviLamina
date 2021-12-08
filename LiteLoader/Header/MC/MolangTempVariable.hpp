@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MolangTempVariable {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGTEMPVARIABLE
+public:
+    struct MolangTempVariable& operator=(struct MolangTempVariable const&) = delete;
+    MolangTempVariable(struct MolangTempVariable const&) = delete;
+    MolangTempVariable() = delete;
+#endif
 
 public:
-
     MCAPI MolangTempVariable(class HashedString const&);
     MCAPI ~MolangTempVariable();
 
 protected:
-
 
 private:
 

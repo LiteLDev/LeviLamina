@@ -3,19 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace FlockingUtility {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI bool checkForSteeringCollision(class Actor&, class Vec3 const&, float, class Vec3&);
     MCAPI void chooseRandomDirection(class Actor&, class Vec3&);
     MCAPI void getWaterHeights(class Actor const&, float&, float&);
+
 };

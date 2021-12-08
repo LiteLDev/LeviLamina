@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorSpawnRuleGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSPAWNRULEGROUP
+public:
+    class ActorSpawnRuleGroup& operator=(class ActorSpawnRuleGroup const&) = delete;
+    ActorSpawnRuleGroup(class ActorSpawnRuleGroup const&) = delete;
+    ActorSpawnRuleGroup() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorSpawnRuleGroup();
@@ -23,8 +29,6 @@ public:
     /*2*/ virtual std::string const& getFileType();
     /*3*/ virtual bool processPopulationControl(std::string const&, class Json::Value&);
     /*4*/ virtual void readResourceFiles(class ResourcePackManager&, class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
-
-
     MCAPI ActorSpawnRuleGroup(class ResourcePackManager&, class IWorldRegistriesProvider&);
     MCAPI int getActorSpawnPool(struct ActorDefinitionIdentifier const&) const;
     MCAPI int getDelayEnd(std::string) const;
@@ -32,7 +36,6 @@ public:
     MCAPI void resetDelayEnd(class MobSpawnRules, unsigned __int64, class Random&);
 
 protected:
-
 
 private:
 

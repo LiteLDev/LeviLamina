@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MapDecoration.hpp"
 #include "MapItemTrackedActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MapItemSavedData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ChunkBounds {
@@ -22,10 +21,16 @@ struct ChunkBounds {
     ChunkBounds(ChunkBounds const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMSAVEDDATA
+public:
+    class MapItemSavedData& operator=(class MapItemSavedData const&) = delete;
+    MapItemSavedData(class MapItemSavedData const&) = delete;
+    MapItemSavedData() = delete;
+#endif
 
 public:
-
     MCAPI MapItemSavedData(struct ActorUniqueID);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class Actor&, enum MapDecoration::Type);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> addTrackedMapEntity(class BlockPos const&, class BlockSource&, enum MapDecoration::Type);
@@ -64,9 +69,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addDecoration(enum MapDecoration::Type, class Level&, struct MapItemTrackedActor::UniqueId const&, class Vec3 const&, std::string const&, class mce::Color const&);
     MCAPI class std::shared_ptr<class MapItemTrackedActor> _addTrackedMapEntity(struct MapItemTrackedActor::UniqueId const&, class BlockSource&, enum MapDecoration::Type);
     MCAPI void _deserializeData(class CompoundTag const&);
@@ -76,4 +79,5 @@ private:
     MCAPI bool _updateTrackedEntityDecoration(class BlockSource&, class std::shared_ptr<class MapItemTrackedActor>);
     MCAPI void _updateTrackedEntityDecorations(class BlockSource&);
     MCAPI void _updateTrackedPlayerDecorations(class BlockSource&, class Player&, class Vec3&, std::string&, class mce::Color&, class AutomaticID<class Dimension, int>, enum MapDecoration::Type&);
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptPrintLogger {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPRINTLOGGER
+public:
+    class ScriptPrintLogger& operator=(class ScriptPrintLogger const&) = delete;
+    ScriptPrintLogger(class ScriptPrintLogger const&) = delete;
+    ScriptPrintLogger() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptPrintLogger();
@@ -23,10 +29,7 @@ public:
     /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
     /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
 
-
-
 protected:
-
 
 private:
 

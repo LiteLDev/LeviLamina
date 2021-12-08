@@ -3,17 +3,16 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <string>
 class CommandOrigin;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandContext {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
 public:
@@ -33,15 +32,20 @@ public:
         : command(std::forward<T>(x)), origin(o)
     { }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDCONTEXT
+public:
+    class CommandContext& operator=(class CommandContext const&) = delete;
+    CommandContext(class CommandContext const&) = delete;
+    CommandContext() = delete;
+#endif
 
 public:
-
     MCAPI CommandContext(std::string const&, std::unique_ptr<class CommandOrigin>, int);
     MCAPI class CommandOrigin const& getCommandOrigin() const;
 
 protected:
-
 
 private:
 

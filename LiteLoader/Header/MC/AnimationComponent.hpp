@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AnimationComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENT
+public:
+    class AnimationComponent& operator=(class AnimationComponent const&) = delete;
+    AnimationComponent(class AnimationComponent const&) = delete;
+    AnimationComponent() = delete;
+#endif
 
 public:
-
     MCAPI AnimationComponent(enum AnimationComponentGroup, class AnimationComponentID const&);
     MCAPI void applyAnimations(bool);
     MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const&, class ExpressionNode const&);
@@ -42,12 +47,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::unordered_map<class AnimationComponentID, class std::weak_ptr<class AnimationComponent>, struct std::hash<class AnimationComponentID>, struct std::equal_to<class AnimationComponentID>, class std::allocator<struct std::pair<class AnimationComponentID const, class std::weak_ptr<class AnimationComponent> > > >& _getAllAnimationComponents(enum AnimationComponentGroup);
     MCAPI static class std::recursive_mutex& _getAnimationComponentMapLock();
     MCAPI static struct std::atomic<__int64> mClientFrameIndex;
     MCAPI static struct std::atomic<__int64> mReloadTimeStampClient;
     MCAPI static struct std::atomic<__int64> mServerFrameIndex;
+
 };

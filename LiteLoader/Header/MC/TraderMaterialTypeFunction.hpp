@@ -2,34 +2,37 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "LootItemFunction.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TraderMaterialTypeFunction : public LootItemFunction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRADERMATERIALTYPEFUNCTION
+public:
+    class TraderMaterialTypeFunction& operator=(class TraderMaterialTypeFunction const&) = delete;
+    TraderMaterialTypeFunction(class TraderMaterialTypeFunction const&) = delete;
+    TraderMaterialTypeFunction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TraderMaterialTypeFunction();
     /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
     /*2*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
-
-
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
 
 protected:
 
-
 private:
-
     MCAPI void _applyBase(class ItemStackBase&, class Random&, class LootTableContext&) const;
+
 };

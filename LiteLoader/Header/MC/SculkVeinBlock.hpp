@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MultifaceBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SculkVeinBlock : public MultifaceBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCULKVEINBLOCK
+public:
+    class SculkVeinBlock& operator=(class SculkVeinBlock const&) = delete;
+    SculkVeinBlock(class SculkVeinBlock const&) = delete;
+    SculkVeinBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SculkVeinBlock();
@@ -133,12 +139,9 @@ public:
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
     /*114*/ virtual class Block const* getMultifaceBlockPtr() const;
-
-
     MCAPI SculkVeinBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

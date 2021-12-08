@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptGameTestHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTHELPER
+public:
+    class ScriptGameTestHelper& operator=(class ScriptGameTestHelper const&) = delete;
+    ScriptGameTestHelper(class ScriptGameTestHelper const&) = delete;
+    ScriptGameTestHelper() = delete;
+#endif
 
 public:
-
     MCAPI class Scripting::Result<void> assertBlockState(class BlockPos const&, class Scripting::TypedScriptClosure<bool (struct Scripting::TypedObjectHandle<class ScriptBlock>)>);
     MCAPI class Scripting::Result<void> assertBlockTypePresent(class ScriptBlockType const&, class BlockPos const&, bool);
     MCAPI class Scripting::Result<void> assertCanReachLocation(class ScriptActor&, class BlockPos const&, bool);
@@ -81,8 +86,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::optional<struct gametest::GameTestError> _callClosure(class Scripting::TypedScriptClosure<void (void)> const&);
+
 };

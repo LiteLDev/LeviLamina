@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomStrollGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMSTROLLGOAL
+public:
+    class RandomStrollGoal& operator=(class RandomStrollGoal const&) = delete;
+    RandomStrollGoal(class RandomStrollGoal const&) = delete;
+    RandomStrollGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RandomStrollGoal();
@@ -28,7 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_0();
     /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual bool _setWantedPosition();
-
     /*
     inline  ~RandomStrollGoal(){
          (RandomStrollGoal::*rv)();
@@ -36,11 +41,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RandomStrollGoal(class Mob&, float, int, int, int);
 
 protected:
-
 
 private:
 

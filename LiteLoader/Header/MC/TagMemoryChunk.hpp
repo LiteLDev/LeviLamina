@@ -3,20 +3,20 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct TagMemoryChunk {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
     size_t capacity = 0;
     size_t size = 0;
     std::unique_ptr<uint8_t[]> data;
-
+#define DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
+    TagMemoryChunk() = delete;
     TagMemoryChunk(size_t size, uint8_t data[])
         : capacity(size)
         , size(size)
@@ -32,16 +32,21 @@ struct TagMemoryChunk {
     void operator=(const TagMemoryChunk& a1) {
         throw("TODO");
     }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAGMEMORYCHUNK
+public:
+    struct TagMemoryChunk& operator=(struct TagMemoryChunk const&) = delete;
+    TagMemoryChunk(struct TagMemoryChunk const&) = delete;
+    TagMemoryChunk() = delete;
+#endif
 
 public:
-
     MCAPI struct TagMemoryChunk copy() const;
     MCAPI bool operator!=(struct TagMemoryChunk const&);
     MCAPI ~TagMemoryChunk();
 
 protected:
-
 
 private:
 

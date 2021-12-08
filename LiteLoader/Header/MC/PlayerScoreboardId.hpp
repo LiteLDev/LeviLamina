@@ -3,27 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct PlayerScoreboardId {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSCOREBOARDID
+public:
+    struct PlayerScoreboardId& operator=(struct PlayerScoreboardId const&) = delete;
+    PlayerScoreboardId(struct PlayerScoreboardId const&) = delete;
+#endif
 
 public:
-
     MCAPI PlayerScoreboardId(__int64);
     MCAPI PlayerScoreboardId();
-    MCAPI static struct PlayerScoreboardId const INVALID;
 
 protected:
-
 
 private:
 

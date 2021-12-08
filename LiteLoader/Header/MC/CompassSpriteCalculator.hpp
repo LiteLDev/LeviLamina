@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompassSpriteCalculator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPASSSPRITECALCULATOR
+public:
+    class CompassSpriteCalculator& operator=(class CompassSpriteCalculator const&) = delete;
+    CompassSpriteCalculator(class CompassSpriteCalculator const&) = delete;
+    CompassSpriteCalculator() = delete;
+#endif
 
 public:
-
     MCAPI CompassSpriteCalculator(float, float);
     MCAPI int getFrame() const;
     MCAPI int update(class Actor&, bool);
     MCAPI int updateFromPosition(class BlockSource const*, float, float, float, bool, bool);
 
 protected:
-
 
 private:
 

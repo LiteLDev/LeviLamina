@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CraftHandlerBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CraftHandleNonImplemented_DEPRECATEDASKTYLAING : public CraftHandlerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLENONIMPLEMENTED_DEPRECATEDASKTYLAING
+public:
+    class CraftHandleNonImplemented_DEPRECATEDASKTYLAING& operator=(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING(class CraftHandleNonImplemented_DEPRECATEDASKTYLAING const&) = delete;
+    CraftHandleNonImplemented_DEPRECATEDASKTYLAING() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
@@ -25,10 +31,7 @@ public:
     /*4*/ virtual void _postCraftRequest(bool);
     /*5*/ virtual class Recipes const* _getLevelRecipes() const;
 
-
-
 protected:
-
 
 private:
 

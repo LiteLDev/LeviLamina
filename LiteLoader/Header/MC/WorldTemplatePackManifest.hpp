@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldTemplatePackManifest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDTEMPLATEPACKMANIFEST
+public:
+    class WorldTemplatePackManifest& operator=(class WorldTemplatePackManifest const&) = delete;
+    WorldTemplatePackManifest(class WorldTemplatePackManifest const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorldTemplatePackManifest();
     /*1*/ virtual std::unique_ptr<class PackManifest> clone() const;
-
     /*
     inline  ~WorldTemplatePackManifest(){
          (WorldTemplatePackManifest::*rv)();
@@ -27,12 +31,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WorldTemplatePackManifest();
     MCAPI enum GameType getGameType() const;
 
 protected:
-
 
 private:
 

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TickWorldComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TICKWORLDCOMPONENT
+public:
+    class TickWorldComponent& operator=(class TickWorldComponent const&) = delete;
+    TickWorldComponent(class TickWorldComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI TickWorldComponent(class TickWorldComponent&&);
     MCAPI TickWorldComponent();
     MCAPI unsigned int getChunkRadius() const;
@@ -33,7 +37,6 @@ public:
     MCAPI ~TickWorldComponent();
 
 protected:
-
 
 private:
 

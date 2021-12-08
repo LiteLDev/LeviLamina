@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Animal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MushroomCow : public Animal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MUSHROOMCOW
+public:
+    class MushroomCow& operator=(class MushroomCow const&) = delete;
+    MushroomCow(class MushroomCow const&) = delete;
+    MushroomCow() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MushroomCow();
@@ -84,12 +90,9 @@ public:
     /*62*/ virtual void __unk_vfn_24();
     /*63*/ virtual void _serverAiMobStep();
     /*64*/ virtual void __unk_vfn_25();
-
-
     MCAPI MushroomCow(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

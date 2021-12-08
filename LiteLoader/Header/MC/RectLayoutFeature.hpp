@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RectLayoutFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct FeatureArea {
@@ -20,18 +19,22 @@ struct FeatureArea {
     FeatureArea(FeatureArea const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECTLAYOUTFEATURE
+public:
+    class RectLayoutFeature& operator=(class RectLayoutFeature const&) = delete;
+    RectLayoutFeature(class RectLayoutFeature const&) = delete;
+    RectLayoutFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RectLayoutFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI class std::optional<struct RectLayoutFeature::FeatureArea> _tryPlaceFeature(class Vec2 const&, int, class std::array<class std::array<unsigned char, 16>, 16> const&) const;
+
 };

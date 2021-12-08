@@ -2,24 +2,24 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace JsonHelpers {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void addObjectArrayField(class Json::Value&, std::string const&, std::vector<class Json::Value> const&);
     MCAPI void addObjectField(class Json::Value&, std::string const&, class Json::Value const&);
     MCAPI void addStringField(class Json::Value&, std::string const&, std::string const&);
     MCAPI void addUint32Field(class Json::Value&, std::string const&, unsigned int const&);
     MCAPI bool parseJson(std::string const&, class Json::Value&);
     MCAPI std::string serialize(class Json::Value const&);
+
 };

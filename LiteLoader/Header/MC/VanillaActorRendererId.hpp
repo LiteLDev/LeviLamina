@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaActorRendererId {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern class HashedString const _map;
     MCAPI extern class HashedString const _photo;
     MCAPI extern class HashedString const _query;
@@ -28,4 +27,5 @@ namespace VanillaActorRendererId {
     MCAPI extern class HashedString const shield;
     MCAPI extern class HashedString const thrownPotion;
     MCAPI extern class HashedString const trident;
+
 };

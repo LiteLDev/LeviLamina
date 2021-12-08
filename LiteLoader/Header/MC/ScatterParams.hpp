@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScatterParams {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class ScatteredPositions {
@@ -21,10 +20,15 @@ public:
     ScatteredPositions(ScatteredPositions const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTERPARAMS
+public:
+    class ScatterParams& operator=(class ScatterParams const&) = delete;
+    ScatterParams(class ScatterParams const&) = delete;
+#endif
 
 public:
-
     MCAPI ScatterParams();
     MCAPI class ScatterParams::ScatteredPositions scatter(class RenderParams&, class BlockPos const&, class Random&) const;
     MCAPI ~ScatterParams();
@@ -32,8 +36,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class BlockPos _getPos(unsigned int, class BlockPos const&, class Random&, class RenderParams&) const;
+
 };

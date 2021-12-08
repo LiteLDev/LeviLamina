@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CelebrateHuntComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CELEBRATEHUNTCOMPONENT
+public:
+    class CelebrateHuntComponent& operator=(class CelebrateHuntComponent const&) = delete;
+    CelebrateHuntComponent(class CelebrateHuntComponent const&) = delete;
+    CelebrateHuntComponent() = delete;
+#endif
 
 public:
-
     MCAPI enum LevelSoundEvent const getCelebrateSound(class Mob const&) const;
     MCAPI struct Tick const getCelebrateUntil() const;
     MCAPI struct Tick const getNextSoundEventTick() const;
@@ -27,7 +32,6 @@ public:
     MCAPI void stopCelebrating();
 
 protected:
-
 
 private:
 

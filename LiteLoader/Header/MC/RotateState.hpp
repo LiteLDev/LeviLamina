@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "PetSleepWithOwnerState.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RotateState : public PetSleepWithOwnerState {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ROTATESTATE
+public:
+    class RotateState& operator=(class RotateState const&) = delete;
+    RotateState(class RotateState const&) = delete;
+    RotateState() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RotateState();
     /*1*/ virtual void tick();
     /*2*/ virtual void __unk_vfn_0();
 
-
-
 protected:
-
 
 private:
 

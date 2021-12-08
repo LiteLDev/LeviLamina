@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MolangTextureVariable {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGTEXTUREVARIABLE
+public:
+    struct MolangTextureVariable& operator=(struct MolangTextureVariable const&) = delete;
+    MolangTextureVariable(struct MolangTextureVariable const&) = delete;
+    MolangTextureVariable() = delete;
+#endif
 
 public:
-
     MCAPI ~MolangTextureVariable();
 
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CrossbowItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CROSSBOWITEM
+public:
+    class CrossbowItem& operator=(class CrossbowItem const&) = delete;
+    CrossbowItem(class CrossbowItem const&) = delete;
+    CrossbowItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CrossbowItem();
@@ -102,17 +108,14 @@ public:
     /*80*/ virtual void __unk_vfn_20();
     /*81*/ virtual std::string getAuxValuesDescription() const;
     /*82*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI CrossbowItem(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI class Vec3 _getShootDir(class Player const&, float) const;
     MCAPI void _shootArrow(class ItemInstance const&, class ItemInstance const&, class Player&) const;
     MCAPI void _shootFirework(class ItemInstance const&, class Player&) const;
     MCAPI static int const DEFAULT_USE_DURATION;
+
 };

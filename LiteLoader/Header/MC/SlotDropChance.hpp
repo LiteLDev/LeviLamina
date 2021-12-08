@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SlotDropChance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLOTDROPCHANCE
+public:
+    struct SlotDropChance& operator=(struct SlotDropChance const&) = delete;
+    SlotDropChance(struct SlotDropChance const&) = delete;
+    SlotDropChance() = delete;
+#endif
 
 public:
-
     MCAPI void setEquipmentSlot(std::string const&);
 
 protected:
-
 
 private:
 

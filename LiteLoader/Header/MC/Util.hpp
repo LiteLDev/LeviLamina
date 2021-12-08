@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace Util {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct ResourceUri {
 enum ValidationStatus;
@@ -34,7 +33,7 @@ public:
     MultidimensionalArray(MultidimensionalArray const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern int const COLOR_CODE;
     MCAPI extern std::string const EMPTY_GUID;
     MCAPI extern std::string const EMPTY_STRING;
@@ -117,4 +116,5 @@ public:
     MCAPI std::string vFormat(char const*, char*);
     MCAPI bool validateIdentifier(std::string const&, enum LogArea, bool, struct std::pair<std::string, std::string >*);
     MCAPI bool validateIdentifierChunk(std::string const&, enum LogArea);
+
 };

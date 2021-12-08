@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBoolBlockProperty {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBOOLBLOCKPROPERTY
+public:
+    class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty const&) = delete;
+    ScriptBoolBlockProperty(class ScriptBoolBlockProperty const&) = delete;
+    ScriptBoolBlockProperty() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBoolBlockProperty();
-
     /*
     inline  ~ScriptBoolBlockProperty(){
          (ScriptBoolBlockProperty::*rv)();
@@ -27,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty&&);
     MCAPI ScriptBoolBlockProperty(std::string const&, class ItemState const&, std::vector<bool>, class ScriptBlockPermutation&);
     MCAPI std::vector<bool> const& getAllValues() const;
@@ -37,7 +41,6 @@ public:
     MCAPI class Scripting::Result<void> setState(bool);
 
 protected:
-
 
 private:
 

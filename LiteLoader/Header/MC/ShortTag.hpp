@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShortTag : public Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 inline short& value() {
@@ -37,7 +36,14 @@ inline short get() {
     return value();
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHORTTAG
+public:
+    class ShortTag& operator=(class ShortTag const&) = delete;
+    ShortTag(class ShortTag const&) = delete;
+    ShortTag() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShortTag();
@@ -49,12 +55,9 @@ public:
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;
-
-
     MCAPI ShortTag(short);
 
 protected:
-
 
 private:
 

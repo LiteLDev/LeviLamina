@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AnvilBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANVILBLOCK
+public:
+    class AnvilBlock& operator=(class AnvilBlock const&) = delete;
+    AnvilBlock(class AnvilBlock const&) = delete;
+    AnvilBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AnvilBlock();
@@ -142,7 +148,6 @@ public:
     /*121*/ virtual std::string getDustParticleName(class Block const&) const;
     /*122*/ virtual void __unk_vfn_34();
     /*123*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (AnvilBlock::*rv)() const;
@@ -165,11 +170,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AnvilBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

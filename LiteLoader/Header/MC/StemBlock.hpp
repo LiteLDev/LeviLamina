@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StemBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STEMBLOCK
+public:
+    class StemBlock& operator=(class StemBlock const&) = delete;
+    StemBlock(class StemBlock const&) = delete;
+    StemBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StemBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (StemBlock::*rv)() const;
@@ -149,14 +154,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StemBlock(std::string const&, int, class BlockLegacy const&);
     MCAPI class BlockLegacy const& getFruitBlock() const;
 
 protected:
 
-
 private:
-
     MCAPI float getGrowthSpeed(class BlockSource&, class BlockPos const&) const;
+
 };

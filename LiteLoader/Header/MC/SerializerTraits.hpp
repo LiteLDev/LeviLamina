@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct SerializerTraits {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERTRAITS
+public:
+    struct SerializerTraits& operator=(struct SerializerTraits const&) = delete;
+#endif
 
 public:
-
     MCAPI SerializerTraits(struct SerializerTraits&&);
     MCAPI SerializerTraits(struct SerializerTraits const&);
     MCAPI SerializerTraits();
@@ -32,16 +35,14 @@ public:
     MCAPI struct SerializerTraits& required();
     MCAPI struct SerializerTraits& validate(class std::function<bool (class entt::meta_any& , class SerializerContext& )>);
     MCAPI ~SerializerTraits();
-    MCAPI static char const* const kAttributesTraits;
 
 protected:
 
-
 private:
-
     MCAPI unsigned __int64 getEnumSize() const;
     MCAPI bool isEnum() const;
     MCAPI bool performValidation(class entt::meta_any&, class SerializerContext&) const;
     MCAPI bool remapEnum(std::string const&, unsigned int&) const;
     MCAPI bool remapEnum(int, std::string&) const;
+
 };

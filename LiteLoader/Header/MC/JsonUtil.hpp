@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace JsonUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 class JsonSchemaNodeBase {
 public:
@@ -41,7 +40,7 @@ public:
     JsonParseState(JsonParseState const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void LogMissingChildSchemaOption(enum LogArea, class Json::Value const&, std::string const&, std::string const&, std::string const&);
     MCAPI void LogUnknownChildSchemaOption(std::string const&, enum LogArea, class Json::Value const&);
     MCAPI void eraseSchema(class HashedString const&, class SemVersion const&);
@@ -56,4 +55,5 @@ public:
     MCAPI bool parseVec3(class Vec3&, class Json::Value const&);
     MCAPI void printJsonSchema_childNode(std::string&, std::string const&, class HashedString const&, std::string const&, bool, unsigned __int64, unsigned __int64, std::string const&, std::string const&);
     MCAPI void setDefaultPrettyName(std::string&, class HashedString const&);
+
 };

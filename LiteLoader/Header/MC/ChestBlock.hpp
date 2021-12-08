@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChestBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCK
+public:
+    class ChestBlock& operator=(class ChestBlock const&) = delete;
+    ChestBlock(class ChestBlock const&) = delete;
+    ChestBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChestBlock();
@@ -132,7 +138,6 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-
     /*
     inline bool detachesOnPistonMove(class BlockSource& a0, class BlockPos const& a1) const{
         bool (ChestBlock::*rv)(class BlockSource&, class BlockPos const&) const;
@@ -165,12 +170,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ChestBlock(std::string const&, int, enum ChestBlock::ChestType, enum MaterialType);
     MCAPI void updateSignalStrength(class BlockSource&, class BlockPos const&, int) const;
 
 protected:
-
 
 private:
 

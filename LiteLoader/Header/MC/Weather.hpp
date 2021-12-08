@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockSourceListener.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Weather : public BlockSourceListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEATHER
+public:
+    class Weather& operator=(class Weather const&) = delete;
+    Weather(class Weather const&) = delete;
+    Weather() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Weather();
@@ -46,8 +52,6 @@ public:
     /*25*/ virtual void __unk_vfn_22();
     /*26*/ virtual void __unk_vfn_23();
     /*27*/ virtual void levelEvent(int /*enum enum LevelEvent*/, class Vec3 const&, int);
-
-
     MCAPI Weather(class Dimension&, class IRandom&);
     MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
     MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;
@@ -72,7 +76,6 @@ public:
     MCAPI static void rebuildTopSnowToDepth(class BlockSource&, class BlockPos const&, int);
 
 protected:
-
 
 private:
 

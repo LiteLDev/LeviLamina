@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompoundItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDITEM
+public:
+    class CompoundItem& operator=(class CompoundItem const&) = delete;
+    CompoundItem(class CompoundItem const&) = delete;
+    CompoundItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CompoundItem();
@@ -100,8 +106,6 @@ public:
     /*78*/ virtual void __unk_vfn_20();
     /*79*/ virtual std::string getAuxValuesDescription() const;
     /*80*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI CompoundItem(std::string const&, int, class Experiments const&);
     MCAPI static enum CompoundType getCompoundType(class ItemDescriptor const&);
     MCAPI static class RecipeIngredient getIngredientForCompound(enum CompoundType);
@@ -111,12 +115,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _registerSpecialCompound(class ItemInstance const&, enum CompoundType);
     MCAPI void _registerSpecialCompounds(class Experiments const&);
     MCAPI static std::string _getName(enum CompoundType);
     MCAPI static class std::unordered_map<int, int, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, int> > > mIdToSpecialCompound;
     MCAPI static class std::unordered_map<int, class ItemInstance, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, class ItemInstance> > > mTypeToSpecialCompound;
+
 };

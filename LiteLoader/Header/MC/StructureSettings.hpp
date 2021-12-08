@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 enum Mirror : unsigned char {
@@ -21,11 +20,11 @@ enum Rotation : unsigned char {
     Total,
 };
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureSettings {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 private:
 char filler[96];
@@ -38,10 +37,9 @@ public:
     setStructureSize(size);
     };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI StructureSettings(class StructureSettings&&);
     MCAPI StructureSettings(class StructureSettings const&);
     MCAPI StructureSettings();
@@ -82,7 +80,6 @@ public:
     MCAPI static class BlockPos const DEFAULT_STRUCTURE_SIZE;
 
 protected:
-
 
 private:
 

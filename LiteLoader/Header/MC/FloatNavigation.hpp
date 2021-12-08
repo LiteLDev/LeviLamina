@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "PathNavigation.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FloatNavigation : public PathNavigation {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOATNAVIGATION
+public:
+    class FloatNavigation& operator=(class FloatNavigation const&) = delete;
+    FloatNavigation(class FloatNavigation const&) = delete;
+    FloatNavigation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FloatNavigation();
     /*1*/ virtual void stop(class NavigationComponent&, class Mob&);
     /*2*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
 
-
-
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChunkSource.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldLimitChunkSource : public ChunkSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDLIMITCHUNKSOURCE
+public:
+    class WorldLimitChunkSource& operator=(class WorldLimitChunkSource const&) = delete;
+    WorldLimitChunkSource(class WorldLimitChunkSource const&) = delete;
+    WorldLimitChunkSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorldLimitChunkSource();
@@ -28,12 +34,9 @@ public:
     /*7*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*8*/ virtual void clearDeletedEntities();
     /*9*/ virtual bool canCreateViews() const;
-
-
     MCAPI WorldLimitChunkSource(std::unique_ptr<class ChunkSource>, class BlockPos const&, int, int);
 
 protected:
-
 
 private:
 

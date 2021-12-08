@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "SlabBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StoneSlabBlock2 : public SlabBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STONESLABBLOCK2
+public:
+    class StoneSlabBlock2& operator=(class StoneSlabBlock2 const&) = delete;
+    StoneSlabBlock2(class StoneSlabBlock2 const&) = delete;
+    StoneSlabBlock2() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StoneSlabBlock2();
@@ -131,13 +137,10 @@ public:
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
     /*112*/ virtual void __unk_vfn_33();
-
-
     MCAPI StoneSlabBlock2(std::string const&, int, bool, class WeakPtr<class BlockLegacy>);
     MCAPI static class std::array<std::string, 8> const SLAB_NAMES;
 
 protected:
-
 
 private:
 

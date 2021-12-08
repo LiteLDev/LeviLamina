@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MobEffect {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct FactorCalculationData {
@@ -20,7 +19,14 @@ struct FactorCalculationData {
     FactorCalculationData(FactorCalculationData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECT
+public:
+    class MobEffect& operator=(class MobEffect const&) = delete;
+    MobEffect(class MobEffect const&) = delete;
+    MobEffect() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MobEffect();
@@ -29,7 +35,6 @@ public:
     /*3*/ virtual void applyInstantaneousEffect(class Actor*, class Actor*, class Actor*, int, float) const;
     /*4*/ virtual bool isInstantaneous() const;
     /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
-
     /*
     inline  ~MobEffect(){
          (MobEffect::*rv)();
@@ -37,7 +42,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MobEffect(int, std::string const&, std::string const&, bool, int, int, std::string const&, bool, struct MobEffect::FactorCalculationData const&);
     MCAPI void addAttributeBuff(class Attribute const&, class std::shared_ptr<class AttributeBuff>);
     MCAPI void addAttributeModifier(class Attribute const&, class std::shared_ptr<class AttributeModifier>);
@@ -90,11 +94,10 @@ public:
     MCAPI static void shutdownEffects();
 
 protected:
-
     MCAPI class InstantaneousAttributeBuff _createInstantBuff(class AttributeBuff const&, int, float) const;
     MCAPI class TemporalAttributeBuff _createTemporalBuff(class AttributeBuff const&, int, int) const;
 
 private:
-
     MCAPI static void darknessEffectFactorUpdate(struct MobEffect::FactorCalculationData&, int);
+
 };

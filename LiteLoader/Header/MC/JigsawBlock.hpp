@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JigsawBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWBLOCK
+public:
+    class JigsawBlock& operator=(class JigsawBlock const&) = delete;
+    JigsawBlock(class JigsawBlock const&) = delete;
+    JigsawBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~JigsawBlock();
@@ -132,7 +138,6 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isInteractiveBlock() const{
         bool (JigsawBlock::*rv)() const;
@@ -140,12 +145,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI JigsawBlock(std::string const&, int);
     MCAPI static bool canAttach(class JigsawBlockInfo const&, class JigsawBlockInfo const&);
 
 protected:
-
 
 private:
 

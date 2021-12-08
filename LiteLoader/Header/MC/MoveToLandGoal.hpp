@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToBlockGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MoveToLandGoal : public BaseMoveToBlockGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOLANDGOAL
+public:
+    class MoveToLandGoal& operator=(class MoveToLandGoal const&) = delete;
+    MoveToLandGoal(class MoveToLandGoal const&) = delete;
+    MoveToLandGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MoveToLandGoal();
@@ -28,12 +34,9 @@ public:
     /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*8*/ virtual void _moveToBlock();
     /*9*/ virtual unsigned __int64 _getRepathTime() const;
-
-
     MCAPI MoveToLandGoal(class Mob&, float, int, int, int, float);
 
 protected:
-
 
 private:
 

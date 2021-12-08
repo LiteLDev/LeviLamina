@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CraftHandlerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTHANDLERBASE
+public:
+    class CraftHandlerBase& operator=(class CraftHandlerBase const&) = delete;
+    CraftHandlerBase(class CraftHandlerBase const&) = delete;
+    CraftHandlerBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CraftHandlerBase();
@@ -24,7 +30,6 @@ public:
     /*4*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&) = 0;
     /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const* _getLevelRecipes() const;
-
     /*
     inline void endRequestBatch(){
         void (CraftHandlerBase::*rv)();
@@ -37,11 +42,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CraftHandlerBase(class ItemStackRequestActionCraftHandler&);
 
 protected:
-
     MCAPI class std::tuple<enum ItemStackNetResult, class Recipe const* > _getRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
     MCAPI class std::shared_ptr<class SimpleSparseContainer> _tryGetSparseContainer(enum ContainerEnumName);
     MCAPI struct ItemStackRequestHandlerSlotInfo _validateRequestSlot(struct ItemStackRequestSlotInfo);

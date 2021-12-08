@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "SignBlockActor.hpp"
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SignBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIGNBLOCK
+public:
+    class SignBlock& operator=(class SignBlock const&) = delete;
+    SignBlock(class SignBlock const&) = delete;
+    SignBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SignBlock();
@@ -135,16 +141,13 @@ public:
     /*113*/ virtual void __unk_vfn_32();
     /*114*/ virtual void __unk_vfn_33();
     /*115*/ virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
-
-
     MCAPI SignBlock(std::string const&, int, bool, enum SignBlockActor::SignType);
 
 protected:
 
-
 private:
-
     MCAPI bool _canSurvive(class BlockSource&, class BlockPos const&, unsigned char) const;
     MCAPI class ItemInstance _getItemInstance() const;
     MCAPI void getShape(int, class AABB&) const;
+
 };

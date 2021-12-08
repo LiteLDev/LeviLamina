@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaGameVersions {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern class BaseGameVersion const BeeUpdate;
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
@@ -22,4 +21,5 @@ namespace VanillaGameVersions {
     MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
     MCAPI extern class BaseGameVersion const NetherUpdate;
     MCAPI extern class BaseGameVersion const NetherUpdate_U3;
+
 };

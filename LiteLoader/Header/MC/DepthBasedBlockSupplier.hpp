@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DepthBasedBlockSupplier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPTHBASEDBLOCKSUPPLIER
+public:
+    class DepthBasedBlockSupplier& operator=(class DepthBasedBlockSupplier const&) = delete;
+    DepthBasedBlockSupplier(class DepthBasedBlockSupplier const&) = delete;
+    DepthBasedBlockSupplier() = delete;
+#endif
 
 public:
-
     MCAPI DepthBasedBlockSupplier(class XoroshiroPositionalRandomFactory, class Block const*);
     MCAPI class Block const* getBlock(class BlockPos const&, class Block const*) const;
 
 protected:
-
 
 private:
 

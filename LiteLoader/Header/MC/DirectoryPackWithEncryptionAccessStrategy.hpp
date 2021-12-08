@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "PackAccessStrategy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DirectoryPackWithEncryptionAccessStrategy : public PackAccessStrategy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIRECTORYPACKWITHENCRYPTIONACCESSSTRATEGY
+public:
+    class DirectoryPackWithEncryptionAccessStrategy& operator=(class DirectoryPackWithEncryptionAccessStrategy const&) = delete;
+    DirectoryPackWithEncryptionAccessStrategy(class DirectoryPackWithEncryptionAccessStrategy const&) = delete;
+    DirectoryPackWithEncryptionAccessStrategy() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DirectoryPackWithEncryptionAccessStrategy();
@@ -40,14 +46,11 @@ public:
     /*18*/ virtual void unload();
     /*19*/ virtual bool hasUpgradeFiles() const;
     /*20*/ virtual class ContentIdentity readContentIdentity() const;
-
-
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, class IContentKeyProvider const&);
 
 protected:
 
-
 private:
-
     MCAPI bool _hasUnencryptedAsset(class Core::Path const&) const;
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BottleItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOTTLEITEM
+public:
+    class BottleItem& operator=(class BottleItem const&) = delete;
+    BottleItem(class BottleItem const&) = delete;
+    BottleItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BottleItem();
@@ -98,15 +104,12 @@ public:
     /*76*/ virtual std::string getAuxValuesDescription() const;
     /*77*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*78*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
-
     MCAPI BottleItem(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI void _createBottledItem(class Actor&, class ItemStack&, class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _fillBottleViaDispenser(class BlockSource&, class gsl::basic_string_span<char const, -1>, class Container&, int, class Vec3 const&, unsigned char) const;
+
 };

@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureTemplatePool {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATEPOOL
+public:
+    class StructureTemplatePool& operator=(class StructureTemplatePool const&) = delete;
+    StructureTemplatePool(class StructureTemplatePool const&) = delete;
+    StructureTemplatePool() = delete;
+#endif
 
 public:
-
     MCAPI StructureTemplatePool(std::string, std::string, std::vector<struct std::pair<class StructurePoolElement const* , int>>&);
     MCAPI std::string const& getFallback() const;
     MCAPI class StructurePoolElement const* getRandomTemplate(class Random&) const;
@@ -26,7 +31,6 @@ public:
     MCAPI bool isValid() const;
 
 protected:
-
 
 private:
 

@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GrantXPSubcomponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRANTXPSUBCOMPONENT
+public:
+    class GrantXPSubcomponent& operator=(class GrantXPSubcomponent const&) = delete;
+    GrantXPSubcomponent(class GrantXPSubcomponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~GrantXPSubcomponent();
@@ -23,12 +28,9 @@ public:
     /*2*/ virtual void writetoJSON(class Json::Value&) const;
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
-
-
     MCAPI GrantXPSubcomponent();
 
 protected:
-
 
 private:
 

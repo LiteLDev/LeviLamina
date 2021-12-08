@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Hopper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPER
+public:
+    class Hopper& operator=(class Hopper const&) = delete;
+    Hopper(class Hopper const&) = delete;
+    Hopper() = delete;
+#endif
 
 public:
-
     MCAPI Hopper(int, bool);
     MCAPI int getCooldownTime() const;
     MCAPI bool isOnCooldown() const;
     MCAPI void setCooldownTime(int);
 
 protected:
-
     MCAPI bool _addItem(class BlockSource&, class Container&, class ItemStack&, int, int);
     MCAPI bool _addItem(class Container&, class ItemActor&);
     MCAPI class Container* _getAttachedContainerInBlock(class BlockSource&, class Vec3 const&, int);

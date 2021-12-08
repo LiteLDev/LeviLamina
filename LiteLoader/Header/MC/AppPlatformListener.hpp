@@ -3,22 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AppPlatformListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_APPPLATFORMLISTENER
+public:
+    class AppPlatformListener& operator=(class AppPlatformListener const&) = delete;
+    AppPlatformListener(class AppPlatformListener const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~AppPlatformListener();
-
     /*
     inline void onResizeEnd(){
         void (AppPlatformListener::*rv)();
@@ -101,13 +105,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AppPlatformListener();
     MCAPI void initListener(float);
     MCAPI void terminate();
 
 protected:
-
 
 private:
 

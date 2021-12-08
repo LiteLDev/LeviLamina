@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Animal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Pig : public Animal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIG
+public:
+    class Pig& operator=(class Pig const&) = delete;
+    Pig(class Pig const&) = delete;
+    Pig() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Pig();
@@ -86,7 +92,6 @@ public:
     /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
     /*66*/ virtual void __unk_vfn_25();
-
     /*
     inline bool useNewAi() const{
         bool (Pig::*rv)() const;
@@ -94,11 +99,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Pig(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

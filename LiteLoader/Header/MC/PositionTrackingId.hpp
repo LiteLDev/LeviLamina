@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PositionTrackingId {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGID
+public:
+    PositionTrackingId() = delete;
+#endif
 
 public:
-
     MCAPI PositionTrackingId(class PositionTrackingId&&);
     MCAPI PositionTrackingId(class PositionTrackingId const&);
     MCAPI void fromTag(class Tag const*);
@@ -28,7 +31,6 @@ public:
     MCAPI static class PositionTrackingId const INVALID_ID;
 
 protected:
-
     MCAPI static unsigned int sNextId;
 
 private:

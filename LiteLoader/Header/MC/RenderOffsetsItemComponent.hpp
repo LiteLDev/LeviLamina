@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RenderOffsetsItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct TRS {
@@ -25,7 +24,14 @@ struct ItemTransforms {
     ItemTransforms(ItemTransforms const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RENDEROFFSETSITEMCOMPONENT
+public:
+    class RenderOffsetsItemComponent& operator=(class RenderOffsetsItemComponent const&) = delete;
+    RenderOffsetsItemComponent(class RenderOffsetsItemComponent const&) = delete;
+    RenderOffsetsItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RenderOffsetsItemComponent();
@@ -35,19 +41,16 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class CompoundTag> _buildTRSTag(struct RenderOffsetsItemComponent::TRS const&) const;
     MCAPI std::unique_ptr<class CompoundTag> _buildVector3Tag(class std::array<float, 3> const&) const;
     MCAPI void _trsFromTag(class CompoundTag const&, struct RenderOffsetsItemComponent::TRS&);
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Main_Hand_Defaults;
     MCAPI static struct RenderOffsetsItemComponent::ItemTransforms Off_Hand_Defaults;
+
 };

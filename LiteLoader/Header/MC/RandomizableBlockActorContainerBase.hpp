@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomizableBlockActorContainerBase : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMIZABLEBLOCKACTORCONTAINERBASE
+public:
+    class RandomizableBlockActorContainerBase& operator=(class RandomizableBlockActorContainerBase const&) = delete;
+    RandomizableBlockActorContainerBase(class RandomizableBlockActorContainerBase const&) = delete;
+    RandomizableBlockActorContainerBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RandomizableBlockActorContainerBase();
@@ -49,7 +55,6 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
     /*
     inline  ~RandomizableBlockActorContainerBase(){
          (RandomizableBlockActorContainerBase::*rv)();
@@ -57,12 +62,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void setLootTable(std::string const&, int);
     MCAPI void unPackLootTable(class Level&, class Container&, class Actor*);
 
 protected:
-
 
 private:
 

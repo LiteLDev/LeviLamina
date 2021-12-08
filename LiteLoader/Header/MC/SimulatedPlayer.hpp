@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Bedrock.hpp"
 #include "ServerPlayer.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SimulatedPlayer : public ServerPlayer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMULATEDPLAYER
+public:
+    class SimulatedPlayer& operator=(class SimulatedPlayer const&) = delete;
+    SimulatedPlayer(class SimulatedPlayer const&) = delete;
+    SimulatedPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -96,7 +102,6 @@ public:
     /*73*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
     /*74*/ virtual int _getSpawnChunkLimit() const;
     /*75*/ virtual void _updateChunkPublisherView(class Vec3 const&, float);
-
     /*
     inline bool useNewAi() const{
         bool (SimulatedPlayer::*rv)() const;
@@ -109,7 +114,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SimulatedPlayer(class Level&, class PacketSender&, class NetworkHandler&, class ClientBlobCache::Server::ActiveTransfersManager&, enum GameType, class NetworkIdentifier const&, unsigned char, class std::function<void (class ServerPlayer& )>, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, int, bool, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper> getGameTestHelper() const;
     MCAPI void setGameTestHelper(class Bedrock::NonOwnerPointer<class gametest::BaseGameTestHelper>);
@@ -145,13 +149,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addMoveComponent();
     MCAPI struct ScriptNavigationResult _createNavigationResult(class NavigationComponent*) const;
     MCAPI float _getInputSpeed();
     MCAPI void _startCooldown();
     MCAPI bool _trySwing();
     MCAPI void _updateMovement();
+
 };

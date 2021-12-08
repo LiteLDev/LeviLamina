@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "ItemStackNetManagerBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackNetManagerServer : public ItemStackNetManagerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERSERVER
+public:
+    class ItemStackNetManagerServer& operator=(class ItemStackNetManagerServer const&) = delete;
+    ItemStackNetManagerServer(class ItemStackNetManagerServer const&) = delete;
+    ItemStackNetManagerServer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackNetManagerServer();
@@ -29,7 +35,6 @@ public:
     /*7*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
     /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
-
     /*
     inline void onContainerScreenOpen(class ContainerScreenContext const& a0){
         void (ItemStackNetManagerServer::*rv)(class ContainerScreenContext const&);
@@ -37,7 +42,6 @@ public:
         return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
     }
     */
-
     MCAPI ItemStackNetManagerServer(class ServerPlayer&, bool);
     MCAPI void _handleLegacyTransactionRequest(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&, std::vector<struct std::pair<enum ContainerEnumName, class std::vector<unsigned char, class std::allocator<unsigned char> > >> const&);
     MCAPI void handleRequest(std::unique_ptr<class ItemStackRequestData>, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
@@ -49,13 +53,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _filterStrings(class TypedClientNetId<struct ItemStackRequestIdTag, int, 0>, std::vector<std::string> const&);
     MCAPI void _handleRequestData(std::vector<struct ItemStackResponseInfo>&, class ItemStackRequestData const*);
     MCAPI void _processQueue();
     MCAPI void _queueRequest(std::unique_ptr<class ItemStackRequestData>);
     MCAPI void _queueRequests(class ItemStackRequestBatch const&);
     MCAPI bool _tryFilterText(class ItemStackRequestData const*);
+
 };

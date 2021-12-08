@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaBlocks {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void assignBlocks(class Experiments const&);
     MCAPI extern class Block const* mAcaciaFenceGate;
     MCAPI extern class Block const* mAcaciaSign;
@@ -719,4 +718,5 @@ namespace VanillaBlocks {
     MCAPI extern class Block const* mYellowCandleCake;
     MCAPI extern class Block const* mYellowFlower;
     MCAPI void unassignBlocks();
+
 };

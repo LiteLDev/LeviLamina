@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CircleAroundAnchorGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCLEAROUNDANCHORGOAL
+public:
+    class CircleAroundAnchorGoal& operator=(class CircleAroundAnchorGoal const&) = delete;
+    CircleAroundAnchorGoal(class CircleAroundAnchorGoal const&) = delete;
+    CircleAroundAnchorGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CircleAroundAnchorGoal();
@@ -25,16 +31,13 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI CircleAroundAnchorGoal(class Mob&);
 
 protected:
 
-
 private:
-
     MCAPI float _calculateHeightOffset() const;
     MCAPI void _selectNext();
     MCAPI void _setAnchorAboveTarget();
+
 };

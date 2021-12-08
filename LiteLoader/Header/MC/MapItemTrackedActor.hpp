@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MapItemTrackedActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct UniqueId {
@@ -20,15 +19,20 @@ struct UniqueId {
     UniqueId(UniqueId const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEMTRACKEDACTOR
+public:
+    class MapItemTrackedActor& operator=(class MapItemTrackedActor const&) = delete;
+    MapItemTrackedActor(class MapItemTrackedActor const&) = delete;
+    MapItemTrackedActor() = delete;
+#endif
 
 public:
-
     MCAPI float getDecorationRotation(class BlockSource&);
     MCAPI std::unique_ptr<class Packet> nextUpdatePacket(class MapItemSavedData const&);
 
 protected:
-
 
 private:
 

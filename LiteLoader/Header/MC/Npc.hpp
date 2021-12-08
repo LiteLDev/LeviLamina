@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Mob.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Npc : public Mob {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPC
+public:
+    class Npc& operator=(class Npc const&) = delete;
+    Npc(class Npc const&) = delete;
+    Npc() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -96,7 +102,6 @@ public:
     /*74*/ virtual void newServerAiStep();
     /*75*/ virtual void _serverAiMobStep();
     /*76*/ virtual void __unk_vfn_25();
-
     /*
     inline bool isFishable() const{
         bool (Npc::*rv)() const;
@@ -134,13 +139,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Npc(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI static std::string const SKIN_ID_TAG;
     MCAPI static std::vector<struct std::pair<std::string, std::string >> const Skins;
 
 protected:
-
 
 private:
 

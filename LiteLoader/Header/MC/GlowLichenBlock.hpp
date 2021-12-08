@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MultifaceBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GlowLichenBlock : public MultifaceBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWLICHENBLOCK
+public:
+    class GlowLichenBlock& operator=(class GlowLichenBlock const&) = delete;
+    GlowLichenBlock(class GlowLichenBlock const&) = delete;
+    GlowLichenBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GlowLichenBlock();
@@ -134,7 +140,6 @@ public:
     /*113*/ virtual void __unk_vfn_32();
     /*114*/ virtual void __unk_vfn_33();
     /*115*/ virtual class Block const* getMultifaceBlockPtr() const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (GlowLichenBlock::*rv)() const;
@@ -142,11 +147,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI GlowLichenBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

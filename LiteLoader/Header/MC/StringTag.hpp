@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StringTag : public Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 inline std::string& value() {
@@ -37,7 +36,13 @@ inline std::string get() {
     return value();
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRINGTAG
+public:
+    class StringTag& operator=(class StringTag const&) = delete;
+    StringTag(class StringTag const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~StringTag();
@@ -49,7 +54,6 @@ public:
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;
-
     /*
     inline  ~StringTag(){
          (StringTag::*rv)();
@@ -57,12 +61,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI StringTag(std::string);
     MCAPI StringTag();
 
 protected:
-
 
 private:
 

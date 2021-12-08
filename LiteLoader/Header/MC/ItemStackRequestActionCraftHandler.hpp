@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestActionCraftHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTHANDLER
+public:
+    class ItemStackRequestActionCraftHandler& operator=(class ItemStackRequestActionCraftHandler const&) = delete;
+    ItemStackRequestActionCraftHandler(class ItemStackRequestActionCraftHandler const&) = delete;
+    ItemStackRequestActionCraftHandler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftHandler();
-
-
     MCAPI ItemStackRequestActionCraftHandler(class ItemStackRequestActionHandler&, class Player&);
     MCAPI enum ItemStackNetResult _initCraftResults(std::vector<class ItemInstance> const&, unsigned char);
     MCAPI class ItemInstance* _initSingleCraftResult(class ItemInstance const&);
@@ -37,8 +41,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI enum ItemStackNetResult _setCreatedItemOutputSlot(unsigned char);
+
 };

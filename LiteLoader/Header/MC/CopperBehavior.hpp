@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CopperBehavior {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COPPERBEHAVIOR
+public:
+    class CopperBehavior& operator=(class CopperBehavior const&) = delete;
+    CopperBehavior(class CopperBehavior const&) = delete;
+    CopperBehavior() = delete;
+#endif
 
 public:
-
     MCAPI class Block const& getCorrespondingWaxedBlock(class Block const&) const;
     MCAPI bool isWaxable() const;
     MCAPI bool isWaxed() const;
@@ -28,8 +33,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _incrementAge(class BlockSource&, class Block const&, class BlockPos const&, float) const;
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Container.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FillingContainer : public Container {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILLINGCONTAINER
+public:
+    class FillingContainer& operator=(class FillingContainer const&) = delete;
+    FillingContainer(class FillingContainer const&) = delete;
+    FillingContainer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FillingContainer();
@@ -38,7 +44,6 @@ public:
     /*17*/ virtual int clearInventory(int);
     /*18*/ virtual void load(class ListTag const&, class SemVersion const&, class Level&);
     /*19*/ virtual int getEmptySlotsCount() const;
-
     /*
     inline  ~FillingContainer(){
          (FillingContainer::*rv)();
@@ -46,7 +51,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI FillingContainer(class Player*, int, enum ContainerType);
     MCAPI int getHotbarSize() const;
     MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
@@ -57,7 +61,6 @@ public:
     MCAPI void swapSlots(int, int);
 
 protected:
-
     MCAPI int _addResource(class ItemStack const&);
     MCAPI void _doDrop(class ItemStack&, bool);
     MCAPI void _fixBackwardCompabilityItem(class ItemStack&);

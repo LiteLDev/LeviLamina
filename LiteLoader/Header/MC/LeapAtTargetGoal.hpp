@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LeapAtTargetGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEAPATTARGETGOAL
+public:
+    class LeapAtTargetGoal& operator=(class LeapAtTargetGoal const&) = delete;
+    LeapAtTargetGoal(class LeapAtTargetGoal const&) = delete;
+    LeapAtTargetGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LeapAtTargetGoal();
@@ -25,12 +31,9 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool);
 
 protected:
-
 
 private:
 

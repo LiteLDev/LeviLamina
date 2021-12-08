@@ -3,20 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DedicatedServer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum StartResult;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEDICATEDSERVER
+public:
+    class DedicatedServer& operator=(class DedicatedServer const&) = delete;
+    DedicatedServer(class DedicatedServer const&) = delete;
+#endif
 
 public:
     /*
@@ -61,15 +66,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DedicatedServer();
     MCAPI enum DedicatedServer::StartResult start(std::string const&);
 
 protected:
 
-
 private:
-
     MCAPI void initalizeAppConfigs();
     MCAPI void initializeLogging();
+
 };

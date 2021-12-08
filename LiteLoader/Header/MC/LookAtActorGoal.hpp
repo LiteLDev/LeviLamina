@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LookAtActorGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATACTORGOAL
+public:
+    class LookAtActorGoal& operator=(class LookAtActorGoal const&) = delete;
+    LookAtActorGoal(class LookAtActorGoal const&) = delete;
+    LookAtActorGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LookAtActorGoal();
@@ -25,7 +31,6 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
     /*
     inline  ~LookAtActorGoal(){
          (LookAtActorGoal::*rv)();
@@ -33,13 +38,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI LookAtActorGoal(class Mob&, float, float, int, int, int, int);
 
 protected:
 
-
 private:
-
     MCAPI bool _withinFieldOfView(class Actor&);
+
 };

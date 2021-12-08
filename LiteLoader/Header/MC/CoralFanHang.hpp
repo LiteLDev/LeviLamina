@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CoralFan.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CoralFanHang : public CoralFan {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CORALFANHANG
+public:
+    class CoralFanHang& operator=(class CoralFanHang const&) = delete;
+    CoralFanHang(class CoralFanHang const&) = delete;
+    CoralFanHang() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CoralFanHang();
@@ -141,12 +147,9 @@ public:
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
     /*122*/ virtual void checkAlive(class BlockSource&, class BlockPos const&) const;
-
-
     MCAPI CoralFanHang(std::string const&, int);
 
 protected:
-
 
 private:
 

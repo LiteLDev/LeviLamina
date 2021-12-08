@@ -2,23 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockStateGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKSTATEGROUP
+public:
+    class BlockStateGroup& operator=(class BlockStateGroup const&) = delete;
+    BlockStateGroup(class BlockStateGroup const&) = delete;
+#endif
 
 public:
-
     MCAPI BlockStateGroup();
     MCAPI class BlockStateMeta const* getBlockStateFromHash(unsigned __int64 const&) const;
     MCAPI void registerBlockStateDefinition(struct BlockStateDefinition const&);
@@ -28,7 +32,6 @@ public:
     MCAPI static bool loadBlockStateFromJson(struct BlockStateDefinition&, std::string const&, class Json::Value const&);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JsonSaver {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JSONSAVER
+public:
+    class JsonSaver& operator=(class JsonSaver const&) = delete;
+    JsonSaver(class JsonSaver const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~JsonSaver();
@@ -40,7 +45,6 @@ public:
     /*20*/ virtual bool doBeginObject();
     /*21*/ virtual bool doBeginObject(unsigned __int64);
     /*22*/ virtual bool doEndObject();
-
     /*
     inline bool doBeginArrayItem(unsigned __int64 a0){
         bool (JsonSaver::*rv)(unsigned __int64);
@@ -63,13 +67,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI JsonSaver();
     MCAPI void configurePrettyOutput(bool, char, unsigned int);
     MCAPI std::string toString() const;
 
 protected:
-
 
 private:
 

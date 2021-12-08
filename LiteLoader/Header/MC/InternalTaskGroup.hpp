@@ -3,25 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InternalTaskGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTERNALTASKGROUP
+public:
+    class InternalTaskGroup& operator=(class InternalTaskGroup const&) = delete;
+    InternalTaskGroup(class InternalTaskGroup const&) = delete;
+    InternalTaskGroup() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InternalTaskGroup();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual int /*enum enum TaskGroupState*/ getState() const;
-
     /*
     inline void processCoroutines(){
         void (InternalTaskGroup::*rv)();
@@ -45,9 +50,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

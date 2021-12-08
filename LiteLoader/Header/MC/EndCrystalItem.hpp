@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EndCrystalItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCRYSTALITEM
+public:
+    class EndCrystalItem& operator=(class EndCrystalItem const&) = delete;
+    EndCrystalItem(class EndCrystalItem const&) = delete;
+    EndCrystalItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EndCrystalItem();
@@ -97,7 +103,6 @@ public:
     /*75*/ virtual std::string getAuxValuesDescription() const;
     /*76*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*77*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool isGlint(class ItemStackBase const& a0) const{
         bool (EndCrystalItem::*rv)(class ItemStackBase const&) const;
@@ -105,11 +110,9 @@ public:
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     */
-
     MCAPI EndCrystalItem(std::string const&, int);
 
 protected:
-
 
 private:
 

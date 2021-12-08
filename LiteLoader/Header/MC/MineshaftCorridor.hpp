@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MineshaftPiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MineshaftCorridor : public MineshaftPiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINESHAFTCORRIDOR
+public:
+    class MineshaftCorridor& operator=(class MineshaftCorridor const&) = delete;
+    MineshaftCorridor(class MineshaftCorridor const&) = delete;
+    MineshaftCorridor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MineshaftCorridor();
@@ -25,16 +31,13 @@ public:
     /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-
     MCAPI void _placeCobWeb(class BlockSource&, class BoundingBox const&, class Random&, float, int, int, int);
     MCAPI void _placeSupport(class BlockSource&, class BoundingBox const&, int, int, int, int, int, class Random&);
 
 protected:
 
-
 private:
-
     MCAPI void _fillPillarDownOrChainUp(class BlockSource&, int, int, int, class BoundingBox const&);
     MCAPI void _placeDoubleLowerOrUpperSupport(class BlockSource&, class BoundingBox const&, int, int, int);
+
 };

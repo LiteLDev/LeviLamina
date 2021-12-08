@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LecternBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LECTERNBLOCK
+public:
+    class LecternBlock& operator=(class LecternBlock const&) = delete;
+    LecternBlock(class LecternBlock const&) = delete;
+    LecternBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LecternBlock();
@@ -134,7 +140,6 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isSignalSource() const{
         bool (LecternBlock::*rv)() const;
@@ -152,14 +157,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI LecternBlock(std::string const&, int);
     MCAPI void emitRedstonePulse(class BlockSource&, class BlockPos const&) const;
 
 protected:
 
-
 private:
-
     MCAPI bool _dropBook(class Player&, class BlockPos const&) const;
+
 };

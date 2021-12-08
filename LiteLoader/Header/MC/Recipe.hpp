@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Recipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPE
+public:
+    class Recipe& operator=(class Recipe const&) = delete;
+    Recipe(class Recipe const&) = delete;
+    Recipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Recipe();
@@ -33,7 +39,6 @@ public:
     /*13*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     /*15*/ virtual void loadResultList(class BlockPalette const&) const;
-
     /*
     inline bool isMultiRecipe() const{
         bool (Recipe::*rv)() const;
@@ -46,7 +51,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI int countQuantityOfIngredient(class ItemInstance const&) const;
     MCAPI int getHeight() const;
     MCAPI std::vector<class RecipeIngredient> const& getIngredients() const;
@@ -59,7 +63,6 @@ public:
     MCAPI static bool isAnyAuxValue(class ItemDescriptor const&);
 
 protected:
-
     MCAPI Recipe(class gsl::basic_string_span<char const, -1>, class HashedString, std::vector<class RecipeIngredient> const&);
 
 private:

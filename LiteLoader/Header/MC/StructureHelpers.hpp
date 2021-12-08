@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureHelpers {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREHELPERS
+public:
+    class StructureHelpers& operator=(class StructureHelpers const&) = delete;
+    StructureHelpers(class StructureHelpers const&) = delete;
+    StructureHelpers() = delete;
+#endif
 
 public:
-
     MCAPI static bool createChest(class StructurePiece&, class BlockSource&, class BoundingBox const&, class Random&, int, int, int, unsigned char, std::string const&);
     MCAPI static bool createDispenser(class StructurePiece&, class BlockSource&, class BoundingBox const&, class Random&, int, int, int, int, std::string const&);
     MCAPI static bool createMinecartChest(class StructurePiece&, class BlockSource&, class BoundingBox const&, class Random&, int, int, int, int, std::string const&);
@@ -25,7 +30,6 @@ public:
     MCAPI static int getTorchRotation(int, unsigned short);
 
 protected:
-
 
 private:
 

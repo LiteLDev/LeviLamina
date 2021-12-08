@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorPermutationEventHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPERMUTATIONEVENTHANDLER
+public:
+    class ActorPermutationEventHandler& operator=(class ActorPermutationEventHandler const&) = delete;
+    ActorPermutationEventHandler(class ActorPermutationEventHandler const&) = delete;
+    ActorPermutationEventHandler() = delete;
+#endif
 
 public:
-
     MCAPI ActorPermutationEventHandler(class Actor&);
     MCAPI void checkActiveComponents(class std::shared_ptr<class ActorPermutation>);
     MCAPI class ActorDefinitionDescriptor* getPermutationDescriptor();
@@ -26,7 +31,6 @@ public:
     MCAPI void reload(class RenderParams&);
 
 protected:
-
 
 private:
 

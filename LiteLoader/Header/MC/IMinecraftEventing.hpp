@@ -3,17 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class IMinecraftEventing {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 public:
     enum StructureBlockActionType;
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IMINECRAFTEVENTING
+public:
+    class IMinecraftEventing& operator=(class IMinecraftEventing const&) = delete;
+    IMinecraftEventing(class IMinecraftEventing const&) = delete;
+    IMinecraftEventing() = delete;
+#endif
 
 public:
     /*
@@ -24,9 +30,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

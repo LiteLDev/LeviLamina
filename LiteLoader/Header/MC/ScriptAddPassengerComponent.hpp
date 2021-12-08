@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptAddPassengerComponent : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTADDPASSENGERCOMPONENT
+public:
+    class ScriptAddPassengerComponent& operator=(class ScriptAddPassengerComponent const&) = delete;
+    ScriptAddPassengerComponent(class ScriptAddPassengerComponent const&) = delete;
+    ScriptAddPassengerComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptAddPassengerComponent();
-
     /*
     inline  ~ScriptAddPassengerComponent(){
          (ScriptAddPassengerComponent::*rv)();
@@ -28,14 +33,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptAddPassengerComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     MCAPI class Scripting::Result<std::string > getEntityType() const;
     MCAPI class Scripting::Result<std::string > getSpawnEvent() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptAddPassengerComponent> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ExternalFileLevelStorage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI class Core::Result _readLevelDataFromFile(class Core::Path const&, std::string const&, class LevelData&);
     MCAPI bool _writeLevelDat(class Core::Path const&, class LevelData const&);
     MCAPI std::unique_ptr<class PackAccessStrategy> getAccessStrategy(class Core::Path const&, class ContentIdentity const&, class IContentKeyProvider const&);
@@ -29,4 +28,5 @@ namespace ExternalFileLevelStorage {
     MCAPI void saveLevelDataToPath(class Core::Path const&, std::string const&, class LevelData const&);
     MCAPI void saveLevelDisplayDataToCache(std::string const&, class LevelData const&, class gsl::not_null<class TaskGroup* >);
     MCAPI class Core::Result validateLevelDat(class Core::Path);
+
 };

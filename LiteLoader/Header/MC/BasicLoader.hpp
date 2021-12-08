@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BasicLoader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASICLOADER
+public:
+    BasicLoader(class BasicLoader const&) = delete;
+    BasicLoader() = delete;
+#endif
 
 public:
     /*
@@ -24,7 +29,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI bool beginArray(unsigned __int64&);
     MCAPI bool beginMember(char const*, bool);
     MCAPI bool beginMember(unsigned __int64, std::string&);
@@ -43,9 +47,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool beginArrayItem(unsigned __int64);
     MCAPI bool serialize(class entt::meta_any, struct SerializerTraits const&, class entt::meta_any);
     MCAPI bool serialize(class entt::meta_any, class entt::meta_any);
@@ -55,4 +57,5 @@ private:
     MCAPI bool serializeEnum(class entt::meta_any&, struct SerializerTraits const&);
     MCAPI bool serializeObject(class entt::meta_any, class entt::meta_any);
     MCAPI bool serializeSequenceContainer(class entt::meta_sequence_container, struct SerializerTraits const&, class entt::meta_any const&);
+
 };

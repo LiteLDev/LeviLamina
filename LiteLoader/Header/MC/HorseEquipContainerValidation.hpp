@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerValidationBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HorseEquipContainerValidation : public ContainerValidationBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEEQUIPCONTAINERVALIDATION
+public:
+    class HorseEquipContainerValidation& operator=(class HorseEquipContainerValidation const&) = delete;
+    HorseEquipContainerValidation(class HorseEquipContainerValidation const&) = delete;
+    HorseEquipContainerValidation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HorseEquipContainerValidation();
@@ -24,12 +30,9 @@ public:
     /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /*5*/ virtual void __unk_vfn_0();
-
-
     MCAPI HorseEquipContainerValidation(class ContainerScreenContext const&);
 
 protected:
-
 
 private:
 

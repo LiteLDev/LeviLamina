@@ -2,23 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PropertyGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PROPERTYGROUP
+public:
+    class PropertyGroup& operator=(class PropertyGroup const&) = delete;
+    PropertyGroup(class PropertyGroup const&) = delete;
+#endif
 
 public:
-
     MCAPI PropertyGroup();
     MCAPI class CompoundTag getPropertyDescriptionsAsCompound(bool) const;
     MCAPI void initPropertiesOnComponent(class PropertyComponent&) const;
@@ -30,8 +34,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::unordered_map<class HashedString, class std::shared_ptr<struct CustomPropertyDescription>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::shared_ptr<struct CustomPropertyDescription> > > > MinecraftEngineProperties;
+
 };

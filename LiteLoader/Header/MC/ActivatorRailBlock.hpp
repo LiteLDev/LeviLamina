@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseRailBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActivatorRailBlock : public BaseRailBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTIVATORRAILBLOCK
+public:
+    class ActivatorRailBlock& operator=(class ActivatorRailBlock const&) = delete;
+    ActivatorRailBlock(class ActivatorRailBlock const&) = delete;
+    ActivatorRailBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActivatorRailBlock();
@@ -131,12 +137,9 @@ public:
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
     /*112*/ virtual void __unk_vfn_33();
-
-
     MCAPI ActivatorRailBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

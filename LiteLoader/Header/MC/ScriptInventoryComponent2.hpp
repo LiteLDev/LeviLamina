@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptInventoryComponent2 : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINVENTORYCOMPONENT2
+public:
+    class ScriptInventoryComponent2& operator=(class ScriptInventoryComponent2 const&) = delete;
+    ScriptInventoryComponent2(class ScriptInventoryComponent2 const&) = delete;
+    ScriptInventoryComponent2() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptInventoryComponent2();
-
     /*
     inline  ~ScriptInventoryComponent2(){
          (ScriptInventoryComponent2::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class Scripting::Result<int> getAdditionalSlotsPerStrength() const;
     MCAPI class Scripting::Result<bool> getCanBeSiphonedFrom() const;
     MCAPI class Scripting::Result<std::string > getContainerType() const;
@@ -40,7 +44,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptInventoryComponent2> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

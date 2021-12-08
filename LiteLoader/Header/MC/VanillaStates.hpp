@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace VanillaStates {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 struct CachedItemStateMapPtr {
     CachedItemStateMapPtr() = delete;
@@ -19,7 +18,7 @@ struct CachedItemStateMapPtr {
     CachedItemStateMapPtr(CachedItemStateMapPtr const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern class ItemStateVariant<bool> const Active;
     MCAPI extern class ItemStateVariant<int> const Age;
     MCAPI extern class ItemStateVariant<bool> const AgeBit;
@@ -149,4 +148,5 @@ struct CachedItemStateMapPtr {
     MCAPI class ItemState const* getState(class HashedString const&, struct VanillaStates::CachedItemStateMapPtr&);
     MCAPI void registerStates();
     MCAPI void unregisterStates();
+
 };

@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NpcRequestPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCREQUESTPACKET
+public:
+    class NpcRequestPacket& operator=(class NpcRequestPacket const&) = delete;
+    NpcRequestPacket(class NpcRequestPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~NpcRequestPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~NpcRequestPacket(){
          (NpcRequestPacket::*rv)();
@@ -32,7 +36,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NpcRequestPacket();
     MCAPI std::string const& getInteractText() const;
     MCAPI std::string const& getNpcName() const;
@@ -44,8 +47,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI NpcRequestPacket(class ActorRuntimeID, enum NpcRequestPacket::RequestType, std::string, unsigned char);
+
 };

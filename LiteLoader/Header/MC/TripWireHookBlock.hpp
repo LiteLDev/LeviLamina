@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TripWireHookBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIPWIREHOOKBLOCK
+public:
+    class TripWireHookBlock& operator=(class TripWireHookBlock const&) = delete;
+    TripWireHookBlock(class TripWireHookBlock const&) = delete;
+    TripWireHookBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TripWireHookBlock();
@@ -135,7 +141,6 @@ public:
     /*114*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*115*/ virtual void __unk_vfn_32();
     /*116*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canSpawnOn() const{
         bool (TripWireHookBlock::*rv)() const;
@@ -143,15 +148,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TripWireHookBlock(std::string const&, int);
     MCAPI void calculateState(class BlockSource&, class BlockPos const&, bool, bool, int, class Block const&) const;
 
 protected:
 
-
 private:
-
     MCAPI void _getShape(int, class AABB&) const;
     MCAPI void playSound(class BlockSource&, class BlockPos const&, bool, bool, bool, bool) const;
+
 };

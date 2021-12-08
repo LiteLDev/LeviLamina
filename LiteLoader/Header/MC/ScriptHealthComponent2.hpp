@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "AttributeScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptHealthComponent2 : public AttributeScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTHEALTHCOMPONENT2
+public:
+    class ScriptHealthComponent2& operator=(class ScriptHealthComponent2 const&) = delete;
+    ScriptHealthComponent2(class ScriptHealthComponent2 const&) = delete;
+    ScriptHealthComponent2() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptHealthComponent2();
-
     /*
     inline  ~ScriptHealthComponent2(){
          (ScriptHealthComponent2::*rv)();
@@ -28,11 +33,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealthComponent2> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

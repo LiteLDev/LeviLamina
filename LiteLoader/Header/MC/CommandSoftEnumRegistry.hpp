@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandSoftEnumRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDSOFTENUMREGISTRY
+public:
+    class CommandSoftEnumRegistry& operator=(class CommandSoftEnumRegistry const&) = delete;
+    CommandSoftEnumRegistry(class CommandSoftEnumRegistry const&) = delete;
+    CommandSoftEnumRegistry() = delete;
+#endif
 
 public:
-
     MCAPI CommandSoftEnumRegistry(class CommandRegistry*);
     MCAPI void updateSoftEnum(enum SoftEnumUpdateType, std::string const&, std::vector<std::string>);
     MCAPI ~CommandSoftEnumRegistry();
 
 protected:
-
 
 private:
 

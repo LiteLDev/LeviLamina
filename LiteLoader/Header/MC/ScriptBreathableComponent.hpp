@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBreathableComponent : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBREATHABLECOMPONENT
+public:
+    class ScriptBreathableComponent& operator=(class ScriptBreathableComponent const&) = delete;
+    ScriptBreathableComponent(class ScriptBreathableComponent const&) = delete;
+    ScriptBreathableComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBreathableComponent();
-
     /*
     inline  ~ScriptBreathableComponent(){
          (ScriptBreathableComponent::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptBreathableComponent(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>> > getBreatheBlocks() const;
     MCAPI class Scripting::Result<bool> getBreathesAir() const;
@@ -44,7 +48,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBreathableComponent> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

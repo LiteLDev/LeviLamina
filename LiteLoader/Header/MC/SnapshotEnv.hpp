@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SnapshotEnv {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPSHOTENV
+public:
+    class SnapshotEnv& operator=(class SnapshotEnv const&) = delete;
+    SnapshotEnv(class SnapshotEnv const&) = delete;
+    SnapshotEnv() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SnapshotEnv();
@@ -30,16 +36,13 @@ public:
     /*9*/ virtual void __unk_vfn_3();
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
-
-
     MCAPI SnapshotEnv(class leveldb::Env*);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const&);
     MCAPI void releaseSnapshot();
 
 protected:
 
-
 private:
-
     MCAPI bool _isQueuedForRemoval(class Core::PathBuffer<std::string > const&);
+
 };

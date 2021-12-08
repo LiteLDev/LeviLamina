@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CircuitSystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CIRCUITSYSTEM
+public:
+    class CircuitSystem& operator=(class CircuitSystem const&) = delete;
+    CircuitSystem(class CircuitSystem const&) = delete;
+#endif
 
 public:
-
     MCAPI CircuitSystem();
     MCAPI void evaluate(class BlockSource*);
     MCAPI int getStrength(class BlockPos const&);
@@ -31,10 +35,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class BaseCircuitComponent* createComponent(class BlockPos const&, unsigned char, std::unique_ptr<class BaseCircuitComponent>);
     MCAPI void evaluateComponents(bool);
     MCAPI void updateIndividualBlock(class gsl::not_null<class BaseCircuitComponent* >, class BlockPos const&, class BlockPos const&, class BlockSource&);
+
 };

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackNetManagerBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKNETMANAGERBASE
+public:
+    class ItemStackNetManagerBase& operator=(class ItemStackNetManagerBase const&) = delete;
+    ItemStackNetManagerBase(class ItemStackNetManagerBase const&) = delete;
+    ItemStackNetManagerBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
@@ -28,7 +34,6 @@ public:
     /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
-
     /*
     inline void _initScreen(class ItemStackNetManagerScreen& a0){
         void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen&);
@@ -51,7 +56,6 @@ public:
         return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
     }
     */
-
     MCAPI ItemStackNetManagerBase(class Player&, bool, bool);
     MCAPI bool isClientSide() const;
     MCAPI bool isScreenOpen() const;
@@ -59,8 +63,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _pushScreen(class ContainerScreenContext);
+
 };

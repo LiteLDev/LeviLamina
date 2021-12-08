@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SHLibrary : public StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHLIBRARY
+public:
+    class SHLibrary& operator=(class SHLibrary const&) = delete;
+    SHLibrary(class SHLibrary const&) = delete;
+    SHLibrary() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SHLibrary();
@@ -26,12 +32,9 @@ public:
     /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-
-
     MCAPI static std::unique_ptr<class StrongholdPiece> createPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
 
 protected:
-
 
 private:
 

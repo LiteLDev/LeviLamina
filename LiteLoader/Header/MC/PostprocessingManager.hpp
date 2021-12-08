@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PostprocessingManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct LockedChunk {
@@ -20,14 +19,19 @@ struct LockedChunk {
     LockedChunk(LockedChunk const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSTPROCESSINGMANAGER
+public:
+    class PostprocessingManager& operator=(class PostprocessingManager const&) = delete;
+    PostprocessingManager(class PostprocessingManager const&) = delete;
+    PostprocessingManager() = delete;
+#endif
 
 public:
-
     MCAPI class std::optional<std::vector<struct PostprocessingManager::LockedChunk> > tryLock(class ChunkPos const&, class ChunkSource&);
 
 protected:
-
 
 private:
 

@@ -3,23 +3,21 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ProjectileComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum EAxis;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI ProjectileComponent(class ProjectileComponent const&);
     MCAPI ProjectileComponent();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
@@ -66,9 +64,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _handleLightningOnHit(class Actor&);
     MCAPI void _selectNextMoveDirection(class Actor&, enum ProjectileComponent::EAxis);
+
 };

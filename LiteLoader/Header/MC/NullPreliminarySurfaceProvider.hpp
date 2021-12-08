@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NullPreliminarySurfaceProvider {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLPRELIMINARYSURFACEPROVIDER
+public:
+    class NullPreliminarySurfaceProvider& operator=(class NullPreliminarySurfaceProvider const&) = delete;
+    NullPreliminarySurfaceProvider(class NullPreliminarySurfaceProvider const&) = delete;
+    NullPreliminarySurfaceProvider() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NullPreliminarySurfaceProvider();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-
     /*
     inline  ~NullPreliminarySurfaceProvider(){
          (NullPreliminarySurfaceProvider::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -2,20 +2,20 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterTest.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace FilterList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI struct FilterTest::Definition const* findFilterDefinition(std::string const&);
     MCAPI void initialize();
+
 };

@@ -3,16 +3,22 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERCOMMAND
+public:
+    class ServerCommand& operator=(class ServerCommand const&) = delete;
+    ServerCommand(class ServerCommand const&) = delete;
+    ServerCommand() = delete;
+#endif
 
 public:
     /*
@@ -23,9 +29,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI static class Minecraft* mGame;
 
 private:

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptServerActorEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSERVERACTOREVENTLISTENER
+public:
+    class ScriptServerActorEventListener& operator=(class ScriptServerActorEventListener const&) = delete;
+    ScriptServerActorEventListener(class ScriptServerActorEventListener const&) = delete;
+    ScriptServerActorEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptServerActorEventListener();
@@ -40,12 +46,9 @@ public:
     /*20*/ virtual int /*enum enum EventResult*/ onActorCarriedItemChanged(class Actor&, class ItemInstance const&, class ItemInstance const&, int /*enum enum HandSlot*/);
     /*21*/ virtual int /*enum enum EventResult*/ onActorEquippedArmor(class Actor&, class ItemInstance const&, int /*enum enum ArmorSlot*/);
     /*22*/ virtual int /*enum enum EventResult*/ onActorRemoved(struct ActorRemovedEvent const&);
-
-
     MCAPI ScriptServerActorEventListener(class MinecraftServerScriptEngine&);
 
 protected:
-
 
 private:
 

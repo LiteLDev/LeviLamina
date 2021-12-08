@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockActorDataPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTORDATAPACKET
+public:
+    class BlockActorDataPacket& operator=(class BlockActorDataPacket const&) = delete;
+    BlockActorDataPacket(class BlockActorDataPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockActorDataPacket();
@@ -24,13 +29,10 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
-
     MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);
     MCAPI BlockActorDataPacket();
 
 protected:
-
 
 private:
 

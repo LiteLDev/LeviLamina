@@ -3,23 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AttributeInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEINSTANCE
+public:
+    class AttributeInstance& operator=(class AttributeInstance const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~AttributeInstance();
     /*1*/ virtual void tick();
-
     /*
     inline  ~AttributeInstance(){
          (AttributeInstance::*rv)();
@@ -27,7 +30,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AttributeInstance(class AttributeInstance const&);
     MCAPI AttributeInstance();
     MCAPI void addBuff(class AttributeBuff const&);
@@ -71,11 +73,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI AttributeInstance(class BaseAttributeMap*, class Attribute const*);
     MCAPI float _calculateValue(class AttributeBuff const&);
     MCAPI float _calculateValue();
     MCAPI float _sanitizeValue(float);
+
 };

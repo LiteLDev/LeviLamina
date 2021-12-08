@@ -2,32 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptTickingAreaBinderComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTTICKINGAREABINDERCOMPONENT
+public:
+    class ScriptTickingAreaBinderComponent& operator=(class ScriptTickingAreaBinderComponent const&) = delete;
+    ScriptTickingAreaBinderComponent(class ScriptTickingAreaBinderComponent const&) = delete;
+    ScriptTickingAreaBinderComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptTickingAreaBinderComponent();
     /*1*/ virtual bool serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&) const;
     /*2*/ virtual bool deserialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle const&);
-
-
     MCAPI class ScriptApi::ScriptObjectHandle const& getData() const;
     MCAPI static std::string const TAG;
 
 protected:
-
 
 private:
 

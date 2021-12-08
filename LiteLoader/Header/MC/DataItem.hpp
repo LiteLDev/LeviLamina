@@ -3,26 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DataItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATAITEM
+public:
+    class DataItem& operator=(class DataItem const&) = delete;
+    DataItem(class DataItem const&) = delete;
+    DataItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DataItem();
     /*1*/ virtual bool isDataEqual(class DataItem const&) const;
-
     /*
     inline  ~DataItem(){
          (DataItem::*rv)();
@@ -31,9 +36,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

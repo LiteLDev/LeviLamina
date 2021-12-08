@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBlockGameplayHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKGAMEPLAYHANDLER
+public:
+    class ScriptBlockGameplayHandler& operator=(class ScriptBlockGameplayHandler const&) = delete;
+    ScriptBlockGameplayHandler(class ScriptBlockGameplayHandler const&) = delete;
+    ScriptBlockGameplayHandler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBlockGameplayHandler();
@@ -27,7 +33,6 @@ public:
     /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
     /*7*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handlePistonActionEvent(struct PistonActionEvent const&);
     /*8*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handleExplosionStartedEvent(struct ExplosionStartedEvent&);
-
     /*
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleChestBlockTryPaired(struct ChestBlockTryPairEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ChestBlockTryPairEvent const&);
@@ -51,12 +56,10 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI bool _handleExplosionStartedEvent(struct ExplosionStartedEvent&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
     MCAPI bool _handlePistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>) const;
+
 };

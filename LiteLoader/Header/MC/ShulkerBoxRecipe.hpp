@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ShapelessRecipe.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShulkerBoxRecipe : public ShapelessRecipe {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXRECIPE
+public:
+    class ShulkerBoxRecipe& operator=(class ShulkerBoxRecipe const&) = delete;
+    ShulkerBoxRecipe(class ShulkerBoxRecipe const&) = delete;
+    ShulkerBoxRecipe() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
@@ -29,13 +35,10 @@ public:
     /*8*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*9*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     /*10*/ virtual void loadResultList(class BlockPalette const&) const;
-
-
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
     MCAPI static class mce::UUID const ID;
 
 protected:
-
 
 private:
 

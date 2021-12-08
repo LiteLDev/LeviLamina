@@ -2,33 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Feature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetherFossilFeature : public Feature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETHERFOSSILFEATURE
+public:
+    class NetherFossilFeature& operator=(class NetherFossilFeature const&) = delete;
+    NetherFossilFeature(class NetherFossilFeature const&) = delete;
+    NetherFossilFeature() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NetherFossilFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-
-
     MCAPI NetherFossilFeature(std::vector<class Block const* >&&, bool);
 
 protected:
 
-
 private:
-
     MCAPI static std::string const* const STRUCTURE_LOCATION_FOSSIL;
+
 };

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ShulkerBoxBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHULKERBOXBLOCKACTOR
+public:
+    class ShulkerBoxBlockActor& operator=(class ShulkerBoxBlockActor const&) = delete;
+    ShulkerBoxBlockActor(class ShulkerBoxBlockActor const&) = delete;
+    ShulkerBoxBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -84,7 +90,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI ShulkerBoxBlockActor(enum BlockActorType, std::string const&, enum BlockActorRendererId, class BlockPos const&);
     MCAPI void setFacingDir(unsigned char);
     MCAPI static bool itemAllowed(class ItemStackBase const&);
@@ -92,10 +97,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _calculateBB();
     MCAPI class Vec3 _calculateMovementWithCollisions(class BlockSource&, class Actor*) const;
     MCAPI static int const ITEMS_SIZE;
+
 };

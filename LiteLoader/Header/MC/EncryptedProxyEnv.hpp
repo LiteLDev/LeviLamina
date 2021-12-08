@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EncryptedProxyEnv {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDPROXYENV
+public:
+    class EncryptedProxyEnv& operator=(class EncryptedProxyEnv const&) = delete;
+    EncryptedProxyEnv(class EncryptedProxyEnv const&) = delete;
+    EncryptedProxyEnv() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EncryptedProxyEnv();
@@ -30,10 +36,7 @@ public:
     /*10*/ virtual void __unk_vfn_5();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
 
-
-
 protected:
-
 
 private:
 

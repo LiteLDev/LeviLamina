@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Recipes {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class Type {
@@ -27,10 +26,16 @@ struct NormalizedRectangularRecipeResults {
     NormalizedRectangularRecipeResults(NormalizedRectangularRecipeResults const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RECIPES
+public:
+    class Recipes& operator=(class Recipes const&) = delete;
+    Recipes(class Recipes const&) = delete;
+    Recipes() = delete;
+#endif
 
 public:
-
     MCAPI Recipes(class Level*);
     MCAPI void addShapedRecipe(std::string, std::vector<class ItemInstance> const&, std::vector<std::string> const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const& , std::vector<class ItemInstance> const& , class HashedString)>);
     MCAPI void addShapedRecipe(std::string, class ItemInstance const&, std::string const&, std::string const&, std::string const&, std::vector<class Recipes::Type> const&, std::vector<class HashedString> const&, int, class std::function<std::unique_ptr<class ShapedRecipe> (std::string, int, int, std::vector<class RecipeIngredient> const& , std::vector<class ItemInstance> const& , class HashedString)>);
@@ -53,12 +58,10 @@ public:
     MCAPI static std::vector<std::string> Shape(std::string const&, std::string const&, std::string const&);
 
 protected:
-
     MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance>);
     MCAPI static struct Recipes::NormalizedRectangularRecipeResults _normalizeRectangularRecipe(std::vector<std::string> const&);
 
 private:
-
     MCAPI void _addItemRecipe(std::unique_ptr<class Recipe>);
     MCAPI void _addMapRecipes();
     MCAPI bool _isRecipeValidToAdd(class Recipe const&);
@@ -66,4 +69,5 @@ private:
     MCAPI bool _loadBrewingMix(class Json::Value const&, class SemVersion const&);
     MCAPI void _loadHardcodedRecipes();
     MCAPI class RecipeIngredient const _loadIngredientFromJson(class Json::Value const&, class SemVersion const&) const;
+
 };

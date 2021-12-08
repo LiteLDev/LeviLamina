@@ -3,24 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ExplosionStartedEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPLOSIONSTARTEDEVENT
+public:
+    struct ExplosionStartedEvent& operator=(struct ExplosionStartedEvent const&) = delete;
+    ExplosionStartedEvent() = delete;
+#endif
 
 public:
-
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&);
     MCAPI ~ExplosionStartedEvent();
 
 protected:
-
 
 private:
 

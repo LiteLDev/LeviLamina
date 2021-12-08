@@ -2,19 +2,18 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 #include "Json.hpp"
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptEngine {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct ScriptQueueData {
@@ -23,7 +22,14 @@ struct ScriptQueueData {
     ScriptQueueData(ScriptQueueData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTENGINE
+public:
+    class ScriptEngine& operator=(class ScriptEngine const&) = delete;
+    ScriptEngine(class ScriptEngine const&) = delete;
+    ScriptEngine() = delete;
+#endif
 
 public:
     /*
@@ -193,7 +199,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptEngine(enum ScriptApi::ApiScriptType);
     MCAPI bool deserializeScriptObjectHandleToJson(class ScriptApi::ScriptObjectHandle const&, class Json::Value&);
     MCAPI bool fireEventToScript(class EventInfo const&, class ScriptApi::ScriptObjectHandle&&);
@@ -216,14 +221,13 @@ public:
     MCAPI static bool isScriptingEnabled();
 
 protected:
-
     MCAPI struct IdentifierResult _validateObjectIdentifier(std::string const&) const;
 
 private:
-
     MCAPI void _addScriptToQueue(struct ScriptEngine::ScriptQueueData const&);
     MCAPI bool _getVersionInfo(class ScriptApi::ScriptObjectHandle const&, class ScriptApi::ScriptVersionInfo&);
     MCAPI bool _processSystemInitialize();
     MCAPI bool _processSystemShutdown();
     MCAPI bool _processSystemUpdate();
+
 };

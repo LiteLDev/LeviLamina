@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorDamageSource.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorDamageByActorSource : public ActorDamageSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGEBYACTORSOURCE
+public:
+    class ActorDamageByActorSource& operator=(class ActorDamageByActorSource const&) = delete;
+    ActorDamageByActorSource(class ActorDamageByActorSource const&) = delete;
+    ActorDamageByActorSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorDamageByActorSource();
@@ -34,7 +40,6 @@ public:
     /*13*/ virtual int /*enum enum ActorType*/ getDamagingEntityType() const;
     /*14*/ virtual int /*enum enum ActorCategory*/ getDamagingEntityCategories() const;
     /*15*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-
     /*
     inline  ~ActorDamageByActorSource(){
          (ActorDamageByActorSource::*rv)();
@@ -52,11 +57,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ActorDamageByActorSource(class Actor&, enum ActorDamageCause);
 
 protected:
-
 
 private:
 

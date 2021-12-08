@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptLevelTickingAreasComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTLEVELTICKINGAREASCOMPONENT
+public:
+    class ScriptLevelTickingAreasComponent& operator=(class ScriptLevelTickingAreasComponent const&) = delete;
+    ScriptLevelTickingAreasComponent(class ScriptLevelTickingAreasComponent const&) = delete;
+    ScriptLevelTickingAreasComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptLevelTickingAreasComponent();
@@ -32,12 +38,9 @@ public:
     /*11*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
     /*12*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Level&, bool&) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI static class HashedString const mHash;
+
 };

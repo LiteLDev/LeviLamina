@@ -2,23 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HorseArmorItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Tier;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HORSEARMORITEM
+public:
+    class HorseArmorItem& operator=(class HorseArmorItem const&) = delete;
+    HorseArmorItem(class HorseArmorItem const&) = delete;
+    HorseArmorItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HorseArmorItem();
@@ -100,14 +106,11 @@ public:
     /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI HorseArmorItem(std::string const&, int, int, enum HorseArmorItem::Tier);
     MCAPI enum HorseArmorItem::Tier getTier() const;
     MCAPI static int const* const mHealthPerTier;
 
 protected:
-
 
 private:
 

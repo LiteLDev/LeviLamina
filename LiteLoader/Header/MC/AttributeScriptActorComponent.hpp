@@ -2,35 +2,38 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AttributeScriptActorComponent : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTESCRIPTACTORCOMPONENT
+public:
+    class AttributeScriptActorComponent& operator=(class AttributeScriptActorComponent const&) = delete;
+    AttributeScriptActorComponent(class AttributeScriptActorComponent const&) = delete;
+    AttributeScriptActorComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AttributeScriptActorComponent();
     /*1*/ virtual class Scripting::Result<float> getCurrent() const;
     /*2*/ virtual class Scripting::Result<void> setCurrent(float const&) const;
     /*3*/ virtual class Scripting::Result<float> getValue() const;
-
-
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;
     MCAPI class Scripting::Result<void> resetToMaxValue() const;
     MCAPI class Scripting::Result<void> resetToMinValue() const;
 
 protected:
-
 
 private:
 

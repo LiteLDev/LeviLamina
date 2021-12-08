@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "PredictableProjectile.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AbstractArrow : public PredictableProjectile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ABSTRACTARROW
+public:
+    class AbstractArrow& operator=(class AbstractArrow const&) = delete;
+    AbstractArrow(class AbstractArrow const&) = delete;
+    AbstractArrow() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -101,7 +107,6 @@ public:
     /*79*/ virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
     /*80*/ virtual void _playPickupSound();
     /*81*/ virtual class ItemStack _getPickupItem() const = 0;
-
     /*
     inline  ~AbstractArrow(){
          (AbstractArrow::*rv)();
@@ -114,14 +119,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI AbstractArrow(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI bool isPlayerOwned() const;
     MCAPI void setFavoredSlot(int);
     MCAPI void setIsCreative(bool);
 
 protected:
-
     MCAPI bool _canPickup(class Player const&) const;
 
 private:

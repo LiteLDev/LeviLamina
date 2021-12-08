@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LodestoneBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LODESTONEBLOCKACTOR
+public:
+    class LodestoneBlockActor& operator=(class LodestoneBlockActor const&) = delete;
+    LodestoneBlockActor(class LodestoneBlockActor const&) = delete;
+    LodestoneBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LodestoneBlockActor();
@@ -49,8 +55,6 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI LodestoneBlockActor(class BlockPos const&);
     MCAPI class PositionTrackingId const& getTrackingHandle() const;
     MCAPI bool hasTrackingHandle() const;
@@ -58,8 +62,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::string const sTagName_Handle;
+
 };

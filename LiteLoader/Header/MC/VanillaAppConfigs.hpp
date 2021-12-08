@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "AppConfigs.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VanillaAppConfigs : public AppConfigs {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAAPPCONFIGS
+public:
+    class VanillaAppConfigs& operator=(class VanillaAppConfigs const&) = delete;
+    VanillaAppConfigs(class VanillaAppConfigs const&) = delete;
+    VanillaAppConfigs() = delete;
+#endif
 
 public:
     /*0*/ virtual ~VanillaAppConfigs();
@@ -48,10 +54,7 @@ public:
     /*27*/ virtual void __unk_vfn_25();
     /*28*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
 
-
-
 protected:
-
 
 private:
 

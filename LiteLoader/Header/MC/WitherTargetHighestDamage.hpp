@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TargetGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WitherTargetHighestDamage : public TargetGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERTARGETHIGHESTDAMAGE
+public:
+    class WitherTargetHighestDamage& operator=(class WitherTargetHighestDamage const&) = delete;
+    WitherTargetHighestDamage(class WitherTargetHighestDamage const&) = delete;
+    WitherTargetHighestDamage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WitherTargetHighestDamage();
@@ -28,14 +34,11 @@ public:
     /*7*/ virtual void __unk_vfn_0();
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
-
-
     MCAPI WitherTargetHighestDamage(class WitherBoss&, std::vector<struct MobDescriptor> const&);
 
 protected:
 
-
 private:
-
     MCAPI class Player* getHighestDamageTarget();
+
 };

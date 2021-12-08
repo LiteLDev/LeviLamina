@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScheduleCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct FunctionInfo {
@@ -20,21 +19,25 @@ struct FunctionInfo {
     FunctionInfo(FunctionInfo const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCHEDULECOMMAND
+public:
+    class ScheduleCommand& operator=(class ScheduleCommand const&) = delete;
+    ScheduleCommand(class ScheduleCommand const&) = delete;
+    ScheduleCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScheduleCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
-
     MCAPI static void setup(class CommandRegistry&);
 
 protected:
 
-
 private:
-
     MCAPI void _delay(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void _onAreaLoaded(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI struct ScheduleCommand::FunctionInfo _tryGetFunction(class FunctionManager&, class CommandOutput&) const;
+
 };

@@ -3,24 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChunkBuildOrderPolicyBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBUILDORDERPOLICYBASE
+public:
+    class ChunkBuildOrderPolicyBase& operator=(class ChunkBuildOrderPolicyBase const&) = delete;
+    ChunkBuildOrderPolicyBase(class ChunkBuildOrderPolicyBase const&) = delete;
+    ChunkBuildOrderPolicyBase() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChunkBuildOrderPolicyBase();
     /*1*/ virtual void __unk_vfn_0() = 0;
     /*2*/ virtual unsigned int registerForUpdates();
-
     /*
     inline  ~ChunkBuildOrderPolicyBase(){
          (ChunkBuildOrderPolicyBase::*rv)();
@@ -29,9 +34,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

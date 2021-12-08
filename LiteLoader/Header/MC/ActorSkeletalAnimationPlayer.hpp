@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorSkeletalAnimationPlayer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSKELETALANIMATIONPLAYER
+public:
+    class ActorSkeletalAnimationPlayer& operator=(class ActorSkeletalAnimationPlayer const&) = delete;
+    ActorSkeletalAnimationPlayer(class ActorSkeletalAnimationPlayer const&) = delete;
+    ActorSkeletalAnimationPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorSkeletalAnimationPlayer();
@@ -27,12 +33,9 @@ public:
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
     /*8*/ virtual int /*enum enum ActorAnimationType*/ getAnimationType() const;
     /*9*/ virtual class HashedString const& getRawName() const;
-
-
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&);
 
 protected:
-
 
 private:
 

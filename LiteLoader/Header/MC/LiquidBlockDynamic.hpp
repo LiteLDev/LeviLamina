@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LiquidBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LiquidBlockDynamic : public LiquidBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIQUIDBLOCKDYNAMIC
+public:
+    class LiquidBlockDynamic& operator=(class LiquidBlockDynamic const&) = delete;
+    LiquidBlockDynamic(class LiquidBlockDynamic const&) = delete;
+    LiquidBlockDynamic() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LiquidBlockDynamic();
@@ -129,20 +135,17 @@ public:
     /*108*/ virtual int getExtraRenderLayers() const;
     /*109*/ virtual void __unk_vfn_32();
     /*110*/ virtual void __unk_vfn_33();
-
-
     MCAPI LiquidBlockDynamic(std::string const&, int, class Material const&);
     MCAPI class std::array<bool, 4> getSpread(class BlockSource&, class BlockPos const&) const;
     MCAPI bool shouldBecomeStatic(class BlockSource&, class BlockPos const&, class Random&) const;
 
 protected:
 
-
 private:
-
     MCAPI bool _canSpreadTo(class BlockSource&, class BlockPos const&, class BlockPos const&, unsigned char) const;
     MCAPI int _getSlopeDistance(class BlockSource&, class BlockPos const&, int, int) const;
     MCAPI bool _isWaterBlocking(class BlockSource&, class BlockPos const&, class BlockPos const&, unsigned char) const;
     MCAPI bool _tick(class BlockSource&, class BlockPos const&, class Random&, bool) const;
     MCAPI void _trySpreadTo(class BlockSource&, class BlockPos const&, int, class BlockPos const&, unsigned char) const;
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Fireball.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WitherSkull : public Fireball {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERSKULL
+public:
+    class WitherSkull& operator=(class WitherSkull const&) = delete;
+    WitherSkull(class WitherSkull const&) = delete;
+    WitherSkull() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -100,7 +106,6 @@ public:
     /*78*/ virtual float getInertia();
     /*79*/ virtual void __unk_vfn_22();
     /*80*/ virtual int /*enum enum ParticleType*/ getTrailParticle();
-
     /*
     inline bool shouldBurn(){
         bool (WitherSkull::*rv)();
@@ -108,11 +113,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WitherSkull(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

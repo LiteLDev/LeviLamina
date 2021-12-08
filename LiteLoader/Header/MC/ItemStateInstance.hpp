@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStateInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATEINSTANCE
+public:
+    class ItemStateInstance& operator=(class ItemStateInstance const&) = delete;
+    ItemStateInstance(class ItemStateInstance const&) = delete;
+    ItemStateInstance() = delete;
+#endif
 
 public:
-
     MCAPI void initState(unsigned int&, unsigned int, unsigned int, class ItemState const&);
     MCAPI bool isValidData(unsigned int) const;
 
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorPlacerItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORPLACERITEM
+public:
+    class ActorPlacerItem& operator=(class ActorPlacerItem const&) = delete;
+    ActorPlacerItem(class ActorPlacerItem const&) = delete;
+    ActorPlacerItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorPlacerItem();
@@ -101,7 +107,6 @@ public:
     /*79*/ virtual std::string getAuxValuesDescription() const;
     /*80*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*81*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool isMultiColorTinted(class ItemStack const& a0) const{
         bool (ActorPlacerItem::*rv)(class ItemStack const&) const;
@@ -124,7 +129,6 @@ public:
         return (this->*rv)(std::forward<class ItemStack const&>(a0));
     }
     */
-
     MCAPI ActorPlacerItem(std::string const&, int, struct ActorDefinitionIdentifier const&);
     MCAPI static void forEachCustomEgg(class std::function<void (class Item const& )> const&);
     MCAPI static std::string getCustomSpawnEggName(int);
@@ -133,9 +137,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct ActorDefinitionIdentifier _getActorID(class BlockSource&) const;
     MCAPI class Actor* _spawnActorAt(class BlockSource&, class Vec3 const&, class Vec3 const&, class ItemStack const&, class Actor*) const;
     MCAPI static void _setAgentOwner(class Player&, class Agent&);
@@ -143,4 +145,5 @@ private:
     MCAPI static class std::unordered_map<unsigned int, std::string, struct std::hash<unsigned int>, struct std::equal_to<unsigned int>, class std::allocator<struct std::pair<unsigned int const, std::string > > > mCustomSpawnEggs;
     MCAPI static class std::unordered_map<class HashedString, struct TextureUVCoordinateSet, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct TextureUVCoordinateSet> > > mUVTextureMap;
     MCAPI static struct TextureUVCoordinateSet m_uvEggMask;
+
 };

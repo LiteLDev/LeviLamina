@@ -3,21 +3,21 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace IncomingDataHelpers {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void clearIncomingCachedData(unsigned __int64);
     MCAPI extern class std::recursive_mutex mDataMutex;
     MCAPI extern class std::unordered_map<unsigned __int64, bool, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, bool> > > mIsDataReady;
     MCAPI extern class std::unordered_map<unsigned __int64, std::string, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, std::string > > > mPartialDataBuffers;
     MCAPI extern class std::unordered_map<unsigned __int64, class std::queue<std::string, std::deque<std::string> >, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, class std::queue<std::string, std::deque<std::string> > > > > mReadyDataBuffers;
+
 };

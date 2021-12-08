@@ -2,29 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Enchant.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnchantmentInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTMENTINSTANCE
+public:
+    class EnchantmentInstance& operator=(class EnchantmentInstance const&) = delete;
+    EnchantmentInstance(class EnchantmentInstance const&) = delete;
+    EnchantmentInstance() = delete;
+#endif
 
 public:
-
     MCAPI EnchantmentInstance(enum Enchant::Type, int);
     MCAPI int getEnchantLevel() const;
     MCAPI enum Enchant::Type getEnchantType() const;
 
 protected:
-
 
 private:
 

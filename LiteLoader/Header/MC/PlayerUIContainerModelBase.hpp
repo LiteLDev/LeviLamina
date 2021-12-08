@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerUIContainerModelBase : public ContainerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUICONTAINERMODELBASE
+public:
+    class PlayerUIContainerModelBase& operator=(class PlayerUIContainerModelBase const&) = delete;
+    PlayerUIContainerModelBase(class PlayerUIContainerModelBase const&) = delete;
+    PlayerUIContainerModelBase() = delete;
+#endif
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -36,12 +42,9 @@ public:
     /*15*/ virtual class Container* _getContainer() const;
     /*16*/ virtual int _getContainerOffset() const;
     /*17*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
-
-
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player&, int, enum ContainerCategory);
 
 protected:
-
     MCAPI void _refreshContainer(bool);
 
 private:

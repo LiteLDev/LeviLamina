@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TargetGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OwnerHurtTargetGoal : public TargetGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OWNERHURTTARGETGOAL
+public:
+    class OwnerHurtTargetGoal& operator=(class OwnerHurtTargetGoal const&) = delete;
+    OwnerHurtTargetGoal(class OwnerHurtTargetGoal const&) = delete;
+    OwnerHurtTargetGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OwnerHurtTargetGoal();
@@ -25,12 +31,9 @@ public:
     /*4*/ virtual void stop();
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual void __unk_vfn_1();
-
-
     MCAPI OwnerHurtTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
 
 protected:
-
 
 private:
 

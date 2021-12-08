@@ -2,22 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SetTitlePacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum TitleType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SETTITLEPACKET
+public:
+    class SetTitlePacket& operator=(class SetTitlePacket const&) = delete;
+    SetTitlePacket(class SetTitlePacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SetTitlePacket();
@@ -26,7 +31,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~SetTitlePacket(){
          (SetTitlePacket::*rv)();
@@ -34,7 +38,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SetTitlePacket(int, int, int);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType);
     MCAPI SetTitlePacket(enum SetTitlePacket::TitleType, std::string const&);
@@ -42,7 +45,6 @@ public:
     MCAPI SetTitlePacket();
 
 protected:
-
 
 private:
 

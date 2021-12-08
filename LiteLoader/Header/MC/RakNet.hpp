@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class NetworkIdentifier;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace RakNet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
     enum StartupResult;
     class RakNetSocket2;
@@ -52,7 +51,7 @@ namespace RakNet {
         MCAPI virtual int GetLastPing(struct RakNet::AddressOrGUID) const;
         MCAPI virtual int GetLowestPing(struct RakNet::AddressOrGUID) const;
     };
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI unsigned int ConnectionAttemptLoop(void*);
     MCAPI unsigned __int64 GetTime();
     MCAPI unsigned int GetTimeMS();
@@ -74,4 +73,5 @@ namespace RakNet {
     MCAPI void* _RakMalloc_Ex(unsigned __int64, char const*, unsigned int);
     MCAPI void* _RakRealloc(void*, unsigned __int64);
     MCAPI void* _RakRealloc_Ex(void*, unsigned __int64, char const*, unsigned int);
+
 };

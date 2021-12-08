@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerLevel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERLEVEL
+public:
+    class ServerLevel& operator=(class ServerLevel const&) = delete;
+    ServerLevel(class ServerLevel const&) = delete;
+    ServerLevel() = delete;
+#endif
 
 public:
     /*
@@ -140,7 +146,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ServerLevel(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface> > const&, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing&, class ResourcePackManager&, class ResourcePackManager&, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class MinecraftCommands&, class Scheduler&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner> > const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>);
     MCAPI class MinecraftCommands& getCommands();
     MCAPI class FunctionManager& getFunctionManager();
@@ -151,7 +156,6 @@ public:
     MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer const> tryGetVolumeEntityManager() const;
 
 protected:
-
 
 private:
 

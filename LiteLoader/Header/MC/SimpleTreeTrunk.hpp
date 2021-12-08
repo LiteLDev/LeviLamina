@@ -2,29 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TreeHelper.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SimpleTreeTrunk {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SIMPLETREETRUNK
+public:
+    class SimpleTreeTrunk& operator=(class SimpleTreeTrunk const&) = delete;
+    SimpleTreeTrunk(class SimpleTreeTrunk const&) = delete;
+    SimpleTreeTrunk() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SimpleTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
 
-
-
 protected:
-
 
 private:
 

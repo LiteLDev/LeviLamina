@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "AuxDataBlockItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ElementBlockItem : public AuxDataBlockItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ELEMENTBLOCKITEM
+public:
+    class ElementBlockItem& operator=(class ElementBlockItem const&) = delete;
+    ElementBlockItem(class ElementBlockItem const&) = delete;
+    ElementBlockItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ElementBlockItem();
@@ -94,10 +100,7 @@ public:
     /*72*/ virtual void __unk_vfn_20();
     /*73*/ virtual std::string getAuxValuesDescription() const;
 
-
-
 protected:
-
 
 private:
 

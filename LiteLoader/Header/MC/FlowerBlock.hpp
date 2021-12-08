@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FlowerBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLOWERBLOCK
+public:
+    class FlowerBlock& operator=(class FlowerBlock const&) = delete;
+    FlowerBlock(class FlowerBlock const&) = delete;
+    FlowerBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FlowerBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline  ~FlowerBlock(){
          (FlowerBlock::*rv)();
@@ -158,13 +163,11 @@ public:
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }
     */
-
     MCAPI FlowerBlock(std::string const&, int, enum FlowerBlock::Type, class Material const&);
 
 protected:
 
-
 private:
-
     MCAPI bool _fertilizable(class BlockSource&, class BlockPos const&) const;
+
 };

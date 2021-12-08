@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LookAtActorGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LookAtTradingPlayerGoal : public LookAtActorGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOKATTRADINGPLAYERGOAL
+public:
+    class LookAtTradingPlayerGoal& operator=(class LookAtTradingPlayerGoal const&) = delete;
+    LookAtTradingPlayerGoal(class LookAtTradingPlayerGoal const&) = delete;
+    LookAtTradingPlayerGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LookAtTradingPlayerGoal();
@@ -24,12 +30,9 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void stop();
     /*5*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
 
 protected:
-
 
 private:
 

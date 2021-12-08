@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FurnaceBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SmokerBlock : public FurnaceBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMOKERBLOCK
+public:
+    class SmokerBlock& operator=(class SmokerBlock const&) = delete;
+    SmokerBlock(class SmokerBlock const&) = delete;
+    SmokerBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SmokerBlock();
@@ -129,12 +135,9 @@ public:
     /*108*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*109*/ virtual void __unk_vfn_32();
     /*110*/ virtual void __unk_vfn_33();
-
-
     MCAPI SmokerBlock(std::string const&, int, bool);
 
 protected:
-
 
 private:
 

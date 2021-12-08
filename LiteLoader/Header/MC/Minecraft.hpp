@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Minecraft {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFT
+public:
+    class Minecraft& operator=(class Minecraft const&) = delete;
+    Minecraft(class Minecraft const&) = delete;
+    Minecraft() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Minecraft();
@@ -25,7 +31,6 @@ public:
     /*3*/ virtual void setSimTimeScale(float);
     /*4*/ virtual bool getSimPaused() const;
     /*5*/ virtual bool isOnlineClient() const;
-
     /*
     inline  ~Minecraft(){
          (Minecraft::*rv)();
@@ -33,7 +38,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Minecraft(class IMinecraftApp&, class GameCallbacks&, class AllowList&, class PermissionsFile*, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, class std::chrono::duration<__int64, struct std::ratio<1, 1> >, class IMinecraftEventing&, class NetworkHandler&, class PacketSender&, unsigned char, class Timer&, class Timer&, class IContentTierManager const&, class ServerMetrics*);
     MCAPI void activateAllowList();
     MCAPI void configureGameTest(class Level&, class Experiments const&);
@@ -57,8 +61,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _tryCatchupMovementTicks();
+
 };

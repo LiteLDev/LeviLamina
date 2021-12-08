@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace PlayerDataSystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void forEachIdByPrecedence(struct PlayerStorageIds const&, class std::function<bool (std::string const& , std::string const& )>);
     MCAPI class Core::PathBuffer<std::string > getPlayerFilename(class Core::Path const&, std::string const&);
     MCAPI std::string getServerId(class LevelStorage&, struct PlayerStorageIds const&);
@@ -26,4 +25,5 @@ namespace PlayerDataSystem {
     MCAPI std::string playerKey(class gsl::basic_string_span<char const, -1>);
     MCAPI std::string serverKey(class LevelStorage&, class Player const&);
     MCAPI std::string serverKey(class LevelStorage&, class gsl::basic_string_span<char const, -1>);
+
 };

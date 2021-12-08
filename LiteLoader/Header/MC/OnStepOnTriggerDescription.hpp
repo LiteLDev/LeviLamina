@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OnStepOnTriggerDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONSTEPONTRIGGERDESCRIPTION
+public:
+    class OnStepOnTriggerDescription& operator=(class OnStepOnTriggerDescription const&) = delete;
+    OnStepOnTriggerDescription(class OnStepOnTriggerDescription const&) = delete;
+    OnStepOnTriggerDescription() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OnStepOnTriggerDescription();
     /*1*/ virtual std::string const& getName() const;
-
-
     MCAPI static std::string const NameID;
 
 protected:
-
 
 private:
 

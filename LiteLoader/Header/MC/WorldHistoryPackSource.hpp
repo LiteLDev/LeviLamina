@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldHistoryPackSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDHISTORYPACKSOURCE
+public:
+    class WorldHistoryPackSource& operator=(class WorldHistoryPackSource const&) = delete;
+    WorldHistoryPackSource(class WorldHistoryPackSource const&) = delete;
+    WorldHistoryPackSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorldHistoryPackSource();
@@ -23,7 +29,6 @@ public:
     /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
     /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
-
     /*
     inline void forEachPackConst(class std::function<void (class Pack const& )> a0) const{
         void (WorldHistoryPackSource::*rv)(class std::function<void (class Pack const& )>) const;
@@ -37,13 +42,11 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI void _addPackFromHistoryPack(class WorldPackHistory const&);
     MCAPI std::unique_ptr<class Pack> _createPackFromHistoryPack(class WorldPackHistory const&);
     MCAPI bool _readWorldHistoryFile();
+
 };

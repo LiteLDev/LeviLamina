@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HopperBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HOPPERBLOCKACTOR
+public:
+    class HopperBlockActor& operator=(class HopperBlockActor const&) = delete;
+    HopperBlockActor(class HopperBlockActor const&) = delete;
+    HopperBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -109,7 +115,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI HopperBlockActor(class BlockPos const&);
     MCAPI void checkForSmeltEverythingAchievement(class BlockSource&);
     MCAPI class FurnaceBlockActor* getAttachedFurnace(class BlockSource&);
@@ -118,11 +123,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _ensureTickingOrder(class BlockSource&, int);
     MCAPI void _tick(class BlockSource&, int);
     MCAPI bool isAttachedToContainerType(class BlockSource&, enum ContainerType);
     MCAPI bool isSourceOfContainerType(class BlockSource&, enum ContainerType);
+
 };

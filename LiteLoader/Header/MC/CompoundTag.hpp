@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Tag.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CompoundTagVariant.hpp"
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompoundTag : public Tag {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 
@@ -62,7 +61,13 @@ inline class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char
 };
 
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPOUNDTAG
+public:
+    class CompoundTag& operator=(class CompoundTag const&) = delete;
+    CompoundTag(class CompoundTag const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~CompoundTag();
@@ -75,7 +80,6 @@ public:
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;
     /*9*/ virtual unsigned __int64 hash() const;
-
     /*
     inline  ~CompoundTag(){
          (CompoundTag::*rv)();
@@ -83,7 +87,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CompoundTag(class CompoundTag&&);
     MCAPI CompoundTag();
     MCAPI void append(class CompoundTag const&);
@@ -130,7 +133,6 @@ public:
     MCAPI void rename(class gsl::basic_string_span<char const, -1>, std::string);
 
 protected:
-
 
 private:
 

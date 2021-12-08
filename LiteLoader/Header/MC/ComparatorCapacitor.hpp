@@ -2,22 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ProducerComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ComparatorCapacitor : public ProducerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Mode;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPARATORCAPACITOR
+public:
+    class ComparatorCapacitor& operator=(class ComparatorCapacitor const&) = delete;
+    ComparatorCapacitor(class ComparatorCapacitor const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ComparatorCapacitor();
@@ -39,7 +44,6 @@ public:
     /*16*/ virtual bool isSecondaryPowered() const;
     /*17*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
     /*18*/ virtual unsigned char getPoweroutDirection() const;
-
     /*
     inline bool canConsumerPower() const{
         bool (ComparatorCapacitor::*rv)() const;
@@ -47,7 +51,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ComparatorCapacitor();
     MCAPI void clearAnalogStrength(unsigned char);
     MCAPI int getOldStrength();
@@ -56,7 +59,6 @@ public:
     MCAPI void setMode(enum ComparatorCapacitor::Mode);
 
 protected:
-
 
 private:
 

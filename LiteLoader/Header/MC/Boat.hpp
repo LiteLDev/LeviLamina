@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Boat : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOAT
+public:
+    class Boat& operator=(class Boat const&) = delete;
+    Boat(class Boat const&) = delete;
+    Boat() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -103,8 +109,6 @@ public:
     /*82*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*83*/ virtual void __unk_vfn_20();
     /*84*/ virtual void _onSizeUpdated();
-
-
     MCAPI Boat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3&, float&, float&, float, float);
     MCAPI void destroy(class Actor*);
@@ -116,11 +120,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _computePaddleForce(float&, float&, float, float);
     MCAPI void _control();
     MCAPI void _move();
     MCAPI void _paddleControl(enum Side, class Vec3&, class Vec3&);
+
 };

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JigsawEditorData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JIGSAWEDITORDATA
+public:
+    class JigsawEditorData& operator=(class JigsawEditorData const&) = delete;
+    JigsawEditorData(class JigsawEditorData const&) = delete;
+#endif
 
 public:
-
     MCAPI JigsawEditorData(class JigsawEditorData&&);
     MCAPI JigsawEditorData(std::string const&, std::string const&, std::string const&, std::string const&, enum JigsawJointType);
     MCAPI JigsawEditorData();
@@ -36,8 +40,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const JOINT_TYPE_TO_NAME;
+
 };

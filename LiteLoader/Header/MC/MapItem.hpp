@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "MapItemSavedData.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MapItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MAPITEM
+public:
+    class MapItem& operator=(class MapItem const&) = delete;
+    MapItem(class MapItem const&) = delete;
+    MapItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MapItem();
@@ -103,8 +109,6 @@ public:
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*82*/ virtual std::unique_ptr<class Packet> getUpdatePacket(class ItemStack const&, class Level&, class Actor&) const;
-
-
     MCAPI MapItem(std::string const&, short);
     MCAPI void blockTick(class ItemStack&, class BlockSource&, class BlockPos const&) const;
     MCAPI void update(class Level&, class Actor&, class MapItemSavedData&) const;
@@ -125,9 +129,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _makeNewExplorationMap(class ItemStack&, class Level&, class Actor*, std::string&) const;
     MCAPI static void _scheduleMapChunkRendering(class Dimension&, class MapItemSavedData const&, struct MapItemSavedData::ChunkBounds, class std::shared_ptr<bool>);
+
 };

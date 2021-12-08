@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WeakStorageFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WEAKSTORAGEFEATURE
+public:
+    class WeakStorageFeature& operator=(class WeakStorageFeature const&) = delete;
+    WeakStorageFeature(class WeakStorageFeature const&) = delete;
+    WeakStorageFeature() = delete;
+#endif
 
 public:
 
-
 protected:
-
     MCAPI WeakStorageFeature(class WeakStorageFeature&&);
     MCAPI WeakStorageFeature(enum WeakStorageFeature::EmptyInit);
     MCAPI bool _isSet() const;

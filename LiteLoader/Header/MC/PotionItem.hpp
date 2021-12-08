@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Potion.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PotionItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POTIONITEM
+public:
+    class PotionItem& operator=(class PotionItem const&) = delete;
+    PotionItem(class PotionItem const&) = delete;
+    PotionItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PotionItem();
@@ -105,7 +111,6 @@ public:
     /*82*/ virtual std::string getAuxValuesDescription() const;
     /*83*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*84*/ virtual int /*enum enum Potion::PotionType*/ getPotionType() const;
-
     /*
     inline bool uniqueAuxValues() const{
         bool (PotionItem::*rv)() const;
@@ -118,13 +123,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PotionItem(std::string const&, int);
     MCAPI static void applyEffect(class ThrownPotion*, class ItemStack const&);
     MCAPI static bool isDestructivePotion(enum Potion::PotionVariant);
 
 protected:
-
 
 private:
 

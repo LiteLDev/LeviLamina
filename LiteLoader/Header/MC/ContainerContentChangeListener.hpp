@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContainerContentChangeListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERCONTENTCHANGELISTENER
+public:
+    class ContainerContentChangeListener& operator=(class ContainerContentChangeListener const&) = delete;
+    ContainerContentChangeListener(class ContainerContentChangeListener const&) = delete;
+    ContainerContentChangeListener() = delete;
+#endif
 
 public:
     /*0*/ virtual void __unk_vfn_0() = 0;
     /*1*/ virtual ~ContainerContentChangeListener();
-
     /*
     inline  ~ContainerContentChangeListener(){
          (ContainerContentChangeListener::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

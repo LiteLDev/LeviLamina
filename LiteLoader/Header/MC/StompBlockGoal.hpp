@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StompBlockGoal : public BaseMoveToGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STOMPBLOCKGOAL
+public:
+    class StompBlockGoal& operator=(class StompBlockGoal const&) = delete;
+    StompBlockGoal(class StompBlockGoal const&) = delete;
+    StompBlockGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StompBlockGoal();
@@ -38,10 +44,7 @@ public:
     /*17*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
     /*18*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
 
-
-
 protected:
-
 
 private:
 

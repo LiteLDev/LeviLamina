@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "PistonBlock.hpp"
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PistonArmBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONARMBLOCK
+public:
+    class PistonArmBlock& operator=(class PistonArmBlock const&) = delete;
+    PistonArmBlock(class PistonArmBlock const&) = delete;
+    PistonArmBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PistonArmBlock();
@@ -143,7 +149,6 @@ public:
     /*121*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*122*/ virtual void __unk_vfn_32();
     /*123*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (PistonArmBlock::*rv)() const;
@@ -151,13 +156,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PistonArmBlock(std::string const&, int, enum PistonBlock::Type);
 
 protected:
 
-
 private:
-
     MCAPI void _getCollisions(class AABB&, class AABB&, class AABB&, unsigned char) const;
+
 };

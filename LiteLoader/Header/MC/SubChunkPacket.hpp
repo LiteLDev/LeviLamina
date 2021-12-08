@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SubChunkPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET
+public:
+    class SubChunkPacket& operator=(class SubChunkPacket const&) = delete;
+    SubChunkPacket(class SubChunkPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SubChunkPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~SubChunkPacket(){
          (SubChunkPacket::*rv)();
@@ -32,12 +36,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SubChunkPacket(class AutomaticID<class Dimension, int> const&, class SubChunkPos const&, std::string const&, bool, enum SubChunkPacket::SubChunkRequestResult);
     MCAPI SubChunkPacket();
 
 protected:
-
 
 private:
 

@@ -2,23 +2,21 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Ability.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Abilities {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI Abilities(class Abilities const&);
     MCAPI Abilities();
     MCAPI void addSaveData(class CompoundTag&) const;
@@ -43,10 +41,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _registerAbilities();
     MCAPI static class std::array<char const* , 18> ABILITY_NAMES;
     MCAPI static std::string const TAG;
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BellBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BELLBLOCK
+public:
+    class BellBlock& operator=(class BellBlock const&) = delete;
+    BellBlock(class BellBlock const&) = delete;
+    BellBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BellBlock();
@@ -134,18 +140,15 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-
-
     MCAPI BellBlock(std::string const&, int);
     MCAPI bool hasValidAttachment(class Block const&, class BlockSource&, class BlockPos const&) const;
 
 protected:
 
-
 private:
-
     MCAPI class Block const& _determineAttachment(class Actor&, class BlockSource&, class BlockPos const&, unsigned char) const;
     MCAPI short _getItemId(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class AABB const& _getShape(class Block const&, class AABB&) const;
     MCAPI void _sendBellUsedEventToClient(class BlockSource const&, class Actor const&) const;
+
 };

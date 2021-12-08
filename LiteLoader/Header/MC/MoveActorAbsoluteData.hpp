@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MoveActorAbsoluteData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVEACTORABSOLUTEDATA
+public:
+    class MoveActorAbsoluteData& operator=(class MoveActorAbsoluteData const&) = delete;
+    MoveActorAbsoluteData(class MoveActorAbsoluteData const&) = delete;
+#endif
 
 public:
-
     MCAPI MoveActorAbsoluteData(class Actor const&);
     MCAPI MoveActorAbsoluteData();
     MCAPI class MoveActorDeltaData calculateDelta(class MoveActorAbsoluteData const&) const;
@@ -28,7 +32,6 @@ public:
     MCAPI void setYHeadRot(float);
 
 protected:
-
 
 private:
 

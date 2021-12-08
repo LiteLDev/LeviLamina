@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Player;
 class Objective;
@@ -19,11 +18,11 @@ struct ScoreInfo {
         return dAccess<int>(this, 12);
     }
 };
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Scoreboard {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
 
@@ -60,7 +59,14 @@ public:
     LIAPI static bool deleteScore(Player* player, const std::string& objname);
 
     LIAPI static bool scoreboardIdIsValid(ScoreboardId* id);
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARD
+public:
+    class Scoreboard& operator=(class Scoreboard const&) = delete;
+    Scoreboard(class Scoreboard const&) = delete;
+    Scoreboard() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Scoreboard();
@@ -79,7 +85,6 @@ public:
     /*13*/ virtual void __unk_vfn_8();
     /*14*/ virtual void __unk_vfn_9();
     /*15*/ virtual bool isClientSide() const;
-
     /*
     inline void setPacketSender(class PacketSender* a0){
         void (Scoreboard::*rv)(class PacketSender*);
@@ -137,7 +142,6 @@ public:
         return (this->*rv)(std::forward<class Objective const&>(a0));
     }
     */
-
     MCAPI Scoreboard(class CommandSoftEnumRegistry);
     MCAPI class Objective* addObjective(std::string const&, std::string const&, class ObjectiveCriteria const&);
     MCAPI void addScoreListener(class Player&, std::string const&);
@@ -177,9 +181,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct ScoreboardId const& _getOrCreatePlayerId(class Player&);
     MCAPI void _init();
+
 };

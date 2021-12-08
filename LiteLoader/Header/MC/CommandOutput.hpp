@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandOutput {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 	LIAPI void addMessage(std::string str);
 	LIAPI void success(const string& str);
 	LIAPI void error(const string& str);
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUT
+public:
+    class CommandOutput& operator=(class CommandOutput const&) = delete;
+    CommandOutput() = delete;
+#endif
 
 public:
-
     MCAPI CommandOutput(class CommandOutput const&);
     MCAPI CommandOutput(enum CommandOutputType);
     MCAPI void addToResultList(std::string const&, std::string const&);
@@ -42,8 +46,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void addMessage(std::string const&, std::vector<class CommandOutputParameter> const&, enum CommandOutputMessageType);
+
 };

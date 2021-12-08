@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct ConstDeserializeDataParams {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSTDESERIALIZEDATAPARAMS
+public:
+    struct ConstDeserializeDataParams& operator=(struct ConstDeserializeDataParams const&) = delete;
+    ConstDeserializeDataParams(struct ConstDeserializeDataParams const&) = delete;
+    ConstDeserializeDataParams() = delete;
+#endif
 
 public:
-
     MCAPI ~ConstDeserializeDataParams();
 
 protected:
-
 
 private:
 

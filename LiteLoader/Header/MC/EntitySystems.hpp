@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EntitySystems {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYSYSTEMS
+public:
+    class EntitySystems& operator=(class EntitySystems const&) = delete;
+    EntitySystems(class EntitySystems const&) = delete;
+#endif
 
 public:
-
     MCAPI EntitySystems();
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
     MCAPI void registerEvents(class EntityRegistry&);
@@ -31,7 +35,6 @@ public:
     MCAPI ~EntitySystems();
 
 protected:
-
 
 private:
 

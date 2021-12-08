@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LevelDbEnv {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELDBENV
+public:
+    class LevelDbEnv& operator=(class LevelDbEnv const&) = delete;
+    LevelDbEnv(class LevelDbEnv const&) = delete;
+    LevelDbEnv() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LevelDbEnv();
@@ -37,8 +43,6 @@ public:
     /*17*/ virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger* *);
     /*18*/ virtual unsigned __int64 NowMicros();
     /*19*/ virtual void SleepForMicroseconds(int);
-
-
     MCAPI bool IsComplete() const;
     MCAPI static void createInstance();
     MCAPI static void destroyInstance();
@@ -46,8 +50,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::unique_ptr<class LevelDbEnv> sSingleton;
+
 };

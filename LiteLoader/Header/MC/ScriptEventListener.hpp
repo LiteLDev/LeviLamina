@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptEventListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTEVENTLISTENER
+public:
+    class ScriptEventListener& operator=(class ScriptEventListener const&) = delete;
+    ScriptEventListener(class ScriptEventListener const&) = delete;
+    ScriptEventListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptEventListener();
-
     /*
     inline int \/*enum enum EventResult*\/ onScriptError(std::string const& a0, std::string const& a1){
         int \/*enum enum EventResult*\/ (ScriptEventListener::*rv)(std::string const&, std::string const&);
@@ -72,9 +77,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

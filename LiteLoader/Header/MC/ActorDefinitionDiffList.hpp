@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorDefinitionDiffList {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITIONDIFFLIST
+public:
+    class ActorDefinitionDiffList& operator=(class ActorDefinitionDiffList const&) = delete;
+    ActorDefinitionDiffList(class ActorDefinitionDiffList const&) = delete;
+    ActorDefinitionDiffList() = delete;
+#endif
 
 public:
-
     MCAPI void addDefinition(std::string const&);
     MCAPI class ActorDefinitionDescriptor buildAdditiveDescriptionFrom(unsigned __int64, unsigned __int64);
     MCAPI std::string definitionListToString(std::string const&) const;
@@ -31,8 +36,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _updateStack();
+
 };

@@ -3,29 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EncryptedZipTransforms {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCRYPTEDZIPTRANSFORMS
+public:
+    class EncryptedZipTransforms& operator=(class EncryptedZipTransforms const&) = delete;
+    EncryptedZipTransforms(class EncryptedZipTransforms const&) = delete;
+    EncryptedZipTransforms() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EncryptedZipTransforms();
     /*1*/ virtual bool readTransform(std::vector<unsigned char>&) const;
     /*2*/ virtual bool writeTransform(std::vector<unsigned char>&) const;
-
-
     MCAPI EncryptedZipTransforms(class IContentKeyProvider const&);
 
 protected:
-
 
 private:
 

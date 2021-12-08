@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace Json {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 class StaticString {
 public:
     explicit StaticString(const char* czstring)
@@ -465,9 +464,10 @@ private:
     unsigned int indentSize_;
     bool addChildValues_;
 };
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI std::string valueToQuotedString(char const*);
     MCAPI std::string valueToString(double);
     MCAPI std::string valueToString(__int64);
     MCAPI std::string valueToString(unsigned __int64);
+
 };

@@ -2,32 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ScriptApi.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CustomScriptEventData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CUSTOMSCRIPTEVENTDATA
+public:
+    class CustomScriptEventData& operator=(class CustomScriptEventData const&) = delete;
+    CustomScriptEventData(class CustomScriptEventData const&) = delete;
+    CustomScriptEventData() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CustomScriptEventData();
     /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
-
-
     MCAPI CustomScriptEventData(std::string const&);
     MCAPI bool setData(class Json::Value const&);
 
 protected:
-
 
 private:
 

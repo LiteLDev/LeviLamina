@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HashedString {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 	uint64_t hash;
 	std::string str;
@@ -24,10 +23,14 @@ public:
     //    , hash(computeHash(str)) {
     //}
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HASHEDSTRING
+public:
+    HashedString() = delete;
+#endif
 
 public:
-
     MCAPI bool Deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI HashedString(class HashedString&&);
     MCAPI HashedString(std::nullptr_t);
@@ -55,7 +58,6 @@ public:
     MCAPI static class HashedString const& getEmptyString();
 
 protected:
-
 
 private:
 

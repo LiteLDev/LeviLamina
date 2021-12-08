@@ -3,32 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct PendingArea {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PENDINGAREA
+public:
+    struct PendingArea& operator=(struct PendingArea const&) = delete;
+    PendingArea(struct PendingArea const&) = delete;
+    PendingArea() = delete;
+#endif
 
 public:
-
     MCAPI bool isEntityOwned() const;
     MCAPI struct PendingArea& operator=(struct PendingArea&&);
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
     MCAPI ~PendingArea();
-    MCAPI static struct PendingArea createEntityTickingArea(class mce::UUID, struct ActorUniqueID, struct Bounds const&, bool, float);
-    MCAPI static struct PendingArea createTickingArea(class mce::UUID, std::string const&, struct Bounds const&, bool);
-    MCAPI static struct PendingArea load(std::string const&, class CompoundTag const&);
-    MCAPI static bool validTag(class CompoundTag const&);
 
 protected:
-
 
 private:
 

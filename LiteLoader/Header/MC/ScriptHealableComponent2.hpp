@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptHealableComponent2 : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTHEALABLECOMPONENT2
+public:
+    class ScriptHealableComponent2& operator=(class ScriptHealableComponent2 const&) = delete;
+    ScriptHealableComponent2(class ScriptHealableComponent2 const&) = delete;
+    ScriptHealableComponent2() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptHealableComponent2();
-
     /*
     inline  ~ScriptHealableComponent2(){
          (ScriptHealableComponent2::*rv)();
@@ -28,7 +33,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptHealableComponent2(class WeakEntityRef const&, class Scripting::WeakLifetimeScope const&, std::string const&);
     MCAPI class Scripting::Result<class ActorFilterGroup> getFilters() const;
     MCAPI class Scripting::Result<bool> getForceUse() const;
@@ -36,7 +40,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptHealableComponent2> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "LeafBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AzaleaLeafBlock : public LeafBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AZALEALEAFBLOCK
+public:
+    class AzaleaLeafBlock& operator=(class AzaleaLeafBlock const&) = delete;
+    AzaleaLeafBlock(class AzaleaLeafBlock const&) = delete;
+    AzaleaLeafBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AzaleaLeafBlock();
@@ -139,12 +145,9 @@ public:
     /*118*/ virtual void __unk_vfn_32();
     /*119*/ virtual void __unk_vfn_33();
     /*120*/ virtual class ItemInstance getExtraResourceItem(class Block const&) const;
-
-
     MCAPI AzaleaLeafBlock(std::string const&, int, class WeakPtr<class BlockLegacy>);
 
 protected:
-
 
 private:
 

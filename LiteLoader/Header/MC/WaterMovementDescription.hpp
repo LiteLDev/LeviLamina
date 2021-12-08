@@ -2,27 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WaterMovementDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WATERMOVEMENTDESCRIPTION
+public:
+    class WaterMovementDescription& operator=(class WaterMovementDescription const&) = delete;
+    WaterMovementDescription(class WaterMovementDescription const&) = delete;
+#endif
 
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~WaterMovementDescription();
     /*2*/ virtual void deserializeData(struct DeserializeDataParams);
     /*3*/ virtual void serializeData(class Json::Value&) const;
-
     /*
     inline  ~WaterMovementDescription(){
          (WaterMovementDescription::*rv)();
@@ -30,11 +34,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WaterMovementDescription();
 
 protected:
-
 
 private:
 

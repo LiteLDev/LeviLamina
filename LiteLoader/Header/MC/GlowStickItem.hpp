@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "ChemistryStickItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GlowStickItem : public ChemistryStickItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWSTICKITEM
+public:
+    class GlowStickItem& operator=(class GlowStickItem const&) = delete;
+    GlowStickItem(class GlowStickItem const&) = delete;
+    GlowStickItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GlowStickItem();
@@ -99,14 +105,11 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI GlowStickItem(std::string const&, int);
     MCAPI static enum ItemColor const* const COLORS;
     MCAPI static int const MAX_ACTIVE_TICKS;
 
 protected:
-
 
 private:
 

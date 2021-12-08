@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BaseMoveToBlockGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InspectBookshelfGoal : public BaseMoveToBlockGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSPECTBOOKSHELFGOAL
+public:
+    class InspectBookshelfGoal& operator=(class InspectBookshelfGoal const&) = delete;
+    InspectBookshelfGoal(class InspectBookshelfGoal const&) = delete;
+    InspectBookshelfGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InspectBookshelfGoal();
@@ -29,12 +35,9 @@ public:
     /*8*/ virtual bool _canReach(class BlockPos const&);
     /*9*/ virtual unsigned __int64 _getRepathTime() const;
     /*10*/ virtual bool findTargetBlock();
-
-
     MCAPI InspectBookshelfGoal(class Mob&, float, int, int, int, float);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PetSleepWithOwnerState {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PETSLEEPWITHOWNERSTATE
+public:
+    class PetSleepWithOwnerState& operator=(class PetSleepWithOwnerState const&) = delete;
+    PetSleepWithOwnerState(class PetSleepWithOwnerState const&) = delete;
+    PetSleepWithOwnerState() = delete;
+#endif
 
 public:
     /*
@@ -30,9 +36,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI void dampenSpeed();
 
 private:

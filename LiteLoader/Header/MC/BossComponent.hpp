@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BossComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BOSSCOMPONENT
+public:
+    class BossComponent& operator=(class BossComponent const&) = delete;
+    BossComponent(class BossComponent const&) = delete;
+#endif
 
 public:
-
     MCAPI BossComponent(class BossComponent&&);
     MCAPI BossComponent();
     MCAPI void addPlayerToParty(class mce::UUID, int);
@@ -47,8 +51,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _sendBossEvent(class Actor&, enum BossEventUpdateType, class Player*);
+
 };

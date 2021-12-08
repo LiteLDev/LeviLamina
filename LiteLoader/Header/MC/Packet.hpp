@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "ServerNetworkHandler.hpp"
 class BinaryStream;
@@ -14,11 +13,11 @@ enum class PacketReliability {
     RelibleOrdered
 };
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     unsigned unk2 = 2;                                                     // 8
@@ -31,8 +30,10 @@ public:
     inline Packet(unsigned compress)
         : incompressible(!compress)
     { }
-
+#define DISABLE_CONSTRUCTOR_PREVENTION_PACKET
     inline Packet() {}
+    class Packet& operator=(class Packet const&) = delete;
+    Packet(class Packet const&) = delete;
 
     ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
     {
@@ -40,7 +41,14 @@ public:
             ServerPlayer*, ServerNetworkHandler*, NetworkIdentifier*, char)(handler, netId, dAccess<char>(this, 16));
     }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKET
+public:
+    class Packet& operator=(class Packet const&) = delete;
+    Packet(class Packet const&) = delete;
+    Packet() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Packet();
@@ -50,7 +58,6 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual bool disallowBatching() const;
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
-
     /*
     inline  ~Packet(){
          (Packet::*rv)();
@@ -59,9 +66,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

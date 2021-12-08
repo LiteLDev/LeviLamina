@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EntityPlacerItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITYPLACERITEMCOMPONENT
+public:
+    class EntityPlacerItemComponent& operator=(class EntityPlacerItemComponent const&) = delete;
+    EntityPlacerItemComponent(class EntityPlacerItemComponent const&) = delete;
+    EntityPlacerItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EntityPlacerItemComponent();
@@ -24,17 +30,14 @@ public:
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 
 protected:
 
-
 private:
-
     MCAPI void _positionAndRotateActor(class Actor&, class Vec3, unsigned char, class Vec3 const&, class BlockLegacy const*) const;
     MCAPI void _setActorCustomName(class Actor&, class ItemStack const&) const;
+
 };

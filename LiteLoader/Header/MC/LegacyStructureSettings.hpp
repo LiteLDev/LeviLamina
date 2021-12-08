@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyStructureSettings {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTURESETTINGS
+public:
+    class LegacyStructureSettings& operator=(class LegacyStructureSettings const&) = delete;
+#endif
 
 public:
-
     MCAPI LegacyStructureSettings(class LegacyStructureSettings const&);
     MCAPI LegacyStructureSettings(enum Mirror, enum Rotation, class Block const*, class BoundingBox const&);
     MCAPI LegacyStructureSettings();
@@ -45,7 +48,6 @@ public:
     MCAPI static int const MAX_STRUCTURE_SIZE;
 
 protected:
-
 
 private:
 

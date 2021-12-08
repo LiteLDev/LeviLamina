@@ -3,26 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MonumentRoomFitter {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MONUMENTROOMFITTER
+public:
+    class MonumentRoomFitter& operator=(class MonumentRoomFitter const&) = delete;
+    MonumentRoomFitter(class MonumentRoomFitter const&) = delete;
+    MonumentRoomFitter() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MonumentRoomFitter();
 
-
-
 protected:
-
 
 private:
 

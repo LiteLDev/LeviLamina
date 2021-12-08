@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FeatureTerrainAdjustments {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct Descriptions {
@@ -20,10 +19,16 @@ struct Descriptions {
     Descriptions(Descriptions const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATURETERRAINADJUSTMENTS
+public:
+    class FeatureTerrainAdjustments& operator=(class FeatureTerrainAdjustments const&) = delete;
+    FeatureTerrainAdjustments(class FeatureTerrainAdjustments const&) = delete;
+    FeatureTerrainAdjustments() = delete;
+#endif
 
 public:
-
     MCAPI void setBeardAndShaver(class BoundingBox const&, int, float, float);
     MCAPI void setBeardifier(class BoundingBox const&, int);
     MCAPI void setBury(class BoundingBox const&);
@@ -35,9 +40,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _insertDescriptions(std::vector<class ChunkPos> const&, class std::function<void (struct FeatureTerrainAdjustments::Descriptions& )>&&);
     MCAPI static struct BeardKernel mBeardKernel;
+
 };

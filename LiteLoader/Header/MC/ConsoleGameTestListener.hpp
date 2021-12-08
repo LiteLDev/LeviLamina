@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConsoleGameTestListener {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEGAMETESTLISTENER
+public:
+    class ConsoleGameTestListener& operator=(class ConsoleGameTestListener const&) = delete;
+    ConsoleGameTestListener(class ConsoleGameTestListener const&) = delete;
+    ConsoleGameTestListener() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ConsoleGameTestListener();
@@ -22,10 +28,7 @@ public:
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
 
-
-
 protected:
-
 
 private:
 

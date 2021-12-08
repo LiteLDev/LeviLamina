@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NpcI18nObserver {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NPCI18NOBSERVER
+public:
+    class NpcI18nObserver& operator=(class NpcI18nObserver const&) = delete;
+    NpcI18nObserver(class NpcI18nObserver const&) = delete;
+    NpcI18nObserver() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NpcI18nObserver();
     /*1*/ virtual void onLanguageChanged(std::string const&, bool);
-
     /*
     inline void onLanguagesLoaded(){
         void (NpcI18nObserver::*rv)();
@@ -33,11 +38,9 @@ public:
     }
     */
 
-
 protected:
 
-
 private:
-
     MCAPI void _loadNpcData();
+
 };

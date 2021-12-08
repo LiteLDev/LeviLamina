@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JukeboxBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JUKEBOXBLOCK
+public:
+    class JukeboxBlock& operator=(class JukeboxBlock const&) = delete;
+    JukeboxBlock(class JukeboxBlock const&) = delete;
+    JukeboxBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~JukeboxBlock();
@@ -131,7 +137,6 @@ public:
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
     /*112*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isSignalSource() const{
         bool (JukeboxBlock::*rv)() const;
@@ -144,14 +149,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI JukeboxBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI void _dropRecording(class BlockSource&, class BlockPos const&) const;
     MCAPI void _installCircuit(class BlockSource&, class BlockPos const&) const;
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "BlockItem.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DeprecatedSlabBlockItem : public BlockItem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DEPRECATEDSLABBLOCKITEM
+public:
+    class DeprecatedSlabBlockItem& operator=(class DeprecatedSlabBlockItem const&) = delete;
+    DeprecatedSlabBlockItem(class DeprecatedSlabBlockItem const&) = delete;
+    DeprecatedSlabBlockItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DeprecatedSlabBlockItem();
@@ -94,7 +100,6 @@ public:
     /*72*/ virtual std::string getAuxValuesDescription() const;
     /*73*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*74*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool _calculatePlacePos(class ItemStackBase& a0, class Actor& a1, unsigned char& a2, class BlockPos& a3) const{
         bool (DeprecatedSlabBlockItem::*rv)(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
@@ -108,9 +113,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

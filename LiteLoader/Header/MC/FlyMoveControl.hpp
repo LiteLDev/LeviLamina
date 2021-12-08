@@ -2,30 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveControl.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FlyMoveControl : public MoveControl {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FLYMOVECONTROL
+public:
+    class FlyMoveControl& operator=(class FlyMoveControl const&) = delete;
+    FlyMoveControl(class FlyMoveControl const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~FlyMoveControl();
     /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
-
-
     MCAPI FlyMoveControl();
 
 protected:
-
 
 private:
 

@@ -3,27 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VanillaItems {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VANILLAITEMS
+public:
+    class VanillaItems& operator=(class VanillaItems const&) = delete;
+    VanillaItems(class VanillaItems const&) = delete;
+    VanillaItems() = delete;
+#endif
 
 public:
-
     MCAPI static void registerItems(class BaseGameVersion const&, class Experiments const&, bool);
     MCAPI static void serverInitCreativeItemsCallback(class ActorInfoRegistry*, class BlockDefinitionGroup*, class CreativeItemRegistry*, bool, class BaseGameVersion const&, class Experiments const&);
     MCAPI static void unregisterItems();
 
 protected:
-
 
 private:
 

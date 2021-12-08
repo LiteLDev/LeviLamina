@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptBlockType : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKTYPE
+public:
+    class ScriptBlockType& operator=(class ScriptBlockType const&) = delete;
+    ScriptBlockType(class ScriptBlockType const&) = delete;
+    ScriptBlockType() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptBlockType();
-
     /*
     inline  ~ScriptBlockType(){
          (ScriptBlockType::*rv)();
@@ -28,14 +33,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> > createDefaultBlockPermutation() const;
     MCAPI class ScriptBlockType& operator=(class ScriptBlockType&&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockType> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);
 
 protected:
-
 
 private:
 

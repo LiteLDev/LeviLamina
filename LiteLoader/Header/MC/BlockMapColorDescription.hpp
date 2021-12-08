@@ -2,32 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockMapColorDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKMAPCOLORDESCRIPTION
+public:
+    class BlockMapColorDescription& operator=(class BlockMapColorDescription const&) = delete;
+    BlockMapColorDescription(class BlockMapColorDescription const&) = delete;
+    BlockMapColorDescription() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockMapColorDescription();
     /*1*/ virtual std::string const& getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext&) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
-
-
     MCAPI static std::string const NameID;
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BeehiveBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEEHIVEBLOCK
+public:
+    class BeehiveBlock& operator=(class BeehiveBlock const&) = delete;
+    BeehiveBlock(class BeehiveBlock const&) = delete;
+    BeehiveBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BeehiveBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (BeehiveBlock::*rv)() const;
@@ -149,7 +154,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BeehiveBlock(std::string const&, int);
     MCAPI void emitHoneyComb(class BlockSource&, class BlockPos const&) const;
     MCAPI void evictAll(class BlockSource&, class BlockPos const&, bool) const;
@@ -160,9 +164,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _fillHoneyBottle(class Player&, class ItemStack&, class ItemStack&, class BlockSource&, class BlockPos const&) const;
     MCAPI class ItemInstance _getSilkTouchItemInstance(class Block const&, class Player&, class BlockPos const&) const;
+
 };

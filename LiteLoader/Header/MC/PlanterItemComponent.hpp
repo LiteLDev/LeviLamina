@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlanterItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLANTERITEMCOMPONENT
+public:
+    class PlanterItemComponent& operator=(class PlanterItemComponent const&) = delete;
+    PlanterItemComponent(class PlanterItemComponent const&) = delete;
+    PlanterItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlanterItemComponent();
@@ -24,13 +30,10 @@ public:
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI static void bindType();
     MCAPI static class HashedString const& getIdentifier();
 
 protected:
-
 
 private:
 

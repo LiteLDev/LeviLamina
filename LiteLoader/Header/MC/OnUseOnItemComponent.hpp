@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OnUseOnItemComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONUSEONITEMCOMPONENT
+public:
+    class OnUseOnItemComponent& operator=(class OnUseOnItemComponent const&) = delete;
+    OnUseOnItemComponent(class OnUseOnItemComponent const&) = delete;
+    OnUseOnItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~OnUseOnItemComponent();
@@ -24,12 +30,9 @@ public:
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
-
-
     MCAPI static void bindType();
 
 protected:
-
 
 private:
 

@@ -2,30 +2,32 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct CollisionBoxDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COLLISIONBOXDEFINITION
+public:
+    struct CollisionBoxDefinition& operator=(struct CollisionBoxDefinition const&) = delete;
+    CollisionBoxDefinition(struct CollisionBoxDefinition const&) = delete;
+    CollisionBoxDefinition() = delete;
+#endif
 
 public:
-
     MCAPI void setHeight(float const&);
     MCAPI void setWidth(float const&);
-    MCAPI static void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct CollisionBoxDefinition> >&);
-    MCAPI static float const mBoxEpsilon;
 
 protected:
-
 
 private:
 

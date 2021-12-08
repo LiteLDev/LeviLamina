@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterTest.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FilterTestDimensionWeather : public FilterTest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTDIMENSIONWEATHER
+public:
+    class FilterTestDimensionWeather& operator=(class FilterTestDimensionWeather const&) = delete;
+    FilterTestDimensionWeather(class FilterTestDimensionWeather const&) = delete;
+    FilterTestDimensionWeather() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FilterTestDimensionWeather();
@@ -26,10 +32,7 @@ public:
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeValue() const;
 
-
-
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourceLoader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCELOADER
+public:
+    class ResourceLoader& operator=(class ResourceLoader const&) = delete;
+    ResourceLoader(class ResourceLoader const&) = delete;
+    ResourceLoader() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourceLoader();
@@ -30,7 +36,6 @@ public:
     /*9*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&) const;
     /*10*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
     /*11*/ virtual struct std::pair<int, std::string const& > getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
-
     /*
     inline bool isInStreamableLocation(class ResourceLocation const& a0, std::vector<std::string> const& a1) const{
         bool (ResourceLoader::*rv)(class ResourceLocation const&, std::vector<std::string> const&) const;
@@ -49,9 +54,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

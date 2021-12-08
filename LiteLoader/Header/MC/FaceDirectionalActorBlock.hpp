@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FaceDirectionalActorBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FACEDIRECTIONALACTORBLOCK
+public:
+    class FaceDirectionalActorBlock& operator=(class FaceDirectionalActorBlock const&) = delete;
+    FaceDirectionalActorBlock(class FaceDirectionalActorBlock const&) = delete;
+    FaceDirectionalActorBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FaceDirectionalActorBlock();
@@ -131,7 +137,6 @@ public:
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
     /*112*/ virtual void __unk_vfn_33();
-
     /*
     inline  ~FaceDirectionalActorBlock(){
          (FaceDirectionalActorBlock::*rv)();
@@ -139,11 +144,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI FaceDirectionalActorBlock(std::string const&, int, class Material const&, bool, float);
 
 protected:
-
 
 private:
 

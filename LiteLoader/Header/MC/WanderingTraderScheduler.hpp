@@ -3,30 +3,33 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WanderingTraderScheduler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WANDERINGTRADERSCHEDULER
+public:
+    class WanderingTraderScheduler& operator=(class WanderingTraderScheduler const&) = delete;
+    WanderingTraderScheduler(class WanderingTraderScheduler const&) = delete;
+    WanderingTraderScheduler() = delete;
+#endif
 
 public:
-
     MCAPI void readSaveData();
     MCAPI void tick();
     MCAPI void writeSaveData() const;
 
 protected:
 
-
 private:
-
     MCAPI bool _doesWanderingTraderExist() const;
     MCAPI class std::optional<class BlockPos> _findClosestSpawnablePositionInColumn(class BlockPos const&, class BlockSource&);
     MCAPI class Actor* _getRandomPlayerInOverworld() const;
@@ -39,4 +42,5 @@ private:
     MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER;
     MCAPI static int const DISTANCE_IN_BLOCKS_FROM_PLAYER_SQUARE;
     MCAPI static int const LENGTH_OF_DAY_IN_TICKS;
+
 };

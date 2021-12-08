@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 #include "LevelStorageWriteBatch.hpp"
 #include "LevelStorage.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DBStorage : public LevelStorage {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct PendingWriteResult {
@@ -24,7 +23,14 @@ struct PendingWriteResult {
     PendingWriteResult(PendingWriteResult const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DBSTORAGE
+public:
+    class DBStorage& operator=(class DBStorage const&) = delete;
+    DBStorage(class DBStorage const&) = delete;
+    DBStorage() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DBStorage();
@@ -58,7 +64,6 @@ public:
     /*28*/ virtual void setCompactionCallback(class std::function<void (int /*enum enum CompactionStatus*/)>);
     /*29*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*30*/ virtual void corruptLevel();
-
     /*
     inline  ~DBStorage(){
          (DBStorage::*rv)();
@@ -76,12 +81,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI DBStorage(struct DBStorageConfig);
     MCAPI bool tryRepair(class Core::Path const&) const;
 
 protected:
-
     MCAPI struct std::pair<class LevelStorageWriteBatch* , class std::_Tree_iterator<class std::_Tree_val<struct std::_Tree_simple_types<struct std::pair<std::string const, struct LevelStorageWriteBatch::BatchEntry> > > > > _findCacheEntry(std::string const&);
     MCAPI class std::map<std::string, struct DBStorage::PendingWriteResult, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, struct DBStorage::PendingWriteResult> > > _getAllPendingWrites() const;
     MCAPI void _handleErrorStatus(class leveldb::Status const&);
@@ -91,10 +94,10 @@ protected:
     MCAPI struct DBStorage::PendingWriteResult _readPendingWrite(std::string const&, enum DBHelpers::Category) const;
 
 private:
-
     MCAPI class TaskResult _flushWriteCacheToLevelDB();
     MCAPI std::string _getTelemetryMessage(class leveldb::Status const&) const;
     MCAPI void _markAsCorrupted(class gsl::basic_string_span<char const, -1>) const;
     MCAPI void _scheduleNextAutoCompaction();
     MCAPI bool _suspendAndPerformSaveAction(class std::function<class TaskResult (void)>, class std::function<void (void)>);
+
 };

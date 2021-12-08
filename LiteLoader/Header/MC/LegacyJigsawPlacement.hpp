@@ -3,30 +3,34 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyJigsawPlacement {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYJIGSAWPLACEMENT
+public:
+    class LegacyJigsawPlacement& operator=(class LegacyJigsawPlacement const&) = delete;
+    LegacyJigsawPlacement(class LegacyJigsawPlacement const&) = delete;
+    LegacyJigsawPlacement() = delete;
+#endif
 
 public:
-
     MCAPI LegacyJigsawPlacement(int, class std::function<std::unique_ptr<class PoolElementStructurePiece> (class StructurePoolElement const& , class BlockPos const& , enum Rotation const& , int, struct JigsawJunction& , class BoundingBox const& , class BlockPos const& )>);
     MCAPI void addPieces(std::vector<std::unique_ptr<class StructurePiece>>&, class StructurePoolElement const&, class Random&, class BlockPos const&, enum Rotation const&, class JigsawStructureRegistry const&, class Dimension&);
     MCAPI ~LegacyJigsawPlacement();
 
 protected:
 
-
 private:
-
     MCAPI void _addPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class PoolElementStructurePiece const&, class Random&, class BlockPos const&, enum Rotation const&, class JigsawStructureRegistry const&, class Dimension&, class BlockVolume&, class BlockPos const&);
     MCAPI bool _tryPlacingPiece(std::vector<std::unique_ptr<class StructurePiece>>&, class PoolElementStructurePiece const&, class Random&, class JigsawBlockInfo const&, class BoundingBox const&, std::vector<class BoundingBox>&, class BlockPos const&, class StructureTemplatePool const*, class JigsawStructureRegistry const&, class Dimension&, class BlockVolume&, class BlockPos const&);
+
 };

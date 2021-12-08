@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GrassBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GRASSBLOCK
+public:
+    class GrassBlock& operator=(class GrassBlock const&) = delete;
+    GrassBlock(class GrassBlock const&) = delete;
+    GrassBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GrassBlock();
@@ -138,7 +144,6 @@ public:
     /*117*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*118*/ virtual void __unk_vfn_32();
     /*119*/ virtual void __unk_vfn_33();
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (GrassBlock::*rv)() const;
@@ -146,16 +151,14 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI GrassBlock(std::string const&, int);
     MCAPI bool fertilize(class BlockSource&, class BlockPos const&, class Randomize&) const;
     MCAPI static struct Brightness const MIN_BRIGHTNESS;
 
 protected:
 
-
 private:
-
     MCAPI bool _canBeGrass(class BlockSource const&, class BlockPos const&) const;
     MCAPI bool _plantGrass(class BlockSource&, class BlockPos const&, class Randomize&) const;
+
 };

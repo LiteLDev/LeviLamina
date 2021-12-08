@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DateManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum TimeZoneType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DATEMANAGER
+public:
+    class DateManager& operator=(class DateManager const&) = delete;
+    DateManager(class DateManager const&) = delete;
+    DateManager() = delete;
+#endif
 
 public:
-
     MCAPI static std::string getCurrentTimestampFileName();
     MCAPI static __int64 getRealTime();
     MCAPI static struct tm toDateTime(__int64, enum DateManager::TimeZoneType);
@@ -29,7 +34,6 @@ public:
     MCAPI static std::string toString_DateTime(__int64 const&, enum DateManager::TimeZoneType);
 
 protected:
-
 
 private:
 

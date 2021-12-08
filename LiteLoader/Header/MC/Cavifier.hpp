@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Cavifier {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAVIFIER
+public:
+    class Cavifier& operator=(class Cavifier const&) = delete;
+    Cavifier(class Cavifier const&) = delete;
+    Cavifier() = delete;
+#endif
 
 public:
-
     MCAPI Cavifier(class CavifierNoises const&, float, float);
     MCAPI float cavify(class Vec3, int, float) const;
 
 protected:
 
-
 private:
-
     MCAPI float _getSpaghetti2d(class Vec3) const;
+
 };

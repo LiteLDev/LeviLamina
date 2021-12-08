@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConcretePowderBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONCRETEPOWDERBLOCK
+public:
+    class ConcretePowderBlock& operator=(class ConcretePowderBlock const&) = delete;
+    ConcretePowderBlock(class ConcretePowderBlock const&) = delete;
+    ConcretePowderBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ConcretePowderBlock();
@@ -140,14 +146,11 @@ public:
     /*119*/ virtual std::string getDustParticleName(class Block const&) const;
     /*120*/ virtual void __unk_vfn_34();
     /*121*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-
-
     MCAPI ConcretePowderBlock(std::string const&, int);
 
 protected:
 
-
 private:
-
     MCAPI bool _tryTouchWater(class BlockSource&, class BlockPos const&, class std::optional<enum BlockColor>) const;
+
 };

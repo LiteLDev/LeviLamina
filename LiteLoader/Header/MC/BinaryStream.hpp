@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ReadOnlyBinaryStream.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BinaryStream : public ReadOnlyBinaryStream {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     std::string writeBuf, *pwBuf;
@@ -20,11 +19,16 @@ public:
     LIAPI void reserve(size_t size);
     LIAPI std::string& getRaw();
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BINARYSTREAM
+public:
+    class BinaryStream& operator=(class BinaryStream const&) = delete;
+    BinaryStream(class BinaryStream const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BinaryStream();
-
     /*
     inline  ~BinaryStream(){
          (BinaryStream::*rv)();
@@ -32,7 +36,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BinaryStream(std::string&, bool);
     MCAPI BinaryStream();
     MCAPI std::string getAndReleaseData();
@@ -57,8 +60,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void write(void const*, unsigned __int64);
+
 };

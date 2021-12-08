@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptActorGameplayHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTACTORGAMEPLAYHANDLER
+public:
+    class ScriptActorGameplayHandler& operator=(class ScriptActorGameplayHandler const&) = delete;
+    ScriptActorGameplayHandler(class ScriptActorGameplayHandler const&) = delete;
+    ScriptActorGameplayHandler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptActorGameplayHandler();
-
     /*
     inline int \/*enum enum HandlerResult*\/ handleMountTaming(struct MountTamingEvent const& a0){
         int \/*enum enum HandlerResult*\/ (ScriptActorGameplayHandler::*rv)(struct MountTamingEvent const&);
@@ -87,9 +92,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

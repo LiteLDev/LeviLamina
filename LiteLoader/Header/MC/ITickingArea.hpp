@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ITickingArea {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITICKINGAREA
+public:
+    class ITickingArea& operator=(class ITickingArea const&) = delete;
+    ITickingArea(class ITickingArea const&) = delete;
+    ITickingArea() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ITickingArea();
-
     /*
     inline  ~ITickingArea(){
          (ITickingArea::*rv)();
@@ -26,11 +31,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
 
 protected:
-
 
 private:
 

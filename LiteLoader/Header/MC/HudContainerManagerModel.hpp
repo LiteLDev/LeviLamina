@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerManagerModel.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HudContainerManagerModel : public ContainerManagerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HUDCONTAINERMANAGERMODEL
+public:
+    class HudContainerManagerModel& operator=(class HudContainerManagerModel const&) = delete;
+    HudContainerManagerModel(class HudContainerManagerModel const&) = delete;
+    HudContainerManagerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual ~HudContainerManagerModel();
@@ -29,12 +35,9 @@ public:
     /*8*/ virtual void setData(int, int);
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual class ContainerScreenContext _postInit();
-
-
     MCAPI HudContainerManagerModel(enum ContainerID, class Player&);
 
 protected:
-
 
 private:
 

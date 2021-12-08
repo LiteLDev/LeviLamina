@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDEFINITION
+public:
+    class ActorDefinition& operator=(class ActorDefinition const&) = delete;
+    ActorDefinition(class ActorDefinition const&) = delete;
+    ActorDefinition() = delete;
+#endif
 
 public:
-
     MCAPI ActorDefinition(std::string const&);
     MCAPI void parse(struct DeserializeDataParams, class ActorDefinitionDescriptor&, class ActorFactory&, enum LogArea);
     MCAPI void parseAttributes(struct DeserializeDataParams, class ActorDefinitionDescriptor&);
@@ -29,7 +34,6 @@ public:
     MCAPI ~ActorDefinition();
 
 protected:
-
 
 private:
 

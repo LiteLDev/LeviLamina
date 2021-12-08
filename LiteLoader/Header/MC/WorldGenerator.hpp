@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WorldGenerator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct BlockVolumeDimensions {
@@ -20,12 +19,17 @@ struct BlockVolumeDimensions {
     BlockVolumeDimensions(BlockVolumeDimensions const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WORLDGENERATOR
+public:
+    class WorldGenerator& operator=(class WorldGenerator const&) = delete;
+    WorldGenerator(class WorldGenerator const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~WorldGenerator();
     /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
-
     /*
     inline void debugRender(){
         void (WorldGenerator::*rv)();
@@ -43,13 +47,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WorldGenerator();
     MCAPI static enum StructureFeatureType getFeatureId(std::string const&);
     MCAPI static class gsl::basic_string_span<char const, -1> getFeatureName(enum StructureFeatureType);
 
 protected:
-
     MCAPI static unsigned __int64 const TICKING_QUEUE_PASS_LIMIT;
 
 private:

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DragonScanningGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DRAGONSCANNINGGOAL
+public:
+    class DragonScanningGoal& operator=(class DragonScanningGoal const&) = delete;
+    DragonScanningGoal(class DragonScanningGoal const&) = delete;
+    DragonScanningGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DragonScanningGoal();
@@ -25,16 +31,13 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI DragonScanningGoal(class EnderDragon&);
 
 protected:
 
-
 private:
-
     MCAPI static float SITTING_ATTACK_VIEW_RANGE;
     MCAPI static float SITTING_CHARGE_VIEW_RANGE;
     MCAPI static int SITTING_SCANNING_IDLE_TICKS;
+
 };

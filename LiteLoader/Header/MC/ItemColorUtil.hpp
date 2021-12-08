@@ -3,20 +3,20 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ItemColorUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI enum ItemColor fromBlockColor(enum BlockColor);
     MCAPI enum ItemColor fromInt(int);
     MCAPI std::string const& getName(enum ItemColor);
     MCAPI int getRGBColor(enum ItemColor);
+
 };

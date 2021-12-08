@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct BiomeMetadata {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEMETADATA
+public:
+    struct BiomeMetadata& operator=(struct BiomeMetadata const&) = delete;
+    BiomeMetadata(struct BiomeMetadata const&) = delete;
+    BiomeMetadata() = delete;
+#endif
 
 public:
-
     MCAPI ~BiomeMetadata();
 
 protected:
-
 
 private:
 

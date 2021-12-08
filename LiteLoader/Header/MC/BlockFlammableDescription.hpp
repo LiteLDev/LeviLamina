@@ -3,26 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct BlockFlammableDescription {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKFLAMMABLEDESCRIPTION
+public:
+    struct BlockFlammableDescription& operator=(struct BlockFlammableDescription const&) = delete;
+    BlockFlammableDescription(struct BlockFlammableDescription const&) = delete;
+    BlockFlammableDescription() = delete;
+#endif
 
 public:
 
-    MCAPI static std::string const NameID;
-    MCAPI static void bindType();
-
 protected:
-
 
 private:
 

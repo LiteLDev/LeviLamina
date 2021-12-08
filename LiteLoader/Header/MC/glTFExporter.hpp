@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class glTFExporter {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLTFEXPORTER
+public:
+    class glTFExporter& operator=(class glTFExporter const&) = delete;
+    glTFExporter(class glTFExporter const&) = delete;
+    glTFExporter() = delete;
+#endif
 
 public:
-
     MCAPI static class gsl::basic_string_span<char const, -1> const BINARY_EXTENSION;
     MCAPI static class gsl::basic_string_span<char const, -1> const GLB_BUFFER_URI;
     MCAPI static class gsl::basic_string_span<char const, -1> const GLB_EXTENSION;
     MCAPI static class gsl::basic_string_span<char const, -1> const GLTF_EXTENSION;
 
 protected:
-
 
 private:
 

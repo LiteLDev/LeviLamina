@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Pillager : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PILLAGER
+public:
+    class Pillager& operator=(class Pillager const&) = delete;
+    Pillager(class Pillager const&) = delete;
+    Pillager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Pillager();
@@ -88,7 +94,6 @@ public:
     /*66*/ virtual void _serverAiMobStep();
     /*67*/ virtual void __unk_vfn_25();
     /*68*/ virtual bool isDarkEnoughToSpawn() const;
-
     /*
     inline void updateEntitySpecificMolangVariables(class RenderParams& a0){
         void (Pillager::*rv)(class RenderParams&);
@@ -96,11 +101,9 @@ public:
         return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
-
     MCAPI Pillager(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

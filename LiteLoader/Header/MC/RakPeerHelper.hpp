@@ -2,31 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "RakNet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakPeerHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKPEERHELPER
+public:
+    class RakPeerHelper& operator=(class RakPeerHelper const&) = delete;
+    RakPeerHelper(class RakPeerHelper const&) = delete;
+    RakPeerHelper() = delete;
+#endif
 
 public:
-
     MCAPI enum RakNet::StartupResult peerStartup(class RakNet::RakPeerInterface*, struct ConnectionDefinition const&);
 
 protected:
 
-
 private:
-
     MCAPI void LogIPSupport();
     MCAPI void _resetToIPv6Only(class gsl::span<struct RakNet::SocketDescriptor, 2>, int&);
     MCAPI enum RakNet::StartupResult _startupInternal(class gsl::not_null<class RakNet::RakPeerInterface* >, struct ConnectionDefinition const&, struct RakNet::SocketDescriptor*, int&, int);
+
 };

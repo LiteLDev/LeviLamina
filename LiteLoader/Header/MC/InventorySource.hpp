@@ -3,26 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InventorySource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYSOURCE
+public:
+    class InventorySource& operator=(class InventorySource const&) = delete;
+    InventorySource(class InventorySource const&) = delete;
+    InventorySource() = delete;
+#endif
 
 public:
-
     MCAPI bool operator==(class InventorySource const&);
     MCAPI std::string toString() const;
 
 protected:
-
 
 private:
 

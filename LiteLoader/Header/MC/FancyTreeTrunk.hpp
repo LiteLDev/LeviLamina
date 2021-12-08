@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TreeHelper.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FancyTreeTrunk {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class FoliageCoords {
@@ -22,20 +21,24 @@ public:
     FoliageCoords(FoliageCoords const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FANCYTREETRUNK
+public:
+    class FancyTreeTrunk& operator=(class FancyTreeTrunk const&) = delete;
+    FancyTreeTrunk(class FancyTreeTrunk const&) = delete;
+    FancyTreeTrunk() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FancyTreeTrunk();
     /*1*/ virtual class std::optional<class BlockPos> placeTrunk(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&, struct TreeHelper::TreeParams const&, class ITreeCanopy const*) const;
 
-
-
 protected:
 
-
 private:
-
     MCAPI int _checkLine(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&, struct TreeHelper::TreeParams const&) const;
     MCAPI void _placeBranches(class IBlockWorldGenAPI&, class BlockPos const&, int, std::vector<class FancyTreeTrunk::FoliageCoords> const&) const;
     MCAPI void _placeLimb(class IBlockWorldGenAPI&, class BlockPos const&, class BlockPos const&) const;
+
 };

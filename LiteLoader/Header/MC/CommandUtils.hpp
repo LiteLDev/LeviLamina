@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace CommandUtils {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern std::vector<struct std::pair<std::string, char>> const CMD_INPUT_UNICODE_TRANSLATE_MAP;
     MCAPI bool addItemInstanceComponents(class ItemInstance&, class Json::Value const&, std::string&);
     MCAPI void addtoCSVList(std::string&, std::string const&);
@@ -41,4 +40,5 @@ namespace CommandUtils {
     MCAPI class Actor* spawnEntityAt(class BlockSource&, class Vec3 const&, struct ActorDefinitionIdentifier const&, struct ActorUniqueID&, class Actor*);
     MCAPI std::string toJsonResult(std::string const&, class Json::Value const&);
     MCAPI std::string const validatePath(class CommandOutput&, class CommandFilePath const&);
+
 };

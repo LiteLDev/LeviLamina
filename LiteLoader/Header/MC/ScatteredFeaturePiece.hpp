@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScatteredFeaturePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCATTEREDFEATUREPIECE
+public:
+    class ScatteredFeaturePiece& operator=(class ScatteredFeaturePiece const&) = delete;
+    ScatteredFeaturePiece(class ScatteredFeaturePiece const&) = delete;
+    ScatteredFeaturePiece() = delete;
+#endif
 
 public:
     /*
@@ -25,9 +31,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI bool updateAverageGroundHeight(class BlockSource&, class BoundingBox const&, int);
 
 private:

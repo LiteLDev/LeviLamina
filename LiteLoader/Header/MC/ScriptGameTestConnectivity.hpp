@@ -3,24 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptGameTestConnectivity {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTGAMETESTCONNECTIVITY
+public:
+    class ScriptGameTestConnectivity& operator=(class ScriptGameTestConnectivity const&) = delete;
+    ScriptGameTestConnectivity() = delete;
+#endif
 
 public:
-
     MCAPI ScriptGameTestConnectivity(class ScriptGameTestConnectivity const&);
     MCAPI ScriptGameTestConnectivity(bool, bool, bool, bool);
 
 protected:
-
 
 private:
 

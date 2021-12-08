@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChemistryTableBlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHEMISTRYTABLEBLOCKACTOR
+public:
+    class ChemistryTableBlockActor& operator=(class ChemistryTableBlockActor const&) = delete;
+    ChemistryTableBlockActor(class ChemistryTableBlockActor const&) = delete;
+    ChemistryTableBlockActor() = delete;
+#endif
 
 public:
     /*
@@ -84,7 +90,6 @@ public:
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
     */
-
     MCAPI bool isSameType(enum ChemistryTableType) const;
     MCAPI void playerOpenLabTable(class Player&);
     MCAPI void reset(class BlockSource&);
@@ -93,10 +98,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class LabTableReaction> _createReaction(class Random&, std::vector<class ItemStack> const&);
     MCAPI void _popPendingReactionOutput(class BlockSource&);
     MCAPI enum ChemistryTableType _updateType(class BlockSource&);
+
 };

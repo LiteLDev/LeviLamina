@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorFactory {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORFACTORY
+public:
+    class ActorFactory& operator=(class ActorFactory const&) = delete;
+    ActorFactory(class ActorFactory const&) = delete;
+    ActorFactory() = delete;
+#endif
 
 public:
-
     MCAPI ActorFactory(class gsl::not_null<class Bedrock::NonOwnerPointer<class Level> >);
     MCAPI void applyEntityInitializer(struct ActorDefinitionIdentifier const&, class EntityContext&) const;
     MCAPI std::vector<struct std::pair<std::string, struct ActorDefinitionIdentifier const* >> buildSummonEntityTypeEnum(class Experiments const&) const;
@@ -39,9 +44,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _buildSummonableActorList(class Experiments const&, class std::function<void (std::string const& , struct ActorFactoryData const& )>) const;
     MCAPI class OwnerPtrT<struct EntityRefTraits> _constructActor(struct ActorDefinitionIdentifier const&, class Vec3 const&, class Vec2 const&) const;
     MCAPI void _initPropertiesOnActor(class Actor&) const;
@@ -49,4 +52,5 @@ private:
     MCAPI void _loadDefinitionsHelper();
     MCAPI bool _validateActorData(class CompoundTag&, struct ActorDefinitionIdentifier&, class Vec3&, class LevelChunk const*) const;
     MCAPI static std::vector<struct VanillaActorData> builtinEntityMappings;
+
 };

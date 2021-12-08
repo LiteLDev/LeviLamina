@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RespawnAnchorBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNANCHORBLOCK
+public:
+    class RespawnAnchorBlock& operator=(class RespawnAnchorBlock const&) = delete;
+    RespawnAnchorBlock(class RespawnAnchorBlock const&) = delete;
+    RespawnAnchorBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RespawnAnchorBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isInteractiveBlock() const{
         bool (RespawnAnchorBlock::*rv)() const;
@@ -152,16 +157,14 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI RespawnAnchorBlock(std::string const&, int);
     MCAPI static bool addItem(class Container&, int, class ItemStack&, class BlockSource&, class Block const&, class BlockPos const&);
 
 protected:
 
-
 private:
-
     MCAPI static bool bumpCharge(class BlockSource&, class BlockPos const&, short);
     MCAPI static void explode(class Player&, class BlockPos const&, class BlockSource&, class Level&);
     MCAPI static bool trySetSpawn(class Player&, class BlockPos const&, class BlockSource&, class Level&);
+
 };

@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class JournaledFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_JOURNALEDFILE
+public:
+    class JournaledFile& operator=(class JournaledFile const&) = delete;
+    JournaledFile(class JournaledFile const&) = delete;
+    JournaledFile() = delete;
+#endif
 
 public:
-
     MCAPI JournaledFile(class std::function<class Core::Result (class Core::Path)>&&);
     MCAPI class Core::Result open(class Core::Path, class Core::FileOpenMode, enum Core::FileBufferingMode);
     MCAPI class Core::Result write(void const*, unsigned __int64);
@@ -31,8 +36,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _flushFiles();
+
 };

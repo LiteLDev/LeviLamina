@@ -3,19 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace CerealHelpers {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void bindVec3();
     MCAPI bool deserializeToVec3(class Vec3&, class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI bool serializeFromVec3(class Vec3 const&, class BasicSaver&, struct SerializerTraits const&);
+
 };

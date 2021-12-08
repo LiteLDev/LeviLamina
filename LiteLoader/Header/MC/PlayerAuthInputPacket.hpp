@@ -2,22 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerAuthInputPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum InputData;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERAUTHINPUTPACKET
+public:
+    class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket const&) = delete;
+    PlayerAuthInputPacket(class PlayerAuthInputPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PlayerAuthInputPacket();
@@ -26,7 +31,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~PlayerAuthInputPacket(){
          (PlayerAuthInputPacket::*rv)();
@@ -34,7 +38,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
     MCAPI PlayerAuthInputPacket();
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
@@ -43,7 +46,6 @@ public:
     MCAPI class PlayerAuthInputPacket takeCopy() const;
 
 protected:
-
 
 private:
 

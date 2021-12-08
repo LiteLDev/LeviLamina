@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CompactionListenerEnv {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPACTIONLISTENERENV
+public:
+    class CompactionListenerEnv& operator=(class CompactionListenerEnv const&) = delete;
+    CompactionListenerEnv(class CompactionListenerEnv const&) = delete;
+    CompactionListenerEnv() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CompactionListenerEnv();
@@ -33,10 +39,7 @@ public:
     /*13*/ virtual void __unk_vfn_12();
     /*14*/ virtual void Schedule(void (* )(void* ), void*);
 
-
-
 protected:
-
 
 private:
 

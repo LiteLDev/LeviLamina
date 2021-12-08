@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct Token {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TOKEN
+public:
+    struct Token& operator=(struct Token const&) = delete;
+    Token(struct Token const&) = delete;
+    Token() = delete;
+#endif
 
 public:
-
     MCAPI Token(std::string const&);
     MCAPI std::string const& getText(std::string const&) const;
     MCAPI ~Token();
-    MCAPI static std::vector<struct Token> tokenize(std::string const&);
 
 protected:
-
     MCAPI bool _parseRandom();
 
 private:

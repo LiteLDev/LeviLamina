@@ -2,21 +2,20 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ServerPlayerBlockUseHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 enum PredictionValidationError;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError getErrorForRejectedRequest(class ServerPlayer&, class ItemStackRequestActionMineBlock const&);
     MCAPI void onAbortDestroyBlock(class ServerPlayer&, class BlockPos const&, int);
     MCAPI void onBeforeMovementSimulation(class ServerPlayer&, class PlayerBlockActions const&, std::unique_ptr<class ItemStackRequestData>, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
@@ -25,4 +24,5 @@ enum PredictionValidationError;
     MCAPI void onStopDestroyBlock(class ServerPlayer&);
     MCAPI void serverTickBlockBreaking(class ServerPlayer&, class BlockPos const&, int);
     MCAPI enum ServerPlayerBlockUseHandler::PredictionValidationError validateClientBlockBreakPrediction(class ServerPlayer&, class ItemStackRequestActionMineBlock const*, class BlockPos const&, class ItemStack const&, class ItemStack const&, struct PlayerBlockActionData const*);
+
 };

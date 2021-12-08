@@ -2,32 +2,35 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructureStart.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EndCityStart : public StructureStart {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDCITYSTART
+public:
+    class EndCityStart& operator=(class EndCityStart const&) = delete;
+    EndCityStart(class EndCityStart const&) = delete;
+    EndCityStart() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EndCityStart();
     /*1*/ virtual bool isValid() const;
     /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
-
-
     MCAPI EndCityStart(class Dimension&, class TheEndGenerator&, class Random&, class ChunkPos const&);
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);
 
 protected:
-
 
 private:
 

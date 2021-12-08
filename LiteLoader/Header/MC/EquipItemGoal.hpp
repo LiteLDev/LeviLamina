@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EquipItemGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EQUIPITEMGOAL
+public:
+    class EquipItemGoal& operator=(class EquipItemGoal const&) = delete;
+    EquipItemGoal(class EquipItemGoal const&) = delete;
+    EquipItemGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EquipItemGoal();
@@ -25,14 +31,11 @@ public:
     /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI EquipItemGoal(class Mob&);
 
 protected:
 
-
 private:
-
     MCAPI void _dropItem(class ItemStack const&) const;
+
 };

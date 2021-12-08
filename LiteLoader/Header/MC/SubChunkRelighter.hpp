@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SubChunkRelighter {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKRELIGHTER
+public:
+    class SubChunkRelighter& operator=(class SubChunkRelighter const&) = delete;
+    SubChunkRelighter(class SubChunkRelighter const&) = delete;
+    SubChunkRelighter() = delete;
+#endif
 
 public:
-
     MCAPI struct SubChunk* _getAbsorption(struct SubChunkLightIndex, unsigned char&) const;
     MCAPI void _propagateBlockLight(struct SubChunkLightIndex, unsigned char);
     MCAPI void _propagateBlockLight();
@@ -41,9 +46,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI struct SubChunk* _dirtySubChunk(struct SubChunkLightIndex, unsigned int&);
     MCAPI unsigned char _getLight(struct SubChunkLightIndex);
     MCAPI static class std::bitset<196608> mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits;
@@ -52,4 +55,5 @@ private:
     MCAPI static struct SubChunk sFullyDarkSubChunk;
     MCAPI static struct SubChunk sFullyLitSubChunk;
     MCAPI static class SpinLock sLitSpinLock;
+
 };

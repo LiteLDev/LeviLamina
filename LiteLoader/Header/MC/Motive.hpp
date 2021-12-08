@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Motive {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOTIVE
+public:
+    class Motive& operator=(class Motive const&) = delete;
+    Motive(class Motive const&) = delete;
+    Motive() = delete;
+#endif
 
 public:
-
     MCAPI std::string const getName() const;
     MCAPI static std::vector<class Motive const* > getAllMotivesAsList();
     MCAPI static class Motive const& getMotiveByName(std::string const&);
@@ -54,7 +59,6 @@ public:
     MCAPI static class Motive const mWither;
 
 protected:
-
 
 private:
 

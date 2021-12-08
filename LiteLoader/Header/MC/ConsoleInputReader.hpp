@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConsoleInputReader {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONSOLEINPUTREADER
+public:
+    class ConsoleInputReader& operator=(class ConsoleInputReader const&) = delete;
+    ConsoleInputReader(class ConsoleInputReader const&) = delete;
+#endif
 
 public:
-
     MCAPI ConsoleInputReader();
     MCAPI bool getLine(std::string&);
     MCAPI void unblockReading();
     MCAPI ~ConsoleInputReader();
 
 protected:
-
 
 private:
 

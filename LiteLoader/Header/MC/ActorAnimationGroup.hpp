@@ -2,23 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorAnimationGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORANIMATIONGROUP
+public:
+    class ActorAnimationGroup& operator=(class ActorAnimationGroup const&) = delete;
+    ActorAnimationGroup(class ActorAnimationGroup const&) = delete;
+#endif
 
 public:
-
     MCAPI ActorAnimationGroup();
     MCAPI class ActorSkeletalAnimationPtr getActorAnimation(class HashedString const&);
     MCAPI class std::shared_ptr<class ActorAnimationInfo> getActorAnimationInfo(class HashedString const&);
@@ -27,7 +31,6 @@ public:
     MCAPI ~ActorAnimationGroup();
 
 protected:
-
 
 private:
 

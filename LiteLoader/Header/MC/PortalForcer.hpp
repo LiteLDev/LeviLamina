@@ -3,25 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PortalForcer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PORTALFORCER
+public:
+    class PortalForcer& operator=(class PortalForcer const&) = delete;
+    PortalForcer(class PortalForcer const&) = delete;
+    PortalForcer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PortalForcer();
     /*1*/ virtual void deserialize(class CompoundTag const&);
     /*2*/ virtual void serialize(class CompoundTag&) const;
-
-
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalShape const&);
     MCAPI class PortalRecord const& addPortalRecord(class AutomaticID<class Dimension, int>, class PortalRecord);
     MCAPI class PortalRecord const& createPortal(class Actor const&, int);
@@ -34,7 +38,6 @@ public:
     MCAPI static std::string const PORTAL_FILE_ID;
 
 protected:
-
 
 private:
 

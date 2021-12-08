@@ -2,34 +2,37 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChunkLocalNoiseCache.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct OverworldNoises3d {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDNOISES3D
+public:
+    struct OverworldNoises3d& operator=(struct OverworldNoises3d const&) = delete;
+    OverworldNoises3d(struct OverworldNoises3d const&) = delete;
+    OverworldNoises3d() = delete;
+#endif
 
 public:
-
     MCAPI OverworldNoises3d(std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>);
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const&) const;
     MCAPI struct std::pair<float, float> computeOffsetAndFactor(class DividedPos2d<4> const&) const;
     MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const&) const;
     MCAPI struct TargetPoint sample(class BlockPos) const;
-    MCAPI static float computeInitialDensity(int, float, float, float);
 
 protected:
 
-
 private:
-
     MCAPI struct ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(class DividedPos2d<4> const&) const;
+
 };

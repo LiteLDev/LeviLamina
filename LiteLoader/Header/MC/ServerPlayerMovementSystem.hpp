@@ -3,31 +3,34 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerPlayerMovementSystem {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERPLAYERMOVEMENTSYSTEM
+public:
+    class ServerPlayerMovementSystem& operator=(class ServerPlayerMovementSystem const&) = delete;
+    ServerPlayerMovementSystem(class ServerPlayerMovementSystem const&) = delete;
+    ServerPlayerMovementSystem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerPlayerMovementSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
-
-
     MCAPI static void _foreachTransactionPacket(struct PlayerActionComponent const&, bool, class std::function<void (class InventoryTransactionPacket& )> const&);
     MCAPI static void _tickPlayerMovement(struct PlayerCurrentTickComponent const&, struct ServerPlayerMovementComponent&, class std::function<void (class PlayerAuthInputPacket const& )> const&);
     MCAPI static void onPlayerAuthInputPacket(struct ServerPlayerMovementComponent&, class PlayerAuthInputPacket const&);
 
 protected:
-
 
 private:
 

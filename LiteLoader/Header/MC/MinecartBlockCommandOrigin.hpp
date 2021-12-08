@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "BlockCommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecartBlockCommandOrigin : public BlockCommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECARTBLOCKCOMMANDORIGIN
+public:
+    class MinecartBlockCommandOrigin& operator=(class MinecartBlockCommandOrigin const&) = delete;
+    MinecartBlockCommandOrigin(class MinecartBlockCommandOrigin const&) = delete;
+    MinecartBlockCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MinecartBlockCommandOrigin();
@@ -41,13 +47,10 @@ public:
     /*19*/ virtual bool isValid() const;
     /*20*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*21*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
-
-
     MCAPI MinecartBlockCommandOrigin(class BlockSource&, struct ActorUniqueID const&);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:
-
 
 private:
 

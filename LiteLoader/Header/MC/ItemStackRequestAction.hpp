@@ -3,25 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestAction {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTION
+public:
+    class ItemStackRequestAction& operator=(class ItemStackRequestAction const&) = delete;
+    ItemStackRequestAction(class ItemStackRequestAction const&) = delete;
+    ItemStackRequestAction() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackRequestAction();
     /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /*2*/ virtual int getFilteredStringIndex() const;
     /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
-
     /*
     inline  ~ItemStackRequestAction(){
          (ItemStackRequestAction::*rv)();
@@ -29,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemStackRequestAction(enum ItemStackRequestActionType);
     MCAPI enum ItemStackRequestActionType getActionType() const;
     MCAPI static std::string const getActionTypeName(enum ItemStackRequestActionType);
@@ -37,8 +41,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class BidirectionalUnorderedMap<enum ItemStackRequestActionType, std::string > const actionTypeMap;
+
 };

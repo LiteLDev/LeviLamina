@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class ServerPlayer;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 LIAPI ServerPlayer* getPlayer() const;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDORIGIN
+public:
+    class CommandOrigin& operator=(class CommandOrigin const&) = delete;
+    CommandOrigin(class CommandOrigin const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~CommandOrigin();
@@ -51,8 +56,6 @@ public:
     /*26*/ virtual class CompoundTag serialize() const;
     /*27*/ virtual bool isValid() const = 0;
     /*28*/ virtual void _setUUID(class mce::UUID const&);
-
-
     MCAPI CommandOrigin();
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&) const;
@@ -61,7 +64,6 @@ public:
     MCAPI static std::unique_ptr<class CommandOrigin> fromCommandOriginData(struct CommandOriginData const&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkIdentifier const&, unsigned char);
 
 protected:
-
     MCAPI static class NetworkIdentifier sUnknownSource;
 
 private:

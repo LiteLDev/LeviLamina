@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScoreboardCommand {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct InitProxy {
@@ -25,12 +24,18 @@ struct SetScoreOutput {
     SetScoreOutput(SetScoreOutput const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREBOARDCOMMAND
+public:
+    class ScoreboardCommand& operator=(class ScoreboardCommand const&) = delete;
+    ScoreboardCommand(class ScoreboardCommand const&) = delete;
+    ScoreboardCommand() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScoreboardCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-
     /*
     inline  ~ScoreboardCommand(){
          (ScoreboardCommand::*rv)();
@@ -38,14 +43,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static void setup(class CommandRegistry&, struct ScoreboardCommand::InitProxy&&);
 
 protected:
 
-
 private:
-
     MCAPI void _generateCumulativeOutput(struct ScoreboardCommand::SetScoreOutput const&, class Objective const&, class CommandOutput&) const;
     MCAPI class Objective* _getObjective(class Scoreboard const&, std::string const&, bool, class CommandOutput&) const;
     MCAPI std::vector<struct ScoreboardId> _getScoreboardIdsForSelector(class Scoreboard&, class WildcardCommandSelector<class Actor> const&, class CommandOrigin const&, class CommandOutput&, bool) const;
@@ -64,4 +66,5 @@ private:
     MCAPI void testPlayerScore(struct ScoreboardId const&, class Objective&, class std::function<std::string const& (struct ActorUniqueID)> const&, class CommandOutput&) const;
     MCAPI static std::vector<std::string> _getNonSortableDisplaySlots(class Scoreboard&);
     MCAPI static std::vector<std::string> _getSortableDisplaySlots(class Scoreboard&);
+
 };

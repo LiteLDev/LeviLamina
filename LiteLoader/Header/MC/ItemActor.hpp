@@ -2,23 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemActor : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     LIAPI int getDespawnTime();
     LIAPI void setDespawnTime(int);
     LIAPI int getLatestSpawnTime();
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMACTOR
+public:
+    class ItemActor& operator=(class ItemActor const&) = delete;
+    ItemActor(class ItemActor const&) = delete;
+    ItemActor() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -102,7 +108,6 @@ public:
     /*78*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual void _onSizeUpdated();
-
     /*
     inline bool canMakeStepSound() const{
         bool (ItemActor::*rv)() const;
@@ -110,19 +115,17 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ItemActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void setSourceEntity(class Actor const*);
     MCAPI static class ItemActor* tryGetFromEntity(class EntityContext&, bool);
 
 protected:
 
-
 private:
-
     MCAPI void _addComponents();
     MCAPI void _dropContents();
     MCAPI bool _merge(class ItemActor*);
     MCAPI void _validateItem();
     MCAPI static int const LIFETIME;
+
 };

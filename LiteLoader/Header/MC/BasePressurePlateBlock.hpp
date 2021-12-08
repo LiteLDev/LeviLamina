@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BasePressurePlateBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASEPRESSUREPLATEBLOCK
+public:
+    class BasePressurePlateBlock& operator=(class BasePressurePlateBlock const&) = delete;
+    BasePressurePlateBlock(class BasePressurePlateBlock const&) = delete;
+    BasePressurePlateBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BasePressurePlateBlock();
@@ -145,7 +151,6 @@ public:
     /*124*/ virtual int getSignalForData(int) const = 0;
     /*125*/ virtual int getRedstoneSignal(int) const = 0;
     /*126*/ virtual class AABB const getSensitiveAABB(class BlockPos const&) const;
-
     /*
     inline bool canSpawnOn() const{
         bool (BasePressurePlateBlock::*rv)() const;
@@ -164,9 +169,7 @@ public:
     }
     */
 
-
 protected:
-
     MCAPI BasePressurePlateBlock(std::string const&, int, class Material const&);
     MCAPI void checkPressed(class BlockSource&, class BlockPos const&, int, int) const;
 

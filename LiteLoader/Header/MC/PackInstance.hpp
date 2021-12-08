@@ -2,24 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PackInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PACKINSTANCE
+public:
+    class PackInstance& operator=(class PackInstance const&) = delete;
+    PackInstance() = delete;
+#endif
 
 public:
-
     MCAPI PackInstance(class PackInstance&&);
     MCAPI PackInstance(class PackInstance const&);
     MCAPI PackInstance(class gsl::not_null<class Bedrock::NonOwnerPointer<class ResourcePack> >, std::string const&, bool, class PackSettings*);
@@ -47,8 +51,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _isPackPointerValid() const;
+
 };

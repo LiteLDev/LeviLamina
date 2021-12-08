@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Squid.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GlowSquid : public Squid {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GLOWSQUID
+public:
+    class GlowSquid& operator=(class GlowSquid const&) = delete;
+    GlowSquid(class GlowSquid const&) = delete;
+    GlowSquid() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GlowSquid();
@@ -90,7 +96,6 @@ public:
     /*68*/ virtual void _serverAiMobStep();
     /*69*/ virtual void __unk_vfn_25();
     /*70*/ virtual int /*enum enum LevelSoundEvent*/ _getInkSquirtSoundEvent() const;
-
     /*
     inline float _getWalkTargetValue(class BlockPos const& a0){
         float (GlowSquid::*rv)(class BlockPos const&);
@@ -98,11 +103,9 @@ public:
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
     */
-
     MCAPI GlowSquid(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

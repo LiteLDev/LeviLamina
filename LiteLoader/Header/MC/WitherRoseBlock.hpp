@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FlowerBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class WitherRoseBlock : public FlowerBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_WITHERROSEBLOCK
+public:
+    class WitherRoseBlock& operator=(class WitherRoseBlock const&) = delete;
+    WitherRoseBlock(class WitherRoseBlock const&) = delete;
+    WitherRoseBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~WitherRoseBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canSpawnOn() const{
         bool (WitherRoseBlock::*rv)() const;
@@ -147,11 +152,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI WitherRoseBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

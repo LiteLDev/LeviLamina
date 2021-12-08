@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ChestBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnderChestBlock : public ChestBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCHESTBLOCK
+public:
+    class EnderChestBlock& operator=(class EnderChestBlock const&) = delete;
+    EnderChestBlock(class EnderChestBlock const&) = delete;
+    EnderChestBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EnderChestBlock();
@@ -125,7 +131,6 @@ public:
     /*104*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*105*/ virtual void __unk_vfn_32();
     /*106*/ virtual void __unk_vfn_33();
-
     /*
     inline bool canBeSilkTouched() const{
         bool (EnderChestBlock::*rv)() const;
@@ -133,11 +138,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI EnderChestBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

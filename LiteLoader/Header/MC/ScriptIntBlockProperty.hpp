@@ -2,24 +2,29 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptIntBlockProperty {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINTBLOCKPROPERTY
+public:
+    class ScriptIntBlockProperty& operator=(class ScriptIntBlockProperty const&) = delete;
+    ScriptIntBlockProperty(class ScriptIntBlockProperty const&) = delete;
+    ScriptIntBlockProperty() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptIntBlockProperty();
-
     /*
     inline  ~ScriptIntBlockProperty(){
          (ScriptIntBlockProperty::*rv)();
@@ -27,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptIntBlockProperty(class ScriptIntBlockProperty&&);
     MCAPI ScriptIntBlockProperty(std::string const&, class ItemState const&, std::vector<int>, class ScriptBlockPermutation&);
     MCAPI std::vector<int> const& getAllValues() const;
@@ -37,7 +41,6 @@ public:
     MCAPI class Scripting::Result<void> setState(int);
 
 protected:
-
 
 private:
 

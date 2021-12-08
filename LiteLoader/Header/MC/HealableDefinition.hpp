@@ -2,24 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class HealableDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_HEALABLEDEFINITION
+public:
+    class HealableDefinition& operator=(class HealableDefinition const&) = delete;
+    HealableDefinition(class HealableDefinition const&) = delete;
+#endif
 
 public:
-
     MCAPI HealableDefinition();
     MCAPI void addFeedItem(struct FeedItem const&);
     MCAPI void addFeedItemByName(std::string const&);
@@ -30,8 +34,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _loadEffects(struct FeedItem&, class Json::Value&);
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MemoryMappedFileAccess {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEMORYMAPPEDFILEACCESS
+public:
+    class MemoryMappedFileAccess& operator=(class MemoryMappedFileAccess const&) = delete;
+    MemoryMappedFileAccess(class MemoryMappedFileAccess const&) = delete;
+    MemoryMappedFileAccess() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MemoryMappedFileAccess();
@@ -27,13 +33,10 @@ public:
     /*5*/ virtual class IFileReadAccess const* getReadInterface() const;
     /*6*/ virtual class IFileWriteAccess* getWriteInterface();
     /*7*/ virtual void unload();
-
-
     MCAPI MemoryMappedFileAccess(class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > const&, std::unique_ptr<class FileAccessTransforms>);
     MCAPI static class FileAccessTransforms const EMPTY_TRANSFORMS;
 
 protected:
-
 
 private:
 

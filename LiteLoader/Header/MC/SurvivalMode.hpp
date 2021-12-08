@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "GameMode.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SurvivalMode : public GameMode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SURVIVALMODE
+public:
+    class SurvivalMode& operator=(class SurvivalMode const&) = delete;
+    SurvivalMode(class SurvivalMode const&) = delete;
+    SurvivalMode() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SurvivalMode();
@@ -31,16 +37,13 @@ public:
     /*10*/ virtual void setTrialMode(bool);
     /*11*/ virtual bool isInTrialMode();
     /*12*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-
-
     MCAPI SurvivalMode(class Player&);
 
 protected:
 
-
 private:
-
     MCAPI void _messagePlayers(std::string);
     MCAPI void _showTrialReminder(bool);
     MCAPI static bool mTrialHasEnded;
+
 };

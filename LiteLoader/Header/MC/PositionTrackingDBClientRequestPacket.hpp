@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PositionTrackingDBClientRequestPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSITIONTRACKINGDBCLIENTREQUESTPACKET
+public:
+    class PositionTrackingDBClientRequestPacket& operator=(class PositionTrackingDBClientRequestPacket const&) = delete;
+    PositionTrackingDBClientRequestPacket(class PositionTrackingDBClientRequestPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PositionTrackingDBClientRequestPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~PositionTrackingDBClientRequestPacket(){
          (PositionTrackingDBClientRequestPacket::*rv)();
@@ -32,11 +36,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PositionTrackingDBClientRequestPacket();
 
 protected:
-
 
 private:
 

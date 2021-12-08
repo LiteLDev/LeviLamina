@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AreaEffectCloud : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_AREAEFFECTCLOUD
+public:
+    class AreaEffectCloud& operator=(class AreaEffectCloud const&) = delete;
+    AreaEffectCloud(class AreaEffectCloud const&) = delete;
+    AreaEffectCloud() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -95,8 +101,6 @@ public:
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
-
-
     MCAPI AreaEffectCloud(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void addAreaEffect(class MobEffectInstance);
     MCAPI int getDuration() const;
@@ -116,10 +120,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI __int64 _getTicksAlive() const;
     MCAPI void _setSpawnTick(__int64);
     MCAPI void _spawnParticles(class Random&, unsigned int, float);
+
 };

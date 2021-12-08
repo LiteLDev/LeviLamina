@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ContainerValidationBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BrewingStandInputContainerValidation : public ContainerValidationBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BREWINGSTANDINPUTCONTAINERVALIDATION
+public:
+    class BrewingStandInputContainerValidation& operator=(class BrewingStandInputContainerValidation const&) = delete;
+    BrewingStandInputContainerValidation(class BrewingStandInputContainerValidation const&) = delete;
+    BrewingStandInputContainerValidation() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BrewingStandInputContainerValidation();
@@ -24,10 +30,7 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void __unk_vfn_1();
 
-
-
 protected:
-
 
 private:
 

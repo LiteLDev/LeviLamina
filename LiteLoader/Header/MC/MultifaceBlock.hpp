@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MultifaceBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MULTIFACEBLOCK
+public:
+    class MultifaceBlock& operator=(class MultifaceBlock const&) = delete;
+    MultifaceBlock(class MultifaceBlock const&) = delete;
+    MultifaceBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MultifaceBlock();
@@ -139,8 +145,6 @@ public:
     /*118*/ virtual void __unk_vfn_32();
     /*119*/ virtual void __unk_vfn_33();
     /*120*/ virtual class Block const* getMultifaceBlockPtr() const = 0;
-
-
     MCAPI MultifaceBlock(std::string const&, int, class Material const&);
     MCAPI static class Block const& getBlockForPlacement(class Block const&, class Block const*, class BlockSource&, class BlockPos const&, unsigned char);
     MCAPI static class Block const& getBlockForPlacementWorldGen(class Block const&, class Block const*, class IBlockWorldGenAPI&, class BlockPos const&, unsigned char);
@@ -151,15 +155,14 @@ public:
     MCAPI static bool spreadFromRandomFaceTowardRandomDirection(class BlockSource&, class Block const*, class Block const&, class BlockPos const&);
 
 protected:
-
     MCAPI int _getNumSides(class Block const&) const;
     MCAPI bool canSpread(class BlockSource&, class Block const&, class BlockPos const&, unsigned char) const;
 
 private:
-
     MCAPI void _removeBlock(class BlockSource&, class BlockPos const&) const;
     MCAPI void _removeFace(class BlockSource&, class Block const&, class BlockPos const&, unsigned char) const;
     MCAPI static bool _canSpreadToFace(class BlockSource&, class Block const*, class BlockPos const&, unsigned char);
     MCAPI static std::vector<unsigned char> _getShuffledDirections();
     MCAPI static class std::optional<class std::tuple<class BlockPos const, unsigned char const> > getSpreadFromFaceTowardDirection(class BlockSource&, class Block const*, class Block const&, class BlockPos const&, unsigned char, unsigned char);
+
 };

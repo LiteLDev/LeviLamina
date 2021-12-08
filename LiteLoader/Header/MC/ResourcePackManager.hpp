@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePackManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKMANAGER
+public:
+    class ResourcePackManager& operator=(class ResourcePackManager const&) = delete;
+    ResourcePackManager(class ResourcePackManager const&) = delete;
+    ResourcePackManager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePackManager();
@@ -31,7 +37,6 @@ public:
     /*10*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&, std::vector<std::string>) const;
     /*11*/ virtual struct std::pair<int, std::string const& > getPackStackIndexOfResource(class ResourceLocation const&, std::vector<std::string> const&) const;
     /*12*/ virtual bool hasCapability(class gsl::basic_string_span<char const, -1>) const;
-
     /*
     inline  ~ResourcePackManager(){
          (ResourcePackManager::*rv)();
@@ -39,7 +44,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ResourcePackManager(class std::function<class Core::PathBuffer<std::string > (void)>, class IContentTierManager const&, bool);
     MCAPI int composeFullStack(class ResourcePackStack&, class ResourcePackStack const&, class ResourcePackStack const&, class ResourcePackStack const&) const;
     MCAPI class SemVersion getFullStackMinEngineVersion() const;
@@ -57,12 +61,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _calculateMinEngineVersionFromFullStack();
     MCAPI void _composeFullStack();
     MCAPI class PackInstance* _getPackForResource(class Core::Path const&) const;
     MCAPI void _getResourcesOfGroup(class PackInstance const&, std::string const&, std::vector<class Core::PathBuffer<std::string >>&) const;
     MCAPI void _updateLanguageSubpacks();
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "StructurePiece.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PoolElementStructurePiece : public StructurePiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POOLELEMENTSTRUCTUREPIECE
+public:
+    class PoolElementStructurePiece& operator=(class PoolElementStructurePiece const&) = delete;
+    PoolElementStructurePiece(class PoolElementStructurePiece const&) = delete;
+    PoolElementStructurePiece() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PoolElementStructurePiece();
@@ -32,7 +38,6 @@ public:
     /*11*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
     /*12*/ virtual int /*enum enum AdjustmentEffect*/ getTerrainAdjustmentEffect() const = 0;
     /*13*/ virtual bool _needsPostProcessing(class BlockSource&);
-
     /*
     inline  ~PoolElementStructurePiece(){
          (PoolElementStructurePiece::*rv)();
@@ -40,11 +45,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PoolElementStructurePiece(class StructurePoolElement const&, class BlockPos, enum Rotation, int, struct JigsawJunction&, class BoundingBox const&, class BlockPos);
 
 protected:
-
 
 private:
 

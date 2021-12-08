@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EndDragonFight {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum GatewayTask;
@@ -21,10 +20,16 @@ struct GateWayGenerator {
     GateWayGenerator(GateWayGenerator const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDDRAGONFIGHT
+public:
+    class EndDragonFight& operator=(class EndDragonFight const&) = delete;
+    EndDragonFight(class EndDragonFight const&) = delete;
+    EndDragonFight() = delete;
+#endif
 
 public:
-
     MCAPI EndDragonFight(class BlockSource&);
     MCAPI void loadData(class CompoundTag const&);
     MCAPI void onCrystalDestroyed(class EnderCrystal const&, class ActorDamageSource const&);
@@ -37,9 +42,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _canSpawnNewGateway(class ChunkViewSource*, class BlockPos const&) const;
     MCAPI void _createNewDragon();
     MCAPI struct BuildMatch _findExitPortal();
@@ -63,4 +66,5 @@ private:
     MCAPI static int const TIME_BETWEEN_CRYSTAL_SCANS;
     MCAPI static int const TIME_BETWEEN_PLAYER_SCANS;
     MCAPI static int const TIME_BETWEEN_PORTAL_SCANS;
+
 };

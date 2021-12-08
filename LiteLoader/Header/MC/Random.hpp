@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Random {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOM
+public:
+    class Random& operator=(class Random const&) = delete;
+    Random(class Random const&) = delete;
+#endif
 
 public:
     /*
@@ -70,7 +75,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Random();
     MCAPI Random(unsigned int, bool);
     MCAPI float nextFloat(float, float);
@@ -82,8 +86,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class Bedrock::Threading::ThreadLocalObject<class Random, class std::allocator<class Random> > mThreadLocalRandom;
+
 };

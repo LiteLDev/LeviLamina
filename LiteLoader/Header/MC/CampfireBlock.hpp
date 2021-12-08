@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CampfireBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CAMPFIREBLOCK
+public:
+    class CampfireBlock& operator=(class CampfireBlock const&) = delete;
+    CampfireBlock(class CampfireBlock const&) = delete;
+    CampfireBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CampfireBlock();
@@ -139,7 +145,6 @@ public:
     /*118*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*119*/ virtual void __unk_vfn_32();
     /*120*/ virtual void __unk_vfn_33();
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (CampfireBlock::*rv)() const;
@@ -157,14 +162,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CampfireBlock(std::string const&, int, bool);
     MCAPI static bool isLit(class Block const&);
     MCAPI static bool tryDouseFire(class BlockSource&, class BlockPos const&, bool);
     MCAPI static bool tryLightFire(class BlockSource&, class BlockPos const&);
 
 protected:
-
 
 private:
 

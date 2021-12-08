@@ -2,23 +2,21 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ExpressionNode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI ExpressionNode(class ExpressionNode&&);
     MCAPI ExpressionNode(class ExpressionNode const&);
     MCAPI ExpressionNode(std::string const&, class SemVersion const&, class gsl::span<class HashedString const, -1>);
@@ -62,9 +60,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _checkIsValidAndPopulateUsedTokenFlags(struct ExpressionOpBitField const&);
     MCAPI bool _optimize(enum MolangVersion);
     MCAPI bool _readNextToken(char const* &, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
@@ -96,4 +92,5 @@ private:
     MCAPI static bool mMolangInitialized;
     MCAPI static class std::unordered_multimap<class HashedString, struct MolangQueryFunction, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, struct MolangQueryFunction> > > mQueryFunctionAccessors;
     MCAPI static class std::unordered_map<class HashedString, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString> >, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class std::unordered_set<class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<class HashedString> > > > > mQuerySets;
+
 };

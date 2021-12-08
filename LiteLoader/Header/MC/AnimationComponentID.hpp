@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AnimationComponentID {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ANIMATIONCOMPONENTID
+public:
+    class AnimationComponentID& operator=(class AnimationComponentID const&) = delete;
+    AnimationComponentID(class AnimationComponentID const&) = delete;
+    AnimationComponentID() = delete;
+#endif
 
 public:
-
     MCAPI AnimationComponentID(struct ActorUniqueID const&, unsigned short, enum AttachableSlotIndex);
 
 protected:
-
 
 private:
 

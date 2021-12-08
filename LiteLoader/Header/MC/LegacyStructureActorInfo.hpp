@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LegacyStructureActorInfo {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEGACYSTRUCTUREACTORINFO
+public:
+    class LegacyStructureActorInfo& operator=(class LegacyStructureActorInfo const&) = delete;
+    LegacyStructureActorInfo(class LegacyStructureActorInfo const&) = delete;
+    LegacyStructureActorInfo() = delete;
+#endif
 
 public:
-
     MCAPI LegacyStructureActorInfo(class Vec3 const&, class BlockPos const&, class CompoundTag);
 
 protected:
-
 
 private:
 

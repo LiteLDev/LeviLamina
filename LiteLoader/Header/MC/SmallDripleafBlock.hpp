@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SmallDripleafBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SMALLDRIPLEAFBLOCK
+public:
+    class SmallDripleafBlock& operator=(class SmallDripleafBlock const&) = delete;
+    SmallDripleafBlock(class SmallDripleafBlock const&) = delete;
+    SmallDripleafBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SmallDripleafBlock();
@@ -140,7 +146,6 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (SmallDripleafBlock::*rv)() const;
@@ -158,14 +163,12 @@ public:
         return (this->*rv)(std::forward<class BlockLegacy const*>(a0));
     }
     */
-
     MCAPI SmallDripleafBlock(std::string const&, int);
     MCAPI static bool tryPlaceSmallDripleaf(class BlockSource&, class BlockPos const&, int, int);
 
 protected:
 
-
 private:
-
     MCAPI static void placeUpperBlock(class BlockSource&, class BlockPos const&, int);
+
 };

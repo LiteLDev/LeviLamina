@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveToPOIGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MingleGoal : public MoveToPOIGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINGLEGOAL
+public:
+    class MingleGoal& operator=(class MingleGoal const&) = delete;
+    MingleGoal(class MingleGoal const&) = delete;
+    MingleGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MingleGoal();
@@ -29,15 +35,11 @@ public:
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual unsigned __int64 _getRepathTime() const;
-
-
     MCAPI MingleGoal(class Mob&, float, float, float, struct ActorDefinitionIdentifier, float);
 
 protected:
 
-
 private:
-
     MCAPI void _findNewPartner(struct ActorUniqueID);
     MCAPI class MingleComponent& _getMingleComponent() const;
     MCAPI bool _isWithinInteractRange(class Actor&) const;
@@ -45,4 +47,5 @@ private:
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
     MCAPI static class MingleComponent* _tryGetMingleComponent(class Actor&);
+
 };

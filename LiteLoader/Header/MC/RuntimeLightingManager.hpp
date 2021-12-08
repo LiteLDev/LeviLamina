@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RuntimeLightingManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RUNTIMELIGHTINGMANAGER
+public:
+    class RuntimeLightingManager& operator=(class RuntimeLightingManager const&) = delete;
+    RuntimeLightingManager(class RuntimeLightingManager const&) = delete;
+    RuntimeLightingManager() = delete;
+#endif
 
 public:
-
     MCAPI RuntimeLightingManager(class Dimension&);
     MCAPI void flushRunTimeLighting();
     MCAPI void updateBlockLight(class BlockPos const&, struct Brightness, struct Brightness, struct Brightness, struct Brightness, bool);
@@ -25,10 +30,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _checkForRelightingTask(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >);
     MCAPI void _relightChunks(class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> >);
     MCAPI void _removeProcessedSubchunks();
+
 };

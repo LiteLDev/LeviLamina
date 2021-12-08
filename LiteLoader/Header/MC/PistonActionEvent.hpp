@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct PistonActionEvent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONACTIONEVENT
+public:
+    struct PistonActionEvent& operator=(struct PistonActionEvent const&) = delete;
+    PistonActionEvent(struct PistonActionEvent const&) = delete;
+    PistonActionEvent() = delete;
+#endif
 
 public:
-
     MCAPI ~PistonActionEvent();
 
 protected:
-
 
 private:
 

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorInfoRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORINFOREGISTRY
+public:
+    class ActorInfoRegistry& operator=(class ActorInfoRegistry const&) = delete;
+    ActorInfoRegistry(class ActorInfoRegistry const&) = delete;
+#endif
 
 public:
-
     MCAPI ActorInfoRegistry();
     MCAPI struct ActorInfo const& getActorInfo(unsigned int) const;
     MCAPI unsigned int getActorInfoId(std::string const&) const;
@@ -28,7 +32,6 @@ public:
     MCAPI void setSpawnEggAvailable(std::string, bool);
 
 protected:
-
 
 private:
 

@@ -3,32 +3,34 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SnapToSurfaceFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Surface;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SNAPTOSURFACEFEATURE
+public:
+    class SnapToSurfaceFeature& operator=(class SnapToSurfaceFeature const&) = delete;
+    SnapToSurfaceFeature(class SnapToSurfaceFeature const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~SnapToSurfaceFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-
-
     MCAPI SnapToSurfaceFeature();
 
 protected:
 
-
 private:
-
     MCAPI class std::optional<class BlockPos> _findSnapPos(class IBlockWorldGenAPI&, class BlockPos const&, enum SnapToSurfaceFeature::Surface) const;
+
 };

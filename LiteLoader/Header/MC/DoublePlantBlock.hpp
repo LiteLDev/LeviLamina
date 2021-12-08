@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BushBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DoublePlantBlock : public BushBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DOUBLEPLANTBLOCK
+public:
+    class DoublePlantBlock& operator=(class DoublePlantBlock const&) = delete;
+    DoublePlantBlock(class DoublePlantBlock const&) = delete;
+    DoublePlantBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DoublePlantBlock();
@@ -146,7 +152,6 @@ public:
     /*125*/ virtual void __unk_vfn_32();
     /*126*/ virtual void __unk_vfn_33();
     /*127*/ virtual void checkAlive(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (DoublePlantBlock::*rv)() const;
@@ -164,15 +169,13 @@ public:
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }
     */
-
     MCAPI DoublePlantBlock(std::string const&, int);
     MCAPI int getType(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI bool placeAt(class BlockSource&, class BlockPos const&, enum DoublePlantType, int, class Actor*) const;
 
 protected:
 
-
 private:
-
     MCAPI bool _isCoveredByTopSnow(class BlockSource&, class BlockPos const&) const;
+
 };

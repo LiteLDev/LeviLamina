@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ConsumerComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PistonConsumer : public ConsumerComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PISTONCONSUMER
+public:
+    class PistonConsumer& operator=(class PistonConsumer const&) = delete;
+    PistonConsumer(class PistonConsumer const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~PistonConsumer();
@@ -37,13 +42,10 @@ public:
     /*16*/ virtual void __unk_vfn_2();
     /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
-
-
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);
 
 protected:
-
 
 private:
 

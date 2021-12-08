@@ -3,8 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include <memory>
 #include "Command.hpp"
@@ -26,11 +25,11 @@ public:
     }
 };
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandRegistry {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     struct ParseToken {};
@@ -211,10 +210,15 @@ public:
             converted.emplace_back(value, ++idx);
         return _addEnumValuesInternal(name, converted, tid, &CommandRegistry::parseEnumInt).val;
     }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDREGISTRY
+public:
+    class CommandRegistry& operator=(class CommandRegistry const&) = delete;
+    CommandRegistry(class CommandRegistry const&) = delete;
+#endif
 
 public:
-
     MCAPI CommandRegistry();
     MCAPI void addEnumValueConstraints(std::string const&, std::vector<std::string> const&, enum SemanticConstraint);
     MCAPI int addEnumValues(std::string const&, std::vector<std::string> const&);
@@ -243,9 +247,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _addEnumValueConstraintsInternal(std::vector<struct std::pair<unsigned __int64, unsigned int>> const&, enum SemanticConstraint);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<std::string, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const);
     MCAPI class CommandRegistry::Symbol _addEnumValuesInternal(std::string const&, std::vector<struct std::pair<unsigned __int64, unsigned __int64>> const&, class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const);
@@ -296,4 +298,5 @@ private:
     MCAPI static bool readFloat(float&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
     MCAPI static bool readInt(int&, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&);
     MCAPI static bool readRelativeCoordinate(bool&, float&, struct CommandRegistry::ParseToken const&, bool, std::string&, std::vector<std::string>&);
+
 };

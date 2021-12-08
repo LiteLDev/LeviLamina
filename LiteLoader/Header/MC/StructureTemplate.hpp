@@ -3,33 +3,42 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "StructureSettings.hpp"
 class CompoundTag;
 class StructureTemplateData;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureTemplate {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
-// Add Member There
-char filler[216]; // IDA StructureTemplate::StructureTemplate
+#define AFTER_EXTRA
+    // Add Member There
+    char filler[216]; // IDA StructureTemplate::StructureTemplate
 
 public:
-LIAPI StructureTemplate(std::string const& name);
-LIAPI static StructureTemplate fromTag(std::string name, CompoundTag* tag);
-LIAPI static StructureTemplate fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities=false, bool ignoreBlocks=false);
-LIAPI std::unique_ptr<CompoundTag> toTag();
-LIAPI bool toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation);
-LIAPI StructureTemplateData* getData();
+#define DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
+    class StructureTemplate& operator=(class StructureTemplate const&) = delete;
+    StructureTemplate(class StructureTemplate const&);
+    StructureTemplate() = delete;
+    LIAPI StructureTemplate(std::string const& name);
+    LIAPI static StructureTemplate fromTag(std::string name, CompoundTag* tag);
+    LIAPI static StructureTemplate fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = false, bool ignoreBlocks = false);
+    LIAPI std::unique_ptr<CompoundTag> toTag();
+    LIAPI bool toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation);
+    LIAPI StructureTemplateData* getData();
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTURETEMPLATE
+public:
+    class StructureTemplate& operator=(class StructureTemplate const&) = delete;
+    StructureTemplate(class StructureTemplate const&) = delete;
+    StructureTemplate() = delete;
+#endif
 
 public:
-
     MCAPI StructureTemplate(class gsl::basic_string_span<char const, -1>);
     MCAPI void fillFromWorld(class BlockSource&, class BlockPos const&, class StructureSettings const&);
     MCAPI class Block const& getBlockAtPos(class BlockPos const&) const;
@@ -45,10 +54,7 @@ public:
     MCAPI static class BlockPos const INVALID_POSITION;
 
 protected:
-
-
 private:
-
     MCAPI void _fillBlockInfo(class BlockSource&, class BlockPos const&, class BlockPos const&, class BlockPos const&);
     MCAPI void _fillEntityList(class BlockSource&, class BlockPos const&, class BlockPos const&);
     MCAPI void _placeEntitiesInWorld(class BlockSource&, class DataLoadHelper&, bool) const;

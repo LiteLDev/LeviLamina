@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ThinFenceBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StainedGlassPaneBlock : public ThinFenceBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STAINEDGLASSPANEBLOCK
+public:
+    class StainedGlassPaneBlock& operator=(class StainedGlassPaneBlock const&) = delete;
+    StainedGlassPaneBlock(class StainedGlassPaneBlock const&) = delete;
+    StainedGlassPaneBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StainedGlassPaneBlock();
@@ -140,12 +146,9 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-
-
     MCAPI StainedGlassPaneBlock(std::string const&, int, class Material const&, bool, bool, bool);
 
 protected:
-
 
 private:
 

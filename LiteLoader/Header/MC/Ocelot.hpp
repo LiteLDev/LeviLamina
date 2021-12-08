@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Animal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Ocelot : public Animal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_OCELOT
+public:
+    class Ocelot& operator=(class Ocelot const&) = delete;
+    Ocelot(class Ocelot const&) = delete;
+    Ocelot() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -86,14 +92,11 @@ public:
     /*64*/ virtual void __unk_vfn_24();
     /*65*/ virtual void _serverAiMobStep();
     /*66*/ virtual void __unk_vfn_25();
-
-
     MCAPI Ocelot(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI static float const SNEAK_SPEED_MOD;
     MCAPI static float const SPRINT_SPEED_MOD;
 
 protected:
-
 
 private:
 

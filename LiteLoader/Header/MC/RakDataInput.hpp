@@ -3,24 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RakDataInput {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKDATAINPUT
+public:
+    class RakDataInput& operator=(class RakDataInput const&) = delete;
+    RakDataInput(class RakDataInput const&) = delete;
+    RakDataInput() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RakDataInput();
     /*1*/ virtual bool readBytes(void*, unsigned __int64);
     /*2*/ virtual unsigned __int64 numBytesLeft() const;
-
     /*
     inline  ~RakDataInput(){
          (RakDataInput::*rv)();
@@ -29,9 +34,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

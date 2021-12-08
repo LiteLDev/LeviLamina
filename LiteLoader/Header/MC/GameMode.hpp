@@ -3,19 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class ServerPlayer;
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameMode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 	LIAPI ServerPlayer* getPlayer();
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMEMODE
+public:
+    class GameMode& operator=(class GameMode const&) = delete;
+    GameMode(class GameMode const&) = delete;
+    GameMode() = delete;
+#endif
 
 public:
     /*0*/ virtual ~GameMode();
@@ -37,8 +43,6 @@ public:
     /*16*/ virtual void setTrialMode(bool);
     /*17*/ virtual bool isInTrialMode();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
-
-
     MCAPI GameMode(class Player&, std::unique_ptr<struct IGameModeTimer>, std::unique_ptr<struct IGameModeMessenger>);
     MCAPI bool _startDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&);
     MCAPI bool _tickContinueDestroyBlock(class BlockPos const&, class Vec3 const&, unsigned char, bool&, class std::function<void (void)> const&);
@@ -62,10 +66,9 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _canDestroy(class BlockPos const&, unsigned char);
     MCAPI bool _canUseBlock(class Block const&);
     MCAPI bool _creativeDestroyBlock(class BlockPos const&, unsigned char);
+
 };

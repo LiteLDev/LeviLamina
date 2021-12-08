@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MossStoneSelector {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOSSSTONESELECTOR
+public:
+    class MossStoneSelector& operator=(class MossStoneSelector const&) = delete;
+    MossStoneSelector(class MossStoneSelector const&) = delete;
+    MossStoneSelector() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MossStoneSelector();
     /*1*/ virtual class Block const& next(class Random&, int, int, int, bool) const;
-
     /*
     inline  ~MossStoneSelector(){
          (MossStoneSelector::*rv)();
@@ -28,9 +33,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Slime.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LavaSlime : public Slime {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LAVASLIME
+public:
+    class LavaSlime& operator=(class LavaSlime const&) = delete;
+    LavaSlime(class LavaSlime const&) = delete;
+    LavaSlime() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -95,7 +101,6 @@ public:
     /*73*/ virtual bool doPlayLandSound();
     /*74*/ virtual void decreaseSquish();
     /*75*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
-
     /*
     inline bool isOnFire() const{
         bool (LavaSlime::*rv)() const;
@@ -108,11 +113,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI LavaSlime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

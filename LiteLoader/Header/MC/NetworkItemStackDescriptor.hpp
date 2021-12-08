@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NetworkItemStackDescriptor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NETWORKITEMSTACKDESCRIPTOR
+public:
+    class NetworkItemStackDescriptor& operator=(class NetworkItemStackDescriptor const&) = delete;
+    NetworkItemStackDescriptor(class NetworkItemStackDescriptor const&) = delete;
+    NetworkItemStackDescriptor() = delete;
+#endif
 
 public:
-
     MCAPI NetworkItemStackDescriptor(class NetworkItemStackDescriptor&&);
     MCAPI NetworkItemStackDescriptor(class ItemStack const&);
     MCAPI NetworkItemStackDescriptor(class ItemStackDescriptor const&);
@@ -28,7 +33,6 @@ public:
     MCAPI ~NetworkItemStackDescriptor();
 
 protected:
-
 
 private:
 

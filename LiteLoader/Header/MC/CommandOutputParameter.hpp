@@ -3,19 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CommandOutputParameter {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMMANDOUTPUTPARAMETER
+public:
+    class CommandOutputParameter& operator=(class CommandOutputParameter const&) = delete;
+    CommandOutputParameter() = delete;
+#endif
 
 public:
-
     MCAPI CommandOutputParameter(class CommandOutputParameter&&);
     MCAPI CommandOutputParameter(class CommandOutputParameter const&);
     MCAPI CommandOutputParameter(class CommandSelectorResults<class Actor> const&);
@@ -35,7 +39,6 @@ public:
     MCAPI ~CommandOutputParameter();
 
 protected:
-
 
 private:
 

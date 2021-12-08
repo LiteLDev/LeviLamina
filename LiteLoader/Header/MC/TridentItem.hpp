@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TridentItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRIDENTITEM
+public:
+    class TridentItem& operator=(class TridentItem const&) = delete;
+    TridentItem(class TridentItem const&) = delete;
+    TridentItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TridentItem();
@@ -101,15 +107,12 @@ public:
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI static int const CHARGE_THRESHOLD_TIME;
     MCAPI static int const THROW_THRESHOLD_TIME;
 
 protected:
 
-
 private:
-
     MCAPI class Actor* _setupProjectile(class Actor*, class ItemStack, bool) const;
+
 };

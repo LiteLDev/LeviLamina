@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptSimulatedPlayer : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTSIMULATEDPLAYER
+public:
+    class ScriptSimulatedPlayer& operator=(class ScriptSimulatedPlayer const&) = delete;
+    ScriptSimulatedPlayer(class ScriptSimulatedPlayer const&) = delete;
+    ScriptSimulatedPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptSimulatedPlayer();
@@ -24,7 +30,6 @@ public:
     /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
     /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
     /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
-
     /*
     inline  ~ScriptSimulatedPlayer(){
          (ScriptSimulatedPlayer::*rv)();
@@ -32,7 +37,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const&) const;
     MCAPI class Scripting::Result<bool> destroyBlock(class BlockPos const&, int) const;
@@ -70,11 +74,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static class Vec3 _getFaceLocation(unsigned char, float, float);
     MCAPI static class gametest::BaseGameTestHelper const* _getHelper(class SimulatedPlayer const&);
     MCAPI static class std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer&, class BlockPos*, unsigned char*, class Vec3*);
     MCAPI static struct ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer&, struct ScriptNavigationResult);
+
 };

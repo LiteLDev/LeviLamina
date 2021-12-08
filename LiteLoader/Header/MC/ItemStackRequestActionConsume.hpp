@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ItemStackRequestActionTransferBase.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestActionConsume : public ItemStackRequestActionTransferBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCONSUME
+public:
+    class ItemStackRequestActionConsume& operator=(class ItemStackRequestActionConsume const&) = delete;
+    ItemStackRequestActionConsume(class ItemStackRequestActionConsume const&) = delete;
+    ItemStackRequestActionConsume() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackRequestActionConsume();
@@ -23,10 +29,7 @@ public:
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void __unk_vfn_2();
 
-
-
 protected:
-
 
 private:
 

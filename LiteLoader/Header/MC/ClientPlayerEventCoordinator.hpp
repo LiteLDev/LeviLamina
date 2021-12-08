@@ -3,29 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ClientPlayerEventCoordinator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CLIENTPLAYEREVENTCOORDINATOR
+public:
+    class ClientPlayerEventCoordinator& operator=(class ClientPlayerEventCoordinator const&) = delete;
+    ClientPlayerEventCoordinator(class ClientPlayerEventCoordinator const&) = delete;
+    ClientPlayerEventCoordinator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ClientPlayerEventCoordinator();
-
-
     MCAPI void sendPlayerDestroyedBlock(class Player&, class BlockLegacy const&);
     MCAPI void sendPlayerInput(struct IPlayerMovementProxy&, class MoveInputHandler&);
     MCAPI void sendStartDestroyBlock(class Player&, class BlockPos const&, unsigned char&);
 
 protected:
-
 
 private:
 

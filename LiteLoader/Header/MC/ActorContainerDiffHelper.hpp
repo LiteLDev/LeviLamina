@@ -3,19 +3,19 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace ActorContainerDiffHelper {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI void applyIfChanged(std::vector<class MobEffectInstance>&, std::vector<class MobEffectInstance> const&, std::vector<class MobEffectInstance> const&);
     MCAPI void applyIfChanged(class BaseAttributeMap&, class BaseAttributeMap const&, class BaseAttributeMap const&);
     MCAPI void applyIfChanged(class SynchedActorData&, class SynchedActorData const&, class SynchedActorData const&, class Actor*);
+
 };

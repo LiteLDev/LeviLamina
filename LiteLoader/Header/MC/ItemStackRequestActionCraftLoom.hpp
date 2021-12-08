@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackRequestActionCraftLoom {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTIONCRAFTLOOM
+public:
+    class ItemStackRequestActionCraftLoom& operator=(class ItemStackRequestActionCraftLoom const&) = delete;
+    ItemStackRequestActionCraftLoom(class ItemStackRequestActionCraftLoom const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftLoom();
@@ -23,13 +28,10 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void _write(class BinaryStream&) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
-
-
     MCAPI ItemStackRequestActionCraftLoom();
     MCAPI std::string const& getPatternNameId() const;
 
 protected:
-
 
 private:
 

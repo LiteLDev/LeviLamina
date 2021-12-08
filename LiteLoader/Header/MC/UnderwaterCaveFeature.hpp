@@ -2,31 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "CaveFeatureUtils.hpp"
 #include "CaveFeature.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class UnderwaterCaveFeature : public CaveFeature {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_UNDERWATERCAVEFEATURE
+public:
+    class UnderwaterCaveFeature& operator=(class UnderwaterCaveFeature const&) = delete;
+    UnderwaterCaveFeature(class UnderwaterCaveFeature const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~UnderwaterCaveFeature();
     /*1*/ virtual bool carveEllipsoidVolume(class IBlockWorldGenAPI&, struct CaveFeatureUtils::CarverConfiguration const&, class Random&, class ChunkPos const&, class Vec3 const&, class BoundingBox const&, float, float, struct CaveFeatureUtils::CarvingParameters const&) const;
-
-
     MCAPI UnderwaterCaveFeature();
 
 protected:
-
 
 private:
 

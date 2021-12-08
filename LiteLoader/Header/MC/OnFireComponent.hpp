@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class OnFireComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ONFIRECOMPONENT
+public:
+    class OnFireComponent& operator=(class OnFireComponent const&) = delete;
+    OnFireComponent(class OnFireComponent const&) = delete;
+    OnFireComponent() = delete;
+#endif
 
 public:
-
     MCAPI void addAdditionalSaveData(class Actor const&, class CompoundTag&) const;
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&);
     MCAPI static void convertFromLegacyData(class CompoundTag const&, class CompoundTag&);
@@ -25,9 +30,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static std::string const LEGACY_FIRE_TAG;
     MCAPI static std::string const ON_FIRE_TAG;
+
 };

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FishingHook : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FISHINGHOOK
+public:
+    class FishingHook& operator=(class FishingHook const&) = delete;
+    FishingHook(class FishingHook const&) = delete;
+    FishingHook() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -94,15 +100,12 @@ public:
     /*73*/ virtual void __unk_vfn_19();
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void _onSizeUpdated();
-
-
     MCAPI FishingHook(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Actor* getOwner();
     MCAPI int retrieve();
     MCAPI static float const BOBBER_SIZE;
 
 protected:
-
     MCAPI void _fishPosEvent();
     MCAPI void _fishTeaseEvent();
     MCAPI void _fishhookEvent();

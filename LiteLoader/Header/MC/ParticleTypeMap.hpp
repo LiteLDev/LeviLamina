@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ParticleTypeMap {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PARTICLETYPEMAP
+public:
+    class ParticleTypeMap& operator=(class ParticleTypeMap const&) = delete;
+    ParticleTypeMap(class ParticleTypeMap const&) = delete;
+    ParticleTypeMap() = delete;
+#endif
 
 public:
-
     MCAPI static std::string const& getParticleName(enum ParticleType);
     MCAPI static enum ParticleType getParticleTypeId(std::string const&);
 
 protected:
 
-
 private:
-
     MCAPI static class BidirectionalUnorderedMap<enum ParticleType, std::string > const map;
+
 };

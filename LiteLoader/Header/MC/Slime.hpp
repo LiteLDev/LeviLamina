@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Slime : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SLIME
+public:
+    class Slime& operator=(class Slime const&) = delete;
+    Slime(class Slime const&) = delete;
+    Slime() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -102,7 +108,6 @@ public:
     /*80*/ virtual void playLandSound();
     /*81*/ virtual void decreaseSquish();
     /*82*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
-
     /*
     inline bool useNewAi() const{
         bool (Slime::*rv)() const;
@@ -110,13 +115,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Slime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI float getOldSquishValue() const;
     MCAPI float getSquishValue() const;
 
 protected:
-
     MCAPI void justJumped();
     MCAPI void justLanded();
 

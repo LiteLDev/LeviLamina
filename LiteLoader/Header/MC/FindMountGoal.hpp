@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FindMountGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FINDMOUNTGOAL
+public:
+    class FindMountGoal& operator=(class FindMountGoal const&) = delete;
+    FindMountGoal(class FindMountGoal const&) = delete;
+    FindMountGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FindMountGoal();
@@ -25,13 +31,10 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-
-
     MCAPI FindMountGoal(class Mob&, float, int, bool, bool, float, int);
     MCAPI bool isInMountRange();
 
 protected:
-
 
 private:
 

@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockDefinitionGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct BlockResource {
@@ -22,10 +21,15 @@ struct BlockResource {
     BlockResource(BlockResource const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKDEFINITIONGROUP
+public:
+    class BlockDefinitionGroup& operator=(class BlockDefinitionGroup const&) = delete;
+    BlockDefinitionGroup(class BlockDefinitionGroup const&) = delete;
+#endif
 
 public:
-
     MCAPI BlockDefinitionGroup();
     MCAPI void buildBlockSchema(class BlockComponentFactory const&);
     MCAPI void digestServerBlockProperties(std::vector<struct std::pair<std::string, class CompoundTag>> const&, class BlockComponentFactory const&);
@@ -42,13 +46,12 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _buildBlockComponentsSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&);
     MCAPI void _buildBlockDescriptionSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockDescription> >&);
     MCAPI bool _loadBlockDescription(class Json::Value const&, struct BlockDescription&);
     MCAPI bool _loadComponents(class Json::Value const&, struct BlockDefinition&, class Experiments const&);
     MCAPI bool _loadEvents(class Json::Value const&, struct BlockDefinition&);
     MCAPI bool _parseComponents(class Json::Value const&, struct BlockComponentGroupDescription&, std::string const&, class SemVersion const&, class Experiments const&);
+
 };

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Social.hpp"
 #include "Connector.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LocalConnector {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALCONNECTOR
+public:
+    class LocalConnector& operator=(class LocalConnector const&) = delete;
+    LocalConnector(class LocalConnector const&) = delete;
+    LocalConnector() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LocalConnector();
@@ -27,7 +33,6 @@ public:
     /*5*/ virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
-
     /*
     inline bool isIPv4Supported() const{
         bool (LocalConnector::*rv)() const;
@@ -85,14 +90,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void disconnect();
     MCAPI void runEvents();
 
 protected:
 
-
 private:
-
     MCAPI static class LocalConnectivitySystem sLocalConnectivitySystem;
+
 };

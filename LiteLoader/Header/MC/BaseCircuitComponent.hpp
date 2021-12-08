@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BaseCircuitComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BASECIRCUITCOMPONENT
+public:
+    class BaseCircuitComponent& operator=(class BaseCircuitComponent const&) = delete;
+    BaseCircuitComponent(class BaseCircuitComponent const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BaseCircuitComponent();
@@ -41,7 +46,6 @@ public:
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
     /*23*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentGroupType() const;
-
     /*
     inline bool allowIndirect() const{
         bool (BaseCircuitComponent::*rv)() const;
@@ -64,11 +68,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BaseCircuitComponent();
 
 protected:
-
     MCAPI bool trackPowerSource(class CircuitTrackingInfo const&, int, bool, int);
 
 private:

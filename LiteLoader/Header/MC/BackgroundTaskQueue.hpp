@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BackgroundTaskQueue {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BACKGROUNDTASKQUEUE
+public:
+    class BackgroundTaskQueue& operator=(class BackgroundTaskQueue const&) = delete;
+    BackgroundTaskQueue(class BackgroundTaskQueue const&) = delete;
+#endif
 
 public:
-
     MCAPI BackgroundTaskQueue();
     MCAPI void flush();
     MCAPI unsigned __int64 getApproximateTaskCount() const;
@@ -28,8 +32,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI bool _fetchAllAvailableTasks();
+
 };

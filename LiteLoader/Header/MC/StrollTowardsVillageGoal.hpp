@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "MoveToVillageGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StrollTowardsVillageGoal : public MoveToVillageGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STROLLTOWARDSVILLAGEGOAL
+public:
+    class StrollTowardsVillageGoal& operator=(class StrollTowardsVillageGoal const&) = delete;
+    StrollTowardsVillageGoal(class StrollTowardsVillageGoal const&) = delete;
+    StrollTowardsVillageGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~StrollTowardsVillageGoal();
@@ -27,10 +33,7 @@ public:
     /*6*/ virtual unsigned __int64 _getRepathTime() const;
     /*7*/ virtual class BlockPos _selectRandomPosInVillage();
 
-
-
 protected:
-
 
 private:
 

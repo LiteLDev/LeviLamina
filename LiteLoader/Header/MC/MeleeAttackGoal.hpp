@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MeleeAttackGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MELEEATTACKGOAL
+public:
+    class MeleeAttackGoal& operator=(class MeleeAttackGoal const&) = delete;
+    MeleeAttackGoal(class MeleeAttackGoal const&) = delete;
+    MeleeAttackGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MeleeAttackGoal();
@@ -29,7 +35,6 @@ public:
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _attemptMoveToTarget(class Actor&);
     /*11*/ virtual void _attemptAttackTarget(class Actor&, float, float, float, float);
-
     /*
     inline  ~MeleeAttackGoal(){
          (MeleeAttackGoal::*rv)();
@@ -37,11 +42,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MeleeAttackGoal(class Mob&);
 
 protected:
-
     MCAPI void _attemptMoveToTargetPosition(class Actor&, float);
     MCAPI float _getAttackReachSqr(class Actor const&) const;
     MCAPI bool _inSunlight(class Actor const&) const;

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "AbstractCandleBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CandleBlock : public AbstractCandleBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CANDLEBLOCK
+public:
+    class CandleBlock& operator=(class CandleBlock const&) = delete;
+    CandleBlock(class CandleBlock const&) = delete;
+    CandleBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CandleBlock();
@@ -136,7 +142,6 @@ public:
     /*115*/ virtual int _getNumCandles(class Block const&) const;
     /*116*/ virtual void _iterateCandles(class Block const&, class BlockPos const&, class std::function<void (class Vec3 const& , int)>) const;
     /*117*/ virtual void _tryLightOnFire(class BlockSource&, class BlockPos const&) const;
-
     /*
     inline bool waterSpreadCausesSpawn() const{
         bool (CandleBlock::*rv)() const;
@@ -149,14 +154,12 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CandleBlock(std::string const&, int);
     MCAPI static bool tryLightFire(class BlockSource&, class BlockPos const&);
 
 protected:
 
-
 private:
-
     MCAPI static void _forEachCandle(class Block const&, class BlockPos const&, class std::function<void (class Vec3 const& , int)>);
+
 };

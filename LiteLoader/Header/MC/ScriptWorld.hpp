@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptWorld {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTWORLD
+public:
+    class ScriptWorld& operator=(class ScriptWorld const&) = delete;
+    ScriptWorld(class ScriptWorld const&) = delete;
+    ScriptWorld() = delete;
+#endif
 
 public:
-
     MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const&, class Level*);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension> > getDimension(std::string const&);
     MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> getPlayers();
@@ -26,7 +31,6 @@ public:
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

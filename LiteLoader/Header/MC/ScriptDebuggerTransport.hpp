@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptDebuggerTransport {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTDEBUGGERTRANSPORT
+public:
+    class ScriptDebuggerTransport& operator=(class ScriptDebuggerTransport const&) = delete;
+    ScriptDebuggerTransport(class ScriptDebuggerTransport const&) = delete;
+    ScriptDebuggerTransport() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptDebuggerTransport();
@@ -29,10 +35,7 @@ public:
     /*9*/ virtual bool receive(char*, unsigned __int64);
     /*10*/ virtual void send(char const*, unsigned __int64);
 
-
-
 protected:
-
 
 private:
 

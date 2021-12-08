@@ -2,30 +2,33 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "JsonUtil.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ChargeHeldItemDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHARGEHELDITEMDEFINITION
+public:
+    class ChargeHeldItemDefinition& operator=(class ChargeHeldItemDefinition const&) = delete;
+    ChargeHeldItemDefinition(class ChargeHeldItemDefinition const&) = delete;
+    ChargeHeldItemDefinition() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ChargeHeldItemDefinition();
-
-
     MCAPI void initialize(class EntityContext&, class ChargeHeldItemGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ChargeHeldItemDefinition> >&);
 
 protected:
-
 
 private:
 

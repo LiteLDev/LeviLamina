@@ -3,20 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StrongholdPiece {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum SmallDoorType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRONGHOLDPIECE
+public:
+    class StrongholdPiece& operator=(class StrongholdPiece const&) = delete;
+    StrongholdPiece(class StrongholdPiece const&) = delete;
+    StrongholdPiece() = delete;
+#endif
 
 public:
     /*
@@ -26,7 +32,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI std::unique_ptr<class StructurePiece> findAndCreatePieceFactory(std::string const&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
     MCAPI class StructurePiece* generateAndAddPiece(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int, int, int, int);
     MCAPI std::unique_ptr<class StructurePiece> generatePieceFromSmallDoor(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random const&, int, int, int, int, int);
@@ -36,7 +41,6 @@ public:
     MCAPI class StructurePiece* generateSmallDoorChildRight(class SHStartPiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&, int, int);
 
 protected:
-
 
 private:
 

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnderCrystal : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENDERCRYSTAL
+public:
+    class EnderCrystal& operator=(class EnderCrystal const&) = delete;
+    EnderCrystal(class EnderCrystal const&) = delete;
+    EnderCrystal() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -97,15 +103,12 @@ public:
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
-
-
     MCAPI EnderCrystal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void setBeamTarget(class BlockPos const&);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal& , class ActorDamageSource const& )>);
     MCAPI static float const HEAL_DISTANCE;
 
 protected:
-
 
 private:
 

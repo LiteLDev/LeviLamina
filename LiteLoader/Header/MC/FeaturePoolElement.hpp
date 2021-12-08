@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "StructurePoolElement.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FeaturePoolElement : public StructurePoolElement {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FEATUREPOOLELEMENT
+public:
+    class FeaturePoolElement& operator=(class FeaturePoolElement const&) = delete;
+    FeaturePoolElement(class FeaturePoolElement const&) = delete;
+    FeaturePoolElement() = delete;
+#endif
 
 public:
     /*0*/ virtual class BlockPos getSize(int /*enum enum Rotation*/) const;
@@ -27,12 +33,9 @@ public:
     /*5*/ virtual bool place(class BlockSource&, class BlockPos, int /*enum enum Rotation*/, class BoundingBox, class Random&, class std::unordered_map<class BlockPos, class std::optional<struct ActorDefinitionIdentifier>, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, class std::optional<struct ActorDefinitionIdentifier> > > >&, class BlockPos) const;
     /*6*/ virtual bool isValid() const;
     /*7*/ virtual ~FeaturePoolElement();
-
-
     MCAPI FeaturePoolElement(class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class WeakRefT<struct FeatureRefTraits>);
 
 protected:
-
 
 private:
 

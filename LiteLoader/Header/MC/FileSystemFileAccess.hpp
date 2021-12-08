@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FileSystemFileAccess {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILESYSTEMFILEACCESS
+public:
+    class FileSystemFileAccess& operator=(class FileSystemFileAccess const&) = delete;
+    FileSystemFileAccess(class FileSystemFileAccess const&) = delete;
+    FileSystemFileAccess() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FileSystemFileAccess();
@@ -26,12 +32,9 @@ public:
     /*5*/ virtual class IFileReadAccess const* getReadInterface() const;
     /*6*/ virtual class IFileWriteAccess* getWriteInterface();
     /*7*/ virtual void unload();
-
-
     MCAPI FileSystemFileAccess(enum FileSystemMode);
 
 protected:
-
 
 private:
 

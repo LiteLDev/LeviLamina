@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MedicineItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MEDICINEITEM
+public:
+    class MedicineItem& operator=(class MedicineItem const&) = delete;
+    MedicineItem(class MedicineItem const&) = delete;
+    MedicineItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MedicineItem();
@@ -101,12 +107,9 @@ public:
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
-
     MCAPI MedicineItem(std::string const&, int);
 
 protected:
-
 
 private:
 

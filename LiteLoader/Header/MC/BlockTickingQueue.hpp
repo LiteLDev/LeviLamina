@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockTickingQueue {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 class TickDataSet {
@@ -21,10 +20,16 @@ public:
     TickDataSet(TickDataSet const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKTICKINGQUEUE
+public:
+    class BlockTickingQueue& operator=(class BlockTickingQueue const&) = delete;
+    BlockTickingQueue(class BlockTickingQueue const&) = delete;
+    BlockTickingQueue() = delete;
+#endif
 
 public:
-
     MCAPI void acquireAllRandomTicks(class LevelChunk&);
     MCAPI void acquireAllTicks(class LevelChunk&);
     MCAPI void add(class BlockSource&, class BlockPos const&, class Block const&, int, int);
@@ -45,11 +50,10 @@ public:
     MCAPI ~BlockTickingQueue();
 
 protected:
-
     MCAPI void _saveQueue(class ListTag&, class BlockTickingQueue::TickDataSet const&) const;
 
 private:
-
     MCAPI void _acquireAllTicks(class BlockTickingQueue&);
     MCAPI void _addToNextTickQueue(class BlockPos const&, class Block const&, int, int);
+
 };

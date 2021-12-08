@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Dimension {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIMENSION
+public:
+    class Dimension& operator=(class Dimension const&) = delete;
+    Dimension(class Dimension const&) = delete;
+    Dimension() = delete;
+#endif
 
 public:
     /*
@@ -189,7 +195,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Dimension(class ILevel&, class AutomaticID<class Dimension, int>, class DimensionHeightRange, class Scheduler&, std::string);
     MCAPI void _onNewTickingEntity(class Actor&);
     MCAPI void addWither(struct ActorUniqueID const&);
@@ -263,13 +268,12 @@ public:
     MCAPI static class std::chrono::duration<__int64, struct std::ratio<1, 1> > const STRUCTURE_PRUNE_INTERVAL;
 
 protected:
-
     MCAPI void _completeEntityTransfer(class BlockSource&, class OwnerPtrT<struct EntityRefTraits>, bool);
 
 private:
-
     MCAPI void _estimateLevelChunkMemory() const;
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const&);
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();
+
 };

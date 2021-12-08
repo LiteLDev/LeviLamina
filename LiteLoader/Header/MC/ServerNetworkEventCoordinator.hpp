@@ -3,29 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerNetworkEventCoordinator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKEVENTCOORDINATOR
+public:
+    class ServerNetworkEventCoordinator& operator=(class ServerNetworkEventCoordinator const&) = delete;
+    ServerNetworkEventCoordinator(class ServerNetworkEventCoordinator const&) = delete;
+    ServerNetworkEventCoordinator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ServerNetworkEventCoordinator();
-
-
     MCAPI class ServerNetworkEventHandler& getServerNetworkEventHandler();
     MCAPI void registerServerNetworkEventHandler(std::unique_ptr<class ServerNetworkEventHandler>&&);
     MCAPI enum CoordinatorResult sendChat(struct ChatEvent&);
 
 protected:
-
 
 private:
 

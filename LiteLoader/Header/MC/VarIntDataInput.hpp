@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class VarIntDataInput {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_VARINTDATAINPUT
+public:
+    class VarIntDataInput& operator=(class VarIntDataInput const&) = delete;
+    VarIntDataInput(class VarIntDataInput const&) = delete;
+    VarIntDataInput() = delete;
+#endif
 
 public:
     /*0*/ virtual ~VarIntDataInput();
@@ -28,7 +34,6 @@ public:
     /*8*/ virtual __int64 readLongLong();
     /*9*/ virtual bool readBytes(void*, unsigned __int64);
     /*10*/ virtual unsigned __int64 numBytesLeft() const;
-
     /*
     inline  ~VarIntDataInput(){
          (VarIntDataInput::*rv)();
@@ -47,9 +52,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

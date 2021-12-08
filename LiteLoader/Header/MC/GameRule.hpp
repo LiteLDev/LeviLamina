@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class GameRule {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 union Value;
@@ -23,10 +22,15 @@ public:
 };
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_GAMERULE
+public:
+    class GameRule& operator=(class GameRule const&) = delete;
+    GameRule() = delete;
+#endif
 
 public:
-
     MCAPI GameRule(class GameRule const&);
     MCAPI GameRule(class GameRule&&);
     MCAPI GameRule(std::string const&, bool);
@@ -47,7 +51,6 @@ public:
     MCAPI ~GameRule();
 
 protected:
-
 
 private:
 

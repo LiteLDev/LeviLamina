@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "TargetGoal.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NearestAttackableTargetGoal : public TargetGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NEARESTATTACKABLETARGETGOAL
+public:
+    class NearestAttackableTargetGoal& operator=(class NearestAttackableTargetGoal const&) = delete;
+    NearestAttackableTargetGoal(class NearestAttackableTargetGoal const&) = delete;
+    NearestAttackableTargetGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NearestAttackableTargetGoal();
@@ -28,7 +34,6 @@ public:
     /*7*/ virtual void __unk_vfn_0();
     /*8*/ virtual void __unk_vfn_1();
     /*9*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
-
     /*
     inline  ~NearestAttackableTargetGoal(){
          (NearestAttackableTargetGoal::*rv)();
@@ -36,15 +41,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI NearestAttackableTargetGoal(class Mob&);
 
 protected:
-
     MCAPI bool _canStartSearching();
     MCAPI bool _isTargetVisible(class Mob const&, float, float) const;
 
 private:
-
     MCAPI bool _selectTarget();
+
 };

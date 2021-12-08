@@ -3,19 +3,18 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace persona {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 enum PieceType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern std::string const ANIMATED_128X128_NAME;
     MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_FIRST_PERSON;
     MCAPI extern std::string const ANIMATED_128X128_TEXTURE_CONTROLLER_THIRD_PERSON;
@@ -35,4 +34,5 @@ enum PieceType;
     MCAPI extern class HashedString const USE_BLINKING_ANIMATION_VARIABLE;
     MCAPI enum persona::PieceType pieceTypeFromString(std::string const&);
     MCAPI std::string const& stringFromPieceType(enum persona::PieceType, bool);
+
 };

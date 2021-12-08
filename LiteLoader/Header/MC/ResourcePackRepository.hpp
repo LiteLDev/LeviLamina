@@ -2,18 +2,17 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePackRepository {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct KnownPackContainer {
@@ -22,7 +21,14 @@ struct KnownPackContainer {
     KnownPackContainer(KnownPackContainer const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKREPOSITORY
+public:
+    class ResourcePackRepository& operator=(class ResourcePackRepository const&) = delete;
+    ResourcePackRepository(class ResourcePackRepository const&) = delete;
+    ResourcePackRepository() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePackRepository();
@@ -75,7 +81,6 @@ public:
     /*47*/ virtual void registerResourcePackRemovedCallback(void*, class std::function<void (class ResourcePack* )>);
     /*48*/ virtual void unregisterResourcePackRemovedCallback(void*);
     /*49*/ virtual bool isInitialized();
-
     /*
     inline  ~ResourcePackRepository(){
          (ResourcePackRepository::*rv)();
@@ -83,16 +88,13 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ResourcePackRepository(class IMinecraftEventing&, class PackManifestFactory&, class IContentAccessibilityProvider&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Core::FilePathManager> > const&, class PackSourceFactory&, bool);
     MCAPI static class mce::UUID const CHEMISTRY_PACK_UUID;
     MCAPI static class mce::UUID const CHEMISTRY_SERVER_PACK_UUID;
 
 protected:
 
-
 private:
-
     MCAPI bool _addResourcePackIfNotAlreadyAdded(class Pack&);
     MCAPI void _detectKnownPacksChange(struct ResourcePackRepository::KnownPackContainer&, struct ResourcePackRepository::KnownPackContainer const&, enum KnownPackType);
     MCAPI void _findVanillaPacks();
@@ -108,4 +110,5 @@ private:
     MCAPI bool _removePack(class ResourceLocation const&, bool);
     MCAPI void _saveKnownUserPacks(struct ResourcePackRepository::KnownPackContainer&, enum KnownPackType);
     MCAPI void _triggerRemoveResourcePackCallback(class ResourcePack*);
+
 };

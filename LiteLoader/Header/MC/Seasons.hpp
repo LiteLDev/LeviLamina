@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Seasons {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SEASONS
+public:
+    class Seasons& operator=(class Seasons const&) = delete;
+    Seasons(class Seasons const&) = delete;
+    Seasons() = delete;
+#endif
 
 public:
-
     MCAPI Seasons(class Dimension&);
     MCAPI void postProcess(class LevelChunk&, class BlockSource&, class ChunkPos const&);
     MCAPI void tick();
     MCAPI ~Seasons();
 
 protected:
-
 
 private:
 

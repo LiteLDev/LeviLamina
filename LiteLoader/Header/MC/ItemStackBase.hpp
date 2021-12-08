@@ -2,23 +2,22 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 class Item;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemStackBase {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 private:
 char filler[136];
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
     /*0*/ virtual ~ItemStackBase();
@@ -28,7 +27,6 @@ public:
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
-
     /*
     inline  ~ItemStackBase(){
          (ItemStackBase::*rv)();
@@ -36,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void add(int);
     MCAPI bool addComponents(class Json::Value const&, std::string&);
     MCAPI void addCustomUserData(class BlockActor&, class BlockSource&);
@@ -161,7 +158,6 @@ public:
     MCAPI static bool isValidComponent(std::string const&);
 
 protected:
-
     MCAPI ItemStackBase(class ItemStackBase const&);
     MCAPI ItemStackBase(class Block const&, int, class CompoundTag const*);
     MCAPI ItemStackBase(class BlockLegacy const&, int);
@@ -183,7 +179,6 @@ protected:
     MCAPI static std::string const TAG_STORE_CAN_PLACE_ON;
 
 private:
-
     MCAPI void _addCustomUserDataCommon(std::unique_ptr<class CompoundTag>&&);
     MCAPI void _checkForItemWorldCompatibility();
     MCAPI void _loadComponents(class CompoundTag const&);
@@ -191,4 +186,5 @@ private:
     MCAPI void _setChargedItem(class ItemInstance const&);
     MCAPI void _updateCompareHashes();
     MCAPI static int const MAX_STACK_SIZE;
+
 };

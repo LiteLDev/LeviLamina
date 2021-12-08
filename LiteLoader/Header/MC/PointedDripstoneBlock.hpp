@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "HeavyBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PointedDripstoneBlock : public HeavyBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_POINTEDDRIPSTONEBLOCK
+public:
+    class PointedDripstoneBlock& operator=(class PointedDripstoneBlock const&) = delete;
+    PointedDripstoneBlock(class PointedDripstoneBlock const&) = delete;
+    PointedDripstoneBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PointedDripstoneBlock();
@@ -145,7 +151,6 @@ public:
     /*124*/ virtual void __unk_vfn_34();
     /*125*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*126*/ virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;
-
     /*
     inline bool falling() const{
         bool (PointedDripstoneBlock::*rv)() const;
@@ -153,7 +158,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI PointedDripstoneBlock(std::string const&, int);
     MCAPI static class std::optional<class BlockPos> findStalactiteTipAboveCauldron(class BlockSource&, class BlockPos const&);
     MCAPI static class std::optional<enum MaterialType> getCauldronFillLiquidType(class BlockSource&, class BlockPos const&);
@@ -161,9 +165,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _updateBlockThickness(class BlockSource&, class BlockPos const&) const;
     MCAPI static enum DripstoneThickness _calculateDripstoneThickness(class BlockSource&, class BlockPos const&, unsigned char, bool);
     MCAPI static bool _canDrip(class BlockSource&, class BlockPos const&);
@@ -182,4 +184,5 @@ private:
     MCAPI static bool _isValidPointedDripstonePlacement(class BlockSource&, class BlockPos const&, bool);
     MCAPI static bool _mayPlaceHanging(class BlockSource&, class BlockPos const&);
     MCAPI static bool _mayPlaceStanding(class BlockSource&, class BlockPos const&);
+
 };

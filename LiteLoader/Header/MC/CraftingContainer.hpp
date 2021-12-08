@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Container.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class CraftingContainer : public Container {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CRAFTINGCONTAINER
+public:
+    class CraftingContainer& operator=(class CraftingContainer const&) = delete;
+    CraftingContainer(class CraftingContainer const&) = delete;
+    CraftingContainer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~CraftingContainer();
@@ -31,7 +37,6 @@ public:
     /*10*/ virtual void __unk_vfn_1();
     /*11*/ virtual void setContainerChanged(int);
     /*12*/ virtual void __unk_vfn_2();
-
     /*
     inline  ~CraftingContainer(){
          (CraftingContainer::*rv)();
@@ -39,12 +44,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI CraftingContainer(int, int);
     MCAPI class ItemStack const& getItem(int, int) const;
 
 protected:
-
 
 private:
 

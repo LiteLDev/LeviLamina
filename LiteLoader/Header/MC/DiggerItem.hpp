@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DiggerItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DIGGERITEM
+public:
+    class DiggerItem& operator=(class DiggerItem const&) = delete;
+    DiggerItem(class DiggerItem const&) = delete;
+    DiggerItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~DiggerItem();
@@ -98,7 +104,6 @@ public:
     /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-
     /*
     inline  ~DiggerItem(){
          (DiggerItem::*rv)();
@@ -106,11 +111,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void setBlocks(std::vector<class Block const* > const&);
 
 protected:
-
     MCAPI DiggerItem(std::string const&, int, int, class Item::Tier const&, std::vector<class Block const* > const&);
 
 private:

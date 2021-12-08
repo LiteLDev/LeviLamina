@@ -3,18 +3,23 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BiomeDefinitionListPacket {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BIOMEDEFINITIONLISTPACKET
+public:
+    class BiomeDefinitionListPacket& operator=(class BiomeDefinitionListPacket const&) = delete;
+    BiomeDefinitionListPacket(class BiomeDefinitionListPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~BiomeDefinitionListPacket();
@@ -24,7 +29,6 @@ public:
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~BiomeDefinitionListPacket(){
          (BiomeDefinitionListPacket::*rv)();
@@ -32,11 +36,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI BiomeDefinitionListPacket();
 
 protected:
-
 
 private:
 

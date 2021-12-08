@@ -3,21 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MobEffectInstance {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEFFECTINSTANCE
+public:
+    MobEffectInstance() = delete;
+#endif
 
 public:
-
     MCAPI MobEffectInstance(class MobEffectInstance const&);
     MCAPI MobEffectInstance(unsigned int);
     MCAPI MobEffectInstance(unsigned int, int);
@@ -56,7 +59,6 @@ public:
     MCAPI static class MobEffectInstance load(class CompoundTag const&);
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BlockVolumeTarget {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKVOLUMETARGET
+public:
+    class BlockVolumeTarget& operator=(class BlockVolumeTarget const&) = delete;
+    BlockVolumeTarget(class BlockVolumeTarget const&) = delete;
+    BlockVolumeTarget() = delete;
+#endif
 
 public:
     /*0*/ virtual ~BlockVolumeTarget();
@@ -40,7 +46,6 @@ public:
     /*20*/ virtual short getLocalWaterLevel(class BlockPos const&) const;
     /*21*/ virtual class LevelData const& getLevelData() const;
     /*22*/ virtual struct WorldGenContext const& getContext();
-
     /*
     inline bool shimPlaceForOldFeatures(class Feature const& a0, class BlockPos const& a1, class Random& a2) const{
         bool (BlockVolumeTarget::*rv)(class Feature const&, class BlockPos const&, class Random&) const;
@@ -83,11 +88,9 @@ public:
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
     */
-
     MCAPI BlockVolumeTarget(class BlockVolume&, class Level&, class BiomeSource const&, class AutomaticID<class Dimension, int>, struct WorldGenContext const&);
 
 protected:
-
 
 private:
 

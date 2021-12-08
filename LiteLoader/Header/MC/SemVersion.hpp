@@ -2,17 +2,16 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SemVersion {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum MatchType;
@@ -23,10 +22,9 @@ struct any_version_constructor {
     any_version_constructor(any_version_constructor const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
 
 public:
-
     MCAPI SemVersion(class SemVersion const&);
     MCAPI SemVersion(unsigned short, unsigned short, unsigned short, std::string const&, std::string const&);
     MCAPI SemVersion(struct SemVersion::any_version_constructor);
@@ -52,8 +50,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _parseVersionToString();
+
 };

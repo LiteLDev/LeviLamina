@@ -3,24 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InMemoryWritableFile {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INMEMORYWRITABLEFILE
+public:
+    class InMemoryWritableFile& operator=(class InMemoryWritableFile const&) = delete;
+    InMemoryWritableFile(class InMemoryWritableFile const&) = delete;
+    InMemoryWritableFile() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InMemoryWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
     /*2*/ virtual class leveldb::Status Close();
-
     /*
     inline class leveldb::Status Sync(){
         class leveldb::Status (InMemoryWritableFile::*rv)();
@@ -33,11 +38,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI InMemoryWritableFile(class std::shared_ptr<class InMemoryFile>);
 
 protected:
-
 
 private:
 

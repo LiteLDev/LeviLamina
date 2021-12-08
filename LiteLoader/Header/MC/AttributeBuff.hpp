@@ -3,25 +3,30 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class AttributeBuff {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ATTRIBUTEBUFF
+public:
+    class AttributeBuff& operator=(class AttributeBuff const&) = delete;
+    AttributeBuff(class AttributeBuff const&) = delete;
+    AttributeBuff() = delete;
+#endif
 
 public:
     /*0*/ virtual ~AttributeBuff();
     /*1*/ virtual bool isInstantaneous() const = 0;
     /*2*/ virtual bool isSerializable() const = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
-
     /*
     inline  ~AttributeBuff(){
          (AttributeBuff::*rv)();
@@ -29,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI float getAmount() const;
     MCAPI unsigned __int64 getId() const;
     MCAPI int getOperand() const;
@@ -42,7 +46,6 @@ public:
     MCAPI static enum ActorDamageCause buffTypeToDamageCause(enum AttributeBuffType);
 
 protected:
-
 
 private:
 

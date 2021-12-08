@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "FilterTest.hpp"
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class FilterTestAltitude : public FilterTest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILTERTESTALTITUDE
+public:
+    class FilterTestAltitude& operator=(class FilterTestAltitude const&) = delete;
+    FilterTestAltitude(class FilterTestAltitude const&) = delete;
+    FilterTestAltitude() = delete;
+#endif
 
 public:
     /*0*/ virtual ~FilterTestAltitude();
@@ -24,7 +30,6 @@ public:
     /*2*/ virtual void finalizeParsedValue(class IWorldRegistriesProvider&);
     /*3*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*4*/ virtual class Json::Value _serializeValue() const;
-
     /*
     inline  ~FilterTestAltitude(){
          (FilterTestAltitude::*rv)();
@@ -33,9 +38,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class StructureBlockPalette {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 struct BlockPositionData {
@@ -20,10 +19,15 @@ struct BlockPositionData {
     BlockPositionData(BlockPositionData const&&) = delete;
 };
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_STRUCTUREBLOCKPALETTE
+public:
+    class StructureBlockPalette& operator=(class StructureBlockPalette const&) = delete;
+    StructureBlockPalette(class StructureBlockPalette const&) = delete;
+#endif
 
 public:
-
     MCAPI StructureBlockPalette(class StructureBlockPalette&&);
     MCAPI StructureBlockPalette();
     MCAPI unsigned __int64 addMapping(std::unique_ptr<class CompoundTag>);
@@ -33,12 +37,11 @@ public:
     MCAPI ~StructureBlockPalette();
 
 protected:
-
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionData(class CompoundTag const&, int);
     MCAPI enum StructureBlockPaletteLoadResult _parseBlockPositionDataList(class CompoundTag const&);
     MCAPI void _saveBlockPositionDataList(class CompoundTag&) const;
 
 private:
-
     MCAPI void _contentErrorMissingField(std::string const&) const;
+
 };

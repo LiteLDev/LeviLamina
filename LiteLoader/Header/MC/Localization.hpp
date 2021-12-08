@@ -2,23 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Localization {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOCALIZATION
+public:
+    class Localization& operator=(class Localization const&) = delete;
+    Localization(class Localization const&) = delete;
+    Localization() = delete;
+#endif
 
 public:
-
     MCAPI Localization(std::string const&);
     MCAPI Localization(std::string const&, class Localization*);
     MCAPI void appendTranslations(class Localization const&);
@@ -31,7 +36,6 @@ public:
     MCAPI static std::string getLanguageCode(std::string const&);
 
 protected:
-
     MCAPI struct OptionalString _get(std::string const&, std::vector<std::string> const&) const;
     MCAPI class Core::PathBuffer<std::string > _getLangFilePath(std::string const&);
     MCAPI struct OptionalString _getSimple(std::string const&) const;

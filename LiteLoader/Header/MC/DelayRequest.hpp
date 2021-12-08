@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class DelayRequest {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_DELAYREQUEST
+public:
+    class DelayRequest& operator=(class DelayRequest const&) = delete;
+    DelayRequest(class DelayRequest const&) = delete;
+    DelayRequest() = delete;
+#endif
 
 public:
-
     MCAPI DelayRequest(std::unique_ptr<class IRequestAction>, unsigned __int64);
     MCAPI ~DelayRequest();
 
 protected:
-
 
 private:
 

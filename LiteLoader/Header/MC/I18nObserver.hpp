@@ -3,26 +3,29 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class I18nObserver {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18NOBSERVER
+public:
+    class I18nObserver& operator=(class I18nObserver const&) = delete;
+    I18nObserver(class I18nObserver const&) = delete;
+    I18nObserver() = delete;
+#endif
 
 public:
     /*0*/ virtual ~I18nObserver();
 
-
-
 protected:
-
 
 private:
 

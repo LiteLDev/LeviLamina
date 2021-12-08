@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MoveTowardsRestrictionGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOVETOWARDSRESTRICTIONGOAL
+public:
+    class MoveTowardsRestrictionGoal& operator=(class MoveTowardsRestrictionGoal const&) = delete;
+    MoveTowardsRestrictionGoal(class MoveTowardsRestrictionGoal const&) = delete;
+    MoveTowardsRestrictionGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
@@ -22,7 +28,6 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void start();
-
     /*
     inline  ~MoveTowardsRestrictionGoal(){
          (MoveTowardsRestrictionGoal::*rv)();
@@ -30,11 +35,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MoveTowardsRestrictionGoal(class Mob&);
 
 protected:
-
     MCAPI class Mob const& _getMob() const;
     MCAPI bool _randomizeWantedPositionTowardsRestriction(class Vec3 const&);
 

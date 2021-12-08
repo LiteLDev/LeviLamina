@@ -3,15 +3,14 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RelativeFloat {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
     float value;
@@ -27,15 +26,19 @@ public:
             return center + value;
         return value;
     }
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RELATIVEFLOAT
+public:
+    class RelativeFloat& operator=(class RelativeFloat const&) = delete;
+    RelativeFloat(class RelativeFloat const&) = delete;
+#endif
 
 public:
-
     MCAPI RelativeFloat();
     MCAPI float getValue(float) const;
 
 protected:
-
 
 private:
 

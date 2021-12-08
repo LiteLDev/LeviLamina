@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SharedBuffs {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SHAREDBUFFS
+public:
+    class SharedBuffs& operator=(class SharedBuffs const&) = delete;
+    SharedBuffs(class SharedBuffs const&) = delete;
+    SharedBuffs() = delete;
+#endif
 
 public:
-
     MCAPI static class std::shared_ptr<class AttributeBuff> ABSORPTION;
     MCAPI static class std::shared_ptr<class AttributeBuff> FATAL_POISON;
     MCAPI static class std::shared_ptr<class AttributeBuff> FOOD_POSIONING;
@@ -30,7 +35,6 @@ public:
     MCAPI static class std::shared_ptr<class AttributeBuff> WITHER;
 
 protected:
-
 
 private:
 

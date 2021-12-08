@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "HangingActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Painting : public HangingActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PAINTING
+public:
+    class Painting& operator=(class Painting const&) = delete;
+    Painting(class Painting const&) = delete;
+    Painting() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Painting();
@@ -103,13 +109,10 @@ public:
     /*81*/ virtual int getHeight() const;
     /*82*/ virtual void dropItem();
     /*83*/ virtual bool placeHangingEntity(class BlockSource&, int);
-
-
     MCAPI Painting(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Motive const& getCurrentMotive() const;
 
 protected:
-
 
 private:
 

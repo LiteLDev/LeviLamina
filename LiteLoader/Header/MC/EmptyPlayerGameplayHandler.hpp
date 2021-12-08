@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EmptyPlayerGameplayHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_EMPTYPLAYERGAMEPLAYHANDLER
+public:
+    class EmptyPlayerGameplayHandler& operator=(class EmptyPlayerGameplayHandler const&) = delete;
+    EmptyPlayerGameplayHandler(class EmptyPlayerGameplayHandler const&) = delete;
+    EmptyPlayerGameplayHandler() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EmptyPlayerGameplayHandler();
-
     /*
     inline int \/*enum enum HandlerResult*\/ handleAddExp(struct PlayerAddExpEvent const& a0){
         int \/*enum enum HandlerResult*\/ (EmptyPlayerGameplayHandler::*rv)(struct PlayerAddExpEvent const&);
@@ -122,9 +127,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

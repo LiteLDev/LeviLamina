@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ConditionalBandwidthOptimizationComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONDITIONALBANDWIDTHOPTIMIZATIONCOMPONENT
+public:
+    class ConditionalBandwidthOptimizationComponent& operator=(class ConditionalBandwidthOptimizationComponent const&) = delete;
+    ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent const&) = delete;
+    ConditionalBandwidthOptimizationComponent() = delete;
+#endif
 
 public:
-
     MCAPI ConditionalBandwidthOptimizationComponent(class ConditionalBandwidthOptimizationComponent&&);
     MCAPI struct ConditionalBandwidthOptimization getCurrentOptimizationValues(class Actor&);
     MCAPI void initFromDefinition(class Actor&, class ConditionalBandwidthOptimizationDefinition const&);
@@ -25,7 +30,6 @@ public:
     MCAPI ~ConditionalBandwidthOptimizationComponent();
 
 protected:
-
 
 private:
 

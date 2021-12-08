@@ -3,23 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class IdentityDefinition {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum Type;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_IDENTITYDEFINITION
+public:
+    class IdentityDefinition& operator=(class IdentityDefinition const&) = delete;
+    IdentityDefinition(class IdentityDefinition const&) = delete;
+    IdentityDefinition() = delete;
+#endif
 
 public:
-
     MCAPI struct ActorUniqueID const& getEntityId() const;
     MCAPI std::string const& getFakePlayerName() const;
     MCAPI enum IdentityDefinition::Type getIdentityType() const;
@@ -32,7 +37,6 @@ public:
     MCAPI static class IdentityDefinition const Invalid;
 
 protected:
-
 
 private:
 

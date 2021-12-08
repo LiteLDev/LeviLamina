@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "ActorCommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorServerCommandOrigin : public ActorCommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSERVERCOMMANDORIGIN
+public:
+    class ActorServerCommandOrigin& operator=(class ActorServerCommandOrigin const&) = delete;
+    ActorServerCommandOrigin(class ActorServerCommandOrigin const&) = delete;
+    ActorServerCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
@@ -36,14 +42,11 @@ public:
     /*14*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*15*/ virtual class CompoundTag serialize() const;
     /*16*/ virtual bool isValid() const;
-
-
     MCAPI ActorServerCommandOrigin(class Actor&);
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const&, class Level&);
 
 protected:
-
 
 private:
 

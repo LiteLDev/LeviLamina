@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorEventCoordinator {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOREVENTCOORDINATOR
+public:
+    class ActorEventCoordinator& operator=(class ActorEventCoordinator const&) = delete;
+    ActorEventCoordinator(class ActorEventCoordinator const&) = delete;
+    ActorEventCoordinator() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorEventCoordinator();
-
-
     MCAPI class ActorGameplayHandler& getActorGameplayHandler();
     MCAPI void registerActorGameplayHandler(std::unique_ptr<class ActorGameplayHandler>&&);
     MCAPI void sendActorAcquiredItem(struct ActorAcquiredItemEvent const&);
@@ -51,7 +55,6 @@ public:
     MCAPI enum CoordinatorResult sendProjectileHit(struct ProjectileHitEvent const&);
 
 protected:
-
 
 private:
 

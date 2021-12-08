@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockLegacy.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InvisibleBlock : public BlockLegacy {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVISIBLEBLOCK
+public:
+    class InvisibleBlock& operator=(class InvisibleBlock const&) = delete;
+    InvisibleBlock(class InvisibleBlock const&) = delete;
+    InvisibleBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InvisibleBlock();
@@ -135,7 +141,6 @@ public:
     /*114*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*115*/ virtual void __unk_vfn_32();
     /*116*/ virtual void __unk_vfn_33();
-
     /*
     inline class HitResult clip(class BlockSource const& a0, class BlockPos const& a1, class Vec3 const& a2, class Vec3 const& a3, bool a4) const{
         class HitResult (InvisibleBlock::*rv)(class BlockSource const&, class BlockPos const&, class Vec3 const&, class Vec3 const&, bool) const;
@@ -143,11 +148,9 @@ public:
         return (this->*rv)(std::forward<class BlockSource const&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Vec3 const&>(a3), std::forward<bool>(a4));
     }
     */
-
     MCAPI InvisibleBlock(std::string const&, int, class Material const&);
 
 protected:
-
 
 private:
 

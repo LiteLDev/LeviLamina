@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LightningBolt : public Actor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LIGHTNINGBOLT
+public:
+    class LightningBolt& operator=(class LightningBolt const&) = delete;
+    LightningBolt(class LightningBolt const&) = delete;
+    LightningBolt() = delete;
+#endif
 
 public:
     /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
@@ -95,7 +101,6 @@ public:
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
-
     /*
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
         void (LightningBolt::*rv)(class CompoundTag const&, class DataLoadHelper&);
@@ -118,13 +123,11 @@ public:
         return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     */
-
     MCAPI LightningBolt(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
 
-
 private:
-
     MCAPI bool _shouldSetOnFire() const;
+
 };

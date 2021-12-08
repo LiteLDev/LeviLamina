@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class LoopbackPacketSender {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LOOPBACKPACKETSENDER
+public:
+    class LoopbackPacketSender& operator=(class LoopbackPacketSender const&) = delete;
+    LoopbackPacketSender(class LoopbackPacketSender const&) = delete;
+    LoopbackPacketSender() = delete;
+#endif
 
 public:
     /*0*/ virtual ~LoopbackPacketSender();
@@ -26,15 +32,12 @@ public:
     /*6*/ virtual void sendBroadcast(class Packet const&);
     /*7*/ virtual void sendBroadcast(class NetworkIdentifier const&, unsigned char, class Packet const&);
     /*8*/ virtual void flush(class NetworkIdentifier const&, class std::function<void (void)>&&);
-
-
     MCAPI LoopbackPacketSender(unsigned char, class NetworkHandler&);
     MCAPI void addLoopbackCallback(class NetEventCallback&);
     MCAPI void removeLoopbackCallback(class NetEventCallback&);
     MCAPI void setUserList(std::vector<class OwnerPtrT<struct EntityRefTraits>> const*);
 
 protected:
-
 
 private:
 

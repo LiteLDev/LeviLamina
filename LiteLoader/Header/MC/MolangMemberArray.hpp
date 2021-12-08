@@ -3,21 +3,26 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MolangMemberArray {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGMEMBERARRAY
+public:
+    struct MolangMemberArray& operator=(struct MolangMemberArray const&) = delete;
+    MolangMemberArray(struct MolangMemberArray const&) = delete;
+    MolangMemberArray() = delete;
+#endif
 
 public:
-
     MCAPI MolangMemberArray(enum MolangStruct_BaseAndPattern, int, int);
     MCAPI MolangMemberArray(enum MolangStruct_MinAndMax, struct MolangMemberArray&&, struct MolangMemberArray&&);
     MCAPI MolangMemberArray(enum MolangStruct_PoseIndexAndHurtTime, int, int);
@@ -34,7 +39,6 @@ public:
     MCAPI ~MolangMemberArray();
 
 protected:
-
 
 private:
 

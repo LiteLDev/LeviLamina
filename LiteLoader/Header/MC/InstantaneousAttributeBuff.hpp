@@ -2,26 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "AttributeBuff.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class InstantaneousAttributeBuff : public AttributeBuff {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INSTANTANEOUSATTRIBUTEBUFF
+public:
+    class InstantaneousAttributeBuff& operator=(class InstantaneousAttributeBuff const&) = delete;
+    InstantaneousAttributeBuff(class InstantaneousAttributeBuff const&) = delete;
+    InstantaneousAttributeBuff() = delete;
+#endif
 
 public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
     /*1*/ virtual bool isInstantaneous() const;
     /*2*/ virtual bool isSerializable() const;
-
     /*
     inline  ~InstantaneousAttributeBuff(){
          (InstantaneousAttributeBuff::*rv)();
@@ -29,11 +34,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI InstantaneousAttributeBuff(float, enum AttributeBuffType);
 
 protected:
-
 
 private:
 

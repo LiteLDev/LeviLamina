@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContainerModel {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINERMODEL
+public:
+    class ContainerModel& operator=(class ContainerModel const&) = delete;
+    ContainerModel(class ContainerModel const&) = delete;
+    ContainerModel() = delete;
+#endif
 
 public:
     /*0*/ virtual void containerContentChanged(int);
@@ -40,7 +46,6 @@ public:
     /*20*/ virtual class Container* _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
-
     /*
     inline bool isItemFiltered(class ItemStackBase const& a0) const{
         bool (ContainerModel::*rv)(class ItemStackBase const&) const;
@@ -83,7 +88,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ContainerModel(enum ContainerEnumName, int, enum ContainerCategory, bool);
     MCAPI bool isContainerSlotInRange(int) const;
     MCAPI void networkUpdateItem(int, class ItemStack const&, class ItemStack const&);
@@ -91,10 +95,9 @@ public:
     MCAPI void registerPlayerNotificationCallback(class std::function<void (int, class ItemStack const& , class ItemStack const& )>);
 
 protected:
-
     MCAPI void _init();
 
 private:
-
     MCAPI void _onClientUIItemNetworkChanged(int, class ItemStack const&, class ItemStack const&);
+
 };

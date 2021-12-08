@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TaskGroup {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TASKGROUP
+public:
+    class TaskGroup& operator=(class TaskGroup const&) = delete;
+    TaskGroup(class TaskGroup const&) = delete;
+    TaskGroup() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TaskGroup();
@@ -24,7 +30,6 @@ public:
     /*3*/ virtual int /*enum enum TaskGroupState*/ getState() const;
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase* >);
-
     /*
     inline  ~TaskGroup(){
          (TaskGroup::*rv)();
@@ -32,7 +37,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TaskGroup(class WorkerPool&, class Scheduler&, std::string);
     MCAPI void disableOwnerThreadChecks();
     MCAPI void flush(class std::function<void (void)>);
@@ -48,11 +52,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _forAllTasks(class std::unique_lock<class std::mutex>&, class std::function<void (class std::shared_ptr<class BackgroundTaskBase> const& )>);
     MCAPI bool _isEmptyInternal() const;
     MCAPI void _queueInternal(class std::shared_ptr<class BackgroundTaskBase>);
     MCAPI static class TaskGroup* getCurrentTaskGroup();
+
 };

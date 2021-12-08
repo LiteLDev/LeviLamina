@@ -2,20 +2,19 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 #include "Bedrock.hpp"
 #include "IMinecraftEventing.hpp"
 #include "Social.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MinecraftEventing {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum InteractionType;
@@ -25,7 +24,14 @@ enum BlockPlacementMethod;
 enum AchievementIds;
 enum POIBlockInteractionType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTEVENTING
+public:
+    class MinecraftEventing& operator=(class MinecraftEventing const&) = delete;
+    MinecraftEventing(class MinecraftEventing const&) = delete;
+    MinecraftEventing() = delete;
+#endif
 
 public:
     /*
@@ -1440,7 +1446,6 @@ public:
         return (this->*rv)(std::forward<unsigned int const&>(a0));
     }
     */
-
     MCAPI MinecraftEventing(class Core::Path const&);
     MCAPI void init(class Bedrock::NonOwnerPointer<class AppPlatform> const&);
     MCAPI static void fireEventAwardAchievement(class Player*, enum MinecraftEventing::AchievementIds);
@@ -1461,12 +1466,11 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI void _fireStructureBlockAction(enum IMinecraftEventing::StructureBlockActionType, class StructureEditorData const&, bool, class StructureTelemetryClientData const*);
     MCAPI void _generateWorldSessionId();
     MCAPI void fireEventPlayerMessage(std::string const&, std::string const&, std::string const&, std::string const&);
     MCAPI static std::unique_ptr<class Social::Events::AchievementEventing> mAchievementEventing;
     MCAPI static class std::mutex sMutex;
+
 };

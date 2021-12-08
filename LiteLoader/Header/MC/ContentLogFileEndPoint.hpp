@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ContentLogFileEndPoint {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTENTLOGFILEENDPOINT
+public:
+    class ContentLogFileEndPoint& operator=(class ContentLogFileEndPoint const&) = delete;
+    ContentLogFileEndPoint(class ContentLogFileEndPoint const&) = delete;
+    ContentLogFileEndPoint() = delete;
+#endif
 
 public:
     /*
@@ -45,12 +51,10 @@ public:
         return (this->*rv)(std::forward<bool>(a0));
     }
     */
-
     MCAPI ContentLogFileEndPoint(class Core::Path, class Core::Path);
     MCAPI static class gsl::basic_string_span<char const, -1> const FILE_NAME;
 
 protected:
-
 
 private:
 

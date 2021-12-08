@@ -2,33 +2,36 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct IntRange {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_INTRANGE
+public:
+    struct IntRange& operator=(struct IntRange const&) = delete;
+    IntRange(struct IntRange const&) = delete;
+    IntRange() = delete;
+#endif
 
 public:
-
     MCAPI IntRange(int, int);
     MCAPI IntRange(int);
     MCAPI int getValue(class Random&) const;
     MCAPI int getValueInclusive(class Random&) const;
     MCAPI bool isInRangeInclusive(int) const;
     MCAPI bool parseJson(class Json::Value, int, int);
-    MCAPI static struct IntRange const ZERO;
 
 protected:
-
 
 private:
 

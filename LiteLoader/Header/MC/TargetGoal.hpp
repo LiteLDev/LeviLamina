@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class TargetGoal {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_TARGETGOAL
+public:
+    class TargetGoal& operator=(class TargetGoal const&) = delete;
+    TargetGoal(class TargetGoal const&) = delete;
+    TargetGoal() = delete;
+#endif
 
 public:
     /*0*/ virtual ~TargetGoal();
@@ -28,7 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_0();
     /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
-
     /*
     inline  ~TargetGoal(){
          (TargetGoal::*rv)();
@@ -36,12 +41,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI TargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, bool, int, bool, float, bool, int);
     MCAPI TargetGoal(class Mob&, bool, int, bool, float, bool, int);
 
 protected:
-
     MCAPI bool _canAttack(class Actor*, bool, struct MobDescriptor const* *);
     MCAPI bool _canReachAfterDelay(class Actor&);
     MCAPI bool _withinRange(class Actor const&);

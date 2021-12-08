@@ -2,26 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ResourcePackStack {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESOURCEPACKSTACK
+public:
+    class ResourcePackStack& operator=(class ResourcePackStack const&) = delete;
+    ResourcePackStack(class ResourcePackStack const&) = delete;
+    ResourcePackStack() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ResourcePackStack();
     /*1*/ virtual std::vector<class LoadedResourceData> loadAllVersionsOf(class ResourceLocation const&) const;
     /*2*/ virtual bool loadAllVersionsOf(class ResourceLocation const&, class ResourcePackMergeStrategy&) const;
-
     /*
     inline  ~ResourcePackStack(){
          (ResourcePackStack::*rv)();
@@ -29,7 +34,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI void add(class PackInstance, class IResourcePackRepository const&, bool);
     MCAPI void getSplitStacks(class ResourcePackStack&, class ResourcePackStack&) const;
     MCAPI bool hasPlatformLockedContent() const;
@@ -40,9 +44,8 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI static void _populateDependencies(std::vector<class PackInstance>&, class PackInstance&, class IResourcePackRepository const&, bool);
     MCAPI static class std::map<class Core::PathBuffer<std::string >, class Core::PathBuffer<std::string >, struct std::less<class Core::PathBuffer<std::string > >, class std::allocator<struct std::pair<class Core::PathBuffer<std::string > const, class Core::PathBuffer<std::string > > > > mUpgradePathMap;
+
 };

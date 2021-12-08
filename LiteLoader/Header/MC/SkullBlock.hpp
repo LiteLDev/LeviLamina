@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SkullBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKULLBLOCK
+public:
+    class SkullBlock& operator=(class SkullBlock const&) = delete;
+    SkullBlock(class SkullBlock const&) = delete;
+    SkullBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SkullBlock();
@@ -137,7 +143,6 @@ public:
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
     /*118*/ virtual class ItemInstance getEntityResourceItem(class Randomize&, class BlockActor const&, int) const;
-
     /*
     inline bool canBeSilkTouched() const{
         bool (SkullBlock::*rv)() const;
@@ -150,13 +155,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI SkullBlock(std::string const&, int);
     MCAPI bool checkMobSpawn(class Level&, class BlockSource&, class BlockPos const&, class SkullBlockActor&) const;
     MCAPI static std::string getTypeDescriptionId(int);
 
 protected:
-
 
 private:
 

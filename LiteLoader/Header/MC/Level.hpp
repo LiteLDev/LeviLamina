@@ -2,11 +2,10 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "PlayerCapabilities.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "BlockInstance.hpp"
 class Actor;
@@ -20,11 +19,11 @@ class BlockSource;
 class BlockPalette;
 class Dimension;
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Level {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add new members to class
 public:
     //Entity & Player
@@ -2184,7 +2183,14 @@ inline void waitAsyncSuspendWork() {
 }
 */
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVEL
+public:
+    class Level& operator=(class Level const&) = delete;
+    Level(class Level const&) = delete;
+    Level() = delete;
+#endif
 
 public:
     /*
@@ -3939,7 +3945,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI Level(class gsl::not_null<class Bedrock::NonOwnerPointer<class SoundPlayerInterface> > const&, std::unique_ptr<class LevelStorage>, std::unique_ptr<class LevelLooseFileStorage>, class IMinecraftEventing&, bool, unsigned char, class Scheduler&, class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> >, class ResourcePackManager&, class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner> > const&, class WeakRefT<struct EntityRefTraits>, std::unique_ptr<class BlockComponentFactory>, std::unique_ptr<class BlockDefinitionGroup>);
     MCAPI struct AdventureSettings const& getAdventureSettings() const;
     MCAPI struct PlayerCapabilities::ISharedController const& getCapabilities() const;
@@ -3957,11 +3962,9 @@ public:
     MCAPI static bool isUsableLevel(class ILevel const&);
 
 protected:
-
     MCAPI class ServerLevelEventCoordinator& _getServerLevelEventCoordinator();
 
 private:
-
     MCAPI void _cleanupDisconnectedPlayers();
     MCAPI class MapItemSavedData& _createMapSavedData(struct ActorUniqueID const&);
     MCAPI void _fixEntitiesRegion(std::vector<class WeakEntityRef>&, class BlockSource const&, class Dimension&);
@@ -3976,4 +3979,5 @@ private:
     MCAPI void _saveAutonomousEntities();
     MCAPI void _saveSomeChunks();
     MCAPI void _syncTime(int);
+
 };

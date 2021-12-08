@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BasePressurePlateBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PressurePlateBlock : public BasePressurePlateBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PRESSUREPLATEBLOCK
+public:
+    class PressurePlateBlock& operator=(class PressurePlateBlock const&) = delete;
+    PressurePlateBlock(class PressurePlateBlock const&) = delete;
+    PressurePlateBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~PressurePlateBlock();
@@ -135,12 +141,9 @@ public:
     /*114*/ virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const;
     /*115*/ virtual int getSignalForData(int) const;
     /*116*/ virtual int getRedstoneSignal(int) const;
-
-
     MCAPI PressurePlateBlock(std::string const&, int, class Material const&, enum PressurePlateBlock::Sensitivity);
 
 protected:
-
 
 private:
 

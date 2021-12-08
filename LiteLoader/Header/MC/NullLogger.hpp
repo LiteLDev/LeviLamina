@@ -3,28 +3,31 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NullLogger {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLLOGGER
+public:
+    class NullLogger& operator=(class NullLogger const&) = delete;
+    NullLogger(class NullLogger const&) = delete;
+    NullLogger() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NullLogger();
     /*1*/ virtual void Logv(char const*, char*);
-
-
     MCAPI static class NullLogger instance;
 
 protected:
-
 
 private:
 

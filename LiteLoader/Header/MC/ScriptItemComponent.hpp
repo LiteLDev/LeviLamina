@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptItemComponent : public ScriptObject {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMCOMPONENT
+public:
+    class ScriptItemComponent& operator=(class ScriptItemComponent const&) = delete;
+    ScriptItemComponent(class ScriptItemComponent const&) = delete;
+    ScriptItemComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptItemComponent();
-
     /*
     inline  ~ScriptItemComponent(){
          (ScriptItemComponent::*rv)();
@@ -28,13 +33,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ScriptItemComponent(class Scripting::WeakTypedObjectHandle<class ScriptItemStack>, class Scripting::WeakLifetimeScope const&, std::string const&);
     MCAPI std::string const& getId() const;
     MCAPI bool valid() const;
 
 protected:
-
 
 private:
 

@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ActorDamageSource {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORDAMAGESOURCE
+public:
+    class ActorDamageSource& operator=(class ActorDamageSource const&) = delete;
+    ActorDamageSource(class ActorDamageSource const&) = delete;
+    ActorDamageSource() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ActorDamageSource();
@@ -34,7 +40,6 @@ public:
     /*14*/ virtual int /*enum enum ActorType*/ getDamagingEntityType() const;
     /*15*/ virtual int /*enum enum ActorCategory*/ getDamagingEntityCategories() const;
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
-
     /*
     inline bool isChildEntitySource() const{
         bool (ActorDamageSource::*rv)() const;
@@ -52,7 +57,6 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
@@ -60,7 +64,6 @@ public:
     MCAPI static std::string const& lookupCauseName(enum ActorDamageCause);
 
 protected:
-
 
 private:
 

@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Actor.hpp"
 #include "Monster.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class Piglin : public Monster {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PIGLIN
+public:
+    class Piglin& operator=(class Piglin const&) = delete;
+    Piglin(class Piglin const&) = delete;
+    Piglin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~Piglin();
@@ -87,7 +93,6 @@ public:
     /*65*/ virtual void __unk_vfn_24();
     /*66*/ virtual void _serverAiMobStep();
     /*67*/ virtual void __unk_vfn_25();
-
     /*
     inline bool canExistInPeaceful() const{
         bool (Piglin::*rv)() const;
@@ -100,11 +105,9 @@ public:
         return (this->*rv)(std::forward<class RenderParams&>(a0));
     }
     */
-
     MCAPI Piglin(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:
-
 
 private:
 

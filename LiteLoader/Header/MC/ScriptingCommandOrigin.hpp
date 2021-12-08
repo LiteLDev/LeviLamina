@@ -2,21 +2,27 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "CommandOrigin.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptingCommandOrigin : public CommandOrigin {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTINGCOMMANDORIGIN
+public:
+    class ScriptingCommandOrigin& operator=(class ScriptingCommandOrigin const&) = delete;
+    ScriptingCommandOrigin(class ScriptingCommandOrigin const&) = delete;
+    ScriptingCommandOrigin() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptingCommandOrigin();
@@ -40,12 +46,9 @@ public:
     /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual bool isValid() const;
-
-
     MCAPI ScriptingCommandOrigin(class ServerLevel&, class Dimension*, class std::function<void (class Json::Value&& )>);
 
 protected:
-
 
 private:
 

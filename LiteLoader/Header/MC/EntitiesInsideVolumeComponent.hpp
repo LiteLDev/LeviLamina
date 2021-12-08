@@ -3,23 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EntitiesInsideVolumeComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENTITIESINSIDEVOLUMECOMPONENT
+public:
+    class EntitiesInsideVolumeComponent& operator=(class EntitiesInsideVolumeComponent const&) = delete;
+    EntitiesInsideVolumeComponent(class EntitiesInsideVolumeComponent const&) = delete;
+    EntitiesInsideVolumeComponent() = delete;
+#endif
 
 public:
-
     MCAPI ~EntitiesInsideVolumeComponent();
 
 protected:
-
 
 private:
 

@@ -2,25 +2,31 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Bedrock.hpp"
 #include "Automation.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ServerNetworkHandler {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0) {
     return _getServerPlayer(a0, 0);
 }
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKHANDLER
+public:
+    class ServerNetworkHandler& operator=(class ServerNetworkHandler const&) = delete;
+    ServerNetworkHandler(class ServerNetworkHandler const&) = delete;
+    ServerNetworkHandler() = delete;
+#endif
 
 public:
     /*
@@ -435,7 +441,6 @@ public:
         return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
     }
     */
-
     MCAPI ServerNetworkHandler(class GameCallbacks&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkHandler&, class PrivateKeyManager&, class ServerLocator&, class PacketSender&, class AllowList&, class PermissionsFile*, class mce::UUID const&, int, bool, std::vector<std::string> const&, std::string, int, class MinecraftCommands&, class IMinecraftApp&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string > > > const&, class Scheduler&, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);
     MCAPI void activateAllowList();
     MCAPI void addToDenyList(class mce::UUID const&, std::string const&);
@@ -463,9 +468,7 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI class ServerPlayer& _createNewPlayer(class NetworkIdentifier const&, class SubClientConnectionRequest const&, unsigned char);
     MCAPI void _displayGameMessage(class Player const&, struct ChatEvent&);
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID) const;
@@ -477,4 +480,5 @@ private:
     MCAPI void _onSubClientAuthenticated(class NetworkIdentifier const&, class Certificate const&, class SubClientLoginPacket const&);
     MCAPI void _sendAdditionalLevelData(class ServerPlayer&, class NetworkIdentifier const&);
     MCAPI void _sendLevelData(class ServerPlayer&, class NetworkIdentifier const&);
+
 };

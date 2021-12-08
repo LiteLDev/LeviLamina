@@ -2,25 +2,30 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ScriptMovementBasicComponent : public ScriptActorComponent {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTMOVEMENTBASICCOMPONENT
+public:
+    class ScriptMovementBasicComponent& operator=(class ScriptMovementBasicComponent const&) = delete;
+    ScriptMovementBasicComponent(class ScriptMovementBasicComponent const&) = delete;
+    ScriptMovementBasicComponent() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ScriptMovementBasicComponent();
-
     /*
     inline  ~ScriptMovementBasicComponent(){
          (ScriptMovementBasicComponent::*rv)();
@@ -28,12 +33,10 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI class Scripting::Result<float> getMaxTurn() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMovementBasicComponent> bind(struct Scripting::Version);
 
 protected:
-
 
 private:
 

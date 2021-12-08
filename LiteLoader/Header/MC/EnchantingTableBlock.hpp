@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "ActorBlock.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class EnchantingTableBlock : public ActorBlock {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ENCHANTINGTABLEBLOCK
+public:
+    class EnchantingTableBlock& operator=(class EnchantingTableBlock const&) = delete;
+    EnchantingTableBlock(class EnchantingTableBlock const&) = delete;
+    EnchantingTableBlock() = delete;
+#endif
 
 public:
     /*0*/ virtual ~EnchantingTableBlock();
@@ -132,7 +138,6 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-
     /*
     inline bool isInteractiveBlock() const{
         bool (EnchantingTableBlock::*rv)() const;
@@ -145,11 +150,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI EnchantingTableBlock(std::string const&, int);
 
 protected:
-
 
 private:
 

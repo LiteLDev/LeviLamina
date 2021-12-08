@@ -3,18 +3,17 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 namespace BlockColorUtil {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
     MCAPI extern class std::array<enum BlockColor, 16> RAINBOW;
     MCAPI enum BlockColor fromInt(int);
     MCAPI enum BlockColor fromItemColor(enum ItemColor);
@@ -23,4 +22,5 @@ namespace BlockColorUtil {
     MCAPI std::string const& getNameMixedCase(enum BlockColor);
     MCAPI std::string const& getNameSnakeCase(enum BlockColor);
     MCAPI int getRGBColor(enum BlockColor);
+
 };

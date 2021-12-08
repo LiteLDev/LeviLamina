@@ -3,24 +3,28 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
+#define BEFORE_EXTRA
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
-
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 struct MolangActorIdArrayPtr {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOLANGACTORIDARRAYPTR
+public:
+    struct MolangActorIdArrayPtr& operator=(struct MolangActorIdArrayPtr const&) = delete;
+    MolangActorIdArrayPtr(struct MolangActorIdArrayPtr const&) = delete;
+    MolangActorIdArrayPtr() = delete;
+#endif
 
 public:
-
     MCAPI MolangActorIdArrayPtr(std::vector<struct ActorUniqueID>);
     MCAPI ~MolangActorIdArrayPtr();
 
 protected:
-
 
 private:
 

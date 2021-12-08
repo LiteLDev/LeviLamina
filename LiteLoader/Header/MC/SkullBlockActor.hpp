@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "BlockActor.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class SkullBlockActor : public BlockActor {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum SkullType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_SKULLBLOCKACTOR
+public:
+    class SkullBlockActor& operator=(class SkullBlockActor const&) = delete;
+    SkullBlockActor(class SkullBlockActor const&) = delete;
+    SkullBlockActor() = delete;
+#endif
 
 public:
     /*0*/ virtual ~SkullBlockActor();
@@ -51,15 +57,12 @@ public:
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
-
-
     MCAPI SkullBlockActor(class BlockPos const&);
     MCAPI enum SkullBlockActor::SkullType getSkullType() const;
     MCAPI void setRotation(float);
     MCAPI void setSkullType(int);
 
 protected:
-
 
 private:
 

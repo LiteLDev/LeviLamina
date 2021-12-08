@@ -2,20 +2,25 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Packet.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class MobEquipmentPacket : public Packet {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOBEQUIPMENTPACKET
+public:
+    class MobEquipmentPacket& operator=(class MobEquipmentPacket const&) = delete;
+    MobEquipmentPacket(class MobEquipmentPacket const&) = delete;
+#endif
 
 public:
     /*0*/ virtual ~MobEquipmentPacket();
@@ -24,7 +29,6 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
-
     /*
     inline  ~MobEquipmentPacket(){
          (MobEquipmentPacket::*rv)();
@@ -32,13 +36,11 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class ItemStack const&, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket(class ActorRuntimeID, class NetworkItemStackDescriptor const&, int, int, enum ContainerID);
     MCAPI MobEquipmentPacket();
 
 protected:
-
 
 private:
 

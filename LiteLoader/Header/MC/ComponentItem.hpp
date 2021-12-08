@@ -2,22 +2,28 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Json.hpp"
 #include "JsonUtil.hpp"
 #include "Item.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ComponentItem : public Item {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_COMPONENTITEM
+public:
+    class ComponentItem& operator=(class ComponentItem const&) = delete;
+    ComponentItem(class ComponentItem const&) = delete;
+    ComponentItem() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ComponentItem();
@@ -119,7 +125,6 @@ public:
     /*96*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
     /*97*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*98*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-
     /*
     inline bool useVariant(int a0, int a1, bool a2) const{
         bool (ComponentItem::*rv)(int, int, bool) const;
@@ -157,7 +162,6 @@ public:
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     */
-
     MCAPI ComponentItem(std::string const&, short);
     MCAPI void _addCerealItemsToMap();
     MCAPI class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem> > _buildItemsFileSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ComponentItem> >&, bool, class SemVersion);
@@ -180,11 +184,10 @@ public:
 
 protected:
 
-
 private:
-
     MCAPI std::unique_ptr<class CompoundTag> _buildItemProperitesNetworkTag() const;
     MCAPI void _executeEvent(class ItemStackBase&, std::string const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&) const;
     MCAPI bool _forceExecuteTrigger(class ItemStackBase&, class DefinitionTrigger const&, std::vector<struct std::pair<std::string const, std::string const>>&, class RenderParams&) const;
     MCAPI void _loadItemProperitesNetworkTag(class CompoundTag const&);
+
 };

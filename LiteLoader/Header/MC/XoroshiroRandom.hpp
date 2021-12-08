@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class XoroshiroRandom {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_XOROSHIRORANDOM
+public:
+    class XoroshiroRandom& operator=(class XoroshiroRandom const&) = delete;
+    XoroshiroRandom(class XoroshiroRandom const&) = delete;
+    XoroshiroRandom() = delete;
+#endif
 
 public:
     /*0*/ virtual ~XoroshiroRandom();
@@ -28,7 +34,6 @@ public:
     /*8*/ virtual void consumeCount(unsigned int);
     /*9*/ virtual std::unique_ptr<class IRandom> fork();
     /*10*/ virtual std::unique_ptr<class IPositionalRandomFactory> forkPositional();
-
     /*
     inline  ~XoroshiroRandom(){
          (XoroshiroRandom::*rv)();
@@ -37,9 +42,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

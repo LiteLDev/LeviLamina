@@ -3,28 +3,32 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class BehaviorData {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 public:
 enum DataType;
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_BEHAVIORDATA
+public:
+    class BehaviorData& operator=(class BehaviorData const&) = delete;
+    BehaviorData(class BehaviorData const&) = delete;
+    BehaviorData() = delete;
+#endif
 
 public:
-
     MCAPI void copyData(std::string const&, std::string const&, class BehaviorData&);
     MCAPI bool hasDataOfType(std::string const&, enum BehaviorData::DataType) const;
 
 protected:
-
 
 private:
 

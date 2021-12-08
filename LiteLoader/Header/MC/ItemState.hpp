@@ -3,22 +3,27 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class ItemState {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTATE
+public:
+    class ItemState& operator=(class ItemState const&) = delete;
+    ItemState(class ItemState const&) = delete;
+    ItemState() = delete;
+#endif
 
 public:
     /*0*/ virtual ~ItemState();
-
     /*
     inline  ~ItemState(){
          (ItemState::*rv)();
@@ -26,11 +31,9 @@ public:
         return (this->*rv)();
     }
     */
-
     MCAPI static void forEachState(class std::function<bool (class ItemState const& )>);
 
 protected:
-
 
 private:
 

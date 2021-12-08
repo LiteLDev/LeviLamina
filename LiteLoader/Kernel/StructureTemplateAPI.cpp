@@ -18,6 +18,10 @@ StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag)
     return st;
 }
 
+StructureTemplate::StructureTemplate(class StructureTemplate const& copy) {
+    memcpy(this, &copy, sizeof(StructureTemplate));
+}
+
 std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();
 }

@@ -2,20 +2,26 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-
 #include "Core.hpp"
 
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class NullSoundPlayer {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_NULLSOUNDPLAYER
+public:
+    class NullSoundPlayer& operator=(class NullSoundPlayer const&) = delete;
+    NullSoundPlayer(class NullSoundPlayer const&) = delete;
+    NullSoundPlayer() = delete;
+#endif
 
 public:
     /*0*/ virtual ~NullSoundPlayer();
@@ -36,7 +42,6 @@ public:
     /*15*/ virtual class Core::PathBuffer<std::string > const getCurrentlyPlayingMusicName();
     /*16*/ virtual void __unk_vfn_14();
     /*17*/ virtual unsigned __int64 registerLoop(std::string const&, class std::function<void (struct LoopingSoundState& )>, float, float);
-
     /*
     inline bool isPlayingMusicEvent(std::string const& a0) const{
         bool (NullSoundPlayer::*rv)(std::string const&) const;
@@ -145,9 +150,7 @@ public:
     }
     */
 
-
 protected:
-
 
 private:
 

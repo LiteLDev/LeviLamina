@@ -3,18 +3,24 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class RandomThreadCheckManager {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_RANDOMTHREADCHECKMANAGER
+public:
+    class RandomThreadCheckManager& operator=(class RandomThreadCheckManager const&) = delete;
+    RandomThreadCheckManager(class RandomThreadCheckManager const&) = delete;
+    RandomThreadCheckManager() = delete;
+#endif
 
 public:
     /*0*/ virtual ~RandomThreadCheckManager();
@@ -25,13 +31,10 @@ public:
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void onAppResumed();
 
-
-
 protected:
 
-
 private:
-
     MCAPI static std::unique_ptr<class RandomThreadCheckManager> mInstance;
     MCAPI static class std::recursive_mutex mMutex;
+
 };

@@ -3,21 +3,25 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 
-
-#define BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PathfinderNode {
 
-#define AFTER_EXTRA //DO NOT EDIT THIS LINE
+#define AFTER_EXTRA
 // Add Member There
 
-#undef AFTER_EXTRA //DO NOT EDIT THIS LINE
+#undef AFTER_EXTRA
+
+#ifndef DISABLE_CONSTRUCTOR_PREVENTION_PATHFINDERNODE
+public:
+    class PathfinderNode& operator=(class PathfinderNode const&) = delete;
+    PathfinderNode() = delete;
+#endif
 
 public:
-
     MCAPI PathfinderNode(class PathfinderNode const&);
     MCAPI PathfinderNode(class BlockPos const&, enum NodeType);
     MCAPI float distanceTo(class PathfinderNode*) const;
@@ -27,7 +31,6 @@ public:
     MCAPI bool inOpenSet();
 
 protected:
-
 
 private:
 
