@@ -4,6 +4,7 @@
 #include <MC/ItemStack.hpp>
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
+#include <MC/ChestBlockActor.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/LootComponent.hpp>
 #include <MC/BlockLegacy.hpp>
@@ -52,6 +53,7 @@ Container* BlockInstance::getContainer()
 {
     Vec3 vec = pos.toVec3();
 
+    //VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
     // This function didn't use 'this' pointer
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
         Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
@@ -79,7 +81,6 @@ ItemStack& BlockInstance::getBlockDrops() {
     auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos,*block);
     ItemStack* a = (ItemStack*)new char[272];
     auto &out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
-    std::cout << &out << std::endl;
     return out;
 }
 

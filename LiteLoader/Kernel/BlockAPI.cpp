@@ -8,7 +8,7 @@
 #include <MC/CompoundTag.hpp>
 
 Block* Block::create(string name, unsigned short tileData) {
-	BlockPalette* generator = SymCall("?getBlockPalette@Level@@UEBAAEBVBlockPalette@@XZ", BlockPalette*, Level*)(Global<Level>);
+	BlockPalette* generator = Global<Level>->getBlockPalette();
 	auto blk = generator->getBlockLegacy(name);
 	if (!blk)
 		return nullptr;
@@ -16,10 +16,9 @@ Block* Block::create(string name, unsigned short tileData) {
 }
 
 Block* Block::create(CompoundTag* nbt) {
-	std::pair<int, Block*> result;      // pair<enum BlockSerializationUtils::NBTState, Block*>
-	SymCall("?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z",
-		void*, void*, CompoundTag*, int64_t)(&result, nbt, 0);
-	return (Block*)result.second;
+    // pair<enum BlockSerializationUtils::NBTState, Block*>
+    auto result = BlockSerializationUtils::tryGetBlockFromNBT(*nbt, nullptr);
+    return const_cast<Block*>(result.second);
 }
 
 string Block::getNameString() {

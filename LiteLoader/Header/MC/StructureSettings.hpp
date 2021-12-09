@@ -5,7 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+// TODO: Need to verify
 enum Mirror : unsigned char {
     None_15=0,
     X,
@@ -31,10 +31,10 @@ char filler[96];
 
 public:
     inline StructureSettings(BlockPos const& size, bool ignoreEntities, bool ignoreBlocks) {
-    SymCall("??0StructureSettings@@QEAA@XZ", StructureSettings*, StructureSettings*)(this);
-    setIgnoreBlocks(ignoreBlocks);
-    setIgnoreEntities(ignoreEntities);
-    setStructureSize(size);
+        SymCall("??0StructureSettings@@QEAA@XZ", StructureSettings*, StructureSettings*)(this);
+        setIgnoreBlocks(ignoreBlocks);
+        setIgnoreEntities(ignoreEntities);
+        setStructureSize(size);
     };
 
 #undef AFTER_EXTRA

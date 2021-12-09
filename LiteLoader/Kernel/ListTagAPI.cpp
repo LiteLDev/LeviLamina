@@ -29,8 +29,10 @@ TagMemoryChunk ListTag::getByteArray(int index) const {
 
 
 void ListTag::add(Tag* t) {
-    SymCall("?add@ListTag@@QEAAXV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@@Z",
-            void, void*, Tag**)(this, &t);
+    void (ListTag::*func)(std::unique_ptr<class Tag>) = &ListTag::add;
+    void (ListTag::*rv)(Tag*);
+    *(void**)&rv = *(void**)&func;
+    (this->*rv)(t);
 }
 
 void ListTag::addEnd() {

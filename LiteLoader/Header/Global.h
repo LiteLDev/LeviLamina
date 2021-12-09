@@ -32,8 +32,8 @@
 #include <entt/entt.hpp>
 #include <seh_exception/seh_exception.hpp>
 
-#include "HookAPI.h"
 #include "MC/Types.hpp"
+#include "HookAPI.h"
 #include "utils/optional.h"
 #include "Utils/GlobalService.h"
 using std::map;

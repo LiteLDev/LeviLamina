@@ -23,7 +23,7 @@ public:
 	LIAPI int getSize();
 
 	LIAPI bool hasContainer(Vec3& pos, int dim);
-	LIAPI Container* getContainer(Vec3& pos, int dim);
+    LIAPI Container* getContainerAt(Vec3& pos, int dim);
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER

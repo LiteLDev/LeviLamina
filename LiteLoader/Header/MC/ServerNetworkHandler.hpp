@@ -15,9 +15,9 @@ class ServerNetworkHandler {
 #define AFTER_EXTRA
 // Add Member There
 public:
-inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0) {
-    return _getServerPlayer(a0, 0);
-}
+inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0, char a1=0) {
+        return _getServerPlayer(a0, a1);
+    }
 
 inline void handle(class NetworkIdentifier const& a0, class CommandRequestPacket const& a1) {
     void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandRequestPacket const&);
