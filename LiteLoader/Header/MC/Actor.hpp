@@ -13,7 +13,7 @@ class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
 class ItemStack;
-class Tick;
+struct Tick;
 enum class FaceID : char;
 #undef BEFORE_EXTRA
 
