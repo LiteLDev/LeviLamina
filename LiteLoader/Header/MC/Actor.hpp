@@ -21,19 +21,28 @@ class Actor {
 // Add new members to class
 public:
 	enum InitializationMethod;
-	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
-	LIAPI bool isSimulatedPlayer();
-	LIAPI bool isPlayer();
-	LIAPI std::string getTypeName();
-	LIAPI bool hurtEntity(int damage);
-	LIAPI Vec2* getDirction();
-	LIAPI void teleport(Vec3 pos,int dimid);
-    LIAPI Vec3 getCameraPos();
-    LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
-    LIAPI BlockInstance getBlockFromViewVector(FaceID& face ,bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
-    LIAPI Actor* getActorFromViewVector(float maxDistance);
+
+    LIAPI std::string getTypeName();
     LIAPI Vec3 const& getPosition();
     LIAPI BlockSource* getBlockSource();
+    LIAPI Vec2* getDirction();
+    LIAPI ActorUniqueID getActorUniqueId();
+    LIAPI Vec3 getCameraPos();
+    LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
+    LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
+	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
+    LIAPI Actor* getActorFromViewVector(float maxDistance);
+
+	LIAPI bool isSimulatedPlayer();
+	LIAPI bool isPlayer();
+	
+	LIAPI bool hurtEntity(int damage);
+	LIAPI void teleport(Vec3 pos,int dimid);
+    LIAPI ItemStack* getHandSlot();
+    LIAPI bool rename(const string& name);
+
+    LIAPI bool refreshActorData();
+    
 
 	//For Compatibility
 	inline Vec3 const& getPos() { return getPosition(); }

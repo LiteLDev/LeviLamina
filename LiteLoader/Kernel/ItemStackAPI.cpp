@@ -42,31 +42,31 @@ ItemStack* ItemStack::clone_s() {
     return a;
 }
 
-string ItemStack::getName() {
+string ItemStack::getName() const {
     if (this->isNull())
         return "";
     return this->getName();
 }
 
-string ItemStack::getCustomName() {
+string ItemStack::getCustomName() const {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getCustomName();
 }
 
-std::string ItemStack::getTypeName() {
+std::string ItemStack::getTypeName() const {
     if (this->isNull())
         return "";
     return ((ItemStack*)this)->getItem()->getSerializedName();
 }
 
-int ItemStack::getAux() {
+int ItemStack::getAux() const {
     if (this->isNull())
         return 0;
     return ((ItemStack*)this)->getAuxValue();
 }
 
-int ItemStack::getCount() {
+int ItemStack::getCount() const {
     if (this->isNull())
         return 0;
     return dAccess<unsigned char, 34>(this);

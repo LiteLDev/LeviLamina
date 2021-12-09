@@ -17,6 +17,7 @@
 #include <MC/TeleportCommand.hpp>
 #include <MC/Player.hpp>
 #include <MC/HitDetection.hpp>
+#include <MC/SimpleContainer.hpp>
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
@@ -70,11 +71,40 @@ Vec2* Actor::getDirction() {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 
+ActorUniqueID Actor::getActorUniqueId()
+{
+    __try
+    {
+        return getUniqueID();
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return { 0 };
+    }
+}
+
 void Actor::teleport(Vec3 to, int dimid) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
     auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
+}
+
+ItemStack* Actor::getHandSlot()
+{
+    return (ItemStack*) & getHandContainer().getItem(0);
+}
+
+bool Actor::rename(const string& name)
+{
+    setNameTag(name);
+    return refreshActorData();
+}
+
+bool Actor::refreshActorData()
+{
+    _sendDirtyActorData();
+    return true;
 }
 
 Vec3 Actor::getCameraPos() {

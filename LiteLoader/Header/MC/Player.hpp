@@ -12,6 +12,7 @@
     class NetworkIdentifier;
     class UserEntityIdentifierComponent;
     class Certificate;
+    class Container;
 #undef BEFORE_EXTRA
 
 class Player : public Mob {
@@ -22,12 +23,6 @@ public:
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();
-
-    LIAPI void kick(string msg);
-    LIAPI bool giveItem(ItemStack* item); 
-    LIAPI bool runcmd(const string& cmd);
-    LIAPI bool transferServer(const string& address, unsigned short port);
-    
     LIAPI string getDeviceName();
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
@@ -36,6 +31,16 @@ public:
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCertificate();
+    LIAPI Container* getEnderChestContainer();
+    LIAPI std::pair<BlockPos, int> getRespawnPosition();
+
+    LIAPI void kick(string msg);
+    LIAPI bool giveItem(ItemStack* item); 
+    LIAPI int clearItem(string typeName);
+    LIAPI bool runcmd(const string& cmd);
+    LIAPI bool transferServer(const string& address, unsigned short port);
+
+    LIAPI bool refreshInventory();
 
     //Packet
     LIAPI void sendTextPacket(string text, TextType Type = TextType::RAW);
