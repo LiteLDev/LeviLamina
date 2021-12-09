@@ -1,6 +1,7 @@
 #pragma once
 #include "HookAPI.h"
 #include "../Global.h"
+#include "ChunkPos.hpp"
 #include <string>
 
 typedef std::string xuid_t;
@@ -102,11 +103,6 @@ public:
     LIAPI AABB toAABB();
 };
 
-class ChunkPos {
-public:
-    int x, z;
-};
-
 struct IVec2 {
 private:
     static inline int iround(float x) {
@@ -144,7 +140,7 @@ public:
     inline long long get() { return id; }
     inline operator long long() { return id; }
 };
-static_assert(!std::is_pod_v<ActorUniqueID>);
+//static_assert(!std::is_pod_v<ActorUniqueID>);
 
 
 class ActorRuntimeID {
@@ -153,7 +149,7 @@ public:
     inline unsigned long long get() { return id; }
     inline operator unsigned long long() { return id; }
 };
-static_assert(std::is_pod_v<ActorRuntimeID>);
+//static_assert(std::is_pod_v<ActorRuntimeID>);
 
 #include "../MC/RelativeFloat.hpp"
 //class RelativeFloat {

@@ -42,14 +42,14 @@ namespace LL {
 
         LIAPI bool operator<(Version b);
         LIAPI bool operator==(Version b);
-        LIAPI bool operator<=(Version b);
-        LIAPI bool operator>(Version b);
-        LIAPI bool operator>=(Version b);
 
         LIAPI std::string toString(bool needStatus = false);
         LIAPI static Version parse(const std::string& str);
     };
 }
+inline bool operator<=(LL::Version a, LL::Version b) { return a < b || a == b; }
+inline bool operator>(LL::Version a, LL::Version b) { return b < a; }
+inline bool operator>=(LL::Version a, LL::Version b) { return b < a || b == a; }
 
 // Loader APIs
 namespace LL

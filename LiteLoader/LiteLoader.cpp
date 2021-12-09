@@ -42,12 +42,13 @@ extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        Logger::Log("=================LiteLoader================");
+        Logger::Log(" ");
+        Logger::Log("================= LiteLoader ================");
         Logger::Log(" ____             __  __           _      ");
         Logger::Log("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
         Logger::Log("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
         Logger::Log("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|");
+        Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
         Logger::Warn("You Are In DevelopMode!");
     }
 }

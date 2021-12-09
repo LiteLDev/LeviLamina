@@ -1,6 +1,6 @@
-﻿#include "pch.h"
-#include <thread>
-#include <Windows.h>
+﻿#include <thread>
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
 
 extern void LLUpdate();
 
