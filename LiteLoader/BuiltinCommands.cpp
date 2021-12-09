@@ -1,18 +1,18 @@
-﻿#include <Global.h>
-#include <LLAPI.h>
-#include <ServerAPI.h>
+﻿#include "AutoUpgrade.h"
 #include <EventAPI.h>
-#include <filesystem>
+#include <Global.h>
+#include <LLAPI.h>
 #include <LoggerAPI.h>
-#include <MC/CommandRegistry.hpp>
-#include <MC/CommandOutput.hpp>
 #include <MC/CommandOrigin.hpp>
+#include <MC/CommandOutput.hpp>
 #include <MC/CommandPosition.hpp>
-#include <MC/VanillaDimensions.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <MC/CommandRegistry.hpp>
 #include <MC/Packet.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/VanillaDimensions.hpp>
 #include <RegCommandAPI.h>
-#include "AutoUpgrade.h"
+#include <ServerAPI.h>
+#include <filesystem>
 
 using namespace RegisterCommandHelper;
 
@@ -27,7 +27,6 @@ public:
         registry->registerCommand(
             "version", "Get the version of this server", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<VersionCommand>("version");
-    
     }
 };
 
@@ -112,7 +111,7 @@ public:
         registry->registerCommand(
             "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<TeleportDimenssionCommand>(
-            "tpdim", 
+            "tpdim",
             makeMandatory(&TeleportDimenssionCommand::DimenssionId, "DimensionId"),
             makeOptional(&TeleportDimenssionCommand::CommandPos, "Position", &TeleportDimenssionCommand::CommandPos_isSet));
     }
@@ -121,38 +120,33 @@ public:
 class LLUpdateCommand : public Command {
     string operation;
     bool isSet;
+
 public:
     void execute(CommandOrigin const& ori, CommandOutput& outp) const {
         bool isForce = false;
-        if (isSet)
-        {
-            if (operation == "force")
-            {
+        if (isSet) {
+            if (operation == "force") {
                 outp.error("Invalid Operation!", {});
                 return;
             }
         }
         outp.success("Start Updating...", {});
-        if (CheckAutoUpdate(true, isForce))
-        {
+        if (CheckAutoUpdate(true, isForce)) {
             outp.success("Update finished.", {});
-        }
-        else
-        {
+        } else {
             outp.error("Fail to update!", {});
         }
     }
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "llupdate", "Update LiteLoader", CommandPermissionLevel::Console, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->registerOverload<TeleportDimenssionCommand>( "llupdate",
-            makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
+        registry->registerOverload<TeleportDimenssionCommand>("llupdate",
+                                                              makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
     }
 };
 
 
-void RegisterCommands()
-{
+void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         VersionCommand::setup(ev.mCommandRegistry);
         PluginsCommand::setup(ev.mCommandRegistry);
