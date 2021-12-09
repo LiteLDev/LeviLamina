@@ -162,7 +162,7 @@ int Player::clearItem(string typeName)
     //Armor
     auto& armor = getArmorContainer();
     items = armor.getAllSlots();
-    int size = armor.getSize();
+    size = armor.getSize();
     for (int i = 0; i < size; ++i)
     {
         if (items[i]->getTypeName() == typeName)
