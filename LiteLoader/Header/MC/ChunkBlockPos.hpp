@@ -12,6 +12,13 @@ class ChunkBlockPos {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+unsigned char x, z;
+short         y;
+ChunkBlockPos(unsigned char a, short b, unsigned char c) {
+    x = a, z = c;
+    y = b;
+};
 
 #undef AFTER_EXTRA
 

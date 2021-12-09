@@ -12,7 +12,14 @@ class ChunkPos {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    int       x, z;
+    long long hash() {
+        return *((long long*)this);
+    }
+    ChunkPos(int ix, int iz)
+        : x(ix)
+        , z(iz){};
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHUNKPOS
