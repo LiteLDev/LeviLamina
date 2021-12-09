@@ -1,4 +1,4 @@
-#include "pch.h"
+#define _CRT_SECURE_NO_WARNINGS
 #define LL_UPDATE_CACHE_PATH "plugins/LiteLoader/Update/"
 #define LL_UPDATE_INFO_RECORD "plugins/LiteLoader/Update/Update.ini"
 
@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <ctime>
 #include "Hash/md5.h"
 #include "SimpleIni.h"
 using namespace std;
@@ -34,6 +35,14 @@ void ClearUpdates()
 	filesystem::remove_all(LL_UPDATE_CACHE_PATH);
 }
 
+string GetTimeString()
+{
+	time_t t = time(0);
+	char ch[64];
+	strftime(ch, sizeof(ch), "%H-%M-%S", localtime(&t));
+	return string(ch);
+}
+
 void LLUpdate()
 {
 	if (!filesystem::exists(LL_UPDATE_INFO_RECORD))
@@ -46,7 +55,7 @@ void LLUpdate()
 	string newVer(ini.GetValue("Info", "Version", ""));
 	if (!newVer.empty())
 	{
-		cout << "[LiteLoader][Info] LL Auto Upgrade working..." << endl;
+		cout << "[" << GetTimeString() << " INFO][AutoUpgrade] LiteLoader Auto Upgrade System working..." << endl;
 		list<CSimpleIniA::Entry> files;
 		ini.GetAllSections(files);
 
@@ -59,7 +68,7 @@ void LLUpdate()
 
 			if (!Raw_CheckFileMD5(from, ini.GetValue(file.pItem, "MD5","")))
 			{
-				cout << "[LiteLoader][Error] MD5 Check failed! Auto Upgrade has not been finished." << endl;
+				cout << "[" << GetTimeString() << " ERROR][AutoUpgrade] MD5 Check failed! Auto Upgrade has not been finished." << endl;
 				ClearUpdates();
 				return;
 			}
@@ -75,21 +84,21 @@ void LLUpdate()
 			string from = LL_UPDATE_CACHE_PATH + name;
 			string to = ini.GetValue(name.c_str(), "Install","") + string("/") + name;
 
-			cout << "[LiteLoader][Info] Copying files..." << endl;
+			cout << "[" << GetTimeString() << " INFO][AutoUpgrade] Copying files..." << endl;
 
 			std::error_code ec;
 			if (!filesystem::copy_file(from, to, filesystem::copy_options::overwrite_existing, ec))
 			{
-				cout << "[LiteLoader][FATAL] Error occurred in Automatic Update! Files copy failed. Errcode ：" << ec << endl;
-				cout << "[LiteLoader][FATAL] WARN! Incomplete update may cause LL to work abnormally." << endl;
-				cout << "[LiteLoader][FATAL] It is recommended to manually update LiteLoader! " << endl;
+				cout << "[" << GetTimeString() << " FATAL][AutoUpgrade] Error occurred in update process! Files copy failed. Error Code：" << ec << endl;
+				cout << "[" << GetTimeString() << " FATAL][AutoUpgrade] WARN! Incomplete update may cause LiteLoader to work abnormally." << endl;
+				cout << "[" << GetTimeString() << " FATAL][AutoUpgrade] It is recommended to manually update LiteLoader! " << endl;
 				ClearUpdates();
 				return;
 			}
 		}
 
 		ClearUpdates();
-		cout << "[LiteLoader][Info] LL Upgrade finished successfully." << endl;
-		cout << "[LiteLoader][Info] Updated to version：v" << newVer << endl;
+		cout << "[" << GetTimeString() << " INFO][AutoUpgrade] LiteLoader Upgrade finished successfully." << endl;
+		cout << "[" << GetTimeString() << " INFO][AutoUpgrade] Updated to version：v" << newVer << endl;
 	}
 }

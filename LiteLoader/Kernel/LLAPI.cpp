@@ -42,8 +42,8 @@ LL::Version::Version(int major, int minor, int revision, Status status)
     : major(major)
     , minor(minor)
     , revision(revision)
-    , status(status) {
-}
+    , status(status)
+{}
 
 bool LL::Version::operator<(LL::Version b) {
     return major < b.major || (major == b.major && minor < b.minor) || (major == b.major && minor == b.minor && revision < b.revision);
@@ -51,18 +51,6 @@ bool LL::Version::operator<(LL::Version b) {
 
 bool LL::Version::operator==(LL::Version b) {
     return major == b.major && minor == b.minor && revision == b.revision;
-}
-
-bool LL::Version::operator<=(LL::Version b) {
-    return *this < b || *this == b;
-}
-
-bool LL::Version::operator>(LL::Version b) {
-    return b < *this;
-}
-
-bool LL::Version::operator>=(LL::Version b) {
-    return *this > b || *this == b;
 }
 
 std::string LL::Version::toString(bool needStatus) {
@@ -81,11 +69,11 @@ LL::Version LL::Version::parse(const std::string& str) {
     auto res = SplitStrWithPattern(str, ".");
 
     Version ver;
-    if (res.size() <= 1)
+    if (res.size() >= 1)
         ver.major = stoi(res[0]);
-    if (res.size() <= 2)
+    if (res.size() >= 2)
         ver.minor = stoi(res[1]);
-    if (res.size() <= 3)
+    if (res.size() >= 3)
         ver.revision = stoi(res[2]);
 
     ver.status = Status::Release;

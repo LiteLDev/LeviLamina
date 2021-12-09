@@ -64,7 +64,7 @@ DownloadResult DownloadAndCheckMd5(const string& url, const string& localPath, b
 
     //Download MD5
     string md5;
-    response = cli.Get((path + ".md5").c_str());
+    response = cli.Get((path + ".md5.verify").c_str());
     if (response && response->status == 200) {
         md5 = response->body;
         if (md5.back() == '\n')

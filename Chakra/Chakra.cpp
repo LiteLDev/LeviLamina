@@ -77,11 +77,6 @@ void loadUnifiedOutput() {
 
 void loadDlls() {
     loadUnifiedOutput();
-	if (!loadLiteLoader()) {
-		Sleep(3000);
-		exit(GetLastError());
-	}
-	loadCSR();
 
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
@@ -105,6 +100,12 @@ void loadDlls() {
 	} else {
 		std::wofstream dllList(TEXT(".\\plugins\\preload.conf"));
 		dllList.close();
+	}
+
+	loadCSR();
+	if (!loadLiteLoader()) {
+		Sleep(3000);
+		exit(GetLastError());
 	}
 }
 
