@@ -19,7 +19,7 @@ Based on [BedrockX](https://github.com/Sysca11/BedrockX)
 1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases)
    or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
 2. Run `SymDB2.exe` to generate symbol files(`bedrock_server.symdb2`) and BDS with export
-   symbols `bedrock_server_mod.exe`(plugins in future may require this version of bds), before you run `SymDB2.exe` you
+   symbols(function) `bedrock_server_mod.exe`(some plugins require this version of bds), before you run `SymDB2.exe` you
    need to check if the `bedrock_server.pdb` exists
 
 ## Develop
@@ -35,7 +35,7 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
 
 4. use `#pragma comment(lib, "path to lib")` or any method you like to add those libraries
 5. add `SymDBHelper.lib` to your project
-6. include EZMC headers and here we go
+6. using headers in SDK/Header/MC and here we go
 
 ### Docker(Linux)
 
@@ -82,5 +82,3 @@ of making it private for commercial use. Do not do evil.
 Although we expected to build an open-source community but forcing everything open-source will ruin this community.  
 So, you can write plugins based on LiteLoader with **ANY** open-source license or even don't publish your source code.
 Exception, if you modified the framework, or write a new framework based on this framework, you **HAVE TO** open-source it.
-
- 
