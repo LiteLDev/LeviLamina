@@ -1,5 +1,5 @@
-#include "MC/Packet.hpp"
 #include "MC/BinaryStream.hpp"
+#include "MC/Packet.hpp"
 
 template <int pid, bool batching = true, bool compress = true>
 class NetworkPacket : public Packet {
@@ -27,7 +27,7 @@ public:
     virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) {
         throw("TODO in MyPkt::_read()");
         return 0;
-    } 
+    }
     virtual void dummyread() {
         throw("TODO in MyPkt::dummyread()");
     }

@@ -15,27 +15,27 @@
 #include <functional>
 #include <iostream>
 #include <minwindef.h>
+#include <mutex>
 #include <optional>
+#include <queue>
 #include <set>
+#include <stack>
 #include <string>
 #include <uchar.h>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
-#include <vector>
-#include <queue>
-#include <stack>
 #include <variant>
-#include <mutex>
+#include <vector>
 
-#include <gsl/gsl>
-#include <entt/entt.hpp>
-#include <seh_exception/seh_exception.hpp>
+#include "third-party/entt/entt.hpp"
+#include "third-party/gsl/gsl"
+#include "third-party/seh_exception/seh_exception.hpp"
 
-#include "MC/Types.hpp"
 #include "HookAPI.h"
-#include "utils/optional.h"
+#include "MC/Types.hpp"
 #include "Utils/GlobalService.h"
+#include "utils/optional.h"
 using std::map;
 using std::string;
 using std::vector;

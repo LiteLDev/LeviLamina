@@ -2,6 +2,6 @@
 #include <string>
 
 namespace LL {
-	std::string getBdsVersion();
-    int getServerProtocolVersion();
-}
+std::string getBdsVersion();
+int getServerProtocolVersion();
+} // namespace LL

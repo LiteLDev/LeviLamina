@@ -64,6 +64,7 @@ public:
 
 protected:
     LIAPI static ListenersContainer listeners;
+
 public:
     static Listener subscribe(Callback callback) {
         listeners.emplace_back(callback);

@@ -1,16 +1,16 @@
 ﻿#pragma once
 #include "Global.h"
-#include <tuple>
-#include "MC/CommandRegistry.hpp"
-#include "MC/CommandMessage.hpp"
-#include "MC/CommandSelector.hpp"
-#include "MC/CommandPosition.hpp"
-#include "MC/CommandParameterData.hpp"
-#include "MC/CommandOutput.hpp"
-#include "MC/Command.hpp"
-#include "MC/Actor.hpp"
-#include "MC/Player.hpp"
 #include "LoggerAPI.h"
+#include "MC/Actor.hpp"
+#include "MC/Command.hpp"
+#include "MC/CommandMessage.hpp"
+#include "MC/CommandOutput.hpp"
+#include "MC/CommandParameterData.hpp"
+#include "MC/CommandPosition.hpp"
+#include "MC/CommandRegistry.hpp"
+#include "MC/CommandSelector.hpp"
+#include "MC/Player.hpp"
+#include <tuple>
 
 namespace RegisterCommandHelper {
 template <typename Command, typename Type>
@@ -77,4 +77,4 @@ static CommandParameterData
         isSet ? getOffset(isSet) : -1,
     };
 }
-}
+} // namespace RegisterCommandHelper
