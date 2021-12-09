@@ -160,7 +160,6 @@
     <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
     <ClCompile Include="Kernel\CommandOriginAPI.cpp" />
     <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
-    <ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />
     <ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
     <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
