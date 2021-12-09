@@ -1,4 +1,13 @@
 @echo off
+
+if [%1]==[clean] (
+del /F /Q RELEASE\Chakra.dll
+del /F /Q RELEASE\LiteLoader.dll
+del /F /Q RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
+del /F /Q RELEASE\SymDB2.exe
+goto End
+)
+
 echo [INFO] Packing RELEASE...
 echo.
 
