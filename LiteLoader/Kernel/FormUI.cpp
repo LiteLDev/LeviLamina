@@ -3,9 +3,27 @@
 #include <memory>
 #include "third-party/Nlohmann/fifo_json.hpp"
 #include <MC/ServerPlayer.hpp>
+#include <MC/BinaryStream.hpp>
+#include <MC/Packet.hpp>
+#include <SendPacketAPI.h>
 using namespace std;
 
 #define RAND_FORM_ID() (unsigned)((rand()<<16)+rand())
+
+//////////////////////////////// Form Id & Data ////////////////////////////////
+map<unsigned, bool> isSimpleForm;
+map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleForms;
+map<unsigned, std::shared_ptr<Form::CustomForm>> customForms;
+
+unsigned NewFormId()
+{
+	unsigned formId;
+	do
+	{
+		formId = RAND_FORM_ID();
+	} while (isSimpleForm.find(formId) != isSimpleForm.end());
+	return formId;
+}
 
 namespace Form
 {
@@ -42,8 +60,19 @@ namespace Form
 
 	bool SimpleForm::sendTo(ServerPlayer* player, Callback callback)
 	{
+		unsigned id = NewFormId();
+		isSimpleForm[id] = true;
+		simpleForms[id] = make_shared<SimpleForm>(*this);
 
-		return false;
+		string data = serialize();
+		BinaryStream wp;
+		wp.reserve(32 + data.size());
+		wp.writeUnsignedInt(id);
+		wp.writeString(data);
+
+		NetworkPacket<100> pkt{ wp.getAndReleaseData() };
+		player->sendNetworkPacket(pkt);
+		return true;
 	}
 
 	//////////////////////////////// Custom Form ////////////////////////////////
@@ -177,27 +206,23 @@ namespace Form
 
 	bool CustomForm::sendTo(ServerPlayer* player, Callback callback)
 	{
+		unsigned id = NewFormId();
+		isSimpleForm[id] = false;
+		customForms[id] = make_shared<CustomForm>(*this);
 
-		return false;
+		string data = serialize();
+		BinaryStream wp;
+		wp.reserve(32 + data.size());
+		wp.writeUnsignedInt(id);
+		wp.writeString(data);
+
+		NetworkPacket<100> pkt{ wp.getAndReleaseData() };
+		player->sendNetworkPacket(pkt);
+		return true;
 	}
 }
 
 using namespace Form;
-
-//////////////////////////////// Form Id & Data ////////////////////////////////
-map<unsigned, bool> isSimpleForm;
-map<unsigned, std::shared_ptr<SimpleForm>> simpleForms;
-map<unsigned, std::shared_ptr<CustomForm>> customForms;
-
-unsigned NewFormId()
-{
-	unsigned formId;
-	do
-	{
-		formId = RAND_FORM_ID();
-	} while (isSimpleForm.find(formId) != isSimpleForm.end());
-	return formId;
-}
 
 //////////////////////////////// Form Callback ////////////////////////////////
 class Packet;

@@ -21,16 +21,12 @@ class Player : public Mob {
 public:
     LIAPI std::string getName();
     LIAPI std::string getRealName();
-    //LIAPI std::string getXuid();
     LIAPI std::string getUuid();
-    //LIAPI int getCommandPermissionLevel();
-    //LIAPI xx setPermissions(int);
-    //LIAPI int getPlayerGameType(); setPlayerGameType();
-    //LIAPI bool isSneaking();
-    //LIAPI bool kill();
 
     LIAPI void kick(string msg);
-    LIAPI bool giveItem(ItemStack* item);
+    LIAPI bool giveItem(ItemStack* item); 
+    LIAPI bool runcmd(const string& cmd);
+    LIAPI bool transferServer(const string& address, unsigned short port);
     
     LIAPI string getDeviceName();
     LIAPI int getAvgPing();
@@ -39,7 +35,7 @@ public:
     LIAPI string getServerAddress();
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
-    LIAPI Certificate* getCert();
+    LIAPI Certificate* getCertificate();
 
     //Packet
     LIAPI void sendTextPacket(string text, TextType Type = TextType::RAW);
@@ -53,14 +49,6 @@ public:
     LIAPI void sendBlockActorDataPacket(BlockPos blockpos, CompoundTag* nametag);
     LIAPI void sendContainerOpenPacket(BlockPos blockpos, unsigned char windowsid, ContainerType type, int64_t ContainerEntityUniqueID);
     
-    template <typename T>
-    inline bool runcmd(T&& str) {
-        return Level::runcmdAs(this, std::forward<T>(str));
-    }
-    template <typename... T>
-    inline bool runcmdA(T&&... a) {
-        return Level::runcmdAsA(*this, std::forward<T>(a)...);
-    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER

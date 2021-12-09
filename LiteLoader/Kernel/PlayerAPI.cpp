@@ -10,6 +10,7 @@
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/Level.hpp>
 #include <EventAPI.h>
 #include <MC/ScriptItemStack.hpp>
 #include <SendPacketAPI.h>
@@ -33,12 +34,12 @@ Certificate* Player::getCert() {
 }
 */
 
-Certificate* Player::getCert() {
+Certificate* Player::getCertificate() {
     return const_cast<Certificate*>(Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getCertificate());
 }
 
 std::string Player::getRealName() {
-    return ExtendedCertificate::getIdentityName(*getCert());
+    return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
 int Player::getAvgPing() {
@@ -127,6 +128,21 @@ string Player::getName()
     return getNameTag();
 }
 
+bool Player::runcmd(const string& cmd) {
+    return Level::runcmdAs(this, cmd);
+}
+
+bool Player::transferServer(const string& address, unsigned short port)
+{
+    BinaryStream wp;
+    wp.reserve(8 + address.size());
+    wp.writeString(address);
+    wp.writeUnsignedShort(port);
+    NetworkPacket<85> pkt{ wp.getAndReleaseData() };
+    sendNetworkPacket(pkt);
+    return true;
+}
+
 string Player::getUuid()
 {
     auto ueic = getUserEntityIdentifierComponent();
@@ -163,7 +179,7 @@ void Player::sendTextPacket(string text, TextType Type) {
     }
     wp.writeString("");
     wp.writeString("");
-    MyPkt<0x09> pkt{wp.getAndReleaseData()};
+    NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
 }
 
@@ -177,7 +193,7 @@ void Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, in
     wp.writeVarInt(FadeOutDuration);
     wp.writeString(getXuid());
     wp.writeString("");
-    MyPkt<0x58> pkt{wp.getAndReleaseData()};
+    NetworkPacket<0x58> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
 }
 
@@ -194,7 +210,7 @@ void Player::sendNotePacket(unsigned int tone) {
      wp.writeString("");
      wp.writeBool(0);
      wp.writeBool(1);
-     MyPkt<0x7B> pkts{wp.getAndReleaseData()};
+     NetworkPacket<0x7B> pkts{wp.getAndReleaseData()};
      sendNetworkPacket(pkts);
 }
 
@@ -208,7 +224,7 @@ void Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string Part
     wp.writeFloat(spawnpos.z);
     //ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
-    MyPkt<0x76> pkts{wp.getAndReleaseData()};
+    NetworkPacket<0x76> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
 }
 
@@ -222,7 +238,7 @@ void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, 
     wp.writeVarInt((int)(Position.z));
     wp.writeFloat(Volume);
     wp.writeFloat(Pitch);
-    MyPkt<0x56> pkts{wp.getAndReleaseData()};
+    NetworkPacket<0x56> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
 }
 
@@ -288,7 +304,7 @@ void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, i
     wp.writeFloat(pos.z); 
     setDataItem(wp, DataItem); //EntityMetadata & DataItem
     wp.writeBool(1);
-    MyPkt<0x0F> pk{wp.getAndReleaseData()};
+    NetworkPacket<0x0F> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
 }
 
@@ -309,6 +325,6 @@ void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
     wp.writeUnsignedVarInt(0); //attr
     setDataItem(wp, DataItem); //EntityMetadata & DataItem
     wp.writeUnsignedVarInt(0); //entity link
-    MyPkt<0xd> pk{wp.getAndReleaseData()};
+    NetworkPacket<0xd> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
 }
