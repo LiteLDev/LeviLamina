@@ -100,24 +100,9 @@ public:
 
     LIAPI void destroy();
 
-    //static
-    LIAPI void setItem(ItemStack* item);
-    LIAPI void setBlock(Block* blk);
-    LIAPI bool setActor(Actor* actor);
-    LIAPI bool setPlayer(Player* actor);
-    LIAPI bool setBlockEntity(BlockActor* ble);
-    LIAPI static Tag* fromItem(ItemStack* item);
-    LIAPI static Tag* fromBlock(Block* blk);
-    LIAPI static Tag* fromActor(Actor* actor);
-    LIAPI static Tag* fromPlayer(Player* player);
-    LIAPI static Tag* fromBlockEntity(BlockActor* ble);
+//static
 
     LIAPI std::string toJson(int formatIndent);
-    LIAPI std::string toSNBT();
-    LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
-    LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
-    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
 
 #undef AFTER_EXTRA
 
