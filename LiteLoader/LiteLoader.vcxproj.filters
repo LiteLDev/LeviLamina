@@ -150,9 +150,6 @@
     <ClCompile Include="Kernel\CommandRegistryAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CommandParameterDataAPI.cpp">
-      <Filter>Kernel\Command</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ListTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
