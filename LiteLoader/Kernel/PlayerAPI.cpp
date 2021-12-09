@@ -6,11 +6,14 @@
 #include <MC/NetworkHandler.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/Minecraft.hpp>
+#include <MC/Container.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/SimpleContainer.hpp>
 #include <MC/Level.hpp>
+#include <bitset>
 #include <EventAPI.h>
 #include <MC/ScriptItemStack.hpp>
 #include <SendPacketAPI.h>
@@ -122,6 +125,57 @@ bool Player::giveItem(ItemStack* item)
     return this->add(*item);
 }
 
+int Player::clearItem(string typeName)
+{
+    int res = 0;
+
+    //Hand
+    ItemStack* item = getHandSlot();
+    if (item->getTypeName() == typeName)
+    {
+        item->setNull();
+        ++res;
+    }
+
+    //OffHand
+    item = (ItemStack*) &getOffhandSlot();
+    if (item->getTypeName() == typeName)
+    {
+        item->setNull();
+        ++res;
+    }
+
+    //Inventory
+    Container* container = &getInventory();
+    auto items = container->getAllSlots();
+    int size = container->getSize();
+    for (int i = 0; i < size; ++i)
+    {
+        if (items[i]->getTypeName() == typeName)
+        {
+            int cnt = items[i]->getCount();
+            container->removeItem(i, cnt);
+            res += cnt;
+        }
+    }
+
+    //Armor
+    auto& armor = getArmorContainer();
+    items = armor.getAllSlots();
+    size = armor.getSize();
+    for (int i = 0; i < size; ++i)
+    {
+        if (items[i]->getTypeName() == typeName)
+        {
+            int cnt = items[i]->getCount();
+            armor.removeItem(i, cnt);
+            res += cnt;
+        }
+    }
+
+    refreshInventory();
+    return res;
+}
 
 string Player::getName()
 {
@@ -132,6 +186,11 @@ bool Player::runcmd(const string& cmd) {
     return Level::runcmdAs(this, cmd);
 }
 
+Container* Player::getEnderChestContainer()
+{
+    return dAccess<Container*>(this, 4208);       //IDA Player::Player() 782 
+}
+
 bool Player::transferServer(const string& address, unsigned short port)
 {
     BinaryStream wp;
@@ -140,6 +199,27 @@ bool Player::transferServer(const string& address, unsigned short port)
     wp.writeUnsignedShort(port);
     NetworkPacket<85> pkt{ wp.getAndReleaseData() };
     sendNetworkPacket(pkt);
+    return true;
+}
+
+std::pair<BlockPos,int> Player::getRespawnPosition()
+{
+    BlockPos bp = getSpawnPosition();
+    int dimId = getSpawnDimension();
+    if (dimId == 3) // has no bed.
+    {
+        bp = getExpectedSpawnPosition();
+        dimId = getExpectedSpawnDimensionId();
+    }
+
+    return { bp, dimId };
+}
+
+bool Player::refreshInventory()
+{
+    sendInventory(true);
+    std::bitset<4> bits("1111");
+    sendArmor(bits);
     return true;
 }
 

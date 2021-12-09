@@ -12,6 +12,8 @@ class NetworkIdentifier;
 class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
+class ItemStack;
+class Tick;
 enum class FaceID : char;
 #undef BEFORE_EXTRA
 
@@ -21,19 +23,30 @@ class Actor {
 // Add new members to class
 public:
 	enum InitializationMethod;
-	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
-	LIAPI bool isSimulatedPlayer();
-	LIAPI bool isPlayer();
-	LIAPI std::string getTypeName();
-	LIAPI bool hurtEntity(int damage);
-	LIAPI Vec2* getDirction();
-	LIAPI void teleport(Vec3 pos,int dimid);
-    LIAPI Vec3 getCameraPos();
-    LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
-    LIAPI BlockInstance getBlockFromViewVector(FaceID& face ,bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false);
+
+    LIAPI std::string getTypeName() const;
+    LIAPI Vec3 getPosition() const;
+    LIAPI BlockSource* getBlockSource() const;
+    LIAPI Vec2* getDirction() const;
+    LIAPI ActorUniqueID getActorUniqueId() const;
+    LIAPI Vec3 getCameraPos() const;
+    LIAPI Tick* getLastTick() const;
+    LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
+    LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
+	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
-    LIAPI Vec3 const& getPosition();
-    LIAPI BlockSource* getBlockSource();
+
+	LIAPI bool isSimulatedPlayer() const;
+	LIAPI bool isPlayer() const;
+    LIAPI bool isOnGround() const;
+	
+	LIAPI bool hurtEntity(int damage);
+	LIAPI void teleport(Vec3 pos,int dimid);
+    LIAPI ItemStack* getHandSlot();
+    LIAPI bool rename(const string& name);
+
+    LIAPI bool refreshActorData();
+    
 
 	//For Compatibility
 	inline Vec3 const& getPos() { return getPosition(); }

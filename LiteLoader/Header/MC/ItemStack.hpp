@@ -21,11 +21,11 @@ public:
     LIAPI static ItemStack* create(Tag* tag);
     LIAPI ItemStack* clone_s();
 
-	LIAPI std::string getName();
-	LIAPI std::string getCustomName();
-	LIAPI std::string getTypeName();
-	LIAPI int getAux();
-	LIAPI int getCount();
+	LIAPI std::string getName() const;
+	LIAPI std::string getCustomName() const;
+	LIAPI std::string getTypeName() const;
+	LIAPI int getAux() const;
+	LIAPI int getCount() const;
 
 	LIAPI bool setItem(ItemStack* newItem);
 	LIAPI bool setLore(std::vector<std::string> lores);

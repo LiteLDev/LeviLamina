@@ -12,43 +12,48 @@
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Level.hpp>
+#include <MC/LevelChunk.hpp>
 #include <MC/Material.hpp>
 #include <MC/BlockInstance.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/Player.hpp>
 #include <MC/HitDetection.hpp>
+#include <MC/SimpleContainer.hpp>
+#include <MC/CommandUtils.hpp>
 class UserEntityIdentifierComponent;
 
-UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() {
-    return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)(this);
+UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
+    return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
-MCINLINE Vec3 const& Actor::getPosition() {
-    Vec3 const& (Actor::*rv)();
-    *((void**)&rv) = dlsym("?getPos@Actor@@UEBAAEBVVec3@@XZ");
-    return (this->*rv)();
+MCINLINE Vec3 Actor::getPosition() const {
+    return CommandUtils::getFeetPos(this);
 }
 
-BlockSource* Actor::getBlockSource()
+BlockSource* Actor::getBlockSource()  const
 {
-    return Level::getBlockSource(this);
+    return Level::getBlockSource((Actor*)this);
 }
 
-bool Actor::isSimulatedPlayer() {
+bool Actor::isSimulatedPlayer() const {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7SimulatedPlayer@@6B@");
     return *(void**)this == vtbl;
 }
 
-bool Actor::isPlayer() {
+bool Actor::isPlayer() const {
     if (!this)
         return false;
     auto vtbl = dlsym("??_7ServerPlayer@@6B@");
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
-std::string Actor::getTypeName() {
+bool Actor::isOnGround() const{
+    return !(dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+}
+
+std::string Actor::getTypeName() const {
     /*string res = SymCall("?EntityTypeToString@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4ActorType@@W4ActorTypeNamespaceRules@@@Z",
         string, int, int) (Raw_GetEntityTypeId(actor), 1);*/
     if (isPlayer())
@@ -66,8 +71,20 @@ bool Actor::hurtEntity(int damage) {
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-Vec2* Actor::getDirction() {
+Vec2* Actor::getDirction() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
+}
+
+ActorUniqueID Actor::getActorUniqueId() const
+{
+    __try
+    {
+        return getUniqueID();
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return { 0 };
+    }
 }
 
 void Actor::teleport(Vec3 to, int dimid) {
@@ -77,7 +94,24 @@ void Actor::teleport(Vec3 to, int dimid) {
     TeleportCommand::applyTarget(*this, *target);
 }
 
-Vec3 Actor::getCameraPos() {
+ItemStack* Actor::getHandSlot()
+{
+    return (ItemStack*) & getHandContainer().getItem(0);
+}
+
+bool Actor::rename(const string& name)
+{
+    setNameTag(name);
+    return refreshActorData();
+}
+
+bool Actor::refreshActorData()
+{
+    _sendDirtyActorData();
+    return true;
+}
+
+Vec3 Actor::getCameraPos() const {
     Vec3 pos = *(Vec3*)&getStateVectorComponent();
     if (isSneaking()) {
         pos.y += -0.125;
@@ -87,7 +121,18 @@ Vec3 Actor::getCameraPos() {
     return pos;
 }
 
-BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
+Tick* Actor::getLastTick() const {
+    auto bs = getBlockSource();
+    if (!bs)
+        return nullptr;
+    auto bpos = getPosition().toBlockPos();
+    LevelChunk* lc = bs->getChunkAt(bpos);
+    if (!lc)
+        return nullptr;
+    return (Tick*) & lc->getLastTick();
+}
+
+BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
     auto& pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
@@ -110,7 +155,7 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     return BlockInstance::Null;
 }
 
-BlockInstance Actor::getBlockFromViewVector(bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) {
+BlockInstance Actor::getBlockFromViewVector(bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     FaceID face = FaceID::Unknown;
     return getBlockFromViewVector(face, includeLiquid, solidOnly, maxDistance, ignoreBorderBlocks, fullOnly);
 }
