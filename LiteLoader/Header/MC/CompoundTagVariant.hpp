@@ -30,42 +30,42 @@ class CompoundTagVariant {
 char filler[0x30]; // IDA CompoundTagVariant::emplace
 
 public:
-inline Tag::Type getTagType() {
-    return dAccess<Tag::Type, 40>(this);
-}
-inline ByteTag* asByteTag() {
-    return (ByteTag*)this;
-}
-inline ShortTag* asShortTag(){
-    return (ShortTag*)this;
-}
-inline IntTag* asIntTag(){
-    return (IntTag*)this;
-}
-inline Int64Tag* asInt64Tag(){
-    return (Int64Tag*)this;
-}
-inline FloatTag* asFloatTag(){
-    return (FloatTag*)this;
-}
-inline DoubleTag* asDoubleTag(){
-    return (DoubleTag*)this;
-}
-inline StringTag* asStringTag(){
-    return (StringTag*)this;
-}
-inline ListTag* asListTag(){
-    return (ListTag*)this;
-}
-inline CompoundTag* asCompoundTag(){
-    return (CompoundTag*)this;
-}
-inline ByteArrayTag* asByteArrayTag(){
-    return (ByteArrayTag*)this;
-}
-inline IntArrayTag* asIntArrayTag(){
-    return (IntArrayTag*)this;
-}
+    inline Tag::Type getTagType() {
+        return dAccess<Tag::Type, 40>(this);
+    }
+    inline ByteTag* asByteTag() {
+        return (ByteTag*)this;
+    }
+    inline ShortTag* asShortTag(){
+        return (ShortTag*)this;
+    }
+    inline IntTag* asIntTag(){
+        return (IntTag*)this;
+    }
+    inline Int64Tag* asInt64Tag(){
+        return (Int64Tag*)this;
+    }
+    inline FloatTag* asFloatTag(){
+        return (FloatTag*)this;
+    }
+    inline DoubleTag* asDoubleTag(){
+        return (DoubleTag*)this;
+    }
+    inline StringTag* asStringTag(){
+        return (StringTag*)this;
+    }
+    inline ListTag* asListTag(){
+        return (ListTag*)this;
+    }
+    inline CompoundTag* asCompoundTag(){
+        return (CompoundTag*)this;
+    }
+    inline ByteArrayTag* asByteArrayTag(){
+        return (ByteArrayTag*)this;
+    }
+    inline IntArrayTag* asIntArrayTag(){
+        return (IntArrayTag*)this;
+    }
 
 #undef AFTER_EXTRA
 

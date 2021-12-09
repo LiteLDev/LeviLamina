@@ -52,72 +52,72 @@ class Tag {
 private:
 
 public:
-enum Type : uint8_t {
-    End,
-    Byte,
-    Short,
-    Int,
-    Int64,
-    Float,
-    Double,
-    ByteArray,
-    String,
-    List,
-    Compound,
-    IntArray,
-};
-//MCAPI static std::string getTagName(enum Tag::Type);
-//MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
-//MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
-//MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
+    enum Type : uint8_t {
+        End,
+        Byte,
+        Short,
+        Int,
+        Int64,
+        Float,
+        Double,
+        ByteArray,
+        String,
+        List,
+        Compound,
+        IntArray,
+    };
+    //MCAPI static std::string getTagName(enum Tag::Type);
+    //MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
+    //MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
+    //MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
-LIAPI static Tag* createTag(Tag::Type t);
-LIAPI Type getTagType() const;
+    LIAPI static Tag* createTag(Tag::Type t);
+    LIAPI Type getTagType() const;
 
-//value
-//LIAPI char& asByte();
-//LIAPI short& asShort();
-//LIAPI int& asInt();
-//LIAPI __int64& asLong();
-//LIAPI float& asFloat();
-//LIAPI double& asDouble();
-//LIAPI std::string& asString();
-//LIAPI std::vector<Tag*>& asList();
-//LIAPI std::map<std::string, char[0x28]>& asCompound();
-//LIAPI TagMemoryChunk& asByteArray();
+    //value
+    //LIAPI char& asByte();
+    //LIAPI short& asShort();
+    //LIAPI int& asInt();
+    //LIAPI __int64& asLong();
+    //LIAPI float& asFloat();
+    //LIAPI double& asDouble();
+    //LIAPI std::string& asString();
+    //LIAPI std::vector<Tag*>& asList();
+    //LIAPI std::map<std::string, char[0x28]>& asCompound();
+    //LIAPI TagMemoryChunk& asByteArray();
 
-LIAPI ByteTag* asByteTag();
-LIAPI ShortTag* asShortTag();
-LIAPI IntTag* asIntTag();
-LIAPI Int64Tag* asInt64Tag();
-LIAPI FloatTag* asFloatTag();
-LIAPI DoubleTag* asDoubleTag();
-LIAPI StringTag* asStringTag();
-LIAPI ListTag* asListTag();
-LIAPI CompoundTag* asCompoundTag();
-LIAPI ByteArrayTag* asByteArrayTag();
-LIAPI IntArrayTag* asIntArrayTag();
+    LIAPI ByteTag* asByteTag();
+    LIAPI ShortTag* asShortTag();
+    LIAPI IntTag* asIntTag();
+    LIAPI Int64Tag* asInt64Tag();
+    LIAPI FloatTag* asFloatTag();
+    LIAPI DoubleTag* asDoubleTag();
+    LIAPI StringTag* asStringTag();
+    LIAPI ListTag* asListTag();
+    LIAPI CompoundTag* asCompoundTag();
+    LIAPI ByteArrayTag* asByteArrayTag();
+    LIAPI IntArrayTag* asIntArrayTag();
 
-LIAPI void destroy();
+    LIAPI void destroy();
 
-//static
-LIAPI void setItem(ItemStack* item);
-LIAPI void setBlock(Block* blk);
-LIAPI bool setActor(Actor* actor);
-LIAPI bool setPlayer(Player* actor);
-LIAPI bool setBlockEntity(BlockActor* ble);
-LIAPI static Tag* fromItem(ItemStack* item);
-LIAPI static Tag* fromBlock(Block* blk);
-LIAPI static Tag* fromActor(Actor* actor);
-LIAPI static Tag* fromPlayer(Player* player);
-LIAPI static Tag* fromBlockEntity(BlockActor* ble);
+    //static
+    LIAPI void setItem(ItemStack* item);
+    LIAPI void setBlock(Block* blk);
+    LIAPI bool setActor(Actor* actor);
+    LIAPI bool setPlayer(Player* actor);
+    LIAPI bool setBlockEntity(BlockActor* ble);
+    LIAPI static Tag* fromItem(ItemStack* item);
+    LIAPI static Tag* fromBlock(Block* blk);
+    LIAPI static Tag* fromActor(Actor* actor);
+    LIAPI static Tag* fromPlayer(Player* player);
+    LIAPI static Tag* fromBlockEntity(BlockActor* ble);
 
-LIAPI std::string toJson(int formatIndent);
-LIAPI std::string toSNBT();
-LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
-LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
-LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
+    LIAPI std::string toJson(int formatIndent);
+    LIAPI std::string toSNBT();
+    LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
+    LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
+    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
+    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& offset, bool isLittleEndian = true);
 
 #undef AFTER_EXTRA
 

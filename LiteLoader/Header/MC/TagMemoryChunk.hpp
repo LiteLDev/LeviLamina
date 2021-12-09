@@ -12,6 +12,7 @@ struct TagMemoryChunk {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
     size_t capacity = 0;
     size_t size = 0;
     std::unique_ptr<uint8_t[]> data;
