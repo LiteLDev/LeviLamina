@@ -6,7 +6,18 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum class BossEvent {
+    BossEventShow = 0,
+    // BossEventRegisterPlayer is sent by the client to the server to request being shown the boss bar.
+    BossEventRegisterPlayer = 1,
+    BossEventHide = 2,
+    // BossEventUnregisterPlayer is sent by the client to request the removal of the boss bar.
+    BossEventUnregisterPlayer = 3,
+    BossEventHealthPercentage = 4,
+    BossEventTitle = 5,
+    BossEventAppearanceProperties = 6,
+    BossEventTexture = 7,
+};
 #undef BEFORE_EXTRA
 
 class BossEventPacket : public Packet {

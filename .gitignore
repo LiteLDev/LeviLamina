@@ -18,3 +18,9 @@ RELEASE/SymDB2.exe
 RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
 SDK/
+/Release/Chakra.exp
+/Release/Chakra.lib
+/Release/LiteLoader.exp
+/Release/LiteLoader.lib
+/Release/Chakra.pdb
+/Release/LiteLoader.pdb

@@ -13,6 +13,7 @@
     class UserEntityIdentifierComponent;
     class Certificate;
     class Container;
+    #include "ScorePacketInfo.hpp"
 #undef BEFORE_EXTRA
 
 class Player : public Mob {
@@ -50,10 +51,12 @@ public:
     /*bad*/ LIAPI void sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch);
     LIAPI void sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
     LIAPI void sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
-    LIAPI void sendUpdateBlockPacket(BlockPos vec3, int blockid, UpdateBlockFlags UpdateBlockType = UpdateBlockFlags::BlockUpdateNetwork, int Layer = 0);
-    LIAPI void sendBlockActorDataPacket(BlockPos blockpos, CompoundTag* nametag);
-    LIAPI void sendContainerOpenPacket(BlockPos blockpos, unsigned char windowsid, ContainerType type, int64_t ContainerEntityUniqueID);
-    
+    LIAPI void sendTransferPacket(const string& address, short port);
+    LIAPI void sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder);
+    LIAPI void sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
+    LIAPI void sendBossEventPacket(string name, float percent, int type);
+    LIAPI void sendCommandRequestPacket(const string& cmd);
+    LIAPI void sendTextTalkPacket(const string& msg);
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER

@@ -19,6 +19,17 @@ inline class ServerPlayer* getServerPlayer(class NetworkIdentifier const& a0) {
     return _getServerPlayer(a0, 0);
 }
 
+inline void handle(class NetworkIdentifier const& a0, class CommandRequestPacket const& a1) {
+    void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandRequestPacket const&);
+    *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z");
+    return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CommandRequestPacket const&>(a1));
+}
+
+inline void handle(class NetworkIdentifier const& a0, class TextPacket const& a1) {
+    void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class TextPacket const&);
+    *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextPacket@@@Z");
+    return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class TextPacket const&>(a1));
+}
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERVERNETWORKHANDLER
@@ -134,11 +145,6 @@ public:
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandBlockUpdatePacket const&);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CommandBlockUpdatePacket const&>(a1));
-    }
-    inline void handle(class NetworkIdentifier const& a0, class CommandRequestPacket const& a1){
-        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandRequestPacket const&);
-        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CommandRequestPacket const&>(a1));
     }
     inline void handle(class NetworkIdentifier const& a0, class ContainerClosePacket const& a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ContainerClosePacket const&);

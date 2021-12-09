@@ -12,7 +12,14 @@ class MinecraftPackets {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+//Warning temporary
+static Packet* createPacket(int type) {
+    unsigned long long packet[2] = {0};
+    SymCall("?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
+            void*, void*, int)(packet, type);
+    return (Packet*)*packet;
+}
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MINECRAFTPACKETS
