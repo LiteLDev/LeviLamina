@@ -40,11 +40,10 @@ public:
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
-    LIAPI bool isItemEntity() const;
+    LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
 	
     LIAPI bool hasTag(string tag);
-    LIAPI ItemStack* getItemStackFromItemEntity();
 	LIAPI bool hurtEntity(int damage);
 	LIAPI void teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();

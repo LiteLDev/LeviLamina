@@ -14,6 +14,7 @@ class ItemActor : public Actor {
 #define AFTER_EXTRA
 // Add Member There
 public:
+    LIAPI ItemStack* getItemStack();
     LIAPI int getDespawnTime();
     LIAPI void setDespawnTime(int);
     LIAPI int getLatestSpawnTime();

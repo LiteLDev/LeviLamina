@@ -236,6 +236,7 @@ CompoundTag* Player::getNbt()
 bool Player::setNbt(CompoundTag* nbt)
 {
     nbt->setPlayer(this);
+    return true;
 }
 
 string Player::getUuid()
