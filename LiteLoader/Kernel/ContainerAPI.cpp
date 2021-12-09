@@ -22,14 +22,14 @@ LIAPI bool Container::addItemToFirstEmptySlot(ItemStack* item) {
 }
 //Safely remove items to the container
 LIAPI bool Container::removeItem(int slot, unsigned int number) {
-    if (slot > getSize())
+    if (slot >= getSize())
         return false;
-    removeItem(slot, number);
+    removeItem(slot, (int)number);
     return true;
 }
 
 LIAPI ItemStack* Container::getSlot(int slot) {
-    if (slot > getSize())
+    if (slot >= getSize())
         return nullptr;
     auto list = getAllSlots();
     return const_cast<ItemStack*>(list[slot]);
