@@ -18,15 +18,17 @@ xcopy Tools\llvm-dlltool-msys2\* SDK\Tools\llvm-dlltool-msys2 /E /Q /Y
 copy /Y Tools\LibraryBuilder.exe SDK\Tools
 copy /Y Tools\SymDB2.exe SDK\Tools
 
+if [%1] neq [action] goto Zipped
 echo.
 echo [INFO] Zipping Files...
 cd SDK
 ..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoader-SDK.zip *
 cd ..
+:Zipped
 
-if [%1]==[action] goto Finish
-rmdir SDK /S /Q
-:Finish
+rem if [%1]==[action] goto Finish
+rem rmdir SDK /S /Q
+rem :Finish
 
 echo.
 echo [INFO] Packing LL-SDK... DONE!
