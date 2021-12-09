@@ -18,6 +18,10 @@
 #include <MC/ScriptItemStack.hpp>
 #include <SendPacketAPI.h>
 #include <MC/ConnectionRequest.hpp>
+#include <MC/ScorePacketInfo.hpp>
+#include <MC/MinecraftPackets.hpp>
+#include <MC/CommandRequestPacket.hpp>
+#include <MC/TextPacket.hpp>
 
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
@@ -234,6 +238,7 @@ string Player::getUuid()
         string*, void*, string*)(uuid, &uuidStr);
     return uuidStr;
 }
+//////////////Packet//////////////////////////
 
 void Player::sendTextPacket(string text, TextType Type) {
     BinaryStream wp;
@@ -407,4 +412,54 @@ void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
     wp.writeUnsignedVarInt(0); //entity link
     NetworkPacket<0xd> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
+}
+
+void Player::sendTransferPacket(const string& address, short port) {
+    BinaryStream wp;
+    Packet* packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
+    dAccess<string>(packet, 48) = address;
+    dAccess<short>(packet, 80) = port;
+    sendNetworkPacket(*packet);
+}
+
+void Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) {
+    BinaryStream wp;
+    wp.writeString("sidebar");
+    wp.writeString(name);
+    wp.writeString(title);
+    wp.writeString("dummy");
+    wp.writeVarInt(sortOrder);
+    NetworkPacket<107> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
+}
+
+void Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
+    auto packet = MinecraftPackets::createPacket(0x6c);
+    dAccess<char>(packet, 48) = type;
+    dAccess<vector<ScorePacketInfo>>(packet, 56) = data;
+    sendNetworkPacket(*packet);
+}
+
+void Player::sendBossEventPacket(string name, float percent, int type) {
+    auto packet = MinecraftPackets::createPacket(0x4a);
+    dAccess<ActorUniqueID>(packet, 56) = dAccess<ActorUniqueID>(packet, 64) = getUniqueID();
+    dAccess<int>(packet, 72) = type;
+    dAccess<string>(packet, 80) = name;
+    dAccess<float>(packet, 112) = percent;
+    sendNetworkPacket(*packet);
+}
+
+void Player::sendCommandRequestPacket(const string& cmd) {
+    auto packet = MinecraftPackets::createPacket(0x4d);
+    dAccess<string, 48>(packet) = cmd;
+    NetworkIdentifier* nid = getNetworkIdentifier();
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet));
+}
+
+void Player::sendTextTalkPacket(const string& msg) {
+    auto packet = MinecraftPackets::createPacket(0x09);
+    dAccess<unsigned char, 48>(packet) = 1;
+    dAccess<string, 56>(packet) = "";
+    dAccess<string, 88>(packet) = msg;
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet));
 }
