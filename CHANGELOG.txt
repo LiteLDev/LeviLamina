@@ -1,1 +1,9 @@
-Write changelog here
+== LiteLoaderBDS 2.0 PreRelease 1 ==
+Adapt to 1.18.1, with everything new: 
+- Stronger API and Event system
+- Friendly interfaces
+- Countless low-level APIs ready to use immediately WITHOUT complex symcall
+- Utils to help you develop more easily
+- Auto upgrade system
+- High performance and light weight
+More interesting things in the future! Just wait in hope
