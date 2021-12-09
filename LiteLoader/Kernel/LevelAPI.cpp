@@ -14,11 +14,12 @@
 #include <MC/ServerPlayer.hpp>
 #include <MC/ActorDamageSource.hpp>
 #include <MC/CompoundTag.hpp>
+#include <MC/Tick.hpp>
 
-Actor* Level::fetchEntity(struct ActorUniqueID a0, bool a1) {
+Actor* Level::getEntity(struct ActorUniqueID uniqueId) {
 	class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
 	*((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
-	return (Global<Level>->*rv)(std::forward<struct ActorUniqueID>(a0), std::forward<bool>(a1));
+	return (Global<Level>->*rv)(std::forward<struct ActorUniqueID>(uniqueId), false);
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
@@ -153,7 +154,7 @@ bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack*
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 	char v83;
     ActorUniqueID v6 = ads->getDamagingEntityUniqueID();
-	return Global<Level>->fetchEntity(v6, 0);
+	return Global<Level>->getEntity(v6);
 }
 
 void* Level::ServerCommandOrigin::fake_vtbl[26];
@@ -200,6 +201,45 @@ std::vector<Player*> Level::getAllPlayers(){
 	return player_list;
 }
 
+std::vector<Actor*> Level::getAllEntities(int dimId)
+{
+    Level* lv = Global<Level>;
+    Dimension* dim = lv->getDimension(dimId);
+    if (!dim)
+        return {};
+    auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 312); //IDA Dimension::registerEntity
+
+    //Check Valid
+    std::vector<Actor*> result;
+    auto currTick =  SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+    for (auto& i : list)
+    {
+        //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
+        //    Actor*, void*)(&i.second);
+        auto entity = getEntity(i.first);
+        if (!entity)
+            continue;
+        auto lastTick = entity->getLastTick();
+        if (!lastTick)
+            continue;
+        if (currTick - lastTick->t == 0 || currTick - lastTick->t == 1)
+            result.push_back(entity);
+    }
+    return result;
+}
+
+std::vector<Actor*> Level::getAllEntities()
+{
+    std::vector<Actor*> entityList;
+    auto entities = getAllEntities(0);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    entities = getAllEntities(1);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    entities = getAllEntities(2);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    return entityList;
+}
+
 Player* Level::getPlayer(const string& info) {
     string target{info};
     std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
@@ -232,6 +272,27 @@ Player* Level::getPlayer(const string& info) {
         return true;
     });
     return found;
+}
+
+
+Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name)
+{
+    Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(Global<Level>);
+    return sp->spawnMob(pos, dimId, name);
+}
+
+Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item)
+{
+    Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(Global<Level>);
+    return sp->spawnItem(pos, dimId, item);
+}
+
+bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire)
+{
+    SymCall("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
+        void, Level*, BlockSource*, Actor*, Vec3*, float, bool, bool, float, bool)
+        (Global<Level>, Level::getBlockSource(dimId), source, &pos, power, isFire, isDestroy, range, true);
+    return true;
 }
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {

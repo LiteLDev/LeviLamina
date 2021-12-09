@@ -13,6 +13,7 @@ class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
 class ItemStack;
+struct Tick;
 enum class FaceID : char;
 #undef BEFORE_EXTRA
 
@@ -24,11 +25,13 @@ public:
 	enum InitializationMethod;
 
     LIAPI std::string getTypeName() const;
-    LIAPI Vec3 const& getPosition() const;
+    LIAPI Vec3 getPosition() const;
     LIAPI BlockSource* getBlockSource() const;
     LIAPI Vec2* getDirction() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
+    LIAPI Tick* getLastTick() const;
+    LIAPI vector<string> getAllTags() const;
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
@@ -36,7 +39,11 @@ public:
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
+    LIAPI bool isItemEntity() const;
+    LIAPI bool isOnGround() const;
 	
+    LIAPI bool hasTag(string tag);
+    LIAPI ItemStack* getItemStackFromItemEntity();
 	LIAPI bool hurtEntity(int damage);
 	LIAPI void teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
@@ -46,7 +53,7 @@ public:
     
 
 	//For Compatibility
-	inline Vec3 const& getPos() { return getPosition(); }
+	inline Vec3 getPos() { return getPosition(); }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR

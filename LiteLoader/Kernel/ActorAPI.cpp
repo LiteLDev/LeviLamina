@@ -12,20 +12,22 @@
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Level.hpp>
+#include <MC/LevelChunk.hpp>
 #include <MC/Material.hpp>
 #include <MC/BlockInstance.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/Player.hpp>
 #include <MC/HitDetection.hpp>
 #include <MC/SimpleContainer.hpp>
+#include <MC/CommandUtils.hpp>
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
     return SymCall("??$tryGetComponent@VUserEntityIdentifierComponent@@@Actor@@QEAAPEAVUserEntityIdentifierComponent@@XZ", UserEntityIdentifierComponent*, Actor*)((Actor*)this);
 }
 
-MCINLINE Vec3 const& Actor::getPosition() const {
-    return SymCall("?getPos@Actor@@UEBAAEBVVec3@@XZ", Vec3 const&, Actor*)((Actor*)this);
+MCINLINE Vec3 Actor::getPosition() const {
+    return CommandUtils::getFeetPos(this);
 }
 
 BlockSource* Actor::getBlockSource()  const
@@ -45,6 +47,20 @@ bool Actor::isPlayer() const {
         return false;
     auto vtbl = dlsym("??_7ServerPlayer@@6B@");
     return *(void**)this == vtbl || isSimulatedPlayer();
+}
+
+bool Actor::isItemEntity() const
+{
+    return hasCategory((ActorCategory)1024);    // IDA Player::take
+}
+
+ItemStack* Actor::getItemStackFromItemEntity()
+{
+    return isItemEntity() ? (ItemStack*)((uintptr_t)this + 1864) : nullptr;      //IDA Player::take
+}
+
+bool Actor::isOnGround() const{
+    return !(dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {
@@ -113,6 +129,17 @@ Vec3 Actor::getCameraPos() const {
         pos.y += ((Player*)this)->getCameraOffset();
     }
     return pos;
+}
+
+Tick* Actor::getLastTick() const {
+    auto bs = getBlockSource();
+    if (!bs)
+        return nullptr;
+    auto bpos = getPosition().toBlockPos();
+    LevelChunk* lc = bs->getChunkAt(bpos);
+    if (!lc)
+        return nullptr;
+    return (Tick*) & lc->getLastTick();
 }
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {

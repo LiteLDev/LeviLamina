@@ -27,11 +27,16 @@ class Level {
 // Add new members to class
 public:
     //Entity & Player
-    LIAPI static Actor* fetchEntity(struct ActorUniqueID a0, bool a1);
-    LIAPI static void forEachPlayer(class std::function<bool(class Player&)> a0);
-    LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> a0);
+    LIAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
+    LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
     LIAPI static std::vector<Player*> getAllPlayers();
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
+    LIAPI static std::vector<Actor*> getAllEntities(int dimId);
+    LIAPI static std::vector<Actor*> getAllEntities();
+    LIAPI static Actor* getEntity(struct ActorUniqueID uniqueId);
+    LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
+    LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
+    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
     LIAPI static class LevelStorage& getLevelStorage();
 

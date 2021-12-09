@@ -18,7 +18,7 @@ ItemStack* ItemStack::create() {
     }
 }
 
-ItemStack* ItemStack::create(Tag* tag) {
+ItemStack* ItemStack::create(CompoundTag* tag) {
     ItemStack* item = create();
     if (!item)
         return nullptr;
@@ -27,7 +27,7 @@ ItemStack* ItemStack::create(Tag* tag) {
 }
 
 ItemStack* ItemStack::create(std::string type, int count) {
-    CompoundTag* nbt = (CompoundTag*)Tag::createTag(Tag::Type::Compound);
+    CompoundTag* nbt = CompoundTag::create();
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
     nbt->putString("Name", type);
@@ -73,7 +73,7 @@ int ItemStack::getCount() const {
 }
 
 bool ItemStack::setItem(ItemStack* newItem) {
-    Tag* nbt = Tag::fromItem(newItem);
+    CompoundTag* nbt = CompoundTag::fromItem(newItem);
     nbt->setItem(this);
     return true;
 }

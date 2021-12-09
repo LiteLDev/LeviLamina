@@ -64,7 +64,6 @@ public:
 
 protected:
     LIAPI static ListenersContainer listeners;
-
 public:
     static Listener subscribe(Callback callback) {
         listeners.emplace_back(callback);
@@ -88,9 +87,9 @@ public:
             }
             return passToBDS;
         } catch (const seh_exception& e) {
-            Logger::Error("Uncaught SEH Exception in Event!");
+            Logger::Error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
         } catch (const std::exception& e) {
-            Logger::Error("Uncaught Exception in Event!");
+            Logger::Error("Uncaught Exception in Event({})!", typeid(EVENT).name());
         }
         return passToBDS;
     }
