@@ -13,6 +13,7 @@
     class UserEntityIdentifierComponent;
     class Certificate;
     class Container;
+    class CompoundTag;
     #include "ScorePacketInfo.hpp"
 #undef BEFORE_EXTRA
 
@@ -40,7 +41,8 @@ public:
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
-
+    LIAPI CompoundTag* getNbt();
+    LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshInventory();
 
     //Packet

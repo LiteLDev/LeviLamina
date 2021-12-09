@@ -22,7 +22,7 @@ ItemStack* ItemStack::create(CompoundTag* tag) {
     ItemStack* item = create();
     if (!item)
         return nullptr;
-    tag->setItem(item);
+    tag->setItemStack(item);
     return item;
 }
 
@@ -73,8 +73,8 @@ int ItemStack::getCount() const {
 }
 
 bool ItemStack::setItem(ItemStack* newItem) {
-    CompoundTag* nbt = CompoundTag::fromItem(newItem);
-    nbt->setItem(this);
+    CompoundTag* nbt = CompoundTag::fromItemStack(newItem);
+    nbt->setItemStack(this);
     return true;
 }
 
@@ -82,5 +82,16 @@ bool ItemStack::setLore(vector<string> lores) {
     if (this->isNull())
         return false;
     this->setCustomLore(lores);
+    return true;
+}
+
+CompoundTag* ItemStack::getNbt()
+{
+    return CompoundTag::fromItemStack(this);
+}
+
+bool ItemStack::setNbt(CompoundTag* nbt)
+{
+    nbt->setItemStack(this);
     return true;
 }

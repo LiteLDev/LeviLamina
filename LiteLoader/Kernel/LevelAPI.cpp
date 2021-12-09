@@ -134,7 +134,7 @@ bool Level::setBlock(const BlockPos& pos, int dim, const string& name, unsigned 
 	return setBlock(pos,dim, newBlock);
 }
 
-bool Level::setBlock(const BlockPos& pos, int dim, Tag* nbt) {
+bool Level::setBlock(const BlockPos& pos, int dim, CompoundTag* nbt) {
 	Block* newBlock = Block::create(nbt);
 	if (!newBlock)
 		return false;

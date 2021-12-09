@@ -7,6 +7,7 @@
 // Add include headers & pre-declares
 class Block;
 class Container;
+class CompoundTag;
 
 #undef BEFORE_EXTRA
 
@@ -15,7 +16,11 @@ class BlockActor {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-	
+    
+    LIAPI void refreshData();
+    LIAPI CompoundTag* getNbt();
+    LIAPI bool setNbt(CompoundTag* nbt);
+    static unsigned int getBlockEntityType(Block* block);
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCKACTOR

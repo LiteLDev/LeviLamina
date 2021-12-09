@@ -12,6 +12,7 @@
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Level.hpp>
+#include <MC/CompoundTag.hpp>
 #include <MC/LevelChunk.hpp>
 #include <MC/Material.hpp>
 #include <MC/BlockInstance.hpp>
@@ -49,14 +50,9 @@ bool Actor::isPlayer() const {
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
-bool Actor::isItemEntity() const
+bool Actor::isItemActor() const
 {
     return hasCategory((ActorCategory)1024);    // IDA Player::take
-}
-
-ItemStack* Actor::getItemStackFromItemEntity()
-{
-    return isItemEntity() ? (ItemStack*)((uintptr_t)this + 1864) : nullptr;      //IDA Player::take
 }
 
 bool Actor::isOnGround() const{
@@ -113,6 +109,16 @@ bool Actor::rename(const string& name)
 {
     setNameTag(name);
     return refreshActorData();
+}
+
+CompoundTag* Actor::getNbt()
+{
+    return CompoundTag::fromActor(this);
+}
+
+bool Actor::setNbt(CompoundTag* nbt)
+{
+    return nbt->setActor(this);
 }
 
 bool Actor::refreshActorData()

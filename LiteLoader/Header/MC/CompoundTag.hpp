@@ -62,16 +62,16 @@ public:
     };
 
     // io
-    LIAPI void setItem(ItemStack* item);
+    LIAPI void setItemStack(ItemStack* item);
     LIAPI void setBlock(Block* blk);
     LIAPI bool setActor(Actor* actor);
-    LIAPI bool setPlayer(Player* actor);
-    LIAPI bool setBlockEntity(BlockActor* ble);
-    LIAPI static CompoundTag* fromItem(ItemStack* item);
+    LIAPI bool setPlayer(Player* player);
+    LIAPI bool setBlockActor(BlockActor* ble);
+    LIAPI static CompoundTag* fromItemStack(ItemStack* item);
     LIAPI static CompoundTag* fromBlock(Block* blk);
     LIAPI static CompoundTag* fromActor(Actor* actor);
     LIAPI static CompoundTag* fromPlayer(Player* player);
-    LIAPI static CompoundTag* fromBlockEntity(BlockActor* ble);
+    LIAPI static CompoundTag* fromBlockActor(BlockActor* ble);
 
     LIAPI std::string toSNBT();
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);

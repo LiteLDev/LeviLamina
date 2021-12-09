@@ -89,14 +89,14 @@ class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_spa
     return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
-CompoundTag* CompoundTag::fromItem(ItemStack* item) {
+CompoundTag* CompoundTag::fromItemStack(ItemStack* item) {
     CompoundTag* tmp = 0;
     SymCall("?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
             void*, void*, CompoundTag**)(item, &tmp);
     return tmp;
 }
 
-void CompoundTag::setItem(ItemStack* item) {
+void CompoundTag::setItemStack(ItemStack* item) {
     SymCall("?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z",
             void*, void*, CompoundTag*)(item, this);
 }
@@ -132,6 +132,11 @@ bool CompoundTag::setActor(Actor* actor)
     return res;
 }
 
+CompoundTag* CompoundTag::fromPlayer(Player* player)
+{
+    return fromActor(player);
+}
+
 bool CompoundTag::setPlayer(Player* player)
 {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
@@ -141,7 +146,7 @@ bool CompoundTag::setPlayer(Player* player)
     return res;
 }
 
-bool CompoundTag::setBlockEntity(BlockActor* ble)
+bool CompoundTag::setBlockActor(BlockActor* ble)
 {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
@@ -149,7 +154,7 @@ bool CompoundTag::setBlockEntity(BlockActor* ble)
     return true;
 }
 
-CompoundTag* CompoundTag::fromBlockEntity(BlockActor* ble) {
+CompoundTag* CompoundTag::fromBlockActor(BlockActor* ble) {
     CompoundTag* tmp = CompoundTag::create();
     ble->save(*tmp);
     return tmp;

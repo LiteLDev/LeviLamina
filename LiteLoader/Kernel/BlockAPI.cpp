@@ -5,7 +5,7 @@
 #include <MC/BlockLegacy.hpp>
 #include <MC/BlockPalette.hpp>
 #include <MC/BlockSerializationUtils.hpp>
-#include <MC/Tag.hpp>
+#include <MC/CompoundTag.hpp>
 
 Block* Block::create(string name, unsigned short tileData) {
 	BlockPalette* generator = SymCall("?getBlockPalette@Level@@UEBAAEBVBlockPalette@@XZ", BlockPalette*, Level*)(Global<Level>);
@@ -15,10 +15,10 @@ Block* Block::create(string name, unsigned short tileData) {
 	return (Block*)((BlockLegacy*)blk)->toBlock(tileData);
 }
 
-Block* Block::create(Tag* nbt) {
+Block* Block::create(CompoundTag* nbt) {
 	std::pair<int, Block*> result;      // pair<enum BlockSerializationUtils::NBTState, Block*>
 	SymCall("?tryGetBlockFromNBT@BlockSerializationUtils@@YA?AU?$pair@W4NBTState@BlockSerializationUtils@@PEBVBlock@@@std@@AEBVCompoundTag@@PEAUNbtToBlockCache@1@@Z",
-		void*, void*, Tag*, int64_t)(&result, nbt, 0);
+		void*, void*, CompoundTag*, int64_t)(&result, nbt, 0);
 	return (Block*)result.second;
 }
 
@@ -52,4 +52,15 @@ unsigned short Block::getTileData() {
 	}
 	Logger::Error("Error in GetTileData");
 	return 0;
+}
+
+CompoundTag* Block::getNbt()
+{
+	return CompoundTag::fromBlock(this);
+}
+
+bool Block::setNbt(CompoundTag* nbt)
+{
+	nbt->setBlock(this);
+	return true;
 }

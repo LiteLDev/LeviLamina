@@ -5,7 +5,7 @@
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
-class Tag;
+class CompoundTag;
 #undef BEFORE_EXTRA
 
 class Block {
@@ -14,12 +14,14 @@ class Block {
 // Add new members to class
 public:
 	LIAPI static Block* create(string str, unsigned short tileData);
-	LIAPI static Block* create(Tag* nbt);
+	LIAPI static Block* create(CompoundTag* nbt);
 
 	LIAPI string getNameString();
     LIAPI string getTypeName();
 	LIAPI int getId();
 	LIAPI unsigned short getTileData();
+    LIAPI CompoundTag* getNbt();
+    LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK

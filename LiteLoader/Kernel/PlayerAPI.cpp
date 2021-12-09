@@ -7,6 +7,7 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/Minecraft.hpp>
 #include <MC/Container.hpp>
+#include <MC/CompoundTag.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Certificate.hpp>
 #include <MC/ExtendedCertificate.hpp>
@@ -224,6 +225,17 @@ bool Player::refreshInventory()
     sendInventory(true);
     std::bitset<4> bits("1111");
     sendArmor(bits);
+    return true;
+}
+
+CompoundTag* Player::getNbt()
+{
+    return CompoundTag::fromPlayer(this);
+}
+
+bool Player::setNbt(CompoundTag* nbt)
+{
+    nbt->setPlayer(this);
     return true;
 }
 
