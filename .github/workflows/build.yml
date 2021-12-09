@@ -63,6 +63,15 @@ jobs:
         name: LiteLoader-SDK
         path: ${{ github.workspace }}\LiteLoader-SDK.zip
 
+    - name: Prepare for creating Release
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      id: rel
+      if: startsWith(github.ref, 'refs/tags/')
+      run: |
+        echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+        mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+      shell: bash
+
     - name: Create New Release
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
@@ -70,7 +79,7 @@ jobs:
         body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: |
-          ${{env.GITHUB_WORKSPACE}}\LiteLoader.zip
+          ${{env.GITHUB_WORKSPACE}}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
           ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
