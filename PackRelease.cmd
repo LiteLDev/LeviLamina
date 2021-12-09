@@ -12,11 +12,13 @@ copy /Y x64\Release\LiteLoader.dll RELEASE\LiteLoader.dll
 copy /Y x64\Release\LLAutoUpdate.dll RELEASE\plugins\LiteLoader\LLAutoUpdate.dll
 copy /Y Tools\SymDB2.exe RELEASE\SymDB2.exe
 
+if [%1] neq [action] goto Zipped
 echo.
 echo [INFO] Zipping Files...
 cd RELEASE
 ..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=9 ..\LiteLoader.zip *
 cd ..
+:Zipped
 
 echo.
 echo [INFO] Packing RELEASE... DONE!
