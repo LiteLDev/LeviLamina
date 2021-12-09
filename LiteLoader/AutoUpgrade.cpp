@@ -105,9 +105,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(LL_RELAY_INDEX, &status, &id, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("Unable to check for updates, connection failed. Errcode: {}", status);
+				Log("Unable to check for updates. Connection failed! Error Code: {}", status);
 			else
-				Debug("Unable to check for updates, connection failed. Errcode: {}", status);
+				Debug("Unable to check for updates. Connection failed! Error Code: {}", status);
 			return false;
 		}
 		if (EndsWith(id, "\n"))
@@ -121,9 +121,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 		if (!HttpGetSync(infoUrl, &status, &info, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
-				Log("Unable to check for updates, download failed. Errcode: {}", status);
+				Log("Unable to check for updates. Download failed! Error Code: {}", status);
 			else
-				Debug("Unable to check for updates, download failed. Errcode: {}", status);
+				Debug("Unable to check for updates. Download failed! Error Code: {}", status);
 			return false;
 		}
 
@@ -159,9 +159,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 				if (nowVersion < newVersion)
 				{
 					if (isUpdateManually)
-						Log("Updating attached file: {}", fileName);
+						Log("Updating file: {}", fileName);
 					else
-						Debug("Updating attached file: {}", fileName);
+						Debug("Updating file: {}", fileName);
 
 					string path = file["Path"].get<string>();
 					string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
@@ -178,27 +178,27 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 						break;
 					case DownloadResult::FailInit:
 						if (isUpdateManually)
-							Log("Update attached file: Fail to init connection.");
+							Log("Updating file: Fail to init connection!");
 						else
-							Debug("Update attached file: Fail to init connection.");
+							Debug("Updating file: Fail to init connection!");
 						break;
 					case DownloadResult::FailDownload:
 						if (isUpdateManually)
-							Log("Update attached file: Fail to download resource, Errcode: {}", errorCode);
+							Log("Updating file: Fail to download resource! Error code: {}", errorCode);
 						else
-							Debug("Update attached file: Fail to download resource, Errcode: {}", errorCode);
+							Debug("Updating file: Fail to download resource! Error code: {}", errorCode);
 						break;
 					case DownloadResult::FailDownloadMd5:
 						if (isUpdateManually)
-							Log("Update attached file: Fail to download md5.verify, Errcode: {}", errorCode);
+							Log("Updating file: Fail to download md5.verify! Error code: {}", errorCode);
 						else
-							Debug("Update attached file: Fail to download md5.verify, Errcode: {}", errorCode);
+							Debug("Updating file: Fail to download md5.verify! Error code: {}", errorCode);
 						break;
 					case DownloadResult::FailCheckMd5:
 						if (isUpdateManually)
-							Log("Update attached file: Check MD5 failed!");
+							Log("Updating file: Check MD5 failed!");
 						else
-							Debug("Update attached file: Check MD5 failed!");
+							Debug("Updating file: Check MD5 failed!");
 						break;
 					}
 				}
@@ -213,7 +213,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			bds.erase(0, 1);
 		if (!data[bds].is_object())
 		{
-			Info("Your BDS does not match the current mainline LiteLoader, and automatic updates will not be pushed.");
+			Info("Your BDS does not match the current mainline LiteLoader. Auto-update will not be pushed.");
 			if (isUpdateManually)
 				return false;
 			else
@@ -239,7 +239,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			if (res >= 0 && Version::parse(ini->GetValue("Info", "Version", "0.0.0")) == verRemote)
 			{
 				if (isUpdateManually)
-					Log("The automatic update download is completed, please restart the server to update.");
+					Log("Auto-update download is completed, please restart the server to finish update.");
 				return true;
 			}
 			delete ini;
@@ -277,23 +277,23 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 					break;
 				case DownloadResult::FailInit:
 					if (isUpdateManually)
-						Log("Update LiteLoader: Fail to init connection.");
+						Log("Update LiteLoader: Fail to init connection!");
 					else
-						Debug("Update LiteLoader: Fail to init connection.");
+						Debug("Update LiteLoader: Fail to init connection!");
 					return false;
 					break;
 				case DownloadResult::FailDownload:
 					if (isUpdateManually)
-						Log("Update LiteLoader: Fail to download resource, Errcode: {}", errorCode);
+						Log("Update LiteLoader: Fail to download resource! Error code: {}", errorCode);
 					else
-						Debug("Update LiteLoader: Fail to download resource, Errcode: {}", errorCode);
+						Debug("Update LiteLoader: Fail to download resource! Error code: {}", errorCode);
 					return false;
 					break;
 				case DownloadResult::FailDownloadMd5:
 					if (isUpdateManually)
-						Log("Update LiteLoader: Fail to download md5.verify, Errcode: {}", errorCode);
+						Log("Update LiteLoader: Fail to download md5.verify! Error Code: {}", errorCode);
 					else
-						Debug("Update LiteLoader: Fail to download md5.verify, Errcode: {}", errorCode);
+						Debug("Update LiteLoader: Fail to download md5.verify! Error code: {}", errorCode);
 					return false;
 					break;
 				case DownloadResult::FailCheckMd5:
@@ -316,7 +316,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 			iniUpdate->SaveFile(LL_UPDATE_INFO_RECORD);
 			delete iniUpdate;
 
-            Info("Congratulations! The automatic update download is complete, now restart the server to enjoy the new version.");
+            Info("Congratulations! The update download is complete, now restart the server to enjoy the new version.");
 		}
 	}
 	catch (nlohmann::json::exception& e) {
@@ -341,9 +341,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 	catch (...)
 	{
 		if (isUpdateManually)
-			Log("An error was caught during the automatic update process.");
+			Log("An error was caught during the update process.");
 		else
-			Debug("An error was caught during the automatic update process.");
+			Debug("An error was caught during the update process.");
 	}
 	return false;
 }
@@ -382,7 +382,7 @@ void InitAutoUpdateCheck()
 	//Check Files
 	if (!filesystem::exists(LL_UPDATE_PROGRAM))
 	{
-		Warn("The automatic update is not running, and the automatic update component is missing.");
+		Warn("Auto-update is not running. Update program is missing!");
 		return;
 	}
 	if (!filesystem::exists(LL_UPDATE_CACHE_PATH))
