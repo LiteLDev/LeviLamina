@@ -13,6 +13,7 @@ class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
 class ItemStack;
+class Tick;
 enum class FaceID : char;
 #undef BEFORE_EXTRA
 
@@ -24,11 +25,12 @@ public:
 	enum InitializationMethod;
 
     LIAPI std::string getTypeName() const;
-    LIAPI Vec3 const& getPosition() const;
+    LIAPI Vec3 getPosition() const;
     LIAPI BlockSource* getBlockSource() const;
     LIAPI Vec2* getDirction() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
+    LIAPI Tick* getLastTick() const;
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
@@ -36,6 +38,7 @@ public:
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
+    LIAPI bool isOnGround() const;
 	
 	LIAPI bool hurtEntity(int damage);
 	LIAPI void teleport(Vec3 pos,int dimid);
