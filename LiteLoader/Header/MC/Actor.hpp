@@ -9,6 +9,7 @@
 class Actor;
 class Player;
 class NetworkIdentifier;
+class CompoundTag;
 class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
@@ -48,7 +49,8 @@ public:
 	LIAPI void teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);
-
+    LIAPI CompoundTag* getNbt();
+    LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
     
 

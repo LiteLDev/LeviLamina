@@ -13,7 +13,7 @@ class ActorDamageSource;
 class ItemStack;
 class ItemActor;
 class Block;
-class Tag;
+class CompoundTag;
 class Player;
 class BlockSource;
 class BlockPalette;
@@ -51,7 +51,7 @@ public:
     LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);
-    LIAPI static bool setBlock(const BlockPos& pos, int dim, Tag* nbt);
+    LIAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
     LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos);
     LIAPI static bool breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* tool);
     LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);

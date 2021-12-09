@@ -8,6 +8,7 @@
 // Add include headers & pre-declares
 class Tag;
 class ItemActor;
+class CompoundTag;
 
 #undef BEFORE_EXTRA
 
@@ -29,6 +30,8 @@ public:
 
 	LIAPI bool setItem(ItemStack* newItem);
 	LIAPI bool setLore(std::vector<std::string> lores);
+    LIAPI CompoundTag* getNbt();
+    LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 
 public:

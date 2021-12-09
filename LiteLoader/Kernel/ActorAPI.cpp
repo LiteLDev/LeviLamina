@@ -12,6 +12,7 @@
 #include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
 #include <MC/Level.hpp>
+#include <MC/CompoundTag.hpp>
 #include <MC/LevelChunk.hpp>
 #include <MC/Material.hpp>
 #include <MC/BlockInstance.hpp>
@@ -113,6 +114,16 @@ bool Actor::rename(const string& name)
 {
     setNameTag(name);
     return refreshActorData();
+}
+
+CompoundTag* Actor::getNbt()
+{
+    return CompoundTag::fromActor(this);
+}
+
+bool Actor::setNbt(CompoundTag* nbt)
+{
+    return nbt->setActor(this);
 }
 
 bool Actor::refreshActorData()
