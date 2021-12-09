@@ -7,11 +7,12 @@
 // Include Headers or Declare Types Here
 
 enum CommandPermissionLevel : char {
-    Normal = 0,
-    Privileged = 1,
-    AutomationPlayer = 2,
-    OperatorOnly = 3,
-    ConsoleOnly = 4
+    Any = 0,
+    GameMasters = 1,
+    Admin = 2,
+    HostPlayer = 3,
+    Console = 4,
+    Internal = 5,
 };
 
 enum class CommandFlagValue : char {

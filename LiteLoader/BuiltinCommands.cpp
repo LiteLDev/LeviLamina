@@ -4,7 +4,6 @@
 #include <EventAPI.h>
 #include <filesystem>
 #include <LoggerAPI.h>
-
 #include <MC/CommandRegistry.hpp>
 #include <MC/CommandOutput.hpp>
 #include <MC/CommandOrigin.hpp>
@@ -25,7 +24,7 @@ public:
     }
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
-            "version", "Get the version of this server", CommandPermissionLevel::OperatorOnly, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+            "version", "Get the version of this server", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<VersionCommand>("version");
     
     }
@@ -77,7 +76,7 @@ public:
     }
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
-            "plugins", "View plugin information", CommandPermissionLevel::OperatorOnly, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+            "plugins", "View plugin information", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<PluginsCommand>("plugins");
         registry->registerOverload<PluginsCommand>("plugins", makeOptional(&PluginsCommand::PluginName, "PluginName", &PluginsCommand::PluginName_isSet));
     }
@@ -110,7 +109,7 @@ public:
     }
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
-            "tpdim", "Teleport to Dimenssion", CommandPermissionLevel::OperatorOnly, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+            "tpdim", "Teleport to Dimenssion", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<TeleportDimenssionCommand>(
             "tpdim", 
             makeMandatory(&TeleportDimenssionCommand::DimenssionId, "DimenssionId"),
