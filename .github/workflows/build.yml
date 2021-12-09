@@ -79,7 +79,7 @@ jobs:
         body_path: ${{ github.workspace }}\CHANGELOG.txt
         token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
         files: |
-          ${{env.GITHUB_WORKSPACE}}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
-          ${{env.GITHUB_WORKSPACE}}\LiteLoader-SDK.zip
+          ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
+          ${{ github.workspace }}\LiteLoader-SDK.zip
       env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
