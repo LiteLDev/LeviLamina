@@ -157,7 +157,6 @@
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
-    <ClCompile Include="Kernel\CommandAPI.cpp" />
     <ClCompile Include="Kernel\CommandOriginAPI.cpp" />
     <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
     <ClCompile Include="Kernel\CommandParameterDataAPI.cpp" />

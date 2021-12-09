@@ -141,9 +141,6 @@
     <ClCompile Include="BuiltinCommands.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CommandAPI.cpp">
-      <Filter>Kernel\Command</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\CommandOriginAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
@@ -237,7 +234,6 @@
     <ClCompile Include="PlayerDB.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Header\MC\Json.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
