@@ -277,25 +277,25 @@ Player* Level::getPlayer(const string& info) {
 
 Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name)
 {
-    Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(Global<Level>);
+
+    Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnMob(pos, dimId, name);
 }
 
 Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item)
 {
-    Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(Global<Level>);
+    Spawner* sp = &Global<Level>->getSpawner();
     return sp->spawnItem(pos, dimId, item);
 }
 
 bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire)
 {
-    SymCall("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
-        void, Level*, BlockSource*, Actor*, Vec3*, float, bool, bool, float, bool)
-        (Global<Level>, Level::getBlockSource(dimId), source, &pos, power, isFire, isDestroy, range, true);
+    Global<Level>->explode(*Level::getBlockSource(dimId), source, pos, power, isFire, isDestroy, range, true);
     return true;
 }
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
+    // TODO: Should item be constructed 
     Item* itemcreate = (Item*)new char[552];
     Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemcreate, "", a2);
     ItemStack* a = (ItemStack*)new char[272];

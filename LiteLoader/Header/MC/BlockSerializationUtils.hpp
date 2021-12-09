@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CompoundTag.hpp"
 
 #undef BEFORE_EXTRA
 

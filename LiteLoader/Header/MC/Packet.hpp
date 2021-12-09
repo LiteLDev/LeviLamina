@@ -37,8 +37,7 @@ public:
 
     ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
     {
-        return SymCall("?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@E@Z",
-            ServerPlayer*, ServerNetworkHandler*, NetworkIdentifier*, char)(handler, netId, dAccess<char>(this, 16));
+        return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
 
 #undef AFTER_EXTRA

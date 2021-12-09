@@ -231,8 +231,7 @@ class NetworkIdentifier;
 
 Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id, Packet* packet)
 {
-	return SymCall("?_getServerPlayer@ServerNetworkHandler@@AEAAPEAVServerPlayer@@AEBVNetworkIdentifier@@E@Z",
-		Player*, ServerNetworkHandler*, NetworkIdentifier*, char)(handler, id, dAccess<char>(packet, 16));
+    return handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
 void CallFormCallback(Player* player, unsigned formId, const string& data)

@@ -207,5 +207,5 @@ LIAPI bool Scoreboard::deleteScore(Player* player, const std::string& objname) {
 }
 
 LIAPI bool Scoreboard::scoreboardIdIsValid(ScoreboardId* id) {
-    return SymCall("?isValid@ScoreboardId@@QEBA_NXZ", bool, ScoreboardId*)(id);
+    return id->isValid();
 }

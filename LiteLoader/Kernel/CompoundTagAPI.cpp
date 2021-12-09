@@ -11,6 +11,7 @@
 #include <MC/ListTag.hpp>
 #include <MC/IntArrayTag.hpp>
 #include <MC/CompoundTagVariant.hpp>
+#include <MC/NbtIo.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/Actor.hpp>
@@ -90,28 +91,29 @@ class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_spa
 };
 
 CompoundTag* CompoundTag::fromItemStack(ItemStack* item) {
-    CompoundTag* tmp = 0;
-    SymCall("?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
-            void*, void*, CompoundTag**)(item, &tmp);
-    return tmp;
+    return item->save().release();
+
+    //CompoundTag* tmp = 0;
+    //SymCall("?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
+    //        void*, void*, CompoundTag**)(item, &tmp);
+    //return tmp;
 }
 
 void CompoundTag::setItemStack(ItemStack* item) {
-    SymCall("?fromTag@ItemStack@@SA?AV1@AEBVCompoundTag@@@Z",
-            void*, void*, CompoundTag*)(item, this);
+    using SetItemStackFn = ItemStack* (*)(ItemStack*, CompoundTag*);
+    ItemStack (*func)(const CompoundTag&) = &ItemStack::fromTag;
+    (*(SetItemStackFn)func)(item, this);
 }
 
 CompoundTag* CompoundTag::fromBlock(Block* blk) {
     auto tag = (CompoundTag*)((uintptr_t)blk + 96);
-    CompoundTag* newTag;
-    SymCall("?clone@CompoundTag@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
-            CompoundTag**, CompoundTag*, CompoundTag**)(tag, &newTag);
-    return newTag;
+    return tag->clone().release();
 }
 
 void CompoundTag::setBlock(Block* blk) {
-    //SymCall("??0CompoundTag@@QEAA@$$QEAV0@@Z", Tag*, Tag*, Tag*)((Tag*)((uintptr_t)blk + 96), this);
-    *(CompoundTag**)((uintptr_t)blk + 96) = *(CompoundTag**)this;
+    auto tag = (CompoundTag*)((uintptr_t)blk + 96);
+    tag->destroy();
+    tag = this->clone().release();
 }
 
 CompoundTag* CompoundTag::fromActor(Actor* actor) {
@@ -582,12 +584,14 @@ CompoundTag* CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& endOffse
         vtbl = dlsym("??_7BigEndianStringByteInput@@6B@");
 
     uintptr_t iDataInput[4] = {(uintptr_t)vtbl, endOffset, len, (uintptr_t)data};
-    CompoundTag* tag = CompoundTag::create();
-    auto rtn = SymCall("?read@NbtIo@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVIDataInput@@@Z",
-                       unique_ptr<CompoundTag>*, CompoundTag**, void*)(&tag, (void*)iDataInput);
+    auto rtn = NbtIo::read((IDataInput&)iDataInput);
+
+    //CompoundTag* tag = CompoundTag::create();
+    //auto rtn = SymCall("?read@NbtIo@@SA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEAVIDataInput@@@Z",
+    //                   unique_ptr<CompoundTag>*, CompoundTag**, void*)(&tag, (void*)iDataInput);
 
     endOffset = iDataInput[1];
-    return rtn->release();
+    return rtn.release();
 }
 
 CompoundTag* CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
@@ -645,7 +649,6 @@ public:
                        void*, void*, byte*, size_t)((void*)this, bytes, count);
     }
 };
-
 string CompoundTag::toBinaryNBT(bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian) {
@@ -656,8 +659,6 @@ string CompoundTag::toBinaryNBT(bool isLittleEndian) {
     }
     string result = "";
     void* iDataOutput[2] = {vtbl, &result};
-
-    SymCall("?write@NbtIo@@SAXPEBVCompoundTag@@AEAVIDataOutput@@@Z",
-            void*, CompoundTag*, void*)(this, (void*)iDataOutput);
+    NbtIo::write(this, (IDataOutput&)iDataOutput);
     return result;
 }

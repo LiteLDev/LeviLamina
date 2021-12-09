@@ -1,4 +1,5 @@
 #pragma once
+#include "HookAPI.h"
 #include "../Global.h"
 #include <string>
 
@@ -6,8 +7,10 @@ typedef std::string xuid_t;
 typedef unsigned long long QWORD;
 
 namespace mce {
-    class UUID;
-    class Color;
+class UUID {
+    uint64_t a, b;
+};
+class Color;
 }; // namespace mce
 
 class Vec3;

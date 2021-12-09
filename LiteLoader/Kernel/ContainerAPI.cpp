@@ -46,11 +46,11 @@ LIAPI int Container::getSize() {
 }
 
 LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
-    return getContainer(pos,dim) != nullptr;
+    return getContainerAt(pos,dim) != nullptr;
 }
 
 class DropperBlockActor;
-LIAPI Container* Container::getContainer(Vec3& pos, int dim) {
+LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) {
     Vec3 vec{pos.x, pos.y, pos.z};
 
     // This function didn't use 'this' pointer
