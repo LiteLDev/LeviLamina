@@ -82,8 +82,8 @@ public:
     }
 };
 
-class TeleportDimenssionCommand : public Command {
-    int DimenssionId;
+class TeleportDimensionCommand : public Command {
+    int DimensionId;
 
     CommandPosition CommandPos;
     bool CommandPos_isSet;
@@ -91,17 +91,17 @@ class TeleportDimenssionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& outp) const {
         auto actor = ori.getEntity();
-        auto dim = VanillaDimensions::toString(DimenssionId);
+        auto dim = VanillaDimensions::toString(DimensionId);
         if (!actor) {
             outp.error("No Actor Specific", {});
             return;
         }
-        if (DimenssionId < 0 || DimenssionId > 3) {
-            outp.error("Invaild DimenssionId: " + std::to_string(DimenssionId), {});
+        if (DimensionId < 0 || DimensionId > 3) {
+            outp.error("Invaild DimenssionId: " + std::to_string(DimensionId), {});
             return;
         }
         auto pos = CommandPos_isSet ? CommandPos.getPosition(ori, {0, 0, 0}) : actor->getPos();
-        actor->teleport(pos, DimenssionId);
+        actor->teleport(pos, DimensionId);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
                                  actor->getNameTag(), dim, pos.x, pos.y, pos.z),
                      {});
@@ -110,10 +110,10 @@ public:
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->registerOverload<TeleportDimenssionCommand>(
+        registry->registerOverload<TeleportDimensionCommand>(
             "tpdim",
-            makeMandatory(&TeleportDimenssionCommand::DimenssionId, "DimensionId"),
-            makeOptional(&TeleportDimenssionCommand::CommandPos, "Position", &TeleportDimenssionCommand::CommandPos_isSet));
+            makeMandatory(&TeleportDimensionCommand::DimensionId, "DimensionId"),
+            makeOptional(&TeleportDimensionCommand::CommandPos, "Position", &TeleportDimensionCommand::CommandPos_isSet));
     }
 };
 
@@ -140,7 +140,7 @@ public:
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "llupdate", "Update LiteLoader", CommandPermissionLevel::Console, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->registerOverload<TeleportDimenssionCommand>("llupdate",
+        registry->registerOverload<LLUpdateCommand>("llupdate",
                                                               makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
     }
 };
@@ -150,7 +150,7 @@ void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         VersionCommand::setup(ev.mCommandRegistry);
         PluginsCommand::setup(ev.mCommandRegistry);
-        TeleportDimenssionCommand::setup(ev.mCommandRegistry);
+        TeleportDimensionCommand::setup(ev.mCommandRegistry);
 
         return true;
     });
