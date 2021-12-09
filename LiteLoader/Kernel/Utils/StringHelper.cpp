@@ -49,6 +49,17 @@ std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::
     return resVec;
 }
 
+string& ReplaceStr(string& str, const string& old_value, const string& new_value)
+{
+    for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
+        if ((pos = str.find(old_value, pos)) != string::npos)
+            str.replace(pos, old_value.length(), new_value);
+        else
+            break;
+    }
+    return str;
+}
+
 bool StartsWith(const std::string& str, const std::string& start)
 {
     int srclen = str.size();
@@ -75,4 +86,11 @@ bool EndsWith(const std::string& str, const std::string& end)
     }
 
     return false;
+}
+
+std::string FixCurlyBracket(std::string str)
+{
+    ReplaceStr(str, "{", "{{");
+    ReplaceStr(str, "}", "}}");
+    return str;
 }
