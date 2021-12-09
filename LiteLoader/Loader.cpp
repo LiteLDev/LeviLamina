@@ -1,21 +1,21 @@
 #include <Windows.h>
-#include <vector>
-#include <string>
-#include <unordered_map>
-#include <iostream>
-#include <fstream>
-#include <thread>
 #include <filesystem>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <thread>
+#include <unordered_map>
+#include <vector>
 
-#include <LoggerAPI.h>
-#include <Utils/WinHelper.h>
-#include <Utils/StringHelper.h>
-#include <HookAPI.h>
-#include <ServerAPI.h>
-#include <PluginManager.h>
-#include <LLAPI.h>
-#include <CrashLogger.h>
 #include <Config.h>
+#include <CrashLogger.h>
+#include <HookAPI.h>
+#include <LLAPI.h>
+#include <LoggerAPI.h>
+#include <PluginManager.h>
+#include <ServerAPI.h>
+#include <Utils/StringHelper.h>
+#include <Utils/WinHelper.h>
 
 using namespace std;
 
@@ -43,8 +43,7 @@ vector<std::wstring> GetPreloadList() {
     return preload_list;
 }
 
-void LoadMain()
-{
+void LoadMain() {
     Logger::Info("Loading plugins...");
     bool enableCrashLogger = LL::globalConfig.enableCrashLogger;
     string noCrashLoggerReason = "";
@@ -55,16 +54,13 @@ void LoadMain()
     vector<string> paths;
 
     for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension().u8string() == ".dll")
-        {
+        if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             auto path = i.path().u8string();
 
             //Check crashlogger
-            if(enableCrashLogger)
-                for (auto name : NoCrashLogger)
-                {
-                    if (path.find(name) != string::npos)
-                    {
+            if (enableCrashLogger)
+                for (auto name : NoCrashLogger) {
+                    if (path.find(name) != string::npos) {
                         enableCrashLogger = false;
                         noCrashLoggerReason = name;
                         break;
@@ -76,19 +72,14 @@ void LoadMain()
 
     //Start CrashLogger
     Logger::setTitle("CrashLogger");
-    if (enableCrashLogger)
-    {
+    if (enableCrashLogger) {
         if (StartCrashLogger()) {
             //Logger::Info("CrashLogger Deamon Process attached.");
-        }
-        else
-        {
+        } else {
             Logger::Warn("Builtin CrashLogger failed to start!");
             Logger::Warn("There will be no crash log when unhandled exception occurs.");
         }
-    }
-    else if (noCrashLoggerReason != "")
-    {
+    } else if (noCrashLoggerReason != "") {
         Logger::Warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
         Logger::Warn("There will be no crash log when unhandled exception occurs,");
         Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
@@ -98,12 +89,12 @@ void LoadMain()
     Logger::setTitle("LiteLoader");
 
     // Load plugins
-    int pluginCount  = 0;
+    int pluginCount = 0;
     vector<std::wstring> preloadList = GetPreloadList();
     for (auto& i : paths) {
         bool loaded = false;
         for (auto& p : preloadList)
-            if (p.find(str2wstr(i)) != std::wstring::npos,true,0) {
+            if (p.find(str2wstr(i)) != std::wstring::npos, true, 0) {
                 loaded = true;
                 break;
             }
@@ -111,8 +102,7 @@ void LoadMain()
             continue;
 
         auto lib = LoadLibrary(str2wstr(i).c_str());
-        if (lib)
-        {
+        if (lib) {
             pluginCount++;
             auto pluginFileName = filesystem::path(i).filename().u8string();
             Logger::Info("Plugin <{}> loaded", pluginFileName);
@@ -130,8 +120,7 @@ void LoadMain()
     auto plugins = GetAllPlugins();
     for (auto& [name, plugin] : plugins) {
         auto fn = GetProcAddress(plugin.handler, "onPostInit");
-        if (fn)
-        {
+        if (fn) {
             try {
                 ((void (*)())fn)();
             } catch (...) {
@@ -140,5 +129,5 @@ void LoadMain()
             }
         }
     }
-    Logger::Info()<<std::to_string(pluginCount) + " plugin(s) loaded"<<Logger::endl;
+    Logger::Info() << std::to_string(pluginCount) + " plugin(s) loaded" << Logger::endl;
 }

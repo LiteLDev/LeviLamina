@@ -1,15 +1,14 @@
 #include <HookAPI.h>
-#include <string>
 #include <LLAPI.h>
-#include <ServerAPI.h>
 #include <LoggerAPI.h>
-#include <sstream>
+#include <ServerAPI.h>
 #include <regex>
+#include <sstream>
+#include <string>
 //#include <MC/BedrockLog.hpp>
 using namespace std;
 
-THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")
-{
+THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
     return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with LiteLoaderBDS " + LL::getLoaderVersion().toString(true);
 }
 
@@ -27,9 +26,9 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 //Standardize BDS's output
 THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
       int, const char* ts) {
-    string      input  = ts;
+    string input = ts;
     std::string output = std::regex_replace(input, std::regex("\\[.*?\\]"), std::string("$1"));
-    output.erase(std::remove(output.begin(), output.end(), '\n'),output.end());
+    output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
     output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
     output = replace_all_distinct(output, "NO LOG FILE! -  ", "");
     if (input.find("INFO") != input.npos) {
@@ -58,8 +57,7 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
 
 extern std::unordered_map<void*, string*> origin_res;
 THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-    void* thi, void* ori, void* out)
-{
+      void* thi, void* ori, void* out) {
     auto it = origin_res.find(ori);
     if (it == origin_res.end()) {
         std::stringbuf sbuf;

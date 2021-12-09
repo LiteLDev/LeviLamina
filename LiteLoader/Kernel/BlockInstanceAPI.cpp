@@ -1,27 +1,27 @@
 #include <Global.h>
-#include <MC/BlockInstance.hpp>
-#include <MC/Level.hpp>
-#include <MC/ItemStack.hpp>
-#include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
-#include <MC/ChestBlockActor.hpp>
-#include <MC/ItemStack.hpp>
-#include <MC/LootComponent.hpp>
+#include <MC/BlockInstance.hpp>
 #include <MC/BlockLegacy.hpp>
+#include <MC/BlockSource.hpp>
+#include <MC/ChestBlockActor.hpp>
 #include <MC/ItemInstance.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/Level.hpp>
+#include <MC/LootComponent.hpp>
 
 BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimid)
-    :block(block), pos(pos), dim(dimid)
-{ }
+    : block(block)
+    , pos(pos)
+    , dim(dimid) {
+}
 
 BlockInstance::BlockInstance(BlockPos pos, int dimid)
-    : pos(pos), dim(dimid)
-{
+    : pos(pos)
+    , dim(dimid) {
     block = Level::getBlock(pos, dimid);
 }
 
-BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimid)
-{
+BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimid) {
     return BlockInstance(block, pos, dimid);
 }
 
@@ -33,37 +33,33 @@ Block* BlockInstance::getBlock() {
     return isNull() ? nullptr : block;
 };
 
-bool BlockInstance::hasBlockEntity()
-{
+bool BlockInstance::hasBlockEntity() {
     return block->hasBlockEntity();
 }
 
-BlockActor* BlockInstance::getBlockEntity()
-{
+BlockActor* BlockInstance::getBlockEntity() {
     return Level::getBlockSource(dim)->getBlockEntity(pos);
 }
 
-bool BlockInstance::hasContainer()
-{
+bool BlockInstance::hasContainer() {
     return getContainer() != nullptr;
 }
 
 class DropperBlockActor;
-Container* BlockInstance::getContainer()
-{
+Container* BlockInstance::getContainer() {
     Vec3 vec = pos.toVec3();
 
     //VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
     // This function didn't use 'this' pointer
     Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-        Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
+                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
 
     return container;
 }
 
 //bad
 bool BlockInstance::breakNaturally() {
-    auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim),pos, 1);
+    auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 1);
     return out;
 }
 
@@ -78,9 +74,9 @@ bool BlockInstance::breakNaturally(ItemStack* tool) {
 }
 
 ItemStack& BlockInstance::getBlockDrops() {
-    auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos,*block);
+    auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos, *block);
     ItemStack* a = (ItemStack*)new char[272];
-    auto &out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
+    auto& out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
     return out;
 }
 

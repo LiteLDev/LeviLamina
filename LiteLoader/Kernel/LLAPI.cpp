@@ -1,26 +1,23 @@
-#include <LLAPI.h>
-#include <filesystem>
-#include <Version.h>
-#include <HookAPI.h>
 #include <Config.h>
+#include <HookAPI.h>
+#include <LLAPI.h>
 #include <PluginManager.h>
 #include <Utils/StringHelper.h>
+#include <Version.h>
+#include <filesystem>
 #include <string>
 using namespace std;
 
-std::string LL::getDataPath(const std::string& myname)
-{
+std::string LL::getDataPath(const std::string& myname) {
     filesystem::create_directory("plugins\\LiteLoader");
     return "plugins\\LiteLoader\\" + myname;
 }
 
-std::string LL::getLoaderVersionString()
-{
+std::string LL::getLoaderVersionString() {
     return getLoaderVersion().toString();
 }
 
-LL::Version LL::getLoaderVersion()
-{
+LL::Version LL::getLoaderVersion() {
     return LITELOADER_VERSION;
 }
 
@@ -42,41 +39,35 @@ std::unordered_map<std::string, LL::Plugin> LL::getAllPlugins() {
 
 //Version
 LL::Version::Version(int major, int minor, int revision, Status status)
-    :major(major), minor(minor), revision(revision), status(status)
-{ }
-
-bool LL::Version::operator<(LL::Version b)
-{
-    return major < b.major
-        || (major == b.major && minor < b.minor)
-        || (major == b.major && minor == b.minor && revision < b.revision);
+    : major(major)
+    , minor(minor)
+    , revision(revision)
+    , status(status) {
 }
 
-bool LL::Version::operator==(LL::Version b)
-{
+bool LL::Version::operator<(LL::Version b) {
+    return major < b.major || (major == b.major && minor < b.minor) || (major == b.major && minor == b.minor && revision < b.revision);
+}
+
+bool LL::Version::operator==(LL::Version b) {
     return major == b.major && minor == b.minor && revision == b.revision;
 }
 
-bool LL::Version::operator<=(LL::Version b)
-{
+bool LL::Version::operator<=(LL::Version b) {
     return *this < b || *this == b;
 }
 
-bool LL::Version::operator>(LL::Version b)
-{
+bool LL::Version::operator>(LL::Version b) {
     return b < *this;
 }
 
-bool LL::Version::operator>=(LL::Version b)
-{
+bool LL::Version::operator>=(LL::Version b) {
     return *this > b || *this == b;
 }
 
-std::string LL::Version::toString(bool needStatus)
-{
+std::string LL::Version::toString(bool needStatus) {
     string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
-    if (needStatus)
-    {
+    if (needStatus) {
         res += " ";
         if (status == Status::Beta)
             res += "Beta";
@@ -86,8 +77,7 @@ std::string LL::Version::toString(bool needStatus)
     return res;
 }
 
-LL::Version LL::Version::parse(const std::string& str)
-{
+LL::Version LL::Version::parse(const std::string& str) {
     auto res = SplitStrWithPattern(str, ".");
 
     Version ver;

@@ -3,8 +3,7 @@
 #include <openssl/sha.h>
 using namespace std;
 
-string CalcMD5(const string& str)
-{
+string CalcMD5(const string& str) {
     unsigned char md5[MD5_DIGEST_LENGTH];
     const char map[] = "0123456789abcdef";
     string hexmd5;
@@ -18,8 +17,7 @@ string CalcMD5(const string& str)
     return hexmd5;
 }
 
-string CalcSHA1(const string& str)
-{
+string CalcSHA1(const string& str) {
     unsigned char sha1[SHA_DIGEST_LENGTH];
     const char map[] = "0123456789abcdef";
     string hexsha1;

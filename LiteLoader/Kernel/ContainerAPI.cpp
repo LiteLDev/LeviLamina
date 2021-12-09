@@ -1,5 +1,5 @@
+#include <Global.h>
 #include <MC/Container.hpp>
-#include "global.h"
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
 
@@ -13,13 +13,12 @@ LIAPI std::string Container::getTypeName() {
 LIAPI bool Container::addItem(ItemStack* item) {
     if (!hasRoomForItem(*item))
         return false;
-   addItem(*((ItemStack*)item)->clone_s());
+    addItem(*((ItemStack*)item)->clone_s());
     return true;
 }
 
 LIAPI bool Container::addItemToFirstEmptySlot(ItemStack* item) {
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
-
 }
 //Safely remove items to the container
 LIAPI bool Container::removeItem(int slot, unsigned int number) {
@@ -46,7 +45,7 @@ LIAPI int Container::getSize() {
 }
 
 LIAPI bool Container::hasContainer(Vec3& pos, int dim) {
-    return getContainerAt(pos,dim) != nullptr;
+    return getContainerAt(pos, dim) != nullptr;
 }
 
 class DropperBlockActor;

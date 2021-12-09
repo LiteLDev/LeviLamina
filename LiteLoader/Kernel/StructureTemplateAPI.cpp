@@ -1,17 +1,17 @@
-#include <MC/StructureTemplate.hpp>
-#include <MC/StructureSettings.hpp>
-#include <MC/StructureTemplateData.hpp>
 #include <MC/CompoundTag.hpp>
-#include <MC/Level.hpp>
 #include <MC/Dimension.hpp>
+#include <MC/Level.hpp>
+#include <MC/StructureSettings.hpp>
+#include <MC/StructureTemplate.hpp>
+#include <MC/StructureTemplateData.hpp>
 
 StructureTemplate::StructureTemplate(std::string const& name) {
     auto name_span = gsl::basic_string_span<char const, -1>(name);
     SymCall("??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-        StructureTemplate*, StructureTemplate*, gsl::basic_string_span<char const,-1>)(this, name_span);
+            StructureTemplate*, StructureTemplate*, gsl::basic_string_span<char const, -1>)(this, name_span);
 }
 
-StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag){
+StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag) {
     auto st = StructureTemplate(name);
     //st.getName(name_span)
     st.getData()->load(*tag);
@@ -50,6 +50,5 @@ bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation 
     return true;
 };
 StructureTemplateData* StructureTemplate::getData() {
-    return (StructureTemplateData*)((uintptr_t)this+32);
+    return (StructureTemplateData*)((uintptr_t)this + 32);
 };
-

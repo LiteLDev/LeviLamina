@@ -1,24 +1,24 @@
-#include <Windows.h>
-#include <vector>
-#include <string>
-#include <iostream>
-#include <LoggerAPI.h>
-#include <Utils/WinHelper.h>
-#include <Utils/StringHelper.h>
-#include <seh_exception/seh_exception.hpp>
-#include <ServerAPI.h>
+#include "Loader.h"
+#include <Config.h>
+#include <Header/EventAPI.h>
 #include <HookAPI.h>
 #include <LLAPI.h>
+#include <LoggerAPI.h>
+#include <ServerAPI.h>
+#include <Utils/StringHelper.h>
+#include <Utils/WinHelper.h>
 #include <Version.h>
-#include <Config.h>
-#include "Loader.h"
-#include <Header/EventAPI.h>
+#include <Windows.h>
+#include <iostream>
+#include <seh_exception/seh_exception.hpp>
+#include <string>
+#include <vector>
 
 using namespace std;
 
 
-void FixPluginsLibDir() {  // add plugins folder to path
-    WCHAR *buffer = new WCHAR[8192];
+void FixPluginsLibDir() { // add plugins folder to path
+    WCHAR* buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
@@ -68,7 +68,7 @@ void LLMain() {
     //Load Config
     LoadLLConfig();
     InitPlayerDatabase();
-    
+
     //Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
@@ -90,14 +90,12 @@ void LLMain() {
     //Register simple server logger
     RegisterSimpleServerLogger();
 
-    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
-    { 
+    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         // Server started event
         Logger::Info("LiteLoader is distributed under the GPLv3 License");
         Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         return true;
     });
-
 }
 // Call LLMain
 
@@ -105,4 +103,3 @@ THook(int, "main", int a, void* b) {
     LLMain();
     return original(a, b);
 }
-

@@ -1,78 +1,78 @@
 #include "Global.h"
-#include <MC/Tag.hpp>
-#include <MC/ByteTag.hpp>
-#include <MC/ShortTag.hpp>
-#include <MC/IntTag.hpp>
-#include <MC/Int64Tag.hpp>
-#include <MC/FloatTag.hpp>
-#include <MC/DoubleTag.hpp>
 #include <MC/ByteArrayTag.hpp>
-#include <MC/StringTag.hpp>
-#include <MC/ListTag.hpp>
+#include <MC/ByteTag.hpp>
 #include <MC/CompoundTag.hpp>
+#include <MC/DoubleTag.hpp>
+#include <MC/FloatTag.hpp>
+#include <MC/Int64Tag.hpp>
 #include <MC/IntArrayTag.hpp>
+#include <MC/IntTag.hpp>
+#include <MC/ListTag.hpp>
+#include <MC/ShortTag.hpp>
+#include <MC/StringTag.hpp>
+#include <MC/Tag.hpp>
+#include <cpp-base64/base64.h>
 #include <map>
 #include <sstream>
 #include <vector>
-#include <cpp-base64/base64.h>
 using namespace std;
 
 ByteTag* Tag::asByteTag() {
-    if (this && getTagType() ==Tag::Type::Byte)
+    if (this && getTagType() == Tag::Type::Byte)
         return (ByteTag*)this;
     return nullptr;
 }
 
 ShortTag* Tag::asShortTag() {
-    if (this && getTagType() ==Tag::Type::Short)
+    if (this && getTagType() == Tag::Type::Short)
         return (ShortTag*)this;
     return nullptr;
 }
 
 IntTag* Tag::asIntTag() {
-    if (this && getTagType() ==Tag::Type::Int)
+    if (this && getTagType() == Tag::Type::Int)
         return (IntTag*)this;
     return nullptr;
 }
 
 Int64Tag* Tag::asInt64Tag() {
-    if (this && getTagType() ==Tag::Type::Int64)
+    if (this && getTagType() == Tag::Type::Int64)
         return (Int64Tag*)this;
     return nullptr;
 }
 
 FloatTag* Tag::asFloatTag() {
-    if (this && getTagType() ==Tag::Type::Float)
+    if (this && getTagType() == Tag::Type::Float)
         return (FloatTag*)this;
     return nullptr;
 }
 
 DoubleTag* Tag::asDoubleTag() {
-    if (this && getTagType() ==Tag::Type::Double)
+    if (this && getTagType() == Tag::Type::Double)
         return (DoubleTag*)this;
     return nullptr;
 }
 
 StringTag* Tag::asStringTag() {
-    if (this && getTagType() ==Tag::Type::String)
+    if (this && getTagType() == Tag::Type::String)
         return (StringTag*)this;
     return nullptr;
 }
 
 ListTag* Tag::asListTag() {
-    if (this && getTagType() ==Tag::Type::List)
+    if (this && getTagType() == Tag::Type::List)
         return (ListTag*)this;
     return nullptr;
 }
 
 CompoundTag* Tag::asCompoundTag() {
-    if (this && getTagType() ==Tag::Type::Compound)
+    if (this && getTagType() == Tag::Type::Compound)
         return (CompoundTag*)this;
     return nullptr;
 }
 
 ByteArrayTag* Tag::asByteArrayTag() {
-    if (this && getTagType() ==Tag::Type::ByteArray)
+    if (this && getTagType() == Tag::Type::ByteArray)
         return (ByteArrayTag*)this;
     return nullptr;
 }
@@ -195,7 +195,7 @@ void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt) {
             }
             case Tag::Type::List: {
                 JSON_VALUE arrJson = JSON_VALUE::array();
-                TagToJson_List_Helper(arrJson, (ListTag*) & tag);
+                TagToJson_List_Helper(arrJson, (ListTag*)&tag);
                 res.push_back({key, arrJson});
                 break;
             }

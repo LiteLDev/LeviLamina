@@ -3,21 +3,21 @@
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
 #include <MC/ServerPlayer.hpp>
-#include <MC/ServerNetworkHandler.hpp>
-#include <MC/NetworkIdentifier.hpp>
 
-#include <MC/Packet.hpp>
-#include <MC/InventoryTransactionPacket.hpp>
+#include <MC/NetworkIdentifier.hpp>
+#include <MC/ServerNetworkHandler.hpp>
+
 #include <Config.h>
-#include <unordered_map>
 #include <LoggerAPI.h>
+#include <MC/InventoryTransactionPacket.hpp>
+#include <MC/Packet.hpp>
+#include <unordered_map>
 using namespace LL;
 bool ip_information_logged = false;
 
 //Fix disconnect packet crash bug
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
-    ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
-{
+              ServerNetworkHandler, NetworkIdentifier* ni, void* packet) {
     if (globalConfig.enableFixDisconnectBug) {
         if (!getServerPlayer(*ni))
             return;
@@ -28,8 +28,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 
 //Fix the listening port twice.
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
-      void* _this)
-{
+      void* _this) {
     if (globalConfig.enableFixListenPort) {
         if (!ip_information_logged) {
             ip_information_logged = true;
@@ -44,18 +43,17 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
 // Fix abnormal items.
 class InventoryTransaction;
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
-    ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)
-{
-    InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk+10)+16);
-    auto a    = dAccess<std::unordered_map<int, void*>, 0>(data);
+      ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
+    InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
+    auto a = dAccess<std::unordered_map<int, void*>, 0>(data);
     bool abnormal = 0;
-    for (auto i :a)
+    for (auto i : a)
         if (i.first == 99999) {
             abnormal = 1;
         }
     if (abnormal) {
         Player* sp = (Player*)snh.getServerPlayer(netid);
-        Logger::Warn() << "Player("<< sp->getRealName()<<") item data error!" << Logger::endl;
+        Logger::Warn() << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
         return nullptr;
     }
     return original(snh, netid, pk);

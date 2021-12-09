@@ -1,10 +1,10 @@
 #include "PluginManager.h"
 #include <LLAPI.h>
-#include <string>
-#include <unordered_map>
-#include <Windows.h>
 #include <Psapi.h>
 #include <Utils/StringHelper.h>
+#include <Windows.h>
+#include <string>
+#include <unordered_map>
 using namespace std;
 
 std::unordered_map<std::string, LL::Plugin> plugins;
@@ -15,9 +15,8 @@ string GetModulePath(HMODULE handler) {
     return wstr2str(wstring(buf));
 }
 
-bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, std::string version, 
-    std::string git, std::string license, std::string website)
-{
+bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, std::string version,
+                    std::string git, std::string license, std::string website) {
     if (GetPlugin(name) != nullptr) {
         return false;
     }
@@ -27,7 +26,7 @@ bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction,
             if (iter->second.handler == handler) {
                 plugins.erase(iter->first);
             }
-        } 
+        }
     }
     LL::Plugin plugin{name, introduction, version, git, license, website};
     plugin.handler = handler;

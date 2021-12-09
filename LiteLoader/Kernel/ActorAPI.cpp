@@ -1,26 +1,23 @@
-#include <MC/Actor.hpp>
 #include <Global.h>
 #include <MC/Actor.hpp>
-#include <MC/HashedString.hpp>
-#include <MC/Mob.hpp>
 #include <MC/ActorDamageSource.hpp>
-#include <MC/UserEntityIdentifierComponent.hpp>
-#include <MC/TeleportCommand.hpp>
-#include <MC/TeleportTarget.hpp>
-#include <MC/TeleportCommand.hpp>
-#include <MC/HitResult.hpp>
-#include <MC/BlockSource.hpp>
 #include <MC/Block.hpp>
-#include <MC/Level.hpp>
+#include <MC/BlockInstance.hpp>
+#include <MC/BlockSource.hpp>
+#include <MC/CommandUtils.hpp>
 #include <MC/CompoundTag.hpp>
+#include <MC/HashedString.hpp>
+#include <MC/HitDetection.hpp>
+#include <MC/HitResult.hpp>
+#include <MC/Level.hpp>
 #include <MC/LevelChunk.hpp>
 #include <MC/Material.hpp>
-#include <MC/BlockInstance.hpp>
-#include <MC/TeleportCommand.hpp>
+#include <MC/Mob.hpp>
 #include <MC/Player.hpp>
-#include <MC/HitDetection.hpp>
 #include <MC/SimpleContainer.hpp>
-#include <MC/CommandUtils.hpp>
+#include <MC/TeleportCommand.hpp>
+#include <MC/TeleportTarget.hpp>
+#include <MC/UserEntityIdentifierComponent.hpp>
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
@@ -31,8 +28,7 @@ MCINLINE Vec3 Actor::getPosition() const {
     return CommandUtils::getFeetPos(this);
 }
 
-BlockSource* Actor::getBlockSource()  const
-{
+BlockSource* Actor::getBlockSource() const {
     return Level::getBlockSource((Actor*)this);
 }
 
@@ -50,12 +46,11 @@ bool Actor::isPlayer() const {
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
-bool Actor::isItemActor() const
-{
-    return hasCategory((ActorCategory)1024);    // IDA Player::take
+bool Actor::isItemActor() const {
+    return hasCategory((ActorCategory)1024); // IDA Player::take
 }
 
-bool Actor::isOnGround() const{
+bool Actor::isOnGround() const {
     return !(dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
@@ -81,15 +76,11 @@ Vec2* Actor::getDirction() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 
-ActorUniqueID Actor::getActorUniqueId() const
-{
-    __try
-    {
+ActorUniqueID Actor::getActorUniqueId() const {
+    __try {
         return getUniqueID();
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        return { 0 };
+    } __except (EXCEPTION_EXECUTE_HANDLER) {
+        return {0};
     }
 }
 
@@ -100,29 +91,24 @@ void Actor::teleport(Vec3 to, int dimid) {
     TeleportCommand::applyTarget(*this, *target);
 }
 
-ItemStack* Actor::getHandSlot()
-{
-    return (ItemStack*) & getHandContainer().getItem(0);
+ItemStack* Actor::getHandSlot() {
+    return (ItemStack*)&getHandContainer().getItem(0);
 }
 
-bool Actor::rename(const string& name)
-{
+bool Actor::rename(const string& name) {
     setNameTag(name);
     return refreshActorData();
 }
 
-CompoundTag* Actor::getNbt()
-{
+CompoundTag* Actor::getNbt() {
     return CompoundTag::fromActor(this);
 }
 
-bool Actor::setNbt(CompoundTag* nbt)
-{
+bool Actor::setNbt(CompoundTag* nbt) {
     return nbt->setActor(this);
 }
 
-bool Actor::refreshActorData()
-{
+bool Actor::refreshActorData() {
     _sendDirtyActorData();
     return true;
 }
@@ -145,7 +131,7 @@ Tick* Actor::getLastTick() const {
     LevelChunk* lc = bs->getChunkAt(bpos);
     if (!lc)
         return nullptr;
-    return (Tick*) & lc->getLastTick();
+    return (Tick*)&lc->getLastTick();
 }
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {

@@ -3,14 +3,14 @@
 #include "MC/ItemStack.hpp"
 #include "MC/Spawner.hpp"
 #include "MC/level.hpp"
+#include <MC/CompoundTag.hpp>
 #include <string>
 #include <vector>
-#include <MC/CompoundTag.hpp>
 using namespace std;
 
 ItemStack* ItemStack::create() {
     try {
-        ItemStack* a    = (ItemStack*)new char[272];
+        ItemStack* a = (ItemStack*)new char[272];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
         return item;
     } catch (...) {
@@ -85,13 +85,11 @@ bool ItemStack::setLore(vector<string> lores) {
     return true;
 }
 
-CompoundTag* ItemStack::getNbt()
-{
+CompoundTag* ItemStack::getNbt() {
     return CompoundTag::fromItemStack(this);
 }
 
-bool ItemStack::setNbt(CompoundTag* nbt)
-{
+bool ItemStack::setNbt(CompoundTag* nbt) {
     nbt->setItemStack(this);
     return true;
 }

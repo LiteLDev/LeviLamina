@@ -1,11 +1,11 @@
+#include <MC/DisplayObjective.hpp>
 #include <MC/Objective.hpp>
 #include <MC/ObjectiveCriteria.hpp>
-#include <MC/DisplayObjective.hpp>
-#include <MC/ScoreboardId.hpp>
-#include <MC/ServerScoreboard.hpp>
-#include <MC/ScoreboardIdentityRef.hpp>
-#include <MC/Scoreboard.hpp>
 #include <MC/Player.hpp>
+#include <MC/Scoreboard.hpp>
+#include <MC/ScoreboardId.hpp>
+#include <MC/ScoreboardIdentityRef.hpp>
+#include <MC/ServerScoreboard.hpp>
 
 #define H do_hash
 LIAPI bool checkSlotName(const std::string& slot) {
@@ -50,7 +50,7 @@ LIAPI Objective* Scoreboard::getDisplayObjective(const std::string& slot) {
     }
     return nullptr;
 }*/
-LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id){
+LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
     if (!scoreboardIdIsValid(&identity)) {
         Global<Scoreboard>->createScoreboardId(id);

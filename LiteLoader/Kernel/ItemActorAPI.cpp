@@ -1,13 +1,12 @@
 #include "Global.h"
 #include <MC/ItemActor.hpp>
 
-ItemStack* ItemActor::getItemStack()
-{
-    return (ItemStack*)((uintptr_t)this + 1864);    //IDA Player::take
+ItemStack* ItemActor::getItemStack() {
+    return (ItemStack*)((uintptr_t)this + 1864); //IDA Player::take
 }
 
-int ItemActor::getDespawnTime() { 
-    return dAccess<int, 507 * 4>(this);//ItemActor::normalTick
+int ItemActor::getDespawnTime() {
+    return dAccess<int, 507 * 4>(this); //ItemActor::normalTick
 }
 
 void ItemActor::setDespawnTime(int a1) {

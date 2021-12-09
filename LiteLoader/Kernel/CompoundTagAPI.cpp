@@ -1,28 +1,27 @@
-#include <MC/CompoundTag.hpp>
-#include <MC/Tag.hpp>
-#include <MC/ByteTag.hpp>
-#include <MC/ShortTag.hpp>
-#include <MC/IntTag.hpp>
-#include <MC/Int64Tag.hpp>
-#include <MC/FloatTag.hpp>
-#include <MC/DoubleTag.hpp>
-#include <MC/ByteArrayTag.hpp>
-#include <MC/StringTag.hpp>
-#include <MC/ListTag.hpp>
-#include <MC/IntArrayTag.hpp>
-#include <MC/CompoundTagVariant.hpp>
-#include <MC/NbtIo.hpp>
-#include <MC/ServerPlayer.hpp>
-#include <MC/BlockActor.hpp>
 #include <MC/Actor.hpp>
-#include <MC/Player.hpp>
 #include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
+#include <MC/ByteArrayTag.hpp>
+#include <MC/ByteTag.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/CompoundTagVariant.hpp>
+#include <MC/DoubleTag.hpp>
+#include <MC/FloatTag.hpp>
+#include <MC/Int64Tag.hpp>
+#include <MC/IntArrayTag.hpp>
+#include <MC/IntTag.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/ListTag.hpp>
+#include <MC/NbtIo.hpp>
+#include <MC/Player.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/ShortTag.hpp>
+#include <MC/StringTag.hpp>
+#include <MC/Tag.hpp>
 #include <map>
+#include <nbt-cpp/nbt.hpp>
 #include <sstream>
 #include <vector>
-#include <nbt-cpp/nbt.hpp>
 
 class DataLoadHelper;
 
@@ -58,35 +57,35 @@ double CompoundTag::getDouble(class gsl::basic_string_span<char const, -1> key) 
     auto tag = const_cast<Tag*>(get(key))->asDoubleTag();
     if (tag)
         return tag->value();
-    // TODO 
+    // TODO
     return 0.0;
 };
-struct TagMemoryChunk const& CompoundTag::getIntArray(class gsl::basic_string_span<char const, -1> key) const{
+struct TagMemoryChunk const& CompoundTag::getIntArray(class gsl::basic_string_span<char const, -1> key) const {
     auto tag = const_cast<Tag*>(get(key))->asIntArrayTag();
     throw("TODO");
     return *(TagMemoryChunk*)tag;
 };
 
 // get tag
-class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char const, -1> key) const{
+class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asByteTag();
 };
-class ShortTag const* CompoundTag::getShortTag(class gsl::basic_string_span<char const, -1> key) const{
+class ShortTag const* CompoundTag::getShortTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asShortTag();
 };
-class FloatTag const* CompoundTag::getFloatTag(class gsl::basic_string_span<char const, -1> key) const{
+class FloatTag const* CompoundTag::getFloatTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asFloatTag();
 };
-class DoubleTag const* CompoundTag::getDoubleTag(class gsl::basic_string_span<char const, -1> key) const{
+class DoubleTag const* CompoundTag::getDoubleTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asDoubleTag();
 };
-class ByteArrayTag const* CompoundTag::getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const{
+class ByteArrayTag const* CompoundTag::getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asByteArrayTag();
 };
-class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const{
+class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asStringTag();
 };
-class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const{
+class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
@@ -125,22 +124,19 @@ CompoundTag* CompoundTag::fromActor(Actor* actor) {
     return tmp;
 }
 
-bool CompoundTag::setActor(Actor* actor)
-{
-    void* vtbl = (void*) dlsym("??_7DefaultDataLoadHelper@@6B@");
+bool CompoundTag::setActor(Actor* actor) {
+    void* vtbl = (void*)dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = actor->load(*this, (DataLoadHelper&)vtbl);
     actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
     actor->_sendDirtyActorData();
     return res;
 }
 
-CompoundTag* CompoundTag::fromPlayer(Player* player)
-{
+CompoundTag* CompoundTag::fromPlayer(Player* player) {
     return fromActor(player);
 }
 
-bool CompoundTag::setPlayer(Player* player)
-{
+bool CompoundTag::setPlayer(Player* player) {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = ((ServerPlayer*)player)->load(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
     player->readAdditionalSaveData(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
@@ -148,8 +144,7 @@ bool CompoundTag::setPlayer(Player* player)
     return res;
 }
 
-bool CompoundTag::setBlockActor(BlockActor* ble)
-{
+bool CompoundTag::setBlockActor(BlockActor* ble) {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
     ble->setChanged();

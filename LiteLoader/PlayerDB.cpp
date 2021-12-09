@@ -1,9 +1,9 @@
-#include <third-party/SQLiteCpp/SQLiteCpp.h>
-#include <LoggerAPI.h>
-#include <exception>
-#include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
+#include <LoggerAPI.h>
+#include <MC/ServerPlayer.hpp>
 #include <PlayerDB.h>
+#include <exception>
+#include <third-party/SQLiteCpp/SQLiteCpp.h>
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;
 
@@ -30,7 +30,7 @@ std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUI
             get.reset();
             get.clearBindings();
         }
-        
+
         return val;
     } catch (std::exception const& e) {
         Logger::setTitle("DB");
@@ -137,8 +137,7 @@ bool InitPlayerDatabase() {
 		) \
 			WITHOUT ROWID; ");
 
-        Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent &e)
-        {
+        Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& e) {
             insert(e.mPlayer->getRealName(), e.mPlayer->getXuid(), e.mPlayer->getUuid());
             return true;
         });

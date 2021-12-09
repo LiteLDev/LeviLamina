@@ -1,21 +1,19 @@
 #include <Utils/CsLock.h>
 
 CsLock::CsLock() {
-    if (!inited)
-    {
+    if (!inited) {
         inited = true;
         InitializeCriticalSection(&cslock);
     }
 }
 
 CsLock::~CsLock() {
-    if(inited)
+    if (inited)
         DeleteCriticalSection(&cslock);
 }
 
 bool CsLock::lock() {
-    if (!inited)
-    {
+    if (!inited) {
         inited = true;
         InitializeCriticalSection(&cslock);
     }

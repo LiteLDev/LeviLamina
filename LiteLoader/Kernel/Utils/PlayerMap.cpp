@@ -1,5 +1,5 @@
-#include <Utils/PlayerMap.h>
 #include <Global.h>
+#include <Utils/PlayerMap.h>
 // PlayerMap.h
 // BUG:DONT USE GLOBAL VAR WITH A CUSTOM CONSTRUCTION!!!!
 // static std::vector<DePlayerCB> depcbs;

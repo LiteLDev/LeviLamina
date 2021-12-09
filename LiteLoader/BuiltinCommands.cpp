@@ -1,17 +1,18 @@
 ﻿#include <Global.h>
 #include <LLAPI.h>
-#include <ServerAPI.h>
 #include <EventAPI.h>
-#include <filesystem>
 #include <LoggerAPI.h>
-#include <MC/CommandRegistry.hpp>
-#include <MC/CommandOutput.hpp>
+#include <ServerAPI.h>
 #include <MC/CommandOrigin.hpp>
+#include <MC/CommandOutput.hpp>
 #include <MC/CommandPosition.hpp>
-#include <MC/VanillaDimensions.hpp>
-#include <MC/ServerPlayer.hpp>
+#include <MC/CommandRegistry.hpp>
 #include <MC/Packet.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <MC/VanillaDimensions.hpp>
 #include <RegCommandAPI.h>
+
+#include <filesystem>
 
 using namespace RegisterCommandHelper;
 
@@ -26,7 +27,6 @@ public:
         registry->registerCommand(
             "version", "Get the version of this server", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<VersionCommand>("version");
-    
     }
 };
 
@@ -111,15 +111,14 @@ public:
         registry->registerCommand(
             "tpdim", "Teleport to Dimenssion", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->registerOverload<TeleportDimenssionCommand>(
-            "tpdim", 
+            "tpdim",
             makeMandatory(&TeleportDimenssionCommand::DimenssionId, "DimenssionId"),
             makeOptional(&TeleportDimenssionCommand::CommandPos, "Position", &TeleportDimenssionCommand::CommandPos_isSet));
     }
 };
 
 
-void RegisterCommands()
-{
+void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         VersionCommand::setup(ev.mCommandRegistry);
         PluginsCommand::setup(ev.mCommandRegistry);

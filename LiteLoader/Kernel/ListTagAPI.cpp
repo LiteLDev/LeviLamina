@@ -1,16 +1,16 @@
-#include <MC/ListTag.hpp>
-#include <MC/Tag.hpp>
-#include <MC/ByteTag.hpp>
-#include <MC/ShortTag.hpp>
-#include <MC/IntTag.hpp>
-#include <MC/Int64Tag.hpp>
-#include <MC/FloatTag.hpp>
-#include <MC/DoubleTag.hpp>
 #include <MC/ByteArrayTag.hpp>
-#include <MC/StringTag.hpp>
+#include <MC/ByteTag.hpp>
 #include <MC/CompoundTag.hpp>
-#include <MC/IntArrayTag.hpp>
 #include <MC/CompoundTagVariant.hpp>
+#include <MC/DoubleTag.hpp>
+#include <MC/FloatTag.hpp>
+#include <MC/Int64Tag.hpp>
+#include <MC/IntArrayTag.hpp>
+#include <MC/IntTag.hpp>
+#include <MC/ListTag.hpp>
+#include <MC/ShortTag.hpp>
+#include <MC/StringTag.hpp>
+#include <MC/Tag.hpp>
 
 // get value
 // get value
@@ -102,4 +102,3 @@ void ListTag::addIntArray(TagMemoryChunk tmc) {
     t->asByteArrayTag()->value() = tmc;
     add(t);
 }
-

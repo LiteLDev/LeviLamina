@@ -1,34 +1,40 @@
-﻿#include <MC/Actor.hpp>
+﻿#include <MC/Minecraft.hpp>
+
+#include <MC/Actor.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
-#include <MC/NetworkIdentifier.hpp>
-#include <MC/NetworkPeer.hpp>
+#include <MC/ServerPlayer.hpp>
+
+#include <MC/Certificate.hpp>
+#include <MC/CompoundTag.hpp>
+
 #include <MC/NetworkHandler.hpp>
 #include <MC/ServerNetworkHandler.hpp>
-#include <MC/Minecraft.hpp>
-#include <MC/Container.hpp>
-#include <MC/CompoundTag.hpp>
-#include <MC/ServerPlayer.hpp>
-#include <MC/Certificate.hpp>
+#include <MC/NetworkIdentifier.hpp>
+#include <MC/NetworkPeer.hpp>
+
 #include <MC/ExtendedCertificate.hpp>
-#include <MC/ItemStack.hpp>
-#include <MC/SimpleContainer.hpp>
-#include <MC/Level.hpp>
-#include <bitset>
-#include <EventAPI.h>
-#include <MC/ScriptItemStack.hpp>
-#include <SendPacketAPI.h>
 #include <MC/ConnectionRequest.hpp>
-#include <MC/ScorePacketInfo.hpp>
 #include <MC/MinecraftPackets.hpp>
 #include <MC/CommandRequestPacket.hpp>
 #include <MC/TextPacket.hpp>
+#include <MC/ScorePacketInfo.hpp>
+#include <SendPacketAPI.h>
+
+#include <MC/Level.hpp>
+#include <MC/ItemStack.hpp>
+#include <MC/ScriptItemStack.hpp>
+#include <MC/Container.hpp>
+#include <MC/SimpleContainer.hpp>
+
+#include <EventAPI.h>
+#include <bitset>
 
 UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
     return Mob::getUserEntityIdentifierComponent();
 }
 
-NetworkIdentifier* Player::getNetworkIdentifier(){
+NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
@@ -121,31 +127,27 @@ string Player::getDeviceName() {
 }
 
 void Player::kick(string msg) {
-     NetworkIdentifier* netid = getNetworkIdentifier();
-     Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
+    NetworkIdentifier* netid = getNetworkIdentifier();
+    Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
 }
 
-bool Player::giveItem(ItemStack* item)
-{
+bool Player::giveItem(ItemStack* item) {
     return this->add(*item);
 }
 
-int Player::clearItem(string typeName)
-{
+int Player::clearItem(string typeName) {
     int res = 0;
 
     //Hand
     ItemStack* item = getHandSlot();
-    if (item->getTypeName() == typeName)
-    {
+    if (item->getTypeName() == typeName) {
         item->setNull();
         ++res;
     }
 
     //OffHand
-    item = (ItemStack*) &getOffhandSlot();
-    if (item->getTypeName() == typeName)
-    {
+    item = (ItemStack*)&getOffhandSlot();
+    if (item->getTypeName() == typeName) {
         item->setNull();
         ++res;
     }
@@ -154,10 +156,8 @@ int Player::clearItem(string typeName)
     Container* container = &getInventory();
     auto items = container->getAllSlots();
     int size = container->getSize();
-    for (int i = 0; i < size; ++i)
-    {
-        if (items[i]->getTypeName() == typeName)
-        {
+    for (int i = 0; i < size; ++i) {
+        if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
             container->removeItem(i, cnt);
             res += cnt;
@@ -168,10 +168,8 @@ int Player::clearItem(string typeName)
     auto& armor = getArmorContainer();
     items = armor.getAllSlots();
     size = armor.getSize();
-    for (int i = 0; i < size; ++i)
-    {
-        if (items[i]->getTypeName() == typeName)
-        {
+    for (int i = 0; i < size; ++i) {
+        if (items[i]->getTypeName() == typeName) {
             int cnt = items[i]->getCount();
             armor.removeItem(i, cnt);
             res += cnt;
@@ -182,8 +180,7 @@ int Player::clearItem(string typeName)
     return res;
 }
 
-string Player::getName()
-{
+string Player::getName() {
     return getNameTag();
 }
 
@@ -191,24 +188,21 @@ bool Player::runcmd(const string& cmd) {
     return Level::runcmdAs(this, cmd);
 }
 
-Container* Player::getEnderChestContainer()
-{
-    return dAccess<Container*>(this, 4208);       //IDA Player::Player() 782 
+Container* Player::getEnderChestContainer() {
+    return dAccess<Container*>(this, 4208); //IDA Player::Player() 782
 }
 
-bool Player::transferServer(const string& address, unsigned short port)
-{
+bool Player::transferServer(const string& address, unsigned short port) {
     BinaryStream wp;
     wp.reserve(8 + address.size());
     wp.writeString(address);
     wp.writeUnsignedShort(port);
-    NetworkPacket<85> pkt{ wp.getAndReleaseData() };
+    NetworkPacket<85> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
     return true;
 }
 
-std::pair<BlockPos,int> Player::getRespawnPosition()
-{
+std::pair<BlockPos, int> Player::getRespawnPosition() {
     BlockPos bp = getSpawnPosition();
     int dimId = getSpawnDimension();
     if (dimId == 3) // has no bed.
@@ -217,37 +211,33 @@ std::pair<BlockPos,int> Player::getRespawnPosition()
         dimId = getExpectedSpawnDimensionId();
     }
 
-    return { bp, dimId };
+    return {bp, dimId};
 }
 
-bool Player::refreshInventory()
-{
+bool Player::refreshInventory() {
     sendInventory(true);
     std::bitset<4> bits("1111");
     sendArmor(bits);
     return true;
 }
 
-CompoundTag* Player::getNbt()
-{
+CompoundTag* Player::getNbt() {
     return CompoundTag::fromPlayer(this);
 }
 
-bool Player::setNbt(CompoundTag* nbt)
-{
+bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
     return true;
 }
 
-string Player::getUuid()
-{
+string Player::getUuid() {
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
     auto uuid = (void*)((uintptr_t)ueic + 168);
     string uuidStr;
     SymCall("?asString@UUID@mce@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-        string*, void*, string*)(uuid, &uuidStr);
+            string*, void*, string*)(uuid, &uuidStr);
     return uuidStr;
 }
 //////////////Packet//////////////////////////
@@ -298,17 +288,17 @@ void Player::sendNotePacket(unsigned int tone) {
     if (tone == 0) {
         return;
     }
-     BinaryStream wp;
-     wp.writeUnsignedChar(81);
-     wp.writeFloat(getPos().x);
-     wp.writeFloat(getPos().y);
-     wp.writeFloat(getPos().z);
-     wp.writeVarInt(tone * 2);
-     wp.writeString("");
-     wp.writeBool(0);
-     wp.writeBool(1);
-     NetworkPacket<0x7B> pkts{wp.getAndReleaseData()};
-     sendNetworkPacket(pkts);
+    BinaryStream wp;
+    wp.writeUnsignedChar(81);
+    wp.writeFloat(getPos().x);
+    wp.writeFloat(getPos().y);
+    wp.writeFloat(getPos().z);
+    wp.writeVarInt(tone * 2);
+    wp.writeString("");
+    wp.writeBool(0);
+    wp.writeBool(1);
+    NetworkPacket<0x7B> pkts{wp.getAndReleaseData()};
+    sendNetworkPacket(pkts);
 }
 
 void Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
@@ -357,12 +347,12 @@ void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
             case 3:
                 wp.writeFloat(i.floats);
                 break;
-            case 4:        
+            case 4:
                 wp.writeString(i.strings);
                 break;
             case 5:
 
-                break;//NBT
+                break; //NBT
             case 6:
                 wp.writeVarInt(i.bpos.x);
                 wp.writeVarInt(i.bpos.y);
@@ -392,13 +382,13 @@ void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, i
     wp.writeBool(1);
     wp.writeUnsignedVarInt(110);
     wp.writeVarInt(0);
-    wp.writeString("minecraft:apple"); 
+    wp.writeString("minecraft:apple");
     wp.writeFloat(pos.x);
     wp.writeFloat(pos.y);
     wp.writeFloat(pos.z);
     wp.writeFloat(pos.x);
     wp.writeFloat(pos.y);
-    wp.writeFloat(pos.z); 
+    wp.writeFloat(pos.z);
     setDataItem(wp, DataItem); //EntityMetadata & DataItem
     wp.writeBool(1);
     NetworkPacket<0x0F> pk{wp.getAndReleaseData()};
@@ -407,10 +397,10 @@ void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, i
 
 void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeid); //RuntimeId
-    wp.writeUnsignedVarInt64(runtimeid);  //EntityId
+    wp.writeVarInt64(runtimeid);         //RuntimeId
+    wp.writeUnsignedVarInt64(runtimeid); //EntityId
     wp.writeString(entitytype);
-    wp.writeFloat(pos.x);       //pos
+    wp.writeFloat(pos.x); //pos
     wp.writeFloat(pos.y);
     wp.writeFloat(pos.z);
     wp.writeFloat(0);
