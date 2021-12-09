@@ -147,7 +147,7 @@ void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         VersionCommand::setup(ev.mCommandRegistry);
         PluginsCommand::setup(ev.mCommandRegistry);
-        TeleportDimenssionCommand::setup(ev.mCommandRegistry);
+        TeleportDimensionCommand::setup(ev.mCommandRegistry);
         if (LL::globalConfig.enableAutoUpdate)
             LLUpdateCommand::setup(ev.mCommandRegistry);
 
