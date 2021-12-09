@@ -13,10 +13,17 @@
 #include <MC/CompoundTagVariant.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/BlockActor.hpp>
+#include <MC/Actor.hpp>
+#include <MC/Player.hpp>
+#include <MC/Block.hpp>
+#include <MC/BlockActor.hpp>
+#include <MC/ItemStack.hpp>
 #include <map>
 #include <sstream>
 #include <vector>
 #include <nbt-cpp/nbt.hpp>
+
+class DataLoadHelper;
 
 
 // put value
@@ -86,7 +93,6 @@ CompoundTag* CompoundTag::fromItem(ItemStack* item) {
     CompoundTag* tmp = 0;
     SymCall("?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
             void*, void*, CompoundTag**)(item, &tmp);
-
     return tmp;
 }
 
@@ -110,25 +116,24 @@ void CompoundTag::setBlock(Block* blk) {
 
 CompoundTag* CompoundTag::fromActor(Actor* actor) {
     CompoundTag* tmp = CompoundTag::create();
-    SymCall("?save@Actor@@UEAA_NAEAVCompoundTag@@@Z",
-            void, Actor*, CompoundTag*)(actor, tmp);
-    SymCall("?saveWithoutId@Actor@@UEAAXAEAVCompoundTag@@@Z",
-            void, Actor*, CompoundTag*)(actor, tmp);
-    VirtualCall(actor, 0x810, tmp); //IDA Virtual Table from Actor::addAdditionalSaveData
+    actor->save(*tmp);
+    actor->saveWithoutId(*tmp);
+    actor->addAdditionalSaveData(*tmp);
 
     return tmp;
 }
 
-bool CompoundTag::setActor(Actor* actor) {
-    void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    bool res = SymCall("?load@Actor@@UEAA_NAEBVCompoundTag@@AEAVDataLoadHelper@@@Z",
-                       bool, Actor*, CompoundTag*, void*)(actor, this, &vtbl);
-    VirtualCall(actor, 0x808, this, &vtbl); //IDA Virtual Table from Actor::readAdditionalSaveData
+bool CompoundTag::setActor(Actor* actor)
+{
+    void* vtbl = (void*) dlsym("??_7DefaultDataLoadHelper@@6B@");
+    bool res = actor->load(*this, (DataLoadHelper&)vtbl);
+    actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
     actor->_sendDirtyActorData();
     return res;
 }
-class DataLoadHelper;
-bool CompoundTag::setPlayer(Player* player) {
+
+bool CompoundTag::setPlayer(Player* player)
+{
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = ((ServerPlayer*)player)->load(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
     player->readAdditionalSaveData(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
@@ -136,16 +141,17 @@ bool CompoundTag::setPlayer(Player* player) {
     return res;
 }
 
-bool CompoundTag::setBlockEntity(BlockActor* ble) {
+bool CompoundTag::setBlockEntity(BlockActor* ble)
+{
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    VirtualCall(ble, 0x8, Global<Level>, this, &vtbl); //IDA Virtual Table from BlockActor::load
+    ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
     ble->setChanged();
     return true;
 }
 
 CompoundTag* CompoundTag::fromBlockEntity(BlockActor* ble) {
     CompoundTag* tmp = CompoundTag::create();
-    VirtualCall(ble, 0x10, tmp); //IDA Virtual Table from BlockActor::save
+    ble->save(*tmp);
     return tmp;
 }
 
