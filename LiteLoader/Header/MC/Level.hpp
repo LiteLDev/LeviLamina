@@ -32,9 +32,11 @@ public:
     LIAPI static std::vector<Player*> getAllPlayers();
     LIAPI static Player* getPlayer(const string& info);     //name or xuid
     LIAPI static std::vector<Actor*> getAllEntities(int dimId);
+    LIAPI static std::vector<Actor*> getAllEntities();
     LIAPI static Actor* getEntity(struct ActorUniqueID uniqueId);
     LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
+    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
     LIAPI static class LevelStorage& getLevelStorage();
 

@@ -49,6 +49,16 @@ bool Actor::isPlayer() const {
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 
+bool Actor::isItemEntity() const
+{
+    return hasCategory((ActorCategory)1024);    // IDA Player::take
+}
+
+ItemStack* Actor::getItemStackFromItemEntity()
+{
+    return isItemEntity() ? (ItemStack*)((uintptr_t)this + 1864) : nullptr;      //IDA Player::take
+}
+
 bool Actor::isOnGround() const{
     return !(dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }

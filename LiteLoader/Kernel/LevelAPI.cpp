@@ -228,6 +228,18 @@ std::vector<Actor*> Level::getAllEntities(int dimId)
     return result;
 }
 
+std::vector<Actor*> Level::getAllEntities()
+{
+    std::vector<Actor*> entityList;
+    auto entities = getAllEntities(0);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    entities = getAllEntities(1);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    entities = getAllEntities(2);
+    entityList.insert(entityList.end(), entities.begin(), entities.end());
+    return entityList;
+}
+
 Player* Level::getPlayer(const string& info) {
     string target{info};
     std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
@@ -273,6 +285,14 @@ Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item)
 {
     Spawner* sp = SymCall("?getSpawner@Level@@UEBAAEAVSpawner@@XZ", Spawner*, Level*)(Global<Level>);
     return sp->spawnItem(pos, dimId, item);
+}
+
+bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire)
+{
+    SymCall("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
+        void, Level*, BlockSource*, Actor*, Vec3*, float, bool, bool, float, bool)
+        (Global<Level>, Level::getBlockSource(dimId), source, &pos, power, isFire, isDestroy, range, true);
+    return true;
 }
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
