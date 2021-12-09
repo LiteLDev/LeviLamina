@@ -13,6 +13,8 @@
 #include <RegCommandAPI.h>
 #include <ServerAPI.h>
 #include <filesystem>
+#include "AutoUpgrade.h"
+#include "Config.h"
 
 using namespace RegisterCommandHelper;
 
@@ -130,18 +132,13 @@ public:
                 return;
             }
         }
-        outp.success("Start Updating...", {});
-        if (CheckAutoUpdate(true, isForce)) {
-            outp.success("Update finished.", {});
-        } else {
-            outp.error("Fail to update!", {});
-        }
+        CheckAutoUpdate(true, isForce);
     }
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "llupdate", "Update LiteLoader", CommandPermissionLevel::Console, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->registerOverload<LLUpdateCommand>("llupdate",
-                                                              makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
+        registry->registerOverload<LLUpdateCommand>( "llupdate",
+            makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
     }
 };
 
@@ -150,7 +147,9 @@ void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         VersionCommand::setup(ev.mCommandRegistry);
         PluginsCommand::setup(ev.mCommandRegistry);
-        TeleportDimensionCommand::setup(ev.mCommandRegistry);
+        TeleportDimenssionCommand::setup(ev.mCommandRegistry);
+        if (LL::globalConfig.enableAutoUpdate)
+            LLUpdateCommand::setup(ev.mCommandRegistry);
 
         return true;
     });
