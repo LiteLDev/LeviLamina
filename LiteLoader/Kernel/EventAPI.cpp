@@ -197,10 +197,10 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
       Level* _this, Player* sp, ChangeDimensionRequest* cdimreq) {
     bool ret = true;
+    ret = original(_this, sp, cdimreq);
     IF_LISTENED(PlayerChangeDimEvent) {
         PlayerChangeDimEvent ev;
         ev.mPlayer = sp;
-        ret = original(_this, sp, cdimreq);
         ev.call();
     }
     IF_LISTENED_END(PlayerChangeDimEvent);
