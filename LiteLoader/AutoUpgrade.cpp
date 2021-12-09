@@ -96,8 +96,8 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 	{
 		//Get Dir Id
 		int status = -1;
-		string id;
-		if (!HttpGetSync(LL_RELAY_INDEX, &status, &id, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
+		string idJson;
+		if (!HttpGetSync(LL_RELAY_INDEX, &status, &idJson, LL_UPDATE_CONNECTION_TIMEOUT) || status != 200)
 		{
 			if (isUpdateManually)
 				Log("Unable to check for updates. Connection failed! Error Code: {}", status);
@@ -105,10 +105,13 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
 				Debug("Unable to check for updates. Connection failed! Error Code: {}", status);
 			return false;
 		}
-		if (EndsWith(id, "\n"))
-			id.pop_back();
-		if (EndsWith(id, "\r"))
-			id.pop_back();
+		if (EndsWith(idJson, "\n"))
+			idJson.pop_back();
+		if (EndsWith(idJson, "\r"))
+			idJson.pop_back();
+
+		nlohmann::json idInfo = nlohmann::json::parse(idJson);
+		string id = idInfo["token"];
 
 		//Get Json
 		string infoUrl = string(LL_UPDATE_URL_PREFIX) + "/" + id + LL_UPDATE_URL_PATH;
