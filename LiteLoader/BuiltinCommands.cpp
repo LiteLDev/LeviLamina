@@ -103,7 +103,7 @@ public:
             return;
         }
         if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            outp.error("Invalid DimenssionId: " + std::to_string((int)DimensionId), {});
+            outp.error("Invalid DimensionId: " + std::to_string((int)DimensionId), {});
             return;
         }
         auto pos = CommandPos_isSet ? CommandPos.getPosition(ori, {0, 0, 0}) : actor->getPos();
