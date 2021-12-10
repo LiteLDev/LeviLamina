@@ -35,6 +35,11 @@ public:
     LIAPI Certificate* getCertificate();
     LIAPI Container* getEnderChestContainer();
     LIAPI std::pair<BlockPos, int> getRespawnPosition();
+    LIAPI string getIP();
+    LIAPI float getAvgPacketLoss();
+    LIAPI string getClientId();
+    LIAPI int getDeviceType();
+    LIAPI void crashClient();
 
     LIAPI void kick(string msg);
     LIAPI bool giveItem(ItemStack* item); 

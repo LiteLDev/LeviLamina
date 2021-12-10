@@ -28,7 +28,7 @@ public:
     LIAPI std::string getTypeName() const;
     LIAPI Vec3 getPosition() const;
     LIAPI BlockSource* getBlockSource() const;
-    LIAPI Vec2* getDirction() const;
+    LIAPI Vec2* getDirection() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
     LIAPI Tick* getLastTick() const;
@@ -37,15 +37,17 @@ public:
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
+    LIAPI BlockPos getBlockPos();
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
-	
+    LIAPI bool setOnFire(int num, bool iseffect);
+    LIAPI bool stopFire();
     LIAPI bool hasTag(string tag);
 	LIAPI bool hurtEntity(int damage);
-	LIAPI void teleport(Vec3 pos,int dimid);
+	LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);
     LIAPI CompoundTag* getNbt();

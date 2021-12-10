@@ -18,6 +18,8 @@
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
 #include <MC/UserEntityIdentifierComponent.hpp>
+#include <MC/OnFireSystem.hpp>
+
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
@@ -72,9 +74,15 @@ bool Actor::hurtEntity(int damage) {
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-Vec2* Actor::getDirction() const {
+Vec2* Actor::getDirection() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
+
+BlockPos Actor::getBlockPos() {
+    auto pos = getPos();  
+    return Vec3{pos.x, pos.y + (float)0.5, pos.z}.toBlockPos();
+}
+
 
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
@@ -84,11 +92,12 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-void Actor::teleport(Vec3 to, int dimid) {
+bool Actor::teleport(Vec3 to, int dimid) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
     auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
+    return true;
 }
 
 ItemStack* Actor::getHandSlot() {
@@ -112,6 +121,20 @@ bool Actor::refreshActorData() {
     _sendDirtyActorData();
     return true;
 }
+
+bool Actor::setOnFire(int num,bool iseffect) {
+    if (iseffect)
+        OnFireSystem::setOnFire(*this, num);
+    else
+        OnFireSystem::setOnFireNoEffects(*this, num);
+    return true;
+}
+
+bool Actor::stopFire() {
+    OnFireSystem::stopFire(*this);
+    return true;
+}
+
 
 Vec3 Actor::getCameraPos() const {
     Vec3 pos = *(Vec3*)&getStateVectorComponent();

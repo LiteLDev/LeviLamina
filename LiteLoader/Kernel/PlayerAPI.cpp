@@ -240,6 +240,28 @@ string Player::getUuid() {
             string*, void*, string*)(uuid, &uuidStr);
     return uuidStr;
 }
+
+string Player::getIP() {
+   return getNetworkIdentifier()->getIP();
+}
+
+float Player::getAvgPacketLoss() {
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
+}
+
+string Player::getClientId() {
+    return Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getDeviceId();
+}
+
+int Player::getDeviceType() {
+    return getPlatform();
+}
+
+void Player::crashClient() {
+    Packet* pkt = MinecraftPackets::createPacket(58);
+    dAccess<bool, 56>(pkt) = 1;
+    sendNetworkPacket(*pkt);
+}
 //////////////Packet//////////////////////////
 
 void Player::sendTextPacket(string text, TextType Type) {

@@ -103,7 +103,7 @@ public:
     LIAPI AABB toAABB();
 };
 
-struct IVec2 {
+class Vec2 {
 private:
     static inline int iround(float x) {
         int r = int(x);
@@ -115,8 +115,8 @@ private:
 public:
     int x, z;
 
-    IVec2(Vec3 l) :x(iround(l.x)), z(iround(l.z)) {}
-    IVec2(int a, int b) : x(a), z(b) {}
+    Vec2(Vec3 l) :x(iround(l.x)), z(iround(l.z)) {}
+    Vec2(int a, int b) : x(a), z(b) {}
 
     inline void operator+=(int v) { x += v; z += v; }
 };
