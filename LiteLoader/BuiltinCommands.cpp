@@ -85,7 +85,7 @@ public:
 };
 
 class TeleportDimensionCommand : public Command {
-    enum DimensionType {
+    enum class DimensionType {
         OverWorld,
         Nether,
         TheEnd,
@@ -103,7 +103,7 @@ public:
             return;
         }
         if ((int)DimensionId < 0 || (int)DimensionId > 2) {
-            outp.error("Invaild DimenssionId: " + std::to_string((int)DimensionId), {});
+            outp.error("Invalid DimenssionId: " + std::to_string((int)DimensionId), {});
             return;
         }
         auto pos = CommandPos_isSet ? CommandPos.getPosition(ori, {0, 0, 0}) : actor->getPos();
@@ -137,16 +137,21 @@ public:
 };
 
 class LLUpdateCommand : public Command {
-    string operation;
+    enum class Operation {
+        Force,
+    } operation;
     bool isSet;
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& outp) const {
         bool isForce = false;
         if (isSet) {
-            if (operation == "force") {
-                outp.error("Invalid Operation!", {});
-                return;
+            switch (operation) {
+                case Operation::Force:
+                    isForce = true;
+                    break;
+                default:
+                    break;
             }
         }
         CheckAutoUpdate(true, isForce);
@@ -154,8 +159,9 @@ public:
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "llupdate", "Update LiteLoader", CommandPermissionLevel::Console, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
-        registry->registerOverload<LLUpdateCommand>( "llupdate",
-            makeOptional(&LLUpdateCommand::operation, "option", &LLUpdateCommand::isSet));
+        registry->addEnum<Operation>("force", {{"force", Operation::Force}});
+        registry->registerOverload<LLUpdateCommand>("llupdate",
+            makeOptional<CommandParameterDataType::ENUM>(&LLUpdateCommand::operation, "optional", "force", &LLUpdateCommand::isSet));
     }
 };
 
