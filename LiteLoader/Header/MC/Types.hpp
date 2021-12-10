@@ -52,6 +52,8 @@ public:
     }
 
     LIAPI Vec3 toVec3();
+    LIAPI Vec3 bottomCenter();
+    LIAPI Vec3 center();
 };
 
 
@@ -74,6 +76,8 @@ public:
     }
 
     LIAPI BlockPos toBlockPos();
+    LIAPI float length();
+    LIAPI float distanceTo(Vec3 const&);
 
     inline Vec3 add(float dx, float dy, float dz) {
         return {x + dx, y, z};
@@ -88,6 +92,7 @@ public:
     inline Vec3 operator*(float num) { return { x * num, y * num, z * num }; }
     inline Vec3 operator+(const Vec3& b) { return { this->x + b.x, this->y + b.y, this->z + b.z }; }
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
+
 };
 
 #include "AABB.hpp"
