@@ -35,27 +35,28 @@ include_directories(.)
 link_directories(.)
 
 add_compile_options(
-        "/permissive"
-        "/GS"
-        "/GL"
-        "/W2"
-        "/Gy"
-        "/Zc:wchar_t"
-        "/Zi"
-        "/Gm-"
-        "/Od"
-        "/sdl"
-        "/Zc:inline"
-        "/fp:precise"
-        "/errorReport:prompt"
-        "/WX-"
-        "/Zc:forScope"
+        /permissive
+        /GS
+        /GL
+        /W2
+        /Gy
+        /Zc:wchar_t
+        /Zi
+        /Gm-
+        /Od
+        /sdl
+        /Zc:inline
+        /fp:precise
+        /errorReport:prompt
+        /WX-
+        /Zc:forScope
         /Gd
         /Oi
         /MD
         /EHa
         /nologo
-        "/diagnostics:column"
+        /diagnostics:column
+        /utf-8
 )
 
 add_link_options("/DELAYLOAD:\"bedrock_server.dll\"")
