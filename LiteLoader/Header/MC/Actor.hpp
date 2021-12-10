@@ -28,7 +28,7 @@ public:
     LIAPI std::string getTypeName() const;
     LIAPI Vec3 getPosition() const;
     LIAPI BlockSource* getBlockSource() const;
-    LIAPI Vec2* getDirction() const;
+    LIAPI Vec2* getDirection() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
     LIAPI Tick* getLastTick() const;

@@ -72,7 +72,7 @@ bool Actor::hurtEntity(int damage) {
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-Vec2* Actor::getDirction() const {
+Vec2* Actor::getDirection() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
 

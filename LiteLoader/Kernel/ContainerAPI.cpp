@@ -21,7 +21,7 @@ LIAPI bool Container::addItemToFirstEmptySlot(ItemStack* item) {
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
 }
 //Safely remove items to the container
-LIAPI bool Container::removeItem(int slot, unsigned int number) {
+LIAPI bool Container::removeItem_s(int slot, unsigned int number) {
     if (slot >= getSize())
         return false;
     removeItem(slot, (int)number);
