@@ -9,7 +9,7 @@ public:
 
     inline CommandSelectorResults<T> results(CommandOrigin const& a0) const
     {
-        CommandSelectorResults<T>(CommandSelector<T>:: * rv)(CommandOrigin const& a0);
+        CommandSelectorResults<T> (CommandSelector<T>::*rv)(CommandOrigin const& a0) const;
         if constexpr (std::is_same_v<class Actor, T>) {
             *((void**)&rv) = dlsym("?results@?$CommandSelector@VActor@@@@QEBA?AV?$CommandSelectorResults@VActor@@@@AEBVCommandOrigin@@@Z");
             return (this->*rv)(a0);
