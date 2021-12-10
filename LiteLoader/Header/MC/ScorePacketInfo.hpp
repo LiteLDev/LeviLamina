@@ -11,6 +11,8 @@ struct ScorePacketInfo {
 
 #define AFTER_EXTRA
 public:
+#define DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
+
     ScoreboardId sid;
     string obj_name = "FakeScoreObj";
     unsigned score;
@@ -22,7 +24,6 @@ public:
     unsigned long long pid;
     unsigned long long aid;
     string fake_name;
-
     ScorePacketInfo(ScoreboardId* s, unsigned num, const string& fake)
         : sid(*s)
         , score(num)
