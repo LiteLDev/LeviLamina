@@ -93,7 +93,7 @@ public:
 };
 
 class TeleportDimensionCommand : public Command {
-    enum DimensionType {
+    enum class DimensionType {
         OverWorld,
         Nether,
         TheEnd,
@@ -149,16 +149,21 @@ public:
 };
 
 class LLUpdateCommand : public Command {
-    string operation;
+    enum class Operation {
+        Force,
+    } operation;
     bool isSet;
 
 public:
     void execute(CommandOrigin const &ori, CommandOutput &output) const override {
         bool isForce = false;
         if (isSet) {
-            if (operation == "force") {
-                output.error("Invalid Operation!", {});
-                return;
+            switch (operation) {
+                case Operation::Force:
+                    isForce = true;
+                    break;
+                default:
+                    break;
             }
         }
         CheckAutoUpdate(true, isForce);
@@ -166,11 +171,20 @@ public:
 
     static void setup(CommandRegistry *registry) {
         registry->registerCommand(
-                "llupdate", "Update LiteLoader", CommandPermissionLevel::Console, {(CommandFlagValue) 0},
-                {(CommandFlagValue) 0x80});
-        registry->registerOverload<LLUpdateCommand>("llupdate",
-                                                    makeOptional(&LLUpdateCommand::operation, "option",
-                                                                 &LLUpdateCommand::isSet));
+                "llupdate",
+                "Update LiteLoader",
+                CommandPermissionLevel::Console,
+                {(CommandFlagValue) 0},
+                {(CommandFlagValue) 0x80}
+        );
+        registry->addEnum<Operation>("force", {{"force", Operation::Force}});
+        registry->registerOverload<LLUpdateCommand>(
+                "llupdate",
+                makeOptional<CommandParameterDataType::ENUM>(
+                        &LLUpdateCommand::operation, "optional", "force",
+                        &LLUpdateCommand::isSet
+                )
+        );
     }
 };
 
