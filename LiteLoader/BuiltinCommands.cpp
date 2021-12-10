@@ -85,7 +85,11 @@ public:
 };
 
 class TeleportDimensionCommand : public Command {
-    int DimensionId;
+    enum DimensionType {
+        OverWorld,
+        Nether,
+        TheEnd,
+    } DimensionId;
 
     CommandPosition CommandPos;
     bool CommandPos_isSet;
@@ -93,17 +97,17 @@ class TeleportDimensionCommand : public Command {
 public:
     void execute(CommandOrigin const& ori, CommandOutput& outp) const {
         auto actor = ori.getEntity();
-        auto dim = VanillaDimensions::toString(DimensionId);
+        auto dim = VanillaDimensions::toString((int)DimensionId);
         if (!actor) {
             outp.error("No Actor Specific", {});
             return;
         }
-        if (DimensionId < 0 || DimensionId > 3) {
-            outp.error("Invaild DimenssionId: " + std::to_string(DimensionId), {});
+        if ((int)DimensionId < 0 || (int)DimensionId > 2) {
+            outp.error("Invaild DimenssionId: " + std::to_string((int)DimensionId), {});
             return;
         }
         auto pos = CommandPos_isSet ? CommandPos.getPosition(ori, {0, 0, 0}) : actor->getPos();
-        actor->teleport(pos, DimensionId);
+        actor->teleport(pos, (int)DimensionId);
         outp.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
                                  actor->getNameTag(), dim, pos.x, pos.y, pos.z),
                      {});
@@ -112,9 +116,22 @@ public:
     static void setup(CommandRegistry* registry) {
         registry->registerCommand(
             "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters, {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+        registry->addEnum<DimensionType>("DimensionType",
+                                         {
+                                             {"overload", DimensionType::OverWorld},
+                                             {"o", DimensionType::OverWorld},
+                                             {"nether", DimensionType::Nether},
+                                             {"n", DimensionType::Nether},
+                                             {"end", DimensionType::TheEnd},
+                                             {"e", DimensionType::TheEnd},
+                                         });
         registry->registerOverload<TeleportDimensionCommand>(
             "tpdim",
-            makeMandatory(&TeleportDimensionCommand::DimensionId, "DimensionId"),
+            makeMandatory<CommandParameterDataType::ENUM>(&TeleportDimensionCommand::DimensionId, "Dimension", "DimensionType"),
+            makeOptional(&TeleportDimensionCommand::CommandPos, "Position", &TeleportDimensionCommand::CommandPos_isSet));
+        registry->registerOverload<TeleportDimensionCommand>(
+            "tpdim",
+            makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId"),
             makeOptional(&TeleportDimensionCommand::CommandPos, "Position", &TeleportDimensionCommand::CommandPos_isSet));
     }
 };
