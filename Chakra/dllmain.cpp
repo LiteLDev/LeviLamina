@@ -3,6 +3,7 @@
 
 void fixUpLibDir();
 void loadDlls();
+#pragma comment(linker, "/export:GetServerSymbol=Chakra.dlsym_real")
 
 BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserved) {
     switch (ul_reason_for_call) {
