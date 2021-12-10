@@ -1,7 +1,9 @@
-﻿#include "AutoUpgrade.h"
+﻿#include <filesystem>
 #include <EventAPI.h>
 #include <LLAPI.h>
 #include <LoggerAPI.h>
+#include <ServerAPI.h>
+#include <RegCommandAPI.h>
 #include <MC/CommandOrigin.hpp>
 #include <MC/CommandOutput.hpp>
 #include <MC/CommandPosition.hpp>
@@ -9,9 +11,7 @@
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/VanillaDimensions.hpp>
-#include <RegCommandAPI.h>
-#include <ServerAPI.h>
-#include <filesystem>
+#include "AutoUpgrade.h"
 #include "Config.h"
 
 using namespace RegisterCommandHelper;
