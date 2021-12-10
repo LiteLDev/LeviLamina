@@ -340,15 +340,15 @@ public:
         *((void**)&rv) = dlsym("?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline void _serverInitItemStackIds(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
-        return (this->*rv)();
-    }
     inline void playEmote(std::string const& a0){
         void (Player::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline void _serverInitItemStackIds(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
+        return (this->*rv)();
     }
     inline void openSign(class BlockPos const& a0){
         void (Player::*rv)(class BlockPos const&);
@@ -360,14 +360,14 @@ public:
         *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void openPortfolio(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void resetRot(){
         void (Player::*rv)();
         *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void openPortfolio(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline bool isPlayer() const{
@@ -375,14 +375,14 @@ public:
         *((void**)&rv) = dlsym("?isPlayer@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCreativeModeAllowed(){
-        bool (Player::*rv)();
-        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isAutoJumpEnabled() const{
         bool (Player::*rv)() const;
         *((void**)&rv) = dlsym("?isAutoJumpEnabled@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCreativeModeAllowed(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){

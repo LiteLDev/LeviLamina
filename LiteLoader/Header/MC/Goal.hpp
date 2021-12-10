@@ -37,14 +37,14 @@ public:
         *((void**)&rv) = dlsym("?tick@Goal@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void stop(){
-        void (Goal::*rv)();
-        *((void**)&rv) = dlsym("?stop@Goal@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void start(){
         void (Goal::*rv)();
         *((void**)&rv) = dlsym("?start@Goal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void stop(){
+        void (Goal::*rv)();
+        *((void**)&rv) = dlsym("?stop@Goal@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onPlayerDimensionChanged(class Player* a0, class AutomaticID<class Dimension, int> a1){

@@ -54,25 +54,25 @@ public:
         *((void**)&rv) = dlsym("?supportsVibration@AppPlatform_win32@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool supportsTextToSpeech() const{
+        bool (AppPlatform_win32::*rv)() const;
+        *((void**)&rv) = dlsym("?supportsTextToSpeech@AppPlatform_win32@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool hasBuyButtonWhenInvalidLicense(){
         bool (AppPlatform_win32::*rv)();
         *((void**)&rv) = dlsym("?hasBuyButtonWhenInvalidLicense@AppPlatform_win32@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool supportsTextToSpeech() const{
+    inline bool hasFastAlphaTest() const{
         bool (AppPlatform_win32::*rv)() const;
-        *((void**)&rv) = dlsym("?supportsTextToSpeech@AppPlatform_win32@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?hasFastAlphaTest@AppPlatform_win32@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool canLaunchUri(std::string const& a0){
         bool (AppPlatform_win32::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?canLaunchUri@AppPlatform_win32@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline bool hasFastAlphaTest() const{
-        bool (AppPlatform_win32::*rv)() const;
-        *((void**)&rv) = dlsym("?hasFastAlphaTest@AppPlatform_win32@@UEBA_NXZ");
-        return (this->*rv)();
     }
     inline int \/*enum enum BuildPlatform*\/ getBuildPlatform() const{
         int \/*enum enum BuildPlatform*\/ (AppPlatform_win32::*rv)() const;

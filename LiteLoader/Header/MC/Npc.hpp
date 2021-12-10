@@ -118,14 +118,14 @@ public:
         *((void**)&rv) = dlsym("?_serverAiMobStep@Npc@@MEAAXXZ");
         return (this->*rv)();
     }
-    inline bool interactPreventDefault(){
-        bool (Npc::*rv)();
-        *((void**)&rv) = dlsym("?interactPreventDefault@Npc@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool breaksFallingBlocks() const{
         bool (Npc::*rv)() const;
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Npc@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool interactPreventDefault(){
+        bool (Npc::*rv)();
+        *((void**)&rv) = dlsym("?interactPreventDefault@Npc@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool useNewAi() const{

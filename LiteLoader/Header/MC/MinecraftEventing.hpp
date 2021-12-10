@@ -40,75 +40,90 @@ public:
         *((void**)&rv) = dlsym("?fireEventPerformanceContext@MinecraftEventing@@UEAAXAEBVPerfContextTrackerReport@@@Z");
         return (this->*rv)(std::forward<class PerfContextTrackerReport const&>(a0));
     }
-    inline void updateIsTrial(bool a0) const{
-        void (MinecraftEventing::*rv)(bool) const;
-        *((void**)&rv) = dlsym("?updateIsTrial@MinecraftEventing@@UEBAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
     inline void fireEventPurchaseAttempt(std::string const& a0, std::string const& a1, std::string const& a2, int \/*enum enum IMinecraftEventing::StoreType*\/ a3, int \/*enum enum PurchasePath*\/ a4){
         void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, int \/*enum enum IMinecraftEventing::StoreType*\/, int \/*enum enum PurchasePath*\/);
         *((void**)&rv) = dlsym("?fireEventPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchasePath@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum IMinecraftEventing::StoreType*\/>(a3), std::forward<int \/*enum enum PurchasePath*\/>(a4));
     }
-    inline void fireEventIAPPurchaseAttempt(std::string const& a0, std::string const& a1, class Offer& a2, int \/*enum enum PurchasePath*\/ a3){
-        void (MinecraftEventing::*rv)(std::string const&, std::string const&, class Offer&, int \/*enum enum PurchasePath*\/);
-        *((void**)&rv) = dlsym("?fireEventIAPPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchasePath@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<class Offer&>(a2), std::forward<int \/*enum enum PurchasePath*\/>(a3));
+    inline void updateIsTrial(bool a0) const{
+        void (MinecraftEventing::*rv)(bool) const;
+        *((void**)&rv) = dlsym("?updateIsTrial@MinecraftEventing@@UEBAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
     }
     inline void fireEventOnSuccessfulClientLogin(class Level const* a0){
         void (MinecraftEventing::*rv)(class Level const*);
         *((void**)&rv) = dlsym("?fireEventOnSuccessfulClientLogin@MinecraftEventing@@UEAAXPEBVLevel@@@Z");
         return (this->*rv)(std::forward<class Level const*>(a0));
     }
+    inline void fireEventIAPPurchaseAttempt(std::string const& a0, std::string const& a1, class Offer& a2, int \/*enum enum PurchasePath*\/ a3){
+        void (MinecraftEventing::*rv)(std::string const&, std::string const&, class Offer&, int \/*enum enum PurchasePath*\/);
+        *((void**)&rv) = dlsym("?fireEventIAPPurchaseAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0AEAVOffer@@W4PurchasePath@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<class Offer&>(a2), std::forward<int \/*enum enum PurchasePath*\/>(a3));
+    }
     inline void fireEventHardwareInfo(){
         void (MinecraftEventing::*rv)();
         *((void**)&rv) = dlsym("?fireEventHardwareInfo@MinecraftEventing@@UEAAXXZ");
         return (this->*rv)();
-    }
-    inline void fireEventStoreOfferClicked(int a0, int a1, int a2, int a3, int a4, int a5, std::string const& a6, std::string const& a7, bool a8, std::string const& a9){
-        void (MinecraftEventing::*rv)(int, int, int, int, int, int, std::string const&, std::string const&, bool, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXHHHHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N0@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5), std::forward<std::string const&>(a6), std::forward<std::string const&>(a7), std::forward<bool>(a8), std::forward<std::string const&>(a9));
-    }
-    inline void fireEventPlayerJoinWorld(unsigned int const& a0, unsigned char a1, int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/ a2, int a3){
-        void (MinecraftEventing::*rv)(unsigned int const&, unsigned char, int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/, int);
-        *((void**)&rv) = dlsym("?fireEventPlayerJoinWorld@MinecraftEventing@@UEAAXAEBIEW4PlayerJoinWorldAttemptState@IConnectionEventing@@H@Z");
-        return (this->*rv)(std::forward<unsigned int const&>(a0), std::forward<unsigned char>(a1), std::forward<int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/>(a2), std::forward<int>(a3));
-    }
-    inline void fireEventGameRulesUpdated(float a0, float a1, std::string const& a2){
-        void (MinecraftEventing::*rv)(float, float, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<std::string const&>(a2));
     }
     inline void fireCurrentInputUpdated(class IClientInstance const& a0){
         void (MinecraftEventing::*rv)(class IClientInstance const&);
         *((void**)&rv) = dlsym("?fireCurrentInputUpdated@MinecraftEventing@@UEAAXAEBVIClientInstance@@@Z");
         return (this->*rv)(std::forward<class IClientInstance const&>(a0));
     }
+    inline void fireEventGameRulesUpdated(float a0, float a1, std::string const& a2){
+        void (MinecraftEventing::*rv)(float, float, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXMMAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<float>(a0), std::forward<float>(a1), std::forward<std::string const&>(a2));
+    }
+    inline void fireEventPlayerJoinWorld(unsigned int const& a0, unsigned char a1, int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/ a2, int a3){
+        void (MinecraftEventing::*rv)(unsigned int const&, unsigned char, int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/, int);
+        *((void**)&rv) = dlsym("?fireEventPlayerJoinWorld@MinecraftEventing@@UEAAXAEBIEW4PlayerJoinWorldAttemptState@IConnectionEventing@@H@Z");
+        return (this->*rv)(std::forward<unsigned int const&>(a0), std::forward<unsigned char>(a1), std::forward<int \/*enum enum IConnectionEventing::PlayerJoinWorldAttemptState*\/>(a2), std::forward<int>(a3));
+    }
+    inline void fireEventStoreOfferClicked(int a0, int a1, int a2, int a3, int a4, int a5, std::string const& a6, std::string const& a7, bool a8, std::string const& a9){
+        void (MinecraftEventing::*rv)(int, int, int, int, int, int, std::string const&, std::string const&, bool, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventStoreOfferClicked@MinecraftEventing@@UEAAXHHHHHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N0@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<int>(a5), std::forward<std::string const&>(a6), std::forward<std::string const&>(a7), std::forward<bool>(a8), std::forward<std::string const&>(a9));
+    }
     inline void fireEventWorldHistoryPackSourceMissingDuringUpgrade(std::string const& a0, std::string const& a1, std::string const& a2){
         void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&);
         *((void**)&rv) = dlsym("?fireEventWorldHistoryPackSourceMissingDuringUpgrade@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2));
-    }
-    inline void fireEventIncognitoFailure(std::string const& a0, std::string const& a1){
-        void (MinecraftEventing::*rv)(std::string const&, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventIncognitoFailure@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
     }
     inline void fireEventStoreSessionRequestResponse(unsigned short a0){
         void (MinecraftEventing::*rv)(unsigned short);
         *((void**)&rv) = dlsym("?fireEventStoreSessionRequestResponse@MinecraftEventing@@UEAAXG@Z");
         return (this->*rv)(std::forward<unsigned short>(a0));
     }
-    inline void dataReceivedFrom(class NetworkIdentifier const& a0, std::string const& a1){
-        void (MinecraftEventing::*rv)(class NetworkIdentifier const&, std::string const&);
-        *((void**)&rv) = dlsym("?dataReceivedFrom@MinecraftEventing@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<std::string const&>(a1));
+    inline void fireEventIncognitoFailure(std::string const& a0, std::string const& a1){
+        void (MinecraftEventing::*rv)(std::string const&, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventIncognitoFailure@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
     }
     inline void firePerfTestEvent(std::string const& a0, std::string const& a1, std::string const& a2, std::vector<struct std::pair<std::string, float>> const& a3){
         void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, std::vector<struct std::pair<std::string, float>> const&);
         *((void**)&rv) = dlsym("?firePerfTestEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00AEBV?$vector@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@V?$allocator@U?$pair@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@M@std@@@2@@3@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<std::vector<struct std::pair<std::string, float>> const&>(a3));
+    }
+    inline void dataReceivedFrom(class NetworkIdentifier const& a0, std::string const& a1){
+        void (MinecraftEventing::*rv)(class NetworkIdentifier const&, std::string const&);
+        *((void**)&rv) = dlsym("?dataReceivedFrom@MinecraftEventing@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<std::string const&>(a1));
+    }
+    inline void fireEventGameRulesUpdated(int a0, int a1, std::string const& a2){
+        void (MinecraftEventing::*rv)(int, int, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<std::string const&>(a2));
+    }
+    inline void fireEventPurchaseResolved(std::string const& a0, std::string const& a1, std::string const& a2, int \/*enum enum IMinecraftEventing::StoreType*\/ a3, int \/*enum enum IMinecraftEventing::PurchaseResult*\/ a4, int \/*enum enum PurchasePath*\/ a5){
+        void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, int \/*enum enum IMinecraftEventing::StoreType*\/, int \/*enum enum IMinecraftEventing::PurchaseResult*\/, int \/*enum enum PurchasePath*\/);
+        *((void**)&rv) = dlsym("?fireEventPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchaseResult@5@W4PurchasePath@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum IMinecraftEventing::StoreType*\/>(a3), std::forward<int \/*enum enum IMinecraftEventing::PurchaseResult*\/>(a4), std::forward<int \/*enum enum PurchasePath*\/>(a5));
+    }
+    inline void fireEventStoreDiscoveryRequestResponse(unsigned short a0){
+        void (MinecraftEventing::*rv)(unsigned short);
+        *((void**)&rv) = dlsym("?fireEventStoreDiscoveryRequestResponse@MinecraftEventing@@UEAAXG@Z");
+        return (this->*rv)(std::forward<unsigned short>(a0));
     }
     inline void fireEventSearchItemSelected(int a0, int a1, std::string const& a2, int a3, int a4){
         void (MinecraftEventing::*rv)(int, int, std::string const&, int, int);
@@ -130,45 +145,35 @@ public:
         *((void**)&rv) = dlsym("?fireEventIAPRedeemAttempt@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchasePath@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum PurchasePath*\/>(a3));
     }
-    inline void fireEventGameRulesUpdated(int a0, int a1, std::string const& a2){
-        void (MinecraftEventing::*rv)(int, int, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAXHHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<std::string const&>(a2));
-    }
-    inline void fireEventPurchaseResolved(std::string const& a0, std::string const& a1, std::string const& a2, int \/*enum enum IMinecraftEventing::StoreType*\/ a3, int \/*enum enum IMinecraftEventing::PurchaseResult*\/ a4, int \/*enum enum PurchasePath*\/ a5){
-        void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, int \/*enum enum IMinecraftEventing::StoreType*\/, int \/*enum enum IMinecraftEventing::PurchaseResult*\/, int \/*enum enum PurchasePath*\/);
-        *((void**)&rv) = dlsym("?fireEventPurchaseResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4StoreType@IMinecraftEventing@@W4PurchaseResult@5@W4PurchasePath@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum IMinecraftEventing::StoreType*\/>(a3), std::forward<int \/*enum enum IMinecraftEventing::PurchaseResult*\/>(a4), std::forward<int \/*enum enum PurchasePath*\/>(a5));
-    }
-    inline void fireEventStoreDiscoveryRequestResponse(unsigned short a0){
-        void (MinecraftEventing::*rv)(unsigned short);
-        *((void**)&rv) = dlsym("?fireEventStoreDiscoveryRequestResponse@MinecraftEventing@@UEAAXG@Z");
-        return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    inline void fireEventStartClient(std::string const& a0){
-        void (MinecraftEventing::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?fireEventStartClient@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline void fireEventDeviceAccountFailure(int \/*enum enum IMinecraftEventing::SignInStage*\/ a0, int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/ a1, unsigned int a2, std::string const& a3){
-        void (MinecraftEventing::*rv)(int \/*enum enum IMinecraftEventing::SignInStage*\/, int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/, unsigned int, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventDeviceAccountFailure@MinecraftEventing@@UEAAXW4SignInStage@IMinecraftEventing@@W4DeviceAccountFailurePhase@3@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum IMinecraftEventing::SignInStage*\/>(a0), std::forward<int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/>(a1), std::forward<unsigned int>(a2), std::forward<std::string const&>(a3));
-    }
     inline void fireWorldConversionInitiatedEvent(std::string const& a0){
         void (MinecraftEventing::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?fireWorldConversionInitiatedEvent@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline void fireEventDifficultySet(int \/*enum enum Difficulty*\/ a0, int \/*enum enum Difficulty*\/ a1){
+        void (MinecraftEventing::*rv)(int \/*enum enum Difficulty*\/, int \/*enum enum Difficulty*\/);
+        *((void**)&rv) = dlsym("?fireEventDifficultySet@MinecraftEventing@@UEAAXW4Difficulty@@0@Z");
+        return (this->*rv)(std::forward<int \/*enum enum Difficulty*\/>(a0), std::forward<int \/*enum enum Difficulty*\/>(a1));
     }
     inline void fireEventStorage(int a0, std::string const& a1){
         void (MinecraftEventing::*rv)(int, std::string const&);
         *((void**)&rv) = dlsym("?fireEventStorage@MinecraftEventing@@UEAAXHAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<std::string const&>(a1));
     }
-    inline void fireEventDifficultySet(int \/*enum enum Difficulty*\/ a0, int \/*enum enum Difficulty*\/ a1){
-        void (MinecraftEventing::*rv)(int \/*enum enum Difficulty*\/, int \/*enum enum Difficulty*\/);
-        *((void**)&rv) = dlsym("?fireEventDifficultySet@MinecraftEventing@@UEAAXW4Difficulty@@0@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Difficulty*\/>(a0), std::forward<int \/*enum enum Difficulty*\/>(a1));
+    inline void fireEventDeviceAccountFailure(int \/*enum enum IMinecraftEventing::SignInStage*\/ a0, int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/ a1, unsigned int a2, std::string const& a3){
+        void (MinecraftEventing::*rv)(int \/*enum enum IMinecraftEventing::SignInStage*\/, int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/, unsigned int, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventDeviceAccountFailure@MinecraftEventing@@UEAAXW4SignInStage@IMinecraftEventing@@W4DeviceAccountFailurePhase@3@IAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<int \/*enum enum IMinecraftEventing::SignInStage*\/>(a0), std::forward<int \/*enum enum IMinecraftEventing::DeviceAccountFailurePhase*\/>(a1), std::forward<unsigned int>(a2), std::forward<std::string const&>(a3));
+    }
+    inline void fireEventStartClient(std::string const& a0){
+        void (MinecraftEventing::*rv)(std::string const&);
+        *((void**)&rv) = dlsym("?fireEventStartClient@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline void prepEventSearchCatalogRequest(class SearchRequestTelemetry const& a0){
+        void (MinecraftEventing::*rv)(class SearchRequestTelemetry const&);
+        *((void**)&rv) = dlsym("?prepEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z");
+        return (this->*rv)(std::forward<class SearchRequestTelemetry const&>(a0));
     }
     inline void fireEventSplitScreenUpdated(class IClientInstance const& a0){
         void (MinecraftEventing::*rv)(class IClientInstance const&);
@@ -180,20 +185,10 @@ public:
         *((void**)&rv) = dlsym("?fireEventOptionsUpdated@MinecraftEventing@@UEAAXAEAVOptions@@W4InputMode@@_N@Z");
         return (this->*rv)(std::forward<class Options&>(a0), std::forward<int \/*enum enum InputMode*\/>(a1), std::forward<bool>(a2));
     }
-    inline void prepEventSearchCatalogRequest(class SearchRequestTelemetry const& a0){
-        void (MinecraftEventing::*rv)(class SearchRequestTelemetry const&);
-        *((void**)&rv) = dlsym("?prepEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z");
-        return (this->*rv)(std::forward<class SearchRequestTelemetry const&>(a0));
-    }
     inline void fireEventStorePlayFabRequestResponse(unsigned short a0){
         void (MinecraftEventing::*rv)(unsigned short);
         *((void**)&rv) = dlsym("?fireEventStorePlayFabRequestResponse@MinecraftEventing@@UEAAXG@Z");
         return (this->*rv)(std::forward<unsigned short>(a0));
-    }
-    inline void fireEventGameRulesUpdated(bool a0, bool a1, std::string const& a2){
-        void (MinecraftEventing::*rv)(bool, bool, std::string const&);
-        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<bool>(a0), std::forward<bool>(a1), std::forward<std::string const&>(a2));
     }
     inline void fireWorldConversionAttemptEvent(struct Legacy::WorldConversionReport const& a0){
         void (MinecraftEventing::*rv)(struct Legacy::WorldConversionReport const&);
@@ -205,25 +200,30 @@ public:
         *((void**)&rv) = dlsym("?fireEventPerformanceMetrics@MinecraftEventing@@UEAAXAEBUProfilerLiteTelemetry@@_N@Z");
         return (this->*rv)(std::forward<struct ProfilerLiteTelemetry const&>(a0), std::forward<bool>(a1));
     }
-    inline void fireEventIAPRedeemResolved(std::string const& a0, std::string const& a1, std::string const& a2, int \/*enum enum IMinecraftEventing::PurchaseResult*\/ a3, int \/*enum enum PurchasePath*\/ a4){
-        void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, int \/*enum enum IMinecraftEventing::PurchaseResult*\/, int \/*enum enum PurchasePath*\/);
-        *((void**)&rv) = dlsym("?fireEventIAPRedeemResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum IMinecraftEventing::PurchaseResult*\/>(a3), std::forward<int \/*enum enum PurchasePath*\/>(a4));
+    inline void fireEventGameRulesUpdated(bool a0, bool a1, std::string const& a2){
+        void (MinecraftEventing::*rv)(bool, bool, std::string const&);
+        *((void**)&rv) = dlsym("?fireEventGameRulesUpdated@MinecraftEventing@@UEAAX_N0AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<bool>(a0), std::forward<bool>(a1), std::forward<std::string const&>(a2));
     }
     inline void fireEventGameSessionStart(class Player* a0, class IClientInstance& a1, class Level& a2, std::string const& a3, int a4, std::string const& a5, std::string const& a6, bool a7){
         void (MinecraftEventing::*rv)(class Player*, class IClientInstance&, class Level&, std::string const&, int, std::string const&, std::string const&, bool);
         *((void**)&rv) = dlsym("?fireEventGameSessionStart@MinecraftEventing@@UEAAXPEAVPlayer@@AEAVIClientInstance@@AEAVLevel@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H33_N@Z");
         return (this->*rv)(std::forward<class Player*>(a0), std::forward<class IClientInstance&>(a1), std::forward<class Level&>(a2), std::forward<std::string const&>(a3), std::forward<int>(a4), std::forward<std::string const&>(a5), std::forward<std::string const&>(a6), std::forward<bool>(a7));
     }
-    inline void fireEventDeviceLost(){
-        void (MinecraftEventing::*rv)();
-        *((void**)&rv) = dlsym("?fireEventDeviceLost@MinecraftEventing@@UEAAXXZ");
-        return (this->*rv)();
+    inline void fireEventIAPRedeemResolved(std::string const& a0, std::string const& a1, std::string const& a2, int \/*enum enum IMinecraftEventing::PurchaseResult*\/ a3, int \/*enum enum PurchasePath*\/ a4){
+        void (MinecraftEventing::*rv)(std::string const&, std::string const&, std::string const&, int \/*enum enum IMinecraftEventing::PurchaseResult*\/, int \/*enum enum PurchasePath*\/);
+        *((void**)&rv) = dlsym("?fireEventIAPRedeemResolved@MinecraftEventing@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00W4PurchaseResult@IMinecraftEventing@@W4PurchasePath@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<std::string const&>(a2), std::forward<int \/*enum enum IMinecraftEventing::PurchaseResult*\/>(a3), std::forward<int \/*enum enum PurchasePath*\/>(a4));
     }
     inline void fireEventDeviceAccountSuccess(bool a0, std::string const& a1){
         void (MinecraftEventing::*rv)(bool, std::string const&);
         *((void**)&rv) = dlsym("?fireEventDeviceAccountSuccess@MinecraftEventing@@UEAAX_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<bool>(a0), std::forward<std::string const&>(a1));
+    }
+    inline void fireEventDeviceLost(){
+        void (MinecraftEventing::*rv)();
+        *((void**)&rv) = dlsym("?fireEventDeviceLost@MinecraftEventing@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void fireEventIAPPurchaseResolved(std::string const& a0, std::string const& a1, class Offer& a2, int \/*enum enum IMinecraftEventing::PurchaseResult*\/ a3, int \/*enum enum PurchasePath*\/ a4){
         void (MinecraftEventing::*rv)(std::string const&, std::string const&, class Offer&, int \/*enum enum IMinecraftEventing::PurchaseResult*\/, int \/*enum enum PurchasePath*\/);
@@ -245,16 +245,6 @@ public:
         *((void**)&rv) = dlsym("?dataSentTo@MinecraftEventing@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class gsl::basic_string_span<char const, -1>>(a1));
     }
-    inline void fireEventStoreSearch(struct storeSearch::TelemetryData const& a0){
-        void (MinecraftEventing::*rv)(struct storeSearch::TelemetryData const&);
-        *((void**)&rv) = dlsym("?fireEventStoreSearch@MinecraftEventing@@UEAAXAEBUTelemetryData@storeSearch@@@Z");
-        return (this->*rv)(std::forward<struct storeSearch::TelemetryData const&>(a0));
-    }
-    inline void fireEventAndroidScopedStorageDebug(unsigned __int64 a0){
-        void (MinecraftEventing::*rv)(unsigned __int64);
-        *((void**)&rv) = dlsym("?fireEventAndroidScopedStorageDebug@MinecraftEventing@@UEAAX_K@Z");
-        return (this->*rv)(std::forward<unsigned __int64>(a0));
-    }
     inline void fireEventSearchCatalogRequest(class SearchRequestTelemetry const& a0){
         void (MinecraftEventing::*rv)(class SearchRequestTelemetry const&);
         *((void**)&rv) = dlsym("?fireEventSearchCatalogRequest@MinecraftEventing@@UEAAXAEBVSearchRequestTelemetry@@@Z");
@@ -264,6 +254,16 @@ public:
         void (MinecraftEventing::*rv)(class Option const&) const;
         *((void**)&rv) = dlsym("?fireEventEduOptionSet@MinecraftEventing@@UEBAXAEBVOption@@@Z");
         return (this->*rv)(std::forward<class Option const&>(a0));
+    }
+    inline void fireEventAndroidScopedStorageDebug(unsigned __int64 a0){
+        void (MinecraftEventing::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?fireEventAndroidScopedStorageDebug@MinecraftEventing@@UEAAX_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline void fireEventStoreSearch(struct storeSearch::TelemetryData const& a0){
+        void (MinecraftEventing::*rv)(struct storeSearch::TelemetryData const&);
+        *((void**)&rv) = dlsym("?fireEventStoreSearch@MinecraftEventing@@UEAAXAEBUTelemetryData@storeSearch@@@Z");
+        return (this->*rv)(std::forward<struct storeSearch::TelemetryData const&>(a0));
     }
     inline class Social::Events::EventManager& getEventManager() const{
         class Social::Events::EventManager& (MinecraftEventing::*rv)() const;

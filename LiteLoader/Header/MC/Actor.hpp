@@ -355,29 +355,29 @@ public:
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLocalPlayer() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
-        return (this->*rv)();
+    inline bool hasOutputSignal(unsigned char a0) const{
+        bool (Actor::*rv)(unsigned char) const;
+        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
     }
     inline bool isLeashableType(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasOutputSignal(unsigned char a0) const{
-        bool (Actor::*rv)(unsigned char) const;
-        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool breaksFallingBlocks() const{
+    inline bool isLocalPlayer() const{
         bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool _makeFlySound() const{
@@ -450,14 +450,14 @@ public:
         *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isTargetable() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canMakeStepSound() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline float getDeletionDelayTimeSeconds() const{

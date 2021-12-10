@@ -9,7 +9,7 @@
 enum PlayerListPacketType { Add,
                             Remove };
 
-#undef BEFORE_EXTRA //DO NOT EDIT THIS LINE
+#undef BEFORE_EXTRA
 
 class PlayerListEntry {
 

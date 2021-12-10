@@ -146,14 +146,14 @@ public:
         *((void**)&rv) = dlsym("?isSignalSource@BarrelBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isContainerBlock() const{
-        bool (BarrelBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?isContainerBlock@BarrelBlock@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasComparatorSignal() const{
         bool (BarrelBlock::*rv)() const;
         *((void**)&rv) = dlsym("?hasComparatorSignal@BarrelBlock@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isContainerBlock() const{
+        bool (BarrelBlock::*rv)() const;
+        *((void**)&rv) = dlsym("?isContainerBlock@BarrelBlock@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isInteractiveBlock() const{

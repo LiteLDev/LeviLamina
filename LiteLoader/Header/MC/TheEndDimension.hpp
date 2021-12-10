@@ -29,25 +29,25 @@ public:
         *((void**)&rv) = dlsym("?isValidSpawn@TheEndDimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
+    inline bool hasGround() const{
+        bool (TheEndDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?hasGround@TheEndDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isDay() const{
         bool (TheEndDimension::*rv)() const;
         *((void**)&rv) = dlsym("?isDay@TheEndDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasGround() const{
+    inline bool isNaturalDimension() const{
         bool (TheEndDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?hasGround@TheEndDimension@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isNaturalDimension@TheEndDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isFoggyAt(int a0, int a1) const{
         bool (TheEndDimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isFoggyAt@TheEndDimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline bool isNaturalDimension() const{
-        bool (TheEndDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?isNaturalDimension@TheEndDimension@@UEBA_NXZ");
-        return (this->*rv)();
     }
     inline bool mayRespawnViaBed() const{
         bool (TheEndDimension::*rv)() const;

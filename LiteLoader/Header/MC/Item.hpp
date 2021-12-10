@@ -164,14 +164,14 @@ public:
         *((void**)&rv) = dlsym("?isMultiColorTinted@Item@@UEBA_NAEBVItemStack@@@Z");
         return (this->*rv)(std::forward<class ItemStack const&>(a0));
     }
-    inline bool isBucket() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isBucket@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isActorPlacerItem() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBucket() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isBucket@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isComponentBased() const{
@@ -189,24 +189,24 @@ public:
         *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isComplex() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool showsDurabilityInCreative() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCandle() const{
+    inline bool isComplex() const{
         bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isMusicDisk() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isMusicDisk@Item@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCandle() const{
+        bool (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?isCandle@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isPattern() const{

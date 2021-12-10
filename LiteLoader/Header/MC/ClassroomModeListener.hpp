@@ -52,15 +52,15 @@ public:
         *((void**)&rv) = dlsym("?onBlockChanged@ClassroomModeListener@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned int>(a2), std::forward<class Block const&>(a3), std::forward<class Block const&>(a4), std::forward<int>(a5), std::forward<struct ActorBlockSyncMessage const*>(a6), std::forward<int \/*enum enum BlockChangedEventTarget*\/>(a7));
     }
-    inline void onChunkLoaded(class ChunkSource& a0, class LevelChunk& a1){
-        void (ClassroomModeListener::*rv)(class ChunkSource&, class LevelChunk&);
-        *((void**)&rv) = dlsym("?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
-        return (this->*rv)(std::forward<class ChunkSource&>(a0), std::forward<class LevelChunk&>(a1));
-    }
     inline void onEntityAdded(class Actor& a0){
         void (ClassroomModeListener::*rv)(class Actor&);
         *((void**)&rv) = dlsym("?onEntityAdded@ClassroomModeListener@@UEAAXAEAVActor@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0));
+    }
+    inline void onChunkLoaded(class ChunkSource& a0, class LevelChunk& a1){
+        void (ClassroomModeListener::*rv)(class ChunkSource&, class LevelChunk&);
+        *((void**)&rv) = dlsym("?onChunkLoaded@ClassroomModeListener@@UEAAXAEAVChunkSource@@AEAVLevelChunk@@@Z");
+        return (this->*rv)(std::forward<class ChunkSource&>(a0), std::forward<class LevelChunk&>(a1));
     }
     */
     MCAPI ClassroomModeListener(class IMinecraftEventing&);

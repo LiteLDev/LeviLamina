@@ -34,11 +34,6 @@ public:
         *((void**)&rv) = dlsym("?onAppPreSuspended@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onResizeBegin(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onResizeBegin@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onAppFocusGained(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppFocusGained@AppPlatformListener@@UEAAXXZ");
@@ -49,15 +44,20 @@ public:
         *((void**)&rv) = dlsym("?onAppPaused@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onAppUnpaused(){
+    inline void onResizeBegin(){
         void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onAppUnpaused@AppPlatformListener@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?onResizeBegin@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onOperationModeChanged(int \/*enum enum OperationMode*\/ a0){
         void (AppPlatformListener::*rv)(int \/*enum enum OperationMode*\/);
         *((void**)&rv) = dlsym("?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z");
         return (this->*rv)(std::forward<int \/*enum enum OperationMode*\/>(a0));
+    }
+    inline void onAppUnpaused(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onAppUnpaused@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void onAppFocusLost(){
         void (AppPlatformListener::*rv)();
@@ -69,24 +69,24 @@ public:
         *((void**)&rv) = dlsym("?onPushNotificationReceived@AppPlatformListener@@UEAAXAEBVPushNotificationMessage@@@Z");
         return (this->*rv)(std::forward<class PushNotificationMessage const&>(a0));
     }
-    inline void onPerformanceModeChanged(bool a0){
-        void (AppPlatformListener::*rv)(bool);
-        *((void**)&rv) = dlsym("?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
     inline void onAppSuspended(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onAppSuspended@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onLowMemory(){
-        void (AppPlatformListener::*rv)();
-        *((void**)&rv) = dlsym("?onLowMemory@AppPlatformListener@@UEAAXXZ");
-        return (this->*rv)();
+    inline void onPerformanceModeChanged(bool a0){
+        void (AppPlatformListener::*rv)(bool);
+        *((void**)&rv) = dlsym("?onPerformanceModeChanged@AppPlatformListener@@UEAAX_N@Z");
+        return (this->*rv)(std::forward<bool>(a0));
     }
     inline void onDeviceLost(){
         void (AppPlatformListener::*rv)();
         *((void**)&rv) = dlsym("?onDeviceLost@AppPlatformListener@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onLowMemory(){
+        void (AppPlatformListener::*rv)();
+        *((void**)&rv) = dlsym("?onLowMemory@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onAppTerminated(){

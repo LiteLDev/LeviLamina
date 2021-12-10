@@ -146,6 +146,11 @@ public:
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandBlockUpdatePacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CommandBlockUpdatePacket const&>(a1));
     }
+    inline void handle(class NetworkIdentifier const& a0, class CommandRequestPacket const& a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandRequestPacket const&);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCommandRequestPacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CommandRequestPacket const&>(a1));
+    }
     inline void handle(class NetworkIdentifier const& a0, class ContainerClosePacket const& a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ContainerClosePacket const&);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVContainerClosePacket@@@Z");

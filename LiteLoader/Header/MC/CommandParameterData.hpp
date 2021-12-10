@@ -70,10 +70,12 @@ public:
 
 public:
     MCAPI CommandParameterData(class CommandParameterData const&);
-    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const, char const*, enum CommandParameterDataType, char const*, int, bool, int);
+    MCAPI CommandParameterData(class typeid_t<class CommandRegistry>, bool (CommandRegistry::*)(void* , struct CommandRegistry::ParseToken const& , class CommandOrigin const& , int, std::string& , std::vector<std::string>& ) const, char const*, enum CommandParameterDataType, char const*, int, bool, int);
     MCAPI class CommandParameterData& addOptions(enum CommandParameterOption);
     MCAPI ~CommandParameterData();
 
 protected:
+
 private:
+
 };

@@ -81,15 +81,15 @@ public:
         *((void**)&rv) = dlsym("?loadRotation@DefaultDataLoadHelper@@UEAA?AW4Rotation@@W42@@Z");
         return (this->*rv)(std::forward<int \/*enum enum Rotation*\/>(a0));
     }
-    inline int \/*enum enum Direction::Type*\/ loadDirection(int \/*enum enum Direction::Type*\/ a0){
-        int \/*enum enum Direction::Type*\/ (DefaultDataLoadHelper::*rv)(int \/*enum enum Direction::Type*\/);
-        *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Direction::Type*\/>(a0));
-    }
     inline unsigned char loadFacingID(unsigned char a0){
         unsigned char (DefaultDataLoadHelper::*rv)(unsigned char);
         *((void**)&rv) = dlsym("?loadFacingID@DefaultDataLoadHelper@@UEAAEE@Z");
         return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline int \/*enum enum Direction::Type*\/ loadDirection(int \/*enum enum Direction::Type*\/ a0){
+        int \/*enum enum Direction::Type*\/ (DefaultDataLoadHelper::*rv)(int \/*enum enum Direction::Type*\/);
+        *((void**)&rv) = dlsym("?loadDirection@DefaultDataLoadHelper@@UEAA?AW4Type@Direction@@W423@@Z");
+        return (this->*rv)(std::forward<int \/*enum enum Direction::Type*\/>(a0));
     }
     inline float loadRotationRadiansX(float a0){
         float (DefaultDataLoadHelper::*rv)(float);
