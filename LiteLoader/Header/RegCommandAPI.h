@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Global.h"
 #include "LoggerAPI.h"
 #include "MC/Actor.hpp"
