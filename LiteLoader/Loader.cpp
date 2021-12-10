@@ -112,7 +112,7 @@ void LoadMain() {
             }
         } else {
             Logger::Error("Error when loading plugin <{}>", i);
-            Logger::Error() << GetLastErrorMessage() << Logger::endl;
+            Logger::Error("Code: {} Msg: {}", GetLastError(), GetLastErrorMessage());
         }
     }
 
