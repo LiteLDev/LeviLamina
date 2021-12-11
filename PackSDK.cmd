@@ -1,9 +1,6 @@
 @echo off
 
-if [%1]==[clean] (
 rmdir SDK /S /Q
-goto End
-)
 
 echo [INFO] Packing LL-SDK...
 echo.
