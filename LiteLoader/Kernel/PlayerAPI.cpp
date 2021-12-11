@@ -38,18 +38,13 @@ NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
-/*
-Certificate* Player::getCert() {
+
+Certificate* Player::getCertificate() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
     }
     return nullptr;
-}
-*/
-
-Certificate* Player::getCertificate() {
-    return const_cast<Certificate*>(Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getCertificate());
 }
 
 std::string Player::getRealName() {
