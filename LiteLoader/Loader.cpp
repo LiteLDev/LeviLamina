@@ -66,19 +66,19 @@ void LoadMain() {
         if (loaded)
             continue;
 
+        string pluginFileName = filesystem::path(path).filename().u8string();
         auto lib = LoadLibrary(str2wstr(path).c_str());
         if (lib) {
             pluginCount++;
-            auto pluginFileName = filesystem::path(path).filename().u8string();
+            
             Logger::Info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
             }
         } else {
-            Logger::Error("Fail to load plugin <{}>", i);
-            Logger::Error("Error Code: {}", GetLastError());
-            Logger::Error("Error Msg: {}", GetLastErrorMessage());
+            Logger::Error("Fail to load plugin <{}>", pluginFileName);
+            Logger::Error("Error: {} {}", GetLastError(), GetLastErrorMessage());
         }
     }
 

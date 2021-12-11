@@ -109,16 +109,27 @@ public:
     LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
     LIAPI static bool runcmd(const string& cmd);
 
+
+    /////////////////////// Wrapper Part /////////////////////// 
+
     inline void explode(class BlockSource& a0, class Actor* a1, class Vec3 const& a2, float a3, bool a4, bool a5, float a6, bool a7) {
         void (Level::*rv)(class BlockSource&, class Actor*, class Vec3 const&, float, bool, bool, float, bool);
         *((void**)&rv) = dlsym("?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Actor*>(a1), std::forward<class Vec3 const&>(a2), std::forward<float>(a3), std::forward<bool>(a4), std::forward<bool>(a5), std::forward<float>(a6), std::forward<bool>(a7));
     }
+
     inline class Spawner& getSpawner() const {
         class Spawner& (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getSpawner@Level@@UEBAAEAVSpawner@@XZ");
         return (this->*rv)();
     }
+
+    inline class Player* getPlayer(struct ActorUniqueID a0) const {
+        class Player* (Level:: * rv)(struct ActorUniqueID) const;
+        *((void**)&rv) = dlsym("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z");
+        return (this->*rv)(std::forward<struct ActorUniqueID>(a0));
+    }
+
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

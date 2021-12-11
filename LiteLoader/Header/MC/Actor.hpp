@@ -57,6 +57,7 @@ public:
 
 	//For Compatibility
 	inline Vec3 getPos() { return getPosition(); }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
