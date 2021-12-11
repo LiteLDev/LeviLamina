@@ -39,9 +39,9 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
-    LIAPI bool crashClient();
 
     LIAPI bool kick(string msg);
+    LIAPI bool crashClient();
     LIAPI bool sendText(string text, TextType type = TextType::RAW);
     LIAPI bool talkAs(const string& msg);
     LIAPI bool giveItem(ItemStack* item); 
@@ -52,6 +52,12 @@ public:
     LIAPI bool removeSidebar();
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
+
+    LIAPI int getScore(string key);
+    LIAPI bool setScore(string key, int value);
+    LIAPI bool addScore(string key, int value);
+    LIAPI bool reduceScore(string key, int value);
+    LIAPI bool deleteScore(string key);
 
     //Packet
     LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW);

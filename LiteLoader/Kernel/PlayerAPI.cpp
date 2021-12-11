@@ -285,6 +285,31 @@ bool Player::removeSidebar()
     return sendSetDisplayObjectivePacket("", "", (char)0);
 }
 
+int Player::getScore(string key)
+{
+    return ::Global<Scoreboard>->getScore(this, key);
+}
+
+bool Player::setScore(string key, int value)
+{
+    return ::Global<Scoreboard>->setScore(this, key, value);
+}
+
+bool Player::addScore(string key, int value)
+{
+    return ::Global<Scoreboard>->addScore(this, key, value);
+}
+
+bool Player::reduceScore(string key, int value)
+{
+    return ::Global<Scoreboard>->reduceScore(this, key, value);
+}
+
+bool Player::deleteScore(string key)
+{
+    return ::Global<Scoreboard>->deleteScore(this, key);
+}
+
 
 ////////////////////////// Packet //////////////////////////
 
