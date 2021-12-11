@@ -15,7 +15,29 @@ class Color;
 }; // namespace mce
 
 class Vec3;
-class BlockPos {
+class BlockPos;
+
+class ChunkBlockPos
+{
+public:
+    char x;
+    char z;
+    short y; // ChunkLocalHeight
+    ChunkBlockPos()
+        : x(0)
+        , y(0)
+        , z(0){};
+
+    ChunkBlockPos(char x, short y, char z)
+        : x(x)
+        , y(y)
+        , z(z){};
+
+    LIAPI ChunkBlockPos(BlockPos const&, short);
+};
+
+class BlockPos
+{
 public:
     int x, y, z;
 
@@ -94,6 +116,7 @@ public:
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
 
 };
+
 
 #include "AABB.hpp"
 class BoundingBox {

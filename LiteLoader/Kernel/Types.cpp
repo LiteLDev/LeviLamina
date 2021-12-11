@@ -1,5 +1,12 @@
 #include <MC/Types.hpp>
 
+ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
+{
+    this->x = (char)pos.x;
+    this->z = (char)pos.z;
+    this->y = (short)(pos.y - minHeight);
+}
+
 Vec3 BlockPos::toVec3() {
     return {(float)x, (float)y, (float)z};
 }
