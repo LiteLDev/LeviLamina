@@ -188,6 +188,7 @@
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
     <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
+    <ClCompile Include="Kernel\TagMemoryChunk.cpp" />
     <ClCompile Include="Kernel\Types.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />

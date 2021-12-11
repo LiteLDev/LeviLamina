@@ -83,21 +83,19 @@ void ListTag::addString(const string& v) {
 void ListTag::addByteArray(void* data, size_t size) {
     Tag* t = Tag::createTag(Tag::Type::ByteArray);
 
-    uint8_t* written = new uint8_t[size];
+    char* written = new char[size];
     memcpy(written, data, size);
-    auto tmc = TagMemoryChunk(size, written);
+    auto tmc = TagMemoryChunk(written, size);
     t->asByteArrayTag()->value() = tmc;
 
     add(t);
 }
 void ListTag::addByteArray(TagMemoryChunk tmc) {
-    throw("TODO");
     Tag* t = Tag::createTag(Tag::Type::ByteArray);
     t->asByteArrayTag()->value() = tmc;
     add(t);
 }
 void ListTag::addIntArray(TagMemoryChunk tmc) {
-    throw("TODO");
     Tag* t = Tag::createTag(Tag::Type::IntArray);
     t->asByteArrayTag()->value() = tmc;
     add(t);
