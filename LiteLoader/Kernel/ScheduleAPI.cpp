@@ -1,4 +1,4 @@
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <ScheduleAPI.h>
 #include <atomic>
 #include <deque>
@@ -6,6 +6,8 @@
 #include <mutex>
 #include <thread>
 using std::function;
+
+Logger scheduleLogger("Schedule");
 
 namespace Schedule {
 LIAPI tick_t _tick;
@@ -82,13 +84,13 @@ inline static void nextrun() {
             next_run.pop_front();
         }
     } catch (const seh_exception& e) {
-        Logger::Error("SEH exception occurred at nextTask!");
-        Logger::Error("{}", e.what());
+        scheduleLogger.error("SEH exception occurred at nextTask!");
+        scheduleLogger.error("{}", e.what());
     } catch (const std::exception& e) {
-        Logger::Error("Exception occurred at nextTask!");
-        Logger::Error("{}", e.what());
+        scheduleLogger.error("Exception occurred at nextTask!");
+        scheduleLogger.error("{}", e.what());
     } catch (...) {
-        Logger::Error("Exception occurred at nextTask!");
+        scheduleLogger.error("Exception occurred at nextTask!");
     }
     cas_nextrun.clear();
 }
@@ -117,13 +119,13 @@ inline static void tick() {
             }
         }
     } catch (const seh_exception& e) {
-        Logger::Error("SEH exception occurred in task!");
-        Logger::Error("{}", e.what());
+        scheduleLogger.error("SEH exception occurred in task!");
+        scheduleLogger.error("{}", e.what());
     } catch (const std::exception& e) {
-        Logger::Error("Exception occurred in task!");
-        Logger::Error("{}", e.what());
+        scheduleLogger.error("Exception occurred in task!");
+        scheduleLogger.error("{}", e.what());
     } catch (...) {
-        Logger::Error("Exception occurred in task!");
+        scheduleLogger.error("Exception occurred in task!");
     }
 }
 } // namespace Schedule

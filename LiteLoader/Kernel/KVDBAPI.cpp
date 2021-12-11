@@ -1,6 +1,9 @@
 ﻿#include <Global.h>
 #include <KVDBAPI.h>
-#include <LoggerAPI.h>
+#include <Logger.h>
+
+Logger levelDBLogger("LevelDB");
+
 LIAPI std::unique_ptr<KVDB> MakeKVDB(const string& path,
                                          bool read_cache,
                                          int cache_sz,
@@ -26,13 +29,10 @@ void KVDB::__init(const char* path, bool read_cache, int cache_sz, int Bfilter_b
     dpath = path;
     leveldb::Status status = leveldb::DB::Open(options, path, &db);
     if (!status.ok()) {
-
-        Logger::setTitle("LevelDB");
-        Logger::Error("Fail to load KVDB <{}>", path);
+        levelDBLogger.error("Fail to load KVDB <{}>", path);
         auto output = error(status);
         output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-        Logger::Error("{}", output);
-        Logger::setTitle("LiteLoader");
+        levelDBLogger.error("{}", output);
     }
 }
 KVDB::~KVDB() {
@@ -45,9 +45,7 @@ bool KVDB::get(string_view key, string& val) {
     if (!s.ok()) {
         if (s.IsNotFound())
             return false;
-        Logger::setTitle("LevelDB");
-        Logger::Error("[DB Error]get %s %s\n", dpath.c_str(), s.ToString().c_str());
-        Logger::setTitle("LiteLoader");
+        levelDBLogger.error("[DB Error]get %s %s\n", dpath.c_str(), s.ToString().c_str());
     }
     return true;
 }
@@ -56,18 +54,14 @@ void KVDB::put(string_view key, string_view val) {
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
                      leveldb::Slice(val.data(), val.size()));
     if (!s.ok()) {
-        Logger::setTitle("LevelDB");
-        Logger::Error("[DB Error]put %s %s\n", dpath.c_str(), s.ToString().c_str());
-        Logger::setTitle("LiteLoader");
+        levelDBLogger.error("[DB Error]put %s %s\n", dpath.c_str(), s.ToString().c_str());
     }
 }
 void KVDB::del(string_view key) {
     // WATCH_ME("del kvdb " + dpath);
     auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
     if (!s.ok()) {
-        Logger::setTitle("LevelDB");
-        Logger::Error("del %s %s\n", dpath.c_str(), s.ToString().c_str());
-        Logger::setTitle("LiteLoader");
+        levelDBLogger.error("del %s %s\n", dpath.c_str(), s.ToString().c_str());
     }
 }
 void KVDB::iter(std::function<bool(string_view key)> const& fn) {

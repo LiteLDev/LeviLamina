@@ -1,4 +1,4 @@
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <MC/Block.hpp>
 #include <MC/BlockLegacy.hpp>
 #include <MC/BlockPalette.hpp>
@@ -48,7 +48,7 @@ unsigned short Block::getTileData() {
         if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
             return i;
     }
-    Logger::Error("Error in GetTileData");
+    Logger("BlockApi").error("Error in GetTileData");
     return 0;
 }
 

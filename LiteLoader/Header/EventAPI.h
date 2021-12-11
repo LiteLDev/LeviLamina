@@ -1,12 +1,13 @@
 #pragma once
 #include "Global.h"
-#include "LoggerAPI.h"
+#include "Logger.h"
 #include "MC/BlockInstance.hpp"
 #include "MC/MCRESULT.hpp"
 #include <functional>
 #include <iterator>
 #include <list>
 #include <string>
+
 using std::function;
 using std::string;
 
@@ -88,9 +89,9 @@ public:
             }
             return passToBDS;
         } catch (const seh_exception& e) {
-            Logger::Error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
+            Logger("Event").error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
         } catch (const std::exception& e) {
-            Logger::Error("Uncaught Exception in Event({})!", typeid(EVENT).name());
+            Logger("Event").error("Uncaught Exception in Event({})!", typeid(EVENT).name());
         }
         return passToBDS;
     }

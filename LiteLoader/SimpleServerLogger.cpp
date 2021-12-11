@@ -1,4 +1,4 @@
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
 #include <Config.h>
@@ -6,12 +6,12 @@
 using namespace Event;
 
 bool onPlayerChat(const PlayerChatEvent &e) {
-    Logger::Info("[Chat] {} > {}", e.mPlayer->getRealName(), FixCurlyBracket(e.mMessage));
+    Logger("Chat").info("<{}> {}", e.mPlayer->getRealName(), FixCurlyBracket(e.mMessage));
     return true;
 }
 
 bool onPlayerCmd(PlayerCmdEvent e) {
-    Logger::Info("[Command] {} /{}", e.mPlayer->getRealName(),FixCurlyBracket(e.mCommand));
+    Logger("Command").info("{} issued command: /{}", e.mPlayer->getRealName(),FixCurlyBracket(e.mCommand));
     return true;
 }
 
