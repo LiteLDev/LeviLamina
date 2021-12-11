@@ -66,6 +66,7 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
 BlockSource* Level::getBlockSource(int dimid) {
+    //auto dim = Global<Level>->createDimension(dimid);
     auto dim = Global<Level>->getDimension(dimid);
     return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
     //return dAccess<BlockSource*>(dim, 96);
@@ -89,12 +90,33 @@ Block* Level::getBlock(BlockPos* pos, BlockSource* blockSource) {
     return (Block*)&(blockSource->getBlock(*pos));
 }
 
-Block* Level::getBlock(const BlockPos& pos, int dim) {
-    return getBlock(pos, Level::getBlockSource(dim));
+Block* Level::getBlock(const BlockPos& pos, int dimId) {
+    return getBlock(pos, Level::getBlockSource(dimId));
 }
 
 Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
     return (Block*)&(blockSource->getBlock(pos));
+}
+
+
+// Return nullptr when failing to get block
+Block* Level::getBlockEx(const BlockPos& pos, int dimId)
+{
+    auto dim = Global<Level>->getDimension(dimId);
+    if (!dim)
+        return nullptr;
+
+    auto bs = &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    auto lc = bs->getChunkAt(pos);
+    if (!lc)
+        return nullptr;
+
+    short minHeight = dim->getMinHeight();
+    if (pos.y < minHeight || pos.y > dim->getHeight())
+        return nullptr;
+
+    ChunkBlockPos cbpos = ChunkBlockPos(pos, minHeight);
+    return const_cast<Block*>(&lc->getBlock(cbpos));
 }
 
 BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId) {

@@ -48,6 +48,7 @@ public:
     LIAPI static Block* getBlock(BlockPos* pos, BlockSource* blockSource);
     LIAPI static Block* getBlock(const BlockPos& pos, int dimId);
     LIAPI static Block* getBlock(const BlockPos& pos, BlockSource *blockSource);
+    LIAPI static Block* getBlockEx(const BlockPos& pos, int dimId);
     LIAPI static BlockInstance getBlockInstance(BlockPos* pos, int dimId);
     LIAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
     LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
@@ -133,6 +134,12 @@ public:
         return (this->*rv)();
     }
 
+    inline class Dimension* createDimension(class AutomaticID<class Dimension, int> a0)
+    {
+        class Dimension* (Level::*rv)(class AutomaticID<class Dimension, int>);
+        *((void**)&rv) = dlsym("?createDimension@Level@@UEAAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
+        return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
