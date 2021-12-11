@@ -18,9 +18,7 @@
 
 
 Actor* Level::getEntity(struct ActorUniqueID uniqueId) {
-    class Actor* (Level::*rv)(struct ActorUniqueID, bool) const;
-    *((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
-    return (Global<Level>->*rv)(std::forward<struct ActorUniqueID>(uniqueId), false);
+    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, ActorUniqueID)(uniqueId);
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
@@ -296,6 +294,10 @@ Player* Level::getPlayer(const string& info) {
     return found;
 }
 
+Player* Level::getPlayer(ActorUniqueID id)
+{
+    return SymCall("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z", Player*, ActorUniqueID)(id);
+}
 
 Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
 
