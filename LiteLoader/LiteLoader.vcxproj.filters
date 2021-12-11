@@ -231,9 +231,6 @@
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\MobEffectInstanceAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

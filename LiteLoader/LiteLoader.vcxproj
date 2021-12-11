@@ -174,7 +174,6 @@
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
-    <ClCompile Include="Kernel\MobEffectInstanceAPI.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
