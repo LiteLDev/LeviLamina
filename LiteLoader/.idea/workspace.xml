@@ -13,7 +13,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/BuiltinCommands.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/BuiltinCommands.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Header/Logger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CrashLogger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CrashLogger.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header/LoggerAPI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/LoggerAPI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiteLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModifyInfomation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/ModifyInfomation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleServerLogger.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleServerLogger.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +32,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GithubProjectSettings">
     <option name="branchProtectionPatterns">
@@ -75,10 +89,16 @@
     <property name="cidr.known.project.marker" value="true" />
     <property name="cmake.loaded.for.project" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/cmake-build-release" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
     <configuration name="LiteLoader" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LiteLoader" TARGET_NAME="LiteLoader" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -94,7 +114,9 @@
       <updated>1639137310134</updated>
       <workItem from="1639137312131" duration="6558000" />
       <workItem from="1639143932895" duration="1135000" />
-      <workItem from="1639145694936" duration="1072000" />
+      <workItem from="1639145694936" duration="1343000" />
+      <workItem from="1639147604630" duration="10866000" />
+      <workItem from="1639193108486" duration="2764000" />
     </task>
     <servers />
   </component>
