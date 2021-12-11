@@ -7,6 +7,8 @@
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
+#include "MobEffectInstance.hpp"
+
 class Actor;
 class Player;
 class NetworkIdentifier;
@@ -17,6 +19,7 @@ class BlockInstance;
 class ItemStack;
 struct Tick;
 enum class FaceID : char;
+
 #undef BEFORE_EXTRA
 
 class Actor {
@@ -55,6 +58,7 @@ public:
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
+    LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
 	//For Compatibility
 	inline Vec3 getPos() { return getPosition(); }

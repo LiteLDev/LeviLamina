@@ -203,3 +203,9 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     return result;
 }
 
+bool Actor::addEffect(MobEffect::EffectType type, int tick, int level, bool ambient, bool showParticles, bool showAnimation)
+{
+    MobEffectInstance ins = MobEffectInstance((unsigned int)type, tick, level, ambient, showParticles, showAnimation);
+    ins.applyEffects(this);
+    return true;
+};
