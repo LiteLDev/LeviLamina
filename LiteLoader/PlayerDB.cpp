@@ -33,7 +33,6 @@ std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUI
 
         return val;
     } catch (std::exception const& e) {
-        Logger::setTitle("DB");
         Logger::Error("DB Error: {}", e.what());
         return "";
     }
@@ -67,7 +66,6 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
             st.clearBindings();
             stUUID.clearBindings();
         } catch (std::exception const& e) {
-            Logger::setTitle("DB");
             Logger::Error("DB Error: {}", e.what());
             return false;
         }
@@ -107,7 +105,6 @@ std::string getName(unsigned short type, std::string val) {
         }
         return out;
     } catch (std::exception const& e) {
-        Logger::setTitle("DB");
         Logger::Error("DB Error: {}", e.what());
         return "";
     }

@@ -121,7 +121,7 @@ public:
     
     template <typename Type>
     bool
-        fakeparse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
+        fakeParse(void*, ParseToken const&, CommandOrigin const&, int, std::string&, std::vector<std::string>&) const {
         return false;
     }
     struct ParseTable {};

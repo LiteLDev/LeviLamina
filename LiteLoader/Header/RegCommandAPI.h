@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include "Global.h"
 #include "LoggerAPI.h"
 #include "MC/Actor.hpp"
@@ -41,7 +41,7 @@ static CommandParameterData
     makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
         CommandRegistry::getNextTypeId(),
-        &CommandRegistry::fakeparse<Type>,
+        &CommandRegistry::fakeParse<Type>,
         name,
         DataType,
         desc,
@@ -68,7 +68,7 @@ static CommandParameterData
     makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
     return {
         CommandRegistry::getNextTypeId(),
-        &CommandRegistry::fakeparse<Type>,
+        &CommandRegistry::fakeParse<Type>,
         name,
         DataType,
         desc,

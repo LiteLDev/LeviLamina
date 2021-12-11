@@ -76,8 +76,9 @@ void LoadMain() {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
             }
         } else {
-            Logger::Error("Error when loading plugin <{}>", path);
-            Logger::Error() << GetLastErrorMessage() << Logger::endl;
+            Logger::Error("Fail to load plugin <{}>", i);
+            Logger::Error("Error Code: {}", GetLastError());
+            Logger::Error("Error Msg: {}", GetLastErrorMessage());
         }
     }
 

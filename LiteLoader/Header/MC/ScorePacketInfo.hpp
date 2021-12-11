@@ -4,7 +4,7 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-#include <MC/ScoreboardId.hpp>
+#include "ScoreboardId.hpp"
 #undef BEFORE_EXTRA
 
 struct ScorePacketInfo {

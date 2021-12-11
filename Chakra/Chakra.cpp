@@ -6,7 +6,6 @@ using std::string;
 using std::wstring;
 using namespace std::filesystem;
 
-
 #define MAX_PATH_LENGTH 8192
 
 void fixUpLibDir() {
@@ -108,6 +107,3 @@ void loadDlls() {
 		exit(GetLastError());
 	}
 }
-
-//#pragma comment(linker, "/export:HookFunction=LiteLoader.HookFunction")
-//#pragma comment(linker, "/export:GetServerSymbol=LiteLoader.dlsym_real")

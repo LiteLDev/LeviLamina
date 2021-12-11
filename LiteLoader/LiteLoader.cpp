@@ -72,6 +72,10 @@ void LLMain() {
     FixUpCWD();
     FixPluginsLibDir();
 
+    //Init LL Logger
+    Logger::setTitle("LiteLoader");
+    Logger::setFile("logs/LiteLoader-latest.log", false);
+
     //Load Config
     LoadLLConfig();
     InitPlayerDatabase();
@@ -80,10 +84,6 @@ void LLMain() {
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
-
-    //Init LL Logger
-    Logger::setTitle("LiteLoader");
-    Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //DebugMode
     CheckDevMode();
