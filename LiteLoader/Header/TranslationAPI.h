@@ -1,12 +1,12 @@
 #pragma once
 #include "Global.h"
 #include "LLAPI.h"
-#include "LoggerAPI.h"
+#include "Logger.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "third-party/Nlohmann/json.hpp"
-#include "third-party/fmt/core.h"
-#include "third-party/fmt/os.h"
+#include "third-party/FMT/core.h"
+#include "third-party/FMT/os.h"
 #include <string>
 
 //////////////////////////////////////////////////////
@@ -33,6 +33,9 @@
 #define TRANSLATION_DATA_NAME "_ll_plugin_translation_content"
 #define TRANSLATION_DATA_FILE "_ll_plugin_translation_file"
 
+
+Logger translationLogger("TranslationAPI");
+
 namespace Translation {
 LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath);
 
@@ -47,8 +50,8 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
 
     auto res = json.find(formatStr); //改成模糊匹配
     if (res == json.end()) {
-        Logger::Error("Fail to find translation string \"{}\" !", formatStr);
-        Logger::Error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
+        translationLogger.error("Fail to find translation string \"{}\" !", formatStr);
+        translationLogger.error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
     } else {
         realFormatStr = res.value();
     }

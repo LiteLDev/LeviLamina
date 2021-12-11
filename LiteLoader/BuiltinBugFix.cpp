@@ -8,11 +8,13 @@
 #include <MC/ServerNetworkHandler.hpp>
 
 #include <Config.h>
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <MC/InventoryTransactionPacket.hpp>
-#include <MC/Packet.hpp>
 #include <unordered_map>
 using namespace LL;
+
+Logger builtinBugFixLogger("BuiltinBugFix");
+
 bool ip_information_logged = false;
 
 //Fix disconnect packet crash bug
@@ -53,7 +55,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
         }
     if (abnormal) {
         Player* sp = (Player*)snh.getServerPlayer(netid);
-        Logger::Warn() << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+        builtinBugFixLogger.Warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
         return nullptr;
     }
     return original(snh, netid, pk);

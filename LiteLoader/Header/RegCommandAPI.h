@@ -1,6 +1,5 @@
 #pragma once
 #include "Global.h"
-#include "LoggerAPI.h"
 #include "MC/Actor.hpp"
 #include "MC/Command.hpp"
 #include "MC/CommandMessage.hpp"
@@ -66,9 +65,18 @@ static CommandParameterData makeOptional(Type Command::*field, std::string name,
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
     makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+    bool (CommandRegistry::*parseFn)(
+        void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+        std::vector<std::string>&) const;
+
+    if constexpr (CommandParameterDataType::SOFT_ENUM == DataType)
+        parseFn = CommandRegistry::getParseFn<Type>();
+    else
+        parseFn = &CommandRegistry::fakeParse<Type>;
+
     return {
         CommandRegistry::getNextTypeId(),
-        &CommandRegistry::fakeParse<Type>,
+        parseFn,
         name,
         DataType,
         desc,

@@ -1,11 +1,13 @@
 #include <EventAPI.h>
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <MC/ServerPlayer.hpp>
 #include <PlayerDB.h>
 #include <exception>
 #include <third-party/SQLiteCpp/SQLiteCpp.h>
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;
+
+Logger playerDBLogger("PlayerDB");
 
 namespace PlayerDB {
 std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUID
@@ -33,7 +35,7 @@ std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUI
 
         return val;
     } catch (std::exception const& e) {
-        Logger::Error("DB Error: {}", e.what());
+        playerDBLogger.error("DB Error: {}", e.what());
         return "";
     }
 }
@@ -66,7 +68,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
             st.clearBindings();
             stUUID.clearBindings();
         } catch (std::exception const& e) {
-            Logger::Error("DB Error: {}", e.what());
+            playerDBLogger.error("DB Error: {}", e.what());
             return false;
         }
     }
@@ -105,7 +107,7 @@ std::string getName(unsigned short type, std::string val) {
         }
         return out;
     } catch (std::exception const& e) {
-        Logger::Error("DB Error: {}", e.what());
+        playerDBLogger.error("DB Error: {}", e.what());
         return "";
     }
 }
@@ -139,8 +141,7 @@ bool InitPlayerDatabase() {
             return true;
         });
     } catch (std::exception const& e) {
-        Logger::setTitle("DB");
-        Logger::Error("Read PlayerDB Error: {}", e.what());
+        playerDBLogger.error("Read PlayerDB Error: {}", e.what());
         return false;
     }
     return true;

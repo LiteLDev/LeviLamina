@@ -517,6 +517,8 @@
     </ClInclude>
     <ClInclude Include="Header\MC\MobEffectInstance.hpp">
       <Filter>Header\MC</Filter>
+    <ClInclude Include="Header\Logger.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

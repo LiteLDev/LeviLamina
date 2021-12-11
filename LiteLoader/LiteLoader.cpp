@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <seh_exception/seh_exception.hpp>
@@ -18,9 +18,10 @@
 
 using namespace std;
 
+Logger llLogger("LiteLoader");
 
 void FixPluginsLibDir() {  // add plugins folder to path
-    WCHAR *buffer = new WCHAR[8192];
+    auto *buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
@@ -43,14 +44,16 @@ extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        Logger::Log(" ");
-        Logger::Log("================= LiteLoader ================");
-        Logger::Log(" ____             __  __           _      ");
-        Logger::Log("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        Logger::Log("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
-        Logger::Log("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
-        Logger::Warn("You Are In DevelopMode!");
+        Logger devLogo("Dev");
+        devLogo.info("");
+        devLogo.info("================= LiteLoader ================");
+        devLogo.info(" ____             __  __           _      ");
+        devLogo.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        devLogo.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        devLogo.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        devLogo.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        devLogo.info("");
+        llLogger.warn("You Are In DevelopMode!");
     }
 }
 
@@ -73,7 +76,6 @@ void LLMain() {
     FixPluginsLibDir();
 
     //Init LL Logger
-    Logger::setTitle("LiteLoader");
     Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //Load Config
@@ -103,8 +105,8 @@ void LLMain() {
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
     { 
         // Server started event
-        Logger::Info("LiteLoader is distributed under the GPLv3 License");
-        Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
+        llLogger.info("LiteLoader is distributed under the GPLv3 License");
+        llLogger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
             InitAutoUpdateCheck();
         return true;

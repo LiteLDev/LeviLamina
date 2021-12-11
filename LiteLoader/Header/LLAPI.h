@@ -7,7 +7,6 @@
 #include <Windows.h>
 #include "Global.h"
 #include "Utils/WinHelper.h"
-#include "LoggerAPI.h"
 
 //helper
 LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, std::string version,
@@ -73,7 +72,6 @@ namespace LL
     inline bool registerPlugin(std::string name, std::string introduction, std::string version,
                               std::string git = "", std::string license = "", std::string website = "") {
         //此函数的实现必须放在头文件中
-        Logger::setTitle(name);
         return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, git, license, website);
     }
 
