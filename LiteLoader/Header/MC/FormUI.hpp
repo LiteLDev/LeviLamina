@@ -42,8 +42,12 @@ namespace Form
 		LIAPI virtual string serialize() = 0;
 		friend class CustomForm;
 	public:
+		enum class Type { Label, Input, Toggle, Dropdown, Slider, StepSlider };
+
 		string name;
+		Type type;
 		inline void setName(const string& name) { this->name = name; }
+		inline virtual Type getType() = 0;
 	};
 
 	class Label : public CustomFormElement
@@ -59,6 +63,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::Label; }
 		inline void setText(const string& text) { this->text = text; }
 	};
 
@@ -74,6 +79,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::Input; }
 		inline void setTitle(const string& title) { this->title = title; }
 		inline void setPlaceHolder(const string& placeholder) { this->placeholder = placeholder; }
 		inline void setDefault(const string& def) { this->def = def; }
@@ -93,6 +99,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::Toggle; }
 		inline void setTitle(const string& title) { this->title = title; }
 		inline void setDefault(bool def) { this->def = def; }
 	};
@@ -112,6 +119,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::Dropdown; }
 		inline void setTitle(const string& title) { this->title = title; }
 		inline void setOptions(const vector<string>& options) { this->options = options; }
 		inline void addOption(const string& option) { options.push_back(option); }
@@ -132,6 +140,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::Slider; }
 		inline void setTitle(const string& title) { this->title = title; }
 		inline void setMin(int min) { this->min = min; }
 		inline void setMax(int max) { this->max = max; }
@@ -154,6 +163,7 @@ namespace Form
 		{
 			setName(name);
 		}
+		inline virtual Type getType() override { return Type::StepSlider; }
 		inline void setTitle(const string& title) { this->title = title; }
 		inline void setOptions(const vector<string>& options) { this->options = options; }
 		inline void addOption(const string& option) { options.push_back(option); }
