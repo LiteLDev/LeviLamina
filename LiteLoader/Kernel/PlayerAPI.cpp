@@ -26,6 +26,7 @@
 #include <MC/ScriptItemStack.hpp>
 #include <MC/Container.hpp>
 #include <MC/SimpleContainer.hpp>
+#include <MC/Scoreboard.hpp>
 
 #include <EventAPI.h>
 #include <bitset>
@@ -134,6 +135,11 @@ bool Player::kick(string msg) {
 bool Player::sendText(string text, TextType type)
 {
     return sendTextPacket(text, type);
+}
+
+bool Player::talkAs(const string& msg)
+{
+    return sendTextTalkPacket(msg);
 }
 
 bool Player::giveItem(ItemStack* item) {
@@ -256,6 +262,27 @@ bool Player::crashClient() {
     dAccess<bool, 56>(pkt) = 1;
     sendNetworkPacket(*pkt);
     return true;
+}
+
+bool Player::setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder)
+{
+    sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
+
+    vector<ScorePacketInfo> info;
+    for (auto& x : data)
+    {
+        const ScoreboardId& id = ::Global<Scoreboard>->createScoreboardId(x.first);
+        ScorePacketInfo i((ScoreboardId*)&id, x.second, x.first);
+        info.emplace_back(i);
+    }
+
+    sendSetScorePacket(0, info);
+    return sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
+}
+
+bool Player::removeSidebar()
+{
+    return sendSetDisplayObjectivePacket("", "", (char)0);
 }
 
 

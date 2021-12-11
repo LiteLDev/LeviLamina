@@ -43,10 +43,13 @@ public:
 
     LIAPI bool kick(string msg);
     LIAPI bool sendText(string text, TextType type = TextType::RAW);
+    LIAPI bool talkAs(const string& msg);
     LIAPI bool giveItem(ItemStack* item); 
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
+    LIAPI bool setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
+    LIAPI bool removeSidebar();
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 

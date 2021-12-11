@@ -633,14 +633,14 @@ enum class ActorDamageCause : int {
 };
 
 enum class ObjectiveSortOrder : char {
-    ASCENDING = 0,
-    DESCENDING = 1
+    Ascending = 0,
+    Descending = 1
 };
 
 enum class PlayerScoreSetFunction : char {
-    SET = 0,
-    ADD = 1,
-    REMOVE = 2
+    Set = 0,
+    Add = 1,
+    Remove = 2
 };
 
 enum class FaceID : char {

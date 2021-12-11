@@ -16,7 +16,7 @@ class ItemActor : public Actor {
 public:
     LIAPI ItemStack* getItemStack();
     LIAPI int getDespawnTime();
-    LIAPI void setDespawnTime(int);
+    LIAPI bool setDespawnTime(int);
     LIAPI int getLatestSpawnTime();
 #undef AFTER_EXTRA
 

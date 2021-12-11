@@ -7,8 +7,9 @@ unsigned int BlockActor::getBlockEntityType(Block* block) {
     return dAccess<unsigned int>(block, 188); //IDA Block::getBlockEntityType
 }
 
-void BlockActor::refreshData() {
+bool BlockActor::refreshData() {
     setChanged();
+    return true;
 }
 
 CompoundTag* BlockActor::getNbt() {
