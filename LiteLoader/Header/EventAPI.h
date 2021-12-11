@@ -488,6 +488,8 @@ class PostInitEvent : public EventTemplate<PostInitEvent> {};
 
 class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {};
 
+class ServerStoppedEvent: public EventTemplate<ServerStoppedEvent>{};
+
 class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent> {
 public:
     std::string mCommand;

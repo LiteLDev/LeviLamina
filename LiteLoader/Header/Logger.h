@@ -9,6 +9,7 @@
 #endif
 
 #include <filesystem>
+#include "LLAPI.h"
 #include "third-party/FMT/chrono.h"
 #include "third-party/FMT/color.h"
 #include "third-party/FMT/core.h"
@@ -27,49 +28,32 @@
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
+template<bool B, class T = void>
+using enable_if_t = typename std::enable_if<B, T>::type;
+
 class Logger {
 public:
     std::string title;
 
-    template<bool B, class T = void>
-    using enable_if_t = typename std::enable_if<B, T>::type;
+    LIAPI static void initLock();
 
-    static void inline initLock() {
-        if (!PluginOwnData::has(LOGGER_CURRENT_LOCK))
-            PluginOwnData::set<CsLock>(LOGGER_CURRENT_LOCK);
-    }
+    LIAPI static void lock();
 
-    static void inline lock() {
-        initLock();
-        PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).lock();
-    }
+    LIAPI static void unlock();
 
-    static void inline unlock() {
-        PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).unlock();
-    }
+    LIAPI static bool setFile(const std::string &logFile, bool appendMode);
 
-    static bool inline setFile(const std::string &logFile, bool appendMode = true) {
-        if (logFile.empty()) {
-            PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
-            return true;
-        } else {
-            std::error_code ec;
-            std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
+    LIAPI static bool setFile(nullptr_t);
 
-            auto &res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile,
-                                                          appendMode ? std::ios::app : std::ios::out);
-            return res.is_open();
-        }
-    }
+    class OutputStream {
+        friend class Logger;
 
-    static bool inline setFile(nullptr_t) {
-        PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
-        return true;
-    }
+    protected:
+        LIAPI explicit OutputStream();
 
-    class output {
     public:
-        Logger *logger;
+        Logger *logger{};
+        int level{};
         std::string consoleFormat;
         std::string fileFormat;
         fmt::text_style style;
@@ -77,17 +61,14 @@ public:
         std::ostringstream os;
         bool locked = false;
 
-        explicit output(Logger *logger, std::string &&consoleFormat, std::string &&fileFormat, fmt::text_style &&style,
-                        std::string &&mode) {
-            this->logger = logger;
-            this->consoleFormat = consoleFormat;
-            this->fileFormat = fileFormat;
-            this->style = style;
-            this->mode = mode;
-        };
+        LIAPI explicit OutputStream(Logger *logger, int level,
+                                    std::string &&consoleFormat,
+                                    std::string &&fileFormat,
+                                    fmt::text_style &&style,
+                                    std::string &&mode);
 
         template<typename T>
-        output &operator<<(T t) {
+        OutputStream &operator<<(T t) {
             if (!locked) {
                 lock();
                 locked = true;
@@ -97,59 +78,21 @@ public:
         }
 
         template<>
-        output &operator<<(void (*t)(output&)) {
+        OutputStream &operator<<(void (*t)(OutputStream &)) {
             t(*this);
             return *this;
         }
     };
 
-    static inline void endl(output& o){
-        fmt::print(o.style, o.consoleFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title, o.os.str());
+    LIAPI static void endl(OutputStream &o);
 
-        if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-            PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
-                    << fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title,
-                                   o.os.str()) << std::flush;
-        o.locked = false;
-        o.os.str("");
-        o.os.clear();
-        unlock();
-    }
+    OutputStream Debug;
+    OutputStream Info;
+    OutputStream Warn;
+    OutputStream Error;
+    OutputStream Fatal;
 
-    output Debug = output{this,
-                          "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
-                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
-                          "Debug"
-    };
-    output Info = output{this,
-                         "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
-                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                         fmt::fg(fmt::terminal_color::white),
-                         "Info"
-    };
-    output Warn = output{this,
-                         "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
-                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
-                         "Warn"
-    };
-    output Error = output{this,
-                          "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
-                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
-                          "Error"
-    };
-    output Fatal = output{this,
-                          "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
-                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-                          "Fatal"
-    };
-
-    explicit Logger(std::string &&title) {
-        this->title = title;
-    }
+    LIAPI explicit Logger(std::string &&title);
 
     template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
     void debug(const S &formatStr, const Args &... args) {
@@ -210,5 +153,4 @@ public:
         std::string str = fmt::format(std::string(formatStr), args...);
         Fatal << str << endl;
     }
-
 };

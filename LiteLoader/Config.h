@@ -44,7 +44,7 @@ bool LoadLLConfig();
 #define LL_UPDATE_URL_PREFIX "https://cdn.jsdelivr.net/gh/LiteLDev/Upgrade"
 #define LL_UPDATE_URL_PATH "/LL/LL.json"
 
-#define LL_UPDATE_CHECK_INTERVAL 10 * 60
+#define LL_UPDATE_CHECK_INTERVAL (10 * 60)
 #define LL_UPDATE_CONNECTION_TIMEOUT 60
 
 #define LL_UPDATE_PROGRAM "plugins/LiteLoader/LLAutoUpdate.dll"

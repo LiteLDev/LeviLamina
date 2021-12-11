@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 
-#include <LLAPI.h>
 #include <Logger.h>
 #include <PluginManager.h>
 #include <Utils/StringHelper.h>

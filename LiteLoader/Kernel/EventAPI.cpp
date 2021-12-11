@@ -111,6 +111,7 @@ DeclareEventListeners(PlayerScoreChangedEvent);
 DeclareEventListeners(ConsoleOutputEvent);
 DeclareEventListeners(PostInitEvent);
 DeclareEventListeners(ServerStartedEvent);
+DeclareEventListeners(ServerStoppedEvent);
 DeclareEventListeners(RegCmdEvent);
 
 #ifdef ENABLE_SEH_PROTECTION
@@ -1462,6 +1463,21 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
         ev.call();
     }
     IF_LISTENED_END(ServerStartedEvent);
+}
+
+////////////// ServerStopped //////////////
+THook(void, "??1DedicatedServer@@UEAA@XZ", void* a)
+{
+    original(a);
+    Global<Level> = Global<Minecraft>->getLevel();
+    Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
+    Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
+    IF_LISTENED(ServerStoppedEvent)
+        {
+            ServerStoppedEvent ev;
+            ev.call();
+        }
+    IF_LISTENED_END(ServerStoppedEvent);
 }
 
 ////////////// RegCmd //////////////

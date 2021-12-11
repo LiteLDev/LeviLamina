@@ -37,7 +37,7 @@ namespace LL {
         int revision;
         Status status;
 
-        LIAPI Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
+        LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
         LIAPI bool operator<(Version b);
         LIAPI bool operator==(Version b);

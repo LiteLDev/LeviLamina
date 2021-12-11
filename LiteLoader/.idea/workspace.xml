@@ -13,11 +13,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="">
+      <change afterPath="$PROJECT_DIR$/Kernel/Logger.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Config.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config.h" beforeDir="false" afterPath="$PROJECT_DIR$/Config.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header/EventAPI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/EventAPI.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header/Global.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/Global.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header/LLAPI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/LLAPI.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Header/Logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/Logger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kernel/EventAPI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Kernel/EventAPI.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kernel/LLAPI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Kernel/LLAPI.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiteLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiteLoader.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.vcxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LiteLoader.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.vcxproj.filters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Loader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Loader.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,12 +100,12 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunManager">
-    <configuration name="LiteLoader" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LiteLoader" TARGET_NAME="LiteLoader" CONFIG_NAME="Debug">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="LiteLoader" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="LiteLoader" TARGET_NAME="LiteLoader" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -115,6 +124,7 @@
       <workItem from="1639145694936" duration="1343000" />
       <workItem from="1639147604630" duration="10866000" />
       <workItem from="1639193108486" duration="8859000" />
+      <workItem from="1639214336414" duration="7976000" />
     </task>
     <servers />
   </component>

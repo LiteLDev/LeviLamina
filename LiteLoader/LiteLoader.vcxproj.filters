@@ -240,6 +240,9 @@
     <ClCompile Include="Kernel\GuiAPI.cpp">
       <Filter>Kernel\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Logger.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

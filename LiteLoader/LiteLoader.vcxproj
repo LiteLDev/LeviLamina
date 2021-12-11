@@ -178,6 +178,7 @@
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\Logger.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />

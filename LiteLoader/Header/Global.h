@@ -21,7 +21,7 @@
 #include <set>
 #include <stack>
 #include <string>
-#include <uchar.h>
+#include <cuchar>
 #include <unordered_map>
 #include <unordered_set>
 #include <utility>
@@ -35,7 +35,7 @@
 #include "HookAPI.h"
 #include "MC/Types.hpp"
 #include "Utils/GlobalService.h"
-#include "utils/optional.h"
+#include "Utils/Optional.h"
 using std::map;
 using std::string;
 using std::vector;

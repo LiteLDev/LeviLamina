@@ -1,5 +1,4 @@
 #include <Config.h>
-#include <HookAPI.h>
 #include <LLAPI.h>
 #include <PluginManager.h>
 #include <Utils/StringHelper.h>
