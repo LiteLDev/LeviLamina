@@ -96,6 +96,7 @@
     <ClCompile Include="BuiltinBugFix.cpp" />
     <ClInclude Include="Header\Logger.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
+    <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
     <ClInclude Include="Header\MC\BinaryStream.hpp" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
@@ -154,6 +155,7 @@
     <ClInclude Include="Header\MC\Scoreboard.hpp" />
     <ClInclude Include="Header\MC\Spawner.hpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\ActorDamageSource.cpp" />
     <ClCompile Include="Kernel\BinaryStream.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockAPI.cpp" />

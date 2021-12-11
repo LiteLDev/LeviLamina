@@ -170,6 +170,7 @@ public:
 class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
     Player* mPlayer;
+    ActorDamageSource* mDamageSource;
 };
 
 class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent> {
@@ -426,7 +427,7 @@ public:
 class MobDieEvent : public EventTemplate<MobDieEvent> {
 public:
     Mob* mMob;
-    Actor* mSource;
+    ActorDamageSource *mDamageSource;
 };
 
 class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent> {

@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+class Actor;
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,8 @@ class ActorDamageSource {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    LIAPI Actor* getEntity();
 
 #undef AFTER_EXTRA
 

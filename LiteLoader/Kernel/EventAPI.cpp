@@ -1,6 +1,7 @@
 ﻿#include <EventAPI.h>
 #include <Global.h>
 #include <Logger.h>
+#include <MC/ActorDamageSource.hpp>
 #include <MC/BaseCommandBlock.hpp>
 #include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
@@ -980,7 +981,7 @@ THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockP
 
 
 /////////////////// PlayerDeath ///////////////////
-THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this, void* src)
+THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this, ActorDamageSource* src)
 {
     IF_LISTENED(PlayerDieEvent)
     {
@@ -988,6 +989,7 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this,
         {
             PlayerDieEvent ev;
             ev.mPlayer = _this;
+            ev.mDamageSource = src;
             ev.call();
         }
     }
@@ -1063,14 +1065,14 @@ THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode *_this, I
 /////////////////// MobDie ///////////////////
 THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob *mob, ActorDamageSource *ads) {
     IF_LISTENED(MobDieEvent) {
-            if (mob) {
-                MobDieEvent ev;
-                ev.mMob = mob;
-                ev.mSource = Level::getDamageSourceEntity(ads);
-                if (!ev.call())
-                    return false;
-            }
+        if (mob) {
+            MobDieEvent ev;
+            ev.mMob = mob;
+            ev.mDamageSource = ads;
+            if (!ev.call())
+                return false;
         }
+    }
     IF_LISTENED_END(MobDieEvent);
     return original(mob, ads);
 }

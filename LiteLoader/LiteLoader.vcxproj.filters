@@ -231,6 +231,9 @@
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\ActorDamageSource.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -519,6 +522,9 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\MobEffectInstance.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\ActorDamageSource.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>

@@ -48,7 +48,7 @@ public:
 	LIAPI bool isPlayer() const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
-    LIAPI bool setOnFire(int num, bool iseffect);
+    LIAPI bool setOnFire(int time, bool isEffect);
     LIAPI bool stopFire();
     LIAPI bool hasTag(string tag);
 	LIAPI bool hurtEntity(int damage);
