@@ -583,12 +583,15 @@ THook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z
 {
     IF_LISTENED(PlayerInventoryChangeEvent)
     {
-        PlayerInventoryChangeEvent ev;
-        ev.mPlayer = _this;
-        ev.mSlot = slotNumber;
-        ev.mPreviousItemStack = oldItem;
-        ev.mNewItemStack = newItem;
-        ev.call();
+        if (_this)
+        {
+            PlayerInventoryChangeEvent ev;
+            ev.mPlayer = _this;
+            ev.mSlot = slotNumber;
+            ev.mPreviousItemStack = oldItem;
+            ev.mNewItemStack = newItem;
+            ev.call();
+        }
     }
     IF_LISTENED_END(PlayerCloseContainerEvent);
     return original(_this, container, slotNumber, oldItem, newItem, is);
@@ -637,11 +640,14 @@ THook(void, "?setArmor@Player@@UEAAXW4ArmorSlot@@AEBVItemStack@@@Z",
 {
     IF_LISTENED(PlayerSetArmorEvent)
     {
-        PlayerSetArmorEvent ev;
-        ev.mPlayer = _this;
-        ev.mSlot = slot;
-        ev.mArmorItem = it;
-        ev.call();
+        if (_this)
+        {
+            PlayerSetArmorEvent ev;
+            ev.mPlayer = _this;
+            ev.mSlot = slot;
+            ev.mArmorItem = it;
+            ev.call();
+        }
     }
     IF_LISTENED_END(PlayerSetArmorEvent);
     return original(_this, slot, it);
