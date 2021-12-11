@@ -13,6 +13,7 @@
 #include <Config.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
+#include "CrashLogger.h"
 #include <Header/EventAPI.h>
 
 using namespace std;
@@ -63,6 +64,10 @@ void LLMain() {
     //Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
+    //Create Plugin Directory
+    std::error_code ec;
+    std::filesystem::create_directories("plugins", ec);
+
     //Fix problems
     FixUpCWD();
     FixPluginsLibDir();
@@ -82,6 +87,9 @@ void LLMain() {
 
     //DebugMode
     CheckDevMode();
+
+    //Builtin CrashLogger
+    InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Load plugins
     LoadMain();

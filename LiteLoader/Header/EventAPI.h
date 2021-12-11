@@ -327,7 +327,8 @@ public:
 
 class FireSpreadEvent : public EventTemplate<FireSpreadEvent> {
 public:
-    BlockInstance mBlockInstance;
+    BlockPos mTarget;
+    int mDimensionId;
 };
 
 class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent> {
@@ -392,7 +393,9 @@ public:
 class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent> {
 public:
     string mCommand;
+    bool mIsMinecart;
     BlockInstance mBlockInstance;
+    Actor* mMinecart;
 };
 
 class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent> {
@@ -410,8 +413,8 @@ public:
     int mDimensionId;
     float mRadius;
     float mRange;
-    bool mIsDestroyed;
-    bool mIsOnFire;
+    bool mIsDestroy;
+    bool mIsFire;
 };
 
 class MobHurtEvent : public EventTemplate<MobHurtEvent> {

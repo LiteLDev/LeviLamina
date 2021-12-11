@@ -12,6 +12,7 @@
 #include <MC/GameMode.hpp>
 #include <MC/HitResult.hpp>
 #include <MC/ItemStack.hpp>
+#include <MC/ItemActor.hpp>
 #include <MC/Level.hpp>
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/Objective.hpp>
@@ -277,7 +278,9 @@ THook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",
 {
     IF_LISTENED(PlayerTakeItemEvent)
     {
-        ItemStack* it = (ItemStack*)((uintptr_t)actor + 1864); //IDA Player::take
+        ItemStack* it = nullptr;
+        if (actor->isItemActor())
+            it = ((ItemActor*)actor)->getItemStack();
 
         PlayerTakeItemEvent ev;
         ev.mPlayer = _this;
@@ -716,7 +719,17 @@ THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVComma
     {
         CmdBlockExecuteEvent ev;
         ev.mCommand = _this->getCommand();
-        ev.mBlockInstance = Level::getBlockInstance(a3->getBlockPosition(), a2);
+        if ((OriginType)a3->getOriginType() == OriginType::MinecartBlock)
+        {
+            ev.mIsMinecart = true;
+            ev.mMinecart = a3->getEntity();
+        }
+        else
+        {
+            ev.mIsMinecart = false;
+            ev.mBlockInstance = Level::getBlockInstance(a3->getBlockPosition(), a2);
+        }
+        
         if (!ev.call())
             return false;
     }
@@ -810,7 +823,8 @@ THook(bool, "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
     IF_LISTENED(FireSpreadEvent)
     {
         FireSpreadEvent ev;
-        ev.mBlockInstance = Level::getBlockInstance(bp, bs);
+        ev.mTarget = *bp;
+        ev.mDimensionId = bs->getDimensionId();
         if (!ev.call())
             return false;
     }
@@ -1075,9 +1089,12 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this,
 {
     IF_LISTENED(PlayerDeathEvent)
     {
-        PlayerDeathEvent ev;
-        ev.mPlayer = _this;
-        ev.call();
+        if (_this)
+        {
+            PlayerDeathEvent ev;
+            ev.mPlayer = _this;
+            ev.call();
+        }
     }
     IF_LISTENED_END(PlayerDeathEvent);
     return original(_this, src);
@@ -1126,12 +1143,15 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
 {
     IF_LISTENED(MobHurtEvent)
     {
-        MobHurtEvent ev;
-        ev.mMob = ac;
-        ev.mDamageSource = &src;
-        ev.mDamage = damage;
-        if (!ev.call())
-            return false;
+        if (ac)
+        {
+            MobHurtEvent ev;
+            ev.mMob = ac;
+            ev.mDamageSource = &src;
+            ev.mDamage = damage;
+            if (!ev.call())
+                return false;
+        }
     }
     IF_LISTENED_END(MobHurtEvent);
     return original(ac, src, damage, unk1_1, unk2_0);
@@ -1159,11 +1179,14 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSou
 {
     IF_LISTENED(MobDieEvent)
     {
-        MobDieEvent ev;
-        ev.mMob = mob;
-        ev.mSource = Level::getDamageSourceEntity(ads);
-        if (!ev.call())
-            return false;
+        if (mob)
+        {
+            MobDieEvent ev;
+            ev.mMob = mob;
+            ev.mSource = Level::getDamageSourceEntity(ads);
+            if (!ev.call())
+                return false;
+        }
     }
     IF_LISTENED_END(MobDieEvent);
     return original(mob, ads);
@@ -1183,8 +1206,8 @@ THook(void, "?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z
             ev.mDimensionId = bs->getDimensionId();
             ev.mRadius = power;
             ev.mRange = range;
-            ev.mIsDestroyed = isDestroy;
-            ev.mIsOnFire = isFire;
+            ev.mIsDestroy = isDestroy;
+            ev.mIsFire = isFire;
             if (!ev.call())
                 return;
         }
