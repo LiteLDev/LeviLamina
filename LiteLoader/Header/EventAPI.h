@@ -145,6 +145,7 @@ public:
 class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent> {
 public:
     Player* mPlayer;
+    int mDimensionId;
 };
 
 class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent> {
@@ -354,14 +355,11 @@ public:
     bool mIsActivated;
 };
 
-class HopperBlockSearchItemEvent : public EventTemplate<HopperBlockSearchItemEvent> {
+class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
-    BlockInstance mBlockInstance;
-};
-
-class MinecartHopperSearchItemEvent : public EventTemplate<MinecartHopperSearchItemEvent> {
-public:
-    Vec3 mPos;
+    bool isMinecart;
+    BlockInstance mHopperBlock;
+    Vec3 mMinecartPos;
     int mDimensionId;
 };
 

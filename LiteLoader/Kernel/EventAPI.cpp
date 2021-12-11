@@ -91,11 +91,10 @@ DeclareEventListeners(RedStoneUpdateEvent);
 DeclareEventListeners(BlockExplodedEvent);
 DeclareEventListeners(LiquidFlowEvent);
 DeclareEventListeners(ProjectileHitBlockEvent);
-DeclareEventListeners(MinecartHopperSearchItemEvent);
+DeclareEventListeners(HopperSearchItemEvent);
 DeclareEventListeners(RespawnAnchorExplodeEvent);
 DeclareEventListeners(HopperPushOutEvent);
 DeclareEventListeners(BlockChangedEvent);
-DeclareEventListeners(HopperBlockSearchItemEvent);
 DeclareEventListeners(FarmLandDecayEvent);
 DeclareEventListeners(FireSpreadEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
@@ -220,6 +219,7 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
     {
         PlayerChangeDimEvent ev;
         ev.mPlayer = sp;
+        ev.mDimensionId = sp->getDimensionId();
         ev.call();
     }
     IF_LISTENED_END(PlayerChangeDimEvent);
@@ -951,35 +951,30 @@ THook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockP
 }
 
 
-/////////////////// HopperBlockSearchItemEvent & MinecartHopperSearchItemEvent ///////////////////
+/////////////////// HopperSearchItemEvent ///////////////////
 THook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
       void* _this, BlockSource* bs, void* container, Vec3* pos)
 {
     bool isMinecart = dAccess<bool>(_this, 5); // IDA Hopper::Hopper
-    IF_LISTENED(HopperBlockSearchItemEvent)
-    {
-        if (!isMinecart)
-        {
-            HopperBlockSearchItemEvent ev;
-            ev.mBlockInstance = Level::getBlockInstance(pos->toBlockPos(), bs);
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(HopperBlockSearchItemEvent);
 
-    IF_LISTENED(MinecartHopperSearchItemEvent)
+    IF_LISTENED(HopperSearchItemEvent)
     {
+        HopperSearchItemEvent ev;
         if (isMinecart)
         {
-            MinecartHopperSearchItemEvent ev;
-            ev.mPos = *pos;
-            ev.mDimensionId = bs->getDimensionId();
-            if (!ev.call())
-                return false;
+            ev.isMinecart = true;
+            ev.mMinecartPos = *pos;
         }
+        else
+        {
+            ev.isMinecart = false;
+            ev.mHopperBlock = Level::getBlockInstance(pos->toBlockPos(), bs);
+        }
+        ev.mDimensionId = bs->getDimensionId();
+        if (!ev.call())
+            return false;
     }
-    IF_LISTENED_END(MinecartHopperSearchItemEvent);
+    IF_LISTENED_END(HopperSearchItemEvent);
     return original(_this, bs, container, pos);
 }
 

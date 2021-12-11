@@ -38,6 +38,19 @@ string Button::serialize() {
     return button.dump();
 }
 
+SimpleForm& SimpleForm::setTitle(const string& title)
+{
+    this->title = title;
+    return *this;
+}
+
+SimpleForm& SimpleForm::setContent(const string& content)
+{
+    this->content = content;
+    return *this;
+}
+
+
 SimpleForm& SimpleForm::append(const Button& element) {
     elements.emplace_back(make_shared<Button>(element));
     return *this;
@@ -142,6 +155,11 @@ string StepSlider::serialize() {
         itemAdd["default"] = def;
     }
     return itemAdd.dump();
+}
+
+CustomForm& CustomForm::setTitle(const string& title) {
+    this->title = title;
+    return *this;
 }
 
 CustomForm& CustomForm::append(const Label& element) {

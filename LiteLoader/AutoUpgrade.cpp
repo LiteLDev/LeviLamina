@@ -391,8 +391,13 @@ void InitAutoUpdateCheck()
 			}
 			catch (const seh_exception& e)
 			{
-				Debug("SEH Uncaught Exception Detected!\n{}", e.what());
-				Debug("In Auto Update system");
+				Logger::Debug("SEH Uncaught Exception Detected!\n{}", e.what());
+				Logger::Debug("In Auto Update system");
+			}
+			catch (...)
+			{
+				Logger::Debug("Uncaught Exception Detected!");
+				Logger::Debug("In Auto Update system");
 			}
 		}
 	}).detach();
