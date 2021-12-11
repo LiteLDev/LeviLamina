@@ -13,6 +13,25 @@ class EndTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    inline auto value() {
+        return nullptr;
+    }
+    inline auto& operator=(float val) {
+        return *this;
+    }
+    inline static EndTag* create(float val = 0.0f) {
+        EndTag* tag = (EndTag*)Tag::createTag(Tag::Type::End);
+        return tag;
+    }
+    inline bool set(nullptr_t) {
+        if (getTagType() != Tag::Type::End)
+            return false;
+        return true;
+    }
+    inline auto get() {
+        return value();
+    }
 
 #undef AFTER_EXTRA
 
