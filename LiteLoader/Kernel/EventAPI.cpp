@@ -28,7 +28,7 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
-
+#include <Config.h>
 using namespace Event;
 using std::vector;
 
@@ -59,7 +59,7 @@ DeclareEventListeners(PlayerChangeDimEvent);
 DeclareEventListeners(PlayerJumpEvent);
 DeclareEventListeners(PlayerSneakEvent);
 DeclareEventListeners(PlayerAttackEvent);
-DeclareEventListeners(PlayerDeathEvent);
+DeclareEventListeners(PlayerDieEvent);
 DeclareEventListeners(PlayerTakeItemEvent);
 DeclareEventListeners(PlayerDropItemEvent);
 DeclareEventListeners(PlayerEatEvent);
@@ -97,11 +97,10 @@ DeclareEventListeners(RedStoneUpdateEvent);
 DeclareEventListeners(BlockExplodedEvent);
 DeclareEventListeners(LiquidFlowEvent);
 DeclareEventListeners(ProjectileHitBlockEvent);
-DeclareEventListeners(MinecartHopperSearchItemEvent);
+DeclareEventListeners(HopperSearchItemEvent);
 DeclareEventListeners(RespawnAnchorExplodeEvent);
 DeclareEventListeners(HopperPushOutEvent);
 DeclareEventListeners(BlockChangedEvent);
-DeclareEventListeners(HopperBlockSearchItemEvent);
 DeclareEventListeners(FarmLandDecayEvent);
 DeclareEventListeners(FireSpreadEvent);
 DeclareEventListeners(CmdBlockExecuteEvent);
@@ -112,22 +111,24 @@ DeclareEventListeners(PostInitEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(RegCmdEvent);
 
+#ifdef ENABLE_SEH_PROTECTION
+    #define IF_LISTENED(EVENT)    \
+        if (EVENT::hasListener()) \
+        {                         \
+            try
 
-#define IF_LISTENED(EVENT)    \
-    if (EVENT::hasListener()) \
-    {                         \
-        try
-
-#define IF_LISTENED_END(EVENT)                         \
-    catch (...)                                        \
-    {                                                  \
-                                                       \
-        eventLogger.error("Event Callback Failed!");       \
-        eventLogger.error("Uncaught Exception Detected!"); \
-        eventLogger.error("In Event: " #EVENT "");         \
-    }                                                  \
-    }
-
+    #define IF_LISTENED_END(EVENT)                         \
+        catch (...)                                        \
+        {                                                  \
+            eventLogger.error("Event Callback Failed!");       \
+            eventLogger.error("Uncaught Exception Detected!"); \
+            eventLogger.error("In Event: " #EVENT "");         \
+        }                                                  \
+        }
+#else
+    #define IF_LISTENED(EVENT) if (EVENT::hasListener()) { 
+    #define IF_LISTENED_END(EVENT)  }
+#endif
 
 /////////////////// PreJoin ///////////////////
 THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
@@ -210,11 +211,13 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
       Level *_this, Player *sp, ChangeDimensionRequest *cdimreq) {
     bool ret = true;
     ret = original(_this, sp, cdimreq);
-    IF_LISTENED(PlayerChangeDimEvent) {
-            PlayerChangeDimEvent ev;
-            ev.mPlayer = sp;
-            ev.call();
-        }
+    IF_LISTENED(PlayerChangeDimEvent)
+    {
+        PlayerChangeDimEvent ev;
+        ev.mPlayer = sp;
+        ev.mDimensionId = sp->getDimensionId();
+        ev.call();
+    }
     IF_LISTENED_END(PlayerChangeDimEvent);
     return ret;
 }
@@ -856,30 +859,29 @@ THook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockP
 }
 
 
-/////////////////// HopperBlockSearchItemEvent & MinecartHopperSearchItemEvent ///////////////////
+/////////////////// HopperSearchItemEvent ///////////////////
 THook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
       void *_this, BlockSource *bs, void *container, Vec3 *pos) {
     bool isMinecart = dAccess<bool>(_this, 5); // IDA Hopper::Hopper
-    IF_LISTENED(HopperBlockSearchItemEvent) {
-            if (!isMinecart) {
-                HopperBlockSearchItemEvent ev;
-                ev.mBlockInstance = Level::getBlockInstance(pos->toBlockPos(), bs);
-                if (!ev.call())
-                    return false;
-            }
-        }
-    IF_LISTENED_END(HopperBlockSearchItemEvent);
 
-    IF_LISTENED(MinecartHopperSearchItemEvent) {
-            if (isMinecart) {
-                MinecartHopperSearchItemEvent ev;
-                ev.mPos = *pos;
-                ev.mDimensionId = bs->getDimensionId();
-                if (!ev.call())
-                    return false;
-            }
+    IF_LISTENED(HopperSearchItemEvent)
+    {
+        HopperSearchItemEvent ev;
+        if (isMinecart)
+        {
+            ev.isMinecart = true;
+            ev.mMinecartPos = *pos;
         }
-    IF_LISTENED_END(MinecartHopperSearchItemEvent);
+        else
+        {
+            ev.isMinecart = false;
+            ev.mHopperBlock = Level::getBlockInstance(pos->toBlockPos(), bs);
+        }
+        ev.mDimensionId = bs->getDimensionId();
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(HopperSearchItemEvent);
     return original(_this, bs, container, pos);
 }
 
@@ -978,15 +980,18 @@ THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockP
 
 
 /////////////////// PlayerDeath ///////////////////
-THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer *_this, void *src) {
-    IF_LISTENED(PlayerDeathEvent) {
-            if (_this) {
-                PlayerDeathEvent ev;
-                ev.mPlayer = _this;
-                ev.call();
-            }
+THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this, void* src)
+{
+    IF_LISTENED(PlayerDieEvent)
+    {
+        if (_this)
+        {
+            PlayerDieEvent ev;
+            ev.mPlayer = _this;
+            ev.call();
         }
-    IF_LISTENED_END(PlayerDeathEvent);
+    }
+    IF_LISTENED_END(PlayerDieEvent);
     return original(_this, src);
 }
 

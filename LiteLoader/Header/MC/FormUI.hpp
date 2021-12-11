@@ -192,6 +192,8 @@ namespace Form
 			SimpleForm(title, content, args...);
 		}
 
+		LIAPI SimpleForm& setTitle(const string& title);
+		LIAPI SimpleForm& setContent(const string& content);
 		LIAPI SimpleForm& append(const Button &element);
 		LIAPI bool sendTo(ServerPlayer* player, Callback callback = Callback());
 	};
@@ -219,6 +221,7 @@ namespace Form
 			CustomForm(title, args...);
 		}
 		
+		LIAPI CustomForm& setTitle(const string& title);
 		LIAPI CustomForm& append(const Label& element);
 		LIAPI CustomForm& append(const Input& element);
 		LIAPI CustomForm& append(const Toggle& element);

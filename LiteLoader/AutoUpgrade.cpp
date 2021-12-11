@@ -394,7 +394,14 @@ void InitAutoUpdateCheck()
 			{
 				autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
 				autoUpgradeLogger.debug("In Auto Update system");
-			}
+                autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
+                autoUpgradeLogger.debug("In Auto Update system");
+            }
+			catch (...)
+			{
+                autoUpgradeLogger.debug("Uncaught Exception Detected!");
+                autoUpgradeLogger.debug("In Auto Update system");
+            }
 		}
 	}).detach();
 	autoUpgradeLogger.debug("Auto-update system launched.");

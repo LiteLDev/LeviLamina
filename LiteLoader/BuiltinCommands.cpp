@@ -78,16 +78,35 @@ public:
         output.success(oss.str(), {});
     }
 
-    static void setup(CommandRegistry *registry) {
+    static void addPluginListValues(string name)
+    {
+        Global<CommandRegistry>->addSoftEnumValues("PluginName", {name});
+    }
+
+    static void setup(CommandRegistry *registry) 
+    {
         registry->registerCommand(
                 "plugins", "View plugin information", CommandPermissionLevel::GameMasters, {(CommandFlagValue) 0},
                 {(CommandFlagValue) 0x80});
         registry->registerOverload<PluginsCommand>("plugins");
+        vector<string> pluginList;
+        for (auto& [name, p] : LL::getAllPlugins()) {
+            string tmp = name;
+            //transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
+            pluginList.push_back(tmp);
+        }
+        registry->addSoftEnum("PluginName", pluginList);
         registry->registerOverload<PluginsCommand>(
-                "plugins",
-                makeOptional(&PluginsCommand::PluginName,
-                             "PluginName",
-                             &PluginsCommand::PluginName_isSet));
+            "plugins",
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(
+                &PluginsCommand::PluginName,
+                "name",
+                "PluginName",
+                &PluginsCommand::PluginName_isSet));
+        //Event::RegPluginEvent::subscribe([](Event::RegPluginEvent ev) {
+        //    updatePluginList(ev.mPluginName);
+        //    return true;
+        //});
     }
 };
 

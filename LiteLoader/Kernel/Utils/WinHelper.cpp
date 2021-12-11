@@ -1,5 +1,6 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
+#include <LoggerAPI.h>
 #include <Windows.h>
 #include <cstdio>
 #include <fstream>
@@ -61,6 +62,7 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 	std::thread([hRead{ std::move(hRead) }, hProcess{ std::move(pi.hProcess) },
 		callback{ std::move(callback) }, timeLimit{ std::move(timeLimit) }, wCmd{ std::move(wCmd) }]()
 	{
+		_set_se_translator(seh_exception::TranslateSEHtoCE);
 		if (timeLimit == -1)
 			WaitForSingleObject(hProcess, INFINITE);
 		else
@@ -84,7 +86,20 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 		CloseHandle(hRead);
 		CloseHandle(hProcess);
 
-		callback((int)exitCode, strOutput);
+		try
+		{
+			callback((int)exitCode, strOutput);
+		}
+		catch (const seh_exception& e)
+		{
+			Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
+			Logger::Error("In NewProcess callback");
+		}
+		catch (...)
+		{
+			Logger::Error("NewProcess Callback Failed!");
+			Logger::Error("Uncaught Exception Detected!");
+		}
 	}).detach();
 
 	return true;

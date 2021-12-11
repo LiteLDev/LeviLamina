@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "VehicleUtils.hpp"
+#include "BlockInstance.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -38,6 +39,7 @@ public:
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
     LIAPI BlockPos getBlockPos();
+    LIAPI BlockInstance getBlockStandingOn();
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
@@ -53,7 +55,6 @@ public:
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
-    
 
 	//For Compatibility
 	inline Vec3 getPos() { return getPosition(); }

@@ -66,7 +66,7 @@ LIAPI std::optional<int> Scoreboard::addScore(const std::string& objname, const 
 
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::ADD);
+    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Add);
     if (res)
         return a1;
     else
@@ -82,7 +82,7 @@ LIAPI std::optional<int> Scoreboard::setScore(const std::string& objname, const 
 
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::SET);
+    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Set);
     if (res)
         return a1;
     else
@@ -98,7 +98,7 @@ LIAPI std::optional<int> Scoreboard::reduceScore(const std::string& objname, con
 
     int a1 = 0;
     auto ref = Global<Scoreboard>->getScoreboardIdentityRef(identity);
-    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::REMOVE);
+    bool res = ref->modifyScoreInObjective(a1, *obj, score, PlayerScoreSetFunction::Remove);
     if (res)
         return a1;
     else

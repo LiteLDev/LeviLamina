@@ -83,6 +83,11 @@ BlockPos Actor::getBlockPos() {
     return Vec3{pos.x, pos.y + (float)0.5, pos.z}.toBlockPos();
 }
 
+BlockInstance Actor::getBlockStandingOn()
+{
+    return Level::getBlockInstance(getBlockPosCurrentlyStandingOn(nullptr), getDimensionId());
+}
+
 
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
@@ -197,3 +202,4 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     HitDetection::searchActors(viewVec, maxDistance, pos, aabb, this, (Player*)this, distance, result, resultPos, player);
     return result;
 }
+

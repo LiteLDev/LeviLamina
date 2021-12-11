@@ -19,6 +19,7 @@ class BlockSource;
 class BlockPalette;
 class Container;
 class Dimension;
+struct ActorUniqueID;
 
 #undef BEFORE_EXTRA
 
@@ -31,10 +32,11 @@ public:
     LIAPI static void forEachPlayer(class std::function<bool(class Player&)> callback);
     LIAPI static void forEachPlayer(class std::function<bool(class Player const&)> callback);
     LIAPI static std::vector<Player*> getAllPlayers();
-    LIAPI static Player* getPlayer(const string& info);     //name or xuid
+    LIAPI static Player* getPlayer(const string& info);     // name or xuid
+    LIAPI static Player* getPlayer(ActorUniqueID id);       // UniqueID
+    LIAPI static Actor* getEntity(ActorUniqueID id);
     LIAPI static std::vector<Actor*> getAllEntities(int dimId);
     LIAPI static std::vector<Actor*> getAllEntities();
-    LIAPI static Actor* getEntity(struct ActorUniqueID uniqueId);
     LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
     LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
@@ -129,12 +131,6 @@ public:
         class Spawner& (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getSpawner@Level@@UEBAAEAVSpawner@@XZ");
         return (this->*rv)();
-    }
-
-    inline class Player* getPlayer(struct ActorUniqueID a0) const {
-        class Player* (Level:: * rv)(struct ActorUniqueID) const;
-        *((void**)&rv) = dlsym("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z");
-        return (this->*rv)(std::forward<struct ActorUniqueID>(a0));
     }
 
     /*
