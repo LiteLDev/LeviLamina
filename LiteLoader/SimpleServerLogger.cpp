@@ -6,12 +6,12 @@
 using namespace Event;
 
 bool onPlayerChat(const PlayerChatEvent &e) {
-    Logger("Chat").info("<{}> {}", e.mPlayer->getRealName(), FixCurlyBracket(e.mMessage));
+    Logger("Chat").info("<{}> {}", e.mPlayer->getRealName(), e.mMessage);
     return true;
 }
 
 bool onPlayerCmd(PlayerCmdEvent e) {
-    Logger("Command").info("{} issued command: /{}", e.mPlayer->getRealName(),FixCurlyBracket(e.mCommand));
+    Logger("Command").info("{} issued command: /{}", e.mPlayer->getRealName(),e.mCommand);
     return true;
 }
 
