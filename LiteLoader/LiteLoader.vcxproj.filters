@@ -81,9 +81,6 @@
     <ClCompile Include="Kernel\Utils\FileHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LoggerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\TranslationAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -228,7 +225,7 @@
     <ClCompile Include="Kernel\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerDB.cpp">
+    <ClCompile Include="PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
@@ -240,7 +237,7 @@
     <ClCompile Include="Kernel\GuiAPI.cpp">
       <Filter>Kernel\GUI</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Logger.cpp">
+    <ClCompile Include="Kernel\LoggerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\TagMemoryChunk.cpp">
@@ -283,9 +280,6 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\FileHelper.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\LoggerAPI.h">
-      <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\TranslationAPI.h">
       <Filter>Header</Filter>
@@ -350,7 +344,7 @@
     <ClInclude Include="Header\SendPacketAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="Header\PlayerDB.h">
+    <ClInclude Include="Header\PlayerInfoAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\Command.hpp">
@@ -530,7 +524,7 @@
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Logger.h">
+    <ClInclude Include="Header\LoggerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\MobEffectInstance.hpp">

@@ -1,7 +1,7 @@
 ﻿#include <Config.h>
 #include <EventAPI.h>
 #include <Global.h>
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <MC/ActorDamageSource.hpp>
 #include <MC/BaseCommandBlock.hpp>
 #include <MC/Block.hpp>

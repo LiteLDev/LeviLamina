@@ -1,7 +1,7 @@
 #pragma once
 #include <Global.h>
 #include <string>
-namespace PlayerDB {
+namespace PlayerInfo {
 LIAPI bool insert(std::string name, std::string xuid, std::string uuid);
 LIAPI std::string getXuid(std::string name);
 LIAPI std::string getUUID(std::string name);

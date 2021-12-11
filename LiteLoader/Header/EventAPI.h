@@ -1,6 +1,6 @@
 #pragma once
 #include "Global.h"
-#include "Logger.h"
+#include "LoggerAPI.h"
 #include "MC/BlockInstance.hpp"
 #include "MC/MCRESULT.hpp"
 #include <functional>

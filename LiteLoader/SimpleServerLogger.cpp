@@ -1,4 +1,4 @@
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
 #include <Config.h>

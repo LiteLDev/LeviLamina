@@ -1,7 +1,7 @@
 #define LL_UPDATE_CHECK "https://lxl-upgrade.amd.rocks/LXL/LXL.json"
 
 #include "CheckNotice.h"
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <Utils/NetworkHelper.h>
 #include <Nlohmann/json.hpp>
 #include <string>

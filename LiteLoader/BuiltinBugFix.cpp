@@ -8,7 +8,7 @@
 #include <MC/ServerNetworkHandler.hpp>
 
 #include <Config.h>
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <MC/InventoryTransactionPacket.hpp>
 #include <unordered_map>
 using namespace LL;

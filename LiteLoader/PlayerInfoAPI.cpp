@@ -1,15 +1,16 @@
 #include <EventAPI.h>
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
-#include <PlayerDB.h>
+#include <PlayerInfoAPI.h>
 #include <exception>
 #include <third-party/SQLiteCpp/SQLiteCpp.h>
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;
 
-Logger playerDBLogger("PlayerDB");
+Logger playerInfoLogger("PlayerInfo");
 
-namespace PlayerDB {
+namespace PlayerInfo
+{
 std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUID
     if (name == "")
         return "";
@@ -35,7 +36,7 @@ std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUI
 
         return val;
     } catch (std::exception const& e) {
-        playerDBLogger.error("DB Error: {}", e.what());
+        playerInfoLogger.error("DB Error: {}", e.what());
         return "";
     }
 }
@@ -68,7 +69,7 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
             st.clearBindings();
             stUUID.clearBindings();
         } catch (std::exception const& e) {
-            playerDBLogger.error("DB Error: {}", e.what());
+            playerInfoLogger.error("DB Error: {}", e.what());
             return false;
         }
     }
@@ -107,7 +108,7 @@ std::string getName(unsigned short type, std::string val) {
         }
         return out;
     } catch (std::exception const& e) {
-        playerDBLogger.error("DB Error: {}", e.what());
+        playerInfoLogger.error("DB Error: {}", e.what());
         return "";
     }
 }
@@ -122,7 +123,7 @@ std::string fromUUID(std::string uuid) {
 } // namespace PlayerDB
 
 bool InitPlayerDatabase() {
-    using namespace PlayerDB;
+    using namespace PlayerInfo;
     try {
         db = std::make_unique<SQLite::Database>(PlayerDatabasePath, SQLite::OPEN_CREATE | SQLite::OPEN_READWRITE);
 
@@ -141,7 +142,7 @@ bool InitPlayerDatabase() {
             return true;
         });
     } catch (std::exception const& e) {
-        playerDBLogger.error("Read PlayerDB Error: {}", e.what());
+        playerInfoLogger.error("Read PlayerDB Error: {}", e.what());
         return false;
     }
     return true;

@@ -1,6 +1,6 @@
 #include "CrashLogger.h"
 #include "Config.h"
-#include <Logger.h>
+#include <LoggerAPI.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <filesystem>

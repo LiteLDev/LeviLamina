@@ -1,6 +1,6 @@
 ﻿#include <Global.h>
 #include <KVDBAPI.h>
-#include <Logger.h>
+#include <LoggerAPI.h>
 
 Logger levelDBLogger("LevelDB");
 
