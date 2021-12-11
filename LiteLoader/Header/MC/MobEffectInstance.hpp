@@ -12,6 +12,8 @@ class MobEffectInstance {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+char filler[48];
 
 #undef AFTER_EXTRA
 

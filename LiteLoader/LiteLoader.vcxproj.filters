@@ -515,6 +515,8 @@
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\MobEffectInstance.hpp">
+      <Filter>Header\MC</Filter>
     <ClInclude Include="Header\Logger.h">
       <Filter>Header</Filter>
     </ClInclude>
