@@ -242,6 +242,7 @@
     </ClCompile>
     <ClCompile Include="Kernel\Logger.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
     <ClCompile Include="Kernel\TagMemoryChunk.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
