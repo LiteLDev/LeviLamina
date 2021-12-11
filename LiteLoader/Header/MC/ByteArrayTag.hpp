@@ -37,7 +37,7 @@ public:
     }
 
     inline static ByteArrayTag* create(char *data, size_t size) {
-        return create(TagMemoryChunk(size, (uint8_t*)data));
+        return create(TagMemoryChunk((char*)data, size));
     }
 
     inline bool set(TagMemoryChunk const& val) {

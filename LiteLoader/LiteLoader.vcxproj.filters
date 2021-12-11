@@ -240,6 +240,9 @@
     <ClCompile Include="Kernel\GuiAPI.cpp">
       <Filter>Kernel\GUI</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\TagMemoryChunk.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
