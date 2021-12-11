@@ -76,8 +76,8 @@ void InitCrashLogger(bool enableCrashLogger)
         crashLogger.warn("There will be no crash log when unhandled exception occurs,");
         crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
         crashLogger.warn("");
-        crashLogger.warn("Since CrashLogger is an important component which ensures server stability,");
-        crashLogger.warn("we recommend you to think twice about the usage of plugin <{}>", noCrashLoggerReason);
+        crashLogger.warn("Since CrashLogger is an important component which ensures server stability");
+        crashLogger.warn("We recommend you to think twice about the usage of plugin <{}>", noCrashLoggerReason);
         return;
     }
 
