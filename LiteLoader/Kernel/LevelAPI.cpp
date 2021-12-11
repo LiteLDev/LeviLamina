@@ -115,6 +115,23 @@ BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSou
     return BlockInstance(pos, blockSource->getDimensionId());
 }
 
+BlockActor* Level::getBlockEntity(BlockPos* pos, int dimId) {
+    return getBlockEntity(pos, Level::getBlockSource(dimId));
+}
+
+BlockActor* Level::getBlockEntity(BlockPos* pos, BlockSource* blockSource) {
+    return blockSource->getBlockEntity(*pos);
+}
+
+BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
+    return getBlockEntity((BlockPos*) & pos, Level::getBlockSource(dimId));
+}
+
+BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource) {
+    return getBlockEntity((BlockPos*)&pos, blockSource);
+}
+
+
 bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
     return bs->setBlock(pos, *block, 3, nullptr); // updateFlag = 3 from IDA SetBlockCommand::execute()
@@ -140,6 +157,23 @@ bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos) {
 
 bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* item) {
     return getBlockInstance(pos, bs).breakNaturally(item);
+}
+
+bool Level::hasContainer(Vec3 pos, int dim)
+{
+    return getContainer(pos,dim) != nullptr;
+}
+
+class DropperBlockActor;
+Container* Level::getContainer(Vec3 pos, int dim)
+{
+    // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    
+    // This function didn't use 'this' pointer
+    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
+        Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &pos);
+
+    return container;
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {

@@ -29,7 +29,7 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
 
-    std::thread([cli, callback{std::move(callback)}, path{std::move(path)}]() {
+    std::thread([cli, callback, path{std::move(path)}]() {
         auto response = cli->Get(path.c_str());
         delete cli;
 
@@ -39,6 +39,31 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
             callback(response->status, response->body);
     }).detach();
 
+    return true;
+}
+
+bool HttpPost(const string& url, const string& data, const string& type, std::function<void(int, string)> callback, int timeout)
+{
+    string host, path;
+    SplitHttpUrl(url, host, path);
+    httplib::Client* cli = new httplib::Client(host.c_str());
+    if (!cli->is_valid())
+    {
+        delete cli;
+        return false;
+    }
+    if (timeout > 0)
+        cli->set_connection_timeout(timeout, 0);
+
+    std::thread([cli, data, type, callback, path{ std::move(path) }]()
+    {
+        auto response = cli->Post(path.c_str(), data, type.c_str());
+        delete cli;
+        if (!response)
+            callback(-1, "");
+        else
+            callback(response->status, response->body);
+    }).detach();
     return true;
 }
 

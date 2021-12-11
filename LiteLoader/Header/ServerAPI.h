@@ -1,7 +1,10 @@
 #pragma once
 #include <string>
+#include <Global.h>
 
-namespace LL {
-std::string getBdsVersion();
-int getServerProtocolVersion();
-} // namespace LL
+namespace LL
+{
+	LIAPI std::string getBdsVersion();
+	LIAPI int getServerProtocolVersion();
+	LIAPI bool setServerMotd(const std::string& motd);
+}

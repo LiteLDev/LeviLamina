@@ -18,3 +18,74 @@ string GetLastErrorMessage() {
     LocalFree(message_buffer);
     return res;
 }
+
+//Tool
+wchar_t* str2cwstr(string str)
+{
+	auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, NULL, 0);
+	wchar_t* buffer = new wchar_t[len + 1];
+	MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
+	buffer[len] = L'\0';
+	return buffer;
+}
+
+#define READ_BUFFER_SIZE 4096
+
+bool NewProcess(const std::string& process, std::function<void(int, std::string)> callback, int timeLimit)
+{
+	SECURITY_ATTRIBUTES sa;
+	HANDLE hRead, hWrite;
+	sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+	sa.lpSecurityDescriptor = NULL;
+	sa.bInheritHandle = TRUE;
+
+	if (!CreatePipe(&hRead, &hWrite, &sa, 0))
+		return false;
+	STARTUPINFOW si = { 0 };
+	PROCESS_INFORMATION pi;
+
+	si.cb = sizeof(STARTUPINFO);
+	GetStartupInfoW(&si);
+	si.hStdOutput = si.hStdError = hWrite;
+	si.dwFlags = STARTF_USESTDHANDLES;
+
+	auto wCmd = str2cwstr(process);
+	if (!CreateProcessW(NULL, wCmd, NULL, NULL, TRUE, NULL, NULL, NULL, &si, &pi))
+	{
+		delete[] wCmd;
+		return false;
+	}
+	CloseHandle(hWrite);
+	CloseHandle(pi.hThread);
+
+	std::thread([hRead{ std::move(hRead) }, hProcess{ std::move(pi.hProcess) },
+		callback{ std::move(callback) }, timeLimit{ std::move(timeLimit) }, wCmd{ std::move(wCmd) }]()
+	{
+		if (timeLimit == -1)
+			WaitForSingleObject(hProcess, INFINITE);
+		else
+		{
+			WaitForSingleObject(hProcess, timeLimit);
+			TerminateProcess(hProcess, -1);
+		}
+		char buffer[READ_BUFFER_SIZE];
+		string strOutput;
+		DWORD bytesRead, exitCode;
+
+		delete[] wCmd;
+		GetExitCodeProcess(hProcess, &exitCode);
+		while (true)
+		{
+			ZeroMemory(buffer, READ_BUFFER_SIZE);
+			if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, NULL))
+				break;
+			strOutput.append(buffer, bytesRead);
+		}
+		CloseHandle(hRead);
+		CloseHandle(hProcess);
+
+		callback((int)exitCode, strOutput);
+	}).detach();
+
+	return true;
+}

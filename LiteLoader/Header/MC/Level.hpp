@@ -17,6 +17,7 @@ class CompoundTag;
 class Player;
 class BlockSource;
 class BlockPalette;
+class Container;
 class Dimension;
 
 #undef BEFORE_EXTRA
@@ -49,6 +50,10 @@ public:
     LIAPI static BlockInstance getBlockInstance(BlockPos* pos, BlockSource* blockSource);
     LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, int dimId);
     LIAPI static BlockInstance getBlockInstance(const BlockPos& pos, BlockSource* blockSource);
+    LIAPI static BlockActor* getBlockEntity(BlockPos* pos, int dimId);
+    LIAPI static BlockActor* getBlockEntity(BlockPos* pos, BlockSource* blockSource);
+    LIAPI static BlockActor* getBlockEntity(const BlockPos& pos, int dimId);
+    LIAPI static BlockActor* getBlockEntity(const BlockPos& pos, BlockSource* blockSource);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, Block* block);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, const string& name, unsigned short tileData);
     LIAPI static bool setBlock(const BlockPos& pos, int dim, CompoundTag* nbt);
@@ -57,6 +62,8 @@ public:
     LIAPI static bool destroyBlock(class BlockSource& bs, class BlockPos const& pos, bool a2);
     LIAPI static void spawnParticleEffect(std::string const& type, class Vec3 const& pos, class Dimension* a2);
     LIAPI static void spawnParticleEffect(std::string const& type, class Actor const& a1, class Vec3 const& a2);
+    LIAPI static bool hasContainer(Vec3 pos, int dim);
+    LIAPI static Container* getContainer(Vec3 pos, int dim);
 
     //Item
     LIAPI static ItemStack* getItemStackFromId(short a2 = 0, int a3 = 0);
