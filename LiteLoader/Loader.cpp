@@ -8,7 +8,6 @@
 #include <vector>
 
 #include <Config.h>
-#include <CrashLogger.h>
 #include <HookAPI.h>
 #include <LLAPI.h>
 #include <LoggerAPI.h>
@@ -45,74 +44,41 @@ vector<std::wstring> GetPreloadList() {
 
 void LoadMain() {
     Logger::Info("Loading plugins...");
-    bool enableCrashLogger = LL::globalConfig.enableCrashLogger;
-    string noCrashLoggerReason = "";
-
-    // Get file list
-    filesystem::create_directory("plugins");
-    filesystem::directory_iterator ent("plugins");
-    vector<string> paths;
-
-    for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
-            auto path = i.path().u8string();
-
-            //Check crashlogger
-            if (enableCrashLogger)
-                for (auto name : NoCrashLogger) {
-                    if (path.find(name) != string::npos) {
-                        enableCrashLogger = false;
-                        noCrashLoggerReason = name;
-                        break;
-                    }
-                }
-            paths.emplace_back(path);
-        }
-    }
-
-    //Start CrashLogger
-    Logger::setTitle("CrashLogger");
-    if (enableCrashLogger) {
-        if (StartCrashLogger()) {
-            //Logger::Info("CrashLogger Deamon Process attached.");
-        } else {
-            Logger::Warn("Builtin CrashLogger failed to start!");
-            Logger::Warn("There will be no crash log when unhandled exception occurs.");
-        }
-    } else if (noCrashLoggerReason != "") {
-        Logger::Warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
-        Logger::Warn("There will be no crash log when unhandled exception occurs,");
-        Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
-        Logger::Warn("");
-        Logger::Warn("We strongly recommend you to uninstall plugin <{}> to ensure server stability", noCrashLoggerReason);
-    }
-    Logger::setTitle("LiteLoader");
 
     // Load plugins
     int pluginCount = 0;
     vector<std::wstring> preloadList = GetPreloadList();
-    for (auto& i : paths) {
+
+    filesystem::directory_iterator ent("plugins");
+    for (auto& file : ent)
+    {
+        if (!file.is_regular_file() || file.path().extension().u8string() != ".dll")
+            continue;
+
+        string path = file.path().u8string();
+
         bool loaded = false;
         for (auto& p : preloadList)
-            if (p.find(str2wstr(i)) != std::wstring::npos, true, 0) {
+            if (p.find(str2wstr(path)) != std::wstring::npos) {
                 loaded = true;
                 break;
             }
         if (loaded)
             continue;
 
-        auto lib = LoadLibrary(str2wstr(i).c_str());
+        auto lib = LoadLibrary(str2wstr(path).c_str());
         if (lib) {
             pluginCount++;
-            auto pluginFileName = filesystem::path(i).filename().u8string();
+            auto pluginFileName = filesystem::path(path).filename().u8string();
             Logger::Info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
             }
         } else {
-            Logger::Error("Error when loading plugin <{}>", i);
-            Logger::Error() << GetLastErrorMessage() << Logger::endl;
+            Logger::Error("Fail to load plugin <{}>", i);
+            Logger::Error("Error Code: {}", GetLastError());
+            Logger::Error("Error Msg: {}", GetLastErrorMessage());
         }
     }
 

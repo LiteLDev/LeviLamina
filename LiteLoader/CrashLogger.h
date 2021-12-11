@@ -1,3 +1,4 @@
 #pragma once
 
-bool StartCrashLogger();
+bool StartCrashLoggerProcess();
+void InitCrashLogger(bool enableCrashLogger);

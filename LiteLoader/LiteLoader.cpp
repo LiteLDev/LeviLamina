@@ -13,6 +13,7 @@
 #include <Config.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
+#include "CrashLogger.h"
 #include <Header/EventAPI.h>
 
 using namespace std;
@@ -63,9 +64,17 @@ void LLMain() {
     //Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
+    //Create Plugin Directory
+    std::error_code ec;
+    std::filesystem::create_directories("plugins", ec);
+
     //Fix problems
     FixUpCWD();
     FixPluginsLibDir();
+
+    //Init LL Logger
+    Logger::setTitle("LiteLoader");
+    Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //Load Config
     LoadLLConfig();
@@ -76,12 +85,11 @@ void LLMain() {
     std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
-    //Init LL Logger
-    Logger::setTitle("LiteLoader");
-    Logger::setFile("logs/LiteLoader-latest.log", false);
-
     //DebugMode
     CheckDevMode();
+
+    //Builtin CrashLogger
+    InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Load plugins
     LoadMain();
