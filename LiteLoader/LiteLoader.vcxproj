@@ -119,6 +119,7 @@
     <ClInclude Include="Header\MC\IntArrayTag.hpp" />
     <ClInclude Include="Header\MC\IntTag.hpp" />
     <ClInclude Include="Header\MC\ListTag.hpp" />
+    <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
@@ -173,6 +174,7 @@
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\MobEffectInstanceAPI.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />

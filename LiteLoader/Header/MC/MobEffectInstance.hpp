@@ -12,6 +12,8 @@ class MobEffectInstance {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    LIAPI static MobEffectInstance& create(int effect, int ticks, int level, bool unknown, bool show_particle, bool display_animation);
 
 #undef AFTER_EXTRA
 
