@@ -1,6 +1,5 @@
 #pragma once
 #include "Global.h"
-#include "LoggerAPI.h"
 #include "MC/Actor.hpp"
 #include "MC/Command.hpp"
 #include "MC/CommandMessage.hpp"

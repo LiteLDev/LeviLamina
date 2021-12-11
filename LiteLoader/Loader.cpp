@@ -1,22 +1,16 @@
 #include <Windows.h>
 #include <filesystem>
-#include <fstream>
-#include <iostream>
 #include <string>
-#include <thread>
-#include <unordered_map>
 #include <vector>
 
-#include <Config.h>
-#include <HookAPI.h>
 #include <LLAPI.h>
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <PluginManager.h>
-#include <ServerAPI.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 
 using namespace std;
+Logger pluginLoaderLogger("PluginLoader");
 
 vector<std::wstring> GetPreloadList() {
     //若在preload.conf中，则不加载
@@ -43,7 +37,7 @@ vector<std::wstring> GetPreloadList() {
 }
 
 void LoadMain() {
-    Logger::Info("Loading plugins...");
+    pluginLoaderLogger.info("Loading plugins...");
 
     // Load plugins
     int pluginCount = 0;
@@ -70,15 +64,15 @@ void LoadMain() {
         auto lib = LoadLibrary(str2wstr(path).c_str());
         if (lib) {
             pluginCount++;
-            
-            Logger::Info("Plugin <{}> loaded", pluginFileName);
+
+            pluginLoaderLogger.info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
             }
         } else {
-            Logger::Error("Fail to load plugin <{}>", pluginFileName);
-            Logger::Error("Error: {} {}", GetLastError(), GetLastErrorMessage());
+            pluginLoaderLogger.error("Fail to load plugin <{}>", pluginFileName);
+            pluginLoaderLogger.error("Error: {} {}", GetLastError(), GetLastErrorMessage());
         }
     }
 
@@ -90,10 +84,10 @@ void LoadMain() {
             try {
                 ((void (*)())fn)();
             } catch (...) {
-                Logger::Error("Plugin <{}> throws an exception in onPostInit", name);
-                Logger::Error("Fail to init this plugin!");
+                pluginLoaderLogger.error("Plugin <{}> throws an exception in onPostInit", name);
+                pluginLoaderLogger.error("Fail to init this plugin!");
             }
         }
     }
-    Logger::Info() << std::to_string(pluginCount) + " plugin(s) loaded" << Logger::endl;
+    pluginLoaderLogger.Info << pluginCount << " plugin(s) loaded" << Logger::endl;
 }

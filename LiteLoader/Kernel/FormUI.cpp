@@ -1,4 +1,4 @@
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <memory>
 #include <third-party/Nlohmann/fifo_json.hpp>
 
@@ -15,6 +15,8 @@ using namespace std;
 map<unsigned, bool> isSimpleForm;
 map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleForms;
 map<unsigned, std::shared_ptr<Form::CustomForm>> customForms;
+
+Logger formUILogger("FormUI");
 
 unsigned NewFormId() {
     unsigned formId;
@@ -253,14 +255,14 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
             CallFormCallback(p, formId, data);
         }
     } catch (const seh_exception& e) {
-        Logger::Error("Event Callback Failed!");
-        Logger::Error("SEH Uncaught Exception Detected!");
-        Logger::Error("{}", e.what());
-        Logger::Error("In Event: onFormSelected");
+        formUILogger.error("Event Callback Failed!");
+        formUILogger.error("SEH Uncaught Exception Detected!");
+        formUILogger.error("{}", e.what());
+        formUILogger.error("In Event: onFormSelected");
     } catch (...) {
-        Logger::Error("Event Callback Failed!");
-        Logger::Error("Uncaught Exception Detected!");
-        Logger::Error("In Event: onFormSelected");
+        formUILogger.error("Event Callback Failed!");
+        formUILogger.error("Uncaught Exception Detected!");
+        formUILogger.error("In Event: onFormSelected");
     }
 
     original(_this, id, handler, pPacket);

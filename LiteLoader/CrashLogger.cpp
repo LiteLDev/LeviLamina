@@ -1,17 +1,18 @@
 #include "CrashLogger.h"
 #include "Config.h"
-#include <LoggerAPI.h>
+#include <Logger.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
-#include <Windows.h>
 #include <filesystem>
 using namespace std;
 using namespace LL;
 
+Logger crashLogger("CrashLogger");
+
 bool StartCrashLoggerProcess()
 {
     if (IsDebuggerPresent()) {
-        Logger::Info("Existing debugger detected. Builtin CrashLogger will not work.");
+        crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
         return true;
     }
 
@@ -22,15 +23,15 @@ bool StartCrashLoggerProcess()
 
     SECURITY_ATTRIBUTES sa;
     sa.bInheritHandle = TRUE;
-    sa.lpSecurityDescriptor = NULL;
+    sa.lpSecurityDescriptor = nullptr;
     sa.nLength = sizeof(SECURITY_ATTRIBUTES);
 
     wchar_t daemonPath[MAX_PATH];
 
     wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
-    if (!CreateProcess(NULL, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi)) {
-        Logger::Error("Could not Create CrashLogger Daemon Process!");
-        Logger::Error() << GetLastErrorMessage() << Logger::endl;
+    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi)) {
+        crashLogger.error("Could not Create CrashLogger Daemon Process!");
+        crashLogger.Error << GetLastErrorMessage() << Logger::endl;
         return false;
     }
 
@@ -41,16 +42,14 @@ bool StartCrashLoggerProcess()
 
 void InitCrashLogger(bool enableCrashLogger)
 {
-    Logger::setTitle("CrashLogger");
 
     if (!enableCrashLogger)
     {
-        Logger::Warn("Builtin CrashLogger is not enabled because the configuration disabled it.");
-        Logger::Warn("There will be no crash log when unhandled exception occurs,");
-        Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
-        Logger::Warn("");
-        Logger::Warn("We strongly recommend you to enable it to ensure server stability");
-        Logger::setTitle("LiteLoader");
+        crashLogger.warn("Builtin CrashLogger is not enabled because the configuration disabled it.");
+        crashLogger.warn("There will be no crash log when unhandled exception occurs,");
+        crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
+        crashLogger.warn("");
+        crashLogger.warn("We strongly recommend you to enable it to ensure server stability");
         return;
     }
     string noCrashLoggerReason = "";
@@ -73,13 +72,12 @@ void InitCrashLogger(bool enableCrashLogger)
     }
 
     if (noCrashLoggerReason != "") {
-        Logger::Warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
-        Logger::Warn("There will be no crash log when unhandled exception occurs,");
-        Logger::Warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
-        Logger::Warn("");
-        Logger::Warn("Since CrashLogger is an important component which ensures server stability,");
-        Logger::Warn("we recommend you to think twice about the usage of plugin <{}>", noCrashLoggerReason);
-        Logger::setTitle("LiteLoader");
+        crashLogger.warn("Builtin CrashLogger is not enabled because plugin <{}> conflicts with it", noCrashLoggerReason);
+        crashLogger.warn("There will be no crash log when unhandled exception occurs,");
+        crashLogger.warn("which makes it almost impossible to find out the reason for crash and the source of crash.");
+        crashLogger.warn("");
+        crashLogger.warn("Since CrashLogger is an important component which ensures server stability,");
+        crashLogger.warn("we recommend you to think twice about the usage of plugin <{}>", noCrashLoggerReason);
         return;
     }
 
@@ -88,9 +86,8 @@ void InitCrashLogger(bool enableCrashLogger)
         //Logger::Info("CrashLogger Deamon Process attached.");
     }
     else {
-        Logger::Warn("Builtin CrashLogger failed to start!");
-        Logger::Warn("There will be no crash log when unhandled exception occurs.");
+        crashLogger.warn("Builtin CrashLogger failed to start!");
+        crashLogger.warn("There will be no crash log when unhandled exception occurs.");
     }
-    
-    Logger::setTitle("LiteLoader");
+
 }
