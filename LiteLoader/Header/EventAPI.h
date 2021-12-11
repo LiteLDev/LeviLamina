@@ -101,36 +101,36 @@ public:
 
 class PlayerPreJoinEvent : public EventTemplate<PlayerPreJoinEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     string mIP;
     string mXUID;
 };
 
 class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
 };
 
 class PlayerLeftEvent : public EventTemplate<PlayerLeftEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     string mXUID;
 };
 
 class PlayerRespawnEvent : public EventTemplate<PlayerRespawnEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
 };
 
 class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     ItemStack* mItemStack;
 };
 
 class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     ItemStack* mItemStack;
     BlockInstance mBlockInstance;
     unsigned char mFace;
@@ -165,9 +165,9 @@ public:
     int mAttackDamage;
 };
 
-class PlayerDeathEvent : public EventTemplate<PlayerDeathEvent> {
+class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
 };
 
 class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent> {

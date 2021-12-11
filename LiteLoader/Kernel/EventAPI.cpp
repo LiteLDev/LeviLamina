@@ -29,6 +29,7 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
+#include <Config.h>
 using namespace Event;
 using std::vector;
 
@@ -52,7 +53,7 @@ DeclareEventListeners(PlayerChangeDimEvent);
 DeclareEventListeners(PlayerJumpEvent);
 DeclareEventListeners(PlayerSneakEvent);
 DeclareEventListeners(PlayerAttackEvent);
-DeclareEventListeners(PlayerDeathEvent);
+DeclareEventListeners(PlayerDieEvent);
 DeclareEventListeners(PlayerTakeItemEvent);
 DeclareEventListeners(PlayerDropItemEvent);
 DeclareEventListeners(PlayerEatEvent);
@@ -105,21 +106,24 @@ DeclareEventListeners(PostInitEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(RegCmdEvent);
 
+#ifdef ENABLE_SEH_PROTECTION
+    #define IF_LISTENED(EVENT)    \
+        if (EVENT::hasListener()) \
+        {                         \
+            try
 
-#define IF_LISTENED(EVENT)    \
-    if (EVENT::hasListener()) \
-    {                         \
-        try
-
-#define IF_LISTENED_END(EVENT)                         \
-    catch (...)                                        \
-    {                                                  \
-        Logger::Error("Event Callback Failed!");       \
-        Logger::Error("Uncaught Exception Detected!"); \
-        Logger::Error("In Event: " #EVENT "");         \
-    }                                                  \
-    }
-
+    #define IF_LISTENED_END(EVENT)                         \
+        catch (...)                                        \
+        {                                                  \
+            Logger::Error("Event Callback Failed!");       \
+            Logger::Error("Uncaught Exception Detected!"); \
+            Logger::Error("In Event: " #EVENT "");         \
+        }                                                  \
+        }
+#else
+    #define IF_LISTENED(EVENT) if (EVENT::hasListener()) { 
+    #define IF_LISTENED_END(EVENT)  }
+#endif
 
 /////////////////// PreJoin ///////////////////
 THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
@@ -1087,16 +1091,16 @@ THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockP
 /////////////////// PlayerDeath ///////////////////
 THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this, void* src)
 {
-    IF_LISTENED(PlayerDeathEvent)
+    IF_LISTENED(PlayerDieEvent)
     {
         if (_this)
         {
-            PlayerDeathEvent ev;
+            PlayerDieEvent ev;
             ev.mPlayer = _this;
             ev.call();
         }
     }
-    IF_LISTENED_END(PlayerDeathEvent);
+    IF_LISTENED_END(PlayerDieEvent);
     return original(_this, src);
 }
 

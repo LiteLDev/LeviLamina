@@ -7,6 +7,11 @@
 constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 
 
+/////////////////////// SEH Protection ///////////////////////
+// Remove this to disable SEH all around LiteLoader
+#define ENABLE_SEH_PROTECTION
+
+
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
