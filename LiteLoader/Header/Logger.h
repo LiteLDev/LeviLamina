@@ -154,7 +154,7 @@ public:
 
     template<typename... Args>
     void debug(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
+        std::string str = fmt::format(std::string(formatStr), args...);
         Debug << str << endl;
     }
 
@@ -166,7 +166,7 @@ public:
 
     template<typename... Args>
     void info(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
+        std::string str = fmt::format(std::string(formatStr), args...);
         Info << str << endl;
     }
 
@@ -178,7 +178,7 @@ public:
 
     template<typename... Args>
     void warn(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
+        std::string str = fmt::format(std::string(formatStr), args...);
         Warn << str << endl;
     }
 
@@ -190,7 +190,7 @@ public:
 
     template<typename... Args>
     void error(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
+        std::string str = fmt::format(std::string(formatStr), args...);
         Error << str << endl;
     }
 
@@ -202,7 +202,7 @@ public:
 
     template<typename... Args>
     void fatal(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
+        std::string str = fmt::format(std::string(formatStr), args...);
         Fatal << str << endl;
     }
 

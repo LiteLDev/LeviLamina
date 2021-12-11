@@ -12,11 +12,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Header/TranslationAPI.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/TranslationAPI.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kernel/TranslationAPI.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Kernel/TranslationAPI.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +108,7 @@
       <workItem from="1639143932895" duration="1135000" />
       <workItem from="1639145694936" duration="1343000" />
       <workItem from="1639147604630" duration="10866000" />
-      <workItem from="1639193108486" duration="8543000" />
+      <workItem from="1639193108486" duration="8859000" />
     </task>
     <servers />
   </component>
