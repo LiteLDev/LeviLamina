@@ -237,7 +237,7 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
     return ret;
 }
 
-
+#include <GuiAPI.h>
 /////////////////// PlayerJump ///////////////////
 THook(void, "?jumpFromGround@Player@@UEAAXXZ",
       Player* pl)

@@ -94,6 +94,7 @@
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BuiltinBugFix.cpp" />
+    <ClInclude Include="Header\GuiAPI.h" />
     <ClInclude Include="Header\Logger.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
@@ -170,6 +171,7 @@
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
+    <ClCompile Include="Kernel\GuiAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />

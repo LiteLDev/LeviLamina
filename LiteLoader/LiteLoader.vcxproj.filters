@@ -55,6 +55,9 @@
     <Filter Include="Kernel\NBT\nbt-cpp">
       <UniqueIdentifier>{abcde5be-b05d-45ec-a4e4-96df63633116}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Kernel\GUI">
+      <UniqueIdentifier>{e369f9c2-6d7e-4295-beeb-53e83e8478fe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -233,6 +236,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\ActorDamageSource.cpp">
       <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\GuiAPI.cpp">
+      <Filter>Kernel\GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -526,6 +532,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\ActorDamageSource.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GuiAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
