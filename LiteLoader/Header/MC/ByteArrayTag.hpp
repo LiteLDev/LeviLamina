@@ -36,12 +36,17 @@ public:
         return tag;
     }
 
+    inline static ByteArrayTag* create(char *data, size_t size) {
+        return create(TagMemoryChunk(size, (uint8_t*)data));
+    }
+
     inline bool set(TagMemoryChunk const& val) {
         if (getTagType() != Tag::Type::ByteArray)
             return false;
         value() = val;
         return true;
     }
+
     inline TagMemoryChunk get() {
         return value();
     }
