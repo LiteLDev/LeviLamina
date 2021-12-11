@@ -94,6 +94,7 @@
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BuiltinBugFix.cpp" />
+    <ClInclude Include="Header\Logger.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
     <ClInclude Include="Header\MC\BinaryStream.hpp" />

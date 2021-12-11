@@ -4,6 +4,10 @@
 
 #pragma once
 
+#ifndef FMT_HEADER_ONLY
+#define FMT_HEADER_ONLY
+#endif
+
 #include <filesystem>
 #include "third-party/FMT/chrono.h"
 #include "third-party/FMT/color.h"
@@ -107,6 +111,7 @@ public:
                     << fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title,
                                    o.os.str()) << std::flush;
         o.locked = false;
+        o.os.str("");
         o.os.clear();
         unlock();
     }
@@ -114,19 +119,19 @@ public:
     output Debug = output{this,
                           "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
                           "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                          fmt::fg(fmt::color::gray) | fmt::emphasis::italic,
+                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
                           "Debug"
     };
     output Info = output{this,
                          "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                         fmt::fg(fmt::color::white),
+                         fmt::fg(fmt::terminal_color::white),
                          "Info"
     };
     output Warn = output{this,
                          "\b\b[{:%H:%M:%S} {}][{}] {}\n> ",
                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
-                         fmt::fg(fmt::color::yellow2) | fmt::emphasis::bold,
+                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
                          "Warn"
     };
     output Error = output{this,

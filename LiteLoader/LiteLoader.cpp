@@ -44,13 +44,15 @@ extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        llLogger.info(" ");
-        llLogger.info("================= LiteLoader ================");
-        llLogger.info(" ____             __  __           _      ");
-        llLogger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        llLogger.info("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
-        llLogger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        llLogger.info("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
+        Logger devLogo("Dev");
+        devLogo.info("");
+        devLogo.info("================= LiteLoader ================");
+        devLogo.info(" ____             __  __           _      ");
+        devLogo.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        devLogo.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        devLogo.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        devLogo.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        devLogo.info("");
         llLogger.warn("You Are In DevelopMode!");
     }
 }

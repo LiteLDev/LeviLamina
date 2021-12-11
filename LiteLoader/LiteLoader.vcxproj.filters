@@ -515,6 +515,9 @@
     <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClInclude>
+    <ClInclude Include="Header\Logger.h">
+      <Filter>Header</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

@@ -12,7 +12,13 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="" />
+    <list default="true" id="d7b2df26-cd3a-4b0d-9451-09a606e0be65" name="变更" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Header/Logger.h" beforeDir="false" afterPath="$PROJECT_DIR$/Header/Logger.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiteLoader.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiteLoader.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LiteLoader.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/LiteLoader.vcxproj.filters" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
