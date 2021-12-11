@@ -1,563 +1,561 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <ItemGroup>
-    <Filter Include="Header">
-      <UniqueIdentifier>{d410e212-6fb1-4b5e-ad71-ca8719382134}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel">
-      <UniqueIdentifier>{00986ecf-875a-4a73-8bf4-c0d13fa28a8c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Utils">
-      <UniqueIdentifier>{f859b142-7ffa-4640-9db5-9651be70e1f5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Resource">
-      <UniqueIdentifier>{a29273cf-1024-42da-bbca-c7b68d0bd7d9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\Utils">
-      <UniqueIdentifier>{db8c7097-58e9-4305-a23c-ca484d7f7849}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{d6bc6c3c-081e-4a49-b3a2-502827f757d3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\Command">
-      <UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Lib">
-      <UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\NBT">
-      <UniqueIdentifier>{4337a0ac-2dc4-4c54-8052-8a461c46788a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\NBT">
-      <UniqueIdentifier>{4fd86d70-9a2a-4ae7-9492-e9b6001e547d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\MC">
-      <UniqueIdentifier>{844b628b-f60c-4f0c-8292-6b0318207aa6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Command">
-      <UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Scoreboard">
-      <UniqueIdentifier>{11aba141-6e81-441c-8e76-a1635772030b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\MC">
-      <UniqueIdentifier>{4b84964d-df75-4565-a71c-59caceead767}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header\Network">
-      <UniqueIdentifier>{267c13cb-41b5-4811-a67e-36c7db62c3dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\Network">
-      <UniqueIdentifier>{0b9c3bec-df03-439f-ab69-45c3ff10bf78}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\Scoreboard">
-      <UniqueIdentifier>{d375fb36-d7c6-411f-8605-3cc7dff1f146}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\NBT\nbt-cpp">
-      <UniqueIdentifier>{abcde5be-b05d-45ec-a4e4-96df63633116}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Kernel\Utils\CsLock.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\LLAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\StringHelper.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\WinHelper.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ServerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\FileHelper.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\LoggerAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\TranslationAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\KVDBAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\NetworkHelper.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="BuiltinBugFix.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="CrashLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="LiteLoader.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Loader.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ModifyInfomation.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="PluginManager.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="AutoUpgrade.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="CheckNotice.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\GlobalService.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ScheduleAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\EventAPI.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Utils\PlayerMap.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="BuiltinCommands.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CommandOriginAPI.cpp">
-      <Filter>Kernel\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CommandOutputAPI.cpp">
-      <Filter>Kernel\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CommandRegistryAPI.cpp">
-      <Filter>Kernel\Command</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ListTagAPI.cpp">
-      <Filter>Kernel\NBT</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CompoundTagAPI.cpp">
-      <Filter>Kernel\NBT</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\TagAPI.cpp">
-      <Filter>Kernel\NBT</Filter>
-    </ClCompile>
-    <ClCompile Include="SimpleServerLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ActorAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockActorAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockInstanceAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockLegacyAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BlockSourceAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ContainerAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\FormUI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\GameModeAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\HitResultAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ItemActorAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ItemStackAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\LevelAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\MobAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\PlayerAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\SpawnerAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\Types.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
-      <Filter>Kernel\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\BinaryStream.cpp">
-      <Filter>Kernel\Network</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ScoreboardAPI.cpp">
-      <Filter>Kernel\Scoreboard</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerDB.cpp">
-      <Filter>Kernel</Filter>
-    </ClCompile>
-    <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
-      <Filter>Kernel\NBT\nbt-cpp</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Header\HookAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\CsLock.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Global.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\LLAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\PatchHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Resource\resource.h">
-      <Filter>Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\ServerAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\StringHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\WinHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\Hash.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\PluginOwnData.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\FileHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\LoggerAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\TranslationAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\KVDBAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\Json.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\NetworkHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\CryptHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Config.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CrashLogger.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Loader.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="PluginManager.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Version.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="AutoUpgrade.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CheckNotice.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\GlobalService.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\ScheduleAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\EventAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\ViewHelper.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\Optional.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\VarInt.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\Bstream.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\PlayerMap.h">
-      <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\SendPacketAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\PlayerDB.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Command.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandContext.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandMessage.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandOrigin.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandOutput.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandParameterData.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandPosition.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CommandRegistry.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\AABB.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Actor.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Automation.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Block.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BlockActor.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BlockLegacy.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BlockSource.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ConnectionRequest.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Container.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\GameMode.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\HashedString.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\HitResult.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ItemActor.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ItemStack.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Level.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Mob.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\NetworkIdentifier.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Player.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Scripting.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Spawner.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\StructureSettings.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\StructureTemplate.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\WebToken.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ByteArrayTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ByteTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CompoundTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\CompoundTagVariant.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\DoubleTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\EndTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\FloatTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Int64Tag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\IntArrayTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\IntTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ListTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Tag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\TagMemoryChunk.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\MinecraftCommands.hpp">
-      <Filter>Header\Command</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\NbtIo.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\StringTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ShortTag.hpp">
-      <Filter>Header\NBT</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\RegCommandAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BlockInstance.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Scoreboard.hpp">
-      <Filter>Header\Scoreboard</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ScoreboardId.hpp">
-      <Filter>Header\Scoreboard</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\RelativeFloat.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\FormUI.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\RakNet.hpp">
-      <Filter>Header\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\Packet.hpp">
-      <Filter>Header\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\BinaryStream.hpp">
-      <Filter>Header\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp">
-      <Filter>Header\Network</Filter>
-    </ClInclude>
-    <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp">
-      <Filter>Kernel\NBT\nbt-cpp</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\MC\MobEffectInstance.hpp">
-      <Filter>Header\MC</Filter>
-    <ClInclude Include="Header\Logger.h">
-      <Filter>Header</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="Lib\third-party\openssl\libcrypto.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\third-party\openssl\libssl.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\SymDBHelper.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\bedrock_server_api.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\bedrock_server_var.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
-      <Filter>Lib</Filter>
-    </Library>
-    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
-      <Filter>Lib</Filter>
-    </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint">
-      <Filter>Lib</Filter>
-    </None>
-    <None Include="Resource\LiteLoader.aps">
-      <Filter>Resource</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resource\LiteLoader.rc">
-      <Filter>Lib</Filter>
-    </ResourceCompile>
-  </ItemGroup>
+	<ItemGroup>
+		<Filter Include="Header">
+			<UniqueIdentifier>{d410e212-6fb1-4b5e-ad71-ca8719382134}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel">
+			<UniqueIdentifier>{00986ecf-875a-4a73-8bf4-c0d13fa28a8c}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\Utils">
+			<UniqueIdentifier>{f859b142-7ffa-4640-9db5-9651be70e1f5}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Resource">
+			<UniqueIdentifier>{a29273cf-1024-42da-bbca-c7b68d0bd7d9}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\Utils">
+			<UniqueIdentifier>{db8c7097-58e9-4305-a23c-ca484d7f7849}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Main">
+			<UniqueIdentifier>{d6bc6c3c-081e-4a49-b3a2-502827f757d3}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\Command">
+			<UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Lib">
+			<UniqueIdentifier>{d9e89437-c6ec-49f1-a3cd-c9a420629b3d}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\NBT">
+			<UniqueIdentifier>{4337a0ac-2dc4-4c54-8052-8a461c46788a}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\NBT">
+			<UniqueIdentifier>{4fd86d70-9a2a-4ae7-9492-e9b6001e547d}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\MC">
+			<UniqueIdentifier>{844b628b-f60c-4f0c-8292-6b0318207aa6}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\Command">
+			<UniqueIdentifier>{31d6a3e5-865d-4c63-ac9f-3a1ae20576fc}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\Scoreboard">
+			<UniqueIdentifier>{11aba141-6e81-441c-8e76-a1635772030b}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\MC">
+			<UniqueIdentifier>{4b84964d-df75-4565-a71c-59caceead767}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Header\Network">
+			<UniqueIdentifier>{267c13cb-41b5-4811-a67e-36c7db62c3dc}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\Network">
+			<UniqueIdentifier>{0b9c3bec-df03-439f-ab69-45c3ff10bf78}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\Scoreboard">
+			<UniqueIdentifier>{d375fb36-d7c6-411f-8605-3cc7dff1f146}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="Kernel\NBT\nbt-cpp">
+			<UniqueIdentifier>{abcde5be-b05d-45ec-a4e4-96df63633116}</UniqueIdentifier>
+		</Filter>
+	</ItemGroup>
+	<ItemGroup>
+		<ClCompile Include="Kernel\Utils\CsLock.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\LLAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\StringHelper.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\WinHelper.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ServerAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\PluginOwnData.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\FileHelper.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\LoggerAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\TranslationAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\KVDBAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\NetworkHelper.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\CryptHelper.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="BuiltinBugFix.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="Config.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="CrashLogger.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="dllmain.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="LiteLoader.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="Loader.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="ModifyInfomation.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="PluginManager.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="AutoUpgrade.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="CheckNotice.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\GlobalService.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ScheduleAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\EventAPI.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Utils\PlayerMap.cpp">
+			<Filter>Kernel\Utils</Filter>
+		</ClCompile>
+		<ClCompile Include="BuiltinCommands.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\CommandOriginAPI.cpp">
+			<Filter>Kernel\Command</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\CommandOutputAPI.cpp">
+			<Filter>Kernel\Command</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\CommandRegistryAPI.cpp">
+			<Filter>Kernel\Command</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ListTagAPI.cpp">
+			<Filter>Kernel\NBT</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\CompoundTagAPI.cpp">
+			<Filter>Kernel\NBT</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\TagAPI.cpp">
+			<Filter>Kernel\NBT</Filter>
+		</ClCompile>
+		<ClCompile Include="SimpleServerLogger.cpp">
+			<Filter>Main</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ActorAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BlockActorAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BlockAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BlockInstanceAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BlockLegacyAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BlockSourceAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ContainerAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\FormUI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\GameModeAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\HitResultAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ItemActorAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ItemStackAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\LevelAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\MobAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\PlayerAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\SpawnerAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\StructureTemplateAPI.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\Types.cpp">
+			<Filter>Kernel\MC</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
+			<Filter>Kernel\Network</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\BinaryStream.cpp">
+			<Filter>Kernel\Network</Filter>
+		</ClCompile>
+		<ClCompile Include="Kernel\ScoreboardAPI.cpp">
+			<Filter>Kernel\Scoreboard</Filter>
+		</ClCompile>
+		<ClCompile Include="PlayerDB.cpp">
+			<Filter>Kernel</Filter>
+		</ClCompile>
+		<ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
+			<Filter>Kernel\NBT\nbt-cpp</Filter>
+		</ClCompile>
+	</ItemGroup>
+	<ItemGroup>
+		<ClInclude Include="Header\HookAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\CsLock.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Global.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\LLAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\PatchHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Resource\resource.h">
+			<Filter>Resource</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\ServerAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\StringHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\WinHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\Hash.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\PluginOwnData.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\FileHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\LoggerAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\TranslationAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\KVDBAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\Json.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\NetworkHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\CryptHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Config.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="CrashLogger.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="Loader.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="PluginManager.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="Version.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="AutoUpgrade.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="CheckNotice.h">
+			<Filter>Main</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\GlobalService.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\ScheduleAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\EventAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\ViewHelper.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\Optional.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\VarInt.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\Bstream.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Utils\PlayerMap.h">
+			<Filter>Header\Utils</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\SendPacketAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\PlayerDB.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Command.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandContext.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandMessage.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandOrigin.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandOutput.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandParameterData.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandPosition.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CommandRegistry.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\AABB.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Actor.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Automation.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Block.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\BlockActor.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\BlockLegacy.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\BlockSource.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ConnectionRequest.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Container.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\GameMode.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\HashedString.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\HitResult.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ItemActor.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ItemStack.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Level.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Mob.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\NetworkIdentifier.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Player.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Scripting.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Spawner.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\StructureSettings.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\StructureTemplate.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\WebToken.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ByteArrayTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ByteTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CompoundTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\CompoundTagVariant.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\DoubleTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\EndTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\FloatTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Int64Tag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\IntArrayTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\IntTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ListTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Tag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\TagMemoryChunk.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\MinecraftCommands.hpp">
+			<Filter>Header\Command</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\NbtIo.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\StringTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ShortTag.hpp">
+			<Filter>Header\NBT</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\RegCommandAPI.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\BlockInstance.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Scoreboard.hpp">
+			<Filter>Header\Scoreboard</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ScoreboardId.hpp">
+			<Filter>Header\Scoreboard</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\RelativeFloat.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\FormUI.hpp">
+			<Filter>Header\MC</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\RakNet.hpp">
+			<Filter>Header\Network</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\Packet.hpp">
+			<Filter>Header\Network</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\BinaryStream.hpp">
+			<Filter>Header\Network</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp">
+			<Filter>Header\Network</Filter>
+		</ClInclude>
+		<ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp">
+			<Filter>Kernel\NBT\nbt-cpp</Filter>
+		</ClInclude>
+		<ClInclude Include="Header\Logger.h">
+			<Filter>Header</Filter>
+		</ClInclude>
+	</ItemGroup>
+	<ItemGroup>
+		<Library Include="Lib\third-party\openssl\libcrypto.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\third-party\openssl\libssl.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\SymDBHelper.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\bedrock_server_api.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\bedrock_server_var.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
+			<Filter>Lib</Filter>
+		</Library>
+		<Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
+			<Filter>Lib</Filter>
+		</Library>
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="cpp.hint">
+			<Filter>Lib</Filter>
+		</None>
+		<None Include="Resource\LiteLoader.aps">
+			<Filter>Resource</Filter>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<ResourceCompile Include="Resource\LiteLoader.rc">
+			<Filter>Lib</Filter>
+		</ResourceCompile>
+	</ItemGroup>
 </Project>
