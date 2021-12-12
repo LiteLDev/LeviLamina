@@ -23,7 +23,6 @@ public:
     LIAPI ItemStack* clone_s();
 
 	LIAPI std::string getName() const;
-	LIAPI std::string getCustomName() const;
 	LIAPI std::string getTypeName() const;
 	LIAPI int getAux() const;
 	LIAPI int getCount() const;
