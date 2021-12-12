@@ -1,7 +1,8 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Shlobj.h"
 #include <filesystem>
 #include <cstdlib>
+#include <conio.h>
 using namespace std;
 
 string wstr2str(wstring wstr) {
@@ -37,7 +38,8 @@ string ChooseFolder()
 
 void ErrorExit(int code)
 {
-    system("pause");
+    cout << "Press any key to exit . . .";
+    getch();
     exit(code);
 }
 
