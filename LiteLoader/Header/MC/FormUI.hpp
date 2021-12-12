@@ -263,7 +263,7 @@ namespace Form
 		template<typename T, typename DataType>
 		inline DataType getData(int index)
 		{
-			return std::dynamic_pointer_cast<T>(elements[dataInfo[i]])->getData();
+			return std::dynamic_pointer_cast<T>(elements[dataInfo[index]])->getData();
 		}
 
 		inline CustomFormElement::Type getType(int index)
