@@ -8,8 +8,6 @@
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
-
-#define LOGGER_DEFAULT_TITLE "ll_plugin_default_logger_title"
 #include "LoggerAPI.h"
 
 //helper

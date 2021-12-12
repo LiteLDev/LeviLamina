@@ -1,6 +1,7 @@
 #include <Global.h>
 #include <string>
 #include <vector>
+#include <cctype>
 #include <MC/Actor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Spawner.hpp>

@@ -9,7 +9,6 @@
 #endif
 
 #include <filesystem>
-#include "LLAPI.h"
 #include "third-party/FMT/chrono.h"
 #include "third-party/FMT/color.h"
 #include "third-party/FMT/core.h"
@@ -23,10 +22,12 @@
 #include <sstream>
 #include <iostream>
 #include <utility>
+using std::string;
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
+#define LOGGER_DEFAULT_TITLE "ll_plugin_default_logger_title"
 
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
