@@ -75,7 +75,6 @@ void LLMain() {
     FixPluginsLibDir();
 
     //Init LL Logger
-    PluginOwnData::set<string>(LOGGER_DEFAULT_TITLE, "LiteLoader");
     Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //Load Config

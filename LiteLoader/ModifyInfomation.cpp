@@ -67,7 +67,7 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
         while (getline(iss, line)) {
             str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
             size_t pos = 0;
-            while ((pos = str.find('§')) != string::npos) {
+            while ((pos = str.find("§")) != string::npos) {
                 str.erase(pos, 2);
             }
             serverLogger.info << line << Logger::endl;
