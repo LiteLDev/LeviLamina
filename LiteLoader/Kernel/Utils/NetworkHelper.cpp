@@ -3,7 +3,6 @@
 #include <httplib/httplib.h>
 #include <thread>
 using namespace std;
-
 extern Logger logger;
 
 void SplitHttpUrl(const std::string& url, string& host, string& path) {
