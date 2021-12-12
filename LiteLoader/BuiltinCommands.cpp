@@ -110,6 +110,7 @@ public:
     }
 };
 
+static_assert(sizeof(CommandSelector<Player>) == 200);
 class TeleportDimensionCommand : public Command {
     enum class DimensionType {
         OverWorld,

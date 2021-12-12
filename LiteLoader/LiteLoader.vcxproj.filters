@@ -530,6 +530,12 @@
     <ClInclude Include="Header\GuiAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\CommandSelector.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\CommandSelectorBase.hpp">
+      <Filter>Header\Command</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">
