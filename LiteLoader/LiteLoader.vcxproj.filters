@@ -120,9 +120,6 @@
     <ClCompile Include="AutoUpgrade.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="CheckNotice.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -312,9 +309,6 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="AutoUpgrade.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CheckNotice.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Header\Utils\GlobalService.h">
