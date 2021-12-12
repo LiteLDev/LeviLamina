@@ -333,7 +333,7 @@ Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
     return sp->spawnItem(pos, dimId, item);
 }
 
-bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire) {
+bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire) {
     Global<Level>->explode(*Level::getBlockSource(dimId), source, pos, power, isFire, isDestroy, range, true);
     return true;
 }

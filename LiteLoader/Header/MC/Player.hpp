@@ -74,7 +74,7 @@ public:
     LIAPI bool sendCommandRequestPacket(const string& cmd);
     LIAPI bool sendTextTalkPacket(const string& msg);
 
-    static bool isValid(Player* player);
+    LIAPI static bool isValid(Player* player);
 
     //For compatibility
     inline string getDeviceName() { return getDeviceTypeName(); }

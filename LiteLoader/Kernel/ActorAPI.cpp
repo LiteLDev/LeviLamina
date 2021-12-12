@@ -14,6 +14,9 @@
 #include <MC/Material.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/ListTag.hpp>
+#include <MC/StringTag.hpp>
 #include <MC/SimpleContainer.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
@@ -209,3 +212,29 @@ bool Actor::addEffect(MobEffect::EffectType type, int tick, int level, bool ambi
     ins.applyEffects(this);
     return true;
 };
+
+std::vector<std::string> Actor::getAllTags()
+{
+    try
+    {
+        auto nbt = getNbt();
+        auto& list = ((ListTag*)nbt->getListTag("Tags"))->value();
+
+        vector<string> res;
+        for (auto& tag : list)
+        {
+            res.emplace_back(tag->asStringTag()->get());
+        }
+        return res;
+    }
+    catch (...)
+    {
+        return {};
+    }
+}
+
+bool Actor::hasTag(string tag)
+{
+    auto tags = getAllTags();
+    return std::find(tags.begin(), tags.end(), tag) != tags.end();
+}

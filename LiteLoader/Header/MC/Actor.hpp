@@ -36,7 +36,7 @@ public:
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
     LIAPI Tick* getLastTick() const;
-    LIAPI vector<string> getAllTags() const;
+    LIAPI std::vector<std::string> getAllTags();
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;

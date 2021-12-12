@@ -41,7 +41,6 @@ public:
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
     LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
-    LIAPI static class LevelStorage& getLevelStorage();
 
     //Block
     LIAPI static Block* getBlock(BlockPos* pos, int dimId);
@@ -139,6 +138,18 @@ public:
         class Dimension* (Level::*rv)(class AutomaticID<class Dimension, int>);
         *((void**)&rv) = dlsym("?createDimension@Level@@UEAAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
         return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
+    }
+
+    inline class LevelStorage const& getLevelStorage() const {
+        class LevelStorage const& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEBAAEBVLevelStorage@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class LevelStorage& getLevelStorage() {
+        class LevelStorage& (Level:: * rv)();
+        *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
+        return (this->*rv)();
     }
     /*
 * Wrappers for Muti-Vftable Class
