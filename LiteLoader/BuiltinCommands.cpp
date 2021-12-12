@@ -46,21 +46,18 @@ public:
                 std::ostringstream oss;
                 auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
 
-                oss << "Plugin [" << PluginName << ']' << std::endl;
+                oss << "Plugin <" << PluginName << '>' << std::endl;
                 oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
-                oss << "- Version: " << plugin->version << std::endl;
+                oss << "- Version: " << plugin->version.toString() << std::endl;
                 oss << "- Introduction: " << plugin->introduction << std::endl;
-                if (!plugin->git.empty())
-                    oss << "Git: " << plugin->git << std::endl;
-                if (!plugin->license.empty())
-                    oss << "License: " << plugin->license << std::endl;
-                if (!plugin->website.empty())
-                    oss << "Website: " << plugin->website << std::endl;
+                for (auto& [k, v] : plugin->others) {
+                    oss << "- " << k << ':' << v << std::endl;
+                }
                 auto text = oss.str();
                 text.pop_back();
                 output.success(text, {});
             } else {
-                output.error("Plugin [" + PluginName + "] is not found!", {});
+                output.error("Plugin <" + PluginName + "> is not found!", {});
             }
             return;
         }
@@ -71,7 +68,7 @@ public:
             // Plugin List
             // - LiteLoader(LiteLoader.dll)[v1.0.0-Beta]: plugin introduction
             auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
-            oss << "- " << name << "(" << fn << ")[" << plugin.version << "]: "
+            oss << "- " << name << "(" << fn << ")[" << plugin.version.toString() << "]: "
                 << plugin.introduction << std::endl;
         }
         oss << "\n* Send command \"plugins <Plugin Name>\" for more information";

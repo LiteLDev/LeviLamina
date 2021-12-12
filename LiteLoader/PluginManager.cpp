@@ -15,8 +15,8 @@ string GetModulePath(HMODULE handler) {
     return wstr2str(wstring(buf));
 }
 
-bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, std::string version,
-                    std::string git, std::string license, std::string website) {
+bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
+                    std::map<std::string, std::string> others) {
     if (GetPlugin(name) != nullptr) {
         return false;
     }
@@ -28,7 +28,7 @@ bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction,
             }
         }
     }
-    LL::Plugin plugin{name, introduction, version, git, license, website};
+    LL::Plugin plugin{name, introduction, version, others};
     plugin.handler = handler;
     plugin.filePath = GetModulePath(handler);
 

@@ -67,11 +67,11 @@ void LoadMain() {
             logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
-                RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
+                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(), {});
             }
         } else {
             logger.error("Fail to load plugin <{}>", pluginFileName);
-            logger.error("Error: {} {}", GetLastError(), GetLastErrorMessage());
+            logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
     }
 
@@ -82,6 +82,10 @@ void LoadMain() {
         if (fn) {
             try {
                 ((void (*)())fn)();
+            } catch (std::exception e) {
+                logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
+                logger.error("Exception: ", e.what());
+                logger.error("Fail to init this plugin!");
             } catch (...) {
                 logger.error("Plugin <{}> throws an exception in onPostInit", name);
                 logger.error("Fail to init this plugin!");
