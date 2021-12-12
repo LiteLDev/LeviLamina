@@ -11,7 +11,7 @@ bool onPlayerChat(const PlayerChatEvent &e) {
 }
 
 bool onPlayerCmd(PlayerCmdEvent e) {
-    Logger("Command").info("{} issued command: /{}", e.mPlayer->getRealName(),e.mCommand);
+    Logger("Command").info("<{}> /{}", e.mPlayer->getRealName(),e.mCommand);
     return true;
 }
 
