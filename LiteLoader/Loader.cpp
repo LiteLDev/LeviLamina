@@ -34,7 +34,7 @@ vector<std::wstring> GetPreloadList() {
     }
     return preload_list;
 }
-
+#include <KVDBAPI.h>
 void LoadMain() {
     pluginLoaderLogger.info("Loading plugins...");
 
