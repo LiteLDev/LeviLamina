@@ -62,8 +62,8 @@ std::string Actor::getTypeName() const {
     if (isPlayer())
         return "minecraft:player";
     else {
-        HashedString* hash = dAccess<HashedString*>(this, 880); //IDA Actor::Actor
-        return hash->getString();
+        HashedString hash = dAccess<HashedString>(this, 880); //IDA Actor::Actor
+        return hash.getString();
     }
 }
 
