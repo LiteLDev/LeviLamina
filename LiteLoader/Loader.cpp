@@ -7,6 +7,7 @@
 #include <PluginManager.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
+#include <LLAPI.h>
 
 using namespace std;
 

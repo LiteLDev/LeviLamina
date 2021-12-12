@@ -40,3 +40,7 @@
 using std::map;
 using std::string;
 using std::vector;
+
+class Logger;
+
+extern Logger logger;
