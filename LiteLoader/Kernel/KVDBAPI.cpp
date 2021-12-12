@@ -45,7 +45,7 @@ bool KVDB::get(std::string_view key, std::string& val)
     return s.ok();
 }
 
-bool KVDB::put(std::string_view key, std::string_view val)
+bool KVDB::set(std::string_view key, std::string_view val)
 {
     // WATCH_ME("put kvdb " + dpath);
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
@@ -100,7 +100,7 @@ bool KVDB::isValid()
     return status.ok();
 }
 
-bool KVDB::operator bool()
+KVDB::operator bool()
 {
     return isValid();
 }

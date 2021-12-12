@@ -34,4 +34,9 @@ public:
     LIAPI bool isValid();
     LIAPI operator bool();
     LIAPI std::string error();
+
+
+    //For compatibility
+    inline bool del(std::string_view key){ return remove(key);}
+    inline bool put(std::string_view key, std::string_view val) { return set(key,val); }
 };
