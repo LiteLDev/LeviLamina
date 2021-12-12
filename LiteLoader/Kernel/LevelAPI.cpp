@@ -319,7 +319,7 @@ Player* Level::getPlayer(const string& info) {
 
 Player* Level::getPlayer(ActorUniqueID id)
 {
-    return SymCall("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z", Player*, ActorUniqueID)(id);
+    return SymCall("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z", Player*, ActorUniqueID*)(&id);
 }
 
 Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
