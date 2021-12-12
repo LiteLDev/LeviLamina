@@ -89,7 +89,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
-    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
@@ -220,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoUpgrade.h" />
-    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\EventAPI.h" />
