@@ -31,11 +31,6 @@ using std::string;
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
 
-namespace PluginOwnData {
-    template<typename T>
-    inline T &get(const std::string_view &key);
-} // namespace PluginOwnData
-
 class Logger {
 public:
     std::string title;
