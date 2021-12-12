@@ -11,11 +11,11 @@ bool loadImpl(HMODULE hPlugin, const std::string& filePath) {
         PluginOwnData::setImpl<nlohmann::json>(hPlugin, TRANSLATION_DATA_NAME, nlohmann::json::parse(*content));
         PluginOwnData::setImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE, filePath);
     } catch (const nlohmann::json::exception& e) {
-        translationLogger.error("Fail to load translation file <{}> !", filePath);
-        translationLogger.error("{}", e.what());
+        logger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("{}", e.what());
         return false;
     } catch (...) {
-        translationLogger.error("Fail to load translation file <{}> !", filePath);
+        logger.error("Fail to load translation file <{}> !", filePath);
         return false;
     }
     return true;

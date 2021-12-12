@@ -45,13 +45,13 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
         }
         catch (const seh_exception& e)
         {
-            networkHelperLogger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-            networkHelperLogger.error("In HttpGet callback");
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpGet callback");
         }
         catch (...)
         {
-            networkHelperLogger.error("HttpGet Callback Failed!");
-            networkHelperLogger.error("Uncaught Exception Detected!");
+            logger.error("HttpGet Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
         }
     }).detach();
 
@@ -85,13 +85,13 @@ bool HttpPost(const string& url, const string& data, const string& type, std::fu
         }
         catch (const seh_exception& e)
         {
-            networkHelperLogger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-            networkHelperLogger.error("In HttpPost callback");
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpPost callback");
         }
         catch (...)
         {
-            networkHelperLogger.error("HttpPost Callback Failed!");
-            networkHelperLogger.error("Uncaught Exception Detected!");
+            logger.error("HttpPost Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
         }
     }).detach();
     return true;
