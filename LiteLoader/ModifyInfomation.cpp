@@ -32,9 +32,9 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
     output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
     output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
     if (input.find("INFO") != std::string::npos) {
-        serverLogger.Info << output << Logger::endl;
+        serverLogger.info << output << Logger::endl;
     } else {
-        serverLogger.Warn << output << Logger::endl;
+        serverLogger.warn << output << Logger::endl;
     }
 }
 
@@ -66,7 +66,7 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
         string line;
         while (getline(iss, line)) {
             str.erase(str.find_last_of('\n'), str.find_last_not_of('\n'));
-            serverLogger.Info << line << Logger::endl;
+            serverLogger.info << line << Logger::endl;
         }
         return rv;
     }

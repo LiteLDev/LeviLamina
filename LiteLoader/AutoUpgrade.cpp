@@ -143,7 +143,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
         if (data.find("notice") != data.end() && data["notice"].is_array())
         {
             for (auto& element : data["notice"])
-                autoUpgradeLogger.Info << element.get<string>() << Logger::endl;
+                autoUpgradeLogger.info << element.get<string>() << Logger::endl;
         }
 
         //Check Other Files config
@@ -243,7 +243,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
             if (current.find("notice") != current.end() && current["notice"].is_array())
             {
                 for (auto& element : current["notice"])
-                    autoUpgradeLogger.Info << element.get<string>() << Logger::endl;
+                    autoUpgradeLogger.info << element.get<string>() << Logger::endl;
             }
 
             //Get Version

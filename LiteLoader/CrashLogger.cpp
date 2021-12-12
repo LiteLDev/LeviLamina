@@ -31,7 +31,7 @@ bool StartCrashLoggerProcess()
     wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
     if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi)) {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
-        crashLogger.Error << GetLastErrorMessage() << Logger::endl;
+        crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
     }
 

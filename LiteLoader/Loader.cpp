@@ -88,5 +88,5 @@ void LoadMain() {
             }
         }
     }
-    pluginLoaderLogger.Info << pluginCount << " plugin(s) loaded" << Logger::endl;
+    pluginLoaderLogger.info << pluginCount << " plugin(s) loaded" << Logger::endl;
 }

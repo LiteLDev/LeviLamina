@@ -78,15 +78,27 @@ public:
             t(*this);
             return *this;
         }
+
+        template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        void operator()(const S &formatStr, const Args &... args) {
+            std::string str = fmt::format(formatStr, args...);
+            *this << str << endl;
+        }
+
+        template<typename... Args>
+        void operator()(const char *formatStr, const Args &... args) {
+            std::string str = fmt::format(std::string(formatStr), args...);
+            *this << str << endl;
+        }
     };
 
     LIAPI static void endl(OutputStream &o);
 
-    OutputStream Debug;
-    OutputStream Info;
-    OutputStream Warn;
-    OutputStream Error;
-    OutputStream Fatal;
+    OutputStream debug;
+    OutputStream info;
+    OutputStream warn;
+    OutputStream error;
+    OutputStream fatal;
 
     inline Logger()
         :Logger(PluginOwnData::get<string>(LOGGER_DEFAULT_TITLE))
@@ -94,63 +106,4 @@ public:
 
     LIAPI explicit Logger(const std::string &title);
 
-    template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-    void debug(const S &formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
-        Debug << str << endl;
-    }
-
-    template<typename... Args>
-    void debug(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(std::string(formatStr), args...);
-        Debug << str << endl;
-    }
-
-    template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-    void info(const S &formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
-        Info << str << endl;
-    }
-
-    template<typename... Args>
-    void info(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(std::string(formatStr), args...);
-        Info << str << endl;
-    }
-
-    template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-    void warn(const S &formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
-        Warn << str << endl;
-    }
-
-    template<typename... Args>
-    void warn(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(std::string(formatStr), args...);
-        Warn << str << endl;
-    }
-
-    template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-    void error(const S &formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
-        Error << str << endl;
-    }
-
-    template<typename... Args>
-    void error(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(std::string(formatStr), args...);
-        Error << str << endl;
-    }
-
-    template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
-    void fatal(const S &formatStr, const Args &... args) {
-        std::string str = fmt::format(formatStr, args...);
-        Fatal << str << endl;
-    }
-
-    template<typename... Args>
-    void fatal(const char *formatStr, const Args &... args) {
-        std::string str = fmt::format(std::string(formatStr), args...);
-        Fatal << str << endl;
-    }
 };

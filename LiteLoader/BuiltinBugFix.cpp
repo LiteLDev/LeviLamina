@@ -55,7 +55,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
         }
     if (abnormal) {
         Player* sp = (Player*)snh.getServerPlayer(netid);
-        builtinBugFixLogger.Warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+        builtinBugFixLogger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
         return nullptr;
     }
     return original(snh, netid, pk);

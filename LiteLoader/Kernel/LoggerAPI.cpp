@@ -72,35 +72,35 @@ void Logger::endl(OutputStream &o) {
 
 Logger::Logger(const std::string &title) {
     this->title = title;
-    Debug = OutputStream{this,
+    debug = OutputStream{this,
                          5,
                          "[{:%H:%M:%S} {}][{}] {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
                          "Debug"
     };
-    Info = OutputStream{this,
+    info = OutputStream{this,
                         4,
                         "[{:%H:%M:%S} {}][{}] {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
                         fmt::fg(fmt::terminal_color::white),
                         "Info"
     };
-    Warn = OutputStream{this,
+    warn = OutputStream{this,
                         3,
                         "[{:%H:%M:%S} {}][{}] {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
                         "Warn"
     };
-    Error = OutputStream{this,
+    error = OutputStream{this,
                          2,
                          "[{:%H:%M:%S} {}][{}] {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
                          "Error"
     };
-    Fatal = OutputStream{this,
+    fatal = OutputStream{this,
                          1,
                          "[{:%H:%M:%S} {}][{}] {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
