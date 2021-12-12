@@ -33,9 +33,6 @@
 #define TRANSLATION_DATA_NAME "_ll_plugin_translation_content"
 #define TRANSLATION_DATA_FILE "_ll_plugin_translation_file"
 
-
-Logger translationLogger("TranslationAPI");
-
 namespace Translation {
 LIAPI bool loadImpl(HMODULE hPlugin, const std::string& filePath);
 

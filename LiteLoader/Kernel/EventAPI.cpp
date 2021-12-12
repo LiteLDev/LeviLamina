@@ -48,8 +48,6 @@ class BlockSource;
 #define DeclareEventListeners(EVENT) template <> \
 EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners
 
-Logger eventLogger("Event");
-
 DeclareEventListeners(PlayerPreJoinEvent);
 DeclareEventListeners(PlayerJoinEvent);
 DeclareEventListeners(PlayerLeftEvent);
@@ -123,9 +121,9 @@ DeclareEventListeners(RegCmdEvent);
 #define IF_LISTENED_END(EVENT)                             \
     catch (...)                                            \
     {                                                      \
-        eventLogger.error("Event Callback Failed!");       \
-        eventLogger.error("Uncaught Exception Detected!"); \
-        eventLogger.error("In Event: " #EVENT "");         \
+        logger.error("Event Callback Failed!");       \
+        logger.error("Uncaught Exception Detected!"); \
+        logger.error("In Event: " #EVENT "");         \
     }                                                      \
     }
 #else

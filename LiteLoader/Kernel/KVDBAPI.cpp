@@ -4,8 +4,6 @@
 #include <thread>
 using namespace std;
 
-Logger levelDBLogger("LevelDB");
-
 KVDB::KVDB(const string& path, bool read_cache, int cache_sz, int Bfilter_bit)
 {
     rdopt = leveldb::ReadOptions();
@@ -27,8 +25,8 @@ KVDB::KVDB(const string& path, bool read_cache, int cache_sz, int Bfilter_bit)
     status = leveldb::DB::Open(options, path, &db);
     if (!status.ok())
     {
-        levelDBLogger.error("Fail to load KVDB <{}>", path);
-        levelDBLogger.error("{}", error());
+        logger.error("Fail to load KVDB <{}>", path);
+        logger.error("{}", error());
     }
 }
 

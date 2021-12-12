@@ -6,7 +6,6 @@
 #include <fstream>
 #include <string>
 using namespace std;
-Logger winHelperLogger("WinHelper");
 
 string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
@@ -93,13 +92,13 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 		}
 		catch (const seh_exception& e)
 		{
-			winHelperLogger.error("SEH Uncaught Exception Detected!\n{}", e.what());
-			winHelperLogger.error("In NewProcess callback");
+			logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+			logger.error("In NewProcess callback");
 		}
 		catch (...)
 		{
-			winHelperLogger.error("NewProcess Callback Failed!");
-			winHelperLogger.error("Uncaught Exception Detected!");
+			logger.error("NewProcess Callback Failed!");
+			logger.error("Uncaught Exception Detected!");
 		}
 	}).detach();
 

@@ -16,8 +16,6 @@ map<unsigned, bool> isSimpleForm;
 map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleForms;
 map<unsigned, std::shared_ptr<Form::CustomForm>> customForms;
 
-Logger formUILogger("FormUI");
-
 unsigned NewFormId()
 {
     unsigned formId;
@@ -338,16 +336,16 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
     }
     catch (const seh_exception& e)
     {
-        formUILogger.error("Event Callback Failed!");
-        formUILogger.error("SEH Uncaught Exception Detected!");
-        formUILogger.error("{}", e.what());
-        formUILogger.error("In Event: onFormSelected");
+        logger.error("Event Callback Failed!");
+        logger.error("SEH Uncaught Exception Detected!");
+        logger.error("{}", e.what());
+        logger.error("In Event: onFormSelected");
     }
     catch (...)
     {
-        formUILogger.error("Event Callback Failed!");
-        formUILogger.error("Uncaught Exception Detected!");
-        formUILogger.error("In Event: onFormSelected");
+        logger.error("Event Callback Failed!");
+        logger.error("Uncaught Exception Detected!");
+        logger.error("In Event: onFormSelected");
     }
 
     original(_this, id, handler, pPacket);

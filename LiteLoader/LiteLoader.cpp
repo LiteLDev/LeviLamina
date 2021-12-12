@@ -18,7 +18,7 @@
 
 using namespace std;
 
-Logger llLogger("LiteLoader");
+Logger logger("LiteLoader");
 
 void FixPluginsLibDir() {  // add plugins folder to path
     auto *buffer = new WCHAR[8192];
@@ -44,15 +44,15 @@ extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        llLogger.info("");
-        llLogger.info("================= LiteLoader ================");
-        llLogger.info(" ____             __  __           _      ");
-        llLogger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        llLogger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
-        llLogger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        llLogger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
-        llLogger.info("");
-        llLogger.warn("You Are In DevelopMode!");
+        logger.info("");
+        logger.info("================= LiteLoader ================");
+        logger.info(" ____             __  __           _      ");
+        logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        logger.info("");
+        logger.warn("You Are In DevelopMode!");
     }
 }
 
@@ -105,8 +105,8 @@ void LLMain() {
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
     { 
         // Server started event
-        llLogger.info("LiteLoader is distributed under the GPLv3 License");
-        llLogger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
+        logger.info("LiteLoader is distributed under the GPLv3 License");
+        logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
             InitAutoUpdateCheck();
         return true;

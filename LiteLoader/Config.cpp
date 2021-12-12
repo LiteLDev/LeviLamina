@@ -7,8 +7,6 @@
 
 using namespace std;
 
-Logger configLogger("Config");
-
 namespace LL {
     LLConfig globalConfig;
 
@@ -64,22 +62,22 @@ bool LoadLLConfig() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
         if (!content) {
-            configLogger.warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
+            logger.warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
             std::ofstream of(LITELOADER_CONFIG_FILE);
             if (of) {
                 of << nlohmann::json(LL::globalConfig).dump(4);
             } else {
-                configLogger.error("Configuration File Creation failed!");
+                logger.error("Configuration File Creation failed!");
             }
         } else
             LL::globalConfig = nlohmann::json::parse(*content, nullptr, true, true);
     } catch (const nlohmann::json::exception &e) {
-        configLogger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
-        configLogger.error("{}", e.what());
+        logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("{}", e.what());
         return false;
     } catch (...) {
-        configLogger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
         return false;
     }
     return true;

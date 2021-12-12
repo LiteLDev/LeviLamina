@@ -101,7 +101,7 @@ public:
     OutputStream fatal;
 
     inline Logger()
-        :Logger(PluginOwnData::get<string>(LOGGER_DEFAULT_TITLE))
+        :Logger(PluginOwnData::get<std::string>(LOGGER_DEFAULT_TITLE))
     {}
 
     LIAPI explicit Logger(const std::string &title);

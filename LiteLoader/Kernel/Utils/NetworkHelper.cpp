@@ -3,7 +3,6 @@
 #include <httplib/httplib.h>
 #include <thread>
 using namespace std;
-Logger networkHelperLogger("NetworkHelper");
 
 void SplitHttpUrl(const std::string& url, string& host, string& path) {
     host = url;

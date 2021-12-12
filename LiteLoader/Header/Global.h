@@ -36,6 +36,9 @@
 #include "MC/Types.hpp"
 #include "Utils/GlobalService.h"
 #include "Utils/Optional.h"
+#include "LoggerAPI.h"
 using std::map;
 using std::string;
 using std::vector;
+
+extern Logger logger;

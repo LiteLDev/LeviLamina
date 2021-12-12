@@ -9,7 +9,6 @@
 #include <Utils/WinHelper.h>
 
 using namespace std;
-Logger pluginLoaderLogger("PluginLoader");
 
 vector<std::wstring> GetPreloadList() {
     //若在preload.conf中，则不加载
@@ -36,7 +35,7 @@ vector<std::wstring> GetPreloadList() {
 }
 #include <KVDBAPI.h>
 void LoadMain() {
-    pluginLoaderLogger.info("Loading plugins...");
+    logger.info("Loading plugins...");
 
     // Load plugins
     int pluginCount = 0;
@@ -64,14 +63,14 @@ void LoadMain() {
         if (lib) {
             pluginCount++;
 
-            pluginLoaderLogger.info("Plugin <{}> loaded", pluginFileName);
+            logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, "1.0.0");
             }
         } else {
-            pluginLoaderLogger.error("Fail to load plugin <{}>", pluginFileName);
-            pluginLoaderLogger.error("Error: {} {}", GetLastError(), GetLastErrorMessage());
+            logger.error("Fail to load plugin <{}>", pluginFileName);
+            logger.error("Error: {} {}", GetLastError(), GetLastErrorMessage());
         }
     }
 
@@ -83,10 +82,10 @@ void LoadMain() {
             try {
                 ((void (*)())fn)();
             } catch (...) {
-                pluginLoaderLogger.error("Plugin <{}> throws an exception in onPostInit", name);
-                pluginLoaderLogger.error("Fail to init this plugin!");
+                logger.error("Plugin <{}> throws an exception in onPostInit", name);
+                logger.error("Fail to init this plugin!");
             }
         }
     }
-    pluginLoaderLogger.info << pluginCount << " plugin(s) loaded" << Logger::endl;
+    logger.info << pluginCount << " plugin(s) loaded" << Logger::endl;
 }
