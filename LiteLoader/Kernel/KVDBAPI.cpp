@@ -28,7 +28,7 @@ void KVDB::__init(const char* path, bool read_cache, int cache_sz, int Bfilter_b
         options.filter_policy = leveldb::NewBloomFilterPolicy(Bfilter_bit);
     options.create_if_missing = true;
     dbpath = path;
-    leveldb::Status status = leveldb::DB::Open(options, path, &db);
+    status = leveldb::DB::Open(options, path, &db);
     if (!status.ok())
     {
         levelDBLogger.error("Fail to load KVDB <{}>", path);
@@ -57,7 +57,7 @@ bool KVDB::get(string_view key, string& val)
     return true;
 }
 
-void KVDB::put(string_view key, string_view val)
+bool KVDB::set(string_view key, string_view val)
 {
     // WATCH_ME("put kvdb " + dpath);
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
@@ -66,9 +66,10 @@ void KVDB::put(string_view key, string_view val)
     {
         levelDBLogger.error("[DB Error]put %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }
+    return true;
 }
 
-void KVDB::del(string_view key)
+bool KVDB::del(string_view key)
 {
     // WATCH_ME("del kvdb " + dpath);
     auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
@@ -76,6 +77,7 @@ void KVDB::del(string_view key)
     {
         levelDBLogger.error("del %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }
+    return true;
 }
 
 void KVDB::iter(std::function<bool(string_view key)> const& fn)
@@ -101,6 +103,26 @@ void KVDB::iter(std::function<bool(string_view key, string_view val)> const& fn)
             break;
     }
     delete it;
+}
+
+vector<string> KVDB::getAllKeys() {
+    vector<string> keyList;
+    iter([&keyList](const string_view& key)
+        {
+            keyList.push_back(string(key));
+            return true;
+        });
+    return keyList;
+}
+
+bool KVDB::isValid()
+{
+    return status.ok();
+}
+
+KVDB::operator bool()
+{
+    return isValid();
 }
 
 
