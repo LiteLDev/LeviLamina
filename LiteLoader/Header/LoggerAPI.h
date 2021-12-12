@@ -25,18 +25,11 @@
 
 using std::string;
 
-#define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
-#define LOGGER_DEFAULT_TITLE "ll_plugin_default_logger_title"
 
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
-
-namespace PluginOwnData {
-    template<typename T>
-    inline T &get(const std::string_view &key);
-} // namespace PluginOwnData
 
 class Logger {
 public:
@@ -111,8 +104,7 @@ public:
     OutputStream error;
     OutputStream fatal;
 
-    inline Logger()
-            : Logger(PluginOwnData::get<std::string>(LOGGER_DEFAULT_TITLE)) {}
+    inline Logger(): Logger("") {}
 
     LIAPI explicit Logger(const std::string &title);
 

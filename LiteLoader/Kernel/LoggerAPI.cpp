@@ -57,8 +57,11 @@ Logger::OutputStream::OutputStream(Logger *logger, int level, std::string &&cons
 }
 
 void Logger::endl(OutputStream &o) {
+    std::string title = o.logger->title;
+    if (!title.empty())
+        title = "[" + title + "]";
     if (LL::globalConfig.logLevel >= o.level) {
-        fmt::print(o.style, o.consoleFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title, o.os.str());
+        fmt::print(o.style, o.consoleFormat, fmt::localtime(_time64(nullptr)), o.mode, title, o.os.str());
         if (PluginOwnData::has(LOGGER_CURRENT_FILE))
             PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
                     << fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title,
@@ -74,36 +77,36 @@ Logger::Logger(const std::string &title) {
     this->title = title;
     debug = OutputStream{this,
                          5,
-                         "[{:%H:%M:%S} {}][{}] {}\n",
-                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
+                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
                          "Debug"
     };
     info = OutputStream{this,
                         4,
-                        "[{:%H:%M:%S} {}][{}] {}\n",
-                        "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
+                        "[{:%H:%M:%S} {}]{} {}\n",
+                        "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         fmt::fg(fmt::terminal_color::white),
                         "Info"
     };
     warn = OutputStream{this,
                         3,
-                        "[{:%H:%M:%S} {}][{}] {}\n",
-                        "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
+                        "[{:%H:%M:%S} {}]{} {}\n",
+                        "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
                         "Warn"
     };
     error = OutputStream{this,
                          2,
-                         "[{:%H:%M:%S} {}][{}] {}\n",
-                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
+                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
                          "Error"
     };
     fatal = OutputStream{this,
                          1,
-                         "[{:%H:%M:%S} {}][{}] {}\n",
-                         "[{:%Y-%m-%d %H:%M:%S} {}][{}] {}\n",
+                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
                          "Fatal"
     };
