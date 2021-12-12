@@ -21,16 +21,16 @@ public:
     void __init(const char* path, bool read_cache, int cache_sz, int Bfilter_bit);
 
     LIAPI ~KVDB();
-    KVDB() {
-    }
+    KVDB() {}
     KVDB(KVDB const&) = delete;
     KVDB& operator=(KVDB const&) = delete;
 
     LIAPI bool get(string_view key, string& val);
-    LIAPI void put(string_view key, string_view val);
-    LIAPI void del(string_view key);
+    LIAPI bool put(string_view key, string_view val);
+    LIAPI bool del(string_view key);
     LIAPI void iter(std::function<bool(string_view key, string_view val)> const& fn);
     LIAPI void iter(std::function<bool(string_view key)> const&);
+    LIAPI std::vector<std::string> getAllKeys();
     LIAPI std::string error(leveldb::Status status);
 };
 

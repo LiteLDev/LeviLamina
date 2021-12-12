@@ -49,20 +49,22 @@ bool KVDB::get(string_view key, string& val) {
     }
     return true;
 }
-void KVDB::put(string_view key, string_view val) {
+bool KVDB::put(string_view key, string_view val) {
     // WATCH_ME("put kvdb " + dpath);
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
                      leveldb::Slice(val.data(), val.size()));
     if (!s.ok()) {
         levelDBLogger.error("[DB Error]put %s %s\n", dpath.c_str(), s.ToString().c_str());
     }
+    return true;
 }
-void KVDB::del(string_view key) {
+bool KVDB::del(string_view key) {
     // WATCH_ME("del kvdb " + dpath);
     auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
     if (!s.ok()) {
         levelDBLogger.error("del %s %s\n", dpath.c_str(), s.ToString().c_str());
     }
+    return true;
 }
 void KVDB::iter(std::function<bool(string_view key)> const& fn) {
     leveldb::Iterator* it = db->NewIterator(rdopt);
@@ -82,6 +84,16 @@ void KVDB::iter(std::function<bool(string_view key, string_view val)> const& fn)
             break;
     }
     delete it;
+}
+
+vector<string> KVDB::getAllKeys() {
+    vector<string> keyList;
+    iter([&keyList](const string_view& key)
+    {
+        keyList.push_back(string(key));
+        return true;
+    });
+    return keyList;
 }
 
 
