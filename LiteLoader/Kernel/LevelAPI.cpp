@@ -18,8 +18,8 @@
 #include <MC/Tick.hpp>
 
 
-Actor* Level::getEntity(struct ActorUniqueID uniqueId) {
-    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, ActorUniqueID)(uniqueId);
+Actor* Level::getEntity(ActorUniqueID uniqueId) {
+    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {

@@ -54,7 +54,6 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ExceptionHandling>Async</ExceptionHandling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <Optimization>Disabled</Optimization>
       <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
