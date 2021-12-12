@@ -70,7 +70,7 @@ void Logger::endl(OutputStream &o) {
     unlock();
 }
 
-Logger::Logger(std::string &&title) {
+Logger::Logger(const std::string &title) {
     this->title = title;
     Debug = OutputStream{this,
                          5,

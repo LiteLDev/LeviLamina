@@ -7,6 +7,8 @@
 #include <string>
 using namespace std;
 
+Logger logger;
+
 string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();
     if (error_message_id == 0)
@@ -92,13 +94,13 @@ bool NewProcess(const std::string& process, std::function<void(int, std::string)
 		}
 		catch (const seh_exception& e)
 		{
-			Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
-			Logger::Error("In NewProcess callback");
+			logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+			logger.error("In NewProcess callback");
 		}
 		catch (...)
 		{
-			Logger::Error("NewProcess Callback Failed!");
-			Logger::Error("Uncaught Exception Detected!");
+			logger.error("NewProcess Callback Failed!");
+			logger.error("Uncaught Exception Detected!");
 		}
 	}).detach();
 

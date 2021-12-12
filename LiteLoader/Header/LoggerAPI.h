@@ -36,13 +36,9 @@ public:
     std::string title;
 
     LIAPI static void initLock();
-
     LIAPI static void lock();
-
     LIAPI static void unlock();
-
     LIAPI static bool setFile(const std::string &logFile, bool appendMode);
-
     LIAPI static bool setFile(nullptr_t);
 
     class OutputStream {
@@ -92,7 +88,11 @@ public:
     OutputStream Error;
     OutputStream Fatal;
 
-    LIAPI explicit Logger(std::string &&title);
+    inline Logger()
+        :Logger(PluginOwnData::get<string>(LOGGER_DEFAULT_TITLE))
+    {}
+
+    LIAPI explicit Logger(const std::string &title);
 
     template<typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
     void debug(const S &formatStr, const Args &... args) {

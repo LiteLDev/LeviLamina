@@ -4,6 +4,8 @@
 #include <thread>
 using namespace std;
 
+extern Logger logger;
+
 void SplitHttpUrl(const std::string& url, string& host, string& path) {
     host = url;
 
@@ -45,13 +47,13 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
         }
         catch (const seh_exception& e)
         {
-            Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
-            Logger::Error("In HttpGet callback");
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpGet callback");
         }
         catch (...)
         {
-            Logger::Error("HttpGet Callback Failed!");
-            Logger::Error("Uncaught Exception Detected!");
+            logger.error("HttpGet Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
         }
     }).detach();
 
@@ -85,13 +87,13 @@ bool HttpPost(const string& url, const string& data, const string& type, std::fu
         }
         catch (const seh_exception& e)
         {
-            Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
-            Logger::Error("In HttpPost callback");
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpPost callback");
         }
         catch (...)
         {
-            Logger::Error("HttpPost Callback Failed!");
-            Logger::Error("Uncaught Exception Detected!");
+            logger.error("HttpPost Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
         }
     }).detach();
     return true;
