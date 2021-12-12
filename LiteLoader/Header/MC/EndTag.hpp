@@ -17,14 +17,11 @@ public:
     inline auto value() {
         return nullptr;
     }
-    inline auto& operator=(float val) {
-        return *this;
-    }
-    inline static EndTag* create(float val = 0.0f) {
+    inline static EndTag* create() {
         EndTag* tag = (EndTag*)Tag::createTag(Tag::Type::End);
         return tag;
     }
-    inline bool set(nullptr_t) {
+    inline bool set() {
         if (getTagType() != Tag::Type::End)
             return false;
         return true;

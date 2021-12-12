@@ -33,6 +33,12 @@ public:
     inline Tag::Type getTagType() {
         return dAccess<Tag::Type, 40>(this);
     }
+    inline Tag* asTag() {
+        return (Tag*)this;
+    }
+    inline EndTag* asEndTag() {
+        return (EndTag*)this;
+    }
     inline ByteTag* asByteTag() {
         return (ByteTag*)this;
     }

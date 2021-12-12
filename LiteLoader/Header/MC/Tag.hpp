@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 
+class EndTag;
 class ByteTag;
 class ShortTag;
 class IntTag;
@@ -72,6 +73,7 @@ public:
     //LIAPI std::map<std::string, char[0x28]>& asCompound();
     //LIAPI TagMemoryChunk& asByteArray();
 
+    LIAPI EndTag* asEndTag();
     LIAPI ByteTag* asByteTag();
     LIAPI ShortTag* asShortTag();
     LIAPI IntTag* asIntTag();

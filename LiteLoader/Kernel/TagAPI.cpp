@@ -17,6 +17,12 @@
 #include <vector>
 using namespace std;
 
+EndTag* Tag::asEndTag() {
+    if (this && getTagType() == Tag::Type::End)
+        return (EndTag*)this;
+    return nullptr;
+}
+
 ByteTag* Tag::asByteTag() {
     if (this && getTagType() == Tag::Type::Byte)
         return (ByteTag*)this;
