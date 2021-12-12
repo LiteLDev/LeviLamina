@@ -109,6 +109,8 @@
     <ClInclude Include="Header\MC\CommandOutput.hpp" />
     <ClInclude Include="Header\MC\CommandParameterData.hpp" />
     <ClInclude Include="Header\MC\CommandRegistry.hpp" />
+    <ClInclude Include="Header\MC\CommandSelector.hpp" />
+    <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />
     <ClInclude Include="Header\MC\CompoundTag.hpp" />
     <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
