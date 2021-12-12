@@ -3,7 +3,8 @@
 #include <string>
 #include <vector>
 
-#include <LoggerAPI.h>
+#include <Global.h>
+#include <LLAPI.h>
 #include <PluginManager.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>

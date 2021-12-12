@@ -1,6 +1,5 @@
 #include <HookAPI.h>
 #include <LLAPI.h>
-#include <LoggerAPI.h>
 #include <ServerAPI.h>
 #include <regex>
 #include <string>

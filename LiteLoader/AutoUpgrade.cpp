@@ -1,7 +1,7 @@
 #include "AutoUpgrade.h"
+#include <Global.h>
 #include <Config.h>
 #include <LLAPI.h>
-#include <LoggerAPI.h>
 #include <Nlohmann/json.hpp>
 #include <ServerAPI.h>
 #include <SimpleIni/SimpleIni.h>

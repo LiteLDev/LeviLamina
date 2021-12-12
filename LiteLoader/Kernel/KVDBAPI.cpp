@@ -1,5 +1,4 @@
 ﻿#include <KVDBAPI.h>
-#include <LoggerAPI.h>
 #include <memory>
 #include <thread>
 using namespace std;

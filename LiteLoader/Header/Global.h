@@ -32,11 +32,13 @@
 #include "third-party/gsl/gsl"
 #include "third-party/seh_exception/seh_exception.hpp"
 
+#include "LoggerAPI.h"
 #include "HookAPI.h"
 #include "MC/Types.hpp"
 #include "Utils/GlobalService.h"
 #include "Utils/Optional.h"
-#include "LoggerAPI.h"
 using std::map;
 using std::string;
 using std::vector;
+
+extern Logger logger;

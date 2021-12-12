@@ -108,3 +108,4 @@ public:
     LIAPI explicit Logger(const std::string &title);
 
 };
+

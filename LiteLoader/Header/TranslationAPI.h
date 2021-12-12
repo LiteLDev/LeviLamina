@@ -1,7 +1,6 @@
 #pragma once
 #include "Global.h"
 #include "LLAPI.h"
-#include "LoggerAPI.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "third-party/Nlohmann/json.hpp"

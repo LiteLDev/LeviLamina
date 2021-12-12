@@ -1,5 +1,5 @@
 #include "Config.h"
-#include <LoggerAPI.h>
+#include <Global.h>
 #include <Nlohmann/json.hpp>
 #include <Utils/FileHelper.h>
 #include <filesystem>

@@ -1,4 +1,3 @@
-#include <LoggerAPI.h>
 #include <MC/Block.hpp>
 #include <MC/BlockLegacy.hpp>
 #include <MC/BlockPalette.hpp>

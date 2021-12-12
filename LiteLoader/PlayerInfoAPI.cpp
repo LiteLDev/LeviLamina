@@ -1,5 +1,4 @@
 #include <EventAPI.h>
-#include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <PlayerInfoAPI.h>
 #include <exception>

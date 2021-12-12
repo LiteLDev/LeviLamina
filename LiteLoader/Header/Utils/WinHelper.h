@@ -1,7 +1,13 @@
 #pragma once
-#include "../Global.h"
 #include <string>
 #include <Windows.h>
+#include <functional>
+
+#ifdef LITELOADER_EXPORTS
+#define LIAPI __declspec(dllexport)
+#else
+#define LIAPI __declspec(dllimport)
+#endif
 
 // GetLastError() -> string
 LIAPI std::string GetLastErrorMessage();

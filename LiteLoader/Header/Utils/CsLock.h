@@ -1,7 +1,10 @@
 #pragma once
-#include "../Global.h"
 #include <windows.h>
-
+#ifdef LITELOADER_EXPORTS
+#define LIAPI __declspec(dllexport)
+#else
+#define LIAPI __declspec(dllimport)
+#endif
 // ===== Critical Section Locker =====
 // a simple lock which is much faster than std::mutex
 

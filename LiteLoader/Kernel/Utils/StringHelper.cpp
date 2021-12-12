@@ -1,4 +1,5 @@
 #include <Utils/StringHelper.h>
+#include <LLAPI.h>
 #include <string>
 #include <vector>
 #include <windows.h>

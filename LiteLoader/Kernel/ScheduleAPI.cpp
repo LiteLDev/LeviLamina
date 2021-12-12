@@ -1,4 +1,4 @@
-#include <LoggerAPI.h>
+#include <Global.h>
 #include <ScheduleAPI.h>
 #include <atomic>
 #include <deque>

@@ -1,5 +1,4 @@
 #pragma once
-#include "HookAPI.h"
 #include "../Global.h"
 #include "ChunkPos.hpp"
 #include <string>

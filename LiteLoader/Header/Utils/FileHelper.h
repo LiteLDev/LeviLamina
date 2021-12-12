@@ -1,8 +1,16 @@
 #pragma once
-#include "../Global.h"
 #include <fstream>
 #include <optional>
 #include <string>
+#include <minwindef.h>
+#include <vector>
+#include <optional>
+
+#ifdef LITELOADER_EXPORTS
+#define LIAPI __declspec(dllexport)
+#else
+#define LIAPI __declspec(dllimport)
+#endif
 
 LIAPI FILE* GetFILEfromFstream(std::fstream& fs);
 LIAPI HANDLE GetHANDLEfromFstream(std::fstream& fs);

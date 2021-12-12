@@ -1,6 +1,5 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
-#include <LoggerAPI.h>
 #include <Windows.h>
 #include <cstdio>
 #include <fstream>

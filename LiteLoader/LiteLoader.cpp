@@ -2,7 +2,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
-#include <LoggerAPI.h>
+#include <Global.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <seh_exception/seh_exception.hpp>

@@ -285,7 +285,7 @@ std::vector<Actor*> Level::getAllEntities() {
 
 Player* Level::getPlayer(const string& info) {
     string target{info};
-    std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
+    std::transform(target.begin(), target.end(), target.begin(), ::tolower); //lower case the string
     int delta = INT_MAX;                                                        //c++ int max
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {

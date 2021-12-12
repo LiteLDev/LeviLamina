@@ -1,3 +1,4 @@
+#include <Global.h>
 #include <HookAPI.h>
 #include <MC/Actor.hpp>
 #include <MC/Mob.hpp>
@@ -8,7 +9,6 @@
 #include <MC/ServerNetworkHandler.hpp>
 
 #include <Config.h>
-#include <LoggerAPI.h>
 #include <MC/InventoryTransactionPacket.hpp>
 #include <unordered_map>
 using namespace LL;

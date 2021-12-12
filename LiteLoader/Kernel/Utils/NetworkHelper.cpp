@@ -1,5 +1,5 @@
 #include <Utils/NetworkHelper.h>
-#include <LoggerAPI.h>
+#include <Global.h>
 #include <httplib/httplib.h>
 #include <thread>
 using namespace std;
