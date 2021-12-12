@@ -4,10 +4,7 @@
 
 Logger levelDBLogger("LevelDB");
 
-LIAPI std::unique_ptr<KVDB> CreateKVDB(const string& path,
-                                     bool read_cache,
-                                     int cache_sz,
-                                     int Bfilter_bit)
+std::unique_ptr<KVDB> KVDB::create(const string& path, bool read_cache, int cache_sz,int Bfilter_bit)
 {
     auto db = std::make_unique<KVDB>();
     db->__init(path.c_str(), read_cache, cache_sz, Bfilter_bit);

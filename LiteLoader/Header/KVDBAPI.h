@@ -21,7 +21,7 @@ class KVDB
 public:
 
     void __init(const char* path, bool read_cache, int cache_sz, int Bfilter_bit);
-
+    LIAPI static std::unique_ptr<KVDB> create(const string& path,bool read_cache = true,int cache_sz = 0,int Bfilter_bit = 0);
     LIAPI ~KVDB();
     KVDB()
     {
@@ -36,8 +36,3 @@ public:
     LIAPI void iter(std::function<bool(string_view key)> const&);
     LIAPI std::string error(leveldb::Status status);
 };
-
-LIAPI std::unique_ptr<KVDB> CreateKVDB(const string& path,
-                                     bool read_cache = true,
-                                     int cache_sz = 0,
-                                     int Bfilter_bit = 0);
