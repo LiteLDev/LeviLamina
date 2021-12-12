@@ -1,4 +1,7 @@
 @echo off
+
+rmdir SDK /S /Q
+
 echo [INFO] Packing LL-SDK...
 echo.
 
@@ -25,10 +28,6 @@ cd SDK
 ..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoader-SDK.zip *
 cd ..
 :Zipped
-
-rem if [%1]==[action] goto Finish
-rem rmdir SDK /S /Q
-rem :Finish
 
 echo.
 echo [INFO] Packing LL-SDK... DONE!

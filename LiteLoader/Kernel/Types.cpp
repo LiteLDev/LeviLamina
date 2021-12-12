@@ -1,7 +1,22 @@
 #include <MC/Types.hpp>
 
+ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
+{
+    this->x = (char)pos.x;
+    this->z = (char)pos.z;
+    this->y = (short)(pos.y - minHeight);
+}
+
 Vec3 BlockPos::toVec3() {
     return {(float)x, (float)y, (float)z};
+}
+
+Vec3 BlockPos::bottomCenter() {
+    return {(float)x + 0.5f, (float)y, (float)z + 0.5f};
+}
+
+Vec3 BlockPos::center() {
+    return {(float)x + 0.5f, (float)y + 0.5f, (float)z + 0.5f};
 }
 
 BlockPos Vec3::toBlockPos() {
@@ -15,6 +30,15 @@ BlockPos Vec3::toBlockPos() {
     if (pz < 0 && pz != z)
         pz = pz - 1;
     return {px, py, pz};
+}
+
+float Vec3::length() {
+    return sqrt(x * x + y * y + z * z);
+}
+
+float Vec3::distanceTo(Vec3 const& a0) {
+    Vec3 tmp = *this - a0;
+    return tmp.length();
 }
 
 AABB BoundingBox::toAABB() {

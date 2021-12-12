@@ -128,8 +128,8 @@ public:
     MCAPI short getHeightmap(int, int);
     MCAPI short getHeightmap(class BlockPos const&) const;
     MCAPI class BlockPos getHeightmapPos(class BlockPos const&) const;
-    MCAPI class Level& getLevel();
     MCAPI class Level& getLevel() const;
+    MCAPI class Level& getLevel();
     MCAPI class Level const& getLevelConst() const;
     MCAPI class Block const& getLiquidBlock(class BlockPos const&) const;
     MCAPI bool getNextTickUpdateForPos(class BlockPos const&, enum TickingQueueType, struct Tick&) const;

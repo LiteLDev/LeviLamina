@@ -32,5 +32,7 @@ public:
     MCAPI bool isSuccess() const;
 
 protected:
+
 private:
+
 };

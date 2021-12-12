@@ -40,25 +40,25 @@ public:
         *((void**)&rv) = dlsym("?handleActorAcquiredItem@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorAcquiredItemEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorAcquiredItemEvent const&>(a0));
     }
-    inline int \/*enum enum HandlerResult*\/ handleActorAddEffect(struct ActorAddEffectEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorAddEffectEvent const&);
-        *((void**)&rv) = dlsym("?handleActorAddEffect@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorAddEffectEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorAddEffectEvent const&>(a0));
-    }
     inline int \/*enum enum HandlerResult*\/ handleActorRemoved(struct ActorRemovedEvent const& a0){
         int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorRemovedEvent const&);
         *((void**)&rv) = dlsym("?handleActorRemoved@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorRemovedEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorRemovedEvent const&>(a0));
     }
-    inline int \/*enum enum HandlerResult*\/ handleActorRemoveEffect(struct ActorRemoveEffectEvent const& a0){
-        int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorRemoveEffectEvent const&);
-        *((void**)&rv) = dlsym("?handleActorRemoveEffect@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorRemoveEffectEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorRemoveEffectEvent const&>(a0));
+    inline int \/*enum enum HandlerResult*\/ handleActorAddEffect(struct ActorAddEffectEvent const& a0){
+        int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorAddEffectEvent const&);
+        *((void**)&rv) = dlsym("?handleActorAddEffect@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorAddEffectEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorAddEffectEvent const&>(a0));
     }
     inline int \/*enum enum HandlerResult*\/ handleActorDefinitionEventTriggered(struct ActorDefinitionEvent const& a0){
         int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorDefinitionEvent const&);
         *((void**)&rv) = dlsym("?handleActorDefinitionEventTriggered@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorDefinitionEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorDefinitionEvent const&>(a0));
+    }
+    inline int \/*enum enum HandlerResult*\/ handleActorRemoveEffect(struct ActorRemoveEffectEvent const& a0){
+        int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct ActorRemoveEffectEvent const&);
+        *((void**)&rv) = dlsym("?handleActorRemoveEffect@EmptyActorGameplayHandler@@UEAA?AW4HandlerResult@@AEBUActorRemoveEffectEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorRemoveEffectEvent const&>(a0));
     }
     inline int \/*enum enum HandlerResult*\/ handleKnockBack(struct KnockBackEvent const& a0){
         int \/*enum enum HandlerResult*\/ (EmptyActorGameplayHandler::*rv)(struct KnockBackEvent const&);

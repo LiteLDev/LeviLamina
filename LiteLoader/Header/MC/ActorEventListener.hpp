@@ -55,6 +55,11 @@ public:
         *((void**)&rv) = dlsym("?onActorHurt@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorHurtEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorHurtEvent const&>(a0));
     }
+    inline int \/*enum enum EventResult*\/ onActorAnimationChanged(struct ActorAnimationChangedEvent const& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorAnimationChangedEvent const&);
+        *((void**)&rv) = dlsym("?onActorAnimationChanged@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorAnimationChangedEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorAnimationChangedEvent const&>(a0));
+    }
     inline int \/*enum enum EventResult*\/ onActorMobInteraction(class Actor& a0, int \/*enum enum MinecraftEventing::InteractionType*\/ a1, int \/*enum enum ActorType*\/ a2){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, int \/*enum enum MinecraftEventing::InteractionType*\/, int \/*enum enum ActorType*\/);
         *((void**)&rv) = dlsym("?onActorMobInteraction@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4InteractionType@MinecraftEventing@@W4ActorType@@@Z");
@@ -65,25 +70,20 @@ public:
         *((void**)&rv) = dlsym("?onActorAddEffect@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorAddEffectEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorAddEffectEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onActorAnimationChanged(struct ActorAnimationChangedEvent const& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorAnimationChangedEvent const&);
-        *((void**)&rv) = dlsym("?onActorAnimationChanged@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorAnimationChangedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorAnimationChangedEvent const&>(a0));
+    inline int \/*enum enum EventResult*\/ onActorAcquiredItem(struct ActorAcquiredItemEvent const& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorAcquiredItemEvent const&);
+        *((void**)&rv) = dlsym("?onActorAcquiredItem@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorAcquiredItemEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorRemoveEffect(struct ActorRemoveEffectEvent const& a0){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorRemoveEffectEvent const&);
         *((void**)&rv) = dlsym("?onActorRemoveEffect@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorRemoveEffectEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorRemoveEffectEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onActorAcquiredItem(struct ActorAcquiredItemEvent const& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorAcquiredItemEvent const&);
-        *((void**)&rv) = dlsym("?onActorAcquiredItem@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorAcquiredItemEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorAcquiredItemEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onActorTeleported(class Actor& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+    inline int \/*enum enum EventResult*\/ onActorAttack(class Actor& a0, class Actor& a1, int a2){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Actor&, int);
+        *((void**)&rv) = dlsym("?onActorAttack@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0H@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Actor&>(a1), std::forward<int>(a2));
     }
     inline int \/*enum enum EventResult*\/ onProjectileHit(struct ProjectileHitEvent const& a0){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ProjectileHitEvent const&);
@@ -95,30 +95,30 @@ public:
         *((void**)&rv) = dlsym("?onActorDefinitionEventTriggered@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorDefinitionEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorDefinitionEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onActorAttack(class Actor& a0, class Actor& a1, int a2){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Actor&, int);
-        *((void**)&rv) = dlsym("?onActorAttack@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0H@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Actor&>(a1), std::forward<int>(a2));
-    }
-    inline int \/*enum enum EventResult*\/ onActorDroppedItem(class Actor& a0, class ItemInstance const& a1){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemInstance const&);
-        *((void**)&rv) = dlsym("?onActorDroppedItem@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemInstance@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemInstance const&>(a1));
-    }
-    inline int \/*enum enum EventResult*\/ onActorUseItemOn(class Actor& a0, class ItemStack const& a1, class BlockPos const& a2, unsigned char a3){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemStack const&, class BlockPos const&, unsigned char);
-        *((void**)&rv) = dlsym("?onActorUseItemOn@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemStack const&>(a1), std::forward<class BlockPos const&>(a2), std::forward<unsigned char>(a3));
+    inline int \/*enum enum EventResult*\/ onActorKilled(struct ActorKilledEvent const& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorKilledEvent const&);
+        *((void**)&rv) = dlsym("?onActorKilled@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorKilledEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorStopRiding(class Actor& a0, bool a1, bool a2, bool a3){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, bool, bool, bool);
         *((void**)&rv) = dlsym("?onActorStopRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N11@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<bool>(a1), std::forward<bool>(a2), std::forward<bool>(a3));
     }
-    inline int \/*enum enum EventResult*\/ onActorKilled(struct ActorKilledEvent const& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorKilledEvent const&);
-        *((void**)&rv) = dlsym("?onActorKilled@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorKilledEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorKilledEvent const&>(a0));
+    inline int \/*enum enum EventResult*\/ onActorUseItemOn(class Actor& a0, class ItemStack const& a1, class BlockPos const& a2, unsigned char a3){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemStack const&, class BlockPos const&, unsigned char);
+        *((void**)&rv) = dlsym("?onActorUseItemOn@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemStack@@AEBVBlockPos@@E@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemStack const&>(a1), std::forward<class BlockPos const&>(a2), std::forward<unsigned char>(a3));
+    }
+    inline int \/*enum enum EventResult*\/ onActorDroppedItem(class Actor& a0, class ItemInstance const& a1){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemInstance const&);
+        *((void**)&rv) = dlsym("?onActorDroppedItem@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemInstance@@@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemInstance const&>(a1));
+    }
+    inline int \/*enum enum EventResult*\/ onActorTeleported(class Actor& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&);
+        *((void**)&rv) = dlsym("?onActorTeleported@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorTargetAcquired(class Actor& a0, class Actor& a1){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Actor&);
@@ -140,20 +140,20 @@ public:
         *((void**)&rv) = dlsym("?onActorSneakChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@_N@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<bool>(a1));
     }
-    inline int \/*enum enum EventResult*\/ onActorRemoved(struct ActorRemovedEvent const& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorRemovedEvent const&);
-        *((void**)&rv) = dlsym("?onActorRemoved@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorRemovedEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorRemovedEvent const&>(a0));
+    inline int \/*enum enum EventResult*\/ onActorStartRiding(class Actor& a0, class Actor& a1){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Actor&);
+        *((void**)&rv) = dlsym("?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Actor&>(a1));
     }
     inline int \/*enum enum EventResult*\/ onActorMove(class Actor& a0, class Vec3 const& a1){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Vec3 const&);
         *((void**)&rv) = dlsym("?onActorMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Vec3 const&>(a1));
     }
-    inline int \/*enum enum EventResult*\/ onActorStartRiding(class Actor& a0, class Actor& a1){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class Actor&);
-        *((void**)&rv) = dlsym("?onActorStartRiding@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@0@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class Actor&>(a1));
+    inline int \/*enum enum EventResult*\/ onActorRemoved(struct ActorRemovedEvent const& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorRemovedEvent const&);
+        *((void**)&rv) = dlsym("?onActorRemoved@ActorEventListener@@UEAA?AW4EventResult@@AEBUActorRemovedEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorRemovedEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorGriefingBlock(struct ActorGriefingBlockEvent const& a0){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(struct ActorGriefingBlockEvent const&);
@@ -170,20 +170,20 @@ public:
         *((void**)&rv) = dlsym("?onActorDeath@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVActorDamageSource@@W4ActorType@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ActorDamageSource const&>(a1), std::forward<int \/*enum enum ActorType*\/>(a2));
     }
-    inline int \/*enum enum EventResult*\/ onActorCarriedItemChanged(class Actor& a0, class ItemInstance const& a1, class ItemInstance const& a2, int \/*enum enum HandSlot*\/ a3){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemInstance const&, class ItemInstance const&, int \/*enum enum HandSlot*\/);
-        *((void**)&rv) = dlsym("?onActorCarriedItemChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemInstance@@1W4HandSlot@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemInstance const&>(a1), std::forward<class ItemInstance const&>(a2), std::forward<int \/*enum enum HandSlot*\/>(a3));
+    inline int \/*enum enum EventResult*\/ onActorTick(class Actor& a0){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&);
+        *((void**)&rv) = dlsym("?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorPredictedMove(class Actor& a0, int \/*enum enum MovePredictionType*\/ a1, class Vec3 const& a2){
         int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, int \/*enum enum MovePredictionType*\/, class Vec3 const&);
         *((void**)&rv) = dlsym("?onActorPredictedMove@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@W4MovePredictionType@@AEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0), std::forward<int \/*enum enum MovePredictionType*\/>(a1), std::forward<class Vec3 const&>(a2));
     }
-    inline int \/*enum enum EventResult*\/ onActorTick(class Actor& a0){
-        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&);
-        *((void**)&rv) = dlsym("?onActorTick@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0));
+    inline int \/*enum enum EventResult*\/ onActorCarriedItemChanged(class Actor& a0, class ItemInstance const& a1, class ItemInstance const& a2, int \/*enum enum HandSlot*\/ a3){
+        int \/*enum enum EventResult*\/ (ActorEventListener::*rv)(class Actor&, class ItemInstance const&, class ItemInstance const&, int \/*enum enum HandSlot*\/);
+        *((void**)&rv) = dlsym("?onActorCarriedItemChanged@ActorEventListener@@UEAA?AW4EventResult@@AEAVActor@@AEBVItemInstance@@1W4HandSlot@@@Z");
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class ItemInstance const&>(a1), std::forward<class ItemInstance const&>(a2), std::forward<int \/*enum enum HandSlot*\/>(a3));
     }
     */
 

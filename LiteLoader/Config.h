@@ -7,6 +7,11 @@
 constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 
 
+/////////////////////// SEH Protection ///////////////////////
+// Remove this to disable SEH all around LiteLoader
+#define ENABLE_SEH_PROTECTION
+
+
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
@@ -39,7 +44,7 @@ bool LoadLLConfig();
 #define LL_UPDATE_URL_PREFIX "https://cdn.jsdelivr.net/gh/LiteLDev/Upgrade"
 #define LL_UPDATE_URL_PATH "/LL/LL.json"
 
-#define LL_UPDATE_CHECK_INTERVAL 10 * 60
+#define LL_UPDATE_CHECK_INTERVAL (10 * 60)
 #define LL_UPDATE_CONNECTION_TIMEOUT 60
 
 #define LL_UPDATE_PROGRAM "plugins/LiteLoader/LLAutoUpdate.dll"

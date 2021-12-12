@@ -22,7 +22,9 @@ struct JumpPreventionResult {
 };
 
 public:
-LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
+
+    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
+    LIAPI bool refreshInventory();
 
 #undef AFTER_EXTRA
 
@@ -248,14 +250,14 @@ public:
         *((void**)&rv) = dlsym("?isShootable@Mob@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool useNewAi() const{
-        bool (Mob::*rv)() const;
-        *((void**)&rv) = dlsym("?useNewAi@Mob@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool _allowAscendingScaffolding() const{
         bool (Mob::*rv)() const;
         *((void**)&rv) = dlsym("?_allowAscendingScaffolding@Mob@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool useNewAi() const{
+        bool (Mob::*rv)() const;
+        *((void**)&rv) = dlsym("?useNewAi@Mob@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline float _getWalkTargetValue(class BlockPos const& a0){

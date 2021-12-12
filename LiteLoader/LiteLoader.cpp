@@ -13,13 +13,15 @@
 #include <Config.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
+#include "CrashLogger.h"
 #include <Header/EventAPI.h>
 
 using namespace std;
 
+Logger logger("LiteLoader");
 
 void FixPluginsLibDir() {  // add plugins folder to path
-    WCHAR *buffer = new WCHAR[8192];
+    auto *buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
@@ -42,14 +44,15 @@ extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        Logger::Log(" ");
-        Logger::Log("================= LiteLoader ================");
-        Logger::Log(" ____             __  __           _      ");
-        Logger::Log("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        Logger::Log("| | | |/ _ \\ \\ / / |\\/| |/ _ \\ / _` |/ _ \\");
-        Logger::Log("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        Logger::Log("|____/ \\___| \\_/ |_|  |_|\\___/ \\__,_|\\___|\n");
-        Logger::Warn("You Are In DevelopMode!");
+        logger.info("");
+        logger.info("================= LiteLoader ================");
+        logger.info(" ____             __  __           _      ");
+        logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        logger.info("");
+        logger.warn("You Are In DevelopMode!");
     }
 }
 
@@ -63,9 +66,16 @@ void LLMain() {
     //Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
+    //Create Plugin Directory
+    std::error_code ec;
+    std::filesystem::create_directories("plugins", ec);
+
     //Fix problems
     FixUpCWD();
     FixPluginsLibDir();
+
+    //Init LL Logger
+    Logger::setFile("logs/LiteLoader-latest.log", false);
 
     //Load Config
     LoadLLConfig();
@@ -76,12 +86,11 @@ void LLMain() {
     std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
-    //Init LL Logger
-    Logger::setTitle("LiteLoader");
-    Logger::setFile("logs/LiteLoader-latest.log", false);
-
     //DebugMode
     CheckDevMode();
+
+    //Builtin CrashLogger
+    InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Load plugins
     LoadMain();
@@ -95,8 +104,8 @@ void LLMain() {
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
     { 
         // Server started event
-        Logger::Info("LiteLoader is distributed under the GPLv3 License");
-        Logger::Info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
+        logger.info("LiteLoader is distributed under the GPLv3 License");
+        logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
             InitAutoUpdateCheck();
         return true;

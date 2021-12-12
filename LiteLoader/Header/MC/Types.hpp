@@ -15,7 +15,29 @@ class Color;
 }; // namespace mce
 
 class Vec3;
-class BlockPos {
+class BlockPos;
+
+class ChunkBlockPos
+{
+public:
+    char x;
+    char z;
+    short y; // ChunkLocalHeight
+    ChunkBlockPos()
+        : x(0)
+        , y(0)
+        , z(0){};
+
+    ChunkBlockPos(char x, short y, char z)
+        : x(x)
+        , y(y)
+        , z(z){};
+
+    LIAPI ChunkBlockPos(BlockPos const&, short);
+};
+
+class BlockPos
+{
 public:
     int x, y, z;
 
@@ -52,6 +74,8 @@ public:
     }
 
     LIAPI Vec3 toVec3();
+    LIAPI Vec3 bottomCenter();
+    LIAPI Vec3 center();
 };
 
 
@@ -74,6 +98,8 @@ public:
     }
 
     LIAPI BlockPos toBlockPos();
+    LIAPI float length();
+    LIAPI float distanceTo(Vec3 const&);
 
     inline Vec3 add(float dx, float dy, float dz) {
         return {x + dx, y, z};
@@ -88,7 +114,9 @@ public:
     inline Vec3 operator*(float num) { return { x * num, y * num, z * num }; }
     inline Vec3 operator+(const Vec3& b) { return { this->x + b.x, this->y + b.y, this->z + b.z }; }
     inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
+
 };
+
 
 #include "AABB.hpp"
 class BoundingBox {
@@ -103,7 +131,7 @@ public:
     LIAPI AABB toAABB();
 };
 
-struct IVec2 {
+class Vec2 {
 private:
     static inline int iround(float x) {
         int r = int(x);
@@ -115,8 +143,8 @@ private:
 public:
     int x, z;
 
-    IVec2(Vec3 l) :x(iround(l.x)), z(iround(l.z)) {}
-    IVec2(int a, int b) : x(a), z(b) {}
+    Vec2(Vec3 l) :x(iround(l.x)), z(iround(l.z)) {}
+    Vec2(int a, int b) : x(a), z(b) {}
 
     inline void operator+=(int v) { x += v; z += v; }
 };
@@ -628,14 +656,14 @@ enum class ActorDamageCause : int {
 };
 
 enum class ObjectiveSortOrder : char {
-    ASCENDING = 0,
-    DESCENDING = 1
+    Ascending = 0,
+    Descending = 1
 };
 
 enum class PlayerScoreSetFunction : char {
-    SET = 0,
-    ADD = 1,
-    REMOVE = 2
+    Set = 0,
+    Add = 1,
+    Remove = 2
 };
 
 enum class FaceID : char {

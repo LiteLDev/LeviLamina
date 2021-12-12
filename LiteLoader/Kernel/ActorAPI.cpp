@@ -14,10 +14,15 @@
 #include <MC/Material.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
+#include <MC/CompoundTag.hpp>
+#include <MC/ListTag.hpp>
+#include <MC/StringTag.hpp>
 #include <MC/SimpleContainer.hpp>
 #include <MC/TeleportCommand.hpp>
 #include <MC/TeleportTarget.hpp>
 #include <MC/UserEntityIdentifierComponent.hpp>
+#include <MC/OnFireSystem.hpp>
+
 class UserEntityIdentifierComponent;
 
 UserEntityIdentifierComponent* Actor::getUserEntityIdentifierComponent() const {
@@ -60,8 +65,8 @@ std::string Actor::getTypeName() const {
     if (isPlayer())
         return "minecraft:player";
     else {
-        HashedString* hash = dAccess<HashedString*>(this, 880); //IDA Actor::Actor
-        return hash->getString();
+        HashedString hash = dAccess<HashedString>(this, 880); //IDA Actor::Actor
+        return hash.getString();
     }
 }
 
@@ -72,9 +77,20 @@ bool Actor::hurtEntity(int damage) {
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
-Vec2* Actor::getDirction() const {
+Vec2* Actor::getDirection() const {
     return (Vec2*)(this + 312); // IDA: Actor::getRotation()
 }
+
+BlockPos Actor::getBlockPos() {
+    auto pos = getPos();  
+    return Vec3{pos.x, pos.y + (float)0.5, pos.z}.toBlockPos();
+}
+
+BlockInstance Actor::getBlockStandingOn()
+{
+    return Level::getBlockInstance(getBlockPosCurrentlyStandingOn(nullptr), getDimensionId());
+}
+
 
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
@@ -84,11 +100,12 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-void Actor::teleport(Vec3 to, int dimid) {
+bool Actor::teleport(Vec3 to, int dimid) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
     auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
+    return true;
 }
 
 ItemStack* Actor::getHandSlot() {
@@ -112,6 +129,20 @@ bool Actor::refreshActorData() {
     _sendDirtyActorData();
     return true;
 }
+
+bool Actor::setOnFire(int num,bool iseffect) {
+    if (iseffect)
+        OnFireSystem::setOnFire(*this, num);
+    else
+        OnFireSystem::setOnFireNoEffects(*this, num);
+    return true;
+}
+
+bool Actor::stopFire() {
+    OnFireSystem::stopFire(*this);
+    return true;
+}
+
 
 Vec3 Actor::getCameraPos() const {
     Vec3 pos = *(Vec3*)&getStateVectorComponent();
@@ -173,4 +204,37 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     Vec3 resultPos;
     HitDetection::searchActors(viewVec, maxDistance, pos, aabb, this, (Player*)this, distance, result, resultPos, player);
     return result;
+}
+
+bool Actor::addEffect(MobEffect::EffectType type, int tick, int level, bool ambient, bool showParticles, bool showAnimation)
+{
+    MobEffectInstance ins = MobEffectInstance((unsigned int)type, tick, level, ambient, showParticles, showAnimation);
+    ins.applyEffects(this);
+    return true;
+};
+
+std::vector<std::string> Actor::getAllTags()
+{
+    try
+    {
+        auto nbt = getNbt();
+        auto& list = ((ListTag*)nbt->getListTag("Tags"))->value();
+
+        vector<string> res;
+        for (auto& tag : list)
+        {
+            res.emplace_back(tag->asStringTag()->get());
+        }
+        return res;
+    }
+    catch (...)
+    {
+        return {};
+    }
+}
+
+bool Actor::hasTag(string tag)
+{
+    auto tags = getAllTags();
+    return std::find(tags.begin(), tags.end(), tag) != tags.end();
 }

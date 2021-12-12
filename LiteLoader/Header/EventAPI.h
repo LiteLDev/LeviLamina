@@ -7,6 +7,7 @@
 #include <iterator>
 #include <list>
 #include <string>
+
 using std::function;
 using std::string;
 
@@ -88,9 +89,9 @@ public:
             }
             return passToBDS;
         } catch (const seh_exception& e) {
-            Logger::Error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
+            Logger("Event").error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
         } catch (const std::exception& e) {
-            Logger::Error("Uncaught Exception in Event({})!", typeid(EVENT).name());
+            Logger("Event").error("Uncaught Exception in Event({})!", typeid(EVENT).name());
         }
         return passToBDS;
     }
@@ -101,36 +102,36 @@ public:
 
 class PlayerPreJoinEvent : public EventTemplate<PlayerPreJoinEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     string mIP;
     string mXUID;
 };
 
 class PlayerJoinEvent : public EventTemplate<PlayerJoinEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
 };
 
 class PlayerLeftEvent : public EventTemplate<PlayerLeftEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     string mXUID;
 };
 
 class PlayerRespawnEvent : public EventTemplate<PlayerRespawnEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
 };
 
 class PlayerUseItemEvent : public EventTemplate<PlayerUseItemEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     ItemStack* mItemStack;
 };
 
 class PlayerUseItemOnEvent : public EventTemplate<PlayerUseItemOnEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
     ItemStack* mItemStack;
     BlockInstance mBlockInstance;
     unsigned char mFace;
@@ -145,6 +146,7 @@ public:
 class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent> {
 public:
     Player* mPlayer;
+    int mDimensionId;
 };
 
 class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent> {
@@ -165,9 +167,10 @@ public:
     int mAttackDamage;
 };
 
-class PlayerDeathEvent : public EventTemplate<PlayerDeathEvent> {
+class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
-    ServerPlayer* mPlayer;
+    Player* mPlayer;
+    ActorDamageSource* mDamageSource;
 };
 
 class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent> {
@@ -327,7 +330,8 @@ public:
 
 class FireSpreadEvent : public EventTemplate<FireSpreadEvent> {
 public:
-    BlockInstance mBlockInstance;
+    BlockPos mTarget;
+    int mDimensionId;
 };
 
 class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent> {
@@ -353,14 +357,11 @@ public:
     bool mIsActivated;
 };
 
-class HopperBlockSearchItemEvent : public EventTemplate<HopperBlockSearchItemEvent> {
+class HopperSearchItemEvent : public EventTemplate<HopperSearchItemEvent> {
 public:
-    BlockInstance mBlockInstance;
-};
-
-class MinecartHopperSearchItemEvent : public EventTemplate<MinecartHopperSearchItemEvent> {
-public:
-    Vec3 mPos;
+    bool isMinecart;
+    BlockInstance mHopperBlock;
+    Vec3 mMinecartPos;
     int mDimensionId;
 };
 
@@ -392,7 +393,9 @@ public:
 class CmdBlockExecuteEvent : public EventTemplate<CmdBlockExecuteEvent> {
 public:
     string mCommand;
+    bool mIsMinecart;
     BlockInstance mBlockInstance;
+    Actor* mMinecart;
 };
 
 class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent> {
@@ -410,8 +413,8 @@ public:
     int mDimensionId;
     float mRadius;
     float mRange;
-    bool mIsDestroyed;
-    bool mIsOnFire;
+    bool mIsDestroy;
+    bool mIsFire;
 };
 
 class MobHurtEvent : public EventTemplate<MobHurtEvent> {
@@ -424,7 +427,7 @@ public:
 class MobDieEvent : public EventTemplate<MobDieEvent> {
 public:
     Mob* mMob;
-    Actor* mSource;
+    ActorDamageSource *mDamageSource;
 };
 
 class ProjectileHitEntityEvent : public EventTemplate<ProjectileHitEntityEvent> {
@@ -484,6 +487,8 @@ public:
 class PostInitEvent : public EventTemplate<PostInitEvent> {};
 
 class ServerStartedEvent : public EventTemplate<ServerStartedEvent> {};
+
+class ServerStoppedEvent: public EventTemplate<ServerStoppedEvent>{};
 
 class ConsoleCmdEvent : public EventTemplate<ConsoleCmdEvent> {
 public:

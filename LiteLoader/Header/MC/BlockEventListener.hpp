@@ -52,39 +52,34 @@ public:
         *((void**)&rv) = dlsym("?onCraftUISetResultName@BlockEventListener@@UEAA?AW4EventResult@@AEBUCraftUISetResultNameEvent@@@Z");
         return (this->*rv)(std::forward<struct CraftUISetResultNameEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onBlockInteractedWith(class Player& a0, class BlockPos const& a1){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1));
-    }
     inline int \/*enum enum EventResult*\/ onBlockDestructionStopped(class Player& a0, class BlockPos const& a1, int a2){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, class BlockPos const&, int);
         *((void**)&rv) = dlsym("?onBlockDestructionStopped@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@H@Z");
         return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1), std::forward<int>(a2));
+    }
+    inline int \/*enum enum EventResult*\/ onBlockInteractedWith(class Player& a0, class BlockPos const& a1){
+        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, class BlockPos const&);
+        *((void**)&rv) = dlsym("?onBlockInteractedWith@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1));
     }
     inline int \/*enum enum EventResult*\/ onBlockDestructionStarted(class Player& a0, class BlockPos const& a1){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, class BlockPos const&);
         *((void**)&rv) = dlsym("?onBlockDestructionStarted@BlockEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1));
     }
-    inline int \/*enum enum EventResult*\/ onPreBlockPatterned(struct BlockPatternEvent const& a0){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct BlockPatternEvent const&);
-        *((void**)&rv) = dlsym("?onPreBlockPatterned@BlockEventListener@@UEAA?AW4EventResult@@AEBUBlockPatternEvent@@@Z");
-        return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
+    inline int \/*enum enum EventResult*\/ onChestBlockTryPaired(struct ChestBlockTryPairEvent const& a0){
+        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct ChestBlockTryPairEvent const&);
+        *((void**)&rv) = dlsym("?onChestBlockTryPaired@BlockEventListener@@UEAA?AW4EventResult@@AEBUChestBlockTryPairEvent@@@Z");
+        return (this->*rv)(std::forward<struct ChestBlockTryPairEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onUnknownBlockReceived(class Level& a0, struct NewBlockID const& a1, unsigned short a2){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Level&, struct NewBlockID const&, unsigned short);
         *((void**)&rv) = dlsym("?onUnknownBlockReceived@BlockEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEBUNewBlockID@@G@Z");
         return (this->*rv)(std::forward<class Level&>(a0), std::forward<struct NewBlockID const&>(a1), std::forward<unsigned short>(a2));
     }
-    inline int \/*enum enum EventResult*\/ onChestBlockTryPaired(struct ChestBlockTryPairEvent const& a0){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct ChestBlockTryPairEvent const&);
-        *((void**)&rv) = dlsym("?onChestBlockTryPaired@BlockEventListener@@UEAA?AW4EventResult@@AEBUChestBlockTryPairEvent@@@Z");
-        return (this->*rv)(std::forward<struct ChestBlockTryPairEvent const&>(a0));
-    }
-    inline int \/*enum enum EventResult*\/ onPostBlockPatterned(struct BlockPatternEvent const& a0){
+    inline int \/*enum enum EventResult*\/ onPreBlockPatterned(struct BlockPatternEvent const& a0){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct BlockPatternEvent const&);
-        *((void**)&rv) = dlsym("?onPostBlockPatterned@BlockEventListener@@UEAA?AW4EventResult@@AEBUBlockPatternEvent@@@Z");
+        *((void**)&rv) = dlsym("?onPreBlockPatterned@BlockEventListener@@UEAA?AW4EventResult@@AEBUBlockPatternEvent@@@Z");
         return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorInsideBlock(struct ActorInsideBlockEvent const& a0){
@@ -92,15 +87,20 @@ public:
         *((void**)&rv) = dlsym("?onActorInsideBlock@BlockEventListener@@UEAA?AW4EventResult@@AEBUActorInsideBlockEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorInsideBlockEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onBlockModified(class BlockPos const& a0, class Block const& a1, class Block const& a2){
-        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class BlockPos const&, class Block const&, class Block const&);
-        *((void**)&rv) = dlsym("?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Block const&>(a2));
+    inline int \/*enum enum EventResult*\/ onPostBlockPatterned(struct BlockPatternEvent const& a0){
+        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct BlockPatternEvent const&);
+        *((void**)&rv) = dlsym("?onPostBlockPatterned@BlockEventListener@@UEAA?AW4EventResult@@AEBUBlockPatternEvent@@@Z");
+        return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
     }
     inline int \/*enum enum EventResult*\/ onActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(struct ActorStandOnBlockEvent const&);
         *((void**)&rv) = dlsym("?onActorStandOnBlock@BlockEventListener@@UEAA?AW4EventResult@@AEBUActorStandOnBlockEvent@@@Z");
         return (this->*rv)(std::forward<struct ActorStandOnBlockEvent const&>(a0));
+    }
+    inline int \/*enum enum EventResult*\/ onBlockModified(class BlockPos const& a0, class Block const& a1, class Block const& a2){
+        int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class BlockPos const&, class Block const&, class Block const&);
+        *((void**)&rv) = dlsym("?onBlockModified@BlockEventListener@@UEAA?AW4EventResult@@AEBVBlockPos@@AEBVBlock@@1@Z");
+        return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Block const&>(a2));
     }
     inline int \/*enum enum EventResult*\/ onBlockPlacedByPlayer(class Player& a0, class Block const& a1, class BlockPos const& a2, bool a3){
         int \/*enum enum EventResult*\/ (BlockEventListener::*rv)(class Player&, class Block const&, class BlockPos const&, bool);

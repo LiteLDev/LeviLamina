@@ -54,7 +54,6 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
       <ExceptionHandling>Async</ExceptionHandling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <Optimization>Disabled</Optimization>
       <LanguageStandard_C>Default</LanguageStandard_C>
     </ClCompile>
     <Link>
@@ -89,12 +88,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
-    <ClCompile Include="CheckNotice.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BuiltinBugFix.cpp" />
+    <ClInclude Include="Header\GuiAPI.h" />
+    <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
+    <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
     <ClInclude Include="Header\MC\Automation.hpp" />
     <ClInclude Include="Header\MC\BinaryStream.hpp" />
     <ClInclude Include="Header\MC\BlockInstance.hpp" />
@@ -106,6 +107,8 @@
     <ClInclude Include="Header\MC\CommandOutput.hpp" />
     <ClInclude Include="Header\MC\CommandParameterData.hpp" />
     <ClInclude Include="Header\MC\CommandRegistry.hpp" />
+    <ClInclude Include="Header\MC\CommandSelector.hpp" />
+    <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />
     <ClInclude Include="Header\MC\CompoundTag.hpp" />
     <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
@@ -119,6 +122,7 @@
     <ClInclude Include="Header\MC\IntArrayTag.hpp" />
     <ClInclude Include="Header\MC\IntTag.hpp" />
     <ClInclude Include="Header\MC\ListTag.hpp" />
+    <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
@@ -152,6 +156,7 @@
     <ClInclude Include="Header\MC\Scoreboard.hpp" />
     <ClInclude Include="Header\MC\Spawner.hpp" />
     <ClCompile Include="Kernel\ActorAPI.cpp" />
+    <ClCompile Include="Kernel\ActorDamageSource.cpp" />
     <ClCompile Include="Kernel\BinaryStream.cpp" />
     <ClCompile Include="Kernel\BlockActorAPI.cpp" />
     <ClCompile Include="Kernel\BlockAPI.cpp" />
@@ -166,12 +171,14 @@
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
+    <ClCompile Include="Kernel\GuiAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
     <ClCompile Include="Kernel\ListTagAPI.cpp" />
     <ClCompile Include="Kernel\LLAPI.cpp" />
+    <ClCompile Include="Kernel\LoggerAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
@@ -181,11 +188,11 @@
     <ClCompile Include="Kernel\ScoreboardAPI.cpp" />
     <ClCompile Include="Kernel\SpawnerAPI.cpp" />
     <ClCompile Include="Kernel\StructureTemplateAPI.cpp" />
+    <ClCompile Include="Kernel\TagMemoryChunk.cpp" />
     <ClCompile Include="Kernel\Types.cpp" />
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp" />
     <ClCompile Include="Kernel\Utils\FileHelper.cpp" />
     <ClCompile Include="Kernel\TranslationAPI.cpp" />
-    <ClCompile Include="Kernel\LoggerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\GlobalService.cpp" />
     <ClCompile Include="Kernel\Utils\NetworkHelper.cpp" />
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp" />
@@ -199,7 +206,7 @@
     <ClCompile Include="Kernel\Utils\WinHelper.cpp" />
     <ClCompile Include="LiteLoader.cpp" />
     <ClCompile Include="ModifyInfomation.cpp" />
-    <ClCompile Include="PlayerDB.cpp" />
+    <ClCompile Include="PlayerInfoAPI.cpp" />
     <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="BuiltinCommands.cpp" />
     <ClCompile Include="SimpleServerLogger.cpp" />
@@ -213,11 +220,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AutoUpgrade.h" />
-    <ClInclude Include="CheckNotice.h" />
     <ClInclude Include="Config.h" />
     <ClInclude Include="CrashLogger.h" />
     <ClInclude Include="Header\EventAPI.h" />
-    <ClInclude Include="Header\PlayerDB.h" />
+    <ClInclude Include="Header\PlayerInfoAPI.h" />
     <ClInclude Include="Header\RegCommandAPI.h" />
     <ClInclude Include="Header\ScheduleAPI.h" />
     <ClInclude Include="Header\Global.h" />
@@ -231,7 +237,6 @@
     <ClInclude Include="Header\Utils\Hash.h" />
     <ClInclude Include="Header\HookAPI.h" />
     <ClInclude Include="Header\TranslationAPI.h" />
-    <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
     <ClInclude Include="Header\Utils\GlobalService.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
@@ -241,6 +246,7 @@
     <ClInclude Include="Header\Utils\PluginOwnData.h" />
     <ClInclude Include="Header\Utils\VarInt.h" />
     <ClInclude Include="Header\Utils\ViewHelper.h" />
+    <ClInclude Include="Lib\third-party\nbt-cpp\nbt_internal.hpp" />
     <ClInclude Include="Loader.h" />
     <ClInclude Include="PluginManager.h" />
     <ClInclude Include="Header\KVDBAPI.h" />

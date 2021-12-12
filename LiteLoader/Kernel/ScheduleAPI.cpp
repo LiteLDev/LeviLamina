@@ -82,13 +82,13 @@ inline static void nextrun() {
             next_run.pop_front();
         }
     } catch (const seh_exception& e) {
-        Logger::Error("SEH exception occurred at nextTask!");
-        Logger::Error("{}", e.what());
+        logger.error("SEH exception occurred at nextTask!");
+        logger.error("{}", e.what());
     } catch (const std::exception& e) {
-        Logger::Error("Exception occurred at nextTask!");
-        Logger::Error("{}", e.what());
+        logger.error("Exception occurred at nextTask!");
+        logger.error("{}", e.what());
     } catch (...) {
-        Logger::Error("Exception occurred at nextTask!");
+        logger.error("Exception occurred at nextTask!");
     }
     cas_nextrun.clear();
 }
@@ -117,13 +117,13 @@ inline static void tick() {
             }
         }
     } catch (const seh_exception& e) {
-        Logger::Error("SEH exception occurred in task!");
-        Logger::Error("{}", e.what());
+        logger.error("SEH exception occurred in task!");
+        logger.error("{}", e.what());
     } catch (const std::exception& e) {
-        Logger::Error("Exception occurred in task!");
-        Logger::Error("{}", e.what());
+        logger.error("Exception occurred in task!");
+        logger.error("{}", e.what());
     } catch (...) {
-        Logger::Error("Exception occurred in task!");
+        logger.error("Exception occurred in task!");
     }
 }
 } // namespace Schedule

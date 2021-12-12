@@ -1,5 +1,6 @@
 #include <Global.h>
 #include <MC/Block.hpp>
+#include <MC/BlockActor.hpp>
 #include <MC/BlockInstance.hpp>
 #include <MC/BlockLegacy.hpp>
 #include <MC/BlockSource.hpp>
@@ -46,15 +47,9 @@ bool BlockInstance::hasContainer() {
 }
 
 class DropperBlockActor;
-Container* BlockInstance::getContainer() {
-    Vec3 vec = pos.toVec3();
-
-    //VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
-    // This function didn't use 'this' pointer
-    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
-                                   Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &vec);
-
-    return container;
+Container* BlockInstance::getContainer()
+{
+    return VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
 }
 
 //bad

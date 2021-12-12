@@ -87,6 +87,11 @@ public:
         *((void**)&rv) = dlsym("?useNormalizedFontSize@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool sendPermissionsTelemetry() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool webSocketsDisabled() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?webSocketsDisabled@AppConfigs@@UEBA_NXZ");
@@ -97,9 +102,9 @@ public:
         *((void**)&rv) = dlsym("?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool sendPermissionsTelemetry() const{
+    inline bool supportsChangingMultiplayerDuringPlay() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool shouldPromptBeforeExit() const{
@@ -107,24 +112,19 @@ public:
         *((void**)&rv) = dlsym("?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool supportsChangingMultiplayerDuringPlay() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isLessonProgressionSupported() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool gameArgumentsNeedAuthentication() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool requireTrustedContent() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool gameArgumentsNeedAuthentication() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool canUseAzureNotebooks() const{

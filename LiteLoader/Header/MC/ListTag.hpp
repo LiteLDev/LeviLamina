@@ -20,14 +20,18 @@ public:
     inline static ListTag* create() {
         return (ListTag*)Tag::createTag(Tag::Type::List);
     }
+
     inline std::vector<Tag*>& value() {
         return dAccess<std::vector<Tag*>, 8>(this);
     }
+
     inline Tag* operator[](int index) {
         if (index < size())
             return get(index);
         return nullptr;
     }
+
+    inline size_t getSize() { return val.size(); }
 
     // get value
     LIAPI unsigned char getByte(int) const;
@@ -49,6 +53,11 @@ public:
     LIAPI void addByteArray(void* data, size_t size);
     LIAPI void addIntArray(TagMemoryChunk);
     LIAPI void addIntArray(void* data, size_t size);
+
+    inline vector<Tag*> get()
+    {
+        return value();
+    }
 
 #undef AFTER_EXTRA
 

@@ -46,9 +46,9 @@ double& CompoundTag::putDouble(std::string key, double val) {
 }
 
 void CompoundTag::putByteArray(std::string key, void* data, size_t size) {
-    uint8_t* written = new uint8_t[size];
+    char* written = new char[size];
     memcpy(written, data, size);
-    TagMemoryChunk tmc(size, written);
+    TagMemoryChunk tmc(written, size);
     putByteArray(key, tmc);
 }
 

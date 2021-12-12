@@ -44,15 +44,15 @@ public:
         *((void**)&rv) = dlsym("?getClientInstance@DirectPlayerMovementProxy@@UEBAPEBUIClientInstanceProxy@@XZ");
         return (this->*rv)();
     }
-    inline void setLastLookBob(class Vec2 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
-        *((void**)&rv) = dlsym("?setLastLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
-    }
     inline void registerFramewiseActionOrStop(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?registerFramewiseActionOrStop@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void setLastLookBob(class Vec2 const& a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
+        *((void**)&rv) = dlsym("?setLastLookBob@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
+        return (this->*rv)(std::forward<class Vec2 const&>(a0));
     }
     inline void setLookBob(class Vec2 const& a0){
         void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
@@ -64,11 +64,6 @@ public:
         *((void**)&rv) = dlsym("?setJumpRidingScale@DirectPlayerMovementProxy@@UEAAXM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline void setCurrentLocalMoveVelocity(class Vec2 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
-        *((void**)&rv) = dlsym("?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
-        return (this->*rv)(std::forward<class Vec2 const&>(a0));
-    }
     inline void sendInput(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendInput@DirectPlayerMovementProxy@@UEAAXXZ");
@@ -78,6 +73,11 @@ public:
         void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
         *((void**)&rv) = dlsym("?setLastDelta@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const&>(a0));
+    }
+    inline void setCurrentLocalMoveVelocity(class Vec2 const& a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec2 const&);
+        *((void**)&rv) = dlsym("?setCurrentLocalMoveVelocity@DirectPlayerMovementProxy@@UEAAXAEBVVec2@@@Z");
+        return (this->*rv)(std::forward<class Vec2 const&>(a0));
     }
     inline void updateClientPlayerInputState(){
         void (DirectPlayerMovementProxy::*rv)();
@@ -89,15 +89,15 @@ public:
         *((void**)&rv) = dlsym("?setWasAutoJumping@DirectPlayerMovementProxy@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void setLastPos(class Vec3 const& a0){
-        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
-        *((void**)&rv) = dlsym("?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0));
-    }
     inline void sendPosition(){
         void (DirectPlayerMovementProxy::*rv)();
         *((void**)&rv) = dlsym("?sendPosition@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void setLastPos(class Vec3 const& a0){
+        void (DirectPlayerMovementProxy::*rv)(class Vec3 const&);
+        *((void**)&rv) = dlsym("?setLastPos@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
+        return (this->*rv)(std::forward<class Vec3 const&>(a0));
     }
     inline void setEmotePlayedEndedEarly(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);

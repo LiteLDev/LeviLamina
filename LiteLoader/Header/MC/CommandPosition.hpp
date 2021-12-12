@@ -39,5 +39,7 @@ public:
     MCAPI class CompoundTag serialize() const;
 
 protected:
+
 private:
+
 };

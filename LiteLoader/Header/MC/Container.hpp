@@ -17,7 +17,7 @@ public:
 
 	LIAPI bool addItem(ItemStack* item);
 	LIAPI bool addItemToFirstEmptySlot(ItemStack* item);
-	LIAPI bool removeItem(int slot, unsigned int number);
+	LIAPI bool removeItem_s(int slot, unsigned int number);
 	LIAPI ItemStack* getSlot(int slot);
 	LIAPI std::vector<const ItemStack*> getAllSlots();
 	LIAPI int getSize();

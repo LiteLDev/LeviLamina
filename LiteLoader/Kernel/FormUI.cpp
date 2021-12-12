@@ -16,7 +16,8 @@ map<unsigned, bool> isSimpleForm;
 map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleForms;
 map<unsigned, std::shared_ptr<Form::CustomForm>> customForms;
 
-unsigned NewFormId() {
+unsigned NewFormId()
+{
     unsigned formId;
     do {
         formId = RAND_FORM_ID();
@@ -24,12 +25,15 @@ unsigned NewFormId() {
     return formId;
 }
 
-namespace Form {
+namespace Form
+{
 //////////////////////////////// Simple Form ////////////////////////////////
-string Button::serialize() {
+string Button::serialize()
+{
     fifo_json button;
     button["text"] = text;
-    if (!image.empty()) {
+    if (!image.empty())
+    {
         fifo_json imageObj;
         imageObj["type"] = image.find("textures/") == 0 ? "path" : "url";
         imageObj["data"] = image;
@@ -38,12 +42,27 @@ string Button::serialize() {
     return button.dump();
 }
 
-SimpleForm& SimpleForm::append(const Button& element) {
+SimpleForm& SimpleForm::setTitle(const string& title)
+{
+    this->title = title;
+    return *this;
+}
+
+SimpleForm& SimpleForm::setContent(const string& content)
+{
+    this->content = content;
+    return *this;
+}
+
+
+SimpleForm& SimpleForm::append(const Button& element)
+{
     elements.emplace_back(make_shared<Button>(element));
     return *this;
 }
 
-string SimpleForm::serialize() {
+string SimpleForm::serialize()
+{
     fifo_json form = fifo_json::parse(R"({"title":"","content":"","buttons":[],"type":"form"})");
     form["title"] = title;
     form["content"] = content;
@@ -52,7 +71,8 @@ string SimpleForm::serialize() {
     return form.dump();
 }
 
-bool SimpleForm::sendTo(ServerPlayer* player, Callback callback) {
+bool SimpleForm::sendTo(ServerPlayer* player, Callback callback)
+{
     unsigned id = NewFormId();
     isSimpleForm[id] = true;
     simpleForms[id] = make_shared<SimpleForm>(*this);
@@ -69,14 +89,16 @@ bool SimpleForm::sendTo(ServerPlayer* player, Callback callback) {
 }
 
 //////////////////////////////// Custom Form ////////////////////////////////
-string Label::serialize() {
+string Label::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "label";
     itemAdd["text"] = text;
     return itemAdd.dump();
 }
 
-string Input::serialize() {
+string Input::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "input";
     itemAdd["text"] = title;
@@ -87,7 +109,8 @@ string Input::serialize() {
     return itemAdd.dump();
 }
 
-string Toggle::serialize() {
+string Toggle::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "toggle";
     itemAdd["text"] = title;
@@ -96,7 +119,8 @@ string Toggle::serialize() {
     return itemAdd.dump();
 }
 
-string Dropdown::serialize() {
+string Dropdown::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "dropdown";
     itemAdd["text"] = title;
@@ -111,7 +135,8 @@ string Dropdown::serialize() {
     return itemAdd.dump();
 }
 
-string Slider::serialize() {
+string Slider::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "slider";
     itemAdd["text"] = title;
@@ -121,13 +146,15 @@ string Slider::serialize() {
     itemAdd["min"] = min;
     itemAdd["max"] = max;
     itemAdd["step"] = step >= 1 ? step : 1;
-    if (def > 0 && min <= def && max >= def) {
+    if (def > 0 && min <= def && max >= def)
+    {
         itemAdd["default"] = def;
     }
     return itemAdd.dump();
 }
 
-string StepSlider::serialize() {
+string StepSlider::serialize()
+{
     fifo_json itemAdd;
     itemAdd["type"] = "step_slider";
     itemAdd["text"] = title;
@@ -138,51 +165,72 @@ string StepSlider::serialize() {
     itemAdd["steps"] = items;
 
     int maxIndex = items.size() - 1;
-    if (def >= 0 && def <= maxIndex) {
+    if (def >= 0 && def <= maxIndex)
+    {
         itemAdd["default"] = def;
     }
     return itemAdd.dump();
 }
 
-CustomForm& CustomForm::append(const Label& element) {
+CustomForm& CustomForm::setTitle(const string& title)
+{
+    this->title = title;
+    return *this;
+}
+
+CustomForm& CustomForm::append(const Label& element)
+{
     elements[element.name] = make_shared<Label>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-CustomForm& CustomForm::append(const Input& element) {
+CustomForm& CustomForm::append(const Input& element)
+{
     elements[element.name] = make_shared<Input>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-CustomForm& CustomForm::append(const Toggle& element) {
+CustomForm& CustomForm::append(const Toggle& element)
+{
     elements[element.name] = make_shared<Toggle>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-CustomForm& CustomForm::append(const Dropdown& element) {
+CustomForm& CustomForm::append(const Dropdown& element)
+{
     elements[element.name] = make_shared<Dropdown>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-CustomForm& CustomForm::append(const Slider& element) {
+CustomForm& CustomForm::append(const Slider& element)
+{
     elements[element.name] = make_shared<Slider>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-CustomForm& CustomForm::append(const StepSlider& element) {
+CustomForm& CustomForm::append(const StepSlider& element)
+{
     elements[element.name] = make_shared<StepSlider>(element);
+    dataInfo.push_back(element.name);
     return *this;
 }
 
-string CustomForm::serialize() {
+string CustomForm::serialize()
+{
     fifo_json form = fifo_json::parse(R"({ "title":"", "type":"custom_form", "content":[], "buttons":[] })");
     form["title"] = title;
-    for (auto& [k, v] : elements)
-        form["content"].push_back(fifo_json::parse(v->serialize()));
+    for (auto& i : dataInfo)
+        form["content"].push_back(fifo_json::parse(elements[i]->serialize()));
     return form.dump();
 }
 
-bool CustomForm::sendTo(ServerPlayer* player, Callback callback) {
+bool CustomForm::sendTo(ServerPlayer* player, Callback callback)
+{
     unsigned id = NewFormId();
     isSimpleForm[id] = false;
     customForms[id] = make_shared<CustomForm>(*this);
@@ -206,15 +254,18 @@ class Packet;
 class ServerNetworkHandler;
 class NetworkIdentifier;
 
-Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id, Packet* packet) {
+Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id, Packet* packet)
+{
     return handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
-void CallFormCallback(Player* player, unsigned formId, const string& data) {
+void CallFormCallback(Player* player, unsigned formId, const string& data)
+{
     if (isSimpleForm.find(formId) == isSimpleForm.end())
         return;
 
-    if (isSimpleForm[formId]) {
+    if (isSimpleForm[formId])
+    {
         int chosen = stoi(data);
 
         //Simple Form Callback
@@ -227,9 +278,36 @@ void CallFormCallback(Player* player, unsigned formId, const string& data) {
             button->callback();
 
         simpleForms.erase(formId);
-    } else {
+    }
+    else
+    {
         //Custom Form Callback
         auto form = customForms[formId];
+
+        fifo_json res = fifo_json::parse(data);
+        int nowIndex = 0;
+        for (fifo_json& j : res)
+        {
+            switch (form->getType(nowIndex++))
+            {
+            case CustomFormElement::Type::Input:
+                form->setData<Input>(nowIndex, j.get<string>());
+                break;
+            case CustomFormElement::Type::Toggle:
+                form->setData<Toggle>(nowIndex, j.get<bool>());
+                break;
+            case CustomFormElement::Type::Dropdown:
+                form->setData<Dropdown>(nowIndex, j.get<int>());
+                break;
+            case CustomFormElement::Type::Slider:
+                form->setData<Slider>(nowIndex, j.get<int>());
+                break;
+            case CustomFormElement::Type::StepSlider:
+                form->setData<StepSlider>(nowIndex, j.get<int>());
+                break;
+            }
+        }
+
         if (form->callback)
             form->callback(form->elements);
         customForms.erase(formId);
@@ -238,12 +316,15 @@ void CallFormCallback(Player* player, unsigned formId, const string& data) {
 }
 
 THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-      void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket) {
-    try {
+      void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+{
+    try
+    {
         Packet* packet = *(Packet**)pPacket;
         Player* p = GetPlayerFromPacket(handler, id, packet);
 
-        if (p) {
+        if (p)
+        {
             unsigned formId = dAccess<unsigned>(packet, 48);
             string data = dAccess<string>(packet, 56);
 
@@ -252,15 +333,19 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
 
             CallFormCallback(p, formId, data);
         }
-    } catch (const seh_exception& e) {
-        Logger::Error("Event Callback Failed!");
-        Logger::Error("SEH Uncaught Exception Detected!");
-        Logger::Error("{}", e.what());
-        Logger::Error("In Event: onFormSelected");
-    } catch (...) {
-        Logger::Error("Event Callback Failed!");
-        Logger::Error("Uncaught Exception Detected!");
-        Logger::Error("In Event: onFormSelected");
+    }
+    catch (const seh_exception& e)
+    {
+        logger.error("Event Callback Failed!");
+        logger.error("SEH Uncaught Exception Detected!");
+        logger.error("{}", e.what());
+        logger.error("In Event: onFormSelected");
+    }
+    catch (...)
+    {
+        logger.error("Event Callback Failed!");
+        logger.error("Uncaught Exception Detected!");
+        logger.error("In Event: onFormSelected");
     }
 
     original(_this, id, handler, pPacket);

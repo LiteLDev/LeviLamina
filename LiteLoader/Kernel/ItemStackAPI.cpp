@@ -42,18 +42,6 @@ ItemStack* ItemStack::clone_s() {
     return a;
 }
 
-string ItemStack::getName() const {
-    if (this->isNull())
-        return "";
-    return this->getName();
-}
-
-string ItemStack::getCustomName() const {
-    if (this->isNull())
-        return "";
-    return ((ItemStack*)this)->getCustomName();
-}
-
 std::string ItemStack::getTypeName() const {
     if (this->isNull())
         return "";

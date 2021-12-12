@@ -4,13 +4,15 @@
 #include "../Global.h"
 
 #define BEFORE_EXTRA
-#include <MC/ScoreboardId.hpp>
+#include "ScoreboardId.hpp"
 #undef BEFORE_EXTRA
 
 struct ScorePacketInfo {
 
 #define AFTER_EXTRA
 public:
+#define DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
+
     ScoreboardId sid;
     string obj_name = "FakeScoreObj";
     unsigned score;
@@ -22,7 +24,6 @@ public:
     unsigned long long pid;
     unsigned long long aid;
     string fake_name;
-
     ScorePacketInfo(ScoreboardId* s, unsigned num, const string& fake)
         : sid(*s)
         , score(num)
@@ -32,7 +33,9 @@ public:
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 public:
-
+    struct ScorePacketInfo& operator=(struct ScorePacketInfo const&) = delete;
+    ScorePacketInfo(struct ScorePacketInfo const&) = delete;
+    ScorePacketInfo() = delete;
 #endif
 
 public:

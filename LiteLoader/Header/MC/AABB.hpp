@@ -62,5 +62,7 @@ public:
     MCAPI static class AABB const BOX_AT_ORIGIN_WITH_NO_VOLUME;
 
 protected:
+
 private:
+
 };

@@ -5,8 +5,8 @@
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "third-party/Nlohmann/json.hpp"
-#include "third-party/fmt/core.h"
-#include "third-party/fmt/os.h"
+#include "third-party/FMT/core.h"
+#include "third-party/FMT/os.h"
 #include <string>
 
 //////////////////////////////////////////////////////
@@ -47,8 +47,8 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
 
     auto res = json.find(formatStr); //改成模糊匹配
     if (res == json.end()) {
-        Logger::Error("Fail to find translation string \"{}\" !", formatStr);
-        Logger::Error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
+        logger.error("Fail to find translation string \"{}\" !", formatStr);
+        logger.error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
     } else {
         realFormatStr = res.value();
     }

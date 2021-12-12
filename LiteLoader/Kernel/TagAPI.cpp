@@ -17,6 +17,12 @@
 #include <vector>
 using namespace std;
 
+EndTag* Tag::asEndTag() {
+    if (this && getTagType() == Tag::Type::End)
+        return (EndTag*)this;
+    return nullptr;
+}
+
 ByteTag* Tag::asByteTag() {
     if (this && getTagType() == Tag::Type::Byte)
         return (ByteTag*)this;
@@ -104,9 +110,9 @@ void Tag::destroy() {
 
 //////////////////// To Json ////////////////////
 
-void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt);
+void TagToJson_Compound_Helper(fifo_json& res, CompoundTag* nbt);
 
-void TagToJson_List_Helper(JSON_VALUE& res, ListTag* nbt) {
+void TagToJson_List_Helper(fifo_json& res, ListTag* nbt) {
     auto& list = nbt->value();
     for (auto& tag : list) {
         switch (tag->getTagType()) {
@@ -141,13 +147,13 @@ void TagToJson_List_Helper(JSON_VALUE& res, ListTag* nbt) {
                 break;
             }
             case Tag::Type::List: {
-                JSON_VALUE arrJson = JSON_VALUE::array();
+                fifo_json arrJson = fifo_json::array();
                 TagToJson_List_Helper(arrJson, (ListTag*)tag);
                 res.push_back(arrJson);
                 break;
             }
             case Tag::Type::Compound: {
-                JSON_VALUE arrObj = JSON_VALUE::object();
+                fifo_json arrObj = fifo_json::object();
                 TagToJson_Compound_Helper(arrObj, (CompoundTag*)tag);
                 res.push_back(arrObj);
                 break;
@@ -159,7 +165,7 @@ void TagToJson_List_Helper(JSON_VALUE& res, ListTag* nbt) {
     }
 }
 
-void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt) {
+void TagToJson_Compound_Helper(fifo_json& res, CompoundTag* nbt) {
     auto& list = nbt->value();
     for (auto& [key, tmp] : list) {
         auto& tag = *tmp.get();
@@ -194,13 +200,13 @@ void TagToJson_Compound_Helper(JSON_VALUE& res, CompoundTag* nbt) {
                 break;
             }
             case Tag::Type::List: {
-                JSON_VALUE arrJson = JSON_VALUE::array();
+                fifo_json arrJson = fifo_json::array();
                 TagToJson_List_Helper(arrJson, (ListTag*)&tag);
                 res.push_back({key, arrJson});
                 break;
             }
             case Tag::Type::Compound: {
-                JSON_VALUE arrObj = JSON_VALUE::object();
+                fifo_json arrObj = fifo_json::object();
                 TagToJson_Compound_Helper(arrObj, (CompoundTag*)&tag);
                 res.push_back({key, arrObj});
                 break;
@@ -246,13 +252,13 @@ string Tag::toJson(int formatIndent) {
             break;
         }
         case Tag::Type::List: {
-            JSON_VALUE jsonRes = JSON_VALUE::array();
+            fifo_json jsonRes = fifo_json::array();
             TagToJson_List_Helper(jsonRes, (ListTag*)nbt);
             result = jsonRes.dump(formatIndent);
             break;
         }
         case Tag::Type::Compound: {
-            JSON_VALUE jsonRes = JSON_VALUE::object();
+            fifo_json jsonRes = fifo_json::object();
             TagToJson_Compound_Helper(jsonRes, (CompoundTag*)nbt);
             result = jsonRes.dump(formatIndent);
             break;

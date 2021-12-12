@@ -3,9 +3,12 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "VehicleUtils.hpp"
+#include "BlockInstance.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
+#include "MobEffectInstance.hpp"
+
 class Actor;
 class Player;
 class NetworkIdentifier;
@@ -16,6 +19,7 @@ class BlockInstance;
 class ItemStack;
 struct Tick;
 enum class FaceID : char;
+
 #undef BEFORE_EXTRA
 
 class Actor {
@@ -28,33 +32,37 @@ public:
     LIAPI std::string getTypeName() const;
     LIAPI Vec3 getPosition() const;
     LIAPI BlockSource* getBlockSource() const;
-    LIAPI Vec2* getDirction() const;
+    LIAPI Vec2* getDirection() const;
     LIAPI ActorUniqueID getActorUniqueId() const;
     LIAPI Vec3 getCameraPos() const;
     LIAPI Tick* getLastTick() const;
-    LIAPI vector<string> getAllTags() const;
+    LIAPI std::vector<std::string> getAllTags();
     LIAPI BlockInstance getBlockFromViewVector(bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
     LIAPI BlockInstance getBlockFromViewVector(FaceID& face, bool includeLiquid = false, bool solidOnly = false, float maxDistance = 5.25f, bool ignoreBorderBlocks = true, bool fullOnly = false) const;
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
+    LIAPI BlockPos getBlockPos();
+    LIAPI BlockInstance getBlockStandingOn();
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
     LIAPI bool isItemActor() const;
     LIAPI bool isOnGround() const;
-	
+    LIAPI bool setOnFire(int time, bool isEffect);
+    LIAPI bool stopFire();
     LIAPI bool hasTag(string tag);
 	LIAPI bool hurtEntity(int damage);
-	LIAPI void teleport(Vec3 pos,int dimid);
+	LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
-    
+    LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
 	//For Compatibility
 	inline Vec3 getPos() { return getPosition(); }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTOR
@@ -355,29 +363,29 @@ public:
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLocalPlayer() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
-        return (this->*rv)();
+    inline bool hasOutputSignal(unsigned char a0) const{
+        bool (Actor::*rv)(unsigned char) const;
+        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
     }
     inline bool isLeashableType(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline bool hasOutputSignal(unsigned char a0) const{
-        bool (Actor::*rv)(unsigned char) const;
-        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool breaksFallingBlocks() const{
+    inline bool isLocalPlayer() const{
         bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isShootable@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool breaksFallingBlocks() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool _makeFlySound() const{
@@ -450,14 +458,14 @@ public:
         *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isTargetable() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canMakeStepSound() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isTargetable() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline float getDeletionDelayTimeSeconds() const{

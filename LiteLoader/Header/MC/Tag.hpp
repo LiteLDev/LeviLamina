@@ -6,10 +6,12 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "Global.h"
+#include "../third-party/Nlohmann/fifo_json.hpp"
 #include <map>
 #include <string>
 #include <vector>
 
+class EndTag;
 class ByteTag;
 class ShortTag;
 class IntTag;
@@ -22,21 +24,6 @@ class ListTag;
 class CompoundTag;
 class IntArrayTag;
 class CompoundTagVariant;
-
-//////////////// Json ////////////////
-#include "../third-party/Nlohmann/fifo_map.hpp"
-#include "../third-party/Nlohmann/json.hpp"
-
-using namespace nlohmann;
-
-template <class Key, class T, class dummy_compare, class Allocator>
-using workaround_fifo_map = fifo_map<Key, T, fifo_map_compare<Key>, Allocator>;
-using fifo_json = basic_json<workaround_fifo_map>;
-
-#define JSON_NAMESPACE nlohmann
-#define JSON_ROOT fifo_json
-#define JSON_VALUE fifo_json
-
 class Player;
 class Actor;
 class Block;
@@ -86,6 +73,7 @@ public:
     //LIAPI std::map<std::string, char[0x28]>& asCompound();
     //LIAPI TagMemoryChunk& asByteArray();
 
+    LIAPI EndTag* asEndTag();
     LIAPI ByteTag* asByteTag();
     LIAPI ShortTag* asShortTag();
     LIAPI IntTag* asIntTag();

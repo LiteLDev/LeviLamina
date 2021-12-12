@@ -33,7 +33,8 @@ uint64_t resultCount;
 bool includeDeadPlayers;
 char pad_0185[5];
 bool playerOnly;
-bool explicitIdSelector;
+char explicitIdSelector;
+char unk192;
 
 #undef AFTER_EXTRA
 

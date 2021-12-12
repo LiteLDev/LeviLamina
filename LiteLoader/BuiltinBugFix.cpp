@@ -10,9 +10,9 @@
 #include <Config.h>
 #include <LoggerAPI.h>
 #include <MC/InventoryTransactionPacket.hpp>
-#include <MC/Packet.hpp>
 #include <unordered_map>
 using namespace LL;
+
 bool ip_information_logged = false;
 
 //Fix disconnect packet crash bug
@@ -53,7 +53,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
         }
     if (abnormal) {
         Player* sp = (Player*)snh.getServerPlayer(netid);
-        Logger::Warn() << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
+        logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
         return nullptr;
     }
     return original(snh, netid, pk);

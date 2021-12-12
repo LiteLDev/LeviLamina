@@ -7,6 +7,7 @@
 #include <Windows.h>
 #include "Global.h"
 #include "Utils/WinHelper.h"
+#include "Utils/PluginOwnData.h"
 #include "LoggerAPI.h"
 
 //helper
@@ -38,7 +39,7 @@ namespace LL {
         int revision;
         Status status;
 
-        LIAPI Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
+        LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
         LIAPI bool operator<(Version b);
         LIAPI bool operator==(Version b);
@@ -73,7 +74,6 @@ namespace LL
     inline bool registerPlugin(std::string name, std::string introduction, std::string version,
                               std::string git = "", std::string license = "", std::string website = "") {
         //此函数的实现必须放在头文件中
-        Logger::setTitle(name);
         return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, git, license, website);
     }
 

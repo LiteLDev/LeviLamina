@@ -1,6 +1,7 @@
 #include <Global.h>
 #include <string>
 #include <vector>
+#include <cctype>
 #include <MC/Actor.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/Spawner.hpp>
@@ -17,10 +18,8 @@
 #include <MC/Tick.hpp>
 
 
-Actor* Level::getEntity(struct ActorUniqueID uniqueId) {
-    class Actor* (Level::*rv)(struct ActorUniqueID, bool) const;
-    *((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
-    return (Global<Level>->*rv)(std::forward<struct ActorUniqueID>(uniqueId), false);
+Actor* Level::getEntity(ActorUniqueID uniqueId) {
+    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
@@ -68,6 +67,7 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
 BlockSource* Level::getBlockSource(int dimid) {
+    //auto dim = Global<Level>->createDimension(dimid);
     auto dim = Global<Level>->getDimension(dimid);
     return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
     //return dAccess<BlockSource*>(dim, 96);
@@ -91,12 +91,33 @@ Block* Level::getBlock(BlockPos* pos, BlockSource* blockSource) {
     return (Block*)&(blockSource->getBlock(*pos));
 }
 
-Block* Level::getBlock(const BlockPos& pos, int dim) {
-    return getBlock(pos, Level::getBlockSource(dim));
+Block* Level::getBlock(const BlockPos& pos, int dimId) {
+    return getBlock(pos, Level::getBlockSource(dimId));
 }
 
 Block* Level::getBlock(const BlockPos& pos, BlockSource* blockSource) {
     return (Block*)&(blockSource->getBlock(pos));
+}
+
+
+// Return nullptr when failing to get block
+Block* Level::getBlockEx(const BlockPos& pos, int dimId)
+{
+    auto dim = Global<Level>->getDimension(dimId);
+    if (!dim)
+        return nullptr;
+
+    auto bs = &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    auto lc = bs->getChunkAt(pos);
+    if (!lc)
+        return nullptr;
+
+    short minHeight = dim->getMinHeight();
+    if (pos.y < minHeight || pos.y > dim->getHeight())
+        return nullptr;
+
+    ChunkBlockPos cbpos = ChunkBlockPos(pos, minHeight);
+    return const_cast<Block*>(&lc->getBlock(cbpos));
 }
 
 BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId) {
@@ -114,6 +135,23 @@ BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim) {
 BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSource) {
     return BlockInstance(pos, blockSource->getDimensionId());
 }
+
+BlockActor* Level::getBlockEntity(BlockPos* pos, int dimId) {
+    return getBlockEntity(pos, Level::getBlockSource(dimId));
+}
+
+BlockActor* Level::getBlockEntity(BlockPos* pos, BlockSource* blockSource) {
+    return blockSource->getBlockEntity(*pos);
+}
+
+BlockActor* Level::getBlockEntity(const BlockPos& pos, int dimId) {
+    return getBlockEntity((BlockPos*) & pos, Level::getBlockSource(dimId));
+}
+
+BlockActor* Level::getBlockEntity(const BlockPos& pos, BlockSource* blockSource) {
+    return getBlockEntity((BlockPos*)&pos, blockSource);
+}
+
 
 bool Level::setBlock(const BlockPos& pos, int dim, Block* block) {
     BlockSource* bs = getBlockSource(dim);
@@ -140,6 +178,23 @@ bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos) {
 
 bool Level::breakBlockNaturally(BlockSource* bs, const BlockPos& pos, ItemStack* item) {
     return getBlockInstance(pos, bs).breakNaturally(item);
+}
+
+bool Level::hasContainer(Vec3 pos, int dim)
+{
+    return getContainer(pos,dim) != nullptr;
+}
+
+class DropperBlockActor;
+Container* Level::getContainer(Vec3 pos, int dim)
+{
+    // VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    
+    // This function didn't use 'this' pointer
+    Container* container = SymCall("?_getContainerAt@DropperBlockActor@@AEAAPEAVContainer@@AEAVBlockSource@@AEBVVec3@@@Z",
+        Container*, DropperBlockActor*, BlockSource*, Vec3*)(nullptr, Level::getBlockSource(dim), &pos);
+
+    return container;
 }
 
 Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
@@ -230,7 +285,7 @@ std::vector<Actor*> Level::getAllEntities() {
 
 Player* Level::getPlayer(const string& info) {
     string target{info};
-    std::transform(target.begin(), target.end(), target.begin(), std::tolower); //lower case the string
+    std::transform(target.begin(), target.end(), target.begin(), ::tolower); //lower case the string
     int delta = INT_MAX;                                                        //c++ int max
     Player* found = nullptr;
     Global<Level>->forEachPlayer([&](Player& sp) -> bool {
@@ -262,6 +317,10 @@ Player* Level::getPlayer(const string& info) {
     return found;
 }
 
+Player* Level::getPlayer(ActorUniqueID id)
+{
+    return SymCall("?getPlayer@Level@@UEBAPEAVPlayer@@UActorUniqueID@@@Z", Player*, Level*, ActorUniqueID)(Global<Level>, id);
+}
 
 Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
 
@@ -274,7 +333,7 @@ Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
     return sp->spawnItem(pos, dimId, item);
 }
 
-bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire) {
+bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire) {
     Global<Level>->explode(*Level::getBlockSource(dimId), source, pos, power, isFire, isDestroy, range, true);
     return true;
 }
@@ -304,26 +363,26 @@ void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int 
 }
 
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int16_t a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int32_t a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, float a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, string a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, BlockPos a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, Vec3 a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int64_t a2) {
-    return FakeDataItem::FakeDataItem(a1, type, a2);
+    return {a1, type, a2};
 }

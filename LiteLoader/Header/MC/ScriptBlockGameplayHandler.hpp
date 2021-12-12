@@ -39,15 +39,15 @@ public:
         *((void**)&rv) = dlsym("?handleChestBlockTryPaired@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUChestBlockTryPairEvent@@@Z");
         return (this->*rv)(std::forward<struct ChestBlockTryPairEvent const&>(a0));
     }
-    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleActorInsideBlock(struct ActorInsideBlockEvent const& a0){
-        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ActorInsideBlockEvent const&);
-        *((void**)&rv) = dlsym("?handleActorInsideBlock@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUActorInsideBlockEvent@@@Z");
-        return (this->*rv)(std::forward<struct ActorInsideBlockEvent const&>(a0));
-    }
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleBlockPatternPreEvent(struct BlockPatternEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct BlockPatternEvent const&);
         *((void**)&rv) = dlsym("?handleBlockPatternPreEvent@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUBlockPatternEvent@@@Z");
         return (this->*rv)(std::forward<struct BlockPatternEvent const&>(a0));
+    }
+    inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleActorInsideBlock(struct ActorInsideBlockEvent const& a0){
+        struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ActorInsideBlockEvent const&);
+        *((void**)&rv) = dlsym("?handleActorInsideBlock@ScriptBlockGameplayHandler@@UEAA?AU?$GameplayHandlerResult@W4CoordinatorResult@@@@AEBUActorInsideBlockEvent@@@Z");
+        return (this->*rv)(std::forward<struct ActorInsideBlockEvent const&>(a0));
     }
     inline struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> handleActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         struct GameplayHandlerResult<int \/*enum enum CoordinatorResult*\/> (ScriptBlockGameplayHandler::*rv)(struct ActorStandOnBlockEvent const&);

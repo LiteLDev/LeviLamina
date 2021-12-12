@@ -26,6 +26,7 @@
 #include <MC/ScriptItemStack.hpp>
 #include <MC/Container.hpp>
 #include <MC/SimpleContainer.hpp>
+#include <MC/Scoreboard.hpp>
 
 #include <EventAPI.h>
 #include <bitset>
@@ -38,18 +39,13 @@ NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
-/*
-Certificate* Player::getCert() {
+
+Certificate* Player::getCertificate() {
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
     }
     return nullptr;
-}
-*/
-
-Certificate* Player::getCertificate() {
-    return const_cast<Certificate*>(Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getCertificate());
 }
 
 std::string Player::getRealName() {
@@ -64,6 +60,10 @@ int Player::getLastPing() {
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
+string Player::getIP()
+{
+    return getNetworkIdentifier()->getIP();
+}
 
 string Player::getLanguageCode() {
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
@@ -89,7 +89,7 @@ string Player::getServerAddress() {
     return "unkown";
 }
 
-string Player::getDeviceName() {
+string Player::getDeviceTypeName() {
     switch ((int)getPlatform()) {
         case -1:
             return u8"Unknown";
@@ -126,9 +126,20 @@ string Player::getDeviceName() {
     }
 }
 
-void Player::kick(string msg) {
+bool Player::kick(string msg) {
     NetworkIdentifier* netid = getNetworkIdentifier();
     Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
+    return true;
+}
+
+bool Player::sendText(string text, TextType type)
+{
+    return sendTextPacket(text, type);
+}
+
+bool Player::talkAs(const string& msg)
+{
+    return sendTextTalkPacket(msg);
 }
 
 bool Player::giveItem(ItemStack* item) {
@@ -214,13 +225,6 @@ std::pair<BlockPos, int> Player::getRespawnPosition() {
     return {bp, dimId};
 }
 
-bool Player::refreshInventory() {
-    sendInventory(true);
-    std::bitset<4> bits("1111");
-    sendArmor(bits);
-    return true;
-}
-
 CompoundTag* Player::getNbt() {
     return CompoundTag::fromPlayer(this);
 }
@@ -240,9 +244,76 @@ string Player::getUuid() {
             string*, void*, string*)(uuid, &uuidStr);
     return uuidStr;
 }
-//////////////Packet//////////////////////////
 
-void Player::sendTextPacket(string text, TextType Type) {
+float Player::getAvgPacketLoss() {
+    return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
+}
+
+string Player::getClientId() {
+    return Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getDeviceId();
+}
+
+int Player::getDeviceType() {
+    return getPlatform();
+}
+
+bool Player::crashClient() {
+    Packet* pkt = MinecraftPackets::createPacket(58);
+    dAccess<bool, 56>(pkt) = 1;
+    sendNetworkPacket(*pkt);
+    return true;
+}
+
+bool Player::setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder)
+{
+    sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
+
+    vector<ScorePacketInfo> info;
+    for (auto& x : data)
+    {
+        const ScoreboardId& id = ::Global<Scoreboard>->createScoreboardId(x.first);
+        ScorePacketInfo i((ScoreboardId*)&id, x.second, x.first);
+        info.emplace_back(i);
+    }
+
+    sendSetScorePacket(0, info);
+    return sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
+}
+
+bool Player::removeSidebar()
+{
+    return sendSetDisplayObjectivePacket("", "", (char)0);
+}
+
+int Player::getScore(string key)
+{
+    return ::Global<Scoreboard>->getScore(this, key);
+}
+
+bool Player::setScore(string key, int value)
+{
+    return ::Global<Scoreboard>->setScore(this, key, value);
+}
+
+bool Player::addScore(string key, int value)
+{
+    return ::Global<Scoreboard>->addScore(this, key, value);
+}
+
+bool Player::reduceScore(string key, int value)
+{
+    return ::Global<Scoreboard>->reduceScore(this, key, value);
+}
+
+bool Player::deleteScore(string key)
+{
+    return ::Global<Scoreboard>->deleteScore(this, key);
+}
+
+
+////////////////////////// Packet //////////////////////////
+
+bool Player::sendTextPacket(string text, TextType Type) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
@@ -268,9 +339,10 @@ void Player::sendTextPacket(string text, TextType Type) {
     wp.writeString("");
     NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
+    return true;
 }
 
-void Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -282,11 +354,12 @@ void Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, in
     wp.writeString("");
     NetworkPacket<0x58> pkt{wp.getAndReleaseData()};
     sendNetworkPacket(pkt);
+    return true;
 }
 
-void Player::sendNotePacket(unsigned int tone) {
+bool Player::sendNotePacket(unsigned int tone) {
     if (tone == 0) {
-        return;
+        return false;
     }
     BinaryStream wp;
     wp.writeUnsignedChar(81);
@@ -299,9 +372,10 @@ void Player::sendNotePacket(unsigned int tone) {
     wp.writeBool(1);
     NetworkPacket<0x7B> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
+    return true;
 }
 
-void Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
     BinaryStream wp;
     wp.writeUnsignedChar(dimid);
     //If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
@@ -313,10 +387,11 @@ void Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string Part
     wp.writeString(ParticleName);
     NetworkPacket<0x76> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
+    return true;
 }
 
 //bad
-void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
+bool Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
     BinaryStream wp;
     wp.reserve(Soundname.size());
     wp.writeString(Soundname);
@@ -327,6 +402,7 @@ void Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, 
     wp.writeFloat(Pitch);
     NetworkPacket<0x56> pkts{wp.getAndReleaseData()};
     sendNetworkPacket(pkts);
+    return true;
 }
 
 void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
@@ -372,7 +448,7 @@ void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
     }
 }
 
-void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
     wp.writeVarInt64(runtimeid);                                   //RuntimeId
     wp.writeUnsignedVarInt64(runtimeid);                           //EntityId
@@ -393,9 +469,10 @@ void Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, i
     wp.writeBool(1);
     NetworkPacket<0x0F> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
+    return true;
 }
 
-void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
+bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
     wp.writeVarInt64(runtimeid);         //RuntimeId
     wp.writeUnsignedVarInt64(runtimeid); //EntityId
@@ -414,17 +491,19 @@ void Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
     wp.writeUnsignedVarInt(0); //entity link
     NetworkPacket<0xd> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
+    return true;
 }
 
-void Player::sendTransferPacket(const string& address, short port) {
+bool Player::sendTransferPacket(const string& address, short port) {
     BinaryStream wp;
     Packet* packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
     dAccess<string>(packet, 48) = address;
     dAccess<short>(packet, 80) = port;
     sendNetworkPacket(*packet);
+    return true;
 }
 
-void Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) {
+bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) {
     BinaryStream wp;
     wp.writeString("sidebar");
     wp.writeString(name);
@@ -433,35 +512,49 @@ void Player::sendSetDisplayObjectivePacket(const string& title, const string& na
     wp.writeVarInt(sortOrder);
     NetworkPacket<107> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
+    return true;
 }
 
-void Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
+bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
     auto packet = MinecraftPackets::createPacket(0x6c);
     dAccess<char>(packet, 48) = type;
     dAccess<vector<ScorePacketInfo>>(packet, 56) = data;
     sendNetworkPacket(*packet);
+    return true;
 }
 
-void Player::sendBossEventPacket(string name, float percent, int type) {
+bool Player::sendBossEventPacket(string name, float percent, int type) {
     auto packet = MinecraftPackets::createPacket(0x4a);
     dAccess<ActorUniqueID>(packet, 56) = dAccess<ActorUniqueID>(packet, 64) = getUniqueID();
     dAccess<int>(packet, 72) = type;
     dAccess<string>(packet, 80) = name;
     dAccess<float>(packet, 112) = percent;
     sendNetworkPacket(*packet);
+    return true;
 }
 
-void Player::sendCommandRequestPacket(const string& cmd) {
+bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet) = cmd;
     NetworkIdentifier* nid = getNetworkIdentifier();
     Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet));
+    return true;
 }
 
-void Player::sendTextTalkPacket(const string& msg) {
+bool Player::sendTextTalkPacket(const string& msg) {
     auto packet = MinecraftPackets::createPacket(0x09);
     dAccess<unsigned char, 48>(packet) = 1;
     dAccess<string, 56>(packet) = "";
     dAccess<string, 88>(packet) = msg;
     Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet));
+    return true;
+}
+
+bool Player::isValid(Player* player)
+{
+    auto pls = Level::getAllPlayers();
+    for (auto& pl : pls)
+        if (pl == player)
+            return true;
+    return false;
 }

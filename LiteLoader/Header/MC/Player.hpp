@@ -25,9 +25,10 @@ public:
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();
-    LIAPI string getDeviceName();
+    LIAPI string getDeviceTypeName();
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
+    LIAPI std::string getIP();
     LIAPI string getLanguageCode();
     LIAPI string getServerAddress();
     LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
@@ -35,30 +36,49 @@ public:
     LIAPI Certificate* getCertificate();
     LIAPI Container* getEnderChestContainer();
     LIAPI std::pair<BlockPos, int> getRespawnPosition();
+    LIAPI float getAvgPacketLoss();
+    LIAPI string getClientId();
+    LIAPI int getDeviceType();
 
-    LIAPI void kick(string msg);
+    LIAPI bool kick(string msg);
+    LIAPI bool crashClient();
+    LIAPI bool sendText(string text, TextType type = TextType::RAW);
+    LIAPI bool talkAs(const string& msg);
     LIAPI bool giveItem(ItemStack* item); 
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
+    LIAPI bool setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
+    LIAPI bool removeSidebar();
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
-    LIAPI bool refreshInventory();
+
+    LIAPI int getScore(string key);
+    LIAPI bool setScore(string key, int value);
+    LIAPI bool addScore(string key, int value);
+    LIAPI bool reduceScore(string key, int value);
+    LIAPI bool deleteScore(string key);
 
     //Packet
-    LIAPI void sendTextPacket(string text, TextType Type = TextType::RAW);
-    LIAPI void sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
-    LIAPI void sendNotePacket(unsigned int tone);
-    LIAPI void sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
-    /*bad*/ LIAPI void sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch);
-    LIAPI void sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
-    LIAPI void sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
-    LIAPI void sendTransferPacket(const string& address, short port);
-    LIAPI void sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder);
-    LIAPI void sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
-    LIAPI void sendBossEventPacket(string name, float percent, int type);
-    LIAPI void sendCommandRequestPacket(const string& cmd);
-    LIAPI void sendTextTalkPacket(const string& msg);
+    LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW);
+    LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI bool sendNotePacket(unsigned int tone);
+    LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
+    /*bad*/ LIAPI bool sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch);
+    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
+    LIAPI bool sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
+    LIAPI bool sendTransferPacket(const string& address, short port);
+    LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder);
+    LIAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
+    LIAPI bool sendBossEventPacket(string name, float percent, int type);
+    LIAPI bool sendCommandRequestPacket(const string& cmd);
+    LIAPI bool sendTextTalkPacket(const string& msg);
+
+    LIAPI static bool isValid(Player* player);
+
+    //For compatibility
+    inline string getDeviceName() { return getDeviceTypeName(); }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYER
@@ -340,15 +360,15 @@ public:
         *((void**)&rv) = dlsym("?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline void _serverInitItemStackIds(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
-        return (this->*rv)();
-    }
     inline void playEmote(std::string const& a0){
         void (Player::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline void _serverInitItemStackIds(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
+        return (this->*rv)();
     }
     inline void openSign(class BlockPos const& a0){
         void (Player::*rv)(class BlockPos const&);
@@ -360,14 +380,14 @@ public:
         *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void openPortfolio(){
-        void (Player::*rv)();
-        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void resetRot(){
         void (Player::*rv)();
         *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void openPortfolio(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline bool isPlayer() const{
@@ -375,14 +395,14 @@ public:
         *((void**)&rv) = dlsym("?isPlayer@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCreativeModeAllowed(){
-        bool (Player::*rv)();
-        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isAutoJumpEnabled() const{
         bool (Player::*rv)() const;
         *((void**)&rv) = dlsym("?isAutoJumpEnabled@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isCreativeModeAllowed(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){

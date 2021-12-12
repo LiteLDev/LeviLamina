@@ -34,15 +34,15 @@ public:
         *((void**)&rv) = dlsym("?isValidSpawn@Dimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
-    inline bool hasBedrockFog(){
-        bool (Dimension::*rv)();
-        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isFoggyAt(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isFoggyAt@Dimension@@UEBA_NHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline bool hasBedrockFog(){
+        bool (Dimension::*rv)();
+        *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
+        return (this->*rv)();
     }
     inline int getDefaultBiome() const{
         int (Dimension::*rv)() const;

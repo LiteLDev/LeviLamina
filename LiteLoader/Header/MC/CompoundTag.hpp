@@ -128,8 +128,8 @@ public:
     MCAPI class Int64Tag const* getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag* getInt64Tag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const* getIntTag(class gsl::basic_string_span<char const, -1>) const;
-    MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI class ListTag const* getList(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const& getString(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool isEmpty() const;

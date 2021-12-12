@@ -1,4 +1,5 @@
 #include <Utils/NetworkHelper.h>
+#include <LoggerAPI.h>
 #include <httplib/httplib.h>
 #include <thread>
 using namespace std;
@@ -29,16 +30,70 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
     if (timeout > 0)
         cli->set_connection_timeout(timeout, 0);
 
-    std::thread([cli, callback{std::move(callback)}, path{std::move(path)}]() {
-        auto response = cli->Get(path.c_str());
-        delete cli;
+    std::thread([cli, callback, path{std::move(path)}]()
+    {
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        try
+        {
+            auto response = cli->Get(path.c_str());
+            delete cli;
 
-        if (!response)
-            callback(-1, "");
-        else
-            callback(response->status, response->body);
+            if (!response)
+                callback(-1, "");
+            else
+                callback(response->status, response->body);
+        }
+        catch (const seh_exception& e)
+        {
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpGet callback");
+        }
+        catch (...)
+        {
+            logger.error("HttpGet Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
+        }
     }).detach();
 
+    return true;
+}
+
+bool HttpPost(const string& url, const string& data, const string& type, std::function<void(int, string)> callback, int timeout)
+{
+    string host, path;
+    SplitHttpUrl(url, host, path);
+    httplib::Client* cli = new httplib::Client(host.c_str());
+    if (!cli->is_valid())
+    {
+        delete cli;
+        return false;
+    }
+    if (timeout > 0)
+        cli->set_connection_timeout(timeout, 0);
+
+    std::thread([cli, data, type, callback, path{ std::move(path) }]()
+    {
+        _set_se_translator(seh_exception::TranslateSEHtoCE);
+        try
+        {
+            auto response = cli->Post(path.c_str(), data, type.c_str());
+            delete cli;
+            if (!response)
+                callback(-1, "");
+            else
+                callback(response->status, response->body);
+        }
+        catch (const seh_exception& e)
+        {
+            logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            logger.error("In HttpPost callback");
+        }
+        catch (...)
+        {
+            logger.error("HttpPost Callback Failed!");
+            logger.error("Uncaught Exception Detected!");
+        }
+    }).detach();
     return true;
 }
 
