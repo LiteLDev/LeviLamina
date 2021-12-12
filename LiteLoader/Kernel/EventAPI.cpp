@@ -224,15 +224,20 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
       Level* _this, Player* sp, ChangeDimensionRequest* cdimreq)
 {
     bool ret = true;
-    ret = original(_this, sp, cdimreq);
+    //int fromDimid = dAccess<int>(cdimreq, 4);
+    int toDimid = dAccess<int>(cdimreq, 8);
+    if (toDimid == sp->getDimensionId())
+        return original(_this, sp, cdimreq);
+
     IF_LISTENED(PlayerChangeDimEvent)
     {
         PlayerChangeDimEvent ev;
         ev.mPlayer = sp;
-        ev.mDimensionId = sp->getDimensionId();
+        ev.mToDimensionId = toDimid;
         ev.call();
     }
     IF_LISTENED_END(PlayerChangeDimEvent);
+    ret = original(_this, sp, cdimreq);
     return ret;
 }
 

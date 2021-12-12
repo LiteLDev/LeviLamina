@@ -146,7 +146,7 @@ public:
 class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent> {
 public:
     Player* mPlayer;
-    int mDimensionId;
+    int mToDimensionId;
 };
 
 class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent> {
