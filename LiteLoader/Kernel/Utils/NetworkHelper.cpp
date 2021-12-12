@@ -3,6 +3,7 @@
 #include <httplib/httplib.h>
 #include <thread>
 using namespace std;
+Logger networkHelperLogger("NetworkHelper");
 
 void SplitHttpUrl(const std::string& url, string& host, string& path) {
     host = url;
@@ -45,13 +46,13 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
         }
         catch (const seh_exception& e)
         {
-            Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
-            Logger::Error("In HttpGet callback");
+            networkHelperLogger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            networkHelperLogger.error("In HttpGet callback");
         }
         catch (...)
         {
-            Logger::Error("HttpGet Callback Failed!");
-            Logger::Error("Uncaught Exception Detected!");
+            networkHelperLogger.error("HttpGet Callback Failed!");
+            networkHelperLogger.error("Uncaught Exception Detected!");
         }
     }).detach();
 
@@ -85,13 +86,13 @@ bool HttpPost(const string& url, const string& data, const string& type, std::fu
         }
         catch (const seh_exception& e)
         {
-            Logger::Error("SEH Uncaught Exception Detected!\n{}", e.what());
-            Logger::Error("In HttpPost callback");
+            networkHelperLogger.error("SEH Uncaught Exception Detected!\n{}", e.what());
+            networkHelperLogger.error("In HttpPost callback");
         }
         catch (...)
         {
-            Logger::Error("HttpPost Callback Failed!");
-            Logger::Error("Uncaught Exception Detected!");
+            networkHelperLogger.error("HttpPost Callback Failed!");
+            networkHelperLogger.error("Uncaught Exception Detected!");
         }
     }).detach();
     return true;
