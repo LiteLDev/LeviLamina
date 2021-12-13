@@ -49,7 +49,10 @@ bool BlockInstance::hasContainer() {
 class DropperBlockActor;
 Container* BlockInstance::getContainer()
 {
-    return VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    auto be = getBlockEntity();
+    if (!be)
+        return nullptr;
+    return VirtualCall<Container*>(be, 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
 }
 
 //bad
