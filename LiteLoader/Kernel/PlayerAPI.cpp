@@ -522,13 +522,53 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
     return true;
 }
 
-bool Player::sendBossEventPacket(string name, float percent, int type) {
-    auto packet = MinecraftPackets::createPacket(0x4a);
-    dAccess<ActorUniqueID>(packet, 56) = dAccess<ActorUniqueID>(packet, 64) = getUniqueID();
-    dAccess<int>(packet, 72) = type;
-    dAccess<string>(packet, 80) = name;
-    dAccess<float>(packet, 112) = percent;
-    sendNetworkPacket(*packet);
+bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay)
+{
+    BinaryStream wp;
+    wp.writeVarInt64(getActorUniqueId().get());
+    wp.writeUnsignedVarInt((int)type);
+    switch (type)
+    {
+        case BossEvent::Show:
+            wp.writeString(name);
+            wp.writeFloat(percent);
+            goto LABEL_3;
+        case BossEvent::RegisterPlayer:
+        case BossEvent::UnregisterPlayer:
+        {
+            wp.writeVarInt64(getActorUniqueId().get());
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::HealthPercentage:
+        {
+            wp.writeFloat(percent);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::Title:
+        {
+            wp.writeString(name);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::AppearanceProperties:
+        LABEL_3:
+            wp.writeUnsignedShort(1);
+            goto LABEL_4;
+        case BossEvent::Texture:
+        LABEL_4:
+            wp.writeUnsignedVarInt((int)colour);
+            wp.writeUnsignedVarInt(overlay);
+            break;
+        default:
+            return false;
+    }
+    NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
     return true;
 }
 

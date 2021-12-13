@@ -70,7 +70,7 @@ public:
     LIAPI bool sendTransferPacket(const string& address, short port);
     LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder);
     LIAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
-    LIAPI bool sendBossEventPacket(string name, float percent, int type);
+    LIAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
     LIAPI bool sendCommandRequestPacket(const string& cmd);
     LIAPI bool sendTextTalkPacket(const string& msg);
 

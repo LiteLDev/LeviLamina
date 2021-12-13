@@ -520,6 +520,17 @@ enum class TitleType : int
     SubtitleTextObject = 7,
     ActionbarTextObject = 8
 };
+enum class BossEvent : int
+{
+    Show = 0,
+    RegisterPlayer = 1,
+    Hide = 2,
+    UnregisterPlayer = 3,
+    HealthPercentage = 4,
+    Title = 5,
+    AppearanceProperties = 6,
+    Texture = 7
+};
 
 enum class BossEventColour : int
 {
