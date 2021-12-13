@@ -31,19 +31,56 @@ using std::string;
 template<bool B, class T = void>
 using enable_if_t = typename std::enable_if<B, T>::type;
 
+HMODULE GetCurrentModule();
+
 class Logger {
+private:
+    class OutputStream;
+
+    LIAPI static void initLockImpl(HMODULE hPlugin);
+
+    LIAPI static void lockImpl(HMODULE hPlugin);
+
+    LIAPI static void unlockImpl(HMODULE hPlugin);
+
+    LIAPI static bool setFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
+
+    LIAPI static bool setFileImpl(HMODULE hPlugin, nullptr_t);
+
+    LIAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
+
 public:
     std::string title;
 
-    LIAPI static void initLock();
+    inline static void initLock()
+    {
+        return initLockImpl(GetCurrentModule());
+    };
 
-    LIAPI static void lock();
+    inline static void lock()
+    {
+        return lockImpl(GetCurrentModule());
+    };
 
-    LIAPI static void unlock();
+    inline static void unlock()
+    {
+        return unlockImpl(GetCurrentModule());
+    };
 
-    LIAPI static bool setFile(const std::string &logFile, bool appendMode);
+    inline static bool setFile(const std::string& logFile, bool appendMode)
+    {
+        return setFileImpl(GetCurrentModule(), logFile, appendMode);
+    };
 
-    LIAPI static bool setFile(nullptr_t);
+    inline static bool setFile(nullptr_t a0)
+    {
+        return setFileImpl(GetCurrentModule(), a0);
+    };
+
+    inline static void endl(OutputStream& o)
+    {
+        return endlImpl(GetCurrentModule(), o);
+    };
 
     class OutputStream {
         friend class Logger;
@@ -95,8 +132,6 @@ public:
             *this << str << endl;
         }
     };
-
-    LIAPI static void endl(OutputStream &o);
 
     OutputStream debug;
     OutputStream info;

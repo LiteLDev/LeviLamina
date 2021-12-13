@@ -11,36 +11,41 @@
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
-void Logger::initLock() {
-    if (!PluginOwnData::has(LOGGER_CURRENT_LOCK))
-        PluginOwnData::set<CsLock>(LOGGER_CURRENT_LOCK);
+void Logger::initLockImpl(HMODULE hPlugin)
+{
+    if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
+        PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);
 }
 
-void Logger::lock() {
-    initLock();
-    PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).lock();
+void Logger::lockImpl(HMODULE hPlugin)
+{
+    initLockImpl(hPlugin);
+    PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();
 }
 
-void Logger::unlock() {
-    PluginOwnData::get<CsLock>(LOGGER_CURRENT_LOCK).unlock();
+void Logger::unlockImpl(HMODULE hPlugin)
+{
+    PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();
 }
 
-bool Logger::setFile(const std::string &logFile, bool appendMode = true) {
+bool Logger::setFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true)
+{
     if (logFile.empty()) {
-        PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
+        PluginOwnData::removeImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE);
         return true;
     } else {
         std::error_code ec;
         std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
 
-        auto &res = PluginOwnData::set<std::ofstream>(LOGGER_CURRENT_FILE, logFile,
+        auto& res = PluginOwnData::setImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE, logFile,
                                                       appendMode ? std::ios::app : std::ios::out);
         return res.is_open();
     }
 }
 
-bool Logger::setFile(nullptr_t) {
-    PluginOwnData::remove<std::ofstream>(LOGGER_CURRENT_FILE);
+bool Logger::setFileImpl(HMODULE hPlugin, nullptr_t)
+{
+    PluginOwnData::removeImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE);
     return true;
 }
 
@@ -56,21 +61,22 @@ Logger::OutputStream::OutputStream(Logger *logger, int level, std::string &&cons
     this->mode = mode;
 }
 
-void Logger::endl(OutputStream &o) {
+void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
+{
     std::string title = o.logger->title;
     if (!title.empty())
         title = "[" + title + "]";
     if (LL::globalConfig.logLevel >= o.level) {
         fmt::print(o.style, o.consoleFormat, fmt::localtime(_time64(nullptr)), o.mode, title, o.os.str());
-        if (PluginOwnData::has(LOGGER_CURRENT_FILE))
-            PluginOwnData::get<std::ofstream>(LOGGER_CURRENT_FILE)
+        if (PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+            PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
                     << fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.mode, o.logger->title,
                                    o.os.str()) << std::flush;
     }
     o.locked = false;
     o.os.str("");
     o.os.clear();
-    unlock();
+    unlockImpl(hPlugin);
 }
 
 Logger::Logger(const std::string &title) {
