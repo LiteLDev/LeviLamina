@@ -60,14 +60,3 @@ LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) {
 
     return container;
 }
-
-enum class BossEventColour:int
-{
-    Grey = 0,
-    Blue = 1,
-    Red = 2,
-    Green = 3,
-    Yellow = 4,
-    Purple = 5,
-    White = 6
-};
