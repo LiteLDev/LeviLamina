@@ -45,7 +45,8 @@ ItemStack* ItemStack::clone_s() {
 std::string ItemStack::getTypeName() const {
     if (this->isNull())
         return "";
-    return ((ItemStack*)this)->getItem()->getSerializedName();
+    auto item = getItem();
+    return item->getSerializedName();
 }
 
 int ItemStack::getAux() const {
