@@ -1098,19 +1098,20 @@ THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
     IF_LISTENED_END(PlayerUseFrameBlockEvent);
     return original(_this, a2, a3);
 }
-
-/////////////////// LiquidFlow ///////////////////
+/////////////////// LiquidFlow(Needs optimization) ///////////////////
+#include <MC/LiquidBlockDynamic.hpp>
 THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
-      void* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
+      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
 {
     auto rtn = original(_this, bs, to, from, id);
     if (!rtn)
         return rtn;
-    IF_LISTENED(LiquidFlowEvent)
+    IF_LISTENED(true||LiquidFlowEvent)
     {
         LiquidFlowEvent ev;
-        ev.mFromPosition = *from;
-        ev.mToPosition = *to;
+        ev.mBlockInstance = BlockInstance::createBlockInstance(
+            const_cast<Block*>(&_this->getRenderBlock()), *from, bs->getDimensionId());
+        ev.mTarget = *to;
         ev.mDimensionId = bs->getDimensionId();
         if (!ev.call())
             return false;
