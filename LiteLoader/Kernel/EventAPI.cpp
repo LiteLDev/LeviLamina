@@ -1103,17 +1103,20 @@ THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
 THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
       void* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
 {
+    auto rtn = original(_this, bs, to, from, id);
+    if (!rtn)
+        return rtn;
     IF_LISTENED(LiquidFlowEvent)
     {
         LiquidFlowEvent ev;
-        ev.mBlockInstance = Level::getBlockInstance(from, bs);
-        ev.mTarget = *to;
+        ev.mFromPosition = *from;
+        ev.mToPosition = *to;
         ev.mDimensionId = bs->getDimensionId();
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(LiquidFlowEvent);
-    return original(_this, bs, to, from, id);
+    return rtn;
 }
 
 

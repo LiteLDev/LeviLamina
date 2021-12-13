@@ -385,8 +385,8 @@ public:
 
 class LiquidFlowEvent : public EventTemplate<LiquidFlowEvent> {
 public:
-    BlockInstance mBlockInstance;
-    BlockPos mTarget;
+    BlockPos mFromPosition;
+    BlockPos mToPosition;
     int mDimensionId;
 };
 
