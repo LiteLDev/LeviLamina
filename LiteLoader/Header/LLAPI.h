@@ -10,25 +10,8 @@
 #include "Utils/PluginOwnData.h"
 #include "LoggerAPI.h"
 
-//helper
-LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, std::string version,
-    std::string git, std::string license, std::string website);
-
 // LL types
 namespace LL {
-    struct Plugin {
-        //std::string id;
-        std::string name;
-        std::string introduction;
-        std::string version;
-
-        std::string git;
-        std::string license;
-        std::string website;
-
-        std::string filePath;
-        HMODULE handler;
-    };
 
     struct Version
     {
@@ -47,10 +30,27 @@ namespace LL {
         LIAPI std::string toString(bool needStatus = false);
         LIAPI static Version parse(const std::string& str);
     };
+
+    struct Plugin
+    {
+        //std::string id;
+        std::string name;
+        std::string introduction;
+        Version version;
+        std::map<std::string, std::string> others;
+
+        std::string filePath;
+        HMODULE handler;
+    };
+
 }
 inline bool operator<=(LL::Version a, LL::Version b) { return a < b || a == b; }
 inline bool operator>(LL::Version a, LL::Version b) { return b < a; }
 inline bool operator>=(LL::Version a, LL::Version b) { return b < a || b == a; }
+
+//helper
+LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, LL::Version version,
+                          std::map<std::string, std::string> others);
 
 // Loader APIs
 namespace LL
@@ -71,10 +71,25 @@ namespace LL
     // @param license *插件许可证
     // @param website *网站
     // @return 是否成功(失败则为插件名重复)
-    inline bool registerPlugin(std::string name, std::string introduction, std::string version,
+    // @note 此函数的实现必须放在头文件中
+    inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
                               std::string git = "", std::string license = "", std::string website = "") {
-        //此函数的实现必须放在头文件中
-        return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, git, license, website);
+        std::map<std::string, std::string> others;
+        if (!git.empty()) others.emplace("Git", git);
+        if (!license.empty()) others.emplace("License", license);
+        if (!website.empty()) others.emplace("Website", website);
+        return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
+    } 
+    // @param name 插件名
+    // @param introduction 插件介绍
+    // @param version 插件版本
+    // @param others 其他要附加的信息, k-v
+    // @return 是否成功(失败则为插件名重复)
+    // @example registerPlugin("Test", "Only a test", Version{0, 0, 1, Version::Dev}, {{"Note","This is Note"}});
+    // @note 此函数的实现必须放在头文件中
+    inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
+                              std::map<std::string, std::string> others) {
+        return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
     }
 
     // @param name 插件名

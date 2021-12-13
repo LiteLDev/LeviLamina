@@ -10,14 +10,16 @@ LIAPI std::string Container::getTypeName() {
 }
 
 //Safely add items to the container
-LIAPI bool Container::addItem(ItemStack* item) {
+LIAPI bool Container::addItem_s(ItemStack* item)
+{
     if (!hasRoomForItem(*item))
         return false;
     addItem(*((ItemStack*)item)->clone_s());
     return true;
 }
 
-LIAPI bool Container::addItemToFirstEmptySlot(ItemStack* item) {
+LIAPI bool Container::addItemToFirstEmptySlot_s(ItemStack* item)
+{
     return addItemToFirstEmptySlot(*((ItemStack*)item)->clone_s());
 }
 //Safely remove items to the container

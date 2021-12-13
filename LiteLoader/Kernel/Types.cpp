@@ -2,8 +2,8 @@
 
 ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 {
-    this->x = (char)pos.x;
-    this->z = (char)pos.z;
+    this->x = (char)pos.x & 0xf;
+    this->z = (char)pos.z & 0xf;
     this->y = (short)(pos.y - minHeight);
 }
 
