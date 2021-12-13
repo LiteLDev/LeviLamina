@@ -107,6 +107,11 @@ public:
         return {x + dx, y + dy, z + dz};
     }
 
+    inline Vec3 normalize() const {
+        float l = length();
+        return {x / l, y / l, z / l};
+    }
+
     inline Vec3 operator*(float num) const { return {x * num, y * num, z * num}; }
 
     inline Vec3 operator+(const Vec3 &b) const { return {this->x + b.x, this->y + b.y, this->z + b.z}; }
