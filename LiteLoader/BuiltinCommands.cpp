@@ -48,7 +48,7 @@ public:
 
                 oss << "Plugin <" << PluginName << '>' << std::endl;
                 oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
-                oss << "- Version: " << plugin->version.toString() << std::endl;
+                oss << "- Version: v" << plugin->version.toString(true) << std::endl;
                 oss << "- Introduction: " << plugin->introduction << std::endl;
                 for (auto& [k, v] : plugin->others) {
                     oss << "- " << k << ':' << v << std::endl;
@@ -68,7 +68,7 @@ public:
             // Plugin List
             // - LiteLoader(LiteLoader.dll)[v1.0.0-Beta]: plugin introduction
             auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
-            oss << "- " << name << "(" << fn << ")[" << plugin.version.toString() << "]: "
+            oss << "- " << name << "(" << fn << ")[v" << plugin.version.toString() << "]: "
                 << plugin.introduction << std::endl;
         }
         oss << "\n* Send command \"plugins <Plugin Name>\" for more information";

@@ -55,11 +55,10 @@ bool LL::Version::operator==(LL::Version b) {
 std::string LL::Version::toString(bool needStatus) {
     string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
     if (needStatus) {
-        res += " ";
         if (status == Status::Beta)
-            res += "Beta";
+            res += "-Beta";
         else if (status == Status::Dev)
-            res += "Dev";
+            res += "-Dev";
     }
     return res;
 }
