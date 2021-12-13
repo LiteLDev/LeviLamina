@@ -48,7 +48,7 @@ public:
 
                 oss << "Plugin <" << PluginName << '>' << std::endl;
                 oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
-                oss << "- Version: " << plugin->version.toString(true) << std::endl;
+                oss << "- Version: " << plugin->version.toString() << std::endl;
                 oss << "- Introduction: " << plugin->introduction << std::endl;
                 for (auto& [k, v] : plugin->others) {
                     oss << "- " << k << ':' << v << std::endl;
@@ -106,9 +106,7 @@ public:
         //});
     }
 };
-#include <MC/ItemStack.hpp>
-#include <MC/SimpleContainer.hpp>
-#include <MC/CompoundTag.hpp>
+
 static_assert(sizeof(CommandSelector<Player>) == 200);
 class TeleportDimensionCommand : public Command {
     enum class DimensionType {
@@ -122,13 +120,6 @@ class TeleportDimensionCommand : public Command {
     bool CommandPos_isSet = false;
     Vec3 getTargetPos(CommandOrigin const& ori, Actor* actor) const
     {
-        //auto it = actor->getHandSlot();
-        //logger.info("string:{}", it->toDebugString());
-        //auto name = it->getTypeName();
-        //logger.info("name:{}", name);
-        //auto pl = (Player*)actor;
-        //pl->crashClient();
-        //std::cout<<actor->getNbt()->toJson(4)<<std::endl;
         if (CommandPos_isSet)
             return CommandPos.getPosition(ori, {0, 0, 0});
         auto pos = actor->getPos();
