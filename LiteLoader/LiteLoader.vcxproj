@@ -114,7 +114,7 @@
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
     <ClInclude Include="Header\MC\EndTag.hpp" />
     <ClInclude Include="Header\MC\FloatTag.hpp" />
-    <ClInclude Include="Header\MC\FormUI.hpp" />
+    <ClInclude Include="Header\FormUI.h" />
     <ClInclude Include="Header\MC\GameMode.hpp" />
     <ClInclude Include="Header\MC\HashedString.hpp" />
     <ClInclude Include="Header\MC\HitResult.hpp" />

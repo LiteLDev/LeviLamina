@@ -500,9 +500,6 @@
     <ClInclude Include="Header\MC\RelativeFloat.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\MC\FormUI.hpp">
-      <Filter>Header\MC</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\RakNet.hpp">
       <Filter>Header\Network</Filter>
     </ClInclude>
@@ -535,6 +532,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\CommandSelectorBase.hpp">
       <Filter>Header\Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\FormUI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

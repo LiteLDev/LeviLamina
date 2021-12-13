@@ -1,9 +1,9 @@
+#include <FormUI.h>
 #include <LoggerAPI.h>
 #include <memory>
 #include <third-party/Nlohmann/fifo_json.hpp>
 
 #include <MC/BinaryStream.hpp>
-#include <MC/FormUI.hpp>
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <SendPacketAPI.h>
@@ -74,13 +74,13 @@ string SimpleForm::serialize()
 bool SimpleForm::sendTo(ServerPlayer* player, Callback callback)
 {
     unsigned id = NewFormId();
+    this->callback = callback;
     isSimpleForm[id] = true;
     simpleForms[id] = make_shared<SimpleForm>(*this);
-
     string data = serialize();
     BinaryStream wp;
     wp.reserve(32 + data.size());
-    wp.writeUnsignedInt(id);
+    wp.writeUnsignedVarInt(id);
     wp.writeString(data);
 
     NetworkPacket<100> pkt{wp.getAndReleaseData()};
@@ -238,7 +238,7 @@ bool CustomForm::sendTo(ServerPlayer* player, Callback callback)
     string data = serialize();
     BinaryStream wp;
     wp.reserve(32 + data.size());
-    wp.writeUnsignedInt(id);
+    wp.writeUnsignedVarInt(id);
     wp.writeString(data);
 
     NetworkPacket<100> pkt{wp.getAndReleaseData()};
@@ -266,16 +266,18 @@ void CallFormCallback(Player* player, unsigned formId, const string& data)
 
     if (isSimpleForm[formId])
     {
-        int chosen = stoi(data);
+        int chosen = data != "null" ? stoi(data) : -1;
 
         //Simple Form Callback
         auto form = simpleForms[formId];
         if (form->callback)
             form->callback(chosen);
         //Button Callback
-        auto button = dynamic_pointer_cast<Button>(form->elements[chosen]);
-        if (button->callback)
-            button->callback();
+        if (chosen >= 0) {
+            auto button = dynamic_pointer_cast<Button>(form->elements[chosen]);
+            if (button->callback)
+                button->callback();
+        }
 
         simpleForms.erase(formId);
     }
