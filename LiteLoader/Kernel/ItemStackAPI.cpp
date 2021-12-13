@@ -38,20 +38,20 @@ ItemStack* ItemStack::create(std::string type, int count) {
 
 ItemStack* ItemStack::clone_s() {
     ItemStack* a = (ItemStack*)new char[272];
-    *a = ((ItemStack*)this)->clone();
+    *a = clone();
     return a;
 }
 
 std::string ItemStack::getTypeName() const {
     if (this->isNull())
         return "";
-    return ((ItemStack*)this)->getItem()->getSerializedName();
+    return getItem()->getSerializedName();
 }
 
 int ItemStack::getAux() const {
     if (this->isNull())
         return 0;
-    return ((ItemStack*)this)->getAuxValue();
+    return getAuxValue();
 }
 
 int ItemStack::getCount() const {
