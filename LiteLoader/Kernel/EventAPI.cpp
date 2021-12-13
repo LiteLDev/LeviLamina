@@ -1311,6 +1311,9 @@ THook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSour
 THook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
       Actor* a1, Actor* a2)
 {
+    auto rtn = original(a1, a2);
+    if (!rtn)
+        return false;
     IF_LISTENED(EntityRideEvent)
     {
         EntityRideEvent ev;
@@ -1320,7 +1323,7 @@ THook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
             return false;
     }
     IF_LISTENED_END(EntityRideEvent);
-    return original(a1, a2);
+    return rtn;
 }
 
 
