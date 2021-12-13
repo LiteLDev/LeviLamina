@@ -7,7 +7,8 @@
 #include <MC/HashedString.hpp>
 #include <MC/Level.hpp>
 
-Block* Block::create(string name, unsigned short tileData) {
+Block* Block::create(string name, unsigned short tileData)
+{
     BlockPalette* generator = Global<Level>->getBlockPalette();
     auto blk = generator->getBlockLegacy(name);
     if (!blk)
@@ -15,22 +16,21 @@ Block* Block::create(string name, unsigned short tileData) {
     return (Block*)((BlockLegacy*)blk)->toBlock(tileData);
 }
 
-Block* Block::create(CompoundTag* nbt) {
+Block* Block::create(CompoundTag* nbt) 
+{
     // pair<enum BlockSerializationUtils::NBTState, Block*>
     auto result = BlockSerializationUtils::tryGetBlockFromNBT(*nbt, nullptr);
     return const_cast<Block*>(result.second);
 }
 
-string Block::getNameString() {
+string Block::getTypeName()
+{
     return Block::getName().getString();
 }
 
-string Block::getTypeName() {
-    auto& blg = getLegacyBlock();
-    return dAccess<string>(&blg, 128);
-}
 
-int Block::getId() {
+int Block::getId() 
+{
     return getLegacyBlock().getBlockItemId();
 }
 

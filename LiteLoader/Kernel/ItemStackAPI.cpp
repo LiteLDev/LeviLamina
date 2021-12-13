@@ -43,10 +43,10 @@ ItemStack* ItemStack::clone_s() {
 }
 
 std::string ItemStack::getTypeName() const {
-    if (this->isNull())
+    if (isNull())
         return "";
     auto item = getItem();
-    return item->getSerializedName();
+    return getItem()->getSerializedName();
 }
 
 int ItemStack::getAux() const {

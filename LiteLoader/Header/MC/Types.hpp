@@ -446,7 +446,8 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-enum class ContainerType : unsigned char {
+enum class ContainerType : unsigned char 
+{
     INVENTORY = 0xff,
     CONTAINER = 0x00,
     WORKBENCH = 0x01,
@@ -471,14 +472,16 @@ enum class ContainerType : unsigned char {
     NONE = 0xf7
 };
 
-enum class UpdateBlockFlags : int {
+enum class UpdateBlockFlags : int 
+{
     BlockUpdateNeighbours = 1,
     BlockUpdateNetwork = 2,
     BlockUpdateNoGraphics = 3,
     BlockUpdatePriority = 4,
 };
 
-enum class DataItemType : unsigned char { 
+enum class DataItemType : unsigned char 
+{ 
     BYTE = 0,                                         
     SHORT = 1,                                          
     INT = 2,                                         
@@ -490,7 +493,8 @@ enum class DataItemType : unsigned char {
     VEC3 = 8
 };
 
-enum class TextType : char {
+enum class TextType : char 
+{
     RAW = 0,
     CHAT = 1,
     TRANSLATION = 2,
@@ -500,17 +504,32 @@ enum class TextType : char {
     SYSTEM = 6,
     WHISPER = 7,
     ANNOUNCEMENT = 8,
-    JSON = 9,
-    JSON_WHISPER = 10
+    JSON_WHISPER = 9,
+    JSON = 10
 };
 
-enum class TitleType : int {
+enum class TitleType : int 
+{
     Clear = 0,
     Reset = 1,
     SetTitle = 2,
     SetSubtitle = 3,
     SetActionBar = 4,
     SetDurations = 5,
+    TitleTextObject = 6,
+    SubtitleTextObject = 7,
+    ActionbarTextObject = 8
+};
+
+enum class BossEventColour : int
+{
+    Grey = 0,
+    Blue = 1,
+    Red = 2,
+    Green = 3,
+    Yellow = 4,
+    Purple = 5,
+    White = 6
 };
 
 enum class ParticleType {
@@ -594,7 +613,8 @@ enum class ParticleType {
     sculksoul = 0x53
 };
 
-enum class transactionType {
+enum class transactionType
+{
     NormalTransaction = 0x00,
     InventoryMismatch = 0x01,
     ItemUseTransaction = 0x02,
@@ -602,7 +622,8 @@ enum class transactionType {
     ItemReleaseTransaction = 0x04
 };
 
-enum class ItemStackRequestActionType {
+enum class ItemStackRequestActionType 
+{
     Take = 0x00,
     Place = 0x01,
     Swap = 0x02,
@@ -623,7 +644,8 @@ enum class ItemStackRequestActionType {
     CraftResults_DEPRECATEDASKTYLAING = 0x11
 };
 
-enum class ActorDamageCause : int {
+enum class ActorDamageCause : int 
+{
     Override = 0x0,
     Contact = 0x1,
     EntityAttack = 0x2,
@@ -655,18 +677,21 @@ enum class ActorDamageCause : int {
     None = -0x01,
 };
 
-enum class ObjectiveSortOrder : char {
+enum class ObjectiveSortOrder : char 
+{
     Ascending = 0,
     Descending = 1
 };
 
-enum class PlayerScoreSetFunction : char {
+enum class PlayerScoreSetFunction : char 
+{
     Set = 0,
     Add = 1,
     Remove = 2
 };
 
-enum class FaceID : char {
+enum class FaceID : char 
+{
     Unknown = -1,
     Down = 0,
     Up = 1,

@@ -186,7 +186,6 @@ int Player::clearItem(string typeName) {
             res += cnt;
         }
     }
-
     refreshInventory();
     return res;
 }
@@ -317,7 +316,7 @@ bool Player::sendTextPacket(string text, TextType Type) {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
-    wp.writeBool(false);
+    wp.writeBool(true);
     switch (Type) {
         case TextType::CHAT:
         case TextType::WHISPER:

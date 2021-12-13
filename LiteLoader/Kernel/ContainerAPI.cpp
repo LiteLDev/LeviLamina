@@ -14,7 +14,7 @@ LIAPI bool Container::addItem_s(ItemStack* item)
 {
     if (!hasRoomForItem(*item))
         return false;
-    addItem(*((ItemStack*)item)->clone_s());
+     addItem(*((ItemStack*)item)->clone_s());
     return true;
 }
 
@@ -60,3 +60,14 @@ LIAPI Container* Container::getContainerAt(Vec3& pos, int dim) {
 
     return container;
 }
+
+enum class BossEventColour:int
+{
+    Grey = 0,
+    Blue = 1,
+    Red = 2,
+    Green = 3,
+    Yellow = 4,
+    Purple = 5,
+    White = 6
+};
