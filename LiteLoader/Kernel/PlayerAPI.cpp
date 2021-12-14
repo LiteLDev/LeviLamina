@@ -314,12 +314,18 @@ bool Player::deleteScore(string key)
 
 bool Player::sendTextPacket(string text, TextType Type)
 {
+    auto pkt = MinecraftPackets::createPacket(9);
+    dAccess<char, 48>(pkt.get()) = (char)Type;
+    dAccess<bool, 144>(pkt.get()) = 1;
+    dAccess<string, 56>(pkt.get()) = u8"Server";
+    dAccess<string, 88>(pkt.get()) = text;
+    sendNetworkPacket(*pkt);
+    /*
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
     wp.writeBool(true);
-    switch (Type)
-    {
+    switch (Type) {
         case TextType::CHAT:
         case TextType::WHISPER:
         case TextType::ANNOUNCEMENT:
@@ -338,9 +344,8 @@ bool Player::sendTextPacket(string text, TextType Type)
     }
     wp.writeString("");
     wp.writeString("");
-    TextPacket txt;
-    txt.write(wp);
-    sendNetworkPacket(txt);
+    NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
+    sendNetworkPacket(pkt);*/
     return true;
 }
 
