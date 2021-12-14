@@ -72,9 +72,9 @@ bool BlockInstance::breakNaturally(ItemStack* tool) {
     return out;
 }
 
-ItemStack& BlockInstance::getBlockDrops() {
+ItemStack BlockInstance::getBlockDrops() {
     auto v17 = block->asItemInstance(*Level::getBlockSource(dim), pos);
-    return *((ItemStack*)&v17);
+    return ItemStack::fromItemInstance(v17);
 }
 
 BlockPos BlockInstance::getPosition() {

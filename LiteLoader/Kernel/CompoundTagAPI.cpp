@@ -112,7 +112,7 @@ CompoundTag* CompoundTag::fromBlock(Block* blk) {
 void CompoundTag::setBlock(Block* blk) {
     auto tag = (CompoundTag*)((uintptr_t)blk + 96);
     tag->destroy();
-    tag = this->clone().release();
+    memcpy(tag, this->clone().release(), sizeof(CompoundTag));
 }
 
 CompoundTag* CompoundTag::fromActor(Actor* actor) {

@@ -15,7 +15,8 @@ class ItemStackBase {
 #define AFTER_EXTRA
 // Add Member There
 private:
-char filler[136];
+//void* vtbl;
+char filler[128];
 
 #undef AFTER_EXTRA
 

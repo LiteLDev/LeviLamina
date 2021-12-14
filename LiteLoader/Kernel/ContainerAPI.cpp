@@ -14,7 +14,7 @@ LIAPI bool Container::addItem_s(ItemStack* item)
 {
     if (!hasRoomForItem(*item))
         return false;
-     addItem(*((ItemStack*)item)->clone_s());
+    addItem(*((ItemStack*)item)->clone_s());
     return true;
 }
 

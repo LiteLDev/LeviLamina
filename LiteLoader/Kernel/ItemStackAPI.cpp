@@ -3,14 +3,18 @@
 #include "MC/ItemStack.hpp"
 #include "MC/Spawner.hpp"
 #include "MC/level.hpp"
+#include "MC/ItemInstance.hpp"
 #include <MC/CompoundTag.hpp>
 #include <string>
 #include <vector>
 using namespace std;
 
+static_assert(sizeof(ItemStack) == 144);
+static_assert(sizeof(ItemInstance) == 136);
+
 ItemStack* ItemStack::create() {
     try {
-        ItemStack* a = (ItemStack*)new char[272];
+        ItemStack* a = (ItemStack*)new char[sizeof(ItemStack)];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
         return item;
     } catch (...) {
@@ -35,9 +39,20 @@ ItemStack* ItemStack::create(std::string type, int count) {
     return create(nbt);
 }
 
+ItemStack ItemStack::fromItemInstance(ItemInstance const& ins)
+{
+    try
+    {
+        return ItemStack(ins);
+    }
+    catch (...)
+    {
+        return ItemStack::EMPTY_ITEM;
+    }
+}
 
 ItemStack* ItemStack::clone_s() {
-    ItemStack* a = (ItemStack*)new char[272];
+    ItemStack* a = ItemStack::create();
     *a = clone();
     return a;
 }

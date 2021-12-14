@@ -5,13 +5,23 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+struct ItemStackNetIdTag;
+struct ItemStackRequestIdTag;
+enum ItemStackNetIdType : unsigned char
+{
+    ItemStackNetId_TypedServerNetId = 0,
+    ItemStackRequestId_TypedClientNetId = 1,
+    ItemStackLegacyRequestId_TypedClientNetId = 2,
+};
 #undef BEFORE_EXTRA
 
 struct ItemStackNetIdVariant {
 
 #define AFTER_EXTRA
 // Add Member There
+    //std::variant<TypedXXXNetId<ItemStackXXXIdTag, int, 0>> id;
+    int netId;
+    unsigned char type;
 
 #undef AFTER_EXTRA
 

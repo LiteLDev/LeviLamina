@@ -33,7 +33,7 @@ public:
 
     LIAPI bool breakNaturally();
     LIAPI bool breakNaturally(ItemStack* tool);
-    LIAPI ItemStack& getBlockDrops();
+    LIAPI ItemStack getBlockDrops();
     LIAPI bool isNull();
 
     LIAPI bool operator==(BlockInstance const& bli);
