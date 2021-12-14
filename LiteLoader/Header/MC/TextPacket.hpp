@@ -13,7 +13,8 @@ class TextPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[176];
+    char filler[168];
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TEXTPACKET

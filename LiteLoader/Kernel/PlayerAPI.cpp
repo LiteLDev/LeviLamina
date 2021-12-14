@@ -203,14 +203,9 @@ Container* Player::getEnderChestContainer() {
     return dAccess<Container*>(this, 4200); //IDA Player::Player() 782
 }
 
-bool Player::transferServer(const string& address, unsigned short port) {
-    BinaryStream wp;
-    wp.reserve(8 + address.size());
-    wp.writeString(address);
-    wp.writeUnsignedShort(port);
-    NetworkPacket<85> pkt{wp.getAndReleaseData()};
-    sendNetworkPacket(pkt);
-    return true;
+bool Player::transferServer(const string& address, unsigned short port)
+{
+    return sendTransferPacket(address, port);
 }
 
 std::pair<BlockPos, int> Player::getRespawnPosition() {
@@ -313,7 +308,11 @@ bool Player::deleteScore(string key)
 
 ////////////////////////// Packet //////////////////////////
 
-bool Player::sendTextPacket(string text, TextType Type) {
+static_assert(sizeof(TextPacket) == 216);
+static_assert(sizeof(TransferPacket) == 88);
+
+bool Player::sendTextPacket(string text, TextType Type)
+{
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
@@ -496,12 +495,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
 }
 
 bool Player::sendTransferPacket(const string& address, short port) {
-    BinaryStream bs;
-    bs.writeString(address);
-    bs.writeUnsignedShort(port);
-    TransferPacket pkt;
-    pkt.write(bs);
-    sendNetworkPacket(pkt);
+    sendNetworkPacket(TransferPacket(address, port));
     return true;
 }
 
