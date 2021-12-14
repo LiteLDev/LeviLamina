@@ -361,7 +361,7 @@ bool Player::sendNotePacket(unsigned int tone) {
         return false;
     }
     BinaryStream wp;
-    wp.writeUnsignedChar(81);
+    wp.writeUnsignedChar(82);
     wp.writeFloat(getPos().x);
     wp.writeFloat(getPos().y);
     wp.writeFloat(getPos().z);
@@ -564,8 +564,6 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
             wp.writeUnsignedVarInt((int)colour);
             wp.writeUnsignedVarInt(overlay);
             break;
-        default:
-            return false;
     }
     NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
