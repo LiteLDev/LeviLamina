@@ -20,6 +20,7 @@
 #include <MC/TextPacket.hpp>
 #include <MC/ScorePacketInfo.hpp>
 #include <SendPacketAPI.h>
+#include <MC/TransferPacket.hpp>
 
 #include <MC/Level.hpp>
 #include <MC/ItemStack.hpp>
@@ -336,7 +337,8 @@ bool Player::sendTextPacket(string text, TextType Type) {
     }
     wp.writeString("");
     wp.writeString("");
-    NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
+    TextPacket pkt;
+    pkt.write(wp);
     sendNetworkPacket(pkt);
     return true;
 }
@@ -494,11 +496,12 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
 }
 
 bool Player::sendTransferPacket(const string& address, short port) {
-    BinaryStream wp;
-    Packet* packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
-    dAccess<string>(packet, 48) = address;
-    dAccess<short>(packet, 80) = port;
-    sendNetworkPacket(*packet);
+    BinaryStream bs;
+    bs.writeString(address);
+    bs.writeUnsignedShort(port);
+    TransferPacket pkt;
+    pkt.write(bs);
+    sendNetworkPacket(pkt);
     return true;
 }
 
