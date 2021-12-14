@@ -257,8 +257,8 @@ int Player::getDeviceType() {
 }
 
 bool Player::crashClient() {
-    Packet* pkt = MinecraftPackets::createPacket(58);
-    dAccess<bool, 56>(pkt) = 1;
+    auto pkt = MinecraftPackets::createPacket(58);
+    dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
     return true;
 }
@@ -312,19 +312,14 @@ bool Player::deleteScore(string key)
 
 ////////////////////////// Packet //////////////////////////
 
-bool Player::sendTextPacket(string text, TextType Type) {
-    Packet* pkt = MinecraftPackets::createPacket(9);
-    dAccess<char, 48>(pkt) = (char)Type;
-    dAccess<bool, 144>(pkt) = 1;
-    dAccess<string, 56>(pkt) = u8"Server";
-    dAccess<string, 88>(pkt) = text;
-    sendNetworkPacket(*pkt);
-    /*
+bool Player::sendTextPacket(string text, TextType Type)
+{
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
     wp.writeBool(true);
-    switch (Type) {
+    switch (Type)
+    {
         case TextType::CHAT:
         case TextType::WHISPER:
         case TextType::ANNOUNCEMENT:
@@ -343,8 +338,9 @@ bool Player::sendTextPacket(string text, TextType Type) {
     }
     wp.writeString("");
     wp.writeString("");
-    NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
-    sendNetworkPacket(pkt);*/
+    TextPacket txt;
+    txt.write(wp);
+    sendNetworkPacket(txt);
     return true;
 }
 
@@ -502,9 +498,9 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
 
 bool Player::sendTransferPacket(const string& address, short port) {
     BinaryStream wp;
-    Packet* packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
-    dAccess<string>(packet, 48) = address;
-    dAccess<short>(packet, 80) = port;
+    auto packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
+    dAccess<string>(packet.get(), 48) = address;
+    dAccess<short>(packet.get(), 80) = port;
     sendNetworkPacket(*packet);
     return true;
 }
@@ -523,8 +519,8 @@ bool Player::sendSetDisplayObjectivePacket(const string& title, const string& na
 
 bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
     auto packet = MinecraftPackets::createPacket(0x6c);
-    dAccess<char>(packet, 48) = type;
-    dAccess<vector<ScorePacketInfo>>(packet, 56) = data;
+    dAccess<char>(packet.get(), 48) = type;
+    dAccess<vector<ScorePacketInfo>>(packet.get(), 56) = data;
     sendNetworkPacket(*packet);
     return true;
 }
@@ -579,18 +575,18 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
-    dAccess<string, 48>(packet) = cmd;
+    dAccess<string, 48>(packet.get()) = cmd;
     NetworkIdentifier* nid = getNetworkIdentifier();
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet));
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
 bool Player::sendTextTalkPacket(const string& msg) {
     auto packet = MinecraftPackets::createPacket(0x09);
-    dAccess<unsigned char, 48>(packet) = 1;
-    dAccess<string, 56>(packet) = "";
-    dAccess<string, 88>(packet) = msg;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet));
+    dAccess<unsigned char, 48>(packet.get()) = 1;
+    dAccess<string, 56>(packet.get()) = "";
+    dAccess<string, 88>(packet.get()) = msg;
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet.get()));
     return true;
 }
 
