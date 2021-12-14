@@ -258,8 +258,8 @@ int Player::getDeviceType() {
 }
 
 bool Player::crashClient() {
-    Packet* pkt = MinecraftPackets::createPacket(58);
-    dAccess<bool, 56>(pkt) = 1;
+    auto pkt = MinecraftPackets::createPacket(58);
+    dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
     return true;
 }
@@ -519,82 +519,74 @@ bool Player::sendSetDisplayObjectivePacket(const string& title, const string& na
 
 bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
     auto packet = MinecraftPackets::createPacket(0x6c);
-    dAccess<char>(packet, 48) = type;
-    dAccess<vector<ScorePacketInfo>>(packet, 56) = data;
+    dAccess<char>(packet.get(), 48) = type;
+    dAccess<vector<ScorePacketInfo>>(packet.get(), 56) = data;
     sendNetworkPacket(*packet);
     return true;
 }
 
-#include <MC/BossEventPacket.hpp>
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay)
 {
     BinaryStream wp;
-    char tmp[0x90];
-    auto pkt = SymCall("??0BossEventPacket@@QEAA@XZ", BossEventPacket*, void*)(tmp);
-    dAccess<ActorUniqueID, 56>(pkt) = getUniqueID();
-    dAccess<BossEvent, 72>(pkt) = type;
-    dAccess<gsl::string_span<-1>, 80>(pkt) = gsl::string_span<-1>(name);
-    dAccess<float, 112>(pkt) = percent;
-    dAccess<ActorUniqueID, 64>(pkt) = getUniqueID();
-    dAccess<int, 124>(pkt) = 1;
-    dAccess<BossEventColour, 116>(pkt) = colour;
-    dAccess<int, 120>(pkt) = overlay;
-    sendNetworkPacket(*pkt);
+    wp.writeVarInt64(getActorUniqueId().get());
+    wp.writeUnsignedVarInt((int)type);
+    switch (type)
+    {
+        case BossEvent::Show:
+            wp.writeString(name);
+            wp.writeFloat(percent);
+            goto LABEL_3;
+        case BossEvent::RegisterPlayer:
+        case BossEvent::UnregisterPlayer:
+        {
+            wp.writeVarInt64(getActorUniqueId().get());
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::HealthPercentage:
+        {
+            wp.writeFloat(percent);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::Title:
+        {
+            wp.writeString(name);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::AppearanceProperties:
+        LABEL_3:
+            wp.writeUnsignedShort(1);
+            goto LABEL_4;
+        case BossEvent::Texture:
+        LABEL_4:
+            wp.writeUnsignedVarInt((int)colour);
+            wp.writeUnsignedVarInt(overlay);
+            break;
+    }
+    NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
     return true;
-    //wp.writeVarInt64(getActorUniqueId().get());
-    //wp.writeUnsignedVarInt((int)type);
-    //switch (type)
-    //{
-    //    case BossEvent::Show:
-    //        wp.writeString(name);
-    //        wp.writeFloat(percent);
-    //        wp.writeUnsignedShort(1);
-    //        wp.writeUnsignedVarInt((int)colour);
-    //        wp.writeUnsignedVarInt(overlay);
-    //        break;
-    //    case BossEvent::Hide:
-    //        break;
-    //    case BossEvent::RegisterPlayer:
-    //    case BossEvent::UnregisterPlayer:
-    //        wp.writeVarInt64(getActorUniqueId().get());
-    //        break;
-    //    case BossEvent::HealthPercentage:
-    //        wp.writeFloat(percent);
-    //        break;
-    //    case BossEvent::Title:
-    //        wp.writeString(name);
-    //        break;
-    //    case BossEvent::AppearanceProperties:
-    //        wp.writeUnsignedShort(1);
-    //        wp.writeUnsignedVarInt((int)colour);
-    //        wp.writeUnsignedVarInt(overlay);
-    //        break;
-    //    case BossEvent::Texture:
-    //        wp.writeUnsignedVarInt((int)colour);
-    //        wp.writeUnsignedVarInt(overlay);
-    //        break;
-    //    default:
-    //        return false;
-    //}
-    //NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
-    //sendNetworkPacket(pk);
-    //return true;
 }
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
-    dAccess<string, 48>(packet) = cmd;
+    dAccess<string, 48>(packet.get()) = cmd;
     NetworkIdentifier* nid = getNetworkIdentifier();
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet));
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
 bool Player::sendTextTalkPacket(const string& msg) {
     auto packet = MinecraftPackets::createPacket(0x09);
-    dAccess<unsigned char, 48>(packet) = 1;
-    dAccess<string, 56>(packet) = "";
-    dAccess<string, 88>(packet) = msg;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet));
+    dAccess<unsigned char, 48>(packet.get()) = 1;
+    dAccess<string, 56>(packet.get()) = "";
+    dAccess<string, 88>(packet.get()) = msg;
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet.get()));
     return true;
 }
 
