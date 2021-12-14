@@ -23,7 +23,28 @@ Writing plugins in C++, Golang and other languages allows developers to easily e
  Easy to use, intuitive interface!
 
 ```c++
-
+BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
+    auto& bs = getRegion();
+    auto& pos = getCameraPos();
+    auto viewVec = getViewVector(1.0f);
+    auto viewPos = pos + (viewVec * maxDistance);
+    auto player = isPlayer() ? (Player*)this : nullptr;
+    int maxDisManhattan = (int)((maxDistance + 1) * 2);
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr);
+    if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
+        BlockPos bpos;
+        if (includeLiquid && result.isHitLiquid()) {
+            bpos = result.getLiquidPos();
+            face = result.getLiquidFacing();
+        } else {
+            bpos = result.getBlockPos();
+            face = result.getFacing();
+        }
+        //auto block = const_cast<Block*>(&bs.getBlock(bpos));
+        return Level::getBlockInstance(bpos, bs.getDimensionId());
+    }
+    return BlockInstance::Null;
+}
 ```
 
 
