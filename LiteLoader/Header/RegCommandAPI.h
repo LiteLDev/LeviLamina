@@ -22,6 +22,10 @@ static int getOffset(Type Command::*src) {
     return u.value;
 }
 
+using ParseFn = bool (CommandRegistry::*)(
+    void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
+    std::vector<std::string>&) const;
+
 template <typename Command, typename Type>
 static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
     return {
@@ -37,10 +41,18 @@ static CommandParameterData makeMandatory(Type Command::*field, std::string name
 }
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
-    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
+    makeMandatory(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr)
+{
+    ParseFn parseFn;
+
+    if constexpr (CommandParameterDataType::SOFT_ENUM == DataType)
+        parseFn = CommandRegistry::getParseFn<Type>();
+    else
+        parseFn = &CommandRegistry::fakeParse<Type>;
+
     return {
         CommandRegistry::getNextTypeId(),
-        &CommandRegistry::fakeParse<Type>,
+        parseFn,
         name,
         DataType,
         desc,
@@ -65,9 +77,7 @@ static CommandParameterData makeOptional(Type Command::*field, std::string name,
 template <CommandParameterDataType DataType, typename Command, typename Type>
 static CommandParameterData
     makeOptional(Type Command::*field, std::string name, char const* desc = nullptr, bool Command::*isSet = nullptr) {
-    bool (CommandRegistry::*parseFn)(
-        void*, CommandRegistry::ParseToken const&, CommandOrigin const&, int, std::string&,
-        std::vector<std::string>&) const;
+    ParseFn parseFn;
 
     if constexpr (CommandParameterDataType::SOFT_ENUM == DataType)
         parseFn = CommandRegistry::getParseFn<Type>();
