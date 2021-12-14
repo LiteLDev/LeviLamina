@@ -692,7 +692,6 @@ THook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",
 THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
       MinecraftCommands* _this, MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
 {
-    MCRESULT* result = original(_this, rtn, context, print);
 
     Player* sp;
     string cmd;
@@ -708,7 +707,7 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
     }
     catch (...)
     {
-        return result;
+        return rtn;
     }
 
     if (sp)
@@ -722,7 +721,7 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
             ev.mResult = rtn;
 
             if (!ev.call())
-                return false;
+                return rtn;
         }
         IF_LISTENED_END(PlayerCmdEvent);
     }
@@ -735,11 +734,11 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
             ev.mCommand = cmd;
 
             if (!ev.call())
-                return false;
+                return rtn;
         }
         IF_LISTENED_END(ConsoleCmdEvent);
     }
-    return result;
+    return original(_this, rtn, context, print);
 }
 
 /////////////////// CmdBlockExecute ///////////////////
