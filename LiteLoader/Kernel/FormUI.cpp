@@ -290,7 +290,7 @@ void CallFormCallback(Player* player, unsigned formId, const string& data)
         int nowIndex = 0;
         for (fifo_json& j : res)
         {
-            switch (form->getType(nowIndex++))
+            switch (form->getType(nowIndex))
             {
             case CustomFormElement::Type::Input:
                 form->setData<Input>(nowIndex, j.get<string>());
@@ -308,6 +308,7 @@ void CallFormCallback(Player* player, unsigned formId, const string& data)
                 form->setData<StepSlider>(nowIndex, j.get<int>());
                 break;
             }
+            nowIndex++;
         }
 
         if (form->callback)

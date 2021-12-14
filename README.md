@@ -9,7 +9,7 @@ Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total
 [Donate us(afdian)](https://afdian.net/@liteldev)  
 [Official Forum](https://forum.litebds.com/)  
 
-##### English | [简体中文](https://github.com/LiteLDev/LiteLoader/blob/main/README_zh-cn.md)
+##### English | [简体中文](README_zh-cn.md)
 
 ![[object Object]](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&descriptionEditable=%E6%96%B0%E6%97%B6%E4%BB%A3%20BDS%20%E6%8F%92%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%99%A8&font=KoHo&forks=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fblob%2Fmaster%2Fimages%2Ficon.ico%3Fraw%3Dtrue&name=1&owner=1&pattern=Brick%20Wall&pulls=1&stargazers=1&theme=Light)
 
