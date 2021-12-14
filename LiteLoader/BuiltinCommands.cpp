@@ -65,8 +65,8 @@ public:
         std::ostringstream oss;
         oss << "Plugin Lists[" << plugins.size() << "]\n";
         for (auto&[name, plugin]: plugins) {
-            // Plugin List
-            // - LiteLoader(LiteLoader.dll)[v1.0.0-Beta]: plugin introduction
+            // Plugin Lists[1]
+            // - LiteLoader(LiteLoader.dll)[v1.0.0]: plugin introduction
             auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
             oss << "- " << name << "(" << fn << ")[v" << plugin.version.toString() << "]: "
                 << plugin.introduction << std::endl;
