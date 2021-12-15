@@ -313,14 +313,6 @@ static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type)
 {
-    auto pkt = MinecraftPackets::createPacket(9);
-    dAccess<char, 48>(pkt.get()) = (char)Type;
-    dAccess<bool, 144>(pkt.get()) = 1;
-    dAccess<string, 56>(pkt.get()) = u8"Server";
-    dAccess<string, 88>(pkt.get()) = text;
-    sendNetworkPacket(*pkt);
-    return true;
-    /*
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
@@ -345,10 +337,9 @@ bool Player::sendTextPacket(string text, TextType Type)
     wp.writeString("");
     wp.writeString("");
     TextPacket pkt;
-    pkt.write(wp);
+    SymCall("?_read@TextPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", int, TextPacket*, BinaryStream*)(&pkt, &wp);
     sendNetworkPacket(pkt);
     return true;
-    */
 }
 
 bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
