@@ -590,7 +590,7 @@ bool Player::sendTextTalkPacket(const string& msg) {
     return true;
 }
 
-bool Player::sendRawFormPacket(unsigned formId, Player* player, const string& data)
+bool Player::sendRawFormPacket(unsigned formId, const string& data)
 {
     BinaryStream wp;
     wp.reserve(32 + data.size());
@@ -598,11 +598,11 @@ bool Player::sendRawFormPacket(unsigned formId, Player* player, const string& da
     wp.writeString(data);
 
     NetworkPacket<100> pkt{ wp.getAndReleaseData() };
-    player->sendNetworkPacket(pkt);
+    sendNetworkPacket(pkt);
     return true;
 }
 
-bool Player::sendSimpleFormPacket(Player* player, const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback)
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback)
 {
     string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
     model = model.replace(model.find("%s"), 2, title);
@@ -625,13 +625,13 @@ bool Player::sendSimpleFormPacket(Player* player, const string& title, const str
     model = model.replace(model.find("%s"), 2, buttonText.dump());
 
     unsigned formId = NewFormId();
-    if (!sendRawFormPacket(formId, player, model))
+    if (!sendRawFormPacket(formId, model))
         return false;
     SetSimpleFormPacketCallback(formId, callback);
     return true;
 }
 
-bool Player::sendModalFormPacket(Player* player, const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
+bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
 {
     string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
     model = model.replace(model.find("%s"), 2, title);
@@ -640,16 +640,16 @@ bool Player::sendModalFormPacket(Player* player, const string& title, const stri
     model = model.replace(model.find("%s"), 2, button2);
 
     unsigned formId = NewFormId();
-    if (!sendRawFormPacket(formId, player, model))
+    if (!sendRawFormPacket(formId, model))
         return false;
     SetModalFormPacketCallback(formId, callback);
     return true;
 }
 
-bool Player::sendCustomForm(Player* player, const std::string& data, std::function<void(string)> callback)
+bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
 {
     unsigned formId = NewFormId();
-    if (!sendRawFormPacket(formId, player, data))
+    if (!sendRawFormPacket(formId, data))
         return false;
     SetCustomFormPacketCallback(formId, callback);
     return true;
