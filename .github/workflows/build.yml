@@ -21,7 +21,7 @@ jobs:
         mkdir Tools/Server
         ServerLink=$(cat 'LINK.txt')
         curl -L -o Tools/Server/server.zip "$ServerLink"
-        unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
+        unzip -q Tools/Server/server.zip -d Tools/Server/
       shell: bash
 
     - name: Build Library
