@@ -28,6 +28,7 @@
 #include <MC/Container.hpp>
 #include <MC/SimpleContainer.hpp>
 #include <MC/Scoreboard.hpp>
+#include <MC/PlaySoundPacket.hpp>
 
 #include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
@@ -310,6 +311,7 @@ bool Player::deleteScore(string key)
 ////////////////////////// Packet //////////////////////////
 
 static_assert(sizeof(TextPacket) == 216);
+static_assert(sizeof(PlaySoundPacket) == 152);
 static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type)
@@ -338,7 +340,7 @@ bool Player::sendTextPacket(string text, TextType Type)
     wp.writeString("");
     wp.writeString("");
     TextPacket pkt;
-    SymCall("?_read@TextPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", int, TextPacket*, BinaryStream*)(&pkt, &wp);
+    (*(TextPacket*)&pkt)._read(wp);
     sendNetworkPacket(pkt);
     return true;
 }
@@ -391,18 +393,17 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string Part
     return true;
 }
 
-//bad
 bool Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
     BinaryStream wp;
-    wp.reserve(Soundname.size());
     wp.writeString(Soundname);
     wp.writeVarInt((int)Position.x);
-    wp.writeUnsignedVarInt((unsigned int)(Position.y * 8));
+    wp.writeUnsignedVarInt((unsigned int)Position.y);
     wp.writeVarInt((int)(Position.z));
     wp.writeFloat(Volume);
     wp.writeFloat(Pitch);
-    NetworkPacket<0x56> pkts{wp.getAndReleaseData()};
-    sendNetworkPacket(pkts);
+    PlaySoundPacket pkt;
+    (*(PlaySoundPacket*)&pkt)._read(wp);
+    sendNetworkPacket(pkt);
     return true;
 }
 
