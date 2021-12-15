@@ -383,7 +383,7 @@ public:
     Actor* mActor;
 };
 
-class LiquidFlowEvent : public EventTemplate<LiquidFlowEvent> {
+class LiquidSpreadEvent : public EventTemplate<LiquidSpreadEvent> {
 public:
     BlockInstance mBlockInstance;
     BlockPos mTarget;

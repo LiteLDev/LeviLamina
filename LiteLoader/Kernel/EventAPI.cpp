@@ -95,7 +95,7 @@ DeclareEventListeners(ContainerChangeEvent);
 DeclareEventListeners(PistonPushEvent);
 DeclareEventListeners(RedStoneUpdateEvent);
 DeclareEventListeners(BlockExplodedEvent);
-DeclareEventListeners(LiquidFlowEvent);
+DeclareEventListeners(LiquidSpreadEvent);
 DeclareEventListeners(ProjectileHitBlockEvent);
 DeclareEventListeners(HopperSearchItemEvent);
 DeclareEventListeners(RespawnAnchorExplodeEvent);
@@ -1097,26 +1097,24 @@ THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
     IF_LISTENED_END(PlayerUseFrameBlockEvent);
     return original(_this, a2, a3);
 }
-/////////////////// LiquidFlow(Needs optimization) ///////////////////
+
+/////////////////// LiquidSpreadEvent ///////////////////
 #include <MC/LiquidBlockDynamic.hpp>
-THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
-      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
+THook(void, "?_trySpreadTo@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H1E@Z",
+      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, unsigned int a4, BlockPos* from, char id)
 {
-    auto rtn = original(_this, bs, to, from, id);
-    if (!rtn)
-        return rtn;
-    IF_LISTENED(true||LiquidFlowEvent)
+    IF_LISTENED(LiquidSpreadEvent)
     {
-        LiquidFlowEvent ev;
+        LiquidSpreadEvent ev;
         ev.mBlockInstance = BlockInstance::createBlockInstance(
             const_cast<Block*>(&_this->getRenderBlock()), *from, bs->getDimensionId());
         ev.mTarget = *to;
         ev.mDimensionId = bs->getDimensionId();
         if (!ev.call())
-            return false;
+            return;
     }
-    IF_LISTENED_END(LiquidFlowEvent);
-    return rtn;
+    IF_LISTENED_END(LiquidSpreadEvent);
+    original(_this, bs, to, a4, from, id);
 }
 
 
