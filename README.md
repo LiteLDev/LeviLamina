@@ -11,7 +11,7 @@ Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![[object Object]](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&descriptionEditable=%E6%96%B0%E6%97%B6%E4%BB%A3%20BDS%20%E6%8F%92%E4%BB%B6%E5%8A%A0%E8%BD%BD%E5%99%A8&font=KoHo&forks=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2Fdocs%2Fblob%2Fmaster%2Fimages%2Ficon.ico%3Fraw%3Dtrue&name=1&owner=1&pattern=Brick%20Wall&pulls=1&stargazers=1&theme=Light)
+![Logo](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2FWebsite%2Fraw%2Fmain%2Fimages%2Flogo-6pndg21x.png&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Dark)
 
 `LiteLoader` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
 
@@ -23,7 +23,27 @@ Writing plugins in C++, Golang and other languages allows developers to easily e
  Easy to use, intuitive interface!
 
 ```c++
-
+BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
+    auto& bs = getRegion();
+    auto& pos = getCameraPos();
+    auto viewVec = getViewVector(1.0f);
+    auto viewPos = pos + (viewVec * maxDistance);
+    auto player = isPlayer() ? (Player*)this : nullptr;
+    int maxDisManhattan = (int)((maxDistance + 1) * 2);
+    HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr);
+    if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
+        BlockPos bpos;
+        if (includeLiquid && result.isHitLiquid()) {
+            bpos = result.getLiquidPos();
+            face = result.getLiquidFacing();
+        } else {
+            bpos = result.getBlockPos();
+            face = result.getFacing();
+        }
+        return Level::getBlockInstance(bpos, bs.getDimensionId());
+    }
+    return BlockInstance::Null;
+}
 ```
 
 
@@ -99,14 +119,14 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
 4. use `#pragma comment(lib, "path to lib")` or any method you like to add those libraries
 5. add `SymDBHelper.lib` to your project
 6. using headers in SDK/Header/MC and here we go
-[点击这里](https://github.com/LiteLDev) Check out more open source LL plugins as example plugins.  
+[Click Here](https://github.com/LiteLDev) Check out more open source LL plugins as example plugins.  
 You can learn plugin development methods and techniques here
 
 <br>
 
 ## 🔨 build project
 
-> 前往`LiteLoader`项目的[`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions)页面获取最新的自动构建结果
+> Go to [`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions) to get the latest build artifact
 
 Of course, if you are willing to build the project yourself, or contribute code to LiteLoader, you can build by yourself according to the following instructions
 
@@ -125,13 +145,7 @@ Of course, if you are willing to build the project yourself, or contribute code 
 3. Write the new API that you want in the format and submit a PR, or make good suggestions
 4. Help us promote LL ,support our development
 
-⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐  
-
-如果你有意为LL贡献代码，欢迎👉[移步 LL 文档站]()👈查看 **项目维护与支持文档**  
-
-有你们，LiteLoader将变得更好~
-
-<br>
+⭐⭐⭐We welcome your contributions to LiteLoader!⭐⭐⭐
 
 ------
 
@@ -166,15 +180,3 @@ but if you modified the framework, or write a new framework based on this framew
 | ![ShrBox](https://avatars.githubusercontent.com/u/53301243?s=96&v=4) | ![dreamguxiang](https://avatars.githubusercontent.com/u/62042544?s=96&v=4) | ![dreamguxiang](https://avatars.githubusercontent.com/u/42824603?s=96&v=4) | ![wzy](https://avatars.githubusercontent.com/u/59381521?s=96&v=4) | ![xiaoqch](https://avatars.githubusercontent.com/u/37901097?s=96&v=4) | ![yqs112358](https://avatars.githubusercontent.com/u/37969157?s=96&v=4) | ![Sysca11](https://avatars.githubusercontent.com/u/46832985?s=96&v=4) | ![rimuruchan](https://avatars.githubusercontent.com/u/42002296?s=96&v=4)|
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | [@ShrBox](https://github.com/ShrBox)                         | [@dreamguxiang](https://github.com/dreamguxiang)             | [@WangYneos](https://github.com/WangYneos)                   | [@wzy](https://github.com/wzyyyyyyy)                         | [@xiaoqch](https://github.com/xiaoqch)                       |          [@yqs112358](https://github.com/yqs112358)          |            [@Sysca11](https://github.com/Sysca11)            |            [@RimuruChan](https://github.com/RimuruChan)            |
-## 📞 联系我们
-
-LiteLoader QQ group：656669024 [Click to join](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
-Discord ：#LiteLoaderBDS & LXL [Click to join](https://discord.gg/4tBQHc9u7p)  
-Telegram ：#LiteLoader [Click to join](https://t.me/LiteLoader)
-
-欢迎反馈崩溃和版本适配问题，以及参与相关技术讨论与交流。
-
-## 💕赞助作者💕
-项目已接入爱发电 [点击此处](https://afdian.net/@liteldev?tab=home)    
-
-给我们不断继续下去的动力！  
