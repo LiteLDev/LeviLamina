@@ -29,6 +29,7 @@
 #include <MC/SimpleContainer.hpp>
 #include <MC/Scoreboard.hpp>
 
+#include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
 #include <bitset>
 
@@ -603,6 +604,71 @@ bool Player::sendTextTalkPacket(const string& msg) {
     dAccess<string, 56>(packet.get()) = "";
     dAccess<string, 88>(packet.get()) = msg;
     Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet.get()));
+    return true;
+}
+
+bool Player::sendRawFormPacket(unsigned formId, Player* player, const string& data)
+{
+    BinaryStream wp;
+    wp.reserve(32 + data.size());
+    wp.writeUnsignedVarInt(formId);
+    wp.writeString(data);
+
+    NetworkPacket<100> pkt{ wp.getAndReleaseData() };
+    player->sendNetworkPacket(pkt);
+    return true;
+}
+
+bool Player::sendSimpleFormPacket(Player* player, const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback)
+{
+    string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
+    model = model.replace(model.find("%s"), 2, title);
+    model = model.replace(model.find("%s"), 2, content);
+
+    fifo_json buttonText;
+    for (int i = 0; i < buttons.size(); ++i)
+    {
+        fifo_json oneButton;
+        oneButton["text"] = buttons[i];
+        if (!images[i].empty())
+        {
+            fifo_json image;
+            image["type"] = images[i].find("textures/") == 0 ? "path" : "url";
+            image["data"] = images[i];
+            oneButton["image"] = image;
+        }
+        buttonText.push_back(oneButton);
+    }
+    model = model.replace(model.find("%s"), 2, buttonText.dump());
+
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, player, model))
+        return false;
+    SetSimpleFormPacketCallback(formId, callback);
+    return true;
+}
+
+bool Player::sendModalFormPacket(Player* player, const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
+{
+    string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
+    model = model.replace(model.find("%s"), 2, title);
+    model = model.replace(model.find("%s"), 2, content);
+    model = model.replace(model.find("%s"), 2, button1);
+    model = model.replace(model.find("%s"), 2, button2);
+
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, player, model))
+        return false;
+    SetModalFormPacketCallback(formId, callback);
+    return true;
+}
+
+bool Player::sendCustomForm(Player* player, const std::string& data, std::function<void(string)> callback)
+{
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, player, data))
+        return false;
+    SetCustomFormPacketCallback(formId, callback);
     return true;
 }
 

@@ -58,6 +58,9 @@
     <Filter Include="Kernel\GUI">
       <UniqueIdentifier>{e369f9c2-6d7e-4295-beeb-53e83e8478fe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\Impl">
+      <UniqueIdentifier>{7006e6eb-0a05-4de0-8fde-ae880320a014}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -239,6 +242,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\TagMemoryChunk.cpp">
       <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FormPacketHelper.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -535,6 +541,9 @@
     </ClInclude>
     <ClInclude Include="Header\FormUI.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Impl\FormPacketHelper.h">
+      <Filter>Header\Impl</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
