@@ -313,6 +313,14 @@ static_assert(sizeof(TransferPacket) == 88);
 
 bool Player::sendTextPacket(string text, TextType Type)
 {
+    auto pkt = MinecraftPackets::createPacket(9);
+    dAccess<char, 48>(pkt.get()) = (char)Type;
+    dAccess<bool, 144>(pkt.get()) = 1;
+    dAccess<string, 56>(pkt.get()) = u8"Server";
+    dAccess<string, 88>(pkt.get()) = text;
+    sendNetworkPacket(*pkt);
+    return true;
+    /*
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
@@ -340,6 +348,7 @@ bool Player::sendTextPacket(string text, TextType Type)
     pkt.write(wp);
     sendNetworkPacket(pkt);
     return true;
+    */
 }
 
 bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
@@ -521,6 +530,18 @@ bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
 
 bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay)
 {
+
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    dAccess<ActorUniqueID, 56>(pkt.get()) = getUniqueID();
+    dAccess<BossEvent, 72>(pkt.get()) = type;
+    dAccess<gsl::string_span<-1>, 80>(pkt.get()) = gsl::string_span<-1>(name);
+    dAccess<float, 112>(pkt.get()) = percent;
+    dAccess<ActorUniqueID, 64>(pkt.get()) = getUniqueID();
+    dAccess<int, 124>(pkt.get()) = 1;
+    dAccess<BossEventColour, 116>(pkt.get()) = colour;
+    dAccess<int, 120>(pkt.get()) = overlay;
+    sendNetworkPacket(*pkt);
+    /*
     BinaryStream wp;
     wp.writeVarInt64(getActorUniqueId().get());
     wp.writeUnsignedVarInt((int)type);
@@ -564,6 +585,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     }
     NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
+    */
     return true;
 }
 
