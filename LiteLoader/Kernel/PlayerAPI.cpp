@@ -654,7 +654,7 @@ bool Player::sendModalFormPacket(const string& title, const string& content, con
     return true;
 }
 
-bool Player::sendCustomForm(const std::string& data, std::function<void(string)> callback)
+bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
 {
     unsigned formId = NewFormId();
     if (!sendRawFormPacket(formId, data))
