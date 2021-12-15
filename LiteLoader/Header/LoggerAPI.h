@@ -21,8 +21,10 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <fstream>
 #include <utility>
 
+class Player;
 using std::string;
 
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
@@ -47,14 +49,16 @@ public:
         int level{};
         std::string consoleFormat;
         std::string fileFormat;
+        std::string playerFormat;
         fmt::text_style style;
-        std::string mode;
+        std::string levelPrefix;
         std::ostringstream os;
         bool locked = false;
 
         LIAPI explicit OutputStream(Logger* logger, int level,
                                     std::string&& consoleFormat,
                                     std::string&& fileFormat,
+                                    std::string&& playerFormat,
                                     fmt::text_style&& style,
                                     std::string&& mode);
 
@@ -99,15 +103,20 @@ private:
     LIAPI static void lockImpl(HMODULE hPlugin);
 
     LIAPI static void unlockImpl(HMODULE hPlugin);
+ 
+    LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
 
-    LIAPI static bool setFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode);
-
-    LIAPI static bool setFileImpl(HMODULE hPlugin, nullptr_t);
+    LIAPI static bool setDefaultFileImpl(HMODULE hPlugin, nullptr_t);
 
     LIAPI static void endlImpl(HMODULE hPlugin, OutputStream& o);
 
 public:
     std::string title;
+    std::ofstream ofs ;
+    Player* player = nullptr;
+    int consoleLevel = -1;
+    int fileLevel = -1;
+    int playerLevel = -1;
 
     inline static void initLock()
     {
@@ -124,20 +133,24 @@ public:
         return unlockImpl(GetCurrentModule());
     };
 
-    inline static bool setFile(const std::string& logFile, bool appendMode)
+    inline static bool setDefaultFile(const std::string& logFile, bool appendMode)
     {
-        return setFileImpl(GetCurrentModule(), logFile, appendMode);
+        return setDefaultFileImpl(GetCurrentModule(), logFile, appendMode);
     };
 
-    inline static bool setFile(nullptr_t a0)
+    inline static bool setDefaultFile(nullptr_t a0)
     {
-        return setFileImpl(GetCurrentModule(), a0);
+        return setDefaultFileImpl(GetCurrentModule(), a0);
     };
 
     inline static void endl(OutputStream& o)
     {
         return endlImpl(GetCurrentModule(), o);
     };
+
+    LIAPI bool setFile(const std::string& logFile, bool appendMode);
+
+    LIAPI bool setFile(nullptr_t);
 
     OutputStream debug;
     OutputStream info;
