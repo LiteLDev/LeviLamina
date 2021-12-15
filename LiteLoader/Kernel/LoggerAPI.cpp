@@ -98,23 +98,23 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
     std::string title = o.logger->title;
     if (!title.empty())
         title = "[" + title + "]";
-    if (checkLogLevel(o.logger.consoleLevel, o.level))
+    if (checkLogLevel(o.logger->consoleLevel, o.level))
         fmt::print(o.style, o.consoleFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title, o.os.str());
-    if (checkLogLevel(o.logger.fileLevel, o.level))
+    if (checkLogLevel(o.logger->fileLevel, o.level))
     {
-        if (o.logger.ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+        if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
         {
             auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, o.logger->title,
                                            o.os.str());
-            if (o.logger.ofs.is_open())
-                o.logger.ofs << fileContent << std::flush;
+            if (o.logger->ofs.is_open())
+                o.logger->ofs << fileContent << std::flush;
             else
                 PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
                     << fileContent << std::flush;
         }
     }
-    if (checkLogLevel(o.logger.playerLevel, o.level) && o.logger.player && Player::isValid(o.logger.player))
-        o.logger.player->sendTextPacket(fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, o.logger->title,
+    if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player))
+        o.logger->player->sendTextPacket(fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, o.logger->title,
                                                   o.os.str()));
         
     o.locked = false;
