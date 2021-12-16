@@ -126,6 +126,8 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         if (form->callback)
         {
             std::map<string, std::shared_ptr<Form::CustomFormElement>> callbackData;
+            if (data == "null")
+                return form->callback(callbackData);
             for (auto& [k, v] : form->elements)
                 callbackData[k] = v;
 
