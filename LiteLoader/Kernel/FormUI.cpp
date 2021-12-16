@@ -165,43 +165,37 @@ CustomForm& CustomForm::setTitle(const string& title)
 
 CustomForm& CustomForm::append(const Label& element)
 {
-    elements[element.name] = make_shared<Label>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<Label>(element) });
     return *this;
 }
 
 CustomForm& CustomForm::append(const Input& element)
 {
-    elements[element.name] = make_shared<Input>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<Input>(element) });
     return *this;
 }
 
 CustomForm& CustomForm::append(const Toggle& element)
 {
-    elements[element.name] = make_shared<Toggle>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<Toggle>(element) });
     return *this;
 }
 
 CustomForm& CustomForm::append(const Dropdown& element)
 {
-    elements[element.name] = make_shared<Dropdown>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<Dropdown>(element) });
     return *this;
 }
 
 CustomForm& CustomForm::append(const Slider& element)
 {
-    elements[element.name] = make_shared<Slider>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<Slider>(element) });
     return *this;
 }
 
 CustomForm& CustomForm::append(const StepSlider& element)
 {
-    elements[element.name] = make_shared<StepSlider>(element);
-    dataInfo.push_back(element.name);
+    elements.push_back({ element.name,make_shared<StepSlider>(element) });
     return *this;
 }
 
@@ -209,8 +203,8 @@ string CustomForm::serialize()
 {
     fifo_json form = fifo_json::parse(R"({ "title":"", "type":"custom_form", "content":[], "buttons":[] })");
     form["title"] = title;
-    for (auto& i : dataInfo)
-        form["content"].push_back(fifo_json::parse(elements[i]->serialize()));
+    for (auto& [k,v] : elements)
+        form["content"].push_back(fifo_json::parse(v->serialize()));
     return form.dump();
 }
 

@@ -117,12 +117,21 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
             case Form::CustomFormElement::Type::StepSlider:
                 form->setData<Form::StepSlider>(nowIndex, j.get<int>());
                 break;
+            default:
+                break;
             }
             nowIndex++;
         }
 
         if (form->callback)
-            form->callback(form->elements);
+        {
+            std::map<string, std::shared_ptr<Form::CustomFormElement>> callbackData;
+            for (auto& [k, v] : form->elements)
+                callbackData[k] = v;
+
+            form->callback(callbackData);
+        }
+
         customFormBuilders.erase(formId);
     }
     else if (formTypes[formId] == FormType::SimpleFormPacket)
