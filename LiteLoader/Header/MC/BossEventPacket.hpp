@@ -6,7 +6,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum class BossEvent {
+enum BossEventUpdateType
+{
     BossEventShow = 0,
     // BossEventRegisterPlayer is sent by the client to the server to request being shown the boss bar.
     BossEventRegisterPlayer = 1,

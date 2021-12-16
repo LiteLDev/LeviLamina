@@ -95,7 +95,7 @@ DeclareEventListeners(ContainerChangeEvent);
 DeclareEventListeners(PistonPushEvent);
 DeclareEventListeners(RedStoneUpdateEvent);
 DeclareEventListeners(BlockExplodedEvent);
-DeclareEventListeners(LiquidFlowEvent);
+DeclareEventListeners(LiquidSpreadEvent);
 DeclareEventListeners(ProjectileHitBlockEvent);
 DeclareEventListeners(HopperSearchItemEvent);
 DeclareEventListeners(RespawnAnchorExplodeEvent);
@@ -224,15 +224,20 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
       Level* _this, Player* sp, ChangeDimensionRequest* cdimreq)
 {
     bool ret = true;
-    ret = original(_this, sp, cdimreq);
+    //int fromDimid = dAccess<int>(cdimreq, 4);
+    int toDimid = dAccess<int>(cdimreq, 8);
+    if (toDimid == sp->getDimensionId())
+        return original(_this, sp, cdimreq);
+
     IF_LISTENED(PlayerChangeDimEvent)
     {
         PlayerChangeDimEvent ev;
         ev.mPlayer = sp;
-        ev.mDimensionId = sp->getDimensionId();
+        ev.mToDimensionId = toDimid;
         ev.call();
     }
     IF_LISTENED_END(PlayerChangeDimEvent);
+    ret = original(_this, sp, cdimreq);
     return ret;
 }
 
@@ -508,7 +513,7 @@ THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_
         {
             PlayerPlaceBlockEvent ev;
             ev.mPlayer = (Player*)ac;
-            ev.mBlockInstance = Level::getBlockInstance(a3, _this);
+            ev.mBlockInstance = BlockInstance::createBlockInstance(a2, *a3, (int)_this->getDimensionId());
             if (!ev.call())
                 return false;
         }
@@ -683,11 +688,10 @@ THook(bool, "?canOpenContainerScreen@Player@@UEAA_NXZ",
     return original(pl);
 }
 
-/////////////////// PlayerCmdEvent & ConsoleCmdEvent ///////////////////
+/////////////////// PlayerCmdEvent & ConsoleCmd ///////////////////
 THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_ptr@VCommandContext@@@std@@_N@Z",
       MinecraftCommands* _this, MCRESULT* rtn, std::shared_ptr<CommandContext> context, bool print)
 {
-    MCRESULT* result = original(_this, rtn, context, print);
 
     Player* sp;
     string cmd;
@@ -703,7 +707,7 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
     }
     catch (...)
     {
-        return result;
+        return rtn;
     }
 
     if (sp)
@@ -717,7 +721,7 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
             ev.mResult = rtn;
 
             if (!ev.call())
-                return false;
+                return rtn;
         }
         IF_LISTENED_END(PlayerCmdEvent);
     }
@@ -730,11 +734,11 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
             ev.mCommand = cmd;
 
             if (!ev.call())
-                return false;
+                return rtn;
         }
         IF_LISTENED_END(ConsoleCmdEvent);
     }
-    return result;
+    return original(_this, rtn, context, print);
 }
 
 /////////////////// CmdBlockExecute ///////////////////
@@ -763,7 +767,7 @@ THook(bool, "?_performCommand@BaseCommandBlock@@AEAA_NAEAVBlockSource@@AEBVComma
     return original(_this, a2, a3, a4);
 }
 
-/////////////////// BlockInteractedEvent ///////////////////
+/////////////////// BlockInteracted ///////////////////
 THook(unsigned short,
       "?onBlockInteractedWith@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEAVPlayer@@AEBVBlockPos@@@Z",
       void* _this, Player* pl, BlockPos* bp)
@@ -779,7 +783,7 @@ THook(unsigned short,
     return original(_this, pl, bp);
 }
 
-/////////////////// BlockChangedEvent ///////////////////
+/////////////////// BlockChanged ///////////////////
 THook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUActorBlockSyncMessage@@@Z",
       BlockSource* bs, BlockPos* bp, int a3, Block* afterBlock, Block* beforeBlock, int a6, void* a7)
 {
@@ -796,7 +800,7 @@ THook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUAc
     return original(bs, bp, a3, afterBlock, beforeBlock, a6, a7);
 }
 
-/////////////////// RespawnAnchorExplodeEvent ///////////////////
+/////////////////// RespawnAnchorExplode ///////////////////
 THook(void, "?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
       Player* pl, BlockPos* bp, BlockSource* bs, Level* level)
 {
@@ -812,7 +816,7 @@ THook(void, "?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlock
     return original(pl, bp, bs, level);
 }
 
-/////////////////// BlockExplodedEvent ///////////////////
+/////////////////// BlockExploded ///////////////////
 THook(void, "?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z",
       Block* _this, BlockSource* bs, BlockPos* bp, Actor* actor)
 {
@@ -831,7 +835,7 @@ THook(void, "?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@
 }
 
 
-/////////////////// FireSpreadEvent ///////////////////
+/////////////////// FireSpread ///////////////////
 bool onFireSpread_OnPlace = false;
 
 THook(void, "?onPlace@FireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@@Z",
@@ -862,7 +866,7 @@ THook(bool, "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
 }
 
 
-/////////////////// ContainerChangeEvent ///////////////////
+/////////////////// ContainerChange ///////////////////
 class LevelContainerModel;
 
 THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
@@ -891,10 +895,12 @@ THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
 }
 
 
-/////////////////// ProjectileHitBlockEvent ///////////////////
+/////////////////// ProjectileHitBlock ///////////////////
 THook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
       Block* _this, BlockSource* bs, BlockPos* bp, Actor* actor)
 {
+    if (bp->x&bp->y&bp->z==0) //actor->getPos().distanceTo(bp->center())>5)
+        return original(_this, bs, bp, actor);
     IF_LISTENED(ProjectileHitBlockEvent)
     {
         if (_this->getTypeName() != "minecraft:air")
@@ -910,7 +916,7 @@ THook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVAct
 }
 
 
-/////////////////// RedStoneUpdateEvent ///////////////////
+/////////////////// RedStoneUpdate ///////////////////
 // 红石粉
 THook(void, "?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H_N@Z",
       void* _this, BlockSource* bs, BlockPos* bp, int level, bool isActive)
@@ -977,7 +983,7 @@ THook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockP
 }
 
 
-/////////////////// HopperSearchItemEvent ///////////////////
+/////////////////// HopperSearchItem ///////////////////
 THook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@@Z",
       void* _this, BlockSource* bs, void* container, Vec3* pos)
 {
@@ -1004,7 +1010,7 @@ THook(bool, "?_tryPullInItemsFromAboveContainer@Hopper@@IEAA_NAEAVBlockSource@@A
     return original(_this, bs, container, pos);
 }
 
-/////////////////// HopperPushOutEvent ///////////////////
+/////////////////// HopperPushOut ///////////////////
 THook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVec3@@H@Z",
       void* _this, BlockSource* bs, void* container, Vec3* pos, int a5)
 {
@@ -1020,7 +1026,7 @@ THook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVe
     return original(_this, bs, container, pos, a5);
 }
 
-/////////////////// PistonPushEvent ///////////////////
+/////////////////// PistonPush ///////////////////
 THook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z",
       BlockActor* _this, BlockSource* bs, BlockPos* bp, unsigned a3, unsigned a4)
 {
@@ -1042,7 +1048,7 @@ THook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBV
 }
 
 
-/////////////////// FarmLandDecayEvent ///////////////////
+/////////////////// FarmLandDecay ///////////////////
 THook(void, "?transformOnFall@FarmBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@M@Z",
       void* _this, BlockSource* bs, BlockPos* bp, Actor* ac, float a5)
 {
@@ -1092,21 +1098,23 @@ THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
     return original(_this, a2, a3);
 }
 
-/////////////////// LiquidFlowEvent ///////////////////
-THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
-      void* _this, BlockSource* bs, BlockPos* to, BlockPos* from, char id)
+/////////////////// LiquidSpreadEvent ///////////////////
+#include <MC/LiquidBlockDynamic.hpp>
+THook(void, "?_trySpreadTo@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H1E@Z",
+      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, unsigned int a4, BlockPos* from, char id)
 {
-    IF_LISTENED(LiquidFlowEvent)
+    IF_LISTENED(LiquidSpreadEvent)
     {
-        LiquidFlowEvent ev;
-        ev.mBlockInstance = Level::getBlockInstance(from, bs);
+        LiquidSpreadEvent ev;
+        ev.mBlockInstance = BlockInstance::createBlockInstance(
+            const_cast<Block*>(&_this->getRenderBlock()), *from, bs->getDimensionId());
         ev.mTarget = *to;
         ev.mDimensionId = bs->getDimensionId();
         if (!ev.call())
-            return false;
+            return;
     }
-    IF_LISTENED_END(LiquidFlowEvent);
-    return original(_this, bs, to, from, id);
+    IF_LISTENED_END(LiquidSpreadEvent);
+    original(_this, bs, to, a4, from, id);
 }
 
 
@@ -1259,7 +1267,7 @@ THook(void, "?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z
 }
 
 
-////////////// ProjectileHitEntityEvent //////////////
+////////////// ProjectileHitEntity //////////////
 THook(void, "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z",
       void* _this, Actor* item, HitResult* res)
 {
@@ -1279,7 +1287,7 @@ THook(void, "?onHit@ProjectileComponent@@QEAAXAEAVActor@@AEBVHitResult@@@Z",
 }
 
 
-////////////// WitherBossDestroyEvent //////////////
+////////////// WitherBossDestroy //////////////
 THook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSource@@H@Z",
       Actor* _this, Level* a2, AABB* aabb, BlockSource* a4, int a5)
 {
@@ -1296,10 +1304,13 @@ THook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSour
 }
 
 
-////////////// EntityRideEvent //////////////
+////////////// EntityRide //////////////
 THook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
       Actor* a1, Actor* a2)
 {
+    auto rtn = original(a1, a2);
+    if (!rtn)
+        return false;
     IF_LISTENED(EntityRideEvent)
     {
         EntityRideEvent ev;
@@ -1309,11 +1320,11 @@ THook(bool, "?canAddPassenger@Actor@@UEBA_NAEAV1@@Z",
             return false;
     }
     IF_LISTENED_END(EntityRideEvent);
-    return original(a1, a2);
+    return rtn;
 }
 
 
-////////////// EntityStepOnPressurePlateEvent //////////////
+////////////// EntityStepOnPressurePlate //////////////
 THook(void, "?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z",
       void* _this, BlockSource* a2, BlockPos* a3, Actor* a4)
 {
@@ -1328,7 +1339,7 @@ THook(void, "?entityInside@BasePressurePlateBlock@@UEBAXAEAVBlockSource@@AEBVBlo
     original(_this, a2, a3, a4);
 }
 
-////////////// ProjectileSpawnEvent //////////////
+////////////// ProjectileSpawn //////////////
 THook(Actor*,
       "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
       void* _this, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6)
@@ -1346,7 +1357,7 @@ THook(Actor*,
     return original(_this, a2, a3, a4, a5, a6);
 }
 
-////////////// NpcCmdEvent //////////////
+////////////// NpcCmd //////////////
 #include <MC/NpcActionsContainer.hpp>
 #include <MC/NpcSceneDialogueData.hpp>
 
@@ -1380,7 +1391,7 @@ THook(bool,
     return original(_this, ac, pl, a4, a5);
 }
 
-////////////// ArmorStandChangeEvent //////////////
+////////////// ArmorStandChange //////////////
 THook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z",
       ArmStand* _this, Player* a2, int a3)
 {
@@ -1398,7 +1409,7 @@ THook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z",
 }
 
 
-////////////// ItemUseOnActorInventoryEvent //////////////
+////////////// ItemUseOnActorInventory //////////////
 THook(void, "?handle@ItemUseOnActorInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
       ServerNetworkHandler* _this, ServerPlayer* sp, bool unk)
 {
@@ -1493,7 +1504,7 @@ THook(void, "?setup@ChangeSettingCommand@@SAXAEAVCommandRegistry@@@Z",
     IF_LISTENED_END(RegCmdEvent);
 }
 
-////////////// ConsoleOutputEvent //////////////
+////////////// ConsoleOutput //////////////
 THook(std::ostream&,
       "??$_Insert_string@DU?$char_traits@D@std@@_K@std@@YAAEAV?$basic_ostream@DU?$char_traits@D@std@@@0@AEAV10@QEBD_K@Z",
       std::ostream& _this, const char* str, unsigned size)

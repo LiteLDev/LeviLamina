@@ -218,13 +218,12 @@ CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
     fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] Loading Symbols\n", fmt::localtime(_time64(0))));
     InitializeCriticalSection(&dlsymLock);
-    unordered_map<string, int, aphash> *realFuncMap = new unordered_map<string, int, aphash>;
-    SymDB->dumpall(realFuncMap);
+    FuncMap = new unordered_map<string, int, aphash>;
+    SymDB->dumpall(FuncMap);
     fnstat = 1;
     SymDB    = nullptr;
     SymDB    = new SymDBReader("bedrock_server.symdb2");
     EnterCriticalSection(&dlsymLock);
-    FuncMap                        = realFuncMap;
     void* exportTableFn = GetProcAddress(GetModuleHandle(nullptr), "?initializeLogging@DedicatedServer@@AEAAXXZ");
     void* symdbFn = 0;
     auto iter     = FuncMap->find(string("?initializeLogging@DedicatedServer@@AEAAXXZ"));
@@ -238,7 +237,7 @@ void InitFastDlsym() {
         //fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] Are you running bedrock_serve_mod.exe?\n", fmt::localtime(_time64(0))));
     }
     LeaveCriticalSection(&dlsymLock);
-    fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), realFuncMap->size()));
+    fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), FuncMap->size()));
     fflush(stdout);
 }
 

@@ -93,6 +93,7 @@
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BuiltinBugFix.cpp" />
     <ClInclude Include="Header\GuiAPI.h" />
+    <ClInclude Include="Header\Impl\FormPacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
@@ -114,7 +115,7 @@
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
     <ClInclude Include="Header\MC\EndTag.hpp" />
     <ClInclude Include="Header\MC\FloatTag.hpp" />
-    <ClInclude Include="Header\MC\FormUI.hpp" />
+    <ClInclude Include="Header\FormUI.h" />
     <ClInclude Include="Header\MC\GameMode.hpp" />
     <ClInclude Include="Header\MC\HashedString.hpp" />
     <ClInclude Include="Header\MC\HitResult.hpp" />
@@ -169,6 +170,7 @@
     <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
+    <ClCompile Include="Kernel\FormPacketHelper.cpp" />
     <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\GuiAPI.cpp" />

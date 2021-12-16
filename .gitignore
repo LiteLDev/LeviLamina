@@ -18,3 +18,4 @@ RELEASE/SymDB2.exe
 RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
 SDK/
+/RELEASE/plugins/LiteLoader/LLUnifiedOutput.pdb

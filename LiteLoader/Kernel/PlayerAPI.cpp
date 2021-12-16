@@ -20,6 +20,7 @@
 #include <MC/TextPacket.hpp>
 #include <MC/ScorePacketInfo.hpp>
 #include <SendPacketAPI.h>
+#include <MC/TransferPacket.hpp>
 
 #include <MC/Level.hpp>
 #include <MC/ItemStack.hpp>
@@ -27,7 +28,9 @@
 #include <MC/Container.hpp>
 #include <MC/SimpleContainer.hpp>
 #include <MC/Scoreboard.hpp>
+#include <MC/PlaySoundPacket.hpp>
 
+#include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
 #include <bitset>
 
@@ -186,7 +189,6 @@ int Player::clearItem(string typeName) {
             res += cnt;
         }
     }
-
     refreshInventory();
     return res;
 }
@@ -200,17 +202,12 @@ bool Player::runcmd(const string& cmd) {
 }
 
 Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 4208); //IDA Player::Player() 782
+    return dAccess<Container*>(this, 4200); //IDA Player::Player() 782
 }
 
-bool Player::transferServer(const string& address, unsigned short port) {
-    BinaryStream wp;
-    wp.reserve(8 + address.size());
-    wp.writeString(address);
-    wp.writeUnsignedShort(port);
-    NetworkPacket<85> pkt{wp.getAndReleaseData()};
-    sendNetworkPacket(pkt);
-    return true;
+bool Player::transferServer(const string& address, unsigned short port)
+{
+    return sendTransferPacket(address, port);
 }
 
 std::pair<BlockPos, int> Player::getRespawnPosition() {
@@ -258,8 +255,8 @@ int Player::getDeviceType() {
 }
 
 bool Player::crashClient() {
-    Packet* pkt = MinecraftPackets::createPacket(58);
-    dAccess<bool, 56>(pkt) = 1;
+    auto pkt = MinecraftPackets::createPacket(58);
+    dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
     return true;
 }
@@ -313,11 +310,16 @@ bool Player::deleteScore(string key)
 
 ////////////////////////// Packet //////////////////////////
 
-bool Player::sendTextPacket(string text, TextType Type) {
+static_assert(sizeof(TextPacket) == 216);
+static_assert(sizeof(PlaySoundPacket) == 152);
+static_assert(sizeof(TransferPacket) == 88);
+
+bool Player::sendTextPacket(string text, TextType Type)
+{
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeUnsignedChar((char)Type);
-    wp.writeBool(false);
+    wp.writeBool(true);
     switch (Type) {
         case TextType::CHAT:
         case TextType::WHISPER:
@@ -337,7 +339,8 @@ bool Player::sendTextPacket(string text, TextType Type) {
     }
     wp.writeString("");
     wp.writeString("");
-    NetworkPacket<0x09> pkt{wp.getAndReleaseData()};
+    TextPacket pkt;
+    (*(TextPacket*)&pkt)._read(wp);
     sendNetworkPacket(pkt);
     return true;
 }
@@ -362,7 +365,7 @@ bool Player::sendNotePacket(unsigned int tone) {
         return false;
     }
     BinaryStream wp;
-    wp.writeUnsignedChar(81);
+    wp.writeUnsignedChar(82);
     wp.writeFloat(getPos().x);
     wp.writeFloat(getPos().y);
     wp.writeFloat(getPos().z);
@@ -390,18 +393,8 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string Part
     return true;
 }
 
-//bad
 bool Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
-    BinaryStream wp;
-    wp.reserve(Soundname.size());
-    wp.writeString(Soundname);
-    wp.writeVarInt((int)Position.x);
-    wp.writeUnsignedVarInt((unsigned int)(Position.y * 8));
-    wp.writeVarInt((int)(Position.z));
-    wp.writeFloat(Volume);
-    wp.writeFloat(Pitch);
-    NetworkPacket<0x56> pkts{wp.getAndReleaseData()};
-    sendNetworkPacket(pkts);
+    sendNetworkPacket(PlaySoundPacket(Soundname, Position, Volume, Pitch));
     return true;
 }
 
@@ -495,11 +488,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
 }
 
 bool Player::sendTransferPacket(const string& address, short port) {
-    BinaryStream wp;
-    Packet* packet = MinecraftPackets::createPacket(0x55); //跨服传送数据包
-    dAccess<string>(packet, 48) = address;
-    dAccess<short>(packet, 80) = port;
-    sendNetworkPacket(*packet);
+    sendNetworkPacket(TransferPacket(address, port));
     return true;
 }
 
@@ -517,36 +506,152 @@ bool Player::sendSetDisplayObjectivePacket(const string& title, const string& na
 
 bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
     auto packet = MinecraftPackets::createPacket(0x6c);
-    dAccess<char>(packet, 48) = type;
-    dAccess<vector<ScorePacketInfo>>(packet, 56) = data;
+    dAccess<char>(packet.get(), 48) = type;
+    dAccess<vector<ScorePacketInfo>>(packet.get(), 56) = data;
     sendNetworkPacket(*packet);
     return true;
 }
 
-bool Player::sendBossEventPacket(string name, float percent, int type) {
-    auto packet = MinecraftPackets::createPacket(0x4a);
-    dAccess<ActorUniqueID>(packet, 56) = dAccess<ActorUniqueID>(packet, 64) = getUniqueID();
-    dAccess<int>(packet, 72) = type;
-    dAccess<string>(packet, 80) = name;
-    dAccess<float>(packet, 112) = percent;
-    sendNetworkPacket(*packet);
+bool Player::sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay)
+{
+
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::BossEvent);
+    dAccess<ActorUniqueID, 56>(pkt.get()) = getUniqueID();
+    dAccess<BossEvent, 72>(pkt.get()) = type;
+    dAccess<gsl::string_span<-1>, 80>(pkt.get()) = gsl::string_span<-1>(name);
+    dAccess<float, 112>(pkt.get()) = percent;
+    dAccess<ActorUniqueID, 64>(pkt.get()) = getUniqueID();
+    dAccess<int, 124>(pkt.get()) = 1;
+    dAccess<BossEventColour, 116>(pkt.get()) = colour;
+    dAccess<int, 120>(pkt.get()) = overlay;
+    sendNetworkPacket(*pkt);
+    /*
+    BinaryStream wp;
+    wp.writeVarInt64(getActorUniqueId().get());
+    wp.writeUnsignedVarInt((int)type);
+    switch (type)
+    {
+        case BossEvent::Show:
+            wp.writeString(name);
+            wp.writeFloat(percent);
+            goto LABEL_3;
+        case BossEvent::RegisterPlayer:
+        case BossEvent::UnregisterPlayer:
+        {
+            wp.writeVarInt64(getActorUniqueId().get());
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::HealthPercentage:
+        {
+            wp.writeFloat(percent);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::Title:
+        {
+            wp.writeString(name);
+            NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+            sendNetworkPacket(pk);
+            return true;
+        }
+        case BossEvent::AppearanceProperties:
+        LABEL_3:
+            wp.writeUnsignedShort(1);
+            goto LABEL_4;
+        case BossEvent::Texture:
+        LABEL_4:
+            wp.writeUnsignedVarInt((int)colour);
+            wp.writeUnsignedVarInt(overlay);
+            break;
+    }
+    NetworkPacket<0x4a> pk{wp.getAndReleaseData()};
+    sendNetworkPacket(pk);
+    */
     return true;
 }
 
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
-    dAccess<string, 48>(packet) = cmd;
+    dAccess<string, 48>(packet.get()) = cmd;
     NetworkIdentifier* nid = getNetworkIdentifier();
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet));
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
 bool Player::sendTextTalkPacket(const string& msg) {
     auto packet = MinecraftPackets::createPacket(0x09);
-    dAccess<unsigned char, 48>(packet) = 1;
-    dAccess<string, 56>(packet) = "";
-    dAccess<string, 88>(packet) = msg;
-    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet));
+    dAccess<unsigned char, 48>(packet.get()) = 1;
+    dAccess<string, 56>(packet.get()) = "";
+    dAccess<string, 88>(packet.get()) = msg;
+    Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((TextPacket*)packet.get()));
+    return true;
+}
+
+bool Player::sendRawFormPacket(unsigned formId, const string& data)
+{
+    BinaryStream wp;
+    wp.reserve(32 + data.size());
+    wp.writeUnsignedVarInt(formId);
+    wp.writeString(data);
+
+    NetworkPacket<100> pkt{ wp.getAndReleaseData() };
+    sendNetworkPacket(pkt);
+    return true;
+}
+
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback)
+{
+    string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
+    model = model.replace(model.find("%s"), 2, title);
+    model = model.replace(model.find("%s"), 2, content);
+
+    fifo_json buttonText;
+    for (int i = 0; i < buttons.size(); ++i)
+    {
+        fifo_json oneButton;
+        oneButton["text"] = buttons[i];
+        if (!images[i].empty())
+        {
+            fifo_json image;
+            image["type"] = images[i].find("textures/") == 0 ? "path" : "url";
+            image["data"] = images[i];
+            oneButton["image"] = image;
+        }
+        buttonText.push_back(oneButton);
+    }
+    model = model.replace(model.find("%s"), 2, buttonText.dump());
+
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, model))
+        return false;
+    SetSimpleFormPacketCallback(formId, callback);
+    return true;
+}
+
+bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
+{
+    string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
+    model = model.replace(model.find("%s"), 2, title);
+    model = model.replace(model.find("%s"), 2, content);
+    model = model.replace(model.find("%s"), 2, button1);
+    model = model.replace(model.find("%s"), 2, button2);
+
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, model))
+        return false;
+    SetModalFormPacketCallback(formId, callback);
+    return true;
+}
+
+bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
+{
+    unsigned formId = NewFormId();
+    if (!sendRawFormPacket(formId, data))
+        return false;
+    SetCustomFormPacketCallback(formId, callback);
     return true;
 }
 

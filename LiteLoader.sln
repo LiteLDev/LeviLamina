@@ -20,6 +20,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LLAutoUpdate", "Tools\AutoU
 		{A52A258C-73B1-4F64-B4F6-2859CE6262C5} = {A52A258C-73B1-4F64-B4F6-2859CE6262C5}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LLUnifiedOutput", "Tools\LLUnifiedOutput\LLUnifiedOutput.vcxproj", "{57F93F05-4C54-406A-B923-FE5F603128BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -58,6 +60,14 @@ Global
 		{78E2BAA7-47ED-4A94-B0E1-5B3560641F04}.Release|x64.Build.0 = Release|x64
 		{78E2BAA7-47ED-4A94-B0E1-5B3560641F04}.Release|x86.ActiveCfg = Release|x64
 		{78E2BAA7-47ED-4A94-B0E1-5B3560641F04}.Release|x86.Build.0 = Release|x64
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Debug|x64.ActiveCfg = Debug|x64
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Debug|x64.Build.0 = Debug|x64
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Debug|x86.ActiveCfg = Debug|Win32
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Debug|x86.Build.0 = Debug|Win32
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Release|x64.ActiveCfg = Release|x64
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Release|x64.Build.0 = Release|x64
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Release|x86.ActiveCfg = Release|Win32
+		{57F93F05-4C54-406A-B923-FE5F603128BA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

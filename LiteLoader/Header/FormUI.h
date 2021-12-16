@@ -222,15 +222,13 @@ namespace Form
 
 	class CustomForm : public FormImpl
 	{
-	private:
-		std::vector<std::string> dataInfo;
 	protected:
 		LIAPI virtual string serialize() override;
 
 	public:
 		using Callback = std::function<void(const std::map<string, std::shared_ptr<CustomFormElement>>&)>;
 		string title;
-		std::map<string, std::shared_ptr<CustomFormElement>> elements;
+		std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
 		Callback callback;
 
 	public:
@@ -257,24 +255,27 @@ namespace Form
 		template<typename T,typename DataType>
 		inline DataType getData(string name)
 		{
-			return std::dynamic_pointer_cast<T>(elements[name])->getData();
+			for (auto& [k, v] : elements)
+				if (k == name)
+					return std::dynamic_pointer_cast<T>(v)->getData();
+			return DataType();
 		}
 
 		template<typename T, typename DataType>
 		inline DataType getData(int index)
 		{
-			return std::dynamic_pointer_cast<T>(elements[dataInfo[index]])->getData();
+			return std::dynamic_pointer_cast<T>(elements[index].second)->getData();
 		}
 
 		inline CustomFormElement::Type getType(int index)
 		{
-			return elements[dataInfo[index]]->getType();
+			return elements[index].second->getType();
 		}
 
 		template<typename T, typename DataType>
 		inline void setData(int index, DataType data)
 		{
-			std::dynamic_pointer_cast<T>(elements[dataInfo[index]])->data = data;
+			std::dynamic_pointer_cast<T>(elements[index].second)->data = data;
 		}
 	};
 }

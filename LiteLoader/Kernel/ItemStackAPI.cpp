@@ -3,14 +3,18 @@
 #include "MC/ItemStack.hpp"
 #include "MC/Spawner.hpp"
 #include "MC/level.hpp"
+#include "MC/ItemInstance.hpp"
 #include <MC/CompoundTag.hpp>
 #include <string>
 #include <vector>
 using namespace std;
 
+static_assert(sizeof(ItemStack) == 144);
+static_assert(sizeof(ItemInstance) == 136);
+
 ItemStack* ItemStack::create() {
     try {
-        ItemStack* a = (ItemStack*)new char[272];
+        ItemStack* a = (ItemStack*)new char[sizeof(ItemStack)];
         ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
         return item;
     } catch (...) {
@@ -35,23 +39,35 @@ ItemStack* ItemStack::create(std::string type, int count) {
     return create(nbt);
 }
 
+ItemStack ItemStack::fromItemInstance(ItemInstance const& ins)
+{
+    try
+    {
+        return ItemStack(ins);
+    }
+    catch (...)
+    {
+        return ItemStack::EMPTY_ITEM;
+    }
+}
 
 ItemStack* ItemStack::clone_s() {
-    ItemStack* a = (ItemStack*)new char[272];
-    *a = ((ItemStack*)this)->clone();
+    ItemStack* a = ItemStack::create();
+    *a = clone();
     return a;
 }
 
 std::string ItemStack::getTypeName() const {
-    if (this->isNull())
+    if (isNull())
         return "";
-    return ((ItemStack*)this)->getItem()->getSerializedName();
+    auto item = getItem();
+    return getItem()->getSerializedName();
 }
 
 int ItemStack::getAux() const {
     if (this->isNull())
         return 0;
-    return ((ItemStack*)this)->getAuxValue();
+    return getAuxValue();
 }
 
 int ItemStack::getCount() const {

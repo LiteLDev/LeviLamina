@@ -107,8 +107,10 @@ bool Actor::teleport(Vec3 to, int dimid) {
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
-
+#include <MC/ItemStack.hpp>
 ItemStack* Actor::getHandSlot() {
+    if (isPlayer())
+        return (ItemStack*)&((Player*)this)->getSelectedItem();
     return (ItemStack*)&getHandContainer().getItem(0);
 }
 

@@ -16,7 +16,6 @@ public:
 	LIAPI static Block* create(string str, unsigned short tileData);
 	LIAPI static Block* create(CompoundTag* nbt);
 
-	LIAPI string getNameString();
     LIAPI string getTypeName();
 	LIAPI int getId();
 	LIAPI unsigned short getTileData();

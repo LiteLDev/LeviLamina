@@ -1,59 +1,57 @@
 #pragma once
+
 #include "HookAPI.h"
 #include "../Global.h"
 #include "ChunkPos.hpp"
 #include <string>
+#include <utility>
 
 typedef std::string xuid_t;
 typedef unsigned long long QWORD;
 
 namespace mce {
-class UUID {
-    uint64_t a, b;
-};
-class Color;
+    class UUID {
+        uint64_t a, b;
+    };
+
+    class Color;
 }; // namespace mce
 
 class Vec3;
+
 class BlockPos;
 
-class ChunkBlockPos
-{
+class ChunkBlockPos {
 public:
     char x;
     char z;
     short y; // ChunkLocalHeight
     ChunkBlockPos()
-        : x(0)
-        , y(0)
-        , z(0){};
+            : x(0), y(0), z(0) {};
 
     ChunkBlockPos(char x, short y, char z)
-        : x(x)
-        , y(y)
-        , z(z){};
+            : x(x), y(y), z(z) {};
 
-    LIAPI ChunkBlockPos(BlockPos const&, short);
+    LIAPI ChunkBlockPos(BlockPos const &, short);
 };
 
-class BlockPos
-{
+class BlockPos {
 public:
     int x, y, z;
 
-    inline bool operator==(BlockPos const& b) const {
+    inline bool operator==(BlockPos const &b) const {
         return x == b.x && y == b.y && z == b.z;
     }
 
-    inline bool operator!=(BlockPos const& b) const {
+    inline bool operator!=(BlockPos const &b) const {
         return x != b.x || y != b.y || z != b.z;
     }
 
-    inline BlockPos operator+(BlockPos const& b) const {
+    inline BlockPos operator+(BlockPos const &b) const {
         return {x + b.x, y + b.y, z + b.z};
     }
 
-    inline BlockPos operator-(BlockPos const& b) const {
+    inline BlockPos operator-(BlockPos const &b) const {
         return {x - b.x, y - b.y, z - b.z};
     }
 
@@ -73,9 +71,11 @@ public:
         return {x + dx, y + dy, z + dz};
     }
 
-    LIAPI Vec3 toVec3();
-    LIAPI Vec3 bottomCenter();
-    LIAPI Vec3 center();
+    LIAPI Vec3 toVec3() const;
+
+    LIAPI Vec3 bottomCenter() const;
+
+    LIAPI Vec3 center() const;
 };
 
 
@@ -93,42 +93,46 @@ class Vec3 {
 public:
     float x, y, z;
 
-    inline std::string toString() {
+    inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
 
-    LIAPI BlockPos toBlockPos();
-    LIAPI float length();
-    LIAPI float distanceTo(Vec3 const&);
+    LIAPI BlockPos toBlockPos() const;
 
-    inline Vec3 add(float dx, float dy, float dz) {
-        return {x + dx, y, z};
-    }
-    inline Vec3 add(float dx, float dy) {
-        return {x + dx, y + dy, z };
-    }
-    inline Vec3 add(float dx) {
-        return {x + dx, y , z };
+    LIAPI float length() const;
+
+    LIAPI float distanceTo(Vec3 const &) const;
+
+    inline Vec3 add(float dx, float dy, float dz) const {
+        return {x + dx, y + dy, z + dz};
     }
 
-    inline Vec3 operator*(float num) { return { x * num, y * num, z * num }; }
-    inline Vec3 operator+(const Vec3& b) { return { this->x + b.x, this->y + b.y, this->z + b.z }; }
-    inline Vec3 operator-(const Vec3& b) { return { this->x - b.x, this->y - b.y, this->z - b.z }; }
+    inline Vec3 normalize() const {
+        float l = length();
+        return {x / l, y / l, z / l};
+    }
+
+    inline Vec3 operator*(float num) const { return {x * num, y * num, z * num}; }
+
+    inline Vec3 operator+(const Vec3 &b) const { return {this->x + b.x, this->y + b.y, this->z + b.z}; }
+
+    inline Vec3 operator-(const Vec3 &b) const { return {this->x - b.x, this->y - b.y, this->z - b.z}; }
 
 };
 
 
 #include "AABB.hpp"
+
 class BoundingBox {
 public:
     BlockPos bpos1;
     BlockPos bpos2;
 
     inline BlockPos getCenter() const {
-        return { (bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2 };
+        return {(bpos1.x + bpos2.x) / 2, (bpos1.y + bpos2.y) / 2, (bpos1.z + bpos2.z) / 2};
     }
 
-    LIAPI AABB toAABB();
+    LIAPI AABB toAABB() const;
 };
 
 class Vec2 {
@@ -143,19 +147,25 @@ private:
 public:
     int x, z;
 
-    Vec2(Vec3 l) :x(iround(l.x)), z(iround(l.z)) {}
+    Vec2(Vec3 l) : x(iround(l.x)), z(iround(l.z)) {}
+
     Vec2(int a, int b) : x(a), z(b) {}
 
-    inline void operator+=(int v) { x += v; z += v; }
+    inline void operator+=(int v) {
+        x += v;
+        z += v;
+    }
 };
 
-template <typename A, typename T>
+template<typename A, typename T>
 class AutomaticID {
     T id;
 
 public:
     AutomaticID() { id = 0; }
+
     AutomaticID(T x) { id = x; }
+
     inline operator T() { return id; }
 };
 
@@ -164,8 +174,11 @@ struct ActorUniqueID {
 
 public:
     ActorUniqueID() { id = -1; }
+
     ActorUniqueID(long long i) { id = i; }
+
     inline long long get() { return id; }
+
     inline operator long long() { return id; }
 };
 //static_assert(!std::is_pod_v<ActorUniqueID>);
@@ -174,7 +187,9 @@ public:
 class ActorRuntimeID {
 public:
     unsigned long long id;
+
     inline unsigned long long get() { return id; }
+
     inline operator unsigned long long() { return id; }
 };
 //static_assert(std::is_pod_v<ActorRuntimeID>);
@@ -221,22 +236,32 @@ public:
 //
 //}; // namespace Core
 
-namespace gametest{
+namespace gametest {
     class BaseGameTestBatchRunner;
+
     class BaseGameTestFunction;
+
     class BaseGameTestHelper;
+
     class BaseGameTestInstance;
+
     class GameTestBatch;
+
     struct GameTestError;
+
     class GameTestRegistry;
+
     class GameTestTicker;
+
     class IGameTestFunctionContext;
+
     class IGameTestHelperProvider;
+
     struct TestParameters;
 };// namespace gametest
 
-namespace DBHelpers{
-enum Category;
+namespace DBHelpers {
+    enum Category;
 };// namespace DBHelpers
 
 class AgentCommands {
@@ -250,14 +275,16 @@ class ClientBlobCache {
 public:
     struct Server {
         class TransferBuilder;
+
         class ActiveTransfersManager;
     };
 };
 
 class ClientBlockPipeline {
 public:
-    template <typename T>
+    template<typename T>
     class VolumeOf;
+
     struct BlockSchematic;
 };
 
@@ -266,18 +293,18 @@ struct ISurfaceBuilder {
 };
 
 struct FeatureLoading {
-    template <typename T>
+    template<typename T>
     struct ConcreteFeatureHolder;
     struct FeatureRootParseContext;
-    template <typename T>
+    template<typename T>
     struct ConcreteFeatureHolder;
 };
 
-template <typename T1, typename T2>
+template<typename T1, typename T2>
 class OperationNode;
 
 struct OperationNodeDetails {
-    template <typename T1, typename T2>
+    template<typename T1, typename T2>
     class WorkingData;
 };
 
@@ -290,8 +317,9 @@ struct SubChunkBrightnessStorage {
     struct LightPair;
 };
 
-struct BlockGeometry{
+struct BlockGeometry {
     struct Model;
+
     class TessellatedModel;
 };
 
@@ -310,139 +338,140 @@ struct GameEventConfig {
 
 #include "IMinecraftEventing.hpp"
 
-struct OperationNodeValues{
+struct OperationNodeValues {
     enum Terrain;
 };
 
-struct SubChunkStorageUnit{
-enum PruneType;
+struct SubChunkStorageUnit {
+    enum PruneType;
 };
 
 //Templates
-template <typename T, typename T2, int unk>
+template<typename T, typename T2, int unk>
 class TypedServerNetId {
 public:
     T2 netId;
 };
 
-template <typename T, typename T2, int unk>
+template<typename T, typename T2, int unk>
 class TypedClientNetId {
 public:
     T2 netId;
 };
 
-template <typename T, typename T2, int unk>
+template<typename T, typename T2, int unk>
 class TypedRuntimeId {
 public:
     T2 netId;
 };
 
-template <typename T, typename T2>
+template<typename T, typename T2>
 class AutomaticID;
 
-template <typename T, typename T2>
+template<typename T, typename T2>
 class BidirectionalUnorderedMap;
 
-template <typename T>
+template<typename T>
 class BlockDataFetchResult;
 
-template <typename T>
+template<typename T>
 class CommandSelectorResults;
 
-template <typename ...T>
+template<typename ...T>
 class Factory;
 
-template <typename T>
+template<typename T>
 class InheritanceTree;
 
-template <typename T, int unk>
+template<typename T, int unk>
 class ItemStackRequestActionCraft;
 
-template <typename T>
+template<typename T>
 class ItemStateVariant;
 
-template <typename T>
+template<typename T>
 class LevelChunkGridAreaElement;
 
-template <typename T>
+template<typename T>
 class GridArea;
 
-template <typename T>
+template<typename T>
 class OwnerPtrT;
 
-template <typename T>
+template<typename T>
 class ServiceReference;
 
-template <typename T>
+template<typename T>
 class SharedPtr;
 
-template <typename T>
+template<typename T>
 class StackRefResultT;
 
-template <typename T>
+template<typename T>
 class WeakPtr;
 
-template <typename T>
+template<typename T>
 class WeakRefT;
 
-template <typename T>
+template<typename T>
 struct SharePtrRefTraits;
 
-template <typename T>
+template<typename T>
 class SubChunkStorage;
 
-template <typename T, typename T2>
+template<typename T, typename T2>
 class TagRegistry;
 
-template <typename T>
+template<typename T>
 struct IDType;
 
-template <typename T>
+template<typename T>
 class ToFloatFunction;
 
-template <typename T>
-class TypedScreenCapabilities {};
+template<typename T>
+class TypedScreenCapabilities {
+};
 
-template <typename T, typename T2, typename T3, typename T4 = class UNK>
+template<typename T, typename T2, typename T3, typename T4 = class UNK>
 class ViewedEntityContextT;
 
-template <typename T>
+template<typename T>
 class FlagComponent;
 
-template <typename T>
+template<typename T>
 class WeightedChoices;
 
-template <typename T>
+template<typename T>
 class buffer_span;
 
-template <typename T>
+template<typename T>
 class buffer_span_mut;
 
-template <typename T>
+template<typename T>
 class optional_ref;
 
-template <int a>
+template<int a>
 class DividedPos2d;
 
 //template <typename T>
 //struct GameplayHandlerResult;
 
-template <typename T>
+template<typename T>
 struct GameplayHandlerResult;
 
-template <int T>
+template<int T>
 class ItemStackRequestActionDataless;
 
-template <typename T>
+template<typename T>
 class OperationGraphResult;
 
-template <typename T1>
+template<typename T1>
 class SmallSet;
 
-template <typename T1>
+template<typename T1>
 struct TaskStartInfoEx;
 
-template <typename T1>
+template<typename T1>
 class WildcardCommandSelector;
 
 //enum
@@ -478,15 +507,15 @@ enum class UpdateBlockFlags : int {
     BlockUpdatePriority = 4,
 };
 
-enum class DataItemType : unsigned char { 
-    BYTE = 0,                                         
-    SHORT = 1,                                          
-    INT = 2,                                         
-    FLOAT = 3,                                         
-    STRING = 4,                                         
-    NBT = 5,                                         
-    POS = 6,                                         
-    LONG = 7,                                         
+enum class DataItemType : unsigned char {
+    BYTE = 0,
+    SHORT = 1,
+    INT = 2,
+    FLOAT = 3,
+    STRING = 4,
+    NBT = 5,
+    POS = 6,
+    LONG = 7,
     VEC3 = 8
 };
 
@@ -500,8 +529,8 @@ enum class TextType : char {
     SYSTEM = 6,
     WHISPER = 7,
     ANNOUNCEMENT = 8,
-    JSON = 9,
-    JSON_WHISPER = 10
+    JSON_WHISPER = 9,
+    JSON = 10
 };
 
 enum class TitleType : int {
@@ -511,6 +540,30 @@ enum class TitleType : int {
     SetSubtitle = 3,
     SetActionBar = 4,
     SetDurations = 5,
+    TitleTextObject = 6,
+    SubtitleTextObject = 7,
+    ActionbarTextObject = 8
+};
+enum class BossEvent : int
+{
+    Show = 0,
+    RegisterPlayer = 1,
+    Hide = 2,
+    UnregisterPlayer = 3,
+    HealthPercentage = 4,
+    Title = 5,
+    AppearanceProperties = 6,
+    Texture = 7
+};
+
+enum class BossEventColour : int {
+    Grey = 0,
+    Blue = 1,
+    Red = 2,
+    Green = 3,
+    Yellow = 4,
+    Purple = 5,
+    White = 6
 };
 
 enum class ParticleType {
@@ -676,34 +729,189 @@ enum class FaceID : char {
     East = 5,
 };
 
+enum class MinecraftPacketIds : int
+{
+    ogin = 0x1,
+    PlayStatus = 0x2,
+    ServerToClientHandshake = 0x3,
+    ClientToServerHandshake = 0x4,
+    Disconnect = 0x5,
+    ResourcePacksInfo = 0x6,
+    ResourcePackStack = 0x7,
+    SetTime = 0xa,
+    StartGame = 0xb,
+    AddPlayer = 0xc,
+    AddActor = 0xd,
+    RemoveActor = 0xe,
+    TakeItemActor = 0x11,
+    MoveActorAbsolute = 0x12,
+    MovePlayer = 0x13,
+    UpdateBlock = 0x15,
+    AddPainting = 0x16,
+    TickSync = 0x17,
+    BlockEvent = 0x1a,
+    ActorEvent = 0x1b,
+    MobEffect = 0x1c,
+    UpdateAttributes = 0x1d,
+    InventoryTransaction = 0x1e,
+    MobEquipment = 0x1f,
+    MobArmorEquipment = 0x20,
+    Interact = 0x21,
+    BlockPickRequest = 0x22,
+    ActorPickRequest = 0x23,
+    PlayerAction = 0x24,
+    HurtArmor = 0x26,
+    SetActorData = 0x27,
+    SetActorLink = 0x29,
+    SetHealth = 0x2a,
+    SetSpawnPosition = 0x2b,
+    Animate = 0x2c,
+    Respawn = 0x2d,
+    ContainerOpen = 0x2e,
+    ContainerClose = 0x2f,
+    PlayerHotbar = 0x30,
+    InventoryContent = 0x31,
+    InventorySlot = 0x32,
+    ContainerSetData = 0x33,
+    CraftingData = 0x34,
+    CraftingEvent = 0x35,
+    GuiDataPickItem = 0x36,
+    AdventureSettings = 0x37,
+    BlockActorData = 0x38,
+    PlayerInput = 0x39,
+    LevelChunk = 0x3a,
+    SetCommandsEnabled = 0x3b,
+    SetDifficulty = 0x3c,
+    ChangeDimension = 0x3d,
+    SetPlayerGameType = 0x3e,
+    PlayerList = 0x3f,
+    Event = 0x41,
+    SpawnExperienceOrb = 0x42,
+    ClientboundMapItemData = 0x43,
+    MapInfoRequest = 0x44,
+    ItemFrameDropItem = 0x47,
+    GameRulesChanged = 0x48,
+    Camera = 0x49,
+    BossEvent = 0x4a,
+    ShowCredits = 0x4b,
+    AvailableCommands = 0x4c,
+    CommandRequest = 0x4d,
+    CommandBlockUpdate = 0x4e,
+    CommandOutput = 0x4f,
+    UpdateTrade = 0x50,
+    UpdateEquip = 0x51,
+    ResourcePackDataInfo = 0x52,
+    ResourcePackChunkData = 0x53,
+    ResourcePackChunkRequest = 0x54,
+    Transfer = 0x55,
+    PlaySound = 0x56,
+    StopSound = 0x57,
+    SetTitle = 0x58,
+    AddBehaviorTree = 0x59,
+    StructureBlockUpdate = 0x5a,
+    ShowStoreOffer = 0x5b,
+    PurchaseReceipt = 0x5c,
+    PlayerSkin = 0x5d,
+    SubClientLogin = 0x5e,
+    AutomationClientConnect = 0x5f,
+    SetLastHurtBy = 0x60,
+    BookEdit = 0x61,
+    NpcRequest = 0x62,
+    PhotoTransfer = 0x63,
+    ModalFormRequest = 0x64,
+    ModalFormResponse = 0x65,
+    ServerSettingsRequest = 0x66,
+    ServerSettingsResponse = 0x67,
+    ShowProfile = 0x68,
+    SetDefaultGameType = 0x69,
+    RemoveObjective = 0x6a,
+    SetDisplayObjective = 0x6b,
+    SetScore = 0x6c,
+    LabTable = 0x6d,
+    UpdateBlockSynced = 0x6e,
+    MoveActorDelta = 0x6f,
+    SetScoreboardIdentity = 0x70,
+    SetLocalPlayerAsInitialized = 0x71,
+    UpdateSoftEnum = 0x72,
+    NetworkStackLatency = 0x73,
+    ScriptCustomEvent = 0x75,
+    SpawnParticleEffect = 0x76,
+    AvailableActorIdentifiers = 0x77,
+    NetworkChunkPublisherUpdate = 0x79,
+    BiomeDefinitionList = 0x7a,
+    LevelSoundEvent = 0x7b,
+    LevelEventGeneric = 0x7c,
+    LecternUpdate = 0x7d,
+    AddEntity = 0x7f,
+    ClientCacheStatus = 0x81,
+    OnScreenTextureAnimation = 0x82,
+    MapCreateLockedCopy = 0x83,
+    StructureTemplateDataRequest = 0x84,
+    StructureTemplateDataResponse = 0x85,
+    ClientCacheBlobStatus = 0x87,
+    ClientCacheMissResponse = 0x88,
+    EducationSettings = 0x89,
+    Emote = 0x8a,
+    MultiplayerSettings = 0x8b,
+    SettingsCommand = 0x8c,
+    AnvilDamage = 0x8d,
+    CompletedUsingItem = 0x8e,
+    NetworkSettings = 0x8f,
+    PlayerAuthInput = 0x90,
+    CreativeContent = 0x91,
+    PlayerEnchantOptions = 0x92,
+    ItemStackRequest = 0x93,
+    ItemStackResponse = 0x94,
+    PlayerArmorDamage = 0x95,
+    CodeBuilder = 0x96,
+    UpdatePlayerGameType = 0x97,
+    EmoteList = 0x98,
+    PositionTrackingDBServerBroadcast = 0x99,
+    PositionTrackingDBClientRequest = 0x9a,
+    DebugInfo = 0x9b,
+    PacketViolationWarning = 0x9c,
+    MotionPredictionHints = 0x9d,
+    AnimateEntity = 0x9e,
+    CameraShake = 0x9f,
+    PlayerFog = 0xa0,
+    CorrectPlayerMovePrediction = 0xa1,
+    ItemComponent = 0xa2,
+    FilterText = 0xa3,
+    ClientboundDebugRenderer = 0xa4,
+    SyncActorProperty = 0xa5,
+    AddVolumeEntity = 0xa6,
+    RemoveVolumeEntity = 0xa7
+};
+
 //class CommandVersion {
 //public:
 //    int Min = 1, Max = 0x7FFFFFFF;
 //};
 
-template <typename T>
+template<typename T>
 struct InvertableFilter {
-    T    value;
+    T value;
     bool inverted;
 };
 
-class CommandOutputParameter
-{
+class CommandOutputParameter {
     std::string str;
     int type;
 public:
-    MCINLINE CommandOutputParameter(std::string str, int type) : str(str), type(type) {}
+    MCINLINE CommandOutputParameter(std::string str, int type) : str(std::move(str)), type(type) {}
 };
 
-template <typename T>
-class CommandSelectorResults
-{
+template<typename T>
+class CommandSelectorResults {
 public:
-    std::shared_ptr<std::vector<T*>> data;
+    std::shared_ptr<std::vector<T *>> data;
 
     auto begin() { return data->begin(); }
+
     auto end() { return data->end(); }
+
     auto count() const { return data->size(); }
+
     auto empty() const { return data->empty(); }
 };
 
@@ -712,170 +920,161 @@ public:
 class FakeDataItem {
 public:
     DataItemType type;
-    uint16_t id { 0 };
-    int8_t byte { 0 };
-    int16_t shorts { 0 };
-    int32_t ints { 0 };
-    float floats { 0.0 };
-    std::string strings { "" };
-    BlockPos bpos {};
-    Vec3 vec3 {};
-    int64_t longs { 0 };
+    uint16_t id{0};
+    int8_t byte{0};
+    int16_t shorts{0};
+    int32_t ints{0};
+    float floats{0.0};
+    std::string strings;
+    BlockPos bpos{};
+    Vec3 vec3{};
+    int64_t longs{0};
 
     FakeDataItem(uint16_t a1, DataItemType a3, int8_t a2)
-        : id(a1)
-        , type(a3)
-        , byte(a2) {
+            : id(a1), type(a3), byte(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, int16_t a2)
-        : id(a1)
-        , type(a3)
-        , shorts(a2) {
+            : id(a1), type(a3), shorts(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, int32_t a2)
-        : id(a1)
-        , type(a3)
-        , ints(a2) {
+            : id(a1), type(a3), ints(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, float a2)
-        : id(a1)
-        , type(a3)
-        , floats(a2) {
+            : id(a1), type(a3), floats(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, std::string a2)
-        : id(a1)
-        , type(a3)
-        , strings(a2) {
+            : id(a1), type(a3), strings(std::move(a2)) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, BlockPos a2)
-        : id(a1)
-        , type(a3)
-        , bpos(a2) {
+            : id(a1), type(a3), bpos(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, Vec3 a2)
-        : id(a1)
-        , type(a3)
-        , vec3(a2) {
+            : id(a1), type(a3), vec3(a2) {
     }
+
     FakeDataItem(uint16_t a1, DataItemType a3, int64_t a2)
-        : id(a1)
-        , type(a3)
-        , longs(a2) {
+            : id(a1), type(a3), longs(a2) {
     }
 };
 
 namespace ActorDataIDs {
-inline constexpr int16_t FLAGS = 0;                      // LONG
-inline constexpr int16_t HEALTH = 1;                     // INT (minecart/boat)
-inline constexpr int16_t VARIANT = 2;                    // INT
-inline constexpr int16_t COLOR = 3;                      // BYTE
-inline constexpr int16_t NAMETAG = 4;                    // STRING
-inline constexpr int16_t OWNER = 5;                      // LONG
-inline constexpr int16_t TARGET = 6;                     // LONG
-inline constexpr int16_t AIR = 7;                        // SHORT
-inline constexpr int16_t POTION_COLOR = 8;               // INT (ARGB!)
-inline constexpr int16_t POTION_AMBIENT = 9;             // BYTE
-inline constexpr int16_t JUMP_DURATION = 10;             // LONG
-inline constexpr int16_t HURT_TIME = 11;                 // INT (minecart/boat)
-inline constexpr int16_t HURT_DIRECTION = 12;            // INT (minecart/boat)
-inline constexpr int16_t PADDLE_TIME_LEFT = 13;          // FLOAT
-inline constexpr int16_t PADDLE_TIME_RIGHT = 14;         // FLOAT
-inline constexpr int16_t EXPERIENCE_VALUE = 15;          // INT (xp orb)
-inline constexpr int16_t DISPLAY_ITEM = 16;              // INT (id | (data << 16))
-inline constexpr int16_t HORSE_FLAGS = 16;               // INT
-inline constexpr int16_t WITHER_SKULL_IS_DANGEROUS = 16; // BYTE
-inline constexpr int16_t MINECART_DISPLAY_OFFSET = 17;   // INT
-inline constexpr int16_t ARROW_SHOOTER_ID = 17;          // LONG
-inline constexpr int16_t MINECART_HAS_DISPLAY = 18;      // BYTE (must be 1 for minecart to show block inside)
-inline constexpr int16_t HORSE_TYPE = 19;
-inline constexpr int16_t SWELL = 19;
-inline constexpr int16_t OLD_SWELL = 20;
-inline constexpr int16_t SWELL_DIR = 21;
-inline constexpr int16_t CHARGE_AMOUNT = 22;
-inline constexpr int16_t ENDERMAN_HELD_RUNTIME_ID = 23; // SHORT
-inline constexpr int16_t ACTOR_AGE = 24;                // SHORT
-inline constexpr int16_t PLAYER_FLAGS = 26;             // BYTE
-inline constexpr int16_t PLAYER_INDEX = 27;
-inline constexpr int16_t PLAYER_BED_POSITION = 28; // POS
-inline constexpr int16_t FIREBALL_POWER_X = 29;    // FLOAT
-inline constexpr int16_t FIREBALL_POWER_Y = 30;    // FLOAT
-inline constexpr int16_t FIREBALL_POWER_Z = 31;    // FLOAT
-inline constexpr int16_t AUX_POWER = 32;
-inline constexpr int16_t FISH_X = 33;
-inline constexpr int16_t FISH_Z = 34;
-inline constexpr int16_t FISH_ANGLE = 35;
-inline constexpr int16_t POTION_AUX_VALUE = 36;                   // SHORT
-inline constexpr int16_t LEAD_HOLDER = 37;                        // LONG
-inline constexpr int16_t SCALE = 38;                              // FLOAT
-inline constexpr int16_t INTERACTIVE_TAG = 39;                    // STRING
-inline constexpr int16_t NPC_SKIN_ID = 40;                        // STRING
-inline constexpr int16_t URL_TAG = 41;                            // STRING
-inline constexpr int16_t MAX_AIR = 42;                            // SHORT
-inline constexpr int16_t MARK_VARIANT = 43;                       // INT
-inline constexpr int16_t CONTAINER_TYPE = 44;                     // BYTE
-inline constexpr int16_t CONTAINER_BASE_SIZE = 45;                // INT
-inline constexpr int16_t CONTAINER_EXTRA_SLOTS_PER_STRENGTH = 46; // INT
-inline constexpr int16_t BLOCK_TARGET = 47;                       // POS (ENDER CRYSTAL)
-inline constexpr int16_t WITHER_INVULNERABLE_TICKS = 48;          // INT
-inline constexpr int16_t WITHER_TARGET_1 = 49;                    // LONG
-inline constexpr int16_t WITHER_TARGET_2 = 50;                    // LONG
-inline constexpr int16_t WITHER_TARGET_3 = 51;                    // LONG
-inline constexpr int16_t AERIAL_ATTACK = 52;
-inline constexpr int16_t BOUNDING_BOX_WIDTH = 53;            // FLOAT
-inline constexpr int16_t BOUNDING_BOX_HEIGHT = 54;           // FLOAT
-inline constexpr int16_t FUSE_LENGTH = 55;                   // INT
-inline constexpr int16_t RIDER_SEAT_POSITION = 56;           // VEC3
-inline constexpr int16_t RIDER_ROTATION_LOCKED = 57;         // BYTE
-inline constexpr int16_t RIDER_MAX_ROTATION = 58;            // FLOAT
-inline constexpr int16_t RIDER_MIN_ROTATION = 59;            // FLOAT
-inline constexpr int16_t AREA_EFFECT_CLOUD_RADIUS = 61;      // FLOAT
-inline constexpr int16_t AREA_EFFECT_CLOUD_WAITING = 62;     // INT
-inline constexpr int16_t AREA_EFFECT_CLOUD_PARTICLE_ID = 63; // INT
-inline constexpr int16_t SHULKER_PEEK_ID = 64;               // INT
-inline constexpr int16_t SHULKER_ATTACH_FACE = 65;           // BYTE
-inline constexpr int16_t SHULKER_ATTACHED = 66;              // SHORT
-inline constexpr int16_t SHULKER_ATTACH_POS = 67;            // POS
-inline constexpr int16_t TRADING_PLAYER_EID = 68;            // LONG
-inline constexpr int16_t TRADING_CAREER = 69;
-inline constexpr int16_t HAS_COMMAND_BLOCK = 70;
-inline constexpr int16_t COMMAND_BLOCK_COMMAND = 71;         // STRING
-inline constexpr int16_t COMMAND_BLOCK_LAST_OUTPUT = 72;     // STRING
-inline constexpr int16_t COMMAND_BLOCK_TRACK_OUTPUT = 73;    // BYTE
-inline constexpr int16_t CONTROLLING_RIDER_SEAT_NUMBER = 74; // BYTE
-inline constexpr int16_t STRENGTH = 75;                      // INT
-inline constexpr int16_t MAX_STRENGTH = 76;                  // INT
-inline constexpr int16_t SPELL_CASTING_COLOR = 77;           // INT
-inline constexpr int16_t LIMITED_LIFE = 78;
-inline constexpr int16_t ARMOR_STAND_POSE_INDEX = 79;    // INT
-inline constexpr int16_t ENDER_CRYSTAL_TIME_OFFSET = 80; // INT
-inline constexpr int16_t ALWAYS_SHOW_NAMETAG = 81;       // BYTE
-inline constexpr int16_t COLOR_2 = 82;                   // BYTE
-inline constexpr int16_t NAME_AUTHOR = 83;
-inline constexpr int16_t SCORE_TAG = 84;               // STRING
-inline constexpr int16_t BALLOON_ATTACHED_ENTITY = 85; // LONG
-inline constexpr int16_t PUFFERFISH_SIZE = 86;
-inline constexpr int16_t BUBBLE_TIME = 87;
-inline constexpr int16_t AGENT = 88;
-inline constexpr int16_t SITTING_AMOUNT = 89;
-inline constexpr int16_t SITTING_AMOUNT_PREVIOUS = 90;
-inline constexpr int16_t EATING_COUNTER = 91;
-inline constexpr int16_t FLAGS_EXTENDED = 92;
-inline constexpr int16_t LAYING_AMOUNT = 93;
-inline constexpr int16_t LAYING_AMOUNT_PREVIOUS = 94;
-inline constexpr int16_t DURATION = 95;
-inline constexpr int16_t SPAWN_TIME = 96;
-inline constexpr int16_t CHANGE_RATE = 97;
-inline constexpr int16_t CHANGE_ON_PICKUP = 98;
-inline constexpr int16_t PICKUP_COUNT = 99;
-inline constexpr int16_t INTERACT_TEXT = 100;
-inline constexpr int16_t TRADE_TIER = 101;
-inline constexpr int16_t MAX_TRADE_TIER = 102;
-inline constexpr int16_t TRADE_EXPERIENCE = 103;
-inline constexpr int16_t SKIN_ID = 104; // INT
-inline constexpr int16_t SPAWNING_FRAMES = 105;
-inline constexpr int16_t COMMAND_BLOCK_TICK_DELAY = 106;
-inline constexpr int16_t COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK = 107;
-inline constexpr int16_t AMBIENT_SOUND_INTERVAL = 108;
+    inline constexpr int16_t FLAGS = 0;                      // LONG
+    inline constexpr int16_t HEALTH = 1;                     // INT (minecart/boat)
+    inline constexpr int16_t VARIANT = 2;                    // INT
+    inline constexpr int16_t COLOR = 3;                      // BYTE
+    inline constexpr int16_t NAMETAG = 4;                    // STRING
+    inline constexpr int16_t OWNER = 5;                      // LONG
+    inline constexpr int16_t TARGET = 6;                     // LONG
+    inline constexpr int16_t AIR = 7;                        // SHORT
+    inline constexpr int16_t POTION_COLOR = 8;               // INT (ARGB!)
+    inline constexpr int16_t POTION_AMBIENT = 9;             // BYTE
+    inline constexpr int16_t JUMP_DURATION = 10;             // LONG
+    inline constexpr int16_t HURT_TIME = 11;                 // INT (minecart/boat)
+    inline constexpr int16_t HURT_DIRECTION = 12;            // INT (minecart/boat)
+    inline constexpr int16_t PADDLE_TIME_LEFT = 13;          // FLOAT
+    inline constexpr int16_t PADDLE_TIME_RIGHT = 14;         // FLOAT
+    inline constexpr int16_t EXPERIENCE_VALUE = 15;          // INT (xp orb)
+    inline constexpr int16_t DISPLAY_ITEM = 16;              // INT (id | (data << 16))
+    inline constexpr int16_t HORSE_FLAGS = 16;               // INT
+    inline constexpr int16_t WITHER_SKULL_IS_DANGEROUS = 16; // BYTE
+    inline constexpr int16_t MINECART_DISPLAY_OFFSET = 17;   // INT
+    inline constexpr int16_t ARROW_SHOOTER_ID = 17;          // LONG
+    inline constexpr int16_t MINECART_HAS_DISPLAY = 18;      // BYTE (must be 1 for minecart to show block inside)
+    inline constexpr int16_t HORSE_TYPE = 19;
+    inline constexpr int16_t SWELL = 19;
+    inline constexpr int16_t OLD_SWELL = 20;
+    inline constexpr int16_t SWELL_DIR = 21;
+    inline constexpr int16_t CHARGE_AMOUNT = 22;
+    inline constexpr int16_t ENDERMAN_HELD_RUNTIME_ID = 23; // SHORT
+    inline constexpr int16_t ACTOR_AGE = 24;                // SHORT
+    inline constexpr int16_t PLAYER_FLAGS = 26;             // BYTE
+    inline constexpr int16_t PLAYER_INDEX = 27;
+    inline constexpr int16_t PLAYER_BED_POSITION = 28; // POS
+    inline constexpr int16_t FIREBALL_POWER_X = 29;    // FLOAT
+    inline constexpr int16_t FIREBALL_POWER_Y = 30;    // FLOAT
+    inline constexpr int16_t FIREBALL_POWER_Z = 31;    // FLOAT
+    inline constexpr int16_t AUX_POWER = 32;
+    inline constexpr int16_t FISH_X = 33;
+    inline constexpr int16_t FISH_Z = 34;
+    inline constexpr int16_t FISH_ANGLE = 35;
+    inline constexpr int16_t POTION_AUX_VALUE = 36;                   // SHORT
+    inline constexpr int16_t LEAD_HOLDER = 37;                        // LONG
+    inline constexpr int16_t SCALE = 38;                              // FLOAT
+    inline constexpr int16_t INTERACTIVE_TAG = 39;                    // STRING
+    inline constexpr int16_t NPC_SKIN_ID = 40;                        // STRING
+    inline constexpr int16_t URL_TAG = 41;                            // STRING
+    inline constexpr int16_t MAX_AIR = 42;                            // SHORT
+    inline constexpr int16_t MARK_VARIANT = 43;                       // INT
+    inline constexpr int16_t CONTAINER_TYPE = 44;                     // BYTE
+    inline constexpr int16_t CONTAINER_BASE_SIZE = 45;                // INT
+    inline constexpr int16_t CONTAINER_EXTRA_SLOTS_PER_STRENGTH = 46; // INT
+    inline constexpr int16_t BLOCK_TARGET = 47;                       // POS (ENDER CRYSTAL)
+    inline constexpr int16_t WITHER_INVULNERABLE_TICKS = 48;          // INT
+    inline constexpr int16_t WITHER_TARGET_1 = 49;                    // LONG
+    inline constexpr int16_t WITHER_TARGET_2 = 50;                    // LONG
+    inline constexpr int16_t WITHER_TARGET_3 = 51;                    // LONG
+    inline constexpr int16_t AERIAL_ATTACK = 52;
+    inline constexpr int16_t BOUNDING_BOX_WIDTH = 53;            // FLOAT
+    inline constexpr int16_t BOUNDING_BOX_HEIGHT = 54;           // FLOAT
+    inline constexpr int16_t FUSE_LENGTH = 55;                   // INT
+    inline constexpr int16_t RIDER_SEAT_POSITION = 56;           // VEC3
+    inline constexpr int16_t RIDER_ROTATION_LOCKED = 57;         // BYTE
+    inline constexpr int16_t RIDER_MAX_ROTATION = 58;            // FLOAT
+    inline constexpr int16_t RIDER_MIN_ROTATION = 59;            // FLOAT
+    inline constexpr int16_t AREA_EFFECT_CLOUD_RADIUS = 61;      // FLOAT
+    inline constexpr int16_t AREA_EFFECT_CLOUD_WAITING = 62;     // INT
+    inline constexpr int16_t AREA_EFFECT_CLOUD_PARTICLE_ID = 63; // INT
+    inline constexpr int16_t SHULKER_PEEK_ID = 64;               // INT
+    inline constexpr int16_t SHULKER_ATTACH_FACE = 65;           // BYTE
+    inline constexpr int16_t SHULKER_ATTACHED = 66;              // SHORT
+    inline constexpr int16_t SHULKER_ATTACH_POS = 67;            // POS
+    inline constexpr int16_t TRADING_PLAYER_EID = 68;            // LONG
+    inline constexpr int16_t TRADING_CAREER = 69;
+    inline constexpr int16_t HAS_COMMAND_BLOCK = 70;
+    inline constexpr int16_t COMMAND_BLOCK_COMMAND = 71;         // STRING
+    inline constexpr int16_t COMMAND_BLOCK_LAST_OUTPUT = 72;     // STRING
+    inline constexpr int16_t COMMAND_BLOCK_TRACK_OUTPUT = 73;    // BYTE
+    inline constexpr int16_t CONTROLLING_RIDER_SEAT_NUMBER = 74; // BYTE
+    inline constexpr int16_t STRENGTH = 75;                      // INT
+    inline constexpr int16_t MAX_STRENGTH = 76;                  // INT
+    inline constexpr int16_t SPELL_CASTING_COLOR = 77;           // INT
+    inline constexpr int16_t LIMITED_LIFE = 78;
+    inline constexpr int16_t ARMOR_STAND_POSE_INDEX = 79;    // INT
+    inline constexpr int16_t ENDER_CRYSTAL_TIME_OFFSET = 80; // INT
+    inline constexpr int16_t ALWAYS_SHOW_NAMETAG = 81;       // BYTE
+    inline constexpr int16_t COLOR_2 = 82;                   // BYTE
+    inline constexpr int16_t NAME_AUTHOR = 83;
+    inline constexpr int16_t SCORE_TAG = 84;               // STRING
+    inline constexpr int16_t BALLOON_ATTACHED_ENTITY = 85; // LONG
+    inline constexpr int16_t PUFFERFISH_SIZE = 86;
+    inline constexpr int16_t BUBBLE_TIME = 87;
+    inline constexpr int16_t AGENT = 88;
+    inline constexpr int16_t SITTING_AMOUNT = 89;
+    inline constexpr int16_t SITTING_AMOUNT_PREVIOUS = 90;
+    inline constexpr int16_t EATING_COUNTER = 91;
+    inline constexpr int16_t FLAGS_EXTENDED = 92;
+    inline constexpr int16_t LAYING_AMOUNT = 93;
+    inline constexpr int16_t LAYING_AMOUNT_PREVIOUS = 94;
+    inline constexpr int16_t DURATION = 95;
+    inline constexpr int16_t SPAWN_TIME = 96;
+    inline constexpr int16_t CHANGE_RATE = 97;
+    inline constexpr int16_t CHANGE_ON_PICKUP = 98;
+    inline constexpr int16_t PICKUP_COUNT = 99;
+    inline constexpr int16_t INTERACT_TEXT = 100;
+    inline constexpr int16_t TRADE_TIER = 101;
+    inline constexpr int16_t MAX_TRADE_TIER = 102;
+    inline constexpr int16_t TRADE_EXPERIENCE = 103;
+    inline constexpr int16_t SKIN_ID = 104; // INT
+    inline constexpr int16_t SPAWNING_FRAMES = 105;
+    inline constexpr int16_t COMMAND_BLOCK_TICK_DELAY = 106;
+    inline constexpr int16_t COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK = 107;
+    inline constexpr int16_t AMBIENT_SOUND_INTERVAL = 108;
 /*inline constexpr int16_t AMBIENT_SOUND_EVENT_NAME            = 109;
 inline constexpr int16_t FALL_DAMAGE_MULTIPLIER              = 110;
 inline constexpr int16_t NAME_RAW_TEXT                       = 111;

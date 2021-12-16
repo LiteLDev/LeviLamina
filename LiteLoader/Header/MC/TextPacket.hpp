@@ -13,6 +13,7 @@ class TextPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[168];
 
 #undef AFTER_EXTRA
 

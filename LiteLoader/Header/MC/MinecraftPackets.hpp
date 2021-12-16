@@ -14,11 +14,9 @@ class MinecraftPackets {
 // Add Member There
 public:
 //Warning temporary
-static Packet* createPacket(int type) {
-    unsigned long long packet[2] = {0};
-    SymCall("?createPacket@MinecraftPackets@@SA?AV?$shared_ptr@VPacket@@@std@@W4MinecraftPacketIds@@@Z",
-            void*, void*, int)(packet, type);
-    return (Packet*)*packet;
+static std::shared_ptr<class Packet> createPacket(int type)
+{
+    return createPacket((MinecraftPacketIds)type);
 }
 #undef AFTER_EXTRA
 

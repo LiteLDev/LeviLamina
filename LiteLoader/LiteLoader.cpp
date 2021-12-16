@@ -1,15 +1,11 @@
 #include <Windows.h>
-#include <vector>
 #include <string>
 #include <iostream>
 #include <LoggerAPI.h>
-#include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
-#include <LLAPI.h>
-#include <Version.h>
 #include <Config.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
@@ -75,7 +71,7 @@ void LLMain() {
     FixPluginsLibDir();
 
     //Init LL Logger
-    Logger::setFile("logs/LiteLoader-latest.log", false);
+    Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
     //Load Config
     LoadLLConfig();

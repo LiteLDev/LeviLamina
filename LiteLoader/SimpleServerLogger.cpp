@@ -2,7 +2,6 @@
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
 #include <Config.h>
-#include <Utils/StringHelper.h>
 using namespace Event;
 
 

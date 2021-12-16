@@ -146,7 +146,7 @@ public:
 class PlayerChangeDimEvent : public EventTemplate<PlayerChangeDimEvent> {
 public:
     Player* mPlayer;
-    int mDimensionId;
+    int mToDimensionId;
 };
 
 class PlayerJumpEvent : public EventTemplate<PlayerJumpEvent> {
@@ -383,7 +383,7 @@ public:
     Actor* mActor;
 };
 
-class LiquidFlowEvent : public EventTemplate<LiquidFlowEvent> {
+class LiquidSpreadEvent : public EventTemplate<LiquidSpreadEvent> {
 public:
     BlockInstance mBlockInstance;
     BlockPos mTarget;

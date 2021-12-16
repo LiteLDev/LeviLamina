@@ -1,11 +1,13 @@
 ﻿#include <Global.h>
 #include <KVDBAPI.h>
 #include <LoggerAPI.h>
+#include <Utils/FileHelper.h>
 
 Logger levelDBLogger("LevelDB");
 
 std::unique_ptr<KVDB> KVDB::create(const string& path, bool read_cache, int cache_sz,int Bfilter_bit)
 {
+    CreateDirs(path);
     auto db = std::make_unique<KVDB>();
     db->__init(path.c_str(), read_cache, cache_sz, Bfilter_bit);
     return db;

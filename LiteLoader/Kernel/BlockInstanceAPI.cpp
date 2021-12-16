@@ -9,6 +9,7 @@
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
 #include <MC/LootComponent.hpp>
+#include <MC/ItemInstance.hpp>
 
 BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimid)
     : block(block)
@@ -49,7 +50,10 @@ bool BlockInstance::hasContainer() {
 class DropperBlockActor;
 Container* BlockInstance::getContainer()
 {
-    return VirtualCall<Container*>(getBlockEntity(), 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
+    auto be = getBlockEntity();
+    if (!be)
+        return nullptr;
+    return VirtualCall<Container*>(be, 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
 }
 
 //bad
@@ -68,11 +72,9 @@ bool BlockInstance::breakNaturally(ItemStack* tool) {
     return out;
 }
 
-ItemStack& BlockInstance::getBlockDrops() {
-    auto v17 = (const_cast<BlockLegacy*>(&block->getLegacyBlock()))->asItemInstance(*Level::getBlockSource(dim), pos, *block);
-    ItemStack* a = (ItemStack*)new char[272];
-    auto& out = SymCall("??0ItemStack@@QEAA@AEBVItemInstance@@@Z", ItemStack&, ItemStack*, ItemInstance)(a, v17);
-    return out;
+ItemStack BlockInstance::getBlockDrops() {
+    auto v17 = block->asItemInstance(*Level::getBlockSource(dim), pos);
+    return ItemStack::fromItemInstance(v17);
 }
 
 BlockPos BlockInstance::getPosition() {
