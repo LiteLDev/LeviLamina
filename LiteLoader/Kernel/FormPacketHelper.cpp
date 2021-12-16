@@ -138,7 +138,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
     }
     else if (formTypes[formId] == FormType::ModalFormPacket)
     {
-        int chosen = data != "null" ? stoi(data) : 0;
+        int chosen = data == "true" ? 1 : 0;
         modalFormPacketCallbacks[formId](chosen);
         modalFormPacketCallbacks.erase(formId);
     }
