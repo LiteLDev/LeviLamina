@@ -13,6 +13,7 @@ class SetDisplayObjectivePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[136];
 
 #undef AFTER_EXTRA
 
