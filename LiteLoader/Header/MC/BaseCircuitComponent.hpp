@@ -44,8 +44,8 @@ public:
     /*19*/ virtual bool hasSource(class BaseCircuitComponent&);
     /*20*/ virtual void __unk_vfn_2();
     /*21*/ virtual bool isSecondaryPowered() const;
-    /*22*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
-    /*23*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentGroupType() const;
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
     /*
     inline bool allowIndirect() const{
         bool (BaseCircuitComponent::*rv)() const;

@@ -100,7 +100,7 @@ public:
     /*70*/ virtual void _serverAiMobStep();
     /*71*/ virtual void __unk_vfn_25();
     /*72*/ virtual float getModelScale() const;
-    /*73*/ virtual int /*enum enum Spider::Type*/ getSpiderType() const;
+    /*73*/ virtual enum Spider::Type getSpiderType() const;
     /*
     inline bool useNewAi() const{
         bool (Spider::*rv)() const;

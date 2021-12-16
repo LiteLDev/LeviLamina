@@ -4,7 +4,6 @@
 #include "../Global.h"
 #include "Actor.hpp"
 #include "Mob.hpp"
-#include <functional>
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -95,14 +94,14 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*1*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*1*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*2*/ virtual void _serverInitItemStackIds();
     /*3*/ virtual ~Player();
     /*4*/ virtual void remove();
     /*5*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual class Vec3 getAttachPos(int /*enum enum ActorLocation*/, float) const;
+    /*7*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
     /*8*/ virtual void move(class Vec3 const&);
     /*9*/ virtual void move(struct IActorMovementProxy&, class Vec3 const&) const;
     /*10*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
@@ -132,7 +131,7 @@ public:
     /*34*/ virtual void __unk_vfn_11();
     /*35*/ virtual class Actor* findAttackTarget();
     /*36*/ virtual bool isValidTarget(class Actor*) const;
-    /*37*/ virtual bool attack(class Actor&, int /*enum enum ActorDamageCause*/ const&);
+    /*37*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
     /*38*/ virtual void adjustDamageAmount(int&) const;
     /*39*/ virtual void onTame();
     /*40*/ virtual void onFailedTame();
@@ -142,17 +141,17 @@ public:
     /*44*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
     /*45*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*46*/ virtual void feed(int);
-    /*47*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*47*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*48*/ virtual float getPickRadius();
     /*49*/ virtual class HashedString const& getActorRendererId() const;
     /*50*/ virtual void awardKillScore(class Actor&, int);
-    /*51*/ virtual void setArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
+    /*51*/ virtual void setArmor(enum ArmorSlot, class ItemStack const&);
     /*52*/ virtual class ItemStack const& getCarriedItem() const;
     /*53*/ virtual void setCarriedItem(class ItemStack const&);
     /*54*/ virtual void setOffhandSlot(class ItemStack const&);
     /*55*/ virtual class ItemStack const& getEquippedTotem() const;
     /*56*/ virtual bool consumeTotem();
-    /*57*/ virtual int /*enum enum ActorType*/ getEntityTypeId() const;
+    /*57*/ virtual enum ActorType getEntityTypeId() const;
     /*58*/ virtual class HashedString const& queryEntityRenderer() const;
     /*59*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*60*/ virtual bool canFreeze() const;
@@ -170,9 +169,9 @@ public:
     /*72*/ virtual bool canSynchronizeNewEntity() const;
     /*73*/ virtual void startSwimming();
     /*74*/ virtual void stopSwimming();
-    /*75*/ virtual int /*enum enum CommandPermissionLevel*/ getCommandPermissionLevel() const;
+    /*75*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
     /*76*/ virtual class AnimationComponent& getAnimationComponent();
-    /*77*/ virtual void useItem(class ItemStackBase&, int /*enum enum ItemUseMethod*/, bool);
+    /*77*/ virtual void useItem(class ItemStackBase&, enum ItemUseMethod, bool);
     /*78*/ virtual void __unk_vfn_14();
     /*79*/ virtual void __unk_vfn_15();
     /*80*/ virtual float getMapDecorationRotation() const;
@@ -250,7 +249,7 @@ public:
     /*152*/ virtual void __unk_vfn_30();
     /*153*/ virtual bool hasResource(int);
     /*154*/ virtual void completeUsingItem();
-    /*155*/ virtual void setPermissions(int /*enum enum CommandPermissionLevel*/);
+    /*155*/ virtual void setPermissions(enum CommandPermissionLevel);
     /*156*/ virtual void startDestroying();
     /*157*/ virtual void stopDestroying();
     /*158*/ virtual void __unk_vfn_31();
@@ -265,7 +264,7 @@ public:
     /*167*/ virtual void displayTextObjectMessage(class TextObjectRoot const&, std::string const&, std::string const&);
     /*168*/ virtual void displayTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
     /*169*/ virtual void displayWhisperMessage(std::string const&, std::string const&, std::string const&, std::string const&);
-    /*170*/ virtual int /*enum enum BedSleepingResult*/ startSleepInBed(class BlockPos const&);
+    /*170*/ virtual enum BedSleepingResult startSleepInBed(class BlockPos const&);
     /*171*/ virtual void stopSleepInBed(bool, bool);
     /*172*/ virtual bool canStartSleepInBed();
     /*173*/ virtual int getSleepTimer() const;
@@ -278,7 +277,7 @@ public:
     /*180*/ virtual void __unk_vfn_39();
     /*181*/ virtual void registerTrackedBoss(struct ActorUniqueID);
     /*182*/ virtual void unRegisterTrackedBoss(struct ActorUniqueID);
-    /*183*/ virtual void setPlayerGameType(int /*enum enum GameType*/);
+    /*183*/ virtual void setPlayerGameType(enum GameType);
     /*184*/ virtual void initHUDContainerManager();
     /*185*/ virtual void _crit(class Actor&);
     /*186*/ virtual class IMinecraftEventing* getEventing() const;
@@ -307,17 +306,17 @@ public:
     /*209*/ virtual void sendNetworkPacket(class Packet&) const;
     /*210*/ virtual class PlayerEventCoordinator& getPlayerEventCoordinator() = 0;
     /*211*/ virtual class MoveInputHandler* getMoveInputHandler() = 0;
-    /*212*/ virtual int /*enum enum InputMode*/ getInputMode() const = 0;
-    /*213*/ virtual int /*enum enum ClientPlayMode*/ getPlayMode() const = 0;
-    /*214*/ virtual void reportMovementTelemetry(int /*enum enum MovementEventType*/);
+    /*212*/ virtual enum InputMode getInputMode() const = 0;
+    /*213*/ virtual enum ClientPlayMode getPlayMode() const = 0;
+    /*214*/ virtual void reportMovementTelemetry(enum MovementEventType);
     /*215*/ virtual void __unk_vfn_41();
     /*216*/ virtual std::string getXuid() const;
     /*217*/ virtual struct PlayerMovementSettings const& getMovementSettings() const;
     /*218*/ virtual void onMovePlayerPacketNormal(class Vec3 const&, class Vec2 const&, float);
     /*219*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
     /*
-    inline int \/*enum enum StructureFeatureType*\/ getCurrentStructureFeature() const{
-        int \/*enum enum StructureFeatureType*\/ (Player::*rv)() const;
+    inline enum StructureFeatureType getCurrentStructureFeature() const{
+        enum StructureFeatureType (Player::*rv)() const;
         *((void**)&rv) = dlsym("?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ");
         return (this->*rv)();
     }

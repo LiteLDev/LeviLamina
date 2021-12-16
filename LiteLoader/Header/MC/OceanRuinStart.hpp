@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~OceanRuinStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+    /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI void createRuin(class Dimension&, class OverworldGenerator&, class Random&, int, int);
 
 protected:

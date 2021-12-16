@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~Goat();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -51,9 +51,9 @@ public:
     /*23*/ virtual void onTame();
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*26*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
+    /*26*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*28*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*28*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*29*/ virtual float getPickRadius();
     /*30*/ virtual void awardKillScore(class Actor&, int);
     /*31*/ virtual class HashedString const& queryEntityRenderer() const;
@@ -83,8 +83,8 @@ public:
     /*55*/ virtual void __unk_vfn_20();
     /*56*/ virtual void __unk_vfn_21();
     /*57*/ virtual void spawnAnim();
-    /*58*/ virtual int /*enum enum LevelSoundEvent*/ getHurtSound();
-    /*59*/ virtual int /*enum enum LevelSoundEvent*/ getDeathSound();
+    /*58*/ virtual enum LevelSoundEvent getHurtSound();
+    /*59*/ virtual enum LevelSoundEvent getDeathSound();
     /*60*/ virtual int getItemUseDuration() const;
     /*61*/ virtual float getItemUseStartupProgress() const;
     /*62*/ virtual float getItemUseIntervalProgress() const;

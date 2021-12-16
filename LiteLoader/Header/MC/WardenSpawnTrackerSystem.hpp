@@ -24,8 +24,8 @@ public:
 
 public:
     /*
-    inline int \/*enum enum EventResult*\/ onLevelAddedPlayer(class Level& a0, class Player& a1){
-        int \/*enum enum EventResult*\/ (WardenSpawnTrackerSystem::*rv)(class Level&, class Player&);
+    inline enum EventResult onLevelAddedPlayer(class Level& a0, class Player& a1){
+        enum EventResult (WardenSpawnTrackerSystem::*rv)(class Level&, class Player&);
         *((void**)&rv) = dlsym("?onLevelAddedPlayer@WardenSpawnTrackerSystem@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Level&>(a0), std::forward<class Player&>(a1));
     }

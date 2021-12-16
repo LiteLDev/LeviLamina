@@ -28,7 +28,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~ItemActor();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -68,17 +68,17 @@ public:
     /*37*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*38*/ virtual void animateHurt();
     /*39*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*40*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*40*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*41*/ virtual float getPickRadius();
     /*42*/ virtual void awardKillScore(class Actor&, int);
-    /*43*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*44*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*45*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*46*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*43*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*44*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*45*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*46*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*47*/ virtual class HashedString const& queryEntityRenderer() const;
     /*48*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*49*/ virtual bool canFreeze() const;
-    /*50*/ virtual class AABB getLiquidAABB(int /*enum enum MaterialType*/) const;
+    /*50*/ virtual class AABB getLiquidAABB(enum MaterialType) const;
     /*51*/ virtual int getPortalWaitTime() const;
     /*52*/ virtual bool canChangeDimensions() const;
     /*53*/ virtual void __unk_vfn_12();

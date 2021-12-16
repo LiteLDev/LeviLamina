@@ -29,8 +29,8 @@ public:
         *((void**)&rv) = dlsym("?wasAutoJumping@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum LoadingState*\/ getLoadingState() const{
-        int \/*enum enum LoadingState*\/ (DirectPlayerMovementProxy::*rv)() const;
+    inline enum LoadingState getLoadingState() const{
+        enum LoadingState (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getLoadingState@DirectPlayerMovementProxy@@UEBA?AW4LoadingState@@XZ");
         return (this->*rv)();
     }
@@ -174,15 +174,15 @@ public:
         *((void**)&rv) = dlsym("?checkMovementStats@DirectPlayerMovementProxy@@UEAAXAEBVVec3@@@Z");
         return (this->*rv)(std::forward<class Vec3 const&>(a0));
     }
-    inline bool getAbilityBool(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        bool (DirectPlayerMovementProxy::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
+    inline bool getAbilityBool(enum AbilitiesIndex a0) const{
+        bool (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex) const;
         *((void**)&rv) = dlsym("?getAbilityBool@DirectPlayerMovementProxy@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
+        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0));
     }
-    inline float getAbilityFloat(int \/*enum enum AbilitiesIndex*\/ a0) const{
-        float (DirectPlayerMovementProxy::*rv)(int \/*enum enum AbilitiesIndex*\/) const;
+    inline float getAbilityFloat(enum AbilitiesIndex a0) const{
+        float (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex) const;
         *((void**)&rv) = dlsym("?getAbilityFloat@DirectPlayerMovementProxy@@UEBAMW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0));
+        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0));
     }
     inline float getBob() const{
         float (DirectPlayerMovementProxy::*rv)() const;
@@ -199,8 +199,8 @@ public:
         *((void**)&rv) = dlsym("?getGlidingTicks@DirectPlayerMovementProxy@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum InputMode*\/ getInputMode() const{
-        int \/*enum enum InputMode*\/ (DirectPlayerMovementProxy::*rv)() const;
+    inline enum InputMode getInputMode() const{
+        enum InputMode (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getInputMode@DirectPlayerMovementProxy@@UEBA?AW4InputMode@@XZ");
         return (this->*rv)();
     }
@@ -219,15 +219,15 @@ public:
         *((void**)&rv) = dlsym("?getMoveInputHandler@DirectPlayerMovementProxy@@UEAAPEAVMoveInputHandler@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum ClientPlayMode*\/ getPlayMode() const{
-        int \/*enum enum ClientPlayMode*\/ (DirectPlayerMovementProxy::*rv)() const;
+    inline enum ClientPlayMode getPlayMode() const{
+        enum ClientPlayMode (DirectPlayerMovementProxy::*rv)() const;
         *((void**)&rv) = dlsym("?getPlayMode@DirectPlayerMovementProxy@@UEBA?AW4ClientPlayMode@@XZ");
         return (this->*rv)();
     }
-    inline float getPlayerPaddleForce(int \/*enum enum Side*\/ a0) const{
-        float (DirectPlayerMovementProxy::*rv)(int \/*enum enum Side*\/) const;
+    inline float getPlayerPaddleForce(enum Side a0) const{
+        float (DirectPlayerMovementProxy::*rv)(enum Side) const;
         *((void**)&rv) = dlsym("?getPlayerPaddleForce@DirectPlayerMovementProxy@@UEBAMW4Side@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Side*\/>(a0));
+        return (this->*rv)(std::forward<enum Side>(a0));
     }
     inline float getVRMoveAdjustAngle() const{
         float (DirectPlayerMovementProxy::*rv)() const;
@@ -274,10 +274,10 @@ public:
         *((void**)&rv) = dlsym("?isLocalPlayer@DirectPlayerMovementProxy@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isPaddling(int \/*enum enum Side*\/ a0) const{
-        bool (DirectPlayerMovementProxy::*rv)(int \/*enum enum Side*\/) const;
+    inline bool isPaddling(enum Side a0) const{
+        bool (DirectPlayerMovementProxy::*rv)(enum Side) const;
         *((void**)&rv) = dlsym("?isPaddling@DirectPlayerMovementProxy@@UEBA_NW4Side@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Side*\/>(a0));
+        return (this->*rv)(std::forward<enum Side>(a0));
     }
     inline bool isServerAuthoritativeMovement() const{
         bool (DirectPlayerMovementProxy::*rv)() const;
@@ -319,15 +319,15 @@ public:
         *((void**)&rv) = dlsym("?sendPlayerMove@DirectPlayerMovementProxy@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setAbilityBool(int \/*enum enum AbilitiesIndex*\/ a0, bool a1){
-        void (DirectPlayerMovementProxy::*rv)(int \/*enum enum AbilitiesIndex*\/, bool);
+    inline void setAbilityBool(enum AbilitiesIndex a0, bool a1){
+        void (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex, bool);
         *((void**)&rv) = dlsym("?setAbilityBool@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0), std::forward<bool>(a1));
+        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0), std::forward<bool>(a1));
     }
-    inline void setAbilityFloat(int \/*enum enum AbilitiesIndex*\/ a0, float a1){
-        void (DirectPlayerMovementProxy::*rv)(int \/*enum enum AbilitiesIndex*\/, float);
+    inline void setAbilityFloat(enum AbilitiesIndex a0, float a1){
+        void (DirectPlayerMovementProxy::*rv)(enum AbilitiesIndex, float);
         *((void**)&rv) = dlsym("?setAbilityFloat@DirectPlayerMovementProxy@@UEAAXW4AbilitiesIndex@@M@Z");
-        return (this->*rv)(std::forward<int \/*enum enum AbilitiesIndex*\/>(a0), std::forward<float>(a1));
+        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0), std::forward<float>(a1));
     }
     inline void setAutoJumping(bool a0){
         void (DirectPlayerMovementProxy::*rv)(bool);
@@ -359,10 +359,10 @@ public:
         *((void**)&rv) = dlsym("?setLastBob@DirectPlayerMovementProxy@@UEAAXM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
-    inline void setPlayerPaddleForce(int \/*enum enum Side*\/ a0, float a1){
-        void (DirectPlayerMovementProxy::*rv)(int \/*enum enum Side*\/, float);
+    inline void setPlayerPaddleForce(enum Side a0, float a1){
+        void (DirectPlayerMovementProxy::*rv)(enum Side, float);
         *((void**)&rv) = dlsym("?setPlayerPaddleForce@DirectPlayerMovementProxy@@UEAAXW4Side@@M@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Side*\/>(a0), std::forward<float>(a1));
+        return (this->*rv)(std::forward<enum Side>(a0), std::forward<float>(a1));
     }
     inline bool shouldSendPosition() const{
         bool (DirectPlayerMovementProxy::*rv)() const;

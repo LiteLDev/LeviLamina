@@ -60,10 +60,10 @@ public:
         *((void**)&rv) = dlsym("?decorateWorldGenLoadChunk@OverworldGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockVolumeTarget@@AEAVRandom@@AEBVChunkPos@@@Z");
         return (this->*rv)(std::forward<class Biome&>(a0), std::forward<class LevelChunk&>(a1), std::forward<class BlockVolumeTarget&>(a2), std::forward<class Random&>(a3), std::forward<class ChunkPos const&>(a4));
     }
-    inline bool findNearestFeature(int \/*enum enum StructureFeatureType*\/ a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
-        bool (OverworldGenerator::*rv)(int \/*enum enum StructureFeatureType*\/, class BlockPos const&, class BlockPos&, bool);
+    inline bool findNearestFeature(enum StructureFeatureType a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
+        bool (OverworldGenerator::*rv)(enum StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
         *((void**)&rv) = dlsym("?findNearestFeature@OverworldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum StructureFeatureType*\/>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
     }
     inline std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const& a0, class SurfaceLevelCache const& a1, short a2, short a3, short a4) const{
         std::unique_ptr<class Aquifer> (OverworldGenerator::*rv)(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
@@ -85,8 +85,8 @@ public:
         *((void**)&rv) = dlsym("?getBlockVolumeDimensions@OverworldGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum StructureFeatureType*\/ getFeatureTypeAt(class BlockPos const& a0){
-        int \/*enum enum StructureFeatureType*\/ (OverworldGenerator::*rv)(class BlockPos const&);
+    inline enum StructureFeatureType getFeatureTypeAt(class BlockPos const& a0){
+        enum StructureFeatureType (OverworldGenerator::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?getFeatureTypeAt@OverworldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }

@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "VehicleUtils.hpp"
-#include "BlockInstance.hpp"
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
@@ -81,16 +80,16 @@ public:
     /*5*/ virtual class Mob* getLastHurtMob();
     /*6*/ virtual void setLastHurtMob(class Actor*);
     /*7*/ virtual void outOfWorld();
-    /*8*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*9*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*10*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*11*/ virtual void reloadComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*11*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*12*/ virtual void _serverInitItemStackIds();
     /*13*/ virtual void _doInitialMove();
     /*14*/ virtual ~Actor();
     /*15*/ virtual void reset();
     /*16*/ virtual int getOnDeathExperience();
-    /*17*/ virtual int /*enum enum ActorType*/ getOwnerEntityType();
+    /*17*/ virtual enum ActorType getOwnerEntityType();
     /*18*/ virtual void remove();
     /*19*/ virtual void setPos(class Vec3 const&);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -98,7 +97,7 @@ public:
     /*22*/ virtual void __unk_vfn_0();
     /*23*/ virtual class Vec3 const& getPosOld() const;
     /*24*/ virtual class Vec3 const getPosExtrapolated(float) const;
-    /*25*/ virtual class Vec3 getAttachPos(int /*enum enum ActorLocation*/, float) const;
+    /*25*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
     /*26*/ virtual class Vec3 getFiringPos() const;
     /*27*/ virtual void setRot(class Vec2 const&);
     /*28*/ virtual void move(class Vec3 const&);
@@ -129,7 +128,7 @@ public:
     /*53*/ virtual bool startRiding(class Actor&);
     /*54*/ virtual void addPassenger(class Actor&);
     /*55*/ virtual void flagPassengerToRemove(class Actor&);
-    /*56*/ virtual std::string getExitTip(std::string const&, int /*enum enum InputMode*/) const;
+    /*56*/ virtual std::string getExitTip(std::string const&, enum InputMode) const;
     /*57*/ virtual bool intersects(class Vec3 const&, class Vec3 const&) const;
     /*58*/ virtual bool isInWall() const;
     /*59*/ virtual bool isInvisible() const;
@@ -147,7 +146,7 @@ public:
     /*71*/ virtual bool isInWater() const;
     /*72*/ virtual bool hasEnteredWater() const;
     /*73*/ virtual bool isInLava() const;
-    /*74*/ virtual bool isUnderLiquid(int /*enum enum MaterialType*/) const;
+    /*74*/ virtual bool isUnderLiquid(enum MaterialType) const;
     /*75*/ virtual bool isOverWater() const;
     /*76*/ virtual void setBlockMovementSlowdownMultiplier(class Vec3 const&);
     /*77*/ virtual void resetBlockMovementSlowdownMultiplier();
@@ -187,7 +186,7 @@ public:
     /*111*/ virtual void setTarget(class Actor*);
     /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
-    /*114*/ virtual bool attack(class Actor&, int /*enum enum ActorDamageCause*/ const&);
+    /*114*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
     /*115*/ virtual void performRangedAttack(class Actor&, float);
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*117*/ virtual int getEquipmentCount() const;
@@ -206,16 +205,16 @@ public:
     /*130*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*131*/ virtual bool shouldRender() const;
     /*132*/ virtual void playAmbientSound();
-    /*133*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
+    /*133*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
-    /*135*/ virtual int /*enum enum ActorDamageCause*/ getBlockDamageCause(class Block const&) const;
+    /*135*/ virtual enum ActorDamageCause getBlockDamageCause(class Block const&) const;
     /*136*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
     /*137*/ virtual void animateHurt();
     /*138*/ virtual bool doFireHurt(int);
     /*139*/ virtual void onLightningHit();
     /*140*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*141*/ virtual void feed(int);
-    /*142*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*143*/ virtual float getPickRadius();
     /*144*/ virtual class HashedString const& getActorRendererId() const;
     /*145*/ virtual class ItemActor* spawnAtLocation(int, int);
@@ -226,14 +225,14 @@ public:
     /*150*/ virtual void despawn();
     /*151*/ virtual void killed(class Actor&);
     /*152*/ virtual void awardKillScore(class Actor&, int);
-    /*153*/ virtual void setArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
-    /*154*/ virtual class ItemStack const& getArmor(int /*enum enum ArmorSlot*/) const;
+    /*153*/ virtual void setArmor(enum ArmorSlot, class ItemStack const&);
+    /*154*/ virtual class ItemStack const& getArmor(enum ArmorSlot) const;
     /*155*/ virtual std::vector<class ItemStack const* > getAllArmor() const;
-    /*156*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*157*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*158*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*159*/ virtual class ItemStack const& getEquippedSlot(int /*enum enum EquipmentSlot*/) const;
-    /*160*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*156*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*157*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*158*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*159*/ virtual class ItemStack const& getEquippedSlot(enum EquipmentSlot) const;
+    /*160*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*161*/ virtual class ItemStack const& getCarriedItem() const;
     /*162*/ virtual void setCarriedItem(class ItemStack const&);
     /*163*/ virtual void setOffhandSlot(class ItemStack const&);
@@ -243,13 +242,13 @@ public:
     /*167*/ virtual void saveWithoutId(class CompoundTag&);
     /*168*/ virtual bool load(class CompoundTag const&, class DataLoadHelper&);
     /*169*/ virtual void loadLinks(class CompoundTag const&, std::vector<struct ActorLink>&, class DataLoadHelper&);
-    /*170*/ virtual int /*enum enum ActorType*/ getEntityTypeId() const;
+    /*170*/ virtual enum ActorType getEntityTypeId() const;
     /*171*/ virtual class HashedString const& queryEntityRenderer() const;
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*173*/ virtual void thawFreezeEffect();
     /*174*/ virtual bool canFreeze() const;
     /*175*/ virtual bool const isWearingLeatherArmor() const;
-    /*176*/ virtual class AABB getLiquidAABB(int /*enum enum MaterialType*/) const;
+    /*176*/ virtual class AABB getLiquidAABB(enum MaterialType) const;
     /*177*/ virtual void handleInsidePortal(class BlockPos const&);
     /*178*/ virtual int getPortalCooldown() const;
     /*179*/ virtual int getPortalWaitTime() const;
@@ -261,8 +260,8 @@ public:
     /*185*/ virtual void checkFallDamage(float, bool);
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
     /*187*/ virtual void handleFallDistanceOnServer(float, float, bool);
-    /*188*/ virtual void playSynchronizedSound(int /*enum enum LevelSoundEvent*/, class Vec3 const&, class Block const&, bool);
-    /*189*/ virtual void playSynchronizedSound(int /*enum enum LevelSoundEvent*/, class Vec3 const&, int, bool);
+    /*188*/ virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const&, class Block const&, bool);
+    /*189*/ virtual void playSynchronizedSound(enum LevelSoundEvent, class Vec3 const&, int, bool);
     /*190*/ virtual void onSynchedFlagUpdate(int, __int64, __int64);
     /*191*/ virtual void onSynchedDataUpdate(int);
     /*192*/ virtual bool canAddPassenger(class Actor&) const;
@@ -277,7 +276,7 @@ public:
     /*201*/ virtual void startSwimming();
     /*202*/ virtual void stopSwimming();
     /*203*/ virtual void buildDebugInfo(std::string&) const;
-    /*204*/ virtual int /*enum enum CommandPermissionLevel*/ getCommandPermissionLevel() const;
+    /*204*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
     /*205*/ virtual bool isClientSide() const;
     /*206*/ virtual class AttributeInstance* getMutableAttribute(class Attribute const&);
     /*207*/ virtual class AttributeInstance const& getAttribute(class Attribute const&) const;
@@ -293,7 +292,7 @@ public:
     /*217*/ virtual class AnimationComponent& getAnimationComponent();
     /*218*/ virtual void openContainerComponent(class Player&);
     /*219*/ virtual void swing();
-    /*220*/ virtual void useItem(class ItemStackBase&, int /*enum enum ItemUseMethod*/, bool);
+    /*220*/ virtual void useItem(class ItemStackBase&, enum ItemUseMethod, bool);
     /*221*/ virtual void __unk_vfn_14();
     /*222*/ virtual void __unk_vfn_15();
     /*223*/ virtual void getDebugText(std::vector<std::string>&);
@@ -333,7 +332,7 @@ public:
     /*257*/ virtual void __unk_vfn_19();
     /*258*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*259*/ virtual void markHurt();
-    /*260*/ virtual class AnimationComponent& _getAnimationComponent(class std::shared_ptr<class AnimationComponent>&, int /*enum enum AnimationComponentGroup*/);
+    /*260*/ virtual class AnimationComponent& _getAnimationComponent(class std::shared_ptr<class AnimationComponent>&, enum AnimationComponentGroup);
     /*261*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
     /*262*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*263*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
@@ -423,10 +422,10 @@ public:
         *((void**)&rv) = dlsym("?_onSizeUpdated@Actor@@EEAAXXZ");
         return (this->*rv)();
     }
-    inline void reloadHardcoded(int \/*enum enum Actor::InitializationMethod*\/ a0, class VariantParameterList const& a1){
-        void (Actor::*rv)(int \/*enum enum Actor::InitializationMethod*\/, class VariantParameterList const&);
+    inline void reloadHardcoded(enum Actor::InitializationMethod a0, class VariantParameterList const& a1){
+        void (Actor::*rv)(enum Actor::InitializationMethod, class VariantParameterList const&);
         *((void**)&rv) = dlsym("?reloadHardcoded@Actor@@MEAAXW4InitializationMethod@1@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Actor::InitializationMethod*\/>(a0), std::forward<class VariantParameterList const&>(a1));
+        return (this->*rv)(std::forward<enum Actor::InitializationMethod>(a0), std::forward<class VariantParameterList const&>(a1));
     }
     inline void changeDimension(class ChangeDimensionPacket const& a0){
         void (Actor::*rv)(class ChangeDimensionPacket const&);

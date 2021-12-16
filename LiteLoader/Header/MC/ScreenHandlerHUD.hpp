@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ScreenHandlerHUD();
-    /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
 
 protected:
 

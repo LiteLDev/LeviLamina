@@ -38,14 +38,14 @@ public:
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual bool isDyeable() const;
     /*12*/ virtual bool isDye() const;
-    /*13*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*13*/ virtual enum ItemColor getItemColor() const;
     /*14*/ virtual bool isFertilizer() const;
     /*15*/ virtual void __unk_vfn_5();
     /*16*/ virtual bool isThrowable() const;
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*20*/ virtual enum BlockShape getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
@@ -81,7 +81,7 @@ public:
     /*53*/ virtual void __unk_vfn_15();
     /*54*/ virtual void __unk_vfn_16();
     /*55*/ virtual bool canUseOnSimTick() const;
-    /*56*/ virtual int /*enum enum ItemUseMethod*/ useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    /*56*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
     /*57*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*58*/ virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
     /*59*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;

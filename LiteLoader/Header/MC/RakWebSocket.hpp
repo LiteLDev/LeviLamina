@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~RakWebSocket();
-    /*1*/ virtual int /*enum enum WSConnectionResult*/ connect(std::string const&, std::vector<std::string> const&);
-    /*2*/ virtual int /*enum enum WSConnectionResult*/ connect(std::string const&);
+    /*1*/ virtual enum WSConnectionResult connect(std::string const&, std::vector<std::string> const&);
+    /*2*/ virtual enum WSConnectionResult connect(std::string const&);
     /*3*/ virtual bool isReady() const;
     /*4*/ virtual void setOnMessageReceivedHandler(class std::function<void (class RakWebSocketDataFrame const& )> const&);
-    /*5*/ virtual void setOnCloseHandler(class std::function<void (int /*enum enum CloseStatusCode*/, std::string const& )> const&);
+    /*5*/ virtual void setOnCloseHandler(class std::function<void (enum CloseStatusCode, std::string const& )> const&);
     /*6*/ virtual void setOnConnectedHandler(class std::function<void (std::string const& )> const&);
     /*7*/ virtual void tick();
     /*8*/ virtual void _updateState() = 0;

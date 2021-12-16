@@ -49,10 +49,10 @@ public:
         *((void**)&rv) = dlsym("?onResizeBegin@AppPlatformListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onOperationModeChanged(int \/*enum enum OperationMode*\/ a0){
-        void (AppPlatformListener::*rv)(int \/*enum enum OperationMode*\/);
+    inline void onOperationModeChanged(enum OperationMode a0){
+        void (AppPlatformListener::*rv)(enum OperationMode);
         *((void**)&rv) = dlsym("?onOperationModeChanged@AppPlatformListener@@UEAAXW4OperationMode@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum OperationMode*\/>(a0));
+        return (this->*rv)(std::forward<enum OperationMode>(a0));
     }
     inline void onAppUnpaused(){
         void (AppPlatformListener::*rv)();

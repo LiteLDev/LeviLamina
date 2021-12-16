@@ -39,7 +39,7 @@ public:
     /*5*/ virtual class ResourcePack* getResourcePackSatisfiesPackId(struct PackIdVersion const&, bool) const;
     /*6*/ virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const&) const;
     /*7*/ virtual class ResourcePack* getResourcePackInPath(class Core::Path const&) const;
-    /*8*/ virtual bool isResourcePackLoaded(struct PackIdVersion const&, int /*enum enum PackOrigin*/ const&);
+    /*8*/ virtual bool isResourcePackLoaded(struct PackIdVersion const&, enum PackOrigin const&);
     /*9*/ virtual class PackSourceReport const* getPackLoadingReport() const;
     /*10*/ virtual class ResourcePack* getVanillaPack() const;
     /*11*/ virtual class ResourcePack* getChemistryPack() const;
@@ -58,7 +58,7 @@ public:
     /*24*/ virtual class Core::PathBuffer<std::string > const getDevelopmentBehaviorPacksPath() const;
     /*25*/ virtual class Core::PathBuffer<std::string > const getDevelopmentSkinPacksPath() const;
     /*26*/ virtual class Core::PathBuffer<std::string > const getTreatmentPacksPath() const;
-    /*27*/ virtual class Core::PathBuffer<std::string > const getKnownPacksPath(int /*enum enum KnownPackType*/) const;
+    /*27*/ virtual class Core::PathBuffer<std::string > const getKnownPacksPath(enum KnownPackType) const;
     /*28*/ virtual class Core::PathBuffer<std::string > const getKnownValidPacksPath() const;
     /*29*/ virtual class Core::PathBuffer<std::string > const getKnownInvalidPacksPath() const;
     /*30*/ virtual void refreshPacks();
@@ -68,11 +68,11 @@ public:
     /*34*/ virtual class PackManifestFactory& getPackManifestFactory();
     /*35*/ virtual class PackSettingsFactory& getPackSettingsFactory() const;
     /*36*/ virtual class PackSourceFactory& getPackSourceFactory();
-    /*37*/ virtual std::vector<class ResourcePack* > getPacksByResourceLocation(int /*enum enum PackOrigin*/) const;
-    /*38*/ virtual std::vector<class ResourcePack* > getPacksByType(int /*enum enum PackType*/) const;
+    /*37*/ virtual std::vector<class ResourcePack* > getPacksByResourceLocation(enum PackOrigin) const;
+    /*38*/ virtual std::vector<class ResourcePack* > getPacksByType(enum PackType) const;
     /*39*/ virtual void addKnownPackFromImport(class PackManifest const&);
-    /*40*/ virtual void addInvalidPack(class ResourceLocation const&, int /*enum enum PackType*/);
-    /*41*/ virtual std::vector<class ResourceLocation> const& getInvalidPacks(int /*enum enum PackType*/) const;
+    /*40*/ virtual void addInvalidPack(class ResourceLocation const&, enum PackType);
+    /*41*/ virtual std::vector<class ResourceLocation> const& getInvalidPacks(enum PackType) const;
     /*42*/ virtual std::vector<class ResourceLocation> getInvalidPacks(struct InvalidPacksFilterGroup const&) const;
     /*43*/ virtual void deletePack(class ResourceLocation const&);
     /*44*/ virtual void deletePackFiles(class ResourceLocation const&);

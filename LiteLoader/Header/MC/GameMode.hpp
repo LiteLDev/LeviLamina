@@ -34,7 +34,7 @@ public:
     /*7*/ virtual void continueBuildBlock(class BlockPos const&, unsigned char);
     /*8*/ virtual void stopBuildBlock();
     /*9*/ virtual void tick();
-    /*10*/ virtual float getPickRange(int /*enum enum InputMode*/ const&, bool);
+    /*10*/ virtual float getPickRange(enum InputMode const&, bool);
     /*11*/ virtual bool useItem(class ItemStack&);
     /*12*/ virtual bool useItemOn(class ItemStack&, class BlockPos const&, unsigned char, class Vec3 const&, class Block const*);
     /*13*/ virtual bool interact(class Actor&, class Vec3 const&);

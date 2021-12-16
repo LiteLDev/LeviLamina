@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~UseActorNode();
-    /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
     MCAPI UseActorNode();
 
 protected:

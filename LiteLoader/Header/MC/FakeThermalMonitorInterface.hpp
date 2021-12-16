@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~FakeThermalMonitorInterface();
-    /*1*/ virtual int /*enum enum ThermalState*/ getThermalState() const;
+    /*1*/ virtual enum ThermalState getThermalState() const;
     /*2*/ virtual float getThermalValueCelsius() const;
     /*3*/ virtual bool isLowBatteryModeEnabled() const;
     MCAPI FakeThermalMonitorInterface();

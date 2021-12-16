@@ -34,10 +34,10 @@ public:
         *((void**)&rv) = dlsym("?addAdditionalSaveData@HumanoidMonster@@MEAAXAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag&>(a0));
     }
-    inline bool doHurtTarget(class Actor* a0, int \/*enum enum ActorDamageCause*\/ const& a1){
-        bool (HumanoidMonster::*rv)(class Actor*, int \/*enum enum ActorDamageCause*\/ const&);
+    inline bool doHurtTarget(class Actor* a0, enum ActorDamageCause const& a1){
+        bool (HumanoidMonster::*rv)(class Actor*, enum ActorDamageCause const&);
         *((void**)&rv) = dlsym("?doHurtTarget@HumanoidMonster@@UEAA_NPEAVActor@@AEBW4ActorDamageCause@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int \/*enum enum ActorDamageCause*\/ const&>(a1));
+        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<enum ActorDamageCause const&>(a1));
     }
     inline int getItemUseDuration() const{
         int (HumanoidMonster::*rv)() const;

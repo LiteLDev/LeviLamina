@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ScreenHandlerLabTable();
-    /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleAction(class ItemStackRequestAction const&);
-    /*2*/ virtual int /*enum enum ItemStackNetResult*/ endRequest();
+    /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
+    /*2*/ virtual enum ItemStackNetResult endRequest();
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void postRequest(bool);
     MCAPI ScreenHandlerLabTable(class ContainerScreenContext const&, class ItemStackRequestActionHandler&);

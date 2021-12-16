@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~DragonFireball();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -65,10 +65,10 @@ public:
     /*37*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
-    /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*42*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*43*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*40*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*41*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*42*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*43*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*44*/ virtual class HashedString const& queryEntityRenderer() const;
     /*45*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*46*/ virtual bool canFreeze() const;
@@ -102,7 +102,7 @@ public:
     /*74*/ virtual void _onSizeUpdated();
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void __unk_vfn_22();
-    /*77*/ virtual int /*enum enum ParticleType*/ getTrailParticle();
+    /*77*/ virtual enum ParticleType getTrailParticle();
     /*
     inline bool shouldBurn(){
         bool (DragonFireball::*rv)();

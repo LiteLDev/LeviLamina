@@ -54,15 +54,15 @@ public:
         *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@NetherDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void _upgradeOldLimboEntity(class CompoundTag& a0, int \/*enum enum LimboEntitiesVersion*\/ a1){
-        void (NetherDimension::*rv)(class CompoundTag&, int \/*enum enum LimboEntitiesVersion*\/);
+    inline void _upgradeOldLimboEntity(class CompoundTag& a0, enum LimboEntitiesVersion a1){
+        void (NetherDimension::*rv)(class CompoundTag&, enum LimboEntitiesVersion);
         *((void**)&rv) = dlsym("?_upgradeOldLimboEntity@NetherDimension@@EEAAXAEAVCompoundTag@@W4LimboEntitiesVersion@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag&>(a0), std::forward<int \/*enum enum LimboEntitiesVersion*\/>(a1));
+        return (this->*rv)(std::forward<class CompoundTag&>(a0), std::forward<enum LimboEntitiesVersion>(a1));
     }
-    inline std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource> a0, int \/*enum enum StorageVersion*\/ a1){
-        std::unique_ptr<class ChunkSource> (NetherDimension::*rv)(std::unique_ptr<class ChunkSource>, int \/*enum enum StorageVersion*\/);
+    inline std::unique_ptr<class ChunkSource> _wrapStorageForVersionCompatibility(std::unique_ptr<class ChunkSource> a0, enum StorageVersion a1){
+        std::unique_ptr<class ChunkSource> (NetherDimension::*rv)(std::unique_ptr<class ChunkSource>, enum StorageVersion);
         *((void**)&rv) = dlsym("?_wrapStorageForVersionCompatibility@NetherDimension@@EEAA?AV?$unique_ptr@VChunkSource@@U?$default_delete@VChunkSource@@@std@@@std@@V23@W4StorageVersion@@@Z");
-        return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<int \/*enum enum StorageVersion*\/>(a1));
+        return (this->*rv)(std::forward<std::unique_ptr<class ChunkSource>>(a0), std::forward<enum StorageVersion>(a1));
     }
     inline class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator* > createGenerator(){
         class std::tuple<std::unique_ptr<class ChunkSource>, class WorldGenerator* > (NetherDimension::*rv)();

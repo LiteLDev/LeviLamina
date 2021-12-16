@@ -631,10 +631,10 @@ public:
         *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVContainerSetDataPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ContainerSetDataPacket const&>(a1));
     }
-    inline void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const& a0, int \/*enum enum PacketViolationResponse*\/ a1, int \/*enum enum MinecraftPacketIds*\/ a2, class NetworkIdentifier const& a3){
-        void (NetEventCallback::*rv)(struct ExtendedStreamReadResult const&, int \/*enum enum PacketViolationResponse*\/, int \/*enum enum MinecraftPacketIds*\/, class NetworkIdentifier const&);
+    inline void sendPacketViolationDetectedTelemetryData(struct ExtendedStreamReadResult const& a0, enum PacketViolationResponse a1, enum MinecraftPacketIds a2, class NetworkIdentifier const& a3){
+        void (NetEventCallback::*rv)(struct ExtendedStreamReadResult const&, enum PacketViolationResponse, enum MinecraftPacketIds, class NetworkIdentifier const&);
         *((void**)&rv) = dlsym("?sendPacketViolationDetectedTelemetryData@NetEventCallback@@UEAAXAEBUExtendedStreamReadResult@@W4PacketViolationResponse@@W4MinecraftPacketIds@@AEBVNetworkIdentifier@@@Z");
-        return (this->*rv)(std::forward<struct ExtendedStreamReadResult const&>(a0), std::forward<int \/*enum enum PacketViolationResponse*\/>(a1), std::forward<int \/*enum enum MinecraftPacketIds*\/>(a2), std::forward<class NetworkIdentifier const&>(a3));
+        return (this->*rv)(std::forward<struct ExtendedStreamReadResult const&>(a0), std::forward<enum PacketViolationResponse>(a1), std::forward<enum MinecraftPacketIds>(a2), std::forward<class NetworkIdentifier const&>(a3));
     }
     inline void handle(class NetworkIdentifier const& a0, class SimulationTypePacket const& a1){
         void (NetEventCallback::*rv)(class NetworkIdentifier const&, class SimulationTypePacket const&);

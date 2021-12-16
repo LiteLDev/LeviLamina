@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~DispenserContainerManagerModel();
-    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
-    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
-    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
-    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
+    /*1*/ virtual enum ContainerID getContainerId() const;
+    /*2*/ virtual void setContainerId(enum ContainerID);
+    /*3*/ virtual enum ContainerType getContainerType() const;
+    /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual void setData(int, int);
     /*6*/ virtual class ContainerScreenContext _postInit();
     MCAPI DispenserContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);

@@ -74,12 +74,12 @@ public:
     /*47*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*48*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*49*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
-    /*50*/ virtual int /*enum enum BlockProperty*/ getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    /*50*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
     /*51*/ virtual void __unk_vfn_20();
-    /*52*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
+    /*52*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*53*/ virtual void __unk_vfn_21();
     /*54*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
-    /*55*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, int /*enum enum FertilizerType*/) const;
+    /*55*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, enum FertilizerType) const;
     /*56*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
     /*57*/ virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*58*/ virtual bool mayPick() const;
@@ -121,7 +121,7 @@ public:
     /*94*/ virtual void __unk_vfn_27();
     /*95*/ virtual class Block const& getRenderBlock() const;
     /*96*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*97*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
+    /*97*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
     /*98*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*99*/ virtual void __unk_vfn_28();
     /*100*/ virtual class ItemInstance getSilkTouchItemInstance(class Block const&) const;
@@ -140,8 +140,8 @@ public:
     /*113*/ virtual void __unk_vfn_31();
     /*114*/ virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
     /*115*/ virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
-    /*116*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer() const;
-    /*117*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    /*116*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*117*/ virtual enum BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*118*/ virtual int getExtraRenderLayers() const;
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
@@ -152,13 +152,13 @@ public:
         *((void**)&rv) = dlsym("??1FlowerBlock@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer() const{
-        int \/*enum enum BlockRenderLayer*\/ (FlowerBlock::*rv)() const;
+    inline enum BlockRenderLayer getRenderLayer() const{
+        enum BlockRenderLayer (FlowerBlock::*rv)() const;
         *((void**)&rv) = dlsym("?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
-        int \/*enum enum BlockRenderLayer*\/ (FlowerBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
+    inline enum BlockRenderLayer getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
+        enum BlockRenderLayer (FlowerBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
         *((void**)&rv) = dlsym("?getRenderLayer@FlowerBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }

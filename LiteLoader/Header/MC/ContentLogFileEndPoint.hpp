@@ -40,10 +40,10 @@ public:
         *((void**)&rv) = dlsym("?flush@ContentLogFileEndPoint@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void log(int \/*enum enum LogArea*\/ a0, int \/*enum enum LogLevel*\/ a1, char const* a2){
-        void (ContentLogFileEndPoint::*rv)(int \/*enum enum LogArea*\/, int \/*enum enum LogLevel*\/, char const*);
+    inline void log(enum LogArea a0, enum LogLevel a1, char const* a2){
+        void (ContentLogFileEndPoint::*rv)(enum LogArea, enum LogLevel, char const*);
         *((void**)&rv) = dlsym("?log@ContentLogFileEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LogArea*\/>(a0), std::forward<int \/*enum enum LogLevel*\/>(a1), std::forward<char const*>(a2));
+        return (this->*rv)(std::forward<enum LogArea>(a0), std::forward<enum LogLevel>(a1), std::forward<char const*>(a2));
     }
     inline void setEnabled(bool a0){
         void (ContentLogFileEndPoint::*rv)(bool);

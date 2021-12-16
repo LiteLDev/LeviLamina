@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ServerScoreboard();
-    /*1*/ virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, int /*enum enum ObjectiveSortOrder*/);
+    /*1*/ virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, enum ObjectiveSortOrder);
     /*2*/ virtual class Objective* clearDisplayObjective(std::string const&);
     /*3*/ virtual struct ScoreboardId const& createScoreboardId(class Player const&);
     /*4*/ virtual struct ScoreboardId const& createScoreboardId(class Actor const&);

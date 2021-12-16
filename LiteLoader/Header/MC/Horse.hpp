@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~Horse();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -58,7 +58,7 @@ public:
     /*30*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*32*/ virtual void feed(int);
-    /*33*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*33*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*34*/ virtual float getPickRadius();
     /*35*/ virtual void awardKillScore(class Actor&, int);
     /*36*/ virtual class HashedString const& queryEntityRenderer() const;

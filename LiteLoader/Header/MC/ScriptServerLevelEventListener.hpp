@@ -30,7 +30,7 @@ public:
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual int /*enum enum EventResult*/ onLevelTick();
+    /*7*/ virtual enum EventResult onLevelTick();
     MCAPI ScriptServerLevelEventListener(class MinecraftServerScriptEngine&);
 
 protected:

@@ -35,23 +35,23 @@ public:
 public:
     /*0*/ virtual ~DBStorage();
     /*1*/ virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>);
-    /*2*/ virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, int /*enum enum DBHelpers::Category*/);
-    /*3*/ virtual bool hasKey(class gsl::basic_string_span<char const, -1>, int /*enum enum DBHelpers::Category*/) const;
-    /*4*/ virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, int /*enum enum DBHelpers::Category*/, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const;
+    /*2*/ virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, enum DBHelpers::Category);
+    /*3*/ virtual bool hasKey(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category) const;
+    /*4*/ virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const;
     /*5*/ virtual bool loadLevelData(class LevelData&);
-    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, int /*enum enum StorageVersion*/);
+    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion);
     /*7*/ virtual void saveLevelData(class LevelData const&);
     /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const;
-    /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, int /*enum enum DBHelpers::Category*/);
+    /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, enum DBHelpers::Category);
     /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&);
-    /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, int /*enum enum DBHelpers::Category*/);
+    /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, enum DBHelpers::Category);
     /*12*/ virtual void syncIO();
     /*13*/ virtual void getStatistics(std::string&) const;
     /*14*/ virtual void __unk_vfn_0();
     /*15*/ virtual void startShutdown();
     /*16*/ virtual bool isShuttingDown() const;
     /*17*/ virtual bool checkShutdownDone();
-    /*18*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, int /*enum enum DBHelpers::Category*/) const;
+    /*18*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, enum DBHelpers::Category) const;
     /*19*/ virtual void __unk_vfn_1();
     /*20*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&);
     /*21*/ virtual void releaseSnapshot();
@@ -61,7 +61,7 @@ public:
     /*25*/ virtual void setFlushAllowed(bool);
     /*26*/ virtual void flushToPermanentStorage();
     /*27*/ virtual void freeCaches();
-    /*28*/ virtual void setCompactionCallback(class std::function<void (int /*enum enum CompactionStatus*/)>);
+    /*28*/ virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>);
     /*29*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*30*/ virtual void corruptLevel();
     /*

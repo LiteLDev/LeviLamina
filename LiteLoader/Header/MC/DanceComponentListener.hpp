@@ -53,7 +53,7 @@ public:
     /*26*/ virtual void __unk_vfn_23();
     /*27*/ virtual void __unk_vfn_24();
     /*28*/ virtual void __unk_vfn_25();
-    /*29*/ virtual void levelSoundEvent(int /*enum enum LevelSoundEvent*/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    /*29*/ virtual void levelSoundEvent(enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
 
 protected:
 

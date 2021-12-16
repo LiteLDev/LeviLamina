@@ -25,9 +25,9 @@ public:
 public:
     /*0*/ virtual ~ContainerScreenValidation();
     /*1*/ virtual struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
-    /*2*/ virtual class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(int /*enum enum ContainerEnumName*/);
-    /*3*/ virtual int /*enum enum ItemAddType*/ _canAdd(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-    /*4*/ virtual int /*enum enum ItemSetType*/ _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
+    /*3*/ virtual enum ItemAddType _canAdd(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual enum ItemSetType _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
     /*5*/ virtual bool _canRemove(struct ContainerValidatorPairScope const&, int, int, bool) const;
     /*6*/ virtual bool _canDestroy(struct ContainerValidatorPairScope const&) const;
     MCAPI ContainerScreenValidation(class ContainerScreenContext const&, enum ContainerValidationCaller);

@@ -31,7 +31,7 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual bool hasAnimationFinished() const;
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    /*8*/ virtual int /*enum enum ActorAnimationType*/ getAnimationType() const;
+    /*8*/ virtual enum ActorAnimationType getAnimationType() const;
     /*9*/ virtual class HashedString const& getRawName() const;
     /*
     inline void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString> > > const& a0){

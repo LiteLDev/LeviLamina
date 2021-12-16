@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ClientReplayStatePolicy();
-    /*1*/ virtual bool isReplayNeeded(int /*enum enum AdvanceFrameResult*/) const;
+    /*1*/ virtual bool isReplayNeeded(enum AdvanceFrameResult) const;
     /*2*/ virtual bool canRewindToFrame(struct IActorMovementProxy&, unsigned __int64, unsigned __int64);
     /*3*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
     /*4*/ virtual void flagUnsupportedMovement(unsigned __int64);

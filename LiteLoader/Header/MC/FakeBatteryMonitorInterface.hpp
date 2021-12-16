@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~FakeBatteryMonitorInterface();
-    /*1*/ virtual int /*enum enum BatteryStatus*/ getBatteryStatus() const;
+    /*1*/ virtual enum BatteryStatus getBatteryStatus() const;
     /*2*/ virtual float getBatteryLevel() const;
     MCAPI FakeBatteryMonitorInterface();
 

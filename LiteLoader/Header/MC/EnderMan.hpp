@@ -51,7 +51,7 @@ public:
     /*23*/ virtual void onFailedTame();
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual bool shouldRender() const;
-    /*26*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
+    /*26*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*27*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);

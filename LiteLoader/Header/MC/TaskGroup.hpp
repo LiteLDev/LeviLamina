@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~TaskGroup();
     /*1*/ virtual void taskRegister(class std::shared_ptr<class BackgroundTaskBase>);
     /*2*/ virtual void requeueTask(class std::shared_ptr<class BackgroundTaskBase>, bool);
-    /*3*/ virtual int /*enum enum TaskGroupState*/ getState() const;
+    /*3*/ virtual enum TaskGroupState getState() const;
     /*4*/ virtual void processCoroutines();
     /*5*/ virtual void taskComplete(class gsl::not_null<class BackgroundTaskBase* >);
     /*

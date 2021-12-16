@@ -62,13 +62,13 @@ public:
     /*34*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*35*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*36*/ virtual void animateHurt();
-    /*37*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*37*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
-    /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*42*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*43*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*40*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*41*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*42*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*43*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*44*/ virtual class HashedString const& queryEntityRenderer() const;
     /*45*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*46*/ virtual bool canFreeze() const;
@@ -102,7 +102,7 @@ public:
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*77*/ virtual int /*enum enum MinecartType*/ getType();
+    /*77*/ virtual enum MinecartType getType();
     /*78*/ virtual class Block const* getDefaultDisplayBlock() const;
     /*79*/ virtual void __unk_vfn_22();
     /*80*/ virtual int getDefaultDisplayOffset() const;

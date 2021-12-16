@@ -29,8 +29,8 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
-    /*4*/ virtual int /*enum enum InventoryTransactionError*/ handle(class Player&, bool) const;
-    /*5*/ virtual void onTransactionError(class Player&, int /*enum enum InventoryTransactionError*/) const;
+    /*4*/ virtual enum InventoryTransactionError handle(class Player&, bool) const;
+    /*5*/ virtual void onTransactionError(class Player&, enum InventoryTransactionError) const;
     /*
     inline void write(class BinaryStream& a0) const{
         void (ComplexInventoryTransaction::*rv)(class BinaryStream&) const;

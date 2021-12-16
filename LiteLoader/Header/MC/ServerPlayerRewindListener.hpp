@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual int /*enum enum EventResult*/ onPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
-    /*8*/ virtual int /*enum enum EventResult*/ onPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
+    /*7*/ virtual enum EventResult onPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
+    /*8*/ virtual enum EventResult onPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
     MCAPI static void _onPlayerAuthInputReceived(unsigned __int64, struct PlayerMovementSettings const&, class EntityContext&, struct IActorMovementProxy&);
 
 protected:

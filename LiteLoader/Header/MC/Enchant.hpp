@@ -27,7 +27,7 @@ public:
 
 public:
     /*0*/ virtual ~Enchant();
-    /*1*/ virtual bool isCompatibleWith(int /*enum enum Enchant::Type*/) const;
+    /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_0();
@@ -40,7 +40,7 @@ public:
     /*11*/ virtual void __unk_vfn_2();
     /*12*/ virtual void __unk_vfn_3();
     /*13*/ virtual void __unk_vfn_4();
-    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
+    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
     inline bool isProtectionEnchant() const{
         bool (Enchant::*rv)() const;

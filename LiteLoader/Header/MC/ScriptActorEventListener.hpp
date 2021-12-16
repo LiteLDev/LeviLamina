@@ -37,7 +37,7 @@ public:
     /*10*/ virtual void __unk_vfn_9();
     /*11*/ virtual void __unk_vfn_10();
     /*12*/ virtual void __unk_vfn_11();
-    /*13*/ virtual int /*enum enum EventResult*/ onActorCreated(class Actor&);
+    /*13*/ virtual enum EventResult onActorCreated(class Actor&);
     /*14*/ virtual void __unk_vfn_12();
     /*15*/ virtual void __unk_vfn_13();
     /*16*/ virtual void __unk_vfn_14();
@@ -46,13 +46,13 @@ public:
     /*19*/ virtual void __unk_vfn_17();
     /*20*/ virtual void __unk_vfn_18();
     /*21*/ virtual void __unk_vfn_19();
-    /*22*/ virtual int /*enum enum EventResult*/ onActorRemoved(struct ActorRemovedEvent const&);
+    /*22*/ virtual enum EventResult onActorRemoved(struct ActorRemovedEvent const&);
     /*23*/ virtual void __unk_vfn_20();
     /*24*/ virtual void __unk_vfn_21();
     /*25*/ virtual void __unk_vfn_22();
     /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual int /*enum enum EventResult*/ onActorAddEffect(struct ActorAddEffectEvent const&);
-    /*28*/ virtual int /*enum enum EventResult*/ onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
+    /*27*/ virtual enum EventResult onActorAddEffect(struct ActorAddEffectEvent const&);
+    /*28*/ virtual enum EventResult onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

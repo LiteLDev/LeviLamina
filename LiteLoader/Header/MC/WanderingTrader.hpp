@@ -53,7 +53,7 @@ public:
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*26*/ virtual float getPickRadius();
     /*27*/ virtual void awardKillScore(class Actor&, int);
-    /*28*/ virtual int /*enum enum ActorType*/ getEntityTypeId() const;
+    /*28*/ virtual enum ActorType getEntityTypeId() const;
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;
     /*30*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*31*/ virtual int getPortalWaitTime() const;

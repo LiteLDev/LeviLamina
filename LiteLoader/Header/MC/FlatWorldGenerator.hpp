@@ -25,15 +25,15 @@ public:
 
 public:
     /*
-    inline int \/*enum enum StructureFeatureType*\/ getFeatureTypeAt(class BlockPos const& a0){
-        int \/*enum enum StructureFeatureType*\/ (FlatWorldGenerator::*rv)(class BlockPos const&);
+    inline enum StructureFeatureType getFeatureTypeAt(class BlockPos const& a0){
+        enum StructureFeatureType (FlatWorldGenerator::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?getFeatureTypeAt@FlatWorldGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
-    inline bool findNearestFeature(int \/*enum enum StructureFeatureType*\/ a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
-        bool (FlatWorldGenerator::*rv)(int \/*enum enum StructureFeatureType*\/, class BlockPos const&, class BlockPos&, bool);
+    inline bool findNearestFeature(enum StructureFeatureType a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
+        bool (FlatWorldGenerator::*rv)(enum StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
         *((void**)&rv) = dlsym("?findNearestFeature@FlatWorldGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum StructureFeatureType*\/>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
     }
     inline void prepareAndComputeHeights(class BlockVolume& a0, class ChunkPos const& a1, std::vector<short>& a2, bool a3, int a4){
         void (FlatWorldGenerator::*rv)(class BlockVolume&, class ChunkPos const&, std::vector<short>&, bool, int);

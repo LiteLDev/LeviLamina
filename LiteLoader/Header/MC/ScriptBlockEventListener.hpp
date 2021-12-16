@@ -30,17 +30,17 @@ public:
     /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual int /*enum enum EventResult*/ onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
+    /*6*/ virtual enum EventResult onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
     /*7*/ virtual void __unk_vfn_5();
     /*8*/ virtual void __unk_vfn_6();
     /*9*/ virtual void __unk_vfn_7();
     /*10*/ virtual void __unk_vfn_8();
     /*11*/ virtual void __unk_vfn_9();
-    /*12*/ virtual int /*enum enum EventResult*/ onPistonActionEvent(struct PistonActionEvent const&);
+    /*12*/ virtual enum EventResult onPistonActionEvent(struct PistonActionEvent const&);
     /*13*/ virtual void __unk_vfn_10();
     /*14*/ virtual void __unk_vfn_11();
     /*15*/ virtual void __unk_vfn_12();
-    /*16*/ virtual int /*enum enum EventResult*/ onExplosionStartedEvent(struct ExplosionStartedEvent const&);
+    /*16*/ virtual enum EventResult onExplosionStartedEvent(struct ExplosionStartedEvent const&);
 
 protected:
 

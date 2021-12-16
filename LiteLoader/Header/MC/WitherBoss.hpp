@@ -25,8 +25,8 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*1*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*1*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*2*/ virtual ~WitherBoss();
     /*3*/ virtual void remove();
     /*4*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -57,7 +57,7 @@ public:
     /*29*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*30*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*31*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*32*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*32*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*33*/ virtual float getPickRadius();
     /*34*/ virtual void awardKillScore(class Actor&, int);
     /*35*/ virtual class HashedString const& queryEntityRenderer() const;

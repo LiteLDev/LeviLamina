@@ -38,14 +38,14 @@ public:
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual bool isDyeable() const;
     /*12*/ virtual bool isDye() const;
-    /*13*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*13*/ virtual enum ItemColor getItemColor() const;
     /*14*/ virtual bool isFertilizer() const;
     /*15*/ virtual void __unk_vfn_5();
     /*16*/ virtual bool isThrowable() const;
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*20*/ virtual enum BlockShape getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
@@ -108,13 +108,13 @@ public:
     /*80*/ virtual std::string getAuxValuesDescription() const;
     /*81*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*
-    inline int \/*enum enum InHandUpdateType*\/ getInHandUpdateType(class Player const& a0, class ItemInstance const& a1, class ItemInstance const& a2, bool a3, bool a4) const{
-        int \/*enum enum InHandUpdateType*\/ (ShieldItem::*rv)(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
+    inline enum InHandUpdateType getInHandUpdateType(class Player const& a0, class ItemInstance const& a1, class ItemInstance const& a2, bool a3, bool a4) const{
+        enum InHandUpdateType (ShieldItem::*rv)(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
         *((void**)&rv) = dlsym("?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z");
         return (this->*rv)(std::forward<class Player const&>(a0), std::forward<class ItemInstance const&>(a1), std::forward<class ItemInstance const&>(a2), std::forward<bool>(a3), std::forward<bool>(a4));
     }
-    inline int \/*enum enum InHandUpdateType*\/ getInHandUpdateType(class Player const& a0, class ItemStack const& a1, class ItemStack const& a2, bool a3, bool a4) const{
-        int \/*enum enum InHandUpdateType*\/ (ShieldItem::*rv)(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    inline enum InHandUpdateType getInHandUpdateType(class Player const& a0, class ItemStack const& a1, class ItemStack const& a2, bool a3, bool a4) const{
+        enum InHandUpdateType (ShieldItem::*rv)(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
         *((void**)&rv) = dlsym("?getInHandUpdateType@ShieldItem@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z");
         return (this->*rv)(std::forward<class Player const&>(a0), std::forward<class ItemStack const&>(a1), std::forward<class ItemStack const&>(a2), std::forward<bool>(a3), std::forward<bool>(a4));
     }

@@ -28,7 +28,7 @@ public:
     /*0*/ virtual class WeakRefT<struct SharePtrRefTraits<class BlockSource> > getWeakRef();
     /*1*/ virtual void addListener(class BlockSourceListener&);
     /*2*/ virtual void removeListener(class BlockSourceListener&);
-    /*3*/ virtual class gsl::span<class gsl::not_null<class Actor* >, -1> fetchEntities(int /*enum enum ActorType*/, class AABB const&, class Actor const*);
+    /*3*/ virtual class gsl::span<class gsl::not_null<class Actor* >, -1> fetchEntities(enum ActorType, class AABB const&, class Actor const*);
     /*4*/ virtual bool hasChunksAt(struct Bounds const&) const;
     /*5*/ virtual bool hasChunksAt(class BlockPos const&, int) const;
     /*6*/ virtual bool hasChunksAt(class AABB const&) const;
@@ -37,7 +37,7 @@ public:
     /*9*/ virtual class Material const& getMaterial(class BlockPos const&) const;
     /*10*/ virtual class Material const& getMaterial(int, int, int) const;
     /*11*/ virtual bool containsAnyLiquid(class AABB const&);
-    /*12*/ virtual bool containsMaterial(class AABB const&, int /*enum enum MaterialType*/) const;
+    /*12*/ virtual bool containsMaterial(class AABB const&, enum MaterialType) const;
     /*13*/ virtual short getMinHeight() const;
     /*14*/ virtual void __unk_vfn_0();
     /*15*/ virtual void __unk_vfn_1();

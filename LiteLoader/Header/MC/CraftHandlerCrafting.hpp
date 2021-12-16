@@ -24,10 +24,10 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerCrafting();
-    /*1*/ virtual int /*enum enum ItemStackNetResult*/ handleConsumedItem(int /*enum enum ContainerEnumName*/, unsigned char, class ItemStack const&);
-    /*2*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
+    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
+    /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
     /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 

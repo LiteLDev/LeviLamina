@@ -51,7 +51,7 @@ public:
     /*24*/ virtual void __unk_vfn_21();
     /*25*/ virtual void __unk_vfn_22();
     /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual void levelEvent(int /*enum enum LevelEvent*/, class Vec3 const&, int);
+    /*27*/ virtual void levelEvent(enum LevelEvent, class Vec3 const&, int);
     MCAPI Weather(class Dimension&, class IRandom&);
     MCAPI int calcSnowBlockDepth(class BlockSource&, class BlockPos const&, int) const;
     MCAPI bool canPlaceTopSnow(class BlockSource&, class BlockPos const&, bool, bool, int*) const;

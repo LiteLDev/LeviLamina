@@ -24,10 +24,10 @@ public:
 
 public:
     /*0*/ virtual ~ContainerManagerModel();
-    /*1*/ virtual int /*enum enum ContainerID*/ getContainerId() const;
-    /*2*/ virtual void setContainerId(int /*enum enum ContainerID*/);
-    /*3*/ virtual int /*enum enum ContainerType*/ getContainerType() const;
-    /*4*/ virtual void setContainerType(int /*enum enum ContainerType*/);
+    /*1*/ virtual enum ContainerID getContainerId() const;
+    /*2*/ virtual void setContainerId(enum ContainerID);
+    /*3*/ virtual enum ContainerType getContainerType() const;
+    /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual void serverInitItemStackIds();
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
     /*7*/ virtual void setSlot(int, class ItemStack const&, bool) = 0;

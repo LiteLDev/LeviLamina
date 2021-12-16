@@ -27,8 +27,8 @@ public:
     /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
     /*3*/ virtual int getJumpDelay(class JumpControlComponent const&, class Mob const&) const;
     /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
-    /*5*/ virtual int /*enum enum JumpType*/ getJumpType(class JumpControlComponent const&, class Mob const&) const;
-    /*6*/ virtual void setJumpType(class JumpControlComponent&, class Mob&, int /*enum enum JumpType*/);
+    /*5*/ virtual enum JumpType getJumpType(class JumpControlComponent const&, class Mob const&) const;
+    /*6*/ virtual void setJumpType(class JumpControlComponent&, class Mob&, enum JumpType);
     /*7*/ virtual void resetSpeedModifier(class JumpControlComponent const&, class Mob&);
     MCAPI DynamicJumpControl();
 

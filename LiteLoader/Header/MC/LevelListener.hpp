@@ -34,17 +34,17 @@ public:
     /*7*/ virtual void __unk_vfn_4();
     /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual class Particle* addParticle(int /*enum enum ParticleType*/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
+    /*10*/ virtual class Particle* addParticle(enum ParticleType, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
     /*
     inline void playMusic(std::string const& a0, class Vec3 const& a1, float a2, float a3){
         void (LevelListener::*rv)(std::string const&, class Vec3 const&, float, float);
         *((void**)&rv) = dlsym("?playMusic@LevelListener@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline void levelSoundEvent(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
-        void (LevelListener::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void levelSoundEvent(enum LevelSoundEvent a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
+        void (LevelListener::*rv)(enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?levelSoundEvent@LevelListener@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
+        return (this->*rv)(std::forward<enum LevelSoundEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
     }
     inline void onChunkReloaded(class ChunkSource& a0, class LevelChunk& a1){
         void (LevelListener::*rv)(class ChunkSource&, class LevelChunk&);
@@ -66,10 +66,10 @@ public:
         *((void**)&rv) = dlsym("?playerListChanged@LevelListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void levelEvent(int \/*enum enum LevelEvent*\/ a0, class Vec3 const& a1, int a2){
-        void (LevelListener::*rv)(int \/*enum enum LevelEvent*\/, class Vec3 const&, int);
+    inline void levelEvent(enum LevelEvent a0, class Vec3 const& a1, int a2){
+        void (LevelListener::*rv)(enum LevelEvent, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2));
     }
     inline void onEntityRemoved(class Actor& a0){
         void (LevelListener::*rv)(class Actor&);
@@ -101,10 +101,10 @@ public:
         *((void**)&rv) = dlsym("?addTerrainSlideEffect@LevelListener@@UEAAXAEBVBlockPos@@AEBVBlock@@AEBVVec3@@MMM@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0), std::forward<class Block const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<float>(a3), std::forward<float>(a4), std::forward<float>(a5));
     }
-    inline void addBreakingItemParticleEffect(class Vec3 const& a0, int \/*enum enum ParticleType*\/ a1, struct TextureUVCoordinateSet const& a2, bool a3){
-        void (LevelListener::*rv)(class Vec3 const&, int \/*enum enum ParticleType*\/, struct TextureUVCoordinateSet const&, bool);
+    inline void addBreakingItemParticleEffect(class Vec3 const& a0, enum ParticleType a1, struct TextureUVCoordinateSet const& a2, bool a3){
+        void (LevelListener::*rv)(class Vec3 const&, enum ParticleType, struct TextureUVCoordinateSet const&, bool);
         *((void**)&rv) = dlsym("?addBreakingItemParticleEffect@LevelListener@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<int \/*enum enum ParticleType*\/>(a1), std::forward<struct TextureUVCoordinateSet const&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<enum ParticleType>(a1), std::forward<struct TextureUVCoordinateSet const&>(a2), std::forward<bool>(a3));
     }
     inline void addParticleEffect(class HashedString const& a0, class Actor const& a1, class HashedString const& a2, class Vec3 const& a3, class MolangVariableMap const& a4){
         void (LevelListener::*rv)(class HashedString const&, class Actor const&, class HashedString const&, class Vec3 const&, class MolangVariableMap const&);
@@ -121,10 +121,10 @@ public:
         *((void**)&rv) = dlsym("?takePicture@LevelListener@@UEAAXAEAVImageBuffer@cg@@PEAVActor@@1AEAUScreenshotOptions@@@Z");
         return (this->*rv)(std::forward<class cg::ImageBuffer&>(a0), std::forward<class Actor*>(a1), std::forward<class Actor*>(a2), std::forward<struct ScreenshotOptions&>(a3));
     }
-    inline void levelEvent(int \/*enum enum LevelEvent*\/ a0, class CompoundTag const& a1){
-        void (LevelListener::*rv)(int \/*enum enum LevelEvent*\/, class CompoundTag const&);
+    inline void levelEvent(enum LevelEvent a0, class CompoundTag const& a1){
+        void (LevelListener::*rv)(enum LevelEvent, class CompoundTag const&);
         *((void**)&rv) = dlsym("?levelEvent@LevelListener@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class CompoundTag const&>(a1));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class CompoundTag const&>(a1));
     }
     inline void onLevelDestruction(std::string const& a0){
         void (LevelListener::*rv)(std::string const&);
@@ -141,10 +141,10 @@ public:
         *((void**)&rv) = dlsym("?allChanged@LevelListener@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void sendServerLegacyParticle(int \/*enum enum ParticleType*\/ a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
-        void (LevelListener::*rv)(int \/*enum enum ParticleType*\/, class Vec3 const&, class Vec3 const&, int);
+    inline void sendServerLegacyParticle(enum ParticleType a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
+        void (LevelListener::*rv)(enum ParticleType, class Vec3 const&, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?sendServerLegacyParticle@LevelListener@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
+        return (this->*rv)(std::forward<enum ParticleType>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
     }
     inline void onChunkUnloaded(class LevelChunk& a0){
         void (LevelListener::*rv)(class LevelChunk&);

@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~BuriedTreasureStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+    /*2*/ virtual enum StructureFeatureType getType() const;
 
 protected:
 

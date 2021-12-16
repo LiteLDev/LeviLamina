@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~ThrownIceBomb();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -64,10 +64,10 @@ public:
     /*36*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*37*/ virtual float getPickRadius();
     /*38*/ virtual void awardKillScore(class Actor&, int);
-    /*39*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*40*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*41*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*42*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*39*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*40*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*41*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*42*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*43*/ virtual class HashedString const& queryEntityRenderer() const;
     /*44*/ virtual bool canFreeze() const;
     /*45*/ virtual int getPortalWaitTime() const;
@@ -100,7 +100,7 @@ public:
     /*72*/ virtual void __unk_vfn_21();
     /*73*/ virtual void __unk_vfn_22();
     /*74*/ virtual float getThrowUpAngleOffset();
-    /*75*/ virtual int /*enum enum ParticleType*/ getParticleType();
+    /*75*/ virtual enum ParticleType getParticleType();
     MCAPI ThrownIceBomb(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:

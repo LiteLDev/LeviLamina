@@ -302,8 +302,8 @@ public:
         *((void**)&rv) = dlsym("?getPlatformDpi@AppPlatform@@EEBAHXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum OsVersion*\/ getOSVersion() const{
-        int \/*enum enum OsVersion*\/ (AppPlatform::*rv)() const;
+    inline enum OsVersion getOSVersion() const{
+        enum OsVersion (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getOSVersion@AppPlatform@@UEBA?AW4OsVersion@@XZ");
         return (this->*rv)();
     }
@@ -457,10 +457,10 @@ public:
         *((void**)&rv) = dlsym("?vibrate@AppPlatform@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline void setFullscreenMode(int \/*enum enum FullscreenMode*\/ a0){
-        void (AppPlatform::*rv)(int \/*enum enum FullscreenMode*\/);
+    inline void setFullscreenMode(enum FullscreenMode a0){
+        void (AppPlatform::*rv)(enum FullscreenMode);
         *((void**)&rv) = dlsym("?setFullscreenMode@AppPlatform@@UEAAXW4FullscreenMode@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum FullscreenMode*\/>(a0));
+        return (this->*rv)(std::forward<enum FullscreenMode>(a0));
     }
     inline void sendBrazeToastClick(){
         void (AppPlatform::*rv)();
@@ -587,8 +587,8 @@ public:
         *((void**)&rv) = dlsym("?supportsLegacySinglePremiumCacheDirectory@AppPlatform@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum PlatformType*\/ getPlatformType() const{
-        int \/*enum enum PlatformType*\/ (AppPlatform::*rv)() const;
+    inline enum PlatformType getPlatformType() const{
+        enum PlatformType (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformType@AppPlatform@@UEBA?AW4PlatformType@@XZ");
         return (this->*rv)();
     }
@@ -627,8 +627,8 @@ public:
         *((void**)&rv) = dlsym("?getUserInput@AppPlatform@@UEAA?AV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline std::vector<int \/*enum enum Social::MultiplayerServiceIdentifier*\/> getBroadcastingMultiplayerServiceIds(bool a0, bool a1) const{
-        std::vector<int \/*enum enum Social::MultiplayerServiceIdentifier*\/> (AppPlatform::*rv)(bool, bool) const;
+    inline std::vector<enum Social::MultiplayerServiceIdentifier> getBroadcastingMultiplayerServiceIds(bool a0, bool a1) const{
+        std::vector<enum Social::MultiplayerServiceIdentifier> (AppPlatform::*rv)(bool, bool) const;
         *((void**)&rv) = dlsym("?getBroadcastingMultiplayerServiceIds@AppPlatform@@UEBA?AV?$vector@W4MultiplayerServiceIdentifier@Social@@V?$allocator@W4MultiplayerServiceIdentifier@Social@@@std@@@std@@_N0@Z");
         return (this->*rv)(std::forward<bool>(a0), std::forward<bool>(a1));
     }
@@ -667,10 +667,10 @@ public:
         *((void**)&rv) = dlsym("?copyImportFileToTempFolder@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@AEBVPath@3@@Z");
         return (this->*rv)(std::forward<class Core::Path const&>(a0));
     }
-    inline class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(int \/*enum enum Core::FileAccessType*\/ a0, class Core::Path const& a1){
-        class std::shared_ptr<class Core::FileStorageArea> (AppPlatform::*rv)(int \/*enum enum Core::FileAccessType*\/, class Core::Path const&);
+    inline class std::shared_ptr<class Core::FileStorageArea> createLoggingStorageArea(enum Core::FileAccessType a0, class Core::Path const& a1){
+        class std::shared_ptr<class Core::FileStorageArea> (AppPlatform::*rv)(enum Core::FileAccessType, class Core::Path const&);
         *((void**)&rv) = dlsym("?createLoggingStorageArea@AppPlatform@@UEAA?AV?$shared_ptr@VFileStorageArea@Core@@@std@@W4FileAccessType@Core@@AEBVPath@5@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Core::FileAccessType*\/>(a0), std::forward<class Core::Path const&>(a1));
+        return (this->*rv)(std::forward<enum Core::FileAccessType>(a0), std::forward<class Core::Path const&>(a1));
     }
     inline class std::shared_ptr<class WebviewInterface> createWebview(class Webview::PlatformArguments&& a0) const{
         class std::shared_ptr<class WebviewInterface> (AppPlatform::*rv)(class Webview::PlatformArguments&&) const;
@@ -682,8 +682,8 @@ public:
         *((void**)&rv) = dlsym("?exitVRMode@AppPlatform@@UEAAXV?$function@$$A6AXXZ@std@@@Z");
         return (this->*rv)(std::forward<class std::function<void (void)>>(a0));
     }
-    inline int \/*enum enum ARVRPlatform*\/ getARVRPlatform() const{
-        int \/*enum enum ARVRPlatform*\/ (AppPlatform::*rv)() const;
+    inline enum ARVRPlatform getARVRPlatform() const{
+        enum ARVRPlatform (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getARVRPlatform@AppPlatform@@UEBA?AW4ARVRPlatform@@XZ");
         return (this->*rv)();
     }
@@ -707,8 +707,8 @@ public:
         *((void**)&rv) = dlsym("?getMaxSimultaneousServiceRequests@AppPlatform@@UEBAIXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum BuildPlatform*\/ getBuildPlatform() const{
-        int \/*enum enum BuildPlatform*\/ (AppPlatform::*rv)() const;
+    inline enum BuildPlatform getBuildPlatform() const{
+        enum BuildPlatform (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getBuildPlatform@AppPlatform@@UEBA?AW4BuildPlatform@@XZ");
         return (this->*rv)();
     }
@@ -732,8 +732,8 @@ public:
         *((void**)&rv) = dlsym("?getClientUpdateUrl@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum InputMode*\/ getDefaultInputMode() const{
-        int \/*enum enum InputMode*\/ (AppPlatform::*rv)() const;
+    inline enum InputMode getDefaultInputMode() const{
+        enum InputMode (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultInputMode@AppPlatform@@UEBA?AW4InputMode@@XZ");
         return (this->*rv)();
     }
@@ -752,8 +752,8 @@ public:
         *((void**)&rv) = dlsym("?getDefaultSafeZoneScaleY@AppPlatform@@UEBAMXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum DeviceSunsetTier*\/ getDeviceSunsetTier() const{
-        int \/*enum enum DeviceSunsetTier*\/ (AppPlatform::*rv)() const;
+    inline enum DeviceSunsetTier getDeviceSunsetTier() const{
+        enum DeviceSunsetTier (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getDeviceSunsetTier@AppPlatform@@UEBA?AW4DeviceSunsetTier@@XZ");
         return (this->*rv)();
     }
@@ -787,10 +787,10 @@ public:
         *((void**)&rv) = dlsym("?getFeedbackHelpLink@AppPlatform@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > getFileAccess(int \/*enum enum ResourceFileSystem*\/ a0){
-        class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > (AppPlatform::*rv)(int \/*enum enum ResourceFileSystem*\/);
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > getFileAccess(enum ResourceFileSystem a0){
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class IFileAccess> > (AppPlatform::*rv)(enum ResourceFileSystem);
         *((void**)&rv) = dlsym("?getFileAccess@AppPlatform@@UEAA?AV?$not_null@V?$NonOwnerPointer@VIFileAccess@@@Bedrock@@@gsl@@W4ResourceFileSystem@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ResourceFileSystem*\/>(a0));
+        return (this->*rv)(std::forward<enum ResourceFileSystem>(a0));
     }
     inline unsigned __int64 getHighPerformanceThreadsCount() const{
         unsigned __int64 (AppPlatform::*rv)() const;
@@ -862,8 +862,8 @@ public:
         *((void**)&rv) = dlsym("?getOnDiskPackScratchPath@AppPlatform@@UEAA?AV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
-    inline class std::optional<int \/*enum enum OperationMode*\/> getOperationMode() const{
-        class std::optional<int \/*enum enum OperationMode*\/> (AppPlatform::*rv)() const;
+    inline class std::optional<enum OperationMode> getOperationMode() const{
+        class std::optional<enum OperationMode> (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getOperationMode@AppPlatform@@UEBA?AV?$optional@W4OperationMode@@@std@@XZ");
         return (this->*rv)();
     }
@@ -892,8 +892,8 @@ public:
         *((void**)&rv) = dlsym("?getPlatformStringVar@AppPlatform@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline int \/*enum enum UIScalingRules*\/ getPlatformUIScalingRules() const{
-        int \/*enum enum UIScalingRules*\/ (AppPlatform::*rv)() const;
+    inline enum UIScalingRules getPlatformUIScalingRules() const{
+        enum UIScalingRules (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform@@EEBA?AW4UIScalingRules@@XZ");
         return (this->*rv)();
     }
@@ -942,8 +942,8 @@ public:
         *((void**)&rv) = dlsym("?getTotalHardwareThreadsCount@AppPlatform@@UEBA_KXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum VRControllerType*\/ getVRControllerType() const{
-        int \/*enum enum VRControllerType*\/ (AppPlatform::*rv)() const;
+    inline enum VRControllerType getVRControllerType() const{
+        enum VRControllerType (AppPlatform::*rv)() const;
         *((void**)&rv) = dlsym("?getVRControllerType@AppPlatform@@UEBA?AW4VRControllerType@@XZ");
         return (this->*rv)();
     }
@@ -1012,20 +1012,20 @@ public:
         *((void**)&rv) = dlsym("?restartRequested@AppPlatform@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline void setARVRPlatform(int \/*enum enum ARVRPlatform*\/ a0){
-        void (AppPlatform::*rv)(int \/*enum enum ARVRPlatform*\/);
+    inline void setARVRPlatform(enum ARVRPlatform a0){
+        void (AppPlatform::*rv)(enum ARVRPlatform);
         *((void**)&rv) = dlsym("?setARVRPlatform@AppPlatform@@UEAAXW4ARVRPlatform@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ARVRPlatform*\/>(a0));
+        return (this->*rv)(std::forward<enum ARVRPlatform>(a0));
     }
     inline void setThreadsFrozen(bool a0){
         void (AppPlatform::*rv)(bool);
         *((void**)&rv) = dlsym("?setThreadsFrozen@AppPlatform@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void setVRControllerType(int \/*enum enum VRControllerType*\/ a0){
-        void (AppPlatform::*rv)(int \/*enum enum VRControllerType*\/);
+    inline void setVRControllerType(enum VRControllerType a0){
+        void (AppPlatform::*rv)(enum VRControllerType);
         *((void**)&rv) = dlsym("?setVRControllerType@AppPlatform@@UEAAXW4VRControllerType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum VRControllerType*\/>(a0));
+        return (this->*rv)(std::forward<enum VRControllerType>(a0));
     }
     inline void showPlatformEmptyStoreDialog(class std::function<void (bool)>&& a0){
         void (AppPlatform::*rv)(class std::function<void (bool)>&&);

@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~Ocelot();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -84,7 +84,7 @@ public:
     /*56*/ virtual float getItemUseIntervalProgress() const;
     /*57*/ virtual void __unk_vfn_22();
     /*58*/ virtual bool isAlliedTo(class Mob*);
-    /*59*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
+    /*59*/ virtual bool doHurtTarget(class Actor*, enum ActorDamageCause const&);
     /*60*/ virtual void __unk_vfn_23();
     /*61*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*62*/ virtual void onBorn(class Actor&, class Actor&);

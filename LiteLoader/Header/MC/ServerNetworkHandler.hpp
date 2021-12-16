@@ -76,10 +76,10 @@ public:
         *((void**)&rv) = dlsym("??1ServerNetworkHandler@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline bool allowIncomingPacketId(class NetworkIdentifier const& a0, int \/*enum enum MinecraftPacketIds*\/ a1){
-        bool (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, int \/*enum enum MinecraftPacketIds*\/);
+    inline bool allowIncomingPacketId(class NetworkIdentifier const& a0, enum MinecraftPacketIds a1){
+        bool (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, enum MinecraftPacketIds);
         *((void**)&rv) = dlsym("?allowIncomingPacketId@ServerNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<int \/*enum enum MinecraftPacketIds*\/>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<enum MinecraftPacketIds>(a1));
     }
     inline class GameSpecificNetEventCallback* getGameSpecificNetEventCallback(){
         class GameSpecificNetEventCallback* (ServerNetworkHandler::*rv)();
@@ -446,10 +446,10 @@ public:
         *((void**)&rv) = dlsym("?onXboxUserUnblocked@ServerNetworkHandler@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline void sendServerLegacyParticle(int \/*enum enum ParticleType*\/ a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
-        void (ServerNetworkHandler::*rv)(int \/*enum enum ParticleType*\/, class Vec3 const&, class Vec3 const&, int);
+    inline void sendServerLegacyParticle(enum ParticleType a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
+        void (ServerNetworkHandler::*rv)(enum ParticleType, class Vec3 const&, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?sendServerLegacyParticle@ServerNetworkHandler@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
+        return (this->*rv)(std::forward<enum ParticleType>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
     }
     */
     MCAPI ServerNetworkHandler(class GameCallbacks&, class Bedrock::NonOwnerPointer<class ILevel> const&, class NetworkHandler&, class PrivateKeyManager&, class ServerLocator&, class PacketSender&, class AllowList&, class PermissionsFile*, class mce::UUID const&, int, bool, std::vector<std::string> const&, std::string, int, class MinecraftCommands&, class IMinecraftApp&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string > > > const&, class Scheduler&, class Bedrock::NonOwnerPointer<class TextFilteringProcessor>);

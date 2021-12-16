@@ -149,10 +149,10 @@ public:
         *((void**)&rv) = dlsym("?isDay@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline void onBlockChanged(class BlockSource& a0, class BlockPos const& a1, unsigned int a2, class Block const& a3, class Block const& a4, int a5, struct ActorBlockSyncMessage const* a6, int \/*enum enum BlockChangedEventTarget*\/ a7){
-        void (Dimension::*rv)(class BlockSource&, class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, int \/*enum enum BlockChangedEventTarget*\/);
+    inline void onBlockChanged(class BlockSource& a0, class BlockPos const& a1, unsigned int a2, class Block const& a3, class Block const& a4, int a5, struct ActorBlockSyncMessage const* a6, enum BlockChangedEventTarget a7){
+        void (Dimension::*rv)(class BlockSource&, class BlockPos const&, unsigned int, class Block const&, class Block const&, int, struct ActorBlockSyncMessage const*, enum BlockChangedEventTarget);
         *((void**)&rv) = dlsym("?onBlockChanged@Dimension@@UEAAXAEAVBlockSource@@AEBVBlockPos@@IAEBVBlock@@2HPEBUActorBlockSyncMessage@@W4BlockChangedEventTarget@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned int>(a2), std::forward<class Block const&>(a3), std::forward<class Block const&>(a4), std::forward<int>(a5), std::forward<struct ActorBlockSyncMessage const*>(a6), std::forward<int \/*enum enum BlockChangedEventTarget*\/>(a7));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned int>(a2), std::forward<class Block const&>(a3), std::forward<class Block const&>(a4), std::forward<int>(a5), std::forward<struct ActorBlockSyncMessage const*>(a6), std::forward<enum BlockChangedEventTarget>(a7));
     }
     inline void onBlockEvent(class BlockSource& a0, int a1, int a2, int a3, int a4, int a5){
         void (Dimension::*rv)(class BlockSource&, int, int, int, int, int);

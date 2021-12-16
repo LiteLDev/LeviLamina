@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const = 0;
+    /*3*/ virtual enum StructureFeatureType getType() const = 0;
     /*
     inline  ~StructureStart(){
          (StructureStart::*rv)();

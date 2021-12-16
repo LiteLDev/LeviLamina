@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~CrossbowEnchant();
-    /*1*/ virtual bool isCompatibleWith(int /*enum enum Enchant::Type*/) const;
+    /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual void __unk_vfn_0();
@@ -38,7 +38,7 @@ public:
     /*11*/ virtual void __unk_vfn_6();
     /*12*/ virtual void __unk_vfn_7();
     /*13*/ virtual void __unk_vfn_8();
-    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
+    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 
 protected:
 

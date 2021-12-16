@@ -44,13 +44,13 @@ public:
         *((void**)&rv) = dlsym("?setData@BaseContainerMenu@@UEAAXHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
-    inline int \/*enum enum ContainerID*\/ getContainerId() const{
-        int \/*enum enum ContainerID*\/ (BaseContainerMenu::*rv)() const;
+    inline enum ContainerID getContainerId() const{
+        enum ContainerID (BaseContainerMenu::*rv)() const;
         *((void**)&rv) = dlsym("?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum ContainerType*\/ getContainerType() const{
-        int \/*enum enum ContainerType*\/ (BaseContainerMenu::*rv)() const;
+    inline enum ContainerType getContainerType() const{
+        enum ContainerType (BaseContainerMenu::*rv)() const;
         *((void**)&rv) = dlsym("?getContainerType@BaseContainerMenu@@UEBA?AW4ContainerType@@XZ");
         return (this->*rv)();
     }
@@ -64,15 +64,15 @@ public:
         *((void**)&rv) = dlsym("?broadcastChanges@BaseContainerMenu@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setContainerId(int \/*enum enum ContainerID*\/ a0){
-        void (BaseContainerMenu::*rv)(int \/*enum enum ContainerID*\/);
+    inline void setContainerId(enum ContainerID a0){
+        void (BaseContainerMenu::*rv)(enum ContainerID);
         *((void**)&rv) = dlsym("?setContainerId@BaseContainerMenu@@UEAAXW4ContainerID@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerID*\/>(a0));
+        return (this->*rv)(std::forward<enum ContainerID>(a0));
     }
-    inline void setContainerType(int \/*enum enum ContainerType*\/ a0){
-        void (BaseContainerMenu::*rv)(int \/*enum enum ContainerType*\/);
+    inline void setContainerType(enum ContainerType a0){
+        void (BaseContainerMenu::*rv)(enum ContainerType);
         *((void**)&rv) = dlsym("?setContainerType@BaseContainerMenu@@UEAAXW4ContainerType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ContainerType*\/>(a0));
+        return (this->*rv)(std::forward<enum ContainerType>(a0));
     }
     */
 
