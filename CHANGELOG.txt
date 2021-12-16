@@ -1,4 +1,4 @@
-== LiteLoaderBDS 2.0 PreRelease 2 ==
-- Rewrite Logger
-- Fix some problem
-More interesting things in the future! Just wait in hope
+== LiteLoaderBDS 2.0 PreRelease 3 ==
+- Fix numbers of problems in NBT, Player or other APIs
+- Improve the unifined output system
+This version has high stability and can be used in production environment. If any bug or problem discovered, welcome your feedback at Github Issues
