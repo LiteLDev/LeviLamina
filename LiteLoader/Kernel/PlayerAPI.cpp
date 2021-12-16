@@ -394,16 +394,7 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string Part
 }
 
 bool Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
-    BinaryStream wp;
-    wp.writeString(Soundname);
-    wp.writeVarInt((int)Position.x);
-    wp.writeUnsignedVarInt((unsigned int)Position.y);
-    wp.writeVarInt((int)(Position.z));
-    wp.writeFloat(Volume);
-    wp.writeFloat(Pitch);
-    PlaySoundPacket pkt;
-    (*(PlaySoundPacket*)&pkt)._read(wp);
-    sendNetworkPacket(pkt);
+    sendNetworkPacket(PlaySoundPacket(Soundname, Position, Volume, Pitch));
     return true;
 }
 
