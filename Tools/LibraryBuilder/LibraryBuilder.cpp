@@ -55,18 +55,22 @@ int main(int argc, char **argv)
     string bdsPath;
     string generatedPath = "../LiteLoader/Lib";
 
-    if (argc == 1 || (argc == 3 && string(argv[1]) == "-o"))
+    if (argc == 1 || ((argc == 3 || argc == 4) && string(argv[1]) == "-o"))
     {
-        if(argc == 3)
+        if(argc >= 3)
             generatedPath = string(argv[2]);
+        if (argc == 4)
+            bdsPath = string(argv[3]);
+        else
+        {
+            MessageBox(NULL, L"Extra static library is needed to finish this compile.\n"
+                             "You need to choose a folder contains bedrock_server.exe and bedrock_server.pdb next\n\n"
+                             "需要额外的静态库来完成编译。接下来请需要选择一个含有bedrock_server.exe和bedrock_server.pdb文件的目录",
+                       L"More action needed", MB_OK | MB_ICONINFORMATION);
 
-        MessageBox(NULL, L"Extra static library is needed to finish this compile.\n"
-            "You need to choose a folder contains bedrock_server.exe and bedrock_server.pdb next\n\n"
-            "需要额外的静态库来完成编译。接下来请需要选择一个含有bedrock_server.exe和bedrock_server.pdb文件的目录"
-            , L"More action needed", MB_OK | MB_ICONINFORMATION);
-
-        // Choose Folder
-        bdsPath = ChooseFolder();
+            // Choose Folder
+            bdsPath = ChooseFolder();
+        }
     }
     else if (argc == 2)
         bdsPath = string(argv[1]);
@@ -80,14 +84,14 @@ int main(int argc, char **argv)
             "**** You must choose a folder for process!" << endl;
         ErrorExit(-1);
     }
-    else if (!filesystem::exists(bdsPath + "/bedrock_server.exe"))
-    {
-        MessageBox(NULL, L"Wrong target directory! bedrock_server.exe no found\n"
-            "你选择的目录错误！未找到bedrock_server.exe", L"Error", MB_OK | MB_ICONERROR);
-        cout << "\n**** [Error]\n"
-            "**** You must choose a folder contains *bedrock_server.exe*!" << endl;
-        ErrorExit(-2);
-    }
+    //else if (!filesystem::exists(bdsPath + "/bedrock_server.exe"))
+    //{
+    //    MessageBox(NULL, L"Wrong target directory! bedrock_server.exe no found\n"
+    //        "你选择的目录错误！未找到bedrock_server.exe", L"Error", MB_OK | MB_ICONERROR);
+    //    cout << "\n**** [Error]\n"
+    //        "**** You must choose a folder contains *bedrock_server.exe*!" << endl;
+    //    ErrorExit(-2);
+    //}
     else if (!filesystem::exists(bdsPath + "/bedrock_server.pdb"))
     {
         MessageBox(NULL, L"Wrong target directory! bedrock_server.pdb no found\n"
@@ -136,6 +140,7 @@ int main(int argc, char **argv)
     }
 
     // Copy files
+    filesystem::create_directories(generatedPath);
     filesystem::copy_file("temp/bedrock_server_api.lib", generatedPath + "/bedrock_server_api.lib", filesystem::copy_options::overwrite_existing, ec);
     filesystem::copy_file("temp/bedrock_server_var.lib", generatedPath + "/bedrock_server_var.lib", filesystem::copy_options::overwrite_existing, ec);
 
