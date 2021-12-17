@@ -7,7 +7,7 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "MobEffectInstance.hpp"
-
+#include "Command.hpp"
 class Actor;
 class Player;
 class NetworkIdentifier;
