@@ -11,7 +11,7 @@ Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total
 
 ##### English | [简体中文](README_zh-cn.md)
 
-![Logo](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2FWebsite%2Fraw%2Fmain%2Fimages%2Flogo-6pndg21x.png&owner=1&pattern=Plus&pulls=1&stargazers=1&theme=Dark)
+![Logo](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2FWebsite%2Fraw%2Fmain%2Fimages%2Flogo-6pndg21x.png&owner=1&pattern=Plus&pulls=1&stargazers=1)
 
 `LiteLoader` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
 
