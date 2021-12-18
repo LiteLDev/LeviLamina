@@ -48,7 +48,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
     auto a = dAccess<std::unordered_map<int, void*>, 0>(data);
     bool abnormal = 0;
     for (auto i : a)
-        if (i.first == 99999) {
+        if (i.first == 99999 /*InventorySourceType::NONIMPLEMENTEDTODO*/){
             abnormal = 1;
         }
     if (abnormal) {
