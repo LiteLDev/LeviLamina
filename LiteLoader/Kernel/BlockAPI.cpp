@@ -7,9 +7,9 @@
 #include <MC/HashedString.hpp>
 #include <MC/Level.hpp>
 
-Block* Block::create(string name, unsigned short tileData)
+Block* Block::create(const string& name, unsigned short tileData)
 {
-    BlockPalette* generator = Global<Level>->getBlockPalette();
+    BlockPalette* generator = Level::getBlockPalette();
     auto blk = generator->getBlockLegacy(name);
     if (!blk)
         return nullptr;
@@ -23,13 +23,13 @@ Block* Block::create(CompoundTag* nbt)
     return const_cast<Block*>(result.second);
 }
 
-string Block::getTypeName()
+string Block::getTypeName() const
 {
     return Block::getName().getString();
 }
 
 
-int Block::getId() 
+int Block::getId() const
 {
     return getLegacyBlock().getBlockItemId();
 }

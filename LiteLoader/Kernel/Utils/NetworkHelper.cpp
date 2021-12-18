@@ -7,9 +7,9 @@ using namespace std;
 void SplitHttpUrl(const std::string& url, string& host, string& path) {
     host = url;
 
-    bool foundProcotol = host.find('/') != string::npos;
+    bool foundProtocol = host.find('/') != string::npos;
 
-    auto splitPos = host.find('/', foundProcotol ? host.find('/') + 2 : 0); //查找协议后的第一个/分割host与路径
+    auto splitPos = host.find('/', foundProtocol ? host.find('/') + 2 : 0); //查找协议后的第一个/分割host与路径
     if (splitPos == string::npos) {
         path = "/";
     } else {
@@ -18,11 +18,11 @@ void SplitHttpUrl(const std::string& url, string& host, string& path) {
     }
 }
 
-bool HttpGet(const string& url, function<void(int, string)> callback, int timeout) {
+bool HttpGet(const string& url, const function<void(int, string)>& callback, int timeout) {
     string host, path;
     SplitHttpUrl(url, host, path);
 
-    httplib::Client* cli = new httplib::Client(host.c_str());
+    auto* cli = new httplib::Client(host.c_str());
     if (!cli->is_valid()) {
         delete cli;
         return false;
@@ -58,11 +58,11 @@ bool HttpGet(const string& url, function<void(int, string)> callback, int timeou
     return true;
 }
 
-bool HttpPost(const string& url, const string& data, const string& type, std::function<void(int, string)> callback, int timeout)
+bool HttpPost(const string& url, const string& data, const string& type, const std::function<void(int, string)>& callback, int timeout)
 {
     string host, path;
     SplitHttpUrl(url, host, path);
-    httplib::Client* cli = new httplib::Client(host.c_str());
+    auto* cli = new httplib::Client(host.c_str());
     if (!cli->is_valid())
     {
         delete cli;

@@ -573,7 +573,11 @@ std::unique_ptr<end_list_tag> end_list_tag::read_content(std::istream & input) {
 		char c = cheof(input);
 		if (c != '\0')
 			throw std::runtime_error("end list tag should be empty");
-	}
+    } else {
+        char c = cheof(input);
+        if (c != ']')
+            throw std::runtime_error("']' expected, got "+c);
+    }
 	return std::make_unique<end_list_tag>();
 }
 

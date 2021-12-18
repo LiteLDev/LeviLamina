@@ -1,7 +1,7 @@
 #include <Global.h>
 #include <Utils/PlayerMap.h>
 // PlayerMap.h
-// BUG:DONT USE GLOBAL VAR WITH A CUSTOM CONSTRUCTION!!!!
+// BUG: DON'T USE GLOBAL VAR WITH A CUSTOM CONSTRUCTION!!!!
 // static std::vector<DePlayerCB> depcbs;
 static size_t CBSZ, CBSZ_USED;
 static DePlayerCB* CBS;

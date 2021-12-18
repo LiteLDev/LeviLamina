@@ -86,7 +86,7 @@ BlockPos Actor::getBlockPos() {
     return Vec3{pos.x, pos.y + (float)0.5, pos.z}.toBlockPos();
 }
 
-BlockInstance Actor::getBlockStandingOn()
+BlockInstance Actor::getBlockStandingOn() const
 {
     return Level::getBlockInstance(getBlockPosCurrentlyStandingOn(nullptr), getDimensionId());
 }
@@ -100,10 +100,10 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-bool Actor::teleport(Vec3 to, int dimid) {
+bool Actor::teleport(Vec3 to, int dimID) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
@@ -132,8 +132,8 @@ bool Actor::refreshActorData() {
     return true;
 }
 
-bool Actor::setOnFire(int num,bool iseffect) {
-    if (iseffect)
+bool Actor::setOnFire(int num,bool isEffect) {
+    if (isEffect)
         OnFireSystem::setOnFire(*this, num);
     else
         OnFireSystem::setOnFireNoEffects(*this, num);
@@ -169,14 +169,14 @@ Tick* Actor::getLastTick() const {
 
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
-    auto& pos = getCameraPos();
+    auto&& pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
     auto viewPos = pos + (viewVec * maxDistance);
     auto player = isPlayer() ? (Player*)this : nullptr;
     int maxDisManhattan = (int)((maxDistance + 1) * 2);
     HitResult result = bs.clip(pos, viewPos, includeLiquid, solidOnly, maxDisManhattan, ignoreBorderBlocks, fullOnly, nullptr);
     if (result.isHit() || (includeLiquid && result.isHitLiquid())) {
-        BlockPos bpos;
+        BlockPos bpos{};
         if (includeLiquid && result.isHitLiquid()) {
             bpos = result.getLiquidPos();
             face = result.getLiquidFacing();
@@ -203,7 +203,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto player = isPlayer() ? (Player*)this : nullptr;
     Actor* result = nullptr;
     float distance = 0.0f;
-    Vec3 resultPos;
+    Vec3 resultPos{};
     HitDetection::searchActors(viewVec, maxDistance, pos, aabb, this, (Player*)this, distance, result, resultPos, player);
     return result;
 }
@@ -235,7 +235,7 @@ std::vector<std::string> Actor::getAllTags()
     }
 }
 
-bool Actor::hasTag(string tag)
+bool Actor::hasTag(const string& tag)
 {
     auto tags = getAllTags();
     return std::find(tags.begin(), tags.end(), tag) != tags.end();

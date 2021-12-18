@@ -30,9 +30,9 @@ TagMemoryChunk ListTag::getByteArray(int index) const {
 
 void ListTag::add(Tag* t) {
     void (ListTag::*func)(std::unique_ptr<class Tag>) = &ListTag::add;
-    void (ListTag::*rv)(Tag*);
+    void (ListTag::*rv)(Tag**);
     *(void**)&rv = *(void**)&func;
-    (this->*rv)(t);
+    (this->*rv)(&t);
 }
 
 void ListTag::addEnd() {

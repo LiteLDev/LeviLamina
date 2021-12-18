@@ -26,7 +26,7 @@ std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();
 }
 
-StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
+StructureTemplate StructureTemplate::fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
     auto st = StructureTemplate(name);
     //st.getName();
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
@@ -35,13 +35,13 @@ StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, Bloc
     setting.setIgnoreBlocks(ignoreBlocks);
     setting.setIgnoreEntities(ignoreEntities);
     setting.setStructureSize(size);
-    st.fillFromWorld(*Level::getBlockSource(dimid), start, setting);
+    st.fillFromWorld(*Level::getBlockSource(dimID), start, setting);
     return st;
 }
 
-bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation) {
+bool StructureTemplate::toWorld(int dimID, BlockPos p1, Mirror mirror, Rotation rotation) {
     auto palette = Level::getBlockPalette();
-    auto bs = Level::getBlockSource(dimid);
+    auto bs = Level::getBlockSource(dimID);
     auto setting = StructureSettings();
     setting.setMirror(mirror);
     setting.setStructureSize(getSize());

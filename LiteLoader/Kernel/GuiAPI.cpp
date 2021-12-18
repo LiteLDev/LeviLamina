@@ -25,7 +25,7 @@ LIAPI unsigned int newFormID() {
 }
 static playerMap<std::unique_ptr<IFormBinder>> formMap;
 LIAPI void _sendForm2(ServerPlayer &sp, std::unique_ptr<IFormBinder> &&form) {
-    auto payload = form->seralize();
+    auto payload = form->serialize();
     WBStream ws;
     ws.apply(VarUInt(form->formid), MCString(payload));
     NetworkPacket<100, false> guipk{ws.data};
@@ -96,13 +96,13 @@ LIAPI void GUIDropdown::pack(rapidjson::Value &v, rapidjson::Document::Allocator
     addmem(options, std::move(tmp));
 }
 LIAPI SimpleForm::SimpleForm() {
-    seralized = false;
+    serialized = false;
 }
 LIAPI void SimpleForm::addButton(GUIButton &&wd) {
     buttons.emplace_back(wd);
 }
-LIAPI string_view SimpleForm::seralize() {
-    if (seralized)
+LIAPI string_view SimpleForm::serialize() {
+    if (serialized)
         return {json.GetString(), json.GetSize()};
     using namespace rapidjson;
     Document dc;
@@ -121,18 +121,18 @@ LIAPI string_view SimpleForm::seralize() {
     dc.AddMember("buttons", std::move(btn), dc.GetAllocator());
     Writer<StringBuffer> writer(json);
     dc.Accept(writer);
-    seralized = true;
+    serialized = true;
     json.ShrinkToFit();
     return {json.GetString(), json.GetSize()};
 }
 LIAPI FullForm::FullForm() {
-    seralized = false;
+    serialized = false;
 }
 LIAPI void FullForm::addWidget(GUI_WIDGET_T &&wd) {
     widgets.emplace_back(wd);
 }
-LIAPI string_view FullForm::seralize() {
-    if (seralized)
+LIAPI string_view FullForm::serialize() {
+    if (serialized)
         return {json.GetString(), json.GetSize()};
     using namespace rapidjson;
     Document dc;
@@ -150,7 +150,7 @@ LIAPI string_view FullForm::seralize() {
     dc.AddMember("content", std::move(v), ac);
     Writer<StringBuffer> writer(json);
     dc.Accept(writer);
-    seralized = true;
+    serialized = true;
     json.ShrinkToFit();
     return {json.GetString(), json.GetSize()};
 }

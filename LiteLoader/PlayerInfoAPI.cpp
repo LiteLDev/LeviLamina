@@ -44,28 +44,36 @@ bool insert(std::string name, std::string xuid, std::string uuid) {
         return false;
     }
     if (getVal(name, 0) == "") {
-        SQLite::Statement st{*db, "insert into player values (?,?,?)"};
-        st.bindNoCopy(1, name);
-        st.bindNoCopy(2, xuid);
-        st.bindNoCopy(3, uuid);
-        st.exec();
-        st.reset();
-        st.clearBindings();
+        try {
+            SQLite::Statement st{*db, "insert into player values (?,?,?)"};
+            st.bindNoCopy(1, name);
+            st.bindNoCopy(2, xuid);
+            st.bindNoCopy(3, uuid);
+            st.exec();
+            st.reset();
+            st.clearBindings();
+        }
+        catch (std::exception const& e)
+        {
+            logger.error("DB Error: {}", e.what());
+            return false;
+        }
     } else {
         try {
             db->exec("begin");
             SQLite::Statement st{*db, "update player set XUID=? where NAME=?"};
-            SQLite::Statement stUUID{*db, "update player set UUID=? where NAME=?"};
             st.bindNoCopy(2, name);
             st.bindNoCopy(1, xuid);
+            st.exec();
+            st.reset();
+            st.clearBindings();
+            SQLite::Statement stUUID{*db, "update player set UUID=? where NAME=?"};
             stUUID.bindNoCopy(2, name);
             stUUID.bindNoCopy(1, uuid);
-            st.exec();
             stUUID.exec();
-            st.reset();
             stUUID.reset();
-            st.clearBindings();
             stUUID.clearBindings();
+            db->exec("commit");
         } catch (std::exception const& e) {
             logger.error("DB Error: {}", e.what());
             return false;

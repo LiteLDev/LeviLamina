@@ -8,7 +8,7 @@
 #include "third-party/FMT/core.h"
 #include "third-party/FMT/os.h"
 #include <string>
-
+#include "Utils/StringHelper.h"
 //////////////////////////////////////////////////////
 // For Internationalization
 //
@@ -52,7 +52,7 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
     } else {
         realFormatStr = res.value();
     }
-
+    realFormatStr = FixCurlyBracket(realFormatStr);
     return fmt::format(realFormatStr, args...);
 }
 

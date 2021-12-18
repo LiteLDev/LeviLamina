@@ -725,18 +725,21 @@ enum class FaceID : char {
 
 enum class MinecraftPacketIds : int
 {
-    ogin = 0x1,
+    Login = 0x1,
     PlayStatus = 0x2,
     ServerToClientHandshake = 0x3,
     ClientToServerHandshake = 0x4,
     Disconnect = 0x5,
     ResourcePacksInfo = 0x6,
     ResourcePackStack = 0x7,
+    ResourcePackClientResponse = 0x8,
+    Text = 0x9,
     SetTime = 0xa,
     StartGame = 0xb,
     AddPlayer = 0xc,
     AddActor = 0xd,
     RemoveActor = 0xe,
+    AddItemActor = 0xf,
     TakeItemActor = 0x11,
     MoveActorAbsolute = 0x12,
     MovePlayer = 0x13,
@@ -874,7 +877,15 @@ enum class MinecraftPacketIds : int
     ClientboundDebugRenderer = 0xa4,
     SyncActorProperty = 0xa5,
     AddVolumeEntity = 0xa6,
-    RemoveVolumeEntity = 0xa7
+    RemoveVolumeEntity = 0xa7,
+    SimulationType = 0xa8,
+    NPCDialogue = 0xa9,
+    EduUriResource = 0xaa,
+    CreatePhoto = 0xab,
+    UpdateSubChunkBlocks = 0xac,
+    PhotoInfoRequest = 0xad,
+    SubChunk = 0xae,
+    SubChunkRequest = 0xaf
 };
 
 //class CommandVersion {
