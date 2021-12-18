@@ -27,7 +27,8 @@ struct LLConfig {
     ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
 
     bool enableFixDisconnectBug = true;
-    bool enableFixListenPort = true;
+    bool enableFixListenPort = false;
+    bool enableAntiGive = true;
 };
 extern LLConfig globalConfig;
 
