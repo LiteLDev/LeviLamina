@@ -731,7 +731,7 @@ enum class FaceID : char {
 
 enum class MinecraftPacketIds : int
 {
-    ogin = 0x1,
+    Login = 0x1,
     PlayStatus = 0x2,
     ServerToClientHandshake = 0x3,
     ClientToServerHandshake = 0x4,
