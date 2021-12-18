@@ -44,30 +44,20 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
 class InventoryTransaction;
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
       ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
-<<<<<<< Updated upstream
+    if (globalConfig.enableAntiGive)
+    {
     InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
     auto a = dAccess<std::unordered_map<int, void*>, 0>(data);
     bool abnormal = 0;
     for (auto i : a)
         if (i.first == 99999 /*InventorySourceType::NONIMPLEMENTEDTODO*/){
             abnormal = 1;
-=======
-    if (globalConfig.enableAntiGive)
-    {
-        InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
-        auto a = dAccess<std::unordered_map<int, void*>, 0>(data);
-        bool abnormal = 0;
-        for (auto i : a)
-            if (i.first == 99999)
-            {
-                abnormal = 1;
             }
         if (abnormal)
         {
             Player* sp = (Player*)snh.getServerPlayer(netid);
             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
             return nullptr;
->>>>>>> Stashed changes
         }
     }
     return original(snh, netid, pk);
