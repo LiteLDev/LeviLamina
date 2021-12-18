@@ -2,8 +2,9 @@
 #include <Global.h>
 #include <rapidjson/document.h>
 #include <rapidjson/stringbuffer.h>
-#include <Utils\optional.h>
-#include <Utils\viewhelper.h>
+#include <Utils\Optional.h>
+#include <Utils\ViewHelper.h>
+#include <utility>
 #include <variant>
 #include <vector>
 #include <MC/ServerPlayer.hpp>
@@ -100,7 +101,7 @@ struct GUIDropdown : IGUIDropdownData {
 class IForm {
   public:
     virtual ~IForm() {}
-    virtual string_view seralize() = 0;
+    virtual string_view serialize() = 0;
 };
 using GUI_WIDGET_T = variant<GUIInput, GUIDropdown, GUISlider, GUILabel, GUIToggle, GUISlider2>;
 class FullForm : public IForm {
@@ -108,15 +109,15 @@ class FullForm : public IForm {
 
   public:
     string title;
-    bool seralized;
+    bool serialized;
     std::vector<GUI_WIDGET_T> widgets;
     LIAPI FullForm();
     LIAPI void addWidget(GUI_WIDGET_T &&wd);
-    LIAPI string_view seralize();
+    LIAPI string_view serialize();
     void reset() {
         widgets.clear();
         json.Clear();
-        seralized = false;
+        serialized = false;
     }
 };
 class SimpleForm : public IForm {
@@ -125,15 +126,15 @@ class SimpleForm : public IForm {
   public:
     string title;
     string content;
-    bool seralized;
+    bool serialized;
     std::vector<GUIButton> buttons;
     LIAPI SimpleForm();
     LIAPI void addButton(GUIButton &&wd);
-    LIAPI string_view seralize();
+    LIAPI string_view serialize();
     void reset() {
         buttons.clear();
         json.Clear();
-        seralized = false;
+        serialized = false;
     }
 };
 LIAPI unsigned int newFormID();
@@ -142,7 +143,7 @@ class IFormBinder {
     unsigned int formid;
     virtual ~IFormBinder() {}
     virtual void invoke(ServerPlayer &sp, string_view sv) = 0;
-    virtual string_view seralize()                        = 0;
+    virtual string_view serialize()                        = 0;
     IFormBinder() { formid = newFormID(); }
 };
 class RawFormBinder : public IFormBinder {
@@ -153,17 +154,17 @@ class RawFormBinder : public IFormBinder {
     string content;
     RawFormBinder(string const &cont,
                   std::function<void(ServerPlayer&, DType)>&& _cb,
-                  std::vector<string> &&plylist) {
+                  std::vector<string> &&_playerList) {
         content    = cont;
         cb         = std::move(_cb);
-        playerList = std::move(plylist);
+        playerList = std::move(_playerList);
     }
     virtual void invoke(ServerPlayer &sp, string_view sv) {
-        if (!sv.size())
+        if (sv.empty())
             return;
         cb({sp}, {sv[0] != 'n', sv, playerList});  // null
     }
-    virtual string_view seralize() { return content; }
+    virtual string_view serialize() { return content; }
 };
 class SimpleFormBinder : public IFormBinder {
   public:
@@ -171,8 +172,8 @@ class SimpleFormBinder : public IFormBinder {
     std::shared_ptr<SimpleForm> form;
     std::function<void(ServerPlayer&, DType)> callback;
     SimpleFormBinder(std::shared_ptr<SimpleForm> fm, std::function<void(ServerPlayer&, DType)>&& cb)
-        : form(fm), callback(cb), IFormBinder(){};
-    virtual string_view seralize() { return form->seralize(); }
+        : form(std::move(fm)), callback(cb), IFormBinder(){};
+    virtual string_view serialize() { return form->serialize(); }
     virtual void invoke(ServerPlayer &sp, string_view sv) {
         if (!sv.size())
             return;
@@ -193,7 +194,7 @@ class FullFormBinder : public IFormBinder {
     std::function<void(ServerPlayer&, DType)> callback;
     FullFormBinder(std::shared_ptr<FullForm> fm, std::function<void(ServerPlayer&, DType)>&& cb)
         : form(fm), callback(cb), IFormBinder(){};
-    virtual string_view seralize() { return form->seralize(); }
+    virtual string_view serialize() { return form->serialize(); }
     virtual void invoke(ServerPlayer &sp, string_view sv) {
         if (!sv.size())
             return;
