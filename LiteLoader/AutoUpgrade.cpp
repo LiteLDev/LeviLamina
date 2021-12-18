@@ -398,7 +398,7 @@ void AddPreload()
 void ClearUpdateLibrary()
 {
     HMODULE hMod = GetModuleHandle(L"LLAutoUpdate.dll");
-    if (hMod != NULL)
+    if (hMod != nullptr)
     {
         FreeLibrary(hMod);
     }

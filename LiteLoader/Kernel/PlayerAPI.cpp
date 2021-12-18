@@ -70,14 +70,14 @@ string Player::getIP()
 
 string Player::getLanguageCode() {
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
-    for (auto iter = map->begin(); iter != map->end(); ++iter) {
-        string s(iter->first.c_str());
-        if (s.find("LanguageCode") != s.npos) {
-            auto langcode = iter->second.value_.string_;
-            return langcode;
+    for (auto & iter : *map) {
+        string s(iter.first.c_str());
+        if (s.find("LanguageCode") != std::string::npos) {
+            auto langCode = iter.second.value_.string_;
+            return langCode;
         }
     }
-    return "unkown";
+    return "unknown";
 }
 
 string Player::getServerAddress() {
@@ -89,7 +89,7 @@ string Player::getServerAddress() {
             return ServerAddress;
         }
     }
-    return "unkown";
+    return "unknown";
 }
 
 string Player::getDeviceTypeName() {
@@ -129,9 +129,9 @@ string Player::getDeviceTypeName() {
     }
 }
 
-bool Player::kick(string msg) {
-    NetworkIdentifier* netid = getNetworkIdentifier();
-    Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*netid, msg, 0);
+bool Player::kick(const string& msg) {
+    NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
+    Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*pNetworkIdentifier, msg, 0);
     return true;
 }
 
@@ -261,7 +261,7 @@ bool Player::crashClient() {
     return true;
 }
 
-bool Player::setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder)
+bool Player::setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder)
 {
     sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 
@@ -282,29 +282,29 @@ bool Player::removeSidebar()
     return sendSetDisplayObjectivePacket("", "", (char)0);
 }
 
-int Player::getScore(string key)
+int Player::getScore(const string& key)
 {
-    return ::Global<Scoreboard>->getScore(this, key);
+    return Scoreboard::getScore(this, key);
 }
 
-bool Player::setScore(string key, int value)
+bool Player::setScore(const string& key, int value)
 {
-    return ::Global<Scoreboard>->setScore(this, key, value);
+    return Scoreboard::setScore(this, key, value);
 }
 
-bool Player::addScore(string key, int value)
+bool Player::addScore(const string& key, int value)
 {
-    return ::Global<Scoreboard>->addScore(this, key, value);
+    return Scoreboard::addScore(this, key, value);
 }
 
-bool Player::reduceScore(string key, int value)
+bool Player::reduceScore(const string& key, int value)
 {
-    return ::Global<Scoreboard>->reduceScore(this, key, value);
+    return Scoreboard::reduceScore(this, key, value);
 }
 
-bool Player::deleteScore(string key)
+bool Player::deleteScore(const string& key)
 {
-    return ::Global<Scoreboard>->deleteScore(this, key);
+    return Scoreboard::deleteScore(this, key);
 }
 
 
@@ -314,7 +314,7 @@ static_assert(sizeof(TextPacket) == 216);
 static_assert(sizeof(PlaySoundPacket) == 152);
 static_assert(sizeof(TransferPacket) == 88);
 
-bool Player::sendTextPacket(string text, TextType Type)
+bool Player::sendTextPacket(string text, TextType Type) const
 {
     BinaryStream wp;
     wp.reserve(8 + text.size());
@@ -336,6 +336,8 @@ bool Player::sendTextPacket(string text, TextType Type)
         case TextType::JUKEBOX_POPUP:
             wp.writeString(text);
             wp.writeVarInt(0);
+        case TextType::JSON_WHISPER:
+            break;
     }
     wp.writeString("");
     wp.writeString("");
@@ -345,7 +347,7 @@ bool Player::sendTextPacket(string text, TextType Type)
     return true;
 }
 
-bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const {
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -371,30 +373,31 @@ bool Player::sendNotePacket(unsigned int tone) {
     wp.writeFloat(getPos().z);
     wp.writeVarInt(tone * 2);
     wp.writeString("");
-    wp.writeBool(0);
-    wp.writeBool(1);
-    NetworkPacket<0x7B> pkts{wp.getAndReleaseData()};
-    sendNetworkPacket(pkts);
+    wp.writeBool(false);
+    wp.writeBool(true);
+    NetworkPacket<0x7B> networkPacket{wp.getAndReleaseData()};
+    sendNetworkPacket(networkPacket);
     return true;
 }
 
-bool Player::sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID) {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const {
     BinaryStream wp;
-    wp.writeUnsignedChar(dimid);
+    wp.writeUnsignedChar(dimID);
     //If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
     wp.writeVarInt64(EntityUniqueID);
-    wp.writeFloat(spawnpos.x);
-    wp.writeFloat(spawnpos.y);
-    wp.writeFloat(spawnpos.z);
+    wp.writeFloat(spawnPos.x);
+    wp.writeFloat(spawnPos.y);
+    wp.writeFloat(spawnPos.z);
     //ParticleName is the name of the particle that should be shown. This name may point to a particle effect that is built-in, or to one implemented by behaviour packs.
     wp.writeString(ParticleName);
-    NetworkPacket<0x76> pkts{wp.getAndReleaseData()};
-    sendNetworkPacket(pkts);
+    NetworkPacket<0x76> networkPacket{wp.getAndReleaseData()};
+    sendNetworkPacket(networkPacket);
     return true;
 }
 
-bool Player::sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch) {
-    sendNetworkPacket(PlaySoundPacket(Soundname, Position, Volume, Pitch));
+bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const {
+    PlaySoundPacket playSoundPkt(std::move(SoundName), Position, Volume, Pitch);
+    sendNetworkPacket(playSoundPkt);
     return true;
 }
 
@@ -441,14 +444,14 @@ void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
     }
 }
 
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) {
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) const {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeid);                                   //RuntimeId
-    wp.writeUnsignedVarInt64(runtimeid);                           //EntityId
-    wp.writeVarInt(itemid);                                        //ItemId
-    wp.writeUnsignedShort(static_cast<unsigned short>(stacksize)); //StackSize
+    wp.writeVarInt64(runtimeID);                                   //RuntimeId
+    wp.writeUnsignedVarInt64(runtimeID);                           //EntityId
+    wp.writeVarInt(itemID);                                        //ItemId
+    wp.writeUnsignedShort(static_cast<unsigned short>(stackSize)); //StackSize
     wp.writeUnsignedVarInt(aux);                                   //Aux
-    wp.writeBool(1);
+    wp.writeBool(true);
     wp.writeUnsignedVarInt(110);
     wp.writeVarInt(0);
     wp.writeString("minecraft:apple");
@@ -458,18 +461,18 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, i
     wp.writeFloat(pos.x);
     wp.writeFloat(pos.y);
     wp.writeFloat(pos.z);
-    setDataItem(wp, DataItem); //EntityMetadata & DataItem
-    wp.writeBool(1);
+    setDataItem(wp, std::move(DataItem)); //EntityMetadata & DataItem
+    wp.writeBool(true);
     NetworkPacket<0x0F> pk{wp.getAndReleaseData()};
     sendNetworkPacket(pk);
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
+bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
     BinaryStream wp;
-    wp.writeVarInt64(runtimeid);         //RuntimeId
-    wp.writeUnsignedVarInt64(runtimeid); //EntityId
-    wp.writeString(entitytype);
+    wp.writeVarInt64(runtimeID);         //RuntimeId
+    wp.writeUnsignedVarInt64(runtimeID); //EntityId
+    wp.writeString(entityType);
     wp.writeFloat(pos.x); //pos
     wp.writeFloat(pos.y);
     wp.writeFloat(pos.z);
@@ -487,12 +490,13 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeid, string entitytype
     return true;
 }
 
-bool Player::sendTransferPacket(const string& address, short port) {
-    sendNetworkPacket(TransferPacket(address, port));
+bool Player::sendTransferPacket(const string& address, short port) const {
+    TransferPacket transferPkt(address, port);
+    sendNetworkPacket(transferPkt);
     return true;
 }
 
-bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) {
+bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
     BinaryStream wp;
     wp.writeString("sidebar");
     wp.writeString(name);
@@ -576,7 +580,6 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
 bool Player::sendCommandRequestPacket(const string& cmd) {
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
-    NetworkIdentifier* nid = getNetworkIdentifier();
     Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
@@ -590,7 +593,7 @@ bool Player::sendTextTalkPacket(const string& msg) {
     return true;
 }
 
-bool Player::sendRawFormPacket(unsigned formId, const string& data)
+bool Player::sendRawFormPacket(unsigned formId, const string& data) const
 {
     BinaryStream wp;
     wp.reserve(32 + data.size());
@@ -602,7 +605,7 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data)
     return true;
 }
 
-bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback)
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const
 {
     string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
     model = model.replace(model.find("%s"), 2, title);

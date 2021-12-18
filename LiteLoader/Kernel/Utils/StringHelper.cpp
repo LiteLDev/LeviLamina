@@ -1,12 +1,12 @@
 #include <Utils/StringHelper.h>
 #include <string>
 #include <vector>
-#include <windows.h>
+#include <Windows.h>
 using namespace std;
 
-wstring str2wstr(string str) {
-    auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, NULL, 0);
-    wchar_t* buffer = new wchar_t[len + 1];
+wstring str2wstr(const string& str) {
+    auto len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
+    auto* buffer = new wchar_t[len + 1];
     MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, buffer, len + 1);
     buffer[len] = L'\0';
 
@@ -15,10 +15,10 @@ wstring str2wstr(string str) {
     return result;
 }
 
-string wstr2str(wstring wstr) {
-    auto len = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, NULL, 0, NULL, NULL);
+string wstr2str(const wstring& wstr) {
+    auto len = WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, nullptr, 0, nullptr, nullptr);
     char* buffer = new char[len + 1];
-    WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, buffer, len + 1, NULL, NULL);
+    WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), -1, buffer, len + 1, nullptr, nullptr);
     buffer[len] = '\0';
 
     string result = string(buffer);
@@ -58,10 +58,10 @@ string& ReplaceStr(string& str, const string& old_value, const string& new_value
 }
 
 bool StartsWith(const std::string& str, const std::string& start) {
-    int srclen = str.size();
-    int startlen = start.size();
-    if (srclen >= startlen) {
-        string temp = str.substr(0, startlen);
+    size_t srcLen = str.size();
+    size_t startLen = start.size();
+    if (srcLen >= startLen) {
+        string temp = str.substr(0, startLen);
         if (temp == start)
             return true;
     }
@@ -70,10 +70,10 @@ bool StartsWith(const std::string& str, const std::string& start) {
 }
 
 bool EndsWith(const std::string& str, const std::string& end) {
-    int srclen = str.size();
-    int endlen = end.size();
-    if (srclen >= endlen) {
-        string temp = str.substr(srclen - endlen, endlen);
+    size_t srcLen = str.size();
+    size_t endLen = end.size();
+    if (srcLen >= endLen) {
+        string temp = str.substr(srcLen - endLen, endLen);
         if (temp == end)
             return true;
     }

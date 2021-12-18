@@ -79,7 +79,7 @@ void LLMain() {
     
     //Rename Window
     HWND hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
+    std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
     //DebugMode

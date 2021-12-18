@@ -4,10 +4,10 @@
 #include <string>
 
 // std::string -> std::wstring
-LIAPI std::wstring str2wstr(std::string str);
+LIAPI std::wstring str2wstr(const std::string& str);
 
 // std::wstring -> std::string
-LIAPI std::string wstr2str(std::wstring wstr);
+LIAPI std::string wstr2str(const std::wstring& wstr);
 
 // "2021-03-24"  ->  ["2021", "03", "24"]  (use '-' as split pattern)
 LIAPI std::vector<std::string> SplitStrWithPattern(const std::string& str, const std::string& pattern);

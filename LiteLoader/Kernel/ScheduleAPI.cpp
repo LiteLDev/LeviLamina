@@ -13,34 +13,34 @@ LIAPI tick_t _tick;
 static std::multimap<tick_t, TaskBase> tasks;
 static std::deque<function<void()>> next_run;
 static std::atomic_flag cas_main = {};
-static std::atomic_flag cas_nextrun = {};
+static std::atomic_flag cas_next_run = {};
 
 inline volatile int lock_owner;
 inline static int getTID() {
     auto tid = std::this_thread::get_id();
     return *(int*)&tid;
 }
-inline volatile bool __lock_main() {
-    int myid = getTID();
-    if (myid == lock_owner)
+inline volatile bool _lock_main() {
+    int myID = getTID();
+    if (myID == lock_owner)
         return false;
     while (cas_main.test_and_set())
         std::this_thread::yield();
-    lock_owner = myid;
+    lock_owner = myID;
     return true;
 }
-inline volatile void __unlock_main() {
+inline volatile void _unlock_main() {
     lock_owner = 0;
     cas_main.clear();
 }
 struct LockGuard {
     bool locked_by_me;
     LockGuard() {
-        locked_by_me = __lock_main();
+        locked_by_me = _lock_main();
     }
     ~LockGuard() {
         if (locked_by_me)
-            __unlock_main();
+            _unlock_main();
     }
 };
 
@@ -63,17 +63,17 @@ LIAPI taskid_t schedule(TaskBase&& task) {
 }
 
 LIAPI void scheduleNext(function<void()>&& fn) {
-    while (cas_nextrun.test_and_set(std::memory_order_acquire))
+    while (cas_next_run.test_and_set(std::memory_order_acquire))
         std::this_thread::yield();
     next_run.emplace_back(std::forward<function<void()>>(fn));
-    cas_nextrun.clear(std::memory_order_release);
+    cas_next_run.clear(std::memory_order_release);
 }
 
-inline static void nextrun() {
+inline static void nextRun() {
     if (next_run.empty())
         return;
 
-    while (cas_nextrun.test_and_set())
+    while (cas_next_run.test_and_set())
         std::this_thread::yield();
 
     try {
@@ -90,11 +90,11 @@ inline static void nextrun() {
     } catch (...) {
         logger.error("Exception occurred at nextTask!");
     }
-    cas_nextrun.clear();
+    cas_next_run.clear();
 }
 
 inline static void tick() {
-    nextrun();
+    nextRun();
     _tick++;
     if (_tick % 10 != 0)
         return;

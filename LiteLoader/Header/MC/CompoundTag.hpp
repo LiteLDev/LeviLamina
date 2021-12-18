@@ -64,9 +64,9 @@ public:
     // io
     LIAPI void setItemStack(ItemStack* item);
     LIAPI void setBlock(Block* blk);
-    LIAPI bool setActor(Actor* actor);
+    LIAPI bool setActor(Actor* actor) const;
     LIAPI bool setPlayer(Player* player);
-    LIAPI bool setBlockActor(BlockActor* ble);
+    LIAPI bool setBlockActor(BlockActor* ble) const;
     LIAPI static CompoundTag* fromItemStack(ItemStack* item);
     LIAPI static CompoundTag* fromBlock(Block* blk);
     LIAPI static CompoundTag* fromActor(Actor* actor);

@@ -100,10 +100,10 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-bool Actor::teleport(Vec3 to, int dimid) {
+bool Actor::teleport(Vec3 to, int dimID) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, 0, dimid, 0, 0, 15);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, 0, 0, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
@@ -132,8 +132,8 @@ bool Actor::refreshActorData() {
     return true;
 }
 
-bool Actor::setOnFire(int num,bool iseffect) {
-    if (iseffect)
+bool Actor::setOnFire(int num,bool isEffect) {
+    if (isEffect)
         OnFireSystem::setOnFire(*this, num);
     else
         OnFireSystem::setOnFireNoEffects(*this, num);

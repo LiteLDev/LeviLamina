@@ -312,7 +312,7 @@ public:
 
 class BlockChangedEvent : public EventTemplate<BlockChangedEvent> {
 public:
-    BlockInstance mPerviousBlockInstance;
+    BlockInstance mPreviousBlockInstance;
     BlockInstance mNewBlockInstance;
 };
 
@@ -340,7 +340,7 @@ public:
     BlockInstance mBlockInstance;
     Container* mContainer;
     int mSlot;
-    ItemStack* mPerviousItemStack;
+    ItemStack* mPreviousItemStack;
     ItemStack* mNewItemStack;
 };
 

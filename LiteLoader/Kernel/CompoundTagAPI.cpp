@@ -124,7 +124,7 @@ CompoundTag* CompoundTag::fromActor(Actor* actor) {
     return tmp;
 }
 
-bool CompoundTag::setActor(Actor* actor) {
+bool CompoundTag::setActor(Actor* actor) const {
     void* vtbl = (void*)dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = actor->load(*this, (DataLoadHelper&)vtbl);
     actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
@@ -144,7 +144,7 @@ bool CompoundTag::setPlayer(Player* player) {
     return res;
 }
 
-bool CompoundTag::setBlockActor(BlockActor* ble) {
+bool CompoundTag::setBlockActor(BlockActor* ble) const {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
     ble->setChanged();
@@ -612,7 +612,7 @@ class BigEndianStringByteOutput {
     }
 
 public:
-    virtual ~BigEndianStringByteOutput(){};
+    virtual ~BigEndianStringByteOutput() = default;;
     virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
         return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
                        void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, string_span);

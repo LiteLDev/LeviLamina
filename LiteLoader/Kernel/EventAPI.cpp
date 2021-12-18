@@ -221,23 +221,23 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 
 /////////////////// PlayerChangeDim ///////////////////
 THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
-      Level* _this, Player* sp, ChangeDimensionRequest* cdimreq)
+      Level* _this, Player* sp, ChangeDimensionRequest* changeDimReq)
 {
     bool ret = true;
-    //int fromDimid = dAccess<int>(cdimreq, 4);
-    int toDimid = dAccess<int>(cdimreq, 8);
-    if (toDimid == sp->getDimensionId())
-        return original(_this, sp, cdimreq);
+    //int fromDimID = dAccess<int>(changeDimReq, 4);
+    int toDimID = dAccess<int>(changeDimReq, 8);
+    if (toDimID == sp->getDimensionId())
+        return original(_this, sp, changeDimReq);
 
     IF_LISTENED(PlayerChangeDimEvent)
     {
         PlayerChangeDimEvent ev;
         ev.mPlayer = sp;
-        ev.mToDimensionId = toDimid;
+        ev.mToDimensionId = toDimID;
         ev.call();
     }
     IF_LISTENED_END(PlayerChangeDimEvent);
-    ret = original(_this, sp, cdimreq);
+    ret = original(_this, sp, changeDimReq);
     return ret;
 }
 
@@ -791,7 +791,7 @@ THook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUAc
     {
         int dimId = bs->getDimensionId();
         BlockChangedEvent ev;
-        ev.mPerviousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *bp, dimId);
+        ev.mPreviousBlockInstance = BlockInstance::createBlockInstance(beforeBlock, *bp, dimId);
         ev.mNewBlockInstance = BlockInstance::createBlockInstance(afterBlock, *bp, dimId);
         if (!ev.call())
             return;
@@ -885,7 +885,7 @@ THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
             ev.mContainer = ev.mBlockInstance.getContainer();
             ev.mPlayer = pl;
             ev.mSlot = slotNumber;
-            ev.mPerviousItemStack = oldItem;
+            ev.mPreviousItemStack = oldItem;
             ev.mNewItemStack = newItem;
             ev.call();
         }
@@ -1138,18 +1138,18 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this,
 
 /////////////////// PlayerDestroy ///////////////////
 THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
-      BlockLegacy* _this, Player* pl, BlockPos& blkpos, Block& bl)
+      BlockLegacy* _this, Player* pl, BlockPos& bpos, Block& bl)
 {
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
         PlayerDestroyBlockEvent ev;
         ev.mPlayer = pl;
-        ev.mBlockInstance = Level::getBlockInstance(blkpos, pl->getDimensionId());
+        ev.mBlockInstance = Level::getBlockInstance(bpos, pl->getDimensionId());
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent);
-    return original(_this, pl, blkpos, bl);
+    return original(_this, pl, bpos, bl);
 }
 
 
@@ -1172,7 +1172,7 @@ THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@
 }
 
 
-/////////////////// MobHurted ///////////////////
+/////////////////// MobHurt ///////////////////
 THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
       Mob* ac, ActorDamageSource& src, int damage, bool unk1_1, bool unk2_0)
 {

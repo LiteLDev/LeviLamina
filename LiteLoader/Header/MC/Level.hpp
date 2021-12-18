@@ -76,8 +76,8 @@ public:
     LIAPI static BlockPalette* getBlockPalette();
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-    LIAPI static void broadcastText(string text, TextType type);
-    LIAPI static void broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI static void broadcastText(const string& text, TextType type);
+    LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
 
 
     LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int8_t a2);

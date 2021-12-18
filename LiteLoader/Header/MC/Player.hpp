@@ -40,7 +40,7 @@ public:
     LIAPI string getClientId();
     LIAPI int getDeviceType();
 
-    LIAPI bool kick(string msg);
+    LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
     LIAPI bool sendText(string text, TextType type = TextType::RAW);
     LIAPI bool talkAs(const string& msg);
@@ -48,34 +48,34 @@ public:
     LIAPI int clearItem(string typeName);
     LIAPI bool runcmd(const string& cmd);
     LIAPI bool transferServer(const string& address, unsigned short port);
-    LIAPI bool setSidebar(std::string title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
+    LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
     LIAPI bool removeSidebar();
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 
-    LIAPI int getScore(string key);
-    LIAPI bool setScore(string key, int value);
-    LIAPI bool addScore(string key, int value);
-    LIAPI bool reduceScore(string key, int value);
-    LIAPI bool deleteScore(string key);
+    LIAPI int getScore(const string& key);
+    LIAPI bool setScore(const string& key, int value);
+    LIAPI bool addScore(const string& key, int value);
+    LIAPI bool reduceScore(const string& key, int value);
+    LIAPI bool deleteScore(const string& key);
 
     //Packet
-    LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW);
-    LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
+    LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
     LIAPI bool sendNotePacket(unsigned int tone);
-    LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnpos, int dimid, string ParticleName, int64_t EntityUniqueID = -1);
-    /*bad*/ LIAPI bool sendPlaySoundPacket(string Soundname, Vec3 Position, float Volume, float Pitch);
-    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeid, int itemid, int stacksize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {});
-    LIAPI bool sendAddEntityPacket(unsigned long long runtimeid, string entitytype, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
-    LIAPI bool sendTransferPacket(const string& address, short port);
-    LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder);
+    LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimid, string ParticleName, int64_t EntityUniqueID = -1) const;
+    /*bad*/ LIAPI bool sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const;
+    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {}) const;
+    LIAPI bool sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
+    LIAPI bool sendTransferPacket(const string& address, short port) const;
+    LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const;
     LIAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);
     LIAPI bool sendBossEventPacket(BossEvent type, string name, float percent, BossEventColour colour, int overlay = 0);
     LIAPI bool sendCommandRequestPacket(const string& cmd);
     LIAPI bool sendTextTalkPacket(const string& msg);
 
-    LIAPI bool sendRawFormPacket(unsigned formId, const string& data);
-    LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback);
+    LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
+    LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
     LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
     LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
 
