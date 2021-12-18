@@ -52,6 +52,8 @@ Certificate* Player::getCertificate() {
 }
 
 std::string Player::getRealName() {
+    if (isSimulatedPlayer())
+        return getName();
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
