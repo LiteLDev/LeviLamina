@@ -136,25 +136,19 @@ public:
 };
 
 class Vec2 {
-private:
-    static inline int iround(float x) {
-        int r = int(x);
-        if (x < 0)
-            r--;
-        return r;
-    }
-
 public:
-    int x, z;
+    float x, y;
 
-    Vec2(Vec3 l) : x(iround(l.x)), z(iround(l.z)) {}
+    Vec2(float a, float b) : x(a), y(b) {}
 
-    Vec2(int a, int b) : x(a), z(b) {}
+    inline std::string toString() const { return std::to_string(x) + "," + std::to_string(y); }
 
-    inline void operator+=(int v) {
-        x += v;
-        z += v;
-    }
+    inline Vec2 operator*(float num) const { return {x * num, y * num}; }
+
+    inline Vec2 operator+(const Vec2& b) const { return {this->x + b.x, this->y + b.y}; }
+
+    inline Vec2 operator-(const Vec2& b) const { return {this->x - b.x, this->y - b.y}; }
+
 };
 
 template<typename A, typename T>
