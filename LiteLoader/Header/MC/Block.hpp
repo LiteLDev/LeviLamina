@@ -13,11 +13,11 @@ class Block {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-	LIAPI static Block* create(string str, unsigned short tileData);
+	LIAPI static Block* create(const string& str, unsigned short tileData);
 	LIAPI static Block* create(CompoundTag* nbt);
 
-    LIAPI string getTypeName();
-	LIAPI int getId();
+    LIAPI string getTypeName() const;
+	LIAPI int getId() const;
 	LIAPI unsigned short getTileData();
     LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);

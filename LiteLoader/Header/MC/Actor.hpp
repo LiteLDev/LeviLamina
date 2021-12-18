@@ -41,7 +41,7 @@ public:
 	LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent() const;
     LIAPI Actor* getActorFromViewVector(float maxDistance);
     LIAPI BlockPos getBlockPos();
-    LIAPI BlockInstance getBlockStandingOn();
+    LIAPI BlockInstance getBlockStandingOn() const;
 
 	LIAPI bool isSimulatedPlayer() const;
 	LIAPI bool isPlayer() const;
@@ -49,7 +49,7 @@ public:
     LIAPI bool isOnGround() const;
     LIAPI bool setOnFire(int time, bool isEffect);
     LIAPI bool stopFire();
-    LIAPI bool hasTag(string tag);
+    LIAPI bool hasTag(const string& tag);
 	LIAPI bool hurtEntity(int damage);
 	LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
