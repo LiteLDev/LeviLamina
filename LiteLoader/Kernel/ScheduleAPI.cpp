@@ -10,7 +10,7 @@ using std::function;
 namespace Schedule {
 LIAPI tick_t _tick;
 
-static std::multimap<tick_t, TaskBase> tasks;
+std::multimap<tick_t, TaskBase> tasks;
 static std::deque<function<void()>> next_run;
 static std::atomic_flag cas_main = {};
 static std::atomic_flag cas_next_run = {};

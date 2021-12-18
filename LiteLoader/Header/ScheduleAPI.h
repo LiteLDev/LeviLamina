@@ -48,6 +48,8 @@ struct TaskBase {
     }
 };
 
+LIAPI extern std::multimap<tick_t, TaskBase> tasks;
+
 LIAPI bool cancel(taskid_t id);
 LIAPI taskid_t schedule(TaskBase&& task);
 LIAPI void scheduleNext(std::function<void()>&& fn);
