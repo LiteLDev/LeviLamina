@@ -2,57 +2,56 @@
 #include "MC/Item.hpp"
 #include "MC/ItemStack.hpp"
 #include "MC/Spawner.hpp"
-#include "MC/level.hpp"
+#include "MC/Level.hpp"
 #include "MC/ItemInstance.hpp"
 #include <MC/CompoundTag.hpp>
 #include <string>
+#include <utility>
 #include <vector>
+
 using namespace std;
 
 static_assert(sizeof(ItemStack) == 144);
 static_assert(sizeof(ItemInstance) == 136);
 
-ItemStack* ItemStack::create() {
+ItemStack *ItemStack::create() {
     try {
-        ItemStack* a = (ItemStack*)new char[sizeof(ItemStack)];
-        ItemStack* item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
+        auto *a = (ItemStack *) new char[sizeof(ItemStack)];
+        ItemStack *item = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
         return item;
     } catch (...) {
         return nullptr;
     }
 }
 
-ItemStack* ItemStack::create(CompoundTag* tag) {
-    ItemStack* item = create();
+ItemStack *ItemStack::create(CompoundTag *tag) {
+    ItemStack *item = create();
     if (!item)
         return nullptr;
     tag->setItemStack(item);
     return item;
 }
 
-ItemStack* ItemStack::create(std::string type, int count) {
-    CompoundTag* nbt = CompoundTag::create();
+ItemStack *ItemStack::create(std::string type, int count) {
+    CompoundTag *nbt = CompoundTag::create();
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
-    nbt->putString("Name", type);
+    nbt->putString("Name", std::move(type));
     nbt->putByte("Count", count);
     return create(nbt);
 }
 
-ItemStack ItemStack::fromItemInstance(ItemInstance const& ins)
-{
-    try
-    {
-        return ItemStack(ins);
+ItemStack ItemStack::fromItemInstance(ItemInstance const &ins) {
+    try {
+        return {ins};
     }
-    catch (...)
-    {
+    catch (...) {
         return ItemStack::EMPTY_ITEM;
     }
 }
 
-ItemStack* ItemStack::clone_s() {
-    ItemStack* a = ItemStack::create();
+ItemStack *ItemStack::clone_s() const {
+    ItemStack *a = ItemStack::create();
     *a = clone();
     return a;
 }
@@ -60,7 +59,6 @@ ItemStack* ItemStack::clone_s() {
 std::string ItemStack::getTypeName() const {
     if (isNull())
         return "";
-    auto item = getItem();
     return getItem()->getSerializedName();
 }
 
@@ -76,24 +74,24 @@ int ItemStack::getCount() const {
     return dAccess<unsigned char, 34>(this);
 }
 
-bool ItemStack::setItem(ItemStack* newItem) {
-    CompoundTag* nbt = CompoundTag::fromItemStack(newItem);
+bool ItemStack::setItem(ItemStack *newItem) {
+    CompoundTag *nbt = CompoundTag::fromItemStack(newItem);
     nbt->setItemStack(this);
     return true;
 }
 
-bool ItemStack::setLore(vector<string> lores) {
+bool ItemStack::setLore(const vector<string> &lores) {
     if (this->isNull())
         return false;
     this->setCustomLore(lores);
     return true;
 }
 
-CompoundTag* ItemStack::getNbt() {
+CompoundTag *ItemStack::getNbt() {
     return CompoundTag::fromItemStack(this);
 }
 
-bool ItemStack::setNbt(CompoundTag* nbt) {
+bool ItemStack::setNbt(CompoundTag *nbt) {
     nbt->setItemStack(this);
     return true;
 }
