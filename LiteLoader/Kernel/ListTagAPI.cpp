@@ -80,14 +80,26 @@ void ListTag::addString(const string& v) {
     add(t);
 }
 
-void ListTag::addByteArray(void* data, size_t size) {
+void ListTag::addByteArray(char data[], size_t size)
+{
     Tag* t = Tag::createTag(Tag::Type::ByteArray);
 
-    TagMemoryChunk tmc((char*)data, size);
+    TagMemoryChunk tmc(data, size);
     t->asByteArrayTag()->value() = tmc;
 
     add(t);
 }
+
+void ListTag::addIntArray(int data[], size_t size)
+{
+    Tag* t = Tag::createTag(Tag::Type::IntArray);
+
+    TagMemoryChunk tmc((char*)data, size*4);
+    t->asIntArrayTag()->value() = tmc;
+
+    add(t);
+}
+
 void ListTag::addByteArray(TagMemoryChunk tmc) {
     Tag* t = Tag::createTag(Tag::Type::ByteArray);
     t->asByteArrayTag()->value() = tmc;
@@ -95,6 +107,6 @@ void ListTag::addByteArray(TagMemoryChunk tmc) {
 }
 void ListTag::addIntArray(TagMemoryChunk tmc) {
     Tag* t = Tag::createTag(Tag::Type::IntArray);
-    t->asByteArrayTag()->value() = tmc;
+    t->asIntArrayTag()->value() = tmc;
     add(t);
 }

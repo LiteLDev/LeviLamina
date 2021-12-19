@@ -36,8 +36,8 @@ public:
         return tag;
     }
 
-    inline static ByteArrayTag* create(char *data, size_t size) {
-        TagMemoryChunk tmc((char*)data, size);
+    inline static ByteArrayTag* create(char data[], size_t size) {
+        TagMemoryChunk tmc(data, size);
         return create(tmc);
     }
 

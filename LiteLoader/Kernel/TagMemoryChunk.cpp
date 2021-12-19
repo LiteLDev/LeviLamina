@@ -12,7 +12,7 @@ TagMemoryChunk::TagMemoryChunk(char data[], size_t size)
 TagMemoryChunk::TagMemoryChunk(const TagMemoryChunk& a1)
     //: capacity(a1.capacity), size(a1.size), data(std::make_unique<char*>(new char[capacity]))
 {
-    *this = std::move(a1.copy());
+    *this = a1.copy();
 }
 
 TagMemoryChunk::TagMemoryChunk(TagMemoryChunk&& a1)
@@ -21,7 +21,7 @@ TagMemoryChunk::TagMemoryChunk(TagMemoryChunk&& a1)
 
 void TagMemoryChunk::operator=(const TagMemoryChunk& a1)
 {
-    *this = std::move(a1.copy());
+    *this = a1.copy();
 }
 
 void TagMemoryChunk::operator=(TagMemoryChunk&& a1)

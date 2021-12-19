@@ -56,9 +56,9 @@ public:
     LIAPI void addDouble(double v);
     LIAPI void addString(const std::string& v);
     LIAPI void addByteArray(TagMemoryChunk);
-    LIAPI void addByteArray(void* data, size_t size);
+    LIAPI void addByteArray(char data[], size_t size);
     LIAPI void addIntArray(TagMemoryChunk);
-    LIAPI void addIntArray(void* data, size_t size);
+    LIAPI void addIntArray(int data[], size_t size);
 
     inline vector<Tag*> get()
     {

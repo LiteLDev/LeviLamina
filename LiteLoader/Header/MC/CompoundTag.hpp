@@ -34,9 +34,10 @@ public:
 
     // put value
     LIAPI void putEnd(std::string key);
-    LIAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
     LIAPI double& putDouble(std::string key, double val);
-    LIAPI void putByteArray(std::string key, void* data, size_t size);
+    LIAPI void putByteArray(std::string key, char data[], size_t size);
+    LIAPI void putIntArray(std::string key, int data[], size_t size);
+    LIAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
 
     // get value
     LIAPI double getDouble(class gsl::basic_string_span<char const, -1> key) const;

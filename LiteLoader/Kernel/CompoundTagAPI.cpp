@@ -32,12 +32,6 @@ void CompoundTag::putEnd(std::string key) {
     put(key, std::move(*tag));
 }
 
-struct TagMemoryChunk& CompoundTag::putIntArray(std::string key, struct TagMemoryChunk val) {
-    IntArrayTag* tag = (IntArrayTag*)Tag::createTag(Tag::Type::IntArray);
-    throw("TODO");
-    return val;
-}
-
 double& CompoundTag::putDouble(std::string key, double val) {
     DoubleTag* tag = DoubleTag::create(val);
     double& value = tag->value();
@@ -45,9 +39,23 @@ double& CompoundTag::putDouble(std::string key, double val) {
     return value;
 }
 
-void CompoundTag::putByteArray(std::string key, void* data, size_t size) {
-    TagMemoryChunk tmc((char*)data, size);
+void CompoundTag::putByteArray(std::string key, char data[], size_t size)
+{
+    TagMemoryChunk tmc(data, size);
     putByteArray(key, tmc);
+}
+
+void CompoundTag::putIntArray(std::string key, int data[], size_t size)
+{
+    TagMemoryChunk tmc((char*)data, size*4);
+    putIntArray(key, tmc);
+}
+
+struct TagMemoryChunk& CompoundTag::putIntArray(std::string key, struct TagMemoryChunk val)
+{
+    IntArrayTag* tag = IntArrayTag::create(val);
+    put(key, std::move(*tag));
+    return tag->value();
 }
 
 // get value
@@ -60,8 +68,7 @@ double CompoundTag::getDouble(class gsl::basic_string_span<char const, -1> key) 
 };
 struct TagMemoryChunk const& CompoundTag::getIntArray(class gsl::basic_string_span<char const, -1> key) const {
     auto tag = const_cast<Tag*>(get(key))->asIntArrayTag();
-    throw("TODO");
-    return *(TagMemoryChunk*)tag;
+    return tag->value();
 };
 
 // get tag
@@ -80,11 +87,12 @@ class DoubleTag const* CompoundTag::getDoubleTag(class gsl::basic_string_span<ch
 class ByteArrayTag const* CompoundTag::getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asByteArrayTag();
 };
+class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const
+{
+    return const_cast<Tag*>(get(key))->asIntArrayTag();
+};
 class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asStringTag();
-};
-class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const {
-    return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
 CompoundTag* CompoundTag::fromItemStack(ItemStack* item) {
@@ -221,6 +229,23 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
     }
 }
 
+void TagToSNBT_List_Helper(tags::intarray_list_tag& res, ListTag* nbt)
+{
+    auto& list = nbt->value();
+    for (auto& tag : list)
+    {
+        auto& bytes = tag->asIntArrayTag()->value();
+
+        int* raw = (int*)bytes.data.get();
+        vector<int32_t> data;
+        data.reserve(bytes.size);
+        for (int i = 0; i < bytes.size/4; ++i)
+            data.emplace_back(raw[i]);
+
+        res.value.emplace_back(data);
+    }
+}
+
 tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
     //auto& list = nbt->value();
     //if (list.empty()) {
@@ -269,6 +294,11 @@ tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
         }
         case Tag::Type::ByteArray: {
             tags::bytearray_list_tag data;
+            TagToSNBT_List_Helper(data, nbt);
+            return data.as_tags();
+        }
+        case Tag::Type::IntArray: {
+            tags::intarray_list_tag data;
             TagToSNBT_List_Helper(data, nbt);
             return data.as_tags();
         }
@@ -339,6 +369,17 @@ void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
                     data.emplace_back(raw[i]);
 
                 res.value[key] = make_unique<tags::bytearray_tag>(data);
+                break;
+            }
+            case Tag::Type::IntArray: {
+                auto& bytes = tag.asIntArrayTag()->value();
+                int* raw = (int*)bytes.data.get();
+                vector<int32_t> data;
+                data.reserve(bytes.size);
+                for (int i = 0; i < bytes.size/4; ++i)
+                    data.emplace_back(raw[i]);
+
+                res.value[key] = make_unique<tags::intarray_tag>(data);
                 break;
             }
             case Tag::Type::List: {
@@ -422,7 +463,12 @@ void SNBTToTag_List_Helper(ListTag*& nbt, tags::string_list_tag& data) {
 
 void SNBTToTag_List_Helper(ListTag*& nbt, tags::bytearray_list_tag& data) {
     for (auto& dat : data.value)
-        nbt->addByteArray(dat.data(), dat.size());
+        nbt->addByteArray((char*)dat.data(), dat.size());
+}
+
+void SNBTToTag_List_Helper(ListTag*& nbt, tags::intarray_list_tag& data) {
+    for (auto& dat : data.value)
+        nbt->addIntArray(dat.data(), dat.size());
 }
 
 void SNBTToTag_List_Helper(ListTag*& nbt, tags::list_list_tag& data) {
@@ -455,6 +501,9 @@ void SNBTToTag_List_Helper(ListTag*& nbt, tags::list_list_tag& data) {
                 break;
             case tag_id::tag_bytearray:
                 SNBTToTag_List_Helper(tagList, *(tags::bytearray_list_tag*)dat.get());
+                break;
+            case tag_id::tag_intarray:
+                SNBTToTag_List_Helper(tagList, *(tags::intarray_list_tag*)dat.get());
                 break;
             case tag_id::tag_list:
                 SNBTToTag_List_Helper(tagList, *(tags::list_list_tag*)dat.get());
@@ -506,7 +555,12 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                 break;
             case tag_id::tag_bytearray: {
                 auto& data = ((tags::bytearray_tag*)value.get())->value;
-                nbt->putByteArray(key, data.data(), data.size());
+                nbt->putByteArray(key, (char*)data.data(), data.size());
+                break;
+            }
+            case tag_id::tag_intarray: {
+                auto& data = ((tags::intarray_tag*)value.get())->value;
+                nbt->putIntArray(key, data.data(), data.size());
                 break;
             }
             case tag_id::tag_list: {
@@ -537,6 +591,9 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                         break;
                     case tag_id::tag_bytearray:
                         SNBTToTag_List_Helper(res, *(tags::bytearray_list_tag*)data);
+                        break;
+                    case tag_id::tag_intarray:
+                        SNBTToTag_List_Helper(res, *(tags::intarray_list_tag*)data);
                         break;
                     case tag_id::tag_list:
                         SNBTToTag_List_Helper(res, *(tags::list_list_tag*)data);

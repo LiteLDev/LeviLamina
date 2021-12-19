@@ -14,7 +14,56 @@ class IntArrayTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
-TagMemoryChunk val;
+    TagMemoryChunk val;
+
+public:
+    inline TagMemoryChunk& value()
+    {
+        return dAccess<TagMemoryChunk, 8>(this);
+    }
+    inline IntArrayTag& operator=(TagMemoryChunk const& val)
+    {
+        value() = val;
+        return *this;
+    }
+
+    inline static IntArrayTag* create()
+    {
+        IntArrayTag* tag = (IntArrayTag*)Tag::createTag(Tag::Type::IntArray);
+        return tag;
+    }
+
+    inline static IntArrayTag* create(TagMemoryChunk const& val)
+    {
+        if (val.size % 4)
+            return nullptr;
+        IntArrayTag* tag = (IntArrayTag*)Tag::createTag(Tag::Type::IntArray);
+        *tag = val;
+        return tag;
+    }
+
+    inline static IntArrayTag* create(int data[], size_t size)
+    {
+        if (size % 4)
+            return nullptr;
+        TagMemoryChunk tmc((char*)data, size*4);
+        return create(tmc);
+    }
+
+    inline bool set(TagMemoryChunk const& val)
+    {
+        if (val.size % 4)
+            return false;
+        if (getTagType() != Tag::Type::IntArray)
+            return false;
+        value() = val;
+        return true;
+    }
+
+    inline TagMemoryChunk get()
+    {
+        return value();
+    }
 
 #undef AFTER_EXTRA
 
