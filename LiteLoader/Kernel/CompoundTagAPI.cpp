@@ -379,7 +379,7 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data);
 void SNBTToTag_List_Helper(ListTag*& nbt, tags::compound_list_tag& data);
 
 void SNBTToTag_List_Helper(ListTag*& nbt, tags::end_list_tag& data) {
-    nbt->addEnd();
+    //nbt->addEnd();
 }
 
 void SNBTToTag_List_Helper(ListTag*& nbt, tags::byte_list_tag& data) {
