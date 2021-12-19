@@ -83,9 +83,7 @@ void ListTag::addString(const string& v) {
 void ListTag::addByteArray(void* data, size_t size) {
     Tag* t = Tag::createTag(Tag::Type::ByteArray);
 
-    char* written = new char[size];
-    memcpy(written, data, size);
-    auto tmc = TagMemoryChunk(written, size);
+    TagMemoryChunk tmc((char*)data, size);
     t->asByteArrayTag()->value() = tmc;
 
     add(t);
