@@ -819,7 +819,7 @@ void read_compound_text(std::istream & input, tags::compound_tag & compound, con
 			);
 		}
 		std::string key = tags::read_string(input, ctxt);
-		skip_space(input);
+        skip_space(input);
 		char a = cheof(input);
 		if (a != ':')
 			throw std::runtime_error(std::string("key-value delimiter expected, got ") + a);
