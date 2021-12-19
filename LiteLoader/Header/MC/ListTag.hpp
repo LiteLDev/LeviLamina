@@ -15,6 +15,7 @@ class ListTag : public Tag {
 #define AFTER_EXTRA
 // Add Member There
 std::vector<Tag*> val;
+Tag::Type elementType;
 
 public:
     inline static ListTag* create() {
@@ -29,6 +30,11 @@ public:
         if (index < size())
             return get(index);
         return nullptr;
+    }
+
+    inline Tag::Type getElementType()
+    {
+        return elementType;
     }
 
     inline size_t getSize() { return val.size(); }

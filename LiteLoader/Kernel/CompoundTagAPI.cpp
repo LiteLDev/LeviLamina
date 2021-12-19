@@ -222,12 +222,14 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
 }
 
 tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
-    auto& list = nbt->value();
-    if (list.empty()) {
-        return tags::tag_list_tag();
-    }
+    //auto& list = nbt->value();
+    //if (list.empty()) {
+    //    return tags::tag_list_tag();
+    //}
 
-    switch (list[0]->getTagType()) {
+    switch (nbt->getElementType()) {
+        case Tag::Type::End:
+            return tags::end_list_tag().as_tags();
         case Tag::Type::Byte: {
             tags::byte_list_tag data;
             TagToSNBT_List_Helper(data, nbt);
@@ -272,7 +274,8 @@ tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
         }
         case Tag::Type::List: {
             tags::list_list_tag res;
-            for (auto& tag : list) {
+            for (auto& tag : nbt->value())
+            {
                 tags::tag_list_tag data = TagToSNBT_List_Helper((ListTag*)tag);
                 res.value.emplace_back(std::make_unique<tags::tag_list_tag>(data));
             }
