@@ -316,12 +316,6 @@ public:
     BlockInstance mNewBlockInstance;
 };
 
-class RespawnAnchorExplodeEvent : public EventTemplate<RespawnAnchorExplodeEvent> {
-public:
-    BlockInstance mBlockInstance;
-    Player* mPlayer;
-};
-
 class BlockExplodedEvent : public EventTemplate<BlockExplodedEvent> {
 public:
     BlockInstance mBlockInstance;
@@ -400,7 +394,13 @@ public:
 
 class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent> {
 public:
-    BlockInstance mBlockInstance;
+    Block* mBlock;
+    BlockPos mPos;
+    BlockSource* mRegion;
+    float mRadius;
+    float mMaxResistance;
+    bool mBreaking;
+    bool mFire;
 };
 
 
@@ -410,11 +410,11 @@ class EntityExplodeEvent : public EventTemplate<EntityExplodeEvent> {
 public:
     Actor* mActor;
     Vec3 mPos;
-    int mDimensionId;
+    BlockSource* mRegion;
     float mRadius;
-    float mRange;
-    bool mIsDestroy;
-    bool mIsFire;
+    float mMaxResistance;
+    bool mBreaking;
+    bool mFire;
 };
 
 class MobHurtEvent : public EventTemplate<MobHurtEvent> {
