@@ -1237,13 +1237,11 @@ THook(void, "?explode@Explosion@@QEAAXXZ",
         {
             BlockPos bp = pos.toBlockPos();
             BlockExplodeEvent ev{};
-            ev.mBlock = Level::getBlock(bp, bs);
+            ev.mBlockInstance = Level::getBlockInstance(bp, bs);
             ev.mBreaking = canBreaking;
             ev.mFire = genFire;
             ev.mMaxResistance = maxResistance;
-            ev.mPos = bp;
             ev.mRadius = radius;
-            ev.mRegion = bs;
             if (!ev.call())
                 return;
         }

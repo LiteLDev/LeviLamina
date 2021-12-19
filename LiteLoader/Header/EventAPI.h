@@ -394,9 +394,7 @@ public:
 
 class BlockExplodeEvent : public EventTemplate<BlockExplodeEvent> {
 public:
-    Block* mBlock;
-    BlockPos mPos;
-    BlockSource* mRegion;
+    BlockInstance mBlockInstance;
     float mRadius;
     float mMaxResistance;
     bool mBreaking;
