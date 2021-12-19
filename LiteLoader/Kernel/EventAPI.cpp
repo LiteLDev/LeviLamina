@@ -34,16 +34,7 @@ using namespace Event;
 using std::vector;
 
 class ChangeDimensionRequest;
-
-class Level;
-
 class DisconnectPacket;
-
-class ServerNetworkHandler;
-
-class BaseCommandBlock;
-
-class BlockSource;
 
 #define DeclareEventListeners(EVENT) template <> \
 EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners;
@@ -98,7 +89,6 @@ DeclareEventListeners(BlockExplodedEvent)
 DeclareEventListeners(LiquidSpreadEvent)
 DeclareEventListeners(ProjectileHitBlockEvent)
 DeclareEventListeners(HopperSearchItemEvent)
-DeclareEventListeners(RespawnAnchorExplodeEvent)
 DeclareEventListeners(HopperPushOutEvent)
 DeclareEventListeners(BlockChangedEvent)
 DeclareEventListeners(FarmLandDecayEvent)
@@ -800,22 +790,6 @@ THook(void, "?_blockChanged@BlockSource@@IEAAXAEBVBlockPos@@IAEBVBlock@@1HPEBUAc
     return original(bs, bp, a3, afterBlock, beforeBlock, a6, a7);
 }
 
-/////////////////// RespawnAnchorExplode ///////////////////
-THook(void, "?explode@RespawnAnchorBlock@@CAXAEAVPlayer@@AEBVBlockPos@@AEAVBlockSource@@AEAVLevel@@@Z",
-      Player* pl, BlockPos* bp, BlockSource* bs, Level* level)
-{
-    IF_LISTENED(RespawnAnchorExplodeEvent)
-    {
-        RespawnAnchorExplodeEvent ev{};
-        ev.mBlockInstance = Level::getBlockInstance(bp, bs);
-        ev.mPlayer = pl;
-        if (!ev.call())
-            return;
-    }
-    IF_LISTENED_END(RespawnAnchorExplodeEvent)
-    return original(pl, bp, bs, level);
-}
-
 /////////////////// BlockExploded ///////////////////
 THook(void, "?onExploded@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@PEAVActor@@@Z",
       Block* _this, BlockSource* bs, BlockPos* bp, Actor* actor)
@@ -1227,43 +1201,56 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSou
     return original(mob, ads);
 }
 
-///////////////////  EntityExplode & BlockExplode (bed) ///////////////////
-THook(void, "?explode@Level@@UEAAXAEAVBlockSource@@PEAVActor@@AEBVVec3@@M_N3M3@Z",
-      Level* _this, BlockSource* bs, Actor* actor, Vec3* pos, float power, bool isFire, bool isDestroy, float range,
-      bool a9)
+///////////////////  Entity & Block Explosion ///////////////////
+THook(void, "?explode@Explosion@@QEAAXXZ",
+    void* self)
 {
+    auto pos = *(Vec3*)(QWORD*)self;
+    auto radius = *((float*)self + 3);
+    auto actor = (Actor*)((QWORD*)self + 11);
+    auto bs = (BlockSource*)((QWORD*)self + 12);
+    auto maxResistance = *((float*)self + 26);
+    auto genFire = (bool)*((BYTE*)self + 80);
+    auto canBreaking = (bool)*((BYTE*)self + 81);
+
     IF_LISTENED(EntityExplodeEvent)
     {
         if (actor)
         {
             EntityExplodeEvent ev{};
             ev.mActor = actor;
-            ev.mPos = *pos;
-            ev.mDimensionId = bs->getDimensionId();
-            ev.mRadius = power;
-            ev.mRange = range;
-            ev.mIsDestroy = isDestroy;
-            ev.mIsFire = isFire;
+            ev.mBreaking = canBreaking;
+            ev.mFire = genFire;
+            ev.mMaxResistance = maxResistance;
+            ev.mPos = pos;
+            ev.mRadius = radius;
+            ev.mRegion = bs;
             if (!ev.call())
                 return;
         }
     }
     IF_LISTENED_END(EntityExplodeEvent)
 
-    //bed
     IF_LISTENED(BlockExplodeEvent)
     {
         if (!actor)
         {
+            BlockPos bp = pos.toBlockPos();
             BlockExplodeEvent ev{};
-            ev.mBlockInstance = Level::getBlockInstance(pos->toBlockPos(), bs);
+            ev.mBlock = Level::getBlock(bp, bs);
+            ev.mBreaking = canBreaking;
+            ev.mFire = genFire;
+            ev.mMaxResistance = maxResistance;
+            ev.mPos = bp;
+            ev.mRadius = radius;
+            ev.mRegion = bs;
             if (!ev.call())
                 return;
         }
     }
     IF_LISTENED_END(BlockExplodeEvent)
 
-    original(_this, bs, actor, pos, power, isFire, isDestroy, range, a9);
+    original(self);
 }
 
 
