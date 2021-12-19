@@ -13,6 +13,7 @@ class ModalFormRequestPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[40];
 
 #undef AFTER_EXTRA
 

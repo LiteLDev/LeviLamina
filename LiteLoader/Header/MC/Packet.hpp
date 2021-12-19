@@ -39,6 +39,10 @@ public:
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
+    inline enum StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
+    {
+        return _read(binaryStream);
+    }
 
 #undef AFTER_EXTRA
 

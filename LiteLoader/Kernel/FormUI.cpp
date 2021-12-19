@@ -63,14 +63,7 @@ bool SimpleForm::sendTo(ServerPlayer* player, Callback callback)
     SetSimpleFormBuilderData(id, make_shared<SimpleForm>(*this));
 
     string data = serialize();
-    BinaryStream wp;
-    wp.reserve(32 + data.size());
-    wp.writeUnsignedVarInt(id);
-    wp.writeString(data);
-
-    NetworkPacket<100> pkt{wp.getAndReleaseData()};
-    player->sendNetworkPacket(pkt);
-    return true;
+    return player->sendRawFormPacket(id, data);
 }
 
 //////////////////////////////// Custom Form ////////////////////////////////
@@ -215,13 +208,7 @@ bool CustomForm::sendTo(ServerPlayer* player, Callback callback)
     SetCustomFormBuilderData(id, make_shared<CustomForm>(*this));
 
     string data = serialize();
-    BinaryStream wp;
-    wp.reserve(32 + data.size());
-    wp.writeUnsignedVarInt(id);
-    wp.writeString(data);
 
-    NetworkPacket<100> pkt{wp.getAndReleaseData()};
-    player->sendNetworkPacket(pkt);
-    return true;
+    return player->sendRawFormPacket(id, data);
 }
 } // namespace Form

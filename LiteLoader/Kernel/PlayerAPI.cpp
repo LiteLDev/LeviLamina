@@ -338,13 +338,14 @@ bool Player::sendTextPacket(string text, TextType Type) const
         case TextType::JUKEBOX_POPUP:
             wp.writeString(text);
             wp.writeVarInt(0);
+            break;
         case TextType::JSON_WHISPER:
             break;
     }
     wp.writeString("");
     wp.writeString("");
     TextPacket pkt;
-    (*(TextPacket*)&pkt)._read(wp);
+    pkt.read(wp);
     sendNetworkPacket(pkt);
     return true;
 }
@@ -505,8 +506,10 @@ bool Player::sendSetDisplayObjectivePacket(const string& title, const string& na
     wp.writeString(title);
     wp.writeString("dummy");
     wp.writeVarInt(sortOrder);
-    NetworkPacket<107> pk{wp.getAndReleaseData()};
-    sendNetworkPacket(pk);
+
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SetDisplayObjective);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
@@ -602,8 +605,9 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const
     wp.writeUnsignedVarInt(formId);
     wp.writeString(data);
 
-    NetworkPacket<100> pkt{ wp.getAndReleaseData() };
-    sendNetworkPacket(pkt);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::ModalFormRequest);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
     return true;
 }
 
