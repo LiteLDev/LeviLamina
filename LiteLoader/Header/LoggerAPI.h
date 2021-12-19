@@ -118,6 +118,11 @@ public:
     int fileLevel = -1;
     int playerLevel = -1;
 
+    ~Logger()
+    {
+        setFile(nullptr);
+    }
+
     inline static void initLock()
     {
         return initLockImpl(GetCurrentModule());
