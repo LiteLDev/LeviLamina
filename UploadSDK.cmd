@@ -33,16 +33,13 @@ cd ..
 echo.
 echo [INFO] Uploading LL-SDK to GitHub finished
 echo.
-echo [INFO] Packing LL-SDK ...
 
-if [%1]==[action] (
-    cmd /c PackSDK.cmd action
-) else (
+if [%1] neq [action] (
+    echo [INFO] Packing LL-SDK ...
     start /wait cmd /c PackSDK.cmd
+    echo [INFO] Packing LL-SDK finished.
+    echo.
 )
-
-echo [INFO] Packing LL-SDK finished.
-echo.
 
 cd SDK
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
