@@ -46,6 +46,7 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
+    LIAPI bool isOP();
 
     LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
