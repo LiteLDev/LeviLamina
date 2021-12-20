@@ -58,6 +58,8 @@ public:
         locker.lock();
         for (size_t i = 0; i < c.size(); ++i)
             --c[i].leftTime;
+        if (empty)
+            return;
 
         while (true)
         {
