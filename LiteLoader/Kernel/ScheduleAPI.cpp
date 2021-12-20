@@ -5,8 +5,34 @@
 using namespace std;
 
 CsLock locker;
+atomic_uint nextTaskId = 0;
 
-class ScheduleTaskQueueType : public priority_queue<ScheduleTask>
+class ScheduleTaskData
+{
+    friend class ScheduleTaskQueueType;
+
+    unsigned int taskId;
+    int leftTime, interval, count;
+    std::function<void(void)> task;
+
+public:
+    ScheduleTaskData::ScheduleTaskData(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
+        :task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
+    { }
+
+    inline unsigned int getTaskId()
+    {
+        return taskId;
+    }
+
+    inline bool operator<(const ScheduleTaskData& t) const
+    {
+        return leftTime < t.leftTime;
+    }
+};
+
+
+class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData>
 {
 public:
     bool remove(unsigned int taskId)
@@ -35,7 +61,7 @@ public:
 
         while (true)
         {
-            const ScheduleTask& t = top();
+            const ScheduleTaskData& t = top();
             if (t.leftTime >= 0)
                 break;
 
@@ -64,14 +90,14 @@ public:
                 if (t.count < 0)
                 {
                     //Infinite Repeat
-                    ScheduleTask sche{ t };
+                    ScheduleTaskData sche{ t };
                     sche.leftTime = sche.interval;
                     push(std::move(sche));
                 }
                 else if (t.count > 0)
                 {
                     //Finite Repeat
-                    ScheduleTask sche{ t };
+                    ScheduleTaskData sche{ t };
                     sche.leftTime = sche.interval;
                     --sche.count;
                     push(std::move(sche));
@@ -84,57 +110,44 @@ public:
     }
 };
 ScheduleTaskQueueType taskQueue;
-atomic_uint nextTaskId = 0;
 
-
-ScheduleTask::ScheduleTask(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
-    :task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
-{ }
-
-bool ScheduleTask::cancel()
-{
-    locker.lock();
-    bool res = taskQueue.remove(taskId);
-    locker.unlock();
-    return res;
-}
 
 namespace Schedule
 {
     ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay)
     {
-        ScheduleTask sche(task, tickDelay, -1, -1);
+        ScheduleTaskData sche(task, tickDelay, -1, -1);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
-        return sche;
+        return ScheduleTask(sche.getTaskId());
     }
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTask sche(task, tickRepeat, tickRepeat, maxCount);
+        ScheduleTaskData sche(task, tickRepeat, tickRepeat, maxCount);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
-        return sche;
+        return ScheduleTask(sche.getTaskId());
     }
 
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTask sche(task, tickDelay, tickRepeat, maxCount);
+        ScheduleTaskData sche(task, tickDelay, tickRepeat, maxCount);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
-        return sche;
+        return ScheduleTask(sche.getTaskId());
     }
 
     ScheduleTask nextTick(std::function<void(void)> task)
     {
-        ScheduleTask sche(task, 1, -1, -1);
+        ScheduleTaskData sche(task, 1, -1, -1);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
-        return sche;
+        return ScheduleTask(sche.getTaskId());
     }
 }
 
@@ -145,3 +158,15 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
     taskQueue.tick();
 }
 
+
+ScheduleTask::ScheduleTask(unsigned int taskId)
+    :taskId(taskId)
+{ }
+
+bool ScheduleTask::cancel()
+{
+    locker.lock();
+    bool res = taskQueue.remove(taskId);
+    locker.unlock();
+    return res;
+}

@@ -27,24 +27,15 @@
 
 class ScheduleTask
 {
-    friend class ScheduleTaskQueueType;
-
     unsigned int taskId;
-    int leftTime, interval, count;
-    std::function<void(void)> task;
 
 public:
     LIAPI bool cancel();
-    LIAPI ScheduleTask(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count);
+    LIAPI ScheduleTask(unsigned int taskId);
 
     inline unsigned int getTaskId()
     {
         return taskId;
-    }
-
-    inline bool operator<(const ScheduleTask& t) const
-    {
-        return leftTime < t.leftTime;
     }
 };
 
