@@ -245,7 +245,7 @@ unsigned char Player::getClientSubId()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return -1;
-    return dAccess<unsigned char>(this, 168);
+    return dAccess<unsigned char>(this, 160);
 }
 
 float Player::getAvgPacketLoss() {
