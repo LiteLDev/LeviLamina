@@ -16,27 +16,11 @@ class IntTag : public Tag {
 int val;
 
 public:
-    inline int& value() {
-        return dAccess<int, 8>(this);
-    }
-    inline IntTag& operator=(int val) {
-        value() = val;
-        return *this;
-    }
-    inline static IntTag* create(int val = 0) {
-        IntTag* tag = (IntTag*)Tag::createTag(Tag::Type::Int);
-        *tag = val;
-        return tag;
-    }
-    inline bool set(int val) {
-        if (getTagType() != Tag::Type::Int)
-            return false;
-        value() = val;
-        return true;
-    }
-    inline int get() {
-        return value();
-    }
+    LIAPI int& value();
+    LIAPI IntTag& operator=(int val);
+    LIAPI static std::unique_ptr<IntTag> create(int val = 0);
+    LIAPI bool set(int val);
+    LIAPI int get();
 
 #undef AFTER_EXTRA
 

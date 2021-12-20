@@ -17,40 +17,13 @@ class ByteArrayTag : public Tag {
 TagMemoryChunk val;
 
 public:
-    inline TagMemoryChunk& value() {
-        return dAccess<TagMemoryChunk, 8>(this);
-    }
-    inline ByteArrayTag& operator=(TagMemoryChunk const& val) {
-        value() = val;
-        return *this;
-    }
-
-    inline static ByteArrayTag* create() {
-        ByteArrayTag* tag = (ByteArrayTag*)Tag::createTag(Tag::Type::ByteArray);
-        return tag;
-    }
-
-    inline static ByteArrayTag* create(TagMemoryChunk const& val) {
-        ByteArrayTag* tag = (ByteArrayTag*)Tag::createTag(Tag::Type::ByteArray);
-        *tag = val;
-        return tag;
-    }
-
-    inline static ByteArrayTag* create(char data[], size_t size) {
-        TagMemoryChunk tmc(data, size);
-        return create(tmc);
-    }
-
-    inline bool set(TagMemoryChunk const& val) {
-        if (getTagType() != Tag::Type::ByteArray)
-            return false;
-        value() = val;
-        return true;
-    }
-
-    inline TagMemoryChunk get() {
-        return value();
-    }
+    LIAPI TagMemoryChunk& value();
+    LIAPI ByteArrayTag& operator=(TagMemoryChunk const& val);
+    LIAPI static std::unique_ptr<ByteArrayTag> create();
+    LIAPI static std::unique_ptr<ByteArrayTag> create(TagMemoryChunk const& val);
+    LIAPI static std::unique_ptr<ByteArrayTag> create(char data[], size_t size);
+    LIAPI bool set(TagMemoryChunk const& val);
+    LIAPI TagMemoryChunk get();
 
 #undef AFTER_EXTRA
 

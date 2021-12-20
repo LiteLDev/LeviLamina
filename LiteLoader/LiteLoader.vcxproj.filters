@@ -246,6 +246,36 @@
     <ClCompile Include="Kernel\FormPacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\StringTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ShortTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\IntTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\IntArrayTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FloatTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EndTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Int64TagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DoubleTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ByteTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ByteArrayTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

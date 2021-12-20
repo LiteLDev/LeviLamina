@@ -24,7 +24,7 @@ ItemStack *ItemStack::create() {
     }
 }
 
-ItemStack *ItemStack::create(CompoundTag *tag) {
+ItemStack *ItemStack::create(std::unique_ptr<CompoundTag> tag) {
     ItemStack *item = create();
     if (!item)
         return nullptr;
@@ -33,12 +33,12 @@ ItemStack *ItemStack::create(CompoundTag *tag) {
 }
 
 ItemStack *ItemStack::create(std::string type, int count) {
-    CompoundTag *nbt = CompoundTag::create();
+    auto nbt = CompoundTag::create();
     nbt->putByte("WasPickedUp", 0);
     nbt->putShort("Damage", 0);
     nbt->putString("Name", std::move(type));
     nbt->putByte("Count", count);
-    return create(nbt);
+    return create(std::make_unique<CompoundTag>((CompoundTag*)nbt.release()));
 }
 
 ItemStack ItemStack::fromItemInstance(ItemInstance const &ins) {
@@ -75,7 +75,7 @@ int ItemStack::getCount() const {
 }
 
 bool ItemStack::setItem(ItemStack *newItem) {
-    CompoundTag *nbt = CompoundTag::fromItemStack(newItem);
+    auto nbt = CompoundTag::fromItemStack(newItem);
     nbt->setItemStack(this);
     return true;
 }
@@ -87,11 +87,11 @@ bool ItemStack::setLore(const vector<string> &lores) {
     return true;
 }
 
-CompoundTag *ItemStack::getNbt() {
+std::unique_ptr<CompoundTag> ItemStack::getNbt() {
     return CompoundTag::fromItemStack(this);
 }
 
-bool ItemStack::setNbt(CompoundTag *nbt) {
+bool ItemStack::setNbt(std::unique_ptr<CompoundTag> nbt) {
     nbt->setItemStack(this);
     return true;
 }

@@ -52,11 +52,11 @@ unsigned short Block::getTileData() {
     return 0;
 }
 
-CompoundTag* Block::getNbt() {
+std::unique_ptr<CompoundTag> Block::getNbt() {
     return CompoundTag::fromBlock(this);
 }
 
-bool Block::setNbt(CompoundTag* nbt) {
+bool Block::setNbt(std::unique_ptr<CompoundTag> nbt) {
     nbt->setBlock(this);
     return true;
 }

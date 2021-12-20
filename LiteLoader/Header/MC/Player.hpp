@@ -58,8 +58,8 @@ public:
     LIAPI bool transferServer(const string& address, unsigned short port);
     LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
     LIAPI bool removeSidebar();
-    LIAPI CompoundTag* getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
+    LIAPI std::unique_ptr<CompoundTag> getNbt();
+    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
 
     LIAPI int getScore(const string& key);
     LIAPI bool setScore(const string& key, int value);

@@ -89,13 +89,6 @@ IntArrayTag* Tag::asIntArrayTag() {
     return nullptr;
 }
 
-Tag* Tag::createTag(Tag::Type t) {
-    Tag* tag = 0;
-    SymCall("?newTag@Tag@@SA?AV?$unique_ptr@VTag@@U?$default_delete@VTag@@@std@@@std@@W4Type@1@@Z",
-            void, Tag**, Tag::Type)(&tag, t);
-    return tag;
-}
-
 Tag::Type Tag::getTagType() const {
     return (Tag::Type)getId();
 }

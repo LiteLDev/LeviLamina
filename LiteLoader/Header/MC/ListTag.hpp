@@ -18,26 +18,12 @@ std::vector<Tag*> val;
 Tag::Type elementType;
 
 public:
-    inline static ListTag* create() {
-        return (ListTag*)Tag::createTag(Tag::Type::List);
-    }
-
-    inline std::vector<Tag*>& value() {
-        return dAccess<std::vector<Tag*>, 8>(this);
-    }
-
-    inline Tag* operator[](int index) {
-        if (index < size())
-            return get(index);
-        return nullptr;
-    }
-
-    inline Tag::Type getElementType()
-    {
-        return elementType;
-    }
-
-    inline size_t getSize() { return val.size(); }
+    LIAPI static std::unique_ptr<ListTag> create();
+    LIAPI std::vector<Tag*>& value();
+    LIAPI Tag* operator[](int index);
+    LIAPI Tag::Type getElementType();
+    LIAPI size_t getSize();
+    LIAPI vector<Tag*> get();
 
     // get value
     LIAPI unsigned char getByte(int) const;
@@ -60,10 +46,6 @@ public:
     LIAPI void addIntArray(TagMemoryChunk);
     LIAPI void addIntArray(int data[], size_t size);
 
-    inline vector<Tag*> get()
-    {
-        return value();
-    }
 
 #undef AFTER_EXTRA
 

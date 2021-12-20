@@ -220,11 +220,11 @@ std::pair<BlockPos, int> Player::getRespawnPosition() {
     return {bp, dimId};
 }
 
-CompoundTag* Player::getNbt() {
+std::unique_ptr<CompoundTag> Player::getNbt() {
     return CompoundTag::fromPlayer(this);
 }
 
-bool Player::setNbt(CompoundTag* nbt) {
+bool Player::setNbt(std::unique_ptr<CompoundTag> nbt) {
     nbt->setPlayer(this);
     return true;
 }

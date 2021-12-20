@@ -119,11 +119,11 @@ bool Actor::rename(const string& name) {
     return refreshActorData();
 }
 
-CompoundTag* Actor::getNbt() {
+std::unique_ptr<CompoundTag> Actor::getNbt() {
     return CompoundTag::fromActor(this);
 }
 
-bool Actor::setNbt(CompoundTag* nbt) {
+bool Actor::setNbt(std::unique_ptr<CompoundTag> nbt) {
     return nbt->setActor(this);
 }
 

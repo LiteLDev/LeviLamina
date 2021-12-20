@@ -18,8 +18,8 @@ class BlockActor {
 public:
     
     LIAPI bool refreshData();
-    LIAPI CompoundTag* getNbt();
-    LIAPI bool setNbt(CompoundTag* nbt);
+    LIAPI std::unique_ptr<CompoundTag> getNbt();
+    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
     static unsigned int getBlockEntityType(Block* block);
 
 #undef AFTER_EXTRA

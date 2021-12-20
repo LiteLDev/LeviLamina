@@ -12,10 +12,10 @@ bool BlockActor::refreshData() {
     return true;
 }
 
-CompoundTag* BlockActor::getNbt() {
+std::unique_ptr<CompoundTag> BlockActor::getNbt() {
     return CompoundTag::fromBlockActor(this);
 }
 
-bool BlockActor::setNbt(CompoundTag* nbt) {
+bool BlockActor::setNbt(std::unique_ptr<CompoundTag> nbt) {
     return nbt->setBlockActor(this);
 }

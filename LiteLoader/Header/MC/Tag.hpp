@@ -53,12 +53,7 @@ public:
         Compound,
         IntArray,
     };
-    //MCAPI static std::string getTagName(enum Tag::Type);
-    //MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
-    //MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
-    //MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
-    LIAPI static Tag* createTag(Tag::Type t);
     LIAPI Type getTagType() const;
 
     //value
