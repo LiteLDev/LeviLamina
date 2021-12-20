@@ -13,7 +13,9 @@ class ModalFormRequestPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-    char filler[40];
+public:
+    int formId;
+    std::string data;
 
 #undef AFTER_EXTRA
 

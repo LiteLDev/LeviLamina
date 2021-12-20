@@ -43,6 +43,10 @@ public:
     {
         return _read(binaryStream);
     }
+protected:
+    std::string toDebugString() {
+        return fmt::format("{}({})", getName(), getId());
+    }
 
 #undef AFTER_EXTRA
 

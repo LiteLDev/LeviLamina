@@ -22,6 +22,13 @@ class Player : public Mob {
 #define AFTER_EXTRA
 // Add new members to class
 public:
+    enum PositionMode : char{
+        NORMAL,
+        RESPAWN,
+        TELEPORT,
+        HEAD_ROTATION,
+    };
+
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();
@@ -39,7 +46,6 @@ public:
     LIAPI float getAvgPacketLoss();
     LIAPI string getClientId();
     LIAPI int getDeviceType();
-    LIAPI bool isOP();
 
     LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
@@ -51,7 +57,7 @@ public:
     LIAPI bool transferServer(const string& address, unsigned short port);
     LIAPI bool setSidebar(const std::string& title, const std::vector<std::pair<std::string, int>>& data, ObjectiveSortOrder sortOrder);
     LIAPI bool removeSidebar();
-    LIAPI CompoundTag* getNbt(); 
+    LIAPI CompoundTag* getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 
     LIAPI int getScore(const string& key);

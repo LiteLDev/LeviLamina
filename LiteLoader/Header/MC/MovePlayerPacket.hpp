@@ -7,13 +7,36 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum TeleportationCause {
+    UNKNOWN,
+    PROJECTILE,
+    CHORUS_FRUIT,
+    COMMAND,
+    BEHAVIOR,
+};
 #undef BEFORE_EXTRA
 
 class MovePlayerPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    ActorRuntimeID runtimeId;
+    Vec3 position;
+    float pitch;
+    float yaw;
+    float headYaw;
+    Player::PositionMode mode;
+    bool onGround;
+    ActorRuntimeID ridingRuntimeId;
+    TeleportationCause teleportationCause;
+    int entityType;
+    long tick;
+    
+    std::string toDebugString() {
+        return fmt::format("{}: pos: {}, mode: {}, cause: {}",
+            __super::toDebugString(), position.toString(), (int)mode, int(teleportationCause));
+    }
 
 #undef AFTER_EXTRA
 
