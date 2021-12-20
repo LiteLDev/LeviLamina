@@ -1462,16 +1462,13 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
 ////////////// ServerStopped //////////////
 THook(void, "??1DedicatedServer@@UEAA@XZ", void* a)
 {
-    original(a);
-    Global<Level> = Global<Minecraft>->getLevel();
-    Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
-    Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
     IF_LISTENED(ServerStoppedEvent)
-        {
-            ServerStoppedEvent ev{};
-            ev.call();
-        }
+    {
+        ServerStoppedEvent ev{};
+        ev.call();
+    }
     IF_LISTENED_END(ServerStoppedEvent)
+    original(a);
 }
 
 ////////////// RegCmd //////////////
