@@ -244,6 +244,14 @@ string Player::getUuid() {
     return uuidStr;
 }
 
+unsigned char Player::getClientSubId()
+{
+    auto ueic = getUserEntityIdentifierComponent();
+    if (!ueic)
+        return 0;
+    return dAccess<unsigned char>(this, 168);
+}
+
 float Player::getAvgPacketLoss() {
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
 }

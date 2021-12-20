@@ -32,6 +32,7 @@ public:
     LIAPI std::string getName();
     LIAPI std::string getRealName();
     LIAPI std::string getUuid();
+    LIAPI unsigned char getClientSubId();
     LIAPI string getDeviceTypeName();
     LIAPI int getAvgPing();
     LIAPI int getLastPing();
