@@ -1,6 +1,8 @@
 @echo off
+setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
+
 
 rem Process System Proxy
 for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable') do (
