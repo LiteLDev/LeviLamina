@@ -39,7 +39,6 @@ public:
     LIAPI std::string getIP();
     LIAPI string getLanguageCode();
     LIAPI string getServerAddress();
-    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI NetworkIdentifier* getNetworkIdentifier();
     LIAPI Certificate* getCertificate();
     LIAPI Container* getEnderChestContainer();
