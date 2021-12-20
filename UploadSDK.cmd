@@ -36,7 +36,7 @@ echo.
 echo [INFO] Packing LL-SDK ...
 
 if [%1]==[action] (
-    PackSDK.cmd
+    PackSDK.cmd action
 ) else (
     start /wait cmd /c PackSDK.cmd
 )
