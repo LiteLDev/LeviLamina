@@ -13,6 +13,19 @@ class ShowCreditsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum CreditsState :int {
+        START_CREDITS,
+        END_CREDITS,
+    };
+    ActorRuntimeID runtimeId;
+    CreditsState state;
+
+    std::string toDebugString() {
+        return fmt::format("{}: state: {}", __super::toDebugString(),
+            state == START_CREDITS ? "START_CREDITS" : "END_CREDITS");
+    }
+
 
 #undef AFTER_EXTRA
 

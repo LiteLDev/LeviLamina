@@ -6,14 +6,40 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+enum PlayerRespawnState :char {
+    SERVER_SEARCHING = 0,
+    SERVER_READY,
+    CLIENT_READY,
+};
 #undef BEFORE_EXTRA
 
 class RespawnPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    Vec3 respawnPosition;
+    PlayerRespawnState respawnState;
+    ActorRuntimeID runtimeId;
+    static std::string getStateString(PlayerRespawnState state) {
+#define CASE_ENUM(var) case PlayerRespawnState::var:\
+return #var;
+        switch (state)
+        {
+            CASE_ENUM(SERVER_SEARCHING);
+            CASE_ENUM(SERVER_READY);
+            CASE_ENUM(CLIENT_READY);
+        default:
+            break;
+        }
+        return fmt::format("Unknown({})",(int)state);
+#undef CASE_ENUM
+    }
+    std::string toDebugString() {
+        return fmt::format("{}({}): position: ({}), state: {}, runtimeId: {}",
+            getName(), (int)getId(),
+            respawnPosition.toString(), getStateString(respawnState), runtimeId.id);
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RESPAWNPACKET
