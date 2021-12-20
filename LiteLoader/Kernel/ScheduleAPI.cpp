@@ -1,6 +1,7 @@
 #include <ScheduleAPI.h>
 #include <Utils/CsLock.h>
 #include <queue>
+#include <atomic>
 using namespace std;
 
 CsLock locker;
@@ -22,6 +23,7 @@ public:
                 std::make_heap(c.begin(), c.end(), comp);  //重排二叉堆
                 removed = true;
             }
+        locker.unlock();
         return removed;
     }
 
@@ -82,7 +84,7 @@ public:
     }
 };
 ScheduleTaskQueueType taskQueue;
-unsigned int nextTaskId = 0;
+atomic_uint nextTaskId = 0;
 
 
 ScheduleTask::ScheduleTask(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
@@ -110,7 +112,7 @@ namespace Schedule
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTask sche(task, 0, tickRepeat, maxCount);
+        ScheduleTask sche(task, tickRepeat, tickRepeat, maxCount);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
