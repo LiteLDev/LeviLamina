@@ -490,7 +490,7 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::intarray_list_tag& da
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::list_list_tag& data) {
     for (auto& dat : data.value)
     {
-        unique_ptr<ListTag> tagList = make_unique<ListTag>(dynamic_cast<ListTag*>(ListTag::create().release()));
+        unique_ptr<ListTag> tagList = ListTag::create();
         switch (dat->element_id()) {
             case tag_id::tag_end:
                 SNBTToTag_List_Helper(tagList, *(tags::end_list_tag*)dat.get());
@@ -531,15 +531,15 @@ void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::list_list_tag& data) 
             default:
                 break;
         }
-        nbt->add(make_unique<Tag>(dynamic_cast<Tag*>(tagList.release())));
+        nbt->add(Tag::asTag(std::move(tagList)));
     }
 }
 
 void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::compound_list_tag& data) {
     for (auto& dat : data.value) {
-        auto tagComp = make_unique<CompoundTag>(dynamic_cast<CompoundTag*>(CompoundTag::create().release()));
+        auto tagComp = CompoundTag::create();
         SNBTToTag_Compound_Helper(tagComp, dat);
-        nbt->add(make_unique<Tag>(dynamic_cast<Tag*>(tagComp.release())));
+        nbt->add(Tag::asTag(std::move(tagComp)));
     }
 }
 
@@ -581,7 +581,7 @@ void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag&
                 break;
             }
             case tag_id::tag_list: {
-                unique_ptr<ListTag> res = make_unique<ListTag>(dynamic_cast<ListTag*>(ListTag::create().release()));
+                unique_ptr<ListTag> res = ListTag::create();
 
                 tags::list_tag* data = (tags::list_tag*)value.get();
                 switch (data->element_id()) {
@@ -621,14 +621,14 @@ void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag&
                     default:
                         break;
                 }
-                nbt->put(key, make_unique<Tag>(dynamic_cast<Tag*>(res.release())));
+                nbt->put(key, Tag::asTag(std::move(res)));
                 break;
             }
             case tag_id::tag_compound: {
-                auto res = make_unique<CompoundTag>(dynamic_cast<CompoundTag*>(CompoundTag::create().release()));
+                auto res = CompoundTag::create();
                 tags::compound_tag* data = (tags::compound_tag*)value.get();
                 SNBTToTag_Compound_Helper(res, *data);
-                nbt->put(key, make_unique<Tag>(dynamic_cast<Tag*>(res.release())));
+                nbt->put(key, Tag::asTag(std::move(res)));
                 break;
             }
         }
@@ -640,9 +640,9 @@ std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(const string& snbt) {
     tags::compound_tag root(true);
     sin >> contexts::mojangson >> root;
 
-    auto res = make_unique<CompoundTag>(dynamic_cast<CompoundTag*>(CompoundTag::create().release()));
+    auto res = CompoundTag::create();
     SNBTToTag_Compound_Helper(res, root);
-    return std::unique_ptr<CompoundTag>(dynamic_cast<CompoundTag*>(res.release()));;
+    return res;
 }
 
 //////////////////// From Binary ////////////////////

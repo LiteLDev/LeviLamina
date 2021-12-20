@@ -38,7 +38,7 @@ ItemStack *ItemStack::create(std::string type, int count) {
     nbt->putShort("Damage", 0);
     nbt->putString("Name", std::move(type));
     nbt->putByte("Count", count);
-    return create(std::make_unique<CompoundTag>((CompoundTag*)nbt.release()));
+    return create(std::move(nbt));
 }
 
 ItemStack ItemStack::fromItemInstance(ItemInstance const &ins) {

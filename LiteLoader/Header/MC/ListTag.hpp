@@ -32,7 +32,6 @@ public:
     LIAPI TagMemoryChunk getByteArray(int) const;
 
 
-    LIAPI void add(Tag* t);
     LIAPI void addEnd();
     LIAPI void addByte(unsigned char v);
     LIAPI void addShort(short v);

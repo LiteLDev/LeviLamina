@@ -26,16 +26,12 @@ std::unique_ptr<IntArrayTag> IntArrayTag::create(TagMemoryChunk const& val)
 
 std::unique_ptr<IntArrayTag> IntArrayTag::create(int data[], size_t size)
 {
-    if (size % 4)
-        return nullptr;
     TagMemoryChunk tmc((char*)data, size * 4);
     return create(tmc);
 }
 
 bool IntArrayTag::set(TagMemoryChunk const& val)
 {
-    if (val.size % 4)
-        return false;
     if (getTagType() != Tag::Type::IntArray)
         return false;
     value() = val;

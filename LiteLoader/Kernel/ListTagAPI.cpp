@@ -54,14 +54,6 @@ TagMemoryChunk ListTag::getByteArray(int index) const {
     return get(index)->asByteArrayTag()->value();
 };
 
-
-void ListTag::add(Tag* t) {
-    void (ListTag::*func)(std::unique_ptr<class Tag>) = &ListTag::add;
-    void (ListTag::*rv)(Tag**);
-    *(void**)&rv = *(void**)&func;
-    (this->*rv)(&t);
-}
-
 void ListTag::addEnd() {
     add(EndTag::create());
 }
@@ -101,7 +93,7 @@ void ListTag::addByteArray(char data[], size_t size)
 
 void ListTag::addIntArray(int data[], size_t size)
 {
-    add(IntArrayTag::create(data, size));
+    add(Tag::asTag(IntArrayTag::create(data, size)));
 }
 
 void ListTag::addByteArray(TagMemoryChunk tmc) {
