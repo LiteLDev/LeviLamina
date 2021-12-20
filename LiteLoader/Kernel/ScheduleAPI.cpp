@@ -85,8 +85,8 @@ ScheduleTaskQueueType taskQueue;
 unsigned int nextTaskId = 0;
 
 
-ScheduleTask::ScheduleTask(unsigned long long delay, unsigned long long interval, int count)
-    :leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
+ScheduleTask::ScheduleTask(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
+    :task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
 { }
 
 bool ScheduleTask::cancel()
@@ -101,36 +101,36 @@ namespace Schedule
 {
     ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay)
     {
-        ScheduleTask sche(tickDelay, -1, -1);
+        ScheduleTask sche(task, tickDelay, -1, -1);
         locker.lock();
-        taskQueue.push(std::move(sche));
+        taskQueue.push(sche);
         locker.unlock();
         return sche;
     }
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTask sche(0, tickRepeat, maxCount);
+        ScheduleTask sche(task, 0, tickRepeat, maxCount);
         locker.lock();
-        taskQueue.push(std::move(sche));
+        taskQueue.push(sche);
         locker.unlock();
         return sche;
     }
 
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTask sche(tickDelay, tickRepeat, maxCount);
+        ScheduleTask sche(task, tickDelay, tickRepeat, maxCount);
         locker.lock();
-        taskQueue.push(std::move(sche));
+        taskQueue.push(sche);
         locker.unlock();
         return sche;
     }
 
     ScheduleTask nextTick(std::function<void(void)> task)
     {
-        ScheduleTask sche(1, -1, -1);
+        ScheduleTask sche(task, 1, -1, -1);
         locker.lock();
-        taskQueue.push(std::move(sche));
+        taskQueue.push(sche);
         locker.unlock();
         return sche;
     }

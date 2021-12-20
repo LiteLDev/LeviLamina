@@ -35,7 +35,7 @@ class ScheduleTask
 
 public:
     LIAPI bool cancel();
-    LIAPI ScheduleTask(unsigned long long delay, unsigned long long interval, int count);
+    LIAPI ScheduleTask(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count);
 
     inline unsigned int getTaskId()
     {
