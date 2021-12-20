@@ -34,10 +34,6 @@
 #include <EventAPI.h>
 #include <bitset>
 
-UserEntityIdentifierComponent* Player::getUserEntityIdentifierComponent() {
-    return Mob::getUserEntityIdentifierComponent();
-}
-
 NetworkIdentifier* Player::getNetworkIdentifier() {
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
@@ -248,7 +244,7 @@ unsigned char Player::getClientSubId()
 {
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
-        return 0;
+        return -1;
     return dAccess<unsigned char>(this, 168);
 }
 

@@ -23,7 +23,6 @@ struct JumpPreventionResult {
 
 public:
 
-    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI bool refreshInventory();
 
 #undef AFTER_EXTRA
