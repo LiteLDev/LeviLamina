@@ -36,8 +36,8 @@ return #var;
 #undef CASE_ENUM
     }
     std::string toDebugString() {
-        return fmt::format("{}({}): position: ({}), state: {}, runtimeId: {}",
-            getName(), (int)getId(),
+        return fmt::format("{}: position: ({}), state: {}, runtimeId: {}",
+            __super::toDebugString(),
             respawnPosition.toString(), getStateString(respawnState), runtimeId.id);
     }
 #undef AFTER_EXTRA
