@@ -35,7 +35,11 @@ echo [INFO] Uploading LL-SDK to GitHub finished
 echo.
 echo [INFO] Packing LL-SDK ...
 
-start /wait cmd /c PackSDK.cmd
+if [%1]==[action] (
+    PackSDK.cmd
+) else (
+    start /wait cmd /c PackSDK.cmd
+)
 
 echo [INFO] Packing LL-SDK finished.
 echo.
