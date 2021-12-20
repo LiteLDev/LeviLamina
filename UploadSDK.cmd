@@ -15,7 +15,7 @@ for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\
 ) 
 
 
-echo [INFO] Upgrading LL-SDK to GitHub ...
+echo [INFO] Uploading LL-SDK to GitHub ...
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
 if not exist SDK/Header/ (
@@ -28,7 +28,7 @@ cd SDK
 git checkout -q %LL_SDK_NOW_BRANCH%
 cd ..
 
-echo [INFO] Upgrading LL-SDK to GitHub finished
+echo [INFO] Uploading LL-SDK to GitHub finished
 echo.
 echo [INFO] Packing LL-SDK ...
 
