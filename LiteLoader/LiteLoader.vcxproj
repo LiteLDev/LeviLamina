@@ -144,6 +144,7 @@
     <ClInclude Include="Header\MC\MinecraftCommands.hpp" />
     <ClInclude Include="Header\MC\RakNet.hpp" />
     <ClInclude Include="Header\MC\Scripting.hpp" />
+    <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\MC\WebToken.hpp" />
     <ClInclude Include="Header\MC\Actor.hpp" />
     <ClInclude Include="Header\MC\Block.hpp" />
@@ -241,7 +242,7 @@
     <ClInclude Include="Header\HookAPI.h" />
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
-    <ClInclude Include="Header\Utils\GlobalService.h" />
+    <ClInclude Include="Header\GlobalServiceAPI.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\Optional.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />

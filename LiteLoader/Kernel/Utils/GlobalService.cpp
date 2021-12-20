@@ -1,7 +1,7 @@
 #include <Global.h>
 #include <MC/Level.hpp>
 #include <MC/Minecraft.hpp>
-#include <Utils/GlobalService.h>
+#include <GlobalServiceAPI.h>
 
 THook(void, "?initAsDedicatedServer@Minecraft@@QEAAXXZ", Minecraft* mc) {
     Global<Minecraft> = mc;
