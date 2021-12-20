@@ -8,11 +8,9 @@ echo [INFO] Upgrading LL-SDK to GitHub ...
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
 if not exist SDK/Header/ (
-    echo [WARNING] SDK Directory no found. Pulling From Remote...
+    echo [WARNING] SDK files no found. Pulling from remote...
     echo.
-    rem git submodule add --name SDK -- %LL_SDK_REMOTE_PATH% SDK 
     git submodule update --init --recursive
-    echo.
 )
 
 cd SDK
@@ -42,10 +40,10 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     cd ..
     git add SDK
     git commit -a -m "Update LiteLoader SDK"
-    echo.
-    echo [INFO] Pushing to origin...
-    echo.
-    git push origin %LL_SDK_NOW_BRANCH%
+    rem echo.
+    rem echo [INFO] Pushing to origin...
+    rem echo.
+    rem git push origin %LL_SDK_NOW_BRANCH%
     echo.
     echo [INFO] Upload finished.
     echo.
