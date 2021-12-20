@@ -1451,6 +1451,9 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
+
+    LL::globalConfig.isServerRunning = true;
+
     IF_LISTENED(ServerStartedEvent)
     {
         ServerStartedEvent ev{};

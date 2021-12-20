@@ -6,6 +6,10 @@
 // Schedule future callback plans
 //
 // [Usage]
+// 
+//   Schedule::nextTick([](){
+//      Logger::Error("hello");
+//   }, 20);                        // Delay this callback to next game tick (20 ticks = 1 second)
 //
 //   Schedule::delay([](){
 //      Logger::Error("hello");
