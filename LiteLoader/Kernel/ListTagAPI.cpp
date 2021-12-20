@@ -21,18 +21,32 @@ std::vector<Tag*>& ListTag::value() {
     return dAccess<std::vector<Tag*>, 8>(this);
 }
 
-Tag* ListTag::operator[](int index) {
+Tag const* ListTag::operator[](int index) const
+{
     if (index < size())
         return get(index);
     return nullptr;
 }
 
-Tag::Type ListTag::getElementType()
+Tag::Type ListTag::getElementType() const
 {
     return elementType;
 }
 
-size_t ListTag::getSize() { return val.size(); }
+size_t ListTag::getSize() const
+{
+    return val.size();
+}
+
+std::vector<Tag*>::const_iterator ListTag::begin() const
+{
+    return val.begin();
+}
+
+std::vector<Tag*>::const_iterator ListTag::end() const
+{
+    return val.end();
+}
 
 vector<Tag*> ListTag::get()
 {

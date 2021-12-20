@@ -20,9 +20,9 @@ Tag::Type elementType;
 public:
     LIAPI static std::unique_ptr<ListTag> create();
     LIAPI std::vector<Tag*>& value();
-    LIAPI Tag* operator[](int index);
-    LIAPI Tag::Type getElementType();
-    LIAPI size_t getSize();
+    LIAPI Tag const* operator[](int index) const;
+    LIAPI Tag::Type getElementType() const;
+    LIAPI size_t getSize() const;
     LIAPI vector<Tag*> get();
 
     // get value
@@ -44,7 +44,9 @@ public:
     LIAPI void addByteArray(char data[], size_t size);
     LIAPI void addIntArray(TagMemoryChunk);
     LIAPI void addIntArray(int data[], size_t size);
-
+    
+    LIAPI std::vector<Tag*>::const_iterator begin() const;
+    LIAPI std::vector<Tag*>::const_iterator end() const;
 
 #undef AFTER_EXTRA
 

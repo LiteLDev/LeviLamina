@@ -47,7 +47,7 @@ public:
     LIAPI class IntArrayTag const* getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI Tag* operator[](class gsl::basic_string_span<char const, -1> key);
+    LIAPI class Tag* operator[](class gsl::basic_string_span<char const, -1> key);
 
     // io
     LIAPI void setItemStack(ItemStack* item);
