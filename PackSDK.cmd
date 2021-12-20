@@ -23,6 +23,7 @@ copy /Y x64\Release\*.pdb SDK\Pdb
 xcopy Tools\llvm-dlltool-msys2\* SDK\Tools\llvm-dlltool-msys2 /E /Q /Y
 copy /Y Tools\LibraryBuilder.exe SDK\Tools
 copy /Y Tools\SymDB2.exe SDK\Tools
+copy /Y Tools\UpgradeSDK.cmd SDK\Tools
 
 if [%1] neq [action] goto Zipped
 echo.
