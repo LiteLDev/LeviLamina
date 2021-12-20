@@ -12,5 +12,7 @@ jobs:
     - name: Update LL-SDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
+        git config --global user.email "LiteLDev@litebds.com"
+        git config --global user.name "LiteLDev"
         UploadSDK.cmd action
       shell: cmd
