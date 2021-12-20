@@ -64,6 +64,8 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     goto Finish
 ) else (
+    git add SDK
+    git push origin %LL_SDK_NOW_BRANCH%
     echo.
     echo.
     echo [INFO] No modified files found.
