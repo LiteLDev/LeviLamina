@@ -45,10 +45,16 @@ enum PlayerActionType {
 #undef BEFORE_EXTRA
 
 class PlayerActionPacket : public Packet {
+public:
     ActorRuntimeID runtimeId;
     PlayerActionType actionType;
     BlockPos position;
     FaceID blockFace;
+    std::string toDebugString() {
+        return fmt::format("{}({}): runtimeId: {}, actionType: {}, position: {}, blockFace: {}",
+            getName(), (int)getId(),
+            runtimeId.id, (int)actionType, position.toString(), (int)blockFace);
+    }
 
 #define AFTER_EXTRA
 // Add Member There
