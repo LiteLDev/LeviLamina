@@ -1,0 +1,16 @@
+name: Auto Update LL-SDK
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update LL-SDK
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        UploadSDK.cmd action
+      shell: cmd
