@@ -256,6 +256,11 @@ int Player::getDeviceType() {
     return getPlatform();
 }
 
+bool Player::isOP()
+{
+    return (int)getPlayerPermissionLevel() >= 2;
+}
+
 bool Player::crashClient() {
     auto pkt = MinecraftPackets::createPacket(58);
     dAccess<bool, 56>(pkt.get()) = 1;

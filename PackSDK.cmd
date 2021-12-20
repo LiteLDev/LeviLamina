@@ -1,6 +1,9 @@
 @echo off
 
-rmdir SDK /S /Q
+rmdir SDK\Header /S /Q 2>nul
+rmdir SDK\Pdb /S /Q 2>nul
+rmdir SDK\Lib /S /Q 2>nul
+rmdir SDK\Tools /S /Q 2>nul
 
 echo [INFO] Packing LL-SDK...
 echo.
