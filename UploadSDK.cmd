@@ -50,11 +50,11 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     git push origin %LL_SDK_NOW_BRANCH%
     cd ..
     git add SDK
-    git commit -a -m "Update LiteLoader SDK"
-    rem echo.
-    rem echo [INFO] Pushing to origin...
-    rem echo.
-    rem git push origin %LL_SDK_NOW_BRANCH%
+    git commit -m "Update LiteLoader SDK"
+    echo.
+    echo [INFO] Pushing to origin...
+    echo.
+    git push origin %LL_SDK_NOW_BRANCH%
     echo.
     echo [INFO] Upload finished.
     echo.
