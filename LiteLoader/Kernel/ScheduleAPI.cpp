@@ -81,7 +81,6 @@ public:
         {
             if (empty())
                 break;
-
             const ScheduleTaskData& t = top();
             if (t.leftTime >= 0)
                 break;
