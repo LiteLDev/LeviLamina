@@ -2,6 +2,17 @@
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
 
+rem Process System Proxy
+for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyEnable') do (
+    if %%i==0x1 (
+        echo [INFO] System Proxy enabled. Adapting Settings...
+        for /f "tokens=3* delims= " %%a in ('Reg query "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings" /v ProxyServer') do set PROXY_ADDR=%%a
+        set http_proxy=%PROXY_ADDR%
+        set https_proxy=%PROXY_ADDR%
+        echo [INFO] System Proxy enabled. Adapting Settings finished.
+        echo.
+    )
+) 
 
 
 echo [INFO] Upgrading LL-SDK to GitHub ...
