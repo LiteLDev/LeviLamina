@@ -15,8 +15,10 @@ constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL {
-struct LLConfig {
+namespace LL
+{
+struct LLConfig
+{
     bool debugMode = false;
     int logLevel = 4;
     ::std::string language = "en";
@@ -29,6 +31,9 @@ struct LLConfig {
     bool enableFixDisconnectBug = true;
     bool enableFixListenPort = false;
     bool enableAntiGive = true;
+
+    //Runtime Config
+    bool isServerRunning = false;
 };
 extern LLConfig globalConfig;
 

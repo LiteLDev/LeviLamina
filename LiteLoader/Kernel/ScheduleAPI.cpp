@@ -2,6 +2,7 @@
 #include <Utils/CsLock.h>
 #include <queue>
 #include <atomic>
+#include <Config.h>
 using namespace std;
 
 CsLock locker;
@@ -9,15 +10,19 @@ atomic_uint nextTaskId = 0;
 
 class ScheduleTaskData
 {
-    friend class ScheduleTaskQueueType;
+public:
+    enum class TaskType {
+        Delay, Repeat, InfiniteRepeat
+    };
 
     unsigned int taskId;
+    TaskType type;
     int leftTime, interval, count;
     std::function<void(void)> task;
 
-public:
-    ScheduleTaskData::ScheduleTaskData(std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
-        :task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
+
+    ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
+        :type(type), task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
     { }
 
     inline unsigned int getTaskId()
@@ -25,14 +30,14 @@ public:
         return taskId;
     }
 
-    inline bool operator<(const ScheduleTaskData& t) const
+    inline bool operator>(const ScheduleTaskData& t) const
     {
-        return leftTime < t.leftTime;
+        return leftTime > t.leftTime;
     }
 };
 
 
-class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData>
+class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData,vector<ScheduleTaskData>,greater<ScheduleTaskData>>
 {
 public:
     bool remove(unsigned int taskId)
@@ -52,15 +57,31 @@ public:
         locker.unlock();
         return removed;
     }
+    
+    void clear()
+    {
+        locker.lock();
+        c.clear();
+        locker.unlock();
+    }
 
     inline void tick()
     {
         locker.lock();
+        if (c.empty())
+        {
+            locker.unlock();
+            return;
+        }
+
         for (size_t i = 0; i < c.size(); ++i)
             --c[i].leftTime;
 
         while (true)
         {
+            if (empty())
+                break;
+
             const ScheduleTaskData& t = top();
             if (t.leftTime >= 0)
                 break;
@@ -84,26 +105,29 @@ public:
                 logger.error("TaskId: {}", t.taskId);
             }
 
-            if (t.interval > 0)
+            switch (t.type)
             {
-                //Repeat
-                if (t.count < 0)
+            case ScheduleTaskData::TaskType::InfiniteRepeat:
+            {
+                ScheduleTaskData sche{ t };
+                sche.leftTime = sche.interval;
+                push(std::move(sche));
+                break;
+            }
+            case ScheduleTaskData::TaskType::Repeat:
+            {
+                if (t.count > 0)
                 {
-                    //Infinite Repeat
-                    ScheduleTaskData sche{ t };
-                    sche.leftTime = sche.interval;
-                    push(std::move(sche));
-                }
-                else if (t.count > 0)
-                {
-                    //Finite Repeat
                     ScheduleTaskData sche{ t };
                     sche.leftTime = sche.interval;
                     --sche.count;
                     push(std::move(sche));
                 }
+                break;
             }
-            //Once or Repeat reaches max count
+            default:
+                break;
+            }
             pop();
         }
         locker.unlock();
@@ -116,7 +140,9 @@ namespace Schedule
 {
     ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay)
     {
-        ScheduleTaskData sche(task, tickDelay, -1, -1);
+        if (!LL::globalConfig.isServerRunning)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
@@ -125,7 +151,11 @@ namespace Schedule
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTaskData sche(task, tickRepeat, tickRepeat, maxCount);
+        if (!LL::globalConfig.isServerRunning)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData::TaskType type = maxCount < 0 ?
+            ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
@@ -134,7 +164,11 @@ namespace Schedule
 
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat, int maxCount)
     {
-        ScheduleTaskData sche(task, tickDelay, tickRepeat, maxCount);
+        if (!LL::globalConfig.isServerRunning)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData::TaskType type = maxCount < 0 ?
+            ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
@@ -143,7 +177,9 @@ namespace Schedule
 
     ScheduleTask nextTick(std::function<void(void)> task)
     {
-        ScheduleTaskData sche(task, 1, -1, -1);
+        if (!LL::globalConfig.isServerRunning)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
@@ -156,6 +192,11 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     original(_this);
     taskQueue.tick();
+}
+
+void EndScheduleSystem()
+{
+    taskQueue.clear();
 }
 
 
