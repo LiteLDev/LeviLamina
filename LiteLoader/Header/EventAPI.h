@@ -70,7 +70,9 @@ protected:
 
 public:
     static Listener subscribe(Callback callback) {
-        listeners.emplace_back(std::make_pair(LL::getPlugin(GetCurrentModule())->name, callback));
+        auto plugin = LL::getPlugin(GetCurrentModule());
+        std::string pluginName = plugin == nullptr ? "" : plugin->name;
+        listeners.emplace_back(std::make_pair(pluginName, callback));
         return Listener(&listeners, --listeners.end());
     }
 
@@ -95,10 +97,12 @@ public:
             return passToBDS;
         } catch (const seh_exception& e) {
             logger.error("Uncaught SEH Exception in Event ({})!", typeid(EVENT).name());
-            logger.error("From Plugin ({})", i->first);
+            if(!i->first.empty())
+                logger.error("From Plugin ({})", i->first);
         } catch (const std::exception& e) {
             logger.error("Uncaught Exception in Event ({})!", typeid(EVENT).name());
-            logger.error("From Plugin ({})", i->first);
+            if (!i->first.empty())
+                logger.error("From Plugin ({})", i->first);
         }
         return passToBDS;
     }

@@ -7,6 +7,8 @@
 #include <ServerAPI.h>
 #include <HookAPI.h>
 #include <Config.h>
+#include <LLAPI.h>
+#include <Version.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
 #include "CrashLogger.h"
@@ -90,6 +92,11 @@ void LLMain() {
 
     //Builtin CrashLogger
     InitCrashLogger(LL::globalConfig.enableCrashLogger);
+
+    //Register Myself
+    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for bedrock delicated server", LITELOADER_VERSION,
+        { {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
+    });
 
     //Load plugins
     LoadMain();
