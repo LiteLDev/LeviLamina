@@ -1180,6 +1180,7 @@ THook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode* _this, I
             return false;
     }
     IF_LISTENED_END(PlayerUseItemEvent)
+    _this->getPlayer()->setSidebar("testtest", {{"aaa", 1}, {"bbb", 22}}, ObjectiveSortOrder::Descending);
     return original(_this, it);
 }
 

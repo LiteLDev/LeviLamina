@@ -95,6 +95,7 @@
     <ClCompile Include="BuiltinBugFix.cpp" />
     <ClInclude Include="Header\GuiAPI.h" />
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
+    <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
@@ -192,6 +193,7 @@
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\ObjectivePacketHelper.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
     <ClCompile Include="Kernel\ShortTagAPI.cpp" />
     <ClCompile Include="Kernel\StringTagAPI.cpp" />

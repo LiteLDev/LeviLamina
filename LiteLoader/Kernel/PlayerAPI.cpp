@@ -29,7 +29,9 @@
 #include <MC/SimpleContainer.hpp>
 #include <MC/Scoreboard.hpp>
 #include <MC/PlaySoundPacket.hpp>
+#include <MC/SetDisplayObjectivePacket.hpp>
 
+#include <Impl/ObjectivePacketHelper.h>
 #include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
 #include <bitset>
@@ -282,11 +284,10 @@ bool Player::setSidebar(const std::string& title, const std::vector<std::pair<st
     vector<ScorePacketInfo> info;
     for (auto& x : data)
     {
-        const ScoreboardId& id = ::Global<Scoreboard>->createScoreboardId(x.first);
+        const ScoreboardId& id = ScoreboardId(NewScoreId());
         ScorePacketInfo i((ScoreboardId*)&id, x.second, x.first);
         info.emplace_back(i);
     }
-
     sendSetScorePacket(0, info);
     return sendSetDisplayObjectivePacket(title, "FakeScoreObj", (char)sortOrder);
 }
@@ -523,16 +524,7 @@ bool Player::sendTransferPacket(const string& address, short port) const {
 }
 
 bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
-    BinaryStream wp;
-    wp.writeString("sidebar");
-    wp.writeString(name);
-    wp.writeString(title);
-    wp.writeString("dummy");
-    wp.writeVarInt(sortOrder);
-
-    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::SetDisplayObjective);
-    pkt->read(wp);
-    sendNetworkPacket(*pkt);
+    sendNetworkPacket(SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder)));
     return true;
 }
 

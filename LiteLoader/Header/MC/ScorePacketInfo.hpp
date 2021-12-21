@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 #include "ScoreboardId.hpp"
+#include "IdentityDefinition.hpp"
 #undef BEFORE_EXTRA
 
 struct ScorePacketInfo {
@@ -14,16 +15,13 @@ public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 
     ScoreboardId sid;
-    string obj_name = "FakeScoreObj";
-    unsigned score;
-    enum Type : char { Invalid = 0,
-                       Player = 1,
-                       Actor = 2,
-                       Fake = 3 };
-    Type type = Fake;
+    std::string obj_name = "FakeScoreObj";
+    uint32_t score;
+    IdentityDefinition::Type type = IdentityDefinition::Type::Fake;
     unsigned long long pid;
-    unsigned long long aid;
-    string fake_name;
+    ActorUniqueID aid;
+    std::string fake_name;
+
     ScorePacketInfo(ScoreboardId* s, unsigned num, const string& fake)
         : sid(*s)
         , score(num)

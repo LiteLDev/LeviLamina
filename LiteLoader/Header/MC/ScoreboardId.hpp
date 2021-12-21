@@ -13,7 +13,7 @@ struct ScoreboardId {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    int id;
+    __int64 id;
     void* null;
 #undef AFTER_EXTRA
 
