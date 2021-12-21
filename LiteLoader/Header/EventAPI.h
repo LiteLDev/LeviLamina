@@ -7,6 +7,8 @@
 #include <iterator>
 #include <list>
 #include <string>
+#include <LLAPI.h>
+#include <Utils/WinHelper.h>
 
 using std::function;
 using std::string;
@@ -60,7 +62,7 @@ template <typename EVENT>
 class EventTemplate {
 public:
     using Callback = std::function<bool(const EVENT&)>;
-    using ListenersContainer = std::list<Callback>;
+    using ListenersContainer = std::list<std::pair<string,Callback>>;   // pluginName & callback
     using Listener = EventListener<ListenersContainer>;
 
 protected:
@@ -68,7 +70,7 @@ protected:
 
 public:
     static Listener subscribe(Callback callback) {
-        listeners.emplace_back(callback);
+        listeners.emplace_back(std::make_pair(LL::getPlugin(GetCurrentModule())->name, callback));
         return Listener(&listeners, --listeners.end());
     }
 
@@ -80,18 +82,23 @@ public:
         return !listeners.empty();
     }
 
-    bool call() {
+    bool call()
+    {
         bool passToBDS = true;
+        auto i = listeners.begin();
         try {
-            for (auto& callback : listeners) {
-                if (!callback(*(EVENT*)this))
+            for (; i != listeners.end(); ++i)
+            {
+                if (!i->second(*(EVENT*)this))
                     passToBDS = false;
             }
             return passToBDS;
         } catch (const seh_exception& e) {
-            Logger("Event").error("Uncaught SEH Exception in Event({})!", typeid(EVENT).name());
+            logger.error("Uncaught SEH Exception in Event ({})!", typeid(EVENT).name());
+            logger.error("From Plugin ({})", i->first);
         } catch (const std::exception& e) {
-            Logger("Event").error("Uncaught Exception in Event({})!", typeid(EVENT).name());
+            logger.error("Uncaught Exception in Event ({})!", typeid(EVENT).name());
+            logger.error("From Plugin ({})", i->first);
         }
         return passToBDS;
     }

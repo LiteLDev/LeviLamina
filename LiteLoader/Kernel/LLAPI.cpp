@@ -28,6 +28,11 @@ LL::Plugin* LL::getPlugin(std::string name) {
     return ::GetPlugin(name);
 }
 
+LL::Plugin* LL::getPlugin(HMODULE handler)
+{
+    return ::GetPlugin(handler);
+}
+
 bool LL::hasPlugin(std::string name) {
     return ::HasPlugin(name);
 }

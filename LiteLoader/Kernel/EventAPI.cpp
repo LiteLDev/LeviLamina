@@ -123,6 +123,7 @@ DeclareEventListeners(RegCmdEvent)
 #define IF_LISTENED_END(EVENT) }
 #endif
 
+
 /////////////////// PreJoin ///////////////////
 THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@"
             "AEBVConnectionRequest@@AEAVServerPlayer@@@Z",

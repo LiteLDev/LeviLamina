@@ -50,7 +50,7 @@ public:
                 oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
                 oss << "- Version: v" << plugin->version.toString(true) << std::endl;
                 oss << "- Introduction: " << plugin->introduction << std::endl;
-                for (auto& [k, v] : plugin->others) {
+                for (auto& [k, v] : plugin->otherInformation) {
                     oss << "- " << k << ':' << v << std::endl;
                 }
                 auto text = oss.str();
