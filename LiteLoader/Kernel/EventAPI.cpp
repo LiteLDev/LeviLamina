@@ -1208,12 +1208,15 @@ THook(void, "?explode@Explosion@@QEAAXXZ",
 {
     auto pos = *(Vec3*)(QWORD*)self;
     auto radius = *((float*)self + 3);
-    auto actor = (Actor*)((QWORD*)self + 11);
+    auto actor = (Actor*)*((QWORD*)self + 11);
     auto bs = (BlockSource*)((QWORD*)self + 12);
     auto maxResistance = *((float*)self + 26);
     auto genFire = (bool)*((BYTE*)self + 80);
     auto canBreaking = (bool)*((BYTE*)self + 81);
 
+
+    std::cout << genFire << std::endl;
+    std::cout << canBreaking << std::endl;
     IF_LISTENED(EntityExplodeEvent)
     {
         if (actor)
