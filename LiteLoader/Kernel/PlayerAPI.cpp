@@ -144,7 +144,10 @@ bool Player::talkAs(const string& msg)
 }
 
 bool Player::giveItem(ItemStack* item) {
-    return this->add(*item);
+    if (!this->add(*item))
+        return false;
+    refreshInventory();
+    return true;
 }
 
 int Player::clearItem(string typeName) {
