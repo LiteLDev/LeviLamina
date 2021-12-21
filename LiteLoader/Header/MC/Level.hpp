@@ -151,6 +151,13 @@ public:
         *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
         return (this->*rv)();
     }
+
+    inline class ActorRuntimeID getNextRuntimeID() {
+        class ActorRuntimeID(Level:: * rv)();
+        *((void**)&rv) = dlsym("?getNextRuntimeID@Level@@UEAA?AVActorRuntimeID@@XZ");
+        return (this->*rv)();
+    }
+
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {

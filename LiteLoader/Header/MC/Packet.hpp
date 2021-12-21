@@ -35,7 +35,7 @@ public:
     class Packet& operator=(class Packet const&) = delete;
     Packet(class Packet const&) = delete;
 
-    ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
+    inline ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
     }
@@ -44,7 +44,8 @@ public:
         return _read(binaryStream);
     }
 protected:
-    std::string toDebugString() {
+    inline std::string toDebugString()
+    {
         return fmt::format("{}({})", getName(), getId());
     }
 

@@ -18,7 +18,7 @@ public:
     Vec3 position;
     bool respawn;
 
-    std::string toDebugString() {
+    inline std::string toDebugString() {
         return fmt::format("{}: pos: {}, dimensionId: {}, = isRespawn: {}",
             __super::toDebugString(), position.toString(), (int)dimensionId, respawn);
     }

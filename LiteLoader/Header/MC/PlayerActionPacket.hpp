@@ -46,14 +46,13 @@ enum PlayerActionType {
 
 class PlayerActionPacket : public Packet {
 public:
-    ActorRuntimeID runtimeId;
-    PlayerActionType actionType;
     BlockPos position;
     FaceID blockFace;
-    std::string toDebugString() {
-        return fmt::format("{}({}): runtimeId: {}, actionType: {}, position: {}, blockFace: {}",
-            getName(), (int)getId(),
-            runtimeId.id, (int)actionType, position.toString(), (int)blockFace);
+    PlayerActionType actionType;
+    ActorRuntimeID runtimeId;
+    inline std::string toDebugString() {
+        return fmt::format("{}: position: {}, blockFace: {}, actionType: {}, runtimeId: {}",
+            __super::toDebugString(), position.toString(), (int)blockFace, (int)actionType, runtimeId.id);
     }
 
 #define AFTER_EXTRA

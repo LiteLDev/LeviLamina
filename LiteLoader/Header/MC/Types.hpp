@@ -118,6 +118,8 @@ public:
 
     inline Vec3 operator-(const Vec3 &b) const { return {this->x - b.x, this->y - b.y, this->z - b.z}; }
 
+    inline bool operator==(const Vec3& b) const { return { this->x == b.x && this->y == b.y && this->z == b.z }; }
+
 };
 
 

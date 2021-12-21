@@ -21,7 +21,7 @@ public:
     ActorRuntimeID runtimeId;
     CreditsState state;
 
-    std::string toDebugString() {
+    inline std::string toDebugString() {
         return fmt::format("{}: state: {}", __super::toDebugString(),
             state == START_CREDITS ? "START_CREDITS" : "END_CREDITS");
     }

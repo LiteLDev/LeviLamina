@@ -33,7 +33,7 @@ public:
     int entityType;
     long tick;
     
-    std::string toDebugString() {
+    inline std::string toDebugString() {
         return fmt::format("{}: pos: {}, mode: {}, cause: {}",
             __super::toDebugString(), position.toString(), (int)mode, int(teleportationCause));
     }
