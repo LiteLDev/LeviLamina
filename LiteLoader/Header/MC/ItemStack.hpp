@@ -34,7 +34,7 @@ public:
 	LIAPI bool setItem(ItemStack* newItem);
 	LIAPI bool setLore(const std::vector<std::string>& lores);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
+    LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 
 public:

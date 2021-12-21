@@ -56,7 +56,7 @@ std::unique_ptr<CompoundTag> Block::getNbt() {
     return CompoundTag::fromBlock(this);
 }
 
-bool Block::setNbt(std::unique_ptr<CompoundTag> nbt) {
+bool Block::setNbt(CompoundTag* nbt) {
     nbt->setBlock(this);
     return true;
 }

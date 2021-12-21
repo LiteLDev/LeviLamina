@@ -224,7 +224,7 @@ std::unique_ptr<CompoundTag> Player::getNbt() {
     return CompoundTag::fromPlayer(this);
 }
 
-bool Player::setNbt(std::unique_ptr<CompoundTag> nbt) {
+bool Player::setNbt(CompoundTag* nbt) {
     nbt->setPlayer(this);
     return true;
 }

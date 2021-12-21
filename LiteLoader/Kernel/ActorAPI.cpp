@@ -123,7 +123,7 @@ std::unique_ptr<CompoundTag> Actor::getNbt() {
     return CompoundTag::fromActor(this);
 }
 
-bool Actor::setNbt(std::unique_ptr<CompoundTag> nbt) {
+bool Actor::setNbt(CompoundTag* nbt) {
     return nbt->setActor(this);
 }
 

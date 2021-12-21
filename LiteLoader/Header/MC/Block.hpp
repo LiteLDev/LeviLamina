@@ -20,7 +20,7 @@ public:
 	LIAPI int getId() const;
 	LIAPI unsigned short getTileData();
     LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
+    LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_BLOCK

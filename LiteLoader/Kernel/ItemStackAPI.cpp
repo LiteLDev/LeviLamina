@@ -91,7 +91,7 @@ std::unique_ptr<CompoundTag> ItemStack::getNbt() {
     return CompoundTag::fromItemStack(this);
 }
 
-bool ItemStack::setNbt(std::unique_ptr<CompoundTag> nbt) {
+bool ItemStack::setNbt(CompoundTag* nbt) {
     nbt->setItemStack(this);
     return true;
 }

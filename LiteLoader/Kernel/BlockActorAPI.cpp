@@ -16,6 +16,6 @@ std::unique_ptr<CompoundTag> BlockActor::getNbt() {
     return CompoundTag::fromBlockActor(this);
 }
 
-bool BlockActor::setNbt(std::unique_ptr<CompoundTag> nbt) {
+bool BlockActor::setNbt(CompoundTag* nbt) {
     return nbt->setBlockActor(this);
 }

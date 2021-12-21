@@ -19,7 +19,7 @@ public:
     
     LIAPI bool refreshData();
     LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
+    LIAPI bool setNbt(CompoundTag* nbt);
     static unsigned int getBlockEntityType(Block* block);
 
 #undef AFTER_EXTRA

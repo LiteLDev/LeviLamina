@@ -55,7 +55,7 @@ public:
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);
     LIAPI std::unique_ptr<CompoundTag> getNbt();
-    LIAPI bool setNbt(std::unique_ptr<CompoundTag> nbt);
+    LIAPI bool setNbt(CompoundTag* nbt);
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
