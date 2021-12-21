@@ -139,7 +139,7 @@ namespace Schedule
 {
     ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay)
     {
-        if (!LL::globalConfig.isServerRunning)
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1);
         locker.lock();
@@ -150,7 +150,7 @@ namespace Schedule
 
     ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
     {
-        if (!LL::globalConfig.isServerRunning)
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ?
             ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
@@ -163,7 +163,7 @@ namespace Schedule
 
     ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat, int maxCount)
     {
-        if (!LL::globalConfig.isServerRunning)
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData::TaskType type = maxCount < 0 ?
             ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
@@ -176,7 +176,7 @@ namespace Schedule
 
     ScheduleTask nextTick(std::function<void(void)> task)
     {
-        if (!LL::globalConfig.isServerRunning)
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned)-1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1);
         locker.lock();

@@ -1452,7 +1452,7 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
 
-    LL::globalConfig.isServerRunning = true;
+    LL::globalConfig.serverStatus = LL::SeverStatus::Running;
 
     IF_LISTENED(ServerStartedEvent)
     {
@@ -1465,6 +1465,8 @@ THook(void, "?startServerThread@ServerInstance@@QEAAXXZ", void* a)
 ////////////// ServerStopped //////////////
 THook(void, "??1DedicatedServer@@UEAA@XZ", void* a)
 {
+    LL::globalConfig.serverStatus = LL::SeverStatus::Stopping;
+
     IF_LISTENED(ServerStoppedEvent)
     {
         ServerStoppedEvent ev{};

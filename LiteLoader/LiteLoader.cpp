@@ -113,7 +113,6 @@ void LLMain() {
     //Register Cleanup
     Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent)
     {
-        LL::globalConfig.isServerRunning = false;
         EndScheduleSystem();
         return true;
     });
