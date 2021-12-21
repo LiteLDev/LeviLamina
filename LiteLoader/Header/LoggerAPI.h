@@ -153,7 +153,7 @@ public:
         return endlImpl(GetCurrentModule(), o);
     };
 
-    LIAPI bool setFile(const std::string& logFile, bool appendMode);
+    LIAPI bool setFile(const std::string& logFile, bool appendMode = true);
 
     LIAPI bool setFile(nullptr_t);
 
