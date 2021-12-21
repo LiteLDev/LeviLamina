@@ -1214,9 +1214,6 @@ THook(void, "?explode@Explosion@@QEAAXXZ",
     auto genFire = (bool)*((BYTE*)self + 80);
     auto canBreaking = (bool)*((BYTE*)self + 81);
 
-
-    std::cout << genFire << std::endl;
-    std::cout << canBreaking << std::endl;
     IF_LISTENED(EntityExplodeEvent)
     {
         if (actor)
