@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
-set LL_SDK_USE_BRANCH=beta
+set LL_SDK_USE_BRANCH=main
 set LL_SDK_DIRECTORY_PATH=SDK
 
 
