@@ -766,6 +766,7 @@ THook(unsigned short,
     IF_LISTENED(BlockInteractedEvent)
     {
         BlockInteractedEvent ev{};
+        ev.mPlayer = pl;
         ev.mBlockInstance = Level::getBlockInstance(bp, pl->getDimensionId());
         if (!ev.call())
             return 0;
