@@ -20,6 +20,7 @@ namespace LL {
                                       {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
                                       {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
                                       {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
+                                      {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
                                       {"FixListenPort", {{"enabled", conf.enableFixListenPort}}}, 
                                       {"AntiGive", {{"enabled", conf.enableAntiGive}}}
                               }}};
@@ -53,6 +54,10 @@ namespace LL {
             if (modules.find("FixListenPort") != modules.end()) {
                 const nlohmann::json &listen = modules.at("FixListenPort");
                 conf.enableFixListenPort = listen.value("enabled", false);
+            }
+            if (modules.find("UnlockCmd") != modules.end()) {
+                const nlohmann::json& listen = modules.at("UnlockCmd");
+                conf.enableUnlockCmd = listen.value("enabled", false);
             }
             if (modules.find("AntiGive") != modules.end())
             {

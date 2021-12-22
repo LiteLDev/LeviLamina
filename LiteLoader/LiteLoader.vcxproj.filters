@@ -279,6 +279,9 @@
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="BuiltinUnlockCmd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

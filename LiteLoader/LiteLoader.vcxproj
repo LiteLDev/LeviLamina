@@ -89,6 +89,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
+    <ClCompile Include="BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />

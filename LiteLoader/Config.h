@@ -28,12 +28,12 @@ namespace LL
 
         bool enableAutoUpdate = true;
         bool enableCrashLogger = true;
-        bool enableSimpleServerLogger = true;
         ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
-
+        bool enableSimpleServerLogger = true;
         bool enableFixDisconnectBug = true;
         bool enableFixListenPort = false;
         bool enableAntiGive = true;
+        bool enableUnlockCmd = true;
 
         //Runtime Config
         SeverStatus serverStatus = SeverStatus::Starting;
