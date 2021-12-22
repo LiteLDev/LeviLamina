@@ -1,3 +1,4 @@
+#pragma once
 #include "MC/BinaryStream.hpp"
 #include "MC/Packet.hpp"
 
