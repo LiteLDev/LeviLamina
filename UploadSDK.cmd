@@ -17,7 +17,7 @@ for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\
 ) 
 
 
-echo [INFO] Uploading LL-SDK to GitHub ...
+echo [INFO] Fetching LL-SDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
@@ -28,12 +28,12 @@ if not exist SDK/Header/ (
 )
 
 cd SDK
-git checkout %LL_SDK_NOW_BRANCH%
-git push
+git fetch --all
+git reset --hard origin/%LL_SDK_NOW_BRANCH%
 cd ..
 
 echo.
-echo [INFO] Uploading LL-SDK to GitHub finished
+echo [INFO] Fetching LL-SDK to GitHub finished
 echo.
 
 if [%1] neq [action] (
