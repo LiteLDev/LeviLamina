@@ -1119,21 +1119,23 @@ THook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer* _this,
 
 
 /////////////////// PlayerDestroy ///////////////////
-THook(bool, "?playerWillDestroy@BlockLegacy@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z",
-      BlockLegacy* _this, Player* pl, BlockPos& bpos, Block& bl)
+THook(bool, "?checkBlockDestroyPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@AEBVItemStackBase@@_N@Z",
+      BlockSource* bs, Actor* ac, BlockPos* bpos, ItemStackBase* a4, bool a5)
 {
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
-        PlayerDestroyBlockEvent ev{};
-        ev.mPlayer = pl;
-        ev.mBlockInstance = Level::getBlockInstance(bpos, pl->getDimensionId());
-        if (!ev.call())
-            return false;
+        if (ac->isPlayer())
+        {
+            PlayerDestroyBlockEvent ev{};
+            ev.mPlayer = (ServerPlayer*)ac;
+            ev.mBlockInstance = Level::getBlockInstance(bpos, ac->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
     }
     IF_LISTENED_END(PlayerDestroyBlockEvent)
-    return original(_this, pl, bpos, bl);
+    return original(bs, ac, bpos, a4, a5);
 }
-
 
 /////////////////// PlayerUseItemOn ///////////////////
 THook(bool, "?useItemOn@GameMode@@UEAA_NAEAVItemStack@@AEBVBlockPos@@EAEBVVec3@@PEBVBlock@@@Z",
