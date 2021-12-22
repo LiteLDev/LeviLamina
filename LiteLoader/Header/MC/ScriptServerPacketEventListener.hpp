@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerPacketEventListener();
-    /*1*/ virtual int /*enum enum EventResult*/ onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
+    /*1*/ virtual enum EventResult onPacketReceivedFrom(class PacketHeader const&, class Packet const&);
     MCAPI ScriptServerPacketEventListener(class MinecraftServerScriptEngine&);
 
 protected:

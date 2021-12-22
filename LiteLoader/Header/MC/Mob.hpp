@@ -23,7 +23,6 @@ struct JumpPreventionResult {
 
 public:
 
-    LIAPI UserEntityIdentifierComponent* getUserEntityIdentifierComponent();
     LIAPI bool refreshInventory();
 
 #undef AFTER_EXTRA
@@ -38,9 +37,9 @@ public:
 public:
     /*0*/ virtual bool hasComponent(class HashedString const&) const;
     /*1*/ virtual void outOfWorld();
-    /*2*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*3*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*4*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*2*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*3*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*4*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*5*/ virtual void _doInitialMove();
     /*6*/ virtual ~Mob();
     /*7*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -82,25 +81,25 @@ public:
     /*43*/ virtual void setTarget(class Actor*);
     /*44*/ virtual class Actor* findAttackTarget();
     /*45*/ virtual bool isValidTarget(class Actor*) const;
-    /*46*/ virtual bool attack(class Actor&, int /*enum enum ActorDamageCause*/ const&);
+    /*46*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
     /*47*/ virtual void adjustDamageAmount(int&) const;
     /*48*/ virtual void onTame();
     /*49*/ virtual void onFailedTame();
     /*50*/ virtual bool canPowerJump() const;
     /*51*/ virtual bool isJumping() const;
     /*52*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*53*/ virtual int /*enum enum ActorDamageCause*/ getBlockDamageCause(class Block const&) const;
+    /*53*/ virtual enum ActorDamageCause getBlockDamageCause(class Block const&) const;
     /*54*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
     /*55*/ virtual void animateHurt();
     /*56*/ virtual bool doFireHurt(int);
     /*57*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*58*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*58*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*59*/ virtual float getPickRadius();
     /*60*/ virtual void awardKillScore(class Actor&, int);
-    /*61*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*62*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*63*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*64*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*61*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*62*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*63*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*64*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*65*/ virtual class HashedString const& queryEntityRenderer() const;
     /*66*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*67*/ virtual bool canFreeze() const;
@@ -145,8 +144,8 @@ public:
     /*106*/ virtual void knockback(class Actor*, int, float, float, float, float, float);
     /*107*/ virtual void spawnAnim();
     /*108*/ virtual void setSprinting(bool);
-    /*109*/ virtual int /*enum enum LevelSoundEvent*/ getHurtSound();
-    /*110*/ virtual int /*enum enum LevelSoundEvent*/ getDeathSound();
+    /*109*/ virtual enum LevelSoundEvent getHurtSound();
+    /*110*/ virtual enum LevelSoundEvent getDeathSound();
     /*111*/ virtual struct TextureUVCoordinateSet const* getItemInHandIcon(class ItemStack const&, int);
     /*112*/ virtual float getSpeed() const;
     /*113*/ virtual void setSpeed(float);
@@ -174,7 +173,7 @@ public:
     /*135*/ virtual void __unk_vfn_22();
     /*136*/ virtual float getMaxHeadXRot();
     /*137*/ virtual bool isAlliedTo(class Mob*);
-    /*138*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
+    /*138*/ virtual bool doHurtTarget(class Actor*, enum ActorDamageCause const&);
     /*139*/ virtual void __unk_vfn_23();
     /*140*/ virtual void leaveCaravan();
     /*141*/ virtual void joinCaravan(class Mob*);
@@ -183,7 +182,7 @@ public:
     /*144*/ virtual int getArmorValue();
     /*145*/ virtual float getArmorCoverPercentage() const;
     /*146*/ virtual void hurtArmorSlots(class ActorDamageSource const&, int, class std::bitset<4> const&);
-    /*147*/ virtual void setDamagedArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
+    /*147*/ virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const&);
     /*148*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*149*/ virtual void sendArmor(class std::bitset<4> const&);
     /*150*/ virtual void containerChanged(int);
@@ -200,7 +199,7 @@ public:
     /*161*/ virtual int getDamageAfterMagicAbsorb(class ActorDamageSource const&, int);
     /*162*/ virtual bool createAIGoals();
     /*163*/ virtual void onBorn(class Actor&, class Actor&);
-    /*164*/ virtual bool setItemSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*164*/ virtual bool setItemSlot(enum EquipmentSlot, class ItemStack const&);
     /*165*/ virtual void setTransitioningSitting(bool);
     /*166*/ virtual void attackAnimation(class Actor*, float);
     /*167*/ virtual int getAttackTime();

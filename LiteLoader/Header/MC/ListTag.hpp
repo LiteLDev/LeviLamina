@@ -15,23 +15,15 @@ class ListTag : public Tag {
 #define AFTER_EXTRA
 // Add Member There
 std::vector<Tag*> val;
+Tag::Type elementType;
 
 public:
-    inline static ListTag* create() {
-        return (ListTag*)Tag::createTag(Tag::Type::List);
-    }
-
-    inline std::vector<Tag*>& value() {
-        return dAccess<std::vector<Tag*>, 8>(this);
-    }
-
-    inline Tag* operator[](int index) {
-        if (index < size())
-            return get(index);
-        return nullptr;
-    }
-
-    inline size_t getSize() { return val.size(); }
+    LIAPI static std::unique_ptr<ListTag> create();
+    LIAPI std::vector<Tag*>& value();
+    LIAPI Tag const* operator[](int index) const;
+    LIAPI Tag::Type getElementType() const;
+    LIAPI size_t getSize() const;
+    LIAPI vector<Tag*> get();
 
     // get value
     LIAPI unsigned char getByte(int) const;
@@ -40,7 +32,6 @@ public:
     LIAPI TagMemoryChunk getByteArray(int) const;
 
 
-    LIAPI void add(Tag* t);
     LIAPI void addEnd();
     LIAPI void addByte(unsigned char v);
     LIAPI void addShort(short v);
@@ -50,14 +41,12 @@ public:
     LIAPI void addDouble(double v);
     LIAPI void addString(const std::string& v);
     LIAPI void addByteArray(TagMemoryChunk);
-    LIAPI void addByteArray(void* data, size_t size);
+    LIAPI void addByteArray(char data[], size_t size);
     LIAPI void addIntArray(TagMemoryChunk);
-    LIAPI void addIntArray(void* data, size_t size);
-
-    inline vector<Tag*> get()
-    {
-        return value();
-    }
+    LIAPI void addIntArray(int data[], size_t size);
+    
+    LIAPI std::vector<Tag*>::const_iterator begin() const;
+    LIAPI std::vector<Tag*>::const_iterator end() const;
 
 #undef AFTER_EXTRA
 
@@ -73,7 +62,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;

@@ -12,9 +12,15 @@ typedef unsigned long long QWORD;
 namespace mce {
     class UUID {
         uint64_t a, b;
+    public:
+        MCAPI std::string asString() const;
+        MCAPI static UUID fromString(std::string const&);
+        MCAPI bool isEmpty() const;
+        MCAPI static UUID seedFromString(std::string const&);
     };
 
     class Color;
+
 }; // namespace mce
 
 class Vec3;
@@ -55,19 +61,19 @@ public:
         return {x - b.x, y - b.y, z - b.z};
     }
 
-    inline std::string toString() {
+    inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
 
-    inline BlockPos add(int dx) {
+    inline BlockPos add(int dx) const {
         return {x + dx, y, z};
     }
 
-    inline BlockPos add(int dx, int dy) {
+    inline BlockPos add(int dx, int dy) const {
         return {x + dx, y + dy, z};
     }
 
-    inline BlockPos add(int dx, int dy, int dz) {
+    inline BlockPos add(int dx, int dy, int dz) const {
         return {x + dx, y + dy, z + dz};
     }
 
@@ -118,6 +124,8 @@ public:
 
     inline Vec3 operator-(const Vec3 &b) const { return {this->x - b.x, this->y - b.y, this->z - b.z}; }
 
+    inline bool operator==(const Vec3& b) const { return { this->x == b.x && this->y == b.y && this->z == b.z }; }
+
 };
 
 
@@ -136,25 +144,19 @@ public:
 };
 
 class Vec2 {
-private:
-    static inline int iround(float x) {
-        int r = int(x);
-        if (x < 0)
-            r--;
-        return r;
-    }
-
 public:
-    int x, z;
+    float x, y;
 
-    Vec2(Vec3 l) : x(iround(l.x)), z(iround(l.z)) {}
+    Vec2(float a, float b) : x(a), y(b) {}
 
-    Vec2(int a, int b) : x(a), z(b) {}
+    inline std::string toString() const { return std::to_string(x) + "," + std::to_string(y); }
 
-    inline void operator+=(int v) {
-        x += v;
-        z += v;
-    }
+    inline Vec2 operator*(float num) const { return {x * num, y * num}; }
+
+    inline Vec2 operator+(const Vec2& b) const { return {this->x + b.x, this->y + b.y}; }
+
+    inline Vec2 operator-(const Vec2& b) const { return {this->x - b.x, this->y - b.y}; }
+
 };
 
 template<typename A, typename T>
@@ -731,18 +733,21 @@ enum class FaceID : char {
 
 enum class MinecraftPacketIds : int
 {
-    ogin = 0x1,
+    Login = 0x1,
     PlayStatus = 0x2,
     ServerToClientHandshake = 0x3,
     ClientToServerHandshake = 0x4,
     Disconnect = 0x5,
     ResourcePacksInfo = 0x6,
     ResourcePackStack = 0x7,
+    ResourcePackClientResponse = 0x8,
+    Text = 0x9,
     SetTime = 0xa,
     StartGame = 0xb,
     AddPlayer = 0xc,
     AddActor = 0xd,
     RemoveActor = 0xe,
+    AddItemActor = 0xf,
     TakeItemActor = 0x11,
     MoveActorAbsolute = 0x12,
     MovePlayer = 0x13,
@@ -880,7 +885,15 @@ enum class MinecraftPacketIds : int
     ClientboundDebugRenderer = 0xa4,
     SyncActorProperty = 0xa5,
     AddVolumeEntity = 0xa6,
-    RemoveVolumeEntity = 0xa7
+    RemoveVolumeEntity = 0xa7,
+    SimulationType = 0xa8,
+    NPCDialogue = 0xa9,
+    EduUriResource = 0xaa,
+    CreatePhoto = 0xab,
+    UpdateSubChunkBlocks = 0xac,
+    PhotoInfoRequest = 0xad,
+    SubChunk = 0xae,
+    SubChunkRequest = 0xaf
 };
 
 //class CommandVersion {

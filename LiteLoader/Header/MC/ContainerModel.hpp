@@ -62,8 +62,8 @@ public:
         *((void**)&rv) = dlsym("?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline int \/*enum enum ContainerExpandStatus*\/ getItemExpandStatus(int a0) const{
-        int \/*enum enum ContainerExpandStatus*\/ (ContainerModel::*rv)(int) const;
+    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
+        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
         *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
         return (this->*rv)(std::forward<int>(a0));
     }

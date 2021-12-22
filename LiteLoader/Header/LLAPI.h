@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include <string>
 #include <unordered_map>
 #ifndef WIN32_LEAN_AND_MEAN
@@ -37,10 +37,19 @@ namespace LL {
         std::string name;
         std::string introduction;
         Version version;
-        std::map<std::string, std::string> others;
+        std::map<std::string, std::string> otherInformation;
 
         std::string filePath;
         HMODULE handler;
+
+        // Call a Function by Symbol String
+        template<typename ReturnType = void, typename... Args>
+        inline ReturnType callFunction(const char* functionName, Args... args) {
+            void* address = GetProcAddress(handler, functionName);
+            if (!address)
+                return ReturnType();
+            return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
+        }
     };
 
 }
@@ -62,7 +71,7 @@ namespace LL
     // @return 是否为调试模式
     LIAPI bool isDebugMode();
 
-    LIAPI std::string getDataPath(const std::string& myPluginName);
+    LIAPI std::string getDataPath(const std::string& pluginName);
 
     // @param name 插件名
     // @param introduction 插件介绍
@@ -95,6 +104,8 @@ namespace LL
     // @param name 插件名
     // @return 若未找到则返回0
     LIAPI LL::Plugin* getPlugin(std::string name);
+
+    LIAPI LL::Plugin* getPlugin(HMODULE handler);
 
     // @param name 插件名
     // @return 是否存在插件

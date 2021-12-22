@@ -47,7 +47,7 @@ public:
     /*13*/ virtual bool isDamageable() const;
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
-    /*16*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*16*/ virtual enum ItemColor getItemColor() const;
     /*17*/ virtual bool isFertilizer() const;
     /*18*/ virtual void __unk_vfn_5();
     /*19*/ virtual bool isThrowable() const;
@@ -60,14 +60,14 @@ public:
     /*26*/ virtual class Item& setStackedByData(bool);
     /*27*/ virtual class Item& setMaxDamage(int);
     /*28*/ virtual class Item& setHandEquipped();
-    /*29*/ virtual class Item& setUseAnimation(int /*enum enum UseAnimation*/);
+    /*29*/ virtual class Item& setUseAnimation(enum UseAnimation);
     /*30*/ virtual class Item& setMaxUseDuration(int);
     /*31*/ virtual class Item& setRequiresWorldBuilder(bool);
     /*32*/ virtual class Item& setExplodable(bool);
     /*33*/ virtual class Item& setFireResistant(bool);
     /*34*/ virtual class Item& setIsGlint(bool);
     /*35*/ virtual class Item& setShouldDespawn(bool);
-    /*36*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*36*/ virtual enum BlockShape getBlockShape() const;
     /*37*/ virtual bool canBeDepleted() const;
     /*38*/ virtual bool canDestroySpecial(class Block const&) const;
     /*39*/ virtual int getLevelDataForAuxValue(int) const;
@@ -112,7 +112,7 @@ public:
     /*78*/ virtual bool canUseOnSimTick() const;
     /*79*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*80*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-    /*81*/ virtual int /*enum enum ItemUseMethod*/ useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    /*81*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
     /*82*/ virtual void releaseUsing(class ItemStack&, class Player*, int) const;
     /*83*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*84*/ virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
@@ -259,13 +259,13 @@ public:
         *((void**)&rv) = dlsym("?getSecondaryColor@Item@@UEBA?AVColor@mce@@AEBVItemStack@@@Z");
         return (this->*rv)(std::forward<class ItemStack const&>(a0));
     }
-    inline int \/*enum enum InHandUpdateType*\/ getInHandUpdateType(class Player const& a0, class ItemStack const& a1, class ItemStack const& a2, bool a3, bool a4) const{
-        int \/*enum enum InHandUpdateType*\/ (Item::*rv)(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    inline enum InHandUpdateType getInHandUpdateType(class Player const& a0, class ItemStack const& a1, class ItemStack const& a2, bool a3, bool a4) const{
+        enum InHandUpdateType (Item::*rv)(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
         *((void**)&rv) = dlsym("?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemStack@@1_N2@Z");
         return (this->*rv)(std::forward<class Player const&>(a0), std::forward<class ItemStack const&>(a1), std::forward<class ItemStack const&>(a2), std::forward<bool>(a3), std::forward<bool>(a4));
     }
-    inline int \/*enum enum InHandUpdateType*\/ getInHandUpdateType(class Player const& a0, class ItemInstance const& a1, class ItemInstance const& a2, bool a3, bool a4) const{
-        int \/*enum enum InHandUpdateType*\/ (Item::*rv)(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
+    inline enum InHandUpdateType getInHandUpdateType(class Player const& a0, class ItemInstance const& a1, class ItemInstance const& a2, bool a3, bool a4) const{
+        enum InHandUpdateType (Item::*rv)(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
         *((void**)&rv) = dlsym("?getInHandUpdateType@Item@@UEBA?AW4InHandUpdateType@@AEBVPlayer@@AEBVItemInstance@@1_N2@Z");
         return (this->*rv)(std::forward<class Player const&>(a0), std::forward<class ItemInstance const&>(a1), std::forward<class ItemInstance const&>(a2), std::forward<bool>(a3), std::forward<bool>(a4));
     }

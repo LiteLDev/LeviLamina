@@ -37,7 +37,7 @@ public:
     /*10*/ virtual void __unk_vfn_2();
     /*11*/ virtual void __unk_vfn_3();
     /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual bool _isValidEnchantmentTypeForCategory(int /*enum enum Enchant::Type*/) const;
+    /*13*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
     inline bool isTreasureOnly() const{
         bool (CurseVanishingEnchant::*rv)() const;

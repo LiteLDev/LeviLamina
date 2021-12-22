@@ -32,7 +32,7 @@ public:
     /*4*/ virtual bool allowInventoryTransactionManager() const;
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
+    /*7*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, enum ContainerEnumName, class ContainerWeakRef const&);
     /*8*/ virtual void __unk_vfn_2();
     /*9*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*

@@ -71,10 +71,10 @@ public:
         *((void**)&rv) = dlsym("?onAppSuspended@ServerInstance@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onCriticalDiskError(bool a0, int \/*enum enum Core::LevelStorageState*\/ const& a1){
-        void (ServerInstance::*rv)(bool, int \/*enum enum Core::LevelStorageState*\/ const&);
+    inline void onCriticalDiskError(bool a0, enum Core::LevelStorageState const& a1){
+        void (ServerInstance::*rv)(bool, enum Core::LevelStorageState const&);
         *((void**)&rv) = dlsym("?onCriticalDiskError@ServerInstance@@UEAAX_NAEBW4LevelStorageState@Core@@@Z");
-        return (this->*rv)(std::forward<bool>(a0), std::forward<int \/*enum enum Core::LevelStorageState*\/ const&>(a1));
+        return (this->*rv)(std::forward<bool>(a0), std::forward<enum Core::LevelStorageState const&>(a1));
     }
     inline void onLevelCorrupt(){
         void (ServerInstance::*rv)();

@@ -1,4 +1,7 @@
-== LiteLoaderBDS 2.0 PreRelease 3 ==
-- Fix numbers of problems in NBT, Player or other APIs
-- Improve the unifined output system
-This version has high stability and can be used in production environment. If any bug or problem discovered, welcome your feedback at Github Issues
+=== LiteLoaderBDS 2.0.3 Release Version ===
+- Fix several problems in LL and LL SDK
+- Provide convinent way to get and update LL Plugin Development SDK
+- Ensured stability --> READY for production environment
+- More interesting features in future
+
+If any bug or problem discovered, welcome your feedback at Github Issues

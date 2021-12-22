@@ -13,13 +13,13 @@ class Block {
 #define AFTER_EXTRA
 // Add new members to class
 public:
-	LIAPI static Block* create(string str, unsigned short tileData);
+	LIAPI static Block* create(const string& str, unsigned short tileData);
 	LIAPI static Block* create(CompoundTag* nbt);
 
-    LIAPI string getTypeName();
-	LIAPI int getId();
+    LIAPI string getTypeName() const;
+	LIAPI int getId() const;
 	LIAPI unsigned short getTileData();
-    LIAPI CompoundTag* getNbt();
+    LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 
@@ -32,7 +32,7 @@ public:
 
 public:
     /*0*/ virtual ~Block();
-    /*1*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer() const;
+    /*1*/ virtual enum BlockRenderLayer getRenderLayer() const;
     MCAPI Block(unsigned short, class gsl::not_null<class BlockLegacy* >, class CompoundTag, unsigned int const&);
     MCAPI void addAABBs(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     MCAPI bool addCollisionShapes(class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;

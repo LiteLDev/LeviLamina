@@ -20,7 +20,9 @@ namespace LL {
                                       {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
                                       {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
                                       {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                                      {"FixListenPort", {{"enabled", conf.enableFixListenPort}}}
+                                      {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
+                                      {"FixListenPort", {{"enabled", conf.enableFixListenPort}}}, 
+                                      {"AntiGive", {{"enabled", conf.enableAntiGive}}}
                               }}};
     }
 
@@ -51,7 +53,16 @@ namespace LL {
             }
             if (modules.find("FixListenPort") != modules.end()) {
                 const nlohmann::json &listen = modules.at("FixListenPort");
-                conf.enableFixListenPort = listen.value("enabled", true);
+                conf.enableFixListenPort = listen.value("enabled", false);
+            }
+            if (modules.find("UnlockCmd") != modules.end()) {
+                const nlohmann::json& listen = modules.at("UnlockCmd");
+                conf.enableUnlockCmd = listen.value("enabled", false);
+            }
+            if (modules.find("AntiGive") != modules.end())
+            {
+                const nlohmann::json& listen = modules.at("AntiGive");
+                conf.enableAntiGive = listen.value("enabled", true);
             }
         }
     }
@@ -65,18 +76,44 @@ bool LoadLLConfig() {
             logger.warn("LL Config File <{}> not found. Creating configuration file...", LITELOADER_CONFIG_FILE);
             filesystem::create_directories(filesystem::path(LITELOADER_CONFIG_FILE).remove_filename().u8string());
             std::ofstream of(LITELOADER_CONFIG_FILE);
-            if (of) {
+            if (of) 
+            {
                 of << nlohmann::json(LL::globalConfig).dump(4);
-            } else {
+            }
+            else 
+            {
                 logger.error("Configuration File Creation failed!");
             }
-        } else
-            LL::globalConfig = nlohmann::json::parse(*content, nullptr, true, true);
-    } catch (const nlohmann::json::exception &e) {
+        } 
+        else
+        {
+            auto out = nlohmann::json::parse(*content, nullptr, true, true);
+            if (out == LL::globalConfig) 
+            {
+                LL::globalConfig = out;
+            }
+            else
+            {
+                LL::globalConfig = out;
+                out.update(LL::globalConfig);
+                std::ofstream of(LITELOADER_CONFIG_FILE);
+                if (of)
+                {
+                    of << nlohmann::json(out).dump(4);
+                }
+                else
+                {
+                    logger.error("Configuration File Creation failed!");
+                }
+            }
+        }         
+    } 
+    catch (const nlohmann::json::exception &e) {
         logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
         logger.error("{}", e.what());
         return false;
-    } catch (...) {
+    } 
+    catch (...) {
         logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
         return false;
     }

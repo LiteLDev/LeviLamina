@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~EmptyServerInstanceEventHandler();
-    /*1*/ virtual int /*enum enum HandlerResult*/ handleLeaveGameDone(struct ServerInstanceEvent const&);
+    /*1*/ virtual enum HandlerResult handleLeaveGameDone(struct ServerInstanceEvent const&);
 
 protected:
 

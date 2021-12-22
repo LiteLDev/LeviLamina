@@ -31,8 +31,8 @@ public:
     /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const&);
-    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, int /*enum enum ChunkSource::LoadMode*/, bool);
-    /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, int /*enum enum ChunkSource::LoadMode*/, bool);
+    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
+    /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
     /*8*/ virtual bool postProcess(class ChunkViewSource&);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*10*/ virtual void loadChunk(class LevelChunk&, bool);

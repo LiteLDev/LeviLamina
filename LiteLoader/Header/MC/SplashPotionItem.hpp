@@ -39,14 +39,14 @@ public:
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual bool isDyeable() const;
     /*12*/ virtual bool isDye() const;
-    /*13*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*13*/ virtual enum ItemColor getItemColor() const;
     /*14*/ virtual bool isFertilizer() const;
     /*15*/ virtual void __unk_vfn_5();
     /*16*/ virtual bool isThrowable() const;
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*20*/ virtual enum BlockShape getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
@@ -106,7 +106,7 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual std::string getAuxValuesDescription() const;
     /*79*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*80*/ virtual int /*enum enum Potion::PotionType*/ getPotionType() const;
+    /*80*/ virtual enum Potion::PotionType getPotionType() const;
 
 protected:
 

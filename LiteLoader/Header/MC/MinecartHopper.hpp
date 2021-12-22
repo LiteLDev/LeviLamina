@@ -63,10 +63,10 @@ public:
     /*35*/ virtual void animateHurt();
     /*36*/ virtual float getPickRadius();
     /*37*/ virtual void awardKillScore(class Actor&, int);
-    /*38*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*39*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*40*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*41*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*38*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*39*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*40*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*41*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*42*/ virtual class HashedString const& queryEntityRenderer() const;
     /*43*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*44*/ virtual bool canFreeze() const;
@@ -98,7 +98,7 @@ public:
     /*70*/ virtual void __unk_vfn_20();
     /*71*/ virtual void __unk_vfn_21();
     /*72*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*73*/ virtual int /*enum enum MinecartType*/ getType();
+    /*73*/ virtual enum MinecartType getType();
     /*74*/ virtual class Block const* getDefaultDisplayBlock() const;
     /*75*/ virtual void __unk_vfn_22();
     /*76*/ virtual int getDefaultDisplayOffset() const;

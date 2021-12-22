@@ -91,7 +91,7 @@ public:
     /*63*/ virtual float getItemUseIntervalProgress() const;
     /*64*/ virtual void __unk_vfn_22();
     /*65*/ virtual bool isAlliedTo(class Mob*);
-    /*66*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
+    /*66*/ virtual bool doHurtTarget(class Actor*, enum ActorDamageCause const&);
     /*67*/ virtual void __unk_vfn_23();
     /*68*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*69*/ virtual void onBorn(class Actor&, class Actor&);

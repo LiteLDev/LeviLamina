@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~TridentChannelingEnchant();
-    /*1*/ virtual bool isCompatibleWith(int /*enum enum Enchant::Type*/) const;
+    /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual int getMaxLevel() const;

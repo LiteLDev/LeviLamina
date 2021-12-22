@@ -1,3 +1,4 @@
+#pragma once
 #include "MC/BinaryStream.hpp"
 #include "MC/Packet.hpp"
 
@@ -15,8 +16,8 @@ public:
     inline virtual ~NetworkPacket() {
     }
 
-    virtual int getId() const {
-        return pid;
+    virtual enum MinecraftPacketIds getId() const {
+        return (enum MinecraftPacketIds)pid;
     }
     virtual std::string getName() const {
         return "MyPkt";
@@ -24,9 +25,9 @@ public:
     virtual void write(BinaryStream& bs) const {
         bs.getRaw().append(view);
     }
-    virtual int /*enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) {
+    virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&) override {
         throw("TODO in MyPkt::_read()");
-        return 0;
+        return (enum StreamReadResult)0;
     }
     virtual void dummyread() {
         throw("TODO in MyPkt::dummyread()");

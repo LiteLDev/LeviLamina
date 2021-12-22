@@ -14,18 +14,12 @@ class CompoundTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
-public:
-
-    //MCAPI CompoundTag(CompoundTag&&);
     map<std::string, CompoundTagVariant> val;
 
-    inline static CompoundTag* create() {
-        return (CompoundTag*)Tag::createTag((Tag::Type)10);
-    }
+public:
 
-    inline map<std::string, CompoundTagVariant>& value() {
-        return dAccess<map<std::string, CompoundTagVariant>, 8>(this);
-    }
+    LIAPI static std::unique_ptr<CompoundTag> create();
+    LIAPI map<std::string, CompoundTagVariant>& value();
 
     template <typename T>
     inline T const* get(class gsl::basic_string_span<char const, -1> key) const {
@@ -34,9 +28,10 @@ public:
 
     // put value
     LIAPI void putEnd(std::string key);
-    LIAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
     LIAPI double& putDouble(std::string key, double val);
-    LIAPI void putByteArray(std::string key, void* data, size_t size);
+    LIAPI void putByteArray(std::string key, char data[], size_t size);
+    LIAPI void putIntArray(std::string key, int data[], size_t size);
+    LIAPI struct TagMemoryChunk& putIntArray(std::string key, struct TagMemoryChunk val);
 
     // get value
     LIAPI double getDouble(class gsl::basic_string_span<char const, -1> key) const;
@@ -50,34 +45,27 @@ public:
     LIAPI class ByteArrayTag const* getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class IntArrayTag const* getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const;
-    inline Tag* operator[](class gsl::basic_string_span<char const, -1> key) {
-        return get(key);
-    }
-
-    inline class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const {
-        return getList(key);
-    };
-    inline class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const {
-        return getCompound(key );
-    };
+    LIAPI class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const;
+    LIAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
+    LIAPI class Tag* operator[](class gsl::basic_string_span<char const, -1> key);
 
     // io
     LIAPI void setItemStack(ItemStack* item);
     LIAPI void setBlock(Block* blk);
-    LIAPI bool setActor(Actor* actor);
+    LIAPI bool setActor(Actor* actor) const;
     LIAPI bool setPlayer(Player* player);
-    LIAPI bool setBlockActor(BlockActor* ble);
-    LIAPI static CompoundTag* fromItemStack(ItemStack* item);
-    LIAPI static CompoundTag* fromBlock(Block* blk);
-    LIAPI static CompoundTag* fromActor(Actor* actor);
-    LIAPI static CompoundTag* fromPlayer(Player* player);
-    LIAPI static CompoundTag* fromBlockActor(BlockActor* ble);
+    LIAPI bool setBlockActor(BlockActor* ble) const;
+    LIAPI static std::unique_ptr<CompoundTag> fromItemStack(ItemStack* item);
+    LIAPI static std::unique_ptr<CompoundTag> fromBlock(Block* blk);
+    LIAPI static std::unique_ptr<CompoundTag> fromActor(Actor* actor);
+    LIAPI static std::unique_ptr<CompoundTag> fromPlayer(Player* player);
+    LIAPI static std::unique_ptr<CompoundTag> fromBlockActor(BlockActor* ble);
 
     LIAPI std::string toSNBT();
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
-    LIAPI static CompoundTag* fromSNBT(const std::string& snbt);
-    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
-    LIAPI static CompoundTag* fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
+    LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
 
 #undef AFTER_EXTRA
 
@@ -93,7 +81,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;

@@ -7,6 +7,8 @@
 #include <ServerAPI.h>
 #include <HookAPI.h>
 #include <Config.h>
+#include <LLAPI.h>
+#include <Version.h>
 #include "Loader.h"
 #include "AutoUpgrade.h"
 #include "CrashLogger.h"
@@ -52,6 +54,9 @@ void CheckDevMode() {
     }
 }
 
+//extern
+extern void EndScheduleSystem();
+
 void LLMain() {
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
@@ -79,7 +84,7 @@ void LLMain() {
     
     //Rename Window
     HWND hwnd = GetConsoleWindow();
-    std::wstring s = L"Bedrock Delicated Server " + str2wstr(LL::getBdsVersion().substr(1));
+    std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
     //DebugMode
@@ -87,6 +92,11 @@ void LLMain() {
 
     //Builtin CrashLogger
     InitCrashLogger(LL::globalConfig.enableCrashLogger);
+
+    //Register Myself
+    //LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for bedrock delicated server", LITELOADER_VERSION,
+    //    { {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
+    //});
 
     //Load plugins
     LoadMain();
@@ -97,9 +107,9 @@ void LLMain() {
     //Register simple server logger
     RegisterSimpleServerLogger();
 
+    //Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
     { 
-        // Server started event
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
@@ -107,9 +117,16 @@ void LLMain() {
         return true;
     });
 
-}
-// Call LLMain
+    //Register Cleanup
+    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent)
+    {
+        EndScheduleSystem();
+        return true;
+    });
 
+}
+
+// Call LLMain
 THook(int, "main", int a, void* b) {
     LLMain();
     return original(a, b);

@@ -33,12 +33,12 @@ public:
     /*6*/ virtual bool getIsWorldBuilder() const;
     /*7*/ virtual void __unk_vfn_1();
     /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual int /*enum enum ActorCategory*/ getEntityCategories() const;
+    /*9*/ virtual enum ActorCategory getEntityCategories() const;
     /*10*/ virtual bool getDamagingEntityIsCreative() const;
     /*11*/ virtual bool getDamagingEntityIsWorldBuilder() const;
     /*12*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*13*/ virtual int /*enum enum ActorType*/ getDamagingEntityType() const;
-    /*14*/ virtual int /*enum enum ActorCategory*/ getDamagingEntityCategories() const;
+    /*13*/ virtual enum ActorType getDamagingEntityType() const;
+    /*14*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*15*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /*
     inline  ~ActorDamageByActorSource(){
@@ -46,8 +46,8 @@ public:
         *((void**)&rv) = dlsym("??1ActorDamageByActorSource@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum ActorType*\/ getEntityType() const{
-        int \/*enum enum ActorType*\/ (ActorDamageByActorSource::*rv)() const;
+    inline enum ActorType getEntityType() const{
+        enum ActorType (ActorDamageByActorSource::*rv)() const;
         *((void**)&rv) = dlsym("?getEntityType@ActorDamageByActorSource@@UEBA?AW4ActorType@@XZ");
         return (this->*rv)();
     }

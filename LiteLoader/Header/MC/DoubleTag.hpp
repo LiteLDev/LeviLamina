@@ -16,27 +16,11 @@ class DoubleTag : public Tag {
 double val;
 
 public:
-    inline double& value() {
-        return dAccess<double, 8>(this);
-    }
-    inline DoubleTag& operator=(double val) {
-        value() = val;
-        return *this;
-    }
-    inline static DoubleTag* create(double val = 0.0) {
-        DoubleTag* tag = (DoubleTag*)Tag::createTag(Tag::Type::Double);
-        *tag = val;
-        return tag;
-    }
-    inline bool set(double val) {
-        if (getTagType() != Tag::Type::Double)
-            return false;
-        value() = val;
-        return true;
-    }
-    inline double get() {
-        return value();
-    }
+    LIAPI double& value();
+    LIAPI DoubleTag& operator=(double val);
+    LIAPI static std::unique_ptr<DoubleTag> create(double val = 0.0);
+    LIAPI bool set(double val);
+    LIAPI double get();
 
 #undef AFTER_EXTRA
 
@@ -52,7 +36,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;

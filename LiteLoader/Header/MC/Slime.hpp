@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~Slime();
     /*2*/ virtual void remove();
     /*3*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -100,7 +100,7 @@ public:
     /*72*/ virtual void _serverAiMobStep();
     /*73*/ virtual void __unk_vfn_25();
     /*74*/ virtual bool canDealDamage();
-    /*75*/ virtual int /*enum enum LevelSoundEvent*/ getSquishSound();
+    /*75*/ virtual enum LevelSoundEvent getSquishSound();
     /*76*/ virtual void setSlimeSize(int);
     /*77*/ virtual bool doPlayJumpSound();
     /*78*/ virtual bool doPlayLandSound();

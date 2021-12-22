@@ -52,7 +52,7 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*27*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
@@ -95,7 +95,7 @@ public:
     /*67*/ virtual void __unk_vfn_24();
     /*68*/ virtual void _serverAiMobStep();
     /*69*/ virtual void __unk_vfn_25();
-    /*70*/ virtual int /*enum enum LevelSoundEvent*/ _getInkSquirtSoundEvent() const;
+    /*70*/ virtual enum LevelSoundEvent _getInkSquirtSoundEvent() const;
     /*
     inline float _getWalkTargetValue(class BlockPos const& a0){
         float (GlowSquid::*rv)(class BlockPos const&);

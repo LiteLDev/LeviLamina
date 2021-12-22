@@ -25,8 +25,8 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*1*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*1*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*2*/ virtual ~Vex();
     /*3*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*4*/ virtual void __unk_vfn_0();

@@ -34,7 +34,7 @@
 
 #include "HookAPI.h"
 #include "MC/Types.hpp"
-#include "Utils/GlobalService.h"
+#include "GlobalServiceAPI.h"
 #include "Utils/Optional.h"
 #include "LoggerAPI.h"
 using std::map;

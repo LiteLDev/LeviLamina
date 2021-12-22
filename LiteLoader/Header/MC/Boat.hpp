@@ -24,8 +24,8 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*1*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*1*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*2*/ virtual ~Boat();
     /*3*/ virtual void remove();
     /*4*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -37,7 +37,7 @@ public:
     /*10*/ virtual void normalTick();
     /*11*/ virtual float getRidingHeight();
     /*12*/ virtual void addPassenger(class Actor&);
-    /*13*/ virtual std::string getExitTip(std::string const&, int /*enum enum InputMode*/) const;
+    /*13*/ virtual std::string getExitTip(std::string const&, enum InputMode) const;
     /*14*/ virtual void __unk_vfn_2();
     /*15*/ virtual void __unk_vfn_3();
     /*16*/ virtual float getCameraOffset() const;
@@ -71,10 +71,10 @@ public:
     /*44*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*45*/ virtual float getPickRadius();
     /*46*/ virtual void awardKillScore(class Actor&, int);
-    /*47*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*48*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*49*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*50*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*47*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*48*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*49*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*50*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*51*/ virtual class HashedString const& queryEntityRenderer() const;
     /*52*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*53*/ virtual bool canFreeze() const;

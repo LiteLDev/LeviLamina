@@ -13,6 +13,9 @@ class ModalFormResponsePacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    int formId;
+    std::string data;
 
 #undef AFTER_EXTRA
 
@@ -24,11 +27,11 @@ public:
 
 public:
     /*0*/ virtual ~ModalFormResponsePacket();
-    /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const;
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     MCAPI ModalFormResponsePacket();
 
 protected:

@@ -24,8 +24,8 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
-    /*1*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
+    /*1*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*2*/ virtual ~Minecart();
     /*3*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*4*/ virtual void __unk_vfn_0();
@@ -67,10 +67,10 @@ public:
     /*40*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*41*/ virtual float getPickRadius();
     /*42*/ virtual void awardKillScore(class Actor&, int);
-    /*43*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*44*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*45*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*46*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*43*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*44*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*45*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*46*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*47*/ virtual class HashedString const& queryEntityRenderer() const;
     /*48*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*49*/ virtual bool canFreeze() const;
@@ -108,7 +108,7 @@ public:
     /*81*/ virtual void _onSizeUpdated();
     /*82*/ virtual void __unk_vfn_21();
     /*83*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*84*/ virtual int /*enum enum MinecartType*/ getType() = 0;
+    /*84*/ virtual enum MinecartType getType() = 0;
     /*85*/ virtual class Block const* getDefaultDisplayBlock() const;
     /*86*/ virtual void __unk_vfn_22();
     /*87*/ virtual int getDefaultDisplayOffset() const;

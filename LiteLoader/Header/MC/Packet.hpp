@@ -35,9 +35,17 @@ public:
     class Packet& operator=(class Packet const&) = delete;
     Packet(class Packet const&) = delete;
 
-    ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
+    inline ServerPlayer* getPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* netId)
     {
         return handler->getServerPlayer(*netId, dAccess<char>(this, 16));
+    }
+    inline enum StreamReadResult read(class ReadOnlyBinaryStream& binaryStream)
+    {
+        return _read(binaryStream);
+    }
+protected:
+    std::string toDebugString() {
+        return fmt::format("{}({})->{}", getName(), getId(), clientSubId);
     }
 
 #undef AFTER_EXTRA
@@ -51,12 +59,12 @@ public:
 
 public:
     /*0*/ virtual ~Packet();
-    /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const = 0;
+    /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream&) const = 0;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual bool disallowBatching() const;
-    /*6*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&) = 0;
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&) = 0;
     /*
     inline  ~Packet(){
          (Packet::*rv)();

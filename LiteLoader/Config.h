@@ -15,24 +15,33 @@ constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL {
-struct LLConfig {
-    bool debugMode = false;
-    int logLevel = 4;
-    ::std::string language = "en";
+namespace LL
+{
+    enum class SeverStatus {
+        Starting, Running, Stopping
+    };
+    struct LLConfig
+    {
+        bool debugMode = false;
+        int logLevel = 4;
+        ::std::string language = "en";
 
-    bool enableAutoUpdate = true;
-    bool enableCrashLogger = true;
-    bool enableSimpleServerLogger = true;
-    ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+        bool enableAutoUpdate = true;
+        bool enableCrashLogger = true;
+        ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+        bool enableSimpleServerLogger = true;
+        bool enableFixDisconnectBug = true;
+        bool enableFixListenPort = false;
+        bool enableAntiGive = true;
+        bool enableUnlockCmd = true;
 
-    bool enableFixDisconnectBug = true;
-    bool enableFixListenPort = true;
-};
-extern LLConfig globalConfig;
+        //Runtime Config
+        SeverStatus serverStatus = SeverStatus::Starting;
+    };
+    extern LLConfig globalConfig;
 
-void inline to_json(nlohmann::json& j, const LLConfig& conf);
-void inline from_json(const nlohmann::json& j, LLConfig& conf);
+    void inline to_json(nlohmann::json& j, const LLConfig& conf);
+    void inline from_json(const nlohmann::json& j, LLConfig& conf);
 } // namespace LL
 
 bool LoadLLConfig();

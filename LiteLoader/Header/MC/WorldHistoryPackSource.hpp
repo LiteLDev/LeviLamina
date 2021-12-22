@@ -26,8 +26,8 @@ public:
     /*0*/ virtual ~WorldHistoryPackSource();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual int /*enum enum PackOrigin*/ getPackOrigin() const;
-    /*4*/ virtual int /*enum enum PackType*/ getPackType() const;
+    /*3*/ virtual enum PackOrigin getPackOrigin() const;
+    /*4*/ virtual enum PackType getPackType() const;
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
     /*
     inline void forEachPack(class std::function<void (class Pack& )> a0){

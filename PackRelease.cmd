@@ -28,5 +28,6 @@ echo.
 echo [INFO] Packing RELEASE... DONE!
 
 if [%1]==[action] goto End
+explorer.exe .\RELEASE
 timeout /t 3 >nul
 :End

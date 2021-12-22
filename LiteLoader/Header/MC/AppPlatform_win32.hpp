@@ -24,13 +24,13 @@ public:
 
 public:
     /*
-    inline int \/*enum enum PlatformType*\/ getPlatformType() const{
-        int \/*enum enum PlatformType*\/ (AppPlatform_win32::*rv)() const;
+    inline enum PlatformType getPlatformType() const{
+        enum PlatformType (AppPlatform_win32::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformType@AppPlatform_win32@@UEBA?AW4PlatformType@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum UIScalingRules*\/ getPlatformUIScalingRules() const{
-        int \/*enum enum UIScalingRules*\/ (AppPlatform_win32::*rv)() const;
+    inline enum UIScalingRules getPlatformUIScalingRules() const{
+        enum UIScalingRules (AppPlatform_win32::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformUIScalingRules@AppPlatform_win32@@EEBA?AW4UIScalingRules@@XZ");
         return (this->*rv)();
     }
@@ -74,8 +74,8 @@ public:
         *((void**)&rv) = dlsym("?canLaunchUri@AppPlatform_win32@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline int \/*enum enum BuildPlatform*\/ getBuildPlatform() const{
-        int \/*enum enum BuildPlatform*\/ (AppPlatform_win32::*rv)() const;
+    inline enum BuildPlatform getBuildPlatform() const{
+        enum BuildPlatform (AppPlatform_win32::*rv)() const;
         *((void**)&rv) = dlsym("?getBuildPlatform@AppPlatform_win32@@UEBA?AW4BuildPlatform@@XZ");
         return (this->*rv)();
     }
@@ -139,8 +139,8 @@ public:
         *((void**)&rv) = dlsym("?getModelName@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum OsVersion*\/ getOSVersion() const{
-        int \/*enum enum OsVersion*\/ (AppPlatform_win32::*rv)() const;
+    inline enum OsVersion getOSVersion() const{
+        enum OsVersion (AppPlatform_win32::*rv)() const;
         *((void**)&rv) = dlsym("?getOSVersion@AppPlatform_win32@@UEBA?AW4OsVersion@@XZ");
         return (this->*rv)();
     }
@@ -239,10 +239,10 @@ public:
         *((void**)&rv) = dlsym("?readAssetFile@AppPlatform_win32@@UEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVPath@Core@@@Z");
         return (this->*rv)(std::forward<class Core::Path const&>(a0));
     }
-    inline void setFullscreenMode(int \/*enum enum FullscreenMode*\/ a0){
-        void (AppPlatform_win32::*rv)(int \/*enum enum FullscreenMode*\/);
+    inline void setFullscreenMode(enum FullscreenMode a0){
+        void (AppPlatform_win32::*rv)(enum FullscreenMode);
         *((void**)&rv) = dlsym("?setFullscreenMode@AppPlatform_win32@@UEAAXW4FullscreenMode@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum FullscreenMode*\/>(a0));
+        return (this->*rv)(std::forward<enum FullscreenMode>(a0));
     }
     inline void setWindowSize(int a0, int a1){
         void (AppPlatform_win32::*rv)(int, int);

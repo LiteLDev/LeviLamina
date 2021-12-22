@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcodedClient(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~Parrot();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -55,7 +55,7 @@ public:
     /*27*/ virtual void onFailedTame();
     /*28*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*29*/ virtual void playAmbientSound();
-    /*30*/ virtual int /*enum enum LevelSoundEvent*/ getAmbientSound() const;
+    /*30*/ virtual enum LevelSoundEvent getAmbientSound() const;
     /*31*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*32*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*33*/ virtual float getPickRadius();

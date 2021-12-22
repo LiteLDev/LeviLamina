@@ -1,5 +1,6 @@
 #include <Global.h>
 #include <string>
+#include <utility>
 #include <vector>
 #include <cctype>
 #include <MC/Actor.hpp>
@@ -66,9 +67,9 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
     *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
-BlockSource* Level::getBlockSource(int dimid) {
-    //auto dim = Global<Level>->createDimension(dimid);
-    auto dim = Global<Level>->getDimension(dimid);
+BlockSource* Level::getBlockSource(int dimID) {
+    //auto dim = Global<Level>->createDimension(dimID);
+    auto dim = Global<Level>->getDimension(dimID);
     return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
     //return dAccess<BlockSource*>(dim, 96);
 }
@@ -121,19 +122,19 @@ Block* Level::getBlockEx(const BlockPos& pos, int dimId)
 }
 
 BlockInstance Level::getBlockInstance(BlockPos* pos, int dimId) {
-    return BlockInstance(*pos, dimId);
+    return {*pos, dimId};
 }
 
 BlockInstance Level::getBlockInstance(BlockPos* pos, BlockSource* blockSource) {
-    return BlockInstance(*pos, blockSource->getDimensionId());
+    return {*pos, blockSource->getDimensionId()};
 }
 
 BlockInstance Level::getBlockInstance(const BlockPos& pos, int dim) {
-    return BlockInstance(pos, dim);
+    return {pos, dim};
 }
 
 BlockInstance Level::getBlockInstance(const BlockPos& pos, BlockSource* blockSource) {
-    return BlockInstance(pos, blockSource->getDimensionId());
+    return {pos, blockSource->getDimensionId()};
 }
 
 BlockActor* Level::getBlockEntity(BlockPos* pos, int dimId) {
@@ -228,7 +229,7 @@ bool Level::runcmdAs(Player* pl, const string& cmd) {
     ServerCommandOrigin origin;
     SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
         filler, (ServerPlayer*)pl);
-    if (FAKE_PORGVTBL[1] == NULL) {
+    if (FAKE_PORGVTBL[1] == nullptr) {
         memcpy(FAKE_PORGVTBL, ((void**)filler[0]) - 1, sizeof(FAKE_PORGVTBL));
         FAKE_PORGVTBL[1] = (void*)dummy;
     }
@@ -325,7 +326,7 @@ Player* Level::getPlayer(ActorUniqueID id)
 Actor* Level::spawnMob(Vec3 pos, int dimId, std::string name) {
 
     Spawner* sp = &Global<Level>->getSpawner();
-    return sp->spawnMob(pos, dimId, name);
+    return sp->spawnMob(pos, dimId, std::move(name));
 }
 
 Actor* Level::spawnItem(Vec3 pos, int dimId, ItemStack* item) {
@@ -340,22 +341,22 @@ bool Level::createExplosion(Vec3 pos, int dimId, Actor* source, float power, flo
 
 ItemStack* Level::getItemStackFromId(short a2, int a3) {
     // TODO: Should item be constructed
-    Item* itemcreate = (Item*)new char[552];
-    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemcreate, "", a2);
-    ItemStack* a = (ItemStack*)new char[272];
-    ItemStack* itemstackcreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
-    ItemStack* itemstack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item&, int, int)(itemstackcreate, *item, 1, a3);
-    return itemstack;
+    Item* itemCreate = (Item*)new char[552];
+    Item* item = SymCall("??0Item@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@F@Z", Item*, Item*, string, short)(itemCreate, "", a2);
+    auto* a = (ItemStack*)new char[272];
+    ItemStack* itemStackCreate = SymCall("??0ItemStack@@QEAA@XZ", ItemStack*, ItemStack*)(a);
+    ItemStack* itemStack = SymCall("??0ItemStack@@QEAA@AEBVItem@@HH@Z", ItemStack*, ItemStack*, Item &, int, int)(itemStackCreate, *item, 1, a3);
+    return itemStack;
 }
 
-void Level::broadcastText(string a1, TextType ty) {
+void Level::broadcastText(const string& a1, TextType ty) {
     auto players = getAllPlayers();
     for (auto& sp : players) {
         sp->sendTextPacket(a1, ty);
     }
 }
 
-void Level::broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
     auto players = getAllPlayers();
     for (auto& sp : players) {
         sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);

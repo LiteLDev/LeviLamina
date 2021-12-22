@@ -9,6 +9,9 @@
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/NetworkIdentifier.hpp>
 #include <MC/Player.hpp>
+#include <MC/ServerPlayer.hpp>
+#include <GuiAPI.h>
+
 using namespace std;
 
 //////////////////////////////// Data ////////////////////////////////
@@ -173,9 +176,9 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
     try
     {
         Packet* packet = *(Packet**)pPacket;
-        Player* p = GetPlayerFromPacket(handler, id, packet);
+        ServerPlayer* sp = handler->getServerPlayer(*id, 0);
 
-        if (p)
+        if (sp)
         {
             unsigned formId = dAccess<unsigned>(packet, 48);
             string data = dAccess<string>(packet, 56);
@@ -183,7 +186,8 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
             if (data.back() == '\n')
                 data.pop_back();
 
-            HandleFormPacket(p, formId, data);
+            HandleFormPacket(sp, formId, data);
+            GUIcallbcak(sp, formId, data);
         }
     }
     catch (const seh_exception& e)

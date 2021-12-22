@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~EmptyItemGameplayHandler();
-    /*1*/ virtual int /*enum enum HandlerResult*/ handleShapedRecipeTriggered(struct ShapedRecipeTriggeredEvent const&);
+    /*1*/ virtual enum HandlerResult handleShapedRecipeTriggered(struct ShapedRecipeTriggeredEvent const&);
 
 protected:
 

@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~LavaSlime();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();

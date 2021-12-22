@@ -41,7 +41,7 @@ public:
     /*15*/ virtual bool isHalfPulse() const;
     /*16*/ virtual void __unk_vfn_2();
     /*17*/ virtual bool isSecondaryPowered() const;
-    /*18*/ virtual int /*enum enum CircuitComponentType*/ getCircuitComponentType() const;
+    /*18*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     MCAPI ProducerComponent();
     MCAPI void allowAttachments(bool);
 

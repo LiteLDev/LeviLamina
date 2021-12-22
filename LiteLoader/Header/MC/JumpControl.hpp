@@ -28,8 +28,8 @@ public:
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
     /*
-    inline int \/*enum enum JumpType*\/ getJumpType(class JumpControlComponent const& a0, class Mob const& a1) const{
-        int \/*enum enum JumpType*\/ (JumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
+    inline enum JumpType getJumpType(class JumpControlComponent const& a0, class Mob const& a1) const{
+        enum JumpType (JumpControl::*rv)(class JumpControlComponent const&, class Mob const&) const;
         *((void**)&rv) = dlsym("?getJumpType@JumpControl@@MEBA?AW4JumpType@@AEBVJumpControlComponent@@AEBVMob@@@Z");
         return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
     }
@@ -38,10 +38,10 @@ public:
         *((void**)&rv) = dlsym("?getJumpDelay@JumpControl@@MEBAHAEBVJumpControlComponent@@AEBVMob@@@Z");
         return (this->*rv)(std::forward<class JumpControlComponent const&>(a0), std::forward<class Mob const&>(a1));
     }
-    inline void setJumpType(class JumpControlComponent& a0, class Mob& a1, int \/*enum enum JumpType*\/ a2){
-        void (JumpControl::*rv)(class JumpControlComponent&, class Mob&, int \/*enum enum JumpType*\/);
+    inline void setJumpType(class JumpControlComponent& a0, class Mob& a1, enum JumpType a2){
+        void (JumpControl::*rv)(class JumpControlComponent&, class Mob&, enum JumpType);
         *((void**)&rv) = dlsym("?setJumpType@JumpControl@@MEAAXAEAVJumpControlComponent@@AEAVMob@@W4JumpType@@@Z");
-        return (this->*rv)(std::forward<class JumpControlComponent&>(a0), std::forward<class Mob&>(a1), std::forward<int \/*enum enum JumpType*\/>(a2));
+        return (this->*rv)(std::forward<class JumpControlComponent&>(a0), std::forward<class Mob&>(a1), std::forward<enum JumpType>(a2));
     }
     inline void initializeInternal(class Mob& a0, struct JumpControlDescription* a1){
         void (JumpControl::*rv)(class Mob&, struct JumpControlDescription*);

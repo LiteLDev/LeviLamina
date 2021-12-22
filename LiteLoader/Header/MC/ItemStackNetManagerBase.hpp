@@ -31,7 +31,7 @@ public:
     /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void onContainerScreenClose();
-    /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, int /*enum enum ContainerEnumName*/, class ContainerWeakRef const&);
+    /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, enum ContainerEnumName, class ContainerWeakRef const&);
     /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*
@@ -40,10 +40,10 @@ public:
         *((void**)&rv) = dlsym("?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z");
         return (this->*rv)(std::forward<class ItemStackNetManagerScreen&>(a0));
     }
-    inline void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen& a0, int \/*enum enum ContainerType*\/ a1, int a2){
-        void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen&, int \/*enum enum ContainerType*\/, int);
+    inline void _addLegacyTransactionRequestSetItemSlot(class ItemStackNetManagerScreen& a0, enum ContainerType a1, int a2){
+        void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen&, enum ContainerType, int);
         *((void**)&rv) = dlsym("?_addLegacyTransactionRequestSetItemSlot@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@W4ContainerType@@H@Z");
-        return (this->*rv)(std::forward<class ItemStackNetManagerScreen&>(a0), std::forward<int \/*enum enum ContainerType*\/>(a1), std::forward<int>(a2));
+        return (this->*rv)(std::forward<class ItemStackNetManagerScreen&>(a0), std::forward<enum ContainerType>(a1), std::forward<int>(a2));
     }
     inline  ~ItemStackNetManagerBase(){
          (ItemStackNetManagerBase::*rv)();

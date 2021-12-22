@@ -44,10 +44,10 @@ public:
         *((void**)&rv) = dlsym("?setEnabled@WorldSessionEndPoint@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void log(int \/*enum enum LogArea*\/ a0, int \/*enum enum LogLevel*\/ a1, char const* a2){
-        void (WorldSessionEndPoint::*rv)(int \/*enum enum LogArea*\/, int \/*enum enum LogLevel*\/, char const*);
+    inline void log(enum LogArea a0, enum LogLevel a1, char const* a2){
+        void (WorldSessionEndPoint::*rv)(enum LogArea, enum LogLevel, char const*);
         *((void**)&rv) = dlsym("?log@WorldSessionEndPoint@@UEAAXW4LogArea@@W4LogLevel@@PEBD@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LogArea*\/>(a0), std::forward<int \/*enum enum LogLevel*\/>(a1), std::forward<char const*>(a2));
+        return (this->*rv)(std::forward<enum LogArea>(a0), std::forward<enum LogLevel>(a1), std::forward<char const*>(a2));
     }
     */
     MCAPI WorldSessionEndPoint(class IMinecraftEventing&);

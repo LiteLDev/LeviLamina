@@ -13,6 +13,19 @@ class ShowCreditsPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    enum CreditsState :int {
+        START_CREDITS,
+        END_CREDITS,
+    };
+    ActorRuntimeID runtimeId;
+    CreditsState state;
+
+    inline std::string toDebugString() {
+        return fmt::format("{}: state: {}", __super::toDebugString(),
+            state == START_CREDITS ? "START_CREDITS" : "END_CREDITS");
+    }
+
 
 #undef AFTER_EXTRA
 
@@ -24,11 +37,11 @@ public:
 
 public:
     /*0*/ virtual ~ShowCreditsPacket();
-    /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const;
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~ShowCreditsPacket(){
          (ShowCreditsPacket::*rv)();

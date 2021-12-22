@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~EndCityStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+    /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI EndCityStart(class Dimension&, class TheEndGenerator&, class Random&, class ChunkPos const&);
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);
 

@@ -51,7 +51,7 @@ bool Logger::setDefaultFileImpl(HMODULE hPlugin, nullptr_t)
 }
 
 
-bool Logger::setFile(const std::string& logFile, bool appendMode = true){
+bool Logger::setFile(const std::string& logFile, bool appendMode){
     if (ofs.is_open())
         ofs.close();
 

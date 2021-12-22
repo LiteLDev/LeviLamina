@@ -29,7 +29,7 @@ public:
     /*1*/ virtual std::string const& getRequestId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class Level* getLevel() const;
-    /*4*/ virtual int /*enum enum CommandPermissionLevel*/ getPermissionsLevel() const;
+    /*4*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*5*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*6*/ virtual bool hasChatPerms() const;
     /*7*/ virtual bool hasTellPerms() const;
@@ -37,7 +37,7 @@ public:
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*12*/ virtual int /*enum enum CommandOriginType*/ getOriginType() const;
+    /*12*/ virtual enum CommandOriginType getOriginType() const;
     /*13*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*14*/ virtual class mce::UUID const& getUUID() const;
     /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;

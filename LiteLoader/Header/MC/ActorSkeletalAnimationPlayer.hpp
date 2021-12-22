@@ -31,7 +31,7 @@ public:
     /*5*/ virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string > > > const&);
     /*6*/ virtual bool hasAnimationFinished() const;
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    /*8*/ virtual int /*enum enum ActorAnimationType*/ getAnimationType() const;
+    /*8*/ virtual enum ActorAnimationType getAnimationType() const;
     /*9*/ virtual class HashedString const& getRawName() const;
     MCAPI ActorSkeletalAnimationPlayer(class HashedString const&, class ActorSkeletalAnimationPtr, class AnimationComponent&, class ExpressionNode const&);
 

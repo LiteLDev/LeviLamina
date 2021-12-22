@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~GetInteractionPositionForBlockNode();
-    /*1*/ virtual int /*enum enum BehaviorStatus*/ tick(class Actor&);
+    /*1*/ virtual enum BehaviorStatus tick(class Actor&);
     /*2*/ virtual void initializeFromDefinition(class Actor&);
     MCAPI GetInteractionPositionForBlockNode();
 

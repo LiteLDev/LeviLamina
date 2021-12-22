@@ -25,9 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandleNonImplemented_DEPRECATEDASKTYLAING();
-    /*1*/ virtual int /*enum enum ItemStackNetResult*/ preHandleAction(int /*enum enum ItemStackRequestActionType*/);
+    /*1*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
     /*2*/ virtual void endRequestBatch();
-    /*3*/ virtual int /*enum enum ItemStackNetResult*/ _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*3*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*4*/ virtual void _postCraftRequest(bool);
     /*5*/ virtual class Recipes const* _getLevelRecipes() const;
 

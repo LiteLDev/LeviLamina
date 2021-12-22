@@ -30,8 +30,8 @@ public:
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual int /*enum enum EventResult*/ onScriptLoaded(std::string const&, unsigned __int64);
-    /*8*/ virtual int /*enum enum EventResult*/ onScriptRan(std::string const&, std::string const&, bool);
+    /*7*/ virtual enum EventResult onScriptLoaded(std::string const&, unsigned __int64);
+    /*8*/ virtual enum EventResult onScriptRan(std::string const&, std::string const&, bool);
     MCAPI ScriptTelemetryEventListener(class IMinecraftEventing&, bool);
 
 protected:

@@ -24,10 +24,10 @@ public:
 
 public:
     /*
-    inline bool allowIncomingPacketId(class NetworkIdentifier const& a0, int \/*enum enum MinecraftPacketIds*\/ a1){
-        bool (ClassroomModeNetworkHandler::*rv)(class NetworkIdentifier const&, int \/*enum enum MinecraftPacketIds*\/);
+    inline bool allowIncomingPacketId(class NetworkIdentifier const& a0, enum MinecraftPacketIds a1){
+        bool (ClassroomModeNetworkHandler::*rv)(class NetworkIdentifier const&, enum MinecraftPacketIds);
         *((void**)&rv) = dlsym("?allowIncomingPacketId@ClassroomModeNetworkHandler@@UEAA_NAEBVNetworkIdentifier@@W4MinecraftPacketIds@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<int \/*enum enum MinecraftPacketIds*\/>(a1));
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<enum MinecraftPacketIds>(a1));
     }
     inline void onWebsocketRequest(std::string const& a0, std::string const& a1, class std::function<void (void)> a2){
         void (ClassroomModeNetworkHandler::*rv)(std::string const&, std::string const&, class std::function<void (void)>);

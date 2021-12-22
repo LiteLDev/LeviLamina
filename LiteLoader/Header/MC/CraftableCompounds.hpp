@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~CraftableCompounds();
-    /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, int /*enum enum LabTableReactionType*/, int /*enum enum CompoundContainerType*/);
+    /*1*/ virtual void _registerCompound(std::vector<class ItemStack> const&, class ItemStack const&, enum LabTableReactionType, enum CompoundContainerType);
     /*
     inline  ~CraftableCompounds(){
          (CraftableCompounds::*rv)();

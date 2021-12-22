@@ -33,7 +33,7 @@ public:
     /*7*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual void __unk_vfn_8();
-    /*10*/ virtual int /*enum enum EventResult*/ onActorDefinitionEventTriggered(struct ActorDefinitionEvent const&);
+    /*10*/ virtual enum EventResult onActorDefinitionEventTriggered(struct ActorDefinitionEvent const&);
     MCAPI DebugInfoComponent(class DebugInfoComponent&&);
     MCAPI void addListener(class HashedString const&, class NetworkIdentifier, unsigned char);
     MCAPI bool listenersEmpty() const;

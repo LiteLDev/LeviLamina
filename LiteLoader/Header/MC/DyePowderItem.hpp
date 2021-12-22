@@ -37,14 +37,14 @@ public:
     /*9*/ virtual void __unk_vfn_4();
     /*10*/ virtual bool isDyeable() const;
     /*11*/ virtual bool isDye() const;
-    /*12*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*12*/ virtual enum ItemColor getItemColor() const;
     /*13*/ virtual bool isFertilizer() const;
     /*14*/ virtual void __unk_vfn_5();
     /*15*/ virtual bool isThrowable() const;
     /*16*/ virtual bool isUseable() const;
     /*17*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*18*/ virtual class FuelItemComponent* getFuel() const;
-    /*19*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*19*/ virtual enum BlockShape getBlockShape() const;
     /*20*/ virtual bool canDestroySpecial(class Block const&) const;
     /*21*/ virtual int getLevelDataForAuxValue(int) const;
     /*22*/ virtual short getMaxDamage() const;

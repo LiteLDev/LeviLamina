@@ -14,21 +14,10 @@ class EndTag : public Tag {
 #define AFTER_EXTRA
 // Add Member There
 public:
-    inline auto value() {
-        return nullptr;
-    }
-    inline static EndTag* create() {
-        EndTag* tag = (EndTag*)Tag::createTag(Tag::Type::End);
-        return tag;
-    }
-    inline bool set() {
-        if (getTagType() != Tag::Type::End)
-            return false;
-        return true;
-    }
-    inline auto get() {
-        return value();
-    }
+    LIAPI nullptr_t value();
+    LIAPI static std::unique_ptr<EndTag> create();
+    LIAPI bool set();
+    LIAPI nullptr_t get();
 
 #undef AFTER_EXTRA
 
@@ -45,7 +34,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;

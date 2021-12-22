@@ -51,7 +51,7 @@ public:
     /*23*/ virtual void onFailedTame();
     /*24*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*25*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*26*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*26*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*27*/ virtual float getPickRadius();
     /*28*/ virtual void awardKillScore(class Actor&, int);
     /*29*/ virtual class HashedString const& queryEntityRenderer() const;

@@ -39,7 +39,7 @@ public:
     /*14*/ virtual void __unk_vfn_13();
     /*15*/ virtual void __unk_vfn_14();
     /*16*/ virtual void __unk_vfn_15();
-    /*17*/ virtual int /*enum enum EducationEditionOffer*/ getEducationEditionOffering() const;
+    /*17*/ virtual enum EducationEditionOffer getEducationEditionOffering() const;
     /*18*/ virtual void __unk_vfn_16();
     /*19*/ virtual void __unk_vfn_17();
     /*20*/ virtual bool supports3DExport() const;

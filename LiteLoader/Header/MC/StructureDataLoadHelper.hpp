@@ -34,12 +34,12 @@ public:
     /*7*/ virtual float loadRotationRadiansY(float);
     /*8*/ virtual unsigned char loadFacingID(unsigned char);
     /*9*/ virtual class Vec3 loadDirection(class Vec3 const&);
-    /*10*/ virtual int /*enum enum Direction::Type*/ loadDirection(int /*enum enum Direction::Type*/);
-    /*11*/ virtual int /*enum enum Rotation*/ loadRotation(int /*enum enum Rotation*/);
-    /*12*/ virtual int /*enum enum Mirror*/ loadMirror(int /*enum enum Mirror*/);
+    /*10*/ virtual enum Direction::Type loadDirection(enum Direction::Type);
+    /*11*/ virtual enum Rotation loadRotation(enum Rotation);
+    /*12*/ virtual enum Mirror loadMirror(enum Mirror);
     /*13*/ virtual struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID);
     /*14*/ virtual struct ActorUniqueID loadOwnerID(struct ActorUniqueID);
-    /*15*/ virtual int /*enum enum DataLoadHelperType*/ getType() const;
+    /*15*/ virtual enum DataLoadHelperType getType() const;
     /*16*/ virtual bool shouldResetTime();
     /*17*/ virtual struct ActorUniqueID _generateNewID();
     /*

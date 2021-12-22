@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~GroundedConstraint();
-    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, int /*enum enum Rotation*/ const&) const;
+    /*1*/ virtual bool isSatisfied(class IBlockWorldGenAPI const&, class BlockPos const&, enum Rotation const&) const;
     MCAPI GroundedConstraint(class StructureTemplate&);
 
 protected:

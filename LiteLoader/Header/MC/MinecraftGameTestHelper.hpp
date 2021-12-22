@@ -65,7 +65,7 @@ public:
     /*39*/ virtual class std::optional<struct gametest::GameTestError> assertContainerEmpty(class BlockPos const&);
     /*40*/ virtual class std::optional<struct gametest::GameTestError> assertContainerContains(class ItemStack const&, class BlockPos const&);
     /*41*/ virtual class std::optional<struct gametest::GameTestError> assertEntityHasComponent(struct ActorDefinitionIdentifier const&, std::string const&, class BlockPos const&, bool);
-    /*42*/ virtual class std::optional<struct gametest::GameTestError> assertEntityHasArmor(struct ActorDefinitionIdentifier const&, int /*enum enum ArmorSlot*/, std::string const&, int, class BlockPos const&, bool);
+    /*42*/ virtual class std::optional<struct gametest::GameTestError> assertEntityHasArmor(struct ActorDefinitionIdentifier const&, enum ArmorSlot, std::string const&, int, class BlockPos const&, bool);
     /*43*/ virtual class std::optional<struct gametest::GameTestError> print(std::string const&);
     /*44*/ virtual class std::optional<struct gametest::GameTestError> assertRedstonePower(class BlockPos const&, int);
     /*45*/ virtual class std::optional<struct gametest::GameTestError> assertIsWaterlogged(class BlockPos const&, bool);

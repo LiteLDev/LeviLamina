@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~VillageStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual int /*enum enum StructureFeatureType*/ getType() const;
+    /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI VillageStart(class Dimension&, class BiomeSource const&, class Random&, int, int, class IPreliminarySurfaceProvider const&);
 
 protected:

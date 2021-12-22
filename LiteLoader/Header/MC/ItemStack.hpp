@@ -23,17 +23,17 @@ class ItemStack : public ItemStackBase {
 public:
 	LIAPI static ItemStack* create();
     LIAPI static ItemStack* create(std::string type, int count);
-    LIAPI static ItemStack* create(CompoundTag* tag);
+    LIAPI static ItemStack* create(std::unique_ptr<CompoundTag> tag);
     LIAPI static ItemStack fromItemInstance(ItemInstance const& ins);
-    LIAPI ItemStack* clone_s();
+    LIAPI ItemStack* clone_s() const;
 
 	LIAPI std::string getTypeName() const;
 	LIAPI int getAux() const;
 	LIAPI int getCount() const;
 
 	LIAPI bool setItem(ItemStack* newItem);
-	LIAPI bool setLore(std::vector<std::string> lores);
-    LIAPI CompoundTag* getNbt();
+	LIAPI bool setLore(const std::vector<std::string>& lores);
+    LIAPI std::unique_ptr<CompoundTag> getNbt();
     LIAPI bool setNbt(CompoundTag* nbt);
 #undef AFTER_EXTRA
 

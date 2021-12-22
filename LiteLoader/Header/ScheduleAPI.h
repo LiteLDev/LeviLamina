@@ -1,11 +1,15 @@
 #pragma once
 #include "Global.h"
-#include "Utils/PluginOwnData.h"
+#include <functional>
 
 ///////////////////////////////////////////////////////
 // Schedule future callback plans
 //
 // [Usage]
+// 
+//   Schedule::nextTick([](){
+//      Logger::Error("hello");
+//   }, 20);                        // Delay this callback to next game tick (20 ticks = 1 second)
 //
 //   Schedule::delay([](){
 //      Logger::Error("hello");
@@ -25,48 +29,24 @@
 //
 /////////////////////////////////////////////////////
 
-typedef unsigned long long tick_t;
-typedef unsigned int taskid_t;
+class ScheduleTask
+{
+    unsigned int taskId;
 
-namespace Schedule {
-inline tick_t ticknow;
-inline taskid_t gtaskid;
+public:
+    LIAPI bool cancel();
+    LIAPI ScheduleTask(unsigned int taskId);
 
-extern LIAPI tick_t _tick;
-
-struct TaskBase {
-    tick_t schedule_time;
-    tick_t interval;
-    taskid_t taskid;
-    std::function<void(void)> cb;
-
-    TaskBase(std::function<void(void)>&& fn, tick_t time_diff, tick_t interval, taskid_t tid)
-        : schedule_time(Schedule::ticknow + time_diff)
-        , interval(interval)
-        , taskid(tid)
-        , cb(std::move(fn)) {
+    inline unsigned int getTaskId()
+    {
+        return taskId;
     }
 };
 
-LIAPI bool cancel(taskid_t id);
-LIAPI taskid_t schedule(TaskBase&& task);
-LIAPI void scheduleNext(std::function<void()>&& fn);
-
-struct delay : Schedule::TaskBase {
-    delay(std::function<void(void)>&& fn, tick_t time_diff)
-        : Schedule::TaskBase(std::move(fn), time_diff, 0, ++Schedule::gtaskid) {
-    }
+namespace Schedule
+{
+    LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay);
+    LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1);
+    LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1);
+    LIAPI ScheduleTask nextTick(std::function<void(void)> task);
 };
-
-struct repeat : Schedule::TaskBase {
-    repeat(std::function<void(void)>&& fn, tick_t interval)
-        : Schedule::TaskBase(std::move(fn), 0, interval, ++Schedule::gtaskid) {
-    }
-};
-
-struct delayRepeat : Schedule::TaskBase {
-    delayRepeat(std::function<void(void)>&& fn, tick_t time_diff, tick_t interval)
-        : Schedule::TaskBase(std::move(fn), time_diff, interval, ++Schedule::gtaskid) {
-    }
-};
-}; // namespace Schedule

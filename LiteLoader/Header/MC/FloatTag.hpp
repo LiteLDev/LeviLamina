@@ -16,27 +16,11 @@ class FloatTag : public Tag {
 float val;
 
 public:
-    inline float& value() {
-        return dAccess<float, 8>(this);
-    }
-    inline FloatTag& operator=(float val) {
-        value() = val;
-        return *this;
-    }
-    inline static FloatTag* create(float val = 0.0f) {
-        FloatTag* tag = (FloatTag*)Tag::createTag(Tag::Type::Float);
-        *tag = val;
-        return tag;
-    }
-    inline bool set(float val) {
-        if (getTagType() != Tag::Type::Float)
-            return false;
-        value() = val;
-        return true;
-    }
-    inline float get() {
-        return value();
-    }
+    LIAPI float& value();
+    LIAPI FloatTag& operator=(float val);
+    LIAPI static std::unique_ptr<FloatTag> create(float val = 0.0f);
+    LIAPI bool set(float val);
+    LIAPI float get();
 
 #undef AFTER_EXTRA
 
@@ -52,7 +36,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;

@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~MinecartCommandBlock();
     /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*3*/ virtual void __unk_vfn_0();
@@ -65,10 +65,10 @@ public:
     /*37*/ virtual void animateHurt();
     /*38*/ virtual float getPickRadius();
     /*39*/ virtual void awardKillScore(class Actor&, int);
-    /*40*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*41*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*42*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*43*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*40*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*41*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*42*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*43*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*44*/ virtual class HashedString const& queryEntityRenderer() const;
     /*45*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*46*/ virtual bool canFreeze() const;
@@ -101,7 +101,7 @@ public:
     /*73*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void __unk_vfn_21();
-    /*76*/ virtual int /*enum enum MinecartType*/ getType();
+    /*76*/ virtual enum MinecartType getType();
     /*77*/ virtual class Block const* getDefaultDisplayBlock() const;
     /*78*/ virtual void __unk_vfn_22();
     /*79*/ virtual int getDefaultDisplayOffset() const;

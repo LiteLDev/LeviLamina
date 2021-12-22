@@ -1,6 +1,6 @@
 #pragma once
 ////////////////////////////////////////////////////////////////////////
-//  To store those data which is specific for every plugins itself
+//  To store those data which is specific for every plugin itself
 //  Must be used header-only!
 //
 //  [Usage]

@@ -26,7 +26,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void initializeComponents(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual void _serverInitItemStackIds();
     /*2*/ virtual ~ServerPlayer();
     /*3*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -50,9 +50,9 @@ public:
     /*21*/ virtual void onTame();
     /*22*/ virtual void onFailedTame();
     /*23*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*24*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*24*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*25*/ virtual float getPickRadius();
-    /*26*/ virtual void setArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
+    /*26*/ virtual void setArmor(enum ArmorSlot, class ItemStack const&);
     /*27*/ virtual class ItemStack const& getCarriedItem() const;
     /*28*/ virtual void setOffhandSlot(class ItemStack const&);
     /*29*/ virtual bool load(class CompoundTag const&, class DataLoadHelper&);
@@ -91,7 +91,7 @@ public:
     /*62*/ virtual bool isAlliedTo(class Mob*);
     /*63*/ virtual void __unk_vfn_23();
     /*64*/ virtual void hurtArmorSlots(class ActorDamageSource const&, int, class std::bitset<4> const&);
-    /*65*/ virtual void setDamagedArmor(int /*enum enum ArmorSlot*/, class ItemStack const&);
+    /*65*/ virtual void setDamagedArmor(enum ArmorSlot, class ItemStack const&);
     /*66*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*67*/ virtual void sendArmor(class std::bitset<4> const&);
     /*68*/ virtual void clearVanishEnchantedItemsOnDeath();
@@ -116,7 +116,7 @@ public:
     /*87*/ virtual void __unk_vfn_28();
     /*88*/ virtual void __unk_vfn_29();
     /*89*/ virtual void __unk_vfn_30();
-    /*90*/ virtual void setPermissions(int /*enum enum CommandPermissionLevel*/);
+    /*90*/ virtual void setPermissions(enum CommandPermissionLevel);
     /*91*/ virtual void __unk_vfn_31();
     /*92*/ virtual void __unk_vfn_32();
     /*93*/ virtual void openTrading(struct ActorUniqueID const&, bool);
@@ -135,7 +135,7 @@ public:
     /*106*/ virtual bool isLoading() const;
     /*107*/ virtual bool isPlayerInitialized() const;
     /*108*/ virtual void __unk_vfn_39();
-    /*109*/ virtual void setPlayerGameType(int /*enum enum GameType*/);
+    /*109*/ virtual void setPlayerGameType(enum GameType);
     /*110*/ virtual void __unk_vfn_40();
     /*111*/ virtual void setContainerData(class IContainerManager&, int, int);
     /*112*/ virtual void slotChanged(class IContainerManager&, class Container&, int, class ItemStack const&, class ItemStack const&, bool);
@@ -150,9 +150,9 @@ public:
     /*121*/ virtual void sendNetworkPacket(class Packet&) const;
     /*122*/ virtual class PlayerEventCoordinator& getPlayerEventCoordinator();
     /*123*/ virtual class MoveInputHandler* getMoveInputHandler();
-    /*124*/ virtual int /*enum enum InputMode*/ getInputMode() const;
-    /*125*/ virtual int /*enum enum ClientPlayMode*/ getPlayMode() const;
-    /*126*/ virtual void reportMovementTelemetry(int /*enum enum MovementEventType*/);
+    /*124*/ virtual enum InputMode getInputMode() const;
+    /*125*/ virtual enum ClientPlayMode getPlayMode() const;
+    /*126*/ virtual void reportMovementTelemetry(enum MovementEventType);
     /*127*/ virtual void __unk_vfn_41();
     /*128*/ virtual int _getSpawnChunkLimit() const;
     /*129*/ virtual void _updateChunkPublisherView(class Vec3 const&, float);

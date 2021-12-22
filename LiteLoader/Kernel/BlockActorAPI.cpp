@@ -12,7 +12,7 @@ bool BlockActor::refreshData() {
     return true;
 }
 
-CompoundTag* BlockActor::getNbt() {
+std::unique_ptr<CompoundTag> BlockActor::getNbt() {
     return CompoundTag::fromBlockActor(this);
 }
 

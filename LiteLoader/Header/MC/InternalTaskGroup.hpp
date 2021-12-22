@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~InternalTaskGroup();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual int /*enum enum TaskGroupState*/ getState() const;
+    /*3*/ virtual enum TaskGroupState getState() const;
     /*
     inline void processCoroutines(){
         void (InternalTaskGroup::*rv)();

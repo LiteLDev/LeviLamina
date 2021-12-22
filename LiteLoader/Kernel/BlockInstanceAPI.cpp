@@ -11,20 +11,20 @@
 #include <MC/LootComponent.hpp>
 #include <MC/ItemInstance.hpp>
 
-BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimid)
+BlockInstance::BlockInstance(Block* block, BlockPos pos, int dimID)
     : block(block)
     , pos(pos)
-    , dim(dimid) {
+    , dim(dimID) {
 }
 
-BlockInstance::BlockInstance(BlockPos pos, int dimid)
+BlockInstance::BlockInstance(BlockPos pos, int dimID)
     : pos(pos)
-    , dim(dimid) {
-    block = Level::getBlock(pos, dimid);
+    , dim(dimID) {
+    block = Level::getBlock(pos, dimID);
 }
 
-BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimid) {
-    return BlockInstance(block, pos, dimid);
+BlockInstance BlockInstance::createBlockInstance(Block* block, BlockPos pos, int dimID) {
+    return BlockInstance(block, pos, dimID);
 }
 
 bool BlockInstance::operator==(BlockInstance const& bli) {

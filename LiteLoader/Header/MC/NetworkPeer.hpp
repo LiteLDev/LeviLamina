@@ -39,8 +39,8 @@ public:
 
 public:
     /*0*/ virtual ~NetworkPeer();
-    /*1*/ virtual void sendPacket(std::string const&, int /*enum enum NetworkPeer::Reliability*/, int, unsigned short, int /*enum enum Compressibility*/) = 0;
-    /*2*/ virtual int /*enum enum NetworkPeer::DataStatus*/ receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > > const&) = 0;
+    /*1*/ virtual void sendPacket(std::string const&, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility) = 0;
+    /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > > const&) = 0;
     /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const = 0;
     /*4*/ virtual void update();
     /*5*/ virtual void flush(class std::function<void (void)>&&);

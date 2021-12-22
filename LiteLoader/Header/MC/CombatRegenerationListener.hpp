@@ -32,7 +32,7 @@ public:
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_7();
-    /*9*/ virtual int /*enum enum EventResult*/ onActorDeath(class Actor&, class ActorDamageSource const&, int /*enum enum ActorType*/);
+    /*9*/ virtual enum EventResult onActorDeath(class Actor&, class ActorDamageSource const&, enum ActorType);
 
 protected:
 

@@ -53,12 +53,7 @@ public:
         Compound,
         IntArray,
     };
-    //MCAPI static std::string getTagName(enum Tag::Type);
-    //MCAPI static std::unique_ptr<class Tag> newTag(enum Tag::Type);
-    //MCAPI static std::unique_ptr<class Tag> readNamedTag(class IDataInput&, std::string&);
-    //MCAPI static void writeNamedTag(std::string const&, class Tag const&, class IDataOutput&);
 
-    LIAPI static Tag* createTag(Tag::Type t);
     LIAPI Type getTagType() const;
 
     //value
@@ -92,6 +87,17 @@ public:
 
     LIAPI std::string toJson(int formatIndent);
 
+    template <typename T>
+    inline static std::unique_ptr<Tag> asTag(std::unique_ptr<T>&& tag)
+    {
+        return std::unique_ptr<Tag>(dynamic_cast<Tag*>(tag.release()));
+    }
+    template <typename T>
+    inline static std::unique_ptr<T> asTypedTag(std::unique_ptr<Tag> tag)
+    {
+        return std::unique_ptr<T>(dynamic_cast<T*>(tag.release()));
+    }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TAG
@@ -106,7 +112,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const = 0;
     /*3*/ virtual void load(class IDataInput&) = 0;
     /*4*/ virtual std::string toString() const = 0;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const = 0;
+    /*5*/ virtual enum Tag::Type getId() const = 0;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(class PrintStream&) const;
     /*8*/ virtual void print(std::string const&, class PrintStream&) const;

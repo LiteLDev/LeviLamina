@@ -118,6 +118,11 @@ public:
     int fileLevel = -1;
     int playerLevel = -1;
 
+    ~Logger()
+    {
+        setFile(nullptr);
+    }
+
     inline static void initLock()
     {
         return initLockImpl(GetCurrentModule());
@@ -148,7 +153,7 @@ public:
         return endlImpl(GetCurrentModule(), o);
     };
 
-    LIAPI bool setFile(const std::string& logFile, bool appendMode);
+    LIAPI bool setFile(const std::string& logFile, bool appendMode = true);
 
     LIAPI bool setFile(nullptr_t);
 

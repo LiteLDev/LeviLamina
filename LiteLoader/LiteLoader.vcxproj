@@ -42,7 +42,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <WarningLevel>Level2</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -55,6 +55,7 @@
       <ExceptionHandling>Async</ExceptionHandling>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard_C>Default</LanguageStandard_C>
+      <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -88,12 +89,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AutoUpgrade.cpp" />
+    <ClCompile Include="BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Config.cpp" />
     <ClCompile Include="CrashLogger.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="BuiltinBugFix.cpp" />
     <ClInclude Include="Header\GuiAPI.h" />
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
+    <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
     <ClInclude Include="Header\MC\AABB.hpp" />
     <ClInclude Include="Header\MC\ActorDamageSource.hpp" />
@@ -143,6 +146,7 @@
     <ClInclude Include="Header\MC\MinecraftCommands.hpp" />
     <ClInclude Include="Header\MC\RakNet.hpp" />
     <ClInclude Include="Header\MC\Scripting.hpp" />
+    <ClInclude Include="Header\MC\Types.hpp" />
     <ClInclude Include="Header\MC\WebToken.hpp" />
     <ClInclude Include="Header\MC\Actor.hpp" />
     <ClInclude Include="Header\MC\Block.hpp" />
@@ -164,17 +168,25 @@
     <ClCompile Include="Kernel\BlockInstanceAPI.cpp" />
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp" />
     <ClCompile Include="Kernel\BlockSourceAPI.cpp" />
+    <ClCompile Include="Kernel\ByteArrayTagAPI.cpp" />
+    <ClCompile Include="Kernel\ByteTagAPI.cpp" />
     <ClCompile Include="Kernel\CommandOriginAPI.cpp" />
     <ClCompile Include="Kernel\CommandOutputAPI.cpp" />
     <ClCompile Include="Kernel\CommandRegistryAPI.cpp" />
     <ClCompile Include="Kernel\CompoundTagAPI.cpp" />
     <ClCompile Include="Kernel\ContainerAPI.cpp" />
+    <ClCompile Include="Kernel\DoubleTagAPI.cpp" />
+    <ClCompile Include="Kernel\EndTagAPI.cpp" />
     <ClCompile Include="Kernel\EventAPI.cpp" />
+    <ClCompile Include="Kernel\FloatTagAPI.cpp" />
     <ClCompile Include="Kernel\FormPacketHelper.cpp" />
     <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\GuiAPI.cpp" />
     <ClCompile Include="Kernel\HitResultAPI.cpp" />
+    <ClCompile Include="Kernel\Int64TagAPI.cpp" />
+    <ClCompile Include="Kernel\IntArrayTagAPI.cpp" />
+    <ClCompile Include="Kernel\IntTagAPI.cpp" />
     <ClCompile Include="Kernel\ItemActorAPI.cpp" />
     <ClCompile Include="Kernel\ItemStackAPI.cpp" />
     <ClCompile Include="Kernel\LevelAPI.cpp" />
@@ -182,7 +194,10 @@
     <ClCompile Include="Kernel\LLAPI.cpp" />
     <ClCompile Include="Kernel\LoggerAPI.cpp" />
     <ClCompile Include="Kernel\MobAPI.cpp" />
+    <ClCompile Include="Kernel\ObjectivePacketHelper.cpp" />
     <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp" />
+    <ClCompile Include="Kernel\ShortTagAPI.cpp" />
+    <ClCompile Include="Kernel\StringTagAPI.cpp" />
     <ClCompile Include="Kernel\TagAPI.cpp" />
     <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp" />
     <ClCompile Include="Kernel\PlayerAPI.cpp" />
@@ -240,7 +255,7 @@
     <ClInclude Include="Header\HookAPI.h" />
     <ClInclude Include="Header\TranslationAPI.h" />
     <ClInclude Include="Header\Utils\Json.h" />
-    <ClInclude Include="Header\Utils\GlobalService.h" />
+    <ClInclude Include="Header\GlobalServiceAPI.h" />
     <ClInclude Include="Header\Utils\NetworkHelper.h" />
     <ClInclude Include="Header\Utils\Optional.h" />
     <ClInclude Include="Header\Utils\PatchHelper.h" />

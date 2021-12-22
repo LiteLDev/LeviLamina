@@ -35,10 +35,10 @@ public:
         *((void**)&rv) = dlsym("?decorateWorldGenPostProcess@TheEndGenerator@@MEBAXAEAVBiome@@AEAVLevelChunk@@AEAVBlockSource@@AEAVRandom@@@Z");
         return (this->*rv)(std::forward<class Biome&>(a0), std::forward<class LevelChunk&>(a1), std::forward<class BlockSource&>(a2), std::forward<class Random&>(a3));
     }
-    inline bool findNearestFeature(int \/*enum enum StructureFeatureType*\/ a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
-        bool (TheEndGenerator::*rv)(int \/*enum enum StructureFeatureType*\/, class BlockPos const&, class BlockPos&, bool);
+    inline bool findNearestFeature(enum StructureFeatureType a0, class BlockPos const& a1, class BlockPos& a2, bool a3){
+        bool (TheEndGenerator::*rv)(enum StructureFeatureType, class BlockPos const&, class BlockPos&, bool);
         *((void**)&rv) = dlsym("?findNearestFeature@TheEndGenerator@@UEAA_NW4StructureFeatureType@@AEBVBlockPos@@AEAV3@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum StructureFeatureType*\/>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<enum StructureFeatureType>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos&>(a2), std::forward<bool>(a3));
     }
     inline class BlockPos findSpawnPosition() const{
         class BlockPos (TheEndGenerator::*rv)() const;
@@ -65,8 +65,8 @@ public:
         *((void**)&rv) = dlsym("?getBlockVolumeDimensions@TheEndGenerator@@UEBA?AUBlockVolumeDimensions@WorldGenerator@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum StructureFeatureType*\/ getFeatureTypeAt(class BlockPos const& a0){
-        int \/*enum enum StructureFeatureType*\/ (TheEndGenerator::*rv)(class BlockPos const&);
+    inline enum StructureFeatureType getFeatureTypeAt(class BlockPos const& a0){
+        enum StructureFeatureType (TheEndGenerator::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?getFeatureTypeAt@TheEndGenerator@@UEAA?AW4StructureFeatureType@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }

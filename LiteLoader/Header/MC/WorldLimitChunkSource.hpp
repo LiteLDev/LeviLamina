@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~WorldLimitChunkSource();
     /*1*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
     /*2*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, int /*enum enum ChunkSource::LoadMode*/, bool);
+    /*3*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
     /*4*/ virtual bool postProcess(class ChunkViewSource&);
     /*5*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*6*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;

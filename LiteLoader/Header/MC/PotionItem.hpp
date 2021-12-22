@@ -39,14 +39,14 @@ public:
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual bool isDyeable() const;
     /*12*/ virtual bool isDye() const;
-    /*13*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*13*/ virtual enum ItemColor getItemColor() const;
     /*14*/ virtual bool isFertilizer() const;
     /*15*/ virtual void __unk_vfn_5();
     /*16*/ virtual bool isThrowable() const;
     /*17*/ virtual bool isUseable() const;
     /*18*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*19*/ virtual class FuelItemComponent* getFuel() const;
-    /*20*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*20*/ virtual enum BlockShape getBlockShape() const;
     /*21*/ virtual bool canDestroySpecial(class Block const&) const;
     /*22*/ virtual int getLevelDataForAuxValue(int) const;
     /*23*/ virtual short getMaxDamage() const;
@@ -84,7 +84,7 @@ public:
     /*55*/ virtual void __unk_vfn_16();
     /*56*/ virtual bool canUseOnSimTick() const;
     /*57*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
-    /*58*/ virtual int /*enum enum ItemUseMethod*/ useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    /*58*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
     /*59*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*60*/ virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
     /*61*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
@@ -110,7 +110,7 @@ public:
     /*81*/ virtual void __unk_vfn_20();
     /*82*/ virtual std::string getAuxValuesDescription() const;
     /*83*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*84*/ virtual int /*enum enum Potion::PotionType*/ getPotionType() const;
+    /*84*/ virtual enum Potion::PotionType getPotionType() const;
     /*
     inline bool uniqueAuxValues() const{
         bool (PotionItem::*rv)() const;

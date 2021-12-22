@@ -22,11 +22,11 @@ public:
     class StructureTemplate& operator=(class StructureTemplate const&) = delete;
     StructureTemplate(class StructureTemplate const&);
     StructureTemplate() = delete;
-    LIAPI StructureTemplate(std::string const& name);
-    LIAPI static StructureTemplate fromTag(std::string name, CompoundTag* tag);
-    LIAPI static StructureTemplate fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = false, bool ignoreBlocks = false);
+    LIAPI static StructureTemplate fromTag(std::string name, CompoundTag const& tag);
+    LIAPI static StructureTemplate fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreEntities = true, bool ignoreBlocks = false);
+    LIAPI bool load(CompoundTag const& tag);
     LIAPI std::unique_ptr<CompoundTag> toTag();
-    LIAPI bool toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation);
+    LIAPI bool toWorld(int dimid, BlockPos const& p1, Mirror mirror, Rotation rotation);
     LIAPI StructureTemplateData* getData();
 
 #undef AFTER_EXTRA

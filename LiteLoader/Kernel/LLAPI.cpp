@@ -7,9 +7,9 @@
 #include <string>
 using namespace std;
 
-std::string LL::getDataPath(const std::string& myname) {
+std::string LL::getDataPath(const std::string& pluginName) {
     filesystem::create_directory("plugins\\LiteLoader");
-    return "plugins\\LiteLoader\\" + myname;
+    return "plugins\\LiteLoader\\" + pluginName;
 }
 
 std::string LL::getLoaderVersionString() {
@@ -26,6 +26,11 @@ bool LL::isDebugMode() {
 
 LL::Plugin* LL::getPlugin(std::string name) {
     return ::GetPlugin(name);
+}
+
+LL::Plugin* LL::getPlugin(HMODULE handler)
+{
+    return ::GetPlugin(handler);
 }
 
 bool LL::hasPlugin(std::string name) {

@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~VanillaInPackagePacks();
-    /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(int /*enum enum PackType*/) const;
+    /*1*/ virtual std::vector<struct IInPackagePacks::MetaData> getPacks(enum PackType) const;
 
 protected:
 

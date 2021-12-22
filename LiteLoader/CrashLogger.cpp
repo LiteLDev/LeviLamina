@@ -29,7 +29,7 @@ bool StartCrashLoggerProcess()
     wchar_t daemonPath[MAX_PATH];
 
     wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
-    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, NULL, NULL, &si, &pi)) {
+    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
@@ -61,7 +61,7 @@ void InitCrashLogger(bool enableCrashLogger)
         if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
             auto path = i.path().u8string();
 
-            //Check crashlogger
+            //Check crashLogger
             for (auto name : NoCrashLogger) {
                 if (path.find(name) != string::npos) {
                     noCrashLoggerReason = string(name) + ".dll";
@@ -83,7 +83,7 @@ void InitCrashLogger(bool enableCrashLogger)
 
     //Start CrashLogger
     if (StartCrashLoggerProcess()) {
-        //Logger::Info("CrashLogger Deamon Process attached.");
+        //Logger::Info("CrashLogger Daemon Process attached.");
     }
     else {
         crashLogger.warn("Builtin CrashLogger failed to start!");

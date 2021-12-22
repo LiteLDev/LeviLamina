@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ServerNetworkEventListener();
-    /*1*/ virtual int /*enum enum EventResult*/ onChat(struct ChatEvent const&);
+    /*1*/ virtual enum EventResult onChat(struct ChatEvent const&);
     /*
     inline  ~ServerNetworkEventListener(){
          (ServerNetworkEventListener::*rv)();

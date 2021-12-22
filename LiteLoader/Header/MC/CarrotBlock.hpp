@@ -73,9 +73,9 @@ public:
     /*46*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*47*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*48*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
-    /*49*/ virtual int /*enum enum BlockProperty*/ getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    /*49*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
     /*50*/ virtual void __unk_vfn_20();
-    /*51*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
+    /*51*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
     /*54*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
@@ -114,7 +114,7 @@ public:
     /*87*/ virtual void __unk_vfn_27();
     /*88*/ virtual class Block const& getRenderBlock() const;
     /*89*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*90*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
+    /*90*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
     /*91*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*92*/ virtual void __unk_vfn_28();
     /*93*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;
@@ -131,8 +131,8 @@ public:
     /*104*/ virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*105*/ virtual void __unk_vfn_31();
     /*106*/ virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
-    /*107*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer() const;
-    /*108*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    /*107*/ virtual enum BlockRenderLayer getRenderLayer() const;
+    /*108*/ virtual enum BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*109*/ virtual int getExtraRenderLayers() const;
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
@@ -146,13 +146,13 @@ public:
         *((void**)&rv) = dlsym("?getCropNum@CarrotBlock@@UEBAHAEAVRandomize@@HH@Z");
         return (this->*rv)(std::forward<class Randomize&>(a0), std::forward<int>(a1), std::forward<int>(a2));
     }
-    inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
-        int \/*enum enum BlockRenderLayer*\/ (CarrotBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
+    inline enum BlockRenderLayer getRenderLayer(class Block const& a0, class BlockSource& a1, class BlockPos const& a2) const{
+        enum BlockRenderLayer (CarrotBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&) const;
         *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2));
     }
-    inline int \/*enum enum BlockRenderLayer*\/ getRenderLayer() const{
-        int \/*enum enum BlockRenderLayer*\/ (CarrotBlock::*rv)() const;
+    inline enum BlockRenderLayer getRenderLayer() const{
+        enum BlockRenderLayer (CarrotBlock::*rv)() const;
         *((void**)&rv) = dlsym("?getRenderLayer@CarrotBlock@@UEBA?AW4BlockRenderLayer@@XZ");
         return (this->*rv)();
     }

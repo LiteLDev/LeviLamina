@@ -76,8 +76,8 @@ public:
     LIAPI static BlockPalette* getBlockPalette();
     LIAPI static Dimension* getDimension(class AutomaticID<class Dimension, int> a0);
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
-    LIAPI static void broadcastText(string text, TextType type);
-    LIAPI static void broadcastTitle(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI static void broadcastText(const string& text, TextType type);
+    LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
 
 
     LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int8_t a2);
@@ -149,6 +149,18 @@ public:
     inline class LevelStorage& getLevelStorage() {
         class LevelStorage& (Level:: * rv)();
         *((void**)&rv) = dlsym("?getLevelStorage@Level@@UEAAAEAVLevelStorage@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class ActorRuntimeID getNextRuntimeID() {
+        class ActorRuntimeID(Level:: * rv)();
+        *((void**)&rv) = dlsym("?getNextRuntimeID@Level@@UEAA?AVActorRuntimeID@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class BlockPos const& getDefaultSpawn() const {
+        class BlockPos const& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultSpawn@Level@@UEBAAEBVBlockPos@@XZ");
         return (this->*rv)();
     }
     /*
@@ -2312,10 +2324,10 @@ public:
         *((void**)&rv) = dlsym("?loadFunctionManager@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void runCommand(class Command& a0, class CommandOrigin& a1, int \/*enum enum CommandOriginSystem*\/ a2){
-        void (Level::*rv)(class Command&, class CommandOrigin&, int \/*enum enum CommandOriginSystem*\/);
+    inline void runCommand(class Command& a0, class CommandOrigin& a1, enum CommandOriginSystem a2){
+        void (Level::*rv)(class Command&, class CommandOrigin&, enum CommandOriginSystem);
         *((void**)&rv) = dlsym("?runCommand@Level@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
-        return (this->*rv)(std::forward<class Command&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<int \/*enum enum CommandOriginSystem*\/>(a2));
+        return (this->*rv)(std::forward<class Command&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2));
     }
     inline void notifySubChunkRequestManager(class SubChunkPacket const& a0){
         void (Level::*rv)(class SubChunkPacket const&);
@@ -2332,10 +2344,10 @@ public:
         *((void**)&rv) = dlsym("?saveAdditionalData@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void runCommand(class HashedString const& a0, class CommandOrigin& a1, int \/*enum enum CommandOriginSystem*\/ a2, int \/*enum enum CurrentCmdVersion*\/ a3){
-        void (Level::*rv)(class HashedString const&, class CommandOrigin&, int \/*enum enum CommandOriginSystem*\/, int \/*enum enum CurrentCmdVersion*\/);
+    inline void runCommand(class HashedString const& a0, class CommandOrigin& a1, enum CommandOriginSystem a2, enum CurrentCmdVersion a3){
+        void (Level::*rv)(class HashedString const&, class CommandOrigin&, enum CommandOriginSystem, enum CurrentCmdVersion);
         *((void**)&rv) = dlsym("?runCommand@Level@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z");
-        return (this->*rv)(std::forward<class HashedString const&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<int \/*enum enum CommandOriginSystem*\/>(a2), std::forward<int \/*enum enum CurrentCmdVersion*\/>(a3));
+        return (this->*rv)(std::forward<class HashedString const&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2), std::forward<enum CurrentCmdVersion>(a3));
     }
     inline class Level* asLevel(){
         class Level* (Level::*rv)();
@@ -2487,10 +2499,10 @@ public:
         *((void**)&rv) = dlsym("?addBossEventListener@Level@@UEAAXPEAVBossEventListener@@@Z");
         return (this->*rv)(std::forward<class BossEventListener*>(a0));
     }
-    inline void addBreakingItemParticleEffect(class Vec3 const& a0, int \/*enum enum ParticleType*\/ a1, struct TextureUVCoordinateSet const& a2, bool a3){
-        void (Level::*rv)(class Vec3 const&, int \/*enum enum ParticleType*\/, struct TextureUVCoordinateSet const&, bool);
+    inline void addBreakingItemParticleEffect(class Vec3 const& a0, enum ParticleType a1, struct TextureUVCoordinateSet const& a2, bool a3){
+        void (Level::*rv)(class Vec3 const&, enum ParticleType, struct TextureUVCoordinateSet const&, bool);
         *((void**)&rv) = dlsym("?addBreakingItemParticleEffect@Level@@UEAAXAEBVVec3@@W4ParticleType@@AEBUTextureUVCoordinateSet@@_N@Z");
-        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<int \/*enum enum ParticleType*\/>(a1), std::forward<struct TextureUVCoordinateSet const&>(a2), std::forward<bool>(a3));
+        return (this->*rv)(std::forward<class Vec3 const&>(a0), std::forward<enum ParticleType>(a1), std::forward<struct TextureUVCoordinateSet const&>(a2), std::forward<bool>(a3));
     }
     inline void addChunkViewTracker(class std::weak_ptr<class ChunkViewSource> a0){
         void (Level::*rv)(class std::weak_ptr<class ChunkViewSource>);
@@ -2522,10 +2534,10 @@ public:
         *((void**)&rv) = dlsym("?addListener@Level@@UEAAXAEAVLevelListener@@@Z");
         return (this->*rv)(std::forward<class LevelListener&>(a0));
     }
-    inline class Particle* addParticle(int \/*enum enum ParticleType*\/ a0, class Vec3 const& a1, class Vec3 const& a2, int a3, class CompoundTag const* a4, bool a5){
-        class Particle* (Level::*rv)(int \/*enum enum ParticleType*\/, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
+    inline class Particle* addParticle(enum ParticleType a0, class Vec3 const& a1, class Vec3 const& a2, int a3, class CompoundTag const* a4, bool a5){
+        class Particle* (Level::*rv)(enum ParticleType, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
         *((void**)&rv) = dlsym("?addParticle@Level@@UEAAPEAVParticle@@W4ParticleType@@AEBVVec3@@1HPEBVCompoundTag@@_N@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<class CompoundTag const*>(a4), std::forward<bool>(a5));
+        return (this->*rv)(std::forward<enum ParticleType>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<class CompoundTag const*>(a4), std::forward<bool>(a5));
     }
     inline void addParticleEffect(class HashedString const& a0, class Actor const& a1, class HashedString const& a2, class Vec3 const& a3, class MolangVariableMap const& a4){
         void (Level::*rv)(class HashedString const&, class Actor const&, class HashedString const&, class Vec3 const&, class MolangVariableMap const&);
@@ -2557,60 +2569,60 @@ public:
         *((void**)&rv) = dlsym("?animateTick@Level@@UEAAXAEAVActor@@@Z");
         return (this->*rv)(std::forward<class Actor&>(a0));
     }
-    inline void applyLiquidPhysicsToActor(class Actor* a0, int \/*enum enum MaterialType*\/ a1){
-        void (Level::*rv)(class Actor*, int \/*enum enum MaterialType*\/);
+    inline void applyLiquidPhysicsToActor(class Actor* a0, enum MaterialType a1){
+        void (Level::*rv)(class Actor*, enum MaterialType);
         *((void**)&rv) = dlsym("?applyLiquidPhysicsToActor@Level@@UEAAXPEAVActor@@W4MaterialType@@@Z");
-        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<int \/*enum enum MaterialType*\/>(a1));
+        return (this->*rv)(std::forward<class Actor*>(a0), std::forward<enum MaterialType>(a1));
     }
     inline bool areBossEventListenersReady(){
         bool (Level::*rv)();
         *((void**)&rv) = dlsym("?areBossEventListenersReady@Level@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline void broadcastActorEvent(class Actor& a0, int \/*enum enum ActorEvent*\/ a1, int a2){
-        void (Level::*rv)(class Actor&, int \/*enum enum ActorEvent*\/, int);
+    inline void broadcastActorEvent(class Actor& a0, enum ActorEvent a1, int a2){
+        void (Level::*rv)(class Actor&, enum ActorEvent, int);
         *((void**)&rv) = dlsym("?broadcastActorEvent@Level@@UEAAXAEAVActor@@W4ActorEvent@@H@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<int \/*enum enum ActorEvent*\/>(a1), std::forward<int>(a2));
+        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<enum ActorEvent>(a1), std::forward<int>(a2));
     }
-    inline void broadcastBossEvent(int \/*enum enum BossEventUpdateType*\/ a0){
-        void (Level::*rv)(int \/*enum enum BossEventUpdateType*\/);
+    inline void broadcastBossEvent(enum BossEventUpdateType a0){
+        void (Level::*rv)(enum BossEventUpdateType);
         *((void**)&rv) = dlsym("?broadcastBossEvent@Level@@UEAAXW4BossEventUpdateType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum BossEventUpdateType*\/>(a0));
+        return (this->*rv)(std::forward<enum BossEventUpdateType>(a0));
     }
-    inline void broadcastBossEvent(int \/*enum enum BossEventUpdateType*\/ a0, struct ActorUniqueID const& a1, class BossEventPacket const& a2){
-        void (Level::*rv)(int \/*enum enum BossEventUpdateType*\/, struct ActorUniqueID const&, class BossEventPacket const&);
+    inline void broadcastBossEvent(enum BossEventUpdateType a0, struct ActorUniqueID const& a1, class BossEventPacket const& a2){
+        void (Level::*rv)(enum BossEventUpdateType, struct ActorUniqueID const&, class BossEventPacket const&);
         *((void**)&rv) = dlsym("?broadcastBossEvent@Level@@UEAAXW4BossEventUpdateType@@AEBUActorUniqueID@@AEBVBossEventPacket@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum BossEventUpdateType*\/>(a0), std::forward<struct ActorUniqueID const&>(a1), std::forward<class BossEventPacket const&>(a2));
+        return (this->*rv)(std::forward<enum BossEventUpdateType>(a0), std::forward<struct ActorUniqueID const&>(a1), std::forward<class BossEventPacket const&>(a2));
     }
-    inline void broadcastLevelEvent(int \/*enum enum LevelEvent*\/ a0, class CompoundTag const& a1, class UserEntityIdentifierComponent const* a2){
-        void (Level::*rv)(int \/*enum enum LevelEvent*\/, class CompoundTag const&, class UserEntityIdentifierComponent const*);
+    inline void broadcastLevelEvent(enum LevelEvent a0, class CompoundTag const& a1, class UserEntityIdentifierComponent const* a2){
+        void (Level::*rv)(enum LevelEvent, class CompoundTag const&, class UserEntityIdentifierComponent const*);
         *((void**)&rv) = dlsym("?broadcastLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@PEBVUserEntityIdentifierComponent@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class UserEntityIdentifierComponent const*>(a2));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class CompoundTag const&>(a1), std::forward<class UserEntityIdentifierComponent const*>(a2));
     }
-    inline void broadcastLevelEvent(int \/*enum enum LevelEvent*\/ a0, class Vec3 const& a1, int a2, class UserEntityIdentifierComponent const* a3){
-        void (Level::*rv)(int \/*enum enum LevelEvent*\/, class Vec3 const&, int, class UserEntityIdentifierComponent const*);
+    inline void broadcastLevelEvent(enum LevelEvent a0, class Vec3 const& a1, int a2, class UserEntityIdentifierComponent const* a3){
+        void (Level::*rv)(enum LevelEvent, class Vec3 const&, int, class UserEntityIdentifierComponent const*);
         *((void**)&rv) = dlsym("?broadcastLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@HPEBVUserEntityIdentifierComponent@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<class UserEntityIdentifierComponent const*>(a3));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<class UserEntityIdentifierComponent const*>(a3));
     }
-    inline void broadcastLocalEvent(class BlockSource& a0, int \/*enum enum LevelEvent*\/ a1, class Vec3 const& a2, class Block const& a3){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelEvent*\/, class Vec3 const&, class Block const&);
+    inline void broadcastLocalEvent(class BlockSource& a0, enum LevelEvent a1, class Vec3 const& a2, class Block const& a3){
+        void (Level::*rv)(class BlockSource&, enum LevelEvent, class Vec3 const&, class Block const&);
         *((void**)&rv) = dlsym("?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3));
     }
-    inline void broadcastLocalEvent(class BlockSource& a0, int \/*enum enum LevelEvent*\/ a1, class Vec3 const& a2, int a3){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelEvent*\/, class Vec3 const&, int);
+    inline void broadcastLocalEvent(class BlockSource& a0, enum LevelEvent a1, class Vec3 const& a2, int a3){
+        void (Level::*rv)(class BlockSource&, enum LevelEvent, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?broadcastLocalEvent@Level@@UEAAXAEAVBlockSource@@W4LevelEvent@@AEBVVec3@@H@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
     }
-    inline void broadcastSoundEvent(class BlockSource& a0, int \/*enum enum LevelSoundEvent*\/ a1, class Vec3 const& a2, class Block const& a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, class Block const&, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void broadcastSoundEvent(class BlockSource& a0, enum LevelSoundEvent a1, class Vec3 const& a2, class Block const& a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
+        void (Level::*rv)(class BlockSource&, enum LevelSoundEvent, class Vec3 const&, class Block const&, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelSoundEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelSoundEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
     }
-    inline void broadcastSoundEvent(class BlockSource& a0, int \/*enum enum LevelSoundEvent*\/ a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void broadcastSoundEvent(class BlockSource& a0, enum LevelSoundEvent a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
+        void (Level::*rv)(class BlockSource&, enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?broadcastSoundEvent@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelSoundEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelSoundEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
     }
     inline bool copyAndLockMap(struct ActorUniqueID a0, struct ActorUniqueID a1){
         bool (Level::*rv)(struct ActorUniqueID, struct ActorUniqueID);
@@ -2897,8 +2909,8 @@ public:
         *((void**)&rv) = dlsym("?getDefaultAbilities@Level@@UEAAAEAVAbilities@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum GameType*\/ getDefaultGameType() const{
-        int \/*enum enum GameType*\/ (Level::*rv)() const;
+    inline enum GameType getDefaultGameType() const{
+        enum GameType (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getDefaultGameType@Level@@UEBA?AW4GameType@@XZ");
         return (this->*rv)();
     }
@@ -2912,8 +2924,8 @@ public:
         *((void**)&rv) = dlsym("?getDefaultSpawn@Level@@UEBAAEBVBlockPos@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum Difficulty*\/ getDifficulty() const{
-        int \/*enum enum Difficulty*\/ (Level::*rv)() const;
+    inline enum Difficulty getDifficulty() const{
+        enum Difficulty (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getDifficulty@Level@@UEBA?AW4Difficulty@@XZ");
         return (this->*rv)();
     }
@@ -3147,13 +3159,13 @@ public:
         *((void**)&rv) = dlsym("?getPhotoStorage@Level@@UEAAAEAVPhotoStorage@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum Social::GamePublishSetting*\/ getPlatformBroadcastIntent() const{
-        int \/*enum enum Social::GamePublishSetting*\/ (Level::*rv)() const;
+    inline enum Social::GamePublishSetting getPlatformBroadcastIntent() const{
+        enum Social::GamePublishSetting (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformBroadcastIntent@Level@@UEBA?AW4GamePublishSetting@Social@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum Social::GamePublishSetting*\/ getPlatformBroadcastMode() const{
-        int \/*enum enum Social::GamePublishSetting*\/ (Level::*rv)() const;
+    inline enum Social::GamePublishSetting getPlatformBroadcastMode() const{
+        enum Social::GamePublishSetting (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getPlatformBroadcastMode@Level@@UEBA?AW4GamePublishSetting@Social@@XZ");
         return (this->*rv)();
     }
@@ -3407,40 +3419,40 @@ public:
         *((void**)&rv) = dlsym("?getUserCount@Level@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum Social::GamePublishSetting*\/ getXBLBroadcastIntent() const{
-        int \/*enum enum Social::GamePublishSetting*\/ (Level::*rv)() const;
+    inline enum Social::GamePublishSetting getXBLBroadcastIntent() const{
+        enum Social::GamePublishSetting (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getXBLBroadcastIntent@Level@@UEBA?AW4GamePublishSetting@Social@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum Social::GamePublishSetting*\/ getXBLBroadcastMode() const{
-        int \/*enum enum Social::GamePublishSetting*\/ (Level::*rv)() const;
+    inline enum Social::GamePublishSetting getXBLBroadcastMode() const{
+        enum Social::GamePublishSetting (Level::*rv)() const;
         *((void**)&rv) = dlsym("?getXBLBroadcastMode@Level@@UEBA?AW4GamePublishSetting@Social@@XZ");
         return (this->*rv)();
     }
-    inline void handleLevelEvent(int \/*enum enum LevelEvent*\/ a0, class CompoundTag const& a1){
-        void (Level::*rv)(int \/*enum enum LevelEvent*\/, class CompoundTag const&);
+    inline void handleLevelEvent(enum LevelEvent a0, class CompoundTag const& a1){
+        void (Level::*rv)(enum LevelEvent, class CompoundTag const&);
         *((void**)&rv) = dlsym("?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class CompoundTag const&>(a1));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class CompoundTag const&>(a1));
     }
-    inline void handleLevelEvent(int \/*enum enum LevelEvent*\/ a0, class Vec3 const& a1, int a2){
-        void (Level::*rv)(int \/*enum enum LevelEvent*\/, class Vec3 const&, int);
+    inline void handleLevelEvent(enum LevelEvent a0, class Vec3 const& a1, int a2){
+        void (Level::*rv)(enum LevelEvent, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?handleLevelEvent@Level@@UEAAXW4LevelEvent@@AEBVVec3@@H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2));
+        return (this->*rv)(std::forward<enum LevelEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2));
     }
     inline void handleSoundEvent(std::string const& a0, class Vec3 const& a1, float a2, float a3){
         void (Level::*rv)(std::string const&, class Vec3 const&, float, float);
         *((void**)&rv) = dlsym("?handleSoundEvent@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@MM@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline void playSound(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
-        void (Level::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void playSound(enum LevelSoundEvent a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
+        void (Level::*rv)(enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?playSound@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
+        return (this->*rv)(std::forward<enum LevelSoundEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
     }
-    inline void handleSoundEvent(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
-        void (Level::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void handleSoundEvent(enum LevelSoundEvent a0, class Vec3 const& a1, int a2, struct ActorDefinitionIdentifier const& a3, bool a4, bool a5){
+        void (Level::*rv)(enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?handleSoundEvent@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N3@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
+        return (this->*rv)(std::forward<enum LevelSoundEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<int>(a2), std::forward<struct ActorDefinitionIdentifier const&>(a3), std::forward<bool>(a4), std::forward<bool>(a5));
     }
     inline void handleStopAllSounds(){
         void (Level::*rv)();
@@ -3577,25 +3589,25 @@ public:
         *((void**)&rv) = dlsym("?onSourceDestroyed@Level@@UEAAXAEAVBlockSource@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0));
     }
-    inline void playSound(class BlockSource& a0, int \/*enum enum LevelSoundEvent*\/ a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void playSound(class BlockSource& a0, enum LevelSoundEvent a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
+        void (Level::*rv)(class BlockSource&, enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?playSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelSoundEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelSoundEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
     }
-    inline void playSound(int \/*enum enum LevelSoundEvent*\/ a0, class Vec3 const& a1, float a2, float a3){
-        void (Level::*rv)(int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, float, float);
+    inline void playSound(enum LevelSoundEvent a0, class Vec3 const& a1, float a2, float a3){
+        void (Level::*rv)(enum LevelSoundEvent, class Vec3 const&, float, float);
         *((void**)&rv) = dlsym("?playSound@Level@@UEAAXW4LevelSoundEvent@@AEBVVec3@@MM@Z");
-        return (this->*rv)(std::forward<int \/*enum enum LevelSoundEvent*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
+        return (this->*rv)(std::forward<enum LevelSoundEvent>(a0), std::forward<class Vec3 const&>(a1), std::forward<float>(a2), std::forward<float>(a3));
     }
-    inline void playSynchronizedSound(class BlockSource& a0, int \/*enum enum LevelSoundEvent*\/ a1, class Vec3 const& a2, class Block const& a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, class Block const&, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void playSynchronizedSound(class BlockSource& a0, enum LevelSoundEvent a1, class Vec3 const& a2, class Block const& a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
+        void (Level::*rv)(class BlockSource&, enum LevelSoundEvent, class Vec3 const&, class Block const&, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?playSynchronizedSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@AEBVBlock@@AEBUActorDefinitionIdentifier@@_N5@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelSoundEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelSoundEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<class Block const&>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
     }
-    inline void playSynchronizedSound(class BlockSource& a0, int \/*enum enum LevelSoundEvent*\/ a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
-        void (Level::*rv)(class BlockSource&, int \/*enum enum LevelSoundEvent*\/, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
+    inline void playSynchronizedSound(class BlockSource& a0, enum LevelSoundEvent a1, class Vec3 const& a2, int a3, struct ActorDefinitionIdentifier const& a4, bool a5, bool a6){
+        void (Level::*rv)(class BlockSource&, enum LevelSoundEvent, class Vec3 const&, int, struct ActorDefinitionIdentifier const&, bool, bool);
         *((void**)&rv) = dlsym("?playSynchronizedSound@Level@@UEAAXAEAVBlockSource@@W4LevelSoundEvent@@AEBVVec3@@HAEBUActorDefinitionIdentifier@@_N4@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int \/*enum enum LevelSoundEvent*\/>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<enum LevelSoundEvent>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3), std::forward<struct ActorDefinitionIdentifier const&>(a4), std::forward<bool>(a5), std::forward<bool>(a6));
     }
     inline void potionSplash(class Vec3 const& a0, class mce::Color const& a1, bool a2){
         void (Level::*rv)(class Vec3 const&, class mce::Color const&, bool);
@@ -3742,10 +3754,10 @@ public:
         *((void**)&rv) = dlsym("?sendAllPlayerAbilities@Level@@UEAAXAEBVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player const&>(a0));
     }
-    inline void sendServerLegacyParticle(int \/*enum enum ParticleType*\/ a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
-        void (Level::*rv)(int \/*enum enum ParticleType*\/, class Vec3 const&, class Vec3 const&, int);
+    inline void sendServerLegacyParticle(enum ParticleType a0, class Vec3 const& a1, class Vec3 const& a2, int a3){
+        void (Level::*rv)(enum ParticleType, class Vec3 const&, class Vec3 const&, int);
         *((void**)&rv) = dlsym("?sendServerLegacyParticle@Level@@UEAAXW4ParticleType@@AEBVVec3@@1H@Z");
-        return (this->*rv)(std::forward<int \/*enum enum ParticleType*\/>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
+        return (this->*rv)(std::forward<enum ParticleType>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Vec3 const&>(a2), std::forward<int>(a3));
     }
     inline void setActorEventCoordinator(std::unique_ptr<class ActorEventCoordinator>&& a0){
         void (Level::*rv)(std::unique_ptr<class ActorEventCoordinator>&&);
@@ -3767,20 +3779,20 @@ public:
         *((void**)&rv) = dlsym("?setCommandsEnabled@Level@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void setDefaultGameType(int \/*enum enum GameType*\/ a0){
-        void (Level::*rv)(int \/*enum enum GameType*\/);
+    inline void setDefaultGameType(enum GameType a0){
+        void (Level::*rv)(enum GameType);
         *((void**)&rv) = dlsym("?setDefaultGameType@Level@@UEAAXW4GameType@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum GameType*\/>(a0));
+        return (this->*rv)(std::forward<enum GameType>(a0));
     }
     inline void setDefaultSpawn(class BlockPos const& a0){
         void (Level::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?setDefaultSpawn@Level@@UEAAXAEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
-    inline void setDifficulty(int \/*enum enum Difficulty*\/ a0){
-        void (Level::*rv)(int \/*enum enum Difficulty*\/);
+    inline void setDifficulty(enum Difficulty a0){
+        void (Level::*rv)(enum Difficulty);
         *((void**)&rv) = dlsym("?setDifficulty@Level@@UEAAXW4Difficulty@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Difficulty*\/>(a0));
+        return (this->*rv)(std::forward<enum Difficulty>(a0));
     }
     inline void setEducationLevelSettings(struct EducationLevelSettings a0){
         void (Level::*rv)(struct EducationLevelSettings);
@@ -3857,15 +3869,15 @@ public:
         *((void**)&rv) = dlsym("?setPacketSender@Level@@UEAAXPEAVPacketSender@@@Z");
         return (this->*rv)(std::forward<class PacketSender*>(a0));
     }
-    inline void setPlatformBroadcastIntent(int \/*enum enum Social::GamePublishSetting*\/ a0){
-        void (Level::*rv)(int \/*enum enum Social::GamePublishSetting*\/);
+    inline void setPlatformBroadcastIntent(enum Social::GamePublishSetting a0){
+        void (Level::*rv)(enum Social::GamePublishSetting);
         *((void**)&rv) = dlsym("?setPlatformBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Social::GamePublishSetting*\/>(a0));
+        return (this->*rv)(std::forward<enum Social::GamePublishSetting>(a0));
     }
-    inline void setPlatformBroadcastMode(int \/*enum enum Social::GamePublishSetting*\/ a0){
-        void (Level::*rv)(int \/*enum enum Social::GamePublishSetting*\/);
+    inline void setPlatformBroadcastMode(enum Social::GamePublishSetting a0){
+        void (Level::*rv)(enum Social::GamePublishSetting);
         *((void**)&rv) = dlsym("?setPlatformBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Social::GamePublishSetting*\/>(a0));
+        return (this->*rv)(std::forward<enum Social::GamePublishSetting>(a0));
     }
     inline void setPlayerAbilities(struct ActorUniqueID const& a0, class Abilities a1){
         void (Level::*rv)(struct ActorUniqueID const&, class Abilities);
@@ -3907,15 +3919,15 @@ public:
         *((void**)&rv) = dlsym("?setWorldTemplateOptionsUnlocked@Level@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setXBLBroadcastIntent(int \/*enum enum Social::GamePublishSetting*\/ a0){
-        void (Level::*rv)(int \/*enum enum Social::GamePublishSetting*\/);
+    inline void setXBLBroadcastIntent(enum Social::GamePublishSetting a0){
+        void (Level::*rv)(enum Social::GamePublishSetting);
         *((void**)&rv) = dlsym("?setXBLBroadcastIntent@Level@@UEAAXW4GamePublishSetting@Social@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Social::GamePublishSetting*\/>(a0));
+        return (this->*rv)(std::forward<enum Social::GamePublishSetting>(a0));
     }
-    inline void setXBLBroadcastMode(int \/*enum enum Social::GamePublishSetting*\/ a0){
-        void (Level::*rv)(int \/*enum enum Social::GamePublishSetting*\/);
+    inline void setXBLBroadcastMode(enum Social::GamePublishSetting a0){
+        void (Level::*rv)(enum Social::GamePublishSetting);
         *((void**)&rv) = dlsym("?setXBLBroadcastMode@Level@@UEAAXW4GamePublishSetting@Social@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Social::GamePublishSetting*\/>(a0));
+        return (this->*rv)(std::forward<enum Social::GamePublishSetting>(a0));
     }
     inline void spawnParticleEffect(std::string const& a0, class Actor const& a1, class Vec3 const& a2){
         void (Level::*rv)(std::string const&, class Actor const&, class Vec3 const&);
@@ -3977,10 +3989,10 @@ public:
         *((void**)&rv) = dlsym("?updateWeather@Level@@UEAAXMHMH@Z");
         return (this->*rv)(std::forward<float>(a0), std::forward<int>(a1), std::forward<float>(a2), std::forward<int>(a3));
     }
-    inline void upgradeStorageVersion(int \/*enum enum StorageVersion*\/ a0){
-        void (Level::*rv)(int \/*enum enum StorageVersion*\/);
+    inline void upgradeStorageVersion(enum StorageVersion a0){
+        void (Level::*rv)(enum StorageVersion);
         *((void**)&rv) = dlsym("?upgradeStorageVersion@Level@@UEAAXW4StorageVersion@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum StorageVersion*\/>(a0));
+        return (this->*rv)(std::forward<enum StorageVersion>(a0));
     }
     inline bool useMsaGamertagsOnly() const{
         bool (Level::*rv)() const;

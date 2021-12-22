@@ -5,28 +5,27 @@
 #include <MC/StructureTemplate.hpp>
 #include <MC/StructureTemplateData.hpp>
 
-StructureTemplate::StructureTemplate(std::string const& name) {
-    auto name_span = gsl::basic_string_span<char const, -1>(name);
-    SymCall("??0StructureTemplate@@QEAA@V?$basic_string_span@$$CBD$0?0@gsl@@@Z",
-            StructureTemplate*, StructureTemplate*, gsl::basic_string_span<char const, -1>)(this, name_span);
-}
-
-StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag* tag) {
+StructureTemplate StructureTemplate::fromTag(std::string name, CompoundTag const& tag) {
     auto st = StructureTemplate(name);
     //st.getName(name_span)
-    st.getData()->load(*tag);
+    st.getData()->load(tag);
     return st;
 }
 
 StructureTemplate::StructureTemplate(class StructureTemplate const& copy) {
-    memcpy(this, &copy, sizeof(StructureTemplate));
+    load(*copy.save());
+}
+
+bool StructureTemplate::load(CompoundTag const& tag)
+{
+    return getData()->load(tag);
 }
 
 std::unique_ptr<CompoundTag> StructureTemplate::toTag() {
     return save();
 }
 
-StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
+StructureTemplate StructureTemplate::fromWorld(std::string name, int dimID, BlockPos p1, BlockPos p2, bool ignoreBlocks, bool ignoreEntities) {
     auto st = StructureTemplate(name);
     //st.getName();
     BlockPos start = {std::min(p1.x, p2.x), std::min(p1.y, p2.y), std::min(p1.z, p2.z)};
@@ -35,13 +34,13 @@ StructureTemplate StructureTemplate::fromWorld(std::string name, int dimid, Bloc
     setting.setIgnoreBlocks(ignoreBlocks);
     setting.setIgnoreEntities(ignoreEntities);
     setting.setStructureSize(size);
-    st.fillFromWorld(*Level::getBlockSource(dimid), start, setting);
+    st.fillFromWorld(*Level::getBlockSource(dimID), start, setting);
     return st;
 }
 
-bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation rotation) {
+bool StructureTemplate::toWorld(int dimID, BlockPos const& p1, Mirror mirror, Rotation rotation) {
     auto palette = Level::getBlockPalette();
-    auto bs = Level::getBlockSource(dimid);
+    auto bs = Level::getBlockSource(dimID);
     auto setting = StructureSettings();
     setting.setMirror(mirror);
     setting.setStructureSize(getSize());
@@ -49,6 +48,7 @@ bool StructureTemplate::toWorld(int dimid, BlockPos p1, Mirror mirror, Rotation 
     placeInWorld(*bs, *palette, p1, setting, nullptr, false);
     return true;
 };
+
 StructureTemplateData* StructureTemplate::getData() {
     return (StructureTemplateData*)((uintptr_t)this + 32);
 };

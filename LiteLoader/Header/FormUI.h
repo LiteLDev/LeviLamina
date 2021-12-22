@@ -1,281 +1,275 @@
 #pragma once
+
+#include <utility>
+
 #include "../Global.h"
 
 class ServerPlayer;
 
-namespace Form
-{
-	//////////////////////////////// Simple Form Elements ////////////////////////////////
+namespace Form {
+    //////////////////////////////// Simple Form Elements ////////////////////////////////
 
-	class SimpleFormElement
-	{
-	protected:
-		virtual string serialize() = 0;
-		friend class SimpleForm;
-	};
+    class SimpleFormElement {
+    protected:
+        virtual string serialize() = 0;
 
-	class Button : public SimpleFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
+        friend class SimpleForm;
+    };
 
-	public:
-		using ButtonCallback = std::function<void(void)>;
+    class Button : public SimpleFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-		string text, image;
-		ButtonCallback callback;
+    public:
+        using ButtonCallback = std::function<void(void)>;
 
-	public:
-		inline Button(const string& text, const string& image = "", ButtonCallback callback = ButtonCallback())
-			:text(text), image(image), callback(callback)
-		{}
-		inline void setText(const string& text) { this->text = text; }
-		inline void setImage(const string& image) { this->image = image; }
-		inline void setCallback(ButtonCallback callback) { this->callback = callback; }
-	};
+        string text, image;
+        ButtonCallback callback;
 
-	//////////////////////////////// Custom Form Elements ////////////////////////////////
+    public:
+        inline explicit Button(string text, string image = "", ButtonCallback callback = ButtonCallback())
+                : text(std::move(text)), image(std::move(image)), callback(std::move(callback)) {}
 
-	class CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() = 0;
-		friend class CustomForm;
-	public:
-		enum class Type { Label, Input, Toggle, Dropdown, Slider, StepSlider };
+        inline void setText(const string &_text) { this->text = _text; }
+        inline void setImage(const string &_image) { this->image = _image; }
+        inline void setCallback(ButtonCallback _callback) { this->callback = std::move(_callback); }
+    };
 
-		string name;
-		Type type;
-		inline void setName(const string& name) { this->name = name; }
-		inline virtual Type getType() = 0;
-	};
+    //////////////////////////////// Custom Form Elements ////////////////////////////////
 
-	class Label : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = void*;
-		string text;
+    class CustomFormElement {
+    protected:
+        LIAPI virtual string serialize() = 0;
 
-	public:
-		inline Label(const string& name, const string& text)
-			:text(text)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::Label; }
-		inline void setText(const string& text) { this->text = text; }
-		inline DataType getData() { return nullptr; }
-	};
+        friend class CustomForm;
 
-	class Input : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = std::string;
-		string title, placeholder, def, data;
+    public:
+        enum class Type {
+            Label, Input, Toggle, Dropdown, Slider, StepSlider
+        };
 
-		inline Input(const string& name, const string& title, const string& placeholder = "", const string& def = "")
-			:title(title), placeholder(placeholder), def(def)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::Input; }
-		inline void setTitle(const string& title) { this->title = title; }
-		inline void setPlaceHolder(const string& placeholder) { this->placeholder = placeholder; }
-		inline void setDefault(const string& def) { this->def = def; }
-		inline DataType getData() { return data; }
-	};
+        string name;
+        Type type{};
 
-	class Toggle : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = bool;
-		string title;
-		bool def, data;
-		
-	public:
-		inline Toggle(const string& name, const string& title, bool def = false)
-			:title(title), def(def)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::Toggle; }
-		inline void setTitle(const string& title) { this->title = title; }
-		inline void setDefault(bool def) { this->def = def; }
-		inline DataType getData() { return data; }
-	};
+        inline void setName(const string &_name) { this->name = _name; }
+        inline virtual Type getType() = 0;
+    };
 
-	class Dropdown : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = int;
-		string title;
-		vector<string> options;
-		int def, data;
+    class Label : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-	public:
-		inline Dropdown(const string& name, const string& title, const vector<string> &options, int defId = 0)
-			:title(title), options(options), def(defId)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::Dropdown; }
-		inline void setTitle(const string& title) { this->title = title; }
-		inline void setOptions(const vector<string>& options) { this->options = options; }
-		inline void addOption(const string& option) { options.push_back(option); }
-		inline void setDefault(int defId) { this->def = defId; }
-		inline DataType getData() { return data; }
-	};
+    public:
+        using DataType = void *;
+        string text;
 
-	class Slider : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = int;
-		string title;
-		int min, max, step, def, data;
+    public:
+        inline Label(const string &name, string text)
+                : text(std::move(text)) {
+            setName(name);
+        }
 
-	public:
-		inline Slider(const string& name, const string& title, int min, int max, int step = 1, int def = 0)
-			:title(title), min(min), max(max), step(step), def(def)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::Slider; }
-		inline void setTitle(const string& title) { this->title = title; }
-		inline void setMin(int min) { this->min = min; }
-		inline void setMax(int max) { this->max = max; }
-		inline void setStep(int step) { this->step = step; }
-		inline void setDefault(int def) { this->def = def; }
-		inline DataType getData() { return data; }
-	};
+        inline Type getType() override { return Type::Label; }
+        inline void setText(const string &_text) { this->text = _text; }
+        inline DataType getData() { return nullptr; }
+    };
 
-	class StepSlider : public CustomFormElement
-	{
-	protected:
-		LIAPI virtual string serialize() override;
-	public:
-		using DataType = int;
-		string title;
-		vector<string> options;
-		int def, data;
+    class Input : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-	public:
-		inline StepSlider(const string& name, const string& title, const vector<string>& options, int defId = 0)
-			:title(title), options(options), def(defId)
-		{
-			setName(name);
-		}
-		inline virtual Type getType() override { return Type::StepSlider; }
-		inline void setTitle(const string& title) { this->title = title; }
-		inline void setOptions(const vector<string>& options) { this->options = options; }
-		inline void addOption(const string& option) { options.push_back(option); }
-		inline void setDefault(int defId) { this->def = defId; }
-		inline DataType getData() { return data; }
-	};
+    public:
+        using DataType = std::string;
+        string title, placeholder, def, data;
 
-	//////////////////////////////// Forms ////////////////////////////////
+        inline Input(const string &name, string title, string placeholder = "", string def = "")
+                : title(std::move(title)), placeholder(std::move(placeholder)), def(std::move(def)) {
+            setName(name);
+        }
 
-	class FormImpl
-	{
-	protected:
-		//fifo_json json;
-		virtual string serialize() = 0;
-	};
+        inline Type getType() override { return Type::Input; }
+        inline void setTitle(const string &_title) { this->title = _title; }
+        inline void setPlaceHolder(const string &_placeholder) { this->placeholder = _placeholder; }
+        inline void setDefault(const string &_def) { this->def = _def; }
+        inline DataType getData() const { return data; }
+    };
 
-	class SimpleForm : public FormImpl
-	{
-	protected:
-		LIAPI virtual string serialize() override;
+    class Toggle : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-	public:
-		using Callback = std::function<void(int)>;
-		string title, content;
-		vector<std::shared_ptr<SimpleFormElement>> elements;
-		Callback callback;
+    public:
+        using DataType = bool;
+        string title;
+        bool def, data{};
 
-	public:
-		SimpleForm(const string& title, const string& content)
-			:title(title), content(content)
-		{ }
+    public:
+        inline Toggle(const string &name, string title, bool def = false)
+                : title(std::move(title)), def(def) {
+            setName(name);
+        }
 
-		template <typename T, typename... Args>
-		SimpleForm(const string& title, const string& content, T element, Args... args)
-		{
-			append(element);
-			SimpleForm(title, content, args...);
-		}
+        inline virtual Type getType() override { return Type::Toggle; }
+        inline void setTitle(const string &_title) { this->title = _title; }
+        inline void setDefault(bool _def) { this->def = _def; }
+        inline DataType getData() const { return data; }
+    };
 
-		LIAPI SimpleForm& setTitle(const string& title);
-		LIAPI SimpleForm& setContent(const string& content);
-		LIAPI SimpleForm& append(const Button &element);
-		LIAPI bool sendTo(ServerPlayer* player, Callback callback = Callback());
-	};
+    class Dropdown : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-	class CustomForm : public FormImpl
-	{
-	protected:
-		LIAPI virtual string serialize() override;
+    public:
+        using DataType = int;
+        string title;
+        vector<string> options;
+        int def, data{};
 
-	public:
-		using Callback = std::function<void(const std::map<string, std::shared_ptr<CustomFormElement>>&)>;
-		string title;
-		std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
-		Callback callback;
+    public:
+        inline Dropdown(const string &name, string title, const vector<string> &options, int defId = 0)
+                : title(std::move(title)), options(options), def(defId) {
+            setName(name);
+        }
 
-	public:
-		CustomForm(const string& title)
-			:title(title)
-		{ }
+        inline Type getType() override { return Type::Dropdown; }
+        inline void setTitle(const string &_title) { this->title = _title; }
+        inline void setOptions(const vector<string> &_options) { this->options = _options; }
+        inline void addOption(const string &option) { options.push_back(option); }
+        inline void setDefault(int defId) { this->def = defId; }
+        inline DataType getData() const { return data; }
+    };
 
-		template <typename T, typename... Args>
-		CustomForm(const string& title, T element, Args... args)
-		{
-			append(element);
-			CustomForm(title, args...);
-		}
-		
-		LIAPI CustomForm& setTitle(const string& title);
-		LIAPI CustomForm& append(const Label& element);
-		LIAPI CustomForm& append(const Input& element);
-		LIAPI CustomForm& append(const Toggle& element);
-		LIAPI CustomForm& append(const Dropdown& element);
-		LIAPI CustomForm& append(const Slider& element);
-		LIAPI CustomForm& append(const StepSlider& element);
-		LIAPI bool sendTo(ServerPlayer* player, Callback callback);
-		
-		template<typename T,typename DataType>
-		inline DataType getData(string name)
-		{
-			for (auto& [k, v] : elements)
-				if (k == name)
-					return std::dynamic_pointer_cast<T>(v)->getData();
-			return DataType();
-		}
+    class Slider : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
 
-		template<typename T, typename DataType>
-		inline DataType getData(int index)
-		{
-			return std::dynamic_pointer_cast<T>(elements[index].second)->getData();
-		}
+    public:
+        using DataType = int;
+        string title;
+        int min, max, step, def, data{};
 
-		inline CustomFormElement::Type getType(int index)
-		{
-			return elements[index].second->getType();
-		}
+    public:
+        inline Slider(const string &name, string title, int min, int max, int step = 1, int def = 0)
+                : title(std::move(title)), min(min), max(max), step(step), def(def) {
+            setName(name);
+        }
 
-		template<typename T, typename DataType>
-		inline void setData(int index, DataType data)
-		{
-			std::dynamic_pointer_cast<T>(elements[index].second)->data = data;
-		}
-	};
+        inline Type getType() override { return Type::Slider; }
+        inline void setTitle(const string &_title) { this->title = _title; }
+        inline void setMin(int _min) { this->min = _min; }
+        inline void setMax(int _max) { this->max = _max; }
+        inline void setStep(int _step) { this->step = _step; }
+        inline void setDefault(int _def) { this->def = _def; }
+        inline DataType getData() const { return data; }
+    };
+
+    class StepSlider : public CustomFormElement {
+    protected:
+        LIAPI string serialize() override;
+
+    public:
+        using DataType = int;
+        string title;
+        vector<string> options;
+        int def, data{};
+
+    public:
+        inline StepSlider(const string &name, string title, const vector<string> &options, int defId = 0)
+                : title(std::move(title)), options(options), def(defId) {
+            setName(name);
+        }
+
+        inline Type getType() override { return Type::StepSlider; }
+        inline void setTitle(const string &_title) { this->title = _title; }
+        inline void setOptions(const vector<string> &_options) { this->options = _options; }
+        inline void addOption(const string &option) { options.push_back(option); }
+        inline void setDefault(int defId) { this->def = defId; }
+        inline DataType getData() const { return data; }
+    };
+
+    //////////////////////////////// Forms ////////////////////////////////
+
+    class FormImpl {
+    protected:
+        //fifo_json json;
+        virtual string serialize() = 0;
+    };
+
+    class SimpleForm : public FormImpl {
+    protected:
+        LIAPI string serialize() override;
+
+    public:
+        using Callback = std::function<void(int)>;
+        string title, content;
+        vector<std::shared_ptr<SimpleFormElement>> elements;
+        Callback callback;
+
+    public:
+        SimpleForm(string title, string content)
+                : title(std::move(title)), content(std::move(content)) {}
+
+        template<typename T, typename... Args>
+        SimpleForm(const string &title, const string &content, T element, Args... args) {
+            append(element);
+            SimpleForm(title, content, args...);
+        }
+
+        LIAPI SimpleForm &setTitle(const string &title); 
+        LIAPI SimpleForm &setContent(const string &content);
+        LIAPI SimpleForm &append(const Button &element);
+        LIAPI bool sendTo(ServerPlayer *player, Callback callback = Callback());
+    };
+
+    class CustomForm : public FormImpl {
+    protected:
+        LIAPI string serialize() override;
+
+    public:
+        using Callback = std::function<void(const std::map<string, std::shared_ptr<CustomFormElement>> &)>;
+        string title;
+        std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
+        Callback callback;
+
+    public:
+        explicit CustomForm(string title)
+                : title(std::move(title)) {}
+
+        template<typename T, typename... Args>
+        CustomForm(const string &title, T element, Args... args) {
+            append(element);
+            CustomForm(title, args...);
+        }
+
+        LIAPI CustomForm &setTitle(const string &title);
+        LIAPI CustomForm &append(const Label &element);
+        LIAPI CustomForm &append(const Input &element);
+        LIAPI CustomForm &append(const Toggle &element);
+        LIAPI CustomForm& append(const Dropdown& element);
+        LIAPI CustomForm &append(const Slider &element);
+        LIAPI CustomForm &append(const StepSlider &element);
+        LIAPI bool sendTo(ServerPlayer *player, Callback callback);
+
+        template<typename T, typename DataType>
+        inline DataType getData(const string& name) {
+            for (auto&[k, v]: elements)
+                if (k == name)
+                    return std::dynamic_pointer_cast<T>(v)->getData();
+            return DataType();
+        }
+
+        template<typename T, typename DataType>
+        inline DataType getData(int index) {
+            return std::dynamic_pointer_cast<T>(elements[index].second)->getData();
+        }
+
+        inline CustomFormElement::Type getType(int index) {
+            return elements[index].second->getType();
+        }
+
+        template<typename T, typename DataType>
+        inline void setData(int index, DataType data) {
+            std::dynamic_pointer_cast<T>(elements[index].second)->data = data;
+        }
+    };
 }

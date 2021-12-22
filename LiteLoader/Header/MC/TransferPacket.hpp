@@ -14,6 +14,7 @@ class TransferPacket : public Packet {
 #define AFTER_EXTRA
 // Add Member There
     char filler[40];
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TRANSFERPACKET
@@ -24,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~TransferPacket();
-    /*1*/ virtual int /*enum enum MinecraftPacketIds*/ getId() const;
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual int /*enum enum StreamReadResult*/ _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~TransferPacket(){
          (TransferPacket::*rv)();

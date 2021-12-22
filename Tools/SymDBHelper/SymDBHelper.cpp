@@ -30,7 +30,7 @@
 
 extern "C" {
 // LiteLoader Api to Fetch Function Address
-_declspec(dllimport) void* dlsym_real(char const* name);
+void* dlsym_real(char const* name);
 }
 
 static size_t __strlen(const char* sz) {
@@ -193,7 +193,13 @@ extern "C" FARPROC WINAPI
         if (__pfnDliNotifyHook2)
             hmod = (HMODULE)(((*__pfnDliNotifyHook2)(dliNotePreLoadLibrary, &dli)));
         if (hmod == 0)
+        #ifdef _MSC_VER
             hmod = LoadLibrary((LPCWSTR)dli.szDll);
+        #else
+            hmod = LoadLibrary(dli.szDll);
+        #endif
+        
+        
         if (hmod == 0) {
             dli.dwLastError = GetLastError();
             if (__pfnDliFailureHook2)

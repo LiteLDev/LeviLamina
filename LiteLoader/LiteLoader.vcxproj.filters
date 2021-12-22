@@ -246,6 +246,42 @@
     <ClCompile Include="Kernel\FormPacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\StringTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ShortTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\IntTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\IntArrayTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FloatTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\EndTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Int64TagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\DoubleTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ByteTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ByteArrayTagAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="BuiltinUnlockCmd.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -316,9 +352,6 @@
     </ClInclude>
     <ClInclude Include="AutoUpgrade.h">
       <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Header\Utils\GlobalService.h">
-      <Filter>Header\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
@@ -543,6 +576,15 @@
       <Filter>Header</Filter>
     </ClInclude>
     <ClInclude Include="Header\Impl\FormPacketHelper.h">
+      <Filter>Header\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\Types.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\GlobalServiceAPI.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Impl\ObjectivePacketHelper.h">
       <Filter>Header\Impl</Filter>
     </ClInclude>
   </ItemGroup>

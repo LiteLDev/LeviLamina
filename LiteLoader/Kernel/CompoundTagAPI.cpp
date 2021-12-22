@@ -16,6 +16,7 @@
 #include <MC/Player.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ShortTag.hpp>
+#include <MC/EndTag.hpp>
 #include <MC/StringTag.hpp>
 #include <MC/Tag.hpp>
 #include <map>
@@ -25,31 +26,39 @@
 
 class DataLoadHelper;
 
+std::unique_ptr<CompoundTag> CompoundTag::create() {
+    return std::unique_ptr<CompoundTag>((CompoundTag*)Tag::newTag(Tag::Type::Compound).release());
+}
+
+inline map<std::string, CompoundTagVariant>& CompoundTag::value() {
+    return dAccess<map<std::string, CompoundTagVariant>, 8>(this);
+}
+
 
 // put value
 void CompoundTag::putEnd(std::string key) {
-    Tag* tag = Tag::createTag(Tag::Type::End);
-    put(key, std::move(*tag));
-}
-
-struct TagMemoryChunk& CompoundTag::putIntArray(std::string key, struct TagMemoryChunk val) {
-    IntArrayTag* tag = (IntArrayTag*)Tag::createTag(Tag::Type::IntArray);
-    throw("TODO");
-    return val;
+    put(key, EndTag::create());
 }
 
 double& CompoundTag::putDouble(std::string key, double val) {
-    DoubleTag* tag = DoubleTag::create(val);
-    double& value = tag->value();
-    put(key, std::move(*tag));
-    return value;
+    return put(key, DoubleTag::create(val))->asDoubleTag()->value();
 }
 
-void CompoundTag::putByteArray(std::string key, void* data, size_t size) {
-    char* written = new char[size];
-    memcpy(written, data, size);
-    TagMemoryChunk tmc(written, size);
+void CompoundTag::putByteArray(std::string key, char data[], size_t size)
+{
+    TagMemoryChunk tmc(data, size);
     putByteArray(key, tmc);
+}
+
+void CompoundTag::putIntArray(std::string key, int data[], size_t size)
+{
+    TagMemoryChunk tmc((char*)data, size*4);
+    putIntArray(key, tmc);
+}
+
+struct TagMemoryChunk& CompoundTag::putIntArray(std::string key, struct TagMemoryChunk val)
+{
+    return put(key, IntArrayTag::create(val))->asIntArrayTag()->value();
 }
 
 // get value
@@ -62,40 +71,53 @@ double CompoundTag::getDouble(class gsl::basic_string_span<char const, -1> key) 
 };
 struct TagMemoryChunk const& CompoundTag::getIntArray(class gsl::basic_string_span<char const, -1> key) const {
     auto tag = const_cast<Tag*>(get(key))->asIntArrayTag();
-    throw("TODO");
-    return *(TagMemoryChunk*)tag;
+    return tag->value();
 };
 
 // get tag
 class ByteTag const* CompoundTag::getByteTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asByteTag();
 };
+
 class ShortTag const* CompoundTag::getShortTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asShortTag();
 };
+
 class FloatTag const* CompoundTag::getFloatTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asFloatTag();
 };
+
 class DoubleTag const* CompoundTag::getDoubleTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asDoubleTag();
 };
+
 class ByteArrayTag const* CompoundTag::getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const {
     return const_cast<Tag*>(get(key))->asByteArrayTag();
 };
-class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
-    return const_cast<Tag*>(get(key))->asStringTag();
-};
-class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const {
+
+class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const
+{
     return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
-CompoundTag* CompoundTag::fromItemStack(ItemStack* item) {
-    return item->save().release();
+class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
+    return const_cast<Tag*>(get(key))->asStringTag();
+};
 
-    //CompoundTag* tmp = 0;
-    //SymCall("?save@ItemStackBase@@QEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ",
-    //        void*, void*, CompoundTag**)(item, &tmp);
-    //return tmp;
+class ListTag const* CompoundTag::getListTag(class gsl::basic_string_span<char const, -1> key) const {
+    return getList(key);
+};
+
+class CompoundTag const* CompoundTag::getCompoundTag(class gsl::basic_string_span<char const, -1> key) const {
+    return getCompound(key);
+};
+
+Tag* CompoundTag::operator[](class gsl::basic_string_span<char const, -1> key) {
+    return get(key);
+}
+
+std::unique_ptr<CompoundTag> CompoundTag::fromItemStack(ItemStack* item) {
+    return item->save();
 }
 
 void CompoundTag::setItemStack(ItemStack* item) {
@@ -104,9 +126,9 @@ void CompoundTag::setItemStack(ItemStack* item) {
     (*(SetItemStackFn)func)(item, this);
 }
 
-CompoundTag* CompoundTag::fromBlock(Block* blk) {
+std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* blk) {
     auto tag = (CompoundTag*)((uintptr_t)blk + 96);
-    return tag->clone().release();
+    return tag->clone();
 }
 
 void CompoundTag::setBlock(Block* blk) {
@@ -115,16 +137,16 @@ void CompoundTag::setBlock(Block* blk) {
     memcpy(tag, this->clone().release(), sizeof(CompoundTag));
 }
 
-CompoundTag* CompoundTag::fromActor(Actor* actor) {
-    CompoundTag* tmp = CompoundTag::create();
-    actor->save(*tmp);
-    actor->saveWithoutId(*tmp);
-    actor->addAdditionalSaveData(*tmp);
+std::unique_ptr<CompoundTag> CompoundTag::fromActor(Actor* actor) {
+    auto tmp = CompoundTag::create();
+    actor->save(*tmp->asCompoundTag());
+    actor->saveWithoutId(*tmp->asCompoundTag());
+    actor->addAdditionalSaveData(*tmp->asCompoundTag());
 
-    return tmp;
+    return std::unique_ptr<CompoundTag>(dynamic_cast<CompoundTag*>(tmp.release()));
 }
 
-bool CompoundTag::setActor(Actor* actor) {
+bool CompoundTag::setActor(Actor* actor) const {
     void* vtbl = (void*)dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = actor->load(*this, (DataLoadHelper&)vtbl);
     actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
@@ -132,7 +154,7 @@ bool CompoundTag::setActor(Actor* actor) {
     return res;
 }
 
-CompoundTag* CompoundTag::fromPlayer(Player* player) {
+std::unique_ptr<CompoundTag> CompoundTag::fromPlayer(Player* player) {
     return fromActor(player);
 }
 
@@ -144,17 +166,17 @@ bool CompoundTag::setPlayer(Player* player) {
     return res;
 }
 
-bool CompoundTag::setBlockActor(BlockActor* ble) {
+bool CompoundTag::setBlockActor(BlockActor* ble) const {
     void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
     ble->load(*Global<Level>, *this, (DataLoadHelper&)vtbl);
     ble->setChanged();
     return true;
 }
 
-CompoundTag* CompoundTag::fromBlockActor(BlockActor* ble) {
-    CompoundTag* tmp = CompoundTag::create();
-    ble->save(*tmp);
-    return tmp;
+std::unique_ptr<CompoundTag> CompoundTag::fromBlockActor(BlockActor* ble) {
+    auto tmp = CompoundTag::create();
+    ble->save(*tmp->asCompoundTag());
+    return std::unique_ptr<CompoundTag>(dynamic_cast<CompoundTag*>(tmp.release()));
 }
 
 
@@ -223,13 +245,32 @@ void TagToSNBT_List_Helper(tags::bytearray_list_tag& res, ListTag* nbt) {
     }
 }
 
-tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
+void TagToSNBT_List_Helper(tags::intarray_list_tag& res, ListTag* nbt)
+{
     auto& list = nbt->value();
-    if (list.empty()) {
-        return tags::tag_list_tag();
-    }
+    for (auto& tag : list)
+    {
+        auto& bytes = tag->asIntArrayTag()->value();
 
-    switch (list[0]->getTagType()) {
+        int* raw = (int*)bytes.data.get();
+        vector<int32_t> data;
+        data.reserve(bytes.size);
+        for (int i = 0; i < bytes.size/4; ++i)
+            data.emplace_back(raw[i]);
+
+        res.value.emplace_back(data);
+    }
+}
+
+tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
+    //auto& list = nbt->value();
+    //if (list.empty()) {
+    //    return tags::tag_list_tag();
+    //}
+
+    switch (nbt->getElementType()) {
+        case Tag::Type::End:
+            return tags::end_list_tag().as_tags();
         case Tag::Type::Byte: {
             tags::byte_list_tag data;
             TagToSNBT_List_Helper(data, nbt);
@@ -272,9 +313,15 @@ tags::tag_list_tag TagToSNBT_List_Helper(ListTag* nbt) {
             TagToSNBT_List_Helper(data, nbt);
             return data.as_tags();
         }
+        case Tag::Type::IntArray: {
+            tags::intarray_list_tag data;
+            TagToSNBT_List_Helper(data, nbt);
+            return data.as_tags();
+        }
         case Tag::Type::List: {
             tags::list_list_tag res;
-            for (auto& tag : list) {
+            for (auto& tag : nbt->value())
+            {
                 tags::tag_list_tag data = TagToSNBT_List_Helper((ListTag*)tag);
                 res.value.emplace_back(std::make_unique<tags::tag_list_tag>(data));
             }
@@ -340,6 +387,17 @@ void TagToSNBT_Compound_Helper(tags::compound_tag& res, CompoundTag* nbt) {
                 res.value[key] = make_unique<tags::bytearray_tag>(data);
                 break;
             }
+            case Tag::Type::IntArray: {
+                auto& bytes = tag.asIntArrayTag()->value();
+                int* raw = (int*)bytes.data.get();
+                vector<int32_t> data;
+                data.reserve(bytes.size);
+                for (int i = 0; i < bytes.size/4; ++i)
+                    data.emplace_back(raw[i]);
+
+                res.value[key] = make_unique<tags::intarray_tag>(data);
+                break;
+            }
             case Tag::Type::List: {
                 auto& list = tag.asListTag()->value();
                 if (list.empty()) {
@@ -377,56 +435,62 @@ string CompoundTag::toSNBT() {
 
 //////////////////// From SNBT ////////////////////
 
-void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data);
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::compound_list_tag& data);
+void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag& data);
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::compound_list_tag& data);
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::end_list_tag& data) {
-    nbt->addEnd();
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::end_list_tag& data) {
+    //nbt->addEnd();
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::byte_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::byte_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addByte((unsigned char)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::short_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::short_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addShort((short)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::int_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::int_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addInt((int)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::long_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::long_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addInt64((long long)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::float_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::float_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addFloat((float)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::double_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::double_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addDouble((double)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::string_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::string_list_tag& data) {
     for (auto& dat : data.value)
         nbt->addString((string)dat);
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::bytearray_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::bytearray_list_tag& data) {
     for (auto& dat : data.value)
-        nbt->addByteArray(dat.data(), dat.size());
+        nbt->addByteArray((char*)dat.data(), dat.size());
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::list_list_tag& data) {
-    for (auto& dat : data.value) {
-        ListTag* tagList = ListTag::create();
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::intarray_list_tag& data) {
+    for (auto& dat : data.value)
+        nbt->addIntArray(dat.data(), dat.size());
+}
+
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::list_list_tag& data) {
+    for (auto& dat : data.value)
+    {
+        unique_ptr<ListTag> tagList = ListTag::create();
         switch (dat->element_id()) {
             case tag_id::tag_end:
                 SNBTToTag_List_Helper(tagList, *(tags::end_list_tag*)dat.get());
@@ -455,6 +519,9 @@ void SNBTToTag_List_Helper(ListTag*& nbt, tags::list_list_tag& data) {
             case tag_id::tag_bytearray:
                 SNBTToTag_List_Helper(tagList, *(tags::bytearray_list_tag*)dat.get());
                 break;
+            case tag_id::tag_intarray:
+                SNBTToTag_List_Helper(tagList, *(tags::intarray_list_tag*)dat.get());
+                break;
             case tag_id::tag_list:
                 SNBTToTag_List_Helper(tagList, *(tags::list_list_tag*)dat.get());
                 break;
@@ -464,19 +531,19 @@ void SNBTToTag_List_Helper(ListTag*& nbt, tags::list_list_tag& data) {
             default:
                 break;
         }
-        nbt->add(tagList);
+        nbt->add(Tag::asTag(std::move(tagList)));
     }
 }
 
-void SNBTToTag_List_Helper(ListTag*& nbt, tags::compound_list_tag& data) {
+void SNBTToTag_List_Helper(unique_ptr<ListTag>& nbt, tags::compound_list_tag& data) {
     for (auto& dat : data.value) {
-        CompoundTag* tagComp = CompoundTag::create();
+        auto tagComp = CompoundTag::create();
         SNBTToTag_Compound_Helper(tagComp, dat);
-        nbt->add(tagComp);
+        nbt->add(Tag::asTag(std::move(tagComp)));
     }
 }
 
-void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
+void SNBTToTag_Compound_Helper(unique_ptr<CompoundTag>& nbt, tags::compound_tag& data) {
     for (auto& [key, value] : data.value) {
         switch (value->id()) {
             case tag_id::tag_end:
@@ -505,11 +572,16 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                 break;
             case tag_id::tag_bytearray: {
                 auto& data = ((tags::bytearray_tag*)value.get())->value;
-                nbt->putByteArray(key, data.data(), data.size());
+                nbt->putByteArray(key, (char*)data.data(), data.size());
+                break;
+            }
+            case tag_id::tag_intarray: {
+                auto& data = ((tags::intarray_tag*)value.get())->value;
+                nbt->putIntArray(key, data.data(), data.size());
                 break;
             }
             case tag_id::tag_list: {
-                ListTag* res = ListTag::create();
+                unique_ptr<ListTag> res = ListTag::create();
 
                 tags::list_tag* data = (tags::list_tag*)value.get();
                 switch (data->element_id()) {
@@ -537,6 +609,9 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                     case tag_id::tag_bytearray:
                         SNBTToTag_List_Helper(res, *(tags::bytearray_list_tag*)data);
                         break;
+                    case tag_id::tag_intarray:
+                        SNBTToTag_List_Helper(res, *(tags::intarray_list_tag*)data);
+                        break;
                     case tag_id::tag_list:
                         SNBTToTag_List_Helper(res, *(tags::list_list_tag*)data);
                         break;
@@ -546,32 +621,32 @@ void SNBTToTag_Compound_Helper(CompoundTag*& nbt, tags::compound_tag& data) {
                     default:
                         break;
                 }
-                nbt->put(key, std::move(*res));
+                nbt->put(key, Tag::asTag(std::move(res)));
                 break;
             }
             case tag_id::tag_compound: {
-                CompoundTag* res = CompoundTag::create();
+                auto res = CompoundTag::create();
                 tags::compound_tag* data = (tags::compound_tag*)value.get();
                 SNBTToTag_Compound_Helper(res, *data);
-                nbt->put(key, std::move(*(CompoundTag*)res));
+                nbt->put(key, Tag::asTag(std::move(res)));
                 break;
             }
         }
     }
 }
 
-CompoundTag* CompoundTag::fromSNBT(const string& snbt) {
+std::unique_ptr<CompoundTag> CompoundTag::fromSNBT(const string& snbt) {
     istringstream sin(snbt);
     tags::compound_tag root(true);
     sin >> contexts::mojangson >> root;
 
-    CompoundTag* res = CompoundTag::create();
+    auto res = CompoundTag::create();
     SNBTToTag_Compound_Helper(res, root);
     return res;
 }
 
 //////////////////// From Binary ////////////////////
-CompoundTag* CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian) {
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian)
         vtbl = dlsym("??_7StringByteInput@@6B@");
@@ -586,10 +661,10 @@ CompoundTag* CompoundTag::fromBinaryNBT(void* data, size_t len, size_t& endOffse
     //                   unique_ptr<CompoundTag>*, CompoundTag**, void*)(&tag, (void*)iDataInput);
 
     endOffset = iDataInput[1];
-    return rtn.release();
+    return rtn;
 }
 
-CompoundTag* CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
+std::unique_ptr<CompoundTag> CompoundTag::fromBinaryNBT(void* data, size_t len, bool isLittleEndian) {
     size_t endOffset = 0;
     return fromBinaryNBT(data, len, endOffset, isLittleEndian);
 }
@@ -612,7 +687,7 @@ class BigEndianStringByteOutput {
     }
 
 public:
-    virtual ~BigEndianStringByteOutput(){};
+    virtual ~BigEndianStringByteOutput() = default;;
     virtual void* writeString(gsl::basic_string_span<char const, -1> string_span) {
         return SymCall("?writeString@BytesDataOutput@@UEAAXV?$basic_string_span@$$CBD$0?0@gsl@@@Z",
                        void*, void*, gsl::basic_string_span<char const, -1>)((void*)this, string_span);
@@ -644,6 +719,7 @@ public:
                        void*, void*, byte*, size_t)((void*)this, bytes, count);
     }
 };
+
 string CompoundTag::toBinaryNBT(bool isLittleEndian) {
     void* vtbl;
     if (isLittleEndian) {

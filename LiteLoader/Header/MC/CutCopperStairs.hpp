@@ -74,10 +74,10 @@ public:
     /*47*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*48*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
     /*49*/ virtual void __unk_vfn_20();
-    /*50*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
+    /*50*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*51*/ virtual void __unk_vfn_21();
     /*52*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
-    /*53*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, int /*enum enum FertilizerType*/) const;
+    /*53*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, enum FertilizerType) const;
     /*54*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
     /*55*/ virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*56*/ virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
@@ -112,7 +112,7 @@ public:
     /*85*/ virtual void __unk_vfn_27();
     /*86*/ virtual class Block const& getRenderBlock() const;
     /*87*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*88*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
+    /*88*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
     /*89*/ virtual void __unk_vfn_28();
     /*90*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;
     /*91*/ virtual bool dealsContactDamage(class Actor const&, class Block const&, bool) const;

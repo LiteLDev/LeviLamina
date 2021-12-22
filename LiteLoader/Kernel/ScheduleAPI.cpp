@@ -1,134 +1,212 @@
-#include <LoggerAPI.h>
 #include <ScheduleAPI.h>
+#include <Utils/CsLock.h>
+#include <queue>
 #include <atomic>
-#include <deque>
-#include <map>
-#include <mutex>
-#include <thread>
-using std::function;
+#include <Config.h>
+using namespace std;
 
-namespace Schedule {
-LIAPI tick_t _tick;
+CsLock locker;
+atomic_uint nextTaskId = 0;
 
-static std::multimap<tick_t, TaskBase> tasks;
-static std::deque<function<void()>> next_run;
-static std::atomic_flag cas_main = {};
-static std::atomic_flag cas_nextrun = {};
+class ScheduleTaskData
+{
+public:
+    enum class TaskType {
+        Delay, Repeat, InfiniteRepeat
+    };
 
-inline volatile int lock_owner;
-inline static int getTID() {
-    auto tid = std::this_thread::get_id();
-    return *(int*)&tid;
-}
-inline volatile bool __lock_main() {
-    int myid = getTID();
-    if (myid == lock_owner)
-        return false;
-    while (cas_main.test_and_set())
-        std::this_thread::yield();
-    lock_owner = myid;
-    return true;
-}
-inline volatile void __unlock_main() {
-    lock_owner = 0;
-    cas_main.clear();
-}
-struct LockGuard {
-    bool locked_by_me;
-    LockGuard() {
-        locked_by_me = __lock_main();
+    unsigned int taskId;
+    TaskType type;
+    int leftTime, interval, count;
+    std::function<void(void)> task;
+
+
+    ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay, unsigned long long interval, int count)
+        :type(type), task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++)
+    { }
+
+    inline unsigned int getTaskId()
+    {
+        return taskId;
     }
-    ~LockGuard() {
-        if (locked_by_me)
-            __unlock_main();
+
+    inline bool operator>(const ScheduleTaskData& t) const
+    {
+        return leftTime > t.leftTime;
     }
 };
 
-LIAPI bool cancel(taskid_t id) {
-    LockGuard gd;
-    for (auto it = tasks.begin(); it != tasks.end(); ++it) {
-        if (it->second.taskid == id) {
-            tasks.erase(it);
-            return true;
-        }
+
+class ScheduleTaskQueueType : public priority_queue<ScheduleTaskData,vector<ScheduleTaskData>,greater<ScheduleTaskData>>
+{
+public:
+    bool remove(unsigned int taskId)
+    {
+        locker.lock();
+        size_t size = c.size();
+        bool removed = false;
+
+        for (size_t i = 0; i < c.size(); ++i)
+            if (c[i].taskId == taskId)
+            {
+                c[i] = c.back();
+                c.pop_back();
+                std::make_heap(c.begin(), c.end(), comp);  //重排二叉堆
+                removed = true;
+            }
+        locker.unlock();
+        return removed;
     }
-    return false;
-}
-
-LIAPI taskid_t schedule(TaskBase&& task) {
-    auto id = task.taskid;
-    LockGuard gd;
-    tasks.emplace(task.schedule_time, std::forward<TaskBase>(task));
-    return id;
-}
-
-LIAPI void scheduleNext(function<void()>&& fn) {
-    while (cas_nextrun.test_and_set(std::memory_order_acquire))
-        std::this_thread::yield();
-    next_run.emplace_back(std::forward<function<void()>>(fn));
-    cas_nextrun.clear(std::memory_order_release);
-}
-
-inline static void nextrun() {
-    if (next_run.empty())
-        return;
-
-    while (cas_nextrun.test_and_set())
-        std::this_thread::yield();
-
-    try {
-        while (!next_run.empty()) {
-            next_run.front()();
-            next_run.pop_front();
-        }
-    } catch (const seh_exception& e) {
-        logger.error("SEH exception occurred at nextTask!");
-        logger.error("{}", e.what());
-    } catch (const std::exception& e) {
-        logger.error("Exception occurred at nextTask!");
-        logger.error("{}", e.what());
-    } catch (...) {
-        logger.error("Exception occurred at nextTask!");
+    
+    void clear()
+    {
+        locker.lock();
+        c.clear();
+        locker.unlock();
     }
-    cas_nextrun.clear();
-}
 
-inline static void tick() {
-    nextrun();
-    _tick++;
-    if (_tick % 10 != 0)
-        return;
-    ticknow++;
+    inline void tick()
+    {
+        locker.lock();
+        if (c.empty())
+        {
+            locker.unlock();
+            return;
+        }
 
-    LockGuard gd;
-    auto it = tasks.begin();
-    auto end = tasks.end();
-    try {
-        for (; it != end;) {
-            if (ticknow >= it->first) {
-                it->second.cb();
-                if (it->second.interval != 0) {
-                    it->second.schedule_time = ticknow + it->second.interval;
-                    tasks.emplace(it->second.schedule_time, std::move(it->second));
-                }
-                tasks.erase(it++);
-            } else {
+        for (size_t i = 0; i < c.size(); ++i)
+            --c[i].leftTime;
+
+        while (true)
+        {
+            if (empty())
+                break;
+            const ScheduleTaskData& t = top();
+            if (t.leftTime >= 0)
+                break;
+
+            //timeout
+            try {
+                t.task();
+            }
+            catch (const seh_exception& e) {
+                logger.error("SEH exception occurred in ScheduleTask!");
+                logger.error("{}", e.what());
+                logger.error("TaskId: {}", t.taskId);
+            }
+            catch (const std::exception& e) {
+                logger.error("Exception occurred in ScheduleTask!");
+                logger.error("{}", e.what());
+                logger.error("TaskId: {}", t.taskId);
+            }
+            catch (...) {
+                logger.error("Exception occurred in ScheduleTask!");
+                logger.error("TaskId: {}", t.taskId);
+            }
+
+            switch (t.type)
+            {
+            case ScheduleTaskData::TaskType::InfiniteRepeat:
+            {
+                ScheduleTaskData sche{ t };
+                sche.leftTime = sche.interval;
+                push(std::move(sche));
                 break;
             }
+            case ScheduleTaskData::TaskType::Repeat:
+            {
+                if (t.count > 0)
+                {
+                    ScheduleTaskData sche{ t };
+                    sche.leftTime = sche.interval;
+                    --sche.count;
+                    push(std::move(sche));
+                }
+                break;
+            }
+            default:
+                break;
+            }
+            pop();
         }
-    } catch (const seh_exception& e) {
-        logger.error("SEH exception occurred in task!");
-        logger.error("{}", e.what());
-    } catch (const std::exception& e) {
-        logger.error("Exception occurred in task!");
-        logger.error("{}", e.what());
-    } catch (...) {
-        logger.error("Exception occurred in task!");
+        locker.unlock();
+    }
+};
+ScheduleTaskQueueType taskQueue;
+
+
+namespace Schedule
+{
+    ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay)
+    {
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1);
+        locker.lock();
+        taskQueue.push(sche);
+        locker.unlock();
+        return ScheduleTask(sche.getTaskId());
+    }
+
+    ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount)
+    {
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData::TaskType type = maxCount < 0 ?
+            ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount);
+        locker.lock();
+        taskQueue.push(sche);
+        locker.unlock();
+        return ScheduleTask(sche.getTaskId());
+    }
+
+    ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat, int maxCount)
+    {
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData::TaskType type = maxCount < 0 ?
+            ScheduleTaskData::TaskType::InfiniteRepeat : ScheduleTaskData::TaskType::Repeat;
+        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount);
+        locker.lock();
+        taskQueue.push(sche);
+        locker.unlock();
+        return ScheduleTask(sche.getTaskId());
+    }
+
+    ScheduleTask nextTick(std::function<void(void)> task)
+    {
+        if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1);
+        locker.lock();
+        taskQueue.push(sche);
+        locker.unlock();
+        return ScheduleTask(sche.getTaskId());
     }
 }
-} // namespace Schedule
 
-THook(void, "?tick@Level@@UEAAXXZ", class Level* lv) {
-    original(lv);
-    Schedule::tick();
+THook(void, "?tick@ServerLevel@@UEAAXXZ",
+    void* _this)
+{
+    original(_this);
+    taskQueue.tick();
+}
+
+void EndScheduleSystem()
+{
+    taskQueue.clear();
+}
+
+
+ScheduleTask::ScheduleTask(unsigned int taskId)
+    :taskId(taskId)
+{ }
+
+bool ScheduleTask::cancel()
+{
+    locker.lock();
+    bool res = taskQueue.remove(taskId);
+    locker.unlock();
+    return res;
 }

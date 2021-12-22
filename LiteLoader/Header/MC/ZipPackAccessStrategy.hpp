@@ -40,7 +40,7 @@ public:
     /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
-    /*14*/ virtual int /*enum enum PackAccessStrategyType*/ getStrategyType() const;
+    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*15*/ virtual class Core::PathBuffer<std::string > const& getSubPath() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*17*/ virtual bool canRecurse() const;

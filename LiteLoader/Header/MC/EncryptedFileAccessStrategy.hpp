@@ -36,9 +36,9 @@ public:
     /*8*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
     /*9*/ virtual bool deleteAsset(class Core::PathBuffer<std::string > const&);
     /*10*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
-    /*11*/ virtual int /*enum enum PackAccessStrategyType*/ getStrategyType() const;
+    /*11*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*12*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    /*13*/ virtual int /*enum enum PackAccessAssetGenerationResult*/ generateAssetSet();
+    /*13*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
     /*14*/ virtual bool canRecurse() const;
     /*15*/ virtual void unload();
     /*16*/ virtual class ContentIdentity readContentIdentity() const;

@@ -73,12 +73,12 @@ public:
     /*46*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*47*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*48*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
-    /*49*/ virtual int /*enum enum BlockProperty*/ getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    /*49*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
     /*50*/ virtual void __unk_vfn_20();
-    /*51*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
+    /*51*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*52*/ virtual void __unk_vfn_21();
     /*53*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
-    /*54*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, int /*enum enum FertilizerType*/) const;
+    /*54*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, enum FertilizerType) const;
     /*55*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
     /*56*/ virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*57*/ virtual bool mayPick() const;
@@ -115,7 +115,7 @@ public:
     /*88*/ virtual void __unk_vfn_27();
     /*89*/ virtual class Block const& getRenderBlock() const;
     /*90*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*91*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
+    /*91*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
     /*92*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*93*/ virtual void __unk_vfn_28();
     /*94*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;
@@ -130,7 +130,7 @@ public:
     /*103*/ virtual void __unk_vfn_30();
     /*104*/ virtual void __unk_vfn_31();
     /*105*/ virtual bool use(class Player&, class BlockPos const&, unsigned char) const;
-    /*106*/ virtual int /*enum enum BlockRenderLayer*/ getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
+    /*106*/ virtual enum BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*107*/ virtual int getExtraRenderLayers() const;
     /*108*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*109*/ virtual void __unk_vfn_32();

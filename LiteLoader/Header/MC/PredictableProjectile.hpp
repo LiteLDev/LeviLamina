@@ -24,7 +24,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void reloadHardcoded(int /*enum enum Actor::InitializationMethod*/, class VariantParameterList const&);
+    /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual void _doInitialMove();
     /*2*/ virtual ~PredictableProjectile();
     /*3*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -63,10 +63,10 @@ public:
     /*36*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*37*/ virtual float getPickRadius();
     /*38*/ virtual void awardKillScore(class Actor&, int);
-    /*39*/ virtual int /*enum enum ArmorMaterialType*/ getArmorMaterialTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*40*/ virtual int /*enum enum ArmorTextureType*/ getArmorMaterialTextureTypeInSlot(int /*enum enum ArmorSlot*/) const;
-    /*41*/ virtual float getArmorColorInSlot(int /*enum enum ArmorSlot*/, int) const;
-    /*42*/ virtual void setEquippedSlot(int /*enum enum EquipmentSlot*/, class ItemStack const&);
+    /*39*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
+    /*40*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
+    /*41*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
+    /*42*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*43*/ virtual class HashedString const& queryEntityRenderer() const;
     /*44*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*45*/ virtual bool canFreeze() const;

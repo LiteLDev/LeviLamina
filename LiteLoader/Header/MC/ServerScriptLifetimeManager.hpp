@@ -24,16 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~ServerScriptLifetimeManager();
-    /*1*/ virtual int /*enum enum EventResult*/ onServerLevelInitialized(class ServerInstance&, class Level&);
+    /*1*/ virtual enum EventResult onServerLevelInitialized(class ServerInstance&, class Level&);
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual int /*enum enum EventResult*/ onServerUpdateStart(class ServerInstance&);
+    /*5*/ virtual enum EventResult onServerUpdateStart(class ServerInstance&);
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void __unk_vfn_4();
     /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual int /*enum enum EventResult*/ onServerThreadStarted(class ServerInstance&);
-    /*10*/ virtual int /*enum enum EventResult*/ onServerThreadStopped(class ServerInstance&);
+    /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance&);
+    /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance&);
     /*
     inline  ~ServerScriptLifetimeManager(){
          (ServerScriptLifetimeManager::*rv)();

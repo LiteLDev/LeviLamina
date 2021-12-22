@@ -41,7 +41,7 @@ public:
     /*12*/ virtual bool isDamageable() const;
     /*13*/ virtual bool isDyeable() const;
     /*14*/ virtual bool isDye() const;
-    /*15*/ virtual int /*enum enum ItemColor*/ getItemColor() const;
+    /*15*/ virtual enum ItemColor getItemColor() const;
     /*16*/ virtual bool isFertilizer() const;
     /*17*/ virtual void __unk_vfn_5();
     /*18*/ virtual bool isThrowable() const;
@@ -50,7 +50,7 @@ public:
     /*21*/ virtual class IFoodItemComponent* getFood() const;
     /*22*/ virtual class FuelItemComponent* getFuel() const;
     /*23*/ virtual class Item& setMaxDamage(int);
-    /*24*/ virtual int /*enum enum BlockShape*/ getBlockShape() const;
+    /*24*/ virtual enum BlockShape getBlockShape() const;
     /*25*/ virtual bool canBeDepleted() const;
     /*26*/ virtual bool canDestroySpecial(class Block const&) const;
     /*27*/ virtual int getLevelDataForAuxValue(int) const;
@@ -91,7 +91,7 @@ public:
     /*62*/ virtual bool canUseOnSimTick() const;
     /*63*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*64*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
-    /*65*/ virtual int /*enum enum ItemUseMethod*/ useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
+    /*65*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
     /*66*/ virtual void releaseUsing(class ItemStack&, class Player*, int) const;
     /*67*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*68*/ virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;

@@ -105,15 +105,15 @@ public:
         *((void**)&rv) = dlsym("?postProcessResources@ServerLevel@@UEAA_NXZ");
         return (this->*rv)();
     }
-    inline void runCommand(class Command& a0, class CommandOrigin& a1, int \/*enum enum CommandOriginSystem*\/ a2){
-        void (ServerLevel::*rv)(class Command&, class CommandOrigin&, int \/*enum enum CommandOriginSystem*\/);
+    inline void runCommand(class Command& a0, class CommandOrigin& a1, enum CommandOriginSystem a2){
+        void (ServerLevel::*rv)(class Command&, class CommandOrigin&, enum CommandOriginSystem);
         *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
-        return (this->*rv)(std::forward<class Command&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<int \/*enum enum CommandOriginSystem*\/>(a2));
+        return (this->*rv)(std::forward<class Command&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2));
     }
-    inline void runCommand(class HashedString const& a0, class CommandOrigin& a1, int \/*enum enum CommandOriginSystem*\/ a2, int \/*enum enum CurrentCmdVersion*\/ a3){
-        void (ServerLevel::*rv)(class HashedString const&, class CommandOrigin&, int \/*enum enum CommandOriginSystem*\/, int \/*enum enum CurrentCmdVersion*\/);
+    inline void runCommand(class HashedString const& a0, class CommandOrigin& a1, enum CommandOriginSystem a2, enum CurrentCmdVersion a3){
+        void (ServerLevel::*rv)(class HashedString const&, class CommandOrigin&, enum CommandOriginSystem, enum CurrentCmdVersion);
         *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEBVHashedString@@AEAVCommandOrigin@@W4CommandOriginSystem@@W4CurrentCmdVersion@@@Z");
-        return (this->*rv)(std::forward<class HashedString const&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<int \/*enum enum CommandOriginSystem*\/>(a2), std::forward<int \/*enum enum CurrentCmdVersion*\/>(a3));
+        return (this->*rv)(std::forward<class HashedString const&>(a0), std::forward<class CommandOrigin&>(a1), std::forward<enum CommandOriginSystem>(a2), std::forward<enum CurrentCmdVersion>(a3));
     }
     inline void saveAdditionalData(){
         void (ServerLevel::*rv)();
@@ -125,10 +125,10 @@ public:
         *((void**)&rv) = dlsym("?setCommandsEnabled@ServerLevel@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
     }
-    inline void setDifficulty(int \/*enum enum Difficulty*\/ a0){
-        void (ServerLevel::*rv)(int \/*enum enum Difficulty*\/);
+    inline void setDifficulty(enum Difficulty a0){
+        void (ServerLevel::*rv)(enum Difficulty);
         *((void**)&rv) = dlsym("?setDifficulty@ServerLevel@@UEAAXW4Difficulty@@@Z");
-        return (this->*rv)(std::forward<int \/*enum enum Difficulty*\/>(a0));
+        return (this->*rv)(std::forward<enum Difficulty>(a0));
     }
     inline void setWorldTemplateOptionsUnlocked(){
         void (ServerLevel::*rv)();

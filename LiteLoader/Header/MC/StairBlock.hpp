@@ -39,7 +39,7 @@ public:
     /*12*/ virtual void __unk_vfn_0();
     /*13*/ virtual bool isStrippable(class Block const&) const;
     /*14*/ virtual class Block const& getStrippedBlock(class Block const&) const;
-    /*15*/ virtual bool canProvideSupport(class Block const&, unsigned char, int /*enum enum BlockSupportType*/) const;
+    /*15*/ virtual bool canProvideSupport(class Block const&, unsigned char, enum BlockSupportType) const;
     /*16*/ virtual bool canConnect(class Block const&, unsigned char, class Block const&) const;
     /*17*/ virtual class CopperBehavior const* tryGetCopperBehavior() const;
     /*18*/ virtual void __unk_vfn_1();
@@ -79,12 +79,12 @@ public:
     /*52*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*53*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*54*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
-    /*55*/ virtual int /*enum enum BlockProperty*/ getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
+    /*55*/ virtual enum BlockProperty getRedstoneProperty(class BlockSource&, class BlockPos const&) const;
     /*56*/ virtual void __unk_vfn_20();
-    /*57*/ virtual bool isFilteredOut(int /*enum enum BlockRenderLayer*/) const;
+    /*57*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*58*/ virtual void __unk_vfn_21();
     /*59*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
-    /*60*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, int /*enum enum FertilizerType*/) const;
+    /*60*/ virtual bool onFertilized(class BlockSource&, class BlockPos const&, class Actor*, enum FertilizerType) const;
     /*61*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
     /*62*/ virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*63*/ virtual bool mayPick() const;
@@ -128,7 +128,7 @@ public:
     /*101*/ virtual void __unk_vfn_27();
     /*102*/ virtual class Block const& getRenderBlock() const;
     /*103*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*104*/ virtual int /*enum enum Flip*/ getFaceFlip(unsigned char, class Block const&) const;
+    /*104*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
     /*105*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*106*/ virtual void __unk_vfn_28();
     /*107*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;

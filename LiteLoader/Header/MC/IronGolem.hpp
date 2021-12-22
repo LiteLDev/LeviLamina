@@ -52,7 +52,7 @@ public:
     /*24*/ virtual void onFailedTame();
     /*25*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*26*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*27*/ virtual void handleEntityEvent(int /*enum enum ActorEvent*/, int);
+    /*27*/ virtual void handleEntityEvent(enum ActorEvent, int);
     /*28*/ virtual float getPickRadius();
     /*29*/ virtual void awardKillScore(class Actor&, int);
     /*30*/ virtual class HashedString const& queryEntityRenderer() const;
@@ -88,7 +88,7 @@ public:
     /*60*/ virtual float getItemUseIntervalProgress() const;
     /*61*/ virtual void __unk_vfn_22();
     /*62*/ virtual bool isAlliedTo(class Mob*);
-    /*63*/ virtual bool doHurtTarget(class Actor*, int /*enum enum ActorDamageCause*/ const&);
+    /*63*/ virtual bool doHurtTarget(class Actor*, enum ActorDamageCause const&);
     /*64*/ virtual void __unk_vfn_23();
     /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*66*/ virtual void onBorn(class Actor&, class Actor&);

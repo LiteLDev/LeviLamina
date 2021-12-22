@@ -54,33 +54,33 @@ public:
         *((void**)&rv) = dlsym("?onExecuteCommandCalled@MinecraftServerScriptEngine@@UEAAXAEBVScriptVersionInfo@ScriptApi@@$$QEAUScriptCommand@@@Z");
         return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<struct ScriptCommand&&>(a1));
     }
-    inline int \/*enum enum EventResult*\/ onLeaveGameDone(struct ServerInstanceEvent const& a0){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)(struct ServerInstanceEvent const&);
+    inline enum EventResult onLeaveGameDone(struct ServerInstanceEvent const& a0){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(struct ServerInstanceEvent const&);
         *((void**)&rv) = dlsym("?onLeaveGameDone@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEBUServerInstanceEvent@@@Z");
         return (this->*rv)(std::forward<struct ServerInstanceEvent const&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onLevelTick(){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)();
+    inline enum EventResult onLevelTick(){
+        enum EventResult (MinecraftServerScriptEngine::*rv)();
         *((void**)&rv) = dlsym("?onLevelTick@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@XZ");
         return (this->*rv)();
     }
-    inline int \/*enum enum EventResult*\/ onServerLevelInitialized(class ServerInstance& a0, class Level& a1){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)(class ServerInstance&, class Level&);
+    inline enum EventResult onServerLevelInitialized(class ServerInstance& a0, class Level& a1){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(class ServerInstance&, class Level&);
         *((void**)&rv) = dlsym("?onServerLevelInitialized@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEAVServerInstance@@AEAVLevel@@@Z");
         return (this->*rv)(std::forward<class ServerInstance&>(a0), std::forward<class Level&>(a1));
     }
-    inline int \/*enum enum EventResult*\/ onServerThreadStarted(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
+    inline enum EventResult onServerThreadStarted(class ServerInstance& a0){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
         *((void**)&rv) = dlsym("?onServerThreadStarted@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onServerUpdateEnd(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
+    inline enum EventResult onServerUpdateEnd(class ServerInstance& a0){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
         *((void**)&rv) = dlsym("?onServerUpdateEnd@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance&>(a0));
     }
-    inline int \/*enum enum EventResult*\/ onServerUpdateStart(class ServerInstance& a0){
-        int \/*enum enum EventResult*\/ (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
+    inline enum EventResult onServerUpdateStart(class ServerInstance& a0){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(class ServerInstance&);
         *((void**)&rv) = dlsym("?onServerUpdateStart@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEAVServerInstance@@@Z");
         return (this->*rv)(std::forward<class ServerInstance&>(a0));
     }

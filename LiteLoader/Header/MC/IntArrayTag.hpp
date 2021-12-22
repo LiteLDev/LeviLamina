@@ -14,7 +14,16 @@ class IntArrayTag : public Tag {
 
 #define AFTER_EXTRA
 // Add Member There
-TagMemoryChunk val;
+    TagMemoryChunk val;
+
+public:
+    LIAPI TagMemoryChunk& value();
+    LIAPI IntArrayTag& operator=(TagMemoryChunk const& val);
+    LIAPI static std::unique_ptr<IntArrayTag> create();
+    LIAPI static std::unique_ptr<IntArrayTag> create(TagMemoryChunk const& val);
+    LIAPI static std::unique_ptr<IntArrayTag> create(int data[], size_t size);
+    LIAPI bool set(TagMemoryChunk const& val);
+    LIAPI TagMemoryChunk get();
 
 #undef AFTER_EXTRA
 
@@ -30,7 +39,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual int /*enum enum Tag::Type*/ getId() const;
+    /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
     /*8*/ virtual unsigned __int64 hash() const;

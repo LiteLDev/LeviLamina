@@ -902,6 +902,7 @@ std::vector<number_t> load_array_text(std::istream & input) {
 	a = cheof(input);
 	if (a != ';')
 		throw std::runtime_error("unexpected symbol in array tag");
+	
 	scan_sequence_text(input, [&] {
 		result.push_back(load_text<number_t>(input));
 	});
@@ -914,8 +915,10 @@ void dump_array_text(std::ostream & output, const std::vector<number_t> & array)
 	output << '[' << tags::tag_of<std::vector<number_t>>::prefix << ';';
 	auto iter = array.cbegin();
 	auto end = array.cend();
-	if (iter == end)
-		return;
+	if (iter == end) {
+        output << ']';
+        return;
+	}
 	dump_text(output, *iter);
 	for (++iter; iter != end; ++iter) {
 		output << ',';

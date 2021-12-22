@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~EmptyServerNetworkEventHandler();
-    /*1*/ virtual struct GameplayHandlerResult<int /*enum enum CoordinatorResult*/> handleChat(struct ChatEvent&);
+    /*1*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleChat(struct ChatEvent&);
 
 protected:
 
