@@ -41,6 +41,15 @@ namespace LL {
 
         std::string filePath;
         HMODULE handler;
+
+        // Call a Function by Symbol String
+        template<typename ReturnType = void, typename... Args>
+        inline ReturnType callFunction(const char* functionName, Args... args) {
+            void* address = GetProcAddress(handler, functionName);
+            if (!address)
+                return ReturnType();
+            return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
+        }
     };
 
 }
