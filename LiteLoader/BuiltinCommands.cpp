@@ -227,12 +227,12 @@ public:
         auto positionParam = makeOptional(&TeleportDimensionCommand::CommandPos,
             "Position", &TeleportDimensionCommand::CommandPos_isSet);
 
-        //registry->registerOverload<TeleportDimensionCommand>(
-        //    "tpdim", victimParam, dimensionTypeParam, positionParam);
+        registry->registerOverload<TeleportDimensionCommand>(
+            "tpdim", victimParam, dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
             "tpdim", victimParam, dimensionIdParam, positionParam);
-        registry->registerOverload<TeleportDimensionCommand>(
-            "tpdim", dimensionTypeParam, positionParam);
+        //registry->registerOverload<TeleportDimensionCommand>(
+        //    "tpdim", dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
             "tpdim", dimensionIdParam, positionParam);
     }
