@@ -30,6 +30,7 @@ if not exist SDK/Header/ (
 cd SDK
 git fetch --all
 git reset --hard origin/%LL_SDK_NOW_BRANCH%
+git checkout %LL_SDK_NOW_BRANCH%
 cd ..
 
 echo.
