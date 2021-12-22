@@ -67,7 +67,7 @@ void LoadMain() {
             logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
-                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(), {});
+                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1,0,0), {});
             }
         } else {
             logger.error("Fail to load plugin <{}>", pluginFileName);
