@@ -44,9 +44,8 @@ public:
         return _read(binaryStream);
     }
 protected:
-    inline std::string toDebugString()
-    {
-        return fmt::format("{}({})", getName(), getId());
+    std::string toDebugString() {
+        return fmt::format("{}({})->{}", getName(), getId(), clientSubId);
     }
 
 #undef AFTER_EXTRA

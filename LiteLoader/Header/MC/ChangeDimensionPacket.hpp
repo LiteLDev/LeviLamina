@@ -19,7 +19,7 @@ public:
     bool respawn;
 
     inline std::string toDebugString() {
-        return fmt::format("{}: pos: {}, dimensionId: {}, = isRespawn: {}",
+        return fmt::format("{}: pos: {}, dimensionId: {}, isRespawn: {}",
             __super::toDebugString(), position.toString(), (int)dimensionId, respawn);
     }
 #undef AFTER_EXTRA

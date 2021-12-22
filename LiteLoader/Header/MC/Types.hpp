@@ -12,9 +12,15 @@ typedef unsigned long long QWORD;
 namespace mce {
     class UUID {
         uint64_t a, b;
+    public:
+        MCAPI std::string asString() const;
+        MCAPI static UUID fromString(std::string const&);
+        MCAPI bool isEmpty() const;
+        MCAPI static UUID seedFromString(std::string const&);
     };
 
     class Color;
+
 }; // namespace mce
 
 class Vec3;
@@ -55,19 +61,19 @@ public:
         return {x - b.x, y - b.y, z - b.z};
     }
 
-    inline std::string toString() {
+    inline std::string toString() const {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }
 
-    inline BlockPos add(int dx) {
+    inline BlockPos add(int dx) const {
         return {x + dx, y, z};
     }
 
-    inline BlockPos add(int dx, int dy) {
+    inline BlockPos add(int dx, int dy) const {
         return {x + dx, y + dy, z};
     }
 
-    inline BlockPos add(int dx, int dy, int dz) {
+    inline BlockPos add(int dx, int dy, int dz) const {
         return {x + dx, y + dy, z + dz};
     }
 

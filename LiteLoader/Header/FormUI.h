@@ -31,9 +31,7 @@ namespace Form {
                 : text(std::move(text)), image(std::move(image)), callback(std::move(callback)) {}
 
         inline void setText(const string &_text) { this->text = _text; }
-
         inline void setImage(const string &_image) { this->image = _image; }
-
         inline void setCallback(ButtonCallback _callback) { this->callback = std::move(_callback); }
     };
 
@@ -54,7 +52,6 @@ namespace Form {
         Type type{};
 
         inline void setName(const string &_name) { this->name = _name; }
-
         inline virtual Type getType() = 0;
     };
 
@@ -73,9 +70,7 @@ namespace Form {
         }
 
         inline Type getType() override { return Type::Label; }
-
         inline void setText(const string &_text) { this->text = _text; }
-
         inline DataType getData() { return nullptr; }
     };
 
@@ -93,13 +88,9 @@ namespace Form {
         }
 
         inline Type getType() override { return Type::Input; }
-
         inline void setTitle(const string &_title) { this->title = _title; }
-
         inline void setPlaceHolder(const string &_placeholder) { this->placeholder = _placeholder; }
-
         inline void setDefault(const string &_def) { this->def = _def; }
-
         inline DataType getData() const { return data; }
     };
 
@@ -119,11 +110,8 @@ namespace Form {
         }
 
         inline virtual Type getType() override { return Type::Toggle; }
-
         inline void setTitle(const string &_title) { this->title = _title; }
-
         inline void setDefault(bool _def) { this->def = _def; }
-
         inline DataType getData() const { return data; }
     };
 
@@ -144,15 +132,10 @@ namespace Form {
         }
 
         inline Type getType() override { return Type::Dropdown; }
-
         inline void setTitle(const string &_title) { this->title = _title; }
-
         inline void setOptions(const vector<string> &_options) { this->options = _options; }
-
         inline void addOption(const string &option) { options.push_back(option); }
-
         inline void setDefault(int defId) { this->def = defId; }
-
         inline DataType getData() const { return data; }
     };
 
@@ -172,17 +155,11 @@ namespace Form {
         }
 
         inline Type getType() override { return Type::Slider; }
-
         inline void setTitle(const string &_title) { this->title = _title; }
-
         inline void setMin(int _min) { this->min = _min; }
-
         inline void setMax(int _max) { this->max = _max; }
-
         inline void setStep(int _step) { this->step = _step; }
-
         inline void setDefault(int _def) { this->def = _def; }
-
         inline DataType getData() const { return data; }
     };
 
@@ -203,15 +180,10 @@ namespace Form {
         }
 
         inline Type getType() override { return Type::StepSlider; }
-
         inline void setTitle(const string &_title) { this->title = _title; }
-
         inline void setOptions(const vector<string> &_options) { this->options = _options; }
-
         inline void addOption(const string &option) { options.push_back(option); }
-
         inline void setDefault(int defId) { this->def = defId; }
-
         inline DataType getData() const { return data; }
     };
 
@@ -244,11 +216,8 @@ namespace Form {
         }
 
         LIAPI SimpleForm &setTitle(const string &title);
-
         LIAPI SimpleForm &setContent(const string &content);
-
         LIAPI SimpleForm &append(const Button &element);
-
         LIAPI bool sendTo(ServerPlayer *player, Callback callback = Callback());
     };
 
@@ -273,19 +242,12 @@ namespace Form {
         }
 
         LIAPI CustomForm &setTitle(const string &title);
-
         LIAPI CustomForm &append(const Label &element);
-
         LIAPI CustomForm &append(const Input &element);
-
         LIAPI CustomForm &append(const Toggle &element);
-
-        LIAPI CustomForm &append(const Dropdown &element);
-
+        LIAPI CustomForm& append(const Dropdown& element);
         LIAPI CustomForm &append(const Slider &element);
-
         LIAPI CustomForm &append(const StepSlider &element);
-
         LIAPI bool sendTo(ServerPlayer *player, Callback callback);
 
         template<typename T, typename DataType>

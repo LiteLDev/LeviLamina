@@ -158,6 +158,11 @@ public:
         return (this->*rv)();
     }
 
+    inline class BlockPos const& getDefaultSpawn() const {
+        class BlockPos const& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getDefaultSpawn@Level@@UEBAAEBVBlockPos@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
