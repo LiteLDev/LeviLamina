@@ -232,7 +232,7 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
     return ret;
 }
 
-#include <GuiAPI.h>
+
 /////////////////// PlayerJump ///////////////////
 THook(void, "?jumpFromGround@Player@@UEAAXXZ",
       Player* pl)
@@ -258,6 +258,8 @@ THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z"
         ev.mPlayer = (Player*)ac;
         ev.mIsSneaking = isSneaking;
         ev.call();
+
+        isSneaking = ev.mIsSneaking;
     }
     IF_LISTENED_END(PlayerSneakEvent)
     return original(_this, ac, isSneaking);
@@ -276,6 +278,8 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
         ev.mAttackDamage = *damageCause;
         if (!ev.call())
             return false;
+
+        *damageCause = ev.mAttackDamage;
     }
     IF_LISTENED_END(PlayerAttackEvent)
     return original(_this, ac, damageCause);
@@ -623,6 +627,8 @@ THook(void, "?setSprinting@Mob@@UEAAX_N@Z",
             ev.mIsSprinting = sprinting;
             if (!ev.call())
                 return;
+
+            sprinting = ev.mIsSprinting;
         }
     }
     IF_LISTENED_END(PlayerSprintEvent)
@@ -1162,6 +1168,8 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
             ev.mDamage = damage;
             if (!ev.call())
                 return false;
+
+            damage = ev.mDamage;
         }
     }
     IF_LISTENED_END(MobHurtEvent)
@@ -1226,9 +1234,14 @@ THook(void, "?explode@Explosion@@QEAAXXZ",
             ev.mMaxResistance = maxResistance;
             ev.mPos = pos;
             ev.mRadius = radius;
-            ev.mRegion = bs;
+            ev.mDimension = bs;
             if (!ev.call())
                 return;
+
+            *((float*)self + 3) = ev.mRadius;
+            *((float*)self + 26) = ev.mMaxResistance;
+            *((BYTE*)self + 80) = ev.mFire;
+            *((BYTE*)self + 81) = ev.mBreaking;
         }
     }
     IF_LISTENED_END(EntityExplodeEvent)
@@ -1246,6 +1259,11 @@ THook(void, "?explode@Explosion@@QEAAXXZ",
             ev.mRadius = radius;
             if (!ev.call())
                 return;
+
+            *((float*)self + 3) = ev.mRadius;
+            *((float*)self + 26) = ev.mMaxResistance;
+            *((BYTE*)self + 80) = ev.mFire;
+            *((BYTE*)self + 81) = ev.mBreaking;
         }
     }
     IF_LISTENED_END(BlockExplodeEvent)

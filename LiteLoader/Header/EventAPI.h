@@ -421,7 +421,7 @@ class EntityExplodeEvent : public EventTemplate<EntityExplodeEvent> {
 public:
     Actor* mActor;
     Vec3 mPos;
-    BlockSource* mRegion;
+    BlockSource* mDimension;
     float mRadius;
     float mMaxResistance;
     bool mBreaking;
