@@ -46,12 +46,12 @@ public:
                 std::ostringstream oss;
                 auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
 
-                oss << "Plugin <" << PluginName << '>' << std::endl;
-                oss << "- Name: " << plugin->name << '(' << fn << ')' << std::endl;
-                oss << "- Version: v" << plugin->version.toString(true) << std::endl;
-                oss << "- Introduction: " << plugin->introduction << std::endl;
+                oss << "Plugin <" << PluginName << '>' << std::endl << std::endl;
+                oss << "- Name:  " << plugin->name << '(' << fn << ')' << std::endl;
+                oss << "- Version:  v" << plugin->version.toString(true) << std::endl;
+                oss << "- Introduction:  " << plugin->introduction << std::endl;
                 for (auto& [k, v] : plugin->otherInformation) {
-                    oss << "- " << k << ':' << v << std::endl;
+                    oss << "- " << k << ":  " << v << std::endl;
                 }
                 auto text = oss.str();
                 text.pop_back();
@@ -63,15 +63,15 @@ public:
         }
         auto plugins = LL::getAllPlugins();
         std::ostringstream oss;
-        oss << "Plugin Lists[" << plugins.size() << "]\n";
+        oss << "Plugin Lists [" << plugins.size() << "]\n\n";
         for (auto&[name, plugin]: plugins) {
             // Plugin Lists[1]
             // - LiteLoader(LiteLoader.dll)[v1.0.0]: plugin introduction
             auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
-            oss << "- " << name << "(" << fn << ")[v" << plugin.version.toString() << "]: "
-                << plugin.introduction << std::endl;
+            oss << "- " << name << " [v" << plugin.version.toString() << "] " << " (" << fn << ")" << std::endl
+                << "  " << plugin.introduction << std::endl << std::endl;
         }
-        oss << "\n* Send command \"plugins <Plugin Name>\" for more information";
+        oss << "* Send command \"plugins <Plugin Name>\" for more information";
         output.success(oss.str(), {});
     }
 
