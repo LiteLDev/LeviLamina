@@ -20,4 +20,5 @@ THook(bool, "?isExpansionAllowed@CommandSelectorBase@@AEBA_NAEBVCommandOrigin@@@
 {
     if (LL::globalConfig.enableUnlockCmd)
         return true;
+    return original(_this, a2);
 }
