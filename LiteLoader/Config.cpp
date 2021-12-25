@@ -88,25 +88,17 @@ bool LoadLLConfig() {
         else
         {
             auto out = nlohmann::json::parse(*content, nullptr, true, true);
-            if (out == LL::globalConfig) 
+            LL::globalConfig = out;
+            std::ofstream of(LITELOADER_CONFIG_FILE);
+            if (of)
             {
-                LL::globalConfig = out;
+                of << nlohmann::json(LL::globalConfig).dump(4);
             }
             else
             {
-                LL::globalConfig = out;
-                out.update(LL::globalConfig);
-                std::ofstream of(LITELOADER_CONFIG_FILE);
-                if (of)
-                {
-                    of << nlohmann::json(out).dump(4);
-                }
-                else
-                {
-                    logger.error("Configuration File Creation failed!");
-                }
+                logger.error("Configuration File Creation failed!");
             }
-        }         
+        }           
     } 
     catch (const nlohmann::json::exception &e) {
         logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
