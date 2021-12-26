@@ -101,19 +101,12 @@ public:
     /*73*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void __unk_vfn_21();
-    /*76*/ virtual void __unk_vfn_22();
+    /*76*/ virtual enum MinecartType getType();
     /*77*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*78*/ virtual void __unk_vfn_23();
+    /*78*/ virtual void __unk_vfn_22();
     /*79*/ virtual int getDefaultDisplayOffset() const;
     /*80*/ virtual void applyNaturalSlowdown(class BlockSource&);
     /*81*/ virtual void _lazyInitDisplayBlock();
-    /*
-    inline enum MinecartType getType(){
-        enum MinecartType (MinecartCommandBlock::*rv)();
-        *((void**)&rv) = dlsym("?getType@MinecartCommandBlock@@UEAA?AW4MinecartType@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI MinecartCommandBlock(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:

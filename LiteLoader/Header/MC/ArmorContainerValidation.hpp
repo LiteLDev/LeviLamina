@@ -31,6 +31,7 @@ public:
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
     /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual bool canItemMoveToContainer(class ItemStackBase const&) const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (ArmorContainerValidation::*rv)(class ItemStackBase const&) const;

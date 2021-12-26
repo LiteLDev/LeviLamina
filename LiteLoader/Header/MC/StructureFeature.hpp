@@ -26,8 +26,8 @@ public:
     /*0*/ virtual ~StructureFeature();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, int, int);
     /*2*/ virtual bool getNearestGeneratedFeature(class Dimension&, class BiomeSource const&, class BlockPos const&, class BlockPos&, class IPreliminarySurfaceProvider const&, bool);
-    /*3*/ virtual void __unk_vfn_0() = 0;
-    /*4*/ virtual void __unk_vfn_1() = 0;
+    /*3*/ virtual bool isFeatureChunk(class BiomeSource const&, class Random&, class ChunkPos const&, unsigned int, class IPreliminarySurfaceProvider const&) = 0;
+    /*4*/ virtual std::unique_ptr<class StructureStart> createStructureStart(class Dimension&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&) = 0;
     /*5*/ virtual class StructureStart* getStructureAt(int, int, int);
     /*
     inline  ~StructureFeature(){

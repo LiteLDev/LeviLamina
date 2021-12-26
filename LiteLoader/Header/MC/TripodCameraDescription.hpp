@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,23 +24,13 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void __unk_vfn_0();
+    /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~TripodCameraDescription();
-    /*2*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void serializeData(class Json::Value&) const;
     /*
-    inline void serializeData(class Json::Value& a0) const{
-        void (TripodCameraDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@TripodCameraDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
     inline  ~TripodCameraDescription(){
          (TripodCameraDescription::*rv)();
         *((void**)&rv) = dlsym("??1TripodCameraDescription@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline char const* getJsonName() const{
-        char const* (TripodCameraDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@TripodCameraDescription@@UEBAPEBDXZ");
         return (this->*rv)();
     }
     */

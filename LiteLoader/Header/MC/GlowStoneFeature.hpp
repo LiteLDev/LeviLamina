@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~GlowStoneFeature();
     /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*2*/ virtual ~GlowStoneFeature();
     /*
     inline  ~GlowStoneFeature(){
          (GlowStoneFeature::*rv)();

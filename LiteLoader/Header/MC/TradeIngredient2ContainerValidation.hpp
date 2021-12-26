@@ -29,6 +29,7 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_2() const;
     MCAPI TradeIngredient2ContainerValidation(bool);
 
 protected:

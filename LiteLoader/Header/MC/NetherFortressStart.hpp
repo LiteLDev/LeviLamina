@@ -26,14 +26,7 @@ public:
 public:
     /*0*/ virtual ~NetherFortressStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (NetherFortressStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@NetherFortressStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI NetherFortressStart(class Random&, short, int, int);
 
 protected:

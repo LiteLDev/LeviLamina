@@ -28,9 +28,6 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4() = 0;
     /*
     inline  ~MoveTowardsRestrictionGoal(){
          (MoveTowardsRestrictionGoal::*rv)();

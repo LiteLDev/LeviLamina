@@ -30,14 +30,14 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3() = 0;
+    /*7*/ virtual void appendDebugInfo(std::string&) const = 0;
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual bool hasReachedTarget() const;
-    /*11*/ virtual void __unk_vfn_4() = 0;
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&) = 0;
     /*12*/ virtual int _nextStartTick();
     /*13*/ virtual bool _canReach(class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_5() = 0;
+    /*14*/ virtual void _moveToBlock() = 0;
     /*15*/ virtual class Vec3 _getTargetPosition() const;
     /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*

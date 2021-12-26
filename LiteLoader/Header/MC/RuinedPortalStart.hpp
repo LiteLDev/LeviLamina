@@ -26,14 +26,7 @@ public:
 public:
     /*0*/ virtual ~RuinedPortalStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (RuinedPortalStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@RuinedPortalStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI RuinedPortalStart(class BiomeSource const&, int, int, short, class IPreliminarySurfaceProvider const&);
 
 protected:

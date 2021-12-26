@@ -107,9 +107,9 @@ public:
     /*80*/ virtual void _onSizeUpdated();
     /*81*/ virtual void __unk_vfn_21();
     /*82*/ virtual void setDir(int);
-    /*83*/ virtual void __unk_vfn_22() = 0;
-    /*84*/ virtual void __unk_vfn_23() = 0;
-    /*85*/ virtual void __unk_vfn_24() = 0;
+    /*83*/ virtual int getWidth() const = 0;
+    /*84*/ virtual int getHeight() const = 0;
+    /*85*/ virtual void dropItem() = 0;
     /*86*/ virtual bool placeHangingEntity(class BlockSource&, int);
     /*87*/ virtual bool wouldSurvive(class BlockSource&);
     MCAPI HangingActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);

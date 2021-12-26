@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~LootItemCondition();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~LootItemCondition();
     /*
     inline  ~LootItemCondition(){
          (LootItemCondition::*rv)();

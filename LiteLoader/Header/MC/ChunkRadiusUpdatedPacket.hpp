@@ -24,31 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~ChunkRadiusUpdatedPacket();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~ChunkRadiusUpdatedPacket(){
          (ChunkRadiusUpdatedPacket::*rv)();
         *((void**)&rv) = dlsym("??1ChunkRadiusUpdatedPacket@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline enum MinecraftPacketIds getId() const{
-        enum MinecraftPacketIds (ChunkRadiusUpdatedPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@ChunkRadiusUpdatedPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
-        return (this->*rv)();
-    }
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
-        enum StreamReadResult (ChunkRadiusUpdatedPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@ChunkRadiusUpdatedPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    inline void write(class BinaryStream& a0) const{
-        void (ChunkRadiusUpdatedPacket::*rv)(class BinaryStream&) const;
-        *((void**)&rv) = dlsym("?write@ChunkRadiusUpdatedPacket@@UEBAXAEAVBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class BinaryStream&>(a0));
     }
     */
     MCAPI ChunkRadiusUpdatedPacket(int);

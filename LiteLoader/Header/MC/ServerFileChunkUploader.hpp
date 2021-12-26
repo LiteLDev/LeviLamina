@@ -31,17 +31,12 @@ public:
     /*3*/ virtual void getServerMissingChunks(struct FileInfo const&, class std::function<void (std::vector<struct FileChunkInfo>)>) const;
     /*4*/ virtual void __unk_vfn_1();
     /*5*/ virtual void uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void (bool)>);
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual void __unk_vfn_3();
-    /*8*/ virtual void __unk_vfn_4();
-    /*9*/ virtual void __unk_vfn_5();
+    /*6*/ virtual bool canCancelUpload(struct FileInfo const&) const;
+    /*7*/ virtual void __unk_vfn_2();
+    /*8*/ virtual enum UploadError getInitErrorCode() const;
+    /*9*/ virtual float getUploadProgress(struct FileInfo const&) const;
     /*10*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
     /*
-    inline bool canCancelUpload(struct FileInfo const& a0) const{
-        bool (ServerFileChunkUploader::*rv)(struct FileInfo const&) const;
-        *((void**)&rv) = dlsym("?canCancelUpload@ServerFileChunkUploader@@UEBA_NAEBUFileInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
     inline void update(){
         void (ServerFileChunkUploader::*rv)();
         *((void**)&rv) = dlsym("?update@ServerFileChunkUploader@@UEAAXXZ");
@@ -56,16 +51,6 @@ public:
         void (ServerFileChunkUploader::*rv)(struct FileInfo const&);
         *((void**)&rv) = dlsym("?cancelUpload@ServerFileChunkUploader@@UEAAXAEBUFileInfo@@@Z");
         return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
-    inline float getUploadProgress(struct FileInfo const& a0) const{
-        float (ServerFileChunkUploader::*rv)(struct FileInfo const&) const;
-        *((void**)&rv) = dlsym("?getUploadProgress@ServerFileChunkUploader@@UEBAMAEBUFileInfo@@@Z");
-        return (this->*rv)(std::forward<struct FileInfo const&>(a0));
-    }
-    inline enum UploadError getInitErrorCode() const{
-        enum UploadError (ServerFileChunkUploader::*rv)() const;
-        *((void**)&rv) = dlsym("?getInitErrorCode@ServerFileChunkUploader@@UEBA?AW4UploadError@@XZ");
-        return (this->*rv)();
     }
     */
 

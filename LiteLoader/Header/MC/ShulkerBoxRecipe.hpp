@@ -26,12 +26,12 @@ public:
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
+    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*4*/ virtual bool isShapeless() const;
     /*5*/ virtual class mce::UUID const& getId() const;
     /*6*/ virtual class ItemPack const& getItemPack() const;
-    /*7*/ virtual bool isShapeless() const;
+    /*7*/ virtual bool isMultiRecipe() const;
     /*8*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*9*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     /*10*/ virtual void loadResultList(class BlockPalette const&) const;

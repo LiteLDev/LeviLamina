@@ -26,18 +26,18 @@ public:
 public:
     /*0*/ virtual ~FillingContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     /*3*/ virtual class ItemStack const& getItem(int) const;
-    /*4*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void setItem(int, class ItemStack const&);
     /*5*/ virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
     /*6*/ virtual void removeItem(int, int);
-    /*7*/ virtual void __unk_vfn_2();
+    /*7*/ virtual int getContainerSize() const;
     /*8*/ virtual int getMaxStackSize() const;
     /*9*/ virtual void startOpen(class Player&);
     /*10*/ virtual void stopOpen(class Player&);
-    /*11*/ virtual void __unk_vfn_3();
-    /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual void __unk_vfn_5();
+    /*11*/ virtual void __unk_vfn_0();
+    /*12*/ virtual void __unk_vfn_1();
+    /*13*/ virtual void __unk_vfn_2();
     /*14*/ virtual bool add(class ItemStack&);
     /*15*/ virtual bool canAdd(class ItemStack const&) const;
     /*16*/ virtual void clearSlot(int);
@@ -45,25 +45,10 @@ public:
     /*18*/ virtual void load(class ListTag const&, class SemVersion const&, class Level&);
     /*19*/ virtual int getEmptySlotsCount() const;
     /*
-    inline void setItem(int a0, class ItemStack const& a1){
-        void (FillingContainer::*rv)(int, class ItemStack const&);
-        *((void**)&rv) = dlsym("?setItem@FillingContainer@@UEAAXHAEBVItemStack@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
-    }
     inline  ~FillingContainer(){
          (FillingContainer::*rv)();
         *((void**)&rv) = dlsym("??1FillingContainer@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline int getContainerSize() const{
-        int (FillingContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@FillingContainer@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
-        void (FillingContainer::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
-        *((void**)&rv) = dlsym("?serverInitItemStackIds@FillingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
     }
     */
     MCAPI FillingContainer(class Player*, int, enum ContainerType);

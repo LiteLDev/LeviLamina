@@ -27,8 +27,6 @@ public:
     /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
     /*2*/ virtual int getFilteredStringIndex() const;
     /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
-    /*4*/ virtual void __unk_vfn_0() = 0;
-    /*5*/ virtual void __unk_vfn_1() = 0;
     /*
     inline  ~ItemStackRequestAction(){
          (ItemStackRequestAction::*rv)();

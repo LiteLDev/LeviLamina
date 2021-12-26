@@ -97,17 +97,10 @@ public:
     /*69*/ virtual void __unk_vfn_19();
     /*70*/ virtual void __unk_vfn_20();
     /*71*/ virtual void __unk_vfn_21();
-    /*72*/ virtual void __unk_vfn_22();
+    /*72*/ virtual enum MinecartType getType();
     /*73*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*74*/ virtual void __unk_vfn_23();
+    /*74*/ virtual void __unk_vfn_22();
     /*75*/ virtual int getDefaultDisplayOffset() const;
-    /*
-    inline enum MinecartType getType(){
-        enum MinecartType (MinecartRideable::*rv)();
-        *((void**)&rv) = dlsym("?getType@MinecartRideable@@UEAA?AW4MinecartType@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI MinecartRideable(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:

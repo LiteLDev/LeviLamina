@@ -29,7 +29,7 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_1() const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (OffhandContainerValidation::*rv)(class ItemStackBase const&) const;

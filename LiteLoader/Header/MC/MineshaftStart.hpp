@@ -26,14 +26,7 @@ public:
 public:
     /*0*/ virtual ~MineshaftStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (MineshaftStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@MineshaftStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI MineshaftStart(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 
 protected:

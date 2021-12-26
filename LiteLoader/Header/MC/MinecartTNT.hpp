@@ -102,17 +102,10 @@ public:
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*77*/ virtual void __unk_vfn_22();
+    /*77*/ virtual enum MinecartType getType();
     /*78*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*79*/ virtual void __unk_vfn_23();
+    /*79*/ virtual void __unk_vfn_22();
     /*80*/ virtual int getDefaultDisplayOffset() const;
-    /*
-    inline enum MinecartType getType(){
-        enum MinecartType (MinecartTNT::*rv)();
-        *((void**)&rv) = dlsym("?getType@MinecartTNT@@UEAA?AW4MinecartType@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI MinecartTNT(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void primeFuse(enum ActorDamageCause);
 

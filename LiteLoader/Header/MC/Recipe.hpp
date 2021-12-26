@@ -24,16 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~Recipe();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual void __unk_vfn_1() = 0;
-    /*3*/ virtual void __unk_vfn_2() = 0;
-    /*4*/ virtual void __unk_vfn_3() = 0;
-    /*5*/ virtual void __unk_vfn_4() = 0;
-    /*6*/ virtual void __unk_vfn_5() = 0;
-    /*7*/ virtual void __unk_vfn_6() = 0;
+    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
+    /*2*/ virtual int getCraftingSize() const = 0;
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
+    /*5*/ virtual bool isShapeless() const = 0;
+    /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
+    /*7*/ virtual int size() const = 0;
     /*8*/ virtual class mce::UUID const& getId() const;
     /*9*/ virtual class ItemPack const& getItemPack() const;
-    /*10*/ virtual bool isShapeless() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     /*11*/ virtual bool itemValidForRecipe(class ItemDescriptor const&, class ItemStack const&) const;
     /*12*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*13*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&, class CompoundTag const*) const;

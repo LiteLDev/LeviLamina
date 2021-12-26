@@ -33,7 +33,7 @@ public:
     /*5*/ virtual class Scripting::Result<void> addItem(class ScriptItemStack const&) const;
     /*6*/ virtual class Scripting::Result<bool> transferItem(int, int, class ScriptContainer&) const;
     /*7*/ virtual class Scripting::Result<bool> swapItems(int, int, class ScriptContainer&) const;
-    /*8*/ virtual void __unk_vfn_0() = 0;
+    /*8*/ virtual class Container* _tryGetContainer() const = 0;
     /*9*/ virtual void _balanceTransaction(class ItemStack const&) const;
     MCAPI ScriptContainer(class Scripting::WeakLifetimeScope const&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptContainer> bind(struct Scripting::Version);

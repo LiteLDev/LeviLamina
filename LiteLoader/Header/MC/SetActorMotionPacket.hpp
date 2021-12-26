@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~SetActorMotionPacket();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
@@ -33,11 +33,6 @@ public:
     inline  ~SetActorMotionPacket(){
          (SetActorMotionPacket::*rv)();
         *((void**)&rv) = dlsym("??1SetActorMotionPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline enum MinecraftPacketIds getId() const{
-        enum MinecraftPacketIds (SetActorMotionPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@SetActorMotionPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
         return (this->*rv)();
     }
     */

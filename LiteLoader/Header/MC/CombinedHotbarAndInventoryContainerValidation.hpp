@@ -29,7 +29,7 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_2() const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (CombinedHotbarAndInventoryContainerValidation::*rv)(class ItemStackBase const&) const;

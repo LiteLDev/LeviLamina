@@ -29,7 +29,7 @@ public:
     /*1*/ virtual std::string const& getRequestId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class Level* getLevel() const;
     /*6*/ virtual class Dimension* getDimension() const;
     /*7*/ virtual class Actor* getEntity() const;
@@ -46,23 +46,11 @@ public:
     /*18*/ virtual unsigned char getSourceSubId() const;
     /*19*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*20*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*21*/ virtual void __unk_vfn_1();
-    /*22*/ virtual class mce::UUID const& getUUID() const;
+    /*21*/ virtual enum CommandOriginType getOriginType() const;
+    /*22*/ virtual void __unk_vfn_0();
     /*23*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*24*/ virtual class CompoundTag serialize() const;
     /*25*/ virtual bool isValid() const;
-    /*
-    inline enum CommandOriginType getOriginType() const{
-        enum CommandOriginType (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@VirtualCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline class Vec3 getWorldPosition() const{
-        class Vec3 (VirtualCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getWorldPosition@VirtualCommandOrigin@@UEBA?AVVec3@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
     MCAPI void updateExecutePosition();
     MCAPI static class Vec3 const getExecutePosition(int, class Actor&, class CommandPositionFloat const&, class CommandOrigin const&);

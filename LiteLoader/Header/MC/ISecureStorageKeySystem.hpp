@@ -24,8 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ISecureStorageKeySystem();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual void __unk_vfn_1() = 0;
     /*
     inline  ~ISecureStorageKeySystem(){
          (ISecureStorageKeySystem::*rv)();

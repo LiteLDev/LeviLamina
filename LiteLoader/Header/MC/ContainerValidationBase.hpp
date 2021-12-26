@@ -39,10 +39,10 @@ public:
         *((void**)&rv) = dlsym("?isItemAllowedToRemove@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@AEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0), std::forward<class ItemStackBase const&>(a1));
     }
-    inline bool canDestroy(class ContainerScreenContext const& a0) const{
-        bool (ContainerValidationBase::*rv)(class ContainerScreenContext const&) const;
-        *((void**)&rv) = dlsym("?canDestroy@ContainerValidationBase@@UEBA_NAEBVContainerScreenContext@@@Z");
-        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+    inline  () const{
+         (::*rv)() const;
+        *((void**)&rv) = dlsym("");
+        return (this->*rv)();
     }
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (ContainerValidationBase::*rv)(class ItemStackBase const&) const;

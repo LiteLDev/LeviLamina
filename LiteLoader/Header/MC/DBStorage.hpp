@@ -2,8 +2,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
 #include "Core.hpp"
+#include "Bedrock.hpp"
 #include "LevelStorageWriteBatch.hpp"
 #include "LevelStorage.hpp"
 
@@ -41,18 +41,18 @@ public:
     /*5*/ virtual bool loadLevelData(class LevelData&);
     /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion);
     /*7*/ virtual void saveLevelData(class LevelData const&);
-    /*8*/ virtual void __unk_vfn_0();
+    /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const;
     /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, enum DBHelpers::Category);
     /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&);
     /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, enum DBHelpers::Category);
     /*12*/ virtual void syncIO();
     /*13*/ virtual void getStatistics(std::string&) const;
-    /*14*/ virtual void __unk_vfn_1();
+    /*14*/ virtual void __unk_vfn_0();
     /*15*/ virtual void startShutdown();
     /*16*/ virtual bool isShuttingDown() const;
     /*17*/ virtual bool checkShutdownDone();
     /*18*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, enum DBHelpers::Category) const;
-    /*19*/ virtual void __unk_vfn_2();
+    /*19*/ virtual void __unk_vfn_1();
     /*20*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&);
     /*21*/ virtual void releaseSnapshot();
     /*22*/ virtual void compactStorage();
@@ -65,11 +65,6 @@ public:
     /*29*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>);
     /*30*/ virtual void corruptLevel();
     /*
-    inline class Core::PathBuffer<std::string > const& getFullPath() const{
-        class Core::PathBuffer<std::string > const& (DBStorage::*rv)() const;
-        *((void**)&rv) = dlsym("?getFullPath@DBStorage@@UEBAAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
-        return (this->*rv)();
-    }
     inline  ~DBStorage(){
          (DBStorage::*rv)();
         *((void**)&rv) = dlsym("??1DBStorage@@UEAA@XZ");

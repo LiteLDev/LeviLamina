@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~LevelEventPacket();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
@@ -33,11 +33,6 @@ public:
     inline  ~LevelEventPacket(){
          (LevelEventPacket::*rv)();
         *((void**)&rv) = dlsym("??1LevelEventPacket@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline enum MinecraftPacketIds getId() const{
-        enum MinecraftPacketIds (LevelEventPacket::*rv)() const;
-        *((void**)&rv) = dlsym("?getId@LevelEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
         return (this->*rv)();
     }
     */

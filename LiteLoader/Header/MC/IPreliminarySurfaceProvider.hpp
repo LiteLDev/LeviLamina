@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~IPreliminarySurfaceProvider();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual ~IPreliminarySurfaceProvider();
     /*
     inline  ~IPreliminarySurfaceProvider(){
          (IPreliminarySurfaceProvider::*rv)();

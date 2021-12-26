@@ -23,8 +23,6 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void __unk_vfn_0() = 0;
-    /*1*/ virtual void __unk_vfn_1() = 0;
     /*
     inline  ~IUnknownBlockTypeRegistry(){
          (IUnknownBlockTypeRegistry::*rv)();

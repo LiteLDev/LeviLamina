@@ -29,24 +29,12 @@ public:
     /*2*/ virtual void setContainerId(enum ContainerID);
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void setData(int, int);
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline void setData(int a0, int a1){
-        void (HudContainerManagerModel::*rv)(int, int);
-        *((void**)&rv) = dlsym("?setData@HudContainerManagerModel@@UEAAXHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
-    inline std::vector<class ItemStack> getItemCopies() const{
-        std::vector<class ItemStack> (HudContainerManagerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?getItemCopies@HudContainerManagerModel@@UEBA?AV?$vector@VItemStack@@V?$allocator@VItemStack@@@std@@@std@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI HudContainerManagerModel(enum ContainerID, class Player&);
 
 protected:

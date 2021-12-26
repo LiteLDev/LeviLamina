@@ -146,9 +146,9 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
-    /*122*/ virtual void __unk_vfn_34();
-    /*123*/ virtual void __unk_vfn_35();
-    /*124*/ virtual void __unk_vfn_36();
+    /*122*/ virtual class mce::Color getDustColor(class Block const&) const;
+    /*123*/ virtual std::string getDustParticleName(class Block const&) const;
+    /*124*/ virtual void __unk_vfn_34();
     /*125*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*126*/ virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;
     /*
@@ -156,16 +156,6 @@ public:
         bool (PointedDripstoneBlock::*rv)() const;
         *((void**)&rv) = dlsym("?falling@PointedDripstoneBlock@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline class mce::Color getDustColor(class Block const& a0) const{
-        class mce::Color (PointedDripstoneBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getDustColor@PointedDripstoneBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline std::string getDustParticleName(class Block const& a0) const{
-        std::string (PointedDripstoneBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getDustParticleName@PointedDripstoneBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
     }
     */
     MCAPI PointedDripstoneBlock(std::string const&, int);

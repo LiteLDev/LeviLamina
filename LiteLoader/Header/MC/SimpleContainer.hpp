@@ -29,35 +29,13 @@ public:
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     /*3*/ virtual class ItemStack const& getItem(int) const;
     /*4*/ virtual void setItem(int, class ItemStack const&);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual void __unk_vfn_5();
-    /*11*/ virtual void __unk_vfn_6();
-    /*
-    inline void stopOpen(class Player& a0){
-        void (SimpleContainer::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?stopOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline void startOpen(class Player& a0){
-        void (SimpleContainer::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?startOpen@SimpleContainer@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
-    inline int getMaxStackSize() const{
-        int (SimpleContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getMaxStackSize@SimpleContainer@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    inline int getContainerSize() const{
-        int (SimpleContainer::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerSize@SimpleContainer@@UEBAHXZ");
-        return (this->*rv)();
-    }
-    */
+    /*5*/ virtual int getContainerSize() const;
+    /*6*/ virtual int getMaxStackSize() const;
+    /*7*/ virtual void startOpen(class Player&);
+    /*8*/ virtual void stopOpen(class Player&);
+    /*9*/ virtual void __unk_vfn_0();
+    /*10*/ virtual void __unk_vfn_1();
+    /*11*/ virtual void __unk_vfn_2();
     MCAPI SimpleContainer(std::string const&, bool, int, enum ContainerType);
 
 protected:

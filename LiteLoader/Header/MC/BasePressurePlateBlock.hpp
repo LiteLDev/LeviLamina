@@ -147,9 +147,9 @@ public:
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
     /*122*/ virtual int getTickDelay() const;
-    /*123*/ virtual void __unk_vfn_34() = 0;
-    /*124*/ virtual void __unk_vfn_35() = 0;
-    /*125*/ virtual void __unk_vfn_36() = 0;
+    /*123*/ virtual int getSignalStrength(class BlockSource&, class BlockPos const&) const = 0;
+    /*124*/ virtual int getSignalForData(int) const = 0;
+    /*125*/ virtual int getRedstoneSignal(int) const = 0;
     /*126*/ virtual class AABB const getSensitiveAABB(class BlockPos const&) const;
     /*
     inline bool canSpawnOn() const{

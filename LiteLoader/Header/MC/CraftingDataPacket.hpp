@@ -28,14 +28,7 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual void __unk_vfn_0();
-    /*
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
-        enum StreamReadResult (CraftingDataPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@CraftingDataPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
-    }
-    */
+    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     MCAPI CraftingDataPacket();
     MCAPI static std::unique_ptr<class CraftingDataPacket> prepareFromRecipes(class Recipes const&);
 

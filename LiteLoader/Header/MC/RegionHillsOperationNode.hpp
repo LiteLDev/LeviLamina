@@ -26,56 +26,7 @@ public:
     /*0*/ virtual ~RegionHillsOperationNode();
     /*1*/ virtual void init(__int64);
     /*2*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<class Biome* , class Biome* >&, class Pos2d const&, class Pos2d const&, int) const;
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_8();
-    /*12*/ virtual void __unk_vfn_9();
-    /*13*/ virtual void __unk_vfn_10();
-    /*14*/ virtual void __unk_vfn_11();
-    /*15*/ virtual void __unk_vfn_12();
-    /*16*/ virtual void __unk_vfn_13();
-    /*17*/ virtual void __unk_vfn_14();
-    /*18*/ virtual void __unk_vfn_15();
-    /*19*/ virtual void __unk_vfn_16();
-    /*20*/ virtual void __unk_vfn_17();
-    /*21*/ virtual void __unk_vfn_18();
-    /*22*/ virtual void __unk_vfn_19();
-    /*23*/ virtual void __unk_vfn_20();
-    /*24*/ virtual void __unk_vfn_21();
-    /*25*/ virtual void __unk_vfn_22();
-    /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual void __unk_vfn_24();
-    /*28*/ virtual void __unk_vfn_25();
-    /*29*/ virtual void __unk_vfn_26();
-    /*30*/ virtual void __unk_vfn_27();
-    /*31*/ virtual void __unk_vfn_28();
-    /*32*/ virtual void __unk_vfn_29();
-    /*33*/ virtual void __unk_vfn_30();
-    /*34*/ virtual void __unk_vfn_31();
-    /*35*/ virtual void __unk_vfn_32();
-    /*36*/ virtual void __unk_vfn_33();
-    /*37*/ virtual void __unk_vfn_34();
-    /*38*/ virtual void __unk_vfn_35();
-    /*39*/ virtual void __unk_vfn_36();
-    /*40*/ virtual void __unk_vfn_37();
-    /*41*/ virtual void __unk_vfn_38();
-    /*42*/ virtual void __unk_vfn_39();
-    /*43*/ virtual void __unk_vfn_40();
-    /*44*/ virtual void __unk_vfn_41();
-    /*45*/ virtual void __unk_vfn_42();
-    /*
-    inline class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const& a0, class Pos2d const& a1) const{
-        class std::tuple<class Pos2d, class Pos2d> (RegionHillsOperationNode::*rv)(class Pos2d const&, class Pos2d const&) const;
-        *((void**)&rv) = dlsym("?_getAreaRead@RegionHillsOperationNode@@MEBA?AV?$tuple@VPos2d@@V1@@std@@AEBVPos2d@@0@Z");
-        return (this->*rv)(std::forward<class Pos2d const&>(a0), std::forward<class Pos2d const&>(a1));
-    }
-    */
+    /*3*/ virtual class std::tuple<class Pos2d, class Pos2d> _getAreaRead(class Pos2d const&, class Pos2d const&) const;
     MCAPI RegionHillsOperationNode(unsigned int, class std::shared_ptr<class OperationNode<class Biome* , class Pos2d> >&, class std::shared_ptr<class OperationNode<int, class Pos2d> >&, class BiomeRegistry const&);
 
 protected:

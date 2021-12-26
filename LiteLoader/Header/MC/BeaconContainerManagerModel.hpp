@@ -32,7 +32,7 @@ public:
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void setData(int, int);
     /*9*/ virtual class ContainerScreenContext _postInit();
     MCAPI BeaconContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const PAYMENT_SLOT;

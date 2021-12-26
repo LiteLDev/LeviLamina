@@ -27,66 +27,26 @@ public:
 public:
     /*0*/ virtual ~DirectoryPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
+    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
+    /*3*/ virtual std::string const& getPackName() const;
+    /*4*/ virtual bool isWritable() const;
+    /*5*/ virtual void setIsTrusted(bool);
+    /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
-    /*8*/ virtual void __unk_vfn_5();
+    /*8*/ virtual bool hasFolder(class Core::Path const&) const;
     /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
     /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string > const&);
     /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
-    /*14*/ virtual void __unk_vfn_6();
+    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*15*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*16*/ virtual bool canRecurse() const;
-    /*17*/ virtual void __unk_vfn_7();
+    /*17*/ virtual void unload();
     /*
-    inline enum PackAccessStrategyType getStrategyType() const{
-        enum PackAccessStrategyType (DirectoryPackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?getStrategyType@DirectoryPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ");
-        return (this->*rv)();
-    }
-    inline void setIsTrusted(bool a0){
-        void (DirectoryPackAccessStrategy::*rv)(bool);
-        *((void**)&rv) = dlsym("?setIsTrusted@DirectoryPackAccessStrategy@@UEAAX_N@Z");
-        return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void unload(){
-        void (DirectoryPackAccessStrategy::*rv)();
-        *((void**)&rv) = dlsym("?unload@DirectoryPackAccessStrategy@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    inline bool isWritable() const{
-        bool (DirectoryPackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWritable@DirectoryPackAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline class ResourceLocation const& getPackLocation() const{
-        class ResourceLocation const& (DirectoryPackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackLocation@DirectoryPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ");
-        return (this->*rv)();
-    }
     inline  ~DirectoryPackAccessStrategy(){
          (DirectoryPackAccessStrategy::*rv)();
         *((void**)&rv) = dlsym("??1DirectoryPackAccessStrategy@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getPackName() const{
-        std::string const& (DirectoryPackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?getPackName@DirectoryPackAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline bool hasFolder(class Core::Path const& a0) const{
-        bool (DirectoryPackAccessStrategy::*rv)(class Core::Path const&) const;
-        *((void**)&rv) = dlsym("?hasFolder@DirectoryPackAccessStrategy@@UEBA_NAEBVPath@Core@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0));
-    }
-    inline bool isTrusted() const{
-        bool (DirectoryPackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isTrusted@DirectoryPackAccessStrategy@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

@@ -27,8 +27,6 @@ public:
     /*1*/ virtual void __unk_vfn_0() = 0;
     /*2*/ virtual std::string getAlternateContentKey(class ContentIdentity const&) const;
     /*3*/ virtual bool requireEncryptedReads() const;
-    /*4*/ virtual void __unk_vfn_1() = 0;
-    /*5*/ virtual void __unk_vfn_2() = 0;
 
 protected:
 

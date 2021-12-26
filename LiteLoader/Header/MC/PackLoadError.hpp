@@ -25,22 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~PackLoadError();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const;
+    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const;
     /*
     inline  ~PackLoadError(){
          (PackLoadError::*rv)();
         *((void**)&rv) = dlsym("??1PackLoadError@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const{
-        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackLoadError::*rv)() const;
-        *((void**)&rv) = dlsym("?getEventErrorMessageMap@PackLoadError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
-        return (this->*rv)();
-    }
-    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const{
-        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackLoadError::*rv)() const;
-        *((void**)&rv) = dlsym("?getLocErrorMessageMap@PackLoadError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
         return (this->*rv)();
     }
     */

@@ -26,7 +26,7 @@ public:
 
 public:
     /*0*/ virtual ~IRequestAction();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual void execute(class ServerLevel&, class Dimension&) = 0;
     /*2*/ virtual void serialize(class CompoundTag&);
     /*3*/ virtual bool operator==(class IRequestAction&) const;
     /*

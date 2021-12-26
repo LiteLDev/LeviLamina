@@ -144,7 +144,7 @@ public:
     /*117*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*118*/ virtual void __unk_vfn_32();
     /*119*/ virtual void __unk_vfn_33();
-    /*120*/ virtual void __unk_vfn_34() = 0;
+    /*120*/ virtual class Block const* getMultifaceBlockPtr() const = 0;
     MCAPI MultifaceBlock(std::string const&, int, class Material const&);
     MCAPI static class Block const& getBlockForPlacement(class Block const&, class Block const*, class BlockSource&, class BlockPos const&, unsigned char);
     MCAPI static class Block const& getBlockForPlacementWorldGen(class Block const&, class Block const*, class IBlockWorldGenAPI&, class BlockPos const&, unsigned char);

@@ -25,14 +25,14 @@ public:
 public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
-    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3() = 0;
+    /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void onContainerScreenClose();
     /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, enum ContainerEnumName, class ContainerWeakRef const&);
-    /*9*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*
     inline void _initScreen(class ItemStackNetManagerScreen& a0){

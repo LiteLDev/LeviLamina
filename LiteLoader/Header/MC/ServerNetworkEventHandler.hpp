@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ServerNetworkEventHandler();
-    /*1*/ virtual void __unk_vfn_0() = 0;
 
 protected:
 

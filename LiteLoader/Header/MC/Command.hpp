@@ -95,7 +95,7 @@ public:
 
 public:
     /*0*/ virtual ~Command();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const = 0;
     /*
     inline  ~Command(){
          (Command::*rv)();

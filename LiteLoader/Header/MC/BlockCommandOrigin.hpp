@@ -26,14 +26,14 @@ public:
 
 public:
     /*0*/ virtual ~BlockCommandOrigin();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual std::string const& getRequestId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual class Level* getLevel() const;
     /*6*/ virtual class Dimension* getDimension() const;
     /*7*/ virtual class Actor* getEntity() const;
-    /*8*/ virtual void __unk_vfn_2();
+    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
@@ -41,43 +41,18 @@ public:
     /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
-    /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*17*/ virtual void __unk_vfn_3();
-    /*18*/ virtual class mce::UUID const& getUUID() const;
+    /*16*/ virtual void __unk_vfn_0();
+    /*17*/ virtual enum CommandOriginType getOriginType() const;
+    /*18*/ virtual void __unk_vfn_1();
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual class CompoundTag serialize() const;
-    /*21*/ virtual void __unk_vfn_4();
+    /*21*/ virtual bool isValid() const;
     /*22*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*23*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
     /*
-    inline bool isValid() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline enum CommandOriginType getOriginType() const{
-        enum CommandOriginType (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline enum CommandPermissionLevel getPermissionsLevel() const{
-        enum CommandPermissionLevel (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
     inline  ~BlockCommandOrigin(){
          (BlockCommandOrigin::*rv)();
         *((void**)&rv) = dlsym("??1BlockCommandOrigin@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline class Level* getLevel() const{
-        class Level* (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getLevel@BlockCommandOrigin@@UEBAPEAVLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline std::string const& getRequestId() const{
-        std::string const& (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getRequestId@BlockCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
     */

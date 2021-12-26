@@ -24,9 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~IFilePicker();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual void __unk_vfn_1() = 0;
-    /*3*/ virtual void __unk_vfn_2() = 0;
 
 protected:
 

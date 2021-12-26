@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,20 +24,10 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void __unk_vfn_0();
+    /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~BehaviorTreeDescription();
-    /*2*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void serializeData(class Json::Value&) const;
     /*
-    inline void serializeData(class Json::Value& a0) const{
-        void (BehaviorTreeDescription::*rv)(class Json::Value&) const;
-        *((void**)&rv) = dlsym("?serializeData@BehaviorTreeDescription@@UEBAXAEAVValue@Json@@@Z");
-        return (this->*rv)(std::forward<class Json::Value&>(a0));
-    }
-    inline char const* getJsonName() const{
-        char const* (BehaviorTreeDescription::*rv)() const;
-        *((void**)&rv) = dlsym("?getJsonName@BehaviorTreeDescription@@UEBAPEBDXZ");
-        return (this->*rv)();
-    }
     inline  ~BehaviorTreeDescription(){
          (BehaviorTreeDescription::*rv)();
         *((void**)&rv) = dlsym("??1BehaviorTreeDescription@@UEAA@XZ");

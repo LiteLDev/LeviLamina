@@ -25,19 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~InstantaneousAttributeBuff();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual bool isInstantaneous() const;
+    /*2*/ virtual bool isSerializable() const;
     /*
-    inline bool isSerializable() const{
-        bool (InstantaneousAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isSerializable@InstantaneousAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isInstantaneous() const{
-        bool (InstantaneousAttributeBuff::*rv)() const;
-        *((void**)&rv) = dlsym("?isInstantaneous@InstantaneousAttributeBuff@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline  ~InstantaneousAttributeBuff(){
          (InstantaneousAttributeBuff::*rv)();
         *((void**)&rv) = dlsym("??1InstantaneousAttributeBuff@@UEAA@XZ");

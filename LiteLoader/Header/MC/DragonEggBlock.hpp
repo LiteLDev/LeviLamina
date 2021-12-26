@@ -137,17 +137,10 @@ public:
     /*110*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*111*/ virtual void __unk_vfn_32();
     /*112*/ virtual void __unk_vfn_33();
-    /*113*/ virtual void __unk_vfn_34();
+    /*113*/ virtual class mce::Color getDustColor(class Block const&) const;
     /*114*/ virtual std::string getDustParticleName(class Block const&) const;
-    /*115*/ virtual void __unk_vfn_35();
+    /*115*/ virtual void __unk_vfn_34();
     /*116*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-    /*
-    inline class mce::Color getDustColor(class Block const& a0) const{
-        class mce::Color (DragonEggBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getDustColor@DragonEggBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    */
     MCAPI DragonEggBlock(std::string const&, int);
 
 protected:

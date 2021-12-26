@@ -26,14 +26,7 @@ public:
 public:
     /*0*/ virtual ~StrongholdStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (StrongholdStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@StrongholdStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI StrongholdStart(class Dimension&, class Random&, int, int);
 
 protected:

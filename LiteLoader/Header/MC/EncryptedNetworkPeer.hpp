@@ -27,16 +27,11 @@ public:
     /*0*/ virtual ~EncryptedNetworkPeer();
     /*1*/ virtual void sendPacket(std::string const&, enum NetworkPeer::Reliability, int, unsigned short, enum Compressibility);
     /*2*/ virtual enum NetworkPeer::DataStatus receivePacket(std::string&, class std::shared_ptr<class std::chrono::time_point<struct std::chrono::steady_clock, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > > > const&);
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual struct NetworkPeer::NetworkStatus getNetworkStatus() const;
     /*
     inline  ~EncryptedNetworkPeer(){
          (EncryptedNetworkPeer::*rv)();
         *((void**)&rv) = dlsym("??1EncryptedNetworkPeer@@UEAA@XZ");
-        return (this->*rv)();
-    }
-    inline struct NetworkPeer::NetworkStatus getNetworkStatus() const{
-        struct NetworkPeer::NetworkStatus (EncryptedNetworkPeer::*rv)() const;
-        *((void**)&rv) = dlsym("?getNetworkStatus@EncryptedNetworkPeer@@UEBA?AUNetworkStatus@NetworkPeer@@XZ");
         return (this->*rv)();
     }
     */

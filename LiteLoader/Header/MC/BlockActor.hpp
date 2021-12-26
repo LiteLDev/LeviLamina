@@ -51,7 +51,7 @@ public:
     /*16*/ virtual void __unk_vfn_1();
     /*17*/ virtual float getShadowRadius(class BlockSource&) const;
     /*18*/ virtual bool hasAlphaLayer() const;
-    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    /*19*/ virtual void __unk_vfn_2();
     /*20*/ virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
     /*21*/ virtual std::string const& getCustomName() const;
     /*22*/ virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
@@ -60,12 +60,12 @@ public:
     /*25*/ virtual std::string getImmersiveReaderText(class BlockSource&);
     /*26*/ virtual int getRepairCost() const;
     /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*28*/ virtual void __unk_vfn_2();
-    /*29*/ virtual void __unk_vfn_3();
+    /*28*/ virtual void __unk_vfn_3();
+    /*29*/ virtual void __unk_vfn_4();
     /*30*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*31*/ virtual void __unk_vfn_4();
-    /*32*/ virtual void __unk_vfn_5();
-    /*33*/ virtual void __unk_vfn_6();
+    /*31*/ virtual void __unk_vfn_5();
+    /*32*/ virtual void __unk_vfn_6();
+    /*33*/ virtual void __unk_vfn_7();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
@@ -103,6 +103,11 @@ public:
     inline void onNeighborChanged(class BlockSource& a0, class BlockPos const& a1){
         void (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
         *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
+    }
+    inline class BlockActor* getCrackEntity(class BlockSource& a0, class BlockPos const& a1){
+        class BlockActor* (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
+        *((void**)&rv) = dlsym("?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
     }
     inline  ~BlockActor(){

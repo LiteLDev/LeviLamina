@@ -138,22 +138,10 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
-    /*114*/ virtual void __unk_vfn_34();
-    /*115*/ virtual void __unk_vfn_35();
-    /*116*/ virtual void __unk_vfn_36();
+    /*114*/ virtual class mce::Color getDustColor(class Block const&) const;
+    /*115*/ virtual std::string getDustParticleName(class Block const&) const;
+    /*116*/ virtual void __unk_vfn_34();
     /*117*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
-    /*
-    inline class mce::Color getDustColor(class Block const& a0) const{
-        class mce::Color (GravelBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getDustColor@GravelBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline std::string getDustParticleName(class Block const& a0) const{
-        std::string (GravelBlock::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?getDustParticleName@GravelBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    */
     MCAPI GravelBlock(std::string const&, int);
 
 protected:

@@ -27,7 +27,7 @@ public:
 public:
     /*0*/ virtual ~FileUploadManager();
     /*1*/ virtual float getUploadProgress() const;
-    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&) = 0;
     /*
     inline  ~FileUploadManager(){
          (FileUploadManager::*rv)();

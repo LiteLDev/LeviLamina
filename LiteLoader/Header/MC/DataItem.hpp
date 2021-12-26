@@ -28,7 +28,7 @@ public:
 public:
     /*0*/ virtual ~DataItem();
     /*1*/ virtual bool isDataEqual(class DataItem const&) const;
-    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual ~DataItem();
     /*
     inline  ~DataItem(){
          (DataItem::*rv)();

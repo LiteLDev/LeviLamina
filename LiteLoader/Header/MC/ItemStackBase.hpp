@@ -22,9 +22,9 @@ char filler[128];
 
 public:
     /*0*/ virtual ~ItemStackBase();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual void __unk_vfn_1() = 0;
-    /*3*/ virtual void __unk_vfn_2() = 0;
+    /*1*/ virtual void reinit(class Item const&, int, int) = 0;
+    /*2*/ virtual void reinit(class BlockLegacy const&, int) = 0;
+    /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int) = 0;
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
