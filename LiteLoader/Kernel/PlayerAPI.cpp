@@ -19,7 +19,7 @@
 #include <MC/CommandRequestPacket.hpp>
 #include <MC/TextPacket.hpp>
 #include <MC/ScorePacketInfo.hpp>
-#include <SendPacketAPI.h>
+#include <MC/BinaryStream.hpp>
 #include <MC/TransferPacket.hpp>
 
 #include <MC/Level.hpp>
@@ -271,7 +271,7 @@ bool Player::isOP()
 }
 
 bool Player::crashClient() {
-    auto pkt = MinecraftPackets::createPacket(58);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::LevelChunk);
     dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
     return true;
