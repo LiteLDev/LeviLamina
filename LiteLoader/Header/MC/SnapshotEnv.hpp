@@ -36,6 +36,14 @@ public:
     /*9*/ virtual void __unk_vfn_3();
     /*10*/ virtual void __unk_vfn_4();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*12*/ virtual void __unk_vfn_5();
+    /*13*/ virtual void __unk_vfn_6();
+    /*14*/ virtual void __unk_vfn_7();
+    /*15*/ virtual void __unk_vfn_8();
+    /*16*/ virtual void __unk_vfn_9();
+    /*17*/ virtual void __unk_vfn_10();
+    /*18*/ virtual void __unk_vfn_11();
+    /*19*/ virtual void __unk_vfn_12();
     MCAPI SnapshotEnv(class leveldb::Env*);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const&);
     MCAPI void releaseSnapshot();

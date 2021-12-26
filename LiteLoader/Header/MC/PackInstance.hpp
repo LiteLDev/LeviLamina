@@ -46,7 +46,7 @@ public:
     MCAPI bool hasResource(class Core::Path const&) const;
     MCAPI bool isBaseGamePack() const;
     MCAPI bool isZipped() const;
-    MCAPI bool operator==(class PackInstance const&);
+    MCAPI bool operator==(class PackInstance const&) const;
     MCAPI ~PackInstance();
 
 protected:

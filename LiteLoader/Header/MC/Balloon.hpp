@@ -99,6 +99,7 @@ public:
     /*71*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*72*/ virtual void __unk_vfn_20();
     /*73*/ virtual void _onSizeUpdated();
+    /*74*/ virtual void __unk_vfn_21();
     MCAPI Balloon(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void remove(bool);
 

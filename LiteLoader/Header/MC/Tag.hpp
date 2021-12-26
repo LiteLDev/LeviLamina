@@ -109,15 +109,15 @@ public:
 public:
     /*0*/ virtual ~Tag();
     /*1*/ virtual void deleteChildren();
-    /*2*/ virtual void write(class IDataOutput&) const = 0;
-    /*3*/ virtual void load(class IDataInput&) = 0;
-    /*4*/ virtual std::string toString() const = 0;
-    /*5*/ virtual enum Tag::Type getId() const = 0;
+    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*3*/ virtual void __unk_vfn_1() = 0;
+    /*4*/ virtual void __unk_vfn_2() = 0;
+    /*5*/ virtual void __unk_vfn_3() = 0;
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(class PrintStream&) const;
     /*8*/ virtual void print(std::string const&, class PrintStream&) const;
-    /*9*/ virtual std::unique_ptr<class Tag> copy() const = 0;
-    /*10*/ virtual unsigned __int64 hash() const = 0;
+    /*9*/ virtual void __unk_vfn_4() = 0;
+    /*10*/ virtual void __unk_vfn_5() = 0;
     /*
     inline  ~Tag(){
          (Tag::*rv)();

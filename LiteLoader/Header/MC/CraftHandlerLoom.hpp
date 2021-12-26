@@ -30,6 +30,12 @@ public:
     /*3*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*4*/ virtual void _postCraftRequest(bool);
     /*5*/ virtual class Recipes const* _getLevelRecipes() const;
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_2();
+    /*9*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void __unk_vfn_4();
+    /*11*/ virtual void __unk_vfn_5();
     MCAPI CraftHandlerLoom(class ItemStackRequestActionCraftHandler&);
 
 protected:

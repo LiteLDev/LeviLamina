@@ -35,12 +35,12 @@ public:
     MCAPI unsigned short getPatch() const;
     MCAPI bool isAnyVersion() const;
     MCAPI bool isValid() const;
-    MCAPI bool operator<(class SemVersion const&);
-    MCAPI bool operator<=(class SemVersion const&);
+    MCAPI bool operator<(class SemVersion const&) const;
+    MCAPI bool operator<=(class SemVersion const&) const;
     MCAPI class SemVersion& operator=(class SemVersion const&);
-    MCAPI bool operator==(class SemVersion const&);
-    MCAPI bool operator>(class SemVersion const&);
-    MCAPI bool operator>=(class SemVersion const&);
+    MCAPI bool operator==(class SemVersion const&) const;
+    MCAPI bool operator>(class SemVersion const&) const;
+    MCAPI bool operator>=(class SemVersion const&) const;
     MCAPI bool satisfies(class SemVersion const&) const;
     MCAPI ~SemVersion();
     MCAPI static struct SemVersion::any_version_constructor const AnyVersionConstructor;

@@ -24,12 +24,17 @@ public:
 
 public:
     /*0*/ virtual ~RemoveEntityPacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual void __unk_vfn_2();
     /*
+    inline enum MinecraftPacketIds getId() const{
+        enum MinecraftPacketIds (RemoveEntityPacket::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@RemoveEntityPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
+        return (this->*rv)();
+    }
     inline  ~RemoveEntityPacket(){
          (RemoveEntityPacket::*rv)();
         *((void**)&rv) = dlsym("??1RemoveEntityPacket@@UEAA@XZ");

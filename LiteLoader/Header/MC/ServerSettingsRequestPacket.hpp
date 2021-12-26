@@ -26,9 +26,21 @@ public:
     /*0*/ virtual ~ServerSettingsRequestPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual void __unk_vfn_1();
+    /*
+    inline void write(class BinaryStream& a0) const{
+        void (ServerSettingsRequestPacket::*rv)(class BinaryStream&) const;
+        *((void**)&rv) = dlsym("?write@ServerSettingsRequestPacket@@UEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream&>(a0));
+    }
+    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
+        enum StreamReadResult (ServerSettingsRequestPacket::*rv)(class ReadOnlyBinaryStream&);
+        *((void**)&rv) = dlsym("?_read@ServerSettingsRequestPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
+    }
+    */
     MCAPI ServerSettingsRequestPacket();
 
 protected:

@@ -23,7 +23,7 @@ public:
 
 public:
     MCAPI struct VolumeIdentifier& operator=(struct VolumeIdentifier const&);
-    MCAPI bool operator==(struct VolumeIdentifier const&);
+    MCAPI bool operator==(struct VolumeIdentifier const&) const;
 
 protected:
 

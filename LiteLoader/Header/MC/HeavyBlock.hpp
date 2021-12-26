@@ -140,9 +140,9 @@ public:
     /*113*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*114*/ virtual void __unk_vfn_32();
     /*115*/ virtual void __unk_vfn_33();
-    /*116*/ virtual class mce::Color getDustColor(class Block const&) const = 0;
-    /*117*/ virtual std::string getDustParticleName(class Block const&) const = 0;
-    /*118*/ virtual void __unk_vfn_34();
+    /*116*/ virtual void __unk_vfn_34();
+    /*117*/ virtual void __unk_vfn_35() = 0;
+    /*118*/ virtual void __unk_vfn_36() = 0;
     /*119*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual bool isFreeToFall(class BlockSource&, class BlockPos const&) const;
     /*121*/ virtual void startFalling(class BlockSource&, class BlockPos const&, class Block const&, bool) const;

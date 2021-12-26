@@ -26,14 +26,14 @@ public:
 
 public:
     /*0*/ virtual ~PrecompiledCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
-    /*2*/ virtual std::string getName() const;
-    /*3*/ virtual class BlockPos getBlockPosition() const;
-    /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual class Level* getLevel() const;
-    /*6*/ virtual class Dimension* getDimension() const;
-    /*7*/ virtual class Actor* getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void __unk_vfn_4();
+    /*6*/ virtual void __unk_vfn_5();
+    /*7*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
@@ -45,11 +45,63 @@ public:
     /*17*/ virtual bool isSelectorExpansionAllowed() const;
     /*18*/ virtual unsigned char getSourceSubId() const;
     /*19*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*20*/ virtual enum CommandOriginType getOriginType() const;
+    /*20*/ virtual void __unk_vfn_8();
     /*21*/ virtual class mce::UUID const& getUUID() const;
     /*22*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*23*/ virtual class CompoundTag serialize() const;
-    /*24*/ virtual bool isValid() const;
+    /*24*/ virtual void __unk_vfn_9();
+    /*
+    inline class Level* getLevel() const{
+        class Level* (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevel@PrecompiledCommandOrigin@@UEBAPEAVLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class Actor* getEntity() const{
+        class Actor* (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntity@PrecompiledCommandOrigin@@UEBAPEAVActor@@XZ");
+        return (this->*rv)();
+    }
+    inline class Dimension* getDimension() const{
+        class Dimension* (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getDimension@PrecompiledCommandOrigin@@UEBAPEAVDimension@@XZ");
+        return (this->*rv)();
+    }
+    inline enum CommandPermissionLevel getPermissionsLevel() const{
+        enum CommandPermissionLevel (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getPermissionsLevel@PrecompiledCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isValid() const{
+        bool (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@PrecompiledCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline std::string getName() const{
+        std::string (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@PrecompiledCommandOrigin@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@PrecompiledCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockPos getBlockPosition() const{
+        class BlockPos (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockPosition@PrecompiledCommandOrigin@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const& getRequestId() const{
+        std::string const& (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getRequestId@PrecompiledCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class Vec3 getWorldPosition() const{
+        class Vec3 (PrecompiledCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getWorldPosition@PrecompiledCommandOrigin@@UEBA?AVVec3@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

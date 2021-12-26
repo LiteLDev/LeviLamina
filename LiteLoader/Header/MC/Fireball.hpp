@@ -106,6 +106,7 @@ public:
     /*78*/ virtual float getInertia();
     /*79*/ virtual void __unk_vfn_22();
     /*80*/ virtual enum ParticleType getTrailParticle();
+    /*81*/ virtual void __unk_vfn_23();
     /*
     inline bool canMakeStepSound() const{
         bool (Fireball::*rv)() const;

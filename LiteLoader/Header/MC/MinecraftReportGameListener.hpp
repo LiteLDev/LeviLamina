@@ -27,6 +27,9 @@ public:
     /*1*/ virtual void onTestStructureLoaded(class gametest::BaseGameTestInstance&);
     /*2*/ virtual void onTestPassed(class gametest::BaseGameTestInstance&);
     /*3*/ virtual void onTestFailed(class gametest::BaseGameTestInstance&);
+    /*4*/ virtual void __unk_vfn_0();
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_2();
 
 protected:
 

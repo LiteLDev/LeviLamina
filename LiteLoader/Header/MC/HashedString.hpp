@@ -45,11 +45,11 @@ public:
     MCAPI unsigned __int64 getHash() const;
     MCAPI std::string const& getString() const;
     MCAPI bool isEmpty() const;
-    MCAPI bool operator!=(class HashedString const&);
-    MCAPI bool operator<(class HashedString const&);
+    MCAPI bool operator!=(class HashedString const&) const;
+    MCAPI bool operator<(class HashedString const&) const;
     MCAPI class HashedString& operator=(class HashedString&&);
     MCAPI class HashedString& operator=(class HashedString const&);
-    MCAPI bool operator==(class HashedString const&);
+    MCAPI bool operator==(class HashedString const&) const;
     MCAPI ~HashedString();
     MCAPI static void bindType();
     MCAPI static unsigned __int64 computeHash(std::string const&);

@@ -104,6 +104,7 @@ public:
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
+    /*79*/ virtual void __unk_vfn_21();
     MCAPI FireworksRocketActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void init(class Level&, class Vec3 const&, class CompoundTag const&, class Vec3 const&, struct ActorUniqueID, bool);
     MCAPI bool isAttachedToEntity() const;

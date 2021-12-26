@@ -146,6 +146,12 @@ public:
     /*119*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*120*/ virtual void __unk_vfn_32();
     /*121*/ virtual void __unk_vfn_33();
+    /*122*/ virtual void __unk_vfn_34();
+    /*123*/ virtual void __unk_vfn_35();
+    /*124*/ virtual void __unk_vfn_36();
+    /*125*/ virtual void __unk_vfn_37();
+    /*126*/ virtual void __unk_vfn_38();
+    /*127*/ virtual void __unk_vfn_39();
     /*
     inline bool canBeSilkTouched() const{
         bool (LanternBlock::*rv)() const;

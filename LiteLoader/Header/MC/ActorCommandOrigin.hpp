@@ -26,11 +26,11 @@ public:
 
 public:
     /*0*/ virtual ~ActorCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual class Level* getLevel() const;
+    /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual class Dimension* getDimension() const;
     /*7*/ virtual class Actor* getEntity() const;
     /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
@@ -42,11 +42,33 @@ public:
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
     /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*17*/ virtual enum CommandOriginType getOriginType() const;
+    /*17*/ virtual void __unk_vfn_2();
     /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual class CompoundTag serialize() const;
-    /*21*/ virtual bool isValid() const;
+    /*21*/ virtual void __unk_vfn_3();
+    /*
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (ActorCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@ActorCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    inline class Level* getLevel() const{
+        class Level* (ActorCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevel@ActorCommandOrigin@@UEBAPEAVLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const& getRequestId() const{
+        std::string const& (ActorCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getRequestId@ActorCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isValid() const{
+        bool (ActorCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@ActorCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ActorCommandOrigin(class Actor&);
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const&, class Level&);
 

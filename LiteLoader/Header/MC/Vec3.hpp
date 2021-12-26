@@ -32,9 +32,9 @@ public:
     MCAPI bool isNear(class Vec3 const&, float) const;
     MCAPI float maxComponent() const;
     MCAPI class Vec3 normalized() const;
-    MCAPI class Vec3 operator+(class Vec3 const&);
-    MCAPI class Vec3 operator-(class Vec3 const&);
-    MCAPI bool operator==(class Vec3 const&);
+    MCAPI class Vec3 operator+(class Vec3 const&) const;
+    MCAPI class Vec3 operator-(class Vec3 const&) const;
+    MCAPI bool operator==(class Vec3 const&) const;
     MCAPI std::string toString() const;
     MCAPI class Vec3 xz() const;
     MCAPI static class Vec3 const HALF;

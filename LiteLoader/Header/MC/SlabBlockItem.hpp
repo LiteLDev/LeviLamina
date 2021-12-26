@@ -100,6 +100,12 @@ public:
     /*72*/ virtual std::string getAuxValuesDescription() const;
     /*73*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*74*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
+    /*75*/ virtual void __unk_vfn_21();
+    /*76*/ virtual void __unk_vfn_22();
+    /*77*/ virtual void __unk_vfn_23();
+    /*78*/ virtual void __unk_vfn_24();
+    /*79*/ virtual void __unk_vfn_25();
+    /*80*/ virtual void __unk_vfn_26();
     /*
     inline bool _calculatePlacePos(class ItemStackBase& a0, class Actor& a1, unsigned char& a2, class BlockPos& a3) const{
         bool (SlabBlockItem::*rv)(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;

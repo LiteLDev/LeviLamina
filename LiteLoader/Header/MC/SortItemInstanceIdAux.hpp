@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI bool operator()(class ItemInstance const&, class ItemInstance const&);
+    MCAPI bool operator()(class ItemInstance const&, class ItemInstance const&) const;
 
 protected:
 

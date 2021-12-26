@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Core.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -26,36 +25,36 @@ public:
 
 public:
     /*0*/ virtual ~LevelStorage();
-    /*1*/ virtual void addStorageObserver(std::unique_ptr<class LevelStorageObserver>) = 0;
-    /*2*/ virtual std::unique_ptr<class CompoundTag> getCompoundTag(std::string const&, enum DBHelpers::Category) = 0;
-    /*3*/ virtual bool hasKey(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category) const = 0;
-    /*4*/ virtual void forEachKeyWithPrefix(class gsl::basic_string_span<char const, -1>, enum DBHelpers::Category, class std::function<void (class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>)> const&) const = 0;
-    /*5*/ virtual bool loadLevelData(class LevelData&) = 0;
-    /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion) = 0;
-    /*7*/ virtual void saveLevelData(class LevelData const&) = 0;
-    /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const = 0;
-    /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, enum DBHelpers::Category) = 0;
-    /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&) = 0;
-    /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, enum DBHelpers::Category) = 0;
-    /*12*/ virtual void syncIO() = 0;
-    /*13*/ virtual void getStatistics(std::string&) const = 0;
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_1() = 0;
+    /*3*/ virtual void __unk_vfn_2() = 0;
+    /*4*/ virtual void __unk_vfn_3() = 0;
+    /*5*/ virtual void __unk_vfn_4() = 0;
+    /*6*/ virtual void __unk_vfn_5() = 0;
+    /*7*/ virtual void __unk_vfn_6() = 0;
+    /*8*/ virtual void __unk_vfn_7() = 0;
+    /*9*/ virtual void __unk_vfn_8() = 0;
+    /*10*/ virtual void __unk_vfn_9() = 0;
+    /*11*/ virtual void __unk_vfn_10() = 0;
+    /*12*/ virtual void __unk_vfn_11() = 0;
+    /*13*/ virtual void __unk_vfn_12() = 0;
     /*14*/ virtual bool clonePlayerData(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
-    /*15*/ virtual void __unk_vfn_0() = 0;
-    /*16*/ virtual void startShutdown() = 0;
-    /*17*/ virtual bool isShuttingDown() const = 0;
-    /*18*/ virtual bool checkShutdownDone() = 0;
+    /*15*/ virtual void __unk_vfn_13() = 0;
+    /*16*/ virtual void __unk_vfn_14() = 0;
+    /*17*/ virtual void __unk_vfn_15() = 0;
+    /*18*/ virtual void __unk_vfn_16() = 0;
     /*19*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, enum DBHelpers::Category) const;
-    /*20*/ virtual void __unk_vfn_1() = 0;
-    /*21*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&) = 0;
-    /*22*/ virtual void releaseSnapshot() = 0;
-    /*23*/ virtual void compactStorage() = 0;
-    /*24*/ virtual void syncAndSuspendStorage() = 0;
-    /*25*/ virtual void resumeStorage() = 0;
-    /*26*/ virtual void setFlushAllowed(bool) = 0;
-    /*27*/ virtual void flushToPermanentStorage() = 0;
+    /*20*/ virtual void __unk_vfn_17() = 0;
+    /*21*/ virtual void __unk_vfn_18() = 0;
+    /*22*/ virtual void __unk_vfn_19() = 0;
+    /*23*/ virtual void __unk_vfn_20() = 0;
+    /*24*/ virtual void __unk_vfn_21() = 0;
+    /*25*/ virtual void __unk_vfn_22() = 0;
+    /*26*/ virtual void __unk_vfn_23() = 0;
+    /*27*/ virtual void __unk_vfn_24() = 0;
     /*28*/ virtual void freeCaches();
-    /*29*/ virtual void setCompactionCallback(class std::function<void (enum CompactionStatus)>) = 0;
-    /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>) = 0;
+    /*29*/ virtual void __unk_vfn_25() = 0;
+    /*30*/ virtual void __unk_vfn_26() = 0;
     /*31*/ virtual void corruptLevel();
     /*
     inline  ~LevelStorage(){

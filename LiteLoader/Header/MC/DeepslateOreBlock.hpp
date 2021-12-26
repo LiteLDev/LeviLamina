@@ -142,6 +142,24 @@ public:
     /*115*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*116*/ virtual void __unk_vfn_32();
     /*117*/ virtual void __unk_vfn_33();
+    /*118*/ virtual void __unk_vfn_34();
+    /*119*/ virtual void __unk_vfn_35();
+    /*120*/ virtual void __unk_vfn_36();
+    /*121*/ virtual void __unk_vfn_37();
+    /*122*/ virtual void __unk_vfn_38();
+    /*123*/ virtual void __unk_vfn_39();
+    /*124*/ virtual void __unk_vfn_40();
+    /*125*/ virtual void __unk_vfn_41();
+    /*126*/ virtual void __unk_vfn_42();
+    /*127*/ virtual void __unk_vfn_43();
+    /*128*/ virtual void __unk_vfn_44();
+    /*129*/ virtual void __unk_vfn_45();
+    /*130*/ virtual void __unk_vfn_46();
+    /*131*/ virtual void __unk_vfn_47();
+    /*132*/ virtual void __unk_vfn_48();
+    /*133*/ virtual void __unk_vfn_49();
+    /*134*/ virtual void __unk_vfn_50();
+    /*135*/ virtual void __unk_vfn_51();
     MCAPI DeepslateOreBlock(std::string const&, int);
 
 protected:

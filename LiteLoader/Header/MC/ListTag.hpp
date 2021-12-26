@@ -62,7 +62,7 @@ public:
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual enum Tag::Type getId() const;
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual void print(std::string const&, class PrintStream&) const;
     /*8*/ virtual std::unique_ptr<class Tag> copy() const;
@@ -71,6 +71,11 @@ public:
     inline  ~ListTag(){
          (ListTag::*rv)();
         *((void**)&rv) = dlsym("??1ListTag@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline enum Tag::Type getId() const{
+        enum Tag::Type (ListTag::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@ListTag@@UEBA?AW4Type@Tag@@XZ");
         return (this->*rv)();
     }
     */

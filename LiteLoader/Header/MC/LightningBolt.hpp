@@ -101,6 +101,8 @@ public:
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
+    /*77*/ virtual void __unk_vfn_21();
+    /*78*/ virtual void __unk_vfn_22();
     /*
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
         void (LightningBolt::*rv)(class CompoundTag const&, class DataLoadHelper&);

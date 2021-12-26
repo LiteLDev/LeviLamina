@@ -32,8 +32,8 @@ public:
     /*5*/ virtual void setOnCloseHandler(class std::function<void (enum CloseStatusCode, std::string const& )> const&);
     /*6*/ virtual void setOnConnectedHandler(class std::function<void (std::string const& )> const&);
     /*7*/ virtual void tick();
-    /*8*/ virtual void _updateState() = 0;
-    /*9*/ virtual unsigned int _genMaskingKey() const = 0;
+    /*8*/ virtual void __unk_vfn_0() = 0;
+    /*9*/ virtual void __unk_vfn_1() = 0;
     /*
     inline  ~RakWebSocket(){
          (RakWebSocket::*rv)();

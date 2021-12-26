@@ -26,8 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
-    /*2*/ virtual class Level* getLevel() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*4*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*5*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
@@ -37,11 +37,18 @@ public:
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual unsigned char getSourceSubId() const;
     /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*12*/ virtual enum CommandOriginType getOriginType() const;
+    /*12*/ virtual void __unk_vfn_2();
     /*13*/ virtual class mce::UUID const& getUUID() const;
     /*14*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*15*/ virtual class CompoundTag serialize() const;
-    /*16*/ virtual bool isValid() const;
+    /*16*/ virtual void __unk_vfn_3();
+    /*
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (ActorServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@ActorServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ActorServerCommandOrigin(class Actor&);
     MCAPI void setTargetOther(struct ActorUniqueID);
     MCAPI static std::unique_ptr<class ActorServerCommandOrigin> load(class CompoundTag const&, class Level&);

@@ -27,16 +27,38 @@ public:
 public:
     /*0*/ virtual ~BannerAddPatternRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual int getCraftingSize() const;
-    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
-    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*5*/ virtual bool isShapeless() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
-    /*7*/ virtual int size() const;
+    /*7*/ virtual void __unk_vfn_4();
     /*8*/ virtual class mce::UUID const& getId() const;
     /*9*/ virtual class ItemPack const& getItemPack() const;
-    /*10*/ virtual bool isMultiRecipe() const;
+    /*10*/ virtual bool isShapeless() const;
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
+    /*
+    inline int getCraftingSize() const{
+        int (BannerAddPatternRecipe::*rv)() const;
+        *((void**)&rv) = dlsym("?getCraftingSize@BannerAddPatternRecipe@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline std::vector<class ItemInstance> const& getResultItem() const{
+        std::vector<class ItemInstance> const& (BannerAddPatternRecipe::*rv)() const;
+        *((void**)&rv) = dlsym("?getResultItem@BannerAddPatternRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline int size() const{
+        int (BannerAddPatternRecipe::*rv)() const;
+        *((void**)&rv) = dlsym("?size@BannerAddPatternRecipe@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline class RecipeIngredient const& getIngredient(int a0, int a1) const{
+        class RecipeIngredient const& (BannerAddPatternRecipe::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?getIngredient@BannerAddPatternRecipe@@UEBAAEBVRecipeIngredient@@HH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    */
     MCAPI BannerAddPatternRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const&);
     MCAPI class Bedrock::NonOwnerPointer<class BannerPattern const> const matchPatterns(class CraftingContainer&) const;
     MCAPI static class mce::UUID const ID;

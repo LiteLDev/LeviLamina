@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~MobArmorEquipmentPacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
@@ -33,6 +33,11 @@ public:
     inline  ~MobArmorEquipmentPacket(){
          (MobArmorEquipmentPacket::*rv)();
         *((void**)&rv) = dlsym("??1MobArmorEquipmentPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline enum MinecraftPacketIds getId() const{
+        enum MinecraftPacketIds (MobArmorEquipmentPacket::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@MobArmorEquipmentPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
         return (this->*rv)();
     }
     */

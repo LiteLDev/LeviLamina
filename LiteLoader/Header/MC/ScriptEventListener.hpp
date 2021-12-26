@@ -24,6 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~ScriptEventListener();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void __unk_vfn_4();
+    /*6*/ virtual void __unk_vfn_5();
+    /*7*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void __unk_vfn_7();
+    /*9*/ virtual void __unk_vfn_8();
+    /*10*/ virtual void __unk_vfn_9();
     /*
     inline enum EventResult onScriptError(std::string const& a0, std::string const& a1){
         enum EventResult (ScriptEventListener::*rv)(std::string const&, std::string const&);

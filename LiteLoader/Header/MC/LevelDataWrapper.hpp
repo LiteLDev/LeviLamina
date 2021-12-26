@@ -23,10 +23,10 @@ public:
 
 public:
     MCAPI LevelDataWrapper();
-    MCAPI class LevelData const& operator*();
+    MCAPI class LevelData const& operator*() const;
     MCAPI class LevelData& operator*();
     MCAPI class LevelData* operator->();
-    MCAPI class LevelData const* operator->();
+    MCAPI class LevelData const* operator->() const;
     MCAPI void setLevelData(class LevelData&);
     MCAPI ~LevelDataWrapper();
 

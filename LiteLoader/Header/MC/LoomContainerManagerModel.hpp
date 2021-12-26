@@ -32,10 +32,22 @@ public:
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void setData(int, int);
-    /*9*/ virtual void broadcastChanges();
+    /*8*/ virtual void __unk_vfn_0();
+    /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
+    /*
+    inline void broadcastChanges(){
+        void (LoomContainerManagerModel::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@LoomContainerManagerModel@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setData(int a0, int a1){
+        void (LoomContainerManagerModel::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setData@LoomContainerManagerModel@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    */
     MCAPI LoomContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const BANNER_SLOT;
     MCAPI static int const DYE_SLOT;

@@ -26,7 +26,14 @@ public:
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual enum StructureFeatureType getType() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (ScatteredFeatureStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@ScatteredFeatureStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&);
 
 protected:

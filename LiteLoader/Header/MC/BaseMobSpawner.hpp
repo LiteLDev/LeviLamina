@@ -27,7 +27,7 @@ public:
     /*1*/ virtual void tick(class BlockSource&);
     /*2*/ virtual void load(class CompoundTag const&);
     /*3*/ virtual void save(class CompoundTag&);
-    /*4*/ virtual class BlockPos const& getPos() = 0;
+    /*4*/ virtual void __unk_vfn_0() = 0;
     /*
     inline  ~BaseMobSpawner(){
          (BaseMobSpawner::*rv)();

@@ -56,6 +56,7 @@ public:
     /*31*/ virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
     /*32*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
     /*33*/ virtual std::string getFeedbackURL() const;
+    /*34*/ virtual void __unk_vfn_26();
     /*
     inline bool areQuizzesSupported() const{
         bool (AppConfigs::*rv)() const;

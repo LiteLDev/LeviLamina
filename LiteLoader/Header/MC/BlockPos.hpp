@@ -34,7 +34,7 @@ public:
     MCAPI bool cerealize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI bool decerealize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI class BlockPos neighbor(unsigned char) const;
-    MCAPI bool operator==(class BlockPos const&);
+    MCAPI bool operator==(class BlockPos const&) const;
     MCAPI int randomSeed() const;
     MCAPI class BlockPos relative(unsigned char, int) const;
     MCAPI std::string toString() const;

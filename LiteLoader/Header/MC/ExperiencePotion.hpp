@@ -103,6 +103,7 @@ public:
     /*75*/ virtual float getThrowUpAngleOffset();
     /*76*/ virtual float getGravity();
     /*77*/ virtual enum ParticleType getParticleType();
+    /*78*/ virtual void __unk_vfn_23();
     /*
     inline float getThrowPower(){
         float (ExperiencePotion::*rv)();

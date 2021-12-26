@@ -144,9 +144,9 @@ public:
     /*117*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*118*/ virtual void __unk_vfn_32();
     /*119*/ virtual void __unk_vfn_33();
-    /*120*/ virtual class mce::Color getDustColor(class Block const&) const;
-    /*121*/ virtual std::string getDustParticleName(class Block const&) const;
-    /*122*/ virtual void __unk_vfn_34();
+    /*120*/ virtual void __unk_vfn_34();
+    /*121*/ virtual void __unk_vfn_35();
+    /*122*/ virtual void __unk_vfn_36();
     /*123*/ virtual void onLand(class BlockSource&, class BlockPos const&) const;
     /*
     inline bool canBeSilkTouched() const{
@@ -168,6 +168,16 @@ public:
         bool (AnvilBlock::*rv)() const;
         *((void**)&rv) = dlsym("?isInteractiveBlock@AnvilBlock@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline std::string getDustParticleName(class Block const& a0) const{
+        std::string (AnvilBlock::*rv)(class Block const&) const;
+        *((void**)&rv) = dlsym("?getDustParticleName@AnvilBlock@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const&>(a0));
+    }
+    inline class mce::Color getDustColor(class Block const& a0) const{
+        class mce::Color (AnvilBlock::*rv)(class Block const&) const;
+        *((void**)&rv) = dlsym("?getDustColor@AnvilBlock@@UEBA?AVColor@mce@@AEBVBlock@@@Z");
+        return (this->*rv)(std::forward<class Block const&>(a0));
     }
     */
     MCAPI AnvilBlock(std::string const&, int);

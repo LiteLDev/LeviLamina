@@ -101,6 +101,7 @@ public:
     /*73*/ virtual void __unk_vfn_22();
     /*74*/ virtual float getThrowUpAngleOffset();
     /*75*/ virtual enum ParticleType getParticleType();
+    /*76*/ virtual void __unk_vfn_23();
     MCAPI Snowball(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:

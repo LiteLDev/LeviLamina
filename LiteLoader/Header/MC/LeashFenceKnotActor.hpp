@@ -107,9 +107,9 @@ public:
     /*79*/ virtual void _onSizeUpdated();
     /*80*/ virtual void __unk_vfn_21();
     /*81*/ virtual void setDir(int);
-    /*82*/ virtual int getWidth() const;
-    /*83*/ virtual int getHeight() const;
-    /*84*/ virtual void dropItem();
+    /*82*/ virtual void __unk_vfn_22();
+    /*83*/ virtual void __unk_vfn_23();
+    /*84*/ virtual void __unk_vfn_24();
     /*85*/ virtual bool placeHangingEntity(class BlockSource&, int);
     /*86*/ virtual bool wouldSurvive(class BlockSource&);
     /*
@@ -118,10 +118,25 @@ public:
         *((void**)&rv) = dlsym("?addAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEAVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class CompoundTag&>(a0));
     }
+    inline void dropItem(){
+        void (LeashFenceKnotActor::*rv)();
+        *((void**)&rv) = dlsym("?dropItem@LeashFenceKnotActor@@UEAAXXZ");
+        return (this->*rv)();
+    }
     inline void readAdditionalSaveData(class CompoundTag const& a0, class DataLoadHelper& a1){
         void (LeashFenceKnotActor::*rv)(class CompoundTag const&, class DataLoadHelper&);
         *((void**)&rv) = dlsym("?readAdditionalSaveData@LeashFenceKnotActor@@UEAAXAEBVCompoundTag@@AEAVDataLoadHelper@@@Z");
         return (this->*rv)(std::forward<class CompoundTag const&>(a0), std::forward<class DataLoadHelper&>(a1));
+    }
+    inline int getHeight() const{
+        int (LeashFenceKnotActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getHeight@LeashFenceKnotActor@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getWidth() const{
+        int (LeashFenceKnotActor::*rv)() const;
+        *((void**)&rv) = dlsym("?getWidth@LeashFenceKnotActor@@UEBAHXZ");
+        return (this->*rv)();
     }
     */
     MCAPI LeashFenceKnotActor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);

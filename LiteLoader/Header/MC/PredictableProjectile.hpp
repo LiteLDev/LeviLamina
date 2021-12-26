@@ -97,6 +97,7 @@ public:
     /*70*/ virtual void __unk_vfn_19();
     /*71*/ virtual void __unk_vfn_20();
     /*72*/ virtual void _onSizeUpdated();
+    /*73*/ virtual void __unk_vfn_21();
     /*
     inline  ~PredictableProjectile(){
          (PredictableProjectile::*rv)();

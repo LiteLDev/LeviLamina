@@ -31,6 +31,8 @@ public:
     /*5*/ virtual void onBrightnessChanged(class BlockSource&, class BlockPos const&);
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*8*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_5();
     /*
     inline void onAreaChanged(class BlockSource& a0, class BlockPos const& a1, class BlockPos const& a2){
         void (BlockSourceListener::*rv)(class BlockSource&, class BlockPos const&, class BlockPos const&);

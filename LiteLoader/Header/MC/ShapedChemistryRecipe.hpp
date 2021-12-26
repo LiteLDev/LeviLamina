@@ -25,14 +25,14 @@ public:
 
 public:
     /*0*/ virtual ~ShapedChemistryRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
-    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*4*/ virtual bool isShapeless() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*6*/ virtual class mce::UUID const& getId() const;
     /*7*/ virtual class ItemPack const& getItemPack() const;
-    /*8*/ virtual bool isMultiRecipe() const;
+    /*8*/ virtual bool isShapeless() const;
     /*9*/ virtual void loadResultList(class BlockPalette const&) const;
     MCAPI ShapedChemistryRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
     MCAPI static class mce::UUID const ID;

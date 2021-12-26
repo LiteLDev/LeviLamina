@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~RemoveVolumeEntityPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*5*/ virtual void __unk_vfn_1();
 
 protected:
 

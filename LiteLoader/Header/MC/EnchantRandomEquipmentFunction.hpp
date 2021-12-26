@@ -25,8 +25,20 @@ public:
 
 public:
     /*0*/ virtual ~EnchantRandomEquipmentFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*2*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*
+    inline void apply(class ItemStack& a0, class Random& a1, class LootTableContext& a2){
+        void (EnchantRandomEquipmentFunction::*rv)(class ItemStack&, class Random&, class LootTableContext&);
+        *((void**)&rv) = dlsym("?apply@EnchantRandomEquipmentFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
+    }
+    inline void apply(class ItemInstance& a0, class Random& a1, class LootTableContext& a2){
+        void (EnchantRandomEquipmentFunction::*rv)(class ItemInstance&, class Random&, class LootTableContext&);
+        *((void**)&rv) = dlsym("?apply@EnchantRandomEquipmentFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
+    }
+    */
 
 protected:
 

@@ -26,15 +26,25 @@ public:
 
 public:
     /*0*/ virtual ~SimpleEventPacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~SimpleEventPacket(){
          (SimpleEventPacket::*rv)();
         *((void**)&rv) = dlsym("??1SimpleEventPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void write(class BinaryStream& a0) const{
+        void (SimpleEventPacket::*rv)(class BinaryStream&) const;
+        *((void**)&rv) = dlsym("?write@SimpleEventPacket@@UEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream&>(a0));
+    }
+    inline enum MinecraftPacketIds getId() const{
+        enum MinecraftPacketIds (SimpleEventPacket::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@SimpleEventPacket@@UEBA?AW4MinecraftPacketIds@@XZ");
         return (this->*rv)();
     }
     */

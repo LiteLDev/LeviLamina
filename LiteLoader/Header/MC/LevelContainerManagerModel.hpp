@@ -32,11 +32,16 @@ public:
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void setData(int, int);
+    /*8*/ virtual void __unk_vfn_0();
     /*9*/ virtual void broadcastChanges();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
     /*
+    inline void setData(int a0, int a1){
+        void (LevelContainerManagerModel::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setData@LevelContainerManagerModel@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
     inline  ~LevelContainerManagerModel(){
          (LevelContainerManagerModel::*rv)();
         *((void**)&rv) = dlsym("??1LevelContainerManagerModel@@UEAA@XZ");

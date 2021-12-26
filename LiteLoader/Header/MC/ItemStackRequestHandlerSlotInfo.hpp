@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI operator bool();
+    MCAPI operator bool() const;
     MCAPI ~ItemStackRequestHandlerSlotInfo();
 
 protected:

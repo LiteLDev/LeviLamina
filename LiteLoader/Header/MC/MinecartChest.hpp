@@ -98,12 +98,17 @@ public:
     /*70*/ virtual void __unk_vfn_20();
     /*71*/ virtual void __unk_vfn_21();
     /*72*/ virtual void destroy(class ActorDamageSource const&, bool);
-    /*73*/ virtual enum MinecartType getType();
+    /*73*/ virtual void __unk_vfn_22();
     /*74*/ virtual class Block const* getDefaultDisplayBlock() const;
-    /*75*/ virtual void __unk_vfn_22();
+    /*75*/ virtual void __unk_vfn_23();
     /*76*/ virtual int getDefaultDisplayOffset() const;
     /*77*/ virtual void applyNaturalSlowdown(class BlockSource&);
     /*
+    inline enum MinecartType getType(){
+        enum MinecartType (MinecartChest::*rv)();
+        *((void**)&rv) = dlsym("?getType@MinecartChest@@UEAA?AW4MinecartType@@XZ");
+        return (this->*rv)();
+    }
     inline void applyNaturalSlowdown(class BlockSource& a0){
         void (MinecartChest::*rv)(class BlockSource&);
         *((void**)&rv) = dlsym("?applyNaturalSlowdown@MinecartChest@@UEAAXAEAVBlockSource@@@Z");

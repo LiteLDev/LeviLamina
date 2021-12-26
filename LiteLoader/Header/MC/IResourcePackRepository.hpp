@@ -24,6 +24,55 @@ public:
 
 public:
     /*0*/ virtual ~IResourcePackRepository();
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_1() = 0;
+    /*3*/ virtual void __unk_vfn_2() = 0;
+    /*4*/ virtual void __unk_vfn_3() = 0;
+    /*5*/ virtual void __unk_vfn_4() = 0;
+    /*6*/ virtual void __unk_vfn_5() = 0;
+    /*7*/ virtual void __unk_vfn_6() = 0;
+    /*8*/ virtual void __unk_vfn_7() = 0;
+    /*9*/ virtual void __unk_vfn_8() = 0;
+    /*10*/ virtual void __unk_vfn_9() = 0;
+    /*11*/ virtual void __unk_vfn_10() = 0;
+    /*12*/ virtual void __unk_vfn_11() = 0;
+    /*13*/ virtual void __unk_vfn_12() = 0;
+    /*14*/ virtual void __unk_vfn_13() = 0;
+    /*15*/ virtual void __unk_vfn_14() = 0;
+    /*16*/ virtual void __unk_vfn_15() = 0;
+    /*17*/ virtual void __unk_vfn_16() = 0;
+    /*18*/ virtual void __unk_vfn_17() = 0;
+    /*19*/ virtual void __unk_vfn_18() = 0;
+    /*20*/ virtual void __unk_vfn_19() = 0;
+    /*21*/ virtual void __unk_vfn_20() = 0;
+    /*22*/ virtual void __unk_vfn_21() = 0;
+    /*23*/ virtual void __unk_vfn_22() = 0;
+    /*24*/ virtual void __unk_vfn_23() = 0;
+    /*25*/ virtual void __unk_vfn_24() = 0;
+    /*26*/ virtual void __unk_vfn_25() = 0;
+    /*27*/ virtual void __unk_vfn_26() = 0;
+    /*28*/ virtual void __unk_vfn_27() = 0;
+    /*29*/ virtual void __unk_vfn_28() = 0;
+    /*30*/ virtual void __unk_vfn_29() = 0;
+    /*31*/ virtual void __unk_vfn_30() = 0;
+    /*32*/ virtual void __unk_vfn_31() = 0;
+    /*33*/ virtual void __unk_vfn_32() = 0;
+    /*34*/ virtual void __unk_vfn_33() = 0;
+    /*35*/ virtual void __unk_vfn_34() = 0;
+    /*36*/ virtual void __unk_vfn_35() = 0;
+    /*37*/ virtual void __unk_vfn_36() = 0;
+    /*38*/ virtual void __unk_vfn_37() = 0;
+    /*39*/ virtual void __unk_vfn_38() = 0;
+    /*40*/ virtual void __unk_vfn_39() = 0;
+    /*41*/ virtual void __unk_vfn_40() = 0;
+    /*42*/ virtual void __unk_vfn_41() = 0;
+    /*43*/ virtual void __unk_vfn_42() = 0;
+    /*44*/ virtual void __unk_vfn_43() = 0;
+    /*45*/ virtual void __unk_vfn_44() = 0;
+    /*46*/ virtual void __unk_vfn_45() = 0;
+    /*47*/ virtual void __unk_vfn_46() = 0;
+    /*48*/ virtual void __unk_vfn_47() = 0;
+    /*49*/ virtual void __unk_vfn_48() = 0;
     /*
     inline  ~IResourcePackRepository(){
          (IResourcePackRepository::*rv)();

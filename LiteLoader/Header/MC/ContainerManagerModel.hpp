@@ -29,17 +29,17 @@ public:
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual void serverInitItemStackIds();
-    /*6*/ virtual std::vector<class ItemStack> getItemCopies() const = 0;
-    /*7*/ virtual void setSlot(int, class ItemStack const&, bool) = 0;
-    /*8*/ virtual class ItemStack const& getSlot(int) const = 0;
-    /*9*/ virtual void setData(int, int) = 0;
-    /*10*/ virtual void broadcastChanges() = 0;
+    /*6*/ virtual void __unk_vfn_0() = 0;
+    /*7*/ virtual void __unk_vfn_1() = 0;
+    /*8*/ virtual void __unk_vfn_2() = 0;
+    /*9*/ virtual void __unk_vfn_3() = 0;
+    /*10*/ virtual void __unk_vfn_4() = 0;
     /*11*/ virtual void debitPlayerLevels(int);
     /*12*/ virtual bool isCreativeMode() const;
     /*13*/ virtual bool isClientSide() const;
     /*14*/ virtual bool isServerAuthoritative() const;
     /*15*/ virtual bool isValid(float);
-    /*16*/ virtual class ContainerScreenContext _postInit() = 0;
+    /*16*/ virtual void __unk_vfn_5() = 0;
     /*
     inline  ~ContainerManagerModel(){
          (ContainerManagerModel::*rv)();

@@ -24,6 +24,12 @@ public:
 
 public:
     /*0*/ virtual ~IMinecraftApp();
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_1() = 0;
+    /*3*/ virtual void __unk_vfn_2() = 0;
+    /*4*/ virtual void __unk_vfn_3() = 0;
+    /*5*/ virtual void __unk_vfn_4() = 0;
+    /*6*/ virtual void __unk_vfn_5() = 0;
     /*
     inline  ~IMinecraftApp(){
          (IMinecraftApp::*rv)();

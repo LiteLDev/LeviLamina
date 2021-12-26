@@ -33,6 +33,13 @@ public:
     /*5*/ virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
+    /*8*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_5();
+    /*10*/ virtual void __unk_vfn_6();
+    /*11*/ virtual void __unk_vfn_7();
+    /*12*/ virtual void __unk_vfn_8();
+    /*13*/ virtual void __unk_vfn_9();
+    /*14*/ virtual void __unk_vfn_10();
     /*
     inline bool isIPv4Supported() const{
         bool (LocalConnector::*rv)() const;

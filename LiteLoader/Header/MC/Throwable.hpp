@@ -108,6 +108,7 @@ public:
     /*80*/ virtual float getThrowUpAngleOffset();
     /*81*/ virtual float getGravity();
     /*82*/ virtual enum ParticleType getParticleType();
+    /*83*/ virtual void __unk_vfn_23();
     /*
     inline bool stopUponGroundCollision() const{
         bool (Throwable::*rv)() const;

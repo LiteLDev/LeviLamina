@@ -30,6 +30,15 @@ public:
     /*4*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void onAppResumed();
+    /*7*/ virtual void __unk_vfn_5();
+    /*8*/ virtual void __unk_vfn_6();
+    /*9*/ virtual void __unk_vfn_7();
+    /*10*/ virtual void __unk_vfn_8();
+    /*11*/ virtual void __unk_vfn_9();
+    /*12*/ virtual void __unk_vfn_10();
+    /*13*/ virtual void __unk_vfn_11();
+    /*14*/ virtual void __unk_vfn_12();
+    /*15*/ virtual void __unk_vfn_13();
 
 protected:
 

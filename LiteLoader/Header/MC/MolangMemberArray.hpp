@@ -35,7 +35,7 @@ public:
     MCAPI MolangMemberArray(enum MolangStruct_XYZ, class Vec3 const&);
     MCAPI struct MolangScriptArg const* get(class HashedString const&) const;
     MCAPI struct MolangScriptArg& getOrAdd(class HashedString const&);
-    MCAPI bool operator==(struct MolangMemberArray const&);
+    MCAPI bool operator==(struct MolangMemberArray const&) const;
     MCAPI ~MolangMemberArray();
 
 protected:

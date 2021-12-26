@@ -32,10 +32,17 @@ public:
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void setData(int, int);
-    /*9*/ virtual void broadcastChanges();
+    /*8*/ virtual void __unk_vfn_0();
+    /*9*/ virtual void __unk_vfn_1();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
+    /*
+    inline void broadcastChanges(){
+        void (Trade2ContainerManagerModel::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@Trade2ContainerManagerModel@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI Trade2ContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
 
 protected:

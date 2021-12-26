@@ -29,6 +29,7 @@ public:
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void __unk_vfn_3();
     /*
     inline bool isNetworkComponent() const{
         bool (ItemComponent::*rv)() const;

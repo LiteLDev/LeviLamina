@@ -30,6 +30,9 @@ public:
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void appendDebugInfo(std::string&) const;
+    /*7*/ virtual void __unk_vfn_2();
+    /*8*/ virtual void __unk_vfn_3();
+    /*9*/ virtual void __unk_vfn_4();
     /*
     inline bool canBeInterrupted(){
         bool (TargetWhenPushedGoal::*rv)();

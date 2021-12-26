@@ -24,11 +24,18 @@ public:
 
 public:
     /*0*/ virtual ~ResourcePackClientResponsePacket();
-    /*1*/ virtual enum MinecraftPacketIds getId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*
+    inline enum MinecraftPacketIds getId() const{
+        enum MinecraftPacketIds (ResourcePackClientResponsePacket::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@ResourcePackClientResponsePacket@@UEBA?AW4MinecraftPacketIds@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ResourcePackClientResponsePacket();
     MCAPI class std::set<std::string, struct std::less<std::string >, class std::allocator<std::string > > const& getDownloadingPacks() const;
     MCAPI bool isResponse(enum ResourcePackResponse) const;

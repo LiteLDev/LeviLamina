@@ -29,6 +29,16 @@ public:
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
     /*4*/ virtual int getMaxLevel() const;
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
+    /*7*/ virtual void __unk_vfn_2();
+    /*8*/ virtual void __unk_vfn_3();
+    /*9*/ virtual void __unk_vfn_4();
+    /*10*/ virtual void __unk_vfn_5();
+    /*11*/ virtual void __unk_vfn_6();
+    /*12*/ virtual void __unk_vfn_7();
+    /*13*/ virtual void __unk_vfn_8();
+    /*14*/ virtual void __unk_vfn_9();
 
 protected:
 

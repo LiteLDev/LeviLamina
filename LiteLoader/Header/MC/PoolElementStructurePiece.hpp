@@ -33,10 +33,10 @@ public:
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*7*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*8*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*9*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const = 0;
-    /*10*/ virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
-    /*11*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
-    /*12*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
+    /*9*/ virtual void __unk_vfn_0() = 0;
+    /*10*/ virtual void __unk_vfn_1() = 0;
+    /*11*/ virtual void __unk_vfn_2() = 0;
+    /*12*/ virtual void __unk_vfn_3() = 0;
     /*13*/ virtual bool _needsPostProcessing(class BlockSource&);
     /*
     inline  ~PoolElementStructurePiece(){

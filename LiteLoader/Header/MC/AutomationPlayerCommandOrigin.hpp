@@ -26,9 +26,9 @@ public:
 
 public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual class Level* getLevel() const;
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*5*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*6*/ virtual bool hasChatPerms() const;
@@ -37,12 +37,24 @@ public:
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*12*/ virtual enum CommandOriginType getOriginType() const;
+    /*12*/ virtual void __unk_vfn_2();
     /*13*/ virtual struct CommandOriginData toCommandOriginData() const;
     /*14*/ virtual class mce::UUID const& getUUID() const;
     /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*16*/ virtual class CompoundTag serialize() const;
     /*17*/ virtual bool isValid() const;
+    /*
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (AutomationPlayerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@AutomationPlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const& getRequestId() const{
+        std::string const& (AutomationPlayerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getRequestId@AutomationPlayerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AutomationPlayerCommandOrigin(std::string const&, class Player&);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level&, std::string const&, enum CommandPermissionLevel, class NetworkIdentifier const&);
 

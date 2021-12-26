@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ExploreOutskirtsDefinition();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     MCAPI ExploreOutskirtsDefinition();
     MCAPI void initialize(class EntityContext&, class ExploreOutskirtsGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class ExploreOutskirtsDefinition> >&);

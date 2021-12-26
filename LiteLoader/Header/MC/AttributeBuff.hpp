@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~AttributeBuff();
-    /*1*/ virtual bool isInstantaneous() const = 0;
-    /*2*/ virtual bool isSerializable() const = 0;
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_1() = 0;
     /*3*/ virtual void setDurationAmplifier(class std::shared_ptr<class Amplifier>);
     /*
     inline  ~AttributeBuff(){

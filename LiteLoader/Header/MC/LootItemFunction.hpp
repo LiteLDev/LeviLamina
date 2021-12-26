@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~LootItemFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&) = 0;
-    /*2*/ virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
-    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&) = 0;
-    /*4*/ virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    /*1*/ virtual int apply(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);
+    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*3*/ virtual int apply(class ItemStack&, class Random&, struct Trade const&, class LootTableContext&);
+    /*4*/ virtual void __unk_vfn_1() = 0;
     /*
     inline  ~LootItemFunction(){
          (LootItemFunction::*rv)();

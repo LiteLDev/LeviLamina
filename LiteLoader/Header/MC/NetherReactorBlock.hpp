@@ -138,6 +138,24 @@ public:
     /*111*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*112*/ virtual void __unk_vfn_32();
     /*113*/ virtual void __unk_vfn_33();
+    /*114*/ virtual void __unk_vfn_34();
+    /*115*/ virtual void __unk_vfn_35();
+    /*116*/ virtual void __unk_vfn_36();
+    /*117*/ virtual void __unk_vfn_37();
+    /*118*/ virtual void __unk_vfn_38();
+    /*119*/ virtual void __unk_vfn_39();
+    /*120*/ virtual void __unk_vfn_40();
+    /*121*/ virtual void __unk_vfn_41();
+    /*122*/ virtual void __unk_vfn_42();
+    /*123*/ virtual void __unk_vfn_43();
+    /*124*/ virtual void __unk_vfn_44();
+    /*125*/ virtual void __unk_vfn_45();
+    /*126*/ virtual void __unk_vfn_46();
+    /*127*/ virtual void __unk_vfn_47();
+    /*128*/ virtual void __unk_vfn_48();
+    /*129*/ virtual void __unk_vfn_49();
+    /*130*/ virtual void __unk_vfn_50();
+    /*131*/ virtual void __unk_vfn_51();
     MCAPI NetherReactorBlock(std::string const&, int, class Material const&);
 
 protected:

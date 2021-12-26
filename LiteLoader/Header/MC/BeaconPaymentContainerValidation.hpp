@@ -30,6 +30,7 @@ public:
     /*3*/ virtual int getAvailableSetCount(int, class ItemStackBase const&) const;
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{
         bool (BeaconPaymentContainerValidation::*rv)(class ContainerScreenContext const&) const;

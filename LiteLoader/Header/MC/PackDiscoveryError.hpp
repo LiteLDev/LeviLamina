@@ -25,12 +25,22 @@ public:
 
 public:
     /*0*/ virtual ~PackDiscoveryError();
-    /*1*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const;
-    /*2*/ virtual class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     /*
     inline  ~PackDiscoveryError(){
          (PackDiscoveryError::*rv)();
         *((void**)&rv) = dlsym("??1PackDiscoveryError@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getEventErrorMessageMap() const{
+        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackDiscoveryError::*rv)() const;
+        *((void**)&rv) = dlsym("?getEventErrorMessageMap@PackDiscoveryError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& getLocErrorMessageMap() const{
+        class std::unordered_map<int, std::string, struct std::hash<int>, struct std::equal_to<int>, class std::allocator<struct std::pair<int const, std::string > > > const& (PackDiscoveryError::*rv)() const;
+        *((void**)&rv) = dlsym("?getLocErrorMessageMap@PackDiscoveryError@@EEBAAEBV?$unordered_map@HV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@U?$hash@H@2@U?$equal_to@H@2@V?$allocator@U?$pair@$$CBHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@@2@@std@@XZ");
         return (this->*rv)();
     }
     */

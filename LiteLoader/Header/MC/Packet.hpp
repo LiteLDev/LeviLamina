@@ -59,12 +59,12 @@ public:
 
 public:
     /*0*/ virtual ~Packet();
-    /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
-    /*2*/ virtual std::string getName() const = 0;
-    /*3*/ virtual void write(class BinaryStream&) const = 0;
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_1() = 0;
+    /*3*/ virtual void __unk_vfn_2() = 0;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual bool disallowBatching() const;
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&) = 0;
+    /*6*/ virtual void __unk_vfn_3() = 0;
     /*
     inline  ~Packet(){
          (Packet::*rv)();

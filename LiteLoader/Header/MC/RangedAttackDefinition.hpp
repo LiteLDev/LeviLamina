@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~RangedAttackDefinition();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     MCAPI RangedAttackDefinition();
     MCAPI void initialize(class EntityContext&, class RangedAttackGoal&);
     MCAPI static void buildSchema(std::string const&, class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, class RangedAttackDefinition> >&);

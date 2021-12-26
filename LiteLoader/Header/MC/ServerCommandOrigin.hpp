@@ -26,14 +26,14 @@ public:
 
 public:
     /*0*/ virtual ~ServerCommandOrigin();
-    /*1*/ virtual std::string const& getRequestId() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual class BlockPos getBlockPosition() const;
-    /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual class Level* getLevel() const;
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual class Dimension* getDimension() const;
-    /*7*/ virtual class Actor* getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
@@ -42,15 +42,55 @@ public:
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
     /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
-    /*17*/ virtual enum CommandOriginType getOriginType() const;
+    /*17*/ virtual void __unk_vfn_6();
     /*18*/ virtual class mce::UUID const& getUUID() const;
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual class CompoundTag serialize() const;
-    /*21*/ virtual bool isValid() const;
+    /*21*/ virtual void __unk_vfn_7();
     /*
+    inline class Actor* getEntity() const{
+        class Actor* (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntity@ServerCommandOrigin@@UEBAPEAVActor@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isValid() const{
+        bool (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@ServerCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline std::string const& getRequestId() const{
+        std::string const& (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getRequestId@ServerCommandOrigin@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@ServerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    inline enum CommandPermissionLevel getPermissionsLevel() const{
+        enum CommandPermissionLevel (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getPermissionsLevel@ServerCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class Level* getLevel() const{
+        class Level* (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getLevel@ServerCommandOrigin@@UEBAPEAVLevel@@XZ");
+        return (this->*rv)();
+    }
     inline  ~ServerCommandOrigin(){
          (ServerCommandOrigin::*rv)();
         *((void**)&rv) = dlsym("??1ServerCommandOrigin@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class BlockPos getBlockPosition() const{
+        class BlockPos (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getBlockPosition@ServerCommandOrigin@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class Vec3 getWorldPosition() const{
+        class Vec3 (ServerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getWorldPosition@ServerCommandOrigin@@UEBA?AVVec3@@XZ");
         return (this->*rv)();
     }
     */

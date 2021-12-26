@@ -29,7 +29,7 @@ public:
     /*2*/ virtual void setContainerId(enum ContainerID);
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
-    /*5*/ virtual void setData(int, int);
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual bool isValid(float);
     /*7*/ virtual class ContainerScreenContext _postInit();
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&, enum BlockActorType);

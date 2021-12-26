@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~EatBlockDefinition();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     MCAPI EatBlockDefinition();
     MCAPI void addSuccessChanceExpressionNode(class ExpressionNode const&);
     MCAPI void initialize(class EntityContext&, class EatBlockGoal&);

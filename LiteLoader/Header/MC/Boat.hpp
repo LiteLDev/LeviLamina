@@ -109,6 +109,7 @@ public:
     /*82*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*83*/ virtual void __unk_vfn_20();
     /*84*/ virtual void _onSizeUpdated();
+    /*85*/ virtual void __unk_vfn_21();
     MCAPI Boat(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void computePaddleForcesBasedOnGaze(class Vec3&, float&, float&, float, float);
     MCAPI void destroy(class Actor*);

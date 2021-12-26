@@ -106,6 +106,7 @@ public:
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void doWaterSplashEffect();
     /*79*/ virtual void _onSizeUpdated();
+    /*80*/ virtual void __unk_vfn_21();
     MCAPI ExperienceOrb(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI int getIconIndex() const;
     MCAPI void setValue(int);

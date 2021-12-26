@@ -35,8 +35,8 @@ public:
     MCAPI bool isSuperHot() const;
     MCAPI bool isTopSolid(bool, bool) const;
     MCAPI bool isType(enum MaterialType) const;
-    MCAPI bool operator!=(class Material const&);
-    MCAPI bool operator==(class Material const&);
+    MCAPI bool operator!=(class Material const&) const;
+    MCAPI bool operator==(class Material const&) const;
     MCAPI static void addMaterial(std::unique_ptr<class Material>);
     MCAPI static class Material const& getMaterial(enum MaterialType);
     MCAPI static void initMaterials();

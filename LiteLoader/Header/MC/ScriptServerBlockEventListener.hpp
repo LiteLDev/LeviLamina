@@ -31,6 +31,16 @@ public:
     /*5*/ virtual enum EventResult onBlockDestructionStarted(class Player&, class BlockPos const&);
     /*6*/ virtual enum EventResult onBlockInteractedWith(class Player&, class BlockPos const&);
     /*7*/ virtual enum EventResult onBlockExploded(class BlockPos const&, class Block const&, class Actor*);
+    /*8*/ virtual void __unk_vfn_0();
+    /*9*/ virtual void __unk_vfn_1();
+    /*10*/ virtual void __unk_vfn_2();
+    /*11*/ virtual void __unk_vfn_3();
+    /*12*/ virtual void __unk_vfn_4();
+    /*13*/ virtual void __unk_vfn_5();
+    /*14*/ virtual void __unk_vfn_6();
+    /*15*/ virtual void __unk_vfn_7();
+    /*16*/ virtual void __unk_vfn_8();
+    /*17*/ virtual void __unk_vfn_9();
     MCAPI ScriptServerBlockEventListener(class MinecraftServerScriptEngine&);
 
 protected:

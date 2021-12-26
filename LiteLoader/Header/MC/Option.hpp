@@ -26,10 +26,10 @@ public:
 
 public:
     /*0*/ virtual ~Option();
-    /*1*/ virtual void save(std::vector<struct std::pair<std::string, std::string >>&) = 0;
-    /*2*/ virtual void load(std::string const&) = 0;
-    /*3*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
-    /*4*/ virtual void load(class Json::Value const&);
+    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void load(class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > >&);
+    /*3*/ virtual void load(class Json::Value const&);
+    /*4*/ virtual void __unk_vfn_1() = 0;
     MCAPI Option(enum OptionID, enum OptionOwnerType, enum OptionResetFlags, std::string const&, std::string const&, enum OptionType);
     MCAPI bool getBool() const;
     MCAPI class Bedrock::PubSub::Subscription registerLock(class std::function<void (bool& )>);

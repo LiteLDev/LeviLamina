@@ -28,8 +28,8 @@ public:
 public:
     /*0*/ virtual ~ZipPackAccessStrategy();
     /*1*/ virtual unsigned __int64 getPackSize() const;
-    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
-    /*3*/ virtual std::string const& getPackName() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual bool isWritable() const;
     /*5*/ virtual void setIsTrusted(bool);
     /*6*/ virtual bool isTrusted() const;
@@ -40,13 +40,28 @@ public:
     /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
-    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
+    /*14*/ virtual void __unk_vfn_2();
     /*15*/ virtual class Core::PathBuffer<std::string > const& getSubPath() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*17*/ virtual bool canRecurse() const;
     /*18*/ virtual void unload();
     /*19*/ virtual class ContentIdentity readContentIdentity() const;
     /*
+    inline enum PackAccessStrategyType getStrategyType() const{
+        enum PackAccessStrategyType (ZipPackAccessStrategy::*rv)() const;
+        *((void**)&rv) = dlsym("?getStrategyType@ZipPackAccessStrategy@@UEBA?AW4PackAccessStrategyType@@XZ");
+        return (this->*rv)();
+    }
+    inline class ResourceLocation const& getPackLocation() const{
+        class ResourceLocation const& (ZipPackAccessStrategy::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackLocation@ZipPackAccessStrategy@@UEBAAEBVResourceLocation@@XZ");
+        return (this->*rv)();
+    }
+    inline std::string const& getPackName() const{
+        std::string const& (ZipPackAccessStrategy::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackName@ZipPackAccessStrategy@@UEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
+        return (this->*rv)();
+    }
     inline  ~ZipPackAccessStrategy(){
          (ZipPackAccessStrategy::*rv)();
         *((void**)&rv) = dlsym("??1ZipPackAccessStrategy@@UEAA@XZ");

@@ -25,9 +25,9 @@ public:
     MCAPI PackIdVersion(class mce::UUID const&, class SemVersion const&, enum PackType);
     MCAPI PackIdVersion();
     MCAPI std::string asString() const;
-    MCAPI bool operator!=(struct PackIdVersion const&);
-    MCAPI bool operator<(struct PackIdVersion const&);
-    MCAPI bool operator==(struct PackIdVersion const&);
+    MCAPI bool operator!=(struct PackIdVersion const&) const;
+    MCAPI bool operator<(struct PackIdVersion const&) const;
+    MCAPI bool operator==(struct PackIdVersion const&) const;
     MCAPI bool satisfies(struct PackIdVersion const&) const;
     MCAPI ~PackIdVersion();
 

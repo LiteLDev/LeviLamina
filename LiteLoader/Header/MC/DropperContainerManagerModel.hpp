@@ -29,8 +29,26 @@ public:
     /*2*/ virtual void setContainerId(enum ContainerID);
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
-    /*5*/ virtual void setData(int, int);
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual class ContainerScreenContext _postInit();
+    /*7*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_2();
+    /*9*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void __unk_vfn_4();
+    /*11*/ virtual void __unk_vfn_5();
+    /*12*/ virtual void __unk_vfn_6();
+    /*13*/ virtual void __unk_vfn_7();
+    /*14*/ virtual void __unk_vfn_8();
+    /*15*/ virtual void __unk_vfn_9();
+    /*16*/ virtual void __unk_vfn_10();
+    /*17*/ virtual void __unk_vfn_11();
+    /*18*/ virtual void __unk_vfn_12();
+    /*19*/ virtual void __unk_vfn_13();
+    /*20*/ virtual void __unk_vfn_14();
+    /*21*/ virtual void __unk_vfn_15();
+    /*22*/ virtual void __unk_vfn_16();
+    /*23*/ virtual void __unk_vfn_17();
+    /*24*/ virtual void __unk_vfn_18();
     MCAPI DropperContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
 
 protected:

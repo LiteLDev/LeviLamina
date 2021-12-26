@@ -26,22 +26,47 @@ public:
 public:
     /*0*/ virtual ~CraftingContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual class ItemStack const& getItem(int) const;
     /*4*/ virtual void setItem(int, class ItemStack const&);
-    /*5*/ virtual int getContainerSize() const;
-    /*6*/ virtual int getMaxStackSize() const;
-    /*7*/ virtual void startOpen(class Player&);
-    /*8*/ virtual void stopOpen(class Player&);
-    /*9*/ virtual void __unk_vfn_0();
-    /*10*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_2();
+    /*7*/ virtual void __unk_vfn_3();
+    /*8*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_5();
+    /*10*/ virtual void __unk_vfn_6();
     /*11*/ virtual void setContainerChanged(int);
-    /*12*/ virtual void __unk_vfn_2();
+    /*12*/ virtual void __unk_vfn_7();
     /*
+    inline void startOpen(class Player& a0){
+        void (CraftingContainer::*rv)(class Player&);
+        *((void**)&rv) = dlsym("?startOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player&>(a0));
+    }
+    inline void stopOpen(class Player& a0){
+        void (CraftingContainer::*rv)(class Player&);
+        *((void**)&rv) = dlsym("?stopOpen@CraftingContainer@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player&>(a0));
+    }
+    inline int getMaxStackSize() const{
+        int (CraftingContainer::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxStackSize@CraftingContainer@@UEBAHXZ");
+        return (this->*rv)();
+    }
     inline  ~CraftingContainer(){
          (CraftingContainer::*rv)();
         *((void**)&rv) = dlsym("??1CraftingContainer@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline int getContainerSize() const{
+        int (CraftingContainer::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerSize@CraftingContainer@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline void serverInitItemStackIds(int a0, int a1, class std::function<void (int, class ItemStack const& )> a2){
+        void (CraftingContainer::*rv)(int, int, class std::function<void (int, class ItemStack const& )>);
+        *((void**)&rv) = dlsym("?serverInitItemStackIds@CraftingContainer@@UEAAXHHV?$function@$$A6AXHAEBVItemStack@@@Z@std@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<class std::function<void (int, class ItemStack const& )>>(a2));
     }
     */
     MCAPI CraftingContainer(int, int);

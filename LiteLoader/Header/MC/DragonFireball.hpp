@@ -103,6 +103,7 @@ public:
     /*75*/ virtual void __unk_vfn_21();
     /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual enum ParticleType getTrailParticle();
+    /*78*/ virtual void __unk_vfn_23();
     /*
     inline bool shouldBurn(){
         bool (DragonFireball::*rv)();

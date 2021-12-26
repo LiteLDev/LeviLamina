@@ -24,7 +24,7 @@ public:
 public:
     MCAPI KeyFrameTransformData(class KeyFrameTransformData const&);
     MCAPI void addChannelTransform(class ExpressionNode const&, int);
-    MCAPI bool operator==(class KeyFrameTransformData const&);
+    MCAPI bool operator==(class KeyFrameTransformData const&) const;
 
 protected:
 

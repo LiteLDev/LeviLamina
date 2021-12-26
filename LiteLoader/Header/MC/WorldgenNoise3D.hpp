@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~WorldgenNoise3D();
+    /*1*/ virtual void __unk_vfn_0() = 0;
     /*
     inline  ~WorldgenNoise3D(){
          (WorldgenNoise3D::*rv)();

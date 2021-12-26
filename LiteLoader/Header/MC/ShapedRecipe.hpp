@@ -25,22 +25,37 @@ public:
 
 public:
     /*0*/ virtual ~ShapedRecipe();
-    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual int getCraftingSize() const;
-    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
-    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*5*/ virtual bool isShapeless() const;
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*7*/ virtual int size() const;
     /*8*/ virtual class mce::UUID const& getId() const;
     /*9*/ virtual class ItemPack const& getItemPack() const;
-    /*10*/ virtual bool isMultiRecipe() const;
+    /*10*/ virtual bool isShapeless() const;
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
+    inline std::vector<class ItemInstance> const& getResultItem() const{
+        std::vector<class ItemInstance> const& (ShapedRecipe::*rv)() const;
+        *((void**)&rv) = dlsym("?getResultItem@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline std::vector<class ItemInstance> const& assemble(class CraftingContainer& a0) const{
+        std::vector<class ItemInstance> const& (ShapedRecipe::*rv)(class CraftingContainer&) const;
+        *((void**)&rv) = dlsym("?assemble@ShapedRecipe@@UEBAAEBV?$vector@VItemInstance@@V?$allocator@VItemInstance@@@std@@@std@@AEAVCraftingContainer@@@Z");
+        return (this->*rv)(std::forward<class CraftingContainer&>(a0));
+    }
     inline  ~ShapedRecipe(){
          (ShapedRecipe::*rv)();
         *((void**)&rv) = dlsym("??1ShapedRecipe@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline class RecipeIngredient const& getIngredient(int a0, int a1) const{
+        class RecipeIngredient const& (ShapedRecipe::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?getIngredient@ShapedRecipe@@UEBAAEBVRecipeIngredient@@HH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
     */
     MCAPI ShapedRecipe(class gsl::basic_string_span<char const, -1>, int, int, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);

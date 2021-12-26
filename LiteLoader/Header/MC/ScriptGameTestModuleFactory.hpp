@@ -24,6 +24,11 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void __unk_vfn_4();
     MCAPI static std::string getModuleUUIDAsString();
 
 protected:

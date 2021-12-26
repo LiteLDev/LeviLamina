@@ -45,6 +45,16 @@ public:
     /*19*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_19();
     /*21*/ virtual enum EventResult onActorEquippedArmor(class Actor&, class ItemInstance const&, enum ArmorSlot);
+    /*22*/ virtual void __unk_vfn_20();
+    /*23*/ virtual void __unk_vfn_21();
+    /*24*/ virtual void __unk_vfn_22();
+    /*25*/ virtual void __unk_vfn_23();
+    /*26*/ virtual void __unk_vfn_24();
+    /*27*/ virtual void __unk_vfn_25();
+    /*28*/ virtual void __unk_vfn_26();
+    /*29*/ virtual void __unk_vfn_27();
+    /*30*/ virtual void __unk_vfn_28();
+    /*31*/ virtual void __unk_vfn_29();
     /*
     inline  ~NetheriteArmorEquippedListener(){
          (NetheriteArmorEquippedListener::*rv)();

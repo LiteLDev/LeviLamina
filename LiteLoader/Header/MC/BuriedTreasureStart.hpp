@@ -26,7 +26,14 @@ public:
 public:
     /*0*/ virtual ~BuriedTreasureStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual enum StructureFeatureType getType() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (BuriedTreasureStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@BuriedTreasureStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

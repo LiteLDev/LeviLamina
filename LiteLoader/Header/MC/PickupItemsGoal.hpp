@@ -31,6 +31,8 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
     MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
 
 protected:

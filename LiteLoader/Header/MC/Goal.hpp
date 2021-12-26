@@ -31,6 +31,7 @@ public:
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void __unk_vfn_4();
     /*8*/ virtual bool isTargetGoal() const;
+    /*9*/ virtual void __unk_vfn_5();
     /*
     inline void tick(){
         void (Goal::*rv)();

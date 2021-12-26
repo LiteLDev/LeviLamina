@@ -23,6 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~StructurePoolBlockPredicateAlwaysTrue();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     /*
     inline bool test(class BlockPos const& a0, class BlockPos const& a1, class Randomize& a2) const{
         bool (StructurePoolBlockPredicateAlwaysTrue::*rv)(class BlockPos const&, class BlockPos const&, class Randomize&) const;

@@ -35,6 +35,14 @@ public:
     /*9*/ virtual void __unk_vfn_4();
     /*10*/ virtual void __unk_vfn_5();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
+    /*12*/ virtual void __unk_vfn_6();
+    /*13*/ virtual void __unk_vfn_7();
+    /*14*/ virtual void __unk_vfn_8();
+    /*15*/ virtual void __unk_vfn_9();
+    /*16*/ virtual void __unk_vfn_10();
+    /*17*/ virtual void __unk_vfn_11();
+    /*18*/ virtual void __unk_vfn_12();
+    /*19*/ virtual void __unk_vfn_13();
 
 protected:
 

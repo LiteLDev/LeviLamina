@@ -36,28 +36,28 @@ public:
 public:
     /*0*/ virtual ~Container();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>) = 0;
+    /*2*/ virtual void __unk_vfn_0() = 0;
     /*3*/ virtual void addContentChangeListener(class ContainerContentChangeListener*);
     /*4*/ virtual void removeContentChangeListener(class ContainerContentChangeListener*);
-    /*5*/ virtual class ItemStack const& getItem(int) const = 0;
+    /*5*/ virtual void __unk_vfn_1() = 0;
     /*6*/ virtual bool hasRoomForItem(class ItemStack const&);
     /*7*/ virtual void addItem(class ItemStack&);
     /*8*/ virtual bool addItemToFirstEmptySlot(class ItemStack const&);
-    /*9*/ virtual void setItem(int, class ItemStack const&) = 0;
+    /*9*/ virtual void __unk_vfn_2() = 0;
     /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
     /*11*/ virtual void removeItem(int, int);
     /*12*/ virtual void removeAllItems();
     /*13*/ virtual void dropContents(class BlockSource&, class Vec3 const&, bool);
-    /*14*/ virtual int getContainerSize() const = 0;
-    /*15*/ virtual int getMaxStackSize() const = 0;
-    /*16*/ virtual void startOpen(class Player&) = 0;
-    /*17*/ virtual void stopOpen(class Player&) = 0;
+    /*14*/ virtual void __unk_vfn_3() = 0;
+    /*15*/ virtual void __unk_vfn_4() = 0;
+    /*16*/ virtual void __unk_vfn_5() = 0;
+    /*17*/ virtual void __unk_vfn_6() = 0;
     /*18*/ virtual std::vector<class ItemStack> getSlotCopies() const;
     /*19*/ virtual std::vector<class ItemStack const* > const getSlots() const;
     /*20*/ virtual int getItemCount(class ItemStack const&) const;
     /*21*/ virtual int findFirstSlotForItem(class ItemStack const&) const;
-    /*22*/ virtual void __unk_vfn_0();
-    /*23*/ virtual void __unk_vfn_1();
+    /*22*/ virtual void __unk_vfn_7();
+    /*23*/ virtual void __unk_vfn_8();
     /*24*/ virtual void setContainerChanged(int);
     /*25*/ virtual void setContainerMoved();
     /*26*/ virtual void setCustomName(std::string const&);
@@ -65,7 +65,7 @@ public:
     /*28*/ virtual void readAdditionalSaveData(class CompoundTag const&);
     /*29*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*30*/ virtual void createTransactionContext(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>, class std::function<void (void)>);
-    /*31*/ virtual void __unk_vfn_2();
+    /*31*/ virtual void __unk_vfn_9();
     /*32*/ virtual bool isEmpty() const;
     /*
     inline void initializeContainerContents(class BlockSource& a0){

@@ -27,6 +27,8 @@ public:
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual enum TaskGroupState getState() const;
+    /*4*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_3();
     /*
     inline void processCoroutines(){
         void (InternalTaskGroup::*rv)();

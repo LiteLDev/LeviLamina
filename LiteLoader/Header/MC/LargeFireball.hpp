@@ -102,6 +102,7 @@ public:
     /*74*/ virtual void __unk_vfn_21();
     /*75*/ virtual void __unk_vfn_22();
     /*76*/ virtual enum ParticleType getTrailParticle();
+    /*77*/ virtual void __unk_vfn_23();
     MCAPI LargeFireball(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
 
 protected:

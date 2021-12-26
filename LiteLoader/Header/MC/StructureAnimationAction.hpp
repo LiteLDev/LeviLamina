@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~StructureAnimationAction();
     /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
     /*2*/ virtual void serialize(class CompoundTag&);
-    /*3*/ virtual bool operator==(class IRequestAction&);
+    /*3*/ virtual bool operator==(class IRequestAction&) const;
     MCAPI StructureAnimationAction(class StructureSettings const&, class AutomaticID<class Dimension, int>, class BlockPos const&, std::string const&);
     MCAPI StructureAnimationAction(std::unique_ptr<class StructureAnimationData>, class AutomaticID<class Dimension, int>);
     MCAPI static std::unique_ptr<class StructureAnimationAction> load(class CompoundTag const&, std::string const&);

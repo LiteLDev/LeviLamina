@@ -25,14 +25,14 @@ public:
 public:
     /*0*/ virtual ~EnderChestContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
-    /*3*/ virtual void setItem(int, class ItemStack const&);
-    /*4*/ virtual int getContainerSize() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void startOpen(class Player&);
     /*6*/ virtual void stopOpen(class Player&);
-    /*7*/ virtual void __unk_vfn_0();
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
+    /*7*/ virtual void __unk_vfn_3();
+    /*8*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_5();
     MCAPI EnderChestContainer();
     MCAPI static int const ITEMS_SIZE;
 

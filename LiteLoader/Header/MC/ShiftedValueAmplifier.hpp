@@ -25,6 +25,8 @@ public:
 public:
     /*0*/ virtual ~ShiftedValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
     MCAPI ShiftedValueAmplifier(int, float);
 
 protected:

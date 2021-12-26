@@ -38,6 +38,11 @@ public:
     /*12*/ virtual void __unk_vfn_11();
     /*13*/ virtual void __unk_vfn_12();
     /*14*/ virtual void Schedule(void (* )(void* ), void*);
+    /*15*/ virtual void __unk_vfn_13();
+    /*16*/ virtual void __unk_vfn_14();
+    /*17*/ virtual void __unk_vfn_15();
+    /*18*/ virtual void __unk_vfn_16();
+    /*19*/ virtual void __unk_vfn_17();
 
 protected:
 

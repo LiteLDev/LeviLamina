@@ -106,7 +106,7 @@ public:
     /*78*/ virtual void __unk_vfn_21();
     /*79*/ virtual void shoot(class Vec3 const&, float, float, class Vec3 const&);
     /*80*/ virtual void _playPickupSound();
-    /*81*/ virtual class ItemStack _getPickupItem() const = 0;
+    /*81*/ virtual void __unk_vfn_22() = 0;
     /*
     inline  ~AbstractArrow(){
          (AbstractArrow::*rv)();

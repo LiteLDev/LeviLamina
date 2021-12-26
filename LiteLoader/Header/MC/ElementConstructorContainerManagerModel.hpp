@@ -30,12 +30,34 @@ public:
     /*3*/ virtual enum ContainerType getContainerType() const;
     /*4*/ virtual void setContainerType(enum ContainerType);
     /*5*/ virtual std::vector<class ItemStack> getItemCopies() const;
-    /*6*/ virtual void setSlot(int, class ItemStack const&, bool);
-    /*7*/ virtual class ItemStack const& getSlot(int) const;
-    /*8*/ virtual void setData(int, int);
-    /*9*/ virtual void broadcastChanges();
+    /*6*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_2();
+    /*9*/ virtual void __unk_vfn_3();
     /*10*/ virtual bool isValid(float);
     /*11*/ virtual class ContainerScreenContext _postInit();
+    /*
+    inline void setSlot(int a0, class ItemStack const& a1, bool a2){
+        void (ElementConstructorContainerManagerModel::*rv)(int, class ItemStack const&, bool);
+        *((void**)&rv) = dlsym("?setSlot@ElementConstructorContainerManagerModel@@UEAAXHAEBVItemStack@@_N@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1), std::forward<bool>(a2));
+    }
+    inline void setData(int a0, int a1){
+        void (ElementConstructorContainerManagerModel::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setData@ElementConstructorContainerManagerModel@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void broadcastChanges(){
+        void (ElementConstructorContainerManagerModel::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@ElementConstructorContainerManagerModel@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class ItemStack const& getSlot(int a0) const{
+        class ItemStack const& (ElementConstructorContainerManagerModel::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getSlot@ElementConstructorContainerManagerModel@@UEBAAEBVItemStack@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    */
     MCAPI ElementConstructorContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
 
 protected:

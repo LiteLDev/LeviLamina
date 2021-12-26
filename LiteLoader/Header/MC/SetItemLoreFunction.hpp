@@ -26,8 +26,20 @@ public:
 
 public:
     /*0*/ virtual ~SetItemLoreFunction();
-    /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*2*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*
+    inline void apply(class ItemInstance& a0, class Random& a1, class LootTableContext& a2){
+        void (SetItemLoreFunction::*rv)(class ItemInstance&, class Random&, class LootTableContext&);
+        *((void**)&rv) = dlsym("?apply@SetItemLoreFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
+    }
+    inline void apply(class ItemStack& a0, class Random& a1, class LootTableContext& a2){
+        void (SetItemLoreFunction::*rv)(class ItemStack&, class Random&, class LootTableContext&);
+        *((void**)&rv) = dlsym("?apply@SetItemLoreFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
+    }
+    */
     MCAPI static std::unique_ptr<class LootItemFunction> deserialize(class Json::Value, std::vector<std::unique_ptr<class LootItemCondition>>&);
 
 protected:

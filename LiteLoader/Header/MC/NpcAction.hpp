@@ -37,8 +37,8 @@ public:
     MCAPI enum NpcActionMode getMode() const;
     MCAPI std::string const& getText() const;
     MCAPI enum NpcActionType getType() const;
-    MCAPI bool operator!=(class NpcAction const&);
-    MCAPI bool operator==(class NpcAction const&);
+    MCAPI bool operator!=(class NpcAction const&) const;
+    MCAPI bool operator==(class NpcAction const&) const;
     MCAPI void setButtonName(std::string const&);
     MCAPI void setMode(enum NpcActionMode);
     MCAPI void setText(std::string const&);

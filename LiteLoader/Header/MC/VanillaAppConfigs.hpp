@@ -53,6 +53,7 @@ public:
     /*26*/ virtual void __unk_vfn_24();
     /*27*/ virtual void __unk_vfn_25();
     /*28*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
+    /*29*/ virtual void __unk_vfn_26();
 
 protected:
 

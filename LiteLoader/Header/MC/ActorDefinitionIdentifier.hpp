@@ -44,7 +44,7 @@ public:
     MCAPI bool isEmpty() const;
     MCAPI bool isVanilla() const;
     MCAPI struct ActorDefinitionIdentifier& operator=(struct ActorDefinitionIdentifier const&);
-    MCAPI bool operator==(struct ActorDefinitionIdentifier const&);
+    MCAPI bool operator==(struct ActorDefinitionIdentifier const&) const;
     MCAPI void setIdentifier(std::string const&);
     MCAPI void setInitEvent(std::string const&);
     MCAPI ~ActorDefinitionIdentifier();

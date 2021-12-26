@@ -43,10 +43,10 @@ public:
     MCAPI class MobEffectInstance getSplashEffect() const;
     MCAPI bool isAmbient() const;
     MCAPI bool isEffectVisible() const;
-    MCAPI bool operator!=(class MobEffectInstance const&);
+    MCAPI bool operator!=(class MobEffectInstance const&) const;
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance const&);
     MCAPI class MobEffectInstance& operator=(class MobEffectInstance&&);
-    MCAPI bool operator==(class MobEffectInstance const&);
+    MCAPI bool operator==(class MobEffectInstance const&) const;
     MCAPI void removeEffects(class Actor*) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI void setDifficulityDuration(enum Difficulty, int);

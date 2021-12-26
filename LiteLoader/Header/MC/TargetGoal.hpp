@@ -24,15 +24,15 @@ public:
 
 public:
     /*0*/ virtual ~TargetGoal();
-    /*1*/ virtual bool canUse() = 0;
+    /*1*/ virtual void __unk_vfn_0() = 0;
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual bool isTargetGoal() const;
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
     /*
     inline  ~TargetGoal(){

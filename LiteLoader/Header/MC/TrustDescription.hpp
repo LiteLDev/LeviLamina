@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,8 +25,13 @@ public:
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~TrustDescription();
-    /*2*/ virtual void serializeData(class Json::Value&) const;
+    /*2*/ virtual void __unk_vfn_0();
     /*
+    inline void serializeData(class Json::Value& a0) const{
+        void (TrustDescription::*rv)(class Json::Value&) const;
+        *((void**)&rv) = dlsym("?serializeData@TrustDescription@@UEBAXAEAVValue@Json@@@Z");
+        return (this->*rv)(std::forward<class Json::Value&>(a0));
+    }
     inline  ~TrustDescription(){
          (TrustDescription::*rv)();
         *((void**)&rv) = dlsym("??1TrustDescription@@UEAA@XZ");

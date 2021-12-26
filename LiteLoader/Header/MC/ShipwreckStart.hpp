@@ -26,7 +26,14 @@ public:
 public:
     /*0*/ virtual ~ShipwreckStart();
     /*1*/ virtual bool isValid() const;
-    /*2*/ virtual enum StructureFeatureType getType() const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (ShipwreckStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@ShipwreckStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
 
 protected:

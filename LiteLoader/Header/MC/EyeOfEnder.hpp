@@ -99,6 +99,7 @@ public:
     /*72*/ virtual void __unk_vfn_19();
     /*73*/ virtual void __unk_vfn_20();
     /*74*/ virtual void _onSizeUpdated();
+    /*75*/ virtual void __unk_vfn_21();
     MCAPI EyeOfEnder(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void signalTo(class Player const&, class BlockPos&);
 

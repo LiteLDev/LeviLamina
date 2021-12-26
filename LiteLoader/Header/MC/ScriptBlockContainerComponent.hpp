@@ -35,6 +35,8 @@ public:
     /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, bool&) const;
     /*10*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*11*/ virtual void __unk_vfn_6();
+    /*12*/ virtual void __unk_vfn_7();
 
 protected:
 

@@ -106,6 +106,7 @@ public:
     /*78*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*79*/ virtual void __unk_vfn_20();
     /*80*/ virtual void _onSizeUpdated();
+    /*81*/ virtual void __unk_vfn_21();
     /*
     inline float getDeletionDelayTimeSeconds() const{
         float (FallingBlock::*rv)() const;

@@ -31,13 +31,35 @@ public:
 public:
     /*0*/ virtual ~EndTag();
     /*1*/ virtual void deleteChildren();
-    /*2*/ virtual void write(class IDataOutput&) const;
-    /*3*/ virtual void load(class IDataInput&);
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual std::string toString() const;
-    /*5*/ virtual enum Tag::Type getId() const;
+    /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual bool equals(class Tag const&) const;
     /*7*/ virtual std::unique_ptr<class Tag> copy() const;
-    /*8*/ virtual unsigned __int64 hash() const;
+    /*8*/ virtual void __unk_vfn_3();
+    /*
+    inline enum Tag::Type getId() const{
+        enum Tag::Type (EndTag::*rv)() const;
+        *((void**)&rv) = dlsym("?getId@EndTag@@UEBA?AW4Type@Tag@@XZ");
+        return (this->*rv)();
+    }
+    inline unsigned __int64 hash() const{
+        unsigned __int64 (EndTag::*rv)() const;
+        *((void**)&rv) = dlsym("?hash@EndTag@@UEBA_KXZ");
+        return (this->*rv)();
+    }
+    inline void load(class IDataInput& a0){
+        void (EndTag::*rv)(class IDataInput&);
+        *((void**)&rv) = dlsym("?load@EndTag@@UEAAXAEAVIDataInput@@@Z");
+        return (this->*rv)(std::forward<class IDataInput&>(a0));
+    }
+    inline void write(class IDataOutput& a0) const{
+        void (EndTag::*rv)(class IDataOutput&) const;
+        *((void**)&rv) = dlsym("?write@EndTag@@UEBAXAEAVIDataOutput@@@Z");
+        return (this->*rv)(std::forward<class IDataOutput&>(a0));
+    }
+    */
 
 protected:
 

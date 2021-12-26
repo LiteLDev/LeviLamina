@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~UpdateEquipPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
-    /*2*/ virtual std::string getName() const;
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual bool disallowBatching() const;
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
@@ -33,6 +33,11 @@ public:
     inline  ~UpdateEquipPacket(){
          (UpdateEquipPacket::*rv)();
         *((void**)&rv) = dlsym("??1UpdateEquipPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline std::string getName() const{
+        std::string (UpdateEquipPacket::*rv)() const;
+        *((void**)&rv) = dlsym("?getName@UpdateEquipPacket@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
         return (this->*rv)();
     }
     */

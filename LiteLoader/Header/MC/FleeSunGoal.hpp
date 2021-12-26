@@ -29,6 +29,8 @@ public:
     /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual void appendDebugInfo(std::string&) const;
+    /*5*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_3();
     MCAPI FleeSunGoal(class Mob&, float);
 
 protected:
