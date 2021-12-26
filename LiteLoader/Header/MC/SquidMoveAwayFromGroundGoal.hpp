@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void __unk_vfn_4();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
     /*
     inline void stop(){
         void (SquidMoveAwayFromGroundGoal::*rv)();

@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
     MCAPI LeapAtTargetGoal(class Mob&, float, bool, bool);
 
 protected:

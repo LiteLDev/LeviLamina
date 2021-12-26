@@ -24,7 +24,6 @@ public:
 public:
     /*0*/ virtual ~WeightedRandomFeature();
     /*1*/ virtual class std::optional<class BlockPos> place(class IBlockWorldGenAPI&, class BlockPos const&, class Random&, class RenderParams&) const;
-    /*2*/ virtual void __unk_vfn_0();
     MCAPI WeightedRandomFeature();
 
 protected:

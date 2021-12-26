@@ -143,24 +143,6 @@ public:
     /*116*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
     /*117*/ virtual void __unk_vfn_32();
     /*118*/ virtual void __unk_vfn_33();
-    /*119*/ virtual void __unk_vfn_34();
-    /*120*/ virtual void __unk_vfn_35();
-    /*121*/ virtual void __unk_vfn_36();
-    /*122*/ virtual void __unk_vfn_37();
-    /*123*/ virtual void __unk_vfn_38();
-    /*124*/ virtual void __unk_vfn_39();
-    /*125*/ virtual void __unk_vfn_40();
-    /*126*/ virtual void __unk_vfn_41();
-    /*127*/ virtual void __unk_vfn_42();
-    /*128*/ virtual void __unk_vfn_43();
-    /*129*/ virtual void __unk_vfn_44();
-    /*130*/ virtual void __unk_vfn_45();
-    /*131*/ virtual void __unk_vfn_46();
-    /*132*/ virtual void __unk_vfn_47();
-    /*133*/ virtual void __unk_vfn_48();
-    /*134*/ virtual void __unk_vfn_49();
-    /*135*/ virtual void __unk_vfn_50();
-    /*136*/ virtual void __unk_vfn_51();
     MCAPI BarrierBlock(std::string const&, int);
 
 protected:

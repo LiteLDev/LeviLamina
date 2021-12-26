@@ -24,10 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~EnchantWithLevelsFunction();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
     /*
     inline int apply(class ItemInstance& a0, class Random& a1, struct Trade const& a2, class LootTableContext& a3){
         int (EnchantWithLevelsFunction::*rv)(class ItemInstance&, class Random&, struct Trade const&, class LootTableContext&);

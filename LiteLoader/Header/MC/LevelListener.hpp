@@ -35,29 +35,6 @@ public:
     /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual void __unk_vfn_6();
     /*10*/ virtual class Particle* addParticle(enum ParticleType, class Vec3 const&, class Vec3 const&, int, class CompoundTag const*, bool);
-    /*11*/ virtual void __unk_vfn_7();
-    /*12*/ virtual void __unk_vfn_8();
-    /*13*/ virtual void __unk_vfn_9();
-    /*14*/ virtual void __unk_vfn_10();
-    /*15*/ virtual void __unk_vfn_11();
-    /*16*/ virtual void __unk_vfn_12();
-    /*17*/ virtual void __unk_vfn_13();
-    /*18*/ virtual void __unk_vfn_14();
-    /*19*/ virtual void __unk_vfn_15();
-    /*20*/ virtual void __unk_vfn_16();
-    /*21*/ virtual void __unk_vfn_17();
-    /*22*/ virtual void __unk_vfn_18();
-    /*23*/ virtual void __unk_vfn_19();
-    /*24*/ virtual void __unk_vfn_20();
-    /*25*/ virtual void __unk_vfn_21();
-    /*26*/ virtual void __unk_vfn_22();
-    /*27*/ virtual void __unk_vfn_23();
-    /*28*/ virtual void __unk_vfn_24();
-    /*29*/ virtual void __unk_vfn_25();
-    /*30*/ virtual void __unk_vfn_26();
-    /*31*/ virtual void __unk_vfn_27();
-    /*32*/ virtual void __unk_vfn_28();
-    /*33*/ virtual void __unk_vfn_29();
     /*
     inline void playMusic(std::string const& a0, class Vec3 const& a1, float a2, float a3){
         void (LevelListener::*rv)(std::string const&, class Vec3 const&, float, float);

@@ -44,12 +44,6 @@ public:
     /*18*/ virtual bool isRemoved();
     /*19*/ virtual void remove();
     /*20*/ virtual void onComponentChanged(unsigned int, float, bool);
-    /*21*/ virtual void __unk_vfn_2();
-    /*22*/ virtual void __unk_vfn_3();
-    /*23*/ virtual void __unk_vfn_4();
-    /*24*/ virtual void __unk_vfn_5();
-    /*25*/ virtual void __unk_vfn_6();
-    /*26*/ virtual void __unk_vfn_7();
     /*
     inline  ~TickingArea(){
          (TickingArea::*rv)();

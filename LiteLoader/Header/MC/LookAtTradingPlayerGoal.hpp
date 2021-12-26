@@ -30,8 +30,6 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void stop();
     /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
     MCAPI LookAtTradingPlayerGoal(class Mob&, float, float, int, int, int, int);
 
 protected:

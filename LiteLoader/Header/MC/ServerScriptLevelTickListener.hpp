@@ -31,12 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_4();
     /*6*/ virtual void __unk_vfn_5();
     /*7*/ virtual enum EventResult onLevelTick();
-    /*8*/ virtual void __unk_vfn_6();
-    /*9*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_8();
-    /*11*/ virtual void __unk_vfn_9();
-    /*12*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_11();
 
 protected:
 

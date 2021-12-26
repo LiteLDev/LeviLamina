@@ -27,8 +27,6 @@ public:
     /*0*/ virtual ~LookAtPlayerGoal();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void stop();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
 
 protected:
 

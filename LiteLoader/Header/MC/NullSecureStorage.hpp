@@ -24,10 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~NullSecureStorage();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
     /*
     inline bool add(std::string const& a0, std::string const& a1){
         bool (NullSecureStorage::*rv)(std::string const&, std::string const&);

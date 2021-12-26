@@ -103,7 +103,6 @@ public:
     /*76*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*77*/ virtual void __unk_vfn_20();
     /*78*/ virtual void _onSizeUpdated();
-    /*79*/ virtual void __unk_vfn_21();
     MCAPI EnderCrystal(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void setBeamTarget(class BlockPos const&);
     MCAPI void setCrystalDamagedCallback(class std::function<void (class EnderCrystal& , class ActorDamageSource const& )>);

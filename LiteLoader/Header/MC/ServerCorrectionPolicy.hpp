@@ -26,30 +26,6 @@ public:
 public:
     /*0*/ virtual ~ServerCorrectionPolicy();
     /*1*/ virtual struct MovementCorrection shouldCorrectMovement(struct IActorMovementProxy&, class PlayerAuthInputPacket const&, unsigned __int64);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_6();
-    /*9*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_8();
-    /*11*/ virtual void __unk_vfn_9();
-    /*12*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_11();
-    /*14*/ virtual void __unk_vfn_12();
-    /*15*/ virtual void __unk_vfn_13();
-    /*16*/ virtual void __unk_vfn_14();
-    /*17*/ virtual void __unk_vfn_15();
-    /*18*/ virtual void __unk_vfn_16();
-    /*19*/ virtual void __unk_vfn_17();
-    /*20*/ virtual void __unk_vfn_18();
-    /*21*/ virtual void __unk_vfn_19();
-    /*22*/ virtual void __unk_vfn_20();
-    /*23*/ virtual void __unk_vfn_21();
-    /*24*/ virtual void __unk_vfn_22();
-    /*25*/ virtual void __unk_vfn_23();
 
 protected:
 

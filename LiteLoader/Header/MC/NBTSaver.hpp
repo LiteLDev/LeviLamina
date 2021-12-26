@@ -44,7 +44,6 @@ public:
     /*19*/ virtual void __unk_vfn_10();
     /*20*/ virtual bool doBeginObject();
     /*21*/ virtual bool doBeginObject(unsigned __int64);
-    /*22*/ virtual void __unk_vfn_11();
     /*
     inline bool doSerialize(unsigned __int64 a0){
         bool (NBTSaver::*rv)(unsigned __int64);

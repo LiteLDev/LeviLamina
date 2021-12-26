@@ -42,12 +42,6 @@ public:
     /*15*/ virtual class Core::PathBuffer<std::string > const getCurrentlyPlayingMusicName();
     /*16*/ virtual void __unk_vfn_14();
     /*17*/ virtual unsigned __int64 registerLoop(std::string const&, class std::function<void (struct LoopingSoundState& )>, float, float);
-    /*18*/ virtual void __unk_vfn_15();
-    /*19*/ virtual void __unk_vfn_16();
-    /*20*/ virtual void __unk_vfn_17();
-    /*21*/ virtual void __unk_vfn_18();
-    /*22*/ virtual void __unk_vfn_19();
-    /*23*/ virtual void __unk_vfn_20();
     /*
     inline bool isPlayingMusic(class Core::Path const& a0) const{
         bool (NullSoundPlayer::*rv)(class Core::Path const&) const;

@@ -32,8 +32,6 @@ public:
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void setSneakDown(bool);
     /*8*/ virtual class Vec3 const& getGazeDirection() const;
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual void __unk_vfn_5();
     /*
     inline void registerInputHandlers(class InputHandler& a0){
         void (ServerMoveInputHandler::*rv)(class InputHandler&);

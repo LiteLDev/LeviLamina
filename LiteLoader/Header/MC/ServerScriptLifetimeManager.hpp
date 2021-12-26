@@ -34,8 +34,6 @@ public:
     /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual enum EventResult onServerThreadStarted(class ServerInstance&);
     /*10*/ virtual enum EventResult onServerThreadStopped(class ServerInstance&);
-    /*11*/ virtual void __unk_vfn_6();
-    /*12*/ virtual void __unk_vfn_7();
     /*
     inline  ~ServerScriptLifetimeManager(){
          (ServerScriptLifetimeManager::*rv)();

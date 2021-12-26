@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~InMemoryWritableFile();
     /*1*/ virtual class leveldb::Status Append(class leveldb::Slice const&);
     /*2*/ virtual class leveldb::Status Close();
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
     /*
     inline class leveldb::Status Sync(){
         class leveldb::Status (InMemoryWritableFile::*rv)();

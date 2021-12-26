@@ -32,9 +32,6 @@ public:
     /*6*/ virtual struct NpcActionsContainer& getActionsContainer();
     /*7*/ virtual struct NpcActionsContainer const& getActionsContainer() const;
     /*8*/ virtual struct ActorUniqueID const& getActorUniqueID();
-    /*9*/ virtual void __unk_vfn_1();
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
     /*
     inline  ~NpcSceneDialogueData(){
          (NpcSceneDialogueData::*rv)();

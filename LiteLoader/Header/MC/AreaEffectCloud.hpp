@@ -101,7 +101,6 @@ public:
     /*74*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*75*/ virtual void __unk_vfn_20();
     /*76*/ virtual void _onSizeUpdated();
-    /*77*/ virtual void __unk_vfn_21();
     MCAPI AreaEffectCloud(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI void addAreaEffect(class MobEffectInstance);
     MCAPI int getDuration() const;

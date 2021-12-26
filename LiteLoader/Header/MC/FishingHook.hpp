@@ -100,7 +100,6 @@ public:
     /*73*/ virtual void __unk_vfn_19();
     /*74*/ virtual void __unk_vfn_20();
     /*75*/ virtual void _onSizeUpdated();
-    /*76*/ virtual void __unk_vfn_21();
     MCAPI FishingHook(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI class Actor* getOwner();
     MCAPI int retrieve();

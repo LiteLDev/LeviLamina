@@ -104,7 +104,6 @@ public:
     /*76*/ virtual void __unk_vfn_20();
     /*77*/ virtual std::string getAuxValuesDescription() const;
     /*78*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
-    /*79*/ virtual void __unk_vfn_21();
     MCAPI EmptyMapItem(std::string const&, short);
     MCAPI static void addPlayerMarker(class ItemStack&);
     MCAPI static void addPlayerMarker(class ItemInstance&);

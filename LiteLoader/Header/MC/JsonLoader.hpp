@@ -48,8 +48,6 @@ public:
     /*23*/ virtual void __unk_vfn_2();
     /*24*/ virtual void __unk_vfn_3();
     /*25*/ virtual bool doBeginObject(unsigned __int64&);
-    /*26*/ virtual void __unk_vfn_4();
-    /*27*/ virtual void __unk_vfn_5();
     /*
     inline bool doEndObject(){
         bool (JsonLoader::*rv)();

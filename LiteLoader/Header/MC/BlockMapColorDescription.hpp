@@ -28,9 +28,6 @@ public:
     /*1*/ virtual std::string const& getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext&) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
     MCAPI static std::string const NameID;
 
 protected:

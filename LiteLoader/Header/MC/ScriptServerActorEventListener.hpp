@@ -46,15 +46,6 @@ public:
     /*20*/ virtual enum EventResult onActorCarriedItemChanged(class Actor&, class ItemInstance const&, class ItemInstance const&, enum HandSlot);
     /*21*/ virtual enum EventResult onActorEquippedArmor(class Actor&, class ItemInstance const&, enum ArmorSlot);
     /*22*/ virtual enum EventResult onActorRemoved(struct ActorRemovedEvent const&);
-    /*23*/ virtual void __unk_vfn_5();
-    /*24*/ virtual void __unk_vfn_6();
-    /*25*/ virtual void __unk_vfn_7();
-    /*26*/ virtual void __unk_vfn_8();
-    /*27*/ virtual void __unk_vfn_9();
-    /*28*/ virtual void __unk_vfn_10();
-    /*29*/ virtual void __unk_vfn_11();
-    /*30*/ virtual void __unk_vfn_12();
-    /*31*/ virtual void __unk_vfn_13();
     MCAPI ScriptServerActorEventListener(class MinecraftServerScriptEngine&);
 
 protected:

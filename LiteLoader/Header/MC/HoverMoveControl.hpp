@@ -25,24 +25,6 @@ public:
 public:
     /*0*/ virtual ~HoverMoveControl();
     /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_6();
-    /*9*/ virtual void __unk_vfn_7();
-    /*10*/ virtual void __unk_vfn_8();
-    /*11*/ virtual void __unk_vfn_9();
-    /*12*/ virtual void __unk_vfn_10();
-    /*13*/ virtual void __unk_vfn_11();
-    /*14*/ virtual void __unk_vfn_12();
-    /*15*/ virtual void __unk_vfn_13();
-    /*16*/ virtual void __unk_vfn_14();
-    /*17*/ virtual void __unk_vfn_15();
-    /*18*/ virtual void __unk_vfn_16();
-    /*19*/ virtual void __unk_vfn_17();
     MCAPI HoverMoveControl();
 
 protected:

@@ -47,7 +47,6 @@ public:
     /*19*/ virtual class Core::PathBuffer<std::string > const getBasePath() const;
     /*20*/ virtual class Core::PathBuffer<std::string > const getPathToLevel(std::string const&) const;
     /*21*/ virtual class Core::PathBuffer<std::string > const getPathToLevelInfo(std::string const&, bool) const;
-    /*22*/ virtual void __unk_vfn_3();
     /*
     inline bool requiresConversion(std::string const& a0){
         bool (ExternalFileLevelStorageSource::*rv)(std::string const&);

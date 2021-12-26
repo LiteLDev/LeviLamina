@@ -26,8 +26,6 @@ public:
     /*0*/ virtual ~ScreenHandlerBase();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
     /*2*/ virtual enum ItemStackNetResult endRequest();
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
     /*
     inline void postRequest(bool a0){
         void (ScreenHandlerBase::*rv)(bool);

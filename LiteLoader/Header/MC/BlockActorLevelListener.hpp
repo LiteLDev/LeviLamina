@@ -48,15 +48,6 @@ public:
     /*22*/ virtual void __unk_vfn_18();
     /*23*/ virtual void __unk_vfn_19();
     /*24*/ virtual void onChunkUnloaded(class LevelChunk&);
-    /*25*/ virtual void __unk_vfn_20();
-    /*26*/ virtual void __unk_vfn_21();
-    /*27*/ virtual void __unk_vfn_22();
-    /*28*/ virtual void __unk_vfn_23();
-    /*29*/ virtual void __unk_vfn_24();
-    /*30*/ virtual void __unk_vfn_25();
-    /*31*/ virtual void __unk_vfn_26();
-    /*32*/ virtual void __unk_vfn_27();
-    /*33*/ virtual void __unk_vfn_28();
     /*
     inline  ~BlockActorLevelListener(){
          (BlockActorLevelListener::*rv)();

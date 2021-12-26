@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_4();
-    /*9*/ virtual void __unk_vfn_5();
     MCAPI RiseToLiquidLevelGoal(class Mob&, float, float, float);
 
 protected:

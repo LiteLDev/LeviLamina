@@ -49,14 +49,6 @@ public:
     /*23*/ virtual void __unk_vfn_20();
     /*24*/ virtual void __unk_vfn_21();
     /*25*/ virtual void onLevelDestruction(std::string const&);
-    /*26*/ virtual void __unk_vfn_22();
-    /*27*/ virtual void __unk_vfn_23();
-    /*28*/ virtual void __unk_vfn_24();
-    /*29*/ virtual void __unk_vfn_25();
-    /*30*/ virtual void __unk_vfn_26();
-    /*31*/ virtual void __unk_vfn_27();
-    /*32*/ virtual void __unk_vfn_28();
-    /*33*/ virtual void __unk_vfn_29();
     MCAPI MinecraftGameTest();
     MCAPI void clearAllTests(class BlockSource&);
     MCAPI class gametest::GameTestRegistry& getRegistry();

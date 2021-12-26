@@ -30,8 +30,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual struct GameplayHandlerResult<class std::optional<std::string > > handleCraftUISetResultName(struct CraftUISetResultNameEvent const&);
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
     /*
     inline struct GameplayHandlerResult<enum CoordinatorResult> handleActorStandOnBlock(struct ActorStandOnBlockEvent const& a0){
         struct GameplayHandlerResult<enum CoordinatorResult> (EmptyBlockGameplayHandler::*rv)(struct ActorStandOnBlockEvent const&);

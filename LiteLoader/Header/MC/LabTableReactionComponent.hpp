@@ -24,9 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~LabTableReactionComponent();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
     /*
     inline void _onStart(class LabTableReaction& a0, class BlockSource& a1){
         void (LabTableReactionComponent::*rv)(class LabTableReaction&, class BlockSource&);

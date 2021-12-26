@@ -25,7 +25,6 @@ public:
 public:
     /*0*/ virtual ~NpcUrlAction();
     /*1*/ virtual class Json::Value toJson();
-    /*2*/ virtual void __unk_vfn_0();
     MCAPI NpcUrlAction();
 
 protected:

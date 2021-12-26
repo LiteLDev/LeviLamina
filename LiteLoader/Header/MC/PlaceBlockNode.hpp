@@ -24,7 +24,6 @@ public:
 public:
     /*0*/ virtual ~PlaceBlockNode();
     /*1*/ virtual enum BehaviorStatus tick(class Actor&);
-    /*2*/ virtual void __unk_vfn_0();
     MCAPI PlaceBlockNode();
 
 protected:

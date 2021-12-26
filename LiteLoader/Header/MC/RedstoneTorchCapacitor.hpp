@@ -40,7 +40,6 @@ public:
     /*14*/ virtual void __unk_vfn_2();
     /*15*/ virtual bool isSecondaryPowered() const;
     /*16*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-    /*17*/ virtual void __unk_vfn_3();
     /*
     inline unsigned char getPoweroutDirection() const{
         unsigned char (RedstoneTorchCapacitor::*rv)() const;

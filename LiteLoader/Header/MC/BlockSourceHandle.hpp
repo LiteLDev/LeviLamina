@@ -31,8 +31,6 @@ public:
     /*4*/ virtual void __unk_vfn_2();
     /*5*/ virtual void __unk_vfn_3();
     /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
 
 protected:
 

@@ -346,7 +346,6 @@ public:
     /*271*/ virtual void updateInsideBlock();
     /*272*/ virtual void _removePassenger(struct ActorUniqueID const&, bool, bool, bool);
     /*273*/ virtual void _onSizeUpdated();
-    /*274*/ virtual void __unk_vfn_21();
     /*
     inline bool canSeeInvisible() const{
         bool (Actor::*rv)() const;

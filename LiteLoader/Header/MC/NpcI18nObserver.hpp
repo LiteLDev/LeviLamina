@@ -25,9 +25,6 @@ public:
 public:
     /*0*/ virtual ~NpcI18nObserver();
     /*1*/ virtual void onLanguageChanged(std::string const&, bool);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
     /*
     inline void onLanguagesLoaded(){
         void (NpcI18nObserver::*rv)();

@@ -25,7 +25,6 @@ public:
 public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
     /*1*/ virtual bool validateMobType(class Mob&);
-    /*2*/ virtual void __unk_vfn_0();
 
 protected:
 

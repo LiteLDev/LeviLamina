@@ -125,8 +125,6 @@ public:
     /*96*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
     /*97*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*98*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, float, float, float) const;
-    /*99*/ virtual void __unk_vfn_21();
-    /*100*/ virtual void __unk_vfn_22();
     /*
     inline bool useVariant(int a0, int a1, bool a2) const{
         bool (ComponentItem::*rv)(int, int, bool) const;

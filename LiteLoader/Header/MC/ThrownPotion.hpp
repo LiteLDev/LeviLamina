@@ -104,7 +104,6 @@ public:
     /*76*/ virtual void __unk_vfn_22();
     /*77*/ virtual float getThrowUpAngleOffset();
     /*78*/ virtual enum ParticleType getParticleType();
-    /*79*/ virtual void __unk_vfn_23();
     MCAPI ThrownPotion(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
     MCAPI short getPotionId() const;
     MCAPI void setLinger(bool);

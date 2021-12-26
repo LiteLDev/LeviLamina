@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
     MCAPI RestrictOpenDoorGoal(class Mob&);
 
 protected:

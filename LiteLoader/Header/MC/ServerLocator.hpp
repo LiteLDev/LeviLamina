@@ -38,8 +38,6 @@ public:
     /*12*/ virtual void __unk_vfn_11() = 0;
     /*13*/ virtual void __unk_vfn_12() = 0;
     /*14*/ virtual void __unk_vfn_13() = 0;
-    /*15*/ virtual void __unk_vfn_14();
-    /*16*/ virtual void __unk_vfn_15();
     /*
     inline void _onEnable(){
         void (ServerLocator::*rv)();

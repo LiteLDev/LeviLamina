@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~MultiplyValueAmplifier();
     /*1*/ virtual float getAmount(int, float) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
     MCAPI MultiplyValueAmplifier(float);
 
 protected:

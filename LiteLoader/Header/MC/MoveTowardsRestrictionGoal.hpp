@@ -31,8 +31,6 @@ public:
     /*5*/ virtual void __unk_vfn_2();
     /*6*/ virtual void __unk_vfn_3();
     /*7*/ virtual void __unk_vfn_4() = 0;
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
     /*
     inline  ~MoveTowardsRestrictionGoal(){
          (MoveTowardsRestrictionGoal::*rv)();

@@ -25,11 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~ScriptMinecraftModuleFactory();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
     MCAPI static class std::unordered_map<std::string, std::unique_ptr<class IComponentFactory>, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::unique_ptr<class IComponentFactory> > > >& getActorComponentFactoriesV1();
     MCAPI static std::string getModuleUUIDAsString();
     MCAPI static struct Scripting::ModuleDescriptor makeModuleDescriptorFor(struct Scripting::Version&&);
