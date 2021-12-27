@@ -14,6 +14,8 @@
 #include <MC/GameMode.hpp>
 #include <MC/HitResult.hpp>
 #include <MC/ItemActor.hpp>
+#include <MC/ComplexInventoryTransaction.hpp>
+#include <MC/InventoryTransaction.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
 #include <MC/NetworkIdentifier.hpp>
@@ -184,7 +186,6 @@ THook(void,
     IF_LISTENED(PlayerRespawnEvent)
     {
         RespawnPacket* packet = *(RespawnPacket**)pPacket;
-
         PlayerRespawnEvent ev{};
         ev.mPlayer = packet->getPlayerFromPacket(handler, id);
         ev.call();
@@ -321,9 +322,8 @@ THook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
             return false;
     }
     IF_LISTENED_END(PlayerDropItemEvent)
-    return original(_this, it, a3);
+    return original(_this,it,a3);
 }
-
 
 /////////////////// PlayerEat ///////////////////
 // Food Item Component Legacy
@@ -592,7 +592,7 @@ THook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z
             ev.call();
         }
     }
-    IF_LISTENED_END(PlayerCloseContainerEvent)
+    IF_LISTENED_END(PlayerInventoryChangeEvent)
     return original(_this, container, slotNumber, oldItem, newItem, is);
 }
 
@@ -1530,4 +1530,62 @@ THook(std::ostream&,
     }
     IF_LISTENED_END(ConsoleOutputEvent)
     return original(_this, str, size);
+}
+
+//enum InventorySourceFlags
+//{
+//    DropItem = 0,
+//    PickupItem = 1,
+//    None = 2
+//};
+THook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+      ComplexInventoryTransaction* a1, Player* a2, int a3)
+{
+    auto v7 = (InventoryTransaction*)((__int64)a1 + 16);
+    auto& a = dAccess<std::unordered_map<void*, void*>, 0>(v7);
+    for (auto& i : a)
+        if ((int)*((char*)&i.first + 8) == 0)//DropItem
+        {
+            IF_LISTENED(PlayerDropItemEvent)
+            {
+                PlayerDropItemEvent ev{};
+                ev.mItemStack = const_cast<ItemStack*>(&a2->getCarriedItem());
+                ev.mPlayer = a2;
+                if (!ev.call())
+                {
+                    a2->sendInventory(1);
+                    return nullptr;
+                }
+            }
+            IF_LISTENED_END(PlayerDropItemEvent)
+        }
+    return original(a1, a2, a3);
+}
+#include <MC/Inventory.hpp>
+#include <MC/Container.hpp>
+THook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container* a1, int a2, char a3, char a4, bool a5)
+{
+    auto pl = dAccess<Player*,248>(a1);
+    if (pl->isPlayer())
+    {
+        IF_LISTENED(PlayerDropItemEvent)
+        {
+            PlayerDropItemEvent ev{};
+            if (a2 >= 0)
+            {
+                auto& item = a1->getItem(a2);
+                if (!item.isNull())
+                {        
+                   ev.mItemStack = const_cast<ItemStack*>(&item);
+                   ev.mPlayer = pl;
+                }
+                if (!ev.call())
+                {
+                    return;
+                }
+            }
+        }
+        IF_LISTENED_END(PlayerDropItemEvent)
+    }
+    return original(a1, a2, a3,a4,a5);
 }

@@ -2,6 +2,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
 #include <Config.h>
+#include <MC/ItemStack.hpp>
 using namespace Event;
 
 
@@ -15,6 +16,11 @@ void RegisterSimpleServerLogger() {
         Event::PlayerCmdEvent::subscribe([](const Event::PlayerCmdEvent& ev) {
             Logger("Command").info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;
+        });
+        Event::PlayerDropItemEvent::subscribe([](const Event::PlayerDropItemEvent& ev) {
+            auto item = ev.mItemStack;
+            logger.warn(item->getTypeName());
+            return false;
         });
     }
 }
