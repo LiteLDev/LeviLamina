@@ -23,6 +23,8 @@
 #include <MC/Player.hpp>
 #include <MC/RespawnPacket.hpp>
 #include <MC/Scoreboard.hpp>
+#include <MC/Inventory.hpp>
+#include <MC/Container.hpp>
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/ServerPlayer.hpp>
@@ -1561,8 +1563,7 @@ THook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionE
         }
     return original(a1, a2, a3);
 }
-#include <MC/Inventory.hpp>
-#include <MC/Container.hpp>
+
 THook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container* a1, int a2, char a3, char a4, bool a5)
 {
     auto pl = dAccess<Player*,248>(a1);
