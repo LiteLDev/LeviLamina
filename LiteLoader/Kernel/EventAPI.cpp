@@ -1369,25 +1369,21 @@ THook(Actor*,
 ////////////// NpcCmd //////////////
 #include <MC/NpcActionsContainer.hpp>
 #include <MC/NpcSceneDialogueData.hpp>
-
+#include <MC/NpcAction.hpp>
+#include <MC/NpcComponent.hpp>
 THook(bool,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEBVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-      void* _this, Actor* ac, Player* pl, int a4, string& a5)
+      NpcComponent* _this, Actor* ac, Player* pl, int a4, string& a5)
 {
     IF_LISTENED(NpcCmdEvent)
     {
         //IDA NpcComponent::executeCommandAction
-        char buf[32];
-        NpcSceneDialogueData* data = (NpcSceneDialogueData*)buf;
-        SymCall("??0NpcSceneDialogueData@@QEAA@AEAVNpcComponent@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-                NpcSceneDialogueData*, NpcSceneDialogueData*, void*, Actor*, string&)(data, _this, ac, a5);
-
-        auto& container = data->getActionsContainer();
+        NpcSceneDialogueData data(*_this, *ac, a5);
+        auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             HashedString& str = dAccess<HashedString>(actionAt, 152);
-
             NpcCmdEvent ev{};
             ev.mPlayer = pl;
             ev.mNpc = ac;
