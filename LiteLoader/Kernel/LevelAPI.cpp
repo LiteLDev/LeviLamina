@@ -17,6 +17,7 @@
 #include <MC/Level.hpp>
 #include <MC/MinecraftCommands.hpp>
 #include <MC/Tick.hpp>
+#include <MC/Packet.hpp>
 
 
 Actor* Level::getEntity(ActorUniqueID uniqueId) {
@@ -349,20 +350,32 @@ ItemStack* Level::getItemStackFromId(short a2, int a3) {
     return itemStack;
 }
 
-void Level::broadcastText(const string& a1, TextType ty) {
+void Level::broadcastText(const string& a1, TextType ty) 
+{
     auto players = getAllPlayers();
-    for (auto& sp : players) {
+    for (auto& sp : players) 
+    {
         sp->sendTextPacket(a1, ty);
     }
 }
 
-void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) {
+void Level::broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration)
+{
     auto players = getAllPlayers();
-    for (auto& sp : players) {
+    for (auto& sp : players) 
+    {
         sp->sendTitlePacket(text, Type, FadeInDuration, RemainDuration, FadeOutDuration);
     }
 }
 
+void Level::sendPacketForAllPlayer(Packet& pkt)
+{
+    auto players = getAllPlayers();
+    for (auto& sp : players)
+    {
+        sp->sendNetworkPacket(pkt);
+    }
+}
 FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
     return {a1, type, a2};
 }

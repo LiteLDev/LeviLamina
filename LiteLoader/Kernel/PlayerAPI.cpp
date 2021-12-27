@@ -313,7 +313,7 @@ bool Player::setSidebar(const std::string& title, const std::vector<std::pair<st
     for (auto& x : data)
     {
         const ScoreboardId& id = ScoreboardId(NewScoreId());
-        ScorePacketInfo i((ScoreboardId*)&id, x.second, x.first);
+        ScorePacketInfo i((ScoreboardId*)&id, "FakeScoreObj", IdentityDefinition::Type::Fake, x.second, x.first);
         info.emplace_back(i);
     }
     sendSetScorePacket(0, info);
@@ -750,6 +750,7 @@ void PlayerDebug()
         //TEST(player->getAvgPacketLoss());
         //TEST(player->getClientId());
         //TEST(player->getDeviceType());
+        //player->setSidebar("aaa", {{"1", rand()}}, ObjectiveSortOrder::Descending);
         return true;
     });
 }

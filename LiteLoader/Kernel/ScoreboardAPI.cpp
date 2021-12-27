@@ -6,6 +6,9 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ScoreboardIdentityRef.hpp>
 #include <MC/ServerScoreboard.hpp>
+#include <MC/setScorePacket.hpp>
+#include <MC/Level.hpp>
+#include <MC/IdentityDefinition.hpp>
 
 #define H do_hash
 LIAPI bool checkSlotName(const std::string& slot) {
@@ -127,12 +130,18 @@ LIAPI bool Scoreboard::removeFromObjective(const std::string& objname, Player* p
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(*player));
     if (!scoreboardIdIsValid(&identity))
         return true;
-
-    auto obj = Global<Scoreboard>->getObjective(objname);
+    Objective* obj = Global<Scoreboard>->getObjective(objname);
     if (!obj)
         return true;
-
-    return Global<Scoreboard>->getScoreboardIdentityRef(identity)->removeFromObjective(*Global<Scoreboard>, *obj);
+    vector<ScorePacketInfo> info;
+    ScorePacketInfo i((ScoreboardId*)&identity, objname, Global<Scoreboard>->getScoreboardIdentityRef(identity)->getIdentityType(), obj->getPlayerScore(identity).getCount(), obj->getName());
+    info.emplace_back(i);
+    for (auto sp : Level::getAllPlayers())
+    {
+        sp->sendSetScorePacket(1, info);
+    }
+    auto out = Global<Scoreboard>->getScoreboardIdentityRef(identity)->removeFromObjective(*Global<Scoreboard>, *obj);
+    return out;
 }
 
 LIAPI int Scoreboard::getScore(const std::string& objname, const std::string& id) {

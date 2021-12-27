@@ -20,7 +20,7 @@ class BlockPalette;
 class Container;
 class Dimension;
 struct ActorUniqueID;
-
+class Packet;
 #undef BEFORE_EXTRA
 
 class Level {
@@ -78,6 +78,7 @@ public:
     LIAPI static Actor* getDamageSourceEntity(ActorDamageSource* ads);
     LIAPI static void broadcastText(const string& text, TextType type);
     LIAPI static void broadcastTitle(const string& text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration);
+    LIAPI static void sendPacketForAllPlayer(Packet& pkt);
 
 
     LIAPI static FakeDataItem createDataItem(uint16_t a1, DataItemType type, int8_t a2);
