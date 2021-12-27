@@ -851,7 +851,7 @@ THook(bool, "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
 
 
 /////////////////// ContainerChange ///////////////////
-class LevelContainerModel;
+#include <MC/LevelContainerModel.hpp>
 
 THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
       LevelContainerModel* _this, int slotNumber, ItemStack* oldItem, ItemStack* newItem)
@@ -871,6 +871,7 @@ THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
             ev.mSlot = slotNumber;
             ev.mPreviousItemStack = oldItem;
             ev.mNewItemStack = newItem;
+            ev.mActor = _this->getEntity();
             ev.call();
         }
     }

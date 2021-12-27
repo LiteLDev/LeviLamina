@@ -17,10 +17,5 @@ void RegisterSimpleServerLogger() {
             Logger("Command").info("<{}> /{}", ev.mPlayer->getRealName(), ev.mCommand);
             return true;
         });
-        Event::PlayerDropItemEvent::subscribe([](const Event::PlayerDropItemEvent& ev) {
-            auto item = ev.mItemStack;
-            logger.warn(item->getTypeName());
-            return false;
-        });
     }
 }
