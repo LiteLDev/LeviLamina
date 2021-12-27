@@ -36,12 +36,14 @@
 #include <EventAPI.h>
 #include <bitset>
 
-NetworkIdentifier* Player::getNetworkIdentifier() {
+NetworkIdentifier* Player::getNetworkIdentifier() 
+{
     return (NetworkIdentifier*)(getUserEntityIdentifierComponent());
 }
 
 
-Certificate* Player::getCertificate() {
+Certificate* Player::getCertificate() 
+{
     UserEntityIdentifierComponent* ueic = getUserEntityIdentifierComponent();
     if (ueic) {
         return dAccess<Certificate*, 184>(ueic);
@@ -49,17 +51,20 @@ Certificate* Player::getCertificate() {
     return nullptr;
 }
 
-std::string Player::getRealName() {
+std::string Player::getRealName() 
+{
     if (isSimulatedPlayer())
         return getName();
     return ExtendedCertificate::getIdentityName(*getCertificate());
 }
 
-int Player::getAvgPing() {
+int Player::getAvgPing() 
+{
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgping;
 }
 
-int Player::getLastPing() {
+int Player::getLastPing() 
+{
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().ping;
 }
 
@@ -68,11 +73,14 @@ string Player::getIP()
     return getNetworkIdentifier()->getIP();
 }
 
-string Player::getLanguageCode() {
+string Player::getLanguageCode() 
+{
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
-    for (auto & iter : *map) {
+    for (auto & iter : *map) 
+    {
         string s(iter.first.c_str());
-        if (s.find("LanguageCode") != std::string::npos) {
+        if (s.find("LanguageCode") != std::string::npos) 
+        {
             auto langCode = iter.second.value_.string_;
             return langCode;
         }
@@ -80,11 +88,14 @@ string Player::getLanguageCode() {
     return "unknown";
 }
 
-string Player::getServerAddress() {
+string Player::getServerAddress() 
+{
     auto map = Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).rawToken.get()->dataInfo.value_.map_;
-    for (auto iter = map->begin(); iter != map->end(); ++iter) {
+    for (auto iter = map->begin(); iter != map->end(); ++iter) 
+    {
         string s(iter->first.c_str());
-        if (s.find("ServerAddress") != s.npos) {
+        if (s.find("ServerAddress") != s.npos) 
+        {
             auto ServerAddress = iter->second.value_.string_;
             return ServerAddress;
         }
@@ -92,8 +103,10 @@ string Player::getServerAddress() {
     return "unknown";
 }
 
-string Player::getDeviceTypeName() {
-    switch ((int)getPlatform()) {
+string Player::getDeviceTypeName() 
+{
+    switch ((int)getPlatform()) 
+    {
         case -1:
             return u8"Unknown";
         case 1:
@@ -129,7 +142,8 @@ string Player::getDeviceTypeName() {
     }
 }
 
-bool Player::kick(const string& msg) {
+bool Player::kick(const string& msg) 
+{
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
     Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*pNetworkIdentifier, msg, 0);
     return true;
@@ -145,26 +159,30 @@ bool Player::talkAs(const string& msg)
     return sendTextTalkPacket(msg);
 }
 
-bool Player::giveItem(ItemStack* item) {
+bool Player::giveItem(ItemStack* item) 
+{
     if (!this->add(*item))
         return false;
     refreshInventory();
     return true;
 }
 
-int Player::clearItem(string typeName) {
+int Player::clearItem(string typeName) 
+{
     int res = 0;
 
     //Hand
     ItemStack* item = getHandSlot();
-    if (item->getTypeName() == typeName) {
+    if (item->getTypeName() == typeName) 
+    {
         item->setNull();
         ++res;
     }
 
     //OffHand
     item = (ItemStack*)&getOffhandSlot();
-    if (item->getTypeName() == typeName) {
+    if (item->getTypeName() == typeName) 
+    {
         item->setNull();
         ++res;
     }
@@ -196,16 +214,19 @@ int Player::clearItem(string typeName) {
     return res;
 }
 
-string Player::getName() {
+string Player::getName() 
+{
     return getNameTag();
 }
 
-bool Player::runcmd(const string& cmd) {
-    return Level::runcmdAs(this, cmd);
+bool Player::runcmd(const string& cmd)
+{
+    return sendCommandRequestPacket(cmd);
 }
 
-Container* Player::getEnderChestContainer() {
-    return dAccess<Container*>(this, 4200); //IDA Player::Player() 782
+Container* Player::getEnderChestContainer() 
+{
+    return dAccess<Container*>(this, 4200);//IDA Player::Player() 782
 }
 
 bool Player::transferServer(const string& address, unsigned short port)
@@ -225,16 +246,19 @@ std::pair<BlockPos, int> Player::getRespawnPosition() {
     return {bp, dimId};
 }
 
-std::unique_ptr<CompoundTag> Player::getNbt() {
+std::unique_ptr<CompoundTag> Player::getNbt() 
+{
     return CompoundTag::fromPlayer(this);
 }
 
-bool Player::setNbt(CompoundTag* nbt) {
+bool Player::setNbt(CompoundTag* nbt) 
+{
     nbt->setPlayer(this);
     return true;
 }
 
-string Player::getUuid() {
+string Player::getUuid() 
+{
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
@@ -253,15 +277,18 @@ unsigned char Player::getClientSubId()
     return dAccess<unsigned char>(ueic, 160);
 }
 
-float Player::getAvgPacketLoss() {
+float Player::getAvgPacketLoss()
+{
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgpacketloss;
 }
 
-string Player::getClientId() {
+string Player::getClientId() 
+{
     return Global<ServerNetworkHandler>->fetchConnectionRequest(*getNetworkIdentifier()).getDeviceId();
 }
 
-int Player::getDeviceType() {
+int Player::getDeviceType() 
+{
     return getPlatform();
 }
 
@@ -270,7 +297,8 @@ bool Player::isOP()
     return (int)getPlayerPermissionLevel() >= 2;
 }
 
-bool Player::crashClient() {
+bool Player::crashClient() 
+{
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::LevelChunk);
     dAccess<bool, 56>(pkt.get()) = 1;
     sendNetworkPacket(*pkt);
@@ -364,7 +392,8 @@ bool Player::sendTextPacket(string text, TextType Type) const
     return true;
 }
 
-bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const {
+bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const 
+{
     BinaryStream wp;
     wp.reserve(8 + text.size());
     wp.writeVarInt((int)Type);
@@ -381,7 +410,8 @@ bool Player::sendTitlePacket(string text, TitleType Type, int FadeInDuration, in
     return true;
 }
 
-bool Player::sendNotePacket(unsigned int tone) {
+bool Player::sendNotePacket(unsigned int tone) 
+{
     if (tone == 0) {
         return false;
     }
@@ -401,7 +431,8 @@ bool Player::sendNotePacket(unsigned int tone) {
     return true;
 }
 
-bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const {
+bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string ParticleName, int64_t EntityUniqueID) const 
+{
     BinaryStream wp;
     wp.writeUnsignedChar(dimID);
     //If EntityUniqueID is not -1, the Position below will be interpreted as relative to the position of the entity associated with this unique ID.
@@ -418,13 +449,15 @@ bool Player::sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimID, string Part
     return true;
 }
 
-bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const {
+bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const 
+{
     PlaySoundPacket playSoundPkt(std::move(SoundName), Position, Volume, Pitch);
     sendNetworkPacket(playSoundPkt);
     return true;
 }
 
-void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
+void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) 
+{
     wp.writeUnsignedVarInt(a3.size());
     for (auto& i : a3) {
         wp.writeUnsignedVarInt(i.id);
@@ -467,7 +500,8 @@ void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) {
     }
 }
 
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) const {
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) const 
+{
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);                                   //RuntimeId
     wp.writeUnsignedVarInt64(runtimeID);                           //EntityId
@@ -493,7 +527,8 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, i
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) {
+bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) 
+{
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);         //RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); //EntityId
@@ -517,18 +552,21 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendTransferPacket(const string& address, short port) const {
+bool Player::sendTransferPacket(const string& address, short port) const 
+{
     TransferPacket transferPkt(address, port);
     sendNetworkPacket(transferPkt);
     return true;
 }
 
-bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const {
+bool Player::sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const 
+{
     sendNetworkPacket(SetDisplayObjectivePacket("sidebar", name, title, "dummy", ObjectiveSortOrder(sortOrder)));
     return true;
 }
 
-bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) {
+bool Player::sendSetScorePacket(char type, const vector<ScorePacketInfo>& data) 
+{
     auto packet = MinecraftPackets::createPacket(0x6c);
     dAccess<char>(packet.get(), 48) = type;
     dAccess<vector<ScorePacketInfo>>(packet.get(), 56) = data;
@@ -592,14 +630,16 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
     return true;
 }
 
-bool Player::sendCommandRequestPacket(const string& cmd) {
+bool Player::sendCommandRequestPacket(const string& cmd) 
+{
     auto packet = MinecraftPackets::createPacket(0x4d);
     dAccess<string, 48>(packet.get()) = cmd;
     Global<ServerNetworkHandler>->handle(*getNetworkIdentifier(), *((CommandRequestPacket*)packet.get()));
     return true;
 }
 
-bool Player::sendTextTalkPacket(const string& msg) {
+bool Player::sendTextTalkPacket(const string& msg) 
+{
     auto packet = MinecraftPackets::createPacket(0x09);
     dAccess<unsigned char, 48>(packet.get()) = 1;
     dAccess<string, 56>(packet.get()) = "";
@@ -681,4 +721,35 @@ bool Player::isValid(Player* player)
         if (pl == player)
             return true;
     return false;
+}
+
+
+#define TEST(API)  logger.warn("{} = {}", #API, API); 
+
+void PlayerDebug()
+{
+    Event::PlayerUseItemEvent::subscribe([](const Event::PlayerUseItemEvent& ev) {
+        ServerPlayer* player = (ServerPlayer*)ev.mPlayer;
+        ItemStack* item = ev.mItemStack;
+        //player->runcmd("say aaaa");
+        //TEST(player->getRealName());
+        //TEST(player->getAvgPing());
+        //TEST(player->getLastPing());
+        //TEST(player->getIP());
+        //TEST(player->getLanguageCode());
+        //TEST(player->getServerAddress());
+        //TEST(player->getDeviceTypeName());
+        //TEST(player->sendText(player->getNbt()->toSNBT()));
+        //TEST(player->talkAs("test sendtestpacket"));
+        //TEST(player->giveItem(item));
+        //TEST(player->getName());
+        //TEST(player->getEnderChestContainer()->addItem_s(item));
+        //TEST(player->getRespawnPosition().first.toString()); //bad?
+        //TEST(player->getNbt()->toString());
+        //TEST(player->getUuid());
+        //TEST(player->getAvgPacketLoss());
+        //TEST(player->getClientId());
+        //TEST(player->getDeviceType());
+        return true;
+    });
 }

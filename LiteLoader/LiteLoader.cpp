@@ -39,6 +39,7 @@ void FixUpCWD() {
 extern void RegisterCommands();
 extern bool InitPlayerDatabase();
 extern void RegisterSimpleServerLogger();
+extern void PlayerDebug();
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
@@ -51,13 +52,15 @@ void CheckDevMode() {
         logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
         logger.info("");
         logger.warn("You Are In DevelopMode!");
+        PlayerDebug();
     }
 }
 
 //extern
 extern void EndScheduleSystem();
 
-void LLMain() {
+void LLMain()
+{
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
