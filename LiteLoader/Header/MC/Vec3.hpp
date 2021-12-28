@@ -83,7 +83,7 @@ public:
         return {this->x - b.x, this->y - b.y, this->z - b.z};
     }
 
-    constexpr inline bool operator==(const Vec3& b) const
+    constexpr bool operator==(const Vec3& b) const
     {
         return {this->x == b.x && this->y == b.y && this->z == b.z};
     }

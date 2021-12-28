@@ -2,6 +2,7 @@
 
 #include "HookAPI.h"
 #include "../Global.h"
+#include "Vec2.hpp"
 #include "Vec3.hpp"
 #include "BlockPos.hpp"
 #include "AABB.hpp"
@@ -39,22 +40,6 @@ public:
     }
 
     LIAPI AABB toAABB() const;
-};
-
-class Vec2 {
-public:
-    float x, y;
-
-    Vec2(float a, float b) : x(a), y(b) {}
-
-    inline std::string toString() const { return std::to_string(x) + "," + std::to_string(y); }
-
-    inline Vec2 operator*(float num) const { return {x * num, y * num}; }
-
-    inline Vec2 operator+(const Vec2& b) const { return {this->x + b.x, this->y + b.y}; }
-
-    inline Vec2 operator-(const Vec2& b) const { return {this->x - b.x, this->y - b.y}; }
-
 };
 
 template<typename A, typename T>

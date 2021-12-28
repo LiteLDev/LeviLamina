@@ -28,12 +28,12 @@ public:
     MCAPI static void bindType();
 
 
-    constexpr inline bool operator==(BlockPos const& b) const
+    constexpr bool operator==(BlockPos const& b) const
     {
         return x == b.x && y == b.y && z == b.z;
     }
 
-    constexpr inline bool operator!=(BlockPos const& b) const
+    constexpr bool operator!=(BlockPos const& b) const
     {
         return x != b.x || y != b.y || z != b.z;
     }
@@ -48,7 +48,7 @@ public:
         return {x - b.x, y - b.y, z - b.z};
     }
 
-    inline std::string& toString() const
+    inline std::string toString() const
     {
         return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
     }

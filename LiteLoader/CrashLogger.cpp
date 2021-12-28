@@ -58,7 +58,7 @@ void InitCrashLogger(bool enableCrashLogger)
     filesystem::directory_iterator ent("plugins");
 
     for (auto& i : ent) {
-        if (i.is_regular_file() && i.path().extension().u8string() == ".dll") {
+        if (i.is_regular_file() && i.path().extension().u8string() == u8".dll") {
             auto path = i.path().u8string();
 
             //Check crashLogger
