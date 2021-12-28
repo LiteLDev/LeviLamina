@@ -3,6 +3,7 @@
 #include "HookAPI.h"
 #include "../Global.h"
 #include "ChunkPos.hpp"
+#include "ChunkBlockPos.hpp"
 #include <string>
 #include <utility>
 
@@ -24,22 +25,6 @@ namespace mce {
 }; // namespace mce
 
 class Vec3;
-
-class BlockPos;
-
-class ChunkBlockPos {
-public:
-    char x;
-    char z;
-    short y; // ChunkLocalHeight
-    ChunkBlockPos()
-            : x(0), y(0), z(0) {};
-
-    ChunkBlockPos(char x, short y, char z)
-            : x(x), y(y), z(z) {};
-
-    LIAPI ChunkBlockPos(BlockPos const &, short);
-};
 
 class BlockPos {
 public:
