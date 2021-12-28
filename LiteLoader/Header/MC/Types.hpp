@@ -2,6 +2,9 @@
 
 #include "HookAPI.h"
 #include "../Global.h"
+#include "Vec3.hpp"
+#include "BlockPos.hpp"
+#include "AABB.hpp"
 #include "ChunkPos.hpp"
 #include "ChunkBlockPos.hpp"
 #include <string>
@@ -24,97 +27,7 @@ namespace mce {
 
 }; // namespace mce
 
-class Vec3;
 
-class BlockPos {
-public:
-    int x, y, z;
-
-    inline bool operator==(BlockPos const &b) const {
-        return x == b.x && y == b.y && z == b.z;
-    }
-
-    inline bool operator!=(BlockPos const &b) const {
-        return x != b.x || y != b.y || z != b.z;
-    }
-
-    inline BlockPos operator+(BlockPos const &b) const {
-        return {x + b.x, y + b.y, z + b.z};
-    }
-
-    inline BlockPos operator-(BlockPos const &b) const {
-        return {x - b.x, y - b.y, z - b.z};
-    }
-
-    inline std::string toString() const {
-        return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
-    }
-
-    inline BlockPos add(int dx) const {
-        return {x + dx, y, z};
-    }
-
-    inline BlockPos add(int dx, int dy) const {
-        return {x + dx, y + dy, z};
-    }
-
-    inline BlockPos add(int dx, int dy, int dz) const {
-        return {x + dx, y + dy, z + dz};
-    }
-
-    LIAPI Vec3 toVec3() const;
-
-    LIAPI Vec3 bottomCenter() const;
-
-    LIAPI Vec3 center() const;
-};
-
-
-//struct MCRESULT {
-//    unsigned char filler[4];
-//    operator bool() {
-//        return filler[0];
-//    }
-//    bool isSuccess() {
-//        return operator bool();
-//    }
-//};
-
-class Vec3 {
-public:
-    float x, y, z;
-
-    inline std::string toString() const {
-        return std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z);
-    }
-
-    LIAPI BlockPos toBlockPos() const;
-
-    LIAPI float length() const;
-
-    LIAPI float distanceTo(Vec3 const &) const;
-
-    inline Vec3 add(float dx, float dy, float dz) const {
-        return {x + dx, y + dy, z + dz};
-    }
-
-    inline Vec3 normalize() const {
-        float l = length();
-        return {x / l, y / l, z / l};
-    }
-
-    inline Vec3 operator*(float num) const { return {x * num, y * num, z * num}; }
-
-    inline Vec3 operator+(const Vec3 &b) const { return {this->x + b.x, this->y + b.y, this->z + b.z}; }
-
-    inline Vec3 operator-(const Vec3 &b) const { return {this->x - b.x, this->y - b.y, this->z - b.z}; }
-
-    inline bool operator==(const Vec3& b) const { return { this->x == b.x && this->y == b.y && this->z == b.z }; }
-
-};
-
-
-#include "AABB.hpp"
 
 class BoundingBox {
 public:
