@@ -15,15 +15,17 @@ public:
 #define DISABLE_CONSTRUCTOR_PREVENTION_SCOREPACKETINFO
 
     ScoreboardId sid;
-    std::string obj_name = "FakeScoreObj";
+    std::string obj_name;
     uint32_t score;
-    IdentityDefinition::Type type = IdentityDefinition::Type::Fake;
+    IdentityDefinition::Type type;
     unsigned long long pid;
     ActorUniqueID aid;
     std::string fake_name;
 
-    ScorePacketInfo(ScoreboardId* s, unsigned num, const string& fake)
+    ScorePacketInfo(ScoreboardId* s, string obj_name, IdentityDefinition::Type type, unsigned num, const string& fake)
         : sid(*s)
+        , obj_name(obj_name)
+        , type(type)
         , score(num)
         , fake_name(fake) {
     }

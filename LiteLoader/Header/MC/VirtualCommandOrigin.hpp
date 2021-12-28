@@ -47,7 +47,7 @@ public:
     /*19*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*20*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*21*/ virtual enum CommandOriginType getOriginType() const;
-    /*22*/ virtual class mce::UUID const& getUUID() const;
+    /*22*/ virtual void __unk_vfn_0();
     /*23*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*24*/ virtual class CompoundTag serialize() const;
     /*25*/ virtual bool isValid() const;

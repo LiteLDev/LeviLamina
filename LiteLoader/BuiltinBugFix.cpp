@@ -41,18 +41,20 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
 }
 
 // Fix abnormal items.
-class InventoryTransaction;
+#include <mc/InventorySource.hpp>
+#include <MC/InventoryTransaction.hpp>
+#include <MC/InventoryAction.hpp>
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
       ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
     if (globalConfig.enableAntiGive)
     {
     InventoryTransaction* data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
-    auto a = dAccess<std::unordered_map<int, void*>, 0>(data);
+        auto a = dAccess<std::unordered_map<InventorySource*, void*>, 0>(data);
     bool abnormal = 0;
-    for (auto i : a)
-        if (i.first == 99999 /*InventorySourceType::NONIMPLEMENTEDTODO*/){
-            abnormal = 1;
-            }
+        for (auto& i : a)
+            if ((int)*(&i.first) == 99999) 
+                if ((int)*((char*)&i.first + 4) == -5)
+                    abnormal = 1;
         if (abnormal)
         {
             Player* sp = (Player*)snh.getServerPlayer(netid);

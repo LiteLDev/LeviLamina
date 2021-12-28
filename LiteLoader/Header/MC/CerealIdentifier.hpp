@@ -25,7 +25,7 @@ public:
     MCAPI CerealIdentifier(bool);
     MCAPI char const* c_str() const;
     MCAPI class CerealIdentifier& operator=(class CerealIdentifier const&);
-    MCAPI bool operator==(std::string const&);
+    MCAPI bool operator==(std::string const&) const;
     MCAPI ~CerealIdentifier();
     MCAPI static void bindType();
 

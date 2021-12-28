@@ -41,9 +41,9 @@ public:
     /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual unsigned char getSourceSubId() const;
-    /*16*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*16*/ virtual void __unk_vfn_0();
     /*17*/ virtual enum CommandOriginType getOriginType() const;
-    /*18*/ virtual class mce::UUID const& getUUID() const;
+    /*18*/ virtual void __unk_vfn_1();
     /*19*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*20*/ virtual class CompoundTag serialize() const;
     /*21*/ virtual bool isValid() const;

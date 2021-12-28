@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI operator bool();
+    MCAPI operator bool() const;
     MCAPI bool readValue(char const*, unsigned long&) const;
     MCAPI bool readValue(char const*, std::string&) const;
     MCAPI ~RegistryKey();

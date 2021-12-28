@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~FlowerFeature();
     /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*2*/ virtual ~FlowerFeature();
     /*
     inline  ~FlowerFeature(){
          (FlowerFeature::*rv)();

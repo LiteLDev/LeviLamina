@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~FunctionAction();
     /*1*/ virtual void execute(class ServerLevel&, class Dimension&);
     /*2*/ virtual void serialize(class CompoundTag&);
-    /*3*/ virtual bool operator==(class IRequestAction&);
+    /*3*/ virtual bool operator==(class IRequestAction&) const;
     MCAPI FunctionAction(std::string const&, std::unique_ptr<class CommandOrigin>);
     MCAPI static bool isValidTag(class CompoundTag const&);
     MCAPI static std::unique_ptr<class FunctionAction> load(class CompoundTag const&, class ICommandOriginLoader&);

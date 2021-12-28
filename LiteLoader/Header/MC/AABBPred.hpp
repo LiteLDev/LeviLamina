@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI bool operator()(class AABB const&, class AABB const&);
+    MCAPI bool operator()(class AABB const&, class AABB const&) const;
 
 protected:
 

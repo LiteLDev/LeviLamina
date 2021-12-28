@@ -29,7 +29,7 @@ public:
     MCAPI ResourceLocation();
     MCAPI class Core::PathBuffer<std::string > getFullPath() const;
     MCAPI class Core::PathBuffer<std::string > const& getRelativePath() const;
-    MCAPI bool operator==(class ResourceLocation const&);
+    MCAPI bool operator==(class ResourceLocation const&) const;
     MCAPI void serialize(class Json::Value&) const;
     MCAPI void setRelativePath(class Core::PathBuffer<std::string > const&);
     MCAPI ~ResourceLocation();

@@ -31,7 +31,7 @@ public:
     /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual class gsl::basic_string_span<char const, -1> getName() const;
     /*5*/ virtual class Json::Value _serializeDomain() const;
-    /*6*/ virtual class Json::Value _serializeValue() const;
+    /*6*/ virtual ~ActorHasEquipmentTest();
     /*
     inline  ~ActorHasEquipmentTest(){
          (ActorHasEquipmentTest::*rv)();

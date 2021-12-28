@@ -29,9 +29,9 @@ public:
         *((void**)&rv) = dlsym("?start@PetSleepWithOwnerState@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void stop(){
-        void (PetSleepWithOwnerState::*rv)();
-        *((void**)&rv) = dlsym("?stop@PetSleepWithOwnerState@@UEAAXXZ");
+    inline  (){
+         (::*rv)();
+        *((void**)&rv) = dlsym("");
         return (this->*rv)();
     }
     */

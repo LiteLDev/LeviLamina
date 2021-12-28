@@ -24,7 +24,7 @@ public:
 
 public:
     MCAPI SubChunkPos(class BlockPos const&);
-    MCAPI operator class BlockPos();
+    MCAPI operator class BlockPos() const;
     MCAPI static class SubChunkPos const MAX;
     MCAPI static class SubChunkPos const MIN;
     MCAPI static class SubChunkPos const ONE;

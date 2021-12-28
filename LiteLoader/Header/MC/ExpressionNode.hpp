@@ -42,7 +42,7 @@ public:
     MCAPI void moveConstantChildToValueIfFloatOrHashType(int);
     MCAPI class ExpressionNode& operator=(class ExpressionNode const&);
     MCAPI class ExpressionNode& operator=(float);
-    MCAPI bool operator==(class ExpressionNode const&);
+    MCAPI bool operator==(class ExpressionNode const&) const;
     MCAPI bool parse(std::string const&, enum MolangVersion, class gsl::span<class HashedString const, -1>);
     MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI ~ExpressionNode();

@@ -42,10 +42,10 @@ public:
     /*14*/ virtual bool isSelectorExpansionAllowed() const;
     /*15*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*16*/ virtual unsigned char getSourceSubId() const;
-    /*17*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*17*/ virtual void __unk_vfn_0();
     /*18*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*19*/ virtual enum CommandOriginType getOriginType() const;
-    /*20*/ virtual class mce::UUID const& getUUID() const;
+    /*20*/ virtual void __unk_vfn_1();
     /*21*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*22*/ virtual class CompoundTag serialize() const;
     /*23*/ virtual bool isValid() const;

@@ -25,7 +25,7 @@ public:
 public:
     MCAPI EntityContextBase(class EntityRegistryBase&, class EntityId);
     MCAPI bool isValid() const;
-    MCAPI bool operator==(class EntityContextBase const&);
+    MCAPI bool operator==(class EntityContextBase const&) const;
 
 protected:
     MCAPI void _assertValid() const;

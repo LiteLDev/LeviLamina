@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI bool operator==(class WeakStorageEntity const&);
+    MCAPI bool operator==(class WeakStorageEntity const&) const;
 
 protected:
     MCAPI WeakStorageEntity(class StackResultStorageEntity const&);

@@ -26,9 +26,9 @@ public:
     MCAPI GameVersion(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
     MCAPI GameVersion();
     MCAPI std::string const& asString() const;
-    MCAPI bool operator<(class GameVersion const&);
+    MCAPI bool operator<(class GameVersion const&) const;
     MCAPI class GameVersion& operator=(class GameVersion&&);
-    MCAPI bool operator>=(class GameVersion const&);
+    MCAPI bool operator>=(class GameVersion const&) const;
     MCAPI std::unique_ptr<class ListTag> serialize() const;
     MCAPI ~GameVersion();
     MCAPI static class GameVersion current();

@@ -3,6 +3,7 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "Packet.hpp"
+
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 enum PlayerActionType {
@@ -45,15 +46,6 @@ enum PlayerActionType {
 #undef BEFORE_EXTRA
 
 class PlayerActionPacket : public Packet {
-public:
-    BlockPos position;
-    FaceID blockFace;
-    PlayerActionType actionType;
-    ActorRuntimeID runtimeId;
-    inline std::string toDebugString() {
-        return fmt::format("{}: position: {}, blockFace: {}, actionType: {}, runtimeId: {}",
-            __super::toDebugString(), position.toString(), (int)blockFace, (int)actionType, runtimeId.id);
-    }
 
 #define AFTER_EXTRA
 // Add Member There

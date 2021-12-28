@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~MessagingCommand();
+    /*1*/ virtual ~MessagingCommand();
     /*
     inline  ~MessagingCommand(){
          (MessagingCommand::*rv)();

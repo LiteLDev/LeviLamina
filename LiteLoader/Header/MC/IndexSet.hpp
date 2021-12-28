@@ -24,7 +24,7 @@ public:
     MCAPI std::vector<unsigned __int64> const& getPacked() const;
     MCAPI void insert(unsigned __int64);
     MCAPI class IndexSet& operator=(class IndexSet const&);
-    MCAPI bool operator==(class IndexSet const&);
+    MCAPI bool operator==(class IndexSet const&) const;
     MCAPI void remove(unsigned __int64);
     MCAPI ~IndexSet();
 

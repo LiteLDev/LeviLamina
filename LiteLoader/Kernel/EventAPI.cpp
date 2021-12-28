@@ -14,6 +14,8 @@
 #include <MC/GameMode.hpp>
 #include <MC/HitResult.hpp>
 #include <MC/ItemActor.hpp>
+#include <MC/ComplexInventoryTransaction.hpp>
+#include <MC/InventoryTransaction.hpp>
 #include <MC/ItemStack.hpp>
 #include <MC/Level.hpp>
 #include <MC/NetworkIdentifier.hpp>
@@ -21,8 +23,11 @@
 #include <MC/Player.hpp>
 #include <MC/RespawnPacket.hpp>
 #include <MC/Scoreboard.hpp>
+#include <MC/Inventory.hpp>
+#include <MC/Container.hpp>
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
+#include <MC/VanillaBlocks.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
 #include <functional>
@@ -184,7 +189,6 @@ THook(void,
     IF_LISTENED(PlayerRespawnEvent)
     {
         RespawnPacket* packet = *(RespawnPacket**)pPacket;
-
         PlayerRespawnEvent ev{};
         ev.mPlayer = packet->getPlayerFromPacket(handler, id);
         ev.call();
@@ -321,9 +325,8 @@ THook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
             return false;
     }
     IF_LISTENED_END(PlayerDropItemEvent)
-    return original(_this, it, a3);
+    return original(_this,it,a3);
 }
-
 
 /////////////////// PlayerEat ///////////////////
 // Food Item Component Legacy
@@ -517,6 +520,204 @@ THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_
     return original(_this, a2, a3, a4, ac, a6);
 }
 
+THook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBambooSapling), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6,a7,a8);
+}
+
+//THook(bool, "?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+//{
+//    IF_LISTENED(PlayerPlaceBlockEvent)
+//    {
+//        if (Player::isValid((Player*)a3))
+//        {
+//            PlayerPlaceBlockEvent ev{};
+//            ev.mPlayer = (Player*)a3;
+//            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(a2->getBlock()), *a4, (int)a3->getDimensionId());
+//            if (!ev.call())
+//                return false;
+//        }
+//    }
+//    IF_LISTENED_END(PlayerPlaceBlockEvent)
+//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//}
+
+THook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBed), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+}
+
+THook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            auto& PlacementBlock = VanillaBlocks::mCocoa->getPlacementBlock(*a3, *a4, a5, a4->toVec3(), 0);
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(&PlacementBlock), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+}
+
+THook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", void* a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            const Block* v11 = nullptr;
+            switch (*(int*)((__int64)a1 + 552))
+            {
+                case 0:
+                    v11 = VanillaBlocks::mWoodenDoor;
+                    break;
+                case 1:
+                    v11 = VanillaBlocks::mWoodenDoorSpruce;
+                    break;
+                case 2:
+                    v11 = VanillaBlocks::mWoodenDoorBirch;
+                    break;
+                case 3:
+                    v11 = VanillaBlocks::mWoodenDoorJungle;
+                    break;
+                case 4:
+                    v11 = VanillaBlocks::mWoodenDoorAcacia;
+                    break;
+                case 5:
+                    v11 = VanillaBlocks::mWoodenDoorDarkOak;
+                    break;
+                case 6:
+                    v11 = VanillaBlocks::mIronDoor;
+                    break;
+                case 7:
+                    v11 = VanillaBlocks::mCrimsonDoor;
+                    break;
+                case 8:
+                    v11 = VanillaBlocks::mWarpedDoor;
+            }
+            if (!v11) return false;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(v11), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5);
+}
+
+THook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mRedStoneDust), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+}
+
+THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mSign), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+}
+
+THook(bool, "?_useOn@BlockPlanterItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", Block** a1,
+      const struct ItemInstance* a2,
+      Actor* a3,
+      BlockPos a4,
+      unsigned __int8 a5,
+      int a6,
+      int a7,
+      int a8)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(a1[69], a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+}
+
+THook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z", void* a1,
+      struct ItemStack* a2,
+      struct Actor* a3,
+      const struct BlockPos* a4,
+      unsigned __int8 a5)
+{
+    IF_LISTENED(PlayerPlaceBlockEvent)
+    {
+        if (Player::isValid((Player*)a3))
+        {
+            PlayerPlaceBlockEvent ev{};
+            ev.mPlayer = (Player*)a3;
+            ev.mBlockInstance = BlockInstance::createBlockInstance(*((Block**)a1 + 1), *a4, (int)a3->getDimensionId());
+            if (!ev.call())
+                return false;
+        }
+    }
+    IF_LISTENED_END(PlayerPlaceBlockEvent)
+    return original(a1, a2, a3, a4, a5);
+}
+
+
+
 /////////////////// PlayerOpenContainer ///////////////////
 THook(__int64,
       "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
@@ -592,7 +793,7 @@ THook(void, "?inventoryChanged@Player@@UEAAXAEAVContainer@@HAEBVItemStack@@1_N@Z
             ev.call();
         }
     }
-    IF_LISTENED_END(PlayerCloseContainerEvent)
+    IF_LISTENED_END(PlayerInventoryChangeEvent)
     return original(_this, container, slotNumber, oldItem, newItem, is);
 }
 
@@ -849,7 +1050,7 @@ THook(bool, "?mayPlace@FireBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z",
 
 
 /////////////////// ContainerChange ///////////////////
-class LevelContainerModel;
+#include <MC/LevelContainerModel.hpp>
 
 THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
       LevelContainerModel* _this, int slotNumber, ItemStack* oldItem, ItemStack* newItem)
@@ -866,9 +1067,10 @@ THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
             ev.mBlockInstance = Level::getBlockInstance(bp, pl->getDimensionId());
             ev.mContainer = ev.mBlockInstance.getContainer();
             ev.mPlayer = pl;
-            ev.mSlot = slotNumber;
+            ev.mSlot = slotNumber + _this->_getContainerOffset();
             ev.mPreviousItemStack = oldItem;
             ev.mNewItemStack = newItem;
+            ev.mActor = _this->getEntity();
             ev.call();
         }
     }
@@ -1170,8 +1372,6 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
             ev.mDamage = damage;
             if (!ev.call())
                 return false;
-
-            //damage = ev.mDamage;
         }
     }
     IF_LISTENED_END(MobHurtEvent)
@@ -1367,25 +1567,21 @@ THook(Actor*,
 ////////////// NpcCmd //////////////
 #include <MC/NpcActionsContainer.hpp>
 #include <MC/NpcSceneDialogueData.hpp>
-
+#include <MC/NpcAction.hpp>
+#include <MC/NpcComponent.hpp>
 THook(bool,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEBVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-      void* _this, Actor* ac, Player* pl, int a4, string& a5)
+      NpcComponent* _this, Actor* ac, Player* pl, int a4, string& a5)
 {
     IF_LISTENED(NpcCmdEvent)
     {
         //IDA NpcComponent::executeCommandAction
-        char buf[32];
-        NpcSceneDialogueData* data = (NpcSceneDialogueData*)buf;
-        SymCall("??0NpcSceneDialogueData@@QEAA@AEAVNpcComponent@@AEAVActor@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
-                NpcSceneDialogueData*, NpcSceneDialogueData*, void*, Actor*, string&)(data, _this, ac, a5);
-
-        auto& container = data->getActionsContainer();
+        NpcSceneDialogueData data(*_this, *ac, a5);
+        auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             HashedString& str = dAccess<HashedString>(actionAt, 152);
-
             NpcCmdEvent ev{};
             ev.mPlayer = pl;
             ev.mNpc = ac;
@@ -1530,4 +1726,61 @@ THook(std::ostream&,
     }
     IF_LISTENED_END(ConsoleOutputEvent)
     return original(_this, str, size);
+}
+
+//enum InventorySourceFlags
+//{
+//    DropItem = 0,
+//    PickupItem = 1,
+//    None = 2
+//};
+THook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
+      ComplexInventoryTransaction* a1, Player* a2, int a3)
+{
+    auto v7 = (InventoryTransaction*)((__int64)a1 + 16);
+    auto& a = dAccess<std::unordered_map<void*, void*>, 0>(v7);
+    for (auto& i : a)
+        if ((int)*((char*)&i.first + 8) == 0)//DropItem
+        {
+            IF_LISTENED(PlayerDropItemEvent)
+            {
+                PlayerDropItemEvent ev{};
+                ev.mItemStack = const_cast<ItemStack*>(&a2->getCarriedItem());
+                ev.mPlayer = a2;
+                if (!ev.call())
+                {
+                    a2->sendInventory(1);
+                    return nullptr;
+                }
+            }
+            IF_LISTENED_END(PlayerDropItemEvent)
+        }
+    return original(a1, a2, a3);
+}
+
+THook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container* a1, int a2, char a3, char a4, bool a5)
+{
+    auto pl = dAccess<Player*,248>(a1);
+    if (pl->isPlayer())
+    {
+        IF_LISTENED(PlayerDropItemEvent)
+        {
+            PlayerDropItemEvent ev{};
+            if (a2 >= 0)
+            {
+                auto& item = a1->getItem(a2);
+                if (!item.isNull())
+                {        
+                   ev.mItemStack = const_cast<ItemStack*>(&item);
+                   ev.mPlayer = pl;
+                }
+                if (!ev.call())
+                {
+                    return;
+                }
+            }
+        }
+        IF_LISTENED_END(PlayerDropItemEvent)
+    }
+    return original(a1, a2, a3,a4,a5);
 }

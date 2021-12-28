@@ -5,14 +5,13 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
 #undef BEFORE_EXTRA
 
 class InventoryAction {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYACTION

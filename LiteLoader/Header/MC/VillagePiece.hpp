@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~VillagePiece();
-    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual enum StructurePieceType getType() const;
     /*3*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*4*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);

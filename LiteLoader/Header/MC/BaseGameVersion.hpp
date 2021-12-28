@@ -29,12 +29,12 @@ public:
     MCAPI bool isAnyVersion() const;
     MCAPI bool isCompatibleWith(class BaseGameVersion const&) const;
     MCAPI bool isValid() const;
-    MCAPI bool operator<(class BaseGameVersion const&);
-    MCAPI bool operator<=(class BaseGameVersion const&);
+    MCAPI bool operator<(class BaseGameVersion const&) const;
+    MCAPI bool operator<=(class BaseGameVersion const&) const;
     MCAPI class BaseGameVersion& operator=(class BaseGameVersion const&);
-    MCAPI bool operator==(class BaseGameVersion const&);
-    MCAPI bool operator>(class BaseGameVersion const&);
-    MCAPI bool operator>=(class BaseGameVersion const&);
+    MCAPI bool operator==(class BaseGameVersion const&) const;
+    MCAPI bool operator>(class BaseGameVersion const&) const;
+    MCAPI bool operator>=(class BaseGameVersion const&) const;
     MCAPI ~BaseGameVersion();
     MCAPI static class BaseGameVersion const ANY;
     MCAPI static class BaseGameVersion const EMPTY;

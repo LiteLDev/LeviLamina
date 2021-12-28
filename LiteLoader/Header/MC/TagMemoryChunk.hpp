@@ -39,7 +39,7 @@ public:
 
 public:
     MCAPI struct TagMemoryChunk copy() const;
-    MCAPI bool operator!=(struct TagMemoryChunk const&);
+    MCAPI bool operator!=(struct TagMemoryChunk const&) const;
     MCAPI ~TagMemoryChunk();
 
 protected:

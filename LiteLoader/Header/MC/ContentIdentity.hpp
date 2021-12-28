@@ -23,10 +23,10 @@ public:
     MCAPI std::string asString() const;
     MCAPI class mce::UUID const& getAsUUID() const;
     MCAPI bool isValid() const;
-    MCAPI bool operator!=(class ContentIdentity const&);
+    MCAPI bool operator!=(class ContentIdentity const&) const;
     MCAPI class ContentIdentity& operator=(class ContentIdentity const&);
     MCAPI class ContentIdentity& operator=(class ContentIdentity&&);
-    MCAPI bool operator==(class ContentIdentity const&);
+    MCAPI bool operator==(class ContentIdentity const&) const;
     MCAPI static class ContentIdentity EMPTY;
     MCAPI static class ContentIdentity fromString(std::string const&);
 

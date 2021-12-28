@@ -344,6 +344,7 @@ public:
 class ContainerChangeEvent : public EventTemplate<ContainerChangeEvent> {
 public:
     Player* mPlayer;
+    Actor* mActor;
     BlockInstance mBlockInstance;
     Container* mContainer;
     int mSlot;

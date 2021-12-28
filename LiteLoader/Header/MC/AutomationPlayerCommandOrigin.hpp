@@ -36,10 +36,10 @@ public:
     /*8*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*9*/ virtual bool isSelectorExpansionAllowed() const;
     /*10*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*11*/ virtual class CommandOrigin const& getOutputReceiver() const;
+    /*11*/ virtual void __unk_vfn_0();
     /*12*/ virtual enum CommandOriginType getOriginType() const;
     /*13*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*14*/ virtual class mce::UUID const& getUUID() const;
+    /*14*/ virtual void __unk_vfn_1();
     /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*16*/ virtual class CompoundTag serialize() const;
     /*17*/ virtual bool isValid() const;

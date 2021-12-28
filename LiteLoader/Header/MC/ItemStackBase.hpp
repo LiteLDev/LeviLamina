@@ -119,9 +119,9 @@ public:
     MCAPI bool matches(class ItemStackBase const&) const;
     MCAPI bool matchesEitherWearableCase(class CompoundTag const*) const;
     MCAPI bool matchesItem(class ItemStackBase const&) const;
-    MCAPI operator bool();
-    MCAPI bool operator!=(class ItemStackBase const&);
-    MCAPI bool operator==(class ItemStackBase const&);
+    MCAPI operator bool() const;
+    MCAPI bool operator!=(class ItemStackBase const&) const;
+    MCAPI bool operator==(class ItemStackBase const&) const;
     MCAPI void refreshedInContainer(class Level&) const;
     MCAPI void remove(int);
     MCAPI void resetHoverName();

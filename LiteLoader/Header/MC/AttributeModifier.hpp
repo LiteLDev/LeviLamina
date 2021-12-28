@@ -39,7 +39,7 @@ public:
     MCAPI int getOperand() const;
     MCAPI int getOperation() const;
     MCAPI class AttributeModifier& operator=(class AttributeModifier const&);
-    MCAPI bool operator==(class AttributeModifier const&);
+    MCAPI bool operator==(class AttributeModifier const&) const;
 
 protected:
 

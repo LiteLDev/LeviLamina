@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI bool operator==(class InventorySource const&);
+    MCAPI bool operator==(class InventorySource const&) const;
     MCAPI std::string toString() const;
 
 protected:

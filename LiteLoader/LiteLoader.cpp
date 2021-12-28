@@ -57,7 +57,8 @@ void CheckDevMode() {
 //extern
 extern void EndScheduleSystem();
 
-void LLMain() {
+void LLMain()
+{
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 

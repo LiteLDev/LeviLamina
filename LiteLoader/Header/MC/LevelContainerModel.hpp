@@ -13,7 +13,11 @@ class LevelContainerModel : public ContainerModel {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    inline Actor* getEntity()
+    {
+        return _getEntity();
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCONTAINERMODEL

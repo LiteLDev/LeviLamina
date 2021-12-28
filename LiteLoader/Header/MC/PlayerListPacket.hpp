@@ -36,7 +36,7 @@ public:
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
     /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual ~PlayerListPacket();
     /*
     inline  ~PlayerListPacket(){
          (PlayerListPacket::*rv)();

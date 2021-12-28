@@ -26,7 +26,7 @@ public:
     MCAPI BlockPosIterator(class BlockPos const&, class BlockPos const&);
     MCAPI class BlockPosIterator begin() const;
     MCAPI class BlockPosIterator end() const;
-    MCAPI bool operator!=(class BlockPosIterator const&);
+    MCAPI bool operator!=(class BlockPosIterator const&) const;
     MCAPI class BlockPos const& operator*();
     MCAPI class BlockPosIterator& operator++();
 

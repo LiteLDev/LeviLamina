@@ -40,21 +40,28 @@ public:
     /*13*/ virtual void __unk_vfn_1();
     /*14*/ virtual float getShadowRadius(class BlockSource&) const;
     /*15*/ virtual bool hasAlphaLayer() const;
-    /*16*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    /*16*/ virtual void __unk_vfn_2();
     /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string getName() const;
     /*19*/ virtual std::string getImmersiveReaderText(class BlockSource&);
     /*20*/ virtual int getRepairCost() const;
-    /*21*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*22*/ virtual void __unk_vfn_2();
-    /*23*/ virtual void __unk_vfn_3();
+    /*21*/ virtual void __unk_vfn_3();
+    /*22*/ virtual void __unk_vfn_4();
+    /*23*/ virtual void __unk_vfn_5();
     /*24*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*25*/ virtual void __unk_vfn_4();
-    /*26*/ virtual void __unk_vfn_5();
-    /*27*/ virtual void __unk_vfn_6();
+    /*25*/ virtual void __unk_vfn_6();
+    /*26*/ virtual void __unk_vfn_7();
+    /*27*/ virtual void __unk_vfn_8();
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*
+    inline class PistonBlockActor* getOwningPiston(class BlockSource& a0){
+        class PistonBlockActor* (PistonBlockActor::*rv)(class BlockSource&);
+        *((void**)&rv) = dlsym("?getOwningPiston@PistonBlockActor@@UEAAPEAV1@AEAVBlockSource@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0));
+    }
+    */
     MCAPI PistonBlockActor(class BlockPos const&, bool);
     MCAPI std::vector<class BlockPos> const& getAttachedBlocks() const;
     MCAPI class Block const* getCorrectArmBlock() const;

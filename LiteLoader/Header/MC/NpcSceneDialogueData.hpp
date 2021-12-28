@@ -5,13 +5,17 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "NpcComponent.hpp"
 #undef BEFORE_EXTRA
 
 class NpcSceneDialogueData {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+NpcComponent mComponent;
+    Actor mActor;
+    string mString;
 
 #undef AFTER_EXTRA
 
