@@ -752,6 +752,7 @@ void PlayerDebug()
         //TEST(player->getDeviceType());
         //player->setSidebar("aaa", {{"1", rand()}}, ObjectiveSortOrder::Descending);
         //Global<Scoreboard>->setDisplayObjective("money", "list", 1);
+        //TEST(player->getSelectedItem().toDebugString());
         return true;
     });
 }
