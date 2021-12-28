@@ -12,13 +12,20 @@ class ChunkBlockPos {
 
 #define AFTER_EXTRA
 // Add Member There
+#define DISABLE_CONSTRUCTOR_PREVENTION_CHUNKBLOCKPOS
 public:
-unsigned char x, z;
-short         y;
-ChunkBlockPos(unsigned char a, short b, unsigned char c) {
-    x = a, z = c;
-    y = b;
-};
+char x;
+char z;
+short y; // ChunkLocalHeight
+ChunkBlockPos()
+    : x(0)
+    , y(0)
+    , z(0){};
+
+ChunkBlockPos(char x, short y, char z)
+    : x(x)
+    , y(y)
+    , z(z){};
 
 #undef AFTER_EXTRA
 

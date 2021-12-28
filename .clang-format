@@ -18,6 +18,7 @@ ColumnLimit: 0
 CommentPragmas: '^ IWYU pragma:'
 PointerAlignment: Left
 IndentWidth: 4
+SortIncludes: false
 MaxEmptyLinesToKeep: 2
 AllowShortFunctionsOnASingleLine: false
 SpacesInSquareBrackets: false
