@@ -42,7 +42,7 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
 
 // Fix abnormal items.
 #include <mc/InventorySource.hpp>
-#include <MC/InventoryTransaction.hpp
+#include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
 THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
       ServerNetworkHandler& snh, NetworkIdentifier const& netid, InventoryTransactionPacket* pk) {
