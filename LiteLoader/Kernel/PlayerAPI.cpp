@@ -722,37 +722,3 @@ bool Player::isValid(Player* player)
             return true;
     return false;
 }
-
-
-#define TEST(API)  logger.warn("{} = {}", #API, API); 
-
-void PlayerDebug()
-{
-    Event::PlayerUseItemEvent::subscribe([](const Event::PlayerUseItemEvent& ev) {
-        ServerPlayer* player = (ServerPlayer*)ev.mPlayer;
-        ItemStack* item = ev.mItemStack;
-        //player->runcmd("say aaaa");
-        //TEST(player->getRealName());
-        //TEST(player->getAvgPing());
-        //TEST(player->getLastPing());
-        //TEST(player->getIP());
-        //TEST(player->getLanguageCode());
-        //TEST(player->getServerAddress());
-        //TEST(player->getDeviceTypeName());
-        //TEST(player->sendText(player->getNbt()->toSNBT()));
-        //TEST(player->talkAs("test sendtestpacket"));
-        //TEST(player->giveItem(item));
-        //TEST(player->getName());
-        //TEST(player->getEnderChestContainer()->addItem_s(item));
-        //TEST(player->getRespawnPosition().first.toString()); //bad?
-        //TEST(player->getNbt()->toString());
-        //TEST(player->getUuid());
-        //TEST(player->getAvgPacketLoss());
-        //TEST(player->getClientId());
-        //TEST(player->getDeviceType());
-        //player->setSidebar("aaa", {{"1", rand()}}, ObjectiveSortOrder::Descending);
-        //Global<Scoreboard>->setDisplayObjective("money", "list", 1);
-        //TEST(player->getSelectedItem().toDebugString());
-        return true;
-    });
-}
