@@ -1067,7 +1067,7 @@ THook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0@Z",
             ev.mBlockInstance = Level::getBlockInstance(bp, pl->getDimensionId());
             ev.mContainer = ev.mBlockInstance.getContainer();
             ev.mPlayer = pl;
-            ev.mSlot = slotNumber;
+            ev.mSlot = slotNumber + _this->_getContainerOffset();
             ev.mPreviousItemStack = oldItem;
             ev.mNewItemStack = newItem;
             ev.mActor = _this->getEntity();
