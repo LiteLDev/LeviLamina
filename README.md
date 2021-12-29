@@ -182,4 +182,4 @@ but if you modified the framework, or write a new framework based on this framew
 | [@ShrBox](https://github.com/ShrBox)                         | [@dreamguxiang](https://github.com/dreamguxiang)             | [@WangYneos](https://github.com/WangYneos)                   | [@wzy](https://github.com/wzyyyyyyy)                         | [@xiaoqch](https://github.com/xiaoqch)                       |          [@yqs112358](https://github.com/yqs112358)          |            [@Sysca11](https://github.com/Sysca11)            |            [@RimuruChan](https://github.com/RimuruChan)            |
 
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such as [CLion](https://www.jetbrains.com/clion/)**.  
-[<img src=".github/jetbrains-variant-3.png" width="200"/>](https://www.jetbrains.com/)
+[<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
