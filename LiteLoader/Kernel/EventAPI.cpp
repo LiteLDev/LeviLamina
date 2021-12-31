@@ -55,6 +55,7 @@ DeclareEventListeners(PlayerChangeDimEvent)
 DeclareEventListeners(PlayerJumpEvent)
 DeclareEventListeners(PlayerSneakEvent)
 DeclareEventListeners(PlayerAttackEvent)
+DeclareEventListeners(PlayerAttackBlockEvent)
 DeclareEventListeners(PlayerDieEvent)
 DeclareEventListeners(PlayerTakeItemEvent)
 DeclareEventListeners(PlayerDropItemEvent)
@@ -182,8 +183,7 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
 }
 
 /////////////////// PlayerRespawn ///////////////////
-THook(void,
-      "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+THook(void, "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
       void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
     IF_LISTENED(PlayerRespawnEvent)
@@ -270,7 +270,7 @@ THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z"
 }
 
 
-/////////////////// PlayerAttack ///////////////////
+/////////////////// PlayerAttackEntity ///////////////////
 THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
       Player* _this, Actor* ac, int* damageCause)
 {
@@ -289,6 +289,22 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
     return original(_this, ac, damageCause);
 }
 
+/////////////////// PlayerAttackBlock ///////////////////
+THook(__int64, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+    Player* self, Block* bl, BlockPos* bp)
+{
+    IF_LISTENED(PlayerAttackBlockEvent)
+    {
+        PlayerAttackBlockEvent ev{};
+        ev.mPlayer = self;
+        ev.mItemStack = self->getHandSlot();
+        ev.mBlockInstance = Level::getBlockInstance(bp, self->getBlockSource());
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerAttackBlockEvent)
+    return original(self, bl, bp);
+}
 
 /////////////////// PlayerTakeItem ///////////////////
 THook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",

@@ -180,6 +180,13 @@ public:
     int mAttackDamage;
 };
 
+class PlayerAttackBlockEvent : public EventTemplate<PlayerAttackBlockEvent> {
+public:
+    Player* mPlayer;
+    ItemStack* mItemStack;
+    BlockInstance mBlockInstance;
+};
+
 class PlayerDieEvent : public EventTemplate<PlayerDieEvent> {
 public:
     Player* mPlayer;
