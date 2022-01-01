@@ -40,10 +40,12 @@ echo [INFO] Fetching LL-SDK to GitHub finished
 echo.
 
 if [%1] neq [action] (
+    cd Scripts
     echo [INFO] Packing LL-SDK ...
     start /wait cmd /c PackSDK.cmd
     echo [INFO] Packing LL-SDK finished.
     echo.
+    cd ..
 )
 
 cd SDK
