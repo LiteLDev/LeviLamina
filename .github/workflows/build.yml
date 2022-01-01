@@ -19,7 +19,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: |
         mkdir Tools/Server
-        ServerLink=$(cat 'LINK.txt')
+        ServerLink=$(cat 'Scripts/LINK.txt')
         curl -L -o Tools/Server/server.zip "$ServerLink"
         unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
       shell: bash
@@ -43,12 +43,12 @@ jobs:
     
     - name: PackRelease
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ./PackRelease.cmd action
+      run: ./Scripts/PackRelease.cmd action
       shell: cmd
     
     - name: PackSDK
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ./PackSDK.cmd action
+      run: ./Scripts/PackSDK.cmd action
       shell: cmd
 
     #- name: Update LL-SDK

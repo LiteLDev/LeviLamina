@@ -1,4 +1,6 @@
 @echo off
+
+cd ..
 setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
