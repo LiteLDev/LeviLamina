@@ -42,13 +42,17 @@ jobs:
       shell: bash
     
     - name: PackRelease
-      working-directory: ${{env.GITHUB_WORKSPACE}}/Scripts
-      run: ./PackRelease.cmd action
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        cd Scripts
+        ./PackRelease.cmd action
       shell: cmd
     
     - name: PackSDK
-      working-directory: ${{env.GITHUB_WORKSPACE}}/Scripts
-      run: ./PackSDK.cmd action
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        cd Scripts
+        ./PackSDK.cmd action
       shell: cmd
 
     #- name: Update LL-SDK
