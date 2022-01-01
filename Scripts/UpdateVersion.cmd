@@ -1,4 +1,7 @@
 @echo off
+
+cd ..
+
 del /F /Q LiteLoader\Lib\bedrock_server_api.lib 2>nul
 del /F /Q LiteLoader\Lib\bedrock_server_var.lib 2>nul
 

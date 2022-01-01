@@ -61,6 +61,8 @@ add_compile_options(
 
 add_link_options("/DELAYLOAD:\"bedrock_server.dll\"")
 
+add_definitions(-w)
+
 add_library(LiteLoader SHARED ${SRC_FILES_ROOT} ${SRC_FILES_DIR})
 
 add_library(sqlitecpp STATIC IMPORTED)

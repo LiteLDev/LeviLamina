@@ -1,5 +1,7 @@
 @echo off
 
+cd ..
+
 rmdir SDK\Header /S /Q 2>nul
 rmdir SDK\Lib /S /Q 2>nul
 rmdir SDK\Tools /S /Q 2>nul

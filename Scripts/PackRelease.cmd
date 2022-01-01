@@ -1,5 +1,7 @@
 @echo off
 
+cd ..
+
 del /F /Q RELEASE\Chakra.dll 2>nul
 del /F /Q RELEASE\LiteLoader.dll 2>nul
 del /F /Q RELEASE\plugins\LiteLoader\LLAutoUpdate.dll 2>nul

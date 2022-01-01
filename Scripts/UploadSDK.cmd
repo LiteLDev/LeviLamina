@@ -1,4 +1,6 @@
 @echo off
+
+cd ..
 setlocal enabledelayedexpansion
 
 set LL_SDK_REMOTE_PATH=https://github.com/LiteLDev/LiteLoaderSDK.git
@@ -38,10 +40,12 @@ echo [INFO] Fetching LL-SDK to GitHub finished
 echo.
 
 if [%1] neq [action] (
+    cd Scripts
     echo [INFO] Packing LL-SDK ...
     start /wait cmd /c PackSDK.cmd
     echo [INFO] Packing LL-SDK finished.
     echo.
+    cd ..
 )
 
 cd SDK
