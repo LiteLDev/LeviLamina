@@ -39,7 +39,7 @@ public:
     LIAPI static std::vector<Actor*> getAllEntities();
     LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
-    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
+    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
 
     //Block
