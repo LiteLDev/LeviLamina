@@ -23,7 +23,7 @@ add_link_options(
         /SUBSYSTEM:WINDOWS /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /TLBID:1
 )
 
-link_directories(${LiteLoader_SOURCE_DIR}/Lib/third-party)
+link_directories(${CMAKE_SOURCE_DIR}/LiteLoader/Lib/third-party)
 link_directories(${CMAKE_SOURCE_DIR}/x64/Release/)
 
 add_library(Chakra SHARED dllmain.cpp SymDB.cpp Chakra.cpp)
