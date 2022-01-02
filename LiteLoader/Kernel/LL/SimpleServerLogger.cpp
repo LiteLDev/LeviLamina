@@ -1,7 +1,7 @@
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <EventAPI.h>
-#include <Config.h>
+#include <LL/Config.h>
 #include <MC/ItemStack.hpp>
 using namespace Event;
 

@@ -11,6 +11,8 @@ LiteLoader/Lib/SymDBHelper.lib
 **/*.lastcodeanalysissucceeded
 *.zip
 
+/LiteLoader/out/
+
 !RELEASE/
 RELEASE/LiteLoader.dll
 RELEASE/Chakra.dll

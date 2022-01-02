@@ -11,10 +11,13 @@
 #define MCINLINE inline
 #define MCCLS
 
+#ifndef FMT_HEADER_ONLY
+#define FMT_HEADER_ONLY
+#endif
+
 #include <bitset>
 #include <functional>
 #include <iostream>
-#include <minwindef.h>
 #include <mutex>
 #include <optional>
 #include <queue>
@@ -28,19 +31,21 @@
 #include <variant>
 #include <vector>
 
+#include <minwindef.h>
+
 #include "third-party/entt/entt.hpp"
 #include "third-party/gsl/gsl"
 #include "third-party/seh_exception/seh_exception.hpp"
+#include "third-party/FMT/chrono.h"
+#include "third-party/FMT/color.h"
+#include "third-party/FMT/core.h"
+#include "third-party/FMT/os.h"
+#include "third-party/FMT/printf.h"
 
-#include "HookAPI.h"
 #include "MC/Types.hpp"
 #include "GlobalServiceAPI.h"
 #include "Utils/Optional.h"
-#include "LoggerAPI.h"
+
 using std::map;
 using std::string;
 using std::vector;
-
-class Logger;
-
-extern Logger logger;

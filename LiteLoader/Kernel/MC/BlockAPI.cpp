@@ -48,7 +48,7 @@ unsigned short Block::getTileData() {
         if (((BlockLegacy*)blk)->toBlock(tileData) == (Block*)this)
             return i;
     }
-    logger.error("Error in GetTileData");
+    LL::logger.error("Error in GetTileData");
     return 0;
 }
 

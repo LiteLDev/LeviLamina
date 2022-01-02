@@ -6,17 +6,17 @@
 #include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
-#include <Config.h>
-#include <LLAPI.h>
-#include <Version.h>
-#include "Loader.h"
-#include "AutoUpgrade.h"
-#include "CrashLogger.h"
-#include <Header/EventAPI.h>
+#include <LL/Config.h>
+#include "LL/Loader.h"
+#include "LL/AutoUpgrade.h"
+#include "LL/CrashLogger.h"
+#include <EventAPI.h>
 
 using namespace std;
 
-Logger logger("LiteLoader");
+Logger LL::logger("LiteLoader");
+
+using LL::logger;
 
 void FixPluginsLibDir() {  // add plugins folder to path
     auto *buffer = new WCHAR[8192];
@@ -37,7 +37,9 @@ void FixUpCWD() {
 }
 
 extern void RegisterCommands();
+
 extern bool InitPlayerDatabase();
+
 extern void RegisterSimpleServerLogger();
 
 void CheckDevMode() {
@@ -57,8 +59,7 @@ void CheckDevMode() {
 //extern
 extern void EndScheduleSystem();
 
-void LLMain()
-{
+void LLMain() {
     //Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
@@ -82,7 +83,7 @@ void LLMain()
     //Load Config
     LoadLLConfig();
     InitPlayerDatabase();
-    
+
     //Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
@@ -109,8 +110,7 @@ void LLMain()
     RegisterSimpleServerLogger();
 
     //Register Started
-    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent)
-    { 
+    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
@@ -119,8 +119,7 @@ void LLMain()
     });
 
     //Register Cleanup
-    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent)
-    {
+    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
         EndScheduleSystem();
         return true;
     });
@@ -128,7 +127,7 @@ void LLMain()
 }
 
 // Call LLMain
-THook(int, "main", int a, void* b) {
+THook(int, "main", int a, void *b) {
     LLMain();
     return original(a, b);
 }
