@@ -1,8 +1,8 @@
 ﻿#pragma once
 #include "Global.h"
+#include "LoggerAPI.h"
 #include "Utils/Hash.h"
 #include <thread>
-
 
 // The core api of the hook function
 //__declspec(dllimport) int HookFunction(void* oldfunc, void** poutold, void* newfunc);
@@ -60,17 +60,17 @@ public:
 	THookRegister(void* address, void* hook, void** org) {
 		auto ret = HookFunction(address, org, hook);
 		if (ret != 0) {
-			logger.error("FailedToHook: {}", address);
+			LL::logger.error("FailedToHook: {}", address);
 		}
 	}
 	THookRegister(char const* sym, void* hook, void** org) {
 		auto found = dlsym_real(sym);
 		if (found == nullptr) {
-			logger.error("FailedToHook: {}", sym);
+			LL::logger.error("FailedToHook: {}", sym);
 		}
 		auto ret = HookFunction(found, org, hook);
 		if (ret != 0) {
-			logger.error("FailedToHook: {}", sym);
+			LL::logger.error("FailedToHook: {}", sym);
 		}
 	}
 	template <typename T>
