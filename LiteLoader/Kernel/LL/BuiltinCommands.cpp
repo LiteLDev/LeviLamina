@@ -10,8 +10,8 @@
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/VanillaDimensions.hpp>
-#include "AutoUpgrade.h"
-#include "Config.h"
+#include <LL/AutoUpgrade.h>
+#include <LL/Config.h>
 
 using namespace RegisterCommandHelper;
 
@@ -50,7 +50,7 @@ public:
                 oss << "- Name:  " << plugin->name << '(' << fn << ')' << std::endl;
                 oss << "- Version:  v" << plugin->version.toString(true) << std::endl;
                 oss << "- Introduction:  " << plugin->introduction << std::endl;
-                for (auto& [k, v] : plugin->otherInformation) {
+                for (auto&[k, v]: plugin->otherInformation) {
                     oss << "- " << k << ":  " << v << std::endl;
                 }
                 auto text = oss.str();
@@ -75,31 +75,29 @@ public:
         output.success(oss.str(), {});
     }
 
-    static void addPluginListValues(string name)
-    {
+    static void addPluginListValues(string name) {
         Global<CommandRegistry>->addSoftEnumValues("PluginName", {name});
     }
 
-    static void setup(CommandRegistry *registry) 
-    {
+    static void setup(CommandRegistry *registry) {
         registry->registerCommand(
                 "plugins", "View plugin information", CommandPermissionLevel::GameMasters, {(CommandFlagValue) 0},
                 {(CommandFlagValue) 0x80});
         registry->registerOverload<PluginsCommand>("plugins");
         vector<string> pluginList;
-        for (auto& [name, p] : LL::getAllPlugins()) {
+        for (auto&[name, p]: LL::getAllPlugins()) {
             string tmp = name;
             //transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
             pluginList.push_back(tmp);
         }
         registry->addSoftEnum("PluginName", pluginList);
         registry->registerOverload<PluginsCommand>(
-            "plugins",
-            makeOptional<CommandParameterDataType::SOFT_ENUM>(
-                &PluginsCommand::PluginName,
-                "name",
-                "PluginName",
-                &PluginsCommand::PluginName_isSet));
+                "plugins",
+                makeOptional<CommandParameterDataType::SOFT_ENUM>(
+                        &PluginsCommand::PluginName,
+                        "name",
+                        "PluginName",
+                        &PluginsCommand::PluginName_isSet));
         //Event::RegPluginEvent::subscribe([](Event::RegPluginEvent ev) {
         //    updatePluginList(ev.mPluginName);
         //    return true;
@@ -108,6 +106,7 @@ public:
 };
 
 static_assert(sizeof(CommandSelector<Player>) == 200);
+
 class TeleportDimensionCommand : public Command {
     enum class DimensionType {
         OverWorld,
@@ -118,53 +117,52 @@ class TeleportDimensionCommand : public Command {
     CommandPosition CommandPos;
     bool Victim_isSet = false;
     bool CommandPos_isSet = false;
-    Vec3 getTargetPos(CommandOrigin const& ori, Actor* actor) const
-    {
+
+    Vec3 getTargetPos(CommandOrigin const &ori, Actor *actor) const {
         if (CommandPos_isSet)
             return CommandPos.getPosition(ori, {0, 0, 0});
         auto pos = actor->getPos();
         Vec3 result = pos;
         int actorDimensionId = actor->getDimensionId();
-        switch (DimensionId)
-        {
+        switch (DimensionId) {
             case TeleportDimensionCommand::DimensionType::OverWorld:
                 if (actorDimensionId != 0)
                     result = {pos.x / 8, pos.y, pos.z / 8};
                 break;
             case TeleportDimensionCommand::DimensionType::Nether:
                 if (actorDimensionId != 1)
-                    result = {pos.x*8, pos.y, pos.z*8};
+                    result = {pos.x * 8, pos.y, pos.z * 8};
                 break;
             case TeleportDimensionCommand::DimensionType::TheEnd:
                 if (actorDimensionId != 2)
-                    result = {100,50,0};
+                    result = {100, 50, 0};
                 break;
             default:
                 break;
         }
         return result;
     }
-    bool teleportTarget(CommandOrigin const& ori, CommandOutput& output, Actor* actor) const
-    {
-        auto dim = VanillaDimensions::toString((int)DimensionId);
+
+    bool teleportTarget(CommandOrigin const &ori, CommandOutput &output, Actor *actor) const {
+        auto dim = VanillaDimensions::toString((int) DimensionId);
         auto pos = getTargetPos(ori, actor);
-        actor->teleport(pos, (int)DimensionId);
+        actor->teleport(pos, (int) DimensionId);
         output.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
                                    actor->getNameTag(), dim, pos.x, pos.y, pos.z),
                        {});
         return true;
     }
-    bool teleportTargets(CommandOrigin const& ori, CommandOutput& output, CommandSelectorResults<Actor>& actors) const
-    {
-        auto dim = VanillaDimensions::toString((int)DimensionId);
+
+    bool teleportTargets(CommandOrigin const &ori, CommandOutput &output, CommandSelectorResults<Actor> &actors) const {
+        auto dim = VanillaDimensions::toString((int) DimensionId);
         std::string names;
-        for (auto& actor : actors) {
+        for (auto &actor: actors) {
             std::string actorName = actor->getNameTag();
             if (actorName.empty()) {
                 actorName = actor->getTypeName();
             }
             names.append(", ").append(actorName);
-            if(actor->teleport(getTargetPos(ori, actor), (int)DimensionId))
+            if (actor->teleport(getTargetPos(ori, actor), (int) DimensionId))
                 output.success();
         }
         if (output.getSuccessCount() == 0) {
@@ -182,11 +180,9 @@ class TeleportDimensionCommand : public Command {
     }
 
 public:
-    void execute(CommandOrigin const& ori, CommandOutput& output) const override
-    {
-        if ((int)DimensionId < 0 || (int)DimensionId > 2)
-        {
-            output.error("Invalid DimensionId: " + std::to_string((int)DimensionId), {});
+    void execute(CommandOrigin const &ori, CommandOutput &output) const override {
+        if ((int) DimensionId < 0 || (int) DimensionId > 2) {
+            output.error("Invalid DimensionId: " + std::to_string((int) DimensionId), {});
             return;
         }
         if (Victim_isSet) {
@@ -197,9 +193,7 @@ public:
                 teleportTarget(ori, output, *result.begin());
             else
                 teleportTargets(ori, output, result);
-        }
-        else
-        {
+        } else {
             auto actor = ori.getEntity();
             if (!actor)
                 output.error("No Actor Specific", {});
@@ -210,31 +204,34 @@ public:
 
     static void setup(CommandRegistry *registry) {
         registry->registerCommand(
-            "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
-            {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
+                "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
+                {(CommandFlagValue) 0}, {(CommandFlagValue) 0x80});
         registry->addEnum<DimensionType>("DimensionType",
                                          {
-                                             {"overload", DimensionType::OverWorld},
-                                             {"o", DimensionType::OverWorld},
-                                             {"nether", DimensionType::Nether},
-                                             {"n", DimensionType::Nether},
-                                             {"end", DimensionType::TheEnd},
-                                             {"e", DimensionType::TheEnd},
+                                                 {"overload", DimensionType::OverWorld},
+                                                 {"o",        DimensionType::OverWorld},
+                                                 {"nether",   DimensionType::Nether},
+                                                 {"n",        DimensionType::Nether},
+                                                 {"end",      DimensionType::TheEnd},
+                                                 {"e",        DimensionType::TheEnd},
                                          });
-        auto dimensionTypeParam = makeMandatory<CommandParameterDataType::ENUM>(&TeleportDimensionCommand::DimensionId, "Dimension", "DimensionType");
-        auto dimensionIdParam = makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId, "DimensionId");
-        auto victimParam = makeMandatory(&TeleportDimensionCommand::Victim, "victim", &TeleportDimensionCommand::Victim_isSet);
+        auto dimensionTypeParam = makeMandatory<CommandParameterDataType::ENUM>(&TeleportDimensionCommand::DimensionId,
+                                                                                "Dimension", "DimensionType");
+        auto dimensionIdParam = makeMandatory((int TeleportDimensionCommand::*) &TeleportDimensionCommand::DimensionId,
+                                              "DimensionId");
+        auto victimParam = makeMandatory(&TeleportDimensionCommand::Victim, "victim",
+                                         &TeleportDimensionCommand::Victim_isSet);
         auto positionParam = makeOptional(&TeleportDimensionCommand::CommandPos,
-            "Position", &TeleportDimensionCommand::CommandPos_isSet);
+                                          "Position", &TeleportDimensionCommand::CommandPos_isSet);
 
         registry->registerOverload<TeleportDimensionCommand>(
-            "tpdim", victimParam, dimensionTypeParam, positionParam);
+                "tpdim", victimParam, dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
-            "tpdim", victimParam, dimensionIdParam, positionParam);
+                "tpdim", victimParam, dimensionIdParam, positionParam);
         //registry->registerOverload<TeleportDimensionCommand>(
         //    "tpdim", dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
-            "tpdim", dimensionIdParam, positionParam);
+                "tpdim", dimensionIdParam, positionParam);
     }
 };
 

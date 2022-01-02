@@ -4,12 +4,13 @@
 #include <vector>
 
 #include <LoggerAPI.h>
-#include <PluginManager.h>
+#include <LL/PluginManager.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
 
 using namespace std;
+using LL::logger;
 
 vector<std::wstring> GetPreloadList() {
     //若在preload.conf中，则不加载
