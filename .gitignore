@@ -24,4 +24,3 @@ RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
 .idea/**
 !.idea/cmake.xml
-LiteLoader/Header/Bomb.h
