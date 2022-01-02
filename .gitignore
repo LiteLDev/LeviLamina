@@ -21,4 +21,6 @@ RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
 #SDK/
 /RELEASE/plugins/LiteLoader/LLUnifiedOutput.pdb
-/.idea
+
+.idea/**
+!.idea/cmake.xml
