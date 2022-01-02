@@ -14,7 +14,6 @@
 #include <MC/Material.hpp>
 #include <MC/Mob.hpp>
 #include <MC/Player.hpp>
-#include <MC/CompoundTag.hpp>
 #include <MC/ListTag.hpp>
 #include <MC/StringTag.hpp>
 #include <MC/SimpleContainer.hpp>

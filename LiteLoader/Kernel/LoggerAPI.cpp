@@ -5,7 +5,7 @@
 #pragma once
 
 #include <LoggerAPI.h>
-#include "Config.h"
+#include "LL/Config.h"
 #include <MC/Player.hpp>
 
 #define LOGGER_CURRENT_TITLE "ll_plugin_logger_title"

@@ -1,13 +1,14 @@
-#include <Config.h>
+#include <LL/Config.h>
 #include <LLAPI.h>
-#include <PluginManager.h>
+#include <LL/PluginManager.h>
 #include <Utils/StringHelper.h>
-#include <Version.h>
+#include <LL/Version.h>
 #include <filesystem>
 #include <string>
+
 using namespace std;
 
-std::string LL::getDataPath(const std::string& pluginName) {
+std::string LL::getDataPath(const std::string &pluginName) {
     filesystem::create_directory("plugins\\LiteLoader");
     return "plugins\\LiteLoader\\" + pluginName;
 }
@@ -24,12 +25,11 @@ bool LL::isDebugMode() {
     return LL::globalConfig.debugMode;
 }
 
-LL::Plugin* LL::getPlugin(std::string name) {
+LL::Plugin *LL::getPlugin(std::string name) {
     return ::GetPlugin(name);
 }
 
-LL::Plugin* LL::getPlugin(HMODULE handler)
-{
+LL::Plugin *LL::getPlugin(HMODULE handler) {
     return ::GetPlugin(handler);
 }
 
@@ -43,14 +43,11 @@ std::unordered_map<std::string, LL::Plugin> LL::getAllPlugins() {
 
 //Version
 LL::Version::Version(int major, int minor, int revision, Status status)
-    : major(major)
-    , minor(minor)
-    , revision(revision)
-    , status(status)
-{}
+        : major(major), minor(minor), revision(revision), status(status) {}
 
 bool LL::Version::operator<(LL::Version b) {
-    return major < b.major || (major == b.major && minor < b.minor) || (major == b.major && minor == b.minor && revision < b.revision);
+    return major < b.major || (major == b.major && minor < b.minor) ||
+           (major == b.major && minor == b.minor && revision < b.revision);
 }
 
 bool LL::Version::operator==(LL::Version b) {
@@ -68,7 +65,7 @@ std::string LL::Version::toString(bool needStatus) {
     return res;
 }
 
-LL::Version LL::Version::parse(const std::string& str) {
+LL::Version LL::Version::parse(const std::string &str) {
     auto res = SplitStrWithPattern(str, ".");
 
     Version ver;

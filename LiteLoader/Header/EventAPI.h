@@ -96,15 +96,15 @@ public:
             }
             return passToBDS;
         } catch (const seh_exception& e) {
-            logger.error("Uncaught SEH Exception Detected!");
-            logger.error("In Event ({})", typeid(EVENT).name());
+            LL::logger.error("Uncaught SEH Exception Detected!");
+            LL::logger.error("In Event ({})", typeid(EVENT).name());
             if(!i->first.empty())
-                logger.error("In Plugin <{}>", i->first);
+                LL::logger.error("In Plugin <{}>", i->first);
         } catch (const std::exception& e) {
-            logger.error("Uncaught Exception Detected!");
-            logger.error("In Event ({})", typeid(EVENT).name());
+            LL::logger.error("Uncaught Exception Detected!");
+            LL::logger.error("In Event ({})", typeid(EVENT).name());
             if (!i->first.empty())
-                logger.error("In Plugin <{}>", i->first);
+                LL::logger.error("In Plugin <{}>", i->first);
         }
         return passToBDS;
     }
