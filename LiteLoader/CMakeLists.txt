@@ -3,10 +3,7 @@ project(LiteLoader)
 
 set(CMAKE_CXX_STANDARD 17)
 set(TARGET_DIR ${PROJECT_SOURCE_DIR}/../x64/Release/)
-
-macro(remove_cxx_flag flag)
-    string(REPLACE "${flag}" "" CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-endmacro()
+set(CMAKE_BUILD_TYPE Release)
 
 add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
         -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
