@@ -24,3 +24,5 @@ RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
 
 .idea/**
 !.idea/cmake.xml
+
+cmake-build-release/

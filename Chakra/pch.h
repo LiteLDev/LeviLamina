@@ -14,7 +14,8 @@
 #define CHAKRA_API __declspec(dllimport)
 #endif
 #define WIN32_LEAN_AND_MEAN // 从 Windows 头文件中排除极少使用的内容
-#include <windows.h>
+#pragma comment(lib, "detours/detours.lib")
+#include <Windows.h>
 #include <filesystem>
 #include <fstream>
 #include <iostream>

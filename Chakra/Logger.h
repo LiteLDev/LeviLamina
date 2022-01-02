@@ -2,10 +2,10 @@
 #ifndef FMT_HEADER_ONLY
 #define FMT_HEADER_ONLY
 #endif
-#include "fmt/chrono.h"
-#include "fmt/color.h"
-#include "fmt/core.h"
-#include "fmt/os.h"
+#include "FMT/chrono.h"
+#include "FMT/color.h"
+#include "FMT/core.h"
+#include "FMT/os.h"
 #include "FMT/format.h"
 #include <string>
 

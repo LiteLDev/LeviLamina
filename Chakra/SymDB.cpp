@@ -3,7 +3,6 @@
 #include <filesystem>
 #include <fstream>
 #include <list>
-#include <string>
 #include <string_view>
 #include <thread>
 #include <unordered_map>
@@ -11,11 +10,8 @@
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
-#include "../LiteLoader/Header/third-party/fmt/chrono.h"
-#include "../LiteLoader/Header/third-party/fmt/color.h"
-#include "../LiteLoader/Header/third-party/fmt/core.h"
-#include "../LiteLoader/Header/third-party/fmt/os.h"
-#include "../LiteLoader/Header/third-party/fmt/printf.h"
+#include "../LiteLoader/Header/third-party/FMT/chrono.h"
+#include "../LiteLoader/Header/third-party/FMT/os.h"
 
 using std::list;
 using std::string, std::string_view;

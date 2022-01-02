@@ -2,12 +2,9 @@ cmake_minimum_required(VERSION 3.21)
 project(LiteLoader)
 
 set(CMAKE_CXX_STANDARD 17)
-set(TARGET_DIR ${PROJECT_SOURCE_DIR}/../x64/Release/)
 set(CMAKE_BUILD_TYPE Release)
-
-add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
-        -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
-        -D_USRDLL -D_AMD64_ -DNOMINMAX)
+set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
 
 file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Lib/*.cpp
@@ -24,19 +21,26 @@ file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Main/*.h
         )
 
+add_definitions(-DUNICODE -DNDEBUG -DLITELOADER_EXPORTS -DWIN32_LEAN_AND_MEAN
+        -DCPPHTTPLIB_OPENSSL_SUPPORT -D_CRT_SECURE_NO_WARNINGS -D_WINDOWS
+        -D_USRDLL -D_AMD64_ -DNOMINMAX)
+
+add_compile_options(
+        /permissive /MP /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise
+        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHa /nologo
+        /diagnostics:column /utf-8
+)
+
+add_link_options(
+        /MANIFEST /LTCG:incremental /NXCOMPAT /DEBUG /DLL /MACHINE:X64 /OPT:REF /INCREMENTAL:NO /SUBSYSTEM:WINDOWS
+        /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
+)
+
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
 
 link_directories(.)
 link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
-
-add_compile_options(
-        /permissive /MP /GS /GL /W0 /Gy /Zc:wchar_t /Zi /Gm- /sdl /Zc:inline /fp:precise
-        /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /EHa /nologo
-        /diagnostics:column
-)
-
-add_link_options("/DELAYLOAD:\"bedrock_server.dll\"")
 
 add_library(LiteLoader SHARED ${SRC_FILES})
 
@@ -47,8 +51,7 @@ set_property(TARGET sqlite3 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_D
 add_library(base64 STATIC IMPORTED)
 set_property(TARGET base64 PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Header/third-party/cpp-base64/lib/cpp-base64.lib")
 
-target_link_libraries(LiteLoader base64 sqlitecpp sqlite3
+target_link_libraries(LiteLoader Chakra base64 sqlitecpp sqlite3
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libcrypto.lib"
         "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/openssl/libssl.lib"
-        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib"
-        "${TARGET_DIR}/Chakra.lib")
+        "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/leveldb/leveldb.lib")
