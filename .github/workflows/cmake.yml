@@ -21,14 +21,14 @@ jobs:
           ServerLink=$(cat 'Scripts/LINK.txt')
           curl -L -o Tools/Server/server.zip "$ServerLink"
           unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
-          shell: bash
+        shell: bash
 
       - name: Build Library
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Tools
           LibraryBuilder.exe Server
-          shell: cmd
+        shell: cmd
 
       - name: Configure CMake
         # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
@@ -50,7 +50,7 @@ jobs:
         run: |
           cd Scripts
           ./PackRelease.cmd action
-          shell: cmd
+        shell: cmd
 
       - name: PackSDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
