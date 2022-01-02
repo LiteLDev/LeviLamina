@@ -3,8 +3,10 @@ project(LiteLoader)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_BUILD_TYPE Release)
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
+
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
+
+set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES
         ${PROJECT_SOURCE_DIR}/Lib/*.cpp
@@ -42,7 +44,7 @@ include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
 link_directories(.)
 link_directories(${PROJECT_SOURCE_DIR}/../x64/Release/)
 
-add_library(LiteLoader SHARED ${SRC_FILES})
+add_library(LiteLoader SHARED ${SRC_FILES} Resource/LiteLoader.rc)
 
 add_library(sqlitecpp STATIC IMPORTED)
 set_property(TARGET sqlitecpp PROPERTY IMPORTED_LOCATION "${CMAKE_CURRENT_SOURCE_DIR}/Lib/third-party/SQLiteCpp/SQLiteCpp.lib")
