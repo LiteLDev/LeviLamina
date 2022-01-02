@@ -41,14 +41,14 @@ jobs:
           MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
         shell: bash
 
-      - name: PackRelease
+      - name: Pack Release
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Scripts
           ./PackRelease.cmd action
         shell: cmd
 
-      - name: PackSDK
+      - name: Pack SDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Scripts
