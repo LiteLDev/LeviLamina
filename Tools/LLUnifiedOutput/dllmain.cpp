@@ -43,9 +43,9 @@ bool inline SendLine(HANDLE hOutput) {
     bool success = true;
 
     if (!is(line)) {
-        if (line.find('\n') != line.npos) {
+        if (line.find('\n') != std::string::npos) {
             line = "\b\b" + line;
-            success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, NULL);
+            success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
         } else {
             buffer.str("");
             buffer.clear();
@@ -53,14 +53,14 @@ bool inline SendLine(HANDLE hOutput) {
         }
     } else {
         line = "\b\b" + line + "> ";
-        success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, NULL);
+        success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
     }
     buffer.str("");
     buffer.clear();
     return success;
 }
 
-void inline AddText(const char *text, size_t len) {
+void inline AddText(const char *text, std::streamsize len) {
     buffer.write(text, len);
 }
 

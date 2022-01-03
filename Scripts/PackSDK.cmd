@@ -2,38 +2,38 @@
 
 cd ..
 
-rmdir SDK\Header /S /Q 2>nul
-rmdir SDK\Lib /S /Q 2>nul
-rmdir SDK\Tools /S /Q 2>nul
+rmdir LiteLoaderSDK\Header /S /Q 2>nul
+rmdir LiteLoaderSDK\Lib /S /Q 2>nul
+rmdir LiteLoaderSDK\Tools /S /Q 2>nul
 
-echo [INFO] Packing LL-SDK...
+echo [INFO] Packing LiteLoaderSDK...
 echo.
 
-mkdir SDK\Header 2>nul
-mkdir SDK\Lib 2>nul
-mkdir SDK\Tools 2>nul
-mkdir SDK\Tools\llvm-dlltool-msys2 2>nul
+mkdir LiteLoaderSDK\Header 2>nul
+mkdir LiteLoaderSDK\Lib 2>nul
+mkdir LiteLoaderSDK\Tools 2>nul
+mkdir LiteLoaderSDK\Tools\llvm-dlltool-msys2 2>nul
 
-xcopy LiteLoader\Header\* SDK\Header /E /Q /Y
+xcopy LiteLoader\Header\* LiteLoaderSDK\Header /E /Q /Y
 
-copy /Y LiteLoader\Lib\SymDBHelper.lib SDK\Lib
-copy /Y x64\Release\*.lib SDK\Lib
+copy /Y LiteLoader\Lib\SymDBHelper.lib LiteLoaderSDK\Lib
+copy /Y x64\Release\*.lib LiteLoaderSDK\Lib
 
-xcopy Tools\llvm-dlltool-msys2\* SDK\Tools\llvm-dlltool-msys2 /E /Q /Y
-copy /Y Tools\LibraryBuilder.exe SDK\Tools
-copy /Y Tools\SymDB2.exe SDK\Tools
-copy /Y Tools\DownloadSDK.cmd SDK\Tools
+xcopy Tools\llvm-dlltool-msys2\* LiteLoaderSDK\Tools\llvm-dlltool-msys2 /E /Q /Y
+copy /Y Tools\LibraryBuilder.exe LiteLoaderSDK\Tools
+copy /Y Tools\SymDB2.exe LiteLoaderSDK\Tools
+copy /Y Tools\DownloadSDK.cmd LiteLoaderSDK\Tools
 
 if [%1] neq [action] goto Zipped
 echo.
 echo [INFO] Zipping Files...
-cd SDK
-..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoader-SDK.zip *
+cd LiteLoaderSDK
+..\Tools\7zip\7za.exe a -y -tzip -mmt -mx=3 ..\LiteLoaderSDK.zip *
 cd ..
 :Zipped
 
 echo.
-echo [INFO] Packing LL-SDK... DONE!
+echo [INFO] Packing LiteLoaderSDK... DONE!
 
 if [%1]==[action] goto End
 timeout /t 3 >nul

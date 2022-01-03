@@ -19,42 +19,42 @@ for /f "tokens=3* delims= " %%i in ('Reg query "HKCU\Software\Microsoft\Windows\
 ) 
 
 
-echo [INFO] Fetching LL-SDK to GitHub ...
+echo [INFO] Fetching LiteLoaderSDK to GitHub ...
 echo.
 
 for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BRANCH=%%i
-if not exist SDK/Header/ (
-    echo [WARNING] SDK files no found. Pulling from remote...
+if not exist LiteLoaderSDK/Header/ (
+    echo [WARNING] LiteLoaderSDK files no found. Pulling from remote...
     echo.
     git clone %LL_SDK_REMOTE_PATH%
 )
 
-cd SDK
+cd LiteLoaderSDK
 git fetch --all
 git reset --hard origin/%LL_SDK_NOW_BRANCH%
 git checkout %LL_SDK_NOW_BRANCH%
 cd ..
 
 echo.
-echo [INFO] Fetching LL-SDK to GitHub finished
+echo [INFO] Fetching LiteLoaderSDK to GitHub finished
 echo.
 
 if [%1] neq [action] (
     cd Scripts
-    echo [INFO] Packing LL-SDK ...
+    echo [INFO] Packing LiteLoaderSDK ...
     start /wait cmd /c PackSDK.cmd
-    echo [INFO] Packing LL-SDK finished.
+    echo [INFO] Packing LiteLoaderSDK finished.
     echo.
     cd ..
 )
 
-cd SDK
+cd LiteLoaderSDK
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
 if "%LL_SDK_NOW_STATUS%" neq "" (
     echo [INFO] Modified files found.
     echo.
     git add .
-    git commit -m "Update LiteLoader SDK"
+    git commit -m "Update LiteLoaderSDK"
     echo.
     echo [INFO] Pushing to origin...
     echo.
@@ -69,7 +69,7 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     echo.
     echo [INFO] No modified files found.
-    echo [INFO] No need to Upgrade SDK.
+    echo [INFO] No need to Upgrade LiteLoaderSDK.
     goto Finish
 )
 
