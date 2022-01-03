@@ -69,7 +69,7 @@ namespace LL {
 } // namespace LL
 
 
-bool LoadLLConfig() {
+bool LL::LoadLLConfig() {
     try {
         auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
         if (!content) {

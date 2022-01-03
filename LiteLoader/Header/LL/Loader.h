@@ -1,3 +1,5 @@
 #pragma once
 
-void LoadMain();
+namespace LL{
+    void LoadMain();
+}

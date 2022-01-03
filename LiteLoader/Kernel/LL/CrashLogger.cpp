@@ -9,7 +9,7 @@ using namespace LL;
 
 Logger crashLogger("CrashLogger");
 
-bool StartCrashLoggerProcess()
+bool LL::StartCrashLoggerProcess()
 {
     if (IsDebuggerPresent()) {
         crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
@@ -40,7 +40,7 @@ bool StartCrashLoggerProcess()
     return true;
 }
 
-void InitCrashLogger(bool enableCrashLogger)
+void LL::InitCrashLogger(bool enableCrashLogger)
 {
 
     if (!enableCrashLogger)

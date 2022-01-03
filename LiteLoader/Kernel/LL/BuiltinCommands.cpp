@@ -253,7 +253,7 @@ public:
                     break;
             }
         }
-        CheckAutoUpdate(true, isForce);
+        LL::CheckAutoUpdate(true, isForce);
     }
 
     static void setup(CommandRegistry *registry) {

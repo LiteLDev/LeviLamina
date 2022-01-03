@@ -81,7 +81,7 @@ void LLMain() {
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
     //Load Config
-    LoadLLConfig();
+    LL::LoadLLConfig();
     InitPlayerDatabase();
 
     //Rename Window
@@ -93,7 +93,7 @@ void LLMain() {
     CheckDevMode();
 
     //Builtin CrashLogger
-    InitCrashLogger(LL::globalConfig.enableCrashLogger);
+    LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Register Myself
     //LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for bedrock delicated server", LITELOADER_VERSION,
@@ -114,7 +114,7 @@ void LLMain() {
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
-            InitAutoUpdateCheck();
+            LL::InitAutoUpdateCheck();
         return true;
     });
 

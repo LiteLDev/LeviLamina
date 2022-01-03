@@ -1,10 +1,11 @@
 #pragma once
+
 #include <Nlohmann/json.hpp>
 #include <string>
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char* NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
+constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
 
 
 /////////////////////// SEH Protection ///////////////////////
@@ -15,13 +16,11 @@ constexpr const char* NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL
-{
+namespace LL {
     enum class SeverStatus {
         Starting, Running, Stopping
     };
-    struct LLConfig
-    {
+    struct LLConfig {
         bool debugMode = false;
         int logLevel = 4;
         ::std::string language = "en";
@@ -40,12 +39,12 @@ namespace LL
     };
     extern LLConfig globalConfig;
 
-    void inline to_json(nlohmann::json& j, const LLConfig& conf);
-    void inline from_json(const nlohmann::json& j, LLConfig& conf);
+    void inline to_json(nlohmann::json &j, const LLConfig &conf);
+
+    void inline from_json(const nlohmann::json &j, LLConfig &conf);
+
+    bool LoadLLConfig();
 } // namespace LL
-
-bool LoadLLConfig();
-
 
 /////////////////////// LL AutoUpgrade ///////////////////////
 

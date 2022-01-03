@@ -93,7 +93,7 @@ DownloadResult DownloadAndCheckMd5(const string &url, const string &localPath, b
     return DownloadResult::Success;
 }
 
-bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
+bool LL::CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
     try {
         //Get Dir Id
         int status = -1;
@@ -150,7 +150,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
             delete iniVersions;
         } else {
             for (auto &file: data["OtherFiles"]) {
-                string fileName = file["Name"].get<string>();
+                auto fileName = file["Name"].get<string>();
                 Version nowVersion = Version::parse(iniVersions->GetValue(fileName.c_str(), "Version", "0.0.0"));
                 Version newVersion = Version::parse(file["Version"].get<string>());
 
@@ -160,8 +160,9 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
                     else
                         autoUpgradeLogger.debug("Updating file: {}", fileName);
 
-                    string path = file["Path"].get<string>();
-                    string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
+                    auto path = file["Path"].get<string>();
+                    string remotePath = string(LL_UPDATE_URL_PREFIX).append("/").append(id).append(path).append(
+                            fileName);
                     string localPath = file["Install"].get<string>() + "/" + fileName;
                     bool isBinary = file["IsBinary"].get<bool>();
 
@@ -236,7 +237,7 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
             //Check existing update
             auto ini = new CSimpleIniA;
             ini->SetUnicode(true);
-            auto res = ini->LoadFile(LL_UPDATE_INFO_RECORD);
+            res = ini->LoadFile(LL_UPDATE_INFO_RECORD);
             if (res >= 0 && Version::parse(ini->GetValue("Info", "Version", "0.0.0")) == verRemote) {
                 if (isUpdateManually)
                     autoUpgradeLogger.info(
@@ -257,14 +258,14 @@ bool CheckAutoUpdate(bool isUpdateManually, bool forceUpdate) {
             auto iniUpdate = new CSimpleIniA;
             iniUpdate->SetUnicode(true);
             for (auto &file: current["Files"]) {
-                string fileName = file["Name"].get<string>();
+                auto fileName = file["Name"].get<string>();
                 if (isUpdateManually)
                     autoUpgradeLogger.info("Get: {}", fileName);
                 else
                     autoUpgradeLogger.debug("Get: {}", fileName);
 
-                string path = file["Path"].get<string>();
-                string remotePath = string(LL_UPDATE_URL_PREFIX) + "/" + id + path + fileName;
+                auto path = file["Path"].get<string>();
+                string remotePath = string(LL_UPDATE_URL_PREFIX).append("/").append(id).append(path).append(fileName);
                 string localPath = LL_UPDATE_CACHE_PATH + fileName;
                 bool isBinary = file["IsBinary"].get<bool>();
 
@@ -369,7 +370,7 @@ void ClearUpdateLibrary() {
     }
 }
 
-void InitAutoUpdateCheck() {
+void LL::InitAutoUpdateCheck() {
     //Check Files
     if (!filesystem::exists(LL_UPDATE_PROGRAM)) {
         autoUpgradeLogger.warn("Auto-update is not running. Update program is missing!");

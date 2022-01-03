@@ -1,3 +1,4 @@
+#include <LL/Loader.h>
 #include <Windows.h>
 #include <filesystem>
 #include <string>
@@ -35,8 +36,8 @@ vector<std::wstring> GetPreloadList() {
     }
     return preload_list;
 }
-#include <KVDBAPI.h>
-void LoadMain() {
+
+void LL::LoadMain() {
     logger.info("Loading plugins...");
 
     // Load plugins
@@ -44,15 +45,14 @@ void LoadMain() {
     vector<std::wstring> preloadList = GetPreloadList();
 
     filesystem::directory_iterator ent("plugins");
-    for (auto& file : ent)
-    {
+    for (auto &file: ent) {
         if (!file.is_regular_file() || file.path().extension().u8string() != ".dll")
             continue;
 
         string path = file.path().u8string();
 
         bool loaded = false;
-        for (auto& p : preloadList)
+        for (auto &p: preloadList)
             if (p.find(str2wstr(path)) != std::wstring::npos) {
                 loaded = true;
                 break;
@@ -68,7 +68,7 @@ void LoadMain() {
             logger.info("Plugin <{}> loaded", pluginFileName);
 
             if (GetPlugin(lib) == nullptr) {
-                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1,0,0), {});
+                RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
             }
         } else {
             logger.error("Fail to load plugin <{}>", pluginFileName);
@@ -78,12 +78,12 @@ void LoadMain() {
 
     //Call onPostInit
     auto plugins = GetAllPlugins();
-    for (auto& [name, plugin] : plugins) {
+    for (auto&[name, plugin]: plugins) {
         auto fn = GetProcAddress(plugin.handler, "onPostInit");
         if (fn) {
             try {
-                ((void (*)())fn)();
-            } catch (std::exception e) {
+                ((void (*)()) fn)();
+            } catch (std::exception &e) {
                 logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
                 logger.error("Exception: ", e.what());
                 logger.error("Fail to init this plugin!");

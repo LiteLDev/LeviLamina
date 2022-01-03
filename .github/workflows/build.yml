@@ -48,12 +48,12 @@ jobs:
           ./PackRelease.cmd action
         shell: cmd
 
-#      - name: Pack SDK
-#        working-directory: ${{env.GITHUB_WORKSPACE}}
-#        run: |
-#          cd Scripts
-#          ./PackSDK.cmd action
-#        shell: cmd
+      #      - name: Pack SDK
+      #        working-directory: ${{env.GITHUB_WORKSPACE}}
+      #        run: |
+      #          cd Scripts
+      #          ./PackSDK.cmd action
+      #        shell: cmd
 
       - name: Update LL-SDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -68,11 +68,11 @@ jobs:
           name: LiteLoader
           path: ${{ github.workspace }}\RELEASE\
 
-#      - name: Upload LiteLoader SDK
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: LiteLoader-SDK
-#          path: ${{ github.workspace }}\LiteLoader-SDK.zip
+      #      - name: Upload LiteLoader SDK
+      #        uses: actions/upload-artifact@v2
+      #        with:
+      #          name: LiteLoader-SDK
+      #          path: ${{ github.workspace }}\LiteLoader-SDK.zip
 
       - name: Prepare for creating Release
         working-directory: ${{env.GITHUB_WORKSPACE}}

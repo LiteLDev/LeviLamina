@@ -1,4 +1,6 @@
 #pragma once
 
-bool StartCrashLoggerProcess();
-void InitCrashLogger(bool enableCrashLogger);
+namespace LL{
+    bool StartCrashLoggerProcess();
+    void InitCrashLogger(bool enableCrashLogger);
+}
