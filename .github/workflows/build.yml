@@ -55,7 +55,7 @@ jobs:
       #          ./PackSDK.cmd action
       #        shell: cmd
 
-      - name: Update LL-SDK
+      - name: Update LiteLoaderSDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Scripts

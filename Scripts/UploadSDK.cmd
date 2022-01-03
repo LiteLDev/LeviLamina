@@ -39,14 +39,14 @@ echo.
 echo [INFO] Fetching LiteLoaderSDK to GitHub finished
 echo.
 
-if [%1] neq [action] (
+@REM if [%1] neq [action] (
     cd Scripts
     echo [INFO] Packing LiteLoaderSDK ...
     start /wait cmd /c PackSDK.cmd
     echo [INFO] Packing LiteLoaderSDK finished.
     echo.
     cd ..
-)
+@REM )
 
 cd LiteLoaderSDK
 for /f "delims=" %%i in ('git status . -s') do set LL_SDK_NOW_STATUS=%%i
