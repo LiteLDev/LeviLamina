@@ -58,7 +58,11 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     echo [INFO] Pushing to origin...
     echo.
-    git push origin %LL_SDK_NOW_BRANCH%
+    if [%1] neq [action] (
+        git push origin %LL_SDK_NOW_BRANCH%
+    ) else (
+        git push https://%USERNAME%:%REPO_KEY%@github.com/LiteLDev/LiteLoaderSDK.git %LL_SDK_NOW_BRANCH%
+    )
     cd ..
     echo.
     echo [INFO] Upload finished.

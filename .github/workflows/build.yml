@@ -58,10 +58,13 @@ jobs:
       - name: Update LiteLoaderSDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
-          git config --global user.email "LiteLDev@litebds.com"
-          git config --global user.name "LiteLDev"
+          git config --local user.name "github-actions[bot]"
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           cd Scripts
           ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
         shell: cmd
 
       - name: Upload LiteLoader
@@ -94,4 +97,4 @@ jobs:
             ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
             ${{ github.workspace }}\LiteLoader-SDK.zip
         env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
