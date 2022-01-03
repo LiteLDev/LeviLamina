@@ -101,7 +101,7 @@ void LLMain() {
     //});
 
     //Load plugins
-    LoadMain();
+    LL::LoadMain();
 
     //Register built-in commands
     RegisterCommands();
