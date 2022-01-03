@@ -48,20 +48,19 @@ jobs:
           ./PackRelease.cmd action
         shell: cmd
 
-      - name: Pack SDK
+#      - name: Pack SDK
+#        working-directory: ${{env.GITHUB_WORKSPACE}}
+#        run: |
+#          cd Scripts
+#          ./PackSDK.cmd action
+#        shell: cmd
+
+      - name: Update LL-SDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd Scripts
-          ./PackSDK.cmd action
+          ./UploadSDK.cmd action
         shell: cmd
-
-      #- name: Update LL-SDK
-      #  working-directory: ${{env.GITHUB_WORKSPACE}}
-      #  run: |
-      #    git config --global user.email "LiteLDev@litebds.com"
-      #    git config --global user.name "LiteLDev"
-      #    UploadSDK.cmd action
-      #  shell: cmd
 
       - name: Upload LiteLoader
         uses: actions/upload-artifact@v2
@@ -69,11 +68,11 @@ jobs:
           name: LiteLoader
           path: ${{ github.workspace }}\RELEASE\
 
-      - name: Upload LiteLoader SDK
-        uses: actions/upload-artifact@v2
-        with:
-          name: LiteLoader-SDK
-          path: ${{ github.workspace }}\LiteLoader-SDK.zip
+#      - name: Upload LiteLoader SDK
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: LiteLoader-SDK
+#          path: ${{ github.workspace }}\LiteLoader-SDK.zip
 
       - name: Prepare for creating Release
         working-directory: ${{env.GITHUB_WORKSPACE}}

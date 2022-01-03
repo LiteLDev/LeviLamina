@@ -26,7 +26,7 @@ for /f "delims=" %%i in ('git rev-parse --abbrev-ref HEAD') do set LL_SDK_NOW_BR
 if not exist SDK/Header/ (
     echo [WARNING] SDK files no found. Pulling from remote...
     echo.
-    git submodule update --init --recursive
+    git clone %LL_SDK_REMOTE_PATH%
 )
 
 cd SDK
@@ -60,20 +60,12 @@ if "%LL_SDK_NOW_STATUS%" neq "" (
     echo.
     git push origin %LL_SDK_NOW_BRANCH%
     cd ..
-    git add SDK
-    git commit -m "Update LiteLoader SDK"
-    echo.
-    echo [INFO] Pushing to origin...
-    echo.
-    git push origin %LL_SDK_NOW_BRANCH%
     echo.
     echo [INFO] Upload finished.
     echo.
     goto Finish
 ) else (
     cd ..
-    git add SDK
-    git push origin %LL_SDK_NOW_BRANCH%
     echo.
     echo.
     echo [INFO] No modified files found.
