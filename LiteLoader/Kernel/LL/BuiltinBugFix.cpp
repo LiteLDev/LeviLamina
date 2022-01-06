@@ -9,12 +9,14 @@
 #include <MC/Player.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/ServerNetworkHandler.hpp>
+#include <MC/ClientCacheBlobStatusPacket.hpp>
+#include <MC/BinaryStream.hpp>
 
 using namespace LL;
 
 bool ip_information_logged = false;
 
-//Fix disconnect packet crash bug
+//Patch for CVE-2021-45384
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
               ServerNetworkHandler, NetworkIdentifier *ni, void *packet) {
     if (globalConfig.enableFixDisconnectBug) {
@@ -24,8 +26,19 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     return original(this, ni, packet);
 }
 
+//Patch for CVE-2021-45383
+THook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+      Packet* a1, ReadOnlyBinaryStream* a2)
+{
+    ReadOnlyBinaryStream pkt(a2->getData(), 0);
+    pkt.getUnsignedVarInt();
+    if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
+    if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
+    return original(a1,a2);
+}
 
-//Fix the listening port twice.
+
+    //Fix the listening port twice.
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void *_this) {
     if (globalConfig.enableFixListenPort) {
