@@ -5,11 +5,15 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include  "SimpleSparseContainer.hpp"
 
 #undef BEFORE_EXTRA
 
 class CraftHandlerBase {
-
+public:
+    inline class std::shared_ptr<class SimpleSparseContainer> tryGetSparseContainer(enum ContainerEnumName a0) {
+        return _tryGetSparseContainer(a0);
+    }
 #define AFTER_EXTRA
 // Add Member There
 

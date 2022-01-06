@@ -6,8 +6,10 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "ServerNetworkHandler.hpp"
+class ReadOnlyBinaryStream;
 class BinaryStream;
 class ServerPlayer;
+enum StreamReadResult;
 enum class PacketReliability {
     Relible,
     RelibleOrdered

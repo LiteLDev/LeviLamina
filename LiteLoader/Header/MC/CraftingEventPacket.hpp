@@ -6,6 +6,9 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "NetworkItemStackDescriptor.hpp"
+#include "Block.hpp"
+static_assert(sizeof(NetworkItemStackDescriptor) == 128);
 
 #undef BEFORE_EXTRA
 
@@ -13,6 +16,30 @@ class CraftingEventPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    unsigned char screenID;//48
+    unsigned int craftingType;//52
+    mce::UUID recipeUUID;//56
+    std::vector<NetworkItemStackDescriptor> inputItems;//72
+    std::vector<NetworkItemStackDescriptor> outputItems;//96
+
+    inline std::string toDebugString() {
+        auto str = fmt::format("{}: screenID: {}, craftingType: {}, recipeUUID: {}, input: [",
+            __super::toDebugString(), (int)screenID, craftingType, recipeUUID.asString());
+        bool first = true;
+        for (auto& item : inputItems) {
+            str += fmt::format("{}{}", first ? "" : ", ", item.descriptor.getFullName());
+            first = false;
+        }
+        str += "], output: [";
+        first = true;
+        for (auto& item : outputItems) {
+            str += fmt::format("{}{}", first ? "" : ", ", item.descriptor.getRawNameId());
+            first = false;
+        }
+        str += "]";
+        return str;
+    }
 
 #undef AFTER_EXTRA
 

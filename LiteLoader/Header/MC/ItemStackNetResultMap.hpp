@@ -12,6 +12,10 @@ class ItemStackNetResultMap {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    inline static class BidirectionalUnorderedMap<enum ItemStackNetResult, std::string > const& getMap() {
+        return mMap;
+    }
 
 #undef AFTER_EXTRA
 

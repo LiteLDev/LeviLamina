@@ -5,7 +5,8 @@
 
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
-class CompoundTag;
+#include "CompoundTag.hpp"
+
 #undef BEFORE_EXTRA
 
 class Block {

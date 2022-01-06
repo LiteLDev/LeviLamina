@@ -12,6 +12,7 @@ class ChunkLoadedRequest {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[128];
 
 #undef AFTER_EXTRA
 
