@@ -18,9 +18,9 @@ using namespace RegisterCommandHelper;
 class VersionCommand : public Command {
 public:
     void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        output.success("The server is running Bedrock Dedicated Server " + LL::getBdsVersion() +
-                       " with LiteLoaderBDS " + LL::getLoaderVersionString() +
-                       "\nGithub: https://github.com/LiteLDev/LiteLoaderBDS", {});
+        output.success("This Bedrock Dedicated Server " + LL::getBdsVersion() +
+                       "is running with LiteLoaderBDS " + LL::getLoaderVersionString() +
+                       "\nGitHub: https://github.com/LiteLDev/LiteLoaderBDS", {});
     }
 
     static void setup(CommandRegistry *registry) {
