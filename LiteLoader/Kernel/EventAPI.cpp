@@ -1593,6 +1593,7 @@ THook(bool,
         NpcSceneDialogueData data(*_this, *ac, a5);
         auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
+        HashedString& str = dAccess<HashedString>(actionAt, 144);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             HashedString& str = dAccess<HashedString>(actionAt, 152);
@@ -1600,11 +1601,18 @@ THook(bool,
             ev.mPlayer = pl;
             ev.mNpc = ac;
             ev.mCommand = str.getString();
-            if (!ev.call())
+            if (!ev.call()) 
+
                 return false;
         }
     }
     IF_LISTENED_END(NpcCmdEvent)
+    NpcSceneDialogueData data(*_this, *ac, a5);
+    auto& container = data.getActionsContainer();
+    auto actionAt = container.getActionAt(a4);
+    HashedString& str = dAccess<HashedString>(actionAt, 152);
+    std::cout << actionAt->getText() << std::endl;
+    std::cout << str.getString() << std::endl;
     return original(_this, ac, pl, a4, a5);
 }
 
