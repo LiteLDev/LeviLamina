@@ -39,7 +39,6 @@
 #include <vector>
 using namespace Event;
 using std::vector;
-using LL::logger;
 
 class ChangeDimensionRequest;
 class DisconnectPacket;
@@ -131,6 +130,14 @@ DeclareEventListeners(RegCmdEvent)
     {
 #define IF_LISTENED_END(EVENT) }
 #endif
+
+void OutputEventError(const string & errorMsg, const string & eventName, const string & pluginName)
+{
+    logger.error(errorMsg);
+    logger.error("In Event ({})", eventName);
+    if (!pluginName.empty())
+        LL::logger.error("In Plugin <{}>", pluginName);
+}
 
 
 /////////////////// PreJoin ///////////////////

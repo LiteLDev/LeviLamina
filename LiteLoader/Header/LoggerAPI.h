@@ -169,6 +169,7 @@ public:
 
 };
 
+LIAPI Logger logger;
 namespace LL{
     extern Logger logger;
 }
