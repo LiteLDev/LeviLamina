@@ -1,10 +1,10 @@
 #include <Utils/NetworkHelper.h>
 #include <LoggerAPI.h>
+#include <Main/LiteLoader.h>
 #include <httplib/httplib.h>
 #include <thread>
 
 using namespace std;
-using LL::logger;
 
 void SplitHttpUrl(const std::string &url, string &host, string &path) {
     host = url;

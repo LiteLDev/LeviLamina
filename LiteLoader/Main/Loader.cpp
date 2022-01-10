@@ -1,17 +1,17 @@
-#include <LL/Loader.h>
+#include <Main/Loader.h>
 #include <Windows.h>
 #include <filesystem>
 #include <string>
 #include <vector>
 
 #include <LoggerAPI.h>
-#include <LL/PluginManager.h>
+#include <Main/PluginManager.h>
+#include <Main/LiteLoader.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
 
 using namespace std;
-using LL::logger;
 
 vector<std::wstring> GetPreloadList() {
     //若在preload.conf中，则不加载

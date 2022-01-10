@@ -5,6 +5,7 @@
 
 #include <Impl/FormPacketHelper.h>
 #include <third-party/Nlohmann/fifo_json.hpp>
+#include <Main/LiteLoader.h>
 
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/NetworkIdentifier.hpp>
@@ -12,7 +13,6 @@
 #include <MC/ServerPlayer.hpp>
 
 using namespace std;
-using LL::logger;
 
 //////////////////////////////// Data ////////////////////////////////
 

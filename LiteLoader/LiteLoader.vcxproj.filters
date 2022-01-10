@@ -58,11 +58,8 @@
     <Filter Include="Header\Impl">
       <UniqueIdentifier>{7006e6eb-0a05-4de0-8fde-ae880320a014}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header\LL">
-      <UniqueIdentifier>{62bcd8c2-9222-4380-b87f-6d7166b3d9bb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Kernel\LL">
-      <UniqueIdentifier>{815b9ea4-afa4-426a-baf5-1341b24ebd79}</UniqueIdentifier>
+    <Filter Include="Main">
+      <UniqueIdentifier>{573131eb-b7d5-464e-b1d7-d2a041d60f35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +192,7 @@
     <ClCompile Include="Kernel\Scoreboard\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\PlayerInfoAPI.cpp">
+    <ClCompile Include="Main\PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
@@ -249,41 +246,41 @@
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\AutoUpgrade.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\AutoUpgrade.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\BuiltinBugFix.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\BuiltinBugFix.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\BuiltinCommands.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\BuiltinCommands.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\BuiltinUnlockCmd.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\BuiltinUnlockCmd.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\Config.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\Config.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\CrashLogger.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\CrashLogger.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\dllmain.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\dllmain.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\LiteLoader.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\LiteLoader.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\Loader.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\Loader.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\ModifyInfomation.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\ModifyInfomation.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\PluginManager.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\PluginManager.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LL\SimpleServerLogger.cpp">
-      <Filter>Kernel\LL</Filter>
+    <ClCompile Include="Main\SimpleServerLogger.cpp">
+      <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -572,23 +569,26 @@
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h">
       <Filter>Header\Impl</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\AutoUpgrade.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\AutoUpgrade.h">
+      <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\Config.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\Config.h">
+      <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\CrashLogger.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\CrashLogger.h">
+      <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\Loader.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\Loader.h">
+      <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\PluginManager.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\PluginManager.h">
+      <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\LL\Version.h">
-      <Filter>Header\LL</Filter>
+    <ClInclude Include="Main\Version.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\LiteLoader.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

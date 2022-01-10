@@ -1,6 +1,5 @@
 #include <TranslationAPI.h>
-
-using LL::logger;
+#include <Main/LiteLoader.h>
 
 namespace Translation {
     bool loadImpl(HMODULE hPlugin, const std::string &filePath) {

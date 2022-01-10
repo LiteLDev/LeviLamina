@@ -10,8 +10,8 @@
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <MC/VanillaDimensions.hpp>
-#include <LL/AutoUpgrade.h>
-#include <LL/Config.h>
+#include <Main/AutoUpgrade.h>
+#include <Main/Config.h>
 
 using namespace RegisterCommandHelper;
 
