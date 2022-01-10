@@ -168,8 +168,3 @@ public:
     LIAPI explicit Logger(const std::string &title);
 
 };
-
-LIAPI Logger logger;
-namespace LL{
-    extern Logger logger;
-}
