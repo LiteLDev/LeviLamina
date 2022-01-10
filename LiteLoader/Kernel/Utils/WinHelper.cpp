@@ -1,10 +1,10 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
+#include <Main/LiteLoader.h>
 #include <LoggerAPI.h>
 #include <string>
 
 using namespace std;
-using LL::logger;
 
 string GetLastErrorMessage() {
     DWORD error_message_id = ::GetLastError();

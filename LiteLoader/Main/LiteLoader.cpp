@@ -14,9 +14,7 @@
 
 using namespace std;
 
-Logger LL::logger("LiteLoader");
-
-using LL::logger;
+Logger logger("LiteLoader");
 
 void FixPluginsLibDir() {  // add plugins folder to path
     auto *buffer = new WCHAR[8192];

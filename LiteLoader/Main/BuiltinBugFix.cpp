@@ -1,6 +1,7 @@
 #include <unordered_map>
 
 #include <Main/Config.h>
+#include <Main/LiteLoader.h>
 #include <HookAPI.h>
 #include <LoggerAPI.h>
 

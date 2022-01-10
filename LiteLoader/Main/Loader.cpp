@@ -6,12 +6,12 @@
 
 #include <LoggerAPI.h>
 #include <Main/PluginManager.h>
+#include <Main/LiteLoader.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
 
 using namespace std;
-using LL::logger;
 
 vector<std::wstring> GetPreloadList() {
     //若在preload.conf中，则不加载

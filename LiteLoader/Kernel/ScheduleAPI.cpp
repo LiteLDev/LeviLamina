@@ -3,10 +3,10 @@
 #include <queue>
 #include <atomic>
 #include <Main/Config.h>
+#include <Main/LiteLoader.h>
 #include <LoggerAPI.h>
 
 using namespace std;
-using LL::logger;
 
 CsLock locker;
 atomic_uint nextTaskId = 0;

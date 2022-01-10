@@ -40,6 +40,8 @@
 using namespace Event;
 using std::vector;
 
+extern Logger logger;
+
 class ChangeDimensionRequest;
 class DisconnectPacket;
 
@@ -131,12 +133,12 @@ DeclareEventListeners(RegCmdEvent)
 #define IF_LISTENED_END(EVENT) }
 #endif
 
-void OutputEventError(const string & errorMsg, const string & eventName, const string & pluginName)
+void Event::OutputEventError(const string & errorMsg, const string & eventName, const string & pluginName)
 {
     logger.error(errorMsg);
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty())
-        LL::logger.error("In Plugin <{}>", pluginName);
+        logger.error("In Plugin <{}>", pluginName);
 }
 
 

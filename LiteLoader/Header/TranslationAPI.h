@@ -48,8 +48,8 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
 
     auto res = json.find(formatStr); //改成模糊匹配
     if (res == json.end()) {
-        //LL::logger.error("Fail to find translation string \"{}\" !", formatStr);
-        //LL::logger.error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
+        //logger.error("Fail to find translation string \"{}\" !", formatStr);
+        //logger.error("In file {}", PluginOwnData::getImpl<std::string>(hPlugin, TRANSLATION_DATA_FILE));
         return formatStr;
     } else {
         realFormatStr = res.value();

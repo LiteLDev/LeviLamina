@@ -1,6 +1,7 @@
 #include <EventAPI.h>
 #include <LoggerAPI.h>
 #include <MC/ServerPlayer.hpp>
+#include <Main/LiteLoader.h>
 #include <PlayerInfoAPI.h>
 #include <exception>
 #include <third-party/SQLiteCpp/SQLiteCpp.h>
@@ -8,7 +9,6 @@
 #define PlayerDatabasePath "plugins/LiteLoader/PlayerDB.db"
 std::unique_ptr<SQLite::Database> db;
 
-using LL::logger;
 
 namespace PlayerInfo {
     std::string getVal(std::string name, unsigned short type) { //type: 0=XUID 1=UUID

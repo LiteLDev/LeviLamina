@@ -6,11 +6,11 @@
 #include <MC/BinaryStream.hpp>
 #include <MC/Packet.hpp>
 #include <MC/ServerPlayer.hpp>
+#include <Main/LiteLoader.h>
 #include <utility>
 #include <LLAPI.h>
 
 using namespace std;
-using LL::logger;
 
 namespace Form {
 //////////////////////////////// Simple Form ////////////////////////////////
