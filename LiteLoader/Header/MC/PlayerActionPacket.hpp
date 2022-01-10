@@ -6,41 +6,36 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+// Refer to https://github.com/LiteLDev/BEProtocolGolang/blob/master/minecraft/protocol/player.go
 enum PlayerActionType {
-    START_BREAK,
-    ABORT_BREAK,
-    STOP_BREAK,
-    GET_UPDATED_BLOCK,
-    DROP_ITEM,
-    START_SLEEP,
-    STOP_SLEEP,
-    RESPAWN,
-    JUMP,
-    START_SPRINT,
-    STOP_SPRINT,
-    START_SNEAK,
-    STOP_SNEAK,
-    DIMENSION_CHANGE_REQUEST_OR_CREATIVE_DESTROY_BLOCK,
-    DIMENSION_CHANGE_SUCCESS,
-    START_GLIDE,
-    STOP_GLIDE,
-    BUILD_DENIED,
-    CONTINUE_BREAK,
-    CHANGE_SKIN,
-    SET_ENCHANTMENT_SEED,
-    START_SWIMMING,
-    STOP_SWIMMING,
-    START_SPIN_ATTACK,
-    STOP_SPIN_ATTACK,
-    BLOCK_INTERACT,
-    /**
-     * @since v428
-     */
-     BLOCK_PREDICT_DESTROY,
-     /**
-      * @since v428
-      */
-      BLOCK_CONTINUE_DESTROY,
+    StartBreak,
+    AbortBreak,
+    StopBreak,
+    GetUpdatedBlock,
+    DropItem,
+    StartSleeping,
+    StopSleeping,
+    Respawn,
+    Jump,
+    StartSprint,
+    StopSprint,
+    StartSneak,
+    StopSneak,
+    CreativePlayerDestroyBlock,
+    DimensionChangeDone,
+    StartGlide,
+    StopGlide,
+    BuildDenied,
+    CrackBreak,
+    ChangeSkin,
+    SetEnchantmentSeed,
+    StartSwimming,
+    StopSwimming,
+    StartSpinAttack,
+    StopSpinAttack,
+    StartBuildingBlock,
+    PredictDestroyBlock,
+    ContinueDestroyBlock,
 };
 
 #undef BEFORE_EXTRA
@@ -49,6 +44,17 @@ class PlayerActionPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    BlockPos position;           //48
+    FaceID blockFace;            //60
+    PlayerActionType actionType; //64
+    ActorRuntimeID runtimeID;    //72
+
+    inline std::string toDebugString() {
+        return fmt::format("{}: position: ({}), blockFace: {}, actionType: {}, runtimeID: {}",
+            __super::toDebugString(),
+            position.toString(), (int)blockFace, (int)actionType, runtimeID.id);
+    }
 
 #undef AFTER_EXTRA
 

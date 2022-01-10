@@ -1,4 +1,4 @@
-﻿#include <Config.h>
+﻿#include <LL/Config.h>
 #include <EventAPI.h>
 #include <Global.h>
 #include <LoggerAPI.h>
@@ -6,7 +6,6 @@
 #include <MC/BaseCommandBlock.hpp>
 #include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
-#include <MC/BlockLegacy.hpp>
 #include <MC/BlockSource.hpp>
 #include <MC/CommandContext.hpp>
 #include <MC/CommandOrigin.hpp>
@@ -23,7 +22,10 @@
 #include <MC/Player.hpp>
 #include <MC/RespawnPacket.hpp>
 #include <MC/Scoreboard.hpp>
-#include <MC/Inventory.hpp>
+#include <MC/NpcActionsContainer.hpp>
+#include <MC/NpcSceneDialogueData.hpp>
+#include <MC/NpcAction.hpp>
+#include <MC/NpcComponent.hpp>
 #include <MC/Container.hpp>
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
@@ -37,6 +39,7 @@
 #include <vector>
 using namespace Event;
 using std::vector;
+using LL::logger;
 
 class ChangeDimensionRequest;
 class DisconnectPacket;
@@ -55,6 +58,7 @@ DeclareEventListeners(PlayerChangeDimEvent)
 DeclareEventListeners(PlayerJumpEvent)
 DeclareEventListeners(PlayerSneakEvent)
 DeclareEventListeners(PlayerAttackEvent)
+DeclareEventListeners(PlayerAttackBlockEvent)
 DeclareEventListeners(PlayerDieEvent)
 DeclareEventListeners(PlayerTakeItemEvent)
 DeclareEventListeners(PlayerDropItemEvent)
@@ -182,8 +186,7 @@ THook(void, "?_onPlayerLeft@ServerNetworkHandler@@AEAAXPEAVServerPlayer@@_N@Z",
 }
 
 /////////////////// PlayerRespawn ///////////////////
-THook(void,
-      "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+THook(void, "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
       void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
     IF_LISTENED(PlayerRespawnEvent)
@@ -218,7 +221,6 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
       Level* _this, Player* sp, ChangeDimensionRequest* changeDimReq)
 {
-    bool ret = true;
     //int fromDimID = dAccess<int>(changeDimReq, 4);
     int toDimID = dAccess<int>(changeDimReq, 8);
     if (toDimID == sp->getDimensionId())
@@ -229,11 +231,11 @@ THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensio
         PlayerChangeDimEvent ev{};
         ev.mPlayer = sp;
         ev.mToDimensionId = toDimID;
-        ev.call();
+        if (!ev.call())
+            return false;
     }
     IF_LISTENED_END(PlayerChangeDimEvent)
-    ret = original(_this, sp, changeDimReq);
-    return ret;
+    return original(_this, sp, changeDimReq);
 }
 
 
@@ -270,7 +272,7 @@ THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z"
 }
 
 
-/////////////////// PlayerAttack ///////////////////
+/////////////////// PlayerAttackEntity ///////////////////
 THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
       Player* _this, Actor* ac, int* damageCause)
 {
@@ -289,6 +291,22 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
     return original(_this, ac, damageCause);
 }
 
+/////////////////// PlayerAttackBlock ///////////////////
+THook(__int64, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+    Player* self, Block* bl, BlockPos* bp)
+{
+    IF_LISTENED(PlayerAttackBlockEvent)
+    {
+        PlayerAttackBlockEvent ev{};
+        ev.mPlayer = self;
+        ev.mItemStack = self->getHandSlot();
+        ev.mBlockInstance = Level::getBlockInstance(bp, self->getBlockSource());
+        if (!ev.call())
+            return false;
+    }
+    IF_LISTENED_END(PlayerAttackBlockEvent)
+    return original(self, bl, bp);
+}
 
 /////////////////// PlayerTakeItem ///////////////////
 THook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",
@@ -1565,10 +1583,6 @@ THook(Actor*,
 }
 
 ////////////// NpcCmd //////////////
-#include <MC/NpcActionsContainer.hpp>
-#include <MC/NpcSceneDialogueData.hpp>
-#include <MC/NpcAction.hpp>
-#include <MC/NpcComponent.hpp>
 THook(bool,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEBVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
       NpcComponent* _this, Actor* ac, Player* pl, int a4, string& a5)
@@ -1579,6 +1593,7 @@ THook(bool,
         NpcSceneDialogueData data(*_this, *ac, a5);
         auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
+        HashedString& str = dAccess<HashedString>(actionAt, 144);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
             HashedString& str = dAccess<HashedString>(actionAt, 152);
@@ -1586,11 +1601,18 @@ THook(bool,
             ev.mPlayer = pl;
             ev.mNpc = ac;
             ev.mCommand = str.getString();
-            if (!ev.call())
+            if (!ev.call()) 
+
                 return false;
         }
     }
     IF_LISTENED_END(NpcCmdEvent)
+    NpcSceneDialogueData data(*_this, *ac, a5);
+    auto& container = data.getActionsContainer();
+    auto actionAt = container.getActionAt(a4);
+    HashedString& str = dAccess<HashedString>(actionAt, 152);
+    std::cout << actionAt->getText() << std::endl;
+    std::cout << str.getString() << std::endl;
     return original(_this, ac, pl, a4, a5);
 }
 

@@ -1,13 +1,5 @@
-=== LiteLoaderBDS 2.0.4 Release Version ===
-- Repair deleteScore invalid
-- Fix setDisplay crash
-- Symdb2.exe disable X
-- Player::runcmd supports fake commands
-- Fix Q throwing and dead items disappear after the PlayerDropEvent is intercepted
-- Repair NPC crash
-- Mine cart container handling
-- PlayerPlaceEvent can intercept door,bed,redstone and other objects
-- Fix the slotnum error of ContainerChangeEvent
-- Repair a misjudgment problem of antiGive
-
-If any bug or problem discovered, welcome your feedback at Github Issues
+=== LiteLoaderBDS 2.0.5 Release Version ===
+- Fixed [CVE-2021-45383](https://github.com/nt1dr/CVE-2021-45383)
+- Fixed [CVE-2021-45384](https://github.com/nt1dr/CVE-2021-45383)
+- Fixed intercept ChangePlayerDimEvent
+- Fixed NPCCmdEvent

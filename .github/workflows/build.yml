@@ -1,6 +1,6 @@
 name: Build LiteLoader
 
-on: [push]
+on: [ push ]
 
 env:
   SOLUTION_FILE_PATH: .
@@ -13,81 +13,88 @@ jobs:
     runs-on: windows-2022
 
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    - name: Download Server
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        mkdir Tools/Server
-        ServerLink=$(cat 'LINK.txt')
-        curl -L -o Tools/Server/server.zip "$ServerLink"
-        unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
-      shell: bash
+      - name: Download Server
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          mkdir Tools/Server
+          ServerLink=$(cat 'Scripts/LINK.txt')
+          curl -L -o Tools/Server/server.zip "$ServerLink"
+          unzip Tools/Server/server.zip -d Tools/Server/ > /dev/null
+        shell: bash
 
-    - name: Build Library
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: |
-        cd Tools
-        LibraryBuilder.exe Server
-      shell: cmd
+      - name: Build Library
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          cd Tools
+          LibraryBuilder.exe Server
+        shell: cmd
 
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1
-     
-    - name: Build
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      id: build
-      run: |
-        MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
-      shell: bash
-    
-    - name: PackRelease
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ./PackRelease.cmd action
-      shell: cmd
-    
-    - name: PackSDK
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: ./PackSDK.cmd action
-      shell: cmd
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1
 
-    #- name: Update LL-SDK
-    #  working-directory: ${{env.GITHUB_WORKSPACE}}
-    #  run: |
-    #    git config --global user.email "LiteLDev@litebds.com"
-    #    git config --global user.name "LiteLDev"
-    #    UploadSDK.cmd action
-    #  shell: cmd
+      - name: Build
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        id: build
+        run: |
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
+        shell: bash
 
-    - name: Upload LiteLoader
-      uses: actions/upload-artifact@v2
-      with:
-        name: LiteLoader
-        path: ${{ github.workspace }}\RELEASE\
-    
-    - name: Upload LiteLoader SDK
-      uses: actions/upload-artifact@v2
-      with:
-        name: LiteLoader-SDK
-        path: ${{ github.workspace }}\LiteLoader-SDK.zip
+      - name: Pack Release
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          cd Scripts
+          ./PackRelease.cmd action
+        shell: cmd
 
-    - name: Prepare for creating Release
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      id: rel
-      if: startsWith(github.ref, 'refs/tags/')
-      run: |
-        echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-        mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
-      shell: bash
+      #      - name: Pack SDK
+      #        working-directory: ${{env.GITHUB_WORKSPACE}}
+      #        run: |
+      #          cd Scripts
+      #          ./PackSDK.cmd action
+      #        shell: cmd
 
-    - name: Create New Release
-      uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        body_path: ${{ github.workspace }}\CHANGELOG.txt
-        token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
-        files: |
-          ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
-          ${{ github.workspace }}\LiteLoader-SDK.zip
-      env:
-          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS 
+      - name: Update LiteLoaderSDK
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          cd Scripts
+          ./UploadSDK.cmd action
+        env:
+          REPO_KEY: ${{secrets.PUSH_TOKEN}}
+          USERNAME: github-actions[bot]
+        shell: cmd
+
+      - name: Upload LiteLoader
+        uses: actions/upload-artifact@v2
+        with:
+          name: LiteLoader
+          path: ${{ github.workspace }}\RELEASE\
+
+      #      - name: Upload LiteLoader SDK
+      #        uses: actions/upload-artifact@v2
+      #        with:
+      #          name: LiteLoader-SDK
+      #          path: ${{ github.workspace }}\LiteLoader-SDK.zip
+
+      - name: Prepare for creating Release
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        id: rel
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+          mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
+        shell: bash
+
+      - name: Create New Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          body_path: ${{ github.workspace }}\CHANGELOG.txt
+          files: |
+            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
+            ${{ github.workspace }}\LiteLoader-SDK.zip
+        env:
+          GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS

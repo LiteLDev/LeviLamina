@@ -8,6 +8,7 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 #include "BlockInstance.hpp"
+#include "Tick.hpp"
 class Actor;
 class ActorDamageSource;
 class ItemStack;
@@ -39,7 +40,7 @@ public:
     LIAPI static std::vector<Actor*> getAllEntities();
     LIAPI static Actor* spawnMob(Vec3 pos, int dimId, std::string typeName);
     LIAPI static Actor* spawnItem(Vec3 pos, int dimId, ItemStack *item);
-    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float power, float range, float isDestroy, float isFire);
+    LIAPI static bool createExplosion(Vec3 pos, int dimId, Actor* source, float radius, bool createFire, bool canBreak, float maxResistance = 3.40282347e+38);
     LIAPI static class MapItemSavedData* getMapSavedData(struct ActorUniqueID a0);
 
     //Block
@@ -162,6 +163,23 @@ public:
     inline class BlockPos const& getDefaultSpawn() const {
         class BlockPos const& (Level:: * rv)() const;
         *((void**)&rv) = dlsym("?getDefaultSpawn@Level@@UEBAAEBVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class Actor* fetchEntity(struct ActorUniqueID a0, bool a1) const {
+        class Actor* (Level:: * rv)(struct ActorUniqueID, bool) const;
+        *((void**)&rv) = dlsym("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z");
+        return (this->*rv)(std::forward<struct ActorUniqueID>(a0), std::forward<bool>(a1));
+    }
+    inline struct Tick const getCurrentServerTick() const {
+        struct Tick const (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getCurrentServerTick@Level@@UEBA?BUTick@@XZ");
+        return (this->*rv)();
+    }
+
+    inline class Recipes& getRecipes() const {
+        class Recipes& (Level:: * rv)() const;
+        *((void**)&rv) = dlsym("?getRecipes@Level@@UEBAAEAVRecipes@@XZ");
         return (this->*rv)();
     }
     /*

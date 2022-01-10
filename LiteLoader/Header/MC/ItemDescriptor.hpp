@@ -9,9 +9,10 @@
 #undef BEFORE_EXTRA
 
 class ItemDescriptor {
-
+    
 #define AFTER_EXTRA
 // Add Member There
+    char filler[72];
 
 #undef AFTER_EXTRA
 
@@ -44,8 +45,8 @@ public:
     MCAPI bool isNull() const;
     MCAPI bool isValid() const;
     MCAPI void operator=(class ItemDescriptor&&);
-    MCAPI void operator=(class ItemDescriptor const&);
-    MCAPI bool operator==(class ItemDescriptor const&) const;
+    //MCAPI void operator=(class ItemDescriptor const&);
+    MCAPI bool operator==(class ItemDescriptor const&);
     MCAPI bool sameItemAndAux(class ItemDescriptor const&) const;
     MCAPI bool sameItemAndAux(class ItemStack const&) const;
     MCAPI class std::optional<class CompoundTag> save() const;

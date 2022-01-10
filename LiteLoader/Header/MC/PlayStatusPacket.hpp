@@ -6,6 +6,16 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+enum PlayStatus : int {
+	PlayStatusLoginSuccess,
+	PlayStatusLoginFailedClient,
+	PlayStatusLoginFailedServer,
+	PlayStatusPlayerSpawn,
+	PlayStatusLoginFailedInvalidTenant,
+	PlayStatusLoginFailedVanillaEdu,
+	PlayStatusLoginFailedEduVanilla,
+	PlayStatusLoginFailedServerFull,
+};
 
 #undef BEFORE_EXTRA
 
@@ -13,6 +23,13 @@ class PlayStatusPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    PlayStatus status;
+
+    inline std::string toDebugString() {
+        return fmt::format("{}: status: {}",
+            __super::toDebugString(), (int)status);
+    }
 
 #undef AFTER_EXTRA
 

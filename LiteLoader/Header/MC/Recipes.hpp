@@ -6,6 +6,9 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "RecipeIngredient.hpp"
+#include "Item.hpp"
+#include "Block.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -15,10 +18,15 @@ class Recipes {
 // Add Member There
 public:
 class Type {
+    Item const* item;
+    Block const* block;
+    RecipeIngredient ingredient;
+    char label;
 public:
-    Type() = delete;
-    Type(Type const&) = delete;
-    Type(Type const&&) = delete;
+    inline Type(string const& name, char label, int aux, unsigned short count) :ingredient(name, aux, count), label(label) {
+        item = ingredient.descriptor.getItem();
+        block = ingredient.descriptor.getBlock();
+    }
 };
 struct NormalizedRectangularRecipeResults {
     NormalizedRectangularRecipeResults() = delete;

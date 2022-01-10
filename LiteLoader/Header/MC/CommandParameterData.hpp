@@ -14,7 +14,7 @@ enum class CommandParameterDataType {
     ENUM,
     SOFT_ENUM
 };
-
+enum CommandParameterOption;
 class CommandRegistry;
 
 #undef BEFORE_EXTRA

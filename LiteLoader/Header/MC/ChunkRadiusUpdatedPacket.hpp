@@ -10,7 +10,13 @@
 #undef BEFORE_EXTRA
 
 class ChunkRadiusUpdatedPacket : public Packet {
+public:
+    int chunkRaduis;
 
+    inline std::string toDebugString() {
+        return fmt::format("{}: radius: {}",
+            __super::toDebugString(), chunkRaduis);
+    }
 #define AFTER_EXTRA
 // Add Member There
 

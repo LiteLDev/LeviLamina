@@ -16,9 +16,6 @@
     <Filter Include="Kernel\Utils">
       <UniqueIdentifier>{db8c7097-58e9-4305-a23c-ca484d7f7849}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Main">
-      <UniqueIdentifier>{d6bc6c3c-081e-4a49-b3a2-502827f757d3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Kernel\Command">
       <UniqueIdentifier>{f30950e1-b963-47af-9bee-c7c49e7cb87e}</UniqueIdentifier>
     </Filter>
@@ -61,6 +58,12 @@
     <Filter Include="Header\Impl">
       <UniqueIdentifier>{7006e6eb-0a05-4de0-8fde-ae880320a014}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header\LL">
+      <UniqueIdentifier>{62bcd8c2-9222-4380-b87f-6d7166b3d9bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Kernel\LL">
+      <UniqueIdentifier>{815b9ea4-afa4-426a-baf5-1341b24ebd79}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Utils\CsLock.cpp">
@@ -96,33 +99,6 @@
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="BuiltinBugFix.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Config.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="CrashLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="dllmain.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="LiteLoader.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Loader.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="ModifyInfomation.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="PluginManager.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="AutoUpgrade.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
@@ -135,152 +111,179 @@
     <ClCompile Include="Kernel\Utils\PlayerMap.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="BuiltinCommands.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\CommandOriginAPI.cpp">
+    <ClCompile Include="Kernel\Command\CommandOriginAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CommandOutputAPI.cpp">
+    <ClCompile Include="Kernel\Command\CommandOutputAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CommandRegistryAPI.cpp">
+    <ClCompile Include="Kernel\Command\CommandRegistryAPI.cpp">
       <Filter>Kernel\Command</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ListTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\ListTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\CompoundTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\CompoundTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\TagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\TagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleServerLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="Kernel\ActorAPI.cpp">
+    <ClCompile Include="Kernel\MC\ActorAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockActorAPI.cpp">
+    <ClCompile Include="Kernel\MC\BlockActorAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockAPI.cpp">
+    <ClCompile Include="Kernel\MC\BlockAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockInstanceAPI.cpp">
+    <ClCompile Include="Kernel\MC\BlockInstanceAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\BlockLegacyAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BlockSourceAPI.cpp">
+    <ClCompile Include="Kernel\MC\BlockSourceAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ContainerAPI.cpp">
+    <ClCompile Include="Kernel\MC\ContainerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\FormUI.cpp">
+    <ClCompile Include="Kernel\MC\FormUI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\GameModeAPI.cpp">
+    <ClCompile Include="Kernel\MC\GameModeAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\HitResultAPI.cpp">
+    <ClCompile Include="Kernel\MC\HitResultAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ItemActorAPI.cpp">
+    <ClCompile Include="Kernel\MC\ItemActorAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ItemStackAPI.cpp">
+    <ClCompile Include="Kernel\MC\ItemStackAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\LevelAPI.cpp">
+    <ClCompile Include="Kernel\MC\LevelAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\MobAPI.cpp">
+    <ClCompile Include="Kernel\MC\MobAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\NetworkIdentifierAPI.cpp">
+    <ClCompile Include="Kernel\MC\NetworkIdentifierAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\PlayerAPI.cpp">
+    <ClCompile Include="Kernel\MC\PlayerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\SpawnerAPI.cpp">
+    <ClCompile Include="Kernel\MC\SpawnerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\StructureTemplateAPI.cpp">
+    <ClCompile Include="Kernel\MC\StructureTemplateAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Types.cpp">
+    <ClCompile Include="Kernel\MC\Types.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ReadOnlyBinaryStreamAPI.cpp">
+    <ClCompile Include="Kernel\Network\ReadOnlyBinaryStreamAPI.cpp">
       <Filter>Kernel\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\BinaryStream.cpp">
+    <ClCompile Include="Kernel\Network\BinaryStream.cpp">
       <Filter>Kernel\Network</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ScoreboardAPI.cpp">
+    <ClCompile Include="Kernel\Scoreboard\ScoreboardAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerInfoAPI.cpp">
+    <ClCompile Include="Kernel\LL\PlayerInfoAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
     <ClCompile Include="Lib\third-party\nbt-cpp\nbt.cpp">
       <Filter>Kernel\NBT\nbt-cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ActorDamageSource.cpp">
+    <ClCompile Include="Kernel\MC\ActorDamageSource.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\GuiAPI.cpp">
+    <ClCompile Include="Kernel\GUI\GuiAPI.cpp">
       <Filter>Kernel\GUI</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\LoggerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\TagMemoryChunk.cpp">
+    <ClCompile Include="Kernel\NBT\TagMemoryChunk.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\FormPacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\StringTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\StringTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ShortTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\ShortTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\IntTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\IntTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\IntArrayTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\IntArrayTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\FloatTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\FloatTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\EndTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\EndTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Int64TagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\Int64TagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\DoubleTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\DoubleTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ByteTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\ByteTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\ByteArrayTagAPI.cpp">
+    <ClCompile Include="Kernel\NBT\ByteArrayTagAPI.cpp">
       <Filter>Kernel\NBT</Filter>
     </ClCompile>
     <ClCompile Include="Kernel\ObjectivePacketHelper.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="BuiltinUnlockCmd.cpp">
-      <Filter>Main</Filter>
+    <ClCompile Include="Kernel\LL\AutoUpgrade.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\BuiltinBugFix.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\BuiltinCommands.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\BuiltinUnlockCmd.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\Config.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\CrashLogger.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\dllmain.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\LiteLoader.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\Loader.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\ModifyInfomation.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\PluginManager.cpp">
+      <Filter>Kernel\LL</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\LL\SimpleServerLogger.cpp">
+      <Filter>Kernel\LL</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -334,24 +337,6 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\CryptHelper.h">
       <Filter>Header\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="Config.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="CrashLogger.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Loader.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="PluginManager.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Version.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="AutoUpgrade.h">
-      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Header\ScheduleAPI.h">
       <Filter>Header</Filter>
@@ -586,6 +571,24 @@
     </ClInclude>
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h">
       <Filter>Header\Impl</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\AutoUpgrade.h">
+      <Filter>Header\LL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\Config.h">
+      <Filter>Header\LL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\CrashLogger.h">
+      <Filter>Header\LL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\Loader.h">
+      <Filter>Header\LL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\PluginManager.h">
+      <Filter>Header\LL</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\LL\Version.h">
+      <Filter>Header\LL</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

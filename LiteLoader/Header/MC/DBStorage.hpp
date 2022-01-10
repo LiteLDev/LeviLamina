@@ -9,6 +9,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <third-party/leveldb/status.h>
 
 #undef BEFORE_EXTRA
 

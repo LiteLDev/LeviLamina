@@ -5,10 +5,18 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-
+#include "ItemDescriptor.hpp"
+#include "ItemStackNetIdVariant.hpp"
 #undef BEFORE_EXTRA
 
 class NetworkItemStackDescriptor {
+public:
+    ItemDescriptor descriptor;
+    int unk72;//72
+    int unk76;
+    ItemStackNetIdVariant netID;//80
+    int unk88;
+    void* unk96[4];
 
 #define AFTER_EXTRA
 // Add Member There

@@ -68,15 +68,25 @@ bool loadLiteLoader() {
 	return true;
 }
 
-void loadUnifiedOutput() {
-    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll")))) {
+void loadUnifiedOutput() 
+{
+    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll")))) 
+	{
         loadLib(TEXT(".\\plugins\\LiteLoader\\LLUnifiedOutput.dll"));
     }
 }
 
-void loadDlls() {
-    loadUnifiedOutput();
+void loadLLAutoUpdate()
+{
+    if (exists(path(TEXT(".\\plugins\\LiteLoader\\LLAutoUpdate.dll"))))
+    {
+        loadLib(TEXT(".\\plugins\\LiteLoader\\LLAutoUpdate.dll"));
+    }
+}
 
+void loadDlls() {
+    loadLLAutoUpdate();
+    loadUnifiedOutput();
 	if (exists(path(TEXT(".\\plugins\\preload.conf")))) {
 		std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
 		if (dllList) {
@@ -100,7 +110,6 @@ void loadDlls() {
 		std::wofstream dllList(TEXT(".\\plugins\\preload.conf"));
 		dllList.close();
 	}
-
 	loadCSR();
 	if (!loadLiteLoader()) {
 		Sleep(3000);

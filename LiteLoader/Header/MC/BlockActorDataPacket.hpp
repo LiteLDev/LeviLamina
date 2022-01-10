@@ -6,10 +6,14 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CompoundTag.hpp"
 
 #undef BEFORE_EXTRA
 
 class BlockActorDataPacket : public Packet {
+public:
+    BlockPos blockPosition;
+    CompoundTag tag;
 
 #define AFTER_EXTRA
 // Add Member There

@@ -8,6 +8,7 @@
 // Add include headers & pre-declares
 #include "MobEffectInstance.hpp"
 #include "Command.hpp"
+#include "Tick.hpp"
 class Actor;
 class Player;
 class NetworkIdentifier;
@@ -16,7 +17,7 @@ class UserEntityIdentifierComponent;
 class Vec2;
 class BlockInstance;
 class ItemStack;
-struct Tick;
+class BlockSource;
 enum class FaceID : char;
 
 #undef BEFORE_EXTRA
