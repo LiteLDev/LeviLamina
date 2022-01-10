@@ -1,11 +1,11 @@
-#include <LL/Loader.h>
+#include <Main/Loader.h>
 #include <Windows.h>
 #include <filesystem>
 #include <string>
 #include <vector>
 
 #include <LoggerAPI.h>
-#include <LL/PluginManager.h>
+#include <Main/PluginManager.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>

@@ -1,5 +1,5 @@
-#include <LL/AutoUpgrade.h>
-#include <LL/Config.h>
+#include <Main/AutoUpgrade.h>
+#include <Main/Config.h>
 #include <LLAPI.h>
 #include <LoggerAPI.h>
 #include <Nlohmann/json.hpp>
@@ -9,7 +9,7 @@
 #include <Utils/FileHelper.h>
 #include <Utils/NetworkHelper.h>
 #include <Utils/StringHelper.h>
-#include <LL/Version.h>
+#include <Main/Version.h>
 #include <chrono>
 #include <filesystem>
 #include <httplib/httplib.h>

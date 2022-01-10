@@ -1,6 +1,6 @@
 #include <unordered_map>
 
-#include <LL/Config.h>
+#include <Main/Config.h>
 #include <HookAPI.h>
 #include <LoggerAPI.h>
 

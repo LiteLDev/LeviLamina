@@ -1,8 +1,8 @@
-#include <LL/Config.h>
+#include <Main/Config.h>
 #include <LLAPI.h>
-#include <LL/PluginManager.h>
+#include <Main/PluginManager.h>
 #include <Utils/StringHelper.h>
-#include <LL/Version.h>
+#include <Main/Version.h>
 #include <filesystem>
 #include <string>
 

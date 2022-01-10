@@ -6,10 +6,10 @@
 #include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
-#include <LL/Config.h>
-#include "LL/Loader.h"
-#include "LL/AutoUpgrade.h"
-#include "LL/CrashLogger.h"
+#include <Main/Config.h>
+#include "Main/Loader.h"
+#include "Main/AutoUpgrade.h"
+#include "Main/CrashLogger.h"
 #include <EventAPI.h>
 
 using namespace std;
