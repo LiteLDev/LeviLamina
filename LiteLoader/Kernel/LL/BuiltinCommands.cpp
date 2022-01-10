@@ -253,7 +253,10 @@ public:
                     break;
             }
         }
-        LL::CheckAutoUpdate(true, isForce);
+        std::thread th([isForce]() {
+            LL::CheckAutoUpdate(true, isForce);
+        });
+        th.detach();
     }
 
     static void setup(CommandRegistry *registry) {
