@@ -39,7 +39,7 @@ public:
     }
 
     LIAPI static Objective* newObjective(const std::string& objname, const std::string& displayName);
-    LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
+    //LIAPI static bool setDisplayObjective(const std::string& objname, const std::string& slot, int sort);
     //LIAPI static Objective* clearDisplayObjective(const std::string& slot);
     //LIAPI static Objective* getDisplayObjective(const std::string& slot);
     LIAPI static bool removeFromObjective(const std::string& objname, const std::string& id);
