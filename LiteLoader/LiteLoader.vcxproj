@@ -88,6 +88,7 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />

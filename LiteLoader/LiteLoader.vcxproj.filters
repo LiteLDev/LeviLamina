@@ -282,6 +282,9 @@
     <ClCompile Include="Main\SimpleServerLogger.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp">
+      <Filter>Kernel\Scoreboard</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
