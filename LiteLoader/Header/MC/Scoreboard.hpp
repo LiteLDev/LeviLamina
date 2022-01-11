@@ -28,13 +28,13 @@ public:
 
     inline struct ScoreboardId const& createScoreboardId(std::string const& a0) {
         struct ScoreboardId const& (Scoreboard::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
 
     inline struct ScoreboardId const& createScoreboardId(class Player const& a0) {
         struct ScoreboardId const& (Scoreboard::*rv)(class Player const&);
-        *((void**)&rv) = dlsym("?createScoreboardId@Scoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
+        *((void**)&rv) = dlsym("?createScoreboardId@ServerScoreboard@@UEAAAEBUScoreboardId@@AEBVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player const&>(a0));
     }
 

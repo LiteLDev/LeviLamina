@@ -55,7 +55,7 @@ LIAPI Objective* Scoreboard::getDisplayObjective(const std::string& slot) {
 LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(id);
+        identity = const_cast<ScoreboardId&>(Global<Scoreboard>->createScoreboardId(id));
     }
     return identity;
 };
