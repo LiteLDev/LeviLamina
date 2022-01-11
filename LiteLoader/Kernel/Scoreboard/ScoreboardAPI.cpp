@@ -10,23 +10,11 @@
 #include <MC/Level.hpp>
 #include <MC/IdentityDefinition.hpp>
 
-#define H do_hash
-LIAPI bool checkSlotName(const std::string& slot) {
-    switch (H(slot.c_str())) {
-        case H("list"): break;
-        case H("sidebar"): break;
-        case H("belowname"): break;
-        default:
-            return false;
-    }
-    return true;
-}
-
 LIAPI Objective* Scoreboard::newObjective(const std::string& objname, const std::string& displayName) {
     std::string criteria = "dummy";
     return Global<Scoreboard>->addObjective(objname, displayName, *Global<Scoreboard>->getCriteria(criteria));
 }
-
+/*
 LIAPI bool Scoreboard::setDisplayObjective(const std::string& objname, const std::string& slot, int sort) {
     if (checkSlotName(slot)) {
         auto obj = Global<Scoreboard>->getObjective(objname);
@@ -37,7 +25,7 @@ LIAPI bool Scoreboard::setDisplayObjective(const std::string& objname, const std
     }
     return false;
 }
-/*
+
 LIAPI Objective* Scoreboard::clearDisplayObjective(const std::string& slot) {
     if (checkSlotName(slot))
         return Global<Scoreboard>->clearDisplayObjective(slot);
@@ -55,7 +43,7 @@ LIAPI Objective* Scoreboard::getDisplayObjective(const std::string& slot) {
 LIAPI struct ScoreboardId& Scoreboard::getOrCreateScoreboardId(std::string const& id) {
     auto& identity = const_cast<ScoreboardId&>(Global<Scoreboard>->getScoreboardId(id));
     if (!scoreboardIdIsValid(&identity)) {
-        Global<Scoreboard>->createScoreboardId(id);
+        identity = const_cast<ScoreboardId&>(Global<Scoreboard>->createScoreboardId(id));
     }
     return identity;
 };
