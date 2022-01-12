@@ -532,6 +532,9 @@ THook(void, "?sendBlockDestructionStarted@BlockEventCoordinator@@QEAAXAEAVPlayer
 THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_N@Z",
       BlockSource* _this, Block* a2, BlockPos* a3, unsigned __int8 a4, Actor* ac, bool a6)
 {
+    auto rtn = original(_this, a2, a3, a4, ac, a6);
+    if (!rtn)
+        return rtn;
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
         if (Player::isValid((Player*)ac))
@@ -544,24 +547,35 @@ THook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAVActor@@_
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(_this, a2, a3, a4, ac, a6);
+    return rtn;
 }
 
-THook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+THook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+      class BambooBlockItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
         if (Player::isValid((Player*)a3))
         {
+            auto& bs = a3->getRegion();
+            auto onBlockPos = a4.relative(a5, -1);
+            auto onBlock = &bs.getBlock(onBlockPos).getDefaultState();
+            auto underBlock = &bs.getBlock(a4.relative(0, 1)).getDefaultState();
+            logger.info("{} - {} - {}", onBlockPos.toString(), onBlock->getTypeName(), (void*)&onBlock->getDefaultState());
+            logger.info("{} - {}", (void*)VanillaBlocks::mBambooBlock, (void*)VanillaBlocks::mBambooSapling);
+            if (onBlock == VanillaBlocks::mBambooBlock || onBlock == VanillaBlocks::mBambooSapling
+                || underBlock == VanillaBlocks::mBambooBlock || underBlock == VanillaBlocks::mBambooSapling)
+                return original(a1, a2, a3, a4, a5, a6, a7, a8); // listen in BlockSource::mayPlace
+            
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBambooSapling), *a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBambooSapling), a4, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(a1, a2, a3, a4, a5, a6,a7,a8);
+    return original(a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
 //THook(bool, "?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
@@ -581,7 +595,8 @@ THook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@
 //    return original(a1, a2, a3, a4, a5, a6, a7, a8);
 //}
 
-THook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+THook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EMMM@Z",
+      class BedItem* a1, ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -589,7 +604,7 @@ THook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@
         {
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBed), *a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mBed), a4, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
@@ -598,7 +613,8 @@ THook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@
     return original(a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
-THook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+THook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+      class DyePowderItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -606,8 +622,8 @@ THook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@E
         {
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            auto& PlacementBlock = VanillaBlocks::mCocoa->getPlacementBlock(*a3, *a4, a5, a4->toVec3(), 0);
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(&PlacementBlock), *a4, (int)a3->getDimensionId());
+            auto& PlacementBlock = VanillaBlocks::mCocoa->getPlacementBlock(*a3, a4, a5, a4.toVec3(), 0);
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(&PlacementBlock), a4, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
@@ -616,7 +632,8 @@ THook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@E
     return original(a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
-THook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", void* a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5)
+THook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+      class DoorItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -655,24 +672,7 @@ THook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
                     v11 = VanillaBlocks::mWarpedDoor;
             }
             if (!v11) return false;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(v11), *a4, (int)a3->getDimensionId());
-            if (!ev.call())
-                return false;
-        }
-    }
-    IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(a1, a2, a3, a4, a5);
-}
-
-THook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
-{
-    IF_LISTENED(PlayerPlaceBlockEvent)
-    {
-        if (Player::isValid((Player*)a3))
-        {
-            PlayerPlaceBlockEvent ev{};
-            ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mRedStoneDust), *a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(v11), {a4.x, a4.y + 1, a4.z}, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
@@ -681,7 +681,8 @@ THook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos
     return original(a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
-THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
+THook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+      class RedStoneDustItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -689,7 +690,7 @@ THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
         {
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mSign), *a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(const_cast<Block*>(VanillaBlocks::mRedStoneDust), a4, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
@@ -698,49 +699,92 @@ THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z
     return original(a1, a2, a3, a4, a5, a6, a7, a8);
 }
 
-THook(bool, "?_useOn@BlockPlanterItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", Block** a1,
-      const struct ItemInstance* a2,
-      Actor* a3,
-      BlockPos a4,
-      unsigned __int8 a5,
-      int a6,
-      int a7,
-      int a8)
+//THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", 
+//      class SignItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+//{
+//    IF_LISTENED(PlayerPlaceBlockEvent)
+//    {
+//        if (Player::isValid((Player*)a3))
+//        {
+//            auto& blockMap = dAccess<std::map<int, std::pair<Block*, Block*>>>(a1, 552); // SignItem::SignItem
+//            auto& signType = dAccess<int>(a1, 568);                                      // SignItem::SignItem
+//            auto block = a5 == 1 ? blockMap[signType].first : blockMap[signType].second;
+//            PlayerPlaceBlockEvent ev{};
+//            ev.mPlayer = (Player*)a3;
+//            ev.mBlockInstance = BlockInstance::createBlockInstance(block, a4, (int)a3->getDimensionId());
+//            if (!ev.call())
+//                return false;
+//        }
+//    }
+//    IF_LISTENED_END(PlayerPlaceBlockEvent)
+//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//}
+
+THook(bool, "?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z",
+      class SignItem* a1, class ItemStackBase* a2, class Actor* a3, unsigned char& a4, class BlockPos* a5)
 {
+    auto rtn = original(a1, a2, a3, a4, a5);
+    if (!rtn)
+        return rtn;
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
         if (Player::isValid((Player*)a3))
         {
+            // map<SignType, pair<StandingSign, WallSign>> blockMap
+            auto& blockMap = dAccess<std::map<int,std::pair<Block*, Block*>>>(a1, 552); // SignItem::SignItem
+            auto& signType = dAccess<int>(a1, 568); // SignItem::SignItem
+            auto block = a4 == 1 ? blockMap[signType].first : blockMap[signType].second;
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(a1[69], a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(block, *a5, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+    return rtn;
 }
 
-THook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z", void* a1,
-      struct ItemStack* a2,
-      struct Actor* a3,
-      const struct BlockPos* a4,
-      unsigned __int8 a5)
+//THook(bool, "?_useOn@BlockPlanterItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+//      class BlockPlanterItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+//{
+//    IF_LISTENED(PlayerPlaceBlockEvent)
+//    {
+//        if (Player::isValid((Player*)a3))
+//        {
+//            PlayerPlaceBlockEvent ev{};
+//            ev.mPlayer = (Player*)a3;
+//            ev.mBlockInstance = BlockInstance::createBlockInstance(dAccess<Block*>(a1, 69*8), a4, (int)a3->getDimensionId());
+//            if (!ev.call())
+//                return false;
+//        }
+//    }
+//    IF_LISTENED_END(PlayerPlaceBlockEvent)
+//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//}
+
+#include <MC/SeedItemComponentLegacy.hpp>
+TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@EAEBVVec3@@@Z",
+      SeedItemComponentLegacy, ItemStack* a2, Actor* a3, BlockPos const* a4, unsigned char a5, Vec3 const* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
         if (Player::isValid((Player*)a3))
         {
+            //if (!this->_canPlant(a3->getRegion().getBlock(*a4)))
+            //    return original(this, a2, a3, a4, a5, a6);
+            auto growthDirection = dAccess<unsigned char>(this, 42);
+            auto blockPos = a4->relative(growthDirection, 1);
+            auto block = dAccess<Block*, 8>(this);
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
-            ev.mBlockInstance = BlockInstance::createBlockInstance(*((Block**)a1 + 1), *a4, (int)a3->getDimensionId());
+            ev.mBlockInstance = BlockInstance::createBlockInstance(block, blockPos, (int)a3->getDimensionId());
             if (!ev.call())
                 return false;
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(a1, a2, a3, a4, a5);
+    return original(this, a2, a3, a4, a5, a6);
 }
 
 
@@ -1311,22 +1355,46 @@ THook(bool, "?attack@ItemFrameBlock@@UEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
 
 /////////////////// LiquidSpreadEvent ///////////////////
 #include <MC/LiquidBlockDynamic.hpp>
-THook(void, "?_trySpreadTo@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H1E@Z",
-      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, unsigned int a4, BlockPos* from, char id)
+THook(bool, "?_canSpreadTo@LiquidBlockDynamic@@AEBA_NAEAVBlockSource@@AEBVBlockPos@@1E@Z",
+      LiquidBlockDynamic* _this, class BlockSource& bs, class BlockPos const& to, class BlockPos const& from, unsigned char unk)
 {
+    auto rtn = original(_this, bs, to, from, unk);
+    if (!rtn)
+        return rtn;
     IF_LISTENED(LiquidSpreadEvent)
     {
         LiquidSpreadEvent ev{};
         ev.mBlockInstance = BlockInstance::createBlockInstance(
-            const_cast<Block*>(&_this->getRenderBlock()), *from, bs->getDimensionId());
-        ev.mTarget = *to;
-        ev.mDimensionId = bs->getDimensionId();
+            const_cast<Block*>(&_this->getRenderBlock()), from, bs.getDimensionId());
+        ev.mTarget = to;
+        ev.mDimensionId = bs.getDimensionId();
         if (!ev.call())
-            return;
+            return false;
     }
     IF_LISTENED_END(LiquidSpreadEvent)
-    original(_this, bs, to, a4, from, id);
+
+    return rtn;
 }
+
+//THook(void, "?_trySpreadTo@LiquidBlockDynamic@@AEBAXAEAVBlockSource@@AEBVBlockPos@@H1E@Z",
+//      LiquidBlockDynamic* _this, BlockSource* bs, BlockPos* to, unsigned int a4, BlockPos* from, char id)
+//{
+//    IF_LISTENED(LiquidSpreadEvent)
+//    {
+//        LiquidSpreadEvent ev{};
+//        ev.mBlockInstance = BlockInstance::createBlockInstance(
+//            const_cast<Block*>(&_this->getRenderBlock()), *from, bs->getDimensionId());
+//        ev.mTarget = *to;
+//        ev.mDimensionId = bs->getDimensionId();
+//        logger.warn("LiquidSpreadEvent - {} - {} -> {}",
+//                    ev.mBlockInstance.getBlock()->getTypeName(), from->toString(), to->toString());
+//        if (!ev.call())
+//            return;
+//    }
+//    IF_LISTENED_END(LiquidSpreadEvent)
+//    return;
+//    original(_this, bs, to, a4, from, id);
+//}
 
 
 /////////////////// PlayerDeath ///////////////////
