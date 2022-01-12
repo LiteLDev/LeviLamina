@@ -27,7 +27,7 @@ public:
         registry->registerCommand(
                 "version",
                 "Get the version of this server",
-                CommandPermissionLevel::Any,
+                CommandPermissionLevel::GameMasters,
                 {(CommandFlagValue) 0},
                 {(CommandFlagValue) 0x80});
         registry->registerOverload<VersionCommand>("version");
