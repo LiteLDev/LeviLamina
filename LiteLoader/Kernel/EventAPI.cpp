@@ -166,7 +166,7 @@ THook(void, "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdenti
 THook(bool, "?setLocalPlayerAsInitialized@ServerPlayer@@QEAAXXZ",
       ServerPlayer* _this)
 {
-    IF_LISTENED(PlayerPreJoinEvent)
+    IF_LISTENED(PlayerJoinEvent)
     {
         PlayerJoinEvent ev{};
         ev.mPlayer = _this;
