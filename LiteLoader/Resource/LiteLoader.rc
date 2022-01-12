@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// 涓枃(绠�浣擄紝涓浗) resources
+// 中文(简体，中国) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
@@ -51,8 +51,8 @@ END
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 2,0,4,0
- PRODUCTVERSION 2,0,4,0
+ FILEVERSION 2,0,7,0
+ PRODUCTVERSION 2,0,7,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -69,12 +69,12 @@ BEGIN
         BEGIN
             VALUE "CompanyName", "LiteLoaderDev"
             VALUE "FileDescription", "A lightweight Bedorck Dedicated Server Plugin Loader "
-            VALUE "FileVersion", "2.0.4.0"
+            VALUE "FileVersion", "2.0.7.0"
             VALUE "InternalName", "LiteLoad.dll"
             VALUE "LegalCopyright", "LiteLoader Developer"
             VALUE "OriginalFilename", "LiteLoad.dll"
             VALUE "ProductName", "LiteLoader For BDS"
-            VALUE "ProductVersion", "2.0.4.0"
+            VALUE "ProductVersion", "2.0.7.0"
         END
     END
     BLOCK "VarFileInfo"
@@ -83,7 +83,7 @@ BEGIN
     END
 END
 
-#endif    // 涓枃(绠�浣擄紝涓浗) resources
+#endif    // 中文(简体，中国) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

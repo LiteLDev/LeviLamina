@@ -18,16 +18,16 @@ using namespace RegisterCommandHelper;
 class VersionCommand : public Command {
 public:
     void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        output.success("This Bedrock Dedicated Server " + LL::getBdsVersion() +
-                       "is running with LiteLoaderBDS " + LL::getLoaderVersionString() +
-                       "\nGitHub: https://github.com/LiteLDev/LiteLoaderBDS", {});
+        output.success("The server is running LiteLoaderBDS " + LL::getLoaderVersionString() +
+                           "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
+                       {});
     }
 
     static void setup(CommandRegistry *registry) {
         registry->registerCommand(
                 "version",
                 "Get the version of this server",
-                CommandPermissionLevel::GameMasters,
+                CommandPermissionLevel::Any,
                 {(CommandFlagValue) 0},
                 {(CommandFlagValue) 0x80});
         registry->registerOverload<VersionCommand>("version");
