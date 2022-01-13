@@ -23,5 +23,5 @@ If applicable, add screenshots or log to help explain your problem.
  - OS: [e.g. Windows Server 2019]
  - Version [e.g. 1.1.1]
 
-**Additional context**
-Add any other context about the problem here.
+**Additional content**
+Add any other content about the problem here.
