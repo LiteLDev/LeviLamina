@@ -561,8 +561,6 @@ THook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@
             auto onBlockPos = a4.relative(a5, -1);
             auto onBlock = &bs.getBlock(onBlockPos).getDefaultState();
             auto underBlock = &bs.getBlock(a4.relative(0, 1)).getDefaultState();
-            logger.info("{} - {} - {}", onBlockPos.toString(), onBlock->getTypeName(), (void*)&onBlock->getDefaultState());
-            logger.info("{} - {}", (void*)VanillaBlocks::mBambooBlock, (void*)VanillaBlocks::mBambooSapling);
             if (onBlock == VanillaBlocks::mBambooBlock || onBlock == VanillaBlocks::mBambooSapling
                 || underBlock == VanillaBlocks::mBambooBlock || underBlock == VanillaBlocks::mBambooSapling)
                 return original(a1, a2, a3, a4, a5, a6, a7, a8); // listen in BlockSource::mayPlace
