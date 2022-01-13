@@ -127,7 +127,23 @@ namespace PlayerInfo {
     std::string fromUUID(std::string uuid) {
         return getName(1, uuid);
     }
-} // namespace PlayerDB
+
+    void forEachInfo(std::function<bool(std::string_view name, std::string_view xuid, std::string_view uuid)> callback)
+    {
+        SQLite::Statement get{*db, "select NAME, XUID, UUID from player"};
+        while (get.executeStep())
+        {
+            auto name = get.getColumn(0).getText();
+            auto xuid = get.getColumn(1).getText();
+            auto uuid = get.getColumn(2).getText();
+            if (!callback(name, xuid, uuid))
+                break;
+        }
+        get.reset();
+        get.clearBindings();
+    }
+
+    } // namespace PlayerDB
 
 bool InitPlayerDatabase() {
     using namespace PlayerInfo;
