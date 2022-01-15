@@ -13,7 +13,7 @@ class NetworkIdentifier {
 
 #define AFTER_EXTRA
 // Add Member There
-
+    char filler[160];
 public:
 	LIAPI std::string getIP();
 
