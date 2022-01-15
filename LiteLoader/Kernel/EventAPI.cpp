@@ -227,24 +227,34 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 }
 
 /////////////////// PlayerChangeDim ///////////////////
-THook(bool, "?_playerChangeDimension@Level@@AEAA_NPEAVPlayer@@AEAVChangeDimensionRequest@@@Z",
-      Level* _this, Player* sp, ChangeDimensionRequest* changeDimReq)
+class ChangeDimensionRequest
 {
-    //int fromDimID = dAccess<int>(changeDimReq, 4);
-    int toDimID = dAccess<int>(changeDimReq, 8);
-    if (toDimID == sp->getDimensionId())
-        return original(_this, sp, changeDimReq);
+public:
+    int mState;
+    AutomaticID<Dimension, int> mFromDimensionId;
+    AutomaticID<Dimension, int> mToDimensionId;
+    Vec3 mPosition;
+    bool mUsePortal;
+    bool mRespawn;
+    std::unique_ptr<CompoundTag> mAgentTag;
+};
+THook(bool, "?requestPlayerChangeDimension@Level@@UEAAXAEAVPlayer@@V?$unique_ptr@VChangeDimensionRequest@@U?$default_delete@VChangeDimensionRequest@@@std@@@std@@@Z",
+      Level* _this, Player* sp, std::unique_ptr<ChangeDimensionRequest> request)
+{
+
+    if (request->mToDimensionId == sp->getDimensionId())
+        return original(_this, sp, std::move(request));
 
     IF_LISTENED(PlayerChangeDimEvent)
     {
         PlayerChangeDimEvent ev{};
         ev.mPlayer = sp;
-        ev.mToDimensionId = toDimID;
+        ev.mToDimensionId = request->mToDimensionId;
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerChangeDimEvent)
-    return original(_this, sp, changeDimReq);
+    return original(_this, sp, std::move(request));
 }
 
 
