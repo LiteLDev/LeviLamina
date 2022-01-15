@@ -21,7 +21,7 @@
 
 #include <string>
 
-#include "leveldb/export.h"
+#include "export.h"
 
 namespace leveldb {
 

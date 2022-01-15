@@ -593,6 +593,9 @@
     <ClInclude Include="Main\LiteLoader.h">
       <Filter>Main</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\DBStorage.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

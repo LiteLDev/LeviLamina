@@ -7,9 +7,9 @@
 
 #include <string>
 
-#include "leveldb/env.h"
-#include "leveldb/export.h"
-#include "leveldb/status.h"
+#include "env.h"
+#include "export.h"
+#include "status.h"
 
 namespace leveldb {
 

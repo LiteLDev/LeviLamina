@@ -48,7 +48,7 @@ extern "C" {
 #include <stddef.h>
 #include <stdint.h>
 
-#include "leveldb/export.h"
+#include "export.h"
 
 /* Exported types */
 

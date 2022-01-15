@@ -19,8 +19,8 @@
 #include <string>
 #include <vector>
 
-#include "leveldb/export.h"
-#include "leveldb/status.h"
+#include "export.h"
+#include "status.h"
 
 #if defined(_WIN32)
 // The leveldb::Env class below contains a DeleteFile method.

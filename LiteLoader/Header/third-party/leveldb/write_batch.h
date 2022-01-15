@@ -23,8 +23,8 @@
 
 #include <string>
 
-#include "leveldb/export.h"
-#include "leveldb/status.h"
+#include "export.h"
+#include "status.h"
 
 namespace leveldb {
 
