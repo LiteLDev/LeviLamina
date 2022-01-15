@@ -84,15 +84,31 @@ public:
         template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
         void operator()(const S& formatStr, const Args&... args)
         {
-            std::string str = fmt::format(formatStr, args...);
-            *this << str << endl;
+            if constexpr (0 == sizeof...(args))
+            {
+                // Avoid fmt if only one argument
+                *this << formatStr << endl;
+            }
+            else
+            {
+                std::string str = fmt::format(formatStr, args...);
+                *this << str << endl;
+            }
         }
 
         template <typename... Args>
         void operator()(const char* formatStr, const Args&... args)
         {
-            std::string str = fmt::format(std::string(formatStr), args...);
-            *this << str << endl;
+            if constexpr (0 == sizeof...(args))
+            {
+                // Avoid fmt if only one argument
+                *this << formatStr << endl;
+            }
+            else 
+            {
+                std::string str = fmt::format(std::string(formatStr), args...);
+                *this << str << endl;
+            }
         }
     };
 
