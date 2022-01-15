@@ -1290,9 +1290,6 @@ THook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBV
         ev.mPistonBlockInstance = Level::getBlockInstance(_this->getPosition(), bs);
         ev.mTargetBlockInstance = Level::getBlockInstance(bp, bs);
 
-        if (ev.mTargetBlockInstance.getBlock()->getTypeName() == "minecraft:air")
-            return original(_this, bs, bp, a3, a4);
-
         if (!ev.call())
             return false;
     }
