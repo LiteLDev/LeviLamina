@@ -6,6 +6,9 @@
 #define BEFORE_EXTRA
 // Add include headers & pre-declares
 class Block;
+class BlockSource;
+class ItemStack;
+
 #undef BEFORE_EXTRA
 
 class BlockLegacy {
