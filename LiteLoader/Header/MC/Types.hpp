@@ -23,6 +23,11 @@ public:
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
     MCAPI static UUID seedFromString(std::string const&);
+
+    inline operator bool() const
+    {
+        return !isEmpty();
+    }
 };
 
 class Color;
