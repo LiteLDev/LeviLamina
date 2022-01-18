@@ -152,7 +152,7 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
 - 它意味着**请勿将任何违反 EULA 的内容用于商业用途**
 - 接受这个**许可证**意味着您也**接受了**[Minecraft EULA](https://account.mojang.com/terms)
 - 如果您违反了**EULA**, 任何法律责任都与开发者**无关**
-- **没有担保责任**
+- **开发者不对您负责, 开发者没有义务为你写代码、为你使用造成的任何后果负责**
 
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3以及额外限制和例外  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3以及额外限制和例外   
