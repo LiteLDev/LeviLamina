@@ -38,6 +38,7 @@ add_link_options(
         /MANIFESTUAC:NO /OPT:ICF /ERRORREPORT:PROMPT /NOLOGO /DELAYLOAD:"bedrock_server.dll" /TLBID:1
 )
 
+include_directories(${PROJECT_SOURCE_DIR}/)
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 include_directories(${PROJECT_SOURCE_DIR}/Header/third-party)
 

@@ -6,6 +6,9 @@
 #include <sstream>
 #include <LoggerAPI.h>
 #include <EventAPI.h>
+#include <HookAPI.h>
+
+bool isPromptPrint = false;
 
 bool is(std::string str) {
     transform(str.begin(), str.end(), str.begin(), ::tolower);
@@ -44,7 +47,9 @@ bool inline SendLine(HANDLE hOutput) {
 
     if (!is(line)) {
         if (line.find('\n') != std::string::npos) {
-            line = "\b\b" + line;
+            if (isPromptPrint) {
+                line = "\b\b" + line;
+            }
             success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
         } else {
             buffer.str("");
@@ -52,7 +57,9 @@ bool inline SendLine(HANDLE hOutput) {
             Logger("Plugin").info(line);
         }
     } else {
-        line = "\b\b" + line + "> ";
+        if (isPromptPrint) {
+            line = "\b\b" + line + "> ";
+        }
         success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
     }
     buffer.str("");
@@ -148,3 +155,15 @@ BOOL APIENTRY DllMain(HMODULE hModule, DWORD ul_reason_for_call, LPVOID lpReserv
     return TRUE;
 }
 
+THook(int, "main", int a, void *b) {
+    char **str = static_cast<char **>(b);
+    bool enablePrompt = true;
+    for (int i = 0; i < a; ++i) {
+        if (strcmp(str[i], "-noPrompt") == 0) {
+            enablePrompt = false;
+            break;
+        }
+    }
+    isPromptPrint = enablePrompt;
+    return original(a, b);
+}

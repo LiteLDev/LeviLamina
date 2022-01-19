@@ -22,6 +22,7 @@ namespace LL {
     };
     struct LLConfig {
         bool debugMode = false;
+        bool colorLog = true;
         int logLevel = 4;
         ::std::string language = "en";
 
