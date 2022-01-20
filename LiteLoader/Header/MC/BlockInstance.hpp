@@ -31,8 +31,8 @@ public:
     LIAPI bool hasContainer();
     LIAPI Container* getContainer();
 
-    LIAPI bool breakNaturally();
-    LIAPI bool breakNaturally(ItemStack* tool);
+    LIAPI bool breakNaturally(bool isCreativeMode = false);
+    LIAPI bool breakNaturally(ItemStack* tool, bool isCreativeMode = false);
     LIAPI ItemStack getBlockDrops();
     LIAPI bool isNull();
 
