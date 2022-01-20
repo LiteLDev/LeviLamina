@@ -22,24 +22,24 @@
 #include <string_view>
 #include "../Global.h"
 
-LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string_view, void*>> ll_PluginOwnData;
+LIAPI extern std::unordered_map<HMODULE, std::unordered_map<std::string, void*>> ll_PluginOwnData;
 
 namespace PluginOwnData
 {
-	inline bool hasImpl(HMODULE hPlugin, const std::string_view& key)
+	inline bool hasImpl(HMODULE hPlugin, const std::string& key)
 	{
 		return ll_PluginOwnData[hPlugin].find(key) != ll_PluginOwnData[hPlugin].end();
 	}
 
 	template <typename T>
-	inline void removeImpl(HMODULE hPlugin, const std::string_view& key)
+	inline void removeImpl(HMODULE hPlugin, const std::string& key)
 	{
 		if (hasImpl(hPlugin, key))
 			delete (T*)ll_PluginOwnData[hPlugin][key];
 	}
 
 	template <typename T, typename... Args>
-	inline T &setImpl(HMODULE hPlugin, const std::string_view& key,const Args&... args)
+	inline T &setImpl(HMODULE hPlugin, const std::string& key,const Args&... args)
 	{
 		removeImpl<T>(hPlugin, key);
 		T* res = new T(args...);
@@ -48,7 +48,7 @@ namespace PluginOwnData
 	}
 
 	template <typename T>
-	inline T& getImpl(HMODULE hPlugin, const std::string_view& key)
+	inline T& getImpl(HMODULE hPlugin, const std::string& key)
 	{
 		if (!hasImpl(hPlugin, key))
 			ll_PluginOwnData[hPlugin][key] = new T;
@@ -56,25 +56,25 @@ namespace PluginOwnData
 	}
 
 	template <typename T, typename... Args>
-	inline T& set(const std::string_view& key, const Args&... args)
+	inline T& set(const std::string& key, const Args&... args)
 	{
 		return setImpl<T,Args...>(GetCurrentModule(), key, args...);
 	}
 
 	template <typename T>
-	inline T& get(const std::string_view& key)
+	inline T& get(const std::string& key)
 	{
 		return getImpl<T>(GetCurrentModule(), key);
 	}
 
-	inline bool has(const std::string_view& key)
+	inline bool has(const std::string& key)
 	{
 		return hasImpl(GetCurrentModule(), key);
 	}
 
 	template <typename T>
-	inline void remove(const std::string_view& key)
+	inline void remove(const std::string& key)
 	{
-		return removeImpl<T>(GetCurrentModule(), key);
+        return removeImpl<T>(GetCurrentModule(), key);
 	}
 }

@@ -15,12 +15,13 @@ THook(void, "?initCoreEnums@MinecraftCommands@@QEAAXAEBVIWorldRegistriesProvider
     Global<MinecraftCommands> = a0;
 }
 
-THook(void*, "?loadServerPlayerData@LevelStorage@@QEAA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@AEBVPlayer@@_N@Z",
-      LevelStorage* a, void* b, void* c, void* d) {
-    static bool inited = false;
-    if (!inited)
-        Global<LevelStorage> = a, inited = true;
-    return original(a, b, c, d);
+THook(DBStorage*, "??0DBStorage@@QEAA@UDBStorageConfig@@@Z",
+      DBStorage* a, struct DBStorageConfig* config)
+{
+    auto rtn = original(a, config);
+    Global<LevelStorage> = (LevelStorage*)a;
+    Global<DBStorage> = a;
+    return rtn;
 }
 
 #if 0

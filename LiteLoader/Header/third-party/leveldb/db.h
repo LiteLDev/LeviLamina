@@ -8,9 +8,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
-#include "leveldb/export.h"
-#include "leveldb/iterator.h"
-#include "leveldb/options.h"
+#include "export.h"
+#include "iterator.h"
+#include "options.h"
 
 namespace leveldb {
 

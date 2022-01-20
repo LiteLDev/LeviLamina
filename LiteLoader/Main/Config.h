@@ -17,11 +17,15 @@ constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
 namespace LL {
+    struct CommandLineOption {
+        bool noColorOption = false;
+    };
     enum class SeverStatus {
         Starting, Running, Stopping
     };
     struct LLConfig {
         bool debugMode = false;
+        bool colorLog = true;
         int logLevel = 4;
         ::std::string language = "en";
 
@@ -38,6 +42,7 @@ namespace LL {
         SeverStatus serverStatus = SeverStatus::Starting;
     };
     extern LLConfig globalConfig;
+    extern CommandLineOption commandLineOption;
 
     void inline to_json(nlohmann::json &j, const LLConfig &conf);
 
