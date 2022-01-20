@@ -54,7 +54,7 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
     } else {
         realFormatStr = res.value();
     }
-    realFormatStr = FixCurlyBracket(realFormatStr);
+    //realFormatStr = FixCurlyBracket(realFormatStr);
     return fmt::format(realFormatStr, args...);
 }
 
