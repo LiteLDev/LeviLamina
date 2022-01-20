@@ -1,5 +1,6 @@
 #include <Global.h>
 #include <MC/Block.hpp>
+#include <MC/Material.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/BlockInstance.hpp>
 #include <MC/BlockLegacy.hpp>
@@ -56,19 +57,31 @@ Container* BlockInstance::getContainer()
     return VirtualCall<Container*>(be, 224); // IDA ChestBlockActor::`vftable'{for `RandomizableBlockActorContainerBase'}
 }
 
-//bad
-bool BlockInstance::breakNaturally() {
-    auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 1);
+bool BlockInstance::breakNaturally(bool isCreativeMode)
+{
+    auto canDestroy = isCreativeMode || (block->getDestroySpeed() >= 0.0f);
+    if (!canDestroy)
+        return false;
+
+    auto& material = block->getMaterial();
+    bool shouldDrop = material.isAlwaysDestroyable();
+    shouldDrop = shouldDrop && !isCreativeMode;
+
+    auto out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, shouldDrop);
     return out;
 }
 
-bool BlockInstance::breakNaturally(ItemStack* tool) {
-    bool canDestroy = tool->canDestroy(block);
-    bool out;
-    if (canDestroy) {
-        out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 1);
-    }
-    out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, 0);
+bool BlockInstance::breakNaturally(ItemStack* tool, bool isCreativeMode)
+{
+    auto canDestroy = isCreativeMode || (block->getDestroySpeed() >= 0.0f);
+    if (!canDestroy)
+        return false;
+
+    auto& material = block->getMaterial();
+    bool shouldDrop = material.isAlwaysDestroyable() || tool->canDestroySpecial(*block);
+    shouldDrop = shouldDrop && !isCreativeMode;
+
+    bool out = Global<Level>->destroyBlock(*Level::getBlockSource(dim), pos, shouldDrop);
     return out;
 }
 
