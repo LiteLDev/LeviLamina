@@ -26,7 +26,7 @@ class CommandRegistry;
 class MobEffectInstance;
 class Container;
 class WitherBoss;
-class ArmStand;
+class ArmorStand;
 class Objective;
 struct ScoreboardId;
 
@@ -386,6 +386,12 @@ public:
     int mDimensionId;
 };
 
+class PistonTryPushEvent : public EventTemplate<PistonTryPushEvent> {
+public:
+    BlockInstance mPistonBlockInstance;
+    BlockInstance mTargetBlockInstance;
+};
+
 class PistonPushEvent : public EventTemplate<PistonPushEvent> {
 public:
     BlockInstance mPistonBlockInstance;
@@ -490,7 +496,7 @@ public:
 
 class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent> {
 public:
-    ArmStand* mArmorStand;
+    ArmorStand* mArmorStand;
     Player* mPlayer;
     int mSlot;
 };

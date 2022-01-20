@@ -13,6 +13,7 @@
 #include <MC/GameMode.hpp>
 #include <MC/HitResult.hpp>
 #include <MC/ItemActor.hpp>
+#include <MC/PistonBlockActor.hpp>
 #include <MC/ComplexInventoryTransaction.hpp>
 #include <MC/InventoryTransaction.hpp>
 #include <MC/ItemStack.hpp>
@@ -32,6 +33,7 @@
 #include <MC/VanillaBlocks.hpp>
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
+#include <Utils/StringHelper.h>
 #include <functional>
 #include <iostream>
 #include <string>
@@ -94,6 +96,7 @@ DeclareEventListeners(ArmorStandChangeEvent)
 DeclareEventListeners(BlockExplodeEvent)
 DeclareEventListeners(ContainerChangeEvent)
 DeclareEventListeners(PistonPushEvent)
+DeclareEventListeners(PistonTryPushEvent)
 DeclareEventListeners(RedStoneUpdateEvent)
 DeclareEventListeners(BlockExplodedEvent)
 DeclareEventListeners(LiquidSpreadEvent)
@@ -203,6 +206,8 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VRespawnPacket@@$0A@@@UEB
         RespawnPacket* packet = *(RespawnPacket**)pPacket;
         PlayerRespawnEvent ev{};
         ev.mPlayer = packet->getPlayerFromPacket(handler, id);
+        if (!ev.mPlayer)
+            return;
         ev.call();
     }
     IF_LISTENED_END(PlayerRespawnEvent)
@@ -217,6 +222,9 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
     {
         Event::PlayerChatEvent ev{};
         ev.mPlayer = _this->getServerPlayer(*id);
+        if (!ev.mPlayer)
+            return;
+
         ev.mMessage = std::string(*(std::string*)((uintptr_t)text + 88));
 
         if (!ev.call())
@@ -1289,25 +1297,41 @@ THook(bool, "?_pushOutItems@Hopper@@IEAA_NAEAVBlockSource@@AEAVContainer@@AEBVVe
     return original(_this, bs, container, pos, a5);
 }
 
-/////////////////// PistonPush ///////////////////
+/////////////////// PistonTryPushEvent & PistonPushEvent ///////////////////
 THook(bool, "?_attachedBlockWalker@PistonBlockActor@@AEAA_NAEAVBlockSource@@AEBVBlockPos@@EE@Z",
-      BlockActor* _this, BlockSource* bs, BlockPos* bp, unsigned a3, unsigned a4)
+    PistonBlockActor* _this, BlockSource* bs, BlockPos* bp, char a3, char a4)
 {
-    IF_LISTENED(PistonPushEvent)
+    IF_LISTENED(PistonTryPushEvent)
     {
-
-        PistonPushEvent ev{};
-        ev.mPistonBlockInstance = Level::getBlockInstance(_this->getPosition(), bs);
+        PistonTryPushEvent ev{};
         ev.mTargetBlockInstance = Level::getBlockInstance(bp, bs);
-
         if (ev.mTargetBlockInstance.getBlock()->getTypeName() == "minecraft:air")
             return original(_this, bs, bp, a3, a4);
+
+        ev.mPistonBlockInstance = Level::getBlockInstance(_this->getPosition(), bs);
 
         if (!ev.call())
             return false;
     }
+    IF_LISTENED_END(PistonTryPushEvent)
+
+    bool res = original(_this, bs, bp, a3, a4);
+    if (!res)
+        return false;
+
+    IF_LISTENED(PistonPushEvent)
+    {
+        PistonPushEvent ev{};
+        ev.mTargetBlockInstance = Level::getBlockInstance(bp, bs);
+        if (ev.mTargetBlockInstance.getBlock()->getTypeName() == "minecraft:air")
+            return true;
+
+        ev.mPistonBlockInstance = Level::getBlockInstance(_this->getPosition(), bs);
+
+        ev.call();
+    }
     IF_LISTENED_END(PistonPushEvent)
-    return original(_this, bs, bp, a3, a4);
+    return true;
 }
 
 
@@ -1659,7 +1683,12 @@ THook(Actor*,
         ProjectileSpawnEvent ev{};
         ev.mShooter = a4;
         ev.mIdentifier = a3;
-        ev.mType = a3->getFullName();
+
+        string fullName = a3->getFullName();
+        if (EndsWith(fullName, "<>"))
+            fullName = fullName.substr(0, fullName.size() - 2);
+        ev.mType = fullName;
+
         if (!ev.call())
             return nullptr;
     }
@@ -1703,7 +1732,7 @@ THook(bool,
 
 ////////////// ArmorStandChange //////////////
 THook(bool, "?_trySwapItem@ArmorStand@@AEAA_NAEAVPlayer@@W4EquipmentSlot@@@Z",
-      ArmStand* _this, Player* a2, int a3)
+      ArmorStand* _this, Player* a2, int a3)
 {
     IF_LISTENED(ArmorStandChangeEvent)
     {

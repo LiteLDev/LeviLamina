@@ -38,8 +38,13 @@ THook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVR
     return original(a1,a2);
 }
 
+THook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", void* a1, void* a2)
+{
+    return (void*)1;
+}
 
-    //Fix the listening port twice.
+
+//Fix the listening port twice.
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void *_this) {
     if (globalConfig.enableFixListenPort) {
