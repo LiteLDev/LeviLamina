@@ -229,8 +229,9 @@ THook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVTextP
 
         if (!ev.call())
             return;
+        *(std::string*)((uintptr_t)text + 88) = ev.mMessage;
     }
-    IF_LISTENED_END(PlayerChatEvent)
+    IF_LISTENED_END(PlayerChatEvent);
     return original(_this, id, text);
 }
 
@@ -246,6 +247,7 @@ public:
     bool mRespawn;
     std::unique_ptr<CompoundTag> mAgentTag;
 };
+
 THook(bool, "?requestPlayerChangeDimension@Level@@UEAAXAEAVPlayer@@V?$unique_ptr@VChangeDimensionRequest@@U?$default_delete@VChangeDimensionRequest@@@std@@@std@@@Z",
       Level* _this, Player* sp, std::unique_ptr<ChangeDimensionRequest> request)
 {
@@ -292,7 +294,7 @@ THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z"
         ev.mIsSneaking = isSneaking;
         ev.call();
 
-        //isSneaking = ev.mIsSneaking;
+        isSneaking = ev.mIsSneaking;
     }
     IF_LISTENED_END(PlayerSneakEvent)
     return original(_this, ac, isSneaking);
@@ -312,7 +314,8 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
         if (!ev.call())
             return false;
 
-        //*damageCause = ev.mAttackDamage;
+        ac = ev.mTarget;
+        *damageCause = ev.mAttackDamage;
     }
     IF_LISTENED_END(PlayerAttackEvent)
     return original(_this, ac, damageCause);
@@ -1200,6 +1203,8 @@ THook(void, "?onRedstoneUpdate@RedStoneWireBlock@@UEBAXAEAVBlockSource@@AEBVBloc
         ev.mIsActivated = level != 0;
         if (!ev.call())
             return;
+
+        level = ev.mRedStonePower;
     }
     IF_LISTENED_END(RedStoneUpdateEvent)
     return original(_this, bs, bp, level, isActive);
@@ -1216,6 +1221,8 @@ THook(void, "?onRedstoneUpdate@RedstoneTorchBlock@@UEBAXAEAVBlockSource@@AEBVBlo
         ev.mIsActivated = level != 0;
         if (!ev.call())
             return;
+
+        level = ev.mRedStonePower;
     }
     IF_LISTENED_END(RedStoneUpdateEvent)
     return original(_this, bs, bp, level, isActive);
@@ -1232,6 +1239,8 @@ THook(void, "?onRedstoneUpdate@DiodeBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@H
         ev.mIsActivated = level != 0;
         if (!ev.call())
             return;
+
+        level = ev.mRedStonePower;
     }
     IF_LISTENED_END(RedStoneUpdateEvent)
     return original(_this, bs, bp, level, isActive);
@@ -1248,6 +1257,8 @@ THook(void, "?onRedstoneUpdate@ComparatorBlock@@UEBAXAEAVBlockSource@@AEBVBlockP
         ev.mIsActivated = level != 0;
         if (!ev.call())
             return;
+
+        level = ev.mRedStonePower;
     }
     IF_LISTENED_END(RedStoneUpdateEvent)
     return original(_this, bs, bp, level, isActive);
@@ -1499,6 +1510,8 @@ THook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
             ev.mDamage = damage;
             if (!ev.call())
                 return false;
+
+            damage = ev.mDamage;
         }
     }
     IF_LISTENED_END(MobHurtEvent)
@@ -1544,59 +1557,67 @@ THook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob* mob, ActorDamageSou
 THook(void, "?explode@Explosion@@QEAAXXZ",
     void* self)
 {
-    auto pos = *(Vec3*)(QWORD*)self;
-    auto radius = *((float*)self + 3);
-    auto actor = (Actor*)*((QWORD*)self + 11);
-    auto bs = (BlockSource*)*((QWORD*)self + 12);
-    auto maxResistance = *((float*)self + 26);
-    auto genFire = (bool)*((BYTE*)self + 80);
-    auto canBreaking = (bool)*((BYTE*)self + 81);
-
-    IF_LISTENED(EntityExplodeEvent)
+    try
     {
-        if (actor)
+        auto actor = (Actor*)*((QWORD*)self + 11);
+        auto pos = *(Vec3*)(QWORD*)self;
+        auto radius = *((float*)self + 3);
+        auto bs = (BlockSource*)*((QWORD*)self + 12);
+        auto maxResistance = *((float*)self + 26);
+        auto genFire = (bool)*((BYTE*)self + 80);
+        auto canBreaking = (bool)*((BYTE*)self + 81);
+
+        IF_LISTENED(EntityExplodeEvent)
         {
-            EntityExplodeEvent ev{};
-            ev.mActor = actor;
-            ev.mBreaking = canBreaking;
-            ev.mFire = genFire;
-            ev.mMaxResistance = maxResistance;
-            ev.mPos = pos;
-            ev.mRadius = radius;
-            ev.mDimension = bs;
-            if (!ev.call())
-                return;
+            if (actor)
+            {
+                EntityExplodeEvent ev{};
+                ev.mActor = actor;
+                ev.mBreaking = canBreaking;
+                ev.mFire = genFire;
+                ev.mMaxResistance = maxResistance;
+                ev.mPos = pos;
+                ev.mRadius = radius;
+                ev.mDimension = bs;
+                if (!ev.call())
+                    return;
 
-            //*((float*)self + 3) = ev.mRadius;
-            //*((float*)self + 26) = ev.mMaxResistance;
-            //*((BYTE*)self + 80) = ev.mFire;
-            //*((BYTE*)self + 81) = ev.mBreaking;
+                *((float*)self + 3) = ev.mRadius;
+                *((float*)self + 26) = ev.mMaxResistance;
+                *((BYTE*)self + 80) = ev.mFire;
+                *((BYTE*)self + 81) = ev.mBreaking;
+            }
         }
-    }
-    IF_LISTENED_END(EntityExplodeEvent)
+        IF_LISTENED_END(EntityExplodeEvent)
 
-    IF_LISTENED(BlockExplodeEvent)
+        IF_LISTENED(BlockExplodeEvent)
+        {
+            if (!actor)
+            {
+                BlockPos bp = pos.toBlockPos();
+                BlockExplodeEvent ev{};
+                ev.mBlockInstance = Level::getBlockInstance(bp, bs);
+                ev.mBreaking = canBreaking;
+                ev.mFire = genFire;
+                ev.mMaxResistance = maxResistance;
+                ev.mRadius = radius;
+                if (!ev.call())
+                    return;
+
+                *((float*)self + 3) = ev.mRadius;
+                *((float*)self + 26) = ev.mMaxResistance;
+                *((BYTE*)self + 80) = ev.mFire;
+                *((BYTE*)self + 81) = ev.mBreaking;
+            }
+        }
+        IF_LISTENED_END(BlockExplodeEvent)
+    }
+    catch (...)
     {
-        if (!actor)
-        {
-            BlockPos bp = pos.toBlockPos();
-            BlockExplodeEvent ev{};
-            ev.mBlockInstance = Level::getBlockInstance(bp, bs);
-            ev.mBreaking = canBreaking;
-            ev.mFire = genFire;
-            ev.mMaxResistance = maxResistance;
-            ev.mRadius = radius;
-            if (!ev.call())
-                return;
-
-            //*((float*)self + 3) = ev.mRadius;
-            //*((float*)self + 26) = ev.mMaxResistance;
-            //*((BYTE*)self + 80) = ev.mFire;
-            //*((BYTE*)self + 81) = ev.mBreaking;
-        }
+        logger.error("Event Callback Failed!");
+        logger.error("Uncaught Exception Detected!");
+        logger.error("In Event: Entity or Block Explosion");
     }
-    IF_LISTENED_END(BlockExplodeEvent)
-
     original(self);
 }
 
@@ -1632,6 +1653,8 @@ THook(void, "?_destroyBlocks@WitherBoss@@AEAAXAEAVLevel@@AEBVAABB@@AEAVBlockSour
         ev.mDestroyRange = *aabb;
         if (!ev.call())
             return;
+
+        *aabb = ev.mDestroyRange;
     }
     IF_LISTENED_END(WitherBossDestroyEvent)
     original(_this, a2, aabb, a4, a5);
@@ -1716,17 +1739,10 @@ THook(bool,
             ev.mNpc = ac;
             ev.mCommand = str.getString();
             if (!ev.call()) 
-
                 return false;
         }
     }
     IF_LISTENED_END(NpcCmdEvent)
-    NpcSceneDialogueData data(*_this, *ac, a5);
-    auto& container = data.getActionsContainer();
-    auto actionAt = container.getActionAt(a4);
-    HashedString& str = dAccess<HashedString>(actionAt, 152);
-    std::cout << actionAt->getText() << std::endl;
-    std::cout << str.getString() << std::endl;
     return original(_this, ac, pl, a4, a5);
 }
 

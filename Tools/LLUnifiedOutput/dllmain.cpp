@@ -98,7 +98,7 @@ BOOL WINAPI WriteFile_Process(HANDLE hFile, LPCVOID lpBuffer,
 bool UnHook();
 
 bool Hook() {
-    Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
+    Event::ServerStoppedEvent::subscribe([](const Event::ServerStoppedEvent&) {
         UnHook();
         putchar('\b');
         putchar('\b');

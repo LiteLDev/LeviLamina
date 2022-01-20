@@ -1,4 +1,32 @@
 #pragma once
+////////////////////////////////////////////////////////////////////////
+//  Event System - Make it easier to subscribe game events
+//
+//  [Examples]
+// 
+//  Event::PlayerJoinEvent::subscribe([](const Event::PlayerJoinEvent& ev) {        //Common situation - Const parameter "ev"
+//      ev.mPlayer->sendText("hello world~");
+//      return true;
+//  });
+//  
+//  Event::PlayerChatEvent::subscribe([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
+//      ev.mMessage = "[Plugin Modified] " + ev.mMessage;
+//      return true;
+//  });
+// 
+//  auto listener = Event::PlayerTakeItemEvent::subscribe([](const Event::PlayerTakeItemEvent& ev) {     
+//      if(ev.mPlayer->getName() == "Jack")
+//          return false;                           //Prevent events to be done - return false
+//      else
+//          return true;
+//  });
+//  ......
+//  ......
+//  listener.remove();                  //Remove this event listener
+// 
+////////////////////////////////////////////////////////////////////////
+
+
 #include "Global.h"
 #include "LoggerAPI.h"
 #include "MC/BlockInstance.hpp"
@@ -89,6 +117,7 @@ public:
     bool call()
     {
         bool passToBDS = true;
+
         auto i = listeners.begin();
         try {
             for (; i != listeners.end(); ++i)
@@ -106,6 +135,7 @@ public:
         {
             OutputEventError(string("Uncaught Exception Detected! ") + e.what(), typeid(EVENT).name(), i->first);
         }
+
         return passToBDS;
     }
 };
