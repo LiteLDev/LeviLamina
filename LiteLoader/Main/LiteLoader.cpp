@@ -126,6 +126,13 @@ void LLMain() {
 
 // Call LLMain
 THook(int, "main", int a, void *b) {
+    char **str = static_cast<char **>(b);
+    for (int i = 0; i < a; ++i) {
+        if (strcmp(str[i], "--noColor") == 0) {
+            LL::commandLineOption.noColorOption = true;
+            break;
+        }
+    }
     LLMain();
     return original(a, b);
 }

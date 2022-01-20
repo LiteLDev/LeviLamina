@@ -10,6 +10,7 @@ using namespace std;
 
 namespace LL {
     LLConfig globalConfig;
+    LL::CommandLineOption commandLineOption;
 
     void inline to_json(nlohmann::json &j, const LLConfig &conf) {
         j = nlohmann::json{
@@ -30,7 +31,10 @@ namespace LL {
 
     void inline from_json(const nlohmann::json &j, LLConfig &conf) {
         conf.debugMode = j.value("DebugMode", false);
-        conf.colorLog = j.value("ColorLog", true);
+        if (LL::commandLineOption.noColorOption)
+            conf.colorLog = false;
+        else
+            conf.colorLog = j.value("ColorLog", true);
         conf.logLevel = j.value("LogLevel", 4);
         conf.language = j.value("Language", "en");
 

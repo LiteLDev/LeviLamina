@@ -159,7 +159,7 @@ THook(int, "main", int a, void *b) {
     char **str = static_cast<char **>(b);
     bool enablePrompt = true;
     for (int i = 0; i < a; ++i) {
-        if (strcmp(str[i], "-noPrompt") == 0) {
+        if (strcmp(str[i], "--noPrompt") == 0) {
             enablePrompt = false;
             break;
         }
