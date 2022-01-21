@@ -55,7 +55,15 @@ inline std::string trImpl(HMODULE hPlugin, const S& formatStr, const Args&... ar
         realFormatStr = res.value();
     }
     //realFormatStr = FixCurlyBracket(realFormatStr);
-    return fmt::format(realFormatStr, args...);
+    if constexpr (0 == sizeof...(args))
+    {
+        // Avoid fmt if only one argument
+        return realFormatStr;
+    }
+    else
+    {
+        return fmt::format(realFormatStr, args...);
+    }
 }
 
 ///////////////// trc Impl /////////////////
