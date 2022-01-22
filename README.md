@@ -8,7 +8,7 @@
 ![GitHub Releases (by Asset)](https://img.shields.io/github/downloads/LiteLDev/LiteLoader/latest/total?style=for-the-badge)
 ](https://github.com/LiteLDev/LiteLoader/releases/latest)
 
-[Donate us(afdian)](https://afdian.net/@liteldev)  |  [Official Forum](https://forum.litebds.com/)
+[Donate us(afdian)](https://afdian.net/@liteldev) | [Official Forum](https://forum.litebds.com/)
 
 ##### English | [简体中文](README_zh-cn.md)
 
@@ -20,7 +20,7 @@ massive API, lots of packed utility interfaces, a rich event system and powerful
 Writing plugins in C++, Golang and other languages allows developers to easily extend and customize BDS functionality,
 making it easy to learn and extremely flexible.
 
-</br>
+<br/>
 
 ## 🎁 First impression
 
@@ -52,7 +52,7 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
 }
 ```
 
-</br>
+<br/>
 
 ## 💎 Advantage
 
@@ -93,7 +93,7 @@ file, use `docker volume --help` for more details
 
 Everything done! Next, you can install **LiteLoader** plugins!
 
-</br>
+<br/>
 
 ## 📥 Auto update
 
@@ -102,7 +102,7 @@ If in the same BDS version, LiteLoader update will **automatically push**, and *
 the server is started.  
 The latest features, get the first time! Eliminate the trouble of repeated manual upgrades!
 
-</br>
+<br/>
 
 ## 🎯 Get plugins
 
@@ -111,9 +111,9 @@ please [click here](https://www.minebbs.com/resources/?prefix_id=59) to find and
 
 There are some plugins in discussion too.
 
-1. If the download is a .zip, please unzip
-2. Put all the obtained content directly into the `plugins` directory
-3. run `bedrock_server_mod.exe`
+1. _If the download is a .zip, please unzip_
+2. _Put all the obtained content directly into the `plugins` directory_
+3. _run `bedrock_server_mod.exe`_
 
 ------
 
@@ -134,7 +134,7 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
    [Click Here](https://github.com/LiteLDev) Check out more open source LiteLoader plugins as example plugins.  
    You can learn plugin development methods and techniques here
 
-</br>
+<br/>
 
 ## 🔨 Build project
 
@@ -147,7 +147,7 @@ according to the following instructions
 2. Install the newest version of **Windows SDK**
 3. Open `LiteLoader.sln` project files,Click on **Build**
 
-</br>
+<br/>
 
 ## 🎬 Participate in contribution
 
@@ -162,7 +162,7 @@ You can use the following methods to contribute to the `LiteLoader` project
 
 ------
 
-</br>
+<br/>
 
 ## 📍 LICENSE
 
@@ -193,7 +193,7 @@ Although we expected to build an open-source community, but forcing everything o
 you can write plugins based on `LiteLoader` with ANY open-source license or even don't publish your source code. but if
 you modified the framework, or write a new framework based on this framework, you MUST open-source it.
 
-</br>
+<br/>
 
 ## 🏆 Acknowledgement
 
