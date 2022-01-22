@@ -81,6 +81,7 @@ DeclareEventListeners(PlayerSetArmorEvent)
 DeclareEventListeners(PlayerUseRespawnAnchorEvent)
 DeclareEventListeners(PlayerOpenContainerScreenEvent)
 DeclareEventListeners(PlayerUseFrameBlockEvent)
+DeclareEventListeners(PlayerExperienceAddEvent)
 DeclareEventListeners(MobHurtEvent)
 DeclareEventListeners(MobDieEvent)
 DeclareEventListeners(EntityExplodeEvent)
@@ -1027,6 +1028,21 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
         IF_LISTENED_END(ConsoleCmdEvent)
     }
     return original(_this, rtn, context, print);
+}
+
+/////////////////// PlayerExperienceAddEvent ///////////////////
+THook(void, "?addExperience@Player@@UEAAXH@Z", Player* _this, int exp)
+{
+    IF_LISTENED(PlayerExperienceAddEvent)
+    {
+        PlayerExperienceAddEvent ev{};
+        ev.mPlayer = _this;
+        ev.mExp = exp;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerExperienceAddEvent)
+    return original(_this, exp);
 }
 
 /////////////////// CmdBlockExecute ///////////////////
