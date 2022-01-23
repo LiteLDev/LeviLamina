@@ -65,17 +65,32 @@ std::string LL::Version::toString(bool needStatus) {
     return res;
 }
 
-LL::Version LL::Version::parse(const std::string &str) {
-    auto res = SplitStrWithPattern(str, ".");
 
+LL::Version LL::Version::parse(const std::string &str) {
     Version ver;
+    std::string a = str;
+    std::string status;
+    size_t pos = 0;
+    if ((pos = str.find_last_of('-')) != std::string::npos) {
+        a = str.substr(0, pos);
+        status = str.substr(pos + 1);
+        std::transform(status.begin(), status.end(), status.begin(), ::tolower);
+    }
+    if (status == "beta")
+        ver.status = Status::Beta;
+    else if (status == "dev" || status == "alpha")
+        ver.status = Status::Dev;
+    else
+        ver.status = Status::Release;
+    
+    auto res = SplitStrWithPattern(a, ".");
+
     if (res.size() >= 1)
         ver.major = stoi(res[0]);
     if (res.size() >= 2)
         ver.minor = stoi(res[1]);
     if (res.size() >= 3)
         ver.revision = stoi(res[2]);
-
-    ver.status = Status::Release;
+    
     return ver;
 }
