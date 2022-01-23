@@ -81,6 +81,7 @@ DeclareEventListeners(PlayerSetArmorEvent)
 DeclareEventListeners(PlayerUseRespawnAnchorEvent)
 DeclareEventListeners(PlayerOpenContainerScreenEvent)
 DeclareEventListeners(PlayerUseFrameBlockEvent)
+DeclareEventListeners(PlayerExperienceAddEvent)
 DeclareEventListeners(MobHurtEvent)
 DeclareEventListeners(MobDieEvent)
 DeclareEventListeners(EntityExplodeEvent)
@@ -322,20 +323,20 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
 }
 
 /////////////////// PlayerAttackBlock ///////////////////
-THook(__int64, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
-    Player* self, Block* bl, BlockPos* bp)
+THook(bool, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+    Block* bl, Player* pl, BlockPos* bp)
 {
     IF_LISTENED(PlayerAttackBlockEvent)
     {
         PlayerAttackBlockEvent ev{};
-        ev.mPlayer = self;
-        ev.mItemStack = self->getHandSlot();
-        ev.mBlockInstance = Level::getBlockInstance(bp, self->getBlockSource());
+        ev.mPlayer = pl;
+        ev.mItemStack = pl->getHandSlot();
+        ev.mBlockInstance = BlockInstance::createBlockInstance(bl, *bp, pl->getDimensionId());
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerAttackBlockEvent)
-    return original(self, bl, bp);
+    return original(bl, pl, bp);
 }
 
 /////////////////// PlayerTakeItem ///////////////////
@@ -1027,6 +1028,21 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
         IF_LISTENED_END(ConsoleCmdEvent)
     }
     return original(_this, rtn, context, print);
+}
+
+/////////////////// PlayerExperienceAddEvent ///////////////////
+THook(void, "?addExperience@Player@@UEAAXH@Z", Player* _this, int exp)
+{
+    IF_LISTENED(PlayerExperienceAddEvent)
+    {
+        PlayerExperienceAddEvent ev{};
+        ev.mPlayer = _this;
+        ev.mExp = exp;
+        if (!ev.call())
+            return;
+    }
+    IF_LISTENED_END(PlayerExperienceAddEvent)
+    return original(_this, exp);
 }
 
 /////////////////// CmdBlockExecute ///////////////////

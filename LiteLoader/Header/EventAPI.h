@@ -351,6 +351,12 @@ public:
     ScoreboardId* mScoreboardId;
 };
 
+class PlayerExperienceAddEvent : public EventTemplate<PlayerExperienceAddEvent> {
+public:
+    Player* mPlayer;
+    int mExp;
+};
+
 
 ///////////////////////////// Block Events /////////////////////////////
 

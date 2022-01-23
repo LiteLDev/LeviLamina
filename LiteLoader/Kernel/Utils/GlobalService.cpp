@@ -54,3 +54,13 @@ THook(Scoreboard*, "??0ServerScoreboard@@QEAA@VCommandSoftEnumRegistry@@PEAVLeve
     Global<Scoreboard> = sc;
     return sc;
 }
+
+THook(int, "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ", AllowListFile* _this)
+{
+    static bool set = false;
+    if (!set) {
+        Global<AllowListFile> = _this;
+        set = true;
+    }
+    return original(_this);
+}

@@ -1,10 +1,4 @@
-=== LiteLoaderBDS 2.0.6 Release Version ===
-**Upgrade as soon as possible to fix vulnerabilities of BDS !!!**
-A type of new BDS server crasher has beed detected to be used by some attackers.
-Newest version of LiteLoader can protect your server away from those dangerous data packets, which can cause your server crash.
-
-- Fixed [CVE-2021-45383](https://github.com/nt1dr/CVE-2021-45383)
-- Fixed [CVE-2021-45384](https://github.com/nt1dr/CVE-2021-45383)
-- Fixed intercept ChangePlayerDimEvent
-- Fixed NPCCmdEvent
-- Fixed Scoreboard API
+- Fixed `PlayerAttackBlockEvent`
+- Added `PlayerExperienceAddEvent`
+- Added `Global<AllowListFile>`
+- Added hide LiteLoader version from players

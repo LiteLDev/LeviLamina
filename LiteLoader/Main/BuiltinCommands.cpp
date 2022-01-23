@@ -18,9 +18,17 @@ using namespace RegisterCommandHelper;
 class VersionCommand : public Command {
 public:
     void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        output.success("The server is running LiteLoaderBDS " + LL::getLoaderVersionString() +
-                           "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
-                       {});
+        if ((unsigned short)ori.getPermissionsLevel() >= CommandPermissionLevel::GameMasters)
+        {
+            output.success("The server is running LiteLoaderBDS " + LL::getLoaderVersionString() +
+                               "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
+                           {});
+        }
+        else
+        {
+            output.success("The server is running LiteLoaderBDS(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
+                           {});
+        }
     }
 
     static void setup(CommandRegistry *registry) {
