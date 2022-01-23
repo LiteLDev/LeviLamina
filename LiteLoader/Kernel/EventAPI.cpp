@@ -323,20 +323,20 @@ THook(bool, "?attack@Player@@UEAA_NAEAVActor@@AEBW4ActorDamageCause@@@Z",
 }
 
 /////////////////// PlayerAttackBlock ///////////////////
-THook(__int64, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
-    Player* self, Block* bl, BlockPos* bp)
+THook(bool, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
+    Block* bl, Player* pl, BlockPos* bp)
 {
     IF_LISTENED(PlayerAttackBlockEvent)
     {
         PlayerAttackBlockEvent ev{};
-        ev.mPlayer = self;
-        ev.mItemStack = self->getHandSlot();
-        ev.mBlockInstance = Level::getBlockInstance(bp, self->getBlockSource());
+        ev.mPlayer = pl;
+        ev.mItemStack = pl->getHandSlot();
+        ev.mBlockInstance = BlockInstance::createBlockInstance(bl, *bp, pl->getDimensionId());
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerAttackBlockEvent)
-    return original(self, bl, bp);
+    return original(bl, pl, bp);
 }
 
 /////////////////// PlayerTakeItem ///////////////////
