@@ -64,27 +64,23 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
 
 ### 对于 Windows 用户
 
-1. 从 [Releases](https://github.com/LiteLDev/LiteLoader/releases)
-   或 [Actions](https://github.com/LiteLDev/LiteLoader/actions) 下载 `LiteLoader.zip`，并将它解压到BDS目录
-2. 运行 `SymDB2.exe` 来生成符号文件(`bedrock_server.symdb2`)和有导出符号的BDS `bedrock_server_mod.exe`(未来的插件可能会需要这个版本的BDS)
-   。在你运行 `SymDB2.exe` 之前，你需要检查 `bedrock_server.pdb` 是否存在
+1. 从 [Releases](https://github.com/LiteLDev/LiteLoader/releases) 或 [Actions](https://github.com/LiteLDev/LiteLoader/actions) 下载最新的 <code>LiteLoader-<i>版本</i>.zip</code>，将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。
+2. 运行 `SymDB2.exe` 来生成符号文件（`bedrock_server.symdb2`）和有导出符号的BDS（`bedrock_server_mod.exe`，未来的插件可能会需要这个版本的BDS）。在你运行 `SymDB2.exe` 之前，你需要检查 `bedrock_server.pdb` 是否存在。
+3. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口。然后打开 `bedrock_server_mod.exe`，即可使用。
 
 ### 对于 Linux 用户
-
+在终端中输入：
 ```
 docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+启动服务器：`docker container start liteloader`  
+强制停止服务器（不推荐）：`docker container stop liteloader`  
+进入控制台：`docker attach liteloader`  
+退出控制台：按下 `Ctrl + P + Q`。如果按下 `Ctrl + C`，服务器进程将会终止。  
+如想管理服务端文件，使用命令 `docker volume --help` 了解详情。  
 
-开服: `docker container start liteloader`
-
-关服(不推荐): `docker container stop liteloader`
-
-进入控制台: `docker attach liteloader`
-
-退出控制台: 按下 `Ctrl + P + Q`，如果你按下 `Ctrl + C`，服务器进程将会退出 如果你想管理服务端文件，使用命令 `docker volume --help` 了解详情
-
-大功告成！ 接下来，你可以安装你想要的 **LiteLoader** 插件
+大功告成！接下来，你可以安装你想要的 **LiteLoader** 插件。  
 
 ## 📥 自动更新
 
