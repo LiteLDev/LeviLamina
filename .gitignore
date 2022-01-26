@@ -12,6 +12,7 @@ LiteLoader/Lib/SymDBHelper.lib
 *.zip
 
 /LiteLoader/out/
+LiteLoaderSDK/
 
 !RELEASE/
 RELEASE/LiteLoader.dll
