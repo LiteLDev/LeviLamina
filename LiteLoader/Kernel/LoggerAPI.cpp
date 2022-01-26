@@ -13,17 +13,17 @@
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 void Logger::initLockImpl(HMODULE hPlugin) {
-    if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
-        PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);
+    //if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
+    //    PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);             //May cause DeadLock?
 }
 
 void Logger::lockImpl(HMODULE hPlugin) {
-    initLockImpl(hPlugin);
-    PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();
+    //initLockImpl(hPlugin);
+    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();          //May cause DeadLock?
 }
 
 void Logger::unlockImpl(HMODULE hPlugin) {
-    PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();
+    //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();        //May cause DeadLock?
 }
 
 bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string &logFile, bool appendMode = true) {
