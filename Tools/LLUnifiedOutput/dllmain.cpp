@@ -50,7 +50,7 @@ bool inline SendLine(HANDLE hOutput) {
             if (isPromptPrint) {
                 line = "\b\b" + line;
             }
-            success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
+            success = WriteFile_Ptr(hOutput, line.data(), (DWORD)line.size(), &dwOutput, nullptr);
         } else {
             buffer.str("");
             buffer.clear();
@@ -60,7 +60,7 @@ bool inline SendLine(HANDLE hOutput) {
         if (isPromptPrint) {
             line = "\b\b" + line + "> ";
         }
-        success = WriteFile_Ptr(hOutput, line.data(), line.size(), &dwOutput, nullptr);
+        success = WriteFile_Ptr(hOutput, line.data(), (DWORD)line.size(), &dwOutput, nullptr);
     }
     buffer.str("");
     buffer.clear();
