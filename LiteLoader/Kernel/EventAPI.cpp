@@ -48,7 +48,8 @@ class ChangeDimensionRequest;
 class DisconnectPacket;
 
 #define DeclareEventListeners(EVENT) template <> \
-EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners;
+EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners; \
+EventTemplate<EVENT>::ListenersContainerNoConst EventTemplate<EVENT>::listenersNoConst;
 
 DeclareEventListeners(PlayerPreJoinEvent)
 DeclareEventListeners(PlayerJoinEvent)
