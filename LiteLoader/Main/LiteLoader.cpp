@@ -56,6 +56,7 @@ void CheckDevMode() {
 
 //extern
 extern void EndScheduleSystem();
+extern void FixBugEvent();
 
 void LLMain() {
     //Set global SEH-Exception handler
@@ -107,6 +108,7 @@ void LLMain() {
     //Register simple server logger
     RegisterSimpleServerLogger();
 
+    FixBugEvent();
     //Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");
