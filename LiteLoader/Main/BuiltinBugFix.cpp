@@ -90,12 +90,24 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
 #include <EventAPI.h>
 void FixBugEvent()
 {
-    Event::PlayerDropItemEvent::subscribe([](const Event::PlayerDropItemEvent& ev) {
-        if (ev.mPlayer->isSleeping()) //fix sleeping drop lag
-        {
-            logger.warn << "Player(" << ev.mPlayer->getRealName() << ") is trying dropping items while sleeping(causing server lag)!" << Logger::endl;
-            return false;
-        }
-        return true;
-    });
+}
+
+//fix sleeping drop item
+#include <mc/ItemActor.hpp>
+#include <MC/MovementInterpolator.hpp>
+THook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor* ac,ItemStack* a2, char a3)
+{
+    auto out = dAccess<MovementInterpolator*,0x510>(ac);
+    if (!dAccess<bool, 0x24>(out))
+    {
+        auto num = dAccess<int, 0x1c>(out);
+        if (num > 0)
+            if (num == 1)
+            {
+                auto v17 = *(Vec2*)((char*)out + 0x0c);
+                ac->setRot(v17);
+            }
+        --dAccess<int, 0x1c>(out);
+    }
+    return original(ac, a2, a3);
 }
