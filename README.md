@@ -69,31 +69,23 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
 
 ### For Windows
 
-1. Download `LiteLoader.zip` from [Releases](https://github.com/LiteLDev/LiteLoader/releases)
-   or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip it to BDS directory
-2. Run `SymDB2.exe` to generate symbol files(`bedrock_server.symdb2`) and BDS with export
-   symbols `bedrock_server_mod.exe`(plugins in future may require this version of bds), before you run `SymDB2.exe` you
-   need to check if the `bedrock_server.pdb` exists
+1. Download the latest <code>LiteLoader-<i>version</i>.zip</code> from [Releases](https://github.com/LiteLDev/LiteLoader/releases) or [Actions](https://github.com/LiteLDev/LiteLoader/actions), unzip everything to the directory of `bedrock_server.exe`. 
+2. Run `SymDB2.exe` to generate the symbol file(`bedrock_server.symdb2`) and BDS with exported symbols(`bedrock_server_mod.exe`, plugins in future may require this version of BDS). Before you run `SymDB2.exe`, you need to check if `bedrock_server.pdb` exists. 
+3. When the console says `Press any key to continue . . . `, press any key to close the window. Then open `bedrock_server_mod.exe` and enjoy it. 
 
 ### For Linux
-
+Enter the following lines in your terminal: 
 ```
 docker pull shrbox/liteloaderbds
 docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 ```
+Start server: `docker container start liteloader`  
+Force stop server(not recommended): `docker container stop liteloader`  
+Enter console: `docker attach liteloader`  
+Exit console: Press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit.  
+If you want to manage server files, use `docker volume --help` for more details.  
 
-Start server: `docker container start liteloader`
-
-Stop server(unrecommended): `docker container stop liteloader`
-
-Enter console: `docker attach liteloader`
-
-Exit console: press `Ctrl + P + Q`. If you press `Ctrl + C`, the server process will exit. If you want to manage server
-file, use `docker volume --help` for more details
-
-Everything done! Next, you can install **LiteLoader** plugins!
-
-<br/>
+Everything's done! Next, you can install **LiteLoader** plugins!  
 
 ## 📥 Auto update
 

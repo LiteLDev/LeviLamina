@@ -1,4 +1,4 @@
-- Fixed `PlayerAttackBlockEvent`
-- Added `PlayerExperienceAddEvent`
-- Added `Global<AllowListFile>`
-- Added hide LiteLoader version from players
+- Fixed Player is dropping items while sleeping(causing server lag)
+- Added Changable Event Api
+- Remove Logger's lock 
+- Fix bool type CommandParameterData

@@ -33,7 +33,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(IncludePath)</IncludePath>
-    <OutDir>$(SolutionDir)RELEASE\plugins\LiteLoader</OutDir>
+    <OutDir>$(SolutionDir)RELEASE\plugins\LiteLoader\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

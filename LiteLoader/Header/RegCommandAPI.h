@@ -28,8 +28,15 @@ using ParseFn = bool (CommandRegistry::*)(
 
 template <typename Command, typename Type>
 static CommandParameterData makeMandatory(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+    typeid_t<CommandRegistry> tpid{0};
+
+    if constexpr (std::is_same<Type, bool>::value)
+        tpid = SymCall("??$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ", typeid_t<CommandRegistry>)();
+    else
+        tpid = CommandRegistry::getNextTypeId();
+
     return {
-        CommandRegistry::getNextTypeId(),
+        tpid,
         CommandRegistry::getParseFn<Type>(),
         name,
         CommandParameterDataType::NORMAL,
@@ -63,8 +70,15 @@ static CommandParameterData
 }
 template <typename Command, typename Type>
 static CommandParameterData makeOptional(Type Command::*field, std::string name, bool Command::*isSet = nullptr) {
+    typeid_t<CommandRegistry> tpid{0};
+
+    if constexpr (std::is_same<Type, bool>::value)
+        tpid = SymCall("??$type_id@VCommandRegistry@@_N@@YA?AV?$typeid_t@VCommandRegistry@@@@XZ", typeid_t<CommandRegistry>)();
+    else
+        tpid = CommandRegistry::getNextTypeId();
+
     return {
-        CommandRegistry::getNextTypeId(),
+        tpid,
         CommandRegistry::getParseFn<Type>(),
         name,
         CommandParameterDataType::NORMAL,

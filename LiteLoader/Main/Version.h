@@ -1,16 +1,11 @@
 #pragma once
-
 #include <LLAPI.h>
 
-#define LITELOADER_VERSION_MAJOR 2
-#define LITELOADER_VERSION_MINOR 0
-#define LITELOADER_VERSION_REVISION 8
+#define LITELOADER_VERSION_MAJOR    LL::getLoaderVersion().major
+#define LITELOADER_VERSION_MINOR    LL::getLoaderVersion().minor
+#define LITELOADER_VERSION_REVISION LL::getLoaderVersion().revision
+#define LITELOADER_VERSION_BUILD    LL::getLoaderVersion().build
+#define LITELOADER_VERSION          LL::getLoaderVersion()
 
-#define LITELOADER_VERSION_STATUS Release
+#define LITELOADER_VERSION_STATUS   Release
 
-#define LITELOADER_VERSION \
-    LL::Version(LITELOADER_VERSION_MAJOR, \
-                LITELOADER_VERSION_MINOR, \
-                LITELOADER_VERSION_REVISION, \
-                LL::Version::Status::LITELOADER_VERSION_STATUS \
-                )

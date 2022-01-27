@@ -9,7 +9,7 @@
 //      return true;
 //  });
 //  
-//  Event::PlayerChatEvent::subscribe([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
+//  Event::PlayerChatEvent::subscribe_ref([](Event::PlayerChatEvent& ev) {          //Need to modify event's parameters - Reference parameter "ev"
 //      ev.mMessage = "[Plugin Modified] " + ev.mMessage;
 //      return true;
 //  });
@@ -95,8 +95,13 @@ public:
     using ListenersContainer = std::list<std::pair<string,Callback>>;   // pluginName & callback
     using Listener = EventListener<ListenersContainer>;
 
+    using CallbackNoConst = std::function<bool(EVENT&)>;
+    using ListenersContainerNoConst = std::list<std::pair<string, CallbackNoConst>>;   // pluginName & callback
+    using ListenerNoConst = EventListener<ListenersContainerNoConst>;
+
 protected:
     LIAPI static ListenersContainer listeners;
+    LIAPI static ListenersContainerNoConst listenersNoConst;
 
 public:
     static Listener subscribe(Callback callback) {
@@ -106,18 +111,48 @@ public:
         return Listener(&listeners, --listeners.end());
     }
 
+    static ListenerNoConst subscribe_ref(CallbackNoConst callback) {
+        auto plugin = LL::getPlugin(GetCurrentModule());
+        std::string pluginName = plugin == nullptr ? "" : plugin->name;
+        listenersNoConst.emplace_back(std::make_pair(pluginName, callback));
+        return ListenerNoConst(&listenersNoConst, --listenersNoConst.end());
+    }
+
     static void unsubscribe(const Listener& listener) {
         listener.remove();
     }
 
+    static void unsubscribe_ref(const ListenerNoConst& listener) {
+        listener.remove();
+    }
+
     static bool hasListener() {
-        return !listeners.empty();
+        return !(listeners.empty() && listenersNoConst.empty());
     }
 
     bool call()
     {
         bool passToBDS = true;
 
+        //NoConst
+        auto iNoConst = listenersNoConst.begin();
+        try {
+            for (; iNoConst != listenersNoConst.end(); ++iNoConst)
+            {
+                if (!iNoConst->second(*(EVENT*)this))
+                    passToBDS = false;
+            }
+        }
+        catch (const seh_exception& e)
+        {
+            OutputEventError("Uncaught SEH Exception Detected!", typeid(EVENT).name(), iNoConst->first);
+        }
+        catch (const std::exception& e)
+        {
+            OutputEventError(string("Uncaught Exception Detected! ") + e.what(), typeid(EVENT).name(), iNoConst->first);
+        }
+
+        //Common
         auto i = listeners.begin();
         try {
             for (; i != listeners.end(); ++i)
@@ -125,7 +160,6 @@ public:
                 if (!i->second(*(EVENT*)this))
                     passToBDS = false;
             }
-            return passToBDS;
         }
         catch (const seh_exception& e)
         {

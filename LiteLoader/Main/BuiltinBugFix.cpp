@@ -43,7 +43,6 @@ THook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOn
     return (void*)1;
 }
 
-
 //Fix the listening port twice.
 THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
       void *_this) {
@@ -86,4 +85,17 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
         }
     }
     return original(snh, netid, pk);
+}
+
+#include <EventAPI.h>
+void FixBugEvent()
+{
+    Event::PlayerDropItemEvent::subscribe([](const Event::PlayerDropItemEvent& ev) {
+        if (ev.mPlayer->isSleeping()) //fix sleeping drop lag
+        {
+            logger.warn << "Player(" << ev.mPlayer->getRealName() << ") is trying dropping items while sleeping(causing server lag)!" << Logger::endl;
+            return false;
+        }
+        return true;
+    });
 }

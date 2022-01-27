@@ -1,6 +1,8 @@
+#pragma comment(lib, "version")
 #include <Main/Config.h>
 #include <LLAPI.h>
 #include <Main/PluginManager.h>
+#include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
 #include <Main/Version.h>
 #include <filesystem>
@@ -17,8 +19,42 @@ std::string LL::getLoaderVersionString() {
     return getLoaderVersion().toString();
 }
 
-LL::Version LL::getLoaderVersion() {
-    return LITELOADER_VERSION;
+typedef struct _VS_VERSIONINFO {
+    WORD  wLength;
+    WORD  wValueLength;
+    WORD  wType;
+    WCHAR* szKey;
+    WORD*  Padding1;
+    VS_FIXEDFILEINFO Value;
+    WORD*  Padding2;
+    WORD*  Children;
+}VS_VERSIONINFO;
+
+LL::Version LL::getLoaderVersion()
+{
+    DWORD   verBufferSize;
+    char    verBuffer[2048];
+    TCHAR filePath[MAX_PATH * 2] = { 0 };
+
+    if (GetModuleFileName(GetCurrentModule(), filePath, sizeof(filePath)) == 0)
+        return LL::Version();
+
+    verBufferSize = GetFileVersionInfoSize(filePath, NULL);
+    if (verBufferSize > 0 && verBufferSize <= sizeof(verBuffer))
+    {
+        if (GetFileVersionInfo(filePath, NULL, verBufferSize, verBuffer))
+        {
+            UINT length;
+            VS_FIXEDFILEINFO* verInfo = NULL;
+
+            if (TRUE == VerQueryValue(verBuffer, TEXT("\\"), reinterpret_cast<LPVOID*>(&verInfo), &length))
+            {
+                return Version(HIWORD(verInfo->dwProductVersionMS), LOWORD(verInfo->dwProductVersionMS),
+                    HIWORD(verInfo->dwProductVersionLS)/*, LOWORD(verInfo->dwProductVersionLS)*/);
+            }
+        }
+    }
+    return Version();
 }
 
 bool LL::isDebugMode() {
@@ -58,24 +94,39 @@ std::string LL::Version::toString(bool needStatus) {
     string res = to_string(major) + "." + to_string(minor) + "." + to_string(revision);
     if (needStatus) {
         if (status == Status::Beta)
-            res += "-Beta";
+            res += " - Beta";
         else if (status == Status::Dev)
-            res += "-Dev";
+            res += " - Dev";
     }
     return res;
 }
 
-LL::Version LL::Version::parse(const std::string &str) {
-    auto res = SplitStrWithPattern(str, ".");
 
+LL::Version LL::Version::parse(const std::string &str) {
     Version ver;
+    std::string a = str;
+    std::string status;
+    size_t pos = 0;
+    if ((pos = str.find_last_of('-')) != std::string::npos) {
+        a = str.substr(0, pos);
+        status = str.substr(pos + 1);
+        std::transform(status.begin(), status.end(), status.begin(), ::tolower);
+    }
+    if (status == "beta")
+        ver.status = Status::Beta;
+    else if (status == "dev" || status == "alpha")
+        ver.status = Status::Dev;
+    else
+        ver.status = Status::Release;
+    
+    auto res = SplitStrWithPattern(a, ".");
+
     if (res.size() >= 1)
         ver.major = stoi(res[0]);
     if (res.size() >= 2)
         ver.minor = stoi(res[1]);
     if (res.size() >= 3)
         ver.revision = stoi(res[2]);
-
-    ver.status = Status::Release;
+    
     return ver;
 }
