@@ -1,4 +1,12 @@
-﻿#pragma once
+﻿/************************************************
+* 
+*  - Deprecated, only retained as compatibility
+*  - Please use FormUI.h instead
+*
+************************************************/
+
+
+#pragma once
 #include <Global.h>
 #include <MC/ServerPlayer.hpp>
 #include <Utils\Optional.h>

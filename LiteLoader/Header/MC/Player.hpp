@@ -48,9 +48,22 @@ public:
     LIAPI int getDeviceType();
     LIAPI bool isOP();
 
+    
+    LIAPI bool sendText(string text, TextType type = TextType::RAW);
+    template <typename... Args>
+    bool sendFormattedText(string text, const Args&... args)
+    {
+        if constexpr (0 == sizeof...(args))
+        {
+            // Avoid fmt if only one argument
+            return sendText(text);
+        }
+        else
+            return sendText(fmt::format(text, args...));
+    }
+
     LIAPI bool kick(const string& msg);
     LIAPI bool crashClient();
-    LIAPI bool sendText(string text, TextType type = TextType::RAW);
     LIAPI bool talkAs(const string& msg);
     LIAPI bool giveItem(ItemStack* item); 
     LIAPI int clearItem(string typeName);

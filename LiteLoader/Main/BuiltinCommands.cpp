@@ -15,104 +15,6 @@
 
 using namespace RegisterCommandHelper;
 
-class VersionCommand : public Command {
-public:
-    void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        if ((unsigned short)ori.getPermissionsLevel() >= CommandPermissionLevel::GameMasters)
-        {
-            output.success("The server is running LiteLoaderBDS " + LL::getLoaderVersionString() +
-                               "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
-                           {});
-        }
-        else
-        {
-            output.success("The server is running LiteLoaderBDS(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
-                           {});
-        }
-    }
-
-    static void setup(CommandRegistry *registry) {
-        registry->registerCommand(
-                "version",
-                "Get the version of this server",
-                CommandPermissionLevel::Any,
-                {(CommandFlagValue) 0},
-                {(CommandFlagValue) 0x80});
-        registry->registerOverload<VersionCommand>("version");
-    }
-};
-
-class PluginsCommand : public Command {
-    std::string PluginName;
-    bool PluginName_isSet;
-
-public:
-    void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        if (PluginName_isSet) {
-            auto plugin = LL::getPlugin(PluginName);
-            if (plugin) {
-                std::ostringstream oss;
-                auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
-
-                oss << "Plugin <" << PluginName << '>' << std::endl << std::endl;
-                oss << "- Name:  " << plugin->name << '(' << fn << ')' << std::endl;
-                oss << "- Version:  v" << plugin->version.toString(true) << std::endl;
-                oss << "- Introduction:  " << plugin->introduction << std::endl;
-                for (auto&[k, v]: plugin->otherInformation) {
-                    oss << "- " << k << ":  " << v << std::endl;
-                }
-                auto text = oss.str();
-                text.pop_back();
-                output.success(text, {});
-            } else {
-                output.error("Plugin <" + PluginName + "> is not found!", {});
-            }
-            return;
-        }
-        auto plugins = LL::getAllPlugins();
-        std::ostringstream oss;
-        oss << "Plugin Lists [" << plugins.size() << "]\n\n";
-        for (auto&[name, plugin]: plugins) {
-            // Plugin Lists[1]
-            // - LiteLoader(LiteLoader.dll)[v1.0.0]: plugin introduction
-            auto fn = std::filesystem::path(plugin.filePath).filename().u8string();
-            oss << "- " << name << " [v" << plugin.version.toString() << "] " << " (" << fn << ")" << std::endl
-                << "  " << plugin.introduction << std::endl << std::endl;
-        }
-        oss << "* Send command \"plugins <Plugin Name>\" for more information";
-        output.success(oss.str(), {});
-    }
-
-    static void addPluginListValues(string name) {
-        Global<CommandRegistry>->addSoftEnumValues("PluginName", {name});
-    }
-
-    static void setup(CommandRegistry *registry) {
-        registry->registerCommand(
-                "plugins", "View plugin information", CommandPermissionLevel::GameMasters, {(CommandFlagValue) 0},
-                {(CommandFlagValue) 0x80});
-        registry->registerOverload<PluginsCommand>("plugins");
-        vector<string> pluginList;
-        for (auto&[name, p]: LL::getAllPlugins()) {
-            string tmp = name;
-            //transform(tmp.begin(), tmp.end(), tmp.begin(), ::tolower);
-            pluginList.push_back(tmp);
-        }
-        registry->addSoftEnum("PluginName", pluginList);
-        registry->registerOverload<PluginsCommand>(
-                "plugins",
-                makeOptional<CommandParameterDataType::SOFT_ENUM>(
-                        &PluginsCommand::PluginName,
-                        "name",
-                        "PluginName",
-                        &PluginsCommand::PluginName_isSet));
-        //Event::RegPluginEvent::subscribe([](Event::RegPluginEvent ev) {
-        //    updatePluginList(ev.mPluginName);
-        //    return true;
-        //});
-    }
-};
-
 static_assert(sizeof(CommandSelector<Player>) == 200);
 
 class TeleportDimensionCommand : public Command {
@@ -243,58 +145,165 @@ public:
     }
 };
 
-class LLUpdateCommand : public Command {
-    enum class Operation {
-        Force,
-    } operation;
-    bool isSet;
+
+void LLUpgradeCommand(CommandOutput& output,bool isForce)
+{
+    std::thread([isForce]() {
+        LL::CheckAutoUpdate(true, isForce);
+    }).detach();
+}
+
+void LLListPluginsCommand(CommandOutput& output)
+{
+    auto plugins = LL::getAllPlugins();
+    std::ostringstream oss;
+    oss << "Plugin Lists [" << plugins.size() << "]\n\n";
+    for (auto& [name, plugin] : plugins) {
+        // Plugin Lists[1]
+        // - LiteLoader [v1.0.0] (LiteLoader.dll)
+        //   xxxxx  (Plugin Introduction)
+        auto fileName = std::filesystem::path(plugin.filePath).filename().u8string();
+        oss << fmt::format("- {} [v{}] ({})\n  {}\n\n",
+            name, plugin.version.toString(), fileName, plugin.introduction);
+    }
+    oss << "* Send command \"plugins <Plugin Name>\" for more information";
+    output.success(oss.str());
+}
+
+void LLPluginInfoCommand(CommandOutput& output, const string &pluginName)
+{
+    auto plugin = LL::getPlugin(pluginName);
+    if (plugin) {
+        std::ostringstream oss;
+        auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
+
+        oss << "Plugin <" << pluginName << '>' << std::endl << std::endl;
+        oss << "- Name:  " << plugin->name << '(' << fn << ')' << std::endl;
+        oss << "- Version:  v" << plugin->version.toString(true) << std::endl;
+        oss << "- Introduction:  " << plugin->introduction << std::endl;
+        for (auto& [k, v] : plugin->otherInformation) {
+            oss << "- " << k << ":  " << v << std::endl;
+        }
+        auto text = oss.str();
+        text.pop_back();
+        output.success(text, {});
+    }
+    else {
+        output.error("Plugin <" + pluginName + "> is not found!", {});
+    }
+}
+
+void LLVersionCommand(CommandOutput& output)
+{
+    output.success(fmt::format("Bedrock Delicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}",
+        LL::getBdsVersion(), LL::getLoaderVersionString(), LL::getServerProtocolVersion()));
+}
+
+void LLHelpCommand(CommandOutput& output)
+{
+    output.success(
+        "[Introduction]"
+        "LiteLoaderBDS is an unofficial plugin loader that provides APIs & Events for modding development of Bedrock Dedicated Server.\n"
+        "Including a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n"
+        "[Github]\n"
+        "> https://github.com/LiteLDev/LiteLoaderBDS <\n"
+        "Welcome to our github project to get more information ~"
+    );
+}
+
+class LLCommand : public Command {
+    enum class Operation
+    {
+        Version, List, Upgrade, Help
+    };
+    enum class UpgradeOption {
+        Force
+    };
+
+    Operation operation;
+    UpgradeOption upgradeOption;
+    bool hasUpgradeOption, hasPluginNameToGetInfo;
+    string pluginNameToGetInfo;
 
 public:
-    void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        bool isForce = false;
-        if (isSet) {
-            switch (operation) {
-                case Operation::Force:
-                    isForce = true;
-                    break;
-                default:
-                    break;
-            }
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override {
+        switch (operation)
+        {
+        case Operation::Version:
+            LLVersionCommand(output);
+            break;
+        case Operation::Upgrade:
+            LLUpgradeCommand(output, hasUpgradeOption && upgradeOption == UpgradeOption::Force);
+            break;
+        case Operation::List:
+            if (!hasPluginNameToGetInfo)
+                LLListPluginsCommand(output);
+            else
+                LLPluginInfoCommand(output, pluginNameToGetInfo);
+            break;
+        case Operation::Help:
+            LLHelpCommand(output);
+            break;
+        default:
+            break;
         }
-        std::thread th([isForce]() {
-            LL::CheckAutoUpdate(true, isForce);
-        });
-        th.detach();
     }
 
-    static void setup(CommandRegistry *registry) {
-        registry->registerCommand(
-                "llupdate",
-                "Update LiteLoader",
-                CommandPermissionLevel::Console,
-                {(CommandFlagValue) 0},
-                {(CommandFlagValue) 0x80}
+    static void setup(CommandRegistry* registry) {
+        registry->registerCommand("ll", "LiteLoaderBDS Menu",
+            CommandPermissionLevel::Console, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
+
+        // Add Options
+        registry->addEnum<Operation>("operation", {
+            {"version", Operation::Version},
+            {"list", Operation::List},
+            {"plugins", Operation::List},
+            {"upgrade", Operation::Upgrade},
+            {"update", Operation::Upgrade},
+            {"help", Operation::Help}
+        });
+        registry->addEnum<UpgradeOption>("force", { {"force", UpgradeOption::Force} });
+
+        vector<string> pluginList;
+        for (auto& [name, p] : LL::getAllPlugins()) {
+            pluginList.push_back(name);
+        }
+        registry->addSoftEnum("PluginName", pluginList);
+
+        //Register
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "operation", "operation"),
+            makeOptional<CommandParameterDataType::ENUM>(
+                &LLCommand::upgradeOption, "option", "force", &LLCommand::hasUpgradeOption)
         );
-        registry->addEnum<Operation>("force", {{"force", Operation::Force}});
-        registry->registerOverload<LLUpdateCommand>(
-                "llupdate",
-                makeOptional<CommandParameterDataType::ENUM>(
-                        &LLUpdateCommand::operation, "optional", "force",
-                        &LLUpdateCommand::isSet
-                )
-        );
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "operation", "operation"),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(
+                &LLCommand::pluginNameToGetInfo, "name", "PluginName", &LLCommand::hasPluginNameToGetInfo));
     }
 };
 
+class VersionCommand : public Command {
+public:
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override
+    {
+        LLVersionCommand(output);
+    }
+
+    static void setup(CommandRegistry* registry) {
+        registry->registerCommand( "version", "Get the version of this server",
+            CommandPermissionLevel::GameMasters, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
+        registry->registerOverload<VersionCommand>("version");
+    }
+};
 
 void RegisterCommands() {
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
+        LLCommand::setup(ev.mCommandRegistry);
         VersionCommand::setup(ev.mCommandRegistry);
-        PluginsCommand::setup(ev.mCommandRegistry);
         TeleportDimensionCommand::setup(ev.mCommandRegistry);
-        if (LL::globalConfig.enableAutoUpdate)
-            LLUpdateCommand::setup(ev.mCommandRegistry);
-
         return true;
     });
 }

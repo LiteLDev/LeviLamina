@@ -90,7 +90,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         if (chosen >= 0) {
             auto button = dynamic_pointer_cast<Form::Button>(form->elements[chosen]);
             if (button->callback)
-                button->callback();
+                button->callback(player);
         }
         simpleFormBuilders.erase(formId);
     }
@@ -99,26 +99,31 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         //Custom Form Builder
         auto form = customFormBuilders[formId];
 
+        if (data == "null")
+        {
+            customFormBuilders.erase(formId);
+            if (form->callback)
+                form->callback(player, {});
+            return;
+        }
+
         fifo_json res = fifo_json::parse(data);
         int nowIndex = 0;
         for (fifo_json& j : res)
         {
             switch (form->getType(nowIndex))
             {
+            case Form::CustomFormElement::Type::Label:
             case Form::CustomFormElement::Type::Input:
-                form->setData<Form::Input>(nowIndex, j.get<string>());
+                form->setValue(nowIndex, j.get<string>());
                 break;
             case Form::CustomFormElement::Type::Toggle:
-                form->setData<Form::Toggle>(nowIndex, j.get<bool>());
+                form->setValue(nowIndex, j.get<bool>());
                 break;
             case Form::CustomFormElement::Type::Dropdown:
-                form->setData<Form::Dropdown>(nowIndex, j.get<int>());
-                break;
             case Form::CustomFormElement::Type::Slider:
-                form->setData<Form::Slider>(nowIndex, j.get<int>());
-                break;
             case Form::CustomFormElement::Type::StepSlider:
-                form->setData<Form::StepSlider>(nowIndex, j.get<int>());
+                form->setValue(nowIndex, j.get<int>());
                 break;
             default:
                 break;
@@ -129,12 +134,10 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         if (form->callback)
         {
             std::map<string, std::shared_ptr<Form::CustomFormElement>> callbackData;
-            if (data == "null")
-                return form->callback(callbackData);
             for (auto& [k, v] : form->elements)
                 callbackData[k] = v;
 
-            form->callback(callbackData);
+            form->callback(player, callbackData);
         }
 
         customFormBuilders.erase(formId);

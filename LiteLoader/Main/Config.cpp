@@ -18,15 +18,19 @@ namespace LL {
                 {"ColorLog",  conf.colorLog},
                 {"LogLevel",  conf.logLevel},
                 {"Language",  conf.language},
-                {"Modules",   {
-                                      {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}}},
-                                      {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}}},
-                                      {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
-                                      {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                                      {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
-                                      {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                                      {"AntiGive", {{"enabled", conf.enableAntiGive}}}
-                              }}};
+                {"ScriptEngine", {
+                    {"enabled", conf.enableScriptEngine}
+                }},
+                {"Modules", {
+                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
+                    {"CrashLogger", {{"enabled", conf.enableCrashLogger}, {"path", conf.crashLoggerPath}} },
+                    {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}} },
+                    {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}} },
+                    {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}} },
+                    {"FixListenPort", {{"enabled", conf.enableFixListenPort}} },
+                    {"AntiGive", {{"enabled", conf.enableAntiGive}} }
+                }}
+        };
     }
 
     void inline from_json(const nlohmann::json &j, LLConfig &conf) {
@@ -37,6 +41,11 @@ namespace LL {
             conf.colorLog = j.value("ColorLog", true);
         conf.logLevel = j.value("LogLevel", 4);
         conf.language = j.value("Language", "en");
+
+        if (j.find("ScriptEngine") != j.end()) {
+            const nlohmann::json& scriptEngine = j.at("ScriptEngine");
+            conf.enableScriptEngine = scriptEngine.value("enabled", true);
+        }
 
         if (j.find("Modules") != j.end()) {
             const nlohmann::json &modules = j.at("Modules");

@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -74,17 +74,15 @@
 			</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-				if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
-				if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
-				goto end
+      <Command>if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib goto process
+if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib goto process
+goto end
 
-				:process
-				cd /d $(SolutionDir)Tools
-				LibraryBuilder.exe
+:process
+cd /d $(SolutionDir)Tools
+LibraryBuilder.exe
 
-				:end
-			</Command>
+:end</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

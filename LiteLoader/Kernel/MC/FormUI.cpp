@@ -42,6 +42,10 @@ namespace Form {
         return *this;
     }
 
+    SimpleForm& SimpleForm::addButton(string text, string image, Button::ButtonCallback callback)
+    {
+        return append(Button(text, image, callback));
+    }
 
     SimpleForm &SimpleForm::append(const Button &element) {
         elements.emplace_back(make_shared<Button>(element));
@@ -78,6 +82,30 @@ namespace Form {
     }
 
 //////////////////////////////// Custom Form ////////////////////////////////
+    std::string CustomFormElement::getString()
+    {
+        return value;
+    }
+
+    int CustomFormElement::getNumber()
+    {
+        try
+        {
+            return stoi(value);
+        }
+        catch (...)
+        {
+            return 0;
+        }
+    }
+
+    bool CustomFormElement::getBool()
+    {
+        if (value.empty() || value == "0" || value == "false" || value == "False" || value == "FALSE")
+            return false;
+        return true;
+    }
+
     string Label::serialize() {
         try {
             fifo_json itemAdd;
@@ -194,6 +222,36 @@ namespace Form {
         return *this;
     }
 
+    CustomForm& CustomForm::addLabel(const string& name, string text)
+    {
+        return append(Label(name, text));
+    }
+
+    CustomForm& CustomForm::addInput(const string& name, string title, string placeholder, string def)
+    {
+        return append(Input(name, title, placeholder, def));
+    }
+
+    CustomForm& CustomForm::addToggle(const string& name, string title, bool def)
+    {
+        return append(Toggle(name, title, def));
+    }
+
+    CustomForm& CustomForm::addDropdown(const string& name, string title, const vector<string>& options, int defId)
+    {
+        return append(Dropdown(name, title, options, defId));
+    }
+
+    CustomForm& CustomForm::addSlider(const string& name, string title, int min, int max, int step, int def)
+    {
+        return append(Slider(name, title, min, max, step, def));
+    }
+
+    CustomForm& CustomForm::addStepSlider(const string& name, string title, const vector<string>& options, int defId)
+    {
+        return append(StepSlider(name, title, options, defId));
+    }
+
     CustomForm &CustomForm::append(const Label &element) {
         elements.emplace_back(element.name, make_shared<Label>(element));
         return *this;
@@ -252,4 +310,45 @@ namespace Form {
 
         return player->sendRawFormPacket(id, data);
     }
+
+    string CustomForm::getString(const string& name) {
+        for (auto& [k, v] : elements)
+            if (k == name)
+                return v->getString();
+        return "";
+    }
+
+    int CustomForm::getNumber(const string& name) {
+        for (auto& [k, v] : elements)
+            if (k == name)
+                return v->getNumber();
+        return 0;
+    }
+
+    bool CustomForm::getBool(const string& name) {
+        for (auto& [k, v] : elements)
+            if (k == name)
+                return v->getBool();
+        return false;
+    }
+
+    string CustomForm::getString(int index)
+    {
+        return elements[index].second->getString();
+    }
+
+    int CustomForm::getNumber(int index)
+    {
+        return elements[index].second->getNumber();
+    }
+
+    bool CustomForm::getBool(int index)
+    {
+        return elements[index].second->getBool();
+    }
+
+    CustomFormElement::Type CustomForm::getType(int index) {
+        return elements[index].second->getType();
+    }
+
 } // namespace Form

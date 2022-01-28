@@ -10,6 +10,7 @@
 #include "Main/Loader.h"
 #include "Main/AutoUpgrade.h"
 #include "Main/CrashLogger.h"
+#include <TranslationAPI.h>
 #include <EventAPI.h>
 
 using namespace std;
@@ -40,16 +41,30 @@ extern bool InitPlayerDatabase();
 
 extern void RegisterSimpleServerLogger();
 
+void Welcome()
+{
+    cout << "\r" << R"( _       _  _          _                        _               ____   _____    _____ )" << endl
+         << "\r" << R"(| |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
+         << "\r" << R"(| |      _ | |_  ___  | |      ___    __ _   __| |  ___  _ __  | |_) || |  | || (___  )" << endl
+         << "\r" << R"(| |     | || __|/ _ \ | |     / _ \  / _` | / _` | / _ \| '__| |  _ < | |  | | \___ \ )" << endl
+         << "\r" << R"(| |____ | || |_|  __/ | |____| (_) || (_| || (_| ||  __/| |    | |_) || |__| | ____) |)" << endl
+         << "\r" << R"(|______||_| \__|\___| |______|\___/  \__,_| \__,_| \___||_|    |____/ |_____/ |_____/ )" << endl
+         << "\r" << R"(                                                                                      )" << endl
+         << "\r" << R"(                                                                                      )" << endl
+         << "\r" << R"(               =========   Light-Weight BDS Plugin Loader   =========                 )" << endl
+         << "\r" << R"(                                                                                      )" << endl;
+}
+
 void CheckDevMode() {
     if (LL::globalConfig.debugMode) {
-        logger.info("");
-        logger.info("================= LiteLoader ================");
-        logger.info(" ____             __  __           _      ");
-        logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
-        logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
-        logger.info("");
+        //logger.info("");
+        //logger.info("================= LiteLoader ================");
+        //logger.info(" ____             __  __           _      ");
+        //logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        //logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        //logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        //logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        //logger.info("");
         logger.warn("You Are In DevelopMode!");
     }
 }
@@ -83,10 +98,16 @@ void LLMain() {
     LL::LoadLLConfig();
     InitPlayerDatabase();
 
+    //I18n
+    Translation::load("plugins/LiteLoader/LandPack/" + LL::globalConfig.language + ".json");
+
     //Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
+
+    //Welcome
+    Welcome();
 
     //DebugMode
     CheckDevMode();
@@ -95,9 +116,10 @@ void LLMain() {
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Register Myself
-    //LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for bedrock delicated server", LITELOADER_VERSION,
-    //    { {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
-    //});
+    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Delicated Server", LL::getLoaderVersion(),
+    {
+        {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
+    });
 
     //Load plugins
     LL::LoadMain();
@@ -109,6 +131,7 @@ void LLMain() {
     RegisterSimpleServerLogger();
 
     FixBugEvent();
+
     //Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");

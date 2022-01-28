@@ -1,0 +1,6 @@
+Debug/
+Release/
+**/*.user
+
+!third-party/**/*.lib
+x64/
