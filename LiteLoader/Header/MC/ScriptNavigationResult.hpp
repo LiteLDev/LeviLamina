@@ -13,6 +13,9 @@ struct ScriptNavigationResult {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    bool mResult;
+    std::vector<BlockPos> mPath;
 
 #undef AFTER_EXTRA
 

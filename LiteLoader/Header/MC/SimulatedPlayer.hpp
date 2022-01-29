@@ -8,6 +8,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "ScriptNavigationResult.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -15,6 +16,9 @@ class SimulatedPlayer : public ServerPlayer {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    LIAPI bool simulateDestory();
+    LIAPI bool simulateUseItem();
 
 #undef AFTER_EXTRA
 

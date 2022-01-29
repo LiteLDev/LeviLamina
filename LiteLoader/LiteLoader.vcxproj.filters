@@ -285,6 +285,10 @@
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
+    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
+    <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp">
+      <Filter>Kernel\MC</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -594,6 +598,9 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Header\MC\DBStorage.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\SimulatedPlayer.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>

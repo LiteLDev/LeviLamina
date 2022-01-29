@@ -88,7 +88,9 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
+    <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
@@ -135,6 +137,7 @@
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
     <ClInclude Include="Header\MC\ShortTag.hpp" />
+    <ClInclude Include="Header\MC\SimulatedPlayer.hpp" />
     <ClInclude Include="Header\MC\StringTag.hpp" />
     <ClInclude Include="Header\MC\StructureSettings.hpp" />
     <ClInclude Include="Header\MC\StructureTemplate.hpp" />
