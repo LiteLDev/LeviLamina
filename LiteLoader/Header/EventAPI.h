@@ -563,6 +563,11 @@ public:
     std::string mType;
 };
 
+class ProjectileCreatedEvent : public EventTemplate<ProjectileCreatedEvent> {
+public:
+    Actor* mShooter;
+    Actor* mProjectile;
+};
 
 class ArmorStandChangeEvent : public EventTemplate<ArmorStandChangeEvent> {
 public:
