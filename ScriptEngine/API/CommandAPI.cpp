@@ -168,7 +168,7 @@ Local<Value> McClass::sendCmdOutput(const Arguments& args)
 void RegisterBuiltinCmds()
 {
     //调试引擎
-    RegisterCmd(LXL_DEBUG_CMD, "LXL " + string(LXL_MODULE_TYPE) + " Engine Real-time Debugging", 4);
+    RegisterCmd(LXL_DEBUG_CMD, "LXL " + string(LLSE_MODULE_TYPE) + " Engine Real-time Debugging", 4);
     
     //热管理
     RegisterCmd("lxl list", "List current loaded LXL plugins", 4);
@@ -191,7 +191,7 @@ void ProcessRegCmdQueue()
 
 bool ProcessDebugEngine(const string& cmd)
 {
-#define OUTPUT_DEBUG_SIGN() std::cout << "LiteXLoader-" << LXL_MODULE_TYPE << ">" << std::flush
+//#define OUTPUT_DEBUG_SIGN() std::cout << "LiteXLoader-" << LLSE_MODULE_TYPE << ">" << std::flush
     extern bool globalDebug;
     extern ScriptEngine *debugEngine;
 
@@ -208,7 +208,7 @@ bool ProcessDebugEngine(const string& cmd)
             //StartDebug
             logger.info("Debug mode begins");
             globalDebug = true;
-            OUTPUT_DEBUG_SIGN();
+            //OUTPUT_DEBUG_SIGN();
         }
         return false;
     }
@@ -226,13 +226,13 @@ bool ProcessDebugEngine(const string& cmd)
                 auto result = debugEngine->eval(cmd);
                 PrintValue(std::cout, result);
                 cout << endl;
-                OUTPUT_DEBUG_SIGN();
+                //OUTPUT_DEBUG_SIGN();
             }
         }
         catch (Exception& e)
         {
             PrintException(e);
-            OUTPUT_DEBUG_SIGN();
+            //OUTPUT_DEBUG_SIGN();
         }
         return false;
     }

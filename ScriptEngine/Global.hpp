@@ -8,6 +8,7 @@
 #include <Configs.h>
 #include <Global.h>
 #include <TranslationAPI.h>
+#include <Tools/JsonHelper.h>
 #include <MC/Types.hpp>
 #include <LoggerAPI.h>
 #include <vector>
@@ -16,7 +17,9 @@
 using std::string;
 using std::vector;
 
-extern ::Logger logger;
+//全局工具
+extern Logger logger;
+extern fifo_json globalConfig;
 
 typedef unsigned long long QWORD;
 

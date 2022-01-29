@@ -32,10 +32,10 @@ Local<Value> LxlClass::version(const Arguments& args)
 {
     try{
         Local<Object> ver = Object::newObject();
-        ver.set("major", LXL_VERSION_MAJOR);
-        ver.set("minor", LXL_VERSION_MINOR);
-        ver.set("revision", LXL_VERSION_REVISION);
-        ver.set("isBeta", LL::Version::Status::LXL_VERSION_STATUS != LL::Version::Status::Release);
+        ver.set("major", LLSE_VERSION_MAJOR);
+        ver.set("minor", LLSE_VERSION_MINOR);
+        ver.set("revision", LLSE_VERSION_REVISION);
+        ver.set("isBeta", LL::Version::Status::LLSE_VERSION_STATUS != LL::Version::Status::Release);
         return ver;
     }
     CATCH("Fail in LxlGetVersion!")
@@ -51,7 +51,7 @@ Local<Value> LxlClass::requireVersion(const Arguments& args)
         CHECK_ARG_TYPE(args[2], ValueKind::kNumber);
 
     try {
-        return Boolean::newBoolean(!IsVersionLess(LXL_VERSION_MAJOR, LXL_VERSION_MINOR, LXL_VERSION_REVISION, 
+        return Boolean::newBoolean(!IsVersionLess(LLSE_VERSION_MAJOR, LLSE_VERSION_MINOR, LLSE_VERSION_REVISION, 
             args[0].toInt(), (args.size() >= 2) ? args[1].toInt() : 0, (args.size() >= 3) ? args[2].toInt() : 0));
     }
     CATCH("Fail in LxlRequireVersion!")

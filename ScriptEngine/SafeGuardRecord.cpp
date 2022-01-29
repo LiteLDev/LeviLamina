@@ -1,3 +1,4 @@
+#include <ScriptX/ScriptX.h>
 #include <fstream>
 #include <filesystem>
 #include <Configs.h>

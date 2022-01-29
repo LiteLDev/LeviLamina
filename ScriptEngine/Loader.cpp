@@ -26,13 +26,10 @@ bool globalDebug = false;
 extern std::vector<ScriptEngine*> lxlModules;
 extern void BindAPIs(ScriptEngine *engine);
 
-//配置文件
-extern SimpleIni* iniConf;
-
 //预加载依赖库
 void LoadDepends()
 {
-    std::filesystem::directory_iterator deps(iniConf->getString("Main", "DependsDir", LXL_DEPENDS_DIR));
+    std::filesystem::directory_iterator deps(LXL_DEPENDS_DIR);
     for (auto& i : deps) {
         if (i.is_regular_file() && i.path().filename() == string("BaseLib")+ LXL_PLUGINS_SUFFIX)
         {
@@ -94,7 +91,7 @@ void LoadMain()
 {
     logger.info("Loading plugins...");
     int count = 0;
-    std::filesystem::directory_iterator files(iniConf->getString("Main", "PluginsDir", LXL_PLUGINS_LOAD_DIR));
+    std::filesystem::directory_iterator files(LXL_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
         if (i.is_regular_file() && i.path().extension() == LXL_PLUGINS_SUFFIX)
         {
@@ -102,5 +99,5 @@ void LoadMain()
                 ++count;
         }
     }
-    logger.info(std::to_string(count) + " " + LXL_MODULE_TYPE + " plugins loaded in all.");
+    logger.info(std::to_string(count) + " " + LLSE_MODULE_TYPE + " plugins loaded in all.");
 }

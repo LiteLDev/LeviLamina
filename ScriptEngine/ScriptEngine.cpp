@@ -17,15 +17,16 @@
 #include <Version.h>
 #include <LoggerAPI.h>
 #include <Utils/FileHelper.h>
-#include <Tools/IniHelper.h>
+#include <Tools/JsonHelper.h>
 #include <TranslationAPI.h>
 #include <EconomicSystem.h>
-#include <LiteLoader/Main/Config.h>
 
 using namespace std;
 
 //主引擎表
 std::vector<ScriptEngine*> lxlModules;
+//配置文件
+fifo_json globalConfig;
 
 ::Logger logger("LiteLoader");
 
@@ -36,11 +37,25 @@ extern void LoadDebugEngine();
 
 void LoaderInfo()
 {
-    bool isNotRelease = LL::Version::Status::LXL_VERSION_STATUS != LL::Version::Status::Release;
+    logger.info(std::string("LiteLoader-ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
+    logger.info(std::string("Version ") + LLSE_VERSION.toString());
+}
 
-    logger.info(std::string("LiteLoader-ScriptEngine for ") + LXL_MODULE_TYPE + " loaded");
-    logger.info(std::string("Version ") + to_string(LXL_VERSION_MAJOR) + "." + to_string(LXL_VERSION_MINOR) + "."
-        + to_string(LXL_VERSION_REVISION) + (isNotRelease ? string(" ") + LXL_VERSION_STATUS_STRING : string("")));
+void LoadConfigFile()
+{
+    try {
+        auto content = ReadAllFile(LITELOADER_CONFIG_FILE);
+        if (content) {
+            globalConfig = fifo_json::parse(*content, nullptr, true, true);
+        }
+    }
+    catch (const nlohmann::json::exception& e) {
+        logger.error("Fail to parse config file <{}> !", LITELOADER_CONFIG_FILE);
+        logger.error("{}", e.what());
+    }
+    catch (...) {
+        logger.error("Fail to load config file <{}> !", LITELOADER_CONFIG_FILE);
+    }
 }
 
 void entry()
@@ -49,13 +64,13 @@ void entry()
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     //Register Myself
-    LL::registerPlugin(LXL_LOADER_NAME, LXL_LOADER_DESCRIPTION, LXL_VERSION,
+    LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LLSE_VERSION,
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
     });
 
     //I18n
-    Translation::load("plugins/LiteLoader/LandPack/" + LL::globalConfig.language + ".json");
+    Translation::load("plugins/LiteLoader/LandPack/" + globalConfig.value("Language","en") + ".json");
 
     //初始化全局数据
     InitLocalShareData();

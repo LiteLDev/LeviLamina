@@ -1,3 +1,4 @@
+#pragma comment(lib, "version")
 #include <LLAPI.h>
 
 LL::Version GetScriptEngineVersion()

@@ -1,7 +1,7 @@
-#pragma comment(lib, "../third-party/LiteLoader/Lib/bedrock_server_api.lib")
-#pragma comment(lib, "../third-party/LiteLoader/Lib/bedrock_server_var.lib")
-#pragma comment(lib, "../third-party/LiteLoader/Lib/SymDBHelper.lib")
-#pragma comment(lib, "../third-party/LiteLoader/Lib/LiteLoader.lib")
+#pragma comment(lib, "../LiteLoader/Lib/bedrock_server_api.lib")
+#pragma comment(lib, "../LiteLoader/Lib/bedrock_server_var.lib")
+#pragma comment(lib, "../LiteLoader/Lib/SymDBHelper.lib")
+#pragma comment(lib, "../LiteLoader/Lib/LiteLoader.lib")
 
 #include <windows.h>
 #include <iostream>

@@ -4,11 +4,11 @@
 LL::Version GetScriptEngineVersion();
 
 // 版本记录
-#define LXL_VERSION_MAJOR GetScriptEngineVersion().major
-#define LXL_VERSION_MINOR GetScriptEngineVersion().minor
-#define LXL_VERSION_REVISION GetScriptEngineVersion().revision
+#define LLSE_VERSION_MAJOR GetScriptEngineVersion().major
+#define LLSE_VERSION_MINOR GetScriptEngineVersion().minor
+#define LLSE_VERSION_REVISION GetScriptEngineVersion().revision
 
-#define LXL_VERSION_STATUS Release
-#define LXL_VERSION_STATUS_STRING "Release"
+#define LLSE_VERSION_STATUS Release
+#define LLSE_VERSION_STATUS_STRING "Release"
 
-#define LXL_VERSION LL::Version(LXL_VERSION_MAJOR, LXL_VERSION_MINOR, LXL_VERSION_REVISION, LL::Version::Status::LXL_VERSION_STATUS)
+#define LLSE_VERSION LL::Version(LLSE_VERSION_MAJOR, LLSE_VERSION_MINOR, LLSE_VERSION_REVISION, LL::Version::Status::LLSE_VERSION_STATUS)

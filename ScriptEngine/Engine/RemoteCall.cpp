@@ -120,7 +120,7 @@ bool LxlExportFunc(ScriptEngine *engine, const Local<Function> &func, const stri
     ExportedFuncData* funcData = &(globalShareData->exportedFuncs)[exportName];
     funcData->engine = engine;
     funcData->func = script::Global<Function>(func);
-    funcData->fromEngineType = LXL_MODULE_TYPE;
+    funcData->fromEngineType = LLSE_MODULE_TYPE;
     return true;
 }
 

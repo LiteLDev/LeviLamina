@@ -36,7 +36,7 @@ bool ProcessHotManageCmd(const std::string& cmd)
     switch (H(cmdList[1].c_str()))
     {
     case H("version"):
-        logger.info("LiteLoader-ScriptEngine-{} v{}.{}.{}", LXL_SCRIPT_LANG_TYPE, LXL_VERSION_MAJOR, LXL_VERSION_MINOR, LXL_VERSION_REVISION);
+        logger.info("LiteLoader-ScriptEngine-{} v{}", LXL_SCRIPT_LANG_TYPE, LLSE_VERSION.toString());
         break;
 
     case H("list"):

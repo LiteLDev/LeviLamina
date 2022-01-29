@@ -281,49 +281,49 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\third-party\Lua\lib\lua.lib">
+    <Library Include="third-party\cpp-base64\lib\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\V8\lib\v8.lib">
+    <Library Include="third-party\openssl\libcrypto.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\V8\lib\v8_libbase.lib">
+    <Library Include="third-party\dyncall\lib\libdyncall_s.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\V8\lib\v8_libplatform.lib">
+    <Library Include="third-party\dyncall\lib\libdyncallback_s.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\V8\lib\zlib.lib">
+    <Library Include="third-party\dyncall\lib\libdynload_s.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\ScriptX\lib\ScriptX-Js.lib">
+    <Library Include="third-party\openssl\libssl.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\ScriptX\lib\ScriptX-Lua.lib">
+    <Library Include="third-party\LightWebSocketClient\lib\LightWSClient.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\dyncall\lib\libdyncall_s.lib">
+    <Library Include="third-party\Lua\lib\lua.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\dyncall\lib\libdyncallback_s.lib">
+    <Library Include="third-party\nbt-cpp\lib\nbt-cpp.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\dyncall\lib\libdynload_s.lib">
+    <Library Include="third-party\ScriptX\lib\ScriptX-Js.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\nbt-cpp\lib\nbt-cpp.lib">
+    <Library Include="third-party\ScriptX\lib\ScriptX-Lua.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\LightWebSocketClient\lib\LightWSClient.lib">
+    <Library Include="third-party\V8\lib\v8.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\cpp-base64\lib\cpp-base64.lib">
+    <Library Include="third-party\V8\lib\v8_libbase.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\openssl\libcrypto.lib">
+    <Library Include="third-party\V8\lib\v8_libplatform.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="..\third-party\openssl\libssl.lib">
+    <Library Include="third-party\V8\lib\zlib.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>

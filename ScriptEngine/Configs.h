@@ -21,15 +21,17 @@
 
 // 插件注册信息
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LXL_LOADER_NAME "LiteLoader-ScriptEngine-Js"
-	#define LXL_LOADER_DESCRIPTION "Javascript ScriptEngine For LiteLoaderBDS"
+	#define LLSE_LOADER_NAME "LiteLoader-ScriptEngine-Js"
+	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine For LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)
-	#define LXL_LOADER_NAME "LiteLoader-ScriptEngine-Lua"
-	#define LXL_LOADER_DESCRIPTION "Lua ScriptEngine For LiteLoaderBDS"
+	#define LLSE_LOADER_NAME "LiteLoader-ScriptEngine-Lua"
+	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine For LiteLoaderBDS"
 #endif
 
-#define LXL_MODULE_TYPE LXL_SCRIPT_LANG_TYPE
+#define LLSE_MODULE_TYPE LXL_SCRIPT_LANG_TYPE
 
+// 配置文件
+#define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
 // 基础库 & 依赖库
 #define LXL_DEPENDS_DIR "./plugins/lib"

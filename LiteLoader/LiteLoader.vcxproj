@@ -67,10 +67,12 @@
       <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libcrypto.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libssl.lib;$(TargetDir)Chakra.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-				if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-				copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
-				)
+      <Command>if exist $(TargetDir)LiteLoader.lib (
+    copy /Y $(TargetDir)LiteLoader.lib $(ProjectDir)Lib\
+)
+if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
+    copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
+)
 			</Command>
     </PostBuildEvent>
     <PreBuildEvent>

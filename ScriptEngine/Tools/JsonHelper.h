@@ -4,8 +4,12 @@
 #include <string>
 #include <filesystem>
 #include <Utils/FileHelper.h>
+#include <LoggerAPI.h>
+
 using namespace nlohmann;
 using namespace std;
+
+extern Logger logger;
 
 template<class Key, class T, class dummy_compare, class Allocator>
 using workaround_fifo_map = fifo_map<Key, T, fifo_map_compare<Key>, Allocator>;

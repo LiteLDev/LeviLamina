@@ -44,7 +44,7 @@ ModuleMessage::ModuleMessage(ModuleMessage::MessageType type, string data)
     packData = new MessagePackData;
 
     packData->id = getNextMessageId();
-    packData->senderThread = globalShareData->moduleMessageSystemsList[LXL_MODULE_TYPE].threadId;
+    packData->senderThread = globalShareData->moduleMessageSystemsList[LLSE_MODULE_TYPE].threadId;
     this->type = type;
     this->data = data;
 }
@@ -54,7 +54,7 @@ ModuleMessage::ModuleMessage(int msgId, MessageType type, string data)
     packData = new MessagePackData;
 
     packData->id = msgId;
-    packData->senderThread = globalShareData->moduleMessageSystemsList[LXL_MODULE_TYPE].threadId;
+    packData->senderThread = globalShareData->moduleMessageSystemsList[LLSE_MODULE_TYPE].threadId;
     this->type = type;
     this->data = data;
 }
@@ -101,7 +101,7 @@ int ModuleMessage::broadcast(ModuleMessage& msg)
     for (auto& mod : globalShareData->moduleMessageSystemsList)
     {
         ModuleMessage msgSend(msg);
-        if (mod.first != LXL_MODULE_TYPE)
+        if (mod.first != LLSE_MODULE_TYPE)
             if (PostThreadMessage(mod.second.threadId, (UINT)msgSend.getType(), msgSend.getWParam(), msgSend.getLParam()))
                 ++sent;
     }
@@ -231,6 +231,6 @@ bool InitMessageSystem()
     }
     CloseHandle(hThread);
 
-    (globalShareData->moduleMessageSystemsList)[LXL_MODULE_TYPE].threadId = threadId;
+    (globalShareData->moduleMessageSystemsList)[LLSE_MODULE_TYPE].threadId = threadId;
     return true;
 }

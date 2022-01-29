@@ -1,10 +1,13 @@
 ﻿#pragma once
+#pragma warning(disable:26812)
 #include <string>
 #include <unordered_map>
+
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif // ! WIN32_LEAN_AND_MEAN
 #include <Windows.h>
+
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
