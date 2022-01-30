@@ -88,7 +88,7 @@ void entry()
     LoaderInfo();
 
     //初始化经济系统
-    EconomySystem::init(MoneyEventCallback);
+    EconomySystem::init();
 
     //预加载库
     LoadDepends();

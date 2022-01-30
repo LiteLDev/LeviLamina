@@ -56,7 +56,8 @@ enum class EVENT_TYPES : int
     onProjectileHitBlock, onBlockInteracted, onUseRespawnAnchor, onFarmLandDecay, onUseFrameBlock,
     onPistonTryPush,  onPistonPush, onHopperSearchItem, onHopperPushOut, onFireSpread, onBlockChanged, onNpcCmd,
     onScoreChanged, onServerStarted, onConsoleCmd, onFormSelected, onConsoleOutput, onTick,
-    onMoneyAdd, onMoneyReduce, onMoneyTrans, onMoneySet, onConsumeTotem, onEffectAdded, onEffectUpdated, onEffectRemoved,
+    onConsumeTotem, onEffectAdded, onEffectUpdated, onEffectRemoved,
+    beforeMoneyAdd, beforeMoneyReduce, beforeMoneyTrans, beforeMoneySet, onMoneyAdd, onMoneyReduce, onMoneyTrans, onMoneySet,
     EVENT_COUNT
 };
 static const std::unordered_map<string, EVENT_TYPES> EventsMap{
@@ -125,6 +126,10 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onConsoleCmd",EVENT_TYPES::onConsoleCmd},
     {"onConsoleOutput",EVENT_TYPES::onConsoleOutput},
     {"onTick",EVENT_TYPES::onTick},
+    {"beforeMoneyAdd",EVENT_TYPES::beforeMoneyAdd},
+    {"beforeMoneyReduce",EVENT_TYPES::beforeMoneyReduce},
+    {"beforeMoneyTrans",EVENT_TYPES::beforeMoneyTrans},
+    {"beforeMoneySet",EVENT_TYPES::beforeMoneySet},
     {"onMoneyAdd",EVENT_TYPES::onMoneyAdd},
     {"onMoneyReduce",EVENT_TYPES::onMoneyReduce},
     {"onMoneyTrans",EVENT_TYPES::onMoneyTrans},
@@ -1282,6 +1287,51 @@ THook(__int64, "?retrieve@FishingHook@@QEAAHXZ",
     FishingHook* _this)
 */
 
+bool MoneyBeforeEventCallback(LLMoneyEvent type, xuid_t from, xuid_t to, money_t value)
+{
+    switch (type)
+    {
+    case LLMoneyEvent::Add:
+    {
+        IF_LISTENED(EVENT_TYPES::beforeMoneyAdd)
+        {
+            CallEvent(EVENT_TYPES::beforeMoneyAdd, String::newString(to), Number::newNumber(value));
+        }
+        IF_LISTENED_END(EVENT_TYPES::beforeMoneyAdd);
+        break;
+    }
+    case LLMoneyEvent::Reduce:
+    {
+        IF_LISTENED(EVENT_TYPES::beforeMoneyReduce)
+        {
+            CallEvent(EVENT_TYPES::beforeMoneyReduce, String::newString(to), Number::newNumber(value));
+        }
+        IF_LISTENED_END(EVENT_TYPES::beforeMoneyReduce);
+        break;
+    }
+    case LLMoneyEvent::Trans:
+    {
+        IF_LISTENED(EVENT_TYPES::beforeMoneyTrans)
+        {
+            CallEvent(EVENT_TYPES::beforeMoneyTrans, String::newString(from), String::newString(to), Number::newNumber(value));
+        }
+        IF_LISTENED_END(EVENT_TYPES::beforeMoneyTrans);
+        break;
+    }
+    case LLMoneyEvent::Set:
+    {
+        IF_LISTENED(EVENT_TYPES::beforeMoneySet)
+        {
+            CallEvent(EVENT_TYPES::beforeMoneySet, String::newString(to), Number::newNumber(value));
+        }
+        IF_LISTENED_END(EVENT_TYPES::beforeMoneySet);
+        break;
+    }
+    default:
+        break;
+    }
+    return true;
+}
 
 bool MoneyEventCallback(LLMoneyEvent type, xuid_t from, xuid_t to, money_t value)
 {
