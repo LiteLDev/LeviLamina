@@ -43,16 +43,18 @@ extern void RegisterSimpleServerLogger();
 
 void Welcome()
 {
-    cout << "\r" << R"( _       _  _          _                        _               ____   _____    _____ )" << endl
-         << "\r" << R"(| |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
-         << "\r" << R"(| |      _ | |_  ___  | |      ___    __ _   __| |  ___  _ __  | |_) || |  | || (___  )" << endl
-         << "\r" << R"(| |     | || __|/ _ \ | |     / _ \  / _` | / _` | / _ \| '__| |  _ < | |  | | \___ \ )" << endl
-         << "\r" << R"(| |____ | || |_|  __/ | |____| (_) || (_| || (_| ||  __/| |    | |_) || |__| | ____) |)" << endl
-         << "\r" << R"(|______||_| \__|\___| |______|\___/  \__,_| \__,_| \___||_|    |____/ |_____/ |_____/ )" << endl
-         << "\r" << R"(                                                                                      )" << endl
-         << "\r" << R"(                                                                                      )" << endl
-         << "\r" << R"(               =========   Light-Weight BDS Plugin Loader   =========                 )" << endl
-         << "\r" << R"(                                                                                      )" << endl;
+    cout << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(         _       _  _          _                        _               ____   _____    _____ )" << endl
+         << "\r" << R"(        | |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
+         << "\r" << R"(        | |      _ | |_  ___  | |      ___    __ _   __| |  ___  _ __  | |_) || |  | || (___  )" << endl
+         << "\r" << R"(        | |     | || __|/ _ \ | |     / _ \  / _` | / _` | / _ \| '__| |  _ < | |  | | \___ \ )" << endl
+         << "\r" << R"(        | |____ | || |_|  __/ | |____| (_) || (_| || (_| ||  __/| |    | |_) || |__| | ____) |)" << endl
+         << "\r" << R"(        |______||_| \__|\___| |______|\___/  \__,_| \__,_| \___||_|    |____/ |_____/ |_____/ )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                       =========   Light-Weight BDS Plugin Loader   =========                 )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                                                                                              )" << endl;
 }
 
 void CheckDevMode() {
@@ -99,7 +101,7 @@ void LLMain() {
     InitPlayerDatabase();
 
     //I18n
-    Translation::load("plugins/LiteLoader/LandPack/" + LL::globalConfig.language + ".json");
+    Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
 
     //Rename Window
     HWND hwnd = GetConsoleWindow();

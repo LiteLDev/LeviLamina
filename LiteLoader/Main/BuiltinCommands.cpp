@@ -202,11 +202,11 @@ void LLVersionCommand(CommandOutput& output)
 void LLHelpCommand(CommandOutput& output)
 {
     output.success(
-        "[Introduction]"
-        "LiteLoaderBDS is an unofficial plugin loader that provides APIs & Events for modding development of Bedrock Dedicated Server.\n"
-        "Including a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n"
+        "[Introduction]\n"
+        "LiteLoaderBDS is an unofficial plugin loader for modding development of Bedrock Dedicated Server.\n"
+        "It provides a huge nubmer of APIs, a powerful event system and lots of packed utility interfaces .\n"
         "[Github]\n"
-        "> https://github.com/LiteLDev/LiteLoaderBDS <\n"
+        "--> https://github.com/LiteLDev/LiteLoaderBDS <--\n"
         "Welcome to our github project to get more information ~"
     );
 }
