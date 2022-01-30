@@ -61,7 +61,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
       <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libcrypto.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libssl.lib;$(TargetDir)Chakra.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -89,6 +89,7 @@ LibraryBuilder.exe
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\DbgSymbolHelper.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
@@ -228,6 +229,7 @@ LibraryBuilder.exe
     <ClCompile Include="Main\PlayerInfoAPI.cpp" />
     <ClCompile Include="Main\PluginManager.cpp" />
     <ClCompile Include="Main\BuiltinCommands.cpp" />
+    <ClCompile Include="Main\SEHProtection.cpp" />
     <ClCompile Include="Main\SimpleServerLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +240,7 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Utils\DbgSymbolHelper.h" />
     <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />
@@ -280,6 +283,7 @@ LibraryBuilder.exe
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
+    <Library Include="Lib\third-party\dbghelp\dbghelp.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />

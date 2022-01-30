@@ -94,3 +94,20 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
 
     return true;
 }
+
+bool GetCurrentContext(CONTEXT& context)
+{
+    HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, TRUE, GetCurrentThreadId());
+    if (hThread == NULL)
+    {
+        logger.error("Fail to Open Thread! Error Code: %d\n", GetLastError());
+        return false;
+    }
+    context.ContextFlags = CONTEXT_FULL;
+    if (!GetThreadContext(hThread, &context))
+    {
+        logger.error("Fail to Get Context! Error Code: %d\n", GetLastError());
+        return false;
+    }
+    return true;
+}
