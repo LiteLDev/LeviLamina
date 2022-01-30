@@ -15,7 +15,7 @@ typedef bool (*LLMoneyCallback)(LLMoneyEvent type, xuid_t from, xuid_t to, money
 class EconomySystem
 {
 public:
-    static bool init(LLMoneyCallback eventCallback);
+    static bool init();
 
     static money_t getMoney(xuid_t player);
     static bool setMoney(xuid_t player, money_t money);

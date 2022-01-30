@@ -1,4 +1,5 @@
 #include "EconomicSystem.h"
+#include "API/EventAPI.h"
 #include <LLAPI.h>
 #include <LoggerAPI.h>
 #include <TranslationAPI.h>
@@ -36,7 +37,7 @@ struct dynamicSymbolsMap_type
 ////////////// Helper //////////////
 
 
-bool EconomySystem::init(LLMoneyCallback eventCallback)
+bool EconomySystem::init()
 {
     auto llmoney = LL::getPlugin("LLMoney");
     if (!llmoney)
@@ -76,13 +77,15 @@ bool EconomySystem::init(LLMoneyCallback eventCallback)
         economicLogger.warn("Fail to load API money.clearHist!");
 
     dynamicSymbolsMap.LLMoneyListenBeforeEvent = (LLMoneyListenBeforeEvent_T)GetProcAddress(h, "LLMoneyListenBeforeEvent");
-    if (!dynamicSymbolsMap.LLMoneyListenBeforeEvent)
+    dynamicSymbolsMap.LLMoneyListenAfterEvent = (LLMoneyListenAfterEvent_T)GetProcAddress(h, "LLMoneyListenAfterEvent");
+    if (!dynamicSymbolsMap.LLMoneyListenBeforeEvent || !dynamicSymbolsMap.LLMoneyListenAfterEvent)
     {
         economicLogger.warn("Fail to load API to listen money event!");
     }
     else
     {
-        dynamicSymbolsMap.LLMoneyListenBeforeEvent(eventCallback);
+        dynamicSymbolsMap.LLMoneyListenBeforeEvent(MoneyBeforeEventCallback);
+        dynamicSymbolsMap.LLMoneyListenAfterEvent(MoneyEventCallback);
     }
 
     return true;
