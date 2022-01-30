@@ -92,6 +92,7 @@ DeclareEventListeners(EntityRideEvent)
 DeclareEventListeners(EntityStepOnPressurePlateEvent)
 DeclareEventListeners(NpcCmdEvent)
 DeclareEventListeners(ProjectileSpawnEvent)
+DeclareEventListeners(ProjectileCreatedEvent)
 DeclareEventListeners(ItemUseOnActorEvent)
 DeclareEventListeners(BlockInteractedEvent)
 DeclareEventListeners(ArmorStandChangeEvent)
@@ -1718,22 +1719,52 @@ THook(Actor*,
       "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
       void* _this, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6)
 {
+    string name = a3->getFullName();
+    if (EndsWith(name, "<>"))
+        name = name.substr(0, name.size() - 2);
+    if (name != "minecraft:thrown_trident")
+    {
+        IF_LISTENED(ProjectileSpawnEvent)
+        {
+            ProjectileSpawnEvent ev{};
+            ev.mShooter = a4;
+            ev.mIdentifier = a3;
+            ev.mType = name;
+
+            if (!ev.call())
+                return nullptr;
+        }
+        IF_LISTENED_END(ProjectileSpawnEvent)
+    }
+    auto projectile = original(_this, a2, a3, a4, a5, a6);
+    IF_LISTENED(ProjectileCreatedEvent)
+    {
+        ProjectileCreatedEvent ev{};
+        ev.mShooter = a4;
+        ev.mProjectile = projectile;
+        ev.call();
+    }
+    IF_LISTENED_END(ProjectileCreatedEvent)
+    return projectile;
+}
+
+THook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
+    void* self, ItemStack* a2, Player* a3, int a4)
+{
     IF_LISTENED(ProjectileSpawnEvent)
     {
+        auto identifier = new char[32];
         ProjectileSpawnEvent ev{};
-        ev.mShooter = a4;
-        ev.mIdentifier = a3;
-
-        string fullName = a3->getFullName();
-        if (EndsWith(fullName, "<>"))
-            fullName = fullName.substr(0, fullName.size() - 2);
-        ev.mType = fullName;
+        ev.mShooter = a3;
+        ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+            ActorDefinitionIdentifier*, ActorDefinitionIdentifier*, string)((ActorDefinitionIdentifier*)identifier, "minecraft:thrown_trident");
+        ev.mType = a2->getTypeName();
 
         if (!ev.call())
-            return nullptr;
+            return;
     }
     IF_LISTENED_END(ProjectileSpawnEvent)
-    return original(_this, a2, a3, a4, a5, a6);
+    return original(self, a2, a3, a4);
 }
 
 ////////////// NpcCmd //////////////
