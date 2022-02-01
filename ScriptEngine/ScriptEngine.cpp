@@ -69,8 +69,11 @@ void entry()
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
     });
 
+    //Load Global Config
+    LoadConfigFile();
+
     //I18n
-    Translation::load("plugins/LiteLoader/LandPack/" + globalConfig.value("Language","en") + ".json");
+    Translation::load("plugins/LiteLoader/LangPack/" + globalConfig.value("Language","en") + ".json");
 
     //初始化全局数据
     InitLocalShareData();

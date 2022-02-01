@@ -11,6 +11,7 @@
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
 #include "Config.h"
+#include "Version.h"
 #include <ScriptEngine/Configs.h>
 
 using namespace std;
@@ -55,13 +56,18 @@ void LoadScriptEngine()
     std::vector<string> backends(LLSE_VALID_BACKENDS);
     for (string& backend : backends)
     {
-        auto lib = LoadLibrary(str2wstr("plugins/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
+        auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info("LiteLoader-ScriptEngine for " + backend + " loaded");
+            logger.info("* LiteLoader-ScriptEngine for " + backend + " loaded");
+            //Fake Register
+            RegisterPlugin(lib, "LiteLoader-ScriptEngine-" + backend, "LiteLoader-ScriptEngine-" + backend, LITELOADER_VERSION,
+            {
+                {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
+            });
         }
         else {
-            logger.error("Fail to load LiteLoader-ScriptEngine for " + backend + "!");
-            logger.error("Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+            logger.error("* Fail to load LiteLoader-ScriptEngine for " + backend + "!");
+            logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }
 }
@@ -84,7 +90,7 @@ void LL::LoadMain() {
 
         auto path = file.path();
         auto fileName = path.u8string();
-        if (fileName.find("LiteLoader.") != string::npos)      //Skip ScriptEngine
+        if (fileName.find("LiteLoader.dll") != string::npos)      //Skip Wrong file path
             continue;
 
         string ext = path.extension().u8string();

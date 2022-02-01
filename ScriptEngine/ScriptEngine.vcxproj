@@ -193,8 +193,8 @@
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\
+      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\ (
+copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
@@ -234,8 +234,8 @@ LibraryBuilder.exe
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\
+      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\ (
+copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>

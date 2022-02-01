@@ -16,18 +16,20 @@ string GetModulePath(HMODULE handler) {
 }
 
 bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
-                    std::map<std::string, std::string> others) {
-    if (GetPlugin(name) != nullptr) {
-        return false;
-    }
-    if (GetPlugin(handler) != nullptr) {
-        auto map = GetPlugin(handler);
+                    std::map<std::string, std::string> others)
+{
+    if (GetPlugin(handler) != nullptr)
+    {
         for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
             if (iter->second.handler == handler) {
                 plugins.erase(iter->first);
             }
         }
     }
+    else if (GetPlugin(name) != nullptr) {          //Allow plugins to overwrite their own plugin registory
+        return false;
+    }
+
     LL::Plugin plugin{name, introduction, version, others};
     plugin.handler = handler;
     plugin.filePath = GetModulePath(handler);
