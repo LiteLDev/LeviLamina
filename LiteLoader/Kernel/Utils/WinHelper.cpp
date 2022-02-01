@@ -1,6 +1,7 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <Main/LiteLoader.h>
+#include <Utils/DbgHelper.h>
 #include <LoggerAPI.h>
 #include <string>
 
@@ -85,10 +86,12 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
         catch (const seh_exception &e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In NewProcess callback");
+            PrintCurrentStackTraceback();
         }
         catch (...) {
             logger.error("NewProcess Callback Failed!");
             logger.error("Uncaught Exception Detected!");
+            PrintCurrentStackTraceback();
         }
     }).detach();
 

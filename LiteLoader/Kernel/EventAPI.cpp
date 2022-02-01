@@ -34,6 +34,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
 #include <Utils/StringHelper.h>
+#include <Utils/DbgHelper.h>
 #include <functional>
 #include <iostream>
 #include <string>
@@ -130,6 +131,7 @@ DeclareEventListeners(RegCmdEvent)
         logger.error("Event Callback Failed!");       \
         logger.error("Uncaught Exception Detected!"); \
         logger.error("In Event: " #EVENT "");         \
+        PrintCurrentStackTraceback();                   \
     }                                                      \
     }
 #else
@@ -145,6 +147,7 @@ void Event::OutputEventError(const string & errorMsg, const string & eventName, 
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty())
         logger.error("In Plugin <{}>", pluginName);
+    PrintCurrentStackTraceback();
 }
 
 

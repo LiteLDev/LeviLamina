@@ -28,7 +28,8 @@ namespace LL {
                     {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}} },
                     {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}} },
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}} },
-                    {"AntiGive", {{"enabled", conf.enableAntiGive}} }
+                    {"AntiGive", {{"enabled", conf.enableAntiGive}} },
+                    {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}} },
                 }}
         };
     }
@@ -78,6 +79,11 @@ namespace LL {
             if (modules.find("AntiGive") != modules.end()) {
                 const nlohmann::json &listen = modules.at("AntiGive");
                 conf.enableAntiGive = listen.value("enabled", true);
+            }
+
+            if (modules.find("ErrorStackTraceback") != modules.end()) {
+                const nlohmann::json& listen = modules.at("ErrorStackTraceback");
+                conf.enableErrorStackTraceback = listen.value("enabled", true);
             }
         }
     }

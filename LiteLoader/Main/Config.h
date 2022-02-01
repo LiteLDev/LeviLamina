@@ -39,6 +39,7 @@ namespace LL {
         bool enableFixListenPort = false;
         bool enableAntiGive = true;
         bool enableUnlockCmd = true;
+        bool enableErrorStackTraceback = true;
 
         //Runtime Config
         SeverStatus serverStatus = SeverStatus::Starting;

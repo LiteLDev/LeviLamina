@@ -3,6 +3,7 @@
 #include <dbghelp/dbghelp.h>
 #include <Utils/WinHelper.h>
 #include <Utils/StringHelper.h>
+#include <Main/Config.h>
 #include <thread>
 #include <string>
 #include <map>
@@ -119,6 +120,12 @@ wstring MapModuleFromAddr(HANDLE hProcess, void* address)
 
 bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 {
+	if (!LL::globalConfig.enableErrorStackTraceback)
+	{
+		logger.error("* Stack traceback is disabled by config file.");
+		return true;
+	}
+
 	HANDLE hProcess = GetCurrentProcess();
 	HANDLE hThread = GetCurrentThread();
 	DWORD threadId = GetCurrentThreadId();

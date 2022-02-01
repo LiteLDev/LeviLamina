@@ -5,6 +5,7 @@
 
 #include <Impl/FormPacketHelper.h>
 #include <third-party/Nlohmann/fifo_json.hpp>
+#include <Utils/DbgHelper.h>
 #include <Main/LiteLoader.h>
 
 #include <MC/ServerNetworkHandler.hpp>
@@ -199,12 +200,14 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
         logger.error("SEH Uncaught Exception Detected!");
         logger.error("{}", e.what());
         logger.error("In Event: onFormSelected");
+        PrintCurrentStackTraceback();
     }
     catch (...)
     {
         logger.error("Event Callback Failed!");
         logger.error("Uncaught Exception Detected!");
         logger.error("In Event: onFormSelected");
+        PrintCurrentStackTraceback();
     }
 
     original(_this, id, handler, pPacket);
