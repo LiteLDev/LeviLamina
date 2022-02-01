@@ -15,6 +15,7 @@ extern Logger logger;
 /////////////////////////////////// Symbol Loader ///////////////////////////////////
 
 std::set<std::wstring> loadedSymbolDir;
+bool symbolsLoaded = false;
 
 void FindSymbols(wstring& collection, const string& nowPath, bool recursion = false)
 {
@@ -41,6 +42,9 @@ void FindSymbols(wstring& collection, const string& nowPath, bool recursion = fa
 
 bool LoadSymbols()
 {
+	if (symbolsLoaded)
+		return true;
+
 	loadedSymbolDir.clear();
 	wstring symbolPath{ L"srv*C:\\Windows\\symbols*http://msdl.microsoft.com/download/symbols" };
 	FindSymbols(symbolPath, ".", false);
@@ -51,11 +55,14 @@ bool LoadSymbols()
 		logger.warn("Fail to load Symbol Files! Error Code: {}", GetLastError());
 		return false;
 	}
+	loadedSymbolDir.clear();
+	symbolsLoaded = true;
 	return true;
 }
 
 bool CleanupSymbols()
 {
+	symbolsLoaded = false;
 	return SymCleanup(GetCurrentProcess());
 }
 
@@ -118,8 +125,6 @@ void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 
 	std::thread printThread([e,hProcess,hThread,threadId]()
 	{
-		//SuspendThread(hThread);
-
 		LoadSymbols();
 		CreateModuleMap(hProcess);
 
@@ -180,8 +185,6 @@ void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 		}
 		logger.error("");
 		CleanupSymbols();
-
-		//ResumeThread(hThread);
 	});
 	printThread.join();
 }
