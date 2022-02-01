@@ -117,13 +117,14 @@ wstring MapModuleFromAddr(HANDLE hProcess, void* address)
 
 #define MACHINE_TYPE IMAGE_FILE_MACHINE_AMD64
 
-void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
+bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 {
 	HANDLE hProcess = GetCurrentProcess();
 	HANDLE hThread = GetCurrentThread();
 	DWORD threadId = GetCurrentThreadId();
+	bool res = false;
 
-	std::thread printThread([e,hProcess,hThread,threadId]()
+	std::thread printThread([e,hProcess,hThread,threadId,&res]()
 	{
 		LoadSymbols();
 		CreateModuleMap(hProcess);
@@ -157,6 +158,8 @@ void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 		stackFrame.AddrFrame.Mode = AddrModeFlat;
 		stackFrame.AddrFrame.Offset = pContext->Rbp;
 
+		bool skipingPrintFunctionsStack = true;
+
 		while (StackWalk64(MACHINE_TYPE, hProcess, hThread, &stackFrame, pContext,
 			NULL, SymFunctionTableAccess64, SymGetModuleBase64, NULL))
 		{
@@ -166,6 +169,13 @@ void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 			PSYMBOL_INFOW info;
 			if (info = GetSymbolInfo(hProcess, (void*)stackFrame.AddrPC.Offset))
 			{
+				if (skipingPrintFunctionsStack)
+				{
+					if (wcscmp(info->Name,	L"PrintCurrentStackTraceback") == 0)		//Skiping these print functions' stack
+						skipingPrintFunctionsStack = false;
+					continue;
+				}
+
 				char addrHex[10] = "";
 				snprintf(addrHex, sizeof(addrHex), "0x%llX", info->Address);
 
@@ -178,13 +188,16 @@ void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 				line.SizeOfStruct = sizeof(IMAGEHLP_LINEW64);
 
 				if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
-					logger.error("at File {} : Line {}", wstr2str(line.FileName), line.LineNumber);
+					logger.error("(in File {} : Line {})", wstr2str(line.FileName), line.LineNumber);
 			}
 			else
 				logger.error("at ???????? (0x????????)");
 		}
-		logger.error("");
+		cout << endl;
 		CleanupSymbols();
+		res = true;
 	});
+
 	printThread.join();
+	return res;
 }

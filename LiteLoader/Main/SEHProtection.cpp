@@ -9,6 +9,9 @@
 using namespace std;
 extern Logger logger;
 
+// Have problems, need to be fixed.
+
+/*
 bool seSetForServerLevelTick = false;
 bool seSetForMinecraftUpdate = false;
 
@@ -66,4 +69,4 @@ THook(__int64, "?update@Minecraft@@QEAA_NXZ",
 		PrintCurrentStackTraceback();
 	}
 	return 0;
-}
+}*/

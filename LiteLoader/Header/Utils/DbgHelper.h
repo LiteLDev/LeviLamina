@@ -5,4 +5,4 @@
 
 using namespace std;
 
-LIAPI void PrintCurrentStackTraceback(PEXCEPTION_POINTERS e = nullptr);
+LIAPI bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e = nullptr);
