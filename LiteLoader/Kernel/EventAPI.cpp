@@ -60,6 +60,7 @@ DeclareEventListeners(PlayerUseItemEvent)
 DeclareEventListeners(PlayerUseItemOnEvent)
 DeclareEventListeners(PlayerChangeDimEvent)
 DeclareEventListeners(PlayerJumpEvent)
+DeclareEventListeners(EntityTransformEvent)
 DeclareEventListeners(PlayerSneakEvent)
 DeclareEventListeners(PlayerAttackEvent)
 DeclareEventListeners(PlayerAttackBlockEvent)
@@ -285,6 +286,25 @@ THook(void, "?jumpFromGround@Player@@UEAAXXZ",
     return original(pl);
 }
 
+////////////////// EntityTransform //////////////////
+THook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
+    void* self, Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level)
+{
+    IF_LISTENED(EntityTransformEvent)
+    {
+        EntityTransformEvent ev{};
+        ev.mBeforeEntity = beforeEntity;
+        ev.mAfterEntity = afterEntity;
+        ev.call();
+    }
+    IF_LISTENED_END(EntityTransformEvent)
+    original(self, beforeEntity, afterEntity, a4, aid, level);
+}
+
+/*
+THook(void, "?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@@Z",
+    void* self, Actor* a2)
+*/
 
 /////////////////// PlayerSneak ///////////////////
 THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z",
