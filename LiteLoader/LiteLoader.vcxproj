@@ -183,7 +183,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\NBT\FloatTagAPI.cpp" />
     <ClCompile Include="Kernel\FormPacketHelper.cpp" />
-    <ClCompile Include="Kernel\MC\FormUI.cpp" />
+    <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\MC\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\GUI\GuiAPI.cpp" />
     <ClCompile Include="Kernel\MC\HitResultAPI.cpp" />

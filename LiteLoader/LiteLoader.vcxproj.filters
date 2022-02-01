@@ -147,9 +147,6 @@
     <ClCompile Include="Kernel\MC\ContainerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\MC\FormUI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\MC\GameModeAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
@@ -290,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp">
       <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FormUI.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
