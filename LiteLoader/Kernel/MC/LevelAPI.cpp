@@ -208,14 +208,14 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 void* Level::ServerCommandOrigin::fake_vtbl[26];
 static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
 
-bool Level::runcmd(const string& cmd) {
+bool Level::executeCommand(const string& cmd) {
     ServerCommandOrigin origin;
     return MinecraftCommands::_runcmd(&origin, cmd);
 }
 
 std::unordered_map<void*, string*> origin_res;
 
-std::pair<bool, string> Level::runcmdEx(const string& cmd) {
+std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
     ServerCommandOrigin origin;
     string val;
     origin_res[&origin] = &val;
@@ -225,7 +225,7 @@ std::pair<bool, string> Level::runcmdEx(const string& cmd) {
 
 
 static void* FAKE_PORGVTBL[26];
-bool Level::runcmdAs(Player* pl, const string& cmd) {
+bool Level::executeCommandAs(Player* pl, const string& cmd) {
     void** filler[5];
     ServerCommandOrigin origin;
     SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(

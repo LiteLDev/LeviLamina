@@ -32,7 +32,7 @@ Local<Value> McClass::runcmd(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
     try {
-        return Boolean::newBoolean(Level::runcmd(args[0].asString().toString()));
+        return Boolean::newBoolean(Level::executeCommand(args[0].asString().toString()));
     }
     CATCH("Fail in RunCmd!")
 }
@@ -43,7 +43,7 @@ Local<Value> McClass::runcmdEx(const Arguments& args)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
 
     try {
-        std::pair<bool, string> result = Level::runcmdEx(args[0].asString().toString());
+        std::pair<bool, string> result = Level::executeCommandEx(args[0].asString().toString());
         Local<Object> resObj = Object::newObject();
         resObj.set("success", result.first);
         resObj.set("output", result.second);
