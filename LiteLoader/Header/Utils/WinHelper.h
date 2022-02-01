@@ -20,6 +20,3 @@ HMODULE inline GetCurrentModule()
     }
     return nullptr;
 }
-
-// Get Current CPU Context Data
-bool GetCurrentContext(CONTEXT& context);

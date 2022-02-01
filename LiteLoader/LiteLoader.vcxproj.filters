@@ -288,7 +288,7 @@
     <ClCompile Include="Main\SEHProtection.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\DbgSymbolHelper.cpp">
+    <ClCompile Include="Kernel\Utils\DbgHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
   </ItemGroup>
@@ -602,7 +602,7 @@
     <ClInclude Include="Main\CrashLogger.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Header\Utils\DbgSymbolHelper.h">
+    <ClInclude Include="Header\Utils\DbgHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>

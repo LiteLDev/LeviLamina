@@ -89,7 +89,7 @@ LibraryBuilder.exe
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
-    <ClCompile Include="Kernel\Utils\DbgSymbolHelper.cpp" />
+    <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
@@ -240,7 +240,7 @@ LibraryBuilder.exe
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header\Utils\DbgSymbolHelper.h" />
+    <ClInclude Include="Header\Utils\DbgHelper.h" />
     <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />
