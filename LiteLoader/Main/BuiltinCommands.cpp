@@ -195,7 +195,7 @@ void LLPluginInfoCommand(CommandOutput& output, const string &pluginName)
 
 void LLVersionCommand(CommandOutput& output)
 {
-    output.success(fmt::format("Bedrock Delicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}",
+    output.success(fmt::format("Bedrock Dedicated Server {}\n- with LiteLoaderBDS {}\n- Network Protocol: {}",
         LL::getBdsVersion(), LL::getLoaderVersionString(), LL::getServerProtocolVersion()));
 }
 

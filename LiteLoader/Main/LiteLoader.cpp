@@ -118,7 +118,7 @@ void LLMain() {
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Register Myself
-    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Delicated Server", LL::getLoaderVersion(),
+    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
     });
