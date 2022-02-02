@@ -233,7 +233,7 @@ public:
 
 class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
 public:
-    Actor* mBeforeEntity;
+    ActorUniqueID* mBeforeEntityUniqueId;
     Actor* mAfterEntity;
 };
 

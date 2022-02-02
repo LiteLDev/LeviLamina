@@ -293,18 +293,13 @@ THook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTran
     IF_LISTENED(EntityTransformEvent)
     {
         EntityTransformEvent ev{};
-        ev.mBeforeEntity = beforeEntity;
+        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
         ev.mAfterEntity = afterEntity;
         ev.call();
     }
     IF_LISTENED_END(EntityTransformEvent)
     original(self, beforeEntity, afterEntity, a4, aid, level);
 }
-
-/*
-THook(void, "?transformIfAble@TransformationComponent@@QEAAXAEAVActor@@@Z",
-    void* self, Actor* a2)
-*/
 
 /////////////////// PlayerSneak ///////////////////
 THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z",
