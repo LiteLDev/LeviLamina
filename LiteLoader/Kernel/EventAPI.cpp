@@ -1768,7 +1768,7 @@ THook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[32];
+        auto identifier = new char[176];
         ProjectileSpawnEvent ev{};
         ev.mShooter = a3;
         ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
