@@ -173,6 +173,7 @@ You must accept the Minecraft EULA.
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
 [nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License
 
 ### Extra Restrictions & Exceptions
 

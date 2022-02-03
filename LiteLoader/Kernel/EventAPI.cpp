@@ -1734,9 +1734,7 @@ THook(Actor*,
       "?spawnProjectile@Spawner@@QEAAPEAVActor@@AEAVBlockSource@@AEBUActorDefinitionIdentifier@@PEAV2@AEBVVec3@@3@Z",
       void* _this, BlockSource* a2, ActorDefinitionIdentifier* a3, Actor* a4, Vec3* a5, Vec3* a6)
 {
-    string name = a3->getFullName();
-    if (EndsWith(name, "<>"))
-        name = name.substr(0, name.size() - 2);
+    string name = a3->getCanonicalName();
     if (name != "minecraft:thrown_trident")
     {
         IF_LISTENED(ProjectileSpawnEvent)
