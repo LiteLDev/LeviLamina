@@ -458,70 +458,31 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
     return true;
 }
 
-void setDataItem(BinaryStream& wp, vector<FakeDataItem> a3) 
-{
-    wp.writeUnsignedVarInt(a3.size());
-    for (auto& i : a3) {
-        wp.writeUnsignedVarInt(i.id);
-        wp.writeUnsignedVarInt((int)i.type);
-        switch ((int)i.type) {
-            case 0:
-                wp.writeUnsignedChar(i.byte);
-                break;
-            case 1:
-                wp.writeUnsignedShort(i.shorts);
-                break;
-            case 2:
-                wp.writeVarInt(i.ints);
-                break;
-            case 3:
-                wp.writeFloat(i.floats);
-                break;
-            case 4:
-                wp.writeString(i.strings);
-                break;
-            case 5:
-
-                break; //NBT
-            case 6:
-                wp.writeVarInt(i.bpos.x);
-                wp.writeVarInt(i.bpos.y);
-                wp.writeVarInt(i.bpos.z);
-                break;
-            case 7:
-                wp.writeVarInt64(i.longs);
-                break;
-            case 8:
-                wp.writeFloat(i.vec3.x);
-                wp.writeFloat(i.vec3.y);
-                wp.writeFloat(i.vec3.z);
-                break;
-            default:
-                return;
-        }
-    }
-}
-
-bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem) const 
+// Bad?
+#include <MC/ItemStackDescriptor.hpp>
+#include <MC/NetworkItemStackDescriptor.hpp>
+bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const
 {
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);                                   //RuntimeId
     wp.writeUnsignedVarInt64(runtimeID);                           //EntityId
-    wp.writeVarInt(itemID);                                        //ItemId
-    wp.writeUnsignedShort(static_cast<unsigned short>(stackSize)); //StackSize
-    wp.writeUnsignedVarInt(aux);                                   //Aux
-    wp.writeBool(true);
-    wp.writeUnsignedVarInt(110);
-    wp.writeVarInt(0);
-    wp.writeString("minecraft:apple");
-    wp.writeFloat(pos.x);
-    wp.writeFloat(pos.y);
-    wp.writeFloat(pos.z);
-    wp.writeFloat(pos.x);
-    wp.writeFloat(pos.y);
-    wp.writeFloat(pos.z);
-    setDataItem(wp, std::move(DataItem)); //EntityMetadata & DataItem
-    wp.writeBool(true);
+
+    // NetworkItemStackDescriptor
+    ItemStackDescriptor desc(item, aux, stackSize, nullptr);
+    NetworkItemStackDescriptor netDesc(desc);
+    wp.writeType(netDesc);
+    //wp.writeBool(true);                                            //hasNetID
+    //wp.writeVarInt(itemID);                                        //ItemId
+    //wp.writeUnsignedShort(static_cast<unsigned short>(stackSize)); //StackSize
+    //wp.writeUnsignedVarInt(aux);                                   //Aux
+    //wp.writeUnsignedVarInt(110);
+    //wp.writeVarInt(0);
+    //wp.writeString("minecraft:apple");
+
+    wp.writeType(pos);        //mPos
+    wp.writeType(Vec3::ZERO); //mVelocity
+    wp.writeType(dataItems);  //EntityMetadata & DataItem
+    wp.writeBool(false);       //isFromFishing
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::AddItemActor);
     pkt->read(wp);
@@ -529,23 +490,21 @@ bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, i
     return true;
 }
 
-bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem) 
+bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems)
 {
     BinaryStream wp;
     wp.writeVarInt64(runtimeID);         //RuntimeId
     wp.writeUnsignedVarInt64(runtimeID); //EntityId
     wp.writeString(entityType);
-    wp.writeFloat(pos.x); //pos
-    wp.writeFloat(pos.y);
-    wp.writeFloat(pos.z);
+    wp.writeType(pos); //pos
     wp.writeFloat(0);
     wp.writeFloat(0);
     wp.writeFloat(0);
     wp.writeFloat(rotation.x); //rotation
     wp.writeFloat(rotation.y);
-    wp.writeFloat(rotation.z);
+    wp.writeFloat(headYaw);
     wp.writeUnsignedVarInt(0); //attr
-    setDataItem(wp, DataItem); //EntityMetadata & DataItem
+    wp.writeType(dataItems); //EntityMetadata & DataItem
     wp.writeUnsignedVarInt(0); //entity link
 
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::AddEntity);

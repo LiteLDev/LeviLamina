@@ -15,6 +15,7 @@
     class Container;
     class CompoundTag;
     #include "ScorePacketInfo.hpp"
+    #include "DataItem.hpp"
 #undef BEFORE_EXTRA
 
 class Player : public Mob {
@@ -73,8 +74,8 @@ public:
     LIAPI bool sendNotePacket(unsigned int tone);
     LIAPI bool sendSpawnParticleEffectPacket(Vec3 spawnPos, int dimid, string ParticleName, int64_t EntityUniqueID = -1) const;
     /*bad*/ LIAPI bool sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, float Pitch) const;
-    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeID, int itemID, int stackSize, short aux, Vec3 pos, vector<FakeDataItem> DataItem = {}) const;
-    LIAPI bool sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec3 rotation, vector<FakeDataItem> DataItem = {});
+    LIAPI bool sendAddItemEntityPacket(unsigned long long runtimeID, class Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems = {}) const;
+    LIAPI bool sendAddEntityPacket(unsigned long long runtimeID, string entityType, Vec3 pos, Vec2 rotation, float headYaw, vector<std::unique_ptr<DataItem>> dataItems = {});
     LIAPI bool sendTransferPacket(const string& address, short port) const;
     LIAPI bool sendSetDisplayObjectivePacket(const string& title, const string& name, char sortOrder) const;
     LIAPI bool sendSetScorePacket(char type, const vector<ScorePacketInfo>& data);

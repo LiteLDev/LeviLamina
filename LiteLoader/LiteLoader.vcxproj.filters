@@ -603,6 +603,12 @@
     <ClInclude Include="Header\MC\SimulatedPlayer.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\DataItem.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\DataItem2.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

@@ -18,6 +18,35 @@ public:
 
     LIAPI void reserve(size_t size);
     LIAPI std::string& getRaw();
+    template <typename T>
+    inline void writeType(T const&)
+    {
+        static_assert(false, "Unsupported Type");
+    };
+    template <>
+    MCAPI void writeType(struct CommandOriginData const&);
+    template <>
+    MCAPI void writeType(std::vector<std::unique_ptr<class DataItem>> const&);
+    template <>
+    MCAPI void writeType(class NetworkItemStackDescriptor const&);
+    template <>
+    MCAPI void writeType(class MoveActorAbsoluteData const&);
+    template <>
+    MCAPI void writeType(class mce::UUID const&);
+    template <>
+    MCAPI void writeType(class NetworkItemInstanceDescriptor const&);
+    template <>
+    MCAPI void writeType(struct ItemStackRequestSlotInfo const&);
+    template <>
+    MCAPI void writeType(class RecipeIngredient const&);
+    template <>
+    inline void writeType(class Vec3 const& vec3)
+    {
+        writeFloat(vec3.x);
+        writeFloat(vec3.y);
+        writeFloat(vec3.z);
+    }
+
 
 #undef AFTER_EXTRA
 
