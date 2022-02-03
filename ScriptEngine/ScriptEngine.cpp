@@ -24,7 +24,7 @@
 using namespace std;
 
 //主引擎表
-std::vector<ScriptEngine*> lxlModules;
+std::vector<ScriptEngine*> currentModuleEngines;
 //配置文件
 fifo_json globalConfig;
 
@@ -80,7 +80,7 @@ void entry()
     InitGlobalShareData();
     InitSafeGuardRecord();
 
-    //初始化消息系统
+    //初始化消息队列
     InitMessageSystem();
 
     //欢迎

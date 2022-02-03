@@ -5,8 +5,6 @@
 #include <map>
 #include <mutex>
 
-
-
 //////////////////// Structs ////////////////////
 
 //导出函数表
@@ -17,16 +15,19 @@ struct ExportedFuncData
 	script::Global<Function> func;
 };
 
-//远程调用信息
-struct RemoteEngineData
+//全局引擎数据
+struct ScriptEngineData
 {
-	unsigned threadId;
+	string moduleType;
+	string pluginName;
+	ScriptEngine* engine;
 };
 
-//远程调用信息
-struct MessageSystemData
+//消息系统处理函数信息
+struct MessageHandlers
 {
-	unsigned threadId;
+	script::utils::Message::MessageProc* handler;
+	script::utils::Message::MessageProc* cleaner;
 };
 
 //全局共享数据
@@ -35,6 +36,9 @@ struct GlobalDataType
 	//所有插件名单
 	std::vector<std::string> pluginsList;
 
+	//总引擎表
+	std::vector<ScriptEngineData> engines;
+
 	//注册过的命令
 	std::unordered_map<std::string, std::string> playerRegisteredCmd;
 	std::unordered_map<std::string, std::string> consoleRegisteredCmd;
@@ -42,16 +46,9 @@ struct GlobalDataType
 	//导出函数表
 	std::unordered_map<std::string, ExportedFuncData> exportedFuncs;
 
-	//模块消息系统线程集合
-	std::unordered_map<std::string, MessageSystemData> moduleMessageSystemsList;
+	//模块消息系统
 	int messageSystemNextId = 0;
-
-	//模块消息系统等待队列
-	std::mutex syncWaitListLock;
-	std::unordered_map<int, bool> syncWaitList;
-
-	//插件热管理多线程锁
-	std::mutex hotManageLock;
+	std::map<std::string, MessageHandlers> messageSystemHandlers;
 
 	//fastlog多线程锁
 	std::mutex fastlogLock;

@@ -6,6 +6,7 @@
 #include <map>
 #include <unordered_map>
 #include <memory>
+#include <LoggerAPI.h>
 
 struct FormCallbackData
 {
@@ -28,11 +29,7 @@ struct EngineOwnData
     bool toConsole = true;
     Logger logger = Logger("");
     int maxLogLevel = 4;
-    //struct EngineOwnData() {
-    //    logger.consoleLevel = 4;
-    //    logger.fileLevel = 4;
-    //    logger.playerLevel = 4;
-    //}
+
     //玩家绑定数据
     std::unordered_map<std::string,script::Global<Value>> playerDataDB;
 };

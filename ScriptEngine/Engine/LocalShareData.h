@@ -39,7 +39,7 @@ static struct CmdCallbackMapCmp
 //DLL本地共享数据
 struct LocalDataType
 {
-	//是否是第一个LXL实例
+	//是否是第一个ScriptEngine实例
 	bool isFirstInstance = true;
 
 	//玩家命令回调
@@ -59,7 +59,7 @@ extern LocalDataType* localShareData;
 extern std::vector<RegCmdQueue> toRegCmdQueue;
 
 //本地引擎表
-extern std::vector<ScriptEngine*> lxlModules;
+extern std::vector<ScriptEngine*> currentModuleEngines;
 
 //线程池
 extern ThreadPool pool;

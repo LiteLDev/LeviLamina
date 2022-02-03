@@ -76,7 +76,9 @@ void LL::LoadMain() {
     logger.info("Loading plugins...");
 
     CleanOldScriptEngine();
-    auto scriptExts = std::set<string>(LLSE_VALID_PLUGIN_EXTENSIONS);
+    std::set<string> scriptExts;
+    for (auto& ext : LLSE_VALID_PLUGIN_EXTENSIONS)
+        scriptExts.insert(ext);
     bool hasScriptPlugin = false;
 
     // Load plugins

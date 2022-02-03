@@ -15,12 +15,6 @@
 using namespace std;
 #define H do_hash
 
-void HotManageMessageCallback(ModuleMessage& msg)
-{
-    //Remove
-    ;
-}
-
 bool ProcessHotManageCmd(const std::string& cmd)
 {
     if (cmd.find("lxl ") != 0)
@@ -52,24 +46,7 @@ bool ProcessHotManageCmd(const std::string& cmd)
     {
         if (cmdList.size() == 3)
         {
-            OperationCount cnt("lxlcommand_load");
-            OperationCount succeeded("lxlcommand_load_succeeded", false);
-
-            if (EndsWith(cmdList[2], LXL_PLUGINS_SUFFIX))
-            {
-                if (!filesystem::exists(cmdList[2]))
-                    logger.error("Plugin no found! Check the path you input again.");
-                else if (LxlLoadPlugin(cmdList[2], true))
-                    succeeded.done();
-            }
-
-            if (cnt.hasReachMaxBackendCount())
-            {
-                if(succeeded.get() == 0)
-                    logger.error("Fail to load any plugin at <" + cmdList[2] + "> !");
-                cnt.clear();
-                succeeded.clear();
-            }
+            LxlLoadPlugin(cmdList[2], true);
         }
         else
             logger.error("Bad Command! Check your input again.");
@@ -80,25 +57,7 @@ bool ProcessHotManageCmd(const std::string& cmd)
     {
         if (cmdList.size() == 3)
         {
-            OperationCount cnt("lxlcommand_unload");
-            OperationCount succeeded("lxlcommand_unload_succeeded", false);
-
-            if (EndsWith(cmdList[2], LXL_PLUGINS_SUFFIX))
-            {
-                if (LxlUnloadPlugin(cmdList[2]) != "")
-                    succeeded.done();
-            }
-
-            if (cnt.hasReachMaxBackendCount())
-            {
-                if (succeeded.get() == 0)
-                {
-                    logger.error("Fail to unload any plugin named <" + cmdList[2] + ">!");
-                    logger.error("Use command \"lxl list\" to show plugins loaded currently.");
-                }
-                cnt.clear();
-                succeeded.clear();
-            }
+            LxlUnloadPlugin(cmdList[2]);
         }
         else
             logger.error("Bad Command! Check your input again.");
@@ -110,24 +69,7 @@ bool ProcessHotManageCmd(const std::string& cmd)
         if (cmdList.size() == 3)
         {
             //Reload specific plugin
-            OperationCount cnt("lxlcommand_reload");
-            OperationCount succeeded("lxlcommand_unload_succeeded", false);
-
-            if (EndsWith(cmdList[2], LXL_PLUGINS_SUFFIX))
-            {
-                if (!LxlReloadPlugin(cmdList[2]))
-                    logger.error("Fail to reload plugin <" + cmdList[2] + ">!");
-                else
-                    succeeded.done();
-            }
-
-            if (cnt.hasReachMaxBackendCount())
-            {
-                if (succeeded.get() == 0)
-                    logger.error("Fail to reload any plugin named <" + cmdList[2] + "> !");
-                cnt.clear();
-                succeeded.clear();
-            }
+            LxlReloadPlugin(cmdList[2]);
         }
         else
         {

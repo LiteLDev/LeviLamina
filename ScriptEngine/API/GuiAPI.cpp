@@ -365,7 +365,7 @@ bool CallFormCallback(Player* player, unsigned formId, const string& data)
 
     try
     {
-        for (auto engine : lxlModules)
+        for (auto engine : currentModuleEngines)
         {
             EngineScope enter(engine);
             FormCallbackData callback;

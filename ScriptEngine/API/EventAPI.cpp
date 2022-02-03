@@ -1216,7 +1216,7 @@ THook(void, "?tick@ServerLevel@@UEAAXXZ",
 {
     try
     {
-        for (auto engine : lxlModules)
+        for (auto engine : currentModuleEngines)
         {
             EngineScope enter(engine);
             engine->messageQueue()->loopQueue(script::utils::MessageQueue::LoopType::kLoopOnce);

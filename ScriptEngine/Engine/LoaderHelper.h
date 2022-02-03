@@ -1,4 +1,5 @@
 #pragma once
+#include <API/APIHelp.h>
 #include <string>
 #include <vector>
 
@@ -6,8 +7,8 @@ std::string ReadFileFrom(const std::string& filePath);
 ScriptEngine* NewEngine();
 
 class ModuleMessage;
-void RemoteLoadCallback(ModuleMessage& msg);
-void RemoteLoadReturnCallback(ModuleMessage& msg);
+void RemoteLoadRequest(ModuleMessage& msg);
+void RemoteLoadReturn(ModuleMessage& msg);
 
 //加载插件
 bool LxlLoadPlugin(const std::string& filePath, bool isHotLoad = false);

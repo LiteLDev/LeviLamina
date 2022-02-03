@@ -1,3 +1,4 @@
+#include "LoaderHelper.h"
 #include <API/APIHelp.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/EngineOwnData.h>
@@ -19,7 +20,8 @@
 #include <API/CommandAPI.h>
 #include <Utils/StringHelper.h>
 #include <ScheduleAPI.h>
-
+#include <Utils/Hash.h>
+#define H(x) do_hash(x)
 using namespace std;
 
 //读取辅助函数
@@ -53,7 +55,7 @@ ScriptEngine* NewEngine()
 }
 
 //远程装载回调
-void RemoteLoadCallback(ModuleMessage& msg)
+void RemoteLoadRequest(ModuleMessage& msg)
 {
     istringstream sin(msg.getData());
 
@@ -61,14 +63,13 @@ void RemoteLoadCallback(ModuleMessage& msg)
     int backId;
     string filePath;
 
-    sin >> backId >> isHotLoad >> filePath;
+    sin >> isHotLoad >> filePath;
     bool res = LxlLoadPlugin(filePath, isHotLoad);
 
-    ModuleMessage msgBack(backId, ModuleMessage::MessageType::RemoteRequireReturn, string(res ? "1" : "0"));
-    msg.sendBack(msgBack);
+    msg.sendResult(ModuleMessage::MessageType::RemoteLoadReturn, string(res ? "1" : "0"));
 }
 
-void RemoteLoadReturnCallback(ModuleMessage& msg)
+void RemoteLoadReturn(ModuleMessage& msg)
 {
     if (msg.getData() == "0")
     {
@@ -83,52 +84,45 @@ bool LxlLoadPlugin(const std::string& filePath, bool isHotLoad)
         return true;
 
     string suffix = filesystem::path(filePath).extension().u8string();
+
     if (suffix != LXL_PLUGINS_SUFFIX)
     {
+        string moduleToBroadcast;
+        switch (H(suffix.c_str()))
+        {
+        case H(".lua"):
+            moduleToBroadcast = LXL_LANG_LUA;
+            break;
+        case H(".js"):
+            moduleToBroadcast = LXL_LANG_JS;
+            break;
+        default:
+            logger.error("Do not support this type of plugin!");
+            return false;
+            break;
+        }
+
         //Remote Load
         logger.debug("Remote Load begin");
 
         ostringstream sout;
-        int backId = ModuleMessage::getNextMessageId();
-        sout << backId << "\n" << isHotLoad << "\n" << filePath;
+        sout << isHotLoad << "\n" << filePath;
+        string request = sout.str();
 
-        ModuleMessage msg(ModuleMessage::MessageType::RemoteRequire, sout.str());
-
-        //========================= Fix =========================
-        if (suffix == ".lua")
+        auto result = ModuleMessage::sendToRandom(moduleToBroadcast, ModuleMessage::MessageType::RemoteLoadRequest, request);
+        if(!result)
         {
-            if (!ModuleMessage::sendTo(msg, LXL_LANG_LUA))
-            {
-                logger.error("Fail to send remote load request!");
-                return false;
-            }
-        }
-        else if (suffix == ".js")
-        {
-            if (!ModuleMessage::sendTo(msg, LXL_LANG_JS))
-            {
-                logger.error("Fail to send remote load request!");
-                return false;
-            }
-        }
-        else
-        {
-            logger.error("Unknown type of Script file!");
+            logger.error("Fail to send remote load request!");
             return false;
         }
 
-        if (!ModuleMessage::waitForMessage(backId, LXL_MAXWAIT_REMOTE_LOAD))
+        if (!result.waitForAllResults(LXL_MAXWAIT_REMOTE_LOAD))
         {
             logger.error("Remote Load Timeout!");
             return false;
         }
-
         return true;
     }
-
-    //多线程锁
-    // ======================= Rewrite here =======================
-    //lock_guard<mutex> lock(globalShareData->hotManageLock);
 
     //判重
     string pluginName = std::filesystem::path(filePath).filename().u8string();
@@ -138,13 +132,20 @@ bool LxlLoadPlugin(const std::string& filePath, bool isHotLoad)
             return true;
     }
 
+    if (!filesystem::exists(filePath))
+    {
+        logger.error("Plugin no found! Check the path you input again.");
+        return false;
+    }
+
     try
     {
         std::string scripts = ReadFileFrom(filePath);
 
         //启动引擎
         ScriptEngine* engine = NewEngine();
-        lxlModules.push_back(engine);
+        currentModuleEngines.push_back(engine);
+        globalShareData->engines.push_back({ LLSE_MODULE_TYPE, pluginName, engine });
         EngineScope enter(engine);
 
         //setData
@@ -195,9 +196,9 @@ bool LxlLoadPlugin(const std::string& filePath, bool isHotLoad)
     }
     catch (const Exception& e)
     {
-        ScriptEngine* deleteEngine = lxlModules.back();
-        lxlModules.pop_back();
-
+        ScriptEngine* deleteEngine = currentModuleEngines.back();
+        currentModuleEngines.pop_back();
+        globalShareData->engines.pop_back();
         {
             EngineScope enter(deleteEngine);
 
@@ -227,14 +228,10 @@ string LxlUnloadPlugin(const std::string& name)
     if (name == LXL_DEBUG_ENGINE_NAME)
         return LXL_DEBUG_ENGINE_NAME;
 
-    //多线程锁
-    // ======================= Rewrite here =======================
-    //lock_guard<mutex> lock(globalShareData->hotManageLock);
-
     string unloadedPath = "";
-    for (int i = 0; i < lxlModules.size(); ++i)
+    for (int i = 0; i < currentModuleEngines.size(); ++i)
     {
-        ScriptEngine* engine = lxlModules[i];
+        ScriptEngine* engine = currentModuleEngines[i];
         if (ENGINE_GET_DATA(engine)->pluginName == name)
         {
             unloadedPath = ENGINE_GET_DATA(engine)->pluginPath;
@@ -245,7 +242,11 @@ string LxlUnloadPlugin(const std::string& name)
             LxlRemoveCmdRegister(engine);
             LxlRemoveAllExportedFuncs(engine);
             engine->getData().reset();
-            lxlModules.erase(lxlModules.begin() + i);
+            currentModuleEngines.erase(currentModuleEngines.begin() + i);
+
+            for (auto now = globalShareData->engines.begin(); now != globalShareData->engines.end(); ++now)
+                if (now->pluginName == name)
+                    globalShareData->engines.erase(now);
 
             //delay request to avoid crash
             Schedule::nextTick([engine]() {
@@ -285,7 +286,7 @@ vector<string> LxlListLocalAllPlugins()
 {
     vector<string> list;
 
-    for (auto& engine : lxlModules)
+    for (auto& engine : currentModuleEngines)
     {
         string name = ENGINE_GET_DATA(engine)->pluginName;
         if (name != LXL_DEBUG_ENGINE_NAME)

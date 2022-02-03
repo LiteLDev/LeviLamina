@@ -8,5 +8,5 @@ bool LxlExportFunc(ScriptEngine* engine, const Local<Function>& func, const stri
 bool LxlRemoveAllExportedFuncs(ScriptEngine* engine);
 
 class ModuleMessage;
-void RemoteCallCallback(ModuleMessage& msg);
-void RemoteCallReturnCallback(ModuleMessage& msg);
+void RemoteSyncCallRequest(ModuleMessage& msg);
+void RemoteSyncCallReturn(ModuleMessage& msg);

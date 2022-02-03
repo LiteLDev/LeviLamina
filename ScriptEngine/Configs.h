@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <vector>
 
 ///////////////////// Configs /////////////////////
 
@@ -14,9 +15,8 @@
 	#define LXL_PLUGINS_SUFFIX ".lua"
 #endif
 
-#define LXL_BACKEND_TYPE_COUNT			2
-#define LLSE_VALID_BACKENDS				{"Js", "Lua"}
-#define LLSE_VALID_PLUGIN_EXTENSIONS	{".js",".lua"}
+#define LLSE_VALID_BACKENDS				std::vector<string>({"Js", "Lua"})
+#define LLSE_VALID_PLUGIN_EXTENSIONS	std::vector<string>({".js",".lua"})
 
 
 // 插件注册信息

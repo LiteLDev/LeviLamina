@@ -23,7 +23,7 @@ ScriptEngine *debugEngine;
 bool globalDebug = false;
 
 //前置声明
-extern std::vector<ScriptEngine*> lxlModules;
+extern std::vector<ScriptEngine*> currentModuleEngines;
 extern void BindAPIs(ScriptEngine *engine);
 
 //预加载依赖库
@@ -56,7 +56,8 @@ void LoadDebugEngine()
 {
     //启动引擎
     debugEngine = NewEngine();
-    lxlModules.push_back(debugEngine);
+    currentModuleEngines.push_back(debugEngine);
+    globalShareData->engines.push_back({ LXL_DEBUG_ENGINE_NAME, LLSE_MODULE_TYPE, debugEngine });
     EngineScope enter(debugEngine);
 
     //setData

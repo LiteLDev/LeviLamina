@@ -1,14 +1,21 @@
 #include "GlobalShareData.h"
 #include "OperationCount.h"
 #include <Configs.h>
+#include <vector>
 
-OperationCount::OperationCount(const string& name, bool hasDone)
+OperationCount::OperationCount(const string& name)
 	:name(name)
+{}
+
+OperationCount OperationCount::create(const string& name)
 {
-	if (!exists(name))
+	if (exists(name))
+		return OperationCount("");
+	else
+	{
 		globalShareData->operationCountData[name] = 0;
-	if (hasDone)
-		done();
+		return OperationCount(name);
+	}
 }
 
 bool OperationCount::exists(const string& name)
@@ -16,7 +23,7 @@ bool OperationCount::exists(const string& name)
 	return globalShareData->operationCountData.find(name) != globalShareData->operationCountData.end();
 }
 
-bool OperationCount::clear()
+bool OperationCount::remove()
 {
 	auto p = globalShareData->operationCountData.find(name);
 	if (p != globalShareData->operationCountData.end())
@@ -29,23 +36,26 @@ bool OperationCount::clear()
 
 bool OperationCount::done()
 {
-	++globalShareData->operationCountData[name];
-	return true;
+	auto p = globalShareData->operationCountData.find(name);
+	if (p != globalShareData->operationCountData.end())
+	{
+		InterlockedIncrement((LONG*)&(p->second));
+		return true;
+	}
+	return false;
 }
 
-inline bool OperationCount::finish()
+int OperationCount::get()
 {
-	return done();
-}
-
-bool OperationCount::get()
-{
-	return globalShareData->operationCountData[name];
+	if (exists(name))
+		return globalShareData->operationCountData[name];
+	else
+		return -1;
 }
 
 bool OperationCount::hasReachCount(int count)
 {
-	return globalShareData->operationCountData[name] >= count;
+	return get() >= count;
 }
 
 bool OperationCount::hasReachMaxEngineCount()
@@ -55,5 +65,5 @@ bool OperationCount::hasReachMaxEngineCount()
 
 bool OperationCount::hasReachMaxBackendCount()
 {
-	return hasReachCount(LXL_BACKEND_TYPE_COUNT);
+	return hasReachCount(LLSE_VALID_BACKENDS.size());
 }
