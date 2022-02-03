@@ -153,6 +153,8 @@ bool mDirty = true; //12
     inline T const& getData() const;
     template <typename T>
     inline T& getData();
+    template <typename T>
+    inline bool setData(T const& value);
 
     DataItem(DataItemType type, unsigned short id)
         : mId(id)
@@ -207,6 +209,22 @@ inline T& DataItem::getData()
         return ((DataItem2<T>*)this)->mValue;
     //throw("DataItemType Not Match");
     return T();
+}
+
+template <typename T>
+inline bool DataItem::setData(T const& value)
+{
+    if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
+        return false;
+    ((DataItem2<T>*)this)->mValue = value;
+}
+
+template <>
+inline bool DataItem::setData(CompoundTag const& value)
+{
+    if (this->mType == DataItem2<CompoundTag>::DATA_ITEM_TYPE)
+        return false;
+    ((DataItem2<CompoundTag>*)this)->mValue.deepCopy(value);
 }
 
 template <typename T>

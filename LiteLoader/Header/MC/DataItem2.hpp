@@ -19,6 +19,10 @@ public:
     {
         return mValue;
     };
+    inline void setData(T const& value)
+    {
+        mValue = value;
+    }
     inline DataItem2(unsigned short key, T const& value) = delete;
     inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value)
     {
@@ -26,15 +30,22 @@ public:
     }
     static DataItemType const DATA_ITEM_TYPE = (DataItemType)-1;
 };
+
 template <> DataItemType const DataItem2<signed char>::DATA_ITEM_TYPE = DataItemType::Byte;
-template <> DataItemType const DataItem2<short>::DATA_ITEM_TYPE = DataItemType::Short;
-template <> DataItemType const DataItem2<int>::DATA_ITEM_TYPE = DataItemType::Int;
-template <> DataItemType const DataItem2<float>::DATA_ITEM_TYPE = DataItemType::Float;
+template <> DataItemType const DataItem2<short>::DATA_ITEM_TYPE       = DataItemType::Short;
+template <> DataItemType const DataItem2<int>::DATA_ITEM_TYPE         = DataItemType::Int;
+template <> DataItemType const DataItem2<float>::DATA_ITEM_TYPE       = DataItemType::Float;
 template <> DataItemType const DataItem2<std::string>::DATA_ITEM_TYPE = DataItemType::String;
 template <> DataItemType const DataItem2<CompoundTag>::DATA_ITEM_TYPE = DataItemType::CompoundTag;
-template <> DataItemType const DataItem2<BlockPos>::DATA_ITEM_TYPE = DataItemType::BlockPos;
-template <> DataItemType const DataItem2<__int64>::DATA_ITEM_TYPE = DataItemType::Int64;
-template <> DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE = DataItemType::Vec3;
+template <> DataItemType const DataItem2<BlockPos>::DATA_ITEM_TYPE    = DataItemType::BlockPos;
+template <> DataItemType const DataItem2<__int64>::DATA_ITEM_TYPE     = DataItemType::Int64;
+template <> DataItemType const DataItem2<Vec3>::DATA_ITEM_TYPE        = DataItemType::Vec3;
+
+template <>
+inline void DataItem2<CompoundTag>::setData(CompoundTag const& value)
+{
+    mValue.deepCopy(value);
+}
 
 template <>
 inline DataItem2<signed char>::DataItem2(unsigned short key, signed char const& value)
