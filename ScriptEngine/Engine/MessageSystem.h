@@ -43,7 +43,7 @@ public:
 	enum class MessageType :UINT
 	{
 		MODULE_MESSAGE_REQUEST,
-		RequireBroadcast, RemoteSyncCallRequest, RemoteLoadRequest, CallFuncIntoTickRequest,
+		RequireBroadcast, RemoteSyncCallRequest, RemoteLoadRequest,
 		MODULE_MESSAGE_RETURN,
 		RemoteSyncCallReturn, RemoteLoadReturn,
 	};
