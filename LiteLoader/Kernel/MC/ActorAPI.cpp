@@ -72,7 +72,7 @@ std::string Actor::getTypeName() const {
 bool Actor::hurtEntity(int damage) {
     char a[16];
     ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
-                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::Void); //ActorDamageCause::Void
+                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::None);
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
