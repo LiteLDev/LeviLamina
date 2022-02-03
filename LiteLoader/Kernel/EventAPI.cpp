@@ -1793,14 +1793,13 @@ THook(bool,
         NpcSceneDialogueData data(*_this, *ac, a5);
         auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
-        HashedString& str = dAccess<HashedString>(actionAt, 144);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
-            HashedString& str = dAccess<HashedString>(actionAt, 152);
+            
             NpcCmdEvent ev{};
             ev.mPlayer = pl;
             ev.mNpc = ac;
-            ev.mCommand = str.getString();
+            ev.mCommand = actionAt->getText();
             if (!ev.call()) 
                 return false;
         }

@@ -102,10 +102,12 @@ ActorUniqueID Actor::getActorUniqueId() const {
 bool Actor::teleport(Vec3 to, int dimID) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, 0, 0, 15);
+    auto rot = getRotation();
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, rot.x, rot.y, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
+
 #include <MC/ItemStack.hpp>
 ItemStack* Actor::getHandSlot() {
     if (isPlayer())
