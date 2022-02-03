@@ -231,6 +231,12 @@ public:
     Player* mPlayer;
 };
 
+class EntityTransformEvent : public EventTemplate<EntityTransformEvent> {
+public:
+    ActorUniqueID* mBeforeEntityUniqueId;
+    Actor* mAfterEntity;
+};
+
 class PlayerSneakEvent : public EventTemplate<PlayerSneakEvent> {
 public:
     Player* mPlayer;
