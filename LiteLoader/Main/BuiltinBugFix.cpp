@@ -13,6 +13,9 @@
 #include <MC/ClientCacheBlobStatusPacket.hpp>
 #include <MC/BinaryStream.hpp>
 
+#include <MC/SharedConstants.hpp>
+#include <MC/PropertiesSettings.hpp>
+
 using namespace LL;
 
 bool ip_information_logged = false;
@@ -110,4 +113,23 @@ THook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor*
         --dAccess<int, 0x1c>(out);
     }
     return original(ac, a2, a3);
+}
+
+THook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings* a1, std::string const& a2)
+{
+    std::cout << a2 << std::endl;
+    auto out = original(a1, "server.fuck");
+    if (true)
+    {
+        //logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
+        DWORD v4Flag, v6Flag;
+        VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, PAGE_READWRITE, &v4Flag);
+        *(unsigned short*)&SharedConstants::NetworkDefaultGamePort = a1->getServerPort();
+        VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, v4Flag, NULL);
+
+        VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, PAGE_READWRITE, &v6Flag);
+        *(unsigned short*)&SharedConstants::NetworkDefaultGamePortv6 = a1->getServerPortv6();
+        VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, v6Flag, NULL);
+    }
+    return out;
 }

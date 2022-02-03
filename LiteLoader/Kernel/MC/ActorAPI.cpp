@@ -55,7 +55,7 @@ bool Actor::isItemActor() const {
 }
 
 bool Actor::isOnGround() const {
-    return !(dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
+    return (dAccess<bool, 472>(this)); // IDA DirectActorProxyImpl<IMobMovementProxy>::isOnGround
 }
 
 std::string Actor::getTypeName() const {
@@ -72,7 +72,7 @@ std::string Actor::getTypeName() const {
 bool Actor::hurtEntity(int damage) {
     char a[16];
     ActorDamageSource& ad = SymCall("??0ActorDamageSource@@QEAA@W4ActorDamageCause@@@Z",
-                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::Void); //ActorDamageCause::Void
+                                    ActorDamageSource&, ActorDamageSource*, ActorDamageCause)((ActorDamageSource*)a, ActorDamageCause::None);
     return ((Mob*)this)->_hurt(ad, damage, true, false);
 }
 
@@ -102,10 +102,12 @@ ActorUniqueID Actor::getActorUniqueId() const {
 bool Actor::teleport(Vec3 to, int dimID) {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, 0, 0, 15);
+    auto rot = getRotation();
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, rot.x, rot.y, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
+
 #include <MC/ItemStack.hpp>
 ItemStack* Actor::getHandSlot() {
     if (isPlayer())

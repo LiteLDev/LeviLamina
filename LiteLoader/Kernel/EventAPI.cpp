@@ -61,6 +61,7 @@ DeclareEventListeners(PlayerUseItemEvent)
 DeclareEventListeners(PlayerUseItemOnEvent)
 DeclareEventListeners(PlayerChangeDimEvent)
 DeclareEventListeners(PlayerJumpEvent)
+DeclareEventListeners(EntityTransformEvent)
 DeclareEventListeners(PlayerSneakEvent)
 DeclareEventListeners(PlayerAttackEvent)
 DeclareEventListeners(PlayerAttackBlockEvent)
@@ -288,6 +289,20 @@ THook(void, "?jumpFromGround@Player@@UEAAXXZ",
     return original(pl);
 }
 
+////////////////// EntityTransform //////////////////
+THook(void, "?maintainOldData@TransformationComponent@@QEAAXAEAVActor@@0AEBUTransformationDescription@@AEBUActorUniqueID@@AEBVLevel@@@Z",
+    void* self, Actor* beforeEntity, Actor* afterEntity, void* a4, ActorUniqueID* aid, Level* level)
+{
+    IF_LISTENED(EntityTransformEvent)
+    {
+        EntityTransformEvent ev{};
+        ev.mBeforeEntityUniqueId = &beforeEntity->getActorUniqueId();
+        ev.mAfterEntity = afterEntity;
+        ev.call();
+    }
+    IF_LISTENED_END(EntityTransformEvent)
+    original(self, beforeEntity, afterEntity, a4, aid, level);
+}
 
 /////////////////// PlayerSneak ///////////////////
 THook(void, "?sendActorSneakChanged@ActorEventCoordinator@@QEAAXAEAVActor@@_N@Z",
@@ -1756,7 +1771,7 @@ THook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEAVPlayer@@H@Z",
 {
     IF_LISTENED(ProjectileSpawnEvent)
     {
-        auto identifier = new char[32];
+        auto identifier = new char[176];
         ProjectileSpawnEvent ev{};
         ev.mShooter = a3;
         ev.mIdentifier = SymCall("??0ActorDefinitionIdentifier@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
@@ -1781,14 +1796,13 @@ THook(bool,
         NpcSceneDialogueData data(*_this, *ac, a5);
         auto& container = data.getActionsContainer();
         auto actionAt = container.getActionAt(a4);
-        HashedString& str = dAccess<HashedString>(actionAt, 144);
         if (actionAt && dAccess<char>(actionAt, 8) == (char)1)
         {
-            HashedString& str = dAccess<HashedString>(actionAt, 152);
+            
             NpcCmdEvent ev{};
             ev.mPlayer = pl;
             ev.mNpc = ac;
-            ev.mCommand = str.getString();
+            ev.mCommand = actionAt->getText();
             if (!ev.call()) 
                 return false;
         }
