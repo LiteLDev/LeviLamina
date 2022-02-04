@@ -27,18 +27,19 @@ namespace LL {
         bool debugMode = false;
         bool colorLog = true;
         int logLevel = 4;
-        ::std::string language = "en";
+        std::string language = "en";
 
         bool enableAutoUpdate = true;
         bool enableCrashLogger = true;
-        ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+        std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
         bool enableSimpleServerLogger = true;
         bool enableFixDisconnectBug = true;
         bool enableFixListenPort = false;
         bool enableAntiGive = true;
         bool enableUnlockCmd = true;
+        bool enableUnoccupyPort19132 = true;
 
-        //Runtime Config
+        // Runtime Config
         SeverStatus serverStatus = SeverStatus::Starting;
     };
     extern LLConfig globalConfig;
