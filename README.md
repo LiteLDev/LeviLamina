@@ -177,8 +177,8 @@ You must accept the Minecraft EULA.
 ### Extra Restrictions & Exceptions
 
 If you provide a server hosting service,you can use this framework for free, but you SHOULD NOT make PRIVATE changes to
-this framework as a selling point. If you fixed or tweaked the code, please pull request, instead of making it private
-for commercial use.
+this framework or as a selling point. If you fixed or tweaked the code, please pull request, instead of making it private
+or using it for commercial propose.
 > Do not do evil.
 
 Although we expected to build an open-source community, but forcing everything open-source will ruin this community. So
