@@ -31,32 +31,31 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
 }
 
 //Patch for CVE-2021-45383
-THook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-      Packet* a1, ReadOnlyBinaryStream* a2)
+TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+      ReadOnlyBinaryStream* a2)
 {
     ReadOnlyBinaryStream pkt(a2->getData(), 0);
     pkt.getUnsignedVarInt();
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
-    return original(a1,a2);
+    return original(this,a2);
 }
 
-THook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", void* a1, void* a2)
+TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", ReadOnlyBinaryStream* a2)
 {
     return (void*)1;
 }
 
 //Fix the listening port twice.
-THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
-      void *_this) {
+TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
     if (globalConfig.enableFixListenPort) {
         if (!ip_information_logged) {
             ip_information_logged = true;
-            return original(_this);
+            return original(this);
         }
         return 0;
     } else {
-        return original(_this);
+        return original(this);
     }
 }
 
@@ -66,10 +65,10 @@ THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
 #include <MC/InventoryAction.hpp>
 #include <MC/IContainerManager.hpp>
 
-THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
-      ServerNetworkHandler &snh, NetworkIdentifier const &netid, InventoryTransactionPacket *pk) {
+TInstanceHook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+      ServerNetworkHandler , NetworkIdentifier const &netid, InventoryTransactionPacket *pk) {
     if (globalConfig.enableAntiGive) {
-        auto *sp = (Player *) snh.getServerPlayer(netid);
+        auto *sp = (Player *) this->getServerPlayer(netid);
         auto *data = (InventoryTransaction *) (*((__int64 *) pk + 10) + 16);
         auto a = dAccess<std::unordered_map<InventorySource *, void *>, 0>(data);
         bool abnormal = false;
@@ -78,7 +77,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
                 auto icm = sp->getContainerManager().lock();
                 if (icm) {
                     auto id = VirtualCall<int>(icm.get(), 0x18);
-                    if ((int) id == 22) return original(snh, netid, pk);
+                    if ((int) id == 22) return original(this, netid, pk);
                 }
                 abnormal = true;
             }
@@ -87,7 +86,7 @@ THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInve
             return nullptr;
         }
     }
-    return original(snh, netid, pk);
+    return original(this, netid, pk);
 }
 
 #include <EventAPI.h>
@@ -98,9 +97,9 @@ void FixBugEvent()
 //fix sleeping drop item
 #include <mc/ItemActor.hpp>
 #include <MC/MovementInterpolator.hpp>
-THook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor* ac,ItemStack* a2, char a3)
+TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor , ItemStack* a2, char a3)
 {
-    auto out = dAccess<MovementInterpolator*,0x510>(ac);
+    auto out = dAccess<MovementInterpolator*,0x510>(this);
     if (!dAccess<bool, 0x24>(out))
     {
         auto num = dAccess<int, 0x1c>(out);
@@ -108,17 +107,15 @@ THook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor*
             if (num == 1)
             {
                 auto v17 = *(Vec2*)((char*)out + 0x0c);
-                ac->setRot(v17);
+                this->setRot(v17);
             }
         --dAccess<int, 0x1c>(out);
     }
-    return original(ac, a2, a3);
+    return original(this, a2, a3);
 }
 
 THook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings* a1, std::string const& a2)
 {
-    std::cout << a2 << std::endl;
-    auto out = original(a1, "server.fuck");
     if (true)
     {
         //logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
@@ -131,5 +128,5 @@ THook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@
         *(unsigned short*)&SharedConstants::NetworkDefaultGamePortv6 = a1->getServerPortv6();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, v6Flag, NULL);
     }
-    return out;
+    return original(a1,a2);
 }
