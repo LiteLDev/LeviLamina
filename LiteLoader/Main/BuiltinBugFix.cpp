@@ -152,17 +152,21 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
     original(this);
     movingViewPlayer = nullptr;
 }
-THook(void, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-      __int64 _this, BlockPos const& pos)
+#include<MC/ChunkViewSource.hpp>
+TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+       BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
 {
-    if (pos.x < -100000000 || pos.y > 100000000)
+    if (a1.x < -100000000 || a1.y > 100000000)
     {
         Player* pl = movingViewPlayer;
-        logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-        pl->setPos(pl->getPosOld());
+        if (pl->isPlayer())
+        {
+            logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
+            pl->setPos(pl->getPosOld());
+        }
+        return 0;
     }
-    else
-    {
-        original(_this, pos);
-    }
+    return original(this, a1,a2,a3,a4);
 }
+
+
