@@ -15,7 +15,6 @@ class RakPeerHelper {
 // Add Member There
 public:
     class IPSupportInterface;
-
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_RAKPEERHELPER

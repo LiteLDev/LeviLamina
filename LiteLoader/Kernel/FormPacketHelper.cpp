@@ -170,8 +170,8 @@ Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id
     return (Player*)handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
-THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-    void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+    NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
     try
     {
@@ -204,5 +204,5 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
         logger.error("In Event: onFormSelected");
     }
 
-    original(_this, id, handler, pPacket);
+    original(this, id, handler, pPacket);
 }
