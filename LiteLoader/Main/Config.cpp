@@ -30,7 +30,7 @@ namespace LL {
                     {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
-                    {"UnoccupyPort19132", {"enabled", conf.enableUnoccupyPort19132}}
+                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}}
                 }
             }
         };
