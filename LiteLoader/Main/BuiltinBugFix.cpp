@@ -143,3 +143,26 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
     Global<PropertiesSettings> = this;
     return out;
 }
+
+// Fix move view crash (ref PlayerAuthInput[MoveView])
+Player* movingViewPlayer = nullptr;
+TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
+{
+    movingViewPlayer = this;
+    original(this);
+    movingViewPlayer = nullptr;
+}
+THook(void, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+      __int64 _this, BlockPos const& pos)
+{
+    if (pos.x < -100000000 || pos.y > 100000000)
+    {
+        Player* pl = movingViewPlayer;
+        logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
+        pl->setPos(pl->getPosOld());
+    }
+    else
+    {
+        original(_this, pos);
+    }
+}
