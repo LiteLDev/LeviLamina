@@ -4,10 +4,11 @@
 #include <string>
 #include <unordered_map>
 
-namespace LL {
+namespace LL
+{
 struct Plugin;
 struct Version;
-}
+} // namespace LL
 
 LIAPI bool RegisterPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
                           std::map<std::string, std::string> others);

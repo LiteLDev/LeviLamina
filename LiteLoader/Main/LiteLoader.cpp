@@ -16,8 +16,10 @@ using namespace std;
 
 Logger logger("LiteLoader");
 
-void FixPluginsLibDir() {  // add plugins folder to path
-    auto *buffer = new WCHAR[8192];
+// Add plugins folder to path
+void FixPluginsLibDir()
+{
+    auto* buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
@@ -26,7 +28,8 @@ void FixPluginsLibDir() {  // add plugins folder to path
     delete[] buffer;
 }
 
-void FixUpCWD() {
+void FixUpCWD()
+{
     string buf;
     buf.assign(8192, '\0');
     GetModuleFileNameA(nullptr, buf.data(), 8192);
@@ -40,8 +43,10 @@ extern bool InitPlayerDatabase();
 
 extern void RegisterSimpleServerLogger();
 
-void CheckDevMode() {
-    if (LL::globalConfig.debugMode) {
+void CheckDevMode()
+{
+    if (LL::globalConfig.debugMode)
+    {
         logger.info("");
         logger.info("================= LiteLoader ================");
         logger.info(" ____             __  __           _      ");
@@ -54,62 +59,58 @@ void CheckDevMode() {
     }
 }
 
-//extern
+// extern
 extern void EndScheduleSystem();
 extern void FixBugEvent();
 
-void LLMain() {
-    //Set global SEH-Exception handler
+void LLMain()
+{
+    // Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    //Prohibit pop-up windows to facilitate automatic restart
+    // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
-    //Disable Output-Sync
+    // Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
-    //Create Plugin Directory
+    // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
-    //Fix problems
+    // Fix problems
     FixUpCWD();
     FixPluginsLibDir();
 
-    //Init LL Logger
+    // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
-    //Load Config
+    // Load Config
     LL::LoadLLConfig();
     InitPlayerDatabase();
 
-    //Rename Window
+    // Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
-    //DebugMode
+    // DebugMode
     CheckDevMode();
 
-    //Builtin CrashLogger
+    // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
-    //Register Myself
-    //LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for bedrock delicated server", LITELOADER_VERSION,
-    //    { {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
-    //});
-
-    //Load plugins
+    // Load plugins
     LL::LoadMain();
 
-    //Register built-in commands
+    // Register built-in commands
     RegisterCommands();
 
-    //Register simple server logger
+    // Register simple server logger
     RegisterSimpleServerLogger();
 
     FixBugEvent();
-    //Register Started
+    // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
@@ -118,19 +119,21 @@ void LLMain() {
         return true;
     });
 
-    //Register Cleanup
+    // Register Cleanup
     Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
         EndScheduleSystem();
         return true;
     });
-
 }
 
 // Call LLMain
-THook(int, "main", int a, void *b) {
-    char **str = static_cast<char **>(b);
-    for (int i = 0; i < a; ++i) {
-        if (strcmp(str[i], "--noColor") == 0) {
+THook(int, "main", int a, void* b)
+{
+    char** str = static_cast<char**>(b);
+    for (int i = 0; i < a; ++i)
+    {
+        if (strcmp(str[i], "--noColor") == 0)
+        {
             LL::commandLineOption.noColorOption = true;
             break;
         }
