@@ -85,3 +85,5 @@ TInstanceHook(int, "?reload@AllowListFile@@QEAA?AW4FileReadResult@@XZ", AllowLis
     }
     return original(this);
 }
+// PropertiesSettings
+// -> BuiltinBugFix.cpp
