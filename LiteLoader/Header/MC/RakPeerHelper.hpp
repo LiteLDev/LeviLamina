@@ -13,6 +13,8 @@ class RakPeerHelper {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    class IPSupportInterface;
 
 #undef AFTER_EXTRA
 
