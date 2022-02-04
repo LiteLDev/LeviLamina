@@ -18,7 +18,7 @@
 
 using namespace LL;
 
-bool ip_information_logged = false;
+bool ipInformationLogged = false;
 
 //Patch for CVE-2021-45384
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
@@ -49,8 +49,8 @@ TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadR
 //Fix the listening port twice.
 TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
     if (globalConfig.enableFixListenPort) {
-        if (!ip_information_logged) {
-            ip_information_logged = true;
+        if (!ipInformationLogged) {
+            ipInformationLogged = true;
             return original(this);
         }
         return 0;
@@ -117,7 +117,7 @@ TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z"
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file)
 {
     auto out = original(this, file);
-    if (true)
+    if (LL::globalConfig.enableUnoccupyPort19132)
     {
         //logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
         DWORD v4Flag, v6Flag;
