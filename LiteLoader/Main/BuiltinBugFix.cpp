@@ -20,17 +20,19 @@ using namespace LL;
 
 bool ipInformationLogged = false;
 
-//Patch for CVE-2021-45384
+// Patch for CVE-2021-45384
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
-              ServerNetworkHandler, NetworkIdentifier *ni, void *packet) {
-    if (globalConfig.enableFixDisconnectBug) {
+              ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
+{
+    if (globalConfig.enableFixDisconnectBug)
+    {
         if (!getServerPlayer(*ni))
             return;
     }
     return original(this, ni, packet);
 }
 
-//Patch for CVE-2021-45383
+// Patch for CVE-2021-45383
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
       ReadOnlyBinaryStream* a2)
 {
@@ -38,50 +40,59 @@ TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4Stream
     pkt.getUnsignedVarInt();
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
-    return original(this,a2);
+    return original(this, a2);
 }
-
 TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", ReadOnlyBinaryStream* a2)
 {
     return (void*)1;
 }
 
-//Fix the listening port twice.
-TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ") {
-    if (globalConfig.enableFixListenPort) {
-        if (!ipInformationLogged) {
+// Fix the listening port twice
+TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
+{
+    if (globalConfig.enableFixListenPort)
+    {
+        if (!ipInformationLogged)
+        {
             ipInformationLogged = true;
             return original(this);
         }
         return 0;
-    } else {
+    }
+    else
+    {
         return original(this);
     }
 }
 
-// Fix abnormal items.
-#include <mc/InventorySource.hpp>
+// Fix abnormal items
+#include <MC/InventorySource.hpp>
 #include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
 #include <MC/IContainerManager.hpp>
 
 TInstanceHook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
-      ServerNetworkHandler , NetworkIdentifier const &netid, InventoryTransactionPacket *pk) {
-    if (globalConfig.enableAntiGive) {
-        auto *sp = (Player *) this->getServerPlayer(netid);
-        auto *data = (InventoryTransaction *) (*((__int64 *) pk + 10) + 16);
-        auto a = dAccess<std::unordered_map<InventorySource *, void *>, 0>(data);
+              ServerNetworkHandler, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)
+{
+    if (globalConfig.enableAntiGive)
+    {
+        auto sp = (Player*)this->getServerPlayer(netid);
+        auto data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
+        auto a = dAccess<std::unordered_map<InventorySource*, void*>, 0>(data);
         bool abnormal = false;
-        for (auto &i: a)
-            if ((int) *(&i.first) == 99999) {
+        for (auto& i : a)
+            if ((int)*(&i.first) == 99999)
+            {
                 auto icm = sp->getContainerManager().lock();
-                if (icm) {
+                if (icm)
+                {
                     auto id = VirtualCall<int>(icm.get(), 0x18);
-                    if ((int) id == 22) return original(this, netid, pk);
+                    if ((int)id == 22) return original(this, netid, pk);
                 }
                 abnormal = true;
             }
-        if (abnormal) {
+        if (abnormal)
+        {
             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
             return nullptr;
         }
@@ -94,21 +105,20 @@ void FixBugEvent()
 {
 }
 
-//fix sleeping drop item
+// Fix sleeping drop item
 #include <mc/ItemActor.hpp>
 #include <MC/MovementInterpolator.hpp>
 TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor , ItemStack* a2, char a3)
 {
-    auto out = dAccess<MovementInterpolator*,0x510>(this);
+    auto out = dAccess<MovementInterpolator*, 0x510>(this);
     if (!dAccess<bool, 0x24>(out))
     {
         auto num = dAccess<int, 0x1c>(out);
-        if (num > 0)
-            if (num == 1)
-            {
-                auto v17 = *(Vec2*)((char*)out + 0x0c);
-                this->setRot(v17);
-            }
+        if (num > 0 && num == 1)
+        {
+            auto v17 = *(Vec2*)((char*)out + 0x0c);
+            this->setRot(v17);
+        }
         --dAccess<int, 0x1c>(out);
     }
     return original(this, a2, a3);
