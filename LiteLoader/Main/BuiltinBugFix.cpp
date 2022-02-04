@@ -106,9 +106,9 @@ void FixBugEvent()
 }
 
 // Fix sleeping drop item
-#include <mc/ItemActor.hpp>
+#include <MC/ItemActor.hpp>
 #include <MC/MovementInterpolator.hpp>
-TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor , ItemStack* a2, char a3)
+TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor, ItemStack* a2, char a3)
 {
     auto out = dAccess<MovementInterpolator*, 0x510>(this);
     if (!dAccess<bool, 0x24>(out))

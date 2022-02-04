@@ -11,7 +11,8 @@ Logger crashLogger("CrashLogger");
 
 bool LL::StartCrashLoggerProcess()
 {
-    if (IsDebuggerPresent()) {
+    if (IsDebuggerPresent())
+    {
         crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
         return true;
     }
@@ -29,7 +30,8 @@ bool LL::StartCrashLoggerProcess()
     wchar_t daemonPath[MAX_PATH];
 
     wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
-    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi))
+    {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
@@ -81,7 +83,7 @@ void LL::InitCrashLogger(bool enableCrashLogger)
         return;
     }
 
-    //Start CrashLogger
+    // Start CrashLogger
     if (StartCrashLoggerProcess()) {
         //Logger::Info("CrashLogger Daemon Process attached.");
     }

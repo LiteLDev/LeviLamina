@@ -5,7 +5,7 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 
 
 /////////////////////// SEH Protection ///////////////////////
@@ -16,40 +16,46 @@ constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL {
-    struct CommandLineOption {
-        bool noColorOption = false;
-    };
-    enum class SeverStatus {
-        Starting, Running, Stopping
-    };
-    struct LLConfig {
-        bool debugMode = false;
-        bool colorLog = true;
-        int logLevel = 4;
-        std::string language = "en";
+namespace LL
+{
+struct CommandLineOption
+{
+    bool noColorOption = false;
+};
+enum class SeverStatus
+{
+    Starting,
+    Running,
+    Stopping
+};
+struct LLConfig
+{
+    bool debugMode = false;
+    bool colorLog = true;
+    int logLevel = 4;
+    std::string language = "en";
 
-        bool enableAutoUpdate = true;
-        bool enableCrashLogger = true;
-        std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
-        bool enableSimpleServerLogger = true;
-        bool enableFixDisconnectBug = true;
-        bool enableFixListenPort = false;
-        bool enableAntiGive = true;
-        bool enableUnlockCmd = true;
-        bool enableUnoccupyPort19132 = true;
+    bool enableAutoUpdate = true;
+    bool enableCrashLogger = true;
+    std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+    bool enableSimpleServerLogger = true;
+    bool enableFixDisconnectBug = true;
+    bool enableFixListenPort = false;
+    bool enableAntiGive = true;
+    bool enableUnlockCmd = true;
+    bool enableUnoccupyPort19132 = true;
 
-        // Runtime Config
-        SeverStatus serverStatus = SeverStatus::Starting;
-    };
-    extern LLConfig globalConfig;
-    extern CommandLineOption commandLineOption;
+    // Runtime Config
+    SeverStatus serverStatus = SeverStatus::Starting;
+};
+extern LLConfig globalConfig;
+extern CommandLineOption commandLineOption;
 
-    void inline to_json(nlohmann::json &j, const LLConfig &conf);
+void inline to_json(nlohmann::json& j, const LLConfig& conf);
 
-    void inline from_json(const nlohmann::json &j, LLConfig &conf);
+void inline from_json(const nlohmann::json& j, LLConfig& conf);
 
-    bool LoadLLConfig();
+bool LoadLLConfig();
 } // namespace LL
 
 /////////////////////// LL AutoUpgrade ///////////////////////
