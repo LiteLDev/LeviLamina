@@ -213,12 +213,12 @@ bool Level::runcmd(const string& cmd) {
     return MinecraftCommands::_runcmd(&origin, cmd);
 }
 
-std::unordered_map<void*, string*> origin_res;
+std::unordered_map<void*, string*> resultOfOrigin;
 
 std::pair<bool, string> Level::runcmdEx(const string& cmd) {
     ServerCommandOrigin origin;
     string val;
-    origin_res[&origin] = &val;
+    resultOfOrigin[&origin] = &val;
     bool rv = MinecraftCommands::_runcmd(&origin, cmd);
     return {rv, std::move(val)};
 }

@@ -27,9 +27,8 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     return str;
 }
 
-//Standardize BDS's output
-THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
-      int, const char* ts)
+// Standardize BDS's output
+THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int, const char* ts)
 {
     string input = ts;
     std::string output = std::regex_replace(input, std::regex("\\[.*?\\]"), std::string("$1"));
@@ -60,17 +59,17 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
                    void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
 }
 
-extern std::unordered_map<void*, string*> origin_res;
-THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-      void* thi, void* ori, void* out)
+extern std::unordered_map<void*, string*> resultOfOrigin;
+TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
+                       void* ori, void* out)
 {
-    auto it = origin_res.find(ori);
-    if (it == origin_res.end())
+    auto it = resultOfOrigin.find(ori);
+    if (it == resultOfOrigin.end())
     {
         std::stringbuf sbuf;
         auto oBuf = std::cout.rdbuf();
         std::cout.rdbuf(&sbuf);
-        auto rv = original(thi, ori, out);
+        auto rv = original(this, ori, out);
         std::cout.rdbuf(oBuf);
         auto str = sbuf.str();
         std::istringstream iss(str);
@@ -78,6 +77,7 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
         while (getline(iss, line))
         {
             size_t pos = 0;
+            // Remove '§x' in the output
             while ((pos = line.find("§")) != string::npos)
             {
                 line.erase(pos, 3);
@@ -89,11 +89,11 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
     std::stringbuf sbuf;
     auto oBuf = std::cout.rdbuf();
     std::cout.rdbuf(&sbuf);
-    auto rv = original(thi, ori, out);
+    auto rv = original(this, ori, out);
     std::cout.rdbuf(oBuf);
     it->second->assign(sbuf.str());
     while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
         it->second->pop_back();
-    origin_res.erase(it);
+    resultOfOrigin.erase(it);
     return rv;
 }
