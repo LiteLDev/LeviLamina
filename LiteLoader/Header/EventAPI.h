@@ -599,4 +599,11 @@ class ConsoleOutputEvent : public EventTemplate<ConsoleOutputEvent> {
 public:
     std::string mOutput;
 };
+
+class PlayerPickupItemEvent : public EventTemplate<PlayerPickupItemEvent>
+{
+public:
+  Player* mPlayer;
+  Actor* mActor; //arrow,trident,diamond and e.t.c items
+};
 }; // namespace Event
