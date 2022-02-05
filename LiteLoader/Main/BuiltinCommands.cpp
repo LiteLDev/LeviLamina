@@ -23,13 +23,11 @@ public:
         if ((unsigned short)ori.getPermissionsLevel() >= CommandPermissionLevel::GameMasters)
         {
             output.success("The server is running LiteLoaderBDS " + LL::getLoaderVersionString() +
-                               "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
-                           {});
+                           "(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")");
         }
         else
         {
-            output.success("The server is running LiteLoaderBDS(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")",
-                           {});
+            output.success("The server is running LiteLoaderBDS(" + LL::getBdsVersion() + " Protocol: " + std::to_string(LL::getServerProtocolVersion()) + ")");
         }
     }
 
@@ -72,11 +70,11 @@ public:
                 }
                 auto text = oss.str();
                 text.pop_back();
-                output.success(text, {});
+                output.success(text);
             }
             else
             {
-                output.error("Plugin <" + PluginName + "> is not found!", {});
+                output.error("Plugin <" + PluginName + "> is not found!");
             }
             return;
         }
@@ -94,7 +92,7 @@ public:
                 << std::endl;
         }
         oss << "* Send command \"plugins <Plugin Name>\" for more information";
-        output.success(oss.str(), {});
+        output.success(oss.str());
     }
 
     static void addPluginListValues(string name)
@@ -178,8 +176,7 @@ class TeleportDimensionCommand : public Command
         auto pos = getTargetPos(ori, actor);
         actor->teleport(pos, (int)DimensionId);
         output.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z),
-                       {});
+                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z));
         return true;
     }
 
@@ -221,14 +218,14 @@ public:
     {
         if ((int)DimensionId < 0 || (int)DimensionId > 2)
         {
-            output.error("Invalid DimensionId: " + std::to_string((int)DimensionId), {});
+            output.error("Invalid DimensionId: " + std::to_string((int)DimensionId));
             return;
         }
         if (Victim_isSet)
         {
             auto result = Victim.results(ori);
             if (result.empty())
-                output.error("No Actor Specific", {});
+                output.error("No Actor Specific");
             else if (result.count() == 1)
                 teleportTarget(ori, output, *result.begin());
             else
@@ -238,7 +235,7 @@ public:
         {
             auto actor = ori.getEntity();
             if (!actor)
-                output.error("No Actor Specific", {});
+                output.error("No Actor Specific");
             else
                 teleportTarget(ori, output, actor);
         }

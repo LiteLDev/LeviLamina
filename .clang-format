@@ -1,3 +1,4 @@
+# Documents: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
 Language: Cpp
 # BasedOnStyle: LLVM
 AccessModifierOffset: -4
@@ -13,6 +14,8 @@ AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: Inline
 AllowShortIfStatementsOnASingleLine: true
 AllowShortLoopsOnASingleLine: true 
+AllowShortFunctionsOnASingleLine: false
+AllowShortLambdasOnASingleLine: true
 AlwaysBreakAfterDefinitionReturnType: None
 ColumnLimit: 0
 CommentPragmas: '^ IWYU pragma:'
@@ -20,7 +23,6 @@ PointerAlignment: Left
 IndentWidth: 4
 SortIncludes: false
 MaxEmptyLinesToKeep: 2
-AllowShortFunctionsOnASingleLine: false
 SpacesInSquareBrackets: false
 SpacesInParentheses : false
 SpaceBeforeAssignmentOperators: true
@@ -51,7 +53,7 @@ BraceWrapping:
   AfterStruct: true
   # union定义后面
   AfterUnion: true
-  # extern 导出块后面
+  # extern导出块后面
   AfterExternBlock: false
   # catch之前
   BeforeCatch: true
@@ -63,5 +65,5 @@ BraceWrapping:
   SplitEmptyFunction: true
   # 空记录体(struct/class/union)的大括号是否可以在一行
   SplitEmptyRecord: true
-  # 空名字空间的大括号是否可以在一行
+  # 空namespace的大括号是否可以在一行
   SplitEmptyNamespace: true
