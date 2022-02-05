@@ -116,6 +116,7 @@ DeclareEventListeners(PostInitEvent)
 DeclareEventListeners(ServerStartedEvent)
 DeclareEventListeners(ServerStoppedEvent)
 DeclareEventListeners(RegCmdEvent)
+DeclareEventListeners(PlayerPickupItemEvent)
 
 #ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)    \
@@ -1952,4 +1953,18 @@ THook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container* a1, int a2, char a3,
         IF_LISTENED_END(PlayerDropItemEvent)
     }
     return original(a1, a2, a3,a4,a5);
+}
+
+THook(char, "?take@Player@@QEAA_NAEAVActor@@HH@Z", Player* a1, Actor& a2, int a3, int a4)
+{
+   IF_LISTENED(PlayerDropItemEvent)
+   {
+      PlayerPickupItemEvent ev{};
+      ev.mPlayer = a1;
+      ev.mActor = &a2; //check nbt for this actor
+      if (!ev.call())
+        return 0;
+   }
+   IF_LISTENED_END(PlayerDropItemEvent)
+   return original(a1,a2,a3,a4);
 }
