@@ -121,6 +121,7 @@ DeclareEventListeners(PostInitEvent);
 DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(ServerStoppedEvent);
 DeclareEventListeners(RegCmdEvent);
+DeclareEventListeners(PlayerBedEnterEvent);
 
 #ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)    \
@@ -1992,4 +1993,19 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container, int a2, char
         IF_LISTENED_END(PlayerDropItemEvent)
     }
     return original(this, a2, a3,a4,a5);
+}
+
+THook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z", Player* a1,BlockPos const& a2)
+{
+  auto bl = Level::getBlockInstance(a2,a1->getDimensionId());
+  IF_LISTENED(PlayeBedEnterEvent)
+  {
+     PlayerBedEnterEvent ev{};
+     ev.mPlayer = a1;
+     ev.mBlockInstance = bl;
+     if (!ev.call())
+        return 0;
+  }
+  IF_LISTENED_END(PlayerBedEnterEvent)
+  return original(a1,a2);
 }
