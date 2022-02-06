@@ -702,12 +702,14 @@ public:
     
 class PlayerBedEnterEvent : public EventTemplate<ConsoleOutputEvent> 
 {
+public:
   Player* mPlayer;
   BlockInstance* mBlockInstance;
 };
     
 class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
 {
+public:
   Player* mPlayer;
   ItemStack* mItemStack;
   BlockInstance* mBlockInstance;
@@ -715,12 +717,14 @@ class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
     
 class PlayerTameEntityEvent : public EventTemplate<ConsoleOutputEvent>
 {
+public:
   Player* mPlayer;
   Acctor* mActor;
 };
 
 class PlayerTargetEntityEvent : public EventTemplate<ConsoleOutputEvent>
 {
+public:
   Player* mPlayer;
   Actor* mActor;
 };    
