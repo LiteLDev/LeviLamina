@@ -74,9 +74,6 @@ void CheckRunningBDS()
             if (sz = GetModuleFileNameEx(han, NULL, buf, 8192))
             {
                 std::wstring path{buf, sz};
-                wcout << current << endl;
-                cout << sz << endl;
-                wcout << path << endl;
                 if (current == path)
                 {
                     logger.error("Detected the existence of another bds process with the same path!");
