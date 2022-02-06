@@ -1996,19 +1996,19 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container, int a2, char
     return original(this, a2, a3,a4,a5);
 }
 
-THook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z", Player* a1,BlockPos const& a2)
+TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z", Player, BlockPos const& blk)
 {
-  auto bl = Level::getBlockInstance(a2,a1->getDimensionId());
-  IF_LISTENED(PlayeBedEnterEvent)
-  {
-     PlayerBedEnterEvent ev{};
-     ev.mPlayer = a1;
-     ev.mBlockInstance = bl;
-     if (!ev.call())
-        return 0;
-  }
-  IF_LISTENED_END(PlayerBedEnterEvent)
-  return original(a1,a2);
+    auto bl = Level::getBlockInstance(blk, getDimensionId());
+    IF_LISTENED(PlayerBedEnterEvent)
+    {
+        PlayerBedEnterEvent ev{};
+        ev.mPlayer = this;
+        ev.mBlockInstance = &bl;
+        if (!ev.call())
+            return 0;
+    }
+    IF_LISTENED_END(PlayerBedEnterEvent)
+    return original(this, blk);
 }
 
 THook(void, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem* _this, ItemStack& s, Actor& a, const BlockPos& b)
