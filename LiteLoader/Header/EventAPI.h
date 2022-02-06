@@ -700,9 +700,16 @@ public:
     std::string mOutput;
 };
     
-class PlayerBedEnterEvent : : public EventTemplate<ConsoleOutputEvent> 
+class PlayerBedEnterEvent : public EventTemplate<ConsoleOutputEvent> 
 {
   Player* mPlayer;
   BlockInstance* mBlockInstance;
+};
+    
+class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
+{
+  Player* mPlayer;
+  ItemStack* mItemStack;
+  Block* mBlock;
 };
 }; // namespace Event
