@@ -2013,14 +2013,44 @@ THook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
 
 THook(void, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem* _this, ItemStack& s, Actor& a, const BlockPos& b)
 {
+    auto bl = Level::getBlockInstance(b,a.getDimensionId());;
     IF_LISTENED(PlayerBucketFillEvent)
     {
         PlayerBucketFillEvent ev{};
-        ev.mPlayer = a;
-       
+        ev.mPlayer = &a;
+        ev.mItemStack = &s;
+        ev.mBlockInstance = bl;
         if (!ev.call())
             return 0;
     }
     IF_LISTENED_END(PlayerBucketFillEvent)
     return original(_this,s,a,b);
+}
+
+THook(void, "?_becomeTame@TameableComponent@@AEAAXAEAVActor@@@Z", TameableComponent* _this, Actor& act)
+{
+    IF_LISTENED(PlayerTameEntityEvent)
+    {
+        PlayerTameEntityEvent ev{};
+        ev.mPlayer = act.getPlayerOwner();
+        ev.mActor = act;
+        if (!ev.call())
+            return 0;
+    }
+    IF_LISTENED_END(PlayerTameEntityEvent)
+    return original(_this,act);
+}
+
+THook(bool, "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z", ServerPlayer* _this, Actor* mob)
+{
+    IF_LISTENED(PlayerTargetEntityEvent)
+    {
+        PlayerTameEntityEvent ev{};
+        ev.mPlayer = _this;
+        ev.mActor = mob;
+        if (!ev.call())
+            return 0;
+    }
+    IF_LISTENED_END(PlayerTargetEntityEvent)
+    return original(_this,mob);
 }
