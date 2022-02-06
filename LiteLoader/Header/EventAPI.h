@@ -700,14 +700,14 @@ public:
     std::string mOutput;
 };
     
-class PlayerBedEnterEvent : public EventTemplate<ConsoleOutputEvent> 
+class PlayerBedEnterEvent : public EventTemplate<PlayerBedEnterEvent> 
 {
 public:
   Player* mPlayer;
   BlockInstance* mBlockInstance;
 };
     
-class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
+class PlayerBucketFillEvent : public EventTemplate<PlayerBucketFillEvent>
 {
 public:
   Player* mPlayer;
@@ -715,14 +715,14 @@ public:
   BlockInstance* mBlockInstance;
 };
     
-class PlayerTameEntityEvent : public EventTemplate<ConsoleOutputEvent>
+class PlayerTameEntityEvent : public EventTemplate<PlayerTameEntityEvent>
 {
 public:
   Player* mPlayer;
-  Acctor* mActor;
+  Actor* mActor;
 };
 
-class PlayerTargetEntityEvent : public EventTemplate<ConsoleOutputEvent>
+class PlayerTargetEntityEvent : public EventTemplate<PlayerTargetEntityEvent>
 {
 public:
   Player* mPlayer;
