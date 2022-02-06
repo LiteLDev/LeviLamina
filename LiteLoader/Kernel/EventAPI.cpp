@@ -2011,16 +2011,16 @@ THook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
   return original(a1,a2);
 }
 
-THook(bool, "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z", ServerPlayer* _this, Actor* mob)
+THook(void, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockPos@@@Z", BucketItem* _this, ItemStack& s, Actor& a, const BlockPos& b)
 {
     IF_LISTENED(PlayerBucketFillEvent)
     {
         PlayerBucketFillEvent ev{};
-        ev.mPlayer = _this;
-        ev.mActor = mob;
+        ev.mPlayer = a;
+       
         if (!ev.call())
             return 0;
     }
     IF_LISTENED_END(PlayerBucketFillEvent)
-    return original(_this,mob);
+    return original(_this,s,a,b);
 }
