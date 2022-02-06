@@ -1957,7 +1957,7 @@ THook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container* a1, int a2, char a3,
 
 THook(char, "?take@Player@@QEAA_NAEAVActor@@HH@Z", Player* a1, Actor& a2, int a3, int a4)
 {
-   IF_LISTENED(PlayerDropItemEvent)
+   IF_LISTENED(PlayerPickupItemEvent)
    {
       PlayerPickupItemEvent ev{};
       ev.mPlayer = a1;
@@ -1965,6 +1965,6 @@ THook(char, "?take@Player@@QEAA_NAEAVActor@@HH@Z", Player* a1, Actor& a2, int a3
       if (!ev.call())
         return 0;
    }
-   IF_LISTENED_END(PlayerDropItemEvent)
+   IF_LISTENED_END(PlayerPickupItemEvent)
    return original(a1,a2,a3,a4);
 }
