@@ -710,7 +710,7 @@ class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
 {
   Player* mPlayer;
   ItemStack* mItemStack;
-  Block* mBlock;
+  BlockInstance* mBlockInstance;
 };
     
 class PlayerTameEntityEvent : public EventTemplate<ConsoleOutputEvent>
