@@ -712,4 +712,16 @@ class PlayerBucketFillEvent : public EventTemplate<ConsoleOutputEvent>
   ItemStack* mItemStack;
   Block* mBlock;
 };
+    
+class PlayerTameEntityEvent : public EventTemplate<ConsoleOutputEvent>
+{
+  Player* mPlayer;
+  Acctor* mActor;
+};
+
+class PlayerTargetEntityEvent : public EventTemplate<ConsoleOutputEvent>
+{
+  Player* mPlayer;
+  Actor* mActor;
+};    
 }; // namespace Event
