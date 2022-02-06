@@ -123,6 +123,8 @@ DeclareEventListeners(ServerStoppedEvent);
 DeclareEventListeners(RegCmdEvent);
 DeclareEventListeners(PlayerBedEnterEvent);
 DeclareEventListeners(PlayerBucketFillEvent);
+DeclareEventListeners(PlayerTameEntityEvent);
+DeclareEventListeners(PlayerTargetEntityEvent);
 
 #ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)    \
@@ -2017,8 +2019,8 @@ THook(void, "?_takeLiquid@BucketItem@@AEBA_NAEAVItemStack@@AEAVActor@@AEBVBlockP
     IF_LISTENED(PlayerBucketFillEvent)
     {
         PlayerBucketFillEvent ev{};
-        ev.mPlayer = &a;
-        ev.mItemStack = &s;
+        ev.mPlayer = (Player*)&a;
+        ev.mItemStack = (ItemStack*)&s;
         ev.mBlockInstance = bl;
         if (!ev.call())
             return 0;
@@ -2046,7 +2048,7 @@ THook(bool, "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z", ServerPlayer* _t
     IF_LISTENED(PlayerTargetEntityEvent)
     {
         PlayerTameEntityEvent ev{};
-        ev.mPlayer = _this;
+        ev.mPlayer = (Player*)_this;
         ev.mActor = mob;
         if (!ev.call())
             return 0;
