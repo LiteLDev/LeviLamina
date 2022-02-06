@@ -122,6 +122,7 @@ DeclareEventListeners(ServerStartedEvent);
 DeclareEventListeners(ServerStoppedEvent);
 DeclareEventListeners(RegCmdEvent);
 DeclareEventListeners(PlayerBedEnterEvent);
+DeclareEventListeners(PlayerBucketFillEvent);
 
 #ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)    \
@@ -2008,4 +2009,18 @@ THook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z
   }
   IF_LISTENED_END(PlayerBedEnterEvent)
   return original(a1,a2);
+}
+
+THook(bool, "?isValidTarget@ServerPlayer@@UEBA_NPEAVActor@@@Z", ServerPlayer* _this, Actor* mob)
+{
+    IF_LISTENED(PlayerBucketFillEvent)
+    {
+        PlayerBucketFillEvent ev{};
+        ev.mPlayer = _this;
+        ev.mActor = mob;
+        if (!ev.call())
+            return 0;
+    }
+    IF_LISTENED_END(PlayerBucketFillEvent)
+    return original(_this,mob);
 }
