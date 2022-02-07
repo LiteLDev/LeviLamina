@@ -1,6 +1,5 @@
 #include <Global.h>
 #include <FormUI.h>
-#include <GuiAPI.h>
 #include <LLAPI.h>
 
 #include <Impl/FormPacketHelper.h>
@@ -187,7 +186,6 @@ TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFo
                 data.pop_back();
 
             HandleFormPacket(sp, formId, data);
-            GUIcallbcak(sp, formId, data);
         }
     }
     catch (const seh_exception& e)
