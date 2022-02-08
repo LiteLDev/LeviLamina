@@ -63,32 +63,35 @@ void CheckRunningBDS()
     std::wstring current{buf, sz}; // Copy
     delete[] buf;
     buf = 0;
-    // Get full path
+    // Check the BDS process paths
     for (auto& pid : pids) {
         auto buf = new WCHAR[8196];
-        auto han = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
-        if (han)
+        // Open process handle
+        auto handle = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ | PROCESS_TERMINATE, false, pid);
+        if (handle)
         {
             DWORD sz = 0;
             buf = new WCHAR[8192];
-            if (sz = GetModuleFileNameEx(han, NULL, buf, 8192))
+            // Get the full path of the process
+            if (sz = GetModuleFileNameEx(handle, NULL, buf, 8192))
             {
                 std::wstring path{buf, sz};
                 if (current == path)
                 {
                     logger.error("Detected the existence of another bds process with the same path!");
                     logger.error("This may cause the network port and the level to be occupied");
-                    logger.error("Do you want to kill the process? PID {} (y=Yes,n=No)", pid);
+                    logger.error("Do you want to terminate the process with PID {}?  (y=Yes, n=No)", pid);
                     char ch;
                     cin >> ch;
                     if (ch == 'y' || ch == 'Y')
                     {
-                        auto cmd = "taskkill /F /PID " + std::to_string(pid);
-                        system(cmd.c_str());
+                        //auto cmd = "taskkill /F /PID " + std::to_string(pid);
+                        //system(cmd.c_str());
+                        TerminateProcess(handle, 1);
                     }
                 }
             }
-            CloseHandle(han);
+            CloseHandle(handle);
             delete[] buf;
         }
     }
