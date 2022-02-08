@@ -34,7 +34,7 @@ public:
     /*7*/ virtual int size() const;
     /*8*/ virtual class mce::UUID const& getId() const;
     /*9*/ virtual class ItemPack const& getItemPack() const;
-    /*10*/ virtual bool isMultiRecipe() const;
+    /*10*/ virtual void __unk_vfn_0();
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
     inline  ~ShapelessRecipe(){

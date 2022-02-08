@@ -25,11 +25,19 @@ public:
 
 public:
     /*0*/ virtual ~MaterialReducerOutputValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*6*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*
+    inline bool canDestroy(class ContainerScreenContext const& a0) const{
+        bool (MaterialReducerOutputValidation::*rv)(class ContainerScreenContext const&) const;
+        *((void**)&rv) = dlsym("?canDestroy@MaterialReducerOutputValidation@@UEBA_NAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+    }
+    */
 
 protected:
 

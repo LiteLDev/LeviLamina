@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct KnockBackEvent {
+class KnockBackEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct KnockBackEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_KNOCKBACKEVENT
 public:
-    struct KnockBackEvent& operator=(struct KnockBackEvent const&) = delete;
-    KnockBackEvent(struct KnockBackEvent const&) = delete;
+    class KnockBackEvent& operator=(class KnockBackEvent const&) = delete;
+    KnockBackEvent(class KnockBackEvent const&) = delete;
     KnockBackEvent() = delete;
 #endif
 

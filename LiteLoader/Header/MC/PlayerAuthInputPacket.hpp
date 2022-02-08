@@ -29,7 +29,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
+    /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~PlayerAuthInputPacket(){
@@ -41,6 +41,7 @@ public:
     MCAPI PlayerAuthInputPacket(class PlayerAuthInputPacket&&);
     MCAPI PlayerAuthInputPacket();
     MCAPI bool getInput(enum PlayerAuthInputPacket::InputData) const;
+    MCAPI class PlayerAuthInputPacket& operator=(class PlayerAuthInputPacket&&);
     MCAPI struct PlayerActionComponent readIntoComponent() const;
     MCAPI void setInput(enum PlayerAuthInputPacket::InputData, bool);
     MCAPI class PlayerAuthInputPacket takeCopy() const;

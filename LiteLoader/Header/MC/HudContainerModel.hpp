@@ -32,14 +32,21 @@ public:
     /*5*/ virtual std::vector<class ItemStack> const& getItems() const;
     /*6*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual bool isValid();
-    /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual void __unk_vfn_3();
-    /*11*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_2();
+    /*9*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void __unk_vfn_4();
+    /*11*/ virtual void __unk_vfn_5();
     /*12*/ virtual std::string const& getItemGroupName(int) const;
-    /*13*/ virtual void __unk_vfn_5();
+    /*13*/ virtual void __unk_vfn_6();
     /*14*/ virtual class Container* _getContainer() const;
     /*15*/ virtual int _getContainerOffset() const;
+    /*
+    inline bool isValid(){
+        bool (HudContainerModel::*rv)();
+        *((void**)&rv) = dlsym("?isValid@HudContainerModel@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

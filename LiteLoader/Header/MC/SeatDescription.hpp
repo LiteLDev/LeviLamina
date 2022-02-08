@@ -25,6 +25,7 @@ public:
     MCAPI void addRotationExpressionNode(class ExpressionNode const&);
     MCAPI struct SeatDescription& operator=(struct SeatDescription const&);
     MCAPI struct SeatDescription& operator=(struct SeatDescription&&);
+    MCAPI bool operator==(struct SeatDescription const&) const;
     MCAPI ~SeatDescription();
 
 protected:

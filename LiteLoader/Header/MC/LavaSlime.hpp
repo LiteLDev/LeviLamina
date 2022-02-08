@@ -27,84 +27,100 @@ public:
 public:
     /*0*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*1*/ virtual ~LavaSlime();
-    /*2*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*3*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
     /*4*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual float getRidingHeight();
-    /*7*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void lerpMotion(class Vec3 const&);
+    /*7*/ virtual float getRidingHeight();
     /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual bool isInLava() const;
-    /*10*/ virtual float getCameraOffset() const;
-    /*11*/ virtual void __unk_vfn_4();
-    /*12*/ virtual float getBrightness(float) const;
-    /*13*/ virtual void __unk_vfn_5();
-    /*14*/ virtual void __unk_vfn_6();
-    /*15*/ virtual void __unk_vfn_7();
-    /*16*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
-    /*17*/ virtual bool isOnFire() const;
-    /*18*/ virtual void __unk_vfn_8();
-    /*19*/ virtual void __unk_vfn_9();
-    /*20*/ virtual void __unk_vfn_10();
-    /*21*/ virtual void __unk_vfn_11();
-    /*22*/ virtual class Actor* findAttackTarget();
-    /*23*/ virtual bool isValidTarget(class Actor*) const;
-    /*24*/ virtual void adjustDamageAmount(int&) const;
-    /*25*/ virtual void onTame();
-    /*26*/ virtual void onFailedTame();
-    /*27*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*28*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*29*/ virtual float getPickRadius();
-    /*30*/ virtual void awardKillScore(class Actor&, int);
-    /*31*/ virtual class HashedString const& queryEntityRenderer() const;
-    /*32*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*33*/ virtual int getPortalWaitTime() const;
-    /*34*/ virtual bool canChangeDimensions() const;
-    /*35*/ virtual void __unk_vfn_12();
-    /*36*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*37*/ virtual bool canPickupItem(class ItemStack const&) const;
-    /*38*/ virtual bool canBePulledIntoVehicle() const;
-    /*39*/ virtual void __unk_vfn_13();
-    /*40*/ virtual bool canSynchronizeNewEntity() const;
-    /*41*/ virtual void __unk_vfn_14();
-    /*42*/ virtual void __unk_vfn_15();
-    /*43*/ virtual bool isWorldBuilder() const;
-    /*44*/ virtual void __unk_vfn_16();
-    /*45*/ virtual bool isAdventure() const;
-    /*46*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*47*/ virtual void setAuxValue(int);
-    /*48*/ virtual void stopSpinAttack();
-    /*49*/ virtual void __unk_vfn_17();
-    /*50*/ virtual void __unk_vfn_18();
-    /*51*/ virtual void __unk_vfn_19();
-    /*52*/ virtual void __unk_vfn_20();
-    /*53*/ virtual void __unk_vfn_21();
-    /*54*/ virtual void spawnAnim();
-    /*55*/ virtual void aiStep();
-    /*56*/ virtual bool checkSpawnRules(bool);
-    /*57*/ virtual int getItemUseDuration() const;
-    /*58*/ virtual float getItemUseStartupProgress() const;
-    /*59*/ virtual float getItemUseIntervalProgress() const;
-    /*60*/ virtual void __unk_vfn_22();
-    /*61*/ virtual bool isAlliedTo(class Mob*);
-    /*62*/ virtual void __unk_vfn_23();
-    /*63*/ virtual int getArmorValue();
-    /*64*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*65*/ virtual void onBorn(class Actor&, class Actor&);
-    /*66*/ virtual int getAttackTime();
-    /*67*/ virtual void __unk_vfn_24();
-    /*68*/ virtual void jumpFromGround();
-    /*69*/ virtual void _serverAiMobStep();
-    /*70*/ virtual void __unk_vfn_25();
-    /*71*/ virtual bool isDarkEnoughToSpawn() const;
-    /*72*/ virtual bool canDealDamage();
-    /*73*/ virtual bool doPlayLandSound();
-    /*74*/ virtual void decreaseSquish();
-    /*75*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
+    /*9*/ virtual void __unk_vfn_4();
+    /*10*/ virtual void __unk_vfn_5();
+    /*11*/ virtual float getCameraOffset() const;
+    /*12*/ virtual void __unk_vfn_6();
+    /*13*/ virtual float getBrightness(float) const;
+    /*14*/ virtual void __unk_vfn_7();
+    /*15*/ virtual void __unk_vfn_8();
+    /*16*/ virtual void __unk_vfn_9();
+    /*17*/ virtual void __unk_vfn_10();
+    /*18*/ virtual void __unk_vfn_11();
+    /*19*/ virtual void __unk_vfn_12();
+    /*20*/ virtual void __unk_vfn_13();
+    /*21*/ virtual void __unk_vfn_14();
+    /*22*/ virtual void __unk_vfn_15();
+    /*23*/ virtual class Actor* findAttackTarget();
+    /*24*/ virtual void __unk_vfn_16();
+    /*25*/ virtual void adjustDamageAmount(int&) const;
+    /*26*/ virtual void onTame();
+    /*27*/ virtual void onFailedTame();
+    /*28*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
+    /*29*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
+    /*30*/ virtual float getPickRadius();
+    /*31*/ virtual void awardKillScore(class Actor&, int);
+    /*32*/ virtual class HashedString const& queryEntityRenderer() const;
+    /*33*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*34*/ virtual int getPortalWaitTime() const;
+    /*35*/ virtual void __unk_vfn_17();
+    /*36*/ virtual void __unk_vfn_18();
+    /*37*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*38*/ virtual void __unk_vfn_19();
+    /*39*/ virtual void __unk_vfn_20();
+    /*40*/ virtual void __unk_vfn_21();
+    /*41*/ virtual void __unk_vfn_22();
+    /*42*/ virtual void __unk_vfn_23();
+    /*43*/ virtual void __unk_vfn_24();
+    /*44*/ virtual void __unk_vfn_25();
+    /*45*/ virtual void __unk_vfn_26();
+    /*46*/ virtual void __unk_vfn_27();
+    /*47*/ virtual void __unk_vfn_28();
+    /*48*/ virtual void setAuxValue(int);
+    /*49*/ virtual void stopSpinAttack();
+    /*50*/ virtual void __unk_vfn_29();
+    /*51*/ virtual void __unk_vfn_30();
+    /*52*/ virtual void __unk_vfn_31();
+    /*53*/ virtual void __unk_vfn_32();
+    /*54*/ virtual void __unk_vfn_33();
+    /*55*/ virtual void spawnAnim();
+    /*56*/ virtual void aiStep();
+    /*57*/ virtual bool checkSpawnRules(bool);
+    /*58*/ virtual int getItemUseDuration() const;
+    /*59*/ virtual float getItemUseStartupProgress() const;
+    /*60*/ virtual float getItemUseIntervalProgress() const;
+    /*61*/ virtual void __unk_vfn_34();
+    /*62*/ virtual void __unk_vfn_35();
+    /*63*/ virtual void __unk_vfn_36();
+    /*64*/ virtual int getArmorValue();
+    /*65*/ virtual void sendArmorDamage(class std::bitset<4> const&);
+    /*66*/ virtual void onBorn(class Actor&, class Actor&);
+    /*67*/ virtual int getAttackTime();
+    /*68*/ virtual void __unk_vfn_37();
+    /*69*/ virtual void jumpFromGround();
+    /*70*/ virtual void _serverAiMobStep();
+    /*71*/ virtual void __unk_vfn_38();
+    /*72*/ virtual void __unk_vfn_39();
+    /*73*/ virtual void __unk_vfn_40();
+    /*74*/ virtual void __unk_vfn_41();
+    /*75*/ virtual void decreaseSquish();
+    /*76*/ virtual class OwnerPtrT<struct EntityRefTraits> createChild(int);
     /*
+    inline bool isInLava() const{
+        bool (LavaSlime::*rv)() const;
+        *((void**)&rv) = dlsym("?isInLava@LavaSlime@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isOnFire() const{
         bool (LavaSlime::*rv)() const;
         *((void**)&rv) = dlsym("?isOnFire@LavaSlime@@MEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isDarkEnoughToSpawn() const{
+        bool (LavaSlime::*rv)() const;
+        *((void**)&rv) = dlsym("?isDarkEnoughToSpawn@LavaSlime@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doPlayLandSound(){
+        bool (LavaSlime::*rv)();
+        *((void**)&rv) = dlsym("?doPlayLandSound@LavaSlime@@MEAA_NXZ");
         return (this->*rv)();
     }
     inline bool canDealDamage(){
@@ -113,7 +129,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LavaSlime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
+    MCAPI LavaSlime(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
 protected:
 

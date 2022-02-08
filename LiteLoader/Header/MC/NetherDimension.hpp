@@ -24,14 +24,14 @@ public:
 
 public:
     /*
-    inline bool showSky() const{
-        bool (NetherDimension::*rv)() const;
-        *((void**)&rv) = dlsym("?showSky@NetherDimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isNaturalDimension() const{
         bool (NetherDimension::*rv)() const;
         *((void**)&rv) = dlsym("?isNaturalDimension@NetherDimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool showSky() const{
+        bool (NetherDimension::*rv)() const;
+        *((void**)&rv) = dlsym("?showSky@NetherDimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool mayRespawnViaBed() const{

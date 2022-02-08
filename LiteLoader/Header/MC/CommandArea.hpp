@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI CommandArea(std::unique_ptr<class ChunkViewSource>);
     MCAPI ~CommandArea();
 
 protected:

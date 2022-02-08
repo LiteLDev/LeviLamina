@@ -27,26 +27,56 @@ public:
 
 public:
     /*0*/ virtual ~ActorDamageSource();
-    /*1*/ virtual bool isEntitySource() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual bool isBlockSource() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
     /*4*/ virtual bool isFire() const;
     /*5*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*6*/ virtual bool getIsCreative() const;
-    /*7*/ virtual bool getIsWorldBuilder() const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
+    /*9*/ virtual void __unk_vfn_6();
     /*10*/ virtual enum ActorCategory getEntityCategories() const;
-    /*11*/ virtual bool getDamagingEntityIsCreative() const;
-    /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*11*/ virtual void __unk_vfn_7();
+    /*12*/ virtual void __unk_vfn_8();
     /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /*14*/ virtual enum ActorType getDamagingEntityType() const;
     /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /*
+    inline bool getDamagingEntityIsCreative() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getDamagingEntityIsCreative@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getIsCreative() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getIsCreative@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isChildEntitySource() const{
         bool (ActorDamageSource::*rv)() const;
         *((void**)&rv) = dlsym("?isChildEntitySource@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getIsWorldBuilder() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getIsWorldBuilder@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool getDamagingEntityIsWorldBuilder() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getDamagingEntityIsWorldBuilder@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBlockSource() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?isBlockSource@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isEntitySource() const{
+        bool (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?isEntitySource@ActorDamageSource@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline enum ActorType getEntityType() const{
@@ -63,6 +93,7 @@ public:
     MCAPI ActorDamageSource(enum ActorDamageCause);
     MCAPI enum ActorDamageCause getCause() const;
     MCAPI void setCause(enum ActorDamageCause);
+    MCAPI static std::vector<struct std::pair<std::string, enum ActorDamageCause>> generateDamageCauseCommandEnum();
     MCAPI static enum ActorDamageCause lookupCause(std::string const&);
     MCAPI static std::string const& lookupCauseName(enum ActorDamageCause);
 

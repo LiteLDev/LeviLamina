@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerMap();
-    /*1*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void endRequestBatch();
     /*3*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*4*/ virtual void _postCraftRequest(bool);

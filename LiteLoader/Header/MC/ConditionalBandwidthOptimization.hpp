@@ -22,6 +22,7 @@ public:
 #endif
 
 public:
+    MCAPI ConditionalBandwidthOptimization(struct ConditionalBandwidthOptimization&&);
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization&&);
     MCAPI struct ConditionalBandwidthOptimization& operator=(struct ConditionalBandwidthOptimization const&);
     MCAPI ~ConditionalBandwidthOptimization();

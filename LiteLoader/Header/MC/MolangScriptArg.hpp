@@ -22,6 +22,7 @@ public:
 
 public:
     MCAPI MolangScriptArg(struct MolangScriptArg const&);
+    MCAPI MolangScriptArg(int);
     MCAPI MolangScriptArg(float);
     MCAPI MolangScriptArg(struct MolangScriptArg&&);
     MCAPI struct MolangMemberArray* getAsNonConstMolangMemberArray();

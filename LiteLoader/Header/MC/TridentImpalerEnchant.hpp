@@ -34,10 +34,6 @@ public:
     /*7*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
     /*8*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
     /*9*/ virtual void __unk_vfn_1();
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
-    /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 
 protected:
 

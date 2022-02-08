@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ShipwreckStart();
-    /*1*/ virtual bool isValid() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI ShipwreckStart(class BiomeSource const&, class Random&, int, int, short);
 

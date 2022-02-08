@@ -18,13 +18,13 @@ class AquiferNoises {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_AQUIFERNOISES
 public:
     class AquiferNoises& operator=(class AquiferNoises const&) = delete;
-    AquiferNoises(class AquiferNoises const&) = delete;
     AquiferNoises() = delete;
 #endif
 
 public:
+    MCAPI AquiferNoises(class AquiferNoises const&);
     MCAPI ~AquiferNoises();
-    MCAPI static std::unique_ptr<class AquiferNoises> make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class AquiferNoises make(class XoroshiroPositionalRandomFactory const&);
 
 protected:
 

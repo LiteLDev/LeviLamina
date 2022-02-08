@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~HungerAttributeDelegate();
     /*1*/ virtual void tick();
     /*2*/ virtual void notify(__int64);
-    /*3*/ virtual bool change(float, float, struct AttributeBuffInfo);
+    /*3*/ virtual void __unk_vfn_0();
     MCAPI HungerAttributeDelegate(class AttributeInstance const&, class Player*);
 
 protected:

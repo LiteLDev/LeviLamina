@@ -30,7 +30,18 @@ public:
 
 public:
     /*0*/ virtual ~BiomeRegistry();
-    /*1*/ virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
+    /*
+    inline class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const{
+        class StackRefResultT<struct EntityRegistryConstRefTraits> (BiomeRegistry::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityRegistry@BiomeRegistry@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ");
+        return (this->*rv)();
+    }
+    inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
+        class StackRefResultT<struct EntityRegistryRefTraits> (BiomeRegistry::*rv)();
+        *((void**)&rv) = dlsym("?getEntityRegistry@BiomeRegistry@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI BiomeRegistry();
     MCAPI void forEachBiome(class std::function<void (class Biome& )>) const;
     MCAPI class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType> > const& getTagRegistry() const;

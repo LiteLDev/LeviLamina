@@ -26,13 +26,13 @@ public:
     /*0*/ virtual ~RandomStrollGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
     /*10*/ virtual bool _setWantedPosition();
     /*
     inline  ~RandomStrollGoal(){

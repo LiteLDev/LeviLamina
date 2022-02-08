@@ -37,10 +37,6 @@ public:
     /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
     /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
     /*10*/ virtual void __unk_vfn_1();
-    /*11*/ virtual void __unk_vfn_2();
-    /*12*/ virtual void __unk_vfn_3();
-    /*13*/ virtual void __unk_vfn_4();
-    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
     /*
     inline bool isProtectionEnchant() const{
         bool (Enchant::*rv)() const;
@@ -61,6 +57,11 @@ public:
         bool (Enchant::*rv)() const;
         *((void**)&rv) = dlsym("?isDiscoverable@Enchant@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline bool _isValidEnchantmentTypeForCategory(enum Enchant::Type a0) const{
+        bool (Enchant::*rv)(enum Enchant::Type) const;
+        *((void**)&rv) = dlsym("?_isValidEnchantmentTypeForCategory@Enchant@@EEBA_NW4Type@1@@Z");
+        return (this->*rv)(std::forward<enum Enchant::Type>(a0));
     }
     inline int getMinLevel() const{
         int (Enchant::*rv)() const;

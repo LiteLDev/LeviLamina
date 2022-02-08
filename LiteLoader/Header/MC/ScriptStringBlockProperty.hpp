@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -33,12 +32,11 @@ public:
     }
     */
     MCAPI ScriptStringBlockProperty(class ScriptStringBlockProperty&&);
-    MCAPI ScriptStringBlockProperty(std::string const&, class ItemState const&, std::vector<std::string>, class ScriptBlockPermutation&);
-    MCAPI std::vector<std::string> const& getAllValues() const;
-    MCAPI std::string const& getName() const;
+    MCAPI ScriptStringBlockProperty(std::string, class ItemState const&, std::vector<std::string>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<std::string > getState() const;
     MCAPI class ScriptStringBlockProperty& operator=(class ScriptStringBlockProperty&&);
     MCAPI class Scripting::Result<void> setState(std::string);
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptStringBlockProperty> bind(struct Scripting::Version);
 
 protected:
 

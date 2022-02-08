@@ -68,7 +68,7 @@ public:
     /*33*/ virtual void __unk_vfn_7();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*36*/ virtual void __unk_vfn_8();
     /*
     inline class Container* getContainer(){
         class Container* (BlockActor::*rv)();
@@ -109,6 +109,11 @@ public:
         class BlockActor* (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
         *((void**)&rv) = dlsym("?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
+    }
+    inline bool _playerCanUpdate(class Player const& a0) const{
+        bool (BlockActor::*rv)(class Player const&) const;
+        *((void**)&rv) = dlsym("?_playerCanUpdate@BlockActor@@MEBA_NAEBVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player const&>(a0));
     }
     inline  ~BlockActor(){
          (BlockActor::*rv)();

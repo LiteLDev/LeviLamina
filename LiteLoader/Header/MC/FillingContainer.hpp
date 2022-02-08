@@ -18,7 +18,6 @@ class FillingContainer : public Container {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_FILLINGCONTAINER
 public:
-    class FillingContainer& operator=(class FillingContainer const&) = delete;
     FillingContainer(class FillingContainer const&) = delete;
     FillingContainer() = delete;
 #endif
@@ -55,6 +54,7 @@ public:
     MCAPI int getHotbarSize() const;
     MCAPI int getSlotWithItem(class ItemStack const&, bool, bool) const;
     MCAPI bool hasResource(int);
+    MCAPI class FillingContainer& operator=(class FillingContainer const&);
     MCAPI int removeResource(class ItemStack const&, bool, bool, int);
     MCAPI bool removeResource(int);
     MCAPI std::unique_ptr<class ListTag> save();

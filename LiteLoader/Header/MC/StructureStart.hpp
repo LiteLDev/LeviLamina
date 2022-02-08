@@ -25,9 +25,14 @@ public:
 public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*2*/ virtual bool isValid() const;
+    /*2*/ virtual void __unk_vfn_0();
     /*3*/ virtual enum StructureFeatureType getType() const = 0;
     /*
+    inline bool isValid() const{
+        bool (StructureStart::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@StructureStart@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~StructureStart(){
          (StructureStart::*rv)();
         *((void**)&rv) = dlsym("??1StructureStart@@UEAA@XZ");

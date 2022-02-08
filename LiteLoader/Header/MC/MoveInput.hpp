@@ -34,12 +34,17 @@ public:
     /*8*/ virtual void setAutoJumpingInWater(bool);
     /*9*/ virtual void __unk_vfn_3();
     /*10*/ virtual void setSneakDown(bool);
-    /*11*/ virtual bool isPlayerMoving() const;
+    /*11*/ virtual void __unk_vfn_4();
     /*12*/ virtual class Vec3 const& getGazeDirection() const;
     /*
     inline bool isChangeHeight() const{
         bool (MoveInput::*rv)() const;
         *((void**)&rv) = dlsym("?isChangeHeight@MoveInput@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isPlayerMoving() const{
+        bool (MoveInput::*rv)() const;
+        *((void**)&rv) = dlsym("?isPlayerMoving@MoveInput@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline void clearMovementState(){

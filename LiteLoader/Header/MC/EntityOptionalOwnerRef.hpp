@@ -24,8 +24,8 @@ public:
 public:
     MCAPI EntityOptionalOwnerRef();
     MCAPI bool isSet() const;
-    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>&&);
-    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits> const&);
+    MCAPI void setOwnedRef(class OwnerPtrT<struct EntityRefTraits>);
+    MCAPI void setWeakRef(class WeakRefT<struct EntityRefTraits>);
     MCAPI class StackRefResultT<struct EntityRefTraits> tryGet() const;
 
 protected:

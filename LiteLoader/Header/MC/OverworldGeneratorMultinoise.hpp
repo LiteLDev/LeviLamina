@@ -70,6 +70,11 @@ public:
         *((void**)&rv) = dlsym("?getSurfaceNoise@OverworldGeneratorMultinoise@@MEAAAEBVPerlinSimplexNoise@@XZ");
         return (this->*rv)();
     }
+    inline class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const{
+        class std::optional<class XoroshiroPositionalRandomFactory> (OverworldGeneratorMultinoise::*rv)() const;
+        *((void**)&rv) = dlsym("?getXoroshiroPositionalRandomFactory@OverworldGeneratorMultinoise@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ");
+        return (this->*rv)();
+    }
     inline std::unique_ptr<class Aquifer> tryMakeAquifer(class ChunkPos const& a0, class SurfaceLevelCache const& a1, short a2, short a3, short a4) const{
         std::unique_ptr<class Aquifer> (OverworldGeneratorMultinoise::*rv)(class ChunkPos const&, class SurfaceLevelCache const&, short, short, short) const;
         *((void**)&rv) = dlsym("?tryMakeAquifer@OverworldGeneratorMultinoise@@EEBA?AV?$unique_ptr@VAquifer@@U?$default_delete@VAquifer@@@std@@@std@@AEBVChunkPos@@AEBVSurfaceLevelCache@@FFF@Z");
@@ -78,13 +83,11 @@ public:
     */
     MCAPI OverworldGeneratorMultinoise(class Dimension&, unsigned __int64, class Biome const*);
     MCAPI static float _applySlides(class DimensionHeightRange const&, float, unsigned char);
-    MCAPI static std::unique_ptr<struct OverworldNoises3d> makeNoise(class XoroshiroPositionalRandomFactory const&);
 
 protected:
 
 private:
     MCAPI struct std::pair<float, float> _attenuateOffsetAndFactor(class DividedPos2d<4>, float, float) const;
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 41> _generateDensityCellsForChunk(class ChunkPos const&, class WorldGenCache const&, class NoodleCavifier*, class OreVeinifier*) const;
-    MCAPI std::unique_ptr<class BiomeSource> _makeBiomeSource(class XoroshiroPositionalRandomFactory const&, class BiomeRegistry const&, class Biome const*);
 
 };

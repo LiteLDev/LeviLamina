@@ -73,25 +73,25 @@ public:
         *((void**)&rv) = dlsym("?stop@NullSoundPlayer@@UEAAX_K@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
+    inline void setMusicVolumeMultiplier(float a0){
+        void (NullSoundPlayer::*rv)(float);
+        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
+        return (this->*rv)(std::forward<float>(a0));
+    }
     inline void stopMusic(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopMusic@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void setMusicVolumeMultiplier(float a0){
+    inline void fadeToStopMusic(float a0){
         void (NullSoundPlayer::*rv)(float);
-        *((void**)&rv) = dlsym("?setMusicVolumeMultiplier@NullSoundPlayer@@UEAAXM@Z");
+        *((void**)&rv) = dlsym("?fadeToStopMusic@NullSoundPlayer@@UEAAXM@Z");
         return (this->*rv)(std::forward<float>(a0));
     }
     inline void fadeOut(unsigned __int64 a0, float a1){
         void (NullSoundPlayer::*rv)(unsigned __int64, float);
         *((void**)&rv) = dlsym("?fadeOut@NullSoundPlayer@@UEAAX_KM@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<float>(a1));
-    }
-    inline void fadeToStopMusic(float a0){
-        void (NullSoundPlayer::*rv)(float);
-        *((void**)&rv) = dlsym("?fadeToStopMusic@NullSoundPlayer@@UEAAXM@Z");
-        return (this->*rv)(std::forward<float>(a0));
     }
     inline void playMusic(std::string const& a0, float a1){
         void (NullSoundPlayer::*rv)(std::string const&, float);
@@ -103,25 +103,25 @@ public:
         *((void**)&rv) = dlsym("?unregisterLoop@NullSoundPlayer@@UEAAX_K_N@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<bool>(a1));
     }
-    inline void stopAllDelayedSoundActions(){
-        void (NullSoundPlayer::*rv)();
-        *((void**)&rv) = dlsym("?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void playMusic(std::string const& a0, float a1, unsigned int& a2){
         void (NullSoundPlayer::*rv)(std::string const&, float, unsigned int&);
         *((void**)&rv) = dlsym("?playMusic@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@MAEAI@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<float>(a1), std::forward<unsigned int&>(a2));
     }
-    inline void stopAllSounds(){
+    inline void stopAllDelayedSoundActions(){
         void (NullSoundPlayer::*rv)();
-        *((void**)&rv) = dlsym("?stopAllSounds@NullSoundPlayer@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?stopAllDelayedSoundActions@NullSoundPlayer@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void stop(std::string const& a0){
         void (NullSoundPlayer::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?stop@NullSoundPlayer@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline void stopAllSounds(){
+        void (NullSoundPlayer::*rv)();
+        *((void**)&rv) = dlsym("?stopAllSounds@NullSoundPlayer@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline unsigned __int64 play(std::string const& a0, class Vec3 const& a1, float a2, float a3){
         unsigned __int64 (NullSoundPlayer::*rv)(std::string const&, class Vec3 const&, float, float);

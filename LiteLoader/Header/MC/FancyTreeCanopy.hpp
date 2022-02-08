@@ -30,6 +30,6 @@ public:
 protected:
 
 private:
-    MCAPI class std::optional<class BlockPos> _fillLayer(class IBlockWorldGenAPI&, class BlockPos const&, class Block const*, int, struct TreeHelper::TreeParams const&) const;
+    MCAPI class std::optional<class BlockPos> _fillLayer(class IBlockWorldGenAPI&, class BlockPos const&, class Block const&, int, struct TreeHelper::TreeParams const&) const;
 
 };

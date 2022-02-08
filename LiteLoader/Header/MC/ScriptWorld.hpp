@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,9 +23,9 @@ public:
 #endif
 
 public:
-    MCAPI ScriptWorld(class Scripting::WeakLifetimeScope const&, class Level*);
+    MCAPI void broadcastClientMessage(std::string const&, std::string const&);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptDimension> > getDimension(std::string const&);
-    MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptPlayer>> getPlayers();
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator> > getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
     MCAPI ~ScriptWorld();
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptWorld> bind(struct Scripting::Version);
 

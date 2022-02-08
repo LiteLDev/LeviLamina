@@ -27,8 +27,9 @@ public:
     /*1*/ virtual int getChunkRebuildPriority(class ChunkPos const&) const;
     /*2*/ virtual unsigned int registerForUpdates();
     /*3*/ virtual void unregisterForUpdates(unsigned int);
-    /*4*/ virtual void setBuildOrderInfluence(unsigned int, class ChunkPos const&, class Vec3 const&);
-    /*5*/ virtual void updateInfluences();
+    /*4*/ virtual void setPlayerInfluence(unsigned int, class ChunkPos const&, class Vec3 const&);
+    /*5*/ virtual void setTickingAreaInfluence(unsigned int, class ChunkPos const&, int, int, bool, bool);
+    /*6*/ virtual void updateInfluences();
 
 protected:
 

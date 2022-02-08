@@ -28,20 +28,32 @@ public:
     /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
     /*4*/ virtual void setDirection(unsigned char);
-    /*5*/ virtual bool canConsumePowerAnyDirection() const;
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual bool canStopPower() const;
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
+    /*7*/ virtual void __unk_vfn_2();
     /*8*/ virtual void setStopPower(bool);
     /*9*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*10*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    /*10*/ virtual void __unk_vfn_3();
     /*11*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual bool isHalfPulse() const;
-    /*16*/ virtual void __unk_vfn_2();
+    /*14*/ virtual void __unk_vfn_4();
+    /*15*/ virtual void __unk_vfn_5();
+    /*16*/ virtual void __unk_vfn_6();
     /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*
+    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
+        bool (PistonConsumer::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+        *((void**)&rv) = dlsym("?allowConnection@PistonConsumer@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
+        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
+    }
+    inline bool canConsumePowerAnyDirection() const{
+        bool (PistonConsumer::*rv)() const;
+        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@PistonConsumer@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);
 

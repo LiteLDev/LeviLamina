@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -20,7 +19,6 @@ class ScriptItemStack {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTITEMSTACK
 public:
     class ScriptItemStack& operator=(class ScriptItemStack const&) = delete;
-    ScriptItemStack(class ScriptItemStack const&) = delete;
     ScriptItemStack() = delete;
 #endif
 
@@ -34,14 +32,16 @@ public:
     }
     */
     MCAPI ScriptItemStack(class ScriptItemStack&&);
+    MCAPI ScriptItemStack(class ScriptItemStack const&);
     MCAPI class Scripting::WeakObjectHandle getComponent(class Scripting::WeakLifetimeScope, std::string const&);
     MCAPI std::vector<class Scripting::WeakObjectHandle> getComponents(class Scripting::WeakLifetimeScope);
-    MCAPI class ItemStack& getItemStack();
-    MCAPI class ItemStack const& getItemStack() const;
+    MCAPI std::string getId();
+    MCAPI class ItemInstance const& getItemInstance() const;
+    MCAPI class ItemInstance& getItemInstance();
     MCAPI bool hasComponent(class Scripting::WeakLifetimeScope, std::string const&);
     MCAPI class ScriptItemStack& operator=(class ScriptItemStack&&);
-    MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemStack> bind(struct Scripting::Version);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptItemStack> createHandle(class Scripting::WeakLifetimeScope, class ItemStack const&);
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptItemStack> bind(struct Scripting::Version, class Level*);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptItemStack> createHandle(class Scripting::WeakLifetimeScope, class ItemStackBase const&);
 
 protected:
 

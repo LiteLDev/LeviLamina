@@ -31,7 +31,7 @@ public:
     MCAPI struct BuildMatch match(class BlockPos const&);
     MCAPI struct BuildMatch match(class BlockPos const&, int, int);
     MCAPI struct BuildMatch match(class BlockPos const&, int, int, unsigned char, unsigned char);
-    MCAPI void replaceBlocks(char, struct BuildMatch, class Block const&, bool);
+    MCAPI void replaceBlocks(char, struct BuildMatch, class Block const&);
     MCAPI static std::unique_ptr<class BlockPatternBuilder> start(class BlockSource&);
 
 protected:

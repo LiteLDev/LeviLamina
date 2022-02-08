@@ -18,13 +18,13 @@ class OreVeinifierNoises {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OREVEINIFIERNOISES
 public:
     class OreVeinifierNoises& operator=(class OreVeinifierNoises const&) = delete;
-    OreVeinifierNoises(class OreVeinifierNoises const&) = delete;
     OreVeinifierNoises() = delete;
 #endif
 
 public:
+    MCAPI OreVeinifierNoises(class OreVeinifierNoises const&);
     MCAPI ~OreVeinifierNoises();
-    MCAPI static std::unique_ptr<class OreVeinifierNoises> make(class XoroshiroPositionalRandomFactory const&);
+    MCAPI static class OreVeinifierNoises make(class XoroshiroPositionalRandomFactory const&);
 
 protected:
 

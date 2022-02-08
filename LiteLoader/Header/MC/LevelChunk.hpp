@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "SubChunkPacket.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -95,12 +96,12 @@ public:
     MCAPI class std::optional<enum LevelChunkFormat> getLoadedFormat() const;
     MCAPI class BlockPos const& getMax() const;
     MCAPI short getMaxAllocatedY() const;
-    MCAPI struct LevelChunkMemoryEstimateData getMemoryEstimates() const;
     MCAPI class BlockPos const& getMin() const;
     MCAPI short getMinY() const;
     MCAPI short getNonAirMaxHeight() const;
     MCAPI class ChunkPos const& getPosition() const;
     MCAPI class ChunkLocalHeight getPreWorldGenHeightmap(class ChunkBlockPos const&) const;
+    MCAPI class HeightmapWrapper getPreWorldGenHeightmap() const;
     MCAPI class BlockTickingQueue& getRandomTickQueue();
     MCAPI struct Brightness getRawBrightness(class ChunkBlockPos const&, struct Brightness) const;
     MCAPI std::vector<struct LevelChunk::HardcodedSpawningArea> const& getSpawningAreas() const;
@@ -131,7 +132,7 @@ public:
     MCAPI void onBlockEntityChanged();
     MCAPI class LevelChunk& operator=(class LevelChunk&&);
     MCAPI void placeCallbacks(class ChunkBlockPos const&, class Block const&, class Block const&, class BlockSource*, class std::shared_ptr<class BlockActor>);
-    MCAPI void populateHeightMapDataForSubChunkPacket(short, class SubChunkPacket&) const;
+    MCAPI void populateHeightMapDataForSubChunkPacket(short, struct SubChunkPacket::SubChunkPacketData&) const;
     MCAPI void pruneBiomesAboveHeightmap();
     MCAPI void recomputeHeightMap(bool);
     MCAPI class std::shared_ptr<class BlockActor> removeBlockEntity(class BlockPos const&);
@@ -160,9 +161,10 @@ public:
     MCAPI void setCachedTemperatureNoise(class ChunkBlockPos const&, signed char);
     MCAPI void setChunkInterpolants(class LevelChunk::Neighbors const&);
     MCAPI class Block const& setExtraBlock(class ChunkBlockPos const&, class Block const&, class BlockSource*);
+    MCAPI void setExtraBlockSimple(class ChunkBlockPos const&, class Block const&);
     MCAPI void setFinalized(enum LevelChunk::Finalization);
     MCAPI void setHadSerializedEntities();
-    MCAPI void setPendingEntities(std::string&);
+    MCAPI void setPendingEntities(std::string);
     MCAPI void setPreWorldGenHeightMap(std::unique_ptr<std::vector<short>>);
     MCAPI void setSaved();
     MCAPI void setUnsaved();

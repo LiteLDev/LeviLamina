@@ -43,7 +43,7 @@ public:
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*15*/ virtual class Core::PathBuffer<std::string > const& getSubPath() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    /*17*/ virtual bool canRecurse() const;
+    /*17*/ virtual void __unk_vfn_0();
     /*18*/ virtual void unload();
     /*19*/ virtual class ContentIdentity readContentIdentity() const;
     /*

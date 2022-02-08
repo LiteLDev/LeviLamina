@@ -27,7 +27,7 @@ public:
     /*0*/ virtual ~AbsorptionMobEffect();
     /*1*/ virtual void applyEffects(class Actor*, int, int) const;
     /*2*/ virtual void removeEffects(class Actor*);
-    /*3*/ virtual bool isInstantaneous() const;
+    /*3*/ virtual void __unk_vfn_0();
 
 protected:
 

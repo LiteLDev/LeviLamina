@@ -32,7 +32,7 @@ public:
     /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual int getWorldX(int, int);
     /*7*/ virtual int getWorldZ(int, int);
-    /*8*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*8*/ virtual void __unk_vfn_0();
     /*9*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*
     inline  ~OceanMonumentPiece(){

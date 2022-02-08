@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 #include "AppConfigs.hpp"
 
 #define BEFORE_EXTRA
@@ -52,7 +53,6 @@ public:
     /*25*/ virtual void __unk_vfn_23();
     /*26*/ virtual void __unk_vfn_24();
     /*27*/ virtual void __unk_vfn_25();
-    /*28*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
 
 protected:
 

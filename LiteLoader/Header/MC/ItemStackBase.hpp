@@ -22,9 +22,9 @@ char filler[128];
 
 public:
     /*0*/ virtual ~ItemStackBase();
-    /*1*/ virtual void reinit(class Item const&, int, int) = 0;
-    /*2*/ virtual void reinit(class BlockLegacy const&, int) = 0;
-    /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int) = 0;
+    /*1*/ virtual void reinit(class Item const&, int, int);
+    /*2*/ virtual void reinit(class BlockLegacy const&, int);
+    /*3*/ virtual void reinit(class gsl::basic_string_span<char const, -1>, int, int);
     /*4*/ virtual void setNull();
     /*5*/ virtual std::string toString() const;
     /*6*/ virtual std::string toDebugString() const;
@@ -47,6 +47,7 @@ public:
     MCAPI bool componentsMatch(class ItemStackBase const&) const;
     MCAPI class ItemEnchants constructItemEnchantsFromUserData() const;
     MCAPI void deserializeComponents(class IDataInput&);
+    MCAPI void executeEvent(std::string const&, class RenderParams&);
     MCAPI enum ArmorSlot getArmorSlot() const;
     MCAPI int getAttackDamage() const;
     MCAPI short getAuxValue() const;
@@ -56,6 +57,7 @@ public:
     MCAPI std::string getCategoryName() const;
     MCAPI class ItemInstance const& getChargedItem() const;
     MCAPI class mce::Color getColor() const;
+    MCAPI class ItemComponent const* getComponent(class HashedString const&) const;
     MCAPI class ComponentItem const* getComponentItem() const;
     MCAPI std::string getCustomName() const;
     MCAPI short getDamageValue() const;
@@ -63,6 +65,7 @@ public:
     MCAPI class ItemDescriptor getDescriptor() const;
     MCAPI std::string getEffectName() const;
     MCAPI int getEnchantValue() const;
+    MCAPI class HashedString const& getFullNameHash() const;
     MCAPI std::string getHoverName() const;
     MCAPI struct TextureUVCoordinateSet const* getIcon(int, bool) const;
     MCAPI short getId() const;
@@ -130,7 +133,7 @@ public:
     MCAPI bool sameItemAndAux(class ItemStackBase const&) const;
     MCAPI std::unique_ptr<class CompoundTag> save() const;
     MCAPI void saveEnchantsToUserData(class ItemEnchants const&);
-    MCAPI void sendItemDefinitionEventTriggered(std::string const&);
+    MCAPI bool sendEventTriggered(std::string const&, class RenderParams const&);
     MCAPI void serializeComponents(class IDataOutput&) const;
     MCAPI void set(int);
     MCAPI void setAuxValue(short);

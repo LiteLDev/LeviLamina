@@ -27,10 +27,10 @@ public:
     /*0*/ virtual ~RandomSwimmingGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
+    /*3*/ virtual void __unk_vfn_0();
     /*4*/ virtual void appendDebugInfo(std::string&) const;
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual bool _setWantedPosition();
     MCAPI RandomSwimmingGoal(class Mob&, float, int, int, int, bool);
 

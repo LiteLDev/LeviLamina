@@ -28,7 +28,7 @@ public:
     MCAPI void maintainOldData(class Actor&, class Actor&, struct TransformationDescription const&, struct ActorUniqueID const&, class Level const&);
     MCAPI void reloadComponent(class Actor&);
     MCAPI void setDelayTicks(int);
-    MCAPI void transformIfAble(class Actor&);
+    MCAPI void transformIfAble(class Actor&, bool);
 
 protected:
 

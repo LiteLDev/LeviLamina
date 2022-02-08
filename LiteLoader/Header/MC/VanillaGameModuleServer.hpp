@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -30,17 +31,17 @@ public:
     /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual void __unk_vfn_2();
     /*7*/ virtual void setupCommands(class CommandRegistry&);
-    /*8*/ virtual void configureServerNetworkHandler(class ServerInstance&, class ServerNetworkHandler&);
+    /*8*/ virtual void configureServerNetworkHandler(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler> >);
     /*
-    inline void configureDocumentation(class IGameModuleDocumentation& a0){
-        void (VanillaGameModuleServer::*rv)(class IGameModuleDocumentation&);
-        *((void**)&rv) = dlsym("?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@@Z");
-        return (this->*rv)(std::forward<class IGameModuleDocumentation&>(a0));
-    }
     inline void tick(){
         void (VanillaGameModuleServer::*rv)();
         *((void**)&rv) = dlsym("?tick@VanillaGameModuleServer@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void configureDocumentation(class IGameModuleDocumentation& a0){
+        void (VanillaGameModuleServer::*rv)(class IGameModuleDocumentation&);
+        *((void**)&rv) = dlsym("?configureDocumentation@VanillaGameModuleServer@@UEAAXAEAVIGameModuleDocumentation@@@Z");
+        return (this->*rv)(std::forward<class IGameModuleDocumentation&>(a0));
     }
     inline void configureNewPlayer(class Player& a0){
         void (VanillaGameModuleServer::*rv)(class Player&);

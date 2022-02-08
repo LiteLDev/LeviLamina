@@ -27,11 +27,10 @@ public:
     /*0*/ virtual ~FossilFeature();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    MCAPI static std::string const* const STRUCTURE_LOCATION_FOSSIL;
-    MCAPI static std::string const* const STRUCTURE_LOCATION_FOSSIL_COAL;
 
 protected:
 
 private:
+    MCAPI static std::string const* const STRUCTURE_LOCATION_FOSSIL;
 
 };

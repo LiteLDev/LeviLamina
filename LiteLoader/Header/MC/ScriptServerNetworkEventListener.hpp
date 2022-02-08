@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,7 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventListener();
-    /*1*/ virtual enum EventResult onChat(struct ChatEvent const&);
+    /*1*/ virtual enum EventResult onMessage(struct MessageEvent const&);
+    /*2*/ virtual enum EventResult onEvent(struct ChatEvent const&);
     MCAPI ScriptServerNetworkEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

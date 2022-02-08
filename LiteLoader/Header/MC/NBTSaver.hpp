@@ -50,15 +50,15 @@ public:
         *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_K@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
-    inline bool doSerialize(double a0){
-        bool (NBTSaver::*rv)(double);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NN@Z");
-        return (this->*rv)(std::forward<double>(a0));
-    }
     inline bool doSerialize(__int64 a0){
         bool (NBTSaver::*rv)(__int64);
         *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
+    }
+    inline bool doSerialize(double a0){
+        bool (NBTSaver::*rv)(double);
+        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NN@Z");
+        return (this->*rv)(std::forward<double>(a0));
     }
     inline bool doEndArray(){
         bool (NBTSaver::*rv)();

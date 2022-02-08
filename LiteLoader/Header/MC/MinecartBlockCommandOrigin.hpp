@@ -29,24 +29,44 @@ public:
     /*1*/ virtual std::string const& getRequestId() const;
     /*2*/ virtual class BlockPos getBlockPosition() const;
     /*3*/ virtual class Vec3 getWorldPosition() const;
-    /*4*/ virtual class Level* getLevel() const;
-    /*5*/ virtual class Actor* getEntity() const;
-    /*6*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /*7*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*8*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*9*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*10*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*11*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*12*/ virtual bool isSelectorExpansionAllowed() const;
-    /*13*/ virtual unsigned char getSourceSubId() const;
-    /*14*/ virtual void __unk_vfn_0();
-    /*15*/ virtual enum CommandOriginType getOriginType() const;
-    /*16*/ virtual void __unk_vfn_1();
-    /*17*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*18*/ virtual class CompoundTag serialize() const;
-    /*19*/ virtual bool isValid() const;
-    /*20*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
-    /*21*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
+    /*4*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*5*/ virtual class Level* getLevel() const;
+    /*6*/ virtual class Actor* getEntity() const;
+    /*7*/ virtual void __unk_vfn_0();
+    /*8*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*9*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*10*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*11*/ virtual void __unk_vfn_1();
+    /*12*/ virtual void __unk_vfn_2();
+    /*13*/ virtual void __unk_vfn_3();
+    /*14*/ virtual void __unk_vfn_4();
+    /*15*/ virtual void __unk_vfn_5();
+    /*16*/ virtual void __unk_vfn_6();
+    /*17*/ virtual void __unk_vfn_7();
+    /*18*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*19*/ virtual void updateValues();
+    /*20*/ virtual class CompoundTag serialize() const;
+    /*21*/ virtual void __unk_vfn_8();
+    /*22*/ virtual void _setUUID(class mce::UUID const&);
+    /*23*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
+    /*24*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
+    /*
+    inline bool canUseCommandsWithoutCheatsEnabled() const{
+        bool (MinecartBlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@MinecartBlockCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (MinecartBlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@MinecartBlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool isValid() const{
+        bool (MinecartBlockCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?isValid@MinecartBlockCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MinecartBlockCommandOrigin(class BlockSource&, struct ActorUniqueID const&);
     MCAPI static std::unique_ptr<class MinecartBlockCommandOrigin> load(class CompoundTag const&, class Level&);
 

@@ -55,6 +55,7 @@ public:
     MCAPI void tryIncrementCuredDiscount();
     MCAPI void tryIncrementNearbyCuredDiscount();
     MCAPI void tryToTransferOldOffers(class MerchantRecipeList*);
+    MCAPI static bool isUseNewTradeScreen(class Actor const&);
 
 protected:
 

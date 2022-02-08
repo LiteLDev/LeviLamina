@@ -23,7 +23,8 @@ public:
 #endif
 
 public:
-    MCAPI void checkEntityConditions(std::vector<class Vec3> const&, class std::function<void (class ITickingArea const& )>);
+    /*0*/ virtual ~TickingAreaList();
+    /*1*/ virtual bool removeDistantEntityAreasAndCheckForRemoved(std::vector<class Vec3> const&, class std::function<void (class ITickingArea const& )>, class LevelStorage&);
 
 protected:
 

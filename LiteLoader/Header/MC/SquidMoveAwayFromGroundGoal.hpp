@@ -42,14 +42,14 @@ public:
         *((void**)&rv) = dlsym("?tick@SquidMoveAwayFromGroundGoal@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline bool canUse(){
-        bool (SquidMoveAwayFromGroundGoal::*rv)();
-        *((void**)&rv) = dlsym("?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canContinueToUse(){
         bool (SquidMoveAwayFromGroundGoal::*rv)();
         *((void**)&rv) = dlsym("?canContinueToUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canUse(){
+        bool (SquidMoveAwayFromGroundGoal::*rv)();
+        *((void**)&rv) = dlsym("?canUse@SquidMoveAwayFromGroundGoal@@UEAA_NXZ");
         return (this->*rv)();
     }
     */

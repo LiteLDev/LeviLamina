@@ -29,7 +29,7 @@ public:
     /*3*/ virtual void setStrength(int);
     /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual bool canStopPower() const;
+    /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual void setStopPower(bool);
     /*8*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*9*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
@@ -37,9 +37,9 @@ public:
     /*11*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual bool isHalfPulse() const;
-    /*16*/ virtual void __unk_vfn_2();
+    /*14*/ virtual void __unk_vfn_2();
+    /*15*/ virtual void __unk_vfn_3();
+    /*16*/ virtual void __unk_vfn_4();
     /*17*/ virtual bool isSecondaryPowered() const;
     /*18*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*

@@ -22,11 +22,13 @@ public:
 #endif
 
 public:
+    MCAPI PlayerActionComponent(struct PlayerActionComponent&&);
     MCAPI PlayerActionComponent();
     MCAPI void addAbortDestroyBlock(class BlockPos const&, int);
     MCAPI void addContinueDestroyBlock(class BlockPos const&, int);
     MCAPI void addStartDestroyBlock(class BlockPos const&, int);
     MCAPI void addStopDestroyBlock();
+    MCAPI struct PlayerActionComponent& operator=(struct PlayerActionComponent&&);
     MCAPI ~PlayerActionComponent();
 
 protected:

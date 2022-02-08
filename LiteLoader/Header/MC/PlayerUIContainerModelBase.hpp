@@ -33,15 +33,22 @@ public:
     /*6*/ virtual std::vector<class ItemStack> const& getItems() const;
     /*7*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual bool isValid();
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
-    /*12*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_2();
+    /*10*/ virtual void __unk_vfn_3();
+    /*11*/ virtual void __unk_vfn_4();
+    /*12*/ virtual void __unk_vfn_5();
     /*13*/ virtual std::string const& getItemGroupName(int) const;
-    /*14*/ virtual void __unk_vfn_5();
+    /*14*/ virtual void __unk_vfn_6();
     /*15*/ virtual class Container* _getContainer() const;
     /*16*/ virtual int _getContainerOffset() const;
     /*17*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    /*
+    inline bool isValid(){
+        bool (PlayerUIContainerModelBase::*rv)();
+        *((void**)&rv) = dlsym("?isValid@PlayerUIContainerModelBase@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PlayerUIContainerModelBase(enum ContainerEnumName, class Player&, int, enum ContainerCategory);
 
 protected:

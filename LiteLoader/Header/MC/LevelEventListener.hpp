@@ -29,20 +29,15 @@ public:
         *((void**)&rv) = dlsym("?onLevelInitialized@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@@Z");
         return (this->*rv)(std::forward<class Level&>(a0));
     }
+    inline enum EventResult onEvent(struct LevelNotificationEvent const& a0){
+        enum EventResult (LevelEventListener::*rv)(struct LevelNotificationEvent const&);
+        *((void**)&rv) = dlsym("?onEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelNotificationEvent@@@Z");
+        return (this->*rv)(std::forward<struct LevelNotificationEvent const&>(a0));
+    }
     inline enum EventResult onLevelTick(){
         enum EventResult (LevelEventListener::*rv)();
         *((void**)&rv) = dlsym("?onLevelTick@LevelEventListener@@UEAA?AW4EventResult@@XZ");
         return (this->*rv)();
-    }
-    inline enum EventResult onLevelStartLeaveGame(struct LevelStartLeaveGameEvent const& a0){
-        enum EventResult (LevelEventListener::*rv)(struct LevelStartLeaveGameEvent const&);
-        *((void**)&rv) = dlsym("?onLevelStartLeaveGame@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelStartLeaveGameEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelStartLeaveGameEvent const&>(a0));
-    }
-    inline enum EventResult onLevelWeatherChange(std::string const& a0, bool a1, bool a2){
-        enum EventResult (LevelEventListener::*rv)(std::string const&, bool, bool);
-        *((void**)&rv) = dlsym("?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
     }
     inline enum EventResult onLevelRemovedActor(class Level& a0, class Actor& a1){
         enum EventResult (LevelEventListener::*rv)(class Level&, class Actor&);
@@ -54,30 +49,15 @@ public:
         *((void**)&rv) = dlsym("?onLevelBiomesRegistered@LevelEventListener@@UEAA?AW4EventResult@@AEAVBiomeRegistry@@@Z");
         return (this->*rv)(std::forward<class BiomeRegistry&>(a0));
     }
-    inline enum EventResult onLevelAddedActor(struct LevelAddedActorEvent const& a0){
-        enum EventResult (LevelEventListener::*rv)(struct LevelAddedActorEvent const&);
-        *((void**)&rv) = dlsym("?onLevelAddedActor@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelAddedActorEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelAddedActorEvent const&>(a0));
-    }
-    inline enum EventResult onLevelBroadcast(struct LevelBroadcastEvent const& a0){
-        enum EventResult (LevelEventListener::*rv)(struct LevelBroadcastEvent const&);
-        *((void**)&rv) = dlsym("?onLevelBroadcast@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelBroadcastEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelBroadcastEvent const&>(a0));
-    }
-    inline enum EventResult onLevelDayCycleEvent(struct LevelDayCycleEvent const& a0){
-        enum EventResult (LevelEventListener::*rv)(struct LevelDayCycleEvent const&);
-        *((void**)&rv) = dlsym("?onLevelDayCycleEvent@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelDayCycleEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelDayCycleEvent const&>(a0));
+    inline enum EventResult onLevelWeatherChange(std::string const& a0, bool a1, bool a2){
+        enum EventResult (LevelEventListener::*rv)(std::string const&, bool, bool);
+        *((void**)&rv) = dlsym("?onLevelWeatherChange@LevelEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@_N1@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<bool>(a1), std::forward<bool>(a2));
     }
     inline enum EventResult onLevelAddedPlayer(class Level& a0, class Player& a1){
         enum EventResult (LevelEventListener::*rv)(class Level&, class Player&);
         *((void**)&rv) = dlsym("?onLevelAddedPlayer@LevelEventListener@@UEAA?AW4EventResult@@AEAVLevel@@AEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Level&>(a0), std::forward<class Player&>(a1));
-    }
-    inline enum EventResult onLevelSoundBroadcast(struct LevelSoundBroadcastEvent const& a0){
-        enum EventResult (LevelEventListener::*rv)(struct LevelSoundBroadcastEvent const&);
-        *((void**)&rv) = dlsym("?onLevelSoundBroadcast@LevelEventListener@@UEAA?AW4EventResult@@AEBULevelSoundBroadcastEvent@@@Z");
-        return (this->*rv)(std::forward<struct LevelSoundBroadcastEvent const&>(a0));
     }
     inline enum EventResult onLevelRemovedPlayer(class Level& a0, class Player& a1){
         enum EventResult (LevelEventListener::*rv)(class Level&, class Player&);

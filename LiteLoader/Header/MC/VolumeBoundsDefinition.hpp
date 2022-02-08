@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI void initialize(class EntityContext&, class VolumeBoundsComponent&) const;
 
 protected:
 

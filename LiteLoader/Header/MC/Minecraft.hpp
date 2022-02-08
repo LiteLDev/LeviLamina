@@ -26,15 +26,26 @@ public:
 
 public:
     /*0*/ virtual ~Minecraft();
-    /*1*/ virtual class OwnerPtrT<struct EntityRegistryRefTraits>& getEntityRegistry();
-    /*2*/ virtual void setSimTimePause(bool);
-    /*3*/ virtual void setSimTimeScale(float);
-    /*4*/ virtual bool getSimPaused() const;
-    /*5*/ virtual bool isOnlineClient() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void setSimTimePause(bool);
+    /*4*/ virtual void setSimTimeScale(float);
+    /*5*/ virtual bool getSimPaused() const;
+    /*6*/ virtual bool isOnlineClient() const;
     /*
     inline  ~Minecraft(){
          (Minecraft::*rv)();
         *((void**)&rv) = dlsym("??1Minecraft@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class StackRefResultT<struct EntityRegistryRefTraits> getEntityRegistry(){
+        class StackRefResultT<struct EntityRegistryRefTraits> (Minecraft::*rv)();
+        *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEAA?AV?$StackRefResultT@UEntityRegistryRefTraits@@@@XZ");
+        return (this->*rv)();
+    }
+    inline class StackRefResultT<struct EntityRegistryConstRefTraits> getEntityRegistry() const{
+        class StackRefResultT<struct EntityRegistryConstRefTraits> (Minecraft::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityRegistry@Minecraft@@UEBA?AV?$StackRefResultT@UEntityRegistryConstRefTraits@@@@XZ");
         return (this->*rv)();
     }
     */
@@ -47,10 +58,9 @@ public:
     MCAPI class optional_ref<class MinecraftGameTest> getGameTest();
     MCAPI double getLastTimestep();
     MCAPI class Level* getLevel() const;
-    MCAPI class NetEventCallback* getNetEventCallback();
     MCAPI class NetworkHandler& getNetworkHandler();
     MCAPI class ResourcePackManager& getResourceLoader();
-    MCAPI class ServerNetworkHandler* getServerNetworkHandler();
+    MCAPI class Bedrock::NonOwnerPointer<class ServerNetworkHandler> getServerNetworkHandler();
     MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class StructureManager> > getStructureManager();
     MCAPI bool hostMultiplayer(std::string const&, struct std::pair<std::unique_ptr<class Level>, class OwnerPtrT<struct EntityRefTraits> >, class Player*, class mce::UUID const&, std::unique_ptr<class NetEventCallback>, int, bool, bool, std::vector<std::string> const&, std::string, struct ConnectionDefinition const&, class std::unordered_map<struct PackIdVersion, std::string, struct std::hash<struct PackIdVersion>, struct std::equal_to<struct PackIdVersion>, class std::allocator<struct std::pair<struct PackIdVersion const, std::string > > > const&, class Scheduler&, class TextFilteringProcessor*);
     MCAPI void init();

@@ -91,15 +91,15 @@ public:
         *((void**)&rv) = dlsym("?setPacketSender@Scoreboard@@UEAAXPEAVPacketSender@@@Z");
         return (this->*rv)(std::forward<class PacketSender*>(a0));
     }
-    inline void onPlayerJoined(class Player const& a0){
-        void (Scoreboard::*rv)(class Player const&);
-        *((void**)&rv) = dlsym("?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
-    }
     inline void writeToLevelStorage(){
         void (Scoreboard::*rv)();
         *((void**)&rv) = dlsym("?writeToLevelStorage@Scoreboard@@UEAAXXZ");
         return (this->*rv)();
+    }
+    inline void onPlayerJoined(class Player const& a0){
+        void (Scoreboard::*rv)(class Player const&);
+        *((void**)&rv) = dlsym("?onPlayerJoined@Scoreboard@@UEAAXAEBVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player const&>(a0));
     }
     inline void tick(){
         void (Scoreboard::*rv)();
@@ -131,15 +131,15 @@ public:
         *((void**)&rv) = dlsym("?onPlayerIdentityUpdated@Scoreboard@@UEAAXAEBUPlayerScoreboardId@@@Z");
         return (this->*rv)(std::forward<struct PlayerScoreboardId const&>(a0));
     }
-    inline void onObjectiveAdded(class Objective const& a0){
-        void (Scoreboard::*rv)(class Objective const&);
-        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
-        return (this->*rv)(std::forward<class Objective const&>(a0));
-    }
     inline void onPlayerScoreRemoved(struct ScoreboardId const& a0, class Objective const& a1){
         void (Scoreboard::*rv)(struct ScoreboardId const&, class Objective const&);
         *((void**)&rv) = dlsym("?onPlayerScoreRemoved@Scoreboard@@UEAAXAEBUScoreboardId@@AEBVObjective@@@Z");
         return (this->*rv)(std::forward<struct ScoreboardId const&>(a0), std::forward<class Objective const&>(a1));
+    }
+    inline void onObjectiveAdded(class Objective const& a0){
+        void (Scoreboard::*rv)(class Objective const&);
+        *((void**)&rv) = dlsym("?onObjectiveAdded@Scoreboard@@UEAAXAEBVObjective@@@Z");
+        return (this->*rv)(std::forward<class Objective const&>(a0));
     }
     */
     MCAPI Scoreboard(class CommandSoftEnumRegistry);

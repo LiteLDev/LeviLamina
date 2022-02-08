@@ -26,7 +26,8 @@ public:
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~DynamicJumpControlDescription();
-    /*2*/ virtual void serializeData(class Json::Value&) const;
+    /*2*/ virtual void deserializeData(struct DeserializeDataParams);
+    /*3*/ virtual void serializeData(class Json::Value&) const;
     /*
     inline  ~DynamicJumpControlDescription(){
          (DynamicJumpControlDescription::*rv)();

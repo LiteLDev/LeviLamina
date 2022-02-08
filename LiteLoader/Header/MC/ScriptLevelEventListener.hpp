@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -27,17 +26,13 @@ public:
     /*0*/ virtual ~ScriptLevelEventListener();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual enum EventResult onLevelTick();
-    /*8*/ virtual enum EventResult onLevelWeatherChange(std::string const&, bool, bool);
-    /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_8();
-    /*12*/ virtual void __unk_vfn_9();
-    /*13*/ virtual enum EventResult onLevelStartLeaveGame(struct LevelStartLeaveGameEvent const&);
+    /*3*/ virtual enum EventResult onLevelAddedPlayer(class Level&, class Player&);
+    /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level&, class Player&);
+    /*5*/ virtual void __unk_vfn_2();
+    /*6*/ virtual enum EventResult onLevelTick();
+    /*7*/ virtual enum EventResult onLevelWeatherChange(std::string const&, bool, bool);
+    /*8*/ virtual void __unk_vfn_3();
+    /*9*/ virtual enum EventResult onEvent(struct LevelStartLeaveGameEvent const&);
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

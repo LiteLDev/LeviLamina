@@ -25,10 +25,16 @@ public:
 
 public:
     /*0*/ virtual ~CursorContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
     /*
+    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
+        int (CursorContainerValidation::*rv)(class ContainerScreenContext const&) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@CursorContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+    }
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (CursorContainerValidation::*rv)(class ItemStackBase const&) const;
         *((void**)&rv) = dlsym("?canItemMoveToContainer@CursorContainerValidation@@UEBA_NAEBVItemStackBase@@@Z");

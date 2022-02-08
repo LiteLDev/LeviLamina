@@ -29,7 +29,6 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:
     class Container& operator=(class Container const&) = delete;
-    Container(class Container const&) = delete;
     Container() = delete;
 #endif
 
@@ -89,6 +88,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI Container(class Container const&);
     MCAPI Container(enum ContainerType);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;

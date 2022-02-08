@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -38,8 +37,15 @@ public:
     }
     */
     MCAPI ScriptPlayer(class Player const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const&);
     MCAPI class Scripting::Result<std::string > getName() const;
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
+    MCAPI class Scripting::Result<int> getSelectedSlot() const;
+    MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const&);
+    MCAPI class Scripting::Result<void> setSelectedSlot(int) const;
+    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int);
+    MCAPI class Player* tryGetPlayer() const;
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
 
 protected:
 

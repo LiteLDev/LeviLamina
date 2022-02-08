@@ -49,15 +49,15 @@ public:
         *((void**)&rv) = dlsym("?executeCommand@MinecraftServerScriptEngine@@UEAA_NAEBUScriptCommand@@@Z");
         return (this->*rv)(std::forward<struct ScriptCommand const&>(a0));
     }
+    inline enum EventResult onEvent(struct ServerInstanceLeaveGameDoneEvent const& a0){
+        enum EventResult (MinecraftServerScriptEngine::*rv)(struct ServerInstanceLeaveGameDoneEvent const&);
+        *((void**)&rv) = dlsym("?onEvent@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEBUServerInstanceLeaveGameDoneEvent@@@Z");
+        return (this->*rv)(std::forward<struct ServerInstanceLeaveGameDoneEvent const&>(a0));
+    }
     inline void onExecuteCommandCalled(class ScriptApi::ScriptVersionInfo const& a0, struct ScriptCommand&& a1){
         void (MinecraftServerScriptEngine::*rv)(class ScriptApi::ScriptVersionInfo const&, struct ScriptCommand&&);
         *((void**)&rv) = dlsym("?onExecuteCommandCalled@MinecraftServerScriptEngine@@UEAAXAEBVScriptVersionInfo@ScriptApi@@$$QEAUScriptCommand@@@Z");
         return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<struct ScriptCommand&&>(a1));
-    }
-    inline enum EventResult onLeaveGameDone(struct ServerInstanceEvent const& a0){
-        enum EventResult (MinecraftServerScriptEngine::*rv)(struct ServerInstanceEvent const&);
-        *((void**)&rv) = dlsym("?onLeaveGameDone@MinecraftServerScriptEngine@@UEAA?AW4EventResult@@AEBUServerInstanceEvent@@@Z");
-        return (this->*rv)(std::forward<struct ServerInstanceEvent const&>(a0));
     }
     inline enum EventResult onLevelTick(){
         enum EventResult (MinecraftServerScriptEngine::*rv)();

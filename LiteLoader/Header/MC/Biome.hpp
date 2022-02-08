@@ -26,10 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~Biome();
-    MCAPI Biome(int);
     MCAPI class Biome& addTag(class HashedString, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType> >&);
     MCAPI bool canHaveSnowfall(class BlockSource const&, class BlockPos const&) const;
-    MCAPI class WeakRefT<struct SharePtrRefTraits<class PerlinSimplexNoise> > getBiomeInfoNoise() const;
     MCAPI enum VanillaBiomeTypes getBiomeType() const;
     MCAPI int getBirchFoliageColor(class BlockPos const&) const;
     MCAPI float getDefaultBiomeTemperature() const;
@@ -49,7 +47,6 @@ public:
     MCAPI bool hasTag(struct IDType<struct BiomeTagIDType> const&, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType> > const&) const;
     MCAPI bool hasTag(class WellKnownTagID const&) const;
     MCAPI bool hasTag(unsigned __int64, class TagRegistry<struct IDType<struct BiomeTagIDType>, struct IDType<struct BiomeTagSetIDType> > const&) const;
-    MCAPI void initEntity(class EntityRegistryOwned&);
     MCAPI bool isHumid() const;
     MCAPI bool isSnowCovered() const;
     MCAPI class Biome& setColor(int);

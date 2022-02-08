@@ -36,5 +36,6 @@ public:
 protected:
 
 private:
+    MCAPI void _tryPlaceItemInInventory(class ContainerComponent&, class ShareableComponent const&);
 
 };

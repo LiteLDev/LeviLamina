@@ -36,6 +36,7 @@ public:
     MCAPI class RaidBossComponent& operator=(class RaidBossComponent&&);
     MCAPI void registerPlayer(class Player*);
     MCAPI void removeBossBar(class Actor&);
+    MCAPI void resendRaidBossEventData(class Player*);
     MCAPI void sendRegistryMessages(class Actor&);
     MCAPI void setVillage(class std::weak_ptr<class Village>);
     MCAPI void setWaveStarted(bool);

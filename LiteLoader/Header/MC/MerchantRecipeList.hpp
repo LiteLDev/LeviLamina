@@ -45,6 +45,8 @@ public:
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
+    MCAPI class MerchantRecipe const* getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
+    MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
 
 protected:

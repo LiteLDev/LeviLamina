@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -20,7 +19,6 @@ class ScriptBlockPistonComponent : public ScriptObject {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKPISTONCOMPONENT
 public:
     class ScriptBlockPistonComponent& operator=(class ScriptBlockPistonComponent const&) = delete;
-    ScriptBlockPistonComponent(class ScriptBlockPistonComponent const&) = delete;
     ScriptBlockPistonComponent() = delete;
 #endif
 
@@ -33,6 +31,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent const&);
     MCAPI ScriptBlockPistonComponent(class ScriptBlockPistonComponent&&);
     MCAPI class Scripting::Result<std::vector<class BlockPos> > getAttachedBlocks();
     MCAPI class Scripting::Result<bool> isExpanded();

@@ -342,6 +342,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mFletchingTable;
     MCAPI extern class WeakPtr<class BlockLegacy> mFlowerPot;
     MCAPI extern class WeakPtr<class BlockLegacy> mFloweringAzalea;
+    MCAPI extern class WeakPtr<class BlockLegacy> mFrogEgg;
     MCAPI extern class WeakPtr<class BlockLegacy> mFrostedIce;
     MCAPI extern class WeakPtr<class BlockLegacy> mFurnace;
     MCAPI extern class WeakPtr<class BlockLegacy> mGildedBlackstone;
@@ -471,6 +472,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mOakStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mObserver;
     MCAPI extern class WeakPtr<class BlockLegacy> mObsidian;
+    MCAPI extern class WeakPtr<class BlockLegacy> mOchreFroglight;
     MCAPI extern class WeakPtr<class BlockLegacy> mOrangeCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mOrangeCandleCake;
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCopper;
@@ -479,6 +481,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedCutCopperStairs;
     MCAPI extern class WeakPtr<class BlockLegacy> mOxidizedDoubleCutCopperSlab;
     MCAPI extern class WeakPtr<class BlockLegacy> mPackedIce;
+    MCAPI extern class WeakPtr<class BlockLegacy> mPearlescentFroglight;
     MCAPI extern class WeakPtr<class BlockLegacy> mPinkCandle;
     MCAPI extern class WeakPtr<class BlockLegacy> mPinkCandleCake;
     MCAPI extern class WeakPtr<class BlockLegacy> mPiston;
@@ -645,6 +648,7 @@ namespace VanillaBlockTypes {
     MCAPI extern class WeakPtr<class BlockLegacy> mUnlitRedStoneTorch;
     MCAPI extern class WeakPtr<class BlockLegacy> mUnpoweredComparator;
     MCAPI extern class WeakPtr<class BlockLegacy> mUnpoweredRepeater;
+    MCAPI extern class WeakPtr<class BlockLegacy> mVerdantFroglight;
     MCAPI extern class WeakPtr<class BlockLegacy> mVine;
     MCAPI extern class WeakPtr<class BlockLegacy> mWallBanner;
     MCAPI extern class WeakPtr<class BlockLegacy> mWallBlock;

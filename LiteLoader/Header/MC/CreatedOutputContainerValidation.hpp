@@ -25,9 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~CreatedOutputContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
     /*
     inline bool isItemAllowedToAdd(class ItemStack const& a0) const{
         bool (CreatedOutputContainerValidation::*rv)(class ItemStack const&) const;

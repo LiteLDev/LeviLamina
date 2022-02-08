@@ -39,22 +39,22 @@ public:
     /*12*/ virtual void clearCache();
     /*13*/ virtual void __unk_vfn_1();
     /*14*/ virtual float getShadowRadius(class BlockSource&) const;
-    /*15*/ virtual bool hasAlphaLayer() const;
-    /*16*/ virtual void __unk_vfn_2();
+    /*15*/ virtual void __unk_vfn_2();
+    /*16*/ virtual void __unk_vfn_3();
     /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string getName() const;
     /*19*/ virtual std::string getImmersiveReaderText(class BlockSource&);
     /*20*/ virtual int getRepairCost() const;
     /*21*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*22*/ virtual void __unk_vfn_3();
-    /*23*/ virtual void __unk_vfn_4();
+    /*22*/ virtual void __unk_vfn_4();
+    /*23*/ virtual void __unk_vfn_5();
     /*24*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*25*/ virtual void __unk_vfn_5();
-    /*26*/ virtual void __unk_vfn_6();
-    /*27*/ virtual void __unk_vfn_7();
+    /*25*/ virtual void __unk_vfn_6();
+    /*26*/ virtual void __unk_vfn_7();
+    /*27*/ virtual void __unk_vfn_8();
     /*28*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*29*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*30*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*30*/ virtual void __unk_vfn_9();
 
 protected:
 

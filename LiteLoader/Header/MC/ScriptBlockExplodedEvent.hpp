@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,7 +23,6 @@ public:
 #endif
 
 public:
-    MCAPI ScriptBlockExplodedEvent(class BlockPos const&, class Block const&, class Actor*, class Scripting::WeakLifetimeScope const&);
     MCAPI ~ScriptBlockExplodedEvent();
 
 protected:

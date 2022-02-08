@@ -74,14 +74,14 @@ public:
         *((void**)&rv) = dlsym("?isObject@JsonLoader@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool doEndArrayItem(){
-        bool (JsonLoader::*rv)();
-        *((void**)&rv) = dlsym("?doEndArrayItem@JsonLoader@@EEAA_NXZ");
-        return (this->*rv)();
-    }
     inline bool doEndMember(){
         bool (JsonLoader::*rv)();
         *((void**)&rv) = dlsym("?doEndMember@JsonLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndArrayItem(){
+        bool (JsonLoader::*rv)();
+        *((void**)&rv) = dlsym("?doEndArrayItem@JsonLoader@@EEAA_NXZ");
         return (this->*rv)();
     }
     */

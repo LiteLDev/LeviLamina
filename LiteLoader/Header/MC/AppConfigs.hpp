@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -54,22 +55,17 @@ public:
     /*29*/ virtual void __unk_vfn_25();
     /*30*/ virtual std::vector<struct PackIdVersion> getAdditionalClientPacks(bool) const;
     /*31*/ virtual std::unique_ptr<class IScreenCapabilities> getScreenCapabilities(std::string const&) const;
-    /*32*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class IEntitlementManager&) const;
+    /*32*/ virtual std::unique_ptr<class IContentAccessibilityProvider> createContentAccessibility(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntitlementManager> >) const;
     /*33*/ virtual std::string getFeedbackURL() const;
     /*
-    inline bool areQuizzesSupported() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool useFullScreenByDefault() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?useFullScreenByDefault@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool requireEduLevelSettings() const{
+    inline bool areQuizzesSupported() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?requireEduLevelSettings@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?areQuizzesSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool muteByDefault() const{
@@ -77,9 +73,9 @@ public:
         *((void**)&rv) = dlsym("?muteByDefault@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool worldBuilderDisabled() const{
+    inline bool requireEduLevelSettings() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?requireEduLevelSettings@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool useNormalizedFontSize() const{
@@ -87,9 +83,9 @@ public:
         *((void**)&rv) = dlsym("?useNormalizedFontSize@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool sendPermissionsTelemetry() const{
+    inline bool worldBuilderDisabled() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?worldBuilderDisabled@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool webSocketsDisabled() const{
@@ -102,6 +98,11 @@ public:
         *((void**)&rv) = dlsym("?useEduDemoUpsellDialog@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool sendPermissionsTelemetry() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?sendPermissionsTelemetry@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool supportsChangingMultiplayerDuringPlay() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?supportsChangingMultiplayerDuringPlay@AppConfigs@@UEBA_NXZ");
@@ -112,9 +113,9 @@ public:
         *((void**)&rv) = dlsym("?shouldPromptBeforeExit@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLessonProgressionSupported() const{
+    inline bool gameArgumentsNeedAuthentication() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool requireTrustedContent() const{
@@ -122,9 +123,9 @@ public:
         *((void**)&rv) = dlsym("?requireTrustedContent@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool gameArgumentsNeedAuthentication() const{
+    inline bool isLessonProgressionSupported() const{
         bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?gameArgumentsNeedAuthentication@AppConfigs@@UEBA_NXZ");
+        *((void**)&rv) = dlsym("?isLessonProgressionSupported@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool canUseAzureNotebooks() const{
@@ -152,14 +153,14 @@ public:
         *((void**)&rv) = dlsym("?applyLevelDataOverride@AppConfigs@@UEBAXAEAVLevelData@@@Z");
         return (this->*rv)(std::forward<class LevelData&>(a0));
     }
-    inline bool areResourcePacksAllowed() const{
-        bool (AppConfigs::*rv)() const;
-        *((void**)&rv) = dlsym("?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool allowGameArguments() const{
         bool (AppConfigs::*rv)() const;
         *((void**)&rv) = dlsym("?allowGameArguments@AppConfigs@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool areResourcePacksAllowed() const{
+        bool (AppConfigs::*rv)() const;
+        *((void**)&rv) = dlsym("?areResourcePacksAllowed@AppConfigs@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool arePremiumSkinPacksAllowed() const{

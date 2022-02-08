@@ -40,10 +40,10 @@ public:
     /*11*/ virtual void hintDiscardBatchEnd();
     /*12*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*13*/ virtual void flushPendingWrites();
-    /*14*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
+    /*14*/ virtual void __unk_vfn_0();
     /*15*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*16*/ virtual void clearDeletedEntities();
-    /*17*/ virtual bool canCreateViews() const;
+    /*17*/ virtual void __unk_vfn_1();
     /*18*/ virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage&, class Scheduler&);
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const&, class Experiments const&);

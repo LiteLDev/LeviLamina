@@ -23,9 +23,10 @@ public:
 #endif
 
 public:
+    MCAPI AdmireItemComponent(class AdmireItemComponent&&);
     MCAPI class ItemStack const& getAdmireItem() const;
     MCAPI struct Tick const& getAdmireUntil() const;
-    MCAPI class Actor* getItemOwner() const;
+    MCAPI class WeakEntityRef getItemOwnerRef() const;
     MCAPI bool isAdmiring() const;
     MCAPI void onAdmireItemPickedUp(class Actor const&, class ItemStack const&, class Actor*);
     MCAPI void stopAdmiring();

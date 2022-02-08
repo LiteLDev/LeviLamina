@@ -28,7 +28,7 @@ public:
     /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
     /*2*/ virtual enum StructurePieceType getType() const;
     /*3*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*4*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
 protected:

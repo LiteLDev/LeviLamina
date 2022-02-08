@@ -2,8 +2,8 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "FilterTest.hpp"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -29,7 +29,14 @@ public:
     /*0*/ virtual ~FilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
     /*2*/ virtual bool _setupContext(class FilterTest const&, struct FilterContext&) const;
-    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*3*/ virtual void __unk_vfn_0();
+    /*
+    inline bool _handleUnknownMember(std::string const& a0, class Json::Value const& a1){
+        bool (FilterGroup::*rv)(std::string const&, class Json::Value const&);
+        *((void**)&rv) = dlsym("?_handleUnknownMember@FilterGroup@@MEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVValue@Json@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class Json::Value const&>(a1));
+    }
+    */
     MCAPI FilterGroup(class FilterGroup const&);
     MCAPI bool addFilterTest(struct FilterTest::Definition const&, struct FilterInputs const&);
     MCAPI bool addFilterTest(std::string const&, struct FilterInputs const&);

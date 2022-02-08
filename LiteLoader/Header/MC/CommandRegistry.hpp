@@ -253,6 +253,7 @@ public:
     MCAPI int addEnumValues(std::string const&, std::vector<std::string> const&);
     MCAPI int addSoftEnum(std::string const&, std::vector<std::string>);
     MCAPI void addSoftEnumValues(std::string const&, std::vector<std::string>);
+    MCAPI bool buildSelector(struct ActorSelectorArgs const&, class CommandSelectorBase*, std::string&) const;
     MCAPI std::vector<std::string> getAliases(std::string const&) const;
     MCAPI std::vector<std::string> getAlphabeticalLookup(class CommandOrigin const&) const;
     MCAPI std::string getCommandName(std::string const&) const;
@@ -268,7 +269,6 @@ public:
     MCAPI void setCommandRegistrationOverride(class std::function<void (struct CommandFlag& , std::string const& )>);
     MCAPI void setNetworkUpdateCallback(class std::function<void (class Packet const& )>);
     MCAPI void setScoreCallback(class std::function<int (bool& , std::string const& , class Actor const& )>);
-    MCAPI void setSoftEnumValues(std::string const&, std::vector<std::string>);
     MCAPI ~CommandRegistry();
     MCAPI static char const* COMMAND_NAME_ENUM_NAME;
     MCAPI static char const* FUNCTION_NAME_SOFTENUM_NAME;
@@ -300,8 +300,8 @@ private:
     MCAPI std::string describe(struct CommandRegistry::Signature const&, std::string const&, struct CommandRegistry::Overload const&, unsigned int, unsigned int*, unsigned int*) const;
     MCAPI std::string describe(class CommandParameterData const&) const;
     MCAPI std::string describe(class CommandRegistry::Symbol) const;
-    MCAPI struct CommandRegistry::Signature* findCommand(std::string const&);
     MCAPI struct CommandRegistry::Signature const* findCommand(std::string const&) const;
+    MCAPI struct CommandRegistry::Signature* findCommand(std::string const&);
     MCAPI class CommandRegistry::Symbol findEnumValue(std::string const&) const;
     MCAPI class CommandRegistry::Symbol findIdentifierInfo(std::string const&) const;
     MCAPI class CommandRegistry::Symbol findPostfix(std::string const&) const;
@@ -313,6 +313,7 @@ private:
     MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Overload const&) const;
     MCAPI bool originCanRun(class CommandOrigin const&, struct CommandRegistry::Signature const&) const;
     MCAPI bool parseOperator(enum CommandOperator*, struct CommandRegistry::ParseToken const&, std::string&, std::vector<std::string>&) const;
+    MCAPI bool parseSelector(struct ActorSelectorArgs&, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&) const;
     MCAPI bool parseSelector(class CommandSelectorBase*, struct CommandRegistry::ParseToken const&, class CommandOrigin const&, int, std::string&, std::vector<std::string>&, bool) const;
     MCAPI void registerOverloadInternal(struct CommandRegistry::Signature&, struct CommandRegistry::Overload&);
     MCAPI void setupOverloadRules(struct CommandRegistry::Signature&, struct CommandRegistry::Overload&);

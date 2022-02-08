@@ -16,10 +16,12 @@ namespace VanillaGameVersions {
 #undef AFTER_EXTRA
     MCAPI extern class BaseGameVersion const BeeUpdate;
     MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate;
+    MCAPI extern class BaseGameVersion const CavesAndCliffsUpdate_U1;
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1;
     MCAPI extern class BaseGameVersion const CavesAndCliffs_Part1_U1;
     MCAPI extern class BaseGameVersion const LastLegacyGeneratorUpdate;
     MCAPI extern class BaseGameVersion const NetherUpdate;
     MCAPI extern class BaseGameVersion const NetherUpdate_U3;
+    MCAPI extern class BaseGameVersion const WildUpdateVersion;
 
 };

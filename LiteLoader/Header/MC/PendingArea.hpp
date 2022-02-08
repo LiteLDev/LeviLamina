@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI struct TickingAreaDescription getDescription() const;
     MCAPI bool isEntityOwned() const;
     MCAPI struct PendingArea& operator=(struct PendingArea&&);
     MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;

@@ -110,9 +110,10 @@ private:
     MCAPI void _updateDwellerTimers(unsigned __int64, float);
     MCAPI void _updateUnclaimedPOIs(class BlockSource&);
     MCAPI static float const ACHIEVEMENT_SOUND_THE_ALARM_TOLERANCE;
-    MCAPI static std::string const RAIDER_CELEBRATION_EVENT;
+    MCAPI static std::string const CELEBRATION_EVENT;
     MCAPI static class Vec3 const RAID_BOUNDS_PADDING;
     MCAPI static std::string const RAID_EXPIRY_EVENT;
+    MCAPI static int const RAID_FINISHED_DELAY_IN_TICKS;
     MCAPI static int const RAID_GROUP_COMPLETE_DELAY_IN_TICKS;
     MCAPI static int const RAID_LOCATION_HELP_DELAY_IN_TICKS;
     MCAPI static unsigned char const RAID_MAX_SPAWN_FAILURES;

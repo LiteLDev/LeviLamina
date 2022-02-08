@@ -30,25 +30,35 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual class Level* getLevel() const;
-    /*6*/ virtual class Dimension* getDimension() const;
-    /*7*/ virtual class Actor* getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*12*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*13*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*14*/ virtual bool isSelectorExpansionAllowed() const;
-    /*15*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*16*/ virtual unsigned char getSourceSubId() const;
-    /*17*/ virtual void __unk_vfn_0();
-    /*18*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*19*/ virtual enum CommandOriginType getOriginType() const;
-    /*20*/ virtual void __unk_vfn_1();
-    /*21*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*22*/ virtual class CompoundTag serialize() const;
-    /*23*/ virtual bool isValid() const;
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*6*/ virtual class Level* getLevel() const;
+    /*7*/ virtual class Dimension* getDimension() const;
+    /*8*/ virtual class Actor* getEntity() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*13*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /*14*/ virtual void __unk_vfn_0();
+    /*15*/ virtual bool isSelectorExpansionAllowed() const;
+    /*16*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*17*/ virtual unsigned char getSourceSubId() const;
+    /*18*/ virtual void __unk_vfn_1();
+    /*19*/ virtual struct CommandOriginIdentity getIdentity() const;
+    /*20*/ virtual void __unk_vfn_2();
+    /*21*/ virtual void __unk_vfn_3();
+    /*22*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*23*/ virtual void updateValues();
+    /*24*/ virtual class CompoundTag serialize() const;
+    /*25*/ virtual bool isValid() const;
+    /*26*/ virtual void _setUUID(class mce::UUID const&);
+    /*
+    inline enum CommandOriginType getOriginType() const{
+        enum CommandOriginType (PlayerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PlayerCommandOrigin(class Player&);
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const&, class Level&);
 

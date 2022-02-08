@@ -19,10 +19,13 @@ class TaskResult {
 public:
     class TaskResult& operator=(class TaskResult const&) = delete;
     TaskResult(class TaskResult const&) = delete;
-    TaskResult() = delete;
 #endif
 
 public:
+    MCAPI TaskResult();
+    MCAPI bool hasDelay() const;
+    MCAPI bool isDone() const;
+    MCAPI bool isWaiting() const;
     MCAPI ~TaskResult();
     MCAPI static class TaskResult const Done;
     MCAPI static class TaskResult const Requeue;

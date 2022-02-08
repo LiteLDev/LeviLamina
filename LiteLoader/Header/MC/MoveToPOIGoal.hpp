@@ -36,8 +36,7 @@ public:
     /*9*/ virtual void _moveToBlock();
     /*10*/ virtual class Vec3 _getTargetPosition() const;
     /*11*/ virtual unsigned __int64 _getRepathTime() const;
-    /*12*/ virtual bool getPOI(enum POIType);
-    /*13*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    /*12*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
     /*
     inline  ~MoveToPOIGoal(){
          (MoveToPOIGoal::*rv)();
@@ -46,6 +45,7 @@ public:
     }
     */
     MCAPI MoveToPOIGoal(class Mob&, float, enum POIType, float);
+    MCAPI bool getPOI(enum POIType);
 
 protected:
     MCAPI bool _canReachPOI(class Vec3 const&, float, bool);

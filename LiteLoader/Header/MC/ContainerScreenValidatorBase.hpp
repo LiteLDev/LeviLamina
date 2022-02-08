@@ -24,6 +24,21 @@ public:
 public:
     /*0*/ virtual ~ContainerScreenValidatorBase();
     /*
+    inline void clear(){
+        void (ContainerScreenValidatorBase::*rv)();
+        *((void**)&rv) = dlsym("?clear@ContainerScreenValidatorBase@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void onItemRemoved(int a0, class ItemStack const& a1){
+        void (ContainerScreenValidatorBase::*rv)(int, class ItemStack const&);
+        *((void**)&rv) = dlsym("?onItemRemoved@ContainerScreenValidatorBase@@UEAAXHAEBVItemStack@@@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<class ItemStack const&>(a1));
+    }
+    inline void commitResults(class ContainerScreenContext const& a0){
+        void (ContainerScreenValidatorBase::*rv)(class ContainerScreenContext const&);
+        *((void**)&rv) = dlsym("?commitResults@ContainerScreenValidatorBase@@UEAAXAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+    }
     inline  ~ContainerScreenValidatorBase(){
          (ContainerScreenValidatorBase::*rv)();
         *((void**)&rv) = dlsym("??1ContainerScreenValidatorBase@@UEAA@XZ");

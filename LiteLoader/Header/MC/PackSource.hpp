@@ -23,12 +23,17 @@ public:
 #endif
 
 public:
-    /*0*/ virtual void __unk_vfn_0() = 0;
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual void __unk_vfn_2() = 0;
-    /*3*/ virtual enum PackOrigin getPackOrigin() const;
-    /*4*/ virtual enum PackType getPackType() const;
     /*
+    inline enum PackOrigin getPackOrigin() const{
+        enum PackOrigin (PackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackOrigin@PackSource@@UEBA?AW4PackOrigin@@XZ");
+        return (this->*rv)();
+    }
+    inline enum PackType getPackType() const{
+        enum PackType (PackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackType@PackSource@@UEBA?AW4PackType@@XZ");
+        return (this->*rv)();
+    }
     inline  ~PackSource(){
          (PackSource::*rv)();
         *((void**)&rv) = dlsym("??1PackSource@@UEAA@XZ");

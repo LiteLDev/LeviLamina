@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ServerPlayerEventCoordinator();
-    MCAPI void sendPlayerAuthInputApplied(class Player&, class PlayerAuthInputPacket const&);
-    MCAPI void sendPlayerAuthInputReceived(class Player&, class PlayerAuthInputPacket const&);
+    MCAPI void sendPlayerAuthInputApplied(class Player&);
+    MCAPI void sendPlayerAuthInputReceived(class Player&);
     MCAPI void sendPlayerMovementAnomaly(class Player&, class Vec3 const&, float, float);
     MCAPI void sendPlayerMovementCorrected(class Player&, class Vec3 const&, float, float);
     MCAPI void sendPlayerOnGround(class Player&);

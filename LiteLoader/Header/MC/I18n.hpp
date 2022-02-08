@@ -32,8 +32,8 @@ public:
     MCAPI static void chooseLanguage(class Localization const&);
     MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > findAvailableLanguageNames(class ResourcePackManager&);
     MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager&);
-    MCAPI static std::string get(std::string const&);
-    MCAPI static std::string get(std::string const&, std::vector<std::string> const&);
+    MCAPI static std::string get(std::string const&, std::vector<std::string> const&, class Localization const*);
+    MCAPI static std::string get(std::string const&, class Localization const*);
     MCAPI static class optional_ref<class Localization const> getCurrentLanguage();
     MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const&);
     MCAPI static std::string const& getLocaleCodeFor(std::string const&);

@@ -25,14 +25,15 @@ public:
 public:
     /*0*/ virtual ~SpreadPlayersCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI static std::vector<class Vec2> createInitialPositions(class Random&, int, class Vec2 const&, class Vec2 const&);
     MCAPI static void setup(class CommandRegistry&);
+    MCAPI static bool spreadPositions(class CommandOutput&, class Random&, class CommandOrigin const&, class Vec2 const&, float, class Vec2 const&, class Vec2 const&, std::vector<class Vec2>&, class std::map<class ChunkPos, std::unique_ptr<class CommandArea>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<class CommandArea> > > >&);
 
 protected:
 
 private:
-    MCAPI static std::vector<class Vec2> createInitialPositions(class Random&, int, class Vec2 const&, class Vec2 const&);
-    MCAPI static float setPlayerPositions(class CommandSelectorResults<class Actor>&, class BlockSource&, std::vector<class Vec2>&);
-    MCAPI static bool spreadEntities(class CommandOutput&, class CommandSelectorResults<class Actor>&, class BlockSource&, class Vec2 const&, float, float);
-    MCAPI static int spreadPositions(class CommandOutput&, class Random&, class BlockSource&, class Vec2 const&, float, class Vec2 const&, class Vec2 const&, std::vector<class Vec2>&);
+    MCAPI static bool _checkPositionValid(class CommandOrigin const&, class BlockPos const&, class std::map<class ChunkPos, std::unique_ptr<class CommandArea>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<class CommandArea> > > >&);
+    MCAPI static float _setPlayerPositions(class CommandSelectorResults<class Actor>&, std::vector<class Vec2>&, class std::map<class ChunkPos, std::unique_ptr<class CommandArea>, struct std::less<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<class CommandArea> > > >&);
+    MCAPI static bool _spreadEntities(class CommandOutput&, class CommandSelectorResults<class Actor>&, class CommandOrigin const&, class Vec2 const&, float, float);
 
 };

@@ -46,6 +46,7 @@ public:
     MCAPI bool IsComplete() const;
     MCAPI static void createInstance();
     MCAPI static void destroyInstance();
+    MCAPI static bool exists();
     MCAPI static class LevelDbEnv* getSingleton();
 
 protected:

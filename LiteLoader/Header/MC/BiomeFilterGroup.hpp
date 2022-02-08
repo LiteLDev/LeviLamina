@@ -3,7 +3,6 @@
 #define AUTO_GENERATED
 #include "../Global.h"
 #include "FilterGroup.hpp"
-#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~BiomeFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-    /*2*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*2*/ virtual void __unk_vfn_0();
     /*
     inline  ~BiomeFilterGroup(){
          (BiomeFilterGroup::*rv)();

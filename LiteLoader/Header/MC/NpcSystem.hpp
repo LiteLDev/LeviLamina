@@ -26,6 +26,7 @@ public:
     /*0*/ virtual ~NpcSystem();
     /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual void tick(class EntityRegistry&);
+    MCAPI static void tickCountdown(class ViewedEntityContextT<class EntityContext, class FlagComponent<struct ActorTickedFlag>, class FlagComponent<struct ActorFlag>, struct NpcComponents::LeaveMenuCountdown>&);
 
 protected:
 

@@ -40,7 +40,7 @@ public:
 protected:
 
 private:
-    MCAPI void _attemptAttack(class Actor*);
     MCAPI void _attemptStartAttacking(class Actor*) const;
+    MCAPI void _manageAttackTime();
 
 };

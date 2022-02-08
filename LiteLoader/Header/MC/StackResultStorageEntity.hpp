@@ -30,6 +30,8 @@ public:
 public:
 
 protected:
+    MCAPI StackResultStorageEntity(class StackResultStorageEntity&&);
+    MCAPI StackResultStorageEntity(class OwnerStorageEntity const&);
     MCAPI StackResultStorageEntity(class WeakStorageEntity const&);
     MCAPI class EntityContext& _getStackRef() const;
     MCAPI bool _hasValue() const;

@@ -31,8 +31,10 @@ public:
     MCAPI void initFromDefinition(class Actor&, class ExplodeDefinition const&);
     MCAPI bool isFuseLit() const;
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
+    MCAPI bool requiresTntExplodeGameRuleEnabled() const;
     MCAPI void setAllowUnderwater(bool);
     MCAPI void setFuseLength(int);
+    MCAPI void setTntExpodeGameRuleRequired();
 
 protected:
 

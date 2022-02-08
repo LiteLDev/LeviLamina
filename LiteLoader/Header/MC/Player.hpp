@@ -123,225 +123,241 @@ public:
     /*2*/ virtual void _serverInitItemStackIds();
     /*3*/ virtual ~Player();
     /*4*/ virtual void remove();
-    /*5*/ virtual bool isRuntimePredictedMovementEnabled() const;
-    /*6*/ virtual void __unk_vfn_0();
+    /*5*/ virtual void __unk_vfn_0();
+    /*6*/ virtual void __unk_vfn_1();
     /*7*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
     /*8*/ virtual void move(class Vec3 const&);
     /*9*/ virtual void move(struct IActorMovementProxy&, class Vec3 const&) const;
     /*10*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
-    /*11*/ virtual void __unk_vfn_1();
+    /*11*/ virtual void __unk_vfn_2();
     /*12*/ virtual void teleportTo(class Vec3 const&, bool, int, int);
-    /*13*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
-    /*14*/ virtual void normalTick();
-    /*15*/ virtual void vehicleTick();
-    /*16*/ virtual float getRidingHeight();
-    /*17*/ virtual void __unk_vfn_2();
-    /*18*/ virtual std::string getFormattedNameTag() const;
-    /*19*/ virtual void __unk_vfn_3();
-    /*20*/ virtual float getCameraOffset() const;
-    /*21*/ virtual void __unk_vfn_4();
+    /*13*/ virtual void lerpMotion(class Vec3 const&);
+    /*14*/ virtual std::unique_ptr<class AddActorBasePacket> tryCreateAddActorPacket();
+    /*15*/ virtual void normalTick();
+    /*16*/ virtual void vehicleTick();
+    /*17*/ virtual float getRidingHeight();
+    /*18*/ virtual void __unk_vfn_3();
+    /*19*/ virtual std::string getFormattedNameTag() const;
+    /*20*/ virtual void __unk_vfn_4();
+    /*21*/ virtual float getCameraOffset() const;
     /*22*/ virtual void __unk_vfn_5();
-    /*23*/ virtual void playerTouch(class Player&);
-    /*24*/ virtual bool isImmobile() const;
-    /*25*/ virtual void __unk_vfn_6();
-    /*26*/ virtual bool isSleeping() const;
-    /*27*/ virtual void setSleeping(bool);
-    /*28*/ virtual void __unk_vfn_7();
-    /*29*/ virtual bool isBlocking() const;
-    /*30*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
-    /*31*/ virtual void __unk_vfn_8();
+    /*23*/ virtual void __unk_vfn_6();
+    /*24*/ virtual void playerTouch(class Player&);
+    /*25*/ virtual bool isImmobile() const;
+    /*26*/ virtual void __unk_vfn_7();
+    /*27*/ virtual bool isSleeping() const;
+    /*28*/ virtual void setSleeping(bool);
+    /*29*/ virtual void __unk_vfn_8();
+    /*30*/ virtual bool isBlocking() const;
+    /*31*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
     /*32*/ virtual void __unk_vfn_9();
     /*33*/ virtual void __unk_vfn_10();
     /*34*/ virtual void __unk_vfn_11();
-    /*35*/ virtual class Actor* findAttackTarget();
-    /*36*/ virtual bool isValidTarget(class Actor*) const;
-    /*37*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
-    /*38*/ virtual void adjustDamageAmount(int&) const;
-    /*39*/ virtual void onTame();
-    /*40*/ virtual void onFailedTame();
-    /*41*/ virtual bool isJumping() const;
-    /*42*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*43*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
-    /*44*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
-    /*45*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
-    /*46*/ virtual void feed(int);
-    /*47*/ virtual void handleEntityEvent(enum ActorEvent, int);
-    /*48*/ virtual float getPickRadius();
-    /*49*/ virtual class HashedString const& getActorRendererId() const;
-    /*50*/ virtual void awardKillScore(class Actor&, int);
-    /*51*/ virtual void setArmor(enum ArmorSlot, class ItemStack const&);
-    /*52*/ virtual class ItemStack const& getCarriedItem() const;
-    /*53*/ virtual void setCarriedItem(class ItemStack const&);
-    /*54*/ virtual void setOffhandSlot(class ItemStack const&);
-    /*55*/ virtual class ItemStack const& getEquippedTotem() const;
-    /*56*/ virtual bool consumeTotem();
-    /*57*/ virtual enum ActorType getEntityTypeId() const;
-    /*58*/ virtual class HashedString const& queryEntityRenderer() const;
-    /*59*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*60*/ virtual bool canFreeze() const;
-    /*61*/ virtual int getPortalCooldown() const;
-    /*62*/ virtual int getPortalWaitTime() const;
-    /*63*/ virtual bool canChangeDimensions() const;
-    /*64*/ virtual void __unk_vfn_12();
-    /*65*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*66*/ virtual void onSynchedDataUpdate(int);
-    /*67*/ virtual bool canAddPassenger(class Actor&) const;
-    /*68*/ virtual bool canPickupItem(class ItemStack const&) const;
-    /*69*/ virtual bool canBePulledIntoVehicle() const;
-    /*70*/ virtual void __unk_vfn_13();
-    /*71*/ virtual void sendMotionPacketIfNeeded();
-    /*72*/ virtual bool canSynchronizeNewEntity() const;
-    /*73*/ virtual void startSwimming();
-    /*74*/ virtual void stopSwimming();
-    /*75*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
-    /*76*/ virtual class AnimationComponent& getAnimationComponent();
-    /*77*/ virtual void useItem(class ItemStackBase&, enum ItemUseMethod, bool);
-    /*78*/ virtual void __unk_vfn_14();
-    /*79*/ virtual void __unk_vfn_15();
-    /*80*/ virtual float getMapDecorationRotation() const;
-    /*81*/ virtual bool isWorldBuilder() const;
-    /*82*/ virtual void __unk_vfn_16();
-    /*83*/ virtual bool isAdventure() const;
-    /*84*/ virtual bool add(class ItemStack&);
-    /*85*/ virtual bool drop(class ItemStack const&, bool);
-    /*86*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*87*/ virtual void setAuxValue(int);
-    /*88*/ virtual void setSize(float, float);
-    /*89*/ virtual void startSpinAttack();
-    /*90*/ virtual void stopSpinAttack();
-    /*91*/ virtual void __unk_vfn_17();
-    /*92*/ virtual void __unk_vfn_18();
-    /*93*/ virtual void die(class ActorDamageSource const&);
-    /*94*/ virtual bool shouldDropDeathLoot() const;
-    /*95*/ virtual void __unk_vfn_19();
-    /*96*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
-    /*97*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
-    /*98*/ virtual void addAdditionalSaveData(class CompoundTag&);
-    /*99*/ virtual void __unk_vfn_20();
-    /*100*/ virtual void _onSizeUpdated();
-    /*101*/ virtual void __unk_vfn_21();
-    /*102*/ virtual void spawnAnim();
-    /*103*/ virtual float getSpeed() const;
-    /*104*/ virtual void setSpeed(float);
-    /*105*/ virtual void travel(float, float, float);
-    /*106*/ virtual void travel(struct IMobMovementProxy&, float, float, float) const;
-    /*107*/ virtual void aiStep();
-    /*108*/ virtual void aiStep(struct IMobMovementProxy&) const;
-    /*109*/ virtual int getItemUseDuration() const;
-    /*110*/ virtual float getItemUseStartupProgress() const;
-    /*111*/ virtual float getItemUseIntervalProgress() const;
-    /*112*/ virtual void __unk_vfn_22();
-    /*113*/ virtual bool isAlliedTo(class Mob*);
-    /*114*/ virtual void __unk_vfn_23();
-    /*115*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*116*/ virtual std::vector<class ItemStack const* > getAllHand() const;
-    /*117*/ virtual std::vector<class ItemStack const* > getAllEquipment() const;
-    /*118*/ virtual void dropEquipmentOnDeath(class ActorDamageSource const&, int);
-    /*119*/ virtual void dropEquipmentOnDeath();
-    /*120*/ virtual void clearVanishEnchantedItemsOnDeath();
-    /*121*/ virtual void sendInventory(bool);
-    /*122*/ virtual void onBorn(class Actor&, class Actor&);
-    /*123*/ virtual int getAttackTime();
-    /*124*/ virtual float _getWalkTargetValue(class BlockPos const&);
-    /*125*/ virtual bool canExistWhenDisallowMob() const;
-    /*126*/ virtual void __unk_vfn_24();
-    /*127*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*128*/ virtual void jumpFromGround();
-    /*129*/ virtual void jumpFromGround(struct IMobMovementProxy&) const;
-    /*130*/ virtual void updateAi();
-    /*131*/ virtual void _serverAiMobStep();
-    /*132*/ virtual void updateGliding();
-    /*133*/ virtual void __unk_vfn_25();
-    /*134*/ virtual void prepareRegion(class ChunkSource&);
-    /*135*/ virtual void destroyRegion();
-    /*136*/ virtual void suspendRegion();
-    /*137*/ virtual void resendAllChunks();
-    /*138*/ virtual void _fireWillChangeDimension();
-    /*139*/ virtual void _fireDimensionChanged();
-    /*140*/ virtual void changeDimensionWithCredits(class AutomaticID<class Dimension, int>);
-    /*141*/ virtual void tickWorld(struct Tick const&);
-    /*142*/ virtual void __unk_vfn_26() = 0;
-    /*143*/ virtual std::vector<class ChunkPos> const& getTickingOffsets() const;
-    /*144*/ virtual void moveView();
-    /*145*/ virtual void setName(std::string const&);
-    /*146*/ virtual void checkMovementStats(class Vec3 const&);
-    /*147*/ virtual void __unk_vfn_27();
-    /*148*/ virtual void __unk_vfn_28();
-    /*149*/ virtual void respawn();
-    /*150*/ virtual void __unk_vfn_29();
-    /*151*/ virtual void resetPos(bool);
-    /*152*/ virtual void __unk_vfn_30();
-    /*153*/ virtual bool hasResource(int);
-    /*154*/ virtual void completeUsingItem();
-    /*155*/ virtual void setPermissions(enum CommandPermissionLevel);
-    /*156*/ virtual void startDestroying();
-    /*157*/ virtual void stopDestroying();
-    /*158*/ virtual void __unk_vfn_31();
-    /*159*/ virtual void __unk_vfn_32();
-    /*160*/ virtual void openTrading(struct ActorUniqueID const&, bool);
-    /*161*/ virtual bool canOpenContainerScreen();
-    /*162*/ virtual void __unk_vfn_33();
-    /*163*/ virtual void __unk_vfn_34();
-    /*164*/ virtual void openInventory();
-    /*165*/ virtual void __unk_vfn_35();
-    /*166*/ virtual void __unk_vfn_36();
-    /*167*/ virtual void displayTextObjectMessage(class TextObjectRoot const&, std::string const&, std::string const&);
-    /*168*/ virtual void displayTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
-    /*169*/ virtual void displayWhisperMessage(std::string const&, std::string const&, std::string const&, std::string const&);
-    /*170*/ virtual enum BedSleepingResult startSleepInBed(class BlockPos const&);
-    /*171*/ virtual void stopSleepInBed(bool, bool);
-    /*172*/ virtual bool canStartSleepInBed();
-    /*173*/ virtual int getSleepTimer() const;
-    /*174*/ virtual int getPreviousTickSleepTimer() const;
-    /*175*/ virtual void __unk_vfn_37();
-    /*176*/ virtual void __unk_vfn_38();
-    /*177*/ virtual bool isHostingPlayer() const;
-    /*178*/ virtual bool isLoading() const;
-    /*179*/ virtual bool isPlayerInitialized() const;
-    /*180*/ virtual void __unk_vfn_39();
-    /*181*/ virtual void registerTrackedBoss(struct ActorUniqueID);
-    /*182*/ virtual void unRegisterTrackedBoss(struct ActorUniqueID);
-    /*183*/ virtual void setPlayerGameType(enum GameType);
-    /*184*/ virtual void initHUDContainerManager();
-    /*185*/ virtual void _crit(class Actor&);
-    /*186*/ virtual class IMinecraftEventing* getEventing() const;
-    /*187*/ virtual void __unk_vfn_40();
-    /*188*/ virtual void sendEventPacket(class EventPacket&) const;
-    /*189*/ virtual void addExperience(int);
-    /*190*/ virtual void addLevels(int);
-    /*191*/ virtual void setContainerData(class IContainerManager&, int, int) = 0;
-    /*192*/ virtual void slotChanged(class IContainerManager&, class Container&, int, class ItemStack const&, class ItemStack const&, bool) = 0;
-    /*193*/ virtual void inventoryChanged(class Container&, int, class ItemStack const&, class ItemStack const&, bool);
-    /*194*/ virtual void refreshContainer(class IContainerManager&) = 0;
-    /*195*/ virtual void deleteContainerManager();
-    /*196*/ virtual void setFieldOfViewModifier(float);
-    /*197*/ virtual bool is2DPositionRelevant(class AutomaticID<class Dimension, int>, class BlockPos const&);
-    /*198*/ virtual bool isActorRelevant(class Actor const&);
-    /*199*/ virtual bool isTeacher() const = 0;
-    /*200*/ virtual void onSuspension();
-    /*201*/ virtual void onLinkedSlotsChanged();
-    /*202*/ virtual void startCooldown(class Item const*);
-    /*203*/ virtual int getItemCooldownLeft(class HashedString const&) const;
-    /*204*/ virtual int getItemCooldownLeft(unsigned __int64) const;
-    /*205*/ virtual int getMaxItemCooldownLeft() const;
-    /*206*/ virtual bool isItemInCooldown(class HashedString const&) const;
-    /*207*/ virtual void sendInventoryTransaction(class InventoryTransaction const&) const = 0;
-    /*208*/ virtual void sendComplexInventoryTransaction(std::unique_ptr<class ComplexInventoryTransaction>) const = 0;
-    /*209*/ virtual void sendNetworkPacket(class Packet&) const;
-    /*210*/ virtual class PlayerEventCoordinator& getPlayerEventCoordinator() = 0;
-    /*211*/ virtual class MoveInputHandler* getMoveInputHandler() = 0;
-    /*212*/ virtual enum InputMode getInputMode() const = 0;
-    /*213*/ virtual enum ClientPlayMode getPlayMode() const = 0;
-    /*214*/ virtual void reportMovementTelemetry(enum MovementEventType);
-    /*215*/ virtual void __unk_vfn_41();
-    /*216*/ virtual std::string getXuid() const;
-    /*217*/ virtual struct PlayerMovementSettings const& getMovementSettings() const;
-    /*218*/ virtual void onMovePlayerPacketNormal(class Vec3 const&, class Vec2 const&, float);
-    /*219*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
+    /*35*/ virtual void __unk_vfn_12();
+    /*36*/ virtual class Actor* findAttackTarget();
+    /*37*/ virtual void __unk_vfn_13();
+    /*38*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
+    /*39*/ virtual void adjustDamageAmount(int&) const;
+    /*40*/ virtual void onTame();
+    /*41*/ virtual void onFailedTame();
+    /*42*/ virtual bool isJumping() const;
+    /*43*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
+    /*44*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
+    /*45*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
+    /*46*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
+    /*47*/ virtual void feed(int);
+    /*48*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*49*/ virtual float getPickRadius();
+    /*50*/ virtual class HashedString const& getActorRendererId() const;
+    /*51*/ virtual void awardKillScore(class Actor&, int);
+    /*52*/ virtual void setArmor(enum ArmorSlot, class ItemStack const&);
+    /*53*/ virtual class ItemStack const& getCarriedItem() const;
+    /*54*/ virtual void setCarriedItem(class ItemStack const&);
+    /*55*/ virtual void setOffhandSlot(class ItemStack const&);
+    /*56*/ virtual class ItemStack const& getEquippedTotem() const;
+    /*57*/ virtual bool consumeTotem();
+    /*58*/ virtual enum ActorType getEntityTypeId() const;
+    /*59*/ virtual class HashedString const& queryEntityRenderer() const;
+    /*60*/ virtual struct ActorUniqueID getSourceUniqueID() const;
+    /*61*/ virtual bool canFreeze() const;
+    /*62*/ virtual int getPortalCooldown() const;
+    /*63*/ virtual int getPortalWaitTime() const;
+    /*64*/ virtual void __unk_vfn_14();
+    /*65*/ virtual void __unk_vfn_15();
+    /*66*/ virtual struct ActorUniqueID getControllingPlayer() const;
+    /*67*/ virtual void onSynchedDataUpdate(int);
+    /*68*/ virtual bool canAddPassenger(class Actor&) const;
+    /*69*/ virtual void __unk_vfn_16();
+    /*70*/ virtual void __unk_vfn_17();
+    /*71*/ virtual void __unk_vfn_18();
+    /*72*/ virtual void sendMotionPacketIfNeeded();
+    /*73*/ virtual void __unk_vfn_19();
+    /*74*/ virtual void startSwimming();
+    /*75*/ virtual void stopSwimming();
+    /*76*/ virtual enum CommandPermissionLevel getCommandPermissionLevel() const;
+    /*77*/ virtual class AnimationComponent& getAnimationComponent();
+    /*78*/ virtual void useItem(class ItemStackBase&, enum ItemUseMethod, bool);
+    /*79*/ virtual void __unk_vfn_20();
+    /*80*/ virtual void __unk_vfn_21();
+    /*81*/ virtual float getMapDecorationRotation() const;
+    /*82*/ virtual bool isWorldBuilder() const;
+    /*83*/ virtual void __unk_vfn_22();
+    /*84*/ virtual bool isAdventure() const;
+    /*85*/ virtual bool add(class ItemStack&);
+    /*86*/ virtual bool drop(class ItemStack const&, bool);
+    /*87*/ virtual void __unk_vfn_23();
+    /*88*/ virtual void setAuxValue(int);
+    /*89*/ virtual void setSize(float, float);
+    /*90*/ virtual void startSpinAttack();
+    /*91*/ virtual void stopSpinAttack();
+    /*92*/ virtual void __unk_vfn_24();
+    /*93*/ virtual void __unk_vfn_25();
+    /*94*/ virtual void die(class ActorDamageSource const&);
+    /*95*/ virtual bool shouldDropDeathLoot() const;
+    /*96*/ virtual void __unk_vfn_26();
+    /*97*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
+    /*98*/ virtual void readAdditionalSaveData(class CompoundTag const&, class DataLoadHelper&);
+    /*99*/ virtual void addAdditionalSaveData(class CompoundTag&);
+    /*100*/ virtual void __unk_vfn_27();
+    /*101*/ virtual void _onSizeUpdated();
+    /*102*/ virtual void __unk_vfn_28();
+    /*103*/ virtual void spawnAnim();
+    /*104*/ virtual float getSpeed() const;
+    /*105*/ virtual void setSpeed(float);
+    /*106*/ virtual void travel(float, float, float);
+    /*107*/ virtual void travel(struct IMobMovementProxy&, float, float, float) const;
+    /*108*/ virtual void aiStep();
+    /*109*/ virtual void aiStep(struct IMobMovementProxy&) const;
+    /*110*/ virtual int getItemUseDuration() const;
+    /*111*/ virtual float getItemUseStartupProgress() const;
+    /*112*/ virtual float getItemUseIntervalProgress() const;
+    /*113*/ virtual void __unk_vfn_29();
+    /*114*/ virtual void __unk_vfn_30();
+    /*115*/ virtual void __unk_vfn_31();
+    /*116*/ virtual void sendArmorDamage(class std::bitset<4> const&);
+    /*117*/ virtual std::vector<class ItemStack const* > getAllHand() const;
+    /*118*/ virtual std::vector<class ItemStack const* > getAllEquipment() const;
+    /*119*/ virtual void dropEquipmentOnDeath(class ActorDamageSource const&, int);
+    /*120*/ virtual void dropEquipmentOnDeath();
+    /*121*/ virtual void clearVanishEnchantedItemsOnDeath();
+    /*122*/ virtual void sendInventory(bool);
+    /*123*/ virtual void onBorn(class Actor&, class Actor&);
+    /*124*/ virtual int getAttackTime();
+    /*125*/ virtual float _getWalkTargetValue(class BlockPos const&);
+    /*126*/ virtual void __unk_vfn_32();
+    /*127*/ virtual void __unk_vfn_33();
+    /*128*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
+    /*129*/ virtual void jumpFromGround();
+    /*130*/ virtual void jumpFromGround(struct IMobMovementProxy&) const;
+    /*131*/ virtual void updateAi();
+    /*132*/ virtual void _serverAiMobStep();
+    /*133*/ virtual void updateGliding();
+    /*134*/ virtual void __unk_vfn_34();
+    /*135*/ virtual void prepareRegion(class ChunkSource&);
+    /*136*/ virtual void destroyRegion();
+    /*137*/ virtual void suspendRegion();
+    /*138*/ virtual void resendAllChunks();
+    /*139*/ virtual void _fireWillChangeDimension();
+    /*140*/ virtual void _fireDimensionChanged();
+    /*141*/ virtual void changeDimensionWithCredits(class AutomaticID<class Dimension, int>);
+    /*142*/ virtual void tickWorld(struct Tick const&);
+    /*143*/ virtual void __unk_vfn_35() = 0;
+    /*144*/ virtual std::vector<class ChunkPos> const& getTickingOffsets() const;
+    /*145*/ virtual void moveView();
+    /*146*/ virtual void setName(std::string const&);
+    /*147*/ virtual void checkMovementStats(class Vec3 const&);
+    /*148*/ virtual void __unk_vfn_36();
+    /*149*/ virtual void __unk_vfn_37();
+    /*150*/ virtual void respawn();
+    /*151*/ virtual void __unk_vfn_38();
+    /*152*/ virtual void resetPos(bool);
+    /*153*/ virtual void __unk_vfn_39();
+    /*154*/ virtual bool hasResource(int);
+    /*155*/ virtual void completeUsingItem();
+    /*156*/ virtual void setPermissions(enum CommandPermissionLevel);
+    /*157*/ virtual void startDestroying();
+    /*158*/ virtual void stopDestroying();
+    /*159*/ virtual void __unk_vfn_40();
+    /*160*/ virtual void __unk_vfn_41();
+    /*161*/ virtual void openTrading(struct ActorUniqueID const&, bool);
+    /*162*/ virtual bool canOpenContainerScreen();
+    /*163*/ virtual void __unk_vfn_42();
+    /*164*/ virtual void __unk_vfn_43();
+    /*165*/ virtual void openInventory();
+    /*166*/ virtual void __unk_vfn_44();
+    /*167*/ virtual void __unk_vfn_45();
+    /*168*/ virtual void displayTextObjectMessage(class TextObjectRoot const&, std::string const&, std::string const&);
+    /*169*/ virtual void displayTextObjectWhisperMessage(class ResolvedTextObject const&, std::string const&, std::string const&);
+    /*170*/ virtual void displayWhisperMessage(std::string const&, std::string const&, std::string const&, std::string const&);
+    /*171*/ virtual enum BedSleepingResult startSleepInBed(class BlockPos const&);
+    /*172*/ virtual void stopSleepInBed(bool, bool);
+    /*173*/ virtual bool canStartSleepInBed();
+    /*174*/ virtual int getSleepTimer() const;
+    /*175*/ virtual int getPreviousTickSleepTimer() const;
+    /*176*/ virtual void __unk_vfn_46();
+    /*177*/ virtual void __unk_vfn_47();
+    /*178*/ virtual void __unk_vfn_48();
+    /*179*/ virtual void __unk_vfn_49();
+    /*180*/ virtual void __unk_vfn_50();
+    /*181*/ virtual void __unk_vfn_51();
+    /*182*/ virtual void registerTrackedBoss(struct ActorUniqueID);
+    /*183*/ virtual void unRegisterTrackedBoss(struct ActorUniqueID);
+    /*184*/ virtual void setPlayerGameType(enum GameType);
+    /*185*/ virtual void initHUDContainerManager();
+    /*186*/ virtual void _crit(class Actor&);
+    /*187*/ virtual class IMinecraftEventing* getEventing() const;
+    /*188*/ virtual void __unk_vfn_52();
+    /*189*/ virtual void sendEventPacket(class EventPacket&) const;
+    /*190*/ virtual void addExperience(int);
+    /*191*/ virtual void addLevels(int);
+    /*192*/ virtual void setContainerData(class IContainerManager&, int, int) = 0;
+    /*193*/ virtual void slotChanged(class IContainerManager&, class Container&, int, class ItemStack const&, class ItemStack const&, bool) = 0;
+    /*194*/ virtual void inventoryChanged(class Container&, int, class ItemStack const&, class ItemStack const&, bool);
+    /*195*/ virtual void refreshContainer(class IContainerManager&) = 0;
+    /*196*/ virtual void deleteContainerManager();
+    /*197*/ virtual void setFieldOfViewModifier(float);
+    /*198*/ virtual void __unk_vfn_53();
+    /*199*/ virtual void __unk_vfn_54();
+    /*200*/ virtual bool isTeacher() const = 0;
+    /*201*/ virtual void onSuspension();
+    /*202*/ virtual void onLinkedSlotsChanged();
+    /*203*/ virtual void startCooldown(class Item const*, bool);
+    /*204*/ virtual int getItemCooldownLeft(class HashedString const&) const;
+    /*205*/ virtual int getItemCooldownLeft(unsigned __int64) const;
+    /*206*/ virtual int getMaxItemCooldownLeft() const;
+    /*207*/ virtual bool isItemInCooldown(class HashedString const&) const;
+    /*208*/ virtual void sendInventoryTransaction(class InventoryTransaction const&) const = 0;
+    /*209*/ virtual void sendComplexInventoryTransaction(std::unique_ptr<class ComplexInventoryTransaction>) const = 0;
+    /*210*/ virtual void sendNetworkPacket(class Packet&) const;
+    /*211*/ virtual class PlayerEventCoordinator& getPlayerEventCoordinator() = 0;
+    /*212*/ virtual class MoveInputHandler* getMoveInputHandler() = 0;
+    /*213*/ virtual enum InputMode getInputMode() const = 0;
+    /*214*/ virtual enum ClientPlayMode getPlayMode() const = 0;
+    /*215*/ virtual void reportMovementTelemetry(enum MovementEventType);
+    /*216*/ virtual void __unk_vfn_55();
+    /*217*/ virtual std::string getXuid() const;
+    /*218*/ virtual struct PlayerMovementSettings const& getMovementSettings() const;
+    /*219*/ virtual void onMovePlayerPacketNormal(class Vec3 const&, class Vec2 const&, float);
+    /*220*/ virtual class std::shared_ptr<class ChunkViewSource> _createChunkSource(class ChunkSource&);
     /*
+    inline bool canBePulledIntoVehicle() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?canBePulledIntoVehicle@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline enum StructureFeatureType getCurrentStructureFeature() const{
         enum StructureFeatureType (Player::*rv)() const;
         *((void**)&rv) = dlsym("?getCurrentStructureFeature@Player@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool is2DPositionRelevant(class AutomaticID<class Dimension, int> a0, class BlockPos const& a1){
+        bool (Player::*rv)(class AutomaticID<class Dimension, int>, class BlockPos const&);
+        *((void**)&rv) = dlsym("?is2DPositionRelevant@Player@@UEAA_NV?$AutomaticID@VDimension@@H@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0), std::forward<class BlockPos const&>(a1));
+    }
+    inline bool isInTrialMode(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isInTrialMode@Player@@UEAA_NXZ");
         return (this->*rv)();
     }
     inline bool useNewAi() const{
@@ -349,14 +365,24 @@ public:
         *((void**)&rv) = dlsym("?useNewAi@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isInTrialMode(){
-        bool (Player::*rv)();
-        *((void**)&rv) = dlsym("?isInTrialMode@Player@@UEAA_NXZ");
+    inline bool isLoading() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isLoading@Player@@UEBA_NXZ");
         return (this->*rv)();
+    }
+    inline bool isActorRelevant(class Actor const& a0){
+        bool (Player::*rv)(class Actor const&);
+        *((void**)&rv) = dlsym("?isActorRelevant@Player@@UEAA_NAEBVActor@@@Z");
+        return (this->*rv)(std::forward<class Actor const&>(a0));
     }
     inline bool isSimulated() const{
         bool (Player::*rv)() const;
         *((void**)&rv) = dlsym("?isSimulated@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isHostingPlayer() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isHostingPlayer@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isLocalPlayer() const{
@@ -389,24 +415,24 @@ public:
         *((void**)&rv) = dlsym("?displayClientMessage@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline void playEmote(std::string const& a0){
-        void (Player::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
+    inline void openSign(class BlockPos const& a0){
+        void (Player::*rv)(class BlockPos const&);
+        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
     inline void _serverInitItemStackIds(){
         void (Player::*rv)();
         *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
         return (this->*rv)();
     }
-    inline void openSign(class BlockPos const& a0){
-        void (Player::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
+    inline void playEmote(std::string const& a0){
+        void (Player::*rv)(std::string const&);
+        *((void**)&rv) = dlsym("?playEmote@Player@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline void stopLoading(){
+    inline void openPortfolio(){
         void (Player::*rv)();
-        *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void resetRot(){
@@ -414,9 +440,9 @@ public:
         *((void**)&rv) = dlsym("?resetRot@Player@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void openPortfolio(){
+    inline void stopLoading(){
         void (Player::*rv)();
-        *((void**)&rv) = dlsym("?openPortfolio@Player@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?stopLoading@Player@@UEAAXXZ");
         return (this->*rv)();
     }
     inline bool isPlayer() const{
@@ -424,14 +450,24 @@ public:
         *((void**)&rv) = dlsym("?isPlayer@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline bool isCreativeModeAllowed(){
+        bool (Player::*rv)();
+        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isPlayerInitialized() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?isPlayerInitialized@Player@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline bool isAutoJumpEnabled() const{
         bool (Player::*rv)() const;
         *((void**)&rv) = dlsym("?isAutoJumpEnabled@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCreativeModeAllowed(){
-        bool (Player::*rv)();
-        *((void**)&rv) = dlsym("?isCreativeModeAllowed@Player@@UEAA_NXZ");
+    inline bool canExistWhenDisallowMob() const{
+        bool (Player::*rv)() const;
+        *((void**)&rv) = dlsym("?canExistWhenDisallowMob@Player@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){
@@ -460,7 +496,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI Player(class Level&, class PacketSender&, enum GameType, class NetworkIdentifier const&, unsigned char, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, class OwnerPtrT<struct EntityRefTraits> const&, std::string const&, std::string const&);
+    MCAPI Player(class Level&, class PacketSender&, enum GameType, class NetworkIdentifier const&, unsigned char, class mce::UUID, std::string const&, std::unique_ptr<class Certificate>, class EntityContext&, std::string const&, std::string const&);
     MCAPI void broadcastPlayerSpawnedMobEvent(enum ActorType, enum MobSpawnMethod);
     MCAPI bool canBeSeenOnMap() const;
     MCAPI bool canDestroy(class Block const&) const;
@@ -564,10 +600,12 @@ public:
     MCAPI void setRespawnPositionCandidate();
     MCAPI void setRespawnReady(class Vec3 const&);
     MCAPI void setSelectedItem(class ItemStack const&);
+    MCAPI class ItemStack const& setSelectedSlot(int);
     MCAPI void setSpawnBlockRespawnPosition(class BlockPos const&, class AutomaticID<class Dimension, int>);
     MCAPI void setUsedPotion(bool);
     MCAPI bool shouldShowCredits() const;
     MCAPI void spawnExperienceOrb(class Vec3 const&, int);
+    MCAPI void startCooldown(class HashedString const&, int, bool);
     MCAPI void startGliding();
     MCAPI void startUsingItem(class ItemStack const&, int);
     MCAPI void stopGliding();
@@ -589,7 +627,9 @@ public:
     MCAPI static class Attribute const EXPERIENCE;
     MCAPI static int const GLIDE_STOP_DELAY;
     MCAPI static class Attribute const HUNGER;
+    MCAPI static int const ITEM_USE_INTERVAL_DURATION;
     MCAPI static class Attribute const LEVEL;
+    MCAPI static int const MAX_ITEM_USE_DURATION;
     MCAPI static float const PLAYER_ALIVE_HEIGHT;
     MCAPI static float const PLAYER_ALIVE_WIDTH;
     MCAPI static float const PLAYER_DEAD_HEIGHT;
@@ -616,8 +656,9 @@ public:
     MCAPI static bool checkNeedAutoJump(struct IPlayerMovementProxy*, float, float);
     MCAPI static void goDownInWater(struct IActorMovementProxy&);
     MCAPI static void handleJumpEffects(struct IPlayerMovementProxy&);
+    MCAPI static class Player* tryGetFromComponent(class FlagComponent<struct PlayerComponentFlag> const&, class ActorOwnerComponent&, bool);
     MCAPI static class Player* tryGetFromEntity(class EntityContext&, bool);
-    MCAPI static class Player* tryGetFromEntity(class OwnerPtrT<struct EntityRefTraits> const&, bool);
+    MCAPI static class Player* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
 protected:
     MCAPI bool _checkAndFixSpawnPosition(class Vec3&, std::vector<class gsl::not_null<class BlockSource* >>, bool, bool, bool, bool, bool) const;
@@ -638,6 +679,5 @@ private:
     MCAPI bool _isChunkSourceLoaded(class Vec3 const&, class BlockSource const&) const;
     MCAPI void _registerElytraLoopSound();
     MCAPI void _sendShieldUpdatePacket(class ShieldItem const&, class ItemStack const&, class ItemStack const&, enum ContainerID, int);
-    MCAPI void _tickLevelChunks(struct Tick const&);
 
 };

@@ -19,14 +19,16 @@ class RideableComponent {
 public:
     class RideableComponent& operator=(class RideableComponent const&) = delete;
     RideableComponent(class RideableComponent const&) = delete;
-    RideableComponent() = delete;
 #endif
 
 public:
+    MCAPI RideableComponent(class RideableComponent&&);
+    MCAPI RideableComponent();
     MCAPI bool areSeatsFull(class Actor const&) const;
     MCAPI bool canAddPassenger(class Actor const&, class Actor&) const;
     MCAPI bool getFirstAvailableSeatPosition(class Actor const&, class Actor&, class Vec3&) const;
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
+    MCAPI class RideableComponent& operator=(class RideableComponent&&);
     MCAPI void positionPassenger(class Actor&, class Actor&);
     MCAPI bool pullInEntity(class Actor&, class Actor&);
 

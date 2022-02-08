@@ -16,6 +16,7 @@ namespace CraftingTag {
 #undef AFTER_EXTRA
     MCAPI extern class HashedString const CARTOGRAPHY_TABLE;
     MCAPI extern class HashedString const CRAFTING_TABLE;
+    MCAPI extern class HashedString const SMITHING_TABLE;
     MCAPI extern class HashedString const STONECUTTER;
 
 };

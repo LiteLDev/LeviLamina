@@ -19,33 +19,37 @@ class TickingAreasManager {
 public:
     class TickingAreasManager& operator=(class TickingAreasManager const&) = delete;
     TickingAreasManager(class TickingAreasManager const&) = delete;
-    TickingAreasManager() = delete;
 #endif
 
 public:
-    MCAPI TickingAreasManager(class std::unordered_map<class AutomaticID<class Dimension, int>, std::unique_ptr<class Dimension>, struct std::hash<class AutomaticID<class Dimension, int> >, struct std::equal_to<class AutomaticID<class Dimension, int> >, class std::allocator<struct std::pair<class AutomaticID<class Dimension, int> const, std::unique_ptr<class Dimension> > > >&);
-    MCAPI void _requeueEntityArea(class Dimension&, struct ActorUniqueID const&, struct Bounds const&, bool, float);
-    MCAPI enum AddTickingAreaStatus addArea(class Dimension&, std::string const&, class BlockPos const&, class BlockPos const&, bool, bool);
-    MCAPI enum AddTickingAreaStatus addArea(class Dimension&, std::string const&, class BlockPos const&, int, bool, bool);
-    MCAPI void addEntityArea(class Dimension&, class Actor const&);
+    MCAPI TickingAreasManager();
+    MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const&, class BlockPos const&, class BlockPos const&, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage&);
+    MCAPI enum AddTickingAreaStatus addArea(class AutomaticID<class Dimension, int>, std::string const&, class BlockPos const&, int, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage&);
+    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, struct ActorUniqueID const&, struct Bounds const&, bool, float, class LevelStorage&);
+    MCAPI void addEntityArea(class AutomaticID<class Dimension, int>, class Actor const&, class LevelStorage&);
+    MCAPI void addTickingAreaListForDimension(class AutomaticID<class Dimension, int>, class std::shared_ptr<class TickingAreaList> const&);
     MCAPI unsigned int countActiveStandaloneTickingAreas() const;
     MCAPI unsigned int countStandaloneTickingAreas() const;
     MCAPI std::vector<struct TickingAreaDescription> getPendingAreaDescriptions(class AutomaticID<class Dimension, int>) const;
     MCAPI bool hasActiveAreas() const;
-    MCAPI void loadArea(std::string const&, class CompoundTag*);
-    MCAPI bool removePendingAreaByName(class Dimension&, std::string const&);
-    MCAPI bool removePendingAreaByPosition(class Dimension&, class BlockPos const&);
+    MCAPI bool isPreloadDone() const;
+    MCAPI void loadArea(std::string const&, class CompoundTag const*);
+    MCAPI void onTickingEntityAdded(class AutomaticID<class Dimension, int>, class Actor&, class LevelStorage&);
+    MCAPI std::vector<struct TickingAreaDescription> removePendingAreaByName(class AutomaticID<class Dimension, int>, std::string const&, class LevelStorage&);
+    MCAPI std::vector<struct TickingAreaDescription> removePendingAreaByPosition(class AutomaticID<class Dimension, int>, class BlockPos const&, class LevelStorage&);
     MCAPI void tick(struct Tick const&);
-    MCAPI void update(class Level&);
+    MCAPI void update(class Level&, class LevelStorage&);
+    MCAPI static enum TickingAreasManager::AreaLimitCheck getLimitCheck(class Level const&, bool);
 
 protected:
 
 private:
-    MCAPI enum AddTickingAreaStatus _addArea(class Dimension&, std::string const&, struct Bounds const&, bool, bool, bool);
+    MCAPI enum AddTickingAreaStatus _addArea(class AutomaticID<class Dimension, int>, std::string const&, struct Bounds const&, bool, enum TickingAreasManager::AreaLimitCheck, bool, enum TickingAreaLoadMode, class LevelStorage&);
     MCAPI void _deletePendingArea(class LevelStorage&, struct PendingArea const&);
     MCAPI std::string _findUsableDefaultName(class TickingAreaList const&, std::vector<struct PendingArea> const&) const;
     MCAPI bool _hasPendingTickingAreaNamed(std::string const&, std::vector<struct PendingArea> const&) const;
     MCAPI void _processAdds(class Level&);
+    MCAPI void _processRemoves(class Level&, class LevelStorage&);
     MCAPI void _savePendingArea(class LevelStorage&, class AutomaticID<class Dimension, int>, struct PendingArea const&);
 
 };

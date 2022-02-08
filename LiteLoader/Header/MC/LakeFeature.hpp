@@ -34,7 +34,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI LakeFeature(class Block const&);
+    MCAPI LakeFeature(class Block const&, class std::optional<class XoroshiroPositionalRandomFactory>);
 
 protected:
 

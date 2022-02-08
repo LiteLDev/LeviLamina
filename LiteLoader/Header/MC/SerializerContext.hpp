@@ -17,16 +17,17 @@ class SerializerContext {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SERIALIZERCONTEXT
 public:
-    class SerializerContext& operator=(class SerializerContext const&) = delete;
     SerializerContext(class SerializerContext const&) = delete;
-    SerializerContext() = delete;
 #endif
 
 public:
+    MCAPI SerializerContext();
     MCAPI void clear();
     MCAPI void error(std::string const&);
+    MCAPI class SerializerContext& operator=(class SerializerContext const&);
     MCAPI void popContext();
     MCAPI void pushContext(std::string const&);
+    MCAPI struct SerializerContext::Transaction transaction();
 
 protected:
 

@@ -19,10 +19,10 @@ struct VolumeDefinition {
 public:
     struct VolumeDefinition& operator=(struct VolumeDefinition const&) = delete;
     VolumeDefinition(struct VolumeDefinition const&) = delete;
-    VolumeDefinition() = delete;
 #endif
 
 public:
+    MCAPI VolumeDefinition();
     MCAPI ~VolumeDefinition();
 
 protected:

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -35,10 +34,14 @@ public:
     */
     MCAPI class Scripting::Result<void> createExplosion(class Vec3 const&, float, struct Scripting::TypedObjectHandle<struct ScriptExplosionOptions>) const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlock> getBlock(class Scripting::WeakLifetimeScope, class BlockPos const&);
-    MCAPI class Dimension* getDimension() const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlock> > getBlockFromRay(class Scripting::WeakLifetimeScope, class Vec3 const&, class ScriptVector const&, class std::optional<struct ScriptBlockRaycastOptions> const&) const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator> > getEntities(class std::optional<struct ScriptActorQueryOptions>) const;
     MCAPI std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>> getEntitiesAtBlockLocation(class BlockPos const&) const;
-    MCAPI bool isEmpty(class BlockPos const&) const;
-    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor> > spawnEntity(std::string const&, class BlockPos const&) const;
+    MCAPI class Scripting::Result<std::vector<class Scripting::StrongTypedObjectHandle<class ScriptActor>> > getEntitiesFromRay(class Scripting::WeakLifetimeScope, class Vec3 const&, class ScriptVector const&, class std::optional<struct ScriptEntityRaycastOptions> const&) const;
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActorIterator> > getPlayers(class std::optional<struct ScriptActorQueryOptions>) const;
+    MCAPI class ScriptDimension& operator=(class ScriptDimension&&);
+    MCAPI class Scripting::Result<struct Scripting::JSON> runCommand(struct Scripting::ContextConfig const&, std::string const&);
+    MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptActor> > spawnEntity(std::string const&, class std::variant<class BlockPos, class Vec3> const&) const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptDimension> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class Dimension&, class Scripting::WeakLifetimeScope const&);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptDimension> getOrCreateHandle(class AutomaticID<class Dimension, int>, class Level&, class Scripting::WeakLifetimeScope const&);

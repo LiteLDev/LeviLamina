@@ -39,6 +39,7 @@ public:
     MCAPI class BossComponent& operator=(class BossComponent&&);
     MCAPI void readAdditionalSaveData(class Actor&, class CompoundTag const&, class DataLoadHelper&);
     MCAPI void registerPlayer(class Actor&, class Player*);
+    MCAPI void resendBossEventData(class Actor&, class Player*);
     MCAPI void sendDeathTelemetry(class Actor&);
     MCAPI void setHealthBarVisible(class Actor&, bool);
     MCAPI void setHealthPercent(class Actor&, float);

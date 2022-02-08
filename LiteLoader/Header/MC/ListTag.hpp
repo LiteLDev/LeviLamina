@@ -77,12 +77,16 @@ public:
     MCAPI ListTag();
     MCAPI void add(std::unique_ptr<class Tag>);
     MCAPI std::unique_ptr<class ListTag> copyList() const;
+    MCAPI void erase(unsigned __int64);
+    MCAPI void forEachCompoundTag(class std::function<void (class CompoundTag const& )>) const;
     MCAPI class Tag* get(int) const;
+    MCAPI class CompoundTag* getCompound(unsigned __int64);
     MCAPI class CompoundTag const* getCompound(unsigned __int64) const;
     MCAPI double getDouble(int) const;
     MCAPI float getFloat(int) const;
     MCAPI int getInt(int) const;
     MCAPI std::string const& getString(int) const;
+    MCAPI void popBack();
     MCAPI int size() const;
 
 protected:

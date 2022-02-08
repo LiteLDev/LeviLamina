@@ -30,6 +30,7 @@ public:
 
 public:
     MCAPI static class entt::meta_any constructComponent(std::string const&);
+    MCAPI static class std::shared_ptr<class ItemComponent> constructItemComponent(std::string const&);
     MCAPI static class entt::meta_any getComponent(std::string const&, void*);
     MCAPI static void setItemContext(class ComponentItem*);
 

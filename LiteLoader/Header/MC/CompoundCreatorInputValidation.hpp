@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~CompoundCreatorInputValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2() const;
+    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*5*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 
 protected:
 

@@ -18,11 +18,11 @@ class PerlinNoise {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERLINNOISE
 public:
     class PerlinNoise& operator=(class PerlinNoise const&) = delete;
-    PerlinNoise(class PerlinNoise const&) = delete;
     PerlinNoise() = delete;
 #endif
 
 public:
+    MCAPI PerlinNoise(class PerlinNoise const&);
     MCAPI PerlinNoise(class IRandom&, int, int);
     MCAPI PerlinNoise(class IRandom&, struct YBlendingBugSettings, int, int);
     MCAPI PerlinNoise(unsigned int, int, int);

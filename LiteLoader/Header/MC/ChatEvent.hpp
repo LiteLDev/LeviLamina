@@ -20,6 +20,7 @@ public:
 #endif
 
 public:
+    MCAPI ChatEvent(struct ChatEvent&&);
     MCAPI ChatEvent(struct ChatEvent const&);
     MCAPI ~ChatEvent();
 

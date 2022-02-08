@@ -37,9 +37,10 @@ public:
     /*10*/ virtual void _moveToBlock();
     /*11*/ virtual unsigned __int64 _getRepathTime() const;
     /*12*/ virtual bool findTargetBlock();
-    MCAPI LayEggGoal(class Mob&, float, int, int, float, class DefinitionTrigger const&);
+    MCAPI LayEggGoal(class Mob&, float, int, int, float, std::vector<class ItemDescriptor> const&, std::vector<enum MaterialType> const&, bool, bool, float, class ItemDescriptor const&, class DefinitionTrigger const&, std::string const&);
 
 protected:
+    MCAPI bool _isTargetBlock(class BlockLegacy const&) const;
     MCAPI void _layEgg(class BlockPos const&);
 
 private:

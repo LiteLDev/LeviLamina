@@ -2,14 +2,13 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "CraftHandlerBase.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class CraftHandlerTrade : public CraftHandlerBase {
+class CraftHandlerTrade {
 
 #define AFTER_EXTRA
 // Add Member There
@@ -25,14 +24,19 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerTrade();
-    /*1*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /*2*/ virtual void endRequestBatch();
-    /*3*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*4*/ virtual void _postCraftRequest(bool);
-    /*5*/ virtual class Recipes const* _getLevelRecipes() const;
+    /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
+    /*2*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_1();
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
 
 protected:
 
 private:
+    MCAPI class std::tuple<enum ItemStackNetResult, class MerchantRecipe const* > _getMerchantRecipeFromNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI enum ItemStackNetResult _handleTrade1(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const&);
+    MCAPI enum ItemStackNetResult _initResultItem(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&);
+    MCAPI enum ItemStackNetResult _initTrade2Consumes();
+    MCAPI bool _matchesAuxValueTrade2(class ItemStackBase const&, class ItemStackBase const&) const;
 
 };

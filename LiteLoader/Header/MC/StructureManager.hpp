@@ -45,7 +45,7 @@ protected:
 
 private:
     MCAPI std::string _createLevelStorageId(std::string const&, std::string const&);
-    MCAPI bool _placeSegment(class Dimension&, class StructureAnimationData&, class ChunkLoadActionList&, class BoundingBox const&, class std::function<enum ChunksLoadedStatus (__int64)> const&);
+    MCAPI bool _placeSegment(class Dimension&, class StructureAnimationData&, class ChunkLoadActionList&, class BoundingBox const&, class std::function<enum ChunksLoadedStatus (struct Tick)> const&);
     MCAPI bool _placeSegment(class StructureAnimationData&);
     MCAPI class LegacyStructureTemplate* _readLegacyStructure(std::string const&);
     MCAPI void _removePlacementQueueItem(std::string const&, class StructureAnimationData&);

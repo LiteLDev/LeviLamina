@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -28,6 +27,8 @@ public:
     /*1*/ virtual void onInfo(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
     /*2*/ virtual void onWarn(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
     /*3*/ virtual void onError(struct Scripting::ContextId, class std::basic_string_view<char, struct std::char_traits<char> > const&) const;
+    /*4*/ virtual void onException(struct Scripting::ContextId, struct Scripting::Error const&) const;
+    /*5*/ virtual bool shouldPrintException(struct Scripting::Error const&) const;
 
 protected:
 

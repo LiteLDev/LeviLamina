@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -38,14 +37,12 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI static void bindVolumeDefinitions();
     MCAPI static bool isTriggerVolumesEnabled;
     MCAPI static void registerComponentNetRelevancy(class ComponentNetRelevancyRegistry&);
 
 protected:
-    MCAPI VolumeEntityManager(class gsl::not_null<class Bedrock::NonOwnerPointer<class IEntityRegistryOwner> >);
+    MCAPI VolumeEntityManager(class StackRefResultT<struct EntityRegistryRefTraits>);
     MCAPI class OwnerPtrT<struct EntityRefTraits> _createVolumeEntity(class DefinitionInstanceGroup const&);
-    MCAPI bool _definitionAlreadyExists(struct VolumeDefinition const&) const;
 
 private:
 

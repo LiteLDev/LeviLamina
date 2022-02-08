@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerDropItemEvent {
+class PlayerDropItemEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerDropItemEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDROPITEMEVENT
 public:
-    struct PlayerDropItemEvent& operator=(struct PlayerDropItemEvent const&) = delete;
-    PlayerDropItemEvent(struct PlayerDropItemEvent const&) = delete;
+    class PlayerDropItemEvent& operator=(class PlayerDropItemEvent const&) = delete;
+    PlayerDropItemEvent(class PlayerDropItemEvent const&) = delete;
     PlayerDropItemEvent() = delete;
 #endif
 

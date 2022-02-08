@@ -21,6 +21,7 @@ public:
 #endif
 
 public:
+    MCAPI struct BlockPartVisibilityComponent& operator=(struct BlockPartVisibilityComponent&&);
     MCAPI ~BlockPartVisibilityComponent();
 
 protected:

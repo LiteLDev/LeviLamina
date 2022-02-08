@@ -28,21 +28,36 @@ public:
     /*0*/ virtual ~AutomationPlayerCommandOrigin();
     /*1*/ virtual std::string const& getRequestId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual class Level* getLevel() const;
-    /*4*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /*5*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*6*/ virtual bool hasChatPerms() const;
-    /*7*/ virtual bool hasTellPerms() const;
-    /*8*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*9*/ virtual bool isSelectorExpansionAllowed() const;
-    /*10*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*11*/ virtual void __unk_vfn_0();
-    /*12*/ virtual enum CommandOriginType getOriginType() const;
-    /*13*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*16*/ virtual class CompoundTag serialize() const;
-    /*17*/ virtual bool isValid() const;
+    /*3*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*4*/ virtual class Level* getLevel() const;
+    /*5*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*6*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*7*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_2();
+    /*10*/ virtual bool isSelectorExpansionAllowed() const;
+    /*11*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*12*/ virtual void __unk_vfn_3();
+    /*13*/ virtual enum CommandOriginType getOriginType() const;
+    /*14*/ virtual struct CommandOriginData toCommandOriginData() const;
+    /*15*/ virtual void __unk_vfn_4();
+    /*16*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*17*/ virtual void updateValues();
+    /*18*/ virtual class CompoundTag serialize() const;
+    /*19*/ virtual bool isValid() const;
+    /*20*/ virtual void _setUUID(class mce::UUID const&);
+    /*
+    inline bool hasChatPerms() const{
+        bool (AutomationPlayerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?hasChatPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasTellPerms() const{
+        bool (AutomationPlayerCommandOrigin::*rv)() const;
+        *((void**)&rv) = dlsym("?hasTellPerms@AutomationPlayerCommandOrigin@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AutomationPlayerCommandOrigin(std::string const&, class Player&);
     MCAPI AutomationPlayerCommandOrigin(struct ActorUniqueID, class Level&, std::string const&, enum CommandPermissionLevel, class NetworkIdentifier const&);
 

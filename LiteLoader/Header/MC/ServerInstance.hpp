@@ -26,25 +26,25 @@ public:
 
 public:
     /*
-    inline void onGameSessionReset(){
-        void (ServerInstance::*rv)();
-        *((void**)&rv) = dlsym("?onGameSessionReset@ServerInstance@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void onLevelExit(){
         void (ServerInstance::*rv)();
         *((void**)&rv) = dlsym("?onLevelExit@ServerInstance@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline void onInternetUpdate(){
+    inline void onGameSessionReset(){
         void (ServerInstance::*rv)();
-        *((void**)&rv) = dlsym("?onInternetUpdate@ServerInstance@@UEAAXXZ");
+        *((void**)&rv) = dlsym("?onGameSessionReset@ServerInstance@@UEAAXXZ");
         return (this->*rv)();
     }
     inline void onTick(int a0, int a1){
         void (ServerInstance::*rv)(int, int);
         *((void**)&rv) = dlsym("?onTick@ServerInstance@@UEAAXHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    inline void onInternetUpdate(){
+        void (ServerInstance::*rv)();
+        *((void**)&rv) = dlsym("?onInternetUpdate@ServerInstance@@UEAAXXZ");
+        return (this->*rv)();
     }
     inline void onGameModeChanged(){
         void (ServerInstance::*rv)();

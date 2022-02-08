@@ -21,7 +21,6 @@ public:
 #endif
 
 public:
-    MCAPI EntitiesPendingEnterVolumeComponent(class EntitiesPendingEnterVolumeComponent&&);
     MCAPI ~EntitiesPendingEnterVolumeComponent();
 
 protected:

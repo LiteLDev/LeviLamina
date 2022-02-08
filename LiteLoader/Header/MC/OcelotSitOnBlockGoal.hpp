@@ -36,7 +36,7 @@ public:
     /*9*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*10*/ virtual bool _canReach(class BlockPos const&);
     /*11*/ virtual unsigned __int64 _getRepathTime() const;
-    MCAPI OcelotSitOnBlockGoal(class Mob*, float);
+    MCAPI OcelotSitOnBlockGoal(class Mob&, float);
 
 protected:
 

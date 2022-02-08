@@ -27,7 +27,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
+    /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~EntityServerPacket(){

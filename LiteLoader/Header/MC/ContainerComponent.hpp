@@ -33,7 +33,7 @@ public:
     */
     MCAPI ContainerComponent(class ContainerComponent&&);
     MCAPI ContainerComponent();
-    MCAPI class Container* _getRawContainerPtr() const;
+    MCAPI class FillingContainer* _getRawContainerPtr();
     MCAPI void addAdditionalSaveData(class CompoundTag&);
     MCAPI bool addItem(class BlockSource&, class ItemStack&, int, int);
     MCAPI bool addItem(class ItemActor&);
@@ -61,7 +61,7 @@ public:
     MCAPI void setCustomName(std::string const&);
     MCAPI bool setItem(int, class ItemStack const&);
     MCAPI void setLootTable(std::string const&, int);
-    MCAPI void unpackLootTable(class Level&);
+    MCAPI void unpackLootTable(class Level&, class AutomaticID<class Dimension, int>);
 
 protected:
 

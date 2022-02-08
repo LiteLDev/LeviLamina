@@ -27,8 +27,16 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
+    /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*
+    inline  ~MultiplayerSettingsPacket(){
+         (MultiplayerSettingsPacket::*rv)();
+        *((void**)&rv) = dlsym("??1MultiplayerSettingsPacket@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
+    MCAPI MultiplayerSettingsPacket(enum MultiplayerSettingsPacketType);
     MCAPI MultiplayerSettingsPacket();
 
 protected:

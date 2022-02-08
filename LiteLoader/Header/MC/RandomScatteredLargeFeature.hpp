@@ -35,7 +35,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI RandomScatteredLargeFeature(unsigned int);
+    MCAPI RandomScatteredLargeFeature(unsigned int, class BaseGameVersion const&);
     MCAPI static void initMobSpawnTypes(class HardcodedSpawnAreaRegistry&);
 
 protected:

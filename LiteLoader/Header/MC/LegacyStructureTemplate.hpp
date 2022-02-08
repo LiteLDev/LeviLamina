@@ -23,12 +23,13 @@ public:
 #endif
 
 public:
+    /*0*/ virtual class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string > > > getMarkers(class BlockPos const&, class LegacyStructureSettings&) const;
+    /*1*/ virtual void placeInWorld(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&) const;
+    /*2*/ virtual ~LegacyStructureTemplate();
     MCAPI class BlockPos calculateConnectedPosition(class LegacyStructureSettings const&, class BlockPos const&, class LegacyStructureSettings const&, class BlockPos const&) const;
     MCAPI std::vector<class JigsawStructureBlockInfo> getJigsawMarkers() const;
-    MCAPI class std::unordered_map<class BlockPos, std::string, struct std::hash<class BlockPos>, struct std::equal_to<class BlockPos>, class std::allocator<struct std::pair<class BlockPos const, std::string > > > getMarkers(class BlockPos const&, class LegacyStructureSettings&) const;
     MCAPI class BlockPos getSize(enum Rotation) const;
     MCAPI void load(class CompoundTag const&);
-    MCAPI void placeInWorld(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&) const;
     MCAPI void placeInWorldChunk(class BlockSource&, class BlockPos const&, class LegacyStructureSettings&, class Random&);
     MCAPI static std::string const AUTHOR_TAG;
     MCAPI static std::string const BLOCKS_TAG;

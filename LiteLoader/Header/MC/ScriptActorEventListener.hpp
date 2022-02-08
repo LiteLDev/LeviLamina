@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -34,10 +33,10 @@ public:
     /*7*/ virtual void __unk_vfn_6();
     /*8*/ virtual void __unk_vfn_7();
     /*9*/ virtual void __unk_vfn_8();
-    /*10*/ virtual void __unk_vfn_9();
-    /*11*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_11();
-    /*13*/ virtual enum EventResult onActorCreated(class Actor&);
+    /*10*/ virtual enum EventResult onActorCreated(class Actor&);
+    /*11*/ virtual void __unk_vfn_9();
+    /*12*/ virtual void __unk_vfn_10();
+    /*13*/ virtual void __unk_vfn_11();
     /*14*/ virtual void __unk_vfn_12();
     /*15*/ virtual void __unk_vfn_13();
     /*16*/ virtual void __unk_vfn_14();
@@ -46,13 +45,15 @@ public:
     /*19*/ virtual void __unk_vfn_17();
     /*20*/ virtual void __unk_vfn_18();
     /*21*/ virtual void __unk_vfn_19();
-    /*22*/ virtual enum EventResult onActorRemoved(struct ActorRemovedEvent const&);
-    /*23*/ virtual void __unk_vfn_20();
-    /*24*/ virtual void __unk_vfn_21();
-    /*25*/ virtual void __unk_vfn_22();
-    /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual enum EventResult onActorAddEffect(struct ActorAddEffectEvent const&);
-    /*28*/ virtual enum EventResult onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
+    /*22*/ virtual void __unk_vfn_20();
+    /*23*/ virtual void __unk_vfn_21();
+    /*24*/ virtual enum EventResult onEvent(struct ActorRemovedEvent const&);
+    /*25*/ virtual enum EventResult onEvent(struct ActorRemoveEffectEvent const&);
+    /*26*/ virtual void __unk_vfn_22();
+    /*27*/ virtual void __unk_vfn_23();
+    /*28*/ virtual void __unk_vfn_24();
+    /*29*/ virtual void __unk_vfn_25();
+    /*30*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const&);
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

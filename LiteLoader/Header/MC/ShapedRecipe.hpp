@@ -29,14 +29,19 @@ public:
     /*2*/ virtual int getCraftingSize() const;
     /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
     /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*5*/ virtual bool isShapeless() const;
+    /*5*/ virtual void __unk_vfn_0();
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*7*/ virtual int size() const;
     /*8*/ virtual class mce::UUID const& getId() const;
     /*9*/ virtual class ItemPack const& getItemPack() const;
-    /*10*/ virtual bool isMultiRecipe() const;
+    /*10*/ virtual void __unk_vfn_1();
     /*11*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
+    inline bool isShapeless() const{
+        bool (ShapedRecipe::*rv)() const;
+        *((void**)&rv) = dlsym("?isShapeless@ShapedRecipe@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~ShapedRecipe(){
          (ShapedRecipe::*rv)();
         *((void**)&rv) = dlsym("??1ShapedRecipe@@UEAA@XZ");

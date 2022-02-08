@@ -37,12 +37,12 @@ public:
     /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*12*/ virtual void __unk_vfn_1();
     /*13*/ virtual void setItem(int, class ItemStack const&);
-    /*14*/ virtual bool isValid();
-    /*15*/ virtual void __unk_vfn_2();
-    /*16*/ virtual void __unk_vfn_3();
-    /*17*/ virtual void __unk_vfn_4();
+    /*14*/ virtual void __unk_vfn_2();
+    /*15*/ virtual void __unk_vfn_3();
+    /*16*/ virtual void __unk_vfn_4();
+    /*17*/ virtual void __unk_vfn_5();
     /*18*/ virtual std::string const& getItemGroupName(int) const;
-    /*19*/ virtual void __unk_vfn_5();
+    /*19*/ virtual void __unk_vfn_6();
     /*20*/ virtual class Container* _getContainer() const;
     /*21*/ virtual int _getContainerOffset() const;
     /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
@@ -52,25 +52,25 @@ public:
         *((void**)&rv) = dlsym("?isItemFiltered@ContainerModel@@UEBA_NAEBVItemStackBase@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
-    inline bool isItemInstanceBased() const{
-        bool (ContainerModel::*rv)() const;
-        *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isExpanableItemFiltered(int a0) const{
         bool (ContainerModel::*rv)(int) const;
         *((void**)&rv) = dlsym("?isExpanableItemFiltered@ContainerModel@@UEBA_NH@Z");
         return (this->*rv)(std::forward<int>(a0));
     }
-    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
-        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
-        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
-        return (this->*rv)(std::forward<int>(a0));
+    inline bool isItemInstanceBased() const{
+        bool (ContainerModel::*rv)() const;
+        *((void**)&rv) = dlsym("?isItemInstanceBased@ContainerModel@@UEBA_NXZ");
+        return (this->*rv)();
     }
     inline class Container* _getContainer() const{
         class Container* (ContainerModel::*rv)() const;
         *((void**)&rv) = dlsym("?_getContainer@ContainerModel@@MEBAPEAVContainer@@XZ");
         return (this->*rv)();
+    }
+    inline enum ContainerExpandStatus getItemExpandStatus(int a0) const{
+        enum ContainerExpandStatus (ContainerModel::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getItemExpandStatus@ContainerModel@@UEBA?AW4ContainerExpandStatus@@H@Z");
+        return (this->*rv)(std::forward<int>(a0));
     }
     inline void switchItemExpando(int a0){
         void (ContainerModel::*rv)(int);
@@ -81,6 +81,11 @@ public:
         void (ContainerModel::*rv)(int);
         *((void**)&rv) = dlsym("?tick@ContainerModel@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
+    }
+    inline bool isValid(){
+        bool (ContainerModel::*rv)();
+        *((void**)&rv) = dlsym("?isValid@ContainerModel@@UEAA_NXZ");
+        return (this->*rv)();
     }
     inline  ~ContainerModel(){
          (ContainerModel::*rv)();

@@ -33,6 +33,6 @@ public:
 protected:
 
 private:
-    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<7> const&);
+    MCAPI enum ItemStackNetResult _handleLabTableCombine(class ItemStackRequestActionDataless<9> const&);
 
 };

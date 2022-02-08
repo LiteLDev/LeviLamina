@@ -32,13 +32,10 @@ public:
     */
     MCAPI LevelEventCoordinator();
     MCAPI void registerLevelGameplayHandler(std::unique_ptr<class LevelGameplayHandler>);
-    MCAPI void sendLevelAddedActor(struct LevelAddedActorEvent const&);
+    MCAPI void sendEvent(class EventRef<struct LevelGameplayEvent<void> > const&);
     MCAPI void sendLevelBiomesRegistered(class BiomeRegistry&);
-    MCAPI void sendLevelBroadcast(struct LevelBroadcastEvent const&);
     MCAPI void sendLevelInitialized(class Level&);
     MCAPI void sendLevelRemovedActor(class Level&, class Actor&);
-    MCAPI void sendLevelSoundBroadcast(struct LevelSoundBroadcastEvent const&);
-    MCAPI void sendLevelStartLeaveGame(struct LevelStartLeaveGameEvent const&);
     MCAPI void sendLevelTick();
     MCAPI void sendLevelWeatherChanged(std::string const&, bool, bool);
 

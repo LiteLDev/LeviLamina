@@ -46,6 +46,7 @@ public:
     /*20*/ virtual short getLocalWaterLevel(class BlockPos const&) const;
     /*21*/ virtual class LevelData const& getLevelData() const;
     /*22*/ virtual struct WorldGenContext const& getContext();
+    /*23*/ virtual void disableBlockSimple();
     /*
     inline  ~TransactionalWorldBlockTarget(){
          (TransactionalWorldBlockTarget::*rv)();

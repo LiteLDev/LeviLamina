@@ -25,17 +25,17 @@ public:
 
 public:
     /*0*/ virtual ~ActorDamageByBlockSource();
-    /*1*/ virtual bool isEntitySource() const;
-    /*2*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
     /*3*/ virtual bool isBlockSource() const;
     /*4*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*5*/ virtual bool getIsCreative() const;
-    /*6*/ virtual bool getIsWorldBuilder() const;
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_2();
+    /*6*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_5();
     /*9*/ virtual enum ActorCategory getEntityCategories() const;
-    /*10*/ virtual bool getDamagingEntityIsCreative() const;
-    /*11*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*10*/ virtual void __unk_vfn_6();
+    /*11*/ virtual void __unk_vfn_7();
     /*12*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /*13*/ virtual enum ActorType getDamagingEntityType() const;
     /*14*/ virtual enum ActorCategory getDamagingEntityCategories() const;

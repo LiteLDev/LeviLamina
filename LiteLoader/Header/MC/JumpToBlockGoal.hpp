@@ -37,9 +37,10 @@ public:
 protected:
 
 private:
-    MCAPI bool _calculateJumpCurve(class BlockPos const&);
+    MCAPI bool _calculateJumpCurve(class BlockPos const&, struct JumpToBlockGoal::WeightedJumpToBlockPos&);
     MCAPI void _clearGoalState();
     MCAPI bool _findCandidateBlocks(class NavigationComponent&);
+    MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const&, class Vec3 const&) const;
 

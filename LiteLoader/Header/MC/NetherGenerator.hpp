@@ -107,6 +107,7 @@ public:
     }
     */
     MCAPI NetherGenerator(class Dimension&, unsigned int, class Biome const*);
+    MCAPI void buildSurfaces(class BlockVolume&, class LevelChunk&, class ChunkPos const&);
     MCAPI class Util::MultidimensionalArray<float, 5, 5, 17> generateDensityCellsForChunk(class ChunkPos const&) const;
 
 protected:

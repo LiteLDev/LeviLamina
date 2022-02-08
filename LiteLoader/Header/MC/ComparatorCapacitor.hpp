@@ -29,8 +29,8 @@ public:
     /*1*/ virtual int getStrength() const;
     /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setDirection(unsigned char);
-    /*4*/ virtual bool canConsumePowerAnyDirection() const;
-    /*5*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_0();
+    /*5*/ virtual void __unk_vfn_1();
     /*6*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /*7*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*8*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
@@ -38,16 +38,21 @@ public:
     /*10*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*11*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*12*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*13*/ virtual void __unk_vfn_1();
-    /*14*/ virtual bool isHalfPulse() const;
-    /*15*/ virtual void __unk_vfn_2();
-    /*16*/ virtual bool isSecondaryPowered() const;
+    /*13*/ virtual void __unk_vfn_2();
+    /*14*/ virtual void __unk_vfn_3();
+    /*15*/ virtual void __unk_vfn_4();
+    /*16*/ virtual void __unk_vfn_5();
     /*17*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*18*/ virtual unsigned char getPoweroutDirection() const;
     /*
     inline bool canConsumerPower() const{
         bool (ComparatorCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@ComparatorCapacitor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canConsumePowerAnyDirection() const{
+        bool (ComparatorCapacitor::*rv)() const;
+        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@ComparatorCapacitor@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

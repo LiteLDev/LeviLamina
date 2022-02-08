@@ -51,7 +51,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
+    /*4*/ virtual void __unk_vfn_0();
     /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~MovePlayerPacket(){
@@ -60,8 +60,8 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI MovePlayerPacket(class Player&, class Vec3 const&);
-    MCAPI MovePlayerPacket(class Player&, enum Player::PositionMode, int, int);
+    MCAPI MovePlayerPacket(class Player const&, class Vec3 const&);
+    MCAPI MovePlayerPacket(class Player const&, enum Player::PositionMode, int, int);
     MCAPI MovePlayerPacket();
 
 protected:

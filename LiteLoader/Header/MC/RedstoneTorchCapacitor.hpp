@@ -38,7 +38,7 @@ public:
     /*12*/ virtual void __unk_vfn_1();
     /*13*/ virtual bool isHalfPulse() const;
     /*14*/ virtual void __unk_vfn_2();
-    /*15*/ virtual bool isSecondaryPowered() const;
+    /*15*/ virtual void __unk_vfn_3();
     /*16*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*
     inline unsigned char getPoweroutDirection() const{

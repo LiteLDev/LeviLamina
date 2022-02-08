@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "JsonUtil.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -20,10 +19,10 @@ struct BlockMaterialInstancesDescription {
 public:
     struct BlockMaterialInstancesDescription& operator=(struct BlockMaterialInstancesDescription const&) = delete;
     BlockMaterialInstancesDescription(struct BlockMaterialInstancesDescription const&) = delete;
-    BlockMaterialInstancesDescription() = delete;
 #endif
 
 public:
+    MCAPI BlockMaterialInstancesDescription();
 
 protected:
 

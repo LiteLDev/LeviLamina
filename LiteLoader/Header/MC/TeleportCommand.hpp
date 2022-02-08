@@ -29,7 +29,7 @@ public:
     /*0*/ virtual ~TeleportCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI static void applyTarget(class Actor&, class TeleportTarget);
-    MCAPI static class TeleportTarget computeTarget(class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int);
+    MCAPI static class TeleportTarget computeTarget(class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class std::optional<class TeleportRotationData> const&, int);
     MCAPI static void setup(class CommandRegistry&);
 
 protected:

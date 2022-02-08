@@ -26,17 +26,19 @@ public:
 public:
     /*0*/ virtual ~FunctionManager();
     MCAPI FunctionManager(std::unique_ptr<class ICommandDispatcher>, std::unique_ptr<class CommandOrigin>, class GameRule const*);
-    MCAPI int execute(class FunctionEntry&, class CommandOrigin const&);
+    MCAPI int execute(class FunctionEntry&, class CommandOrigin const&, enum FunctionQueueOrder);
     MCAPI class FunctionEntry* getFunction(std::string const&);
     MCAPI void load(class ResourcePackManager&, class CommandRegistry&);
     MCAPI void tick();
+    MCAPI static enum FunctionQueueOrder getQueueOrderForCommandVersion(enum CurrentCmdVersion);
 
 protected:
-    MCAPI void _addTickFunctionsFromJson(class Json::Value const&);
+    MCAPI void _addTickFunctionsFromJson(class Json::Value const&, enum CurrentCmdVersion);
     MCAPI void _processFunctionEntry(std::string const&, std::vector<std::string> const&, std::vector<std::string>&, enum CurrentCmdVersion, class CommandRegistry const&);
 
 private:
     MCAPI class CommandOrigin const& _addOriginReference(class CommandOrigin const&, unsigned int);
+    MCAPI void _queueCommandsAfterCaller(std::vector<std::unique_ptr<class IFunctionEntry>> const&, class CommandOrigin const&);
     MCAPI void _removeOriginReference(class CommandOrigin const&, unsigned int);
 
 };

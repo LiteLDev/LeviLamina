@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~MineshaftStart();
-    /*1*/ virtual bool isValid() const;
+    /*1*/ virtual void __unk_vfn_0();
     /*2*/ virtual enum StructureFeatureType getType() const;
     MCAPI MineshaftStart(class Dimension const&, class BiomeSource const&, class Random&, class ChunkPos const&, class IPreliminarySurfaceProvider const&);
 

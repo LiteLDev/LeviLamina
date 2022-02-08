@@ -21,6 +21,8 @@ public:
 #endif
 
 public:
+    MCAPI OnPlayerPlacingTrigger(struct OnPlayerPlacingTrigger&&);
+    MCAPI struct OnPlayerPlacingTrigger& operator=(struct OnPlayerPlacingTrigger&&);
     MCAPI ~OnPlayerPlacingTrigger();
 
 protected:

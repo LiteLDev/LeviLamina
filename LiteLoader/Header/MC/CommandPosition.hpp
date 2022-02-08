@@ -30,6 +30,7 @@ public:
 #endif
 
 public:
+    MCAPI CommandPosition(class Vec3 const&);
     MCAPI CommandPosition();
     MCAPI class BlockPos getBlockPos(class CommandOrigin const&, class Vec3 const&) const;
     MCAPI class BlockPos getBlockPos(class Vec3 const&, class Vec3 const&) const;

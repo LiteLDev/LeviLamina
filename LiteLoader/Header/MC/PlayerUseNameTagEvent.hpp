@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerUseNameTagEvent {
+class PlayerUseNameTagEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerUseNameTagEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERUSENAMETAGEVENT
 public:
-    struct PlayerUseNameTagEvent& operator=(struct PlayerUseNameTagEvent const&) = delete;
-    PlayerUseNameTagEvent(struct PlayerUseNameTagEvent const&) = delete;
+    class PlayerUseNameTagEvent& operator=(class PlayerUseNameTagEvent const&) = delete;
+    PlayerUseNameTagEvent(class PlayerUseNameTagEvent const&) = delete;
     PlayerUseNameTagEvent() = delete;
 #endif
 

@@ -108,6 +108,7 @@ public:
     MCAPI bool getBoolean(class gsl::basic_string_span<char const, -1>) const;
     MCAPI unsigned char getByte(class gsl::basic_string_span<char const, -1>) const;
     MCAPI struct TagMemoryChunk const& getByteArray(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ByteTag* getByteTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class CompoundTag* getCompound(class gsl::basic_string_span<char const, -1>);
     MCAPI class CompoundTag const* getCompound(class gsl::basic_string_span<char const, -1>) const;
     MCAPI float getFloat(class gsl::basic_string_span<char const, -1>) const;
@@ -115,11 +116,13 @@ public:
     MCAPI __int64 getInt64(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag const* getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag* getInt64Tag(class gsl::basic_string_span<char const, -1>);
+    MCAPI class IntTag* getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const* getIntTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag const* getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const& getString(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool isEmpty() const;
     MCAPI class CompoundTag& operator=(class CompoundTag&&);
     MCAPI class Tag& put(std::string, class Tag&&);

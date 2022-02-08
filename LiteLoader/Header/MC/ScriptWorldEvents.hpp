@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,14 +23,24 @@ public:
 #endif
 
 public:
-    MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class Level* >);
     MCAPI ScriptWorldEvents(class ScriptWorldEvents&&);
+    MCAPI ScriptWorldEvents(class Scripting::WeakLifetimeScope const&, class gsl::not_null<class Level* >);
     MCAPI class Level& getLevel() const;
     MCAPI void onActorAddEffect(struct ScriptActorAddEffectEvent&);
     MCAPI void onActorCreated(struct ScriptActorEvent&);
+    MCAPI void onActorRemoved(struct ActorUniqueID);
     MCAPI void onBeforeChat(struct ScriptBeforeChatEvent&);
+    MCAPI void onBeforeItemDefinitionEventTriggered(struct ScriptBeforeItemDefinitionEvent&);
+    MCAPI void onBeforeItemUse(struct ScriptBeforeItemUseEvent&);
+    MCAPI void onBeforeItemUseOn(struct ScriptBeforeItemUseOnEvent&);
     MCAPI void onChat(struct ScriptChatEvent&);
+    MCAPI void onItemDefinitionEventTriggered(struct ScriptItemDefinitionEvent&);
+    MCAPI void onItemUse(struct ScriptItemUseEvent&);
+    MCAPI void onItemUseOn(struct ScriptItemUseOnEvent&);
     MCAPI void onLevelTick(struct ScriptTickEvent&);
+    MCAPI void onPlayerJoin(struct ScriptPlayerJoinEvent&);
+    MCAPI void onPlayerLeave(struct ScriptPlayerLeaveEvent&);
+    MCAPI void onServerMessage(struct ScriptServerMessage&);
     MCAPI void onWeatherChanged(struct ScriptWeatherChangedEvent&);
     MCAPI class ScriptWorldEvents& operator=(class ScriptWorldEvents&&);
     MCAPI void registerListener(struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);

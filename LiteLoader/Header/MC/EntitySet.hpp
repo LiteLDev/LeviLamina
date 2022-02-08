@@ -26,6 +26,7 @@ public:
     MCAPI EntitySet(class EntitySet&&);
     MCAPI bool add(class EntityContext const&);
     MCAPI class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > > erase(class std::_List_const_iterator<class std::_List_val<struct std::_List_simple_types<struct std::pair<unsigned __int64 const, class WeakEntityRef> > > >);
+    MCAPI class WeakEntityRef find(class EntityContext const&) const;
     MCAPI class EntitySet& operator=(class EntitySet&&);
 
 protected:

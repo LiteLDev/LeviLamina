@@ -39,8 +39,8 @@ public:
     /*12*/ virtual void clearCache();
     /*13*/ virtual void __unk_vfn_1();
     /*14*/ virtual float getShadowRadius(class BlockSource&) const;
-    /*15*/ virtual bool hasAlphaLayer() const;
-    /*16*/ virtual void __unk_vfn_2();
+    /*15*/ virtual void __unk_vfn_2();
+    /*16*/ virtual void __unk_vfn_3();
     /*17*/ virtual std::string const& getCustomName() const;
     /*18*/ virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
     /*19*/ virtual std::string getName() const;
@@ -48,12 +48,12 @@ public:
     /*21*/ virtual std::string getImmersiveReaderText(class BlockSource&);
     /*22*/ virtual int getRepairCost() const;
     /*23*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*24*/ virtual void __unk_vfn_3();
-    /*25*/ virtual void __unk_vfn_4();
+    /*24*/ virtual void __unk_vfn_4();
+    /*25*/ virtual void __unk_vfn_5();
     /*26*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*27*/ virtual void __unk_vfn_5();
-    /*28*/ virtual void __unk_vfn_6();
-    /*29*/ virtual void __unk_vfn_7();
+    /*27*/ virtual void __unk_vfn_6();
+    /*28*/ virtual void __unk_vfn_7();
+    /*29*/ virtual void __unk_vfn_8();
     /*30*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*31*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*32*/ virtual bool _playerCanUpdate(class Player const&) const;

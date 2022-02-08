@@ -53,11 +53,12 @@ public:
     MCAPI enum TransportLayer getTransportLayerType() const;
     MCAPI bool isContentLogFileEnabled() const;
     MCAPI bool isItemTransactionManagerLoggingEnabled() const;
+    MCAPI bool const isPropertiesFileLoaded() const;
     MCAPI bool texturePackRequired() const;
+    MCAPI bool useAllowList() const;
     MCAPI bool useMsaGamertagsOnly() const;
     MCAPI bool useOnlineAuthentication() const;
     MCAPI bool useWebsocketEncryption() const;
-    MCAPI bool useWhitelist() const;
     MCAPI float websocketRetryTime() const;
     MCAPI ~PropertiesSettings();
     MCAPI static bool parseBoolValue(std::string const&);

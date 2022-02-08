@@ -30,30 +30,10 @@ public:
         *((void**)&rv) = dlsym("?setServerTickOffset@ServerLevel@@UEAAX_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
     }
-    inline void addEntriesToTagCache(std::vector<std::string> a0){
-        void (ServerLevel::*rv)(std::vector<std::string>);
-        *((void**)&rv) = dlsym("?addEntriesToTagCache@ServerLevel@@UEAAXV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::vector<std::string>>(a0));
-    }
-    inline void addEntryToTagCache(std::string const& a0){
-        void (ServerLevel::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?addEntryToTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
-    }
-    inline void clearTagCache(){
-        void (ServerLevel::*rv)();
-        *((void**)&rv) = dlsym("?clearTagCache@ServerLevel@@UEAAXXZ");
-        return (this->*rv)();
-    }
     inline void decrementTagCache(std::string const& a0, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >& a1){
         void (ServerLevel::*rv)(std::string const&, class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&);
         *((void**)&rv) = dlsym("?decrementTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$TagRegistry@U?$IDType@ULevelTagIDType@@@@U?$IDType@ULevelTagSetIDType@@@@@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class TagRegistry<struct IDType<struct LevelTagIDType>, struct IDType<struct LevelTagSetIDType> >&>(a1));
-    }
-    inline void dropEntryFromTagCache(std::string const& a0){
-        void (ServerLevel::*rv)(std::string const&);
-        *((void**)&rv) = dlsym("?dropEntryFromTagCache@ServerLevel@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0));
     }
     inline class ResourcePackManager* getClientResourcePackManager() const{
         class ResourcePackManager* (ServerLevel::*rv)() const;
@@ -100,11 +80,6 @@ public:
         *((void**)&rv) = dlsym("?loadFunctionManager@ServerLevel@@UEAAXXZ");
         return (this->*rv)();
     }
-    inline bool postProcessResources(){
-        bool (ServerLevel::*rv)();
-        *((void**)&rv) = dlsym("?postProcessResources@ServerLevel@@UEAA_NXZ");
-        return (this->*rv)();
-    }
     inline void runCommand(class Command& a0, class CommandOrigin& a1, enum CommandOriginSystem a2){
         void (ServerLevel::*rv)(class Command&, class CommandOrigin&, enum CommandOriginSystem);
         *((void**)&rv) = dlsym("?runCommand@ServerLevel@@UEAAXAEAVCommand@@AEAVCommandOrigin@@W4CommandOriginSystem@@@Z");
@@ -124,11 +99,6 @@ public:
         void (ServerLevel::*rv)(bool);
         *((void**)&rv) = dlsym("?setCommandsEnabled@ServerLevel@@UEAAX_N@Z");
         return (this->*rv)(std::forward<bool>(a0));
-    }
-    inline void setDifficulty(enum Difficulty a0){
-        void (ServerLevel::*rv)(enum Difficulty);
-        *((void**)&rv) = dlsym("?setDifficulty@ServerLevel@@UEAAXW4Difficulty@@@Z");
-        return (this->*rv)(std::forward<enum Difficulty>(a0));
     }
     inline void setWorldTemplateOptionsUnlocked(){
         void (ServerLevel::*rv)();
@@ -153,7 +123,7 @@ public:
     MCAPI class MobEvents& getMobEvents();
     MCAPI void setShouldSendSleepMessage(bool);
     MCAPI bool shouldSendSleepMessage() const;
-    MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer const> tryGetVolumeEntityManager() const;
+    MCAPI class Bedrock::NonOwnerPointer<class VolumeEntityManagerServer> tryGetVolumeEntityManager() const;
 
 protected:
 

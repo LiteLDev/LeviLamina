@@ -45,7 +45,7 @@ public:
         return (this->*rv)(std::forward<class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string > > > const&>(a0));
     }
     */
-    MCAPI ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&);
+    MCAPI ActorAnimationControllerStatePlayer(class HashedString const&, class ActorAnimationControllerPlayer&, class std::shared_ptr<class ActorAnimationControllerState>, class AnimationComponent&, class ExpressionNode const&, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString> >&);
     MCAPI bool allAnimationsFinished() const;
     MCAPI bool anyAnimationsFinished() const;
 

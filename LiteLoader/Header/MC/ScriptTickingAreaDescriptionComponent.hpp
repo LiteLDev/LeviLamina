@@ -38,15 +38,15 @@ public:
     /*11*/ virtual void __unk_vfn_7();
     /*12*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
     /*
-    inline bool applyComponentTo(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Actor& a3, class ScriptApi::ScriptObjectHandle const& a4) const{
-        bool (ScriptTickingAreaDescriptionComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, class ScriptApi::ScriptObjectHandle const&) const;
-        *((void**)&rv) = dlsym("?applyComponentTo@ScriptTickingAreaDescriptionComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEAVActor@@AEBVScriptObjectHandle@3@@Z");
-        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Actor&>(a3), std::forward<class ScriptApi::ScriptObjectHandle const&>(a4));
-    }
     inline bool applyComponentTo(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class ITickingArea& a3, class ScriptApi::ScriptObjectHandle const& a4) const{
         bool (ScriptTickingAreaDescriptionComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class ITickingArea&, class ScriptApi::ScriptObjectHandle const&) const;
         *((void**)&rv) = dlsym("?applyComponentTo@ScriptTickingAreaDescriptionComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEAVITickingArea@@AEBVScriptObjectHandle@3@@Z");
         return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class ITickingArea&>(a3), std::forward<class ScriptApi::ScriptObjectHandle const&>(a4));
+    }
+    inline bool applyComponentTo(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Actor& a3, class ScriptApi::ScriptObjectHandle const& a4) const{
+        bool (ScriptTickingAreaDescriptionComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, class ScriptApi::ScriptObjectHandle const&) const;
+        *((void**)&rv) = dlsym("?applyComponentTo@ScriptTickingAreaDescriptionComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEAVActor@@AEBVScriptObjectHandle@3@@Z");
+        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Actor&>(a3), std::forward<class ScriptApi::ScriptObjectHandle const&>(a4));
     }
     */
 

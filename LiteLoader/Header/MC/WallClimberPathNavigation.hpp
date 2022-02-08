@@ -30,7 +30,7 @@ public:
     /*3*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
     /*4*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
     /*5*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*6*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    /*6*/ virtual void __unk_vfn_0();
     /*7*/ virtual bool canUpdatePath(class Mob const&) const;
 
 protected:

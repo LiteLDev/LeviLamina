@@ -23,6 +23,16 @@ public:
 
 public:
     /*0*/ virtual ~FurnaceContainerScreenValidator();
+    /*1*/ virtual void onItemRemoved(int, class ItemStack const&);
+    /*2*/ virtual void commitResults(class ContainerScreenContext const&);
+    /*3*/ virtual void clear();
+    /*
+    inline  ~FurnaceContainerScreenValidator(){
+         (FurnaceContainerScreenValidator::*rv)();
+        *((void**)&rv) = dlsym("??1FurnaceContainerScreenValidator@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FurnaceContainerScreenValidator();
 
 protected:

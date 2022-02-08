@@ -27,11 +27,14 @@ public:
     /*0*/ virtual ~FoodItemComponentLegacy();
     /*1*/ virtual int getNutrition() const;
     /*2*/ virtual float getSaturationModifier() const;
-    /*3*/ virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
-    /*4*/ virtual bool use(class ItemStack&, class Player&);
-    /*5*/ virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
+    /*3*/ virtual bool canAlwaysEat() const;
+    /*4*/ virtual class Item const* eatItem(class ItemStack&, class Actor&, class Level&);
+    /*5*/ virtual bool use(class ItemStack&, class Player&);
+    /*6*/ virtual class Item const* useTimeDepleted(class ItemStack&, class Player&, class Level&);
     MCAPI FoodItemComponentLegacy(class Item&);
+    MCAPI std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     MCAPI bool init(class Json::Value&, class SemVersion const&);
+    MCAPI static class Json::Value initializeFromNetwork(class CompoundTag const&);
 
 protected:
 

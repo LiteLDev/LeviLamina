@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~BarrelContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3() const;
+    /*1*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_3();
+    /*5*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 
 protected:
 

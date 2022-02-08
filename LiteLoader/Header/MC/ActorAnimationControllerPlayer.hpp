@@ -33,7 +33,7 @@ public:
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
     /*8*/ virtual enum ActorAnimationType getAnimationType() const;
     /*9*/ virtual class HashedString const& getRawName() const;
-    MCAPI ActorAnimationControllerPlayer(class HashedString const&, class ActorAnimationControllerPtr const&, class AnimationComponent&, class ExpressionNode const&);
+    MCAPI ActorAnimationControllerPlayer(class HashedString const&, class ActorAnimationControllerPtr const&, class AnimationComponent&, class ExpressionNode const&, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString> >&);
 
 protected:
 

@@ -30,12 +30,12 @@ public:
     /*3*/ virtual std::vector<class ItemStack> const& getItems() const;
     /*4*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual bool isValid();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
+    /*6*/ virtual void __unk_vfn_2();
+    /*7*/ virtual void __unk_vfn_3();
+    /*8*/ virtual void __unk_vfn_4();
+    /*9*/ virtual void __unk_vfn_5();
     /*10*/ virtual std::string const& getItemGroupName(int) const;
-    /*11*/ virtual void __unk_vfn_5();
+    /*11*/ virtual void __unk_vfn_6();
     /*12*/ virtual int _getContainerOffset() const;
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player&);
 

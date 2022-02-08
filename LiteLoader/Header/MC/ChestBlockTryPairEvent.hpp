@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ChestBlockTryPairEvent {
+class ChestBlockTryPairEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct ChestBlockTryPairEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CHESTBLOCKTRYPAIREVENT
 public:
-    struct ChestBlockTryPairEvent& operator=(struct ChestBlockTryPairEvent const&) = delete;
-    ChestBlockTryPairEvent(struct ChestBlockTryPairEvent const&) = delete;
+    class ChestBlockTryPairEvent& operator=(class ChestBlockTryPairEvent const&) = delete;
+    ChestBlockTryPairEvent(class ChestBlockTryPairEvent const&) = delete;
     ChestBlockTryPairEvent() = delete;
 #endif
 
