@@ -109,9 +109,6 @@
     <ClCompile Include="Engine\MessageSystem.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
-    <ClCompile Include="Engine\PluginHotManage.cpp">
-      <Filter>Engine</Filter>
-    </ClCompile>
     <ClCompile Include="API\ContainerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
@@ -146,6 +143,12 @@
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="Version.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="BuiltinCommands.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
   </ItemGroup>
@@ -234,9 +237,6 @@
     <ClInclude Include="Engine\MessageSystem.h">
       <Filter>Engine</Filter>
     </ClInclude>
-    <ClInclude Include="Engine\PluginHotManage.h">
-      <Filter>Engine</Filter>
-    </ClInclude>
     <ClInclude Include="API\ContainerAPI.h">
       <Filter>API</Filter>
     </ClInclude>
@@ -278,6 +278,12 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="BuiltinCommands.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginManager.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

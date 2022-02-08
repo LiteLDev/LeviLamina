@@ -9,7 +9,7 @@ ofstream record;
 void InitSafeGuardRecord()
 {
 	filesystem::create_directories("logs/LiteLoader");
-	record.open(string("logs/LiteLoader/Sensitive_Operation_Records-") + LXL_SCRIPT_LANG_TYPE + ".log", ios::app);
+	record.open(string("logs/LiteLoader/Sensitive_Operation_Records-") + LLSE_BACKEND_TYPE + ".log", ios::app);
 }
 
 void RecordOperation(const string& pluginName, const std::string &operation, const string& content)

@@ -10,7 +10,6 @@
 #include <cstdarg>
 #include <Global.hpp>
 #include <Engine/TimeTaskSystem.h>
-#include <Engine/PluginHotManage.h>
 #include <Engine/EngineOwnData.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/LocalShareData.h>
@@ -1116,7 +1115,7 @@ void InitBasicEventListeners()
         return true;
     });
     
-    Event::ConsoleCmdEvent::subscribe([](const ConsoleCmdEvent& ev)
+    Event::ConsoleCmdEvent::subscribe_ref([](ConsoleCmdEvent& ev)
     {
         try
         {
@@ -1125,8 +1124,7 @@ void InitBasicEventListeners()
             // PreProcess
             if (!ProcessDebugEngine(cmd))
                 return false;
-            ProcessStopServer(cmd);
-            if (!ProcessHotManageCmd(cmd))
+            if (!ProcessHotManageCmd(ev.mCommand))
                 return false;
 
             //CallEvents
@@ -1183,20 +1181,11 @@ void InitBasicEventListeners()
 // ===== onServerStarted =====
     Event::ServerStartedEvent::subscribe([](auto &ev)
     {
-        //标记已启动
-        if (!isServerStarted)
+        IF_LISTENED(EVENT_TYPES::onServerStarted)
         {
-            isServerStarted = true;
-
-            //注册预置命令
-            RegisterBuiltinCmds();
-
-            IF_LISTENED(EVENT_TYPES::onServerStarted)
-            {
-                CallEventDelayed(EVENT_TYPES::onServerStarted);
-            }
-            IF_LISTENED_END(EVENT_TYPES::onServerStarted);
+            CallEventDelayed(EVENT_TYPES::onServerStarted);
         }
+        IF_LISTENED_END(EVENT_TYPES::onServerStarted);
         return true;
     });
 }

@@ -41,6 +41,7 @@ THook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVR
     return original(a1,a2);
 }
 
+//Fix bug
 THook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", void* a1, void* a2)
 {
     return (void*)1;

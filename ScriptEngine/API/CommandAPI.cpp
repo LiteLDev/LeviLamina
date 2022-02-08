@@ -62,12 +62,12 @@ void LxlRegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int
     if (isPlayerCmd)
     {
         localShareData->playerCmdCallbacks[cmd] = { EngineScope::currentEngine(),level,script::Global<Function>(func) };
-        globalShareData->playerRegisteredCmd[cmd] = LXL_SCRIPT_LANG_TYPE;
+        globalShareData->playerRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
     }
     else
     {
         localShareData->consoleCmdCallbacks[cmd] = { EngineScope::currentEngine(),level,script::Global<Function>(func) };
-        globalShareData->consoleRegisteredCmd[cmd] = LXL_SCRIPT_LANG_TYPE;
+        globalShareData->consoleRegisteredCmd[cmd] = LLSE_BACKEND_TYPE;
     }
 
     //延迟注册
@@ -168,7 +168,7 @@ Local<Value> McClass::sendCmdOutput(const Arguments& args)
 void RegisterBuiltinCmds()
 {
     //调试引擎
-    RegisterCmd(LXL_DEBUG_CMD, "LXL " + string(LLSE_MODULE_TYPE) + " Engine Real-time Debugging", 4);
+    RegisterCmd(LLSE_DEBUG_CMD, "LXL " + string(LLSE_MODULE_TYPE) + " Engine Real-time Debugging", 4);
     
     //热管理
     RegisterCmd("lxl list", "List current loaded LXL plugins", 4);
@@ -191,11 +191,11 @@ void ProcessRegCmdQueue()
 
 bool ProcessDebugEngine(const string& cmd)
 {
-//#define OUTPUT_DEBUG_SIGN() std::cout << "LiteXLoader-" << LLSE_MODULE_TYPE << ">" << std::flush
+#define OUTPUT_DEBUG_SIGN() std::cout << ">" << std::flush
     extern bool globalDebug;
     extern ScriptEngine *debugEngine;
 
-    if (cmd == LXL_DEBUG_CMD)
+    if (cmd == LLSE_DEBUG_CMD)
     {
         if (globalDebug)
         {
@@ -208,7 +208,7 @@ bool ProcessDebugEngine(const string& cmd)
             //StartDebug
             logger.info("Debug mode begins");
             globalDebug = true;
-            //OUTPUT_DEBUG_SIGN();
+            OUTPUT_DEBUG_SIGN();
         }
         return false;
     }
@@ -226,25 +226,17 @@ bool ProcessDebugEngine(const string& cmd)
                 auto result = debugEngine->eval(cmd);
                 PrintValue(std::cout, result);
                 cout << endl;
-                //OUTPUT_DEBUG_SIGN();
+                OUTPUT_DEBUG_SIGN();
             }
         }
         catch (Exception& e)
         {
             PrintException(e);
-            //OUTPUT_DEBUG_SIGN();
+            OUTPUT_DEBUG_SIGN();
         }
         return false;
     }
     return true;
-}
-
-void ProcessStopServer(const string& cmd)
-{
-    if (cmd == "stop")
-    {
-        isServerStarted = false;
-    }
 }
 
 string LxlFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiveParas, bool *fromOtherEngine)
@@ -257,7 +249,7 @@ string LxlFindCmdReg(bool isPlayerCmd, const string& cmd, vector<string>& receiv
             //如果命令与注册前缀全匹配，或者目标前缀后面为空格
         {
             //Matched
-            if (fromEngine != LXL_SCRIPT_LANG_TYPE)
+            if (fromEngine != LLSE_BACKEND_TYPE)
             {
                 *fromOtherEngine = true;
                 return string();

@@ -62,19 +62,19 @@ bool LL::isDebugMode() {
 }
 
 LL::Plugin *LL::getPlugin(std::string name) {
-    return ::GetPlugin(name);
+    return PluginManager::getPlugin(name);
 }
 
 LL::Plugin *LL::getPlugin(HMODULE handler) {
-    return ::GetPlugin(handler);
+    return PluginManager::getPlugin(handler);
 }
 
 bool LL::hasPlugin(std::string name) {
-    return ::HasPlugin(name);
+    return PluginManager::hasPlugin(name);
 }
 
-std::unordered_map<std::string, LL::Plugin> LL::getAllPlugins() {
-    return ::GetAllPlugins();
+std::unordered_map<std::string, LL::Plugin*> LL::getAllPlugins() {
+    return PluginManager::getAllPlugins();
 }
 
 //Version

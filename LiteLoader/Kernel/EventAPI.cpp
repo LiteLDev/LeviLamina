@@ -1031,6 +1031,8 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
 
             if (!ev.call())
                 return rtn;
+
+            context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(PlayerCmdEvent)
     }
@@ -1044,6 +1046,8 @@ THook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCRESULT@@V?$shared_
 
             if (!ev.call())
                 return rtn;
+
+            context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(ConsoleCmdEvent)
     }

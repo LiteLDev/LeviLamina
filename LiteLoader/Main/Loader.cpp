@@ -53,8 +53,7 @@ void CleanOldScriptEngine()
 
 void LoadScriptEngine()
 {
-    std::vector<string> backends(LLSE_VALID_BACKENDS);
-    for (string& backend : backends)
+    for (string backend : LLSE_VALID_BACKENDS)
     {
         auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
         if (lib) {
@@ -76,9 +75,7 @@ void LL::LoadMain() {
     logger.info("Loading plugins...");
 
     CleanOldScriptEngine();
-    std::set<string> scriptExts;
-    for (auto& ext : LLSE_VALID_PLUGIN_EXTENSIONS)
-        scriptExts.insert(ext);
+    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
     bool hasScriptPlugin = false;
 
     // Load plugins
@@ -92,7 +89,8 @@ void LL::LoadMain() {
 
         auto path = file.path();
         auto fileName = path.u8string();
-        if (fileName.find("LiteLoader.dll") != string::npos)      //Skip Wrong file path
+        if (fileName.find("LiteLoader.dll") != string::npos
+            || fileName.find("LiteXLoader") != string::npos)      //Skip Wrong file path
             continue;
 
         string ext = path.extension().u8string();
@@ -119,7 +117,7 @@ void LL::LoadMain() {
 
             logger.info("Plugin <{}> loaded", pluginFileName);
 
-            if (GetPlugin(lib) == nullptr) {
+            if (PluginManager::getPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
             }
         } else {
@@ -133,9 +131,9 @@ void LL::LoadMain() {
         LoadScriptEngine();
 
     //  Call onPostInit
-    auto plugins = GetAllPlugins();
+    auto plugins = PluginManager::getAllPlugins(false);
     for (auto&[name, plugin]: plugins) {
-        auto fn = GetProcAddress(plugin.handler, "onPostInit");
+        auto fn = GetProcAddress(plugin->handler, "onPostInit");
         if (fn) {
             try {
                 ((void (*)()) fn)();

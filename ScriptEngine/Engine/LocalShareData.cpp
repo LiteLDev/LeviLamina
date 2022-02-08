@@ -9,7 +9,7 @@ LocalDataType* localShareData;
 std::vector<RegCmdQueue> toRegCmdQueue;
 
 //线程池
-ThreadPool pool(LXL_POOL_THREAD_COUNT);
+ThreadPool pool(LLSE_POOL_THREAD_COUNT);
 
 void InitLocalShareData()
 {

@@ -172,6 +172,57 @@ public:
 
         return passToBDS;
     }
+
+    bool callToPlugin(std::string pluginName)
+    {
+        bool passToBDS = true;
+
+        //NoConst
+        auto iNoConst = listenersNoConst.begin();
+        try {
+            for (; iNoConst != listenersNoConst.end(); ++iNoConst)
+            {
+                if (iNoConst->first == pluginName)
+                {
+                    if (!iNoConst->second(*(EVENT*)this))
+                        passToBDS = false;
+                    break;
+                }
+            }
+        }
+        catch (const seh_exception& e)
+        {
+            OutputEventError("Uncaught SEH Exception Detected!", typeid(EVENT).name(), iNoConst->first);
+        }
+        catch (const std::exception& e)
+        {
+            OutputEventError(string("Uncaught Exception Detected! ") + e.what(), typeid(EVENT).name(), iNoConst->first);
+        }
+
+        //Common
+        auto i = listeners.begin();
+        try {
+            for (; i != listeners.end(); ++i)
+            {
+                if (i->first == pluginName)
+                {
+                    if (!i->second(*(EVENT*)this))
+                        passToBDS = false;
+                    break;
+                }
+            }
+        }
+        catch (const seh_exception& e)
+        {
+            OutputEventError("Uncaught SEH Exception Detected!", typeid(EVENT).name(), i->first);
+        }
+        catch (const std::exception& e)
+        {
+            OutputEventError(string("Uncaught Exception Detected! ") + e.what(), typeid(EVENT).name(), i->first);
+        }
+
+        return passToBDS;
+    }
 };
 
 

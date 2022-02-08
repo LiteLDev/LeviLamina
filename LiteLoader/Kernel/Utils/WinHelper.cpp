@@ -3,6 +3,7 @@
 #include <Main/LiteLoader.h>
 #include <Utils/DbgHelper.h>
 #include <LoggerAPI.h>
+#include <Psapi.h>
 #include <string>
 
 using namespace std;
@@ -96,4 +97,10 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
     }).detach();
 
     return true;
+}
+
+string GetModulePath(HMODULE handler) {
+    wchar_t buf[MAX_PATH] = { 0 };
+    GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
+    return wstr2str(wstring(buf));
 }

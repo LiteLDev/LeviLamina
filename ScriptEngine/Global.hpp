@@ -92,5 +92,4 @@ inline std::string DimId2Name(int dimid)
 }
 
 //全局变量
-extern bool isServerStarted;
 extern bool isCmdRegisterEnabled;

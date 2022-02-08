@@ -18,7 +18,6 @@ using namespace script;
 
 //////////////////// 消息处理注册 ////////////////////
 
-#include "PluginHotManage.h"
 #include "LoaderHelper.h"
 #include "RemoteCall.h"
 #include "TimeTaskSystem.h"
@@ -300,7 +299,7 @@ bool ModuleMessageResult::waitForResultCount(int targetCount, int maxWaitTime)
 
     while (maxWaitTime < 0 ? true : GetCurrentTimeStampMS() - fromTime <= maxWaitTime)
     {
-        Sleep(LXL_MESSAGE_SYSTEM_WAIT_CHECK_INTERVAL);
+        Sleep(LLSE_MESSAGE_SYSTEM_WAIT_CHECK_INTERVAL);
         if (resultCount.hasReachCount(targetCount))
         {
             res = true;

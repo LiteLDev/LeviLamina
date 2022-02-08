@@ -129,7 +129,7 @@ Local<Value> MakeRemoteCall(const string& funcName, const Arguments& args)
     logger.debug("*** After remote call request send");
 
     logger.debug("*** Before wait for remote call result");
-    auto returnResult = sendResult.waitForOneResult(LXL_MAXWAIT_REMOTE_CALL);
+    auto returnResult = sendResult.waitForOneResult(LLSE_MAXWAIT_REMOTE_CALL);
     if (!returnResult)
     {
         logger.error(tr("remoteCall.timeout.fail"));

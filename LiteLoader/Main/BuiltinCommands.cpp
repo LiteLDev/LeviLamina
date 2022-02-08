@@ -12,8 +12,10 @@
 #include <MC/VanillaDimensions.hpp>
 #include <Main/AutoUpgrade.h>
 #include <Main/Config.h>
+#include <Main/PluginManager.h>
 
 using namespace RegisterCommandHelper;
+using namespace LL;
 
 static_assert(sizeof(CommandSelector<Player>) == 200);
 
@@ -162,9 +164,9 @@ void LLListPluginsCommand(CommandOutput& output)
         // Plugin Lists[1]
         // - LiteLoader [v1.0.0] (LiteLoader.dll)
         //   xxxxx  (Plugin Introduction)
-        auto fileName = std::filesystem::path(plugin.filePath).filename().u8string();
+        auto fileName = std::filesystem::path(plugin->filePath).filename().u8string();
         oss << fmt::format("- {} [v{}] ({})\n  {}\n\n",
-            name, plugin.version.toString(), fileName, plugin.introduction);
+            name, plugin->version.toString(), fileName, plugin->introduction);
     }
     oss << "* Send command \"plugins <Plugin Name>\" for more information";
     output.success(oss.str());
@@ -176,11 +178,14 @@ void LLPluginInfoCommand(CommandOutput& output, const string &pluginName)
     if (plugin) {
         std::ostringstream oss;
         auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
+        string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
-        oss << "Plugin <" << pluginName << '>' << std::endl << std::endl;
-        oss << "- Name:  " << plugin->name << '(' << fn << ')' << std::endl;
-        oss << "- Version:  v" << plugin->version.toString(true) << std::endl;
-        oss << "- Introduction:  " << plugin->introduction << std::endl;
+        oss << "Plugin <" << pluginName << '>\n\n';
+        oss << "- Name:  " << plugin->name << '(' << fn << ")\n";
+        oss << "- Version:  v" << plugin->version.toString(true) << "\n";
+        oss << "- Introduction:  " << plugin->introduction << "\n";
+        oss << "- Type:  " << pluginType << "\n";
+        oss << "- File Path:  " << plugin->filePath << "\n";
         for (auto& [k, v] : plugin->otherInformation) {
             oss << "- " << k << ":  " << v << std::endl;
         }
@@ -211,10 +216,44 @@ void LLHelpCommand(CommandOutput& output)
     );
 }
 
+void LLLoadPluginCommand(CommandOutput& output, const string &path)
+{
+    if (PluginManager::loadPlugin(path, true))
+        output.success("Plugin " + path + " loaded successfully.");
+    else
+        output.error("Fail to load plugin " + path);
+}
+
+void LLUnloadPluginCommand(CommandOutput& output, const string &pluginName)
+{
+    if (PluginManager::unloadPlugin(pluginName, true))
+        output.success("Plugin " + pluginName + " unloaded successfully.");
+    else
+        output.error("Fail to unload plugin " + pluginName);
+}
+
+void LLReloadPluginCommand(CommandOutput& output, const string &pluginName, bool reloadAll)
+{
+    if (!reloadAll)
+    {
+        if (PluginManager::reloadPlugin(pluginName, true))
+            output.success("Plugin " + pluginName + " reloaded successfully.");
+        else
+            output.error("Fail to reload plugin " + pluginName);
+    }
+    else
+    {
+        if (PluginManager::reloadAllPlugins(true))
+            output.success("Plugins reloaded successfully.");
+        else
+            output.error("Fail to reload all plugins");
+    }
+}
+
 class LLCommand : public Command {
     enum class Operation
     {
-        Version, List, Upgrade, Help
+        Version, List, Upgrade, Help, Load, Unload, Reload
     };
     enum class UpgradeOption {
         Force
@@ -222,8 +261,8 @@ class LLCommand : public Command {
 
     Operation operation;
     UpgradeOption upgradeOption;
-    bool hasUpgradeOption, hasPluginNameToGetInfo;
-    string pluginNameToGetInfo;
+    bool hasUpgradeOption, hasPluginNameSet;
+    string pluginNameToDoOperation;
 
 public:
     void execute(CommandOrigin const& ori, CommandOutput& output) const override {
@@ -236,10 +275,28 @@ public:
             LLUpgradeCommand(output, hasUpgradeOption && upgradeOption == UpgradeOption::Force);
             break;
         case Operation::List:
-            if (!hasPluginNameToGetInfo)
+            if (!hasPluginNameSet)
                 LLListPluginsCommand(output);
             else
-                LLPluginInfoCommand(output, pluginNameToGetInfo);
+                LLPluginInfoCommand(output, pluginNameToDoOperation);
+            break;
+        case Operation::Load:
+            if (hasPluginNameSet)
+                LLLoadPluginCommand(output, pluginNameToDoOperation);
+            else
+                output.error("You must provide a valid path of LiteLoader plugin!");
+            break;
+        case Operation::Unload:
+            if (hasPluginNameSet)
+                LLUnloadPluginCommand(output, pluginNameToDoOperation);
+            else
+                output.error("You must provide a valid name of LiteLoader plugin!");
+            break;
+        case Operation::Reload:
+            if (hasPluginNameSet)
+                LLReloadPluginCommand(output, pluginNameToDoOperation, false);
+            else
+                LLReloadPluginCommand(output, "", true);
             break;
         case Operation::Help:
             LLHelpCommand(output);
@@ -250,38 +307,62 @@ public:
     }
 
     static void setup(CommandRegistry* registry) {
-        registry->registerCommand("ll", "LiteLoaderBDS Menu",
+        // Register Cmd
+        registry->registerCommand("ll", "LiteLoaderBDS plugin operations",
             CommandPermissionLevel::Console, { (CommandFlagValue)0 }, { (CommandFlagValue)0x80 });
 
-        // Add Options
-        registry->addEnum<Operation>("operation", {
-            {"version", Operation::Version},
-            {"list", Operation::List},
-            {"plugins", Operation::List},
-            {"upgrade", Operation::Upgrade},
-            {"update", Operation::Upgrade},
-            {"help", Operation::Help}
-        });
-        registry->addEnum<UpgradeOption>("force", { {"force", UpgradeOption::Force} });
-
+        // Register softenum
         vector<string> pluginList;
         for (auto& [name, p] : LL::getAllPlugins()) {
             pluginList.push_back(name);
         }
         registry->addSoftEnum("PluginName", pluginList);
 
-        //Register
+        // ll version & help
+        registry->addEnum<Operation>("Operation_Common", {
+            {"version", Operation::Version},
+            {"help", Operation::Help}
+        });
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "operation", "operation"),
-            makeOptional<CommandParameterDataType::ENUM>(
-                &LLCommand::upgradeOption, "option", "force", &LLCommand::hasUpgradeOption)
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1)
         );
+
+        // ll list & load & unload
+        registry->addEnum<Operation>("Operation_MustPluginName", {
+            {"list", Operation::List},
+            {"plugins", Operation::List},
+            {"load", Operation::Load},
+            {"unload", Operation::Unload},
+        });
         registry->registerOverload<LLCommand>(
             "ll",
-            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "operation", "operation"),
-            makeOptional<CommandParameterDataType::SOFT_ENUM>(
-                &LLCommand::pluginNameToGetInfo, "name", "PluginName", &LLCommand::hasPluginNameToGetInfo));
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_MustPluginName").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::SOFT_ENUM>(&LLCommand::pluginNameToDoOperation, "PluginName", "PluginName", &LLCommand::hasPluginNameSet)
+        );
+
+        // ll reload
+        registry->addEnum<Operation>("Operation_OptionalPluginName", {
+            {"reload", Operation::Reload},
+        });
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_OptionalPluginName").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::SOFT_ENUM>(&LLCommand::pluginNameToDoOperation, "PluginName", "Name of plugin", &LLCommand::hasPluginNameSet)
+        );
+
+        // ll upgrade
+        registry->addEnum<Operation>("Operation_WithOption", {
+            {"upgrade", Operation::Upgrade},
+        });
+        registry->addEnum<UpgradeOption>("UpgradeOption", {
+            {"force", UpgradeOption::Force} 
+        });
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_WithOption").addOptions((CommandParameterOption)1),
+            makeOptional<CommandParameterDataType::ENUM>(&LLCommand::upgradeOption, "Option", "UpgradeOption", &LLCommand::hasUpgradeOption).addOptions((CommandParameterOption)1)
+        );
     }
 };
 

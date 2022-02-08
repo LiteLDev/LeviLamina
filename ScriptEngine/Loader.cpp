@@ -3,6 +3,7 @@
 #include <Engine/EngineOwnData.h>
 #include <Engine/LoaderHelper.h>
 #include <Tools/IniHelper.h>
+#include <PluginManager.h>
 #include <list>
 #include <string>
 #include <vector>
@@ -29,13 +30,16 @@ extern void BindAPIs(ScriptEngine *engine);
 //预加载依赖库
 void LoadDepends()
 {
-    std::filesystem::directory_iterator deps(LXL_DEPENDS_DIR);
+    std::filesystem::directory_iterator deps(LLSE_DEPENDS_DIR);
     for (auto& i : deps) {
-        if (i.is_regular_file() && i.path().filename() == string("BaseLib")+ LXL_PLUGINS_SUFFIX)
+        if (i.is_regular_file() && i.path().filename() == string("BaseLib")+ LLSE_PLUGINS_EXTENSION)
         {
             try
             {
-                depends.emplace_back(ReadFileFrom(i.path().string()));
+                auto content = ReadAllFile(i.path().string());
+                if (!content)
+                    throw("Fail to open plugin file!");
+                depends.emplace_back(*content);
                 logger.info("Dependence " + i.path().filename().string() + " Loaded.");
             }
             catch (std::exception e)
@@ -57,11 +61,11 @@ void LoadDebugEngine()
     //启动引擎
     debugEngine = NewEngine();
     currentModuleEngines.push_back(debugEngine);
-    globalShareData->engines.push_back({ LXL_DEBUG_ENGINE_NAME, LLSE_MODULE_TYPE, debugEngine });
+    globalShareData->engines.push_back({ LLSE_DEBUG_ENGINE_NAME, LLSE_MODULE_TYPE, debugEngine });
     EngineScope enter(debugEngine);
 
     //setData
-    ENGINE_OWN_DATA()->pluginName = LXL_DEBUG_ENGINE_NAME;
+    ENGINE_OWN_DATA()->pluginName = LLSE_DEBUG_ENGINE_NAME;
 
     //绑定API
     try {
@@ -92,11 +96,11 @@ void LoadMain()
 {
     logger.info("Loading plugins...");
     int count = 0;
-    std::filesystem::directory_iterator files(LXL_PLUGINS_LOAD_DIR);
+    std::filesystem::directory_iterator files(LLSE_PLUGINS_LOAD_DIR);
     for (auto& i : files) {
-        if (i.is_regular_file() && i.path().extension() == LXL_PLUGINS_SUFFIX)
+        if (i.is_regular_file() && i.path().extension() == LLSE_PLUGINS_EXTENSION)
         {
-            if (LxlLoadPlugin(i.path().string()))
+            if (PluginManager::loadPlugin(i.path().string()))
                 ++count;
         }
     }

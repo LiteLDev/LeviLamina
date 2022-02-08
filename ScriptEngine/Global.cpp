@@ -5,5 +5,4 @@ using namespace std;
 class Scoreboard;
 
 //全局变量
-bool isServerStarted = false;
 bool isCmdRegisterEnabled = false;

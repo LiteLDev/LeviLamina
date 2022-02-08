@@ -21,9 +21,7 @@ void ProcessRegCmdQueue();
 // 处理调试引擎事件
 bool ProcessDebugEngine(const std::string& cmd);
 // 处理热管理系统
-bool ProcessHotManageCmd(const std::string& cmd);
-// 处理关服事件
-void ProcessStopServer(const std::string& cmd);
+bool ProcessHotManageCmd(std::string& cmd);
 
 // 玩家自定义命令注册回调
 bool CallPlayerCmdCallback(Player* player, const std::string& cmdPrefix, const std::vector<std::string>& paras);

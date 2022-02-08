@@ -45,6 +45,11 @@ namespace LL {
         std::string filePath;
         HMODULE handler;
 
+        enum class PluginType
+        { DllPlugin, ScriptPlugin };
+
+        PluginType type;
+
         // Call a Function by Symbol String
         template<typename ReturnType = void, typename... Args>
         inline ReturnType callFunction(const char* functionName, Args... args) {
@@ -114,7 +119,7 @@ namespace LL
     // @return 是否存在插件
     LIAPI bool hasPlugin(std::string name);
 
-    LIAPI std::unordered_map<std::string, LL::Plugin> getAllPlugins();
+    LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 };
 

@@ -20,7 +20,7 @@ struct EngineOwnData
 {
     //基础信息
     std::string pluginName = "";
-    std::string pluginPath = "";
+    std::string pluginFilePath = "";
 
     //表单回调
     std::map<unsigned, FormCallbackData> formCallbacks;

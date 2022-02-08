@@ -7,6 +7,7 @@
 class LxlClass
 {
 public:
+    static Local<Value> registerPlugin(const Arguments& args);
     static Local<Value> version(const Arguments& args);
     static Local<Value> requireVersion(const Arguments& args);
     static Local<Value> listPlugins(const Arguments& args);

@@ -39,7 +39,7 @@
     <ClCompile Include="Engine\LocalShareData.cpp" />
     <ClCompile Include="Engine\MessageSystem.cpp" />
     <ClCompile Include="Engine\OperationCount.cpp" />
-    <ClCompile Include="Engine\PluginHotManage.cpp" />
+    <ClCompile Include="BuiltinCommands.cpp" />
     <ClCompile Include="Engine\TimeTaskSystem.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="Engine\GlobalShareData.cpp" />
@@ -47,6 +47,7 @@
     <ClCompile Include="Engine\RemoteCall.cpp" />
     <ClCompile Include="Global.cpp" />
     <ClCompile Include="EconomySystem.cpp" />
+    <ClCompile Include="PluginManager.cpp" />
     <ClCompile Include="SafeGuardRecord.cpp" />
     <ClCompile Include="Tools\IniHelper.cpp" />
     <ClCompile Include="Tools\Utils.cpp" />
@@ -86,11 +87,12 @@
     <ClInclude Include="Engine\LocalShareData.h" />
     <ClInclude Include="Engine\MessageSystem.h" />
     <ClInclude Include="Engine\OperationCount.h" />
-    <ClInclude Include="Engine\PluginHotManage.h" />
+    <ClInclude Include="BuiltinCommands.h" />
     <ClInclude Include="Engine\RemoteCall.h" />
     <ClInclude Include="Engine\TimeTaskSystem.h" />
     <ClInclude Include="Global.hpp" />
     <ClInclude Include="EconomicSystem.h" />
+    <ClInclude Include="PluginManager.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SafeGuardRecord.h" />
     <ClInclude Include="Tools\IniHelper.h" />
