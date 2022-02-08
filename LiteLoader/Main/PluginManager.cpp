@@ -19,7 +19,7 @@ std::unordered_map<std::string, LL::Plugin> plugins;
 bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
                     std::map<std::string, std::string> others)
 {
-    if (getPlugin(handler) != nullptr)
+    if (handler != nullptr && getPlugin(handler) != nullptr)
     {
         for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
             if (iter->second.handler == handler) {

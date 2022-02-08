@@ -8,7 +8,14 @@
 using namespace std;
 
 int timeTaskId = 0;
-std::unordered_map<int, ScheduleTask> timeTaskMap;
+struct TimeTaskData
+{
+    ScheduleTask task;
+    script::Global<Function> func;
+    vector<script::Global<Value>> paras;
+    script::Global<String> code;
+};
+std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 #define TIMETASK_CATCH(TASK_TYPE) \
     catch (const Exception& e) \
@@ -39,87 +46,99 @@ std::unordered_map<int, ScheduleTask> timeTaskMap;
 
 int NewTimeout(Local<Function> func, const vector<Local<Value>> paras, int timeout)
 {
-    vector<script::Global<Value>> arr;
-    for (auto& para : paras)
-        arr.emplace_back(para);
-
     ++timeTaskId;
-    timeTaskMap[timeTaskId] = Schedule::delay(
-        [engine{EngineScope::currentEngine()}, id{timeTaskId}, func{script::Global<Function>(func)}, paras{std::move(arr)}]()
+
+    timeTaskMap[timeTaskId].func = func;
+    for (auto& para : paras)
+        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+
+    timeTaskMap[timeTaskId].task = Schedule::delay(
+        [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
     {
         try {
+            auto& taskData = timeTaskMap.at(id);
+
             EngineScope scope(engine);
-            if (paras.empty())
-                func.get().call();
+            if (taskData.paras.empty())
+                taskData.func.get().call();
             else
             {
                 vector<Local<Value>> args;
-                for (auto& para : paras)
+                for (auto& para : taskData.paras)
                     args.emplace_back(para.get());
-                func.get().call({}, args);
+                taskData.func.get().call({}, args);
             }
             timeTaskMap.erase(id);
         }
         TIMETASK_CATCH("setTimeout");
-    }, timeout);
+    }, timeout / 50);
     return timeTaskId;
 }
 
 int NewTimeout(Local<String> func, int timeout)
 {
     ++timeTaskId;
-    timeTaskMap[timeTaskId] = Schedule::delay(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }, func{ script::Global<String>(func) }]()
+
+    timeTaskMap[timeTaskId].code = func;
+    timeTaskMap[timeTaskId].task = Schedule::delay(
+        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
-            engine->eval(func.get().toString());
+            engine->eval(taskData.code.get().toString());
             timeTaskMap.erase(id);
         }
         TIMETASK_CATCH("setTimeout");
-    }, timeout);
+    }, timeout / 50);
     return timeTaskId;
 }
 
 int NewInterval(Local<Function> func, const vector<Local<Value>> paras, int timeout)
 {
-    vector<script::Global<Value>> arr;
-    for (auto& para : paras)
-        arr.emplace_back(para);
-
     ++timeTaskId;
-    timeTaskMap[timeTaskId] = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }, func{ script::Global<Function>(func) }, paras{ std::move(arr) }]()
+
+    timeTaskMap[timeTaskId].func = func;
+    for (auto& para : paras)
+        timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
+
+    timeTaskMap[timeTaskId].task = Schedule::repeat(
+        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            auto& taskData = timeTaskMap.at(id);
+
             EngineScope scope(engine);
-            if (paras.empty())
-                func.get().call();
+            if (taskData.paras.empty())
+                taskData.func.get().call();
             else
             {
                 vector<Local<Value>> args;
-                for (auto& para : paras)
+                for (auto& para : taskData.paras)
                     args.emplace_back(para.get());
-                func.get().call({}, args);
+                taskData.func.get().call({}, args);
             }
         }
         TIMETASK_CATCH("setInterval");
-    }, timeout);
+    }, timeout / 50);
     return timeTaskId;
 }
 
 int NewInterval(Local<String> func, int timeout)
 {
     ++timeTaskId;
-    timeTaskMap[timeTaskId] = Schedule::repeat(
-        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }, func{ script::Global<String>(func) }]()
+
+    timeTaskMap[timeTaskId].code = func;
+    timeTaskMap[timeTaskId].task = Schedule::repeat(
+        [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
-            engine->eval(func.get().toString());
+            engine->eval(taskData.code.get().toString());
         }
         TIMETASK_CATCH("setInterval");
-    }, timeout);
+    }, timeout / 50);
     return timeTaskId;
 }
 
@@ -127,7 +146,7 @@ bool ClearTimeTask(int id)
 {
     try
     {
-        timeTaskMap.at(id).cancel();
+        timeTaskMap.at(id).task.cancel();
         timeTaskMap.erase(id);
     }
     catch (...)

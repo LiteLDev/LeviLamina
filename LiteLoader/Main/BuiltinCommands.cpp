@@ -185,7 +185,7 @@ void LLListPluginsCommand(CommandOutput& output)
         oss << fmt::format("- {} [v{}] ({})\n  {}\n\n",
             name, plugin->version.toString(), fileName, plugin->introduction);
     }
-    oss << "* Send command \"plugins <Plugin Name>\" for more information";
+    oss << "* Send command \"ll list <Plugin Name>\" for more information" << std::endl;
     output.success(oss.str());
 }
 
@@ -197,14 +197,15 @@ void LLPluginInfoCommand(CommandOutput& output, const string &pluginName)
         auto fn = std::filesystem::path(plugin->filePath).filename().u8string();
         string pluginType = plugin->type == Plugin::PluginType::ScriptPlugin ? "Script Plugin" : "DLL Plugin";
 
-        oss << "Plugin <" << pluginName << '>\n\n';
+        oss << "Plugin <" << pluginName << ">\n\n";
         oss << "- Name:  " << plugin->name << '(' << fn << ")\n";
-        oss << "- Version:  v" << plugin->version.toString(true) << "\n";
         oss << "- Introduction:  " << plugin->introduction << "\n";
+        oss << "- Version:  v" << plugin->version.toString(true) << "\n";
         oss << "- Type:  " << pluginType << "\n";
         oss << "- File Path:  " << plugin->filePath << "\n";
         for (auto& [k, v] : plugin->otherInformation) {
-            oss << "- " << k << ":  " << v << std::endl;
+            if(k != "PluginType" && k != "PluginFilePath")
+                oss << "- " << k << ":  " << v << std::endl;
         }
         auto text = oss.str();
         text.pop_back();
@@ -345,10 +346,8 @@ public:
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1)
         );
 
-        // ll list & load & unload
+        // ll load & unload
         registry->addEnum<Operation>("Operation_MustPluginName", {
-            {"list", Operation::List},
-            {"plugins", Operation::List},
             {"load", Operation::Load},
             {"unload", Operation::Unload},
         });
@@ -358,8 +357,10 @@ public:
             makeMandatory<CommandParameterDataType::SOFT_ENUM>(&LLCommand::pluginNameToDoOperation, "PluginName", "PluginName", &LLCommand::hasPluginNameSet)
         );
 
-        // ll reload
+        // ll list & reload
         registry->addEnum<Operation>("Operation_OptionalPluginName", {
+            {"list", Operation::List},
+            {"plugins", Operation::List},
             {"reload", Operation::Reload},
         });
         registry->registerOverload<LLCommand>(

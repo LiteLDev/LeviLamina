@@ -10,7 +10,3 @@ int NewTimeout(Local<String> func, int timeout);
 int NewInterval(Local<Function> func, const std::vector<Local<Value>> paras, int timeout);
 int NewInterval(Local<String> func, int timeout);
 bool ClearTimeTask(int id);
-
-
-///////////////////////// Funcs /////////////////////////
-void TimeTaskRequest(ModuleMessage& msg);
