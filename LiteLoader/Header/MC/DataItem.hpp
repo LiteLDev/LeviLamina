@@ -6,148 +6,271 @@
 // Include Headers or Declare Types Here
 enum class DataItemIds : unsigned short
 {
-    FLAGS = 0,                      // Int64
-    HEALTH = 1,                     // Int (minecart/boat)
-    VARIANT = 2,                    // Int
-    COLOR = 3,                      // Byte
-    NAMETAG = 4,                    // String
-    OWNER = 5,                      // Int64
-    TARGET = 6,                     // Int64
-    AIR = 7,                        // Short
-    POTION_COLOR = 8,               // Int (ARGB!)
-    POTION_AMBIENT = 9,             // Byte
-    JUMP_DURATION = 10,             // Int64
-    HURT_TIME = 11,                 // Int (minecart/boat)
-    HURT_DIRECTION = 12,            // Int (minecart/boat)
-    PADDLE_TIME_LEFT = 13,          // Float
-    PADDLE_TIME_RIGHT = 14,         // Float
-    EXPERIENCE_VALUE = 15,          // Int (xp orb)
-    DISPLAY_ITEM = 16,              // Int (id | (data << 16))
-    HORSE_FLAGS = 16,               // Int
-    WITHER_SKULL_IS_DANGEROUS = 16, // Byte
-    MINECART_DISPLAY_OFFSET = 17,   // Int
-    ARROW_SHOOTER_ID = 17,          // Int64
-    MINECART_HAS_DISPLAY = 18,      // Byte (must be 1 for minecart to show block inside)
-    HORSE_TYPE = 19,
-    SWELL = 19,
-    OLD_SWELL = 20,
-    SWELL_DIR = 21,
-    CHARGE_AMOUNT = 22,
-    ENDERMAN_HELD_RUNTIME_ID = 23, // Short
-    ACTOR_AGE = 24,                // Short
-    PLAYER_FLAGS = 26,             // Byte
-    PLAYER_INDEX = 27,
-    PLAYER_BED_POSITION = 28, // BlockPos
-    FIREBALL_POWER_X = 29,    // Float
-    FIREBALL_POWER_Y = 30,    // Float
-    FIREBALL_POWER_Z = 31,    // Float
-    AUX_POWER = 32,
-    FISH_X = 33,
-    FISH_Z = 34,
-    FISH_ANGLE = 35,
-    POTION_AUX_VALUE = 36,                   // Short
-    LEAD_HOLDER = 37,                        // Int64
-    SCALE = 38,                              // Float
-    INTERACTIVE_TAG = 39,                    // String
-    NPC_SKIN_ID = 40,                        // String
-    URL_TAG = 41,                            // String
-    MAX_AIR = 42,                            // Short
-    MARK_VARIANT = 43,                       // Int
-    CONTAINER_TYPE = 44,                     // Byte
-    CONTAINER_BASE_SIZE = 45,                // Int
-    CONTAINER_EXTRA_SLOTS_PER_STRENGTH = 46, // Int
-    BLOCK_TARGET = 47,                       // BlockPos (ENDER CRYSTAL)
-    WITHER_INVULNERABLE_TICKS = 48,          // Int
-    WITHER_TARGET_1 = 49,                    // Int64
-    WITHER_TARGET_2 = 50,                    // Int64
-    WITHER_TARGET_3 = 51,                    // Int64
-    AERIAL_ATTACK = 52,
-    BOUNDING_BOX_WIDTH = 53,            // Float
-    BOUNDING_BOX_HEIGHT = 54,           // Float
-    FUSE_LENGTH = 55,                   // Int
-    RIDER_SEAT_POSITION = 56,           // Vec3
-    RIDER_ROTATION_LOCKED = 57,         // Byte
-    RIDER_MAX_ROTATION = 58,            // Float
-    RIDER_MIN_ROTATION = 59,            // Float
-    AREA_EFFECT_CLOUD_RADIUS = 61,      // Float
-    AREA_EFFECT_CLOUD_WAITING = 62,     // Int
-    AREA_EFFECT_CLOUD_PARTICLE_ID = 63, // Int
-    SHULKER_PEEK_ID = 64,               // Int
-    SHULKER_ATTACH_FACE = 65,           // Byte
-    SHULKER_ATTACHED = 66,              // Short
-    SHULKER_ATTACH_POS = 67,            // BlockPos
-    TRADING_PLAYER_EID = 68,            // Int64
-    TRADING_CAREER = 69,
-    HAS_COMMAND_BLOCK = 70,
-    COMMAND_BLOCK_COMMAND = 71,         // String
-    COMMAND_BLOCK_LAST_OUTPUT = 72,     // String
-    COMMAND_BLOCK_TRACK_OUTPUT = 73,    // Byte
-    CONTROLLING_RIDER_SEAT_NUMBER = 74, // Byte
-    STRENGTH = 75,                      // Int
-    MAX_STRENGTH = 76,                  // Int
-    SPELL_CASTING_COLOR = 77,           // Int
-    LIMITED_LIFE = 78,
-    ARMOR_STAND_POSE_INDEX = 79,    // Int
-    ENDER_CRYSTAL_TIME_OFFSET = 80, // Int
-    ALWAYS_SHOW_NAMETAG = 81,       // Byte
-    COLOR_2 = 82,                   // Byte
-    NAME_AUTHOR = 83,
-    SCORE_TAG = 84,               // String
-    BALLOON_ATTACHED_ENTITY = 85, // Int64
-    PUFFERFISH_SIZE = 86,
-    BUBBLE_TIME = 87,
-    AGENT = 88,
-    SITTING_AMOUNT = 89,
-    SITTING_AMOUNT_PREVIOUS = 90,
-    EATING_COUNTER = 91,
-    FLAGS_EXTENDED = 92,
-    LAYING_AMOUNT = 93,
-    LAYING_AMOUNT_PREVIOUS = 94,
-    DURATION = 95,
-    SPAWN_TIME = 96,
-    CHANGE_RATE = 97,
-    CHANGE_ON_PICKUP = 98,
-    PICKUP_COUNT = 99,
-    INTERACT_TEXT = 100,
-    TRADE_TIER = 101,
-    MAX_TRADE_TIER = 102,
-    TRADE_EXPERIENCE = 103,
-    SKIN_ID = 104, // Int
-    SPAWNING_FRAMES = 105,
-    COMMAND_BLOCK_TICK_DELAY = 106,
+    FLAGS                               = 0,   // Int64
+    HEALTH                              = 1,   // Int (minecart/boat)
+    VARIANT                             = 2,   // Int
+    COLOR                               = 3,   // Byte
+    NAMETAG                             = 4,   // String
+    OWNER                               = 5,   // Int64
+    TARGET                              = 6,   // Int64
+    AIR                                 = 7,   // Short
+    POTION_COLOR                        = 8,   // Int (ARGB!)
+    POTION_AMBIENT                      = 9,   // Byte
+    JUMP_DURATION                       = 10,  // Int64
+    HURT_TIME                           = 11,  // Int (minecart/boat)
+    HURT_DIRECTION                      = 12,  // Int (minecart/boat)
+    PADDLE_TIME_LEFT                    = 13,  // Float
+    PADDLE_TIME_RIGHT                   = 14,  // Float
+    EXPERIENCE_VALUE                    = 15,  // Int (xp orb)
+    DISPLAY_ITEM                        = 16,  // Int (id | (data << 16))
+    HORSE_FLAGS                         = 16,  // Int
+    WITHER_SKULL_IS_DANGEROUS           = 16,  // Byte
+    MINECART_DISPLAY_OFFSET             = 17,  // Int
+    ARROW_SHOOTER_ID                    = 17,  // Int64
+    MINECART_HAS_DISPLAY                = 18,  // Byte (must be 1 for minecart to show block inside)
+    HORSE_TYPE                          = 19,
+    SWELL                               = 19,
+    OLD_SWELL                           = 20,
+    SWELL_DIR                           = 21,
+    CHARGE_AMOUNT                       = 22,
+    ENDERMAN_HELD_RUNTIME_ID            = 23,  // Short
+    ACTOR_AGE                           = 24,  // Short
+    PLAYER_FLAGS                        = 26,  // Byte
+    PLAYER_INDEX                        = 27,
+    PLAYER_BED_POSITION                 = 28,  // BlockPos
+    FIREBALL_POWER_X                    = 29,  // Float
+    FIREBALL_POWER_Y                    = 30,  // Float
+    FIREBALL_POWER_Z                    = 31,  // Float
+    AUX_POWER                           = 32,
+    FISH_X                              = 33,
+    FISH_Z                              = 34,
+    FISH_ANGLE                          = 35,
+    POTION_AUX_VALUE                    = 36,  // Short
+    LEAD_HOLDER                         = 37,  // Int64
+    SCALE                               = 38,  // Float
+    INTERACTIVE_TAG                     = 39,  // String
+    NPC_SKIN_ID                         = 40,  // String
+    URL_TAG                             = 41,  // String
+    MAX_AIR                             = 42,  // Short
+    MARK_VARIANT                        = 43,  // Int
+    CONTAINER_TYPE                      = 44,  // Byte
+    CONTAINER_BASE_SIZE                 = 45,  // Int
+    CONTAINER_EXTRA_SLOTS_PER_STRENGTH  = 46,  // Int
+    BLOCK_TARGET                        = 47,  // BlockPos (ENDER CRYSTAL)
+    WITHER_INVULNERABLE_TICKS           = 48,  // Int
+    WITHER_TARGET_1                     = 49,  // Int64
+    WITHER_TARGET_2                     = 50,  // Int64
+    WITHER_TARGET_3                     = 51,  // Int64
+    AERIAL_ATTACK                       = 52,
+    BOUNDING_BOX_WIDTH                  = 53,  // Float
+    BOUNDING_BOX_HEIGHT                 = 54,  // Float
+    FUSE_LENGTH                         = 55,  // Int
+    RIDER_SEAT_POSITION                 = 56,  // Vec3
+    RIDER_ROTATION_LOCKED               = 57,  // Byte
+    RIDER_MAX_ROTATION                  = 58,  // Float
+    RIDER_MIN_ROTATION                  = 59,  // Float
+    AREA_EFFECT_CLOUD_RADIUS            = 61,  // Float
+    AREA_EFFECT_CLOUD_WAITING           = 62,  // Int
+    AREA_EFFECT_CLOUD_PARTICLE_ID       = 63,  // Int
+    SHULKER_PEEK_ID                     = 64,  // Int
+    SHULKER_ATTACH_FACE                 = 65,  // Byte
+    SHULKER_ATTACHED                    = 66,  // Short
+    SHULKER_ATTACH_POS                  = 67,  // BlockPos
+    TRADING_PLAYER_EID                  = 68,  // Int64
+    TRADING_CAREER                      = 69,
+    HAS_COMMAND_BLOCK                   = 70,
+    COMMAND_BLOCK_COMMAND               = 71,  // String
+    COMMAND_BLOCK_LAST_OUTPUT           = 72,  // String
+    COMMAND_BLOCK_TRACK_OUTPUT          = 73,  // Byte
+    CONTROLLING_RIDER_SEAT_NUMBER       = 74,  // Byte
+    STRENGTH                            = 75,  // Int
+    MAX_STRENGTH                        = 76,  // Int
+    SPELL_CASTING_COLOR                 = 77,  // Int
+    LIMITED_LIFE                        = 78,
+    ARMOR_STAND_POSE_INDEX              = 79,  // Int
+    ENDER_CRYSTAL_TIME_OFFSET           = 80,  // Int
+    ALWAYS_SHOW_NAMETAG                 = 81,  // Byte
+    COLOR_2                             = 82,  // Byte
+    NAME_AUTHOR                         = 83,
+    SCORE_TAG                           = 84,  // String
+    BALLOON_ATTACHED_ENTITY             = 85,  // Int64
+    PUFFERFISH_SIZE                     = 86,
+    BUBBLE_TIME                         = 87,
+    AGENT                               = 88,
+    SITTING_AMOUNT                      = 89,
+    SITTING_AMOUNT_PREVIOUS             = 90,
+    EATING_COUNTER                      = 91,
+    FLAGS_EXTENDED                      = 92,
+    LAYING_AMOUNT                       = 93,
+    LAYING_AMOUNT_PREVIOUS              = 94,
+    DURATION                            = 95,
+    SPAWN_TIME                          = 96,
+    CHANGE_RATE                         = 97,
+    CHANGE_ON_PICKUP                    = 98,
+    PICKUP_COUNT                        = 99,
+    INTERACT_TEXT                       = 100,
+    TRADE_TIER                          = 101,
+    MAX_TRADE_TIER                      = 102,
+    TRADE_EXPERIENCE                    = 103,
+    SKIN_ID                             = 104, // Int
+    SPAWNING_FRAMES                     = 105,
+    COMMAND_BLOCK_TICK_DELAY            = 106,
     COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK = 107,
-    AMBIENT_SOUND_INTERVAL = 108,
+    AMBIENT_SOUND_INTERVAL              = 108
     /*
-    AMBIENT_SOUND_EVENT_NAME = 109,
-    FALL_DAMAGE_MULTIPLIER = 110,
-    NAME_RAW_TEXT = 111,
-    CAN_RIDE_TARGET = 112,
+    AMBIENT_SOUND_EVENT_NAME            = 109,
+    FALL_DAMAGE_MULTIPLIER              = 110,
+    NAME_RAW_TEXT                       = 111,
+    CAN_RIDE_TARGET                     = 112,
     */
 };
+namespace ActorDataIDs
+{
+constexpr int16_t FLAGS                                      = 0;   // Int64
+constexpr int16_t HEALTH                                     = 1;   // Int (minecart/boat)
+constexpr int16_t VARIANT                                    = 2;   // Int
+constexpr int16_t COLOR                                      = 3;   // Byte
+constexpr int16_t NAMETAG                                    = 4;   // String
+constexpr int16_t OWNER                                      = 5;   // Int64
+constexpr int16_t TARGET                                     = 6;   // Int64
+constexpr int16_t AIR                                        = 7;   // Short
+constexpr int16_t POTION_COLOR                               = 8;   // Int (ARGB!)
+constexpr int16_t POTION_AMBIENT                             = 9;   // Byte
+constexpr int16_t JUMP_DURATION                              = 10;  // Int64
+constexpr int16_t HURT_TIME                                  = 11;  // Int (minecart/boat)
+constexpr int16_t HURT_DIRECTION                             = 12;  // Int (minecart/boat)
+constexpr int16_t PADDLE_TIME_LEFT                           = 13;  // Float
+constexpr int16_t PADDLE_TIME_RIGHT                          = 14;  // Float
+constexpr int16_t EXPERIENCE_VALUE                           = 15;  // Int (xp orb)
+constexpr int16_t DISPLAY_ITEM                               = 16;  // Int (id | (data << 16))
+constexpr int16_t HORSE_FLAGS                                = 16;  // Int
+constexpr int16_t WITHER_SKULL_IS_DANGEROUS                  = 16;  // Byte
+constexpr int16_t MINECART_DISPLAY_OFFSET                    = 17;  // Int
+constexpr int16_t ARROW_SHOOTER_ID                           = 17;  // Int64
+constexpr int16_t MINECART_HAS_DISPLAY                       = 18;  // Byte (must be 1 for minecart to show block inside)
+constexpr int16_t HORSE_TYPE                                 = 19;
+constexpr int16_t SWELL                                      = 19;
+constexpr int16_t OLD_SWELL                                  = 20;
+constexpr int16_t SWELL_DIR                                  = 21;
+constexpr int16_t CHARGE_AMOUNT                              = 22;
+constexpr int16_t ENDERMAN_HELD_RUNTIME_ID                   = 23;  // Short
+constexpr int16_t ACTOR_AGE                                  = 24;  // Short
+constexpr int16_t PLAYER_FLAGS                               = 26;  // Byte
+constexpr int16_t PLAYER_INDEX                               = 27;
+constexpr int16_t PLAYER_BED_POSITION                        = 28;  // BlockPos
+constexpr int16_t FIREBALL_POWER_X                           = 29;  // Float
+constexpr int16_t FIREBALL_POWER_Y                           = 30;  // Float
+constexpr int16_t FIREBALL_POWER_Z                           = 31;  // Float
+constexpr int16_t AUX_POWER                                  = 32;
+constexpr int16_t FISH_X                                     = 33;
+constexpr int16_t FISH_Z                                     = 34;
+constexpr int16_t FISH_ANGLE                                 = 35;
+constexpr int16_t POTION_AUX_VALUE                           = 36;  // Short
+constexpr int16_t LEAD_HOLDER                                = 37;  // Int64
+constexpr int16_t SCALE                                      = 38;  // Float
+constexpr int16_t INTERACTIVE_TAG                            = 39;  // String
+constexpr int16_t NPC_SKIN_ID                                = 40;  // String
+constexpr int16_t URL_TAG                                    = 41;  // String
+constexpr int16_t MAX_AIR                                    = 42;  // Short
+constexpr int16_t MARK_VARIANT                               = 43;  // Int
+constexpr int16_t CONTAINER_TYPE                             = 44;  // Byte
+constexpr int16_t CONTAINER_BASE_SIZE                        = 45;  // Int
+constexpr int16_t CONTAINER_EXTRA_SLOTS_PER_STRENGTH         = 46;  // Int
+constexpr int16_t BLOCK_TARGET                               = 47;  // BlockPos (ENDER CRYSTAL)
+constexpr int16_t WITHER_INVULNERABLE_TICKS                  = 48;  // Int
+constexpr int16_t WITHER_TARGET_1                            = 49;  // Int64
+constexpr int16_t WITHER_TARGET_2                            = 50;  // Int64
+constexpr int16_t WITHER_TARGET_3                            = 51;  // Int64
+constexpr int16_t AERIAL_ATTACK                              = 52;
+constexpr int16_t BOUNDING_BOX_WIDTH                         = 53;  // Float
+constexpr int16_t BOUNDING_BOX_HEIGHT                        = 54;  // Float
+constexpr int16_t FUSE_LENGTH                                = 55;  // Int
+constexpr int16_t RIDER_SEAT_POSITION                        = 56;  // Vec3
+constexpr int16_t RIDER_ROTATION_LOCKED                      = 57;  // Byte
+constexpr int16_t RIDER_MAX_ROTATION                         = 58;  // Float
+constexpr int16_t RIDER_MIN_ROTATION                         = 59;  // Float
+constexpr int16_t AREA_EFFECT_CLOUD_RADIUS                   = 61;  // Float
+constexpr int16_t AREA_EFFECT_CLOUD_WAITING                  = 62;  // Int
+constexpr int16_t AREA_EFFECT_CLOUD_PARTICLE_ID              = 63;  // Int
+constexpr int16_t SHULKER_PEEK_ID                            = 64;  // Int
+constexpr int16_t SHULKER_ATTACH_FACE                        = 65;  // Byte
+constexpr int16_t SHULKER_ATTACHED                           = 66;  // Short
+constexpr int16_t SHULKER_ATTACH_POS                         = 67;  // BlockPos
+constexpr int16_t TRADING_PLAYER_EID                         = 68;  // Int64
+constexpr int16_t TRADING_CAREER                             = 69;
+constexpr int16_t HAS_COMMAND_BLOCK                          = 70;
+constexpr int16_t COMMAND_BLOCK_COMMAND                      = 71;  // String
+constexpr int16_t COMMAND_BLOCK_LAST_OUTPUT                  = 72;  // String
+constexpr int16_t COMMAND_BLOCK_TRACK_OUTPUT                 = 73;  // Byte
+constexpr int16_t CONTROLLING_RIDER_SEAT_NUMBER              = 74;  // Byte
+constexpr int16_t STRENGTH                                   = 75;  // Int
+constexpr int16_t MAX_STRENGTH                               = 76;  // Int
+constexpr int16_t SPELL_CASTING_COLOR                        = 77;  // Int
+constexpr int16_t LIMITED_LIFE                               = 78;
+constexpr int16_t ARMOR_STAND_POSE_INDEX                     = 79;  // Int
+constexpr int16_t ENDER_CRYSTAL_TIME_OFFSET                  = 80;  // Int
+constexpr int16_t ALWAYS_SHOW_NAMETAG                        = 81;  // Byte
+constexpr int16_t COLOR_2                                    = 82;  // Byte
+constexpr int16_t NAME_AUTHOR                                = 83;
+constexpr int16_t SCORE_TAG                                  = 84;  // String
+constexpr int16_t BALLOON_ATTACHED_ENTITY                    = 85;  // Int64
+constexpr int16_t PUFFERFISH_SIZE                            = 86;
+constexpr int16_t BUBBLE_TIME                                = 87;
+constexpr int16_t AGENT                                      = 88;
+constexpr int16_t SITTING_AMOUNT                             = 89;
+constexpr int16_t SITTING_AMOUNT_PREVIOUS                    = 90;
+constexpr int16_t EATING_COUNTER                             = 91;
+constexpr int16_t FLAGS_EXTENDED                             = 92;
+constexpr int16_t LAYING_AMOUNT                              = 93;
+constexpr int16_t LAYING_AMOUNT_PREVIOUS                     = 94;
+constexpr int16_t DURATION                                   = 95;
+constexpr int16_t SPAWN_TIME                                 = 96;
+constexpr int16_t CHANGE_RATE                                = 97;
+constexpr int16_t CHANGE_ON_PICKUP                           = 98;
+constexpr int16_t PICKUP_COUNT                               = 99;
+constexpr int16_t INTERACT_TEXT                              = 100;
+constexpr int16_t TRADE_TIER                                 = 101;
+constexpr int16_t MAX_TRADE_TIER                             = 102;
+constexpr int16_t TRADE_EXPERIENCE                           = 103;
+constexpr int16_t SKIN_ID                                    = 104; // Int
+constexpr int16_t SPAWNING_FRAMES                            = 105;
+constexpr int16_t COMMAND_BLOCK_TICK_DELAY                   = 106;
+constexpr int16_t COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK        = 107;
+constexpr int16_t AMBIENT_SOUND_INTERVAL                     = 108;
+/*
+constexpr int16_t AMBIENT_SOUND_EVENT_NAME                   = 109;
+constexpr int16_t FALL_DAMAGE_MULTIPLIER                     = 110;
+constexpr int16_t NAME_RAW_TEXT                              = 111;
+constexpr int16_t CAN_RIDE_TARGET                            = 112;
+*/
+} // namespace ActorDataIDs
+template <DataItemIds id>
+unsigned short DataItemIdValue                               = (unsigned short)id;
 
 enum class DataItemType : unsigned char
 {
-    Byte        = 0,
-    Short       = 1,
-    Int         = 2,
-    Float       = 3,
-    String      = 4,
+    Byte = 0,
+    Short = 1,
+    Int = 2,
+    Float = 3,
+    String = 4,
     CompoundTag = 5,
-    BlockPos    = 6,
-    Int64       = 7,
-    Vec3        = 8,
+    BlockPos = 6,
+    Int64 = 7,
+    Vec3 = 8,
 };
 
 #undef BEFORE_EXTRA
 
-class DataItem {
+class DataItem
+{
 
 #define AFTER_EXTRA
-// Add Member There
+    // Add Member There
 public:
-DataItemType mType; //8
-unsigned short mId; //10
-bool mDirty = true; //12
+    DataItemType mType; //8
+    unsigned short mId; //10
+    bool mDirty = true; //12
 
     template <typename T>
     inline T const& getData() const;
@@ -187,9 +310,7 @@ public:
     */
 
 protected:
-
 private:
-
 };
 #include "DataItem2.hpp"
 
@@ -199,7 +320,7 @@ inline T const& DataItem::getData() const
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
     //throw("DataItemType Not Match");
-    return T();
+    return *(T*)0;
 }
 
 template <typename T>
@@ -208,7 +329,7 @@ inline T& DataItem::getData()
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return ((DataItem2<T>*)this)->mValue;
     //throw("DataItemType Not Match");
-    return T();
+    return *(T*)0;
 }
 
 template <typename T>
@@ -216,15 +337,8 @@ inline bool DataItem::setData(T const& value)
 {
     if (this->mType == DataItem2<T>::DATA_ITEM_TYPE)
         return false;
-    ((DataItem2<T>*)this)->mValue = value;
-}
-
-template <>
-inline bool DataItem::setData(CompoundTag const& value)
-{
-    if (this->mType == DataItem2<CompoundTag>::DATA_ITEM_TYPE)
-        return false;
-    ((DataItem2<CompoundTag>*)this)->mValue.deepCopy(value);
+    ((DataItem2<T>*)this)->setData(value);
+    return true;
 }
 
 template <typename T>

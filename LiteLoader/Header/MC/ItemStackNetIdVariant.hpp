@@ -6,6 +6,7 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 struct ItemStackNetIdTag;
+struct ItemStackLegacyRequestIdTag;
 struct ItemStackRequestIdTag;
 enum ItemStackNetIdType : unsigned char
 {

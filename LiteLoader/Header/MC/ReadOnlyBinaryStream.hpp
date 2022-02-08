@@ -5,7 +5,6 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-#include <MC/NetworkItemInstanceDescriptor.hpp>
 
 #undef BEFORE_EXTRA
 
@@ -50,11 +49,11 @@ public:
         dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64();
         dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64();
     }
-    template <>
-    inline void readType(NetworkItemInstanceDescriptor& descriptor)
-    {
-        descriptor.read(*this);
-    }
+    //template <>
+    //inline void readType(NetworkItemInstanceDescriptor& descriptor)
+    //{
+    //    descriptor.read(*this);
+    //}
 
 #undef AFTER_EXTRA
 

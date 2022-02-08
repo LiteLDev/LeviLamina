@@ -13,6 +13,26 @@ class MerchantRecipe {
 #define AFTER_EXTRA
 // Add Member There
 
+    ItemInstance mBuyA;      //0
+    ItemInstance mBuyB;      //136
+    ItemInstance mSell;      //272
+    int mTier;               //408
+    int mUses;               //412
+    int mMaxUses;            //416
+    int mTraderExp;          //420
+    int mRewardExp;          //424
+    int mDemand;             //428
+    int mBuyCountA;          //432
+    int mBuyCountB;          //436
+    float mPriceMultiplierA; //440
+    float mPriceMultiplierB; //444
+    TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> mRecipeNetId; //448
+public:
+    inline TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> getRecipeNetId()
+    {
+        return mRecipeNetId;
+    }
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MERCHANTRECIPE

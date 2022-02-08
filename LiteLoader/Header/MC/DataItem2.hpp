@@ -15,13 +15,20 @@ public:
     {
         return mValue;
     };
-    T& getData()
-    {
-        return mValue;
-    };
+    //T& getData()
+    //{
+    //    mDirty = true;
+    //    return mValue;
+    //};
     inline void setData(T const& value)
     {
+        mDirty = true;
         mValue = value;
+    }
+    inline DataItem2<T>& operator=(T const& value)
+    {
+        setData(value);
+        return *this;
     }
     inline DataItem2(unsigned short key, T const& value) = delete;
     inline static std::unique_ptr<DataItem> create(unsigned short key, T const& value)
