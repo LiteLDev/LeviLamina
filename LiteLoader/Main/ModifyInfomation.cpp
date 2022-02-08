@@ -34,6 +34,7 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int, const char* ts)
     std::string output = std::regex_replace(input, std::regex("\\[.*?\\]"), std::string("$1"));
     output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
     output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
+    output = replace_all_distinct(output, "NO LOG FILE! -  ", "");
     if (input.find("INFO") != std::string::npos)
     {
         serverLogger.info << output << Logger::endl;
