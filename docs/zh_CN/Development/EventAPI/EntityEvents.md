@@ -137,6 +137,22 @@
 
 <br>
 
+#### `"onProjectileCreated"` - 弹射物创建完毕
+
+- 监听函数原型
+  `function(shooter,entity)`
+- 参数：
+
+  - shooter : `Entity`  
+    创建此弹射物的的实体对象
+
+  - entity : `Entity`  
+    被创建的弹射物实体对象
+
+- 拦截事件：不可以拦截
+
+<br>
+
 #### `"onNpcCmd"` - NPC执行命令
 
 - 监听函数原型
@@ -172,3 +188,17 @@
 - 拦截事件：函数返回`false`
 
 <br>
+
+#### `"onEntityTransformation"` - 实体转变
+
+- 监听函数原型
+  `function(uniqueId,entity)`
+- 参数：
+
+  - uniqueId: `String` 
+    转变前的实体的唯一标识符
+  - entity : `Entity` 
+    转换完成的实体
+- 拦截事件：不可以拦截
+
+注：此事件为 `Addons` 中实体的 `TransformationComponent` 激活时触发，多用于引擎与Addon交互。由于转变前的实体指针很快被销毁，因此只提供`UniqueId`。
