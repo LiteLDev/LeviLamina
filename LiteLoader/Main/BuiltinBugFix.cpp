@@ -145,32 +145,31 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
     return out;
 }
 
-    // Fix move view crash (ref PlayerAuthInput[MoveView])
+// Fix move view crash (ref PlayerAuthInput[MoveView])
 Player* movingViewPlayer = nullptr;
-TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
+TInstanceHook(void, "?moveView@Player@@UEAAXXZ",
+    Player)
 {
     movingViewPlayer = this;
     original(this);
     movingViewPlayer = nullptr;
 }
-#include<MC/ChunkViewSource.hpp>
-bool Interval(int a1)
+#include <MC/ChunkViewSource.hpp>
+inline bool Interval(int a1)
 {
     if (a1 < 0x5ffffff && a1 > -0x5ffffff) return 1;
     return 0;
 }
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
-       BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
+    BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
 {
-    if (Interval(a1.x) || Interval(a1.y) || Interval(a1.z))
+    if (Interval(a1.x) && Interval(a1.y) && Interval(a1.z))
+        return original(this, a1, a2, a3, a4);
+    Player* pl = movingViewPlayer;
+    if (pl->isPlayer())
     {
-        Player* pl = movingViewPlayer;
-        if (pl->isPlayer())
-        {
-            logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
-            pl->setPos(pl->getPosOld());
-        }
-        return 0;
+        logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
+        pl->setPos(pl->getPosOld());
     }
-    return original(this, a1,a2,a3,a4);
+    return 0;
 }
