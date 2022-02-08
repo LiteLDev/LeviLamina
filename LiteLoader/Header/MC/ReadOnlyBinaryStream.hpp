@@ -24,6 +24,37 @@ public:
     LIAPI size_t getUnreadLength() const;
     LIAPI void setReadPointer(std::size_t size);
 
+        template <typename T>
+    inline void readType(T&)
+    {
+        static_assert(false, "Unsupported Type");
+    }
+    template <>
+    MCAPI void readType(struct CommandOriginData&);
+    template <>
+    MCAPI void readType(class Experiments&);
+    template <>
+    MCAPI void readType(struct ItemStackRequestSlotInfo&);
+    template <>
+    MCAPI void readType(class MoveActorAbsoluteData&);
+    template <>
+    MCAPI void readType(class NetworkItemStackDescriptor&);
+    template <>
+    MCAPI void readType(class StructureSettings&);
+    template <>
+    MCAPI void readType(std::vector<std::unique_ptr<class DataItem>>&);
+    template <>
+    inline void readType(mce::UUID& uuid)
+    {
+        dAccess<uint64_t, 0>(&uuid) = getUnsignedInt64();
+        dAccess<uint64_t, 8>(&uuid) = getUnsignedInt64();
+    }
+    //template <>
+    //inline void readType(NetworkItemInstanceDescriptor& descriptor)
+    //{
+    //    descriptor.read(*this);
+    //}
+
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_READONLYBINARYSTREAM

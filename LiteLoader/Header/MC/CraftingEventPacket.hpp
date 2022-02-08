@@ -28,13 +28,13 @@ public:
             __super::toDebugString(), (int)screenID, craftingType, recipeUUID.asString());
         bool first = true;
         for (auto& item : inputItems) {
-            str += fmt::format("{}{}", first ? "" : ", ", item.descriptor.getFullName());
+            str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getFullName());
             first = false;
         }
         str += "], output: [";
         first = true;
         for (auto& item : outputItems) {
-            str += fmt::format("{}{}", first ? "" : ", ", item.descriptor.getRawNameId());
+            str += fmt::format("{}{}", first ? "" : ", ", item.mDescriptor.getRawNameId());
             first = false;
         }
         str += "]";

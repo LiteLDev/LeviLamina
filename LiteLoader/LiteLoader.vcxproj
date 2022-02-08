@@ -117,6 +117,8 @@
     <ClInclude Include="Header\MC\CommandSelectorBase.hpp" />
     <ClInclude Include="Header\MC\CompoundTag.hpp" />
     <ClInclude Include="Header\MC\CompoundTagVariant.hpp" />
+    <ClInclude Include="Header\MC\DataItem.hpp" />
+    <ClInclude Include="Header\MC\DataItem2.hpp" />
     <ClInclude Include="Header\MC\DBStorage.hpp" />
     <ClInclude Include="Header\MC\DoubleTag.hpp" />
     <ClInclude Include="Header\MC\EndTag.hpp" />

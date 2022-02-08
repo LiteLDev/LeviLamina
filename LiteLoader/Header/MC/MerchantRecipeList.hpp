@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <MC/MerchantRecipe.hpp>
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,19 @@ class MerchantRecipeList {
 
 #define AFTER_EXTRA
 // Add Member There
+    std::vector<MerchantRecipe> mRecipes;
+    std::vector<int> mTierExpRequirements;
+
+public:
+    inline MerchantRecipe* getRecipeByNetId(unsigned int recipeNetId)
+    {
+        for (auto& recipe : mRecipes)
+        {
+            if (recipe.getRecipeNetId() == recipeNetId)
+                return &recipe;
+        }
+        return nullptr;
+    }
 
 #undef AFTER_EXTRA
 

@@ -29,7 +29,7 @@ Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
     *((void**)&rv) = dlsym("?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
     return (Global<Level>->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
 }
-
+    
 MCINLINE class MapItemSavedData* Level::getMapSavedData(struct ActorUniqueID a0) {
     class MapItemSavedData* (Level::*rv)(struct ActorUniqueID);
     *((void**)&rv) = dlsym("?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
@@ -375,28 +375,4 @@ void Level::sendPacketForAllPlayer(Packet& pkt)
     {
         sp->sendNetworkPacket(pkt);
     }
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int16_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int32_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, float a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, string a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, BlockPos a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, Vec3 a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int64_t a2) {
-    return {a1, type, a2};
 }

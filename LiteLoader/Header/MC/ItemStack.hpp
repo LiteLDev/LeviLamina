@@ -18,7 +18,7 @@ class ItemStack : public ItemStackBase {
 
 #define AFTER_EXTRA
 // Add new members to class
-    ItemStackNetIdVariant netid;
+    ItemStackNetIdVariant mNetId;
 
 public:
 	LIAPI static ItemStack* create();

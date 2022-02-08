@@ -7,6 +7,8 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "Level.hpp"
+
 enum EventType : int {
     ACHIEVEMENT_AWARDED,
     ENTITY_INTERACT,
