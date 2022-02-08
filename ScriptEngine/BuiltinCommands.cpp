@@ -20,7 +20,7 @@ using namespace std;
 #define FIX_OLD_COMMAND(OLDCMD,NEWCMD)\
     if (StartsWith(cmd, OLDCMD)) \
     { \
-        logger.warn(R"(* Please use command ")" #NEWCMD R"(" instead.)"); \
+        logger.warn("* Please use command " #NEWCMD " instead."); \
         cmd.replace(0, 3, "ll"); \
     }
 
@@ -48,15 +48,6 @@ bool ProcessHotManageCmd(std::string& cmd)
     case H("version"):
         //logger.info("LiteLoader-ScriptEngine-{} v{}", LLSE_BACKEND_TYPE, LLSE_VERSION.toString());
         break;
-
-    case H("list"):
-    {
-        /*logger.info("=== LiteLoader-ScriptEngine-{} Plugins ===", LLSE_BACKEND_TYPE);
-        auto list = LxlListLocalAllPlugins();
-        for (auto& name : list)
-            logger.info("{}", name);*/
-        break;
-    }
     
     case H("load"):
     {
@@ -82,7 +73,7 @@ bool ProcessHotManageCmd(std::string& cmd)
             string pluginName = cmdList[2];
             if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //finished
                 return true;
-            if(!PluginManager::unloadPlugin(pluginName))
+            if(PluginManager::unloadPlugin(pluginName))
                 cmd += LLSE_COMMAND_FINISHED_SUFFIX;
         }
         else
@@ -109,10 +100,6 @@ bool ProcessHotManageCmd(std::string& cmd)
         }
         break;
     }
-
-    default:
-        logger.error("Command not found! Check your input again.");
-        break;
     }
     return true;
 }

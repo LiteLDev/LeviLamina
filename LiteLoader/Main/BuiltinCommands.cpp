@@ -13,6 +13,7 @@
 #include <Main/AutoUpgrade.h>
 #include <Main/Config.h>
 #include <Main/PluginManager.h>
+#include <ScriptEngine/Configs.h>
 
 using namespace RegisterCommandHelper;
 using namespace LL;
@@ -236,6 +237,9 @@ void LLHelpCommand(CommandOutput& output)
 
 void LLLoadPluginCommand(CommandOutput& output, const string &path)
 {
+    if (path.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //ScriptPlugin & Finished
+        output.success();
+
     if (PluginManager::loadPlugin(path, true))
         output.success("Plugin " + path + " loaded successfully.");
     else
@@ -244,6 +248,9 @@ void LLLoadPluginCommand(CommandOutput& output, const string &path)
 
 void LLUnloadPluginCommand(CommandOutput& output, const string &pluginName)
 {
+    if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //ScriptPlugin & Finished
+        output.success();
+
     if (PluginManager::unloadPlugin(pluginName, true))
         output.success("Plugin " + pluginName + " unloaded successfully.");
     else
@@ -254,6 +261,9 @@ void LLReloadPluginCommand(CommandOutput& output, const string &pluginName, bool
 {
     if (!reloadAll)
     {
+        if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //ScriptPlugin & Finished
+            output.success();
+
         if (PluginManager::reloadPlugin(pluginName, true))
             output.success("Plugin " + pluginName + " reloaded successfully.");
         else

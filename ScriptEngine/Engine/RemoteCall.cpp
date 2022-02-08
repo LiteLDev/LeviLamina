@@ -3,6 +3,7 @@
 #include <Engine/RemoteCall.h>
 #include <Engine/GlobalShareData.h>
 #include <Engine/MessageSystem.h>
+#include <Utils/STLHelper.h>
 #include <sstream>
 #include <string>
 #include <map>
@@ -154,11 +155,9 @@ bool LxlExportFunc(ScriptEngine *engine, const Local<Function> &func, const stri
 
 bool LxlRemoveAllExportedFuncs(ScriptEngine* engine)
 {
-    for (auto exp = globalShareData->exportedFuncs.begin(); exp != globalShareData->exportedFuncs.end(); ++exp)
-    {
-        if (exp->second.engine == engine)
-            globalShareData->exportedFuncs.erase(exp);
-    }
+    erase_if(globalShareData->exportedFuncs, [&engine](auto& data) {
+        return data.second.engine == engine;
+    });
     return true;
 }
 

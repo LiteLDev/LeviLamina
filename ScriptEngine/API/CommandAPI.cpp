@@ -7,6 +7,7 @@
 #include <Engine/LocalShareData.h>
 #include <Engine/EngineOwnData.h>
 #include <Engine/LoaderHelper.h>
+#include <Utils/STLHelper.h>
 #include <RegCommandAPI.h>
 #include <Global.hpp>
 #include <filesystem>
@@ -79,17 +80,12 @@ void LxlRegisterNewCmd(bool isPlayerCmd, string cmd, const string& describe, int
 
 bool LxlRemoveCmdRegister(ScriptEngine* engine)
 {
-    for (auto& cmdData : localShareData->playerCmdCallbacks)
-    {
-        if (cmdData.second.fromEngine == engine)
-            localShareData->playerCmdCallbacks.erase(cmdData.first);
-    }
-
-    for (auto& cmdData : localShareData->consoleCmdCallbacks)
-    {
-        if (cmdData.second.fromEngine == engine)
-            localShareData->consoleCmdCallbacks.erase(cmdData.first);
-    }
+    erase_if(localShareData->playerCmdCallbacks, [&engine](auto& data) {
+        return data.second.fromEngine == engine;
+    });
+    erase_if(localShareData->consoleCmdCallbacks, [&engine](auto& data) {
+        return data.second.fromEngine == engine;
+    });
     return true;
 }
 // Helper

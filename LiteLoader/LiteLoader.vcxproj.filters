@@ -288,6 +288,9 @@
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Utils\STLHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -601,6 +604,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\SimulatedPlayer.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\STLHelper.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

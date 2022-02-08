@@ -80,9 +80,6 @@ void entry()
     InitGlobalShareData();
     InitSafeGuardRecord();
 
-    //初始化消息队列
-    InitMessageSystem();
-
     //欢迎
     if (localShareData->isFirstInstance)
     {
@@ -104,4 +101,7 @@ void entry()
 
     //初始化事件监听
     InitBasicEventListeners();
+
+    //初始化消息队列
+    InitMessageSystem();
 }

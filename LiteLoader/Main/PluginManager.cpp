@@ -5,6 +5,7 @@
 #include <ScheduleAPI.h>
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
+#include <Utils/STLHelper.h>
 #include <MC/Level.hpp>
 #include <MC/Player.hpp>
 #include <Windows.h>
@@ -23,11 +24,9 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
     {
         if (getPlugin(handler) != nullptr)
         {
-            for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
-                if (iter->second.handler == handler) {
-                    plugins.erase(iter->first);
-                }                                              //Allow plugins to overwrite their own plugin registory
-            }
+            erase_if(plugins, [&handler](auto& data) {               //Allow plugins to overwrite their own plugin registory
+                return data.second.handler == handler;
+            });                           
         }
         else if (getPlugin(name) != nullptr) {          
             return false;                                      //Reject overwriting other's data
@@ -211,6 +210,9 @@ bool LL::PluginManager::loadPlugin(string pluginFilePath, bool outputResult, boo
 
 bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
 {
+    if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //ScriptPlugin & Finished
+        return true;
+
     LL::Plugin* plugin = getPlugin(pluginName);
     if (!plugin)
     {
@@ -241,6 +243,9 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
 
 bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
 {
+    if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //ScriptPlugin & Finished
+        return true;
+
     LL::Plugin* plugin = getPlugin(pluginName);
     if (!plugin)
     {

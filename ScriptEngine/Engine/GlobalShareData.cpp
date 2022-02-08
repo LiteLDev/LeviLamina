@@ -53,12 +53,6 @@ void AddToGlobalPluginsList(const std::string& name)
 
 void RemoveFromGlobalPluginsList(const std::string& name)
 {
-	for (int i = 0; i < globalShareData->pluginsList.size(); ++i)
-	{
-		if (globalShareData->pluginsList[i] == name)
-		{
-			globalShareData->pluginsList.erase(globalShareData->pluginsList.begin() + i);
-			break;
-		}
-	}
+	auto& list = globalShareData->pluginsList;
+	list.erase(std::remove(list.begin(), list.end(), name), list.end());
 }

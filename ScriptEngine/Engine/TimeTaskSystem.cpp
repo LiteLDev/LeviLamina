@@ -14,6 +14,7 @@ struct TimeTaskData
     script::Global<Function> func;
     vector<script::Global<Value>> paras;
     script::Global<String> code;
+    ScriptEngine *engine;
 };
 std::unordered_map<int, TimeTaskData> timeTaskMap;
 
@@ -44,11 +45,12 @@ std::unordered_map<int, TimeTaskData> timeTaskMap;
 
 //////////////////// API ////////////////////
 
-int NewTimeout(Local<Function> func, const vector<Local<Value>> paras, int timeout)
+int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].func = func;
+    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
     for (auto& para : paras)
         timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
 
@@ -80,6 +82,8 @@ int NewTimeout(Local<String> func, int timeout)
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].code = func;
+    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+
     timeTaskMap[timeTaskId].task = Schedule::delay(
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
@@ -94,11 +98,12 @@ int NewTimeout(Local<String> func, int timeout)
     return timeTaskId;
 }
 
-int NewInterval(Local<Function> func, const vector<Local<Value>> paras, int timeout)
+int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
 {
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].func = func;
+    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
     for (auto& para : paras)
         timeTaskMap[timeTaskId].paras.emplace_back(std::move(para));
 
@@ -129,6 +134,8 @@ int NewInterval(Local<String> func, int timeout)
     ++timeTaskId;
 
     timeTaskMap[timeTaskId].code = func;
+    timeTaskMap[timeTaskId].engine = EngineScope::currentEngine();
+
     timeTaskMap[timeTaskId].task = Schedule::repeat(
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
@@ -154,4 +161,19 @@ bool ClearTimeTask(int id)
         ;
     }
     return true;
+}
+
+
+///////////////////////// Func /////////////////////////
+
+void LxlRemoveTimeTaskData(ScriptEngine* engine)
+{
+    for (auto& [id, data] : timeTaskMap)
+    {
+        if (data.engine == engine)
+        {
+            data.task.cancel();
+            timeTaskMap.erase(id);
+        }
+    }
 }

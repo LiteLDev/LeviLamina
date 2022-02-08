@@ -8,6 +8,7 @@
 #include <Engine/MessageSystem.h>
 #include <Engine/LoaderHelper.h>
 #include <Engine/RemoteCall.h>
+#include <Engine/TimeTaskSystem.h>
 #include <LiteLoader/Main/PluginManager.h>
 #include <Loader.h>
 #include <ScheduleAPI.h>
@@ -188,16 +189,18 @@ bool PluginManager::unloadPlugin(const std::string& name)
             unloadedPath = ENGINE_GET_DATA(engine)->pluginFilePath;
 
             LxlCallEventsOnHotUnload(engine);
+            LxlRemoveTimeTaskData(engine);
             RemoveFromGlobalPluginsList(name);
             LxlRemoveAllEventListeners(engine);
             LxlRemoveCmdRegister(engine);
             LxlRemoveAllExportedFuncs(engine);
             engine->getData().reset();
-            currentModuleEngines.erase(currentModuleEngines.begin() + i);
-
-            for (auto now = globalShareData->engines.begin(); now != globalShareData->engines.end(); ++now)
-                if (now->pluginName == name)
-                    globalShareData->engines.erase(now);
+            currentModuleEngines.erase(currentModuleEngines.begin() + i);       //????? change to std::remove_if
+            
+            auto& engines = globalShareData->engines;
+            engines.erase(remove_if(engines.begin(), engines.end(), 
+                [&name](ScriptEngineData& engineData) { return engineData.pluginName == name; })
+            , engines.end());
 
             PluginManager::unRegisterPlugin(name);
             //delay request to avoid crash
