@@ -19,16 +19,19 @@ std::unordered_map<std::string, LL::Plugin> plugins;
 bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::string introduction, LL::Version version,
                     std::map<std::string, std::string> others)
 {
-    if (handler != nullptr && getPlugin(handler) != nullptr)
+    if (handler != nullptr)             // DLL Plugin
     {
-        for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
-            if (iter->second.handler == handler) {
-                plugins.erase(iter->first);
+        if (getPlugin(handler) != nullptr)
+        {
+            for (auto iter = plugins.begin(); iter != plugins.end(); ++iter) {
+                if (iter->second.handler == handler) {
+                    plugins.erase(iter->first);
+                }                                              //Allow plugins to overwrite their own plugin registory
             }
         }
-    }
-    else if (getPlugin(name) != nullptr) {          //Allow plugins to overwrite their own plugin registory
-        return false;
+        else if (getPlugin(name) != nullptr) {          
+            return false;                                      //Reject overwriting other's data
+        }
     }
 
     LL::Plugin plugin{name, introduction, version, others};
@@ -45,7 +48,7 @@ bool LL::PluginManager::registerPlugin(HMODULE handler, std::string name, std::s
 
     try
     {
-        plugin.filePath = others.at("PluginFilePath");
+        plugin.filePath = filesystem::path(others.at("PluginFilePath")).lexically_normal().u8string();
         others.erase("PluginFilePath");
     }
     catch (...)

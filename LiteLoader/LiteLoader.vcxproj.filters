@@ -285,7 +285,6 @@
     <ClCompile Include="Kernel\FormUI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
-    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>

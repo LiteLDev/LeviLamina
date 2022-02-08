@@ -63,6 +63,8 @@ bool ProcessHotManageCmd(std::string& cmd)
         if (cmdList.size() == 3)
         {
             string path = cmdList[2];
+            if (path.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //finished
+                return true;
             if (filesystem::path(path).extension().u8string() != LLSE_PLUGINS_EXTENSION)
                 return true;
             if (PluginManager::loadPlugin(path, true, true))
@@ -77,7 +79,10 @@ bool ProcessHotManageCmd(std::string& cmd)
     {
         if (cmdList.size() == 3)
         {
-            if(!PluginManager::unloadPlugin(cmdList[2]))
+            string pluginName = cmdList[2];
+            if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //finished
+                return true;
+            if(!PluginManager::unloadPlugin(pluginName))
                 cmd += LLSE_COMMAND_FINISHED_SUFFIX;
         }
         else
@@ -90,7 +95,10 @@ bool ProcessHotManageCmd(std::string& cmd)
         if (cmdList.size() == 3)
         {
             //Reload specific plugin
-            if (PluginManager::reloadPlugin(cmdList[2]))
+            string pluginName = cmdList[2];
+            if (pluginName.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos)            //finished
+                return true;
+            if (PluginManager::reloadPlugin(pluginName))
                 cmd += LLSE_COMMAND_FINISHED_SUFFIX;
         }
         else
