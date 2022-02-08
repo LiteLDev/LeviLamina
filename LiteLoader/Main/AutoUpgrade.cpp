@@ -9,6 +9,7 @@
 #include <Utils/FileHelper.h>
 #include <Utils/NetworkHelper.h>
 #include <Utils/StringHelper.h>
+#include <Utils/DbgHelper.h>
 #include <Main/Version.h>
 #include <chrono>
 #include <filesystem>
@@ -352,7 +353,10 @@ bool LL::CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
     catch (nlohmann::json::exception& e)
     {
         if (isUpdateManually)
+        {
             autoUpgradeLogger.info("An error occurred while parsing the update configuration, {}", e.what());
+            PrintCurrentStackTraceback();
+        }
         else
             autoUpgradeLogger.debug("An error occurred while parsing the update configuration, {}", e.what());
     }
@@ -362,9 +366,8 @@ bool LL::CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
         {
             autoUpgradeLogger.info("SEH Uncaught Exception Detected!\n{}", e.what());
             autoUpgradeLogger.info("In Auto Update system");
-        }
-        else
-        {
+            PrintCurrentStackTraceback();
+        } else {
             autoUpgradeLogger.debug("SEH Uncaught Exception Detected!\n{}", e.what());
             autoUpgradeLogger.debug("In Auto Update system");
         }
@@ -372,7 +375,10 @@ bool LL::CheckAutoUpdate(bool isUpdateManually, bool forceUpdate)
     catch (...)
     {
         if (isUpdateManually)
+        {
             autoUpgradeLogger.info("An error was caught during the update process.");
+            PrintCurrentStackTraceback();
+        }
         else
             autoUpgradeLogger.debug("An error was caught during the update process.");
     }

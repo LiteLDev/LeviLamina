@@ -20,3 +20,6 @@ HMODULE inline GetCurrentModule()
     }
     return nullptr;
 }
+
+//Get the module path from a module handler
+std::string GetModulePath(HMODULE handler);

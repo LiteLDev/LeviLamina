@@ -34,9 +34,9 @@ LL::Version LL::getLoaderVersion()
 {
     DWORD   verBufferSize;
     char    verBuffer[2048];
-    TCHAR filePath[MAX_PATH * 2] = { 0 };
+    TCHAR filePath[MAX_PATH * 4] = { 0 };
 
-    if (GetModuleFileName(GetCurrentModule(), filePath, sizeof(filePath)) == 0)
+    if (GetModuleFileName(GetCurrentModule(), filePath, sizeof(filePath)/2) == 0)
         return LL::Version();
 
     verBufferSize = GetFileVersionInfoSize(filePath, NULL);
@@ -62,19 +62,19 @@ bool LL::isDebugMode() {
 }
 
 LL::Plugin *LL::getPlugin(std::string name) {
-    return ::GetPlugin(name);
+    return PluginManager::getPlugin(name);
 }
 
 LL::Plugin *LL::getPlugin(HMODULE handler) {
-    return ::GetPlugin(handler);
+    return PluginManager::getPlugin(handler);
 }
 
 bool LL::hasPlugin(std::string name) {
-    return ::HasPlugin(name);
+    return PluginManager::hasPlugin(name);
 }
 
-std::unordered_map<std::string, LL::Plugin> LL::getAllPlugins() {
-    return ::GetAllPlugins();
+std::unordered_map<std::string, LL::Plugin*> LL::getAllPlugins() {
+    return PluginManager::getAllPlugins();
 }
 
 //Version

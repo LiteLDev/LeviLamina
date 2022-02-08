@@ -15,15 +15,17 @@ namespace LL {
     void inline to_json(nlohmann::json& j, const LLConfig& conf)
     {
         j = nlohmann::json{
-            {"DebugMode", conf.debugMode},
-            {"ColorLog",  conf.colorLog},
-            {"LogLevel",  conf.logLevel},
-            {"Language",  conf.language},
-            {"Modules", 
-                {
-                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}}},
+                {"DebugMode", conf.debugMode},
+                {"ColorLog",  conf.colorLog},
+                {"LogLevel",  conf.logLevel},
+                {"Language",  conf.language},
+                {"ScriptEngine", {
+                    {"enabled", conf.enableScriptEngine}
+                }},
+                {"Modules", {
+                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
                     {"CrashLogger", {
-                        {"enabled", conf.enableCrashLogger}, 
+                        {"enabled", conf.enableCrashLogger},
                         {"path", conf.crashLoggerPath}
                     }},
                     {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
@@ -31,6 +33,7 @@ namespace LL {
                     {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
+                    {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
                     {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
                     {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}}
                 }
@@ -48,9 +51,13 @@ namespace LL {
         conf.logLevel = j.value("LogLevel", 4);
         conf.language = j.value("Language", "en");
 
-        if (j.count("Modules"))
-        {
-            const nlohmann::json& modules = j.at("Modules");
+        if (j.find("ScriptEngine") != j.end()) {
+            const nlohmann::json& scriptEngine = j.at("ScriptEngine");
+            conf.enableScriptEngine = scriptEngine.value("enabled", true);
+        }
+
+        if (j.find("Modules") != j.end()) {
+            const nlohmann::json &modules = j.at("Modules");
 
             if (modules.count("AutoUpgrade"))
             {
@@ -97,6 +104,11 @@ namespace LL {
             {
                 const nlohmann::json& setting = modules.at("CheckRunningBDS");
                 conf.enableCheckRunningBDS = setting.value("enabled", true);
+            }
+
+            if (modules.find("ErrorStackTraceback") != modules.end()) {
+                const nlohmann::json& listen = modules.at("ErrorStackTraceback");
+                conf.enableErrorStackTraceback = listen.value("enabled", true);
             }
         }
     }

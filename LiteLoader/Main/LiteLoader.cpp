@@ -12,6 +12,7 @@
 #include "Main/Loader.h"
 #include "Main/AutoUpgrade.h"
 #include "Main/CrashLogger.h"
+#include <TranslationAPI.h>
 #include <EventAPI.h>
 
 using namespace std;
@@ -104,18 +105,32 @@ extern bool InitPlayerDatabase();
 
 extern void RegisterSimpleServerLogger();
 
-void CheckDevMode()
+void Welcome()
 {
-    if (LL::globalConfig.debugMode)
-    {
-        logger.info("");
-        logger.info("================= LiteLoader ================");
-        logger.info(" ____             __  __           _      ");
-        logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
-        logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
-        logger.info("");
+    cout << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(         _       _  _          _                        _               ____   _____    _____ )" << endl
+         << "\r" << R"(        | |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
+         << "\r" << R"(        | |      _ | |_  ___  | |      ___    __ _   __| |  ___  _ __  | |_) || |  | || (___  )" << endl
+         << "\r" << R"(        | |     | || __|/ _ \ | |     / _ \  / _` | / _` | / _ \| '__| |  _ < | |  | | \___ \ )" << endl
+         << "\r" << R"(        | |____ | || |_|  __/ | |____| (_) || (_| || (_| ||  __/| |    | |_) || |__| | ____) |)" << endl
+         << "\r" << R"(        |______||_| \__|\___| |______|\___/  \__,_| \__,_| \___||_|    |____/ |_____/ |_____/ )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                       =========   Light-Weight BDS Plugin Loader   =========                 )" << endl
+         << "\r" << R"(                                                                                              )" << endl
+         << "\r" << R"(                                                                                              )" << endl;
+}
+
+void CheckDevMode() {
+    if (LL::globalConfig.debugMode) {
+        //logger.info("");
+        //logger.info("================= LiteLoader ================");
+        //logger.info(" ____             __  __           _      ");
+        //logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
+        //logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
+        //logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
+        //logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
+        //logger.info("");
         logger.warn("You Are In DevelopMode!");
     }
 }
@@ -155,18 +170,30 @@ void LLMain()
     // Initialize Player Database
     InitPlayerDatabase();
 
-    // Rename Window
+    //I18n
+    Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
+
+    //Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
-    // DebugMode
+    //Welcome
+    Welcome();
+
+    //DebugMode
     CheckDevMode();
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
-    // Load plugins
+    //Register Myself
+    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
+    {
+        {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
+    });
+
+    //Load plugins
     LL::LoadMain();
 
     // Register built-in commands
@@ -176,7 +203,8 @@ void LLMain()
     RegisterSimpleServerLogger();
 
     FixBugEvent();
-    // Register Started
+
+    //Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");

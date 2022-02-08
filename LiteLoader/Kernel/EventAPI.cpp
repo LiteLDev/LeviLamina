@@ -1,4 +1,4 @@
-﻿#include <Main/Config.h>
+#include <Main/Config.h>
 #include <EventAPI.h>
 #include <Global.h>
 #include <LoggerAPI.h>
@@ -37,6 +37,7 @@
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
 #include <Utils/StringHelper.h>
+#include <Utils/DbgHelper.h>
 #include <functional>
 #include <iostream>
 #include <string>
@@ -135,6 +136,7 @@ DeclareEventListeners(PlayerBedEnterEvent);
         logger.error("Event Callback Failed!");       \
         logger.error("Uncaught Exception Detected!"); \
         logger.error("In Event: " #EVENT "");         \
+        PrintCurrentStackTraceback();                   \
     }                                                      \
     }
 #else
@@ -150,6 +152,7 @@ void Event::OutputEventError(const string & errorMsg, const string & eventName, 
     logger.error("In Event ({})", eventName);
     if (!pluginName.empty())
         logger.error("In Plugin <{}>", pluginName);
+    PrintCurrentStackTraceback();
 }
 
 
@@ -1027,6 +1030,8 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
 
             if (!ev.call())
                 return rtn;
+
+            context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(PlayerCmdEvent)
     }
@@ -1040,6 +1045,8 @@ TClasslessInstanceHook(MCRESULT*, "?executeCommand@MinecraftCommands@@QEBA?AUMCR
 
             if (!ev.call())
                 return rtn;
+
+            context->getCmd() = ev.mCommand;
         }
         IF_LISTENED_END(ConsoleCmdEvent)
     }
@@ -1203,9 +1210,9 @@ TInstanceHook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0
 
 /////////////////// ProjectileHitBlock ///////////////////
 TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
-      Block,BlockSource* bs, BlockPos* bp, Actor* actor)
+      Block, BlockSource* bs, BlockPos* bp, Actor* actor)
 {
-    if (bp->x&bp->y&bp->z==0) //actor->getPos().distanceTo(bp->center())>5)
+    if (bp->x&bp->y&bp->z==0) //actor->getPos().distanceTo(bp->center())>5)         //???
         return original(this, bs, bp, actor);
     IF_LISTENED(ProjectileHitBlockEvent)
     {

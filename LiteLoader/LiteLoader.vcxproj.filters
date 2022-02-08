@@ -144,9 +144,6 @@
     <ClCompile Include="Kernel\MC\ContainerAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\MC\FormUI.cpp">
-      <Filter>Kernel\MC</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\MC\GameModeAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
@@ -255,9 +252,6 @@
     <ClCompile Include="Main\Config.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Main\CrashLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Main\dllmain.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -273,15 +267,29 @@
     <ClCompile Include="Main\PluginManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Main\SimpleServerLogger.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp">
       <Filter>Kernel\Scoreboard</Filter>
     </ClCompile>
-    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
+    <ClCompile Include="Main\CrashLogger.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\SimpleServerLogger.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\SEHProtection.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\DbgHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\FormUI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp">
       <Filter>Kernel\MC</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\STLHelper.cpp">
+      <Filter>Kernel\Utils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -573,9 +581,6 @@
     <ClInclude Include="Main\Config.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Main\CrashLogger.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="Main\Loader.h">
       <Filter>Main</Filter>
     </ClInclude>
@@ -591,6 +596,12 @@
     <ClInclude Include="Header\MC\DBStorage.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
+    <ClInclude Include="Main\CrashLogger.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\DbgHelper.h">
+      <Filter>Header\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="Header\MC\SimulatedPlayer.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
@@ -599,6 +610,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\DataItem2.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\STLHelper.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -611,7 +625,10 @@
     <Library Include="Header\third-party\cpp-base64\lib\cpp-base64.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="Lib\SymDBHelper.lib">
+    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
+      <Filter>Lib</Filter>
+    </Library>
+    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
       <Filter>Lib</Filter>
     </Library>
     <Library Include="Lib\bedrock_server_api.lib">
@@ -620,24 +637,24 @@
     <Library Include="Lib\bedrock_server_var.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="Lib\third-party\SQLiteCpp\SQLiteCpp.lib">
+    <Library Include="Lib\SymDBHelper.lib">
       <Filter>Lib</Filter>
     </Library>
-    <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib">
+    <Library Include="Lib\third-party\dbghelp\dbghelp.lib">
       <Filter>Lib</Filter>
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <None Include="cpp.hint">
-      <Filter>Lib</Filter>
-    </None>
     <None Include="Resource\LiteLoader.aps">
+      <Filter>Resource</Filter>
+    </None>
+    <None Include="cpp.hint">
       <Filter>Resource</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource\LiteLoader.rc">
-      <Filter>Lib</Filter>
+      <Filter>Resource</Filter>
     </ResourceCompile>
   </ItemGroup>
 </Project>

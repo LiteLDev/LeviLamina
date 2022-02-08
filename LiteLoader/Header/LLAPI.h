@@ -1,10 +1,13 @@
 ﻿#pragma once
+#pragma warning(disable:26812)
 #include <string>
 #include <unordered_map>
+
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif // ! WIN32_LEAN_AND_MEAN
 #include <Windows.h>
+
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
@@ -48,14 +51,18 @@ struct Plugin
     std::string filePath;
     HMODULE handler;
 
+    enum class PluginType
+    { DllPlugin, ScriptPlugin };
+
+    PluginType type;
+
     // Call a Function by Symbol String
-    template <typename ReturnType = void, typename... Args>
-    inline ReturnType callFunction(const char* functionName, Args... args)
-    {
+    template<typename ReturnType = void, typename... Args>
+    inline ReturnType callFunction(const char* functionName, Args... args) {
         void* address = GetProcAddress(handler, functionName);
         if (!address)
             return ReturnType();
-        return reinterpret_cast<ReturnType (*)(Args...)>(address)(std::forward<Args>(args)...);
+        return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
     }
 };
 
@@ -129,6 +136,6 @@ LIAPI LL::Plugin* getPlugin(HMODULE handler);
 // @return 是否存在插件
 LIAPI bool hasPlugin(std::string name);
 
-LIAPI std::unordered_map<std::string, LL::Plugin> getAllPlugins();
+LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
 }; // namespace LL

@@ -1,0 +1,7 @@
+{
+    "money.no.target": "Can not find target",
+    "money.invalid.arg": "Parameter error or unknown error",
+    "money.succ": "Execute successfully",
+    "money.not.enough": "Balance not enough",
+    "money.no.perm": "You have no permission to do this"
+}

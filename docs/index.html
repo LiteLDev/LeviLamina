@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LiteXLoader Docs</title>
+    <link rel="icon" href="icon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Documents of LiteXLoader">
+    <meta name="keywords" content="LiteXLoader,Bedrock Dedicated Server,BDS,BDS plugin,Minecraft,LiteLoader,Bedrock">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+</head>
+
+<body>
+    <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+    <div id="app"></div>
+    <script>
+        window.$docsify = {
+            name: 'LiteXLoader Docs',
+            repo: 'LiteLDev/LiteXLoader',
+            loadNavbar: true,
+            loadSidebar: true,
+            sidebarDisplayLevel: 3,
+            mergeNavbar: true,
+            auto2top: true,
+            coverpage: true,
+            name: 'LiteXLoader',
+            toc: {
+                tocMaxLevel: 5,
+                target: 'h2, h3, h4, h5, h6'
+            },
+            topMargin: 50,
+            search: {
+                maxAge: 86400000,
+                paths: 'auto',
+                placeholder: {
+                    '/zh_CN/': '搜索',
+                    '/en/': 'Type to search',
+                    '/': 'Type to search'
+                },
+                noData: {
+                    '/zh_CN/': '找不到结果',
+                    '/en/': 'No Results',
+                    '/': 'No Results'
+                },
+                depth: 2,
+                hideOtherSidebarContent: false,
+            },
+            copyCode: {
+                buttonText: {
+                    '/zh_CN/': '点击复制',
+                    '/en/': 'Copy to clipboard',
+                    '/': 'Copy to clipboard'
+                },
+                errorText: {
+                    '/zh_CN/': '错误',
+                    '/en/': 'Error',
+                    '/': 'Error'
+                },
+                successText: {
+                    '/zh_CN/': '复制',
+                    '/en/': 'Copied',
+                    '/': 'Copied'
+                }
+            },
+            // 底部导航
+            pagination: {
+                previousText: "Previous",
+                nextText: "Next",
+                crossChapter: true,
+                crossChapterText: true,
+            }
+        }
+    </script>
+    <!-- Docsify v4 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+    <script src="//unpkg.com/docsify-plugin-toc"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-cpp.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-lua.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-python.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pangu/lib/pangu.min.js"></script>
+</body>
+
+</html>

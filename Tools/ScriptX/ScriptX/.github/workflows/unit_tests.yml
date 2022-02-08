@@ -1,0 +1,233 @@
+name: UnitTests
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'docs/**'
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+
+jobs:
+  mac-clang-run:
+    timeout-minutes: 30
+    runs-on: macos-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
+        build_type:
+          - Debug
+          # mac runner seems to be slow and less
+          # - Release
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: build-dependencies-macos
+          path: |
+            build/ScriptXTestLibs
+            build/googletest-src
+      - name: Configure cmake
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+        run: |
+          mkdir -p build && cd build
+          cmake ../test                                       \
+                -DSCRIPTX_BACKEND=${{ matrix.backends }}      \
+                -DTEST_FLAG_ENABLE_ASAN=ON                    \
+                -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      - name: Compile UnitTests
+        run: |
+          cd build
+          cmake --build . -j $(sysctl -n hw.ncpu) --target UnitTests
+      - name: Run UnitTests
+        if: matrix.backends != 'Empty'
+        run: |
+          cd build
+          ./UnitTests
+
+  windows-msvc-run:
+    timeout-minutes: 30
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        backends: [ V8, JavaScriptCore, Lua, Empty ]
+        build_type:
+          - Debug
+          - Release
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: build-dependencies-macos
+          path: |
+            build/ScriptXTestLibs
+            build/googletest-src
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
+      - name: Configure cmake X64
+        if: matrix.backends != 'JavaScriptCore'
+        shell: powershell
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+        run: |
+          mkdir -Force build
+          cd build
+          cmake ../test -A X64 -DSCRIPTX_BACKEND=${{ matrix.backends }}
+      - name: Configure cmake X86
+        if: matrix.backends == 'JavaScriptCore'
+        shell: powershell
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+        run: |
+          mkdir -Force build
+          cd build
+          cmake ../test -A Win32 -DSCRIPTX_BACKEND=${{ matrix.backends }}
+      - name: Compile UnitTests
+        shell: powershell
+        run: |
+          cd build
+          cmake --build . --target UnitTests --config ${{ matrix.build_type }}
+      - name: Run UnitTests
+        if: matrix.backends != 'Empty'
+        shell: powershell
+        run: |
+          cd build
+          ${{ matrix.build_type }}/UnitTests
+
+  ubuntu-gcc-build:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
+        build_type:
+          - Debug
+          #- Release
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: build-dependencies-macos
+          path: |
+            build/ScriptXTestLibs
+            build/googletest-src
+      - name: Configure cmake
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+          SCRIPTX_TEST_BUILD_ONLY: ON
+        run: |
+          mkdir -p build && cd build
+          cmake ../test                                       \
+                -DSCRIPTX_BACKEND=${{ matrix.backends }}      \
+                -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      - name: Compile UnitTests
+        run: |
+          cd build
+          cmake --build . -j $(nproc) --target UnitTests
+
+  android-clang-build:
+    # disable for now
+    # 1. we don't have android libraries
+    # 2. -undefined dynamic_lookup not work with NDK
+    if: ${{ false }}
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        backends: [ V8, JavaScriptCore, QuickJs, Lua, Empty ]
+        build_type:
+          - Debug
+          #- Release
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: build-dependencies-macos
+          path: |
+            build/ScriptXTestLibs
+            build/googletest-src
+      - name: Configure cmake
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+          SCRIPTX_TEST_BUILD_ONLY: ON
+        run: |
+          mkdir -p build && cd build
+          cmake ../test                                       \
+                -DANDROID_ABI=arm64-v8a                       \
+                -DANDROID_PLATFORM=android-21                 \
+                -DCMAKE_TOOLCHAIN_FILE=${ANDROID_NDK_HOME}/build/cmake/android.toolchain.cmake  \
+                -DSCRIPTX_BACKEND=${{ matrix.backends }}      \
+                -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+      - name: Compile UnitTests
+        run: |
+          cd build
+          cmake --build . -j $(nproc) --target UnitTests
+
+  node-gcc-run:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [ 14.x, 15.x ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Prepare npm
+        run: npm i -g cmake-js
+      - name: Compile node-addon
+        run: |
+          cd test/node_addon
+          npm run install
+      - name: Run node-addon
+        run: |
+          cd test/node_addon
+          npm run test
+
+  webassembly-emscripten-run:
+    timeout-minutes: 30
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          key: build-dependencies-macos
+          path: |
+            build/ScriptXTestLibs
+            build/googletest-src
+      - name: Setup Emscripten
+        uses: mymindstorm/setup-emsdk@v8
+        with:
+          version: '2.0.5'
+          actions-cache-folder: 'emsdk-cache'
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '>= 14'
+      - name: Configure Webassembly backend
+        env:
+          SCRIPTX_TEST_FORCE_UPDATE_DEPS: ON
+        run: |
+          mkdir -p build && cd build
+          cmake ../test -G "Unix Makefiles" \
+              -DCMAKE_TOOLCHAIN_FILE="${{ env.EMSDK }}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake" \
+              -DSCRIPTX_BACKEND=WebAssembly
+      - name: Build UnitTests
+        run: |
+          cd build
+          make -j $(nproc) UnitTests
+      - name: Run UnitTests
+        run: |
+          cd build
+          # exclude failed tests
+          node UnitTests.js '--gtest_filter=-ThreadPool.*:EngineScopeTest.ExitEngine:EngineScopeTest.TwoThreads:EngineScopeTest.ThreadLocal:MessageQueue.Interrupt:MessageQueue.Shutdown:MessageQueue.ShutdownNow:MessageQueue.FullAndPostInsideLoopQueue:ReferenceTest.WeakGc:ReferenceTest.WeakGc:ReferenceTest.GlobalNotClear:ReferenceTest.GlobalOnEngineDestroy:ReferenceTest.WeakOnEngineDestroy:ReferenceTest.WeakNotClrear:ManagedObjectTest.EngineDispose:ManagedObjectTest.FunctionCallback:PressureTest.All'

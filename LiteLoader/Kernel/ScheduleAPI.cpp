@@ -100,14 +100,14 @@ public:
 
             switch (t.type) {
                 case ScheduleTaskData::TaskType::InfiniteRepeat: {
-                    ScheduleTaskData sche{t};
+                    ScheduleTaskData sche{ std::move(t) };
                     sche.leftTime = sche.interval;
                     push(std::move(sche));
                     break;
                 }
                 case ScheduleTaskData::TaskType::Repeat: {
                     if (t.count > 0) {
-                        ScheduleTaskData sche{t};
+                        ScheduleTaskData sche{ std::move(t) };
                         sche.leftTime = sche.interval;
                         --sche.count;
                         push(std::move(sche));

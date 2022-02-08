@@ -100,7 +100,9 @@ void loadDlls() {
 				if (dllName.empty() || dllName.front() == TEXT('#'))
 					continue;
 				if (dllName.find(L"LiteLoader.dll") != std::wstring::npos ||
-					dllName.find(L"BDSNetRunner.dll") != std::wstring::npos)
+					dllName.find(L"BDSNetRunner.dll") != std::wstring::npos ||
+					dllName.find(L"LLAutoUpdate.dll") != std::wstring::npos || 
+					dllName.find(L"LXLAutoUpdate.dll") != std::wstring::npos)
 					continue;
 				loadLib(dllName.c_str());
 			}

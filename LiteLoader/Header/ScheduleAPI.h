@@ -35,6 +35,7 @@ class ScheduleTask
 
 public:
     LIAPI bool cancel();
+    LIAPI ScheduleTask() = default;
     LIAPI ScheduleTask(unsigned int taskId);
 
     inline unsigned int getTaskId()

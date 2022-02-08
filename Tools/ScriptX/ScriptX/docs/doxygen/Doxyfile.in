@@ -1,0 +1,10 @@
+OUTPUT_DIRECTORY       = @CMAKE_CURRENT_BINARY_DIR@/doc_doxygen/
+INPUT                  = @CMAKE_CURRENT_LIST_DIR@/../../src/        \
+                           @CMAKE_CURRENT_LIST_DIR@/../../backend   \
+                           @CMAKE_CURRENT_LIST_DIR@/../../test/src  \
+                           @CMAKE_CURRENT_LIST_DIR@/../../README.md \
+                           @CMAKE_CURRENT_LIST_DIR@/../../docs
+USE_MDFILE_AS_MAINPAGE = @CMAKE_CURRENT_LIST_DIR@/../../README.md
+PROJECT_NAME           = "ScriptX API Reference"
+RECURSIVE              = true
+EXCLUDE_SYMBOLS        = script::*_backend,script::internal,script::test

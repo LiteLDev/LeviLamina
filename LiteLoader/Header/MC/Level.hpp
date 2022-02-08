@@ -104,9 +104,25 @@ public:
         }
     };
 
-    LIAPI static bool runcmdAs(Player* pl, const string& cmd);
-    LIAPI static std::pair<bool, string> runcmdEx(const string& cmd);
-    LIAPI static bool runcmd(const string& cmd);
+    LIAPI static bool executeCommandAs(Player* player, const string& cmd);
+    LIAPI static std::pair<bool, string> executeCommandEx(const string& cmd);
+    LIAPI static bool executeCommand(const string& cmd);
+
+
+
+    //For compatibility
+    LIAPI static bool runcmdAs(Player* pl, const string& cmd)
+    {
+        return executeCommandAs(pl, cmd);
+    }
+    LIAPI static std::pair<bool, string> runcmdEx(const string& cmd)
+    {
+        return executeCommandEx(cmd);
+    }
+    LIAPI static bool runcmd(const string& cmd)
+    {
+        return executeCommand(cmd);
+    }
 
 
     /////////////////////// Wrapper Part /////////////////////// 

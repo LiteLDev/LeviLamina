@@ -1,0 +1,6 @@
+*.dll
+!LLMoney.dll
+!/lib/*
+!/LiteXLoader/*
+*.js
+*.lua

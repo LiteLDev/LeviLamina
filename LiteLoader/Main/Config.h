@@ -43,6 +43,7 @@ struct LLConfig
     bool enableFixListenPort = false;
     bool enableAntiGive = true;
     bool enableUnlockCmd = true;
+    bool enableErrorStackTraceback = true;
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
 

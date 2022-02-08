@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir);$(SolutionDir)LiteLoader;$(SolutionDir)LiteLoader\Header;$(SolutionDir)LiteLoader\Header\third-party;$(VC_IncludePath);$(WindowsSDK_IncludePath);$(IncludePath)</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64</LibraryPath>
     <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
@@ -61,36 +61,37 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
       <AdditionalDependencies>$(SolutionDir)LiteLoader\Lib\third-party\leveldb\leveldb.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libcrypto.lib;$(SolutionDir)LiteLoader\Lib\third-party\openssl\libssl.lib;$(TargetDir)Chakra.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>
-				if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
-				copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
-				)
+      <Command>if exist $(TargetDir)LiteLoader.lib (
+    copy /Y $(TargetDir)LiteLoader.lib $(ProjectDir)Lib\
+)
+if exist $(LocalDebuggerWorkingDirectory)\plugins\ (
+    copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\
+)
 			</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>
-				if not exist $(ProjectDir)Lib\bedrock_server_api.lib goto process
-				if not exist $(ProjectDir)Lib\bedrock_server_var.lib goto process
-				goto end
+      <Command>if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib goto process
+if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib goto process
+goto end
 
-				:process
-				cd /d $(SolutionDir)Tools
-				LibraryBuilder.exe
+:process
+cd /d $(SolutionDir)Tools
+LibraryBuilder.exe
 
-				:end
-			</Command>
+:end</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
+    <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
@@ -186,7 +187,7 @@
     <ClCompile Include="Kernel\EventAPI.cpp" />
     <ClCompile Include="Kernel\NBT\FloatTagAPI.cpp" />
     <ClCompile Include="Kernel\FormPacketHelper.cpp" />
-    <ClCompile Include="Kernel\MC\FormUI.cpp" />
+    <ClCompile Include="Kernel\FormUI.cpp" />
     <ClCompile Include="Kernel\MC\GameModeAPI.cpp" />
     <ClCompile Include="Kernel\MC\HitResultAPI.cpp" />
     <ClCompile Include="Kernel\NBT\Int64TagAPI.cpp" />
@@ -231,6 +232,7 @@
     <ClCompile Include="Main\PlayerInfoAPI.cpp" />
     <ClCompile Include="Main\PluginManager.cpp" />
     <ClCompile Include="Main\BuiltinCommands.cpp" />
+    <ClCompile Include="Main\SEHProtection.cpp" />
     <ClCompile Include="Main\SimpleServerLogger.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +243,8 @@
     <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Header\Utils\DbgHelper.h" />
+    <ClInclude Include="Header\Utils\STLHelper.h" />
     <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />
@@ -283,6 +287,7 @@
     <Library Include="Lib\bedrock_server_api.lib" />
     <Library Include="Lib\bedrock_server_var.lib" />
     <Library Include="Lib\SymDBHelper.lib" />
+    <Library Include="Lib\third-party\dbghelp\dbghelp.lib" />
     <Library Include="Lib\third-party\openssl\libcrypto.lib" />
     <Library Include="Lib\third-party\openssl\libssl.lib" />
     <Library Include="Lib\third-party\SQLiteCpp\sqlite3.lib" />

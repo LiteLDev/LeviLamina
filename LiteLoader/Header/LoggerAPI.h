@@ -53,7 +53,7 @@ using std::string;
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 template<bool B, class T = void>
-using enable_if_t = typename std::enable_if<B, T>::type;
+using enable_if_type = typename std::enable_if<B, T>::type;
 
 HMODULE GetCurrentModule();
 
@@ -126,7 +126,7 @@ public:
             return *this;
         }
 
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        template <typename S, typename... Args, enable_if_type<(fmt::v8::detail::is_string<S>::value), int> = 0>
         void operator()(const S& formatStr, const Args&... args)
         {
             if constexpr (0 == sizeof...(args))

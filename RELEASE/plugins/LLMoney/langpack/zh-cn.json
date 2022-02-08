@@ -1,0 +1,7 @@
+{
+    "money.no.target": "找不到目标",
+    "money.invalid.arg": "参数错误或未知错误",
+    "money.succ": "执行成功",
+    "money.not.enough": "金钱不足",
+    "money.no.perm": "你无权执行"
+}
