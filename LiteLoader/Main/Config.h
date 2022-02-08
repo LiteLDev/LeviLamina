@@ -48,6 +48,7 @@ struct LLConfig
     bool enableErrorStackTraceback = true;
     bool enableUnoccupyPort19132 = true;
     bool enableCheckRunningBDS = true;
+    bool enableWelcomeText = true;
 
     // Runtime Config
     SeverStatus serverStatus = SeverStatus::Starting;

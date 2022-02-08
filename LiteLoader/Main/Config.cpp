@@ -35,7 +35,8 @@ namespace LL {
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
                     {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
                     {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
-                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}}
+                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
+                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
                 }
             }
         };
@@ -105,9 +106,12 @@ namespace LL {
                 const nlohmann::json& setting = modules.at("CheckRunningBDS");
                 conf.enableCheckRunningBDS = setting.value("enabled", true);
             }
-
             if (modules.find("ErrorStackTraceback") != modules.end()) {
                 const nlohmann::json& listen = modules.at("ErrorStackTraceback");
+                conf.enableErrorStackTraceback = listen.value("enabled", true);
+            }
+            if (modules.find("WelcomeText") != modules.end()) {
+                const nlohmann::json& listen = modules.at("WelcomeText");
                 conf.enableErrorStackTraceback = listen.value("enabled", true);
             }
         }

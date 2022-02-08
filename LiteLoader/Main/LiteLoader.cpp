@@ -42,7 +42,8 @@ void FixUpCWD()
 
 void CheckRunningBDS()
 {
-    if (!LL::globalConfig.enableCheckRunningBDS) return;
+    if (!LL::globalConfig.enableCheckRunningBDS)
+        return;
     std::vector<DWORD> pids;
     PROCESSENTRY32 pe32{};
     pe32.dwSize = sizeof(pe32);
@@ -107,6 +108,9 @@ extern void RegisterSimpleServerLogger();
 
 void Welcome()
 {
+    if (!LL::globalConfig.enableWelcomeText)
+        return;
+
     cout << "\r" << R"(                                                                                              )" << endl
          << "\r" << R"(         _       _  _          _                        _               ____   _____    _____ )" << endl
          << "\r" << R"(        | |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
