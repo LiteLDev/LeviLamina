@@ -134,7 +134,7 @@ local nbt = NbtCompound({
 
 #### 删除键对应的 NBT 对象
 
-`list.removeTag(key)`
+`comp.removeTag(key)`
 
 - 参数：
   - key: `String`  
