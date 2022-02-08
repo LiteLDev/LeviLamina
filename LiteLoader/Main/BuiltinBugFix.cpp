@@ -147,7 +147,7 @@ TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_t
     return out;
 }
 
-// Fix move view crash (ref PlayerAuthInput[MoveView])
+    // Fix move view crash (ref PlayerAuthInput[MoveView])
 Player* movingViewPlayer = nullptr;
 TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
 {
@@ -156,10 +156,15 @@ TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
     movingViewPlayer = nullptr;
 }
 #include<MC/ChunkViewSource.hpp>
+bool Interval(int a1)
+{
+    if (a1 < 0x5ffffff && a1 > -0x5ffffff) return 1;
+    return 0;
+}
 TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
        BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
 {
-    if (a1.x < -100000000 || a1.y > 100000000)
+    if (Interval(a1.x) || Interval(a1.y) || Interval(a1.z))
     {
         Player* pl = movingViewPlayer;
         if (pl->isPlayer())
@@ -171,5 +176,3 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
     }
     return original(this, a1,a2,a3,a4);
 }
-
-
