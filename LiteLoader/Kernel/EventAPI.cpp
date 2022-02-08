@@ -592,8 +592,8 @@ TInstanceHook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAV
     return rtn;
 }
 
-TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
-       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
+       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3 a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -605,7 +605,7 @@ TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAV
             auto underBlock = &bs.getBlock(a4.relative(0, 1)).getDefaultState();
             if (onBlock == VanillaBlocks::mBambooBlock || onBlock == VanillaBlocks::mBambooSapling
                 || underBlock == VanillaBlocks::mBambooBlock || underBlock == VanillaBlocks::mBambooSapling)
-                return original(this, a2, a3, a4, a5, a6, a7, a8); // listen in BlockSource::mayPlace
+                return original(this, a2, a3, a4, a5, a6); // listen in BlockSource::mayPlace
             
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
@@ -615,7 +615,7 @@ TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAV
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6, a7, a8);
+    return original(this, a2, a3, a4, a5, a6);
 }
 
 //THook(bool, "?_useOn@BannerItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", __int64 a1, ItemStackBase* a2, Actor* a3, const struct BlockPos* a4, unsigned __int8 a5, int a6, int a7, int a8)
