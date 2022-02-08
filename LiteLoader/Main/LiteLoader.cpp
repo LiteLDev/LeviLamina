@@ -41,6 +41,7 @@ void FixUpCWD()
 
 void CheckRunningBDS()
 {
+    if (!LL::globalConfig.enableCheckRunningBDS) return;
     std::vector<DWORD> pids;
     PROCESSENTRY32 pe32{};
     pe32.dwSize = sizeof(pe32);
@@ -142,14 +143,16 @@ void LLMain()
     FixUpCWD();
     FixPluginsLibDir();
 
-    // Check Running BDS
-    CheckRunningBDS();
-
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
     // Load Config
     LL::LoadLLConfig();
+
+    // Check Running BDS(Requires Config)
+    CheckRunningBDS();
+
+    // Initialize Player Database
     InitPlayerDatabase();
 
     // Rename Window

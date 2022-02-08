@@ -44,6 +44,7 @@ struct LLConfig
     bool enableAntiGive = true;
     bool enableUnlockCmd = true;
     bool enableUnoccupyPort19132 = true;
+    bool enableCheckRunningBDS = true;
 
     // Runtime Config
     SeverStatus serverStatus = SeverStatus::Starting;

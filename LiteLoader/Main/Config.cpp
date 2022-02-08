@@ -31,7 +31,8 @@ namespace LL {
                     {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
-                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}}
+                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
+                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}}
                 }
             }
         };
@@ -90,7 +91,12 @@ namespace LL {
             if (modules.count("UnoccupyPort19132"))
             {
                 const nlohmann::json& setting = modules.at("UnoccupyPort19132");
-                conf.enableAntiGive = setting.value("enabled", true);
+                conf.enableUnoccupyPort19132 = setting.value("enabled", true);
+            }
+            if (modules.count("CheckRunningBDS"))
+            {
+                const nlohmann::json& setting = modules.at("CheckRunningBDS");
+                conf.enableCheckRunningBDS = setting.value("enabled", true);
             }
         }
     }
