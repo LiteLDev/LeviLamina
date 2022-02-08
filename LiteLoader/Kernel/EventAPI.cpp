@@ -1210,10 +1210,10 @@ TInstanceHook(void, "?_onItemChanged@LevelContainerModel@@MEAAXHAEBVItemStack@@0
 
 /////////////////// ProjectileHitBlock ///////////////////
 TInstanceHook(void, "?onProjectileHit@Block@@QEBAXAEAVBlockSource@@AEBVBlockPos@@AEBVActor@@@Z",
-      Block,BlockSource* bs, BlockPos* bp, Actor* actor)
+      Block, BlockSource* bs, BlockPos* bp, Actor* actor)
 {
     if (bp->x&bp->y&bp->z==0) //actor->getPos().distanceTo(bp->center())>5)         //???
-        return original(_this, bs, bp, actor);
+        return original(this, bs, bp, actor);
     IF_LISTENED(ProjectileHitBlockEvent)
     {
         if (this->getTypeName() != "minecraft:air")

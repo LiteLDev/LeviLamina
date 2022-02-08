@@ -61,13 +61,9 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
     script::Global<Function> callbackFunc{ callback };
 
     return form->sendTo((ServerPlayer*)player,
-        [id{ player->getUniqueID() }, engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
-        (int chosen)
+        [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
+        (Player* pl, int chosen)
         {
-            Player* pl = Level::getPlayer(id);
-            if (!pl)
-                return;
-
             EngineScope scope(engine);
             try
             {

@@ -77,7 +77,7 @@ namespace Form
         LIAPI string serialize() override;
 
     public:
-        using ButtonCallback = std::function<void(void)>;
+        using ButtonCallback = std::function<void(Player*)>;
         string text, image;
         ButtonCallback callback;
 
@@ -358,7 +358,7 @@ namespace Form
         LIAPI string serialize() override;
 
     public:
-        using Callback = std::function<void(int)>;
+        using Callback = std::function<void(Player*, int)>;
         string title, content;
         vector<std::shared_ptr<SimpleFormElement>> elements;
         Callback callback;

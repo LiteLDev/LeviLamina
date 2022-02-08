@@ -85,7 +85,7 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         //Simple Form Builder
         auto form = simpleFormBuilders[formId];
         if (form->callback)
-            form->callback(chosen);
+            form->callback(player, chosen);
         //Button Callback
         if (chosen >= 0) {
             auto button = dynamic_pointer_cast<Form::Button>(form->elements[chosen]);
