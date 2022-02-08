@@ -635,8 +635,8 @@ TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAV
 //    return original(a1, a2, a3, a4, a5, a6, a7, a8);
 //}
 
-TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EMMM@Z",
-     ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
+     ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5,Vec3 a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -650,7 +650,7 @@ TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVA
         }
     }
     IF_LISTENED_END(PlayerPlaceBlockEvent)
-    return original(this, a2, a3, a4, a5, a6, a7, a8);
+    return original(this, a2, a3, a4, a5, a6);
 }
 
 TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
