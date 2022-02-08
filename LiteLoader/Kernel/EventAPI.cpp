@@ -1805,7 +1805,7 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 
 ////////////// NpcCmd //////////////
 TInstanceHook(bool,
-      "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEBVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+      "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
       NpcComponent, Actor* ac, Player* pl, int a4, string& a5)
 {
     IF_LISTENED(NpcCmdEvent)
