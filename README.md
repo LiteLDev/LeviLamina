@@ -14,10 +14,12 @@
 
 ![Logo](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2FWebsite%2Fraw%2Fmain%2Fimages%2Flogo-6pndg21x.png&owner=1&pattern=Plus&pulls=1&stargazers=1)
 
-`LiteLoader` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
+`LiteLoaderBDS` is an unofficial plugin loader that provides basic API support for `Bedrock Dedicated Server`, with a
 massive API, lots of packed utility interfaces, a rich event system and powerful basic interface support.
 
-Writing plugins in C++, Golang and other languages allows developers to easily extend and customize BDS functionality,
+`LiteLoader` provides a massive API, a powerful event system and a large number of encapsulated development infrastructure interfaces, providing a solid foundation for extending the Bedrock Edition **BDS** with more gameplay and functionality. With plugins, it is easy to extend the functionality of BDS, the associated development is easy to learn, and the development approach is flexible.
+
+Writing plugins in**C++，Golang，JavaScript，Lua，Python**  and other languages allows developers to easily extend and customize **BDS** functionality,
 making it easy to learn and extremely flexible.
 
 <br/>
@@ -27,7 +29,7 @@ making it easy to learn and extremely flexible.
 > “Why should I choose LiteLoader?”
 
 Easy to use, intuitive interface!
-
+#### C++ language sample plugin
 ```c++
 BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bool solidOnly, float maxDistance, bool ignoreBorderBlocks, bool fullOnly) const {
     auto& bs = getRegion();
@@ -51,18 +53,54 @@ BlockInstance Actor::getBlockFromViewVector(FaceID& face, bool includeLiquid, bo
     return BlockInstance::Null;
 }
 ```
+#### Sample scripting language plugin
+```javascript
+//Register for shutdown command
+mc.regPlayerCmd("stop","close server", (pl,args) => {
+    //鉴权
+    if(!pl.isOP())
+        return true;
+    pl.tell("stop command executed successfully",1);
+    mc.broadcast("Player" + pl.realName + "Execute the stop command. The server will be shut down after 5 seconds");
+    
+    //Execute stop command
+    setTimeout(() => {
+        mc.runcmd("stop");
+    },5000);
+},1);
+```
 
 <br/>
 
 ## 💎 Advantage
+- 💻 Support for developing plugins in many different languages, Keeping the API uniform
 
-- 📕 Full access to all classes and functions
-- 💻 Auto-generated C++ headers lead to faster adaptation
-- 💡 Free and simple coding experience
-- 🔌 APIs of high quality and large quantity
-- 🛡 Fix some vulnerabilities in BDS to ensure the stability and security of your server
-- 🏃 Open-source
+| Supported plugin development languages | `C++`，`Golang`，`JavaScript`，`Lua` |
+| -------------------------- | ------------------------------------ |
+| **Upcoming supported plugin development languages** | `Python`，`Ruby`，`C#`，`TypeScript` |
 
+- 📕 Smooth development experience with great compatibility
+  - Auto-generated C++ headers, access to all `BDS` classes and functions, full toolchain support and evolving features
+  - For scripting language plugins, a multi-language code completion library, a powerful VSCode plugin, a hot-loading system ...... Many tools to help you write every line of code more efficiently
+  - When a version is updated, the API is guaranteed to be largely **backward compatible** and the plugin requires little or no code changes with the version update. With the `LiteLoader` series' unique symbol lookup technology, cross-version **auto-adaptation** is no longer a dream
+
+- 📋 Well documented and explained in detail
+  - Welcome 👉[move to the LiteLoader documentation web](https://lxl.litebds.com/)👈 See more  
+
+- 🎈 Numerous well-packaged interfaces
+  - Numerous game APIs support: players, entities, cubes, items, containers, NBTs, server systems ......
+  - Up to **50+** game events to listen to, no matter what happens,  the first to respond
+
+- 🛡 Secure, stable and versatile
+  - Fixes a number of vulnerabilities in BDS to ensure the stability and security of your server  
+  - Extensive use of the seh exception protection framework to minimise the risk of server crashes
+  - Supports running on Linux, MacOS platforms via **Wine**, bringing a free plugin experience to other platforms as well: write once, **share on multiple platforms**.
+
+- 🏆 Sound app ecosystem
+  - A large number of existing plugins, mature publishing platform, instantly 👉[Go to MineBBS](https://www.minebbs.com/resources/?prefix_id=67)👈 to find and download your favorite LL plugins  
+- 🏃 Open Source & Community Building
+  - The project is licensed under the `GPL-3.0` open source license and will **never** be charged for or released as a commercial version.  
+  - The design philosophy is **decentralised** and you can be assured of a **free** plugin loading framework!  
 ------
 
 ## 💻 Install
@@ -98,19 +136,27 @@ The latest features, get the first time! Eliminate the trouble of repeated manua
 
 ## 🎯 Get plugins
 
-LiteLoader plugins are mainly published in **MineBBS**,
-please [click here](https://www.minebbs.com/resources/?prefix_id=59) to find and download your LiteLoader plugins.
+### Plugin downloads
 
-There are some plugins in discussion too.
+`LiteLoader` main plugin distribution channels.
 
-1. _If the download is a .zip, please unzip_
-2. _Put all the obtained content directly into the `plugins` directory_
-3. _run `bedrock_server_mod.exe`_
+- MineBBS Forum: [click here to go to downloads](https://www.minebbs.com/resources/?prefix_id=59)
+- GitHub Discussion: [Discussions - LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
+
+### Plugin installation
+
+1. If you downloaded a zip file, unzip it
+2. Place all the obtained contents directly into the `plugins` directory
+3. Run `bedrock_server_mod.exe` to start the service
+
+For more **installation and usage guides**, please 👉[move to LiteLoader documentation site](https://lxl.litebds.com/#/zh_CN/Usage/)👈 to view
 
 ------
 
 ## 📕 LiteLoader plugin development
 
+### Developing plugins with C++
+### ① The first
 1. run `SymDB2.exe -def`
 2. add `bedrock_server.dll` to `[Properties -> Linker -> Input -> Delay Load DLL]`
 3. run llvm-dlltool to generate import library using the following command (Tools/llvm-dlltool-msys2 is recommended)
@@ -126,18 +172,75 @@ llvm-dlltool -m i386:x86-64 -d bedrock_server_var.def -l bedrock_server_var.lib
    [Click Here](https://github.com/LiteLDev) Check out more open source LiteLoader plugins as example plugins.  
    You can learn plugin development methods and techniques here
 
+### ② The second
+1. Go to the [LiteLoader plugin template repository](https://github.com/LiteLDev/PluginTemplate) to download project templates, or create your own project repository based on the templates and download the code locally
+1. Open the Template.sln project file
+1. start writing the plugin code in Plugin.cpp
+1. compile and generate and select the appropriate PDB file as prompted to generate the dependency libs
+1. copy the plug-in to the plugins directory for testing
+
+For plugins development examples and guidance, please 👉[go to LiteLoader documentation site](https://lxl.litebds.com/#/zh_CN/Usage/)👈  
+If you have a revision request or need to add an API, please contact the author or post an Issue 
+
+### Developing plugins using scripting Languages
+
+1. create the file
+2. write the code
+3. Copy the plugin to the plugins directory for testing
+
+Please 👉[go to LiteLoader documentation site](https://lxl.litebds.com/#/zh_CN/Development/)👈 for detailed **API documentation** and **plugin development tutorial**.  
+If you have a revision request or need to add an API, please feel free to contact the author or post an Issue  
+
+<br>
+
+### Example Plugins
+[click here](https://github.com/LiteLDev-LXL) See more open source LiteLoader plugins as sample plugins.
+You can use them directly in production environments
+You can also learn plugin development methods and tips here
+
+<br>
+
+### Development Aids - VSCode Development Aids & Complementary Libraries
+
+Use the LiteLoader development helper plugin developed by Moxicat
+Helps you do better with **script plugins**!  
+Code hint, auto-completion, auto-documentation, error alert, runtime debugging ....
+
+
+![LXLDevHelper](docs/assets/LXLDevHelper.gif)
+
+[点击这里](https://www.minebbs.com/resources/lxldevhelper.2672/)
+查看扩展说明与介绍  
+VSCode extension store search `LXL`, install **LXLDevHelper** and experience it instantly!
+
+<br>
+
+### Development Aids - Blockly-LXL Graphical Development Kit
+
+No programming foundation? Tired of complex language rules?  
+Have you ever thought that BDS plug-in development could be as easy as a puzzle?
+
+Here it is! The Blockly-LXL graphical development kit from pa733 takes the plugin development experience to a new level!
+
+![Blockly-LXL](docs/assets/BLLXL.png)
+
+[Click here](https://www.minebbs.com/resources/blockly-lxl.2671/)
+View related installation and usage instructions
 <br/>
 
 ## 🔨 Build project
 
 > Go to [`GitHub Actions`](https://github.com/LiteLDev/LiteLoaderBDS/actions) to get the latest build artifact
+>   
+> Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
 
-Of course, if you are willing to build the project yourself, or contribute to LiteLoader, you can build it by yourself
-according to the following instructions
-
-1. Install newest **Microsoft Visual Studio** with standard C++ building suite
-2. Install the newest version of **Windows SDK**
-3. Open `LiteLoader.sln` project files,Click on **Build**
+1. install the latest **Microsoft Visual Studio** and the standard C++ desktop development suite
+2. Install the latest **Windows SDK**. 3.
+3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
+4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
+5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
+6. After successful compilation, go back to the project root directory and execute the `PackRelease.cmd` script in the Scripts folder.  
+   After execution, the contents of the `RELEASE` folder in the root directory will be the complete `LiteLoader` environment and all dependencies.
 
 <br/>
 
@@ -167,12 +270,16 @@ You must accept the Minecraft EULA.
 
 [LiteLoader](https://github.com/LiteLDev/LiteLoader) GPLv3 with extra restrictions&exceptions  
 [BedrockX](https://github.com/Sysca11/BedrockX) GPLv3 with extra restrictions&exceptions  
-[ElementZero](https://github.com/Element-0/ElementZero) GPL v3  
+[ElementZero](https://github.com/Element-0/ElementZero) GPLv3  
+[ScriptX](https://github.com/Tencent/ScriptX) Apache License Version 2.0    
 [ChakraCore](https://github.com/chakra-core/ChakraCore) MIT License  
 [OpenSSL](https://github.com/openssl/openssl) Apache-2.0 License  
 [SimpleIni](https://github.com/brofield/simpleini) MIT License  
 [Nlohmann-Json](https://github.com/nlohmann/json) MIT License  
-[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License
+[nbt-cpp](https://github.com/handtruth/nbt-cpp) MIT License  
+[Hash](https://github.com/Chocobo1/Hash) GPL v3    
+[ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
+[LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
 [magic_enum](https://github.com/Neargye/magic_enum) MIT License
 
 ### Extra Restrictions & Exceptions
@@ -199,3 +306,11 @@ you modified the framework, or write a new framework based on this framework, yo
 **Thanks to [JetBrains](https://www.jetbrains.com/) for allocating free open-source licences for IDEs such
 as [CLion](https://www.jetbrains.com/clion/)**.  
 [<img src="https://upload.cc/i1/2021/12/29/XNohu5.png" width="200"/>](https://www.jetbrains.com/)
+
+
+## 📞 Contact us
+
+LiteLoader QQ Exchange Group: 656669024 [Click to join](https://jq.qq.com/?_wv=1027&k=lagwtrfh)  
+LiteLoader QQ Exchange 2 Group：850517473 [Click to join](https://jq.qq.com/?_wv=1027&k=zeUbrETH)    
+Discord Channel: #LiteLoaderBDS [Click to join](https://discord.gg/4tBQHc9u7p)  
+Telegram channel: #LiteLoader [click to join](https://t.me/LiteLoader)
