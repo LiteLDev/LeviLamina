@@ -30,6 +30,7 @@
 #include <MC/Scoreboard.hpp>
 #include <MC/PlaySoundPacket.hpp>
 #include <MC/SetDisplayObjectivePacket.hpp>
+#include <MC/Block.hpp>
 
 #include <Impl/ObjectivePacketHelper.h>
 #include <Impl/FormPacketHelper.h>
@@ -511,6 +512,25 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     pkt->read(wp);
     sendNetworkPacket(*pkt);
     return true;
+}
+
+bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer)
+{
+    BinaryStream wp;
+    wp.writeVarInt(x);
+    wp.writeUnsignedVarInt(y);
+    wp.writeVarInt(z);
+    wp.writeUnsignedVarInt(runtimeId);
+    wp.writeUnsignedVarInt((unsigned int)flag);
+    wp.writeUnsignedVarInt((unsigned int)layer);
+    auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::UpdateBlock);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
+    return true;
+}
+bool Player::sendUpdateBlockPacket(int x, int y, int z, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer)
+{
+    return sendUpdateBlockPacket(x, y, z, block.getRuntimeId(), flag, layer);
 }
 
 bool Player::sendTransferPacket(const string& address, short port) const 
