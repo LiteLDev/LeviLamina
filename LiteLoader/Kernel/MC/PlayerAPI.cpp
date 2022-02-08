@@ -513,15 +513,15 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, unsigned int flag, unsigned int layer)
+bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer)
 {
     BinaryStream wp;
     wp.writeVarInt(x);
     wp.writeUnsignedVarInt(y);
     wp.writeVarInt(z);
     wp.writeUnsignedVarInt(runtimeId);
-    wp.writeUnsignedVarInt(flag); //None=0,Neighbors=1,Network=2,All=3,NoGraphic=4,Priority=8,AllPriority=11
-    wp.writeUnsignedVarInt(layer);
+    wp.writeUnsignedVarInt((unsigned int)flag); //None=0,Neighbors=1,Network=2,All=3,NoGraphic=4,Priority=8,AllPriority=11
+    wp.writeUnsignedVarInt((unsigned int)layer);
     auto pkt = MinecraftPackets::createPacket(MinecraftPacketIds::UpdateBlock);
     pkt->read(wp);
     sendNetworkPacket(*pkt);

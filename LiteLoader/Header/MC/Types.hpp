@@ -484,12 +484,26 @@ enum class ContainerType : char
     SMITHING_TABLE         = 33,
 };
 
+enum class UpdateBlockLayer : int
+{
+    UpdateBlockDefault,
+    UpdateBlockLiquid
+};
+
 enum class UpdateBlockFlags : int
 {
-    BlockUpdateNeighbours = 1,
+    UpdateBlockNone = 0,
+    BlockUpdateNeighbors = 1,
     BlockUpdateNetwork = 2,
-    BlockUpdateNoGraphics = 3,
-    BlockUpdatePriority = 4,
+    BlockUpdateAll = 3,//default value in BDS
+    BlockUpdateNoGraphic = 4,
+    BlockUpdatePriority = 8,
+    BlockUpdateAllPriority = 11
+    //old one not correctly ? 
+    //BlockUpdateNeighbours = 1,
+    //BlockUpdateNetwork = 2,
+    //BlockUpdateNoGraphics = 3,
+    //BlockUpdatePriority = 4,
 };
 
 enum class TextType : char
