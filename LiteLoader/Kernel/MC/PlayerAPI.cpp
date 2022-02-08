@@ -513,7 +513,7 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, unsigned int flag = 3, unsigned int layer = 0)
+bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, unsigned int flag, unsigned int layer)
 {
     BinaryStream wp;
     wp.writeVarInt(x);
