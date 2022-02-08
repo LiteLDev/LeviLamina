@@ -235,7 +235,7 @@ View related installation and usage instructions
 > Of course, if you prefer to build the project yourself, or contribute code to LiteLoader, you can build the project yourself by following these instructions
 
 1. install the latest **Microsoft Visual Studio** and the standard C++ desktop development suite
-2. Install the latest **Windows SDK**. 3.
+2. Install the latest **Windows SDK**.
 3. Open the `LiteLoader.sln` project file and click on the **Batch Generation** item in the **Generation** menu
 4. Bring up the batch generation dialog, check all the generation checkboxes on the right side of the dialog
 5. When you have finished selecting, click the **Generate** button in the dialog box to perform batch generation
