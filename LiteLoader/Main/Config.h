@@ -35,6 +35,8 @@ struct LLConfig
     int logLevel = 4;
     std::string language = "en";
 
+    bool enableScriptEngine = true;
+
     bool enableAutoUpdate = true;
     bool enableCrashLogger = true;
     std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";

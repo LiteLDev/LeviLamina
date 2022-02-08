@@ -405,46 +405,46 @@ void EnableEventListener(int eventId)
         });
         break;
 
-    case EVENT_TYPES::onAttack: // recently removed.
+    case EVENT_TYPES::onAttack:             // recently removed.
         Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
+        {
+            IF_LISTENED(EVENT_TYPES::onAttack)
             {
                 if (ev.mTarget)
                 {
-                    IF_LISTENED(EVENT_TYPES::onAttack)
-                    {
-                        CallEvent(EVENT_TYPES::onAttack, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
-                    }
-                    IF_LISTENED_END(EVENT_TYPES::onAttack);
+                    CallEvent(EVENT_TYPES::onAttack, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
                 }
+            }
+            IF_LISTENED_END(EVENT_TYPES::onAttack);
         });
         break;
 
     case EVENT_TYPES::onAttackEntity:
         Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
+        {   
+            IF_LISTENED(EVENT_TYPES::onAttackEntity)
             {
                 if (ev.mTarget)
                 {
-                    IF_LISTENED(EVENT_TYPES::onAttackEntity)
-                    {
-                        CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
-                    }
-                    IF_LISTENED_END(EVENT_TYPES::onAttackEntity);
+                    CallEvent(EVENT_TYPES::onAttackEntity, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
                 }
+            }
+            IF_LISTENED_END(EVENT_TYPES::onAttackEntity);
         });
         break;
 
     case EVENT_TYPES::onAttackBlock:
         Event::PlayerAttackBlockEvent::subscribe([](const PlayerAttackBlockEvent& ev)
+        {
+            IF_LISTENED(EVENT_TYPES::onAttackBlock)
             {
-                IF_LISTENED(EVENT_TYPES::onAttackBlock)
-                {
-                    CallEvent(EVENT_TYPES::onAttackBlock,
-                        PlayerClass::newPlayer(ev.mPlayer),
-                        BlockClass::newBlock(ev.mBlockInstance),
-                        !ev.mItemStack->isNull() ? ItemClass::newItem(ev.mItemStack) : Local<Value>()
-                    );
-                }
-                IF_LISTENED_END(EVENT_TYPES::onAttackBlock);
+                CallEvent(EVENT_TYPES::onAttackBlock,
+                    PlayerClass::newPlayer(ev.mPlayer),
+                    BlockClass::newBlock(ev.mBlockInstance),
+                    !ev.mItemStack->isNull() ? ItemClass::newItem(ev.mItemStack) : Local<Value>()
+                );
+            }
+            IF_LISTENED_END(EVENT_TYPES::onAttackBlock);
         });
         break;
 
