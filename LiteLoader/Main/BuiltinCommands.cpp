@@ -19,8 +19,10 @@ using namespace LL;
 
 static_assert(sizeof(CommandSelector<Player>) == 200);
 
-class TeleportDimensionCommand : public Command {
-    enum class DimensionType {
+class TeleportDimensionCommand : public Command
+{
+    enum class DimensionType
+    {
         OverWorld,
         Nether,
         TheEnd,
@@ -30,13 +32,15 @@ class TeleportDimensionCommand : public Command {
     bool Victim_isSet = false;
     bool CommandPos_isSet = false;
 
-    Vec3 getTargetPos(CommandOrigin const &ori, Actor *actor) const {
+    Vec3 getTargetPos(CommandOrigin const& ori, Actor* actor) const
+    {
         if (CommandPos_isSet)
             return CommandPos.getPosition(ori, {0, 0, 0});
         auto pos = actor->getPos();
         Vec3 result = pos;
         int actorDimensionId = actor->getDimensionId();
-        switch (DimensionId) {
+        switch (DimensionId)
+        {
             case TeleportDimensionCommand::DimensionType::OverWorld:
                 if (actorDimensionId != 0)
                     result = {pos.x / 8, pos.y, pos.z / 8};
@@ -55,34 +59,41 @@ class TeleportDimensionCommand : public Command {
         return result;
     }
 
-    bool teleportTarget(CommandOrigin const &ori, CommandOutput &output, Actor *actor) const {
-        auto dim = VanillaDimensions::toString((int) DimensionId);
+    bool teleportTarget(CommandOrigin const& ori, CommandOutput& output, Actor* actor) const
+    {
+        auto dim = VanillaDimensions::toString((int)DimensionId);
         auto pos = getTargetPos(ori, actor);
-        actor->teleport(pos, (int) DimensionId);
+        actor->teleport(pos, (int)DimensionId);
         output.success(fmt::format("Teleported {} to {} ({:2f}, {:2f}, {:2f})",
-                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z),
-                       {});
+                                   actor->getNameTag(), dim, pos.x, pos.y, pos.z));
         return true;
     }
 
-    bool teleportTargets(CommandOrigin const &ori, CommandOutput &output, CommandSelectorResults<Actor> &actors) const {
-        auto dim = VanillaDimensions::toString((int) DimensionId);
+    bool teleportTargets(CommandOrigin const& ori, CommandOutput& output, CommandSelectorResults<Actor>& actors) const
+    {
+        auto dim = VanillaDimensions::toString((int)DimensionId);
         std::string names;
-        for (auto &actor: actors) {
+        for (auto& actor : actors)
+        {
             std::string actorName = actor->getNameTag();
-            if (actorName.empty()) {
+            if (actorName.empty())
+            {
                 actorName = actor->getTypeName();
             }
             names.append(", ").append(actorName);
-            if (actor->teleport(getTargetPos(ori, actor), (int) DimensionId))
+            if (actor->teleport(getTargetPos(ori, actor), (int)DimensionId))
                 output.success();
         }
-        if (output.getSuccessCount() == 0) {
+        if (output.getSuccessCount() == 0)
+        {
             output.error("No Actor Teleported");
             return false;
-        } else {
+        }
+        else
+        {
             std::string message = fmt::format("Teleported {} to {}", names.substr(2), dim);
-            if (CommandPos_isSet) {
+            if (CommandPos_isSet)
+            {
                 auto pos = CommandPos.getPosition(ori, {0, 0, 0});
                 message.append(fmt::format(" ({:2f}, {:2f}, {:2f})", pos.x, pos.y, pos.z));
             }
@@ -92,44 +103,50 @@ class TeleportDimensionCommand : public Command {
     }
 
 public:
-    void execute(CommandOrigin const &ori, CommandOutput &output) const override {
-        if ((int) DimensionId < 0 || (int) DimensionId > 2) {
-            output.error("Invalid DimensionId: " + std::to_string((int) DimensionId), {});
+    void execute(CommandOrigin const& ori, CommandOutput& output) const override
+    {
+        if ((int)DimensionId < 0 || (int)DimensionId > 2)
+        {
+            output.error("Invalid DimensionId: " + std::to_string((int)DimensionId));
             return;
         }
-        if (Victim_isSet) {
+        if (Victim_isSet)
+        {
             auto result = Victim.results(ori);
             if (result.empty())
-                output.error("No Actor Specific", {});
+                output.error("No Actor Specific");
             else if (result.count() == 1)
                 teleportTarget(ori, output, *result.begin());
             else
                 teleportTargets(ori, output, result);
-        } else {
+        }
+        else
+        {
             auto actor = ori.getEntity();
             if (!actor)
-                output.error("No Actor Specific", {});
+                output.error("No Actor Specific");
             else
                 teleportTarget(ori, output, actor);
         }
     }
 
-    static void setup(CommandRegistry *registry) {
+    static void setup(CommandRegistry* registry)
+    {
         registry->registerCommand(
-                "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
-                {(CommandFlagValue) 0}, {(CommandFlagValue) 0x80});
+            "tpdim", "Teleport to Dimension", CommandPermissionLevel::GameMasters,
+            {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->addEnum<DimensionType>("DimensionType",
                                          {
-                                                 {"overload", DimensionType::OverWorld},
-                                                 {"o",        DimensionType::OverWorld},
-                                                 {"nether",   DimensionType::Nether},
-                                                 {"n",        DimensionType::Nether},
-                                                 {"end",      DimensionType::TheEnd},
-                                                 {"e",        DimensionType::TheEnd},
+                                             {"overload", DimensionType::OverWorld},
+                                             {"o", DimensionType::OverWorld},
+                                             {"nether", DimensionType::Nether},
+                                             {"n", DimensionType::Nether},
+                                             {"end", DimensionType::TheEnd},
+                                             {"e", DimensionType::TheEnd},
                                          });
         auto dimensionTypeParam = makeMandatory<CommandParameterDataType::ENUM>(&TeleportDimensionCommand::DimensionId,
                                                                                 "Dimension", "DimensionType");
-        auto dimensionIdParam = makeMandatory((int TeleportDimensionCommand::*) &TeleportDimensionCommand::DimensionId,
+        auto dimensionIdParam = makeMandatory((int TeleportDimensionCommand::*)&TeleportDimensionCommand::DimensionId,
                                               "DimensionId");
         auto victimParam = makeMandatory(&TeleportDimensionCommand::Victim, "victim",
                                          &TeleportDimensionCommand::Victim_isSet);
@@ -137,13 +154,13 @@ public:
                                           "Position", &TeleportDimensionCommand::CommandPos_isSet);
 
         registry->registerOverload<TeleportDimensionCommand>(
-                "tpdim", victimParam, dimensionTypeParam, positionParam);
+            "tpdim", victimParam, dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
-                "tpdim", victimParam, dimensionIdParam, positionParam);
+            "tpdim", victimParam, dimensionIdParam, positionParam);
         //registry->registerOverload<TeleportDimensionCommand>(
         //    "tpdim", dimensionTypeParam, positionParam);
         registry->registerOverload<TeleportDimensionCommand>(
-                "tpdim", dimensionIdParam, positionParam);
+            "tpdim", dimensionIdParam, positionParam);
     }
 };
 
@@ -380,7 +397,8 @@ public:
     }
 };
 
-void RegisterCommands() {
+void RegisterCommands()
+{
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         LLCommand::setup(ev.mCommandRegistry);
         VersionCommand::setup(ev.mCommandRegistry);

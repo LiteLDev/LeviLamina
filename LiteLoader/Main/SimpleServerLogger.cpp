@@ -6,7 +6,8 @@
 using namespace Event;
 
 
-void RegisterSimpleServerLogger() {
+void RegisterSimpleServerLogger()
+{
     if (LL::globalConfig.enableSimpleServerLogger)
     {
         Event::PlayerChatEvent::subscribe([](const Event::PlayerChatEvent& ev) {

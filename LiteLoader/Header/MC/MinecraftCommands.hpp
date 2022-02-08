@@ -6,6 +6,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CommandContext.hpp"
 #include "MCRESULT.hpp"
 
 #undef BEFORE_EXTRA

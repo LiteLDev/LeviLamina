@@ -39,6 +39,7 @@
 #include "Utils/WinHelper.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
+#include "Utils/StringHelper.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -92,6 +93,29 @@ public:
                 locked = true;
             }
             os << t;
+            return *this;
+        }
+
+        template <>
+        OutputStream& operator<<(std::wstring wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
+            return *this;
+        }
+        template <>
+        OutputStream& operator<<(const wchar_t* wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
             return *this;
         }
 

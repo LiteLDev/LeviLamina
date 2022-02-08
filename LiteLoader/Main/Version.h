@@ -7,4 +7,3 @@
 #define LITELOADER_VERSION          LL::getLoaderVersion()
 
 #define LITELOADER_VERSION_STATUS   Release
-

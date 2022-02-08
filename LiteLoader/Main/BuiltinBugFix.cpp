@@ -18,77 +18,89 @@
 
 using namespace LL;
 
-bool ip_information_logged = false;
+bool ipInformationLogged = false;
 
-//Patch for CVE-2021-45384
+// Patch for CVE-2021-45384
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
-              ServerNetworkHandler, NetworkIdentifier *ni, void *packet) {
-    if (globalConfig.enableFixDisconnectBug) {
+              ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
+{
+    if (globalConfig.enableFixDisconnectBug)
+    {
         if (!getServerPlayer(*ni))
             return;
     }
     return original(this, ni, packet);
 }
 
-//Patch for CVE-2021-45383
-THook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
-      Packet* a1, ReadOnlyBinaryStream* a2)
+// Patch for CVE-2021-45383
+TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
+      ReadOnlyBinaryStream* a2)
 {
     ReadOnlyBinaryStream pkt(a2->getData(), 0);
     pkt.getUnsignedVarInt();
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
     if (pkt.getUnsignedVarInt() >= 0xfff) return 0;
-    return original(a1,a2);
+    return original(this, a2);
 }
 
 //Fix bug
-THook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z", void* a1, void* a2)
+TClasslessInstanceHook(void*, "?_read@PurchaseReceiptPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z"
+    ,ReadOnlyBinaryStream* a2)
 {
     return (void*)1;
 }
 
-//Fix the listening port twice.
-THook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ",
-      void *_this) {
-    if (globalConfig.enableFixListenPort) {
-        if (!ip_information_logged) {
-            ip_information_logged = true;
-            return original(_this);
+// Fix the listening port twice
+TClasslessInstanceHook(__int64, "?LogIPSupport@RakPeerHelper@@AEAAXXZ")
+{
+    if (globalConfig.enableFixListenPort)
+    {
+        if (!ipInformationLogged)
+        {
+            ipInformationLogged = true;
+            return original(this);
         }
         return 0;
-    } else {
-        return original(_this);
+    }
+    else
+    {
+        return original(this);
     }
 }
 
-// Fix abnormal items.
-#include <mc/InventorySource.hpp>
+// Fix abnormal items
+#include <MC/InventorySource.hpp>
 #include <MC/InventoryTransaction.hpp>
 #include <MC/InventoryAction.hpp>
 #include <MC/IContainerManager.hpp>
 
-THook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
-      ServerNetworkHandler &snh, NetworkIdentifier const &netid, InventoryTransactionPacket *pk) {
-    if (globalConfig.enableAntiGive) {
-        auto *sp = (Player *) snh.getServerPlayer(netid);
-        auto *data = (InventoryTransaction *) (*((__int64 *) pk + 10) + 16);
-        auto a = dAccess<std::unordered_map<InventorySource *, void *>, 0>(data);
+TInstanceHook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVInventoryTransactionPacket@@@Z",
+              ServerNetworkHandler, NetworkIdentifier const& netid, InventoryTransactionPacket* pk)
+{
+    if (globalConfig.enableAntiGive)
+    {
+        auto sp = (Player*)this->getServerPlayer(netid);
+        auto data = (InventoryTransaction*)(*((__int64*)pk + 10) + 16);
+        auto a = dAccess<std::unordered_map<InventorySource*, void*>, 0>(data);
         bool abnormal = false;
-        for (auto &i: a)
-            if ((int) *(&i.first) == 99999) {
+        for (auto& i : a)
+            if ((int)*(&i.first) == 99999)
+            {
                 auto icm = sp->getContainerManager().lock();
-                if (icm) {
+                if (icm)
+                {
                     auto id = VirtualCall<int>(icm.get(), 0x18);
-                    if ((int) id == 22) return original(snh, netid, pk);
+                    if ((int)id == 22) return original(this, netid, pk);
                 }
                 abnormal = true;
             }
-        if (abnormal) {
+        if (abnormal)
+        {
             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
             return nullptr;
         }
     }
-    return original(snh, netid, pk);
+    return original(this, netid, pk);
 }
 
 #include <EventAPI.h>
@@ -96,41 +108,68 @@ void FixBugEvent()
 {
 }
 
-//fix sleeping drop item
-#include <mc/ItemActor.hpp>
+// Fix sleeping drop item
+#include <MC/ItemActor.hpp>
 #include <MC/MovementInterpolator.hpp>
-THook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor* ac,ItemStack* a2, char a3)
+TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor, ItemStack* a2, char a3)
 {
-    auto out = dAccess<MovementInterpolator*,0x510>(ac);
+    auto out = dAccess<MovementInterpolator*, 0x510>(this);
     if (!dAccess<bool, 0x24>(out))
     {
         auto num = dAccess<int, 0x1c>(out);
-        if (num > 0)
-            if (num == 1)
-            {
-                auto v17 = *(Vec2*)((char*)out + 0x0c);
-                ac->setRot(v17);
-            }
+        if (num > 0 && num == 1)
+        {
+            auto v17 = *(Vec2*)((char*)out + 0x0c);
+            this->setRot(v17);
+        }
         --dAccess<int, 0x1c>(out);
     }
-    return original(ac, a2, a3);
+    return original(this, a2, a3);
 }
 
-THook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings* a1, std::string const& a2)
+TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file)
 {
-    std::cout << a2 << std::endl;
-    auto out = original(a1, "server.fuck");
-    if (true)
+    auto out = original(this, file);
+    if (LL::globalConfig.enableUnoccupyPort19132)
     {
         //logger.warn("If you turn on this feature, your server will not be displayed on the LAN");
         DWORD v4Flag, v6Flag;
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, PAGE_READWRITE, &v4Flag);
-        *(unsigned short*)&SharedConstants::NetworkDefaultGamePort = a1->getServerPort();
+        *(unsigned short*)&SharedConstants::NetworkDefaultGamePort = getServerPort();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePort, 4, v4Flag, NULL);
 
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, PAGE_READWRITE, &v6Flag);
-        *(unsigned short*)&SharedConstants::NetworkDefaultGamePortv6 = a1->getServerPortv6();
+        *(unsigned short*)&SharedConstants::NetworkDefaultGamePortv6 = getServerPortv6();
         VirtualProtect((void*)&SharedConstants::NetworkDefaultGamePortv6, 4, v6Flag, NULL);
     }
+    // Global service
+    Global<PropertiesSettings> = this;
     return out;
 }
+
+// Fix move view crash (ref PlayerAuthInput[MoveView])
+Player* movingViewPlayer = nullptr;
+TInstanceHook(void, "?moveView@Player@@UEAAXXZ", Player)
+{
+    movingViewPlayer = this;
+    original(this);
+    movingViewPlayer = nullptr;
+}
+#include<MC/ChunkViewSource.hpp>
+TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?$function@$$A6AXV?$buffer_span_mut@V?$shared_ptr@VLevelChunk@@@std@@@@V?$buffer_span@I@@@Z@std@@@Z",
+       BlockPos& a1, int a2, bool a3, std::function<void(class buffer_span_mut<class std::shared_ptr<class LevelChunk>>, class buffer_span<unsigned int>)> a4)
+{
+    if (a1.x < -100000000 || a1.y > 100000000)
+    {
+        Player* pl = movingViewPlayer;
+        if (pl->isPlayer())
+        {
+            logger.warn << "Player(" << pl->getRealName() << ") sent invalid MoveView Packet!" << Logger::endl;
+            pl->setPos(pl->getPosOld());
+        }
+        return 0;
+    }
+    return original(this, a1,a2,a3,a4);
+}
+
+

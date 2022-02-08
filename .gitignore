@@ -26,3 +26,4 @@ RELEASE/plugins/LiteLoader/LLUnifiedOutput.pdb
 !.idea/cmake.xml
 
 cmake-build-release/
+/out

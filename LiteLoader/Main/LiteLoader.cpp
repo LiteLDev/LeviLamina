@@ -1,4 +1,6 @@
 #include <Windows.h>
+#include <TlHelp32.h>
+#include <Psapi.h>
 #include <string>
 #include <iostream>
 #include <LoggerAPI.h>
@@ -17,8 +19,10 @@ using namespace std;
 
 Logger logger("LiteLoader");
 
-void FixPluginsLibDir() {  // add plugins folder to path
-    auto *buffer = new WCHAR[8192];
+// Add plugins folder to path
+void FixPluginsLibDir()
+{
+    auto buffer = new WCHAR[8192];
     auto sz = GetEnvironmentVariableW(TEXT("PATH"), buffer, 8192);
     std::wstring PATH{buffer, sz};
     sz = GetCurrentDirectoryW(8192, buffer);
@@ -27,12 +31,68 @@ void FixPluginsLibDir() {  // add plugins folder to path
     delete[] buffer;
 }
 
-void FixUpCWD() {
+void FixUpCWD()
+{
     string buf;
     buf.assign(8192, '\0');
     GetModuleFileNameA(nullptr, buf.data(), 8192);
     buf = buf.substr(0, buf.find_last_of('\\'));
     SetCurrentDirectoryA(buf.c_str());
+}
+
+void CheckRunningBDS()
+{
+    std::vector<DWORD> pids;
+    PROCESSENTRY32 pe32{};
+    pe32.dwSize = sizeof(pe32);
+    HANDLE hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hProcessSnap == INVALID_HANDLE_VALUE) return;
+    bool res = Process32First(hProcessSnap, &pe32); // Start traversing
+    while (res)
+    {
+        std::wstring name = pe32.szExeFile;
+        auto pid = pe32.th32ProcessID;
+        if (_getpid() != pid && (name == L"bedrock_server.exe" || name == L"bedrock_server_mod.exe")) {
+            pids.push_back(pid);
+        }
+        res = Process32Next(hProcessSnap, &pe32);
+    }
+    CloseHandle(hProcessSnap);
+    // Get current process path
+    auto buf = new WCHAR[8192];
+    auto sz = GetModuleFileName(NULL, buf, 8192);
+    std::wstring current{buf, sz}; // Copy
+    delete[] buf;
+    buf = 0;
+    // Get full path
+    for (auto& pid : pids) {
+        auto buf = new WCHAR[8196];
+        auto han = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
+        if (han)
+        {
+            DWORD sz = 0;
+            buf = new WCHAR[8192];
+            if (sz = GetModuleFileNameEx(han, NULL, buf, 8192))
+            {
+                std::wstring path{buf, sz};
+                if (current == path)
+                {
+                    logger.error("Detected the existence of another bds process with the same path!");
+                    logger.error("This may cause the network port and the level to be occupied");
+                    logger.error("Do you want to kill the process? PID {} (y=Yes,n=No)", pid);
+                    char ch;
+                    cin >> ch;
+                    if (ch == 'y' || ch == 'Y')
+                    {
+                        auto cmd = "taskkill /F /PID " + std::to_string(pid);
+                        system(cmd.c_str());
+                    }
+                }
+            }
+            CloseHandle(han);
+            delete[] buf;
+        }
+    }
 }
 
 extern void RegisterCommands();
@@ -71,32 +131,36 @@ void CheckDevMode() {
     }
 }
 
-//extern
+// extern
 extern void EndScheduleSystem();
 extern void FixBugEvent();
 
-void LLMain() {
-    //Set global SEH-Exception handler
+void LLMain()
+{
+    // Set global SEH-Exception handler
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
-    //Prohibit pop-up windows to facilitate automatic restart
+    // Prohibit pop-up windows to facilitate automatic restart
     SetErrorMode(SEM_FAILCRITICALERRORS | SEM_NOGPFAULTERRORBOX | SEM_NOALIGNMENTFAULTEXCEPT);
 
-    //Disable Output-Sync
+    // Disable Output-Sync
     std::ios::sync_with_stdio(false);
 
-    //Create Plugin Directory
+    // Create Plugin Directory
     std::error_code ec;
     std::filesystem::create_directories("plugins", ec);
 
-    //Fix problems
+    // Fix problems
     FixUpCWD();
     FixPluginsLibDir();
 
-    //Init LL Logger
+    // Check Running BDS
+    CheckRunningBDS();
+
+    // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
-    //Load Config
+    // Load Config
     LL::LoadLLConfig();
     InitPlayerDatabase();
 
@@ -114,7 +178,7 @@ void LLMain() {
     //DebugMode
     CheckDevMode();
 
-    //Builtin CrashLogger
+    // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     //Register Myself
@@ -126,10 +190,10 @@ void LLMain() {
     //Load plugins
     LL::LoadMain();
 
-    //Register built-in commands
+    // Register built-in commands
     RegisterCommands();
 
-    //Register simple server logger
+    // Register simple server logger
     RegisterSimpleServerLogger();
 
     FixBugEvent();
@@ -143,19 +207,21 @@ void LLMain() {
         return true;
     });
 
-    //Register Cleanup
+    // Register Cleanup
     Event::ServerStoppedEvent::subscribe([](Event::ServerStoppedEvent) {
         EndScheduleSystem();
         return true;
     });
-
 }
 
 // Call LLMain
-THook(int, "main", int a, void *b) {
-    char **str = static_cast<char **>(b);
-    for (int i = 0; i < a; ++i) {
-        if (strcmp(str[i], "--noColor") == 0) {
+THook(int, "main", int a, void* b)
+{
+    char** str = static_cast<char**>(b);
+    for (int i = 0; i < a; ++i)
+    {
+        if (strcmp(str[i], "--noColor") == 0)
+        {
             LL::commandLineOption.noColorOption = true;
             break;
         }
@@ -163,4 +229,3 @@ THook(int, "main", int a, void *b) {
     LLMain();
     return original(a, b);
 }
-

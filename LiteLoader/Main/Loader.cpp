@@ -16,15 +16,19 @@
 
 using namespace std;
 
-vector<std::wstring> GetPreloadList() {
+vector<std::wstring> GetPreloadList()
+{
     //若在preload.conf中，则不加载
-    vector<std::wstring> preload_list{};
+    vector<std::wstring> preloadList{};
 
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
+    {
         std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
-        if (dllList) {
+        if (dllList)
+        {
             std::wstring dllName;
-            while (getline(dllList, dllName)) {
+            while (getline(dllList, dllName))
+            {
                 if (dllName.back() == TEXT('\n'))
                     dllName.pop_back();
                 if (dllName.back() == TEXT('\r'))
@@ -32,12 +36,12 @@ vector<std::wstring> GetPreloadList() {
 
                 if (dllName.empty() || dllName.front() == TEXT('#'))
                     continue;
-                preload_list.push_back(dllName);
+                preloadList.push_back(dllName);
             }
             dllList.close();
         }
     }
-    return preload_list;
+    return preloadList;
 }
 
 void CleanOldScriptEngine()
@@ -120,7 +124,9 @@ void LL::LoadMain() {
             if (PluginManager::getPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
             }
-        } else {
+        }
+        else
+        {
             logger.error("Fail to load plugin <{}>", pluginFileName);
             logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
@@ -141,7 +147,9 @@ void LL::LoadMain() {
                 logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
                 logger.error("Exception: ", e.what());
                 logger.error("Fail to init this plugin!");
-            } catch (...) {
+            }
+            catch (...)
+            {
                 logger.error("Plugin <{}> throws an exception in onPostInit", name);
                 logger.error("Fail to init this plugin!");
             }

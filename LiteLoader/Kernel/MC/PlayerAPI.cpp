@@ -60,6 +60,8 @@ std::string Player::getRealName()
 
 int Player::getAvgPing() 
 {
+    if (isSimulatedPlayer())
+        return -1;
     return Global<Minecraft>->getNetworkHandler().getPeerForUser(*getNetworkIdentifier())->getNetworkStatus().avgping;
 }
 

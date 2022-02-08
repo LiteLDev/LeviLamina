@@ -52,9 +52,6 @@
     <Filter Include="Kernel\NBT\nbt-cpp">
       <UniqueIdentifier>{abcde5be-b05d-45ec-a4e4-96df63633116}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Kernel\GUI">
-      <UniqueIdentifier>{e369f9c2-6d7e-4295-beeb-53e83e8478fe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header\Impl">
       <UniqueIdentifier>{7006e6eb-0a05-4de0-8fde-ae880320a014}</UniqueIdentifier>
     </Filter>
@@ -198,9 +195,6 @@
     <ClCompile Include="Kernel\MC\ActorDamageSource.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\GUI\GuiAPI.cpp">
-      <Filter>Kernel\GUI</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\LoggerAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -290,6 +284,10 @@
     </ClCompile>
     <ClCompile Include="Kernel\FormUI.cpp">
       <Filter>Kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="Header\MC\SimulatedPlayer.cpp" />
+    <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp">
+      <Filter>Kernel\MC</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -554,9 +552,6 @@
     <ClInclude Include="Header\MC\ActorDamageSource.hpp">
       <Filter>Header\MC</Filter>
     </ClInclude>
-    <ClInclude Include="Header\GuiAPI.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Header\MC\CommandSelector.hpp">
       <Filter>Header\Command</Filter>
     </ClInclude>
@@ -604,6 +599,9 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\DbgHelper.h">
       <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\SimulatedPlayer.hpp">
+      <Filter>Header\MC</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

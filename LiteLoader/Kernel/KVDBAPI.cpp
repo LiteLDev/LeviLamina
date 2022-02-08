@@ -9,11 +9,18 @@ std::unique_ptr<KVDB> KVDB::create(const string& path, bool read_cache, int cach
 {
     CreateDirs(path);
     auto db = std::make_unique<KVDB>();
-    db->__init(path.c_str(), read_cache, cache_sz, Bfilter_bit);
+    db->_init(path.c_str(), true, read_cache, cache_sz, Bfilter_bit);
+    return db;
+}
+std::unique_ptr<KVDB> KVDB::open(const string& path, bool create, bool read_cache, int cache_sz,int Bfilter_bit)
+{
+    CreateDirs(path);
+    auto db = std::make_unique<KVDB>();
+    db->_init(path.c_str(), create, read_cache, cache_sz, Bfilter_bit);
     return db;
 }
 
-void KVDB::__init(const char* path, bool read_cache, int cache_sz, int Bfilter_bit)
+void KVDB::_init(const char* path, bool create, bool read_cache, int cache_sz, int Bfilter_bit)
 {
     rdopt = leveldb::ReadOptions();
     wropt = leveldb::WriteOptions();
@@ -28,7 +35,7 @@ void KVDB::__init(const char* path, bool read_cache, int cache_sz, int Bfilter_b
     options.reuse_logs = true; // WARN:EXPERIMENTAL
     if (Bfilter_bit)
         options.filter_policy = leveldb::NewBloomFilterPolicy(Bfilter_bit);
-    options.create_if_missing = true;
+    options.create_if_missing = create;
     dbpath = path;
     status = leveldb::DB::Open(options, path, &db);
     if (!status.ok())
@@ -54,26 +61,34 @@ bool KVDB::get(string_view key, string& val)
     {
         if (s.IsNotFound())
             return false;
-        levelDBLogger.error("[DB Error]get %s %s\n", dbpath.c_str(), s.ToString().c_str());
+        levelDBLogger.error("get %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }
     return true;
+}
+std::optional<std::string> KVDB::get(string_view key)
+{
+    std::string result;
+    auto s = db->Get(rdopt, leveldb::Slice(key.data(), key.size()), &result);
+    if (!s.ok())
+    {
+        return std::nullopt;
+    }
+    return result;
 }
 
 bool KVDB::set(string_view key, string_view val)
 {
-    // WATCH_ME("put kvdb " + dpath);
     auto s = db->Put(wropt, leveldb::Slice(key.data(), key.size()),
                      leveldb::Slice(val.data(), val.size()));
     if (!s.ok())
     {
-        levelDBLogger.error("[DB Error]put %s %s\n", dbpath.c_str(), s.ToString().c_str());
+        levelDBLogger.error("put %s %s\n", dbpath.c_str(), s.ToString().c_str());
     }
     return true;
 }
 
 bool KVDB::del(string_view key)
 {
-    // WATCH_ME("del kvdb " + dpath);
     auto s = db->Delete(wropt, leveldb::Slice(key.data(), key.size()));
     if (!s.ok())
     {

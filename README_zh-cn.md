@@ -283,6 +283,7 @@ PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](
 [Hash](https://github.com/Chocobo1/Hash) GPL v3    
 [ThreadPool](https://github.com/jhasse/ThreadPool) Zlib License    
 [LightWebSocketClient](https://github.com/cyanray/LightWebSocketClient) MIT License
+[magic_enum](https://github.com/Neargye/magic_enum) MIT License
 
 ### 额外限制和例外
 

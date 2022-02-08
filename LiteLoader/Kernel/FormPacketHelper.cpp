@@ -1,6 +1,5 @@
 #include <Global.h>
 #include <FormUI.h>
-#include <GuiAPI.h>
 #include <LLAPI.h>
 
 #include <Impl/FormPacketHelper.h>
@@ -174,8 +173,8 @@ Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id
     return (Player*)handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
-THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-    void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+    NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
     try
     {
@@ -191,7 +190,6 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
                 data.pop_back();
 
             HandleFormPacket(sp, formId, data);
-            GUIcallbcak(sp, formId, data);
         }
     }
     catch (const seh_exception& e)
@@ -210,5 +208,5 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
         PrintCurrentStackTraceback();
     }
 
-    original(_this, id, handler, pPacket);
+    original(this, id, handler, pPacket);
 }

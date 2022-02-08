@@ -5,7 +5,7 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
 
 
 /////////////////////// SEH Protection ///////////////////////
@@ -40,6 +40,7 @@ namespace LL {
         bool enableAntiGive = true;
         bool enableUnlockCmd = true;
         bool enableErrorStackTraceback = true;
+        bool enableUnoccupyPort19132 = true;
 
         //Runtime Config
         SeverStatus serverStatus = SeverStatus::Starting;
