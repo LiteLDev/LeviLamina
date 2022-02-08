@@ -653,7 +653,7 @@ TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVA
     return original(this, a2, a3, a4, a5, a6);
 }
 
-TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
+TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
                        ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3& a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
