@@ -100,9 +100,9 @@ class IntArrayTag const* CompoundTag::getIntArrayTag(class gsl::basic_string_spa
     return const_cast<Tag*>(get(key))->asIntArrayTag();
 };
 
-class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
-    return const_cast<Tag*>(get(key))->asStringTag();
-};
+//class StringTag const* CompoundTag::getStringTag(class gsl::basic_string_span<char const, -1> key) const {
+//    return const_cast<Tag*>(get(key))->asStringTag();
+//};
 
 class ListTag const* CompoundTag::getListTag(class gsl::basic_string_span<char const, -1> key) const {
     return getList(key);

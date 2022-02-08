@@ -26,7 +26,6 @@ struct HardcodedSpawningArea {
     HardcodedSpawningArea(HardcodedSpawningArea const&) = delete;
     HardcodedSpawningArea(HardcodedSpawningArea const&&) = delete;
 };
-
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELCHUNK

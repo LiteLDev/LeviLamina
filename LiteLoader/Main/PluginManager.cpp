@@ -312,6 +312,7 @@ bool LL::PluginManager::callEventAtHotUnload(std::string pluginName)
     }
 
     Event::ServerStoppedEvent().callToPlugin(pluginName);       // ServerStoppedEvent
+    return true;
 }
 
 //Helper

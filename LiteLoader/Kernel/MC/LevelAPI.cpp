@@ -71,7 +71,7 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
 BlockSource* Level::getBlockSource(int dimID) {
     //auto dim = Global<Level>->createDimension(dimID);
     auto dim = Global<Level>->getDimension(dimID);
-    return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    return &dim->getBlockSourceFromMainChunkSource();
     //return dAccess<BlockSource*>(dim, 96);
 }
 
@@ -109,7 +109,7 @@ Block* Level::getBlockEx(const BlockPos& pos, int dimId)
     if (!dim)
         return nullptr;
 
-    auto bs = &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    auto bs = &dim->getBlockSourceFromMainChunkSource();
     auto lc = bs->getChunkAt(pos);
     if (!lc)
         return nullptr;

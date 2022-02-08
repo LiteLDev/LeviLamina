@@ -98,12 +98,13 @@ ActorUniqueID Actor::getActorUniqueId() const {
         return {0};
     }
 }
-
-bool Actor::teleport(Vec3 to, int dimID) {
+#include <MC/TeleportRotationData.hpp>
+bool Actor::teleport(Vec3 to, int dimID)
+{
     char mem[48];
-    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, class RelativeFloat, class RelativeFloat, int))(&TeleportCommand::computeTarget);
+    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);
     auto rot = getRotation();
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, rot.x, rot.y, 15);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, {}, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
@@ -148,7 +149,7 @@ bool Actor::stopFire() {
 
 
 Vec3 Actor::getCameraPos() const {
-    Vec3 pos = *(Vec3*)&getStateVectorComponent();
+    Vec3 pos = *(Vec3*)&getStateVector();
     if (isSneaking()) {
         pos.y += -0.125;
     } else {
@@ -200,7 +201,7 @@ Actor* Actor::getActorFromViewVector(float maxDistance) {
     auto& bs = getRegion();
     auto pos = getCameraPos();
     auto viewVec = getViewVector(1.0f);
-    auto aabb = *(AABB*)&_getAABBShapeComponentNonConst();
+    auto aabb = *(AABB*)&_getAABBShapeNonConst();
     auto player = isPlayer() ? (Player*)this : nullptr;
     Actor* result = nullptr;
     float distance = 0.0f;

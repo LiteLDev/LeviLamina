@@ -44,7 +44,7 @@ public:
     MCAPI bool isNull() const;
     MCAPI bool isValid() const;
     MCAPI void operator=(class ItemDescriptor&&);
-    MCAPI void operator=(class ItemDescriptor const&);
+    //MCAPI void operator=(class ItemDescriptor const&);
     MCAPI bool operator==(class ItemDescriptor const&) const;
     MCAPI bool sameItemAndAux(class ItemDescriptor const&) const;
     MCAPI bool sameItemAndAux(class ItemStack const&) const;

@@ -593,7 +593,7 @@ TInstanceHook(bool, "?mayPlace@BlockSource@@QEAA_NAEBVBlock@@AEBVBlockPos@@EPEAV
 }
 
 TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3 a6)
+       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -632,11 +632,11 @@ TClasslessInstanceHook(bool, "?_useOn@BambooBlockItem@@UEBA_NAEAVItemStack@@AEAV
 //        }
 //    }
 //    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//    return original(a1, a2, a3, a4, a5, a6);
 //}
 
 TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-     ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5,Vec3& a6)
+     ItemStackBase *a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -654,7 +654,7 @@ TClasslessInstanceHook(bool, "?_tryUseOn@BedItem@@AEBA_NAEAVItemStackBase@@AEAVA
 }
 
 TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-                       ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3& a6)
+      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -673,7 +673,7 @@ TClasslessInstanceHook(bool, "?_useOn@DyePowderItem@@EEBA_NAEAVItemStack@@AEAVAc
 }
 
 TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3 a6)
+      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -722,7 +722,7 @@ TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@
 }
 
 TClasslessInstanceHook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EAEBVVec3@@@Z",
-      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5,Vec3 a6)
+      ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 {
     IF_LISTENED(PlayerPlaceBlockEvent)
     {
@@ -740,7 +740,7 @@ TClasslessInstanceHook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEA
 }
 
 //THook(bool, "?_useOn@SignItem@@UEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z", 
-//      class SignItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+//      class SignItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 //{
 //    IF_LISTENED(PlayerPlaceBlockEvent)
 //    {
@@ -757,7 +757,7 @@ TClasslessInstanceHook(bool, "?_useOn@RedStoneDustItem@@EEBA_NAEAVItemStack@@AEA
 //        }
 //    }
 //    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//    return original(a1, a2, a3, a4, a5, a6);
 //}
 
 TInstanceHook(bool, "?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z",
@@ -786,7 +786,7 @@ TInstanceHook(bool, "?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAV
 }
 
 //THook(bool, "?_useOn@BlockPlanterItem@@MEBA_NAEAVItemStack@@AEAVActor@@VBlockPos@@EMMM@Z",
-//      class BlockPlanterItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, float a6, float a7, float a8)
+//      class BlockPlanterItem* a1, ItemStack* a2, Actor* a3, BlockPos a4, unsigned char a5, Vec3* a6)
 //{
 //    IF_LISTENED(PlayerPlaceBlockEvent)
 //    {
@@ -800,7 +800,7 @@ TInstanceHook(bool, "?_calculatePlacePos@SignItem@@EEBA_NAEAVItemStackBase@@AEAV
 //        }
 //    }
 //    IF_LISTENED_END(PlayerPlaceBlockEvent)
-//    return original(a1, a2, a3, a4, a5, a6, a7, a8);
+//    return original(a1, a2, a3, a4, a5, a6);
 //}
 
 #include <MC/SeedItemComponentLegacy.hpp>
@@ -1804,7 +1804,7 @@ TClasslessInstanceHook(void, "?releaseUsing@TridentItem@@UEBAXAEAVItemStack@@PEA
 }
 
 ////////////// NpcCmd //////////////
-TInstanceHook(bool,
+TInstanceHook(void,
       "?executeCommandAction@NpcComponent@@QEAAXAEAVActor@@AEAVPlayer@@HAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
       NpcComponent, Actor* ac, Player* pl, int a4, string& a5)
 {
@@ -1822,7 +1822,7 @@ TInstanceHook(bool,
             ev.mNpc = ac;
             ev.mCommand = actionAt->getText();
             if (!ev.call()) 
-                return false;
+                return;
         }
     }
     IF_LISTENED_END(NpcCmdEvent)
@@ -1903,7 +1903,7 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
     original(this);
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
-    Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
+    //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
 
     LL::globalConfig.serverStatus = LL::SeverStatus::Running;
 

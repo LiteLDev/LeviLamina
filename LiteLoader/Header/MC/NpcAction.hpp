@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~NpcAction();
     /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual ~NpcAction();
+    /*2*/ virtual void __unk_vfn_1();
     /*
     inline  ~NpcAction(){
          (NpcAction::*rv)();

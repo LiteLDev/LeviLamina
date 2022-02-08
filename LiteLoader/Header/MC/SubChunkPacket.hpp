@@ -13,7 +13,8 @@ class SubChunkPacket : public Packet {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    struct SubChunkPacketData;
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SUBCHUNKPACKET

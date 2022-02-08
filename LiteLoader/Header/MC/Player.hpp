@@ -297,7 +297,7 @@ public:
     /*176*/ virtual void __unk_vfn_46();
     /*177*/ virtual void __unk_vfn_47();
     /*178*/ virtual void __unk_vfn_48();
-    /*179*/ virtual void __unk_vfn_49();
+    ///*179*/ virtual void __unk_vfn_49();
     /*180*/ virtual void __unk_vfn_50();
     /*181*/ virtual void __unk_vfn_51();
     /*182*/ virtual void registerTrackedBoss(struct ActorUniqueID);

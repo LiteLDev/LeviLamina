@@ -24,7 +24,6 @@
 
 #include <MC/Level.hpp>
 #include <MC/ItemStack.hpp>
-#include <MC/ScriptItemStack.hpp>
 #include <MC/Container.hpp>
 #include <MC/SimpleContainer.hpp>
 #include <MC/Scoreboard.hpp>
@@ -148,7 +147,7 @@ string Player::getDeviceTypeName()
 bool Player::kick(const string& msg) 
 {
     NetworkIdentifier* pNetworkIdentifier = getNetworkIdentifier();
-    Global<Minecraft>->getServerNetworkHandler()->disconnectClient(*pNetworkIdentifier, msg, 0);
+    Global<ServerNetworkHandler>->disconnectClient(*pNetworkIdentifier, msg, 0);
     return true;
 }
 
