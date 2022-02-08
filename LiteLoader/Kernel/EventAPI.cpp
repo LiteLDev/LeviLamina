@@ -828,25 +828,24 @@ TInstanceHook(bool, "?useOn@SeedItemComponentLegacy@@QEAA_NAEAVItemStack@@AEAVAc
 }
 
 
-
 /////////////////// PlayerOpenContainer ///////////////////
-TClasslessInstanceHook(__int64,
-      "?onPlayerOpenContainer@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z",
-       void* a2)
+TClasslessInstanceHook(__int64, "?onEvent@VanillaServerGameplayEventListener@@UEAA?AW4EventResult@@AEBUPlayerOpenContainerEvent@@@Z", void* a2)
 {
-    IF_LISTENED(PlayerOpenContainerEvent)
+    Actor* pl = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ", Actor*, void*)(a2);
+    if (pl->isPlayer())
     {
-        BlockPos bp = dAccess<BlockPos>(a2, 28); // IDA VanillaServerGameplayEventListener::onPlayerOpenContainer
-        Player* pl = SymCall("??$tryUnwrap@VPlayer@@$$V@WeakEntityRef@@QEBAPEAVPlayer@@XZ", Player*, void*)(a2);
-
-        PlayerOpenContainerEvent ev{};
-        ev.mPlayer = pl;
-        ev.mBlockInstance = Level::getBlockInstance(bp, pl->getDimensionId());
-        ev.mContainer = ev.mBlockInstance.getContainer();
-        if (!ev.call())
-            return 0;
+        IF_LISTENED(PlayerOpenContainerEvent)
+        {
+            BlockPos bp = dAccess<BlockPos>(a2, 28);
+            PlayerOpenContainerEvent ev{};
+            ev.mPlayer = (Player*)pl;
+            ev.mBlockInstance = Level::getBlockInstance(bp, pl->getDimensionId());
+            ev.mContainer = ev.mBlockInstance.getContainer();
+            if (!ev.call())
+                return 0;
+        }
+        IF_LISTENED_END(PlayerOpenContainerEvent)
     }
-    IF_LISTENED_END(PlayerOpenContainerEvent)
     return original(this, a2);
 }
 
