@@ -112,7 +112,7 @@ namespace LL {
             }
             if (modules.find("WelcomeText") != modules.end()) {
                 const nlohmann::json& listen = modules.at("WelcomeText");
-                conf.enableErrorStackTraceback = listen.value("enabled", true);
+                conf.enableWelcomeText = listen.value("enabled", true);
             }
         }
     }
