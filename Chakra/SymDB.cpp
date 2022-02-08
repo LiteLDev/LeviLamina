@@ -12,6 +12,7 @@
 #include "../LiteLoader/Header/third-party/detours/detours.h"
 #include "../LiteLoader/Header/third-party/FMT/chrono.h"
 #include "../LiteLoader/Header/third-party/FMT/os.h"
+#include "../LiteLoader/Header/third-party/FMT/color.h"
 
 using std::list;
 using std::string, std::string_view;
@@ -212,7 +213,9 @@ unordered_map<string, int, aphash> *FuncMap;
 
 CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
-    fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] Loading Symbols\n", fmt::localtime(_time64(0))));
+    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
+    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
+    fmt::print(fmt::format("[SymDB] Loading Symbols\n", fmt::localtime(_time64(0))));
     InitializeCriticalSection(&dlsymLock);
     FuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(FuncMap);
@@ -227,13 +230,15 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     if (exportTableFn == symdbFn && exportTableFn != nullptr) {
-        fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] HealthCheckPassed <{}>\n", fmt::localtime(_time64(0)), exportTableFn));
+        //fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] HealthCheckPassed <{}>\n", fmt::localtime(_time64(0)), exportTableFn));
     } else {
         //fmt::print(fmt::format(fmt::fg(fmt::color::red) | fmt::emphasis::bold, "[{:%Y-%m-%d %H:%M:%S} ERROR] HealthCheck Failed <{}!={}>\n", fmt::localtime(_time64(0)), exportTableFn, symdbFn));
         //fmt::print(fmt::format("[{:%Y-%m-%d %H:%M:%S} Info] Are you running bedrock_serve_mod.exe?\n", fmt::localtime(_time64(0))));
     }
     LeaveCriticalSection(&dlsymLock);
-    fmt::print(fmt::format("[{:%H:%M:%S} Info][SymDB] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), FuncMap->size()));
+    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
+    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
+    fmt::print(fmt::format("[SymDB] FastDlsymInited <{}>\n", fmt::localtime(_time64(0)), FuncMap->size()));
     fflush(stdout);
 }
 
@@ -274,13 +279,17 @@ extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
             LeaveCriticalSection(&dlsymLock);
             return (void *)(BaseAdr + iter->second);
         } else {
-            fmt::print(fmt::format("[{:%H:%M:%S} Info] Failed to look up Function in Memory {}\n", fmt::localtime(_time64(0)), x));
+             fmt::print(fmt::fg(fmt::color::sky_blue),fmt::format("{:%H:%M:%S}",fmt::localtime(_time64(0))));
+             fmt::print(fmt::fg(fmt::terminal_color::bright_red), fmt::format(" ERROR ", fmt::localtime(_time64(0))));
+             fmt::print(fmt::fg(fmt::color::red2),fmt::format(" Failed to look up Function in Memory {}\n", x));
         }
         LeaveCriticalSection(&dlsymLock);
     }
     auto rv = SymDB->getsym(x);
     if (rv == -1) {
-        fmt::print(fmt::format("[{:%H:%M:%S} Info] Failed to look up Function in SymDB2 {}\n", fmt::localtime(_time64(0)), x));
+        fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
+        fmt::print(fmt::fg(fmt::terminal_color::bright_red), fmt::format(" ERROR ", fmt::localtime(_time64(0))));
+        fmt::print(fmt::fg(fmt::color::red2),fmt::format(" Failed to look up Function in SymDB2 {}\n", fmt::localtime(_time64(0)), x));
         return nullptr;
     }
     return (void *)(BaseAdr + rv);

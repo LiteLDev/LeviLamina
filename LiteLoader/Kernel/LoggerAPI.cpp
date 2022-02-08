@@ -87,17 +87,44 @@ bool checkLogLevel(int level, int outLevel) {
         return true;
     return false;
 }
+constexpr unsigned int H(string_view s)
+{
+    auto str = s.data();
+    unsigned int hash = 5381;
+    while (*str)
+    {
+        hash = ((hash << 5) + hash) + (*str++);
+    }
+    hash &= ~(1 << 31);
+    return hash;
+}
+
+fmt::text_style getModeColor(string a1)
+{
+    switch (H(a1))
+    {
+        case H("INFO"): return fmt::fg(fmt::color::blue_violet);
+        case H("WARN"): return fmt::fg(fmt::color::yellow2);
+        case H("DEBUG"): return fmt::fg(fmt::terminal_color::bright_green);
+        case H("ERROR"): return fmt::fg(fmt::terminal_color::bright_red);
+        case H("FATAL"): return fmt::fg(fmt::color::red);
+    }
+}
 
 void Logger::endlImpl(HMODULE hPlugin, OutputStream &o) {
     std::string title = o.logger->title;
     if (!title.empty())
         title = "[" + title + "]";
     if (checkLogLevel(o.logger->consoleLevel, o.level)) {
+        fmt::print(LL::globalConfig.colorLog ? fmt::fg(fmt::color::sky_blue) : fmt::text_style(),
+                   "{:%H:%M:%S}", fmt::localtime(_time64(nullptr)));
+
+        fmt::print(
+            LL::globalConfig.colorLog ? getModeColor(o.levelPrefix) : fmt::text_style(),
+            " {} ", o.levelPrefix,o.os.str());
         fmt::print(
                 LL::globalConfig.colorLog ? o.style : fmt::text_style(),
-                o.consoleFormat,
-                fmt::localtime(_time64(nullptr)),
-                o.levelPrefix, title, o.os.str()
+            o.consoleFormat, title, o.os.str()
         );
     }
     if (checkLogLevel(o.logger->fileLevel, o.level)) {
@@ -126,42 +153,42 @@ Logger::Logger(const std::string &title) {
     this->title = title;
     debug = OutputStream{this,
                          5,
-                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "{} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§o[{}{}]{} {}\n",
                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
-                         "Debug"
+                         "DEBUG"
     };
     info = OutputStream{this,
                         4,
-                        "[{:%H:%M:%S} {}]{} {}\n",
+                        "{} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         "[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::white),
-                        "Info"
+                        "INFO"
     };
     warn = OutputStream{this,
                         3,
-                        "[{:%H:%M:%S} {}]{} {}\n",
+                        "{} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         "§l§e[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
-                        "Warn"
+                        "WARN"
     };
     error = OutputStream{this,
                          2,
-                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "{} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§l§c[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
-                         "Error"
+                         "ERROR"
     };
     fatal = OutputStream{this,
                          1,
-                         "[{:%H:%M:%S} {}]{} {}\n",
+                         "{} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§l§4[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-                         "Fatal"
+                         "FATAL"
     };
 }
