@@ -38,7 +38,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
+          MSBuild.exe ./LiteLoader.sln
         shell: bash
 
       - name: Pack Release
