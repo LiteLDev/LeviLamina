@@ -27,9 +27,9 @@ public:
     /*0*/ virtual ~MultiRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const = 0;
     /*2*/ virtual int getCraftingSize() const = 0;
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4() = 0;
-    /*5*/ virtual void __unk_vfn_5() = 0;
+    /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
+    /*5*/ virtual bool isMultiRecipe() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
     /*7*/ virtual int size() const = 0;
     /*10*/ virtual bool isMultiRecipe() const;

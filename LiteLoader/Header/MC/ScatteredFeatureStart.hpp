@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
+    /*2*/ virtual bool isValid() const;
     /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&, class BaseGameVersion const&);
 

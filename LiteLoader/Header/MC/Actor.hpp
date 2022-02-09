@@ -81,6 +81,7 @@ public:
     /*5*/ virtual class Mob* getLastHurtMob();
     /*6*/ virtual void setLastHurtMob(class Actor*);
     /*7*/ virtual void outOfWorld();
+    /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*9*/ virtual void reloadHardcodedClient(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*11*/ virtual void reloadComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
@@ -300,7 +301,7 @@ public:
     /*225*/ virtual float getPassengerYRotation(class Actor const&) const;
     /*226*/ virtual float getYHeadRot() const;
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*230*/ virtual bool add(class ItemStack&);
     /*231*/ virtual bool drop(class ItemStack const&, bool);
@@ -350,11 +351,6 @@ public:
     inline bool canSeeInvisible() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?canSeeInvisible@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isCreative() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isCreative@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isCreativeModeAllowed(){

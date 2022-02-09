@@ -32,10 +32,10 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void uploadChunk(struct FileInfo const&, struct FileChunkInfo const&, std::vector<unsigned char> const&, class std::function<void (bool)>);
     /*6*/ virtual void uploadStream(struct FileInfo const&, unsigned __int64, std::string const&, class std::function<void (enum IFileChunkUploader::UploadStreamResult)>);
-    /*7*/ virtual void __unk_vfn_7() = 0;
+    /*7*/ virtual bool canCancelUpload(struct FileInfo const&) const = 0;
     /*8*/ virtual void __unk_vfn_8() = 0;
-    /*9*/ virtual void __unk_vfn_9() = 0;
-    /*10*/ virtual void __unk_vfn_10() = 0;
+    /*9*/ virtual enum UploadError getInitErrorCode() const = 0;
+    /*10*/ virtual float getUploadProgress(struct FileInfo const&) const = 0;
     /*11*/ virtual struct FileChunkInfo getChunkInfo(struct FileInfo const&, int) const;
     /*
     inline void confirmChunkReceived(struct FileInfo const& a0, struct FileChunkInfo const& a1){

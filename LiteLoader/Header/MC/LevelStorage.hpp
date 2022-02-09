@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Core.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -32,7 +33,7 @@ public:
     /*5*/ virtual bool loadLevelData(class LevelData&) = 0;
     /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion) = 0;
     /*7*/ virtual void saveLevelData(class LevelData const&) = 0;
-    /*8*/ virtual void __unk_vfn_8() = 0;
+    /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const = 0;
     /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, enum DBHelpers::Category) = 0;
     /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&) = 0;
     /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, enum DBHelpers::Category) = 0;

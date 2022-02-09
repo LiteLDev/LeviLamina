@@ -25,9 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
-    /*4*/ virtual void __unk_vfn_4();
+    /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*8*/ virtual class mce::UUID const& getId() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     MCAPI static class mce::UUID const ID;
 
 protected:

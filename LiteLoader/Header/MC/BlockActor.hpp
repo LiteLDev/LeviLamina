@@ -49,7 +49,7 @@ public:
     /*14*/ virtual void triggerEvent(int, int);
     /*15*/ virtual void clearCache();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual float getShadowRadius(class BlockSource&) const;
     /*18*/ virtual bool hasAlphaLayer() const;
     /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
     /*20*/ virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
@@ -62,7 +62,7 @@ public:
     /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
     /*28*/ virtual void __unk_vfn_28();
     /*29*/ virtual void __unk_vfn_29();
-    /*30*/ virtual void __unk_vfn_30();
+    /*30*/ virtual float getDeletionDelayTimeSeconds() const;
     /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual void __unk_vfn_32();
     /*33*/ virtual void __unk_vfn_33();
@@ -104,16 +104,6 @@ public:
         void (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
         *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline float getShadowRadius(class BlockSource& a0) const{
-        float (BlockActor::*rv)(class BlockSource&) const;
-        *((void**)&rv) = dlsym("?getShadowRadius@BlockActor@@UEBAMAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    inline float getDeletionDelayTimeSeconds() const{
-        float (BlockActor::*rv)() const;
-        *((void**)&rv) = dlsym("?getDeletionDelayTimeSeconds@BlockActor@@UEBAMXZ");
-        return (this->*rv)();
     }
     inline  ~BlockActor(){
          (BlockActor::*rv)();

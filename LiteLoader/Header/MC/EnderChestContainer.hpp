@@ -24,6 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~EnderChestContainer();
+    /*1*/ virtual void init();
+    /*9*/ virtual void setItem(int, class ItemStack const&);
     /*16*/ virtual void startOpen(class Player&);
     /*17*/ virtual void stopOpen(class Player&);
     /*22*/ virtual void __unk_vfn_22();

@@ -206,8 +206,10 @@ public:
     /*173*/ virtual void onStepOn(class Actor&, class BlockPos const&) const;
     /*174*/ virtual void __unk_vfn_174();
     /*175*/ virtual void __unk_vfn_175();
+    /*176*/ virtual void onPlace(class BlockSource&, class BlockPos const&) const;
     /*177*/ virtual void onFallOn(class BlockSource&, class BlockPos const&, class Actor&, float) const;
     /*178*/ virtual void playerDestroy(class Player&, class BlockPos const&, class Block const&) const;
+    /*179*/ virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*180*/ virtual void randomTick(class BlockSource&, class BlockPos const&, class Random&) const;
     /*181*/ virtual bool shouldRandomTick() const;
     /*182*/ virtual void __unk_vfn_182();
@@ -216,7 +218,7 @@ public:
     /*185*/ virtual bool canSurvive(class BlockSource&, class BlockPos const&) const;
     /*186*/ virtual enum BlockRenderLayer getRenderLayer() const;
     /*187*/ virtual enum BlockRenderLayer getRenderLayer(class Block const&, class BlockSource&, class BlockPos const&) const;
-    /*188*/ virtual void __unk_vfn_188();
+    /*188*/ virtual int getExtraRenderLayers() const;
     /*189*/ virtual float getExplosionResistance(class Actor*) const;
     /*190*/ virtual struct Brightness getLightEmission(class Block const&) const;
     /*191*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
@@ -424,11 +426,6 @@ public:
     inline bool canSurvive(class BlockSource& a0, class BlockPos const& a1) const{
         bool (BlockLegacy::*rv)(class BlockSource&, class BlockPos const&) const;
         *((void**)&rv) = dlsym("?canSurvive@BlockLegacy@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool mayPlaceOn(class BlockSource& a0, class BlockPos const& a1) const{
-        bool (BlockLegacy::*rv)(class BlockSource&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?mayPlaceOn@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
     }
     inline bool canSpawnOn() const{

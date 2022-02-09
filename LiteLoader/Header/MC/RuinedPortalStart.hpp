@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~RuinedPortalStart();
+    /*2*/ virtual bool isValid() const;
     /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI RuinedPortalStart(class BiomeRegistry&, class BiomeSource const&, int, int, class IPreliminarySurfaceProvider const&);
 

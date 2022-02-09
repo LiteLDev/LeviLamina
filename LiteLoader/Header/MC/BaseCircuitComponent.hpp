@@ -40,23 +40,13 @@ public:
     /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
     /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
+    /*18*/ virtual bool isHalfPulse() const;
     /*19*/ virtual bool hasSource(class BaseCircuitComponent&);
     /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
+    /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;
     /*
-    inline bool isHalfPulse() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isHalfPulse@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSecondaryPowered() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?isSecondaryPowered@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool allowIndirect() const{
         bool (BaseCircuitComponent::*rv)() const;
         *((void**)&rv) = dlsym("?allowIndirect@BaseCircuitComponent@@UEBA_NXZ");

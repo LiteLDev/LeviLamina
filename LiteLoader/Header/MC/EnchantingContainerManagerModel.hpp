@@ -29,9 +29,16 @@ public:
     /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*8*/ virtual class ItemStack const& getSlot(int) const;
     /*9*/ virtual void setData(int, int);
-    /*10*/ virtual void broadcastChanges();
+    /*10*/ virtual void __unk_vfn_10();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
+    /*
+    inline void broadcastChanges(){
+        void (EnchantingContainerManagerModel::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@EnchantingContainerManagerModel@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI EnchantingContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI std::vector<class ItemEnchantOption> const& getEnchantOptions() const;
     MCAPI void recalculateOptions();

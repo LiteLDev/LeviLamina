@@ -42,6 +42,7 @@ public:
     /*10*/ virtual void initializeComponents(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*13*/ virtual void _doInitialMove();
     /*14*/ virtual ~Mob();
+    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*31*/ virtual float getInterpolatedBodyRot(float) const;
     /*32*/ virtual float getInterpolatedHeadRot(float) const;
     /*33*/ virtual float getInterpolatedBodyYaw(float) const;
@@ -56,8 +57,10 @@ public:
     /*54*/ virtual void addPassenger(class Actor&);
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
+    /*78*/ virtual float getCameraOffset() const;
     /*82*/ virtual void __unk_vfn_82();
     /*87*/ virtual void __unk_vfn_87();
+    /*88*/ virtual void playerTouch(class Player&);
     /*91*/ virtual bool isImmobile() const;
     /*93*/ virtual bool isPickable();
     /*94*/ virtual void __unk_vfn_94();
@@ -65,6 +68,7 @@ public:
     /*96*/ virtual void setSleeping(bool);
     /*97*/ virtual void __unk_vfn_97();
     /*99*/ virtual bool isBlocking() const;
+    /*100*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
     /*101*/ virtual bool isAlive() const;
     /*104*/ virtual void __unk_vfn_104();
     /*105*/ virtual bool isSurfaceMob() const;
@@ -73,26 +77,37 @@ public:
     /*108*/ virtual void __unk_vfn_108();
     /*111*/ virtual void setTarget(class Actor*);
     /*112*/ virtual class Actor* findAttackTarget();
+    /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*114*/ virtual bool attack(class Actor&, enum ActorDamageCause const&);
+    /*116*/ virtual void adjustDamageAmount(int&) const;
+    /*120*/ virtual void onTame();
+    /*121*/ virtual void onFailedTame();
     /*126*/ virtual bool canPowerJump() const;
     /*128*/ virtual bool isJumping() const;
+    /*130*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
     /*135*/ virtual enum ActorDamageCause getBlockDamageCause(class Block const&) const;
     /*136*/ virtual void actuallyHurt(int, class ActorDamageSource const&, bool);
     /*137*/ virtual void animateHurt();
     /*138*/ virtual bool doFireHurt(int);
     /*140*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*142*/ virtual void handleEntityEvent(enum ActorEvent, int);
+    /*152*/ virtual void awardKillScore(class Actor&, int);
     /*156*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
     /*157*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
     /*158*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*160*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*174*/ virtual bool canFreeze() const;
+    /*179*/ virtual int getPortalWaitTime() const;
+    /*181*/ virtual bool canChangeDimensions() const;
     /*182*/ virtual void __unk_vfn_182();
+    /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*186*/ virtual void causeFallDamage(float, float, class ActorDamageSource);
+    /*193*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual bool inCaravan() const;
     /*196*/ virtual void __unk_vfn_196();
+    /*199*/ virtual bool canSynchronizeNewEntity() const;
     /*200*/ virtual void stopRiding(bool, bool, bool);
     /*203*/ virtual void buildDebugInfo(std::string&) const;
     /*208*/ virtual int getDeathTime() const;
@@ -100,7 +115,12 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*226*/ virtual float getYHeadRot() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*227*/ virtual bool isWorldBuilder() const;
+    /*228*/ virtual bool isCreative() const;
+    /*229*/ virtual bool isAdventure() const;
+    /*233*/ virtual bool canDestroyBlock(class Block const&) const;
+    /*234*/ virtual void setAuxValue(int);
+    /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
     /*246*/ virtual void kill();
@@ -232,11 +252,6 @@ public:
         bool (Mob::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Mob@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline float _getWalkTargetValue(class BlockPos const& a0){
-        float (Mob::*rv)(class BlockPos const&);
-        *((void**)&rv) = dlsym("?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockPos const&>(a0));
     }
     inline  ~Mob(){
          (Mob::*rv)();

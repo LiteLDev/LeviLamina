@@ -26,6 +26,7 @@ public:
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~HudContainerModel();
+    /*2*/ virtual void postInit();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
     /*12*/ virtual void __unk_vfn_12();
@@ -35,6 +36,7 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container* _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
 
 protected:
 

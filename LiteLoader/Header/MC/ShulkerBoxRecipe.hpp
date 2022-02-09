@@ -26,7 +26,8 @@ public:
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     /*12*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);

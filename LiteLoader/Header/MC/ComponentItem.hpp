@@ -29,6 +29,7 @@ public:
     /*0*/ virtual ~ComponentItem();
     /*1*/ virtual bool initServer(class Json::Value&, class SemVersion const&);
     /*2*/ virtual void tearDown();
+    /*3*/ virtual int getMaxUseDuration(class ItemStack const*) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
@@ -40,6 +41,7 @@ public:
     /*13*/ virtual bool isDamageable() const;
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isFood() const;
     /*19*/ virtual bool isThrowable() const;
     /*20*/ virtual bool isUseable() const;
@@ -57,11 +59,13 @@ public:
     /*44*/ virtual int getAttackDamage() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const&) const;
     /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual void __unk_vfn_48();
+    /*48*/ virtual int getPatternIndex() const;
     /*49*/ virtual void __unk_vfn_49();
+    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*51*/ virtual bool canDestroyInCreative() const;
     /*52*/ virtual bool isDestructive(int) const;
     /*53*/ virtual bool isLiquidClipItem(int) const;
+    /*54*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const&) const;
     /*55*/ virtual bool requiresInteract() const;
     /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
     /*57*/ virtual bool isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
@@ -76,13 +80,16 @@ public:
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
+    /*69*/ virtual bool hasCustomColor(class CompoundTag const*) const;
     /*70*/ virtual void __unk_vfn_70();
-    /*72*/ virtual void __unk_vfn_72();
-    /*73*/ virtual void __unk_vfn_73();
+    /*71*/ virtual void clearColor(class ItemStackBase&) const;
+    /*72*/ virtual void clearColor(class CompoundTag*) const;
+    /*73*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
     /*74*/ virtual void __unk_vfn_74();
     /*75*/ virtual void __unk_vfn_75();
     /*77*/ virtual void __unk_vfn_77();
     /*78*/ virtual void __unk_vfn_78();
+    /*80*/ virtual bool canUseOnSimTick() const;
     /*81*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*82*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     /*83*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
@@ -97,15 +104,23 @@ public:
     /*92*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*93*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
     /*97*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
+    /*98*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
+    /*99*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*100*/ virtual class HashedString const& getCooldownType() const;
     /*101*/ virtual int getCooldownTime() const;
+    /*103*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
+    /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
+    /*107*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
+    /*108*/ virtual bool validFishInteraction(int) const;
     /*110*/ virtual void initClient(class Json::Value&, class SemVersion const&);
     /*111*/ virtual std::string getInteractText(class Player const&) const;
     /*112*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
     /*113*/ virtual bool isEmissive(int) const;
     /*115*/ virtual struct TextureUVCoordinateSet const& getIcon(class ItemStackBase const&, int, bool) const;
+    /*116*/ virtual int getIconYOffset() const;
     /*117*/ virtual class Item& setIcon(std::string const&, int);
     /*120*/ virtual bool canBeCharged() const;
+    /*121*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
     /*122*/ virtual void __unk_vfn_122();
     /*125*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
@@ -126,16 +141,6 @@ public:
         int (ComponentItem::*rv)(int, int, bool) const;
         *((void**)&rv) = dlsym("?getVariant@ComponentItem@@UEBAHHH_N@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1), std::forward<bool>(a2));
-    }
-    inline void clearColor(class ItemStackBase& a0) const{
-        void (ComponentItem::*rv)(class ItemStackBase&) const;
-        *((void**)&rv) = dlsym("?clearColor@ComponentItem@@UEBAXAEAVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0));
-    }
-    inline void setColor(class ItemStackBase& a0, class mce::Color const& a1) const{
-        void (ComponentItem::*rv)(class ItemStackBase&, class mce::Color const&) const;
-        *((void**)&rv) = dlsym("?setColor@ComponentItem@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class mce::Color const&>(a1));
     }
     inline bool isComponentBased() const{
         bool (ComponentItem::*rv)() const;

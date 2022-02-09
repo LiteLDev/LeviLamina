@@ -25,6 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~NetherFortressStart();
+    /*2*/ virtual bool isValid() const;
     /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI NetherFortressStart(class Random&, short, int, int);
 

@@ -30,10 +30,13 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
     /*7*/ virtual float getDamageBonus(int, class Actor const&) const;
+    /*8*/ virtual void doPostAttack(class Actor&, class Actor&, int) const;
+    /*9*/ virtual void doPostHurt(class ItemInstance&, class Actor&, class Actor&, int) const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 
 protected:
 

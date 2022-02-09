@@ -25,10 +25,14 @@ public:
 
 public:
     /*0*/ virtual ~OceanMonumentPiece();
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
     /*7*/ virtual int getWorldX(int, int);
     /*8*/ virtual int getWorldZ(int, int);
+    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*
     inline  ~OceanMonumentPiece(){

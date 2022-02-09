@@ -79,7 +79,7 @@ public:
     /*45*/ virtual bool isHandEquipped() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const&) const;
     /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual void __unk_vfn_48();
+    /*48*/ virtual int getPatternIndex() const;
     /*49*/ virtual void __unk_vfn_49();
     /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
     /*51*/ virtual bool canDestroyInCreative() const;
@@ -95,16 +95,16 @@ public:
     /*61*/ virtual void __unk_vfn_61();
     /*62*/ virtual bool isValidAuxValue(int) const;
     /*63*/ virtual int getDamageChance(int) const;
-    /*64*/ virtual void __unk_vfn_64();
+    /*64*/ virtual float getViewDamping() const;
     /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
     /*69*/ virtual bool hasCustomColor(class CompoundTag const*) const;
     /*70*/ virtual void __unk_vfn_70();
-    /*71*/ virtual void clearColor(class CompoundTag*) const;
-    /*72*/ virtual void __unk_vfn_72();
-    /*73*/ virtual void __unk_vfn_73();
+    /*71*/ virtual void clearColor(class ItemStackBase&) const;
+    /*72*/ virtual void clearColor(class CompoundTag*) const;
+    /*73*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
     /*74*/ virtual void __unk_vfn_74();
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
@@ -216,11 +216,6 @@ public:
         *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline int getPatternIndex() const{
-        int (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?getPatternIndex@Item@@UEBAHXZ");
-        return (this->*rv)();
-    }
     inline class FuelItemComponent const* getFuel() const{
         class FuelItemComponent const* (Item::*rv)() const;
         *((void**)&rv) = dlsym("?getFuel@Item@@UEBAPEBVFuelItemComponent@@XZ");
@@ -241,25 +236,10 @@ public:
         *((void**)&rv) = dlsym("?readAdditionalData@Item@@UEBAXAEAVItemStackBase@@AEBVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class CompoundTag const&>(a1));
     }
-    inline void setColor(class ItemStackBase& a0, class mce::Color const& a1) const{
-        void (Item::*rv)(class ItemStackBase&, class mce::Color const&) const;
-        *((void**)&rv) = dlsym("?setColor@Item@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class mce::Color const&>(a1));
-    }
-    inline void clearColor(class ItemStackBase& a0) const{
-        void (Item::*rv)(class ItemStackBase&) const;
-        *((void**)&rv) = dlsym("?clearColor@Item@@UEBAXAEAVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase&>(a0));
-    }
     inline bool _calculatePlacePos(class ItemStackBase& a0, class Actor& a1, unsigned char& a2, class BlockPos& a3) const{
         bool (Item::*rv)(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
         *((void**)&rv) = dlsym("?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class Actor&>(a1), std::forward<unsigned char&>(a2), std::forward<class BlockPos&>(a3));
-    }
-    inline float getViewDamping() const{
-        float (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?getViewDamping@Item@@UEBAMXZ");
-        return (this->*rv)();
     }
     inline  ~Item(){
          (Item::*rv)();
