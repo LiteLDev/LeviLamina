@@ -93,9 +93,6 @@
     <ClCompile Include="Kernel\Utils\CryptHelper.cpp">
       <Filter>Kernel\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="Kernel\Utils\GlobalService.cpp">
-      <Filter>Kernel\Utils</Filter>
-    </ClCompile>
     <ClCompile Include="Kernel\ScheduleAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
@@ -290,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="Kernel\Utils\STLHelper.cpp">
       <Filter>Kernel\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel\Utils\GlobalService.cpp">
+      <Filter>Kernel</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

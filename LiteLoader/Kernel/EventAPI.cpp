@@ -39,90 +39,212 @@
 #include <Utils/StringHelper.h>
 #include <Utils/DbgHelper.h>
 #include <functional>
+#include <tuple>
 #include <iostream>
 #include <string>
 #include <typeinfo>
 #include <vector>
 using namespace Event;
 using std::vector;
-
 extern Logger logger;
 
-class ChangeDimensionRequest;
-class DisconnectPacket;
+/////////////////////////////// Event Data ///////////////////////////////
 
-#define DeclareEventListeners(EVENT) template <> \
-EventTemplate<EVENT>::ListenersContainer EventTemplate<EVENT>::listeners; \
-EventTemplate<EVENT>::ListenersContainerNoConst EventTemplate<EVENT>::listenersNoConst
+int globalListenerId = 0;
 
-DeclareEventListeners(PlayerPreJoinEvent);
-DeclareEventListeners(PlayerJoinEvent);
-DeclareEventListeners(PlayerLeftEvent);
-DeclareEventListeners(PlayerRespawnEvent);
-DeclareEventListeners(PlayerChatEvent);
-DeclareEventListeners(PlayerUseItemEvent);
-DeclareEventListeners(PlayerUseItemOnEvent);
-DeclareEventListeners(PlayerChangeDimEvent);
-DeclareEventListeners(PlayerJumpEvent);
-DeclareEventListeners(EntityTransformEvent);
-DeclareEventListeners(PlayerSneakEvent);
-DeclareEventListeners(PlayerAttackEvent);
-DeclareEventListeners(PlayerAttackBlockEvent);
-DeclareEventListeners(PlayerDieEvent);
-DeclareEventListeners(PlayerTakeItemEvent);
-DeclareEventListeners(PlayerDropItemEvent);
-DeclareEventListeners(PlayerEatEvent);
-DeclareEventListeners(PlayerConsumeTotemEvent);
-DeclareEventListeners(PlayerCmdEvent);
-DeclareEventListeners(PlayerDestroyBlockEvent);
-DeclareEventListeners(PlayerPlaceBlockEvent);
-DeclareEventListeners(PlayerEffectChangedEvent);
-DeclareEventListeners(PlayerStartDestroyBlockEvent);
-DeclareEventListeners(PlayerOpenContainerEvent);
-DeclareEventListeners(PlayerCloseContainerEvent);
-DeclareEventListeners(PlayerInventoryChangeEvent);
-DeclareEventListeners(PlayerMoveEvent);
-DeclareEventListeners(PlayerSprintEvent);
-DeclareEventListeners(PlayerSetArmorEvent);
-DeclareEventListeners(PlayerUseRespawnAnchorEvent);
-DeclareEventListeners(PlayerOpenContainerScreenEvent);
-DeclareEventListeners(PlayerUseFrameBlockEvent);
-DeclareEventListeners(PlayerExperienceAddEvent);
-DeclareEventListeners(MobHurtEvent);
-DeclareEventListeners(MobDieEvent);
-DeclareEventListeners(EntityExplodeEvent);
-DeclareEventListeners(ProjectileHitEntityEvent);
-DeclareEventListeners(WitherBossDestroyEvent);
-DeclareEventListeners(EntityRideEvent);
-DeclareEventListeners(EntityStepOnPressurePlateEvent);
-DeclareEventListeners(NpcCmdEvent);
-DeclareEventListeners(ProjectileSpawnEvent);
-DeclareEventListeners(ProjectileCreatedEvent);
-DeclareEventListeners(ItemUseOnActorEvent);
-DeclareEventListeners(BlockInteractedEvent);
-DeclareEventListeners(ArmorStandChangeEvent);
-DeclareEventListeners(BlockExplodeEvent);
-DeclareEventListeners(ContainerChangeEvent);
-DeclareEventListeners(PistonPushEvent);
-DeclareEventListeners(PistonTryPushEvent);
-DeclareEventListeners(RedStoneUpdateEvent);
-DeclareEventListeners(BlockExplodedEvent);
-DeclareEventListeners(LiquidSpreadEvent);
-DeclareEventListeners(ProjectileHitBlockEvent);
-DeclareEventListeners(HopperSearchItemEvent);
-DeclareEventListeners(HopperPushOutEvent);
-DeclareEventListeners(BlockChangedEvent);
-DeclareEventListeners(FarmLandDecayEvent);
-DeclareEventListeners(FireSpreadEvent);
-DeclareEventListeners(CmdBlockExecuteEvent);
-DeclareEventListeners(ConsoleCmdEvent);
-DeclareEventListeners(PlayerScoreChangedEvent);
-DeclareEventListeners(ConsoleOutputEvent);
-DeclareEventListeners(PostInitEvent);
-DeclareEventListeners(ServerStartedEvent);
-DeclareEventListeners(ServerStoppedEvent);
-DeclareEventListeners(RegCmdEvent);
-DeclareEventListeners(PlayerBedEnterEvent);
+template<typename EVENT>
+struct ListenerData
+{
+    std::string pluginName;
+    int listenerId;
+    bool isRef;
+    std::function<bool(EVENT)> callback;
+    std::function<bool(EVENT&)> callbackRef;
+};
+
+template<typename EVENT>
+std::list<ListenerData<EVENT>> listeners;
+
+
+/////////////////////////////// Listener Manager /////////////////////////////// 
+
+template<typename EVENT>
+int EventManager::addEventListener(std::string name, std::function<bool(EVENT)> callback)
+{
+    int newId = ++globalListenerId;
+    listeners<EVENT>.push_back({ name, newId, false, callback, nullptr });
+    return newId;
+}
+
+template<typename EVENT>
+int EventManager::addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback)
+{
+    int newId = ++globalListenerId;
+    listeners<EVENT>.push_back({ name, newId, true, nullptr, callback });
+    return newId;
+}
+
+template<typename EVENT>
+bool EventManager::removeEventListener(int id)
+{
+    for(auto &i = listeners<EVENT>.begin(); i!=listeners<EVENT>.end(); ++i)
+        if (i->listenerId == id)
+        { listeners<EVENT>.erase(i); return true; }
+    return false;
+}
+
+template<typename EVENT>
+bool EventManager::hasListener()
+{
+    return !listeners<EVENT>.empty();
+}
+
+
+/////////////////////////////// Event Calling /////////////////////////////// 
+
+inline void OutputError(std::string errorMsg, int errorCode, std::string errorWhat, std::string eventName, std::string pluginName)
+{
+    logger.error(errorMsg);
+    logger.error("Error: Code [{}] {}", errorCode, errorWhat);
+    logger.error("In Event ({})", eventName);
+    if (!pluginName.empty())
+        logger.error("In Plugin <{}>", pluginName);
+}
+
+template<typename EVENT>
+bool EventManager::call(EVENT& ev)
+{
+    bool passToBDS = true;
+    for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
+    {
+        try {
+            bool res = i->isRef ? i->callbackRef(ev) : i->callback(ev);
+            if (!res) passToBDS = false;
+        }
+        catch (const seh_exception& e)
+        {
+            OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->pluginName);
+        }
+        catch (const std::exception& e)
+        {
+            OutputError("Uncaught C++ Exception Detected!", errno, e.what(), typeid(EVENT).name(), i->pluginName);
+        }
+        catch (...)
+        {
+            OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), i->pluginName);
+        }
+    }
+    return passToBDS;
+}
+
+template<typename EVENT>
+bool EventManager::callToPlugin(std::string pluginName, EVENT& ev)
+{
+    bool passToBDS = true;
+    for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
+    {
+        if (i->pluginName != pluginName)
+            continue;
+        try {
+            bool res = i->isRef ? i->callbackRef(ev) : i->callback(ev);
+            if (!res) passToBDS = false;
+        }
+        catch (const seh_exception& e)
+        {
+            OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->pluginName);
+        }
+        catch (const std::exception& e)
+        {
+            OutputError("Uncaught C++ Exception Detected!", errno, e.what(), typeid(EVENT).name(), i->pluginName);
+        }
+        catch (...)
+        {
+            OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), i->pluginName);
+        }
+    }
+    return passToBDS;
+}
+
+
+/////////////////////////////// Event Declare /////////////////////////////// 
+
+#define DECLARE_EVENT_MANAGER(EVENT) \
+    template LIAPI int EventManager::addEventListener<EVENT>(std::string name, std::function<bool(EVENT)> callback); \
+    template LIAPI int EventManager::addEventListenerRef<EVENT>(std::string name, std::function<bool(EVENT&)> callback); \
+    template LIAPI bool EventManager::removeEventListener<EVENT>(int id); \
+    template LIAPI bool EventManager::hasListener<EVENT>(); \
+    template LIAPI bool EventManager::call<EVENT>(EVENT& ev); \
+    template LIAPI bool EventManager::callToPlugin<EVENT>(std::string pluginName, EVENT& ev);
+
+DECLARE_EVENT_MANAGER(PlayerPreJoinEvent);
+DECLARE_EVENT_MANAGER(PlayerJoinEvent);
+DECLARE_EVENT_MANAGER(PlayerLeftEvent);
+DECLARE_EVENT_MANAGER(PlayerRespawnEvent);
+DECLARE_EVENT_MANAGER(PlayerChatEvent);
+DECLARE_EVENT_MANAGER(PlayerUseItemEvent);
+DECLARE_EVENT_MANAGER(PlayerUseItemOnEvent);
+DECLARE_EVENT_MANAGER(PlayerChangeDimEvent);
+DECLARE_EVENT_MANAGER(PlayerJumpEvent);
+DECLARE_EVENT_MANAGER(EntityTransformEvent);
+DECLARE_EVENT_MANAGER(PlayerSneakEvent);
+DECLARE_EVENT_MANAGER(PlayerAttackEvent);
+DECLARE_EVENT_MANAGER(PlayerAttackBlockEvent);
+DECLARE_EVENT_MANAGER(PlayerDieEvent);
+DECLARE_EVENT_MANAGER(PlayerTakeItemEvent);
+DECLARE_EVENT_MANAGER(PlayerDropItemEvent);
+DECLARE_EVENT_MANAGER(PlayerEatEvent);
+DECLARE_EVENT_MANAGER(PlayerConsumeTotemEvent);
+DECLARE_EVENT_MANAGER(PlayerCmdEvent);
+DECLARE_EVENT_MANAGER(PlayerDestroyBlockEvent);
+DECLARE_EVENT_MANAGER(PlayerPlaceBlockEvent);
+DECLARE_EVENT_MANAGER(PlayerEffectChangedEvent);
+DECLARE_EVENT_MANAGER(PlayerStartDestroyBlockEvent);
+DECLARE_EVENT_MANAGER(PlayerOpenContainerEvent);
+DECLARE_EVENT_MANAGER(PlayerCloseContainerEvent);
+DECLARE_EVENT_MANAGER(PlayerInventoryChangeEvent);
+DECLARE_EVENT_MANAGER(PlayerMoveEvent);
+DECLARE_EVENT_MANAGER(PlayerSprintEvent);
+DECLARE_EVENT_MANAGER(PlayerSetArmorEvent);
+DECLARE_EVENT_MANAGER(PlayerUseRespawnAnchorEvent);
+DECLARE_EVENT_MANAGER(PlayerOpenContainerScreenEvent);
+DECLARE_EVENT_MANAGER(PlayerUseFrameBlockEvent);
+DECLARE_EVENT_MANAGER(PlayerExperienceAddEvent);
+DECLARE_EVENT_MANAGER(MobHurtEvent);
+DECLARE_EVENT_MANAGER(MobDieEvent);
+DECLARE_EVENT_MANAGER(EntityExplodeEvent);
+DECLARE_EVENT_MANAGER(ProjectileHitEntityEvent);
+DECLARE_EVENT_MANAGER(WitherBossDestroyEvent);
+DECLARE_EVENT_MANAGER(EntityRideEvent);
+DECLARE_EVENT_MANAGER(EntityStepOnPressurePlateEvent);
+DECLARE_EVENT_MANAGER(NpcCmdEvent);
+DECLARE_EVENT_MANAGER(ProjectileSpawnEvent);
+DECLARE_EVENT_MANAGER(ProjectileCreatedEvent);
+DECLARE_EVENT_MANAGER(ItemUseOnActorEvent);
+DECLARE_EVENT_MANAGER(BlockInteractedEvent);
+DECLARE_EVENT_MANAGER(ArmorStandChangeEvent);
+DECLARE_EVENT_MANAGER(BlockExplodeEvent);
+DECLARE_EVENT_MANAGER(ContainerChangeEvent);
+DECLARE_EVENT_MANAGER(PistonPushEvent);
+DECLARE_EVENT_MANAGER(PistonTryPushEvent);
+DECLARE_EVENT_MANAGER(RedStoneUpdateEvent);
+DECLARE_EVENT_MANAGER(BlockExplodedEvent);
+DECLARE_EVENT_MANAGER(LiquidSpreadEvent);
+DECLARE_EVENT_MANAGER(ProjectileHitBlockEvent);
+DECLARE_EVENT_MANAGER(HopperSearchItemEvent);
+DECLARE_EVENT_MANAGER(HopperPushOutEvent);
+DECLARE_EVENT_MANAGER(BlockChangedEvent);
+DECLARE_EVENT_MANAGER(FarmLandDecayEvent);
+DECLARE_EVENT_MANAGER(FireSpreadEvent);
+DECLARE_EVENT_MANAGER(CmdBlockExecuteEvent);
+DECLARE_EVENT_MANAGER(ConsoleCmdEvent);
+DECLARE_EVENT_MANAGER(PlayerScoreChangedEvent);
+DECLARE_EVENT_MANAGER(ConsoleOutputEvent);
+DECLARE_EVENT_MANAGER(PostInitEvent);
+DECLARE_EVENT_MANAGER(ServerStartedEvent);
+DECLARE_EVENT_MANAGER(ServerStoppedEvent);
+DECLARE_EVENT_MANAGER(RegCmdEvent);
+DECLARE_EVENT_MANAGER(PlayerBedEnterEvent);
+
 
 #ifdef ENABLE_SEH_PROTECTION
 #define IF_LISTENED(EVENT)    \
@@ -146,14 +268,8 @@ DeclareEventListeners(PlayerBedEnterEvent);
 #define IF_LISTENED_END(EVENT) }
 #endif
 
-void Event::OutputEventError(const string & errorMsg, const string & eventName, const string & pluginName)
-{
-    logger.error(errorMsg);
-    logger.error("In Event ({})", eventName);
-    if (!pluginName.empty())
-        logger.error("In Plugin <{}>", pluginName);
-    PrintCurrentStackTraceback();
-}
+
+/////////////////////////////// Events /////////////////////////////// 
 
 
 /////////////////// PreJoin ///////////////////

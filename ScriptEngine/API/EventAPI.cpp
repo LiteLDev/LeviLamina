@@ -1226,7 +1226,7 @@ void InitBasicEventListeners()
 
 
 // ===== onServerStarted =====
-    Event::ServerStartedEvent::subscribe([](auto &ev)
+    Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent ev)
     {
         IF_LISTENED(EVENT_TYPES::onServerStarted)
         {
