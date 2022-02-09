@@ -112,21 +112,21 @@ void FixBugEvent()
 // Fix sleeping drop item
 #include <MC/ItemActor.hpp>
 #include <MC/MovementInterpolator.hpp>
-//TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor, ItemStack* a2, char a3)
-//{
-//    auto out = dAccess<MovementInterpolator*, 0x510>(this);
-//    if (!dAccess<bool, 0x24>(out))
-//    {
-//        auto num = dAccess<int, 0x1c>(out);
-//        if (num > 0 && num == 1)
-//        {
-//            auto v17 = *(Vec2*)((char*)out + 0x0c);
-//            this->setRot(v17);
-//        }
-//        --dAccess<int, 0x1c>(out);
-//    }
-//    return original(this, a2, a3);
-//}
+TInstanceHook(ItemActor*, "?_drop@Actor@@IEAAPEBVItemActor@@AEBVItemStack@@_N@Z", Actor, ItemStack* a2, char a3)
+{
+    auto out = dAccess<MovementInterpolator*, 0x508>(this);
+    if (!dAccess<bool, 0x2c>(out))
+    {
+        auto num = dAccess<int, 0x20>(out);
+        if (num > 0 && num == 1)
+        {
+            auto v17 = *(Vec2*)((char*)out + 0x14);
+            this->setRot(v17);
+        }
+        --dAccess<int, 0x24>(out);
+    }
+    return original(this, a2, a3);
+}
 
 TInstanceHook(size_t, "??0PropertiesSettings@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z", PropertiesSettings, const std::string& file)
 {
