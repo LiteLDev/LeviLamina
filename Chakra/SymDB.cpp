@@ -211,13 +211,7 @@ unordered_map<string, int, aphash> *FuncMap;
 
 CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
-<<<<<<< HEAD
     Info("[SymDB] Loading symbols...");
-=======
-    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::terminal_color::white) ,fmt::format("[SymDB] Loading Symbols\n", fmt::localtime(_time64(0))));
->>>>>>> a500ad7dc3ceffe3629c59661306e1da698240f1
     InitializeCriticalSection(&dlsymLock);
     FuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(FuncMap);
@@ -232,13 +226,7 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     LeaveCriticalSection(&dlsymLock);
-<<<<<<< HEAD
     Info("[SymDB] FastDlsymInited <{}>\n", FuncMap->size());
-=======
-    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::terminal_color::white) ,fmt::format("[SymDB] FastDlsymInited <{}>\n", FuncMap->size()));
->>>>>>> a500ad7dc3ceffe3629c59661306e1da698240f1
     fflush(stdout);
 }
 
