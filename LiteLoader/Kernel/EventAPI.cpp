@@ -69,7 +69,7 @@ std::list<ListenerData<EVENT>> listeners;
 /////////////////////////////// Listener Manager /////////////////////////////// 
 
 template<typename EVENT>
-int EventManager::addEventListener(std::string name, std::function<bool(EVENT)> callback)
+int EventManager<EVENT>::addEventListener(std::string name, std::function<bool(EVENT)> callback)
 {
     int newId = ++globalListenerId;
     listeners<EVENT>.push_back({ name, newId, false, callback, nullptr });
@@ -77,7 +77,7 @@ int EventManager::addEventListener(std::string name, std::function<bool(EVENT)> 
 }
 
 template<typename EVENT>
-int EventManager::addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback)
+int EventManager<EVENT>::addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback)
 {
     int newId = ++globalListenerId;
     listeners<EVENT>.push_back({ name, newId, true, nullptr, callback });
@@ -85,7 +85,7 @@ int EventManager::addEventListenerRef(std::string name, std::function<bool(EVENT
 }
 
 template<typename EVENT>
-bool EventManager::removeEventListener(int id)
+bool EventManager<EVENT>::removeEventListener(int id)
 {
     for(auto &i = listeners<EVENT>.begin(); i!=listeners<EVENT>.end(); ++i)
         if (i->listenerId == id)
@@ -94,7 +94,7 @@ bool EventManager::removeEventListener(int id)
 }
 
 template<typename EVENT>
-bool EventManager::hasListener()
+bool EventManager<EVENT>::hasListener()
 {
     return !listeners<EVENT>.empty();
 }
@@ -112,7 +112,7 @@ inline void OutputError(std::string errorMsg, int errorCode, std::string errorWh
 }
 
 template<typename EVENT>
-bool EventManager::call(EVENT& ev)
+bool EventManager<EVENT>::call(EVENT& ev)
 {
     bool passToBDS = true;
     for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
@@ -138,7 +138,7 @@ bool EventManager::call(EVENT& ev)
 }
 
 template<typename EVENT>
-bool EventManager::callToPlugin(std::string pluginName, EVENT& ev)
+bool EventManager<EVENT>::callToPlugin(std::string pluginName, EVENT& ev)
 {
     bool passToBDS = true;
     for (auto i = listeners<EVENT>.begin(); i != listeners<EVENT>.end(); ++i)
@@ -168,82 +168,75 @@ bool EventManager::callToPlugin(std::string pluginName, EVENT& ev)
 
 /////////////////////////////// Event Declare /////////////////////////////// 
 
-#define DECLARE_EVENT_MANAGER(EVENT) \
-    template LIAPI int EventManager::addEventListener<EVENT>(std::string name, std::function<bool(EVENT)> callback); \
-    template LIAPI int EventManager::addEventListenerRef<EVENT>(std::string name, std::function<bool(EVENT&)> callback); \
-    template LIAPI bool EventManager::removeEventListener<EVENT>(int id); \
-    template LIAPI bool EventManager::hasListener<EVENT>(); \
-    template LIAPI bool EventManager::call<EVENT>(EVENT& ev); \
-    template LIAPI bool EventManager::callToPlugin<EVENT>(std::string pluginName, EVENT& ev);
-
-DECLARE_EVENT_MANAGER(PlayerPreJoinEvent);
-DECLARE_EVENT_MANAGER(PlayerJoinEvent);
-DECLARE_EVENT_MANAGER(PlayerLeftEvent);
-DECLARE_EVENT_MANAGER(PlayerRespawnEvent);
-DECLARE_EVENT_MANAGER(PlayerChatEvent);
-DECLARE_EVENT_MANAGER(PlayerUseItemEvent);
-DECLARE_EVENT_MANAGER(PlayerUseItemOnEvent);
-DECLARE_EVENT_MANAGER(PlayerChangeDimEvent);
-DECLARE_EVENT_MANAGER(PlayerJumpEvent);
-DECLARE_EVENT_MANAGER(EntityTransformEvent);
-DECLARE_EVENT_MANAGER(PlayerSneakEvent);
-DECLARE_EVENT_MANAGER(PlayerAttackEvent);
-DECLARE_EVENT_MANAGER(PlayerAttackBlockEvent);
-DECLARE_EVENT_MANAGER(PlayerDieEvent);
-DECLARE_EVENT_MANAGER(PlayerTakeItemEvent);
-DECLARE_EVENT_MANAGER(PlayerDropItemEvent);
-DECLARE_EVENT_MANAGER(PlayerEatEvent);
-DECLARE_EVENT_MANAGER(PlayerConsumeTotemEvent);
-DECLARE_EVENT_MANAGER(PlayerCmdEvent);
-DECLARE_EVENT_MANAGER(PlayerDestroyBlockEvent);
-DECLARE_EVENT_MANAGER(PlayerPlaceBlockEvent);
-DECLARE_EVENT_MANAGER(PlayerEffectChangedEvent);
-DECLARE_EVENT_MANAGER(PlayerStartDestroyBlockEvent);
-DECLARE_EVENT_MANAGER(PlayerOpenContainerEvent);
-DECLARE_EVENT_MANAGER(PlayerCloseContainerEvent);
-DECLARE_EVENT_MANAGER(PlayerInventoryChangeEvent);
-DECLARE_EVENT_MANAGER(PlayerMoveEvent);
-DECLARE_EVENT_MANAGER(PlayerSprintEvent);
-DECLARE_EVENT_MANAGER(PlayerSetArmorEvent);
-DECLARE_EVENT_MANAGER(PlayerUseRespawnAnchorEvent);
-DECLARE_EVENT_MANAGER(PlayerOpenContainerScreenEvent);
-DECLARE_EVENT_MANAGER(PlayerUseFrameBlockEvent);
-DECLARE_EVENT_MANAGER(PlayerExperienceAddEvent);
-DECLARE_EVENT_MANAGER(MobHurtEvent);
-DECLARE_EVENT_MANAGER(MobDieEvent);
-DECLARE_EVENT_MANAGER(EntityExplodeEvent);
-DECLARE_EVENT_MANAGER(ProjectileHitEntityEvent);
-DECLARE_EVENT_MANAGER(WitherBossDestroyEvent);
-DECLARE_EVENT_MANAGER(EntityRideEvent);
-DECLARE_EVENT_MANAGER(EntityStepOnPressurePlateEvent);
-DECLARE_EVENT_MANAGER(NpcCmdEvent);
-DECLARE_EVENT_MANAGER(ProjectileSpawnEvent);
-DECLARE_EVENT_MANAGER(ProjectileCreatedEvent);
-DECLARE_EVENT_MANAGER(ItemUseOnActorEvent);
-DECLARE_EVENT_MANAGER(BlockInteractedEvent);
-DECLARE_EVENT_MANAGER(ArmorStandChangeEvent);
-DECLARE_EVENT_MANAGER(BlockExplodeEvent);
-DECLARE_EVENT_MANAGER(ContainerChangeEvent);
-DECLARE_EVENT_MANAGER(PistonPushEvent);
-DECLARE_EVENT_MANAGER(PistonTryPushEvent);
-DECLARE_EVENT_MANAGER(RedStoneUpdateEvent);
-DECLARE_EVENT_MANAGER(BlockExplodedEvent);
-DECLARE_EVENT_MANAGER(LiquidSpreadEvent);
-DECLARE_EVENT_MANAGER(ProjectileHitBlockEvent);
-DECLARE_EVENT_MANAGER(HopperSearchItemEvent);
-DECLARE_EVENT_MANAGER(HopperPushOutEvent);
-DECLARE_EVENT_MANAGER(BlockChangedEvent);
-DECLARE_EVENT_MANAGER(FarmLandDecayEvent);
-DECLARE_EVENT_MANAGER(FireSpreadEvent);
-DECLARE_EVENT_MANAGER(CmdBlockExecuteEvent);
-DECLARE_EVENT_MANAGER(ConsoleCmdEvent);
-DECLARE_EVENT_MANAGER(PlayerScoreChangedEvent);
-DECLARE_EVENT_MANAGER(ConsoleOutputEvent);
-DECLARE_EVENT_MANAGER(PostInitEvent);
-DECLARE_EVENT_MANAGER(ServerStartedEvent);
-DECLARE_EVENT_MANAGER(ServerStoppedEvent);
-DECLARE_EVENT_MANAGER(RegCmdEvent);
-DECLARE_EVENT_MANAGER(PlayerBedEnterEvent);
+template class EventManager<PlayerPreJoinEvent>;
+template class EventManager<PlayerPreJoinEvent>;
+template class EventManager<PlayerJoinEvent>;
+template class EventManager<PlayerLeftEvent>;
+template class EventManager<PlayerRespawnEvent>;
+template class EventManager<PlayerChatEvent>;
+template class EventManager<PlayerUseItemEvent>;
+template class EventManager<PlayerUseItemOnEvent>;
+template class EventManager<PlayerChangeDimEvent>;
+template class EventManager<PlayerJumpEvent>;
+template class EventManager<EntityTransformEvent>;
+template class EventManager<PlayerSneakEvent>;
+template class EventManager<PlayerAttackEvent>;
+template class EventManager<PlayerAttackBlockEvent>;
+template class EventManager<PlayerDieEvent>;
+template class EventManager<PlayerTakeItemEvent>;
+template class EventManager<PlayerDropItemEvent>;
+template class EventManager<PlayerEatEvent>;
+template class EventManager<PlayerConsumeTotemEvent>;
+template class EventManager<PlayerCmdEvent>;
+template class EventManager<PlayerDestroyBlockEvent>;
+template class EventManager<PlayerPlaceBlockEvent>;
+template class EventManager<PlayerEffectChangedEvent>;
+template class EventManager<PlayerStartDestroyBlockEvent>;
+template class EventManager<PlayerOpenContainerEvent>;
+template class EventManager<PlayerCloseContainerEvent>;
+template class EventManager<PlayerInventoryChangeEvent>;
+template class EventManager<PlayerMoveEvent>;
+template class EventManager<PlayerSprintEvent>;
+template class EventManager<PlayerSetArmorEvent>;
+template class EventManager<PlayerUseRespawnAnchorEvent>;
+template class EventManager<PlayerOpenContainerScreenEvent>;
+template class EventManager<PlayerUseFrameBlockEvent>;
+template class EventManager<PlayerExperienceAddEvent>;
+template class EventManager<MobHurtEvent>;
+template class EventManager<MobDieEvent>;
+template class EventManager<EntityExplodeEvent>;
+template class EventManager<ProjectileHitEntityEvent>;
+template class EventManager<WitherBossDestroyEvent>;
+template class EventManager<EntityRideEvent>;
+template class EventManager<EntityStepOnPressurePlateEvent>;
+template class EventManager<NpcCmdEvent>;
+template class EventManager<ProjectileSpawnEvent>;
+template class EventManager<ProjectileCreatedEvent>;
+template class EventManager<ItemUseOnActorEvent>;
+template class EventManager<BlockInteractedEvent>;
+template class EventManager<ArmorStandChangeEvent>;
+template class EventManager<BlockExplodeEvent>;
+template class EventManager<ContainerChangeEvent>;
+template class EventManager<PistonPushEvent>;
+template class EventManager<PistonTryPushEvent>;
+template class EventManager<RedStoneUpdateEvent>;
+template class EventManager<BlockExplodedEvent>;
+template class EventManager<LiquidSpreadEvent>;
+template class EventManager<ProjectileHitBlockEvent>;
+template class EventManager<HopperSearchItemEvent>;
+template class EventManager<HopperPushOutEvent>;
+template class EventManager<BlockChangedEvent>;
+template class EventManager<FarmLandDecayEvent>;
+template class EventManager<FireSpreadEvent>;
+template class EventManager<CmdBlockExecuteEvent>;
+template class EventManager<ConsoleCmdEvent>;
+template class EventManager<PlayerScoreChangedEvent>;
+template class EventManager<ConsoleOutputEvent>;
+template class EventManager<PostInitEvent>;
+template class EventManager<ServerStartedEvent>;
+template class EventManager<ServerStoppedEvent>;
+template class EventManager<RegCmdEvent>;
+template class EventManager<PlayerBedEnterEvent>;
 
 
 #ifdef ENABLE_SEH_PROTECTION

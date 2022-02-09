@@ -66,25 +66,15 @@ namespace Event
 constexpr bool Ok = true;
 constexpr bool Cancel = false;
 
+template<typename EVENT>
 class EventManager
 {
 public:
-    template<typename EVENT>
     LIAPI static int addEventListener(std::string name, std::function<bool(EVENT)> callback);
-
-    template<typename EVENT>
     LIAPI static int addEventListenerRef(std::string name, std::function<bool(EVENT&)> callback);
-
-    template<typename EVENT>
     LIAPI static bool removeEventListener(int id);
-
-    template<typename EVENT>
     LIAPI static bool hasListener();
-
-    template<typename EVENT>
     LIAPI static bool call(EVENT &ev);
-
-    template<typename EVENT>
     LIAPI static bool callToPlugin(std::string pluginName, EVENT& ev);
 };
 
@@ -103,7 +93,7 @@ public:
         if (!deleted)
         {
             deleted = true;
-            EventManager::removeEventListener<EVENT>(listenerId);
+            EventManager<EVENT>::removeEventListener(listenerId);
         }
     }
 };
@@ -115,20 +105,20 @@ public:
     static EventListener<EVENT> subscribe(std::function<bool(EVENT)> callback)
     {
         auto plugin = LL::getPlugin(GetCurrentModule());
-        return EventListener<EVENT>(EventManager::addEventListener<EVENT>(plugin ? plugin->name : "", callback));
+        return EventListener<EVENT>(EventManager<EVENT>::addEventListener(plugin ? plugin->name : "", callback));
     }
 
     static EventListener<EVENT> subscribe_ref(std::function<bool(EVENT&)> callback)
     {
         auto plugin = LL::getPlugin(GetCurrentModule());
-        return EventListener<EVENT>(EventManager::addEventListenerRef<EVENT>(plugin ? plugin->name : "", callback));
+        return EventListener<EVENT>(EventManager<EVENT>::addEventListenerRef(plugin ? plugin->name : "", callback));
     }
 
     static void unsubscribe(const EventListener<EVENT>& listener) { listener.remove(); }
-    static bool hasListener() { return EventManager::hasListener<EVENT>(); }
+    static bool hasListener() { return EventManager<EVENT>::hasListener(); }
 
-    bool call() { return EventManager::call<EVENT>(*(EVENT*)this); }
-    bool callToPlugin(std::string pluginName) { return EventManager::callToPlugin<EVENT>(pluginName, *(EVENT*)this); }
+    bool call() { return EventManager<EVENT>::call(*(EVENT*)this); }
+    bool callToPlugin(std::string pluginName) { return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this); }
 };
 
 
