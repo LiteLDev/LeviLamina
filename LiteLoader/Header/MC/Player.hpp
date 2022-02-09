@@ -201,7 +201,7 @@ public:
     /*230*/ virtual bool add(class ItemStack&);
     /*231*/ virtual bool drop(class ItemStack const&, bool);
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*235*/ virtual void setSize(float, float);
     /*239*/ virtual void startSpinAttack();
     /*240*/ virtual void stopSpinAttack();
@@ -227,7 +227,7 @@ public:
     /*299*/ virtual float getItemUseStartupProgress() const;
     /*300*/ virtual float getItemUseIntervalProgress() const;
     /*303*/ virtual void __unk_vfn_303();
-    /*305*/ virtual void __unk_vfn_305();
+    /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*322*/ virtual std::vector<class ItemStack const* > getAllHand() const;
@@ -236,7 +236,7 @@ public:
     /*326*/ virtual void dropEquipmentOnDeath();
     /*327*/ virtual void clearVanishEnchantedItemsOnDeath();
     /*328*/ virtual void sendInventory(bool);
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*336*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*337*/ virtual bool canExistWhenDisallowMob() const;
     /*338*/ virtual void __unk_vfn_338();
@@ -244,7 +244,7 @@ public:
     /*344*/ virtual void jumpFromGround();
     /*345*/ virtual void jumpFromGround(struct IMobMovementProxy&) const;
     /*346*/ virtual void updateAi();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*353*/ virtual void updateGliding();
     /*354*/ virtual void __unk_vfn_354();
     /*356*/ virtual void prepareRegion(class ChunkSource&);
@@ -388,6 +388,11 @@ public:
         void (Player::*rv)(class BlockPos const&);
         *((void**)&rv) = dlsym("?openSign@Player@@UEAAXAEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockPos const&>(a0));
+    }
+    inline void _serverInitItemStackIds(){
+        void (Player::*rv)();
+        *((void**)&rv) = dlsym("?_serverInitItemStackIds@Player@@MEAAXXZ");
+        return (this->*rv)();
     }
     inline void playEmote(std::string const& a0){
         void (Player::*rv)(std::string const&);

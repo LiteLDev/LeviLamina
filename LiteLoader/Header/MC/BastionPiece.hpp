@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~BastionPiece();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*13*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const;

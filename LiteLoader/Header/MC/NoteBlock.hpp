@@ -93,7 +93,7 @@ public:
     /*104*/ virtual bool attack(class Player*, class BlockPos const&) const;
     /*105*/ virtual void handleEntityInside(class BlockSource&, class BlockPos const&, class Actor*, class Vec3&) const;
     /*108*/ virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
-    /*109*/ virtual void __unk_vfn_109();
+    /*109*/ virtual int getExperienceDrop(class Random&) const;
     /*112*/ virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
     /*120*/ virtual void __unk_vfn_120();
     /*122*/ virtual void __unk_vfn_122();
@@ -103,10 +103,10 @@ public:
     /*127*/ virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
     /*128*/ virtual void __unk_vfn_128();
     /*129*/ virtual int getIconYOffset() const;
-    /*131*/ virtual void __unk_vfn_131();
+    /*131*/ virtual bool isAuxValueRelevantForPicking() const;
     /*132*/ virtual int getColor(class Block const&) const;
     /*133*/ virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
-    /*134*/ virtual void __unk_vfn_134();
+    /*134*/ virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /*136*/ virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*144*/ virtual void __unk_vfn_144();
     /*147*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;

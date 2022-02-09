@@ -31,7 +31,7 @@ public:
     /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
     /*7*/ virtual void tick(class BlockSource&);
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual void onChanged(class BlockSource&);
     /*11*/ virtual void onPlace(class BlockSource&);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void onRemoved(class BlockSource&);

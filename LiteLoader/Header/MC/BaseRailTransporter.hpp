@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~BaseRailTransporter();
-    /*1*/ virtual int getStrength() const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
@@ -38,7 +37,7 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
+    /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
 
 protected:

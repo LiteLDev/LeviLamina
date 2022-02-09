@@ -80,14 +80,14 @@ public:
     /*299*/ virtual float getItemUseStartupProgress() const;
     /*300*/ virtual float getItemUseIntervalProgress() const;
     /*303*/ virtual void __unk_vfn_303();
-    /*305*/ virtual void __unk_vfn_305();
+    /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*330*/ virtual bool createAIGoals();
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*336*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*338*/ virtual void __unk_vfn_338();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     MCAPI TropicalFish(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 

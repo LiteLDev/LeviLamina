@@ -82,7 +82,7 @@ public:
     /*81*/ virtual bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*82*/ virtual bool mayPick() const;
     /*84*/ virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
-    /*86*/ virtual void __unk_vfn_86();
+    /*86*/ virtual bool mayPlaceOn(class BlockSource&, class BlockPos const&) const;
     /*88*/ virtual bool tryToTill(class BlockSource&, class BlockPos const&, class Actor&, class ItemStack&) const;
     /*90*/ virtual void destroy(class BlockSource&, class BlockPos const&, class Block const&, class Actor*) const;
     /*92*/ virtual bool getIgnoresDestroyPermissions(class Actor&, class BlockPos const&) const;
@@ -105,10 +105,10 @@ public:
     /*127*/ virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
     /*128*/ virtual void __unk_vfn_128();
     /*129*/ virtual int getIconYOffset() const;
-    /*131*/ virtual void __unk_vfn_131();
+    /*131*/ virtual bool isAuxValueRelevantForPicking() const;
     /*132*/ virtual int getColor(class Block const&) const;
     /*133*/ virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
-    /*134*/ virtual void __unk_vfn_134();
+    /*134*/ virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
     /*136*/ virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*144*/ virtual void __unk_vfn_144();
     /*147*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;

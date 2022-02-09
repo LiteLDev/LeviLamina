@@ -39,7 +39,7 @@ public:
     /*82*/ virtual void __unk_vfn_82();
     /*87*/ virtual void __unk_vfn_87();
     /*88*/ virtual void playerTouch(class Player&);
-    /*93*/ virtual void __unk_vfn_93();
+    /*93*/ virtual bool isPickable();
     /*94*/ virtual void __unk_vfn_94();
     /*95*/ virtual bool isSleeping() const;
     /*96*/ virtual void setSleeping(bool);
@@ -51,7 +51,7 @@ public:
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*112*/ virtual void __unk_vfn_112();
+    /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();

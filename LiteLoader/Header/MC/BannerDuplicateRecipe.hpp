@@ -32,7 +32,7 @@ public:
     /*5*/ virtual bool isMultiRecipe() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
     /*7*/ virtual int size() const;
-    /*10*/ virtual void __unk_vfn_10();
+    /*10*/ virtual bool isMultiRecipe() const;
     MCAPI BannerDuplicateRecipe(class gsl::basic_string_span<char const, -1>, class mce::UUID const&);
     MCAPI static class mce::UUID const ID;
 

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -31,34 +32,22 @@ public:
     /*4*/ virtual class Vec3 getWorldPosition() const;
     /*5*/ virtual class std::optional<class Vec2> getRotation() const;
     /*6*/ virtual class Level* getLevel() const;
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
+    /*7*/ virtual class Dimension* getDimension() const;
+    /*8*/ virtual class Actor* getEntity() const;
     /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual void __unk_vfn_15();
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*24*/ virtual struct CommandOriginData toCommandOriginData() const;
-    /*26*/ virtual void __unk_vfn_26();
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*
-    inline class Actor* getEntity() const{
-        class Actor* (ClientAutomationCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getEntity@ClientAutomationCommandOrigin@@UEBAPEAVActor@@XZ");
-        return (this->*rv)();
-    }
-    inline class Dimension* getDimension() const{
-        class Dimension* (ClientAutomationCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getDimension@ClientAutomationCommandOrigin@@UEBAPEAVDimension@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ClientAutomationCommandOrigin(std::string const&);
 
 protected:

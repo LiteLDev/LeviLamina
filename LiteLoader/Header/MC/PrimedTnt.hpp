@@ -91,7 +91,7 @@ public:
     /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();

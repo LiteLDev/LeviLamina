@@ -43,7 +43,7 @@ public:
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*112*/ virtual void __unk_vfn_112();
+    /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();
@@ -64,10 +64,10 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();

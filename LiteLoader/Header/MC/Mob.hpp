@@ -253,6 +253,11 @@ public:
         *((void**)&rv) = dlsym("?useNewAi@Mob@@UEBA_NXZ");
         return (this->*rv)();
     }
+    inline float _getWalkTargetValue(class BlockPos const& a0){
+        float (Mob::*rv)(class BlockPos const&);
+        *((void**)&rv) = dlsym("?_getWalkTargetValue@Mob@@UEAAMAEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockPos const&>(a0));
+    }
     inline  ~Mob(){
          (Mob::*rv)();
         *((void**)&rv) = dlsym("??1Mob@@UEAA@XZ");

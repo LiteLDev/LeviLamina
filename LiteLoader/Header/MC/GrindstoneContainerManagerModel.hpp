@@ -29,16 +29,9 @@ public:
     /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*8*/ virtual class ItemStack const& getSlot(int) const;
     /*9*/ virtual void setData(int, int);
-    /*10*/ virtual void __unk_vfn_10();
+    /*10*/ virtual void broadcastChanges();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
-    /*
-    inline void broadcastChanges(){
-        void (GrindstoneContainerManagerModel::*rv)();
-        *((void**)&rv) = dlsym("?broadcastChanges@GrindstoneContainerManagerModel@@UEAAXXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI GrindstoneContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const ADDITIONAL_SLOT;
     MCAPI static int const INPUT_SLOT;

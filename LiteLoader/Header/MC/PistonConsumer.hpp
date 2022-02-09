@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~PistonConsumer();
-    /*1*/ virtual int getStrength() const;
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;

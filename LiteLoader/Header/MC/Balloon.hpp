@@ -25,7 +25,7 @@ public:
 #endif
 
 public:
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*14*/ virtual ~Balloon();
     /*18*/ virtual void remove();
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
@@ -38,7 +38,7 @@ public:
     /*82*/ virtual void __unk_vfn_82();
     /*87*/ virtual void __unk_vfn_87();
     /*88*/ virtual void playerTouch(class Player&);
-    /*93*/ virtual void __unk_vfn_93();
+    /*93*/ virtual bool isPickable();
     /*94*/ virtual void __unk_vfn_94();
     /*95*/ virtual bool isSleeping() const;
     /*96*/ virtual void setSleeping(bool);
@@ -50,7 +50,7 @@ public:
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*112*/ virtual void __unk_vfn_112();
+    /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();
@@ -85,7 +85,7 @@ public:
     /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
@@ -94,18 +94,6 @@ public:
     /*258*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*265*/ virtual void __unk_vfn_265();
     /*273*/ virtual void _onSizeUpdated();
-    /*
-    inline void reloadHardcoded(enum Actor::InitializationMethod a0, class VariantParameterList const& a1){
-        void (::*rv)(enum Actor::InitializationMethod, class VariantParameterList const&);
-        *((void**)&rv) = dlsym("?reloadHardcoded@Balloon@@UEAAXW4InitializationMethod@Actor@@AEBVVariantParameterList@@@Z");
-        return (this->*rv)(std::forward<enum Actor::InitializationMethod>(a0), std::forward<class VariantParameterList const&>(a1));
-    }
-    inline bool isPickable(){
-        bool (Balloon::*rv)();
-        *((void**)&rv) = dlsym("?isPickable@Balloon@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI Balloon(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     MCAPI void remove(bool);
 

@@ -59,7 +59,7 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
     /*257*/ virtual void __unk_vfn_257();
@@ -68,14 +68,14 @@ public:
     /*276*/ virtual void spawnAnim();
     /*290*/ virtual void aiStep();
     /*303*/ virtual void __unk_vfn_303();
-    /*305*/ virtual void __unk_vfn_305();
+    /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*336*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*337*/ virtual bool canExistWhenDisallowMob() const;
     /*338*/ virtual void __unk_vfn_338();
     /*346*/ virtual void updateAi();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     /*364*/ virtual void __unk_vfn_364();
     /*369*/ virtual void __unk_vfn_369();

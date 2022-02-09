@@ -68,10 +68,10 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
