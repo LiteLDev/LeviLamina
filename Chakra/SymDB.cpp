@@ -10,9 +10,7 @@
 #include <Windows.h>
 #include "../LiteLoader/Header/Utils/Hash.h"
 #include "../LiteLoader/Header/third-party/detours/detours.h"
-#include "../LiteLoader/Header/third-party/FMT/chrono.h"
-#include "../LiteLoader/Header/third-party/FMT/os.h"
-#include "../LiteLoader/Header/third-party/FMT/color.h"
+#include "Logger.h"
 
 using std::list;
 using std::string, std::string_view;
@@ -213,9 +211,7 @@ unordered_map<string, int, aphash> *FuncMap;
 
 CRITICAL_SECTION dlsymLock;
 void InitFastDlsym() {
-    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
-    fmt::print(fmt::format("[SymDB] Loading Symbols\n", fmt::localtime(_time64(0))));
+    Info("[SymDB] Loading symbols...");
     InitializeCriticalSection(&dlsymLock);
     FuncMap = new unordered_map<string, int, aphash>;
     SymDB->dumpall(FuncMap);
@@ -230,9 +226,7 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     LeaveCriticalSection(&dlsymLock);
-    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
-    fmt::print(fmt::format("[SymDB] FastDlsymInited <{}>\n", FuncMap->size()));
+    Info("[SymDB] FastDlsymInited <{}>\n", FuncMap->size());
     fflush(stdout);
 }
 
@@ -273,17 +267,13 @@ extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
             LeaveCriticalSection(&dlsymLock);
             return (void *)(BaseAdr + iter->second);
         } else {
-             fmt::print(fmt::fg(fmt::color::sky_blue),fmt::format("{:%H:%M:%S}",fmt::localtime(_time64(0))));
-             fmt::print(fmt::fg(fmt::terminal_color::bright_red), fmt::format(" ERROR ", fmt::localtime(_time64(0))));
-             fmt::print(fmt::fg(fmt::color::red2),fmt::format(" Failed to look up Function in Memory {}\n", x));
+            Error(" Could not find function in memory: {}", x);
         }
         LeaveCriticalSection(&dlsymLock);
     }
     auto rv = SymDB->getsym(x);
     if (rv == -1) {
-        fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-        fmt::print(fmt::fg(fmt::terminal_color::bright_red), fmt::format(" ERROR ", fmt::localtime(_time64(0))));
-        fmt::print(fmt::fg(fmt::color::red2),fmt::format(" Failed to look up Function in SymDB2 {}\n", fmt::localtime(_time64(0)), x));
+        Error(" Cannot find symbol in SymDB: {}", x);
         return nullptr;
     }
     return (void *)(BaseAdr + rv);
