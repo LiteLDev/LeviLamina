@@ -9,8 +9,8 @@
 #include "FMT/format.h"
 #include <string>
 
-#define COLOR_TIME			fmt::color::sky_blue
-#define COLOR_INFO_PREFIX	fmt::color::blue_violet
+#define COLOR_TIME			fmt::color::light_blue
+#define COLOR_INFO_PREFIX	fmt::color::light_sea_green
 #define COLOR_INFO_TEXT		fmt::terminal_color::white
 #define COLOR_WARN_PREFIX	fmt::terminal_color::bright_yellow
 #define COLOR_WARN_TEXT		fmt::color::yellow2
