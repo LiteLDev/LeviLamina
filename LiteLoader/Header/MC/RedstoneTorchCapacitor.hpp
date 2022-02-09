@@ -26,20 +26,20 @@ public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
     /*2*/ virtual int getDirection() const;
-    /*3*/ virtual void setDirection(unsigned char);
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /*6*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*7*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*8*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*9*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*10*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*11*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*12*/ virtual void __unk_vfn_1();
-    /*13*/ virtual bool isHalfPulse() const;
-    /*14*/ virtual void __unk_vfn_2();
-    /*15*/ virtual void __unk_vfn_3();
-    /*16*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*4*/ virtual void setDirection(unsigned char);
+    /*7*/ virtual void __unk_vfn_7();
+    /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual bool isHalfPulse() const;
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*
     inline unsigned char getPoweroutDirection() const{
         unsigned char (RedstoneTorchCapacitor::*rv)() const;

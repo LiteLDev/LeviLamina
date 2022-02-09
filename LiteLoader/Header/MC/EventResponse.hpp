@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~EventResponse();
     /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual void __unk_vfn_0() = 0;
+    /*2*/ virtual void __unk_vfn_2() = 0;
     /*3*/ virtual ~EventResponse();
     /*
     inline  ~EventResponse(){

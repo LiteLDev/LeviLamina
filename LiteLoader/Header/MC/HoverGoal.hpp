@@ -25,8 +25,8 @@ public:
 public:
     /*0*/ virtual ~HoverGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();

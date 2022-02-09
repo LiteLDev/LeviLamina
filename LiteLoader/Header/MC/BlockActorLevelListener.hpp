@@ -24,30 +24,30 @@ public:
 
 public:
     /*0*/ virtual ~BlockActorLevelListener();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void onSourceDestroyed(class BlockSource&);
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_8();
-    /*12*/ virtual void __unk_vfn_9();
-    /*13*/ virtual void __unk_vfn_10();
-    /*14*/ virtual void __unk_vfn_11();
-    /*15*/ virtual void __unk_vfn_12();
-    /*16*/ virtual void __unk_vfn_13();
-    /*17*/ virtual void __unk_vfn_14();
-    /*18*/ virtual void __unk_vfn_15();
-    /*19*/ virtual void __unk_vfn_16();
-    /*20*/ virtual void __unk_vfn_17();
-    /*21*/ virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
-    /*22*/ virtual void __unk_vfn_18();
-    /*23*/ virtual void __unk_vfn_19();
-    /*24*/ virtual void onChunkUnloaded(class LevelChunk&);
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual void onChunkLoaded(class ChunkSource&, class LevelChunk&);
+    /*23*/ virtual void __unk_vfn_23();
+    /*24*/ virtual void __unk_vfn_24();
+    /*25*/ virtual void onChunkUnloaded(class LevelChunk&);
     /*
     inline  ~BlockActorLevelListener(){
          (BlockActorLevelListener::*rv)();

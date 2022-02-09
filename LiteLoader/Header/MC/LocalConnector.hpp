@@ -26,12 +26,12 @@ public:
 
 public:
     /*0*/ virtual ~LocalConnector();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual std::string getLocalIp();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Social::GameConnectionInfo const& getConnectedGameInfo() const;
-    /*6*/ virtual void __unk_vfn_3();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual struct Connector::NatPunchInfo getNatPunchInfo() const;
     /*
     inline bool isIPv6Supported() const{

@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~EndIslandFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~EndIslandFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual ~EndIslandFeature();
     /*
     inline  ~EndIslandFeature(){
          (EndIslandFeature::*rv)();

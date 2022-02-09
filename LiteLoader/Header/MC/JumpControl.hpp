@@ -23,9 +23,9 @@ public:
 
 public:
     /*0*/ virtual ~JumpControl();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class JumpControlComponent&, class Mob&);
-    /*3*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual float getJumpPower(class JumpControlComponent const&, class Mob const&) const;
     /*
     inline enum JumpType getJumpType(class JumpControlComponent const& a0, class Mob const& a1) const{

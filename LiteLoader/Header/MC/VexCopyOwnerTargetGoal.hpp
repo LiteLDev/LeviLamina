@@ -26,12 +26,12 @@ public:
 public:
     /*0*/ virtual ~VexCopyOwnerTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void start();
-    /*4*/ virtual void stop();
-    /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void start();
+    /*5*/ virtual void stop();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     MCAPI VexCopyOwnerTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
 
 protected:

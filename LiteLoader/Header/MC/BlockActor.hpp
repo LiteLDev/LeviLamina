@@ -44,14 +44,14 @@ public:
     /*9*/ virtual bool isMovable(class BlockSource&);
     /*10*/ virtual bool isCustomNameSaved();
     /*11*/ virtual void onPlace(class BlockSource&);
-    /*12*/ virtual void __unk_vfn_0();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void onRemoved(class BlockSource&);
     /*14*/ virtual void triggerEvent(int, int);
     /*15*/ virtual void clearCache();
-    /*16*/ virtual void __unk_vfn_1();
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual float getShadowRadius(class BlockSource&) const;
     /*18*/ virtual bool hasAlphaLayer() const;
-    /*19*/ virtual void __unk_vfn_2();
+    /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
     /*21*/ virtual std::string const& getCustomName() const;
     /*22*/ virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
@@ -60,15 +60,15 @@ public:
     /*25*/ virtual std::string getImmersiveReaderText(class BlockSource&);
     /*26*/ virtual int getRepairCost() const;
     /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*28*/ virtual void __unk_vfn_3();
-    /*29*/ virtual void __unk_vfn_4();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*31*/ virtual void __unk_vfn_5();
-    /*32*/ virtual void __unk_vfn_6();
-    /*33*/ virtual void __unk_vfn_7();
+    /*31*/ virtual void __unk_vfn_31();
+    /*32*/ virtual void __unk_vfn_32();
+    /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual void __unk_vfn_8();
+    /*36*/ virtual void __unk_vfn_36();
     /*
     inline class Container* getContainer(){
         class Container* (BlockActor::*rv)();

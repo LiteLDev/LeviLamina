@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~BaseScriptBlockLiquidContainerComponent();
-    /*1*/ virtual class Scripting::Result<void> setFillLevel(int);
+    /*4*/ virtual class Scripting::Result<void> setFillLevel(int);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent const&);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BaseScriptBlockLiquidContainerComponent&&);
     MCAPI BaseScriptBlockLiquidContainerComponent(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&, enum CauldronLiquidType);

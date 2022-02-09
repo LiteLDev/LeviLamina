@@ -25,13 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~WallClimberPathNavigation();
-    /*1*/ virtual void tick(class NavigationComponent&, class Mob&);
-    /*2*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
-    /*3*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
-    /*4*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
-    /*5*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual bool canUpdatePath(class Mob const&) const;
+    /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
+    /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
+    /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
+    /*7*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
 
 protected:
 

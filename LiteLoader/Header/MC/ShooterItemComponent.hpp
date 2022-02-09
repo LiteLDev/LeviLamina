@@ -24,8 +24,8 @@ public:
 public:
     /*0*/ virtual ~ShooterItemComponent();
     /*1*/ virtual bool checkComponentDataForContentErrors() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isNetworkComponent() const;
     /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);

@@ -31,18 +31,18 @@ public:
     /*5*/ virtual bool FileExists(std::string const&);
     /*6*/ virtual class leveldb::Status GetChildren(std::string const&, std::vector<std::string>*);
     /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void __unk_vfn_1();
-    /*10*/ virtual void __unk_vfn_2();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
-    /*12*/ virtual void __unk_vfn_3();
-    /*13*/ virtual void __unk_vfn_4();
-    /*14*/ virtual void __unk_vfn_5();
-    /*15*/ virtual void __unk_vfn_6();
-    /*16*/ virtual void __unk_vfn_7();
-    /*17*/ virtual void __unk_vfn_8();
-    /*18*/ virtual void __unk_vfn_9();
-    /*19*/ virtual void __unk_vfn_10();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void flushToPermanentStorage();
 
 protected:

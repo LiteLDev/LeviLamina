@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~StringByteInput();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual unsigned __int64 numBytesLeft() const;
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual unsigned __int64 numBytesLeft() const;
     /*
     inline  ~StringByteInput(){
          (StringByteInput::*rv)();

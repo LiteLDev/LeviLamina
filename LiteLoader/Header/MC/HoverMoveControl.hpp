@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~HoverMoveControl();
-    /*1*/ virtual void tick(class MoveControlComponent&, class Mob&);
+    /*2*/ virtual void tick(class MoveControlComponent&, class Mob&);
     MCAPI HoverMoveControl();
 
 protected:

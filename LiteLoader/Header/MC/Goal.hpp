@@ -23,13 +23,13 @@ public:
 
 public:
     /*0*/ virtual ~Goal();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual bool canBeInterrupted();
-    /*4*/ virtual void __unk_vfn_1() = 0;
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
+    /*4*/ virtual void __unk_vfn_4() = 0;
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool isTargetGoal() const;
     /*
     inline void tick(){

@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~SleepState();
     /*1*/ virtual void tick();
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void stop();
 
 protected:

@@ -25,12 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~MaterialReducerOutputValidation();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
-    /*6*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{
         bool (MaterialReducerOutputValidation::*rv)(class ContainerScreenContext const&) const;

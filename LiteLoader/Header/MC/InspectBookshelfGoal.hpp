@@ -25,16 +25,16 @@ public:
 
 public:
     /*0*/ virtual ~InspectBookshelfGoal();
-    /*1*/ virtual bool canContinueToUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void tick();
-    /*4*/ virtual void appendDebugInfo(std::string&) const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*8*/ virtual bool _canReach(class BlockPos const&);
-    /*9*/ virtual unsigned __int64 _getRepathTime() const;
-    /*10*/ virtual bool findTargetBlock();
+    /*2*/ virtual bool canContinueToUse();
+    /*3*/ virtual void __unk_vfn_3();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*13*/ virtual bool _canReach(class BlockPos const&);
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual bool findTargetBlock();
     MCAPI InspectBookshelfGoal(class Mob&, float, int, int, int, float);
 
 protected:

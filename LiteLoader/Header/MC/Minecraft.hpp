@@ -26,8 +26,8 @@ public:
 
 public:
     /*0*/ virtual ~Minecraft();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void setSimTimePause(bool);
     /*4*/ virtual void setSimTimeScale(float);
     /*5*/ virtual bool getSimPaused() const;

@@ -38,8 +38,8 @@ public:
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
-    /*7*/ virtual std::unique_ptr<class Tag> copy() const;
-    /*8*/ virtual unsigned __int64 hash() const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const;
+    /*10*/ virtual unsigned __int64 hash() const;
     MCAPI Int64Tag();
     MCAPI Int64Tag(__int64);
 

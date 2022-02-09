@@ -22,8 +22,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptItemGameplayHandler();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemDefinitionEventTriggeredEvent&);
     /*4*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemUseOnEvent&);
     /*5*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ItemUseEvent&);

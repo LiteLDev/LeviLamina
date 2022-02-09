@@ -38,20 +38,20 @@ public:
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*13*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*14*/ virtual void __unk_vfn_0();
-    /*15*/ virtual bool isSelectorExpansionAllowed() const;
-    /*16*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*17*/ virtual unsigned char getSourceSubId() const;
-    /*18*/ virtual void __unk_vfn_1();
-    /*19*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*20*/ virtual void __unk_vfn_2();
-    /*21*/ virtual void __unk_vfn_3();
-    /*22*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*23*/ virtual void updateValues();
-    /*24*/ virtual class CompoundTag serialize() const;
-    /*25*/ virtual bool isValid() const;
-    /*26*/ virtual void _setUUID(class mce::UUID const&);
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
+    /*20*/ virtual unsigned char getSourceSubId() const;
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
+    /*23*/ virtual void __unk_vfn_23();
+    /*25*/ virtual void __unk_vfn_25();
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*27*/ virtual void updateValues();
+    /*29*/ virtual class CompoundTag serialize() const;
+    /*30*/ virtual bool isValid() const;
+    /*31*/ virtual void _setUUID(class mce::UUID const&);
     /*
     inline enum CommandOriginType getOriginType() const{
         enum CommandOriginType (PlayerCommandOrigin::*rv)() const;

@@ -44,10 +44,10 @@ public:
     /*16*/ virtual bool containsAnyLiquid(class AABB const&);
     /*17*/ virtual bool containsMaterial(class AABB const&, enum MaterialType) const;
     /*18*/ virtual short getMinHeight() const;
-    /*19*/ virtual void __unk_vfn_0();
-    /*20*/ virtual void __unk_vfn_1();
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
-    /*22*/ virtual void __unk_vfn_2();
+    /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
     /*24*/ virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
     /*25*/ virtual class AABB getTallestCollisionShape(class AABB const&, float*, bool, struct IActorMovementProxy*);

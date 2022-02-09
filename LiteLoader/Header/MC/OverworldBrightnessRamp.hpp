@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~OverworldBrightnessRamp();
-    /*1*/ virtual float getBaseAmbientValue() const;
+    /*2*/ virtual float getBaseAmbientValue() const;
 
 protected:
 

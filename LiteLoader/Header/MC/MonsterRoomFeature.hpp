@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~MonsterRoomFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~MonsterRoomFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual ~MonsterRoomFeature();
     /*
     inline  ~MonsterRoomFeature(){
          (MonsterRoomFeature::*rv)();

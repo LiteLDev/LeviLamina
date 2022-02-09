@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptPlayerInventoryComponentContainer();
-    /*1*/ virtual class Container* _tryGetContainer() const;
-    /*2*/ virtual void _balanceTransaction(class ItemStack const&) const;
+    /*11*/ virtual class Container* _tryGetContainer() const;
+    /*12*/ virtual void _balanceTransaction(class ItemStack const&) const;
     /*
     inline  ~ScriptPlayerInventoryComponentContainer(){
          (ScriptPlayerInventoryComponentContainer::*rv)();

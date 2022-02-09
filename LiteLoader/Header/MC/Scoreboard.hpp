@@ -72,18 +72,18 @@ public:
     /*0*/ virtual ~Scoreboard();
     /*1*/ virtual class DisplayObjective const* setDisplayObjective(std::string const&, class Objective const&, enum ObjectiveSortOrder);
     /*2*/ virtual class Objective* clearDisplayObjective(std::string const&);
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void onObjectiveRemoved(class Objective&);
     /*8*/ virtual void onScoreChanged(struct ScoreboardId const&, class Objective const&);
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual void __unk_vfn_5();
-    /*11*/ virtual void __unk_vfn_6();
-    /*12*/ virtual void __unk_vfn_7();
-    /*13*/ virtual void __unk_vfn_8();
-    /*14*/ virtual void __unk_vfn_9();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual bool isClientSide() const;
     /*
     inline void setPacketSender(class PacketSender* a0){

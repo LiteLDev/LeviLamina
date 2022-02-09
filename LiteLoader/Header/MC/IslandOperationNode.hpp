@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~IslandOperationNode();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void _fillArea(class OperationNodeDetails::WorkingData<enum OperationNodeValues::Terrain, char>&, class Pos2d const&, class Pos2d const&) const;
 
 protected:

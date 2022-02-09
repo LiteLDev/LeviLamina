@@ -26,22 +26,22 @@ public:
 
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
-    /*1*/ virtual class ResourceLocation const& getPackLocation() const;
-    /*2*/ virtual std::string const& getPackName() const;
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void setIsTrusted(bool);
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual bool hasAsset(class Core::Path const&, bool) const;
-    /*7*/ virtual bool hasFolder(class Core::Path const&) const;
-    /*8*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
-    /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual void __unk_vfn_3();
-    /*11*/ virtual enum PackAccessStrategyType getStrategyType() const;
-    /*12*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    /*13*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*14*/ virtual bool canRecurse() const;
-    /*15*/ virtual void unload();
-    /*16*/ virtual class ContentIdentity readContentIdentity() const;
+    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
+    /*3*/ virtual std::string const& getPackName() const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void setIsTrusted(bool);
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
+    /*8*/ virtual bool hasFolder(class Core::Path const&) const;
+    /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
+    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    /*18*/ virtual bool canRecurse() const;
+    /*19*/ virtual void unload();
+    /*21*/ virtual class ContentIdentity readContentIdentity() const;
     /*
     inline bool writeAsset(class Core::Path const& a0, std::string const& a1){
         bool (EncryptedFileAccessStrategy::*rv)(class Core::Path const&, std::string const&);

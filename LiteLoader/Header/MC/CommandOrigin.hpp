@@ -42,12 +42,12 @@ public:
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*13*/ virtual bool hasChatPerms() const;
     /*14*/ virtual bool hasTellPerms() const;
-    /*15*/ virtual void __unk_vfn_0();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual bool isWorldBuilder() const;
-    /*17*/ virtual void __unk_vfn_1();
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*20*/ virtual void __unk_vfn_2();
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const = 0;

@@ -28,22 +28,22 @@ public:
     /*0*/ virtual ~ComparatorCapacitor();
     /*1*/ virtual int getStrength() const;
     /*2*/ virtual int getDirection() const;
-    /*3*/ virtual void setDirection(unsigned char);
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /*7*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*8*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*9*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*10*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*11*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*12*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*13*/ virtual void __unk_vfn_2();
-    /*14*/ virtual void __unk_vfn_3();
-    /*15*/ virtual void __unk_vfn_4();
-    /*16*/ virtual void __unk_vfn_5();
-    /*17*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-    /*18*/ virtual unsigned char getPoweroutDirection() const;
+    /*4*/ virtual void setDirection(unsigned char);
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*24*/ virtual unsigned char getPoweroutDirection() const;
     /*
     inline bool canConsumerPower() const{
         bool (ComparatorCapacitor::*rv)() const;

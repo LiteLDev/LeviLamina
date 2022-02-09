@@ -25,15 +25,15 @@ public:
 
 public:
     /*0*/ virtual ~WorldLimitChunkSource();
-    /*1*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
-    /*2*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
-    /*6*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
-    /*7*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
-    /*8*/ virtual void clearDeletedEntities();
-    /*9*/ virtual void __unk_vfn_1();
+    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
+    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
+    /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
+    /*18*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
+    /*19*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
+    /*21*/ virtual void clearDeletedEntities();
+    /*22*/ virtual void __unk_vfn_22();
     /*
     inline bool canCreateViews() const{
         bool (WorldLimitChunkSource::*rv)() const;

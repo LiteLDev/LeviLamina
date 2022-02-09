@@ -41,7 +41,7 @@ public:
     /*14*/ virtual bool attack(class Actor&);
     /*15*/ virtual void releaseUsingItem();
     /*16*/ virtual void setTrialMode(bool);
-    /*17*/ virtual void __unk_vfn_0();
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual void registerUpsellScreenCallback(class std::function<void (bool)>);
     /*
     inline bool isInTrialMode(){

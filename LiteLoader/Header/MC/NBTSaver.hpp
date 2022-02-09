@@ -24,24 +24,24 @@ public:
 public:
     /*0*/ virtual ~NBTSaver();
     /*1*/ virtual bool doSerialize(std::string const&);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool doSerialize(float);
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_8();
-    /*12*/ virtual void __unk_vfn_9();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual bool doBeginMember(char const*, bool);
     /*14*/ virtual bool doBeginMember(unsigned __int64, std::string const&);
     /*15*/ virtual bool doEndMember();
     /*16*/ virtual bool doBeginArray(unsigned __int64);
     /*17*/ virtual bool doBeginArrayItem(unsigned __int64);
     /*18*/ virtual bool doEndArrayItem();
-    /*19*/ virtual void __unk_vfn_10();
+    /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual bool doBeginObject();
     /*21*/ virtual bool doBeginObject(unsigned __int64);
     /*

@@ -27,19 +27,19 @@ public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~HudContainerModel();
     /*2*/ virtual void postInit();
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual class ContainerWeakRef getContainerWeakRef() const;
-    /*5*/ virtual std::vector<class ItemStack> const& getItems() const;
-    /*6*/ virtual class ItemStackBase const& getItemStackBase(int) const;
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
-    /*10*/ virtual void __unk_vfn_4();
-    /*11*/ virtual void __unk_vfn_5();
-    /*12*/ virtual std::string const& getItemGroupName(int) const;
-    /*13*/ virtual void __unk_vfn_6();
-    /*14*/ virtual class Container* _getContainer() const;
-    /*15*/ virtual int _getContainerOffset() const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
+    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
+    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
+    /*12*/ virtual void __unk_vfn_12();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual std::string const& getItemGroupName(int) const;
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual class Container* _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
     /*
     inline bool isValid(){
         bool (HudContainerModel::*rv)();

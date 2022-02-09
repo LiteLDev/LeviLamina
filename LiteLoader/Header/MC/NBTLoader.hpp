@@ -24,22 +24,22 @@ public:
 
 public:
     /*0*/ virtual ~NBTLoader();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool isInt() const;
     /*3*/ virtual bool isString() const;
     /*4*/ virtual bool isObject() const;
     /*5*/ virtual bool isArray() const;
     /*6*/ virtual bool doSerialize(std::string&);
-    /*7*/ virtual void __unk_vfn_1();
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool doSerialize(float&);
-    /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual void __unk_vfn_3();
-    /*11*/ virtual void __unk_vfn_4();
-    /*12*/ virtual void __unk_vfn_5();
-    /*13*/ virtual void __unk_vfn_6();
-    /*14*/ virtual void __unk_vfn_7();
-    /*15*/ virtual void __unk_vfn_8();
-    /*16*/ virtual void __unk_vfn_9();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual bool doSerialize(bool&);
     /*18*/ virtual bool doBeginMember(char const*, bool);
     /*19*/ virtual bool doBeginMember(unsigned __int64, std::string&);
@@ -47,12 +47,12 @@ public:
     /*21*/ virtual bool doBeginArray(unsigned __int64&);
     /*22*/ virtual bool doBeginArrayItem(unsigned __int64);
     /*23*/ virtual bool doEndArrayItem();
-    /*24*/ virtual void __unk_vfn_10();
+    /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual bool doBeginObject();
     /*26*/ virtual bool doBeginObject(unsigned __int64&);
-    /*27*/ virtual void __unk_vfn_11();
+    /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual bool isShort() const;
-    /*29*/ virtual void __unk_vfn_12();
+    /*29*/ virtual void __unk_vfn_29();
     /*30*/ virtual bool isFloat() const;
     /*
     inline bool doSerialize(unsigned __int64& a0){

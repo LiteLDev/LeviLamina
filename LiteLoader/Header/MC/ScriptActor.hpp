@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~ScriptActor();
-    /*1*/ virtual class Scripting::Result<std::string > getNameTag() const;
-    /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
-    /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
-    /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*4*/ virtual class Scripting::Result<std::string > getNameTag() const;
+    /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
+    /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
+    /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
     /*
     inline  ~ScriptActor(){
          (ScriptActor::*rv)();

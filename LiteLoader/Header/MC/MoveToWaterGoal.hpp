@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~MoveToWaterGoal();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual unsigned __int64 _getRepathTime() const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     MCAPI MoveToWaterGoal(class Mob&, float, int, int, int, float);
 
 protected:

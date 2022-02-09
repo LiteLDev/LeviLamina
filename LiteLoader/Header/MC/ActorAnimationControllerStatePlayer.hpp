@@ -24,11 +24,11 @@ public:
 
 public:
     /*0*/ virtual ~ActorAnimationControllerStatePlayer();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void resetAnimation();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool hasAnimationFinished() const;
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
     /*8*/ virtual enum ActorAnimationType getAnimationType() const;

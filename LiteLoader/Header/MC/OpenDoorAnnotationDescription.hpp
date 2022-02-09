@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual char const* getJsonName() const;
     /*1*/ virtual ~OpenDoorAnnotationDescription();
-    /*2*/ virtual void serializeData(class Json::Value&) const;
+    /*3*/ virtual void serializeData(class Json::Value&) const;
     /*
     inline  ~OpenDoorAnnotationDescription(){
          (OpenDoorAnnotationDescription::*rv)();

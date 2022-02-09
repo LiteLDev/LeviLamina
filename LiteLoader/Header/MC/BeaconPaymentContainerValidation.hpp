@@ -25,12 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~BeaconPaymentContainerValidation();
-    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*5*/ virtual void __unk_vfn_5();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{
         bool (BeaconPaymentContainerValidation::*rv)(class ContainerScreenContext const&) const;

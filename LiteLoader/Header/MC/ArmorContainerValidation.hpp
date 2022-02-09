@@ -25,13 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~ArmorContainerValidation();
-    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-    /*4*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
-    /*7*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{
         bool (ArmorContainerValidation::*rv)(class ItemStackBase const&) const;

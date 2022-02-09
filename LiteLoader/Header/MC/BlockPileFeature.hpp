@@ -25,9 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~BlockPileFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
-    /*3*/ virtual class Block const& getBlockToPlace(class Random&) const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*4*/ virtual class Block const& getBlockToPlace(class Random&) const;
     MCAPI BlockPileFeature(class Block const&);
 
 protected:

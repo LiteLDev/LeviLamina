@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~HugeMushroomFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~HugeMushroomFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual ~HugeMushroomFeature();
     /*
     inline  ~HugeMushroomFeature(){
          (HugeMushroomFeature::*rv)();

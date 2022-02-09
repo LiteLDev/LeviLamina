@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~DefaultMobSpawner();
-    /*1*/ virtual class BlockPos const& getPos();
+    /*4*/ virtual class BlockPos const& getPos();
 
 protected:
 

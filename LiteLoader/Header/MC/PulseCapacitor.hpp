@@ -28,20 +28,20 @@ public:
     /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
     /*4*/ virtual void setDirection(unsigned char);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*9*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*10*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*11*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*12*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*13*/ virtual void __unk_vfn_3();
-    /*14*/ virtual void __unk_vfn_4();
-    /*15*/ virtual void __unk_vfn_5();
-    /*16*/ virtual void __unk_vfn_6();
-    /*17*/ virtual enum CircuitComponentType getCircuitComponentType() const;
-    /*18*/ virtual unsigned char getPoweroutDirection() const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
+    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*24*/ virtual unsigned char getPoweroutDirection() const;
     /*
     inline bool canConsumerPower() const{
         bool (PulseCapacitor::*rv)() const;

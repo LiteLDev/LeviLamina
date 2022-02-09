@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~FlowerFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~FlowerFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual ~FlowerFeature();
     /*
     inline  ~FlowerFeature(){
          (FlowerFeature::*rv)();

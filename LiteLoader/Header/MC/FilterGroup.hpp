@@ -29,7 +29,7 @@ public:
     /*0*/ virtual ~FilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const = 0;
     /*2*/ virtual bool _setupContext(class FilterTest const&, struct FilterContext&) const;
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*
     inline bool _handleUnknownMember(std::string const& a0, class Json::Value const& a1){
         bool (FilterGroup::*rv)(std::string const&, class Json::Value const&);

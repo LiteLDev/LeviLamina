@@ -28,13 +28,13 @@ public:
     /*2*/ virtual std::string const& getName() const;
     /*3*/ virtual struct ActorUniqueID const& getEntityId() const;
     /*4*/ virtual bool isEntityOwned() const;
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual struct Bounds const& getBounds() const;
     /*8*/ virtual bool isAlwaysActive() const;
     /*9*/ virtual float getMaxDistToPlayers() const;
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual struct TickingAreaDescription getDescription() const;
     /*13*/ virtual enum TickingAreaLoadMode getLoadMode() const;
     /*14*/ virtual void setLoadMode(enum TickingAreaLoadMode, class LevelStorage&);

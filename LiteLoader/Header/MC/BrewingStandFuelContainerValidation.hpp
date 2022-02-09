@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~BrewingStandFuelContainerValidation();
-    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
 
 protected:
 

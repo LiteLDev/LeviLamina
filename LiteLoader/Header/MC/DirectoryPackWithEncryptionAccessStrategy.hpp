@@ -29,9 +29,9 @@ public:
     /*1*/ virtual unsigned __int64 getPackSize() const;
     /*2*/ virtual class ResourceLocation const& getPackLocation() const;
     /*3*/ virtual std::string const& getPackName() const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void setIsTrusted(bool);
-    /*6*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
     /*8*/ virtual bool hasFolder(class Core::Path const&) const;
     /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
@@ -40,12 +40,12 @@ public:
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
-    /*15*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    /*16*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*17*/ virtual void __unk_vfn_2();
-    /*18*/ virtual void unload();
-    /*19*/ virtual bool hasUpgradeFiles() const;
-    /*20*/ virtual class ContentIdentity readContentIdentity() const;
+    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void unload();
+    /*20*/ virtual bool hasUpgradeFiles() const;
+    /*21*/ virtual class ContentIdentity readContentIdentity() const;
     /*
     inline bool isWritable() const{
         bool (DirectoryPackWithEncryptionAccessStrategy::*rv)() const;

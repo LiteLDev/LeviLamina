@@ -26,12 +26,12 @@ public:
 public:
     /*0*/ virtual ~StrollTowardsVillageGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void appendDebugInfo(std::string&) const;
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual unsigned __int64 _getRepathTime() const;
-    /*7*/ virtual class BlockPos _selectRandomPosInVillage();
+    /*3*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*16*/ virtual unsigned __int64 _getRepathTime() const;
+    /*17*/ virtual class BlockPos _selectRandomPosInVillage();
 
 protected:
 

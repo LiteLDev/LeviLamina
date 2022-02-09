@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~CursorContainerValidation();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
+    /*2*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*
     inline int getContainerOffset(class ContainerScreenContext const& a0) const{
         int (CursorContainerValidation::*rv)(class ContainerScreenContext const&) const;

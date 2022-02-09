@@ -26,13 +26,13 @@ public:
     /*0*/ virtual ~MeleeAttackGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _attemptMoveToTarget(class Actor&);
     /*11*/ virtual void _attemptAttackTarget(class Actor&, float, float, float, float);
     /*

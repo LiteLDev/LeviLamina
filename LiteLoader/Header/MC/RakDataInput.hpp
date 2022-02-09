@@ -24,8 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~RakDataInput();
-    /*1*/ virtual bool readBytes(void*, unsigned __int64);
-    /*2*/ virtual unsigned __int64 numBytesLeft() const;
+    /*9*/ virtual bool readBytes(void*, unsigned __int64);
+    /*10*/ virtual unsigned __int64 numBytesLeft() const;
     /*
     inline  ~RakDataInput(){
          (RakDataInput::*rv)();

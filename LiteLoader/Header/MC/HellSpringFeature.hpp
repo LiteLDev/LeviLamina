@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~HellSpringFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~HellSpringFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual ~HellSpringFeature();
     /*
     inline  ~HellSpringFeature(){
          (HellSpringFeature::*rv)();

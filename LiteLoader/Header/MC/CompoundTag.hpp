@@ -83,9 +83,9 @@ public:
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
-    /*7*/ virtual void print(std::string const&, class PrintStream&) const;
-    /*8*/ virtual std::unique_ptr<class Tag> copy() const;
-    /*9*/ virtual unsigned __int64 hash() const;
+    /*8*/ virtual void print(std::string const&, class PrintStream&) const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const;
+    /*10*/ virtual unsigned __int64 hash() const;
     /*
     inline  ~CompoundTag(){
          (CompoundTag::*rv)();

@@ -23,7 +23,7 @@ public:
 
 public:
     /*0*/ virtual ~SyncScriptGameTestFunction();
-    /*1*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
+    /*2*/ virtual std::unique_ptr<class gametest::IGameTestFunctionRunResult> run(class gametest::BaseGameTestHelper&, class gametest::IGameTestFunctionContext&) const;
     MCAPI SyncScriptGameTestFunction(class Scripting::WeakLifetimeScope, class Scripting::Closure<void (struct Scripting::TypedObjectHandle<class ScriptGameTestHelper>)>, std::string const&);
 
 protected:

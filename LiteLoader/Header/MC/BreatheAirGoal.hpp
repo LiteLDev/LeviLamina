@@ -28,7 +28,7 @@ public:
     /*2*/ virtual bool canContinueToUse();
     /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_0();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     MCAPI BreatheAirGoal(class Mob&);

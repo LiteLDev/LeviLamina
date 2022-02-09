@@ -23,8 +23,8 @@ public:
 
 public:
     /*0*/ virtual ~DouseFireSubcomponent();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
     /*4*/ virtual char const* getName();
     /*

@@ -26,11 +26,11 @@ public:
 public:
     /*0*/ virtual ~ResourceLoader();
     /*1*/ virtual bool load(class ResourceLocationPair const&, std::string&, std::vector<std::string> const&) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2() = 0;
-    /*5*/ virtual void __unk_vfn_3() = 0;
-    /*6*/ virtual void __unk_vfn_4() = 0;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4() = 0;
+    /*5*/ virtual void __unk_vfn_5() = 0;
+    /*6*/ virtual void __unk_vfn_6() = 0;
     /*7*/ virtual class Core::PathBuffer<std::string > getPath(class ResourceLocation const&) const;
     /*8*/ virtual class Core::PathBuffer<std::string > getPath(class ResourceLocation const&, std::vector<std::string> const&) const;
     /*9*/ virtual class Core::PathBuffer<std::string > getPathContainingResource(class ResourceLocation const&) const;

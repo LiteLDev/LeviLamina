@@ -31,13 +31,13 @@ public:
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*7*/ virtual void __unk_vfn_0();
-    /*8*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
-    /*9*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const = 0;
-    /*10*/ virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
-    /*11*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
-    /*12*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
-    /*13*/ virtual void __unk_vfn_1();
+    /*10*/ virtual void __unk_vfn_10();
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*13*/ virtual int generateHeightAtPosition(class BlockPos const&, class Dimension&, class BlockVolume&, class std::unordered_map<class ChunkPos, std::unique_ptr<std::vector<short>>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, std::unique_ptr<std::vector<short>> > > >&) const = 0;
+    /*14*/ virtual class Block const* getSupportBlock(class BlockSource&, class BlockPos const&, class Block const&) const = 0;
+    /*15*/ virtual class Block const& getBeardStabilizeBlock(class Block const&) const = 0;
+    /*16*/ virtual enum AdjustmentEffect getTerrainAdjustmentEffect() const = 0;
+    /*17*/ virtual void __unk_vfn_17();
     /*
     inline bool _needsPostProcessing(class BlockSource& a0){
         bool (PoolElementStructurePiece::*rv)(class BlockSource&);

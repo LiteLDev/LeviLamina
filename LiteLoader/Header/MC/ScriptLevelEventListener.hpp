@@ -24,14 +24,14 @@ public:
 
 public:
     /*0*/ virtual ~ScriptLevelEventListener();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual enum EventResult onLevelAddedPlayer(class Level&, class Player&);
     /*4*/ virtual enum EventResult onLevelRemovedPlayer(class Level&, class Player&);
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum EventResult onLevelTick();
     /*7*/ virtual enum EventResult onLevelWeatherChange(std::string const&, bool, bool);
-    /*8*/ virtual void __unk_vfn_3();
+    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual enum EventResult onEvent(struct LevelStartLeaveGameEvent const&);
     MCAPI ScriptLevelEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 

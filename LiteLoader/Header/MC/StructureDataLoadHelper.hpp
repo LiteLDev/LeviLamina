@@ -28,9 +28,9 @@ public:
     /*1*/ virtual class Vec3 loadPosition(class Vec3 const&);
     /*2*/ virtual class BlockPos loadBlockPosition(class BlockPos const&);
     /*3*/ virtual class BlockPos loadBlockPositionOffset(class BlockPos const&);
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual float loadRotationDegreesY(float);
-    /*6*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual float loadRotationRadiansY(float);
     /*8*/ virtual unsigned char loadFacingID(unsigned char);
     /*9*/ virtual class Vec3 loadDirection(class Vec3 const&);

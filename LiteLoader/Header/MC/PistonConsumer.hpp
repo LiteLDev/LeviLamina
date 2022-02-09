@@ -28,20 +28,20 @@ public:
     /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
     /*4*/ virtual void setDirection(unsigned char);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void setStopPower(bool);
-    /*9*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*10*/ virtual void __unk_vfn_3();
-    /*11*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_4();
-    /*15*/ virtual void __unk_vfn_5();
-    /*16*/ virtual void __unk_vfn_6();
-    /*17*/ virtual bool isSecondaryPowered() const;
-    /*18*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void setStopPower(bool);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual bool isSecondaryPowered() const;
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*
     inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
         bool (PistonConsumer::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);

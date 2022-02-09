@@ -29,7 +29,7 @@ public:
 public:
     /*0*/ virtual ~NpcSceneDialogueData();
     /*1*/ virtual std::string const& getDialogueText() const;
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual std::string const& getNameText() const;
     /*4*/ virtual std::string const& getNameRawText() const;
     /*5*/ virtual std::string const& getSceneName() const;

@@ -25,12 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~ClassroomModeListener();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void onSourceDestroyed(class BlockSource&);
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void onBlockEntityAboutToBeRemoved(class BlockSource&, class std::shared_ptr<class BlockActor>);
     /*
     inline void onEntityRemoved(class Actor& a0){
         void (ClassroomModeListener::*rv)(class Actor&);

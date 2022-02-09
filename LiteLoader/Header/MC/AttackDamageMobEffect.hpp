@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~AttackDamageMobEffect();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual float getAttributeModifierValue(int, class AttributeModifier const&) const;
     MCAPI AttackDamageMobEffect(int, std::string const&, std::string const&, bool, int, int);
     MCAPI static int getDamageAfterDamageBoost(int, int);
     MCAPI static int getDamageAfterWeakness(int, int);

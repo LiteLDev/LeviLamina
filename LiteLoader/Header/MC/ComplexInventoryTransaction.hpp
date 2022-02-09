@@ -34,8 +34,8 @@ public:
 
 public:
     /*0*/ virtual ~ComplexInventoryTransaction();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void postLoadItems(class BlockPalette&, bool);
     /*4*/ virtual enum InventoryTransactionError handle(class Player&, bool) const;
     /*5*/ virtual void onTransactionError(class Player&, enum InventoryTransactionError) const;

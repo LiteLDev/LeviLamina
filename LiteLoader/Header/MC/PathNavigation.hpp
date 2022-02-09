@@ -33,7 +33,7 @@ public:
     /*7*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
     /*8*/ virtual bool moveTo(class NavigationComponent&, class Mob&, std::unique_ptr<class Path>, float);
     /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*10*/ virtual void __unk_vfn_0();
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual bool canUpdatePath(class Mob const&) const;
     /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
     /*

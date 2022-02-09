@@ -26,9 +26,9 @@ public:
 public:
     /*0*/ virtual ~OnInteractTriggerDescription();
     /*1*/ virtual std::string const& getName() const;
-    /*2*/ virtual bool isNetworkComponent() const;
-    /*3*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*4*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*4*/ virtual bool isNetworkComponent() const;
+    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
+    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
     MCAPI static std::string const NameID;
 
 protected:

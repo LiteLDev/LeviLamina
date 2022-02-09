@@ -27,24 +27,24 @@ public:
 public:
     /*0*/ virtual ~ActorServerCommandOrigin();
     /*1*/ virtual std::string const& getRequestId() const;
-    /*2*/ virtual class std::optional<class Vec2> getRotation() const;
-    /*3*/ virtual class Level* getLevel() const;
-    /*4*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /*5*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*6*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*7*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void __unk_vfn_1();
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
-    /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual enum CommandOriginType getOriginType() const;
-    /*14*/ virtual void __unk_vfn_5();
-    /*15*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*16*/ virtual void updateValues();
-    /*17*/ virtual class CompoundTag serialize() const;
-    /*18*/ virtual bool isValid() const;
-    /*19*/ virtual void _setUUID(class mce::UUID const&);
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*6*/ virtual class Level* getLevel() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*15*/ virtual void __unk_vfn_15();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*23*/ virtual enum CommandOriginType getOriginType() const;
+    /*25*/ virtual void __unk_vfn_25();
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*27*/ virtual void updateValues();
+    /*29*/ virtual class CompoundTag serialize() const;
+    /*30*/ virtual bool isValid() const;
+    /*31*/ virtual void _setUUID(class mce::UUID const&);
     /*
     inline bool isSelectorExpansionAllowed() const{
         bool (ActorServerCommandOrigin::*rv)() const;

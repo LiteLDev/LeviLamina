@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScatteredFeatureStart();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual enum StructureFeatureType getType() const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI ScatteredFeatureStart(class BiomeSource const&, short, int, int, class IPreliminarySurfaceProvider const&, class BaseGameVersion const&);
 
 protected:

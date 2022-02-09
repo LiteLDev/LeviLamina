@@ -25,16 +25,16 @@ public:
 public:
     /*0*/ virtual ~MoveInput();
     /*1*/ virtual void tick(struct IPlayerMovementProxy&);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void clearInputState();
-    /*5*/ virtual void __unk_vfn_2();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual bool allowPicking(float, float);
     /*7*/ virtual void setJumping(bool);
     /*8*/ virtual void setAutoJumpingInWater(bool);
-    /*9*/ virtual void __unk_vfn_3();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void setSneakDown(bool);
-    /*11*/ virtual void __unk_vfn_4();
+    /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual class Vec3 const& getGazeDirection() const;
     /*
     inline bool isChangeHeight() const{

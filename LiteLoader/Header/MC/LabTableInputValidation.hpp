@@ -25,12 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~LabTableInputValidation();
-    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{
         bool (LabTableInputValidation::*rv)(class ContainerScreenContext const&) const;

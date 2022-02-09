@@ -26,7 +26,7 @@ public:
     /*1*/ virtual bool isBool() const;
     /*2*/ virtual bool isInt() const;
     /*3*/ virtual bool isString() const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool isArray() const;
     /*6*/ virtual bool doSerialize(bool&);
     /*7*/ virtual bool doSerialize(signed char&);
@@ -42,11 +42,11 @@ public:
     /*17*/ virtual bool doSerialize(std::string&);
     /*18*/ virtual bool doBeginMember(char const*, bool);
     /*19*/ virtual bool doBeginMember(unsigned __int64, std::string&);
-    /*20*/ virtual void __unk_vfn_1();
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool doBeginArray(unsigned __int64&);
     /*22*/ virtual bool doBeginArrayItem(unsigned __int64);
-    /*23*/ virtual void __unk_vfn_2();
-    /*24*/ virtual void __unk_vfn_3();
+    /*23*/ virtual void __unk_vfn_23();
+    /*24*/ virtual void __unk_vfn_24();
     /*25*/ virtual bool doBeginObject(unsigned __int64&);
     /*
     inline bool doEndObject(){

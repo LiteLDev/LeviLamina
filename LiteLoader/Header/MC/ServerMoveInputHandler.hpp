@@ -24,14 +24,14 @@ public:
 
 public:
     /*0*/ virtual ~ServerMoveInputHandler();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void setAutoJumpingInWater(bool);
-    /*6*/ virtual void __unk_vfn_4();
-    /*7*/ virtual void setSneakDown(bool);
-    /*8*/ virtual class Vec3 const& getGazeDirection() const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*8*/ virtual void setAutoJumpingInWater(bool);
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void setSneakDown(bool);
+    /*12*/ virtual class Vec3 const& getGazeDirection() const;
     /*
     inline void registerInputHandlers(class InputHandler& a0){
         void (ServerMoveInputHandler::*rv)(class InputHandler&);

@@ -26,9 +26,9 @@ public:
     /*0*/ virtual ~CraftHandlerCrafting();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual class Recipes const* _getLevelRecipes() const;
 
 protected:

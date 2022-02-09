@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ActorSkeletalAnimationPlayer();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void resetAnimation();
     /*3*/ virtual void buildBoneToPartMapping(class AnimationComponent&);
     /*4*/ virtual void bindParticleEffects(class std::unordered_map<class HashedString, class HashedString, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class HashedString> > > const&);

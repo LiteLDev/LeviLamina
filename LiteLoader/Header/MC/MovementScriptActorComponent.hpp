@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~MovementScriptActorComponent();
-    /*1*/ virtual class Scripting::Result<float> getMaxTurn() const;
+    /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
 
 protected:
 

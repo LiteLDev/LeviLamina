@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~EnchantingInputContainerValidation();
-    /*1*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
+    /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
+    /*5*/ virtual void __unk_vfn_5();
+    /*8*/ virtual int getContainerOffset(class ContainerScreenContext const&) const;
     /*
     inline int getAvailableSetCount(int a0, class ItemStackBase const& a1) const{
         int (EnchantingInputContainerValidation::*rv)(int, class ItemStackBase const&) const;

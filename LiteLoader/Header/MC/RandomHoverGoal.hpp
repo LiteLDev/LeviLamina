@@ -26,9 +26,9 @@ public:
     /*0*/ virtual ~RandomHoverGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     MCAPI RandomHoverGoal(class Mob&, float, int, float, float, float, struct IntRange);

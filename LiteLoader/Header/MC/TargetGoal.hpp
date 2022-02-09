@@ -31,8 +31,8 @@ public:
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void __unk_vfn_1();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool _canAttack(class Mob*, class Actor*, bool, bool, struct MobDescriptor const* *);
     /*
     inline  ~TargetGoal(){

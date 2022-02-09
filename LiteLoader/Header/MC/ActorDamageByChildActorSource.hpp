@@ -26,20 +26,20 @@ public:
 public:
     /*0*/ virtual ~ActorDamageByChildActorSource();
     /*1*/ virtual bool isChildEntitySource() const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual enum ActorCategory getEntityCategories() const;
-    /*10*/ virtual bool getDamagingEntityIsCreative() const;
-    /*11*/ virtual bool getDamagingEntityIsWorldBuilder() const;
-    /*12*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*13*/ virtual enum ActorType getDamagingEntityType() const;
-    /*14*/ virtual enum ActorCategory getDamagingEntityCategories() const;
-    /*15*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*5*/ virtual struct std::pair<std::string, std::vector<std::string> > getDeathMessage(std::string, class Actor*) const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual enum ActorCategory getEntityCategories() const;
+    /*11*/ virtual bool getDamagingEntityIsCreative() const;
+    /*12*/ virtual bool getDamagingEntityIsWorldBuilder() const;
+    /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
+    /*14*/ virtual enum ActorType getDamagingEntityType() const;
+    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /*
     inline  ~ActorDamageByChildActorSource(){
          (ActorDamageByChildActorSource::*rv)();

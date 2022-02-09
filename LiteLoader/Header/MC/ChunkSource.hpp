@@ -33,7 +33,7 @@ public:
     /*5*/ virtual bool isChunkKnown(class ChunkPos const&);
     /*6*/ virtual class std::shared_ptr<class LevelChunk> createNewChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
     /*7*/ virtual class std::shared_ptr<class LevelChunk> getOrLoadChunk(class ChunkPos const&, enum ChunkSource::LoadMode, bool);
-    /*8*/ virtual void __unk_vfn_0();
+    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*10*/ virtual void loadChunk(class LevelChunk&, bool);
     /*11*/ virtual void postProcessMobsAt(class BlockSource&, int, int, class Random&);
@@ -43,7 +43,7 @@ public:
     /*15*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*16*/ virtual void compact();
     /*17*/ virtual void flushPendingWrites();
-    /*18*/ virtual void __unk_vfn_1();
+    /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
     /*20*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const& getStorage() const;
     /*21*/ virtual void clearDeletedEntities();

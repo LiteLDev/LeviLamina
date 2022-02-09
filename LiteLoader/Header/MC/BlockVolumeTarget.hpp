@@ -24,21 +24,21 @@ public:
 
 public:
     /*0*/ virtual ~BlockVolumeTarget();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual short getMinHeight() const;
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class Block const& getExtraBlock(class BlockPos const&) const;
     /*6*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     /*7*/ virtual bool setBlock(class BlockPos const&, class Block const&, int);
     /*8*/ virtual bool setBlockSimple(class BlockPos const&, class Block const&);
-    /*9*/ virtual void __unk_vfn_3();
-    /*10*/ virtual void __unk_vfn_4();
-    /*11*/ virtual void __unk_vfn_5();
-    /*12*/ virtual void __unk_vfn_6();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual short getMaxHeight() const;
-    /*14*/ virtual void __unk_vfn_7();
-    /*15*/ virtual void __unk_vfn_8();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual short getHeightmap(int, int);
     /*17*/ virtual bool isLegacyLevel();
     /*18*/ virtual class Biome const* getBiome(class BlockPos const&) const;

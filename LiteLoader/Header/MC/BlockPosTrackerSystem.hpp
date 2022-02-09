@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~BlockPosTrackerSystem();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void tick(class EntityRegistry&);
     MCAPI static void _tickBlockPosTrackerComponent(class Actor*, class BlockPosTrackerComponent&);
 

@@ -25,15 +25,15 @@ public:
 
 public:
     /*0*/ virtual ~OceanMonumentPiece();
-    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
-    /*2*/ virtual enum StructurePieceType getType() const;
-    /*3*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
-    /*4*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
-    /*5*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*6*/ virtual int getWorldX(int, int);
-    /*7*/ virtual int getWorldZ(int, int);
-    /*8*/ virtual void __unk_vfn_0();
-    /*9*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
+    /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&) = 0;
+    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    /*7*/ virtual int getWorldX(int, int);
+    /*8*/ virtual int getWorldZ(int, int);
+    /*10*/ virtual void __unk_vfn_10();
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*
     inline  ~OceanMonumentPiece(){
          (OceanMonumentPiece::*rv)();

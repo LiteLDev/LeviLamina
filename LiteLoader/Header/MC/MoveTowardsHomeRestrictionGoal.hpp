@@ -25,11 +25,11 @@ public:
 public:
     /*0*/ virtual ~MoveTowardsHomeRestrictionGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3();
-    /*6*/ virtual void __unk_vfn_4();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
     MCAPI MoveTowardsHomeRestrictionGoal(class Mob&);
 

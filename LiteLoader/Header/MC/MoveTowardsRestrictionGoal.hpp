@@ -24,9 +24,9 @@ public:
 
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
-    /*1*/ virtual void __unk_vfn_0() = 0;
+    /*1*/ virtual void __unk_vfn_1() = 0;
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*
     inline  ~MoveTowardsRestrictionGoal(){

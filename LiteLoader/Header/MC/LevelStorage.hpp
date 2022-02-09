@@ -40,12 +40,12 @@ public:
     /*12*/ virtual void syncIO() = 0;
     /*13*/ virtual void getStatistics(std::string&) const = 0;
     /*14*/ virtual bool clonePlayerData(class gsl::basic_string_span<char const, -1>, class gsl::basic_string_span<char const, -1>);
-    /*15*/ virtual void __unk_vfn_0() = 0;
+    /*15*/ virtual void __unk_vfn_15() = 0;
     /*16*/ virtual void startShutdown() = 0;
     /*17*/ virtual bool isShuttingDown() const = 0;
     /*18*/ virtual bool checkShutdownDone() = 0;
-    /*19*/ virtual void __unk_vfn_1() = 0;
-    /*20*/ virtual void __unk_vfn_2();
+    /*19*/ virtual void __unk_vfn_19() = 0;
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&) = 0;
     /*22*/ virtual void releaseSnapshot() = 0;
     /*23*/ virtual void compactStorage() = 0;

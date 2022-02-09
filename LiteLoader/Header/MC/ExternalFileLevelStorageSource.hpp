@@ -38,9 +38,9 @@ public:
     /*10*/ virtual bool renameLevel(std::string const&, std::string const&);
     /*11*/ virtual void renameLevel(class LevelData&, class Core::Path const&, std::string const&);
     /*12*/ virtual bool createBackupCopyOfWorld(std::string const&, std::string const&, std::string const&);
-    /*13*/ virtual void __unk_vfn_0();
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual void __unk_vfn_2();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual bool isLevelMarkedForSync(class Core::Path const&) const;
     /*17*/ virtual bool isLevelPartiallyCopied(class Core::Path const&) const;
     /*18*/ virtual class Core::PathBuffer<std::string > getLevelDatFoundPath(class Core::Path const&) const;

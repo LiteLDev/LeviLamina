@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~FloatNavigation();
-    /*1*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*2*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
 
 protected:
 

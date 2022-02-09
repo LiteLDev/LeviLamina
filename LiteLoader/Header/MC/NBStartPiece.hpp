@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~NBStartPiece();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual enum StructurePieceType getType() const;
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*6*/ virtual void __unk_vfn_6();
+    /*10*/ virtual void __unk_vfn_10();
     /*
     inline  ~NBStartPiece(){
          (NBStartPiece::*rv)();

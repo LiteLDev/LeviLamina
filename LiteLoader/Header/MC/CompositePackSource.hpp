@@ -26,8 +26,8 @@ public:
     /*0*/ virtual ~CompositePackSource();
     /*1*/ virtual void forEachPackConst(class std::function<void (class Pack const& )>) const;
     /*2*/ virtual void forEachPack(class std::function<void (class Pack& )>);
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
     MCAPI CompositePackSource(std::vector<class PackSource* >&&);
 

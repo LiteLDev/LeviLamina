@@ -25,9 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~FurnaceIngredientContainerValidation();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
+    /*2*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
     /*
     inline int getContainerOffset(class ContainerScreenContext const& a0) const{
         int (FurnaceIngredientContainerValidation::*rv)(class ContainerScreenContext const&) const;

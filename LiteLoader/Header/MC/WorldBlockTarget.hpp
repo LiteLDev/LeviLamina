@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~WorldBlockTarget();
-    /*1*/ virtual void __unk_vfn_0();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual class LevelChunk* getChunk(class ChunkPos const&);
     /*3*/ virtual class Block const& getBlock(class BlockPos const&) const;
     /*4*/ virtual class Block const& getBlockNoBoundsCheck(class BlockPos const&) const;
@@ -32,7 +32,7 @@ public:
     /*6*/ virtual bool hasBiomeTag(unsigned __int64, class BlockPos const&) const;
     /*7*/ virtual bool setBlock(class BlockPos const&, class Block const&, int);
     /*8*/ virtual bool setBlockSimple(class BlockPos const&, class Block const&);
-    /*9*/ virtual void __unk_vfn_1();
+    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual bool placeStructure(class BlockPos const&, class StructureTemplate&, class StructureSettings&);
     /*11*/ virtual bool mayPlace(class BlockPos const&, class Block const&) const;
     /*12*/ virtual bool canSurvive(class BlockPos const&, class Block const&) const;

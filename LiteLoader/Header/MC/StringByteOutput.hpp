@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~StringByteOutput();
-    /*1*/ virtual void writeBytes(void const*, unsigned __int64);
+    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
     /*
     inline  ~StringByteOutput(){
          (StringByteOutput::*rv)();

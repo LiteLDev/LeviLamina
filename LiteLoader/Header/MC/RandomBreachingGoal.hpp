@@ -30,10 +30,10 @@ public:
     /*3*/ virtual bool canBeInterrupted();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void appendDebugInfo(std::string&) const;
-    /*7*/ virtual void __unk_vfn_0();
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual bool _setWantedPosition();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual bool _setWantedPosition();
     MCAPI RandomBreachingGoal(class Mob&, float, int, int, int, float);
 
 protected:

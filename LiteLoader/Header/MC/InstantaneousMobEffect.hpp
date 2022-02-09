@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~InstantaneousMobEffect();
-    /*1*/ virtual bool isInstantaneous() const;
-    /*2*/ virtual bool isDurationEffectTick(int, int) const;
+    /*4*/ virtual bool isInstantaneous() const;
+    /*6*/ virtual bool isDurationEffectTick(int, int) const;
     MCAPI InstantaneousMobEffect(int, std::string const&, std::string const&, bool, int, int);
 
 protected:

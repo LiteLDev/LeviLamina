@@ -33,7 +33,7 @@ public:
     /*7*/ virtual int getWorldX(int, int);
     /*8*/ virtual int getWorldZ(int, int);
     /*9*/ virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
-    /*10*/ virtual void __unk_vfn_0();
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*

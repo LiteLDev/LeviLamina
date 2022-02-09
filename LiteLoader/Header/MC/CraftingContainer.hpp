@@ -27,16 +27,16 @@ public:
     /*0*/ virtual ~CraftingContainer();
     /*1*/ virtual void init();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
-    /*3*/ virtual class ItemStack const& getItem(int) const;
-    /*4*/ virtual void setItem(int, class ItemStack const&);
-    /*5*/ virtual int getContainerSize() const;
-    /*6*/ virtual int getMaxStackSize() const;
-    /*7*/ virtual void startOpen(class Player&);
-    /*8*/ virtual void stopOpen(class Player&);
-    /*9*/ virtual void __unk_vfn_0();
-    /*10*/ virtual void __unk_vfn_1();
-    /*11*/ virtual void setContainerChanged(int);
-    /*12*/ virtual void __unk_vfn_2();
+    /*5*/ virtual class ItemStack const& getItem(int) const;
+    /*9*/ virtual void setItem(int, class ItemStack const&);
+    /*14*/ virtual int getContainerSize() const;
+    /*15*/ virtual int getMaxStackSize() const;
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void __unk_vfn_22();
+    /*23*/ virtual void __unk_vfn_23();
+    /*24*/ virtual void setContainerChanged(int);
+    /*31*/ virtual void __unk_vfn_31();
     /*
     inline  ~CraftingContainer(){
          (CraftingContainer::*rv)();

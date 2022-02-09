@@ -31,7 +31,7 @@ public:
 public:
     /*0*/ virtual ~ActorFilterGroup();
     /*1*/ virtual class std::shared_ptr<class FilterGroup> _createSubgroup(enum FilterGroup::CollectionType) const;
-    /*2*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
+    /*3*/ virtual bool _handleUnknownMember(std::string const&, class Json::Value const&);
     /*
     inline  ~ActorFilterGroup(){
          (ActorFilterGroup::*rv)();

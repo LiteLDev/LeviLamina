@@ -27,9 +27,9 @@ public:
     /*1*/ virtual void init(class ServerInstance&, class Level&);
     /*2*/ virtual void initializeBehaviorStack(class Experiments const&, class IResourcePackRepository&, class ResourcePackStack&, class BaseGameVersion const&);
     /*3*/ virtual void configureLevel(class Level&, class Experiments const&, class ResourcePackManager&, class BaseGameVersion const&);
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void setupCommands(class CommandRegistry&);
     /*8*/ virtual void configureServerNetworkHandler(class ServerInstance&, class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler> >);
     /*
