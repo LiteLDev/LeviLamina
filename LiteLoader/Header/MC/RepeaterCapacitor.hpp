@@ -25,10 +25,8 @@ public:
 public:
     /*0*/ virtual ~RepeaterCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void setDirection(unsigned char);
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
@@ -44,11 +42,6 @@ public:
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*24*/ virtual unsigned char getPoweroutDirection() const;
     /*
-    inline bool canConsumePowerAnyDirection() const{
-        bool (RepeaterCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@RepeaterCapacitor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool canConsumerPower() const{
         bool (RepeaterCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@RepeaterCapacitor@@UEBA_NXZ");

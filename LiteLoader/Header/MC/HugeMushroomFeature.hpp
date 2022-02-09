@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~HugeMushroomFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual ~HugeMushroomFeature();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /*
     inline  ~HugeMushroomFeature(){
          (HugeMushroomFeature::*rv)();

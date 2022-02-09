@@ -22,8 +22,12 @@ public:
 
 public:
     /*0*/ virtual ~AttributeModifier();
-    /*1*/ virtual bool isInstantaneous() const;
     /*
+    inline bool isInstantaneous() const{
+        bool (AttributeModifier::*rv)() const;
+        *((void**)&rv) = dlsym("?isInstantaneous@AttributeModifier@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~AttributeModifier(){
          (AttributeModifier::*rv)();
         *((void**)&rv) = dlsym("??1AttributeModifier@@UEAA@XZ");

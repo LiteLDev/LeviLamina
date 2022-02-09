@@ -195,17 +195,17 @@
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\
+      <Command>if exist "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\" (
+copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\"
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib goto process
-if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib goto process
+      <Command>if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib" goto process
+if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib" goto process
 goto end
 
 :process
-cd /d $(SolutionDir)Tools
+cd /d "$(SolutionDir)Tools"
 LibraryBuilder.exe
 
 :end</Command>
@@ -236,17 +236,17 @@ LibraryBuilder.exe
       <DelayLoadDLLs>bedrock_server.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>if exist $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\ (
-copy /Y $(TargetPath) $(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\
+      <Command>if exist "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\" (
+copy /Y "$(TargetPath)" "$(LocalDebuggerWorkingDirectory)\plugins\LiteLoader\"
 )</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib goto process
-if not exist $(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib goto process
+      <Command>if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_api.lib" goto process
+if not exist "$(SolutionDir)LiteLoader\Lib\bedrock_server_var.lib" goto process
 goto end
 
 :process
-cd /d $(SolutionDir)Tools
+cd /d "$(SolutionDir)Tools"
 LibraryBuilder.exe
 
 :end</Command>

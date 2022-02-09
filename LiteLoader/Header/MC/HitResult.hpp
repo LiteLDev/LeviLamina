@@ -30,8 +30,7 @@ class HitResult {
     BlockPos endBpos;    //32
     Vec3 endPos;         //44
     uintptr_t actorRef; //56
-    int unk64;
-    int unk68;
+    uintptr_t unk64;
     int unk72;
     int unk76;           //76
     bool hitLiquid;      //80

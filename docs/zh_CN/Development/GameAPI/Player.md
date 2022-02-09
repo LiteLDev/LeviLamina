@@ -486,6 +486,75 @@ pl.addLevel(6);
 
 ```
 
+#### 获取玩家经验等级
+
+`pl.getLevel()`
+
+- 返回值：玩家的经验等级
+- 返回值类型：`Integer`
+
+```clike
+[Js]
+//对于一个玩家对象pl
+pl.getLevel();
+[Lua]
+--对于一个玩家对象pl
+pl.getLevel()
+```
+
+#### 重置玩家经验
+
+`pl.resetLevel()`
+
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+```clike
+[Js]
+//对于一个玩家对象pl
+pl.resetLevel();
+[Lua]
+--对于一个玩家对象pl
+pl:resetLevel()
+```
+
+#### 获取玩家升级所需的经验值
+
+`pl.getXpNeededForNextLevel()`
+
+- 返回值：玩家升级所需的经验值
+- 返回值类型：`Integer`
+
+注意，此方法在计算时会忽略超出等级的经验值
+
+```clike
+[Js]
+//对于一个玩家对象pl
+pl.getXpNeededForNextLevel();
+[Lua]
+--对于一个玩家对象pl
+pl.getXpNeededForNextLevel()
+```
+
+#### 提高玩家经验值
+
+`pl.addExperience(count)`
+
+- 参数：
+  - count : `Integer`
+    要提升的经验值
+- 返回值：是否设置成功
+- 返回值类型：`Boolean`
+
+```clike
+[Js]
+//对于一个玩家对象pl
+pl.addExperience(6);
+[Lua]
+--对于一个玩家对象pl
+pl:addExperience(6)
+```
+
 #### 传送玩家至指定服务器  
 
 `pl.transServer(server,port)`

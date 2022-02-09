@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~CraftingContainer();
-    /*1*/ virtual void init();
     /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     /*5*/ virtual class ItemStack const& getItem(int) const;
     /*9*/ virtual void setItem(int, class ItemStack const&);

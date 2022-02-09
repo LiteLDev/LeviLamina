@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Core.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -39,7 +38,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual class Core::PathBuffer<std::string > const getCurrentlyPlayingMusicName();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual unsigned __int64 registerLoop(std::string const&, class std::function<void (struct LoopingSoundState& )>, float, float);
     /*
@@ -121,6 +120,11 @@ public:
     inline void stopAllSounds(){
         void (NullSoundPlayer::*rv)();
         *((void**)&rv) = dlsym("?stopAllSounds@NullSoundPlayer@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline class Core::PathBuffer<std::string > const getCurrentlyPlayingMusicName(){
+        class Core::PathBuffer<std::string > const (NullSoundPlayer::*rv)();
+        *((void**)&rv) = dlsym("?getCurrentlyPlayingMusicName@NullSoundPlayer@@UEAA?BV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@XZ");
         return (this->*rv)();
     }
     inline unsigned __int64 play(std::string const& a0, class Vec3 const& a1, float a2, float a3){

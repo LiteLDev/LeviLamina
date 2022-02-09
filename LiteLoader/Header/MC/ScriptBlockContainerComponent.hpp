@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockContainerComponent();
-    /*1*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -33,8 +33,20 @@ public:
     /*6*/ virtual bool retrieveComponentFrom(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle&) const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, bool&) const;
-    /*10*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, bool&) const;
+    /*
+    inline bool applyComponentTo(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Block const& a3, class BlockSource& a4, class BlockPos const& a5, class ScriptApi::ScriptObjectHandle const& a6) const{
+        bool (ScriptBlockContainerComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Block const&, class BlockSource&, class BlockPos const&, class ScriptApi::ScriptObjectHandle const&) const;
+        *((void**)&rv) = dlsym("?applyComponentTo@ScriptBlockContainerComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@AEBVScriptObjectHandle@3@@Z");
+        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Block const&>(a3), std::forward<class BlockSource&>(a4), std::forward<class BlockPos const&>(a5), std::forward<class ScriptApi::ScriptObjectHandle const&>(a6));
+    }
+    inline bool hasComponent(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Actor& a3, bool& a4) const{
+        bool (ScriptBlockContainerComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+        *((void**)&rv) = dlsym("?hasComponent@ScriptBlockContainerComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEAVActor@@AEA_N@Z");
+        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Actor&>(a3), std::forward<bool&>(a4));
+    }
+    */
 
 protected:
 

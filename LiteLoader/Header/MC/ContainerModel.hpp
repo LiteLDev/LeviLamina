@@ -37,7 +37,7 @@ public:
     /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void setItem(int, class ItemStack const&);
-    /*14*/ virtual void __unk_vfn_14();
+    /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
@@ -81,11 +81,6 @@ public:
         void (ContainerModel::*rv)(int);
         *((void**)&rv) = dlsym("?tick@ContainerModel@@UEAAXH@Z");
         return (this->*rv)(std::forward<int>(a0));
-    }
-    inline bool isValid(){
-        bool (ContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?isValid@ContainerModel@@UEAA_NXZ");
-        return (this->*rv)();
     }
     inline  ~ContainerModel(){
          (ContainerModel::*rv)();

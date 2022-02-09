@@ -264,11 +264,8 @@ string Player::getUuid()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
-    auto uuid = (void*)((uintptr_t)ueic + 168);
-    string uuidStr;
-    SymCall("?asString@UUID@mce@@QEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ",
-            string*, void*, string*)(uuid, &uuidStr);
-    return uuidStr;
+    auto& uuid = dAccess<mce::UUID>(ueic, 168);
+    return uuid.asString();
 }
 
 unsigned char Player::getClientSubId()

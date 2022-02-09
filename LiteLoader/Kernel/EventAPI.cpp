@@ -130,14 +130,14 @@ DeclareEventListeners(PlayerBedEnterEvent);
     {                         \
         try
 
-#define IF_LISTENED_END(EVENT)                             \
-    catch (...)                                            \
-    {                                                      \
+#define IF_LISTENED_END(EVENT)                        \
+    catch (...)                                       \
+    {                                                 \
         logger.error("Event Callback Failed!");       \
         logger.error("Uncaught Exception Detected!"); \
         logger.error("In Event: " #EVENT "");         \
-        PrintCurrentStackTraceback();                   \
-    }                                                      \
+        PrintCurrentStackTraceback();                 \
+    }                                                 \
     }
 #else
 #define IF_LISTENED(EVENT)    \

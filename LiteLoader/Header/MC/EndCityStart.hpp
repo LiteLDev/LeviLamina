@@ -26,7 +26,6 @@ public:
 public:
     /*0*/ virtual ~EndCityStart();
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual void __unk_vfn_3();
     /*
     inline enum StructureFeatureType getType() const{
         enum StructureFeatureType (EndCityStart::*rv)() const;

@@ -25,8 +25,6 @@ public:
 public:
     /*0*/ virtual ~StructureStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual enum StructureFeatureType getType() const = 0;
     /*
     inline bool isValid() const{
         bool (StructureStart::*rv)() const;

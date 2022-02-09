@@ -49,7 +49,6 @@ public:
     Local<Value> tell(const Arguments& args);
     Local<Value> talkAs(const Arguments& args);
     Local<Value> rename(const Arguments& args);
-    Local<Value> addLevel(const Arguments& args);
     Local<Value> transServer(const Arguments& args);
     Local<Value> crash(const Arguments& args);
     Local<Value> hurt(const Arguments& args);
@@ -79,6 +78,11 @@ public:
     Local<Value> removeSidebar(const Arguments& args);
     Local<Value> setBossBar(const Arguments& args);
     Local<Value> removeBossBar(const Arguments& args);
+    Local<Value> addLevel(const Arguments& args);
+    Local<Value> getLevel(const Arguments& arg);
+    Local<Value> resetLevel(const Arguments& arg);
+    Local<Value> getXpNeededForNextLevel(const Arguments& arg);
+    Local<Value> addExperience(const Arguments& args);
 
     Local<Value> sendSimpleForm(const Arguments& args);
     Local<Value> sendModalForm(const Arguments& args);

@@ -25,10 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerMap();
-    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*5*/ virtual void _postCraftRequest(bool);
     /*6*/ virtual class Recipes const* _getLevelRecipes() const;
     MCAPI CraftHandlerMap(class Player&, class ItemStackRequestActionCraftHandler&);
 

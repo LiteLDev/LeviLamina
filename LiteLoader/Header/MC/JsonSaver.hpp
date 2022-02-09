@@ -42,8 +42,8 @@ public:
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual bool doEndArray();
-    /*20*/ virtual bool doBeginObject();
-    /*21*/ virtual bool doBeginObject(unsigned __int64);
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual bool doBeginObject();
     /*22*/ virtual bool doEndObject();
     /*
     inline bool doBeginArrayItem(unsigned __int64 a0){
@@ -65,6 +65,11 @@ public:
          (JsonSaver::*rv)();
         *((void**)&rv) = dlsym("??1JsonSaver@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline bool doBeginObject(unsigned __int64 a0){
+        bool (JsonSaver::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginObject@JsonSaver@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
     */
     MCAPI JsonSaver();

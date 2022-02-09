@@ -26,12 +26,8 @@ public:
 public:
     /*0*/ virtual ~Inventory();
     /*1*/ virtual void init();
-    /*2*/ virtual void serverInitItemStackIds(int, int, class std::function<void (int, class ItemStack const& )>);
     /*9*/ virtual void setItem(int, class ItemStack const&);
     /*10*/ virtual void setItemWithForceBalance(int, class ItemStack const&, bool);
-    /*14*/ virtual int getContainerSize() const;
-    /*16*/ virtual void startOpen(class Player&);
-    /*17*/ virtual void stopOpen(class Player&);
     /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual void __unk_vfn_23();
     /*31*/ virtual void __unk_vfn_31();

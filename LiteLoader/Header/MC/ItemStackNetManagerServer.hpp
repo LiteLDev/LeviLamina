@@ -26,13 +26,11 @@ public:
 
 public:
     /*0*/ virtual ~ItemStackNetManagerServer();
-    /*1*/ virtual bool isEnabled() const;
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const;
     /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
-    /*8*/ virtual class SparseContainer* initOpenContainer(class BlockSource&, enum ContainerEnumName, class ContainerWeakRef const&);
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*

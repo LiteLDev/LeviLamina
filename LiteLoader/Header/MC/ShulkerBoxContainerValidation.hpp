@@ -28,7 +28,6 @@ public:
     /*2*/ virtual bool isItemAllowedInSlot(class ContainerScreenContext const&, int, class ItemStackBase const&, int) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
 
 protected:

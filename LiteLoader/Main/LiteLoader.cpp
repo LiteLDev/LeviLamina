@@ -14,6 +14,7 @@
 #include "Main/CrashLogger.h"
 #include <TranslationAPI.h>
 #include <EventAPI.h>
+#include <LiteLoader/Main/Version.h>
 
 using namespace std;
 
@@ -139,6 +140,14 @@ void CheckDevMode() {
     }
 }
 
+void CheckBetaVersion()
+{
+    if (LITELOADER_VERSION_STATUS != LL::Version::Release)
+    {
+        logger.warn("You Are Using The Beta Version!");
+        logger.warn("DO NOT USE IN IN PRODUCTION ENVIRONMENT!!!");
+    }
+}
 // extern
 extern void EndScheduleSystem();
 extern void FixBugEvent();

@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~IWorldTemplateManager();
-    /*1*/ virtual ~IWorldTemplateManager();
     /*
     inline  ~IWorldTemplateManager(){
          (IWorldTemplateManager::*rv)();

@@ -24,11 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ItemComponent();
-    /*1*/ virtual bool checkComponentDataForContentErrors() const;
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
     /*
     inline bool isNetworkComponent() const{
         bool (ItemComponent::*rv)() const;
@@ -48,6 +43,16 @@ public:
     inline void writeSettings(){
         void (ItemComponent::*rv)();
         *((void**)&rv) = dlsym("?writeSettings@ItemComponent@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool checkComponentDataForContentErrors() const{
+        bool (ItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?checkComponentDataForContentErrors@ItemComponent@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
+        std::unique_ptr<class CompoundTag> (ItemComponent::*rv)() const;
+        *((void**)&rv) = dlsym("?buildNetworkTag@ItemComponent@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
         return (this->*rv)();
     }
     inline  ~ItemComponent(){

@@ -33,15 +33,10 @@ public:
     /*7*/ virtual bool moveTo(class NavigationComponent&, class Mob&, class Actor&, float);
     /*8*/ virtual bool moveTo(class NavigationComponent&, class Mob&, std::unique_ptr<class Path>, float);
     /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*10*/ virtual void __unk_vfn_10();
+    /*10*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
     /*11*/ virtual bool canUpdatePath(class Mob const&) const;
     /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
     /*
-    inline bool travel(class NavigationComponent& a0, class Mob& a1, float& a2, float& a3, float& a4){
-        bool (PathNavigation::*rv)(class NavigationComponent&, class Mob&, float&, float&, float&);
-        *((void**)&rv) = dlsym("?travel@PathNavigation@@MEAA_NAEAVNavigationComponent@@AEAVMob@@AEAM22@Z");
-        return (this->*rv)(std::forward<class NavigationComponent&>(a0), std::forward<class Mob&>(a1), std::forward<float&>(a2), std::forward<float&>(a3), std::forward<float&>(a4));
-    }
     inline  ~PathNavigation(){
          (PathNavigation::*rv)();
         *((void**)&rv) = dlsym("??1PathNavigation@@UEAA@XZ");

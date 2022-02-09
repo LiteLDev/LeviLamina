@@ -27,18 +27,12 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const = 0;
     /*2*/ virtual std::string getName() const = 0;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     /*
     inline  ~EntityServerPacket(){
          (EntityServerPacket::*rv)();
         *((void**)&rv) = dlsym("??1EntityServerPacket@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
-        enum StreamReadResult (EntityServerPacket::*rv)(class ReadOnlyBinaryStream&);
-        *((void**)&rv) = dlsym("?_read@EntityServerPacket@@MEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
-        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
     }
     */
     MCAPI EntityServerPacket(class EntityContext const&);

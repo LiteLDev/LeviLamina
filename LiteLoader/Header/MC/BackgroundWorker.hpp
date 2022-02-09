@@ -27,9 +27,14 @@ public:
 
 public:
     /*0*/ virtual ~BackgroundWorker();
-    /*1*/ virtual bool isAsync() const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual bool canTaskRunAgain() const;
     /*
+    inline bool isAsync() const{
+        bool (BackgroundWorker::*rv)() const;
+        *((void**)&rv) = dlsym("?isAsync@BackgroundWorker@@UEBA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~BackgroundWorker(){
          (BackgroundWorker::*rv)();
         *((void**)&rv) = dlsym("??1BackgroundWorker@@UEAA@XZ");

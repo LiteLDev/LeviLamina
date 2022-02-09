@@ -24,23 +24,17 @@ public:
 
 public:
     /*0*/ virtual ~DefaultDataLoadHelper();
-    /*1*/ virtual void __unk_vfn_1();
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual enum DataLoadHelperType getType() const;
-    /*16*/ virtual bool shouldResetTime();
     /*
+    inline bool shouldResetTime(){
+        bool (DefaultDataLoadHelper::*rv)();
+        *((void**)&rv) = dlsym("?shouldResetTime@DefaultDataLoadHelper@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum DataLoadHelperType getType() const{
+        enum DataLoadHelperType (DefaultDataLoadHelper::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@DefaultDataLoadHelper@@UEBA?AW4DataLoadHelperType@@XZ");
+        return (this->*rv)();
+    }
     inline struct ActorUniqueID loadActorUniqueID(struct ActorUniqueID a0){
         struct ActorUniqueID (DefaultDataLoadHelper::*rv)(struct ActorUniqueID);
         *((void**)&rv) = dlsym("?loadActorUniqueID@DefaultDataLoadHelper@@UEAA?AUActorUniqueID@@U2@@Z");

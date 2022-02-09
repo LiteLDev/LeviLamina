@@ -39,19 +39,19 @@ public:
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
+    /*8*/ virtual bool isArmor() const;
+    /*9*/ virtual bool isBlockPlanterItem() const;
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual bool isCamera() const;
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual bool isDamageable() const;
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual void __unk_vfn_15();
+    /*14*/ virtual bool isDyeable() const;
+    /*15*/ virtual bool isDye() const;
     /*16*/ virtual enum ItemColor getItemColor() const;
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void __unk_vfn_20();
+    /*17*/ virtual bool isFertilizer() const;
+    /*18*/ virtual bool isFood() const;
+    /*19*/ virtual bool isThrowable() const;
+    /*20*/ virtual bool isUseable() const;
     /*21*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*22*/ virtual class ICameraItemComponent* getCamera() const;
     /*23*/ virtual class IFoodItemComponent* getFood() const;
@@ -71,7 +71,7 @@ public:
     /*37*/ virtual void initializeFromNetwork(class CompoundTag const&);
     /*38*/ virtual enum BlockShape getBlockShape() const;
     /*39*/ virtual bool canBeDepleted() const;
-    /*40*/ virtual void __unk_vfn_40();
+    /*40*/ virtual bool canDestroySpecial(class Block const&) const;
     /*41*/ virtual int getLevelDataForAuxValue(int) const;
     /*42*/ virtual bool isStackedByData() const;
     /*43*/ virtual short getMaxDamage() const;
@@ -79,39 +79,39 @@ public:
     /*45*/ virtual bool isHandEquipped() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const&) const;
     /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual int getPatternIndex() const;
+    /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual void __unk_vfn_50();
-    /*51*/ virtual void __unk_vfn_51();
-    /*52*/ virtual void __unk_vfn_52();
-    /*53*/ virtual void __unk_vfn_53();
-    /*54*/ virtual void __unk_vfn_54();
-    /*55*/ virtual void __unk_vfn_55();
+    /*50*/ virtual bool isWearableThroughLootTable(class CompoundTag const*) const;
+    /*51*/ virtual bool canDestroyInCreative() const;
+    /*52*/ virtual bool isDestructive(int) const;
+    /*53*/ virtual bool isLiquidClipItem(int) const;
+    /*54*/ virtual bool shouldInteractionWithBlockBypassLiquid(class Block const&) const;
+    /*55*/ virtual bool requiresInteract() const;
     /*56*/ virtual void appendFormattedHovertext(class ItemStackBase const&, class Level&, std::string&, bool) const;
-    /*57*/ virtual void __unk_vfn_57();
+    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
     /*58*/ virtual int getEnchantSlot() const;
     /*59*/ virtual int getEnchantValue() const;
     /*60*/ virtual int getArmorValue() const;
     /*61*/ virtual void __unk_vfn_61();
-    /*62*/ virtual void __unk_vfn_62();
+    /*62*/ virtual bool isValidAuxValue(int) const;
     /*63*/ virtual int getDamageChance(int) const;
-    /*64*/ virtual float getViewDamping() const;
+    /*64*/ virtual void __unk_vfn_64();
     /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
-    /*69*/ virtual void __unk_vfn_69();
+    /*69*/ virtual bool hasCustomColor(class CompoundTag const*) const;
     /*70*/ virtual void __unk_vfn_70();
-    /*71*/ virtual void clearColor(class ItemStackBase&) const;
-    /*72*/ virtual void clearColor(class CompoundTag*) const;
-    /*73*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*71*/ virtual void clearColor(class CompoundTag*) const;
+    /*72*/ virtual void __unk_vfn_72();
+    /*73*/ virtual void __unk_vfn_73();
     /*74*/ virtual void __unk_vfn_74();
     /*75*/ virtual void __unk_vfn_75();
     /*76*/ virtual struct ActorDefinitionIdentifier getActorIdentifier(class ItemStack const&) const;
     /*77*/ virtual void __unk_vfn_77();
     /*78*/ virtual void __unk_vfn_78();
     /*79*/ virtual int buildIdAux(short, class CompoundTag const*) const;
-    /*80*/ virtual void __unk_vfn_80();
+    /*80*/ virtual bool canUseOnSimTick() const;
     /*81*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*82*/ virtual bool dispense(class BlockSource&, class Container&, int, class Vec3 const&, unsigned char) const;
     /*83*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
@@ -122,14 +122,14 @@ public:
     /*88*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
     /*89*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
     /*90*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-    /*91*/ virtual void __unk_vfn_91();
+    /*91*/ virtual std::string buildDescriptionName(class ItemStackBase const&) const;
     /*92*/ virtual std::string buildDescriptionId(class ItemDescriptor const&, class CompoundTag const*) const;
     /*93*/ virtual std::string buildEffectDescriptionName(class ItemStackBase const&) const;
     /*94*/ virtual std::string buildCategoryDescriptionName() const;
     /*95*/ virtual void readUserData(class ItemStackBase&, class IDataInput&, class ReadOnlyBinaryStream&) const;
     /*96*/ virtual void writeUserData(class ItemStackBase const&, class IDataOutput&) const;
     /*97*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
-    /*98*/ virtual void __unk_vfn_98();
+    /*98*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
     /*99*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*100*/ virtual class HashedString const& getCooldownType() const;
     /*101*/ virtual int getCooldownTime() const;
@@ -139,7 +139,7 @@ public:
     /*105*/ virtual void setDamageValue(class ItemStackBase&, short) const;
     /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
     /*107*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
-    /*108*/ virtual void __unk_vfn_108();
+    /*108*/ virtual bool validFishInteraction(int) const;
     /*109*/ virtual bool isSameItem(class ItemStackBase const&, class ItemStackBase const&) const;
     /*110*/ virtual void initClient(class Json::Value&, class SemVersion const&);
     /*111*/ virtual std::string getInteractText(class Player const&) const;
@@ -151,24 +151,19 @@ public:
     /*117*/ virtual class Item& setIcon(std::string const&, int);
     /*118*/ virtual class Item& setIcon(struct TextureUVCoordinateSet const&);
     /*119*/ virtual class Item& setIconAtlas(std::string const&, int);
-    /*120*/ virtual void __unk_vfn_120();
+    /*120*/ virtual bool canBeCharged() const;
     /*121*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
     /*122*/ virtual void __unk_vfn_122();
     /*123*/ virtual float getFurnaceBurnIntervalMultipler(class ItemStackBase const&) const;
     /*124*/ virtual float getFurnaceXPmultiplier(class ItemStackBase const&) const;
     /*125*/ virtual std::string getAuxValuesDescription() const;
     /*126*/ virtual bool _checkUseOnPermissions(class Actor&, class ItemStackBase&, unsigned char const&, class BlockPos const&) const;
-    /*127*/ virtual void __unk_vfn_127();
+    /*127*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*128*/ virtual bool _useOn(class ItemStack&, class Actor&, class BlockPos, unsigned char, class Vec3 const&) const;
     /*
     inline bool isComponentBased() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isComponentBased@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isBlockPlanterItem() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isBlockPlanterItem@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isMultiColorTinted(class ItemStack const& a0) const{
@@ -181,54 +176,9 @@ public:
         *((void**)&rv) = dlsym("?isBucket@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isDyeable() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isDyeable@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isActorPlacerItem() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isActorPlacerItem@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool requiresInteract() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?requiresInteract@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool inventoryTick(class ItemStack& a0, class Level& a1, class Actor& a2, int a3, bool a4) const{
-        bool (Item::*rv)(class ItemStack&, class Level&, class Actor&, int, bool) const;
-        *((void**)&rv) = dlsym("?inventoryTick@Item@@UEBA_NAEAVItemStack@@AEAVLevel@@AEAVActor@@H_N@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Level&>(a1), std::forward<class Actor&>(a2), std::forward<int>(a3), std::forward<bool>(a4));
-    }
-    inline bool isFertilizer() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isFertilizer@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isUseable() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isUseable@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isDye() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isDye@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldInteractionWithBlockBypassLiquid(class Block const& a0) const{
-        bool (Item::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?shouldInteractionWithBlockBypassLiquid@Item@@UEBA_NAEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline bool isThrowable() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isThrowable@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canBeCharged() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?canBeCharged@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool hasCustomColor(class ItemStackBase const& a0) const{
@@ -241,45 +191,15 @@ public:
         *((void**)&rv) = dlsym("?uniqueAuxValues@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isArmor() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isArmor@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool validFishInteraction(int a0) const{
-        bool (Item::*rv)(int) const;
-        *((void**)&rv) = dlsym("?validFishInteraction@Item@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline bool showsDurabilityInCreative() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?showsDurabilityInCreative@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isLiquidClipItem(int a0) const{
-        bool (Item::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isLiquidClipItem@Item@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
-    }
     inline bool isComplex() const{
         bool (Item::*rv)() const;
         *((void**)&rv) = dlsym("?isComplex@Item@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool hasCustomColor(class CompoundTag const* a0) const{
-        bool (Item::*rv)(class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?hasCustomColor@Item@@UEBA_NPEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const*>(a0));
-    }
-    inline bool canDestroySpecial(class Block const& a0) const{
-        bool (Item::*rv)(class Block const&) const;
-        *((void**)&rv) = dlsym("?canDestroySpecial@Item@@UEBA_NAEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0));
-    }
-    inline bool isDestructive(int a0) const{
-        bool (Item::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isDestructive@Item@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
     }
     inline bool isCandle() const{
         bool (Item::*rv)() const;
@@ -296,15 +216,10 @@ public:
         *((void**)&rv) = dlsym("?isPattern@Item@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isValidRepairItem(class ItemStackBase const& a0, class ItemStackBase const& a1, class BaseGameVersion const& a2) const{
-        bool (Item::*rv)(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
-        *((void**)&rv) = dlsym("?isValidRepairItem@Item@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class ItemStackBase const&>(a1), std::forward<class BaseGameVersion const&>(a2));
-    }
-    inline bool isWearableThroughLootTable(class CompoundTag const* a0) const{
-        bool (Item::*rv)(class CompoundTag const*) const;
-        *((void**)&rv) = dlsym("?isWearableThroughLootTable@Item@@UEBA_NPEBVCompoundTag@@@Z");
-        return (this->*rv)(std::forward<class CompoundTag const*>(a0));
+    inline int getPatternIndex() const{
+        int (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?getPatternIndex@Item@@UEBAHXZ");
+        return (this->*rv)();
     }
     inline class FuelItemComponent const* getFuel() const{
         class FuelItemComponent const* (Item::*rv)() const;
@@ -326,35 +241,30 @@ public:
         *((void**)&rv) = dlsym("?readAdditionalData@Item@@UEBAXAEAVItemStackBase@@AEBVCompoundTag@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class CompoundTag const&>(a1));
     }
-    inline bool canUseOnSimTick() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseOnSimTick@Item@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void setColor(class ItemStackBase& a0, class mce::Color const& a1) const{
+        void (Item::*rv)(class ItemStackBase&, class mce::Color const&) const;
+        *((void**)&rv) = dlsym("?setColor@Item@@UEBAXAEAVItemStackBase@@AEBVColor@mce@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class mce::Color const&>(a1));
     }
-    inline bool canDestroyInCreative() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?canDestroyInCreative@Item@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void clearColor(class ItemStackBase& a0) const{
+        void (Item::*rv)(class ItemStackBase&) const;
+        *((void**)&rv) = dlsym("?clearColor@Item@@UEBAXAEAVItemStackBase@@@Z");
+        return (this->*rv)(std::forward<class ItemStackBase&>(a0));
     }
     inline bool _calculatePlacePos(class ItemStackBase& a0, class Actor& a1, unsigned char& a2, class BlockPos& a3) const{
         bool (Item::*rv)(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
         *((void**)&rv) = dlsym("?_calculatePlacePos@Item@@EEBA_NAEAVItemStackBase@@AEAVActor@@AEAEAEAVBlockPos@@@Z");
         return (this->*rv)(std::forward<class ItemStackBase&>(a0), std::forward<class Actor&>(a1), std::forward<unsigned char&>(a2), std::forward<class BlockPos&>(a3));
     }
-    inline bool isValidAuxValue(int a0) const{
-        bool (Item::*rv)(int) const;
-        *((void**)&rv) = dlsym("?isValidAuxValue@Item@@UEBA_NH@Z");
-        return (this->*rv)(std::forward<int>(a0));
+    inline float getViewDamping() const{
+        float (Item::*rv)() const;
+        *((void**)&rv) = dlsym("?getViewDamping@Item@@UEBAMXZ");
+        return (this->*rv)();
     }
     inline  ~Item(){
          (Item::*rv)();
         *((void**)&rv) = dlsym("??1Item@@UEAA@XZ");
         return (this->*rv)();
-    }
-    inline std::string buildDescriptionName(class ItemStackBase const& a0) const{
-        std::string (Item::*rv)(class ItemStackBase const&) const;
-        *((void**)&rv) = dlsym("?buildDescriptionName@Item@@UEBA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     inline class mce::Color getBaseColor(class ItemStack const& a0) const{
         class mce::Color (Item::*rv)(class ItemStack const&) const;
@@ -370,16 +280,6 @@ public:
         int (Item::*rv)(class ItemInstance const*) const;
         *((void**)&rv) = dlsym("?getMaxUseDuration@Item@@UEBAHPEBVItemInstance@@@Z");
         return (this->*rv)(std::forward<class ItemInstance const*>(a0));
-    }
-    inline bool isFood() const{
-        bool (Item::*rv)() const;
-        *((void**)&rv) = dlsym("?isFood@Item@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isGlint(class ItemStackBase const& a0) const{
-        bool (Item::*rv)(class ItemStackBase const&) const;
-        *((void**)&rv) = dlsym("?isGlint@Item@@UEBA_NAEBVItemStackBase@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0));
     }
     */
     MCAPI Item(std::string const&, short);

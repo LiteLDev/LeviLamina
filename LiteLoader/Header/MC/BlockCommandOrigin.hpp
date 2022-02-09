@@ -34,50 +34,16 @@ public:
     /*6*/ virtual class Level* getLevel() const;
     /*7*/ virtual class Dimension* getDimension() const;
     /*8*/ virtual class Actor* getEntity() const;
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
-    /*23*/ virtual void __unk_vfn_23();
-    /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*27*/ virtual void updateValues();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
-    /*30*/ virtual void __unk_vfn_30();
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
+    /*30*/ virtual bool isValid() const;
     /*32*/ virtual class BaseCommandBlock* _getBaseCommandBlock(class BlockSource&) const;
     /*33*/ virtual class CommandBlockActor* _getBlockEntity(class BlockSource&) const;
     /*
-    inline bool isValid() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isValid@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline enum CommandOriginType getOriginType() const{
-        enum CommandOriginType (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@BlockCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@BlockCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline enum CommandPermissionLevel getPermissionsLevel() const{
-        enum CommandPermissionLevel (BlockCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@BlockCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
     inline  ~BlockCommandOrigin(){
          (BlockCommandOrigin::*rv)();
         *((void**)&rv) = dlsym("??1BlockCommandOrigin@@UEAA@XZ");

@@ -26,44 +26,15 @@ public:
 
 public:
     /*0*/ virtual ~EncryptedFileAccessStrategy();
-    /*2*/ virtual class ResourceLocation const& getPackLocation() const;
-    /*3*/ virtual std::string const& getPackName() const;
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void setIsTrusted(bool);
-    /*6*/ virtual void __unk_vfn_6();
+    /*4*/ virtual bool isWritable() const;
+    /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
-    /*8*/ virtual bool hasFolder(class Core::Path const&) const;
     /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual void __unk_vfn_11();
-    /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
+    /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string > const&);
+    /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*18*/ virtual bool canRecurse() const;
-    /*19*/ virtual void unload();
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-    /*
-    inline bool writeAsset(class Core::Path const& a0, std::string const& a1){
-        bool (EncryptedFileAccessStrategy::*rv)(class Core::Path const&, std::string const&);
-        *((void**)&rv) = dlsym("?writeAsset@EncryptedFileAccessStrategy@@UEAA_NAEBVPath@Core@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
-        return (this->*rv)(std::forward<class Core::Path const&>(a0), std::forward<std::string const&>(a1));
-    }
-    inline bool isWritable() const{
-        bool (EncryptedFileAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWritable@EncryptedFileAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool deleteAsset(class Core::PathBuffer<std::string > const& a0){
-        bool (EncryptedFileAccessStrategy::*rv)(class Core::PathBuffer<std::string > const&);
-        *((void**)&rv) = dlsym("?deleteAsset@EncryptedFileAccessStrategy@@UEAA_NAEBV?$PathBuffer@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Core@@@Z");
-        return (this->*rv)(std::forward<class Core::PathBuffer<std::string > const&>(a0));
-    }
-    inline bool isTrusted() const{
-        bool (EncryptedFileAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isTrusted@EncryptedFileAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI EncryptedFileAccessStrategy(class ResourceLocation const&, class ContentIdentity const&, class IContentKeyProvider const&, bool, class std::optional<class std::unordered_map<class Core::PathBuffer<std::string >, std::string, struct std::hash<class Core::PathBuffer<std::string > >, struct std::equal_to<class Core::PathBuffer<std::string > >, class std::allocator<struct std::pair<class Core::PathBuffer<std::string > const, std::string > > > >);
     MCAPI static bool isValidEncryptedPack(class Core::Path const&, class ContentIdentity&);
 

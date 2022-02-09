@@ -24,7 +24,13 @@ public:
 
 public:
     /*0*/ virtual ~DragonBaseGoalDefinition();
-    /*1*/ virtual bool validateMobType(class Mob&);
+    /*
+    inline bool validateMobType(class Mob& a0){
+        bool (DragonBaseGoalDefinition::*rv)(class Mob&);
+        *((void**)&rv) = dlsym("?validateMobType@DragonBaseGoalDefinition@@UEAA_NAEAVMob@@@Z");
+        return (this->*rv)(std::forward<class Mob&>(a0));
+    }
+    */
 
 protected:
 

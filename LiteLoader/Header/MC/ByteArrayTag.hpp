@@ -35,7 +35,6 @@ public:
 
 public:
     /*0*/ virtual ~ByteArrayTag();
-    /*1*/ virtual void deleteChildren();
     /*2*/ virtual void write(class IDataOutput&) const;
     /*3*/ virtual void load(class IDataInput&);
     /*4*/ virtual std::string toString() const;

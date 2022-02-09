@@ -34,38 +34,13 @@ public:
     /*6*/ virtual class Level* getLevel() const;
     /*7*/ virtual class Dimension* getDimension() const;
     /*8*/ virtual class Actor* getEntity() const;
-    /*9*/ virtual void __unk_vfn_9();
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*27*/ virtual void updateValues();
     /*30*/ virtual bool isValid() const;
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
-    /*
-    inline enum CommandPermissionLevel getPermissionsLevel() const{
-        enum CommandPermissionLevel (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getPermissionsLevel@ScriptCommandOrigin@@UEBA?AW4CommandPermissionLevel@@XZ");
-        return (this->*rv)();
-    }
-    inline bool isSelectorExpansionAllowed() const{
-        bool (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?isSelectorExpansionAllowed@ScriptCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (ScriptCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@ScriptCommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI ScriptCommandOrigin(class ServerLevel&, class ScriptEngine&);
     MCAPI ScriptCommandOrigin(class ServerLevel&, class ScriptEngine&, unsigned int);
 

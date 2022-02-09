@@ -23,8 +23,18 @@ public:
 
 public:
     /*0*/ virtual ~FakeBatteryMonitorInterface();
-    /*1*/ virtual enum BatteryStatus getBatteryStatus() const;
-    /*2*/ virtual float getBatteryLevel() const;
+    /*
+    inline enum BatteryStatus getBatteryStatus() const{
+        enum BatteryStatus (FakeBatteryMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?getBatteryStatus@FakeBatteryMonitorInterface@@UEBA?AW4BatteryStatus@@XZ");
+        return (this->*rv)();
+    }
+    inline float getBatteryLevel() const{
+        float (FakeBatteryMonitorInterface::*rv)() const;
+        *((void**)&rv) = dlsym("?getBatteryLevel@FakeBatteryMonitorInterface@@UEBAMXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI FakeBatteryMonitorInterface();
 
 protected:

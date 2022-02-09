@@ -34,11 +34,19 @@ jobs:
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
 
+      - name: Change LITELOADER_VERSION_STATUS
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
+        shell: bash
+
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Js
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
         shell: bash
 
       - name: Pack Release

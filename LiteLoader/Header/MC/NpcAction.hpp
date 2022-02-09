@@ -25,9 +25,12 @@ public:
 
 public:
     /*0*/ virtual ~NpcAction();
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual void __unk_vfn_2();
     /*
+    inline bool fromJson(class Json::Value const& a0){
+        bool (NpcAction::*rv)(class Json::Value const&);
+        *((void**)&rv) = dlsym("?fromJson@NpcAction@@UEAA_NAEBVValue@Json@@@Z");
+        return (this->*rv)(std::forward<class Json::Value const&>(a0));
+    }
     inline  ~NpcAction(){
          (NpcAction::*rv)();
         *((void**)&rv) = dlsym("??1NpcAction@@UEAA@XZ");

@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~LakeFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual ~LakeFeature();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /*
     inline  ~LakeFeature(){
          (LakeFeature::*rv)();

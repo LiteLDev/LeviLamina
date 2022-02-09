@@ -36,12 +36,12 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual enum ActorCategory getEntityCategories() const;
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
     /*14*/ virtual enum ActorType getDamagingEntityType() const;
-    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
     /*
     inline bool getDamagingEntityIsCreative() const{
@@ -77,6 +77,16 @@ public:
     inline bool isEntitySource() const{
         bool (ActorDamageSource::*rv)() const;
         *((void**)&rv) = dlsym("?isEntitySource@ActorDamageSource@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline enum ActorCategory getDamagingEntityCategories() const{
+        enum ActorCategory (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getDamagingEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ");
+        return (this->*rv)();
+    }
+    inline enum ActorCategory getEntityCategories() const{
+        enum ActorCategory (ActorDamageSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getEntityCategories@ActorDamageSource@@UEBA?AW4ActorCategory@@XZ");
         return (this->*rv)();
     }
     inline enum ActorType getEntityType() const{
