@@ -29,7 +29,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual bool isItemAllowedToRemove(class ContainerScreenContext const&, class ItemStackBase const&) const;
     /*6*/ virtual void __unk_vfn_6();
-    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline bool canItemMoveToContainer(class ItemStackBase const& a0) const{

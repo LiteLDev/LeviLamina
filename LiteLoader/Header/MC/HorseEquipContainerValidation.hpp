@@ -29,7 +29,6 @@ public:
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual bool isItemAllowedToAdd(class ItemStack const&) const;
     /*5*/ virtual void __unk_vfn_5();
-    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline int getAvailableSetCount(int a0, class ItemStackBase const& a1) const{

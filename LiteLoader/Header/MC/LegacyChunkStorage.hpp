@@ -25,17 +25,15 @@ public:
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual bool postProcess(class ChunkViewSource&);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
     /*10*/ virtual void loadChunk(class LevelChunk&, bool);
     /*12*/ virtual bool saveLiveChunk(class LevelChunk&);
     /*15*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
+    /*18*/ virtual bool isWithinWorldLimit(class ChunkPos const&) const;
     /*21*/ virtual void clearDeletedEntities();
-    /*22*/ virtual void __unk_vfn_22();
     MCAPI LegacyChunkStorage(std::unique_ptr<class ChunkSource>, class LevelStorage&, enum StorageVersion, class Biome&);
 
 protected:

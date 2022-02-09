@@ -31,8 +31,15 @@ public:
     /*5*/ virtual void bindSoundEffects(class std::unordered_map<class HashedString, std::string, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, std::string > > > const&);
     /*6*/ virtual bool hasAnimationFinished() const;
     /*7*/ virtual class std::shared_ptr<class ActorAnimationPlayer> findAnimation(class HashedString const&);
-    /*8*/ virtual enum ActorAnimationType getAnimationType() const;
+    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual class HashedString const& getRawName() const;
+    /*
+    inline enum ActorAnimationType getAnimationType() const{
+        enum ActorAnimationType (ActorAnimationControllerPlayer::*rv)() const;
+        *((void**)&rv) = dlsym("?getAnimationType@ActorAnimationControllerPlayer@@UEBA?AW4ActorAnimationType@@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI ActorAnimationControllerPlayer(class HashedString const&, class ActorAnimationControllerPtr const&, class AnimationComponent&, class ExpressionNode const&, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString> >&);
 
 protected:

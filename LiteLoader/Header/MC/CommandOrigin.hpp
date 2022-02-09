@@ -42,12 +42,12 @@ public:
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*13*/ virtual bool hasChatPerms() const;
     /*14*/ virtual bool hasTellPerms() const;
-    /*15*/ virtual void __unk_vfn_15();
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
     /*16*/ virtual bool isWorldBuilder() const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*20*/ virtual void __unk_vfn_20();
+    /*20*/ virtual unsigned char getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const = 0;
@@ -59,23 +59,6 @@ public:
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const = 0;
     /*31*/ virtual void _setUUID(class mce::UUID const&);
-    /*
-    inline unsigned char getSourceSubId() const{
-        unsigned char (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getSourceSubId@CommandOrigin@@UEBAEXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseCommandsWithoutCheatsEnabled() const{
-        bool (CommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?canUseCommandsWithoutCheatsEnabled@CommandOrigin@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canUseAbility(enum AbilitiesIndex a0) const{
-        bool (CommandOrigin::*rv)(enum AbilitiesIndex) const;
-        *((void**)&rv) = dlsym("?canUseAbility@CommandOrigin@@UEBA_NW4AbilitiesIndex@@@Z");
-        return (this->*rv)(std::forward<enum AbilitiesIndex>(a0));
-    }
-    */
     MCAPI CommandOrigin();
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&, class BlockPos const&, bool) const;
     MCAPI std::unique_ptr<class CommandArea> getAreaAt(class BlockPos const&) const;

@@ -26,14 +26,7 @@ public:
 public:
     /*0*/ virtual ~EndCityStart();
     /*2*/ virtual bool isValid() const;
-    /*3*/ virtual void __unk_vfn_3();
-    /*
-    inline enum StructureFeatureType getType() const{
-        enum StructureFeatureType (EndCityStart::*rv)() const;
-        *((void**)&rv) = dlsym("?getType@EndCityStart@@UEBA?AW4StructureFeatureType@@XZ");
-        return (this->*rv)();
-    }
-    */
+    /*3*/ virtual enum StructureFeatureType getType() const;
     MCAPI EndCityStart(class Dimension&, class TheEndGenerator&, class Random&, class ChunkPos const&);
     MCAPI static int getYPositionForFeature(class ChunkPos const&, class Dimension&, class TheEndGenerator&);
 

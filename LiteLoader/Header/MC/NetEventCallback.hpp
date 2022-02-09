@@ -24,18 +24,12 @@ public:
 
 public:
     /*0*/ virtual ~NetEventCallback();
-    /*1*/ virtual void __unk_vfn_1() = 0;
-    /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual void __unk_vfn_3();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void onWebsocketRequest(std::string const&, std::string const&, class std::function<void (void)>);
-    /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void __unk_vfn_10();
-    /*11*/ virtual class GameSpecificNetEventCallback* getGameSpecificNetEventCallback();
     /*
+    inline class GameSpecificNetEventCallback* getGameSpecificNetEventCallback(){
+        class GameSpecificNetEventCallback* (NetEventCallback::*rv)();
+        *((void**)&rv) = dlsym("?getGameSpecificNetEventCallback@NetEventCallback@@UEAAPEAVGameSpecificNetEventCallback@@XZ");
+        return (this->*rv)();
+    }
     inline void handle(class NetworkIdentifier const& a0, class ClientCacheBlobStatusPacket const& a1){
         void (NetEventCallback::*rv)(class NetworkIdentifier const&, class ClientCacheBlobStatusPacket const&);
         *((void**)&rv) = dlsym("?handle@NetEventCallback@@UEAAXAEBVNetworkIdentifier@@AEBVClientCacheBlobStatusPacket@@@Z");
@@ -975,6 +969,11 @@ public:
          (NetEventCallback::*rv)();
         *((void**)&rv) = dlsym("??1NetEventCallback@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline void onWebsocketRequest(std::string const& a0, std::string const& a1, class std::function<void (void)> a2){
+        void (NetEventCallback::*rv)(std::string const&, std::string const&, class std::function<void (void)>);
+        *((void**)&rv) = dlsym("?onWebsocketRequest@NetEventCallback@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0V?$function@$$A6AXXZ@3@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<class std::function<void (void)>>(a2));
     }
     */
 

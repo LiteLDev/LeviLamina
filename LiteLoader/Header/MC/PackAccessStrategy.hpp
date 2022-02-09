@@ -41,16 +41,11 @@ public:
     /*15*/ virtual class Core::PathBuffer<std::string > const& getSubPath() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const = 0;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*18*/ virtual void __unk_vfn_18();
+    /*18*/ virtual bool canRecurse() const;
     /*19*/ virtual void unload() = 0;
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
     /*
-    inline bool canRecurse() const{
-        bool (PackAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?canRecurse@PackAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline  ~PackAccessStrategy(){
          (PackAccessStrategy::*rv)();
         *((void**)&rv) = dlsym("??1PackAccessStrategy@@UEAA@XZ");

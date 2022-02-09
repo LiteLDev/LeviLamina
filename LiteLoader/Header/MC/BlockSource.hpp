@@ -51,12 +51,17 @@ public:
     /*23*/ virtual std::vector<class AABB>& fetchAABBs(class AABB const&, bool);
     /*24*/ virtual std::vector<class AABB>& fetchCollisionShapes(class AABB const&, float*, bool, struct IActorMovementProxy*);
     /*25*/ virtual class AABB getTallestCollisionShape(class AABB const&, float*, bool, struct IActorMovementProxy*);
-    /*26*/ virtual class ChunkSource& getChunkSource();
+    /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual bool isSolidBlockingBlock(class BlockPos const&) const;
     /*
     inline class ILevel& getILevel() const{
         class ILevel& (BlockSource::*rv)() const;
         *((void**)&rv) = dlsym("?getILevel@BlockSource@@UEBAAEAVILevel@@XZ");
+        return (this->*rv)();
+    }
+    inline class ChunkSource& getChunkSource(){
+        class ChunkSource& (BlockSource::*rv)();
+        *((void**)&rv) = dlsym("?getChunkSource@BlockSource@@UEAAAEAVChunkSource@@XZ");
         return (this->*rv)();
     }
     inline class Dimension& getDimension(){

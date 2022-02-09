@@ -29,7 +29,6 @@ public:
 
 public:
     /*0*/ virtual ~WorldGenerator();
-    /*1*/ virtual class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4>) const;
     /*
     inline void debugRender(){
         void (WorldGenerator::*rv)();
@@ -40,6 +39,11 @@ public:
         void (WorldGenerator::*rv)(class LevelChunk&);
         *((void**)&rv) = dlsym("?addHardcodedSpawnAreas@WorldGenerator@@UEAAXAEAVLevelChunk@@@Z");
         return (this->*rv)(std::forward<class LevelChunk&>(a0));
+    }
+    inline class std::optional<short> getPreliminarySurfaceLevel(class DividedPos2d<4> a0) const{
+        class std::optional<short> (WorldGenerator::*rv)(class DividedPos2d<4>) const;
+        *((void**)&rv) = dlsym("?getPreliminarySurfaceLevel@WorldGenerator@@UEBA?AV?$optional@F@std@@V?$DividedPos2d@$03@@@Z");
+        return (this->*rv)(std::forward<class DividedPos2d<4>>(a0));
     }
     inline  ~WorldGenerator(){
          (WorldGenerator::*rv)();

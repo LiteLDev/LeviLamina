@@ -26,13 +26,9 @@ public:
 
 public:
     /*14*/ virtual ~MinecartHopper();
-    /*20*/ virtual void __unk_vfn_20();
-    /*22*/ virtual void __unk_vfn_22();
+    /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*32*/ virtual float getInterpolatedHeadRot(float) const;
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
     /*41*/ virtual void __unk_vfn_41();
-    /*46*/ virtual void lerpMotion(class Vec3 const&);
-    /*52*/ virtual float getRidingHeight();
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
     /*78*/ virtual float getCameraOffset() const;
@@ -41,60 +37,56 @@ public:
     /*82*/ virtual void __unk_vfn_82();
     /*87*/ virtual void __unk_vfn_87();
     /*88*/ virtual void playerTouch(class Player&);
-    /*93*/ virtual void __unk_vfn_93();
     /*94*/ virtual void __unk_vfn_94();
     /*95*/ virtual void __unk_vfn_95();
     /*96*/ virtual void setSleeping(bool);
     /*97*/ virtual void __unk_vfn_97();
-    /*99*/ virtual void __unk_vfn_99();
-    /*100*/ virtual void __unk_vfn_100();
+    /*99*/ virtual bool isBlocking() const;
+    /*100*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
     /*104*/ virtual void __unk_vfn_104();
-    /*105*/ virtual void __unk_vfn_105();
+    /*105*/ virtual bool isSurfaceMob() const;
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
     /*112*/ virtual class Actor* findAttackTarget();
-    /*113*/ virtual void __unk_vfn_113();
+    /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();
     /*121*/ virtual void onFailedTame();
-    /*128*/ virtual void __unk_vfn_128();
+    /*128*/ virtual bool isJumping() const;
     /*130*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*137*/ virtual void animateHurt();
-    /*143*/ virtual float getPickRadius();
     /*152*/ virtual void awardKillScore(class Actor&, int);
     /*156*/ virtual enum ArmorMaterialType getArmorMaterialTypeInSlot(enum ArmorSlot) const;
     /*157*/ virtual enum ArmorTextureType getArmorMaterialTextureTypeInSlot(enum ArmorSlot) const;
     /*158*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*160*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
-    /*171*/ virtual class HashedString const& queryEntityRenderer() const;
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
     /*174*/ virtual void __unk_vfn_174();
     /*179*/ virtual int getPortalWaitTime() const;
-    /*181*/ virtual void __unk_vfn_181();
+    /*181*/ virtual bool canChangeDimensions() const;
     /*182*/ virtual void __unk_vfn_182();
     /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*193*/ virtual void __unk_vfn_193();
-    /*194*/ virtual void __unk_vfn_194();
-    /*195*/ virtual void __unk_vfn_195();
+    /*193*/ virtual bool canPickupItem(class ItemStack const&) const;
+    /*194*/ virtual bool canBePulledIntoVehicle() const;
+    /*195*/ virtual bool inCaravan() const;
     /*196*/ virtual void __unk_vfn_196();
-    /*199*/ virtual void __unk_vfn_199();
+    /*199*/ virtual bool canSynchronizeNewEntity() const;
     /*203*/ virtual void buildDebugInfo(std::string&) const;
     /*208*/ virtual int getDeathTime() const;
     /*219*/ virtual void swing();
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*226*/ virtual float getYHeadRot() const;
-    /*227*/ virtual void __unk_vfn_227();
+    /*227*/ virtual bool isWorldBuilder() const;
     /*228*/ virtual void __unk_vfn_228();
-    /*229*/ virtual void __unk_vfn_229();
-    /*233*/ virtual void __unk_vfn_233();
-    /*234*/ virtual void setAuxValue(int);
+    /*229*/ virtual bool isAdventure() const;
+    /*233*/ virtual bool canDestroyBlock(class Block const&) const;
+    /*234*/ virtual void __unk_vfn_234();
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
-    /*255*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
+    /*255*/ virtual void __unk_vfn_255();
     /*257*/ virtual void __unk_vfn_257();
     /*265*/ virtual void __unk_vfn_265();
     /*274*/ virtual void __unk_vfn_274();
@@ -104,13 +96,6 @@ public:
     /*278*/ virtual void __unk_vfn_278();
     /*279*/ virtual int getDefaultDisplayOffset() const;
     /*280*/ virtual void applyNaturalSlowdown(class BlockSource&);
-    /*
-    inline void applyNaturalSlowdown(class BlockSource& a0){
-        void (MinecartHopper::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?applyNaturalSlowdown@MinecartHopper@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
     MCAPI MinecartHopper(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
 protected:

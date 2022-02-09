@@ -26,8 +26,6 @@ public:
 public:
     /*0*/ virtual ~PlayerUIContainer();
     /*1*/ virtual void init();
-    /*14*/ virtual int getContainerSize() const;
-    /*15*/ virtual int getMaxStackSize() const;
     /*16*/ virtual void startOpen(class Player&);
     /*17*/ virtual void stopOpen(class Player&);
     /*22*/ virtual void __unk_vfn_22();

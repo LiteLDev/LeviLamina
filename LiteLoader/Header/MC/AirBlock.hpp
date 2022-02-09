@@ -25,19 +25,18 @@ public:
 
 public:
     /*0*/ virtual ~AirBlock();
-    /*4*/ virtual void __unk_vfn_4();
-    /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
+    /*4*/ virtual bool hasTag(class BlockSource&, class BlockPos const&, class Block const&, std::string const&) const;
+    /*5*/ virtual bool getCollisionShape(class AABB&, class Block const&, class BlockSource const&, class BlockPos const&, class optional_ref<struct IActorMovementProxy>) const;
+    /*6*/ virtual bool isObstructingChests(class BlockSource&, class BlockPos const&) const;
     /*8*/ virtual class Vec3 randomlyModifyPosition(class BlockPos const&) const;
     /*9*/ virtual void addAABBs(class Block const&, class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&) const;
     /*10*/ virtual class AABB const& getAABB(class BlockSource const&, class BlockPos const&, class Block const&, class AABB&, bool) const;
-    /*11*/ virtual void __unk_vfn_11();
-    /*15*/ virtual void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
+    /*11*/ virtual bool addCollisionShapes(class Block const&, class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void onLightningHit(class BlockSource&, class BlockPos const&) const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool liquidCanFlowIntoFromDirection(unsigned char, class std::function<class Block const& (class BlockPos const& )> const&, class BlockPos const&) const;
     /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual class Block const& getStrippedBlock(class Block const&) const;
+    /*20*/ virtual bool isStrippable(class Block const&) const;
     /*25*/ virtual class CopperBehavior const* tryGetCopperBehavior() const;
     /*27*/ virtual void __unk_vfn_27();
     /*28*/ virtual void __unk_vfn_28();
@@ -49,7 +48,7 @@ public:
     /*35*/ virtual void __unk_vfn_35();
     /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual void __unk_vfn_37();
-    /*38*/ virtual void __unk_vfn_38();
+    /*38*/ virtual bool isDoubleSlabBlock() const;
     /*39*/ virtual void __unk_vfn_39();
     /*40*/ virtual void __unk_vfn_40();
     /*41*/ virtual void __unk_vfn_41();
@@ -57,159 +56,120 @@ public:
     /*43*/ virtual void __unk_vfn_43();
     /*44*/ virtual void __unk_vfn_44();
     /*46*/ virtual void __unk_vfn_46();
-    /*48*/ virtual void __unk_vfn_48();
+    /*48*/ virtual bool canBeAscendedByJumping(class Actor const&, class BlockPos const&) const;
     /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual void __unk_vfn_50();
-    /*52*/ virtual void onFillBlock(class BlockSource&, class BlockPos const&, class Block const&) const;
-    /*53*/ virtual int getDirectSignal(class BlockSource&, class BlockPos const&, int) const;
+    /*50*/ virtual bool canFillAtPos(class BlockSource&, class BlockPos const&, class Block const&) const;
+    /*52*/ virtual void __unk_vfn_52();
+    /*53*/ virtual void __unk_vfn_53();
     /*54*/ virtual void __unk_vfn_54();
     /*55*/ virtual void __unk_vfn_55();
     /*57*/ virtual void __unk_vfn_57();
-    /*58*/ virtual void handlePrecipitation(class BlockSource&, class BlockPos const&, float, float) const;
-    /*61*/ virtual float getFlexibility(class BlockSource&, class BlockPos const&) const;
-    /*62*/ virtual void __unk_vfn_62();
-    /*63*/ virtual void __unk_vfn_63();
+    /*58*/ virtual void __unk_vfn_58();
+    /*62*/ virtual bool checkIsPathable(class Actor&, class BlockPos const&, class BlockPos const&) const;
+    /*63*/ virtual bool shouldDispense(class BlockSource&, class Container&) const;
     /*64*/ virtual void __unk_vfn_64();
     /*65*/ virtual void transformOnFall(class BlockSource&, class BlockPos const&, class Actor*, float) const;
-    /*66*/ virtual void onRedstoneUpdate(class BlockSource&, class BlockPos const&, int, bool) const;
-    /*67*/ virtual void onMove(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    /*66*/ virtual void __unk_vfn_66();
+    /*67*/ virtual void __unk_vfn_67();
     /*68*/ virtual void __unk_vfn_68();
-    /*69*/ virtual void movedByPiston(class BlockSource&, class BlockPos const&) const;
+    /*69*/ virtual void __unk_vfn_69();
     /*70*/ virtual void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
     /*71*/ virtual void onStructureNeighborBlockPlace(class BlockSource&, class BlockPos const&) const;
-    /*72*/ virtual void setupRedstoneComponent(class BlockSource&, class BlockPos const&) const;
+    /*72*/ virtual void __unk_vfn_72();
     /*75*/ virtual void __unk_vfn_75();
-    /*76*/ virtual void __unk_vfn_76();
+    /*76*/ virtual bool isFilteredOut(enum BlockRenderLayer) const;
     /*77*/ virtual void __unk_vfn_77();
-    /*78*/ virtual void __unk_vfn_78();
+    /*78*/ virtual bool ignoreEntitiesOnPistonMove(class Block const&) const;
     /*79*/ virtual void __unk_vfn_79();
-    /*80*/ virtual void __unk_vfn_80();
+    /*80*/ virtual bool mayConsumeFertilizer(class BlockSource&) const;
     /*81*/ virtual void __unk_vfn_81();
-    /*82*/ virtual void __unk_vfn_82();
-    /*83*/ virtual void __unk_vfn_83();
-    /*84*/ virtual void __unk_vfn_84();
-    /*85*/ virtual void __unk_vfn_85();
+    /*82*/ virtual bool mayPick() const;
+    /*83*/ virtual bool mayPick(class BlockSource const&, class Block const&, bool) const;
+    /*84*/ virtual bool mayPlace(class BlockSource&, class BlockPos const&, unsigned char) const;
+    /*85*/ virtual bool mayPlace(class BlockSource&, class BlockPos const&) const;
     /*86*/ virtual void __unk_vfn_86();
-    /*87*/ virtual void __unk_vfn_87();
-    /*88*/ virtual void __unk_vfn_88();
+    /*87*/ virtual bool tryToPlace(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*) const;
+    /*88*/ virtual bool tryToTill(class BlockSource&, class BlockPos const&, class Actor&, class ItemStack&) const;
     /*90*/ virtual void destroy(class BlockSource&, class BlockPos const&, class Block const&, class Actor*) const;
-    /*91*/ virtual void __unk_vfn_91();
+    /*91*/ virtual bool playerWillDestroy(class Player&, class BlockPos const&, class Block const&) const;
     /*92*/ virtual void __unk_vfn_92();
-    /*93*/ virtual void neighborChanged(class BlockSource&, class BlockPos const&, class BlockPos const&) const;
+    /*93*/ virtual void __unk_vfn_93();
     /*94*/ virtual void __unk_vfn_94();
     /*95*/ virtual int getResourceCount(class Randomize&, class Block const&, int) const;
     /*97*/ virtual class ItemInstance asItemInstance(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*98*/ virtual void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, class Randomize&, std::vector<class Item const* >*, float, int) const;
     /*100*/ virtual void __unk_vfn_100();
     /*101*/ virtual class Block const& getPlacementBlock(class Actor&, class BlockPos const&, unsigned char, class Vec3 const&, int) const;
-    /*103*/ virtual void __unk_vfn_103();
+    /*103*/ virtual bool isAttachedTo(class BlockSource&, class BlockPos const&, class BlockPos&) const;
     /*104*/ virtual void __unk_vfn_104();
-    /*105*/ virtual void handleEntityInside(class BlockSource&, class BlockPos const&, class Actor*, class Vec3&) const;
-    /*108*/ virtual void entityInside(class BlockSource&, class BlockPos const&, class Actor&) const;
-    /*109*/ virtual int getExperienceDrop(class Random&) const;
+    /*105*/ virtual void __unk_vfn_105();
+    /*108*/ virtual void __unk_vfn_108();
+    /*109*/ virtual void __unk_vfn_109();
     /*112*/ virtual void triggerEvent(class BlockSource&, class BlockPos const&, int, int) const;
     /*120*/ virtual void __unk_vfn_120();
-    /*121*/ virtual float calcGroundFriction(struct IMobMovementProxy const&, class BlockPos const&) const;
     /*122*/ virtual void __unk_vfn_122();
     /*123*/ virtual void __unk_vfn_123();
-    /*124*/ virtual int getComparatorSignal(class BlockSource&, class BlockPos const&, class Block const&, unsigned char) const;
-    /*126*/ virtual void __unk_vfn_126();
+    /*124*/ virtual void __unk_vfn_124();
+    /*126*/ virtual bool canSpawnAt(class BlockSource const&, class BlockPos const&) const;
     /*127*/ virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
     /*128*/ virtual void __unk_vfn_128();
     /*129*/ virtual int getIconYOffset() const;
     /*131*/ virtual void __unk_vfn_131();
-    /*132*/ virtual int getColor(class Block const&) const;
-    /*133*/ virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
-    /*134*/ virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;
-    /*136*/ virtual void __unk_vfn_136();
+    /*132*/ virtual void __unk_vfn_132();
+    /*133*/ virtual void __unk_vfn_133();
+    /*134*/ virtual void __unk_vfn_134();
+    /*136*/ virtual bool isSeasonTinted(class Block const&, class BlockSource&, class BlockPos const&) const;
     /*139*/ virtual class AABB const& getVisualShapeInWorld(class Block const&, class BlockSource const&, class BlockPos const&, class AABB&, bool) const;
     /*140*/ virtual class AABB const& getVisualShape(class Block const&, class AABB&, bool) const;
     /*144*/ virtual void __unk_vfn_144();
-    /*145*/ virtual class Block const& getRenderBlock() const;
-    /*146*/ virtual unsigned char getMappedFace(unsigned char, class Block const&) const;
-    /*147*/ virtual enum Flip getFaceFlip(unsigned char, class Block const&) const;
-    /*148*/ virtual void animateTick(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*147*/ virtual void __unk_vfn_147();
+    /*148*/ virtual void __unk_vfn_148();
     /*161*/ virtual void __unk_vfn_161();
     /*165*/ virtual class Block const* tryLegacyUpgrade(unsigned short) const;
-    /*166*/ virtual void __unk_vfn_166();
+    /*166*/ virtual bool dealsContactDamage(class Actor const&, class Block const&, bool) const;
     /*167*/ virtual class Block const* tryGetInfested(class Block const&) const;
     /*168*/ virtual class Block const* tryGetUninfested(class Block const&) const;
     /*169*/ virtual void _addHardCodedBlockComponents();
     /*170*/ virtual void onRemove(class BlockSource&, class BlockPos const&) const;
     /*171*/ virtual void onExploded(class BlockSource&, class BlockPos const&, class Actor*) const;
-    /*172*/ virtual void onStandOn(class EntityContext&, class BlockPos const&) const;
+    /*172*/ virtual void __unk_vfn_172();
     /*173*/ virtual void onStepOn(class Actor&, class BlockPos const&) const;
     /*174*/ virtual void __unk_vfn_174();
     /*175*/ virtual void __unk_vfn_175();
-    /*176*/ virtual void onPlace(class BlockSource&, class BlockPos const&) const;
-    /*179*/ virtual void tick(class BlockSource&, class BlockPos const&, class Random&) const;
+    /*176*/ virtual void __unk_vfn_176();
+    /*179*/ virtual void __unk_vfn_179();
     /*182*/ virtual void __unk_vfn_182();
     /*184*/ virtual void __unk_vfn_184();
     /*185*/ virtual void __unk_vfn_185();
-    /*188*/ virtual int getExtraRenderLayers() const;
-    /*191*/ virtual class mce::Color getMapColor(class BlockSource&, class BlockPos const&) const;
+    /*188*/ virtual void __unk_vfn_188();
+    /*191*/ virtual void __unk_vfn_191();
     /*192*/ virtual void __unk_vfn_192();
     /*193*/ virtual void __unk_vfn_193();
     /*
-    inline bool addCollisionShapes(class Block const& a0, class BlockSource& a1, class BlockPos const& a2, class AABB const* a3, std::vector<class AABB>& a4, class optional_ref<struct IActorMovementProxy> a5) const{
-        bool (AirBlock::*rv)(class Block const&, class BlockSource&, class BlockPos const&, class AABB const*, std::vector<class AABB>&, class optional_ref<struct IActorMovementProxy>) const;
-        *((void**)&rv) = dlsym("?addCollisionShapes@AirBlock@@UEBA_NAEBVBlock@@AEAVBlockSource@@AEBVBlockPos@@PEBVAABB@@AEAV?$vector@VAABB@@V?$allocator@VAABB@@@std@@@std@@V?$optional_ref@UIActorMovementProxy@@@@@Z");
-        return (this->*rv)(std::forward<class Block const&>(a0), std::forward<class BlockSource&>(a1), std::forward<class BlockPos const&>(a2), std::forward<class AABB const*>(a3), std::forward<std::vector<class AABB>&>(a4), std::forward<class optional_ref<struct IActorMovementProxy>>(a5));
-    }
     inline bool canHaveExtraData() const{
         bool (AirBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canHaveExtraData@AirBlock@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool tryToPlace(class BlockSource& a0, class BlockPos const& a1, class Block const& a2, struct ActorBlockSyncMessage const* a3) const{
-        bool (AirBlock::*rv)(class BlockSource&, class BlockPos const&, class Block const&, struct ActorBlockSyncMessage const*) const;
-        *((void**)&rv) = dlsym("?tryToPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@AEBVBlock@@PEBUActorBlockSyncMessage@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Block const&>(a2), std::forward<struct ActorBlockSyncMessage const*>(a3));
     }
     inline bool canBeSilkTouched() const{
         bool (AirBlock::*rv)() const;
         *((void**)&rv) = dlsym("?canBeSilkTouched@AirBlock@@MEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isObstructingChests(class BlockSource& a0, class BlockPos const& a1) const{
-        bool (AirBlock::*rv)(class BlockSource&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?isObstructingChests@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
+    inline void animateTick(class BlockSource& a0, class BlockPos const& a1, class Random& a2) const{
+        void (AirBlock::*rv)(class BlockSource&, class BlockPos const&, class Random&) const;
+        *((void**)&rv) = dlsym("?animateTick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
     }
-    inline bool mayPick() const{
-        bool (AirBlock::*rv)() const;
-        *((void**)&rv) = dlsym("?mayPick@AirBlock@@UEBA_NXZ");
-        return (this->*rv)();
+    inline void entityInside(class BlockSource& a0, class BlockPos const& a1, class Actor& a2) const{
+        void (AirBlock::*rv)(class BlockSource&, class BlockPos const&, class Actor&) const;
+        *((void**)&rv) = dlsym("?entityInside@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVActor@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Actor&>(a2));
     }
-    inline bool mayPlace(class BlockSource& a0, class BlockPos const& a1) const{
-        bool (AirBlock::*rv)(class BlockSource&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool playerWillDestroy(class Player& a0, class BlockPos const& a1, class Block const& a2) const{
-        bool (AirBlock::*rv)(class Player&, class BlockPos const&, class Block const&) const;
-        *((void**)&rv) = dlsym("?playerWillDestroy@AirBlock@@UEBA_NAEAVPlayer@@AEBVBlockPos@@AEBVBlock@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Block const&>(a2));
-    }
-    inline bool mayPlace(class BlockSource& a0, class BlockPos const& a1, unsigned char a2) const{
-        bool (AirBlock::*rv)(class BlockSource&, class BlockPos const&, unsigned char) const;
-        *((void**)&rv) = dlsym("?mayPlace@AirBlock@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@E@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<unsigned char>(a2));
-    }
-    inline bool mayPick(class BlockSource const& a0, class Block const& a1, bool a2) const{
-        bool (AirBlock::*rv)(class BlockSource const&, class Block const&, bool) const;
-        *((void**)&rv) = dlsym("?mayPick@AirBlock@@UEBA_NAEBVBlockSource@@AEBVBlock@@_N@Z");
-        return (this->*rv)(std::forward<class BlockSource const&>(a0), std::forward<class Block const&>(a1), std::forward<bool>(a2));
-    }
-    inline bool getCollisionShape(class AABB& a0, class Block const& a1, class BlockSource const& a2, class BlockPos const& a3, class optional_ref<struct IActorMovementProxy> a4) const{
-        bool (AirBlock::*rv)(class AABB&, class Block const&, class BlockSource const&, class BlockPos const&, class optional_ref<struct IActorMovementProxy>) const;
-        *((void**)&rv) = dlsym("?getCollisionShape@AirBlock@@UEBA_NAEAVAABB@@AEBVBlock@@AEBVBlockSource@@AEBVBlockPos@@V?$optional_ref@UIActorMovementProxy@@@@@Z");
-        return (this->*rv)(std::forward<class AABB&>(a0), std::forward<class Block const&>(a1), std::forward<class BlockSource const&>(a2), std::forward<class BlockPos const&>(a3), std::forward<class optional_ref<struct IActorMovementProxy>>(a4));
-    }
-    inline bool checkIsPathable(class Actor& a0, class BlockPos const& a1, class BlockPos const& a2) const{
-        bool (AirBlock::*rv)(class Actor&, class BlockPos const&, class BlockPos const&) const;
-        *((void**)&rv) = dlsym("?checkIsPathable@AirBlock@@UEBA_NAEAVActor@@AEBVBlockPos@@1@Z");
-        return (this->*rv)(std::forward<class Actor&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class BlockPos const&>(a2));
+    inline void tick(class BlockSource& a0, class BlockPos const& a1, class Random& a2) const{
+        void (::*rv)(class BlockSource&, class BlockPos const&, class Random&) const;
+        *((void**)&rv) = dlsym("?tick@AirBlock@@UEBAXAEAVBlockSource@@AEBVBlockPos@@AEAVRandom@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1), std::forward<class Random&>(a2));
     }
     */
     MCAPI AirBlock(std::string const&, int, class Material const&);

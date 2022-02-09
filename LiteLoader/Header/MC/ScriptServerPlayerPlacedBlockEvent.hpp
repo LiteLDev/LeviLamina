@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "ScriptApi.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,12 +23,16 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerPlayerPlacedBlockEvent();
-    /*1*/ virtual bool _serialize(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
     /*
     inline  ~ScriptServerPlayerPlacedBlockEvent(){
          (ScriptServerPlayerPlacedBlockEvent::*rv)();
         *((void**)&rv) = dlsym("??1ScriptServerPlayerPlacedBlockEvent@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline bool _serialize(class ScriptEngine& a0, class ScriptApi::ScriptObjectHandle& a1) const{
+        bool (ScriptServerPlayerPlacedBlockEvent::*rv)(class ScriptEngine&, class ScriptApi::ScriptObjectHandle&) const;
+        *((void**)&rv) = dlsym("?_serialize@ScriptServerPlayerPlacedBlockEvent@@EEBA_NAEAVScriptEngine@@AEAVScriptObjectHandle@ScriptApi@@@Z");
+        return (this->*rv)(std::forward<class ScriptEngine&>(a0), std::forward<class ScriptApi::ScriptObjectHandle&>(a1));
     }
     */
     MCAPI ScriptServerPlayerPlacedBlockEvent();

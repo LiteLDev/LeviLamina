@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Json.hpp"
 #include "CommandOrigin.hpp"
 
 #define BEFORE_EXTRA
@@ -38,18 +37,15 @@ public:
     /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*15*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_17();
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual void __unk_vfn_21();
+    /*20*/ virtual unsigned char getSourceSubId() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*26*/ virtual void __unk_vfn_26();
     /*27*/ virtual void updateValues();
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
     MCAPI ActorCommandOrigin(class Actor&);
     MCAPI static std::unique_ptr<class ActorCommandOrigin> load(class CompoundTag const&, class Level&);
 

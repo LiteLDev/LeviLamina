@@ -103,9 +103,9 @@ fmt::text_style getModeColor(string a1)
 {
     switch (H(a1))
     {
-        case H("INFO"): return fmt::fg(fmt::color::blue_violet);
+        case H("INFO"): return fmt::fg(fmt::color::light_sea_green);
         case H("WARN"): return fmt::fg(fmt::color::yellow2);
-        case H("DEBUG"): return fmt::fg(fmt::terminal_color::bright_green);
+        case H("DEBUG"): return fmt::fg(fmt::color::white);
         case H("ERROR"): return fmt::fg(fmt::terminal_color::bright_red);
         case H("FATAL"): return fmt::fg(fmt::color::red);
     }
@@ -116,7 +116,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream &o) {
     if (!title.empty())
         title = "[" + title + "]";
     if (checkLogLevel(o.logger->consoleLevel, o.level)) {
-        fmt::print(LL::globalConfig.colorLog ? fmt::fg(fmt::color::sky_blue) : fmt::text_style(),
+        fmt::print(LL::globalConfig.colorLog ? fmt::fg(fmt::color::light_blue) : fmt::text_style(),
                    "{:%H:%M:%S}", fmt::localtime(_time64(nullptr)));
 
         fmt::print(

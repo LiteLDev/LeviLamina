@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~SquidDiveGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canContinueToUse();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void __unk_vfn_5();
@@ -40,6 +40,11 @@ public:
     inline void tick(){
         void (SquidDiveGoal::*rv)();
         *((void**)&rv) = dlsym("?tick@SquidDiveGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (SquidDiveGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@SquidDiveGoal@@UEAA_NXZ");
         return (this->*rv)();
     }
     */

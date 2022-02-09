@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~MonsterRoomFeature();
     /*2*/ virtual void __unk_vfn_2();
-    /*3*/ virtual ~MonsterRoomFeature();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /*
     inline  ~MonsterRoomFeature(){
          (MonsterRoomFeature::*rv)();

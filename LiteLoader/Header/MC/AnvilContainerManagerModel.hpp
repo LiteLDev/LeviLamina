@@ -25,17 +25,25 @@ public:
 
 public:
     /*0*/ virtual ~AnvilContainerManagerModel();
-    /*1*/ virtual enum ContainerID getContainerId() const;
-    /*2*/ virtual void setContainerId(enum ContainerID);
-    /*3*/ virtual enum ContainerType getContainerType() const;
-    /*4*/ virtual void setContainerType(enum ContainerType);
     /*6*/ virtual std::vector<class ItemStack> getItemCopies() const;
     /*7*/ virtual void setSlot(int, class ItemStack const&, bool);
     /*8*/ virtual class ItemStack const& getSlot(int) const;
-    /*9*/ virtual void setData(int, int);
-    /*10*/ virtual void broadcastChanges();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
     /*15*/ virtual bool isValid(float);
     /*16*/ virtual class ContainerScreenContext _postInit();
+    /*
+    inline void broadcastChanges(){
+        void (AnvilContainerManagerModel::*rv)();
+        *((void**)&rv) = dlsym("?broadcastChanges@AnvilContainerManagerModel@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    inline void setData(int a0, int a1){
+        void (AnvilContainerManagerModel::*rv)(int, int);
+        *((void**)&rv) = dlsym("?setData@AnvilContainerManagerModel@@UEAAXHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
+    }
+    */
     MCAPI AnvilContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
     MCAPI static int const INPUT_SLOT;
     MCAPI static int const MATERIAL_SLOT;

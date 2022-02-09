@@ -29,13 +29,10 @@ public:
     /*2*/ virtual int getCraftingSize() const = 0;
     /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
     /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
-    /*5*/ virtual void __unk_vfn_5();
+    /*5*/ virtual bool isMultiRecipe() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
     /*7*/ virtual int size() const = 0;
-    /*8*/ virtual class mce::UUID const& getId() const;
-    /*9*/ virtual class ItemPack const& getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
-    /*15*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
     inline bool isShapeless() const{
         bool (MultiRecipe::*rv)() const;

@@ -264,7 +264,7 @@ string Player::getUuid()
     auto ueic = getUserEntityIdentifierComponent();
     if (!ueic)
         return "";
-    auto& uuid = dAccess<mce::UUID>(this, 168);
+    auto& uuid = dAccess<mce::UUID>(ueic, 168);
     return uuid.asString();
 }
 

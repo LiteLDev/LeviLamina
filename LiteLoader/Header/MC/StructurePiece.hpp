@@ -33,15 +33,10 @@ public:
     /*7*/ virtual int getWorldX(int, int);
     /*8*/ virtual int getWorldZ(int, int);
     /*9*/ virtual void placeBlock(class BlockSource&, class Block const&, int, int, int, class BoundingBox const&);
-    /*10*/ virtual void __unk_vfn_10();
+    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
     /*11*/ virtual void generateBox(class BlockSource&, class BoundingBox const&, int, int, int, int, int, int, class Block const&, class Block const&, bool);
     /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
     /*
-    inline bool canBeReplaced(class BlockSource& a0, int a1, int a2, int a3, class BoundingBox const& a4){
-        bool (StructurePiece::*rv)(class BlockSource&, int, int, int, class BoundingBox const&);
-        *((void**)&rv) = dlsym("?canBeReplaced@StructurePiece@@UEAA_NAEAVBlockSource@@HHHAEBVBoundingBox@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<int>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<class BoundingBox const&>(a4));
-    }
     inline  ~StructurePiece(){
          (StructurePiece::*rv)();
         *((void**)&rv) = dlsym("??1StructurePiece@@UEAA@XZ");

@@ -24,9 +24,16 @@ public:
 
 public:
     /*0*/ virtual ~SleepState();
-    /*1*/ virtual void tick();
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void stop();
+    /*
+    inline void tick(){
+        void (SleepState::*rv)();
+        *((void**)&rv) = dlsym("?tick@SleepState@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

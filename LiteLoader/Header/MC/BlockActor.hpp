@@ -51,7 +51,7 @@ public:
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual float getShadowRadius(class BlockSource&) const;
     /*18*/ virtual bool hasAlphaLayer() const;
-    /*19*/ virtual void __unk_vfn_19();
+    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
     /*20*/ virtual void getDebugText(std::vector<std::string>&, class BlockPos const&);
     /*21*/ virtual std::string const& getCustomName() const;
     /*22*/ virtual std::string const& getFilteredCustomName(class UIProfanityContext const&);
@@ -68,7 +68,7 @@ public:
     /*33*/ virtual void __unk_vfn_33();
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*36*/ virtual void __unk_vfn_36();
+    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
     /*
     inline class Container* getContainer(){
         class Container* (BlockActor::*rv)();
@@ -104,16 +104,6 @@ public:
         void (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
         *((void**)&rv) = dlsym("?onNeighborChanged@BlockActor@@UEAAXAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline class BlockActor* getCrackEntity(class BlockSource& a0, class BlockPos const& a1){
-        class BlockActor* (BlockActor::*rv)(class BlockSource&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?getCrackEntity@BlockActor@@UEAAPEAV1@AEAVBlockSource@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool _playerCanUpdate(class Player const& a0) const{
-        bool (BlockActor::*rv)(class Player const&) const;
-        *((void**)&rv) = dlsym("?_playerCanUpdate@BlockActor@@MEBA_NAEBVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player const&>(a0));
     }
     inline  ~BlockActor(){
          (BlockActor::*rv)();

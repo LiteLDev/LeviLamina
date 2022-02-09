@@ -44,17 +44,15 @@ public:
     /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
-    /*20*/ virtual void __unk_vfn_20();
+    /*20*/ virtual unsigned char getSourceSubId() const;
     /*21*/ virtual class CommandOrigin const& getOutputReceiver() const;
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
     /*23*/ virtual enum CommandOriginType getOriginType() const;
-    /*25*/ virtual void __unk_vfn_25();
     /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
     /*27*/ virtual void updateValues();
     /*28*/ virtual class Vec3 const getExecutePosition(int, class CommandPositionFloat const&) const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
     MCAPI VirtualCommandOrigin(class CommandOrigin const&, class CommandOrigin const&, class CommandPositionFloat const&, int);
     MCAPI VirtualCommandOrigin(class CommandOrigin const&, class Actor&, class CommandPositionFloat const&, int);
     MCAPI VirtualCommandOrigin(std::unique_ptr<class CommandOrigin>, std::unique_ptr<class CommandOrigin>, class CommandPositionFloat const&, int);

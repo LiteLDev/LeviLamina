@@ -40,10 +40,10 @@ public:
     /*6*/ virtual class ResourcePack* getResourcePackContainingModule(struct PackIdVersion const&) const;
     /*7*/ virtual class ResourcePack* getResourcePackInPath(class Core::Path const&) const;
     /*8*/ virtual bool isResourcePackLoaded(struct PackIdVersion const&, enum PackOrigin const&);
-    /*9*/ virtual class PackSourceReport const* getPackLoadingReport() const;
-    /*10*/ virtual class ResourcePack* getVanillaPack() const;
-    /*11*/ virtual class ResourcePack* getChemistryPack() const;
-    /*12*/ virtual class ResourcePack* getChemistryServerPack() const;
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual bool setServicePacks(std::vector<struct PackIdVersion>);
     /*14*/ virtual void addServicePacksToStack(class ResourcePackStack&) const;
     /*15*/ virtual void addCachedResourcePacks(class std::unordered_map<class ContentIdentity, std::string, struct std::hash<class ContentIdentity>, struct std::equal_to<class ContentIdentity>, class std::allocator<struct std::pair<class ContentIdentity const, std::string > > > const*);
@@ -67,7 +67,7 @@ public:
     /*33*/ virtual class IContentKeyProvider const& getKeyProvider() const;
     /*34*/ virtual class PackManifestFactory& getPackManifestFactory();
     /*35*/ virtual class PackSettingsFactory& getPackSettingsFactory() const;
-    /*36*/ virtual class PackSourceFactory& getPackSourceFactory();
+    /*36*/ virtual void __unk_vfn_36();
     /*37*/ virtual std::vector<class ResourcePack* > getPacksByResourceLocation(enum PackOrigin) const;
     /*38*/ virtual std::vector<class ResourcePack* > getPacksByType(enum PackType) const;
     /*39*/ virtual void addKnownPackFromImport(class PackManifest const&);
@@ -82,9 +82,34 @@ public:
     /*48*/ virtual void unregisterResourcePackRemovedCallback(void*);
     /*49*/ virtual bool isInitialized();
     /*
+    inline class ResourcePack* getVanillaPack() const{
+        class ResourcePack* (ResourcePackRepository::*rv)() const;
+        *((void**)&rv) = dlsym("?getVanillaPack@ResourcePackRepository@@UEBAPEAVResourcePack@@XZ");
+        return (this->*rv)();
+    }
+    inline class ResourcePack* getChemistryServerPack() const{
+        class ResourcePack* (ResourcePackRepository::*rv)() const;
+        *((void**)&rv) = dlsym("?getChemistryServerPack@ResourcePackRepository@@UEBAPEAVResourcePack@@XZ");
+        return (this->*rv)();
+    }
+    inline class PackSourceReport const* getPackLoadingReport() const{
+        class PackSourceReport const* (ResourcePackRepository::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackLoadingReport@ResourcePackRepository@@UEBAPEBVPackSourceReport@@XZ");
+        return (this->*rv)();
+    }
+    inline class ResourcePack* getChemistryPack() const{
+        class ResourcePack* (ResourcePackRepository::*rv)() const;
+        *((void**)&rv) = dlsym("?getChemistryPack@ResourcePackRepository@@UEBAPEAVResourcePack@@XZ");
+        return (this->*rv)();
+    }
     inline  ~ResourcePackRepository(){
          (ResourcePackRepository::*rv)();
         *((void**)&rv) = dlsym("??1ResourcePackRepository@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline class PackSourceFactory& getPackSourceFactory(){
+        class PackSourceFactory& (ResourcePackRepository::*rv)();
+        *((void**)&rv) = dlsym("?getPackSourceFactory@ResourcePackRepository@@UEAAAEAVPackSourceFactory@@XZ");
         return (this->*rv)();
     }
     */
