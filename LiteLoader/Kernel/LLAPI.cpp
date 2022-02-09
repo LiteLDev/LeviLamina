@@ -49,8 +49,20 @@ LL::Version LL::getLoaderVersion()
 
             if (TRUE == VerQueryValue(verBuffer, TEXT("\\"), reinterpret_cast<LPVOID*>(&verInfo), &length))
             {
-                return Version(HIWORD(verInfo->dwProductVersionMS), LOWORD(verInfo->dwProductVersionMS),
-                    HIWORD(verInfo->dwProductVersionLS)/*, LOWORD(verInfo->dwProductVersionLS)*/);
+                if (LITELOADER_VERSION_STATUS == LL::Version::Beta) {
+                    return Version(HIWORD(verInfo->dwProductVersionMS), LOWORD(verInfo->dwProductVersionMS),
+                                   HIWORD(verInfo->dwProductVersionLS), LL::Version::Beta);
+                }
+                else if (LITELOADER_VERSION_STATUS == LL::Version::Dev)
+                {
+                    return Version(HIWORD(verInfo->dwProductVersionMS), LOWORD(verInfo->dwProductVersionMS),
+                                   HIWORD(verInfo->dwProductVersionLS), LL::Version::Dev);
+                }
+                else
+                {
+                    return Version(HIWORD(verInfo->dwProductVersionMS), LOWORD(verInfo->dwProductVersionMS),
+                                   HIWORD(verInfo->dwProductVersionLS));
+                }
             }
         }
     }

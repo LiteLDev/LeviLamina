@@ -17,7 +17,7 @@ void inline Info(const std::string& formatStr, const Args&... args)
 	std::string str = fmt::format("[Chakra] ", fmt::localtime(_time64(0)));
 	str += fmt::format(formatStr, args...);
 	str.append(1, '\n');
-	fmt::print(str);
+    fmt::print(fmt::fg(fmt::terminal_color::white) ,str);
 }
 
 template <typename... Args>
