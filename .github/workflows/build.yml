@@ -34,6 +34,13 @@ jobs:
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
 
+      - name: Change LITELOADER_VERSION_STATUS
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
+        shell: bash
+
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
