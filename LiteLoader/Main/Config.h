@@ -36,6 +36,7 @@ struct LLConfig
     std::string language = "en";
 
     bool enableScriptEngine = true;
+    bool alwaysLaunchScriptEngine = false;
 
     bool enableAutoUpdate = true;
     bool enableCrashLogger = true;

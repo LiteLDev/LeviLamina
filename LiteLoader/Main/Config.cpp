@@ -20,7 +20,8 @@ namespace LL {
                 {"LogLevel",  conf.logLevel},
                 {"Language",  conf.language},
                 {"ScriptEngine", {
-                    {"enabled", conf.enableScriptEngine}
+                    {"enabled", conf.enableScriptEngine},
+                    {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
                 }},
                 {"Modules", {
                     {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
@@ -55,6 +56,9 @@ namespace LL {
         if (j.find("ScriptEngine") != j.end()) {
             const nlohmann::json& scriptEngine = j.at("ScriptEngine");
             conf.enableScriptEngine = scriptEngine.value("enabled", true);
+
+            if(scriptEngine.find("alwaysLaunch") != scriptEngine.end())
+                conf.alwaysLaunchScriptEngine = scriptEngine.value("alwaysLaunch", false);
         }
 
         if (j.find("Modules") != j.end()) {

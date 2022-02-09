@@ -133,8 +133,9 @@ void LL::LoadMain() {
     }
 
     // Load ScriptEngine
-    if (LL::globalConfig.enableScriptEngine && hasScriptPlugin)
-        LoadScriptEngine();
+    if (LL::globalConfig.enableScriptEngine)
+        if(LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin)
+            LoadScriptEngine();
 
     //  Call onPostInit
     auto plugins = PluginManager::getAllPlugins(false);
