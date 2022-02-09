@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashLogger", "CrashLogger\CrashLogger.vcxproj", "{B9492785-E9A2-42BA-A6C0-5AFE14FA3614}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CrashLogger_Daemon", "CrashLogger_Daemon\CrashLogger_Daemon.vcxproj", "{336BD48D-37CD-41CC-BC61-F5090AF162BE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9492785-E9A2-42BA-A6C0-5AFE14FA3614}.Release|x64.ActiveCfg = Release|x64
+		{B9492785-E9A2-42BA-A6C0-5AFE14FA3614}.Release|x64.Build.0 = Release|x64
+		{336BD48D-37CD-41CC-BC61-F5090AF162BE}.Release|x64.ActiveCfg = Release|x64
+		{336BD48D-37CD-41CC-BC61-F5090AF162BE}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29B42EF8-B025-4731-B09B-70A1AB99F47C}
+	EndGlobalSection
+EndGlobal
