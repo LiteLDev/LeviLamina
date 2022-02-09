@@ -29,35 +29,21 @@ public:
     /*1*/ virtual unsigned __int64 getPackSize() const;
     /*2*/ virtual class ResourceLocation const& getPackLocation() const;
     /*3*/ virtual std::string const& getPackName() const;
-    /*4*/ virtual void __unk_vfn_4();
+    /*4*/ virtual bool isWritable() const;
     /*5*/ virtual void setIsTrusted(bool);
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual bool isTrusted() const;
     /*7*/ virtual bool hasAsset(class Core::Path const&, bool) const;
     /*8*/ virtual bool hasFolder(class Core::Path const&) const;
     /*9*/ virtual bool getAsset(class Core::Path const&, std::string&, bool) const;
     /*10*/ virtual bool deleteAsset(class Core::PathBuffer<std::string > const&);
     /*11*/ virtual bool writeAsset(class Core::Path const&, std::string const&);
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
-    /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
     /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
     /*17*/ virtual enum PackAccessAssetGenerationResult generateAssetSet();
-    /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual void unload();
     /*20*/ virtual bool hasUpgradeFiles() const;
     /*21*/ virtual class ContentIdentity readContentIdentity() const;
-    /*
-    inline bool isWritable() const{
-        bool (DirectoryPackWithEncryptionAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isWritable@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isTrusted() const{
-        bool (DirectoryPackWithEncryptionAccessStrategy::*rv)() const;
-        *((void**)&rv) = dlsym("?isTrusted@DirectoryPackWithEncryptionAccessStrategy@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI DirectoryPackWithEncryptionAccessStrategy(class ResourceLocation const&, class ResourceLocation const&, class IContentKeyProvider const&);
 
 protected:

@@ -39,26 +39,13 @@ public:
     /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
     /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
     /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isSelectorExpansionAllowed() const;
     /*19*/ virtual class NetworkIdentifier const& getSourceId() const;
     /*20*/ virtual unsigned char getSourceSubId() const;
-    /*21*/ virtual void __unk_vfn_21();
     /*22*/ virtual struct CommandOriginIdentity getIdentity() const;
-    /*23*/ virtual void __unk_vfn_23();
-    /*25*/ virtual void __unk_vfn_25();
-    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*27*/ virtual void updateValues();
+    /*23*/ virtual enum CommandOriginType getOriginType() const;
     /*29*/ virtual class CompoundTag serialize() const;
     /*30*/ virtual bool isValid() const;
-    /*31*/ virtual void _setUUID(class mce::UUID const&);
-    /*
-    inline enum CommandOriginType getOriginType() const{
-        enum CommandOriginType (PlayerCommandOrigin::*rv)() const;
-        *((void**)&rv) = dlsym("?getOriginType@PlayerCommandOrigin@@UEBA?AW4CommandOriginType@@XZ");
-        return (this->*rv)();
-    }
-    */
     MCAPI PlayerCommandOrigin(class Player&);
     MCAPI static std::unique_ptr<class PlayerCommandOrigin> load(class CompoundTag const&, class Level&);
 

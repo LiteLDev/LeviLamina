@@ -28,9 +28,23 @@ public:
     /*1*/ virtual std::string const& getName() const;
     /*2*/ virtual void initializeComponent(class EntityContext&) const;
     /*3*/ virtual void buildSchema(class std::shared_ptr<class JsonUtil::JsonSchemaObjectNode<class JsonUtil::EmptyClass, struct BlockComponentGroupDescription> >&, class BlockComponentFactory const&) const;
-    /*4*/ virtual bool isNetworkComponent() const;
-    /*5*/ virtual std::unique_ptr<class CompoundTag> buildNetworkTag() const;
-    /*6*/ virtual void initializeFromNetwork(class CompoundTag const&);
+    /*
+    inline bool isNetworkComponent() const{
+        bool (BlockBreakOnPushDescription::*rv)() const;
+        *((void**)&rv) = dlsym("?isNetworkComponent@BlockBreakOnPushDescription@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline std::unique_ptr<class CompoundTag> buildNetworkTag() const{
+        std::unique_ptr<class CompoundTag> (BlockBreakOnPushDescription::*rv)() const;
+        *((void**)&rv) = dlsym("?buildNetworkTag@BlockBreakOnPushDescription@@UEBA?AV?$unique_ptr@VCompoundTag@@U?$default_delete@VCompoundTag@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
+    inline void initializeFromNetwork(class CompoundTag const& a0){
+        void (BlockBreakOnPushDescription::*rv)(class CompoundTag const&);
+        *((void**)&rv) = dlsym("?initializeFromNetwork@BlockBreakOnPushDescription@@UEAAXAEBVCompoundTag@@@Z");
+        return (this->*rv)(std::forward<class CompoundTag const&>(a0));
+    }
+    */
     MCAPI static std::string const NameID;
 
 protected:

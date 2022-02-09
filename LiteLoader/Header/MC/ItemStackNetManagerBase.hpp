@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~ItemStackNetManagerBase();
     /*1*/ virtual bool isEnabled() const;
     /*2*/ virtual class TypedClientNetId<struct ItemStackRequestIdTag, int, 0> getRequestId() const = 0;
-    /*3*/ virtual void __unk_vfn_3();
+    /*3*/ virtual bool retainSetItemStackNetIdVariant() const;
     /*4*/ virtual bool allowInventoryTransactionManager() const = 0;
     /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void __unk_vfn_6();
@@ -35,11 +35,6 @@ public:
     /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void _initScreen(class ItemStackNetManagerScreen&);
     /*
-    inline bool retainSetItemStackNetIdVariant() const{
-        bool (ItemStackNetManagerBase::*rv)() const;
-        *((void**)&rv) = dlsym("?retainSetItemStackNetIdVariant@ItemStackNetManagerBase@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline void _initScreen(class ItemStackNetManagerScreen& a0){
         void (ItemStackNetManagerBase::*rv)(class ItemStackNetManagerScreen&);
         *((void**)&rv) = dlsym("?_initScreen@ItemStackNetManagerBase@@MEAAXAEAVItemStackNetManagerScreen@@@Z");

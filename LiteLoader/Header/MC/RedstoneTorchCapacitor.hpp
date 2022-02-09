@@ -25,13 +25,10 @@ public:
 public:
     /*0*/ virtual ~RedstoneTorchCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual int getDirection() const;
-    /*4*/ virtual void setDirection(unsigned char);
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
     /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
     /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);

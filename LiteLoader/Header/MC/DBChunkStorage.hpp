@@ -29,8 +29,6 @@ public:
     /*0*/ virtual ~DBChunkStorage();
     /*1*/ virtual void shutdown();
     /*2*/ virtual bool isShutdownDone();
-    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
-    /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
     /*5*/ virtual bool isChunkKnown(class ChunkPos const&);
     /*8*/ virtual bool postProcess(class ChunkViewSource&);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);
@@ -40,10 +38,6 @@ public:
     /*14*/ virtual void hintDiscardBatchEnd();
     /*15*/ virtual void acquireDiscarded(class std::unique_ptr<class LevelChunk, struct LevelChunkFinalDeleter>);
     /*17*/ virtual void flushPendingWrites();
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual class std::unordered_map<class ChunkPos, class std::weak_ptr<class LevelChunk>, struct std::hash<class ChunkPos>, struct std::equal_to<class ChunkPos>, class std::allocator<struct std::pair<class ChunkPos const, class std::weak_ptr<class LevelChunk> > > > const* getChunkMap();
-    /*21*/ virtual void clearDeletedEntities();
-    /*22*/ virtual void __unk_vfn_22();
     /*23*/ virtual class LevelChunkBlendingAttenuator getHeightAttenuatorForLevelChunk(class ChunkPos const&, class BiomeRegistry const&);
     MCAPI DBChunkStorage(std::unique_ptr<class ChunkSource>, class DBStorage&, class Scheduler&);
     MCAPI static enum ConsoleChunkBlender::BlenderMode _getBlenderMode(class LevelChunk const&, class Experiments const&);

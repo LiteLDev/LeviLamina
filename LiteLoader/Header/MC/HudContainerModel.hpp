@@ -26,27 +26,15 @@ public:
 public:
     /*0*/ virtual void containerContentChanged(int);
     /*1*/ virtual ~HudContainerModel();
-    /*2*/ virtual void postInit();
     /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
-    /*9*/ virtual std::vector<class ItemStack> const& getItems() const;
-    /*11*/ virtual class ItemStackBase const& getItemStackBase(int) const;
     /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual void __unk_vfn_14();
+    /*14*/ virtual bool isValid();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
     /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual std::string const& getItemGroupName(int) const;
     /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual class Container* _getContainer() const;
-    /*21*/ virtual int _getContainerOffset() const;
-    /*
-    inline bool isValid(){
-        bool (HudContainerModel::*rv)();
-        *((void**)&rv) = dlsym("?isValid@HudContainerModel@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    */
 
 protected:
 

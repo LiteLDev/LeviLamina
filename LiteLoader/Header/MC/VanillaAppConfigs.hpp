@@ -42,7 +42,6 @@ public:
     /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual void __unk_vfn_16();
-    /*17*/ virtual enum EducationEditionOffer getEducationEditionOffering() const;
     /*18*/ virtual void __unk_vfn_18();
     /*19*/ virtual void __unk_vfn_19();
     /*21*/ virtual void __unk_vfn_21();

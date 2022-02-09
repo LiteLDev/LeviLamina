@@ -29,7 +29,6 @@ public:
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual int getContainerSize(class ContainerScreenContext const&, class Container const&) const;
     /*
     inline bool canDestroy(class ContainerScreenContext const& a0) const{

@@ -47,7 +47,7 @@ public:
     /*11*/ virtual void removeItem(int, int);
     /*12*/ virtual void removeAllItems();
     /*13*/ virtual void dropContents(class BlockSource&, class Vec3 const&, bool);
-    /*14*/ virtual int getContainerSize() const = 0;
+    /*14*/ virtual void __unk_vfn_14() = 0;
     /*15*/ virtual int getMaxStackSize() const = 0;
     /*16*/ virtual void startOpen(class Player&) = 0;
     /*17*/ virtual void stopOpen(class Player&) = 0;

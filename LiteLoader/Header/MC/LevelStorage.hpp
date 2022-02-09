@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Core.hpp"
 #include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
@@ -33,7 +32,7 @@ public:
     /*5*/ virtual bool loadLevelData(class LevelData&) = 0;
     /*6*/ virtual std::unique_ptr<class ChunkSource> createChunkStorage(std::unique_ptr<class ChunkSource>, enum StorageVersion) = 0;
     /*7*/ virtual void saveLevelData(class LevelData const&) = 0;
-    /*8*/ virtual class Core::PathBuffer<std::string > const& getFullPath() const = 0;
+    /*8*/ virtual void __unk_vfn_8() = 0;
     /*9*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(std::string const&, std::string&&, enum DBHelpers::Category) = 0;
     /*10*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > saveData(class LevelStorageWriteBatch const&) = 0;
     /*11*/ virtual class std::shared_ptr<class Bedrock::Threading::IAsyncResult<void> > deleteData(std::string const&, enum DBHelpers::Category) = 0;
@@ -44,8 +43,8 @@ public:
     /*16*/ virtual void startShutdown() = 0;
     /*17*/ virtual bool isShuttingDown() const = 0;
     /*18*/ virtual bool checkShutdownDone() = 0;
-    /*19*/ virtual void __unk_vfn_19() = 0;
-    /*20*/ virtual void __unk_vfn_20();
+    /*19*/ virtual bool loadData(class gsl::basic_string_span<char const, -1>, std::string&, enum DBHelpers::Category) const;
+    /*20*/ virtual void __unk_vfn_20() = 0;
     /*21*/ virtual std::vector<struct SnapshotFilenameAndLength> createSnapshot(std::string const&) = 0;
     /*22*/ virtual void releaseSnapshot() = 0;
     /*23*/ virtual void compactStorage() = 0;
@@ -58,11 +57,6 @@ public:
     /*30*/ virtual void setCriticalSyncSaveCallback(class std::function<void (void)>) = 0;
     /*31*/ virtual void corruptLevel();
     /*
-    inline bool loadData(class gsl::basic_string_span<char const, -1> a0, std::string& a1, enum DBHelpers::Category a2) const{
-        bool (LevelStorage::*rv)(class gsl::basic_string_span<char const, -1>, std::string&, enum DBHelpers::Category) const;
-        *((void**)&rv) = dlsym("?loadData@LevelStorage@@UEBA_NV?$basic_string_span@$$CBD$0?0@gsl@@AEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4Category@DBHelpers@@@Z");
-        return (this->*rv)(std::forward<class gsl::basic_string_span<char const, -1>>(a0), std::forward<std::string&>(a1), std::forward<enum DBHelpers::Category>(a2));
-    }
     inline  ~LevelStorage(){
          (LevelStorage::*rv)();
         *((void**)&rv) = dlsym("??1LevelStorage@@UEAA@XZ");

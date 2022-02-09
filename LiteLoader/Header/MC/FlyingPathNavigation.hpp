@@ -31,7 +31,6 @@ public:
     /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
     /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
     /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual bool canUpdatePath(class Mob const&) const;
     /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
 

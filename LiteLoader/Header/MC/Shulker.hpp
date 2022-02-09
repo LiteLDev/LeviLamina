@@ -28,58 +28,32 @@ public:
     /*8*/ virtual void reloadHardcoded(enum Actor::InitializationMethod, class VariantParameterList const&);
     /*14*/ virtual ~Shulker();
     /*19*/ virtual void setPos(class Vec3 const&);
-    /*20*/ virtual void __unk_vfn_20();
-    /*22*/ virtual void __unk_vfn_22();
-    /*36*/ virtual class Vec3 getInterpolatedRidingOffset(float) const;
     /*41*/ virtual void __unk_vfn_41();
-    /*46*/ virtual void lerpMotion(class Vec3 const&);
     /*48*/ virtual void normalTick();
-    /*52*/ virtual float getRidingHeight();
     /*58*/ virtual bool isInWall() const;
     /*61*/ virtual void __unk_vfn_61();
     /*68*/ virtual void __unk_vfn_68();
-    /*78*/ virtual float getCameraOffset() const;
     /*80*/ virtual float getShadowRadius() const;
     /*82*/ virtual void __unk_vfn_82();
     /*87*/ virtual void __unk_vfn_87();
-    /*88*/ virtual void playerTouch(class Player&);
     /*94*/ virtual void __unk_vfn_94();
     /*97*/ virtual void __unk_vfn_97();
-    /*100*/ virtual void __unk_vfn_100();
     /*104*/ virtual void __unk_vfn_104();
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
     /*110*/ virtual bool canAttack(class Actor*, bool) const;
     /*112*/ virtual class Actor* findAttackTarget();
-    /*113*/ virtual void __unk_vfn_113();
-    /*116*/ virtual void adjustDamageAmount(int&) const;
-    /*120*/ virtual void onTame();
-    /*121*/ virtual void onFailedTame();
-    /*130*/ virtual void vehicleLanded(class Vec3 const&, class Vec3 const&);
-    /*131*/ virtual void __unk_vfn_131();
+    /*131*/ virtual bool shouldRender() const;
     /*134*/ virtual bool isInvulnerableTo(class ActorDamageSource const&) const;
     /*140*/ virtual void onBounceStarted(class BlockPos const&, class Block const&);
     /*143*/ virtual float getPickRadius();
-    /*152*/ virtual void awardKillScore(class Actor&, int);
-    /*171*/ virtual class HashedString const& queryEntityRenderer() const;
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*179*/ virtual int getPortalWaitTime() const;
-    /*181*/ virtual void __unk_vfn_181();
     /*182*/ virtual void __unk_vfn_182();
-    /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
-    /*193*/ virtual void __unk_vfn_193();
-    /*194*/ virtual void __unk_vfn_194();
     /*196*/ virtual void __unk_vfn_196();
-    /*199*/ virtual void __unk_vfn_199();
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
-    /*227*/ virtual void __unk_vfn_227();
     /*228*/ virtual void __unk_vfn_228();
-    /*229*/ virtual void __unk_vfn_229();
-    /*233*/ virtual void __unk_vfn_233();
-    /*234*/ virtual void setAuxValue(int);
-    /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
     /*255*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
@@ -90,21 +64,13 @@ public:
     /*265*/ virtual void __unk_vfn_265();
     /*273*/ virtual void _onSizeUpdated();
     /*274*/ virtual void __unk_vfn_274();
-    /*276*/ virtual void spawnAnim();
     /*287*/ virtual void travel(float, float, float);
     /*290*/ virtual void aiStep();
     /*295*/ virtual bool checkSpawnRules(bool);
-    /*298*/ virtual int getItemUseDuration() const;
-    /*299*/ virtual float getItemUseStartupProgress() const;
-    /*300*/ virtual float getItemUseIntervalProgress() const;
     /*303*/ virtual void __unk_vfn_303();
     /*304*/ virtual float getMaxHeadXRot();
-    /*305*/ virtual void __unk_vfn_305();
     /*307*/ virtual void __unk_vfn_307();
     /*312*/ virtual int getArmorValue();
-    /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*331*/ virtual void onBorn(class Actor&, class Actor&);
-    /*335*/ virtual int getAttackTime();
     /*336*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*338*/ virtual void __unk_vfn_338();
     /*343*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
@@ -119,16 +85,6 @@ public:
     inline bool useNewAi() const{
         bool (Shulker::*rv)() const;
         *((void**)&rv) = dlsym("?useNewAi@Shulker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool shouldRender() const{
-        bool (Shulker::*rv)() const;
-        *((void**)&rv) = dlsym("?shouldRender@Shulker@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline std::unique_ptr<class BodyControl> initBodyControl(){
-        std::unique_ptr<class BodyControl> (Shulker::*rv)();
-        *((void**)&rv) = dlsym("?initBodyControl@Shulker@@UEAA?AV?$unique_ptr@VBodyControl@@U?$default_delete@VBodyControl@@@std@@@std@@XZ");
         return (this->*rv)();
     }
     */

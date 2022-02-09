@@ -27,10 +27,7 @@ public:
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void __unk_vfn_6();
-    /*8*/ virtual void setAutoJumpingInWater(bool);
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual void setSneakDown(bool);
     /*12*/ virtual class Vec3 const& getGazeDirection() const;
     /*
     inline void registerInputHandlers(class InputHandler& a0){

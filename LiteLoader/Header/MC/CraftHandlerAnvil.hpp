@@ -25,7 +25,6 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerAnvil();
-    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void endRequestBatch();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
     /*5*/ virtual void _postCraftRequest(bool);

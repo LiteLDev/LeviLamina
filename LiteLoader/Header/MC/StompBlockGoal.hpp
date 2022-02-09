@@ -37,7 +37,6 @@ public:
     /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
     /*13*/ virtual bool _canReach(class BlockPos const&);
     /*14*/ virtual void _moveToBlock();
-    /*16*/ virtual unsigned __int64 _getRepathTime() const;
     /*17*/ virtual bool findTargetBlock();
     /*18*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
     /*19*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);

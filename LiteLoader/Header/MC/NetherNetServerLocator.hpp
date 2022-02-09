@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "RakNet.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -42,8 +43,6 @@ public:
     /*11*/ virtual void update();
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void __unk_vfn_13();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual void __unk_vfn_15();
     MCAPI NetherNetServerLocator();
 
 protected:

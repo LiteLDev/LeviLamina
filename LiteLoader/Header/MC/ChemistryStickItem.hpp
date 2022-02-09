@@ -26,93 +26,38 @@ public:
 
 public:
     /*0*/ virtual ~ChemistryStickItem();
-    /*2*/ virtual void tearDown();
-    /*3*/ virtual int getMaxUseDuration(class ItemStack const*) const;
     /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void __unk_vfn_5();
-    /*6*/ virtual void executeEvent(class ItemStackBase&, std::string const&, class RenderParams&) const;
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
-    /*9*/ virtual void __unk_vfn_9();
     /*10*/ virtual void __unk_vfn_10();
     /*12*/ virtual void __unk_vfn_12();
-    /*14*/ virtual void __unk_vfn_14();
-    /*15*/ virtual void __unk_vfn_15();
-    /*16*/ virtual enum ItemColor getItemColor() const;
-    /*17*/ virtual void __unk_vfn_17();
-    /*18*/ virtual void __unk_vfn_18();
-    /*19*/ virtual void __unk_vfn_19();
-    /*20*/ virtual void __unk_vfn_20();
-    /*21*/ virtual class ItemComponent* getComponent(class HashedString const&) const;
     /*24*/ virtual class FuelItemComponent* getFuel() const;
     /*27*/ virtual class Item& setMaxDamage(int);
-    /*38*/ virtual enum BlockShape getBlockShape() const;
-    /*40*/ virtual void __unk_vfn_40();
-    /*41*/ virtual int getLevelDataForAuxValue(int) const;
-    /*43*/ virtual short getMaxDamage() const;
-    /*44*/ virtual int getAttackDamage() const;
-    /*46*/ virtual bool isGlint(class ItemStackBase const&) const;
     /*47*/ virtual void __unk_vfn_47();
-    /*48*/ virtual int getPatternIndex() const;
+    /*48*/ virtual void __unk_vfn_48();
     /*49*/ virtual void __unk_vfn_49();
-    /*50*/ virtual void __unk_vfn_50();
-    /*51*/ virtual void __unk_vfn_51();
-    /*52*/ virtual void __unk_vfn_52();
-    /*53*/ virtual void __unk_vfn_53();
-    /*54*/ virtual void __unk_vfn_54();
-    /*55*/ virtual void __unk_vfn_55();
-    /*57*/ virtual void __unk_vfn_57();
-    /*58*/ virtual int getEnchantSlot() const;
-    /*59*/ virtual int getEnchantValue() const;
-    /*60*/ virtual int getArmorValue() const;
+    /*57*/ virtual bool isValidRepairItem(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
     /*61*/ virtual void __unk_vfn_61();
-    /*62*/ virtual void __unk_vfn_62();
-    /*64*/ virtual float getViewDamping() const;
+    /*64*/ virtual void __unk_vfn_64();
     /*65*/ virtual void __unk_vfn_65();
     /*66*/ virtual void __unk_vfn_66();
     /*67*/ virtual void __unk_vfn_67();
-    /*68*/ virtual class mce::Color getColor(class CompoundTag const*, class ItemDescriptor const&) const;
-    /*69*/ virtual void __unk_vfn_69();
     /*70*/ virtual void __unk_vfn_70();
-    /*71*/ virtual void clearColor(class ItemStackBase&) const;
-    /*72*/ virtual void clearColor(class CompoundTag*) const;
-    /*73*/ virtual void setColor(class ItemStackBase&, class mce::Color const&) const;
+    /*72*/ virtual void __unk_vfn_72();
+    /*73*/ virtual void __unk_vfn_73();
     /*74*/ virtual void __unk_vfn_74();
     /*75*/ virtual void __unk_vfn_75();
     /*77*/ virtual void __unk_vfn_77();
     /*78*/ virtual void __unk_vfn_78();
-    /*80*/ virtual void __unk_vfn_80();
     /*81*/ virtual class ItemStack& use(class ItemStack&, class Player&) const;
     /*83*/ virtual enum ItemUseMethod useTimeDepleted(class ItemStack&, class Level*, class Player*) const;
-    /*85*/ virtual float getDestroySpeed(class ItemStackBase const&, class Block const&) const;
     /*86*/ virtual void hurtActor(class ItemStack&, class Actor&, class Mob&) const;
-    /*87*/ virtual void hitActor(class ItemStack&, class Actor&, class Mob&) const;
-    /*88*/ virtual void hitBlock(class ItemStack&, class Block const&, class BlockPos const&, class Mob&) const;
-    /*89*/ virtual void __unk_vfn_89();
-    /*90*/ virtual bool mineBlock(class ItemInstance&, class Block const&, int, int, int, class Actor*) const;
-    /*91*/ virtual void __unk_vfn_91();
-    /*97*/ virtual unsigned char getMaxStackSize(class ItemDescriptor const&) const;
+    /*90*/ virtual bool mineBlock(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
     /*98*/ virtual bool inventoryTick(class ItemStack&, class Level&, class Actor&, int, bool) const;
-    /*99*/ virtual void refreshedInContainer(class ItemStackBase const&, class Level&) const;
     /*102*/ virtual void fixupCommon(class ItemStackBase&) const;
-    /*103*/ virtual void fixupCommon(class ItemStackBase&, class Level&) const;
-    /*106*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemInstance const&, class ItemInstance const&, bool, bool) const;
-    /*107*/ virtual enum InHandUpdateType getInHandUpdateType(class Player const&, class ItemStack const&, class ItemStack const&, bool, bool) const;
-    /*108*/ virtual void __unk_vfn_108();
-    /*111*/ virtual std::string getInteractText(class Player const&) const;
-    /*112*/ virtual int getAnimationFrameFor(class Mob*, bool, class ItemStack const*, bool) const;
-    /*116*/ virtual int getIconYOffset() const;
-    /*120*/ virtual void __unk_vfn_120();
-    /*121*/ virtual void playSoundIncrementally(class ItemStack const&, class Mob&) const;
     /*122*/ virtual void __unk_vfn_122();
-    /*125*/ virtual std::string getAuxValuesDescription() const;
-    /*127*/ virtual void __unk_vfn_127();
+    /*127*/ virtual bool _calculatePlacePos(class ItemStackBase&, class Actor&, unsigned char&, class BlockPos&) const;
     /*
-    inline bool isValidRepairItem(class ItemStackBase const& a0, class ItemStackBase const& a1, class BaseGameVersion const& a2) const{
-        bool (ChemistryStickItem::*rv)(class ItemStackBase const&, class ItemStackBase const&, class BaseGameVersion const&) const;
-        *((void**)&rv) = dlsym("?isValidRepairItem@ChemistryStickItem@@UEBA_NAEBVItemStackBase@@0AEBVBaseGameVersion@@@Z");
-        return (this->*rv)(std::forward<class ItemStackBase const&>(a0), std::forward<class ItemStackBase const&>(a1), std::forward<class BaseGameVersion const&>(a2));
-    }
     inline bool uniqueAuxValues() const{
         bool (ChemistryStickItem::*rv)() const;
         *((void**)&rv) = dlsym("?uniqueAuxValues@ChemistryStickItem@@UEBA_NXZ");
@@ -122,11 +67,6 @@ public:
         bool (ChemistryStickItem::*rv)() const;
         *((void**)&rv) = dlsym("?showsDurabilityInCreative@ChemistryStickItem@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool mineBlock(class ItemStack& a0, class Block const& a1, int a2, int a3, int a4, class Actor* a5) const{
-        bool (ChemistryStickItem::*rv)(class ItemStack&, class Block const&, int, int, int, class Actor*) const;
-        *((void**)&rv) = dlsym("?mineBlock@ChemistryStickItem@@UEBA_NAEAVItemStack@@AEBVBlock@@HHHPEAVActor@@@Z");
-        return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Block const&>(a1), std::forward<int>(a2), std::forward<int>(a3), std::forward<int>(a4), std::forward<class Actor*>(a5));
     }
     inline  ~ChemistryStickItem(){
          (ChemistryStickItem::*rv)();

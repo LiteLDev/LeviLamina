@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptHotbarContainerComponent();
-    /*1*/ virtual bool applyComponentTo(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, class ScriptApi::ScriptObjectHandle const&) const;
+    /*1*/ virtual void __unk_vfn_1();
     /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void __unk_vfn_4();
@@ -37,6 +37,13 @@ public:
     /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual bool hasComponent(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, bool&) const;
+    /*
+    inline bool applyComponentTo(class ScriptApi::ScriptVersionInfo const& a0, class ScriptEngine& a1, class ScriptServerContext& a2, class Actor& a3, class ScriptApi::ScriptObjectHandle const& a4) const{
+        bool (ScriptHotbarContainerComponent::*rv)(class ScriptApi::ScriptVersionInfo const&, class ScriptEngine&, class ScriptServerContext&, class Actor&, class ScriptApi::ScriptObjectHandle const&) const;
+        *((void**)&rv) = dlsym("?applyComponentTo@ScriptHotbarContainerComponent@@UEBA_NAEBVScriptVersionInfo@ScriptApi@@AEAVScriptEngine@@AEAVScriptServerContext@@AEAVActor@@AEBVScriptObjectHandle@3@@Z");
+        return (this->*rv)(std::forward<class ScriptApi::ScriptVersionInfo const&>(a0), std::forward<class ScriptEngine&>(a1), std::forward<class ScriptServerContext&>(a2), std::forward<class Actor&>(a3), std::forward<class ScriptApi::ScriptObjectHandle const&>(a4));
+    }
+    */
 
 protected:
 

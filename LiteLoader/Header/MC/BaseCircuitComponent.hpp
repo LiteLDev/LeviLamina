@@ -30,13 +30,13 @@ public:
     /*5*/ virtual void setConsumePowerAnyDirection(bool);
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
     /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
-    /*11*/ virtual void __unk_vfn_11();
-    /*12*/ virtual void __unk_vfn_12();
+    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
     /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_14();
+    /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
     /*17*/ virtual void __unk_vfn_17();
@@ -57,20 +57,10 @@ public:
         *((void**)&rv) = dlsym("?isSecondaryPowered@BaseCircuitComponent@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canStopPower() const{
-        bool (BaseCircuitComponent::*rv)() const;
-        *((void**)&rv) = dlsym("?canStopPower@BaseCircuitComponent@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool allowIndirect() const{
         bool (BaseCircuitComponent::*rv)() const;
         *((void**)&rv) = dlsym("?allowIndirect@BaseCircuitComponent@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool addSource(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, int& a2, bool& a3){
-        bool (BaseCircuitComponent::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-        *((void**)&rv) = dlsym("?addSource@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEAHAEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<int&>(a2), std::forward<bool&>(a3));
     }
     inline bool canConsumerPower() const{
         bool (BaseCircuitComponent::*rv)() const;
@@ -81,16 +71,6 @@ public:
         bool (BaseCircuitComponent::*rv)() const;
         *((void**)&rv) = dlsym("?hasChildrenSource@BaseCircuitComponent@@UEBA_NXZ");
         return (this->*rv)();
-    }
-    inline bool evaluate(class CircuitSystem& a0, class BlockPos const& a1){
-        bool (BaseCircuitComponent::*rv)(class CircuitSystem&, class BlockPos const&);
-        *((void**)&rv) = dlsym("?evaluate@BaseCircuitComponent@@UEAA_NAEAVCircuitSystem@@AEBVBlockPos@@@Z");
-        return (this->*rv)(std::forward<class CircuitSystem&>(a0), std::forward<class BlockPos const&>(a1));
-    }
-    inline bool allowConnection(class CircuitSceneGraph& a0, class CircuitTrackingInfo const& a1, bool& a2){
-        bool (BaseCircuitComponent::*rv)(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-        *((void**)&rv) = dlsym("?allowConnection@BaseCircuitComponent@@UEAA_NAEAVCircuitSceneGraph@@AEBVCircuitTrackingInfo@@AEA_N@Z");
-        return (this->*rv)(std::forward<class CircuitSceneGraph&>(a0), std::forward<class CircuitTrackingInfo const&>(a1), std::forward<bool&>(a2));
     }
     inline  ~BaseCircuitComponent(){
          (BaseCircuitComponent::*rv)();

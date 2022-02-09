@@ -25,17 +25,11 @@ public:
 public:
     /*0*/ virtual ~PulseCapacitor();
     /*1*/ virtual int getStrength() const;
-    /*2*/ virtual int getDirection() const;
     /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void setDirection(unsigned char);
-    /*6*/ virtual void __unk_vfn_6();
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
     /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
-    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
     /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual void __unk_vfn_18();
     /*20*/ virtual void __unk_vfn_20();
@@ -46,11 +40,6 @@ public:
     inline bool canConsumerPower() const{
         bool (PulseCapacitor::*rv)() const;
         *((void**)&rv) = dlsym("?canConsumerPower@PulseCapacitor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool canConsumePowerAnyDirection() const{
-        bool (PulseCapacitor::*rv)() const;
-        *((void**)&rv) = dlsym("?canConsumePowerAnyDirection@PulseCapacitor@@UEBA_NXZ");
         return (this->*rv)();
     }
     */

@@ -33,12 +33,10 @@ public:
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void __unk_vfn_9();
-    /*10*/ virtual enum ActorCategory getEntityCategories() const;
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual void __unk_vfn_11();
     /*12*/ virtual void __unk_vfn_12();
-    /*13*/ virtual struct ActorUniqueID getDamagingEntityUniqueID() const;
-    /*14*/ virtual enum ActorType getDamagingEntityType() const;
-    /*15*/ virtual enum ActorCategory getDamagingEntityCategories() const;
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual std::unique_ptr<class ActorDamageSource> clone() const;
 
 protected:
