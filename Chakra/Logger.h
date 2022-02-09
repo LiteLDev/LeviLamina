@@ -29,17 +29,8 @@
 template <typename... Args>
 void inline Info(const std::string& formatStr, const Args&... args)
 {
-<<<<<<< HEAD
 	LOG(COLOR_TIME, COLOR_INFO_PREFIX, " INFO ");
 	fmt::print(fmt::fg(COLOR_INFO_TEXT) ,str);
-=======
-    fmt::print(fmt::fg(fmt::color::sky_blue), fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(0))));
-    fmt::print(fmt::fg(fmt::color::blue_violet), fmt::format(" INFO ", fmt::localtime(_time64(0))));
-	std::string str = fmt::format("[Chakra] ", fmt::localtime(_time64(0)));
-	str += fmt::format(formatStr, args...);
-	str.append(1, '\n');
-    fmt::print(fmt::fg(fmt::terminal_color::white) ,str);
->>>>>>> a500ad7dc3ceffe3629c59661306e1da698240f1
 }
 
 template <typename... Args>
