@@ -299,7 +299,7 @@ namespace Form {
         }
     }
 
-    bool CustomForm::sendTo(ServerPlayer *player, Callback callback) {
+    bool CustomForm::sendTo(Player* player, Callback callback) {
         unsigned id = NewFormId();
         this->callback = std::move(callback);
         SetCustomFormBuilderData(id, make_shared<CustomForm>(*this));

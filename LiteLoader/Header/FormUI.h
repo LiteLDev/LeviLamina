@@ -35,7 +35,7 @@
 //      .addStepSlider("ability", "MC Ability", {"Beginner", "Experienced", "Master"})      // Add a step slider shows his game ability
 //
 //      .sendTo(Level::getPlayer("John"),                                   // Send the form to a player called "John"
-//          [](Player* player, auto& result)                                // Callback function to process the result
+//          [](Player* player, auto result)                                // Callback function to process the result
 //      {
 //          if(result.empty())                                              // He cancelled the form
 //              return;
@@ -388,7 +388,7 @@ namespace Form
         LIAPI string serialize() override;
 
     public:
-        using Callback = std::function<void(Player*, const std::map<string, std::shared_ptr<CustomFormElement>>&)>;
+        using Callback = std::function<void(Player*, std::map<string, std::shared_ptr<CustomFormElement>>)>;
         string title;
         std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
         Callback callback;
@@ -420,7 +420,7 @@ namespace Form
         LIAPI CustomForm& append(const Slider& element);
         LIAPI CustomForm& append(const StepSlider& element);
 
-        LIAPI bool sendTo(ServerPlayer* player, Callback callback);
+        LIAPI bool sendTo(Player* player, Callback callback);
         LIAPI CustomFormElement::Type getType(int index);
 
         LIAPI string getString(const string& name);

@@ -120,11 +120,21 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
             case Form::CustomFormElement::Type::Toggle:
                 form->setValue(nowIndex, j.get<bool>());
                 break;
-            case Form::CustomFormElement::Type::Dropdown:
             case Form::CustomFormElement::Type::Slider:
-            case Form::CustomFormElement::Type::StepSlider:
                 form->setValue(nowIndex, j.get<int>());
                 break;
+            case Form::CustomFormElement::Type::Dropdown:
+            {
+                auto& options = dynamic_pointer_cast<Form::Dropdown>(form->elements[nowIndex].second)->options;
+                form->setValue(nowIndex, options[j.get<int>()]);
+                break;
+            }
+            case Form::CustomFormElement::Type::StepSlider:
+            {
+                auto& options = dynamic_pointer_cast<Form::StepSlider>(form->elements[nowIndex].second)->options;
+                form->setValue(nowIndex, options[j.get<int>()]);
+                break;
+            }
             default:
                 break;
             }

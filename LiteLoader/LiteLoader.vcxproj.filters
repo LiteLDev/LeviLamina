@@ -291,6 +291,9 @@
     <ClCompile Include="Kernel\Utils\GlobalService.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Main\AddonsHelper.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -613,6 +616,9 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\STLHelper.h">
       <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\AddonsHelper.h">
+      <Filter>Main</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

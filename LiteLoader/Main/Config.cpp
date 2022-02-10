@@ -32,6 +32,10 @@ namespace LL {
                     {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
                     {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
                     {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
+                    {"AddonsHelper", {
+                        {"enabled", conf.enableAddonsHelper},
+                        {"autoInstallPath", conf.addonsInstallPath}
+                    }},
                     {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
                     {"AntiGive", {{"enabled", conf.enableAntiGive}}},
                     {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
@@ -93,7 +97,13 @@ namespace LL {
             if (modules.count("UnlockCmd"))
             {
                 const nlohmann::json& setting = modules.at("UnlockCmd");
-                conf.enableUnlockCmd = setting.value("enabled", false);
+                conf.enableUnlockCmd = setting.value("enabled", true);
+            }
+            if (modules.count("AddonsHelper"))
+            {
+                const nlohmann::json& setting = modules.at("AddonsHelper");
+                conf.enableAddonsHelper = setting.value("enabled", true);
+                conf.addonsInstallPath = setting.value("autoInstallPath", "plugins/AddonsHelper");
             }
             if (modules.count("AntiGive"))
             {

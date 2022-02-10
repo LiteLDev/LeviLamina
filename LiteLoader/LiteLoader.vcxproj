@@ -90,6 +90,7 @@ LibraryBuilder.exe
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
     <ClCompile Include="Kernel\Utils\STLHelper.cpp" />
+    <ClCompile Include="Main\AddonsHelper.cpp" />
     <ClCompile Include="Main\AutoUpgrade.cpp" />
     <ClCompile Include="Main\BuiltinUnlockCmd.cpp" />
     <ClCompile Include="Main\Config.cpp" />
@@ -243,6 +244,7 @@ LibraryBuilder.exe
   <ItemGroup>
     <ClInclude Include="Header\Utils\DbgHelper.h" />
     <ClInclude Include="Header\Utils\STLHelper.h" />
+    <ClInclude Include="Main\AddonsHelper.h" />
     <ClInclude Include="Main\AutoUpgrade.h" />
     <ClInclude Include="Main\Config.h" />
     <ClInclude Include="Main\CrashLogger.h" />

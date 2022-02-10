@@ -185,7 +185,7 @@ bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::L
 {
     script::Global<Function> callbackFunc{ callback };
 
-    return form->sendTo((ServerPlayer*)player,
+    return form->sendTo(player,
         [form {make_shared<Form::CustomForm>(*form)}, engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
     (Player* pl, const std::map<string, std::shared_ptr<CustomFormElement>>& data)
     {
