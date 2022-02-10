@@ -294,6 +294,9 @@
     <ClCompile Include="Main\AddonsHelper.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\AllowListAPI.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -619,6 +622,9 @@
     </ClInclude>
     <ClInclude Include="Main\AddonsHelper.h">
       <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\AllowListAPI.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

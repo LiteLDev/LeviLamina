@@ -86,6 +86,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
     <ClCompile Include="Kernel\SimulatedPlayerAPI.cpp" />
@@ -97,6 +98,7 @@ LibraryBuilder.exe
     <ClCompile Include="Main\CrashLogger.cpp" />
     <ClCompile Include="Main\dllmain.cpp" />
     <ClCompile Include="Main\BuiltinBugFix.cpp" />
+    <ClInclude Include="Header\AllowListAPI.h" />
     <ClInclude Include="Header\Impl\FormPacketHelper.h" />
     <ClInclude Include="Header\Impl\ObjectivePacketHelper.h" />
     <ClInclude Include="Header\LoggerAPI.h" />
