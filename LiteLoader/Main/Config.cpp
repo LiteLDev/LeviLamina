@@ -16,40 +16,40 @@ namespace LL {
     void inline to_json(nlohmann::json& j, const LLConfig& conf)
     {
         j = nlohmann::json{
-            {"DebugMode", conf.debugMode},
-            {"ColorLog",  conf.colorLog},
-            {"LogLevel",  conf.logLevel},
-            {"Language",  conf.language},
-            {"ScriptEngine", {
-                {"enabled", conf.enableScriptEngine},
-                {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
-            }},
-            {"Modules", {
-                {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
-                {"CrashLogger", {
-                    {"enabled", conf.enableCrashLogger},
-                    {"path", conf.crashLoggerPath}
+                {"DebugMode", conf.debugMode},
+                {"ColorLog",  conf.colorLog},
+                {"LogLevel",  conf.logLevel},
+                {"Language",  conf.language},
+                {"ScriptEngine", {
+                    {"enabled", conf.enableScriptEngine},
+                    {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
                 }},
-                {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
-                {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
-                {"AddonsHelper", {
-                    {"enabled", conf.enableAddonsHelper},
-                    {"autoInstallPath", conf.addonsInstallPath}
-                }},
-                {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                {"AntiGive", {{"enabled", conf.enableAntiGive}}},
-                {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
-                {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
-                {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
-                {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
-            }}
+                {"Modules", {
+                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
+                    {"CrashLogger", {
+                        {"enabled", conf.enableCrashLogger},
+                        {"path", conf.crashLoggerPath}
+                    }},
+                    {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
+                    {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
+                    {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
+                    {"AddonsHelper", {
+                        {"enabled", conf.enableAddonsHelper},
+                        {"autoInstallPath", conf.addonsInstallPath}
+                    }},
+                    {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
+                    {"AntiGive", {{"enabled", conf.enableAntiGive}}},
+                    {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
+                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
+                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
+                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
+                }
+            }
         };
     }
 
     void inline from_json(const nlohmann::json& j, LLConfig& conf)
     {
-        nlohmann::json::iterator val;
         conf.debugMode = j.value("DebugMode", false);
         if (LL::commandLineOption.noColorOption)
             conf.colorLog = false;
@@ -58,80 +58,72 @@ namespace LL {
         conf.logLevel = j.value("LogLevel", 4);
         conf.language = j.value("Language", "en");
 
-        if ((val = j.find("ScriptEngine")) != j.end())
-        {
-            const nlohmann::json& scriptEngine = *val;
+        if (j.find("ScriptEngine") != j.end()) {
+            const nlohmann::json& scriptEngine = j.at("ScriptEngine");
             conf.enableScriptEngine = scriptEngine.value("enabled", true);
 
-            if ((val = scriptEngine.find("alwaysLaunch")) != scriptEngine.end())
-            {
-                const nlohmann::json& setting = *val;
-                conf.alwaysLaunchScriptEngine = setting.value("alwaysLaunch", false);
-            }
+            if(scriptEngine.find("alwaysLaunch") != scriptEngine.end())
+                conf.alwaysLaunchScriptEngine = scriptEngine.value("alwaysLaunch", false);
         }
 
-        if ((val = j.find("Modules")) != j.end()) {
-            const nlohmann::json& modules = *val;
+        if (j.find("Modules") != j.end()) {
+            const nlohmann::json &modules = j.at("Modules");
 
-            if ((val = modules.find("AutoUpgrade")) != modules.end())
+            if (modules.count("AutoUpgrade"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("AutoUpgrade");
                 conf.enableAutoUpdate = setting.value("enabled", true);
             }
-            if ((val = modules.find("CrashLogger")) != modules.end())
+            if (modules.count("CrashLogger"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("CrashLogger");
                 conf.enableCrashLogger = setting.value("enabled", true);
                 conf.crashLoggerPath = setting.value("path", "plugins\\LiteLoader\\CrashLogger_Daemon.exe");
             }
-            if ((val = modules.find("SimpleServerLogger")) != modules.end())
+            if (modules.count("SimpleServerLogger"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("SimpleServerLogger");
                 conf.enableSimpleServerLogger = setting.value("enabled", true);
             }
-            if ((val = modules.find("FixDisconnectBug")) != modules.end())
+            if (modules.count("FixDisconnectBug"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("FixDisconnectBug");
                 conf.enableFixDisconnectBug = setting.value("enabled", true);
             }
-            if ((val = modules.find("FixListenPort")) != modules.end())
+            if (modules.count("FixListenPort"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("FixListenPort");
                 conf.enableFixListenPort = setting.value("enabled", false);
             }
-            if ((val = modules.find("UnlockCmd")) != modules.end())
+            if (modules.count("UnlockCmd"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("UnlockCmd");
                 conf.enableUnlockCmd = setting.value("enabled", true);
             }
-            if ((val = modules.find("AddonsHelper")) != modules.end())
+            if (modules.count("AddonsHelper"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("AddonsHelper");
                 conf.enableAddonsHelper = setting.value("enabled", true);
                 conf.addonsInstallPath = setting.value("autoInstallPath", "plugins/AddonsHelper");
             }
-            if ((val = modules.find("AntiGive")) != modules.end())
+            if (modules.count("AntiGive"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("AntiGive");
                 conf.enableAntiGive = setting.value("enabled", true);
             }
-            if ((val = modules.find("UnoccupyPort19132")) != modules.end())
+            if (modules.count("UnoccupyPort19132"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("UnoccupyPort19132");
                 conf.enableUnoccupyPort19132 = setting.value("enabled", true);
             }
-            if ((val = modules.find("CheckRunningBDS")) != modules.end())
+            if (modules.count("CheckRunningBDS"))
             {
-                const nlohmann::json& setting = *val;
+                const nlohmann::json& setting = modules.at("CheckRunningBDS");
                 conf.enableCheckRunningBDS = setting.value("enabled", true);
             }
-            if ((val = modules.find("ErrorStackTraceback")) != modules.end()) {
-                const nlohmann::json& setting = *val;
+            if (modules.find("ErrorStackTraceback") != modules.end()) {
+                const nlohmann::json& setting = modules.at("ErrorStackTraceback");
                 conf.enableErrorStackTraceback = setting.value("enabled", true);
-            }
-            if ((val = modules.find("WelcomeText")) != modules.end()) {
-                const nlohmann::json& setting = *val;
-                conf.enableWelcomeText = setting.value("enabled", true);
             }
         }
     }
