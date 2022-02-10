@@ -39,7 +39,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool isFertilizer() const;
     /*18*/ virtual bool isFood() const;
     /*19*/ virtual bool isThrowable() const;
     /*20*/ virtual bool isUseable() const;
@@ -49,7 +49,7 @@ public:
     /*40*/ virtual bool canDestroySpecial(class Block const&) const;
     /*41*/ virtual int getLevelDataForAuxValue(int) const;
     /*43*/ virtual short getMaxDamage() const;
-    /*44*/ virtual void __unk_vfn_44();
+    /*44*/ virtual int getAttackDamage() const;
     /*46*/ virtual bool isGlint(class ItemStackBase const&) const;
     /*47*/ virtual void __unk_vfn_47();
     /*48*/ virtual int getPatternIndex() const;

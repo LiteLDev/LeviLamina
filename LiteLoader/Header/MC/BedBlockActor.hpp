@@ -32,7 +32,7 @@ public:
     /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
     /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
     /*7*/ virtual void tick(class BlockSource&);
-    /*8*/ virtual void __unk_vfn_8();
+    /*8*/ virtual void onChanged(class BlockSource&);
     /*11*/ virtual void onPlace(class BlockSource&);
     /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual void onRemoved(class BlockSource&);
@@ -51,13 +51,6 @@ public:
     /*34*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
     /*35*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
     /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
-    /*
-    inline void onChanged(class BlockSource& a0){
-        void (BedBlockActor::*rv)(class BlockSource&);
-        *((void**)&rv) = dlsym("?onChanged@BedBlockActor@@UEAAXAEAVBlockSource@@@Z");
-        return (this->*rv)(std::forward<class BlockSource&>(a0));
-    }
-    */
     MCAPI BedBlockActor(class BlockPos const&);
     MCAPI bool claimPetSleepOnBed(struct ActorUniqueID);
     MCAPI void startSleepingOn();

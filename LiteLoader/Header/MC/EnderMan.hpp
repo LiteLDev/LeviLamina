@@ -64,10 +64,10 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
@@ -80,7 +80,6 @@ public:
     /*276*/ virtual void spawnAnim();
     /*284*/ virtual bool hurtEffects(class ActorDamageSource const&, int, bool, bool);
     /*290*/ virtual void aiStep();
-    /*295*/ virtual bool checkSpawnRules(bool);
     /*298*/ virtual int getItemUseDuration() const;
     /*299*/ virtual float getItemUseStartupProgress() const;
     /*300*/ virtual float getItemUseIntervalProgress() const;
@@ -88,10 +87,10 @@ public:
     /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*338*/ virtual void __unk_vfn_338();
     /*347*/ virtual void newServerAiStep();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     MCAPI EnderMan(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     MCAPI class Block const& getCarryingBlock();

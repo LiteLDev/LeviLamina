@@ -24,7 +24,6 @@ public:
 
 public:
     /*0*/ virtual ~ConsumerComponent();
-    /*1*/ virtual int getStrength() const;
     /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);

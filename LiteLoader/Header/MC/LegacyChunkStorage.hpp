@@ -25,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~LegacyChunkStorage();
-    /*3*/ virtual void __unk_vfn_3();
+    /*3*/ virtual class std::shared_ptr<class LevelChunk> getExistingChunk(class ChunkPos const&);
     /*4*/ virtual class std::shared_ptr<class LevelChunk> getRandomChunk(class Random&);
     /*8*/ virtual bool postProcess(class ChunkViewSource&);
     /*9*/ virtual void checkAndReplaceChunk(class ChunkViewSource&, class LevelChunk&);

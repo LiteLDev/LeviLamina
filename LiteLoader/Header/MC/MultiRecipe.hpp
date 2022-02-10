@@ -29,7 +29,7 @@ public:
     /*2*/ virtual int getCraftingSize() const = 0;
     /*3*/ virtual class RecipeIngredient const& getIngredient(int, int) const = 0;
     /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const = 0;
-    /*5*/ virtual bool isMultiRecipe() const;
+    /*5*/ virtual bool isShapeless() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
     /*7*/ virtual int size() const = 0;
     /*10*/ virtual bool isMultiRecipe() const;

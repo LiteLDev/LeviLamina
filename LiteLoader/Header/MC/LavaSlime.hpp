@@ -66,7 +66,7 @@ public:
     /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
@@ -84,10 +84,10 @@ public:
     /*307*/ virtual void __unk_vfn_307();
     /*312*/ virtual int getArmorValue();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*338*/ virtual void __unk_vfn_338();
     /*344*/ virtual void jumpFromGround();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     /*356*/ virtual bool isDarkEnoughToSpawn() const;
     /*357*/ virtual bool canDealDamage();

@@ -428,6 +428,11 @@ public:
         *((void**)&rv) = dlsym("?canSurvive@BlockLegacy@@MEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
         return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
     }
+    inline bool mayPlaceOn(class BlockSource& a0, class BlockPos const& a1) const{
+        bool (BlockLegacy::*rv)(class BlockSource&, class BlockPos const&) const;
+        *((void**)&rv) = dlsym("?mayPlaceOn@BlockLegacy@@UEBA_NAEAVBlockSource@@AEBVBlockPos@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class BlockPos const&>(a1));
+    }
     inline bool canSpawnOn() const{
         bool (BlockLegacy::*rv)() const;
         *((void**)&rv) = dlsym("?canSpawnOn@BlockLegacy@@UEBA_NXZ");

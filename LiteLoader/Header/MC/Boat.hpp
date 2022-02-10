@@ -45,7 +45,7 @@ public:
     /*89*/ virtual void onAboveBubbleColumn(bool);
     /*93*/ virtual bool isPickable();
     /*94*/ virtual void __unk_vfn_94();
-    /*95*/ virtual void __unk_vfn_95();
+    /*95*/ virtual bool isSleeping() const;
     /*96*/ virtual void setSleeping(bool);
     /*97*/ virtual void __unk_vfn_97();
     /*99*/ virtual bool isBlocking() const;
@@ -55,7 +55,7 @@ public:
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*112*/ virtual void __unk_vfn_112();
+    /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();
@@ -71,7 +71,7 @@ public:
     /*158*/ virtual float getArmorColorInSlot(enum ArmorSlot, int) const;
     /*160*/ virtual void setEquippedSlot(enum EquipmentSlot, class ItemStack const&);
     /*172*/ virtual struct ActorUniqueID getSourceUniqueID() const;
-    /*174*/ virtual void __unk_vfn_174();
+    /*174*/ virtual bool canFreeze() const;
     /*179*/ virtual int getPortalWaitTime() const;
     /*181*/ virtual bool canChangeDimensions() const;
     /*182*/ virtual void __unk_vfn_182();
@@ -90,14 +90,14 @@ public:
     /*225*/ virtual float getPassengerYRotation(class Actor const&) const;
     /*226*/ virtual float getYHeadRot() const;
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
-    /*255*/ virtual void __unk_vfn_255();
+    /*255*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
     /*257*/ virtual void __unk_vfn_257();
     /*258*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*265*/ virtual void __unk_vfn_265();

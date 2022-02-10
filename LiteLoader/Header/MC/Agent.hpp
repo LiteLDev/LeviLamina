@@ -48,7 +48,7 @@ public:
     /*106*/ virtual void __unk_vfn_106();
     /*107*/ virtual void __unk_vfn_107();
     /*108*/ virtual void __unk_vfn_108();
-    /*112*/ virtual void __unk_vfn_112();
+    /*112*/ virtual class Actor* findAttackTarget();
     /*113*/ virtual bool isValidTarget(class Actor*) const;
     /*116*/ virtual void adjustDamageAmount(int&) const;
     /*120*/ virtual void onTame();
@@ -71,10 +71,10 @@ public:
     /*221*/ virtual void __unk_vfn_221();
     /*222*/ virtual void __unk_vfn_222();
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_228();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*233*/ virtual bool canDestroyBlock(class Block const&) const;
-    /*234*/ virtual void __unk_vfn_234();
+    /*234*/ virtual void setAuxValue(int);
     /*240*/ virtual void stopSpinAttack();
     /*242*/ virtual void __unk_vfn_242();
     /*245*/ virtual void __unk_vfn_245();
@@ -92,16 +92,16 @@ public:
     /*299*/ virtual float getItemUseStartupProgress() const;
     /*300*/ virtual float getItemUseIntervalProgress() const;
     /*303*/ virtual void __unk_vfn_303();
-    /*305*/ virtual void __unk_vfn_305();
+    /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*330*/ virtual bool createAIGoals();
-    /*331*/ virtual void __unk_vfn_331();
-    /*336*/ virtual void __unk_vfn_336();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
+    /*336*/ virtual float _getWalkTargetValue(class BlockPos const&);
     /*337*/ virtual bool canExistWhenDisallowMob() const;
     /*338*/ virtual void __unk_vfn_338();
     /*343*/ virtual std::unique_ptr<class BodyControl> initBodyControl();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     /*
     inline bool isTargetable() const{

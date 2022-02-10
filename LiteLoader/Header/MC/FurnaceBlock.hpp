@@ -103,7 +103,7 @@ public:
     /*127*/ virtual void notifySpawnedAt(class BlockSource&, class BlockPos const&) const;
     /*128*/ virtual void __unk_vfn_128();
     /*129*/ virtual int getIconYOffset() const;
-    /*131*/ virtual void __unk_vfn_131();
+    /*131*/ virtual bool isAuxValueRelevantForPicking() const;
     /*132*/ virtual int getColor(class Block const&) const;
     /*133*/ virtual int getColor(class BlockSource&, class BlockPos const&, class Block const&) const;
     /*134*/ virtual int getColorAtPos(class BlockSource&, class BlockPos const&) const;

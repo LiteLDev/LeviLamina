@@ -79,7 +79,6 @@ public:
     /*274*/ virtual void __unk_vfn_274();
     /*276*/ virtual void spawnAnim();
     /*290*/ virtual void aiStep();
-    /*295*/ virtual bool checkSpawnRules(bool);
     /*299*/ virtual float getItemUseStartupProgress() const;
     /*300*/ virtual float getItemUseIntervalProgress() const;
     /*303*/ virtual void __unk_vfn_303();
@@ -87,9 +86,9 @@ public:
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
     /*329*/ virtual int getDamageAfterMagicAbsorb(class ActorDamageSource const&, int);
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*338*/ virtual void __unk_vfn_338();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     MCAPI Witch(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 

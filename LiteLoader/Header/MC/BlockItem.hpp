@@ -38,7 +38,7 @@ public:
     /*12*/ virtual void __unk_vfn_12();
     /*14*/ virtual bool isDyeable() const;
     /*15*/ virtual bool isDye() const;
-    /*17*/ virtual void __unk_vfn_17();
+    /*17*/ virtual bool isFertilizer() const;
     /*18*/ virtual bool isFood() const;
     /*19*/ virtual bool isThrowable() const;
     /*20*/ virtual bool isUseable() const;

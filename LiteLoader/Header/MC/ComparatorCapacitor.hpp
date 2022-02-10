@@ -26,7 +26,6 @@ public:
 
 public:
     /*0*/ virtual ~ComparatorCapacitor();
-    /*1*/ virtual int getStrength() const;
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
     /*7*/ virtual void __unk_vfn_7();
     /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);

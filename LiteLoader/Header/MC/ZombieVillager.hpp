@@ -81,9 +81,9 @@ public:
     /*305*/ virtual bool isAlliedTo(class Mob*);
     /*307*/ virtual void __unk_vfn_307();
     /*316*/ virtual void sendArmorDamage(class std::bitset<4> const&);
-    /*331*/ virtual void __unk_vfn_331();
+    /*331*/ virtual void onBorn(class Actor&, class Actor&);
     /*338*/ virtual void __unk_vfn_338();
-    /*348*/ virtual void __unk_vfn_348();
+    /*348*/ virtual void _serverAiMobStep();
     /*354*/ virtual void __unk_vfn_354();
     MCAPI ZombieVillager(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
 
