@@ -10,7 +10,7 @@ env:
 
 jobs:
   Build-Library:
-    runs-on: windows-latest
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v2
@@ -178,6 +178,7 @@ jobs:
   Clean:
     runs-on: ubuntu-latest
     if: ${{ always() }} # 防止前面三者跑着跑着报错，这一步骤不执行导致libs删不掉的现象发生
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
     steps:
       - uses: geekyeggo/delete-artifact@v1
         with:
