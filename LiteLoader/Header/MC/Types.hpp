@@ -34,7 +34,6 @@ class Color;
 
 }; // namespace mce
 
-
 class BoundingBox
 {
 public:
@@ -71,31 +70,8 @@ public:
     }
 };
 
-struct ActorUniqueID
-{
-    long long id;
+#include "ActorUniqueID.hpp"
 
-public:
-    ActorUniqueID()
-    {
-        id = -1;
-    }
-
-    ActorUniqueID(long long i)
-    {
-        id = i;
-    }
-
-    inline long long get() const
-    {
-        return id;
-    }
-
-    inline operator long long() const
-    {
-        return id;
-    }
-};
 //static_assert(!std::is_pod_v<ActorUniqueID>);
 
 
@@ -116,23 +92,7 @@ public:
 };
 //static_assert(std::is_pod_v<ActorRuntimeID>);
 
-#include "../MC/RelativeFloat.hpp"
-//class RelativeFloat {
-//public:
-//    float value;
-//    bool is_relative;
-//
-//    RelativeFloat(float value)
-//        : value(value)
-//        , is_relative(true) {
-//    }
-//
-//    inline float getFloat(float center) const {
-//        if (is_relative)
-//            return center + value;
-//        return value;
-//    }
-//};
+#include "RelativeFloat.hpp"
 
 //namespace Core {
 //
@@ -426,7 +386,30 @@ template <typename T>
 class buffer_span_mut;
 
 template <typename T>
-class optional_ref;
+class optional_ref
+{
+    T** value;
+
+public:
+    inline T* get() const
+    {
+        if (value && *value)
+            return *value;
+        return nullptr;
+    }
+    //inline T* set(T const& val)
+    //{
+    //    *value = &val;
+    //}
+    inline T& operator*() const
+    {
+        return **value;
+    }
+    inline T* operator->() const
+    {
+        return *value;
+    }
+};
 
 template <int a>
 class DividedPos2d;
@@ -542,7 +525,8 @@ enum class BossEvent : int
     HealthPercentage = 4,
     Title = 5,
     AppearanceProperties = 6,
-    Texture = 7
+    Texture = 7,
+    ResendRaidBossEventData = 8,
 };
 
 enum class BossEventColour : int
@@ -720,17 +704,19 @@ enum class ItemStackRequestActionType: char
     Destroy = 0x04,
     Consume = 0x05,
     Create = 0x06,
-    ScreenLabTableCombine = 0x07,
-    ScreenBeaconPayment = 0x08,
-    ScreenHUDMineBlock = 0x09,
-    CraftRecipe = 0x0a,
-    CraftRecipeAuto = 0x0b,
-    CraftCreative = 0x0c,
-    CraftRecipeOptional = 0x0d,
-    CraftRepairAndDisenchant = 0x0e,
-    CraftLoom = 0x0f,
-    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x10,
-    CraftResults_DEPRECATEDASKTYLAING = 0x11
+    PlaceInItemContainer = 0x07,
+    TakeFromItemContainer = 0x08,
+    ScreenLabTableCombine = 0x09,
+    ScreenBeaconPayment = 0x0a,
+    ScreenHUDMineBlock = 0x0b,
+    CraftRecipe = 0x0c,
+    CraftRecipeAuto = 0x0d,
+    CraftCreative = 0x0e,
+    CraftRecipeOptional = 0x0f,
+    CraftRepairAndDisenchant = 0x10,
+    CraftLoom = 0x11,
+    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x12,
+    CraftResults_DEPRECATEDASKTYLAING = 0x13,
 };
 
 enum class ActorDamageCause : int
@@ -952,7 +938,10 @@ enum class MinecraftPacketIds : int
     UpdateSubChunkBlocks = 0xac,
     PhotoInfoRequest = 0xad,
     SubChunk = 0xae,
-    SubChunkRequest = 0xaf
+    SubChunkRequest = 0xaf,
+    PlayerStartItemCooldown = 0xb0,
+    ScriptMessage = 0xb1,
+    CodeBuilderSource = 0xb2,
 };
 
 enum ItemStackNetResult :unsigned char {

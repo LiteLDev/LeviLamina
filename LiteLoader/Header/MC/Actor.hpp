@@ -60,8 +60,6 @@ public:
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
-	//For Compatibility
-	inline Vec3 getPos() { return getPosition(); }
 
 #undef AFTER_EXTRA
 

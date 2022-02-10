@@ -2013,7 +2013,6 @@ TClasslessInstanceHook(void, "?startServerThread@ServerInstance@@QEAAXXZ")
     Global<Level> = Global<Minecraft>->getLevel();
     Global<ServerLevel> = (ServerLevel*)Global<Minecraft>->getLevel();
     //Global<ServerNetworkHandler> = Global<Minecraft>->getServerNetworkHandler();
-
     LL::globalConfig.serverStatus = LL::SeverStatus::Running;
 
     IF_LISTENED(ServerStartedEvent)
@@ -2102,7 +2101,8 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
     return original(this, a2, a3);
 }
 
-TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container, int a2, char a3, char a4, bool a5)
+TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z",
+    Container, int a2, char a3, char a4, bool a5)
 {
     auto pl = dAccess<Player*,248>(this);
     if (pl->isPlayer())
@@ -2129,7 +2129,8 @@ TInstanceHook(void, "?dropSlot@Inventory@@QEAAXH_N00@Z", Container, int a2, char
     return original(this, a2, a3,a4,a5);
 }
 
-TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z", Player, BlockPos const& blk)
+TInstanceHook(int, "?startSleepInBed@Player@@UEAA?AW4BedSleepingResult@@AEBVBlockPos@@@Z",
+    Player, BlockPos const& blk)
 {
     auto bl = Level::getBlockInstance(blk, getDimensionId());
     IF_LISTENED(PlayerBedEnterEvent)

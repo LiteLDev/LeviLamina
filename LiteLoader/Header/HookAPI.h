@@ -13,8 +13,8 @@ LIAPI void* dlsym_real(char const* name);
 }
 
 template <typename RTN = void, typename... Args>
-RTN inline VirtualCall(void* _this, uintptr_t off, Args... args) {
-    return (*(RTN(**)(void*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
+RTN inline VirtualCall(void const* _this, uintptr_t off, Args... args) {
+    return (*(RTN(**)(void const*, Args...))(*(uintptr_t*)_this + off))(_this, args...);
 }
 
 template <typename T, int off>

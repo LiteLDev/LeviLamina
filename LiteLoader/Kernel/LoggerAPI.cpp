@@ -105,6 +105,7 @@ bool checkLogLevel(int level, int outLevel)
 #define H do_hash
 fmt::text_style getModeColor(string a1)
 {
+    if (!LL::globalConfig.colorLog) return fmt::text_style();
     switch (H(a1.c_str()))
     {
         case H("INFO"): return fmt::fg(fmt::color::light_sea_green);
@@ -129,7 +130,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
             fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
             fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,title),
             fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,o.os.str())
-        );
+);
 
     }
 

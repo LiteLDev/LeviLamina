@@ -12,7 +12,11 @@ class ItemStackRequestAction {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    static inline std::unordered_map<enum ItemStackRequestActionType, std::string> const& getActionTypeMap()
+    {
+        return actionTypeMap.mMap1;
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTION

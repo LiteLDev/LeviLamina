@@ -39,14 +39,14 @@ BlockSource* Actor::getBlockSource() const {
 bool Actor::isSimulatedPlayer() const {
     if (!this)
         return false;
-    auto vtbl = dlsym("??_7SimulatedPlayer@@6B@");
+    static const auto vtbl = dlsym("??_7SimulatedPlayer@@6B@");
     return *(void**)this == vtbl;
 }
 
 bool Actor::isPlayer() const {
     if (!this)
         return false;
-    auto vtbl = dlsym("??_7ServerPlayer@@6B@");
+    static const auto vtbl = dlsym("??_7ServerPlayer@@6B@");
     return *(void**)this == vtbl || isSimulatedPlayer();
 }
 

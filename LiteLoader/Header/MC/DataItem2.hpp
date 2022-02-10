@@ -1,6 +1,6 @@
 #pragma once
-#include <MC/DataItem.hpp>
-#include <MC/CompoundTag.hpp>
+#include "DataItem.hpp"
+#include "CompoundTag.hpp"
 template <typename T>
 class DataItem2 : public DataItem
 {
