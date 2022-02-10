@@ -176,3 +176,16 @@ TClasslessInstanceHook(__int64, "?move@ChunkViewSource@@QEAAXAEBVBlockPos@@H_NV?
     }
     return 0;
 }
+
+//fix Wine Stop
+extern bool isWine();
+TClasslessInstanceHook(void, "?leaveGameSync@ServerInstance@@QEAAXXZ")
+{
+    original(this);
+    if (isWine())
+    {
+        std::cerr << "Quit correctly" << std::endl;
+        auto proc = GetCurrentProcess();
+        TerminateProcess(proc, 0);
+    }
+}
