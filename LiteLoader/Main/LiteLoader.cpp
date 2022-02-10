@@ -101,6 +101,31 @@ void CheckRunningBDS()
     }
 }
 
+void CheckAllowList()
+{
+    if (filesystem::exists("whitelist.json"))
+    {
+        if (filesystem::exists("allowlist.json"))
+        {
+            std::fstream al("allowlist.json", std::ios::in | std::ios::out);
+            if (al.peek() == std::ifstream::traits_type::eof())
+            {
+                logger.warn("allowlist.json is empty! Removing...");
+                al.close();
+                filesystem::remove("allowlist.json");
+            }
+            else
+            {
+                logger.warn("Both allowlist.json and whitelist.json exist and aren't empty. Please check them manually");
+                return;
+            }
+        }
+        filesystem::copy_file("whitelist.json", "allowlist.json");
+        filesystem::remove("whitelist.json");
+        logger.warn("Renamed whitelist.json to allowlist.json");
+    }
+}
+
 extern void RegisterCommands();
 
 extern bool InitPlayerDatabase();
@@ -171,6 +196,9 @@ void LLMain()
     FixUpCWD();
     FixPluginsLibDir();
 
+    // Check whether allowlist.json exists/is empty or not
+    CheckAllowList();
+
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
 
@@ -183,30 +211,30 @@ void LLMain()
     // Initialize Player Database
     InitPlayerDatabase();
 
-    //I18n
+    // I18n
     Translation::load("plugins/LiteLoader/LangPack/" + LL::globalConfig.language + ".json");
 
-    //Rename Window
+    // Rename Window
     HWND hwnd = GetConsoleWindow();
     std::wstring s = L"Bedrock Dedicated Server " + str2wstr(LL::getBdsVersion().substr(1));
     SetWindowText(hwnd, s.c_str());
 
-    //Welcome
+    // Welcome
     Welcome();
 
-    //DebugMode
+    // DebugMode
     CheckDevMode();
 
     // Builtin CrashLogger
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
-    //Register Myself
+    // Register Myself
     LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
     });
 
-    //Load plugins
+    // Load plugins
     LL::LoadMain();
 
     // Register built-in commands
@@ -215,9 +243,10 @@ void LLMain()
     // Register simple server logger
     RegisterSimpleServerLogger();
 
+    // Fix bug events
     FixBugEvent();
 
-    //Register Started
+    // Register Started
     Event::ServerStartedEvent::subscribe([](Event::ServerStartedEvent) {
         logger.info("LiteLoader is distributed under the GPLv3 License");
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
