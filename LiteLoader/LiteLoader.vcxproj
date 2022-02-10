@@ -86,7 +86,6 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Header\MC\ItemStackBase.cpp" />
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
