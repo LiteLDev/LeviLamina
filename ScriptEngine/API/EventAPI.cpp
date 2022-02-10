@@ -79,7 +79,7 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onChangeDim",EVENT_TYPES::onChangeDim},
     {"onJump",EVENT_TYPES::onJump},
     {"onSneak",EVENT_TYPES::onSneak},
-    {"onAttack",EVENT_TYPES::onAttack},
+    {"onAttack",EVENT_TYPES::onAttackEntity},
     {"onAttackEntity",EVENT_TYPES::onAttackEntity},
     {"onAttackBlock",EVENT_TYPES::onAttackBlock},
     {"onEat",EVENT_TYPES::onEat},
@@ -402,20 +402,6 @@ void EnableEventListener(int eventId)
                 CallEvent(EVENT_TYPES::onChangeDim, PlayerClass::newPlayer(ev.mPlayer), Number::newNumber(ev.mToDimensionId));      //======???
             }
             IF_LISTENED_END(EVENT_TYPES::onChangeDim);
-        });
-        break;
-
-    case EVENT_TYPES::onAttack:             // recently removed.
-        Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
-        {
-            IF_LISTENED(EVENT_TYPES::onAttack)
-            {
-                if (ev.mTarget)
-                {
-                    CallEvent(EVENT_TYPES::onAttack, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
-                }
-            }
-            IF_LISTENED_END(EVENT_TYPES::onAttack);
         });
         break;
 
