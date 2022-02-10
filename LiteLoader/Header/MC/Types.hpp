@@ -525,7 +525,8 @@ enum class BossEvent : int
     HealthPercentage = 4,
     Title = 5,
     AppearanceProperties = 6,
-    Texture = 7
+    Texture = 7,
+    ResendRaidBossEventData = 8,
 };
 
 enum class BossEventColour : int
@@ -703,17 +704,19 @@ enum class ItemStackRequestActionType: char
     Destroy = 0x04,
     Consume = 0x05,
     Create = 0x06,
-    ScreenLabTableCombine = 0x07,
-    ScreenBeaconPayment = 0x08,
-    ScreenHUDMineBlock = 0x09,
-    CraftRecipe = 0x0a,
-    CraftRecipeAuto = 0x0b,
-    CraftCreative = 0x0c,
-    CraftRecipeOptional = 0x0d,
-    CraftRepairAndDisenchant = 0x0e,
-    CraftLoom = 0x0f,
-    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x10,
-    CraftResults_DEPRECATEDASKTYLAING = 0x11
+    PlaceInItemContainer = 0x07,
+    TakeFromItemContainer = 0x08,
+    ScreenLabTableCombine = 0x09,
+    ScreenBeaconPayment = 0x0a,
+    ScreenHUDMineBlock = 0x0b,
+    CraftRecipe = 0x0c,
+    CraftRecipeAuto = 0x0d,
+    CraftCreative = 0x0e,
+    CraftRecipeOptional = 0x0f,
+    CraftRepairAndDisenchant = 0x10,
+    CraftLoom = 0x11,
+    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x12,
+    CraftResults_DEPRECATEDASKTYLAING = 0x13,
 };
 
 enum class ActorDamageCause : int
@@ -935,7 +938,10 @@ enum class MinecraftPacketIds : int
     UpdateSubChunkBlocks = 0xac,
     PhotoInfoRequest = 0xad,
     SubChunk = 0xae,
-    SubChunkRequest = 0xaf
+    SubChunkRequest = 0xaf,
+    PlayerStartItemCooldown = 0xb0,
+    ScriptMessage = 0xb1,
+    CodeBuilderSource = 0xb2,
 };
 
 enum ItemStackNetResult :unsigned char {

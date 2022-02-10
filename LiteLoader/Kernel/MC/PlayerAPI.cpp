@@ -576,6 +576,7 @@ bool Player::sendBossEventPacket(BossEvent type, string name, float percent, Bos
             goto LABEL_3;
         case BossEvent::RegisterPlayer:
         case BossEvent::UnregisterPlayer:
+        case BossEvent::ResendRaidBossEventData:
         {
             wp.writeVarInt64(getActorUniqueId().get());
             break;
