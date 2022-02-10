@@ -5,6 +5,7 @@
 #include <iostream>
 #include <LoggerAPI.h>
 #include <Utils/StringHelper.h>
+#include <Utils/FileHelper.h>
 #include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
@@ -101,17 +102,16 @@ void CheckRunningBDS()
     }
 }
 
-void CheckAllowList()
+void FixAllowList()
 {
     if (filesystem::exists("whitelist.json"))
     {
         if (filesystem::exists("allowlist.json"))
         {
-            std::fstream al("allowlist.json", std::ios::in | std::ios::out);
-            if (al.peek() == std::ifstream::traits_type::eof())
+            auto res = ReadAllFile("allowlist.json");
+            if (res && (* res == "" || *res == "[]"))
             {
                 logger.warn("allowlist.json is empty! Removing...");
-                al.close();
                 filesystem::remove("allowlist.json");
             }
             else
@@ -120,8 +120,9 @@ void CheckAllowList()
                 return;
             }
         }
-        filesystem::copy_file("whitelist.json", "allowlist.json");
-        filesystem::remove("whitelist.json");
+        std::error_code ec;
+        filesystem::copy_file("whitelist.json", "allowlist.json", filesystem::copy_options::overwrite_existing, ec);
+        filesystem::remove("whitelist.json", ec);
         logger.warn("Renamed whitelist.json to allowlist.json");
     }
 }
@@ -152,17 +153,8 @@ void Welcome()
 }
 
 void CheckDevMode() {
-    if (LL::globalConfig.debugMode) {
-        //logger.info("");
-        //logger.info("================= LiteLoader ================");
-        //logger.info(" ____             __  __           _      ");
-        //logger.info("|  _ \\  _____   _|  \\/  | ___   __| | ___ ");
-        //logger.info(R"(| | | |/ _ \ \ / / |\/| |/ _ \ / _` |/ _ \)");
-        //logger.info("| |_| |  __/\\ V /| |  | | (_) | (_| |  __/");
-        //logger.info(R"(|____/ \___| \_/ |_|  |_|\___/ \__,_|\___|)");
-        //logger.info("");
+    if (LL::globalConfig.debugMode)
         logger.warn("You Are In DevelopMode!");
-    }
 }
 
 void CheckBetaVersion()
@@ -197,7 +189,7 @@ void LLMain()
     FixPluginsLibDir();
 
     // Check whether allowlist.json exists/is empty or not
-    CheckAllowList();
+    FixAllowList();
 
     // Init LL Logger
     Logger::setDefaultFile("logs/LiteLoader-latest.log", false);
