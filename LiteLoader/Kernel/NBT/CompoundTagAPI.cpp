@@ -133,23 +133,22 @@ std::unique_ptr<CompoundTag> CompoundTag::fromBlock(Block* blk) {
 
 void CompoundTag::setBlock(Block* blk) {
     auto tag = (CompoundTag*)((uintptr_t)blk + 96);
-    tag->destroy();
-    memcpy(tag, this->clone().release(), sizeof(CompoundTag));
+    tag->deepCopy(*this);
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromActor(Actor* actor) {
-    auto tmp = CompoundTag::create();
-    actor->save(*tmp->asCompoundTag());
-    actor->saveWithoutId(*tmp->asCompoundTag());
-    actor->addAdditionalSaveData(*tmp->asCompoundTag());
+    auto tag = CompoundTag::create();
+    actor->save(*tag);
+    //actor->saveWithoutId(*tag);
+    //actor->addAdditionalSaveData(*tag);
 
-    return std::unique_ptr<CompoundTag>(dynamic_cast<CompoundTag*>(tmp.release()));
+    return std::move(tag);
 }
 
 bool CompoundTag::setActor(Actor* actor) const {
     void* vtbl = (void*)dlsym("??_7DefaultDataLoadHelper@@6B@");
     bool res = actor->load(*this, (DataLoadHelper&)vtbl);
-    actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
+    //actor->readAdditionalSaveData(*this, (DataLoadHelper&)vtbl);
     actor->_sendDirtyActorData();
     return res;
 }
@@ -159,11 +158,7 @@ std::unique_ptr<CompoundTag> CompoundTag::fromPlayer(Player* player) {
 }
 
 bool CompoundTag::setPlayer(Player* player) {
-    void* vtbl = dlsym("??_7DefaultDataLoadHelper@@6B@");
-    bool res = ((ServerPlayer*)player)->load(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
-    player->readAdditionalSaveData(*(CompoundTag*)this, (DataLoadHelper&)vtbl);
-    player->_sendDirtyActorData();
-    return res;
+    return setActor(player);
 }
 
 bool CompoundTag::setBlockActor(BlockActor* ble) const {
@@ -174,9 +169,9 @@ bool CompoundTag::setBlockActor(BlockActor* ble) const {
 }
 
 std::unique_ptr<CompoundTag> CompoundTag::fromBlockActor(BlockActor* ble) {
-    auto tmp = CompoundTag::create();
-    ble->save(*tmp->asCompoundTag());
-    return std::unique_ptr<CompoundTag>(dynamic_cast<CompoundTag*>(tmp.release()));
+    auto tag = CompoundTag::create();
+    ble->save(*tag);
+    return std::move(tag);
 }
 
 

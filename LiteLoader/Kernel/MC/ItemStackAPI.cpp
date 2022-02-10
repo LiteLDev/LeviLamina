@@ -95,3 +95,10 @@ bool ItemStack::setNbt(CompoundTag* nbt) {
     nbt->setItemStack(this);
     return true;
 }
+
+int ItemStackBase::getCount() const
+{
+    if (this->isNull())
+        return 0;
+    return dAccess<unsigned char, 34>(this);
+}

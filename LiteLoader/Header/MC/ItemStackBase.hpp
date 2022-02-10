@@ -18,6 +18,9 @@ private:
 //void* vtbl;
 char filler[128];
 
+public:
+LIAPI int getCount() const;
+
 #undef AFTER_EXTRA
 
 public:
