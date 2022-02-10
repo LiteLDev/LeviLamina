@@ -226,7 +226,7 @@ void InitFastDlsym() {
         symdbFn = (void *)(BaseAdr + iter->second);
     }
     LeaveCriticalSection(&dlsymLock);
-    Info("[SymDB] FastDlsymInited <{}>\n", FuncMap->size());
+    Info("[SymDB] FastDlsymInited <{}>", FuncMap->size());
     fflush(stdout);
 }
 
