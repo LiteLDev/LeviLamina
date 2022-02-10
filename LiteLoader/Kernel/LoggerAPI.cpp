@@ -122,14 +122,14 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
         title = "[" + title + "]";
     if (checkLogLevel(o.logger->consoleLevel, o.level))
     {
-
-        fmt::print(LL::globalConfig.colorLog ? o.style : fmt::text_style(),
+        fmt::print(
             o.consoleFormat, 
-            fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+            fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
             fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
             fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
-            title,
-            o.os.str());
+            fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,title),
+            fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,o.os.str())
+        );
 
     }
 
