@@ -129,7 +129,7 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
             fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
             fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,title),
             fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,o.os.str())
-        );
+);
 
     }
 

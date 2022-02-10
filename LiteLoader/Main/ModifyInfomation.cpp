@@ -12,7 +12,7 @@ extern void CheckBetaVersion();
     THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")
 {
         CheckBetaVersion();
-     return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with LiteLoaderBDS " + LL::getLoaderVersion().toString(true);
+    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " + fmt::format(fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic, "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
 }
 
 
