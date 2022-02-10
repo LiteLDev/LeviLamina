@@ -154,15 +154,15 @@ void Welcome()
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode)
-        logger.warn("You Are In DevelopMode!");
+        logger.warn("Currently in developer mode!");
 }
 
 void CheckBetaVersion()
 {
     if (LITELOADER_VERSION_STATUS != LL::Version::Release)
     {
-        logger.warn("You Are Using The Beta Version!");
-        logger.warn("DO NOT USE IN IN PRODUCTION ENVIRONMENT!!!");
+        logger.warn("Currently using a beta version.");
+        logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
     }
 }
 // extern
@@ -221,7 +221,7 @@ void LLMain()
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     // Register Myself
-    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
+    LL::registerPlugin("LiteLoaderBDS", "Strong plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
     });
