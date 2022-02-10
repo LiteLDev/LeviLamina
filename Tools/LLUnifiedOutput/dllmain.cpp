@@ -13,15 +13,15 @@ bool isPromptPrint = false;
 bool is(std::string str) {
     transform(str.begin(), str.end(), str.begin(), ::tolower);
 
-    if (str.find(" info][") != std::string::npos) {
+    if (str.find("info [") != std::string::npos) {
         return true;
-    } else if (str.find(" debug][") != std::string::npos) {
+    } else if (str.find("debug [") != std::string::npos) {
         return true;
-    } else if (str.find(" error][") != std::string::npos) {
+    } else if (str.find("error [") != std::string::npos) {
         return true;
-    } else if (str.find(" warn][") != std::string::npos) {
+    } else if (str.find("warn [") != std::string::npos) {
         return true;
-    } else if (str.find(" fatal][") != std::string::npos) {
+    } else if (str.find("fatal [") != std::string::npos) {
         return true;
     }
     return false;
@@ -48,7 +48,7 @@ bool inline SendLine(HANDLE hOutput) {
     if (!is(line)) {
         if (line.find('\n') != std::string::npos) {
             if (isPromptPrint) {
-                line = "\b\b" + line;
+                line = "\b\b" + line + "> ";
             }
             success = WriteFile_Ptr(hOutput, line.data(), (DWORD)line.size(), &dwOutput, nullptr);
         } else {
