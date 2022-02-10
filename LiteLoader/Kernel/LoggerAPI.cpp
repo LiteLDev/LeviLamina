@@ -105,6 +105,7 @@ bool checkLogLevel(int level, int outLevel)
 #define H do_hash
 fmt::text_style getModeColor(string a1)
 {
+    if (!LL::globalConfig.colorLog) return fmt::text_style();
     switch (H(a1.c_str()))
     {
         case H("INFO"): return fmt::fg(fmt::color::light_sea_green);
