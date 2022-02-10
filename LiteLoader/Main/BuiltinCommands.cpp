@@ -365,17 +365,27 @@ public:
         registry->addSoftEnum("PluginName", pluginList);
 
         // ll version & help
-        registry->addEnum<Operation>("Operation_Common", {{"version", Operation::Version},
-                                                          {"help", Operation::Help}});
+        registry->addEnum<Operation>("Operation_Common", {
+            {"version", Operation::Version},
+            {"help", Operation::Help}}
+        );
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_Common").addOptions((CommandParameterOption)1));
 
-        // ll load & unload
+        // ll load 
+        registry->addEnum<Operation>("Operation_FreeFilePath", {
+            {"load", Operation::Load},
+        });
+        registry->registerOverload<LLCommand>(
+            "ll",
+            makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_FreeFilePath").addOptions((CommandParameterOption)1),
+            makeMandatory<CommandParameterDataType::NORMAL>(&LLCommand::pluginNameToDoOperation, "PluginPath"));
+
+        // ll unload
         registry->addEnum<Operation>("Operation_MustPluginName", {
-                                                                     {"load", Operation::Load},
-                                                                     {"unload", Operation::Unload},
-                                                                 });
+            {"unload", Operation::Unload},
+        });
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_MustPluginName").addOptions((CommandParameterOption)1),
@@ -383,10 +393,10 @@ public:
 
         // ll list & reload
         registry->addEnum<Operation>("Operation_OptionalPluginName", {
-                                                                         {"list", Operation::List},
-                                                                         {"plugins", Operation::List},
-                                                                         {"reload", Operation::Reload},
-                                                                     });
+            {"list", Operation::List},
+            {"plugins", Operation::List},
+            {"reload", Operation::Reload},
+        });
         registry->registerOverload<LLCommand>(
             "ll",
             makeMandatory<CommandParameterDataType::ENUM>(&LLCommand::operation, "Operation", "Operation_OptionalPluginName").addOptions((CommandParameterOption)1),
@@ -394,8 +404,8 @@ public:
 
         // ll upgrade
         registry->addEnum<Operation>("Operation_WithOption", {
-                                                                 {"upgrade", Operation::Upgrade},
-                                                             });
+            {"upgrade", Operation::Upgrade},
+        });
         registry->addEnum<UpgradeOption>("UpgradeOption", {{"force", UpgradeOption::Force}});
         registry->registerOverload<LLCommand>(
             "ll",

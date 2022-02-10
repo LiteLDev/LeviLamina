@@ -9,13 +9,13 @@ env:
   ChakraCore_version: cc_windows_all_1_11_24
 
 jobs:
-  Build_Libs:
-    runs-on: windows-latest
+  Build-Library:
+    runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Download Server
+      - name: Download Bedrock Server
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           mkdir Tools/Server
@@ -37,9 +37,9 @@ jobs:
           name: libs
           path: LiteLoader/Lib
 
-  Build_LiteLoader:
+  Build-LiteLoader-N-Lua:
     runs-on: windows-2022
-    needs: build_Libs
+    needs: Build-Library
 
     steps:
       - uses: actions/checkout@v2
@@ -64,7 +64,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Lua
         shell: bash
 
       - name: Pack Release
@@ -100,9 +100,9 @@ jobs:
           name: LiteLoaderSDK
           path: LiteLoaderSDK
 
-  Build_LiteLoader-js:
+  Build-LiteLoader-Js:
     runs-on: windows-2022
-    needs: build_Libs
+    needs: Build-Library
 
     steps:
       - uses: actions/checkout@v2
@@ -115,13 +115,6 @@ jobs:
 
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
-
-      - name: Change LITELOADER_VERSION_STATUS
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
-        shell: bash
 
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -137,59 +130,16 @@ jobs:
           ./PackRelease.cmd action
         shell: cmd
 
-      - name: Upload LiteLoader-js
+      - name: Upload LiteLoader-Js
         uses: actions/upload-artifact@v2
         with:
           name: LiteLoader
           path: RELEASE
 
-  Build_LiteLoader-lua:
-    runs-on: windows-2022
-    needs: build_Libs
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Retrieve Saved Libs
-        uses: actions/download-artifact@v2
-        with:
-          name: libs
-          path: LiteLoader/Lib/
-
-      - name: Add MSBuild to PATH
-        uses: microsoft/setup-msbuild@v1
-
-      - name: Change LITELOADER_VERSION_STATUS
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
-        shell: bash
-
-      - name: Build
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        id: build
-        run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
-        shell: bash
-
-      - name: Pack Release
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        run: |
-          cd Scripts
-          ./PackRelease.cmd action
-        shell: cmd
-
-      - name: Upload LiteLoader-lua
-        uses: actions/upload-artifact@v2
-        with:
-          name: LiteLoader
-          path: RELEASE
-
-  Publish_Release:
+  Publish-Release:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [Build_LiteLoader, Build_LiteLoader-js, Build_LiteLoader-lua]
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
     steps:
       - uses: actions/checkout@v2
 
@@ -208,7 +158,6 @@ jobs:
       - name: Prepare for creating Release
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: rel
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo ::set-output name=tag::${GITHUB_REF#refs/*/}
           zip -r LiteLoader.zip LiteLoader
@@ -218,7 +167,6 @@ jobs:
 
       - name: Create New Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           body_path: ${{ github.workspace }}/CHANGELOG.txt
           files: |
@@ -230,7 +178,7 @@ jobs:
   Clean:
     runs-on: ubuntu-latest
     if: ${{ always() }} # 防止前面三者跑着跑着报错，这一步骤不执行导致libs删不掉的现象发生
-    needs: [Build_LiteLoader, Build_LiteLoader-js, Build_LiteLoader-lua]
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
     steps:
       - uses: geekyeggo/delete-artifact@v1
         with:
