@@ -14,13 +14,11 @@ LiteLoader/Lib/SymDBHelper.lib
 /LiteLoader/out/
 LiteLoaderSDK/
 
-!RELEASE/
-RELEASE/LiteLoader.dll
-RELEASE/Chakra.dll
+RELEASE/*.dll
 RELEASE/SymDB2.exe
-RELEASE/plugins/LiteLoader/LLAutoUpdate.dll
-RELEASE/plugins/LiteLoader/LLUnifiedOutput.dll
-RELEASE/plugins/LiteLoader/LLUnifiedOutput.pdb
+!RELEASE/ChakraCore.dll
+RELEASE/plugins/LiteLoader/*.dll
+RELEASE/plugins/LiteLoader/*.pdb
 
 .idea/**
 !.idea/cmake.xml
