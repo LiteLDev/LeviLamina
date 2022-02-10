@@ -9,41 +9,41 @@
 using namespace std;
 
 namespace LL {
+
     LLConfig globalConfig;
     LL::CommandLineOption commandLineOption;
 
     void inline to_json(nlohmann::json& j, const LLConfig& conf)
     {
         j = nlohmann::json{
-                {"DebugMode", conf.debugMode},
-                {"ColorLog",  conf.colorLog},
-                {"LogLevel",  conf.logLevel},
-                {"Language",  conf.language},
-                {"ScriptEngine", {
-                    {"enabled", conf.enableScriptEngine},
-                    {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
+            {"DebugMode", conf.debugMode},
+            {"ColorLog",  conf.colorLog},
+            {"LogLevel",  conf.logLevel},
+            {"Language",  conf.language},
+            {"ScriptEngine", {
+                {"enabled", conf.enableScriptEngine},
+                {"alwaysLaunch", conf.alwaysLaunchScriptEngine}
+            }},
+            {"Modules", {
+                {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
+                {"CrashLogger", {
+                    {"enabled", conf.enableCrashLogger},
+                    {"path", conf.crashLoggerPath}
                 }},
-                {"Modules", {
-                    {"AutoUpgrade", {{"enabled", conf.enableAutoUpdate}} },
-                    {"CrashLogger", {
-                        {"enabled", conf.enableCrashLogger},
-                        {"path", conf.crashLoggerPath}
-                    }},
-                    {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
-                    {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
-                    {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
-                    {"AddonsHelper", {
-                        {"enabled", conf.enableAddonsHelper},
-                        {"autoInstallPath", conf.addonsInstallPath}
-                    }},
-                    {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
-                    {"AntiGive", {{"enabled", conf.enableAntiGive}}},
-                    {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
-                    {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
-                    {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
-                    {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}, 
-                }
-            }
+                {"SimpleServerLogger", {{"enabled", conf.enableSimpleServerLogger}}},
+                {"FixDisconnectBug", {{"enabled", conf.enableFixDisconnectBug}}},
+                {"UnlockCmd", {{"enabled", conf.enableUnlockCmd}}},
+                {"AddonsHelper", {
+                    {"enabled", conf.enableAddonsHelper},
+                    {"autoInstallPath", conf.addonsInstallPath}
+                }},
+                {"FixListenPort", {{"enabled", conf.enableFixListenPort}}},
+                {"AntiGive", {{"enabled", conf.enableAntiGive}}},
+                {"ErrorStackTraceback", {{"enabled", conf.enableErrorStackTraceback}}},
+                {"UnoccupyPort19132", {{"enabled", conf.enableUnoccupyPort19132}}},
+                {"CheckRunningBDS", {{"enabled", conf.enableCheckRunningBDS}}},
+                {"WelcomeText", {{"enabled", conf.enableWelcomeText}}}
+            }}
         };
     }
 
@@ -133,13 +133,9 @@ namespace LL {
                 const nlohmann::json& setting = *val;
                 conf.enableWelcomeText = setting.value("enabled", true);
             }
-            if (modules.find("WelcomeText") != modules.end()) {
-                const nlohmann::json& listen = modules.at("WelcomeText");
-                conf.enableWelcomeText = listen.value("enabled", true);
-            }
         }
     }
-    } // namespace LL
+} // namespace LL
 
 
 bool LL::LoadLLConfig()
