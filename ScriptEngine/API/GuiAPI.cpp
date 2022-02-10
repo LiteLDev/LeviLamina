@@ -60,7 +60,7 @@ bool SimpleFormClass::sendForm(Form::SimpleForm* form, Player* player, script::L
 {
     script::Global<Function> callbackFunc{ callback };
 
-    return form->sendTo((ServerPlayer*)player,
+    return form->sendTo(player,
         [engine{ EngineScope::currentEngine() }, callback{ std::move(callbackFunc) }]
         (Player* pl, int chosen)
         {

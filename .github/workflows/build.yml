@@ -1,6 +1,6 @@
 name: Build LiteLoader
 
-on: [ push ]
+on: [push]
 
 env:
   SOLUTION_FILE_PATH: .
@@ -9,13 +9,13 @@ env:
   ChakraCore_version: cc_windows_all_1_11_24
 
 jobs:
-  build:
+  Build-Library:
     runs-on: windows-2022
 
     steps:
       - uses: actions/checkout@v2
 
-      - name: Download Server
+      - name: Download Bedrock Server
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           mkdir Tools/Server
@@ -31,6 +31,25 @@ jobs:
           LibraryBuilder.exe Server
         shell: cmd
 
+      - name: Temporarily Save Libs
+        uses: actions/upload-artifact@v2
+        with:
+          name: libs
+          path: LiteLoader/Lib
+
+  Build-LiteLoader-N-Lua:
+    runs-on: windows-2022
+    needs: Build-Library
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Retrieve Saved Libs
+        uses: actions/download-artifact@v2
+        with:
+          name: libs
+          path: LiteLoader/Lib/
+
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
 
@@ -45,8 +64,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
         run: |
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Js
-          MSBuild.exe ./LiteLoader.sln -property:Configuration=Lua
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Release -property:Configuration=Lua
         shell: bash
 
       - name: Pack Release
@@ -54,14 +72,8 @@ jobs:
         run: |
           cd Scripts
           ./PackRelease.cmd action
+          ./PackSDK.cmd
         shell: cmd
-
-      #      - name: Pack SDK
-      #        working-directory: ${{env.GITHUB_WORKSPACE}}
-      #        run: |
-      #          cd Scripts
-      #          ./PackSDK.cmd action
-      #        shell: cmd
 
       - name: Update LiteLoaderSDK
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -79,30 +91,95 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: LiteLoader
-          path: ${{ github.workspace }}\RELEASE\
+          path: Release
 
-      #      - name: Upload LiteLoader SDK
-      #        uses: actions/upload-artifact@v2
-      #        with:
-      #          name: LiteLoader-SDK
-      #          path: ${{ github.workspace }}\LiteLoader-SDK.zip
+      - name: Upload LiteLoader SDK
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/upload-artifact@v2
+        with:
+          name: LiteLoaderSDK
+          path: LiteLoaderSDK
+
+  Build-LiteLoader-Js:
+    runs-on: windows-2022
+    needs: Build-Library
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Retrieve Saved Libs
+        uses: actions/download-artifact@v2
+        with:
+          name: libs
+          path: LiteLoader/Lib/
+
+      - name: Add MSBuild to PATH
+        uses: microsoft/setup-msbuild@v1
+
+      - name: Build
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        id: build
+        run: |
+          MSBuild.exe ./LiteLoader.sln -property:Configuration=Js
+        shell: bash
+
+      - name: Pack Release
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        run: |
+          cd Scripts
+          ./PackRelease.cmd action
+        shell: cmd
+
+      - name: Upload LiteLoader-Js
+        uses: actions/upload-artifact@v2
+        with:
+          name: LiteLoader
+          path: RELEASE
+
+  Publish-Release:
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/')
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Retrieve Saved LiteLoader
+        uses: actions/download-artifact@v2
+        with:
+          name: LiteLoader
+          path: RELEASE
+
+      - name: Retrieve Saved LiteLoader SDK
+        uses: actions/download-artifact@v2
+        with:
+          name: LiteLoaderSDK
+          path: LiteLoaderSDK
 
       - name: Prepare for creating Release
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: rel
-        if: startsWith(github.ref, 'refs/tags/')
         run: |
           echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+          zip -r LiteLoader.zip LiteLoader
+          zip -r LiteLoader-SDK.zip LiteLoaderSDK
           mv LiteLoader.zip LiteLoader-${GITHUB_REF#refs/*/}.zip
         shell: bash
 
       - name: Create New Release
         uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
         with:
-          body_path: ${{ github.workspace }}\CHANGELOG.txt
+          body_path: ${{ github.workspace }}/CHANGELOG.txt
           files: |
-            ${{ github.workspace }}\LiteLoader-${{ steps.rel.outputs.tag }}.zip
-            ${{ github.workspace }}\LiteLoader-SDK.zip
+            ${{ github.workspace }}/LiteLoader-${{ steps.rel.outputs.tag }}.zip
+            ${{ github.workspace }}/LiteLoader-SDK.zip
         env:
           GITHUB_REPOSITORY: LiteLDev/LiteLoaderBDS
+
+  Clean:
+    runs-on: ubuntu-latest
+    if: ${{ always() }} # 防止前面三者跑着跑着报错，这一步骤不执行导致libs删不掉的现象发生
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
+    steps:
+      - uses: geekyeggo/delete-artifact@v1
+        with:
+          name: libs

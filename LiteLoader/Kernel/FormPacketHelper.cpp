@@ -113,7 +113,8 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         {
             switch (form->getType(nowIndex))
             {
-            case Form::CustomFormElement::Type::Label:
+            case Form::CustomFormElement::Type::Label:      //label's data is null
+                break;
             case Form::CustomFormElement::Type::Input:
                 form->setValue(nowIndex, j.get<string>());
                 break;

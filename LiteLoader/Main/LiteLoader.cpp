@@ -20,6 +20,8 @@
 using namespace std;
 
 Logger logger("LiteLoader");
+time_t startTime;
+time_t endTime;
 
 // Add plugins folder to path
 void FixPluginsLibDir()
@@ -109,7 +111,7 @@ void FixAllowList()
         if (filesystem::exists("allowlist.json"))
         {
             auto res = ReadAllFile("allowlist.json");
-            if (res && (* res == "" || *res == "[]"))
+            if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty()))
             {
                 logger.warn("allowlist.json is empty! Removing...");
                 filesystem::remove("allowlist.json");
@@ -244,6 +246,7 @@ void LLMain()
         logger.info("\u611f\u8c22\u65cb\u5f8b\u4e91 rhymc.com \u5bf9\u672c\u9879\u76ee\u7684\u652f\u6301");
         if (LL::globalConfig.enableAutoUpdate)
             LL::InitAutoUpdateCheck();
+        endTime = clock();
         return true;
     });
 
@@ -257,6 +260,7 @@ void LLMain()
 // Call LLMain
 THook(int, "main", int a, void* b)
 {
+    startTime = clock();
     char** str = static_cast<char**>(b);
     for (int i = 0; i < a; ++i)
     {

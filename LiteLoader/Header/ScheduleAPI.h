@@ -1,6 +1,7 @@
 #pragma once
 #include "Global.h"
 #include <functional>
+#include "Utils/WinHelper.h"
 
 ///////////////////////////////////////////////////////
 // Schedule future callback plans
@@ -46,8 +47,8 @@ public:
 
 namespace Schedule
 {
-    LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay);
-    LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1);
-    LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1);
-    LIAPI ScheduleTask nextTick(std::function<void(void)> task);
-};
+    LIAPI ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handler = GetCurrentModule());
+    LIAPI ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickInterval, int maxCount = -1, HMODULE handler = GetCurrentModule());
+    LIAPI ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickInterval, int maxCount = -1, HMODULE handler = GetCurrentModule());
+    LIAPI ScheduleTask nextTick(std::function<void(void)> task, HMODULE handler = GetCurrentModule());
+}; // namespace Schedule

@@ -79,7 +79,7 @@ static const std::unordered_map<string, EVENT_TYPES> EventsMap{
     {"onChangeDim",EVENT_TYPES::onChangeDim},
     {"onJump",EVENT_TYPES::onJump},
     {"onSneak",EVENT_TYPES::onSneak},
-    {"onAttack",EVENT_TYPES::onAttack},
+    {"onAttack",EVENT_TYPES::onAttackEntity},
     {"onAttackEntity",EVENT_TYPES::onAttackEntity},
     {"onAttackBlock",EVENT_TYPES::onAttackBlock},
     {"onEat",EVENT_TYPES::onEat},
@@ -405,20 +405,6 @@ void EnableEventListener(int eventId)
         });
         break;
 
-    case EVENT_TYPES::onAttack:             // recently removed.
-        Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
-        {
-            IF_LISTENED(EVENT_TYPES::onAttack)
-            {
-                if (ev.mTarget)
-                {
-                    CallEvent(EVENT_TYPES::onAttack, PlayerClass::newPlayer(ev.mPlayer), EntityClass::newEntity(ev.mTarget));
-                }
-            }
-            IF_LISTENED_END(EVENT_TYPES::onAttack);
-        });
-        break;
-
     case EVENT_TYPES::onAttackEntity:
         Event::PlayerAttackEvent::subscribe([](const PlayerAttackEvent& ev)
         {   
@@ -535,7 +521,7 @@ void EnableEventListener(int eventId)
         break;
 
     case EVENT_TYPES::onTakeItem:
-        Event::PlayerTakeItemEvent::subscribe([](const PlayerTakeItemEvent& ev) {
+        Event::PlayerPickupItemEvent::subscribe([](const PlayerPickupItemEvent& ev) {
             IF_LISTENED(EVENT_TYPES::onTakeItem)
             {
                 CallEvent(EVENT_TYPES::onTakeItem, PlayerClass::newPlayer(ev.mPlayer),
@@ -866,8 +852,12 @@ void EnableEventListener(int eventId)
             IF_LISTENED(EVENT_TYPES::onMobHurt)
             {
                 Actor* source = nullptr;
-                if (ev.mDamageSource->getCause() == ActorDamageCause::EntityAttack)
+                if (ev.mDamageSource->isEntitySource())
+                {
                     source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                    if (ev.mDamageSource->isChildEntitySource())
+                        source = source->getOwner();
+                }
 
                 CallEvent(EVENT_TYPES::onMobHurt, EntityClass::newEntity(ev.mMob),
                     source ? EntityClass::newEntity(source) : Local<Value>(),
@@ -892,8 +882,12 @@ void EnableEventListener(int eventId)
             IF_LISTENED(EVENT_TYPES::onMobDie)
             {
                 Actor* source = nullptr;
-                if (ev.mDamageSource->getCause() == ActorDamageCause::EntityAttack)
+                if (ev.mDamageSource->isEntitySource())
+                {
                     source = Level::getEntity(ev.mDamageSource->getDamagingEntityUniqueID());
+                    if (ev.mDamageSource->isChildEntitySource())
+                        source = source->getOwner();
+                }
 
                 CallEvent(EVENT_TYPES::onMobDie, EntityClass::newEntity((Actor*)ev.mMob),
                     (source ? EntityClass::newEntity(source) : Local<Value>()));

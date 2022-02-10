@@ -70,7 +70,7 @@ namespace Form {
         }
     }
 
-    bool SimpleForm::sendTo(ServerPlayer *player, Callback callback) {
+    bool SimpleForm::sendTo(Player *player, Callback callback) {
         unsigned id = NewFormId();
         this->callback = std::move(callback);
         SetSimpleFormBuilderData(id, make_shared<SimpleForm>(*this));

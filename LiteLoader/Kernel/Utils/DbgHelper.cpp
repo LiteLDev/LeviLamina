@@ -118,11 +118,12 @@ wstring MapModuleFromAddr(HANDLE hProcess, void* address)
 
 #define MACHINE_TYPE IMAGE_FILE_MACHINE_AMD64
 
-bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
+bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e, Logger* l)
 {
+    Logger& debugLogger = l ? *l : logger;
 	if (!LL::globalConfig.enableErrorStackTraceback)
 	{
-		logger.error("* Stack traceback is disabled by config file.");
+        logger.error("* Stack traceback is disabled by config file.");
 		return true;
 	}
 
@@ -131,7 +132,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 	DWORD threadId = GetCurrentThreadId();
 	bool res = false;
 
-	std::thread printThread([e,hProcess,hThread,threadId,&res]()
+	std::thread printThread([e,hProcess,hThread,threadId,&res,&debugLogger]()
 	{
 		LoadSymbols();
 		CreateModuleMap(hProcess);
@@ -145,13 +146,13 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 			HANDLE hThread = OpenThread(THREAD_ALL_ACCESS, TRUE, threadId);
 			if (hThread == NULL)
 			{
-				logger.error("Fail to Open Thread! Error Code: {}", GetLastError());
+                logger.error("Fail to Open Thread! Error Code: {}", GetLastError());
 				return;
 			}
 			context.ContextFlags = CONTEXT_FULL;
 			if (!GetThreadContext(hThread, &context))
 			{
-				logger.error("Fail to Get Context! Error Code: {}", GetLastError());
+                logger.error("Fail to Get Context! Error Code: {}", GetLastError());
 				return;
 			}
 			pContext = &context;
@@ -186,7 +187,7 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 				char addrHex[10] = "";
 				snprintf(addrHex, sizeof(addrHex), "0x%llX", info->Address);
 
-				logger.error("at {} ({})  [{}]",
+				debugLogger.error("at {} ({})  [{}]",
 					wstr2str(info->Name), addrHex, wstr2str(MapModuleFromAddr(hProcess, (void*)address).c_str()));
 
 				//Line
@@ -195,10 +196,10 @@ bool PrintCurrentStackTraceback(PEXCEPTION_POINTERS e)
 				line.SizeOfStruct = sizeof(IMAGEHLP_LINEW64);
 
 				if (SymGetLineFromAddrW64(hProcess, address, &displacement, &line))
-					logger.error("(in File {} : Line {})", wstr2str(line.FileName), line.LineNumber);
+                    debugLogger.error("(in File {} : Line {})", wstr2str(line.FileName), line.LineNumber);
 			}
 			else
-				logger.error("at ???????? (0x????????)");
+                debugLogger.error("at ???????? (0x????????)");
 		}
 		cout << endl;
 		CleanupSymbols();
