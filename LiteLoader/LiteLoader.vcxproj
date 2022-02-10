@@ -86,6 +86,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
     <ClCompile Include="Kernel\AllowListAPI.cpp" />
     <ClCompile Include="Kernel\Scoreboard\ObjectiveAPI.cpp" />
     <ClCompile Include="Kernel\Utils\DbgHelper.cpp" />
@@ -129,6 +130,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\GameMode.hpp" />
     <ClInclude Include="Header\MC\HashedString.hpp" />
     <ClInclude Include="Header\MC\HitResult.hpp" />
+    <ClInclude Include="Header\MC\I18n.hpp" />
     <ClInclude Include="Header\MC\Int64Tag.hpp" />
     <ClInclude Include="Header\MC\IntArrayTag.hpp" />
     <ClInclude Include="Header\MC\IntTag.hpp" />
@@ -144,6 +146,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\StringTag.hpp" />
     <ClInclude Include="Header\MC\StructureSettings.hpp" />
     <ClInclude Include="Header\MC\StructureTemplate.hpp" />
+    <ClInclude Include="Header\MC\SynchedActorData.hpp" />
     <ClInclude Include="Header\MC\Tag.hpp" />
     <ClInclude Include="Header\MC\TagMemoryChunk.hpp" />
     <ClInclude Include="Header\MC\BlockSource.hpp" />

@@ -7,6 +7,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+class Localization;
 
 #undef BEFORE_EXTRA
 
@@ -14,7 +15,16 @@ class I18n {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    LIAPI static Localization const* getLanguage(std::string const& languageCode);
+    inline static std::string get(std::string const& key)
+    {
+        return get(key, mCurrentLanguage);
+    }
+    inline static std::string get(std::string const& key, std::vector<std::string> args)
+    {
+        return get(key, args, mCurrentLanguage);
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18N

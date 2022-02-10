@@ -34,7 +34,6 @@ class Color;
 
 }; // namespace mce
 
-
 class BoundingBox
 {
 public:
@@ -71,31 +70,8 @@ public:
     }
 };
 
-struct ActorUniqueID
-{
-    long long id;
+#include "ActorUniqueID.hpp"
 
-public:
-    ActorUniqueID()
-    {
-        id = -1;
-    }
-
-    ActorUniqueID(long long i)
-    {
-        id = i;
-    }
-
-    inline long long get() const
-    {
-        return id;
-    }
-
-    inline operator long long() const
-    {
-        return id;
-    }
-};
 //static_assert(!std::is_pod_v<ActorUniqueID>);
 
 
@@ -116,23 +92,7 @@ public:
 };
 //static_assert(std::is_pod_v<ActorRuntimeID>);
 
-#include "../MC/RelativeFloat.hpp"
-//class RelativeFloat {
-//public:
-//    float value;
-//    bool is_relative;
-//
-//    RelativeFloat(float value)
-//        : value(value)
-//        , is_relative(true) {
-//    }
-//
-//    inline float getFloat(float center) const {
-//        if (is_relative)
-//            return center + value;
-//        return value;
-//    }
-//};
+#include "RelativeFloat.hpp"
 
 //namespace Core {
 //
@@ -426,7 +386,30 @@ template <typename T>
 class buffer_span_mut;
 
 template <typename T>
-class optional_ref;
+class optional_ref
+{
+    T** value;
+
+public:
+    inline T* get() const
+    {
+        if (value && *value)
+            return *value;
+        return nullptr;
+    }
+    //inline T* set(T const& val)
+    //{
+    //    *value = &val;
+    //}
+    inline T& operator*() const
+    {
+        return **value;
+    }
+    inline T* operator->() const
+    {
+        return *value;
+    }
+};
 
 template <int a>
 class DividedPos2d;
