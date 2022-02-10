@@ -12,47 +12,59 @@
 #define LOGGER_CURRENT_FILE "ll_plugin_logger_file"
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
-void Logger::initLockImpl(HMODULE hPlugin) {
+void Logger::initLockImpl(HMODULE hPlugin)
+{
     //if (!PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_LOCK))
     //    PluginOwnData::setImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK);             //May cause DeadLock?
 }
 
-void Logger::lockImpl(HMODULE hPlugin) {
+void Logger::lockImpl(HMODULE hPlugin)
+{
     //initLockImpl(hPlugin);
     //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).lock();          //May cause DeadLock?
 }
 
-void Logger::unlockImpl(HMODULE hPlugin) {
+void Logger::unlockImpl(HMODULE hPlugin)
+{
     //PluginOwnData::getImpl<CsLock>(hPlugin, LOGGER_CURRENT_LOCK).unlock();        //May cause DeadLock?
 }
 
-bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string &logFile, bool appendMode = true) {
-    if (logFile.empty()) {
+bool Logger::setDefaultFileImpl(HMODULE hPlugin, const std::string& logFile, bool appendMode = true)
+{
+    if (logFile.empty())
+    {
         PluginOwnData::removeImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE);
         return true;
-    } else {
+    }
+    else
+    {
         std::error_code ec;
         std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
 
-        auto &res = PluginOwnData::setImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE, logFile,
+        auto& res = PluginOwnData::setImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE, logFile,
                                                           appendMode ? std::ios::app : std::ios::out);
         return res.is_open();
     }
 }
 
-bool Logger::setDefaultFileImpl(HMODULE hPlugin, nullptr_t) {
+bool Logger::setDefaultFileImpl(HMODULE hPlugin, nullptr_t)
+{
     PluginOwnData::removeImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE);
     return true;
 }
 
 
-bool Logger::setFile(const std::string &logFile, bool appendMode) {
+bool Logger::setFile(const std::string& logFile, bool appendMode)
+{
     if (ofs.is_open())
         ofs.close();
 
-    if (logFile.empty()) {
+    if (logFile.empty())
+    {
         return true;
-    } else {
+    }
+    else
+    {
         std::error_code ec;
         std::filesystem::create_directories(std::filesystem::path(logFile).remove_filename(), ec);
         ofs.open(logFile, appendMode ? std::ios::app : std::ios::out);
@@ -60,7 +72,8 @@ bool Logger::setFile(const std::string &logFile, bool appendMode) {
     }
 }
 
-bool Logger::setFile(nullptr_t) {
+bool Logger::setFile(nullptr_t)
+{
     if (ofs.is_open())
         ofs.close();
     return true;
@@ -68,9 +81,10 @@ bool Logger::setFile(nullptr_t) {
 
 Logger::OutputStream::OutputStream() = default;
 
-Logger::OutputStream::OutputStream(Logger *logger, int level, std::string &&consoleFormat, std::string &&fileFormat,
-                                   std::string &&playerFormat,
-                                   fmt::text_style &&style, std::string &&levelPrefix) {
+Logger::OutputStream::OutputStream(Logger* logger, int level, std::string&& consoleFormat, std::string&& fileFormat,
+                                   std::string&& playerFormat,
+                                   fmt::text_style&& style, std::string&& levelPrefix)
+{
     this->logger = logger;
     this->level = level;
     this->consoleFormat = consoleFormat;
@@ -80,28 +94,18 @@ Logger::OutputStream::OutputStream(Logger *logger, int level, std::string &&cons
     this->levelPrefix = levelPrefix;
 }
 
-bool checkLogLevel(int level, int outLevel) {
+bool checkLogLevel(int level, int outLevel)
+{
     if (level >= outLevel)
         return true;
     if (level == -1 && LL::globalConfig.logLevel >= outLevel)
         return true;
     return false;
 }
-constexpr unsigned int H(string_view s)
-{
-    auto str = s.data();
-    unsigned int hash = 5381;
-    while (*str)
-    {
-        hash = ((hash << 5) + hash) + (*str++);
-    }
-    hash &= ~(1 << 31);
-    return hash;
-}
-
+#define H do_hash
 fmt::text_style getModeColor(string a1)
 {
-    switch (H(a1))
+    switch (H(a1.c_str()))
     {
         case H("INFO"): return fmt::fg(fmt::color::light_sea_green);
         case H("WARN"): return fmt::fg(fmt::color::yellow2);
@@ -111,37 +115,41 @@ fmt::text_style getModeColor(string a1)
     }
 }
 
-void Logger::endlImpl(HMODULE hPlugin, OutputStream &o) {
+void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
+{
     std::string title = o.logger->title;
     if (!title.empty())
         title = "[" + title + "]";
-    if (checkLogLevel(o.logger->consoleLevel, o.level)) {
-        fmt::print(LL::globalConfig.colorLog ? fmt::fg(fmt::color::light_blue) : fmt::text_style(),
-                   "{:%H:%M:%S}", fmt::localtime(_time64(nullptr)));
+    if (checkLogLevel(o.logger->consoleLevel, o.level))
+    {
 
-        fmt::print(
-            LL::globalConfig.colorLog ? getModeColor(o.levelPrefix) : fmt::text_style(),
-            " {} ", o.levelPrefix,o.os.str());
-        fmt::print(
-                LL::globalConfig.colorLog ? o.style : fmt::text_style(),
-            o.consoleFormat, title, o.os.str()
-        );
+        fmt::print(LL::globalConfig.colorLog ? o.style : fmt::text_style(),
+            o.consoleFormat, 
+            fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(),
+            fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
+            fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
+            title,
+            o.os.str());
+
     }
-    if (checkLogLevel(o.logger->fileLevel, o.level)) {
-        if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE)) {
+
+    if (checkLogLevel(o.logger->fileLevel, o.level))
+    {
+        if (o.logger->ofs.is_open() || PluginOwnData::hasImpl(hPlugin, LOGGER_CURRENT_FILE))
+        {
             auto fileContent = fmt::format(o.fileFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
                                            o.os.str());
             if (o.logger->ofs.is_open())
                 o.logger->ofs << fileContent << std::flush;
             else
                 PluginOwnData::getImpl<std::ofstream>(hPlugin, LOGGER_CURRENT_FILE)
-                        << fileContent << std::flush;
+                    << fileContent << std::flush;
         }
     }
     if (checkLogLevel(o.logger->playerLevel, o.level) && o.logger->player && Player::isValid(o.logger->player))
         o.logger->player->sendTextPacket(
-                fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
-                            o.os.str()));
+            fmt::format(o.playerFormat, fmt::localtime(_time64(nullptr)), o.levelPrefix, title,
+                        o.os.str()));
 
     o.locked = false;
     o.os.str("");
@@ -149,46 +157,42 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream &o) {
     unlockImpl(hPlugin);
 }
 
-Logger::Logger(const std::string &title) {
+Logger::Logger(const std::string& title)
+{
     this->title = title;
     debug = OutputStream{this,
                          5,
-                         "{} {}\n",
+                         "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§o[{}{}]{} {}\n",
                          fmt::fg(fmt::terminal_color::white) | fmt::emphasis::italic,
-                         "DEBUG"
-    };
+                         "DEBUG"};
     info = OutputStream{this,
                         4,
-                        "{} {}\n",
+                        "{} {} {} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         "[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::white),
-                        "INFO"
-    };
+                        "INFO"};
     warn = OutputStream{this,
                         3,
-                        "{} {}\n",
+                        "{} {} {} {}\n",
                         "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                         "§l§e[{}{}]{} {}\n",
                         fmt::fg(fmt::terminal_color::yellow) | fmt::emphasis::bold,
-                        "WARN"
-    };
+                        "WARN"};
     error = OutputStream{this,
                          2,
-                         "{} {}\n",
+                         "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§l§c[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red2) | fmt::emphasis::bold,
-                         "ERROR"
-    };
+                         "ERROR"};
     fatal = OutputStream{this,
                          1,
-                         "{} {}\n",
+                         "{} {} {} {}\n",
                          "[{:%Y-%m-%d %H:%M:%S} {}]{} {}\n",
                          "§l§4[{}{}]{} {}\n",
                          fmt::fg(fmt::color::red) | fmt::emphasis::bold,
-                         "FATAL"
-    };
+                         "FATAL"};
 }
