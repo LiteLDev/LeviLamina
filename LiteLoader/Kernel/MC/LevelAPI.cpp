@@ -20,8 +20,16 @@
 #include <MC/Packet.hpp>
 
 
-Actor* Level::getEntity(ActorUniqueID uniqueId) {
-    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
+Actor* Level::getEntity(ActorUniqueID uniqueId)
+{
+    try
+    {
+        return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
+    }
+    catch (...)
+    {
+        return nullptr;
+    }
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
