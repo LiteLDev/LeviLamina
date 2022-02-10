@@ -121,6 +121,11 @@ namespace LL {
                 const nlohmann::json& setting = modules.at("CheckRunningBDS");
                 conf.enableCheckRunningBDS = setting.value("enabled", true);
             }
+            if (modules.count("WelcomeText"))
+            {
+                const nlohmann::json& setting = modules.at("WelcomeText");
+                conf.enableWelcomeText = setting.value("enabled", true);
+            }
             if (modules.find("ErrorStackTraceback") != modules.end()) {
                 const nlohmann::json& setting = modules.at("ErrorStackTraceback");
                 conf.enableErrorStackTraceback = setting.value("enabled", true);
