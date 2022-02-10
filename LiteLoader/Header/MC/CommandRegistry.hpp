@@ -171,6 +171,12 @@ public:
              "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
              "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@"
              "std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
+        {typeid(Json::Value).name(),
+         dlsym_real(
+             "??$parse@VValue@Json@@@CommandRegistry@@AEBA_NPEAXAEBUParseToken@0@AEBVCommandOrigin@@"
+             "HAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEAV?$vector@V?$basic_string@"
+             "DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@"
+             "V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@4@@Z")},
     };
     template <typename T>
     inline static ParseFn getParseFn(){
