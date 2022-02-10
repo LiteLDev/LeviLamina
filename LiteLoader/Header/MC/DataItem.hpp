@@ -4,7 +4,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
-enum class DataItemIds : unsigned short
+enum ActorDataIDs : unsigned short
 {
     FLAGS                               = 0,   // Int64
     HEALTH                              = 1,   // Int (minecart/boat)

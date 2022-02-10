@@ -258,6 +258,33 @@ bool Player::setNbt(CompoundTag* nbt)
     nbt->setPlayer(this);
     return true;
 }
+#include <MC/Attribute.hpp>
+#include <MC/AttributeInstance.hpp>
+#include <MC/HashedString.hpp>
+bool Player::refreshAttribute(class Attribute const& attribute)
+{
+    return refreshAttributes({&attribute});
+}
+bool Player::refreshAttributes(std::vector<Attribute const*> const& attributes)
+{
+    BinaryStream wp;
+    wp.writeUnsignedVarInt64(getRuntimeID()); // EntityId
+    wp.writeUnsignedVarInt(attributes.size());
+    for (auto attribute : attributes)
+    {
+        auto& instance = getAttribute(*attribute);
+        wp.writeFloat(instance.getMinValue());
+        wp.writeFloat(instance.getMaxValue());
+        wp.writeFloat(instance.getCurrentValue());
+        wp.writeFloat(instance.getDefaultValue(2));
+        wp.writeString((*attribute).getName().getString());
+    }
+    wp.writeUnsignedVarInt64(0);
+    auto pkt = MinecraftPackets::createPacket(0x1D);
+    pkt->read(wp);
+    sendNetworkPacket(*pkt);
+    return true;
+}
 
 string Player::getUuid() 
 {
@@ -510,12 +537,12 @@ bool Player::sendAddEntityPacket(unsigned long long runtimeID, string entityType
     return true;
 }
 
-bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer)
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, unsigned int runtimeId, UpdateBlockFlags flag, UpdateBlockLayer layer)
 {
     BinaryStream wp;
-    wp.writeVarInt(x);
-    wp.writeUnsignedVarInt(y);
-    wp.writeVarInt(z);
+    wp.writeVarInt(bpos.x);
+    wp.writeUnsignedVarInt(bpos.y);
+    wp.writeVarInt(bpos.z);
     wp.writeUnsignedVarInt(runtimeId);
     wp.writeUnsignedVarInt((unsigned int)flag);
     wp.writeUnsignedVarInt((unsigned int)layer);
@@ -524,9 +551,9 @@ bool Player::sendUpdateBlockPacket(int x, int y, int z, unsigned int runtimeId, 
     sendNetworkPacket(*pkt);
     return true;
 }
-bool Player::sendUpdateBlockPacket(int x, int y, int z, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer)
+bool Player::sendUpdateBlockPacket(BlockPos const& bpos, const Block& block, UpdateBlockFlags flag, UpdateBlockLayer layer)
 {
-    return sendUpdateBlockPacket(x, y, z, block.getRuntimeId(), flag, layer);
+    return sendUpdateBlockPacket(bpos, block.getRuntimeId(), flag, layer);
 }
 
 bool Player::sendTransferPacket(const string& address, short port) const 

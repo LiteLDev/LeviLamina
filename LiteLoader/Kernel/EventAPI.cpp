@@ -1585,22 +1585,21 @@ TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode ,
             return false;
     }
     IF_LISTENED_END(PlayerUseItemEvent)
-    if (it.getItem()->isFood() && (pl->isHungry() || pl->forceAllowEating()))
+    IF_LISTENED(PlayerEatEvent)
     {
-        IF_LISTENED(PlayerEatEvent)
+        if (it.getItem()->isFood() && (pl->isHungry() || pl->forceAllowEating()))
         {
             PlayerEatEvent ev{};
             ev.mPlayer = pl;
             ev.mFoodItem = &it;
             if (!ev.call())
             {
-                pl->refreshActorData();
+                pl->refreshAttribute(Player::HUNGER);
                 return false;
             }
-                
         }
-        IF_LISTENED_END(PlayerEatEvent)
     }
+    IF_LISTENED_END(PlayerEatEvent)
     return original(this, it);
 }
 
