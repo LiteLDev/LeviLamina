@@ -111,7 +111,7 @@ void FixAllowList()
         if (filesystem::exists("allowlist.json"))
         {
             auto res = ReadAllFile("allowlist.json");
-            if (res && (* res == "" || *res == "[]"))
+            if (res && (res->empty() || nlohmann::json::parse(*res, nullptr, true, true).empty()))
             {
                 logger.warn("allowlist.json is empty! Removing...");
                 filesystem::remove("allowlist.json");

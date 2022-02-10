@@ -379,7 +379,7 @@ namespace Form
         LIAPI SimpleForm& setContent(const string& content);
         LIAPI SimpleForm& addButton(string text, string image = "", Button::ButtonCallback callback = Button::ButtonCallback());
         LIAPI SimpleForm& append(const Button& element);
-        LIAPI bool sendTo(ServerPlayer* player, Callback callback = Callback());
+        LIAPI bool sendTo(Player* player, Callback callback = Callback());
     };
 
     class CustomForm : public FormImpl

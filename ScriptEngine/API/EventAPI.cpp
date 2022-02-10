@@ -521,7 +521,7 @@ void EnableEventListener(int eventId)
         break;
 
     case EVENT_TYPES::onTakeItem:
-        Event::PlayerTakeItemEvent::subscribe([](const PlayerTakeItemEvent& ev) {
+        Event::PlayerPickupItemEvent::subscribe([](const PlayerPickupItemEvent& ev) {
             IF_LISTENED(EVENT_TYPES::onTakeItem)
             {
                 CallEvent(EVENT_TYPES::onTakeItem, PlayerClass::newPlayer(ev.mPlayer),

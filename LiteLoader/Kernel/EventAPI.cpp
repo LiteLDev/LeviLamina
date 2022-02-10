@@ -183,7 +183,7 @@ template class EventManager<PlayerSneakEvent>;
 template class EventManager<PlayerAttackEvent>;
 template class EventManager<PlayerAttackBlockEvent>;
 template class EventManager<PlayerDieEvent>;
-template class EventManager<PlayerTakeItemEvent>;
+template class EventManager<PlayerPickupItemEvent>;
 template class EventManager<PlayerDropItemEvent>;
 template class EventManager<PlayerEatEvent>;
 template class EventManager<PlayerConsumeTotemEvent>;
@@ -474,20 +474,20 @@ TInstanceHook(bool, "?attack@Block@@QEBA_NPEAVPlayer@@AEBVBlockPos@@@Z",
 TInstanceHook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",
       Player , Actor* actor, int a2, int a3)
 {
-    IF_LISTENED(PlayerTakeItemEvent)
+    IF_LISTENED(PlayerPickupItemEvent)
     {
         ItemStack* it = nullptr;
         if (actor->isItemActor())
             it = ((ItemActor*)actor)->getItemStack();
 
-        PlayerTakeItemEvent ev{};
+        PlayerPickupItemEvent ev{};
         ev.mPlayer = this;
         ev.mItemEntity = actor;
         ev.mItemStack = it;
         if (!ev.call())
             return false;
     }
-    IF_LISTENED_END(PlayerTakeItemEvent)
+    IF_LISTENED_END(PlayerPickupItemEvent)
     return original(this, actor, a2, a3);
 }
 

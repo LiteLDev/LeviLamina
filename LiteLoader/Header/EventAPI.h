@@ -14,7 +14,7 @@
 //      return true;
 //  });
 //
-//  auto listener = Event::PlayerTakeItemEvent::subscribe([](const Event::PlayerTakeItemEvent& ev) {
+//  auto listener = Event::PlayerPickupItemEvent::subscribe([](const Event::PlayerPickupItemEvent& ev) {
 //      if(ev.mPlayer->getName() == "Jack")
 //          return false;                           //Prevent events to be done - return false
 //      else
@@ -224,7 +224,7 @@ public:
     ActorDamageSource* mDamageSource;
 };
 
-class PlayerTakeItemEvent : public EventTemplate<PlayerTakeItemEvent>
+class PlayerPickupItemEvent : public EventTemplate<PlayerPickupItemEvent>
 {
 public:
     Player* mPlayer;
