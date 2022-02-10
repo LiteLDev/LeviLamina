@@ -9,6 +9,7 @@
 using namespace std;
 
 namespace LL {
+
     LLConfig globalConfig;
     LL::CommandLineOption commandLineOption;
 
@@ -120,17 +121,18 @@ namespace LL {
                 const nlohmann::json& setting = modules.at("CheckRunningBDS");
                 conf.enableCheckRunningBDS = setting.value("enabled", true);
             }
-            if (modules.find("ErrorStackTraceback") != modules.end()) {
-                const nlohmann::json& listen = modules.at("ErrorStackTraceback");
-                conf.enableErrorStackTraceback = listen.value("enabled", true);
+            if (modules.count("WelcomeText"))
+            {
+                const nlohmann::json& setting = modules.at("WelcomeText");
+                conf.enableWelcomeText = setting.value("enabled", true);
             }
-            if (modules.find("WelcomeText") != modules.end()) {
-                const nlohmann::json& listen = modules.at("WelcomeText");
-                conf.enableWelcomeText = listen.value("enabled", true);
+            if (modules.find("ErrorStackTraceback") != modules.end()) {
+                const nlohmann::json& setting = modules.at("ErrorStackTraceback");
+                conf.enableErrorStackTraceback = setting.value("enabled", true);
             }
         }
     }
-    } // namespace LL
+} // namespace LL
 
 
 bool LL::LoadLLConfig()

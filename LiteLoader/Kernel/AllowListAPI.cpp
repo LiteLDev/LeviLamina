@@ -4,6 +4,9 @@
 #include <AllowListAPI.h>
 #include <Utils/FileHelper.h>
 #include <MC/AllowListFile.hpp>
+#pragma warning(disable: 26812)
+
+Logger allowListLogger("AllowList");
 
 AllowListManager::AllowListManager()
 {
@@ -19,16 +22,16 @@ AllowListManager::AllowListManager()
             }
             catch (std::exception e)
             {
-                Logger("AllowList").error("Failed to parse allowlist.json: {}", e.what());
+                allowListLogger.error("Failed to parse allowlist.json: {}", e.what());
             }
         }
         else
         {
-            Logger("AllowList").error("Failed to read allowlist.json");
+            allowListLogger.error("Failed to read allowlist.json");
         }
         return;
     }
-    Logger("AllowList").warn("allowlist.json is not found");
+    allowListLogger.warn("allowlist.json is not found");
 }
 
 void AllowListManager::save()
@@ -80,10 +83,14 @@ AllowListManager& AllowListManager::add(const std::string& name, const xuid_t& x
         }
         allowList.push_back(j);
         save();
+        if (ignore)
+            allowListLogger.warn("Added player \"{}\" to AllowList with ignoresPlayerLimit on", name);
+        else
+            allowListLogger.info("Added player \"{}\" to AllowList", name);
     }
     catch (std::exception e)
     {
-        Logger("AllowList").error("Failed to add player to AllowList: {}", e.what());
+        allowListLogger.error("Failed to add player to AllowList: {}", e.what());
     }
     return *this;
 }
@@ -97,15 +104,16 @@ AllowListManager& AllowListManager::remove(const std::string& name, const xuid_t
         {
             allowList.erase(i);
             save();
+            allowListLogger.info("Removed player \"{}\" from AllowList", name);
         }
         else
         {
-            Logger("AllowList").error("Failed to remove player from AllowList: Target player is not found");
+            allowListLogger.error("Failed to remove player from AllowList: Target player is not found");
         }
     }
     catch (std::exception e)
     {
-        Logger("AllowList").error("Failed to remove player from AllowList: {}", e.what());
+        allowListLogger.error("Failed to remove player from AllowList: {}", e.what());
     }
     return *this;
 }
