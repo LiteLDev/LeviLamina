@@ -130,11 +130,6 @@ namespace LL {
                 const nlohmann::json& setting = modules.at("ErrorStackTraceback");
                 conf.enableErrorStackTraceback = setting.value("enabled", true);
             }
-            if (modules.find("WelcomeText") != modules.end())
-            {
-                const nlohmann::json& setting = modules.at("WelcomeText");
-                conf.enableWelcomeText = setting.value("enabled", true);
-            }
         }
     }
 } // namespace LL
