@@ -186,6 +186,12 @@ public:
         *((void**)&rv) = dlsym("?getRecipes@Level@@UEBAAEAVRecipes@@XZ");
         return (this->*rv)();
     }
+    inline std::vector<class Actor*> getRuntimeActorList() const
+    {
+        std::vector<class Actor*> (Level::*rv)() const;
+        *((void**)&rv) = dlsym("?getRuntimeActorList@Level@@UEBA?AV?$vector@PEAVActor@@V?$allocator@PEAVActor@@@std@@@std@@XZ");
+        return (this->*rv)();
+    }
     /*
 * Wrappers for Muti-Vftable Class
 inline void _checkUserStorage() {
