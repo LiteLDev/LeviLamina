@@ -868,7 +868,7 @@ inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int indent,
     auto val = tag.value().data.get();
     size_t size = tag.value().size;
     bool first = true;
-    std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
+    std::string const& separator = snbtFormat == SnbtFormat::Minimize ? "," : ", ";
     oss << "[B; ";
     for (size_t i = 0; i < size; ++i)
     {
@@ -886,7 +886,7 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
     size_t size = tag.value().size;
     bool first = true;
     oss << "[I; ";
-    std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
+    std::string const& separator = snbtFormat == SnbtFormat::Minimize ? "," : ", ";
     for (size_t i = 0; i < size; i += 4)
     {
         if (!first)
@@ -961,31 +961,31 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
                 __appendSNBT(oss, *child->asDoubleTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::ByteArray:
-                if (snbtFormat != SnbtFormat::Minify)
+                if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asByteArrayTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
             case Tag::String:
-                if (snbtFormat != SnbtFormat::Minify)
+                if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asStringTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
             case Tag::List:
-                if (snbtFormat != SnbtFormat::Minify)
+                if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asListTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
             case Tag::Compound:
-                if (snbtFormat != SnbtFormat::Minify)
+                if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asCompoundTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
                 break;
             case Tag::IntArray:
-                if (snbtFormat != SnbtFormat::Minify)
+                if (snbtFormat != SnbtFormat::Minimize)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asIntArrayTag(), indent, level + 1, snbtFormat);
                 shouldReturn = true;
@@ -995,7 +995,7 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
         }
         first = false;
     }
-    if (shouldReturn && snbtFormat != SnbtFormat::Minify)
+    if (shouldReturn && snbtFormat != SnbtFormat::Minimize)
         __appendReturnSpace(oss, indent, level);
     oss << ']';
 }
@@ -1013,7 +1013,7 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
     {
         if (!first)
             oss << ',';
-        if (snbtFormat == SnbtFormat::Minify)
+        if (snbtFormat == SnbtFormat::Minimize)
         {
             __appendString(oss, key);
             oss << ":";
@@ -1068,7 +1068,7 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
         }
         first = false;
     }
-    if (snbtFormat != SnbtFormat::Minify)
+    if (snbtFormat != SnbtFormat::Minimize)
         __appendReturnSpace(oss, indent, level);
     oss << '}';
 }
