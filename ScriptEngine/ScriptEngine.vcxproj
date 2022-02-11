@@ -92,7 +92,6 @@
     <ClInclude Include="Global.hpp" />
     <ClInclude Include="EconomicSystem.h" />
     <ClInclude Include="PluginManager.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="SafeGuardRecord.h" />
     <ClInclude Include="Tools\IniHelper.h" />
     <ClInclude Include="Tools\JsonHelper.h" />
@@ -115,9 +114,6 @@
     <Library Include="third-party\V8\lib\v8_libbase.lib" />
     <Library Include="third-party\V8\lib\v8_libplatform.lib" />
     <Library Include="third-party\V8\lib\zlib.lib" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="ScriptEngine.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

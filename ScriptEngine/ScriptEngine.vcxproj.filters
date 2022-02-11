@@ -17,9 +17,6 @@
     <Filter Include="Tools">
       <UniqueIdentifier>{c322c5ad-e260-4fba-b9d5-f73c3fcbe583}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource">
-      <UniqueIdentifier>{e803ea21-41d0-42fc-b0b1-03a06263740b}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="API\APIHelp.cpp">
@@ -270,9 +267,6 @@
     <ClInclude Include="SafeGuardRecord.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Resource</Filter>
-    </ClInclude>
     <ClInclude Include="BuiltinCommands.h">
       <Filter>Main</Filter>
     </ClInclude>
@@ -326,10 +320,5 @@
     <Library Include="third-party\V8\lib\zlib.lib">
       <Filter>Lib</Filter>
     </Library>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="ScriptEngine.rc">
-      <Filter>Resource</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>
