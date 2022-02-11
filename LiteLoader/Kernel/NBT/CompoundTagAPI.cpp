@@ -1,4 +1,4 @@
-#include <MC/Actor.hpp>
+﻿#include <MC/Actor.hpp>
 #include <MC/Block.hpp>
 #include <MC/BlockActor.hpp>
 #include <MC/ByteArrayTag.hpp>
@@ -1047,6 +1047,6 @@ string CompoundTag::toSNBT(int indent, SnbtFormat snbtFormat)
 
 #pragma endregion
 
-#pragma region From SNBT For BDS's Tag
+#pragma region From SNBT For Tag of BDS
 
 #pragma endregion
