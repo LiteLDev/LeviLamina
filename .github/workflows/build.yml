@@ -53,13 +53,6 @@ jobs:
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
 
-      - name: Change LITELOADER_VERSION_STATUS
-        working-directory: ${{env.GITHUB_WORKSPACE}}
-        if: startsWith(github.ref, 'refs/tags/')
-        run: |
-          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
-        shell: bash
-
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
         id: build
@@ -92,7 +85,7 @@ jobs:
           name: LiteLoader
           path: Release
 
-  Build-LiteLoader-Js:
+  Build-LiteLoader-N-Js:
     runs-on: windows-2022
     needs: Build-Library
 
@@ -107,6 +100,13 @@ jobs:
 
       - name: Add MSBuild to PATH
         uses: microsoft/setup-msbuild@v1
+
+      - name: Change LITELOADER_VERSION_STATUS
+        working-directory: ${{env.GITHUB_WORKSPACE}}
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          sed -i 's/Beta/Release/g' LiteLoader/Main/Version.h
+        shell: bash
 
       - name: Build
         working-directory: ${{env.GITHUB_WORKSPACE}}
@@ -131,7 +131,7 @@ jobs:
   Publish-Release:
     runs-on: ubuntu-latest
     if: startsWith(github.ref, 'refs/tags/')
-    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-N-Js]
     steps:
       - uses: actions/checkout@v2
 
@@ -162,7 +162,7 @@ jobs:
   Clean:
     runs-on: ubuntu-latest
     if: ${{ always() }} # 防止前面三者跑着跑着报错，这一步骤不执行导致libs删不掉的现象发生
-    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-Js]
+    needs: [Build-LiteLoader-N-Lua, Build-LiteLoader-N-Js]
     steps:
       - uses: geekyeggo/delete-artifact@v1
         with:
