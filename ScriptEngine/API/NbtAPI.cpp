@@ -2183,8 +2183,8 @@ Local<Value> NbtCompoundClass::toSNBT(const Arguments& args)
 {
     try
     {
-        int indent = args.size() >= 1 ? args[0].toInt() : 0;
-        if (indent == 0)
+        int indent = args.size() >= 1 ? args[0].toInt() : -1;
+        if (indent == -1)
             return String::newString(nbt->toSNBT(0, SnbtFormat::Minimize));
         else
             return String::newString(nbt->toSNBT(indent, SnbtFormat::PartialNewLine));
