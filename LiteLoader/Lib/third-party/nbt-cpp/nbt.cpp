@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cassert>
 #include <sstream>
+#include <iostream>
 
 namespace nbt {
 
@@ -71,7 +72,7 @@ number_t load_text_simple(std::istream & input) {
 	number_t value;
 	input >> value;
 	int next = cheof(input);
-	if (next != suffix)
+    if (next != suffix && next != std::toupper(suffix))
 		input.putback(next);
 	return value;
 }
@@ -271,7 +272,7 @@ tag_id deduce_tag(std::istream & input) {
 				deduced = tag_id::tag_byte;
 			} else if (b == 's') {
 				deduced = tag_id::tag_short;
-			} else if (b == 'l') {
+			} else if (b == 'l' || b == 'L') {
 				deduced = tag_id::tag_long;
 			} else if (b == 'f') {
 				deduced = tag_id::tag_float;
@@ -819,6 +820,7 @@ void read_compound_text(std::istream & input, tags::compound_tag & compound, con
 			);
 		}
 		std::string key = tags::read_string(input, ctxt);
+        //std::cout << key << std::endl;
         skip_space(input);
 		char a = cheof(input);
 		if (a != ':')

@@ -97,7 +97,6 @@ TInstanceHook(void*, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@
         if (abnormal)
         {
             logger.warn << "Player(" << sp->getRealName() << ") item data error!" << Logger::endl;
-            __debugbreak();
             return nullptr;
         }
     }
