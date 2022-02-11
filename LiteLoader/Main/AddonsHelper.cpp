@@ -57,9 +57,29 @@ void AutoInstallAddons()
 
     addonLogger.warn("{} new addons found to install. Working...", toInstallList.size());
 
+    int cnt = 0;
     for (auto& path : toInstallList)
         if (!AddonsManager::install(path))
-            return;
+        {
+            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            break;
+        }
+        else
+        {
+            ++cnt;
+            addonLogger.warn("Addon {} has beed installed.", path);
+        }
+
+    if (cnt == 0)
+    {
+        addonLogger.error("No addon was installed.");
+        return;
+    }
+    else
+    {
+        addonLogger.warn("{} addon(s) was installed.");
+        return;
+    }
 }
 
 //Helper
@@ -223,32 +243,16 @@ bool AddonsManager::install(std::string path)
     vector<string> paths;
     FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
 
-    int cnt = 0;
     for (auto& path : paths)
     {
         string addonName = filesystem::path(path).filename().replace_extension().u8string();
         if (!InstallAddonToLevel(path, addonName))
-        {
-            //filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
             return false;
-        }
-        else {
-            ++cnt;
-            addonLogger.warn("Addon {} has beed installed.", addonName);
-        }
     }
 
     filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-    if (cnt == 0)
-    {
-        addonLogger.error("No addon was installed.");
-        return false;
-    }
-    else
-    {
-        addonLogger.warn("{} addon(s) was installed.");
-        return true;
-    }
+    filesystem::remove_all(path, ec);
+    return true;
 }
 
 bool AddonsManager::uninstall(std::string nameOrUuid)
