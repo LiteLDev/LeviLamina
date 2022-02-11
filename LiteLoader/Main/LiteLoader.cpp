@@ -14,6 +14,7 @@
 #include "Main/AutoUpgrade.h"
 #include "Main/CrashLogger.h"
 #include <TranslationAPI.h>
+#include "Main/AddonsHelper.h"
 #include <EventAPI.h>
 #include <LiteLoader/Main/Version.h>
 
@@ -225,6 +226,12 @@ void LLMain()
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
     });
+
+    // Addon Helper
+    if (LL::globalConfig.enableAddonsHelper)
+    {
+        InitAddonsHelper();
+    }
 
     // Load plugins
     LL::LoadMain();

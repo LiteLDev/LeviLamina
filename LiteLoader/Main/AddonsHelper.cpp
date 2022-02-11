@@ -55,7 +55,7 @@ void AutoInstallAddons()
     if (toInstallList.empty())
         return;
 
-    addonLogger.warn("{} new addons found to install. Working...", toInstallList.size());
+    addonLogger.warn("{} new addon(s) found to install. Working...", toInstallList.size());
 
     int cnt = 0;
     for (auto& path : toInstallList)
@@ -77,7 +77,7 @@ void AutoInstallAddons()
     }
     else
     {
-        addonLogger.warn("{} addon(s) was installed.");
+        addonLogger.warn("{} addon(s) was installed.", cnt);
         return;
     }
 }
@@ -99,7 +99,7 @@ std::string GetCurrentLevelPath()
             {
                 if (buf.back() == '\n')  buf.pop_back();
                 if (buf.back() == '\r')  buf.pop_back();
-                return buf.substr(11);
+                return "./worlds/" + buf.substr(11);
             }
         }
     }
@@ -154,15 +154,11 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
 
     // copy files
     string levelPath = GetCurrentLevelPath();
+    string toPath = levelPath + subPath + "/" + addonName;
 
     std::error_code ec;
-    filesystem::copy(addonDir, levelPath + subPath,
-        filesystem::copy_options::recursive | filesystem::copy_options::overwrite_existing, ec);
-
-    // rename directory
-    string oldDirName = filesystem::path(addonDir).filename().u8string();
-    string newPath = levelPath + subPath + "/" + addonName;
-    filesystem::rename(levelPath + subPath + "/" + oldDirName, newPath);
+    filesystem::create_directories(toPath,ec);
+    filesystem::copy(addonDir, toPath, filesystem::copy_options::recursive, ec);
 
     // add addon to list file
     string addonListFile = levelPath;
@@ -215,42 +211,42 @@ void FindManifest(vector<string> &result, const string& path)
     return;
 }
 
-bool AddonsManager::install(std::string path)
+bool AddonsManager::install(std::string packPath)
 {
-    if (!filesystem::exists(path))
+    if (!filesystem::exists(packPath))
     {
         addonLogger.error("Addon file no found!");
         return false;
     }
-    if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(path).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
+    if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(packPath).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
     {
         addonLogger.error("Unsupported type of file found!");
         return false;
     }
 
-    string name = filesystem::path(path).filename().u8string();
-    addonLogger.warn("Installing addon {}...", name);
+    string name = filesystem::path(packPath).filename().u8string();
+    addonLogger.warn("Installing addon <{}>...", name);
 
     std::error_code ec;
-    if (EndsWith(path, ".mcpack"))
+    if (EndsWith(packPath, ".mcpack"))
     {
-        string newPath = path;
+        string newPath = packPath;
         ReplaceStr(newPath, ".mcpack", ".zip");
-        filesystem::rename(path, newPath, ec);
-        path = newPath;
+        filesystem::rename(packPath, newPath, ec);
+        packPath = newPath;
     }
-    if (EndsWith(path, ".mcaddon"))
+    if (EndsWith(packPath, ".mcaddon"))
     {
-        string newPath = path;
+        string newPath = packPath;
         ReplaceStr(newPath, ".mcaddon", ".zip");
-        filesystem::rename(path, newPath, ec);
-        path = newPath;
+        filesystem::rename(packPath, newPath, ec);
+        packPath = newPath;
     }
 
     filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
     filesystem::create_directories(ADDON_INSTALL_TEMP_DIR, ec);
 
-    auto res = NewProcessSync(fmt::format("{} x {} -o{} -aoa", ZIP_PROGRAM_PATH, path, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
+    auto res = NewProcessSync(fmt::format("{} x {} -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
     if (res.first != 0)
     {
         addonLogger.error("Fail to uncompress addon {}!", name);
@@ -264,15 +260,17 @@ bool AddonsManager::install(std::string path)
     vector<string> paths;
     FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
 
-    for (auto& path : paths)
+    for (auto& dir : paths)
     {
-        string addonName = filesystem::path(path).filename().replace_extension().u8string();
-        if (!InstallAddonToLevel(path, addonName))
+        string addonName = filesystem::path(dir).filename().u8string();
+        if (addonName.empty() || addonName == "Temp")
+            addonName = filesystem::path(packPath).stem().u8string();
+        if (!InstallAddonToLevel(dir, addonName))
             return false;
     }
 
     filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-    filesystem::remove_all(path, ec);
+    filesystem::remove_all(packPath, ec);
     return true;
 }
 
