@@ -85,15 +85,34 @@ void AutoInstallAddons()
 //Helper
 std::string GetCurrentLevelPath()
 {
-    return "./worlds/" + Global<PropertiesSettings>->getLevelName();
+    try
+    {
+        return "./worlds/" + Global<PropertiesSettings>->getLevelName();
+    }
+    catch (...)
+    {
+        ifstream fin("server.properties");
+        string buf;
+        while (getline(fin, buf))
+        {
+            if (buf.find("level-name=") != string::npos)
+            {
+                if (buf.back() == '\n')  buf.pop_back();
+                if (buf.back() == '\r')  buf.pop_back();
+                return buf.substr(11);
+            }
+        }
+    }
 }
 
-bool BuildAddonList()
+void BuildAddonList()
 {
     string levelPath = GetCurrentLevelPath();
 
     //behavior_packs
     string path = levelPath + "/world_behavior_packs.json";
+
+    //??? TODO
 }
 
 //Helper
@@ -134,17 +153,19 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     }
 
     // copy files
+    string levelPath = GetCurrentLevelPath();
+
     std::error_code ec;
-    filesystem::copy(addonDir, GetCurrentLevelPath() + subPath,
+    filesystem::copy(addonDir, levelPath + subPath,
         filesystem::copy_options::recursive | filesystem::copy_options::overwrite_existing, ec);
 
     // rename directory
     string oldDirName = filesystem::path(addonDir).filename().u8string();
-    string newPath = GetCurrentLevelPath() + subPath + "/" + addonName;
-    filesystem::rename(GetCurrentLevelPath() + subPath + "/" + oldDirName, newPath);
+    string newPath = levelPath + subPath + "/" + addonName;
+    filesystem::rename(levelPath + subPath + "/" + oldDirName, newPath);
 
     // add addon to list file
-    string addonListFile = GetCurrentLevelPath();
+    string addonListFile = levelPath;
     if (addonType == Addon::Type::ResourcePack)
         addonListFile += "/world_resource_packs.json";
     else if (addonType == Addon::Type::BehaviorPack)
@@ -346,11 +367,8 @@ void InitAddonsHelper()
     AutoInstallAddons();
     BuildAddonList();
 
-    if (LL::globalConfig.enableAddonsHelper)
-    {
-        Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
-            AddonsCommand::setup(ev.mCommandRegistry);
-            return true;
-        });
-    }
+    Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
+        AddonsCommand::setup(ev.mCommandRegistry);
+        return true;
+    });
 }

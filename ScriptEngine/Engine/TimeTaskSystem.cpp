@@ -3,6 +3,7 @@
 #include "MessageSystem.h"
 #include <Engine/EngineOwnData.h>
 #include <ScheduleAPI.h>
+#include <Utils/STLHelper.h>
 #include <map>
 #include <vector>
 using namespace std;
@@ -58,6 +59,8 @@ int NewTimeout(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{EngineScope::currentEngine()}, id{timeTaskId}]()
     {
         try {
+            if (timeTaskMap.find(id) == timeTaskMap.end())
+                return;
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
@@ -88,6 +91,8 @@ int NewTimeout(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (timeTaskMap.find(id) == timeTaskMap.end())
+                return;
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
@@ -111,6 +116,8 @@ int NewInterval(Local<Function> func, vector<Local<Value>> paras, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (timeTaskMap.find(id) == timeTaskMap.end())
+                return;
             auto& taskData = timeTaskMap.at(id);
 
             EngineScope scope(engine);
@@ -140,6 +147,8 @@ int NewInterval(Local<String> func, int timeout)
         [engine{ EngineScope::currentEngine() }, id{ timeTaskId }]()
     {
         try {
+            if (timeTaskMap.find(id) == timeTaskMap.end())
+                return;
             auto& taskData = timeTaskMap.at(id);
             EngineScope scope(engine);
             engine->eval(taskData.code.get().toString());
@@ -168,12 +177,12 @@ bool ClearTimeTask(int id)
 
 void LxlRemoveTimeTaskData(ScriptEngine* engine)
 {
-    for (auto& [id, data] : timeTaskMap)
-    {
-        if (data.engine == engine)
+    erase_if(timeTaskMap, [engine](auto& dataPair) {
+        if (dataPair.second.engine == engine)
         {
-            data.task.cancel();
-            timeTaskMap.erase(id);
+            dataPair.second.task.cancel();
+            return true;
         }
-    }
+        return false;
+    });
 }
