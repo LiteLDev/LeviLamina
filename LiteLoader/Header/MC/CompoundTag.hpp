@@ -7,7 +7,12 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CompoundTagVariant.hpp"
-
+enum class SnbtFormat
+{
+    PartialNewLine = 0,
+    AwlayNewLine = 1,
+    Minify = 2,
+};
 #undef BEFORE_EXTRA
 
 class CompoundTag : public Tag {
@@ -61,11 +66,15 @@ public:
     LIAPI static std::unique_ptr<CompoundTag> fromPlayer(Player* player);
     LIAPI static std::unique_ptr<CompoundTag> fromBlockActor(BlockActor* ble);
 
-    LIAPI std::string toSNBT();
+    // To Formatted SNBT
+    LIAPI std::string toSNBT(int indent, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine);
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
+
+    // Deprecated?
+    LIAPI std::string toSNBT();
 
 #undef AFTER_EXTRA
 
