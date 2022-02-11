@@ -749,7 +749,7 @@ string CompoundTag::toBinaryNBT(bool isLittleEndian) {
 #pragma endregion
 
 #pragma region To Formatted SNBT
-
+#include <Utils/StringHelper.h>
 inline void __appendSpace(std::ostringstream& oss, int indent, int level)
 {
     switch (indent * level)
@@ -800,7 +800,7 @@ inline void __appendSNBT(std::ostringstream& oss, EndTag& tag, int indent, int l
 template <>
 inline void __appendSNBT(std::ostringstream& oss, ByteTag& tag, int indent, int level, SnbtFormat snbtFormat)
 {
-    oss << (int)tag.value() << 'b';
+    oss << (int)(signed char)tag.value() << 'b';
 }
 template <>
 inline void __appendSNBT(std::ostringstream& oss, ShortTag& tag, int indent, int level, SnbtFormat snbtFormat)
@@ -834,13 +834,13 @@ inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int indent,
     size_t size = tag.value().size;
     bool first = true;
     std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
-    oss << "[B;";
+    oss << "[B; ";
     for (size_t i = 0; i < size; ++i)
     {
         if (!first)
             oss << separator;
         first = false;
-        oss << (int)val[i];
+        oss << (int)val[i] << 'b';
     }
     oss << ']';
 }
@@ -850,7 +850,7 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
     auto val = tag.value().data.get();
     size_t size = tag.value().size;
     bool first = true;
-    oss << "[I;";
+    oss << "[I; ";
     std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
     for (size_t i = 0; i < size; i += 4)
     {
@@ -865,7 +865,11 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
 template <>
 inline void __appendSNBT(std::ostringstream& oss, StringTag& tag, int indent, int level, SnbtFormat snbtFormat)
 {
-    oss << '"' << tag.value() << '"';
+
+    std::string fixStr = tag.value();
+    ReplaceStr(fixStr, "\\", "\\\\");
+    ReplaceStr(fixStr, "\n", "\\n");
+    oss << '"' << fixStr << '"';
 }
 
 template <>
@@ -956,7 +960,6 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
                 shouldReturn = true;
                 break;
             default:
-                __debugbreak();
                 break;
         }
         first = false;
@@ -979,13 +982,16 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
     {
         if (!first)
             oss << ',';
+        std::string fixKey = key;
+        ReplaceStr(fixKey, "\\", "\\\\");
+        ReplaceStr(fixKey, "\n", "\\n");
         if (snbtFormat == SnbtFormat::Minify)
-            oss << '"' << key << "\":";
-            //oss << key << ":";
+            oss << '"' << fixKey << "\":";
+        //oss << key << ":";
         else
         {
             __appendReturnSpace(oss, indent, level + 1);
-            oss << '"' << key << "\": ";
+            oss << '"' << fixKey << "\": ";
         }
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType())
@@ -1027,7 +1033,6 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
                 __appendSNBT(oss, *tag->asIntArrayTag(), indent, level + 1, snbtFormat);
                 break;
             default:
-                __debugbreak();
                 break;
         }
         first = false;
