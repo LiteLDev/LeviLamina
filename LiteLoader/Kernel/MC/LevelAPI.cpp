@@ -248,38 +248,52 @@ bool Level::executeCommandAs(Player* pl, const string& cmd) {
 
 
 std::vector<Player*> Level::getAllPlayers() {
-    std::vector<Player*> player_list;
-    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
-        Player* player = &sp;
-        player_list.push_back(player);
-        return true;
-    });
-    return player_list;
+    try
+    {
+        std::vector<Player*> player_list;
+        Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+            Player* player = &sp;
+            player_list.push_back(player);
+            return true;
+            });
+        return player_list;
+    }
+    catch (...)
+    {
+        return {};
+    }
 }
 
 std::vector<Actor*> Level::getAllEntities(int dimId) {
-    Level* lv = Global<Level>;
-    Dimension* dim = lv->getDimension(dimId);
-    if (!dim)
-        return {};
-    auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 312); //IDA Dimension::registerEntity
+    try
+    {
+        Level* lv = Global<Level>;
+        Dimension* dim = lv->getDimension(dimId);
+        if (!dim)
+            return {};
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 312); //IDA Dimension::registerEntity
 
-    //Check Valid
-    std::vector<Actor*> result;
-    auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
-    for (auto& i : list) {
-        //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
-        //    Actor*, void*)(&i.second);
-        auto entity = getEntity(i.first);
-        if (!entity)
-            continue;
-        auto lastTick = entity->getLastTick();
-        if (!lastTick)
-            continue;
-        if (currTick - lastTick->t == 0 || currTick - lastTick->t == 1)
-            result.push_back(entity);
+        //Check Valid
+        std::vector<Actor*> result;
+        auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+        for (auto& i : list) {
+            //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
+            //    Actor*, void*)(&i.second);
+            auto entity = getEntity(i.first);
+            if (!entity)
+                continue;
+            auto lastTick = entity->getLastTick();
+            if (!lastTick)
+                continue;
+            if (currTick - lastTick->t == 0 || currTick - lastTick->t == 1)
+                result.push_back(entity);
+        }
+        return result;
     }
-    return result;
+    catch (...)
+    {
+        return {};
+    }
 }
 
 std::vector<Actor*> Level::getAllEntities() {
