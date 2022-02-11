@@ -199,8 +199,13 @@ local nbt = NbtCompound({
 <br>
 
 #### 将 NBT 标签对象 序列化为SNBT
-`comp.toSNBT()`
+`nbt.toSNBT([space])`
 
+- 参数
+  - space : `Integer`  
+    （可选参数）如果要格式化输出的字符串，则传入此参数  
+    代表每个缩进的空格数量，这样生成的字符串更适合人阅读  
+    此参数默认为-1，即不对输出字符串进行格式化
 - 返回值：对应的SNBT字符串
 - 返回值类型：`String`
 
