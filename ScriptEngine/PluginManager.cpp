@@ -20,6 +20,16 @@ using namespace std;
 
 extern void BindAPIs(ScriptEngine* engine);
 
+//Helper
+string RemoveRealAllExtension(string fileName)
+{
+    int pos = fileName.find(".");
+    if (pos == string::npos)
+        return fileName;
+    else
+        return fileName.substr(0, pos);
+}
+
 //加载插件
 bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool mustBeCurrentModule)
 {
@@ -102,7 +112,7 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
         //setData
         ENGINE_OWN_DATA()->pluginName = pluginName;
         ENGINE_OWN_DATA()->pluginFilePath = filePath;
-        ENGINE_OWN_DATA()->logger.title = pluginName;
+        ENGINE_OWN_DATA()->logger.title = RemoveRealAllExtension(pluginName);
 
         //绑定API
         try {
