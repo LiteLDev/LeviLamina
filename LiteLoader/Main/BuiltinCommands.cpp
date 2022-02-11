@@ -240,13 +240,24 @@ void LLHelpCommand(CommandOutput& output)
         "Welcome to our github project to get more information ~");
 }
 
+//Helper
+string RemoveInvalidPartOfPluginName(const string& name)
+{
+    auto pos = name.find(LLSE_COMMAND_FINISHED_SYMBOL);
+    if (pos != string::npos)
+    {
+        return name.substr(0, pos);
+    }
+    return name;
+}
+
 void LLLoadPluginCommand(CommandOutput& output, const string& path)
 {
     if (path.find(LLSE_COMMAND_FINISHED_SYMBOL) != string::npos) //ScriptPlugin & Finished
         output.success();
 
     if (PluginManager::loadPlugin(path, true))
-        output.success("Plugin " + path + " loaded successfully.");
+        output.success("Plugin " + RemoveInvalidPartOfPluginName(path) + " loaded successfully.");
     else
         output.error("Fail to load plugin " + path);
 }
@@ -257,9 +268,9 @@ void LLUnloadPluginCommand(CommandOutput& output, const string& pluginName)
         output.success();
 
     if (PluginManager::unloadPlugin(pluginName, true))
-        output.success("Plugin " + pluginName + " unloaded successfully.");
+        output.success("Plugin " + RemoveInvalidPartOfPluginName(pluginName) + " unloaded successfully.");
     else
-        output.error("Fail to unload plugin " + pluginName);
+        output.error("Fail to unload plugin " + RemoveInvalidPartOfPluginName(pluginName));
 }
 
 void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool reloadAll)
@@ -270,9 +281,9 @@ void LLReloadPluginCommand(CommandOutput& output, const string& pluginName, bool
             output.success();
 
         if (PluginManager::reloadPlugin(pluginName, true))
-            output.success("Plugin " + pluginName + " reloaded successfully.");
+            output.success("Plugin " + RemoveInvalidPartOfPluginName(pluginName) + " reloaded successfully.");
         else
-            output.error("Fail to reload plugin " + pluginName);
+            output.error("Fail to reload plugin " + RemoveInvalidPartOfPluginName(pluginName));
     }
     else
     {

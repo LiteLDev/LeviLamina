@@ -75,7 +75,10 @@ bool PluginManager::loadPlugin(const std::string& filePath, bool isHotLoad, bool
     for (auto plugin : globalShareData->pluginsList)
     {
         if (pluginName == plugin)
-            return true;
+        {
+            logger.error("This plugin has been loaded by LiteLoader. You cannot load it twice.");
+            return false;
+        }
     }
 
     if (!filesystem::exists(filePath))
@@ -209,10 +212,10 @@ bool PluginManager::unloadPlugin(const std::string& name)
             });
 
             logger.info(name + " unloaded.");
-            break;
+            return true;
         }
     }
-    return true;
+    return false;
 }
 
 //重载插件
