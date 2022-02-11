@@ -833,11 +833,12 @@ inline void __appendSNBT(std::ostringstream& oss, ByteArrayTag& tag, int indent,
     auto val = tag.value().data.get();
     size_t size = tag.value().size;
     bool first = true;
+    std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
     oss << "[B;";
     for (size_t i = 0; i < size; ++i)
     {
         if (!first)
-            oss << ', ';
+            oss << separator;
         first = false;
         oss << (int)val[i];
     }
@@ -850,10 +851,11 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
     size_t size = tag.value().size;
     bool first = true;
     oss << "[I;";
+    std::string const& separator = snbtFormat == SnbtFormat::Minify ? "," : ", ";
     for (size_t i = 0; i < size; i += 4)
     {
         if (!first)
-            oss << ', ';
+            oss << separator;
         first = false;
         oss << *(int*)&val[i];
     }
@@ -876,7 +878,7 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
     }
     auto childrenType = tag.getElementType();
     bool first = true;
-    bool shouldReturn = snbtFormat != SnbtFormat::Minify;
+    bool shouldReturn = snbtFormat == SnbtFormat::AlwayNewLine;
     oss << '[';
     for (auto& child : tag)
     {
@@ -889,37 +891,37 @@ inline void __appendSNBT(std::ostringstream& oss, ListTag& tag, int indent, int 
         switch (childrenType)
         {
             case Tag::End:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asEndTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Byte:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asByteTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Short:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asShortTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Int:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asIntTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Int64:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asInt64Tag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Float:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asFloatTag(), indent, level + 1, snbtFormat);
                 break;
             case Tag::Double:
-                if (snbtFormat == SnbtFormat::AwlayNewLine)
+                if (snbtFormat == SnbtFormat::AlwayNewLine)
                     __appendReturnSpace(oss, indent, level + 1);
                 __appendSNBT(oss, *child->asDoubleTag(), indent, level + 1, snbtFormat);
                 break;
@@ -978,7 +980,8 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
         if (!first)
             oss << ',';
         if (snbtFormat == SnbtFormat::Minify)
-            oss << key << ":";
+            oss << '"' << key << "\":";
+            //oss << key << ":";
         else
         {
             __appendReturnSpace(oss, indent, level + 1);

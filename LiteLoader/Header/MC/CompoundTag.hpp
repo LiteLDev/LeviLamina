@@ -10,7 +10,7 @@
 enum class SnbtFormat
 {
     PartialNewLine = 0,
-    AwlayNewLine = 1,
+    AlwayNewLine = 1,
     Minify = 2,
 };
 #undef BEFORE_EXTRA
