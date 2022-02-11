@@ -46,8 +46,12 @@ bool Actor::isSimulatedPlayer() const {
 bool Actor::isPlayer() const {
     if (!this)
         return false;
-    static const auto vtbl = dlsym("??_7ServerPlayer@@6B@");
-    return *(void**)this == vtbl || isSimulatedPlayer();
+    try
+    {
+        static const auto vtbl = dlsym("??_7ServerPlayer@@6B@");
+        return *(void**)this == vtbl || isSimulatedPlayer();
+    }
+    catch (...) { return false; }
 }
 
 bool Actor::isItemActor() const {

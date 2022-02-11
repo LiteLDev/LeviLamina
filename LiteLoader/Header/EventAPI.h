@@ -119,6 +119,14 @@ public:
 
     bool call() { return EventManager<EVENT>::call(*(EVENT*)this); }
     bool callToPlugin(std::string pluginName) { return EventManager<EVENT>::callToPlugin(pluginName, *(EVENT*)this); }
+
+
+    ////////////////////// For compatibility DO NOT UPDATE //////////////////////
+protected:
+    friend class EventManager<EVENT>;
+    LIAPI static std::list<std::pair<string, std::function<bool(const EVENT&)>>> listeners;
+    LIAPI static std::list<std::pair<string, std::function<bool(EVENT&)>>> listenersNoConst;
+    ////////////////////// For compatibility DO NOT UPDATE //////////////////////
 };
 
 

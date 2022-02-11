@@ -120,7 +120,8 @@ bool EventManager<EVENT>::call(EVENT& ev)
     {
         try {
             bool res = i->isRef ? i->callbackRef(ev) : i->callback(ev);
-            if (!res) passToBDS = false;
+            if (!res)
+                passToBDS = false;
         }
         catch (const seh_exception& e)
         {
@@ -135,6 +136,28 @@ bool EventManager<EVENT>::call(EVENT& ev)
             OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), i->pluginName);
         }
     }
+
+
+    ///////////////////////////////////// For compatibility DO NOT UPDATE /////////////////////////////////////
+    auto iNoConst = ev.listenersNoConst.begin();
+    try { for (; iNoConst != ev.listenersNoConst.end(); ++iNoConst) if (!iNoConst->second(ev)) passToBDS = false;}
+    catch (const seh_exception& e)
+    { OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), iNoConst->first); }
+    catch (const std::exception& e)
+    { OutputError("Uncaught Exception Detected! ", -1, e.what(), typeid(EVENT).name(), iNoConst->first); }
+    catch (...)
+    { OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), iNoConst->first); }
+    ///////////////////////////////////// For compatibility DO NOT UPDATE /////////////////////////////////////
+    auto i = ev.listeners.begin();
+    try { for (; i != ev.listeners.end(); ++i) if (!i->second(ev)) passToBDS = false; }
+    catch (const seh_exception& e)
+    { OutputError("Uncaught SEH Exception Detected!", e.code(), e.what(), typeid(EVENT).name(), i->first); }
+    catch (const std::exception& e)
+    { OutputError("Uncaught Exception Detected! ", -1, e.what(), typeid(EVENT).name(), i->first); }
+    catch (...)
+    { OutputError("Uncaught Exception Detected!", -1, "", typeid(EVENT).name(), i->first); }
+    ///////////////////////////////////// For compatibility DO NOT UPDATE /////////////////////////////////////
+
     return passToBDS;
 }
 
@@ -169,75 +192,80 @@ bool EventManager<EVENT>::callToPlugin(std::string pluginName, EVENT& ev)
 
 /////////////////////////////// Event Declare /////////////////////////////// 
 
-template class EventManager<PlayerPreJoinEvent>;
-template class EventManager<PlayerPreJoinEvent>;
-template class EventManager<PlayerJoinEvent>;
-template class EventManager<PlayerLeftEvent>;
-template class EventManager<PlayerRespawnEvent>;
-template class EventManager<PlayerChatEvent>;
-template class EventManager<PlayerUseItemEvent>;
-template class EventManager<PlayerUseItemOnEvent>;
-template class EventManager<PlayerChangeDimEvent>;
-template class EventManager<PlayerJumpEvent>;
-template class EventManager<EntityTransformEvent>;
-template class EventManager<PlayerSneakEvent>;
-template class EventManager<PlayerAttackEvent>;
-template class EventManager<PlayerAttackBlockEvent>;
-template class EventManager<PlayerDieEvent>;
-template class EventManager<PlayerPickupItemEvent>;
-template class EventManager<PlayerDropItemEvent>;
-template class EventManager<PlayerEatEvent>;
-template class EventManager<PlayerConsumeTotemEvent>;
-template class EventManager<PlayerCmdEvent>;
-template class EventManager<PlayerDestroyBlockEvent>;
-template class EventManager<PlayerPlaceBlockEvent>;
-template class EventManager<PlayerEffectChangedEvent>;
-template class EventManager<PlayerStartDestroyBlockEvent>;
-template class EventManager<PlayerOpenContainerEvent>;
-template class EventManager<PlayerCloseContainerEvent>;
-template class EventManager<PlayerInventoryChangeEvent>;
-template class EventManager<PlayerMoveEvent>;
-template class EventManager<PlayerSprintEvent>;
-template class EventManager<PlayerSetArmorEvent>;
-template class EventManager<PlayerUseRespawnAnchorEvent>;
-template class EventManager<PlayerOpenContainerScreenEvent>;
-template class EventManager<PlayerUseFrameBlockEvent>;
-template class EventManager<PlayerExperienceAddEvent>;
-template class EventManager<MobHurtEvent>;
-template class EventManager<MobDieEvent>;
-template class EventManager<EntityExplodeEvent>;
-template class EventManager<ProjectileHitEntityEvent>;
-template class EventManager<WitherBossDestroyEvent>;
-template class EventManager<EntityRideEvent>;
-template class EventManager<EntityStepOnPressurePlateEvent>;
-template class EventManager<NpcCmdEvent>;
-template class EventManager<ProjectileSpawnEvent>;
-template class EventManager<ProjectileCreatedEvent>;
-template class EventManager<ItemUseOnActorEvent>;
-template class EventManager<BlockInteractedEvent>;
-template class EventManager<ArmorStandChangeEvent>;
-template class EventManager<BlockExplodeEvent>;
-template class EventManager<ContainerChangeEvent>;
-template class EventManager<PistonPushEvent>;
-template class EventManager<PistonTryPushEvent>;
-template class EventManager<RedStoneUpdateEvent>;
-template class EventManager<BlockExplodedEvent>;
-template class EventManager<LiquidSpreadEvent>;
-template class EventManager<ProjectileHitBlockEvent>;
-template class EventManager<HopperSearchItemEvent>;
-template class EventManager<HopperPushOutEvent>;
-template class EventManager<BlockChangedEvent>;
-template class EventManager<FarmLandDecayEvent>;
-template class EventManager<FireSpreadEvent>;
-template class EventManager<CmdBlockExecuteEvent>;
-template class EventManager<ConsoleCmdEvent>;
-template class EventManager<PlayerScoreChangedEvent>;
-template class EventManager<ConsoleOutputEvent>;
-template class EventManager<PostInitEvent>;
-template class EventManager<ServerStartedEvent>;
-template class EventManager<ServerStoppedEvent>;
-template class EventManager<RegCmdEvent>;
-template class EventManager<PlayerBedEnterEvent>;
+#define DECLARE_EVENT_DATA(EVENT) \
+    template class EventManager<EVENT>; \
+    /*********************** For Compatibility ***********************/ \
+    std::list<std::pair<string, std::function<bool(const EVENT&)>>> EventTemplate<EVENT>::listeners; \
+    std::list<std::pair<string, std::function<bool(EVENT&)>>> EventTemplate<EVENT>::listenersNoConst;
+
+DECLARE_EVENT_DATA(PlayerPreJoinEvent);
+DECLARE_EVENT_DATA(PlayerJoinEvent);
+DECLARE_EVENT_DATA(PlayerLeftEvent);
+DECLARE_EVENT_DATA(PlayerRespawnEvent);
+DECLARE_EVENT_DATA(PlayerChatEvent);
+DECLARE_EVENT_DATA(PlayerUseItemEvent);
+DECLARE_EVENT_DATA(PlayerUseItemOnEvent);
+DECLARE_EVENT_DATA(PlayerChangeDimEvent);
+DECLARE_EVENT_DATA(PlayerJumpEvent);
+DECLARE_EVENT_DATA(EntityTransformEvent);
+DECLARE_EVENT_DATA(PlayerSneakEvent);
+DECLARE_EVENT_DATA(PlayerAttackEvent);
+DECLARE_EVENT_DATA(PlayerAttackBlockEvent);
+DECLARE_EVENT_DATA(PlayerDieEvent);
+DECLARE_EVENT_DATA(PlayerPickupItemEvent);
+DECLARE_EVENT_DATA(PlayerDropItemEvent);
+DECLARE_EVENT_DATA(PlayerEatEvent);
+DECLARE_EVENT_DATA(PlayerConsumeTotemEvent);
+DECLARE_EVENT_DATA(PlayerCmdEvent);
+DECLARE_EVENT_DATA(PlayerDestroyBlockEvent);
+DECLARE_EVENT_DATA(PlayerPlaceBlockEvent);
+DECLARE_EVENT_DATA(PlayerEffectChangedEvent);
+DECLARE_EVENT_DATA(PlayerStartDestroyBlockEvent);
+DECLARE_EVENT_DATA(PlayerOpenContainerEvent);
+DECLARE_EVENT_DATA(PlayerCloseContainerEvent);
+DECLARE_EVENT_DATA(PlayerInventoryChangeEvent);
+DECLARE_EVENT_DATA(PlayerMoveEvent);
+DECLARE_EVENT_DATA(PlayerSprintEvent);
+DECLARE_EVENT_DATA(PlayerSetArmorEvent);
+DECLARE_EVENT_DATA(PlayerUseRespawnAnchorEvent);
+DECLARE_EVENT_DATA(PlayerOpenContainerScreenEvent);
+DECLARE_EVENT_DATA(PlayerUseFrameBlockEvent);
+DECLARE_EVENT_DATA(PlayerExperienceAddEvent);
+DECLARE_EVENT_DATA(MobHurtEvent);
+DECLARE_EVENT_DATA(MobDieEvent);
+DECLARE_EVENT_DATA(EntityExplodeEvent);
+DECLARE_EVENT_DATA(ProjectileHitEntityEvent);
+DECLARE_EVENT_DATA(WitherBossDestroyEvent);
+DECLARE_EVENT_DATA(EntityRideEvent);
+DECLARE_EVENT_DATA(EntityStepOnPressurePlateEvent);
+DECLARE_EVENT_DATA(NpcCmdEvent);
+DECLARE_EVENT_DATA(ProjectileSpawnEvent);
+DECLARE_EVENT_DATA(ProjectileCreatedEvent);
+DECLARE_EVENT_DATA(ItemUseOnActorEvent);
+DECLARE_EVENT_DATA(BlockInteractedEvent);
+DECLARE_EVENT_DATA(ArmorStandChangeEvent);
+DECLARE_EVENT_DATA(BlockExplodeEvent);
+DECLARE_EVENT_DATA(ContainerChangeEvent);
+DECLARE_EVENT_DATA(PistonPushEvent);
+DECLARE_EVENT_DATA(PistonTryPushEvent);
+DECLARE_EVENT_DATA(RedStoneUpdateEvent);
+DECLARE_EVENT_DATA(BlockExplodedEvent);
+DECLARE_EVENT_DATA(LiquidSpreadEvent);
+DECLARE_EVENT_DATA(ProjectileHitBlockEvent);
+DECLARE_EVENT_DATA(HopperSearchItemEvent);
+DECLARE_EVENT_DATA(HopperPushOutEvent);
+DECLARE_EVENT_DATA(BlockChangedEvent);
+DECLARE_EVENT_DATA(FarmLandDecayEvent);
+DECLARE_EVENT_DATA(FireSpreadEvent);
+DECLARE_EVENT_DATA(CmdBlockExecuteEvent);
+DECLARE_EVENT_DATA(ConsoleCmdEvent);
+DECLARE_EVENT_DATA(PlayerScoreChangedEvent);
+DECLARE_EVENT_DATA(ConsoleOutputEvent);
+DECLARE_EVENT_DATA(PostInitEvent);
+DECLARE_EVENT_DATA(ServerStartedEvent);
+DECLARE_EVENT_DATA(ServerStoppedEvent);
+DECLARE_EVENT_DATA(RegCmdEvent);
+DECLARE_EVENT_DATA(PlayerBedEnterEvent);
 
 
 #ifdef ENABLE_SEH_PROTECTION

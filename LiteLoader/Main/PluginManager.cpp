@@ -101,6 +101,9 @@ LL::Plugin* LL::PluginManager::getPlugin(std::string name, bool includeScriptPlu
 }
 
 LL::Plugin* LL::PluginManager::getPlugin(HMODULE handler) {
+    if (!handler)
+        return nullptr;
+
     for (auto& it : plugins) {
         if (it.second.handler == handler) {
             return &it.second;

@@ -300,6 +300,9 @@
     <ClCompile Include="Kernel\AllowListAPI.cpp">
       <Filter>Kernel</Filter>
     </ClCompile>
+    <ClCompile Include="Kernel\Compatibility.cpp">
+      <Filter>Kernel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
