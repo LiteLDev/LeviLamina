@@ -271,7 +271,7 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
         Dimension* dim = lv->getDimension(dimId);
         if (!dim)
             return {};
-        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 312); //IDA Dimension::registerEntity
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); //IDA Dimension::registerEntity
 
         //Check Valid
         std::vector<Actor*> result;
