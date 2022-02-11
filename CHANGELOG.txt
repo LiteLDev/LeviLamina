@@ -1,4 +1,33 @@
-- Fixed Player is dropping items while sleeping(causing server lag)
-- Added Changable Event Api
-- Remove Logger's lock 
-- Fix bool type CommandParameterData
+[LiteLoader Release Note] 
+LiteLoaderBDS-2.1.0 update has been released, adapted to BDS-1.18.11
+This update has a lot of changes, please overwrite and install them all!
+Incomplete installation will cause problems with the loader's subsequent work, please be sure to pay attention to it!
+[Major Changes]
+LiteXLoader loader is merged into LiteLoaderBDS project, collectively called LiteLoaderBDS(LL) loader, LXL becomes a submodule of LL.
+The LL loader will continue to be updated as a common loader for C++, Go, Js, Lua and other languages
+All previous LXL plugins will continue to run normally under the new LL version, and all existing APIs will remain unchanged.
+[Adaptation to new version
+- Adapt to the new version of BDS 1.18.11 server, please make sure to install the update completely.
+[New features]
+- Better looking console: modified the appearance of BDS console log output, making the whole more beautiful and intuitive
+- Detect if the same BDS is run repeatedly, if it appears, then prompt whether to kill the process, to avoid problems caused by port conflicts
+- Cooperate with the server side allowlist update, automatically carry the whitelist to the allowlist file
+- Disable BDS from forcing port 19132 by default to avoid a series of problems caused by it.
+- Added ProjectileCreatedEvent and PlayerBedEnterEvent events.
+- Added a new FormUI form interface and provided sample documentation
+- Added ll series of addon management commands, execute help ll in the background to check the related usage.
+- Added a convenient addon installer: place the addon package in the plugins/AddonHelper/ directory, and the addon will be automatically installed in the current archive when the service is opened.
+- Added a new allowlist api, which is convenient to handle whitelist in the code.
+- Added several configuration settings to the configuration file, please refer to the documentation of the documentation station for details.
+- Added stack trace information to the exception log to easily track issues
+- Rewrote SNBT output to improve formatting performance by several times
+[Bug fixes]
+- Fixed the issue that scripting engine could not work in wine
+- Fix a bug caused by bed
+- Fix several events such as ProjectileSpawnEvent, NpcCmd, etc.
+- Fix all the enumeration types in the header file
+- Fix several interfaces such as getAllEntities, getEnderChestContainer, etc.
+- Fix the bug that can be moved abnormally through the data package
+- Fix the bug that mobhurt and mobdie events are not traced correctly.
+- Rewrite the RPC communication system in the scripting engine to completely solve the packet loss problem.
+- A lot of other minor fixes and finishing
