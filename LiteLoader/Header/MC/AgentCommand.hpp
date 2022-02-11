@@ -32,10 +32,11 @@ protected:
 private:
     MCAPI void createAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void createAgentOutputSuccess(class CommandOutput&, bool) const;
+    MCAPI void directionCommand(class CommandOrigin const&, class CommandOutput&) const;
+    MCAPI void getPosition(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void reportSuccess(bool, class CommandOutput&) const;
-    MCAPI bool runAgentCommand(class CommandOrigin const&, class CommandOutput&, class std::function<std::unique_ptr<class AgentCommands::Command> (class Player& )>) const;
     MCAPI void setAgentOwner(class Agent&, class Player&) const;
+    MCAPI void setItem(class CommandOrigin const&, class CommandOutput&) const;
     MCAPI void tpAgent(class Player&, class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static bool validateRange(class Agent*, class CommandOrigin const&, class CommandOutput&);
 
 };

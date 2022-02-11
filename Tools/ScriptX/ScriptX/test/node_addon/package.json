@@ -1,0 +1,13 @@
+{
+  "name": "scriptx-node-addon",
+  "version": "0.1.0",
+  "description": "Demo for using ScriptX to create node.js addon.",
+  "main": "hello.js",
+  "private": true,
+  "dependencies": {
+  },
+  "scripts": {
+    "install": "cmake-js compile",
+    "test": "cmake-js compile && node hello.js"
+  }
+}

@@ -26,15 +26,10 @@ public:
 public:
     /*0*/ virtual ~ShulkerBoxRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
-    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*4*/ virtual bool isShapeless() const;
-    /*5*/ virtual class mce::UUID const& getId() const;
-    /*6*/ virtual class ItemPack const& getItemPack() const;
-    /*7*/ virtual bool isMultiRecipe() const;
-    /*8*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
-    /*9*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
-    /*10*/ virtual void loadResultList(class BlockPalette const&) const;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*10*/ virtual bool isMultiRecipe() const;
+    /*12*/ virtual bool itemsMatch(class ItemDescriptor const&, class ItemDescriptor const&) const;
+    /*14*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     MCAPI ShulkerBoxRecipe(class gsl::basic_string_span<char const, -1>, std::vector<class RecipeIngredient> const&, std::vector<class ItemInstance> const&, class HashedString, int, class mce::UUID const*);
     MCAPI static class mce::UUID const ID;
 

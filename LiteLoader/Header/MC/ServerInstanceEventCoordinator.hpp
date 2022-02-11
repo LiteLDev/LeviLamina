@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~ServerInstanceEventCoordinator();
     MCAPI void registerServerInstanceEventHandler(std::unique_ptr<class ServerInstanceEventHandler>&&);
-    MCAPI void sendLeaveGameDone(struct ServerInstanceEvent const&);
+    MCAPI void sendEvent(class EventRef<struct ServerInstanceGameplayEvent<void> > const&);
     MCAPI void sendServerInitializeEnd(class ServerInstance&);
     MCAPI void sendServerInitializeStart(class ServerInstance&);
     MCAPI void sendServerLevelInitialized(class ServerInstance&, class Level&);

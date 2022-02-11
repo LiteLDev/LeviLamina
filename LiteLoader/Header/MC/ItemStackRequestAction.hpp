@@ -12,7 +12,11 @@ class ItemStackRequestAction {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    static inline std::unordered_map<enum ItemStackRequestActionType, std::string> const& getActionTypeMap()
+    {
+        return actionTypeMap.mMap1;
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ITEMSTACKREQUESTACTION
@@ -24,10 +28,22 @@ public:
 
 public:
     /*0*/ virtual ~ItemStackRequestAction();
-    /*1*/ virtual class ItemStackRequestActionCraftBase const* getCraftAction() const;
-    /*2*/ virtual int getFilteredStringIndex() const;
-    /*3*/ virtual void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette&, bool);
     /*
+    inline class ItemStackRequestActionCraftBase const* getCraftAction() const{
+        class ItemStackRequestActionCraftBase const* (ItemStackRequestAction::*rv)() const;
+        *((void**)&rv) = dlsym("?getCraftAction@ItemStackRequestAction@@UEBAPEBVItemStackRequestActionCraftBase@@XZ");
+        return (this->*rv)();
+    }
+    inline void postLoadItems_DEPRECATEDASKTYLAING(class BlockPalette& a0, bool a1){
+        void (ItemStackRequestAction::*rv)(class BlockPalette&, bool);
+        *((void**)&rv) = dlsym("?postLoadItems_DEPRECATEDASKTYLAING@ItemStackRequestAction@@UEAAXAEAVBlockPalette@@_N@Z");
+        return (this->*rv)(std::forward<class BlockPalette&>(a0), std::forward<bool>(a1));
+    }
+    inline int getFilteredStringIndex() const{
+        int (ItemStackRequestAction::*rv)() const;
+        *((void**)&rv) = dlsym("?getFilteredStringIndex@ItemStackRequestAction@@UEBAHXZ");
+        return (this->*rv)();
+    }
     inline  ~ItemStackRequestAction(){
          (ItemStackRequestAction::*rv)();
         *((void**)&rv) = dlsym("??1ItemStackRequestAction@@UEAA@XZ");

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
 #define BEFORE_EXTRA
@@ -26,7 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~MovementScriptActorComponent();
-    /*1*/ virtual class Scripting::Result<float> getMaxTurn() const;
+    /*4*/ virtual class Scripting::Result<float> getMaxTurn() const;
 
 protected:
 

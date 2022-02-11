@@ -27,12 +27,8 @@ public:
     /*0*/ virtual ~DefendVillageTargetGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool isTargetGoal() const;
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
-    /*6*/ virtual void appendDebugInfo(std::string&) const;
-    /*7*/ virtual void __unk_vfn_0();
-    /*8*/ virtual void __unk_vfn_1();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
     MCAPI DefendVillageTargetGoal(class Mob&);
 
 protected:

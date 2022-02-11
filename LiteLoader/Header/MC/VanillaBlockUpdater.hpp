@@ -39,6 +39,7 @@ private:
     MCAPI static void addUpdaters_1_15_0(class CompoundTagUpdaterContext&);
     MCAPI static void addUpdaters_1_16_0(class CompoundTagUpdaterContext&);
     MCAPI static void addUpdaters_1_16_210(class CompoundTagUpdaterContext&);
+    MCAPI static void addUpdaters_1_18_10(class CompoundTagUpdaterContext&);
     MCAPI static std::unique_ptr<class CompoundTagUpdaterContext> mContext;
 
 };

@@ -26,15 +26,20 @@ public:
     /*0*/ virtual ~CraftHandlerCrafting();
     /*1*/ virtual enum ItemStackNetResult handleConsumedItem(enum ContainerEnumName, unsigned char, class ItemStack const&);
     /*2*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
+    /*
+    inline class Recipes const* _getLevelRecipes() const{
+        class Recipes const* (CraftHandlerCrafting::*rv)() const;
+        *((void**)&rv) = dlsym("?_getLevelRecipes@CraftHandlerCrafting@@EEBAPEBVRecipes@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 
 private:
     MCAPI enum ItemStackNetResult _handleAutoCraft(class ItemStackRequestActionCraftRecipeAuto const&);
-    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 10> const&);
+    MCAPI enum ItemStackNetResult _handleCraftOutput(class ItemStackRequestActionCraft<class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0>, 12> const&);
 
 };

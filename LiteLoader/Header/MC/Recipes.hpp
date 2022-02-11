@@ -66,7 +66,7 @@ public:
     MCAPI static std::vector<std::string> Shape(std::string const&, std::string const&, std::string const&);
 
 protected:
-    MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance>);
+    MCAPI void _loadDataDrivenRecipes(std::vector<class PackInstance> const&);
     MCAPI static struct Recipes::NormalizedRectangularRecipeResults _normalizeRectangularRecipe(std::vector<std::string> const&);
 
 private:

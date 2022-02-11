@@ -25,13 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ChestContainerManagerModel();
-    /*1*/ virtual enum ContainerID getContainerId() const;
-    /*2*/ virtual void setContainerId(enum ContainerID);
-    /*3*/ virtual enum ContainerType getContainerType() const;
-    /*4*/ virtual void setContainerType(enum ContainerType);
-    /*5*/ virtual void setData(int, int);
-    /*6*/ virtual bool isValid(float);
-    /*7*/ virtual class ContainerScreenContext _postInit();
+    /*15*/ virtual bool isValid(float);
+    /*16*/ virtual class ContainerScreenContext _postInit();
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&, enum BlockActorType);
     MCAPI ChestContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID);
 

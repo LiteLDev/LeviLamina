@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerDestroyBlockEvent {
+class PlayerDestroyBlockEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerDestroyBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERDESTROYBLOCKEVENT
 public:
-    struct PlayerDestroyBlockEvent& operator=(struct PlayerDestroyBlockEvent const&) = delete;
-    PlayerDestroyBlockEvent(struct PlayerDestroyBlockEvent const&) = delete;
+    class PlayerDestroyBlockEvent& operator=(class PlayerDestroyBlockEvent const&) = delete;
+    PlayerDestroyBlockEvent(class PlayerDestroyBlockEvent const&) = delete;
     PlayerDestroyBlockEvent() = delete;
 #endif
 

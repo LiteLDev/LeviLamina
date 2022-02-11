@@ -26,9 +26,9 @@ public:
 
 public:
     /*0*/ virtual ~ArrowEffectSubcomponent();
-    /*1*/ virtual void writetoJSON(class Json::Value&) const;
-    /*2*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
-    /*3*/ virtual char const* getName();
+    /*2*/ virtual void writetoJSON(class Json::Value&) const;
+    /*3*/ virtual void doOnHitEffect(class Actor&, class ProjectileComponent&);
+    /*4*/ virtual char const* getName();
 
 protected:
 

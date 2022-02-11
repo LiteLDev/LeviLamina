@@ -25,13 +25,13 @@ public:
 
 public:
     /*0*/ virtual ~BigEndianStringByteInput();
-    /*1*/ virtual float readFloat();
-    /*2*/ virtual double readDouble();
-    /*3*/ virtual short readShort();
-    /*4*/ virtual int readInt();
-    /*5*/ virtual __int64 readLongLong();
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual bool readBigEndianBytes(void*, unsigned __int64);
+    /*3*/ virtual float readFloat();
+    /*4*/ virtual double readDouble();
+    /*6*/ virtual short readShort();
+    /*7*/ virtual int readInt();
+    /*8*/ virtual __int64 readLongLong();
+    /*9*/ virtual void __unk_vfn_9();
+    /*11*/ virtual bool readBigEndianBytes(void*, unsigned __int64);
     /*
     inline  ~BigEndianStringByteInput(){
          (BigEndianStringByteInput::*rv)();

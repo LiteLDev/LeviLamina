@@ -26,7 +26,7 @@ public:
     /*0*/ virtual ~ScreenHandlerBeacon();
     /*1*/ virtual enum ItemStackNetResult handleAction(class ItemStackRequestAction const&);
     /*2*/ virtual enum ItemStackNetResult endRequest();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void postRequest(bool);
 
 protected:

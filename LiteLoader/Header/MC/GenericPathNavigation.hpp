@@ -28,9 +28,8 @@ public:
     /*1*/ virtual void initializeInternal(class Mob&, struct NavigationDescription*);
     /*2*/ virtual void tick(class NavigationComponent&, class Mob&);
     /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
-    /*4*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*5*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    /*6*/ virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
 
 protected:
 

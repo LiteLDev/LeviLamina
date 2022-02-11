@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -20,7 +19,6 @@ class ScriptBlockInventoryComponent : public ScriptObject {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKINVENTORYCOMPONENT
 public:
     class ScriptBlockInventoryComponent& operator=(class ScriptBlockInventoryComponent const&) = delete;
-    ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const&) = delete;
     ScriptBlockInventoryComponent() = delete;
 #endif
 
@@ -34,6 +32,7 @@ public:
     }
     */
     MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent&&);
+    MCAPI ScriptBlockInventoryComponent(class ScriptBlockInventoryComponent const&);
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockInventoryComponentContainer> > getOrCreateContainer();
     MCAPI class ScriptBlockInventoryComponent& operator=(class ScriptBlockInventoryComponent&&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponent> bind(struct Scripting::Version);

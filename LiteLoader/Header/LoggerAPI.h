@@ -39,6 +39,7 @@
 #include "Utils/WinHelper.h"
 #include "Utils/FileHelper.h"
 #include "Utils/PluginOwnData.h"
+#include "Utils/StringHelper.h"
 #include <string>
 #include <sstream>
 #include <iostream>
@@ -52,7 +53,7 @@ using std::string;
 #define LOGGER_CURRENT_LOCK "ll_plugin_logger_lock"
 
 template<bool B, class T = void>
-using enable_if_t = typename std::enable_if<B, T>::type;
+using enable_if_type = typename std::enable_if<B, T>::type;
 
 HMODULE GetCurrentModule();
 
@@ -96,13 +97,36 @@ public:
         }
 
         template <>
+        OutputStream& operator<<(std::wstring wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
+            return *this;
+        }
+        template <>
+        OutputStream& operator<<(const wchar_t* wstr)
+        {
+            if (!locked)
+            {
+                lock();
+                locked = true;
+            }
+            os << wstr2str(wstr);
+            return *this;
+        }
+
+        template <>
         OutputStream& operator<<(void (*t)(OutputStream&))
         {
             t(*this);
             return *this;
         }
 
-        template <typename S, typename... Args, enable_if_t<(fmt::v8::detail::is_string<S>::value), int> = 0>
+        template <typename S, typename... Args, enable_if_type<(fmt::v8::detail::is_string<S>::value), int> = 0>
         void operator()(const S& formatStr, const Args&... args)
         {
             if constexpr (0 == sizeof...(args))

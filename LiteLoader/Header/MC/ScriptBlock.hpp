@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -36,12 +35,14 @@ public:
     MCAPI ScriptBlock(class ScriptBlock&&);
     MCAPI ScriptBlock(class BlockSource&, class BlockPos, class Scripting::WeakLifetimeScope const&);
     MCAPI class Scripting::Result<class Scripting::StrongObjectHandle> getComponent(std::string const&);
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptDimension> getDimension() const;
+    MCAPI std::string getId() const;
+    MCAPI class Scripting::StrongTypedObjectHandle<class BlockPos> getLocation() const;
+    MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> getPermutation() const;
     MCAPI std::vector<std::string> getTags() const;
     MCAPI class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getType() const;
     MCAPI bool hasTag(std::string const&) const;
     MCAPI class ScriptBlock& operator=(class ScriptBlock&&);
-    MCAPI void setPermutation(class ScriptBlockPermutation const&);
-    MCAPI void setType(class ScriptBlockType const&);
     MCAPI class Scripting::Result<void> setWaterlogged(bool);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlock> bind(struct Scripting::Version);
 

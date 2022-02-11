@@ -39,7 +39,8 @@ enum class OriginType : char {
     Actor = 8,
     Virtual = 9,
     GameArgument = 10,
-    ActorServer = 11
+    ActorServer = 11,
+    ExecuteContext = 15,
 };
 
 struct CommandFlag {

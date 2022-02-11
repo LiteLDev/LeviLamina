@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
 #define BEFORE_EXTRA
@@ -26,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptFlyingSpeedComponent();
-    /*1*/ virtual class Scripting::Result<float> getValue() const;
-    /*2*/ virtual class Scripting::Result<void> setValue(float const&) const;
+    /*4*/ virtual class Scripting::Result<float> getValue() const;
+    /*5*/ virtual class Scripting::Result<void> setValue(float const&) const;
     /*
     inline  ~ScriptFlyingSpeedComponent(){
          (ScriptFlyingSpeedComponent::*rv)();

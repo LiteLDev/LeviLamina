@@ -40,9 +40,9 @@ public:
         *((void**)&rv) = dlsym("?isDedicatedServer@DedicatedServer@@EEBA_NXZ");
         return (this->*rv)();
     }
-    inline class Automation::AutomationClient& getAutomationClient() const{
-        class Automation::AutomationClient& (DedicatedServer::*rv)() const;
-        *((void**)&rv) = dlsym("?getAutomationClient@DedicatedServer@@EEBAAEAVAutomationClient@Automation@@XZ");
+    inline class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> > getAutomationClient() const{
+        class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> > (DedicatedServer::*rv)() const;
+        *((void**)&rv) = dlsym("?getAutomationClient@DedicatedServer@@EEBA?AV?$not_null@V?$NonOwnerPointer@VAutomationClient@Automation@@@Bedrock@@@gsl@@XZ");
         return (this->*rv)();
     }
     inline class IGameModuleShared& getGameModule(){

@@ -24,24 +24,19 @@ public:
 
 public:
     /*0*/ virtual ~PistonConsumer();
-    /*1*/ virtual int getStrength() const;
-    /*2*/ virtual int getDirection() const;
-    /*3*/ virtual void setStrength(int);
-    /*4*/ virtual void setDirection(unsigned char);
-    /*5*/ virtual bool canConsumePowerAnyDirection() const;
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual bool canStopPower() const;
-    /*8*/ virtual void setStopPower(bool);
-    /*9*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
-    /*10*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
-    /*11*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
-    /*12*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
-    /*13*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual bool isHalfPulse() const;
-    /*16*/ virtual void __unk_vfn_2();
-    /*17*/ virtual bool isSecondaryPowered() const;
-    /*18*/ virtual enum CircuitComponentType getCircuitComponentType() const;
+    /*6*/ virtual bool canConsumePowerAnyDirection() const;
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual bool canStopPower() const;
+    /*9*/ virtual void setStopPower(bool);
+    /*11*/ virtual bool addSource(class CircuitSceneGraph&, class CircuitTrackingInfo const&, int&, bool&);
+    /*12*/ virtual bool allowConnection(class CircuitSceneGraph&, class CircuitTrackingInfo const&, bool&);
+    /*13*/ virtual void checkLock(class CircuitSystem&, class BlockPos const&);
+    /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
+    /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*20*/ virtual void __unk_vfn_20();
+    /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     MCAPI PistonConsumer();
     MCAPI void setBlockPowerFace(unsigned char);
 

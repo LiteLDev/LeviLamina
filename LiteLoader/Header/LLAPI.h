@@ -1,61 +1,82 @@
 ﻿#pragma once
+#pragma warning(disable:26812)
 #include <string>
 #include <unordered_map>
+
 #ifndef WIN32_LEAN_AND_MEAN
 #define WIN32_LEAN_AND_MEAN
 #endif // ! WIN32_LEAN_AND_MEAN
 #include <Windows.h>
+
 #include "Global.h"
 #include "Utils/WinHelper.h"
 #include "Utils/PluginOwnData.h"
 #include "LoggerAPI.h"
 
 // LL types
-namespace LL {
+namespace LL
+{
 
-    struct Version
+struct Version
+{
+    enum Status
     {
-        enum Status { Dev, Beta, Release };
-
-        int major;
-        int minor;
-        int revision;
-        Status status;
-
-        LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
-
-        LIAPI bool operator<(Version b);
-        LIAPI bool operator==(Version b);
-
-        LIAPI std::string toString(bool needStatus = false);
-        LIAPI static Version parse(const std::string& str);
+        Dev, Beta, Release
     };
 
-    struct Plugin
-    {
-        //std::string id;
-        std::string name;
-        std::string introduction;
-        Version version;
-        std::map<std::string, std::string> otherInformation;
+    int major;
+    int minor;
+    int revision;
+    Status status;
 
-        std::string filePath;
-        HMODULE handler;
+    LIAPI explicit Version(int major = 0, int minor = 0, int revision = 0, Status status = Status::Release);
 
-        // Call a Function by Symbol String
-        template<typename ReturnType = void, typename... Args>
-        inline ReturnType callFunction(const char* functionName, Args... args) {
-            void* address = GetProcAddress(handler, functionName);
-            if (!address)
-                return ReturnType();
-            return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
-        }
-    };
+    LIAPI bool operator<(Version b);
+    LIAPI bool operator==(Version b);
 
+    LIAPI std::string toString(bool needStatus = false);
+    LIAPI static Version parse(const std::string& str);
+};
+
+struct Plugin
+{
+    //std::string id;
+    std::string name;
+    std::string introduction;
+    Version version;
+    std::map<std::string, std::string> otherInformation;
+
+    std::string filePath;
+    HMODULE handler;
+
+    enum class PluginType
+    { DllPlugin, ScriptPlugin };
+
+    PluginType type;
+
+    // Call a Function by Symbol String
+    template<typename ReturnType = void, typename... Args>
+    inline ReturnType callFunction(const char* functionName, Args... args) {
+        void* address = GetProcAddress(handler, functionName);
+        if (!address)
+            return ReturnType();
+        return reinterpret_cast<ReturnType(*)(Args...)>(address)(std::forward<Args>(args)...);
+    }
+};
+
+} // namespace LL
+inline bool operator<=(LL::Version a, LL::Version b)
+{
+    return a < b || a == b;
 }
-inline bool operator<=(LL::Version a, LL::Version b) { return a < b || a == b; }
-inline bool operator>(LL::Version a, LL::Version b) { return b < a; }
-inline bool operator>=(LL::Version a, LL::Version b) { return b < a || b == a; }
+inline bool operator>(LL::Version a, LL::Version b)
+{
+    return b < a;
+}
+inline bool operator>=(LL::Version a, LL::Version b)
+{
+    return b < a || b == a;
+}
 
 //helper
 LIAPI bool RegisterPlugin(HMODULE hPlugin, std::string name, std::string introduction, LL::Version version,
@@ -82,22 +103,24 @@ namespace LL
     // @return 是否成功(失败则为插件名重复)
     // @note 此函数的实现必须放在头文件中
     inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
-                              std::string git = "", std::string license = "", std::string website = "") {
+                               std::string git = "", std::string license = "", std::string website = "")
+    {
         std::map<std::string, std::string> others;
         if (!git.empty()) others.emplace("Git", git);
         if (!license.empty()) others.emplace("License", license);
         if (!website.empty()) others.emplace("Website", website);
         return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
-    } 
+    }
     // @param name 插件名
     // @param introduction 插件介绍
     // @param version 插件版本
     // @param others 其他要附加的信息, k-v
     // @return 是否成功(失败则为插件名重复)
-    // @example registerPlugin("Test", "Only a test", Version{0, 0, 1, Version::Dev}, {{"Note","This is Note"}});
+    // @example registerPlugin("Test", "Only a test", Version(0, 0, 1, Version::Dev), {{"Note","This is Note"}});
     // @note 此函数的实现必须放在头文件中
     inline bool registerPlugin(std::string name, std::string introduction, LL::Version version,
-                              std::map<std::string, std::string> others) {
+                               std::map<std::string, std::string> others)
+    {
         return ::RegisterPlugin(GetCurrentModule(), name, introduction, version, others);
     }
 
@@ -111,7 +134,6 @@ namespace LL
     // @return 是否存在插件
     LIAPI bool hasPlugin(std::string name);
 
-    LIAPI std::unordered_map<std::string, LL::Plugin> getAllPlugins();
+    LIAPI std::unordered_map<std::string, LL::Plugin*> getAllPlugins();
 
-};
-
+}; // namespace LL

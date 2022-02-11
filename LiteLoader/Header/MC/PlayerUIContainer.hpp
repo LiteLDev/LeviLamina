@@ -26,13 +26,11 @@ public:
 public:
     /*0*/ virtual ~PlayerUIContainer();
     /*1*/ virtual void init();
-    /*2*/ virtual int getContainerSize() const;
-    /*3*/ virtual int getMaxStackSize() const;
-    /*4*/ virtual void startOpen(class Player&);
-    /*5*/ virtual void stopOpen(class Player&);
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual void __unk_vfn_1();
-    /*8*/ virtual void __unk_vfn_2();
+    /*16*/ virtual void startOpen(class Player&);
+    /*17*/ virtual void stopOpen(class Player&);
+    /*22*/ virtual void __unk_vfn_22();
+    /*23*/ virtual void __unk_vfn_23();
+    /*31*/ virtual void __unk_vfn_31();
     /*
     inline  ~PlayerUIContainer(){
          (PlayerUIContainer::*rv)();

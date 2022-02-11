@@ -18,7 +18,7 @@ class ItemStack : public ItemStackBase {
 
 #define AFTER_EXTRA
 // Add new members to class
-    ItemStackNetIdVariant netid;
+    ItemStackNetIdVariant mNetId;
 
 public:
 	LIAPI static ItemStack* create();
@@ -67,7 +67,6 @@ public:
     MCAPI void _assignNetIdVariant(class ItemStack const&) const;
     MCAPI void clientInitLegacyRequestId(class TypedClientNetId<struct ItemStackLegacyRequestIdTag, int, 0> const&);
     MCAPI class ItemStack clone() const;
-    MCAPI class ItemComponent const* getComponent(class HashedString const&) const;
     MCAPI float getDestroySpeed(class Block const&) const;
     MCAPI struct ItemStackNetIdVariant const& getItemStackNetIdVariant() const;
     MCAPI int getMaxUseDuration() const;
@@ -85,7 +84,7 @@ public:
     MCAPI class TypedServerNetId<struct ItemStackNetIdTag, int, 0> const* tryGetItemStackNetId() const;
     MCAPI class ItemStack& use(class Player&);
     MCAPI void useAsFuel();
-    MCAPI bool useOn(class Actor&, int, int, int, unsigned char, float, float, float);
+    MCAPI bool useOn(class Actor&, int, int, int, unsigned char, class Vec3 const&);
     MCAPI enum ItemUseMethod useTimeDepleted(class Level*, class Player*);
     MCAPI static class ItemStack const EMPTY_ITEM;
     MCAPI static class ItemStack fromDescriptor(class NetworkItemStackDescriptor const&, class BlockPalette&, bool);

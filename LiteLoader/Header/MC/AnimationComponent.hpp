@@ -25,7 +25,7 @@ public:
 public:
     MCAPI AnimationComponent(enum AnimationComponentGroup, class AnimationComponentID const&);
     MCAPI void applyAnimations(bool);
-    MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const&, class ExpressionNode const&);
+    MCAPI class std::shared_ptr<class ActorAnimationPlayer> createAnimationPlayer(class HashedString const&, class ExpressionNode const&, class std::set<class HashedString, struct std::hash<class HashedString>, class std::allocator<class HashedString> >&);
     MCAPI std::vector<class BoneOrientation>* getBoneOrientations(enum SkeletalHierarchyIndex, bool);
     MCAPI class std::shared_ptr<class ActorAnimationControllerStatePlayer> const getCurrentAnimationControllerStatePlayer() const;
     MCAPI class ModelPartLocator* getLocator(unsigned __int64 const&);

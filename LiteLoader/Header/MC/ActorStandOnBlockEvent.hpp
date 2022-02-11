@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct ActorStandOnBlockEvent {
+class ActorStandOnBlockEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct ActorStandOnBlockEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORSTANDONBLOCKEVENT
 public:
-    struct ActorStandOnBlockEvent& operator=(struct ActorStandOnBlockEvent const&) = delete;
-    ActorStandOnBlockEvent(struct ActorStandOnBlockEvent const&) = delete;
+    class ActorStandOnBlockEvent& operator=(class ActorStandOnBlockEvent const&) = delete;
+    ActorStandOnBlockEvent(class ActorStandOnBlockEvent const&) = delete;
     ActorStandOnBlockEvent() = delete;
 #endif
 

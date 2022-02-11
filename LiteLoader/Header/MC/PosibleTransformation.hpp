@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PosibleTransformation {
+class PosibleTransformation {
 
 #define AFTER_EXTRA
 
@@ -15,12 +15,12 @@ struct PosibleTransformation {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_POSIBLETRANSFORMATION
 public:
-    struct PosibleTransformation& operator=(struct PosibleTransformation const&) = delete;
+    class PosibleTransformation& operator=(class PosibleTransformation const&) = delete;
+    PosibleTransformation(class PosibleTransformation const&) = delete;
     PosibleTransformation() = delete;
 #endif
 
 public:
-    MCAPI PosibleTransformation(struct PosibleTransformation const&);
     MCAPI ~PosibleTransformation();
 
 protected:

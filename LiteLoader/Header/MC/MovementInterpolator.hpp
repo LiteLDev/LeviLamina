@@ -22,16 +22,28 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~MovementInterpolator();
+    /*1*/ virtual void lerpTo(class Vec3 const&, class Vec2 const&, int);
+    /*2*/ virtual void lerpToRotation(class Vec2 const&, int);
+    /*3*/ virtual void tick(class Actor&);
+    /*4*/ virtual void stop();
+    /*5*/ virtual void start();
+    /*6*/ virtual void reset();
+    /*7*/ virtual void setHeadYawLerpTarget(float, int);
+    /*8*/ virtual bool isActive() const;
+    /*
+    inline int getPositionSteps() const{
+        int (MovementInterpolator::*rv)() const;
+        *((void**)&rv) = dlsym("?getPositionSteps@MovementInterpolator@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    inline int getRotationSteps() const{
+        int (MovementInterpolator::*rv)() const;
+        *((void**)&rv) = dlsym("?getRotationSteps@MovementInterpolator@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI MovementInterpolator();
-    MCAPI int getRotationSteps() const;
-    MCAPI bool isActive() const;
-    MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);
-    MCAPI void lerpToRotation(class Vec2 const&, int);
-    MCAPI void reset();
-    MCAPI void setHeadYawLerpTarget(float, int);
-    MCAPI void start();
-    MCAPI void stop();
-    MCAPI void tick(class Actor&);
 
 protected:
 

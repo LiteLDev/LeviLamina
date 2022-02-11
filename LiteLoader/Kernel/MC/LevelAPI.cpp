@@ -20,8 +20,16 @@
 #include <MC/Packet.hpp>
 
 
-Actor* Level::getEntity(ActorUniqueID uniqueId) {
-    return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
+Actor* Level::getEntity(ActorUniqueID uniqueId)
+{
+    try
+    {
+        return SymCall("?fetchEntity@Level@@UEBAPEAVActor@@UActorUniqueID@@_N@Z", Actor*, Level*, ActorUniqueID)(Global<Level>, uniqueId);
+    }
+    catch (...)
+    {
+        return nullptr;
+    }
 }
 
 Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
@@ -29,7 +37,7 @@ Dimension* Level::getDimension(class AutomaticID<class Dimension, int> a0) {
     *((void**)&rv) = dlsym("?getDimension@Level@@UEBAPEAVDimension@@V?$AutomaticID@VDimension@@H@@@Z");
     return (Global<Level>->*rv)(std::forward<class AutomaticID<class Dimension, int>>(a0));
 }
-
+    
 MCINLINE class MapItemSavedData* Level::getMapSavedData(struct ActorUniqueID a0) {
     class MapItemSavedData* (Level::*rv)(struct ActorUniqueID);
     *((void**)&rv) = dlsym("?getMapSavedData@Level@@UEAAPEAVMapItemSavedData@@UActorUniqueID@@@Z");
@@ -68,10 +76,11 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
     *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
+
 BlockSource* Level::getBlockSource(int dimID) {
     //auto dim = Global<Level>->createDimension(dimID);
     auto dim = Global<Level>->getDimension(dimID);
-    return &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    return &dim->getBlockSourceFromMainChunkSource();
     //return dAccess<BlockSource*>(dim, 96);
 }
 
@@ -109,7 +118,7 @@ Block* Level::getBlockEx(const BlockPos& pos, int dimId)
     if (!dim)
         return nullptr;
 
-    auto bs = &dim->getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD();
+    auto bs = &dim->getBlockSourceFromMainChunkSource();
     auto lc = bs->getChunkAt(pos);
     if (!lc)
         return nullptr;
@@ -208,24 +217,24 @@ Actor* Level::getDamageSourceEntity(ActorDamageSource* ads) {
 void* Level::ServerCommandOrigin::fake_vtbl[26];
 static_assert(offsetof(Level::ServerCommandOrigin, Perm) == 64);
 
-bool Level::runcmd(const string& cmd) {
+bool Level::executeCommand(const string& cmd) {
     ServerCommandOrigin origin;
     return MinecraftCommands::_runcmd(&origin, cmd);
 }
 
-std::unordered_map<void*, string*> origin_res;
+std::unordered_map<void*, string*> resultOfOrigin;
 
-std::pair<bool, string> Level::runcmdEx(const string& cmd) {
+std::pair<bool, string> Level::executeCommandEx(const string& cmd) {
     ServerCommandOrigin origin;
     string val;
-    origin_res[&origin] = &val;
+    resultOfOrigin[&origin] = &val;
     bool rv = MinecraftCommands::_runcmd(&origin, cmd);
     return {rv, std::move(val)};
 }
 
 
 static void* FAKE_PORGVTBL[26];
-bool Level::runcmdAs(Player* pl, const string& cmd) {
+bool Level::executeCommandAs(Player* pl, const string& cmd) {
     void** filler[5];
     ServerCommandOrigin origin;
     SymCall("??0PlayerCommandOrigin@@QEAA@AEAVPlayer@@@Z", void, void*, ServerPlayer*)(
@@ -240,49 +249,66 @@ bool Level::runcmdAs(Player* pl, const string& cmd) {
 
 
 std::vector<Player*> Level::getAllPlayers() {
-    std::vector<Player*> player_list;
-    Global<Level>->forEachPlayer([&](Player& sp) -> bool {
-        Player* player = &sp;
-        player_list.push_back(player);
-        return true;
-    });
-    return player_list;
+    try
+    {
+        std::vector<Player*> player_list;
+        Global<Level>->forEachPlayer([&](Player& sp) -> bool {
+            Player* player = &sp;
+            player_list.push_back(player);
+            return true;
+            });
+        return player_list;
+    }
+    catch (...)
+    {
+        return {};
+    }
 }
 
 std::vector<Actor*> Level::getAllEntities(int dimId) {
-    Level* lv = Global<Level>;
-    Dimension* dim = lv->getDimension(dimId);
-    if (!dim)
-        return {};
-    auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 312); //IDA Dimension::registerEntity
+    try
+    {
+        Level* lv = Global<Level>;
+        Dimension* dim = lv->getDimension(dimId);
+        if (!dim)
+            return {};
+        auto& list = *(std::unordered_map<ActorUniqueID, void*>*)((uintptr_t)dim + 320); //IDA Dimension::registerEntity
 
-    //Check Valid
-    std::vector<Actor*> result;
-    auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
-    for (auto& i : list) {
-        //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
-        //    Actor*, void*)(&i.second);
-        auto entity = getEntity(i.first);
-        if (!entity)
-            continue;
-        auto lastTick = entity->getLastTick();
-        if (!lastTick)
-            continue;
-        if (currTick - lastTick->t == 0 || currTick - lastTick->t == 1)
-            result.push_back(entity);
+        //Check Valid
+        std::vector<Actor*> result;
+        auto currTick = SymCall("?getCurrentTick@Level@@UEBAAEBUTick@@XZ", Tick*, Level*)(lv)->t;
+        for (auto& i : list) {
+            //auto entity = SymCall("??$tryUnwrap@VActor@@$$V@WeakEntityRef@@QEBAPEAVActor@@XZ",
+            //    Actor*, void*)(&i.second);
+            auto entity = getEntity(i.first);
+            if (!entity)
+                continue;
+            auto lastTick = entity->getLastTick();
+            if (!lastTick)
+                continue;
+            if (currTick - lastTick->t == 0 || currTick - lastTick->t == 1)
+                result.push_back(entity);
+        }
+        return result;
     }
-    return result;
+    catch (...)
+    {
+        return {};
+    }
 }
 
-std::vector<Actor*> Level::getAllEntities() {
-    std::vector<Actor*> entityList;
-    auto entities = getAllEntities(0);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    entities = getAllEntities(1);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    entities = getAllEntities(2);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    return entityList;
+std::vector<Actor*> Level::getAllEntities()
+{
+
+    //std::vector<Actor*> entityList;
+    //auto entities = getAllEntities(0);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //entities = getAllEntities(1);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //entities = getAllEntities(2);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //return entityList;
+    return Global<Level>->getRuntimeActorList();
 }
 
 Player* Level::getPlayer(const string& info) {
@@ -375,28 +401,4 @@ void Level::sendPacketForAllPlayer(Packet& pkt)
     {
         sp->sendNetworkPacket(pkt);
     }
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int8_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int16_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int32_t a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, float a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, string a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, BlockPos a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, Vec3 a2) {
-    return {a1, type, a2};
-}
-FakeDataItem Level::createDataItem(uint16_t a1, DataItemType type, int64_t a2) {
-    return {a1, type, a2};
 }

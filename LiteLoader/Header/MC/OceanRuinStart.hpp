@@ -24,9 +24,18 @@ public:
 
 public:
     /*0*/ virtual ~OceanRuinStart();
-    /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual enum StructureFeatureType getType() const;
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (OceanRuinStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@OceanRuinStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    inline bool postProcess(class BlockSource& a0, class Random& a1, class BoundingBox const& a2){
+        bool (OceanRuinStart::*rv)(class BlockSource&, class Random&, class BoundingBox const&);
+        *((void**)&rv) = dlsym("?postProcess@OceanRuinStart@@UEAA_NAEAVBlockSource@@AEAVRandom@@AEBVBoundingBox@@@Z");
+        return (this->*rv)(std::forward<class BlockSource&>(a0), std::forward<class Random&>(a1), std::forward<class BoundingBox const&>(a2));
+    }
+    */
     MCAPI void createRuin(class Dimension&, class OverworldGenerator&, class Random&, int, int);
 
 protected:

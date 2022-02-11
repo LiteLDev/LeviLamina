@@ -17,13 +17,13 @@ class ExperimentStorage {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_EXPERIMENTSTORAGE
 public:
+    class ExperimentStorage& operator=(class ExperimentStorage const&) = delete;
+    ExperimentStorage(class ExperimentStorage const&) = delete;
     ExperimentStorage() = delete;
 #endif
 
 public:
-    MCAPI ExperimentStorage(class ExperimentStorage const&);
     MCAPI bool isAnyToggleEnabled() const;
-    MCAPI class ExperimentStorage& operator=(class ExperimentStorage const&);
     MCAPI ~ExperimentStorage();
 
 protected:

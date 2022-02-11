@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "MingleComponent.hpp"
 #include "MoveToPOIGoal.hpp"
 
 #define BEFORE_EXTRA
@@ -27,25 +28,23 @@ public:
     /*0*/ virtual ~MingleGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual unsigned __int64 _getRepathTime() const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
     MCAPI MingleGoal(class Mob&, float, float, float, struct ActorDefinitionIdentifier, float);
 
 protected:
 
 private:
     MCAPI void _findNewPartner(struct ActorUniqueID);
-    MCAPI class MingleComponent& _getMingleComponent() const;
     MCAPI bool _isWithinInteractRange(class Actor&) const;
+    MCAPI bool _validatePartnerState(enum MingleComponent::MingleState, class MingleComponent&, bool);
     MCAPI static int const FIND_PARTNER_INTERVAL_TICKS;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MAX;
     MCAPI static int const SPEAK_INTERVAL_TICKS_MIN;
-    MCAPI static class MingleComponent* _tryGetMingleComponent(class Actor&);
 
 };

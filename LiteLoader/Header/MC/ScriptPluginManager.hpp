@@ -2,7 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
+#include "ResourceInformation.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,15 +25,14 @@ public:
 
 public:
     MCAPI ScriptPluginManager(class Scripting::ScriptEngine&, class Scripting::IPrinter*);
-    MCAPI void addNativeModuleFactory(std::unique_ptr<class Scripting::IModuleBindingFactory>);
-    MCAPI class ScriptPluginResult discoverPlugins(struct PluginDefStack const&);
+    MCAPI class ScriptPluginManagerResult discoverPlugins(enum ResourceInformation::ResourceType, struct PluginDefStack const&);
     MCAPI void releasePlugins();
-    MCAPI class ScriptPluginResult runAll();
+    MCAPI class ScriptPluginManagerResult runAll();
     MCAPI ~ScriptPluginManager();
 
 protected:
 
 private:
-    MCAPI void _reportContextResults(std::string const&, struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
+    MCAPI void _reportContextResults(struct Scripting::ScriptContextResult const&, class ScriptPluginResult&);
 
 };

@@ -19,10 +19,10 @@ class LootComponent {
 public:
     class LootComponent& operator=(class LootComponent const&) = delete;
     LootComponent(class LootComponent const&) = delete;
-    LootComponent() = delete;
 #endif
 
 public:
+    MCAPI LootComponent();
     MCAPI void spawnResources(class BlockSource&, class BlockPos const&, class Block const&, std::vector<class Item const* >*, float, int, class ItemStack const&) const;
 
 protected:

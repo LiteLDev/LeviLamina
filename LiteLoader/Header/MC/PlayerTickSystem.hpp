@@ -23,9 +23,7 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~PlayerTickSystem();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void tick(class EntityRegistry&);
+    MCAPI static struct TickingSystemWithInfo create();
     MCAPI static void onTickAdded(struct PlayerTickComponent&, unsigned __int64);
     MCAPI static bool shouldTickMovementSystemOnEntity(class EntityContext const&);
 

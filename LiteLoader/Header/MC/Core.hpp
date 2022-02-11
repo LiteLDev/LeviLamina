@@ -12,6 +12,7 @@ namespace Core {
 
 #define AFTER_EXTRA
 // Add Member There
+class IFileSystem;
 enum FileBufferingMode;
 enum LevelStorageState;
 enum DirectoryIterationFlags;

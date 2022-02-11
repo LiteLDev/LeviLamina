@@ -20,6 +20,7 @@ public:
 #endif
 
 public:
+    MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent&&);
     MCAPI ExplosionStartedEvent(struct ExplosionStartedEvent const&);
     MCAPI ~ExplosionStartedEvent();
 

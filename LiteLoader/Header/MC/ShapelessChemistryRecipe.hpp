@@ -26,14 +26,10 @@ public:
 public:
     /*0*/ virtual ~ShapelessChemistryRecipe();
     /*1*/ virtual std::vector<class ItemInstance> const& assemble(class CraftingContainer&) const;
-    /*2*/ virtual class RecipeIngredient const& getIngredient(int, int) const;
-    /*3*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
-    /*4*/ virtual bool isShapeless() const;
-    /*5*/ virtual bool matches(class CraftingContainer&, class Level&) const;
-    /*6*/ virtual class mce::UUID const& getId() const;
-    /*7*/ virtual class ItemPack const& getItemPack() const;
-    /*8*/ virtual bool isMultiRecipe() const;
-    /*9*/ virtual void loadResultList(class BlockPalette const&) const;
+    /*4*/ virtual std::vector<class ItemInstance> const& getResultItem() const;
+    /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const;
+    /*8*/ virtual class mce::UUID const& getId() const;
+    /*10*/ virtual bool isMultiRecipe() const;
     MCAPI static class mce::UUID const ID;
 
 protected:

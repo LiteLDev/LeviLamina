@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -26,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~ScriptPlayer();
-    /*1*/ virtual class Scripting::Result<std::string > getNameTag() const;
-    /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
-    /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
-    /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*4*/ virtual class Scripting::Result<std::string > getNameTag() const;
+    /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
+    /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
+    /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
     /*
     inline  ~ScriptPlayer(){
          (ScriptPlayer::*rv)();
@@ -38,8 +37,15 @@ public:
     }
     */
     MCAPI ScriptPlayer(class Player const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI class Scripting::Result<int> getItemCooldownLeft(std::string const&);
     MCAPI class Scripting::Result<std::string > getName() const;
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class WeakEntityRef, class Scripting::WeakLifetimeScope const&);
+    MCAPI class Scripting::Result<int> getSelectedSlot() const;
+    MCAPI class Scripting::Result<void> postClientMessage(std::string const&, std::string const&);
+    MCAPI class Scripting::Result<void> setSelectedSlot(int) const;
+    MCAPI class Scripting::Result<void> startItemCooldown(std::string const&, int);
+    MCAPI class Player* tryGetPlayer() const;
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class Player const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptPlayer> getHandle(class StackRefResultT<struct EntityRefTraits>, class Scripting::WeakLifetimeScope const&);
 
 protected:
 

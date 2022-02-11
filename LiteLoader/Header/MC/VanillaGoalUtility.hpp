@@ -14,7 +14,7 @@ namespace VanillaGoalUtility {
 // Add Member There
 
 #undef AFTER_EXTRA
-    MCAPI void initialize(class Level*);
-    MCAPI void registerGoalsToFactory(class ActorGoalFactory&);
+    MCAPI void initialize(class Level*, class BaseGameVersion const&, class Experiments const&);
+    MCAPI void registerGoalsToFactory(class ActorGoalFactory&, class BaseGameVersion const&, class Experiments const&);
 
 };

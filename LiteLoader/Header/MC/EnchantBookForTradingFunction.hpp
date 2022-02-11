@@ -35,15 +35,15 @@ public:
         *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAHAEAVItemInstance@@AEAVRandom@@AEBUTrade@@AEAVLootTableContext@@@Z");
         return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<struct Trade const&>(a2), std::forward<class LootTableContext&>(a3));
     }
-    inline void apply(class ItemInstance& a0, class Random& a1, class LootTableContext& a2){
-        void (EnchantBookForTradingFunction::*rv)(class ItemInstance&, class Random&, class LootTableContext&);
-        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z");
-        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
-    }
     inline void apply(class ItemStack& a0, class Random& a1, class LootTableContext& a2){
         void (EnchantBookForTradingFunction::*rv)(class ItemStack&, class Random&, class LootTableContext&);
         *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemStack@@AEAVRandom@@AEAVLootTableContext@@@Z");
         return (this->*rv)(std::forward<class ItemStack&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
+    }
+    inline void apply(class ItemInstance& a0, class Random& a1, class LootTableContext& a2){
+        void (EnchantBookForTradingFunction::*rv)(class ItemInstance&, class Random&, class LootTableContext&);
+        *((void**)&rv) = dlsym("?apply@EnchantBookForTradingFunction@@UEAAXAEAVItemInstance@@AEAVRandom@@AEAVLootTableContext@@@Z");
+        return (this->*rv)(std::forward<class ItemInstance&>(a0), std::forward<class Random&>(a1), std::forward<class LootTableContext&>(a2));
     }
     */
 

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -20,7 +19,6 @@ class ScriptBlockRecordPlayerComponent : public ScriptObject {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTBLOCKRECORDPLAYERCOMPONENT
 public:
     class ScriptBlockRecordPlayerComponent& operator=(class ScriptBlockRecordPlayerComponent const&) = delete;
-    ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent const&) = delete;
     ScriptBlockRecordPlayerComponent() = delete;
 #endif
 
@@ -33,6 +31,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent const&);
     MCAPI ScriptBlockRecordPlayerComponent(class ScriptBlockRecordPlayerComponent&&);
     MCAPI class ScriptBlockRecordPlayerComponent& operator=(class ScriptBlockRecordPlayerComponent&&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockRecordPlayerComponent> bind(struct Scripting::Version);

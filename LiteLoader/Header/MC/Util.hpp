@@ -75,7 +75,6 @@ public:
     MCAPI bool isValidUTF8(std::string const&);
     MCAPI bool isVanillaNamespace(std::string const&);
     MCAPI int isWhiteSpace(char);
-    MCAPI std::string join(std::vector<std::string> const&, class gsl::basic_string_span<char const, -1>);
     MCAPI void loadGameVersion(class SemVersion&, class Json::Value const&);
     MCAPI std::string removeChars(std::string, std::string const&);
     MCAPI std::string removeIllegalChars(std::string);
@@ -83,7 +82,6 @@ public:
     MCAPI void replaceUtf8CharactersWithAscii(std::string&, std::vector<struct std::pair<std::string, char>> const&);
     MCAPI class std::basic_istream<char, struct std::char_traits<char> >& safeGetline(class std::basic_istream<char, struct std::char_traits<char> >&, std::string&);
     MCAPI std::string simpleFormat(std::string const&, std::vector<std::string> const&);
-    MCAPI std::string simpleJoin(class buffer_span<class gsl::basic_string_span<char const, -1> >, class gsl::basic_string_span<char const, -1>);
     MCAPI std::vector<std::string> split(std::string const&, char);
     MCAPI std::vector<std::string> splitLines(std::string const&, std::vector<std::string> const&, bool, bool, class std::basic_istream<char, struct std::char_traits<char> >& (* )(class std::basic_istream<char, struct std::char_traits<char> >& , std::string& ));
     MCAPI std::vector<std::string>& splitString(std::string const&, char, std::vector<std::string>&);

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "MovementScriptActorComponent.hpp"
 
 #define BEFORE_EXTRA

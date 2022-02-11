@@ -23,8 +23,9 @@ public:
 #endif
 
 public:
-    MCAPI bool isAffectedByGravity(class Actor const&) const;
-    MCAPI void setAffectedByGravity(class Actor&, bool);
+    MCAPI bool _isAffectedByGravity(class SynchedActorData const&) const;
+    MCAPI bool isAffectedByGravity(struct IActorMovementProxy const&) const;
+    MCAPI void setAffectedByGravity(struct IActorMovementProxy&, bool) const;
     MCAPI void setHasCollision(class Actor&, bool);
 
 protected:

@@ -27,9 +27,12 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual ~PlayerSkinPacket();
     /*
+    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
+        enum StreamReadResult (PlayerSkinPacket::*rv)(class ReadOnlyBinaryStream&);
+        *((void**)&rv) = dlsym("?_read@PlayerSkinPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
+    }
     inline  ~PlayerSkinPacket(){
          (PlayerSkinPacket::*rv)();
         *((void**)&rv) = dlsym("??1PlayerSkinPacket@@UEAA@XZ");

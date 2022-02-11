@@ -23,7 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI void initialize(class Level&, class Dimension&, class ChunkSource&, bool);
+    MCAPI BlockSourceComponent(class Level&, class Dimension&, class ChunkSource&, bool);
     MCAPI class StackRefResultT<struct SharePtrRefTraits<class BlockSource> > tryGetBlockSource() const;
 
 protected:

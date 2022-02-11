@@ -4,18 +4,22 @@
 #include <ServerAPI.h>
 #include <regex>
 #include <string>
-
+#include "Main/Config.h"
 using namespace std;
 
 Logger serverLogger("Server");
-
-THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ") {
-    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with LiteLoaderBDS " + LL::getLoaderVersion().toString(true);
+extern void CheckBetaVersion();
+    THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")
+{
+        CheckBetaVersion();
+    return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " + fmt::format(LL::globalConfig.colorLog ?fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style() , "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
 }
 
 
-string& replace_all_distinct(string& str, const string& old_value, const string& new_value) {
-    for (string::size_type pos(0); pos != string::npos; pos += new_value.length()) {
+string& replace_all_distinct(string& str, const string& old_value, const string& new_value)
+{
+    for (string::size_type pos(0); pos != string::npos; pos += new_value.length())
+    {
         if ((pos = str.find(old_value, pos)) != string::npos)
             str.replace(pos, old_value.length(), new_value);
         else
@@ -24,49 +28,77 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
     return str;
 }
 
-//Standardize BDS's output
-THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z",
-      int, const char* ts) {
+// Standardize BDS's output
+THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts)
+{
     string input = ts;
-    std::string output = std::regex_replace(input, std::regex("\\[.*?\\]"), std::string("$1"));
-    output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-    output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
-    if (input.find("INFO") != std::string::npos) {
-        serverLogger.info << output << Logger::endl;
-    } else {
-        serverLogger.warn << output << Logger::endl;
+    input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
+    switch (a1)
+    {
+        case 8u:
+            serverLogger.warn << input << Logger::endl;
+            break;
+        case 1u:
+            serverLogger.debug << input << Logger::endl;
+            break;
+        case 2u:
+            serverLogger.info << input << Logger::endl;
+            break;
+        case 4u:
+            serverLogger.warn << input << Logger::endl;
+            break;
     }
 }
 
+//Block BDS from adding LOG metadata
+THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V34@W4LogAreaID@@I1HH@Z",
+    void* a1, void* a2, void** a3, int a4, unsigned int a5, __int64 a6, unsigned int a7, unsigned int a8)
+{
+    return;
+}
 
+#include "LiteLoader.h"
 THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4ZZ",
-      int a1, int a2, __int64 a3, int a4, int a5, __int64 a6, int a7, __int64 a8, ...) {
+      int a1, int a2, __int64 a3, int a4, int a5, __int64 a6, int a7, __int64 a8, ...)
+{
     va_list va;
     auto text = (char*)a8;
-    if (string(text).find("setting up server logging...") != string(text).npos) {
+    if (string(text).find("setting up server logging...") != string(text).npos)
+    {
         return;
     }
+    //std::cout << a7 << std::endl;
     va_start(va, a8);
+    if (a7 == 600) {
+        string text = "Done (" + fmt::format("{:.1f}", (endTime - startTime) * 1.0 / 1000) + "s)! For help, type \"help\" or \"?\"";
+        return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
+                       void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, (__int64)text.c_str(), (__int64)va);
+    }
     return SymCall("?log_va@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@W4LogAreaID@@IPEBDH4PEAD@Z",
                    void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
 }
 
-extern std::unordered_map<void*, string*> origin_res;
-THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
-      void* thi, void* ori, void* out) {
-    auto it = origin_res.find(ori);
-    if (it == origin_res.end()) {
+extern std::unordered_map<void*, string*> resultOfOrigin;
+TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
+                       void* ori, void* out)
+{
+    auto it = resultOfOrigin.find(ori);
+    if (it == resultOfOrigin.end())
+    {
         std::stringbuf sbuf;
         auto oBuf = std::cout.rdbuf();
         std::cout.rdbuf(&sbuf);
-        auto rv = original(thi, ori, out);
+        auto rv = original(this, ori, out);
         std::cout.rdbuf(oBuf);
         auto str = sbuf.str();
         std::istringstream iss(str);
         string line;
-        while (getline(iss, line)) {
+        while (getline(iss, line))
+        {
             size_t pos = 0;
-            while ((pos = line.find("§")) != string::npos) {
+            // Remove '§x' in the output
+            while ((pos = line.find("§")) != string::npos)
+            {
                 line.erase(pos, 3);
             }
             serverLogger.info << line << Logger::endl;
@@ -76,11 +108,11 @@ THook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutp
     std::stringbuf sbuf;
     auto oBuf = std::cout.rdbuf();
     std::cout.rdbuf(&sbuf);
-    auto rv = original(thi, ori, out);
+    auto rv = original(this, ori, out);
     std::cout.rdbuf(oBuf);
     it->second->assign(sbuf.str());
     while (it->second->size() && (it->second->back() == '\n' || it->second->back() == '\r'))
         it->second->pop_back();
-    origin_res.erase(it);
+    resultOfOrigin.erase(it);
     return rv;
 }

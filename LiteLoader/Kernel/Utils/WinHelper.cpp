@@ -1,7 +1,9 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <Main/LiteLoader.h>
+#include <Utils/DbgHelper.h>
 #include <LoggerAPI.h>
+#include <Psapi.h>
 #include <string>
 
 using namespace std;
@@ -80,17 +82,78 @@ bool NewProcess(const std::string &process, std::function<void(int, std::string)
         CloseHandle(hProcess);
 
         try {
-            callback((int) exitCode, strOutput);
+            if(callback)
+                callback((int) exitCode, strOutput);
         }
         catch (const seh_exception &e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In NewProcess callback");
+            PrintCurrentStackTraceback();
         }
         catch (...) {
             logger.error("NewProcess Callback Failed!");
             logger.error("Uncaught Exception Detected!");
+            PrintCurrentStackTraceback();
         }
     }).detach();
 
     return true;
+}
+
+std::pair<int,string> NewProcessSync(const std::string& process, int timeLimit, bool noReadOutput)
+{
+    SECURITY_ATTRIBUTES sa;
+    HANDLE hRead, hWrite;
+    sa.nLength = sizeof(SECURITY_ATTRIBUTES);
+    sa.lpSecurityDescriptor = nullptr;
+    sa.bInheritHandle = TRUE;
+
+    if (!CreatePipe(&hRead, &hWrite, &sa, 0))
+        return { -1,"" };
+    STARTUPINFOW si = { 0 };
+    PROCESS_INFORMATION pi;
+
+    si.cb = sizeof(STARTUPINFO);
+    GetStartupInfoW(&si);
+    si.hStdOutput = si.hStdError = hWrite;
+    si.dwFlags = STARTF_USESTDHANDLES;
+
+    auto wCmd = str2cwstr(process);
+    if (!CreateProcessW(nullptr, wCmd, nullptr, nullptr, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+        delete[] wCmd;
+        return { -1,"" };
+    }
+    CloseHandle(hWrite);
+    CloseHandle(pi.hThread);
+
+    if (timeLimit == -1)
+        WaitForSingleObject(pi.hProcess, INFINITE);
+    else {
+        WaitForSingleObject(pi.hProcess, timeLimit);
+        TerminateProcess(pi.hProcess, -1);
+    }
+    char buffer[READ_BUFFER_SIZE];
+    string strOutput;
+    DWORD bytesRead, exitCode;
+
+    delete[] wCmd;
+    GetExitCodeProcess(pi.hProcess, &exitCode);
+    if (!noReadOutput)
+    {
+        while (true) {
+            ZeroMemory(buffer, READ_BUFFER_SIZE);
+            if (!ReadFile(hRead, buffer, READ_BUFFER_SIZE, &bytesRead, nullptr))
+                break;
+            strOutput.append(buffer, bytesRead);
+        }
+    }
+    CloseHandle(hRead);
+    CloseHandle(pi.hProcess);
+    return { exitCode, strOutput };
+}
+
+string GetModulePath(HMODULE handler) {
+    wchar_t buf[MAX_PATH] = { 0 };
+    GetModuleFileNameEx(GetCurrentProcess(), handler, buf, MAX_PATH);
+    return wstr2str(wstring(buf));
 }

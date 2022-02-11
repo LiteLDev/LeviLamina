@@ -22,30 +22,77 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BasicSaver();
     /*
+    inline bool doEndMember(){
+        bool (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("?doEndMember@BasicSaver@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndArray(){
+        bool (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("?doEndArray@BasicSaver@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndArrayItem(){
+        bool (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("?doEndArrayItem@BasicSaver@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndObject(){
+        bool (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("?doEndObject@BasicSaver@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doBeginArrayItem(unsigned __int64 a0){
+        bool (BasicSaver::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginArrayItem@BasicSaver@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline bool doBeginArray(unsigned __int64 a0){
+        bool (BasicSaver::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginArray@BasicSaver@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline bool doBeginMember(char const* a0, bool a1){
+        bool (BasicSaver::*rv)(char const*, bool);
+        *((void**)&rv) = dlsym("?doBeginMember@BasicSaver@@EEAA_NPEBD_N@Z");
+        return (this->*rv)(std::forward<char const*>(a0), std::forward<bool>(a1));
+    }
+    inline bool doBeginMember(unsigned __int64 a0, std::string const& a1){
+        bool (BasicSaver::*rv)(unsigned __int64, std::string const&);
+        *((void**)&rv) = dlsym("?doBeginMember@BasicSaver@@EEAA_N_KAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<std::string const&>(a1));
+    }
+    inline bool doBeginObject(unsigned __int64 a0){
+        bool (BasicSaver::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginObject@BasicSaver@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline bool doBeginObject(){
+        bool (BasicSaver::*rv)();
+        *((void**)&rv) = dlsym("?doBeginObject@BasicSaver@@EEAA_NXZ");
+        return (this->*rv)();
+    }
     inline  ~BasicSaver(){
          (BasicSaver::*rv)();
         *((void**)&rv) = dlsym("??1BasicSaver@@UEAA@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI bool beginArray(unsigned __int64);
-    MCAPI bool endArray();
     MCAPI void error(std::string const&);
     MCAPI class BasicSaver& operator=(class BasicSaver const&);
-    MCAPI bool serializeFloat(float);
-    MCAPI bool serializeS32(int);
-    MCAPI bool serializeString(std::string const&);
 
 protected:
 
 private:
-    MCAPI bool serialize(class entt::meta_any);
-    MCAPI bool serialize(class entt::meta_any, struct SerializerTraits const&);
+    MCAPI bool serialize(class entt::meta_any const&);
+    MCAPI bool serialize(class entt::meta_any const&, struct SerializerTraits const&);
     MCAPI bool serializeAssociativeContainer(class entt::meta_associative_container, struct SerializerTraits const&);
     MCAPI bool serializeBasicType(class entt::meta_any const&);
     MCAPI bool serializeClass(class entt::meta_any const&, struct SerializerTraits const&);
     MCAPI bool serializeEnum(class entt::meta_any const&, struct SerializerTraits const&);
-    MCAPI bool serializeObject(class entt::meta_any);
+    MCAPI bool serializeObject(class entt::meta_any const&);
+    MCAPI bool serializeSequenceContainer(class entt::meta_sequence_container, struct SerializerTraits const&);
 
 };

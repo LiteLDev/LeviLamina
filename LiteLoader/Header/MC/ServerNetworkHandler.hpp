@@ -393,15 +393,15 @@ public:
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPurchaseReceiptPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class PurchaseReceiptPacket const&>(a1));
     }
-    inline void handle(class NetworkIdentifier const& a0, class ModalFormResponsePacket const& a1){
-        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
-        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z");
-        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ModalFormResponsePacket const&>(a1));
-    }
     inline void handle(class NetworkIdentifier const& a0, class PhotoTransferPacket const& a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class PhotoTransferPacket const&);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVPhotoTransferPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class PhotoTransferPacket const&>(a1));
+    }
+    inline void handle(class NetworkIdentifier const& a0, class ModalFormResponsePacket const& a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ModalFormResponsePacket const&);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVModalFormResponsePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ModalFormResponsePacket const&>(a1));
     }
     inline void onPlayerReady(class Player& a0){
         void (ServerNetworkHandler::*rv)(class Player&);
@@ -477,6 +477,11 @@ public:
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ClientToServerHandshakePacket const&);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVClientToServerHandshakePacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ClientToServerHandshakePacket const&>(a1));
+    }
+    inline void handle(class NetworkIdentifier const& a0, class CodeBuilderSourcePacket const& a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CodeBuilderSourcePacket const&);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVCodeBuilderSourcePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class CodeBuilderSourcePacket const&>(a1));
     }
     inline void handle(class NetworkIdentifier const& a0, class CommandBlockUpdatePacket const& a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class CommandBlockUpdatePacket const&);
@@ -663,6 +668,11 @@ public:
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVRespawnPacket@@@Z");
         return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class RespawnPacket const&>(a1));
     }
+    inline void handle(class NetworkIdentifier const& a0, class ScriptMessagePacket const& a1){
+        void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class ScriptMessagePacket const&);
+        *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVScriptMessagePacket@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class ScriptMessagePacket const&>(a1));
+    }
     inline void handle(class NetworkIdentifier const& a0, class SetDefaultGameTypePacket const& a1){
         void (ServerNetworkHandler::*rv)(class NetworkIdentifier const&, class SetDefaultGameTypePacket const&);
         *((void**)&rv) = dlsym("?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVSetDefaultGameTypePacket@@@Z");
@@ -808,7 +818,7 @@ public:
     MCAPI void onStartShutdown();
     MCAPI void persistPlayerPermissionsToDisk(class UserEntityIdentifierComponent const&, enum PlayerPermissionLevel);
     MCAPI void sendLoginMessageLocal(class NetworkIdentifier const&, class ConnectionRequest const&, class ServerPlayer&);
-    MCAPI void setAutomationClient(class Automation::AutomationClient*);
+    MCAPI void setAutomationClient(class Bedrock::NonOwnerPointer<class Automation::AutomationClient>);
     MCAPI int setMaxNumPlayers(int);
     MCAPI void setNewPlayerPermissions(class ServerPlayer&);
     MCAPI bool trytLoadPlayer(class ServerPlayer&, class ConnectionRequest const&);
@@ -817,11 +827,13 @@ public:
 protected:
 
 private:
+    MCAPI void _buildSubChunkPacketData(class NetworkIdentifier const&, class ServerPlayer const*, class SubChunkRequestPacket const&, class SubChunkPacket&, unsigned int, bool);
     MCAPI class ServerPlayer& _createNewPlayer(class NetworkIdentifier const&, class SubClientConnectionRequest const&, unsigned char);
     MCAPI void _displayGameMessage(class Player const&, struct ChatEvent&);
     MCAPI int _getActiveAndInProgressPlayerCount(class mce::UUID) const;
     MCAPI std::string _getDisplayName(class Certificate const&, bool, std::string const&) const;
     MCAPI class ServerPlayer* _getServerPlayer(class NetworkIdentifier const&, unsigned char);
+    MCAPI void _handleSetDifficulty(class ServerPlayer const&, class SetDifficultyPacket const&) const;
     MCAPI bool _loadNewPlayer(class ServerPlayer&, bool);
     MCAPI void _onClientAuthenticated(class NetworkIdentifier const&, class Certificate const&);
     MCAPI void _onPlayerLeft(class ServerPlayer*, bool);

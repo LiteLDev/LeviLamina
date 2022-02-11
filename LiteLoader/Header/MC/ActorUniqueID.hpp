@@ -13,6 +13,27 @@ struct ActorUniqueID {
 #define AFTER_EXTRA
 // Add Member There
 
+    long long id;
+    ActorUniqueID()
+    {
+        id = -1;
+    }
+
+    ActorUniqueID(long long i)
+    {
+        id = i;
+    }
+
+    inline long long get() const
+    {
+        return id;
+    }
+
+    inline operator long long() const
+    {
+        return id;
+    }
+#define DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEID
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_ACTORUNIQUEID

@@ -24,14 +24,14 @@ public:
 
 public:
     /*
-    inline void startOpen(class Player& a0){
-        void (JukeboxBlockActor::*rv)(class Player&);
-        *((void**)&rv) = dlsym("?startOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z");
-        return (this->*rv)(std::forward<class Player&>(a0));
-    }
     inline void stopOpen(class Player& a0){
         void (JukeboxBlockActor::*rv)(class Player&);
         *((void**)&rv) = dlsym("?stopOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z");
+        return (this->*rv)(std::forward<class Player&>(a0));
+    }
+    inline void startOpen(class Player& a0){
+        void (JukeboxBlockActor::*rv)(class Player&);
+        *((void**)&rv) = dlsym("?startOpen@JukeboxBlockActor@@UEAAXAEAVPlayer@@@Z");
         return (this->*rv)(std::forward<class Player&>(a0));
     }
     inline int getMaxStackSize() const{

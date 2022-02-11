@@ -24,19 +24,14 @@ public:
 #endif
 
 public:
-    /*0*/ virtual ~PlayerUIContainerModel();
-    /*1*/ virtual void releaseResources();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual std::vector<class ItemStack> const& getItems() const;
-    /*4*/ virtual class ItemStackBase const& getItemStackBase(int) const;
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual bool isValid();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual std::string const& getItemGroupName(int) const;
-    /*11*/ virtual void __unk_vfn_5();
-    /*12*/ virtual int _getContainerOffset() const;
+    /*1*/ virtual ~PlayerUIContainerModel();
+    /*6*/ virtual void __unk_vfn_6();
+    /*12*/ virtual void __unk_vfn_12();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*19*/ virtual void __unk_vfn_19();
+    /*21*/ virtual int _getContainerOffset() const;
     MCAPI PlayerUIContainerModel(enum ContainerEnumName, class Player&);
 
 protected:

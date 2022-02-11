@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,9 +23,9 @@ public:
 #endif
 
 public:
+    MCAPI std::string getDisplayName() const;
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptMobEffectInstance> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> getHandle(class MobEffectInstance const*, class Scripting::WeakLifetimeScope const&);
-    MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptMobEffectInstance> track(class MobEffectInstance const*, class Scripting::WeakLifetimeScope const&);
 
 protected:
 

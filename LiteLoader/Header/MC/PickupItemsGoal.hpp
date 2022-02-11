@@ -26,11 +26,18 @@ public:
     /*0*/ virtual ~PickupItemsGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
-    /*5*/ virtual void stop();
+    /*5*/ virtual void __unk_vfn_5();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*
+    inline void stop(){
+        void (PickupItemsGoal::*rv)();
+        *((void**)&rv) = dlsym("?stop@PickupItemsGoal@@UEAAXXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI PickupItemsGoal(class Mob&, float, bool, int, float, bool, bool, int, bool, std::vector<class ItemDescriptor> const&);
 
 protected:

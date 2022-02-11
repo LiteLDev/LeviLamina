@@ -29,6 +29,7 @@ public:
     MCAPI enum FileReadResult reload();
     MCAPI void syncToDisc();
     MCAPI ~AllowListFile();
+    MCAPI static class AllowListFile loadFromDefaultLocations(class Core::IFileSystem&);
 
 protected:
 

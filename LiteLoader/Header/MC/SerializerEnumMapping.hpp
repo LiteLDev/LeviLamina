@@ -23,7 +23,8 @@ public:
 #endif
 
 public:
-    MCAPI bool lookup(std::string const&, unsigned int&) const;
+    MCAPI bool lookup(std::string const&, __int64&) const;
+    MCAPI bool lookup(__int64, std::string&) const;
 
 protected:
 

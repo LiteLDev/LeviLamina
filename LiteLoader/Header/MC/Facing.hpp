@@ -52,6 +52,8 @@ public:
     MCAPI static unsigned char getClockWise(unsigned char);
     MCAPI static enum Facing::Rotation getClosestRotation(float);
     MCAPI static unsigned char getCounterClockWise(unsigned char);
+    MCAPI static class Vec3 getFaceLocation(unsigned char, float, float);
+    MCAPI static class Vec2 getFaceLocationXY(unsigned char, class Vec3 const&);
     MCAPI static unsigned char getFacingDirection(class Vec3 const&, class Vec3 const&);
     MCAPI static unsigned char getOpposite(unsigned char);
     MCAPI static int getRandomFace(class Random&);

@@ -23,7 +23,8 @@ public:
 #endif
 
 public:
-    MCAPI static std::unique_ptr<class LegacyBlendedNoise> make(class IRandom&);
+    MCAPI ~LegacyBlendedNoise();
+    MCAPI static class LegacyBlendedNoise make(class IRandom&);
 
 protected:
 

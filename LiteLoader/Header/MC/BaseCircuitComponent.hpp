@@ -29,7 +29,7 @@ public:
     /*4*/ virtual void setDirection(unsigned char);
     /*5*/ virtual void setConsumePowerAnyDirection(bool);
     /*6*/ virtual bool canConsumePowerAnyDirection() const;
-    /*7*/ virtual void __unk_vfn_0();
+    /*7*/ virtual void __unk_vfn_7();
     /*8*/ virtual bool canStopPower() const;
     /*9*/ virtual void setStopPower(bool);
     /*10*/ virtual bool removeSource(class BlockPos const&, class BaseCircuitComponent const*);
@@ -39,10 +39,10 @@ public:
     /*14*/ virtual bool evaluate(class CircuitSystem&, class BlockPos const&);
     /*15*/ virtual void cacheValues(class CircuitSystem&, class BlockPos const&);
     /*16*/ virtual void updateDependencies(class CircuitSceneGraph&, class BlockPos const&);
-    /*17*/ virtual void __unk_vfn_1();
+    /*17*/ virtual void __unk_vfn_17();
     /*18*/ virtual bool isHalfPulse() const;
     /*19*/ virtual bool hasSource(class BaseCircuitComponent&);
-    /*20*/ virtual void __unk_vfn_2();
+    /*20*/ virtual void __unk_vfn_20();
     /*21*/ virtual bool isSecondaryPowered() const;
     /*22*/ virtual enum CircuitComponentType getCircuitComponentType() const;
     /*23*/ virtual enum CircuitComponentType getCircuitComponentGroupType() const;

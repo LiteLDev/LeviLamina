@@ -25,11 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~CraftHandlerAnvil();
-    /*1*/ virtual enum ItemStackNetResult preHandleAction(enum ItemStackRequestActionType);
-    /*2*/ virtual void endRequestBatch();
-    /*3*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
-    /*4*/ virtual void _postCraftRequest(bool);
-    /*5*/ virtual class Recipes const* _getLevelRecipes() const;
+    /*3*/ virtual void endRequestBatch();
+    /*4*/ virtual enum ItemStackNetResult _handleCraftAction(class ItemStackRequestActionCraftBase const&);
+    /*5*/ virtual void _postCraftRequest(bool);
+    /*6*/ virtual class Recipes const* _getLevelRecipes() const;
     MCAPI CraftHandlerAnvil(class Player&, class ItemStackRequestActionCraftHandler&);
 
 protected:

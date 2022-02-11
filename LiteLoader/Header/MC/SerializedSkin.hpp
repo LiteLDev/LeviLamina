@@ -16,8 +16,8 @@ class SerializedSkin {
 #undef AFTER_EXTRA
 
 public:
-    MCAPI SerializedSkin();
     MCAPI SerializedSkin(class SerializedSkin&&);
+    MCAPI SerializedSkin();
     MCAPI SerializedSkin(class SerializedSkin const&);
     MCAPI SerializedSkin(class ConnectionRequest const&);
     MCAPI SerializedSkin(class SubClientConnectionRequest const&);

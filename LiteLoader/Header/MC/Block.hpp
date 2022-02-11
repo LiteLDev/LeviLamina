@@ -48,9 +48,11 @@ public:
     MCAPI float calcGroundFriction(struct IMobMovementProxy const&, class BlockPos const&) const;
     MCAPI bool canBeBrokenFromFalling() const;
     MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&) const;
+    MCAPI bool canBeBuiltOver(class BlockSource&, class BlockPos const&, class BlockItem const&) const;
     MCAPI bool canBeFertilized(class BlockSource&, class BlockPos const&, class Block const&) const;
     MCAPI bool canBeOriginalSurface() const;
     MCAPI bool canConnect(class Block const&, unsigned char, class Block const&) const;
+    MCAPI bool canHaveExtraData() const;
     MCAPI bool canHurtAndBreakItem() const;
     MCAPI bool canInstatick() const;
     MCAPI bool canProvideSupport(unsigned char, enum BlockSupportType) const;
@@ -114,7 +116,7 @@ public:
     MCAPI bool hasTag(class HashedString const&) const;
     MCAPI bool hasTag(unsigned __int64 const&) const;
     MCAPI bool ignoreEntitiesOnPistonMove() const;
-    MCAPI void initEntity(class EntityRegistryOwned&);
+    MCAPI void initEntity(class EntityRegistry&);
     MCAPI void initParams(class RenderParams&, class BlockSource&, class BlockPos const&, class Actor*) const;
     MCAPI bool isAttachedTo(class BlockSource&, class BlockPos const&, class BlockPos&) const;
     MCAPI bool isAuxValueRelevantForPicking() const;
@@ -145,6 +147,7 @@ public:
     MCAPI bool isStemBlock() const;
     MCAPI bool isThinFenceBlock() const;
     MCAPI bool isTopPartialBlock(class BlockSource const&, class BlockPos const&) const;
+    MCAPI bool isUnbreakable() const;
     MCAPI bool isWallBlock() const;
     MCAPI bool isWaterBlocking() const;
     MCAPI class Block const& keepState(class ItemState const&) const;
@@ -164,7 +167,7 @@ public:
     MCAPI void onPlayerPlacing(class BlockSource&, class BlockPos const&, class Actor&, unsigned char) const;
     MCAPI void onProjectileHit(class BlockSource&, class BlockPos const&, class Actor const&) const;
     MCAPI void onRemove(class BlockSource&, class BlockPos const&) const;
-    MCAPI void onStandOn(class Actor&, class BlockPos const&) const;
+    MCAPI void onStandOn(class EntityContext&, class BlockPos const&) const;
     MCAPI void onStepOff(class Actor&, class BlockPos const&) const;
     MCAPI void onStepOn(class Actor&, class BlockPos const&) const;
     MCAPI void onStructureBlockPlace(class BlockSource&, class BlockPos const&) const;
@@ -195,6 +198,7 @@ public:
     MCAPI bool tryToPlace(class BlockSource&, class BlockPos const&, struct ActorBlockSyncMessage const*) const;
     MCAPI bool tryToTill(class BlockSource&, class BlockPos const&, class Actor&, class ItemStack&) const;
     MCAPI void updateEntityAfterFallOn(class BlockPos const&, struct IActorMovementProxy&) const;
+    MCAPI bool updateTallestCollisionShape(class BlockSource&, class BlockPos const&, class AABB const&, class optional_ref<struct IActorMovementProxy>, class AABB&, class Vec3 const&, float&) const;
     MCAPI bool use(class Player&, class BlockPos const&, unsigned char) const;
     MCAPI static std::string const BLOCK_DESCRIPTION_PREFIX;
     MCAPI static float const SIZE_OFFSET;
@@ -205,5 +209,6 @@ protected:
 
 private:
     MCAPI bool _isSolid() const;
+    MCAPI void _tryInitEntityIfNotInitialized();
 
 };

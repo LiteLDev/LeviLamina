@@ -51,6 +51,7 @@ public:
     MCAPI bool shouldPersistTrades(class Actor&) const;
     MCAPI void updateTradeTier(class Actor&);
     MCAPI ~LegacyTradeableComponent();
+    MCAPI static bool isUseNewTradeScreen(class Actor const&);
 
 protected:
 

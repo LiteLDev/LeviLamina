@@ -27,7 +27,6 @@ public:
     MCAPI ExpressionNode(char const*, enum MolangVersion, class gsl::span<class HashedString const, -1>);
     MCAPI ExpressionNode();
     MCAPI void clear();
-    MCAPI bool deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI float evalAsFloat(class RenderParams&) const;
     MCAPI struct MolangScriptArg const& evalGeneric(class RenderParams&) const;
     MCAPI std::string const& getExpressionString();
@@ -44,7 +43,6 @@ public:
     MCAPI class ExpressionNode& operator=(float);
     MCAPI bool operator==(class ExpressionNode const&) const;
     MCAPI bool parse(std::string const&, enum MolangVersion, class gsl::span<class HashedString const, -1>);
-    MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI ~ExpressionNode();
     MCAPI static void bindType();
     MCAPI static void buildExpressionOpTable();
@@ -53,7 +51,6 @@ public:
     MCAPI static class std::recursive_mutex& getQueryFunctionMutex();
     MCAPI static std::vector<struct std::pair<std::string, enum ExpressionOp>> mAliasOpTokens;
     MCAPI static std::vector<std::string> mExpressionOpTokens;
-    MCAPI static struct std::atomic<int> mNumRootExpressionsWithVariables;
     MCAPI static struct MolangQueryFunction& registerQueryFunction(std::string const&, class std::function<struct MolangScriptArg const& (class RenderParams& , std::vector<class ExpressionNode> const& )>, std::string const&, enum MolangQueryFunctionReturnType, class HashedString, unsigned __int64, unsigned __int64, class std::initializer_list<int> const&);
     MCAPI static void setExperiments(class Experiments const&);
     MCAPI static void unregisterQueryFunction(std::string const&, class HashedString);
@@ -61,14 +58,15 @@ public:
 protected:
 
 private:
-    MCAPI bool _checkIsValidAndPopulateUsedTokenFlags(struct ExpressionOpBitField const&);
+    MCAPI bool _buildTree(struct ExpressionOpBitField const&, enum MolangVersion);
+    MCAPI bool _checkAllOperationsAreValid() const;
     MCAPI bool _optimize(enum MolangVersion);
+    MCAPI bool _processTernaryAndConditionalExpressions();
     MCAPI bool _readNextToken(char const* &, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
     MCAPI void _setExpressionStringWithoutRelink(std::string const&);
     MCAPI bool _tokenize(char const*, struct ExpressionOpBitField&, class gsl::span<class HashedString const, -1> const&, enum MolangVersion);
     MCAPI bool _validate(enum MolangVersion, bool, int) const;
     MCAPI bool _validateChildrenAreNumerical(enum MolangVersion) const;
-    MCAPI bool buildTree(struct ExpressionOpBitField const&);
     MCAPI struct MolangScriptArg const& executeMolangProgram(class RenderParams&, struct MolangEvalParams&) const;
     MCAPI bool findClosingOp(unsigned __int64&, enum ExpressionOp) const;
     MCAPI bool optimizeFunctionCallParams();

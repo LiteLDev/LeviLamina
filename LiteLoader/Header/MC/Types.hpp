@@ -34,7 +34,6 @@ class Color;
 
 }; // namespace mce
 
-
 class BoundingBox
 {
 public:
@@ -65,37 +64,14 @@ public:
         id = x;
     }
 
-    inline operator T()
+    inline operator T() const
     {
         return id;
     }
 };
 
-struct ActorUniqueID
-{
-    long long id;
+#include "ActorUniqueID.hpp"
 
-public:
-    ActorUniqueID()
-    {
-        id = -1;
-    }
-
-    ActorUniqueID(long long i)
-    {
-        id = i;
-    }
-
-    inline long long get()
-    {
-        return id;
-    }
-
-    inline operator long long()
-    {
-        return id;
-    }
-};
 //static_assert(!std::is_pod_v<ActorUniqueID>);
 
 
@@ -104,35 +80,19 @@ class ActorRuntimeID
 public:
     unsigned long long id;
 
-    inline unsigned long long get()
+    inline unsigned long long get() const
     {
         return id;
     }
 
-    inline operator unsigned long long()
+    inline operator unsigned long long() const
     {
         return id;
     }
 };
 //static_assert(std::is_pod_v<ActorRuntimeID>);
 
-#include "../MC/RelativeFloat.hpp"
-//class RelativeFloat {
-//public:
-//    float value;
-//    bool is_relative;
-//
-//    RelativeFloat(float value)
-//        : value(value)
-//        , is_relative(true) {
-//    }
-//
-//    inline float getFloat(float center) const {
-//        if (is_relative)
-//            return center + value;
-//        return value;
-//    }
-//};
+#include "RelativeFloat.hpp"
 
 //namespace Core {
 //
@@ -291,6 +251,10 @@ class TypedServerNetId
 {
 public:
     T2 netId;
+    inline operator T2()
+    {
+        return netId;
+    }
 };
 
 template <typename T, typename T2, int unk>
@@ -329,8 +293,9 @@ class Factory;
 template <typename T>
 class InheritanceTree;
 
-template <typename T, int unk>
-class ItemStackRequestActionCraft;
+//enum class ItemStackRequestActionType : char;
+//template <typename T, ItemStackRequestActionType actionType>
+//class ItemStackRequestActionCraft;
 
 template <typename T>
 class ItemStateVariant;
@@ -357,12 +322,24 @@ template<typename T>
 class WeakPtr {
     T** value;
 public:
-    inline T* get() {
+    inline T* get()
+    {
         if (value)
             return *value;
         return nullptr;
     }
-    inline T& operator *() {
+    inline T const* get() const
+    {
+        if (value)
+            return *value;
+        return nullptr;
+    }
+    inline T& operator*()
+    {
+        return *get();
+    }
+    inline T const& operator*() const
+    {
         return *get();
     }
     //inline operator ->() {
@@ -409,7 +386,30 @@ template <typename T>
 class buffer_span_mut;
 
 template <typename T>
-class optional_ref;
+class optional_ref
+{
+    T** value;
+
+public:
+    inline T* get() const
+    {
+        if (value && *value)
+            return *value;
+        return nullptr;
+    }
+    //inline T* set(T const& val)
+    //{
+    //    *value = &val;
+    //}
+    inline T& operator*() const
+    {
+        return **value;
+    }
+    inline T* operator->() const
+    {
+        return *value;
+    }
+};
 
 template <int a>
 class DividedPos2d;
@@ -436,51 +436,57 @@ template <typename T1>
 class WildcardCommandSelector;
 
 //enum
-enum class ContainerType : unsigned char
+enum class ContainerType : char
 {
-    INVENTORY = 0xff,
-    CONTAINER = 0x00,
-    WORKBENCH = 0x01,
-    FURNACE = 0x02,
-    ENCHANTMENT = 0x03,
-    BREWING_STAND = 0x04,
-    ANVIL = 0x05,
-    DISPENSER = 0x06,
-    DROPPER = 0x07,
-    HOPPER = 0x08,
-    CAULDRON = 0x09,
-    MINECART_CHEST = 0x0a,
-    MINECART_HOPPER = 0x0b,
-    HORSE = 0x0c,
-    JUKEBOX = 0x11,
-    LAB_TABLE = 0x17,
-    BLAST_FURNACE = 0x1b,
-    SMOKER = 0x1c,
-    STONECUTTER = 0x1d,
-    HUD = 0x1f,
-    SMITHING_TABLE = 0x21,
-    NONE = 0xf7
+    INVENTORY              = -1,
+    NONE                   = -9,
+    CONTAINER              = 0,
+    WORKBENCH              = 1,
+    FURNACE                = 2,
+    ENCHANTMENT            = 3,
+    BREWING_STAND          = 4,
+    ANVIL                  = 5,
+    DISPENSER              = 6,
+    DROPPER                = 7,
+    HOPPER                 = 8,
+    CAULDRON               = 9,
+    MINECART_CHEST         = 10,
+    MINECART_HOPPER        = 11,
+    HORSE                  = 12,
+    TRADE                  = 15,//NotGenerated
+    MINECART_COMMAND_BLOCK = 16,
+    JUKEBOX                = 17,
+    COMPOUND_CREATOR       = 20,
+    ELEMENT_CONSTRUCTOR    = 21,
+    MATERIAL_REDUCER       = 22,
+    LAB_TABLE              = 23,
+    BLAST_FURNACE          = 27,
+    SMOKER                 = 28,
+    STONECUTTER            = 29,
+    HUD                    = 31,
+    SMITHING_TABLE         = 33,
+};
+
+enum class UpdateBlockLayer : int
+{
+    UpdateBlockDefault,
+    UpdateBlockLiquid
 };
 
 enum class UpdateBlockFlags : int
 {
-    BlockUpdateNeighbours = 1,
+    UpdateBlockNone = 0,
+    BlockUpdateNeighbors = 1,
     BlockUpdateNetwork = 2,
-    BlockUpdateNoGraphics = 3,
-    BlockUpdatePriority = 4,
-};
-
-enum class DataItemType : unsigned char
-{
-    BYTE = 0,
-    SHORT = 1,
-    INT = 2,
-    FLOAT = 3,
-    STRING = 4,
-    NBT = 5,
-    POS = 6,
-    LONG = 7,
-    VEC3 = 8
+    BlockUpdateAll = 3,//default value in BDS
+    BlockUpdateNoGraphic = 4,
+    BlockUpdatePriority = 8,
+    BlockUpdateAllPriority = 11
+    //old one not correctly ? 
+    //BlockUpdateNeighbours = 1,
+    //BlockUpdateNetwork = 2,
+    //BlockUpdateNoGraphics = 3,
+    //BlockUpdatePriority = 4,
 };
 
 enum class TextType : char
@@ -519,7 +525,8 @@ enum class BossEvent : int
     HealthPercentage = 4,
     Title = 5,
     AppearanceProperties = 6,
-    Texture = 7
+    Texture = 7,
+    ResendRaidBossEventData = 8,
 };
 
 enum class BossEventColour : int
@@ -531,6 +538,70 @@ enum class BossEventColour : int
     Yellow = 4,
     Purple = 5,
     White = 6
+};
+
+enum class ContainerEnumName : int8_t
+{
+    AnvilInputContainer = 0,
+    AnvilMaterialContainer = 1,
+    AnvilResultPreviewContainer = 2,
+    SmithingTableInputContainer = 3,
+    SmithingTableMaterialContainer = 4,
+    SmithingTableResultPreviewContainer = 5,
+    ArmorContainer = 6,
+    LevelEntityContainer = 7,
+    BeaconPaymentContainer = 8,
+    BrewingStandInputContainer = 9,
+    BrewingStandResultContainer = 10,
+    BrewingStandFuelContainer = 11,
+    CombinedHotbarAndInventoryContainer = 12,
+    CraftingInputContainer = 13,
+    CraftingOutputPreviewContainer = 14,
+    RecipeConstructionContainer = 15,
+    RecipeNatureContainer = 16,
+    RecipeItemsContainer = 17,
+    RecipeSearchContainer = 18,
+    RecipeSearchBarContainer = 19,
+    RecipeEquipmentContainer = 20,
+    EnchantingInputContainer = 21,
+    EnchantingMaterialContainer = 22,
+    FurnaceFuelContainer = 23,
+    FurnaceIngredientContainer = 24,
+    FurnaceResultContainer = 25,
+    HorseEquipContainer = 26,
+    HotbarContainer = 27,
+    InventoryContainer = 28,
+    ShulkerBoxContainer = 29,
+    TradeIngredient1Container = 30,
+    TradeIngredient2Container = 31,
+    TradeResultPreviewContainer = 32,
+    OffhandContainer = 33,
+    CompoundCreatorInput = 34,
+    CompoundCreatorOutputPreview = 35,
+    ElementConstructorOutputPreview = 36,
+    MaterialReducerInput = 37,
+    MaterialReducerOutput = 38,
+    LabTableInput = 39,
+    LoomInputContainer = 40,
+    LoomDyeContainer = 41,
+    LoomMaterialContainer = 42,
+    LoomResultPreviewContainer = 43,
+    BlastFurnaceIngredientContainer = 44,
+    SmokerIngredientContainer = 45,
+    Trade2Ingredient1Container = 46,
+    Trade2Ingredient2Container = 47,
+    Trade2ResultPreviewContainer = 48,
+    GrindstoneInputContainer = 49,
+    GrindstoneAdditionalContainer = 50,
+    GrindstoneResultPreviewContainer = 51,
+    StonecutterInputContainer = 52,
+    StonecutterResultPreviewContainer = 53,
+    CartographyInputContainer = 54,
+    CartographyAdditionalContainer = 55,
+    CartographyResultPreviewContainer = 56,
+    BarrelContainer = 57,
+    CursorContainer = 58,
+    CreatedOutputContainer = 59
 };
 
 enum class ParticleType
@@ -624,7 +695,7 @@ enum class transactionType
     ItemReleaseTransaction = 0x04
 };
 
-enum class ItemStackRequestActionType
+enum class ItemStackRequestActionType: char
 {
     Take = 0x00,
     Place = 0x01,
@@ -633,17 +704,19 @@ enum class ItemStackRequestActionType
     Destroy = 0x04,
     Consume = 0x05,
     Create = 0x06,
-    ScreenLabTableCombine = 0x07,
-    ScreenBeaconPayment = 0x08,
-    ScreenHUDMineBlock = 0x09,
-    CraftRecipe = 0x0a,
-    CraftRecipeAuto = 0x0b,
-    CraftCreative = 0x0c,
-    CraftRecipeOptional = 0x0d,
-    CraftRepairAndDisenchant = 0x0e,
-    CraftLoom = 0x0f,
-    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x10,
-    CraftResults_DEPRECATEDASKTYLAING = 0x11
+    PlaceInItemContainer = 0x07,
+    TakeFromItemContainer = 0x08,
+    ScreenLabTableCombine = 0x09,
+    ScreenBeaconPayment = 0x0a,
+    ScreenHUDMineBlock = 0x0b,
+    CraftRecipe = 0x0c,
+    CraftRecipeAuto = 0x0d,
+    CraftCreative = 0x0e,
+    CraftRecipeOptional = 0x0f,
+    CraftRepairAndDisenchant = 0x10,
+    CraftLoom = 0x11,
+    CraftNonImplemented_DEPRECATEDASKTYLAING = 0x12,
+    CraftResults_DEPRECATEDASKTYLAING = 0x13,
 };
 
 enum class ActorDamageCause : int
@@ -865,7 +938,10 @@ enum class MinecraftPacketIds : int
     UpdateSubChunkBlocks = 0xac,
     PhotoInfoRequest = 0xad,
     SubChunk = 0xae,
-    SubChunkRequest = 0xaf
+    SubChunkRequest = 0xaf,
+    PlayerStartItemCooldown = 0xb0,
+    ScriptMessage = 0xb1,
+    CodeBuilderSource = 0xb2,
 };
 
 enum ItemStackNetResult :unsigned char {
@@ -989,195 +1065,3 @@ public:
         return data->empty();
     }
 };
-
-#pragma warning(disable : 26495)
-
-class FakeDataItem
-{
-public:
-    DataItemType type;
-    uint16_t id{0};
-    int8_t byte{0};
-    int16_t shorts{0};
-    int32_t ints{0};
-    float floats{0.0};
-    std::string strings;
-    BlockPos bpos{};
-    Vec3 vec3{};
-    int64_t longs{0};
-
-    FakeDataItem(uint16_t a1, DataItemType a3, int8_t a2)
-        : id(a1)
-        , type(a3)
-        , byte(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, int16_t a2)
-        : id(a1)
-        , type(a3)
-        , shorts(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, int32_t a2)
-        : id(a1)
-        , type(a3)
-        , ints(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, float a2)
-        : id(a1)
-        , type(a3)
-        , floats(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, std::string a2)
-        : id(a1)
-        , type(a3)
-        , strings(std::move(a2))
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, BlockPos a2)
-        : id(a1)
-        , type(a3)
-        , bpos(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, Vec3 a2)
-        : id(a1)
-        , type(a3)
-        , vec3(a2)
-    {
-    }
-
-    FakeDataItem(uint16_t a1, DataItemType a3, int64_t a2)
-        : id(a1)
-        , type(a3)
-        , longs(a2)
-    {
-    }
-};
-
-namespace ActorDataIDs
-{
-constexpr int16_t FLAGS = 0;                      // LONG
-constexpr int16_t HEALTH = 1;                     // INT (minecart/boat)
-constexpr int16_t VARIANT = 2;                    // INT
-constexpr int16_t COLOR = 3;                      // BYTE
-constexpr int16_t NAMETAG = 4;                    // STRING
-constexpr int16_t OWNER = 5;                      // LONG
-constexpr int16_t TARGET = 6;                     // LONG
-constexpr int16_t AIR = 7;                        // SHORT
-constexpr int16_t POTION_COLOR = 8;               // INT (ARGB!)
-constexpr int16_t POTION_AMBIENT = 9;             // BYTE
-constexpr int16_t JUMP_DURATION = 10;             // LONG
-constexpr int16_t HURT_TIME = 11;                 // INT (minecart/boat)
-constexpr int16_t HURT_DIRECTION = 12;            // INT (minecart/boat)
-constexpr int16_t PADDLE_TIME_LEFT = 13;          // FLOAT
-constexpr int16_t PADDLE_TIME_RIGHT = 14;         // FLOAT
-constexpr int16_t EXPERIENCE_VALUE = 15;          // INT (xp orb)
-constexpr int16_t DISPLAY_ITEM = 16;              // INT (id | (data << 16))
-constexpr int16_t HORSE_FLAGS = 16;               // INT
-constexpr int16_t WITHER_SKULL_IS_DANGEROUS = 16; // BYTE
-constexpr int16_t MINECART_DISPLAY_OFFSET = 17;   // INT
-constexpr int16_t ARROW_SHOOTER_ID = 17;          // LONG
-constexpr int16_t MINECART_HAS_DISPLAY = 18;      // BYTE (must be 1 for minecart to show block inside)
-constexpr int16_t HORSE_TYPE = 19;
-constexpr int16_t SWELL = 19;
-constexpr int16_t OLD_SWELL = 20;
-constexpr int16_t SWELL_DIR = 21;
-constexpr int16_t CHARGE_AMOUNT = 22;
-constexpr int16_t ENDERMAN_HELD_RUNTIME_ID = 23; // SHORT
-constexpr int16_t ACTOR_AGE = 24;                // SHORT
-constexpr int16_t PLAYER_FLAGS = 26;             // BYTE
-constexpr int16_t PLAYER_INDEX = 27;
-constexpr int16_t PLAYER_BED_POSITION = 28; // POS
-constexpr int16_t FIREBALL_POWER_X = 29;    // FLOAT
-constexpr int16_t FIREBALL_POWER_Y = 30;    // FLOAT
-constexpr int16_t FIREBALL_POWER_Z = 31;    // FLOAT
-constexpr int16_t AUX_POWER = 32;
-constexpr int16_t FISH_X = 33;
-constexpr int16_t FISH_Z = 34;
-constexpr int16_t FISH_ANGLE = 35;
-constexpr int16_t POTION_AUX_VALUE = 36;                   // SHORT
-constexpr int16_t LEAD_HOLDER = 37;                        // LONG
-constexpr int16_t SCALE = 38;                              // FLOAT
-constexpr int16_t INTERACTIVE_TAG = 39;                    // STRING
-constexpr int16_t NPC_SKIN_ID = 40;                        // STRING
-constexpr int16_t URL_TAG = 41;                            // STRING
-constexpr int16_t MAX_AIR = 42;                            // SHORT
-constexpr int16_t MARK_VARIANT = 43;                       // INT
-constexpr int16_t CONTAINER_TYPE = 44;                     // BYTE
-constexpr int16_t CONTAINER_BASE_SIZE = 45;                // INT
-constexpr int16_t CONTAINER_EXTRA_SLOTS_PER_STRENGTH = 46; // INT
-constexpr int16_t BLOCK_TARGET = 47;                       // POS (ENDER CRYSTAL)
-constexpr int16_t WITHER_INVULNERABLE_TICKS = 48;          // INT
-constexpr int16_t WITHER_TARGET_1 = 49;                    // LONG
-constexpr int16_t WITHER_TARGET_2 = 50;                    // LONG
-constexpr int16_t WITHER_TARGET_3 = 51;                    // LONG
-constexpr int16_t AERIAL_ATTACK = 52;
-constexpr int16_t BOUNDING_BOX_WIDTH = 53;            // FLOAT
-constexpr int16_t BOUNDING_BOX_HEIGHT = 54;           // FLOAT
-constexpr int16_t FUSE_LENGTH = 55;                   // INT
-constexpr int16_t RIDER_SEAT_POSITION = 56;           // VEC3
-constexpr int16_t RIDER_ROTATION_LOCKED = 57;         // BYTE
-constexpr int16_t RIDER_MAX_ROTATION = 58;            // FLOAT
-constexpr int16_t RIDER_MIN_ROTATION = 59;            // FLOAT
-constexpr int16_t AREA_EFFECT_CLOUD_RADIUS = 61;      // FLOAT
-constexpr int16_t AREA_EFFECT_CLOUD_WAITING = 62;     // INT
-constexpr int16_t AREA_EFFECT_CLOUD_PARTICLE_ID = 63; // INT
-constexpr int16_t SHULKER_PEEK_ID = 64;               // INT
-constexpr int16_t SHULKER_ATTACH_FACE = 65;           // BYTE
-constexpr int16_t SHULKER_ATTACHED = 66;              // SHORT
-constexpr int16_t SHULKER_ATTACH_POS = 67;            // POS
-constexpr int16_t TRADING_PLAYER_EID = 68;            // LONG
-constexpr int16_t TRADING_CAREER = 69;
-constexpr int16_t HAS_COMMAND_BLOCK = 70;
-constexpr int16_t COMMAND_BLOCK_COMMAND = 71;         // STRING
-constexpr int16_t COMMAND_BLOCK_LAST_OUTPUT = 72;     // STRING
-constexpr int16_t COMMAND_BLOCK_TRACK_OUTPUT = 73;    // BYTE
-constexpr int16_t CONTROLLING_RIDER_SEAT_NUMBER = 74; // BYTE
-constexpr int16_t STRENGTH = 75;                      // INT
-constexpr int16_t MAX_STRENGTH = 76;                  // INT
-constexpr int16_t SPELL_CASTING_COLOR = 77;           // INT
-constexpr int16_t LIMITED_LIFE = 78;
-constexpr int16_t ARMOR_STAND_POSE_INDEX = 79;    // INT
-constexpr int16_t ENDER_CRYSTAL_TIME_OFFSET = 80; // INT
-constexpr int16_t ALWAYS_SHOW_NAMETAG = 81;       // BYTE
-constexpr int16_t COLOR_2 = 82;                   // BYTE
-constexpr int16_t NAME_AUTHOR = 83;
-constexpr int16_t SCORE_TAG = 84;               // STRING
-constexpr int16_t BALLOON_ATTACHED_ENTITY = 85; // LONG
-constexpr int16_t PUFFERFISH_SIZE = 86;
-constexpr int16_t BUBBLE_TIME = 87;
-constexpr int16_t AGENT = 88;
-constexpr int16_t SITTING_AMOUNT = 89;
-constexpr int16_t SITTING_AMOUNT_PREVIOUS = 90;
-constexpr int16_t EATING_COUNTER = 91;
-constexpr int16_t FLAGS_EXTENDED = 92;
-constexpr int16_t LAYING_AMOUNT = 93;
-constexpr int16_t LAYING_AMOUNT_PREVIOUS = 94;
-constexpr int16_t DURATION = 95;
-constexpr int16_t SPAWN_TIME = 96;
-constexpr int16_t CHANGE_RATE = 97;
-constexpr int16_t CHANGE_ON_PICKUP = 98;
-constexpr int16_t PICKUP_COUNT = 99;
-constexpr int16_t INTERACT_TEXT = 100;
-constexpr int16_t TRADE_TIER = 101;
-constexpr int16_t MAX_TRADE_TIER = 102;
-constexpr int16_t TRADE_EXPERIENCE = 103;
-constexpr int16_t SKIN_ID = 104; // INT
-constexpr int16_t SPAWNING_FRAMES = 105;
-constexpr int16_t COMMAND_BLOCK_TICK_DELAY = 106;
-constexpr int16_t COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK = 107;
-constexpr int16_t AMBIENT_SOUND_INTERVAL = 108;
-/*inline constexpr int16_t AMBIENT_SOUND_EVENT_NAME            = 109;
-inline constexpr int16_t FALL_DAMAGE_MULTIPLIER              = 110;
-inline constexpr int16_t NAME_RAW_TEXT                       = 111;
-inline constexpr int16_t CAN_RIDE_TARGET                     = 112;*/
-} // namespace ActorDataIDs

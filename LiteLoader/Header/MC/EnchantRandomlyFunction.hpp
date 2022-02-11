@@ -26,7 +26,7 @@ public:
 public:
     /*0*/ virtual ~EnchantRandomlyFunction();
     /*1*/ virtual void apply(class ItemStack&, class Random&, class LootTableContext&);
-    /*2*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
+    /*3*/ virtual void apply(class ItemInstance&, class Random&, class LootTableContext&);
 
 protected:
 

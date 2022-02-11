@@ -26,18 +26,16 @@ public:
 public:
     /*0*/ virtual ~MoveToPOIGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void stop();
-    /*4*/ virtual void tick();
-    /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*9*/ virtual void _moveToBlock();
-    /*10*/ virtual class Vec3 _getTargetPosition() const;
-    /*11*/ virtual unsigned __int64 _getRepathTime() const;
-    /*12*/ virtual bool getPOI(enum POIType);
-    /*13*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
+    /*3*/ virtual void __unk_vfn_3();
+    /*5*/ virtual void stop();
+    /*6*/ virtual void tick();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*14*/ virtual void _moveToBlock();
+    /*15*/ virtual class Vec3 _getTargetPosition() const;
+    /*17*/ virtual class std::weak_ptr<class POIInstance> _getOwnedPOI(enum POIType) const;
     /*
     inline  ~MoveToPOIGoal(){
          (MoveToPOIGoal::*rv)();
@@ -46,6 +44,7 @@ public:
     }
     */
     MCAPI MoveToPOIGoal(class Mob&, float, enum POIType, float);
+    MCAPI bool getPOI(enum POIType);
 
 protected:
     MCAPI bool _canReachPOI(class Vec3 const&, float, bool);

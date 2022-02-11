@@ -25,15 +25,23 @@ public:
     /*0*/ virtual ~BiomeDefinitionListPacket();
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
-    /*3*/ virtual void write(class BinaryStream&) const;
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual struct ExtendedStreamReadResult readExtended(class ReadOnlyBinaryStream&);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual ~BiomeDefinitionListPacket();
     /*
     inline  ~BiomeDefinitionListPacket(){
          (BiomeDefinitionListPacket::*rv)();
         *((void**)&rv) = dlsym("??1BiomeDefinitionListPacket@@UEAA@XZ");
         return (this->*rv)();
+    }
+    inline enum StreamReadResult _read(class ReadOnlyBinaryStream& a0){
+        enum StreamReadResult (BiomeDefinitionListPacket::*rv)(class ReadOnlyBinaryStream&);
+        *((void**)&rv) = dlsym("?_read@BiomeDefinitionListPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class ReadOnlyBinaryStream&>(a0));
+    }
+    inline void write(class BinaryStream& a0) const{
+        void (BiomeDefinitionListPacket::*rv)(class BinaryStream&) const;
+        *((void**)&rv) = dlsym("?write@BiomeDefinitionListPacket@@UEBAXAEAVBinaryStream@@@Z");
+        return (this->*rv)(std::forward<class BinaryStream&>(a0));
     }
     */
     MCAPI BiomeDefinitionListPacket();

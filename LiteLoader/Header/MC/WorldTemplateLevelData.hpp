@@ -23,6 +23,7 @@ public:
 
 public:
     MCAPI WorldTemplateLevelData();
+    MCAPI class BaseGameVersion const& getBaseGameVersion() const;
     MCAPI ~WorldTemplateLevelData();
 
 protected:

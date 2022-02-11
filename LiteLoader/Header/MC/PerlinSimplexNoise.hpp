@@ -18,11 +18,11 @@ class PerlinSimplexNoise {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PERLINSIMPLEXNOISE
 public:
     class PerlinSimplexNoise& operator=(class PerlinSimplexNoise const&) = delete;
-    PerlinSimplexNoise(class PerlinSimplexNoise const&) = delete;
     PerlinSimplexNoise() = delete;
 #endif
 
 public:
+    MCAPI PerlinSimplexNoise(class PerlinSimplexNoise const&);
     MCAPI PerlinSimplexNoise(class IRandom&, int, bool);
     MCAPI PerlinSimplexNoise(unsigned int, int);
     MCAPI float* getRegion(float*, class Vec2 const&, int, int, class Vec2 const&, float, float) const;

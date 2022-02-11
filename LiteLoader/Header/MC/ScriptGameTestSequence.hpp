@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -24,14 +23,12 @@ public:
 #endif
 
 public:
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecute(class Scripting::TypedScriptClosure<void (void)>);
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteAfter(int, class Scripting::TypedScriptClosure<void (void)>);
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteFor(int, class Scripting::TypedScriptClosure<void (void)>);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecute(class Scripting::Closure<void (void)>);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteAfter(int, class Scripting::Closure<void (void)>);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenExecuteFor(int, class Scripting::Closure<void (void)>);
     MCAPI void thenFail(std::string);
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenIdle(int);
-    MCAPI void thenSucceed();
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWait(class Scripting::TypedScriptClosure<void (void)>);
-    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWaitAfter(int, class Scripting::TypedScriptClosure<void (void)>);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWait(class Scripting::Closure<void (void)>);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestSequence> thenWaitAfter(int, class Scripting::Closure<void (void)>);
 
 protected:
 

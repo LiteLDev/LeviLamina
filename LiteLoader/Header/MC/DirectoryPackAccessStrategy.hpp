@@ -40,9 +40,9 @@ public:
     /*12*/ virtual void forEachIn(class Core::Path const&, class std::function<void (class Core::Path const& )>, bool) const;
     /*13*/ virtual void forEachInAssetSet(class Core::Path const&, class std::function<void (class Core::Path const& )>) const;
     /*14*/ virtual enum PackAccessStrategyType getStrategyType() const;
-    /*15*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
-    /*16*/ virtual bool canRecurse() const;
-    /*17*/ virtual void unload();
+    /*16*/ virtual std::unique_ptr<class PackAccessStrategy> createSubPack(class Core::Path const&) const;
+    /*18*/ virtual bool canRecurse() const;
+    /*19*/ virtual void unload();
     /*
     inline  ~DirectoryPackAccessStrategy(){
          (DirectoryPackAccessStrategy::*rv)();

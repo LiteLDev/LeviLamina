@@ -1,10 +1,10 @@
 #include <Global.h>
 #include <FormUI.h>
-#include <GuiAPI.h>
 #include <LLAPI.h>
 
 #include <Impl/FormPacketHelper.h>
 #include <third-party/Nlohmann/fifo_json.hpp>
+#include <Utils/DbgHelper.h>
 #include <Main/LiteLoader.h>
 
 #include <MC/ServerNetworkHandler.hpp>
@@ -85,12 +85,12 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         //Simple Form Builder
         auto form = simpleFormBuilders[formId];
         if (form->callback)
-            form->callback(chosen);
+            form->callback(player, chosen);
         //Button Callback
         if (chosen >= 0) {
             auto button = dynamic_pointer_cast<Form::Button>(form->elements[chosen]);
             if (button->callback)
-                button->callback();
+                button->callback(player);
         }
         simpleFormBuilders.erase(formId);
     }
@@ -99,27 +99,43 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         //Custom Form Builder
         auto form = customFormBuilders[formId];
 
+        if (data == "null")
+        {
+            customFormBuilders.erase(formId);
+            if (form->callback)
+                form->callback(player, {});
+            return;
+        }
+
         fifo_json res = fifo_json::parse(data);
         int nowIndex = 0;
         for (fifo_json& j : res)
         {
             switch (form->getType(nowIndex))
             {
+            case Form::CustomFormElement::Type::Label:      //label's data is null
+                break;
             case Form::CustomFormElement::Type::Input:
-                form->setData<Form::Input>(nowIndex, j.get<string>());
+                form->setValue(nowIndex, j.get<string>());
                 break;
             case Form::CustomFormElement::Type::Toggle:
-                form->setData<Form::Toggle>(nowIndex, j.get<bool>());
-                break;
-            case Form::CustomFormElement::Type::Dropdown:
-                form->setData<Form::Dropdown>(nowIndex, j.get<int>());
+                form->setValue(nowIndex, j.get<bool>());
                 break;
             case Form::CustomFormElement::Type::Slider:
-                form->setData<Form::Slider>(nowIndex, j.get<int>());
+                form->setValue(nowIndex, j.get<int>());
                 break;
+            case Form::CustomFormElement::Type::Dropdown:
+            {
+                auto& options = dynamic_pointer_cast<Form::Dropdown>(form->elements[nowIndex].second)->options;
+                form->setValue(nowIndex, options[j.get<int>()]);
+                break;
+            }
             case Form::CustomFormElement::Type::StepSlider:
-                form->setData<Form::StepSlider>(nowIndex, j.get<int>());
+            {
+                auto& options = dynamic_pointer_cast<Form::StepSlider>(form->elements[nowIndex].second)->options;
+                form->setValue(nowIndex, options[j.get<int>()]);
                 break;
+            }
             default:
                 break;
             }
@@ -129,12 +145,10 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
         if (form->callback)
         {
             std::map<string, std::shared_ptr<Form::CustomFormElement>> callbackData;
-            if (data == "null")
-                return form->callback(callbackData);
             for (auto& [k, v] : form->elements)
                 callbackData[k] = v;
 
-            form->callback(callbackData);
+            form->callback(player, callbackData);
         }
 
         customFormBuilders.erase(formId);
@@ -170,8 +184,8 @@ Player* GetPlayerFromPacket(ServerNetworkHandler* handler, NetworkIdentifier* id
     return (Player*)handler->getServerPlayer(*id, dAccess<char>(packet, 16));
 }
 
-THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
-    void* _this, NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
+TClasslessInstanceHook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@@$0A@@@UEBAXAEBVNetworkIdentifier@@AEAVNetEventCallback@@AEAV?$shared_ptr@VPacket@@@std@@@Z",
+    NetworkIdentifier* id, ServerNetworkHandler* handler, void* pPacket)
 {
     try
     {
@@ -187,7 +201,6 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
                 data.pop_back();
 
             HandleFormPacket(sp, formId, data);
-            GUIcallbcak(sp, formId, data);
         }
     }
     catch (const seh_exception& e)
@@ -196,13 +209,15 @@ THook(void, "?handle@?$PacketHandlerDispatcherInstance@VModalFormResponsePacket@
         logger.error("SEH Uncaught Exception Detected!");
         logger.error("{}", e.what());
         logger.error("In Event: onFormSelected");
+        PrintCurrentStackTraceback();
     }
     catch (...)
     {
         logger.error("Event Callback Failed!");
         logger.error("Uncaught Exception Detected!");
         logger.error("In Event: onFormSelected");
+        PrintCurrentStackTraceback();
     }
 
-    original(_this, id, handler, pPacket);
+    original(this, id, handler, pPacket);
 }

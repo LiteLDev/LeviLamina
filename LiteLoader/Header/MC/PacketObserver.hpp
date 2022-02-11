@@ -24,6 +24,20 @@ public:
 
 public:
     /*0*/ virtual ~PacketObserver();
+    /*1*/ virtual void packetSentTo(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    /*2*/ virtual void packetReceivedFrom(class NetworkIdentifier const&, class Packet const&, unsigned int);
+    /*
+    inline void dataReceivedFrom(class NetworkIdentifier const& a0, std::string const& a1){
+        void (PacketObserver::*rv)(class NetworkIdentifier const&, std::string const&);
+        *((void**)&rv) = dlsym("?dataReceivedFrom@PacketObserver@@UEAAXAEBVNetworkIdentifier@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<std::string const&>(a1));
+    }
+    inline void dataSentTo(class NetworkIdentifier const& a0, class gsl::basic_string_span<char const, -1> a1){
+        void (PacketObserver::*rv)(class NetworkIdentifier const&, class gsl::basic_string_span<char const, -1>);
+        *((void**)&rv) = dlsym("?dataSentTo@PacketObserver@@UEAAXAEBVNetworkIdentifier@@V?$basic_string_span@$$CBD$0?0@gsl@@@Z");
+        return (this->*rv)(std::forward<class NetworkIdentifier const&>(a0), std::forward<class gsl::basic_string_span<char const, -1>>(a1));
+    }
+    */
 
 protected:
 

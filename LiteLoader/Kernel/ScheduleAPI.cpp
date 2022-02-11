@@ -5,6 +5,7 @@
 #include <Main/Config.h>
 #include <Main/LiteLoader.h>
 #include <LoggerAPI.h>
+#include <LLAPI.h>
 
 using namespace std;
 
@@ -16,16 +17,15 @@ public:
     enum class TaskType {
         Delay, Repeat, InfiniteRepeat
     };
-
     unsigned int taskId;
     TaskType type;
     int leftTime, interval, count;
     std::function<void(void)> task;
-
+    HMODULE handler;
 
     ScheduleTaskData::ScheduleTaskData(TaskType type, std::function<void(void)> task, unsigned long long delay,
-                                       unsigned long long interval, int count)
-            : type(type), task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++) {}
+                                       unsigned long long interval, int count, HMODULE handler)
+            : type(type), task(task), leftTime(delay), interval(interval), count(count), taskId(nextTaskId++) ,handler(handler) {}
 
     inline unsigned int getTaskId() {
         return taskId;
@@ -87,27 +87,33 @@ public:
                 logger.error("SEH exception occurred in ScheduleTask!");
                 logger.error("{}", e.what());
                 logger.error("TaskId: {}", t.taskId);
+                if (auto plugin = LL::getPlugin(t.handler))
+                    logger.error("Plugin: {}", plugin->name);
             }
             catch (const std::exception &e) {
                 logger.error("Exception occurred in ScheduleTask!");
                 logger.error("{}", e.what());
                 logger.error("TaskId: {}", t.taskId);
+                if (auto plugin = LL::getPlugin(t.handler))
+                    logger.error("Plugin: {}", plugin->name);
             }
             catch (...) {
                 logger.error("Exception occurred in ScheduleTask!");
                 logger.error("TaskId: {}", t.taskId);
+                if (auto plugin = LL::getPlugin(t.handler))
+                    logger.error("Plugin: {}", plugin->name);
             }
 
             switch (t.type) {
                 case ScheduleTaskData::TaskType::InfiniteRepeat: {
-                    ScheduleTaskData sche{t};
+                    ScheduleTaskData sche{ std::move(t) };
                     sche.leftTime = sche.interval;
                     push(std::move(sche));
                     break;
                 }
                 case ScheduleTaskData::TaskType::Repeat: {
                     if (t.count > 0) {
-                        ScheduleTaskData sche{t};
+                        ScheduleTaskData sche{ std::move(t) };
                         sche.leftTime = sche.interval;
                         --sche.count;
                         push(std::move(sche));
@@ -127,48 +133,50 @@ ScheduleTaskQueueType taskQueue;
 
 
 namespace Schedule {
-    ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay) {
+    ScheduleTask delay(std::function<void(void)> task, unsigned long long tickDelay, HMODULE handler)
+    {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned) -1);
-        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
-    ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount) {
+    ScheduleTask repeat(std::function<void(void)> task, unsigned long long tickRepeat, int maxCount, HMODULE handler)
+    {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData::TaskType type = maxCount < 0 ?
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount);
+        ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount, handler);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
-    ScheduleTask
-    delayRepeat(std::function<void(void)> task, unsigned long long tickDelay, unsigned long long tickRepeat,
-                int maxCount) {
+    ScheduleTask delayRepeat(std::function<void(void)> task, unsigned long long tickDelay,
+        unsigned long long tickRepeat, int maxCount, HMODULE handler)
+    {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
-            return ScheduleTask((unsigned) -1);
-        ScheduleTaskData::TaskType type = maxCount < 0 ?
-                                          ScheduleTaskData::TaskType::InfiniteRepeat
+            return ScheduleTask((unsigned)-1);
+        ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
-        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount);
+        ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount, handler);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
-    ScheduleTask nextTick(std::function<void(void)> task) {
+    ScheduleTask nextTick(std::function<void(void)> task, HMODULE handler)
+    {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned) -1);
-        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1);
+        ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
         locker.lock();
         taskQueue.push(sche);
         locker.unlock();

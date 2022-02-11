@@ -2,6 +2,7 @@
 #include <LoggerAPI.h>
 #include <Main/LiteLoader.h>
 #include <httplib/httplib.h>
+#include <Utils/DbgHelper.h>
 #include <thread>
 
 using namespace std;
@@ -46,10 +47,12 @@ bool HttpGet(const string &url, const function<void(int, string)> &callback, int
         catch (const seh_exception &e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpGet callback");
+            PrintCurrentStackTraceback();
         }
         catch (...) {
             logger.error("HttpGet Callback Failed!");
             logger.error("Uncaught Exception Detected!");
+            PrintCurrentStackTraceback();
         }
     }).detach();
 
@@ -82,10 +85,12 @@ HttpPost(const string &url, const string &data, const string &type, const std::f
         catch (const seh_exception &e) {
             logger.error("SEH Uncaught Exception Detected!\n{}", e.what());
             logger.error("In HttpPost callback");
+            PrintCurrentStackTraceback();
         }
         catch (...) {
             logger.error("HttpPost Callback Failed!");
             logger.error("Uncaught Exception Detected!");
+            PrintCurrentStackTraceback();
         }
     }).detach();
     return true;

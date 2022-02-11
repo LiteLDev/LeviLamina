@@ -44,14 +44,14 @@ public:
         *((void**)&rv) = dlsym("?setData@BaseContainerMenu@@UEAAXHH@Z");
         return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
-    inline enum ContainerID getContainerId() const{
-        enum ContainerID (BaseContainerMenu::*rv)() const;
-        *((void**)&rv) = dlsym("?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ");
-        return (this->*rv)();
-    }
     inline enum ContainerType getContainerType() const{
         enum ContainerType (BaseContainerMenu::*rv)() const;
         *((void**)&rv) = dlsym("?getContainerType@BaseContainerMenu@@UEBA?AW4ContainerType@@XZ");
+        return (this->*rv)();
+    }
+    inline enum ContainerID getContainerId() const{
+        enum ContainerID (BaseContainerMenu::*rv)() const;
+        *((void**)&rv) = dlsym("?getContainerId@BaseContainerMenu@@UEBA?AW4ContainerID@@XZ");
         return (this->*rv)();
     }
     inline  ~BaseContainerMenu(){

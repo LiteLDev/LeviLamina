@@ -32,8 +32,8 @@ public:
     MCAPI std::unique_ptr<class CompoundTag> createTag() const;
     MCAPI void disableAchievements();
     MCAPI bool educationFeaturesEnabled() const;
-    MCAPI struct AdventureSettings const& getAdventureSettings() const;
     MCAPI struct AdventureSettings& getAdventureSettings();
+    MCAPI struct AdventureSettings const& getAdventureSettings() const;
     MCAPI class BaseGameVersion const& getBaseGameVersion() const;
     MCAPI std::string const getBiomeOverride() const;
     MCAPI bool getBonusChestSpawned() const;
@@ -151,8 +151,8 @@ public:
 protected:
 
 private:
+    MCAPI void _determineMaxBaseGameVersion();
     MCAPI void _setGameRulesBasedOnPremiumContentIdentity();
     MCAPI void _setValue(class HashedString const&, struct LevelDataValue&&);
-    MCAPI void _tryCorrectSettingsForLegacyWorlds();
 
 };

@@ -24,25 +24,25 @@ public:
 
 public:
     /*0*/ virtual ~FlushableStorageAreaEnv();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual void __unk_vfn_6();
-    /*8*/ virtual void __unk_vfn_7();
-    /*9*/ virtual void __unk_vfn_8();
-    /*10*/ virtual void __unk_vfn_9();
-    /*11*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_11();
-    /*13*/ virtual void __unk_vfn_12();
-    /*14*/ virtual void __unk_vfn_13();
-    /*15*/ virtual void __unk_vfn_14();
-    /*16*/ virtual void __unk_vfn_15();
-    /*17*/ virtual void __unk_vfn_16();
-    /*18*/ virtual void __unk_vfn_17();
-    /*19*/ virtual void __unk_vfn_18();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void __unk_vfn_19();
     /*20*/ virtual void flushToPermanentStorage();
 
 protected:

@@ -24,7 +24,6 @@ public:
 
 public:
     MCAPI bool getInteraction(class Actor&, class Player&, class ActorInteraction&);
-    MCAPI class GiveableComponent& operator=(class GiveableComponent&&);
 
 protected:
 

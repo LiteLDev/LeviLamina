@@ -19,20 +19,31 @@ class EntitySystems {
 public:
     class EntitySystems& operator=(class EntitySystems const&) = delete;
     EntitySystems(class EntitySystems const&) = delete;
+    EntitySystems() = delete;
 #endif
 
 public:
-    MCAPI EntitySystems();
+    /*
+    inline  ~EntitySystems(){
+         (EntitySystems::*rv)();
+        *((void**)&rv) = dlsym("??1EntitySystems@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline void tickMovementCatchup(class EntityRegistry& a0){
+        void (EntitySystems::*rv)(class EntityRegistry&);
+        *((void**)&rv) = dlsym("?tickMovementCatchup@EntitySystems@@UEAAXAEAVEntityRegistry@@@Z");
+        return (this->*rv)(std::forward<class EntityRegistry&>(a0));
+    }
+    */
+    MCAPI EntitySystems(std::string);
     MCAPI class PlayerInteractionSystem& getPlayerInteractionSystem();
     MCAPI void registerEvents(class EntityRegistry&);
-    MCAPI void registerMovementTickingSystem(std::unique_ptr<class ITickingSystem>);
-    MCAPI void registerSystem(std::unique_ptr<struct ISystem>);
-    MCAPI void registerTickingSystem(std::unique_ptr<class ITickingSystem>);
-    MCAPI void registerUnconditionalTickingSystem(std::unique_ptr<class ITickingSystem>);
+    MCAPI void registerMovementTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerSystem(std::unique_ptr<struct ISystem>, struct SystemInfo const&);
+    MCAPI void registerTickingSystem(struct TickingSystemWithInfo&&);
+    MCAPI void registerUnconditionalTickingSystem(struct TickingSystemWithInfo&&);
     MCAPI void tick(class EntityRegistry&);
     MCAPI void tickEditor(class EntityRegistry&);
-    MCAPI void tickMovementCatchup(class EntityRegistry&);
-    MCAPI ~EntitySystems();
 
 protected:
 

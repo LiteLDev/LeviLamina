@@ -30,10 +30,9 @@ public:
     /*3*/ virtual class Vec3 getTempMobPos(class Mob const&) const;
     /*4*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Vec3 const&);
     /*5*/ virtual std::unique_ptr<class Path> createPath(class NavigationComponent&, class Mob&, class Actor&);
-    /*6*/ virtual void stop(class NavigationComponent&, class Mob&);
-    /*7*/ virtual bool travel(class NavigationComponent&, class Mob&, float&, float&, float&);
-    /*8*/ virtual bool canUpdatePath(class Mob const&) const;
-    /*9*/ virtual void updatePath(class NavigationComponent&, class Mob&);
+    /*9*/ virtual void stop(class NavigationComponent&, class Mob&);
+    /*11*/ virtual bool canUpdatePath(class Mob const&) const;
+    /*12*/ virtual void updatePath(class NavigationComponent&, class Mob&);
 
 protected:
 

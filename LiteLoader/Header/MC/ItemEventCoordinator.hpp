@@ -24,9 +24,11 @@ public:
 public:
     /*0*/ virtual ~ItemEventCoordinator();
     MCAPI ItemEventCoordinator();
+    MCAPI class ItemGameplayHandler& getItemGameplayHandler();
     MCAPI void onItemModifiedActor(class ItemStackBase const&, class Actor const&);
     MCAPI void onItemSpawnedActor(class ItemStackBase const&, class Actor const&);
     MCAPI void registerItemGameplayHandler(std::unique_ptr<class ItemGameplayHandler>);
+    MCAPI enum CoordinatorResult sendEvent(class EventRef<struct MutableItemGameplayEvent<enum CoordinatorResult> >);
 
 protected:
 

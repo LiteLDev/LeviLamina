@@ -29,6 +29,7 @@ public:
 protected:
 
 private:
+    MCAPI static int _getDripstoneHeight(class Random&, int, int, float, int);
     MCAPI static bool _placeColumn(class IBlockWorldGenAPI&, class Random&, class BlockPos const&, int, int, float, double, int, float);
     MCAPI static void _replaceBlocksWithDripstoneBlocks(class IBlockWorldGenAPI&, class BlockPos const&, int, unsigned char);
 

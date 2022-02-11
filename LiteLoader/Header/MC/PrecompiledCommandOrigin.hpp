@@ -30,26 +30,26 @@ public:
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual class BlockPos getBlockPosition() const;
     /*4*/ virtual class Vec3 getWorldPosition() const;
-    /*5*/ virtual class Level* getLevel() const;
-    /*6*/ virtual class Dimension* getDimension() const;
-    /*7*/ virtual class Actor* getEntity() const;
-    /*8*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
-    /*9*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
-    /*10*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
-    /*11*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
-    /*12*/ virtual bool hasChatPerms() const;
-    /*13*/ virtual bool hasTellPerms() const;
-    /*14*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
-    /*15*/ virtual bool isWorldBuilder() const;
-    /*16*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
-    /*17*/ virtual bool isSelectorExpansionAllowed() const;
-    /*18*/ virtual unsigned char getSourceSubId() const;
-    /*19*/ virtual void __unk_vfn_0();
-    /*20*/ virtual enum CommandOriginType getOriginType() const;
-    /*21*/ virtual void __unk_vfn_1();
-    /*22*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
-    /*23*/ virtual class CompoundTag serialize() const;
-    /*24*/ virtual bool isValid() const;
+    /*5*/ virtual class std::optional<class Vec2> getRotation() const;
+    /*6*/ virtual class Level* getLevel() const;
+    /*7*/ virtual class Dimension* getDimension() const;
+    /*8*/ virtual class Actor* getEntity() const;
+    /*9*/ virtual enum CommandPermissionLevel getPermissionsLevel() const;
+    /*10*/ virtual std::unique_ptr<class CommandOrigin> clone() const;
+    /*11*/ virtual class std::optional<class BlockPos> getCursorHitBlockPos() const;
+    /*12*/ virtual class std::optional<class Vec3> getCursorHitPos() const;
+    /*13*/ virtual bool hasChatPerms() const;
+    /*14*/ virtual bool hasTellPerms() const;
+    /*15*/ virtual bool canUseAbility(enum AbilitiesIndex) const;
+    /*16*/ virtual bool isWorldBuilder() const;
+    /*17*/ virtual bool canUseCommandsWithoutCheatsEnabled() const;
+    /*18*/ virtual bool isSelectorExpansionAllowed() const;
+    /*20*/ virtual unsigned char getSourceSubId() const;
+    /*23*/ virtual enum CommandOriginType getOriginType() const;
+    /*26*/ virtual void handleCommandOutputCallback(class Json::Value&&) const;
+    /*27*/ virtual void updateValues();
+    /*29*/ virtual class CompoundTag serialize() const;
+    /*30*/ virtual bool isValid() const;
 
 protected:
 

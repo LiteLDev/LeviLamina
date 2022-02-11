@@ -134,6 +134,7 @@ public:
     MCAPI class ServerLocator& getServerLocator();
     MCAPI bool host(struct ConnectionDefinition const&);
     MCAPI void initializeSelectedTransportType();
+    MCAPI void initializeServerLocatorTransportType();
     MCAPI bool isHostingPlayer(class NetworkIdentifier const&, unsigned char const&) const;
     MCAPI bool isServer() const;
     MCAPI void registerServerInstance(class NetEventCallback&);

@@ -35,9 +35,9 @@ public:
     /*9*/ virtual class AutomaticID<class Dimension, int> getStructureDimension() const;
     /*10*/ virtual int _getLevelTick() const;
     /*11*/ virtual bool _isTestReady();
-    /*12*/ virtual void __unk_vfn_0();
-    /*13*/ virtual void __unk_vfn_1();
-    /*14*/ virtual void __unk_vfn_2();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
     /*15*/ virtual class BlockSource& getBlockSource() const;
 
 protected:

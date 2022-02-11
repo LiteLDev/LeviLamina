@@ -26,12 +26,8 @@ public:
 public:
     /*0*/ virtual ~DefendTrustedTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool isTargetGoal() const;
-    /*3*/ virtual void start();
-    /*4*/ virtual void stop();
-    /*5*/ virtual void appendDebugInfo(std::string&) const;
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void start();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
     MCAPI DefendTrustedTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, enum LevelSoundEvent, class DefinitionTrigger const&);
 
 protected:

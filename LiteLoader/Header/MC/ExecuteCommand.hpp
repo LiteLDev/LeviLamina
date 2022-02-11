@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~ExecuteCommand();
     /*1*/ virtual void execute(class CommandOrigin const&, class CommandOutput&) const;
-    MCAPI static void setup(class CommandRegistry&);
+    MCAPI static void setup(class CommandRegistry&, bool, int);
 
 protected:
 

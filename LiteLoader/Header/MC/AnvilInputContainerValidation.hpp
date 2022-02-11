@@ -25,11 +25,16 @@ public:
 
 public:
     /*0*/ virtual ~AnvilInputContainerValidation();
-    /*1*/ virtual bool isValidSlotForContainer(class ContainerScreenContext const&, class Container const&, int) const;
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void __unk_vfn_2();
-    /*5*/ virtual void __unk_vfn_3() const;
+    /*2*/ virtual void __unk_vfn_2();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*
+    inline int getContainerOffset(class ContainerScreenContext const& a0) const{
+        int (AnvilInputContainerValidation::*rv)(class ContainerScreenContext const&) const;
+        *((void**)&rv) = dlsym("?getContainerOffset@AnvilInputContainerValidation@@UEBAHAEBVContainerScreenContext@@@Z");
+        return (this->*rv)(std::forward<class ContainerScreenContext const&>(a0));
+    }
+    */
 
 protected:
 

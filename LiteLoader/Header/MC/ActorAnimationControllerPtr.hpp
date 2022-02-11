@@ -23,6 +23,7 @@ public:
 #endif
 
 public:
+    MCAPI class HashedString const& getName() const;
     MCAPI bool isNull() const;
     MCAPI ~ActorAnimationControllerPtr();
     MCAPI static class ActorAnimationControllerPtr const NONE;

@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~RakWebSocketClient();
-    /*1*/ virtual void _updateState();
-    /*2*/ virtual unsigned int _genMaskingKey() const;
+    /*8*/ virtual void _updateState();
+    /*9*/ virtual unsigned int _genMaskingKey() const;
     /*
     inline  ~RakWebSocketClient(){
          (RakWebSocketClient::*rv)();

@@ -7,7 +7,12 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "CompoundTagVariant.hpp"
-
+enum class SnbtFormat
+{
+    PartialNewLine = 0,
+    AlwayNewLine = 1,
+    Minimize = 2,
+};
 #undef BEFORE_EXTRA
 
 class CompoundTag : public Tag {
@@ -43,7 +48,7 @@ public:
     LIAPI class FloatTag const* getFloatTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class DoubleTag const* getDoubleTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class ByteArrayTag const* getByteArrayTag(class gsl::basic_string_span<char const, -1> key) const;
-    LIAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1> key) const;
+    //LIAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class IntArrayTag const* getIntArrayTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class ListTag const* getListTag(class gsl::basic_string_span<char const, -1> key) const;
     LIAPI class CompoundTag const* getCompoundTag(class gsl::basic_string_span<char const, -1> key) const;
@@ -61,11 +66,15 @@ public:
     LIAPI static std::unique_ptr<CompoundTag> fromPlayer(Player* player);
     LIAPI static std::unique_ptr<CompoundTag> fromBlockActor(BlockActor* ble);
 
-    LIAPI std::string toSNBT();
+    // To Formatted SNBT
+    LIAPI std::string toSNBT(int indent, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine);
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, size_t& endOffset, bool isLittleEndian = true);
+
+    // Deprecated?
+    LIAPI std::string toSNBT();
 
 #undef AFTER_EXTRA
 
@@ -83,9 +92,9 @@ public:
     /*4*/ virtual std::string toString() const;
     /*5*/ virtual enum Tag::Type getId() const;
     /*6*/ virtual bool equals(class Tag const&) const;
-    /*7*/ virtual void print(std::string const&, class PrintStream&) const;
-    /*8*/ virtual std::unique_ptr<class Tag> copy() const;
-    /*9*/ virtual unsigned __int64 hash() const;
+    /*8*/ virtual void print(std::string const&, class PrintStream&) const;
+    /*9*/ virtual std::unique_ptr<class Tag> copy() const;
+    /*10*/ virtual unsigned __int64 hash() const;
     /*
     inline  ~CompoundTag(){
          (CompoundTag::*rv)();
@@ -108,6 +117,7 @@ public:
     MCAPI bool getBoolean(class gsl::basic_string_span<char const, -1>) const;
     MCAPI unsigned char getByte(class gsl::basic_string_span<char const, -1>) const;
     MCAPI struct TagMemoryChunk const& getByteArray(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class ByteTag* getByteTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class CompoundTag* getCompound(class gsl::basic_string_span<char const, -1>);
     MCAPI class CompoundTag const* getCompound(class gsl::basic_string_span<char const, -1>) const;
     MCAPI float getFloat(class gsl::basic_string_span<char const, -1>) const;
@@ -115,11 +125,13 @@ public:
     MCAPI __int64 getInt64(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag const* getInt64Tag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class Int64Tag* getInt64Tag(class gsl::basic_string_span<char const, -1>);
+    MCAPI class IntTag* getIntTag(class gsl::basic_string_span<char const, -1>);
     MCAPI class IntTag const* getIntTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag const* getList(class gsl::basic_string_span<char const, -1>) const;
     MCAPI class ListTag* getList(class gsl::basic_string_span<char const, -1>);
     MCAPI short getShort(class gsl::basic_string_span<char const, -1>) const;
     MCAPI std::string const& getString(class gsl::basic_string_span<char const, -1>) const;
+    MCAPI class StringTag const* getStringTag(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool isEmpty() const;
     MCAPI class CompoundTag& operator=(class CompoundTag&&);
     MCAPI class Tag& put(std::string, class Tag&&);

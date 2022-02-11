@@ -7,6 +7,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+class Localization;
 
 #undef BEFORE_EXTRA
 
@@ -14,7 +15,16 @@ class I18n {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    LIAPI static Localization const* getLanguage(std::string const& languageCode);
+    inline static std::string get(std::string const& key)
+    {
+        return get(key, mCurrentLanguage);
+    }
+    inline static std::string get(std::string const& key, std::vector<std::string> args)
+    {
+        return get(key, args, mCurrentLanguage);
+    }
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_I18N
@@ -32,8 +42,8 @@ public:
     MCAPI static void chooseLanguage(class Localization const&);
     MCAPI static class std::unordered_map<std::string, std::string, struct std::hash<std::string >, struct std::equal_to<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > findAvailableLanguageNames(class ResourcePackManager&);
     MCAPI static std::vector<std::string> findAvailableLanguages(class ResourcePackManager&);
-    MCAPI static std::string get(std::string const&);
-    MCAPI static std::string get(std::string const&, std::vector<std::string> const&);
+    MCAPI static std::string get(std::string const&, std::vector<std::string> const&, class Localization const*);
+    MCAPI static std::string get(std::string const&, class Localization const*);
     MCAPI static class optional_ref<class Localization const> getCurrentLanguage();
     MCAPI static std::vector<std::string> getLanguageCodesFromPack(class PackAccessStrategy const&);
     MCAPI static std::string const& getLocaleCodeFor(std::string const&);

@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -76,11 +77,13 @@ public:
     /*50*/ virtual class std::variant<struct gametest::GameTestError, class BlockPos> relativePosition(class BlockPos const&) const;
     /*51*/ virtual class std::variant<struct gametest::GameTestError, class Vec3> relativePosition(class Vec3 const&) const;
     /*52*/ virtual class std::optional<struct gametest::GameTestError> setFluidContainer(class BlockPos const&, int);
-    /*53*/ virtual class std::optional<struct gametest::GameTestError> assertCanReachLocation(class Mob&, class BlockPos const&, bool);
-    /*54*/ virtual class std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(class BlockPos const&, unsigned char, unsigned char);
-    /*55*/ virtual class std::variant<struct gametest::GameTestError, class SimulatedPlayer* > spawnSimulatedPlayer(std::string const&, class BlockPos const&);
-    /*56*/ virtual void removeSimulatedPlayer(class SimulatedPlayer&);
-    /*57*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource* &);
+    /*53*/ virtual class std::optional<struct gametest::GameTestError> triggerInternalBlockEvent(class BlockPos const&, std::string const&, std::vector<float> const&);
+    /*54*/ virtual class std::optional<struct gametest::GameTestError> assertCanReachLocation(class Mob&, class BlockPos const&, bool);
+    /*55*/ virtual class std::optional<struct gametest::GameTestError> spreadFromFaceTowardDirection(class BlockPos const&, unsigned char, unsigned char);
+    /*56*/ virtual class std::variant<struct gametest::GameTestError, class SimulatedPlayer* > spawnSimulatedPlayer(std::string const&, class BlockPos const&, enum GameType);
+    /*57*/ virtual void removeSimulatedPlayer(class SimulatedPlayer&);
+    /*58*/ virtual class std::variant<struct gametest::GameTestError, class Dimension* > getDimension();
+    /*59*/ virtual class std::optional<struct gametest::GameTestError> getBlockSource(class BlockSource* &);
 
 protected:
 
@@ -88,6 +91,7 @@ private:
     MCAPI class std::optional<struct gametest::GameTestError> _assertEntityPresent(struct ActorDefinitionIdentifier const&, class AABB const&, class BlockPos const&, bool) const;
     MCAPI class Container const* _getContainer(class BlockPos const&);
     MCAPI int _getItemEntityCount(class Item const&, class AABB const&);
+    MCAPI class gsl::not_null<class Bedrock::NonOwnerPointer<class ServerNetworkHandler> > _getServerNetworkHandler() const;
     MCAPI class std::optional<struct gametest::GameTestError> _getStructureBlockMissingError() const;
     MCAPI bool _isEntityPresent(struct ActorDefinitionIdentifier const&, class AABB const&) const;
 

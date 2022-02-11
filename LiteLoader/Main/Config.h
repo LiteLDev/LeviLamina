@@ -5,7 +5,8 @@
 
 /////////////////////// CrashLogger ///////////////////////
 // When comes with these plugins, disable builtin CrashLogger since they will cause crash
-constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
+constexpr const char* NoCrashLogger[] = {"BDSNetRunner", "AntiCheats"};
+#define CL_PRELOG_MODULE L"plugins/LiteLoader/CrashLogger.dll"
 
 
 /////////////////////// SEH Protection ///////////////////////
@@ -16,39 +17,53 @@ constexpr const char *NoCrashLogger[] = {u8"BDSNetRunner", u8"AntiCheats"};
 /////////////////////// LL Configs ///////////////////////
 #define LITELOADER_CONFIG_FILE "plugins/LiteLoader/LiteLoader.json"
 
-namespace LL {
-    struct CommandLineOption {
-        bool noColorOption = false;
-    };
-    enum class SeverStatus {
-        Starting, Running, Stopping
-    };
-    struct LLConfig {
-        bool debugMode = false;
-        bool colorLog = true;
-        int logLevel = 4;
-        ::std::string language = "en";
+namespace LL
+{
+struct CommandLineOption
+{
+    bool noColorOption = false;
+};
+enum class SeverStatus
+{
+    Starting, Running, Stopping
+};
+struct LLConfig
+{
+    bool debugMode = false;
+    bool colorLog = true;
+    int logLevel = 4;
+    std::string language = "en";
 
-        bool enableAutoUpdate = true;
-        bool enableCrashLogger = true;
-        ::std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
-        bool enableSimpleServerLogger = true;
-        bool enableFixDisconnectBug = true;
-        bool enableFixListenPort = false;
-        bool enableAntiGive = true;
-        bool enableUnlockCmd = true;
+    bool enableScriptEngine = true;
+    bool alwaysLaunchScriptEngine = false;
 
-        //Runtime Config
-        SeverStatus serverStatus = SeverStatus::Starting;
-    };
-    extern LLConfig globalConfig;
-    extern CommandLineOption commandLineOption;
+    bool enableAddonsHelper = true;
+    std::string addonsInstallPath = "plugins/AddonsHelper";
 
-    void inline to_json(nlohmann::json &j, const LLConfig &conf);
+    bool enableAutoUpdate = true;
+    bool enableCrashLogger = true;
+    std::string crashLoggerPath = "plugins\\LiteLoader\\CrashLogger_Daemon.exe";
+    bool enableSimpleServerLogger = true;
+    bool enableFixDisconnectBug = true;
+    bool enableFixListenPort = false;
+    bool enableAntiGive = true;
+    bool enableUnlockCmd = true;
+    bool enableErrorStackTraceback = true;
+    bool enableUnoccupyPort19132 = true;
+    bool enableCheckRunningBDS = true;
+    bool enableWelcomeText = true;
 
-    void inline from_json(const nlohmann::json &j, LLConfig &conf);
+    // Runtime Config
+    SeverStatus serverStatus = SeverStatus::Starting;
+};
+extern LLConfig globalConfig;
+extern CommandLineOption commandLineOption;
 
-    bool LoadLLConfig();
+void inline to_json(nlohmann::json& j, const LLConfig& conf);
+
+void inline from_json(const nlohmann::json& j, LLConfig& conf);
+
+bool LoadLLConfig();
 } // namespace LL
 
 /////////////////////// LL AutoUpgrade ///////////////////////

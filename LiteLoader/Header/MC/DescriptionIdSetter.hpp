@@ -23,8 +23,7 @@ public:
 #endif
 
 public:
-    MCAPI bool Deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
-    MCAPI bool Serialize(class BasicSaver&, struct SerializerTraits const&) const;
+    MCAPI std::string getDescriptionId() const;
 
 protected:
 

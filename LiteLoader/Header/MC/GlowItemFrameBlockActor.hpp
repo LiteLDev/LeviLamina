@@ -25,33 +25,24 @@ public:
 
 public:
     /*0*/ virtual ~GlowItemFrameBlockActor();
-    /*1*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
-    /*2*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
-    /*3*/ virtual void onCustomTagLoadDone(class BlockSource&);
-    /*4*/ virtual void onChanged(class BlockSource&);
-    /*5*/ virtual void onPlace(class BlockSource&);
-    /*6*/ virtual void __unk_vfn_0();
-    /*7*/ virtual void onRemoved(class BlockSource&);
-    /*8*/ virtual void triggerEvent(int, int);
-    /*9*/ virtual void clearCache();
-    /*10*/ virtual void __unk_vfn_1();
-    /*11*/ virtual float getShadowRadius(class BlockSource&) const;
-    /*12*/ virtual bool hasAlphaLayer() const;
-    /*13*/ virtual void __unk_vfn_2();
-    /*14*/ virtual std::string const& getCustomName() const;
-    /*15*/ virtual std::string getName() const;
-    /*16*/ virtual std::string getImmersiveReaderText(class BlockSource&);
-    /*17*/ virtual int getRepairCost() const;
-    /*18*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
-    /*19*/ virtual void __unk_vfn_3();
-    /*20*/ virtual void __unk_vfn_4();
-    /*21*/ virtual float getDeletionDelayTimeSeconds() const;
-    /*22*/ virtual void __unk_vfn_5();
-    /*23*/ virtual void __unk_vfn_6();
-    /*24*/ virtual void __unk_vfn_7();
-    /*25*/ virtual std::unique_ptr<class BlockActorDataPacket> _getUpdatePacket(class BlockSource&);
-    /*26*/ virtual void _onUpdatePacket(class CompoundTag const&, class BlockSource&);
-    /*27*/ virtual bool _playerCanUpdate(class Player const&) const;
+    /*4*/ virtual void saveBlockData(class CompoundTag&, class BlockSource&) const;
+    /*5*/ virtual void loadBlockData(class CompoundTag const&, class BlockSource&, class DataLoadHelper&);
+    /*6*/ virtual void onCustomTagLoadDone(class BlockSource&);
+    /*11*/ virtual void onPlace(class BlockSource&);
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void onRemoved(class BlockSource&);
+    /*14*/ virtual void triggerEvent(int, int);
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual float getShadowRadius(class BlockSource&) const;
+    /*19*/ virtual class BlockActor* getCrackEntity(class BlockSource&, class BlockPos const&);
+    /*27*/ virtual class PistonBlockActor* getOwningPiston(class BlockSource&);
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual void __unk_vfn_31();
+    /*32*/ virtual void __unk_vfn_32();
+    /*33*/ virtual void __unk_vfn_33();
+    /*36*/ virtual bool _playerCanUpdate(class Player const&) const;
     MCAPI GlowItemFrameBlockActor(class BlockPos);
 
 protected:

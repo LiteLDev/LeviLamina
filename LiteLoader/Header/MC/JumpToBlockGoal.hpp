@@ -26,20 +26,28 @@ public:
     /*0*/ virtual ~JumpToBlockGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual bool canBeInterrupted();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*
+    inline bool canBeInterrupted(){
+        bool (JumpToBlockGoal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@JumpToBlockGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI JumpToBlockGoal(class Mob&);
     MCAPI void resetCooldown();
 
 protected:
 
 private:
-    MCAPI bool _calculateJumpCurve(class BlockPos const&);
+    MCAPI bool _calculateJumpCurve(class BlockPos const&, struct JumpToBlockGoal::WeightedJumpToBlockPos&);
     MCAPI void _clearGoalState();
     MCAPI bool _findCandidateBlocks(class NavigationComponent&);
+    MCAPI bool _findJumpableBlocks(bool);
     MCAPI bool _findTargetBlock();
     MCAPI bool _validTransition(class Vec3 const&, class Vec3 const&) const;
 

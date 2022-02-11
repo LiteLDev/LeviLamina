@@ -31,7 +31,7 @@ public:
         return (this->*rv)();
     }
     */
-    MCAPI class CompoundTag serialize(class AutomaticID<class Dimension, int>) const;
+    MCAPI class CompoundTag serialize() const;
 
 protected:
 

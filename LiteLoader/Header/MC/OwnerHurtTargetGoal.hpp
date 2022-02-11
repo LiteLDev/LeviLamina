@@ -26,11 +26,7 @@ public:
 public:
     /*0*/ virtual ~OwnerHurtTargetGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool isTargetGoal() const;
-    /*3*/ virtual void start();
-    /*4*/ virtual void stop();
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
+    /*4*/ virtual void start();
     MCAPI OwnerHurtTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&);
 
 protected:

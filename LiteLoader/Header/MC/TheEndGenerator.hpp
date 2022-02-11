@@ -97,6 +97,7 @@ public:
     }
     */
     MCAPI TheEndGenerator(class Dimension&, unsigned int, class Biome const*);
+    MCAPI void buildSurfaces(class BlockVolume&, class ChunkPos const&, class LevelChunk&);
     MCAPI class Util::MultidimensionalArray<float, 3, 3, 33> generateDensityCellsForChunk(class ChunkPos const&) const;
     MCAPI bool isIslandChunk(int, int);
 

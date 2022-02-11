@@ -27,16 +27,15 @@ public:
     /*0*/ virtual ~DropItemForGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual void __unk_vfn_2();
-    /*10*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
-    /*11*/ virtual unsigned __int64 _getRepathTime() const;
-    /*12*/ virtual bool findTargetBlock();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*11*/ virtual bool isValidTarget(class BlockSource&, class BlockPos const&);
+    /*17*/ virtual bool findTargetBlock();
     MCAPI DropItemForGoal(class Mob&);
 
 protected:

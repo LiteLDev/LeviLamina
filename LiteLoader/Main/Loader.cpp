@@ -10,18 +10,25 @@
 #include <Utils/StringHelper.h>
 #include <Utils/WinHelper.h>
 #include <LLAPI.h>
+#include "Config.h"
+#include "Version.h"
+#include <ScriptEngine/Configs.h>
 
 using namespace std;
 
-vector<std::wstring> GetPreloadList() {
+vector<std::wstring> GetPreloadList()
+{
     //若在preload.conf中，则不加载
-    vector<std::wstring> preload_list{};
+    vector<std::wstring> preloadList{};
 
-    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf")))) {
+    if (std::filesystem::exists(std::filesystem::path(TEXT(".\\plugins\\preload.conf"))))
+    {
         std::wifstream dllList(TEXT(".\\plugins\\preload.conf"));
-        if (dllList) {
+        if (dllList)
+        {
             std::wstring dllName;
-            while (getline(dllList, dllName)) {
+            while (getline(dllList, dllName))
+            {
                 if (dllName.back() == TEXT('\n'))
                     dllName.pop_back();
                 if (dllName.back() == TEXT('\r'))
@@ -29,16 +36,51 @@ vector<std::wstring> GetPreloadList() {
 
                 if (dllName.empty() || dllName.front() == TEXT('#'))
                     continue;
-                preload_list.push_back(dllName);
+                preloadList.push_back(dllName);
             }
             dllList.close();
         }
     }
-    return preload_list;
+    return preloadList;
+}
+
+void CleanOldScriptEngine()
+{
+    std::error_code ec;
+    if (filesystem::exists("plugins/LiteXLoader", ec))
+        filesystem::remove_all("plugins/LiteXLoader", ec);
+    if (filesystem::exists("plugins/LiteXLoader.Js.dll", ec))
+        filesystem::remove("plugins/LiteXLoader.Js.dll", ec);
+    if (filesystem::exists("plugins/LiteXLoader.Lua.dll", ec))
+        filesystem::remove("plugins/LiteXLoader.Lua.dll", ec);
+}
+
+void LoadScriptEngine()
+{
+    for (string backend : LLSE_VALID_BACKENDS)
+    {
+        auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
+        if (lib) {
+            logger.info("* ScriptEngine for " + backend + " loaded");
+            //Fake Register
+            RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
+            {
+                {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
+            });
+        }
+        else {
+            logger.error("* Fail to load ScriptEngine for " + backend + "!");
+            logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
+        }
+    }
 }
 
 void LL::LoadMain() {
     logger.info("Loading plugins...");
+
+    CleanOldScriptEngine();
+    std::set<string> scriptExts = LLSE_VALID_PLUGIN_EXTENSIONS;
+    bool hasScriptPlugin = false;
 
     // Load plugins
     int pluginCount = 0;
@@ -46,40 +88,59 @@ void LL::LoadMain() {
 
     filesystem::directory_iterator ent("plugins");
     for (auto &file: ent) {
-        if (!file.is_regular_file() || file.path().extension().u8string() != ".dll")
+        if (!file.is_regular_file())
             continue;
 
-        string path = file.path().u8string();
+        auto path = file.path();
+        auto fileName = path.u8string();
+        if (fileName.find("LiteLoader.dll") != string::npos
+            || fileName.find("LiteXLoader") != string::npos)      //Skip Wrong file path
+            continue;
+
+        string ext = path.extension().u8string();
+        if (ext != ".dll")
+        {
+            if (scriptExts.find(ext) != scriptExts.end())
+                hasScriptPlugin = true;
+            continue;
+        }
 
         bool loaded = false;
         for (auto &p: preloadList)
-            if (p.find(str2wstr(path)) != std::wstring::npos) {
+            if (p.find(str2wstr(fileName)) != std::wstring::npos) {
                 loaded = true;
                 break;
             }
         if (loaded)
             continue;
 
-        string pluginFileName = filesystem::path(path).filename().u8string();
-        auto lib = LoadLibrary(str2wstr(path).c_str());
+        string pluginFileName = path.filename().u8string();
+        auto lib = LoadLibrary(str2wstr(fileName).c_str());
         if (lib) {
             pluginCount++;
 
             logger.info("Plugin <{}> loaded", pluginFileName);
 
-            if (GetPlugin(lib) == nullptr) {
+            if (PluginManager::getPlugin(lib) == nullptr) {
                 RegisterPlugin(lib, pluginFileName, pluginFileName, LL::Version(1, 0, 0), {});
             }
-        } else {
+        }
+        else
+        {
             logger.error("Fail to load plugin <{}>", pluginFileName);
             logger.error("Error: Code[{}] {}", GetLastError(), GetLastErrorMessage());
         }
     }
 
-    //Call onPostInit
-    auto plugins = GetAllPlugins();
+    // Load ScriptEngine
+    if (LL::globalConfig.enableScriptEngine)
+        if(LL::globalConfig.alwaysLaunchScriptEngine || hasScriptPlugin)
+            LoadScriptEngine();
+
+    //  Call onPostInit
+    auto plugins = PluginManager::getAllPlugins(false);
     for (auto&[name, plugin]: plugins) {
-        auto fn = GetProcAddress(plugin.handler, "onPostInit");
+        auto fn = GetProcAddress(plugin->handler, "onPostInit");
         if (fn) {
             try {
                 ((void (*)()) fn)();
@@ -87,7 +148,9 @@ void LL::LoadMain() {
                 logger.error("Plugin <{}> throws an std::exception in onPostInit", name);
                 logger.error("Exception: ", e.what());
                 logger.error("Fail to init this plugin!");
-            } catch (...) {
+            }
+            catch (...)
+            {
                 logger.error("Plugin <{}> throws an exception in onPostInit", name);
                 logger.error("Fail to init this plugin!");
             }

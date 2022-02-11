@@ -24,14 +24,20 @@ public:
 
 public:
     /*0*/ virtual ~MoveTowardsRestrictionGoal();
-    /*1*/ virtual void __unk_vfn_0() = 0;
-    /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_1();
-    /*4*/ virtual void start();
     /*
     inline  ~MoveTowardsRestrictionGoal(){
          (MoveTowardsRestrictionGoal::*rv)();
         *((void**)&rv) = dlsym("??1MoveTowardsRestrictionGoal@@UEAA@XZ");
+        return (this->*rv)();
+    }
+    inline bool canContinueToUse(){
+        bool (MoveTowardsRestrictionGoal::*rv)();
+        *((void**)&rv) = dlsym("?canContinueToUse@MoveTowardsRestrictionGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline void start(){
+        void (MoveTowardsRestrictionGoal::*rv)();
+        *((void**)&rv) = dlsym("?start@MoveTowardsRestrictionGoal@@UEAAXXZ");
         return (this->*rv)();
     }
     */

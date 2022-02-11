@@ -21,8 +21,11 @@ namespace SharedConstants {
     MCAPI extern enum StorageVersion const CurrentStorageVersion;
     MCAPI extern enum SubChunkFormat const CurrentSubChunkFormat;
     MCAPI extern int const EduDiscoveryProtocolVersion;
+    MCAPI extern bool const IsAnyBeta;
     MCAPI extern bool const IsBeta;
-    MCAPI extern bool const IsBetaApp;
+    MCAPI extern bool const IsDevBuild;
+    MCAPI extern bool const IsPlaytest;
+    MCAPI extern bool const IsPreviewApp;
     MCAPI extern int const LevelDBCompressorID;
     MCAPI extern int const MajorVersion;
     MCAPI extern int const MaxChatLength;

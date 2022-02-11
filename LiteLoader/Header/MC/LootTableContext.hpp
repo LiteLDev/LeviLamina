@@ -23,7 +23,8 @@ public:
 #endif
 
 public:
-    MCAPI LootTableContext(float, class Level*, class Actor*, class Player*, class ActorDamageSource const*, float, class ItemStack const*);
+    MCAPI LootTableContext(float, class Level*, struct ActorUniqueID, class Player*, class ActorDamageSource const*, float, class AutomaticID<class Dimension, int>, class ItemStack const*);
+    MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
     MCAPI class Actor* getEntity(enum ActorTarget) const;
     MCAPI class Actor* getKillerEntity() const;
     MCAPI class Actor* getKillerPet() const;

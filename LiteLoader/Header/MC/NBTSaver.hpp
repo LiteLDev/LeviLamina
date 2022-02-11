@@ -24,41 +24,41 @@ public:
 public:
     /*0*/ virtual ~NBTSaver();
     /*1*/ virtual bool doSerialize(std::string const&);
-    /*2*/ virtual void __unk_vfn_0();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual bool doSerialize(float);
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual void __unk_vfn_3();
-    /*7*/ virtual void __unk_vfn_4();
-    /*8*/ virtual void __unk_vfn_5();
-    /*9*/ virtual void __unk_vfn_6();
-    /*10*/ virtual void __unk_vfn_7();
-    /*11*/ virtual void __unk_vfn_8();
-    /*12*/ virtual void __unk_vfn_9();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
     /*13*/ virtual bool doBeginMember(char const*, bool);
     /*14*/ virtual bool doBeginMember(unsigned __int64, std::string const&);
     /*15*/ virtual bool doEndMember();
     /*16*/ virtual bool doBeginArray(unsigned __int64);
     /*17*/ virtual bool doBeginArrayItem(unsigned __int64);
     /*18*/ virtual bool doEndArrayItem();
-    /*19*/ virtual void __unk_vfn_10();
-    /*20*/ virtual bool doBeginObject();
-    /*21*/ virtual bool doBeginObject(unsigned __int64);
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual bool doBeginObject();
     /*
     inline bool doSerialize(unsigned __int64 a0){
         bool (NBTSaver::*rv)(unsigned __int64);
         *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_K@Z");
         return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
-    inline bool doSerialize(double a0){
-        bool (NBTSaver::*rv)(double);
-        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NN@Z");
-        return (this->*rv)(std::forward<double>(a0));
-    }
     inline bool doSerialize(__int64 a0){
         bool (NBTSaver::*rv)(__int64);
         *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_N_J@Z");
         return (this->*rv)(std::forward<__int64>(a0));
+    }
+    inline bool doSerialize(double a0){
+        bool (NBTSaver::*rv)(double);
+        *((void**)&rv) = dlsym("?doSerialize@NBTSaver@@EEAA_NN@Z");
+        return (this->*rv)(std::forward<double>(a0));
     }
     inline bool doEndArray(){
         bool (NBTSaver::*rv)();
@@ -69,6 +69,11 @@ public:
         bool (NBTSaver::*rv)();
         *((void**)&rv) = dlsym("?doEndObject@NBTSaver@@EEAA_NXZ");
         return (this->*rv)();
+    }
+    inline bool doBeginObject(unsigned __int64 a0){
+        bool (NBTSaver::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginObject@NBTSaver@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
     }
     inline bool doSerialize(signed char a0){
         bool (NBTSaver::*rv)(signed char);

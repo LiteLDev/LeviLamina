@@ -25,8 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~HellFireFeature();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual ~HellFireFeature();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual bool place(class BlockSource&, class BlockPos const&, class Random&) const;
     /*
     inline  ~HellFireFeature(){
          (HellFireFeature::*rv)();

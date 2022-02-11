@@ -27,9 +27,18 @@ public:
     /*0*/ virtual ~TridentRiptideEnchant();
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
-    /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual int getMaxLevel() const;
+    /*
+    inline int getMaxCost(int a0) const{
+        int (TridentRiptideEnchant::*rv)(int) const;
+        *((void**)&rv) = dlsym("?getMaxCost@TridentRiptideEnchant@@UEBAHH@Z");
+        return (this->*rv)(std::forward<int>(a0));
+    }
+    inline int getMaxLevel() const{
+        int (TridentRiptideEnchant::*rv)() const;
+        *((void**)&rv) = dlsym("?getMaxLevel@TridentRiptideEnchant@@UEBAHXZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

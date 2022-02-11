@@ -33,14 +33,14 @@ public:
     /*5*/ virtual void getLevelList(std::vector<class Core::PathBuffer<std::string >>&);
     /*6*/ virtual std::unique_ptr<class LevelStorage> createLevelStorage(class Scheduler&, std::string const&, class ContentIdentity const&, class IContentKeyProvider const&, class std::chrono::duration<__int64, struct std::ratio<1, 1000000000> > const&, std::unique_ptr<class LevelStorageEventing>);
     /*7*/ virtual std::unique_ptr<class LevelLooseFileStorage> createLevelLooseStorage(std::string const&, class ContentIdentity const&, class IContentKeyProvider const&);
-    /*8*/ virtual bool isNewLevelIdAcceptable(std::string const&);
+    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual void deleteLevel(std::string const&);
     /*10*/ virtual bool renameLevel(std::string const&, std::string const&);
     /*11*/ virtual void renameLevel(class LevelData&, class Core::Path const&, std::string const&);
     /*12*/ virtual bool createBackupCopyOfWorld(std::string const&, std::string const&, std::string const&);
-    /*13*/ virtual void __unk_vfn_0();
-    /*14*/ virtual void __unk_vfn_1();
-    /*15*/ virtual void __unk_vfn_2();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual bool isLevelMarkedForSync(class Core::Path const&) const;
     /*17*/ virtual bool isLevelPartiallyCopied(class Core::Path const&) const;
     /*18*/ virtual class Core::PathBuffer<std::string > getLevelDatFoundPath(class Core::Path const&) const;
@@ -67,6 +67,11 @@ public:
         bool (ExternalFileLevelStorageSource::*rv)(std::string const&, class ProgressListener*);
         *((void**)&rv) = dlsym("?convertLevel@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PEAVProgressListener@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0), std::forward<class ProgressListener*>(a1));
+    }
+    inline bool isNewLevelIdAcceptable(std::string const& a0){
+        bool (ExternalFileLevelStorageSource::*rv)(std::string const&);
+        *((void**)&rv) = dlsym("?isNewLevelIdAcceptable@ExternalFileLevelStorageSource@@UEAA_NAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0));
     }
     inline  ~ExternalFileLevelStorageSource(){
          (ExternalFileLevelStorageSource::*rv)();

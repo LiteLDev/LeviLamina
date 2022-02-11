@@ -24,6 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~ScriptGameTestModuleFactory();
+    MCAPI ScriptGameTestModuleFactory(class gametest::GameTestRegistry&);
     MCAPI static std::string getModuleUUIDAsString();
 
 protected:

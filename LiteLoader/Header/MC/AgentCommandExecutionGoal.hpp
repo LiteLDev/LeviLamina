@@ -25,12 +25,19 @@ public:
 public:
     /*0*/ virtual ~AgentCommandExecutionGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual bool canBeInterrupted();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void start();
     /*5*/ virtual void stop();
-    /*6*/ virtual void __unk_vfn_1();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*
+    inline bool canBeInterrupted(){
+        bool (AgentCommandExecutionGoal::*rv)();
+        *((void**)&rv) = dlsym("?canBeInterrupted@AgentCommandExecutionGoal@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI AgentCommandExecutionGoal(class Mob&);
 
 protected:

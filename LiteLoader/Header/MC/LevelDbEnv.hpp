@@ -38,14 +38,22 @@ public:
     /*12*/ virtual class leveldb::Status LockFile(std::string const&, class leveldb::FileLock* *);
     /*13*/ virtual class leveldb::Status UnlockFile(class leveldb::FileLock*);
     /*14*/ virtual void Schedule(void (* )(void* ), void*);
-    /*15*/ virtual void StartThread(void (* )(void* ), void*);
+    /*15*/ virtual void __unk_vfn_15();
     /*16*/ virtual class leveldb::Status GetTestDirectory(std::string*);
     /*17*/ virtual class leveldb::Status NewLogger(std::string const&, class leveldb::Logger* *);
     /*18*/ virtual unsigned __int64 NowMicros();
     /*19*/ virtual void SleepForMicroseconds(int);
+    /*
+    inline void StartThread(void (* )(void* ) a0, void* a1){
+        void (LevelDbEnv::*rv)(void (* )(void* ), void*);
+        *((void**)&rv) = dlsym("?StartThread@LevelDbEnv@@UEAAXP6AXPEAX@Z0@Z");
+        return (this->*rv)(std::forward<void (* )(void* )>(a0), std::forward<void*>(a1));
+    }
+    */
     MCAPI bool IsComplete() const;
     MCAPI static void createInstance();
     MCAPI static void destroyInstance();
+    MCAPI static bool exists();
     MCAPI static class LevelDbEnv* getSingleton();
 
 protected:

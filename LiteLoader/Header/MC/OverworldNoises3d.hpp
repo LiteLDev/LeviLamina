@@ -19,20 +19,21 @@ struct OverworldNoises3d {
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_OVERWORLDNOISES3D
 public:
     struct OverworldNoises3d& operator=(struct OverworldNoises3d const&) = delete;
-    OverworldNoises3d(struct OverworldNoises3d const&) = delete;
     OverworldNoises3d() = delete;
 #endif
 
 public:
-    MCAPI OverworldNoises3d(std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>, std::unique_ptr<class WorldgenNoise3D>);
+    MCAPI OverworldNoises3d(struct OverworldNoises3d const&);
     MCAPI struct ChunkLocalNoiseCache::CacheEntry computeNoiseValues(class DividedPos2d<4> const&) const;
     MCAPI struct std::pair<float, float> computeOffsetAndFactor(class DividedPos2d<4> const&) const;
     MCAPI struct TargetPoint sample(int, struct ChunkLocalNoiseCache::CacheEntry const&) const;
     MCAPI struct TargetPoint sample(class BlockPos) const;
+    MCAPI ~OverworldNoises3d();
 
 protected:
 
 private:
+    MCAPI OverworldNoises3d(class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >, class NormalNoiseImpl<0, class MultiOctaveNoiseImpl<0, class ParityImprovedNoiseImpl<0> > >);
     MCAPI struct ChunkLocalNoiseCache::CacheEntry _computeBaseValueSetForCacheEntry(class DividedPos2d<4> const&) const;
 
 };

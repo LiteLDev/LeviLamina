@@ -49,6 +49,7 @@ public:
     MCAPI static class BannerPattern* mDiagonalUpLeft;
     MCAPI static class BannerPattern* mDiagonalUpRight;
     MCAPI static class BannerPattern* mFlower;
+    MCAPI static class BannerPattern* mGlobe;
     MCAPI static class BannerPattern* mGradient;
     MCAPI static class BannerPattern* mGradientUp;
     MCAPI static class BannerPattern* mHalfHorizontal;

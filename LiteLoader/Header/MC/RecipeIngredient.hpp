@@ -10,7 +10,7 @@
 #undef BEFORE_EXTRA
 
 class RecipeIngredient {
-    
+
 #define AFTER_EXTRA
 // Add Member There
 public:

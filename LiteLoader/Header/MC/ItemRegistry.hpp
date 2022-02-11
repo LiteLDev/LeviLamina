@@ -70,6 +70,7 @@ public:
     MCAPI static void registerItem(class SharedPtr<class Item>);
     MCAPI static void registerLegacyID(std::string const&, short);
     MCAPI static void registerLegacyMapping(std::string const&, std::string const&, class BaseGameVersion const&);
+    MCAPI static unsigned __int64 remapToFullLegacyNameByHash(unsigned __int64);
     MCAPI static unsigned __int64 remapToLegacyNameByHash(unsigned __int64);
     MCAPI static void setOwningThreadId(class std::thread::id);
     MCAPI static void setWorldBaseGameVersion(class BaseGameVersion const&);
@@ -90,6 +91,7 @@ private:
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item> > > > mNameToItemMap;
     MCAPI static class std::thread::id mOwnerThread;
     MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias> > > mReverseAliasLookupMap;
+    MCAPI static class std::unordered_map<unsigned __int64, struct ItemRegistry::ItemHashAlias, struct std::hash<unsigned __int64>, struct std::equal_to<unsigned __int64>, class std::allocator<struct std::pair<unsigned __int64 const, struct ItemRegistry::ItemHashAlias> > > mReverseFullNameAliasLookupMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item> > > > mTileItemNameToItemMap;
     MCAPI static class std::unordered_map<class HashedString, class WeakPtr<class Item>, struct std::hash<class HashedString>, struct std::equal_to<class HashedString>, class std::allocator<struct std::pair<class HashedString const, class WeakPtr<class Item> > > > mTileNamespaceToItemMap;
 

@@ -72,6 +72,7 @@ public:
     MCAPI void setCanJump(bool);
     MCAPI void setCanOpenDoors(bool);
     MCAPI void setCanPassDoors(bool);
+    MCAPI void setCanSink(bool);
     MCAPI void setEndPathRadius(float);
     MCAPI void setHasDestination(bool);
     MCAPI void setHasEndPathRadius(bool);

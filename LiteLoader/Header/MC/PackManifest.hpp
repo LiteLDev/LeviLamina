@@ -61,6 +61,7 @@ public:
     MCAPI enum PackType getPackType() const;
     MCAPI class BaseGameVersion const& getRequiredBaseGameVersion() const;
     MCAPI bool hasClientData() const;
+    MCAPI bool hasClientScript() const;
     MCAPI bool hasPackCapability(class gsl::basic_string_span<char const, -1>) const;
     MCAPI bool hasPlugins() const;
     MCAPI bool isPremium() const;

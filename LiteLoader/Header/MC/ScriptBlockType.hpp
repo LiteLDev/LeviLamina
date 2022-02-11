@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -34,6 +33,7 @@ public:
     }
     */
     MCAPI class Scripting::Result<class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation> > createDefaultBlockPermutation() const;
+    MCAPI std::string getId() const;
     MCAPI class ScriptBlockType& operator=(class ScriptBlockType&&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockType> bind(struct Scripting::Version);
     MCAPI static class Scripting::StrongTypedObjectHandle<class ScriptBlockType> getOrCreateHandle(class Scripting::WeakLifetimeScope const&, class BlockLegacy const&);

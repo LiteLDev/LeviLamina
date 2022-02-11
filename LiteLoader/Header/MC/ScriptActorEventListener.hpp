@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,34 +24,36 @@ public:
 
 public:
     /*0*/ virtual ~ScriptActorEventListener();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
-    /*4*/ virtual void __unk_vfn_3();
-    /*5*/ virtual void __unk_vfn_4();
-    /*6*/ virtual void __unk_vfn_5();
-    /*7*/ virtual void __unk_vfn_6();
-    /*8*/ virtual void __unk_vfn_7();
-    /*9*/ virtual void __unk_vfn_8();
-    /*10*/ virtual void __unk_vfn_9();
-    /*11*/ virtual void __unk_vfn_10();
-    /*12*/ virtual void __unk_vfn_11();
-    /*13*/ virtual enum EventResult onActorCreated(class Actor&);
-    /*14*/ virtual void __unk_vfn_12();
-    /*15*/ virtual void __unk_vfn_13();
-    /*16*/ virtual void __unk_vfn_14();
-    /*17*/ virtual void __unk_vfn_15();
-    /*18*/ virtual void __unk_vfn_16();
-    /*19*/ virtual void __unk_vfn_17();
-    /*20*/ virtual void __unk_vfn_18();
-    /*21*/ virtual void __unk_vfn_19();
-    /*22*/ virtual enum EventResult onActorRemoved(struct ActorRemovedEvent const&);
-    /*23*/ virtual void __unk_vfn_20();
-    /*24*/ virtual void __unk_vfn_21();
-    /*25*/ virtual void __unk_vfn_22();
-    /*26*/ virtual void __unk_vfn_23();
-    /*27*/ virtual enum EventResult onActorAddEffect(struct ActorAddEffectEvent const&);
-    /*28*/ virtual enum EventResult onActorRemoveEffect(struct ActorRemoveEffectEvent const&);
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual enum EventResult onActorCreated(class Actor&);
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
+    /*14*/ virtual void __unk_vfn_14();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*18*/ virtual void __unk_vfn_18();
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual void __unk_vfn_20();
+    /*21*/ virtual void __unk_vfn_21();
+    /*22*/ virtual void __unk_vfn_22();
+    /*23*/ virtual void __unk_vfn_23();
+    /*24*/ virtual void __unk_vfn_24();
+    /*25*/ virtual enum EventResult onEvent(struct ActorRemovedEvent const&);
+    /*26*/ virtual enum EventResult onEvent(struct ActorRemoveEffectEvent const&);
+    /*27*/ virtual void __unk_vfn_27();
+    /*28*/ virtual void __unk_vfn_28();
+    /*29*/ virtual void __unk_vfn_29();
+    /*30*/ virtual void __unk_vfn_30();
+    /*31*/ virtual enum EventResult onEvent(struct ActorAddEffectEvent const&);
     MCAPI ScriptActorEventListener(class Scripting::WeakLifetimeScope const&, struct Scripting::TypedObjectHandle<class ScriptWorldEvents>);
 
 protected:

@@ -29,12 +29,12 @@ public:
     /*2*/ virtual class leveldb::Status NewRandomAccessFile(std::string const&, class leveldb::RandomAccessFile* *);
     /*3*/ virtual class leveldb::Status NewWritableFile(std::string const&, class leveldb::WritableFile* *);
     /*4*/ virtual class leveldb::Status NewAppendableFile(std::string const&, class leveldb::WritableFile* *);
-    /*5*/ virtual void __unk_vfn_0();
-    /*6*/ virtual void __unk_vfn_1();
+    /*5*/ virtual void __unk_vfn_5();
+    /*6*/ virtual void __unk_vfn_6();
     /*7*/ virtual class leveldb::Status DeleteFileA(std::string const&);
-    /*8*/ virtual void __unk_vfn_2();
-    /*9*/ virtual void __unk_vfn_3();
-    /*10*/ virtual void __unk_vfn_4();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
     /*11*/ virtual class leveldb::Status RenameFile(std::string const&, std::string const&);
     MCAPI SnapshotEnv(class leveldb::Env*);
     MCAPI std::vector<struct SnapshotFilenameAndLength> createSnapshot(class Core::Path const&);

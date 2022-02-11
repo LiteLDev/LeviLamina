@@ -14,8 +14,25 @@ namespace CerealHelpers {
 // Add Member There
 
 #undef AFTER_EXTRA
+    MCAPI void bindBrightness();
+    MCAPI void bindColor();
+    MCAPI void bindIntRange();
     MCAPI void bindVec3();
-    MCAPI bool deserializeToVec3(class Vec3&, class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
-    MCAPI bool serializeFromVec3(class Vec3 const&, class BasicSaver&, struct SerializerTraits const&);
+    MCAPI class std::array<int, 3> blockPosAsArray(class BlockPos const&);
+    MCAPI void blockPosFromArray(class BlockPos&, class std::array<int, 3> const&);
+    MCAPI void colorFromHexString(class mce::Color&, std::string const&);
+    MCAPI class std::array<float, 3> colorToFloatArray3(class mce::Color const&);
+    MCAPI class std::array<float, 4> colorToFloatArray4(class mce::Color const&);
+    MCAPI class std::array<unsigned char, 3> colorToUIntArray3(class mce::Color const&);
+    MCAPI bool expressionNodeFailingGetter(class ExpressionNode const&);
+    MCAPI void expressionNodeFromFloat(class ExpressionNode&, float);
+    MCAPI void expressionNodeFromString(class ExpressionNode&, std::string const&, class BedrockLoadContext const&);
+    MCAPI void hashedStringFromString(class HashedString&, std::string const&);
+    MCAPI void itemDescriptorFromName(class ItemDescriptor&, class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > const&);
+    MCAPI void itemDescriptorFromString(class ItemDescriptor&, std::string const&);
+    MCAPI void itemDescriptorFromTags(class ItemDescriptor&, class std::map<std::string, std::string, struct std::less<std::string >, class std::allocator<struct std::pair<std::string const, std::string > > > const&, class BedrockLoadContext const&);
+    MCAPI std::string itemDescriptorToString(class ItemDescriptor const&);
+    MCAPI class std::array<float, 3> vec3AsArray(class Vec3 const&);
+    MCAPI void vec3FromArray(class Vec3&, class std::array<float, 3>);
 
 };

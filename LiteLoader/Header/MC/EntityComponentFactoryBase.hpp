@@ -23,6 +23,13 @@ public:
 #endif
 
 public:
+    /*
+    inline  ~EntityComponentFactoryBase(){
+         (EntityComponentFactoryBase::*rv)();
+        *((void**)&rv) = dlsym("??1EntityComponentFactoryBase@@MEAA@XZ");
+        return (this->*rv)();
+    }
+    */
     MCAPI void addComponents(class EntityContext&, class DefinitionInstanceGroup const&) const;
     MCAPI void removeComponents(class EntityContext&, class DefinitionInstanceGroup const&) const;
 

@@ -23,9 +23,9 @@ public:
 
 public:
     /*0*/ virtual ~ItemStackRequestActionCraftGrindstone();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual void __unk_vfn_2();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
     /*4*/ virtual void _write(class BinaryStream&) const;
     /*5*/ virtual bool _read(class ReadOnlyBinaryStream&);
     MCAPI ItemStackRequestActionCraftGrindstone();

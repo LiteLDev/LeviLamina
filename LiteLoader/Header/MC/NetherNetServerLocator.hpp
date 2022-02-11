@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "RakNet.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -29,21 +30,19 @@ public:
 
 public:
     /*0*/ virtual ~NetherNetServerLocator();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
     /*3*/ virtual void startAnnouncingServer(std::string const&, std::string const&, enum GameType, int, int, bool);
     /*4*/ virtual void stopAnnouncingServer();
     /*5*/ virtual void startServerDiscovery(struct PortPair);
     /*6*/ virtual void stopServerDiscovery();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
     /*9*/ virtual std::vector<struct PingedCompatibleServer> getServerList() const;
     /*10*/ virtual void clearServerList();
     /*11*/ virtual void update();
-    /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual void __unk_vfn_5();
-    /*14*/ virtual void __unk_vfn_6();
-    /*15*/ virtual void __unk_vfn_7();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     MCAPI NetherNetServerLocator();
 
 protected:

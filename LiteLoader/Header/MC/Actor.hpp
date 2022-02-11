@@ -60,8 +60,6 @@ public:
     LIAPI bool refreshActorData();
     LIAPI bool addEffect(MobEffect::EffectType type, int tick, int level, bool ambient = false, bool showParticles = true, bool showAnimation = false);
 
-	//For Compatibility
-	inline Vec3 getPos() { return getPosition(); }
 
 #undef AFTER_EXTRA
 
@@ -95,7 +93,7 @@ public:
     /*19*/ virtual void setPos(class Vec3 const&);
     /*20*/ virtual bool isRuntimePredictedMovementEnabled() const;
     /*21*/ virtual struct PredictedMovementValues const& getPredictedMovementValues() const;
-    /*22*/ virtual void __unk_vfn_0();
+    /*22*/ virtual class Vec3 const& getPos() const;
     /*23*/ virtual class Vec3 const& getPosOld() const;
     /*24*/ virtual class Vec3 const getPosExtrapolated(float) const;
     /*25*/ virtual class Vec3 getAttachPos(enum ActorLocation, float) const;
@@ -114,7 +112,7 @@ public:
     /*38*/ virtual void updateEntityInside(class AABB const&);
     /*39*/ virtual void updateEntityInside();
     /*40*/ virtual bool isFireImmune() const;
-    /*41*/ virtual void __unk_vfn_1();
+    /*41*/ virtual void __unk_vfn_41();
     /*42*/ virtual void blockedByShield(class ActorDamageSource const&, class Actor&);
     /*43*/ virtual void teleportTo(class Vec3 const&, bool, int, int);
     /*44*/ virtual bool tryTeleportTo(class Vec3 const&, bool, bool, int, int);
@@ -134,14 +132,14 @@ public:
     /*58*/ virtual bool isInWall() const;
     /*59*/ virtual bool isInvisible() const;
     /*60*/ virtual bool canShowNameTag() const;
-    /*61*/ virtual void __unk_vfn_2();
+    /*61*/ virtual void __unk_vfn_61();
     /*62*/ virtual void setNameTagVisible(bool);
     /*63*/ virtual std::string const& getNameTag() const;
     /*64*/ virtual unsigned __int64 getNameTagAsHash() const;
     /*65*/ virtual std::string getFormattedNameTag() const;
     /*66*/ virtual void filterFormattedNameTag(class UIProfanityContext const&);
     /*67*/ virtual void setNameTag(std::string const&);
-    /*68*/ virtual void __unk_vfn_3();
+    /*68*/ virtual void __unk_vfn_68();
     /*69*/ virtual void setScoreTag(std::string const&);
     /*70*/ virtual std::string const& getScoreTag() const;
     /*71*/ virtual bool isInWater() const;
@@ -155,33 +153,33 @@ public:
     /*79*/ virtual float getShadowHeightOffs();
     /*80*/ virtual float getShadowRadius() const;
     /*81*/ virtual class Vec3 getHeadLookVector(float) const;
-    /*82*/ virtual void __unk_vfn_4();
+    /*82*/ virtual void __unk_vfn_82();
     /*83*/ virtual bool canSee(class Actor const&) const;
     /*84*/ virtual bool canSee(class Vec3 const&) const;
     /*85*/ virtual bool isSkyLit(float);
     /*86*/ virtual float getBrightness(float) const;
-    /*87*/ virtual void __unk_vfn_5();
+    /*87*/ virtual void __unk_vfn_87();
     /*88*/ virtual void playerTouch(class Player&);
     /*89*/ virtual void onAboveBubbleColumn(bool);
     /*90*/ virtual void onInsideBubbleColumn(bool);
     /*91*/ virtual bool isImmobile() const;
     /*92*/ virtual bool isSilent();
     /*93*/ virtual bool isPickable();
-    /*94*/ virtual void __unk_vfn_6();
+    /*94*/ virtual void __unk_vfn_94();
     /*95*/ virtual bool isSleeping() const;
     /*96*/ virtual void setSleeping(bool);
-    /*97*/ virtual void __unk_vfn_7();
+    /*97*/ virtual void __unk_vfn_97();
     /*98*/ virtual void setSneaking(bool);
     /*99*/ virtual bool isBlocking() const;
     /*100*/ virtual bool isDamageBlocked(class ActorDamageSource const&) const;
     /*101*/ virtual bool isAlive() const;
     /*102*/ virtual bool isOnFire() const;
     /*103*/ virtual bool isOnHotBlock() const;
-    /*104*/ virtual void __unk_vfn_8();
+    /*104*/ virtual void __unk_vfn_104();
     /*105*/ virtual bool isSurfaceMob() const;
-    /*106*/ virtual void __unk_vfn_9();
-    /*107*/ virtual void __unk_vfn_10();
-    /*108*/ virtual void __unk_vfn_11();
+    /*106*/ virtual void __unk_vfn_106();
+    /*107*/ virtual void __unk_vfn_107();
+    /*108*/ virtual void __unk_vfn_108();
     /*109*/ virtual bool isAffectedByWaterBottle() const;
     /*110*/ virtual bool canAttack(class Actor*, bool) const;
     /*111*/ virtual void setTarget(class Actor*);
@@ -255,7 +253,7 @@ public:
     /*179*/ virtual int getPortalWaitTime() const;
     /*180*/ virtual class AutomaticID<class Dimension, int> getDimensionId() const;
     /*181*/ virtual bool canChangeDimensions() const;
-    /*182*/ virtual void __unk_vfn_12();
+    /*182*/ virtual void __unk_vfn_182();
     /*183*/ virtual void changeDimension(class AutomaticID<class Dimension, int>, bool);
     /*184*/ virtual struct ActorUniqueID getControllingPlayer() const;
     /*185*/ virtual void checkFallDamage(float, bool);
@@ -269,7 +267,7 @@ public:
     /*193*/ virtual bool canPickupItem(class ItemStack const&) const;
     /*194*/ virtual bool canBePulledIntoVehicle() const;
     /*195*/ virtual bool inCaravan() const;
-    /*196*/ virtual void __unk_vfn_13();
+    /*196*/ virtual void __unk_vfn_196();
     /*197*/ virtual void tickLeash();
     /*198*/ virtual void sendMotionPacketIfNeeded();
     /*199*/ virtual bool canSynchronizeNewEntity() const;
@@ -294,14 +292,14 @@ public:
     /*218*/ virtual void openContainerComponent(class Player&);
     /*219*/ virtual void swing();
     /*220*/ virtual void useItem(class ItemStackBase&, enum ItemUseMethod, bool);
-    /*221*/ virtual void __unk_vfn_14();
-    /*222*/ virtual void __unk_vfn_15();
+    /*221*/ virtual void __unk_vfn_221();
+    /*222*/ virtual void __unk_vfn_222();
     /*223*/ virtual void getDebugText(std::vector<std::string>&);
     /*224*/ virtual float getMapDecorationRotation() const;
     /*225*/ virtual float getPassengerYRotation(class Actor const&) const;
     /*226*/ virtual float getYHeadRot() const;
     /*227*/ virtual bool isWorldBuilder() const;
-    /*228*/ virtual void __unk_vfn_16();
+    /*228*/ virtual bool isCreative() const;
     /*229*/ virtual bool isAdventure() const;
     /*230*/ virtual bool add(class ItemStack&);
     /*231*/ virtual bool drop(class ItemStack const&, bool);
@@ -315,10 +313,10 @@ public:
     /*239*/ virtual void startSpinAttack();
     /*240*/ virtual void stopSpinAttack();
     /*241*/ virtual void setDamageNearbyMobs(bool);
-    /*242*/ virtual void __unk_vfn_17();
+    /*242*/ virtual void __unk_vfn_242();
     /*243*/ virtual void reloadLootTable();
     /*244*/ virtual void reloadLootTable(struct EquipmentTableDefinition const&);
-    /*245*/ virtual void __unk_vfn_18();
+    /*245*/ virtual void __unk_vfn_245();
     /*246*/ virtual void kill();
     /*247*/ virtual void die(class ActorDamageSource const&);
     /*248*/ virtual bool shouldDropDeathLoot() const;
@@ -330,7 +328,7 @@ public:
     /*254*/ virtual void interpolatorTick();
     /*255*/ virtual void updateEntitySpecificMolangVariables(class RenderParams&);
     /*256*/ virtual bool shouldTryMakeStepSound();
-    /*257*/ virtual void __unk_vfn_19();
+    /*257*/ virtual void __unk_vfn_257();
     /*258*/ virtual bool _hurt(class ActorDamageSource const&, int, bool, bool);
     /*259*/ virtual void markHurt();
     /*260*/ virtual class AnimationComponent& _getAnimationComponent(class std::shared_ptr<class AnimationComponent>&, enum AnimationComponentGroup);
@@ -338,7 +336,7 @@ public:
     /*262*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*263*/ virtual void _playStepSound(class BlockPos const&, class Block const&);
     /*264*/ virtual void _playFlySound(class BlockPos const&, class Block const&);
-    /*265*/ virtual void __unk_vfn_20();
+    /*265*/ virtual void __unk_vfn_265();
     /*266*/ virtual void checkInsideBlocks(float);
     /*267*/ virtual void pushOutOfBlocks(class Vec3 const&);
     /*268*/ virtual bool updateWaterState();
@@ -353,29 +351,9 @@ public:
         *((void**)&rv) = dlsym("?canSeeInvisible@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isCreative() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isCreative@Actor@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isCreativeModeAllowed(){
         bool (Actor::*rv)();
         *((void**)&rv) = dlsym("?isCreativeModeAllowed@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool hasOutputSignal(unsigned char a0) const{
-        bool (Actor::*rv)(unsigned char) const;
-        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
-        return (this->*rv)(std::forward<unsigned char>(a0));
-    }
-    inline bool isLeashableType(){
-        bool (Actor::*rv)();
-        *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
-        return (this->*rv)();
-    }
-    inline bool isLocalPlayer() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isShootable(){
@@ -386,6 +364,21 @@ public:
     inline bool breaksFallingBlocks() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?breaksFallingBlocks@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isLeashableType(){
+        bool (Actor::*rv)();
+        *((void**)&rv) = dlsym("?isLeashableType@Actor@@UEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool hasOutputSignal(unsigned char a0) const{
+        bool (Actor::*rv)(unsigned char) const;
+        *((void**)&rv) = dlsym("?hasOutputSignal@Actor@@UEBA_NE@Z");
+        return (this->*rv)(std::forward<unsigned char>(a0));
+    }
+    inline bool isLocalPlayer() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?isLocalPlayer@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool _makeFlySound() const{
@@ -458,14 +451,14 @@ public:
         *((void**)&rv) = dlsym("?isFishable@Actor@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool canMakeStepSound() const{
-        bool (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool isTargetable() const{
         bool (Actor::*rv)() const;
         *((void**)&rv) = dlsym("?isTargetable@Actor@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool canMakeStepSound() const{
+        bool (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?canMakeStepSound@Actor@@MEBA_NXZ");
         return (this->*rv)();
     }
     inline float getDeletionDelayTimeSeconds() const{
@@ -478,14 +471,14 @@ public:
         *((void**)&rv) = dlsym("??1Actor@@UEAA@XZ");
         return (this->*rv)();
     }
-    inline class Vec3 const& getPos() const{
-        class Vec3 const& (Actor::*rv)() const;
-        *((void**)&rv) = dlsym("?getPos@Actor@@UEBAAEBVVec3@@XZ");
+    inline struct ActorUniqueID getSourceUniqueID() const{
+        struct ActorUniqueID (Actor::*rv)() const;
+        *((void**)&rv) = dlsym("?getSourceUniqueID@Actor@@UEBA?AUActorUniqueID@@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI Actor(class ILevel&, class OwnerPtrT<struct EntityRefTraits> const&);
-    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class OwnerPtrT<struct EntityRefTraits> const&);
+    MCAPI Actor(class ILevel&, class EntityContext&);
+    MCAPI Actor(class ActorDefinitionGroup*, struct ActorDefinitionIdentifier const&, class EntityContext&);
     MCAPI class Vec3 _randomHeartPos();
     MCAPI void _sendDirtyActorData();
     MCAPI void _setActorTypeId(enum ActorType);
@@ -523,7 +516,7 @@ public:
     MCAPI class FishingHook* fetchFishingHook();
     MCAPI std::vector<struct DistanceSortedActor> fetchNearbyActorsSorted(class Vec3 const&, enum ActorType);
     MCAPI void forEachLeashedActor(class std::function<void (class gsl::not_null<class Actor* >)>);
-    MCAPI class AABBShapeComponent const& getAABBShapeComponent() const;
+    MCAPI class AABBShape const& getAABBShape() const;
     MCAPI int getActiveEffectCount() const;
     MCAPI struct ActorDefinitionIdentifier const& getActorIdentifier() const;
     MCAPI std::vector<class MobEffectInstance> const& getAllEffects() const;
@@ -552,8 +545,8 @@ public:
     MCAPI enum EquipmentSlot getEquipmentSlotForItem(class ItemStack const&) const;
     MCAPI bool getFirstAvailableSeatPos(class Actor&, class Vec3&) const;
     MCAPI class Actor* getFirstPassenger() const;
-    MCAPI class SimpleContainer const& getHandContainer() const;
     MCAPI class SimpleContainer& getHandContainer();
+    MCAPI class SimpleContainer const& getHandContainer() const;
     MCAPI int getHealth() const;
     MCAPI int getHurtDir() const;
     MCAPI int getHurtTime() const;
@@ -585,7 +578,6 @@ public:
     MCAPI int getPersistingTradeRiches();
     MCAPI class Player* getPlayerOwner() const;
     MCAPI enum PortalAxis getPortalEntranceAxis() const;
-    MCAPI class Vec3 const& getPostTickPosDelta() const;
     MCAPI float getRadius() const;
     MCAPI class Random& getRandom() const;
     MCAPI class BlockSource& getRegion() const;
@@ -598,8 +590,8 @@ public:
     MCAPI class SpatialActorNetworkData& getSpatialNetworkData();
     MCAPI class SpatialActorNetworkData const& getSpatialNetworkData() const;
     MCAPI float getSpeedInMetersPerSecond() const;
-    MCAPI class StateVectorComponent const& getStateVectorComponent() const;
-    MCAPI class StateVectorComponent& getStateVectorComponentNonConst();
+    MCAPI class StateVector const& getStateVector() const;
+    MCAPI class StateVector& getStateVectorNonConst();
     MCAPI bool getStatusFlag(enum ActorFlags) const;
     MCAPI int getStrength() const;
     MCAPI int getStrengthMax() const;
@@ -702,9 +694,11 @@ public:
     MCAPI bool isSwimming() const;
     MCAPI bool isTame() const;
     MCAPI bool isTickingEntity() const;
+    MCAPI bool isTouchingDamageBlock() const;
     MCAPI bool isTrading() const;
     MCAPI bool isTrusting() const;
     MCAPI bool isType(enum ActorType) const;
+    MCAPI bool isUseNewTradeScreen() const;
     MCAPI bool isWASDControlled();
     MCAPI bool isWalker() const;
     MCAPI void lerpTo(class Vec3 const&, class Vec2 const&, int);
@@ -760,6 +754,7 @@ public:
     MCAPI void setCollidableMobNear(bool);
     MCAPI void setColor(enum PaletteColor);
     MCAPI void setColor2(enum PaletteColor);
+    MCAPI void setControllingSeat(int);
     MCAPI void setDancing(bool);
     MCAPI void setDoorBreaker(bool);
     MCAPI void setDoorOpener(bool);
@@ -802,6 +797,7 @@ public:
     MCAPI void setTradingPlayer(class Player*);
     MCAPI void setUniqueID(struct ActorUniqueID);
     MCAPI void setVariant(int);
+    MCAPI void setVelocity(class Vec3 const&);
     MCAPI void setWASDControlled(bool);
     MCAPI void setWalker(bool);
     MCAPI bool shouldOrphan(class BlockSource&);
@@ -818,6 +814,7 @@ public:
     MCAPI void transferTickingArea(class Dimension&);
     MCAPI std::vector<class ItemDescriptor> const* tryGetEquippableSlotAllowedItems(int) const;
     MCAPI bool tryMoveChunks();
+    MCAPI void updateAnimationComponentOnServer();
     MCAPI void updateBBFromDefinition();
     MCAPI void updateDescription();
     MCAPI void updateInvisibilityStatus();
@@ -857,13 +854,16 @@ public:
     MCAPI static bool onClimbableBlock(struct IActorMovementProxy const&);
     MCAPI static bool setStatusFlag(class SynchedActorData&, enum ActorFlags, bool);
     MCAPI static void testForCollidableMobs(struct IActorMovementProxy const&, class BlockSource&, class AABB const&, std::vector<class AABB>&);
+    MCAPI static class Actor* tryGetFromComponent(class ActorOwnerComponent&, bool);
+    MCAPI static class Actor const* tryGetFromComponent(class ActorOwnerComponent const&, bool);
     MCAPI static class Actor* tryGetFromEntity(class EntityContext&, bool);
-    MCAPI static class Actor* tryGetFromEntity(class OwnerPtrT<struct EntityRefTraits> const&, bool);
+    MCAPI static class Actor* tryGetFromEntity(class StackRefResultT<struct EntityRefTraits>, bool);
 
 protected:
+    MCAPI void _assignActorMovementProxy(class gsl::not_null<class std::shared_ptr<struct IActorMovementProxy> >);
     MCAPI bool _damageSensorComponentHurt(int&, int, class ActorDamageSource const&);
     MCAPI class ItemActor const* _drop(class ItemStack const&, bool);
-    MCAPI class AABBShapeComponent& _getAABBShapeComponentNonConst();
+    MCAPI class AABBShape& _getAABBShapeNonConst();
     MCAPI bool _isHeadInWater() const;
     MCAPI void _playMovementSound(bool);
     MCAPI void _refreshAABB();
@@ -876,11 +876,14 @@ protected:
     MCAPI void _setPosPrev(class Vec3 const&);
     MCAPI void enableAutoSendPosRot(bool);
     MCAPI static int const PLAYER_HURT_EXPERIENCE_TIME;
+    MCAPI static bool _isImmersedInWater(class StateVector const&, class BlockSource const&, class AABBShape const&);
     MCAPI static class Block const& getBlockWhenClimbing(struct IActorMovementProxy const&);
 
 private:
+    MCAPI void _addActorComponents();
     MCAPI void _initAliasProperties();
-    MCAPI void _initializeLeashRopeSystem();
+    MCAPI void _initializeLeashRopeSystem(class Actor*);
+    MCAPI bool _isItemStackNetManagerEnabled() const;
     MCAPI void _managePassengers(class BlockSource&);
     MCAPI void _moveHitboxTo(class Vec3 const&);
     MCAPI void _sendLinkPacket(struct ActorLink const&) const;

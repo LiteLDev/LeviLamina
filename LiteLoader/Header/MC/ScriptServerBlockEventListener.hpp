@@ -25,7 +25,7 @@ public:
 public:
     /*0*/ virtual ~ScriptServerBlockEventListener();
     /*1*/ virtual enum EventResult onBlockPlacedByPlayer(class Player&, class Block const&, class BlockPos const&, bool);
-    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player&, std::string, class BlockPos const&);
+    /*2*/ virtual enum EventResult onBlockDestroyedByPlayer(class Player&, class Block const&, class BlockPos const&);
     /*3*/ virtual enum EventResult onBlockMovedByPiston(class BlockPos const&, class BlockPos const&, enum PistonState);
     /*4*/ virtual enum EventResult onBlockDestructionStopped(class Player&, class BlockPos const&, int);
     /*5*/ virtual enum EventResult onBlockDestructionStarted(class Player&, class BlockPos const&);

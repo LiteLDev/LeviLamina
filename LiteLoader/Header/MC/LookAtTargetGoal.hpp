@@ -25,8 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~LookAtTargetGoal();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void stop();
+    /*3*/ virtual void __unk_vfn_3();
 
 protected:
 

@@ -25,12 +25,7 @@ public:
 
 public:
     /*0*/ virtual ~HopperContainerManagerModel();
-    /*1*/ virtual enum ContainerID getContainerId() const;
-    /*2*/ virtual void setContainerId(enum ContainerID);
-    /*3*/ virtual enum ContainerType getContainerType() const;
-    /*4*/ virtual void setContainerType(enum ContainerType);
-    /*5*/ virtual void setData(int, int);
-    /*6*/ virtual class ContainerScreenContext _postInit();
+    /*16*/ virtual class ContainerScreenContext _postInit();
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, struct ActorUniqueID const&);
     MCAPI HopperContainerManagerModel(enum ContainerID, class Player&, class BlockPos const&);
 

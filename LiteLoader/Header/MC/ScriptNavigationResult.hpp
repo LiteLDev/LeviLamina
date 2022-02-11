@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -13,6 +12,9 @@ struct ScriptNavigationResult {
 
 #define AFTER_EXTRA
 // Add Member There
+public:
+    bool mResult;
+    std::vector<BlockPos> mPath;
 
 #undef AFTER_EXTRA
 

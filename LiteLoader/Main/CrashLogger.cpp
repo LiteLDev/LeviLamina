@@ -9,10 +9,26 @@ using namespace LL;
 
 Logger crashLogger("CrashLogger");
 
+inline bool isWine()
+{
+    HMODULE ntdll = GetModuleHandle(L"ntdll.dll");
+    auto pwine_get_version = GetProcAddress(ntdll, "wine_get_version");
+    if (pwine_get_version)
+        return true;
+    else
+        return false;
+}
+
 bool LL::StartCrashLoggerProcess()
 {
-    if (IsDebuggerPresent()) {
+    if (IsDebuggerPresent())
+    {
         crashLogger.info("Existing debugger detected. Builtin CrashLogger will not work.");
+        return true;
+    }
+    if (isWine())
+    {
+        crashLogger.info("Wine Environment detected. Builtin CrashLogger will not work.");
         return true;
     }
 
@@ -29,7 +45,8 @@ bool LL::StartCrashLoggerProcess()
     wchar_t daemonPath[MAX_PATH];
 
     wsprintf(daemonPath, L"%ls %u", str2wstr(globalConfig.crashLoggerPath).c_str(), GetCurrentProcessId());
-    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi)) {
+    if (!CreateProcess(nullptr, daemonPath, &sa, &sa, TRUE, 0, nullptr, nullptr, &si, &pi))
+    {
         crashLogger.error("Could not Create CrashLogger Daemon Process!");
         crashLogger.error << GetLastErrorMessage() << Logger::endl;
         return false;
@@ -42,6 +59,12 @@ bool LL::StartCrashLoggerProcess()
 
 void LL::InitCrashLogger(bool enableCrashLogger)
 {
+    // Enable PreLog Module
+    try
+    {
+        LoadLibrary(CL_PRELOG_MODULE);
+    }
+    catch (...) {}
 
     if (!enableCrashLogger)
     {
@@ -81,7 +104,7 @@ void LL::InitCrashLogger(bool enableCrashLogger)
         return;
     }
 
-    //Start CrashLogger
+    // Start CrashLogger
     if (StartCrashLoggerProcess()) {
         //Logger::Info("CrashLogger Daemon Process attached.");
     }

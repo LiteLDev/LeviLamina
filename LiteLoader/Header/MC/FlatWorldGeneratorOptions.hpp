@@ -25,7 +25,7 @@ public:
 
 public:
     MCAPI ~FlatWorldGeneratorOptions();
-    MCAPI static class Json::Value getLayers(enum WorldVersion);
+    MCAPI static class Json::Value getLayers(class LevelData const&);
 
 protected:
     MCAPI bool _load(class Json::Value const&, class BlockPalette const&, class LevelData const&);

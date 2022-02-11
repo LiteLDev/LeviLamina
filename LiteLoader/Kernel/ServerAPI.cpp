@@ -17,11 +17,10 @@ namespace LL {
 
     bool setServerMotd(const std::string& motd)
     {
-        ServerNetworkHandler* snh = ::Global<Minecraft>->getServerNetworkHandler();
-        if (!snh)
+        if (!Global<ServerNetworkHandler>)
             return false;
 
-        snh->allowIncomingConnections(motd, true);
+        Global<ServerNetworkHandler>->allowIncomingConnections(motd, true);
         return true;
     }
 } // namespace LL

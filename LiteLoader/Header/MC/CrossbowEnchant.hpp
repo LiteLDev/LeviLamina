@@ -28,16 +28,16 @@ public:
     /*1*/ virtual bool isCompatibleWith(enum Enchant::Type) const;
     /*2*/ virtual int getMinCost(int) const;
     /*3*/ virtual int getMaxCost(int) const;
-    /*4*/ virtual void __unk_vfn_0();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual int getMaxLevel() const;
-    /*6*/ virtual void __unk_vfn_1();
-    /*7*/ virtual void __unk_vfn_2();
-    /*8*/ virtual void __unk_vfn_3();
-    /*9*/ virtual void __unk_vfn_4();
-    /*10*/ virtual void __unk_vfn_5();
-    /*11*/ virtual void __unk_vfn_6();
-    /*12*/ virtual void __unk_vfn_7();
-    /*13*/ virtual void __unk_vfn_8();
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual void __unk_vfn_7();
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual void __unk_vfn_10();
+    /*11*/ virtual void __unk_vfn_11();
+    /*12*/ virtual void __unk_vfn_12();
+    /*13*/ virtual void __unk_vfn_13();
     /*14*/ virtual bool _isValidEnchantmentTypeForCategory(enum Enchant::Type) const;
 
 protected:

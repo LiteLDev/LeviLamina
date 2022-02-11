@@ -24,25 +24,27 @@ public:
 
 public:
     /*0*/ virtual ~ContainerScreenValidation();
-    /*1*/ virtual struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
-    /*2*/ virtual class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
-    /*3*/ virtual enum ItemAddType _canAdd(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-    /*4*/ virtual enum ItemSetType _canSet(struct ContainerValidatorPairScope const&, int, class ItemStackBase const&, int) const;
-    /*5*/ virtual bool _canRemove(struct ContainerValidatorPairScope const&, int, int, bool) const;
-    /*6*/ virtual bool _canDestroy(struct ContainerValidatorPairScope const&) const;
     MCAPI ContainerScreenValidation(class ContainerScreenContext const&, enum ContainerValidationCaller);
+    MCAPI class std::shared_ptr<class SimpleSparseContainer> getOrCreateSparseContainer(enum ContainerEnumName);
     MCAPI bool tryCommitActionResults();
     MCAPI struct ContainerValidationResult tryConsume(struct ContainerValidationSlotData const&, int);
     MCAPI struct ContainerValidationResult tryDestroy(struct ContainerValidationSlotData const&, int);
     MCAPI struct ContainerValidationResult tryDrop(struct ContainerValidationSlotData const&, int, bool);
+    MCAPI struct ContainerValidationResult tryPlaceInItemContainer(struct ContainerValidationSlotData const&, int);
+    MCAPI struct ContainerValidationResult trySwap(struct ContainerValidationSlotInfo&, struct ContainerValidationSlotInfo&);
+    MCAPI struct ContainerValidationResult trySwap(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&);
+    MCAPI struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotInfo&, struct ContainerValidationSlotInfo&, int, bool);
+    MCAPI struct ContainerValidationResult tryTransfer(struct ContainerValidationSlotData const&, struct ContainerValidationSlotData const&, int, bool);
 
 protected:
-    MCAPI class ItemStack _tryRemoveItem(struct ContainerValidatorPairScope&, int, int, bool);
+    MCAPI int _tryAddItem(struct ContainerValidationSlotInfo&, int, bool);
+    MCAPI class ItemStack _tryRemoveItem(struct ContainerValidationSlotInfo&, int);
+    MCAPI int _trySetItem(struct ContainerValidationSlotInfo&, class ItemStack const&, bool, bool);
     MCAPI struct ContainerValidationResult _tryTransferSpecial(struct ContainerValidationSlotData const&, int, enum ContainerScreenRequestActionType);
 
 private:
-    MCAPI struct ContainerValidatorPairScope _createContainerValidatorPairScope(enum ContainerEnumName);
+    MCAPI struct ContainerValidationSlotInfo _createContainerValidatorSlotInfo(struct ContainerValidationSlotData const&);
     MCAPI class std::shared_ptr<class ContainerValidationBase const> _getOrCreateContainerValidator(enum ContainerEnumName);
-    MCAPI bool _isValidSlot(struct ContainerValidatorPairScope const&, int) const;
+    MCAPI bool _propagateContainers();
 
 };

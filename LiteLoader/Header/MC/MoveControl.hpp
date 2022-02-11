@@ -39,6 +39,7 @@ public:
     MCAPI static float const MIN_DELTA_TO_MOVE;
     MCAPI static float const MIN_SPEED;
     MCAPI static float const MIN_SPEED_SQR;
+    MCAPI static class Vec3 getDiffVector(class Vec3 const&, class Mob const&);
 
 protected:
     MCAPI float calculateMoveSpeed(class MoveControlComponent const&, class Mob&, class Vec3 const&, float);

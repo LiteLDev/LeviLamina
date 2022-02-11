@@ -25,16 +25,14 @@ public:
 
 public:
     /*0*/ virtual ~StompEggGoal();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void stop();
-    /*3*/ virtual void appendDebugInfo(std::string&) const;
-    /*4*/ virtual void __unk_vfn_1();
-    /*5*/ virtual void __unk_vfn_2();
-    /*6*/ virtual unsigned __int64 _getRepathTime() const;
-    /*7*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
-    /*8*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
-    /*9*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
-    /*10*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
+    /*3*/ virtual void __unk_vfn_3();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*18*/ virtual void _createBreakProgressParticles(class Level&, class BlockSource&, class BlockPos);
+    /*19*/ virtual void _createDestroyParticles(class Level&, class BlockSource&, class BlockPos);
+    /*20*/ virtual void _playBreakProgressSound(class Level&, class BlockSource&, class BlockPos);
+    /*21*/ virtual void _playDestroySound(class Level&, class BlockSource&, class BlockPos);
 
 protected:
 

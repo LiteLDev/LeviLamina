@@ -31,7 +31,7 @@ public:
     /*4*/ virtual void addChildren(class StructurePiece&, std::vector<std::unique_ptr<class StructurePiece>>&, class Random&);
     /*5*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
     /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*7*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
 protected:
 

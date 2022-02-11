@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptObject.hpp"
 
 #define BEFORE_EXTRA
@@ -26,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~ScriptSimulatedPlayer();
-    /*1*/ virtual class Scripting::Result<std::string > getNameTag() const;
-    /*2*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
-    /*3*/ virtual class Scripting::Result<bool> getSneaking() const;
-    /*4*/ virtual class Scripting::Result<void> setSneaking(bool) const;
+    /*4*/ virtual class Scripting::Result<std::string > getNameTag() const;
+    /*5*/ virtual class Scripting::Result<void> setNameTag(std::string const&) const;
+    /*6*/ virtual class Scripting::Result<bool> getSneaking() const;
+    /*7*/ virtual class Scripting::Result<void> setSneaking(bool) const;
     /*
     inline  ~ScriptSimulatedPlayer(){
          (ScriptSimulatedPlayer::*rv)();
@@ -39,9 +38,9 @@ public:
     */
     MCAPI class Scripting::Result<bool> attack() const;
     MCAPI class Scripting::Result<bool> attackEntity(class ScriptActor const&) const;
-    MCAPI class Scripting::Result<bool> destroyBlock(class BlockPos const&, int) const;
-    MCAPI class Scripting::Result<float> getBodyRotation() const;
+    MCAPI class Scripting::Result<bool> breakBlock(class BlockPos const&, int) const;
     MCAPI class Scripting::Result<struct ScriptPitchYawRotation> getHeadRotation();
+    MCAPI class Scripting::Result<bool> giveItem(class ScriptItemStack const&, bool) const;
     MCAPI class Scripting::Result<bool> interact() const;
     MCAPI class Scripting::Result<bool> interactWithBlock(class BlockPos const&, int) const;
     MCAPI class Scripting::Result<bool> interactWithEntity(class ScriptActor const&) const;
@@ -58,9 +57,10 @@ public:
     MCAPI class Scripting::Result<struct ScriptNavigationResult> navigateToLocation(class Vec3 const&, float) const;
     MCAPI class Scripting::Result<void> navigateToLocations(std::vector<class Vec3> const&, float) const;
     MCAPI class Scripting::Result<void> rotateBody(float) const;
-    MCAPI class Scripting::Result<void> selectSlot(int) const;
     MCAPI class Scripting::Result<void> setBodyRotation(float) const;
-    MCAPI class Scripting::Result<void> stopDestroyingBlock() const;
+    MCAPI class Scripting::Result<void> setGameMode(enum GameType);
+    MCAPI class Scripting::Result<bool> setItem(class ScriptItemStack const&, int, bool) const;
+    MCAPI class Scripting::Result<void> stopBreakingBlock() const;
     MCAPI class Scripting::Result<void> stopInteracting() const;
     MCAPI class Scripting::Result<void> stopMoving() const;
     MCAPI class Scripting::Result<void> stopUsingItem() const;
@@ -75,7 +75,6 @@ public:
 protected:
 
 private:
-    MCAPI static class Vec3 _getFaceLocation(unsigned char, float, float);
     MCAPI static class gametest::BaseGameTestHelper const* _getHelper(class SimulatedPlayer const&);
     MCAPI static class std::optional<struct gametest::GameTestError> _toWorld(class SimulatedPlayer&, class BlockPos*, unsigned char*, class Vec3*);
     MCAPI static struct ScriptNavigationResult _worldToLocalNavigationResult(class SimulatedPlayer&, struct ScriptNavigationResult);

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -33,12 +32,11 @@ public:
     }
     */
     MCAPI ScriptBoolBlockProperty(class ScriptBoolBlockProperty&&);
-    MCAPI ScriptBoolBlockProperty(std::string const&, class ItemState const&, std::vector<bool>, class ScriptBlockPermutation&);
-    MCAPI std::vector<bool> const& getAllValues() const;
-    MCAPI std::string const& getName() const;
+    MCAPI ScriptBoolBlockProperty(std::string, class ItemState const&, std::vector<bool>, class Scripting::StrongTypedObjectHandle<class ScriptBlockPermutation>);
     MCAPI class Scripting::Result<bool> getState() const;
     MCAPI class ScriptBoolBlockProperty& operator=(class ScriptBoolBlockProperty&&);
     MCAPI class Scripting::Result<void> setState(bool);
+    MCAPI static class Scripting::ClassBindingBuilder<class ScriptBoolBlockProperty> bind(struct Scripting::Version);
 
 protected:
 

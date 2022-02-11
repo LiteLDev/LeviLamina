@@ -2,13 +2,14 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "FurnaceContainerScreenValidator.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 
 #undef BEFORE_EXTRA
 
-class BlastFurnaceContainerScreenValidator {
+class BlastFurnaceContainerScreenValidator : public FurnaceContainerScreenValidator {
 
 #define AFTER_EXTRA
 // Add Member There

@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~FunctionEntry();
-    /*1*/ virtual void execute(class FunctionManager&, class CommandOrigin const&);
+    /*1*/ virtual void execute(class FunctionManager&, class CommandOrigin const&, enum FunctionQueueOrder);
     MCAPI enum FunctionState getErrorState() const;
 
 protected:

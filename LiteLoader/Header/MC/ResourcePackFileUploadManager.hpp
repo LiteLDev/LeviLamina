@@ -27,7 +27,7 @@ public:
 
 public:
     /*0*/ virtual ~ResourcePackFileUploadManager();
-    /*1*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
+    /*2*/ virtual void uploadFileToRealmStorage(std::string const&, class Core::Path const&, int, std::string const&);
     /*
     inline  ~ResourcePackFileUploadManager(){
          (ResourcePackFileUploadManager::*rv)();

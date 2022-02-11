@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct MountTamingEvent {
+class MountTamingEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct MountTamingEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_MOUNTTAMINGEVENT
 public:
-    struct MountTamingEvent& operator=(struct MountTamingEvent const&) = delete;
-    MountTamingEvent(struct MountTamingEvent const&) = delete;
+    class MountTamingEvent& operator=(class MountTamingEvent const&) = delete;
+    MountTamingEvent(class MountTamingEvent const&) = delete;
     MountTamingEvent() = delete;
 #endif
 

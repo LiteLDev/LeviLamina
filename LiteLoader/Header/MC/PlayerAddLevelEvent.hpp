@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerAddLevelEvent {
+class PlayerAddLevelEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerAddLevelEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERADDLEVELEVENT
 public:
-    struct PlayerAddLevelEvent& operator=(struct PlayerAddLevelEvent const&) = delete;
-    PlayerAddLevelEvent(struct PlayerAddLevelEvent const&) = delete;
+    class PlayerAddLevelEvent& operator=(class PlayerAddLevelEvent const&) = delete;
+    PlayerAddLevelEvent(class PlayerAddLevelEvent const&) = delete;
     PlayerAddLevelEvent() = delete;
 #endif
 

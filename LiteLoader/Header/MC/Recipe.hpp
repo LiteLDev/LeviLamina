@@ -40,11 +40,6 @@ public:
     /*14*/ virtual bool itemsMatch(class ItemDescriptor const&, int, int, class CompoundTag const*) const;
     /*15*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
-    inline bool isMultiRecipe() const{
-        bool (Recipe::*rv)() const;
-        *((void**)&rv) = dlsym("?isMultiRecipe@Recipe@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline  ~Recipe(){
          (Recipe::*rv)();
         *((void**)&rv) = dlsym("??1Recipe@@UEAA@XZ");

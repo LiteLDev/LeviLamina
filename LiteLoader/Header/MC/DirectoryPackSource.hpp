@@ -25,10 +25,10 @@ public:
 
 public:
     /*0*/ virtual ~DirectoryPackSource();
-    /*1*/ virtual void __unk_vfn_0();
-    /*2*/ virtual void __unk_vfn_1();
-    /*3*/ virtual enum PackOrigin getPackOrigin() const;
-    /*4*/ virtual enum PackType getPackType() const;
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual void __unk_vfn_2();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual class PackSourceReport load(class IPackManifestFactory&, class IContentKeyProvider const&);
     /*
     inline  ~DirectoryPackSource(){
@@ -45,6 +45,16 @@ public:
         void (DirectoryPackSource::*rv)(class std::function<void (class Pack const& )>) const;
         *((void**)&rv) = dlsym("?forEachPackConst@DirectoryPackSource@@UEBAXV?$function@$$A6AXAEBVPack@@@Z@std@@@Z");
         return (this->*rv)(std::forward<class std::function<void (class Pack const& )>>(a0));
+    }
+    inline enum PackOrigin getPackOrigin() const{
+        enum PackOrigin (DirectoryPackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackOrigin@DirectoryPackSource@@UEBA?AW4PackOrigin@@XZ");
+        return (this->*rv)();
+    }
+    inline enum PackType getPackType() const{
+        enum PackType (DirectoryPackSource::*rv)() const;
+        *((void**)&rv) = dlsym("?getPackType@DirectoryPackSource@@UEBA?AW4PackType@@XZ");
+        return (this->*rv)();
     }
     */
     MCAPI DirectoryPackSource(class Core::Path const&, enum PackType, enum PackOrigin, bool);

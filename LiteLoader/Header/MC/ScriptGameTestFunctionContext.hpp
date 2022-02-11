@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -26,6 +25,7 @@ public:
 public:
     /*0*/ virtual ~ScriptGameTestFunctionContext();
     MCAPI ScriptGameTestFunctionContext(class Scripting::WeakLifetimeScope, class gametest::BaseGameTestHelper&);
+    MCAPI class Scripting::WeakTypedObjectHandle<class ScriptGameTestHelper> getScriptGameTestHelper();
 
 protected:
 

@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include <MC/MerchantRecipe.hpp>
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,19 @@ class MerchantRecipeList {
 
 #define AFTER_EXTRA
 // Add Member There
+    std::vector<MerchantRecipe> mRecipes;
+    std::vector<int> mTierExpRequirements;
+
+public:
+    inline MerchantRecipe* getRecipeByNetId(unsigned int recipeNetId)
+    {
+        for (auto& recipe : mRecipes)
+        {
+            if (recipe.getRecipeNetId() == recipeNetId)
+                return &recipe;
+        }
+        return nullptr;
+    }
 
 #undef AFTER_EXTRA
 
@@ -31,6 +45,8 @@ public:
     /*6*/ virtual std::unique_ptr<class CompoundTag> createTag(bool) const;
     MCAPI MerchantRecipeList();
     MCAPI void assignNetIds();
+    MCAPI class MerchantRecipe const* getRecipeByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
+    MCAPI class std::optional<unsigned __int64> getRecipeIndexByNetId(class TypedServerNetId<struct RecipeNetIdTag, unsigned int, 0> const&) const;
     MCAPI bool isRequiredItem(class ItemInstance const&, class ItemInstance const&);
 
 protected:

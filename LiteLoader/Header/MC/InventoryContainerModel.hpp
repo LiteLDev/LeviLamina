@@ -28,20 +28,17 @@ public:
     /*1*/ virtual ~InventoryContainerModel();
     /*2*/ virtual void postInit();
     /*3*/ virtual void releaseResources();
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual class ContainerWeakRef getContainerWeakRef() const;
-    /*6*/ virtual std::vector<class ItemStack> const& getItems() const;
-    /*7*/ virtual class ItemStackBase const& getItemStackBase(int) const;
-    /*8*/ virtual void __unk_vfn_1();
-    /*9*/ virtual bool isValid();
-    /*10*/ virtual void __unk_vfn_2();
-    /*11*/ virtual void __unk_vfn_3();
-    /*12*/ virtual void __unk_vfn_4();
-    /*13*/ virtual std::string const& getItemGroupName(int) const;
-    /*14*/ virtual void __unk_vfn_5();
-    /*15*/ virtual class Container* _getContainer() const;
-    /*16*/ virtual int _getContainerOffset() const;
-    /*17*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
+    /*6*/ virtual void __unk_vfn_6();
+    /*7*/ virtual class ContainerWeakRef getContainerWeakRef() const;
+    /*12*/ virtual void __unk_vfn_12();
+    /*14*/ virtual bool isValid();
+    /*15*/ virtual void __unk_vfn_15();
+    /*16*/ virtual void __unk_vfn_16();
+    /*17*/ virtual void __unk_vfn_17();
+    /*19*/ virtual void __unk_vfn_19();
+    /*20*/ virtual class Container* _getContainer() const;
+    /*21*/ virtual int _getContainerOffset() const;
+    /*22*/ virtual void _onItemChanged(int, class ItemStack const&, class ItemStack const&);
     MCAPI InventoryContainerModel(enum ContainerEnumName, int, class Player&);
 
 protected:

@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerEatFoodEvent {
+class PlayerEatFoodEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerEatFoodEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYEREATFOODEVENT
 public:
-    struct PlayerEatFoodEvent& operator=(struct PlayerEatFoodEvent const&) = delete;
-    PlayerEatFoodEvent(struct PlayerEatFoodEvent const&) = delete;
+    class PlayerEatFoodEvent& operator=(class PlayerEatFoodEvent const&) = delete;
+    PlayerEatFoodEvent(class PlayerEatFoodEvent const&) = delete;
     PlayerEatFoodEvent() = delete;
 #endif
 

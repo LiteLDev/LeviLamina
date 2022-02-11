@@ -26,14 +26,12 @@ public:
     MCAPI BlockDescriptor(std::string const&, std::vector<class BlockDescriptor::BlockState> const&&);
     MCAPI BlockDescriptor(class HashedString const&);
     MCAPI BlockDescriptor();
-    MCAPI bool deserialize(class BasicLoader&, struct SerializerTraits const&, class BedrockLoadContext const&);
     MCAPI class Block const* getBlock() const;
     MCAPI std::string const& getTagExpression() const;
     MCAPI bool isValid() const;
     MCAPI bool matches(class Block const&) const;
     MCAPI void operator=(class BlockDescriptor&&);
     MCAPI void operator=(class BlockDescriptor const&);
-    MCAPI bool serialize(class BasicSaver&, struct SerializerTraits const&) const;
     MCAPI std::unique_ptr<class CompoundTag> toCompoundTag() const;
     MCAPI ~BlockDescriptor();
     MCAPI static char const* const JSON_NAME_FIELD;

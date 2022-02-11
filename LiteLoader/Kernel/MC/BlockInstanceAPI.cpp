@@ -107,4 +107,5 @@ bool BlockInstance::isNull() {
     return *this == BlockInstance::Null;
 }
 
-const BlockInstance BlockInstance::Null = BlockInstance(nullptr, {INT_MIN, INT_MIN, INT_MIN}, -1);
+#include <MC/VanillaDimensions.hpp>
+const BlockInstance BlockInstance::Null = BlockInstance(nullptr, BlockPos::MIN, VanillaDimensions::Undefined);

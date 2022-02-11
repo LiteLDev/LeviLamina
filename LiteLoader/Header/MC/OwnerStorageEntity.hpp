@@ -27,10 +27,10 @@ public:
 protected:
     MCAPI OwnerStorageEntity(class OwnerStorageEntity&&);
     MCAPI OwnerStorageEntity(enum OwnerStorageEntity::EmptyInit);
-    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistryOwned&);
+    MCAPI OwnerStorageEntity(enum OwnerStorageEntity::VariadicInit, class EntityRegistry&);
     MCAPI class EntityContext& _getStackRef() const;
     MCAPI bool _hasValue() const;
-    MCAPI void _remake(class EntityRegistryOwned&);
+    MCAPI void _remake(class EntityRegistry&);
     MCAPI void _reset();
     MCAPI class OwnerStorageEntity& operator=(class OwnerStorageEntity&&);
     MCAPI ~OwnerStorageEntity();

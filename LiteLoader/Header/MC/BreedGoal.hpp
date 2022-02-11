@@ -26,8 +26,8 @@ public:
     /*0*/ virtual ~BreedGoal();
     /*1*/ virtual bool canUse();
     /*2*/ virtual bool canContinueToUse();
-    /*3*/ virtual void __unk_vfn_0();
-    /*4*/ virtual void __unk_vfn_1();
+    /*3*/ virtual void __unk_vfn_3();
+    /*4*/ virtual void __unk_vfn_4();
     /*5*/ virtual void stop();
     /*6*/ virtual void tick();
     /*7*/ virtual void appendDebugInfo(std::string&) const;
@@ -36,7 +36,6 @@ public:
 protected:
 
 private:
-    MCAPI void _breed();
     MCAPI bool _isCloseEnoughToBreed(class Vec3, class Vec2, class Vec3, class Vec2) const;
     MCAPI class Mob* _moveToFreePartner() const;
 

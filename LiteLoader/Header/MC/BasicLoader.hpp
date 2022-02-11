@@ -22,40 +22,109 @@ public:
 #endif
 
 public:
+    /*0*/ virtual ~BasicLoader();
     /*
+    inline bool isString() const{
+        bool (BasicLoader::*rv)() const;
+        *((void**)&rv) = dlsym("?isString@BasicLoader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isArray() const{
+        bool (BasicLoader::*rv)() const;
+        *((void**)&rv) = dlsym("?isArray@BasicLoader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndObject(){
+        bool (BasicLoader::*rv)();
+        *((void**)&rv) = dlsym("?doEndObject@BasicLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isObject() const{
+        bool (BasicLoader::*rv)() const;
+        *((void**)&rv) = dlsym("?isObject@BasicLoader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndMember(){
+        bool (BasicLoader::*rv)();
+        *((void**)&rv) = dlsym("?doEndMember@BasicLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndArray(){
+        bool (BasicLoader::*rv)();
+        *((void**)&rv) = dlsym("?doEndArray@BasicLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doEndArrayItem(){
+        bool (BasicLoader::*rv)();
+        *((void**)&rv) = dlsym("?doEndArrayItem@BasicLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isBool() const{
+        bool (BasicLoader::*rv)() const;
+        *((void**)&rv) = dlsym("?isBool@BasicLoader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool isInt() const{
+        bool (BasicLoader::*rv)() const;
+        *((void**)&rv) = dlsym("?isInt@BasicLoader@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doBeginArrayItem(unsigned __int64 a0){
+        bool (BasicLoader::*rv)(unsigned __int64);
+        *((void**)&rv) = dlsym("?doBeginArrayItem@BasicLoader@@EEAA_N_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0));
+    }
+    inline bool doBeginArray(unsigned __int64& a0){
+        bool (BasicLoader::*rv)(unsigned __int64&);
+        *((void**)&rv) = dlsym("?doBeginArray@BasicLoader@@EEAA_NAEA_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64&>(a0));
+    }
+    inline bool doBeginMember(unsigned __int64 a0, std::string& a1){
+        bool (BasicLoader::*rv)(unsigned __int64, std::string&);
+        *((void**)&rv) = dlsym("?doBeginMember@BasicLoader@@EEAA_N_KAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+        return (this->*rv)(std::forward<unsigned __int64>(a0), std::forward<std::string&>(a1));
+    }
+    inline bool doBeginMember(char const* a0, bool a1){
+        bool (BasicLoader::*rv)(char const*, bool);
+        *((void**)&rv) = dlsym("?doBeginMember@BasicLoader@@EEAA_NPEBD_N@Z");
+        return (this->*rv)(std::forward<char const*>(a0), std::forward<bool>(a1));
+    }
+    inline bool doBeginObject(){
+        bool (BasicLoader::*rv)();
+        *((void**)&rv) = dlsym("?doBeginObject@BasicLoader@@EEAA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool doBeginObject(unsigned __int64& a0){
+        bool (BasicLoader::*rv)(unsigned __int64&);
+        *((void**)&rv) = dlsym("?doBeginObject@BasicLoader@@EEAA_NAEA_K@Z");
+        return (this->*rv)(std::forward<unsigned __int64&>(a0));
+    }
     inline  ~BasicLoader(){
          (BasicLoader::*rv)();
         *((void**)&rv) = dlsym("??1BasicLoader@@UEAA@XZ");
         return (this->*rv)();
     }
     */
-    MCAPI bool beginArray(unsigned __int64&);
     MCAPI bool beginMember(char const*, bool);
-    MCAPI bool beginMember(unsigned __int64, std::string&);
-    MCAPI bool beginObject(unsigned __int64&);
     MCAPI bool beginObject();
-    MCAPI bool endArray();
-    MCAPI bool endMember();
     MCAPI bool endObject();
     MCAPI void error(std::string const&);
     MCAPI std::vector<std::string> const& getErrors() const;
     MCAPI class BasicLoader& operator=(class BasicLoader const&);
-    MCAPI bool serializeBool(bool&);
-    MCAPI bool serializeFloat(float&);
-    MCAPI bool serializeS32(int&);
     MCAPI bool serializeString(std::string&);
 
 protected:
 
 private:
     MCAPI bool beginArrayItem(unsigned __int64);
-    MCAPI bool serialize(class entt::meta_any, struct SerializerTraits const&, class entt::meta_any);
-    MCAPI bool serialize(class entt::meta_any, class entt::meta_any);
+    MCAPI bool serialize(class entt::meta_any&, struct SerializerTraits const&, class entt::meta_any const&);
+    MCAPI bool serialize(class entt::meta_any&, class entt::meta_any const&);
     MCAPI bool serializeAssociativeContainer(class entt::meta_associative_container, struct SerializerTraits const&, class entt::meta_any const&);
-    MCAPI bool serializeBasicType(class entt::meta_any&);
+    MCAPI bool serializeBasicType(class entt::meta_any&, std::string);
     MCAPI bool serializeClass(class entt::meta_any&, struct SerializerTraits const&, class entt::meta_any const&);
     MCAPI bool serializeEnum(class entt::meta_any&, struct SerializerTraits const&);
-    MCAPI bool serializeObject(class entt::meta_any, class entt::meta_any);
+    MCAPI bool serializeObject(class entt::meta_any&, class entt::meta_any const&);
     MCAPI bool serializeSequenceContainer(class entt::meta_sequence_container, struct SerializerTraits const&, class entt::meta_any const&);
+    MCAPI bool serializeTypeLevelSetter(class entt::meta_type, class entt::meta_any&, struct SerializerTraits, class entt::meta_any const&);
 
 };

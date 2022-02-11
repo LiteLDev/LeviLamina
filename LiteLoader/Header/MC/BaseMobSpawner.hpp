@@ -36,8 +36,9 @@ public:
     }
     */
     MCAPI BaseMobSpawner(struct ActorDefinitionIdentifier);
-    MCAPI class Mob* getDisplayEntity(class BlockSource&);
+    MCAPI class Actor* createAndAddDisplayEntity(class BlockSource&);
     MCAPI void setEntityId(struct ActorDefinitionIdentifier);
+    MCAPI class Mob* tryGetOrCreateDisplayEntity(class BlockSource&);
 
 protected:
     MCAPI void _delay(class BlockSource&);

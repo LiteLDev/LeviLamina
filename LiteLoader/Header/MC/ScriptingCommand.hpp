@@ -2,6 +2,7 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Json.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -23,7 +24,9 @@ public:
 #endif
 
 public:
+    MCAPI ScriptingCommand(std::string const&);
     MCAPI std::string serializeJsonOutput() const;
+    MCAPI void setJsonOutput(class Json::Value&&);
 
 protected:
 

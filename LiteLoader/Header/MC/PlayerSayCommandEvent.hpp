@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerSayCommandEvent {
+class PlayerSayCommandEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerSayCommandEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERSAYCOMMANDEVENT
 public:
-    struct PlayerSayCommandEvent& operator=(struct PlayerSayCommandEvent const&) = delete;
-    PlayerSayCommandEvent(struct PlayerSayCommandEvent const&) = delete;
+    class PlayerSayCommandEvent& operator=(class PlayerSayCommandEvent const&) = delete;
+    PlayerSayCommandEvent(class PlayerSayCommandEvent const&) = delete;
     PlayerSayCommandEvent() = delete;
 #endif
 

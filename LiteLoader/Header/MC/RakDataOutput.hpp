@@ -24,7 +24,7 @@ public:
 
 public:
     /*0*/ virtual ~RakDataOutput();
-    /*1*/ virtual void writeBytes(void const*, unsigned __int64);
+    /*9*/ virtual void writeBytes(void const*, unsigned __int64);
     /*
     inline  ~RakDataOutput(){
          (RakDataOutput::*rv)();

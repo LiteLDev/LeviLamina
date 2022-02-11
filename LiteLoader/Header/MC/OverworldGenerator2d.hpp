@@ -55,6 +55,11 @@ public:
         *((void**)&rv) = dlsym("?getLevelGenHeight@OverworldGenerator2d@@UEBAHXZ");
         return (this->*rv)();
     }
+    inline class std::optional<class XoroshiroPositionalRandomFactory> getXoroshiroPositionalRandomFactory() const{
+        class std::optional<class XoroshiroPositionalRandomFactory> (OverworldGenerator2d::*rv)() const;
+        *((void**)&rv) = dlsym("?getXoroshiroPositionalRandomFactory@OverworldGenerator2d@@EEBA?AV?$optional@VXoroshiroPositionalRandomFactory@@@std@@XZ");
+        return (this->*rv)();
+    }
     */
     MCAPI OverworldGenerator2d(class Dimension&, unsigned int, bool, class Biome const*);
 

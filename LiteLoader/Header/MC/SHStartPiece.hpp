@@ -25,11 +25,11 @@ public:
 
 public:
     /*0*/ virtual ~SHStartPiece();
-    /*1*/ virtual class PoolElementStructurePiece* asPoolElement();
-    /*2*/ virtual enum StructurePieceType getType() const;
-    /*3*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
-    /*4*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
-    /*5*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
+    /*2*/ virtual class PoolElementStructurePiece* asPoolElement();
+    /*3*/ virtual enum StructurePieceType getType() const;
+    /*6*/ virtual void postProcessMobsAt(class BlockSource&, class Random&, class BoundingBox const&);
+    /*10*/ virtual bool canBeReplaced(class BlockSource&, int, int, int, class BoundingBox const&);
+    /*12*/ virtual void addHardcodedSpawnAreas(class LevelChunk&) const;
 
 protected:
 

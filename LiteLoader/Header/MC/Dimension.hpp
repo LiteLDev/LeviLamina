@@ -29,11 +29,6 @@ public:
         *((void**)&rv) = dlsym("?forceCheckAllNeighChunkSavedStat@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
-    inline bool isValidSpawn(int a0, int a1) const{
-        bool (Dimension::*rv)(int, int) const;
-        *((void**)&rv) = dlsym("?isValidSpawn@Dimension@@UEBA_NHH@Z");
-        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
-    }
     inline bool isFoggyAt(int a0, int a1) const{
         bool (Dimension::*rv)(int, int) const;
         *((void**)&rv) = dlsym("?isFoggyAt@Dimension@@UEBA_NHH@Z");
@@ -43,6 +38,11 @@ public:
         bool (Dimension::*rv)();
         *((void**)&rv) = dlsym("?hasBedrockFog@Dimension@@UEAA_NXZ");
         return (this->*rv)();
+    }
+    inline bool isValidSpawn(int a0, int a1) const{
+        bool (Dimension::*rv)(int, int) const;
+        *((void**)&rv) = dlsym("?isValidSpawn@Dimension@@UEBA_NHH@Z");
+        return (this->*rv)(std::forward<int>(a0), std::forward<int>(a1));
     }
     inline int getDefaultBiome() const{
         int (Dimension::*rv)() const;
@@ -54,14 +54,14 @@ public:
         *((void**)&rv) = dlsym("?getSpawnYPosition@Dimension@@UEBAHXZ");
         return (this->*rv)();
     }
-    inline bool mayRespawnViaBed() const{
-        bool (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
-        return (this->*rv)();
-    }
     inline bool hasGround() const{
         bool (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?hasGround@Dimension@@UEBA_NXZ");
+        return (this->*rv)();
+    }
+    inline bool mayRespawnViaBed() const{
+        bool (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?mayRespawnViaBed@Dimension@@UEBA_NXZ");
         return (this->*rv)();
     }
     inline bool isNaturalDimension() const{
@@ -79,14 +79,14 @@ public:
         *((void**)&rv) = dlsym("?getCloudHeight@Dimension@@UEBAFXZ");
         return (this->*rv)();
     }
-    inline class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const{
-        class BaseLightTextureImageBuilder* (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ");
-        return (this->*rv)();
-    }
     inline class BlockPos getSpawnPos() const{
         class BlockPos (Dimension::*rv)() const;
         *((void**)&rv) = dlsym("?getSpawnPos@Dimension@@UEBA?AVBlockPos@@XZ");
+        return (this->*rv)();
+    }
+    inline class DimensionBrightnessRamp const& getBrightnessRamp() const{
+        class DimensionBrightnessRamp const& (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ");
         return (this->*rv)();
     }
     inline  ~Dimension(){
@@ -109,14 +109,14 @@ public:
         *((void**)&rv) = dlsym("?getBrightnessDependentFogColor@Dimension@@UEBA?AVColor@mce@@AEBV23@M@Z");
         return (this->*rv)(std::forward<class mce::Color const&>(a0), std::forward<float>(a1));
     }
-    inline class DimensionBrightnessRamp const& getBrightnessRamp() const{
-        class DimensionBrightnessRamp const& (Dimension::*rv)() const;
-        *((void**)&rv) = dlsym("?getBrightnessRamp@Dimension@@UEBAAEBVDimensionBrightnessRamp@@XZ");
-        return (this->*rv)();
-    }
     inline float getClearColorScale(){
         float (Dimension::*rv)();
         *((void**)&rv) = dlsym("?getClearColorScale@Dimension@@UEAAMXZ");
+        return (this->*rv)();
+    }
+    inline class BaseLightTextureImageBuilder* getLightTextureImageBuilder() const{
+        class BaseLightTextureImageBuilder* (Dimension::*rv)() const;
+        *((void**)&rv) = dlsym("?getLightTextureImageBuilder@Dimension@@UEBAPEAVBaseLightTextureImageBuilder@@XZ");
         return (this->*rv)();
     }
     inline float getSunIntensity(float a0, class Vec3 const& a1, float a2) const{
@@ -196,7 +196,6 @@ public:
     }
     */
     MCAPI Dimension(class ILevel&, class AutomaticID<class Dimension, int>, class DimensionHeightRange, class Scheduler&, std::string);
-    MCAPI void _onNewTickingEntity(class Actor&);
     MCAPI void addWither(struct ActorUniqueID const&);
     MCAPI float distanceToNearestPlayerSqr2D(class Vec3);
     MCAPI class Actor* fetchEntity(struct ActorUniqueID, bool);
@@ -211,13 +210,14 @@ public:
     MCAPI void forEachPlayer(class std::function<bool (class Player& )>) const;
     MCAPI void forceSaveVillageManager();
     MCAPI class BlockEventDispatcher& getBlockEventDispatcher();
-    MCAPI class BlockSource& getBlockSourceDEPRECATEDUSEPLAYERREGIONINSTEAD() const;
+    MCAPI class BlockSource& getBlockSourceFromMainChunkSource() const;
     MCAPI class ChunkBuildOrderPolicyBase& getChunkBuildOrderPolicy();
     MCAPI class gsl::not_null<class ChunkLoadActionList* > getChunkLoadActionList();
     MCAPI class ChunkSource& getChunkSource() const;
     MCAPI class CircuitSystem& getCircuitSystem();
     MCAPI class gsl::not_null<class DelayActionList* > getDelayActionList();
     MCAPI class AutomaticID<class Dimension, int> getDimensionId() const;
+    MCAPI std::vector<class WeakEntityRef>& getDisplayEntities();
     MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef> > >& getEntityIdMap();
     MCAPI class std::unordered_map<struct ActorUniqueID, class WeakEntityRef, struct std::hash<struct ActorUniqueID>, struct std::equal_to<struct ActorUniqueID>, class std::allocator<struct std::pair<struct ActorUniqueID const, class WeakEntityRef> > > const& getEntityIdMapConst() const;
     MCAPI class FeatureTerrainAdjustments& getFeatureTerrainAdjustments();
@@ -244,8 +244,6 @@ public:
     MCAPI bool isRedstoneTick();
     MCAPI bool isUltraWarm() const;
     MCAPI void onStaticTickingAreaAdded(std::string const&);
-    MCAPI void processTickingAreaRemoves();
-    MCAPI void processTickingAreaUpdates();
     MCAPI void registerEntity(struct ActorUniqueID const&, class WeakRefT<struct EntityRefTraits>);
     MCAPI void removeActorByID(struct ActorUniqueID const&);
     MCAPI void removeWither(struct ActorUniqueID const&);
@@ -261,6 +259,7 @@ public:
     MCAPI void tryGarbageCollectStructures();
     MCAPI class BlockSource* tryGetClosestPublicRegion(class ChunkPos const&) const;
     MCAPI void tryLoadLimboEntities(class ChunkPos const&);
+    MCAPI void unregisterDisplayEntity(class WeakRefT<struct EntityRefTraits>);
     MCAPI void unregisterEntity(struct ActorUniqueID const&);
     MCAPI static enum LimboEntitiesVersion const CurrentLimboEntitiesVersion;
     MCAPI static unsigned int const LOW_CPU_PACKET_BLOCK_LIMIT;
@@ -271,7 +270,6 @@ protected:
     MCAPI void _completeEntityTransfer(class BlockSource&, class OwnerPtrT<struct EntityRefTraits>, bool);
 
 private:
-    MCAPI void _estimateLevelChunkMemory() const;
     MCAPI void _sendBlockEntityUpdatePacket(class NetworkBlockPosition const&);
     MCAPI void _sendBlocksChangedPackets();
     MCAPI void _tickEntityChunkMoves();

@@ -2,10 +2,12 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
+#include "Bedrock.hpp"
 #include "Automation.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "CommandContext.hpp"
 #include "MCRESULT.hpp"
 
 #undef BEFORE_EXTRA
@@ -32,7 +34,7 @@ public:
 
 public:
     /*0*/ virtual ~MinecraftCommands();
-    MCAPI MinecraftCommands(class Minecraft&, class Automation::AutomationClient&);
+    MCAPI MinecraftCommands(class Minecraft&, class gsl::not_null<class Bedrock::NonOwnerPointer<class Automation::AutomationClient> >);
     MCAPI class Command* compileCommand(class HashedString const&, class CommandOrigin&, enum CurrentCmdVersion, class std::function<void (std::string const& )>);
     MCAPI struct MCRESULT executeCommand(class std::shared_ptr<class CommandContext>, bool) const;
     MCAPI class CommandRegistry& getRegistry();
@@ -50,5 +52,6 @@ public:
 protected:
 
 private:
+    MCAPI void _registerSharedClientServerEnums();
 
 };

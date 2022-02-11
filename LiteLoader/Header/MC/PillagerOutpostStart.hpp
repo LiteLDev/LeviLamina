@@ -25,8 +25,13 @@ public:
 public:
     /*0*/ virtual ~PillagerOutpostStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual enum StructureFeatureType getType() const;
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (PillagerOutpostStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@PillagerOutpostStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

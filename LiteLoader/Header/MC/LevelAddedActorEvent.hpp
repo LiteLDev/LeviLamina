@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct LevelAddedActorEvent {
+class LevelAddedActorEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct LevelAddedActorEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_LEVELADDEDACTOREVENT
 public:
-    struct LevelAddedActorEvent& operator=(struct LevelAddedActorEvent const&) = delete;
-    LevelAddedActorEvent(struct LevelAddedActorEvent const&) = delete;
+    class LevelAddedActorEvent& operator=(class LevelAddedActorEvent const&) = delete;
+    LevelAddedActorEvent(class LevelAddedActorEvent const&) = delete;
     LevelAddedActorEvent() = delete;
 #endif
 

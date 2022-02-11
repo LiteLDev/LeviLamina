@@ -25,8 +25,13 @@ public:
 public:
     /*0*/ virtual ~WoodlandMansionStart();
     /*1*/ virtual bool postProcess(class BlockSource&, class Random&, class BoundingBox const&);
-    /*2*/ virtual void __unk_vfn_0();
-    /*3*/ virtual enum StructureFeatureType getType() const;
+    /*
+    inline enum StructureFeatureType getType() const{
+        enum StructureFeatureType (WoodlandMansionStart::*rv)() const;
+        *((void**)&rv) = dlsym("?getType@WoodlandMansionStart@@UEBA?AW4StructureFeatureType@@XZ");
+        return (this->*rv)();
+    }
+    */
 
 protected:
 

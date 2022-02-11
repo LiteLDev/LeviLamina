@@ -12,6 +12,7 @@ class ItemStackDescriptor {
 
 #define AFTER_EXTRA
 // Add Member There
+    char filler[88];
 
 #undef AFTER_EXTRA
 

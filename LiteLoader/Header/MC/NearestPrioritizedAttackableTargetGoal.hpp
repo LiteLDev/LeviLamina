@@ -25,12 +25,8 @@ public:
 
 public:
     /*0*/ virtual ~NearestPrioritizedAttackableTargetGoal();
-    /*1*/ virtual bool isTargetGoal() const;
-    /*2*/ virtual void stop();
-    /*3*/ virtual void appendDebugInfo(std::string&) const;
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*11*/ virtual struct ActorUniqueID _findTarget(struct MobDescriptor const* *);
     MCAPI NearestPrioritizedAttackableTargetGoal(class Mob&, std::vector<struct MobDescriptor> const&, float, int, bool, int, bool, bool, int, float, bool, int, bool);
 
 protected:

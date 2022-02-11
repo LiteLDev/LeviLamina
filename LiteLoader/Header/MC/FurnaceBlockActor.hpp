@@ -154,15 +154,14 @@ public:
     MCAPI static float const DEFAULT_SMELTING_TIME;
     MCAPI static int getAvailableFuelSetCount(int, class ItemStackBase const&);
     MCAPI static float getBurnDuration(class ItemStackBase const&, float);
+    MCAPI static int getXPRewardFromSmeltingItems(class ItemStackBase const&, int);
     MCAPI static bool isItemAllowedInFuelSlot(int, class ItemStackBase const&, int);
 
 protected:
     MCAPI FurnaceBlockActor(enum BlockActorType, class BlockPos const&, class HashedString const&, enum LevelSoundEvent, enum ContainerType, int, class Block const&, class Block const&);
 
 private:
-    MCAPI float _getXPRewardMultiplier(class ItemStackBase const&) const;
     MCAPI void _refreshFurnaceBlockLitState(class BlockSource&);
-    MCAPI int _roundXPReward(float) const;
     MCAPI void burn(class Recipes const&);
     MCAPI bool canBurn(class Recipes const&);
     MCAPI static std::string const BURN_DURATION_KEY;
@@ -174,5 +173,7 @@ private:
     MCAPI static std::string const SLOT_KEY;
     MCAPI static std::string const STORED_XP_DEPRECATED_KEY;
     MCAPI static std::string const STORED_XP_KEY;
+    MCAPI static float _getXPRewardMultiplier(class ItemStackBase const&);
+    MCAPI static int _roundXPReward(float);
 
 };

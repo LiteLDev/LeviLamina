@@ -29,7 +29,6 @@ public:
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_CONTAINER
 public:
     class Container& operator=(class Container const&) = delete;
-    Container(class Container const&) = delete;
     Container() = delete;
 #endif
 
@@ -56,8 +55,8 @@ public:
     /*19*/ virtual std::vector<class ItemStack const* > const getSlots() const;
     /*20*/ virtual int getItemCount(class ItemStack const&) const;
     /*21*/ virtual int findFirstSlotForItem(class ItemStack const&) const;
-    /*22*/ virtual void __unk_vfn_0();
-    /*23*/ virtual void __unk_vfn_1();
+    /*22*/ virtual void __unk_vfn_22();
+    /*23*/ virtual void __unk_vfn_23();
     /*24*/ virtual void setContainerChanged(int);
     /*25*/ virtual void setContainerMoved();
     /*26*/ virtual void setCustomName(std::string const&);
@@ -65,7 +64,7 @@ public:
     /*28*/ virtual void readAdditionalSaveData(class CompoundTag const&);
     /*29*/ virtual void addAdditionalSaveData(class CompoundTag&);
     /*30*/ virtual void createTransactionContext(class std::function<void (class Container& , int, class ItemStack const& , class ItemStack const& )>, class std::function<void (void)>);
-    /*31*/ virtual void __unk_vfn_2();
+    /*31*/ virtual void __unk_vfn_31();
     /*32*/ virtual bool isEmpty() const;
     /*
     inline void initializeContainerContents(class BlockSource& a0){
@@ -89,6 +88,7 @@ public:
         return (this->*rv)();
     }
     */
+    MCAPI Container(class Container const&);
     MCAPI Container(enum ContainerType);
     MCAPI enum ContainerType getContainerType() const;
     MCAPI enum ContainerType getGameplayContainerType() const;

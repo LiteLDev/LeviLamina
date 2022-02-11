@@ -32,10 +32,7 @@ public:
     /*5*/ virtual bool isShapeless() const;
     /*6*/ virtual bool matches(class CraftingContainer&, class Level&) const = 0;
     /*7*/ virtual int size() const = 0;
-    /*8*/ virtual class mce::UUID const& getId() const;
-    /*9*/ virtual class ItemPack const& getItemPack() const;
     /*10*/ virtual bool isMultiRecipe() const;
-    /*11*/ virtual void loadResultList(class BlockPalette const&) const;
     /*
     inline bool isShapeless() const{
         bool (MultiRecipe::*rv)() const;

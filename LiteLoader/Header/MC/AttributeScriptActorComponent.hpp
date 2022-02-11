@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptActorComponent.hpp"
 
 #define BEFORE_EXTRA
@@ -26,9 +25,9 @@ public:
 
 public:
     /*0*/ virtual ~AttributeScriptActorComponent();
-    /*1*/ virtual class Scripting::Result<float> getCurrent() const;
-    /*2*/ virtual class Scripting::Result<void> setCurrent(float const&) const;
-    /*3*/ virtual class Scripting::Result<float> getValue() const;
+    /*4*/ virtual class Scripting::Result<float> getCurrent() const;
+    /*5*/ virtual class Scripting::Result<void> setCurrent(float const&) const;
+    /*6*/ virtual class Scripting::Result<float> getValue() const;
     MCAPI class Scripting::Result<void> resetToDefaultValue() const;
     MCAPI class Scripting::Result<void> resetToMaxValue() const;
     MCAPI class Scripting::Result<void> resetToMinValue() const;

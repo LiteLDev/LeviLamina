@@ -5,6 +5,7 @@
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
+#include "ItemDescriptor.hpp"
 
 #undef BEFORE_EXTRA
 
@@ -12,6 +13,8 @@ class ItemDescriptorCount {
 
 #define AFTER_EXTRA
 // Add Member There
+    ItemDescriptor mDescriptor;
+    unsigned short mCount; //72
 
 #undef AFTER_EXTRA
 

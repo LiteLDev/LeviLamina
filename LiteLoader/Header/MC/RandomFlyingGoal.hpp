@@ -26,11 +26,11 @@ public:
 public:
     /*0*/ virtual ~RandomFlyingGoal();
     /*1*/ virtual bool canUse();
-    /*2*/ virtual bool canBeInterrupted();
-    /*3*/ virtual void appendDebugInfo(std::string&) const;
-    /*4*/ virtual void __unk_vfn_0();
-    /*5*/ virtual void __unk_vfn_1();
-    /*6*/ virtual bool _setWantedPosition();
+    /*3*/ virtual bool canBeInterrupted();
+    /*7*/ virtual void appendDebugInfo(std::string&) const;
+    /*8*/ virtual void __unk_vfn_8();
+    /*9*/ virtual void __unk_vfn_9();
+    /*10*/ virtual bool _setWantedPosition();
     MCAPI RandomFlyingGoal(class Mob&, float, int, int, bool);
 
 protected:

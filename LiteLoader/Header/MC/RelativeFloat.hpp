@@ -35,6 +35,7 @@ public:
 #endif
 
 public:
+    MCAPI RelativeFloat(float, bool);
     MCAPI RelativeFloat();
     MCAPI float getValue(float) const;
 

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 #include "ScriptContainer.hpp"
 
 #define BEFORE_EXTRA
@@ -25,9 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptBlockInventoryComponentContainer();
-    /*1*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
-    /*2*/ virtual class Container* _tryGetContainer() const;
-    /*3*/ virtual void _balanceTransaction(class ItemStack const&) const;
+    /*5*/ virtual class Scripting::Result<int> getEmptySlotsCount() const;
+    /*11*/ virtual class Container* _tryGetContainer() const;
     MCAPI class ScriptBlockInventoryComponentContainer& operator=(class ScriptBlockInventoryComponentContainer const&);
     MCAPI static class Scripting::ClassBindingBuilder<class ScriptBlockInventoryComponentContainer> bind(struct Scripting::Version);
 

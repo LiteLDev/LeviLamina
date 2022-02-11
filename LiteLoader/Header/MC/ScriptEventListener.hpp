@@ -25,15 +25,15 @@ public:
 public:
     /*0*/ virtual ~ScriptEventListener();
     /*
-    inline enum EventResult onScriptError(std::string const& a0, std::string const& a1){
-        enum EventResult (ScriptEventListener::*rv)(std::string const&, std::string const&);
-        *((void**)&rv) = dlsym("?onScriptError@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
-    }
     inline enum EventResult onScriptListenForEvent(std::string const& a0){
         enum EventResult (ScriptEventListener::*rv)(std::string const&);
         *((void**)&rv) = dlsym("?onScriptListenForEvent@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
+    }
+    inline enum EventResult onScriptError(std::string const& a0, std::string const& a1){
+        enum EventResult (ScriptEventListener::*rv)(std::string const&, std::string const&);
+        *((void**)&rv) = dlsym("?onScriptError@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1));
     }
     inline enum EventResult onScriptBroadcastEvent(std::string const& a0, enum RegistrationType a1, bool a2){
         enum EventResult (ScriptEventListener::*rv)(std::string const&, enum RegistrationType, bool);
@@ -45,15 +45,15 @@ public:
         *((void**)&rv) = dlsym("?onScriptInternalError@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
         return (this->*rv)(std::forward<std::string const&>(a0));
     }
-    inline enum EventResult onScriptRan(std::string const& a0, std::string const& a1, bool a2){
-        enum EventResult (ScriptEventListener::*rv)(std::string const&, std::string const&, bool);
-        *((void**)&rv) = dlsym("?onScriptRan@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z");
-        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<bool>(a2));
-    }
     inline enum EventResult onScriptRegisterView(){
         enum EventResult (ScriptEventListener::*rv)();
         *((void**)&rv) = dlsym("?onScriptRegisterView@ScriptEventListener@@UEAA?AW4EventResult@@XZ");
         return (this->*rv)();
+    }
+    inline enum EventResult onScriptRan(std::string const& a0, std::string const& a1, bool a2){
+        enum EventResult (ScriptEventListener::*rv)(std::string const&, std::string const&, bool);
+        *((void**)&rv) = dlsym("?onScriptRan@ScriptEventListener@@UEAA?AW4EventResult@@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@0_N@Z");
+        return (this->*rv)(std::forward<std::string const&>(a0), std::forward<std::string const&>(a1), std::forward<bool>(a2));
     }
     inline enum EventResult onScriptGetComponent(std::string const& a0, enum RegistrationType a1, bool a2){
         enum EventResult (ScriptEventListener::*rv)(std::string const&, enum RegistrationType, bool);

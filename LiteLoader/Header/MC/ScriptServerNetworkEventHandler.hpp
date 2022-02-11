@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -25,7 +24,8 @@ public:
 
 public:
     /*0*/ virtual ~ScriptServerNetworkEventHandler();
-    /*1*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleChat(struct ChatEvent&);
+    /*1*/ virtual void __unk_vfn_1();
+    /*2*/ virtual struct GameplayHandlerResult<enum CoordinatorResult> handleEvent(struct ChatEvent&);
 
 protected:
 

@@ -7,7 +7,7 @@
 
 #undef BEFORE_EXTRA
 
-struct PlayerGetExperienceOrbEvent {
+class PlayerGetExperienceOrbEvent {
 
 #define AFTER_EXTRA
 
@@ -15,8 +15,8 @@ struct PlayerGetExperienceOrbEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_PLAYERGETEXPERIENCEORBEVENT
 public:
-    struct PlayerGetExperienceOrbEvent& operator=(struct PlayerGetExperienceOrbEvent const&) = delete;
-    PlayerGetExperienceOrbEvent(struct PlayerGetExperienceOrbEvent const&) = delete;
+    class PlayerGetExperienceOrbEvent& operator=(class PlayerGetExperienceOrbEvent const&) = delete;
+    PlayerGetExperienceOrbEvent(class PlayerGetExperienceOrbEvent const&) = delete;
     PlayerGetExperienceOrbEvent() = delete;
 #endif
 

@@ -30,9 +30,8 @@ namespace CommandUtils {
     MCAPI class Vec3 getFeetPos(class Actor const*);
     MCAPI std::vector<enum ActorType> getInvalidCommandEntities();
     MCAPI std::vector<enum ActorType> getInvalidCommandEntities(bool, bool);
-    MCAPI class Player const* getOriginPlayer(class CommandOrigin const&);
     MCAPI std::string getTelemetryErrorList(class CommandOutput const&);
-    MCAPI bool isActiveTickingChunk(__int64, __int64);
+    MCAPI bool isActiveTickingChunk(struct Tick, struct Tick);
     MCAPI bool isFunctionValid(class CommandOutput&, class FunctionEntry&, std::string const&);
     MCAPI bool isPlayerSpawnedMob(class Actor const&, class Actor const&);
     MCAPI void nameEntity(class Actor&, bool, std::string const&);

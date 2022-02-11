@@ -11,9 +11,6 @@
 #undef BEFORE_EXTRA
 
 class BlockActorDataPacket : public Packet {
-public:
-    BlockPos blockPosition;
-    CompoundTag tag;
 
 #define AFTER_EXTRA
 // Add Member There
@@ -31,8 +28,7 @@ public:
     /*1*/ virtual enum MinecraftPacketIds getId() const;
     /*2*/ virtual std::string getName() const;
     /*3*/ virtual void write(class BinaryStream&) const;
-    /*4*/ virtual bool disallowBatching() const;
-    /*5*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
+    /*6*/ virtual enum StreamReadResult _read(class ReadOnlyBinaryStream&);
     MCAPI BlockActorDataPacket(class BlockPos const&, class CompoundTag);
     MCAPI BlockActorDataPacket();
 

@@ -2,7 +2,6 @@
 #pragma once
 #define AUTO_GENERATED
 #include "../Global.h"
-#include "Scripting.hpp"
 
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
@@ -18,13 +17,14 @@ struct ScriptPistonActionEvent {
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_SCRIPTPISTONACTIONEVENT
 public:
-    struct ScriptPistonActionEvent& operator=(struct ScriptPistonActionEvent const&) = delete;
     ScriptPistonActionEvent(struct ScriptPistonActionEvent const&) = delete;
     ScriptPistonActionEvent() = delete;
 #endif
 
 public:
     MCAPI ScriptPistonActionEvent(struct PistonActionEvent const&, class Scripting::WeakLifetimeScope const&);
+    MCAPI struct ScriptPistonActionEvent& operator=(struct ScriptPistonActionEvent&&);
+    MCAPI struct ScriptPistonActionEvent& operator=(struct ScriptPistonActionEvent const&);
     MCAPI ~ScriptPistonActionEvent();
 
 protected:

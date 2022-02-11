@@ -28,7 +28,7 @@ public:
     MCAPI unsigned __int64 getCurrentTick() const;
     MCAPI class ReplayStateComponent& operator=(class ReplayStateComponent&&);
     MCAPI struct MovementCorrection shouldSendCorrectionToClient(struct IActorMovementProxy&, class PlayerAuthInputPacket const&) const;
-    MCAPI void tick(struct IActorMovementProxy&, unsigned __int64);
+    MCAPI void tick(struct IActorMovementProxy*, unsigned __int64);
     MCAPI ~ReplayStateComponent();
 
 protected:
