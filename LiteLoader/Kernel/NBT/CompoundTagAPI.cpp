@@ -750,6 +750,41 @@ string CompoundTag::toBinaryNBT(bool isLittleEndian) {
 
 #pragma region To Formatted SNBT
 #include <Utils/StringHelper.h>
+
+void __appendString(std::ostringstream& oss, std::string const& str)
+{
+    oss << '"';
+    for (auto& c : str) {
+        switch (c)
+        {
+            case '"':
+                oss << "\\\"";
+                break;
+            case '\\':
+                oss << "\\\\";
+                break;
+            case '\b':
+                oss << "\\b";
+                break;
+            case '\f':
+                oss << "\\f";
+                break;
+            case '\n':
+                oss << "\\n";
+                break;
+            case '\r':
+                oss << "\\r";
+                break;
+            case '\t':
+                oss << "\\t";
+                break;
+            default:
+                oss << c;
+        }
+    }
+    oss << '"';
+}
+
 inline void __appendSpace(std::ostringstream& oss, int indent, int level)
 {
     switch (indent * level)
@@ -865,11 +900,7 @@ inline void __appendSNBT(std::ostringstream& oss, IntArrayTag& tag, int indent, 
 template <>
 inline void __appendSNBT(std::ostringstream& oss, StringTag& tag, int indent, int level, SnbtFormat snbtFormat)
 {
-
-    std::string fixStr = tag.value();
-    ReplaceStr(fixStr, "\\", "\\\\");
-    ReplaceStr(fixStr, "\n", "\\n");
-    oss << '"' << fixStr << '"';
+    __appendString(oss, tag.value());
 }
 
 template <>
@@ -982,16 +1013,16 @@ inline void __appendSNBT(std::ostringstream& oss, CompoundTag& tag, int indent, 
     {
         if (!first)
             oss << ',';
-        std::string fixKey = key;
-        ReplaceStr(fixKey, "\\", "\\\\");
-        ReplaceStr(fixKey, "\n", "\\n");
         if (snbtFormat == SnbtFormat::Minify)
-            oss << '"' << fixKey << "\":";
-        //oss << key << ":";
+        {
+            __appendString(oss, key);
+            oss << ":";
+        }
         else
         {
             __appendReturnSpace(oss, indent, level + 1);
-            oss << '"' << fixKey << "\": ";
+            __appendString(oss, key);
+            oss << ": ";
         }
         auto tag = const_cast<Tag*>(child.get());
         switch (tag->getTagType())
