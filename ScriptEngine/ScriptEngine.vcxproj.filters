@@ -142,9 +142,6 @@
     <ClCompile Include="SafeGuardRecord.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Version.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
     <ClCompile Include="BuiltinCommands.cpp">
       <Filter>Main</Filter>
     </ClCompile>
@@ -239,9 +236,6 @@
     </ClInclude>
     <ClInclude Include="API\ContainerAPI.h">
       <Filter>API</Filter>
-    </ClInclude>
-    <ClInclude Include="Version.h">
-      <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="Engine\TimeTaskSystem.h">
       <Filter>Engine</Filter>

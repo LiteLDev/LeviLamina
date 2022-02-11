@@ -14,8 +14,8 @@
 #include <memory>
 #include <filesystem>
 #include <Configs.h>
-#include <Version.h>
 #include <LoggerAPI.h>
+#include <LiteLoader/Main/Version.h>
 #include <Utils/FileHelper.h>
 #include <Tools/JsonHelper.h>
 #include <TranslationAPI.h>
@@ -38,7 +38,7 @@ extern void LoadDebugEngine();
 void LoaderInfo()
 {
     logger.info(std::string("ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
-    logger.info(std::string("Version ") + LLSE_VERSION.toString());
+    logger.info(std::string("Version ") + LITELOADER_VERSION.toString());
 }
 
 void LoadConfigFile()
@@ -64,7 +64,7 @@ void entry()
     _set_se_translator(seh_exception::TranslateSEHtoCE);
 
     //Register Myself
-    LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LLSE_VERSION,
+    LL::registerPlugin(LLSE_LOADER_NAME, LLSE_LOADER_DESCRIPTION, LITELOADER_VERSION,
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
     });

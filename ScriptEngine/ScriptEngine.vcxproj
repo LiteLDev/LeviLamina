@@ -53,7 +53,6 @@
     <ClCompile Include="Tools\Utils.cpp" />
     <ClCompile Include="ScriptEngine.cpp" />
     <ClCompile Include="Loader.cpp" />
-    <ClCompile Include="Version.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="API\BaseAPI.h" />
@@ -99,7 +98,6 @@
     <ClInclude Include="Tools\JsonHelper.h" />
     <ClInclude Include="Tools\Utils.h" />
     <ClInclude Include="Loader.h" />
-    <ClInclude Include="Version.h" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="third-party\cpp-base64\lib\cpp-base64.lib" />

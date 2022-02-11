@@ -10,7 +10,6 @@
 #include <PluginManager.h>
 #include <Utils/Hash.h>
 #include <Configs.h>
-#include <Version.h>
 #include <string>
 #include <thread>
 using namespace std;
