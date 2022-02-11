@@ -266,13 +266,13 @@ namespace Form
 
     public:
         string title;
-        int min, max, step, def;
+        int minValue, maxValue, step, def;
 
     public:
-        inline Slider(const string& name, string title, int min, int max, int step = 1, int def = 0)
+        inline Slider(const string& name, string title, int minValue, int maxValue, int step = 1, int def = 0)
             : title(std::move(title))
-            , min(min)
-            , max(max)
+            , minValue(minValue)
+            , maxValue(maxValue)
             , step(step)
             , def(def)
         {
@@ -286,13 +286,13 @@ namespace Form
         {
             this->title = _title;
         }
-        inline void setMin(int _min)
+        inline void setMin(int _minValue)
         {
-            this->min = _min;
+            this->minValue = _minValue;
         }
-        inline void setMax(int _max)
+        inline void setMax(int _maxValue)
         {
-            this->max = _max;
+            this->maxValue = _maxValue;
         }
         inline void setStep(int _step)
         {

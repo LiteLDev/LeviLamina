@@ -178,12 +178,12 @@ namespace Form {
             itemAdd["type"] = "slider";
             itemAdd["text"] = title;
 
-            if (min >= max)
-                max = min + 1;
-            itemAdd["min"] = min;
-            itemAdd["max"] = max;
+            if (minValue >= maxValue)
+                maxValue = minValue + 1;
+            itemAdd["min"] = minValue;
+            itemAdd["max"] = maxValue;
             itemAdd["step"] = step >= 1 ? step : 1;
-            if (def > 0 && min <= def && max >= def) {
+            if (def > 0 && minValue <= def && maxValue >= def) {
                 itemAdd["default"] = def;
             }
             return itemAdd.dump();
