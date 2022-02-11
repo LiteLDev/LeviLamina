@@ -61,15 +61,15 @@ void LoadScriptEngine()
     {
         auto lib = LoadLibrary(str2wstr("plugins/LiteLoader/LiteLoader." + backend + ".dll").c_str());     //eg. LiteLoader.Js.dll
         if (lib) {
-            logger.info("* LiteLoader-ScriptEngine for " + backend + " loaded");
+            logger.info("* ScriptEngine for " + backend + " loaded");
             //Fake Register
-            RegisterPlugin(lib, "LiteLoader-ScriptEngine-" + backend, "LiteLoader-ScriptEngine-" + backend, LITELOADER_VERSION,
+            RegisterPlugin(lib, "ScriptEngine-" + backend, "ScriptEngine-" + backend, LITELOADER_VERSION,
             {
                 {"GitHub","github.com/LiteLDev/LiteLoaderBDS"}
             });
         }
         else {
-            logger.error("* Fail to load LiteLoader-ScriptEngine for " + backend + "!");
+            logger.error("* Fail to load ScriptEngine for " + backend + "!");
             logger.error("* Error: Code[{}] - {}", GetLastError(), GetLastErrorMessage());
         }
     }

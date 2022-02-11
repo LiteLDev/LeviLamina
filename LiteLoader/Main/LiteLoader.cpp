@@ -140,31 +140,29 @@ void Welcome()
     if (!LL::globalConfig.enableWelcomeText)
         return;
 
-    cout << "\r" << R"(                                                                                              )" << endl
-         << "\r" << R"(         _       _  _          _                        _               ____   _____    _____ )" << endl
-         << "\r" << R"(        | |     (_)| |        | |                      | |             |  _ \ |  __ \  / ____|)" << endl
-         << "\r" << R"(        | |      _ | |_  ___  | |      ___    __ _   __| |  ___  _ __  | |_) || |  | || (___  )" << endl
-         << "\r" << R"(        | |     | || __|/ _ \ | |     / _ \  / _` | / _` | / _ \| '__| |  _ < | |  | | \___ \ )" << endl
-         << "\r" << R"(        | |____ | || |_|  __/ | |____| (_) || (_| || (_| ||  __/| |    | |_) || |__| | ____) |)" << endl
-         << "\r" << R"(        |______||_| \__|\___| |______|\___/  \__,_| \__,_| \___||_|    |____/ |_____/ |_____/ )" << endl
-         << "\r" << R"(                                                                                              )" << endl
-         << "\r" << R"(                                                                                              )" << endl
-         << "\r" << R"(                       =========   Light-Weight BDS Plugin Loader   =========                 )" << endl
-         << "\r" << R"(                                                                                              )" << endl
-         << "\r" << R"(                                                                                              )" << endl;
+       
+    cout << "\r" << R"(                                                                       )" << endl
+         << "\r" << R"(          _     _ _       _                    _                       )" << endl
+         << "\r" << R"(         | |   (_) |_ ___| |    ___   __ _  __| | ___ _ __             )" << endl
+         << "\r" << R"(         | |   | | __/ _ \ |   / _ \ / _` |/ _` |/ _ \ '__|            )" << endl
+         << "\r" << R"(         | |___| | ||  __/ |__| (_) | (_| | (_| |  __/ |               )" << endl
+         << "\r" << R"(         |_____|_|\__\___|_____\___/ \__,_|\__,_|\___|_|               )" << endl
+         << "\r" << R"(                                                                       )" << endl
+         << "\r" << R"(       --------   Light-Weight BDS Plugin Loader   --------            )" << endl
+         << "\r" << R"(                                                                       )" << endl;
 }
 
 void CheckDevMode() {
     if (LL::globalConfig.debugMode)
-        logger.warn("You Are In DevelopMode!");
+        logger.warn("Currently in developer mode!");
 }
 
 void CheckBetaVersion()
 {
     if (LITELOADER_VERSION_STATUS != LL::Version::Release)
     {
-        logger.warn("You Are Using The Beta Version!");
-        logger.warn("DO NOT USE IN IN PRODUCTION ENVIRONMENT!!!");
+        logger.warn("Currently using a beta version.");
+        logger.warn("PLEASE DO NOT USE IN PRODUCTION ENVIRONMENT!");
     }
 }
 // extern
@@ -223,7 +221,7 @@ void LLMain()
     LL::InitCrashLogger(LL::globalConfig.enableCrashLogger);
 
     // Register Myself
-    LL::registerPlugin("LiteLoaderBDS", "Strong DLL plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
+    LL::registerPlugin("LiteLoaderBDS", "Strong plugin loader for Bedrock Dedicated Server", LL::getLoaderVersion(),
     {
         {"GitHub","github.com/LiteLDev/LiteLoaderBDS"} 
     });

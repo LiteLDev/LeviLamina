@@ -34,6 +34,7 @@
 #include <MC/ScoreboardId.hpp>
 #include <MC/ServerNetworkHandler.hpp>
 #include <MC/VanillaBlocks.hpp>
+#include <ScheduleAPI.h>
 #include <MC/ServerPlayer.hpp>
 #include <RegCommandAPI.h>
 #include <Utils/StringHelper.h>
@@ -507,102 +508,6 @@ TInstanceHook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
     IF_LISTENED_END(PlayerDropItemEvent)
     return original(this,it,a3);
 }
-
-/////////////////// PlayerEat ///////////////////
-// Food Item Component Legacy
-TClasslessInstanceHook(Item*, "?useTimeDepleted@FoodItemComponentLegacy@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z",
-      ItemStack* eaten, Player* player, Level* level)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        if (eaten->getTypeName() != "minecraft:suspicious_stew")
-        {
-            PlayerEatEvent ev{};
-            ev.mPlayer = player;
-            ev.mFoodItem = eaten;
-            if (!ev.call())
-                return nullptr;
-        }
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, player, level);
-}
-// Food Item Component
-TClasslessInstanceHook(Item*, "?useTimeDepleted@FoodItemComponent@@UEAAPEBVItem@@AEAVItemStack@@AEAVPlayer@@AEAVLevel@@@Z",
-      ItemStack* eaten, Player* player, Level* level)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        PlayerEatEvent ev{};
-        ev.mPlayer = player;
-        ev.mFoodItem = eaten;
-        if (!ev.call())
-            return nullptr;
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, player, level);
-}
-// SuspiciousStew
-TClasslessInstanceHook(Item*, "?useTimeDepleted@SuspiciousStewItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z",
-      ItemStack* eaten, Level* level, Player* player)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        PlayerEatEvent ev{};
-        ev.mPlayer = player;
-        ev.mFoodItem = eaten;
-        if (!ev.call())
-            return nullptr;
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, level, player);
-}
-// Potion
-TClasslessInstanceHook(Item*, "?useTimeDepleted@PotionItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z",
-      ItemStack* eaten, Level* level, Player* player)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        PlayerEatEvent ev{};
-        ev.mPlayer = player;
-        ev.mFoodItem = eaten;
-        if (!ev.call())
-            return nullptr;
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, level, player);
-}
-// Medicine
-TClasslessInstanceHook(Item*, "?useTimeDepleted@MedicineItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z",
-      ItemStack* eaten, Level* level, Player* player)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        PlayerEatEvent ev{};
-        ev.mPlayer = player;
-        ev.mFoodItem = eaten;
-        if (!ev.call())
-            return nullptr;
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, level, player);
-}
-// milk
-TClasslessInstanceHook(Item*, "?useTimeDepleted@BucketItem@@UEBA?AW4ItemUseMethod@@AEAVItemStack@@PEAVLevel@@PEAVPlayer@@@Z",
-     ItemStack* eaten, Level* level, Player* player)
-{
-    IF_LISTENED(PlayerEatEvent)
-    {
-        PlayerEatEvent ev{};
-        ev.mPlayer = player;
-        ev.mFoodItem = eaten;
-        if (!ev.call())
-            return nullptr;
-    }
-    IF_LISTENED_END(PlayerEatEvent)
-    return original(this, eaten, level, player);
-}
-
 
 /////////////////// PlayerConsumeTotem ///////////////////
 TInstanceHook(void, "?consumeTotem@Player@@UEAA_NXZ", Player)
@@ -1666,21 +1571,37 @@ TInstanceHook(bool, "?_hurt@Mob@@MEAA_NAEBVActorDamageSource@@H_N1@Z",
 }
 
 
-/////////////////// PlayerUseItem ///////////////////
+//////////////// PlayerUseItem & PlayerEat ////////////////
+#include <MC/ComponentItem.hpp>
 TInstanceHook(bool, "?baseUseItem@GameMode@@QEAA_NAEAVItemStack@@@Z", GameMode , ItemStack& it)
 {
+    auto pl = this->getPlayer();
     IF_LISTENED(PlayerUseItemEvent)
     {
         PlayerUseItemEvent ev{};
-        ev.mPlayer = this->getPlayer();
+        ev.mPlayer = pl;
         ev.mItemStack = &it;
         if (!ev.call())
             return false;
     }
     IF_LISTENED_END(PlayerUseItemEvent)
+    IF_LISTENED(PlayerEatEvent)
+    {
+        if (it.getItem()->isFood() && (pl->isHungry() || pl->forceAllowEating()))
+        {
+            PlayerEatEvent ev{};
+            ev.mPlayer = pl;
+            ev.mFoodItem = &it;
+            if (!ev.call())
+            {
+                pl->refreshAttribute(Player::HUNGER);
+                return false;
+            }
+        }
+    }
+    IF_LISTENED_END(PlayerEatEvent)
     return original(this, it);
 }
-
 
 /////////////////// MobDie ///////////////////
 TInstanceHook(bool, "?die@Mob@@UEAAXAEBVActorDamageSource@@@Z", Mob, ActorDamageSource* ads)

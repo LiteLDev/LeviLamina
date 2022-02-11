@@ -40,7 +40,7 @@ void LoadDepends()
                 if (!content)
                     throw("Fail to open plugin file!");
                 depends.emplace_back(*content);
-                logger.info("Dependence " + i.path().filename().string() + " Loaded.");
+                logger.info("Dependence " + i.path().filename().string() + " loaded.");
             }
             catch (std::exception e)
             {

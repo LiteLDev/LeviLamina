@@ -37,7 +37,7 @@ extern void LoadDebugEngine();
 
 void LoaderInfo()
 {
-    logger.info(std::string("LiteLoader-ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
+    logger.info(std::string("ScriptEngine for ") + LLSE_MODULE_TYPE + " loaded");
     logger.info(std::string("Version ") + LLSE_VERSION.toString());
 }
 
@@ -83,7 +83,7 @@ void entry()
     //欢迎
     if (localShareData->isFirstInstance)
     {
-        logger.info("LiteLoader-ScriptEngine initializing...");
+        logger.info("ScriptEngine initializing...");
     }
     LoaderInfo();
 

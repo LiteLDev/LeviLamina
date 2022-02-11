@@ -29,21 +29,32 @@ string& replace_all_distinct(string& str, const string& old_value, const string&
 }
 
 // Standardize BDS's output
-THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int, const char* ts)
+THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts)
 {
     string input = ts;
-    std::string output = std::regex_replace(input, std::regex("\\[.*?\\]"), std::string("$1"));
-    output.erase(std::remove(output.begin(), output.end(), '\n'), output.end());
-    output.erase(output.find_first_of(' '), output.find_first_not_of(' '));
-    output = replace_all_distinct(output, "NO LOG FILE! -  ", "");
-    if (input.find("INFO") != std::string::npos)
+    input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
+    switch (a1)
     {
-        serverLogger.info << output << Logger::endl;
+        case 8u:
+            serverLogger.warn << input << Logger::endl;
+            break;
+        case 1u:
+            serverLogger.debug << input << Logger::endl;
+            break;
+        case 2u:
+            serverLogger.info << input << Logger::endl;
+            break;
+        case 4u:
+            serverLogger.warn << input << Logger::endl;
+            break;
     }
-    else
-    {
-        serverLogger.warn << output << Logger::endl;
-    }
+}
+
+//Block BDS from adding LOG metadata
+THook(void, "?_appendLogEntryMetadata@LogDetails@BedrockLog@@AEAAXAEAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V34@W4LogAreaID@@I1HH@Z",
+    void* a1, void* a2, void** a3, int a4, unsigned int a5, __int64 a6, unsigned int a7, unsigned int a8)
+{
+    return;
 }
 
 #include "LiteLoader.h"

@@ -6,126 +6,128 @@
 #define BEFORE_EXTRA
 // Include Headers or Declare Types Here
 #include "DataItem.hpp"
-namespace ActorDataIDs
+#define ACTOR_DATA_KEY_VALUE(key) constexpr int16_t key = (unsigned short)ActorDataIDs::key
+namespace ActorDataKeys
 {
-constexpr int16_t FLAGS                                      = 0;   // Int64
-constexpr int16_t HEALTH                                     = 1;   // Int (minecart/boat)
-constexpr int16_t VARIANT                                    = 2;   // Int
-constexpr int16_t COLOR                                      = 3;   // Byte
-constexpr int16_t NAMETAG                                    = 4;   // String
-constexpr int16_t OWNER                                      = 5;   // Int64
-constexpr int16_t TARGET                                     = 6;   // Int64
-constexpr int16_t AIR                                        = 7;   // Short
-constexpr int16_t POTION_COLOR                               = 8;   // Int (ARGB!)
-constexpr int16_t POTION_AMBIENT                             = 9;   // Byte
-constexpr int16_t JUMP_DURATION                              = 10;  // Int64
-constexpr int16_t HURT_TIME                                  = 11;  // Int (minecart/boat)
-constexpr int16_t HURT_DIRECTION                             = 12;  // Int (minecart/boat)
-constexpr int16_t PADDLE_TIME_LEFT                           = 13;  // Float
-constexpr int16_t PADDLE_TIME_RIGHT                          = 14;  // Float
-constexpr int16_t EXPERIENCE_VALUE                           = 15;  // Int (xp orb)
-constexpr int16_t DISPLAY_ITEM                               = 16;  // Int (id | (data << 16))
-constexpr int16_t HORSE_FLAGS                                = 16;  // Int
-constexpr int16_t WITHER_SKULL_IS_DANGEROUS                  = 16;  // Byte
-constexpr int16_t MINECART_DISPLAY_OFFSET                    = 17;  // Int
-constexpr int16_t ARROW_SHOOTER_ID                           = 17;  // Int64
-constexpr int16_t MINECART_HAS_DISPLAY                       = 18;  // Byte (must be 1 for minecart to show block inside)
-constexpr int16_t HORSE_TYPE                                 = 19;
-constexpr int16_t SWELL                                      = 19;
-constexpr int16_t OLD_SWELL                                  = 20;
-constexpr int16_t SWELL_DIR                                  = 21;
-constexpr int16_t CHARGE_AMOUNT                              = 22;
-constexpr int16_t ENDERMAN_HELD_RUNTIME_ID                   = 23;  // Short
-constexpr int16_t ACTOR_AGE                                  = 24;  // Short
-constexpr int16_t PLAYER_FLAGS                               = 26;  // Byte
-constexpr int16_t PLAYER_INDEX                               = 27;
-constexpr int16_t PLAYER_BED_POSITION                        = 28;  // BlockPos
-constexpr int16_t FIREBALL_POWER_X                           = 29;  // Float
-constexpr int16_t FIREBALL_POWER_Y                           = 30;  // Float
-constexpr int16_t FIREBALL_POWER_Z                           = 31;  // Float
-constexpr int16_t AUX_POWER                                  = 32;
-constexpr int16_t FISH_X                                     = 33;
-constexpr int16_t FISH_Z                                     = 34;
-constexpr int16_t FISH_ANGLE                                 = 35;
-constexpr int16_t POTION_AUX_VALUE                           = 36;  // Short
-constexpr int16_t LEAD_HOLDER                                = 37;  // Int64
-constexpr int16_t SCALE                                      = 38;  // Float
-constexpr int16_t INTERACTIVE_TAG                            = 39;  // String
-constexpr int16_t NPC_SKIN_ID                                = 40;  // String
-constexpr int16_t URL_TAG                                    = 41;  // String
-constexpr int16_t MAX_AIR                                    = 42;  // Short
-constexpr int16_t MARK_VARIANT                               = 43;  // Int
-constexpr int16_t CONTAINER_TYPE                             = 44;  // Byte
-constexpr int16_t CONTAINER_BASE_SIZE                        = 45;  // Int
-constexpr int16_t CONTAINER_EXTRA_SLOTS_PER_STRENGTH         = 46;  // Int
-constexpr int16_t BLOCK_TARGET                               = 47;  // BlockPos (ENDER CRYSTAL)
-constexpr int16_t WITHER_INVULNERABLE_TICKS                  = 48;  // Int
-constexpr int16_t WITHER_TARGET_1                            = 49;  // Int64
-constexpr int16_t WITHER_TARGET_2                            = 50;  // Int64
-constexpr int16_t WITHER_TARGET_3                            = 51;  // Int64
-constexpr int16_t AERIAL_ATTACK                              = 52;
-constexpr int16_t BOUNDING_BOX_WIDTH                         = 53;  // Float
-constexpr int16_t BOUNDING_BOX_HEIGHT                        = 54;  // Float
-constexpr int16_t FUSE_LENGTH                                = 55;  // Int
-constexpr int16_t RIDER_SEAT_POSITION                        = 56;  // Vec3
-constexpr int16_t RIDER_ROTATION_LOCKED                      = 57;  // Byte
-constexpr int16_t RIDER_MAX_ROTATION                         = 58;  // Float
-constexpr int16_t RIDER_MIN_ROTATION                         = 59;  // Float
-constexpr int16_t AREA_EFFECT_CLOUD_RADIUS                   = 61;  // Float
-constexpr int16_t AREA_EFFECT_CLOUD_WAITING                  = 62;  // Int
-constexpr int16_t AREA_EFFECT_CLOUD_PARTICLE_ID              = 63;  // Int
-constexpr int16_t SHULKER_PEEK_ID                            = 64;  // Int
-constexpr int16_t SHULKER_ATTACH_FACE                        = 65;  // Byte
-constexpr int16_t SHULKER_ATTACHED                           = 66;  // Short
-constexpr int16_t SHULKER_ATTACH_POS                         = 67;  // BlockPos
-constexpr int16_t TRADING_PLAYER_EID                         = 68;  // Int64
-constexpr int16_t TRADING_CAREER                             = 69;
-constexpr int16_t HAS_COMMAND_BLOCK                          = 70;
-constexpr int16_t COMMAND_BLOCK_COMMAND                      = 71;  // String
-constexpr int16_t COMMAND_BLOCK_LAST_OUTPUT                  = 72;  // String
-constexpr int16_t COMMAND_BLOCK_TRACK_OUTPUT                 = 73;  // Byte
-constexpr int16_t CONTROLLING_RIDER_SEAT_NUMBER              = 74;  // Byte
-constexpr int16_t STRENGTH                                   = 75;  // Int
-constexpr int16_t MAX_STRENGTH                               = 76;  // Int
-constexpr int16_t SPELL_CASTING_COLOR                        = 77;  // Int
-constexpr int16_t LIMITED_LIFE                               = 78;
-constexpr int16_t ARMOR_STAND_POSE_INDEX                     = 79;  // Int
-constexpr int16_t ENDER_CRYSTAL_TIME_OFFSET                  = 80;  // Int
-constexpr int16_t ALWAYS_SHOW_NAMETAG                        = 81;  // Byte
-constexpr int16_t COLOR_2                                    = 82;  // Byte
-constexpr int16_t NAME_AUTHOR                                = 83;
-constexpr int16_t SCORE_TAG                                  = 84;  // String
-constexpr int16_t BALLOON_ATTACHED_ENTITY                    = 85;  // Int64
-constexpr int16_t PUFFERFISH_SIZE                            = 86;
-constexpr int16_t BUBBLE_TIME                                = 87;
-constexpr int16_t AGENT                                      = 88;
-constexpr int16_t SITTING_AMOUNT                             = 89;
-constexpr int16_t SITTING_AMOUNT_PREVIOUS                    = 90;
-constexpr int16_t EATING_COUNTER                             = 91;
-constexpr int16_t FLAGS_EXTENDED                             = 92;
-constexpr int16_t LAYING_AMOUNT                              = 93;
-constexpr int16_t LAYING_AMOUNT_PREVIOUS                     = 94;
-constexpr int16_t DURATION                                   = 95;
-constexpr int16_t SPAWN_TIME                                 = 96;
-constexpr int16_t CHANGE_RATE                                = 97;
-constexpr int16_t CHANGE_ON_PICKUP                           = 98;
-constexpr int16_t PICKUP_COUNT                               = 99;
-constexpr int16_t INTERACT_TEXT                              = 100;
-constexpr int16_t TRADE_TIER                                 = 101;
-constexpr int16_t MAX_TRADE_TIER                             = 102;
-constexpr int16_t TRADE_EXPERIENCE                           = 103;
-constexpr int16_t SKIN_ID                                    = 104; // Int
-constexpr int16_t SPAWNING_FRAMES                            = 105;
-constexpr int16_t COMMAND_BLOCK_TICK_DELAY                   = 106;
-constexpr int16_t COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK        = 107;
-constexpr int16_t AMBIENT_SOUND_INTERVAL                     = 108;
+ACTOR_DATA_KEY_VALUE(FLAGS);                               // Int64
+ACTOR_DATA_KEY_VALUE(HEALTH);                              // Int (minecart/boat)
+ACTOR_DATA_KEY_VALUE(VARIANT);                             // Int
+ACTOR_DATA_KEY_VALUE(COLOR);                               // Byte
+ACTOR_DATA_KEY_VALUE(NAMETAG);                             // String
+ACTOR_DATA_KEY_VALUE(OWNER);                               // Int64
+ACTOR_DATA_KEY_VALUE(TARGET);                              // Int64
+ACTOR_DATA_KEY_VALUE(AIR);                                 // Short
+ACTOR_DATA_KEY_VALUE(POTION_COLOR);                        // Int (ARGB!)
+ACTOR_DATA_KEY_VALUE(POTION_AMBIENT);                      // Byte
+ACTOR_DATA_KEY_VALUE(JUMP_DURATION);                       // Int64
+ACTOR_DATA_KEY_VALUE(HURT_TIME);                           // Int (minecart/boat)
+ACTOR_DATA_KEY_VALUE(HURT_DIRECTION);                      // Int (minecart/boat)
+ACTOR_DATA_KEY_VALUE(PADDLE_TIME_LEFT);                    // Float
+ACTOR_DATA_KEY_VALUE(PADDLE_TIME_RIGHT);                   // Float
+ACTOR_DATA_KEY_VALUE(EXPERIENCE_VALUE);                    // Int (xp orb)
+ACTOR_DATA_KEY_VALUE(DISPLAY_ITEM);                        // Int (id | (data << 16))
+ACTOR_DATA_KEY_VALUE(HORSE_FLAGS);                         // Int
+ACTOR_DATA_KEY_VALUE(WITHER_SKULL_IS_DANGEROUS);           // Byte
+ACTOR_DATA_KEY_VALUE(MINECART_DISPLAY_OFFSET);             // Int
+ACTOR_DATA_KEY_VALUE(ARROW_SHOOTER_ID);                    // Int64
+ACTOR_DATA_KEY_VALUE(MINECART_HAS_DISPLAY);                // Byte (must be 1 for minecart to show block inside)
+ACTOR_DATA_KEY_VALUE(HORSE_TYPE);
+ACTOR_DATA_KEY_VALUE(SWELL);
+ACTOR_DATA_KEY_VALUE(OLD_SWELL);
+ACTOR_DATA_KEY_VALUE(SWELL_DIR);
+ACTOR_DATA_KEY_VALUE(CHARGE_AMOUNT);
+ACTOR_DATA_KEY_VALUE(ENDERMAN_HELD_RUNTIME_ID);            // Short
+ACTOR_DATA_KEY_VALUE(ACTOR_AGE);                           // Short
+ACTOR_DATA_KEY_VALUE(PLAYER_FLAGS);                        // Byte
+ACTOR_DATA_KEY_VALUE(PLAYER_INDEX);
+ACTOR_DATA_KEY_VALUE(PLAYER_BED_POSITION);                 // BlockPos
+ACTOR_DATA_KEY_VALUE(FIREBALL_POWER_X);                    // Float
+ACTOR_DATA_KEY_VALUE(FIREBALL_POWER_Y);                    // Float
+ACTOR_DATA_KEY_VALUE(FIREBALL_POWER_Z);                    // Float
+ACTOR_DATA_KEY_VALUE(AUX_POWER);
+ACTOR_DATA_KEY_VALUE(FISH_X);
+ACTOR_DATA_KEY_VALUE(FISH_Z);
+ACTOR_DATA_KEY_VALUE(FISH_ANGLE);
+ACTOR_DATA_KEY_VALUE(POTION_AUX_VALUE);                    // Short
+ACTOR_DATA_KEY_VALUE(LEAD_HOLDER);                         // Int64
+ACTOR_DATA_KEY_VALUE(SCALE);                               // Float
+ACTOR_DATA_KEY_VALUE(INTERACTIVE_TAG);                     // String
+ACTOR_DATA_KEY_VALUE(NPC_SKIN_ID);                         // String
+ACTOR_DATA_KEY_VALUE(URL_TAG);                             // String
+ACTOR_DATA_KEY_VALUE(MAX_AIR);                             // Short
+ACTOR_DATA_KEY_VALUE(MARK_VARIANT);                        // Int
+ACTOR_DATA_KEY_VALUE(CONTAINER_TYPE);                      // Byte
+ACTOR_DATA_KEY_VALUE(CONTAINER_BASE_SIZE);                 // Int
+ACTOR_DATA_KEY_VALUE(CONTAINER_EXTRA_SLOTS_PER_STRENGTH);  // Int
+ACTOR_DATA_KEY_VALUE(BLOCK_TARGET);                        // BlockPos (ENDER CRYSTAL)
+ACTOR_DATA_KEY_VALUE(WITHER_INVULNERABLE_TICKS);           // Int
+ACTOR_DATA_KEY_VALUE(WITHER_TARGET_1);                     // Int64
+ACTOR_DATA_KEY_VALUE(WITHER_TARGET_2);                     // Int64
+ACTOR_DATA_KEY_VALUE(WITHER_TARGET_3);                     // Int64
+ACTOR_DATA_KEY_VALUE(AERIAL_ATTACK);
+ACTOR_DATA_KEY_VALUE(BOUNDING_BOX_WIDTH);                  // Float
+ACTOR_DATA_KEY_VALUE(BOUNDING_BOX_HEIGHT);                 // Float
+ACTOR_DATA_KEY_VALUE(FUSE_LENGTH);                         // Int
+ACTOR_DATA_KEY_VALUE(RIDER_SEAT_POSITION);                 // Vec3
+ACTOR_DATA_KEY_VALUE(RIDER_ROTATION_LOCKED);               // Byte
+ACTOR_DATA_KEY_VALUE(RIDER_MAX_ROTATION);                  // Float
+ACTOR_DATA_KEY_VALUE(RIDER_MIN_ROTATION);                  // Float
+ACTOR_DATA_KEY_VALUE(AREA_EFFECT_CLOUD_RADIUS);            // Float
+ACTOR_DATA_KEY_VALUE(AREA_EFFECT_CLOUD_WAITING);           // Int
+ACTOR_DATA_KEY_VALUE(AREA_EFFECT_CLOUD_PARTICLE_ID);       // Int
+ACTOR_DATA_KEY_VALUE(SHULKER_PEEK_ID);                     // Int
+ACTOR_DATA_KEY_VALUE(SHULKER_ATTACH_FACE);                 // Byte
+ACTOR_DATA_KEY_VALUE(SHULKER_ATTACHED);                    // Short
+ACTOR_DATA_KEY_VALUE(SHULKER_ATTACH_POS);                  // BlockPos
+ACTOR_DATA_KEY_VALUE(TRADING_PLAYER_EID);                  // Int64
+ACTOR_DATA_KEY_VALUE(TRADING_CAREER);
+ACTOR_DATA_KEY_VALUE(HAS_COMMAND_BLOCK);
+ACTOR_DATA_KEY_VALUE(COMMAND_BLOCK_COMMAND);               // String
+ACTOR_DATA_KEY_VALUE(COMMAND_BLOCK_LAST_OUTPUT);           // String
+ACTOR_DATA_KEY_VALUE(COMMAND_BLOCK_TRACK_OUTPUT);          // Byte
+ACTOR_DATA_KEY_VALUE(CONTROLLING_RIDER_SEAT_NUMBER);       // Byte
+ACTOR_DATA_KEY_VALUE(STRENGTH);                            // Int
+ACTOR_DATA_KEY_VALUE(MAX_STRENGTH);                        // Int
+ACTOR_DATA_KEY_VALUE(SPELL_CASTING_COLOR);                 // Int
+ACTOR_DATA_KEY_VALUE(LIMITED_LIFE);
+ACTOR_DATA_KEY_VALUE(ARMOR_STAND_POSE_INDEX);              // Int
+ACTOR_DATA_KEY_VALUE(ENDER_CRYSTAL_TIME_OFFSET);           // Int
+ACTOR_DATA_KEY_VALUE(ALWAYS_SHOW_NAMETAG);                 // Byte
+ACTOR_DATA_KEY_VALUE(COLOR_2);                             // Byte
+ACTOR_DATA_KEY_VALUE(NAME_AUTHOR);
+ACTOR_DATA_KEY_VALUE(SCORE_TAG);                           // String
+ACTOR_DATA_KEY_VALUE(BALLOON_ATTACHED_ENTITY);             // Int64
+ACTOR_DATA_KEY_VALUE(PUFFERFISH_SIZE);
+ACTOR_DATA_KEY_VALUE(BUBBLE_TIME);
+ACTOR_DATA_KEY_VALUE(AGENT);
+ACTOR_DATA_KEY_VALUE(SITTING_AMOUNT);
+ACTOR_DATA_KEY_VALUE(SITTING_AMOUNT_PREVIOUS);
+ACTOR_DATA_KEY_VALUE(EATING_COUNTER);
+ACTOR_DATA_KEY_VALUE(FLAGS_EXTENDED);
+ACTOR_DATA_KEY_VALUE(LAYING_AMOUNT);
+ACTOR_DATA_KEY_VALUE(LAYING_AMOUNT_PREVIOUS);
+ACTOR_DATA_KEY_VALUE(DURATION);
+ACTOR_DATA_KEY_VALUE(SPAWN_TIME);
+ACTOR_DATA_KEY_VALUE(CHANGE_RATE);
+ACTOR_DATA_KEY_VALUE(CHANGE_ON_PICKUP);
+ACTOR_DATA_KEY_VALUE(PICKUP_COUNT);
+ACTOR_DATA_KEY_VALUE(INTERACT_TEXT);
+ACTOR_DATA_KEY_VALUE(TRADE_TIER);
+ACTOR_DATA_KEY_VALUE(MAX_TRADE_TIER);
+ACTOR_DATA_KEY_VALUE(TRADE_EXPERIENCE);
+ACTOR_DATA_KEY_VALUE(SKIN_ID);                             // Int
+ACTOR_DATA_KEY_VALUE(SPAWNING_FRAMES);
+ACTOR_DATA_KEY_VALUE(COMMAND_BLOCK_TICK_DELAY);
+ACTOR_DATA_KEY_VALUE(COMMAND_BLOCK_EXECUTE_ON_FIRST_TICK);
+ACTOR_DATA_KEY_VALUE(AMBIENT_SOUND_INTERVAL);
 /*
-constexpr int16_t AMBIENT_SOUND_EVENT_NAME                   = 109;
-constexpr int16_t FALL_DAMAGE_MULTIPLIER                     = 110;
-constexpr int16_t NAME_RAW_TEXT                              = 111;
-constexpr int16_t CAN_RIDE_TARGET                            = 112;
+ACTOR_DATA_KEY_VALUE(AMBIENT_SOUND_EVENT_NAME);
+ACTOR_DATA_KEY_VALUE(FALL_DAMAGE_MULTIPLIER);
+ACTOR_DATA_KEY_VALUE(NAME_RAW_TEXT);
+ACTOR_DATA_KEY_VALUE(CAN_RIDE_TARGET);
 */
 } // namespace ActorDataIDs
+#undef ACTOR_DATA_KEY_VALUE
 
 #undef BEFORE_EXTRA
 

@@ -23,10 +23,10 @@
 
 // 插件注册信息
 #if defined(SCRIPTX_LANG_JAVASCRIPT)
-	#define LLSE_LOADER_NAME "LiteLoader-ScriptEngine-Js"
+	#define LLSE_LOADER_NAME "ScriptEngine-Js"
 	#define LLSE_LOADER_DESCRIPTION "Javascript ScriptEngine For LiteLoaderBDS"
 #elif defined(SCRIPTX_LANG_LUA)
-	#define LLSE_LOADER_NAME "LiteLoader-ScriptEngine-Lua"
+	#define LLSE_LOADER_NAME "ScriptEngine-Lua"
 	#define LLSE_LOADER_DESCRIPTION "Lua ScriptEngine For LiteLoaderBDS"
 #endif
 

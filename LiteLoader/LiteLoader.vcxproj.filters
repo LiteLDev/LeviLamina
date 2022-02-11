@@ -635,6 +635,9 @@
     <ClInclude Include="Header\AllowListAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
+    <ClInclude Include="Header\MC\ItemStackBase.hpp">
+      <Filter>Header\MC</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="Lib\third-party\openssl\libcrypto.lib">

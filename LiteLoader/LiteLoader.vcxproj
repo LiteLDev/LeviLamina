@@ -134,6 +134,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\Int64Tag.hpp" />
     <ClInclude Include="Header\MC\IntArrayTag.hpp" />
     <ClInclude Include="Header\MC\IntTag.hpp" />
+    <ClInclude Include="Header\MC\ItemStackBase.hpp" />
     <ClInclude Include="Header\MC\ListTag.hpp" />
     <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
