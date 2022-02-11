@@ -363,10 +363,11 @@ public:
 void InitAddonsHelper()
 {
     AutoInstallAddons();
-    BuildAddonList();
+    /*BuildAddonList();
 
     Event::RegCmdEvent::subscribe([](Event::RegCmdEvent ev) { // Register commands
         AddonsCommand::setup(ev.mCommandRegistry);
         return true;
-    });
+    });*/
+    //TODO
 }
