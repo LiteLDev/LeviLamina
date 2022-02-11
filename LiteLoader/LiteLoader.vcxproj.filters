@@ -317,9 +317,6 @@
     <ClInclude Include="Header\Utils\PatchHelper.h">
       <Filter>Header\Utils</Filter>
     </ClInclude>
-    <ClInclude Include="Resource\resource.h">
-      <Filter>Resource</Filter>
-    </ClInclude>
     <ClInclude Include="Header\ServerAPI.h">
       <Filter>Header</Filter>
     </ClInclude>
@@ -669,16 +666,8 @@
     </Library>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\LiteLoader.aps">
-      <Filter>Resource</Filter>
-    </None>
     <None Include="cpp.hint">
       <Filter>Resource</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resource\LiteLoader.rc">
-      <Filter>Resource</Filter>
-    </ResourceCompile>
   </ItemGroup>
 </Project>

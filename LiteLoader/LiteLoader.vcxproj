@@ -242,10 +242,6 @@ LibraryBuilder.exe
   </ItemGroup>
   <ItemGroup>
     <None Include="cpp.hint" />
-    <None Include="Resource\LiteLoader.aps" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Resource\LiteLoader.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Utils\DbgHelper.h" />
@@ -285,7 +281,6 @@ LibraryBuilder.exe
     <ClInclude Include="Header\KVDBAPI.h" />
     <ClInclude Include="Header\Utils\StringHelper.h" />
     <ClInclude Include="Header\Utils\WinHelper.h" />
-    <ClInclude Include="Resource\resource.h" />
     <ClInclude Include="Main\Version.h" />
   </ItemGroup>
   <ItemGroup>
