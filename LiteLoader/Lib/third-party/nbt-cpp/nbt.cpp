@@ -820,7 +820,7 @@ void read_compound_text(std::istream & input, tags::compound_tag & compound, con
 			);
 		}
 		std::string key = tags::read_string(input, ctxt);
-        std::cout << key << std::endl;
+        //std::cout << key << std::endl;
         skip_space(input);
 		char a = cheof(input);
 		if (a != ':')
