@@ -724,7 +724,7 @@ TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
             const Block* v11 = nullptr;
-            switch (*(int*)((__int64)a2 + 552))
+            switch (dAccess<int, 552>(this))
             {
                 case 0:
                     v11 = VanillaBlocks::mWoodenDoor;
