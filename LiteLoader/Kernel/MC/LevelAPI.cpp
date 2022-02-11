@@ -76,6 +76,7 @@ void Level::spawnParticleEffect(std::string const& a0, class Vec3 const& a1, cla
     *((void**)&rv) = dlsym("?spawnParticleEffect@Level@@UEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AEBVVec3@@PEAVDimension@@@Z");
     return (Global<Level>->*rv)(std::forward<std::string const&>(a0), std::forward<class Vec3 const&>(a1), std::forward<class Dimension*>(a2));
 }
+
 BlockSource* Level::getBlockSource(int dimID) {
     //auto dim = Global<Level>->createDimension(dimID);
     auto dim = Global<Level>->getDimension(dimID);
@@ -296,15 +297,18 @@ std::vector<Actor*> Level::getAllEntities(int dimId) {
     }
 }
 
-std::vector<Actor*> Level::getAllEntities() {
-    std::vector<Actor*> entityList;
-    auto entities = getAllEntities(0);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    entities = getAllEntities(1);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    entities = getAllEntities(2);
-    entityList.insert(entityList.end(), entities.begin(), entities.end());
-    return entityList;
+std::vector<Actor*> Level::getAllEntities()
+{
+
+    //std::vector<Actor*> entityList;
+    //auto entities = getAllEntities(0);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //entities = getAllEntities(1);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //entities = getAllEntities(2);
+    //entityList.insert(entityList.end(), entities.begin(), entities.end());
+    //return entityList;
+    return Global<Level>->getRuntimeActorList();
 }
 
 Player* Level::getPlayer(const string& info) {
