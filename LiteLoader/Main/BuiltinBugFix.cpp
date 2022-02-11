@@ -20,7 +20,7 @@ using namespace LL;
 
 bool ipInformationLogged = false;
 
-// Patch for CVE-2021-45384
+//Fix bug
 TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@AEBVDisconnectPacket@@@Z",
               ServerNetworkHandler, NetworkIdentifier* ni, void* packet)
 {
@@ -32,7 +32,7 @@ TInstanceHook(void, "?handle@ServerNetworkHandler@@UEAAXAEBVNetworkIdentifier@@A
     return original(this, ni, packet);
 }
 
-// Patch for CVE-2021-45383
+//Fix bug
 TClasslessInstanceHook(bool, "?_read@ClientCacheBlobStatusPacket@@EEAA?AW4StreamReadResult@@AEAVReadOnlyBinaryStream@@@Z",
       ReadOnlyBinaryStream* a2)
 {
