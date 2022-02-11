@@ -20,6 +20,7 @@ struct Addon
     Type type;
     LL::Version version;
     std::string uuid;
+    std::string directory;
     std::vector<Module> modules;
 };
 
