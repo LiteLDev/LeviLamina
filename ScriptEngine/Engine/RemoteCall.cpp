@@ -164,7 +164,7 @@ bool LxlRemoveAllExportedFuncs(ScriptEngine* engine)
 
 //////////////////// APIs ////////////////////
 
-Local<Value> LxlClass::exportFunc(const Arguments& args)
+Local<Value> LlClass::exportFunc(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 2);
     CHECK_ARG_TYPE(args[0], ValueKind::kFunction);
@@ -176,7 +176,7 @@ Local<Value> LxlClass::exportFunc(const Arguments& args)
     CATCH("Fail in LxlExport!");
 }
 
-Local<Value> LxlClass::importFunc(const Arguments &args)
+Local<Value> LlClass::importFunc(const Arguments &args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);

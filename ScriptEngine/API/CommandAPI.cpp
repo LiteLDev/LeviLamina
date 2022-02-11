@@ -187,7 +187,7 @@ void ProcessRegCmdQueue()
 
 bool ProcessDebugEngine(const string& cmd)
 {
-#define OUTPUT_DEBUG_SIGN() std::cout << ">" << std::flush
+#define OUTPUT_DEBUG_SIGN() std::cout << "> " << std::flush
     extern bool globalDebug;
     extern ScriptEngine *debugEngine;
 

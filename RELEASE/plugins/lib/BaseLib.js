@@ -391,6 +391,7 @@ cjs.js end
 For Compatibility
 */
 globalThis.file = File;
+globalThis.lxl = ll;
 DirectionAngle.prototype.valueOf = function()
 {
     return this.toFacing();

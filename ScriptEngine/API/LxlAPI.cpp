@@ -15,22 +15,22 @@ using namespace std;
 
 //////////////////// Classes ////////////////////
 
-ClassDefine<void> LxlClassBuilder =
-    defineClass("lxl")
-        .function("version", &LxlClass::version)
-        .function("requireVersion", &LxlClass::requireVersion)
-        .function("listPlugins", &LxlClass::listPlugins)
-        .function("import", &LxlClass::importFunc)
-        .function("export", &LxlClass::exportFunc)
-        .function("require", &LxlClass::require)
-        .function("eval", &LxlClass::eval)
+ClassDefine<void> LlClassBuilder =
+    defineClass("ll")
+        .function("version", &LlClass::version)
+        .function("requireVersion", &LlClass::requireVersion)
+        .function("listPlugins", &LlClass::listPlugins)
+        .function("import", &LlClass::importFunc)
+        .function("export", &LlClass::exportFunc)
+        .function("require", &LlClass::require)
+        .function("eval", &LlClass::eval)
 
         //For Compatibility
-        .function("checkVersion", &LxlClass::requireVersion)
+        .function("checkVersion", &LlClass::requireVersion)
         .build();
 
 
-Local<Value> LxlClass::registerPlugin(const Arguments& args)
+Local<Value> LlClass::registerPlugin(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);
@@ -86,7 +86,7 @@ Local<Value> LxlClass::registerPlugin(const Arguments& args)
     CATCH("Fail in LxlRegisterPlugin!")
 }
 
-Local<Value> LxlClass::version(const Arguments& args)
+Local<Value> LlClass::version(const Arguments& args)
 {
     try{
         Local<Object> ver = Object::newObject();
@@ -99,7 +99,7 @@ Local<Value> LxlClass::version(const Arguments& args)
     CATCH("Fail in LxlGetVersion!")
 }
 
-Local<Value> LxlClass::requireVersion(const Arguments& args)
+Local<Value> LlClass::requireVersion(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kNumber);
@@ -115,7 +115,7 @@ Local<Value> LxlClass::requireVersion(const Arguments& args)
     CATCH("Fail in LxlRequireVersion!")
 }
 
-Local<Value> LxlClass::listPlugins(const Arguments& args)
+Local<Value> LlClass::listPlugins(const Arguments& args)
 {
     try
     {
@@ -130,7 +130,7 @@ Local<Value> LxlClass::listPlugins(const Arguments& args)
     CATCH("Fail in LxlListPlugins!")
 }
 
-Local<Value> LxlClass::require(const Arguments& args)
+Local<Value> LlClass::require(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1)
     CHECK_ARG_TYPE(args[0], ValueKind::kString)
@@ -246,7 +246,7 @@ Local<Value> LxlClass::require(const Arguments& args)
     CATCH("Fail in LxlRequire!")
 }
 
-Local<Value> LxlClass::eval(const Arguments& args)
+Local<Value> LlClass::eval(const Arguments& args)
 {
     CHECK_ARGS_COUNT(args, 1);
     CHECK_ARG_TYPE(args[0], ValueKind::kString);

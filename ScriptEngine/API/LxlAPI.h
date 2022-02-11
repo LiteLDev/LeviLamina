@@ -4,7 +4,7 @@
 
 //////////////////// LXL Static ////////////////////
 
-class LxlClass
+class LlClass
 {
 public:
     static Local<Value> registerPlugin(const Arguments& args);
@@ -16,4 +16,4 @@ public:
     static Local<Value> require(const Arguments& args);
     static Local<Value> eval(const Arguments& args);
 };
-extern ClassDefine<void> LxlClassBuilder;
+extern ClassDefine<void> LlClassBuilder;
