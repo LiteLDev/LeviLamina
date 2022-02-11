@@ -19,6 +19,7 @@ RELEASE/SymDB2.exe
 !RELEASE/ChakraCore.dll
 RELEASE/plugins/LiteLoader/*.dll
 RELEASE/plugins/LiteLoader/*.pdb
+!RELEASE/plugins/LiteLoader/CrashLogger.dll
 
 .idea/**
 !.idea/cmake.xml

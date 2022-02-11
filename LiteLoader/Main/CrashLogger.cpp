@@ -59,6 +59,12 @@ bool LL::StartCrashLoggerProcess()
 
 void LL::InitCrashLogger(bool enableCrashLogger)
 {
+    // Enable PreLog Module
+    try
+    {
+        LoadLibrary(CL_PRELOG_MODULE);
+    }
+    catch (...) {}
 
     if (!enableCrashLogger)
     {
