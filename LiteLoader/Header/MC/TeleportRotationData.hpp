@@ -10,7 +10,8 @@
 class TeleportRotationData {
 
 #define AFTER_EXTRA
-
+public:
+    char filler[32];
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTROTATIONDATA
