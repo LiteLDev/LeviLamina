@@ -38,7 +38,7 @@
 - 脚本辅助接口
 
   - [📅 日志系统](zh_CN/Development/ScriptAPI/Logger.md)
-  - [💡 加载器相关接口](zh_CN/Development/ScriptAPI/Lxl.md)
+  - [💡 加载器相关接口](zh_CN/Development/ScriptAPI/Ll.md)
   - [🛫 国际化](zh_CN/Development/ScriptAPI/i18n.md)
 - 配置文件与数据处理
 

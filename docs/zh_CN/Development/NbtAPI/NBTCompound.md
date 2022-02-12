@@ -193,7 +193,7 @@ local nbt = NbtCompound({
 - 返回值：对应的对象 / 表
 - 返回值类型：`Object`
 
-将Compound的内容转换为LXL对象，把数据项都转换为LXL数据类型储存于对象的对应key中，方便读取和处理  
+将Compound的内容转换为LLSE对象，把数据项都转换为LLSE数据类型储存于对象的对应key中，方便读取和处理  
 如果Compound某一项储存的是`List`或者`Compound`类型的 NBT，将在对应位置递归展开为`Array`或`Object`
 
 <br>

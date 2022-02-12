@@ -1,29 +1,10 @@
-# LiteXLoader - LXL安装与使用指南
+# LiteLoader ScriptEngine - LLSE安装与使用指南
 
 ## 🎨 项目简介
 
-`LiteXLoader`（以下简称**LXL**）是一个基岩版官方服务端 `Bedrock Dedicated Server`（以下简称**BDS**）的插件框架，提供强大的跨语言脚本插件支持能力和稳定的开发API支持。  
+`LiteLoader ScriptEngine`（以下简称**LLSE**）是一个基岩版官方服务端 `Bedrock Dedicated Server`（以下简称**BDS**）的插件框架，提供强大的跨语言脚本插件支持能力和稳定的开发API支持。  
 
-`LiteXLoader` 主要发布和更新于**MineBBS**。你可以在哪里下载到`LiteXLoader`以及绝大多数相关插件
-
-## 💻 安装
-
-在安装 `LiteXLoader` 之前，你需要先配置好其依赖的 `LiteLoader` 加载器环境。  
-`LiteLoader`是知名的BDS C++插件加载器，提供了强大的底层API支持。LXL使用其提供的接口，并进行了很多拓展。
-
-1. [点击此处 前往MineBBS](https://www.minebbs.com/resources/liteloader.2059/)下载对应版本的 `LiteLoader` ，按要求解压之后运行SymDB2.exe生成相关数据
-2. 完成上述操作，并确认成功
-3. [点击此处 前往MineBBS](https://www.minebbs.com/resources/litexloader-x-bds.2670/)下载对应版本的`LiteXLoader`，解压
-4. 把全部内容复制到 **BDS** 的`plugins`目录中。如果复制时提示文件有冲突，选择覆盖即可。
-
-安装完毕！接下来，你就可以安装你想要的 **LXL** 插件了
-
-## 📥自动更新
-
-从版本`0.3.2`开始，LXL加入了自动更新的功能。  
-在同一个BDS版本内，加载器的更新将 **自动推送**，在下一次启动服务端时 **自动安装**。  
-最新特性，第一时间获得！免去反复手动升级的麻烦  
-做一回真正的甩手掌柜😆
+`LiteLoader ScriptEngine` 主要发布和更新于**MineBBS**。你可以在哪里下载到`LiteXLoader`以及绝大多数相关插件
 
 ## 🎯 加载插件
 
@@ -33,24 +14,9 @@
 
 > 没错，，就这么简单~
 
-## 🔨 配置文件
-
-`LiteXLoader`的配置文件位于`BDS根目录/plugins/LiteXLoader/config.ini`  
-正常情况下，这些设置并不需要改动。
-
-```ini
-[Main]
-Language=zh_CN				# LXL语言环境，默认为zh_CN，即中文
-LxlLogLevel=4				# LXL日志等级，默认为4，即显示除了debug信息以外的其他所有信息
-PluginsDir=./plugins		# LXL插件目录，默认为plugins
-DependsDir=./plugins/lib	# LXL依赖库目录，默认为plugins/lib
-```
-
-
-
 ## 📡 实时调试
 
-成功安装 **LXL** 之后，在 **BDS** 后台控制台执行
+成功安装 **LiteLoader** 之后，在 **BDS** 后台控制台执行
 
 - `jsdebug`  
   进入Js实时调试模式
@@ -63,22 +29,22 @@ DependsDir=./plugins/lib	# LXL依赖库目录，默认为plugins/lib
 
 ## 🔌 插件热管理
 
-不用关闭服务端，就可以对LXL装载的脚本插件进行热管理。LXL提供了下面这些后台控制台命令
+不用关闭服务端，就可以对LLSE装载的脚本插件进行热管理。引擎提供了下面这些后台控制台命令
 
-- `lxl list`  
-  列出LXL当前加载的所有插件列表
-- `lxl load ./plugins/xxxx.js`  
+- `ll list`  
+  列出当前加载的所有插件列表
+- `ll load ./plugins/xxxx.js`  
   热加载位于指定路径的插件。路径是相对于BDS根目录的相对路径。
-- `lxl unload xxxx.lua`  
+- `ll unload xxxx.lua`  
   热卸载在插件列表中名为 xxxx.lua 的插件
-- `lxl reload xxxx.js`  
+- `ll reload xxxx.js`  
   重新加载在插件列表中名为 xxxx.js 的插件
-- `lxl reload`  
+- `ll reload`  
   重新加载插件列表中的所有插件
-- `lxl version`  
-  输出当前安装的LXL版本
-- `lxl update`  
-  手动检查LiteXLoader自动更新
+- `ll version`  
+  输出当前安装的LL版本
+- `ll update`  
+  手动检查LiteLoader自动更新
 
 【热管理使用警示】
 
