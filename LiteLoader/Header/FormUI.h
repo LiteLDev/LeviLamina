@@ -48,7 +48,7 @@
 //          });
 //
 //
-// Tips:  The key of map "result" equals the first argument "name" you pass to these elements
+// Tips:  The <key> of std::map "result" equals the first argument "name" you pass to these elements
 //         So, "name" must be *unique* or error will occur
 //
 ////////////////////////////////////////////////////////////////////////
@@ -389,6 +389,7 @@ namespace Form
 
     public:
         using Callback = std::function<void(Player*, std::map<string, std::shared_ptr<CustomFormElement>>)>;
+        using Callback2 = std::function<void(Player*, std::string)>;
         string title;
         std::vector<std::pair<string, std::shared_ptr<CustomFormElement>>> elements;
         Callback callback;
@@ -421,6 +422,7 @@ namespace Form
         LIAPI CustomForm& append(const StepSlider& element);
 
         LIAPI bool sendTo(Player* player, Callback callback);
+        LIAPI bool sendToForRawJson(Player* player, Callback2 callback);
         LIAPI CustomFormElement::Type getType(int index);
 
         LIAPI string getString(const string& name);

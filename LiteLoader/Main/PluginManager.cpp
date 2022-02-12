@@ -236,12 +236,12 @@ bool LL::PluginManager::unloadPlugin(string pluginName, bool outputResult)
     }
 
     //Hot unload
-    callEventAtHotUnload(pluginName);
-    unRegisterPlugin(pluginName);
+    //callEventAtHotUnload(pluginName);
+    //unRegisterPlugin(pluginName);
     //removeAllEventListeners(pluginName);
 
-    logger.warn("Wait to be finished.");                    //?????
-    return true;
+    logger.warn("Unload function of dll plugins has not been finished.");                    //TODO
+    return false;
 }
 
 bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
@@ -257,10 +257,13 @@ bool LL::PluginManager::reloadPlugin(string pluginName, bool outputResult)
         return false;
     }
 
-    string path = plugin->filePath;
+    /*string path = plugin->filePath;
     if (!unloadPlugin(pluginName))
         return false;
-    return loadPlugin(path);
+    return loadPlugin(path);*/
+
+    logger.warn("Reload function of dll plugins has not been finished.");                    //TODO
+    return false;
 }
 
 bool LL::PluginManager::reloadAllPlugins(bool outputResult)

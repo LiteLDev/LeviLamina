@@ -55,7 +55,7 @@
 
 ## 🔌 WebSocket 客户端对象 API
 
-在LXL中，使用「WebSocket 对象」来操作某个 WebSocket 客户端的连接和工作
+在LLSE中，使用「WebSocket 对象」来操作某个 WebSocket 客户端的连接和工作
 
 ### 创建一个新的WebSocket 客户端对象
 
@@ -128,7 +128,7 @@
 
   - callback : `Functon`  
     注册的监听函数（函数相关参数见下）  
-    当指定的事件发生时，LXL会调用你给出的监听函数，并传入相应的参数
+    当指定的事件发生时，LLSE会调用你给出的监听函数，并传入相应的参数
 - 返回值：是否成功监听事件
 - 返回值类型：`Boolean` 
 

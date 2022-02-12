@@ -10,13 +10,14 @@
 class TeleportRotationData {
 
 #define AFTER_EXTRA
-
+public:
+    char filler[32];
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_TELEPORTROTATIONDATA
 public:
     class TeleportRotationData& operator=(class TeleportRotationData const&) = delete;
-    TeleportRotationData(class TeleportRotationData const&) = delete;
+    TeleportRotationData(class TeleportRotationData const&) = default;
     TeleportRotationData() = delete;
 #endif
 

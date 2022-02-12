@@ -28,7 +28,7 @@
     <ClCompile Include="API\GuiAPI.cpp" />
     <ClCompile Include="API\ItemAPI.cpp" />
     <ClCompile Include="API\LoggerAPI.cpp" />
-    <ClCompile Include="API\LxlAPI.cpp" />
+    <ClCompile Include="API\LlAPI.cpp" />
     <ClCompile Include="API\NbtAPI.cpp" />
     <ClCompile Include="API\NetworkAPI.cpp" />
     <ClCompile Include="API\PlayerAPI.cpp" />
@@ -70,7 +70,7 @@
     <ClInclude Include="API\GuiAPI.h" />
     <ClInclude Include="API\ItemAPI.h" />
     <ClInclude Include="API\LoggerAPI.h" />
-    <ClInclude Include="API\LxlAPI.h" />
+    <ClInclude Include="API\LlAPI.h" />
     <ClInclude Include="API\NbtAPI.h" />
     <ClInclude Include="API\NetworkAPI.h" />
     <ClInclude Include="API\APIHelp.h" />

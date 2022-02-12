@@ -126,7 +126,7 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
     // parse addon data
     try
     {
-        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"));
+        auto manifest = nlohmann::json::parse(*ReadAllFile(addonDir + "/manifest.json"), nullptr, false, true);
         string type = manifest["modules"][0]["type"];
         if (type == "resources")
         {
@@ -166,6 +166,12 @@ bool InstallAddonToLevel(std::string addonDir, std::string addonName)
         addonListFile += "/world_resource_packs.json";
     else if (addonType == Addon::Type::BehaviorPack)
         addonListFile += "/world_behavior_packs.json";
+
+    if (!filesystem::exists(addonListFile))
+    {
+        ofstream fout(addonListFile);
+        fout << "[]" << flush;
+    }
 
     try
     {
@@ -213,65 +219,88 @@ void FindManifest(vector<string> &result, const string& path)
 
 bool AddonsManager::install(std::string packPath)
 {
-    if (!filesystem::exists(packPath))
+    try
     {
-        addonLogger.error("Addon file no found!");
-        return false;
-    }
-    if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(packPath).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
-    {
-        addonLogger.error("Unsupported type of file found!");
-        return false;
-    }
-
-    string name = filesystem::path(packPath).filename().u8string();
-    addonLogger.warn("Installing addon <{}>...", name);
-
-    std::error_code ec;
-    if (EndsWith(packPath, ".mcpack"))
-    {
-        string newPath = packPath;
-        ReplaceStr(newPath, ".mcpack", ".zip");
-        filesystem::rename(packPath, newPath, ec);
-        packPath = newPath;
-    }
-    if (EndsWith(packPath, ".mcaddon"))
-    {
-        string newPath = packPath;
-        ReplaceStr(newPath, ".mcaddon", ".zip");
-        filesystem::rename(packPath, newPath, ec);
-        packPath = newPath;
-    }
-
-    filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-    filesystem::create_directories(ADDON_INSTALL_TEMP_DIR, ec);
-
-    auto res = NewProcessSync(fmt::format("{} x {} -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
-    if (res.first != 0)
-    {
-        addonLogger.error("Fail to uncompress addon {}!", name);
-        addonLogger.error("Exit Code: {}", res.first);
-        addonLogger.error("Program Output:\n{}", res.second);
-        addonLogger.error("* Install progress aborted!");
-        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-        return false;
-    }
-
-    vector<string> paths;
-    FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
-
-    for (auto& dir : paths)
-    {
-        string addonName = filesystem::path(dir).filename().u8string();
-        if (addonName.empty() || addonName == "Temp")
-            addonName = filesystem::path(packPath).stem().u8string();
-        if (!InstallAddonToLevel(dir, addonName))
+        if (!filesystem::exists(packPath))
+        {
+            addonLogger.error("Addon file no found!");
             return false;
-    }
+        }
+        if (VALID_ADDON_FILE_EXTENSION.find(filesystem::path(packPath).extension().u8string()) == VALID_ADDON_FILE_EXTENSION.end())
+        {
+            addonLogger.error("Unsupported type of file found!");
+            return false;
+        }
 
-    filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
-    filesystem::remove_all(packPath, ec);
-    return true;
+        string name = filesystem::path(packPath).filename().u8string();
+        addonLogger.warn("Installing addon <{}>...", name);
+
+        std::error_code ec;
+        if (EndsWith(packPath, ".mcpack"))
+        {
+            string newPath = packPath;
+            ReplaceStr(newPath, ".mcpack", ".zip");
+            filesystem::rename(packPath, newPath, ec);
+            packPath = newPath;
+        }
+        if (EndsWith(packPath, ".mcaddon"))
+        {
+            string newPath = packPath;
+            ReplaceStr(newPath, ".mcaddon", ".zip");
+            filesystem::rename(packPath, newPath, ec);
+            packPath = newPath;
+        }
+
+        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+        filesystem::create_directories(ADDON_INSTALL_TEMP_DIR, ec);
+
+        auto res = NewProcessSync(fmt::format("{} x {} -o{} -aoa", ZIP_PROGRAM_PATH, packPath, ADDON_INSTALL_TEMP_DIR), ADDON_INSTALL_MAX_WAIT);
+        if (res.first != 0)
+        {
+            addonLogger.error("Fail to uncompress addon {}!", name);
+            addonLogger.error("Exit Code: {}", res.first);
+            addonLogger.error("Program Output:\n{}", res.second);
+            addonLogger.error("* Install progress aborted!");
+            filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+            return false;
+        }
+
+        vector<string> paths;
+        FindManifest(paths, ADDON_INSTALL_TEMP_DIR);
+
+        for (auto& dir : paths)
+        {
+            string addonName = filesystem::path(dir).filename().u8string();
+            if (addonName.empty() || addonName == "Temp")
+                addonName = filesystem::path(packPath).stem().u8string();
+            if (!InstallAddonToLevel(dir, addonName))
+                return false;
+        }
+
+        filesystem::remove_all(ADDON_INSTALL_TEMP_DIR, ec);
+        filesystem::remove_all(packPath, ec);
+        return true;
+    }
+    catch (const seh_exception& e)
+    {
+        addonLogger.error("Uncaught SEH Exception Detected!");
+        addonLogger.error("In AddonsInstaller");
+        //addonLogger.error("Error: Code[{}] {}", e.code(), e.what());
+        cout << "Error: Code[" << e.code() << "] " << e.what() << endl;     //TODO Issue #223
+    }
+    catch (const std::exception& e)
+    {
+        addonLogger.error("Uncaught C++ Exception Detected!");
+        addonLogger.error("In AddonsInstaller");
+        //addonLogger.error("Error: {}", e.what());
+        cout << "Error: " << e.what() << endl;     //TODO Issue #223
+    }
+    catch (...)
+    {
+        addonLogger.error("Uncaught Exception Detected!");
+        addonLogger.error("In AddonsInstaller");
+    }
+    return false;
 }
 
 bool AddonsManager::uninstall(std::string nameOrUuid)

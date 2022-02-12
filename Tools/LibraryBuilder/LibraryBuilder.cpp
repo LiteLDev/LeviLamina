@@ -41,6 +41,28 @@ void ErrorExit(int code)
     exit(code);
 }
 
+std::string TCHAR2STRING(TCHAR* STR)
+{
+    int iLen = WideCharToMultiByte(CP_ACP, 0, STR, -1, NULL, 0, NULL, NULL);
+    char* chRtn = new char[iLen * sizeof(char)];
+    WideCharToMultiByte(CP_ACP, 0, STR, -1, chRtn, iLen, NULL, NULL);
+    std::string str(chRtn);
+    return str;
+}
+
+string& ReplaceStr(string& str, const string& old_value, const string& new_value)
+{
+    for (string::size_type pos(0); pos != string::npos; pos += new_value.length())
+    {
+        if ((pos = str.find(old_value, pos)) != string::npos)
+            str.replace(pos, old_value.length(), new_value);
+        else
+            break;
+    }
+    return str;
+}
+
+
 int main(int argc, char **argv)
 {
     //Welcome
@@ -55,6 +77,11 @@ int main(int argc, char **argv)
     string bdsPath;
     string generatedPath = "../LiteLoader/Lib";
 
+    TCHAR a[MAX_PATH];
+    memset(a, 0, MAX_PATH);
+    GetModuleFileName(NULL, a, MAX_PATH);
+    string exeRunPath = TCHAR2STRING(a);
+    ReplaceStr(exeRunPath, "\\LibraryBuilder.exe", "");
     if (argc == 1 || ((argc == 3 || argc == 4) && string(argv[1]) == "-o"))
     {
         if(argc >= 3)
@@ -100,24 +127,23 @@ int main(int argc, char **argv)
             "**** You must choose a folder contains *bedrock_server.pdb*!" << endl;
         ErrorExit(-3);
     }
-    
+    filesystem::current_path(exeRunPath);
     // Copy files
     error_code ec;
     filesystem::remove_all("temp", ec);
     filesystem::create_directory("temp", ec);
-
-    filesystem::copy_file("./SymDB2.exe", "temp/SymDB2.exe", filesystem::copy_options::overwrite_existing, ec);
+    filesystem::copy_file(exeRunPath + "/SymDB2.exe", "temp/SymDB2.exe", filesystem::copy_options::overwrite_existing, ec);
     filesystem::copy_file(bdsPath + "/bedrock_server.exe", "temp/bedrock_server.exe", filesystem::copy_options::overwrite_existing, ec);
     filesystem::copy_file(bdsPath + "/bedrock_server.pdb", "temp/bedrock_server.pdb", filesystem::copy_options::overwrite_existing, ec);
 
     //Running process
     cout << "\n----Running SymDB2..." << endl;
-    auto parentDir = filesystem::current_path();
-    filesystem::current_path(parentDir.u8string() + "/temp");
+    filesystem::current_path(exeRunPath + "/temp");
     system("SymDB2.exe -def -noMod -noSymdb -noPause -keepOri");
-    filesystem::current_path(parentDir);
+    filesystem::current_path(exeRunPath);
 
     cout << "\n---- Running LLVM-DLLTool..." << endl;
+
     system(R"( llvm-dlltool-msys2\llvm-dlltool.exe -m i386:x86-64 -d "temp\bedrock_server_api.def" -l "temp\bedrock_server_api.lib" )");
     system(R"( llvm-dlltool-msys2\llvm-dlltool.exe -m i386:x86-64 -d "temp\bedrock_server_var.def" -l "temp\bedrock_server_var.lib" )");
 

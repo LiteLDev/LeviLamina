@@ -10,6 +10,6 @@
 
 ⭐
 
-[点击此处](https://github.com/LiteLDev/LiteXLoader) 前往LiteXLoader项目源码开源地址
+[点击此处](https://github.com/LiteLDev/LiteLoader) 前往LiteLoader项目源码开源地址
 
 <br>

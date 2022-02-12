@@ -6,6 +6,7 @@
 #include <Main/LiteLoader.h>
 #include <LoggerAPI.h>
 #include <LLAPI.h>
+#include <Utils/DbgHelper.h>
 
 using namespace std;
 
@@ -69,42 +70,43 @@ public:
             return;
         }
 
-        for (size_t i = 0; i < c.size(); ++i)
-            --c[i].leftTime;
+        try {
+            for (size_t i = 0; i < c.size(); ++i)
+                --c[i].leftTime;
 
-        while (true) {
-            if (empty())
-                break;
-            const ScheduleTaskData &t = top();
-            if (t.leftTime >= 0)
-                break;
+            while (true) {
+                if (empty())
+                    break;
+                const ScheduleTaskData& t = top();
+                if (t.leftTime >= 0)
+                    break;
 
-            //timeout
-            try {
-                t.task();
-            }
-            catch (const seh_exception &e) {
-                logger.error("SEH exception occurred in ScheduleTask!");
-                logger.error("{}", e.what());
-                logger.error("TaskId: {}", t.taskId);
-                if (auto plugin = LL::getPlugin(t.handler))
-                    logger.error("Plugin: {}", plugin->name);
-            }
-            catch (const std::exception &e) {
-                logger.error("Exception occurred in ScheduleTask!");
-                logger.error("{}", e.what());
-                logger.error("TaskId: {}", t.taskId);
-                if (auto plugin = LL::getPlugin(t.handler))
-                    logger.error("Plugin: {}", plugin->name);
-            }
-            catch (...) {
-                logger.error("Exception occurred in ScheduleTask!");
-                logger.error("TaskId: {}", t.taskId);
-                if (auto plugin = LL::getPlugin(t.handler))
-                    logger.error("Plugin: {}", plugin->name);
-            }
+                //timeout
+                try {
+                    t.task();
+                }
+                catch (const seh_exception& e) {
+                    logger.error("SEH exception occurred in ScheduleTask!");
+                    logger.error("{}", e.what());
+                    logger.error("TaskId: {}", t.taskId);
+                    if (auto plugin = LL::getPlugin(t.handler))
+                        logger.error("Plugin: {}", plugin->name);
+                }
+                catch (const std::exception& e) {
+                    logger.error("Exception occurred in ScheduleTask!");
+                    logger.error("{}", e.what());
+                    logger.error("TaskId: {}", t.taskId);
+                    if (auto plugin = LL::getPlugin(t.handler))
+                        logger.error("Plugin: {}", plugin->name);
+                }
+                catch (...) {
+                    logger.error("Exception occurred in ScheduleTask!");
+                    logger.error("TaskId: {}", t.taskId);
+                    if (auto plugin = LL::getPlugin(t.handler))
+                        logger.error("Plugin: {}", plugin->name);
+                }
 
-            switch (t.type) {
+                switch (t.type) {
                 case ScheduleTaskData::TaskType::InfiniteRepeat: {
                     ScheduleTaskData sche{ std::move(t) };
                     sche.leftTime = sche.interval;
@@ -122,8 +124,13 @@ public:
                 }
                 default:
                     break;
+                }
+                pop();
             }
-            pop();
+        }
+        catch (...) {
+            logger.error("Exception occurred in ScheduleTask!");
+            PrintCurrentStackTraceback();
         }
         locker.unlock();
     }

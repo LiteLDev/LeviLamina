@@ -49,7 +49,7 @@ void RemoteLoadRequest(ModuleMessage& msg)
     string filePath;
 
     sin >> isHotLoad >> filePath;
-    bool res = PluginManager::loadPlugin(filePath, isHotLoad);
+    bool res = PluginManager::loadPlugin(filePath, isHotLoad, true);
 
     msg.sendResult(ModuleMessage::MessageType::RemoteLoadReturn, string(res ? "1" : "0"));
 }
