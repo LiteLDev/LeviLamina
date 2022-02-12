@@ -22,9 +22,9 @@ enum class FormType {
 
 unordered_map<unsigned, FormType> formTypes;
 
-unordered_map<unsigned, std::function<void(int)>> simpleFormPacketCallbacks;
-unordered_map<unsigned, std::function<void(bool)>> modalFormPacketCallbacks;
-unordered_map<unsigned, std::function<void(string)>> customFormPacketCallbacks;
+unordered_map<unsigned, std::function<void(Player*, int)>> simpleFormPacketCallbacks;
+unordered_map<unsigned, std::function<void(Player*, bool)>> modalFormPacketCallbacks;
+unordered_map<unsigned, std::function<void(Player*, string)>> customFormPacketCallbacks;
 
 unordered_map<unsigned, std::shared_ptr<Form::SimpleForm>> simpleFormBuilders;
 unordered_map<unsigned, std::shared_ptr<Form::CustomForm>> customFormBuilders;
@@ -43,19 +43,19 @@ unsigned NewFormId()
     return formId;
 }
 
-void SetSimpleFormPacketCallback(unsigned formId, std::function<void(int)> callback)
+void SetSimpleFormPacketCallback(unsigned formId, std::function<void(Player*, int)> callback)
 {
 	formTypes[formId] = FormType::SimpleFormPacket;
 	simpleFormPacketCallbacks[formId] = callback;
 }
 
-void SetModalFormPacketCallback(unsigned formId, std::function<void(bool)> callback)
+void SetModalFormPacketCallback(unsigned formId, std::function<void(Player*, bool)> callback)
 {
 	formTypes[formId] = FormType::ModalFormPacket;
 	modalFormPacketCallbacks[formId] = callback;
 }
 
-void SetCustomFormPacketCallback(unsigned formId, std::function<void(string)> callback)
+void SetCustomFormPacketCallback(unsigned formId, std::function<void(Player*, string)> callback)
 {
 	formTypes[formId] = FormType::CustomFormPacket;
 	customFormPacketCallbacks[formId] = callback;
@@ -156,18 +156,18 @@ void HandleFormPacket(Player* player, unsigned formId, const string& data)
     else if (formTypes[formId] == FormType::SimpleFormPacket)
     {
         int chosen = data != "null" ? stoi(data) : -1;
-        simpleFormPacketCallbacks[formId](chosen);
+        simpleFormPacketCallbacks[formId](player, chosen);
         simpleFormPacketCallbacks.erase(formId);
     }
     else if (formTypes[formId] == FormType::CustomFormPacket)
     {
-        customFormPacketCallbacks[formId](data);
+        customFormPacketCallbacks[formId](player, data);
         customFormPacketCallbacks.erase(formId);
     }
     else if (formTypes[formId] == FormType::ModalFormPacket)
     {
         int chosen = data == "true" ? 1 : 0;
-        modalFormPacketCallbacks[formId](chosen);
+        modalFormPacketCallbacks[formId](player, chosen);
         modalFormPacketCallbacks.erase(formId);
     }
     formTypes.erase(formId);

@@ -101,7 +101,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
             {
                 line.erase(pos, 3);
             }
-            serverLogger.info << FixCurlyBracket(line) << Logger::endl;
+            serverLogger.info << line << Logger::endl;
         }
         return rv;
     }
