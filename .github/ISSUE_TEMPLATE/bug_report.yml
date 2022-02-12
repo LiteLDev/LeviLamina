@@ -33,8 +33,8 @@ body:
       - Linux(Ubuntu/CentOS/...) with docker
       - Linux(Ubuntu/CentOS/...) with wine
       - Other 其他
-    validations:
-      required: true
+  validations:
+    required: true
 - type: input
   id: llversion
   attributes:
@@ -43,16 +43,16 @@ body:
       If you are using a beta LiteLoader downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
       如果您正在使用一个从Actions下载的beta版LiteLoader，请输入对应的Actions运行ID(#开头)或commit hash
       e.g. 2.1.0     #1479     4f404a72af8a252f0e411f9fe7c846a834a024df     4f404a7
-    validations:
-      requierd: true
+  validations:
+    requierd: true
 - type: input
   id: bdsversion
   attributes:
     label: BDS version  BDS版本
     value: "1.18.11"
     placeholder: Type your BDS version. 输入您的BDS版本
-    validations:
-      requierd: true
+  validations:
+    requierd: true
 - type: textarea
   id: what-happened
   attributes:
