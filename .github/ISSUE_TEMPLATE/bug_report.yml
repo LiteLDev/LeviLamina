@@ -1,12 +1,12 @@
 name: "Bug Report 报告Bug"
 description: "Report a bug to us to make LiteLoader better. 向我们报告一个Bug以让LiteLoader变得更好"
-title: ""
 labels: ["bug"]
 body:
 - type: markdown
-  value: |
-    Thanks for taking the time to fill out this bug report!
-    感谢您花时间填写这份错误报告!
+  attributes:
+    value: |
+      Thanks for taking the time to fill out this bug report!
+      感谢您花时间填写这份错误报告!
 - type: dropdown
   id: module
   attributes:
@@ -44,7 +44,7 @@ body:
       如果您正在使用一个从Actions下载的beta版LiteLoader，请输入对应的Actions运行ID(#开头)或commit hash
       e.g. 2.1.0     #1479     4f404a72af8a252f0e411f9fe7c846a834a024df     4f404a7
   validations:
-    requierd: true
+    required: true
 - type: input
   id: bdsversion
   attributes:
@@ -52,7 +52,7 @@ body:
     value: "1.18.11"
     placeholder: Type your BDS version. 输入您的BDS版本
   validations:
-    requierd: true
+    required: true
 - type: textarea
   id: what-happened
   attributes:
@@ -61,7 +61,7 @@ body:
     placeholder: Describe your problem clearly. 清晰地描述你的问题
   validations:
     required: true
- - type: textarea
+- type: textarea
   id: reproduce
   attributes:
     label: Steps to reproduce? 复现此问题的步骤
@@ -77,9 +77,10 @@ body:
     description: Please copy and paste any relevant log output. 请粘贴有关此问题的日志到此处
     render: shell
 - type: markdown
-  value: |
-    **If you have pictures or other content, please comment below. Screenshots,logs and dmp files are very important and helpful for solving your problem**
-    **如果你有图片或其他内容，请在下面评论(comment)。截图，日志和dmp文件对解决你的问题很重要、很有帮助**
-    ******
-    Thank you again for your contribution to LiteLoader!
-    再次感谢您对LiteLoader的贡献!
+  attributes:
+    value: |
+      **If you have pictures or other content, please comment below. Screenshots,logs and dmp files are very important and helpful for solving your problem**
+      **如果你有图片或其他内容，请在下面评论(comment)。截图，日志和dmp文件对解决你的问题很重要、很有帮助**
+      ******
+      Thank you again for your contribution to LiteLoader!
+      再次感谢您对LiteLoader的贡献!
