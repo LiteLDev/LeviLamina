@@ -7,6 +7,11 @@ body:
     value: |
       Thanks for taking the time to fill out this bug report!
       感谢您花时间填写这份Bug反馈!
+      > **NOTICE**
+      > 1. Feedback issues should belong to LiteLoader.  请勿反馈非加载器问题
+      > 2. Please do not report destructive Minecraft Bugs, please send a private message to the project developer in IM, and give feedback to Mojang in time. 
+      >    请勿在这里反馈具有严重影响的游戏漏洞, 相关问题请在聊天软件内私聊项目开发者并向及时向Mojang反馈
+
 - type: dropdown
   id: module
   attributes:
