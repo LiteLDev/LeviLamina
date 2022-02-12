@@ -197,7 +197,8 @@ Local<Value> LlClass::require(const Arguments& args)
         }
         if (existing)
         {
-            bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
+            //bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
+            bool success = true;                            //TODO: Temporarily disable ll.require for more work
             if (success)
             {
                 logger.info(thisName + tr("lxlapi.require.success") + require);
