@@ -147,58 +147,19 @@ CustomForm* CustomFormClass::extract(Local<Value> v)
         return nullptr;
 }
 
-vector<string> CustomFormResultToString(std::shared_ptr<Form::CustomForm> form, const std::map<string, std::shared_ptr<CustomFormElement>>& data, Local<Array> &arr)
-{
-    if (data.empty())
-        return { "null" };
-
-    vector<string> res;
-    for (int i=0;i< form->elements.size(); ++i)
-    {
-        switch (form->getType(i))
-        {
-        case CustomFormElement::Type::Label:
-            arr.add(Local<Value>());
-            break;
-        case CustomFormElement::Type::Input:
-            arr.add(String::newString(form->getString(i)));
-            break;
-        case CustomFormElement::Type::Toggle:
-            arr.add(Boolean::newBoolean(form->getBool(i)));
-            break;
-        case CustomFormElement::Type::Dropdown:
-            arr.add(Number::newNumber(form->getNumber(i)));
-            break;
-        case CustomFormElement::Type::Slider:
-            arr.add(Number::newNumber(form->getNumber(i)));
-            break;
-        case CustomFormElement::Type::StepSlider:
-            arr.add(Number::newNumber(form->getNumber(i)));
-            break;
-        }
-    }
-    return res;
-}
-
 //成员函数
 bool CustomFormClass::sendForm(Form::CustomForm* form, Player* player, script::Local<Function>& callback)
 {
     script::Global<Function> callbackFunc{ callback };
 
-    return form->sendTo(player,
-        [form {make_shared<Form::CustomForm>(*form)}, engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
-    (Player* pl, const std::map<string, std::shared_ptr<CustomFormElement>>& data)
+    return form->sendToForRawJson(player,
+        [engine{EngineScope::currentEngine()}, callback{std::move(callbackFunc)}]
+    (Player* pl, string data)
     {
         EngineScope scope(engine);
         try
         {
-            if (data.empty()) {
-                callback.get().call({}, PlayerClass::newPlayer(pl), Local<Value>());
-                return;
-            }
-            Local<Array> arr = Array::newArray();
-            CustomFormResultToString(form, data, arr);        //========================= Change =========================
-            callback.get().call({}, PlayerClass::newPlayer(pl), arr);
+            callback.get().call({}, PlayerClass::newPlayer(pl), JsonToValue(data));
         }
         catch (const Exception& e)
         {
@@ -398,60 +359,4 @@ bool CallFormCallback(Player* player, unsigned formId, const string& data)
     }
 
     return passToBDS;
-}
-
-
-//////////////////// Helper ////////////////////
-
-bool SendFormPacket(Player* player, const string& data)
-{
-    BinaryStream wp;
-    wp.reserve(32 + data.size());
-    wp.writeUnsignedVarInt((unsigned)((rand() << 16) + rand()));       //?????????
-    wp.writeString(data);   
-
-    NetworkPacket<100> pkt{ wp.getAndReleaseData() };
-    player->sendNetworkPacket(pkt);
-    return true;
-}
-
-int SendSimpleForm(Player* player, const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images)
-{
-    string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
-    model = model.replace(model.find("%s"), 2, title);
-    model = model.replace(model.find("%s"), 2, content);
-
-    fifo_json buttonText;
-    for (int i = 0; i < buttons.size(); ++i)
-    {
-        fifo_json oneButton;
-        oneButton["text"] = buttons[i];
-        if (!images[i].empty())
-        {
-            fifo_json image;
-            image["type"] = images[i].find("textures/") == 0 ? "path" : "url";
-            image["data"] = images[i];
-            oneButton["image"] = image;
-        }
-        buttonText.push_back(oneButton);
-    }
-    model = model.replace(model.find("%s"), 2, buttonText.dump());
-
-    return SendFormPacket(player, model);
-}
-
-int SendModalForm(Player* player, const string& title, const string& content, const string& button1, const string& button2)
-{
-    string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
-    model = model.replace(model.find("%s"), 2, title);
-    model = model.replace(model.find("%s"), 2, content);
-    model = model.replace(model.find("%s"), 2, button1);
-    model = model.replace(model.find("%s"), 2, button2);
-
-    return SendFormPacket(player, model);
-}
-
-int SendCustomForm(Player* player, const std::string& data)
-{
-    return SendFormPacket(player, data);
 }

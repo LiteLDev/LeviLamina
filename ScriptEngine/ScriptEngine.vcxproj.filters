@@ -52,7 +52,7 @@
     <ClCompile Include="API\LoggerAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
-    <ClCompile Include="API\LxlAPI.cpp">
+    <ClCompile Include="API\LlAPI.cpp">
       <Filter>API</Filter>
     </ClCompile>
     <ClCompile Include="API\NbtAPI.cpp">
@@ -177,7 +177,7 @@
     <ClInclude Include="API\LoggerAPI.h">
       <Filter>API</Filter>
     </ClInclude>
-    <ClInclude Include="API\LxlAPI.h">
+    <ClInclude Include="API\LlAPI.h">
       <Filter>API</Filter>
     </ClInclude>
     <ClInclude Include="API\NbtAPI.h">

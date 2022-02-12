@@ -58,11 +58,3 @@ extern ClassDefine<CustomFormClass> CustomFormClassBuilder;
 
 // 表单回调
 bool CallFormCallback(Player* player, unsigned formId, const std::string& data);
-
-
-
-//////////////////// Helper ////////////////////
-
-int SendSimpleForm(Player* player, const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images);
-int SendModalForm(Player* player, const string& title, const string& content, const string& button1, const string& button2);
-int SendCustomForm(Player* player, const std::string& data);

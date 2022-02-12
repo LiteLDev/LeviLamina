@@ -666,7 +666,7 @@ bool Player::sendRawFormPacket(unsigned formId, const string& data) const
     return true;
 }
 
-bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const
+bool Player::sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const
 {
     string model = u8R"({"title": "%s","content":"%s","buttons":%s,"type":"form"})";
     model = model.replace(model.find("%s"), 2, title);
@@ -695,7 +695,7 @@ bool Player::sendSimpleFormPacket(const string& title, const string& content, co
     return true;
 }
 
-bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
+bool Player::sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const
 {
     string model = R"({"title":"%s","content":"%s","button1":"%s","button2":"%s","type":"modal"})";
     model = model.replace(model.find("%s"), 2, title);
@@ -710,7 +710,7 @@ bool Player::sendModalFormPacket(const string& title, const string& content, con
     return true;
 }
 
-bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
+bool Player::sendCustomForm(const std::string& data, std::function<void(Player*, string)> callback) const
 {
     unsigned formId = NewFormId();
     if (!sendRawFormPacket(formId, data))
@@ -726,4 +726,25 @@ bool Player::isValid(Player* player)
         if (pl == player)
             return true;
     return false;
+}
+
+// For Compatibility
+bool Player::sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const
+{
+    return sendSimpleForm(title, content, buttons, images, [callback](Player* pl, int id) {
+        callback(id);
+    });
+}
+bool Player::sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback)
+{
+    return sendModalForm(title,content,button1,button2, [callback](Player* pl, bool res) {
+        callback(res);
+    });
+}
+
+bool Player::sendCustomFormPacket(const std::string& data, std::function<void(string)> callback)
+{
+    return sendCustomForm(data, [callback](Player* pl, string res) {
+        callback(res);
+    });
 }
