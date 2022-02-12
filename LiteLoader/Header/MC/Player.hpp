@@ -83,6 +83,11 @@ public:
     LIAPI bool reduceScore(const string& key, int value);
     LIAPI bool deleteScore(const string& key);
 
+    //Form
+    LIAPI bool sendSimpleForm(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(Player*, int)> callback) const;
+    LIAPI bool sendModalForm(const string& title, const string& content, const string& button1, const string& button2, std::function<void(Player*, bool)> callback) const;
+    LIAPI bool sendCustomForm(const std::string& data, std::function<void(Player*, string)> callback) const;
+
     //Packet
     LIAPI bool sendTextPacket(string text, TextType Type = TextType::RAW) const;
     LIAPI bool sendTitlePacket(string text, TitleType Type, int FadeInDuration, int RemainDuration, int FadeOutDuration) const;
@@ -101,14 +106,14 @@ public:
     LIAPI bool sendTextTalkPacket(const string& msg);
 
     LIAPI bool sendRawFormPacket(unsigned formId, const string& data) const;
-    LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
-    LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
-    LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
 
     LIAPI static bool isValid(Player* player);
 
     //For compatibility
     inline string getDeviceName() { return getDeviceTypeName(); }
+    LIAPI bool sendSimpleFormPacket(const string& title, const string& content, const vector<string>& buttons, const std::vector<std::string>& images, std::function<void(int)> callback) const;
+    LIAPI bool sendModalFormPacket(const string& title, const string& content, const string& button1, const string& button2, std::function<void(bool)> callback);
+    LIAPI bool sendCustomFormPacket(const std::string& data, std::function<void(string)> callback);
 
 #undef AFTER_EXTRA
 
