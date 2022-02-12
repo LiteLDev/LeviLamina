@@ -9,6 +9,9 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
 set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
 
 file(GLOB_RECURSE SRC_FILES
+        ${PROJECT_SOURCE_DIR}/*.cpp
+        ${PROJECT_SOURCE_DIR}/*.hpp
+        ${PROJECT_SOURCE_DIR}/*.h
         ${PROJECT_SOURCE_DIR}/API/*.cpp
         ${PROJECT_SOURCE_DIR}/API/*.hpp
         ${PROJECT_SOURCE_DIR}/API/*.h
