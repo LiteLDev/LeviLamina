@@ -6,7 +6,7 @@ body:
   attributes:
     value: |
       Thanks for taking the time to fill out this bug report!
-      感谢您花时间填写这份错误报告!
+      感谢您花时间填写这份Bug反馈!
 - type: dropdown
   id: module
   attributes:
@@ -38,11 +38,12 @@ body:
 - type: input
   id: llversion
   attributes:
-    label: LiteLoader version  LiteLoader版本
+    label: LiteLoader version 版本
     description: |
       If you are using a beta LiteLoader downloaded from Actions, please type the corresponding Actions run ID (starting with #) or commit hash.
       如果您正在使用一个从Actions下载的beta版LiteLoader，请输入对应的Actions运行ID(#开头)或commit hash
-      e.g. 2.1.0     #1479     4f404a72af8a252f0e411f9fe7c846a834a024df     4f404a7
+      e.g. 2.1.0     Actions#1479     4f404a72af8a252f0e411f9fe7c846a834a024df     4f404a7
+    value: "2.1.0"
   validations:
     required: true
 - type: input
