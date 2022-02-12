@@ -140,7 +140,7 @@ public:
             {(CommandFlagValue)0}, {(CommandFlagValue)0x80});
         registry->addEnum<DimensionType>("DimensionType",
                                          {
-                                             {"overload", DimensionType::OverWorld},
+                                             {"overworld", DimensionType::OverWorld},
                                              {"o", DimensionType::OverWorld},
                                              {"nether", DimensionType::Nether},
                                              {"n", DimensionType::Nether},
