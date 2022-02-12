@@ -311,6 +311,19 @@ namespace Form {
         return player->sendRawFormPacket(id, data);
     }
 
+    bool CustomForm::sendToForRawJson(Player* player, Callback2 callback) {
+        unsigned id = NewFormId();
+        //this->callback = callback;
+        this->callback = nullptr;
+        SetCustomFormPacketCallback(id, callback);
+
+        string data = serialize();
+        if (data.empty())
+            return false;
+
+        return player->sendRawFormPacket(id, data);
+    }
+
     string CustomForm::getString(const string& name) {
         for (auto& [k, v] : elements)
             if (k == name)

@@ -724,7 +724,7 @@ TClasslessInstanceHook(bool, "?_useOn@DoorItem@@EEBA_NAEAVItemStack@@AEAVActor@@
             PlayerPlaceBlockEvent ev{};
             ev.mPlayer = (Player*)a3;
             const Block* v11 = nullptr;
-            switch (*(int*)((__int64)a2 + 552))
+            switch (dAccess<int, 552>(this))
             {
                 case 0:
                     v11 = VanillaBlocks::mWoodenDoor;
@@ -1654,7 +1654,8 @@ TClasslessInstanceHook(void, "?explode@Explosion@@QEAAXXZ")
 {
     try
     {
-        auto actor = (Actor*)*((QWORD*)this + 11);
+        auto acId = *(ActorUniqueID*)((QWORD*)this + 11);
+        auto actor = Global<Level>->getEntity(acId);
         auto pos = *(Vec3*)(QWORD*)this;
         auto radius = *((float*)this + 3);
         auto bs = (BlockSource*)*((QWORD*)this + 12);
