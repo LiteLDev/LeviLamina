@@ -154,9 +154,9 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
     {
         fmt::print(
             o.consoleFormat, 
-            fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
+            applyTextStyle(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
                 fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
-            fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
+            applyTextStyle(getModeColor(o.levelPrefix), o.levelPrefix), 
             applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
             applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), o.os.str()));
 
