@@ -2,7 +2,7 @@
 name: 问题报告 Bug report
 about: Create a report to help us improve
 title: ''
-labels: bug
+labels: ''
 assignees: ''
 
 ---
@@ -19,7 +19,7 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 **To Reproduce**
-在这里描述如何复现问题。
+在这里描述如何复现问题（或者提供复现代码）。
 Steps to reproduce the behavior
 
 **Expected behavior**
@@ -29,6 +29,10 @@ A clear and concise description of what you expected to happen.
 **Screenshots or log**
 请提供一些屏幕截图，或者相关日志（这很必要）。
 If applicable, add screenshots or log to help explain your problem.
+
+**Possible way to fix**
+如果可以的话，请给出你觉得应当使用的修复方法
+If possible, give your advice about how to fix this problem.
 
 **Environment (please complete the following information):**
  - OS: [e.g. Windows Server 2019]
