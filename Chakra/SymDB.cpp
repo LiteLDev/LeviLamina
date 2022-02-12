@@ -267,13 +267,13 @@ extern "C" _declspec(dllexport) void* dlsym_real(const char* x) {
             LeaveCriticalSection(&dlsymLock);
             return (void *)(BaseAdr + iter->second);
         } else {
-            Error(" Could not find function in memory: {}", x);
+            Error("Could not find function in memory: {}", x);
         }
         LeaveCriticalSection(&dlsymLock);
     }
     auto rv = SymDB->getsym(x);
     if (rv == -1) {
-        Error(" Cannot find symbol in SymDB: {}", x);
+        Error("Cannot find symbol in SymDB: {}", x);
         return nullptr;
     }
     return (void *)(BaseAdr + rv);
