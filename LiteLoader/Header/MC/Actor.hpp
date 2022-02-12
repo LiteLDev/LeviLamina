@@ -52,6 +52,7 @@ public:
     LIAPI bool stopFire();
     LIAPI bool hasTag(const string& tag);
 	LIAPI bool hurtEntity(int damage);
+    LIAPI bool teleport(Vec3 to, int dimID, float x, float y);
 	LIAPI bool teleport(Vec3 pos,int dimid);
     LIAPI ItemStack* getHandSlot();
     LIAPI bool rename(const string& name);

@@ -102,13 +102,23 @@ ActorUniqueID Actor::getActorUniqueId() const {
         return {0};
     }
 }
+
 #include <MC/TeleportRotationData.hpp>
+static_assert(sizeof(TeleportRotationData) == 32);
 bool Actor::teleport(Vec3 to, int dimID)
 {
     char mem[48];
     auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);   
-    auto rotdata = TeleportRotationData(getRotation().x, getRotation().y, {});
-    auto target = computeTarget(mem, *this, to, nullptr, dimID, {}, 15);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, TeleportRotationData{getRotation().x, getRotation().y, {}}, 15);
+    TeleportCommand::applyTarget(*this, *target);
+    return true;
+}
+
+bool Actor::teleport(Vec3 to, int dimID,float x,float y)
+{
+    char mem[48];
+    auto computeTarget = (TeleportTarget * (*)(void*, class Actor&, class Vec3, class Vec3*, class AutomaticID<class Dimension, int>, std::optional<TeleportRotationData> const&, int))(&TeleportCommand::computeTarget);
+    auto target = computeTarget(mem, *this, to, nullptr, dimID, TeleportRotationData{x, y, {}}, 15);
     TeleportCommand::applyTarget(*this, *target);
     return true;
 }
