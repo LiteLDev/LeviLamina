@@ -116,6 +116,35 @@ fmt::text_style getModeColor(string a1)
     }
 }
 
+template <typename S, typename Char = fmt::v8::char_t<S>>
+std::string applyTextStyle(const fmt::v8::text_style& ts, const S& format_str)
+{
+    fmt::v8::basic_memory_buffer<Char> buf;
+    auto fmt = fmt::v8::to_string_view(format_str);
+    bool has_style = false;
+    if (ts.has_emphasis())
+    {
+        has_style = true;
+        auto emphasis = fmt::v8::detail::make_emphasis<Char>(ts.get_emphasis());
+        buf.append(emphasis.begin(), emphasis.end());
+    }
+    if (ts.has_foreground())
+    {
+        has_style = true;
+        auto foreground = fmt::v8::detail::make_foreground_color<Char>(ts.get_foreground());
+        buf.append(foreground.begin(), foreground.end());
+    }
+    if (ts.has_background())
+    {
+        has_style = true;
+        auto background = fmt::v8::detail::make_background_color<Char>(ts.get_background());
+        buf.append(background.begin(), background.end());
+    }
+    buf.append(fmt.begin(), fmt.end());
+    if (has_style) fmt::v8::detail::reset_color<Char>(buf);
+    return fmt::to_string(buf);
+}
+
 void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
 {
     std::string title = o.logger->title;
@@ -126,11 +155,10 @@ void Logger::endlImpl(HMODULE hPlugin, OutputStream& o)
         fmt::print(
             o.consoleFormat, 
             fmt::format(LL::globalConfig.colorLog ? fg(fmt::color::light_blue) : fmt::text_style(), 
-            fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
+                fmt::format("{:%H:%M:%S}", fmt::localtime(_time64(nullptr)))),
             fmt::format(getModeColor(o.levelPrefix), o.levelPrefix), 
-            fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,title),
-            fmt::format(LL::globalConfig.colorLog ? o.style : fmt::text_style() ,o.os.str())
-);
+            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), title),
+            applyTextStyle(LL::globalConfig.colorLog ? o.style : fmt::text_style(), o.os.str()));
 
     }
 
