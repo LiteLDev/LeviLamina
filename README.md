@@ -39,7 +39,7 @@ Logger logger("AttackLog");
 
 void PluginInit()
 {
-	LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
+    LL::registerPlugin("PluginName", "Introduction", LL::Version(1, 0, 0));
     logger.info("Plugin xxx has been loaded.");
     //Subscribe Player-Attack Event
     Event::PlayerAttackEvent::subscribe([](const Event::PlayerAttackEvent& ev) {
