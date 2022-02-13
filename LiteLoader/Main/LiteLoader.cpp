@@ -9,14 +9,14 @@
 #include <seh_exception/seh_exception.hpp>
 #include <ServerAPI.h>
 #include <HookAPI.h>
-#include <Main/Config.h>
-#include "Main/Loader.h"
-#include "Main/AutoUpgrade.h"
-#include "Main/CrashLogger.h"
+#include "Config.h"
+#include "Loader.h"
+#include "AutoUpgrade.h"
+#include "CrashLogger.h"
 #include <TranslationAPI.h>
-#include "Main/AddonsHelper.h"
+#include "AddonsHelper.h"
 #include <EventAPI.h>
-#include <LiteLoader/Main/Version.h>
+#include "Version.h"
 
 using namespace std;
 
