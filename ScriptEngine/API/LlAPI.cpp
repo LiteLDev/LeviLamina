@@ -24,6 +24,7 @@ ClassDefine<void> LlClassBuilder =
         .function("export", &LlClass::exportFunc)
         .function("require", &LlClass::require)
         .function("eval", &LlClass::eval)
+        .function("registerPlugin", &LlClass::registerPlugin)
 
         //For Compatibility
         .function("checkVersion", &LlClass::requireVersion)
