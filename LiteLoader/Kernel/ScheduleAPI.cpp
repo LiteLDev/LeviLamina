@@ -145,9 +145,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, tickDelay, -1, -1, handler);
-        locker.lock();
+        //locker.lock();
         taskQueue.push(sche);
-        locker.unlock();
+        //locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -159,9 +159,9 @@ namespace Schedule {
                                           ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
         ScheduleTaskData sche(type, task, tickRepeat, tickRepeat, maxCount, handler);
-        locker.lock();
+        //locker.lock();
         taskQueue.push(sche);
-        locker.unlock();
+        //locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -173,9 +173,9 @@ namespace Schedule {
         ScheduleTaskData::TaskType type = maxCount < 0 ? ScheduleTaskData::TaskType::InfiniteRepeat
                                                        : ScheduleTaskData::TaskType::Repeat;
         ScheduleTaskData sche(type, task, tickDelay, tickRepeat, maxCount, handler);
-        locker.lock();
+        //locker.lock();
         taskQueue.push(sche);
-        locker.unlock();
+        //locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 
@@ -184,9 +184,9 @@ namespace Schedule {
         if (LL::globalConfig.serverStatus >= LL::SeverStatus::Stopping)
             return ScheduleTask((unsigned) -1);
         ScheduleTaskData sche(ScheduleTaskData::TaskType::Delay, task, 1, -1, -1, handler);
-        locker.lock();
+        //locker.lock();
         taskQueue.push(sche);
-        locker.unlock();
+        //locker.unlock();
         return ScheduleTask(sche.getTaskId());
     }
 }
