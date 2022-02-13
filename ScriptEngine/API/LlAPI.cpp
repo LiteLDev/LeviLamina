@@ -144,15 +144,15 @@ Local<Value> LlClass::require(const Arguments& args)
         string thisName = ENGINE_OWN_DATA()->pluginName;
 
         //已加载插件
-        for (auto pluginName : globalShareData->pluginsList)
+        /*for (auto pluginName : globalShareData->pluginsList)
         {
             if (pluginName == require)
             {
                 existing = true;
                 break;
             }
-        }
-        if (existing)
+        }*/
+        if (PluginManager::getPlugin(require) != nullptr)
         {
             logger.info(thisName + tr("lxlapi.require.success") + require);
             return Boolean::newBoolean(true);
