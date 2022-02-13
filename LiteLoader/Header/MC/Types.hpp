@@ -23,7 +23,7 @@ public:
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
     MCAPI static UUID seedFromString(std::string const&);
-    MCAPI static class mce::UUID mce::UUID::EMPTY;
+    MCAPI static class mce::UUID EMPTY;
 
     inline operator bool() const
     {
