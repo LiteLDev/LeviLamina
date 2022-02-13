@@ -32,23 +32,23 @@ public:
 
     nlohmann::json allowList;
 
-    AllowListManager();
+    LIAPI AllowListManager();
 
-    size_t size();
+    LIAPI size_t size();
 
     // @summary Return whether the player in the allowlist
-    bool has(const std::string& name, const xuid_t& xuid = "");
+    LIAPI bool has(const std::string& name, const xuid_t& xuid = "");
     // @summary Return whether the player in the allowlist
     // @param index If exists, index will be set to the array index
-    bool has(const std::string& name, const xuid_t& xuid, size_t& index);
+    LIAPI bool has(const std::string& name, const xuid_t& xuid, size_t& index);
     
     // @summary Add a player to allowlist
-    AllowListManager& add(const std::string& name, const xuid_t& xuid = "", bool ignore = false);
+    LIAPI AllowListManager& add(const std::string& name, const xuid_t& xuid = "", bool ignore = false);
 
     // @summary Remove a player from allowlist
-    AllowListManager& remove(const std::string& name, const xuid_t& xuid = "");
+    LIAPI AllowListManager& remove(const std::string& name, const xuid_t& xuid = "");
 
     // @summary Reload the allowlist(Making changes effective)
-    void reload();
+    LIAPI void reload();
     
 };
