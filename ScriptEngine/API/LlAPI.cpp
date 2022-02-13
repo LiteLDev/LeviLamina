@@ -145,14 +145,6 @@ Local<Value> LlClass::require(const Arguments& args)
         string thisName = ENGINE_OWN_DATA()->pluginName;
 
         //已加载插件
-        /*for (auto pluginName : globalShareData->pluginsList)
-        {
-            if (pluginName == require)
-            {
-                existing = true;
-                break;
-            }
-        }*/
         if (PluginManager::getPlugin(require) != nullptr)
         {
             logger.info(thisName + tr("lxlapi.require.success") + require);
@@ -172,8 +164,7 @@ Local<Value> LlClass::require(const Arguments& args)
         }
         if (existing)
         { 
-            //bool success = PluginManager::loadPlugin(string(LLSE_PLUGINS_LOAD_DIR) + "/" + require);
-            bool success = true;                            //TODO: Temporarily disable ll.require for more work
+            bool success = PluginManager::loadPlugin(string(LLSE_PLUGINS_LOAD_DIR) + "/" + require);
             if (success)
             {
                 logger.info(thisName + tr("lxlapi.require.success") + require);
@@ -199,8 +190,7 @@ Local<Value> LlClass::require(const Arguments& args)
         }
         if (existing)
         {
-            //bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
-            bool success = true;                            //TODO: Temporarily disable ll.require for more work
+            bool success = PluginManager::loadPlugin(string(LLSE_DEPENDS_DIR) + "/" + require);
             if (success)
             {
                 logger.info(thisName + tr("lxlapi.require.success") + require);
