@@ -1,3 +1,4 @@
+# This CMakeLists just for loading symbols in clion
 cmake_minimum_required(VERSION 3.21)
 project(ScriptEngine)
 
@@ -31,7 +32,7 @@ add_compile_options(
         /permissive- /MP /ifcOutput "x64/Lua/" /GS /GL /W3 /Gy /Zc:wchar_t
         /Zi /Gm- /O2 /sdl /Fd"x64/Lua/vc143.pdb" /Zc:inline /fp:precise
         /errorReport:prompt /WX- /Zc:forScope /Gd /Oi /MD /std:c++17 /FC /Fa"x64/Lua/"
-        /EHa /nologo /Fo"x64/Lua/" /Fp"x64/Lua/LiteLoader.Lua.pch" /diagnostics:column
+        /EHa /nologo /Fo"x64/Lua/" /Fp"x64/Lua/LiteLoader.Lua.pch" /diagnostics:column /utf-8
 )
 
 add_link_options(
