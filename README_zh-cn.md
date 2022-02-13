@@ -1,4 +1,4 @@
-# LiteLoaderBDS - 新时代的BDS插件加载器
+# LiteLoaderBDS - 划时代 x 跨语言BDS插件加载器
 
 [![status](https://img.shields.io/github/workflow/status/LiteLDev/LiteLoader/Build%20LiteLoader?style=for-the-badge)](https://github.com/LiteLDev/LiteLoader/actions)
 [![Discord](https://img.shields.io/discord/849252980430864384?style=for-the-badge)](https://discord.gg/27KTrxHc9t)
@@ -10,7 +10,7 @@
 
 ##### [English](README.md) | 简体中文
 
-![Logo](https://socialify.git.ci/LiteLDev/LiteLoader/image?description=1&font=Inter&forks=1&issues=1&language=1&logo=https%3A%2F%2Fgithub.com%2FLiteLDev%2FWebsite%2Fraw%2Fmain%2Fimages%2Flogo-6pndg21x.png&owner=1&pattern=Plus&pulls=1&stargazers=1)
+![LiteLoaderBDS](https://socialify.git.ci/liteldev/liteloaderbds/image?description=1&descriptionEditable=Lightweight%20%26%20Cross-language%0A%20BDS%20Plugin%20Loader&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FLiteLDev%2FDocs%2Fmaster%2Fimages%2Ficon.ico&name=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Light)
 
 `LiteLoaderBDS` 是一个非官方的 `Minecraft` 服务端插件加载器，为基岩版官方服务端`Bedrock Dedicated Server`（以下简称**BDS**）提供插件开发支持 和 插件加载服务，弥补了官方行为包开发接口长期以来存在的一些不足。
 
@@ -84,7 +84,7 @@ mc.regPlayerCmd("stop","关闭服务器", (pl,args) => {
 
 
 - 📋 开发文档完善，讲解详细
-  - 欢迎 👉[移步 LiteLoader 文档站](https://lxl.litebds.com/)👈 查看更多  
+  - 欢迎 👉[移步 LiteLoader 文档站](https://docs.litebds.com/)👈 查看更多  
 
 - 🎈 大量封装完善的的接口
   - 拥有众多游戏API支持：玩家，实体，方块，物品，容器，NBT，服务器系统……
@@ -111,7 +111,7 @@ mc.regPlayerCmd("stop","关闭服务器", (pl,args) => {
 2. 将压缩文件内的所有内容解压到 `bedrock_server.exe` 所在的目录。如果解压的过程中提示文件有冲突，选择覆盖即可。
 3. 保证 `bedrock_server.pdb`文件存在。  
    运行 `SymDB2.exe` 来生成符号文件（`bedrock_server.symdb2`）和有导出符号的BDS（`bedrock_server_mod.exe`）  
-   当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
+4. 当控制台输出 `请按任意键继续. . . ` 时，按任意键关闭窗口
 3. 运行 `bedrock_server_mod.exe` 开服
 
 ### 对于 Linux 用户
@@ -132,7 +132,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 
 `LiteLoader`主要插件发布渠道：
 
-- MineBBS论坛：[点击这里 前往下载](https://www.minebbs.com/resources/?prefix_id=59)
+- MineBBS论坛：[点击这里 前往发现更多](https://www.minebbs.com/resources/?prefix_id=59)
 - GitHub Discussion：[Discussions · LiteLDev/LiteLoaderBDS](https://github.com/LiteLDev/LiteLoaderBDS/discussions)
 
 ### 插件的安装
@@ -141,13 +141,15 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 将所有获取到的内容直接放入`plugins`目录
 3. 运行`bedrock_server_mod.exe` 开服
 
-更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://lxl.litebds.com/#/zh_CN/Usage/)👈查看
+更多**安装与使用指南** ，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看
 
 ## 📥 自动更新
 
 从`2.0.0`版本开始，LiteLoader增加了自动更新功能  
 如果BDS版本相同，LiteLoader的更新将会**自动推送**，并且**自动在下一次服务端开启时安装**  
 第一时间获取最新功能更新！ 免去重复手动升级的烦恼~
+
+你也可以在控制台使用 `ll upgrade` 命令手动检查更新。
 
 <br/>
 
@@ -163,7 +165,7 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 1. 编译生成，并按提示选择相应的PDB文件以生成依赖库lib
 1. 复制插件到 plugins 目录进行测试
 
-具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://lxl.litebds.com/#/zh_CN/Usage/)👈查看  
+具体插件开发示例与指导，请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Usage/)👈查看  
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue  
 
 ### 使用脚本语言开发插件
@@ -172,12 +174,12 @@ docker create --name liteloader -p 19132:19132/udp -i -t shrbox/liteloaderbds
 2. 编写代码
 3. 复制插件到 plugins 目录进行测试
 
-请👉[移步 LiteLoader 文档站](https://lxl.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**  
+请👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Development/)👈查看详细的**API文档**和**插件开发教程**  
 如果有修订需求或者有新增API的需要，欢迎联系作者或者发布Issue  
 
 ### 示例插件
 
-[点击这里](https://github.com/LiteLDev-LXL) 查看更多开源的 LiteLoader 插件，作为示例插件。  
+[点击这里](https://github.com/LiteLDev) [点击这里](https://github.com/LiteLDev-LXL) 查看更多开源的 LiteLoader 插件，作为示例插件。  
 你可以直接在生产环境中使用它们
 也可以在这里学习插件开发的方法和技巧
 
@@ -256,7 +258,7 @@ NC不仅需要用户，也需要开发人员。欢迎大家在 [MineBBS](https:/
 
 ⭐⭐⭐我们欢迎您的贡献！⭐⭐⭐
 
-PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://lxl.litebds.com/#/zh_CN/Maintance/)👈查看 **项目维护与支持文档**  
+PS：如果你有意为LL贡献代码，欢迎👉[移步 LiteLoader 文档站](https://docs.litebds.com/#/zh_CN/Maintance/)👈查看 **项目维护与支持文档**  
 
 ------
 

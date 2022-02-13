@@ -35,9 +35,6 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts)
     input.erase(std::remove(input.begin(), input.end(), '\n'), input.end());
     switch (a1)
     {
-        case 8u:
-            serverLogger.warn << input << Logger::endl;
-            break;
         case 1u:
             serverLogger.debug << input << Logger::endl;
             break;
@@ -46,6 +43,12 @@ THook(void, "?PlatformBedrockLogOut@@YAXIPEBD@Z", int a1, const char* ts)
             break;
         case 4u:
             serverLogger.warn << input << Logger::endl;
+            break;
+        case 8u:
+            serverLogger.error << input << Logger::endl;
+            break;
+        default:
+            serverLogger.info << input << Logger::endl;
             break;
     }
 }
