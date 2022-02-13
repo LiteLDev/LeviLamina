@@ -9,9 +9,9 @@ using namespace std;
 
 Logger serverLogger("Server");
 extern void CheckBetaVersion();
-    THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")
+THook(std::string, "?getServerVersionString@Common@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ")
 {
-        CheckBetaVersion();
+    CheckBetaVersion();
     return original() + "(ProtocolVersion " + to_string(LL::getServerProtocolVersion()) + ") with " + fmt::format(LL::globalConfig.colorLog ?fg(fmt::color::light_sky_blue) | fmt::emphasis::bold | fmt::emphasis::italic : fmt::text_style() , "LiteLoaderBDS " + LL::getLoaderVersion().toString(true));
 }
 
@@ -81,6 +81,7 @@ THook(void, "?log@BedrockLog@@YAXW4LogCategory@1@V?$bitset@$02@std@@W4LogRule@1@
                    void, unsigned int, unsigned int, int, int, unsigned int, __int64, __int64, __int64, __int64)(a1, a2, a3, a4, a5, a6, a7, a8, (__int64)va);
 }
 
+#include <MC/ColorFormat.hpp>
 extern std::unordered_map<void*, string*> resultOfOrigin;
 TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin@@AEBVCommandOutput@@@Z",
                        void* ori, void* out)
@@ -98,13 +99,18 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
         string line;
         while (getline(iss, line))
         {
-            size_t pos = 0;
-            // Remove '§x' in the output
-            while ((pos = line.find("§")) != string::npos)
+            if (LL::globalConfig.colorLog)
+                serverLogger.info << ColorFormat::transferMcColorToConsole(line, false) << Logger::endl;
+            else
             {
-                line.erase(pos, 3);
+                size_t size = str.size();
+                for (size_t pos = line.find("§"); pos < size - 2; pos = line.find("§", pos))
+                {
+                    str.erase(pos, 3);
+                    size -= 3;
+                }
+                serverLogger.info << line << Logger::endl;
             }
-            serverLogger.info << line << Logger::endl;
         }
         return rv;
     }

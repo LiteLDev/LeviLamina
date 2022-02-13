@@ -23,14 +23,44 @@ public:
     MCAPI static UUID fromString(std::string const&);
     MCAPI bool isEmpty() const;
     MCAPI static UUID seedFromString(std::string const&);
+    MCAPI static class mce::UUID mce::UUID::EMPTY;
 
     inline operator bool() const
     {
         return !isEmpty();
     }
 };
+class Color
+{
+public:
+    float r;
+    float g;
+    float b;
+    float a;
+    Color(float r, float g, float b, float a = 1)
+        : r(r)
+        , g(g)
+        , b(b)
+        , a(a){};
 
-class Color;
+    inline operator bool() const
+    {
+        return !(*this == NIL);
+    }
+
+    LIAPI double distanceTo(mce::Color const dst) const;
+    LIAPI std::string toConsoleColorCode(bool foreground = true) const;
+    LIAPI std::string toMcColorCode() const;
+    LIAPI static class mce::Color fromConsoleColorCode(std::string const&);
+
+    MCAPI static mce::Color const NIL;
+    MCAPI static class mce::Color fromHexString(std::string const&);
+    MCAPI bool operator==(class mce::Color const&) const;
+    MCAPI int toABGR(void) const;
+    MCAPI int toARGB(void) const;
+    MCAPI std::string toHexString(void) const;
+
+};
 
 }; // namespace mce
 

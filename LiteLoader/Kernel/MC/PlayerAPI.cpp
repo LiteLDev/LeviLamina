@@ -397,6 +397,7 @@ bool Player::sendTextPacket(string text, TextType Type) const
         case TextType::RAW:
         case TextType::TIP:
         case TextType::SYSTEM:
+        case TextType::JSON_WHISPER:
         case TextType::JSON:
             wp.writeString(text);
             break;
@@ -404,9 +405,7 @@ bool Player::sendTextPacket(string text, TextType Type) const
         case TextType::POPUP:
         case TextType::JUKEBOX_POPUP:
             wp.writeString(text);
-            wp.writeVarInt(0);
-            break;
-        case TextType::JSON_WHISPER:
+            wp.writeUnsignedVarInt(0);
             break;
     }
     wp.writeString("");

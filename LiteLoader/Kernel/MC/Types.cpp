@@ -1,4 +1,4 @@
-#include <MC/Types.hpp>
+﻿#include <MC/Types.hpp>
 
 //ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 //{
@@ -6,6 +6,39 @@
 //    this->z = (char)pos.z & 0xf;
 //    this->y = (short)(pos.y - minHeight);
 //}
+#include <MC/ColorFormat.hpp>
+#include <LoggerAPI.h>
+extern Logger logger;
+namespace mce
+{
+std::string mce::Color::toConsoleColorCode(bool foreground) const
+{
+    fmt::v8::rgb rgb;
+    rgb.r = r * 0xff;
+    rgb.g = g * 0xff;
+    rgb.b = b * 0xff;
+    if (foreground)
+        return fmt::v8::detail::make_foreground_color<char>(fmt::v8::detail::color_type(rgb));
+    else
+        return fmt::v8::detail::make_background_color<char>(fmt::v8::detail::color_type(rgb));
+}
+std::string Color::toMcColorCode() const
+{
+    return ColorFormat::ColorCodeFromColor(*this);
+};
+double mce::Color::distanceTo(mce::Color const dst) const
+{
+    long rmean = ((long)(r * 0xff) + (long)(dst.r * 0xff)) / 2;
+    long dr = (long)(r * 0xff) - (long)(dst.r * 0xff);
+    long dg = (long)(g * 0xff) - (long)(dst.g * 0xff);
+    long db = (long)(b * 0xff) - (long)(dst.b * 0xff);
+    return sqrt((((512 + rmean) * dr * dr) >> 8) + 4 * dg * dg + (((767 - rmean) * db * db) >> 8));
+}
+class mce::Color mce::Color::fromConsoleColorCode(std::string const& code)
+{
+    return ColorFormat::colorFromConsoleColorCode(code);
+};
+}
 
 Vec3 BlockPos::toVec3() const {
     return {(float)x, (float)y, (float)z};
