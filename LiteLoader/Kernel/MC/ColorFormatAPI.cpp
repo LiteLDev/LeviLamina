@@ -237,15 +237,15 @@ std::string& transferMcColorToConsole(std::string& str, bool keepColorCode)
         std::string consoleCode = mcColorCodeToConsole(str.substr(pos, 3));
         if (keepColorCode)
         {
-            str.replace(pos, 3, consoleCode);
-            pos += consoleCode.size();
-            size += consoleCode.size() - 3;
-        }
-        else
-        {
             str.insert(pos + (str[pos + 2] == 'r' ? 0 : 3), consoleCode);
             pos += consoleCode.size() + 3;
             size += consoleCode.size();
+        }
+        else
+        {
+            str.replace(pos, 3, consoleCode);
+            pos += consoleCode.size();
+            size += consoleCode.size() - 3;
         }
     }
     return str;
