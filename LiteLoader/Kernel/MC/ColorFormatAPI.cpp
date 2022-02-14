@@ -250,7 +250,7 @@ std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode)
     return str;
 }
 
-#ifndef DEBUG
+#ifdef DEBUG
 inline void testCode(int i)
 {
     std::cout << "\x1b[" << std::to_string(i) << "mTest-" << std::to_string(i) << std::endl;

@@ -1237,192 +1237,8 @@ string CompoundTag::toSNBT(int indent, SnbtFormat snbtFormat)
 #pragma endregion
 
 #pragma region To Pretty SNBT
-#include <MC/ColorFormat.hpp>
-// PrettySnbtFormat
-namespace
-{
-template <Tag::Type T>
-std::string const& DefaultSuffix;
-template <Tag::Type T>
-std::string const& DefaultPrefix = "";
-template <>
-std::string const& DefaultSuffix<Tag::Type::End> = "";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Byte> = "b";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Short> = "s";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Int> = "";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Int64> = "L";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Float> = "f";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Double> = "d";
-template <>
-std::string const& DefaultPrefix<Tag::Type::ByteArray> = "[b;";
-template <>
-std::string const& DefaultSuffix<Tag::Type::ByteArray> = "]";
-template <>
-std::string const& DefaultPrefix<Tag::Type::String> = "\"";
-template <>
-std::string const& DefaultSuffix<Tag::Type::String> = "\"";
-template <>
-std::string const& DefaultPrefix<Tag::Type::List> = "[";
-template <>
-std::string const& DefaultSuffix<Tag::Type::List> = "]";
-template <>
-std::string const& DefaultPrefix<Tag::Type::Compound> = "{";
-template <>
-std::string const& DefaultSuffix<Tag::Type::Compound> = "}";
-template <>
-std::string const& DefaultPrefix<Tag::Type::IntArray> = "[I;";
-template <>
-std::string const& DefaultSuffix<Tag::Type::IntArray> = "]";
-} // namespace
+#include <MC/PrettySnbtFormat.hpp>
 
-inline void PrettySnbtFormat::ValueFormat::toPlayerFormat()
-{
-    ColorFormat::transferConsoleColorToColorCode(mPrefix);
-    ColorFormat::transferConsoleColorToColorCode(mSuffix);
-}
-inline void PrettySnbtFormat::ValueFormat::toConsoleFormat()
-{
-    ColorFormat::transferColorCodeToConsole(mPrefix);
-    ColorFormat::transferColorCodeToConsole(mSuffix);
-}
-PrettySnbtFormat::PrettySnbtFormat()
-{
-#define InitFormat(type) mValueFormats[type] = {DefaultPrefix<type>, DefaultSuffix<type>};
-    InitFormat(Tag::Type::End);
-    InitFormat(Tag::Type::Byte);
-    InitFormat(Tag::Type::Short);
-    InitFormat(Tag::Type::Int);
-    InitFormat(Tag::Type::Int64);
-    InitFormat(Tag::Type::Float);
-    InitFormat(Tag::Type::Double);
-    InitFormat(Tag::Type::ByteArray);
-    InitFormat(Tag::Type::String);
-    InitFormat(Tag::Type::List);
-    InitFormat(Tag::Type::Compound);
-    InitFormat(Tag::Type::IntArray);
-    mExpandInList[Tag::Type::End] = false;
-    mExpandInList[Tag::Type::Byte] = false;
-    mExpandInList[Tag::Type::Short] = false;
-    mExpandInList[Tag::Type::Int] = false;
-    mExpandInList[Tag::Type::Int64] = false;
-    mExpandInList[Tag::Type::Float] = false;
-    mExpandInList[Tag::Type::Double] = false;
-    mExpandInList[Tag::Type::ByteArray] = true;
-    mExpandInList[Tag::Type::String] = true;
-    mExpandInList[Tag::Type::List] = true;
-    mExpandInList[Tag::Type::Compound] = true;
-    mExpandInList[Tag::Type::IntArray] = true;
-#undef InitFormat
-}
-
-inline std::string PrettySnbtFormat::getColorCode(mce::Color const& color) const
-{
-    if (mForPlayer)
-        return color.toNearestColorCode();
-    else
-        return color.toConsoleCode();
-}
-
-inline std::string PrettySnbtFormat::getResetColorCode() const
-{
-    return mForPlayer ? "§r" : "\x1b[0m";
-}
-
-inline std::string PrettySnbtFormat::getItalicCode() const
-{
-    return mForPlayer ? "§o" : "\x1b[3m";
-}
-
-inline bool PrettySnbtFormat::setKeyColor(mce::Color const& color)
-{
-    mKeyFormat = {getColorCode(color) + "\"", "\"" + getResetColorCode()};
-    return true;
-}
-
-inline bool PrettySnbtFormat::isPlayerFormat() const
-{
-    return mForPlayer;
-}
-
-void PrettySnbtFormat::switchToPlayerFormat()
-{
-    if (mForPlayer)
-        return;
-    ColorFormat::transferConsoleColorToColorCode(mIndent);
-    ColorFormat::transferConsoleColorToColorCode(mSeparator);
-    ColorFormat::transferConsoleColorToColorCode(mColon);
-    mKeyFormat.toPlayerFormat();
-    for (auto& format : mValueFormats) {
-        format.toPlayerFormat();
-    }
-}
-void PrettySnbtFormat::switchToConsoleFormat()
-{
-    if (!mForPlayer)
-        return;
-    ColorFormat::transferColorCodeToConsole(mIndent);
-    ColorFormat::transferColorCodeToConsole(mSeparator);
-    ColorFormat::transferColorCodeToConsole(mColon);
-    mKeyFormat.toConsoleFormat();
-    for (auto& format : mValueFormats)
-    {
-        format.toConsoleFormat();
-    }
-}
-
-void PrettySnbtFormat::setDefaultColor()
-{
-    setKeyColor(ColorFormat::colorCodeToColorMap.at("§b"));
-
-    setValueColor<Tag::Type::Int>(ColorFormat::colorCodeToColorMap.at("§e"));
-    setValueColor<Tag::Type::Short>(ColorFormat::colorCodeToColorMap.at("§e"));
-    setValueColor<Tag::Type::Byte>(ColorFormat::colorCodeToColorMap.at("§e"));
-    setValueColor<Tag::Type::Int64>(ColorFormat::colorCodeToColorMap.at("§e"));
-
-    setValueColor<Tag::Type::Float>(ColorFormat::colorCodeToColorMap.at("§c"));
-    setValueColor<Tag::Type::Double>(ColorFormat::colorCodeToColorMap.at("§c"));
-
-    setValueColor<Tag::Type::String>(ColorFormat::colorCodeToColorMap.at("§a"));
-
-    setValueColor<Tag::Type::List>(ColorFormat::colorCodeToColorMap.at("§d"));
-    setValueColor<Tag::Type::Compound>(ColorFormat::colorCodeToColorMap.at("§d"));
-    setValueColor<Tag::Type::ByteArray>(ColorFormat::colorCodeToColorMap.at("§d"));
-    setValueColor<Tag::Type::IntArray>(ColorFormat::colorCodeToColorMap.at("§d"));
-}
-
-PrettySnbtFormat const& PrettySnbtFormat::getDefaultFormat(bool forPlayer)
-{
-    if (forPlayer)
-    {
-        static PrettySnbtFormat const consoleFormat = ([]() -> PrettySnbtFormat {
-            PrettySnbtFormat format;
-            format.mForPlayer = true;
-            format.mIndent = " ";
-            format.mMaxLevel = 2;
-            format.setDefaultColor();
-            return format;
-        })();
-        return consoleFormat;
-    }
-    else
-    {
-        static PrettySnbtFormat const playerFormat = ([]() -> PrettySnbtFormat {
-            PrettySnbtFormat format;
-            format.mForPlayer = false;
-            format.setDefaultColor();
-            return format;
-        })();
-        return playerFormat;
-    }
-};
-
-// To Pretty SNBT
 void __appendPrettyString(std::ostringstream& oss, std::string const& str, PrettySnbtFormat const& format)
 {
     for (auto& c : str)
@@ -1726,7 +1542,7 @@ inline void __appendPrettySNBT(std::ostringstream& oss, CompoundTag& tag, unsign
     oss << valueFormat.mSuffix;
 }
 
-string CompoundTag::toPrettySNBT(bool forPlayer)
+string CompoundTag::toPrettySNBT(bool forPlayer) const
 {
     try
     {
@@ -1735,14 +1551,14 @@ string CompoundTag::toPrettySNBT(bool forPlayer)
     CatchNBTError("CompoundTag::toPrettySNBT");
     return "";
 }
-string CompoundTag::toPrettySNBT(PrettySnbtFormat const& format)
+string CompoundTag::toPrettySNBT(PrettySnbtFormat const& format) const
 {
     try
     {
         if (this->getTagType() != Tag::Type::Compound)
             return "";
         std::ostringstream oss;
-        __appendPrettySNBT<CompoundTag>(oss, *this, 0, format);
+        __appendPrettySNBT<CompoundTag>(oss, const_cast<CompoundTag&>(*this), 0, format);
         return oss.str();
     }
     CatchNBTError("CompoundTag::toPrettySNBT");

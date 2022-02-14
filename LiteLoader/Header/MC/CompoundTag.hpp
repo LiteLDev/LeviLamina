@@ -13,48 +13,8 @@ enum class SnbtFormat : unsigned char
     AlwayNewLine = 1,
     Minimize = 2,
 };
-struct PrettySnbtFormat
-{
-    struct ValueFormat
-    {
-        std::string mPrefix;
-        std::string mSuffix;
-        LIAPI void toPlayerFormat();
-        LIAPI void toConsoleFormat();
-    };
+struct PrettySnbtFormat;
 
-    bool mForPlayer = false;
-    unsigned int mMaxLevel = (unsigned int)-1;
-    std::array<bool, 12> mExpandInList;
-    bool mExpandCompound = true;
-    std::array<ValueFormat, 12> mValueFormats;
-    ValueFormat mKeyFormat = {"\"", "\""};
-    std::string mIndent = "    ";
-    std::string mSeparator = ",";
-    std::string mColon = ":";
-
-public:
-    LIAPI PrettySnbtFormat();
-    LIAPI std::string getColorCode(mce::Color const& color) const;
-    LIAPI std::string getResetColorCode() const;
-    LIAPI std::string getItalicCode() const;
-
-    template <Tag::Type type>
-    bool setValueColor(mce::Color const& color);
-    template <Tag::Type type>
-    bool setValueFormat(std::string const& prefix, std::string const& suffix);
-    LIAPI bool setKeyColor(mce::Color const& color);
-    LIAPI bool isPlayerFormat() const;
-    LIAPI void switchToPlayerFormat();
-    LIAPI void switchToConsoleFormat();
-
-
-private:
-    LIAPI void setDefaultColor();
-
-public:
-    LIAPI static PrettySnbtFormat const& getDefaultFormat(bool forPlayer);
-};
 #undef BEFORE_EXTRA
 
 class CompoundTag : public Tag {
@@ -110,8 +70,8 @@ public:
 
     // To Formatted SNBT
     LIAPI std::string toSNBT(int indent, SnbtFormat snbtFormat = SnbtFormat::PartialNewLine);
-    LIAPI string CompoundTag::toPrettySNBT(bool forPlayer = false);
-    LIAPI string CompoundTag::toPrettySNBT(struct PrettySnbtFormat const& format);
+    LIAPI string toPrettySNBT(bool forPlayer = false) const;
+    LIAPI string toPrettySNBT(struct PrettySnbtFormat const& format) const;
     LIAPI std::string toBinaryNBT(bool isLittleEndian = true);
     LIAPI static std::unique_ptr<CompoundTag> fromSNBT(const std::string& snbt);
     LIAPI static std::unique_ptr<CompoundTag> fromBinaryNBT(void* data, size_t len, bool isLittleEndian = true);
@@ -199,20 +159,3 @@ protected:
 private:
 
 };
-
-template <Tag::Type type>
-inline bool PrettySnbtFormat::setValueColor(mce::Color const& color)
-{
-    if constexpr (type == Tag::Type::ByteArray || type > Tag::Type::String)
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type> + getResetColorCode(), getColorCode(color) + DefaultSuffix<type> + getResetColorCode()};
-    else
-        mValueFormats[type] = {getColorCode(color) + DefaultPrefix<type>, getItalicCode() + DefaultSuffix<type> + getResetColorCode()};
-    return true;
-}
-
-template <Tag::Type type>
-inline bool PrettySnbtFormat::setValueFormat(std::string const& prefix, std::string const& suffix)
-{
-    mValueFormats[type] == {prefix, suffix};
-    return true;
-}

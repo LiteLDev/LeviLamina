@@ -306,7 +306,9 @@
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
-    <ClCompile Include="Header\MC\CompoundTag.cpp" />
+    <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp">
+      <Filter>Kernel\NBT</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">
@@ -647,6 +649,9 @@
     </ClInclude>
     <ClInclude Include="Header\MC\ColorFormat.hpp">
       <Filter>Header\MC</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\MC\PrettySnbtFormat.hpp">
+      <Filter>Header\NBT</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

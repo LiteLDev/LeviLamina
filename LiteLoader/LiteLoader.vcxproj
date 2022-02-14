@@ -86,7 +86,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Header\MC\CompoundTag.cpp" />
+    <ClCompile Include="Kernel\NBT\PrettySnbtFormatAPI.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />
@@ -143,6 +143,7 @@ LibraryBuilder.exe
     <ClInclude Include="Header\MC\MobEffectInstance.hpp" />
     <ClInclude Include="Header\MC\NbtIo.hpp" />
     <ClInclude Include="Header\MC\Packet.hpp" />
+    <ClInclude Include="Header\MC\PrettySnbtFormat.hpp" />
     <ClInclude Include="Header\MC\ReadOnlyBinaryStream.hpp" />
     <ClInclude Include="Header\MC\RelativeFloat.hpp" />
     <ClInclude Include="Header\MC\ScoreboardId.hpp" />
