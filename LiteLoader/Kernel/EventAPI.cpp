@@ -541,11 +541,14 @@ TInstanceHook(bool, "?take@Player@@QEAA_NAEAVActor@@HH@Z",
     return original(this, actor, a2, a3);
 }
 
-
+bool isQDrop;
+bool isDieDrop;
 /////////////////// PlayerDropItem ///////////////////
 TInstanceHook(bool, "?drop@Player@@UEAA_NAEBVItemStack@@_N@Z",
       Player, ItemStack* it, bool a3)
 {
+    if (isQDrop) return original(this, it, a3);
+    if (isDieDrop) return original(this, it, a3);
     IF_LISTENED(PlayerDropItemEvent)
     {
         PlayerDropItemEvent ev{};
@@ -1555,14 +1558,39 @@ TInstanceHook(void*, "?die@Player@@UEAAXAEBVActorDamageSource@@@Z", ServerPlayer
         }
     }
     IF_LISTENED_END(PlayerDieEvent)
-    return original(this, src);
+    isDieDrop = true;
+    auto out = original(this, src);
+    isDieDrop = false;
+    return out;
 }
 
+bool isStartDestroy = false;
+THook(bool, "?startDestroyBlock@GameMode@@UEAA_NAEBVBlockPos@@EAEA_N@Z", Actor** ac, BlockPos* bpos, unsigned __int8 a3, bool* a4)
+{
+    IF_LISTENED(PlayerDestroyBlockEvent)
+    {
+        if (ac[1]->isPlayer())
+        {
+            PlayerDestroyBlockEvent ev{};
+            ev.mPlayer = (ServerPlayer*)ac[1];
+            ev.mBlockInstance = Level::getBlockInstance(bpos, ac[1]->getDimensionId());
+            if (!ev.call())
+                return false;
+            isStartDestroy = true;
+            auto out = original(ac, bpos, a3, a4);
+            isStartDestroy = false;
+            return out;
+        }
+    }
+    IF_LISTENED_END(PlayerDestroyBlockEvent)
+    return original(ac, bpos, a3, a4);
+}
 
 /////////////////// PlayerDestroy ///////////////////
 TInstanceHook(bool, "?checkBlockDestroyPermissions@BlockSource@@QEAA_NAEAVActor@@AEBVBlockPos@@AEBVItemStackBase@@_N@Z",
       BlockSource , Actor* ac, BlockPos* bpos, ItemStackBase* a4, bool a5)
 {
+    if (isStartDestroy) return original(this, ac, bpos, a4, a5);
     IF_LISTENED(PlayerDestroyBlockEvent)
     {
         if (ac->isPlayer())
@@ -2046,14 +2074,12 @@ THook(std::ostream&,
 TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
       ComplexInventoryTransaction, Player* a2, int a3)
 {
-    IF_LISTENED(PlayerDropItemEvent)
+    if (this->type == ComplexInventoryTransaction::Type::NORMAL)
     {
-        if (this->type == ComplexInventoryTransaction::Type::NORMAL)
+        IF_LISTENED(PlayerDropItemEvent)
         {
             auto& InvTran = this->data;
-            // auto& actions = InvTran.actions;
             auto& action = InvTran.getActions(InventorySource(InventorySourceType::Container, ContainerID::Inventory));
-            // for (auto& action : actions) {
             if (action.size() == 1)
             {
                 PlayerDropItemEvent ev{};
@@ -2065,11 +2091,14 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
                     a2->sendInventory(1);
                     return nullptr;
                 }
+                isQDrop = true;
+                auto out = original(this, a2, a3);
+                isQDrop = false;
+                return out;
             }
-            // }
         }
+        IF_LISTENED_END(PlayerDropItemEvent)
     }
-    IF_LISTENED_END(PlayerDropItemEvent)
     return original(this, a2, a3);
 }
 
