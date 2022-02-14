@@ -795,6 +795,18 @@ enum class PlayerScoreSetFunction : char
     Remove = 2
 };
 
+enum class ContainerID : int8_t
+{
+    Invalid = -1,
+    Inventory = 0,
+    First = 1,
+    Last = 100,
+    Offhand = 119,
+    Armor = 120,
+    SelectionSlots = 122,
+    PlayerUIOnly = 124
+};
+
 enum class FaceID : char
 {
     Unknown = -1,
@@ -1048,6 +1060,32 @@ enum ItemStackNetResult :unsigned char {
 //public:
 //    int Min = 1, Max = 0x7FFFFFFF;
 //};
+
+enum class InventoryTransactionError
+{
+    Unknown = 0,
+    NoError = 1,
+    BalanceMismatch = 2,
+    SourceItemMismatch = 3,
+    InventoryMismatch = 4,
+    SizeMismatch = 5,
+    AuthorityMismatch = 6,
+    StateMismatch = 7,
+    ApiDenied = 8
+};
+
+enum class InventorySourceType
+{
+    Invalid = -1,
+    Container = 0,
+    Global = 1,
+    World = 2,
+    Creative = 3,
+    UntrackedInteractionUI = 100,
+    NONIMPLEMENTEDTODO = 99999
+};
+
+
 
 template <typename T>
 struct InvertableFilter

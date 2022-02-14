@@ -12,7 +12,9 @@ class InventoryTransaction {
 
 #define AFTER_EXTRA
 // Add Member There
-
+public:
+    std::unordered_map<class InventorySource, std::vector<class InventoryAction>> actions; // 0x0
+    std::vector<class InventoryTransactionItemGroup> items;                                // 0x40
 #undef AFTER_EXTRA
 
 #ifndef DISABLE_CONSTRUCTOR_PREVENTION_INVENTORYTRANSACTION

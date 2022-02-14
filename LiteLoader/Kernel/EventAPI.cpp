@@ -45,6 +45,23 @@
 #include <string>
 #include <typeinfo>
 #include <vector>
+#include <MC/ComplexInventoryTransaction.hpp>
+#include <MC/InventoryTransaction.hpp>
+#include <MC/InventoryAction.hpp>
+#include <MC/InventorySource.hpp>
+
+static_assert(offsetof(InventoryAction, source) == 0x0);
+static_assert(offsetof(InventoryAction, slot) == 0x0c);
+static_assert(offsetof(InventoryAction, from) == 0x10);
+static_assert(offsetof(InventoryAction, to) == 0xa0);
+static_assert(offsetof(InventorySource, type) == 0x0);
+static_assert(offsetof(InventorySource, container) == 0x04);
+static_assert(offsetof(InventorySource, flags) == 0x08);
+static_assert(offsetof(ComplexInventoryTransaction, type) == 0x08);
+static_assert(offsetof(ComplexInventoryTransaction, data) == 0x10);
+static_assert(offsetof(InventoryTransaction, actions) == 0x0);
+static_assert(offsetof(InventoryTransaction, items) == 0x40);
+
 using namespace Event;
 using std::vector;
 extern Logger logger;
@@ -2021,24 +2038,23 @@ THook(std::ostream&,
     return original(_this, str, size);
 }
 
-//enum InventorySourceFlags
-//{
-//    DropItem = 0,
-//    PickupItem = 1,
-//    None = 2
-//};
+
 TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTransactionError@@AEAVPlayer@@_N@Z",
       ComplexInventoryTransaction, Player* a2, int a3)
 {
-    auto v7 = (InventoryTransaction*)((__int64)this + 16);
-    auto& a = dAccess<std::unordered_map<void*, void*>, 0>(v7);
-    for (auto& i : a)
-        if ((int)*((char*)&i.first + 8) == 0)//DropItem
+    IF_LISTENED(PlayerDropItemEvent)
+    {
+        if (this->type == ComplexInventoryTransaction::Type::NORMAL)
         {
-            IF_LISTENED(PlayerDropItemEvent)
+            auto& InvTran = this->data;
+            // auto& actions = InvTran.actions;
+            auto& action = InvTran.getActions(InventorySource(InventorySourceType::Container, ContainerID::Inventory));
+            // for (auto& action : actions) {
+            if (action.size() == 1)
             {
                 PlayerDropItemEvent ev{};
-                ev.mItemStack = const_cast<ItemStack*>(&a2->getCarriedItem());
+                auto& item = a2->getInventory().getItem(action[0].slot);
+                ev.mItemStack = const_cast<ItemStack*>(&item);
                 ev.mPlayer = a2;
                 if (!ev.call())
                 {
@@ -2046,8 +2062,10 @@ TInstanceHook(void*, "?handle@ComplexInventoryTransaction@@UEBA?AW4InventoryTran
                     return nullptr;
                 }
             }
-            IF_LISTENED_END(PlayerDropItemEvent)
+            // }
         }
+    }
+    IF_LISTENED_END(PlayerDropItemEvent)
     return original(this, a2, a3);
 }
 
