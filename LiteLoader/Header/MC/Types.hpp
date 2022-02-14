@@ -49,9 +49,10 @@ public:
     }
 
     LIAPI double distanceTo(mce::Color const dst) const;
-    LIAPI std::string toConsoleColorCode(bool foreground = true) const;
-    LIAPI std::string toMcColorCode() const;
-    LIAPI static class mce::Color fromConsoleColorCode(std::string const&);
+    LIAPI std::string toConsoleCode(bool foreground = true) const;
+    LIAPI std::string toNearestColorCode() const;
+    LIAPI static class mce::Color fromConsoleCode(std::string const&);
+    LIAPI static class mce::Color fromColorCode(std::string const&);
 
     MCAPI static mce::Color const NIL;
     MCAPI static class mce::Color fromHexString(std::string const&);

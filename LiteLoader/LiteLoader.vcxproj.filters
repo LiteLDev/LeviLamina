@@ -306,6 +306,7 @@
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp">
       <Filter>Kernel\MC</Filter>
     </ClCompile>
+    <ClCompile Include="Header\MC\CompoundTag.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\HookAPI.h">

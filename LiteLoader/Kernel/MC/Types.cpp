@@ -12,7 +12,7 @@
 extern Logger logger;
 namespace mce
 {
-std::string mce::Color::toConsoleColorCode(bool foreground) const
+std::string mce::Color::toConsoleCode(bool foreground) const
 {
     fmt::v8::rgb rgb;
     rgb.r = r * 0xff;
@@ -23,9 +23,9 @@ std::string mce::Color::toConsoleColorCode(bool foreground) const
     else
         return fmt::v8::detail::make_background_color<char>(fmt::v8::detail::color_type(rgb));
 }
-std::string Color::toMcColorCode() const
+std::string mce::Color::toNearestColorCode() const
 {
-    return ColorFormat::ColorCodeFromColor(*this);
+    return ColorFormat::nearestColorCodeFromColor(*this);
 };
 double mce::Color::distanceTo(mce::Color const dst) const
 {
@@ -35,9 +35,13 @@ double mce::Color::distanceTo(mce::Color const dst) const
     long db = (long)(b * 0xff) - (long)(dst.b * 0xff);
     return sqrt((((512 + rmean) * dr * dr) >> 8) + 4 * dg * dg + (((767 - rmean) * db * db) >> 8));
 }
-class mce::Color mce::Color::fromConsoleColorCode(std::string const& code)
+class mce::Color mce::Color::fromConsoleCode(std::string const& code)
 {
-    return ColorFormat::colorFromConsoleColorCode(code);
+    return ColorFormat::ColorFromConsoleCode(code);
+}
+mce::Color Color::fromColorCode(std::string const& code)
+{
+    return *ColorFormat::ColorFromColorCode(code);
 };
 }
 

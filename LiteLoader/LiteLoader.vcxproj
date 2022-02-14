@@ -86,6 +86,7 @@ LibraryBuilder.exe
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Header\MC\CompoundTag.cpp" />
     <ClCompile Include="Kernel\Compatibility.cpp" />
     <ClCompile Include="Kernel\MC\ColorFormatAPI.cpp" />
     <ClCompile Include="Kernel\MC\I18nAPI.cpp" />

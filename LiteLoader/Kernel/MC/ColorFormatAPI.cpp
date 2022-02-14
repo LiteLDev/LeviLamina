@@ -4,32 +4,32 @@ extern Logger logger;
 #include <MC/Util.hpp>
 namespace ColorFormat
 {
-std::unordered_map<std::string, const char*> const mcCodeToConsoleMap = {
-    {"§0", "\x1b[38;2;000;000;000m"},//BLACK
-    {"§1", "\x1b[38;2;000;000;170m"},//DARK_BLUE
-    {"§2", "\x1b[38;2;000;170;000m"},//DARK_GREEN
-    {"§3", "\x1b[38;2;000;170;170m"},//DARK_AQUA
-    {"§4", "\x1b[38;2;170;000;000m"},//DARK_RED
-    {"§5", "\x1b[38;2;170;000;170m"},//DARK_PURPLE
-    {"§6", "\x1b[38;2;255;170;000m"},//GOLD
-    {"§7", "\x1b[38;2;170;170;170m"},//GRAY
-    {"§8", "\x1b[38;2;085;085;085m"},//DARK_GRAY
-    {"§9", "\x1b[38;2;085;085;255m"},//BLUE
-    {"§a", "\x1b[38;2;085;255;085m"},//GREEN
-    {"§b", "\x1b[38;2;085;255;255m"},//AQUA
-    {"§c", "\x1b[38;2;255;085;085m"},//RED
-    {"§d", "\x1b[38;2;255;085;255m"},//LIGHT_PURPLE
-    {"§e", "\x1b[38;2;255;255;085m"},//YELLOW
-    {"§f", "\x1b[38;2;255;255;255m"},//WHITE
-    {"§g", "\x1b[38;2;221;214;005m"},//MINECOIN_GOLD
-    {"§", ""},                       //ESCAPE
-    {"§l", "\x1b[1m"},               //BOLD
-    {"§o", "\x1b[3m"},               //ITALIC
-    {"§k", ""},                      //OBFUSCATED
-    {"§r", "\x1b[0m"},               //RESET
+std::unordered_map<std::string, const char*> const colorCodeToConsoleMap = {
+    {"§0", "\x1b[38;2;000;000;000m"}, //BLACK
+    {"§1", "\x1b[38;2;000;000;170m"}, //DARK_BLUE
+    {"§2", "\x1b[38;2;000;170;000m"}, //DARK_GREEN
+    {"§3", "\x1b[38;2;000;170;170m"}, //DARK_AQUA
+    {"§4", "\x1b[38;2;170;000;000m"}, //DARK_RED
+    {"§5", "\x1b[38;2;170;000;170m"}, //DARK_PURPLE
+    {"§6", "\x1b[38;2;255;170;000m"}, //GOLD
+    {"§7", "\x1b[38;2;170;170;170m"}, //GRAY
+    {"§8", "\x1b[38;2;085;085;085m"}, //DARK_GRAY
+    {"§9", "\x1b[38;2;085;085;255m"}, //BLUE
+    {"§a", "\x1b[38;2;085;255;085m"}, //GREEN
+    {"§b", "\x1b[38;2;085;255;255m"}, //AQUA
+    {"§c", "\x1b[38;2;255;085;085m"}, //RED
+    {"§d", "\x1b[38;2;255;085;255m"}, //LIGHT_PURPLE
+    {"§e", "\x1b[38;2;255;255;085m"}, //YELLOW
+    {"§f", "\x1b[38;2;255;255;255m"}, //WHITE
+    {"§g", "\x1b[38;2;221;214;005m"}, //MINECOIN_GOLD
+    {"§", ""},                        //ESCAPE
+    {"§l", "\x1b[1m"},                //BOLD
+    {"§o", "\x1b[3m"},                //ITALIC
+    {"§k", ""},                       //OBFUSCATED
+    {"§r", "\x1b[0m"},                //RESET
 };
 
-std::unordered_map<std::string, mce::Color const> const mcCodeToColorMap = std::unordered_map<std::string, mce::Color const>{
+std::unordered_map<std::string, mce::Color const> const colorCodeToColorMap = std::unordered_map<std::string, mce::Color const>{
     {"§0", mce::Color(0.0f, 0.0f, 0.0f)},
     {"§1", mce::Color(0.0f, 0.0f, 0.666667f)},
     {"§2", mce::Color(0.0f, 0.666667f, 0.0f)},
@@ -49,7 +49,7 @@ std::unordered_map<std::string, mce::Color const> const mcCodeToColorMap = std::
     {"§g", mce::Color(0.87f, 0.84f, 0.02f)},
 };
 
-std::unordered_map<unsigned char, const char*> const decorationToMcCodeMap = {
+std::unordered_map<unsigned char, const char*> const decorationToColorCodeMap = {
     {0, "§r"},
     {1, "§l"},
     {3, "§o"},
@@ -70,21 +70,21 @@ std::unordered_map<unsigned char, const char*> const decorationToMcCodeMap = {
     {97, "§f"},
 };
 
-inline std::string findNearestColorCode(mce::Color const& color)
+std::string nearestColorCodeFromColor(mce::Color const& color)
 {
     float minDst = 10000000.0f;
     std::string minCode = "";
-    for (auto& [code, codeColor] : mcCodeToColorMap)
+    for (auto& [code, codeColor] : colorCodeToColorMap)
     {
         auto dst = color.distanceTo(codeColor);
-        //std::cout << code << color.toConsoleColorCode() << color.toHexString() << " - " << codeColor.toConsoleColorCode() << codeColor.toHexString() << " - " << dst << std::endl;
+        //std::cout << code << color.toConsoleCode() << color.toHexString() << " - " << codeColor.toConsoleCode() << codeColor.toHexString() << " - " << dst << std::endl;
         if (dst < minDst)
         {
             minDst = dst;
             minCode = code;
         }
     }
-    //std::cout << minCode << color.toConsoleColorCode() << color.toHexString() << " - " << mcCodeToColorMap.at(minCode).toConsoleColorCode() << mcCodeToColorMap.at(minCode).toHexString() << " - " << minDst << std::endl;
+    //std::cout << minCode << color.toConsoleCode() << color.toHexString() << " - " << colorCodeToColorMap.at(minCode).toConsoleCode() << colorCodeToColorMap.at(minCode).toHexString() << " - " << minDst << std::endl;
     return minCode;
 }
 
@@ -101,15 +101,15 @@ inline int __readUnsignedChar(unsigned char& out, std::istringstream& iss)
     return EOF;
 }
 
-std::string mcColorCodeToConsole(std::string const& mcCode)
+std::string consoleCodeFromColorCode(std::string const& mcCode)
 {
-    auto iter = mcCodeToConsoleMap.find(mcCode);
-    if (iter == mcCodeToConsoleMap.end())
+    auto iter = colorCodeToConsoleMap.find(mcCode);
+    if (iter == colorCodeToConsoleMap.end())
         return "";
     return iter->second;
 }
 
-mce::Color colorFromConsoleColorCode(std::string const& console)
+mce::Color ColorFromConsoleCode(std::string const& console)
 {
     unsigned char decoration = 0;
     unsigned char r = 0;
@@ -124,8 +124,8 @@ mce::Color colorFromConsoleColorCode(std::string const& console)
         return mce::Color::NIL;
     if (c == 'm')
     {
-        auto codeIter = decorationToMcCodeMap.find(decoration);
-        if (codeIter != decorationToMcCodeMap.end())
+        auto codeIter = decorationToColorCodeMap.find(decoration);
+        if (codeIter != decorationToColorCodeMap.end())
             return *ColorFromColorCode(codeIter->second);
         return mce::Color::NIL;
     }
@@ -149,24 +149,24 @@ mce::Color colorFromConsoleColorCode(std::string const& console)
     return mce::Color::NIL;
 }
 
-std::string consoleColorCodeToMc(std::string const& code)
+std::string nearestColorCodeFromConsoleCode(std::string const& code)
 {
     if (code.empty())
         return code;
-    for (auto& [mcCode, consoleCode] : mcCodeToConsoleMap)
+    for (auto& [mcCode, consoleCode] : colorCodeToConsoleMap)
     {
         if (consoleCode == code)
             return mcCode;
     }
     if (code.size() == 19 && code.substr(0, 7) == "\x1b[38;2;" && code.back() == 'm')
     {
-        mce::Color color(0,0,0);
-        color.r = std::stoi(code.substr(7, 7 + 3))/255.0f;
-        color.g = std::stoi(code.substr(11, 11 + 3))/255.0f;
-        color.b = std::stoi(code.substr(15, 15 + 3))/255.0f;
+        mce::Color color(0, 0, 0);
+        color.r = std::stoi(code.substr(7, 7 + 3)) / 255.0f;
+        color.g = std::stoi(code.substr(11, 11 + 3)) / 255.0f;
+        color.b = std::stoi(code.substr(15, 15 + 3)) / 255.0f;
         auto colorCode = ColorCodeFromColor(color);
         if (colorCode.empty())
-            return findNearestColorCode(color);
+            return nearestColorCodeFromColor(color);
         else
             return colorCode;
     }
@@ -183,8 +183,8 @@ std::string consoleColorCodeToMc(std::string const& code)
         return "";
     if (c == 'm')
     {
-        auto codeIter = decorationToMcCodeMap.find(decoration);
-        if (codeIter != decorationToMcCodeMap.end())
+        auto codeIter = decorationToColorCodeMap.find(decoration);
+        if (codeIter != decorationToColorCodeMap.end())
             return codeIter->second;
         return "";
     }
@@ -204,14 +204,13 @@ std::string consoleColorCodeToMc(std::string const& code)
         if (c != 'm')
             return "";
         mce::Color color(r, g, b);
-        return findNearestColorCode(color);
+        return nearestColorCodeFromColor(color);
     }
     //std::cout << code << "\\x" << Util::toHex(code.substr(0, 1)) << code.substr(1) << std::endl;
     return "";
-
 }
 
-std::string& transferConsoleColorToMc(std::string& str)
+std::string& transferConsoleColorToColorCode(std::string& str)
 {
     size_t size = str.size();
     for (size_t pos = str.find('\x1b'); pos < size - 2; pos = str.find('\x1b', pos))
@@ -219,9 +218,9 @@ std::string& transferConsoleColorToMc(std::string& str)
         size_t endPos = str.find('m', pos);
         size_t codeSize = endPos - pos + 1;
         auto consoleCode = str.substr(pos, codeSize);
-        std::string mcCode = consoleColorCodeToMc(consoleCode);
+        std::string mcCode = nearestColorCodeFromConsoleCode(consoleCode);
         if (mcCode.empty())
-            mcCode = "\\x" + Util::toHex(consoleCode.substr(0,1)) + consoleCode.substr(1);
+            mcCode = "\\x" + Util::toHex(consoleCode.substr(0, 1)) + consoleCode.substr(1);
         str.replace(pos, codeSize, mcCode);
         pos += 3;
         size += 3 - codeSize;
@@ -229,12 +228,12 @@ std::string& transferConsoleColorToMc(std::string& str)
     return str;
 }
 
-std::string& transferMcColorToConsole(std::string& str, bool keepColorCode)
+std::string& transferColorCodeToConsole(std::string& str, bool keepColorCode)
 {
     size_t size = str.size();
     for (size_t pos = str.find("§"); pos < size - 2; pos = str.find("§", pos))
     {
-        std::string consoleCode = mcColorCodeToConsole(str.substr(pos, 3));
+        std::string consoleCode = consoleCodeFromColorCode(str.substr(pos, 3));
         if (keepColorCode)
         {
             str.insert(pos + (str[pos + 2] == 'r' ? 0 : 3), consoleCode);
@@ -251,7 +250,7 @@ std::string& transferMcColorToConsole(std::string& str, bool keepColorCode)
     return str;
 }
 
-#ifdef DEBUG
+#ifndef DEBUG
 inline void testCode(int i)
 {
     std::cout << "\x1b[" << std::to_string(i) << "mTest-" << std::to_string(i) << std::endl;
@@ -259,7 +258,7 @@ inline void testCode(int i)
 inline std::string mcCodeWithColor(std::string const& code)
 {
     if (ColorFromColorCode(code))
-        return fmt::format("{}{}{}", ColorFromColorCode(code)->toConsoleColorCode(), code, "\x1b[0m");
+        return fmt::format("{}{}{}", ColorFromColorCode(code)->toConsoleCode(), code, "\x1b[0m");
     return fmt::format("{}{}{}", "\x1b[0m", code, "\x1b[0m");
 }
 inline std::string consoleCodeWithColor(std::string const& code)
@@ -268,9 +267,10 @@ inline std::string consoleCodeWithColor(std::string const& code)
         return "";
     return fmt::format("{}\\x{}{}\x1b[0m", code, Util::toHex(code.substr(0, 1)), code.substr(1));
 }
-inline std::string colorWithColor(mce::Color const& color) {
-    return fmt::format("{}{}{}", color.toConsoleColorCode(), color.toHexString(), "\x1b[0m");
-    return fmt::format("{}mce::Color({}, {}, {}){}", color.toConsoleColorCode(), color.r,color.b,color.g, "\x1b[0m");
+inline std::string colorWithColor(mce::Color const& color)
+{
+    return fmt::format("{}{}{}", color.toConsoleCode(), color.toHexString(), "\x1b[0m");
+    return fmt::format("{}mce::Color({}, {}, {}){}", color.toConsoleCode(), color.r, color.b, color.g, "\x1b[0m");
 }
 
 void testAll()
@@ -280,19 +280,21 @@ void testAll()
         return;
     first = false;
 
-    for (auto& [dec, code] : decorationToMcCodeMap) {
-        if (ColorFromColorCode(code)) {
+    for (auto& [dec, code] : decorationToColorCodeMap)
+    {
+        if (ColorFromColorCode(code))
+        {
             std::string console = std::string("\x1b[") + std::to_string(dec) + 'm';
             logger.info("{}\"{}\" ,\"{}\"{},", '{', consoleCodeWithColor(console), mcCodeWithColor(code), '}');
         }
     }
-    for (auto& [code, console] : mcCodeToColorMap)
+    for (auto& [code, console] : colorCodeToColorMap)
     {
         if (ColorFromColorCode(code))
             logger.info("{}\"{}\" ,{}{},", '{', mcCodeWithColor(code), colorWithColor(console), '}');
     }
-    
-    for (auto& [code, console] : mcCodeToConsoleMap)
+
+    for (auto& [code, console] : colorCodeToConsoleMap)
     {
         if (ColorFromColorCode(code))
             logger.info("{}\"{}\" ,\"{}\"{},", '{', mcCodeWithColor(code), consoleCodeWithColor(console), '}');
@@ -342,5 +344,10 @@ void testAll()
     format = "\x1b[0m";
     logger.info("{}{}\"{}\", \"\\x{}{}\"{},", format, '{', "§r", Util::toHex(format.substr(0, 1)), format.substr(1), '}');
 }
+}
+TClasslessInstanceHook2("TestColorFormat", void, "?startServerThread@ServerInstance@@QEAAXXZ")
+{
+    ColorFormat::testAll();
+    original(this);
 #endif // DEBUG
 }

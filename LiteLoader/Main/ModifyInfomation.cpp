@@ -100,7 +100,7 @@ TClasslessInstanceHook(void*, "?send@CommandOutputSender@@UEAAXAEBVCommandOrigin
         while (getline(iss, line))
         {
             if (LL::globalConfig.colorLog)
-                serverLogger.info << ColorFormat::transferMcColorToConsole(line, false) << Logger::endl;
+                serverLogger.info << ColorFormat::transferColorCodeToConsole(line, false) << Logger::endl;
             else
             {
                 size_t size = str.size();
