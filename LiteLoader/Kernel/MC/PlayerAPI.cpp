@@ -35,6 +35,8 @@
 #include <Impl/FormPacketHelper.h>
 #include <EventAPI.h>
 #include <bitset>
+#include <MC/ItemStackDescriptor.hpp>
+#include <MC/NetworkItemStackDescriptor.hpp>
 
 NetworkIdentifier* Player::getNetworkIdentifier() 
 {
@@ -482,8 +484,6 @@ bool Player::sendPlaySoundPacket(string SoundName, Vec3 Position, float Volume, 
 }
 
 // Bad?
-#include <MC/ItemStackDescriptor.hpp>
-#include <MC/NetworkItemStackDescriptor.hpp>
 bool Player::sendAddItemEntityPacket(unsigned long long runtimeID, Item const& item, int stackSize, short aux, Vec3 pos, vector<std::unique_ptr<DataItem>> dataItems) const
 {
     BinaryStream wp;

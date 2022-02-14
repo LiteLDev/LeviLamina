@@ -21,6 +21,8 @@
 #include <MC/TeleportTarget.hpp>
 #include <MC/UserEntityIdentifierComponent.hpp>
 #include <MC/OnFireSystem.hpp>
+#include <MC/TeleportRotationData.hpp>
+#include <MC/ItemStack.hpp>
 
 class UserEntityIdentifierComponent;
 
@@ -94,7 +96,6 @@ BlockInstance Actor::getBlockStandingOn() const
     return Level::getBlockInstance(getBlockPosCurrentlyStandingOn(nullptr), getDimensionId());
 }
 
-
 ActorUniqueID Actor::getActorUniqueId() const {
     __try {
         return getUniqueID();
@@ -103,7 +104,6 @@ ActorUniqueID Actor::getActorUniqueId() const {
     }
 }
 
-#include <MC/TeleportRotationData.hpp>
 static_assert(sizeof(TeleportRotationData) == 32);
 bool Actor::teleport(Vec3 to, int dimID)
 {
@@ -123,7 +123,6 @@ bool Actor::teleport(Vec3 to, int dimID,float x,float y)
     return true;
 }
 
-#include <MC/ItemStack.hpp>
 ItemStack* Actor::getHandSlot() {
     if (isPlayer())
         return (ItemStack*)&((Player*)this)->getSelectedItem();

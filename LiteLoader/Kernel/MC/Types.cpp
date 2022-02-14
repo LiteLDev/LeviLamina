@@ -1,4 +1,6 @@
 ﻿#include <MC/Types.hpp>
+#include <MC/ColorFormat.hpp>
+#include <LoggerAPI.h>
 
 //ChunkBlockPos::ChunkBlockPos(BlockPos const& pos, short minHeight)
 //{
@@ -6,8 +8,7 @@
 //    this->z = (char)pos.z & 0xf;
 //    this->y = (short)(pos.y - minHeight);
 //}
-#include <MC/ColorFormat.hpp>
-#include <LoggerAPI.h>
+
 extern Logger logger;
 namespace mce
 {
